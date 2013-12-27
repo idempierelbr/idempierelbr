@@ -4,4 +4,5 @@
    <service>
       <provide interface="org.adempiere.base.IColumnCalloutFactory"/>
    </service>
+   <property name="service.ranking" type="Integer" value="10"/>
 </scr:component>
