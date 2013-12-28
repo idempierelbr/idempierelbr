@@ -23,7 +23,8 @@ public class CalloutFactory implements IColumnCalloutFactory {
 		
 		// Tabela C_BPartner
 		if (tableName.equals(MBPartnerLBRCore.Table_Name)) {
-			if (columnName.equals(MBPartnerLBRCore.COLUMNNAME_LBR_BPTypeBR))
+			if (columnName.equals(MBPartnerLBRCore.COLUMNNAME_LBR_BPTypeBR) ||
+					columnName.equals(MBPartnerLBRCore.COLUMNNAME_LBR_IsIEExempt))
 				 callouts.add(new CalloutBPartner());
 		}
 		
