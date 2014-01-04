@@ -4,76 +4,59 @@ import java.sql.ResultSet;
 import java.util.Properties;
 
 import org.compiere.model.MBPartner;
-import org.compiere.model.X_I_BPartner;
-import org.idempierelbr.core.wrapper.I_W_C_BPartner;
+import org.compiere.model.MBPartnerLocation;
+import org.idempierelbr.core.wrapper.I_W_C_BPartner_Location;
 
-public class MBPartnerLBRCore extends MBPartner implements I_W_C_BPartner{
-	private static final long serialVersionUID = 2452408677410219668L;
-	/** PF - Individual = PF */
-	public static final String LBR_BPTYPEBR_PF_Individual = "PF";
-	/** PJ - Legal Entity = PJ */
-	public static final String LBR_BPTYPEBR_PJ_LegalEntity = "PJ";
+public class MBPartnerLocationLBRCore extends MBPartnerLocation implements
+		I_W_C_BPartner_Location {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -86073938619716230L;
 
-	/**
-	 * 	Default Constructor
-	 * 	@param ctx context
-	 * 	@param C_BPartner_ID partner or 0 or -1 (load from template)
-	 * 	@param trxName transaction
-	 */
-	public MBPartnerLBRCore(Properties ctx, int C_BPartner_ID, String trxName) {
-		super(ctx, C_BPartner_ID, trxName);
-	}
-	
-	/**
-	 * 	Default Constructor
-	 * 	@param ctx context
-	 * 	@param rs ResultSet to load from
-	 * 	@param trxName transaction
-	 */
-	public MBPartnerLBRCore(Properties ctx, ResultSet rs, String trxName) {
-		super(ctx, rs, trxName);
-	}
-	
 	/**************************************************************************
-	 * 	Constructor for new BPartner from Template
-	 * 	@param ctx context
+	 * Default Constructor
+	 * 
+	 * @param ctx
+	 *            context
+	 * @param C_BPartner_Location_ID
+	 *            id
+	 * @param trxName
+	 *            transaction
 	 */
-	public MBPartnerLBRCore (Properties ctx)
-	{
-		super(ctx);
-	}	//	MBPartner
-	
+	public MBPartnerLocationLBRCore(Properties ctx, int C_BPartner_Location_ID,
+			String trxName) {
+		super(ctx, C_BPartner_Location_ID, trxName);
+	} // MBPartner_Location
+
 	/**
-	 * 	Import Constructor
-	 *	@param impBP import
+	 * BP Parent Constructor
+	 * 
+	 * @param bp
+	 *            partner
 	 */
-	public MBPartnerLBRCore (X_I_BPartner impBP)
-	{
-		super(impBP);
-	}
-	
-	/** Set Brazilian BP Type.
-		@param LBR_BPTypeBR 
-		Brazilian BP Type (identifies if the BP is a Legal Entity or an Individual)
+	public MBPartnerLocationLBRCore(MBPartner bp) {
+		super(bp);
+	} // MBPartner_Location
+
+	/**
+	 * Constructor from ResultSet row
+	 * 
+	 * @param ctx
+	 *            context
+	 * @param rs
+	 *            current row of result set to be loaded
+	 * @param trxName
+	 *            transaction
 	 */
-	public void setLBR_BPTypeBR (String LBR_BPTypeBR)
-	{
-	
-		set_Value (COLUMNNAME_LBR_BPTypeBR, LBR_BPTypeBR);
-	}
-	
-	/** Get Brazilian BP Type.
-		@return Brazilian BP Type (identifies if the BP is a Legal Entity or an Individual)
-	  */
-	public String getLBR_BPTypeBR () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_BPTypeBR);
-	}
+	public MBPartnerLocationLBRCore(Properties ctx, ResultSet rs, String trxName) {
+		super(ctx, rs, trxName);
+	} // MBPartner_Location
 	
 	/** Set Brazilian BP Valid.
-		@param LBR_BPTypeBRIsValid 
-		Brazilian BP is Valid
-	  */
+	@param LBR_BPTypeBRIsValid 
+	Brazilian BP is Valid
+	 */
 	public void setLBR_BPTypeBRIsValid (boolean LBR_BPTypeBRIsValid)
 	{
 		set_Value (COLUMNNAME_LBR_BPTypeBRIsValid, Boolean.valueOf(LBR_BPTypeBRIsValid));
@@ -128,23 +111,6 @@ public class MBPartnerLBRCore extends MBPartner implements I_W_C_BPartner{
 		return (String)get_Value(COLUMNNAME_LBR_CNPJ);
 	}
 	
-	/** Set CPF.
-		@param LBR_CPF 
-		Used to identify individuals in Brazil
-	  */
-	public void setLBR_CPF (String LBR_CPF)
-	{
-		set_Value (COLUMNNAME_LBR_CPF, LBR_CPF);
-	}
-	
-	/** Get CPF.
-		@return Used to identify individuals in Brazil
-	  */
-	public String getLBR_CPF () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_CPF);
-	}
-	
 	/** Set IE.
 		@param LBR_IE 
 		Used to identify the IE (State Tax ID)
@@ -186,23 +152,6 @@ public class MBPartnerLBRCore extends MBPartner implements I_W_C_BPartner{
 		return false;
 	}
 	
-	/** Set RG.
-		@param LBR_RG 
-		Used to identify individuals in Brazil
-	  */
-	public void setLBR_RG (String LBR_RG)
-	{
-		set_Value (COLUMNNAME_LBR_RG, LBR_RG);
-	}
-	
-	/** Get RG.
-		@return Used to identify individuals in Brazil
-	  */
-	public String getLBR_RG () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_RG);
-	}
-	
 	/** Set Suframa.
 		@param LBR_Suframa 
 		Brazilian SUFRAMA Identification Number
@@ -221,16 +170,6 @@ public class MBPartnerLBRCore extends MBPartner implements I_W_C_BPartner{
 	}
 	
 	/**
-	 *	Verifica se o CPF possui a sequência de caracteres e os dígitos verificadores válidos 
-	 *	@return boolean true or false
-	 */
-	public boolean isValidCPF()
-	{
-		MCPF cpf = new MCPF(getLBR_CPF());
-		return cpf.isValid();
-	}
-	
-	/**
 	 *	Verifica se o CNPJ possui a sequência de caracteres e os dígitos verificadores válidos 
 	 *	@return boolean true or false
 	 */
@@ -238,5 +177,5 @@ public class MBPartnerLBRCore extends MBPartner implements I_W_C_BPartner{
 		MCNPJ cnpj = new MCNPJ(getLBR_CNPJ());
 		return cnpj.isValid();
 	}
-	
+
 }

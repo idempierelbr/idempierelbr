@@ -4,7 +4,6 @@ import org.adempiere.base.event.AbstractEventHandler;
 import org.adempiere.base.event.IEventManager;
 import org.adempiere.base.event.IEventTopics;
 import org.adempiere.base.event.LoginEventData;
-import org.compiere.model.MBPartnerLocation;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.MSysConfig;
 import org.compiere.model.PO;
@@ -23,8 +22,8 @@ public class EventHandler extends AbstractEventHandler {
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MBPartnerLBRCore.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_CHANGE, MBPartnerLBRCore.Table_Name);
 		
-		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MBPartnerLocation.Table_Name);
-		registerTableEvent(IEventTopics.PO_BEFORE_CHANGE, MBPartnerLocation.Table_Name);
+		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MBPartnerLocationLBRCore.Table_Name);
+		registerTableEvent(IEventTopics.PO_BEFORE_CHANGE, MBPartnerLocationLBRCore.Table_Name);
 		
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MOrgInfo.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_CHANGE, MOrgInfo.Table_Name);
@@ -57,9 +56,54 @@ public class EventHandler extends AbstractEventHandler {
 			msg = validateBPTypeBR(bp);
 			if (msg != null)
 				throw new RuntimeException(msg);
+		} else if (po.get_TableName().equals(MBPartnerLocationLBRCore.Table_Name) && (event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)
+				|| event.getTopic().equals(IEventTopics.PO_BEFORE_CHANGE)))
+		{
+			MBPartnerLocationLBRCore bpl = (MBPartnerLocationLBRCore)po;
+			msg = validateBPTypeBR(bpl);
+			if (msg != null)
+				throw new RuntimeException(msg);
 		}
 	}
 	
+	/**
+	 *	Verifica se o campo CNPJ é válido
+	 *	@return mensagem de erro ou null
+	 */
+	private String validateBPTypeBR(MBPartnerLocationLBRCore bpl) {
+		// BF [ 2808639 ] - Erro notado pelo usuario gmichels
+		if (!MSysConfig.getBooleanValue("LBR_USE_UNIFIED_BP", false, bpl.getAD_Client_ID()))
+			return null;
+		
+		MBPartnerLBRCore bp = new MBPartnerLBRCore(Env.getCtx(), bpl.getC_BPartner_ID(), bpl.get_TrxName());
+		boolean isValid = bp.isLBR_BPTypeBRIsValid();
+
+		// tentando desativar um registro
+		if (bpl.is_ValueChanged("IsActive") && !bpl.isActive())
+			return null;
+
+		if (!isValid || bp.getLBR_BPTypeBR() == null ||
+				!bp.getLBR_BPTypeBR().equalsIgnoreCase(MBPartnerLBRCore.LBR_BPTYPEBR_PJ_LegalEntity))
+			return null;
+
+		String CNPJMatriz = bp.getLBR_CNPJ();
+		String CNPJFilial = bpl.getLBR_CNPJ();
+
+		if (CNPJMatriz.substring(0, 8).equalsIgnoreCase(CNPJFilial.substring(0, 8)))	{
+			if (!bpl.isValidCNPJ())
+				return "CNPJ Inválido, por favor verifique";
+
+			MCNPJ cnpj = new MCNPJ(CNPJFilial);
+			
+			if (!cnpj.isUniqueOnBP(bpl.getAD_Client_ID(), bpl.get_ID(), bpl.get_TableName(), bpl.get_TrxName()))
+				return "CNPJ Duplicado. Existe outro Parceiro de Negócios com este CNPJ";
+		} else
+			return "CNPJ Inválido. Raiz do CNPJ não corresponde com o informado na aba Parceiro de Negócios";
+
+		bpl.setLBR_BPTypeBRIsValid(true);
+		return null;
+	}
+
 	/**
 	 *	Verifica se os campos CPF e CNPJ são válidos
 	 *	@return mensagem de erro ou null

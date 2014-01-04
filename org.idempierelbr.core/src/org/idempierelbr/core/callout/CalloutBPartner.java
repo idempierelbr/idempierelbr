@@ -6,6 +6,7 @@ import org.adempiere.base.IColumnCallout;
 import org.compiere.model.GridField;
 import org.compiere.model.GridTab;
 import org.idempierelbr.core.model.MBPartnerLBRCore;
+import org.idempierelbr.core.model.MBPartnerLocationLBRCore;
 
 public class CalloutBPartner implements IColumnCallout {
 
@@ -20,6 +21,11 @@ public class CalloutBPartner implements IColumnCallout {
 				return clearIEField(mTab, value);
 			else 
 				return null;
+		else if (mTab.getTableName().equals(MBPartnerLocationLBRCore.Table_Name))
+			if (mField.getColumnName().equals(MBPartnerLocationLBRCore.COLUMNNAME_LBR_IsIEExempt))
+				return clearIEField(mTab, value);
+			else 
+				return null;
 		else
 			return null;
 	}
@@ -28,9 +34,18 @@ public class CalloutBPartner implements IColumnCallout {
 	* Limpa o campo LBR_IE
 	*/
 	private String clearIEField(GridTab mTab, Object value) {
-		String ie = (String) mTab.getValue(MBPartnerLBRCore.COLUMNNAME_LBR_IE);
+		String columnName = "";
+		
+		if (mTab.getTableName().equals(MBPartnerLBRCore.Table_Name))
+			columnName = MBPartnerLBRCore.COLUMNNAME_LBR_IE;
+		else if (mTab.getTableName().equals(MBPartnerLocationLBRCore.Table_Name))
+			columnName = MBPartnerLocationLBRCore.COLUMNNAME_LBR_IE;
+		
+		String ie = (String) mTab.getValue(columnName);
+		
 		if (ie != null && !ie.equals(""))
-			mTab.setValue(MBPartnerLBRCore.COLUMNNAME_LBR_IE, null);
+			mTab.setValue(columnName, null);
+		
 		return null;
 	}
 

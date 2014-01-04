@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.adempiere.base.IColumnCallout;
 import org.adempiere.base.IColumnCalloutFactory;
-import org.compiere.model.MBPartner;
 import org.idempierelbr.core.model.MBPartnerLBRCore;
+import org.idempierelbr.core.model.MBPartnerLocationLBRCore;
 
 /**
  * Esta classe é uma implementação da callout factory.
@@ -25,6 +25,12 @@ public class CalloutFactory implements IColumnCalloutFactory {
 		if (tableName.equals(MBPartnerLBRCore.Table_Name)) {
 			if (columnName.equals(MBPartnerLBRCore.COLUMNNAME_LBR_BPTypeBR) ||
 					columnName.equals(MBPartnerLBRCore.COLUMNNAME_LBR_IsIEExempt))
+				 callouts.add(new CalloutBPartner());
+		}
+		
+		// Tabela C_BPartner_Location
+		if (tableName.equals(MBPartnerLocationLBRCore.Table_Name)) {
+			if (columnName.equals(MBPartnerLBRCore.COLUMNNAME_LBR_IsIEExempt))
 				 callouts.add(new CalloutBPartner());
 		}
 		
