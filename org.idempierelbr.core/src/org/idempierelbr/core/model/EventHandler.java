@@ -106,8 +106,13 @@ public class EventHandler extends AbstractEventHandler {
 					return "CNPJ Duplicado. Existe outro Parceiro de Negócios com este CNPJ (ou raiz, caso PN Unificado)";
 				}
 
-				if(MSysConfig.getBooleanValue("LBR_USE_UNIFIED_BP", false, AD_Client_ID))
+				if(MSysConfig.getBooleanValue("LBR_USE_UNIFIED_BP", false, AD_Client_ID)) {
+					// salva apenas a raiz do CNPJ
 					bp.setLBR_CNPJ(bp.getLBR_CNPJ().substring(0, 8) + "000000");
+					
+					// Marca LBR_IsIEExempt como true, para manter consistência do DB
+					bp.setLBR_IsIEExempt(true);
+				}
 			}
 
 			bp.setLBR_BPTypeBRIsValid(true);
