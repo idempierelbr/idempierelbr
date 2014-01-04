@@ -200,4 +200,24 @@ public class MBPartnerLBRCore extends MBPartner implements I_W_C_BPartner{
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Suframa);
 	}
+	
+	/**
+	 *	Verifica se o CPF possui a sequência de caracteres e os dígitos verificadores válidos 
+	 *	@return boolean true or false
+	 */
+	public boolean isValidCPF()
+	{
+		MCPF cpf = new MCPF(getLBR_CPF());
+		return cpf.isValid();
+	}
+	
+	/**
+	 *	Verifica se o CNPJ possui a sequência de caracteres e os dígitos verificadores válidos 
+	 *	@return boolean true or false
+	 */
+	public boolean isValidCNPJ() {
+		MCNPJ cnpj = new MCNPJ(getLBR_CNPJ());
+		return cnpj.isValid();
+	}
+	
 }
