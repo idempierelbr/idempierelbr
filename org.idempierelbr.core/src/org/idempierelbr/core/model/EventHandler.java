@@ -105,7 +105,7 @@ public class EventHandler extends AbstractEventHandler {
 	}
 
 	/**
-	 *	Verifica se os campos CPF e CNPJ são válidos
+	 *	Verifica se os campos CPF, CNPJ e IE são válidos
 	 *	@return mensagem de erro ou null
 	 */
 	private String validateBPTypeBR(MBPartnerLBRCore bp) {
@@ -157,6 +157,15 @@ public class EventHandler extends AbstractEventHandler {
 					// Marca LBR_IsIEExempt como true, para manter consistência do DB
 					bp.setLBR_IsIEExempt(true);
 				}
+			}
+			
+			// formata IE
+			if (bp.getLBR_IE() != null || bp.getLBR_IE().length() > 0) {
+				MIE ie = new MIE(bp.getLBR_IE());
+				String ieFormated = ie.getFormated();
+				
+				if (!ieFormated.equals(bp.getLBR_IE()))
+					bp.setLBR_IE(ieFormated);
 			}
 
 			bp.setLBR_BPTypeBRIsValid(true);
