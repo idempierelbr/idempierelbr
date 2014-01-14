@@ -59,15 +59,16 @@ public class EventHandler extends AbstractEventHandler {
 		{
 			MBPartner bp = (MBPartner)po;
 			msg = validateBPTypeBR(bp);
-			if (msg != null)
-				throw new RuntimeException(msg);
+			if (msg != null) {
+				addErrorMessage(event, msg);
+			}
 		} else if (po.get_TableName().equals(MBPartnerLocation.Table_Name) && (event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)
 				|| event.getTopic().equals(IEventTopics.PO_BEFORE_CHANGE)))
 		{
 			MBPartnerLocation bpl = (MBPartnerLocation)po;
 			msg = validateBPTypeBR(bpl);
 			if (msg != null)
-				throw new RuntimeException(msg);
+				addErrorMessage(event, msg);
 		}
 	}
 	
