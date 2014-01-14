@@ -28,6 +28,11 @@ import org.compiere.util.KeyNamePair;
 @SuppressWarnings("all")
 public interface I_W_C_BPartner 
 {
+	/** PF - Individual = PF */
+	public static final String LBR_BPTYPEBR_PF_Individual = "PF";
+	/** PJ - Legal Entity = PJ */
+	public static final String LBR_BPTYPEBR_PJ_LegalEntity = "PJ";
+	
     /** Column name LBR_BPTypeBR */
     public static final String COLUMNNAME_LBR_BPTypeBR = "LBR_BPTypeBR";
 

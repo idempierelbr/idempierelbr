@@ -5,8 +5,10 @@ import java.util.Properties;
 import org.adempiere.base.IColumnCallout;
 import org.compiere.model.GridField;
 import org.compiere.model.GridTab;
-import org.idempierelbr.core.model.MBPartnerLBRCore;
-import org.idempierelbr.core.model.MBPartnerLocationLBRCore;
+import org.compiere.model.MBPartner;
+import org.compiere.model.MBPartnerLocation;
+import org.idempierelbr.core.wrapper.I_W_C_BPartner;
+import org.idempierelbr.core.wrapper.I_W_C_BPartner_Location;
 
 public class CalloutBPartner implements IColumnCallout {
 
@@ -14,15 +16,15 @@ public class CalloutBPartner implements IColumnCallout {
 	public String start(Properties ctx, int WindowNo, GridTab mTab,
 			GridField mField, Object value, Object oldValue) {
 		
-		if (mTab.getTableName().equals(MBPartnerLBRCore.Table_Name))
-			if (mField.getColumnName().equals(MBPartnerLBRCore.COLUMNNAME_LBR_BPTypeBR))
+		if (mTab.getTableName().equals(MBPartner.Table_Name))
+			if (mField.getColumnName().equals(I_W_C_BPartner.COLUMNNAME_LBR_BPTypeBR))
 				return clearBPTypeBRUnnecessaryFields(mTab, value);
-			else if (mField.getColumnName().equals(MBPartnerLBRCore.COLUMNNAME_LBR_IsIEExempt))
+			else if (mField.getColumnName().equals(I_W_C_BPartner.COLUMNNAME_LBR_IsIEExempt))
 				return clearIEField(mTab, value);
 			else 
 				return null;
-		else if (mTab.getTableName().equals(MBPartnerLocationLBRCore.Table_Name))
-			if (mField.getColumnName().equals(MBPartnerLocationLBRCore.COLUMNNAME_LBR_IsIEExempt))
+		else if (mTab.getTableName().equals(MBPartnerLocation.Table_Name))
+			if (mField.getColumnName().equals(I_W_C_BPartner_Location.COLUMNNAME_LBR_IsIEExempt))
 				return clearIEField(mTab, value);
 			else 
 				return null;
@@ -36,10 +38,10 @@ public class CalloutBPartner implements IColumnCallout {
 	private String clearIEField(GridTab mTab, Object value) {
 		String columnName = "";
 		
-		if (mTab.getTableName().equals(MBPartnerLBRCore.Table_Name))
-			columnName = MBPartnerLBRCore.COLUMNNAME_LBR_IE;
-		else if (mTab.getTableName().equals(MBPartnerLocationLBRCore.Table_Name))
-			columnName = MBPartnerLocationLBRCore.COLUMNNAME_LBR_IE;
+		if (mTab.getTableName().equals(MBPartner.Table_Name))
+			columnName = I_W_C_BPartner.COLUMNNAME_LBR_IE;
+		else if (mTab.getTableName().equals(MBPartnerLocation.Table_Name))
+			columnName = I_W_C_BPartner_Location.COLUMNNAME_LBR_IE;
 		
 		String ie = (String) mTab.getValue(columnName);
 		
@@ -54,21 +56,21 @@ public class CalloutBPartner implements IColumnCallout {
 	*/
 	private String clearBPTypeBRUnnecessaryFields(GridTab mTab, Object value) {
 		if (value == null || value.equals("")) {
-			mTab.setValue(MBPartnerLBRCore.COLUMNNAME_LBR_CNPJ, null);
-			mTab.setValue(MBPartnerLBRCore.COLUMNNAME_LBR_CCM, null);
-			mTab.setValue(MBPartnerLBRCore.COLUMNNAME_LBR_Suframa, null);
-			mTab.setValue(MBPartnerLBRCore.COLUMNNAME_LBR_CPF, null);
-			mTab.setValue(MBPartnerLBRCore.COLUMNNAME_LBR_RG, null);
-			mTab.setValue(MBPartnerLBRCore.COLUMNNAME_LBR_IsIEExempt, false);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_CNPJ, null);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_CCM, null);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_Suframa, null);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_CPF, null);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_RG, null);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_IsIEExempt, false);
 		} else if (value.equals("PF")) {
-			mTab.setValue(MBPartnerLBRCore.COLUMNNAME_LBR_CNPJ, null);
-			mTab.setValue(MBPartnerLBRCore.COLUMNNAME_LBR_CCM, null);
-			mTab.setValue(MBPartnerLBRCore.COLUMNNAME_LBR_Suframa, null);
-			mTab.setValue(MBPartnerLBRCore.COLUMNNAME_LBR_IsIEExempt, true);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_CNPJ, null);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_CCM, null);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_Suframa, null);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_IsIEExempt, true);
 		} else if (value.equals("PJ")) {
-			mTab.setValue(MBPartnerLBRCore.COLUMNNAME_LBR_CPF, null);
-			mTab.setValue(MBPartnerLBRCore.COLUMNNAME_LBR_RG, null);
-			mTab.setValue(MBPartnerLBRCore.COLUMNNAME_LBR_IsIEExempt, false);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_CPF, null);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_RG, null);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_IsIEExempt, false);
 		}
 		
 		clearIEField(mTab, value);	

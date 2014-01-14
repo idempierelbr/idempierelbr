@@ -5,8 +5,10 @@ import java.util.List;
 
 import org.adempiere.base.IColumnCallout;
 import org.adempiere.base.IColumnCalloutFactory;
-import org.idempierelbr.core.model.MBPartnerLBRCore;
-import org.idempierelbr.core.model.MBPartnerLocationLBRCore;
+import org.compiere.model.MBPartner;
+import org.compiere.model.MBPartnerLocation;
+import org.idempierelbr.core.wrapper.I_W_C_BPartner;
+import org.idempierelbr.core.wrapper.I_W_C_BPartner_Location;
 
 /**
  * Esta classe é uma implementação da callout factory.
@@ -22,15 +24,15 @@ public class CalloutFactory implements IColumnCalloutFactory {
 		List<IColumnCallout> callouts = new ArrayList<IColumnCallout>();
 		
 		// Tabela C_BPartner
-		if (tableName.equals(MBPartnerLBRCore.Table_Name)) {
-			if (columnName.equals(MBPartnerLBRCore.COLUMNNAME_LBR_BPTypeBR) ||
-					columnName.equals(MBPartnerLBRCore.COLUMNNAME_LBR_IsIEExempt))
+		if (tableName.equals(MBPartner.Table_Name)) {
+			if (columnName.equals(I_W_C_BPartner.COLUMNNAME_LBR_BPTypeBR) ||
+					columnName.equals(I_W_C_BPartner.COLUMNNAME_LBR_IsIEExempt))
 				 callouts.add(new CalloutBPartner());
 		}
 		
 		// Tabela C_BPartner_Location
-		if (tableName.equals(MBPartnerLocationLBRCore.Table_Name)) {
-			if (columnName.equals(MBPartnerLBRCore.COLUMNNAME_LBR_IsIEExempt))
+		if (tableName.equals(MBPartnerLocation.Table_Name)) {
+			if (columnName.equals(I_W_C_BPartner_Location.COLUMNNAME_LBR_IsIEExempt))
 				 callouts.add(new CalloutBPartner());
 		}
 		
