@@ -1109,7 +1109,7 @@ Problema: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="377" trl="Y">
-  <value column="MsgText" original="{0} Line(s) - {1,number,#,##0.00} -  Total: {2,number,#,##0.00}  {3}  =  {4,number,#,##0.00}">{0} Linha(s) - {1,number,#,##0.00} -  Total: {2,number,#,##0.00}  {3}  =  {4,number,#,##0.00}</value>
+  <value column="MsgText" original="{0,choice,0#No Lines|1#1 Line|1&lt;{0} Lines} - {1,number,#,##0.00} - Total: {2,number,#,##0.00} {3} = {4,number,#,##0.00}">{0} Linha(s) - {1,number,#,##0.00} -  Total: {2,number,#,##0.00}  {3}  =  {4,number,#,##0.00}</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="378" trl="Y">
@@ -2353,7 +2353,7 @@ Detalhes: </value>
   <value column="MsgTip" original="Check Language Setup">Conferir Configuração de Idioma</value>
  </row>
  <row id="695" trl="Y">
-  <value column="MsgText" original="No Product Attribute Set defined">Não há Conjunto de Atributos de Produto definido</value>
+  <value column="MsgText" original="No Product Attribute Set defined">O conjunto de atributos do produto não foi definido</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="696" trl="Y">
@@ -2441,7 +2441,7 @@ Detalhes: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="717" trl="Y">
-  <value column="MsgText" original="Edit Record">Edite o Registro</value>
+  <value column="MsgText" original="Edit Record">Editar Registro</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="718" trl="Y">

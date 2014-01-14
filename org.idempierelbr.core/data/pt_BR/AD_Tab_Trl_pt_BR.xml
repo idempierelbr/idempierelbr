@@ -6186,4 +6186,22 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200114" trl="N">
+  <value column="Name" original="Status Line">Status Line</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200115" trl="N">
+  <value column="Name" original="Used In">Used In</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="07721587-32fd-4a79-b306-94c8ed672f52">
+  <value column="Name" original="NCM">NCM</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

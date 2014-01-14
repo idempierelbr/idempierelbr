@@ -1173,10 +1173,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="263" trl="Y">
-  <value column="Name" original="Account Date">Data da Conta</value>
-  <value column="PrintName" original="Acct Date">Data da Conta</value>
-  <value column="Description" original="Accounting Date">Data Contábil</value>
-  <value column="Help" original="The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion.">A "Data Contábil" indica a data a ser usada nos registros do livro de razão geral gerados a partir deste documento. É também usada para qualquer conversão de moeda.</value>
+  <value column="Name" original="Account Date">Data Contábil</value>
+  <value column="PrintName" original="Acct Date">Data Contábil</value>
+  <value column="Description" original="Accounting Date">Data Contábil do Registro</value>
+  <value column="Help" original="The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion.">Indica a data a ser usada nos registros do livro de razão geral gerados a partir deste documento. É também usada para conversões de câmbio.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1634,8 +1634,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
  <row id="326" trl="Y">
   <value column="Name" original="Comment/Help">Comentário/Ajuda</value>
   <value column="PrintName" original="Comment">Comentário</value>
-  <value column="Description" original="Comment or Hint">Comentário ou Dica</value>
-  <value column="Help" original="The Help field contains a hint, comment or help about the use of this item.">O campo "Ajuda" contém uma dica, comentário ou ajuda sobre o uso deste item.</value>
+  <value column="Description" original="Comment or Hint">Comentário ou Sugestão</value>
+  <value column="Help" original="The Help field contains a hint, comment or help about the use of this item.">Um comentário, ajuda ou sugestão sobre o uso deste item.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -3013,10 +3013,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="549" trl="Y">
-  <value column="Name" original="SKU">UCE</value>
-  <value column="PrintName" original="SKU">UCE</value>
-  <value column="Description" original="Stock Keeping Unit">Unidade de Controle de Estoque</value>
-  <value column="Help" original="The SKU indicates a user defined stock keeping unit.  It may be used for an additional bar code symbols or your own schema.">A UCE indica uma unidade de controle de estoque definida pelo usuário.  Ela pode ser usada para símbolos de código de barras adicionais ou seu próprio esquema.</value>
+  <value column="Name" original="SKU">UCE/SKU</value>
+  <value column="PrintName" original="SKU">UCE/SKU</value>
+  <value column="Description" original="Stock Keeping Unit">Unidade de Controle de Estoque (SKU)</value>
+  <value column="Help" original="The SKU indicates a user defined stock keeping unit.  It may be used for an additional bar code symbols or your own schema.">A UCE/SKU indica uma unidade de controle de estoque definida pelo usuário.  Ela pode ser usada para símbolos de código de barras adicionais ou seu próprio esquema.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -3847,8 +3847,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
  <row id="852" trl="Y">
   <value column="Name" original="Classification">Classificação</value>
   <value column="PrintName" original="Classification">Classificação</value>
-  <value column="Description" original="Classification for grouping">Classificação por grupo</value>
-  <value column="Help" original="The Classification can be used to optionally group products.">A "Classificação" pode ser usada para opcionalmente agrupar produtos.</value>
+  <value column="Description" original="Classification for grouping">Classificação para agrupamento</value>
+  <value column="Help" original="The Classification can be used to optionally group products.">Este campo pode ser usado como uma opção para agrupar produtos.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4845,14 +4845,14 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1063" trl="Y">
-  <value column="Name" original="Sales Representative">Representante de Vendas</value>
-  <value column="PrintName" original="Sales Rep">Representante de Vendas</value>
-  <value column="Description" original="Sales Representative or Company Agent">Representante de Vendas ou Promotor de Vendas da Companhia</value>
-  <value column="Help" original="The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user.">O campo "Representante de Vendas" indica o representante de vendas para esta região.  Qualquer Representante de Vendas tem que ser um usuário interno válido.</value>
-  <value column="PO_Description" original="Purchase or Company Agent">Representante da Companhia ou Comprador</value>
-  <value column="PO_Help" original="Purchase agent for the document. Any Sales Rep must be a valid internal user.">Agente de Compras para o documento. Qualquer Representante de Vendas tem que ser um usuário interno válido.</value>
-  <value column="PO_Name" original="Company Agent">Agente da Companhia</value>
-  <value column="PO_PrintName" original="Agent">Agente</value>
+  <value column="Name" original="Sales Representative">Representante</value>
+  <value column="PrintName" original="Sales Rep">Representante</value>
+  <value column="Description" original="Sales Representative or Company Agent">Representante da Empresa/Organização (Vendedor, Comprador ou Responsável)</value>
+  <value column="Help" original="The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user.">O Representante é todo/qualquer usuário interno válido.</value>
+  <value column="PO_Description" original="Purchase or Company Agent">Representante da Empresa/Organização (Vendedor, Comprador ou Responsável)</value>
+  <value column="PO_Help" original="Purchase agent for the document. Any Sales Rep must be a valid internal user.">O Representante é todo/qualquer usuário interno válido.</value>
+  <value column="PO_Name" original="Company Agent">Representante</value>
+  <value column="PO_PrintName" original="Agent">Representante</value>
  </row>
  <row id="1065" trl="Y">
   <value column="Name" original="Price includes Tax">Preço Inclui Imposto</value>
@@ -5555,20 +5555,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1175" trl="Y">
-  <value column="Name" original="Print detail records on invoice ">Imprimir Registros detalhados na Fatura </value>
-  <value column="PrintName" original="Print detail on invoice">Imprimir Detalhes na Fatura</value>
-  <value column="Description" original="Print detail BOM elements on the invoice">Imprimir elementos da LDM detalhados na Fatura</value>
-  <value column="Help" original="The Print Details on Invoice indicates that the BOM element products will print on the Invoice as opposed to this product.">A caixa de verificação "Imprimir Detalhes na Fatura" indica que os elementos da LDM deste Produto serão impressos na Nota Fiscal / Fatura em oposição a imprimir apenas o Produto principal.</value>
+  <value column="Name" original="Print detail records on invoice ">Detalhar Componentes na Fatura</value>
+  <value column="PrintName" original="Print detail on invoice">Detalhar Componentes na Fatura</value>
+  <value column="Description" original="Print detail BOM elements on the invoice">Detalhar Componentes da LDM na Fatura</value>
+  <value column="Help" original="The Print Details on Invoice indicates that the BOM element products will print on the Invoice as opposed to this product.">Indica se todos os componentes da LDM do produto serão detalhados na fatura, ou apenas o produto principal.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1176" trl="Y">
-  <value column="Name" original="Print detail records on pick list">Imprimir registros detalhados na Lista de Separação</value>
-  <value column="PrintName" original="Print detail records on pick list">Imprimir registros detalhados na Lista de Separação</value>
-  <value column="Description" original="Print detail BOM elements on the pick list">Imprimir elementos da LDM detalhados na lista de separação</value>
-  <value column="Help" original="The Print Details on Pick List indicates that the BOM element products will print on the Pick List as opposed to this product.">A caixa de verificação "Imprimir Detalhes na lista de separação" indica que os elementos da LDM deste Produto serão impressos na lista de separação em oposição a imprimir apenas o Produto principal.</value>
+  <value column="Name" original="Print detail records on pick list">Detalhar Componentes na Picking List</value>
+  <value column="PrintName" original="Print detail records on pick list">Detalhar Componentes na Picking List</value>
+  <value column="Description" original="Print detail BOM elements on the pick list">Detalhar Componentes da LDM na Picking List</value>
+  <value column="Help" original="The Print Details on Pick List indicates that the BOM element products will print on the Pick List as opposed to this product.">Indica se todos os componentes da LDM do produto serão detalhados na picking list, ou apenas o produto principal.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -9662,7 +9662,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="Name" original="Image URL">URL da Imagem</value>
   <value column="PrintName" original="Image URL">URL da Imagem</value>
   <value column="Description" original="URL of  image">URL da imagem</value>
-  <value column="Help" original="URL of image; The image is not stored in the database, but retrieved at runtime. The image can be a gif, jpeg or png.">URL da imagem; A imagem não é arquivada no Banco de Dados, e sim recuperada em tempo de execução. A imagem pode ser gif, jpeg ou png (linux).</value>
+  <value column="Help" original="URL of image; The image is not stored in the database, but retrieved at runtime. The image can be a gif, jpeg or png.">URL da imagem. A imagem não é arquivada no Banco de Dados, e sim recuperada em tempo de execução. A imagem pode ser gif, jpeg ou png (linux).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -11522,7 +11522,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="1920" trl="Y">
   <value column="Name" original="Description URL">URL da Descrição</value>
   <value column="PrintName" original="Description URL">URL da Descrição</value>
-  <value column="Description" original="URL for the description">URL para a descrição</value>
+  <value column="Description" original="URL for the description">URL da Descrição</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -11681,9 +11681,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  </row>
  <row id="1937" trl="Y">
   <value column="Name" original="Guarantee Days">Prazo de Validade</value>
-  <value column="PrintName" original="Guarantee days">Dias de Garantia</value>
-  <value column="Description" original="Number of days the product is guaranteed or available">Número de dias que o produto está garantido ou disponível</value>
-  <value column="Help" original="If the value is 0, there is no limit to the availability or guarantee, otherwise the guarantee date is calculated by adding the days to the delivery date.">Se o valor for 0, não há limite de disponibilidade ou de validade, de outro modo, a data de vencimento da validade é calculada adicionando-se os dias de garantia à data de entrega.</value>
+  <value column="PrintName" original="Guarantee days">Prazo de Validade</value>
+  <value column="Description" original="Number of days the product is guaranteed or available">Prazo de Garantia/Validade (em dias)</value>
+  <value column="Help" original="If the value is 0, there is no limit to the availability or guarantee, otherwise the guarantee date is calculated by adding the days to the delivery date.">Se o valor for 0, a garantia/validade/disponibilidade é por tempo ilimitado. Caso contrário, a garantia é calculada adicionando-se os dias informados à data de entrega.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -12870,10 +12870,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2063" trl="Y">
-  <value column="Name" original="Self-Service">Auto-Serviço</value>
-  <value column="PrintName" original="Self-Service">Auto-Serviço</value>
-  <value column="Description" original="This is a Self-Service entry or this entry can be changed via Self-Service">Este é um lançamento de Auto-Serviço ou este lançamento pode ser alterado via Auto-Serviço</value>
-  <value column="Help" original="Self-Service allows users to enter data or update their data.  The flag indicates, that this record was entered or created via Self-Service or that the user can change it via the Self-Service functionality.">O Auto-Serviço permite aos usuários introduzir ou atualizar seus dados.  O sinalizador indica que este registro foi introduzido ou criado via Auto-Serviço ou que o usuário pode alterá-lo por meio da funcionalidade de Auto-Serviço.</value>
+  <value column="Name" original="Self-Service">Self-Service</value>
+  <value column="PrintName" original="Self-Service">Self-Service</value>
+  <value column="Description" original="This is a Self-Service entry or this entry can be changed via Self-Service">É um registro efetuado (ou que pode ser alterado) via Self-Service</value>
+  <value column="Help" original="Self-Service allows users to enter data or update their data.  The flag indicates, that this record was entered or created via Self-Service or that the user can change it via the Self-Service functionality.">O Self-Service permite aos usuários externos criar ou atualizar dados. Se estiver selecionado, indica que o registro foi criado via Self-Service ou que o usuário pode alterá-lo por meio da funcionalidade.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -14124,9 +14124,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2197" trl="Y">
-  <value column="Name" original="Min Guarantee Days">Prazo de Validade Mín.</value>
-  <value column="PrintName" original="Min Guarantee">Validade Mínima</value>
-  <value column="Description" original="Minimum number of guarantee days">Mínimo número de dias de garantia (prazo de validade)</value>
+  <value column="Name" original="Min Guarantee Days">Prazo Mín. de Validade</value>
+  <value column="PrintName" original="Min Guarantee">Prazo Mín. de Validade</value>
+  <value column="Description" original="Minimum number of guarantee days">Prazo Mínimo de Garantia/Validade (em dias)</value>
   <value column="Help" original="When selecting batch/products with a guarantee date, the minimum left guarantee days for automatic picking.  You can pick any batch/product manually. ">É o número mínimo de dias restantes do prazo de validade para escolha automática quando se seleciona produtos/lotes com data de validade.  Você pode escolher qualquer produto/lote manualmente. </value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -14864,10 +14864,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2277" trl="Y">
-  <value column="Name" original="Featured in Web Store">Promovido na Loja Virtual da Web</value>
-  <value column="PrintName" original="Featured">Promovido na Web</value>
-  <value column="Description" original="If selected, the product is displayed in the initial or any empty search">Se selecionado, o produto será exibido numa tela inicial ou numa pesquisa ainda em vazio</value>
-  <value column="Help" original="In the display of products in the Web Store, the product is displayed in the initial view or if no search criteria are entered. To be displayed, the product must be in the price list used.">Na exibição de produtos da loja virtual da Web, o produto será exibido na tela inicial ou se não houver sido preenchido nenhum critério de busca. Para ser exibido, o produto deverá estar na lista de preços utilizada.</value>
+  <value column="Name" original="Featured in Web Store">Em Destaque na Loja Virtual</value>
+  <value column="PrintName" original="Featured">Em Destaque na Loja Virtual</value>
+  <value column="Description" original="If selected, the product is displayed in the initial or any empty search">Indica se o produto será exibido numa tela inicial ou numa pesquisa geral</value>
+  <value column="Help" original="In the display of products in the Web Store, the product is displayed in the initial view or if no search criteria are entered. To be displayed, the product must be in the price list used.">O produto será exibido na tela inicial ou nos resultados de busca (se não houver sido preenchido nenhum critério de busca). Para ser exibido, o produto deverá estar na lista de preços utilizada pela loja virtual.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -19675,10 +19675,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2788" trl="Y">
-  <value column="Name" original="Phantom">Fantasma</value>
-  <value column="PrintName" original="Phantom">Fantasma</value>
-  <value column="Description" original="Phantom Component">Componente Fantasma</value>
-  <value column="Help" original="Phantom Component are not stored and produced with the product. This is an option to avild maintaining an Engineering and Manufacturing Bill of Materials.">"Componentes Fantasma" não são armazenados e produzidos com o produto. Isto é uma opção para evitar gerenciar Listas de Materiais separadas para engenharia e fabricação.</value>
+  <value column="Name" original="Phantom">Item Fantasma</value>
+  <value column="PrintName" original="Phantom">Item Fantasma</value>
+  <value column="Description" original="Phantom Component">Item Fantasma</value>
+  <value column="Help" original="Phantom Component are not stored and produced with the product. This is an option to avild maintaining an Engineering and Manufacturing Bill of Materials.">"Itens Fantasmas" não são armazenados e produzidos com o produto. Isto é uma opção para evitar gerenciar Listas de Materiais separadas para engenharia e fabricação.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -20436,10 +20436,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2867" trl="Y">
-  <value column="Name" original="Exclude Auto Delivery">Exclui Despacho Auto</value>
-  <value column="PrintName" original="Exclude Delivery">Exclui Despacho</value>
-  <value column="Description" original="Exclude from automatic Delivery">Exclui do fornecimento automático</value>
-  <value column="Help" original="The product is excluded from generating Shipments.  This allows manual creation of shipments for high demand items. If selected, you need to create the shipment manually.&#10;But, the item is always included, when the delivery rule of the Order is Force (e.g. for POS). &#10;This allows finer granularity of the Delivery Rule Manual.">O produto é excluído da geração de expedição.  Isto permite a criação manual de entregas para items de alta demanda. Se selecionado, você precisa criar a expedição manualmente. Porém o item é sempre incluído quando a "Regra de Entrega" for Forçar (por ex. para PDV). Isto permite uma granularidade mais fina da "Regra de Entrega Manual".</value>
+  <value column="Name" original="Exclude Auto Delivery">Excluído de Remessa Automática</value>
+  <value column="PrintName" original="Exclude Delivery">Excluído de Remessa Automática</value>
+  <value column="Description" original="Exclude from automatic Delivery">Excluído de Remessa Automática</value>
+  <value column="Help" original="The product is excluded from generating Shipments.  This allows manual creation of shipments for high demand items. If selected, you need to create the shipment manually.&#10;But, the item is always included, when the delivery rule of the Order is Force (e.g. for POS). &#10;This allows finer granularity of the Delivery Rule Manual.">O item é excluído da geração automática de remessas, mas permite a inclusão quando a remessa for criada manualmente. Se selecionada, a remessa precisa ser criada manualmente. Exceção: o item será incluído caso a regra de entrega for 'Forçar' (ex: PDV). Isso permite uma maior granularidade da regra de entrega 'Manual'.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -23617,8 +23617,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="52018" trl="Y">
-  <value column="Name" original="Group1">Group1</value>
-  <value column="PrintName" original="Group1">Group1</value>
+  <value column="Name" original="Group1">Grupo 1</value>
+  <value column="PrintName" original="Group1">Grupo 1</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -23627,8 +23627,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="52019" trl="Y">
-  <value column="Name" original="Group2">Group2</value>
-  <value column="PrintName" original="Group2">Group2</value>
+  <value column="Name" original="Group2">Grupo 2</value>
+  <value column="PrintName" original="Group2">Grupo 2</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -37816,20 +37816,20 @@ Product: used to quickly add products to POS order</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="55244" trl="N">
-  <value column="Name" original="Kanban controlled">Kanban controlled</value>
-  <value column="PrintName" original="Kanban controlled">Kanban controlled</value>
-  <value column="Description" original="This part is Kanban controlled">This part is Kanban controlled</value>
+ <row id="55244" trl="Y">
+  <value column="Name" original="Kanban controlled">Controlado por Kanban</value>
+  <value column="PrintName" original="Kanban controlled">Controlado por Kanban</value>
+  <value column="Description" original="This part is Kanban controlled">Este item é controlado por Kanban</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="55245" trl="N">
-  <value column="Name" original="Manufactured">Manufactured</value>
-  <value column="PrintName" original="Manufactured">Manufactured</value>
-  <value column="Description" original="This product is manufactured">This product is manufactured</value>
+ <row id="55245" trl="Y">
+  <value column="Name" original="Manufactured">Produção Interna</value>
+  <value column="PrintName" original="Manufactured">Produção Interna</value>
+  <value column="Description" original="This product is manufactured">Define se o item é produzido pela empresa/organização</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -40516,9 +40516,9 @@ Product: used to quickly add products to POS order</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200323" trl="N">
-  <value column="Name" original="Own Box">Own Box</value>
-  <value column="PrintName" original="Own Box">Own Box</value>
+ <row id="200323" trl="Y">
+  <value column="Name" original="Own Box">Embalagem Própria</value>
+  <value column="PrintName" original="Own Box">Embalagem Própria</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54781,6 +54781,56 @@ if this field is left empty a default title/label is created using the DocumentN
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="202635" trl="N">
+  <value column="Name" original="Status Line">Status Line</value>
+  <value column="PrintName" original="Status Line">Status Line</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202636" trl="N">
+  <value column="Name" original="AD_StatusLine_UU">AD_StatusLine_UU</value>
+  <value column="PrintName" original="AD_StatusLine_UU">AD_StatusLine_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202637" trl="N">
+  <value column="Name" original="AD_StatusLineUsedIn">AD_StatusLineUsedIn</value>
+  <value column="PrintName" original="AD_StatusLineUsedIn">AD_StatusLineUsedIn</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202638" trl="N">
+  <value column="Name" original="AD_StatusLineUsedIn_UU">AD_StatusLineUsedIn_UU</value>
+  <value column="PrintName" original="AD_StatusLineUsedIn_UU">AD_StatusLineUsedIn_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202639" trl="N">
+  <value column="Name" original="Status Line">Status Line</value>
+  <value column="PrintName" original="Status Line">Status Line</value>
+  <value column="Description" original="Defines if this record refers to a status line or to a help widget">Defines if this record refers to a status line or to a help widget</value>
+  <value column="Help" original="If checked the definition corresponds to a status line, when unchecked it corresponds to a help widget">If checked the definition corresponds to a status line, when unchecked it corresponds to a help widget</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row trl="Y" uuid="2db1c9d3-13bf-4539-baa0-45ccfb09a7a3">
   <value column="Name" original="Cód. Cidade (IBGE)">Carteira</value>
   <value column="PrintName" original="Cód. Cidade (IBGE)">Carteira</value>
@@ -54896,6 +54946,26 @@ if this field is left empty a default title/label is created using the DocumentN
   <value column="PrintName" original="Brazilian BP Valid">Informações Validadas</value>
   <value column="Description" original="Brazilian BP is Valid">Identifica se os dados brasileiros foram validados</value>
   <value column="Help" original="Indicates the CNPJ/CPF is valid and there are no duplicates in DB. It's not possible to change CNPJ/CPF after validation">Identifica se os dados brasileiros foram validados, como por exemplo os campos CPF e CNPJ</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="17b475c9-2cc0-46b1-ba1d-303850be26a4">
+  <value column="Name" original="NCM">NCM</value>
+  <value column="PrintName" original="NCM">NCM</value>
+  <value column="Description" original="NCM stands for Nomenclatura Comum do MERCOSUL">NCM stands for Nomenclatura Comum do MERCOSUL</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="f7ee0a08-71ef-472b-b850-96743d035883">
+  <value column="Name" original="LBR_NCM_UU">LBR_NCM_UU</value>
+  <value column="PrintName" original="LBR_NCM_UU">LBR_NCM_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>

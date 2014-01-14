@@ -2064,4 +2064,14 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200049" trl="N">
+  <value column="Name" original="Status Line">Status Line</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="68928e29-e04a-4d4d-92ee-d230e06891f7">
+  <value column="Name" original="NCM">NCM</value>
+  <value column="Description" original="NCM stands for Nomenclatura Comum do MERCOSUL">NCM - Nomenclatura Comum do MERCOSUL</value>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>
