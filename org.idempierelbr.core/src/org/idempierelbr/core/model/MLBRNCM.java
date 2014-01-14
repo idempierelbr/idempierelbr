@@ -8,16 +8,24 @@ import org.compiere.util.Env;
 import org.compiere.util.Msg;
 
 public class MLBRNCM extends X_LBR_NCM {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -1930353726645380739L;
 
+	/**
+	 * 	Default Constructor
+	 * 	@param ctx context
+	 * 	@param LBR_NCM_ID ncm or 0
+	 * 	@param trxName transaction
+	 */
 	public MLBRNCM(Properties ctx, int LBR_NCM_ID, String trxName) {
 		super(ctx, LBR_NCM_ID, trxName);
 	}
 	
+	/**
+	 * 	Default Constructor
+	 * 	@param ctx context
+	 * 	@param rs ResultSet to load from
+	 * 	@param trxName transaction
+	 */
 	public MLBRNCM(Properties ctx, ResultSet rs, String trxName) {
 		super(ctx, rs, trxName);
 	}
