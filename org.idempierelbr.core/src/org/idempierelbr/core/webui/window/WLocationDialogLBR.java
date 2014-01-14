@@ -277,7 +277,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 		confirmPanel = new ConfirmPanel(true);
 		confirmPanel.addActionListener(this);
 		
-		getCepZipAddress = new Button(Msg.getMsg(Env.getCtx(), "GetCepZipAddress"));
+		getCepZipAddress = new Button(Msg.getMsg(Env.getCtx(), "LBR_QueryCEPZIP"));
 		LayoutUtils.addSclass("txt-btn", getCepZipAddress);
 		getCepZipAddress.addEventListener(Events.ON_CLICK,this);
 		toLink = new Button(Msg.getMsg(Env.getCtx(), "Map"));
