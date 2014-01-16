@@ -30,9 +30,6 @@ ALTER TABLE LBR_LegalMessage ADD CONSTRAINT ADClient_LBRLegalMessage FOREIGN KEY
 UPDATE AD_Column SET IsMandatory='Y',Updated=TO_DATE('2014-01-16 10:29:56','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Column_ID=1000030
 ;
 
-SELECT lbr_register_migration_script('201401161052.sql') FROM dual
-;
-
 -- 16/01/2014 10h30min19s BRST
 INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,DefaultValue,Help,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,AD_Client_ID,IsEncrypted,IsSecure,AD_Element_ID,AD_Reference_ID,AD_Table_ID,AD_Val_Rule_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,1000031,'N','N','N',0,'N',22,'N','N','N','Y','19271062-a938-4dd2-9ede-4a0c79cf2276','N','AD_Org_ID','Organizational entity within client','@#AD_Org_ID@','An organization is a unit of your client or legal entity - examples are store, department. You can share data between organizations.','Organization','N',TO_DATE('2014-01-16 10:30:19','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2014-01-16 10:30:19','YYYY-MM-DD HH24:MI:SS'),0,'N','N',0,'N','N',113,19,1000001,104,0,'LBR')
 ;
@@ -457,3 +454,5 @@ UPDATE AD_TreeNodeMM SET Parent_ID=1000000, SeqNo=0, Updated=SysDate WHERE AD_Tr
 UPDATE AD_TreeNodeMM SET Parent_ID=1000000, SeqNo=1, Updated=SysDate WHERE AD_Tree_ID=10 AND Node_ID=1000002
 ;
 
+SELECT lbr_register_migration_script('201401161052.sql') FROM dual
+;
