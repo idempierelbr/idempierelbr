@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//migration/i2.0/oracle/201401040946.sql=UTF-8
 encoding//migration/i2.0/oracle/201401131327.sql=UTF-8
+encoding//migration/i2.0/oracle/201401161227.sql=UTF-8
 encoding//migration/i2.0/postgresql/201401040946.sql=UTF-8
 encoding//migration/i2.0/postgresql/201401131327.sql=UTF-8
+encoding//migration/i2.0/postgresql/201401161227.sql=UTF-8
