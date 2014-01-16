@@ -20,6 +20,8 @@ public class ModelFactory implements IModelFactory {
 			return X_LBR_LegalMessage.class;
 		else if (tableName.equals(X_LBR_TaxGroup.Table_Name)) // Model X_LBR_TaxGroup
 			return X_LBR_TaxGroup.class;
+		else if (tableName.equals(X_LBR_FiscalGroup_Product.Table_Name)) // Model X_LBR_FiscalGroup_Product
+			return X_LBR_FiscalGroup_Product.class;
 		
 		return null;
 	}
@@ -30,6 +32,8 @@ public class ModelFactory implements IModelFactory {
 			return new X_LBR_LegalMessage(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(X_LBR_TaxGroup.Table_Name)) // Model X_LBR_TaxGroup
 			return new X_LBR_TaxGroup(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_FiscalGroup_Product.Table_Name)) // Model X_LBR_FiscalGroup_Product
+			return new X_LBR_FiscalGroup_Product(Env.getCtx(), Record_ID, trxName);
 		
 		return null;
 	}
@@ -40,6 +44,8 @@ public class ModelFactory implements IModelFactory {
 			return new X_LBR_LegalMessage(Env.getCtx(), rs, trxName);
 		if (tableName.equals(X_LBR_TaxGroup.Table_Name)) // Model X_LBR_TaxGroup
 			return new X_LBR_TaxGroup(Env.getCtx(), rs, trxName);
+		if (tableName.equals(X_LBR_FiscalGroup_Product.Table_Name)) // Model X_LBR_FiscalGroup_Product
+			return new X_LBR_FiscalGroup_Product(Env.getCtx(), rs, trxName);
 		
 		return null;
 	}
