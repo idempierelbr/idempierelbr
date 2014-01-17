@@ -24,8 +24,10 @@ public class ModelFactory implements IModelFactory {
 			return X_LBR_FiscalGroup_Product.class;
 		else if (tableName.equals(X_LBR_FiscalGroup_BPartner.Table_Name)) // Model X_LBR_FiscalGroup_BPartner
 			return X_LBR_FiscalGroup_BPartner.class;
-		else if (tableName.equals(X_LBR_ProductCategory.Table_Name)) // Model X_LBR_X_LBR_ProductCategory
+		else if (tableName.equals(X_LBR_ProductCategory.Table_Name)) // Model X_LBR_ProductCategory
 			return X_LBR_ProductCategory.class;
+		else if (tableName.equals(X_LBR_BPartnerCategory.Table_Name)) // Model X_LBR_BPartnerCategory
+			return X_LBR_BPartnerCategory.class;
 		
 		return null;
 	}
@@ -42,6 +44,8 @@ public class ModelFactory implements IModelFactory {
 			return new X_LBR_FiscalGroup_BPartner(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(X_LBR_ProductCategory.Table_Name)) // Model X_LBR_ProductCategory
 			return new X_LBR_ProductCategory(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_BPartnerCategory.Table_Name)) // Model X_LBR_BPartnerCategory
+			return new X_LBR_BPartnerCategory(Env.getCtx(), Record_ID, trxName);
 		
 		return null;
 	}
@@ -58,6 +62,8 @@ public class ModelFactory implements IModelFactory {
 			return new X_LBR_FiscalGroup_BPartner(Env.getCtx(), rs, trxName);
 		if (tableName.equals(X_LBR_ProductCategory.Table_Name)) // Model X_LBR_ProductCategory
 			return new X_LBR_ProductCategory(Env.getCtx(), rs, trxName);
+		if (tableName.equals(X_LBR_BPartnerCategory.Table_Name)) // Model X_LBR_BPartnerCategory
+			return new X_LBR_BPartnerCategory(Env.getCtx(), rs, trxName);
 		
 		return null;
 	}
