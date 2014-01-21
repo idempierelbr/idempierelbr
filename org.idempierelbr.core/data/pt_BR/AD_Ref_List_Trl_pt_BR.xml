@@ -271,11 +271,11 @@
   <value column="Description" original="Reference -&gt;"><![CDATA[Referência ->]]></value>
  </row>
  <row id="164" trl="Y">
-  <value column="Name" original="Drafted">Esboçado</value>
+  <value column="Name" original="Drafted">Em Rascunho</value>
   <value column="Description" original=""/>
  </row>
  <row id="165" trl="Y">
-  <value column="Name" original="Completed">Completado</value>
+  <value column="Name" original="Completed">Completo</value>
   <value column="Description" original=""/>
  </row>
  <row id="166" trl="Y">
@@ -303,47 +303,47 @@
   <value column="Description" original=""/>
  </row>
  <row id="178" trl="Y">
-  <value column="Name" original="Complete">Completo</value>
-  <value column="Description" original="Generate documents and complete transaction">Gerar documentos e completar transação</value>
+  <value column="Name" original="Complete">Completar</value>
+  <value column="Description" original="Generate documents and complete transaction">Gera documentos (se aplicável) e completa a transação</value>
  </row>
  <row id="179" trl="Y">
   <value column="Name" original="Approve">Aprovar</value>
-  <value column="Description" original="Approve this transaction">Aprovar esta transação</value>
+  <value column="Description" original="Approve this transaction">Aprova a transação</value>
  </row>
  <row id="180" trl="Y">
   <value column="Name" original="Reject">Rejeitar</value>
-  <value column="Description" original="Reject the approval of the document. ">Rejeitar a aprovação deste documento. </value>
+  <value column="Description" original="Reject the approval of the document. ">Rejeita (não aprova) a transação</value>
  </row>
  <row id="181" trl="Y">
   <value column="Name" original="Post">Lançar</value>
-  <value column="Description" original="Post transaction">Lançar transação</value>
+  <value column="Description" original="Post transaction">Lança (contabilmente) a transação</value>
  </row>
  <row id="182" trl="Y">
-  <value column="Name" original="Void">Anulado</value>
-  <value column="Description" original="Set all quantities to zero and complete transaction">Coloque todos os valores em zero e complete a transação</value>
+  <value column="Name" original="Void">Anular</value>
+  <value column="Description" original="Set all quantities to zero and complete transaction">Zera todos os valores e finaliza a transação</value>
  </row>
  <row id="183" trl="Y">
   <value column="Name" original="Close">Fechar</value>
-  <value column="Description" original="Finally close this transaction. It cannot be re-activated.">Finalmente feche esta transação. Não pode ser reativado.</value>
+  <value column="Description" original="Finally close this transaction. It cannot be re-activated.">Fecha (encerra) a transação. Não pode ser reativada.</value>
  </row>
  <row id="184" trl="Y">
-  <value column="Name" original="Reverse - Correct">Estornar - Corrigir</value>
-  <value column="Description" original="Reverse Transaction (correction) by reversing sign with same date">Estornar Transação (correção) via reversão do sinal com a mesma data</value>
+  <value column="Name" original="Reverse - Correct">Estornar (Correção)</value>
+  <value column="Description" original="Reverse Transaction (correction) by reversing sign with same date">Estorna a transação invertendo o sinal dos valores nas colunas de Débito e Crédito. Mantém a data contábil original para o novo lançamento (correção)</value>
  </row>
  <row id="185" trl="Y">
-  <value column="Name" original="Reverse - Accrual">Estornar - Provisão</value>
-  <value column="Description" original="Reverse by switching Dr/Cr with current date">Estornar trocando Débito/Crédito com a data atual</value>
+  <value column="Name" original="Reverse - Accrual">Estornar (Complemento)</value>
+  <value column="Description" original="Reverse by switching Dr/Cr with current date">Estorna a transação invertendo os valores nas colunas de Débito e Crédito. A data do estorno (de hoje) é considerada como data contábil para o novo lançamento (complemento)</value>
  </row>
  <row id="187" trl="Y">
   <value column="Name" original="Invalidate">Invalidar</value>
-  <value column="Description" original="Invalidate Document">Invalidar o Documento</value>
+  <value column="Description" original="Invalidate Document">Invalida a transação</value>
  </row>
  <row id="188" trl="Y">
   <value column="Name" original="Re-activate">Reativar</value>
-  <value column="Description" original="Reopen Document and Reverse automatically generated documents; You need to Complete the transaction after the change. ">Reabrir o documento e estornar os documentos gerados automaticamente; Você precisa completar a transação depois da alteração. </value>
+  <value column="Description" original="Reopen Document and Reverse automatically generated documents; You need to Complete the transaction after the change. ">Reativa a transação (isso pode estornar documentos gerados automaticamente). Após as alterações, é necessário completá-la</value>
  </row>
  <row id="189" trl="Y">
-  <value column="Name" original="&lt;None&gt;"><![CDATA[<Nenhum>]]></value>
+  <value column="Name" original="&lt;None&gt;"><![CDATA[<Nenhuma>]]></value>
   <value column="Description" original="No action">Sem ação</value>
  </row>
  <row id="190" trl="Y">
@@ -419,43 +419,43 @@
   <value column="Description" original=""/>
  </row>
  <row id="214" trl="Y">
-  <value column="Name" original="After Order delivered">Após pedido despachado</value>
-  <value column="Description" original="Invoice for every order">Nota Fiscal para cada pedido</value>
+  <value column="Name" original="After Order delivered">Após todas as Entregas</value>
+  <value column="Description" original="Invoice for every order"/>
  </row>
  <row id="215" trl="Y">
-  <value column="Name" original="After Delivery">Após Entrega</value>
-  <value column="Description" original="Invoice per Delivery">Fatura por Entrega</value>
+  <value column="Name" original="After Delivery">Após cada Entrega</value>
+  <value column="Description" original="Invoice per Delivery"/>
  </row>
  <row id="216" trl="Y">
-  <value column="Name" original="Customer Schedule after Delivery">Programação do Cliente após entrega</value>
-  <value column="Description" original="Invoice per Customer Invoice Schedule">Faturar por Programação de Fatura do Cliente</value>
+  <value column="Name" original="Customer Schedule after Delivery">Programação do Cliente após Entrega</value>
+  <value column="Description" original="Invoice per Customer Invoice Schedule"/>
  </row>
  <row id="217" trl="Y">
-  <value column="Name" original="After Receipt">Após o recebimento</value>
-  <value column="Description" original="After receipt of cash">Após o recebimento em dinheiro</value>
+  <value column="Name" original="After Receipt">Após o Pagamento</value>
+  <value column="Description" original="After receipt of cash"/>
  </row>
  <row id="218" trl="Y">
-  <value column="Name" original="Availability">Disponibilidade</value>
-  <value column="Description" original="As soon as an item becomes available">Assim que um item esteja disponível</value>
+  <value column="Name" original="Availability">Disponibilidade em Estoque</value>
+  <value column="Description" original="As soon as an item becomes available"/>
  </row>
  <row id="219" trl="Y">
-  <value column="Name" original="Complete Line">Linha Completa</value>
-  <value column="Description" original="As soon as all items of a line become available">Assim que todos os itens da linha estejam disponíveis</value>
+  <value column="Name" original="Complete Line">Linha 100% em Estoque</value>
+  <value column="Description" original="As soon as all items of a line become available"/>
  </row>
  <row id="220" trl="Y">
-  <value column="Name" original="Complete Order">Pedido Completo</value>
-  <value column="Description" original="As soon as all items of an order are available">Assim que todos os itens do pedido estejam disponíveis</value>
+  <value column="Name" original="Complete Order">Pedido 100% em Estoque</value>
+  <value column="Description" original="As soon as all items of an order are available"/>
  </row>
  <row id="221" trl="Y">
-  <value column="Name" original="Immediate">Imediato</value>
-  <value column="Description" original="Immediate Invoice">Fatura Imediata</value>
+  <value column="Name" original="Immediate">Imediata</value>
+  <value column="Description" original="Immediate Invoice"/>
  </row>
  <row id="222" trl="Y">
-  <value column="Name" original="Pickup">Retirar</value>
+  <value column="Name" original="Pickup">Cliente Retira</value>
   <value column="Description" original=""/>
  </row>
  <row id="223" trl="Y">
-  <value column="Name" original="Delivery">Entrega</value>
+  <value column="Name" original="Delivery">Entrega Própria</value>
   <value column="Description" original=""/>
  </row>
  <row id="224" trl="Y">
@@ -463,16 +463,16 @@
   <value column="Description" original=""/>
  </row>
  <row id="225" trl="Y">
-  <value column="Name" original="Freight included">Frete incluso</value>
+  <value column="Name" original="Freight included">Frete Incluso</value>
   <value column="Description" original="Freight cost included">Custo do frete incluso</value>
  </row>
  <row id="226" trl="Y">
-  <value column="Name" original="Fix price">Preço fixo</value>
-  <value column="Description" original="Fixed freight price">Preço do frete fixo</value>
+  <value column="Name" original="Fix price">Frete Fixo</value>
+  <value column="Description" original="Fixed freight price">Tarifa do frete é fixa</value>
  </row>
  <row id="227" trl="Y">
-  <value column="Name" original="Calculated">Calculado</value>
-  <value column="Description" original="Calculated based on Product Freight Rule">Calculado baseado na Regra de Frete do Produto</value>
+  <value column="Name" original="Calculated">Frete Calculado</value>
+  <value column="Description" original="Calculated based on Product Freight Rule">Calculo baseado na Regra de Frete do Produto</value>
  </row>
  <row id="228" trl="Y">
   <value column="Name" original="Line">Linha</value>
@@ -811,7 +811,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="334" trl="Y">
-  <value column="Name" original="Direct Deposit">Depósito Direto</value>
+  <value column="Name" original="Direct Deposit">Depósito</value>
   <value column="Description" original=""/>
  </row>
  <row id="335" trl="Y">
@@ -835,7 +835,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="341" trl="Y">
-  <value column="Name" original="In Progress">Em Progresso</value>
+  <value column="Name" original="In Progress">Em Andamento</value>
   <value column="Description" original=""/>
  </row>
  <row id="342" trl="Y">
@@ -852,15 +852,15 @@
  </row>
  <row id="345" trl="Y">
   <value column="Name" original="Prepare">Preparar</value>
-  <value column="Description" original="Check Document consistency and check Inventory">Verificar a consistência do documento e conferir o estoque</value>
+  <value column="Description" original="Check Document consistency and check Inventory">Verifica a consistência da transação e confere/reserva estoque</value>
  </row>
  <row id="346" trl="Y">
-  <value column="Name" original="Waiting Payment">Esperando pagamento</value>
+  <value column="Name" original="Waiting Payment">Aguardando Pagamento</value>
   <value column="Description" original=""/>
  </row>
  <row id="347" trl="Y">
   <value column="Name" original="Unlock">Destravar</value>
-  <value column="Description" original="Unlock Transaction (process error)">Destravar Transação (erro de processo)</value>
+  <value column="Description" original="Unlock Transaction (process error)">Destrava a transação (possivelmente devido a um erro no processamento)</value>
  </row>
  <row id="348" trl="Y">
   <value column="Name" original="Material Physical Inventory">Estoque Físico de Material</value>
@@ -1079,8 +1079,8 @@
   <value column="Description" original=""/>
  </row>
  <row id="402" trl="Y">
-  <value column="Name" original="Direct Deposit">Depósito Direto</value>
-  <value column="Description" original="ACH Automatic Clearing House">CCA Câmara de Compensação Automática</value>
+  <value column="Name" original="Direct Deposit">Depósito</value>
+  <value column="Description" original="ACH Automatic Clearing House"/>
  </row>
  <row id="403" trl="Y">
   <value column="Name" original="Sales">Vendas</value>
@@ -1203,15 +1203,15 @@
   <value column="Description" original=""/>
  </row>
  <row id="442" trl="Y">
-  <value column="Name" original="Overdue">Em atraso</value>
+  <value column="Name" original="Overdue">Prazo Vencido</value>
   <value column="Description" original=""/>
  </row>
  <row id="443" trl="Y">
-  <value column="Name" original="Due">Devido</value>
+  <value column="Name" original="Due">Dentro do Prazo</value>
   <value column="Description" original=""/>
  </row>
  <row id="444" trl="Y">
-  <value column="Name" original="Scheduled">Programado</value>
+  <value column="Name" original="Scheduled">Agendado</value>
   <value column="Description" original=""/>
  </row>
  <row id="445" trl="Y">
@@ -1223,19 +1223,19 @@
   <value column="Description" original=""/>
  </row>
  <row id="447" trl="Y">
-  <value column="Name" original="Receipt">Recibo</value>
+  <value column="Name" original="Receipt">Pagamento</value>
   <value column="Description" original=""/>
  </row>
  <row id="448" trl="Y">
-  <value column="Name" original="Weekly">Semanalmente</value>
+  <value column="Name" original="Weekly">Semanal</value>
   <value column="Description" original=""/>
  </row>
  <row id="449" trl="Y">
-  <value column="Name" original="Monthly">Mensalmente</value>
+  <value column="Name" original="Monthly">Mensal</value>
   <value column="Description" original=""/>
  </row>
  <row id="450" trl="Y">
-  <value column="Name" original="Quarterly">Trimestralmente</value>
+  <value column="Name" original="Quarterly">Trimestral</value>
   <value column="Description" original=""/>
  </row>
  <row id="451" trl="Y">
@@ -1731,15 +1731,15 @@
   <value column="Description" original=""/>
  </row>
  <row id="577" trl="Y">
-  <value column="Name" original="Credit Stop">Cancelar Crédito</value>
+  <value column="Name" original="Credit Stop">Crédito Cancelado</value>
   <value column="Description" original=""/>
  </row>
  <row id="578" trl="Y">
-  <value column="Name" original="Credit Hold">Segurar Crédito</value>
+  <value column="Name" original="Credit Hold">Crédito Bloqueado</value>
   <value column="Description" original=""/>
  </row>
  <row id="579" trl="Y">
-  <value column="Name" original="Credit Watch">Observar Crédito</value>
+  <value column="Name" original="Credit Watch">Crédito em Observação</value>
   <value column="Description" original=""/>
  </row>
  <row id="580" trl="Y">
@@ -1811,7 +1811,7 @@
   <value column="Description" original="First In First Out">Primeiro a Entrar Primeiro a Sair</value>
  </row>
  <row id="597" trl="Y">
-  <value column="Name" original="Yearly">Anualmente</value>
+  <value column="Name" original="Yearly">Anual</value>
   <value column="Description" original=""/>
  </row>
  <row id="598" trl="Y">
@@ -2015,11 +2015,11 @@
   <value column="Description" original=""/>
  </row>
  <row id="651" trl="Y">
-  <value column="Name" original="Direct Debit">Débito Direto</value>
+  <value column="Name" original="Direct Debit">Débito Automático</value>
   <value column="Description" original=""/>
  </row>
  <row id="652" trl="Y">
-  <value column="Name" original="Direct Debit">Débito Direto</value>
+  <value column="Name" original="Direct Debit">Débito Automático</value>
   <value column="Description" original=""/>
  </row>
  <row id="653" trl="Y">
@@ -2175,8 +2175,8 @@
   <value column="Description" original=""/>
  </row>
  <row id="691" trl="Y">
-  <value column="Name" original="Wait Complete">Espere Completar</value>
-  <value column="Description" original="Wait Condition ok Complete Document">Condição de Espera Ok, Completar Documento</value>
+  <value column="Name" original="Wait Complete">Aguardar Completar</value>
+  <value column="Description" original="Wait Condition ok Complete Document">Aguarda uma confirmação para então completar a transação (condição de espera)</value>
  </row>
  <row id="692" trl="Y">
   <value column="Name" original="Purchase Order">Pedido de Compra</value>
@@ -2443,7 +2443,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="760" trl="Y">
-  <value column="Name" original="Minor">Menor Importância</value>
+  <value column="Name" original="Minor">Mínima</value>
   <value column="Description" original=""/>
  </row>
  <row id="761" trl="Y">
@@ -3087,19 +3087,19 @@
   <value column="Description" original=""/>
  </row>
  <row id="924" trl="Y">
-  <value column="Name" original="Dunning">Cobrança</value>
+  <value column="Name" original="Dunning">Cobrança Amigável</value>
   <value column="Description" original=""/>
  </row>
  <row id="925" trl="Y">
-  <value column="Name" original="Collection Agency">Collection Agency</value>
+  <value column="Name" original="Collection Agency">Agência de Cobrança</value>
   <value column="Description" original=""/>
  </row>
  <row id="926" trl="Y">
-  <value column="Name" original="Legal Procedure">Legal Procedure</value>
+  <value column="Name" original="Legal Procedure">Cobrança Judicial</value>
   <value column="Description" original=""/>
  </row>
  <row id="927" trl="Y">
-  <value column="Name" original="Uncollectable">Uncollectable</value>
+  <value column="Name" original="Uncollectable">Incobrável</value>
   <value column="Description" original=""/>
  </row>
  <row id="928" trl="Y">
@@ -3330,8 +3330,8 @@
   <value column="Name" original="PrintFormat">PrintFormat</value>
   <value column="Description" original=""/>
  </row>
- <row id="52000" trl="N">
-  <value column="Name" original="Mixed POS Payment">Mixed POS Payment</value>
+ <row id="52000" trl="Y">
+  <value column="Name" original="Mixed POS Payment">Múltiplas Formas</value>
   <value column="Description" original=""/>
  </row>
  <row id="52001" trl="N">
@@ -3822,8 +3822,8 @@
   <value column="Name" original="Reference">Reference</value>
   <value column="Description" original=""/>
  </row>
- <row id="53351" trl="N">
-  <value column="Name" original="Account">Account</value>
+ <row id="53351" trl="Y">
+  <value column="Name" original="Account">Conta (Bancária)</value>
   <value column="Description" original=""/>
  </row>
  <row id="53356" trl="N">
@@ -4154,8 +4154,8 @@
   <value column="Name" original="Million">Million</value>
   <value column="Description" original="Million">Million</value>
  </row>
- <row id="53438" trl="N">
-  <value column="Name" original="Cash">Cash</value>
+ <row id="53438" trl="Y">
+  <value column="Name" original="Cash">Dinheiro</value>
   <value column="Description" original=""/>
  </row>
  <row id="53441" trl="N">
@@ -4474,16 +4474,16 @@
   <value column="Name" original="Cron Scheduling Pattern">Cron Scheduling Pattern</value>
   <value column="Description" original="Use cron style scheduling pattern">Use cron style scheduling pattern</value>
  </row>
- <row id="53578" trl="N">
-  <value column="Name" original="Keyboard">Keyboard</value>
+ <row id="53578" trl="Y">
+  <value column="Name" original="Keyboard">Alfanumérico</value>
   <value column="Description" original=""/>
  </row>
- <row id="53579" trl="N">
-  <value column="Name" original="Numberpad">Numberpad</value>
+ <row id="53579" trl="Y">
+  <value column="Name" original="Numberpad">Numérico</value>
   <value column="Description" original=""/>
  </row>
- <row id="53580" trl="N">
-  <value column="Name" original="Product">Product</value>
+ <row id="53580" trl="Y">
+  <value column="Name" original="Product">Produto</value>
   <value column="Description" original=""/>
  </row>
  <row id="53583" trl="N">
@@ -4706,16 +4706,16 @@
   <value column="Name" original="Purchases">Purchases</value>
   <value column="Description" original=""/>
  </row>
- <row id="53663" trl="N">
-  <value column="Name" original="Financing">Financing</value>
+ <row id="53663" trl="Y">
+  <value column="Name" original="Financing">Financeiro</value>
   <value column="Description" original=""/>
  </row>
- <row id="53664" trl="N">
-  <value column="Name" original="Investment">Investment</value>
+ <row id="53664" trl="Y">
+  <value column="Name" original="Investment">Investimento</value>
   <value column="Description" original=""/>
  </row>
- <row id="53665" trl="N">
-  <value column="Name" original="Operational">Operational</value>
+ <row id="53665" trl="Y">
+  <value column="Name" original="Operational">Operacional</value>
   <value column="Description" original=""/>
  </row>
  <row id="53666" trl="N">
@@ -4770,12 +4770,12 @@
   <value column="Name" original="4_Actual Debt (Invoices)">4_Actual Debt (Invoices)</value>
   <value column="Description" original=""/>
  </row>
- <row id="53703" trl="N">
-  <value column="Name" original="Fixed Price">Fixed Price</value>
+ <row id="53703" trl="Y">
+  <value column="Name" original="Fixed Price">Preço Fixo</value>
   <value column="Description" original=""/>
  </row>
- <row id="53704" trl="N">
-  <value column="Name" original="Discount">Discount</value>
+ <row id="53704" trl="Y">
+  <value column="Name" original="Discount">Desconto</value>
   <value column="Description" original=""/>
  </row>
  <row id="53708" trl="N">
@@ -4798,76 +4798,76 @@
   <value column="Name" original="Production">Production</value>
   <value column="Description" original=""/>
  </row>
- <row id="53716" trl="N">
-  <value column="Name" original="Cold Call">Cold Call</value>
+ <row id="53716" trl="Y">
+  <value column="Name" original="Cold Call">Telefonema Recebido (Receptivo)</value>
   <value column="Description" original=""/>
  </row>
- <row id="53717" trl="N">
-  <value column="Name" original="Existing Customer">Existing Customer</value>
+ <row id="53717" trl="Y">
+  <value column="Name" original="Existing Customer">Indicação de Cliente</value>
   <value column="Description" original=""/>
  </row>
- <row id="53718" trl="N">
-  <value column="Name" original="Employee">Employee</value>
+ <row id="53718" trl="Y">
+  <value column="Name" original="Employee">Indicação de Funcionário</value>
   <value column="Description" original=""/>
  </row>
- <row id="53719" trl="N">
-  <value column="Name" original="Partner">Partner</value>
+ <row id="53719" trl="Y">
+  <value column="Name" original="Partner">Indicação de Parceiro</value>
   <value column="Description" original=""/>
  </row>
- <row id="53720" trl="N">
-  <value column="Name" original="Conference">Conference</value>
+ <row id="53720" trl="Y">
+  <value column="Name" original="Conference">Reunião</value>
   <value column="Description" original=""/>
  </row>
- <row id="53721" trl="N">
-  <value column="Name" original="Trade Show">Trade Show</value>
+ <row id="53721" trl="Y">
+  <value column="Name" original="Trade Show">Feira/Exposição</value>
   <value column="Description" original=""/>
  </row>
- <row id="53722" trl="N">
-  <value column="Name" original="Web Site">Web Site</value>
+ <row id="53722" trl="Y">
+  <value column="Name" original="Web Site">Website</value>
   <value column="Description" original=""/>
  </row>
- <row id="53723" trl="N">
-  <value column="Name" original="Word of Mouth">Word of Mouth</value>
+ <row id="53723" trl="Y">
+  <value column="Name" original="Word of Mouth">Publicidade Boca-a-Boca</value>
   <value column="Description" original=""/>
  </row>
- <row id="53725" trl="N">
-  <value column="Name" original="Email">Email</value>
+ <row id="53725" trl="Y">
+  <value column="Name" original="Email">E-mail</value>
   <value column="Description" original=""/>
  </row>
- <row id="53726" trl="N">
-  <value column="Name" original="New">New</value>
+ <row id="53726" trl="Y">
+  <value column="Name" original="New">Novo</value>
   <value column="Description" original=""/>
  </row>
- <row id="53727" trl="N">
-  <value column="Name" original="Working">Working</value>
+ <row id="53727" trl="Y">
+  <value column="Name" original="Working">Em Negociação</value>
   <value column="Description" original=""/>
  </row>
- <row id="53728" trl="N">
-  <value column="Name" original="Expired">Expired</value>
+ <row id="53728" trl="Y">
+  <value column="Name" original="Expired">Inativo</value>
   <value column="Description" original=""/>
  </row>
- <row id="53729" trl="N">
-  <value column="Name" original="Recycled">Recycled</value>
+ <row id="53729" trl="Y">
+  <value column="Name" original="Recycled">Reciclado</value>
   <value column="Description" original=""/>
  </row>
- <row id="53744" trl="N">
-  <value column="Name" original="Email">Email</value>
+ <row id="53744" trl="Y">
+  <value column="Name" original="Email">E-mail</value>
   <value column="Description" original=""/>
  </row>
- <row id="53745" trl="N">
-  <value column="Name" original="Phone call">Phone call</value>
+ <row id="53745" trl="Y">
+  <value column="Name" original="Phone call">Telefonema</value>
   <value column="Description" original=""/>
  </row>
- <row id="53746" trl="N">
-  <value column="Name" original="Meeting">Meeting</value>
+ <row id="53746" trl="Y">
+  <value column="Name" original="Meeting">Reunião</value>
   <value column="Description" original=""/>
  </row>
- <row id="53747" trl="N">
-  <value column="Name" original="Task">Task</value>
+ <row id="53747" trl="Y">
+  <value column="Name" original="Task">Tarefa</value>
   <value column="Description" original=""/>
  </row>
- <row id="53748" trl="N">
-  <value column="Name" original="Converted">Converted</value>
+ <row id="53748" trl="Y">
+  <value column="Name" original="Converted">Convertido</value>
   <value column="Description" original=""/>
  </row>
  <row id="200008" trl="N">
@@ -5376,6 +5376,62 @@
  </row>
  <row trl="Y" uuid="2e1004df-53fb-4894-9ef5-f1d6bd191b1a">
   <value column="Name" original="PJ - Legal Entity">PJ - Pessoa Jurídica</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="9a100e35-c27b-4928-a7c8-74877c71268f">
+  <value column="Name" original="0 - Domestic">0 - Nacional, exceto as indicadas nos códigos 3, 4, 5 e 8</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="9c7c8524-dce1-48da-b004-7e479b4f9c36">
+  <value column="Name" original="1 - Imported">1 - Estrangeira - Importação direta, exceto a indicada no...</value>
+  <value column="Description" original="">1 - Estrangeira - Importação direta, exceto a indicada no código 6</value>
+ </row>
+ <row trl="Y" uuid="416d32b4-3185-46a8-8a36-8030c87774f6">
+  <value column="Name" original="2 - Imported - Acquired from a domestic distributor">2 - Estrangeira - Adquirida no mercado interno, exceto a...</value>
+  <value column="Description" original="">2 - Estrangeira - Adquirida no mercado interno, exceto a indicada no código 7</value>
+ </row>
+ <row trl="Y" uuid="6395edea-dd93-4585-b0a1-8d4fc84fc0c7">
+  <value column="Name" original="3 - Domestic with more than 40 percent Imported">3 - Nacional, mercadoria ou bem com Conteúdo de Importaçã...</value>
+  <value column="Description" original="">3 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 40% e inferior ou igual a 70%</value>
+ </row>
+ <row trl="Y" uuid="00a8d963-b388-4c74-8a4a-8fe7dc223ce3">
+  <value column="Name" original="4 - Domestic according to adjustments">4 - Nacional, cuja produção tenha sido feita em conformid...</value>
+  <value column="Description" original="">4 - Nacional, cuja produção tenha sido feita em conformidade com os processos produtivos básicos de que tratam as legislações citadas nos Ajustes</value>
+ </row>
+ <row trl="Y" uuid="7b570f94-ba1e-454c-99ae-55832c5020c9">
+  <value column="Name" original="5 - Domestic until 40 percent Imported">5 - Nacional, mercadoria ou bem com Conteúdo de Importaçã...</value>
+  <value column="Description" original="">5 - Nacional, mercadoria ou bem com Conteúdo de Importação inferior ou igual a 40%</value>
+ </row>
+ <row trl="Y" uuid="a5cbbf8a-68a1-4a00-9318-e81dc00dc55a">
+  <value column="Name" original="6 - Foreign - Direct import no domestic similar">6 - Estrangeira - Importação direta, sem similar nacional...</value>
+  <value column="Description" original="">6 - Estrangeira - Importação direta, sem similar nacional, constante em lista da CAMEX e gás natural</value>
+ </row>
+ <row trl="Y" uuid="d06db9d5-3748-4f5c-9162-92dfa2066cba">
+  <value column="Name" original="7 - Foreign - Acquired from domestic distributor no similar">7 - Estrangeira - Adquirida no mercado interno, sem simil...</value>
+  <value column="Description" original="">7 - Estrangeira - Adquirida no mercado interno, sem similar nacional, constante lista CAMEX e gás natural</value>
+ </row>
+ <row trl="Y" uuid="a1f06640-938c-41ab-b31d-892bea918f1a">
+  <value column="Name" original="8 - Domestic with more than 70 percent Imported">8 - Nacional, mercadoria ou bem com Conteúdo de Importaçã...</value>
+  <value column="Description" original="">8 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 70%</value>
+ </row>
+ <row trl="Y" uuid="22c0880b-ce09-4831-a155-3fd3d8e76852">
+  <value column="Name" original="End User">Consumidor Final</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="438f8384-50f1-4997-ae3a-7b5700f53f42">
+  <value column="Name" original="Export">Exportação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="896d108b-3a13-4f80-be02-d365eb632392">
+  <value column="Name" original="Import">Importação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="6ce5d64d-7be5-4f57-b261-86df80d88317">
+  <value column="Name" original="Manufacturing">Industrialização</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="c8589a36-558d-4723-8916-190bb8f4576f">
+  <value column="Name" original="Resale">Revenda</value>
   <value column="Description" original=""/>
  </row>
 </idempiereTrl>

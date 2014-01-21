@@ -2517,4 +2517,24 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="Y" uuid="6629940a-78af-4456-875b-9d689cd5edd9">
+  <value column="Name" original="LBR_ProductSource">Origem do Produto</value>
+  <value column="Description" original="Product Source">Identifica a origem do produto</value>
+  <value column="Help" original="">Além de identificar a origem do produto/mercadoria, essa informação é importante e necessária para emissão de Notas Fiscais.</value>
+ </row>
+ <row trl="Y" uuid="79a45234-c0a7-4dc8-88c9-9fba1919fc38">
+  <value column="Name" original="LBR_TransactionType">Tipo de Transação</value>
+  <value column="Description" original="Transaction Type">Identifica um tipo de transação ao emitir um Pedido de Venda ou Pedido de Compra</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="651903c2-ad94-4cd1-9ca0-8478f81298a1">
+  <value column="Name" original="LBR_BPartnerCategory">LBR_BPartnerCategory</value>
+  <value column="Description" original="CFOP Business Partner Category">CFOP Business Partner Category</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="0b7e0df0-7a13-4465-a315-d282e7b878d7">
+  <value column="Name" original="LBR_FiscalGroup_BPartner">LBR_FiscalGroup_BPartner</value>
+  <value column="Description" original="BP Fiscal Group">BP Fiscal Group</value>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

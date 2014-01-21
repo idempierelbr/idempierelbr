@@ -29,9 +29,9 @@
 The Accounting Date on Bank/Cash Statement Line is used for currency conversion and reporting purposes, the accounting is posted using the header date account.</value>
  </row>
  <row id="4462" trl="Y">
-  <value column="Name" original="Business Partner / Sales Rep">Parceiros de Negócios / Representante de Vendas</value>
-  <value column="Description" original="Identifies a Business Partner (Sales Rep) receiving the Commission">Identifica um Parceiro de Negócios (Representante de Vendas) recebendo comissões</value>
-  <value column="Help" original="The Business Partner should be a vendor and may be a Sales Representative">O Parceiro de Negócios deve ser um vendedor  e pode ser um Representante de Vendas</value>
+  <value column="Name" original="Business Partner / Sales Rep">Parceiros de Negócios / Representante</value>
+  <value column="Description" original="Identifies a Business Partner (Sales Rep) receiving the Commission">Identifica um Parceiro de Negócios (Representante de Vendas) a receber comissões</value>
+  <value column="Help" original="The Business Partner should be a vendor and may be a Sales Representative">O Parceiro de Negócios deve ser um Representante de Vendas.</value>
  </row>
  <row id="4725" trl="Y">
   <value column="Name" original="Acknowledge">Reconhecido</value>
@@ -60,10 +60,10 @@ The Accounting Date on Bank/Cash Statement Line is used for currency conversion 
 
 Se o tipo do seu documento não tiver uma seqüência de documentação automática definida, o campo estará vazio ao criar um novo documento. Isto é para documentos que usualmente tem um número externo (como fatura do fornecedor).  Se você deixar o campo vazio, o sistema vai gerar um número de documento por você. A seqüência de documento usada por este número de recuperação é definida na janela "Gerenciamento de Seqüência" com o nome "DocumentNo_<TableName>", onde TableName é o nome real da tabela (ex: C_Order).]]></value>
  </row>
- <row id="9615" trl="N">
-  <value column="Name" original="Representative/Agent">Representative/Agent</value>
-  <value column="Description" original="Sales Representative or Company Agent">Sales Representative or Company Agent</value>
-  <value column="Help" original="The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user.">The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user.</value>
+ <row id="9615" trl="Y">
+  <value column="Name" original="Representative/Agent">Representante</value>
+  <value column="Description" original="Sales Representative or Company Agent">Representante da Empresa/Organização (Vendedor, Comprador ou Responsável)</value>
+  <value column="Help" original="The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user.">Qualquer usuário interno válido pode ser selecionado como Representante da Empresa/Organização.</value>
  </row>
  <row id="10097" trl="Y">
   <value column="Name" original="Value">Valor</value>
@@ -602,15 +602,15 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original="Sales Representative Name">Sales Representative Name</value>
   <value column="Help" original="The name of the sales rep that this dashboard relates to.">The name of the sales rep that this dashboard relates to.</value>
  </row>
- <row id="62779" trl="N">
-  <value column="Name" original="Language">Language</value>
-  <value column="Description" original="Language for this Business Partner if Multi-Language enabled">Language for this Business Partner if Multi-Language enabled</value>
-  <value column="Help" original="The Language identifies the language to use for display and formatting documents. It requires, that on Client level, Multi-Lingual documents are selected and that you have created/loaded the language.">The Language identifies the language to use for display and formatting documents. It requires, that on Client level, Multi-Lingual documents are selected and that you have created/loaded the language.</value>
+ <row id="62779" trl="Y">
+  <value column="Name" original="Language">Idioma</value>
+  <value column="Description" original="Language for this Business Partner if Multi-Language enabled">Idioma para esta entidade</value>
+  <value column="Help" original="The Language identifies the language to use for display and formatting documents. It requires, that on Client level, Multi-Lingual documents are selected and that you have created/loaded the language.">O "Idioma" identifica a língua a ser utilizada para exibição e formatação</value>
  </row>
- <row id="62991" trl="N">
-  <value column="Name" original="Expected Close">Expected Close</value>
-  <value column="Description" original="Expected Close">Expected Close</value>
-  <value column="Help" original="The Expected Close Date indicates the expected last or final date">The Expected Close Date indicates the expected last or final date</value>
+ <row id="62991" trl="Y">
+  <value column="Name" original="Expected Close">Data Prevista da Conclusão</value>
+  <value column="Description" original="Expected Close">Data Prevista da Conclusão</value>
+  <value column="Help" original="The Expected Close Date indicates the expected last or final date">Indica uma data prevista para a conclusão.</value>
  </row>
  <row id="200585" trl="N">
   <value column="Name" original="Only Currency">Only Currency</value>

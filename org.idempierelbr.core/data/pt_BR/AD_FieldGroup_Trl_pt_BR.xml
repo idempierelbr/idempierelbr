@@ -170,17 +170,17 @@
  <row id="200004" trl="N">
   <value column="Name" original="Overwritten From Column">Overwritten From Column</value>
  </row>
- <row id="200005" trl="N">
-  <value column="Name" original="Customer Information">Customer Information</value>
+ <row id="200005" trl="Y">
+  <value column="Name" original="Customer Information">Informações de Cliente</value>
  </row>
- <row id="200006" trl="N">
-  <value column="Name" original="Vendor Information">Vendor Information</value>
+ <row id="200006" trl="Y">
+  <value column="Name" original="Vendor Information">Informações de Fornecedor</value>
  </row>
- <row id="200007" trl="N">
-  <value column="Name" original="Sales Information">Sales Information</value>
+ <row id="200007" trl="Y">
+  <value column="Name" original="Sales Information">Informações de Vendas</value>
  </row>
- <row id="200008" trl="N">
-  <value column="Name" original="Document Preferences">Document Preferences</value>
+ <row id="200008" trl="Y">
+  <value column="Name" original="Document Preferences">Preferências de Documento</value>
  </row>
  <row id="200009" trl="N">
   <value column="Name" original="Charge Account">Charge Account</value>

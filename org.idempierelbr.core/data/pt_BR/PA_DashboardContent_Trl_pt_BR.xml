@@ -22,8 +22,8 @@
   <value column="Description" original="Performance meters">Medidas de desempenho</value>
   <value column="HTML" original=""/>
  </row>
- <row id="50004" trl="N">
-  <value column="Name" original="Calendar">Calendar</value>
+ <row id="50004" trl="Y">
+  <value column="Name" original="Calendário">Calendário</value>
   <value column="Description" original="Request Calendar">Request Calendar</value>
   <value column="HTML" original=""/>
  </row>

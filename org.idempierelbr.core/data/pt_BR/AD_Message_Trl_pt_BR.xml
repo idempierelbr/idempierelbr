@@ -795,7 +795,7 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="299" trl="Y">
-  <value column="MsgText" original="Account Info">Informações da Conta</value>
+  <value column="MsgText" original="Account Info">Informações Contábeis</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="300" trl="Y">
@@ -835,11 +835,11 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="309" trl="Y">
-  <value column="MsgText" original="Invoices are generated depending on the &quot;Invoicing Rule&quot; selection in the Order">Faturas são geradas dependendo da seleção de "Regra de Faturamento" no Pedido</value>
+  <value column="MsgText" original="Invoices are generated depending on the &quot;Invoicing Rule&quot; selection in the Order">Faturas são geradas dependendo da Regra de Fatura informada nos Pedidos</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="310" trl="Y">
-  <value column="MsgText" original="Select shipments to generate invoices">Selecione remessas para gerar faturas</value>
+  <value column="MsgText" original="Select shipments to generate invoices">Selecione pedido(s) ou ARM para gerar Fatura(s)</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="311" trl="Y">
@@ -1313,7 +1313,7 @@ Problema: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="428" trl="Y">
-  <value column="MsgText" original="Print Invoices">Imprimir Notas Fiscais</value>
+  <value column="MsgText" original="Print Invoices">Imprimir Fatura(s)</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="429" trl="Y">
@@ -2137,7 +2137,7 @@ Detalhes: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="633" trl="Y">
-  <value column="MsgText" original="Schedule Info">Informação de Agendamento</value>
+  <value column="MsgText" original="Schedule Info">Informações de Agendamentos</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="634" trl="Y">
@@ -2281,7 +2281,7 @@ Detalhes: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="670" trl="Y">
-  <value column="MsgText" original="Select orders to generate shipments">Selecionar ordens para gerar expedição</value>
+  <value column="MsgText" original="Select orders to generate shipments">Selecione pedido(s) ou ARM para gerar Remessa(s)</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="671" trl="Y">
@@ -3434,7 +3434,7 @@ Obrigado por usar o Gerenciador de Ativos Personalizado Adempiere
   <value column="MsgTip" original=" "> </value>
  </row>
  <row id="52061" trl="Y">
-  <value column="MsgText" original="Business Partner Info">Business Partner Info</value>
+  <value column="MsgText" original="Business Partner Info">Informações de Parceiros</value>
   <value column="MsgTip" original=" "> </value>
  </row>
  <row id="52062" trl="Y">
@@ -4358,7 +4358,7 @@ Obrigado por usar o Gerenciador de Ativos Personalizado Adempiere
   <value column="MsgTip" original=" "> </value>
  </row>
  <row id="52292" trl="Y">
-  <value column="MsgText" original="Product Info">Product Info</value>
+  <value column="MsgText" original="Product Info">Informações de Produtos</value>
   <value column="MsgTip" original=" "> </value>
  </row>
  <row id="52293" trl="Y">
@@ -5488,7 +5488,7 @@ Please contact administrator.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="53099" trl="Y">
-  <value column="MsgText" original="The page or component you request is no longer available. This is normally caused by timeout or rebooting the server.">A conexão com o servidor atingiu o tempo limite de inatividade no sistema. Por favor faça o login novamente.</value>
+  <value column="MsgText" original="The page or component you request is no longer available. This is normally caused by timeout or rebooting the server.">Você atingiu o tempo limite de inatividade no sistema. Por favor faça o login novamente.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="53117" trl="N">
@@ -6417,6 +6417,10 @@ Please contact administrator.</value>
  </row>
  <row id="200246" trl="N">
   <value column="MsgText" original="Date Invoiced cannot be changed because the invoice contains product lines and the change falls in a differente price list version">Date Invoiced cannot be changed because the invoice contains product lines and the change falls in a differente price list version</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200251" trl="N">
+  <value column="MsgText" original="Quick Info">Quick Info</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="520010" trl="Y">

@@ -198,9 +198,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Shipper Window defines the different shipping provides used by an Organization.  When a delivery method of Shipper is used on an Order a predefined Shipper must be selected.">A Janela "Transportadora" define as diferentes formas de transporte utilizados por uma organização.  Uma Transportadora predefinida tem que ser selecionada quando um método de entrega de uma Transportadora for usado em um Pedido.</value>
  </row>
  <row id="143" trl="Y">
-  <value column="Name" original="Sales Order">Ordem de Venda</value>
-  <value column="Description" original="Enter and change sales orders">Introduzir e Alterar Ordens de Venda</value>
-  <value column="Help" original="The Order Window allows you to enter and modify Sales Orders.  ">A Janela "Pedido" permite a você digitar e modificar Ordens de Venda.  </value>
+  <value column="Name" original="Sales Order">Pedido de Venda</value>
+  <value column="Description" original="Enter and change sales orders">Introduzir e Alterar Pedidos de Venda</value>
+  <value column="Help" original="The Order Window allows you to enter and modify Sales Orders.  ">A janela permite a você digitar e modificar Pedidos de Venda.  </value>
  </row>
  <row id="144" trl="Y">
   <value column="Name" original="Product Category">Categoria de Produto</value>
@@ -235,7 +235,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  <row id="152" trl="Y">
   <value column="Name" original="Sales Region">Região de Vendas</value>
   <value column="Description" original="Maintain Sales Regions">Gerenciamento das Regiões de Vendas</value>
-  <value column="Help" original="The Sales Region Window defines the different regions where you do business.  You can generate reports based on Sales Regions">A Janela "Região de Vendas" define as diferentes regiões onde você faz negócios.  Você pode gerar relatórios baseados nas Regiões de Vendas</value>
+  <value column="Help" original="The Sales Region Window defines the different regions where you do business.  You can generate reports based on Sales Regions">A Janela "Região de Vendas" define as diferentes regiões onde você faz negócios.  Você pode gerar relatórios baseados nas Regiões de Vendas.</value>
  </row>
  <row id="153" trl="Y">
   <value column="Name" original="Account Combination">Combinação de Contas</value>
@@ -293,9 +293,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Physical Inventory Window allows you to generate inventory count lists.  These counts can then be processed which will update the actual inventory with the new counts. Normally you would create inventory count lines automaticelly. If you create them manually, make sure that the book value is correct.">A Janela "Estoque Físico" permite a você gerar listas de contagem de estoque.  Estas contagens podem então ser processadas o que irá atualizar o estoque real com as novas contagens. Normalmente, você iria criar "Linhas de Contagem de Estoque" automaticamente. Se você as criar manualmente, certifique-se que o "Valor Contábil" esteja correto.</value>
  </row>
  <row id="169" trl="Y">
-  <value column="Name" original="Shipment (Customer)">Expedição (Cliente)</value>
-  <value column="Description" original="Customer Inventory Shipments Customer Returns">Devoluções de Materiais a Clientes - CORRIGIR ESTA TRADUÇÃO</value>
-  <value column="Help" original="The Shipment Window defines shipments made or to be made to a customer.  They are generated from an Customer Order.  The Shipment Document will generate the Customer Invoice.">A Janela "Expedição" define remessas feitas ou a serem feitas para um cliente.  Elas são geradas a partir de um Pedido de Cliente.  O Documento de Remessa vai gerar a Fatura de Cliente.</value>
+  <value column="Name" original="Shipment (Customer)">Remessa (Cliente)</value>
+  <value column="Description" original="Customer Inventory Shipments Customer Returns">Remessas de Materiais a Clientes</value>
+  <value column="Help" original="The Shipment Window defines shipments made or to be made to a customer.  They are generated from an Customer Order.  The Shipment Document will generate the Customer Invoice.">A janela define remessas feitas ou a serem feitas para um cliente.  Elas são geradas a partir de um Pedido. O documento Remessa pode gerar uma Fatura.</value>
  </row>
  <row id="170" trl="Y">
   <value column="Name" original="Inventory Move">Movimentação de Estoque</value>
@@ -1076,12 +1076,12 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  </row>
  <row id="338" trl="Y">
   <value column="Name" original="POS Terminal">Terminal PDV</value>
-  <value column="Description" original="Maintain your Point of Sales Terminal">Gerenciamento dos Terminais de Ponto de Venda</value>
-  <value column="Help" original="The POS Terminal defines the defaults and functions available for the POS Form">O Terminal PDV define os padrões adotados e as funções disponíveis para o formulário do PDV</value>
+  <value column="Description" original="Maintain your Point of Sales Terminal">Gerenciamento dos Terminais de PDV (Ponto de Venda)</value>
+  <value column="Help" original="The POS Terminal defines the defaults and functions available for the POS Form">Define os padrões adotados e as funções disponíveis em um PDV.</value>
  </row>
  <row id="339" trl="Y">
-  <value column="Name" original="POS Key Layout">Layout das Teclas do PDV</value>
-  <value column="Description" original="POS Function Key Layout">Layout das teclas de função do PDV</value>
+  <value column="Name" original="POS Key Layout">Layout de Funções PDV</value>
+  <value column="Description" original="POS Function Key Layout">Manutenção de Layouts de Funções PDV</value>
   <value column="Help" original=""/>
  </row>
  <row id="340" trl="Y">
@@ -1774,8 +1774,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="My user information">My user information</value>
   <value column="Help" original=""/>
  </row>
- <row id="53101" trl="N">
-  <value column="Name" original="Order Source">Order Source</value>
+ <row id="53101" trl="Y">
+  <value column="Name" original="Order Source">Origem do Pedido</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1864,9 +1864,9 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Maintain Bill of Materials">Maintain Bill of Materials</value>
   <value column="Help" original="The Bill of Materials Window defines all product bills of materials used by an organization for light manufacturing.">The Bill of Materials Window defines all product bills of materials used by an organization for light manufacturing.</value>
  </row>
- <row id="53134" trl="N">
-  <value column="Name" original="Cash Plan">Cash Plan</value>
-  <value column="Description" original=""/>
+ <row id="53134" trl="Y">
+  <value column="Name" original="Cash Plan">Planejamento de Caixa</value>
+  <value column="Description" original="">Gerenciar os Planejamentos de Caixa</value>
   <value column="Help" original=""/>
  </row>
  <row id="53149" trl="N">
@@ -1879,24 +1879,24 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Manufacturing Part Types">Manufacturing Part Types</value>
   <value column="Help" original=""/>
  </row>
- <row id="53152" trl="N">
-  <value column="Name" original="Contact">Contact</value>
-  <value column="Description" original="Maintain Contacts">Maintain Contacts</value>
-  <value column="Help" original="The Contact Window allows you to maintain Contacts who are individuals you deal with.  Contacts may also be internal or external users who can log into the system and have access to functionality via one or more roles.  A contact can also be a business partner contact.">The Contact Window allows you to maintain Contacts who are individuals you deal with.  Contacts may also be internal or external users who can log into the system and have access to functionality via one or more roles.  A contact can also be a business partner contact.</value>
+ <row id="53152" trl="Y">
+  <value column="Name" original="Contact">Contato</value>
+  <value column="Description" original="Maintain Contacts">Gerenciar Contatos</value>
+  <value column="Help" original="The Contact Window allows you to maintain Contacts who are individuals you deal with.  Contacts may also be internal or external users who can log into the system and have access to functionality via one or more roles.  A contact can also be a business partner contact.">A janela permite a manutenção e gerenciamento de contatos (pessoas que você se relaciona). Podem ser usuário internos ou externos (que acessam o sistema via web). Podem ser também contatos de parceiros de negócios.</value>
  </row>
- <row id="53153" trl="N">
-  <value column="Name" original="Lead">Lead</value>
-  <value column="Description" original="Maintain Leads">Maintain Leads</value>
-  <value column="Help" original="The Lead Window allows you to maintain Sales Leads.  These are unqualified contacts to who you wish to market to. ">The Lead Window allows you to maintain Sales Leads.  These are unqualified contacts to who you wish to market to. </value>
+ <row id="53153" trl="Y">
+  <value column="Name" original="Lead">Lead (de Vendas)</value>
+  <value column="Description" original="Maintain Leads">Inserir e Alterar Leads de Vendas</value>
+  <value column="Help" original="The Lead Window allows you to maintain Sales Leads.  These are unqualified contacts to who you wish to market to. ">Leads na linguagem de marketing e vendas significam um contato novo que a empresa recebe. Por exemplo, tanto o caso de um cartão de visitas quanto o de um formulário de e-mail recebido temos aí o lead, que pode chegar a ser um comprador dos produtos da empresa ou não. Portanto, um lead ainda não é necessariamente um potencial comprador; em outras palavras, o lead é um novo contato.</value>
  </row>
- <row id="53154" trl="N">
-  <value column="Name" original="Sales Stage">Sales Stage</value>
+ <row id="53154" trl="Y">
+  <value column="Name" original="Sales Stage">Fase de Vendas</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53155" trl="N">
-  <value column="Name" original="Sales Opportunity">Sales Opportunity</value>
-  <value column="Description" original="A potential sale">A potential sale</value>
+ <row id="53155" trl="Y">
+  <value column="Name" original="Sales Opportunity">Oportunidade de Vendas</value>
+  <value column="Description" original="A potential sale">Vendas em potencial</value>
   <value column="Help" original=""/>
  </row>
  <row id="53156" trl="N">
@@ -1904,8 +1904,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="The Sales Rep Dashboard provides a single location for managing sales opportunities">The Sales Rep Dashboard provides a single location for managing sales opportunities</value>
   <value column="Help" original=""/>
  </row>
- <row id="53165" trl="N">
-  <value column="Name" original="Customer">Customer</value>
+ <row id="53165" trl="Y">
+  <value column="Name" original="Customer">Cliente</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1934,13 +1934,13 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200008" trl="N">
-  <value column="Name" original="POS Payment">POS Payment</value>
+ <row id="200008" trl="Y">
+  <value column="Name" original="POS Payment">Pagamento PDV</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200009" trl="N">
-  <value column="Name" original="POS Tender Type">POS Tender Type</value>
+ <row id="200009" trl="Y">
+  <value column="Name" original="POS Tender Type">Meio de Pagamento PDV</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2071,7 +2071,37 @@ MRP - 110	 No exists Dem</value>
  </row>
  <row trl="Y" uuid="68928e29-e04a-4d4d-92ee-d230e06891f7">
   <value column="Name" original="NCM">NCM</value>
-  <value column="Description" original="NCM stands for Nomenclatura Comum do MERCOSUL">NCM - Nomenclatura Comum do MERCOSUL</value>
+  <value column="Description" original="NCM stands for Nomenclatura Comum do MERCOSUL">Manutenção de NCM - Nomenclatura Comum do MERCOSUL e seus impostos</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="12e468e7-43df-4b62-86a5-3bf97a8664b4">
+  <value column="Name" original="Legal Message">Mensagem Legal</value>
+  <value column="Description" original="Maintain Legal Messages">Manutenção de mensagens legais impressas em documentos fiscais </value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="9327ad2d-4ad3-4881-b334-95dfbb8acd28">
+  <value column="Name" original="Tax Group (NF)">Grupo de Tributação de NF</value>
+  <value column="Description" original="Maintain NF Tax Groups">Manutenção dos grupos de tributação segregadas em Notas Fiscais</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="40a3a716-a730-4bc9-b737-ea1cf9578205">
+  <value column="Name" original="Product Fiscal Group">Grupo de Tributação de Produto</value>
+  <value column="Description" original="Maintain Product Fiscal Groups">Gerenciamento de grupos de tributação de Produtos</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="ee501c5e-9dfc-43ac-8f59-4522ce3dd1ba">
+  <value column="Name" original="BP Fiscal Group">Grupo de Tributação de PN</value>
+  <value column="Description" original="Maintain Business Partner Fiscal Groups">Gerenciamento de grupos de tributação de Parceiros de Negócios</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="603e54ab-fbf3-451b-9fcf-ad3d927c136c">
+  <value column="Name" original="CFOP Product Category">Categoria CFOP de Produto</value>
+  <value column="Description" original="Maintain CFOP Product Categories">Gerenciamento de categorias CFOP de Produtos</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="71faf0fd-f396-4ec1-aa51-7e77b248fe3b">
+  <value column="Name" original="CFOP BP Category">Categoria CFOP de PN</value>
+  <value column="Description" original="Maintain CFOP Business Partner Categories">Gerenciamento de categorias CFOP de Parceiros de Negócios</value>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>

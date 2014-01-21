@@ -78,9 +78,9 @@
   <value column="Help" original="The Role determines security and access a user who has this Role will have in the System.">The Role determines security and access a user who has this Role will have in the System.</value>
  </row>
  <row id="50019" trl="Y">
-  <value column="Name" original="Shipment Date">Shipment Date</value>
-  <value column="Description" original="Date printed on shipment">Date printed on shipment</value>
-  <value column="Help" original="The Shipment Date indicates the date printed on the shipment.">The Shipment Date indicates the date printed on the shipment.</value>
+  <value column="Name" original="Shipment Date">Data da Remessa</value>
+  <value column="Description" original="Date printed on shipment">Data impressa na remessa</value>
+  <value column="Help" original="The Shipment Date indicates the date printed on the shipment.">O campo indica a data impressa na remessa.</value>
  </row>
  <row id="53011" trl="Y">
   <value column="Name" original="Print Unprocessed Entries Only">Print Unprocessed Entries Only</value>

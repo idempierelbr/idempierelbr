@@ -3,9 +3,9 @@
 <!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
 <idempiereTrl language="pt_BR" table="AD_Form">
  <row id="100" trl="Y">
-  <value column="Name" original="Generate Invoices (manual)">Gerar Faturas / Notas Fiscais  (Manual)</value>
-  <value column="Description" original="Select and generate invoices">Selecionar e Gerar Notas Fiscais</value>
-  <value column="Help" original="Generate Invoices from Orders.  &#10;Select the orders to generate the invoice for.">Gerar Faturas a partir dos Pedidos. Selecione os pedidos para os quais devem ser geradas as faturas.</value>
+  <value column="Name" original="Generate Invoices (manual)">Gerar Faturas (Manual)</value>
+  <value column="Description" original="Select and generate invoices">Selecionar e gerar faturas</value>
+  <value column="Help" original="Generate Invoices from Orders.  &#10;Select the orders to generate the invoice for.">Gera faturas a partir de pedidos/ARM. Selecione os pedidos/ARM para os quais devem ser geradas as faturas.</value>
  </row>
  <row id="101" trl="Y">
   <value column="Name" original="Import File Loader">Carregador de Arquivo de Importação</value>
@@ -53,9 +53,9 @@
   <value column="Help" original="Export/Import Translation info to/from xml for translation in external tool. Please note that the Language MUST be an enabled and verified System Langage.">Exportar/Importar Informações de Tradução de/para arquivos xml para tradução em uma ferramenta externa. Note que o Idioma TEM que ser um Idioma de Sistema liberado e verificado.</value>
  </row>
  <row id="110" trl="Y">
-  <value column="Name" original="Generate Shipments (manual)">Gerar Remessas (manual)</value>
+  <value column="Name" original="Generate Shipments (manual)">Gerar Remessas (Manual)</value>
   <value column="Description" original="Select and generate shipments">Selecionar e gerar remessas</value>
-  <value column="Help" original="Generate Shipments from Orders.  &#10;Select the orders to generate the shipments for.">Gerar Expedições a partir dos Pedidos. Selecione os pedidos para os quais devem ser geradas as expedições.</value>
+  <value column="Help" original="Generate Shipments from Orders.  &#10;Select the orders to generate the shipments for.">Gera remessas a partir de pedidos/ARM. Selecione os pedidos/ARM para os quais devem ser geradas as remessas.</value>
  </row>
  <row id="111" trl="Y">
   <value column="Name" original="SQL Process">Processo SQL</value>

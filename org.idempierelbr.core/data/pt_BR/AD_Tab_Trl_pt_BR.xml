@@ -420,13 +420,13 @@
  <row id="186" trl="Y">
   <value column="Name" original="Order">Pedido</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Order Header">Cabeçalho de Pedido</value>
-  <value column="Help" original="The Order Header Tab defines the parameters of an Order. Changing the Organization, Business Partner, Warehouse, Date Promised, etc. changes these values on all the lines. ">A Aba "Cabeçalho de Pedido" define os parâmetros de um Pedido. Alterar a Organização, Parceiro de Negócios, Armazém, Data Prometida, etc. atualiza estes valores em todas as linhas. </value>
+  <value column="Description" original="Order Header">Cabeçalho do Pedido</value>
+  <value column="Help" original="The Order Header Tab defines the parameters of an Order. Changing the Organization, Business Partner, Warehouse, Date Promised, etc. changes these values on all the lines. ">A Aba "Cabeçalho do Pedido" define os parâmetros de um Pedido. Alterar a Organização, Parceiro de Negócios, Armazém, Data Prometida, etc. atualiza estes valores em todas as linhas. </value>
  </row>
  <row id="187" trl="Y">
-  <value column="Name" original="Order Line">Linha de Pedido</value>
+  <value column="Name" original="Order Line">Linha do Pedido</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Order Line">Linha de Pedido</value>
+  <value column="Description" original="Order Line">Linha do Pedido</value>
   <value column="Help" original="The Order Line Tab defines the individual line items that comprise an Order.">A Aba "Linha do Pedido" define os itens de linha individuais que compreendem um Pedido.</value>
  </row>
  <row id="189" trl="Y">
@@ -505,7 +505,7 @@
   <value column="Name" original="Sales Region">Região de Vendas</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Sales Region">Região de Vendas</value>
-  <value column="Help" original="The Sales Region Tab defines the different regions where you do business.  Sales Regions can be used when generating reports or calculating commissions.">A Aba "Região de Vendas" define as diferentes regiões onde você faz negócios.  Regiões de Vendas podem ser usadas ao gerar relatórios calcular comissões.</value>
+  <value column="Help" original="The Sales Region Tab defines the different regions where you do business.  Sales Regions can be used when generating reports or calculating commissions.">A Aba "Região de Vendas" define as diferentes regiões onde você faz negócios. Regiões de Vendas podem ser usadas ao gerar relatórios e calcular comissões.</value>
  </row>
  <row id="207" trl="Y">
   <value column="Name" original="Combination">Combinação</value>
@@ -3073,20 +3073,20 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
  <row id="676" trl="Y">
   <value column="Name" original="POS Terminal">Terminal PDV</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Point of Sales Terminal">Terminal de Ponto de Vendas</value>
-  <value column="Help" original="The POS Terminal defines the defaults and functions available for the POS Form">O Terminal PDV define os padrões adotados e as funções disponíveis para o formulário do PDV</value>
+  <value column="Description" original="Point of Sales Terminal">Gerenciamento dos Terminais de PDV (Ponto de Venda)</value>
+  <value column="Help" original="The POS Terminal defines the defaults and functions available for the POS Form">O Terminal PDV define os padrões adotados e as funções disponíveis no PDV.</value>
  </row>
  <row id="677" trl="Y">
-  <value column="Name" original="POS Key Layout">Layout das Teclas do PDV</value>
+  <value column="Name" original="POS Key Layout">Layout de Funções PDV</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="POS Function Key Layout">Layout das teclas de função do PDV</value>
-  <value column="Help" original="POS Function Key Layout">Layout das teclas de função do PDV</value>
+  <value column="Description" original="POS Function Key Layout">Manutenção de Layouts de Funções PDV</value>
+  <value column="Help" original="POS Function Key Layout"/>
  </row>
  <row id="678" trl="Y">
-  <value column="Name" original="POS Key">Tecla de PDV</value>
+  <value column="Name" original="POS Key">Função PDV</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="POS Function Key">Tecla de Função de PDV</value>
-  <value column="Help" original="POS Function Key Assignment">Atribuição de Tecla de Função de PDV</value>
+  <value column="Description" original="POS Function Key">Função PDV</value>
+  <value column="Help" original="POS Function Key Assignment"/>
  </row>
  <row id="679" trl="Y">
   <value column="Name" original="SLA Goal">Meta de ANS</value>
@@ -5320,8 +5320,8 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original="Mail sent to the user">Mail sent to the user</value>
   <value column="Help" original="Archive of mails sent to users">Archive of mails sent to users</value>
  </row>
- <row id="53284" trl="N">
-  <value column="Name" original="Order Source">Order Source</value>
+ <row id="53284" trl="Y">
+  <value column="Name" original="Order Source">Origem do Pedido</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5388,10 +5388,10 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53311" trl="N">
-  <value column="Name" original="Key Sequence">Key Sequence</value>
+ <row id="53311" trl="Y">
+  <value column="Name" original="Key Sequence">Sequência</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Key Sequence">Key Sequence</value>
+  <value column="Description" original="Key Sequence">Sequência</value>
   <value column="Help" original=""/>
  </row>
  <row id="53320" trl="N">
@@ -5550,14 +5550,14 @@ Printing:
   <value column="Description" original="Order Payment Schedule">Order Payment Schedule</value>
   <value column="Help" original=""/>
  </row>
- <row id="53376" trl="N">
-  <value column="Name" original="Cash Plan">Cash Plan</value>
+ <row id="53376" trl="Y">
+  <value column="Name" original="Cash Plan">Planejamento de Caixa</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
+  <value column="Description" original="">Gerenciar os Planejamentos de Caixa</value>
+  <value column="Help" original="">O planejamento de caixa é um demonstrativo dos fluxos das entradas e saídas projetadas de caixa da empresa, usado para estimar suas necessidades de caixa para curto prazo.</value>
  </row>
- <row id="53377" trl="N">
-  <value column="Name" original="Cash Plan Line">Cash Plan Line</value>
+ <row id="53377" trl="Y">
+  <value column="Name" original="Cash Plan Line">Linha do Planejamento de Caixa</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5586,32 +5586,32 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53428" trl="N">
-  <value column="Name" original="Contact">Contact</value>
+ <row id="53428" trl="Y">
+  <value column="Name" original="Contact">Contato</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="The contact details">The contact details</value>
-  <value column="Help" original=""/>
+  <value column="Description" original="The contact details">Gerenciar Contatos</value>
+  <value column="Help" original="">Permite a manutenção e gerenciamento de contatos (pessoas que você se relaciona). Podem ser usuário internos ou externos (que acessam o sistema via web). Podem ser também contatos de parceiros de negócios.</value>
  </row>
- <row id="53429" trl="N">
-  <value column="Name" original="Lead">Lead</value>
+ <row id="53429" trl="Y">
+  <value column="Name" original="Lead">Lead (de Vendas)</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Any information about the contact">Any information about the contact</value>
-  <value column="Help" original=""/>
+  <value column="Description" original="Any information about the contact">Inserir e Alterar Leads de Vendas</value>
+  <value column="Help" original="">Leads na linguagem de marketing e vendas significam um contato novo que a empresa recebe. Por exemplo, tanto o caso de um cartão de visitas quanto o de um formulário de e-mail recebido temos aí o lead, que pode chegar a ser um comprador dos produtos da empresa ou não. Portanto, um lead ainda não é necessariamente um potencial comprador; em outras palavras, o lead é um novo contato.</value>
  </row>
- <row id="53430" trl="N">
-  <value column="Name" original="Sales Stage">Sales Stage</value>
-  <value column="CommitWarning" original=""/>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
- </row>
- <row id="53431" trl="N">
-  <value column="Name" original="Opportunity">Opportunity</value>
+ <row id="53430" trl="Y">
+  <value column="Name" original="Sales Stage">Fase de Vendas</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53432" trl="N">
-  <value column="Name" original="Opportunity">Opportunity</value>
+ <row id="53431" trl="Y">
+  <value column="Name" original="Opportunity">Oportunidade de Vendas</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="53432" trl="Y">
+  <value column="Name" original="Opportunity">Oportunidade de Vendas</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5622,14 +5622,14 @@ Printing:
   <value column="Description" original="Sales Rep dashboard">Sales Rep dashboard</value>
   <value column="Help" original=""/>
  </row>
- <row id="53435" trl="N">
-  <value column="Name" original="Quote/Order">Quote/Order</value>
+ <row id="53435" trl="Y">
+  <value column="Name" original="Quote/Order">Cotação/Pedido</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53436" trl="N">
-  <value column="Name" original="Order Line">Order Line</value>
+ <row id="53436" trl="Y">
+  <value column="Name" original="Order Line">Linha do Pedido</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5646,28 +5646,28 @@ Printing:
   <value column="Description" original="Leads assigned to Sales Rep">Leads assigned to Sales Rep</value>
   <value column="Help" original=""/>
  </row>
- <row id="53439" trl="N">
-  <value column="Name" original="Opportunity">Opportunity</value>
+ <row id="53439" trl="Y">
+  <value column="Name" original="Opportunity">Oportunidade</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53452" trl="N">
-  <value column="Name" original="Activity">Activity</value>
+ <row id="53452" trl="Y">
+  <value column="Name" original="Activity">Atividade</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53453" trl="N">
-  <value column="Name" original="Activity">Activity</value>
+ <row id="53453" trl="Y">
+  <value column="Name" original="Activity">Atividade</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53454" trl="N">
-  <value column="Name" original="Activity">Activity</value>
+ <row id="53454" trl="Y">
+  <value column="Name" original="Activity">Atividade</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Contact Activity">Contact Activity</value>
+  <value column="Description" original="Contact Activity">Atividade do Contato</value>
   <value column="Help" original=""/>
  </row>
  <row id="53455" trl="N">
@@ -5676,52 +5676,52 @@ Printing:
   <value column="Description" original="Sales Rep Activities">Sales Rep Activities</value>
   <value column="Help" original=""/>
  </row>
- <row id="53456" trl="N">
-  <value column="Name" original="Customer">Customer</value>
+ <row id="53456" trl="Y">
+  <value column="Name" original="Customer">Cliente</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Customer information">Customer information</value>
+  <value column="Description" original="Customer information">Informações de Cliente</value>
   <value column="Help" original=""/>
  </row>
- <row id="53457" trl="N">
-  <value column="Name" original="Contacts">Contacts</value>
+ <row id="53457" trl="Y">
+  <value column="Name" original="Contacts">Contatos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Customer Contacts">Customer Contacts</value>
+  <value column="Description" original="Customer Contacts">Contatos do Cliente</value>
   <value column="Help" original=""/>
  </row>
- <row id="53458" trl="N">
-  <value column="Name" original="Activities">Activities</value>
+ <row id="53458" trl="Y">
+  <value column="Name" original="Activities">Atividades</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Customer Contact Activities">Customer Contact Activities</value>
+  <value column="Description" original="Customer Contact Activities">Atividades do contato do cliente</value>
   <value column="Help" original=""/>
  </row>
- <row id="53459" trl="N">
-  <value column="Name" original="Locations">Locations</value>
+ <row id="53459" trl="Y">
+  <value column="Name" original="Locations">Localizações</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Customer Locations">Customer Locations</value>
+  <value column="Description" original="Customer Locations">Localizações do cliente</value>
   <value column="Help" original=""/>
  </row>
- <row id="53460" trl="N">
-  <value column="Name" original="Contract Prices">Contract Prices</value>
+ <row id="53460" trl="Y">
+  <value column="Name" original="Contract Prices">Preços de Contrato</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Customer specific prices">Customer specific prices</value>
+  <value column="Description" original="Customer specific prices">Preços de Contrato do Cliente</value>
   <value column="Help" original=""/>
  </row>
- <row id="53461" trl="N">
-  <value column="Name" original="Requests">Requests</value>
+ <row id="53461" trl="Y">
+  <value column="Name" original="Requests">Solicitações</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Customer requests">Customer requests</value>
+  <value column="Description" original="Customer requests">Solicitações do cliente</value>
   <value column="Help" original=""/>
  </row>
- <row id="53462" trl="N">
-  <value column="Name" original="Orders">Orders</value>
+ <row id="53462" trl="Y">
+  <value column="Name" original="Orders">Pedidos</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53463" trl="N">
-  <value column="Name" original="Opportunities">Opportunities</value>
+ <row id="53463" trl="Y">
+  <value column="Name" original="Opportunities">Oportunidades de Vendas</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Opportunities">Opportunities</value>
+  <value column="Description" original="Opportunities">Oportunidades de Vendas</value>
   <value column="Help" original=""/>
  </row>
  <row id="200000" trl="N">
@@ -5784,14 +5784,14 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200014" trl="N">
-  <value column="Name" original="POS Tender Type">POS Tender Type</value>
+ <row id="200014" trl="Y">
+  <value column="Name" original="POS Tender Type">Meio de Pagamento PDV</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200015" trl="N">
-  <value column="Name" original="POS Payment">POS Payment</value>
+ <row id="200015" trl="Y">
+  <value column="Name" original="POS Payment">Pagamento PDV</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5934,8 +5934,8 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200047" trl="N">
-  <value column="Name" original="Packages">Packages</value>
+ <row id="200047" trl="Y">
+  <value column="Name" original="Packages">Volumes</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6198,10 +6198,46 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row trl="N" uuid="07721587-32fd-4a79-b306-94c8ed672f52">
+ <row trl="Y" uuid="07721587-32fd-4a79-b306-94c8ed672f52">
   <value column="Name" original="NCM">NCM</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
+  <value column="Description" original="">Manutenção de NCM - Nomenclatura Comum do MERCOSUL e seus impostos</value>
+  <value column="Help" original="">Utilize esta aba para manter NCMs e seus impostos. Ao efetuar um Pedido de Venda ou Pedido de Compra, os impostos definidos nesta aba serão considerados dentre uma hierarquia de configurações em outras abas desta/outras janelas.</value>
+ </row>
+ <row trl="Y" uuid="e9b6d0e6-0e52-4561-86df-bcbbf7398921">
+  <value column="Name" original="Legal Message">Mensagem Legal</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain Legal Messages">Manutenção de mensagens legais impressas em documentos fiscais </value>
+  <value column="Help" original="">Utilize esta aba para manter as mensagens legais que podem ser impressas em documentos fiscais, por exemplo bases legais para uma determinada tributação em Nota Fiscal.</value>
+ </row>
+ <row trl="Y" uuid="2a745405-fa60-4365-8409-b2c6c2f66b9a">
+  <value column="Name" original="Tax Group">Grupo de Tributação de NF</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain Tax Groups">Manutenção dos grupos de tributação segregadas em Notas Fiscais</value>
+  <value column="Help" original="">Utilize esta aba para manter os grupos de tributação segregadas em Notas Fiscais de acordo com a legislação vigente.</value>
+ </row>
+ <row trl="Y" uuid="fbf28201-fe0c-4a84-b62f-72b983fe78e1">
+  <value column="Name" original="Product Fiscal Group">Grupo de Tributação de Produto</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain Product Fiscal Groups">Gerenciamento de grupos de tributação de Produtos</value>
+  <value column="Help" original="">Utilize esta aba para manter grupos comuns de tributação dentro os produtos/serviços do seu segmento de negócios. O objetivo é facilitar a configuração de impostos de modo que ao efetuar um Pedido de Venda ou Pedido de Compra, o sistema consiga identificar com exatidão os assuntos fiscais/tributários (impostos, situações tributárias, etc.) do Produto/Serviço.</value>
+ </row>
+ <row trl="Y" uuid="8f093153-7e2f-48e9-a6e7-e1e4ac3e272b">
+  <value column="Name" original="BP Fiscal Group">Grupo de Tributação de PN</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain Business Partner Fiscal Groups">Gerenciamento de grupos de tributação de Parceiros de Negócios</value>
+  <value column="Help" original="">Utilize esta aba para manter grupos comuns de tributação dentro os parceiros do seu segmento de negócios. O objetivo é facilitar a configuração de impostos de modo que ao efetuar um Pedido de Venda ou Pedido de Compra, o sistema consiga identificar com exatidão os assuntos fiscais/tributários (impostos, situações tributárias, etc.) do Parceiro de Negócios.</value>
+ </row>
+ <row trl="Y" uuid="cccb7ed5-3606-4468-871d-9241f901b235">
+  <value column="Name" original="CFOP Product Category">Categoria CFOP de Produto</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain CFOP Product Categories">Gerenciamento de categorias CFOP de Produtos</value>
+  <value column="Help" original="">Utilize esta aba para manter categorias comuns dentre os CFOPs atualmente existentes. O objetivo é facilitar a configuração de impostos de modo que ao efetuar um Pedido de Venda ou Pedido de Compra, o sistema consiga identificar com exatidão os assuntos fiscais/tributários (impostos, situações tributárias, etc.) do Produto.</value>
+ </row>
+ <row trl="Y" uuid="0f4c5e18-6a2a-495d-83ac-9b65e819472e">
+  <value column="Name" original="CFOP BP Category">Categoria CFOP de PN</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain CFOP BP Category">Gerenciamento de categorias CFOP de Parceiros de Negócios</value>
+  <value column="Help" original="">Utilize esta aba para manter categorias comuns dentre os CFOPs atualmente existentes. O objetivo é facilitar a configuração de impostos de modo que ao efetuar um Pedido de Venda ou Pedido de Compra, o sistema consiga identificar com exatidão os assuntos fiscais/tributários (impostos, situações tributárias, etc.) do Parceiro de Negócios.</value>
  </row>
 </idempiereTrl>

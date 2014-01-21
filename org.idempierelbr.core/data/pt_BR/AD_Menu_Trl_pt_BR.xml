@@ -127,11 +127,11 @@
   <value column="Description" original="iDempiere Server Maintenance">Manutenção do Servidor Adempiere</value>
  </row>
  <row id="457" trl="Y">
-  <value column="Name" original="Sales Orders">Pedidos de Vendas</value>
+  <value column="Name" original="Sales Orders">Pedidos de Venda</value>
   <value column="Description" original=""/>
  </row>
  <row id="458" trl="Y">
-  <value column="Name" original="Sales Invoices">Faturas de Vendas</value>
+  <value column="Name" original="Sales Invoices">Faturas de Venda</value>
   <value column="Description" original=""/>
  </row>
  <row id="459" trl="Y">
@@ -297,5 +297,13 @@
  <row trl="Y" uuid="d6c871b3-f6fa-4548-94d8-6e033d9e574e">
   <value column="Name" original="Fiscal Rules">Regras Fiscais</value>
   <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="9b206750-ef40-4662-83dd-e146a07863cb">
+  <value column="Name" original="Taxes">Impostos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="44052b4c-eff2-411e-ab15-d3115ea0176c">
+  <value column="Name" original="CFOP">CFOP</value>
+  <value column="Description" original="CFOP Management">CFOP Management</value>
  </row>
 </idempiereTrl>

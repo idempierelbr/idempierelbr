@@ -89,13 +89,13 @@
  </row>
  <row id="118" trl="Y">
   <value column="Name" original="Generate Shipments">Gerar Remessas</value>
-  <value column="Description" original="Generate and print Shipments from open Orders">Gerar e imprimir Expedições a partir dos Pedidos em aberto</value>
-  <value column="Help" original="Shipments for open Orders are created based on the delivery rule of the Order and the relative order priority.  If a Promise Date is selected only orders up to (including) the date are selected.&lt;br&gt;&#10;If several Orders of a business partner have the same location, the orders can be consolidated into one Shipment.&lt;br&gt;&#10;You can also include orders who have outstanding confirmations (e.g. ordered=10 - not confirmed shipments=4 - would create a new shipment of 6 if available)."><![CDATA[Expedições para Pedidos em Aberto são criados com base nas Regras de Entrega e na prioridade relativa desse Pedido.  Se uma "Data Prometida" for selecionada, somente pedidos até essa data (inclusive) serão selecionados.<br> Se diversos pedidos de um parceiro de negócios tem a mesma localização, os pedidos podem ser consolidados em um único embarque.<br> Você também pode incluir pedidos cuja confirmação ainda esteja pendente  (ex. pedido=10 - entregas não confirmadas=4 - iria criar uma nova remessa de 6 se disponível).]]></value>
+  <value column="Description" original="Generate and print Shipments from open Orders">Gerar e imprimir Remessas a partir dos Pedidos em aberto</value>
+  <value column="Help" original="Shipments for open Orders are created based on the delivery rule of the Order and the relative order priority.  If a Promise Date is selected only orders up to (including) the date are selected.&lt;br&gt;&#10;If several Orders of a business partner have the same location, the orders can be consolidated into one Shipment.&lt;br&gt;&#10;You can also include orders who have outstanding confirmations (e.g. ordered=10 - not confirmed shipments=4 - would create a new shipment of 6 if available).">As remessas são geradas com base nas Regras de Entrega e na prioridade relativa do Pedido. Se uma "Data Prometida" for selecionada, somente pedidos até essa data (inclusive) serão selecionados. Se diversos pedidos de um parceiro de negócios tem a mesma localização, os pedidos podem ser consolidados em uma única remessa. Você também pode incluir pedidos cuja confirmação ainda esteja pendente  (ex. pedido=10 - remessa não confirmadas=4 - iriá criar uma nova remessa de 6 se disponível).</value>
  </row>
  <row id="119" trl="Y">
-  <value column="Name" original="Generate Invoices">Gerar Faturas (Notas Fiscais)</value>
+  <value column="Name" original="Generate Invoices">Gerar Faturas</value>
   <value column="Description" original="Generate and print Invoices from open Orders">Gerar e imprimir Faturas a partir dos Pedidos em aberto</value>
-  <value column="Help" original="Invoices for open Orders are created based on the invoice rule of the Order.&#10;If several Orders of a business partner have the same bill location, the orders can be consolidated into one Invoice.">Faturas para Pedidos em Aberto são criados baseado nas Regras de Fatura desse Pedido. Se diversos Pedidos de um Parceiro de Negócios tem o mesmo local de cobrança, os pedidos podem ser consolidados em uma única Fatura.</value>
+  <value column="Help" original="Invoices for open Orders are created based on the invoice rule of the Order.&#10;If several Orders of a business partner have the same bill location, the orders can be consolidated into one Invoice.">As faturas são geradas com base nas Regras de Fatura dos pedidos. Se diversos pedidos de um parceiro de negócios tem a mesma localização de cobrança, os pedidos podem ser consolidados em uma única fatura.</value>
  </row>
  <row id="120" trl="Y">
   <value column="Name" original="Order Transactions">Transações de Pedidos</value>
@@ -105,7 +105,7 @@
  <row id="121" trl="Y">
   <value column="Name" original="Open Orders">Pedidos em Aberto</value>
   <value column="Description" original="Open Order Report">Relatório de Pedidos em Aberto</value>
-  <value column="Help" original="Orders with quantities to deliver (Backordered) or quantities to invoice">Pedidos com quantidades a despachar (pedidos pendentes) ou quantidades a faturar</value>
+  <value column="Help" original="Orders with quantities to deliver (Backordered) or quantities to invoice">Este relatório lista pedidos em que ainda faltam gerar remessa(s)/recebimento(s) e/ou fatura(s).</value>
  </row>
  <row id="122" trl="Y">
   <value column="Name" original="Process Movements">Processar Movimentações</value>
@@ -133,39 +133,39 @@
   <value column="Help" original=""/>
  </row>
  <row id="127" trl="Y">
-  <value column="Name" original="Invoice Transactions (Acct)">Transações de Faturamento (Contábil)</value>
-  <value column="Description" original="Invoice Transactions by Accounting Date">Transações de Faturamento por Data de Contabilidade</value>
-  <value column="Help" original="The report lists the invoice transactions by accounting date">O relatório lista as transações de faturamento por data contábil</value>
+  <value column="Name" original="Invoice Transactions (Acct)">Transações de Faturas (Data Contábil)</value>
+  <value column="Description" original="Invoice Transactions by Accounting Date">Transações de Faturas por Data Contábil</value>
+  <value column="Help" original="The report lists the invoice transactions by accounting date">O relatório lista as transações de faturas com base na data contábil informada.</value>
  </row>
  <row id="128" trl="Y">
-  <value column="Name" original="Daily Invoice">Fatura Diária</value>
-  <value column="Description" original="Invoice Report per Day">Relatório de Fatura Diária</value>
-  <value column="Help" original="Invoiced amount by Organization and Sales Rep">Valor Faturado por Organização (divisão) e Representante de Vendas</value>
+  <value column="Name" original="Daily Invoice">Faturas Diárias (Representante)</value>
+  <value column="Description" original="Invoice Report per Day">Relatório de Faturas Diárias (por Representante)</value>
+  <value column="Help" original="Invoiced amount by Organization and Sales Rep">Este relatório lista o valor das faturas geradas diariamente consolidadas por representante.</value>
  </row>
  <row id="129" trl="Y">
-  <value column="Name" original="Monthly Invoice">Faturas Mensais</value>
-  <value column="Description" original="Invoice Report per Month">Relatório de Fatura Mensal</value>
-  <value column="Help" original="Invoiced amount by Organization and Sales Rep">Valor Faturado por Organização (divisão) e Representante de Vendas</value>
+  <value column="Name" original="Monthly Invoice">Faturas Mensais (Representante)</value>
+  <value column="Description" original="Invoice Report per Month">Relatório de Faturas Mensais (por Representante)</value>
+  <value column="Help" original="Invoiced amount by Organization and Sales Rep">Este relatório lista o valor das faturas geradas mensalmente consolidadas por representante.</value>
  </row>
  <row id="130" trl="Y">
-  <value column="Name" original="Weekly Invoice">Faturas Semanais</value>
-  <value column="Description" original="Invoice Report per Week">Relatório de Fatura Semanal</value>
-  <value column="Help" original="Invoiced amount by Organization and Sales Rep">Valor Faturado por Organização (divisão) e Representante de Vendas</value>
+  <value column="Name" original="Weekly Invoice">Faturas Semanais (Representante)</value>
+  <value column="Description" original="Invoice Report per Week">Relatório de Faturas Semanais (por Representante)</value>
+  <value column="Help" original="Invoiced amount by Organization and Sales Rep">Este relatório lista o valor das faturas geradas semanalmente consolidadas por representante.</value>
  </row>
  <row id="131" trl="Y">
-  <value column="Name" original="Weekly Invoice Prod Cat">Fat. Semanal p/ Categ. Prod.</value>
-  <value column="Description" original="Invoice Report by Product Category per Week">Relatório Semanal de Fatura por Categoria de Produto</value>
-  <value column="Help" original="Invoiced Amount by Product Category">Valor Faturado por Categoria de Produto</value>
+  <value column="Name" original="Weekly Invoice Prod Cat">Faturas Semanais (Categoria de Produto)</value>
+  <value column="Description" original="Invoice Report by Product Category per Week">Relatório de Faturas Semanais (por Categoria de Produto)</value>
+  <value column="Help" original="Invoiced Amount by Product Category">Este relatório lista o valor das faturas geradas semanalmente consolidadas por categoria de produto.</value>
  </row>
  <row id="132" trl="Y">
-  <value column="Name" original="Monthly Invoice Prod Cat">Fat. Mensal p/ Categ. Prod.</value>
-  <value column="Description" original="Invoice Report by Product Category per Month">Relatório Mensal de Fatura por Categoria de Produto</value>
-  <value column="Help" original="Invoiced Amount by Product Category">Valor Faturado por Categoria de Produto</value>
+  <value column="Name" original="Monthly Invoice Prod Cat">Faturas Mensais (Categoria de Produto)</value>
+  <value column="Description" original="Invoice Report by Product Category per Month">Relatório de Faturas Mensais (por Categoria de Produto)</value>
+  <value column="Help" original="Invoiced Amount by Product Category">Este relatório lista o valor das faturas geradas mensalmente consolidadas por categoria de produto.</value>
  </row>
  <row id="133" trl="Y">
-  <value column="Name" original="Monthly Invoice Vendor">Fatura Mensal de Fornecedor</value>
-  <value column="Description" original="Invoice Report by Product Vendor per Month">Relatório Mensal de Fatura de Fornecedor por Produto</value>
-  <value column="Help" original="Invoiced Amount by Vendor and Product Category">Valor Faturado por Fornecedor e Categoria de Produto</value>
+  <value column="Name" original="Monthly Invoice Vendor">Faturas Mensais (Fornecedor e Categoria de Produto)</value>
+  <value column="Description" original="Invoice Report by Product Vendor per Month">Relatório de Faturas Mensais (Fornecedor e Categoria de Produto)</value>
+  <value column="Help" original="Invoiced Amount by Vendor and Product Category">Este relatório lista o valor das faturas (cliente) geradas mensalmente consolidadas por fornecedor (dos produtos vendidos) e categoria de produto. O sistema identifica o fornecedor através da aba Compras na janela Produto.</value>
  </row>
  <row id="134" trl="Y">
   <value column="Name" original="Generate Invoices (manual) ">Gerar Faturas / Notas Fiscais  (Manual) </value>
@@ -188,14 +188,14 @@
   <value column="Help" original="Create/Post Production will generate the production lines and process the production.  If the production lines already exists, the production will be processed">O Processo "Criar/Registrar Produção" vai gerar as linhas de produção e processar a produção.  Se as linhas de produção já existirem, a produção será processada</value>
  </row>
  <row id="138" trl="Y">
-  <value column="Name" original="Quarterly Invoice Customer by Product">Fatura Trimestral por Cliente e por Produto</value>
-  <value column="Description" original="Invoice Report by Customer and Product Category per Quarter">Invoice Report by Customer and Product Category per Quarter</value>
-  <value column="Help" original="Invoiced Amount by Customer and Product Category">Valor Faturado por Cliente e Categoria de Produto</value>
+  <value column="Name" original="Quarterly Invoice Customer by Product">Faturas Trimestrais (Parceiro de Negócios e Produto)</value>
+  <value column="Description" original="Invoice Report by Customer and Product Category per Quarter">Relatório de Faturas Trimestrais (por Parceiro de Negócios e Produto)</value>
+  <value column="Help" original="Invoiced Amount by Customer and Product Category">Este relatório lista o valor das faturas geradas no trimestre consolidadas por produto e por parceiro de negócios (cliente ou fornecedor). Em resumo, o relatório apresenta: qual produto cada cliente comprou, ou cada produto que compramos de nossos fornecedores.</value>
  </row>
  <row id="139" trl="Y">
-  <value column="Name" original="Quarterly Invoice Customer by Vendor">Fatura Trimestral por Cliente e por Fornecedor</value>
-  <value column="Description" original="Invoice Report by Customer and Product Vendor per Quarter">Relatório de Fatura Trimestral por Cliente e por Fornecedor de Produtos</value>
-  <value column="Help" original="Invoiced Amount by Customer and Vendor (what customer bought from which vendor)">Valor Faturado por Cliente e Fornecedor (qual cliente comprou de qual fornecedor)</value>
+  <value column="Name" original="Quarterly Invoice Customer by Vendor">Faturas Trimestrais (Cliente e Fornecedor)</value>
+  <value column="Description" original="Invoice Report by Customer and Product Vendor per Quarter">Relatório de Faturas Trimestrais (por Cliente e Fornecedor)</value>
+  <value column="Help" original="Invoiced Amount by Customer and Vendor (what customer bought from which vendor)">Este relatório lista o valor das faturas (cliente) geradas no trimestre consolidadas por cliente e fornecedor (dos produtos vendidos). O sistema identifica o fornecedor através da aba Compras na janela Produto. Em resumo, o relatório apresenta o que cada cliente comprou de cada fornecedor da empresa.</value>
  </row>
  <row id="140" trl="Y">
   <value column="Name" original="Copy Accounts">Copiar Contas</value>
@@ -243,14 +243,14 @@
   <value column="Help" original=""/>
  </row>
  <row id="151" trl="Y">
-  <value column="Name" original="Invoice Transactions (Doc)">Transações de Faturamento (Contábil)</value>
-  <value column="Description" original="Invoice Transactions by Invoice Date">Transações de Faturamento por Data de Faturamento</value>
-  <value column="Help" original="The report lists the invoice transactiobs by invoice date">O relatório lista as transações de faturamento por data de faturamento</value>
+  <value column="Name" original="Invoice Transactions (Doc)">Transações de Faturas (Data da Fatura)</value>
+  <value column="Description" original="Invoice Transactions by Invoice Date">Transações de Faturas por Data da Fatura</value>
+  <value column="Help" original="The report lists the invoice transactiobs by invoice date">O relatório lista as transações de faturas com base na data da fatura informada.</value>
  </row>
  <row id="152" trl="Y">
-  <value column="Name" original="Invoice Detail &amp; Margin"><![CDATA[Detalhes de Faturamento & Margem]]></value>
-  <value column="Description" original="Invoice (Line) Detail and Margin Report">Relatório de Margem e detalhe de Faturamento (Linha)</value>
-  <value column="Help" original="The Report lists Customer and Vendor Invoice Details with Margines.">O relatório lista Detalhes de Fatura de Fornecedores e Clientes com Margens.</value>
+  <value column="Name" original="Invoice Detail &amp; Margin">Detalhes de Faturas (c/ Margem)</value>
+  <value column="Description" original="Invoice (Line) Detail and Margin Report">Relatório detalhado de linhas de Faturas, com informações de Margem</value>
+  <value column="Help" original="The Report lists Customer and Vendor Invoice Details with Margines.">O relatório lista detalhes de linhas de faturas (clientes ou fornecedores) incluindo informações de margem (com base no preço).</value>
  </row>
  <row id="153" trl="Y">
   <value column="Name" original="Online Process">Processo Online</value>
@@ -294,7 +294,7 @@
  </row>
  <row id="165" trl="Y">
   <value column="Name" original="Copy Lines">Copiar Linhas</value>
-  <value column="Description" original="Copy Commission Lines from other Commission">Copiar Linhas de Comissão a partir de outras Comissões</value>
+  <value column="Description" original="Copy Commission Lines from other Commission">Copiar Linhas de outra Comissão</value>
   <value column="Help" original=""/>
  </row>
  <row id="166" trl="Y">
@@ -418,14 +418,13 @@
   <value column="Help" original="Select either a table to create a print format [creates initial rough layout]&#10;OR a print format to copy into the current print format [copies layout].">Selecione uma tabela para criar um formato de impressão [cria um layout inicial em bruto] OU um formato de impressão para copiar sobre o formato de impressão atual [copia o layout].</value>
  </row>
  <row id="193" trl="Y">
-  <value column="Name" original="Generate PO from Sales Order">Gerar Pedido de Compra a partir do Pedido de Vendas</value>
-  <value column="Description" original="Create Purchase Order from Sales Orders">Criar Pedido de Compra a partir dos Pedidos de Vendas</value>
-  <value column="Help" original="After completing sales orders, you can create one or more purchase orders for each sales order. A purchase order references always only one sales order (i.e. no consolidation of sales orders). &#10;The Organization of the Sales Order is used to create the Purchase Order. If a (default) PO document type is defined on Organization level, that is used instead of the document types defined on Client level.&#10;&#10;POs are created for all sales order lines where the product has a current vendor, the vendor has a Vendor Price List with all Products on the most current Price List Version. The Unit of Measure is copied; PO and SO can have different currencies.&#10;&#10;Once the process is run, you need to synchronize the SO/PO manually (e.g. in case of additional lines and changed lines (product &amp; quantity)."><![CDATA[Após completar as ordens de vendas, você pode criar um ou mais pedidos de compra para cada ordem de venda. Um pedido de compras faz referência sempre a uma única ordem de vendas (i.e. sem consolidação das ordens de venda). A Organização da Ordem de Venda é usada para criar o Pedido de Compra. Se um tipo de documento de PC (padrão) for definido no nível de Organização, este será utilizado ao invés dos tipos de documento definidos no nível de Empresa.
+  <value column="Name" original="Generate PO from Sales Order">Gerar Pedido de Compra a partir de Pedido de Venda</value>
+  <value column="Description" original="Create Purchase Order from Sales Orders">Gerar Pedido de Compra a partir de Pedido de Venda</value>
+  <value column="Help" original="After completing sales orders, you can create one or more purchase orders for each sales order. A purchase order references always only one sales order (i.e. no consolidation of sales orders). &#10;The Organization of the Sales Order is used to create the Purchase Order. If a (default) PO document type is defined on Organization level, that is used instead of the document types defined on Client level.&#10;&#10;POs are created for all sales order lines where the product has a current vendor, the vendor has a Vendor Price List with all Products on the most current Price List Version. The Unit of Measure is copied; PO and SO can have different currencies.&#10;&#10;Once the process is run, you need to synchronize the SO/PO manually (e.g. in case of additional lines and changed lines (product &amp; quantity).">Após completar pedidos de venda (PV), você pode criar um ou mais pedidos de compra (PC) para cada PV. Um PC gerado por este processo faz referência somente a um único PV (não há consolidação de PV). A Organização do PV é usada para criar o PC. Se um tipo de documento de PC (padrão) for definido a nível de Organização, este será utilizado ao invés do tipo de documento definido a nível de Empresa.
 
-PCs são criados para todas as linhas das ordens de vendas onde o produto tem um fornecedor atual e o fornecedor tem uma Lista de Preços de Fornecedor com todos os Produtos na Versão mais atualizada da Lista de Preços. A Unidade de Medida é copiada; PC e PV podem ter diferentes moedas.
+PC são criados para todas as linhas dos PV onde o produto tem um fornecedor definido. É necessário também que os produtos estejam na versão de lista de preços atual. A UDM é mantida; PC e PV podem estar em diferentes moedas.
 
-Uma vez que o processo é executado, você precisa sincronizar os PC/PV manualmente (ex. no caso de linhas adicionais e de linhas alteradas (produto & quantidade).
-]]></value>
+Uma vez que o processo é executado, se você precisar alterar linhas, faça isso manualmente tanto no PC quanto no PV.</value>
  </row>
  <row id="194" trl="Y">
   <value column="Name" original="Import Business Partners">Importar Parceiros de Negócios</value>
@@ -458,9 +457,9 @@ Uma vez que o processo é executado, você precisa sincronizar os PC/PV manualme
   <value column="Help" original=""/>
  </row>
  <row id="200" trl="Y">
-  <value column="Name" original="Print Invoices">Imprimir Notas Fiscais</value>
-  <value column="Description" original="Print Invoices to paper or send PDF">Imprimir Notas Fiscais / Fatura em papel ou enviar PDF</value>
-  <value column="Help" original="(Re)Print Invoices or send them as PDF attachments to the Business Partner Contact with a valid EMail addres.&#10;&lt;br&gt;&#10;Remark: If you only enter a Document No FROM value, all invoices greater or equal that document number are printed; you can alternatively use the % character as a widcard."><![CDATA[(Re)Imprimir Faturas ou enviá-las como anexos em formato PDF ao Contato do Parceiro de Negócios com um endereço de email válido. <br> Observação: Se você apenas digitar um Número de documento no Campo "De", todas as faturas maiores ou iguais ao número de documento serão impressas; você pode alternativamente usar o caractere % como coringa.]]></value>
+  <value column="Name" original="Print Invoices">Imprimir Faturas</value>
+  <value column="Description" original="Print Invoices to paper or send PDF">Imprimir Faturas em papel ou enviar PDF por e-mail</value>
+  <value column="Help" original="(Re)Print Invoices or send them as PDF attachments to the Business Partner Contact with a valid EMail addres.&#10;&lt;br&gt;&#10;Remark: If you only enter a Document No FROM value, all invoices greater or equal that document number are printed; you can alternatively use the % character as a widcard."><![CDATA[Este processo imprime faturas ou as envia como anexo (formato PDF) ao contato do parceiro de negócios com um endereço de e-mail válido.<br><br>Atenção: se você informar apenas o número inicial no campo Número do Documento e deixar o número final em branco, todas as faturas com número >= à informada serão consideradas. Além disso, você pode usar o caractere % como curinga.]]></value>
  </row>
  <row id="201" trl="Y">
   <value column="Name" original="Deliver Assets">Entrega de Ativos</value>
@@ -615,13 +614,13 @@ Uma vez que o processo é executado, você precisa sincronizar os PC/PV manualme
   <value column="Help" original=""/>
  </row>
  <row id="231" trl="Y">
-  <value column="Name" original="Quote convert">Converter Cotação</value>
-  <value column="Description" original="Convert open Proposal or Quotation to Order">Converter Propostas ou Cotações abertas em Pedidos</value>
-  <value column="Help" original="You can convert a Proposal or Quotation to any other Order document type. You would use this process, if you want to maintain/keep the Proposal or Quotation. The document status needs to be In Process.">Você pode converter uma Proposta ou Cotação em qualquer outro tipo de documento de Pedido. Você usaria este processo, se você desejar manter/conservar a Proposta ou Cotação. O estado do documento precisa ser "Em Processo".</value>
+  <value column="Name" original="Quote convert">Converter Proposta/Cotação</value>
+  <value column="Description" original="Convert open Proposal or Quotation to Order">Converter Propostas ou Cotações Abertas em Pedidos</value>
+  <value column="Help" original="You can convert a Proposal or Quotation to any other Order document type. You would use this process, if you want to maintain/keep the Proposal or Quotation. The document status needs to be In Process.">Você pode converter uma proposta ou cotação em qualquer outro tipo de documento (de pedido). Use este processo se você deseja manter a proposta/cotação. O estado do documento precisa estar Em Progresso.</value>
  </row>
  <row id="232" trl="Y">
-  <value column="Name" original="RePrice Order/Invoice">Revisar Preços em Pedidos/Fatura</value>
-  <value column="Description" original="Recalculate the price based on the latest price list version of an open order or invoice">Recalcular o preço de um pedido ou fatura em aberto baseado na última versão da lista de preços</value>
+  <value column="Name" original="RePrice Order/Invoice">Reajustar Preços em Pedido/Fatura</value>
+  <value column="Description" original="Recalculate the price based on the latest price list version of an open order or invoice">Reajusta o preço de um pedido ou fatura em aberto baseado na última versão da lista de preços</value>
   <value column="Help" original=""/>
  </row>
  <row id="233" trl="Y">
@@ -736,8 +735,8 @@ Uma vez que o processo é executado, você precisa sincronizar os PC/PV manualme
   <value column="Help" original="The Period is based on the the Calendar defined on Client level.">O Período é baseado no Calendário definido no nível da Empresa.</value>
  </row>
  <row id="255" trl="Y">
-  <value column="Name" original="Reopen Order">Reabrir Ordem</value>
-  <value column="Description" original="Open previously closed Order">Abrir Ordem previamente fechada</value>
+  <value column="Name" original="Reopen Order">Reabrir um Pedido Fechado</value>
+  <value column="Description" original="Open previously closed Order">Reabre um pedido anteriormente fechado</value>
   <value column="Help" original=""/>
  </row>
  <row id="256" trl="Y">
@@ -934,9 +933,9 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original="The report provides Material Repecipt Header and Line with locator information.">O relatório provê Linha e Cabeçalho de Recebimento de Materiais com informação do Localizador.</value>
  </row>
  <row id="294" trl="Y">
-  <value column="Name" original="Shipment Details">Detalhes de Entrega</value>
-  <value column="Description" original="Shipment Detail Information">Informação dos Detalhes de Entrega</value>
-  <value column="Help" original="The report provides Material Shipment Header and Line with locator information.  You can use the report to create a Consolidated Picking List.">O relatório provê Linha e Cabeçalho de Envio de Materiais com informação do Localizador.  Você pode usar o relatório para criar uma Lista de Separação Consolidada.</value>
+  <value column="Name" original="Shipment Details">Detalhes de Remessas</value>
+  <value column="Description" original="Shipment Detail Information">Detalhes de Remessas</value>
+  <value column="Help" original="The report provides Material Shipment Header and Line with locator information.  You can use the report to create a Consolidated Picking List.">Este relatório fornece informações detalhadas de remessas. Pode ser utilizado para criar uma lista de separação (picking) consolidada.</value>
  </row>
  <row id="295" trl="Y">
   <value column="Name" original="Role Access Update">Atualização do Acesso de Função (Papel)</value>
@@ -1040,9 +1039,9 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original="Check the payments and invoices of a business partner and checks the balances.">Verifica os pagamentos e faturas de um parceiro de negócios e confere os balanços.</value>
  </row>
  <row id="315" trl="Y">
-  <value column="Name" original="Order Batch Process">Processar Pedidos em Batelada</value>
-  <value column="Description" original="Process Orders in Batch">Processar Pedidos em Lotes (Bateladas)</value>
-  <value column="Help" original="Based on the selection criteria, the orders are processed using the document action selected.  Make sure that the document action is valid for the documents.">Os pedidos são processados usando a Ação do Documento selecionada com base nos critérios de seleção.  Certifique-se que a "Ação do Documento" seja válida para os documentos.</value>
+  <value column="Name" original="Order Batch Process">Processar Pedidos em Lote</value>
+  <value column="Description" original="Process Orders in Batch">Processar Pedidos em Lote</value>
+  <value column="Help" original="Based on the selection criteria, the orders are processed using the document action selected.  Make sure that the document action is valid for the documents.">Este processo altera o Estado do Documento de vários pedidos de uma só vez conforme os critérios informados. Certifique-se de selecionar uma ação válida (e compatível) no campo Ação do Documento.</value>
  </row>
  <row id="316" trl="Y">
   <value column="Name" original="UnAllocated Invoices">Faturas Não Alocadas</value>
@@ -1065,9 +1064,9 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original="The report lists open invoices and payments">O relatório lista faturas e pagamentos em aberto</value>
  </row>
  <row id="320" trl="Y">
-  <value column="Name" original="Commission Run Detail">Detalhe de Cálculo de Comissão</value>
-  <value column="Description" original="Commission Run Detail Report">Relatório detalhado de Cálculo de Comissão</value>
-  <value column="Help" original="Commission Run, Amount Details with Order/Invoice details">Cálculo de Comissão, detalhes de valores com detalhes de pedidos/faturas</value>
+  <value column="Name" original="Commission Run Detail">Detalhes de Cálculos de Comissão</value>
+  <value column="Description" original="Commission Run Detail Report">Relatório detalhado de Cálculos de Comissão</value>
+  <value column="Help" original="Commission Run, Amount Details with Order/Invoice details">Este relatório exibe o(s) Cálculo(s) de Comissão com informações detalhadas de valores/qtds. e respecivos pedidos/faturas</value>
  </row>
  <row id="321" trl="Y">
   <value column="Name" original="Synchronize Doc Translation">Sincronizar Tradução de Documento</value>
@@ -1130,9 +1129,9 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original="Distribute costs to Products based on selections - Distribution Base (Quantity, Current Costs, Line, Weight, ..) and Receipt/Line or directly to the product.">Distribui custos aos produtos basedo nas seleções - Base de Distribuição (Quantidade, Custos Atuais, Linha, Peso, ... ) e Recebimento/Linha ou diretamente ao produto.</value>
  </row>
  <row id="333" trl="Y">
-  <value column="Name" original="Order Detail">Detalhes do Pedido</value>
+  <value column="Name" original="Order Detail">Detalhes de Pedidos</value>
   <value column="Description" original="Order Detail Report">Relatório de Detalhes de Pedidos</value>
-  <value column="Help" original="The report includes order detail information including lost sales.  The report can be used for Sales and Purchasing.">O relatório emite informações detalhadas do pedido incluindo vendas perdidas.  O relatório pode ser utilizado para Vendas e Compras.</value>
+  <value column="Help" original="The report includes order detail information including lost sales.  The report can be used for Sales and Purchasing.">O relatório emite informações detalhadas de pedidos, incluindo vendas perdidas. O relatório pode ser utilizado para Vendas e Compras.</value>
  </row>
  <row id="334" trl="Y">
   <value column="Name" original="Business Partner Detail">Detalhes do Parceiro de Negócios</value>
@@ -1165,14 +1164,14 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original=""/>
  </row>
  <row id="340" trl="Y">
-  <value column="Name" original="Monthly Invoice Product">Fatura Mensal de Produtos</value>
-  <value column="Description" original="Invoice Report by Product per Month">Relatório Mensal de Fatura por Produto</value>
-  <value column="Help" original="Invoiced Amount by Product and Month">Invoiced Amount by Product and Month</value>
+  <value column="Name" original="Monthly Invoice Product">Faturas Mensais (Produto)</value>
+  <value column="Description" original="Invoice Report by Product per Month">Relatório de Faturas Mensais (por Produto)</value>
+  <value column="Help" original="Invoiced Amount by Product and Month">Este relatório lista o valor das faturas geradas mensalmente consolidadas por produto.</value>
  </row>
  <row id="341" trl="Y">
-  <value column="Name" original="Quarter Invoice Product">Quarter Invoice Product</value>
-  <value column="Description" original="Invoice Report by Product per Quarter">Imvoice Report by Product per Quarter</value>
-  <value column="Help" original="Invoiced Amount by Product and Quarter">Invoiced Amount by Product and Quarter</value>
+  <value column="Name" original="Quarter Invoice Product">Faturas Trimestrais (Produto)</value>
+  <value column="Description" original="Invoice Report by Product per Quarter">Relatório de Faturas Trimestrais (por Produto)</value>
+  <value column="Help" original="Invoiced Amount by Product and Quarter">Este relatório lista o valor das faturas geradas trimestralmente consolidadas por produto.</value>
  </row>
  <row id="342" trl="Y">
   <value column="Name" original="Validate Support">Validate Support</value>
@@ -1756,9 +1755,9 @@ This process should be implemented when the users are not connected.</value>
   <value column="Description" original="Recalculate summary facts based on report cube definitions.">Recalculate summary facts based on report cube definitions.</value>
   <value column="Help" original=""/>
  </row>
- <row id="53176" trl="N">
-  <value column="Name" original="Order Transactions">Order Transactions</value>
-  <value column="Description" original="Sales Order Transaction Report">Sales Order Transaction Report</value>
+ <row id="53176" trl="Y">
+  <value column="Name" original="Order Transactions">Transações de Pedidos</value>
+  <value column="Description" original="Sales Order Transaction Report">Relatório de Transações de Pedidos</value>
   <value column="Help" original=""/>
  </row>
  <row id="53179" trl="N">
@@ -1791,10 +1790,10 @@ This process should be implemented when the users are not connected.</value>
   <value column="Description" original="Import Product Planning and Forecast">Import Product Planning and Forecast</value>
   <value column="Help" original="Import and update  product planning data and forecast">Import and update  product planning data and forecast</value>
  </row>
- <row id="53202" trl="N">
-  <value column="Name" original="POS Key Generate">POS Key Generate</value>
-  <value column="Description" original="Generate POS Keys from products.">Generate POS Keys from products.</value>
-  <value column="Help" original=""/>
+ <row id="53202" trl="Y">
+  <value column="Name" original="POS Key Generate">Gerar Funções PDV</value>
+  <value column="Description" original="Generate POS Keys from products.">Gerar Funções PDV (Produtos)</value>
+  <value column="Help" original="">Este processo gera funções (produtos) em um layout de funções PDV. Isso facilita a inserção de produtos ao criar um novo layout. </value>
  </row>
  <row id="53206" trl="N">
   <value column="Name" original="Copy from product">Copy from product</value>
