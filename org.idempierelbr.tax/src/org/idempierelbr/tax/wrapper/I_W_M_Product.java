@@ -29,23 +29,23 @@ import org.compiere.util.KeyNamePair;
 public interface I_W_M_Product extends org.idempierelbr.core.wrapper.I_W_M_Product
 {
 	/** 0 - Domestic = 0 */
-	public static final String LBR_PRODUCTSOURCE_0_Domestic = "0";
+	public static final String LBR_PRODUCTSOURCE_0 = "0";
 	/** 1 - Imported = 1 */
-	public static final String LBR_PRODUCTSOURCE_1_Imported = "1";
+	public static final String LBR_PRODUCTSOURCE_1 = "1";
 	/** 2 - Imported - Acquired from a domestic distributor = 2 */
-	public static final String LBR_PRODUCTSOURCE_2_Imported_AcquiredFromADomesticDistributor = "2";
+	public static final String LBR_PRODUCTSOURCE_2 = "2";
 	/** 3 - Domestic with more than 40 percent Imported = 3 */
-	public static final String LBR_PRODUCTSOURCE_3_DomesticWithMoreThan40PercentImported = "3";
+	public static final String LBR_PRODUCTSOURCE_3 = "3";
 	/** 4 - Domestic according to adjustments = 4 */
-	public static final String LBR_PRODUCTSOURCE_4_DomesticAccordingToAdjustments = "4";
+	public static final String LBR_PRODUCTSOURCE_4 = "4";
 	/** 5 - Domestic until 40 percent Imported = 5 */
-	public static final String LBR_PRODUCTSOURCE_5_DomesticUntil40PercentImported = "5";
+	public static final String LBR_PRODUCTSOURCE_5 = "5";
 	/** 6 - Foreign - Direct import no domestic similar = 6 */
-	public static final String LBR_PRODUCTSOURCE_6_Foreign_DirectImportNoDomesticSimilar = "6";
+	public static final String LBR_PRODUCTSOURCE_6 = "6";
 	/** 7 - Foreign - Acquired from domestic distributor no similar = 7 */
-	public static final String LBR_PRODUCTSOURCE_7_Foreign_AcquiredFromDomesticDistributorNoSimilar = "7";
+	public static final String LBR_PRODUCTSOURCE_7 = "7";
 	/** 8 - Domestic with more than 70 percent Imported = 8 */
-	public static final String LBR_PRODUCTSOURCE_8_DomesticWithMoreThan70PercentImported = "8";
+	public static final String LBR_PRODUCTSOURCE_8 = "8";
 	
     /** Column name LBR_FiscalGroup_Product_ID */
     public static final String COLUMNNAME_LBR_FiscalGroup_Product_ID = "LBR_FiscalGroup_Product_ID";
