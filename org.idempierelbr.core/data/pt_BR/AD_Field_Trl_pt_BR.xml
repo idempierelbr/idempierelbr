@@ -520,10 +520,10 @@ To Manufacturing Order is the date when the last manufacturing order movement is
   <value column="Description" original="System Notice acknowledged">System Notice acknowledged</value>
   <value column="Help" original="The Acknowledged checkbox indicates if this notice does not need to be retained.">The Acknowledged checkbox indicates if this notice does not need to be retained.</value>
  </row>
- <row id="57761" trl="N">
-  <value column="Name" original="Customer Return">Customer Return</value>
-  <value column="Description" original="Customer Return Document">Customer Return Document</value>
-  <value column="Help" original="The Customer Return">The Customer Return</value>
+ <row id="57761" trl="Y">
+  <value column="Name" original="Customer Return">Devolução de Cliente</value>
+  <value column="Description" original="Customer Return Document">Devolução de Cliente</value>
+  <value column="Help" original="The Customer Return"/>
  </row>
  <row id="57900" trl="N">
   <value column="Name" original="Return to Vendor">Return to Vendor</value>
@@ -597,10 +597,10 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original="Complete Production">Complete Production</value>
   <value column="Help" original="Indication that this is complete">Indication that this is complete</value>
  </row>
- <row id="62236" trl="N">
-  <value column="Name" original="Sales Rep Name">Sales Rep Name</value>
-  <value column="Description" original="Sales Representative Name">Sales Representative Name</value>
-  <value column="Help" original="The name of the sales rep that this dashboard relates to.">The name of the sales rep that this dashboard relates to.</value>
+ <row id="62236" trl="Y">
+  <value column="Name" original="Sales Rep Name">Nome do Representante</value>
+  <value column="Description" original="Sales Representative Name">Nome do Representante de Vendas</value>
+  <value column="Help" original="The name of the sales rep that this dashboard relates to.">Nome do representante de vendas responsável pelo painel.</value>
  </row>
  <row id="62779" trl="Y">
   <value column="Name" original="Language">Idioma</value>
@@ -637,93 +637,93 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201245" trl="N">
-  <value column="Name" original="Ship Date (For FedEx only)">Ship Date (For FedEx only)</value>
-  <value column="Description" original="Shipment Date/Time">Shipment Date/Time</value>
-  <value column="Help" original="Actual Date/Time of Shipment (pick up)">Actual Date/Time of Shipment (pick up)</value>
+ <row id="201245" trl="Y">
+  <value column="Name" original="Ship Date (For FedEx only)">Data da Remessa (apenas FedEx)</value>
+  <value column="Description" original="Shipment Date/Time">Data da Remessa/Coleta (apenas quando o serviço utilizado for FedEx)</value>
+  <value column="Help" original="Actual Date/Time of Shipment (pick up)">Data da Remessa/Coleta  (apenas quando o serviço utilizado for FedEx).</value>
  </row>
- <row id="201255" trl="N">
-  <value column="Name" original="Duties Shipper Account (For FedEx only)">Duties Shipper Account (For FedEx only)</value>
+ <row id="201255" trl="Y">
+  <value column="Name" original="Duties Shipper Account (For FedEx only)">Conta de Impostos da Transportadora (apenas FedEx)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201256" trl="N">
-  <value column="Name" original="Partner Location (For UPS only)">Partner Location (For UPS only)</value>
-  <value column="Description" original="Identifies the (ship to) address for this Business Partner">Identifies the (ship to) address for this Business Partner</value>
-  <value column="Help" original="The Partner address indicates the location of a Business Partner">The Partner address indicates the location of a Business Partner</value>
+ <row id="201256" trl="Y">
+  <value column="Name" original="Partner Location (For UPS only)">Localização do Parceiro (apenas UPS)</value>
+  <value column="Description" original="Identifies the (ship to) address for this Business Partner"/>
+  <value column="Help" original="The Partner address indicates the location of a Business Partner"/>
  </row>
- <row id="201262" trl="N">
-  <value column="Name" original="Future Day Shipment (For FedEx only)">Future Day Shipment (For FedEx only)</value>
+ <row id="201262" trl="Y">
+  <value column="Name" original="Future Day Shipment (For FedEx only)">Remessa Future Day (apenas FedEx)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201264" trl="N">
-  <value column="Name" original="Home Delivery Premium Type (For FedEx only)">Home Delivery Premium Type (For FedEx only)</value>
+ <row id="201264" trl="Y">
+  <value column="Name" original="Home Delivery Premium Type (For FedEx only)">Tipo de Home Delivery Premium (apenas FedEx)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201265" trl="N">
-  <value column="Name" original="Phone Number (For FedEx only)">Phone Number (For FedEx only)</value>
+ <row id="201265" trl="Y">
+  <value column="Name" original="Phone Number (For FedEx only)">Telefone (apenas FedEx)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201266" trl="N">
-  <value column="Name" original="Date (For FedEx only)">Date (For FedEx only)</value>
+ <row id="201266" trl="Y">
+  <value column="Name" original="Date (For FedEx only)">Data (apenas FedEx)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201267" trl="N">
-  <value column="Name" original="Hazardous Materials (For FedEx only)">Hazardous Materials (For FedEx only)</value>
+ <row id="201267" trl="Y">
+  <value column="Name" original="Hazardous Materials (For FedEx only)">Carga Perigosa (apenas FedEx)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201268" trl="N">
-  <value column="Name" original="Dot Hazard Class or Division (For FedEx only)">Dot Hazard Class or Division (For FedEx only)</value>
+ <row id="201268" trl="Y">
+  <value column="Name" original="Dot Hazard Class or Division (For FedEx only)">Classe de Cargas Perigosas (apenas FedEx)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201269" trl="N">
-  <value column="Name" original="Cargo Aircraft Only (For FedEx only)">Cargo Aircraft Only (For FedEx only)</value>
+ <row id="201269" trl="Y">
+  <value column="Name" original="Cargo Aircraft Only (For FedEx only)">Apenas em Avião de Carga (apenas FedEx)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201270" trl="N">
-  <value column="Name" original="Accessible (For FedEx only)">Accessible (For FedEx only)</value>
+ <row id="201270" trl="Y">
+  <value column="Name" original="Accessible (For FedEx only)">Acessível (apenas FedEx)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201271" trl="N">
-  <value column="Name" original="Dry Ice (For FedEx only)">Dry Ice (For FedEx only)</value>
+ <row id="201271" trl="Y">
+  <value column="Name" original="Dry Ice (For FedEx only)">Gelo Seco (apenas FedEx)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201272" trl="N">
-  <value column="Name" original="Dry Ice Weight (For FedEx only)">Dry Ice Weight (For FedEx only)</value>
+ <row id="201272" trl="Y">
+  <value column="Name" original="Dry Ice Weight (For FedEx only)">Peso do Gelo Seco (apenas FedEx)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201273" trl="N">
-  <value column="Name" original="Hold At Location (For FedEx only)">Hold At Location (For FedEx only)</value>
+ <row id="201273" trl="Y">
+  <value column="Name" original="Hold At Location (For FedEx only)">Manter em uma Localização (apenas FedEx)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="201274" trl="N">
-  <value column="Name" original="Hold Address (For FedEx only)">Hold Address (For FedEx only)</value>
+  <value column="Name" original="Hold Address (For FedEx only)">Localização para Manter (apenas FedEx)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201354" trl="N">
-  <value column="Name" original="Added Handling (For UPS only)">Added Handling (For UPS only)</value>
+ <row id="201354" trl="Y">
+  <value column="Name" original="Added Handling (For UPS only)">Acréscimo de Manuseio (apenas UPS)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201355" trl="N">
-  <value column="Name" original="Delivery Confirmation Type (For FedEx only)">Delivery Confirmation Type (For FedEx only)</value>
+ <row id="201355" trl="Y">
+  <value column="Name" original="Delivery Confirmation Type (For FedEx only)">Tipo de Confirmação de Entrega (apenas FedEx)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="201358" trl="N">
-  <value column="Name" original="Verbal Confirmation (For UPS only)">Verbal Confirmation (For UPS only)</value>
+ <row id="201358" trl="Y">
+  <value column="Name" original="Verbal Confirmation (For UPS only)">Confirmação Verbal (apenas UPS)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -742,9 +742,9 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original="Inventory Cost Adjustment">Inventory Cost Adjustment</value>
   <value column="Help" original="The Inventory Cost Adjustment document allows user to enter cost adjustment for products">The Inventory Cost Adjustment document allows user to enter cost adjustment for products</value>
  </row>
- <row id="202443" trl="N">
-  <value column="Name" original="Purchase Order Line">Purchase Order Line</value>
-  <value column="Description" original="Purchase Order Line">Purchase Order Line</value>
-  <value column="Help" original="The Purchase Order Line is a unique identifier for a line in an order.">The Purchase Order Line is a unique identifier for a line in an order.</value>
+ <row id="202443" trl="Y">
+  <value column="Name" original="Purchase Order Line">Linha do Pedido de Compra</value>
+  <value column="Description" original="Purchase Order Line">Linha do Pedido de Compra</value>
+  <value column="Help" original="The Purchase Order Line is a unique identifier for a line in an order.">A "Linha do Pedido de Compra" é um identificador exclusivo para uma linha em um pedido de compra.</value>
  </row>
 </idempiereTrl>

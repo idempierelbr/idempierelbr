@@ -42,9 +42,9 @@ Para códigos de idiomas, nós sugerimos usar a convenção de país e idiomas d
 Verifique que a tradução crie os registros de tradução faltantes. Inicie este processo após criar um novo idioma.</value>
  </row>
  <row id="107" trl="Y">
-  <value column="Name" original="Matched Invoices">Faturas Confrontadas</value>
-  <value column="Description" original="View Matched Invoices">Ver Faturas Confrontadas</value>
-  <value column="Help" original="View detals of matched invoice lines to material receipt lines">View detals of matched invoice lines to material receipt lines</value>
+  <value column="Name" original="Matched Invoices">Conciliação de Faturas</value>
+  <value column="Description" original="View Matched Invoices">Visualizar Conciliações de Faturas</value>
+  <value column="Help" original="View detals of matched invoice lines to material receipt lines">Visualizar detalhes de conciliações de linhas de faturas e a linhas de recebimentos de materiais.</value>
  </row>
  <row id="108" trl="Y">
   <value column="Name" original="User">Usuário</value>
@@ -253,9 +253,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Bank / Cash Window is used to define the banks and accounts associated with an organization or business partner">A Janela "Banco" é usada para definir os bancos e as contas associadas com uma organização ou parceiro de negócios</value>
  </row>
  <row id="159" trl="Y">
-  <value column="Name" original="Dunning">Cobrança</value>
-  <value column="Description" original="Maintain Dunning Levels">Gerenciamento dos Níveis de Cobrança</value>
-  <value column="Help" original="The Dunning Window defines the parameters that will be used when generating Dunning Letters.  Each customer can be associated with a Dunning Code.  ">A Janela "Cobrança" define os parâmetros que serão utilizados ao gerar Cartas de Cobrança.  Cada cliente pode ser associado a um Código de Cobrança.  </value>
+  <value column="Name" original="Dunning">Recuperação (Cobrança)</value>
+  <value column="Description" original="Maintain Dunning Levels">Gerenciamento dos Níveis de Recuperação (Cobrança)</value>
+  <value column="Help" original="The Dunning Window defines the parameters that will be used when generating Dunning Letters.  Each customer can be associated with a Dunning Code.  ">A Janela "Recuperação (Cobrança)" define os parâmetros que serão utilizados ao gerar cartas de recuperação de cobrança, ou enviá-las por e-mail. Clientes podem ser vinculados a esses parâmetros através da janela Parceiro de Negócios.</value>
  </row>
  <row id="160" trl="Y">
   <value column="Name" original="Withholding (1099)">Retenção (1099)</value>
@@ -527,9 +527,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original=""/>
  </row>
  <row id="228" trl="Y">
-  <value column="Name" original="Matched Purchase Orders">Pedidos de Compra Confrontados</value>
-  <value column="Description" original="View Matched Purchase Orders">Ver Pedidos de Compra Confrontados</value>
-  <value column="Help" original="View detals of matched purchase order lines to invoice lines and material receipt lines">View detals of matched purchase order lines to invoice lines and material receipt lines</value>
+  <value column="Name" original="Matched Purchase Orders">Conciliação de Pedidos de Compra</value>
+  <value column="Description" original="View Matched Purchase Orders">Visualizar Conciliações de Pedidos de Compra</value>
+  <value column="Help" original="View detals of matched purchase order lines to invoice lines and material receipt lines">Visualizar detalhes de conciliações de linhas de pedidos de compra a linhas de faturas e a linhas de recebimentos de materiais.</value>
  </row>
  <row id="229" trl="Y">
   <value column="Name" original="Window Customization">Personalização de Janela</value>
@@ -956,7 +956,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  </row>
  <row id="314" trl="Y">
   <value column="Name" original="RfQ Topic">Tópico de SdC</value>
-  <value column="Description" original="Maintain RfQ Topics and Subscribers">Gerenciamento dos Tópicos de Requisição de Cotação e Assinantes</value>
+  <value column="Description" original="Maintain RfQ Topics and Subscribers">Gerenciamento dos Tópicos de Solicitação de Cotação e Assinantes</value>
   <value column="Help" original="A Request for Quotation Topic allows you to maintain a subscriber list of potential Vendors to respond to RfQs">Um Tópico de Solicitação de Cotação permite a você gerenciar uma lista de assinantes de potenciais fornecedores para responder a SdCs</value>
  </row>
  <row id="315" trl="Y">
@@ -985,14 +985,14 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="A Shipment can have one or more Packages.  A Package may be tracked.">Uma Remessa pode ter uma ou mais Embalagens.  Uma Embalagem pode ser rastreada.</value>
  </row>
  <row id="320" trl="Y">
-  <value column="Name" original="Customer RMA">ARM</value>
-  <value column="Description" original="Manage Return Material Authorization">Gerenciar as Autorizações de Retorno de Material</value>
-  <value column="Help" original="A Return Material Authorization may be required to accept returns and to create Credit Memos">Uma Autorização de Retorno de Material pode ser exigida para aceitar devoluções e para criar Avisos de Crédito</value>
+  <value column="Name" original="Customer RMA">ARM de Cliente</value>
+  <value column="Description" original="Manage Return Material Authorization">Gerenciar as Autorizações de Retorno de Material de Cliente</value>
+  <value column="Help" original="A Return Material Authorization may be required to accept returns and to create Credit Memos">Dependendo das regras de negócios da empresa, pode ser necessário um ARM prévio antes de se aceitar o recebimento de devoluções e para criar Memorandos de Crédito.</value>
  </row>
  <row id="321" trl="Y">
-  <value column="Name" original="Dunning Run">Processamento de Cobrança</value>
-  <value column="Description" original="Manage Dunning Runs">Gerenciar Processamentos de Cobrança</value>
-  <value column="Help" original="Manage Dunning Runs">Gerenciar Processamentos de Cobrança</value>
+  <value column="Name" original="Dunning Run">Ação de Recuperação (Cobrança)</value>
+  <value column="Description" original="Manage Dunning Runs">Ação de Recuperação (Cobrança)</value>
+  <value column="Help" original="Manage Dunning Runs"/>
  </row>
  <row id="322" trl="Y">
   <value column="Name" original="Requisition">Requisição</value>
@@ -1096,8 +1096,8 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  </row>
  <row id="342" trl="Y">
   <value column="Name" original="Invoice Batch">Lote de Faturas</value>
-  <value column="Description" original="Expense Invoice Batch">Lote de Faturas de Despesas</value>
-  <value column="Help" original="Enter expense invoices in batch.  After creating the lines, the actual invoices are created when processing the batch">Introduzir faturas de despesas no lote.  Após criar as linhas, as faturas reais serão criadas durante o processamento de batelada</value>
+  <value column="Description" original="Expense Invoice Batch">Lote de Faturas de Despesa</value>
+  <value column="Help" original="Enter expense invoices in batch.  After creating the lines, the actual invoices are created when processing the batch">Introduzir lote de faturas de despesa. Após criar as linhas, as faturas reais são criadas ao processar o lote.</value>
  </row>
  <row id="343" trl="Y">
   <value column="Name" original="Cost Element">Elemento de Custo</value>
@@ -1754,20 +1754,20 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Unprocessed Documents (All)">Unprocessed Documents (All)</value>
   <value column="Help" original="View all unprocessed documents">View all unprocessed documents</value>
  </row>
- <row id="53097" trl="N">
-  <value column="Name" original="Customer Return">Customer Return</value>
-  <value column="Description" original="Customer Return (Receipts)">Customer Return (Receipts)</value>
-  <value column="Help" original="The Customer Return Window defines the receipt of product or material from a Customer Return.">The Customer Return Window defines the receipt of product or material from a Customer Return.</value>
+ <row id="53097" trl="Y">
+  <value column="Name" original="Customer Return">Devolução de Cliente</value>
+  <value column="Description" original="Customer Return (Receipts)">Devolução de Cliente</value>
+  <value column="Help" original="The Customer Return Window defines the receipt of product or material from a Customer Return.">A janela define devoluções de materiais pelos clientes.</value>
  </row>
- <row id="53098" trl="N">
-  <value column="Name" original="Return to Vendor">Return to Vendor</value>
-  <value column="Description" original="Vendor Returns">Vendor Returns</value>
-  <value column="Help" original="The Return to Vendor Window defines shipments made or to be made to a vendor as part of a return.">The Return to Vendor Window defines shipments made or to be made to a vendor as part of a return.</value>
+ <row id="53098" trl="Y">
+  <value column="Name" original="Return to Vendor">Devolução ao Fornecedor</value>
+  <value column="Description" original="Vendor Returns">Devolução ao Fornecedor</value>
+  <value column="Help" original="The Return to Vendor Window defines shipments made or to be made to a vendor as part of a return.">A janela define devoluções de materiais a fornecedores.</value>
  </row>
- <row id="53099" trl="N">
-  <value column="Name" original="Vendor RMA">Vendor RMA</value>
-  <value column="Description" original="Manage Return Material Authorization">Manage Return Material Authorization</value>
-  <value column="Help" original="A Return Material Authorization may be required to accept returns and to create Credit Memos">A Return Material Authorization may be required to accept returns and to create Credit Memos</value>
+ <row id="53099" trl="Y">
+  <value column="Name" original="Vendor RMA">ARM ao Fornecedor</value>
+  <value column="Description" original="Manage Return Material Authorization">Gerenciar as Autorizações de Retorno de Material ao Fornecedor</value>
+  <value column="Help" original="A Return Material Authorization may be required to accept returns and to create Credit Memos">Dependendo das regras de negócios do fornecedor, pode ser necessário informar um ARM no momento do envio da devoluções e também para criar Memorandos de Crédito.</value>
  </row>
  <row id="53100" trl="N">
   <value column="Name" original="My Profile">My Profile</value>
@@ -1899,9 +1899,9 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="A potential sale">Vendas em potencial</value>
   <value column="Help" original=""/>
  </row>
- <row id="53156" trl="N">
-  <value column="Name" original="Sales Rep Dashboard">Sales Rep Dashboard</value>
-  <value column="Description" original="The Sales Rep Dashboard provides a single location for managing sales opportunities">The Sales Rep Dashboard provides a single location for managing sales opportunities</value>
+ <row id="53156" trl="Y">
+  <value column="Name" original="Sales Rep Dashboard">Painel do Representante</value>
+  <value column="Description" original="The Sales Rep Dashboard provides a single location for managing sales opportunities">O Painel do Representante oferece um local centralizado para gerenciar oportunidades de vendas</value>
   <value column="Help" original=""/>
  </row>
  <row id="53165" trl="Y">
@@ -1989,18 +1989,18 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Broadcast Message">Broadcast Message</value>
   <value column="Help" original="Window allows to enter broadcast messages">Window allows to enter broadcast messages</value>
  </row>
- <row id="200024" trl="N">
-  <value column="Name" original="Shipping Processor">Shipping Processor</value>
+ <row id="200024" trl="Y">
+  <value column="Name" original="Shipping Processor">Processador de Remessas</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200025" trl="N">
-  <value column="Name" original="Shipment Package">Shipment Package</value>
+ <row id="200025" trl="Y">
+  <value column="Name" original="Shipment Package">Volume de Remessa</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200026" trl="N">
-  <value column="Name" original="Commodity Shipment">Commodity Shipment</value>
+ <row id="200026" trl="Y">
+  <value column="Name" original="Commodity Shipment">Remessa de Commodities</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2014,9 +2014,9 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200030" trl="N">
-  <value column="Name" original="Shipping Transaction">Shipping Transaction</value>
-  <value column="Description" original="Shipping Transactions">Shipping Transactions</value>
+ <row id="200030" trl="Y">
+  <value column="Name" original="Shipping Transaction">Transação de Remessa</value>
+  <value column="Description" original="Shipping Transactions">Transação de Remessa</value>
   <value column="Help" original=""/>
  </row>
  <row id="200031" trl="N">

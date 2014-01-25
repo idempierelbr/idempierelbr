@@ -58,13 +58,13 @@
   <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um Fluxo de Trabalho é do usuário real. A Responsabilidade do Fluxo de Trabalho permite definir meios de encontrar aquele usuário real.</value>
  </row>
  <row id="523" trl="Y">
-  <value column="Name" original="Default Sales Rep">Representante de Vendas padrão (default)</value>
-  <value column="Description" original="If not defined on Business Partner Level">Se não estiver definido no Nível de Parceiro de Negócios</value>
+  <value column="Name" original="Default Sales Rep">Representante</value>
+  <value column="Description" original="If not defined on Business Partner Level">Se não estiver definido no cadastro de Parceiro de Negócios</value>
   <value column="Help" original=""/>
  </row>
  <row id="524" trl="Y">
-  <value column="Name" original="Dunning Currency">Moeda de Cobrança</value>
-  <value column="Description" original="Currency to create Dunning Letters">Moeda para criar Cartas de Cobrança</value>
+  <value column="Name" original="Dunning Currency">Moeda da Recuperação</value>
+  <value column="Description" original="Currency to create Dunning Letters">Moeda a ser utilizada na Recuperação</value>
   <value column="Help" original=""/>
  </row>
  <row id="50001" trl="N">
@@ -83,9 +83,9 @@
   <value column="Help" original="The Shipment Date indicates the date printed on the shipment.">O campo indica a data impressa na remessa.</value>
  </row>
  <row id="53011" trl="Y">
-  <value column="Name" original="Print Unprocessed Entries Only">Print Unprocessed Entries Only</value>
-  <value column="Description" original="Print the unprocessed (unprinted) entries of the dunning run only.">Print the unprocessed (unprinted) entries of the dunning run only.</value>
-  <value column="Help" original="Print the unprocessed (unprinted) entries of the dunning run only. This allows you to reprint only certain dunning entries.">Print the unprocessed (unprinted) entries of the dunning run only. This allows you to reprint only certain dunning entries.</value>
+  <value column="Name" original="Print Unprocessed Entries Only">Somente Registros Não Processados</value>
+  <value column="Description" original="Print the unprocessed (unprinted) entries of the dunning run only.">Somente imprimir/enviar os registros de ação de recuperação ainda não processados</value>
+  <value column="Help" original="Print the unprocessed (unprinted) entries of the dunning run only. This allows you to reprint only certain dunning entries.">Permite a reimpressão/reenvio de registros de ação de recuperação.</value>
  </row>
  <row id="53025" trl="N">
   <value column="Name" original="Purchase Price List Version">Purchase Price List Version</value>

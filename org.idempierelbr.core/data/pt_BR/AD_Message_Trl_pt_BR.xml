@@ -375,7 +375,7 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="194" trl="Y">
-  <value column="MsgText" original="Created">Criado</value>
+  <value column="MsgText" original="Created">Criado(a)</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="195" trl="Y">
@@ -439,11 +439,11 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="210" trl="Y">
-  <value column="MsgText" original="Date from">Data de</value>
+  <value column="MsgText" original="Date from">Data Inicial</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="211" trl="Y">
-  <value column="MsgText" original="Date to">Data até</value>
+  <value column="MsgText" original="Date to">Data Final</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="212" trl="Y">
@@ -851,11 +851,11 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="313" trl="Y">
-  <value column="MsgText" original="Receipt (Shipment) already exists for this invoice">Recibo (expedição) já existente para esta fatura</value>
+  <value column="MsgText" original="Receipt (Shipment) already exists for this invoice">Recebimento (de material) já existente para esta fatura</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="314" trl="Y">
-  <value column="MsgText" original="Document must be completed first">Documento deve ser completado primeiramente</value>
+  <value column="MsgText" original="Document must be completed first">Documento deve estar completo</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="315" trl="Y">
@@ -915,7 +915,7 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="329" trl="Y">
-  <value column="MsgText" original="Match From">Confrontar com</value>
+  <value column="MsgText" original="Match From">Conciliar (De)</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="330" trl="Y">
@@ -923,15 +923,15 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="331" trl="Y">
-  <value column="MsgText" original="Match To">Confrontando com</value>
+  <value column="MsgText" original="Match To">Conciliar (Para)</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="332" trl="Y">
-  <value column="MsgText" original="Matched">Confrontado</value>
+  <value column="MsgText" original="Matched">Conciliada</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="333" trl="Y">
-  <value column="MsgText" original="Matching">Confrontando</value>
+  <value column="MsgText" original="Matching">Conciliando</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="334" trl="Y">
@@ -1033,7 +1033,7 @@ Problema: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="358" trl="Y">
-  <value column="MsgText" original="No records found; Enter data for new record">Nenhum registro encontrado; Digitar dados para um novo registro</value>
+  <value column="MsgText" original="No records found; Enter data for new record">Nenhum registro encontrado</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="359" trl="Y">
@@ -1053,7 +1053,7 @@ Problema: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="363" trl="Y">
-  <value column="MsgText" original="Not Matched">Não Confrontado</value>
+  <value column="MsgText" original="Not Matched">Não Conciliada</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="364" trl="Y">
@@ -1229,7 +1229,7 @@ Problema: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="407" trl="Y">
-  <value column="MsgText" original="Document must be Complete or Closed to view Accounting">O Documento deve ser Completado ou Fechado para visualizar a Contabilidade</value>
+  <value column="MsgText" original="Document must be Complete or Closed to view Accounting">O Documento deve ser Completado ou Fechado para poder visualizar a Contabilidade</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="408" trl="Y">
@@ -1241,7 +1241,7 @@ Problema: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="410" trl="Y">
-  <value column="MsgText" original="ZIP">CEP</value>
+  <value column="MsgText" original="ZIP">CEP/ZIP</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="411" trl="Y">
@@ -1349,7 +1349,7 @@ Problema: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="437" trl="Y">
-  <value column="MsgText" original="Process">Processo</value>
+  <value column="MsgText" original="Process">Processar</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="438" trl="Y">
@@ -1617,7 +1617,7 @@ Detalhes: </value>
   <value column="MsgTip" original="Please change information.">Favor alterar a informação.</value>
  </row>
  <row id="503" trl="Y">
-  <value column="MsgText" original="Record not saved. Row not found!">O Registro não foi salvo. Linha não encontrada!</value>
+  <value column="MsgText" original="Record not saved. Row not found!">O registro não foi salvo ainda. Linha não encontrada</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="504" trl="Y">
@@ -1773,7 +1773,7 @@ Detalhes: </value>
   <value column="MsgTip" original="Create complex objects on Application Server (slow communication lines)">Criar objetos complexos no Servidor de Aplicação (linhas de comunicação lentas)</value>
  </row>
  <row id="542" trl="Y">
-  <value column="MsgText" original="Document must be completed first">Documento deve ser completado primeiramente</value>
+  <value column="MsgText" original="Document must be completed first">Documento deve estar completo</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="543" trl="Y">
@@ -2225,7 +2225,7 @@ Detalhes: </value>
   <value column="MsgTip" original="View history records back in time.">Ver Registros Históricos anteriores.</value>
  </row>
  <row id="655" trl="Y">
-  <value column="MsgText" original="To be matched">A ser confrontado</value>
+  <value column="MsgText" original="To be matched">Conciliar (De)</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="656" trl="Y">
@@ -3014,7 +3014,7 @@ Obrigado por usar o Gerenciador de Ativos Personalizado Adempiere
   <value column="MsgTip" original=""/>
  </row>
  <row id="861" trl="Y">
-  <value column="MsgText" original="Please select the parent tab first:">Por favor, primeiramente selecione a aba prescendente:</value>
+  <value column="MsgText" original="Please select the parent tab first:">Por favor, selecione primeiro a aba anterior</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="862" trl="Y">
@@ -5591,12 +5591,12 @@ Please contact administrator.</value>
   <value column="MsgText" original="Unprocessed Documents">Doc. não Processado</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200001" trl="N">
-  <value column="MsgText" original="Map">Map</value>
+ <row id="200001" trl="Y">
+  <value column="MsgText" original="Map">Mapa</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200002" trl="N">
-  <value column="MsgText" original="Route">Route</value>
+ <row id="200002" trl="Y">
+  <value column="MsgText" original="Route">Rota</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200003" trl="N">
@@ -5723,8 +5723,8 @@ Please contact administrator.</value>
   <value column="MsgText" original="There are not POS invoice(s)">There are not POS invoice(s)</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200042" trl="N">
-  <value column="MsgText" original="Total POS Payments differ from Total Invoice">Total POS Payments differ from Total Invoice</value>
+ <row id="200042" trl="Y">
+  <value column="MsgText" original="Total POS Payments differ from Total Invoice">Total do(s) Pagamento(s) PDV difere do Total Geral </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200043" trl="N">
@@ -6143,8 +6143,8 @@ Please contact administrator.</value>
   <value column="MsgText" original="If you change the client language is recommended that you run the Synchronize Doc Translation after that">If you change the client language is recommended that you run the Synchronize Doc Translation after that</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200158" trl="N">
-  <value column="MsgText" original="Event">Event</value>
+ <row id="200158" trl="Y">
+  <value column="MsgText" original="Event">Evento</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200159" trl="N">
@@ -6315,8 +6315,8 @@ Please contact administrator.</value>
   <value column="MsgText" original="There are records that haven't been saved yet. ">There are records that haven't been saved yet. </value>
   <value column="MsgTip" original="Do you still want to proceed?">Do you still want to proceed?</value>
  </row>
- <row id="200208" trl="N">
-  <value column="MsgText" original="You're trying to close this tab.">You're trying to close this tab.</value>
+ <row id="200208" trl="Y">
+  <value column="MsgText" original="You're trying to close this tab.">Você está tentando fechar esta aba.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200209" trl="N">
@@ -6395,8 +6395,8 @@ Please contact administrator.</value>
   <value column="MsgText" original="Do you want to {0} this Document?">Do you want to {0} this Document?</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200238" trl="N">
-  <value column="MsgText" original="There are unsaved changes - are you sure to close?">There are unsaved changes - are you sure to close?</value>
+ <row id="200238" trl="Y">
+  <value column="MsgText" original="There are unsaved changes - are you sure to close?">As alterações não foram salvas. Deseja realmente fechar?</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200239" trl="N">
@@ -6453,6 +6453,14 @@ Please contact administrator.</value>
  </row>
  <row id="523853" trl="N">
   <value column="MsgText" original="Shipment/Receipt has different Sales/Purchase transaction than RMA">Shipment/Receipt has different Sales/Purchase transaction than RMA</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="491fb7c0-ade3-48f4-b346-60ac3292d4f0">
+  <value column="MsgText" original="Find Address by ZIP">Consultar CEP/ZIP</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="216494c0-7540-4184-a938-8294f7d2274a">
+  <value column="MsgText" original="NCM already exists for client/organization">NCM já existe para a empresa/organização</value>
   <value column="MsgTip" original=""/>
  </row>
 </idempiereTrl>

@@ -294,6 +294,10 @@
   <value column="Name" original="Manufacturing">Produção</value>
   <value column="Description" original=""/>
  </row>
+ <row id="53363" trl="Y">
+  <value column="Name" original="Sales Management">Gestão de Vendas</value>
+  <value column="Description" original=""/>
+ </row>
  <row trl="Y" uuid="d6c871b3-f6fa-4548-94d8-6e033d9e574e">
   <value column="Name" original="Fiscal Rules">Regras Fiscais</value>
   <value column="Description" original=""/>

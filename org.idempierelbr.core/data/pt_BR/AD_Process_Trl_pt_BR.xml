@@ -203,9 +203,9 @@
   <value column="Help" original="If you copy and overwrite the current default values, you may have to repeat previous updates (e.g. set the revenue account, ...). If no Accounting Schema is selected all Accounting Schemas will be updated / inserted for products of this category.">Se você copiar e sobreescrever os valores padrão atuais, você pode ter de repetir as atualizações anteriores (por ex. conta de receitas, ...)</value>
  </row>
  <row id="142" trl="Y">
-  <value column="Name" original="Generate Receipt from Invoice">Gerar Recibos a partir da Fatura</value>
-  <value column="Description" original="Create and process delivery Receipt from this invoice.">Criar e processar Recibo de Entrega a partir desta fatura.</value>
-  <value column="Help" original="The invoice should be correct and completed.">A fatura deveria estar correta e completa.</value>
+  <value column="Name" original="Generate Receipt from Invoice">Gerar Recebimento de Material a partir da Fatura</value>
+  <value column="Description" original="Create and process delivery Receipt from this invoice.">Gerar e processar Recebimento de Material a partir desta fatura</value>
+  <value column="Help" original="The invoice should be correct and completed.">Atenção: a fatura deve estar correta e completa.</value>
  </row>
  <row id="144" trl="Y">
   <value column="Name" original="Process Cash">Processar Caixa</value>
@@ -214,8 +214,8 @@
  </row>
  <row id="145" trl="Y">
   <value column="Name" original="Open Items">Itens em Aberto</value>
-  <value column="Description" original="Open Item (Invoice) List">Lista de Itens em Aberto (Fatura)</value>
-  <value column="Help" original="Displays all unpaid invoices for a given Business Partner and date range. Please note that Invoices paid in Cash will appear in Open Items until the Cash Journal is processed.">Mostra todas as faturas não pagas para um dado Parceiro de Negócios e faixa de datas (época). Por favor note que faturas pagas em dinheiro irão aparecer nos Itens em Aberto até que o Diário de Caixa seja processado.</value>
+  <value column="Description" original="Open Item (Invoice) List">Itens em Aberto (Pagamentos de Fatura)</value>
+  <value column="Help" original="Displays all unpaid invoices for a given Business Partner and date range. Please note that Invoices paid in Cash will appear in Open Items until the Cash Journal is processed.">O relatório apresenta as faturas não pagas e as respectivas datas de vencimento.</value>
  </row>
  <row id="146" trl="Y">
   <value column="Name" original="UnReconciled Payments">Pagamentos Não Conciliados</value>
@@ -258,9 +258,9 @@
   <value column="Help" original=""/>
  </row>
  <row id="154" trl="Y">
-  <value column="Name" original="Generate Invoice from Receipt">Gerar Fatura a partir do Recibo</value>
-  <value column="Description" original="Create and process Invoice from this receipt.  The receipt should be correct and completed.">Criar e processar Fatura a partir deste Recibo.  O recibo deveria estar correto e completo.</value>
-  <value column="Help" original="Generate Invoice from Receipt will create an invoice based on the selected receipt and match the invoice to that receipt. You can set the document number only if the invoice document type allows to set the document number manually.">Gerar a fatura a partir do recibo irá criar uma fatura baseada no recibo selecionado e confrontar a fatura a esse recibo. Você pode dar um número do documento somente se o tipo de documento de fatura permitir gerar o número manualmente.</value>
+  <value column="Name" original="Generate Invoice from Receipt">Gerar Fatura a partir da Movimentação</value>
+  <value column="Description" original="Create and process Invoice from this receipt.  The receipt should be correct and completed.">Gerar e Processar Fatura a partir desta Movimentação de Material.</value>
+  <value column="Help" original="Generate Invoice from Receipt will create an invoice based on the selected receipt and match the invoice to that receipt. You can set the document number only if the invoice document type allows to set the document number manually.">Este processo gera uma fatura baseando-se na movimentação de material (remessa/recebimento), e automaticamente faz a conciliação de ambos os documentos. Você pode atribuir manualmente um número de documento à fatura gerada, mas somente se o tipo de documento permitir. Atenção: a movimentação de material deve estar completa!</value>
  </row>
  <row id="155" trl="Y">
   <value column="Name" original="Prepare Payment">Preparar Pagamento</value>
@@ -418,8 +418,8 @@
   <value column="Help" original="Select either a table to create a print format [creates initial rough layout]&#10;OR a print format to copy into the current print format [copies layout].">Selecione uma tabela para criar um formato de impressão [cria um layout inicial em bruto] OU um formato de impressão para copiar sobre o formato de impressão atual [copia o layout].</value>
  </row>
  <row id="193" trl="Y">
-  <value column="Name" original="Generate PO from Sales Order">Gerar Pedido de Compra a partir de Pedido de Venda</value>
-  <value column="Description" original="Create Purchase Order from Sales Orders">Gerar Pedido de Compra a partir de Pedido de Venda</value>
+  <value column="Name" original="Generate PO from Sales Order">Gerar Pedidos de Compra (de Pedidos de Venda)</value>
+  <value column="Description" original="Create Purchase Order from Sales Orders">Gerar Pedidos de Compra a partir de Pedidos de Venda</value>
   <value column="Help" original="After completing sales orders, you can create one or more purchase orders for each sales order. A purchase order references always only one sales order (i.e. no consolidation of sales orders). &#10;The Organization of the Sales Order is used to create the Purchase Order. If a (default) PO document type is defined on Organization level, that is used instead of the document types defined on Client level.&#10;&#10;POs are created for all sales order lines where the product has a current vendor, the vendor has a Vendor Price List with all Products on the most current Price List Version. The Unit of Measure is copied; PO and SO can have different currencies.&#10;&#10;Once the process is run, you need to synchronize the SO/PO manually (e.g. in case of additional lines and changed lines (product &amp; quantity).">Após completar pedidos de venda (PV), você pode criar um ou mais pedidos de compra (PC) para cada PV. Um PC gerado por este processo faz referência somente a um único PV (não há consolidação de PV). A Organização do PV é usada para criar o PC. Se um tipo de documento de PC (padrão) for definido a nível de Organização, este será utilizado ao invés do tipo de documento definido a nível de Empresa.
 
 PC são criados para todas as linhas dos PV onde o produto tem um fornecedor definido. É necessário também que os produtos estejam na versão de lista de preços atual. A UDM é mantida; PC e PV podem estar em diferentes moedas.
@@ -649,9 +649,13 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
   <value column="Help" original="The report shows transaction details (receipts, shipments, inventory, movements, ...) including product instance (Lot, Serial No) info">O relatório mostra detalhes de transações (Recebimentos, Entregas, Estoques, Movimentação, ...) incluindo informações de instância de produto (Lote, Núm.Série)</value>
  </row>
  <row id="238" trl="Y">
-  <value column="Name" original="Aging">Classificação por Vencimento</value>
-  <value column="Description" original="Aging Report">Relatório de Classificação por Vencimento</value>
-  <value column="Help" original="The aging report allows you to report on Open Items (Invoices). Select the aging buckets, you want to have in your report. If you select a currency, you get only invoices of that currency, otherwise the amounts are converted to your primary accounting currency. If you do not select a Statement Date, the system date is used to calculate the buckets. If you do not list the individual invoices, the Due Date is the earliest due date for the business partner and the Due Days are the average due days of all invoices.&lt;br&gt;&#10;&lt;br&gt;&#10;If you select an Account Date the report will generate the Aging as of that date. The report will exclude documents after the selected date.&lt;br&gt;&#10;&lt;br&gt;&#10;For example: A customer has one invoice for $100 with the Account Date of 03/31/08 and one payment for $100 with the Account Date of 05/01/08. The report will show the following balances based on the Account Date selected: 03/15/08= 0; 04/15/08=100; 05/15/08 = 0.&#10;">O Relatório de classificação por vencimento permite a você relatar sobre Itens em Aberto (Faturas). Selecione os itens vencidos, que você deseja ter em seu relatório. Se você selecionar uma moeda, você obtém somente as faturas naquela moeda, de outro modo os valores serão convertidos à sua moeda contábil primária. If you do not select a Statement Date, the system date is used to calculate the buckets. If you do not list the individual invoices, the Due Date is the earliest due date for the business partner and the Due Days are the average due days of all invoices.</value>
+  <value column="Name" original="Aging">Recuperação (Cobrança)</value>
+  <value column="Description" original="Aging Report">Relatório para Recuperação (Cobrança)</value>
+  <value column="Help" original="The aging report allows you to report on Open Items (Invoices). Select the aging buckets, you want to have in your report. If you select a currency, you get only invoices of that currency, otherwise the amounts are converted to your primary accounting currency. If you do not select a Statement Date, the system date is used to calculate the buckets. If you do not list the individual invoices, the Due Date is the earliest due date for the business partner and the Due Days are the average due days of all invoices.&lt;br&gt;&#10;&lt;br&gt;&#10;If you select an Account Date the report will generate the Aging as of that date. The report will exclude documents after the selected date.&lt;br&gt;&#10;&lt;br&gt;&#10;For example: A customer has one invoice for $100 with the Account Date of 03/31/08 and one payment for $100 with the Account Date of 05/01/08. The report will show the following balances based on the Account Date selected: 03/15/08= 0; 04/15/08=100; 05/15/08 = 0.&#10;"><![CDATA[O relatório exibe os itens em aberto, classificados por Dias a Vencer e Dias em Atraso em relação a uma data base (data do extrato). Se a data não for informada, a data do dia será utilizada. Se uma moeda for selecionada, apenas faturas naquela moeda serão apresentadas, caso contrário os valores serão convertidos para a sua moeda contábil primária. Se a opção Listar Faturas (individuais) estiver desmarcada, a Data de Vencimento exibida será o vencimento mais antigo do parceiro de negócios. E o valor da coluna Dias em Atraso será uma média de todas as faturas.<br>
+<br>
+Se o campo Data Contábil for selecionado, o relatório exibirá as classificações com base na data contábil da fatura. O relatório ignora faturas com datas superiores à informada.<br>
+<br>
+Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de 31/03/2008 e um pagamento de 100,00 com data contábil de 01/05/2008. O relatório exibirá saldos diferentes de acordo com a data do extrato informada: 1) Data do Extrato: 15/03/2008, o  saldo é 0,00. 2) Data do Extrato: 14/04/2008, o saldo é 100,00. 3) Data do Extrato: 15/05/2008, o saldo é 0,00.]]></value>
  </row>
  <row id="239" trl="Y">
   <value column="Name" original="Clicks Monthy">Cliques Mensais</value>
@@ -715,9 +719,9 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
 </value>
  </row>
  <row id="251" trl="Y">
-  <value column="Name" original="Invoice Tax">Impostos de Fatura</value>
-  <value column="Description" original="Invoice Tax Reconciliation">Invoice Tax Reconciliation</value>
-  <value column="Help" original="The Report lists Invoice Tax lines with Business Partner Tax information.">The Report lists Invoice Tax lines with Business Partner Tax information.</value>
+  <value column="Name" original="Invoice Tax">Impostos de Faturas</value>
+  <value column="Description" original="Invoice Tax Reconciliation">Impostos de Faturas</value>
+  <value column="Help" original="The Report lists Invoice Tax lines with Business Partner Tax information.">O relatório lista os impostos de linhas de faturas, bem como as configurações de impostos parametrizados no parceiro de negócios.</value>
  </row>
  <row id="252" trl="Y">
   <value column="Name" original="Accounting Fact Details">Detalhes de Fatos Contábeis</value>
@@ -770,19 +774,19 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
   <value column="Help" original="Create (missing) RfQ Responses and optionally send EMail Invitation/Reminder to Vendors to respond to RfQ">Cria Respostas de SdC (faltantes) e opcionalmente envia email de Convite/Lembrete a fornecedores para responder à SdC</value>
  </row>
  <row id="262" trl="Y">
-  <value column="Name" original="Invite &amp; Remind"><![CDATA[Lembrete & de Convite]]></value>
-  <value column="Description" original="EMail Invite or Remind Vendor to answer RfQ">Envia email de Convite ou Lembra os Fornecedores de responder às SdC</value>
-  <value column="Help" original="Send Invitation/Reminder to Vendors to respond to RfQ per email">Envia Convite/Lembrete a fornecedores para responder à Requisição de Cotação por email</value>
+  <value column="Name" original="Invite &amp; Remind">Gerar Convite ou Lembrete</value>
+  <value column="Description" original="EMail Invite or Remind Vendor to answer RfQ">Envia e-mail de Convite ou Lembra o Fornecedore de responder às SdC</value>
+  <value column="Help" original="Send Invitation/Reminder to Vendors to respond to RfQ per email">Envia por e-mail um Convite/Lembrete ao fornecedor para responder à Solicitação de Cotação.</value>
  </row>
  <row id="263" trl="Y">
-  <value column="Name" original="RfQ Unanswered">SdC não respondida</value>
+  <value column="Name" original="RfQ Unanswered">SdC Não-Respondidas</value>
   <value column="Description" original="Outstanding RfQ Responses">Respostas de SdC pendentes</value>
-  <value column="Help" original="Lists Responses of active RfQs (not closed/processed) where the Response is not marked as complete. ">Lista Respostas das SdCs ativas (não fechadas/processadas) onde a Resposta não estiver marcada como completa. </value>
+  <value column="Help" original="Lists Responses of active RfQs (not closed/processed) where the Response is not marked as complete. ">Lista respostas de SdC ativas (não fechadas/processadas) onde a resposta não está marcada como completa.</value>
  </row>
  <row id="264" trl="Y">
-  <value column="Name" original="RfQ Response">Resposta de SdC</value>
-  <value column="Description" original="Detail RfQ Responses">Detalhar as Respostas de Requisição de Cotação</value>
-  <value column="Help" original="Lists detail Responses of active RfQs (not closed/processed) where the Response is marked as complete. ">Lista detalhes das Respostas das SdCs ativas (não fechadas/processadas) onde a Resposta estiver marcada como completa. </value>
+  <value column="Name" original="RfQ Response">Respostas de SdC</value>
+  <value column="Description" original="Detail RfQ Responses">Detalha as Respostas de Solicitação de Cotação</value>
+  <value column="Help" original="Lists detail Responses of active RfQs (not closed/processed) where the Response is marked as complete. ">Lista detalhes de respostas de SdC ativas (não fechadas/processadas) onde a resposta estiver marcada como completa. </value>
  </row>
  <row id="265" trl="Y">
   <value column="Name" original="Rank Responses">Classificar Respostas</value>
@@ -848,8 +852,8 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original=""/>
  </row>
  <row id="277" trl="Y">
-  <value column="Name" original="Check Complete">Verificação Completa</value>
-  <value column="Description" original="Check if Response is Complete based on RfQ settings">Verifica se a Resposta está Completa baseado nas configurações da SdC</value>
+  <value column="Name" original="Check Complete">Verificar se está Completa</value>
+  <value column="Description" original="Check if Response is Complete based on RfQ settings">Verifica se a Resposta está completa com base nas configurações da SdC</value>
   <value column="Help" original=""/>
  </row>
  <row id="278" trl="Y">
@@ -868,13 +872,13 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original=""/>
  </row>
  <row id="281" trl="Y">
-  <value column="Name" original="Create Confirmation">Criar Confirmação</value>
-  <value column="Description" original="Create Confirmations for the Document">Cria Confirmações para o Documento</value>
+  <value column="Name" original="Create Confirmation">Gerar Confirmação</value>
+  <value column="Description" original="Create Confirmations for the Document">Gerar Confirmações para o Documento</value>
   <value column="Help" original="The confirmations generated need to be processed (confirmed) before you can process this document">As confirmações geradas precisam ser processadas (confirmadas) antes que você possa processar este documento</value>
  </row>
  <row id="282" trl="Y">
-  <value column="Name" original="Create Package">Criar Embalagem</value>
-  <value column="Description" original="Create Package for Shipment">Cria Embalagem para a Remessa</value>
+  <value column="Name" original="Create Package">Gerar Volume</value>
+  <value column="Description" original="Create Package for Shipment">Gerar Volume para a Movimentação de Material</value>
   <value column="Help" original=""/>
  </row>
  <row id="283" trl="Y">
@@ -908,8 +912,8 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original="You can change User Passwords and EMail settings.  You do not need to know/enter the password, if you are an Administrator.">Você pode alterar as Senhas de Usuário e as configurações de email.  Você não necessita saber ou digitar a senha se você for um Administrador.</value>
  </row>
  <row id="289" trl="Y">
-  <value column="Name" original="Create Dunning Run">Criar Processamento de Cobrança</value>
-  <value column="Description" original="Create Dunning Run Entries based on the Dunning Level criteria">Cria entradas de Processamento de Cobrança baseado nos critérios de Nível de Cobrança</value>
+  <value column="Name" original="Create Dunning Run">Gerar Registros de Recuperação</value>
+  <value column="Description" original="Create Dunning Run Entries based on the Dunning Level criteria">Gerar Registros de Recuperação (Cobrança) com base nos critérios do Nível</value>
   <value column="Help" original=""/>
  </row>
  <row id="290" trl="Y">
@@ -928,9 +932,9 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original=""/>
  </row>
  <row id="293" trl="Y">
-  <value column="Name" original="Material Receipt Details">Detalhes do Recebimento de Material</value>
-  <value column="Description" original="Material Receipt Detail Information">Informação detalhada do Recebimento de Material</value>
-  <value column="Help" original="The report provides Material Repecipt Header and Line with locator information.">O relatório provê Linha e Cabeçalho de Recebimento de Materiais com informação do Localizador.</value>
+  <value column="Name" original="Material Receipt Details">Detalhes de Recebimentos de Material</value>
+  <value column="Description" original="Material Receipt Detail Information">Detalhes de Recebimentos de Material</value>
+  <value column="Help" original="The report provides Material Repecipt Header and Line with locator information.">Este relatório fornece informações detalhadas de recebimentos de materiais incluindo detalhes de Localizador.</value>
  </row>
  <row id="294" trl="Y">
   <value column="Name" original="Shipment Details">Detalhes de Remessas</value>
@@ -1023,9 +1027,9 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original="Example: &quot;Product EA&quot; has a defined UOM Conversion to &quot;Product 6Pack&quot; and vice versa.  &#10;This is a one-step replacement for defining BOM and creating/processes a Production.">Exemplo: "pç de Produto" tem uma Conversão definida de UDM para "6 unidades de Produto" e vice versa. Isto é uma alternativa de uma única etapa para definir LDM e criar/processar uma Produção.</value>
  </row>
  <row id="312" trl="Y">
-  <value column="Name" original="Print Dunning Letters">Imprimir Cartas de Cobrança</value>
-  <value column="Description" original="Print Dunning letters to paper or send PDF">Imprimir Cartas de Cobrança em papel ou enviar PDF</value>
-  <value column="Help" original="(Re)Print Dunning Letters or send them as PDF attachments to the Business Partner Contact with a valid EMail addres.&#10;">(Re)Imprimir Cartas de Cobrança ou enviá-las como anexos em formato PDF ao Contato do Parceiro de Negócios com um endereço de email válido.
+  <value column="Name" original="Print Dunning Letters">Imprimir/Enviar Recuperação (Cobrança)</value>
+  <value column="Description" original="Print Dunning letters to paper or send PDF">Imprimir Recuperação (Cobrança) ou enviar PDF por e-mail</value>
+  <value column="Help" original="(Re)Print Dunning Letters or send them as PDF attachments to the Business Partner Contact with a valid EMail addres.&#10;">(Re)Imprimir recuperação (cobrança) ou enviá-la como anexo em formato PDF ao contato do Parceiro de Negócios com endereço de e-mail válido.
 </value>
  </row>
  <row id="313" trl="Y">
@@ -1094,9 +1098,9 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original="Create Inventory Movements for unbalanced Inventory Location Storage (i.e. within a warehouse move inventory to locations with negative on hand quantity).">Cria "Movimentações de Estoque" para Armazenagem de Localização de Estoque não balanceado (i.e. dentro de um armazém, movimenta o estoque para localizações com quantidades negativas em mãos).</value>
  </row>
  <row id="326" trl="Y">
-  <value column="Name" original="Invoice Not Realized Gain/Loss">Faturar Ganhos Não Realizados/Perdas</value>
-  <value column="Description" original="Invoice Not Realized Gain &amp; Loss Report"><![CDATA[Relatório de Fatura de Ganhos Não Realizados & Perdas]]></value>
-  <value column="Help" original="The Report lists not fully paid invoices with open amount, the GL amounts and the revalued amounts.  If an invoice is partially paid, the percentage of the open amount is used to calculate the revaluation amount.&lt;br&gt;&#10;If you select a currency, only invoices of that currency are included; if you select Include All Currencies, all invoices are included and you can use the report to reconcile your AP/AR accounts.&lt;br&gt;&#10;If you select a GL Document Type, a GL Journal is created. &#10;Note that the report only includes posted invoices."><![CDATA[O relatório lista faturas não totalmente pagas com valores em aberto, valores do Razão Geral e os valores reavaliados.  If an invoice is partially paid, the percentage of the open amount is used to calculate the revaluation amount.<br> If you select a currency, only invoices of that currency are included; if you select Include All Currencies, all invoices are included and you can use the report to reconcile your AP/AR accounts.<br> If you select a GL Document Type, a GL Journal is created. Note that the report only includes posted invoices.]]></value>
+  <value column="Name" original="Invoice Not Realized Gain/Loss">Resultados Não Realizados (Faturas)</value>
+  <value column="Description" original="Invoice Not Realized Gain &amp; Loss Report">Faturas com Resultados Não Realizados (Ganhos e Perdas)</value>
+  <value column="Help" original="The Report lists not fully paid invoices with open amount, the GL amounts and the revalued amounts.  If an invoice is partially paid, the percentage of the open amount is used to calculate the revaluation amount.&lt;br&gt;&#10;If you select a currency, only invoices of that currency are included; if you select Include All Currencies, all invoices are included and you can use the report to reconcile your AP/AR accounts.&lt;br&gt;&#10;If you select a GL Document Type, a GL Journal is created. &#10;Note that the report only includes posted invoices.">O relatório exibe as faturas com pagamentos em aberto, os valores no Livro Razão e os valores reavaliados. Se uma fatura teve um pagamento parcial, a porcentagem do saldo em aberto é utilizada para calcular o valor de reavaliação. Se uma moeda for selecionada, apenas faturas naquela moeda serão exibidas no relatório. Se o campo Incluir Todas as Moedas for selecionado, todas as faturas serão exibidas e você pode utilizar o relatório para reconciliar  suas contas AP/AR (contabilidade de fornecedores e clientes). Se um Tipo de Documento de Reavaliação for selecionado, um Livro Diário será gerado. Atenção: apenas faturas lançadas (contabilmente) são consideradas no relatório.</value>
  </row>
  <row id="327" trl="Y">
   <value column="Name" original="Test EMail">Teste de email</value>
@@ -1125,8 +1129,8 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
  </row>
  <row id="332" trl="Y">
   <value column="Name" original="Distribute Costs">Distribuir Custos</value>
-  <value column="Description" original="Distribute costs to Products">Distribuir custos aos produtos</value>
-  <value column="Help" original="Distribute costs to Products based on selections - Distribution Base (Quantity, Current Costs, Line, Weight, ..) and Receipt/Line or directly to the product.">Distribui custos aos produtos basedo nas seleções - Base de Distribuição (Quantidade, Custos Atuais, Linha, Peso, ... ) e Recebimento/Linha ou diretamente ao produto.</value>
+  <value column="Description" original="Distribute costs to Products">Distribuir Custos ao(s) Produto(s)</value>
+  <value column="Help" original="Distribute costs to Products based on selections - Distribution Base (Quantity, Current Costs, Line, Weight, ..) and Receipt/Line or directly to the product.">Este processo distribui os custos ao(s) produto(s) baseando-se na informação do campo Distribuição de Custo e nos campos do grupo Referência (Recebimento/Linha, ou diretamente a um outro produto).</value>
  </row>
  <row id="333" trl="Y">
   <value column="Name" original="Order Detail">Detalhes de Pedidos</value>
@@ -1149,9 +1153,11 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original=""/>
  </row>
  <row id="337" trl="Y">
-  <value column="Name" original="Create PO from Requisition">Criar o PC a partir da Requisição</value>
-  <value column="Description" original="Create Purchase Orders from Requisitions">Cria os Pedidos de Compras a partir das Requisições</value>
-  <value column="Help" original="Create Purchase orders from Purchase Requisitions.">Cria os Pedidos de Compras a partir das Requisições de Compras.</value>
+  <value column="Name" original="Create PO from Requisition">Gerar Pedidos de Compra (de Requisições)</value>
+  <value column="Description" original="Create Purchase Orders from Requisitions">Gerar Pedidos de Compra a partir de Requisições</value>
+  <value column="Help" original="Create Purchase orders from Purchase Requisitions.">Após completar requisições, você pode criar um ou mais pedidos de compra (PC) para cada requisição. Você pode consolidar várias requisições em um único PC quando o parceiro de negócios for o mesmo. Se um tipo de documento de PC (padrão) for definido a nível de Organização, este será utilizado ao invés do tipo de documento definido a nível de Empresa.
+
+PC são criados para todas as linhas das requisições onde o produto tem um fornecedor definido. É necessário também que os produtos estejam na versão de lista de preços atual. A UDM é mantida.</value>
  </row>
  <row id="338" trl="Y">
   <value column="Name" original="Create GL/Default">Cria o RG/Padrão</value>
@@ -1952,14 +1958,14 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original="Copy Journal/Lines from other Journal">Copy Journal/Lines from other Journal</value>
   <value column="Help" original=""/>
  </row>
- <row id="200006" trl="N">
-  <value column="Name" original="OrderLine Create Production">OrderLine Create Production</value>
-  <value column="Description" original="Create Production Header and Plan for single ordered product">Create Production Header and Plan for single ordered product</value>
+ <row id="200006" trl="Y">
+  <value column="Name" original="OrderLine Create Production">Gerar Produção</value>
+  <value column="Description" original="Create Production Header and Plan for single ordered product">Gerar Produção para o Produto Pedido</value>
   <value column="Help" original=""/>
  </row>
- <row id="200007" trl="N">
-  <value column="Name" original="OrderLine Create Shipment">OrderLine Create Shipment</value>
-  <value column="Description" original="Create Shipment for single ordered product">Create Shipment for single ordered product</value>
+ <row id="200007" trl="Y">
+  <value column="Name" original="OrderLine Create Shipment">Gerar Remessa </value>
+  <value column="Description" original="Create Shipment for single ordered product">Gerar Remessa para o Produto Pedido</value>
   <value column="Help" original=""/>
  </row>
  <row id="200008" trl="N">
@@ -2022,24 +2028,24 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200023" trl="N">
-  <value column="Name" original="Print Shipping Label">Print Shipping Label</value>
-  <value column="Description" original="Print shipping label">Print shipping label</value>
-  <value column="Help" original="Print shipping label return from online shipping services.">Print shipping label return from online shipping services.</value>
+ <row id="200023" trl="Y">
+  <value column="Name" original="Print Shipping Label">Imprimir Etiqueta</value>
+  <value column="Description" original="Print shipping label">Imprimir Etiqueta (via WebService da Transportadora)</value>
+  <value column="Help" original="Print shipping label return from online shipping services."/>
  </row>
- <row id="200024" trl="N">
-  <value column="Name" original="Process Shipment Online">Process Shipment Online</value>
-  <value column="Description" original="Create shipment using web services provided by shipper">Create shipment using web services provided by shipper</value>
+ <row id="200024" trl="Y">
+  <value column="Name" original="Process Shipment Online">Processar Remessa Online</value>
+  <value column="Description" original="Create shipment using web services provided by shipper">Processar Remessa (via WebService da Transportadora)</value>
   <value column="Help" original=""/>
  </row>
- <row id="200025" trl="N">
-  <value column="Name" original="Online Shipping Rate Inquiry">Online Shipping Rate Inquiry</value>
+ <row id="200025" trl="Y">
+  <value column="Name" original="Online Shipping Rate Inquiry">Solicitar Cotação de Preço Online</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200026" trl="N">
-  <value column="Name" original="Void Shipment Online">Void Shipment Online</value>
-  <value column="Description" original="Void shipment using web services provided by shipper">Void shipment using web services provided by shipper</value>
+ <row id="200026" trl="Y">
+  <value column="Name" original="Void Shipment Online">Anular Remessa Online</value>
+  <value column="Description" original="Void shipment using web services provided by shipper">Anular Remessa (via WebService da Transportadora)</value>
   <value column="Help" original=""/>
  </row>
  <row id="200028" trl="N">

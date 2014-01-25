@@ -727,19 +727,19 @@
   <value column="Description" original=""/>
  </row>
  <row id="312" trl="Y">
-  <value column="Name" original="Customer Shipment">Entrega para Cliente</value>
+  <value column="Name" original="Customer Shipment">Remessa para Cliente</value>
   <value column="Description" original=""/>
  </row>
  <row id="313" trl="Y">
-  <value column="Name" original="Customer Returns">Devolução de cliente</value>
+  <value column="Name" original="Customer Returns">Devolução de Cliente</value>
   <value column="Description" original=""/>
  </row>
  <row id="314" trl="Y">
-  <value column="Name" original="Vendor Receipts">Recebimentos de Fornecedor</value>
+  <value column="Name" original="Vendor Receipts">Recebimento de Fornecedor</value>
   <value column="Description" original=""/>
  </row>
  <row id="315" trl="Y">
-  <value column="Name" original="Vendor Returns">Devoluções a Fornecedor</value>
+  <value column="Name" original="Vendor Returns">Devolução ao Fornecedor</value>
   <value column="Description" original=""/>
  </row>
  <row id="316" trl="Y">
@@ -747,7 +747,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="317" trl="Y">
-  <value column="Name" original="Inventory In">Entrada de Estoque</value>
+  <value column="Name" original="Inventory In">Entrada em Estoque</value>
   <value column="Description" original=""/>
  </row>
  <row id="318" trl="Y">
@@ -867,11 +867,11 @@
   <value column="Description" original=""/>
  </row>
  <row id="349" trl="Y">
-  <value column="Name" original="Movement From">Movimento de</value>
+  <value column="Name" original="Movement From">Movimento De</value>
   <value column="Description" original=""/>
  </row>
  <row id="350" trl="Y">
-  <value column="Name" original="Movement To">Movimento para</value>
+  <value column="Name" original="Movement To">Movimento Para</value>
   <value column="Description" original=""/>
  </row>
  <row id="351" trl="Y">
@@ -1915,7 +1915,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="623" trl="Y">
-  <value column="Name" original="Completed">Completado</value>
+  <value column="Name" original="Completed">Completo</value>
   <value column="Description" original=""/>
  </row>
  <row id="624" trl="Y">
@@ -2043,7 +2043,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="658" trl="Y">
-  <value column="Name" original="Quote Total only">Somente Cotar Totais</value>
+  <value column="Name" original="Quote Total only">Cotar somente o Total</value>
   <value column="Description" original=""/>
  </row>
  <row id="659" trl="Y">
@@ -2051,7 +2051,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="660" trl="Y">
-  <value column="Name" original="Quote All Lines">Cotar todas as linhas</value>
+  <value column="Name" original="Quote All Lines">Cotar Todas as Linhas</value>
   <value column="Description" original=""/>
  </row>
  <row id="661" trl="Y">
@@ -2095,7 +2095,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="671" trl="Y">
-  <value column="Name" original="Process Completed">Processo Completado</value>
+  <value column="Name" original="Process Completed">Processo Completo</value>
   <value column="Description" original=""/>
  </row>
  <row id="672" trl="Y">
@@ -2111,15 +2111,15 @@
   <value column="Description" original=""/>
  </row>
  <row id="675" trl="Y">
-  <value column="Name" original="Drop Ship Confirm">Confirmação de Embarque</value>
+  <value column="Name" original="Drop Ship Confirm">Confirmação de Remessa Direta do Fornecedor ao Cliente</value>
   <value column="Description" original=""/>
  </row>
  <row id="676" trl="Y">
-  <value column="Name" original="Ship/Receipt Confirm">Confirmação de Envio/Recebimento</value>
+  <value column="Name" original="Ship/Receipt Confirm">Confirmação de Remessa/Recebimento</value>
   <value column="Description" original=""/>
  </row>
  <row id="677" trl="Y">
-  <value column="Name" original="Pick/QA Confirm">Confirmação de Coleta/QA</value>
+  <value column="Name" original="Pick/QA Confirm">Confirmação de Coleta/Controle de Qualidade</value>
   <value column="Description" original=""/>
  </row>
  <row id="678" trl="Y">
@@ -2203,15 +2203,15 @@
   <value column="Description" original=""/>
  </row>
  <row id="699" trl="Y">
-  <value column="Name" original="Receivables &amp; Payables"><![CDATA[Recebíveis & A Pagar]]></value>
+  <value column="Name" original="Receivables &amp; Payables">Contas a Pagar e Contas a Receber</value>
   <value column="Description" original=""/>
  </row>
  <row id="700" trl="Y">
-  <value column="Name" original="Receivables only">Somente recebíveis</value>
+  <value column="Name" original="Receivables only">Somente Contas a Receber</value>
   <value column="Description" original=""/>
  </row>
  <row id="701" trl="Y">
-  <value column="Name" original="Payables only">Somente a pagar</value>
+  <value column="Name" original="Payables only">Somente Contas a Pagar</value>
   <value column="Description" original=""/>
  </row>
  <row id="702" trl="Y">
@@ -2283,23 +2283,23 @@
   <value column="Description" original="Labor">Mão-de-Obra</value>
  </row>
  <row id="719" trl="Y">
-  <value column="Name" original="Quantity">Quantidade</value>
+  <value column="Name" original="Quantity">Quantidade Pedida/Fatura</value>
   <value column="Description" original=""/>
  </row>
  <row id="720" trl="Y">
-  <value column="Name" original="Line">Linha</value>
+  <value column="Name" original="Line">Quantidade de Linhas</value>
   <value column="Description" original=""/>
  </row>
  <row id="721" trl="Y">
-  <value column="Name" original="Volume">Volume</value>
+  <value column="Name" original="Volume">Volume do Produto</value>
   <value column="Description" original=""/>
  </row>
  <row id="722" trl="Y">
-  <value column="Name" original="Weight">Peso</value>
+  <value column="Name" original="Weight">Peso do Produto</value>
   <value column="Description" original=""/>
  </row>
  <row id="723" trl="Y">
-  <value column="Name" original="Costs">Custos</value>
+  <value column="Name" original="Costs">Valor da Linha</value>
   <value column="Description" original=""/>
  </row>
  <row id="724" trl="Y">
@@ -3331,7 +3331,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="52000" trl="Y">
-  <value column="Name" original="Mixed POS Payment">Múltiplas Formas</value>
+  <value column="Name" original="Mixed POS Payment">Pagamento Misto</value>
   <value column="Description" original=""/>
  </row>
  <row id="52001" trl="N">
@@ -4898,24 +4898,24 @@
   <value column="Name" original="Wizard">Wizard</value>
   <value column="Description" original=""/>
  </row>
- <row id="200020" trl="N">
-  <value column="Name" original="Charged">Charged</value>
+ <row id="200020" trl="Y">
+  <value column="Name" original="Charged">Compensado</value>
   <value column="Description" original=""/>
  </row>
- <row id="200021" trl="N">
-  <value column="Name" original="Delayed">Delayed</value>
+ <row id="200021" trl="Y">
+  <value column="Name" original="Delayed">Em Compensação</value>
   <value column="Description" original=""/>
  </row>
- <row id="200022" trl="N">
-  <value column="Name" original="Replaced">Replaced</value>
+ <row id="200022" trl="Y">
+  <value column="Name" original="Replaced">Substituído</value>
   <value column="Description" original=""/>
  </row>
- <row id="200023" trl="N">
-  <value column="Name" original="Received">Received</value>
+ <row id="200023" trl="Y">
+  <value column="Name" original="Received">Recebido</value>
   <value column="Description" original=""/>
  </row>
- <row id="200024" trl="N">
-  <value column="Name" original="Returned">Returned</value>
+ <row id="200024" trl="Y">
+  <value column="Name" original="Returned">Devolvido</value>
   <value column="Description" original=""/>
  </row>
  <row id="200025" trl="N">
@@ -4986,100 +4986,100 @@
   <value column="Name" original="User">User</value>
   <value column="Description" original="User will receive message">User will receive message</value>
  </row>
- <row id="200054" trl="N">
-  <value column="Name" original="Class 1 - Explosives">Class 1 - Explosives</value>
+ <row id="200054" trl="Y">
+  <value column="Name" original="Class 1 - Explosives">Classe 1 - Explosivos</value>
   <value column="Description" original=""/>
  </row>
- <row id="200055" trl="N">
-  <value column="Name" original="Class 2 - Gases">Class 2 - Gases</value>
+ <row id="200055" trl="Y">
+  <value column="Name" original="Class 2 - Gases">Classe 2 - Gases</value>
   <value column="Description" original=""/>
  </row>
- <row id="200056" trl="N">
-  <value column="Name" original="2.1 - Flammable Gas">2.1 - Flammable Gas</value>
+ <row id="200056" trl="Y">
+  <value column="Name" original="2.1 - Flammable Gas">2.1 - Gás Inflamável</value>
   <value column="Description" original=""/>
  </row>
- <row id="200057" trl="N">
-  <value column="Name" original="2.2 - Nonflammable Gas">2.2 - Nonflammable Gas</value>
+ <row id="200057" trl="Y">
+  <value column="Name" original="2.2 - Nonflammable Gas">2.2 - Gás Não-Inflamável</value>
   <value column="Description" original=""/>
  </row>
- <row id="200058" trl="N">
-  <value column="Name" original="Class 3 - Flammable Liquids">Class 3 - Flammable Liquids</value>
+ <row id="200058" trl="Y">
+  <value column="Name" original="Class 3 - Flammable Liquids">Classe 3 - Líquidos Inflamáveis</value>
   <value column="Description" original=""/>
  </row>
- <row id="200059" trl="N">
-  <value column="Name" original="Class 4">Class 4</value>
+ <row id="200059" trl="Y">
+  <value column="Name" original="Class 4">Classe 4 - Sólidos</value>
   <value column="Description" original=""/>
  </row>
- <row id="200060" trl="N">
-  <value column="Name" original="4.1 - Flammable Solids">4.1 - Flammable Solids</value>
+ <row id="200060" trl="Y">
+  <value column="Name" original="4.1 - Flammable Solids">4.1 - Sólidos Inflamáveis</value>
   <value column="Description" original=""/>
  </row>
- <row id="200061" trl="N">
-  <value column="Name" original="4.2 - Spontaneous Combustibles">4.2 - Spontaneous Combustibles</value>
+ <row id="200061" trl="Y">
+  <value column="Name" original="4.2 - Spontaneous Combustibles">4.2 - Combustíveis Espontâneos</value>
   <value column="Description" original=""/>
  </row>
- <row id="200062" trl="N">
-  <value column="Name" original="4.3 - Dangerous When Wet">4.3 - Dangerous When Wet</value>
+ <row id="200062" trl="Y">
+  <value column="Name" original="4.3 - Dangerous When Wet">4.3 - Perigoso quando Molhado</value>
   <value column="Description" original=""/>
  </row>
- <row id="200064" trl="N">
-  <value column="Name" original="Class 5 - Oxidizing Substances and Organic Peroxides">Class 5 - Oxidizing Substances and Organic Peroxides</value>
+ <row id="200064" trl="Y">
+  <value column="Name" original="Class 5 - Oxidizing Substances and Organic Peroxides">Classe 5 – Substâncias Oxidantes e Peróxidos Orgânicos</value>
   <value column="Description" original=""/>
  </row>
- <row id="200065" trl="N">
-  <value column="Name" original="5.1 - Oxidizers">5.1 - Oxidizers</value>
+ <row id="200065" trl="Y">
+  <value column="Name" original="5.1 - Oxidizers">5.1 - Oxidantes</value>
   <value column="Description" original=""/>
  </row>
- <row id="200066" trl="N">
-  <value column="Name" original="5.2 - Organic Peroxides">5.2 - Organic Peroxides</value>
+ <row id="200066" trl="Y">
+  <value column="Name" original="5.2 - Organic Peroxides">5.2 - Peróxidos Orgânicos</value>
   <value column="Description" original=""/>
  </row>
- <row id="200067" trl="N">
-  <value column="Name" original="Class 6 - Toxic (Poisonous) and Infectious Substances">Class 6 - Toxic (Poisonous) and Infectious Substances</value>
+ <row id="200067" trl="Y">
+  <value column="Name" original="Class 6 - Toxic (Poisonous) and Infectious Substances">Classe 6 - Substâncias Tóxicas e Infectantes</value>
   <value column="Description" original=""/>
  </row>
- <row id="200068" trl="N">
-  <value column="Name" original="6.1 - Toxic Substances">6.1 - Toxic Substances</value>
+ <row id="200068" trl="Y">
+  <value column="Name" original="6.1 - Toxic Substances">6.1 - Substâncias Tóxicas</value>
   <value column="Description" original=""/>
  </row>
- <row id="200069" trl="N">
-  <value column="Name" original="6.2 - Infectious Substances">6.2 - Infectious Substances</value>
+ <row id="200069" trl="Y">
+  <value column="Name" original="6.2 - Infectious Substances">6.2 - Substâncias Infectantes</value>
   <value column="Description" original=""/>
  </row>
- <row id="200070" trl="N">
-  <value column="Name" original="Class 7 - Radioactive Material">Class 7 - Radioactive Material</value>
+ <row id="200070" trl="Y">
+  <value column="Name" original="Class 7 - Radioactive Material">Classe 7 – Material Radioativo</value>
   <value column="Description" original=""/>
  </row>
- <row id="200071" trl="N">
-  <value column="Name" original="Class 8 - Corrosives">Class 8 - Corrosives</value>
+ <row id="200071" trl="Y">
+  <value column="Name" original="Class 8 - Corrosives">Classe 8 – Substâncias Corrosivas</value>
   <value column="Description" original=""/>
  </row>
- <row id="200072" trl="N">
-  <value column="Name" original="Class 9 - Miscellaneous Dangerous Goods">Class 9 - Miscellaneous Dangerous Goods</value>
+ <row id="200072" trl="Y">
+  <value column="Name" original="Class 9 - Miscellaneous Dangerous Goods">Classe 9 – Substâncias e Materiais Perigosos Diversos</value>
   <value column="Description" original=""/>
  </row>
- <row id="200073" trl="N">
-  <value column="Name" original="Appointment">Appointment</value>
+ <row id="200073" trl="Y">
+  <value column="Name" original="Appointment">Agendado com o Destinatário</value>
   <value column="Description" original=""/>
  </row>
- <row id="200074" trl="N">
-  <value column="Name" original="Date Certain">Date Certain</value>
+ <row id="200074" trl="Y">
+  <value column="Name" original="Date Certain">Data Fixa</value>
   <value column="Description" original=""/>
  </row>
- <row id="200075" trl="N">
-  <value column="Name" original="Evening">Evening</value>
+ <row id="200075" trl="Y">
+  <value column="Name" original="Evening">Noturna</value>
   <value column="Description" original=""/>
  </row>
- <row id="200076" trl="N">
-  <value column="Name" original="Recipient">Recipient</value>
+ <row id="200076" trl="Y">
+  <value column="Name" original="Recipient">Destinatário</value>
   <value column="Description" original=""/>
  </row>
- <row id="200077" trl="N">
-  <value column="Name" original="Recipient / Sender">Recipient / Sender</value>
+ <row id="200077" trl="Y">
+  <value column="Name" original="Recipient / Sender">Destinatário / Remetente</value>
   <value column="Description" original=""/>
  </row>
- <row id="200078" trl="N">
-  <value column="Name" original="Sender">Sender</value>
+ <row id="200078" trl="Y">
+  <value column="Name" original="Sender">Remetente</value>
   <value column="Description" original=""/>
  </row>
  <row id="200079" trl="N">
@@ -5186,20 +5186,20 @@
   <value column="Name" original="FOB - Free on Board (FedEx)">FOB - Free on Board (FedEx)</value>
   <value column="Description" original="FOB - Free on Board (sea shipments only)">FOB - Free on Board (sea shipments only)</value>
  </row>
- <row id="200105" trl="N">
-  <value column="Name" original="Adult">Adult</value>
+ <row id="200105" trl="Y">
+  <value column="Name" original="Adult">Adulto</value>
   <value column="Description" original=""/>
  </row>
- <row id="200106" trl="N">
-  <value column="Name" original="Direct">Direct</value>
+ <row id="200106" trl="Y">
+  <value column="Name" original="Direct">Direta</value>
   <value column="Description" original=""/>
  </row>
- <row id="200107" trl="N">
-  <value column="Name" original="Indirect">Indirect</value>
+ <row id="200107" trl="Y">
+  <value column="Name" original="Indirect">Indireta</value>
   <value column="Description" original=""/>
  </row>
- <row id="200108" trl="N">
-  <value column="Name" original="Service Default">Service Default</value>
+ <row id="200108" trl="Y">
+  <value column="Name" original="Service Default">Serviço Padrão</value>
   <value column="Description" original=""/>
  </row>
  <row id="200109" trl="N">
@@ -5383,36 +5383,36 @@
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="9c7c8524-dce1-48da-b004-7e479b4f9c36">
-  <value column="Name" original="1 - Imported">1 - Estrangeira - Importação direta, exceto a indicada no...</value>
-  <value column="Description" original="">1 - Estrangeira - Importação direta, exceto a indicada no código 6</value>
+  <value column="Name" original="1 - Imported">1 - Estrangeira - Importação direta, exceto a indicada no código 6</value>
+  <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="416d32b4-3185-46a8-8a36-8030c87774f6">
-  <value column="Name" original="2 - Imported - Acquired from a domestic distributor">2 - Estrangeira - Adquirida no mercado interno, exceto a...</value>
-  <value column="Description" original="">2 - Estrangeira - Adquirida no mercado interno, exceto a indicada no código 7</value>
+  <value column="Name" original="2 - Imported - Acquired from a domestic distributor">2 - Estrangeira - Adquirida no mercado interno, exceto a indicada no código 7</value>
+  <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="6395edea-dd93-4585-b0a1-8d4fc84fc0c7">
-  <value column="Name" original="3 - Domestic with more than 40 percent Imported">3 - Nacional, mercadoria ou bem com Conteúdo de Importaçã...</value>
-  <value column="Description" original="">3 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 40% e inferior ou igual a 70%</value>
+  <value column="Name" original="3 - Domestic with more than 40 percent Imported">3 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 40% e inferior ou igual a 70%</value>
+  <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="00a8d963-b388-4c74-8a4a-8fe7dc223ce3">
-  <value column="Name" original="4 - Domestic according to adjustments">4 - Nacional, cuja produção tenha sido feita em conformid...</value>
-  <value column="Description" original="">4 - Nacional, cuja produção tenha sido feita em conformidade com os processos produtivos básicos de que tratam as legislações citadas nos Ajustes</value>
+  <value column="Name" original="4 - Domestic according to adjustments">4 - Nacional, cuja produção tenha sido feita em conformidade com os processos produtivos básicos de que tratam as legislações citadas nos Ajustes</value>
+  <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="7b570f94-ba1e-454c-99ae-55832c5020c9">
-  <value column="Name" original="5 - Domestic until 40 percent Imported">5 - Nacional, mercadoria ou bem com Conteúdo de Importaçã...</value>
-  <value column="Description" original="">5 - Nacional, mercadoria ou bem com Conteúdo de Importação inferior ou igual a 40%</value>
+  <value column="Name" original="5 - Domestic until 40 percent Imported">5 - Nacional, mercadoria ou bem com Conteúdo de Importação inferior ou igual a 40%</value>
+  <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="a5cbbf8a-68a1-4a00-9318-e81dc00dc55a">
-  <value column="Name" original="6 - Foreign - Direct import no domestic similar">6 - Estrangeira - Importação direta, sem similar nacional...</value>
-  <value column="Description" original="">6 - Estrangeira - Importação direta, sem similar nacional, constante em lista da CAMEX e gás natural</value>
+  <value column="Name" original="6 - Foreign - Direct import no domestic similar">6 - Estrangeira - Importação direta, sem similar nacional, constante em lista da CAMEX e gás natural</value>
+  <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="d06db9d5-3748-4f5c-9162-92dfa2066cba">
-  <value column="Name" original="7 - Foreign - Acquired from domestic distributor no similar">7 - Estrangeira - Adquirida no mercado interno, sem simil...</value>
-  <value column="Description" original="">7 - Estrangeira - Adquirida no mercado interno, sem similar nacional, constante lista CAMEX e gás natural</value>
+  <value column="Name" original="7 - Foreign - Acquired from domestic distributor no similar">7 - Estrangeira - Adquirida no mercado interno, sem similar nacional, constante lista CAMEX e gás natural</value>
+  <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="a1f06640-938c-41ab-b31d-892bea918f1a">
-  <value column="Name" original="8 - Domestic with more than 70 percent Imported">8 - Nacional, mercadoria ou bem com Conteúdo de Importaçã...</value>
-  <value column="Description" original="">8 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 70%</value>
+  <value column="Name" original="8 - Domestic with more than 70 percent Imported">8 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 70%</value>
+  <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="22c0880b-ce09-4831-a155-3fd3d8e76852">
   <value column="Name" original="End User">Consumidor Final</value>

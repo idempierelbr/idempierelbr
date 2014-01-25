@@ -628,10 +628,10 @@
   <value column="Help" original="The Translation Tab defines a Document Type in an alternate language.">A Aba "Tradução" define um Tipo de Documento em um idioma alternativo.</value>
  </row>
  <row id="231" trl="Y">
-  <value column="Name" original="Dunning">Cobrança</value>
+  <value column="Name" original="Dunning">Recuperação (Cobrança)</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Dunning Rules">Gerenciamento de Regras de Cobrança</value>
-  <value column="Help" original="The Dunning Tab defines the parameters for a dunning level.">A Aba "Cobrança" define os parâmetros para um nível de cobrança.</value>
+  <value column="Description" original="Maintain Dunning Rules">Gerenciamento dos Níveis de Recuperação (Cobrança)</value>
+  <value column="Help" original="The Dunning Tab defines the parameters for a dunning level.">A Janela "Recuperação (Cobrança)" define os parâmetros que serão utilizados ao gerar cartas de recuperação de cobrança, ou enviá-las por e-mail. Clientes podem ser vinculados a esses parâmetros através da janela Parceiro de Negócios.</value>
  </row>
  <row id="232" trl="Y">
   <value column="Name" original="Translation">Tradução</value>
@@ -779,10 +779,10 @@
   <value column="Help" original="The Invoice Tab defines the parameters of an Invoice generated for a Business Partner.  It constitutes an accounts receivable.">A Aba "Fatura" define os parâmetros de uma Fatura gerada para um Parceiro de Negócios.  Ela se constitue em contas a receber.</value>
  </row>
  <row id="268" trl="Y">
-  <value column="Name" original="Level">Nível</value>
+  <value column="Name" original="Level">Nível de Recuperação</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Dunning Level">Gerenciamento de Níveis de Cobrança</value>
-  <value column="Help" original="The Dunning Level Tab defines the timing and frequency of the dunning notices.">A Aba "Nível de Cobrança" define o prazo e freqüência dos avisos de cobrança.</value>
+  <value column="Description" original="Maintain Dunning Level">Gerenciamento de Níveis de Recuperação (Cobrança)</value>
+  <value column="Help" original="The Dunning Level Tab defines the timing and frequency of the dunning notices.">A Aba "Nível de Recuperação" define, dentre outros, o prazo e freqüência dos avisos de recuperação (cobrança).</value>
  </row>
  <row id="269" trl="Y">
   <value column="Name" original="Translation">Tradução</value>
@@ -875,17 +875,17 @@
   <value column="Help" original="The Invoice Line Tab defines the individual items or charges on an Invoice.">A Aba "Linha de Fatura" define os itens individuais ou despesas em uma fatura.</value>
  </row>
  <row id="292" trl="Y">
-  <value column="Name" original="Invoice Tax">Impostos de Fatura</value>
+  <value column="Name" original="Invoice Tax">Imposto da Fatura</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Vendor Invoice Tax">Imposto de Fatura de Fornecedor</value>
-  <value column="Help" original="The Invoice Tax Tab displays the total tax due based on the Invoice Lines.&#10;">A Aba "Imposto de Fatura" mostra o total de impostos devidos baseado nas Linhas da Fatura.
+  <value column="Help" original="The Invoice Tax Tab displays the total tax due based on the Invoice Lines.&#10;">A Aba "Imposto da Fatura" apresenta o total de impostos devidos baseado nas Linhas da Fatura.
 </value>
  </row>
  <row id="293" trl="Y">
-  <value column="Name" original="PO Line">Linha de PC</value>
+  <value column="Name" original="PO Line">Linha do Pedido</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Purchase Order Line">Linha de Pedido de Compra</value>
-  <value column="Help" original="The Purchase Order Line Tab defines the individual items in an order.">A Aba "Linha de Pedido de Compra" define os itens individuais em um pedido.</value>
+  <value column="Description" original="Purchase Order Line">Linha do Pedido de Compra</value>
+  <value column="Help" original="The Purchase Order Line Tab defines the individual items in an order.">A Aba "Linha do Pedido de Compra" define os itens individuais em um pedido.</value>
  </row>
  <row id="294" trl="Y">
   <value column="Name" original="Purchase Order">Pedido de Compra</value>
@@ -1502,16 +1502,16 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="408" trl="Y">
-  <value column="Name" original="Match Invoice">Confrontar Fatura</value>
+  <value column="Name" original="Match Invoice">Conciliação de Faturas</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="View matched Invoices">Visualizar Faturas Confrontadas</value>
-  <value column="Help" original="View detals of matched invoice lines to material receipt lines">View detals of matched invoice lines to material receipt lines</value>
+  <value column="Description" original="View matched Invoices">Visualizar Conciliações de Faturas</value>
+  <value column="Help" original="View detals of matched invoice lines to material receipt lines">Visualizar detalhes de conciliações de linhas de faturas e a linhas de recebimentos de materiais.</value>
  </row>
  <row id="409" trl="Y">
-  <value column="Name" original="Match PO">Confrontar PC (Pedido de Compra)</value>
+  <value column="Name" original="Match PO">Conciliação de Pedidos de Compra</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="View matched Purchase Orders">Visualizar Pedidos de Compra Confrontados</value>
-  <value column="Help" original="View detals of matched purchase order lines to invoice lines and material receipt lines">View detals of matched purchase order lines to invoice lines and material receipt lines</value>
+  <value column="Description" original="View matched Purchase Orders">Visualizar Conciliações de Pedidos de Compra</value>
+  <value column="Help" original="View detals of matched purchase order lines to invoice lines and material receipt lines">Visualizar detalhes de conciliações de linhas de pedidos de compra a linhas de faturas e a linhas de recebimentos de materiais.</value>
  </row>
  <row id="410" trl="Y">
   <value column="Name" original="Expense Type">Tipo de Despesa</value>
@@ -2729,10 +2729,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Request for Quotation Line Quantity - You may request a quotation for different quantities">Linha de Quantidade de Solicitação de Cotação - Você pode solicitar cotações para diferentes quantidades</value>
  </row>
  <row id="618" trl="Y">
-  <value column="Name" original="Response Quantity">Quantidade de Resposta</value>
+  <value column="Name" original="Response Quantity">Quantidade da Resposta</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="RfQ Line Quantity Response">Resposta de Quantidade de Linha de SdC</value>
-  <value column="Help" original="Request for Quotation Response Line Quantity from a potential Vendor">Quantidade de Linha de Resposta de Solicitação de Cotação proveniente de um fornecedor em potencial</value>
+  <value column="Description" original="RfQ Line Quantity Response">Quantidade da Linha de Resposta de SdC</value>
+  <value column="Help" original="Request for Quotation Response Line Quantity from a potential Vendor">Quantidade de Linha de Resposta de Solicitação de Cotação proveniente de um fornecedor em potencial.</value>
  </row>
  <row id="619" trl="Y">
   <value column="Name" original="Topic">Tópico</value>
@@ -2789,16 +2789,16 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Link to the shipment line">Víncula à linha de remessa</value>
  </row>
  <row id="628" trl="Y">
-  <value column="Name" original="Customer RMA">ARM</value>
+  <value column="Name" original="Customer RMA">ARM de Cliente</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Customer Return Material Authorization">Autorização de Retorno de Material</value>
-  <value column="Help" original="A Return Material Authorization may be required to accept returns and to create Credit Memos">Uma Autorização de Retorno de Material pode ser exigida para aceitar devoluções e para criar Avisos de Crédito</value>
+  <value column="Description" original="Customer Return Material Authorization">Autorização de Retorno de Material de Cliente</value>
+  <value column="Help" original="A Return Material Authorization may be required to accept returns and to create Credit Memos">Dependendo das regras de negócios da empresa, pode ser necessário um ARM prévio antes de se aceitar o recebimento de devoluções e para criar Memorandos de Crédito.</value>
  </row>
  <row id="629" trl="Y">
   <value column="Name" original="RMA Line">Linha de ARM</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Return Material Authorization Line">Linha de Autorização de Retorno de Material</value>
-  <value column="Help" original="Detail information about the returned goods">Informação detalhada sobre os bens devolvidos</value>
+  <value column="Help" original="Detail information about the returned goods">Informação detalhada sobre os bens devolvidos.</value>
  </row>
  <row id="630" trl="Y">
   <value column="Name" original="Related">Relacionado</value>
@@ -2819,10 +2819,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="633" trl="Y">
-  <value column="Name" original="Dunning Run">Processamento de Cobrança</value>
+  <value column="Name" original="Dunning Run">Ação de Recuperação (Cobrança)</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Manage Dunning Run">Gerenciar Processamento de Cobrança</value>
-  <value column="Help" original="Manage Dunning Run">Gerenciar Processamento de Cobrança</value>
+  <value column="Description" original="Manage Dunning Run">Incluir e Gerenciar Ações de Recuperação (Cobrança)</value>
+  <value column="Help" original="Manage Dunning Run"/>
  </row>
  <row id="634" trl="Y">
   <value column="Name" original="Entry">Registro</value>
@@ -3143,33 +3143,33 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="The quantities are in the storage Unit of Measure!">As quantidades estão na Unidade de Medida de armazenagem!</value>
  </row>
  <row id="688" trl="Y">
-  <value column="Name" original="Matched POs">PC Confrontados</value>
+  <value column="Name" original="Matched POs">Pedidos Conciliados</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Purchase Order Lines matched to this Material Receipt Line">Linhas de Pedidos de Compras confrontadas a esta Linha de Recebimento de Material</value>
+  <value column="Description" original="Purchase Order Lines matched to this Material Receipt Line">Linhas de Pedidos de Compras conciliadas a esta Linha de Recebimento de Material</value>
   <value column="Help" original=""/>
  </row>
  <row id="689" trl="Y">
-  <value column="Name" original="Matched Invoices">Faturas Confrontadas</value>
+  <value column="Name" original="Matched Invoices">Faturas Conciliadas</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Invoice Lines matched to this Material Receipt Line">Linhas de Faturas confrontadas a esta Linha de Recebimento de Material</value>
+  <value column="Description" original="Invoice Lines matched to this Material Receipt Line">Linhas de Faturas conciliadas a esta Linha de Recebimento de Material</value>
   <value column="Help" original=""/>
  </row>
  <row id="690" trl="Y">
-  <value column="Name" original="Matched Receipts">Recebimentos Confrontados</value>
+  <value column="Name" original="Matched Receipts">Recebimentos Conciliados</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Material Receipt Lines matched to this Invoice Line">Linhas de Recebimento de Material confrontadas a esta Linha de Fatura</value>
+  <value column="Description" original="Material Receipt Lines matched to this Invoice Line">Linhas de Recebimento de Material conciliadas a esta Linha de Fatura</value>
   <value column="Help" original=""/>
  </row>
  <row id="691" trl="Y">
-  <value column="Name" original="Matched POs">PC Confrontados</value>
+  <value column="Name" original="Matched POs">Pedidos Conciliados</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Purchase Order Lines matched to this Invoice Line">Linhas de Pedidos de Compras confrontadas a esta Linha de Fatura</value>
+  <value column="Description" original="Purchase Order Lines matched to this Invoice Line">Linhas de Pedidos de Compra conciliadas a esta Linha de Fatura</value>
   <value column="Help" original=""/>
  </row>
  <row id="692" trl="Y">
-  <value column="Name" original="Matching">Confrontando</value>
+  <value column="Name" original="Matching">Conciliação</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Material Receipt or Invoice Lines matched to this Purchse Order Line">Linhas de Recebimento de Material ou Faturas confrontadas a esta Linha de Pedido de Compras</value>
+  <value column="Description" original="Material Receipt or Invoice Lines matched to this Purchse Order Line">Recebimentos de Materiais ou Faturas conciliadas à linha do Pedido de Compra</value>
   <value column="Help" original=""/>
  </row>
  <row id="693" trl="Y">
@@ -3181,14 +3181,14 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
  <row id="694" trl="Y">
   <value column="Name" original="Invoice Batch">Lote de Faturas</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Enter Expense Invoice Batch Header">Digitar Cabeçalho de Lote de Fatura de Despesas</value>
-  <value column="Help" original="Set Currency and decide if this for AR (sales) Invoices or AP (vendor) invoices. Optionally enter a Control amount.">Selecione a moeda e decida se é para faturas AR (vendas) ou faturas AP (fornecedor). Opcionalmente digite um Valor de Controle.</value>
+  <value column="Description" original="Enter Expense Invoice Batch Header">Lote de Faturas de Despesa</value>
+  <value column="Help" original="Set Currency and decide if this for AR (sales) Invoices or AP (vendor) invoices. Optionally enter a Control amount.">Introduzir lote de faturas de despesa. Após criar as linhas, as faturas reais são criadas ao processar o lote.</value>
  </row>
  <row id="695" trl="Y">
-  <value column="Name" original="Batch Line">Linha de Batelada</value>
+  <value column="Name" original="Batch Line">Linha do Lote</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Enter Expense Invoice Batch Line">Digitar Linha de Lote de Fatura de Despesas</value>
-  <value column="Help" original="A new invoice is created, if there is a different Document Number, Business Partner or Location (address).&#10;Note that the Document Number may be overwritten - depending on the Number control of the selected Document Type.">Uma nova fatura será criada caso haja um Número de Documento, Parceiro de Negócios ou localização (endereço) diferente. Note que o Número do Documento pode ser sobrescrito - dependendo do Número de Controle do Tipo de Documento selecionado.</value>
+  <value column="Description" original="Enter Expense Invoice Batch Line">Linha do Lote de Fatura de Despesa</value>
+  <value column="Help" original="A new invoice is created, if there is a different Document Number, Business Partner or Location (address).&#10;Note that the Document Number may be overwritten - depending on the Number control of the selected Document Type.">Você pode criar faturas contendo uma ou mais despesas. Para criar por exemplo, uma única fatura com duas despesas diferentes, crie duas linhas com os mesmos valores nos campos Número do Documento, Parceiro de Negócios e Localização do Parceiro. O sistema verifica e agrupa automaticamente numa mesma fatura as despesas que possuem valores idênticos para esses três campos. Atenção: o Número do Documento pode ser alterado pelo sistema, dependendo das configurações do Tipo de Documento.</value>
  </row>
  <row id="696" trl="Y">
   <value column="Name" original="Org Access">Acesso Org</value>
@@ -3197,16 +3197,16 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Add the client and organizations the user has access to. Entries here are ignored, if in the Role, User Org Access is not selected or the role has access to all roles.&lt;br&gt;&#10;Note that access information is cached and requires re-login or reset of cache."><![CDATA[Acrescentar as Empresas e Organizações a que o usuário tem acesso. Estes lançamentos serão ignorados se, neste papel, o "Acesso de Usuários à Organização" não for selecionado ou o papel tiver acesso a todos os papéis.<br> Note que a informação de acesso é memorizada e requer re-login ou reset da memória cache.]]></value>
  </row>
  <row id="697" trl="Y">
-  <value column="Name" original="Landed Costs">Custos Finais</value>
+  <value column="Name" original="Landed Costs">Custo de Entrada</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Landed cost to be allocated to material receipts">Custos finais a serem alocados ao recebimento de materiais</value>
-  <value column="Help" original="Landed costs allow you to allocate costs to previously received material receipts. Examples are freight, excise tax, insurance, etc.&lt;br&gt;&#10;Select either a Receipt, Receipt Line or a specific Product to allocate the costs to."><![CDATA[Os custos finais (Landed costs) permitem alocar custos a materiais previamente recebidos. Exemplos são frete, imposto de consumo, seguros, etc.<br> Selecione ou um Recebimento, Linha de Recebimento ou um Produto específico ao qual serão alocados os custos.]]></value>
+  <value column="Description" original="Landed cost to be allocated to material receipts">Custos de Entrada a serem alocados ao Recebimento de Materiais</value>
+  <value column="Help" original="Landed costs allow you to allocate costs to previously received material receipts. Examples are freight, excise tax, insurance, etc.&lt;br&gt;&#10;Select either a Receipt, Receipt Line or a specific Product to allocate the costs to.">Custos de entrada permitem a alocações de custos a materiais previamente recebidos. Ex: frete, taxas alfandegárias, seguro, etc. No grupo de campos Referência, informe um Recebimento (e Linha) ou um Produto ao qual será alocado os custos.</value>
  </row>
  <row id="698" trl="Y">
-  <value column="Name" original="Landed Cost Allocation">Alocação de Custo Final</value>
+  <value column="Name" original="Landed Cost Allocation">Alocação de Custo de Entrada</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Allocation of Landed Costs to Product">Apropriação de Custos Finais ao Produto</value>
-  <value column="Help" original="Calculated when preparing the Invoice">Calculado ao preparar a Fatura</value>
+  <value column="Description" original="Allocation of Landed Costs to Product">Alocações de Custos de Entrada ao Produto</value>
+  <value column="Help" original="Calculated when preparing the Invoice">Calculado quando a fatura é preparada.</value>
  </row>
  <row id="699" trl="Y">
   <value column="Name" original="Cost Element">Elemento de Custo</value>
@@ -5242,71 +5242,71 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53271" trl="N">
-  <value column="Name" original="Customer Return">Customer Return</value>
+ <row id="53271" trl="Y">
+  <value column="Name" original="Customer Return">Devolução de Cliente</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Enter Customer Returns">Enter Customer Returns</value>
-  <value column="Help" original="The Customer Return Tab allows you to generate, maintain, enter and process Returns from a Customer. ">The Customer Return Tab allows you to generate, maintain, enter and process Returns from a Customer. </value>
+  <value column="Description" original="Enter Customer Returns">Devolução de Cliente</value>
+  <value column="Help" original="The Customer Return Tab allows you to generate, maintain, enter and process Returns from a Customer. ">A janela define devoluções de materiais pelos clientes.</value>
  </row>
- <row id="53272" trl="N">
-  <value column="Name" original="Customer Return Line">Customer Return Line</value>
+ <row id="53272" trl="Y">
+  <value column="Name" original="Customer Return Line">Linha de Devolução</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Customer Return Line">Customer Return Line</value>
-  <value column="Help" original="The Customer Return Line Tab defines the individual items in a Customer Return.">The Customer Return Line Tab defines the individual items in a Customer Return.</value>
+  <value column="Description" original="Customer Return Line">Linha de Devolução</value>
+  <value column="Help" original="The Customer Return Line Tab defines the individual items in a Customer Return.">Define os itens individuais na Devolução de Cliente.</value>
  </row>
- <row id="53273" trl="N">
-  <value column="Name" original="Confirmations">Confirmations</value>
+ <row id="53273" trl="Y">
+  <value column="Name" original="Confirmations">Confirmações</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Optional Confirmations of Receipt Lines">Optional Confirmations of Receipt Lines</value>
-  <value column="Help" original="The quantities are in the storage Unit of Measure!">The quantities are in the storage Unit of Measure!</value>
+  <value column="Description" original="Optional Confirmations of Receipt Lines">Confirmações opcionais do recebimento</value>
+  <value column="Help" original="The quantities are in the storage Unit of Measure!"/>
  </row>
- <row id="53274" trl="N">
-  <value column="Name" original="Matched POs">Matched POs</value>
+ <row id="53274" trl="Y">
+  <value column="Name" original="Matched POs">Pedidos Conciliados</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Purchase Order Lines matched to this Material Receipt Line">Purchase Order Lines matched to this Material Receipt Line</value>
+  <value column="Description" original="Purchase Order Lines matched to this Material Receipt Line">Linhas de Pedidos de Compra conciliados a esta Linha de Recebimento de Material</value>
   <value column="Help" original=""/>
  </row>
- <row id="53275" trl="N">
-  <value column="Name" original="Matched Invoices">Matched Invoices</value>
+ <row id="53275" trl="Y">
+  <value column="Name" original="Matched Invoices">Faturas Conciliadas</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Invoice Lines matched to this Material Receipt Line">Invoice Lines matched to this Material Receipt Line</value>
+  <value column="Description" original="Invoice Lines matched to this Material Receipt Line">Linhas de Faturas conciliadas a esta Linha de Recebimento de Material</value>
   <value column="Help" original=""/>
  </row>
- <row id="53276" trl="N">
-  <value column="Name" original="Return to Vendor">Return to Vendor</value>
+ <row id="53276" trl="Y">
+  <value column="Name" original="Return to Vendor">Devolução ao Fornecedor</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Vendor Returns">Vendor Returns</value>
-  <value column="Help" original="The Return to Vendor Tab allows you to generate, maintain, enter and process Shipments to a Vendor because of a Return">The Return to Vendor Tab allows you to generate, maintain, enter and process Shipments to a Vendor because of a Return</value>
+  <value column="Description" original="Vendor Returns">Devolução ao Fornecedor</value>
+  <value column="Help" original="The Return to Vendor Tab allows you to generate, maintain, enter and process Shipments to a Vendor because of a Return">A janela define devoluções de materiais a fornecedores.</value>
  </row>
- <row id="53277" trl="N">
-  <value column="Name" original="Return to Vendor Line">Return to Vendor Line</value>
+ <row id="53277" trl="Y">
+  <value column="Name" original="Return to Vendor Line">Linha de Devolução</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Return to Vendor Line">Return to Vendor Line</value>
-  <value column="Help" original="The Return to Vendor Line Tab defines the individual items in a Return to Vendor.">The Return to Vendor Line Tab defines the individual items in a Return to Vendor.</value>
+  <value column="Description" original="Return to Vendor Line">Linha de Devolução</value>
+  <value column="Help" original="The Return to Vendor Line Tab defines the individual items in a Return to Vendor.">Define os itens individuais na Devolução a Fornecedor.</value>
  </row>
- <row id="53278" trl="N">
-  <value column="Name" original="Confirmations">Confirmations</value>
+ <row id="53278" trl="Y">
+  <value column="Name" original="Confirmations">Confirmações</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Optional Confirmations of Return to Vendor Lines">Optional Confirmations of Return to Vendor Lines</value>
-  <value column="Help" original="The quantities are in the storage Unit of Measure!">The quantities are in the storage Unit of Measure!</value>
+  <value column="Description" original="Optional Confirmations of Return to Vendor Lines">Confirmações opcionais da remessa</value>
+  <value column="Help" original="The quantities are in the storage Unit of Measure!"/>
  </row>
- <row id="53279" trl="N">
-  <value column="Name" original="Attributes">Attributes</value>
+ <row id="53279" trl="Y">
+  <value column="Name" original="Attributes">Atibutos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Product Instance Attribute Material Allocation">Product Instance Attribute Material Allocation</value>
+  <value column="Description" original="Product Instance Attribute Material Allocation">Alocação Material de Atributo de Instância de Produto</value>
   <value column="Help" original=""/>
  </row>
- <row id="53280" trl="N">
-  <value column="Name" original="Vendor RMA">Vendor RMA</value>
+ <row id="53280" trl="Y">
+  <value column="Name" original="Vendor RMA">ARM ao Fornecedor</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Vendor Return Material Authorization">Vendor Return Material Authorization</value>
-  <value column="Help" original="A Return Material Authorization may be required to accept returns and to create Credit Memos">A Return Material Authorization may be required to accept returns and to create Credit Memos</value>
+  <value column="Description" original="Vendor Return Material Authorization">Autorizações de Retorno de Material ao Fornecedor</value>
+  <value column="Help" original="A Return Material Authorization may be required to accept returns and to create Credit Memos">Dependendo das regras de negócios do fornecedor, pode ser necessário informar um ARM no momento do envio da devoluções e também para criar Memorandos de Crédito.</value>
  </row>
- <row id="53281" trl="N">
-  <value column="Name" original="RMA Line">RMA Line</value>
+ <row id="53281" trl="Y">
+  <value column="Name" original="RMA Line">Linha de ARM</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Return Material Authorization Line">Return Material Authorization Line</value>
-  <value column="Help" original="Detail information about the returned goods">Detail information about the returned goods</value>
+  <value column="Description" original="Return Material Authorization Line">Linha de Autorização de Retorno de Material</value>
+  <value column="Help" original="Detail information about the returned goods">Informação detalhada sobre os bens devolvidos.</value>
  </row>
  <row id="53282" trl="N">
   <value column="Name" original="User Contact">User Contact</value>
@@ -5532,22 +5532,22 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53373" trl="N">
-  <value column="Name" original="Payment Schedule">Payment Schedule</value>
+ <row id="53373" trl="Y">
+  <value column="Name" original="Payment Schedule">Programação de Pagamento</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Invoice Payment Schedule">Invoice Payment Schedule</value>
+  <value column="Description" original="Invoice Payment Schedule">Programação de Pagamento da Fatura</value>
   <value column="Help" original=""/>
  </row>
- <row id="53374" trl="N">
-  <value column="Name" original="Payment Schedule">Payment Schedule</value>
+ <row id="53374" trl="Y">
+  <value column="Name" original="Payment Schedule">Programação de Pagamento</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Order Payment Schedule">Order Payment Schedule</value>
+  <value column="Description" original="Order Payment Schedule">Programação de Pagamento do Pedido</value>
   <value column="Help" original=""/>
  </row>
- <row id="53375" trl="N">
-  <value column="Name" original="Payment Schedule">Payment Schedule</value>
+ <row id="53375" trl="Y">
+  <value column="Name" original="Payment Schedule">Programação de Pagamentos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Order Payment Schedule">Order Payment Schedule</value>
+  <value column="Description" original="Order Payment Schedule">Programação de Pagamentos do Pedido</value>
   <value column="Help" original=""/>
  </row>
  <row id="53376" trl="Y">
@@ -5616,10 +5616,10 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53434" trl="N">
-  <value column="Name" original="Dashboard">Dashboard</value>
+ <row id="53434" trl="Y">
+  <value column="Name" original="Dashboard">Painel do Representante</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Sales Rep dashboard">Sales Rep dashboard</value>
+  <value column="Description" original="Sales Rep dashboard">O Painel do Representante oferece um local centralizado para gerenciar oportunidades de vendas</value>
   <value column="Help" original=""/>
  </row>
  <row id="53435" trl="Y">
@@ -5634,16 +5634,16 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53437" trl="N">
-  <value column="Name" original="Opportunities">Opportunities</value>
+ <row id="53437" trl="Y">
+  <value column="Name" original="Opportunities">Oportunidades de Vendas</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Opportunities assigned to Sales Rep">Opportunities assigned to Sales Rep</value>
+  <value column="Description" original="Opportunities assigned to Sales Rep">Oportunidades de Vendas vinculadas ao Representante de Vendas</value>
   <value column="Help" original=""/>
  </row>
- <row id="53438" trl="N">
-  <value column="Name" original="Leads">Leads</value>
+ <row id="53438" trl="Y">
+  <value column="Name" original="Leads">Leads (de Vendas)</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Leads assigned to Sales Rep">Leads assigned to Sales Rep</value>
+  <value column="Description" original="Leads assigned to Sales Rep">Leads Vinculados ao Representante de Vendas</value>
   <value column="Help" original=""/>
  </row>
  <row id="53439" trl="Y">
@@ -5670,10 +5670,10 @@ Printing:
   <value column="Description" original="Contact Activity">Atividade do Contato</value>
   <value column="Help" original=""/>
  </row>
- <row id="53455" trl="N">
-  <value column="Name" original="Activities">Activities</value>
+ <row id="53455" trl="Y">
+  <value column="Name" original="Activities">Atividades</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Sales Rep Activities">Sales Rep Activities</value>
+  <value column="Description" original="Sales Rep Activities">Atividades Vinculadas ao Representante de Vendas</value>
   <value column="Help" original=""/>
  </row>
  <row id="53456" trl="Y">
@@ -5796,8 +5796,8 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200016" trl="N">
-  <value column="Name" original="POS Payment">POS Payment</value>
+ <row id="200016" trl="Y">
+  <value column="Name" original="POS Payment">Pagamento PDV</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5886,11 +5886,11 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200036" trl="N">
-  <value column="Name" original="Shipping Processor">Shipping Processor</value>
+ <row id="200036" trl="Y">
+  <value column="Name" original="Shipping Processor">Processador de Remessas</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Shipping Processors">Shipping Processors</value>
-  <value column="Help" original="Shipping processor tab to define integration details with online shipping services.">Shipping processor tab to define integration details with online shipping services.</value>
+  <value column="Description" original="Shipping Processors">Processador de Remessas</value>
+  <value column="Help" original="Shipping processor tab to define integration details with online shipping services.">Define detalhes de integração a serviços online de remessas expressas (ex. FedEx, UPS, DHL, etc.).</value>
  </row>
  <row id="200037" trl="N">
   <value column="Name" original="Packaging">Packaging</value>
@@ -5916,20 +5916,20 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200044" trl="N">
-  <value column="Name" original="Packages">Packages</value>
+ <row id="200044" trl="Y">
+  <value column="Name" original="Packages">Volumes</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200045" trl="N">
-  <value column="Name" original="MPS Lines">MPS Lines</value>
+ <row id="200045" trl="Y">
+  <value column="Name" original="MPS Lines">Linhas de Master (MPS)</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200046" trl="N">
-  <value column="Name" original="Package Lines">Package Lines</value>
+ <row id="200046" trl="Y">
+  <value column="Name" original="Package Lines">Linhas de Volumes</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5940,20 +5940,20 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200048" trl="N">
-  <value column="Name" original="MPS Lines">MPS Lines</value>
+ <row id="200048" trl="Y">
+  <value column="Name" original="MPS Lines">Linhas de Master (MPS)</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="">Linhas de Master/MPS (Multiple-Piece Shipment) Envio de Múltiplos Pacotes</value>
+  <value column="Help" original="">Algumas empresas de frete expresso, como a FedEx, UPS e DHL permitem o envio de remessas em momentos diferentes para um mesmo destinatário. É uma modalidade especial (normalmente o valor do frete fica mais barato) quando a mercadoria é enviada aos poucos.</value>
+ </row>
+ <row id="200049" trl="Y">
+  <value column="Name" original="Package Lines">Linhas de Volumes</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200049" trl="N">
-  <value column="Name" original="Package Lines">Package Lines</value>
-  <value column="CommitWarning" original=""/>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
- </row>
- <row id="200050" trl="N">
-  <value column="Name" original="Commodity Shipment">Commodity Shipment</value>
+ <row id="200050" trl="Y">
+  <value column="Name" original="Commodity Shipment">Remessa de Commodities</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6012,14 +6012,14 @@ Printing:
   <value column="Description" original="Methods that the Shipper will support for picking up from your location">Methods that the Shipper will support for picking up from your location</value>
   <value column="Help" original=""/>
  </row>
- <row id="200061" trl="N">
-  <value column="Name" original="Shipping Transaction">Shipping Transaction</value>
+ <row id="200061" trl="Y">
+  <value column="Name" original="Shipping Transaction">Transação de Remessa</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200062" trl="N">
-  <value column="Name" original="Shipping Transaction Line">Shipping Transaction Line</value>
+ <row id="200062" trl="Y">
+  <value column="Name" original="Shipping Transaction Line">Linha de Transação de Remessa</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6030,17 +6030,17 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200065" trl="N">
-  <value column="Name" original="RMA Tax">RMA Tax</value>
+ <row id="200065" trl="Y">
+  <value column="Name" original="RMA Tax">Imposto de ARM</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="RMA Tax">RMA Tax</value>
-  <value column="Help" original="The RMA Tax Tab displays the tax amount for a RMA based on the lines entered.">The RMA Tax Tab displays the tax amount for a RMA based on the lines entered.</value>
+  <value column="Description" original="RMA Tax">Imposto de ARM</value>
+  <value column="Help" original="The RMA Tax Tab displays the tax amount for a RMA based on the lines entered.">A aba apresenta o valor do imposto baseado nas linhas.</value>
  </row>
- <row id="200066" trl="N">
-  <value column="Name" original="RMA Tax">RMA Tax</value>
+ <row id="200066" trl="Y">
+  <value column="Name" original="RMA Tax">Imposto de ARM</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="RMA Tax">RMA Tax</value>
-  <value column="Help" original="The RMA Tax Tab displays the tax associated with the RMA Lines.">The RMA Tax Tab displays the tax associated with the RMA Lines.</value>
+  <value column="Description" original="RMA Tax">Imposto de ARM</value>
+  <value column="Help" original="The RMA Tax Tab displays the tax associated with the RMA Lines.">A aba apresenta o valor do imposto baseado nas linhas.</value>
  </row>
  <row id="200067" trl="N">
   <value column="Name" original="Batch">Batch</value>
@@ -6156,14 +6156,14 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200109" trl="N">
-  <value column="Name" original="Estimated Landed Cost">Estimated Landed Cost</value>
+ <row id="200109" trl="Y">
+  <value column="Name" original="Estimated Landed Cost">Custo de Entrada Estimado</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200110" trl="N">
-  <value column="Name" original="Estimated Landed Cost Allocation">Estimated Landed Cost Allocation</value>
+ <row id="200110" trl="Y">
+  <value column="Name" original="Estimated Landed Cost Allocation">Alocação de Custo de Entrada Estimado</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>

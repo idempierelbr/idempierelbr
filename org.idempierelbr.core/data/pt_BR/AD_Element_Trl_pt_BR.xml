@@ -1225,8 +1225,8 @@
  <row id="269" trl="Y">
   <value column="Name" original="Date Promised">Data Prometida</value>
   <value column="PrintName" original="Date Promised">Data Prometida</value>
-  <value column="Description" original="Date Order was promised">Data que o Pedido foi prometido</value>
-  <value column="Help" original="The Date Promised indicates the date, if any, that an Order was promised for.">A "Data Prometida" indica a data, se existir, que um Pedido foi prometido.</value>
+  <value column="Description" original="Date Order was promised">Data Prometida (ex: pedido, pagamento, etc.)</value>
+  <value column="Help" original="The Date Promised indicates the date, if any, that an Order was promised for.">A "Data Prometida" indica a data, se existir, que uma transação foi prometida.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -2763,10 +2763,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="512" trl="Y">
-  <value column="Name" original="ZIP">CEP</value>
-  <value column="PrintName" original="ZIP">CEP</value>
+  <value column="Name" original="ZIP">CEP/ZIP</value>
+  <value column="PrintName" original="ZIP">CEP/ZIP</value>
   <value column="Description" original="Postal code">Código Postal</value>
-  <value column="Help" original="The Postal Code or ZIP identifies the postal code for this entity's address.">O campo "Código Postal ou CEP" identifica o código postal do endereço desta entidade.</value>
+  <value column="Help" original="The Postal Code or ZIP identifies the postal code for this entity's address.">O campo "CEP/ZIP" identifica o código postal do endereço.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -2893,24 +2893,24 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="531" trl="Y">
-  <value column="Name" original="Ordered Quantity">Quantidade Requisitada</value>
-  <value column="PrintName" original="Ordered Qty">Qde Requisitada</value>
-  <value column="Description" original="Ordered Quantity">Quantidade Requisitada</value>
-  <value column="Help" original="The Ordered Quantity indicates the quantity of a product that was ordered.">A "Quantidade Requisitada" indica a quantidade de um produto que foi requisitada.</value>
-  <value column="PO_Description" original="Ordered Quantity">Quantidade Requisitada</value>
-  <value column="PO_Help" original="The Ordered Quantity indicates the quantity of a product that was ordered.">A "Quantidade Requisitada" indica a quantidade de um produto que foi requisitada.</value>
-  <value column="PO_Name" original="PO Quantity">Quantidade PC</value>
-  <value column="PO_PrintName" original="PO Quantity">Quantidade PC</value>
+  <value column="Name" original="Ordered Quantity">Quantidade Pedida</value>
+  <value column="PrintName" original="Ordered Qty">Qtd. Pedida</value>
+  <value column="Description" original="Ordered Quantity">Quantidade Pedida</value>
+  <value column="Help" original="The Ordered Quantity indicates the quantity of a product that was ordered.">A "Quantidade Pedida" indica a quantidade pedida de um produto.</value>
+  <value column="PO_Description" original="Ordered Quantity">Quantidade Pedida</value>
+  <value column="PO_Help" original="The Ordered Quantity indicates the quantity of a product that was ordered.">A "Quantidade Pedida" indica a quantidade pedida de um produto.</value>
+  <value column="PO_Name" original="PO Quantity">Quantidade Pedida</value>
+  <value column="PO_PrintName" original="PO Quantity">Qtd. Pedida</value>
  </row>
  <row id="532" trl="Y">
   <value column="Name" original="Reserved Quantity">Quantidade Reservada</value>
-  <value column="PrintName" original="Reserved Qty">Qde Reservada</value>
-  <value column="Description" original="Reserved Quantity">Quantidade Reservada</value>
-  <value column="Help" original="The Reserved Quantity indicates the quantity of a product that is currently reserved.">A "Quantidade Reservada" indica a quantidade de um produto que está reservada atualmente.</value>
-  <value column="PO_Description" original="Quantity Ordered on Purchase Orders">Quantidade Requisitada nos Pedidos de Compras</value>
-  <value column="PO_Help" original="The Ordered Quantity indicates the quantity of a product that is currently ordered.">A "Quantidade Requisitada" indica a quantidade de um produto que está pedida atualmente.</value>
-  <value column="PO_Name" original="On Order Quantity">Quantidade No Pedido</value>
-  <value column="PO_PrintName" original="On Order Quantity">Quantidade No Pedido</value>
+  <value column="PrintName" original="Reserved Qty">Qtd. Reservada</value>
+  <value column="Description" original="Reserved Quantity">Quantidade Reservada em Pedido de Venda</value>
+  <value column="Help" original="The Reserved Quantity indicates the quantity of a product that is currently reserved.">A "Quantidade Reservada" indica a quantidade de um produto que está reservada para venda.</value>
+  <value column="PO_Description" original="Quantity Ordered on Purchase Orders">Quantidade Requisitada em Pedido de Compra</value>
+  <value column="PO_Help" original="The Ordered Quantity indicates the quantity of a product that is currently ordered.">A "Quantidade Requisitada" indica a quantidade de um produto que está sendo aguardada para recebimento (de uma compra).</value>
+  <value column="PO_Name" original="On Order Quantity">Quantidade Requisitada</value>
+  <value column="PO_PrintName" original="On Order Quantity">Qtd. Requisitada</value>
  </row>
  <row id="534" trl="Y">
   <value column="Name" original="Rate">Taxa</value>
@@ -3775,10 +3775,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="838" trl="Y">
-  <value column="Name" original="Dunning">Cobrança</value>
-  <value column="PrintName" original="Dunning">Cobrança</value>
-  <value column="Description" original="Dunning Rules for overdue invoices">Regras de Cobrança para faturas em atraso</value>
-  <value column="Help" original="The Dunning indicates the rules and method of dunning for past due payments.">A "Cobrança" indica as regras e o método de aviso de cobrança para pagamentos atrasados.</value>
+  <value column="Name" original="Dunning">Recuperação (Cobrança)</value>
+  <value column="PrintName" original="Dunning">Recuperação (Cobrança)</value>
+  <value column="Description" original="Dunning Rules for overdue invoices">Regras de Recuperação (Cobrança) para Faturas com Pagamentos em atraso</value>
+  <value column="Help" original="The Dunning indicates the rules and method of dunning for past due payments.">A "Recuperação (Cobrança)" indica as regras e os métodos de notificação de cobrança para pagamentos em atraso.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -3875,10 +3875,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="860" trl="Y">
-  <value column="Name" original="Days between dunning">Dias entre Avisos de Cobrança</value>
-  <value column="PrintName" original="Days between dunning">Dias entre Avisos de Cobrança</value>
-  <value column="Description" original="Days between sending dunning notices">Dias entre emissões de avisos de vencimento e cobrança</value>
-  <value column="Help" original="The Days Between Dunning indicates the number of days between sending dunning notices.">O campo "Dias entre Avisos de Cobrança" indica o número de dias que se aguarda para envio de novos avisos de cobrança.</value>
+  <value column="Name" original="Days between dunning">Dias entre Notificações de Recuperação (Cobrança)</value>
+  <value column="PrintName" original="Days between dunning">Dias entre Notificações de Recuperação (Cobrança)</value>
+  <value column="Description" original="Days between sending dunning notices">Dias entre emissões de notificações/avisos de vencimento e cobrança</value>
+  <value column="Help" original="The Days Between Dunning indicates the number of days between sending dunning notices.">O campo "Dias entre Notificações de Recuperação (Cobrança)" indica o número de dias que se aguarda para envio de novos avisos de recuperação (cobrança).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -3975,10 +3975,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="889" trl="Y">
-  <value column="Name" original="Fee Amount">Valor de Encargo de Mora</value>
-  <value column="PrintName" original="Fee">Encargo de Mora</value>
-  <value column="Description" original="Fee amount in invoice currency">Valor de Encargo de Mora na moeda da fatura</value>
-  <value column="Help" original="The Fee Amount indicates the charge amount on a dunning letter for overdue invoices.  This field will only display if the charge fee checkbox has been selected.">O "Valor de Encargo de Mora" indica o montante da despesa em uma carta de cobrança para faturas atrasadas.  Este campo só será exibido se a caixa de verificação "Encargos de Mora" tiver sido selecionada.</value>
+  <value column="Name" original="Fee Amount">Valor dos Encargos de Mora</value>
+  <value column="PrintName" original="Fee">Valor dos Encargos de Mora</value>
+  <value column="Description" original="Fee amount in invoice currency">Valor dos Encargos de Mora na moeda da fatura</value>
+  <value column="Help" original="The Fee Amount indicates the charge amount on a dunning letter for overdue invoices.  This field will only display if the charge fee checkbox has been selected.">O "Valor dos Encargos de Mora" indica o montante da despesa em uma carta de cobrança para faturas atrasadas.  Este campo só será exibido se a caixa de verificação "Encargos de Mora" tiver sido selecionada.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4565,24 +4565,24 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1025" trl="Y">
-  <value column="Name" original="Shipment/Receipt">Remessa/Recebimento</value>
-  <value column="PrintName" original="Shipment/Receipt">Remessa/Recebimento</value>
+  <value column="Name" original="Shipment/Receipt">Remessa</value>
+  <value column="PrintName" original="Shipment/Receipt">Remessa</value>
   <value column="Description" original="Material Shipment Document">Documento de Remessa de Material</value>
-  <value column="Help" original="The Material Shipment / Receipt ">Remessa/Recebimento de Material </value>
+  <value column="Help" original="The Material Shipment / Receipt ">Remessa de Material </value>
   <value column="PO_Description" original="Material Receipt Document">Documento de Recebimento de Material</value>
-  <value column="PO_Help" original="The Material Shipment / Receipt ">Remessa/Recebimento de Material </value>
-  <value column="PO_Name" original="Receipt">Recibo</value>
-  <value column="PO_PrintName" original="Receipt">Recibo</value>
+  <value column="PO_Help" original="The Material Shipment / Receipt ">Recebimento de Material </value>
+  <value column="PO_Name" original="Receipt">Recebimento</value>
+  <value column="PO_PrintName" original="Receipt">Recebimento</value>
  </row>
  <row id="1026" trl="Y">
-  <value column="Name" original="Shipment/Receipt Line">Linha de Remessa/Recebimento</value>
-  <value column="PrintName" original="Shipment/Receipt Line">Linha de Remessa/Recebimento</value>
-  <value column="Description" original="Line on Shipment or Receipt document">Linha no documento de Remessa ou Recebimento</value>
-  <value column="Help" original="The Shipment/Receipt Line indicates a unique line in a Shipment/Receipt document">A "Linha de Remessa/Recebimento" indica uma linha exclusiva em um documento de Remessa/Recebimento</value>
-  <value column="PO_Description" original="Line on Receipt document">Linha no documento de Recebimento</value>
+  <value column="Name" original="Shipment/Receipt Line">Linha de Remessa (Cliente)</value>
+  <value column="PrintName" original="Shipment/Receipt Line">Linha de Remessa (Cliente)</value>
+  <value column="Description" original="Line on Shipment or Receipt document">Linha de Remessa de Material(Cliente)</value>
+  <value column="Help" original="The Shipment/Receipt Line indicates a unique line in a Shipment/Receipt document"/>
+  <value column="PO_Description" original="Line on Receipt document">Linha de Recebimento de Material</value>
   <value column="PO_Help" original=""/>
-  <value column="PO_Name" original="Receipt Line">Linha de Recebimento</value>
-  <value column="PO_PrintName" original="Receipt Line">Linha de Recebimento</value>
+  <value column="PO_Name" original="Receipt Line">Linha de Recebimento de Material</value>
+  <value column="PO_PrintName" original="Receipt Line">Linha de Recebimento de Material</value>
  </row>
  <row id="1027" trl="Y">
   <value column="Name" original="Phys.Inventory">Estoque Físico</value>
@@ -4935,8 +4935,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1075" trl="Y">
-  <value column="Name" original="Dunning Level">Nível de Cobrança</value>
-  <value column="PrintName" original="Dunning Level">Nível de Cobrança</value>
+  <value column="Name" original="Dunning Level">Nível de Recuperação (Cobrança)</value>
+  <value column="PrintName" original="Dunning Level">Nível de Recuperação (Cobrança)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -5435,10 +5435,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1134" trl="Y">
-  <value column="Name" original="Tax base Amount">Valor da Base de Imposto</value>
-  <value column="PrintName" original="Tax base Amt">Base de Imposto</value>
-  <value column="Description" original="Base for calculating the tax amount">Base para cálculo do valor dos impostos</value>
-  <value column="Help" original="The Tax Base Amount indicates the base amount used for calculating the tax amount.">O campo "Valor da Base de Imposto" indica o valor da base usada para calcular o montante de impostos.</value>
+  <value column="Name" original="Tax base Amount">Valor da Base de Cálculo</value>
+  <value column="PrintName" original="Tax base Amt">Base de Cálculo</value>
+  <value column="Description" original="Base for calculating the tax amount">Valor da Base de Cálculo do Imposto</value>
+  <value column="Help" original="The Tax Base Amount indicates the base amount used for calculating the tax amount.">O campo "Valor da Base de Cálculo" indica o valor da base usada para calcular o montante de impostos.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -6657,10 +6657,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1357" trl="Y">
-  <value column="Name" original="Account Zip/Postal">CEP da Conta</value>
-  <value column="PrintName" original="Zip ">CEP </value>
-  <value column="Description" original="Zip Code of the Credit Card or Account Holder">CEP do Cartão de Crédito ou do dono da conta</value>
-  <value column="Help" original="The Zip Code of the Credit Card or Account Holder.">O CEP do Cartão de Crédito ou do dono da conta.</value>
+  <value column="Name" original="Account Zip/Postal">CEP/ZIP da Conta</value>
+  <value column="PrintName" original="Zip ">CEP/ZIP da Conta</value>
+  <value column="Description" original="Zip Code of the Credit Card or Account Holder">CEP/ZIP do Cartão de Crédito ou do Dono da Conta</value>
+  <value column="Help" original="The Zip Code of the Credit Card or Account Holder.">O CEP/ZIP do Cartão de Crédito ou do Dono da Conta.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -7217,10 +7217,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1424" trl="Y">
-  <value column="Name" original="Zip verified">CEP Verificado</value>
-  <value column="PrintName" original="Zip verified">CEP Verificado</value>
-  <value column="Description" original="The Zip Code has been verified">O código de endereçamento postal CEP foi verificado</value>
-  <value column="Help" original="The Zip Verified indicates if the zip code has been verified by the Credit Card Company.">O campo "CEP Verificado" indica se o CEP foi verificado pela Companhia de Cartão de Crédito.</value>
+  <value column="Name" original="Zip verified">CEP/ZIP Verificado</value>
+  <value column="PrintName" original="Zip verified">CEP/ZIP Verificado</value>
+  <value column="Description" original="The Zip Code has been verified">O código de endereçamento postal CEP/ZIP foi verificado</value>
+  <value column="Help" original="The Zip Verified indicates if the zip code has been verified by the Credit Card Company.">O campo "CEP/ZIP Verificado" indica se o CEP/ZIP foi verificado pela companhia de cartão de crédito.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -7737,19 +7737,19 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1490" trl="Y">
-  <value column="Name" original="Create lines from">Criar linhas a partir de</value>
-  <value column="PrintName" original="Create lines from">Criar linhas a partir de</value>
-  <value column="Description" original="Process which will generate a new document lines based on an existing document">Processo que irá gerar novas linhas de documento baseado em um documento existente</value>
-  <value column="Help" original="The Create From process will create a new document based on information in an existing document selected by the user.">O processo "Criar linhas a partir de" irá criar um novo documento baseado nas informações contidas em um documento pré-existente selecionado pelo usuário.</value>
+  <value column="Name" original="Create lines from">Gerar Linhas a partir de</value>
+  <value column="PrintName" original="Create lines from">Gerar Linhas a partir de</value>
+  <value column="Description" original="Process which will generate a new document lines based on an existing document">Processo que irá gerar novas linhas de documento baseado em um outro documento já existente</value>
+  <value column="Help" original="The Create From process will create a new document based on information in an existing document selected by the user.">O processo "Gerar Linhas a partir de" irá gerar linhas baseado nas informações contidas em um documento pré-existente selecionado pelo usuário.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1491" trl="Y">
-  <value column="Name" original="Generate To">Gerar Para</value>
-  <value column="PrintName" original="Generate To">Gerar Para</value>
-  <value column="Description" original="Generate To">Gerar Para</value>
+  <value column="Name" original="Generate To">Gerar (Para)</value>
+  <value column="PrintName" original="Generate To">Gerar (Para)</value>
+  <value column="Description" original="Generate To">Gerar (Para)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -7787,9 +7787,9 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1496" trl="Y">
-  <value column="Name" original="Days due">Dias do Vencimento</value>
-  <value column="PrintName" original="Days Due">Dias do Vencimento</value>
-  <value column="Description" original="Number of days due (negative: due in number of days)">Número de dias até o vencimento (negativo: já vencido em número de dias)</value>
+  <value column="Name" original="Days due">Dias em Atraso</value>
+  <value column="PrintName" original="Days Due">Dias em Atraso</value>
+  <value column="Description" original="Number of days due (negative: due in number of days)">Quantidade de dias em atraso. Valor negativo indica quantidade de dias até o vencimento</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -8037,9 +8037,9 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1526" trl="Y">
-  <value column="Name" original="Open Amount">Valor Aberto</value>
-  <value column="PrintName" original="Open">Aberto</value>
-  <value column="Description" original="Open item amount">Valor do Item em Aberto</value>
+  <value column="Name" original="Open Amount">Valor em Aberto</value>
+  <value column="PrintName" original="Open">Valor em Aberto</value>
+  <value column="Description" original="Open item amount"/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -11140,9 +11140,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1879" trl="Y">
-  <value column="Name" original="Dunning Run">Processamento de Cobrança</value>
-  <value column="PrintName" original="Dunning Run">Processamento de Cobrança</value>
-  <value column="Description" original="Dunning Run">Processamento de Cobrança</value>
+  <value column="Name" original="Dunning Run">Ação de Recuperação (Cobrança)</value>
+  <value column="PrintName" original="Dunning Run">Ação de Recuperação (Cobrança)</value>
+  <value column="Description" original="Dunning Run"/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -11180,9 +11180,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1883" trl="Y">
-  <value column="Name" original="Dunning Date">Data da Cobrança</value>
-  <value column="PrintName" original="Dunning Date">Data da Cobrança</value>
-  <value column="Description" original="Date of Dunning">Data de Cobrança</value>
+  <value column="Name" original="Dunning Date">Data da Recuperação (Cobrança)</value>
+  <value column="PrintName" original="Dunning Date">Data da Recuperação (Cobrança)</value>
+  <value column="Description" original="Date of Dunning"/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -11260,10 +11260,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1892" trl="Y">
-  <value column="Name" original="Opt-out Date">Data da desistência</value>
-  <value column="PrintName" original="Opt-Out">Desistência</value>
-  <value column="Description" original="Date the contact opted out">Data em que o contato desistiu</value>
-  <value column="Help" original="If the field has a date, the customer opted out (unsubscribed) and cannot receive mails for the Interest Area">Se o campo tiver uma data, o contato desistiu (cancelou a assinatura) e não pode mais receber e-mails para a Área de Interesse</value>
+  <value column="Name" original="Opt-out Date">Data do Cancelamento</value>
+  <value column="PrintName" original="Opt-Out">Data do Cancelamento</value>
+  <value column="Description" original="Date the contact opted out">Data em que o contato cancelou a assinatura ao tópico</value>
+  <value column="Help" original="If the field has a date, the customer opted out (unsubscribed) and cannot receive mails for the Interest Area">Se o campo tiver uma data, o contato desistiu (cancelou a assinatura) e não pode mais receber e-mails sobre o tópico.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -13270,8 +13270,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2106" trl="Y">
-  <value column="Name" original="Invoice Document No">Núm. de Documento de Fatura</value>
-  <value column="PrintName" original="Invoice Document No">Núm. de Documento de Fatura</value>
+  <value column="Name" original="Invoice Document No">Núm. de Documento da Fatura</value>
+  <value column="PrintName" original="Invoice Document No">Núm. de Documento da Fatura</value>
   <value column="Description" original="Document Number of the Invoice">Número de Documento da Fatura</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -15894,9 +15894,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2390" trl="Y">
-  <value column="Name" original="Work Complete">Trabalho Completo</value>
-  <value column="PrintName" original="Work Complete">Trabalho Completo</value>
-  <value column="Description" original="Date when work is (planned to be) complete">Data (planejada) em que o trabalho estará completo</value>
+  <value column="Name" original="Work Complete">Conclusão dos Trabalhos</value>
+  <value column="PrintName" original="Work Complete">Conclusão dos Trabalhos</value>
+  <value column="Description" original="Date when work is (planned to be) complete">Data (planejada) em que o trabalho foi (ou será) concluido</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -15904,8 +15904,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2391" trl="Y">
-  <value column="Name" original="Work Start">Iniciar Trabalho</value>
-  <value column="PrintName" original="Work Start">Iniciar Trabalho</value>
+  <value column="Name" original="Work Start">Início dos Trabalhos</value>
+  <value column="PrintName" original="Work Start">Início dos Trabalhos</value>
   <value column="Description" original="Date when work is (planned to be) started">Data (planejada) em que o trabalho será iniciado</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -16004,8 +16004,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2402" trl="Y">
-  <value column="Name" original="Quote All Quantities">Cotar Todas as Quantidades</value>
-  <value column="PrintName" original="Quote All Qty">Cotar Todas Qdes</value>
+  <value column="Name" original="Quote All Quantities">Cotar todas as Quantidades</value>
+  <value column="PrintName" original="Quote All Qty">Cotar todas as Quantidades</value>
   <value column="Description" original="Suppliers are requested to provide responses for all quantities">Os fornecedores são solicitados a prover respostas para todas as quantidades</value>
   <value column="Help" original="If selected, the response to the Request for Quotation needs to have a price for all Quantities">Se selecionado, a resposta à Solicitação de Cotação precisa ter preços para todas as quantidades</value>
   <value column="PO_Description" original=""/>
@@ -16524,10 +16524,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2455" trl="Y">
-  <value column="Name" original="ZIP To">CEP (Para)</value>
-  <value column="PrintName" original="ZIP To">CEP (Para)</value>
-  <value column="Description" original="Postal code to">Código Postal de destino</value>
-  <value column="Help" original="Consecutive range to">Faixa Consecutiva para</value>
+  <value column="Name" original="ZIP To">CEP/ZIP (Destinatário)</value>
+  <value column="PrintName" original="ZIP To">CEP/ZIP (Destinatário)</value>
+  <value column="Description" original="Postal code to">Código Postal de Destinatário</value>
+  <value column="Help" original="Consecutive range to"/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -17074,9 +17074,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2512" trl="Y">
-  <value column="Name" original="Best Response Amount">Melhor Valor de Resposta</value>
-  <value column="PrintName" original="Best Response">Melhor Resposta</value>
-  <value column="Description" original="Best Response Amount">Melhor Valor de Resposta</value>
+  <value column="Name" original="Best Response Amount">Valor da Melhor Resposta</value>
+  <value column="PrintName" original="Best Response">Valor da Melhor Resposta</value>
+  <value column="Description" original="Best Response Amount">Valor da Melhor Resposta</value>
   <value column="Help" original="Filled by Rank Response Process">Preenchido pelo Processo de Classificação de Respostas</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -17154,8 +17154,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2520" trl="Y">
-  <value column="Name" original="Create Confirm">Criar Confirmação</value>
-  <value column="PrintName" original="Create Confirm">Criar Confirmação</value>
+  <value column="Name" original="Create Confirm">Gerar Confirmação</value>
+  <value column="PrintName" original="Create Confirm">Gerar Confirmação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -17204,8 +17204,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2525" trl="Y">
-  <value column="Name" original="Create Package">Criar Embalagem</value>
-  <value column="PrintName" original="Create Package">Criar Embalagem</value>
+  <value column="Name" original="Create Package">Gerar Volume</value>
+  <value column="PrintName" original="Create Package">Gerar Volume</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -17494,9 +17494,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2560" trl="Y">
-  <value column="Name" original="Confirmation No">Núm. de Confirmação</value>
-  <value column="PrintName" original="Confirmation No">Núm. de Confirmação</value>
-  <value column="Description" original="Confirmation Number">Número de Confirmação</value>
+  <value column="Name" original="Confirmation No">Núm. da Confirmação</value>
+  <value column="PrintName" original="Confirmation No">Núm. da Confirmação</value>
+  <value column="Description" original="Confirmation Number">Número da Confirmação</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -17526,7 +17526,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2563" trl="Y">
   <value column="Name" original="Benchmark Price">Preço de Referência</value>
   <value column="PrintName" original="Benchmark Price">Preço de Referência</value>
-  <value column="Description" original="Price to compare responses to">Preço base contra o qual compararemos as respostas</value>
+  <value column="Description" original="Price to compare responses to">Preço base contra o qual as respostas serão comparadas.</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -17544,9 +17544,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2565" trl="Y">
-  <value column="Name" original="Times Dunned">Vezes Cobrado</value>
-  <value column="PrintName" original="# Dunned"># Cobrado</value>
-  <value column="Description" original="Number of times dunned previously">Número de vezes que foi cobrado anteriormente</value>
+  <value column="Name" original="Times Dunned">Tentativas de Recuperação (Cobrança)</value>
+  <value column="PrintName" original="# Dunned"># Tentativas</value>
+  <value column="Description" original="Number of times dunned previously">Número de tentativas de Recuperação (Cobrança) anteriores</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -17614,9 +17614,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2572" trl="Y">
-  <value column="Name" original="Include Disputed">Incluir Disputada</value>
-  <value column="PrintName" original="Include Disputed">Incluir Disputada</value>
-  <value column="Description" original="Include disputed Invoices">Incluir Faturas Disputadas</value>
+  <value column="Name" original="Include Disputed">Incluir Em Disputa</value>
+  <value column="PrintName" original="Include Disputed">Incluir Em Disputa</value>
+  <value column="Description" original="Include disputed Invoices">Incluir Faturas em Disputa</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -17624,9 +17624,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2573" trl="Y">
-  <value column="Name" original="Only Sales Invoices">Só Faturas de Vendas</value>
-  <value column="PrintName" original="Only Sales Invoices">Só Faturas de Vendas</value>
-  <value column="Description" original="Otherwise also Payments and AP Invoices">De outro modo inclui também Pagamentos e Faturas AP</value>
+  <value column="Name" original="Only Sales Invoices">Somente Faturas de Venda</value>
+  <value column="PrintName" original="Only Sales Invoices">Somente Faturas de Venda</value>
+  <value column="Description" original="Otherwise also Payments and AP Invoices"/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -18485,9 +18485,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2661" trl="Y">
-  <value column="Name" original="AP - AR">AP - AR</value>
-  <value column="PrintName" original="AP - AR">AP - AR</value>
-  <value column="Description" original="Include Receivables and/or Payables transactions">Inclui transações de contas a receber e/ou contas a pagar</value>
+  <value column="Name" original="AP - AR">AP/AR</value>
+  <value column="PrintName" original="AP - AR">AP/AR</value>
+  <value column="Description" original="Include Receivables and/or Payables transactions">Inclui transações de Contas a Pagar (Fornecedor) e/ou Contas a Receber (Cliente)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -18795,8 +18795,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2692" trl="Y">
-  <value column="Name" original="Document Amt">Val. Documento</value>
-  <value column="PrintName" original="Document Amt">Val. Documento</value>
+  <value column="Name" original="Document Amt">Valor do Documento</value>
+  <value column="PrintName" original="Document Amt">Valor do Documento</value>
   <value column="Description" original="Document Amount">Valor do Documento</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -18875,10 +18875,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2703" trl="Y">
-  <value column="Name" original="Cost Distribution">Distribuição de Custos</value>
-  <value column="PrintName" original="Cost Distribution">Distribuição de Custos</value>
-  <value column="Description" original="Landed Cost Distribution">Distribuição de Custos Finais</value>
-  <value column="Help" original="How landed costs are distributed to material receipts">Define como os custos finais são distribuidos aos materiais recebidos</value>
+  <value column="Name" original="Cost Distribution">Distribuição de Custo</value>
+  <value column="PrintName" original="Cost Distribution">Distribuição de Custo</value>
+  <value column="Description" original="Landed Cost Distribution">Distribuição do Custo de Entrada</value>
+  <value column="Help" original="How landed costs are distributed to material receipts">Define como os custos de entrada são distribuídos aos materiais recebidos.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -19775,9 +19775,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2798" trl="Y">
-  <value column="Name" original="Only If BP has Balance">Somente se o PN tiver saldo</value>
-  <value column="PrintName" original="Only If BP has Balance">Somente se o PN tiver saldo</value>
-  <value column="Description" original="Include only if Business Partner has outstanding Balance">Incluir somente se o Parceiro de Negócios tiver saldo pendente</value>
+  <value column="Name" original="Only If BP has Balance">Somente Registros com Saldo Devedor</value>
+  <value column="PrintName" original="Only If BP has Balance">Somente Registros com Saldo Devedor</value>
+  <value column="Description" original="Include only if Business Partner has outstanding Balance">Incluir somente se o registro da ação de recuperação (Parceiro de Negócios) tiver saldo devedor em aberto.</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -19835,9 +19835,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2804" trl="Y">
-  <value column="Name" original="Revaluation Conversion Type">Tipo de Conversão de Reavaliação</value>
-  <value column="PrintName" original="Reval Conversion Type">Tipo Conv. Reavaliação</value>
-  <value column="Description" original="Revaluation Currency Conversion Type">Tipo de Reavaliação de Conversão de Moeda</value>
+  <value column="Name" original="Revaluation Conversion Type">Tipo de Conversão (Moeda) da Reavaliação</value>
+  <value column="PrintName" original="Reval Conversion Type">Tipo de Conversão (Moeda) da Reavaliação</value>
+  <value column="Description" original="Revaluation Currency Conversion Type"/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -19977,7 +19977,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2818" trl="Y">
   <value column="Name" original="Base">Base</value>
   <value column="PrintName" original="Base">Base</value>
-  <value column="Description" original="Calculation Base">Base de Cálculos</value>
+  <value column="Description" original="Calculation Base">Base de Cálculo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -20055,10 +20055,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2826" trl="Y">
-  <value column="Name" original="Lost Sales Qty">Qde Vendas Perdidas</value>
-  <value column="PrintName" original="Lost Sales Qty">Qde Vendas Perdidas</value>
-  <value column="Description" original="Quantity of potential sales">Quantidade de vendas em potencial</value>
-  <value column="Help" original="When an order is closed and there is a difference between the ordered quantity and the delivered (invoiced) quantity is the Lost Sales Quantity.  Note that the Lost Sales Quantity is 0 if you void an order, so close the order if you want to track lost opportunities.  [Void = data entry error - Close = the order is finished]">A Quantidade de Vendas Perdida é dada quando um pedido é fechado e existe uma diferença entre a quantidade requisitada e a quantidade entregue (faturada).  Note que a Quantidade de Vendas Perdidas é 0 se você cancelar um pedido, assim, feche o pedido se você deseja rastrear as oportunidades perdidas.  [Cancelar = erro de digitação - Fechar = o pedido está encerrado]</value>
+  <value column="Name" original="Lost Sales Qty">Qtd. em Venda Perdida</value>
+  <value column="PrintName" original="Lost Sales Qty">Qtd. em Venda Perdida</value>
+  <value column="Description" original="Quantity of potential sales">Quantidade que foi perdida (deixada de vender)</value>
+  <value column="Help" original="When an order is closed and there is a difference between the ordered quantity and the delivered (invoiced) quantity is the Lost Sales Quantity.  Note that the Lost Sales Quantity is 0 if you void an order, so close the order if you want to track lost opportunities.  [Void = data entry error - Close = the order is finished]">A Quantidade em Venda Perdida é calculada quando o pedido é fechado e a Quantidade Pedida é maior que a Quantidade Fatura (faturada). Isso acontece quando, por exemplo, o pedido era de 10 unidades mas apenas 8 puderam ser vendidos (falta de estoque, etc.). Mantenha uma rotina de fechar pedidos (se não irá existir mais nenhuma transação relacionada) se desejar rastrear/acompanhar oportunidades perdidas.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -20606,20 +20606,20 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2884" trl="Y">
-  <value column="Name" original="Price Match Tolerance">Tolerância de Coincidência de Preço</value>
-  <value column="PrintName" original="Price Match Tolerance">Tolerância de Coincidência de Preço</value>
-  <value column="Description" original="PO-Invoice Match Price Tolerance in percent of the purchase price">PO-Invoice Match Price Tolerance in percent of the purchase price</value>
-  <value column="Help" original="Tolerance in Percent of matching the purchase order price to the invoice price.  The difference is posted as Invoice Price Tolerance for Standard Costing.  If defined, the PO-Invoice match must be explicitly approved, if the matching difference is greater then the tolerance.&lt;br&gt;&#10;Example: if the purchase price is $100 and the tolerance is 1 (percent), the invoice price must be between $99 and 101 to be automatically approved."><![CDATA[Tolerance in Percent of matching the purchase order price to the invoice price.  The difference is posted as Invoice Price Tolerance for Standard Costing.  If defined, the PO-Invoice match must be explicitly approved, if the matching difference is greater then the tolerance.<br> Example: if the purchase price is $100 and the tolerance is 1 (percent), the invoice price must be between $99 and 101 to be automatically approved.]]></value>
+  <value column="Name" original="Price Match Tolerance">Tolerância (%) na Diferença de Preço na Conciliação</value>
+  <value column="PrintName" original="Price Match Tolerance">Tolerância (%) na Diferença de Preço na Conciliação</value>
+  <value column="Description" original="PO-Invoice Match Price Tolerance in percent of the purchase price">Tolerância na Diferença de Preço na Conciliação em Porcentagem</value>
+  <value column="Help" original="Tolerance in Percent of matching the purchase order price to the invoice price.  The difference is posted as Invoice Price Tolerance for Standard Costing.  If defined, the PO-Invoice match must be explicitly approved, if the matching difference is greater then the tolerance.&lt;br&gt;&#10;Example: if the purchase price is $100 and the tolerance is 1 (percent), the invoice price must be between $99 and 101 to be automatically approved.">Tolerância em porcentagem na diferença de preço na conciliação das linhas do pedido de compra com as da fatura. A diferença é lançada contabilmente para o cálculo de custo padrão. Se a diferença for maior que a tolerância, a conciliação precisa ser explicitamente aprovada por alguém. Ex: se o preço de compra é 100 e a tolerância é 1%, o preço na fatura deve estar entre 99 e 101 para ser automaticamente aprovada.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2885" trl="Y">
-  <value column="Name" original="Price Match Difference">Diferença de Coincidência de Preço</value>
-  <value column="PrintName" original="Price Match Difference">Diferença de Coincidência de Preço</value>
-  <value column="Description" original="Difference between Purchase and Invoice Price per matched line">Difference between Purchase and Invoice Price per matched line</value>
-  <value column="Help" original="The difference between purchase and invoice price may be used for requiring explicit approval if a Price Match Tolerance is defined on Business Partner Group level.">The difference between purchase and invoice price may be used for requiring explicit approval if a Price Match Tolerance is defined on Business Partner Group level.</value>
+  <value column="Name" original="Price Match Difference">Diferença de Preço na Conciliação</value>
+  <value column="PrintName" original="Price Match Difference">Diferença de Preço na Conciliação</value>
+  <value column="Description" original="Difference between Purchase and Invoice Price per matched line">Diferença de preço entre a o Pedido de Compra e a Fatura (verificada na Conciliação)</value>
+  <value column="Help" original="The difference between purchase and invoice price may be used for requiring explicit approval if a Price Match Tolerance is defined on Business Partner Group level.">A diferença de preço entre a o pedido de compra e a fatura (verificada na conciliação) pode ser usada para verificar a necessidade de uma aprovação explícita caso ultrapasse a tolerância definida no Grupo de Parceiros de Negócios.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -20726,9 +20726,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2896" trl="Y">
-  <value column="Name" original="Revaluation Document Type">Revaluation Document Type</value>
-  <value column="PrintName" original="Doc Type Reval">Doc Type Reval</value>
-  <value column="Description" original="Document Type for Revaluation Journal">Document Type for Revaluation Journal</value>
+  <value column="Name" original="Revaluation Document Type">Tipo de Documento da Reavaliação</value>
+  <value column="PrintName" original="Doc Type Reval">Tipo de Documento da Reavaliação</value>
+  <value column="Description" original="Document Type for Revaluation Journal">Tipo de Documento para a Reavaliação no Livro Diário</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -20736,9 +20736,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2897" trl="Y">
-  <value column="Name" original="Include All Currencies">Include All Currencies</value>
-  <value column="PrintName" original="All Currencies">All Currencies</value>
-  <value column="Description" original="Report not just foreign currency Invoices">Report not just foreign currency Invoices</value>
+  <value column="Name" original="Include All Currencies">Incluir Todas as Moedas</value>
+  <value column="PrintName" original="All Currencies">Incluir Todas as Moedas</value>
+  <value column="Description" original="Report not just foreign currency Invoices"/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -20756,10 +20756,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2899" trl="Y">
-  <value column="Name" original="Complete Plan">Complete Plan</value>
-  <value column="PrintName" original="Complete Plan">Complete Plan</value>
-  <value column="Description" original="Planned Completion Date">Planned Completion Date</value>
-  <value column="Help" original="Date when the task is planned to be complete">Date when the task is planned to be complete</value>
+  <value column="Name" original="Complete Plan">Término Previsto</value>
+  <value column="PrintName" original="Complete Plan">Término Previsto</value>
+  <value column="Description" original="Planned Completion Date">Data Prevista de Término</value>
+  <value column="Help" original="Date when the task is planned to be complete">Data planejada para o término.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -20776,10 +20776,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2901" trl="Y">
-  <value column="Name" original="Start Plan">Start Plan</value>
-  <value column="PrintName" original="Start Plan">Start Plan</value>
-  <value column="Description" original="Planned Start Date">Planned Start Date</value>
-  <value column="Help" original="Date when you plan to start">Date when you plan to start</value>
+  <value column="Name" original="Start Plan">Início Previsto</value>
+  <value column="PrintName" original="Start Plan">Início Previsto</value>
+  <value column="Description" original="Planned Start Date">Data Previsto de Início</value>
+  <value column="Help" original="Date when you plan to start">Data pretendida (e prevista) de início.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -22507,50 +22507,50 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3087" trl="Y">
-  <value column="Name" original="Create levels sequentially">Create levels sequentially</value>
-  <value column="PrintName" original="Sequential">Sequential</value>
-  <value column="Description" original="Create Dunning Letter by level sequentially">Create Dunning Letter by level sequentially</value>
-  <value column="Help" original="If selected, the dunning letters are created in the sequence of the dunning levels.  Otherwise, the dunning level is based on the days (over)due.">If selected, the dunning letters are created in the sequence of the dunning levels.  Otherwise, the dunning level is based on the days (over)due.</value>
+  <value column="Name" original="Create levels sequentially">Sequência de Impressão/Envio por Níveis</value>
+  <value column="PrintName" original="Sequential">Sequência de Impressão/Envio por Níveis</value>
+  <value column="Description" original="Create Dunning Letter by level sequentially">Imprimir/Enviar Registros de Ação de Recuperação na Sequência dos Níveis</value>
+  <value column="Help" original="If selected, the dunning letters are created in the sequence of the dunning levels.  Otherwise, the dunning level is based on the days (over)due.">Se selecionado, as impressões/e-mails são realizadas na sequência dos níveis (agrupadas por nível). Caso contrário, o critério utilizado é o de dias em atraso (do mais antigo ao mais recente).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3088" trl="Y">
-  <value column="Name" original="Show All Due">Show All Due</value>
-  <value column="PrintName" original="Show All Due">Show All Due</value>
-  <value column="Description" original="Show/print all due invoices">Show/print all due invoices</value>
-  <value column="Help" original="The dunning letter with this level includes all due invoices.">The dunning letter with this level incudes all due invoices.</value>
+  <value column="Name" original="Show All Due">Exibir/Gerar Todas Vencidas</value>
+  <value column="PrintName" original="Show All Due">Exibir/Gerar Todas Vencidas</value>
+  <value column="Description" original="Show/print all due invoices">Exibir/Gerar todas as Faturas Vencidas</value>
+  <value column="Help" original="The dunning letter with this level includes all due invoices.">As cartas/envios de recuperação com este nível incluem todas as faturas vencidas. Normalmente utilizado para notificar pagamentos em atraso.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3089" trl="Y">
-  <value column="Name" original="Show Not Due">Show Not Due</value>
-  <value column="PrintName" original="Show Not Due">Show Not Due</value>
-  <value column="Description" original="Show/print all invoices which are not due (yet).">Show/print all invoices which are not due (yet).</value>
-  <value column="Help" original="The dunning letter with this level includes all not due invoices.">The dunning letter with this level incudes all not due invoices.</value>
+  <value column="Name" original="Show Not Due">Exibir/Gerar Não Vencidas</value>
+  <value column="PrintName" original="Show Not Due">Exibir/Gerar Não Vencidas</value>
+  <value column="Description" original="Show/print all invoices which are not due (yet).">Exibir/Gerar todas as faturas que ainda não venceram</value>
+  <value column="Help" original="The dunning letter with this level includes all not due invoices.">As cartas/envios de recuperação com este nível incluem faturas não vencidas ainda. Normalmente utilizado para notificar sobre um futuro vencimento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3090" trl="Y">
-  <value column="Name" original="Credit Stop">Cancelar Crédito</value>
-  <value column="PrintName" original="Credit Stop">Cancelar Crédito</value>
-  <value column="Description" original="Set the business partner to credit stop">Set the business partner to credit stop</value>
-  <value column="Help" original="If a dunning letter of this level is created, the business partner is set to Credit Stop (needs to be manually changed).">If a dunning letter of this level is created, the business partner is set to Credit Stop (needs to be manually changed).</value>
+  <value column="Name" original="Credit Stop">Cancelar Crédito do Parceiro</value>
+  <value column="PrintName" original="Credit Stop">Cancelar Crédito do Parceiro</value>
+  <value column="Description" original="Set the business partner to credit stop">Altera o Estado de Crédito do Parceiro de Negócios para "Crédito Cancelado"</value>
+  <value column="Help" original="If a dunning letter of this level is created, the business partner is set to Credit Stop (needs to be manually changed).">Se uma carta/envio de recuperação deste nível for criada, o parceiro de negócios terá o campo Estado de Crédito alterado para "Crédito Cancelado". Este estado de crédito só pode ser alterado manualmente.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3091" trl="Y">
-  <value column="Name" original="Set Payment Term">Set Payment Term</value>
-  <value column="PrintName" original="Set Payment Term">Set Payment Term</value>
-  <value column="Description" original="Set the payment term of the Business Partner">Set the payment term of the Business Partner</value>
-  <value column="Help" original="If a dunning letter of this level is created, the payment term of this business partner is overwritten.">If a dunning letter of this level is created, the payment term of this business partner is overwritten.</value>
+  <value column="Name" original="Set Payment Term">Alterar Condição de Pagamento</value>
+  <value column="PrintName" original="Set Payment Term">Alterar Condição de Pagamento</value>
+  <value column="Description" original="Set the payment term of the Business Partner">Altera a Condição de Pagamento do Parceiro de Negócios</value>
+  <value column="Help" original="If a dunning letter of this level is created, the payment term of this business partner is overwritten.">Se uma carta/envio de recuperação deste nível for criada, o parceiro de negócios terá o campo "Condição de Pagamento" alterado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -23437,14 +23437,14 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="52000" trl="Y">
-  <value column="Name" original="Shipment/Receipt">Shipment/Receipt</value>
-  <value column="PrintName" original="Shipment/Receipt">Shipment/Receipt</value>
-  <value column="Description" original="MaterialShipment Document">MaterialShipment Document</value>
-  <value column="Help" original="The Material Shipment / Receipt ">The Material Shipment / Receipt </value>
-  <value column="PO_Description" original="Material Receipt Document">Material Receipt Document</value>
-  <value column="PO_Help" original="The Material Shipment / Receipt ">The Material Shipment / Receipt </value>
-  <value column="PO_Name" original="Receipt">Receipt</value>
-  <value column="PO_PrintName" original="Receipt">Receipt</value>
+  <value column="Name" original="Shipment/Receipt">Remessa (Cliente)</value>
+  <value column="PrintName" original="Shipment/Receipt">Remessa (Cliente)</value>
+  <value column="Description" original="MaterialShipment Document">Remessa de Material (Cliente)</value>
+  <value column="Help" original="The Material Shipment / Receipt "/>
+  <value column="PO_Description" original="Material Receipt Document">Recebimento de Material</value>
+  <value column="PO_Help" original="The Material Shipment / Receipt "/>
+  <value column="PO_Name" original="Receipt">Recebimento de Material</value>
+  <value column="PO_PrintName" original="Receipt">Recebimento de Material</value>
  </row>
  <row id="52001" trl="N">
   <value column="Name" original="Black List Cheque">U_BlackListCheque_ID</value>
@@ -24017,8 +24017,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53224" trl="Y">
-  <value column="Name" original="Print Unprocessed Entries Only">Print Unprocessed Entries Only</value>
-  <value column="PrintName" original="Print Unprocessed Entries Only">Print Unprocessed Entries Only</value>
+  <value column="Name" original="Print Unprocessed Entries Only">Somente Imprimir os Não Processados</value>
+  <value column="PrintName" original="Print Unprocessed Entries Only">Somente Imprimir os Não Processados</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -27680,9 +27680,9 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53646" trl="N">
-  <value column="Name" original="Create Asset">Create Asset</value>
-  <value column="PrintName" original="Create Asset">Create Asset</value>
+ <row id="53646" trl="Y">
+  <value column="Name" original="Create Asset">Criar Ativo</value>
+  <value column="PrintName" original="Create Asset">Criar Ativo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -29094,10 +29094,10 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54076" trl="N">
-  <value column="Name" original="Is Statement">Is Statement</value>
-  <value column="PrintName" original="Is Statement">Is Statement</value>
-  <value column="Description" original="Dunning Level is a definition of a statement">Dunning Level is a definition of a statement</value>
+ <row id="54076" trl="Y">
+  <value column="Name" original="Is Statement">Declaração de Vencimentos</value>
+  <value column="PrintName" original="Is Statement">Declaração de Vencimentos</value>
+  <value column="Description" original="Dunning Level is a definition of a statement">O Nível é usado para gerar Declarações de Vencimentos</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -38637,9 +38637,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200079" trl="N">
-  <value column="Name" original="Create Production">Create Production</value>
-  <value column="PrintName" original="Create Production">Create Production</value>
+ <row id="200079" trl="Y">
+  <value column="Name" original="Create Production">Gerar Produção</value>
+  <value column="PrintName" original="Create Production">Gerar Produção</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -38647,15 +38647,15 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200080" trl="N">
-  <value column="Name" original="Create Shipment">Create Shipment</value>
-  <value column="PrintName" original="Create Shipment">Create Shipment</value>
+ <row id="200080" trl="Y">
+  <value column="Name" original="Create Shipment">Gerar Remessa (Cliente)</value>
+  <value column="PrintName" original="Create Shipment">Gerar Remessa (Cliente)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
-  <value column="PO_Name" original=""/>
-  <value column="PO_PrintName" original=""/>
+  <value column="PO_Name" original="">Gerar Recebimento (Fornecedor)</value>
+  <value column="PO_PrintName" original="">Gerar Recebimento (Fornecedor)</value>
  </row>
  <row id="200081" trl="N">
   <value column="Name" original="Tab Customization">Tab Customization</value>
@@ -38917,9 +38917,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200124" trl="N">
-  <value column="Name" original="Check Status">Check Status</value>
-  <value column="PrintName" original="Check Status">Check Status</value>
+ <row id="200124" trl="Y">
+  <value column="Name" original="Check Status">Estado do Cheque</value>
+  <value column="PrintName" original="Check Status">Estado do Cheque</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -39367,9 +39367,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200196" trl="N">
-  <value column="Name" original="Void It">Void It</value>
-  <value column="PrintName" original="Void It">Void It</value>
+ <row id="200196" trl="Y">
+  <value column="Name" original="Void It">Anular</value>
+  <value column="PrintName" original="Void It">Anular</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -39877,9 +39877,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200259" trl="N">
-  <value column="Name" original="Shipping Processor">Shipping Processor</value>
-  <value column="PrintName" original="Shipping Processor">Shipping Processor</value>
+ <row id="200259" trl="Y">
+  <value column="Name" original="Shipping Processor">Processador de Remessas</value>
+  <value column="PrintName" original="Shipping Processor">Processador de Remessas</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -39947,9 +39947,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200266" trl="N">
-  <value column="Name" original="Box Count">Box Count</value>
-  <value column="PrintName" original="Box Count">Box Count</value>
+ <row id="200266" trl="Y">
+  <value column="Name" original="Box Count">Contagem de Caixas</value>
+  <value column="PrintName" original="Box Count">Contagem de Caixas</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -39957,9 +39957,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200267" trl="N">
-  <value column="Name" original="COD">COD</value>
-  <value column="PrintName" original="COD">COD</value>
+ <row id="200267" trl="Y">
+  <value column="Name" original="COD">Pagamento na Entrega</value>
+  <value column="PrintName" original="COD">Pagamento na Entrega</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -39967,9 +39967,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200268" trl="N">
-  <value column="Name" original="Dot Hazard Class or Division">Dot Hazard Class or Division</value>
-  <value column="PrintName" original="Dot Hazard Class or Division">Dot Hazard Class or Division</value>
+ <row id="200268" trl="Y">
+  <value column="Name" original="Dot Hazard Class or Division">Classe de Materiais Perigosos</value>
+  <value column="PrintName" original="Dot Hazard Class or Division">Classe de Materiais Perigosos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -39977,9 +39977,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200269" trl="N">
-  <value column="Name" original="Dry Ice Weight">Dry Ice Weight</value>
-  <value column="PrintName" original="Dry Ice Weight">Dry Ice Weight</value>
+ <row id="200269" trl="Y">
+  <value column="Name" original="Dry Ice Weight">Peso do Gelo Seco</value>
+  <value column="PrintName" original="Dry Ice Weight">Peso do Gelo Seco</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -39987,9 +39987,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200270" trl="N">
-  <value column="Name" original="Freight Terms">Freight Terms</value>
-  <value column="PrintName" original="Freight Terms">Freight Terms</value>
+ <row id="200270" trl="Y">
+  <value column="Name" original="Freight Terms">INCOTERM</value>
+  <value column="PrintName" original="Freight Terms">INCOTERM</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -39997,9 +39997,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200271" trl="N">
-  <value column="Name" original="Handling Charge">Handling Charge</value>
-  <value column="PrintName" original="Handling Charge">Handling Charge</value>
+ <row id="200271" trl="Y">
+  <value column="Name" original="Handling Charge">Taxa de Manuseio</value>
+  <value column="PrintName" original="Handling Charge">Taxa de Manuseio</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40007,9 +40007,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200272" trl="N">
-  <value column="Name" original="Height">Height</value>
-  <value column="PrintName" original="Height">Height</value>
+ <row id="200272" trl="Y">
+  <value column="Name" original="Height">Altura</value>
+  <value column="PrintName" original="Height">Altura</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40017,9 +40017,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200273" trl="N">
-  <value column="Name" original="Hold Address">Hold Address</value>
-  <value column="PrintName" original="Hold Address">Hold Address</value>
+ <row id="200273" trl="Y">
+  <value column="Name" original="Hold Address">Localização para Manter</value>
+  <value column="PrintName" original="Hold Address">Localização para Manter</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40027,9 +40027,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200274" trl="N">
-  <value column="Name" original="Date">Date</value>
-  <value column="PrintName" original="Date">Date</value>
+ <row id="200274" trl="Y">
+  <value column="Name" original="Date">Data</value>
+  <value column="PrintName" original="Date">Data</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40037,9 +40037,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200275" trl="N">
-  <value column="Name" original="Phone Number">Phone Number</value>
-  <value column="PrintName" original="Phone Number">Phone Number</value>
+ <row id="200275" trl="Y">
+  <value column="Name" original="Phone Number">Telefone</value>
+  <value column="PrintName" original="Phone Number">Telefone</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40047,9 +40047,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200276" trl="N">
-  <value column="Name" original="Home Delivery Premium Type">Home Delivery Premium Type</value>
-  <value column="PrintName" original="Home Delivery Premium Type">Home Delivery Premium Type</value>
+ <row id="200276" trl="Y">
+  <value column="Name" original="Home Delivery Premium Type">Tipo de Home Delivery Premium</value>
+  <value column="PrintName" original="Home Delivery Premium Type">Tipo de Home Delivery Premium</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40057,9 +40057,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200277" trl="N">
-  <value column="Name" original="Insured Amount">Insured Amount</value>
-  <value column="PrintName" original="Insured Amount">Insured Amount</value>
+ <row id="200277" trl="Y">
+  <value column="Name" original="Insured Amount">Valor Segurado</value>
+  <value column="PrintName" original="Insured Amount">Valor Segurado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40067,9 +40067,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200278" trl="N">
-  <value column="Name" original="Accessible">Accessible</value>
-  <value column="PrintName" original="Accessible">Accessible</value>
+ <row id="200278" trl="Y">
+  <value column="Name" original="Accessible">Acessível</value>
+  <value column="PrintName" original="Accessible">Acessível</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40077,9 +40077,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200279" trl="N">
-  <value column="Name" original="Cargo Aircraft Only">Cargo Aircraft Only</value>
-  <value column="PrintName" original="Cargo Aircraft Only">Cargo Aircraft Only</value>
+ <row id="200279" trl="Y">
+  <value column="Name" original="Cargo Aircraft Only">Apenas em Avião de Carga</value>
+  <value column="PrintName" original="Cargo Aircraft Only">Apenas em Avião de Carga</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40087,9 +40087,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200280" trl="N">
-  <value column="Name" original="Dry Ice">Dry Ice</value>
-  <value column="PrintName" original="IsDryIce">IsDryIce</value>
+ <row id="200280" trl="Y">
+  <value column="Name" original="Dry Ice">Gelo Seco</value>
+  <value column="PrintName" original="IsDryIce">Gelo Seco</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40097,9 +40097,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200281" trl="N">
-  <value column="Name" original="Dutiable">Dutiable</value>
-  <value column="PrintName" original="Dutiable">Dutiable</value>
+ <row id="200281" trl="Y">
+  <value column="Name" original="Dutiable">Taxável/Tributável</value>
+  <value column="PrintName" original="Dutiable">Taxável/Tributável</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40107,9 +40107,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200282" trl="N">
-  <value column="Name" original="Future Day Shipment">Future Day Shipment</value>
-  <value column="PrintName" original="Future Day Shipment">Future Day Shipment</value>
+ <row id="200282" trl="Y">
+  <value column="Name" original="Future Day Shipment">Remessa Future Day</value>
+  <value column="PrintName" original="Future Day Shipment">Remessa Future Day</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40117,9 +40117,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200283" trl="N">
-  <value column="Name" original="Hazardous Materials">Hazardous Materials</value>
-  <value column="PrintName" original="Hazardous Materials">Hazardous Materials</value>
+ <row id="200283" trl="Y">
+  <value column="Name" original="Hazardous Materials">Material Perigoso</value>
+  <value column="PrintName" original="Hazardous Materials">Material Perigoso</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40127,9 +40127,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200284" trl="N">
-  <value column="Name" original="Hold At Location">Hold At Location</value>
-  <value column="PrintName" original="Hold At Location">Hold At Location</value>
+ <row id="200284" trl="Y">
+  <value column="Name" original="Hold At Location">Manter em uma Localização</value>
+  <value column="PrintName" original="Hold At Location">Manter em uma Localização</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40137,9 +40137,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200285" trl="N">
-  <value column="Name" original="Ignore Zip Not Found">Ignore Zip Not Found</value>
-  <value column="PrintName" original="Ignore Zip Not Found">Ignore Zip Not Found</value>
+ <row id="200285" trl="Y">
+  <value column="Name" original="Ignore Zip Not Found">Ignorar se CEP/ZIP Inexistente</value>
+  <value column="PrintName" original="Ignore Zip Not Found">Ignorar se CEP/ZIP Inexistente</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40147,9 +40147,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200286" trl="N">
-  <value column="Name" original="Ignore Zip State Not Match">Ignore Zip State Not Match</value>
-  <value column="PrintName" original="Ignore Zip State Not Match">Ignore Zip State Not Match</value>
+ <row id="200286" trl="Y">
+  <value column="Name" original="Ignore Zip State Not Match">Ignorar se CEP/ZIP não Confere</value>
+  <value column="PrintName" original="Ignore Zip State Not Match">Ignorar se CEP/ZIP não Confere</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40157,9 +40157,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200287" trl="N">
-  <value column="Name" original="Residential">Residential</value>
-  <value column="PrintName" original="Residential">Residential</value>
+ <row id="200287" trl="Y">
+  <value column="Name" original="Residential">Residencial</value>
+  <value column="PrintName" original="Residential">Residencial</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40167,9 +40167,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200288" trl="N">
-  <value column="Name" original="Label Print">Label Print</value>
-  <value column="PrintName" original="Label Print">Label Print</value>
+ <row id="200288" trl="Y">
+  <value column="Name" original="Label Print">Impressão de Etiqueta</value>
+  <value column="PrintName" original="Label Print">Impressão de Etiqueta</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40177,9 +40177,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200289" trl="N">
-  <value column="Name" original="Latest Pickup Time">Latest Pickup Time</value>
-  <value column="PrintName" original="Latest Pickup Time">Latest Pickup Time</value>
+ <row id="200289" trl="Y">
+  <value column="Name" original="Latest Pickup Time">Horário Limite para Coleta</value>
+  <value column="PrintName" original="Latest Pickup Time">Horário Limite para Coleta</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40187,9 +40187,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200290" trl="N">
-  <value column="Name" original="Length">Length</value>
-  <value column="PrintName" original="Length">Length</value>
+ <row id="200290" trl="Y">
+  <value column="Name" original="Length">Comprimento</value>
+  <value column="PrintName" original="Length">Comprimento</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40197,9 +40197,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200291" trl="N">
-  <value column="Name" original="Rate Inquiry Message">Rate Inquiry Message</value>
-  <value column="PrintName" original="Rate Inquiry Message">Rate Inquiry Message</value>
+ <row id="200291" trl="Y">
+  <value column="Name" original="Rate Inquiry Message">Mensagem do Pedido de Cotação</value>
+  <value column="PrintName" original="Rate Inquiry Message">Mensagem do Pedido de Cotação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40207,9 +40207,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200292" trl="N">
-  <value column="Name" original="Saturday Delivery">Saturday Delivery</value>
-  <value column="PrintName" original="Saturday Delivery">Saturday Delivery</value>
+ <row id="200292" trl="Y">
+  <value column="Name" original="Saturday Delivery">Entrega aos Sábados</value>
+  <value column="PrintName" original="Saturday Delivery">Entrega aos Sábados</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40217,9 +40217,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200293" trl="N">
-  <value column="Name" original="Saturday Pickup">Saturday Pickup</value>
-  <value column="PrintName" original="Saturday Pickup">Saturday Pickup</value>
+ <row id="200293" trl="Y">
+  <value column="Name" original="Saturday Pickup">Coleta aos Sábados</value>
+  <value column="PrintName" original="Saturday Pickup">Coleta aos Sábados</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40227,9 +40227,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200294" trl="N">
-  <value column="Name" original="Rate Inquiry">Rate Inquiry</value>
-  <value column="PrintName" original="Rate Inquiry">Rate Inquiry</value>
+ <row id="200294" trl="Y">
+  <value column="Name" original="Rate Inquiry">Solicitar Cotação de Preço</value>
+  <value column="PrintName" original="Rate Inquiry">Solicitar Cotação de Preço</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40237,9 +40237,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200295" trl="N">
-  <value column="Name" original="Response Message">Response Message</value>
-  <value column="PrintName" original="Response Message">Response Message</value>
+ <row id="200295" trl="Y">
+  <value column="Name" original="Response Message">Mensagem de Resposta</value>
+  <value column="PrintName" original="Response Message">Mensagem de Resposta</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40247,9 +40247,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200296" trl="N">
-  <value column="Name" original="Surcharges">Surcharges</value>
-  <value column="PrintName" original="Surcharges">Surcharges</value>
+ <row id="200296" trl="Y">
+  <value column="Name" original="Surcharges">Sobretaxas</value>
+  <value column="PrintName" original="Surcharges">Sobretaxas</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40257,9 +40257,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200297" trl="N">
-  <value column="Name" original="Total Price">Total Price</value>
-  <value column="PrintName" original="Total Price">Total Price</value>
+ <row id="200297" trl="Y">
+  <value column="Name" original="Total Price">Preço Total</value>
+  <value column="PrintName" original="Total Price">Preço Total</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40267,9 +40267,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200298" trl="N">
-  <value column="Name" original="Width">Width</value>
-  <value column="PrintName" original="Width">Width</value>
+ <row id="200298" trl="Y">
+  <value column="Name" original="Width">Largura</value>
+  <value column="PrintName" original="Width">Largura</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40277,9 +40277,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200299" trl="N">
-  <value column="Name" original="Shipper Labels">Shipper Labels</value>
-  <value column="PrintName" original="Shipper Labels">Shipper Labels</value>
+ <row id="200299" trl="Y">
+  <value column="Name" original="Shipper Labels">Etiqueta da Transportadora</value>
+  <value column="PrintName" original="Shipper Labels">Etiqueta da Transportadora</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40307,9 +40307,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200302" trl="N">
-  <value column="Name" original="Shipper Packaging">Shipper Packaging</value>
-  <value column="PrintName" original="Shipper Packaging">Shipper Packaging</value>
+ <row id="200302" trl="Y">
+  <value column="Name" original="Shipper Packaging">Embalagem da Transportadora</value>
+  <value column="PrintName" original="Shipper Packaging">Embalagem da Transportadora</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40327,8 +40327,8 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200304" trl="N">
-  <value column="Name" original="Shipper Pickup Types">Shipper Pickup Types</value>
+ <row id="200304" trl="Y">
+  <value column="Name" original="Shipper Pickup Types">Tipo de Coleta da Transportadora</value>
   <value column="PrintName" original="Shipper Pickup Types">Shipper Pickup Types</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -40367,9 +40367,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200308" trl="N">
-  <value column="Name" original="Duties Shipper Account">Duties Shipper Account</value>
-  <value column="PrintName" original="Duties Shipper Account">Duties Shipper Account</value>
+ <row id="200308" trl="Y">
+  <value column="Name" original="Duties Shipper Account">Conta de Impostos da Transportadora</value>
+  <value column="PrintName" original="Duties Shipper Account">Conta de Impostos da Transportadora</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40377,9 +40377,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200309" trl="N">
-  <value column="Name" original="Shipper Account Number">Shipper Account Number</value>
-  <value column="PrintName" original="Shipper Account Number">Shipper Account Number</value>
+ <row id="200309" trl="Y">
+  <value column="Name" original="Shipper Account Number">Número de Conta da Transportadora</value>
+  <value column="PrintName" original="Shipper Account Number">Número de Conta da Transportadora</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40397,9 +40397,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200311" trl="N">
-  <value column="Name" original="Package MPS">Package MPS</value>
-  <value column="PrintName" original="Package MPS">Package MPS</value>
+ <row id="200311" trl="Y">
+  <value column="Name" original="Package MPS">Volume Master (MPS)</value>
+  <value column="PrintName" original="Package MPS">Volume Master (MPS)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40417,9 +40417,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200313" trl="N">
-  <value column="Name" original="Master Tracking No">Master Tracking No</value>
-  <value column="PrintName" original="Master Tracking No">Master Tracking No</value>
+ <row id="200313" trl="Y">
+  <value column="Name" original="Master Tracking No">Núm. de Rastreamento Master</value>
+  <value column="PrintName" original="Master Tracking No">Núm. de Rastreamento Master</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40427,9 +40427,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200314" trl="N">
-  <value column="Name" original="Freight Charges">Freight Charges</value>
-  <value column="PrintName" original="Freight Charges">Freight Charges</value>
+ <row id="200314" trl="Y">
+  <value column="Name" original="Freight Charges">Despesas do Frete</value>
+  <value column="PrintName" original="Freight Charges">Despesas do Frete</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40437,9 +40437,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200315" trl="N">
-  <value column="Name" original="Insurance">Insurance</value>
-  <value column="PrintName" original="Insurance">Insurance</value>
+ <row id="200315" trl="Y">
+  <value column="Name" original="Insurance">Seguro</value>
+  <value column="PrintName" original="Insurance">Seguro</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40447,9 +40447,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200316" trl="N">
-  <value column="Name" original="Estimated Weight">Estimated Weight</value>
-  <value column="PrintName" original="Estimated Weight">Estimated Weight</value>
+ <row id="200316" trl="Y">
+  <value column="Name" original="Estimated Weight">Peso Estimado</value>
+  <value column="PrintName" original="Estimated Weight">Peso Estimado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40477,9 +40477,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200319" trl="N">
-  <value column="Name" original="Country Of Manufacture">Country Of Manufacture</value>
-  <value column="PrintName" original="Country Of Manufacture">Country Of Manufacture</value>
+ <row id="200319" trl="Y">
+  <value column="Name" original="Country Of Manufacture">País de Fabricação</value>
+  <value column="PrintName" original="Country Of Manufacture">País de Fabricação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40487,9 +40487,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200320" trl="N">
-  <value column="Name" original="Export License Number">Export License Number</value>
-  <value column="PrintName" original="Export License Number">Export License Number</value>
+ <row id="200320" trl="Y">
+  <value column="Name" original="Export License Number">Núm. da Licença de Exportação</value>
+  <value column="PrintName" original="Export License Number">Núm. da Licença de Exportação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40497,9 +40497,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200321" trl="N">
-  <value column="Name" original="Harmonized Code">Harmonized Code</value>
-  <value column="PrintName" original="Harmonized Code">Harmonized Code</value>
+ <row id="200321" trl="Y">
+  <value column="Name" original="Harmonized Code">Cód. no Sistema Harmonizado</value>
+  <value column="PrintName" original="Harmonized Code">Cód. no Sistema Harmonizado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40527,9 +40527,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200324" trl="N">
-  <value column="Name" original="Notification Message">Notification Message</value>
-  <value column="PrintName" original="Notification Message">Notification Message</value>
+ <row id="200324" trl="Y">
+  <value column="Name" original="Notification Message">Mensagem de Notificação</value>
+  <value column="PrintName" original="Notification Message">Mensagem de Notificação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40537,9 +40537,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200325" trl="N">
-  <value column="Name" original="Verbal Confirmation">Verbal Confirmation</value>
-  <value column="PrintName" original="Verbal Confirmation">Verbal Confirmation</value>
+ <row id="200325" trl="Y">
+  <value column="Name" original="Verbal Confirmation">Confirmação Verbal</value>
+  <value column="PrintName" original="Verbal Confirmation">Confirmação Verbal</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40547,9 +40547,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200326" trl="N">
-  <value column="Name" original="Added Handling">Added Handling</value>
-  <value column="PrintName" original="Added Handling">Added Handling</value>
+ <row id="200326" trl="Y">
+  <value column="Name" original="Added Handling">Acréscimo de Manuseio</value>
+  <value column="PrintName" original="Added Handling">Acréscimo de Manuseio</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -42657,9 +42657,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200537" trl="N">
-  <value column="Name" original="Alternate Return Address">Alternate Return Address</value>
-  <value column="PrintName" original="Alternate Return Address">Alternate Return Address</value>
+ <row id="200537" trl="Y">
+  <value column="Name" original="Alternate Return Address">Endereço de Devolução Alternativo</value>
+  <value column="PrintName" original="Alternate Return Address">Endereço de Devolução Alternativo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -42667,9 +42667,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200538" trl="N">
-  <value column="Name" original="Return Partner">Return Partner</value>
-  <value column="PrintName" original="Return Partner">Return Partner</value>
+ <row id="200538" trl="Y">
+  <value column="Name" original="Return Partner">Parceiro da Devolução</value>
+  <value column="PrintName" original="Return Partner">Parceiro da Devolução</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -42677,9 +42677,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200539" trl="N">
-  <value column="Name" original="Return Location">Return Location</value>
-  <value column="PrintName" original="Return Location">Return Location</value>
+ <row id="200539" trl="Y">
+  <value column="Name" original="Return Location">Localização da Devolução</value>
+  <value column="PrintName" original="Return Location">Localização da Devolução</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -42687,9 +42687,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200540" trl="N">
-  <value column="Name" original="Return User/Contact">Return User/Contact</value>
-  <value column="PrintName" original="Return User/Contact">Return User/Contact</value>
+ <row id="200540" trl="Y">
+  <value column="Name" original="Return User/Contact">Contato da Devolução</value>
+  <value column="PrintName" original="Return User/Contact">Contato da Devolução</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -42697,9 +42697,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200541" trl="N">
-  <value column="Name" original="Delivery Confirmation Type">Delivery Confirmation Type</value>
-  <value column="PrintName" original="Delivery Confirmation Type">Delivery Confirmation Type</value>
+ <row id="200541" trl="Y">
+  <value column="Name" original="Delivery Confirmation Type">Tipo de Confirmação de Entrega</value>
+  <value column="PrintName" original="Delivery Confirmation Type">Tipo de Confirmação de Entrega</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -43237,9 +43237,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200609" trl="N">
-  <value column="Name" original="Shipping Transaction">Shipping Transaction</value>
-  <value column="PrintName" original="Shipping Transaction">Shipping Transaction</value>
+ <row id="200609" trl="Y">
+  <value column="Name" original="Shipping Transaction">Transação de Remessa</value>
+  <value column="PrintName" original="Shipping Transaction">Transação de Remessa</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -43287,9 +43287,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200616" trl="N">
-  <value column="Name" original="Customs Value">Customs Value</value>
-  <value column="PrintName" original="Customs Value">Customs Value</value>
+ <row id="200616" trl="Y">
+  <value column="Name" original="Customs Value">Valor Aduaneiro</value>
+  <value column="PrintName" original="Customs Value">Valor Aduaneiro</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54377,9 +54377,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202582" trl="N">
-  <value column="Name" original="Tax Provider">Tax Provider</value>
-  <value column="PrintName" original="Tax Provider">Tax Provider</value>
+ <row id="202582" trl="Y">
+  <value column="Name" original="Tax Provider">Provedor de Impostos</value>
+  <value column="PrintName" original="Tax Provider">Provedor de Impostos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54507,9 +54507,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202595" trl="N">
-  <value column="Name" original="Estimated Landed Cost">Estimated Landed Cost</value>
-  <value column="PrintName" original="Estimated Landed Cost">Estimated Landed Cost</value>
+ <row id="202595" trl="Y">
+  <value column="Name" original="Estimated Landed Cost">Custo de Entrada Estimado</value>
+  <value column="PrintName" original="Estimated Landed Cost">Custo de Entrada Estimado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
