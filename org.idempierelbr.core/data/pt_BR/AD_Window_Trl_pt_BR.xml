@@ -248,9 +248,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original=""/>
  </row>
  <row id="158" trl="Y">
-  <value column="Name" original="Bank / Cash">Banco</value>
-  <value column="Description" original="Maintain Bank / Cash">Gerenciamento de Bancos</value>
-  <value column="Help" original="The Bank / Cash Window is used to define the banks and accounts associated with an organization or business partner">A Janela "Banco" é usada para definir os bancos e as contas associadas com uma organização ou parceiro de negócios</value>
+  <value column="Name" original="Bank / Cash">Banco / Caixa</value>
+  <value column="Description" original="Maintain Bank / Cash">Gerenciamento de Bancos / Caixas</value>
+  <value column="Help" original="The Bank / Cash Window is used to define the banks and accounts associated with an organization or business partner">A janela "Banco / Caixa" é usada para definir bancos (e suas contas) bem como contas de caixa na empresa (cofre, PDV, etc.).</value>
  </row>
  <row id="159" trl="Y">
   <value column="Name" original="Dunning">Recuperação (Cobrança)</value>
@@ -557,7 +557,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original=""/>
  </row>
  <row id="235" trl="Y">
-  <value column="Name" original="Expense Report">Relatório de Despesa</value>
+  <value column="Name" original="Expense Report">Relatório de Despesas</value>
   <value column="Description" original="Time and Expense Report">Relatório de Horas e Despesas</value>
   <value column="Help" original="The time and expense report allows you to capture time spent on a project, billable time and to claim expenses.">O Relatório de Horas e Despesas permite a você controlar o tempo gasto em um projeto, tempo cobrável e reclamar despesas.</value>
  </row>
@@ -592,9 +592,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Printer Paper Size, Orientation and Margins">Tamanho, Orientação e Margens do Papel da Impressora</value>
  </row>
  <row id="242" trl="Y">
-  <value column="Name" original="Expenses (to be invoiced)">Despesas (a cobrar)</value>
-  <value column="Description" original="View expenses and charges not invoiced to customers">Ver despesas e débitos não faturados aos clientes</value>
-  <value column="Help" original="Before invoicing to customers, check the expense lines to be invoiced">Antes de emitir a fatura aos seus clientes, conferira as linhas de despesa a serem faturadas</value>
+  <value column="Name" original="Expenses (to be invoiced)">Despesas sem Fatura (Cliente)</value>
+  <value column="Description" original="View expenses and charges not invoiced to customers">Visualiza Despesas em Relatórios, sem Fatura Gerada</value>
+  <value column="Help" original="Before invoicing to customers, check the expense lines to be invoiced">Antes de emitir a fatura aos seus clientes, conferira as linhas de despesa a serem faturadas.</value>
  </row>
  <row id="243" trl="Y">
   <value column="Name" original="Print Table Format">Formato de Impressão de Tabela</value>
@@ -652,9 +652,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The training may have multiple actual classes">O treinamento pode ter múltiplas aulas</value>
  </row>
  <row id="254" trl="Y">
-  <value column="Name" original="Expenses (not reimbursed)">Despesas (não reembolsadas)</value>
-  <value column="Description" original="View expenses and charges not reimbursed">Ver despesas e débitos não reembolsados</value>
-  <value column="Help" original="Before reimbursing expenses, check the open expense items">Antes de reembolsar despesas, confira os itens de despesa abertos</value>
+  <value column="Name" original="Expenses (not reimbursed)">Despesas Não Reembolsadas (Fornecedor)</value>
+  <value column="Description" original="View expenses and charges not reimbursed">Visualiza Despesas em Relatórios, não Reembolsadas</value>
+  <value column="Help" original="Before reimbursing expenses, check the open expense items">Antes de reembolsar fornecedores/funcionários, conferira as linhas de despesa.</value>
  </row>
  <row id="255" trl="Y">
   <value column="Name" original="Accounting Fact Balances">Balanços de Fatos Contábeis</value>
@@ -840,8 +840,8 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Search Synonyms for Knowledge Keywords; Example: Product = Item">Pesquisar Sinônimos para Palavras-chave de Conhecimento; Exemplo: Produto = Item</value>
  </row>
  <row id="291" trl="Y">
-  <value column="Name" original="Business Partner Info">Informações do Parceiro de Negócios</value>
-  <value column="Description" original="Document Information of Business Partners">Documentar Informações dos Parceiros de Negócios</value>
+  <value column="Name" original="Business Partner Info">Informações de Parceiro</value>
+  <value column="Description" original="Document Information of Business Partners">Informações de Documentos de Parceiros de Negócios</value>
   <value column="Help" original=""/>
  </row>
  <row id="292" trl="Y">
@@ -950,9 +950,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Alert Processor/Server Parameter">Parâmetros do Processador/Servidor de Alerta</value>
  </row>
  <row id="313" trl="Y">
-  <value column="Name" original="Partner Relation">Relação com Parceiros</value>
-  <value column="Description" original="Maintain Business Partner Relations">Gerenciamento das Relações com os Parceiros de Negócios</value>
-  <value column="Help" original="Business Partner Relation allow to maintain Third Party Relationship rules: who receives invoices for shipments or pays for invoices.">A "Relação com Parceiro de Negócios" permite gerenciar as regras de Relacionamento com Terceiros: quem recebe faturas por embarques ou paga por faturas.</value>
+  <value column="Name" original="Partner Relation">Relacionamento entre Parceiros</value>
+  <value column="Description" original="Maintain Business Partner Relations">Gerenciamento dos Relacionamentos entre Parceiros de Negócios</value>
+  <value column="Help" original="Business Partner Relation allow to maintain Third Party Relationship rules: who receives invoices for shipments or pays for invoices.">A "Relacionamento entre Parceiros" permite gerenciar as regras de relacionamento entre terceiros. Um parceiro pode, por exemplo, ser responsável por pagar as compras de um outro parceiro de negócios.</value>
  </row>
  <row id="314" trl="Y">
   <value column="Name" original="RfQ Topic">Tópico de SdC</value>
@@ -1140,13 +1140,13 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Define the web store setup.  ">Define a configuração da loja virtual na Internet.  </value>
  </row>
  <row id="351" trl="Y">
-  <value column="Name" original="Position">Posição</value>
-  <value column="Description" original="Maintain Job Positions">Gerenciamento de Postos de Trabalho</value>
+  <value column="Name" original="Position">Cargo</value>
+  <value column="Description" original="Maintain Job Positions">Gerenciamento de Cargos e Funções</value>
   <value column="Help" original="Maintain internal (employee) or external positions">Gerenciamento de cargos internos (funcionários) ou externos</value>
  </row>
  <row id="352" trl="Y">
-  <value column="Name" original="Position Category">Categoria de Posição</value>
-  <value column="Description" original="Maintain Job Position Categories">Gerenciamento de Categorias de Postos de Trabalho</value>
+  <value column="Name" original="Position Category">Categoria de Cargo</value>
+  <value column="Description" original="Maintain Job Position Categories">Gerenciamento de Categorias de Cargos</value>
   <value column="Help" original=""/>
  </row>
  <row id="353" trl="Y">
@@ -1964,9 +1964,9 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="List of Current Logged in user">List of Current Logged in user</value>
   <value column="Help" original=""/>
  </row>
- <row id="200017" trl="N">
-  <value column="Name" original="Payment Transaction">Payment Transaction</value>
-  <value column="Description" original="Payment Transactions">Payment Transactions</value>
+ <row id="200017" trl="Y">
+  <value column="Name" original="Payment Transaction">Transações de Pagamentos</value>
+  <value column="Description" original="Payment Transactions">Transações de Pagamentos</value>
   <value column="Help" original=""/>
  </row>
  <row id="200018" trl="N">
@@ -2102,6 +2102,16 @@ MRP - 110	 No exists Dem</value>
  <row trl="Y" uuid="71faf0fd-f396-4ec1-aa51-7e77b248fe3b">
   <value column="Name" original="CFOP BP Category">Categoria CFOP de PN</value>
   <value column="Description" original="Maintain CFOP Business Partner Categories">Gerenciamento de categorias CFOP de Parceiros de Negócios</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="e5bf831a-fbb8-4cdd-a4bd-9a483d8b3056">
+  <value column="Name" original="Tax (Brazil)">Imposto (Brasil)</value>
+  <value column="Description" original="">Gerenciamento e Manutenção de Impostos Brasileiros</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="85a92339-145c-4afc-b2b0-29d196865ebe">
+  <value column="Name" original="Tax Formula (Brazil)">Fórmula de Imposto (Brasil)</value>
+  <value column="Description" original="">Manutenção e Gerenciamento de Fórmulas de Imposto (Brasil)</value>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>

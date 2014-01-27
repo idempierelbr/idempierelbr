@@ -622,10 +622,10 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200816" trl="N">
-  <value column="Name" original="Only Currency">Only Currency</value>
-  <value column="Description" original="Restrict accepting only this currency">Restrict accepting only this currency</value>
-  <value column="Help" original="The Only Currency field indicates that this bank account accepts only the currency identified here.">The Only Currency field indicates that this bank account accepts only the currency identified here.</value>
+ <row id="200816" trl="Y">
+  <value column="Name" original="Only Currency">Apenas a Moeda</value>
+  <value column="Description" original="Restrict accepting only this currency">Restringe a aceitação da Moeda</value>
+  <value column="Help" original="The Only Currency field indicates that this bank account accepts only the currency identified here.">Indica a moeda aceita pela conta bancária.</value>
  </row>
  <row id="200858" trl="N">
   <value column="Name" original="Reference Overwrite">Reference Overwrite</value>

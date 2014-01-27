@@ -91,12 +91,12 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="123" trl="Y">
-  <value column="MsgText" original="With your current role, you cannot update this information">Com a sua função (papel) atual, você não pode alterar esta informação</value>
-  <value column="MsgTip" original="You don't have the privileges">Você não tem os privilégios</value>
+  <value column="MsgText" original="With your current role, you cannot update this information">Com a sua função e configurações atuais, você não pode alterar esta informação</value>
+  <value column="MsgTip" original="You don't have the privileges">Você não tem os privilégios necessários (sua função não permite acesso à informação).</value>
  </row>
  <row id="124" trl="Y">
-  <value column="MsgText" original="With your current role and settings, you cannot view this information">Com a sua função (papel) e ajustes atuais, você não pode ver esta informação</value>
-  <value column="MsgTip" original="You don't have the privileges (your Role does not allow to access the information) - or - set profile (e.g. if you want to see accounting records, Show Accounting must be set)">Você não tem os privilégios (o seu Papel não permite acesso à informação) - ou - corrija o perfil (ex. se você deseja ver registros contábeis, "Visualizar Contabilidade" deve estar selecionado)</value>
+  <value column="MsgText" original="With your current role and settings, you cannot view this information">Com a sua função e configurações atuais, você não pode ver esta informação</value>
+  <value column="MsgTip" original="You don't have the privileges (your Role does not allow to access the information) - or - set profile (e.g. if you want to see accounting records, Show Accounting must be set)">Você não tem os privilégios necessários (sua função não permite acesso à informação).</value>
  </row>
  <row id="125" trl="Y">
   <value column="MsgText" original="iDempiere, Inc.">© do Software Jorg Janke - ComPiere, Inc. 1999-2002, © da tradução para Português do Brasil, Hilário Fochi Silveira</value>
@@ -6421,6 +6421,14 @@ Please contact administrator.</value>
  </row>
  <row id="200251" trl="N">
   <value column="MsgText" original="Quick Info">Quick Info</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200252" trl="N">
+  <value column="MsgText" original="Show detail">Show detail</value>
+  <value column="MsgTip" original="Show detail locator info in &quot;Available to promise&quot; tab">Show detail locator info in "Available to promise" tab</value>
+ </row>
+ <row id="200253" trl="N">
+  <value column="MsgText" original="Related Information">Related Information</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="520010" trl="Y">

@@ -2502,6 +2502,21 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200071" trl="N">
+  <value column="Name" original="AD_RelatedInfoWindow">AD_RelatedInfoWindow</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200072" trl="N">
+  <value column="Name" original="AD_LinkInfowindow">AD_LinkInfowindow</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200074" trl="N">
+  <value column="Name" original="TreeDisplayedOn">TreeDisplayedOn</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row id="200075" trl="N">
   <value column="Name" original="Foreign Key Constraint Type">Foreign Key Constraint Type</value>
   <value column="Description" original=""/>
@@ -2535,6 +2550,26 @@
  <row trl="N" uuid="0b7e0df0-7a13-4465-a315-d282e7b878d7">
   <value column="Name" original="LBR_FiscalGroup_BPartner">LBR_FiscalGroup_BPartner</value>
   <value column="Description" original="BP Fiscal Group">BP Fiscal Group</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="508b2366-5b61-46d2-b521-bfa267697248">
+  <value column="Name" original="LBR_TaxName">LBR_TaxName</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="d6d3a289-c697-46dc-87c0-1fbfc0a3eb8d">
+  <value column="Name" original="LBR_TaxType">LBR_TaxType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="362ee3fa-209b-40f1-a7bb-652597574fbb">
+  <value column="Name" original="LBR_WithHoldFrequency">LBR_WithHoldFrequency</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="5eb908e3-ee3d-48c7-98ab-64a6ef0e8997">
+  <value column="Name" original="LBR_Formula">LBR_Formula</value>
+  <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>

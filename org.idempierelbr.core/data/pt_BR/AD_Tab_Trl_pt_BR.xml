@@ -598,16 +598,16 @@
   <value column="Help" original="The Employee Tab defines a Business Partner who is an Employee of this organization.  If the Employee is also a Sales Representative then the check box should be selected.">A Aba "Funcionário" define um Parceiro de Negócios que é um Funcionário desta organização.  Se o Funcionário for também um Representante de Vendas então a caixa de verificação correspondente deve ser selecionada.</value>
  </row>
  <row id="226" trl="Y">
-  <value column="Name" original="Bank Account">Conta Bancária</value>
+  <value column="Name" original="Bank Account">Dados Bancários</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define Bank Account">Definir Conta Bancária</value>
-  <value column="Help" original="The Define Bank Account Tab defines the banking information for this business partner.  This data is used for processing payments and remittances.">A Aba "Definir Conta Bancária" define as informações bancárias para este parceiro de negócios.  Este dado é usado para processar pagamentos e remessas de valores.</value>
+  <value column="Description" original="Define Bank Account">Dados Bancários</value>
+  <value column="Help" original="The Define Bank Account Tab defines the banking information for this business partner.  This data is used for processing payments and remittances.">A Aba "Dados Bancários" define as informações bancárias para este parceiro de negócios.  Este dado é usado para processar pagamentos e remessas de valores.</value>
  </row>
  <row id="227" trl="Y">
-  <value column="Name" original="Bank / Cash">Banco</value>
+  <value column="Name" original="Bank / Cash">Banco / Caixa</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Bank">Gerenciamento de Bancos</value>
-  <value column="Help" original="The Bank Tab defines a bank that is used by an organization or business partner.  Each Bank is given an identifying Name, Address, Routing No and Swift Code">A Aba "Banco" define um banco que é usado por uma organização ou um parceiro de negócios.  A cada Banco é dado um Nome de identificação, Endereço, Número Rastreador (Routing No) e Código SWIFT (Society For Worldwide Interbank Financial Telecommunications)</value>
+  <value column="Description" original="Maintain Bank">Gerenciamento de Bancos / Caixas</value>
+  <value column="Help" original="The Bank Tab defines a bank that is used by an organization or business partner.  Each Bank is given an identifying Name, Address, Routing No and Swift Code">A Aba "Banco / Caixa" define um banco que é usado por uma organização ou um parceiro de negócios. Pode ser utilizada também para definir contas de caixa (cofre, PDV, etc.).</value>
  </row>
  <row id="228" trl="Y">
   <value column="Name" original="Account">Conta</value>
@@ -1520,13 +1520,13 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="411" trl="Y">
-  <value column="Name" original="Expense Product">Produto de Despesa</value>
+  <value column="Name" original="Expense Product">Produto</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Product definition of Expense Type">Definição de Produto de Tipo de Despesa</value>
+  <value column="Description" original="Product definition of Expense Type">Definição de Produtos do Tipo Despesa</value>
   <value column="Help" original=""/>
  </row>
  <row id="412" trl="Y">
-  <value column="Name" original="Expense Report">Relatório de Despesa</value>
+  <value column="Name" original="Expense Report">Relatório de Despesas</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Time and Expense Report">Relatório de Horas e Despesas</value>
   <value column="Help" original="Enter the time and expenses for the Employee or Contractor (Business Partner). &lt;br&gt;&#10;The price list determines the default costs of the expenses, products or resource to be reimbursed. In that sense, it is a &quot;Purchase Price&quot; list. The Warehouse is used to correct the inventory of items invoiced to customers (i.e. if not invoiced, the inventory is not adjusted).&lt;br&gt;&#10;Please note that the Business Partner &lt;b&gt;must&lt;/b&gt; be an Employee with an Address and Contact!"><![CDATA[Digite tempo e despesas para o Funcionário ou Empreiteiro (Parceiro de Negócios). <br> A lista de preços determina os custos padrão de despesas, produtos ou recursos a serem reembolsados. Nesse sentido, ela é uma lista de "Preço de Compra". O Armazém é usado para corrigir o estoque de itens faturados a clientes (i.e. se não for faturado, o estoque não é ajustado).<br> Por favor note que o Parceiro de Negócios <b>tem que</b> ser um Funcionário com um Endereço e informações de Contato!]]></value>
@@ -1544,7 +1544,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="415" trl="Y">
-  <value column="Name" original="Assignment">Tarefa</value>
+  <value column="Name" original="Assignment">Atribuição</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Resource Assignments">Atribuições de Recurso</value>
   <value column="Help" original="History of Assignments">Histórico de Atribuições</value>
@@ -1556,10 +1556,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Dates, when the resource is not available (e.g. vacation)">Datas, quando o recurso não está disponível (ex. Férias)</value>
  </row>
  <row id="417" trl="Y">
-  <value column="Name" original="Resource Product">Produto de Recurso</value>
+  <value column="Name" original="Resource Product">Produto</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Product information of Resource">Gerenciamento de informação de Produto de Recurso</value>
-  <value column="Help" original="The product for the resource is automatically created and synchronized. Update Name, Unit of Measure, etc. in the Resource and don't change it in the product.">O Produto para o Recurso é automaticamente criado e sincronizado. Atualize Nome, Unidade de Medida, etc. no Recurso e não o altere no Produto.</value>
+  <value column="Description" original="Maintain Product information of Resource">Gerenciamento de informação de Produto (do Tipo Recurso)</value>
+  <value column="Help" original="The product for the resource is automatically created and synchronized. Update Name, Unit of Measure, etc. in the Resource and don't change it in the product.">O produto para o recurso é automaticamente criado e sincronizado. Atualize nome, UDM, etc. no recurso e não na tela de produto.</value>
  </row>
  <row id="418" trl="Y">
   <value column="Name" original="Resource Type">Tipo de Recurso</value>
@@ -1642,7 +1642,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="431" trl="Y">
-  <value column="Name" original="Customer">Cliente</value>
+  <value column="Name" original="Customer">Parceiro</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Business Partner (Customers) to be invoiced">Parceiro de Negócios (Cliente) a ser faturado</value>
   <value column="Help" original=""/>
@@ -1786,7 +1786,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="A scheduled class">Uma aula programada</value>
  </row>
  <row id="456" trl="Y">
-  <value column="Name" original="Employee, Vendor">Funcionário, Fornecedor</value>
+  <value column="Name" original="Employee, Vendor">Parceiro</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Business Partner to be reimbursed">Parceiro de Negócios a ser reembolsado</value>
   <value column="Help" original="Select the business partner to be reimbursed.">Selecione o parceiro de negócios a ser reembolsado.</value>
@@ -2339,45 +2339,45 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="550" trl="Y">
-  <value column="Name" original="Partner Selection">Seleção de Parceiro</value>
+  <value column="Name" original="Partner Selection">Informações de Parceiro</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Business Partner Selection">Seleção de Parceiro de Negócios</value>
+  <value column="Description" original="Business Partner Selection">Informações de Documentos de Parceiros de Negócios</value>
   <value column="Help" original=""/>
  </row>
  <row id="551" trl="Y">
-  <value column="Name" original="Partner Orders">Pedidos de Parceiro</value>
+  <value column="Name" original="Partner Orders">Pedidos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Business Partner Orders">Pedidos de Parceiro de Negócios</value>
+  <value column="Description" original="Business Partner Orders">Pedidos do Parceiro de Negócios</value>
   <value column="Help" original=""/>
  </row>
  <row id="552" trl="Y">
-  <value column="Name" original="Partner Shipments">Remessas a Parceiro</value>
+  <value column="Name" original="Partner Shipments">Remessas/Recebimentos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Business Partner Shipments">Remessas a Parceiro de Negócios</value>
+  <value column="Description" original="Business Partner Shipments">Remessas/Recebimentos do Parceiro de Negócios</value>
   <value column="Help" original=""/>
  </row>
  <row id="553" trl="Y">
-  <value column="Name" original="Partner Invoices">Fatura de Parceiro</value>
+  <value column="Name" original="Partner Invoices">Faturas</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Business Partner Invoices">Fatura de Parceiro de Negócios</value>
+  <value column="Description" original="Business Partner Invoices">Faturas do Parceiro de Negócios</value>
   <value column="Help" original=""/>
  </row>
  <row id="554" trl="Y">
-  <value column="Name" original="Partner Payments">Pagamentos de Parceiro</value>
+  <value column="Name" original="Partner Payments">Pagamentos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Business Partner Payments">Pagamentos de Parceiro de Negócios</value>
+  <value column="Description" original="Business Partner Payments">Pagamentos do Parceiro de Negócios</value>
   <value column="Help" original=""/>
  </row>
  <row id="555" trl="Y">
-  <value column="Name" original="Partner Assets">Ativo de Parceiro</value>
+  <value column="Name" original="Partner Assets">Ativos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Business Partner Assets">Ativos de Parceiro de Negócios</value>
+  <value column="Description" original="Business Partner Assets">Ativos do Parceiro de Negócios</value>
   <value column="Help" original=""/>
  </row>
  <row id="556" trl="Y">
-  <value column="Name" original="Partner Requests">Solicitações de Parceiro</value>
+  <value column="Name" original="Partner Requests">Solicitações</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Business Partner Requests">Solicitações de Parceiro de Negócios</value>
+  <value column="Description" original="Business Partner Requests">Solicitações do Parceiro de Negócios</value>
   <value column="Help" original=""/>
  </row>
  <row id="557" trl="Y">
@@ -2693,10 +2693,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Result of the execution of the Accounting Processor">Resultado da execução do Processador de Contabilidade</value>
  </row>
  <row id="612" trl="Y">
-  <value column="Name" original="Relation">Relação</value>
+  <value column="Name" original="Relation">Relacionamento</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Business Partner Relation">Relação com o Parceiro de Negócios</value>
-  <value column="Help" original="Business Partner Relation allow to maintain Third Party Relationship rules: who receives invoices for shipments or pays for invoices.  If the Location of the Business partner is not defined, the rule applies to all location of that Business Partner">A "Relação com Parceiro de Negócios" permite gerenciar as regras de Relacionamento com Terceiros: quem recebe faturas por embarques ou paga por faturas.  Se a localização de um Parceiro de Negócios não estiver definida, a regra se aplica a todas as localizações d'aquele Parceiro de Negócios</value>
+  <value column="Description" original="Business Partner Relation">Relacionamentos entre Parceiros de Negócios</value>
+  <value column="Help" original="Business Partner Relation allow to maintain Third Party Relationship rules: who receives invoices for shipments or pays for invoices.  If the Location of the Business partner is not defined, the rule applies to all location of that Business Partner">A "Relacionamento entre Parceiros" permite gerenciar as regras de relacionamento entre terceiros. Um parceiro pode, por exemplo, ser responsável por pagar as compras de um outro parceiro de negócios. Se nenhuma localização for selecionada, a regra será aplicada a todas as localizações daquele parceiro.</value>
  </row>
  <row id="613" trl="Y">
   <value column="Name" original="RfQ">SdC</value>
@@ -3335,15 +3335,15 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="List of Recipients of Request Updates (with reason).&lt;br&gt;&#10;Direct: Sales Rep, User and direct subscribers&#10;Indirect: Users with Role, Subscribers of updates for Request Category, Type, Group)"><![CDATA[Lista de Recipientes de Atualizações de Solicitações (com o motivo).<br> Direto: Representante de Vendas, Usuário e assinantes diretos. Indireto: Usuários com Papel (Função), Assinantes de atualizações para Categoria da Solicitação, Tipo, Grupo)]]></value>
  </row>
  <row id="721" trl="Y">
-  <value column="Name" original="Position">Posição</value>
+  <value column="Name" original="Position">Cargo</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Job Position">Gerenciamento de Postos de Trabalho</value>
+  <value column="Description" original="Maintain Job Position">Gerenciamento de Cargos e Funções</value>
   <value column="Help" original="Maintain internal (employee) or external positions">Gerenciamento de cargos internos (funcionários) ou externos</value>
  </row>
  <row id="722" trl="Y">
-  <value column="Name" original="Assignment">Tarefa</value>
+  <value column="Name" original="Assignment">Função</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Employee Assignment">Atribuição do Funcionário</value>
+  <value column="Description" original="Employee Assignment">Funções do Cargo</value>
   <value column="Help" original=""/>
  </row>
  <row id="723" trl="Y">
@@ -3533,10 +3533,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="You can directly allocate payments to invoices with the same currency when creating the Payment. &#10;Note that you can over- or under-allocate the payment.&lt;b&gt;&#10;When processing the payment, the allocation is created.&lt;b&gt;&#10;The Organization is set to the invoice organization"><![CDATA[Você pode alocar diretamente pagamentos a faturas com a mesma moeda ao criar o Pagamento. Note that you can over- or under-allocate the payment.<b> When processing the payment, the allocation is created.<b> The Organization is set to the invoice organization]]></value>
  </row>
  <row id="756" trl="Y">
-  <value column="Name" original="BP Access">Acesso ao PN</value>
+  <value column="Name" original="BP Access">Acesso ao Parceiro</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Access of the User/Contact to Business Partner information and resources">Acesso do usuário/contato aos recursos e informações do parceiro de negócios</value>
-  <value column="Help" original="If on User level, &quot;Full BP Access&quot; is NOT selected, you need to give access explicitly here. ">Se no Nível de Usuário NÃO for selecionado "Acesso Total PN", você terá de dar acesso explícito aqui. </value>
+  <value column="Help" original="If on User level, &quot;Full BP Access&quot; is NOT selected, you need to give access explicitly here. ">Se na aba Contato (Usuário) o campo Acesso Total ao Parceiro estiver desmarcado, é necessário preencher esta aba para que o mesmo tenha algum direito de acesso às informações do Parceiro.</value>
  </row>
  <row id="757" trl="Y">
   <value column="Name" original="Queries">Perguntas</value>
@@ -3665,9 +3665,9 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="System Issues are created to speed up the resolution of any system related issues (potential bugs).  If enabled, they are automatically reported to iDempiere.  No data or confidential information is transferred.">System Issues are created to speed up the resolution of any system related issues (potential bugs).  If enabled, they are automatically reported to Compiere.  No data or confidential information is transferred.</value>
  </row>
  <row id="778" trl="Y">
-  <value column="Name" original="Assigned Partners">Assigned Partners</value>
+  <value column="Name" original="Assigned Partners">Parceiros Atribuídos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Business Partners in Group">Business Partners in Group</value>
+  <value column="Description" original="Business Partners in Group">Parceiros de Negócios atribuídos ao Grupo de Parceiros</value>
   <value column="Help" original=""/>
  </row>
  <row id="779" trl="Y">
@@ -5838,14 +5838,14 @@ Printing:
   <value column="Description" original="Current Sessions">Current Sessions</value>
   <value column="Help" original=""/>
  </row>
- <row id="200026" trl="N">
-  <value column="Name" original="Bank Account Processor">Bank Account Processor</value>
+ <row id="200026" trl="Y">
+  <value column="Name" original="Bank Account Processor">Processador de Conta Bancária</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Bank Account Payment Processors">Maintain Bank Account Payment Processors</value>
+  <value column="Description" original="Maintain Bank Account Payment Processors">Gerenciamento de Processadores de Conta Bancária</value>
   <value column="Help" original=""/>
  </row>
- <row id="200027" trl="N">
-  <value column="Name" original="Payment Transaction">Payment Transaction</value>
+ <row id="200027" trl="Y">
+  <value column="Name" original="Payment Transaction">Transações de Pagamentos</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5910,8 +5910,8 @@ Printing:
   <value column="Description" original="Methods that the Shipper will support for picking up from your location">Methods that the Shipper will support for picking up from your location</value>
   <value column="Help" original=""/>
  </row>
- <row id="200040" trl="N">
-  <value column="Name" original="Shipping Accounts">Shipping Accounts</value>
+ <row id="200040" trl="Y">
+  <value column="Name" original="Shipping Accounts">Contas de Remessa</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6120,6 +6120,12 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200100" trl="N">
+  <value column="Name" original="Related Info Window">Related Info Window</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row id="200102" trl="N">
   <value column="Name" original="Cost Adjustment">Cost Adjustment</value>
   <value column="CommitWarning" original=""/>
@@ -6239,5 +6245,23 @@ Printing:
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Maintain CFOP BP Category">Gerenciamento de categorias CFOP de Parceiros de Negócios</value>
   <value column="Help" original="">Utilize esta aba para manter categorias comuns dentre os CFOPs atualmente existentes. O objetivo é facilitar a configuração de impostos de modo que ao efetuar um Pedido de Venda ou Pedido de Compra, o sistema consiga identificar com exatidão os assuntos fiscais/tributários (impostos, situações tributárias, etc.) do Parceiro de Negócios.</value>
+ </row>
+ <row trl="Y" uuid="ac90678c-07e1-44d2-9aa8-e11ca98160bd">
+  <value column="Name" original="Tax (Brazil)">Imposto (Brasil)</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="">Gerenciamento e Manutenção de Impostos Brasileiros</value>
+  <value column="Help" original="">Utilize esta janela para manter os impostos brasileiros que envolvem o seu negócio.</value>
+ </row>
+ <row trl="Y" uuid="6541def0-b017-43a6-b14c-0d5489375b63">
+  <value column="Name" original="Tax Formula (Brazil)">Fórmula de Imposto (Brasil)</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="">Manutenção e Gerenciamento de Fórmulas de Imposto (Brasil)</value>
+  <value column="Help" original="">Utilize esta janela para manter as diversas fórmulas necessários ao complexo sistema tributário e fiscal brasileiro.</value>
+ </row>
+ <row trl="Y" uuid="d3916fc3-7eea-4550-ae92-f5e0d740deb4">
+  <value column="Name" original="Tax Formula">Fórmula de Imposto</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
  </row>
 </idempiereTrl>

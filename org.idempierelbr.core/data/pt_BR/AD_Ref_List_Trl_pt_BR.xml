@@ -1059,7 +1059,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="397" trl="Y">
-  <value column="Name" original="Match">Confrontar</value>
+  <value column="Name" original="Match">Coincide</value>
   <value column="Description" original=""/>
  </row>
  <row id="398" trl="Y">
@@ -1067,7 +1067,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="399" trl="Y">
-  <value column="Name" original="Unavailable">Indisponível</value>
+  <value column="Name" original="Unavailable">Não Disponível</value>
   <value column="Description" original=""/>
  </row>
  <row id="400" trl="Y">
@@ -1103,15 +1103,15 @@
   <value column="Description" original=""/>
  </row>
  <row id="408" trl="Y">
-  <value column="Name" original="Void">Anulado</value>
+  <value column="Name" original="Void">Anular</value>
   <value column="Description" original=""/>
  </row>
  <row id="409" trl="Y">
-  <value column="Name" original="Checking">Conferindo</value>
+  <value column="Name" original="Checking">Conta-Corrente</value>
   <value column="Description" original=""/>
  </row>
  <row id="410" trl="Y">
-  <value column="Name" original="Savings">Economia</value>
+  <value column="Name" original="Savings">Conta-Poupança</value>
   <value column="Description" original=""/>
  </row>
  <row id="411" trl="Y">
@@ -1147,7 +1147,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="419" trl="Y">
-  <value column="Name" original="Purchase Card">Cartão de Compras</value>
+  <value column="Name" original="Purchase Card">Cartão Corporativo</value>
   <value column="Description" original="Corporate Purchase Card">Cartão de Compras Corporativo</value>
  </row>
  <row id="420" trl="Y">
@@ -2331,7 +2331,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="732" trl="Y">
-  <value column="Name" original="EMail">Email</value>
+  <value column="Name" original="EMail">E-mail</value>
   <value column="Description" original=""/>
  </row>
  <row id="733" trl="Y">
@@ -2343,7 +2343,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="735" trl="Y">
-  <value column="Name" original="EMail+Notice">EMail+Aviso</value>
+  <value column="Name" original="EMail+Notice">E-mail e Aviso</value>
   <value column="Description" original=""/>
  </row>
  <row id="736" trl="Y">
@@ -2447,7 +2447,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="761" trl="Y">
-  <value column="Name" original="Same">Mesmo</value>
+  <value column="Name" original="Same">Mesma</value>
   <value column="Description" original=""/>
  </row>
  <row id="762" trl="Y">
@@ -2515,7 +2515,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="779" trl="Y">
-  <value column="Name" original="Business Documents">Documentos da Negociação</value>
+  <value column="Name" original="Business Documents">Documentos de Transação</value>
   <value column="Description" original=""/>
  </row>
  <row id="780" trl="Y">
@@ -2523,7 +2523,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="781" trl="Y">
-  <value column="Name" original="Assets, Download">Ativos, Download</value>
+  <value column="Name" original="Assets, Download">Ativos e Downloads</value>
   <value column="Description" original=""/>
  </row>
  <row id="782" trl="Y">
@@ -3079,11 +3079,11 @@
   <value column="Description" original=""/>
  </row>
  <row id="922" trl="Y">
-  <value column="Name" original="Direct Debit">Débito Direto</value>
+  <value column="Name" original="Direct Debit">Débito Automático</value>
   <value column="Description" original=""/>
  </row>
  <row id="923" trl="Y">
-  <value column="Name" original="Direct Deposit">Depósito Direto</value>
+  <value column="Name" original="Direct Deposit">Depósito</value>
   <value column="Description" original=""/>
  </row>
  <row id="924" trl="Y">
@@ -4694,16 +4694,16 @@
   <value column="Name" original="Ring Chart">Ring Chart</value>
   <value column="Description" original=""/>
  </row>
- <row id="53660" trl="N">
-  <value column="Name" original="Both">Both</value>
+ <row id="53660" trl="Y">
+  <value column="Name" original="Both">Compras e Vendas</value>
   <value column="Description" original=""/>
  </row>
- <row id="53661" trl="N">
-  <value column="Name" original="Sales">Sales</value>
+ <row id="53661" trl="Y">
+  <value column="Name" original="Sales">Somente Vendas</value>
   <value column="Description" original=""/>
  </row>
- <row id="53662" trl="N">
-  <value column="Name" original="Purchases">Purchases</value>
+ <row id="53662" trl="Y">
+  <value column="Name" original="Purchases">Somente Compras</value>
   <value column="Description" original=""/>
  </row>
  <row id="53663" trl="Y">
@@ -4918,12 +4918,12 @@
   <value column="Name" original="Returned">Devolvido</value>
   <value column="Description" original=""/>
  </row>
- <row id="200025" trl="N">
-  <value column="Name" original="Cash">Cash</value>
+ <row id="200025" trl="Y">
+  <value column="Name" original="Cash">Dinheiro (Espécie)</value>
   <value column="Description" original=""/>
  </row>
- <row id="200026" trl="N">
-  <value column="Name" original="Card">Card</value>
+ <row id="200026" trl="Y">
+  <value column="Name" original="Card">Cartão</value>
   <value column="Description" original=""/>
  </row>
  <row id="200027" trl="N">
@@ -5350,6 +5350,18 @@
   <value column="Name" original="Until Expiration or Acknowledge">Until Expiration or Acknowledge</value>
   <value column="Description" original="Repeat it until the message expires or until it has been acknowledged, whatever happens first">Repeat it until the message expires or until it has been acknowledged, whatever happens first</value>
  </row>
+ <row id="200158" trl="N">
+  <value column="Name" original="Both">Both</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200159" trl="N">
+  <value column="Name" original="Detail Tab">Detail Tab</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200160" trl="N">
+  <value column="Name" original="Master Tab">Master Tab</value>
+  <value column="Description" original=""/>
+ </row>
  <row id="200161" trl="N">
   <value column="Name" original="Do Not Create">Do Not Create</value>
   <value column="Description" original=""/>
@@ -5432,6 +5444,22 @@
  </row>
  <row trl="Y" uuid="c8589a36-558d-4723-8916-190bb8f4576f">
   <value column="Name" original="Resale">Revenda</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="e7c59d0b-65ca-4738-b8a7-e7ceb7ce2b42">
+  <value column="Name" original="Product">Produto</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="7bd86064-502b-4f95-a82f-2d5cc3631593">
+  <value column="Name" original="Service">Serviço</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="9f00c466-f966-40d6-ae76-0cee6ae2e24d">
+  <value column="Name" original="Substitution">Substituição</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="1d2fdcb5-9e2b-4cd8-a5b5-50b71cc8b405">
+  <value column="Name" original="Monthly">Mensal</value>
   <value column="Description" original=""/>
  </row>
 </idempiereTrl>

@@ -253,7 +253,7 @@
   <value column="Help" original="The Report lists Customer and Vendor Invoice Details with Margines.">O relatório lista detalhes de linhas de faturas (clientes ou fornecedores) incluindo informações de margem (com base no preço).</value>
  </row>
  <row id="153" trl="Y">
-  <value column="Name" original="Online Process">Processo Online</value>
+  <value column="Name" original="Online Process">Processar Online</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -383,13 +383,13 @@
   <value column="Help" original="Recompile Functions, Procedures, Triggers, Views, etc.">Recompilar Funções, Procedimentos, Gatilhos (disparadores), Visualizações, etc.</value>
  </row>
  <row id="186" trl="Y">
-  <value column="Name" original="Create Sales Orders from Expense">Criar Pedidos de Venda a partir das Despesas</value>
-  <value column="Description" original="Create Sales Orders for Customers from Expense Reports">Criar Pedidos de Vendas para Clientes a partir de Relatórios de Despesas</value>
+  <value column="Name" original="Create Sales Orders from Expense">Gerar Pedidos de Venda (de Despesas)</value>
+  <value column="Description" original="Create Sales Orders for Customers from Expense Reports">Gerar Pedidos de Venda (para Clientes) a partir de Relatórios de Despesas</value>
   <value column="Help" original=""/>
  </row>
  <row id="187" trl="Y">
-  <value column="Name" original="Create AP Expense Invoices">Criar Faturas de Despesas de Contas a Pagar</value>
-  <value column="Description" original="Create AP Invoices from Expenses to be paid to employees">Criar Faturas de CAP a partir das despesas a serem pagas a funcionários</value>
+  <value column="Name" original="Create AP Expense Invoices">Gerar Faturas (Fornecedor) (de Despesas)</value>
+  <value column="Description" original="Create AP Invoices from Expenses to be paid to employees">Gerar Faturas (Fornecedor) a partir de Relatórios de Despesas</value>
   <value column="Help" original=""/>
  </row>
  <row id="188" trl="Y">
@@ -679,7 +679,7 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
  </row>
  <row id="243" trl="Y">
   <value column="Name" original="Validate">Validar</value>
-  <value column="Description" original="Validate Payment Terms and Schedule">Validar Programação e Termos de Pagamentos</value>
+  <value column="Description" original="Validate Payment Terms and Schedule">Validar a Condição de Pagamento e suas Programações</value>
   <value column="Help" original=""/>
  </row>
  <row id="244" trl="Y">
@@ -693,9 +693,9 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
   <value column="Help" original="The process allows you to change or verify the organization ownership of Products and its dependent entities (BOM, Substitute, Replenish, Purchasing, Business Partner Info, Costing). &lt;br&gt;&#10;Select either a Product Category ar a specific Product."><![CDATA[O processo permite a você alterar ou verificar a participação da organização de Produtos e suas entidades dependentes (LDM, Substitutos, Reabastecimento, Compras, Informações de Parceiro de Negócios, Custos). <br> Selecione ou uma Categoria de Produto ou um Produto específico.]]></value>
  </row>
  <row id="246" trl="Y">
-  <value column="Name" original="Business Partner Organization">Organização de Parceiros de Negócios</value>
-  <value column="Description" original="Set and verify Organization ownership of Business Partners">Ajustar e Verificar Participação de Parceiros de Negócios na Organização</value>
-  <value column="Help" original="The process allows you to change or verify the organization ownership of Business Partners and its dependent entities (Location, Contact/User, Bank Account, Withholding). &lt;br&gt;&#10;Select either a Business Partner Group ar a specific Business Partner"><![CDATA[O processo permite a você alterar ou verificar a participação da organização de Parceiros de Negócios e suas entidades dependentes (Localização, Contato/Usuário, Conta Bancária, Retenções). <br> Selecione ou um Grupo de Parceiros de Negócios ou um Parceiro de Negócios específico.]]></value>
+  <value column="Name" original="Business Partner Organization">Organização do Parceiro de Negócios</value>
+  <value column="Description" original="Set and verify Organization ownership of Business Partners">Alterar a Organização do Registro do Parceiro de Negócios</value>
+  <value column="Help" original="The process allows you to change or verify the organization ownership of Business Partners and its dependent entities (Location, Contact/User, Bank Account, Withholding). &lt;br&gt;&#10;Select either a Business Partner Group ar a specific Business Partner">O processo permite a alteração do campo Organização de um registro na tela Parceiro de Negócios. A alteração é efetuada também nos registros dependentes, como por exemplo a Localização, Contato, Dados Bancários, etc. Selecione um grupo de parceiros ou um parceiro específico e selecione a nova organização do registro.</value>
  </row>
  <row id="247" trl="Y">
   <value column="Name" original="Load Bank Statement">Carregar Extrato Bancário</value>
@@ -766,7 +766,7 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
  <row id="260" trl="Y">
   <value column="Name" original="Link Organization">Vincular Organização</value>
   <value column="Description" original="Link Business Partner to an Organization">Vincular um Parceiro de Negócios a uma Organização</value>
-  <value column="Help" original="If the Business Partner is another Organization, select the Organization or set to empty to create a new Organization.  You link a Business Partner to an Organization to create explicit Documents for Inter-Org transaction.&#10;If you create a new Organization, you may supply a Organization Type.  If you select a Role, the access to the new Organization is limited to that role, otherwise all (non manual) roles of the Client will have access to the new Organization.">Se o Parceiro de Negócios for uma outra Organização, selecione a Organização ou deixe vazio para criar uma nova Organização.  Você vincula um Parceiro de Negócios a uma Organização para criar Documentos explícitos para transações Inter-Organização. Se você criar uma nova Organização, você pode fornecer o Tipo de Organização.  Se você selecionar um Papel (Função), o acesso à nova Organização será limitado àquele Papel, de outro modo todos papéis (não manual) da Empresa terão acesso à nova Organização.</value>
+  <value column="Help" original="If the Business Partner is another Organization, select the Organization or set to empty to create a new Organization.  You link a Business Partner to an Organization to create explicit Documents for Inter-Org transaction.&#10;If you create a new Organization, you may supply a Organization Type.  If you select a Role, the access to the new Organization is limited to that role, otherwise all (non manual) roles of the Client will have access to the new Organization.">Este processo vincula um Parceiro de Negócios a uma Organização. Fazendo isso, o sistema pode gerar contra-documentos automaticamente ao efetuar uma transação com aquele parceiro. Selecione uma organização existente ou deixe em branco para criar uma nova. Se estiver criando uma nova, pode-se selecionar o tipo de organização e a função (limita o acesso à função. Se deixado em branco, todas as funções não manuais terão acesso).</value>
  </row>
  <row id="261" trl="Y">
   <value column="Name" original="Create &amp; Invite"><![CDATA[Criar & Convite]]></value>
@@ -827,9 +827,9 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original="Please note that due to rounding, the total quantity of the order(s) is likely to be higher then the quantity entered.">Por favor, note que devido ao arredondamento, é possível que a quantidade total do(s) pedido(s) seja maior que a quantidade digitada.</value>
  </row>
  <row id="272" trl="Y">
-  <value column="Name" original="UnLink Business Partner Org">Desligar Parceiro da Organização</value>
-  <value column="Description" original="UnLink Business Partner from an Organization">Desligar um Parceiro de Negócios de uma Organização</value>
-  <value column="Help" original="UnLink a Business Partner Linked to an Organization (for explicit inter-org documents)">Desvincular um Parceiro de Negócios vinculado a uma Organização (para documentos explícitos inter-organizacionais)</value>
+  <value column="Name" original="UnLink Business Partner Org">Desvincular Parceiro de Negócios</value>
+  <value column="Description" original="UnLink Business Partner from an Organization">Desvincular um Parceiro de Negócios de uma Organização</value>
+  <value column="Help" original="UnLink a Business Partner Linked to an Organization (for explicit inter-org documents)">O processo desvincula um Parceiro de Negócios anteriormente vinculado a uma Organização. A vinculação de Parceiros a uma Organização é um recurso que permite a geração automática de documentos entre organizações da mesma empresa.</value>
  </row>
  <row id="273" trl="Y">
   <value column="Name" original="Process Requisition">Processar Requisição</value>
@@ -1038,9 +1038,9 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original=""/>
  </row>
  <row id="314" trl="Y">
-  <value column="Name" original="Validate Business Partner">Validar Parceiro de Negócios</value>
-  <value column="Description" original="Check data consistency of Business Partner">Verificar consistência de dados do parceiro de negócios</value>
-  <value column="Help" original="Check the payments and invoices of a business partner and checks the balances.">Verifica os pagamentos e faturas de um parceiro de negócios e confere os balanços.</value>
+  <value column="Name" original="Validate Business Partner">Verificar Parceiro de Negócios</value>
+  <value column="Description" original="Check data consistency of Business Partner">Verificar Consistência de Dados do Parceiro de Negócios</value>
+  <value column="Help" original="Check the payments and invoices of a business partner and checks the balances.">Este processo verifica os pagamentos, faturas e confere os saldos.</value>
  </row>
  <row id="315" trl="Y">
   <value column="Name" original="Order Batch Process">Processar Pedidos em Lote</value>
@@ -1059,13 +1059,13 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
  </row>
  <row id="318" trl="Y">
   <value column="Name" original="Payment Details">Detalhes de Pagamentos</value>
-  <value column="Description" original="Payment Detail Report">Relatório de detalhes de pagamento</value>
-  <value column="Help" original="Type adjusted payments (receipts positive, payments negative) with allocated and available amounts">Digite os pagamentos ajustados (recebimentos positivo, pagamentos negativo) com valores alocados e disponíveis</value>
+  <value column="Description" original="Payment Detail Report">Detalhes de pagamentos</value>
+  <value column="Help" original="Type adjusted payments (receipts positive, payments negative) with allocated and available amounts">O relatório lista detalhes de pagamentos, incluindo valores alocados.</value>
  </row>
  <row id="319" trl="Y">
-  <value column="Name" original="Business Partner Open">Parceiro de Negócios Aberto</value>
-  <value column="Description" original="Business Partner Open Amount">Valor em aberto de parceiro de negócios</value>
-  <value column="Help" original="The report lists open invoices and payments">O relatório lista faturas e pagamentos em aberto</value>
+  <value column="Name" original="Business Partner Open">Parceiros de Negócios em Aberto</value>
+  <value column="Description" original="Business Partner Open Amount">Parceiros de Negócios com Valor em Aberto (Não Pago)</value>
+  <value column="Help" original="The report lists open invoices and payments">O relatório lista faturas e respectivos pagamentos em aberto.</value>
  </row>
  <row id="320" trl="Y">
   <value column="Name" original="Commission Run Detail">Detalhes de Cálculos de Comissão</value>
@@ -1138,9 +1138,9 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original="The report includes order detail information including lost sales.  The report can be used for Sales and Purchasing.">O relatório emite informações detalhadas de pedidos, incluindo vendas perdidas. O relatório pode ser utilizado para Vendas e Compras.</value>
  </row>
  <row id="334" trl="Y">
-  <value column="Name" original="Business Partner Detail">Detalhes do Parceiro de Negócios</value>
-  <value column="Description" original="Business Partner Detail Report">Relatório de Detalhes do Parceiro de Negócios</value>
-  <value column="Help" original="The report list details of Business Partner, Addresses and Contacts for any active Business Partner with an Address and Contact">The report list details of Business Partner, Addresses and Contacts for any active Business Partner with an Address and Contact</value>
+  <value column="Name" original="Business Partner Detail">Detalhes de Parceiros de Negócios</value>
+  <value column="Description" original="Business Partner Detail Report">Relatório de Detalhes de Parceiros de Negócios</value>
+  <value column="Help" original="The report list details of Business Partner, Addresses and Contacts for any active Business Partner with an Address and Contact">O relatório lista detalhes de parceiros de negócios, como endereços e contatos.</value>
  </row>
  <row id="335" trl="Y">
   <value column="Name" original="Create Costing Records">Criar Registros de Custos</value>
