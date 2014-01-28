@@ -34,6 +34,10 @@ public class ModelFactory implements IModelFactory {
 			return MLBRFormula.class;
 		else if (tableName.equals(MLBRTaxFormula.Table_Name)) // Model MLBRTaxFormula
 			return MLBRTaxFormula.class;
+		else if (tableName.equals(X_LBR_TaxStatus.Table_Name)) // Model X_LBR_TaxStatus
+			return X_LBR_TaxStatus.class;
+		else if (tableName.equals(X_LBR_TaxBaseType.Table_Name)) // Model X_LBR_TaxBaseType
+			return X_LBR_TaxBaseType.class;
 		
 		return null;
 	}
@@ -58,6 +62,10 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRFormula(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRTaxFormula.Table_Name)) // Model MLBRTaxFormula
 			return new MLBRTaxFormula(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_TaxStatus.Table_Name)) // Model X_LBR_TaxStatus
+			return new X_LBR_TaxStatus(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_TaxBaseType.Table_Name)) // Model X_LBR_TaxBaseType
+			return new X_LBR_TaxBaseType(Env.getCtx(), Record_ID, trxName);
 		
 		return null;
 	}
@@ -82,6 +90,10 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRFormula(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRTaxFormula.Table_Name)) // Model MLBRTaxFormula
 			return new MLBRTaxFormula(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(X_LBR_TaxStatus.Table_Name)) // Model X_LBR_TaxStatus
+			return new X_LBR_TaxStatus(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(X_LBR_TaxBaseType.Table_Name)) // Model X_LBR_TaxBaseType
+			return new X_LBR_TaxBaseType(Env.getCtx(), rs, trxName);
 		
 		return null;
 	}
