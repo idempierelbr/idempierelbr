@@ -55394,4 +55394,144 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row trl="Y" uuid="2c7623a9-a045-4299-b68a-e8f289197486">
+  <value column="Name" original="Tax Status">Situação Tributária</value>
+  <value column="PrintName" original="Tax Status">Situação Tributária</value>
+  <value column="Description" original="Brazilian Tax Status">Situação Tributária de Impostos Brasileiros</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="89b9866a-ab45-44d4-a6ea-b1d1e07f1a0e">
+  <value column="Name" original="LBR_TaxStatus_UU">LBR_TaxStatus_UU</value>
+  <value column="PrintName" original="LBR_TaxStatus_UU">LBR_TaxStatus_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="5d50206d-66a9-4dd2-8c26-3a1e8f2299ae">
+  <value column="Name" original="Tax Base Type">Tax Base Type</value>
+  <value column="PrintName" original="Tax Base Type">Tax Base Type</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="68754e73-c1cc-43f8-95a5-36d9a03c315a">
+  <value column="Name" original="LBR_TaxBaseType_UU">LBR_TaxBaseType_UU</value>
+  <value column="PrintName" original="LBR_TaxBaseType_UU">LBR_TaxBaseType_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="6cff9c27-8df9-4be0-9267-0f59974d4209">
+  <value column="Name" original="Transaction Tax">Transaction Tax</value>
+  <value column="PrintName" original="Transaction Tax">Transaction Tax</value>
+  <value column="Description" original="Identifies a transaction tax (document/line)">Identifies a transaction tax (document/line)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="be4af6d5-db42-4bd4-9605-cd01c78ab21d">
+  <value column="Name" original="LBR_Tax_UU">LBR_Tax_UU</value>
+  <value column="PrintName" original="LBR_Tax_UU">LBR_Tax_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="af99612e-e084-47b4-a4fe-176465f02fdf">
+  <value column="Name" original="Post Tax">Post Tax</value>
+  <value column="PrintName" original="Post Tax">Post Tax</value>
+  <value column="Description" original="Indicates if the Tax should be Posted (Account)">Indicates if the Tax should be Posted (Account)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="c852b093-276c-478b-b5d3-ebd96f13bb8a">
+  <value column="Name" original="Tax Amount">Tax Amount</value>
+  <value column="PrintName" original="Tax Amount">Tax Amount</value>
+  <value column="Description" original="Defines the Tax Amount">Defines the Tax Amount</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="ab2ad4dd-64ce-4e48-a2d5-efbb0b22b215">
+  <value column="Name" original="Tax Base">Tax Base</value>
+  <value column="PrintName" original="Tax Base">Tax Base</value>
+  <value column="Description" original="Indicates the Tax Base">Indicates the Tax Base</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="09b2d97b-f6ac-4335-be17-c4539fcbad05">
+  <value column="Name" original="Tax Base Amount">Tax Base Amount</value>
+  <value column="PrintName" original="Tax Base Amount">Tax Base Amount</value>
+  <value column="Description" original="Defines the Tax Base Amount">Defines the Tax Base Amount</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="174a5411-fc80-4868-b70d-f4dd56a8667a">
+  <value column="Name" original="Transaction Tax Line">Transaction Tax Line</value>
+  <value column="PrintName" original="Transaction Tax Line">Transaction Tax Line</value>
+  <value column="Description" original="Tax Line for the Transaction Tax">Tax Line for the Transaction Tax</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="e90ca7d8-b559-486f-a615-7d7576ff718b">
+  <value column="Name" original="LBR_TaxLine_UU">LBR_TaxLine_UU</value>
+  <value column="PrintName" original="LBR_TaxLine_UU">LBR_TaxLine_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="5caaeaac-bcee-4d35-8477-6cb84d507700">
+  <value column="Name" original="Tax List Amount (Flat Rate)">Tax List Amount (Flat Rate)</value>
+  <value column="PrintName" original="Tax List Amount (Flat Rate)">Tax List Amount (Flat Rate)</value>
+  <value column="Description" original="Tax List Amount (Flat Rate) stated by law">Tax List Amount (Flat Rate) stated by law</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="ab447a14-62a0-4946-8f68-5b8a73308ca5">
+  <value column="Name" original="Tax Rate">Tax Rate</value>
+  <value column="PrintName" original="Tax Rate">Tax Rate</value>
+  <value column="Description" original="Indicates the Tax Rate">Indicates the Tax Rate</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
 </idempiereTrl>

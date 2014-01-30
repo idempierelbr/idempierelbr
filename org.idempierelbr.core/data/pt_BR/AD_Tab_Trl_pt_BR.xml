@@ -6264,4 +6264,16 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="Y" uuid="3e9174c7-e77f-4d3b-906c-2476ecb6b517">
+  <value column="Name" original="Tax Status">Situação Tributária</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="b193a2ee-c6d9-4ffc-bb98-281fe7870002">
+  <value column="Name" original="Tax Base Type">Modalidade Base de Cálculo</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

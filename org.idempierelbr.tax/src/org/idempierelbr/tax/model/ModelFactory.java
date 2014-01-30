@@ -38,6 +38,16 @@ public class ModelFactory implements IModelFactory {
 			return X_LBR_TaxStatus.class;
 		else if (tableName.equals(X_LBR_TaxBaseType.Table_Name)) // Model X_LBR_TaxBaseType
 			return X_LBR_TaxBaseType.class;
+		else if (tableName.equals(MLBRTax.Table_Name)) // Model MLBRTax
+			return MLBRTax.class;
+		else if (tableName.equals(MLBRTaxLine.Table_Name)) // Model MLBRTaxLine
+			return MLBRTaxLine.class;
+		else if (tableName.equals(X_LBR_NCMTax.Table_Name)) // Model X_LBR_NCMTax
+			return X_LBR_NCMTax.class;
+		else if (tableName.equals(MLBRICMSMatrix.Table_Name)) // Model MLBRICMSMatrix
+			return MLBRICMSMatrix.class;
+		else if (tableName.equals(MLBRISSMatrix.Table_Name)) // Model MLBRISSMatrix
+			return MLBRISSMatrix.class;
 		
 		return null;
 	}
@@ -66,6 +76,16 @@ public class ModelFactory implements IModelFactory {
 			return new X_LBR_TaxStatus(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(X_LBR_TaxBaseType.Table_Name)) // Model X_LBR_TaxBaseType
 			return new X_LBR_TaxBaseType(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRTax.Table_Name)) // Model MLBRTax
+			return new MLBRTax(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRTaxLine.Table_Name)) // Model MLBRTaxLine
+			return new MLBRTaxLine(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_NCMTax.Table_Name)) // Model X_LBR_NCMTax
+			return new X_LBR_NCMTax(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRICMSMatrix.Table_Name)) // Model MLBRICMSMatrix
+			return new MLBRICMSMatrix(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRISSMatrix.Table_Name)) // Model MLBRISSMatrix
+			return new MLBRISSMatrix(Env.getCtx(), Record_ID, trxName);
 		
 		return null;
 	}
@@ -94,6 +114,16 @@ public class ModelFactory implements IModelFactory {
 			return new X_LBR_TaxStatus(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(X_LBR_TaxBaseType.Table_Name)) // Model X_LBR_TaxBaseType
 			return new X_LBR_TaxBaseType(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRTax.Table_Name)) // Model MLBRTax
+			return new MLBRTax(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRTaxLine.Table_Name)) // Model MLBRTaxLine
+			return new MLBRTaxLine(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(X_LBR_NCMTax.Table_Name)) // Model X_LBR_NCMTax
+			return new X_LBR_NCMTax(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRICMSMatrix.Table_Name)) // MLBRICMSMatrix
+			return new MLBRICMSMatrix(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRISSMatrix.Table_Name)) // MLBRISSMatrix
+			return new MLBRISSMatrix(Env.getCtx(), rs, trxName);
 		
 		return null;
 	}

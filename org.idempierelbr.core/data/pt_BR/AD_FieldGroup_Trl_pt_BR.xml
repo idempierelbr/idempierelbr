@@ -209,4 +209,7 @@
  <row trl="Y" uuid="12c499cb-64e4-44b5-87e2-7b0fae45876c">
   <value column="Name" original="Localização Brasil">Adempiere LBR</value>
  </row>
+ <row trl="Y" uuid="ab4e86d1-d610-473e-b7c0-516aa7578a26">
+  <value column="Name" original="Validation">Validação</value>
+ </row>
 </idempiereTrl>
