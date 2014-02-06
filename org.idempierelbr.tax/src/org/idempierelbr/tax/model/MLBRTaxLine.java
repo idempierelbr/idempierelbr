@@ -20,7 +20,7 @@ import java.util.Comparator;
 import java.util.Properties;
 
 import org.adempiere.model.POWrapper;
-import org.adempierelbr.wrapper.I_W_C_Tax;
+import org.idempierelbr.tax.wrapper.I_W_C_Tax;
 import org.compiere.model.MTax;
 import org.compiere.util.Env;
 
@@ -32,7 +32,7 @@ import org.compiere.util.Env;
  *	@version $Id: MLBRTaxLine.java, v1.0 2011/04/20 7:49:43 PM, ralexsander Exp $
  */
 @SuppressWarnings("rawtypes")
-public class MLBRTaxLine extends X_LBR_TaxLine implements Comparator, Comparable
+public class MLBRTaxLine extends X_LBR_TaxLine implements Comparator<Object>, Comparable
 {
 	/**
 	 * 	Serial
@@ -77,7 +77,7 @@ public class MLBRTaxLine extends X_LBR_TaxLine implements Comparator, Comparable
 		{
 			I_W_C_Tax tW = POWrapper.create(t, I_W_C_Tax.class);
 			if (tW.getLBR_TaxName_ID() == getLBR_TaxName_ID())
-				return tW.getC_Tax_ID();
+				return t.getC_Tax_ID();
 		}
 		return -1;
 	}	//	getChild_Tax_ID

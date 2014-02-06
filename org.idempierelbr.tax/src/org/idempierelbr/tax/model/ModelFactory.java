@@ -48,6 +48,24 @@ public class ModelFactory implements IModelFactory {
 			return MLBRICMSMatrix.class;
 		else if (tableName.equals(MLBRISSMatrix.Table_Name)) // Model MLBRISSMatrix
 			return MLBRISSMatrix.class;
+		else if (tableName.equals(MLBRTaxConfiguration.Table_Name)) // Model MLBRTaxConfiguration
+			return MLBRTaxConfiguration.class;
+		else if (tableName.equals(X_LBR_TaxConfig_BPartner.Table_Name)) // Model X_LBR_TaxConfig_BPartner
+			return X_LBR_TaxConfig_BPartner.class;
+		else if (tableName.equals(X_LBR_TaxConfig_BPGroup.Table_Name)) // Model X_LBR_TaxConfig_BPGroup
+			return X_LBR_TaxConfig_BPGroup.class;
+		else if (tableName.equals(X_LBR_TaxConfig_Region.Table_Name)) // Model X_LBR_TaxConfig_Region
+			return X_LBR_TaxConfig_Region.class;
+		else if (tableName.equals(X_LBR_TaxConfig_Product.Table_Name)) // Model X_LBR_TaxConfig_Product
+			return X_LBR_TaxConfig_Product.class;
+		else if (tableName.equals(X_LBR_TaxConfig_ProductGroup.Table_Name)) // Model X_LBR_TaxConfig_ProductGroup
+			return X_LBR_TaxConfig_ProductGroup.class;
+		else if (tableName.equals(MLBRTaxDefinition.Table_Name)) // Model MLBRTaxDefinition
+			return MLBRTaxDefinition.class;
+		else if (tableName.equals(MLBRCFOP.Table_Name)) // Model MLBRCFOP
+			return MLBRCFOP.class;
+		else if (tableName.equals(X_LBR_CFOPLine.Table_Name)) // Model X_LBR_CFOPLine
+			return X_LBR_CFOPLine.class;
 		
 		return null;
 	}
@@ -86,6 +104,24 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRICMSMatrix(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRISSMatrix.Table_Name)) // Model MLBRISSMatrix
 			return new MLBRISSMatrix(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRTaxConfiguration.Table_Name)) // Model MLBRTaxConfiguration
+			return new MLBRTaxConfiguration(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_TaxConfig_BPartner.Table_Name)) // Model X_LBR_TaxConfig_BPartner
+			return new X_LBR_TaxConfig_BPartner(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_TaxConfig_BPGroup.Table_Name)) // Model X_LBR_TaxConfig_BPGroup
+			return new X_LBR_TaxConfig_BPGroup(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_TaxConfig_Region.Table_Name)) // Model X_LBR_TaxConfig_Region
+			return new X_LBR_TaxConfig_Region(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_TaxConfig_Product.Table_Name)) // Model X_LBR_TaxConfig_Product
+			return new X_LBR_TaxConfig_Product(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_TaxConfig_ProductGroup.Table_Name)) // Model X_LBR_TaxConfig_ProductGroup
+			return new X_LBR_TaxConfig_ProductGroup(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRTaxDefinition.Table_Name)) // Model MLBRTaxDefinition
+			return new MLBRTaxDefinition(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRCFOP.Table_Name)) // Model MLBRCFOP
+			return new MLBRCFOP(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_CFOPLine.Table_Name)) // Model X_LBR_CFOPLine
+			return new X_LBR_CFOPLine(Env.getCtx(), Record_ID, trxName);
 		
 		return null;
 	}
@@ -124,6 +160,24 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRICMSMatrix(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRISSMatrix.Table_Name)) // MLBRISSMatrix
 			return new MLBRISSMatrix(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRTaxConfiguration.Table_Name)) // MLBRTaxConfiguration
+			return new MLBRTaxConfiguration(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(X_LBR_TaxConfig_BPartner.Table_Name)) // X_LBR_TaxConfig_BPartner
+			return new X_LBR_TaxConfig_BPartner(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(X_LBR_TaxConfig_BPGroup.Table_Name)) // X_LBR_TaxConfig_BPGroup
+			return new X_LBR_TaxConfig_BPGroup(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(X_LBR_TaxConfig_Region.Table_Name)) // X_LBR_TaxConfig_Region
+			return new X_LBR_TaxConfig_Region(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(X_LBR_TaxConfig_Product.Table_Name)) // X_LBR_TaxConfig_Product
+			return new X_LBR_TaxConfig_Product(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(X_LBR_TaxConfig_ProductGroup.Table_Name)) // X_LBR_TaxConfig_ProductGroup
+			return new X_LBR_TaxConfig_ProductGroup(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRTaxDefinition.Table_Name)) // MLBRTaxDefinition
+			return new MLBRTaxDefinition(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRCFOP.Table_Name)) // MLBRCFOP
+			return new MLBRCFOP(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(X_LBR_CFOPLine.Table_Name)) // X_LBR_CFOPLine
+			return new X_LBR_CFOPLine(Env.getCtx(), rs, trxName);
 		
 		return null;
 	}
