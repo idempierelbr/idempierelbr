@@ -212,4 +212,7 @@
  <row trl="Y" uuid="ab4e86d1-d610-473e-b7c0-516aa7578a26">
   <value column="Name" original="Validation">Validação</value>
  </row>
+ <row trl="Y" uuid="9fb757cc-e889-4009-aacd-f5a39d050a40">
+  <value column="Name" original="Tax">Imposto</value>
+ </row>
 </idempiereTrl>

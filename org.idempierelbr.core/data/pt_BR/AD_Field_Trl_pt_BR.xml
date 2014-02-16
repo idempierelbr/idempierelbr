@@ -22,11 +22,10 @@
   <value column="Description" original="Tax Amount for Credit Card transaction">Montante de Taxas para transação de Cartão de Crédito</value>
   <value column="Help" original="The Tax Amount displays the total tax amount. The tax amount is only used for credit card processing.">O "Valor do Imposto" mostra o valor total dos impostos. O Montante de Taxas só é usado para processamento de cartões de crédito.</value>
  </row>
- <row id="4121" trl="N">
-  <value column="Name" original="Account Conversion Date">Account Conversion Date</value>
-  <value column="Description" original="Accounting Conversion Date">Accounting Conversion Date</value>
-  <value column="Help" original="The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion.&#10;The Accounting Date on Bank/Cash Statement Line is used for currency conversion and reporting purposes, the accounting is posted using the header date account.">The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion.
-The Accounting Date on Bank/Cash Statement Line is used for currency conversion and reporting purposes, the accounting is posted using the header date account.</value>
+ <row id="4121" trl="Y">
+  <value column="Name" original="Account Conversion Date">Data Contábil da Conversão</value>
+  <value column="Description" original="Accounting Conversion Date">Data Contábil da Conversão</value>
+  <value column="Help" original="The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion.&#10;The Accounting Date on Bank/Cash Statement Line is used for currency conversion and reporting purposes, the accounting is posted using the header date account.">O campo indica a data a ser usada para fins de conversão de moeda. Os registros contábeis para o Livro Razão são lançados com a data contábil da aba Extrato Bancário/Caixa.</value>
  </row>
  <row id="4462" trl="Y">
   <value column="Name" original="Business Partner / Sales Rep">Parceiros de Negócios / Representante</value>
@@ -582,10 +581,10 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original="Product Attribute Values">Product Attribute Values</value>
   <value column="Help" original="The values of the actual Product Attributes. Product Instance attributes are defined in the actual transactions.">The values of the actual Product Attributes. Product Instance attributes are defined in the actual transactions.</value>
  </row>
- <row id="60944" trl="N">
-  <value column="Name" original="Copy From Cash Plan">Copy From Cash Plan</value>
-  <value column="Description" original="Copy From Another Cash Plan">Copy From Another Cash Plan</value>
-  <value column="Help" original="Copy From Another Cash Plan">Copy From Another Cash Plan</value>
+ <row id="60944" trl="Y">
+  <value column="Name" original="Copy From Cash Plan">Copiar Linhas</value>
+  <value column="Description" original="Copy From Another Cash Plan">Copiar Linhas de outro Planejamento de Caixa</value>
+  <value column="Help" original="Copy From Another Cash Plan">Copiar Linhas de outro Planejamento de Caixa</value>
  </row>
  <row id="62015" trl="N">
   <value column="Name" original="Create/Update Production lines">Create/Update Production lines</value>

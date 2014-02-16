@@ -1103,7 +1103,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="408" trl="Y">
-  <value column="Name" original="Void">Anular</value>
+  <value column="Name" original="Void">Anulação</value>
   <value column="Description" original=""/>
  </row>
  <row id="409" trl="Y">
@@ -2547,11 +2547,11 @@
   <value column="Description" original=""/>
  </row>
  <row id="787" trl="Y">
-  <value column="Name" original="None">Nenhum</value>
+  <value column="Name" original="None">Nenhuma</value>
   <value column="Description" original=""/>
  </row>
  <row id="788" trl="Y">
-  <value column="Name" original="Receipt">Recibo</value>
+  <value column="Name" original="Receipt">Recebimento de Material</value>
   <value column="Description" original=""/>
  </row>
  <row id="789" trl="Y">
@@ -2559,7 +2559,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="790" trl="Y">
-  <value column="Name" original="Purchase Order and Receipt">Pedido de Compra e Recebimento</value>
+  <value column="Name" original="Purchase Order and Receipt">Pedido de Compra e Recebimento de Material</value>
   <value column="Description" original=""/>
  </row>
  <row id="791" trl="Y">
@@ -4718,40 +4718,40 @@
   <value column="Name" original="Operational">Operacional</value>
   <value column="Description" original=""/>
  </row>
- <row id="53666" trl="N">
-  <value column="Name" original="Daily">Daily</value>
+ <row id="53666" trl="Y">
+  <value column="Name" original="Daily">Diário</value>
   <value column="Description" original=""/>
  </row>
- <row id="53667" trl="N">
-  <value column="Name" original="Weekly">Weekly</value>
+ <row id="53667" trl="Y">
+  <value column="Name" original="Weekly">Semanal</value>
   <value column="Description" original=""/>
  </row>
- <row id="53668" trl="N">
-  <value column="Name" original="Fortnightly">Fortnightly</value>
+ <row id="53668" trl="Y">
+  <value column="Name" original="Fortnightly">Quatorzenal</value>
   <value column="Description" original=""/>
  </row>
- <row id="53669" trl="N">
-  <value column="Name" original="Biweekly">Biweekly</value>
+ <row id="53669" trl="Y">
+  <value column="Name" original="Biweekly">Quinzenal</value>
   <value column="Description" original=""/>
  </row>
- <row id="53670" trl="N">
-  <value column="Name" original="Monthly">Monthly</value>
+ <row id="53670" trl="Y">
+  <value column="Name" original="Monthly">Mensal</value>
   <value column="Description" original=""/>
  </row>
- <row id="53671" trl="N">
-  <value column="Name" original="Bimonthly">Bimonthly</value>
+ <row id="53671" trl="Y">
+  <value column="Name" original="Bimonthly">Bimestral</value>
   <value column="Description" original=""/>
  </row>
- <row id="53672" trl="N">
-  <value column="Name" original="Quarterly">Quarterly</value>
+ <row id="53672" trl="Y">
+  <value column="Name" original="Quarterly">Trimestral</value>
   <value column="Description" original=""/>
  </row>
- <row id="53673" trl="N">
-  <value column="Name" original="Semiannual">Semiannual</value>
+ <row id="53673" trl="Y">
+  <value column="Name" original="Semiannual">Semestral</value>
   <value column="Description" original=""/>
  </row>
- <row id="53674" trl="N">
-  <value column="Name" original="Yearly">Yearly</value>
+ <row id="53674" trl="Y">
+  <value column="Name" original="Yearly">Anual</value>
   <value column="Description" original=""/>
  </row>
  <row id="53675" trl="N">
@@ -5460,6 +5460,86 @@
  </row>
  <row trl="Y" uuid="1d2fdcb5-9e2b-4cd8-a5b5-50b71cc8b405">
   <value column="Name" original="Monthly">Mensal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="9150ec2c-56b1-4a78-b507-a2859b927da7">
+  <value column="Name" original="Fiscal Group">Grupo de Tributação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="5711fd6a-8c00-4a84-9cca-07f180542b1a">
+  <value column="Name" original="Product">Produto</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="f16338db-5551-4993-b65f-4e4ba70df41c">
+  <value column="Name" original="00 - Tributada integralmente">00 - Tributada integralmente</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="a520672e-0546-4e9e-af48-fe45dd1ce1b0">
+  <value column="Name" original="10 - Tributada e com cobranca do ICMS por Sub. Tributaria">10 - Tributada e com cobrança do ICMS por Substituição Tributária</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="25c89555-2f89-486f-9b26-a1a71370e4bd">
+  <value column="Name" original="20 - Com reducao de base de calculo">20 - Com redução de base de cálculo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="3f5e623d-f368-4935-8593-66b171ae2318">
+  <value column="Name" original="30 - Isenta ou nao-trib. e com cobr. do ICMS por Sub. Tribut">30 - Isenta/Não tributada e com cobrança do ICMS por Substituição Tributária</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="c86d9f36-aa4b-4690-9d2b-c315aaca9a9a">
+  <value column="Name" original="40 - Isenta">40 - Isenta</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="787e3de2-d757-4338-8580-d32e2a35a012">
+  <value column="Name" original="41 - Nao-tributada">41 - Não Tributada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="e89ee392-2cd5-4c28-a0f6-ce51837033a1">
+  <value column="Name" original="50 - Suspensao">50 - Suspensão</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="9f44869b-5596-4c7a-952b-b74e92f7d675">
+  <value column="Name" original="51 - Diferimento ">51 - Diferimento </value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="003e00b3-3bce-4b6b-91c1-614ddee4ebc1">
+  <value column="Name" original="60 - ICMS cobrado anteriormente por substituicao tributaria">60 - ICMS cobrado anteriormente por Substituição Tributária</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="1d223bb9-a317-46fc-a0ad-307383377f14">
+  <value column="Name" original="70 - Com red. de base de calc. e cobr. do ICMS por Sub. Trib">70 - Com redução de base de cálculo e cobrança do ICMS por Substituição Tributária</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="5b2715a3-0f26-4c98-a2fa-800e7a495a8f">
+  <value column="Name" original="90 - Outras">90 - Outras</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="73eb704e-2c39-4bb5-ad4e-b8eb0b296aa0">
+  <value column="Name" original="Both">Ambos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="8a695237-f22a-4257-8337-5e4674d50b05">
+  <value column="Name" original="No">Não</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="f9223057-8a2f-45c9-9bb5-eeeb82590e08">
+  <value column="Name" original="Yes">Sim</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="4002f013-02c6-4ff1-90f1-fdec00e9eb3c">
+  <value column="Name" original="Estados Identicos">Estados Idênticos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="e65df3e7-5783-47d3-ab54-4dd6ce9695ff">
+  <value column="Name" original="Estados Diferentes">Estados Diferentes</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="2379b721-1f5f-4af2-8db4-3718c26a6f70">
+  <value column="Name" original="Estrangeiro">Estrangeiro</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="085e7fb2-246e-43da-9c11-d704d0e6e597">
+  <value column="Name" original="Zona Franca">Zona Franca</value>
   <value column="Description" original=""/>
  </row>
 </idempiereTrl>

@@ -13,9 +13,9 @@
   <value column="Help" original=""/>
  </row>
  <row id="302" trl="Y">
-  <value column="Name" original="Overwrite Payment Rule">Overwrite Payment Rule</value>
-  <value column="Description" original="Overwrite how to pay the invoice">Overwrite how to pay the invoice</value>
-  <value column="Help" original="The Payment Rule indicates how the incoice will be settled - you can overwrite the value from the invoice.">The Payment Rule indicates how the incoice will be settled - you can overwrite the value from the invoice.</value>
+  <value column="Name" original="Overwrite Payment Rule">Sobrescrever Forma de Pagamento</value>
+  <value column="Description" original="Overwrite how to pay the invoice">Sobrescreve a Forma de Pagamento da Fatura</value>
+  <value column="Help" original="The Payment Rule indicates how the incoice will be settled - you can overwrite the value from the invoice.">A forma de pagamento indica como a fatura será liquidada. Você pode sobrescrever a forma que consta na fatura.</value>
  </row>
  <row id="315" trl="Y">
   <value column="Name" original="From User">De: (Usuário)</value>
@@ -157,13 +157,13 @@
   <value column="Description" original="Valid from including this date (first day)">Valid from including this date (first day)</value>
   <value column="Help" original="The Valid From date indicates the first day of a date range">The Valid From date indicates the first day of a date range</value>
  </row>
- <row id="53246" trl="N">
-  <value column="Name" original="Bank Account From">Bank Account From</value>
+ <row id="53246" trl="Y">
+  <value column="Name" original="Bank Account From">Conta de Origem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53247" trl="N">
-  <value column="Name" original="Bank Account To">Bank Account To</value>
+ <row id="53247" trl="Y">
+  <value column="Name" original="Bank Account To">Conta de Destino</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -232,13 +232,13 @@
   <value column="Description" original="Force rebuild of cube even if locked.">Force rebuild of cube even if locked.</value>
   <value column="Help" original=""/>
  </row>
- <row id="53485" trl="N">
-  <value column="Name" original="Periodicity">Periodicity</value>
+ <row id="53485" trl="Y">
+  <value column="Name" original="Periodicity">Periodicidade</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53486" trl="N">
-  <value column="Name" original="Repetitions">Repetitions</value>
+ <row id="53486" trl="Y">
+  <value column="Name" original="Repetitions">Repetições</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

@@ -215,7 +215,7 @@
   <value column="MsgTip" original="Attachments require a single key and this entity is probably an Association (with two keys) or an entity without an unique numeric key.">Anexos requerem uma chave única e esta entidade é provavelmente uma Associação (com duas chaves) ou uma entidade sem uma chave numérica singela.</value>
  </row>
  <row id="154" trl="Y">
-  <value column="MsgText" original="Automatic Write-Off">Baixa de Contas Automática</value>
+  <value column="MsgText" original="Automatic Write-Off">Baixa Automática do Saldo</value>
   <value column="MsgTip" original="Automatic calculation of write-off amount to close the open item">Cálculo automático dos valores a serem baixados para fechar o item em aberto</value>
  </row>
  <row id="155" trl="Y">
@@ -6429,6 +6429,10 @@ Please contact administrator.</value>
  </row>
  <row id="200253" trl="N">
   <value column="MsgText" original="Related Information">Related Information</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200254" trl="N">
+  <value column="MsgText" original="Document status has been changed by other session, please refresh the record and try again.">Document status has been changed by other session, please refresh the record and try again.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="520010" trl="Y">

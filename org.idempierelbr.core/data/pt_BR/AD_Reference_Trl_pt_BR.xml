@@ -2572,4 +2572,64 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="3c69aac5-12e9-4577-9735-2c8c41e3cab6">
+  <value column="Name" original="Brazilian Taxes">Brazilian Taxes</value>
+  <value column="Description" original="Brazilian Taxes">Brazilian Taxes</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="8ec2c866-a1d6-4139-94ff-98087a5331ab">
+  <value column="Name" original="C_City">C_City</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="c74b45cc-2883-4225-827a-b9fba1b45f8b">
+  <value column="Name" original="LBR_ExceptionType">LBR_ExceptionType</value>
+  <value column="Description" original="Tax Exception Type">Tax Exception Type</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="d9a8ddba-5360-412e-bbcb-28b76b4b21f5">
+  <value column="Name" original="LBR_FiscalGroup_Product">LBR_FiscalGroup_Product</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="00b75f33-5ceb-48a8-a4ae-031e9b703d61">
+  <value column="Name" original="LBR_LegalMessage">LBR_LegalMessage</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="492697de-270c-44a7-920b-8fd235d4dc4e">
+  <value column="Name" original="LBR_TaxStatus">LBR_TaxStatus</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="bbf31f3e-a1cb-48d0-9ec6-2e9579880a99">
+  <value column="Name" original="LBR_Yes_No_Both">LBR_Yes_No_Both</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="3d20574f-c33e-4369-bb7c-a2806bd53f6f">
+  <value column="Name" original="LBR_NCM">LBR_NCM</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="0c207641-fd8f-4b9c-b0bb-b4cfaac5a98a">
+  <value column="Name" original="LBR_CFOP">LBR_CFOP</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="4e4eee5e-07f2-4036-acc2-b515b601c48a">
+  <value column="Name" original="LBR_DestionationType">LBR_DestionationType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="a05b25b6-7ac1-486a-b0ab-de37e001cf0e">
+  <value column="Name" original="LBR_ProductCategory">LBR_ProductCategory</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="dcc3cbdf-120b-4bad-a5f6-fca4ee840154">
+  <value column="Name" original="LBR_TaxGroup">LBR_TaxGroup</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

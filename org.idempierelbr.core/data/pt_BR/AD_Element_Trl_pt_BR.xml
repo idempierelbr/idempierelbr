@@ -493,20 +493,20 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="161" trl="Y">
-  <value column="Name" original="Accounted Credit">Crédito Contabilizado</value>
-  <value column="PrintName" original="Acct Credit">Crédito Contabilizado</value>
-  <value column="Description" original="Accounted Credit Amount">Valor do Crédito Contabilizado</value>
-  <value column="Help" original="The Account Credit Amount indicates the transaction amount converted to this organization's accounting currency">O "Valor do Crédito Contabilizado" indica o valor da transação convertido para a moeda contábil desta organização.</value>
+  <value column="Name" original="Accounted Credit">Crédito Contábil</value>
+  <value column="PrintName" original="Acct Credit">Crédito Contábil</value>
+  <value column="Description" original="Accounted Credit Amount">Valor do Crédito Contábil</value>
+  <value column="Help" original="The Account Credit Amount indicates the transaction amount converted to this organization's accounting currency">O "Valor do Crédito Contábil" indica o valor da transação convertido para a moeda contábil desta organização.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="162" trl="Y">
-  <value column="Name" original="Accounted Debit">Débito Contabilizado</value>
-  <value column="PrintName" original="Acct Debit">Débito Contabilizado</value>
-  <value column="Description" original="Accounted Debit Amount">Valor do Débito Contabilizado</value>
-  <value column="Help" original="The Account Debit Amount indicates the transaction amount converted to this organization's accounting currency">O "Valor do Débito Contabilizado" indica o valor da transação convertido para a moeda contábil desta organização.</value>
+  <value column="Name" original="Accounted Debit">Débito Contábil</value>
+  <value column="PrintName" original="Acct Debit">Débito Contábil</value>
+  <value column="Description" original="Accounted Debit Amount">Valor do Débito Contábil</value>
+  <value column="Help" original="The Account Debit Amount indicates the transaction amount converted to this organization's accounting currency">O "Valor do Débito Contábil" indica o valor da transação convertido para a moeda contábil desta organização.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -5185,10 +5185,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1106" trl="Y">
-  <value column="Name" original="Sales Transaction">Transação de Vendas</value>
-  <value column="PrintName" original="Sales Transaction">Transação de Vendas</value>
-  <value column="Description" original="This is a Sales Transaction">Esta é uma Transação de Vendas</value>
-  <value column="Help" original="The Sales Transaction checkbox indicates if this item is a Sales Transaction.">A caixa de verificação "Transação de Vendas" indica se este item é uma Transação de Vendas.</value>
+  <value column="Name" original="Sales Transaction">Transação de Venda</value>
+  <value column="PrintName" original="Sales Transaction">Transação de Venda</value>
+  <value column="Description" original="This is a Sales Transaction">Esta é uma Transação de Venda</value>
+  <value column="Help" original="The Sales Transaction checkbox indicates if this item is a Sales Transaction.">A caixa de verificação "Transação de Venda" indica se este item é uma Transação de Venda.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -6877,10 +6877,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1381" trl="Y">
-  <value column="Name" original="Bank Statement">Extrato Bancário</value>
-  <value column="PrintName" original="Bank Statement">Extrato Bancário</value>
-  <value column="Description" original="Bank Statement of account">Extrato Bancário de uma conta</value>
-  <value column="Help" original="The Bank Statement identifies a unique Bank Statement for a defined time period.  The statement defines all transactions that occurred">O "Extrato Bancário" identifica um extrato bancário único e exclusivo para um determinado período de tempo.  O extrato define todas as transações que ocorreram nesse período.</value>
+  <value column="Name" original="Bank Statement">Extrato Bancário/Caixa</value>
+  <value column="PrintName" original="Bank Statement">Extrato Bancário/Caixa</value>
+  <value column="Description" original="Bank Statement of account">Extrato Bancário de uma conta ou caixa</value>
+  <value column="Help" original="The Bank Statement identifies a unique Bank Statement for a defined time period.  The statement defines all transactions that occurred">O "Extrato Bancário/Caixa" identifica um extrato bancário único e exclusivo para um determinado período de tempo. O extrato define todas as transações que ocorreram nesse período.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -7318,10 +7318,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1435" trl="Y">
-  <value column="Name" original="Statement difference">Diferença de Declaração</value>
-  <value column="PrintName" original="Statement difference">Diferença de Declaração</value>
-  <value column="Description" original="Difference between statement ending balance and actual ending balance">Diferença entre o saldo (balanço) final da declaração (extrato) e o saldo (balanço) final real</value>
-  <value column="Help" original="The Statement Difference reflects the difference between the Statement Ending Balance and the Actual Ending Balance.">A "Diferença de Declaração" reflete a diferença entre o Saldo (Balanço) Final Declarado e o Saldo (Balanço) Final Real.</value>
+  <value column="Name" original="Statement difference">Diferença do Extrato</value>
+  <value column="PrintName" original="Statement difference">Diferença do Extrato</value>
+  <value column="Description" original="Difference between statement ending balance and actual ending balance">Diferença entre o saldo do extrato e o saldo atual da conta bancária</value>
+  <value column="Help" original="The Statement Difference reflects the difference between the Statement Ending Balance and the Actual Ending Balance.">O campo reflete a diferença entre o saldo do extrato e o saldo atual da conta bancária.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -7508,10 +7508,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1457" trl="Y">
-  <value column="Name" original="Interest Amount">Valor dos Juros</value>
-  <value column="PrintName" original="Interest">Juros</value>
-  <value column="Description" original="Interest Amount">Valor dos Juros</value>
-  <value column="Help" original="The Interest Amount indicates any interest charged or received on a Bank Statement.">O "Valor dos Juros" indica quaisquer juros incorridos ou recebidos em um Extrato Bancário.</value>
+  <value column="Name" original="Interest Amount">Valor do Juro</value>
+  <value column="PrintName" original="Interest">Juro</value>
+  <value column="Description" original="Interest Amount">Valor do Juro</value>
+  <value column="Help" original="The Interest Amount indicates any interest charged or received on a Bank Statement.">O "Valor do Juro" indica quaisquer juros incorridos ou recebidos em um Extrato Bancário.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -7728,10 +7728,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1487" trl="Y">
-  <value column="Name" original="Effective date">Data de Vigência</value>
-  <value column="PrintName" original="Effective date">Data de Vigência</value>
-  <value column="Description" original="Date when money is available">Data quando o dinheiro estará disponível</value>
-  <value column="Help" original="The Effective Date indicates the date that money is available from the bank.">A "Data de Vigência" indica a data que o dinheiro estará creditado e disponível no banco.</value>
+  <value column="Name" original="Effective date">Data da Liquidação</value>
+  <value column="PrintName" original="Effective date">Data da Liquidação</value>
+  <value column="Description" original="Date when money is available">Data quando o dinheiro entra/sai da conta</value>
+  <value column="Help" original="The Effective Date indicates the date that money is available from the bank.">A "Data da Liquidação" indica a data que o dinheiro é creditada/debitada no banco.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -9218,9 +9218,9 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1671" trl="Y">
-  <value column="Name" original="Maximum write-off per Invoice">Máxima baixa por fatura</value>
-  <value column="PrintName" original="Maximum write-off per Invoice">Máxima baixa por fatura</value>
-  <value column="Description" original="Maximum invoice amount to be written off in invoice currency">Máximo valor de fatura a ser baixado na moeda da fatura</value>
+  <value column="Name" original="Maximum write-off per Invoice">Valor Máximo da Fatura</value>
+  <value column="PrintName" original="Maximum write-off per Invoice">Valor Máximo da Fatura</value>
+  <value column="Description" original="Maximum invoice amount to be written off in invoice currency">Valor máximo da fatura a ser dado baixa (na moeda da fatura)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -9238,9 +9238,9 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1673" trl="Y">
-  <value column="Name" original="Only Discount">Somente Desconto</value>
-  <value column="PrintName" original="Only Discount">Somente Desconto</value>
-  <value column="Description" original="Include only invoices where we would get payment discount">Inclui somente faturas onde nós teremos descontos no pagamento</value>
+  <value column="Name" original="Only Discount">Somente Faturas com Desconto</value>
+  <value column="PrintName" original="Only Discount">Somente Faturas com Desconto</value>
+  <value column="Description" original="Include only invoices where we would get payment discount">Inclui somente faturas onde a empresa tem desconto no pagamento</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -9248,8 +9248,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1674" trl="Y">
-  <value column="Name" original="Only Due">Somente Vencidas</value>
-  <value column="PrintName" original="Only Due">Somente Vencidas</value>
+  <value column="Name" original="Only Due">Somente Faturas Vencidas</value>
+  <value column="PrintName" original="Only Due">Somente Faturas Vencidas</value>
   <value column="Description" original="Include only due invoices">Inclui somente as faturas vencidas</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -14425,9 +14425,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2231" trl="Y">
-  <value column="Name" original="EFT Memo">Memo TEF</value>
-  <value column="PrintName" original="EFT Memo">Memo TEF</value>
-  <value column="Description" original="Electronic Funds Transfer Memo">Memorando de Transferência Eletrônica de Fundos</value>
+  <value column="Name" original="EFT Memo">Memorando (TEF)</value>
+  <value column="PrintName" original="EFT Memo">Memorando (TEF)</value>
+  <value column="Description" original="Electronic Funds Transfer Memo">Memorando da Transferência Eletrônica de Fundos</value>
   <value column="Help" original="Information from EFT media">Informação proveniente da mídia de TEF</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -14435,8 +14435,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2232" trl="Y">
-  <value column="Name" original="EFT Payee">Beneficiário da TEF</value>
-  <value column="PrintName" original="EFT Payee">Beneficiário da TEF</value>
+  <value column="Name" original="EFT Payee">Beneficiário (TEF)</value>
+  <value column="PrintName" original="EFT Payee">Beneficiário (TEF)</value>
   <value column="Description" original="Electronic Funds Transfer Payee information">Informações do Beneficiário da Transferência Eletrônica de Fundos</value>
   <value column="Help" original="Information from EFT media">Informação proveniente da mídia de TEF</value>
   <value column="PO_Description" original=""/>
@@ -14445,8 +14445,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2233" trl="Y">
-  <value column="Name" original="EFT Payee Account">Conta do Beneficiário da TEF</value>
-  <value column="PrintName" original="EFT Payee Account">Conta do Beneficiário da TEF</value>
+  <value column="Name" original="EFT Payee Account">Conta do Beneficiário (TEF)</value>
+  <value column="PrintName" original="EFT Payee Account">Conta do Beneficiário (TEF)</value>
   <value column="Description" original="Electronic Funds Transfer Payee Account Information">Informações da Conta do Beneficiário da Transferência Eletrônica de Fundos</value>
   <value column="Help" original="Information from EFT media">Informação proveniente da mídia de TEF</value>
   <value column="PO_Description" original=""/>
@@ -14455,8 +14455,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2234" trl="Y">
-  <value column="Name" original="EFT Reference">Referência de TEF</value>
-  <value column="PrintName" original="EFT Reference">Referência de TEF</value>
+  <value column="Name" original="EFT Reference">Referência (TEF)</value>
+  <value column="PrintName" original="EFT Reference">Referência (TEF)</value>
   <value column="Description" original="Electronic Funds Transfer Reference">Referência de Transferência Eletrônica de Fundos</value>
   <value column="Help" original="Information from EFT media">Informação proveniente da mídia de TEF</value>
   <value column="PO_Description" original=""/>
@@ -14465,9 +14465,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2235" trl="Y">
-  <value column="Name" original="EFT Trx ID">ID de Trx de TEF</value>
-  <value column="PrintName" original="EFT Trx ID">ID de Trx de TEF</value>
-  <value column="Description" original="Electronic Funds Transfer Transaction ID">Identificação (ID) de Transação de Transferência Eletrônica de Fundos</value>
+  <value column="Name" original="EFT Trx ID">ID da Transação (TEF)</value>
+  <value column="PrintName" original="EFT Trx ID">ID da Transação (TEF)</value>
+  <value column="Description" original="Electronic Funds Transfer Transaction ID">Identificação (ID) da Transação de Transferência Eletrônica de Fundos</value>
   <value column="Help" original="Information from EFT media">Informação proveniente da mídia de TEF</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -14475,9 +14475,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2236" trl="Y">
-  <value column="Name" original="EFT Trx Type">Tipo de Trx de TEF</value>
-  <value column="PrintName" original="EFT Trx Type">Tipo de Trx de TEF</value>
-  <value column="Description" original="Electronic Funds Transfer Transaction Type">Tipo de Transação de Transferência Eletrônica de Fundos</value>
+  <value column="Name" original="EFT Trx Type">Tipo de Transação (TEF)</value>
+  <value column="PrintName" original="EFT Trx Type">Tipo de Transação (TEF)</value>
+  <value column="Description" original="Electronic Funds Transfer Transaction Type">Tipo de Transação da Transferência Eletrônica de Fundos</value>
   <value column="Help" original="Information from EFT media">Informação proveniente da mídia de TEF</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -14945,8 +14945,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2287" trl="Y">
-  <value column="Name" original="EFT Amount">Valor da TEF</value>
-  <value column="PrintName" original="EFT Amount">Valor da TEF</value>
+  <value column="Name" original="EFT Amount">Valor (TEF)</value>
+  <value column="PrintName" original="EFT Amount">Valor (TEF)</value>
   <value column="Description" original="Electronic Funds Transfer Amount">Valor da Transferência Eletrônica de Fundos</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -14955,8 +14955,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2289" trl="Y">
-  <value column="Name" original="EFT Check No">Núm. Cheque de TEF</value>
-  <value column="PrintName" original="EFT Check No">Núm. Cheque de TEF</value>
+  <value column="Name" original="EFT Check No">Núm. Cheque (TEF)</value>
+  <value column="PrintName" original="EFT Check No">Núm. Cheque (TEF)</value>
   <value column="Description" original="Electronic Funds Transfer Check No">Número do Cheque da Transferência Eletrônica de Fundos</value>
   <value column="Help" original="Information from EFT media">Informação proveniente da mídia de TEF</value>
   <value column="PO_Description" original=""/>
@@ -14965,8 +14965,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2290" trl="Y">
-  <value column="Name" original="EFT Currency">Moeda da TEF</value>
-  <value column="PrintName" original="EFT Currency">Moeda da TEF</value>
+  <value column="Name" original="EFT Currency">Moeda (TEF)</value>
+  <value column="PrintName" original="EFT Currency">Moeda (TEF)</value>
   <value column="Description" original="Electronic Funds Transfer Currency">Moeda da Transferência Eletrônica de Fundos</value>
   <value column="Help" original="Information from EFT media">Informação proveniente da mídia de TEF</value>
   <value column="PO_Description" original=""/>
@@ -14985,8 +14985,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2292" trl="Y">
-  <value column="Name" original="EFT Statement Line Date">Data da Linha do Extrato da TEF</value>
-  <value column="PrintName" original="EFT Statement Line Date">Data da Linha do Extrato da TEF</value>
+  <value column="Name" original="EFT Statement Line Date">Data da Linha do Extrato (TEF)</value>
+  <value column="PrintName" original="EFT Statement Line Date">Data da Linha do Extrato (TEF)</value>
   <value column="Description" original="Electronic Funds Transfer Statement Line Date">Data da Linha do Extrato da Transferência Eletrônica de Fundos</value>
   <value column="Help" original="Information from EFT media">Informação proveniente da mídia de TEF</value>
   <value column="PO_Description" original=""/>
@@ -15005,9 +15005,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2294" trl="Y">
-  <value column="Name" original="EFT Effective Date">Data Efetiva da TEF</value>
-  <value column="PrintName" original="EFT Effective Date">Data Efetiva da TEF</value>
-  <value column="Description" original="Electronic Funds Transfer Valuta (effective) Date">Data (Efetiva) de Validação da Transferência Eletrônica de Fundos</value>
+  <value column="Name" original="EFT Effective Date">Data da Liquidação (TEF)</value>
+  <value column="PrintName" original="EFT Effective Date">Data da Liquidação (TEF)</value>
+  <value column="Description" original="Electronic Funds Transfer Valuta (effective) Date">Data da Liquidação da Transferência Eletrônica de Fundos</value>
   <value column="Help" original="Information from EFT media">Informação proveniente da mídia de TEF</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -15485,8 +15485,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2348" trl="Y">
-  <value column="Name" original="Match Statement">Confrontar Extrato</value>
-  <value column="PrintName" original="Match Statement">Confrontar Extrato</value>
+  <value column="Name" original="Match Statement">Conciliar Extrato</value>
+  <value column="PrintName" original="Match Statement">Conciliar Extrato</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -16365,9 +16365,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2438" trl="Y">
-  <value column="Name" original="Text Message">Texto de Mensagem</value>
+  <value column="Name" original="Text Message">Mensagem de Texto</value>
   <value column="PrintName" original="Message">Mensagem</value>
-  <value column="Description" original="Text Message">Texto de Mensagem</value>
+  <value column="Description" original="Text Message">Mensagem de Texto</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -17615,8 +17615,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2572" trl="Y">
-  <value column="Name" original="Include Disputed">Incluir Em Disputa</value>
-  <value column="PrintName" original="Include Disputed">Incluir Em Disputa</value>
+  <value column="Name" original="Include Disputed">Incluir Faturas em Disputa</value>
+  <value column="PrintName" original="Include Disputed">Em Disputa</value>
   <value column="Description" original="Include disputed Invoices">Incluir Faturas em Disputa</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -18496,10 +18496,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2662" trl="Y">
-  <value column="Name" original="Allocate Oldest First">Primeiramente alocar os mais antigos</value>
-  <value column="PrintName" original="Allocate Oldest First">Primeiramente alocar os mais antigos</value>
-  <value column="Description" original="Allocate payments to the oldest invoice">Alocar pagamentos à fatura mais antiga</value>
-  <value column="Help" original="Allocate payments to the oldest invoice. There might be an unallocated amount remaining.">Alocar pagamentos à fatura mais antiga. É possível que exista um valor não alocado remanescente.</value>
+  <value column="Name" original="Allocate Oldest First">Alocar Primeiro as mais Antigas</value>
+  <value column="PrintName" original="Allocate Oldest First">Alocar Primeiro as mais Antigas</value>
+  <value column="Description" original="Allocate payments to the oldest invoice">Alocar pagamentos às faturas mais antigas</value>
+  <value column="Help" original="Allocate payments to the oldest invoice. There might be an unallocated amount remaining.">Alocar pagamentos às faturas mais antigas. É possível que sobre valores não alocados.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -20427,9 +20427,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2866" trl="Y">
-  <value column="Name" original="Match Requirement">Exigência de Confrontação</value>
-  <value column="PrintName" original="Match">Confrontar</value>
-  <value column="Description" original="Matching Requirement for Invoice">Exigência de Confrontação para Fatura</value>
+  <value column="Name" original="Match Requirement">Exigência de Conciliação</value>
+  <value column="PrintName" original="Match">Conciliação</value>
+  <value column="Description" original="Matching Requirement for Invoice">Exigência de Conciliação para a(s) Fatura(s)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -29195,9 +29195,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54099" trl="N">
-  <value column="Name" original="All Allocations">All Allocations</value>
-  <value column="PrintName" original="All Allocations">All Allocations</value>
+ <row id="54099" trl="Y">
+  <value column="Name" original="All Allocations">Todas as Alocações</value>
+  <value column="PrintName" original="All Allocations">Todas as Alocações</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -30407,9 +30407,9 @@ Produto: usado para adicionar produtos com facilidade ao pedido no PDV</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54393" trl="N">
-  <value column="Name" original="Cash Plan">Cash Plan</value>
-  <value column="PrintName" original="Cash Plan">Cash Plan</value>
+ <row id="54393" trl="Y">
+  <value column="Name" original="Cash Plan">Planejamento de Caixa</value>
+  <value column="PrintName" original="Cash Plan">Planejamento de Caixa</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -53118,9 +53118,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202195" trl="N">
-  <value column="Name" original="Deposit Batch">Deposit Batch</value>
-  <value column="PrintName" original="Deposit Batch">Deposit Batch</value>
+ <row id="202195" trl="Y">
+  <value column="Name" original="Deposit Batch">Lote de Pagamentos</value>
+  <value column="PrintName" original="Deposit Batch">Lote de Pagamentos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -53138,9 +53138,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202197" trl="N">
-  <value column="Name" original="Deposit Date">Deposit Date</value>
-  <value column="PrintName" original="Deposit Date">Deposit Date</value>
+ <row id="202197" trl="Y">
+  <value column="Name" original="Deposit Date">Data do Depósito</value>
+  <value column="PrintName" original="Deposit Date">Data do Depósito</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -53148,9 +53148,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202198" trl="N">
-  <value column="Name" original="Deposit Amount">Deposit Amount</value>
-  <value column="PrintName" original="Deposit Amount">Deposit Amount</value>
+ <row id="202198" trl="Y">
+  <value column="Name" original="Deposit Amount">Valor do Depósito</value>
+  <value column="PrintName" original="Deposit Amount">Valor do Depósito</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -55044,10 +55044,10 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="97179a3c-2f7d-4e98-b9c8-c0ebfc09e079">
-  <value column="Name" original="Legal Message">Legal Message</value>
-  <value column="PrintName" original="Legal Message">Legal Message</value>
-  <value column="Description" original="Identifies a Legal Message">Identifies a Legal Message</value>
+ <row trl="Y" uuid="97179a3c-2f7d-4e98-b9c8-c0ebfc09e079">
+  <value column="Name" original="Legal Message">Mensagem Legal</value>
+  <value column="PrintName" original="Legal Message">Mensagem Legal</value>
+  <value column="Description" original="Identifies a Legal Message">Identifica a Mensagem Legal</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -55064,10 +55064,10 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="8480261e-799b-423d-932b-b58a5ba36bce">
-  <value column="Name" original="Tax Group">Tax Group</value>
-  <value column="PrintName" original="Tax Group">Tax Group</value>
-  <value column="Description" original="Identifies a NF Tax Group">Identifies a NF Tax Group</value>
+ <row trl="Y" uuid="8480261e-799b-423d-932b-b58a5ba36bce">
+  <value column="Name" original="Tax Group">Grupo de Tributação de NF</value>
+  <value column="PrintName" original="Tax Group">Grupo de Tributação de NF</value>
+  <value column="Description" original="Identifies a NF Tax Group">Identifica um Grupo de Tributação de Nota Fiscal</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -55104,10 +55104,10 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="39447ea3-34ae-4e39-b6d8-a9d4baa93af9">
-  <value column="Name" original="BP Fiscal Group">BP Fiscal Group</value>
-  <value column="PrintName" original="BP Fiscal Group">BP Fiscal Group</value>
-  <value column="Description" original="Identifies a Business Partner Fiscal Group">Identifies a Business Partner Fiscal Group</value>
+ <row trl="Y" uuid="39447ea3-34ae-4e39-b6d8-a9d4baa93af9">
+  <value column="Name" original="BP Fiscal Group">Grupo de Tributação de PN</value>
+  <value column="PrintName" original="BP Fiscal Group">Grupo de Tributação de PN</value>
+  <value column="Description" original="Identifies a Business Partner Fiscal Group">Identifica um Grupo de Tributação de Parceiro de Negócios</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -55144,10 +55144,10 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="89977f5a-9ebc-47ba-99b9-b9fd5556be90">
-  <value column="Name" original="CFOP Business Partner Category">CFOP Business Partner Category</value>
-  <value column="PrintName" original="CFOP Business Partner Category">CFOP Business Partner Category</value>
-  <value column="Description" original="Identifies a CFOP Business Partner Category">Identifies a CFOP Business Partner Category</value>
+ <row trl="Y" uuid="89977f5a-9ebc-47ba-99b9-b9fd5556be90">
+  <value column="Name" original="CFOP Business Partner Category">Categoria CFOP de PN</value>
+  <value column="PrintName" original="CFOP Business Partner Category">Categoria CFOP de PN</value>
+  <value column="Description" original="Identifies a CFOP Business Partner Category">Identifica uma Categoria CFOP de Parceiro de Negócios</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -55528,6 +55528,316 @@ Strings may be in single quotes (optional)]]></value>
   <value column="Name" original="Tax Rate">Tax Rate</value>
   <value column="PrintName" original="Tax Rate">Tax Rate</value>
   <value column="Description" original="Indicates the Tax Rate">Indicates the Tax Rate</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="e3263f7e-e45b-4cb1-8128-97a5e2edc76a">
+  <value column="Name" original="Has Substitution">Has Substitution</value>
+  <value column="PrintName" original="Has Substitution">Has Substitution</value>
+  <value column="Description" original="Defines if the record has Substituion">Defines if the record has Substituion</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="0c0cb8ee-8958-41d8-a807-21a3ffd91beb">
+  <value column="Name" original="NCM Tax">NCM Tax</value>
+  <value column="PrintName" original="NCM Tax">NCM Tax</value>
+  <value column="Description" original="Defines NCM Tax">Defines NCM Tax</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="68be99b2-c630-4fb1-b2c0-a567a84f8012">
+  <value column="Name" original="LBR_NCMTax_UU">LBR_NCMTax_UU</value>
+  <value column="PrintName" original="LBR_NCMTax_UU">LBR_NCMTax_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="51551535-58f4-4cdf-bbd9-2867d42e84b2">
+  <value column="Name" original="ICMS Matrix">ICMS Matrix</value>
+  <value column="PrintName" original="ICMS Matrix">ICMS Matrix</value>
+  <value column="Description" original="Identifies ICMS Matriz">Identifies ICMS Matriz</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="78525e9e-3174-4293-8ceb-f46e9964b8cc">
+  <value column="Name" original="LBR_ICMSMatrix_UU">LBR_ICMSMatrix_UU</value>
+  <value column="PrintName" original="LBR_ICMSMatrix_UU">LBR_ICMSMatrix_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="df107316-d153-4935-af8a-391d8ca82ebc">
+  <value column="Name" original="ST Tax">ST Tax</value>
+  <value column="PrintName" original="ST Tax">ST Tax</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="90081618-1e9a-4406-949a-4341639ed966">
+  <value column="Name" original="ISS (Services) Matrix">ISS (Services) Matrix</value>
+  <value column="PrintName" original="ISS (Services) Matrix">ISS (Services) Matrix</value>
+  <value column="Description" original="Indicates the ISS Matrix">Indicates the ISS Matrix</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="9b6ccd06-ef4c-4771-91af-11f1716144ee">
+  <value column="Name" original="LBR_ISSMatrix_UU">LBR_ISSMatrix_UU</value>
+  <value column="PrintName" original="LBR_ISSMatrix_UU">LBR_ISSMatrix_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="c39e841b-4ae1-4213-9095-0dec2cc1efd9">
+  <value column="Name" original="Tax Exception Type">Tipo de Exceção de Impostos</value>
+  <value column="PrintName" original="Tax Exception Type">Tipo de Exceção de Impostos</value>
+  <value column="Description" original="Defines the Tax Exception Type">Define o Tipo de Exceção de Impostos</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="2e81993d-bd4e-4ef2-8afb-96f820863dd6">
+  <value column="Name" original="Purchase Transaction">Transação de Compra</value>
+  <value column="PrintName" original="Purchase Transaction">Transação de Compra</value>
+  <value column="Description" original="This is a Purchase Transaction">Esta é uma Transação de Compra</value>
+  <value column="Help" original="The Purchase Transaction checkbox indicates if this item is a Purchase Transaction.">A caixa de verificação "Transação de Compra" indica se este item é uma Transação de Compra.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="576d95d2-6bcc-49b9-b140-99e5dd7208b9">
+  <value column="Name" original="Tax Configuration">Tax Configuration</value>
+  <value column="PrintName" original="Tax Configuration">Tax Configuration</value>
+  <value column="Description" original="Tax Configuration Used">Tax Configuration Used</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="92ee4390-e20f-498d-9d5b-87253ceb282a">
+  <value column="Name" original="LBR_TaxConfiguration_UU">LBR_TaxConfiguration_UU</value>
+  <value column="PrintName" original="LBR_TaxConfiguration_UU">LBR_TaxConfiguration_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="32c3ac90-16c6-4f89-9d53-3766c5d1a999">
+  <value column="Name" original="Business Partner Exception">Business Partner Exception</value>
+  <value column="PrintName" original="Business Partner Exception">Business Partner Exception</value>
+  <value column="Description" original="Identifies a Business Partner Exception">Identifies a Business Partner Exception</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="b8c1cd28-6570-4e00-a561-2a7e2038f19b">
+  <value column="Name" original="LBR_TaxConfig_BPartner_UU">LBR_TaxConfig_BPartner_UU</value>
+  <value column="PrintName" original="LBR_TaxConfig_BPartner_UU">LBR_TaxConfig_BPartner_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="dcb19b2c-9d92-45e5-a48a-b978d818deea">
+  <value column="Name" original="Tax Status">Situação Tributária (ICMS)</value>
+  <value column="PrintName" original="Tax Status">Situação Tributária (ICMS)</value>
+  <value column="Description" original="Defines the Tax Status">Define a Situação Tributária (ICMS)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="a03922e9-c67e-4e48-b280-e59d6248db1d">
+  <value column="Name" original="Business Partner Group Exception">Business Partner Group Exception</value>
+  <value column="PrintName" original="Business Partner Group Exception">Business Partner Group Exception</value>
+  <value column="Description" original="Identifies a Business Partner Group Exception">Identifies a Business Partner Group Exception</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="e89e6823-e92e-495d-a672-74d6022fad00">
+  <value column="Name" original="LBR_TaxConfig_BPGroup_UU">LBR_TaxConfig_BPGroup_UU</value>
+  <value column="PrintName" original="LBR_TaxConfig_BPGroup_UU">LBR_TaxConfig_BPGroup_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="29b3f613-d5db-4b7a-a44c-6985f22f7eef">
+  <value column="Name" original="Region Exception">Region Exception</value>
+  <value column="PrintName" original="Region Exception">Region Exception</value>
+  <value column="Description" original="Identifies a Region Exception">Identifies a Region Exception</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="65268b5f-aec3-4758-ae46-68ce46e6aa9c">
+  <value column="Name" original="LBR_TaxConfig_Region_UU">LBR_TaxConfig_Region_UU</value>
+  <value column="PrintName" original="LBR_TaxConfig_Region_UU">LBR_TaxConfig_Region_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="b97b2a77-590b-4715-8382-01962344be96">
+  <value column="Name" original="Product Exception">Product Exception</value>
+  <value column="PrintName" original="Product Exception">Product Exception</value>
+  <value column="Description" original="Indicates a Product Exception">Indicates a Product Exception</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="46936a44-e42c-48d9-bdde-e2ab24bc4c08">
+  <value column="Name" original="LBR_TaxConfig_Product_UU">LBR_TaxConfig_Product_UU</value>
+  <value column="PrintName" original="LBR_TaxConfig_Product_UU">LBR_TaxConfig_Product_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="9710db2c-eec1-4517-9606-0814da8a6014">
+  <value column="Name" original="Product Group Exception">Product Group Exception</value>
+  <value column="PrintName" original="Product Group Exception">Product Group Exception</value>
+  <value column="Description" original="Indicates a Product Group Exception">Indicates a Product Group Exception</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="7b812117-7864-48e1-a54a-4982f093655b">
+  <value column="Name" original="LBR_TaxConfig_ProductGroup_UU">LBR_TaxConfig_ProductGroup_UU</value>
+  <value column="PrintName" original="LBR_TaxConfig_ProductGroup_UU">LBR_TaxConfig_ProductGroup_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="3ee1f0ee-415e-452a-8254-52886d1103e1">
+  <value column="Name" original="Is Substituicao Tributaria">Substituição Tributária</value>
+  <value column="PrintName" original="Is Substituicao Tributaria">Substituição Tributária</value>
+  <value column="Description" original="Defines the Is Substituicao Tributaria Status">Define se o CFOP é utilizado com Substituição Tributária</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="e3e3edf1-231d-4150-8bf7-0ae9a8ba5941">
+  <value column="Name" original="Tax Definition">Tax Definition</value>
+  <value column="PrintName" original="Tax Definition">Tax Definition</value>
+  <value column="Description" original="Defines the Tax Definition">Defines the Tax Definition</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="a2cf11b9-0d34-4f6a-8e88-f54d97b16af1">
+  <value column="Name" original="LBR_TaxDefinition_UU">LBR_TaxDefinition_UU</value>
+  <value column="PrintName" original="LBR_TaxDefinition_UU">LBR_TaxDefinition_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="35e1b0ed-1745-48aa-8e89-121a43c365e0">
+  <value column="Name" original="CFOP">CFOP</value>
+  <value column="PrintName" original="CFOP">CFOP</value>
+  <value column="Description" original="Indentifies the CFOP">Identifica o CFOP</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="e1e73f01-317d-48cb-8a71-56914bdad788">
+  <value column="Name" original="LBR_CFOP_UU">LBR_CFOP_UU</value>
+  <value column="PrintName" original="LBR_CFOP_UU">LBR_CFOP_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="06490c46-07b5-45c9-9c70-ad7194a8e9e0">
+  <value column="Name" original="CFOP Line">CFOP Line</value>
+  <value column="PrintName" original="CFOP Line">CFOP Line</value>
+  <value column="Description" original="Identifies the CFOP Line">Identifies the CFOP Line</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="24cef890-0225-4870-a458-054aef0dfc51">
+  <value column="Name" original="LBR_CFOPLine_UU">LBR_CFOPLine_UU</value>
+  <value column="PrintName" original="LBR_CFOPLine_UU">LBR_CFOPLine_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="ce1d280d-9e52-4262-b505-d7adcdf25813">
+  <value column="Name" original="Destination Type">Categoria de Destino</value>
+  <value column="PrintName" original="Destination Type">Categoria de Destino</value>
+  <value column="Description" original="Defines the Destination Type">Define a Categoria de Destino</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>

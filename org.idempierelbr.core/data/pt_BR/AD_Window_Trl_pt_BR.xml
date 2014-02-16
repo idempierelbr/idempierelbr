@@ -388,9 +388,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The system creates messages while performing processes. In this window you can view them.">O sistema cria mensagens ao executar processos. Nesta janela você pode visualizá-las.</value>
  </row>
  <row id="194" trl="Y">
-  <value column="Name" original="Bank/Cash Statement">Extrato Bancário</value>
-  <value column="Description" original="Process Bank Statements">Processar Extratos Bancários</value>
-  <value column="Help" original="The Process Bank Statements window allows you to reconcile your Bank Statements.  You can either enter the line items from the statement in the Statement Line tab or select the 'Create From' button to automatically generate the statement from all unreconciled payments to this bank account.  Once you have completed reconciling, select the 'Process Statement' button to mark the payments as reconciled and update the appropriate GL accounts.">a Janela "Processar Extratos Bancários" permite a você reconciliar seus Extratos Bancários.  Você pode digitar os itens a partir do extrato na Aba "Linha de Extrato" ou selecionar o botão 'Criar de' para gerar automaticamente o extrato de todos os pagamentos não reconciliados a esta conta bancária.  Assim que você tiver completado a reconciliação, selecione o botão 'Processar Extrato' para marcar os pagamentos como reconciliados e atualizar as contas apropriadas do RG (Razão Geral).</value>
+  <value column="Name" original="Bank/Cash Statement">Extrato Bancário/Caixa</value>
+  <value column="Description" original="Process Bank Statements">Processamento de Extratos Bancários e de Caixa</value>
+  <value column="Help" original="The Process Bank Statements window allows you to reconcile your Bank Statements.  You can either enter the line items from the statement in the Statement Line tab or select the 'Create From' button to automatically generate the statement from all unreconciled payments to this bank account.  Once you have completed reconciling, select the 'Process Statement' button to mark the payments as reconciled and update the appropriate GL accounts.">a Janela "Extrato Bancário/Caixa" permite a você reconciliar seus Extratos Bancários ou de Caixa. Você pode digitar os itens a partir do extrato na Aba "Linha de Extrato" ou selecionar o botão 'Criar de' para gerar automaticamente o extrato de todos os pagamentos não reconciliados à conta bancária.  Assim que você tiver completado a reconciliação, selecione o botão 'Processar Extrato' para marcar os pagamentos como reconciliados e atualizar as contas apropriadas do Livro Razão.</value>
  </row>
  <row id="195" trl="Y">
   <value column="Name" original="Payment">Pagamento</value>
@@ -438,9 +438,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Reverse Allocation Window allows you to view and reverse a payment allocation">A Janela "Estornar Alocação" permite a você visualizar e estornar uma alocação de pagamento</value>
  </row>
  <row id="206" trl="Y">
-  <value column="Name" original="Payment Selection">Seleção de Pagamento</value>
+  <value column="Name" original="Payment Selection">Seleção de Pagamentos</value>
   <value column="Description" original="Select Invoices for Payment">Selecionar Faturas para Pagamento</value>
-  <value column="Help" original="The Payment Selection Window allows you to select and process the invoices you want to pay.&#10;(a) You can create a Payment Selection and select the invoices manually or generate the suggestions based on criteria.  You can change the amount to be paid or delete invoices, you do not want to pay.&#10;&#10;(b) If you are happy with the Payment Selection, you create the payments.&#10;&#10;(c) You print or export your payments in the Window Payment Print/Export">A Janela "Seleção de Pagamento" permite a você selecionar e processar as faturas que você deseja pagar. (a) Você pode criar uma Seleção de Pagamento e selecionar as faturas manualmente ou gerar sugestões baseadas em critérios.  Você pode alterar o valor a ser pago ou excluir faturas que você não deseja pagar.
+  <value column="Help" original="The Payment Selection Window allows you to select and process the invoices you want to pay.&#10;(a) You can create a Payment Selection and select the invoices manually or generate the suggestions based on criteria.  You can change the amount to be paid or delete invoices, you do not want to pay.&#10;&#10;(b) If you are happy with the Payment Selection, you create the payments.&#10;&#10;(c) You print or export your payments in the Window Payment Print/Export">A Janela "Seleção de Pagamentos" permite a você selecionar e processar as faturas que você deseja pagar. (a) Você pode criar uma Seleção de Pagamentos e selecionar as faturas manualmente ou gerar sugestões baseadas em critérios.  Você pode alterar o valor a ser pago ou excluir faturas que você não deseja pagar.
 
 (b) Se você estiver contente com a Seleção de Pagamentos, você cria os pagamentos.
 
@@ -900,9 +900,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="An algorithm to find Business Partners, Invoices, Payments in imported Bank Statements">Um algorítimo para encontrar Parceiros de Negócios, Faturas, Pagamentos em Extratos Bancários Importados</value>
  </row>
  <row id="303" trl="Y">
-  <value column="Name" original="Payment Batch">Lote de Pagamento</value>
-  <value column="Description" original="Process Payment Patches for EFT">Processar Pagamentos para TEF (Transferência Eletrônica de Fundos)</value>
-  <value column="Help" original="Electronic Fund Transfer Payment Batch.">Lote de Pagamento por Transferência Eletrônica de Fundos.</value>
+  <value column="Name" original="Payment Batch">Lote de Pagamentos (TEF)</value>
+  <value column="Description" original="Process Payment Patches for EFT">Processar Pagamentos por TEF (Transferência Eletrônica de Fundos)</value>
+  <value column="Help" original="Electronic Fund Transfer Payment Batch.">Lote de Pagamentos por Transferência Eletrônica de Fundos.</value>
  </row>
  <row id="304" trl="Y">
   <value column="Name" original="Organization Type">Tipo da Organização</value>
@@ -1969,8 +1969,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Payment Transactions">Transações de Pagamentos</value>
   <value column="Help" original=""/>
  </row>
- <row id="200018" trl="N">
-  <value column="Name" original="Online Transaction History">Online Transaction History</value>
+ <row id="200018" trl="Y">
+  <value column="Name" original="Online Transaction History">Histórico de Transação Online</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2019,10 +2019,10 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Shipping Transactions">Transação de Remessa</value>
   <value column="Help" original=""/>
  </row>
- <row id="200031" trl="N">
-  <value column="Name" original="Payments into Batch">Payments into Batch</value>
-  <value column="Description" original="Process Payments">Process Payments</value>
-  <value column="Help" original="The Process Payments Window allows you to enter payments for invoices.  If the payment is for a single invoice then it can be processed here.">The Process Payments Window allows you to enter payments for invoices.  If the payment is for a single invoice then it can be processed here.</value>
+ <row id="200031" trl="Y">
+  <value column="Name" original="Payments into Batch">Pagamentos em Lote</value>
+  <value column="Description" original="Process Payments">Processamento de Pagamentos</value>
+  <value column="Help" original="The Process Payments Window allows you to enter payments for invoices.  If the payment is for a single invoice then it can be processed here.">A janela Pagamentos em Lote permite o pagamento de faturas. Se o pagamento é para uma única fatura, ele pode ser processado aqui.</value>
  </row>
  <row id="200034" trl="N">
   <value column="Name" original="Context Help">Context Help</value>
@@ -2112,6 +2112,26 @@ MRP - 110	 No exists Dem</value>
  <row trl="Y" uuid="85a92339-145c-4afc-b2b0-29d196865ebe">
   <value column="Name" original="Tax Formula (Brazil)">Fórmula de Imposto (Brasil)</value>
   <value column="Description" original="">Manutenção e Gerenciamento de Fórmulas de Imposto (Brasil)</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="e4d5080b-c2ed-4386-af10-3db53ae1bb73">
+  <value column="Name" original="ICMS Matrix">Matriz de ICMS</value>
+  <value column="Description" original="Maintain ICMS Matriz">Manutenção de Matriz de ICMS</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="340b974e-1739-4f26-87a4-6fa6a30d56c9">
+  <value column="Name" original="ISS Matrix">Matriz de ISS</value>
+  <value column="Description" original="Maintain ISS (Services) Matrix">Manutenção da Matriz de ISS</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="c1b7f14e-5ecf-4109-acf5-044d1fa7e456">
+  <value column="Name" original="Tax Configuration">Configuração de Impostos</value>
+  <value column="Description" original="Defines Tax Configuration">Define a Configuração de Impostos</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="70c0b0f9-02e6-4361-8078-ee1afc3c52cb">
+  <value column="Name" original="CFOP">CFOP</value>
+  <value column="Description" original="Maintain CFOP">Manutenção de CFOP</value>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>

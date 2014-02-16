@@ -219,8 +219,8 @@
  </row>
  <row id="146" trl="Y">
   <value column="Name" original="UnReconciled Payments">Pagamentos Não Conciliados</value>
-  <value column="Description" original="Payments not reconciled with Bank Statement">Pagamentos não conciliados com o Extrato Bancário</value>
-  <value column="Help" original="The report lists payments which are not reconciled with a bank statement. Payments with a zero payment amount are not listed.">O relatório lista pagamentos que não estejam reconciliados com um extrato bancário. Pagamentos com valor zero não são listados.</value>
+  <value column="Description" original="Payments not reconciled with Bank Statement">Pagamentos não Conciliados com Extrato Bancário</value>
+  <value column="Help" original="The report lists payments which are not reconciled with a bank statement. Payments with a zero payment amount are not listed.">O relatório lista pagamentos que não estão reconciliados com um extrato bancário/caixa. Pagamentos com valor zero não são listados.</value>
  </row>
  <row id="147" trl="Y">
   <value column="Name" original="Process Statement">Processar Extrato</value>
@@ -263,9 +263,9 @@
   <value column="Help" original="Generate Invoice from Receipt will create an invoice based on the selected receipt and match the invoice to that receipt. You can set the document number only if the invoice document type allows to set the document number manually.">Este processo gera uma fatura baseando-se na movimentação de material (remessa/recebimento), e automaticamente faz a conciliação de ambos os documentos. Você pode atribuir manualmente um número de documento à fatura gerada, mas somente se o tipo de documento permitir. Atenção: a movimentação de material deve estar completa!</value>
  </row>
  <row id="155" trl="Y">
-  <value column="Name" original="Prepare Payment">Preparar Pagamento</value>
-  <value column="Description" original="Create Prepared Payments (Checks) to be paid">Cria Pagamentos Preparados (Cheques) a serem pagos</value>
-  <value column="Help" original="You create the actual Payments via Payment Print/Export">Você cria os Pagamentos reais via "Imprimir/Exportar Pagamentos"</value>
+  <value column="Name" original="Prepare Payment">Preparar Pagamentos</value>
+  <value column="Description" original="Create Prepared Payments (Checks) to be paid"/>
+  <value column="Help" original="You create the actual Payments via Payment Print/Export">Os pagamentos propriamente ditos serão gerados na janela Imprimir/Exportar Pagamentos</value>
  </row>
  <row id="156" trl="Y">
   <value column="Name" original="Create From ...">Criar a partir de ...</value>
@@ -323,9 +323,9 @@
   <value column="Help" original=""/>
  </row>
  <row id="171" trl="Y">
-  <value column="Name" original="Receivables Write-Off">Baixa de Contas a Receber</value>
-  <value column="Description" original="Write off open receivables">Baixar contas a receber em aberto</value>
-  <value column="Help" original="Write-off receivables causes the invoices selected by the criteria to be marked as paid and the open invoice amount to be written off.  Alternatively you can create payments.">Dar baixas dos Recebíveis marca as faturas selecionadas pelos critérios como pagas e dá baixa nos valores da fatura aberta.  Alternatively you can create payments.</value>
+  <value column="Name" original="Receivables Write-Off">Baixar Itens em Aberto</value>
+  <value column="Description" original="Write off open receivables">Baixar Itens (Faturas) em Aberto</value>
+  <value column="Help" original="Write-off receivables causes the invoices selected by the criteria to be marked as paid and the open invoice amount to be written off.  Alternatively you can create payments.">Este processo dá baixa em itens em aberto, ou seja, marca as faturas selecionadas pelos critérios abaixo como pagas. Você pode também criar pagamentos.</value>
  </row>
  <row id="172" trl="Y">
   <value column="Name" original="Synchronize Terminology">Sincronização de Terminologia</value>
@@ -744,13 +744,13 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
   <value column="Help" original=""/>
  </row>
  <row id="256" trl="Y">
-  <value column="Name" original="Match Bank Statement">Confrontar Extrato Bancário</value>
-  <value column="Description" original="Match Bank Statement Info to Business Partners, Invoices and Payments">Confronta Informações de Extratos Bancários para Parceiros de Negócios, Faturas e Pagamentos</value>
+  <value column="Name" original="Match Bank Statement">Conciliar Extrato Bancário</value>
+  <value column="Description" original="Match Bank Statement Info to Business Partners, Invoices and Payments">Conciliar Informações do Extrato Bancário/Caixa aos Parceiros de Negócios, Faturas e Pagamentos</value>
   <value column="Help" original=""/>
  </row>
  <row id="257" trl="Y">
   <value column="Name" original="Create Payment">Criar Pagamento</value>
-  <value column="Description" original="Create Payment from Bank Statement Info">Cria Pagamentos a partir de Informações de Extrato Bancário</value>
+  <value column="Description" original="Create Payment from Bank Statement Info">Criar Pagamento a partir das Informações do Extrato Bancário/Caixa</value>
   <value column="Help" original=""/>
  </row>
  <row id="258" trl="Y">
@@ -978,13 +978,13 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
  </row>
  <row id="302" trl="Y">
   <value column="Name" original="Auto Allocation">Alocação Automática</value>
-  <value column="Description" original="Automatic allocation of invoices to payments">Alocação automática de faturas para pagamentos</value>
-  <value column="Help" original="Try to allocate invoices to payments for a business partner or group.  You may want to reset existing allocations first.&lt;br&gt;&#10;The allocation is based on (1) payments entered with reference to invoices (2) payment selections (3) business partner balance (4) matching amount of invoice &amp; payment.  Allocation is based on exact amount and includes AP/AR imvoices/payments.&lt;br&gt;&#10;Optionally as (5), you can enable to allocate payments to the oldest invoice. In this case, there might be an unallocated amount remaining."><![CDATA[Tenta alocar faturas a pagamentos para um parceiro de negócios ou grupo.  Em primeiro lugar, você pode querer zerar as alocações existentes.<br> A alocação é baseada em (1) Pagamentos digitados com referência a faturas, (2) Seleções de pagamentos, (3) Saldo do parceiro de negócios, (4) Valor correspondente da fatura & pagamento.  A alocação é baseada no montante exato e inclui faturas/pagamentos de contas AP/AR.<br> Opcionalmente como (5), você pode liberar a alocação de pagamentos à fatura mais antiga. Neste caso, poderá ocorrer o aparecimento de um valor não alocado remanescente.]]></value>
+  <value column="Description" original="Automatic allocation of invoices to payments">Alocação Automática de Fatura(s) ao(s) Pagamento(s)</value>
+  <value column="Help" original="Try to allocate invoices to payments for a business partner or group.  You may want to reset existing allocations first.&lt;br&gt;&#10;The allocation is based on (1) payments entered with reference to invoices (2) payment selections (3) business partner balance (4) matching amount of invoice &amp; payment.  Allocation is based on exact amount and includes AP/AR imvoices/payments.&lt;br&gt;&#10;Optionally as (5), you can enable to allocate payments to the oldest invoice. In this case, there might be an unallocated amount remaining."><![CDATA[Este processo tenta alocar automaticamente faturas a pagamentos realizados de/para um parceiro de negócios ou grupo de parceiros. Talvez você queira excluir alocações existentes antes de tentar a alocação automática.<br>A alocação é feita com base em: (1) Pagamentos que fazem referência a uma fatura, (2) Seleções de pagamentos, (3) Saldo do parceiro de negócios, (4) Valores iguais da fatura e do pagamento. A alocação é baseada no valor exato e inclui faturas/pagamentos AR/AP.<br>Opcionalmente você pode alocar os pagamentos para as faturas mais antigas. Neste caso, podem sobrar valores não alocados.]]></value>
  </row>
  <row id="303" trl="Y">
-  <value column="Name" original="Reset Allocation">Resetar Alocação</value>
-  <value column="Description" original="Reset (delete) allocation of invoices to payments">Resetar (apagar) a alocação de faturas para pagamento</value>
-  <value column="Help" original="Delete Allocations for a business partner or business partner group, accounting date range or individual allocation. In contrast to &quot;Void&quot; in &quot;View Allocation&quot;, the allocation is deleted (no trace), if the period is open.">Apagar alocações para um parceiro de negócios ou grupo de parceiros de negócios, faixa de datas contábeis ou alocação individual. Em contraposição a "Anulado" em "Visualizar Alocação", a alocação é excluida (sem rastros), se o período estiver aberto.</value>
+  <value column="Name" original="Reset Allocation">Excluir Alocação</value>
+  <value column="Description" original="Reset (delete) allocation of invoices to payments">Excluir Alocação de Fatura(s) e seus Pagamento(s)</value>
+  <value column="Help" original="Delete Allocations for a business partner or business partner group, accounting date range or individual allocation. In contrast to &quot;Void&quot; in &quot;View Allocation&quot;, the allocation is deleted (no trace), if the period is open.">Este processo permite excluir alocações baseando-se nos critérios abaixo. Ao contrário da ação de documento Anular (em Visualizar Alocação), este processo exclui as alocações sem deixar rastros (caso o período esteja aberto).</value>
  </row>
  <row id="304" trl="Y">
   <value column="Name" original="Validate Workflow">Validar o Fluxo de Trabalho</value>
@@ -1049,13 +1049,13 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
  </row>
  <row id="316" trl="Y">
   <value column="Name" original="UnAllocated Invoices">Faturas Não Alocadas</value>
-  <value column="Description" original="Invoices not allocated to Payments">Faturas não alocadas a pagamentos</value>
-  <value column="Help" original="Report of not allocated Invoices (for partially paid/allocated invoices see Open Item)">Relatório de faturas não alocadas (para faturas parcialmente pagas/alocadas veja Itens em Aberto)</value>
+  <value column="Description" original="Invoices not allocated to Payments">Faturas Não Alocadas a Pagamento(s)</value>
+  <value column="Help" original="Report of not allocated Invoices (for partially paid/allocated invoices see Open Item)">Relatório de faturas não alocadas (para faturas parcialmente pagas/alocadas veja o relatório Itens em Aberto)</value>
  </row>
  <row id="317" trl="Y">
-  <value column="Name" original="UnAllocated Payments">Pagamentos Não Alocado</value>
-  <value column="Description" original="Payments not allocated to Invoices">Pagamentos não alocados a faturas</value>
-  <value column="Help" original="Report of not allocated Payments (for partially allocated payments, use Payment Detail)">Relatório de pagamentos não alocados (para pagamentos parcialmente alocados veja "Detalhes de Pagamentos")</value>
+  <value column="Name" original="UnAllocated Payments">Pagamentos Não Alocados</value>
+  <value column="Description" original="Payments not allocated to Invoices">Pagamentos Não Alocados a Fatura(s)</value>
+  <value column="Help" original="Report of not allocated Payments (for partially allocated payments, use Payment Detail)">Relatório de pagamentos não alocados (para pagamentos parcialmente alocados veja o relatório Detalhes de Pagamentos)</value>
  </row>
  <row id="318" trl="Y">
   <value column="Name" original="Payment Details">Detalhes de Pagamentos</value>
@@ -1714,9 +1714,9 @@ Consolidate to one Document let the distribution in current Documents with range
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53153" trl="N">
-  <value column="Name" original="Bank Transfer">Bank Transfer</value>
-  <value column="Description" original="Bank Transfer let money tranfer between Banks">Bank Transfer let money tranfer between Banks</value>
+ <row id="53153" trl="Y">
+  <value column="Name" original="Bank Transfer">Transferência Bancária/Caixa</value>
+  <value column="Description" original="Bank Transfer let money tranfer between Banks">Transferência de dinheiro entre contas bancárias ou de caixas</value>
   <value column="Help" original=""/>
  </row>
  <row id="53154" trl="N">
@@ -1891,18 +1891,18 @@ This process should be implemented when the users are not connected.</value>
   <value column="Description" original="Validate Payment Schedule">Validate Payment Schedule</value>
   <value column="Help" original=""/>
  </row>
- <row id="53246" trl="N">
-  <value column="Name" original="Copy from Cash Plan">Copy from Cash Plan</value>
-  <value column="Description" original="Copy Lines from other Cash Plan">Copy Lines from other Cash Plan</value>
+ <row id="53246" trl="Y">
+  <value column="Name" original="Copy from Cash Plan">Copiar Linhas</value>
+  <value column="Description" original="Copy Lines from other Cash Plan">Copiar Linhas de outro Planejamento de Caixa</value>
   <value column="Help" original=""/>
  </row>
- <row id="53247" trl="N">
-  <value column="Name" original="Generate Periodic Plan">Generate Periodic Plan</value>
+ <row id="53247" trl="Y">
+  <value column="Name" original="Generate Periodic Plan">Gerar Planejamento Periódico</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53248" trl="N">
-  <value column="Name" original="Cash Flow Report">Cash Flow Report</value>
+ <row id="53248" trl="Y">
+  <value column="Name" original="Cash Flow Report">Fluxo de Caixa</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1978,9 +1978,9 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200012" trl="N">
-  <value column="Name" original="Copy Lines">Copy Lines</value>
-  <value column="Description" original="Copy Lines from other bank statement">Copy Lines from other bank statement</value>
+ <row id="200012" trl="Y">
+  <value column="Name" original="Copy Lines">Copiar Linhas</value>
+  <value column="Description" original="Copy Lines from other bank statement">Copiar Linhas de outro Extrato Bancário/Caixa</value>
   <value column="Help" original=""/>
  </row>
  <row id="200014" trl="N">
@@ -2063,13 +2063,13 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200031" trl="N">
-  <value column="Name" original="Deposit Batch Close">Deposit Batch Close</value>
+ <row id="200031" trl="Y">
+  <value column="Name" original="Deposit Batch Close">Concluir Depósito em Lote</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200032" trl="N">
-  <value column="Name" original="Bank Statement Create From Batch">Bank Statement Create From Batch</value>
+ <row id="200032" trl="Y">
+  <value column="Name" original="Bank Statement Create From Batch">Criar em Lote</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2078,8 +2078,8 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200035" trl="N">
-  <value column="Name" original="Bank Register Report">Bank Register Report</value>
+ <row id="200035" trl="Y">
+  <value column="Name" original="Bank Register Report">Lançamentos Bancários</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

@@ -1081,10 +1081,10 @@ Imprimindo: - Usualmente, somente a informação da LDM é impressa - Para fatur
   <value column="Help" original="The Accounting Tab is used to define the accounts used for transactions with this Bank.">A Aba "Contabilidade" é usada para definir as contas usadas para transações com este Banco.</value>
  </row>
  <row id="328" trl="Y">
-  <value column="Name" original="Bank/Cash Statement">Extrato Bancário</value>
+  <value column="Name" original="Bank/Cash Statement">Extrato Bancário/Caixa</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Bank/Cash Statement">Extrato Bancário</value>
-  <value column="Help" original="The Bank/Cash Statement Tab defines the Bank/Cash Statement to be reconciled.">A Aba "Extrato Bancário" define o extrato bancário a ser reconciliado.</value>
+  <value column="Description" original="Bank/Cash Statement">Processamento de Extratos Bancários e de Caixa</value>
+  <value column="Help" original="The Bank/Cash Statement Tab defines the Bank/Cash Statement to be reconciled.">A Aba "Extrato Bancário/Caixa" define o extrato bancário a ser reconciliado.</value>
  </row>
  <row id="329" trl="Y">
   <value column="Name" original="Statement Line">Linha de Extrato</value>
@@ -1153,10 +1153,10 @@ Imprimindo: - Usualmente, somente a informação da LDM é impressa - Para fatur
   <value column="Help" original="The Cash Line Tab defines the individual lines for this journal.">A Aba "Linha de Caixa (Cash)" define as linhas individuais para este diário de caixa.</value>
  </row>
  <row id="341" trl="Y">
-  <value column="Name" original="Payment Batch">Lote de Pagamento</value>
+  <value column="Name" original="Payment Batch">Lote de Pagamentos (TEF)</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Process Payment Batch">Processar Lote de Pagamento</value>
-  <value column="Help" original="Electronic Fund Transfer Payment Batch.">Lote de Pagamento por Transferência Eletrônica de Fundos.</value>
+  <value column="Description" original="Process Payment Batch">Processamento de Lote de Pagamentos (TEF)</value>
+  <value column="Help" original="Electronic Fund Transfer Payment Batch.">Lote de Pagamentos por Transferência Eletrônica de Fundos.</value>
  </row>
  <row id="342" trl="Y">
   <value column="Name" original="Field group">Grupo de Campo</value>
@@ -1207,16 +1207,16 @@ Imprimindo: - Usualmente, somente a informação da LDM é impressa - Para fatur
   <value column="Help" original="Add the client and organizations the user has access to. Entries here are ignored, if User Org Access is selected or the role has access to all roles.&lt;br&gt;&#10;Note that access information is cached and requires re-login or reset of cache."><![CDATA[Acrescentar as Empresas e Organizações a que o usuário tem acesso. Estes lançamentos serão ignorados se o "Acesso de Usuários à Organização" for selecionado ou o papel tiver acesso a todos os papéis.<br> Note que a informação de acesso é memorizada e requer re-login ou reset da memória cache.]]></value>
  </row>
  <row id="352" trl="Y">
-  <value column="Name" original="Payment Selection">Seleção de Pagamento</value>
+  <value column="Name" original="Payment Selection">Seleção de Pagamentos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define Payment">Definir Pagamento</value>
-  <value column="Help" original="The Payment Selection Tab defines the bank account and date of the payments to be made. You also create the payments here.">A Aba "Seleção de Pagamento" define a conta bancária e data de pagamentos a serem feitos. Você também cria pagamentos aqui.</value>
+  <value column="Description" original="Define Payment">Definir Pagamentos</value>
+  <value column="Help" original="The Payment Selection Tab defines the bank account and date of the payments to be made. You also create the payments here.">A aba "Seleção de Pagamentos" define a conta bancária e data de pagamentos a serem feitos. Você também cria pagamentos aqui.</value>
  </row>
  <row id="353" trl="Y">
-  <value column="Name" original="Payment Selection Line">Linha de Seleção de Pagamento</value>
+  <value column="Name" original="Payment Selection Line">Linha de Seleção de Pagamentos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Payment Selection Line">Linha de Seleção de Pagamento</value>
-  <value column="Help" original="The Payment Selection Line Tab defines the individual invoices an organization is paying to a Vendor with this payment.">A Aba "Linha de Seleção de Pagamento" define as faturas individuais que uma organização está pagando a um Fornecedor com este pagamento.</value>
+  <value column="Description" original="Payment Selection Line">Linha de Seleção de Pagamentos</value>
+  <value column="Help" original="The Payment Selection Line Tab defines the individual invoices an organization is paying to a Vendor with this payment.">A Aba "Linha de Seleção de Pagamentos" define as faturas individuais que uma organização está pagando a um Fornecedor com este pagamento.</value>
  </row>
  <row id="354" trl="Y">
   <value column="Name" original="Report View Column">Coluna de Visualização de Relatório</value>
@@ -1672,9 +1672,9 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="The Print Table Format lets you define how table header, etc. is printed. If you leave the entries empty, the default colors and fonts are used:&lt;br&gt;&#10;Fonts are based on the Font used in the Report; Page Header and Table Header will be bold, the Function Font is Bold-Italic, the Footer Font is two points smaller, the Parameter Font is Italic."><![CDATA[O Formato de Impressão de Tabela permite definir como o cabeçalho de uma tabela, etc. é impresso. As cores e fontes padrão serão utilizadas se você deixar os campos vazios:<br> Fontes são baseadas na Fonte usada no Relatório; Cabeçalho de Página e Cabeçalho de Tabela estarão em Negrito, a Fonte de Função será Negrito-Itálica, a fonte do Rodapé será dois pontos menor, e a Fonte dos Parâmetros será Itálica.]]></value>
  </row>
  <row id="436" trl="Y">
-  <value column="Name" original="Prepared Payment">Pagamento Preparado</value>
+  <value column="Name" original="Prepared Payment">Pagamentos Preparados</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="View Generated Prepared Payments (Checks)">Visualizar os Pagamentos Preparados Gerados (Cheques)</value>
+  <value column="Description" original="View Generated Prepared Payments (Checks)">Visualizar os Pagamentos Preparados e Gerados (Cheques)</value>
   <value column="Help" original="You create the actual Payments via Payment Print/Export">Você cria os Pagamentos reais via "Imprimir/Exportar Pagamentos"</value>
  </row>
  <row id="437" trl="Y">
@@ -5856,8 +5856,8 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200029" trl="N">
-  <value column="Name" original="Online Transaction History">Online Transaction History</value>
+ <row id="200029" trl="Y">
+  <value column="Name" original="Online Transaction History">Histórico de Transação Online</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6042,14 +6042,14 @@ Printing:
   <value column="Description" original="RMA Tax">Imposto de ARM</value>
   <value column="Help" original="The RMA Tax Tab displays the tax associated with the RMA Lines.">A aba apresenta o valor do imposto baseado nas linhas.</value>
  </row>
- <row id="200067" trl="N">
-  <value column="Name" original="Batch">Batch</value>
+ <row id="200067" trl="Y">
+  <value column="Name" original="Batch">Lote</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200068" trl="N">
-  <value column="Name" original="Lines">Lines</value>
+ <row id="200068" trl="Y">
+  <value column="Name" original="Lines">Linhas</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6272,6 +6272,78 @@ Printing:
  </row>
  <row trl="Y" uuid="b193a2ee-c6d9-4ffc-bb98-281fe7870002">
   <value column="Name" original="Tax Base Type">Modalidade Base de Cálculo</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="84d06b55-40f5-4c82-868b-9df7615fffc5">
+  <value column="Name" original="NCM Tax">NCM Tax</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Taxes for the NCM ">Taxes for the NCM </value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="f6f3cb12-bcfc-4bfc-b7b0-452892ea7170">
+  <value column="Name" original="ICMS Matrix">Matriz de ICMS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain ICMS Matrix">Manutenção de Matriz de ICMS</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="905b342a-fe76-43a2-8e3f-a571073c1323">
+  <value column="Name" original="ISS Matrix">Matriz de ISS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain ISS (Services) Matrix">Manutenção da Matriz de ISS</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="5763b42e-e592-488b-91f1-da6ecd65bd39">
+  <value column="Name" original="Tax Definition">Definição de Impostos</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain Tax Definition">Manutenção de Definição de Impostos</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="9ecf96b3-476a-4e25-97cc-97397b6d866c">
+  <value column="Name" original="Tax Configuration">Configuração de Impostos</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain Tax Configuration">Define a Configuração de Impostos</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="d34916b8-c416-467b-82be-2485d3c1b4e6">
+  <value column="Name" original="Business Partner">Parceiro de Negócios</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="f2254720-40e7-4bb1-b6bb-09d322b5bb2b">
+  <value column="Name" original="Business Partner Group">Grupo de Parceiros</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="25ef0def-2633-41b3-83a7-0736a92ad0f3">
+  <value column="Name" original="Region">Estado (UF)</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="774cc17f-9661-46fc-8414-98ece1d17930">
+  <value column="Name" original="Product">Produto</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="cf901430-55f8-4027-bdf0-3782d9ee152f">
+  <value column="Name" original="Product Group">Grupo de Tributação</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="02ca856c-143b-4fc9-9ea4-72f7a058dd42">
+  <value column="Name" original="CFOP">CFOP</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain CFOP">Manutenção de CFOP</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="e608b0c5-2b23-47f9-b279-0e2b3f350228">
+  <value column="Name" original="Line">Linha</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>

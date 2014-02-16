@@ -33,14 +33,14 @@
   <value column="Help" original="Use the upper portion to create new charges using the general charge accounts.  Use the lower portion to create charges based on the natural account.">Use a parte superior para criar novos débitos usando as contas de despesas gerais .  Use a parte inferior para criar débitos baseado nas contas naturais.</value>
  </row>
  <row id="106" trl="Y">
-  <value column="Name" original="Payment Print/Export">Imprimir/Exportar Pagamentos</value>
+  <value column="Name" original="Payment Print/Export">Imprimir/Exportar Pagamentos (de Seleção)</value>
   <value column="Description" original="Print or export your payments">Imprimir ou exportar seus pagamentos</value>
   <value column="Help" original=""/>
  </row>
  <row id="107" trl="Y">
-  <value column="Name" original="Payment Selection (manual)">Seleção de Pagamento (manual)</value>
-  <value column="Description" original="Manual Payment Selection">Seleção de Pagamento Manual</value>
-  <value column="Help" original="Select vendor invoices for payment. If you don't see an invoice, make sure that it is not included in a different (nprocessed) Payment Selection.">Selecione as Faturas de Fornecedor para pagamento. Se você não vir uma fatura, certifique-se que ela não esteja incluida em um Seleção de Pagamento diferente (nprocessed).</value>
+  <value column="Name" original="Payment Selection (manual)">Seleção de Pagamentos (Manual)</value>
+  <value column="Description" original="Manual Payment Selection">Seleção de Pagamentos Manual</value>
+  <value column="Help" original="Select vendor invoices for payment. If you don't see an invoice, make sure that it is not included in a different (nprocessed) Payment Selection.">Selecione as Faturas de Fornecedor para pagamento. Se você não vir uma fatura, certifique-se que ela não esteja incluída em um Seleção de Pagamento diferente (não processada).</value>
  </row>
  <row id="108" trl="Y">
   <value column="Name" original="Matching PO-Receipt-Invoice">Conciliar Pedido de Compra-Recebimento-Fatura</value>
