@@ -25,7 +25,7 @@ public class EditorFactory implements IEditorFactory {
         }
         
 		if (displayType == DisplayTypeFactory.BRAZILIAN_TAXES) {
-            editor = new WTaxesEditor(gridField);
+            editor = new WTaxesEditor(gridTab, gridField);
         }
 
         return editor;
