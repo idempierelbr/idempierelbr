@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.idempierelbr.tax.CalloutFactory">
+   <implementation class="org.idempierelbr.tax.callout.CalloutFactory"/>
+   <property name="service.ranking" type="Integer" value="20"/>
+   <service>
+      <provide interface="org.adempiere.base.IColumnCalloutFactory"/>
+   </service>
+</scr:component>
