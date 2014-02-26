@@ -55414,10 +55414,10 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="5d50206d-66a9-4dd2-8c26-3a1e8f2299ae">
-  <value column="Name" original="Tax Base Type">Tax Base Type</value>
-  <value column="PrintName" original="Tax Base Type">Tax Base Type</value>
-  <value column="Description" original=""/>
+ <row trl="Y" uuid="5d50206d-66a9-4dd2-8c26-3a1e8f2299ae">
+  <value column="Name" original="Tax Base Type">Modalidade da Base de Cálculo</value>
+  <value column="PrintName" original="Tax Base Type">Modalidade da Base de Cálculo</value>
+  <value column="Description" original="">Indica a modalidade da Base de Cálculo do imposto</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -55434,10 +55434,10 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="6cff9c27-8df9-4be0-9267-0f59974d4209">
-  <value column="Name" original="Transaction Tax">Transaction Tax</value>
-  <value column="PrintName" original="Transaction Tax">Transaction Tax</value>
-  <value column="Description" original="Identifies a transaction tax (document/line)">Identifies a transaction tax (document/line)</value>
+ <row trl="Y" uuid="6cff9c27-8df9-4be0-9267-0f59974d4209">
+  <value column="Name" original="Transaction Tax">Impostos (Transação)</value>
+  <value column="PrintName" original="Transaction Tax">Impostos (Transação)</value>
+  <value column="Description" original="Identifies a transaction tax (document/line)">Identifica as regras para cálculo dos impostos da transação (linha de pedido/fatura/etc.)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -55454,10 +55454,10 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="af99612e-e084-47b4-a4fe-176465f02fdf">
-  <value column="Name" original="Post Tax">Post Tax</value>
-  <value column="PrintName" original="Post Tax">Post Tax</value>
-  <value column="Description" original="Indicates if the Tax should be Posted (Account)">Indicates if the Tax should be Posted (Account)</value>
+ <row trl="Y" uuid="af99612e-e084-47b4-a4fe-176465f02fdf">
+  <value column="Name" original="Post Tax">Contabilizar</value>
+  <value column="PrintName" original="Post Tax">Contabilizar</value>
+  <value column="Description" original="Indicates if the Tax should be Posted (Account)">Indica se o imposto deve ser contabilizado (lançado)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -55474,10 +55474,10 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="ab2ad4dd-64ce-4e48-a2d5-efbb0b22b215">
-  <value column="Name" original="Tax Base">Tax Base</value>
-  <value column="PrintName" original="Tax Base">Tax Base</value>
-  <value column="Description" original="Indicates the Tax Base">Indicates the Tax Base</value>
+ <row trl="Y" uuid="ab2ad4dd-64ce-4e48-a2d5-efbb0b22b215">
+  <value column="Name" original="Tax Base">Redução da Base de Cálculo (%)</value>
+  <value column="PrintName" original="Tax Base">Redução da Base de Cálculo (%)</value>
+  <value column="Description" original="Indicates the Tax Base">Indica a redução da Base de Cálculo (%) do imposto</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -55524,10 +55524,10 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="ab447a14-62a0-4946-8f68-5b8a73308ca5">
-  <value column="Name" original="Tax Rate">Tax Rate</value>
-  <value column="PrintName" original="Tax Rate">Tax Rate</value>
-  <value column="Description" original="Indicates the Tax Rate">Indicates the Tax Rate</value>
+ <row trl="Y" uuid="ab447a14-62a0-4946-8f68-5b8a73308ca5">
+  <value column="Name" original="Tax Rate">Alíquota (%)</value>
+  <value column="PrintName" original="Tax Rate">Alíquota (%)</value>
+  <value column="Description" original="Indicates the Tax Rate">Indica a alíquota (%) do imposto</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>

@@ -50,8 +50,6 @@ import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.compiere.util.Msg;
-import org.compiere.util.Trx;
-import org.compiere.util.TrxRunnable;
 import org.idempierelbr.tax.model.MLBRTax;
 import org.idempierelbr.tax.model.MLBRTaxLine;
 import org.zkoss.zk.ui.Page;
@@ -181,7 +179,7 @@ public final class WTaxesDialog extends Window
 		toolBar.setHflex("5");
 
 		bSave.setImage(ThemeManager.getThemeResource("images/Save24.png"));
-		bSave.setTooltiptext(Msg.getMsg(Env.getCtx(),"NewUpdate"));
+		bSave.setTooltiptext(Msg.getMsg(Env.getCtx(),"Save"));
 		bSave.addEventListener(Events.ON_CLICK, this);
 		bIgnore.setImage(ThemeManager.getThemeResource("images/Ignore24.png"));
 		bIgnore.setTooltiptext(Msg.getMsg(Env.getCtx(),"Ignore"));
@@ -681,19 +679,17 @@ public final class WTaxesDialog extends Window
 		
 		if (!m_changed) {
 			// Delete new tax
-			
+			deleteRecords(m_MLBRTax_new);
 			// Return id of original tax
-			return new Integer(m_MLBRTax_original.get_ID());
+			return m_MLBRTax_original == null ? null : new Integer(m_MLBRTax_original.get_ID());
 		}
 		
-		// Check no. of tax lines. If none, try to delete tax (original and new). Return null;
+		// Check no. of tax lines. If none, try to delete tax (new). Return null;
 		if (m_MLBRTax_new.getLines().length < 1) {
-			//deleteRecords(m_MLBRTax_original.get_ID());
-			deleteRecords(m_MLBRTax_new.get_ID());			
+			// Delete new tax
+			deleteRecords(m_MLBRTax_new);
 			return null;
 		}
-		
-		// Delete original tax
 		
 		// Return id of new tax
 		return new Integer(m_MLBRTax_new.get_ID());
@@ -702,17 +698,16 @@ public final class WTaxesDialog extends Window
 	/**
 	 * 	Delete Record
 	 */
-	private void deleteRecords(final int LBR_Tax_ID)
+	private void deleteRecords(MLBRTax tax)
 	{
-		if (LBR_Tax_ID != 0)
+		if (tax != null)
 		{
-			Trx.run(new TrxRunnable() {
-	            public void run(String trxName) {
-	                MLBRTax tax = new MLBRTax(Env.getCtx(), LBR_Tax_ID, trxName);
-	                tax.deleteLines();
-	                tax.delete(true);
-	            }
-	        });
+			try {
+				tax.deleteLines();
+				tax.deleteEx(true);
+			} catch (Exception e) {}	
+			
+			return;
 		}
 	}	//	deleteRecord
 

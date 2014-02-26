@@ -2134,4 +2134,9 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Maintain CFOP">Manutenção de CFOP</value>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="06389dc4-c8ab-469f-8dbf-1d080984bd80">
+  <value column="Name" original="Transaction Tax">Transaction Tax</value>
+  <value column="Description" original="View Transaction Tax">View Transaction Tax</value>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

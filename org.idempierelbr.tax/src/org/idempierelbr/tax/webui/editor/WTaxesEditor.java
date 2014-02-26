@@ -1,7 +1,6 @@
 package org.idempierelbr.tax.webui.editor;
 
 import org.adempiere.util.Callback;
-import org.adempiere.webui.editor.WAccountEditor;
 import org.adempiere.webui.editor.WEditor;
 import org.adempiere.webui.event.ContextMenuEvent;
 import org.adempiere.webui.event.ContextMenuListener;
@@ -12,12 +11,9 @@ import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.util.Clients;
 import org.adempiere.webui.editor.WEditorPopupMenu;
 import org.adempiere.webui.theme.ThemeManager;
-import org.adempiere.webui.window.WAccountDialog;
 import org.adempiere.webui.window.WFieldRecordInfo;
 import org.compiere.model.GridField;
 import org.compiere.model.GridTab;
-import org.compiere.util.Env;
-import org.compiere.util.Msg;
 import org.idempierelbr.tax.model.MLBRTax;
 import org.idempierelbr.tax.model.MLBRTaxesLookup;
 import org.idempierelbr.tax.model.X_LBR_Tax;
@@ -28,9 +24,6 @@ public class WTaxesEditor extends WEditor implements ContextMenuListener
 {
 	private Object m_value;
 	private MLBRTaxesLookup m_Taxes;
-	private int m_WindowNo;
-	private GridTab m_GridTab;
-	
 	/**
      * 
      * @param gridField
@@ -38,9 +31,7 @@ public class WTaxesEditor extends WEditor implements ContextMenuListener
     public WTaxesEditor(GridTab gridTab, GridField gridField) {
 		super(new Taxesbox(), gridField);
 		m_Taxes = (MLBRTaxesLookup)gridField.getLookup();
-		m_WindowNo = gridField.getWindowNo();
-		m_GridTab = gridTab;
-        init();
+		init();
 	}
     
     private void init()
@@ -97,13 +88,11 @@ public class WTaxesEditor extends WEditor implements ContextMenuListener
 				{
 					if (m_value == null) 
 						changed = false;
-					//if (m_Taxes.getDisplay(m_value).equals(getComponent().getText()))
-					//	changed = false;
 				}
 
 				if (changed)
 				{
-					Object oldValue = m_value;
+					final Object oldValue = m_value;
 	
 					// set & redisplay
 					setValue(newValue);
@@ -118,64 +107,6 @@ public class WTaxesEditor extends WEditor implements ContextMenuListener
 				Clients.response(new AuScript(script));
 			}
 		});
-		//				
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	/*	
-		MLBRTax mTax = (MLBRTax)getValue();
-		Integer oldValue = mTax == null ? 0 : mTax.get_ID();
-		int oldValueInt = oldValue == null ? 0 : oldValue.intValue ();
-		int LBR_Tax_ID = Env.getContextAsInt (Env.getCtx (), m_WindowNo, "LBR_Tax_ID");
-		boolean changed = false;
-
-		WTaxesDialog td = new WTaxesDialog(Msg.getMsg(Env.getCtx(), "LBR_Tax_ID"),(MLBRTax) m_value, m_WindowNo);
-		
-		if (td.isChanged())
-		{
-			getComponent().setText("" + td.getM_tax().getLBR_Tax_ID());
-			LBR_Tax_ID = td.getM_tax().get_ID();
-			changed = true;
-		}
-
-		//	Set Value
-		if (changed)
-		{
-			m_value = (MLBRTax) new Object(); // force re-query display
-			
-			if (LBR_Tax_ID == 0)
-				setValue(null);
-			else
-				setValue(new Integer(LBR_Tax_ID));
-
-			ValueChangeEvent vce = new ValueChangeEvent(this, gridField.getColumnName(), new Object(), LBR_Tax_ID);
-			fireValueChange(vce);
-			
-			if (LBR_Tax_ID == oldValueInt && m_GridTab != null && gridField != null)
-			{
-				// force Change - user does not realize that embedded object is already saved.
-				m_GridTab.processFieldChange(gridField);
-			}
-		}
-		*/
 	}
 
 	@Override

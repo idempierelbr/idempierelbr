@@ -6348,4 +6348,16 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="eb2bd16e-b243-4944-a402-9c435f844d09">
+  <value column="Name" original="Transaction Tax">Transaction Tax</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="ac17de59-790f-4e46-9df9-b84de9b6b3c9">
+  <value column="Name" original="Line">Line</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>
