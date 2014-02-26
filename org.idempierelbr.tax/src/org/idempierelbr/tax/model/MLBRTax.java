@@ -627,30 +627,32 @@ public class MLBRTax extends X_LBR_Tax
 		/**
 		 * 	Matriz de ICMS
 		 */
-		MLBRICMSMatrix mICMS = MLBRICMSMatrix.get (ctx, oi.getAD_Org_ID(), (oi.getC_Location_ID() < 1 ? -1 : oi.getC_Location().getC_Region_ID()), bpLoc.getC_Location().getC_Region_ID(), dateAcct, null);
-		//
-		if (mICMS != null && mICMS.getLBR_Tax_ID() > 0 && !MProduct.PRODUCTTYPE_Service.equals(p.getProductType()))
-		{
-			log.info ("######## Processing Tax for ICMS Matrix: " + mICMS + ", Taxes: " + new MLBRTax(ctx, mICMS.getLBR_Tax_ID(), null));
-			processTaxes(taxes, mICMS.getLBR_Tax_ID());
-			//
-			if (hasSubstitution && mICMS.getLBR_STTax_ID() > 0)
-			{
-				log.info ("######## Processing Tax for ICMS ST Matrix: " + mICMS + ", Taxes: " + new MLBRTax(ctx, mICMS.getLBR_STTax_ID(), null));
-				processTaxes(taxes, mICMS.getLBR_STTax_ID());
+		if (!MProduct.PRODUCTTYPE_Service.equals(p.getProductType())) {
+			MLBRICMSMatrix mICMS = MLBRICMSMatrix.get (ctx, oi.getAD_Org_ID(), (oi.getC_Location_ID() < 1 ? -1 : oi.getC_Location().getC_Region_ID()), bpLoc.getC_Location().getC_Region_ID(), dateAcct, null);
+
+			if (mICMS != null && mICMS.getLBR_Tax_ID() > 0) {
+				log.info ("######## Processing Tax for ICMS Matrix: " + mICMS + ", Taxes: " + new MLBRTax(ctx, mICMS.getLBR_Tax_ID(), null));
+				processTaxes(taxes, mICMS.getLBR_Tax_ID());
+				//
+				if (hasSubstitution && mICMS.getLBR_STTax_ID() > 0)
+				{
+					log.info ("######## Processing Tax for ICMS ST Matrix: " + mICMS + ", Taxes: " + new MLBRTax(ctx, mICMS.getLBR_STTax_ID(), null));
+					processTaxes(taxes, mICMS.getLBR_STTax_ID());
+				}
 			}
 		}
 		
 		/**
 		 * 	Matriz de ISS
 		 */
-		MLBRISSMatrix mISS = MLBRISSMatrix.get (ctx, oi.getAD_Org_ID(), bpLoc.getC_Location().getC_Region_ID(), 
-				(bpLoc != null ? bpLoc.getC_Location().getC_City_ID() : 0), p.getM_Product_ID(), dateAcct, null);
-		//
-		if (MProduct.PRODUCTTYPE_Service.equals(p.getProductType()) && mISS != null && mISS.getLBR_Tax_ID() > 0)
-		{
-			log.info ("######## Processing Tax for ISS Matrix: " + mISS + ", Taxes: " + new MLBRTax(ctx, mISS.getLBR_Tax_ID(), null));
-			processTaxes(taxes, mISS.getLBR_Tax_ID());
+		if (MProduct.PRODUCTTYPE_Service.equals(p.getProductType())) {
+			MLBRISSMatrix mISS = MLBRISSMatrix.get (ctx, oi.getAD_Org_ID(), bpLoc.getC_Location().getC_Region_ID(), 
+					(bpLoc != null ? bpLoc.getC_Location().getC_City_ID() : 0), p.getM_Product_ID(), dateAcct, null);
+
+			if (mISS != null && mISS.getLBR_Tax_ID() > 0) {
+				log.info ("######## Processing Tax for ISS Matrix: " + mISS + ", Taxes: " + new MLBRTax(ctx, mISS.getLBR_Tax_ID(), null));
+				processTaxes(taxes, mISS.getLBR_Tax_ID());
+			}
 		}
 		
 		/**
