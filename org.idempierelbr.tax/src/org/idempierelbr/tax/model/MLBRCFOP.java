@@ -162,11 +162,11 @@ public class MLBRCFOP extends X_LBR_CFOP
 	 * 	@param 	lbr_TransactionType
 	 * 	@param 	lbr_DestionationType
 	 * 	@param 	lbr_IsSubTributaria
-	 * 	@param 	lbr_IsManufactured
+	 * 	@param 	isManufactured
 	 * 	@return	X_LBR_CFOPLine
 	 */
 	public static X_LBR_CFOPLine chooseCFOP (int AD_Org_ID, int C_DocType_ID, int LBR_ProductCategory_ID, int LBR_BPartnerCategory_ID, 
-			String lbr_TransactionType, String lbr_DestionationType, boolean lbr_IsSubTributaria, boolean lbr_IsManufactured, String trxName)
+			String lbr_TransactionType, String lbr_DestionationType, boolean lbr_IsSubTributaria, boolean isManufactured, String trxName)
 	{
 		String whereClause = "AD_Org_ID IN (0, ?) AND C_DocType_ID=? "
 				+ "AND (LBR_ProductCategory_ID=?  OR LBR_ProductCategory_ID IS NULL) "
@@ -174,10 +174,10 @@ public class MLBRCFOP extends X_LBR_CFOP
 				+ "AND (lbr_TransactionType=? OR lbr_TransactionType IS NULL)"
 				+ "AND lbr_DestionationType=? "
 				+ "AND lbr_IsSubTributaria IN ('B', ?) "
-				+ "AND lbr_IsManufactured IN ('B', ?) ";
+				+ "AND IsManufactured IN ('B', ?) ";
 		//
 		Object[] parameters = new Object[]{AD_Org_ID, C_DocType_ID, LBR_ProductCategory_ID, LBR_BPartnerCategory_ID, 
- 				lbr_TransactionType, lbr_DestionationType, (lbr_IsSubTributaria ? "Y" : "N"), (lbr_IsManufactured ? "Y" : "N")};
+ 				lbr_TransactionType, lbr_DestionationType, (lbr_IsSubTributaria ? "Y" : "N"), (isManufactured ? "Y" : "N")};
 		//
 	 	List<X_LBR_CFOPLine> list = new Query(Env.getCtx(), X_LBR_CFOPLine.Table_Name, whereClause, trxName)
 	 		.setParameters(parameters)
