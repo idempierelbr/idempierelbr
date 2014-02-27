@@ -591,9 +591,10 @@ public class MLBRTax extends X_LBR_Tax
 		Properties ctx = Env.getCtx();
 		
 		// Try to get Location from OrgInfo. If null, get first from linked BPartner
+		int C_Location_ID = oi.getC_Location_ID();
 		I_C_Location oiLocation = oi.getC_Location();
 
-		if (oiLocation == null) {
+		if (C_Location_ID == 0) {
 			MOrg org = new MOrg (ctx, oi.getAD_Org_ID(), null);
 			int bpL_ID = org.getLinkedC_BPartner_ID(null);
 			
@@ -601,8 +602,10 @@ public class MLBRTax extends X_LBR_Tax
 				MBPartner bpL = new MBPartner(ctx, bpL_ID, null);
 				MBPartnerLocation[] locs = bpL.getLocations(false);
 				
-				if (locs != null && locs.length > 0)
+				if (locs != null && locs.length > 0) {
 					oiLocation = locs[0].getC_Location();
+					C_Location_ID = oiLocation.getC_Location_ID();
+				}
 			}
 		}
 		
