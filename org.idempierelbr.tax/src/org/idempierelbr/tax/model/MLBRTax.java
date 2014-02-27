@@ -26,10 +26,12 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.adempiere.model.POWrapper;
+import org.compiere.model.I_C_Location;
 import org.compiere.model.MBPartner;
 import org.compiere.model.MBPartnerLocation;
 import org.compiere.model.MOrder;
 import org.compiere.model.MOrderLine;
+import org.compiere.model.MOrg;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.MProduct;
 import org.compiere.model.MTable;
@@ -38,6 +40,7 @@ import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.idempierelbr.tax.model.MLBRNCM;
+import org.idempierelbr.tax.wrapper.I_W_AD_OrgInfo;
 import org.idempierelbr.tax.wrapper.I_W_C_BPartner;
 import org.idempierelbr.tax.wrapper.I_W_LBR_NCM;
 import org.idempierelbr.tax.wrapper.I_W_M_Product;
@@ -579,13 +582,30 @@ public class MLBRTax extends X_LBR_Tax
 	 * @param Date Acct
 	 * @return Object Array (Taxes, Legal Msg, CFOP and CST) 
 	 */
-	@SuppressWarnings("deprecation")
 	public static Object[] getTaxes (int C_DocTypeTarget_ID, boolean isSOTrx, String lbr_TransactionType, MProduct p, 
 			MOrgInfo oi, MBPartner bp, MBPartnerLocation bpLoc, Timestamp dateAcct)
 	{
 		I_W_C_BPartner bpW = POWrapper.create(bp, I_W_C_BPartner.class);
 		I_W_M_Product pW = POWrapper.create(p, I_W_M_Product.class);
+		I_W_AD_OrgInfo oiW = POWrapper.create(oi, I_W_AD_OrgInfo.class);
 		Properties ctx = Env.getCtx();
+		
+		// Try to get Location from OrgInfo. If null, get first from linked BPartner
+		I_C_Location oiLocation = oi.getC_Location();
+
+		if (oiLocation == null) {
+			MOrg org = new MOrg (ctx, oi.getAD_Org_ID(), null);
+			int bpL_ID = org.getLinkedC_BPartner_ID(null);
+			
+			if (bpL_ID > 0) {
+				MBPartner bpL = new MBPartner(ctx, bpL_ID, null);
+				MBPartnerLocation[] locs = bpL.getLocations(false);
+				
+				if (locs != null && locs.length > 0)
+					oiLocation = locs[0].getC_Location();
+			}
+		}
+		
 		//
 		Map<Integer, MLBRTaxLine> taxes = new HashMap<Integer, MLBRTaxLine>();
 		//
@@ -597,8 +617,10 @@ public class MLBRTax extends X_LBR_Tax
 		/**
 		 * 	Organization
 		 */
-		log.info ("######## Processing Tax for Organization: " + oi + ", Taxes: " + new MLBRTax(ctx, oi.get_ValueAsInt("LBR_Tax_ID"), null));
-		processTaxes(taxes, oi.get_ValueAsInt("LBR_Tax_ID"));
+		if (oiW.getLBR_Tax_ID() > 0) {
+			log.info ("######## Processing Tax for Organization: " + oi + ", Taxes: " + new MLBRTax(ctx, oiW.getLBR_Tax_ID(), null));
+			processTaxes(taxes, oiW.getLBR_Tax_ID());
+		}
 		
 		/**
 		 * 	NCM
@@ -613,14 +635,20 @@ public class MLBRTax extends X_LBR_Tax
 			if (ncmTax != null)
 			{
 				hasSubstitution = ncmTax.isLBR_HasSubstitution();
-				log.info ("######## Processing Tax for NCM Line: " + ncmTax + ", Taxes: " + new MLBRTax(ctx, ncmTax.getLBR_Tax_ID(), null));
-				processTaxes(taxes, ncmTax.getLBR_Tax_ID());
+				
+				if (ncmTax.getLBR_Tax_ID() > 0) {
+					log.info ("######## Processing Tax for NCM Line: " + ncmTax + ", Taxes: " + new MLBRTax(ctx, ncmTax.getLBR_Tax_ID(), null));
+					processTaxes(taxes, ncmTax.getLBR_Tax_ID());
+				}
 			}
 			else
 			{
 				hasSubstitution = ncmW.isLBR_HasSubstitution();
-				log.info ("######## Processing Tax for NCM: " + ncm + ", Taxes: " + new MLBRTax(ctx, ncmW.getLBR_Tax_ID(), null));
-				processTaxes(taxes, ncmW.getLBR_Tax_ID());	//	Legacy
+				
+				if (ncmW.getLBR_Tax_ID() > 0) {
+					log.info ("######## Processing Tax for NCM: " + ncm + ", Taxes: " + new MLBRTax(ctx, ncmW.getLBR_Tax_ID(), null));
+					processTaxes(taxes, ncmW.getLBR_Tax_ID());	//	Legacy
+				}
 			}
 		}
 		
@@ -628,7 +656,7 @@ public class MLBRTax extends X_LBR_Tax
 		 * 	Matriz de ICMS
 		 */
 		if (!MProduct.PRODUCTTYPE_Service.equals(p.getProductType())) {
-			MLBRICMSMatrix mICMS = MLBRICMSMatrix.get (ctx, oi.getAD_Org_ID(), (oi.getC_Location_ID() < 1 ? -1 : oi.getC_Location().getC_Region_ID()), bpLoc.getC_Location().getC_Region_ID(), dateAcct, null);
+			MLBRICMSMatrix mICMS = MLBRICMSMatrix.get (ctx, oi.getAD_Org_ID(), (oiLocation.getC_Location_ID() < 1 ? -1 : oiLocation.getC_Region_ID()), bpLoc.getC_Location().getC_Region_ID(), dateAcct, null);
 
 			if (mICMS != null && mICMS.getLBR_Tax_ID() > 0) {
 				log.info ("######## Processing Tax for ICMS Matrix: " + mICMS + ", Taxes: " + new MLBRTax(ctx, mICMS.getLBR_Tax_ID(), null));
@@ -672,12 +700,14 @@ public class MLBRTax extends X_LBR_Tax
 				
 				if (tcpg != null)
 				{
-					log.info ("######## Processing Tax for Product Group: " + tcpg + ", Taxes: " + new MLBRTax(ctx, tcpg.getLBR_Tax_ID(), null));
-					processTaxes(taxes, tcpg.getLBR_Tax_ID());
-					//
+					if (tcpg.getLBR_Tax_ID() > 0) {
+						log.info ("######## Processing Tax for Product Group: " + tcpg + ", Taxes: " + new MLBRTax(ctx, tcpg.getLBR_Tax_ID(), null));
+						processTaxes(taxes, tcpg.getLBR_Tax_ID());
+					}
+
 					if (tcpg.getLBR_LegalMessage_ID() > 0)
 						LBR_LegalMessage_ID =  tcpg.getLBR_LegalMessage_ID();
-					//
+
 					if (tcpg.getLBR_TaxStatus() != null && tcpg.getLBR_TaxStatus().length() > 0)
 						lbr_TaxStatus = tcpg.getLBR_TaxStatus() ;
 				}
@@ -692,12 +722,14 @@ public class MLBRTax extends X_LBR_Tax
 				
 				if (tcp != null)
 				{
-					log.info ("######## Processing Tax for Product: " + tcp + ", Taxes: " + new MLBRTax(ctx, tcp.getLBR_Tax_ID(), null));
-					processTaxes(taxes, tcp.getLBR_Tax_ID());
-					//
+					if (tcp.getLBR_Tax_ID() > 0) {
+						log.info ("######## Processing Tax for Product: " + tcp + ", Taxes: " + new MLBRTax(ctx, tcp.getLBR_Tax_ID(), null));
+						processTaxes(taxes, tcp.getLBR_Tax_ID());
+					}
+
 					if (tcp.getLBR_LegalMessage_ID() > 0)
 						LBR_LegalMessage_ID =  tcp.getLBR_LegalMessage_ID();
-					//
+
 					if (tcp.getLBR_TaxStatus() != null && tcp.getLBR_TaxStatus().length() > 0)
 						lbr_TaxStatus = tcp.getLBR_TaxStatus() ;
 				}
@@ -706,16 +738,18 @@ public class MLBRTax extends X_LBR_Tax
 			/**
 			 * 	Region
 			 */
-			X_LBR_TaxConfig_Region tcr = tc.getTC_Region (oi.getAD_Org_ID(), oi.getC_Location().getC_Region_ID(), (bpLoc != null ? bpLoc.getC_Location().getC_Region_ID() : 0), dateAcct);
+			X_LBR_TaxConfig_Region tcr = tc.getTC_Region (oi.getAD_Org_ID(), oiLocation.getC_Region_ID(), (bpLoc != null ? bpLoc.getC_Location().getC_Region_ID() : 0), dateAcct);
 			
 			if (tcr != null)
 			{
-				log.info ("######## Processing Tax for Region: " + tcr + ", Taxes: " + new MLBRTax(ctx, tcr.getLBR_Tax_ID(), null));
-				processTaxes(taxes, tcr.getLBR_Tax_ID());
-				//
+				if (tcr.getLBR_Tax_ID() > 0) {
+					log.info ("######## Processing Tax for Region: " + tcr + ", Taxes: " + new MLBRTax(ctx, tcr.getLBR_Tax_ID(), null));
+					processTaxes(taxes, tcr.getLBR_Tax_ID());
+				}
+
 				if (tcr.getLBR_LegalMessage_ID() > 0)
 					LBR_LegalMessage_ID =  tcr.getLBR_LegalMessage_ID();
-				//
+
 				if (tcr.getLBR_TaxStatus() != null && tcr.getLBR_TaxStatus().length() > 0)
 					lbr_TaxStatus = tcr.getLBR_TaxStatus() ;
 			}
@@ -727,12 +761,14 @@ public class MLBRTax extends X_LBR_Tax
 			
 			if (tcbpg != null)
 			{
-				log.info ("######## Processing Tax for BPartner Group: " + tcbpg + ", Taxes: " + new MLBRTax(ctx, tcbpg.getLBR_Tax_ID(), null));
-				processTaxes(taxes, tcbpg.getLBR_Tax_ID());
-				//
+				if (tcbpg.getLBR_Tax_ID() > 0) {
+					log.info ("######## Processing Tax for BPartner Group: " + tcbpg + ", Taxes: " + new MLBRTax(ctx, tcbpg.getLBR_Tax_ID(), null));
+					processTaxes(taxes, tcbpg.getLBR_Tax_ID());
+				}
+
 				if (tcbpg.getLBR_LegalMessage_ID() > 0)
 					LBR_LegalMessage_ID =  tcbpg.getLBR_LegalMessage_ID();
-				//
+
 				if (tcbpg.getLBR_TaxStatus() != null && tcbpg.getLBR_TaxStatus().length() > 0)
 					lbr_TaxStatus = tcbpg.getLBR_TaxStatus() ;
 			}
@@ -744,12 +780,14 @@ public class MLBRTax extends X_LBR_Tax
 			
 			if (tcbp != null)
 			{
-				log.info ("######## Processing Tax for BPartner: " + tcbp + ", Taxes: " + new MLBRTax(ctx, tcbp.getLBR_Tax_ID(), null));
-				processTaxes (taxes, tcbp.getLBR_Tax_ID());
-				//
+				if (tcbp.getLBR_Tax_ID() > 0) {
+					log.info ("######## Processing Tax for BPartner: " + tcbp + ", Taxes: " + new MLBRTax(ctx, tcbp.getLBR_Tax_ID(), null));
+					processTaxes (taxes, tcbp.getLBR_Tax_ID());
+				}
+
 				if (tcbp.getLBR_LegalMessage_ID() > 0)
 					LBR_LegalMessage_ID =  tcbp.getLBR_LegalMessage_ID();
-				//
+
 				if (tcbp.getLBR_TaxStatus() != null && tcbp.getLBR_TaxStatus().length() > 0)
 					lbr_TaxStatus = tcbp.getLBR_TaxStatus();
 			}
@@ -769,13 +807,13 @@ public class MLBRTax extends X_LBR_Tax
 		/**
 		 * 	Importação ou Exportação
 		 */
-		else if (bpLoc != null && (oi.getC_Location_ID() < 1 || bpLoc.getC_Location().getC_Country_ID() != oi.getC_Location().getC_Country_ID()))
+		else if (bpLoc != null && (oiLocation.getC_Location_ID() < 1 || bpLoc.getC_Location().getC_Country_ID() != oiLocation.getC_Country_ID()))
 			lbr_DestionationType = X_LBR_CFOPLine.LBR_DESTIONATIONTYPE_Estrangeiro;
 		
 		/**
 		 * 	Dentro do Estado
 		 */
-		else if (bpLoc != null && bpLoc.getC_Location().getC_Region_ID() == oi.getC_Location().getC_Region_ID())
+		else if (bpLoc != null && bpLoc.getC_Location().getC_Region_ID() == oiLocation.getC_Region_ID())
 			lbr_DestionationType = X_LBR_CFOPLine.LBR_DESTIONATIONTYPE_EstadosIdenticos;
 		
 		/**
@@ -787,39 +825,42 @@ public class MLBRTax extends X_LBR_Tax
 		X_LBR_CFOPLine cFOPLine = MLBRCFOP.chooseCFOP (oi.getAD_Org_ID(), C_DocTypeTarget_ID, pW.getLBR_ProductCategory_ID(), 
 				(isSOTrx ? bpW.getLBR_CustomerCategory_ID() : bpW.getLBR_VendorCategory_ID()), 
 				lbr_TransactionType, lbr_DestionationType, hasSubstitution, p.isManufactured(), null);
-		//
+
 		if (cFOPLine != null)
 		{
-			log.info ("######## Processing Tax for CFOP Line: " + cFOPLine + ", Taxes: " + new MLBRTax(ctx, cFOPLine.getLBR_Tax_ID(), null));
-			processTaxes (taxes, cFOPLine.getLBR_Tax_ID());
-			//
+			if (cFOPLine.getLBR_Tax_ID() > 0) {
+				log.info ("######## Processing Tax for CFOP Line: " + cFOPLine + ", Taxes: " + new MLBRTax(ctx, cFOPLine.getLBR_Tax_ID(), null));
+				processTaxes (taxes, cFOPLine.getLBR_Tax_ID());
+			}
+
 			if (cFOPLine.getLBR_LegalMessage_ID() > 0)
 				LBR_LegalMessage_ID =  cFOPLine.getLBR_LegalMessage_ID();
-			//
+
 			if (cFOPLine.getLBR_TaxStatus() != null && cFOPLine.getLBR_TaxStatus().length() > 0)
 				lbr_TaxStatus = cFOPLine.getLBR_TaxStatus();
-			//
+
 			LBR_CFOP_ID = cFOPLine.getLBR_CFOP_ID();
 		}
 		
 		//	Tax Definition
 		MLBRTaxDefinition[] taxesDef = MLBRTaxDefinition.get (oi.getAD_Org_ID(), bp.getC_BPartner_ID(), C_DocTypeTarget_ID, 
-				(oi.getC_Location_ID() < 1 ? -1 : oi.getC_Location().getC_Region_ID()), (bpLoc != null ? bpLoc.getC_Location().getC_Region_ID() : 0),
+				(oiLocation.getC_Location_ID() < 1 ? -1 : oiLocation.getC_Region_ID()), (bpLoc != null ? bpLoc.getC_Location().getC_Region_ID() : 0),
 				(isSOTrx ? bpW.getLBR_CustomerCategory_ID() : bpW.getLBR_VendorCategory_ID()), 
 				(isSOTrx ? bpW.getLBR_FiscalGroup_Customer_ID() : bpW.getLBR_FiscalGroup_Vendor_ID()), pW.getLBR_FiscalGroup_Product_ID(), 
 				pW.getLBR_NCM_ID(),  pW.getLBR_ProductCategory_ID(), hasSubstitution, isSOTrx, lbr_TransactionType, dateAcct);
-		//
+
 		for (MLBRTaxDefinition td : taxesDef)
 		{
-			log.info ("######## Processing Tax for Tax Definition: " + td + ", Taxes: " + new MLBRTax(ctx, td.getLBR_Tax_ID(), null));
-			processTaxes (taxes, td.getLBR_Tax_ID());
-			//
+			if (td.getLBR_Tax_ID() > 0) {
+				log.info ("######## Processing Tax for Tax Definition: " + td + ", Taxes: " + new MLBRTax(ctx, td.getLBR_Tax_ID(), null));
+				processTaxes (taxes, td.getLBR_Tax_ID());
+			}
+
 			if (td.getLBR_LegalMessage_ID() > 0)
 				LBR_LegalMessage_ID =  td.getLBR_LegalMessage_ID();
-			//
+
 			if (td.getLBR_TaxStatus() != null && td.getLBR_TaxStatus().length() > 0)
 				lbr_TaxStatus = td.getLBR_TaxStatus();
-			//
 
 			if (td.getLBR_CFOP_ID() > 0)
 				LBR_CFOP_ID = td.getLBR_CFOP_ID();
