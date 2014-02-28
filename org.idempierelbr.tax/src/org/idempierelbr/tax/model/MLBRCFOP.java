@@ -18,7 +18,6 @@ import java.util.Properties;
 
 import org.compiere.model.MLocation;
 import org.compiere.model.Query;
-import org.compiere.util.DB;
 import org.compiere.util.Env;
 
 /**
@@ -67,15 +66,14 @@ public class MLBRCFOP extends X_LBR_CFOP
 	 */
 	public static MLBRCFOP getCFOP (Properties ctx, String value, String trxName)
 	{	
-		String sql = "SELECT MAX(LBR_CFOP_ID) FROM LBR_CFOP " +
-				     "WHERE value = ? AND AD_Client_ID = ?";
-		
-		int LBR_CFOP_ID = DB.getSQLValue (trxName, sql, new Object[]{value, Env.getAD_Client_ID(ctx)});
-		if (LBR_CFOP_ID > 0)
-			return new MLBRCFOP(ctx,LBR_CFOP_ID,trxName);
-		//
-		return null;
-	}	//	getCFOP
+		String where = "AD_Client_ID IN (0, ?) AND value=?";
+		MLBRCFOP cfop = new Query (Env.getCtx(), X_LBR_NCMTax.Table_Name, where, trxName)
+			.setParameters(new Object[]{Env.getAD_Client_ID(ctx), value})
+			.setOrderBy("AD_Client_ID DESC")
+			.first();
+
+		return cfop != null ? cfop : null;		
+	}
 
 	/**
 	 * 		Verifica se o CFOP é válido para o Documento Escolhido
