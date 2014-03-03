@@ -242,6 +242,9 @@ public final class WTaxesDialog extends Window
 	private boolean initTax()
 	{
 		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_Tax_ID", m_MLBRTax_new.get_ID());
+		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_TaxName_ID", 0);
+		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_TaxStatus_ID", 0);
+		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_TaxBaseType_ID", 0);
 		
 		// Model
 		int AD_Window_ID = 1000013; // Transaction Tax
@@ -301,10 +304,12 @@ public final class WTaxesDialog extends Window
 		
 		field = m_mTab.getField("LBR_TaxName_ID");
 		f_LBR_TaxName_ID = WebEditorFactory.getEditor(field, false);
+		f_LBR_TaxName_ID.addValueChangeListener(this);
 		addLine(field, f_LBR_TaxName_ID, true);
 		
 		field = m_mTab.getField("LBR_TaxStatus_ID");
 		f_LBR_TaxStatus_ID = WebEditorFactory.getEditor(field, false);
+		f_LBR_TaxStatus_ID.addValueChangeListener(this);
 		addLine(field, f_LBR_TaxStatus_ID, true);
 		
 		field = m_mTab.getField("LBR_TaxRate");
@@ -580,6 +585,10 @@ public final class WTaxesDialog extends Window
 			}
 			if (i == 0)
 				FDialog.error(m_WindowNo, this, "TaxNotUpdated");
+			
+			int currentRow = m_mTab.getCurrentRow();
+			m_mTab.query(false);
+			m_mTab.setCurrentRow(currentRow);
 		} else {
 			MLBRTaxLine line = new MLBRTaxLine(Env.getCtx(), 0, null);
 			line.setLBR_Tax_ID(m_MLBRTax_new.get_ID());
@@ -622,12 +631,11 @@ public final class WTaxesDialog extends Window
 				line.setLBR_PostTax((Boolean)value);
 			
 			line.saveEx();
+			
+			m_mTab.query(false);
+			m_mTab.setCurrentRow(m_mTab.getRowCount());
 		}
-	
-		int current = m_mTab.getCurrentRow();
-		m_mTab.query(false);
-		m_mTab.setCurrentRow(current);
-		
+
 		m_MLBRTax_new.setDescription();
 		m_MLBRTax_new.saveEx();
 	}
@@ -668,6 +676,10 @@ public final class WTaxesDialog extends Window
 			f_LBR_TaxBaseType_ID.setValue(null);
 		//	Tax Post?
 		f_LBR_PostTax.setValue(true);
+		
+		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_TaxName_ID", 0);
+		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_TaxStatus_ID", 0);
+		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_TaxBasetype_ID", 0);
 	}
 
 	/**
@@ -717,8 +729,18 @@ public final class WTaxesDialog extends Window
 	 */
 	public void valueChange(ValueChangeEvent evt) {
 		Object newValue = evt.getNewValue();
+
 		if (newValue instanceof Integer)
-			Env.setContext(Env.getCtx(), m_WindowNo, "LBR_Tax_ID", ((Integer)newValue).intValue());
+			Env.setContext(Env.getCtx(), m_WindowNo, evt.getPropertyName(), ((Integer)newValue).intValue());
+		
+		if (evt.getPropertyName().equalsIgnoreCase("LBR_TaxName_ID")) {
+			f_LBR_TaxStatus_ID.setValue(null);
+			f_LBR_TaxBaseType_ID.setValue(null);
+			f_LBR_TaxBaseType_ID.dynamicDisplay();
+		} else if (evt.getPropertyName().equalsIgnoreCase("LBR_TaxStatus_ID")) {
+			f_LBR_TaxBaseType_ID.setValue(null);
+			f_LBR_TaxBaseType_ID.dynamicDisplay();
+		}
 	}
 	
 	/**
@@ -727,6 +749,6 @@ public final class WTaxesDialog extends Window
 	private void checkDefaultValues() {
 		// Default for Post field is true
 		if (m_MLBRTax_new.getLines().length < 1)
-			f_LBR_PostTax.setValue(true);			
+			f_LBR_PostTax.setValue(true);
 	}
 }
