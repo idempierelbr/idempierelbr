@@ -18,6 +18,7 @@
 package org.idempierelbr.tax.model;
 
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.Properties;
 import org.compiere.model.*;
 
@@ -249,5 +250,22 @@ public class X_LBR_TaxConfig_BPGroup extends PO implements I_LBR_TaxConfig_BPGro
 	public String getLBR_TaxStatus () 
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TaxStatus);
+	}
+	
+	/** Set Valid from.
+	@param ValidFrom 
+	Valid from including this date (first day)
+	  */
+	public void setValidFrom (Timestamp ValidFrom)
+	{
+		set_Value (COLUMNNAME_ValidFrom, ValidFrom);
+	}
+	
+	/** Get Valid from.
+		@return Valid from including this date (first day)
+	  */
+	public Timestamp getValidFrom () 
+	{
+		return (Timestamp)get_Value(COLUMNNAME_ValidFrom);
 	}
 }

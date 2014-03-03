@@ -201,4 +201,17 @@ public interface I_LBR_TaxConfig_Product
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
+	
+	/** Column name ValidFrom */
+    public static final String COLUMNNAME_ValidFrom = "ValidFrom";
+
+	/** Set Valid from.
+	  * Valid from including this date (first day)
+	  */
+	public void setValidFrom (Timestamp ValidFrom);
+
+	/** Get Valid from.
+	  * Valid from including this date (first day)
+	  */
+	public Timestamp getValidFrom();
 }

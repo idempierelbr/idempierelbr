@@ -18,6 +18,7 @@
 package org.idempierelbr.tax.model;
 
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.Properties;
 import org.compiere.model.*;
 
@@ -208,5 +209,22 @@ public class X_LBR_ISSMatrix extends PO implements I_LBR_ISSMatrix, I_Persistent
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
+	}
+	
+	/** Set Valid from.
+	@param ValidFrom 
+	Valid from including this date (first day)
+	 */
+	public void setValidFrom (Timestamp ValidFrom)
+	{
+		set_Value (COLUMNNAME_ValidFrom, ValidFrom);
+	}
+	
+	/** Get Valid from.
+		@return Valid from including this date (first day)
+	  */
+	public Timestamp getValidFrom () 
+	{
+		return (Timestamp)get_Value(COLUMNNAME_ValidFrom);
 	}
 }
