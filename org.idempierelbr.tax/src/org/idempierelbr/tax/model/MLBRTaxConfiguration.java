@@ -309,33 +309,44 @@ public class MLBRTaxConfiguration extends X_LBR_TaxConfiguration
 	 */
 	protected boolean beforeSave (boolean newRecord)
 	{
-		String sql = "SELECT COUNT (*) " +
-				"FROM LBR_TaxConfiguration " +
-				"WHERE AD_Client_ID=? ";
-		//
+		String exceptionType = getLBR_ExceptionType();
+		
+		if (exceptionType == null || (!exceptionType.equalsIgnoreCase(LBR_EXCEPTIONTYPE_Product) &&
+				!exceptionType.equalsIgnoreCase(LBR_EXCEPTIONTYPE_FiscalGroup)))
+			return true;
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append("SELECT COUNT(*) FROM LBR_TaxConfiguration WHERE AD_Client_ID=? ");
+		sql.append("AND IsActive='Y' ");
+
 		//if (getAD_Org_ID() > 0)
-			sql += "AND AD_Org_ID=? ";
-		//
-		if (getM_Product_ID() > 0)
-			sql += "AND M_Product_ID=? ";
-		else
-			sql += "AND LBR_FiscalGroup_Product_ID<>? ";
-		//
-		sql += "AND (";
-		//
+		sql.append("AND AD_Org_ID=? ");
+
+		sql.append("AND LBR_ExceptionType=? ");
+			
+		if (exceptionType.equalsIgnoreCase(LBR_EXCEPTIONTYPE_Product))
+			sql.append("AND M_Product_ID=? ");
+		else if (exceptionType.equalsIgnoreCase(LBR_EXCEPTIONTYPE_FiscalGroup))
+			sql.append("AND LBR_FiscalGroup_Product_ID=? ");
+			
+		sql.append("AND (");
+
 		if (isSOTrx())
-			sql += "IsSOTrx='Y' OR ";
+			sql.append("IsSOTrx='Y' OR ");
 		else
-			sql += "FALSE OR ";
-		//
+			sql.append("FALSE OR ");
+
 		if (isLBR_IsPOTrx())
-			sql += "LBR_IsPOTrx='Y')";
+			sql.append("LBR_IsPOTrx='Y')");
 		else
-			sql += "FALSE)";
-		//
-		int count = DB.getSQLValue (get_TrxName(), sql, new Object[]{getAD_Client_ID(), getAD_Org_ID(),
-			getM_Product_ID() > 0 ? getM_Product_ID() : getLBR_FiscalGroup_Product_ID()});
-		//
+			sql.append("FALSE)");
+		
+		sql.append(" AND LBR_TaxConfiguration_ID<>?");
+		int count = DB.getSQLValue (get_TrxName(), sql.toString(), new Object[]{getAD_Client_ID(),
+			getAD_Org_ID(),
+			exceptionType,
+			getM_Product_ID() > 0 ? getM_Product_ID() : getLBR_FiscalGroup_Product_ID(),
+			get_ID()});
 		
 		if (count > 0) {
 			log.saveError("Error", Msg.getMsg(Env.getCtx(), "Configuração do " + (getM_Product_ID() > 0 ? "produto" : "grupo") +
@@ -343,5 +354,5 @@ public class MLBRTaxConfiguration extends X_LBR_TaxConfiguration
 		}
 		
 		return count < 1;
-	}	//	beforeSave
-} 	//	MLBRTaxConfiguration
+	}
+}
