@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.idempierelbr.tax.TaxProviderFactory">
+   <implementation class="org.idempierelbr.tax.provider.TaxProviderFactory"/>
+   <property name="service.ranking" type="Integer" value="20"/>
+   <service>
+      <provide interface="org.adempiere.base.ITaxProviderFactory"/>
+   </service>>
+</scr:component>
