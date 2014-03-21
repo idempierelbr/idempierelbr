@@ -175,7 +175,10 @@ public class X_LBR_ICMSMatrix extends PO implements I_LBR_ICMSMatrix, I_Persiste
 	  */
 	public void setLBR_Tax_ID (int LBR_Tax_ID)
 	{
-		set_Value (COLUMNNAME_LBR_Tax_ID, LBR_Tax_ID);
+		if (LBR_Tax_ID < 1)
+			set_ValueNoCheck(COLUMNNAME_LBR_Tax_ID, null);
+		else
+			set_ValueNoCheck (COLUMNNAME_LBR_Tax_ID, Integer.valueOf(LBR_Tax_ID));
 	}
 
 	/** Get Transaction Tax.
@@ -183,7 +186,10 @@ public class X_LBR_ICMSMatrix extends PO implements I_LBR_ICMSMatrix, I_Persiste
 	  */
 	public int getLBR_Tax_ID () 
 	{
-				return (Integer) get_Value(COLUMNNAME_LBR_Tax_ID);
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Tax_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
 	}
 
 	public org.compiere.model.I_C_Region getTo_Region() throws RuntimeException
