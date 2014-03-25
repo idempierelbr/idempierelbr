@@ -6,9 +6,7 @@ import java.util.List;
 import org.adempiere.base.IColumnCallout;
 import org.adempiere.base.IColumnCalloutFactory;
 import org.compiere.model.MInvoice;
-import org.compiere.model.MInvoiceLine;
 import org.compiere.model.MOrder;
-import org.compiere.model.MOrderLine;
 
 /**
  * Esta classe é uma implementação da callout factory.
@@ -29,21 +27,9 @@ public class CalloutFactory implements IColumnCalloutFactory {
 				 callouts.add(new CalloutOrder());
 		}
 		
-		// Tabela C_OrderLine
-		if (tableName.equals(MOrderLine.Table_Name)) {
-			if (columnName.equals(MOrderLine.COLUMNNAME_M_Product_ID))
-				 callouts.add(new CalloutOrder());
-		}
-		
 		// Tabela C_Invoice
 		if (tableName.equals(MInvoice.Table_Name)) {
 			if (columnName.equals(MInvoice.COLUMNNAME_C_BPartner_ID))
-				 callouts.add(new CalloutInvoice());
-		}
-		
-		// Tabela C_InvoiceLine
-		if (tableName.equals(MInvoiceLine.Table_Name)) {
-			if (columnName.equals(MOrderLine.COLUMNNAME_M_Product_ID))
 				 callouts.add(new CalloutInvoice());
 		}
 		

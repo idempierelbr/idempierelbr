@@ -66,6 +66,8 @@ public class ModelFactory implements IModelFactory {
 			return MLBRCFOP.class;
 		else if (tableName.equals(X_LBR_CFOPLine.Table_Name)) // Model X_LBR_CFOPLine
 			return X_LBR_CFOPLine.class;
+		else if (tableName.equals(MLBRDocLineDetails.Table_Name)) // Model MLBRDocLineDetails
+			return MLBRDocLineDetails.class;
 		
 		return null;
 	}
@@ -122,6 +124,8 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRCFOP(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(X_LBR_CFOPLine.Table_Name)) // Model X_LBR_CFOPLine
 			return new X_LBR_CFOPLine(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRDocLineDetails.Table_Name)) // Model MLBRDocLineDetails
+			return new MLBRDocLineDetails(Env.getCtx(), Record_ID, trxName);
 		
 		return null;
 	}
@@ -178,6 +182,8 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRCFOP(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(X_LBR_CFOPLine.Table_Name)) // X_LBR_CFOPLine
 			return new X_LBR_CFOPLine(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRDocLineDetails.Table_Name)) // MLBRDocLineDetails
+			return new MLBRDocLineDetails(Env.getCtx(), rs, trxName);
 		
 		return null;
 	}

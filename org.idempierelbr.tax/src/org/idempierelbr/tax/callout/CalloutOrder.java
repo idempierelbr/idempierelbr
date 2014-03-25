@@ -1,6 +1,5 @@
 package org.idempierelbr.tax.callout;
 
-import java.util.Map;
 import java.util.Properties;
 
 import org.adempiere.base.IColumnCallout;
@@ -8,14 +7,8 @@ import org.adempiere.model.POWrapper;
 import org.compiere.model.GridField;
 import org.compiere.model.GridTab;
 import org.compiere.model.MBPartner;
-import org.compiere.model.MBPartnerLocation;
 import org.compiere.model.MOrder;
-import org.compiere.model.MOrderLine;
-import org.compiere.model.MOrgInfo;
-import org.compiere.model.MProduct;
 import org.compiere.util.Env;
-import org.idempierelbr.tax.model.MLBRTax;
-import org.idempierelbr.tax.model.MLBRTaxLine;
 import org.idempierelbr.tax.wrapper.I_W_C_BPartner;
 
 public class CalloutOrder implements IColumnCallout {
@@ -27,11 +20,6 @@ public class CalloutOrder implements IColumnCallout {
 		if (mTab.getTableName().equals(MOrder.Table_Name))
 			if (mField.getColumnName().equals(MOrder.COLUMNNAME_C_BPartner_ID))
 				return setTransactionType(ctx, mTab, value);
-			else 
-				return null;
-		else if (mTab.getTableName().equals(MOrderLine.Table_Name))
-			if (mField.getColumnName().equals(MOrderLine.COLUMNNAME_M_Product_ID))
-				return createTaxTransaction(ctx, mTab, value);
 			else 
 				return null;
 		else
@@ -58,78 +46,5 @@ public class CalloutOrder implements IColumnCallout {
 			mTab.setValue("LBR_TransactionType", bpW.getLBR_TransactionType_Vendor());
 		
 		return "";
-	}
-	
-	/**
-	 * Cria Tax Transaction com base nas regras fiscais
-	 */
-	private String createTaxTransaction(Properties ctx, GridTab mTab, Object value) {
-		Integer M_Product_ID = (Integer) value;
-		
-		if (M_Product_ID == null || M_Product_ID == 0) {
-			mTab.setValue("LBR_Tax_ID", null);
-			return "";
-		}
-
-		Integer AD_Org_ID = (Integer) mTab.getValue(MOrderLine.COLUMNNAME_AD_Org_ID);
-
-		if (AD_Org_ID == null)
-			AD_Org_ID = 0;
-		
-		Integer C_Order_ID = (Integer) mTab.getValue(MOrderLine.COLUMNNAME_C_Order_ID);
-
-		if (C_Order_ID == null)
-			C_Order_ID = 0;
-		
-		MOrgInfo oi = MOrgInfo.get(ctx, AD_Org_ID, null);
-		Object[] taxation = null;
-		MBPartnerLocation bpLoc = null;
-
-		MOrder o = new MOrder (ctx, C_Order_ID, null);
-		MProduct p = new MProduct (ctx, M_Product_ID, null);
-		MBPartner bp = new MBPartner (ctx, o.getC_BPartner_ID(), null);
-		bpLoc = (MBPartnerLocation) o.getBill_Location(); 
-		taxation = MLBRTax.getTaxes (o.getC_DocTypeTarget_ID(), o.isSOTrx(), o.get_ValueAsString("LBR_TransactionType"), p, oi, bp, bpLoc, o.getDateAcct());
-		
-		if (taxation == null)
-			return "";
-		
-		/**
-		 * Content for taxation array slots:
-		 * 	0 = Taxes
-		 * 	1 = Legal Message
-		 * 	2 = CFOP
-		 * 	3 = CST
-		 */
-		@SuppressWarnings("unchecked")
-		Map<Integer, MLBRTaxLine> taxes = (Map<Integer, MLBRTaxLine>) taxation[0];
-		
-		if (taxes.size() > 0)
-		{
-			MLBRTax tax = new MLBRTax (ctx, 0, null);
-			tax.setAD_Org_ID(AD_Org_ID);
-			tax.save();
-
-			for (Integer key : taxes.keySet()) {
-				MLBRTaxLine tl = taxes.get(key);
-				tl.setLBR_Tax_ID(tax.getLBR_Tax_ID());
-				tl.save();
-			}
-
-			tax.setDescription();
-			tax.save();
-			mTab.setValue("LBR_Tax_ID", tax.getLBR_Tax_ID());
-		}
-		
-		//if (((Integer) taxation[1]) > 0)
-		//	mTab.setValue("LBR_LegalMessage_ID", ((Integer) taxation[1]));
-		
-		//if (((Integer) taxation[2]) > 0)
-		//	mTab.setValue("LBR_CFOP_ID", ((Integer) taxation[2]));
-		
-		//if (((String) taxation[3]) != null && ((String) taxation[3]).length() > 0)
-		//	mTab.setValue("lbr_TaxStatus", p.getlbr_ProductSource() + ((String) taxation[3]));
-		
-		return null;
 	}
 }

@@ -29,6 +29,8 @@ import org.adempiere.model.POWrapper;
 import org.compiere.model.I_C_Location;
 import org.compiere.model.MBPartner;
 import org.compiere.model.MBPartnerLocation;
+import org.compiere.model.MInvoice;
+import org.compiere.model.MInvoiceLine;
 import org.compiere.model.MOrder;
 import org.compiere.model.MOrderLine;
 import org.compiere.model.MOrg;
@@ -556,19 +558,44 @@ public class MLBRTax extends X_LBR_Tax
 	 * 		Não usar este método em Callouts, pois a Callout pode acioná=lo antes que 
 	 * 			a linha tenha sido salva.
 	 * 
-	 * 	@param Order Line
+	 * 	@param ctx context
+	 * 	@param ol line
+	 * 	@param trxName transaction name
 	 * 	@return Object Array (Taxes, Legal Msg, CFOP and CST) 
 	 */
-	public static Object[] getTaxes (MOrderLine ol)
+	public static Object[] getTaxes (Properties ctx, MOrderLine ol, String trxName)
 	{
-		MOrder o = new MOrder (Env.getCtx(), ol.getC_Order_ID(), null);
-		MProduct p = new MProduct (Env.getCtx(), ol.getM_Product_ID(), null);
-		MOrgInfo oi = MOrgInfo.get(Env.getCtx(), o.getAD_Org_ID(), null);
-		
-		MBPartner bp = new MBPartner (Env.getCtx(), o.getC_BPartner_ID(), null);
-		MBPartnerLocation bpLoc = new MBPartnerLocation (Env.getCtx(), o.getBill_Location_ID(), null); 
-		//
-		return getTaxes (o.getC_DocTypeTarget_ID(), o.isSOTrx(), o.get_ValueAsString("LBR_TransactionType"), p, oi, bp, bpLoc, o.getDateAcct());
+		MOrder o = new MOrder (ctx, ol.getC_Order_ID(), trxName);
+		MProduct p = new MProduct (ctx, ol.getM_Product_ID(), trxName);
+		MOrgInfo oi = MOrgInfo.get(ctx, o.getAD_Org_ID(), trxName);
+		MBPartner bp = new MBPartner (ctx, o.getC_BPartner_ID(), trxName);
+		MBPartnerLocation bpLoc = new MBPartnerLocation (ctx, o.getBill_Location_ID(), trxName); 
+
+		return getTaxes (ctx, o.getC_DocTypeTarget_ID(), o.isSOTrx(),
+				o.get_ValueAsString("LBR_TransactionType"), p, oi, bp, bpLoc, o.getDateAcct(), trxName);
+	}	//	getTaxes
+	
+	/**
+	 * 		Retorna o registro do imposto baseado na pesquisa
+	 * 
+	 * 		Não usar este método em Callouts, pois a Callout pode acioná=lo antes que 
+	 * 			a linha tenha sido salva.
+	 * 
+	 * 	@param ctx context
+	 * 	@param il line
+	 * 	@param trxName transaction name
+	 * 	@return Object Array (Taxes, Legal Msg, CFOP and CST) 
+	 */
+	public static Object[] getTaxes (Properties ctx, MInvoiceLine il, String trxName)
+	{
+		MInvoice i = new MInvoice (ctx, il.getC_Invoice_ID(), trxName);
+		MProduct p = new MProduct (ctx, il.getM_Product_ID(), trxName);
+		MOrgInfo oi = MOrgInfo.get(ctx, i.getAD_Org_ID(), trxName);
+		MBPartner bp = new MBPartner (ctx, i.getC_BPartner_ID(), trxName);
+		MBPartnerLocation bpLoc = new MBPartnerLocation (ctx, i.getC_BPartner_Location_ID(), trxName); 
+
+		return getTaxes (ctx, i.getC_DocTypeTarget_ID(), i.isSOTrx(),
+				i.get_ValueAsString("LBR_TransactionType"), p, oi, bp, bpLoc, i.getDateAcct(), trxName);
 	}	//	getTaxes
 	
 	/**
@@ -582,24 +609,23 @@ public class MLBRTax extends X_LBR_Tax
 	 * @param Date Acct
 	 * @return Object Array (Taxes, Legal Msg, CFOP and CST) 
 	 */
-	public static Object[] getTaxes (int C_DocTypeTarget_ID, boolean isSOTrx, String lbr_TransactionType, MProduct p, 
-			MOrgInfo oi, MBPartner bp, MBPartnerLocation bpLoc, Timestamp dateAcct)
+	public static Object[] getTaxes (Properties ctx, int C_DocTypeTarget_ID, boolean isSOTrx, String lbr_TransactionType, MProduct p, 
+			MOrgInfo oi, MBPartner bp, MBPartnerLocation bpLoc, Timestamp dateAcct, String trxName)
 	{
 		I_W_C_BPartner bpW = POWrapper.create(bp, I_W_C_BPartner.class);
 		I_W_M_Product pW = POWrapper.create(p, I_W_M_Product.class);
 		I_W_AD_OrgInfo oiW = POWrapper.create(oi, I_W_AD_OrgInfo.class);
-		Properties ctx = Env.getCtx();
 		
 		// Try to get Location from OrgInfo. If null, get first from linked BPartner
 		int C_Location_ID = oi.getC_Location_ID();
 		I_C_Location oiLocation = oi.getC_Location();
 
 		if (C_Location_ID == 0) {
-			MOrg org = new MOrg (ctx, oi.getAD_Org_ID(), null);
-			int bpL_ID = org.getLinkedC_BPartner_ID(null);
+			MOrg org = new MOrg (ctx, oi.getAD_Org_ID(), trxName);
+			int bpL_ID = org.getLinkedC_BPartner_ID(trxName);
 			
 			if (bpL_ID > 0) {
-				MBPartner bpL = new MBPartner(ctx, bpL_ID, null);
+				MBPartner bpL = new MBPartner(ctx, bpL_ID, trxName);
 				MBPartnerLocation[] locs = bpL.getLocations(false);
 				
 				if (locs != null && locs.length > 0) {
@@ -621,8 +647,8 @@ public class MLBRTax extends X_LBR_Tax
 		 * 	Organization
 		 */
 		if (oiW.getLBR_Tax_ID() > 0) {
-			log.info ("######## Processing Tax for Organization: " + oi + ", Taxes: " + new MLBRTax(ctx, oiW.getLBR_Tax_ID(), null));
-			processTaxes(taxes, oiW.getLBR_Tax_ID());
+			log.info ("######## Processing Tax for Organization: " + oi + ", Taxes: " + new MLBRTax(ctx, oiW.getLBR_Tax_ID(), trxName));
+			processTaxes(ctx, taxes, oiW.getLBR_Tax_ID(), trxName);
 		}
 		
 		/**
@@ -631,7 +657,7 @@ public class MLBRTax extends X_LBR_Tax
 		 */
 		if (p.getM_Product_ID() > 0 && pW.getLBR_NCM_ID() > 0)
 		{
-			MLBRNCM ncm = new MLBRNCM (Env.getCtx(), pW.getLBR_NCM_ID(), null);
+			MLBRNCM ncm = new MLBRNCM (Env.getCtx(), pW.getLBR_NCM_ID(), trxName);
 			I_W_LBR_NCM ncmW = POWrapper.create(ncm, I_W_LBR_NCM.class);
 			X_LBR_NCMTax ncmTax = ncm.getLBR_NCMTax(oi.getAD_Org_ID(), bpLoc.getC_Location().getC_Region_ID(), dateAcct);
 			//
@@ -640,8 +666,8 @@ public class MLBRTax extends X_LBR_Tax
 				hasSubstitution = ncmTax.isLBR_HasSubstitution();
 				
 				if (ncmTax.getLBR_Tax_ID() > 0) {
-					log.info ("######## Processing Tax for NCM Line: " + ncmTax + ", Taxes: " + new MLBRTax(ctx, ncmTax.getLBR_Tax_ID(), null));
-					processTaxes(taxes, ncmTax.getLBR_Tax_ID());
+					log.info ("######## Processing Tax for NCM Line: " + ncmTax + ", Taxes: " + new MLBRTax(ctx, ncmTax.getLBR_Tax_ID(), trxName));
+					processTaxes(ctx, taxes, ncmTax.getLBR_Tax_ID(), trxName);
 				}
 			}
 			else
@@ -649,8 +675,8 @@ public class MLBRTax extends X_LBR_Tax
 				hasSubstitution = ncmW.isLBR_HasSubstitution();
 				
 				if (ncmW.getLBR_Tax_ID() > 0) {
-					log.info ("######## Processing Tax for NCM: " + ncm + ", Taxes: " + new MLBRTax(ctx, ncmW.getLBR_Tax_ID(), null));
-					processTaxes(taxes, ncmW.getLBR_Tax_ID());	//	Legacy
+					log.info ("######## Processing Tax for NCM: " + ncm + ", Taxes: " + new MLBRTax(ctx, ncmW.getLBR_Tax_ID(), trxName));
+					processTaxes(ctx, taxes, ncmW.getLBR_Tax_ID(), trxName);	//	Legacy
 				}
 			}
 		}
@@ -659,16 +685,18 @@ public class MLBRTax extends X_LBR_Tax
 		 * 	Matriz de ICMS
 		 */
 		if (!MProduct.PRODUCTTYPE_Service.equals(p.getProductType())) {
-			MLBRICMSMatrix mICMS = MLBRICMSMatrix.get (ctx, oi.getAD_Org_ID(), (oiLocation.getC_Location_ID() < 1 ? -1 : oiLocation.getC_Region_ID()), bpLoc.getC_Location().getC_Region_ID(), dateAcct, null);
+			MLBRICMSMatrix mICMS = MLBRICMSMatrix.get (ctx, oi.getAD_Org_ID(),
+					(oiLocation.getC_Location_ID() < 1 ? -1 : oiLocation.getC_Region_ID()),
+					bpLoc.getC_Location().getC_Region_ID(), dateAcct, trxName);
 
 			if (mICMS != null && mICMS.getLBR_Tax_ID() > 0) {
-				log.info ("######## Processing Tax for ICMS Matrix: " + mICMS + ", Taxes: " + new MLBRTax(ctx, mICMS.getLBR_Tax_ID(), null));
-				processTaxes(taxes, mICMS.getLBR_Tax_ID());
+				log.info ("######## Processing Tax for ICMS Matrix: " + mICMS + ", Taxes: " + new MLBRTax(ctx, mICMS.getLBR_Tax_ID(), trxName));
+				processTaxes(ctx, taxes, mICMS.getLBR_Tax_ID(), trxName);
 				//
 				if (hasSubstitution && mICMS.getLBR_STTax_ID() > 0)
 				{
-					log.info ("######## Processing Tax for ICMS ST Matrix: " + mICMS + ", Taxes: " + new MLBRTax(ctx, mICMS.getLBR_STTax_ID(), null));
-					processTaxes(taxes, mICMS.getLBR_STTax_ID());
+					log.info ("######## Processing Tax for ICMS ST Matrix: " + mICMS + ", Taxes: " + new MLBRTax(ctx, mICMS.getLBR_STTax_ID(), trxName));
+					processTaxes(ctx, taxes, mICMS.getLBR_STTax_ID(), trxName);
 				}
 			}
 		}
@@ -678,11 +706,11 @@ public class MLBRTax extends X_LBR_Tax
 		 */
 		if (MProduct.PRODUCTTYPE_Service.equals(p.getProductType())) {
 			MLBRISSMatrix mISS = MLBRISSMatrix.get (ctx, oi.getAD_Org_ID(), bpLoc.getC_Location().getC_Region_ID(), 
-					(bpLoc != null ? bpLoc.getC_Location().getC_City_ID() : 0), p.getM_Product_ID(), dateAcct, null);
+					(bpLoc != null ? bpLoc.getC_Location().getC_City_ID() : 0), p.getM_Product_ID(), dateAcct, trxName);
 
 			if (mISS != null && mISS.getLBR_Tax_ID() > 0) {
-				log.info ("######## Processing Tax for ISS Matrix: " + mISS + ", Taxes: " + new MLBRTax(ctx, mISS.getLBR_Tax_ID(), null));
-				processTaxes(taxes, mISS.getLBR_Tax_ID());
+				log.info ("######## Processing Tax for ISS Matrix: " + mISS + ", Taxes: " + new MLBRTax(ctx, mISS.getLBR_Tax_ID(), trxName));
+				processTaxes(ctx, taxes, mISS.getLBR_Tax_ID(), trxName);
 			}
 		}
 		
@@ -690,7 +718,7 @@ public class MLBRTax extends X_LBR_Tax
 		 * 	Janela de Configuração de Impostos
 		 */
 		MLBRTaxConfiguration tc = MLBRTaxConfiguration.get (ctx, oi.getAD_Org_ID(), p.getM_Product_ID(), 
-				pW.getLBR_FiscalGroup_Product_ID(), isSOTrx, null);
+				pW.getLBR_FiscalGroup_Product_ID(), isSOTrx, trxName);
 		//
 		if (tc != null)
 		{
@@ -704,8 +732,8 @@ public class MLBRTax extends X_LBR_Tax
 				if (tcpg != null)
 				{
 					if (tcpg.getLBR_Tax_ID() > 0) {
-						log.info ("######## Processing Tax for Product Group: " + tcpg + ", Taxes: " + new MLBRTax(ctx, tcpg.getLBR_Tax_ID(), null));
-						processTaxes(taxes, tcpg.getLBR_Tax_ID());
+						log.info ("######## Processing Tax for Product Group: " + tcpg + ", Taxes: " + new MLBRTax(ctx, tcpg.getLBR_Tax_ID(), trxName));
+						processTaxes(ctx, taxes, tcpg.getLBR_Tax_ID(), trxName);
 					}
 
 					if (tcpg.getLBR_LegalMessage_ID() > 0)
@@ -726,8 +754,8 @@ public class MLBRTax extends X_LBR_Tax
 				if (tcp != null)
 				{
 					if (tcp.getLBR_Tax_ID() > 0) {
-						log.info ("######## Processing Tax for Product: " + tcp + ", Taxes: " + new MLBRTax(ctx, tcp.getLBR_Tax_ID(), null));
-						processTaxes(taxes, tcp.getLBR_Tax_ID());
+						log.info ("######## Processing Tax for Product: " + tcp + ", Taxes: " + new MLBRTax(ctx, tcp.getLBR_Tax_ID(), trxName));
+						processTaxes(ctx, taxes, tcp.getLBR_Tax_ID(), trxName);
 					}
 
 					if (tcp.getLBR_LegalMessage_ID() > 0)
@@ -741,13 +769,14 @@ public class MLBRTax extends X_LBR_Tax
 			/**
 			 * 	Region
 			 */
-			X_LBR_TaxConfig_Region tcr = tc.getTC_Region (oi.getAD_Org_ID(), oiLocation.getC_Region_ID(), (bpLoc != null ? bpLoc.getC_Location().getC_Region_ID() : 0), dateAcct);
+			X_LBR_TaxConfig_Region tcr = tc.getTC_Region (oi.getAD_Org_ID(), oiLocation.getC_Region_ID(),
+					(bpLoc != null ? bpLoc.getC_Location().getC_Region_ID() : 0), dateAcct);
 			
 			if (tcr != null)
 			{
 				if (tcr.getLBR_Tax_ID() > 0) {
-					log.info ("######## Processing Tax for Region: " + tcr + ", Taxes: " + new MLBRTax(ctx, tcr.getLBR_Tax_ID(), null));
-					processTaxes(taxes, tcr.getLBR_Tax_ID());
+					log.info ("######## Processing Tax for Region: " + tcr + ", Taxes: " + new MLBRTax(ctx, tcr.getLBR_Tax_ID(), trxName));
+					processTaxes(ctx, taxes, tcr.getLBR_Tax_ID(), trxName);
 				}
 
 				if (tcr.getLBR_LegalMessage_ID() > 0)
@@ -760,13 +789,14 @@ public class MLBRTax extends X_LBR_Tax
 			/**
 			 * 	Business Partner Group
 			 */
-			X_LBR_TaxConfig_BPGroup tcbpg = tc.getTC_BPGroup (oi.getAD_Org_ID(), (isSOTrx ? bpW.getLBR_FiscalGroup_Customer_ID() : bpW.getLBR_FiscalGroup_Customer_ID()), dateAcct);
+			X_LBR_TaxConfig_BPGroup tcbpg = tc.getTC_BPGroup (oi.getAD_Org_ID(),
+					(isSOTrx ? bpW.getLBR_FiscalGroup_Customer_ID() : bpW.getLBR_FiscalGroup_Customer_ID()), dateAcct);
 			
 			if (tcbpg != null)
 			{
 				if (tcbpg.getLBR_Tax_ID() > 0) {
-					log.info ("######## Processing Tax for BPartner Group: " + tcbpg + ", Taxes: " + new MLBRTax(ctx, tcbpg.getLBR_Tax_ID(), null));
-					processTaxes(taxes, tcbpg.getLBR_Tax_ID());
+					log.info ("######## Processing Tax for BPartner Group: " + tcbpg + ", Taxes: " + new MLBRTax(ctx, tcbpg.getLBR_Tax_ID(), trxName));
+					processTaxes(ctx, taxes, tcbpg.getLBR_Tax_ID(), trxName);
 				}
 
 				if (tcbpg.getLBR_LegalMessage_ID() > 0)
@@ -784,8 +814,8 @@ public class MLBRTax extends X_LBR_Tax
 			if (tcbp != null)
 			{
 				if (tcbp.getLBR_Tax_ID() > 0) {
-					log.info ("######## Processing Tax for BPartner: " + tcbp + ", Taxes: " + new MLBRTax(ctx, tcbp.getLBR_Tax_ID(), null));
-					processTaxes (taxes, tcbp.getLBR_Tax_ID());
+					log.info ("######## Processing Tax for BPartner: " + tcbp + ", Taxes: " + new MLBRTax(ctx, tcbp.getLBR_Tax_ID(), trxName));
+					processTaxes (ctx, taxes, tcbp.getLBR_Tax_ID(), trxName);
 				}
 
 				if (tcbp.getLBR_LegalMessage_ID() > 0)
@@ -827,13 +857,13 @@ public class MLBRTax extends X_LBR_Tax
 		
 		X_LBR_CFOPLine cFOPLine = MLBRCFOP.chooseCFOP (oi.getAD_Org_ID(), C_DocTypeTarget_ID, pW.getLBR_ProductCategory_ID(), 
 				(isSOTrx ? bpW.getLBR_CustomerCategory_ID() : bpW.getLBR_VendorCategory_ID()), 
-				lbr_TransactionType, lbr_DestionationType, hasSubstitution, p.isManufactured(), null);
+				lbr_TransactionType, lbr_DestionationType, hasSubstitution, p.isManufactured(), trxName);
 
 		if (cFOPLine != null)
 		{
 			if (cFOPLine.getLBR_Tax_ID() > 0) {
-				log.info ("######## Processing Tax for CFOP Line: " + cFOPLine + ", Taxes: " + new MLBRTax(ctx, cFOPLine.getLBR_Tax_ID(), null));
-				processTaxes (taxes, cFOPLine.getLBR_Tax_ID());
+				log.info ("######## Processing Tax for CFOP Line: " + cFOPLine + ", Taxes: " + new MLBRTax(ctx, cFOPLine.getLBR_Tax_ID(), trxName));
+				processTaxes (ctx, taxes, cFOPLine.getLBR_Tax_ID(), trxName);
 			}
 
 			if (cFOPLine.getLBR_LegalMessage_ID() > 0)
@@ -855,8 +885,8 @@ public class MLBRTax extends X_LBR_Tax
 		for (MLBRTaxDefinition td : taxesDef)
 		{
 			if (td.getLBR_Tax_ID() > 0) {
-				log.info ("######## Processing Tax for Tax Definition: " + td + ", Taxes: " + new MLBRTax(ctx, td.getLBR_Tax_ID(), null));
-				processTaxes (taxes, td.getLBR_Tax_ID());
+				log.info ("######## Processing Tax for Tax Definition: " + td + ", Taxes: " + new MLBRTax(ctx, td.getLBR_Tax_ID(), trxName));
+				processTaxes (ctx, taxes, td.getLBR_Tax_ID(), trxName);
 			}
 
 			if (td.getLBR_LegalMessage_ID() > 0)
@@ -874,22 +904,25 @@ public class MLBRTax extends X_LBR_Tax
 
 	/**
 	 * 	Ajusta os impostos
-	 * 	@param taxes
-	 * 	@param tcpg
+	 * 
+	 * 	@param ctx context
+	 * 	@param taxes tax names map
+	 * 	@param LBR_Tax_ID transaction tax
+	 * 	@param trxName transaction name
 	 */
-	private static void processTaxes (Map<Integer, MLBRTaxLine> taxes, int LBR_Tax_ID)
+	private static void processTaxes (Properties ctx, Map<Integer, MLBRTaxLine> taxes, int LBR_Tax_ID, String trxName)
 	{
 		if (LBR_Tax_ID < 1 || taxes == null)
 			return;
 		//
-		MLBRTax tax = new MLBRTax (Env.getCtx(), LBR_Tax_ID, null);
+		MLBRTax tax = new MLBRTax (ctx, LBR_Tax_ID, trxName);
 		//
 		for (MLBRTaxLine tl : tax.getLines())
 		{
 			if (taxes.containsKey(tl.getLBR_TaxName_ID()))
 				taxes.remove(tl.getLBR_TaxName_ID());
 			//
-			taxes.put (tl.getLBR_TaxName_ID(), tl.copy());
+			taxes.put (tl.getLBR_TaxName_ID(), tl.copy(ctx, trxName));
 		}
 	}	//	processTaxes
 	

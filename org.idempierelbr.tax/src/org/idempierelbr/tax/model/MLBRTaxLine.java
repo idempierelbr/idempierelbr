@@ -22,7 +22,6 @@ import java.util.Properties;
 import org.adempiere.model.POWrapper;
 import org.idempierelbr.tax.wrapper.I_W_C_Tax;
 import org.compiere.model.MTax;
-import org.compiere.util.Env;
 
 /**
  * 		Cálculo do Imposto por Linha
@@ -128,9 +127,9 @@ public class MLBRTaxLine extends X_LBR_TaxLine implements Comparator<Object>, Co
 	/**
 	 * 		Copia os impostos para um novo TL
 	 */
-	public MLBRTaxLine copy ()
+	public MLBRTaxLine copy (Properties ctx, String trxName)
 	{
-		MLBRTaxLine tl = new MLBRTaxLine (Env.getCtx(), 0, null);
+		MLBRTaxLine tl = new MLBRTaxLine (ctx, 0, trxName);
 		super.copyValues(this, tl);
 		tl.setLBR_Tax_ID(0);
 		//
