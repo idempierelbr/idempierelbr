@@ -667,12 +667,12 @@
   <value column="Description" original="Marketing Campaign">Campanha de Marketing</value>
  </row>
  <row id="282" trl="Y">
-  <value column="Name" original="User List 1">Lista do Usuário 1</value>
-  <value column="Description" original="User 1">Usuário 1</value>
+  <value column="Name" original="User Element List 1">Lista do Usuário 1</value>
+  <value column="Description" original="User Element List 1">Usuário 1</value>
  </row>
  <row id="283" trl="Y">
-  <value column="Name" original="User List 2">Lista do Usuário 2</value>
-  <value column="Description" original="User 2">Usuário 2</value>
+  <value column="Name" original="User Element List 2">Lista do Usuário 2</value>
+  <value column="Description" original="User Element List 2">Usuário 2</value>
  </row>
  <row id="284" trl="Y">
   <value column="Name" original="Organization">Organização</value>
@@ -2583,12 +2583,12 @@
   <value column="Description" original="Sub Account for Element Value">Sub Account for Element Value</value>
  </row>
  <row id="796" trl="Y">
-  <value column="Name" original="User Element 1">Elemento do Usuário 1</value>
-  <value column="Description" original=""/>
+  <value column="Name" original="User Column 1">Elemento do Usuário 1</value>
+  <value column="Description" original="User Column 1"/>
  </row>
  <row id="797" trl="Y">
-  <value column="Name" original="User Element 2">Elemento do Usuário 2</value>
-  <value column="Description" original=""/>
+  <value column="Name" original="User Column 2">Elemento do Usuário 2</value>
+  <value column="Description" original="User Column 2"/>
  </row>
  <row id="798" trl="Y">
   <value column="Name" original="EMail">Email</value>
@@ -4123,20 +4123,20 @@
   <value column="Description" original="Sales Region">Sales Region</value>
  </row>
  <row id="53430" trl="N">
-  <value column="Name" original="User List 1">User List 1</value>
-  <value column="Description" original="User 1">User 1</value>
+  <value column="Name" original="User Element List 1">User List 1</value>
+  <value column="Description" original="User Element List 1">User 1</value>
  </row>
  <row id="53431" trl="N">
-  <value column="Name" original="User List 2">User List 2</value>
+  <value column="Name" original="User Element List 2">User List 2</value>
   <value column="Description" original="User 2">User 2</value>
  </row>
  <row id="53432" trl="N">
-  <value column="Name" original="User Element 1">User Element 1</value>
-  <value column="Description" original=""/>
+  <value column="Name" original="User Column 1">User Element 1</value>
+  <value column="Description" original="User Column 1"/>
  </row>
  <row id="53433" trl="N">
-  <value column="Name" original="User Element 2">User Element 2</value>
-  <value column="Description" original=""/>
+  <value column="Name" original="User Column 2">User Element 2</value>
+  <value column="Description" original="User Column 2"/>
  </row>
  <row id="53434" trl="N">
   <value column="Name" original="Combination">Combination</value>
@@ -5540,6 +5540,166 @@
  </row>
  <row trl="N" uuid="085e7fb2-246e-43da-9c11-d704d0e6e597">
   <value column="Name" original="Zona Franca">Zona Franca</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="33bc9f8f-21d8-4a8f-bdbe-9ba4a14c8545">
+  <value column="Name" original="Vehicle">Veículo Novo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="784c753d-53f6-4a13-93e5-a10d10211d35">
+  <value column="Name" original="Medicine">Medicamentos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="3b3eed6a-9324-45dd-b7d7-b4082c73d1a0">
+  <value column="Name" original="Armament">Armamentos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="36d48e8f-dccc-4cd3-8342-98b69c4af735">
+  <value column="Name" original="Fuel">Combustível</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="2f43cf29-d37a-4809-9c1b-f952ea7b9c85">
+  <value column="Name" original="ICMS">ICMS</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="e71e2d12-7a4b-4cfd-b414-cb1b7ae74c91">
+  <value column="Name" original="ISSQN">ISSQN</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="3000a7b0-7c6f-4e1c-83ff-c6762bbc2a5c">
+  <value column="Name" original="Default Taxation">Tributação Normal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="27a1b3d0-84c7-46d9-9828-a0fae6b627f4">
+  <value column="Name" original="Simple Taxation">Simples Nacional</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="da16b647-d848-4370-b3f4-d967ef1f053a">
+  <value column="Name" original="Cab">Táxi</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="40f9cedf-973c-423e-85e7-4ec4b5d3f400">
+  <value column="Name" original="Agriculture Use">Produtor Agropecuário</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="7934af8b-eea0-408b-aff6-a2f217f4eea5">
+  <value column="Name" original="Rental">Frotista / Locadora</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="1991564f-caff-459e-8320-e08f10998330">
+  <value column="Name" original="Consular">Diplomático / Consular</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="ef8d475d-20c5-424b-81fb-148421a897d4">
+  <value column="Name" original="SUVs and Motorcycles">Utilitários e Motocicletas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="0044409f-ea68-4172-b0a0-b25b1bdd4c0e">
+  <value column="Name" original="SUFRAMA">SUFRAMA</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="cd9df5af-8cbf-4e34-b726-50592f578ba6">
+  <value column="Name" original="Sale to public institutions">Venda a Órgãos Públicos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="7bfdbdb4-aaf0-4c67-80a5-362b53d6e735">
+  <value column="Name" original="Other">Outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="a2df0eca-f858-4486-bd06-4874e63116e6">
+  <value column="Name" original="Financing agency">Agência de Fomento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="d54a7d6b-8754-4e0a-90c6-183481623741">
+  <value column="Name" original="10 - Tributada e com cobranca do ICMS por Sub. Tributaria (com partilha)">10 - Tributada e com cobrança do ICMS por Sub. Tributaria (com partilha entre UFs)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="4fc35d99-471f-4898-88a9-31d45d7843a1">
+  <value column="Name" original="41 - Nao-tributada (retencao antecipada)">41 - Não Tributada (retenção antecipada)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="2f591975-cc2f-4141-952f-a6d24bc3f4df">
+  <value column="Name" original="90 - Outras (com partilha)">90 - Outras (com partilha entre UFs)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="ceff9b90-b63b-4e99-8c14-d380c7b1063b">
+  <value column="Name" original="101 - Tributada com permissao de credito">101 - Tributada com Permissão de Crédito</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="e6b3435b-251f-415a-ab2d-9224c57bef5c">
+  <value column="Name" original="102 - Tributada sem permissao de credito">102 - Tributada sem Permissão de Crédito</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="c9ce64d1-eb7a-4508-965e-ed078b90cdc8">
+  <value column="Name" original="103 - Isencao do ICMS para faixa de receita brita">103 - Isenção do ICMS para Faixa de Receita Bruta</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="d09e9ab6-51a3-41b5-a3a9-40e114521caa">
+  <value column="Name" original="201 - Tributada com permissao de credito">201 - Tributada com Permissão de Crédito e com Cobrança do ICMS por ST</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="7baf4313-af46-4c5c-9636-8ebfdd1c7e5d">
+  <value column="Name" original="202 - Tributada sem permissao de credito">202 - Tributada sem Permissão de Crédito e com Cobrança do ICMS por ST</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="e318db80-6f8c-44ca-9a67-966411fb398e">
+  <value column="Name" original="203 - Isencao do ICMS para faixa de receita bruta">203 - Isenção do ICMS para Faixa de Receita Bruta e com Cobrança do ICMS por ST</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="0ece1d2d-4b94-4a08-bacd-8524e3604284">
+  <value column="Name" original="300 - Imune">300 - Imune</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="323ced58-9e39-4310-a224-83a4ea423ce1">
+  <value column="Name" original="400 - Nao Tributada">400 - Não Tributada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="31e06254-a490-4176-a102-e0e12417a07a">
+  <value column="Name" original="500 - ICMS cobrado anteriormente">500 - ICMS Cobrado Anteriormente por ST ou por Antecipação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="ed5bcf2c-81ac-4b6e-aa4a-5822b3ec31c3">
+  <value column="Name" original="900 - Outros">900 - Outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="800f6ba8-8364-498d-856c-283db35aca83">
+  <value column="Name" original="Margem Valor Agregado (%)">Margem Valor Agregado (%)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="611e47b3-0d72-4b64-8720-05b7d63127b4">
+  <value column="Name" original="Pauta (Valor)">Pauta (Valor)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="8afc06f2-5678-4908-a7d9-14795b250a60">
+  <value column="Name" original="Preco Tabelado Max. (Valor)">Preço Tabelado Máx. (Valor)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="8099a42f-fd7c-403b-bee6-177cec0f4e27">
+  <value column="Name" original="Valor da Operacao">Valor da Operação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="78da1fb8-96fd-4ec2-a350-f5f913f4f2af">
+  <value column="Name" original="Preco Tabelado ou Maximo Sugerido">Preço Tabelado ou Máximo Sugerido</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="793d0af2-8593-4d6e-80e3-0bab3138c264">
+  <value column="Name" original="Lista Negativa (Valor)">Lista Negativa (Valor)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="fec520e1-caea-4465-83c5-10bccb225acc">
+  <value column="Name" original="Lista Positiva (Valor)">Lista Positiva (Valor)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="cbb05c8f-726c-4a21-8e96-a6f0c42abbcb">
+  <value column="Name" original="Lista Neutra (Valor)">Lista Neutra (Valor)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="2a7ea5d9-5d79-4541-abe7-906c9dbfeb73">
+  <value column="Name" original="Margem Valor Agregado (%)">Margem Valor Agregado (%)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="742b6dc5-d0f5-4e66-a8f9-ddffdaa90c5c">
+  <value column="Name" original="Pauta (Valor)">Pauta (Valor)</value>
   <value column="Description" original=""/>
  </row>
 </idempiereTrl>

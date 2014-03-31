@@ -215,4 +215,10 @@
  <row trl="Y" uuid="9fb757cc-e889-4009-aacd-f5a39d050a40">
   <value column="Name" original="Tax">Imposto</value>
  </row>
+ <row trl="N" uuid="ed102c95-79e4-459c-8ffb-c16d7e2a2bfd">
+  <value column="Name" original="ICMS">ICMS</value>
+ </row>
+ <row trl="N" uuid="7aef2699-ace3-4e7d-ad9d-de0e6fe28ccb">
+  <value column="Name" original="ICMS-ST">ICMS-ST</value>
+ </row>
 </idempiereTrl>

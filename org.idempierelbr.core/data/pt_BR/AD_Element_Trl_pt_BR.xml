@@ -3533,8 +3533,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="613" trl="Y">
-  <value column="Name" original="User List 1">Lista do Usuário 1</value>
-  <value column="PrintName" original="User 1">Usuário 1</value>
+  <value column="Name" original="User Element List 1">Lista do Usuário 1</value>
+  <value column="PrintName" original="User Element List 1">Usuário 1</value>
   <value column="Description" original="User defined list element #1">User defined list element #1</value>
   <value column="Help" original="The user defined element displays the optional elements that have been defined for this account combination.">O "Elemento Definido pelo Usuário" exibe os elementos opcionais que tenham sido definidos para esta combinação de contas.</value>
   <value column="PO_Description" original=""/>
@@ -3543,8 +3543,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="614" trl="Y">
-  <value column="Name" original="User List 2">Lista do Usuário 2</value>
-  <value column="PrintName" original="User 2">Usuário 2</value>
+  <value column="Name" original="User Element List 2">Lista do Usuário 2</value>
+  <value column="PrintName" original="User Element List 2">Usuário 2</value>
   <value column="Description" original="User defined list element #2">User defined list element #2</value>
   <value column="Help" original="The user defined element displays the optional elements that have been defined for this account combination.">O "Elemento Definido pelo Usuário" exibe os elementos opcionais que tenham sido definidos para esta combinação de contas.</value>
   <value column="PO_Description" original=""/>
@@ -9258,8 +9258,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1675" trl="Y">
-  <value column="Name" original="Product Key">Chave de Produto</value>
-  <value column="PrintName" original="Product Key">Chave de Produto</value>
+  <value column="Name" original="Product Key">Chave do Produto</value>
+  <value column="PrintName" original="Product Key">Chave do Produto</value>
   <value column="Description" original="Key of the Product">Chave do Produto</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -20537,8 +20537,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2877" trl="Y">
-  <value column="Name" original="User Element 1">Elemento do Usuário 1</value>
-  <value column="PrintName" original="User Element 1">Elemento do Usuário 1</value>
+  <value column="Name" original="User Column 1">Elemento do Usuário 1</value>
+  <value column="PrintName" original="User Column 1">Elemento do Usuário 1</value>
   <value column="Description" original="User defined accounting Element">User defined accounting Element</value>
   <value column="Help" original="A user defined accounting element referres to a iDempiere table. This allows to use any table content as an accounting dimension (e.g. Project Task).  Note that User Elements are optional and are populated from the context of the document (i.e. not requested)">A user defined accounting element referres to a Compiere table. This allows to use any table content as an accounting dimension (e.g. Project Task).  Note that User Elements are optional and are populated from the context of the document (i.e. not requested)</value>
   <value column="PO_Description" original=""/>
@@ -20547,8 +20547,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2878" trl="Y">
-  <value column="Name" original="User Element 2">Elemento do Usuário 2</value>
-  <value column="PrintName" original="User Element 2">Elemento do Usuário 2</value>
+  <value column="Name" original="User Column 2">Elemento do Usuário 2</value>
+  <value column="PrintName" original="User Column 2">Elemento do Usuário 2</value>
   <value column="Description" original="User defined accounting Element">User defined accounting Element</value>
   <value column="Help" original="A user defined accounting element referres to a iDempiere table. This allows to use any table content as an accounting dimension (e.g. Project Task).  Note that User Elements are optional and are populated from the context of the document (i.e. not requested) ">A user defined accounting element referres to a Compiere table. This allows to use any table content as an accounting dimension (e.g. Project Task).  Note that User Elements are optional and are populated from the context of the document (i.e. not requested) </value>
   <value column="PO_Description" original=""/>
@@ -28806,9 +28806,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53835" trl="N">
-  <value column="Name" original="User 1 Dimension">User 1 Dimension</value>
-  <value column="PrintName" original="User 1 Dimension">User 1 Dimension</value>
-  <value column="Description" original="Include User 1 as a cube dimension">Include User 1 as a cube dimension</value>
+  <value column="Name" original="User Element List 1 Dimension">User 1 Dimension</value>
+  <value column="PrintName" original="User Element List 1 Dimension">User 1 Dimension</value>
+  <value column="Description" original="Include User Element List 1 as a cube dimension">Include User 1 as a cube dimension</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -28816,9 +28816,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53836" trl="N">
-  <value column="Name" original="User 2 Dimension">User 2 Dimension</value>
-  <value column="PrintName" original="User 2 Dimension">User 2 Dimension</value>
-  <value column="Description" original="Include User 2 as a cube dimension">Include User 2 as a cube dimension</value>
+  <value column="Name" original="User Element List 2 Dimension">User 2 Dimension</value>
+  <value column="PrintName" original="User Element List 2 Dimension">User 2 Dimension</value>
+  <value column="Description" original="Include User Element List 2 as a cube dimension">Include User 2 as a cube dimension</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -28936,8 +28936,8 @@ Credit Work in Process Account ]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53897" trl="N">
-  <value column="Name" original="User Element 2 Dimension">User Element 2 Dimension</value>
-  <value column="PrintName" original="User Element 2 Dimension">User Element 2 Dimension</value>
+  <value column="Name" original="User Column 2 Dimension">User Element 2 Dimension</value>
+  <value column="PrintName" original="User Column 2 Dimension">User Element 2 Dimension</value>
   <value column="Description" original="Include User Element 2 as a cube dimension">Include User Element 2 as a cube dimension</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28946,8 +28946,8 @@ Credit Work in Process Account ]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53898" trl="N">
-  <value column="Name" original="User Element 1 Dimension">User Element 1 Dimension</value>
-  <value column="PrintName" original="User Element 1 Dimension">User Element 1 Dimension</value>
+  <value column="Name" original="User Column 1 Dimension">User Element 1 Dimension</value>
+  <value column="PrintName" original="User Column 1 Dimension">User Element 1 Dimension</value>
   <value column="Description" original="Include User Element 1 as a cube dimension">Include User Element 1 as a cube dimension</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54904,6 +54904,16 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="202669" trl="N">
+  <value column="Name" original="Use Production Plan">Use Production Plan</value>
+  <value column="PrintName" original="Use Production Plan">Use Production Plan</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row trl="Y" uuid="2db1c9d3-13bf-4539-baa0-45ccfb09a7a3">
   <value column="Name" original="Cód. Cidade (IBGE)">Carteira</value>
   <value column="PrintName" original="Cód. Cidade (IBGE)">Carteira</value>
@@ -55464,10 +55474,10 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="c852b093-276c-478b-b5d3-ebd96f13bb8a">
-  <value column="Name" original="Tax Amount">Tax Amount</value>
-  <value column="PrintName" original="Tax Amount">Tax Amount</value>
-  <value column="Description" original="Defines the Tax Amount">Defines the Tax Amount</value>
+ <row trl="Y" uuid="c852b093-276c-478b-b5d3-ebd96f13bb8a">
+  <value column="Name" original="Tax Amount">Valor do Imposto</value>
+  <value column="PrintName" original="Tax Amount">Valor do Imposto</value>
+  <value column="Description" original="Defines the Tax Amount">Define o Valor do Imposto</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -55484,10 +55494,10 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="09b2d97b-f6ac-4335-be17-c4539fcbad05">
-  <value column="Name" original="Tax Base Amount">Tax Base Amount</value>
-  <value column="PrintName" original="Tax Base Amount">Tax Base Amount</value>
-  <value column="Description" original="Defines the Tax Base Amount">Defines the Tax Base Amount</value>
+ <row trl="Y" uuid="09b2d97b-f6ac-4335-be17-c4539fcbad05">
+  <value column="Name" original="Tax Base Amount">BC do Imposto</value>
+  <value column="PrintName" original="Tax Base Amount">BC do Imposto</value>
+  <value column="Description" original="Defines the Tax Base Amount">Define a BC do Imposto</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -55839,6 +55849,406 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PrintName" original="Destination Type">Categoria de Destino</value>
   <value column="Description" original="Defines the Destination Type">Define a Categoria de Destino</value>
   <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="bc2d4dcb-50d3-44c0-8f6c-e6b421d8ea21">
+  <value column="Name" original="Doc Line Details">Doc Line Details</value>
+  <value column="PrintName" original="Doc Line Details">Doc Line Details</value>
+  <value column="Description" original="Doc Line Details">Doc Line Details</value>
+  <value column="Help" original="The Doc Line Details is a unique identifier for a details line in an document (order, invoice, RMA, etc) line.">The Doc Line Details is a unique identifier for a details line in an document (order, invoice, RMA, etc) line.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="a85cf642-ad4d-4628-92b5-dfe4ef83e8fc">
+  <value column="Name" original="Doc Line Details">Doc Line Details</value>
+  <value column="PrintName" original="Doc Line Details">Doc Line Details</value>
+  <value column="Description" original="Doc Line Details">Doc Line Details</value>
+  <value column="Help" original="The Doc Line Details is a unique identifier for a details line in an document (order, invoice, RMA, etc) line.">The Doc Line Details is a unique identifier for a details line in an document (order, invoice, RMA, etc) line.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="172af28a-290f-4a1d-bbc0-2b23b0dcfa86">
+  <value column="Name" original="EX TIPI">EX TIPI</value>
+  <value column="PrintName" original="EX TIPI">EX TIPI</value>
+  <value column="Description" original="NCM Exception">Exceção (à regra) aplicada ao NCM</value>
+  <value column="Help" original="Identifies an exception to a NCM rule.">O Ex é uma exceção (à regra) aplicada ao NCM da qual foi excepcionada. Isto é aplica-se ao Ex uma alíquota diferente daquela aplicada ao NCM de qual faz parte. </value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="aeae00e6-899c-415d-a674-03c922472be6">
+  <value column="Name" original="Taxable UOM">UDM Tributável</value>
+  <value column="PrintName" original="Taxable UOM">UDM Tributável</value>
+  <value column="Description" original="Taxable Unit of Measure">UDM Tributável</value>
+  <value column="Help" original="The Taxable UOM defines a unique non monetary Unit of Measure">A "UDM" define uma exclusiva Unidade de Medida não monetária para fins tributários.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="6ac2cc1c-7e29-4d51-a51c-2110d9e1fee7">
+  <value column="Name" original="Taxable Quantity">Quantidade Tributável</value>
+  <value column="PrintName" original="Taxable Qty">Qtd. Tributável</value>
+  <value column="Description" original="Taxable Quantity">Quantidade Tributável</value>
+  <value column="Help" original="The Taxable Quantity indicates the number of a specific product or item for this document.">A Quantidade Tributável indica a quantidade de um produto (ou item) específico do documento.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="c18ac548-98c4-4465-8ea7-074efeb674d8">
+  <value column="Name" original="Taxable Price">Preço Tributável</value>
+  <value column="PrintName" original="Taxable Price">Preço Tributável</value>
+  <value column="Description" original="Taxable Price">Preço Tributável</value>
+  <value column="Help" original="The Taxable Price indicates the Price for a product or service.">Indica o preço de um produto ou serviço para fins tributários.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="5d3ddc97-edf7-4c8f-af77-e6bad52890ac">
+  <value column="Name" original="Taxable UPC/EAN">UPC/EAN Tributável</value>
+  <value column="PrintName" original="Taxable UPC/EAN">UPC/EAN Tributável</value>
+  <value column="Description" original="Taxable Bar Code (Universal Product Code or its superset European Article Number)">Código de Barras (Universal Product Code ou o seu superconjunto European Article Number)</value>
+  <value column="Help" original="Use this field to enter the bar code for the product in any of the bar code symbologies (Codabar, Code 25, Code 39, Code 93, Code 128, UPC (A), UPC (E), EAN-13, EAN-8, ITF, ITF-14, ISBN, ISSN, JAN-13, JAN-8, POSTNET and FIM, MSI/Plessey, and Pharmacode) ">Use este campo para digitar o código de barras do produto em qualquer das simbologias de código de barras (Codabar, Código 25, Código 39, Código 93, Código 128, UPC (A), UPC (E), EAN-13, EAN-8, ITF, ITF-14, ISBN, ISSN, JAN-13, JAN-8, POSTNET e FIM, MSI/Plessey, e Pharmacode) </value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="1c94bd78-0184-4622-8c72-b9cc6a3f8993">
+  <value column="Name" original="Gross Amount">Valor Total Bruto</value>
+  <value column="PrintName" original="Gross Amount">Valor Total Bruto</value>
+  <value column="Description" original="Gross Amount">Valor Total Bruto</value>
+  <value column="Help" original="Indicates the gross amount for a product/service/tax/etc.">Indica o Valor Total Bruto do produto ou serviço.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="745f16ac-6a75-4f4f-81a7-1adb111ce04b">
+  <value column="Name" original="Gross Amount is in Grand Total">Valor Total Bruto compõe o Total dos Produtos e Serviços</value>
+  <value column="PrintName" original="Gross Amount is in Grand Total">Compõe o Total dos Produtos e Serviços</value>
+  <value column="Description" original="This Gross Amount is in Grand Total">O Valor Total Bruto compõe o Total dos Produtos e Serviços</value>
+  <value column="Help" original="The checkbox indicates if this gross amount of this line composes the grand total of products and/or services.">Indica se o Valor Total Bruto compõe o Valor Total dos Produtos e Serviços</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="ed0c66a1-5c03-4b8e-bd6e-876ed0ccd9db">
+  <value column="Name" original="Order Line Reference">Linha da Referência do Pedido</value>
+  <value column="PrintName" original="Order Line Reference">Linha da Ref. do Pedido</value>
+  <value column="Description" original="Transaction Line Reference Number (Sales Order Line, Purchase Order Line) of your Business Partner">Linha do Número de Referência da Transação (Pedido de Vendas, Pedido de Compras) do seu Parceiro de Negócios</value>
+  <value column="Help" original="The business partner order line reference is the order line reference for this specific transaction; Often Purchase Order line numbers are given to print on Invoices for easier reference.">É a linha do número do pedido de referência para esta transação específica.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="5c0f685f-8162-4899-891b-f7b56a983046">
+  <value column="Name" original="FCI Control Number">No. de Controle da FCI</value>
+  <value column="PrintName" original="FCI Control Number">FCI</value>
+  <value column="Description" original="Import Content Sheet (FCI) Control Number">Número de Controle da FCI</value>
+  <value column="Help" original="Identifies the FCI Control Number">Identifica o número de controle da FCI.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="c0031388-599e-4747-a7fd-e3c86d2831c7">
+  <value column="Name" original="NF-e Specific Product">Produto Específico (NF-e)</value>
+  <value column="PrintName" original="NF-e Specific Product">Produto Específico (NF-e)</value>
+  <value column="Description" original="Specific Product in a NF-e">Produto Específico utilizado na emissão de NF-e</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="fd20ff40-fa94-4c46-805e-332c9197c175">
+  <value column="Name" original="Taxation Type">Tipo de Tributação</value>
+  <value column="PrintName" original="Taxation Type">Tipo de Tributação</value>
+  <value column="Description" original="Taxation type used to calculate taxes">Tipo de Tributação utilizado para calcular os impostos</value>
+  <value column="Help" original="Indicates the taxation type used to calculate taxes">Indica o Tipo de Tributação utilizado para calcular os impostos</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="5a4ee7f2-47fc-476c-9f60-cf5782d4dbbf">
+  <value column="Name" original="ICMS Regime">Regime do ICMS</value>
+  <value column="PrintName" original="ICMS Regime">Regime do ICMS</value>
+  <value column="Description" original="Identifies a ICMS Regime for taxes">Identifica o regime de tributação do ICMS</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="64a65097-7e33-4c0e-83cf-68435e9436ac">
+  <value column="Name" original="ICMS Tax Status (Standard Taxation)">Situação Tributária do ICMS (Tributação Normal)</value>
+  <value column="PrintName" original="ICMS Tax Status (Standard Taxation)">Situação Tributária do ICMS (Tributação Normal)</value>
+  <value column="Description" original="Identifies a ICMS Tax Status in a standard taxation">Identifica a Situação Tributária do ICMS (Tributação Normal)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="fb36421d-dae8-40ca-9f86-709cbc374590">
+  <value column="Name" original="ICMS Tax Status (Simple)">Situação Tributária do ICMS (Simples Nacional)</value>
+  <value column="PrintName" original="ICMS Tax Status (Simple)">Situação Tributária do ICMS (Simples Nacional)</value>
+  <value column="Description" original="Identifies a ICMS Tax Status in a simple taxation">Identifica a Situação Tributária do ICMS (Simples Nacional)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="c0f88fd4-a8f7-411e-bf28-e24da8b97530">
+  <value column="Name" original="ICMS Tax Base Type">Modalidade de Determinação da BC do ICMS</value>
+  <value column="PrintName" original="ICMS Tax Base Type">Modalidade de Determinação da BC do ICMS</value>
+  <value column="Description" original="Identifies a ICMS Tax Base Type">Identifica a Modalidade de Determinação da BC do ICMS</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="97ffbe66-83cd-44a7-9b5b-0452700d418d">
+  <value column="Name" original="ICMS-ST Tax Base Type">Modalidade de Determinação da BC do ICMS-ST</value>
+  <value column="PrintName" original="ICMS-ST Tax Base Type">Modalidade de Determinação da BC do ICMS-ST</value>
+  <value column="Description" original="Identifies a ICMS-ST Tax Base Type">Identifica a Modalidade de Determinação da BC do ICMS-ST</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="ee5294af-0d2e-4416-a355-a836ffbcb58e">
+  <value column="Name" original="ICMS-ST Tax Base">Redução da Base de Cálculo do ICMS-ST (%)</value>
+  <value column="PrintName" original="ICMS-ST Tax Base">Redução da Base de Cálculo do ICMS-ST (%)</value>
+  <value column="Description" original="Indicates the ICMS-ST Tax Base">Indica a redução da Base de Cálculo do ICMS-ST em porcentagem</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="4c688ede-c508-4191-aed3-ff7f6d72d475">
+  <value column="Name" original="ICMS-ST Tax Base Amount">BC do ICMS-ST</value>
+  <value column="PrintName" original="ICMS-ST Tax Base Amount">BC do ICMS-ST</value>
+  <value column="Description" original="Defines the ICMS-ST Tax Base Amount">Define a BC do ICMS-ST</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="59168602-7da6-44d7-b172-b53924689bee">
+  <value column="Name" original="ICMS-ST Tax Rate">Alíquota do ICMS-ST</value>
+  <value column="PrintName" original="ICMS-ST Tax Rate">Alíquota do ICMS-ST</value>
+  <value column="Description" original="Indicates the ICMS-ST Tax Rate">Indica a Alíquota do ICMS-ST</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="069c43a4-56b3-4ef3-9e23-53ae755cd0f9">
+  <value column="Name" original="ICMS-ST Tax Amount">Valor do ICMS-ST</value>
+  <value column="PrintName" original="ICMS-ST Tax Amount">Valor do ICMS-ST</value>
+  <value column="Description" original="Defines the ICMS-ST Tax Amount">Identifica o Valor do ICMS-ST</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="d4727352-d435-4cbc-b0a1-5f2d12a9b6dc">
+  <value column="Name" original="Tax Base Own Operation (%)">BC da Operação Própria (%)</value>
+  <value column="PrintName" original="Tax Base Own Operation (%)">BC da Operação Própria (%)</value>
+  <value column="Description" original="Identifies the Tax Base Own Operation in percentage">Identifica a BC da Operação Própria em porcentagem</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="7871ae23-18ca-4661-b00e-6da29fdf7bcc">
+  <value column="Name" original="Tax Rate Credit (%)">Alíquota Aplicável de Cálculo do Crédito (%)</value>
+  <value column="PrintName" original="Tax Rate Credit (%)">Alíquota Aplicável de Cálculo do Crédito (%)</value>
+  <value column="Description" original="Identifies the Tax Rate Credit in percentage">Identifica a Alíquota Aplicável de Cálculo do Crédito em porcentagem</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="bf0f5f00-c895-4298-8d32-1176c6faeb4c">
+  <value column="Name" original="Tax Amount Credit">Crédito do Imposto que pode ser Aproveitado</value>
+  <value column="PrintName" original="Tax Amount Credit">Crédito do Imposto que pode ser Aproveitado</value>
+  <value column="Description" original="Identifies the Tax Amount Credit">Identifica o Crédito do Imposto que pode ser Aproveitado</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="fa315555-ed2f-4fba-a5d4-e6e1a49f8431">
+  <value column="Name" original="ICMS Tax Relief Type">Motivo da Desoneração do ICMS</value>
+  <value column="PrintName" original="ICMS Tax Relief Type">Motivo da Desoneração do ICMS</value>
+  <value column="Description" original="Identifies the ICMS Tax Relief Type">Identifica o Motivo da Desoneração do ICMS</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="2a624433-1b89-42a0-a25b-33ff011e1972">
+  <value column="Name" original="ICMS-ST Added Amount Margin (%)">Margem de Valor Adicionado do ICMS-ST (%)</value>
+  <value column="PrintName" original="ICMS-ST Added Amount Margin (%)">Margem de Valor Adicionado do ICMS-ST (%)</value>
+  <value column="Description" original="Identifies the ICMS-ST Added Amount Margin in percentage">Identifica a Margem de Valor Adicionado do ICMS-ST em porcentagem</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="193926bf-bf24-4508-86ab-09b705f8047b">
+  <value column="Name" original="ICMS-ST UF Due">UF do ICMS-ST devido na Operação</value>
+  <value column="PrintName" original="ICMS-ST UF Due">UF do ICMS-ST devido na Operação</value>
+  <value column="Description" original="Identifies the ICMS-ST UF Due">Indica a UF do ICMS-ST devido na Operação</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="0021c951-15cc-4767-83ca-b85f3c065488">
+  <value column="Name" original="ICMS-ST Base Amount withheld in Sender UF">BC do Valor Retido na UF do Remetente (ICMS-ST)</value>
+  <value column="PrintName" original="ICMS-ST Base Amount withheld in Sender UF">BC do Valor Retido na UF do Remetente (ICMS-ST)</value>
+  <value column="Description" original="Identifies the ICMS-ST Base Amount withheld in Sender UF">Identifica a BC do Valor Retido na UF do Remetente (ICMS-ST)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="1f1d1804-1622-4336-af40-8b09820287a9">
+  <value column="Name" original="ICMS-ST Base Amount in Receiver UF">BC do Valor Retido na UF do Destino (ICMS-ST)</value>
+  <value column="PrintName" original="ICMS-ST Base Amount in Receiver UF">BC do Valor Retido na UF do Destino (ICMS-ST)</value>
+  <value column="Description" original="Identifies the ICMS-ST Base Amount in Receiver UF">Identifica a BC do Valor Retido na UF do Destino (ICMS-ST)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="5b87012c-d38e-4668-9fb2-7fe0c2309161">
+  <value column="Name" original="ICMS-ST Amount withheld in Sender UF">Valor do ICMS-ST Retido na UF do Remetente</value>
+  <value column="PrintName" original="ICMS-ST Amount withheld in Sender UF">Valor do ICMS-ST Retido na UF do Remetente</value>
+  <value column="Description" original="Identifies the ICMS-ST Amount withheld in Sender UF">Identifica o Valor do ICMS-ST Retido na UF do Remetente</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="df054476-bc0d-489b-b343-a8e8fb70fada">
+  <value column="Name" original="ICMS-ST Amount in Receiver UF">Valor do ICMS-ST Retido na UF do Destino</value>
+  <value column="PrintName" original="ICMS-ST Amount in Receiver UF">Valor do ICMS-ST Retido na UF do Destino</value>
+  <value column="Description" original="Identifies the ICMS-ST Amount in Receiver UF">Identifica o Valor do ICMS-ST Retido na UF do Destino</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="90a7ba01-9f67-4b7c-ad01-55bccb00bb3f">
+  <value column="Name" original="ICMS-ST Withheld Amount">Valor do ICMS-ST Retido Anteriormente</value>
+  <value column="PrintName" original="ICMS-ST Withheld Amount">Valor do ICMS-ST Retido Anteriormente</value>
+  <value column="Description" original="Identifies the ICMS-ST Withheld Amount">Identifica o Valor do ICMS-ST Retido Anteriormente</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="c433af0f-6355-4511-a386-a15b2e1d50ab">
+  <value column="Name" original="ICMS-ST Withheld Base Amount">BC do Valor Retido Anteriormente (ICMS-ST)</value>
+  <value column="PrintName" original="ICMS-ST Withheld Base Amount">BC do Valor Retido Anteriormente (ICMS-ST)</value>
+  <value column="Description" original="Identifies the ICMS-ST Withheld Base Amount">Identifica a BC do Valor Retido Anteriormente (ICMS-ST)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="75dfc80e-a7ef-4996-aa83-6d7d58f70236">
+  <value column="Name" original="Tax Relief Amount">Valor do Imposto Desonerado</value>
+  <value column="PrintName" original="Tax Relief Amount">Valor do Imposto Desonerado</value>
+  <value column="Description" original="Identifies the Tax Relief Amount">Identifica o Valor do Imposto Desonerado</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="6aa6e7d5-67d1-4b4f-87fb-7488afd45367">
+  <value column="Name" original="Tax Deferral Amount">Valor do Imposto Diferido</value>
+  <value column="PrintName" original="Tax Deferral Amount">Valor do Imposto Diferido</value>
+  <value column="Description" original="Identifies the Tax Deferral Amount">Identifica o Valor do Imposto Diferido</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="56599cf2-6d2d-4b7a-aa5e-b9760e51db70">
+  <value column="Name" original="Tax Deferral Rate (%)">Diferimento do Imposto (%)</value>
+  <value column="PrintName" original="Tax Deferral Rate (%)">Diferimento do Imposto (%)</value>
+  <value column="Description" original="Identifies the Tax Deferral Rate (%)">Identifica o Diferimento do Imposto em porcentagem</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="188cb792-53d5-4094-910f-d42cf2f1dd75">
+  <value column="Name" original="ICMS Tax Operation Amount">Valor do ICMS da Operação</value>
+  <value column="PrintName" original="ICMS Tax Operation Amount">Valor do ICMS da Operação</value>
+  <value column="Description" original="Identifies the ICMS Tax Operation Amount">Identifica o Valor do ICMS da Operação</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="d0c61f4a-d97e-4836-86cc-564883cf6673">
+  <value column="Name" original="Doc Line ICMS">Doc Line ICMS</value>
+  <value column="PrintName" original="Doc Line ICMS">Doc Line ICMS</value>
+  <value column="Description" original="Doc Line ICMS">Doc Line ICMS</value>
+  <value column="Help" original="The Doc Line ICMS is a unique identifier for a doc line details.">The Doc Line ICMS is a unique identifier for a doc line details.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="43db1486-d566-4adc-9a3c-3c67debade18">
+  <value column="Name" original="Doc Line ICMS">Doc Line ICMS</value>
+  <value column="PrintName" original="Doc Line ICMS">Doc Line ICMS</value>
+  <value column="Description" original="Doc Line ICMS">Doc Line ICMS</value>
+  <value column="Help" original="The Doc Line ICMS is a unique identifier for a doc line details.">The Doc Line ICMS is a unique identifier for a doc line details.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>

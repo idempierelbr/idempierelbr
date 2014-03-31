@@ -6360,4 +6360,16 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="Y" uuid="c6f6b60d-8b82-46d7-a4b9-c39c241ea0d2">
+  <value column="Name" original="Order Line Details">Detalhes da Linha</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Order Line Details">Detalhes da Linha com campos brasileiros</value>
+  <value column="Help" original="The Order Line Details Tab defines details for the individual line item.">Campos específicos para a legislação brasileira (impostos, nf-e, etc).</value>
+ </row>
+ <row trl="Y" uuid="81410fdd-0c0b-4aa6-b855-05c73dd3ad9d">
+  <value column="Name" original="ICMS">ICMS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="ICMS">ICMS</value>
+  <value column="Help" original="The ICMS Tab defines amounts for ICMS Tax">A aba ICMS define valores e parâmetros relativos a este imposto</value>
+ </row>
 </idempiereTrl>

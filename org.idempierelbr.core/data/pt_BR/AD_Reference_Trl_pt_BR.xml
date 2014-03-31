@@ -2598,7 +2598,7 @@
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="492697de-270c-44a7-920b-8fd235d4dc4e">
-  <value column="Name" original="LBR_TaxStatus">LBR_TaxStatus</value>
+  <value column="Name" original="LBR_ICMS_TaxStatus_StandardTaxation">LBR_TaxStatus</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2629,6 +2629,41 @@
  </row>
  <row trl="N" uuid="dcc3cbdf-120b-4bad-a5f6-fca4ee840154">
   <value column="Name" original="LBR_TaxGroup">LBR_TaxGroup</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="8bad6c98-8193-4d76-b6e3-de6affc3c431">
+  <value column="Name" original="LBR_NFeSpecificProduct">LBR_NFeSpecificProduct</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="07cc1c75-3106-4386-a35b-a1035ff0d621">
+  <value column="Name" original="LBR_TaxationType">LBR_TaxationType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="b1590dd3-27e3-40bc-b173-b75e43c97f3c">
+  <value column="Name" original="LBR_ICMSRegime">LBR_ICMSRegime</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="945f0103-3fb1-4d30-b340-3d95fa2d8f18">
+  <value column="Name" original="LBR_ICMS_TaxReliefType">LBR_ICMS_TaxReliefType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="2c140b99-3df5-4c1d-bd93-b15450e07faa">
+  <value column="Name" original="LBR_ICMS_TaxStatus_SimpleTaxation">LBR_ICMS_TaxStatus_SimpleTaxation</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="9292aa3b-d1bd-4aba-a054-f61069cf6a18">
+  <value column="Name" original="LBR_ICMS_TaxBaseType">LBR_ICMS_TaxBaseType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="da1e9fd0-f568-4bbd-a105-3100ede84fd4">
+  <value column="Name" original="LBR_ICMSST_TaxBaseType">LBR_ICMSST_TaxBaseType</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

@@ -6435,6 +6435,22 @@ Please contact administrator.</value>
   <value column="MsgText" original="Document status has been changed by other session, please refresh the record and try again.">Document status has been changed by other session, please refresh the record and try again.</value>
   <value column="MsgTip" original=""/>
  </row>
+ <row id="200255" trl="N">
+  <value column="MsgText" original="Add to Tree">Add to Tree</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200256" trl="N">
+  <value column="MsgText" original="Add ALL to Tree">Add ALL to Tree</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200257" trl="N">
+  <value column="MsgText" original="Delete from Tree">Delete from Tree</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200258" trl="N">
+  <value column="MsgText" original="Delete ALL from Tree">Delete ALL from Tree</value>
+  <value column="MsgTip" original=""/>
+ </row>
  <row id="520010" trl="Y">
   <value column="MsgText" original="1 Rupee">1 Rupee</value>
   <value column="MsgTip" original=" "> </value>
