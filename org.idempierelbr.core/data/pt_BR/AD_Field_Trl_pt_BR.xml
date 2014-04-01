@@ -756,9 +756,9 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original="Memo">Informações Adicionais (NF-e)</value>
   <value column="Help" original=""/>
  </row>
- <row trl="N" uuid="2d450667-bd4a-4e19-9b63-1e9ab60df8c4">
-  <value column="Name" original="Tax Line Total">Tax Line Total</value>
-  <value column="Description" original="Tax Line Total Amount">Tax Line Total Amount</value>
+ <row trl="Y" uuid="2d450667-bd4a-4e19-9b63-1e9ab60df8c4">
+  <value column="Name" original="Tax Line Total">Valor Total Aproximado dos Tributos</value>
+  <value column="Description" original="Tax Line Total Amount">Valor Total Aproximado dos Tributos</value>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>

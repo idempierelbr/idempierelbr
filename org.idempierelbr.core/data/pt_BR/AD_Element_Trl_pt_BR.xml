@@ -56254,4 +56254,74 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row trl="N" uuid="226c14e4-38e9-4b45-acc5-1d4df6aa0e84">
+  <value column="Name" original="Doc Line IPI">Doc Line IPI</value>
+  <value column="PrintName" original="Doc Line IPI">Doc Line IPI</value>
+  <value column="Description" original="Doc Line IPI">Doc Line IPI</value>
+  <value column="Help" original="The Doc Line IPI is a unique identifier for a doc line details.">The Doc Line IPI is a unique identifier for a doc line details.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="9afa3005-af28-4fbe-8a1f-6b99aff53d3f">
+  <value column="Name" original="Doc Line IPI">Doc Line IPI</value>
+  <value column="PrintName" original="Doc Line IPI">Doc Line IPI</value>
+  <value column="Description" original="Doc Line IPI">Doc Line IPI</value>
+  <value column="Help" original="The Doc Line IPI is a unique identifier for a doc line details.">The Doc Line IPI is a unique identifier for a doc line details.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="0cb444e8-b3bc-43b2-8d6d-a58bcfa9a9c4">
+  <value column="Name" original="IPI Tax Status">Situação Tributária do IPI</value>
+  <value column="PrintName" original="IPI Tax Status">Situação Tributária do IPI</value>
+  <value column="Description" original="Identifies a IPI Tax Status">Identifica a Situação Tributária do IPI</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="34463566-8c0c-444d-9a50-c5fa87cb1dd8">
+  <value column="Name" original="IPI Tax Regarding Class">Classe de Enquadramento</value>
+  <value column="PrintName" original="IPI Tax Regarding Class">Classe de Enquadramento (IPI)</value>
+  <value column="Description" original="Identifies the IPI Tax Regarding Class">Identifica a Classe de Enquadramento do IPI</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="75fe389f-854c-4457-86aa-166b61e02e8d">
+  <value column="Name" original="IPI Tax Regarding Code">Cód. de Enquadramento</value>
+  <value column="PrintName" original="IPI Tax Regarding Code">Código de Enquadramento (IPI)</value>
+  <value column="Description" original="Identifies the IPI Tax Regarding Code">Identifica o Código de Enquadramento do IPI</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="2992fecb-5742-4109-b4b4-bc30ad337e19">
+  <value column="Name" original="IPI Tax Seal Code">Cód. do Selo de Controle</value>
+  <value column="PrintName" original="IPI Tax Seal Code">Cód. do Selo de Controle (IPI)</value>
+  <value column="Description" original="Identifies the IPI Tax Seal Code">Identifica o Código do Selo de Controle (IPI)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="cb203ac7-739b-4a8f-970d-cebe290e67a3">
+  <value column="Name" original="IPI Tax Seal Qty">Qtd. do Selo de Controle</value>
+  <value column="PrintName" original="IPI Tax Seal Qty">Qtd. do Selo de Controle (IPI)</value>
+  <value column="Description" original="Identifies the IPI Tax Seal Qty">Identifica a Quantidade do Selo de Controle (IPI)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
 </idempiereTrl>

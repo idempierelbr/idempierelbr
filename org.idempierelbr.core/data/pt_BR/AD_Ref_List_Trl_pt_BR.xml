@@ -5631,7 +5631,7 @@
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="c9ce64d1-eb7a-4508-965e-ed078b90cdc8">
-  <value column="Name" original="103 - Isencao do ICMS para faixa de receita brita">103 - Isenção do ICMS para Faixa de Receita Bruta</value>
+  <value column="Name" original="103 - Isencao do ICMS para faixa de receita bruta">103 - Isenção do ICMS para Faixa de Receita Bruta</value>
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="d09e9ab6-51a3-41b5-a3a9-40e114521caa">
@@ -5700,6 +5700,70 @@
  </row>
  <row trl="Y" uuid="742b6dc5-d0f5-4e66-a8f9-ddffdaa90c5c">
   <value column="Name" original="Pauta (Valor)">Pauta (Valor)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="492218cb-8be7-479f-9ace-e2414053b371">
+  <value column="Name" original="00 - Entrada com recuperacao de credito">00 - Entrada com Recuperação de Crédito</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="b668634d-ebea-4ab0-a6c0-31f2f885a0f7">
+  <value column="Name" original="01 - Entrada tributada com aliquota zero">01 - Entrada Tributada com Alíquota Zero</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="e3b97968-8318-4b3b-9563-9f40fcb6d04e">
+  <value column="Name" original="02 - Entrada isenta">02 - Entrada Isenta</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="1ef946fc-ba1a-4132-924d-28bec677ba37">
+  <value column="Name" original="03 - Entrada nao-tributada">03 - Entrada Não-Tributada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="d3dae2a8-d1b8-47f5-869d-faf22f180c83">
+  <value column="Name" original="04 - Entrada imune">04 - Entrada Imune</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="a061a75b-da0c-49a7-a923-c75dcf6a7dcb">
+  <value column="Name" original="05 - Entrada com suspensao">05 - Entrada com Suspensão</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="3a6e134e-e573-4d5c-8226-00ca078e253c">
+  <value column="Name" original="49 - Outras entradas">49 - Outras Entradas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="66110bd6-bab8-453d-bfe8-b25e5248d5e7">
+  <value column="Name" original="50 - Saida tributada">50 - Saída Tributada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="93991207-1c65-4b65-af51-79fc8a800acb">
+  <value column="Name" original="51 - Saida tributada com aliquota zero">51 - Saída Tributada com Alíquota Zero</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="a40a5bb6-de8f-4a82-9a68-c8d350db9341">
+  <value column="Name" original="52 - Saida isenta">52 - Saída Isenta</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="1dd6a36d-58a5-4026-a592-97b386ee3670">
+  <value column="Name" original="53 - Saida nao-tributada">53 - Saída Não-Tributada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="01195059-e3be-4936-8d73-dabc398f38b3">
+  <value column="Name" original="54 - Saida imune">54 - Saída Imune</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="c295ae24-3097-4bf9-a876-64460b6cb95a">
+  <value column="Name" original="55 - Saida com suspensao">55 - Saída com Suspensão</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="94a27b8a-37bd-441a-a570-3f78dbf8c08d">
+  <value column="Name" original="99 - Outras saidas">99 - Outras Saídas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="8d6ecfbe-7903-4735-9a74-428e761544cb">
+  <value column="Name" original="Percentage">Percentual</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="722caa0f-9d34-46e7-b7f3-05991a1e0d50">
+  <value column="Name" original="Amount">Em Valor</value>
   <value column="Description" original=""/>
  </row>
 </idempiereTrl>

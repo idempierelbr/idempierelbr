@@ -2667,4 +2667,14 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="79e92a25-25b4-43e8-88cd-8a09c02b2110">
+  <value column="Name" original="LBR_IPI_TaxStatus">LBR_IPI_TaxStatus</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="82e1336d-b4d1-47f2-ba56-29ba3256b51a">
+  <value column="Name" original="LBR_IPI_CalculationType">LBR_IPI_CalculationType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

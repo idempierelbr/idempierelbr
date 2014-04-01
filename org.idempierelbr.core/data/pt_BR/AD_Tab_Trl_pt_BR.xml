@@ -6372,4 +6372,10 @@ Printing:
   <value column="Description" original="ICMS">ICMS</value>
   <value column="Help" original="The ICMS Tab defines amounts for ICMS Tax">A aba ICMS define valores e parâmetros relativos a este imposto</value>
  </row>
+ <row trl="Y" uuid="1d0d6248-5a91-4f89-ad38-f8ceef703305">
+  <value column="Name" original="IPI">IPI</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IPI">IPI</value>
+  <value column="Help" original="The IPI Tab defines amounts for IPI Tax">A aba IPI define valores e parâmetros relativos a este imposto</value>
+ </row>
 </idempiereTrl>
