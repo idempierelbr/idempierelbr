@@ -6378,4 +6378,10 @@ Printing:
   <value column="Description" original="IPI">IPI</value>
   <value column="Help" original="The IPI Tab defines amounts for IPI Tax">A aba IPI define valores e parâmetros relativos a este imposto</value>
  </row>
+ <row trl="N" uuid="2c70914f-6e2e-4591-89d0-891e1759d677">
+  <value column="Name" original="PIS">PIS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="PIS">PIS</value>
+  <value column="Help" original="The PIS Tab defines amounts for PIS Tax">The PIS Tab defines amounts for PIS Tax</value>
+ </row>
 </idempiereTrl>

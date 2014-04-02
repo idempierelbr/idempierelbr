@@ -221,4 +221,10 @@
  <row trl="N" uuid="7aef2699-ace3-4e7d-ad9d-de0e6fe28ccb">
   <value column="Name" original="ICMS-ST">ICMS-ST</value>
  </row>
+ <row trl="N" uuid="746df6c8-5c1f-43a4-8394-5f30f6e8c5de">
+  <value column="Name" original="PIS">PIS</value>
+ </row>
+ <row trl="N" uuid="307e402d-f113-4b2b-9a96-e0cbcf40bf72">
+  <value column="Name" original="PIS-ST">PIS-ST</value>
+ </row>
 </idempiereTrl>

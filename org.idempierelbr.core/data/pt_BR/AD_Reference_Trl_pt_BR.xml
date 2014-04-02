@@ -2677,4 +2677,9 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="34ffef38-1cce-4b10-a461-d69286301daa">
+  <value column="Name" original="LBR_PIS_TaxStatus">LBR_PIS_TaxStatus</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

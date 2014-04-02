@@ -16836,7 +16836,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  </row>
  <row id="2487" trl="Y">
   <value column="Name" original="Total Quantity">Quantidade Total</value>
-  <value column="PrintName" original="Total Qty">Qde Total</value>
+  <value column="PrintName" original="Total Qty">Qtd. Total</value>
   <value column="Description" original="Total Quantity">Quantidade Total</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -56318,6 +56318,106 @@ Strings may be in single quotes (optional)]]></value>
   <value column="Name" original="IPI Tax Seal Qty">Qtd. do Selo de Controle</value>
   <value column="PrintName" original="IPI Tax Seal Qty">Qtd. do Selo de Controle (IPI)</value>
   <value column="Description" original="Identifies the IPI Tax Seal Qty">Identifica a Quantidade do Selo de Controle (IPI)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="5bc8a693-dc08-4219-84a7-830bd3795912">
+  <value column="Name" original="Doc Line PIS">Doc Line PIS</value>
+  <value column="PrintName" original="Doc Line PIS">Doc Line PIS</value>
+  <value column="Description" original="Doc Line PIS">Doc Line PIS</value>
+  <value column="Help" original="The Doc Line PIS is a unique identifier for a doc line details.">The Doc Line PIS is a unique identifier for a doc line details.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="5d30568d-76d5-44de-a351-dd0cd85d345f">
+  <value column="Name" original="Doc Line PIS">Doc Line PIS</value>
+  <value column="PrintName" original="Doc Line PIS">Doc Line PIS</value>
+  <value column="Description" original="Doc Line PIS">Doc Line PIS</value>
+  <value column="Help" original="The Doc Line PIS is a unique identifier for a doc line details.">The Doc Line PIS is a unique identifier for a doc line details.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="4e284ffa-4c37-43ff-824b-e8d082fdefb9">
+  <value column="Name" original="PIS Tax Status">Situação Tributária do PIS</value>
+  <value column="PrintName" original="PIS Tax Status">Situação Tributária do PIS</value>
+  <value column="Description" original="Identifies a PIS Tax Status">Identifica a Situação Tributária do PIS</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="30a3e190-59e9-421a-95a2-0fb060a3b6a8">
+  <value column="Name" original="Tax Rate in Amount">Alíquota (em Reais)</value>
+  <value column="PrintName" original="Tax Rate in Amount">Alíquota (em Reais)</value>
+  <value column="Description" original="Indicates the Tax Rate in Amount">Indica a Alíquota (em Reais)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="66901a04-aa19-4d5b-943c-4bef30332522">
+  <value column="Name" original="Calculation">Cálculo do PIS-ST</value>
+  <value column="PrintName" original="Calculation">Cálculo do PIS-ST</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="5f28f4e1-3299-42b8-bafa-1e051ffcd850">
+  <value column="Name" original="PIS-ST Tax Base Amount">BC do PIS-ST</value>
+  <value column="PrintName" original="PIS-ST Tax Base Amount">BC do PIS-ST</value>
+  <value column="Description" original="Defines the PIS-ST Tax Base Amount">Define a BC do PIS-ST</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="2156f975-0760-4724-92e0-d132595c09f1">
+  <value column="Name" original="PIS-ST Tax Rate">Alíquota do PIS-ST</value>
+  <value column="PrintName" original="PIS-ST Tax Rate">Alíquota do PIS-ST</value>
+  <value column="Description" original="Indicates the PIS-ST Tax Rate">Indica a Alíquota do PIS-ST</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="5dc69b95-7797-4efd-be76-04e39a48c45d">
+  <value column="Name" original="PIS-ST Tax Rate in Amount">Alíquota do PIS-ST (em Reais)</value>
+  <value column="PrintName" original="PIS-ST Tax Rate in Amount">Alíquota do PIS-ST (em Reais)</value>
+  <value column="Description" original="Indicates the PIS-ST Tax Rate in Amount">Indica a Alíquota do PIS-ST (em Reais)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="18453da9-e3e7-43fa-a553-41850f156193">
+  <value column="Name" original="PIS-ST Total Quantity">Quantidade Total do PIS-ST</value>
+  <value column="PrintName" original="PIS-ST Total Qty">Qtd. Total do PIS-ST</value>
+  <value column="Description" original="PIS-ST Total Quantity">Quantidade Total do PIS-ST</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="dc59eef4-052d-446d-851a-00e3b655a9ea">
+  <value column="Name" original="PIS-ST Tax Amount">Valor do PIS-ST</value>
+  <value column="PrintName" original="PIS-ST Tax Amount">Valor do PIS-ST</value>
+  <value column="Description" original="Defines the PIS-ST Tax Amount">Define o Valor do PIS-ST</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>

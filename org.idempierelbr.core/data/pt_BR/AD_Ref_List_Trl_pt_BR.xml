@@ -5766,4 +5766,136 @@
   <value column="Name" original="Amount">Em Valor</value>
   <value column="Description" original=""/>
  </row>
+ <row trl="Y" uuid="7d496a4b-bb41-4353-bd0b-a594687abfb0">
+  <value column="Name" original="01 - Operacao tributavel (cumulativo/nao cumulativo)">01 - Operação Tributável - Base de Cálculo = Valor da Operação Alíquota Normal (Cumulativo/Não Cumulativo)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="8aaaf2fe-0c22-47c6-a80b-49f4b351cf23">
+  <value column="Name" original="02 - Operacao tributavel (aliquota diferenciada)">02 - Operação Tributável - Base de Cálculo = Valor da Operação (Alíquota Diferenciada)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="e32e82c0-9057-4e63-9a21-38695d12c6fe">
+  <value column="Name" original="03 - Operacao tributavel">03 - Operação Tributável - Base de Cálculo = Quantidade Vendida X Alíquota por Unidade de Produto</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="ea6037cb-edd0-49bd-a84b-8fcca9699559">
+  <value column="Name" original="04 - Operacao tributavel (aliquota zero)">04 - Operação Tributável - Tributação Monofásica - (Alíquota Zero)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="93ac0c37-c000-4dd8-8d81-6ef52e9cb1b7">
+  <value column="Name" original="05 - Operacao tributavel (ST)">05 - Operação Tributável - Substituição Tributária</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="3f989b98-e398-4377-9f9f-6d2775ef300c">
+  <value column="Name" original="06 - Operacao tributavel (aliquota zero)">06 - Operação Tributável - Alíquota Zero</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="a2b652ae-c726-46ad-ae03-547e515c3f54">
+  <value column="Name" original="07 - Operacao isenta da contribuicao">07 - Operação Isenta da Contribuição</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="55f4dc1b-0a5c-442a-83e4-dfabe9fb7a36">
+  <value column="Name" original="08 - Operacao sem incidencia da contribuicao">08 - Operação sem Incidência da Contribuição</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="d32b41a8-51f0-45a0-b037-898acd99d721">
+  <value column="Name" original="09 - Operacao com suspensao da contribuicao">09 - Operação com Suspensão da Contribuição</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="1d0cb7df-3645-4bd6-82f3-167e80537c88">
+  <value column="Name" original="49 - Outras operacoes de saida">49 - Outras Operações de Saída</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="11f775e0-77f6-4a7a-992b-cfdf787bfefe">
+  <value column="Name" original="50 - Operacao com direito a credito">50 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Tributada no Mercado Interno</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="4c8a43d0-3016-41eb-a23e-b54f3a376438">
+  <value column="Name" original="51 - Operacao com direito a credito">51 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Não Tributada no Mercado Interno</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="8c1f4342-1b76-48c7-a0be-dd2db02de39c">
+  <value column="Name" original="52 - Operacao com direito a credito">52 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita de Exportação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="01717ca6-7430-4a13-bb0d-b5d7f576a31c">
+  <value column="Name" original="53 - Operacao com direito a credito">53 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="83e21dac-f350-4693-9d2c-24f904ed180e">
+  <value column="Name" original="54 - Operacao com direito a credito">54 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas no Mercado Interno e de Exportação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="6088ff19-1be3-4703-a453-79dc0224385e">
+  <value column="Name" original="55 - Operacao com direito a credito">55 - Operação com Direito a Crédito - Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="2579f538-bedf-47d5-9585-82cee057424f">
+  <value column="Name" original="56 - Operacao com direito a credito">56 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno, e de Exportação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="dfe6596c-e7a3-45b3-89fd-fbc7c5ef7e1d">
+  <value column="Name" original="60 - Credito presumido">60 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Tributada no Mercado Interno</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="29fd6df6-fec7-48c8-a45d-49ce6c016cfc">
+  <value column="Name" original="61 - Credito presumido">61 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="2096a90a-c577-4bfc-b34e-bc249e878cdf">
+  <value column="Name" original="62 - Credito presumido">62 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita de Exportação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="7785a775-1d77-4d49-92c8-adb742a06a1d">
+  <value column="Name" original="63 - Credito presumido">63 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="6f172dd6-287b-4e03-bf31-f1ef24fcb42a">
+  <value column="Name" original="64 - Credito presumido">64 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas no Mercado Interno e de Exportação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="ff6b7821-400d-48b4-b190-b1ef9cb56d5a">
+  <value column="Name" original="65 - Credito presumido">65 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="eedd2e0f-0f15-4ca0-ad4a-494336012031">
+  <value column="Name" original="66 - Credito presumido">66 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno, e de Exportação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="a87bbc69-3d48-4340-9fd9-9792751ae870">
+  <value column="Name" original="67 - Credito presumido">67 - Crédito Presumido - Outras Operações</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="112794fd-5017-487f-a7ed-f90c6b9fa892">
+  <value column="Name" original="70 - Operacao de aquisicao sem direito a credito">70 - Operação de Aquisição sem Direito a Crédito</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="a2b36b60-9f3f-44c9-8c16-d3b9c1b4463d">
+  <value column="Name" original="71 - Operacao de aquisicao com isencao">71 - Operação de Aquisição com Isenção</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="51a48f68-5fea-45b0-99b1-d009895e7491">
+  <value column="Name" original="72 - Operacao de aquisicao com suspensao">72 - Operação de Aquisição com Suspensão</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="cfeed5dc-dd0b-4fc2-b3a7-8f6df18514d3">
+  <value column="Name" original="73 - Operacao de aquisicao a aliquota zero">73 - Operação de Aquisição a Alíquota Zero</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="4d97fd8f-4610-4d9e-b34e-ec51ec3bbbac">
+  <value column="Name" original="74 - Operacao de aquisicao sem incidencia da contribuicao">74 - Operação de Aquisição sem Incidência da Contribuição</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="27e8c828-6f74-4435-b6ea-5c5b8c23f282">
+  <value column="Name" original="75 - Operacao de aquisicao por substituicao tributaria">75 - Operação de Aquisição por Substituição Tributária</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="509b6acf-6bae-4082-b284-a031021dc23f">
+  <value column="Name" original="98 - Outras operacoes de entrada">98 - Outras Operações de Entrada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="18655e23-f31f-4697-ba34-b2d2f18f2809">
+  <value column="Name" original="99 - Outras operacoes">99 - Outras Operações</value>
+  <value column="Description" original=""/>
+ </row>
 </idempiereTrl>

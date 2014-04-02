@@ -6,6 +6,7 @@ import org.adempiere.base.IColumnCallout;
 import org.compiere.model.GridField;
 import org.compiere.model.GridTab;
 import org.idempierelbr.tax.model.MLBRDocLineICMS;
+import org.idempierelbr.tax.model.MLBRDocLinePIS;
 
 public class CalloutDocLine implements IColumnCallout {
 
@@ -20,6 +21,11 @@ public class CalloutDocLine implements IColumnCallout {
 				return resetTaxStatusTNField(ctx, mTab, value);
 			} else if (mField.getColumnName().equals(MLBRDocLineICMS.COLUMNNAME_LBR_ICMS_TaxStatusTN)) {
 				return resetTaxStatusSNField(ctx, mTab, value);
+			} else 
+				return null;
+		else if (mTab.getTableName().equals(MLBRDocLinePIS.Table_Name))
+			if (mField.getColumnName().equals(MLBRDocLinePIS.COLUMNNAME_LBR_PIS_TaxStatus)) {
+				return resetPISCalcTypeFields(ctx, mTab, value);
 			} else 
 				return null;
 		else
@@ -48,6 +54,15 @@ public class CalloutDocLine implements IColumnCallout {
 	 */
 	private String resetTaxStatusTNField(Properties ctx, GridTab mTab, Object value) {
 		mTab.setValue("LBR_ICMS_TaxStatusTN", null);
+		return null;
+	}
+	
+	/**
+	 * Reset both Calculation Type fields for tab PIS. This is necessary to display fields correctly.
+	 */
+	private String resetPISCalcTypeFields(Properties ctx, GridTab mTab, Object value) {
+		mTab.setValue("CalculationType", null);
+		mTab.setValue("LBR_PISST_CalcType", null);
 		return null;
 	}
 }

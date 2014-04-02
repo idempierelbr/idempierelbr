@@ -72,6 +72,8 @@ public class ModelFactory implements IModelFactory {
 			return MLBRDocLineICMS.class;
 		else if (tableName.equals(MLBRDocLineIPI.Table_Name)) // Model MLBRDocLineIPI
 			return MLBRDocLineIPI.class;
+		else if (tableName.equals(MLBRDocLinePIS.Table_Name)) // Model MLBRDocLinePIS
+			return MLBRDocLinePIS.class;
 		
 		return null;
 	}
@@ -134,6 +136,8 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRDocLineICMS(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRDocLineIPI.Table_Name)) // Model MLBRDocLineIPI
 			return new MLBRDocLineIPI(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRDocLinePIS.Table_Name)) // Model MLBRDocLinePIS
+			return new MLBRDocLinePIS(Env.getCtx(), Record_ID, trxName);
 		
 		return null;
 	}
@@ -196,6 +200,8 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRDocLineICMS(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRDocLineIPI.Table_Name)) // MLBRDocLineIPI
 			return new MLBRDocLineIPI(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRDocLinePIS.Table_Name)) // MLBRDocLinePIS
+			return new MLBRDocLinePIS(Env.getCtx(), rs, trxName);
 		
 		return null;
 	}
