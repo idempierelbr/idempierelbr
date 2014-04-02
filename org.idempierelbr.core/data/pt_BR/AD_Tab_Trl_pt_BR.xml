@@ -6378,10 +6378,16 @@ Printing:
   <value column="Description" original="IPI">IPI</value>
   <value column="Help" original="The IPI Tab defines amounts for IPI Tax">A aba IPI define valores e parâmetros relativos a este imposto</value>
  </row>
- <row trl="N" uuid="2c70914f-6e2e-4591-89d0-891e1759d677">
+ <row trl="Y" uuid="2c70914f-6e2e-4591-89d0-891e1759d677">
   <value column="Name" original="PIS">PIS</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="PIS">PIS</value>
-  <value column="Help" original="The PIS Tab defines amounts for PIS Tax">The PIS Tab defines amounts for PIS Tax</value>
+  <value column="Help" original="The PIS Tab defines amounts for PIS Tax">A aba PIS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="5ca341ed-4de6-4306-81d1-0e2457c94df1">
+  <value column="Name" original="COFINS">COFINS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="COFINS">COFINS</value>
+  <value column="Help" original="The COFINS Tab defines amounts for COFINS Tax">A aba COFINS define valores e parâmetros relativos a este imposto</value>
  </row>
 </idempiereTrl>

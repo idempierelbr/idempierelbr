@@ -227,4 +227,10 @@
  <row trl="N" uuid="307e402d-f113-4b2b-9a96-e0cbcf40bf72">
   <value column="Name" original="PIS-ST">PIS-ST</value>
  </row>
+ <row trl="N" uuid="a4e0617b-0e76-40db-9828-59ca0ba3cdbc">
+  <value column="Name" original="COFINS">COFINS</value>
+ </row>
+ <row trl="N" uuid="bea85bcb-a177-40ec-8a28-700442c8f1e9">
+  <value column="Name" original="COFINS-ST">COFINS-ST</value>
+ </row>
 </idempiereTrl>

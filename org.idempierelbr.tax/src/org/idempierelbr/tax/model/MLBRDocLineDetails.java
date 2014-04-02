@@ -354,6 +354,21 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			}
 		}
 		
+		// COFINS
+		MLBRDocLineCOFINS cofins = getMLBRDocLineCOFINS();
+		
+		if (cofins != null) {
+			try {
+				cofins.deleteEx(true);
+			} catch (AdempiereException e) {
+				e.printStackTrace();
+				log.warning(MLBRDocLineCOFINS.Table_Name + " for " + cofins + " was not deleted.");
+				
+				cofins.setLBR_DocLine_Details_ID(0);
+				cofins.saveEx();
+			}
+		}
+		
 		return true;		
 	}
 	
@@ -415,5 +430,25 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		}
 		
 		return pis != null ? pis : null;
+	}
+	
+	/**
+	 * 	Get COFINS record
+	 *	@return MLBRDocLineCOFINS or null
+	 */
+	public MLBRDocLineCOFINS getMLBRDocLineCOFINS() {
+		String where = "LBR_DocLine_Details_ID=?";
+		MLBRDocLineCOFINS cofins = null;
+		
+		try {
+			cofins = new Query (getCtx(), MLBRDocLineCOFINS.Table_Name, where, get_TrxName())
+				.setParameters(new Object[]{get_ID()})
+				.first();
+		} catch (DBException e) {
+			log.severe("Couldn't get LBR_DocLine_COFINS of " + this);
+			e.printStackTrace();
+		}
+		
+		return cofins != null ? cofins : null;
 	}
 }

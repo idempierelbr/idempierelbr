@@ -56424,4 +56424,94 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row trl="Y" uuid="50ea3ca6-c39c-481f-b310-870ccb7c8784">
+  <value column="Name" original="COFINS Tax Status">Situação Tributária do COFINS</value>
+  <value column="PrintName" original="COFINS Tax Status">Situação Tributária do COFINS</value>
+  <value column="Description" original="Identifies a COFINS Tax Status">Identifica a Situação Tributária do COFINS</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="5be30288-1a00-4fc4-abbd-986cce2cd41e">
+  <value column="Name" original="Calculation">Cálculo do COFINS-ST</value>
+  <value column="PrintName" original="Calculation">Cálculo do COFINS-ST</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="3e2a5b44-932e-46d5-b745-43ea16ed92d9">
+  <value column="Name" original="COFINS-ST Tax Base Amount">BC do COFINS-ST</value>
+  <value column="PrintName" original="COFINS-ST Tax Base Amount">BC do COFINS-ST</value>
+  <value column="Description" original="Defines the COFINS-ST Tax Base Amount">Define a BC do COFINS-ST</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="3a3f1280-3802-425c-a453-511b8975eed9">
+  <value column="Name" original="COFINS-ST Tax Rate">Alíquota do COFINS-ST</value>
+  <value column="PrintName" original="COFINS-ST Tax Rate">Alíquota do COFINS-ST</value>
+  <value column="Description" original="Indicates the COFINS-ST Tax Rate">Indica a Alíquota do COFINS-ST</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="632f6740-1568-4e11-8dc8-c7b4d9861038">
+  <value column="Name" original="COFINS-ST Tax Rate in Amount">Alíquota do COFINS-ST (em Reais)</value>
+  <value column="PrintName" original="COFINS-ST Tax Rate in Amount">Alíquota do COFINS-ST (em Reais)</value>
+  <value column="Description" original="Indicates the COFINS-ST Tax Rate in Amount">Indica a Alíquota do COFINS-ST (em Reais)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="f9b2f130-447b-499c-83d9-98a53d7a0a4c">
+  <value column="Name" original="COFINS-ST Total Quantity">Quantidade Total do COFINS-ST</value>
+  <value column="PrintName" original="COFINS-ST Total Qty">Qtd. Total do COFINS-ST</value>
+  <value column="Description" original="COFINS-ST Total Quantity">Quantidade Total do COFINS-ST</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="b5f6bfc1-da7a-46f0-a39b-1a5db94ef0f7">
+  <value column="Name" original="COFINS-ST Tax Amount">Valor do COFINS-ST</value>
+  <value column="PrintName" original="COFINS-ST Tax Amount">Valor do COFINS-ST</value>
+  <value column="Description" original="Defines the COFINS-ST Tax Amount">Define o Valor do COFINS-ST</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="d4f0df7d-f331-422c-9db8-4e4d2d6a93e6">
+  <value column="Name" original="Doc Line COFINS">Doc Line COFINS</value>
+  <value column="PrintName" original="Doc Line COFINS">Doc Line COFINS</value>
+  <value column="Description" original="Doc Line COFINS">Doc Line COFINS</value>
+  <value column="Help" original="The Doc Line COFINS is a unique identifier for a doc line details.">The Doc Line COFINS is a unique identifier for a doc line details.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="804d8807-e87c-42a7-a1c9-7cc8c9f6301c">
+  <value column="Name" original="Doc Line COFINS">Doc Line COFINS</value>
+  <value column="PrintName" original="Doc Line COFINS">Doc Line COFINS</value>
+  <value column="Description" original="Doc Line COFINS">Doc Line COFINS</value>
+  <value column="Help" original="The Doc Line COFINS is a unique identifier for a doc line details.">The Doc Line COFINS is a unique identifier for a doc line details.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
 </idempiereTrl>

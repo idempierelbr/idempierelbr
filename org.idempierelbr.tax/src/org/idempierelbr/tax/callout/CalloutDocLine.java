@@ -5,6 +5,7 @@ import java.util.Properties;
 import org.adempiere.base.IColumnCallout;
 import org.compiere.model.GridField;
 import org.compiere.model.GridTab;
+import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
 import org.idempierelbr.tax.model.MLBRDocLineICMS;
 import org.idempierelbr.tax.model.MLBRDocLinePIS;
 
@@ -26,6 +27,11 @@ public class CalloutDocLine implements IColumnCallout {
 		else if (mTab.getTableName().equals(MLBRDocLinePIS.Table_Name))
 			if (mField.getColumnName().equals(MLBRDocLinePIS.COLUMNNAME_LBR_PIS_TaxStatus)) {
 				return resetPISCalcTypeFields(ctx, mTab, value);
+			} else 
+				return null;
+		else if (mTab.getTableName().equals(MLBRDocLineCOFINS.Table_Name))
+			if (mField.getColumnName().equals(MLBRDocLineCOFINS.COLUMNNAME_LBR_COF_TaxStatus)) {
+				return resetCOFINSCalcTypeFields(ctx, mTab, value);
 			} else 
 				return null;
 		else
@@ -63,6 +69,15 @@ public class CalloutDocLine implements IColumnCallout {
 	private String resetPISCalcTypeFields(Properties ctx, GridTab mTab, Object value) {
 		mTab.setValue("CalculationType", null);
 		mTab.setValue("LBR_PISST_CalcType", null);
+		return null;
+	}
+	
+	/**
+	 * Reset both Calculation Type fields for tab COFINS. This is necessary to display fields correctly.
+	 */
+	private String resetCOFINSCalcTypeFields(Properties ctx, GridTab mTab, Object value) {
+		mTab.setValue("CalculationType", null);
+		mTab.setValue("LBR_COFST_CalcType", null);
 		return null;
 	}
 }
