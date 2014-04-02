@@ -78,6 +78,8 @@ public class ModelFactory implements IModelFactory {
 			return MLBRDocLineCOFINS.class;
 		else if (tableName.equals(MLBRDocLineImportTax.Table_Name)) // Model MLBRDocLineImportTax
 			return MLBRDocLineImportTax.class;
+		else if (tableName.equals(MLBRDocLineISSQN.Table_Name)) // Model MLBRDocLineISSQN
+			return MLBRDocLineISSQN.class;
 		
 		return null;
 	}
@@ -146,6 +148,8 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRDocLineCOFINS(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRDocLineImportTax.Table_Name)) // Model MLBRDocLineImportTax
 			return new MLBRDocLineImportTax(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRDocLineISSQN.Table_Name)) // Model MLBRDocLineISSQN
+			return new MLBRDocLineISSQN(Env.getCtx(), Record_ID, trxName);
 		
 		return null;
 	}
@@ -214,6 +218,8 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRDocLineCOFINS(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRDocLineImportTax.Table_Name)) // MLBRDocLineImportTax
 			return new MLBRDocLineImportTax(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRDocLineISSQN.Table_Name)) // MLBRDocLineISSQN
+			return new MLBRDocLineISSQN(Env.getCtx(), rs, trxName);
 		
 		return null;
 	}

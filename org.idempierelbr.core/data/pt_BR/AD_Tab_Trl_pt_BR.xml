@@ -6396,4 +6396,10 @@ Printing:
   <value column="Description" original="Import Tax">Imposto de Importação</value>
   <value column="Help" original="The Import Tax Tab defines amounts for Import Tax">A aba Imposto de Importação define valores e parâmetros relativos a este imposto</value>
  </row>
+ <row trl="Y" uuid="4b28be47-4341-496a-9571-33b4108c7e85">
+  <value column="Name" original="ISSQN">ISSQN</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="ISSQN">ISSQN</value>
+  <value column="Help" original="The ISSQN Tab defines amounts for ISSQN Tax">A aba ISSQN define valores e parâmetros relativos a este imposto</value>
+ </row>
 </idempiereTrl>

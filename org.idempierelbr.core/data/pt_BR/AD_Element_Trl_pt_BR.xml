@@ -56544,4 +56544,34 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row trl="Y" uuid="7abe2913-e697-4e0a-a749-bf3a91392133">
+  <value column="Name" original="Service Type">Tipo de Serviço</value>
+  <value column="PrintName" original="Service Type">Tipo de Serviço</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="51623fff-f246-4ac7-ac33-a40f1483f29f">
+  <value column="Name" original="Doc Line ISSQN">Doc Line ISSQN</value>
+  <value column="PrintName" original="Doc Line ISSQN">Doc Line ISSQN</value>
+  <value column="Description" original="Doc Line ISSQN">Doc Line ISSQN</value>
+  <value column="Help" original="The Doc Line ISSQN is a unique identifier for a doc line details.">The Doc Line ISSQN is a unique identifier for a doc line details.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="0662b1e1-a1b7-486b-ada7-5b4bc0151c59">
+  <value column="Name" original="Doc Line ISSQN">Doc Line ISSQN</value>
+  <value column="PrintName" original="Doc Line ISSQN">Doc Line ISSQN</value>
+  <value column="Description" original="Doc Line ISSQN">Doc Line ISSQN</value>
+  <value column="Help" original="The Doc Line ISSQN is a unique identifier for a doc line details.">The Doc Line ISSQN is a unique identifier for a doc line details.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
 </idempiereTrl>

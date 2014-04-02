@@ -384,6 +384,21 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			}
 		}
 		
+		// ISSQN
+		MLBRDocLineISSQN issqn = getMLBRDocLineISSQN();
+		
+		if (issqn != null) {
+			try {
+				issqn.deleteEx(true);
+			} catch (AdempiereException e) {
+				e.printStackTrace();
+				log.warning(MLBRDocLineISSQN.Table_Name + " for " + issqn + " was not deleted.");
+				
+				issqn.setLBR_DocLine_Details_ID(0);
+				issqn.saveEx();
+			}
+		}
+		
 		return true;		
 	}
 	
@@ -485,5 +500,25 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		}
 		
 		return importTax != null ? importTax : null;
+	}
+	
+	/**
+	 * 	Get ISSQN record
+	 *	@return MLBRDocLineISSQN or null
+	 */
+	public MLBRDocLineISSQN getMLBRDocLineISSQN() {
+		String where = "LBR_DocLine_Details_ID=?";
+		MLBRDocLineISSQN issqn = null;
+		
+		try {
+			issqn = new Query (getCtx(), MLBRDocLineISSQN.Table_Name, where, get_TrxName())
+				.setParameters(new Object[]{get_ID()})
+				.first();
+		} catch (DBException e) {
+			log.severe("Couldn't get LBR_DocLine_ISSQN of " + this);
+			e.printStackTrace();
+		}
+		
+		return issqn != null ? issqn : null;
 	}
 }
