@@ -369,6 +369,21 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			}
 		}
 		
+		// ImportTax
+		MLBRDocLineImportTax importTax = getMLBRDocLineImportTax();
+		
+		if (importTax != null) {
+			try {
+				importTax.deleteEx(true);
+			} catch (AdempiereException e) {
+				e.printStackTrace();
+				log.warning(MLBRDocLineImportTax.Table_Name + " for " + importTax + " was not deleted.");
+				
+				importTax.setLBR_DocLine_Details_ID(0);
+				importTax.saveEx();
+			}
+		}
+		
 		return true;		
 	}
 	
@@ -450,5 +465,25 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		}
 		
 		return cofins != null ? cofins : null;
+	}
+	
+	/**
+	 * 	Get ImportTax record
+	 *	@return MLBRDocLineImportTax or null
+	 */
+	public MLBRDocLineImportTax getMLBRDocLineImportTax() {
+		String where = "LBR_DocLine_Details_ID=?";
+		MLBRDocLineImportTax importTax = null;
+		
+		try {
+			importTax = new Query (getCtx(), MLBRDocLineImportTax.Table_Name, where, get_TrxName())
+				.setParameters(new Object[]{get_ID()})
+				.first();
+		} catch (DBException e) {
+			log.severe("Couldn't get LBR_DocLine_ImportTax of " + this);
+			e.printStackTrace();
+		}
+		
+		return importTax != null ? importTax : null;
 	}
 }

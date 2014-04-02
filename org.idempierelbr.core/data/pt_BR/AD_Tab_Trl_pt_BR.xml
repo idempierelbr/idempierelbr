@@ -6390,4 +6390,10 @@ Printing:
   <value column="Description" original="COFINS">COFINS</value>
   <value column="Help" original="The COFINS Tab defines amounts for COFINS Tax">A aba COFINS define valores e parâmetros relativos a este imposto</value>
  </row>
+ <row trl="Y" uuid="f24fad00-dc80-43cf-a41f-3c1016abeb7d">
+  <value column="Name" original="Import Tax">Imposto de Importação</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Import Tax">Imposto de Importação</value>
+  <value column="Help" original="The Import Tax Tab defines amounts for Import Tax">A aba Imposto de Importação define valores e parâmetros relativos a este imposto</value>
+ </row>
 </idempiereTrl>

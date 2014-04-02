@@ -56514,4 +56514,34 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row trl="N" uuid="7922b94c-beeb-402b-a5a2-99ae724de953">
+  <value column="Name" original="Doc Line Import Tax">Doc Line Import Tax</value>
+  <value column="PrintName" original="Doc Line Import Tax">Doc Line Import Tax</value>
+  <value column="Description" original="Doc Line Import Tax">Doc Line Import Tax</value>
+  <value column="Help" original="The Doc Line Import Tax is a unique identifier for a doc line details.">The Doc Line Import Tax is a unique identifier for a doc line details.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="7a8f228c-e3ef-496b-a5b5-658c713bc2c1">
+  <value column="Name" original="Doc Line Import Tax">Doc Line Import Tax</value>
+  <value column="PrintName" original="Doc Line Import Tax">Doc Line Import Tax</value>
+  <value column="Description" original="Doc Line Import Tax">Doc Line Import Tax</value>
+  <value column="Help" original="The Doc Line Import Tax is a unique identifier for a doc line details.">The Doc Line Import Tax is a unique identifier for a doc line details.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="2d5bf0f2-31f7-46d8-9cb3-ee4dfdbc53aa">
+  <value column="Name" original="IOF Amount">Valor do IOF</value>
+  <value column="PrintName" original="IOF Amount">Valor do IOF</value>
+  <value column="Description" original="Defines the IOF Amount">Define o Valor do IOF</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
 </idempiereTrl>
