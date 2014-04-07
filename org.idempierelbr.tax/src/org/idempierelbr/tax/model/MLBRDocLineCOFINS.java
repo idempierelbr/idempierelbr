@@ -1,7 +1,11 @@
 package org.idempierelbr.tax.model;
 
 import java.sql.ResultSet;
+import java.util.List;
 import java.util.Properties;
+
+import org.adempiere.exceptions.DBException;
+import org.compiere.model.Query;
 
 public class MLBRDocLineCOFINS extends X_LBR_DocLine_COFINS {
 
@@ -30,6 +34,31 @@ public class MLBRDocLineCOFINS extends X_LBR_DocLine_COFINS {
 	public MLBRDocLineCOFINS(Properties ctx, ResultSet rs, String trxName)
 	{
 		super (ctx, rs, trxName);
+	}
+	
+	/**
+	 * 	Get COFINS array of a given Doc Line Details.
+	 *	@return COFINS array
+	 */
+	public static MLBRDocLineCOFINS[] getOfDetails (Properties ctx, int LBR_DocLine_Details_ID, String trxName) {	
+		MLBRDocLineDetails details = new MLBRDocLineDetails(ctx, LBR_DocLine_Details_ID, trxName);
+		return getOfDetails(details);
+	}	
+	
+	/**
+	 * 	Get COFINS array of a given Doc Line Details.
+	 *	@return COFINS array
+	 */
+	public static MLBRDocLineCOFINS[] getOfDetails (MLBRDocLineDetails details) {	
+		if (details == null)
+			return null;
+		
+		List<MLBRDocLineCOFINS> list = new Query (details.getCtx(), MLBRDocLineCOFINS.Table_Name,
+				"LBR_DocLine_Details_ID=?", details.get_TrxName())
+			.setParameters(new Object[]{details.get_ID()})
+			.list();
+		
+		return list.toArray(new MLBRDocLineCOFINS[list.size()]);	
 	}
 
 }

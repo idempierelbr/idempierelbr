@@ -3,6 +3,7 @@ package org.idempierelbr.tax.model;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.ResultSet;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
@@ -307,218 +308,92 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		return false;
 	}
 	
+	private void deleteChildren() {
+		PO[] poArray = MLBRDocLineICMS.getOfDetails(this);
+
+		for (PO po : poArray) {
+			po.deleteEx(true);
+		}
+		
+		poArray = MLBRDocLineIPI.getOfDetails(this);
+
+		for (PO po : poArray) {
+			po.deleteEx(true);
+		}
+		
+		poArray = MLBRDocLinePIS.getOfDetails(this);
+
+		for (PO po : poArray) {
+			po.deleteEx(true);
+		}
+		
+		poArray = MLBRDocLineCOFINS.getOfDetails(this);
+		
+		for (PO po : poArray) {
+			po.deleteEx(true);
+		}
+		
+		poArray = MLBRDocLineImportTax.getOfDetails(this);
+		
+		for (PO po : poArray) {
+			po.deleteEx(true);
+		}
+		
+		poArray = MLBRDocLineISSQN.getOfDetails(this);
+		
+		for (PO po : poArray) {
+			po.deleteEx(true);
+		}
+	}
+	
 	protected boolean beforeDelete() {
-		// -- Delete child records
-		// ICMS
-		MLBRDocLineICMS icms = getMLBRDocLineICMS();
-		
-		if (icms != null) {
-			try {
-				icms.deleteEx(true);
-			} catch (AdempiereException e) {
-				e.printStackTrace();
-				log.warning(MLBRDocLineICMS.Table_Name + " for " + icms + " was not deleted.");
-				
-				icms.setLBR_DocLine_Details_ID(0);
-				icms.saveEx();
-			}
-		}
-		
-		// IPI
-		MLBRDocLineIPI ipi = getMLBRDocLineIPI();
-		
-		if (ipi != null) {
-			try {
-				ipi.deleteEx(true);
-			} catch (AdempiereException e) {
-				e.printStackTrace();
-				log.warning(MLBRDocLineIPI.Table_Name + " for " + ipi + " was not deleted.");
-				
-				ipi.setLBR_DocLine_Details_ID(0);
-				ipi.saveEx();
-			}
-		}
-		
-		// PIS
-		MLBRDocLinePIS pis = getMLBRDocLinePIS();
-		
-		if (pis != null) {
-			try {
-				pis.deleteEx(true);
-			} catch (AdempiereException e) {
-				e.printStackTrace();
-				log.warning(MLBRDocLinePIS.Table_Name + " for " + pis + " was not deleted.");
-				
-				pis.setLBR_DocLine_Details_ID(0);
-				pis.saveEx();
-			}
-		}
-		
-		// COFINS
-		MLBRDocLineCOFINS cofins = getMLBRDocLineCOFINS();
-		
-		if (cofins != null) {
-			try {
-				cofins.deleteEx(true);
-			} catch (AdempiereException e) {
-				e.printStackTrace();
-				log.warning(MLBRDocLineCOFINS.Table_Name + " for " + cofins + " was not deleted.");
-				
-				cofins.setLBR_DocLine_Details_ID(0);
-				cofins.saveEx();
-			}
-		}
-		
-		// ImportTax
-		MLBRDocLineImportTax importTax = getMLBRDocLineImportTax();
-		
-		if (importTax != null) {
-			try {
-				importTax.deleteEx(true);
-			} catch (AdempiereException e) {
-				e.printStackTrace();
-				log.warning(MLBRDocLineImportTax.Table_Name + " for " + importTax + " was not deleted.");
-				
-				importTax.setLBR_DocLine_Details_ID(0);
-				importTax.saveEx();
-			}
-		}
-		
-		// ISSQN
-		MLBRDocLineISSQN issqn = getMLBRDocLineISSQN();
-		
-		if (issqn != null) {
-			try {
-				issqn.deleteEx(true);
-			} catch (AdempiereException e) {
-				e.printStackTrace();
-				log.warning(MLBRDocLineISSQN.Table_Name + " for " + issqn + " was not deleted.");
-				
-				issqn.setLBR_DocLine_Details_ID(0);
-				issqn.saveEx();
-			}
-		}
-		
+		deleteChildren();
 		return true;		
 	}
 	
-	/**
-	 * 	Get ICMS record
-	 *	@return MLBRDocLineICMS or null
-	 */
-	public MLBRDocLineICMS getMLBRDocLineICMS() {
-		String where = "LBR_DocLine_Details_ID=?";
-		MLBRDocLineICMS icms = null;
-		
-		try {
-			icms = new Query (getCtx(), MLBRDocLineICMS.Table_Name, where, get_TrxName())
-				.setParameters(new Object[]{get_ID()})
-				.first();
-		} catch (DBException e) {
-			log.severe("Couldn't get LBR_DocLine_ICMS of " + this);
-			e.printStackTrace();
+	protected boolean afterSave(boolean newRecord, boolean success) {
+		// Calculate (or recalculate) taxes
+		if (is_ValueChanged("LBR_Tax_ID") || 
+				is_ValueChanged("LBR_GrossAmt") ||
+				is_ValueChanged("DiscountAmt")) {
+			
+			if (getLBR_Tax_ID() == 0) {
+			}
+			
+			PO po = getParent();
+			if (po instanceof MOrderLine) {
+				MOrderLine oLine = (MOrderLine) getParent();
+				MOrder order = oLine.getParent();
+				
+				if (getLBR_Tax_ID() > 0) {
+					Map<String, BigDecimal> params = new HashMap<String, BigDecimal>();
+					params.put(MLBRTax.SISCOMEX, Env.ZERO);
+					params.put(MLBRTax.INSURANCE, getInsuredAmount());
+					params.put(MLBRTax.FREIGHT, getFreightAmt());
+					params.put(MLBRTax.OTHERCHARGES, getSurcharges());
+					params.put(MLBRTax.QTY, getLBR_QtyTax());
+					params.put(MLBRTax.AMT, getLBR_GrossAmt().subtract(getDiscountAmt()));
+					
+					MLBRTax tax = new MLBRTax (getCtx(), getLBR_Tax_ID(), get_TrxName());
+					tax.calculate (true, order.getDateOrdered(), params, order.get_ValueAsString("LBR_TransactionType"));
+				}
+			}
 		}
 		
-		return icms != null ? icms : null;
-	}
-	
-	/**
-	 * 	Get IPI record
-	 *	@return MLBRDocLineIPI or null
-	 */
-	public MLBRDocLineIPI getMLBRDocLineIPI() {
-		String where = "LBR_DocLine_Details_ID=?";
-		MLBRDocLineIPI ipi = null;
 		
-		try {
-			ipi = new Query (getCtx(), MLBRDocLineIPI.Table_Name, where, get_TrxName())
-				.setParameters(new Object[]{get_ID()})
-				.first();
-		} catch (DBException e) {
-			log.severe("Couldn't get LBR_DocLine_IPI of " + this);
-			e.printStackTrace();
+		
+		
+		
+		if (getLBR_Tax_ID() > 0) {
+			if (newRecord) {
+				// Create ICMS record
+			} else {
+				// Update or delete ICMS record
+			}
+		} else {
+			// DeleteAllDocLineTaxes
 		}
 		
-		return ipi != null ? ipi : null;
-	}
-	
-	/**
-	 * 	Get PIS record
-	 *	@return MLBRDocLinePIS or null
-	 */
-	public MLBRDocLinePIS getMLBRDocLinePIS() {
-		String where = "LBR_DocLine_Details_ID=?";
-		MLBRDocLinePIS pis = null;
-		
-		try {
-			pis = new Query (getCtx(), MLBRDocLinePIS.Table_Name, where, get_TrxName())
-				.setParameters(new Object[]{get_ID()})
-				.first();
-		} catch (DBException e) {
-			log.severe("Couldn't get LBR_DocLine_PIS of " + this);
-			e.printStackTrace();
-		}
-		
-		return pis != null ? pis : null;
-	}
-	
-	/**
-	 * 	Get COFINS record
-	 *	@return MLBRDocLineCOFINS or null
-	 */
-	public MLBRDocLineCOFINS getMLBRDocLineCOFINS() {
-		String where = "LBR_DocLine_Details_ID=?";
-		MLBRDocLineCOFINS cofins = null;
-		
-		try {
-			cofins = new Query (getCtx(), MLBRDocLineCOFINS.Table_Name, where, get_TrxName())
-				.setParameters(new Object[]{get_ID()})
-				.first();
-		} catch (DBException e) {
-			log.severe("Couldn't get LBR_DocLine_COFINS of " + this);
-			e.printStackTrace();
-		}
-		
-		return cofins != null ? cofins : null;
-	}
-	
-	/**
-	 * 	Get ImportTax record
-	 *	@return MLBRDocLineImportTax or null
-	 */
-	public MLBRDocLineImportTax getMLBRDocLineImportTax() {
-		String where = "LBR_DocLine_Details_ID=?";
-		MLBRDocLineImportTax importTax = null;
-		
-		try {
-			importTax = new Query (getCtx(), MLBRDocLineImportTax.Table_Name, where, get_TrxName())
-				.setParameters(new Object[]{get_ID()})
-				.first();
-		} catch (DBException e) {
-			log.severe("Couldn't get LBR_DocLine_ImportTax of " + this);
-			e.printStackTrace();
-		}
-		
-		return importTax != null ? importTax : null;
-	}
-	
-	/**
-	 * 	Get ISSQN record
-	 *	@return MLBRDocLineISSQN or null
-	 */
-	public MLBRDocLineISSQN getMLBRDocLineISSQN() {
-		String where = "LBR_DocLine_Details_ID=?";
-		MLBRDocLineISSQN issqn = null;
-		
-		try {
-			issqn = new Query (getCtx(), MLBRDocLineISSQN.Table_Name, where, get_TrxName())
-				.setParameters(new Object[]{get_ID()})
-				.first();
-		} catch (DBException e) {
-			log.severe("Couldn't get LBR_DocLine_ISSQN of " + this);
-			e.printStackTrace();
-		}
-		
-		return issqn != null ? issqn : null;
+		return true;
 	}
 }
