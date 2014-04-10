@@ -67,7 +67,7 @@ public class MLBRCFOP extends X_LBR_CFOP
 	public static MLBRCFOP getCFOP (Properties ctx, String value, String trxName)
 	{	
 		String where = "AD_Client_ID IN (0, ?) AND value=?";
-		MLBRCFOP cfop = new Query (Env.getCtx(), X_LBR_NCMTax.Table_Name, where, trxName)
+		MLBRCFOP cfop = new Query (Env.getCtx(), MLBRCFOP.Table_Name, where, trxName)
 			.setParameters(new Object[]{Env.getAD_Client_ID(ctx), value})
 			.setOrderBy("AD_Client_ID DESC")
 			.first();
