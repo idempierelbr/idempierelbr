@@ -840,4 +840,52 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 			 return Env.ZERO;
 		return bd;
 	}
+	
+	/** Set Price includes Tax.
+	@param IsTaxIncluded 
+	Tax is included in the price 
+	  */
+	public void setIsTaxIncluded (boolean IsTaxIncluded)
+	{
+		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
+	}
+	
+	/** Get Price includes Tax.
+		@return Tax is included in the price 
+	  */
+	public boolean isTaxIncluded () 
+	{
+		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+	
+	/** Set Price includes Tax.
+	@param LBR_ICMSST_IsTaxIncluded 
+	Tax is included in the price 
+	  */
+	public void setLBR_ICMSST_IsTaxIncluded (boolean LBR_ICMSST_IsTaxIncluded)
+	{
+		set_Value (COLUMNNAME_LBR_ICMSST_IsTaxIncluded, Boolean.valueOf(LBR_ICMSST_IsTaxIncluded));
+	}
+	
+	/** Get Price includes Tax.
+		@return Tax is included in the price 
+	  */
+	public boolean isLBR_ICMSST_IsTaxIncluded () 
+	{
+		Object oo = get_Value(COLUMNNAME_LBR_ICMSST_IsTaxIncluded);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
+	}
 }

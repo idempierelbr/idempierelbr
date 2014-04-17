@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
 
-import org.adempiere.exceptions.DBException;
+import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.Query;
 
 public class MLBRDocLineCOFINS extends X_LBR_DocLine_COFINS {
@@ -59,6 +59,30 @@ public class MLBRDocLineCOFINS extends X_LBR_DocLine_COFINS {
 			.list();
 		
 		return list.toArray(new MLBRDocLineCOFINS[list.size()]);	
+	}
+	
+	/**
+	 * 	Copy COFINS from a details to another details
+	 *	@return true if copied ok
+	 */
+	public static boolean copy(MLBRDocLineDetails detailsFrom, MLBRDocLineDetails detailsTo) {
+		MLBRDocLineCOFINS[] cofinsLinesFrom = getOfDetails(detailsFrom);
+		MLBRDocLineCOFINS[] cofinsLinesTo = getOfDetails(detailsTo);
+		
+		if (cofinsLinesFrom.length == 0 || cofinsLinesTo.length > 0)
+			return false;
+		
+		MLBRDocLineCOFINS cofinsFrom = cofinsLinesFrom[0];
+		MLBRDocLineCOFINS cofinsTo = new MLBRDocLineCOFINS(detailsTo.getCtx(), 0, detailsTo.get_TrxName());
+		MLBRDocLineCOFINS.copyValues(cofinsFrom, cofinsTo, detailsTo.getAD_Client_ID(), detailsTo.getAD_Org_ID());
+		cofinsTo.setLBR_DocLine_Details_ID(detailsTo.get_ID());
+		
+		try {
+			cofinsTo.saveEx();
+			return true;
+		} catch (AdempiereException e) {
+			return false;
+		}
 	}
 
 }

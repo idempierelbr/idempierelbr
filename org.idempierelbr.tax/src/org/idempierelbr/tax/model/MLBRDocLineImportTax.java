@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
 
-import org.adempiere.exceptions.DBException;
+import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.Query;
 
 public class MLBRDocLineImportTax extends X_LBR_DocLine_ImportTax {
@@ -59,6 +59,30 @@ public class MLBRDocLineImportTax extends X_LBR_DocLine_ImportTax {
 			.list();
 		
 		return list.toArray(new MLBRDocLineImportTax[list.size()]);
+	}
+	
+	/**
+	 * 	Copy ImportTax from a details to another details
+	 *	@return true if copied ok
+	 */
+	public static boolean copy(MLBRDocLineDetails detailsFrom, MLBRDocLineDetails detailsTo) {
+		MLBRDocLineImportTax[] importTaxLinesFrom = getOfDetails(detailsFrom);
+		MLBRDocLineImportTax[] importTaxLinesTo = getOfDetails(detailsTo);
+		
+		if (importTaxLinesFrom.length == 0 || importTaxLinesTo.length > 0)
+			return false;
+		
+		MLBRDocLineImportTax importTaxFrom = importTaxLinesFrom[0];
+		MLBRDocLineImportTax importTaxTo = new MLBRDocLineImportTax(detailsTo.getCtx(), 0, detailsTo.get_TrxName());
+		MLBRDocLineImportTax.copyValues(importTaxFrom, importTaxTo, detailsTo.getAD_Client_ID(), detailsTo.getAD_Org_ID());
+		importTaxTo.setLBR_DocLine_Details_ID(detailsTo.get_ID());
+		
+		try {
+			importTaxTo.saveEx();
+			return true;
+		} catch (AdempiereException e) {
+			return false;
+		}
 	}
 
 }

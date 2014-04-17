@@ -100,6 +100,15 @@ public class MLBRTax extends X_LBR_Tax
 	public static final int TYPE_LIST_NEUTRAL 	= 105;
 	public static final int TYPE_LIST_NEGATIVE 	= 106;
 	
+	/**	Tax Group IDs	*/
+	public static final int TAX_GROUP_ICMS	 	= 1000000;
+	public static final int TAX_GROUP_PIS 		= 1000001;
+	public static final int TAX_GROUP_COFINS	= 1000002;
+	public static final int TAX_GROUP_IPI 		= 1000003;
+	public static final int TAX_GROUP_II	 	= 1000004;
+	public static final int TAX_GROUP_IR	 	= 1000005;
+	public static final int TAX_GROUP_ICMSST 	= 1000006;
+	
 	/**	ST				*/
 	private static boolean hasSubstitution    	= false;
 	
@@ -402,6 +411,27 @@ public class MLBRTax extends X_LBR_Tax
 		if (line == null || line.getLBR_TaxBaseType_ID() < 1)
 			return TYPE_RATE_OR_IVA;	//	Default Value
 		
+		// Try to use first the value of Name field
+		X_LBR_TaxBaseType taxBaseType = new X_LBR_TaxBaseType(getCtx(), line.getLBR_TaxBaseType_ID(), get_TrxName());
+		Integer taxBaseTypeCode = null;
+		
+		try {
+			taxBaseTypeCode = new Integer(taxBaseType.getName());
+		} catch (NumberFormatException e) {
+			log.fine("Script will be avaluated to get calculation type");
+		}
+		
+		if (taxBaseTypeCode != null && (taxBaseTypeCode == TYPE_RATE_OR_IVA ||
+				taxBaseTypeCode == TYPE_TARIFF ||
+				taxBaseTypeCode == TYPE_LIST_MAX ||
+				taxBaseTypeCode == TYPE_AMOUNT ||
+				taxBaseTypeCode == TYPE_LIST_POSITIVE ||
+				taxBaseTypeCode == TYPE_LIST_NEUTRAL ||
+				taxBaseTypeCode == TYPE_LIST_NEGATIVE)) {
+			return taxBaseTypeCode;
+		}		
+
+		// Value of field Name was not identified, so evaluating script 
 		String script = line.getLBR_TaxBaseType().getScript();
 		
 		if (script == null)
@@ -718,6 +748,10 @@ public class MLBRTax extends X_LBR_Tax
 		 * 	Janela de Configuração de Impostos
 		 */
 		MLBRTaxConfiguration tc = MLBRTaxConfiguration.get (ctx, oi.getAD_Org_ID(), p.getM_Product_ID(), 
+				0, isSOTrx, trxName);
+		
+		if (tc == null && pW.getLBR_FiscalGroup_Product_ID() > 0)
+			tc = MLBRTaxConfiguration.get (ctx, oi.getAD_Org_ID(), 0, 
 				pW.getLBR_FiscalGroup_Product_ID(), isSOTrx, trxName);
 		//
 		if (tc != null)

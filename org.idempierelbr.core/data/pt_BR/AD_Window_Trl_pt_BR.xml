@@ -2039,13 +2039,13 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Enter Inventory Cost Adjustment">Enter Inventory Cost Adjustment</value>
   <value column="Help" original="The Cost Adjustment Window allow user to enter cost adjustment for products">The Cost Adjustment Window allow user to enter cost adjustment for products</value>
  </row>
- <row id="200044" trl="N">
-  <value column="Name" original="Tax Provider Configuration">Tax Provider Configuration</value>
+ <row id="200044" trl="Y">
+  <value column="Name" original="Tax Provider Configuration">Configuração de Provedor de Impostos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200045" trl="N">
-  <value column="Name" original="Tax Provider">Tax Provider</value>
+ <row id="200045" trl="Y">
+  <value column="Name" original="Tax Provider">Provedor de Impostos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

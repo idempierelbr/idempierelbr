@@ -6138,14 +6138,14 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200105" trl="N">
-  <value column="Name" original="Tax Provider Configuration">Tax Provider Configuration</value>
+ <row id="200105" trl="Y">
+  <value column="Name" original="Tax Provider Configuration">Configuração de Provedor de Impostos</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200106" trl="N">
-  <value column="Name" original="Tax Provider">Tax Provider</value>
+ <row id="200106" trl="Y">
+  <value column="Name" original="Tax Provider">Provedor de Impostos</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>

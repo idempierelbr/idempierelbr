@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
 
-import org.adempiere.exceptions.DBException;
+import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.Query;
 
 public class MLBRDocLineIPI extends X_LBR_DocLine_IPI {
@@ -59,6 +59,30 @@ public class MLBRDocLineIPI extends X_LBR_DocLine_IPI {
 			.list();
 		
 		return list.toArray(new MLBRDocLineIPI[list.size()]);	
+	}
+	
+	/**
+	 * 	Copy IPI from a details to another details
+	 *	@return true if copied ok
+	 */
+	public static boolean copy(MLBRDocLineDetails detailsFrom, MLBRDocLineDetails detailsTo) {
+		MLBRDocLineIPI[] ipiLinesFrom = getOfDetails(detailsFrom);
+		MLBRDocLineIPI[] ipiLinesTo = getOfDetails(detailsTo);
+		
+		if (ipiLinesFrom.length == 0 || ipiLinesTo.length > 0)
+			return false;
+		
+		MLBRDocLineIPI ipiFrom = ipiLinesFrom[0];
+		MLBRDocLineIPI ipiTo = new MLBRDocLineIPI(detailsTo.getCtx(), 0, detailsTo.get_TrxName());
+		MLBRDocLineIPI.copyValues(ipiFrom, ipiTo, detailsTo.getAD_Client_ID(), detailsTo.getAD_Org_ID());
+		ipiTo.setLBR_DocLine_Details_ID(detailsTo.get_ID());
+		
+		try {
+			ipiTo.saveEx();
+			return true;
+		} catch (AdempiereException e) {
+			return false;
+		}
 	}
 
 }

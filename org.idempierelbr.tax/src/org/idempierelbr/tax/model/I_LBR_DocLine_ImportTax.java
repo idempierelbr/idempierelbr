@@ -197,4 +197,17 @@ public interface I_LBR_DocLine_ImportTax
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
+	
+	/** Column name IsTaxIncluded */
+    public static final String COLUMNNAME_IsTaxIncluded = "IsTaxIncluded";
+
+	/** Set Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public void setIsTaxIncluded (boolean IsTaxIncluded);
+
+	/** Get Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public boolean isTaxIncluded();
 }

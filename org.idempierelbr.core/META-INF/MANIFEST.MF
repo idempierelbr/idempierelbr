@@ -20,4 +20,5 @@ Import-Package: org.adempiere.webui,
  org.adempiere.webui.window,
  org.osgi.service.event;version="1.3.0"
 Export-Package: org.idempierelbr.core.model,
+ org.idempierelbr.core.util,
  org.idempierelbr.core.wrapper

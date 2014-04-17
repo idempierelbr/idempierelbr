@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
 
-import org.adempiere.exceptions.DBException;
+import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.Query;
 
 public class MLBRDocLineISSQN extends X_LBR_DocLine_ISSQN {
@@ -60,5 +60,28 @@ public class MLBRDocLineISSQN extends X_LBR_DocLine_ISSQN {
 		
 		return list.toArray(new MLBRDocLineISSQN[list.size()]);
 	}
-
+	
+	/**
+	 * 	Copy ISSQN from a details to another details
+	 *	@return true if copied ok
+	 */
+	public static boolean copy(MLBRDocLineDetails detailsFrom, MLBRDocLineDetails detailsTo) {
+		MLBRDocLineISSQN[] issqnLinesFrom = getOfDetails(detailsFrom);
+		MLBRDocLineISSQN[] issqnLinesTo = getOfDetails(detailsTo);
+		
+		if (issqnLinesFrom.length == 0 || issqnLinesTo.length > 0)
+			return false;
+		
+		MLBRDocLineISSQN issqnFrom = issqnLinesFrom[0];
+		MLBRDocLineISSQN issqnTo = new MLBRDocLineISSQN(detailsTo.getCtx(), 0, detailsTo.get_TrxName());
+		MLBRDocLineISSQN.copyValues(issqnFrom, issqnTo, detailsTo.getAD_Client_ID(), detailsTo.getAD_Org_ID());
+		issqnTo.setLBR_DocLine_Details_ID(detailsTo.get_ID());
+		
+		try {
+			issqnTo.saveEx();
+			return true;
+		} catch (AdempiereException e) {
+			return false;
+		}
+	}
 }

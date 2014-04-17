@@ -166,7 +166,10 @@ public class X_LBR_ICMSMatrix extends PO implements I_LBR_ICMSMatrix, I_Persiste
 		@return ST Tax	  */
 	public int getLBR_STTax_ID () 
 	{
-				return (Integer) get_Value(COLUMNNAME_LBR_STTax_ID);
+				Integer ii = (Integer)get_Value(COLUMNNAME_LBR_STTax_ID);
+				if (ii == null)
+					 return 0;
+				return ii.intValue();
 	}
 
 	/** Set Transaction Tax.

@@ -394,4 +394,28 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 			 return Env.ZERO;
 		return bd;
 	}
+	
+	/** Set Price includes Tax.
+	@param IsTaxIncluded 
+	Tax is included in the price 
+	  */
+	public void setIsTaxIncluded (boolean IsTaxIncluded)
+	{
+		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
+	}
+	
+	/** Get Price includes Tax.
+		@return Tax is included in the price 
+	  */
+	public boolean isTaxIncluded () 
+	{
+		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
+	}
 }

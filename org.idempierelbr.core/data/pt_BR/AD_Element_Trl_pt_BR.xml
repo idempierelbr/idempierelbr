@@ -25481,9 +25481,9 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53376" trl="N">
-  <value column="Name" original="Account">Account</value>
-  <value column="PrintName" original="Account">Account</value>
+ <row id="53376" trl="Y">
+  <value column="Name" original="Account">Conta</value>
+  <value column="PrintName" original="Account">Conta</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54388,9 +54388,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202579" trl="N">
-  <value column="Name" original="Tax Provider Configuration">Tax Provider Configuration</value>
-  <value column="PrintName" original="Tax Provider Configuration">Tax Provider Configuration</value>
+ <row id="202579" trl="Y">
+  <value column="Name" original="Tax Provider Configuration">Configuração de Provedor de Impostos</value>
+  <value column="PrintName" original="Tax Provider Configuration">Configuração de Provedor de Impostos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54408,9 +54408,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202581" trl="N">
-  <value column="Name" original="Tax Provider Class">Tax Provider Class</value>
-  <value column="PrintName" original="Tax Provider Class">Tax Provider Class</value>
+ <row id="202581" trl="Y">
+  <value column="Name" original="Tax Provider Class">Classe (Java) do Provedor de Impostos</value>
+  <value column="PrintName" original="Tax Provider Class">Classe (Java) do Provedor de Impostos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54438,9 +54438,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202584" trl="N">
-  <value column="Name" original="Company Code">Company Code</value>
-  <value column="PrintName" original="Company Code">Company Code</value>
+ <row id="202584" trl="Y">
+  <value column="Name" original="Company Code">Cód. da Empresa</value>
+  <value column="PrintName" original="Company Code">Cód. da Empresa</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54448,9 +54448,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202585" trl="N">
-  <value column="Name" original="License">License</value>
-  <value column="PrintName" original="License">License</value>
+ <row id="202585" trl="Y">
+  <value column="Name" original="License">Licença</value>
+  <value column="PrintName" original="License">Licença</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54458,9 +54458,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202586" trl="N">
-  <value column="Name" original="Validate Connection">Validate Connection</value>
-  <value column="PrintName" original="Validate Connection">Validate Connection</value>
+ <row id="202586" trl="Y">
+  <value column="Name" original="Validate Connection">Valida a Conexão</value>
+  <value column="PrintName" original="Validate Connection">Valida a Conexão</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>

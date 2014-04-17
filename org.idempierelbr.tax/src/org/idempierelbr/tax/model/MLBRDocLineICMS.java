@@ -1,12 +1,15 @@
 package org.idempierelbr.tax.model;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
 
-import org.adempiere.exceptions.DBException;
-import org.compiere.model.MOrderLine;
+import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.Query;
+import org.compiere.util.Env;
 
 public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 
@@ -61,5 +64,48 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 		
 		return list.toArray(new MLBRDocLineICMS[list.size()]);	
 	}
-
+	
+	/**
+	 * 	Get adjusted IVA-ST based on UF's rate
+	 * 
+	 * 	@return adjusted or original iva-st
+	 */
+	public static BigDecimal getAdjustedIva(BigDecimal ivaOriginal, BigDecimal aliqInterestadual,
+			BigDecimal aliqInternaDestino){
+            		
+		if (ivaOriginal == null || aliqInterestadual == null || aliqInternaDestino == null) {
+			return ivaOriginal;
+		}
+		
+		BigDecimal part1 = ivaOriginal.divide(Env.ONEHUNDRED).add(Env.ONE);
+		BigDecimal part2 = aliqInterestadual.divide(Env.ONEHUNDRED).subtract(Env.ONE);
+		BigDecimal part3 = aliqInternaDestino.divide(Env.ONEHUNDRED).subtract(Env.ONE);
+		BigDecimal sub = part2.divide(part3, new MathContext(12, RoundingMode.HALF_UP)).multiply(part1);
+		
+		return sub.subtract(Env.ONE).multiply(Env.ONEHUNDRED).setScale(2, RoundingMode.HALF_UP);
+	}
+	
+	/**
+	 * 	Copy ICMS from a details to another details
+	 *	@return true if copied ok
+	 */
+	public static boolean copy(MLBRDocLineDetails detailsFrom, MLBRDocLineDetails detailsTo) {
+		MLBRDocLineICMS[] icmsLinesFrom = getOfDetails(detailsFrom);
+		MLBRDocLineICMS[] icmsLinesTo = getOfDetails(detailsTo);
+		
+		if (icmsLinesFrom.length == 0 || icmsLinesTo.length > 0)
+			return false;
+		
+		MLBRDocLineICMS icmsFrom = icmsLinesFrom[0];
+		MLBRDocLineICMS icmsTo = new MLBRDocLineICMS(detailsTo.getCtx(), 0, detailsTo.get_TrxName());
+		MLBRDocLineICMS.copyValues(icmsFrom, icmsTo, detailsTo.getAD_Client_ID(), detailsTo.getAD_Org_ID());
+		icmsTo.setLBR_DocLine_Details_ID(detailsTo.get_ID());
+		
+		try {
+			icmsTo.saveEx();
+			return true;
+		} catch (AdempiereException e) {
+			return false;
+		}
+	}
 }

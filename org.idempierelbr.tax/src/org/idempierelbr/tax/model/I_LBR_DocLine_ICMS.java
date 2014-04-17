@@ -541,4 +541,30 @@ public interface I_LBR_DocLine_ICMS
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
+	
+	/** Column name IsTaxIncluded */
+    public static final String COLUMNNAME_IsTaxIncluded = "IsTaxIncluded";
+
+	/** Set Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public void setIsTaxIncluded (boolean IsTaxIncluded);
+
+	/** Get Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public boolean isTaxIncluded();
+	
+    /** Column name LBR_ICMSST_IsTaxIncluded */
+    public static final String COLUMNNAME_LBR_ICMSST_IsTaxIncluded = "LBR_ICMSST_IsTaxIncluded";
+
+	/** Set Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public void setLBR_ICMSST_IsTaxIncluded (boolean LBR_ICMSST_IsTaxIncluded);
+
+	/** Get Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public boolean isLBR_ICMSST_IsTaxIncluded();
 }

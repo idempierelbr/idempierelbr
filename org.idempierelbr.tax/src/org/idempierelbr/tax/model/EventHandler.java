@@ -29,6 +29,7 @@ public class EventHandler extends AbstractEventHandler {
 		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MOrderLine.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_DELETE, MOrderLine.Table_Name);
 		
+		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MInvoice.Table_Name);
 		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MInvoice.Table_Name);
 		
 		registerTableEvent(IEventTopics.PO_AFTER_NEW, MInvoiceLine.Table_Name);
@@ -46,6 +47,17 @@ public class EventHandler extends AbstractEventHandler {
 	protected void doHandleEvent(Event event) {
 		PO po = getPO(event);
 		log.info(po + " Type: " + event.getTopic());
+		
+		// Copy LBR fields from Order to Invoice
+		if (po instanceof MInvoice && event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)) {
+			MInvoice invoice = (MInvoice) po;
+			
+			if (invoice.getC_Order_ID() > 0) {
+				MOrder order = new MOrder(po.getCtx(), invoice.getC_Order_ID(), po.get_TrxName());
+				
+				invoice.set_ValueOfColumn("LBR_TransactionType", order.get_ValueAsString("LBR_TransactionType"));
+			}
+		}
 		
 		// Create/update/delete Doc Line Details
 		if (po instanceof MOrderLine ||	po instanceof MInvoiceLine || po instanceof MRMALine ||
@@ -121,14 +133,32 @@ public class EventHandler extends AbstractEventHandler {
 	 *	@return error message or null
 	 */
 	private String createLBRDocLineDetails(PO po) {
-		if (MLBRDocLineDetails.createFromPO(po)) {
-			MLBRDocLineDetails details = MLBRDocLineDetails.getOfPO(po);
+		MLBRDocLineDetails details = MLBRDocLineDetails.createFromPO(po);
+		
+		if (details != null) {
+			MInvoiceLine iLine = null;
+			MOrderLine oLine = null;
+			boolean copy = false;
 			
-			if (details != null) {
+			if (po instanceof MInvoiceLine) {
+				iLine = (MInvoiceLine) po;
+				
+				if (iLine.getC_OrderLine_ID() > 0) {
+					oLine = new MOrderLine(details.getCtx(), iLine.getC_OrderLine_ID(), details.get_TrxName());
+					
+					if (oLine.getQtyOrdered().compareTo(iLine.getQtyInvoiced()) == 0)
+						copy = true;
+				}
+			}
+			
+			if (copy)
+				details.copyFrom(MLBRDocLineDetails.getOfPO(oLine));
+			else {
 				details.populateFromPO(po);
 				details.createTaxTransaction();
-				details.saveEx();
 			}
+			
+			details.saveEx();
 		} else {
 			log.severe(MLBRDocLineDetails.Table_Name + " for " + po + " was not created.");
 			return "Could not create Doc Line Details record";
