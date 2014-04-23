@@ -7,6 +7,7 @@ import org.compiere.model.GridField;
 import org.compiere.model.GridTab;
 import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
 import org.idempierelbr.tax.model.MLBRDocLineICMS;
+import org.idempierelbr.tax.model.MLBRDocLineIPI;
 import org.idempierelbr.tax.model.MLBRDocLinePIS;
 
 public class CalloutDocLine implements IColumnCallout {
@@ -17,11 +18,16 @@ public class CalloutDocLine implements IColumnCallout {
 		
 		if (mTab.getTableName().equals(MLBRDocLineICMS.Table_Name))
 			if (mField.getColumnName().equals(MLBRDocLineICMS.COLUMNNAME_LBR_ICMSRegime)) {
-				return resetTaxStatusFields(ctx, mTab, value);
+				return resetICMSTaxStatusFields(ctx, mTab, value);
 			} else if (mField.getColumnName().equals(MLBRDocLineICMS.COLUMNNAME_LBR_ICMS_TaxStatusSN)) {
-				return resetTaxStatusTNField(ctx, mTab, value);
+				return resetICMSTaxStatusTNField(ctx, mTab, value);
 			} else if (mField.getColumnName().equals(MLBRDocLineICMS.COLUMNNAME_LBR_ICMS_TaxStatusTN)) {
-				return resetTaxStatusSNField(ctx, mTab, value);
+				return resetICMSTaxStatusSNField(ctx, mTab, value);
+			} else 
+				return null;
+		else if (mTab.getTableName().equals(MLBRDocLineIPI.Table_Name))
+			if (mField.getColumnName().equals(MLBRDocLineIPI.COLUMNNAME_LBR_IPI_TaxStatus)) {
+				return resetIPICalcTypeFields(ctx, mTab, value);
 			} else 
 				return null;
 		else if (mTab.getTableName().equals(MLBRDocLinePIS.Table_Name))
@@ -39,27 +45,38 @@ public class CalloutDocLine implements IColumnCallout {
 	}
 	
 	/**
-	 * Reset both Tax Status SN and TN fields. This is necessary to display fields correctly.
+	 * Reset both Tax Status SN and TN fields for tab ICMS.
+	 * This is necessary to display fields correctly.
 	 */
-	private String resetTaxStatusFields(Properties ctx, GridTab mTab, Object value) {
-		resetTaxStatusSNField(ctx, mTab, value);
-		resetTaxStatusTNField(ctx, mTab, value);
+	private String resetICMSTaxStatusFields(Properties ctx, GridTab mTab, Object value) {
+		resetICMSTaxStatusSNField(ctx, mTab, value);
+		resetICMSTaxStatusTNField(ctx, mTab, value);
 		return null;
 	}
 	
 	/**
-	 * Reset Tax Status SN field. This is necessary to display fields correctly.
+	 * Reset Tax Status SN field for tab ICMS.
+	 * This is necessary to display fields correctly.
 	 */
-	private String resetTaxStatusSNField(Properties ctx, GridTab mTab, Object value) {
+	private String resetICMSTaxStatusSNField(Properties ctx, GridTab mTab, Object value) {
 		mTab.setValue("LBR_ICMS_TaxStatusSN", null);
 		return null;
 	}
 	
 	/**
-	 * Reset Tax Status TN field. This is necessary to display fields correctly.
+	 * Reset Tax Status TN field for tab ICMS.
+	 * This is necessary to display fields correctly.
 	 */
-	private String resetTaxStatusTNField(Properties ctx, GridTab mTab, Object value) {
+	private String resetICMSTaxStatusTNField(Properties ctx, GridTab mTab, Object value) {
 		mTab.setValue("LBR_ICMS_TaxStatusTN", null);
+		return null;
+	}
+	
+	/**
+	 * Reset Calculation Type field for tab IPI. This is necessary to display fields correctly.
+	 */
+	private String resetIPICalcTypeFields(Properties ctx, GridTab mTab, Object value) {
+		mTab.setValue("CalculationType", null);
 		return null;
 	}
 	

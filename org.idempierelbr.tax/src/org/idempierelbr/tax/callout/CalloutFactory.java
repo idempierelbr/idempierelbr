@@ -9,6 +9,7 @@ import org.compiere.model.MInvoice;
 import org.compiere.model.MOrder;
 import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
 import org.idempierelbr.tax.model.MLBRDocLineICMS;
+import org.idempierelbr.tax.model.MLBRDocLineIPI;
 import org.idempierelbr.tax.model.MLBRDocLinePIS;
 
 /**
@@ -41,6 +42,12 @@ public class CalloutFactory implements IColumnCalloutFactory {
 			if (columnName.equals(MLBRDocLineICMS.COLUMNNAME_LBR_ICMSRegime) ||
 					columnName.equals(MLBRDocLineICMS.COLUMNNAME_LBR_ICMS_TaxStatusSN) ||
 					columnName.equals(MLBRDocLineICMS.COLUMNNAME_LBR_ICMS_TaxStatusTN))
+				 callouts.add(new CalloutDocLine());
+		}
+		
+		// Tabela LBR_DocLine_IPI
+		if (tableName.equals(MLBRDocLineIPI.Table_Name)) {
+			if (columnName.equals(MLBRDocLineIPI.COLUMNNAME_LBR_IPI_TaxStatus))
 				 callouts.add(new CalloutDocLine());
 		}
 		
