@@ -6451,18 +6451,6 @@ Please contact administrator.</value>
   <value column="MsgText" original="Delete ALL from Tree">Delete ALL from Tree</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200260" trl="N">
-  <value column="MsgText" original="DR">DR</value>
-  <value column="MsgTip" original=""/>
- </row>
- <row id="200261" trl="N">
-  <value column="MsgText" original="CR">CR</value>
-  <value column="MsgTip" original=""/>
- </row>
- <row id="200262" trl="N">
-  <value column="MsgText" original="DR/CR">DR/CR</value>
-  <value column="MsgTip" original=""/>
- </row>
  <row id="520010" trl="Y">
   <value column="MsgText" original="1 Rupee">1 Rupee</value>
   <value column="MsgTip" original=" "> </value>

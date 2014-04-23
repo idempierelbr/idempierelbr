@@ -6402,4 +6402,130 @@ Printing:
   <value column="Description" original="ISSQN">ISSQN</value>
   <value column="Help" original="The ISSQN Tab defines amounts for ISSQN Tax">A aba ISSQN define valores e parâmetros relativos a este imposto</value>
  </row>
+ <row trl="Y" uuid="e3d30108-2052-4ab4-b2dd-c202f2414754">
+  <value column="Name" original="Invoice Line Details">Detalhes da Linha</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Invoice Line Details">Detalhes da Linha com campos brasileiros</value>
+  <value column="Help" original="The Invoice Line Details Tab defines details for the individual line item.">Campos específicos para a legislação brasileira (impostos, nf-e, etc).</value>
+ </row>
+ <row trl="Y" uuid="f6271fb2-a832-42f7-a9e8-0378bac86a84">
+  <value column="Name" original="ICMS">ICMS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="ICMS">ICMS</value>
+  <value column="Help" original="The ICMS Tab defines amounts for ICMS Tax">A aba ICMS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="65ca5b43-f308-4c26-a771-4343c7ef46a1">
+  <value column="Name" original="IPI">IPI</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IPI">IPI</value>
+  <value column="Help" original="The IPI Tab defines amounts for IPI Tax">A aba IPI define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="aea11c05-74fb-4b2c-951a-6d758d8665d6">
+  <value column="Name" original="PIS">PIS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="PIS">PIS</value>
+  <value column="Help" original="The PIS Tab defines amounts for PIS Tax">A aba PIS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="5d460e56-255d-4176-844e-c18c7758c8ea">
+  <value column="Name" original="COFINS">COFINS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="COFINS">COFINS</value>
+  <value column="Help" original="The COFINS Tab defines amounts for COFINS Tax">A aba COFINS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="d8c1ea78-fd1d-4bc4-a9fb-ea8e60e43996">
+  <value column="Name" original="Import Tax">Imposto de Importação</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Import Tax">Imposto de Importação</value>
+  <value column="Help" original="The Import Tax Tab defines amounts for Import Tax">A aba Imposto de Importação define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="b77bee94-c1b0-476b-b5d4-9f97f3301b48">
+  <value column="Name" original="ISSQN">ISSQN</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="ISSQN">ISSQN</value>
+  <value column="Help" original="The ISSQN Tab defines amounts for ISSQN Tax">A aba ISSQN define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="e937430c-3498-44cc-89b7-52f368da7ef2">
+  <value column="Name" original="Order Line Details">Detalhes da Linha</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Order Line Details">Detalhes da Linha com campos brasileiros</value>
+  <value column="Help" original="The Order Line Details Tab defines details for the individual line item.">Campos específicos para a legislação brasileira (impostos, nf-e, etc).</value>
+ </row>
+ <row trl="Y" uuid="7b8ae10c-2f0a-4496-a236-bb882ece4a96">
+  <value column="Name" original="ICMS">ICMS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="ICMS">ICMS</value>
+  <value column="Help" original="The ICMS Tab defines amounts for ICMS Tax">A aba ICMS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="ed9a01e2-6b4a-4d49-b979-894a51622770">
+  <value column="Name" original="IPI">IPI</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IPI">IPI</value>
+  <value column="Help" original="The IPI Tab defines amounts for IPI Tax">A aba IPI define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="26a5713a-86f8-4a41-bfcb-cbc7eb908b4c">
+  <value column="Name" original="PIS">PIS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="PIS">PIS</value>
+  <value column="Help" original="The PIS Tab defines amounts for PIS Tax">A aba PIS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="edb7a425-e04d-402a-ab47-47e651454911">
+  <value column="Name" original="COFINS">COFINS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="COFINS">COFINS</value>
+  <value column="Help" original="The COFINS Tab defines amounts for COFINS Tax">A aba COFINS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="c90e7ae9-35d5-48b7-acc1-6d56f1e0119c">
+  <value column="Name" original="Import Tax">Imposto de Importação</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Import Tax">Imposto de Importação</value>
+  <value column="Help" original="The Import Tax Tab defines amounts for Import Tax">A aba Imposto de Importação define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="b90374e0-9f42-4975-96e5-77f438b751a4">
+  <value column="Name" original="ISSQN">ISSQN</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="ISSQN">ISSQN</value>
+  <value column="Help" original="The ISSQN Tab defines amounts for ISSQN Tax">A aba ISSQN define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="3ad1dc36-44b3-4ce4-b0ab-8ea41c7c74b5">
+  <value column="Name" original="Invoice Line Details">Detalhes da Linha</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Invoice Line Details">Detalhes da Linha com campos brasileiros</value>
+  <value column="Help" original="The Invoice Line Details Tab defines details for the individual line item.">Campos específicos para a legislação brasileira (impostos, nf-e, etc).</value>
+ </row>
+ <row trl="Y" uuid="ac964f04-8ef0-4418-a7df-a71a847bf232">
+  <value column="Name" original="ICMS">ICMS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="ICMS">ICMS</value>
+  <value column="Help" original="The ICMS Tab defines amounts for ICMS Tax">A aba ICMS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="f0dd8b0f-1eb1-4289-8e54-79657a7f61fb">
+  <value column="Name" original="IPI">IPI</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IPI">IPI</value>
+  <value column="Help" original="The IPI Tab defines amounts for IPI Tax">A aba IPI define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="7ae1e532-9ccb-4270-a660-d1235752d210">
+  <value column="Name" original="PIS">PIS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="PIS">PIS</value>
+  <value column="Help" original="The PIS Tab defines amounts for PIS Tax">A aba PIS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="8de69c6b-6f4f-4350-8a72-67f824f8ddce">
+  <value column="Name" original="COFINS">COFINS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="COFINS">COFINS</value>
+  <value column="Help" original="The COFINS Tab defines amounts for COFINS Tax">A aba COFINS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="977ede7b-5f67-41b0-a379-8ac883014721">
+  <value column="Name" original="Import Tax">Imposto de Importação</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Import Tax">Imposto de Importação</value>
+  <value column="Help" original="The Import Tax Tab defines amounts for Import Tax">A aba Imposto de Importação define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="448551a2-9faa-4001-b5c4-a789db9ac489">
+  <value column="Name" original="ISSQN">ISSQN</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="ISSQN">ISSQN</value>
+  <value column="Help" original="The ISSQN Tab defines amounts for ISSQN Tax">A aba ISSQN define valores e parâmetros relativos a este imposto</value>
+ </row>
 </idempiereTrl>

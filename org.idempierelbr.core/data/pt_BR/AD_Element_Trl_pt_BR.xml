@@ -55495,9 +55495,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="09b2d97b-f6ac-4335-be17-c4539fcbad05">
-  <value column="Name" original="Tax Base Amount">BC do Imposto</value>
-  <value column="PrintName" original="Tax Base Amount">BC do Imposto</value>
-  <value column="Description" original="Defines the Tax Base Amount">Define a BC do Imposto</value>
+  <value column="Name" original="Tax Base Amount">Base de Cálculo do Imposto</value>
+  <value column="PrintName" original="Tax Base Amount">Base de Cálculo do Imposto</value>
+  <value column="Description" original="Defines the Tax Base Amount">Define a Base de Cálculo do Imposto</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -56015,9 +56015,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="c0f88fd4-a8f7-411e-bf28-e24da8b97530">
-  <value column="Name" original="ICMS Tax Base Type">Modalidade de Determinação da BC do ICMS</value>
-  <value column="PrintName" original="ICMS Tax Base Type">Modalidade de Determinação da BC do ICMS</value>
-  <value column="Description" original="Identifies a ICMS Tax Base Type">Identifica a Modalidade de Determinação da BC do ICMS</value>
+  <value column="Name" original="ICMS Tax Base Type">Modalidade de Determinação da Base de Cálculo do ICMS</value>
+  <value column="PrintName" original="ICMS Tax Base Type">Modalidade de Determinação da Base de Cálculo do ICMS</value>
+  <value column="Description" original="Identifies a ICMS Tax Base Type">Identifica a Modalidade de Determinação da Base de Cálculo do ICMS</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -56025,9 +56025,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="97ffbe66-83cd-44a7-9b5b-0452700d418d">
-  <value column="Name" original="ICMS-ST Tax Base Type">Modalidade de Determinação da BC do ICMS-ST</value>
-  <value column="PrintName" original="ICMS-ST Tax Base Type">Modalidade de Determinação da BC do ICMS-ST</value>
-  <value column="Description" original="Identifies a ICMS-ST Tax Base Type">Identifica a Modalidade de Determinação da BC do ICMS-ST</value>
+  <value column="Name" original="ICMS-ST Tax Base Type">Modalidade de Determinação da Base de Cálculo do ICMS-ST</value>
+  <value column="PrintName" original="ICMS-ST Tax Base Type">Modalidade de Determinação da Base de Cálculo do ICMS-ST</value>
+  <value column="Description" original="Identifies a ICMS-ST Tax Base Type">Identifica a Modalidade de Determinação da Base de Cálculo do ICMS-ST</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -56045,9 +56045,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="4c688ede-c508-4191-aed3-ff7f6d72d475">
-  <value column="Name" original="ICMS-ST Tax Base Amount">BC do ICMS-ST</value>
-  <value column="PrintName" original="ICMS-ST Tax Base Amount">BC do ICMS-ST</value>
-  <value column="Description" original="Defines the ICMS-ST Tax Base Amount">Define a BC do ICMS-ST</value>
+  <value column="Name" original="ICMS-ST Tax Base Amount">Base de Cálculo do ICMS-ST</value>
+  <value column="PrintName" original="ICMS-ST Tax Base Amount">Base de Cálculo do ICMS-ST</value>
+  <value column="Description" original="Defines the ICMS-ST Tax Base Amount">Define a Base de Cálculo do ICMS-ST</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -56075,9 +56075,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="d4727352-d435-4cbc-b0a1-5f2d12a9b6dc">
-  <value column="Name" original="Tax Base Own Operation (%)">BC da Operação Própria (%)</value>
-  <value column="PrintName" original="Tax Base Own Operation (%)">BC da Operação Própria (%)</value>
-  <value column="Description" original="Identifies the Tax Base Own Operation in percentage">Identifica a BC da Operação Própria em porcentagem</value>
+  <value column="Name" original="Tax Base Own Operation (%)">Base de Cálculo da Operação Própria (%)</value>
+  <value column="PrintName" original="Tax Base Own Operation (%)">Base de Cálculo da Operação Própria (%)</value>
+  <value column="Description" original="Identifies the Tax Base Own Operation in percentage">Identifica a Base de Cálculo da Operação Própria em porcentagem</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -56135,9 +56135,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="0021c951-15cc-4767-83ca-b85f3c065488">
-  <value column="Name" original="ICMS-ST Base Amount withheld in Sender UF">BC do Valor Retido na UF do Remetente (ICMS-ST)</value>
-  <value column="PrintName" original="ICMS-ST Base Amount withheld in Sender UF">BC do Valor Retido na UF do Remetente (ICMS-ST)</value>
-  <value column="Description" original="Identifies the ICMS-ST Base Amount withheld in Sender UF">Identifica a BC do Valor Retido na UF do Remetente (ICMS-ST)</value>
+  <value column="Name" original="ICMS-ST Base Amount withheld in Sender UF">Base de Cálculo do Valor Retido na UF do Remetente (ICMS-ST)</value>
+  <value column="PrintName" original="ICMS-ST Base Amount withheld in Sender UF">Base de Cálculo do Valor Retido na UF do Remetente (ICMS-ST)</value>
+  <value column="Description" original="Identifies the ICMS-ST Base Amount withheld in Sender UF">Identifica a Base de Cálculo do Valor Retido na UF do Remetente (ICMS-ST)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -56145,9 +56145,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="1f1d1804-1622-4336-af40-8b09820287a9">
-  <value column="Name" original="ICMS-ST Base Amount in Receiver UF">BC do Valor Retido na UF do Destino (ICMS-ST)</value>
-  <value column="PrintName" original="ICMS-ST Base Amount in Receiver UF">BC do Valor Retido na UF do Destino (ICMS-ST)</value>
-  <value column="Description" original="Identifies the ICMS-ST Base Amount in Receiver UF">Identifica a BC do Valor Retido na UF do Destino (ICMS-ST)</value>
+  <value column="Name" original="ICMS-ST Base Amount in Receiver UF">Base de Cálculo do Valor Retido na UF do Destino (ICMS-ST)</value>
+  <value column="PrintName" original="ICMS-ST Base Amount in Receiver UF">Base de Cálculo do Valor Retido na UF do Destino (ICMS-ST)</value>
+  <value column="Description" original="Identifies the ICMS-ST Base Amount in Receiver UF">Identifica a Base de Cálculo do Valor Retido na UF do Destino (ICMS-ST)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -56185,9 +56185,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="c433af0f-6355-4511-a386-a15b2e1d50ab">
-  <value column="Name" original="ICMS-ST Withheld Base Amount">BC do Valor Retido Anteriormente (ICMS-ST)</value>
-  <value column="PrintName" original="ICMS-ST Withheld Base Amount">BC do Valor Retido Anteriormente (ICMS-ST)</value>
-  <value column="Description" original="Identifies the ICMS-ST Withheld Base Amount">Identifica a BC do Valor Retido Anteriormente (ICMS-ST)</value>
+  <value column="Name" original="ICMS-ST Withheld Base Amount">Base de Cálculo do Valor Retido Anteriormente (ICMS-ST)</value>
+  <value column="PrintName" original="ICMS-ST Withheld Base Amount">Base de Cálculo do Valor Retido Anteriormente (ICMS-ST)</value>
+  <value column="Description" original="Identifies the ICMS-ST Withheld Base Amount">Identifica a Base de Cálculo do Valor Retido Anteriormente (ICMS-ST)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -56375,9 +56375,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="5f28f4e1-3299-42b8-bafa-1e051ffcd850">
-  <value column="Name" original="PIS-ST Tax Base Amount">BC do PIS-ST</value>
-  <value column="PrintName" original="PIS-ST Tax Base Amount">BC do PIS-ST</value>
-  <value column="Description" original="Defines the PIS-ST Tax Base Amount">Define a BC do PIS-ST</value>
+  <value column="Name" original="PIS-ST Tax Base Amount">Base de Cálculo do PIS-ST</value>
+  <value column="PrintName" original="PIS-ST Tax Base Amount">Base de Cálculo do PIS-ST</value>
+  <value column="Description" original="Defines the PIS-ST Tax Base Amount">Define a Base de Cálculo do PIS-ST</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -56445,9 +56445,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="3e2a5b44-932e-46d5-b745-43ea16ed92d9">
-  <value column="Name" original="COFINS-ST Tax Base Amount">BC do COFINS-ST</value>
-  <value column="PrintName" original="COFINS-ST Tax Base Amount">BC do COFINS-ST</value>
-  <value column="Description" original="Defines the COFINS-ST Tax Base Amount">Define a BC do COFINS-ST</value>
+  <value column="Name" original="COFINS-ST Tax Base Amount">Base de Cálculo do COFINS-ST</value>
+  <value column="PrintName" original="COFINS-ST Tax Base Amount">Base de Cálculo do COFINS-ST</value>
+  <value column="Description" original="Defines the COFINS-ST Tax Base Amount">Define a Base de Cálculo do COFINS-ST</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -56569,6 +56569,16 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PrintName" original="Doc Line ISSQN">Doc Line ISSQN</value>
   <value column="Description" original="Doc Line ISSQN">Doc Line ISSQN</value>
   <value column="Help" original="The Doc Line ISSQN is a unique identifier for a doc line details.">The Doc Line ISSQN is a unique identifier for a doc line details.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="76b341e4-3deb-4901-9a9f-b120eab276c6">
+  <value column="Name" original="Price includes Tax">Price includes Tax</value>
+  <value column="PrintName" original="Price includes Tax">Price includes Tax</value>
+  <value column="Description" original="Tax is included in the price ">Tax is included in the price </value>
+  <value column="Help" original="The Tax Included checkbox indicates if the prices include tax.  This is also known as the gross price.">The Tax Included checkbox indicates if the prices include tax.  This is also known as the gross price.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
