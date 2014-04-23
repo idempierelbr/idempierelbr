@@ -301,11 +301,22 @@ public class EventHandler extends AbstractEventHandler {
 			// Commom changes in C_OrderLine and C_InvoiceLine
 			if  (po instanceof MOrderLine || po instanceof MInvoiceLine) {
 				if (po.is_ValueChanged("QtyEntered") ||
-						po.is_ValueChanged("QtyOrdered") ||
 						po.is_ValueChanged("C_UOM_ID") ||
 						po.is_ValueChanged("PriceEntered") ||
 						po.is_ValueChanged("PriceList") ||
 						po.is_ValueChanged ("LineNetAmt"))
+					return true;
+			}
+			
+			// Changes in C_OrderLine
+			if  (po instanceof MOrderLine) {
+				if (po.is_ValueChanged("QtyOrdered"))
+					return true;
+			}
+			
+			// Changes in C_InvoiceLine
+			if  (po instanceof MInvoiceLine) {
+				if (po.is_ValueChanged("QtyInvoiced"))
 					return true;
 			}
 			

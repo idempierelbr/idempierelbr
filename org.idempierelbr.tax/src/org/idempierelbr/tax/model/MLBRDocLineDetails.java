@@ -389,8 +389,9 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		
 		// Calculate (or recalculate) taxes
 		if (getLBR_Tax_ID() > 0 &&
-				(is_ValueChanged("LBR_Tax_ID") || is_ValueChanged("LBR_GrossAmt") ||
-						is_ValueChanged("DiscountAmt"))) {
+				((!newRecord && (is_ValueChanged("LBR_Tax_ID") || is_ValueChanged("LBR_GrossAmt") || is_ValueChanged("DiscountAmt"))) ||
+				(newRecord))
+			) {
 
 			deleteChildren();
 			
@@ -1006,5 +1007,76 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		MLBRDocLineCOFINS.copy(detailsFrom, this);
 		MLBRDocLineImportTax.copy(detailsFrom, this);
 		MLBRDocLineISSQN.copy(detailsFrom, this);
+	}
+	
+	/**
+	 * 	Get total tax amount not included on product price
+	 */
+	public BigDecimal getNotIncludedTaxAmt() {
+		BigDecimal lineTaxAmt = Env.ZERO;
+		
+		// ICMS and ICMS-ST
+		MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(this);
+		if (icmsLines.length > 0) {
+			MLBRDocLineICMS icms = icmsLines[0];
+			
+			// ICMS
+			if (icms.getLBR_TaxAmt() != null) {
+				if (!icms.isTaxIncluded())
+					lineTaxAmt = lineTaxAmt.add(icms.getLBR_TaxAmt());
+			}
+			
+			// ICMS-ST
+			if (icms.getLBR_ICMSST_TaxAmt() != null) {
+				if (!icms.isLBR_ICMSST_IsTaxIncluded())
+					lineTaxAmt = lineTaxAmt.add(icms.getLBR_ICMSST_TaxAmt());
+			}
+		}
+		
+		// IPI
+		MLBRDocLineIPI[] ipiLines = MLBRDocLineIPI.getOfDetails(this);
+		if (ipiLines.length > 0) {
+			MLBRDocLineIPI ipi = ipiLines[0];
+			
+			if (ipi.getLBR_TaxAmt() != null) {
+				if (!ipi.isTaxIncluded())
+					lineTaxAmt = lineTaxAmt.add(ipi.getLBR_TaxAmt());
+			}
+		}
+		
+		// PIS
+		MLBRDocLinePIS[] pisLines = MLBRDocLinePIS.getOfDetails(this);
+		if (pisLines.length > 0) {
+			MLBRDocLinePIS pis = pisLines[0];
+			
+			if (pis.getLBR_TaxAmt() != null) {
+				if (!pis.isTaxIncluded())
+					lineTaxAmt = lineTaxAmt.add(pis.getLBR_TaxAmt());
+			}
+		}
+		
+		// COFINS
+		MLBRDocLineCOFINS[] cofinsLines = MLBRDocLineCOFINS.getOfDetails(this);
+		if (cofinsLines.length > 0) {
+			MLBRDocLineCOFINS cofins = cofinsLines[0];
+			
+			if (cofins.getLBR_TaxAmt() != null) {
+				if (!cofins.isTaxIncluded())
+					lineTaxAmt = lineTaxAmt.add(cofins.getLBR_TaxAmt());
+			}
+		}
+		
+		// Import Tax
+		MLBRDocLineImportTax[] importTaxLines = MLBRDocLineImportTax.getOfDetails(this);
+		if (importTaxLines.length > 0) {
+			MLBRDocLineImportTax importTax = importTaxLines[0];
+			
+			if (importTax.getLBR_TaxAmt() != null) {
+				if (!importTax.isTaxIncluded())
+					lineTaxAmt = lineTaxAmt.add(importTax.getLBR_TaxAmt());
+			}
+		}
+		
+		return lineTaxAmt;
 	}
 }
