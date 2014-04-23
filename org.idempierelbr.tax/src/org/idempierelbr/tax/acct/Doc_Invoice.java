@@ -39,7 +39,6 @@ import org.compiere.model.MCostDetail;
 import org.compiere.model.MCurrency;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MInvoiceLine;
-import org.compiere.model.MInvoiceTax;
 import org.compiere.model.MLandedCostAllocation;
 import org.compiere.model.MOrderLandedCostAllocation;
 import org.compiere.model.MTax;
@@ -207,7 +206,7 @@ public class Doc_Invoice extends Doc
 				}
 			}	//	correct included Tax
 			
-			// Adding tax amount from Doc Lines taxes
+			// iDempiereLBR - Adding tax amount from Doc Lines taxes
 			MLBRDocLineDetails details = MLBRDocLineDetails.getOfPO(line);
 			BigDecimal lineTaxAmt = Env.ZERO;
 			
@@ -553,7 +552,7 @@ public class Doc_Invoice extends Doc
 				fact.createLine(null, MAccount.get(getCtx(), receivablesServices_ID),
 					getC_Currency_ID(), serviceAmt, null);
 			
-			// Tax as expense
+			// iDempiereLBR - Tax as expense
 			for (int i = 0; i < m_taxes.length; i++)
 			{
 				amt = m_taxes[i].getAmount();
@@ -588,7 +587,7 @@ public class Doc_Invoice extends Doc
 					if (tl != null)
 						tl.setC_Tax_ID(m_taxes[i].getC_Tax_ID());
 					
-					// Tax as expense
+					// iDempiereLBR - Tax as expense
 					tl = fact.createLine(null, m_taxes[i].getAccount(DocTax.ACCTTYPE_TaxExpense, as),
 							getC_Currency_ID(), null, amt);
 						if (tl != null)
@@ -757,6 +756,21 @@ public class Doc_Invoice extends Doc
 				fact.createLine(null, MAccount.get(getCtx(), payablesServices_ID),
 					getC_Currency_ID(), null, serviceAmt);
 			//
+			
+			// iDempiereLBR - Tax as expense
+			BigDecimal amt = Env.ZERO;
+			for (int i = 0; i < m_taxes.length; i++)
+			{
+				amt = m_taxes[i].getAmount();
+				if (amt != null && amt.signum() != 0)
+				{
+					FactLine tl = fact.createLine(null, m_taxes[i].getAccount(DocTax.ACCTTYPE_TaxExpense, as),
+							getC_Currency_ID(), null, amt);
+						if (tl != null)
+							tl.setC_Tax_ID(m_taxes[i].getC_Tax_ID());
+				}
+			}
+			
 			updateProductPO(as);	//	Only API
 		}
 		//  APC
@@ -774,6 +788,12 @@ public class Doc_Invoice extends Doc
 					getC_Currency_ID(), null, m_taxes[i].getAmount());
 				if (tl != null)
 					tl.setC_Tax_ID(m_taxes[i].getC_Tax_ID());
+				
+				// iDempiereLBR - Tax as expense
+				tl = fact.createLine(null, m_taxes[i].getAccount(DocTax.ACCTTYPE_TaxExpense, as),
+						getC_Currency_ID(), m_taxes[i].getAmount(), null);
+					if (tl != null)
+						tl.setC_Tax_ID(m_taxes[i].getC_Tax_ID());
 			}
 			//  Expense                 CR
 			for (int i = 0; i < p_lines.length; i++)
