@@ -791,4 +791,24 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original="Memo">Informações Adicionais (NF-e)</value>
   <value column="Help" original=""/>
  </row>
+ <row trl="Y" uuid="e8b92b47-0aae-44e0-81c7-5f9ef249b482">
+  <value column="Name" original="Tax Line Total">Valor Total Aproximado dos Tributos</value>
+  <value column="Description" original="Tax Line Total Amount">Valor Total Aproximado dos Tributos</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="343f501e-cd87-45ad-bde0-dff1f30c2dff">
+  <value column="Name" original="Memo">Informações Adicionais (NF-e)</value>
+  <value column="Description" original="Memo">Informações Adicionais (NF-e)</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="012237b2-0bc6-43f2-8c3d-46e6d989ce95">
+  <value column="Name" original="Tax Line Total">Valor Total Aproximado dos Tributos</value>
+  <value column="Description" original="Tax Line Total Amount">Valor Total Aproximado dos Tributos</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="e453a6e9-34a1-4122-8187-46a7c2a68a2a">
+  <value column="Name" original="Memo">Informações Adicionais (NF-e)</value>
+  <value column="Description" original="Memo">Informações Adicionais (NF-e)</value>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

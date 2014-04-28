@@ -54914,6 +54914,146 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="202675" trl="N">
+  <value column="Name" original="GL_Category_Trl_UU">GL_Category_Trl_UU</value>
+  <value column="PrintName" original="GL_Category_Trl_UU">GL_Category_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202676" trl="N">
+  <value column="Name" original="M_Product_Category_Trl_UU">M_Product_Category_Trl_UU</value>
+  <value column="PrintName" original="M_Product_Category_Trl_UU">M_Product_Category_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202677" trl="N">
+  <value column="Name" original="A_Asset_Group_Trl_UU">A_Asset_Group_Trl_UU</value>
+  <value column="PrintName" original="A_Asset_Group_Trl_UU">A_Asset_Group_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202678" trl="N">
+  <value column="Name" original="AD_Color_Trl_UU">AD_Color_Trl_UU</value>
+  <value column="PrintName" original="AD_Color_Trl_UU">AD_Color_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202679" trl="N">
+  <value column="Name" original="AD_PrintColor_Trl_UU">AD_PrintColor_Trl_UU</value>
+  <value column="PrintName" original="AD_PrintColor_Trl_UU">AD_PrintColor_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202680" trl="N">
+  <value column="Name" original="C_Activity_Trl_UU">C_Activity_Trl_UU</value>
+  <value column="PrintName" original="C_Activity_Trl_UU">C_Activity_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202681" trl="N">
+  <value column="Name" original="C_Campaign_Trl_UU">C_Campaign_Trl_UU</value>
+  <value column="PrintName" original="C_Campaign_Trl_UU">C_Campaign_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202682" trl="N">
+  <value column="Name" original="C_Region_Trl_UU">C_Region_Trl_UU</value>
+  <value column="PrintName" original="C_Region_Trl_UU">C_Region_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202683" trl="N">
+  <value column="Name" original="C_SalesRegion_Trl_UU">C_SalesRegion_Trl_UU</value>
+  <value column="PrintName" original="C_SalesRegion_Trl_UU">C_SalesRegion_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202684" trl="N">
+  <value column="Name" original="M_PriceList_Trl_UU">M_PriceList_Trl_UU</value>
+  <value column="PrintName" original="M_PriceList_Trl_UU">M_PriceList_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202685" trl="N">
+  <value column="Name" original="M_PriceList_Version_Trl_UU">M_PriceList_Version_Trl_UU</value>
+  <value column="PrintName" original="M_PriceList_Version_Trl_UU">M_PriceList_Version_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202686" trl="N">
+  <value column="Name" original="AD_Chart_Trl_UU">AD_Chart_Trl_UU</value>
+  <value column="PrintName" original="AD_Chart_Trl_UU">AD_Chart_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202687" trl="N">
+  <value column="Name" original="AD_BroadcastMessage_Trl_UU">AD_BroadcastMessage_Trl_UU</value>
+  <value column="PrintName" original="AD_BroadcastMessage_Trl_UU">AD_BroadcastMessage_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202688" trl="N">
+  <value column="Name" original="C_SalesStage_Trl_UU">C_SalesStage_Trl_UU</value>
+  <value column="PrintName" original="C_SalesStage_Trl_UU">C_SalesStage_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row trl="Y" uuid="2db1c9d3-13bf-4539-baa0-45ccfb09a7a3">
   <value column="Name" original="Cód. Cidade (IBGE)">Carteira</value>
   <value column="PrintName" original="Cód. Cidade (IBGE)">Carteira</value>

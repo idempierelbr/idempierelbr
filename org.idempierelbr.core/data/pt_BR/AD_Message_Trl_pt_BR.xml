@@ -6403,6 +6403,18 @@ Please contact administrator.</value>
   <value column="MsgText" original="more">more</value>
   <value column="MsgTip" original=""/>
  </row>
+ <row id="200240" trl="N">
+  <value column="MsgText" original="Last Run">Last Run</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200241" trl="N">
+  <value column="MsgText" original="Saved Parameters">Saved Parameters</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200242" trl="N">
+  <value column="MsgText" original="Could not save parameters.">Could not save parameters.</value>
+  <value column="MsgTip" original=""/>
+ </row>
  <row id="200243" trl="N">
   <value column="MsgText" original="Price list cannot be changed because the order contains product lines">Price list cannot be changed because the order contains product lines</value>
   <value column="MsgTip" original=""/>
@@ -6449,6 +6461,26 @@ Please contact administrator.</value>
  </row>
  <row id="200258" trl="N">
   <value column="MsgText" original="Delete ALL from Tree">Delete ALL from Tree</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200260" trl="N">
+  <value column="MsgText" original="DR">DR</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200261" trl="N">
+  <value column="MsgText" original="CR">CR</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200262" trl="N">
+  <value column="MsgText" original="DR/CR">DR/CR</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200268" trl="N">
+  <value column="MsgText" original="System is in maintenance mode, please wait until the access is restored.">System is in maintenance mode, please wait until the access is restored.</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200269" trl="N">
+  <value column="MsgText" original="You cannot access process {0} with your role : {1}">You cannot access process {0} with your role : {1}</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="520010" trl="Y">

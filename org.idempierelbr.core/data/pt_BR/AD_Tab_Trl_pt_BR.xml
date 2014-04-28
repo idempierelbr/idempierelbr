@@ -6204,6 +6204,90 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200121" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200122" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200123" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200124" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200125" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200126" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200127" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200128" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200129" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200130" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200131" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200132" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200133" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200134" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row trl="Y" uuid="07721587-32fd-4a79-b306-94c8ed672f52">
   <value column="Name" original="NCM">NCM</value>
   <value column="CommitWarning" original=""/>
@@ -6523,6 +6607,90 @@ Printing:
   <value column="Help" original="The Import Tax Tab defines amounts for Import Tax">A aba Imposto de Importação define valores e parâmetros relativos a este imposto</value>
  </row>
  <row trl="Y" uuid="448551a2-9faa-4001-b5c4-a789db9ac489">
+  <value column="Name" original="ISSQN">ISSQN</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="ISSQN">ISSQN</value>
+  <value column="Help" original="The ISSQN Tab defines amounts for ISSQN Tax">A aba ISSQN define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="feb8d9d6-7c29-4f3a-903a-5d779d283960">
+  <value column="Name" original="RMA Line Details">Detalhes da Linha</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="RMA Line Details">Detalhes da Linha com campos brasileiros</value>
+  <value column="Help" original="The RMA Line Details Tab defines details for the individual line item.">Campos específicos para a legislação brasileira (impostos, nf-e, etc).</value>
+ </row>
+ <row trl="Y" uuid="ae8c810b-42c8-4a2b-902e-d6bd40f7b8cb">
+  <value column="Name" original="RMA Line Details">Detalhes da Linha</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="RMA Line Details">Detalhes da Linha com campos brasileiros</value>
+  <value column="Help" original="The RMA Line Details Tab defines details for the individual line item.">Campos específicos para a legislação brasileira (impostos, nf-e, etc).</value>
+ </row>
+ <row trl="Y" uuid="be00ae65-0d8d-43e9-9ca8-a06d6655a4e0">
+  <value column="Name" original="ICMS">ICMS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="ICMS">ICMS</value>
+  <value column="Help" original="The ICMS Tab defines amounts for ICMS Tax">A aba ICMS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="36fc0c2a-6d2a-4409-86c5-b8bac1ed5027">
+  <value column="Name" original="ICMS">ICMS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="ICMS">ICMS</value>
+  <value column="Help" original="The ICMS Tab defines amounts for ICMS Tax">A aba ICMS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="bf816e82-53ff-4679-b325-bdf4e27cd19c">
+  <value column="Name" original="IPI">IPI</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IPI">IPI</value>
+  <value column="Help" original="The IPI Tab defines amounts for IPI Tax">A aba IPI define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="c4030ad3-5699-4951-a8a7-7846fa4f153f">
+  <value column="Name" original="IPI">IPI</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IPI">IPI</value>
+  <value column="Help" original="The IPI Tab defines amounts for IPI Tax">A aba IPI define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="2dd7d122-e9ff-4ee8-b94a-1477a0f2f71c">
+  <value column="Name" original="PIS">PIS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="PIS">PIS</value>
+  <value column="Help" original="The PIS Tab defines amounts for PIS Tax">A aba PIS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="97fca692-6a6e-4919-95b9-12c11cb53d66">
+  <value column="Name" original="PIS">PIS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="PIS">PIS</value>
+  <value column="Help" original="The PIS Tab defines amounts for PIS Tax">A aba PIS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="a47c3f79-2866-487b-b8d4-5164ef168294">
+  <value column="Name" original="COFINS">COFINS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="COFINS">COFINS</value>
+  <value column="Help" original="The COFINS Tab defines amounts for COFINS Tax">A aba COFINS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="8b106e14-8701-45bd-b45a-7ef07da67fe6">
+  <value column="Name" original="COFINS">COFINS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="COFINS">COFINS</value>
+  <value column="Help" original="The COFINS Tab defines amounts for COFINS Tax">A aba COFINS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="5cac5739-dc65-4e13-9299-19e4f47acf71">
+  <value column="Name" original="Import Tax">Imposto de Importação</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Import Tax">Imposto de Importação</value>
+  <value column="Help" original="The Import Tax Tab defines amounts for Import Tax">A aba Imposto de Importação define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="385c5a35-e097-4554-9e90-faeb4bf02e6c">
+  <value column="Name" original="Import Tax">Imposto de Importação</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Import Tax">Imposto de Importação</value>
+  <value column="Help" original="The Import Tax Tab defines amounts for Import Tax">A aba Imposto de Importação define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="4a7640fc-bd45-43a9-a034-4d416420b305">
+  <value column="Name" original="ISSQN">ISSQN</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="ISSQN">ISSQN</value>
+  <value column="Help" original="The ISSQN Tab defines amounts for ISSQN Tax">A aba ISSQN define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="bbe09404-2c32-440d-9965-22a8ed7710b0">
   <value column="Name" original="ISSQN">ISSQN</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="ISSQN">ISSQN</value>

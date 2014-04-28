@@ -2166,4 +2166,9 @@ Please note that base language cannot be a system language.</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200068" trl="N">
+  <value column="Name" original="Process Production">Process Production</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

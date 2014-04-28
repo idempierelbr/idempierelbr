@@ -407,12 +407,14 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				calculateTaxes(order, orderLine);
 				processTax(taxes, tax, orderLine.getC_Tax_ID());
 				createChildren(taxes, tax, orderLine.getC_Tax_ID());
+				orderLine.updateHeaderTax();
 			} else if (po instanceof MInvoiceLine) {
 				MInvoiceLine invoiceLine = (MInvoiceLine) getParent();
 				MInvoice invoice = invoiceLine.getParent();
 				calculateTaxes(invoice, invoiceLine);
 				processTax(taxes, tax, invoiceLine.getC_Tax_ID());
 				createChildren(taxes, tax, invoiceLine.getC_Tax_ID());
+				invoiceLine.updateHeaderTax();
 			}
 		}
 		
@@ -978,6 +980,9 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	 * 	Copy to this details the fields of another details
 	 */
 	public void copyFrom(MLBRDocLineDetails detailsFrom) {
+		if (detailsFrom == null)
+			return;
+		
 		int C_OrderLine_ID = getC_OrderLine_ID();
 		int C_InvoiceLine_ID = getC_InvoiceLine_ID();
 		int M_RMALine_ID = getM_RMALine_ID();
@@ -985,16 +990,25 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		// Copy
 		MLBRDocLineDetails.copyValues(detailsFrom, this, getAD_Client_ID(), getAD_Org_ID());
 		
-		// Restore some importante fields
+		// Restore some important fields
 		setC_OrderLine_ID(C_OrderLine_ID);
 		setC_InvoiceLine_ID(C_InvoiceLine_ID);
 		setM_RMALine_ID(M_RMALine_ID);
 		
+		copyTaxTransactionFrom(detailsFrom);
+		m_DetailsFrom = detailsFrom;
+	}
+	
+	/**
+	 * 	Copy to this details the Tax Transaction of another details
+	 */
+	public void copyTaxTransactionFrom(MLBRDocLineDetails detailsFrom) {
+		if (detailsFrom == null)
+			return;
+		
 		// Use a copy instead of original
 		MLBRTax tax = new MLBRTax(getCtx(), detailsFrom.getLBR_Tax_ID(), get_TrxName());
 		setLBR_Tax_ID(tax.copyTo().get_ID());
-		
-		m_DetailsFrom = detailsFrom;
 	}
 	
 	/**
