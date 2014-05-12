@@ -66,8 +66,8 @@ public class ModelFactory implements IModelFactory {
 			return MLBRCFOP.class;
 		else if (tableName.equals(X_LBR_CFOPLine.Table_Name)) // Model X_LBR_CFOPLine
 			return X_LBR_CFOPLine.class;
-		else if (tableName.equals(MLBRDocLineDetails.Table_Name)) // Model MLBRDocLineDetails
-			return MLBRDocLineDetails.class;
+		else if (tableName.equals(MLBRDocLineDetailsTax.Table_Name)) // Model MLBRDocLineDetails
+			return MLBRDocLineDetailsTax.class;
 		else if (tableName.equals(MLBRDocLineICMS.Table_Name)) // Model MLBRDocLineICMS
 			return MLBRDocLineICMS.class;
 		else if (tableName.equals(MLBRDocLineIPI.Table_Name)) // Model MLBRDocLineIPI
@@ -136,8 +136,8 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRCFOP(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(X_LBR_CFOPLine.Table_Name)) // Model X_LBR_CFOPLine
 			return new X_LBR_CFOPLine(Env.getCtx(), Record_ID, trxName);
-		else if (tableName.equals(MLBRDocLineDetails.Table_Name)) // Model MLBRDocLineDetails
-			return new MLBRDocLineDetails(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRDocLineDetailsTax.Table_Name)) // Model MLBRDocLineDetails
+			return new MLBRDocLineDetailsTax(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRDocLineICMS.Table_Name)) // Model MLBRDocLineICMS
 			return new MLBRDocLineICMS(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRDocLineIPI.Table_Name)) // Model MLBRDocLineIPI
@@ -206,8 +206,8 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRCFOP(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(X_LBR_CFOPLine.Table_Name)) // X_LBR_CFOPLine
 			return new X_LBR_CFOPLine(Env.getCtx(), rs, trxName);
-		else if (tableName.equals(MLBRDocLineDetails.Table_Name)) // MLBRDocLineDetails
-			return new MLBRDocLineDetails(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRDocLineDetailsTax.Table_Name)) // MLBRDocLineDetails
+			return new MLBRDocLineDetailsTax(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRDocLineICMS.Table_Name)) // MLBRDocLineICMS
 			return new MLBRDocLineICMS(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRDocLineIPI.Table_Name)) // MLBRDocLineIPI

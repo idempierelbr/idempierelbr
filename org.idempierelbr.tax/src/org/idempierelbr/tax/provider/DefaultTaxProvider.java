@@ -25,7 +25,7 @@ import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
-import org.idempierelbr.tax.model.MLBRDocLineDetails;
+import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
 import org.idempierelbr.tax.model.MLBRDocLineICMS;
 import org.idempierelbr.tax.model.MLBRDocLineIPI;
 import org.idempierelbr.tax.model.MLBRDocLineImportTax;
@@ -111,7 +111,7 @@ public class DefaultTaxProvider implements ITaxProvider {
 		{
 			MOrderLine line = lines[i];
 			
-			MLBRDocLineDetails details = MLBRDocLineDetails.getOfPO(line);
+			MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
 			
 			if (details != null) {
 				// ICMS and ICMS-ST
@@ -271,7 +271,7 @@ public class DefaultTaxProvider implements ITaxProvider {
 		if (no != 1)
 			s_log.warning("(1) #" + no);
 
-		MLBRDocLineDetails details = MLBRDocLineDetails.getOfPO(line);		
+		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);		
 
 		if (details == null) {
 			if (line.isTaxIncluded())
@@ -376,7 +376,7 @@ public class DefaultTaxProvider implements ITaxProvider {
 		{
 			MInvoiceLine line = lines[i];
 			
-			MLBRDocLineDetails details = MLBRDocLineDetails.getOfPO(line);
+			MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
 			
 			if (details != null) {
 				// ICMS and ICMS-ST
@@ -536,7 +536,7 @@ public class DefaultTaxProvider implements ITaxProvider {
 		if (no != 1)
 			s_log.warning("(1) #" + no);
 
-		MLBRDocLineDetails details = MLBRDocLineDetails.getOfPO(line);
+		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
 		
 		if (details == null) {
 			if (line.isTaxIncluded())
@@ -636,7 +636,7 @@ public class DefaultTaxProvider implements ITaxProvider {
 		{
 			MRMALine line = lines[i];
 			
-			MLBRDocLineDetails details = MLBRDocLineDetails.getOfPO(line);
+			MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
 			
 			if (details != null) {
 				// ICMS and ICMS-ST
@@ -795,7 +795,7 @@ public class DefaultTaxProvider implements ITaxProvider {
 		if (no != 1)
 			s_log.warning("(1) #" + no);
 		
-		MLBRDocLineDetails details = MLBRDocLineDetails.getOfPO(line);		
+		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);		
 
 		if (details != null) {
 			sql = "UPDATE M_RMA "

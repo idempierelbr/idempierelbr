@@ -1,7 +1,6 @@
 package org.idempierelbr.tax.model;
 
 import java.math.BigDecimal;
-
 import org.adempiere.base.event.AbstractEventHandler;
 import org.adempiere.base.event.IEventTopics;
 import org.adempiere.exceptions.AdempiereException;
@@ -93,7 +92,7 @@ public class EventHandler extends AbstractEventHandler {
 						requery = true;
 
 					if (isLBRDefaultTaxProvider(po, requery)) {	
-						MLBRDocLineDetails details = MLBRDocLineDetails.getOfPO(po);
+						MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(po);
 			
 						if (details == null) {
 							msg = createLBRDocLineDetails(po);
@@ -129,7 +128,7 @@ public class EventHandler extends AbstractEventHandler {
 	 * 	@param po persistent object
 	 */
 	private void deleteLBRDocLineDetails(PO po) {
-		MLBRDocLineDetails details = MLBRDocLineDetails.getOfPO(po);
+		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(po);
 		
 		if (details != null) {
 			try {
@@ -141,6 +140,7 @@ public class EventHandler extends AbstractEventHandler {
 				details.setC_OrderLine_ID(0);
 				details.setC_InvoiceLine_ID(0);
 				details.setM_RMALine_ID(0);
+				details.setLBR_NotaFiscalLine_ID(0);
 				details.saveEx();
 			}
 		}
@@ -152,7 +152,7 @@ public class EventHandler extends AbstractEventHandler {
 	 *	@return error message or null
 	 */
 	private String createLBRDocLineDetails(PO po) {
-		MLBRDocLineDetails details = MLBRDocLineDetails.createFromPO(po);
+		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.createFromPO(po);
 		
 		if (details != null) {
 			PO lineFrom = null;
@@ -187,14 +187,23 @@ public class EventHandler extends AbstractEventHandler {
 			}
 			
 			if (copyDetails)
-				details.copyFrom(MLBRDocLineDetails.getOfPO(lineFrom));
+				details.copyFrom(MLBRDocLineDetailsTax.getOfPO(lineFrom));
 			else {
 				details.populateFromPO(po);
 				
 				if (lineFrom != null)				
-					details.copyTaxTransactionFrom(MLBRDocLineDetails.getOfPO(lineFrom));
-				else
-					details.createTaxTransaction();
+					details.copyTaxTransactionFrom(MLBRDocLineDetailsTax.getOfPO(lineFrom));
+				else {
+					Object[] taxation = null;
+					if (details.getC_OrderLine_ID() > 0) {
+						MOrderLine oLine = new MOrderLine(details.getCtx(), details.getC_OrderLine_ID(), details.get_TrxName());
+						taxation = MLBRTax.getTaxes(details.getCtx(), oLine, details.get_TrxName());
+					} else if (details.getC_InvoiceLine_ID() > 0) {
+						MInvoiceLine iLine = new MInvoiceLine(details.getCtx(), details.getC_InvoiceLine_ID(), details.get_TrxName());
+						taxation = MLBRTax.getTaxes(details.getCtx(), iLine, details.get_TrxName());
+					}
+					details.createTaxTransaction(taxation);
+				}
 			}
 			
 			details.saveEx();
@@ -303,14 +312,23 @@ public class EventHandler extends AbstractEventHandler {
 		if (poLine == null)
 			poLine = poChanged;
 		
-		MLBRDocLineDetails details = MLBRDocLineDetails.getOfPO(poLine);
+		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(poLine);
 		
 		if (details != null) {
 			if (isChangeAffectDocLineDetails(poChanged))
 				details.populateFromPO(poLine);
 			
-			if (isChangeAffectTaxTransaction(poChanged))
-				details.createTaxTransaction();
+			if (isChangeAffectTaxTransaction(poChanged)) {
+				Object[] taxation = null;
+				if (details.getC_OrderLine_ID() > 0) {
+					MOrderLine oLine = new MOrderLine(details.getCtx(), details.getC_OrderLine_ID(), details.get_TrxName());
+					taxation = MLBRTax.getTaxes(details.getCtx(), oLine, details.get_TrxName());
+				} else if (details.getC_InvoiceLine_ID() > 0) {
+					MInvoiceLine iLine = new MInvoiceLine(details.getCtx(), details.getC_InvoiceLine_ID(), details.get_TrxName());
+					taxation = MLBRTax.getTaxes(details.getCtx(), iLine, details.get_TrxName());
+				}
+				details.createTaxTransaction(taxation);
+			}
 			
 			details.saveEx();
 		}

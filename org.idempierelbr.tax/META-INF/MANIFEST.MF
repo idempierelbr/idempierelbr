@@ -17,3 +17,6 @@ Import-Package: org.adempiere.webui.component,
  org.adempiere.webui.theme,
  org.adempiere.webui.window,
  org.osgi.service.event;version="1.3.0"
+Export-Package: org.idempierelbr.tax.model,
+ org.idempierelbr.tax.provider,
+ org.idempierelbr.tax.wrapper

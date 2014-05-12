@@ -7,3 +7,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.adempiere.base;bundle-version="2.0.0",
  org.idempierelbr.core;bundle-version="1.0.0",
  org.idempierelbr.tax;bundle-version="1.0.0"
+Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/CalloutFactory.xml,
+ OSGI-INF/EventHandler.xml
+Export-Package: org.idempierelbr.nfe.model
+Import-Package: org.osgi.service.event

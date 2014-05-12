@@ -3,34 +3,19 @@ package org.idempierelbr.tax.model;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.ResultSet;
-import java.sql.Timestamp;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
-import org.adempiere.exceptions.DBException;
 import org.adempiere.model.POWrapper;
-import org.compiere.model.I_C_BPartner_Location;
 import org.compiere.model.MBPartner;
-import org.compiere.model.MInvoice;
-import org.compiere.model.MInvoiceLine;
-import org.compiere.model.MOrder;
-import org.compiere.model.MOrderLine;
-import org.compiere.model.MOrgInfo;
 import org.compiere.model.MProduct;
-import org.compiere.model.MRMA;
-import org.compiere.model.MRMALine;
-import org.compiere.model.MRegion;
 import org.compiere.model.MSysConfig;
 import org.compiere.model.MTax;
 import org.compiere.model.PO;
-import org.compiere.model.Query;
 import org.compiere.util.CLogger;
-import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.core.wrapper.I_W_C_BPartner;
 import org.idempierelbr.tax.wrapper.I_W_C_Tax;
-import org.idempierelbr.tax.wrapper.I_W_M_Product;
 
 public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 {
@@ -39,7 +24,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	 */
 	private static final long serialVersionUID = 5436412104911684345L;
 	private static final CLogger log = CLogger.getCLogger(MLBRDocLineDetails.class);
-	private MLBRDocLineDetails m_DetailsFrom = null;
+	protected MLBRDocLineDetails m_DetailsFrom = null;
 
 	/**
 	 *  Default Constructor
@@ -64,245 +49,13 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	}
 	
 	/**
-	 * 	Create new Doc Line Details record from a given PO.
-	 * 	@param po line
-	 *	@return true if it could be created successfully
-	 */
-	public static MLBRDocLineDetails createFromPO (PO po)
-	{	
-		MLBRDocLineDetails details;
-		details = getOfPO(po);
-		
-		if (details != null)
-			return details;		
-		
-		String columnName = po.get_TableName() + "_ID";
-		
-		details = new MLBRDocLineDetails(po.getCtx(), 0, po.get_TrxName());		
-		details.setAD_Org_ID(po.getAD_Org_ID());
-		details.set_ValueOfColumn(columnName, po.get_ID());
-		
-		/*try {
-			details.saveEx();
-		} catch (AdempiereException e) {
-			log.severe("Couldn't create LBR_DocLine_Details from PO " + po);
-			e.printStackTrace();
-			return false;
-		}*/
-		
-		return details;
-	}
-	
-	/**
-	 * 	Get Brazilian Doc Line Details of a given PO.
-	 * 	@param po persistent object
-	 *	@return details
-	 */
-	public static MLBRDocLineDetails getOfPO (PO po)
-	{	
-		String where = po.get_TableName() + "_ID=?";
-		MLBRDocLineDetails details = null;
-		
-		try {
-			details = new Query (po.getCtx(), MLBRDocLineDetails.Table_Name, where, po.get_TrxName())
-				.setParameters(new Object[]{po.get_ID()})
-				.first();
-		} catch (DBException e) {
-			log.severe("Couldn't get LBR_DocLine_Details of PO " + po);
-			e.printStackTrace();
-		}
-		
-		return details != null ? details : null;
-	}
-	
-	/**
-	 * 	Populate the Doc Line Details with values from PO.
-	 * 	@param po persistent object
-	 */
-	public void populateFromPO(PO po) {
-		if (po instanceof MOrderLine ||	po instanceof MInvoiceLine || po instanceof MRMALine) {
-			// Determine if discount is printed
-			boolean isDiscountPrinted = isDiscountPrinted(po);
-						
-			// Common data from C_OrderLine, C_InvoiceLine and M_RMALine
-			setAD_Org_ID(po.getAD_Org_ID());
-			MProduct product = new MProduct(po.getCtx(), po.get_ValueAsInt("M_Product_ID"), po.get_TrxName());
-			
-			if (product.get_ID() > 0) {
-				I_W_M_Product pW = POWrapper.create(product, I_W_M_Product.class);
-				setProductValue(product.getValue());
-				setProductName(product.getName());
-				setLBR_NCM_ID(pW.getLBR_NCM_ID());
-				setLBR_UPCTax(product.getUPC());
-				
-				if (product.getProductType().equals(MProduct.PRODUCTTYPE_Service))
-					setLBR_TaxationType(MLBRDocLineDetails.LBR_TAXATIONTYPE_ISSQN);
-				else
-					setLBR_TaxationType(MLBRDocLineDetails.LBR_TAXATIONTYPE_ICMS);
-			}  else {
-				setProductValue(null);
-				setProductName(null);
-				setLBR_NCM_ID(0);
-				setLBR_UPCTax(null);
-				setLBR_TaxationType(null);
-			}
-			
-			// Common data from C_OrderLine and C_InvoiceLine
-			if (po instanceof MOrderLine ||	po instanceof MInvoiceLine) {
-				setLBR_QtyTax((BigDecimal)po.get_Value("QtyEntered"));
-				setLBR_UOMTax_ID(po.get_ValueAsInt("C_UOM_ID"));
-				setLBR_PriceTax((BigDecimal)po.get_Value("PriceEntered"));
-				
-				// Discount
-				BigDecimal qty = Env.ZERO;
-				
-				if (po instanceof MOrderLine)
-					qty = (BigDecimal)po.get_Value("QtyOrdered");
-				else if (po instanceof MInvoiceLine)
-					qty = (BigDecimal)po.get_Value("QtyInvoiced");
-				
-				if (isDiscountPrinted) {
-					setDiscountAmt(
-							calculateDiscountAmt(
-									qty,
-									(BigDecimal)po.get_Value("PriceList"),
-									(BigDecimal)po.get_Value("LineNetAmt")
-							)
-					);
-				} else {
-					setDiscountAmt(Env.ZERO);
-				}
-			}
-			
-			// Data from C_OrderLine
-			if (po instanceof MOrderLine) {
-				MOrderLine line = (MOrderLine) po;
-				setPOReference(line.getParent().getPOReference());
-			}
-			
-			// Data from C_InvoiceLine
-			if (po instanceof MInvoiceLine) {
-				MInvoiceLine line = (MInvoiceLine) po;
-				setPOReference(line.getParent().getPOReference());
-			}
-			
-			// Data from M_RMALine
-			if (po instanceof MRMALine) {
-				setLBR_QtyTax((BigDecimal)po.get_Value("Qty"));
-				setLBR_UOMTax_ID(product.get_ValueAsInt("C_UOM_ID"));
-				setLBR_PriceTax((BigDecimal)po.get_Value("Amt"));
-			}
-			
-			// Calculate gross amount
-			setLBR_GrossAmt(((BigDecimal)po.get_Value("LineNetAmt")).add(getDiscountAmt()));
-		}  else if (po instanceof MOrder || po instanceof MInvoice || po instanceof MRMA) { // Data from C_Order, C_Invoice and M_RMA
-			// Common data from C_Order and C_Invoice
-			if (po instanceof MOrder ||	po instanceof MInvoice) {
-				setPOReference(po.get_ValueAsString("POReference"));
-				set_Value("LBR_POReferenceLine", null);
-			}
-		}
-	}
-
-	/**
-	 * 	Get Parent
-	 *	@return parent
-	 */
-	public PO getParent() {
-		PO po = null;
-		
-		if (getC_OrderLine_ID() > 0)
-			po = new MOrderLine(getCtx(), getC_OrderLine_ID(), get_TrxName());
-		else if (getC_InvoiceLine_ID() > 0)
-			po = new MInvoiceLine(getCtx(), getC_InvoiceLine_ID(), get_TrxName());
-		else if (getM_RMALine_ID() > 0)
-			po = new MRMALine(getCtx(), getM_RMALine_ID(), get_TrxName());
-		
-		return po;
-	}
-	
-	/**
-	 * 	Create tax transaction (LBR_Tax_ID). If one exists, it is overwritten by a new one.
-	 */
-	public void createTaxTransaction() {
-		PO linePO = getParent();
-		
-		if (linePO != null && (linePO instanceof MOrderLine || linePO instanceof MInvoiceLine)) {			
-			if (linePO.get_ValueAsInt("M_Product_ID") <= 0) {
-				set_Value("LBR_Tax_ID", null);
-				return;
-			}
-
-			Object[] taxation = null;
-			
-			if (linePO instanceof MOrderLine) {
-				taxation = MLBRTax.getTaxes(getCtx(), (MOrderLine)linePO, get_TrxName());
-			} else if (linePO instanceof MInvoiceLine) {
-				taxation = MLBRTax.getTaxes(getCtx(), (MInvoiceLine)linePO, get_TrxName());
-			}
-			
-			if (taxation == null) {
-				set_Value("LBR_Tax_ID", null);
-				return;
-			}
-			
-			/**
-			 * Content for taxation array slots:
-			 * 	0 = Taxes
-			 * 	1 = Legal Message
-			 * 	2 = CFOP
-			 * 	3 = CST
-			 */
-			@SuppressWarnings("unchecked")
-			Map<Integer, MLBRTaxLine> taxes = (Map<Integer, MLBRTaxLine>) taxation[0];
-			
-			if (taxes.size() > 0)
-			{
-				MLBRTax tax = new MLBRTax (getCtx(), 0, get_TrxName());
-				tax.setAD_Org_ID(getAD_Org_ID());
-				tax.saveEx();
-
-				for (Integer key : taxes.keySet()) {
-					MLBRTaxLine tl = taxes.get(key);
-					tl.setLBR_Tax_ID(tax.getLBR_Tax_ID());
-					
-					// Adjust IVA-ST
-					if (tl.getLBR_TaxName_ID() == 1000012)
-						tl.setLBR_TaxRate(getAdjustedIva(tl.getLBR_TaxRate()));
-					tl.saveEx();
-				}
-
-				tax.setDescription();
-				tax.saveEx();
-				setLBR_Tax_ID(tax.get_ID());
-			} else {
-				set_Value("LBR_Tax_ID", null);
-			}
-			
-			//if (((Integer) taxation[1]) > 0)
-			//	mTab.setValue("LBR_LegalMessage_ID", ((Integer) taxation[1]));
-			
-			if (((Integer) taxation[2]) > 0) {
-				setLBR_CFOP_ID((Integer) taxation[2]);
-			} else {
-				set_Value("LBR_CFOP_ID", null);
-			}
-			
-			//if (((String) taxation[3]) != null && ((String) taxation[3]).length() > 0)
-			//	mTab.setValue("lbr_TaxStatus", p.getlbr_ProductSource() + ((String) taxation[3]));
-		}
-
-		return;
-	}
-	
-	/**
 	 * 	Calculate the discount amount
 	 * 	@param qty quantity of a product (base UOM)
 	 * 	@param priceList
 	 * 	@param lineNetAmt
 	 * 	@return Calculated amount
 	 */
-	private BigDecimal calculateDiscountAmt(BigDecimal qty, BigDecimal priceList, BigDecimal lineNetAmt) {
+	public BigDecimal calculateDiscountAmt(BigDecimal qty, BigDecimal priceList, BigDecimal lineNetAmt) {
 		BigDecimal priceListTotal = priceList.multiply(qty).setScale(2, RoundingMode.HALF_UP);
 		BigDecimal discount = priceListTotal.subtract(lineNetAmt);
 		
@@ -313,26 +66,9 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	}
 	
 	/**
-	 * 	Determine if PO prints discount
-	 * 	@param po persistent object (doc line)
-	 * 	@return true if is printed
-	 */
-	private boolean isDiscountPrinted(PO po) {
-		if (po instanceof MOrderLine) {
-			MOrder order = ((MOrderLine)po).getParent();
-			return order.isDiscountPrinted();
-		} else if (po instanceof MInvoiceLine) {
-			MInvoice invoice = ((MInvoiceLine)po).getParent();
-			return invoice.isDiscountPrinted();
-		}
-		
-		return false;
-	}
-	
-	/**
 	 * 	Delete all children (taxes) of Doc Line Details
 	 */
-	private void deleteChildren() {
+	protected void deleteChildren() {
 		PO[] poArray = MLBRDocLineICMS.getOfDetails(this);
 
 		for (PO po : poArray) {
@@ -375,68 +111,13 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		return true;		
 	}
 	
-	protected boolean afterSave(boolean newRecord, boolean success) {
-		if (newRecord == false && getLBR_Tax_ID() == 0) {
-			deleteChildren();
-			return true;
-		}
-		
-		if (m_DetailsFrom != null) {
-			copyChildren(m_DetailsFrom);			
-			m_DetailsFrom = null;
-			return true;
-		}			
-		
-		// Calculate (or recalculate) taxes
-		if (getLBR_Tax_ID() > 0 &&
-				((!newRecord && (is_ValueChanged("LBR_Tax_ID") || is_ValueChanged("LBR_GrossAmt") || is_ValueChanged("DiscountAmt"))) ||
-				(newRecord))
-			) {
-
-			deleteChildren();
-			
-			// Array para somar os impostos de todas as linhas
-			Map<Integer, Object[]> taxes = new HashMap<Integer, Object[]>();
-			MLBRTax tax = new MLBRTax (getCtx(), getLBR_Tax_ID(), get_TrxName());
-						
-			PO po = getParent();
-			
-			if (po instanceof MOrderLine) {
-				MOrderLine orderLine = (MOrderLine) getParent();
-				MOrder order = orderLine.getParent();
-				calculateTaxes(order, orderLine);
-				processTax(taxes, tax, orderLine.getC_Tax_ID());
-				createChildren(taxes, tax, orderLine.getC_Tax_ID());
-				orderLine.updateHeaderTax();
-			} else if (po instanceof MInvoiceLine) {
-				MInvoiceLine invoiceLine = (MInvoiceLine) getParent();
-				MInvoice invoice = invoiceLine.getParent();
-				calculateTaxes(invoice, invoiceLine);
-				processTax(taxes, tax, invoiceLine.getC_Tax_ID());
-				createChildren(taxes, tax, invoiceLine.getC_Tax_ID());
-				invoiceLine.updateHeaderTax();
-			}
-		}
-		
-		return true;
-	}
+	
 	
 	/**
 	 * 	Create all children (taxes) of Doc Line Details
 	 */
-	private void createChildren(Map<Integer, Object[]> taxes,
-			MLBRTax tax, int C_Tax_ID) {
-		
-		PO po = getParent();
-		MProduct product = null;
-		
-		if (po instanceof MOrderLine) {
-			MOrderLine orderLine = (MOrderLine) po;
-			product = orderLine.getProduct();
-		} else if (po instanceof MInvoiceLine) {
-			MInvoiceLine invoiceLine = (MInvoiceLine) po;
-			product = invoiceLine.getProduct();
-		}
+	protected void createChildren(Map<Integer, Object[]> taxes,
+			MLBRTax tax, int C_Tax_ID, MProduct product, int C_BPartner_ID) {
 		
 		for (MLBRTaxLine tl : tax.getLines()) {
 			if (tl.getLBR_TaxAmt() == null || tl.getLBR_TaxAmt().compareTo(Env.ZERO) == 0 || !tl.isLBR_PostTax())
@@ -489,7 +170,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMS ||
 						taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMSST) {
 					
-					createICMS(taxStatus.getName(), taxBaseTypeCode, tl, product, po, taxChildW);
+					createICMS(taxStatus.getName(), taxBaseTypeCode, tl, product, taxChildW, C_BPartner_ID);
 				} 
 				// IPI
 				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_IPI) {
@@ -514,8 +195,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	/**
 	 * 	Create ICMS (child of Doc Line Details)
 	 */
-	private void createICMS(String taxStatus, Integer taxBaseTypeCode, MLBRTaxLine tl, MProduct product,
-			PO po, I_W_C_Tax taxChildW) {
+	private void createICMS(String taxStatus, Integer taxBaseTypeCode, MLBRTaxLine tl, MProduct product, I_W_C_Tax taxChildW, int C_BPartner_ID) {
 		String productSource = product.get_ValueAsString("LBR_ProductSource");
 		
 		if (productSource != null && productSource.isEmpty())
@@ -566,17 +246,6 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSTN_50_Suspensao) && tl.getLBR_TaxAmt().signum() > 0) {
 
 			icms.setLBR_TaxAmt(tl.getLBR_TaxAmt());
-			
-			// Tax Relief Type. If BPartner has SUFRAMA, set it, otherwise set as Other
-			int C_BPartner_ID = 0;
-			
-			if (po instanceof MOrderLine) {
-				MOrderLine orderLine = (MOrderLine) po;
-				C_BPartner_ID = orderLine.getParent().getC_BPartner_ID();
-			} else if (po instanceof MInvoiceLine) {
-				MInvoiceLine invoiceLine = (MInvoiceLine) po;
-				C_BPartner_ID = invoiceLine.getParent().getC_BPartner_ID();
-			}
 			
 			MBPartner bp = new MBPartner(getCtx(), C_BPartner_ID, get_TrxName());
 			I_W_C_BPartner bpW = POWrapper.create(bp, I_W_C_BPartner.class);
@@ -801,76 +470,13 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	}	
 
 	/**
-	 * 	Calculate brazilian taxes
-	 * 	@param original order/invoice
-	 * 	@param line to be processed
-	 * 	@param updateTaxes
-	 * 	@return error message or null
-	 */
-	private String calculateTaxes (PO po, PO poLine) {
-		if (MOrderLine.Table_Name.equals(poLine.get_TableName())) {
-			MOrder order = null;
-			MOrderLine orderLine = (MOrderLine) poLine;
-			
-			if (po != null) 
-				order = (MOrder) po;
-			else 
-				order = orderLine.getParent();
-			
-			if (getLBR_Tax_ID() > 0) {
-				Map<String, BigDecimal> params = new HashMap<String, BigDecimal>();
-				params.put(MLBRTax.SISCOMEX, Env.ZERO);
-				params.put(MLBRTax.INSURANCE, getInsuredAmount());
-				params.put(MLBRTax.FREIGHT, getFreightAmt());
-				params.put(MLBRTax.OTHERCHARGES, getSurcharges());
-				params.put(MLBRTax.QTY, getLBR_QtyTax());
-				params.put(MLBRTax.AMT, getLBR_GrossAmt().subtract(getDiscountAmt()));
-				
-				//if (getIVARateFromTaxTransaction() != null && getIVARateFromTaxTransaction().signum() == 1)
-				//	params.put("IVA", getAdjustedIva().divide(Env.ONEHUNDRED, 4, BigDecimal.ROUND_HALF_UP));
-			
-				MLBRTax tax = new MLBRTax (getCtx(), getLBR_Tax_ID(), get_TrxName());
-				tax.calculate (order.isTaxIncluded(), order.getDateOrdered(), params, order.get_ValueAsString("LBR_TransactionType"));
-			}
-		} else if (MInvoiceLine.Table_Name.equals(poLine.get_TableName())) {
-			MInvoice invoice = null;
-			MInvoiceLine invoiceLine = (MInvoiceLine) poLine;
-			
-			if (po != null) 
-				invoice = (MInvoice) po;
-			else 
-				invoice = invoiceLine.getParent();
-			
-			if (getLBR_Tax_ID() > 0) {
-				BigDecimal reversal = (getLBR_QtyTax().signum() < 0) ? Env.ONE.negate() : Env.ONE;
-				
-				Map<String, BigDecimal> params = new HashMap<String, BigDecimal>();
-				params.put(MLBRTax.SISCOMEX, Env.ZERO.multiply(reversal));
-				params.put(MLBRTax.INSURANCE, getInsuredAmount().multiply(reversal));
-				params.put(MLBRTax.FREIGHT, getFreightAmt().multiply(reversal));
-				params.put(MLBRTax.OTHERCHARGES, getSurcharges().multiply(reversal));
-				params.put(MLBRTax.QTY, getLBR_QtyTax());
-				params.put(MLBRTax.AMT, getLBR_GrossAmt().subtract(getDiscountAmt()));
-				
-				//if (getIVARateFromTaxTransaction() != null && getIVARateFromTaxTransaction().signum() == 1)
-				//	params.put("IVA", getAdjustedIva().divide(Env.ONEHUNDRED, 4, BigDecimal.ROUND_HALF_UP));
-				
-				MLBRTax tax = new MLBRTax (getCtx(), getLBR_Tax_ID(), get_TrxName());
-				tax.calculate (invoice.isTaxIncluded(), invoice.getDateInvoiced(), params, invoice.get_ValueAsString("LBR_TransactionType"));
-			}
-		}
-		
-		return null;
-	}
-	
-	/**
 	 * 	Verifica todas as linhas do imposto
 	 * 
 	 * 	@param taxes
 	 * 	@param C_Tax_ID
 	 * 	@param tax
 	 */
-	private void processTax (Map<Integer, Object[]> taxes,
+	protected void processTax (Map<Integer, Object[]> taxes,
 			MLBRTax tax, int C_Tax_ID) {
 		
 		for (MLBRTaxLine tl : tax.getLines()) {
@@ -903,80 +509,6 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	}
 	
 	/**
-	 * 	Get adjusted IVA-ST based on transaction UF's 
-	 * 
-	 * 	@return adjusted or original iva-st
-	 */
-	private BigDecimal getAdjustedIva(BigDecimal originalIVA){
-		PO po = getParent();
-		boolean isSOTrx = true;
-		Timestamp docDate = null;
-		MProduct product = null;
-		I_C_BPartner_Location bpLocation = null;
-		
-		if (po instanceof MOrderLine) {
-			MOrderLine line = (MOrderLine) po;
-			MOrder order = line.getParent();
-			docDate = order.getDateOrdered();
-			isSOTrx = order.isSOTrx();
-			bpLocation = order.getBill_Location();
-			product = line.getProduct();
-		} else if (po instanceof MInvoiceLine) {
-			MInvoiceLine line = (MInvoiceLine) po;
-			MInvoice invoice = line.getParent();
-			docDate = invoice.getDateInvoiced();
-			isSOTrx = invoice.isSOTrx();
-			bpLocation = invoice.getC_BPartner_Location();
-			product = line.getProduct();
-		}
-		
-		if (bpLocation == null)
-			return originalIVA;
-		
-		MOrgInfo orgInfo = MOrgInfo.get(getCtx(), getAD_Org_ID(), get_TrxName());
-		
-		// Same UF, adjust is not necessary
-		if (orgInfo.getC_Location().getC_Region_ID() == bpLocation.getC_Location().getC_Region_ID())
-			return originalIVA;
-		
-		MRegion regionOrg = new MRegion(getCtx(), orgInfo.getC_Location().getC_Region_ID(), get_TrxName());
-		MRegion regionBPartner = new MRegion(getCtx(), bpLocation.getC_Location().getC_Region_ID(), get_TrxName());
-		
-		int regionFrom_ID = 0;
-		int regionTo_ID = 0;
-		
-		if (isSOTrx) {
-			regionFrom_ID = regionOrg.get_ID();
-			regionTo_ID = regionBPartner.get_ID();
-		} else {
-			regionFrom_ID = regionBPartner.get_ID();
-			regionTo_ID = regionOrg.get_ID();
-		}
-		
-		BigDecimal aliqInterestadual = Env.ZERO;
-		BigDecimal aliqInternaDestino = Env.ZERO;
-		
-		MLBRICMSMatrix icmsMatrix = MLBRICMSMatrix.get(getCtx(), getAD_Org_ID(), regionTo_ID, regionTo_ID, docDate, get_TrxName());
-		String sql = "SELECT MAX(tl.lbr_TaxRate) FROM LBR_TaxLine tl WHERE tl.LBR_Tax_ID = ?";
-		aliqInternaDestino = DB.getSQLValueBD(get_TrxName(), sql, icmsMatrix.getLBR_Tax_ID());
-		
-		// NF-e - Nota Técnica 2012/005 (4% de icms nas operações interestaduais para produtos importados)
-		if (product != null &&
-				(product.get_ValueAsString("LBR_ProductSource").equals("1") ||
-						product.get_ValueAsString("LBR_ProductSource").equals("2") ||
-						product.get_ValueAsString("LBR_ProductSource").equals("3"))) {
-			
-			aliqInterestadual = new BigDecimal("4");
-		} else {
-			icmsMatrix = MLBRICMSMatrix.get(getCtx(), getAD_Org_ID(), regionFrom_ID, regionTo_ID, docDate, get_TrxName());
-    		sql = "SELECT MAX(tl.lbr_TaxRate) FROM LBR_TaxLine tl WHERE tl.LBR_Tax_ID = ?";
-    		aliqInterestadual = DB.getSQLValueBD(get_TrxName(), sql, icmsMatrix.getLBR_Tax_ID());
-		}
-		
-		return MLBRDocLineICMS.getAdjustedIva(originalIVA, aliqInterestadual, aliqInternaDestino);
-	}
-	
-	/**
 	 * 	Copy to this details the fields of another details
 	 */
 	public void copyFrom(MLBRDocLineDetails detailsFrom) {
@@ -986,6 +518,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		int C_OrderLine_ID = getC_OrderLine_ID();
 		int C_InvoiceLine_ID = getC_InvoiceLine_ID();
 		int M_RMALine_ID = getM_RMALine_ID();
+		int LBR_NotaFiscalLine_ID = getLBR_NotaFiscalLine_ID();
 		
 		// Copy
 		MLBRDocLineDetails.copyValues(detailsFrom, this, getAD_Client_ID(), getAD_Org_ID());
@@ -994,6 +527,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		setC_OrderLine_ID(C_OrderLine_ID);
 		setC_InvoiceLine_ID(C_InvoiceLine_ID);
 		setM_RMALine_ID(M_RMALine_ID);
+		setLBR_NotaFiscalLine_ID(LBR_NotaFiscalLine_ID);
 		
 		copyTaxTransactionFrom(detailsFrom);
 		m_DetailsFrom = detailsFrom;
@@ -1092,5 +626,88 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		}
 		
 		return lineTaxAmt;
+	}
+	
+	protected boolean afterSave(boolean newRecord, boolean success) {
+		if (newRecord == false && getLBR_Tax_ID() == 0) {
+			deleteChildren();
+		}
+		
+		return true;
+	}
+
+	/**
+	 * 	Get adjusted IVA-ST based on transaction UF's 
+	 * 
+	 * 	@return adjusted or original iva-st
+	 */
+	protected BigDecimal getAdjustedIva(BigDecimal originalIVA){
+		return originalIVA;
+	}
+	
+	/**
+	 * 	Create tax transaction (LBR_Tax_ID). If one exists, it is overwritten by a new one.
+	 */
+	public void createTaxTransaction(Object[] taxation) {
+		//PO linePO = getParent();
+		
+		//if (linePO != null) {			
+			//if (linePO.get_ValueAsInt("M_Product_ID") <= 0) {
+			//	set_Value("LBR_Tax_ID", null);
+			//	return;
+			//}
+			
+			if (taxation == null) {
+				set_Value("LBR_Tax_ID", null);
+				return;
+			}
+			
+			/**
+			 * Content for taxation array slots:
+			 * 	0 = Taxes
+			 * 	1 = Legal Message
+			 * 	2 = CFOP
+			 * 	3 = CST
+			 */
+			@SuppressWarnings("unchecked")
+			Map<Integer, MLBRTaxLine> taxes = (Map<Integer, MLBRTaxLine>) taxation[0];
+			
+			if (taxes.size() > 0)
+			{
+				MLBRTax tax = new MLBRTax (getCtx(), 0, get_TrxName());
+				tax.setAD_Org_ID(getAD_Org_ID());
+				tax.saveEx();
+
+				for (Integer key : taxes.keySet()) {
+					MLBRTaxLine tl = taxes.get(key);
+					tl.setLBR_Tax_ID(tax.getLBR_Tax_ID());
+					
+					// Adjust IVA-ST
+					if (tl.getLBR_TaxName_ID() == 1000012)
+						tl.setLBR_TaxRate(getAdjustedIva(tl.getLBR_TaxRate()));
+					tl.saveEx();
+				}
+
+				tax.setDescription();
+				tax.saveEx();
+				setLBR_Tax_ID(tax.get_ID());
+			} else {
+				set_Value("LBR_Tax_ID", null);
+			}
+			
+			//if (((Integer) taxation[1]) > 0)
+			//	mTab.setValue("LBR_LegalMessage_ID", ((Integer) taxation[1]));
+			
+			if (((Integer) taxation[2]) > 0) {
+				setLBR_CFOP_ID((Integer) taxation[2]);
+			} else {
+				set_Value("LBR_CFOP_ID", null);
+			}
+			
+			//if (((String) taxation[3]) != null && ((String) taxation[3]).length() > 0)
+			//	mTab.setValue("lbr_TaxStatus", p.getlbr_ProductSource() + ((String) taxation[3]));
+		//}
+
+		return;
 	}
 }

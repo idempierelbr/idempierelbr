@@ -48,7 +48,7 @@ import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.compiere.util.Trx;
 import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
-import org.idempierelbr.tax.model.MLBRDocLineDetails;
+import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
 import org.idempierelbr.tax.model.MLBRDocLineICMS;
 import org.idempierelbr.tax.model.MLBRDocLineIPI;
 import org.idempierelbr.tax.model.MLBRDocLineImportTax;
@@ -207,7 +207,7 @@ public class Doc_Invoice extends Doc
 			}	//	correct included Tax
 			
 			// iDempiereLBR - Adding tax amount from Doc Lines taxes
-			MLBRDocLineDetails details = MLBRDocLineDetails.getOfPO(line);
+			MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
 			BigDecimal lineTaxAmt = Env.ZERO;
 			
 			if (details != null) {

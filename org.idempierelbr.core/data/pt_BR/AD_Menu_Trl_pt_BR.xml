@@ -310,4 +310,8 @@
   <value column="Name" original="CFOP">CFOP</value>
   <value column="Description" original="CFOP Management">CFOP Management</value>
  </row>
+ <row trl="Y" uuid="ef2b219b-3f31-47a3-9ee2-e1ff3a667ce8">
+  <value column="Name" original="Tax &amp; Fiscal Management">Gestão Fiscal e Tributária</value>
+  <value column="Description" original=""/>
+ </row>
 </idempiereTrl>

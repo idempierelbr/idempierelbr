@@ -2687,4 +2687,49 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="29aefb14-f082-4dc3-b659-231e0c223f0d">
+  <value column="Name" original="LBR_NFE_DestinationType">LBR_NFE_DestionationType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="85869f17-12ba-49e3-abc3-0965b2e9a21c">
+  <value column="Name" original="LBR_FinNFe">LBR_FinNFe</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="d29d50f0-ea9b-4190-aebd-7e753c1dcc01">
+  <value column="Name" original="LBR_NFE_IndFinal">LBR_NFE_IndFinal</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="351b3dee-8f15-4881-8e1e-af15d3669937">
+  <value column="Name" original="LBR_NFE_IndPres">LBR_NFE_IndPres</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="c41b7622-1b89-456f-a11c-48cc17589d2c">
+  <value column="Name" original="LBR_NFE_PaymentRule">LBR_NFE_PaymentRule</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="da982b71-093c-4bb9-b5ca-30875984ee54">
+  <value column="Name" original="LBR_NFE_OperationType">LBR_NFE_OperationType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="0b1eb663-b63b-4be5-9093-01eb1e6b0ca1">
+  <value column="Name" original="LBR_NFeTpEmis">LBR_NFeTpEmis</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="a35d199b-75c4-48dc-bc74-bf442be1964b">
+  <value column="Name" original="LBR_NFeStatus">LBR_NFeStatus</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="84b4ec5f-53f1-4d1b-b084-06784a7069f7">
+  <value column="Name" original="LBR_NFModel">LBR_NFModel</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

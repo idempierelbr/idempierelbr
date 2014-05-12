@@ -5787,20 +5787,20 @@ Please contact administrator.</value>
   <value column="MsgText" original="Invalid User Name and EMail!">Invalid User Name and EMail!</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200060" trl="N">
-  <value column="MsgText" original="Invoice Processed: ">Invoice Processed: </value>
+ <row id="200060" trl="Y">
+  <value column="MsgText" original="Invoice Processed: ">Fatura Processada: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200061" trl="N">
   <value column="MsgText" original="Payment Allocated: ">Payment Allocated: </value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200062" trl="N">
-  <value column="MsgText" original="Allocation Processed: ">Allocation Processed: </value>
+ <row id="200062" trl="Y">
+  <value column="MsgText" original="Allocation Processed: ">Alocação Processada:  </value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200063" trl="N">
-  <value column="MsgText" original="Shipment Processed: ">Shipment Processed: </value>
+ <row id="200063" trl="Y">
+  <value column="MsgText" original="Shipment Processed: ">Remessa / Recebimento Processado: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200064" trl="N">

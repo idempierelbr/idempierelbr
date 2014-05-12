@@ -651,4 +651,27 @@ public class X_LBR_DocLine_Details extends PO implements I_LBR_DocLine_Details, 
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TaxationType);
 	}
+	
+	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Line.
+		@param LBR_NotaFiscalLine_ID 
+		Brazilian Fiscal Invoice (Nota Fiscal) Line Identifier
+	  */
+	public void setLBR_NotaFiscalLine_ID (int LBR_NotaFiscalLine_ID)
+	{
+		if (LBR_NotaFiscalLine_ID < 1) 
+			set_Value (COLUMNNAME_LBR_NotaFiscalLine_ID, null);
+		else 
+			set_Value (COLUMNNAME_LBR_NotaFiscalLine_ID, Integer.valueOf(LBR_NotaFiscalLine_ID));
+	}
+
+	/** Get Brazilian Fiscal Invoice (Nota Fiscal) Line.
+		@return Brazilian Fiscal Invoice (Nota Fiscal) Line Identifier
+	  */
+	public int getLBR_NotaFiscalLine_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NotaFiscalLine_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
 }

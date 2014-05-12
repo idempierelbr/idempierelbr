@@ -5898,4 +5898,96 @@
   <value column="Name" original="99 - Outras operacoes">99 - Outras Operações</value>
   <value column="Description" original=""/>
  </row>
+ <row trl="Y" uuid="c00fbafc-b7f9-4786-9645-a4afb4bebe94">
+  <value column="Name" original="Operacao Interna">Operação Interna</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="2f3a928a-3042-4d97-b016-cdea077ef02d">
+  <value column="Name" original="Operacao Interestadual">Operação Interestadual</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="c6dd6f44-c62b-4e92-bff9-4c997e5dff7e">
+  <value column="Name" original="Operacao com Exterior">Operação com Exterior</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="8cdae42d-0be5-4f54-885c-2804f5b64e80">
+  <value column="Name" original="NF-e Normal">NF-e Normal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="a9c99afe-1a7c-4f85-b34c-06fa72e9404c">
+  <value column="Name" original="NF-e Complementar">NF-e Complementar</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="3d952693-1d3e-45bd-bd52-dc42e9338552">
+  <value column="Name" original="NF-e de Ajuste">NF-e de Ajuste</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="a351a0f7-acdb-40d2-bfae-841b54392a04">
+  <value column="Name" original="Devolucao/Retorno">Devolução / Retorno</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="f44987d6-b448-4c41-9cc0-599ee4223e92">
+  <value column="Name" original="No">Não</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="f3cfcf6e-0a43-4cae-bf7c-914a3171f624">
+  <value column="Name" original="End Consumer">Consumidor Final</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="8ecd742f-e554-4cc3-8f2f-125b013a0f78">
+  <value column="Name" original="Nao se aplica">Não se Aplica</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="c24ac5c3-a88f-4bdb-b39e-6ab38b0b735c">
+  <value column="Name" original="Operacao presencial">Operação Presencial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="ba88fd6d-eb24-49bd-a7f8-e4de00bf50c7">
+  <value column="Name" original="Internet">Operação não Presencial, pela Internet</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="42bf80b1-d09c-42c6-9f56-ddf0fa15c2b7">
+  <value column="Name" original="Teleatendimento">Operação não Presencial, Teleatendimento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="33c9ae97-7c38-4037-a20b-e473acf2c2b2">
+  <value column="Name" original="NFC-e com entrega em domicilio">NFC-e em Operação com Entrega a Domicílio</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="c55231a8-2347-4b90-9cd5-a148f8b2fb7c">
+  <value column="Name" original="Operacao nao presencial">Operação não Presencial, outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="881b02e8-d0c7-4087-a2ff-42c0e2ea2d9d">
+  <value column="Name" original="Pagamento a vista">Pagamento à Vista</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="a35fbc29-d417-4929-814d-f3ffbcbee424">
+  <value column="Name" original="Pagamento a prazo">Pagamento à Prazo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="72c956d0-871c-45c9-9f36-9eed377bd45a">
+  <value column="Name" original="Outros">Outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="6808f8ad-6230-4f79-8097-443950836094">
+  <value column="Name" original="In">0 - Entrada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="2fc3f426-ed91-40a5-945e-ebb393ea506c">
+  <value column="Name" original="Out">1 - Saída</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="617744ca-1b80-49bd-b8ba-be8d51336ade">
+  <value column="Name" original="Normal">Normal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="5c6898bb-df05-4ab8-a896-68f0c031e4d6">
+  <value column="Name" original="100 - Autorizado o uso da NF-e">100-Autorizado o uso da NF-e</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="153b3fd1-bcd1-4706-a947-ea8a85fca671">
+  <value column="Name" original="55 - NF-e">NF-e</value>
+  <value column="Description" original=""/>
+ </row>
 </idempiereTrl>

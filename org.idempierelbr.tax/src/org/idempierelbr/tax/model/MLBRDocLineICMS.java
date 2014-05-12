@@ -4,11 +4,17 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Properties;
 
 import org.adempiere.exceptions.AdempiereException;
+import org.compiere.model.I_C_BPartner_Location;
+import org.compiere.model.MOrgInfo;
+import org.compiere.model.MProduct;
+import org.compiere.model.MRegion;
 import org.compiere.model.Query;
+import org.compiere.util.DB;
 import org.compiere.util.Env;
 
 public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
@@ -63,6 +69,59 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 			.list();
 		
 		return list.toArray(new MLBRDocLineICMS[list.size()]);	
+	}
+	
+	/**
+	 * 	Get adjusted IVA-ST based on transaction UF's 
+	 * 
+	 * 	@return adjusted or original iva-st
+	 */
+	public static BigDecimal getInterstateAdjustedIva(BigDecimal originalIVA, int AD_Org_ID, boolean isSOTrx,
+			Timestamp docDate, MProduct product, I_C_BPartner_Location bpLocation){
+		if (bpLocation == null)
+			return originalIVA;
+		
+		MOrgInfo orgInfo = MOrgInfo.get(Env.getCtx(), AD_Org_ID, null);
+		
+		// Same UF, adjust is not necessary
+		if (orgInfo.getC_Location().getC_Region_ID() == bpLocation.getC_Location().getC_Region_ID())
+			return originalIVA;
+		
+		MRegion regionOrg = new MRegion(Env.getCtx(), orgInfo.getC_Location().getC_Region_ID(), null);
+		MRegion regionBPartner = new MRegion(Env.getCtx(), bpLocation.getC_Location().getC_Region_ID(), null);
+		
+		int regionFrom_ID = 0;
+		int regionTo_ID = 0;
+		
+		if (isSOTrx) {
+			regionFrom_ID = regionOrg.get_ID();
+			regionTo_ID = regionBPartner.get_ID();
+		} else {
+			regionFrom_ID = regionBPartner.get_ID();
+			regionTo_ID = regionOrg.get_ID();
+		}
+		
+		BigDecimal aliqInterestadual = Env.ZERO;
+		BigDecimal aliqInternaDestino = Env.ZERO;
+		
+		MLBRICMSMatrix icmsMatrix = MLBRICMSMatrix.get(Env.getCtx(), AD_Org_ID, regionTo_ID, regionTo_ID, docDate, null);
+		String sql = "SELECT MAX(tl.lbr_TaxRate) FROM LBR_TaxLine tl WHERE tl.LBR_Tax_ID = ?";
+		aliqInternaDestino = DB.getSQLValueBD(null, sql, icmsMatrix.getLBR_Tax_ID());
+		
+		// NF-e - Nota Técnica 2012/005 (4% de icms nas operações interestaduais para produtos importados)
+		if (product != null &&
+				(product.get_ValueAsString("LBR_ProductSource").equals("1") ||
+						product.get_ValueAsString("LBR_ProductSource").equals("2") ||
+						product.get_ValueAsString("LBR_ProductSource").equals("3"))) {
+			
+			aliqInterestadual = new BigDecimal("4");
+		} else {
+			icmsMatrix = MLBRICMSMatrix.get(Env.getCtx(), AD_Org_ID, regionFrom_ID, regionTo_ID, docDate, null);
+    		sql = "SELECT MAX(tl.lbr_TaxRate) FROM LBR_TaxLine tl WHERE tl.LBR_Tax_ID = ?";
+    		aliqInterestadual = DB.getSQLValueBD(null, sql, icmsMatrix.getLBR_Tax_ID());
+		}
+		
+		return MLBRDocLineICMS.getAdjustedIva(originalIVA, aliqInterestadual, aliqInternaDestino);
 	}
 	
 	/**

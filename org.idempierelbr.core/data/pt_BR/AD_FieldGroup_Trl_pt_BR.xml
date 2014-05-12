@@ -233,4 +233,13 @@
  <row trl="N" uuid="bea85bcb-a177-40ec-8a28-700442c8f1e9">
   <value column="Name" original="COFINS-ST">COFINS-ST</value>
  </row>
+ <row trl="Y" uuid="f33064f1-df8c-47fd-8f13-7885dca50f75">
+  <value column="Name" original="NF-e Info">Dados da NF-e</value>
+ </row>
+ <row trl="Y" uuid="52579c55-af4a-4093-aa3e-90739cfa2670">
+  <value column="Name" original="Contingency (LBR)">Contingência</value>
+ </row>
+ <row trl="Y" uuid="2fea97c6-0737-4cb3-b814-04a0c0622d10">
+  <value column="Name" original="Recipient / Sender (LBR)">Destinatário / Remetente</value>
+ </row>
 </idempiereTrl>

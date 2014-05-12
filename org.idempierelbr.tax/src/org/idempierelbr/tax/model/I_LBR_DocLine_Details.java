@@ -464,4 +464,18 @@ public interface I_LBR_DocLine_Details
 	  * Taxation type used to calculate taxes
 	  */
 	public String getLBR_TaxationType();
+	
+	/** Column name LBR_NotaFiscalLine_ID */
+    public static final String COLUMNNAME_LBR_NotaFiscalLine_ID = "LBR_NotaFiscalLine_ID";
+
+	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Line.
+	  * Brazilian Fiscal Invoice (Nota Fiscal) Line Identifier
+	  */
+	public void setLBR_NotaFiscalLine_ID (int LBR_NotaFiscalLine_ID);
+
+	/** Get Brazilian Fiscal Invoice (Nota Fiscal) Line.
+	  * Brazilian Fiscal Invoice (Nota Fiscal) Line Identifier
+	  */
+	public int getLBR_NotaFiscalLine_ID();
+
 }

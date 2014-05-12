@@ -6696,4 +6696,64 @@ Printing:
   <value column="Description" original="ISSQN">ISSQN</value>
   <value column="Help" original="The ISSQN Tab defines amounts for ISSQN Tax">A aba ISSQN define valores e parâmetros relativos a este imposto</value>
  </row>
+ <row trl="Y" uuid="e6553657-d315-48db-b056-492ee6a484ef">
+  <value column="Name" original="Fiscal Invoice">Nota Fiscal</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Brazilian Fiscal Invoice">Cabeçalho da Nota Fiscal</value>
+  <value column="Help" original="The Fiscal Invoice Tab defines the parameters of an Fiscal Invoice generated for a Business Partner.">A aba Nota Fiscal define os parâmetros de uma Nota Fiscal gerada para um Parceiro de Negócios.</value>
+ </row>
+ <row trl="Y" uuid="45514aab-c915-4a91-ad67-97605e2ffdb3">
+  <value column="Name" original="Fiscal Invoice Line">Linha de NF</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Brazilian Fiscal Invoice Line">Linha de Nota Fiscal</value>
+  <value column="Help" original="The Fiscal Invoice Line Tab defines the individual line items that comprise an Brazilian Fiscal Invoice.">A Aba "Linha da NF" define os itens de linha individuais que compreendem uma Nota Fiscal.</value>
+ </row>
+ <row trl="Y" uuid="dfb203a7-6e57-40c8-b0b8-3338bf917503">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Tax">Imposto de NF</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Brazilian Fiscal Invoice (Nota Fiscal) Tax">Imposto de NF</value>
+  <value column="Help" original="The Brazilian Fiscal Invoice (Nota Fiscal) Tax Tab displays the tax amount for a Nota Fiscal based on the lines entered.">A aba Imposto de NF apresenta os impostos da Nota Fiscal com base nas linhas do documento.</value>
+ </row>
+ <row trl="Y" uuid="34564b00-50a8-4c8e-b48f-b1d99dece89d">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Line Details">Detalhes da Linha</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Brazilian Fiscal Invoice (Nota Fiscal) Line Details">Detalhes da Linha com campos brasileiros</value>
+  <value column="Help" original="The Brazilian Fiscal Invoice (Nota Fiscal) Line Details Tab defines details for the individual line item.">Campos específicos para a legislação brasileira (impostos, nf-e, etc).</value>
+ </row>
+ <row trl="Y" uuid="3a741215-468f-40e5-8372-590bb139d1bc">
+  <value column="Name" original="ICMS">ICMS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="ICMS">ICMS</value>
+  <value column="Help" original="The ICMS Tab defines amounts for ICMS Tax">A aba ICMS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="45a77643-ef2f-448d-8152-63c9f35a75b0">
+  <value column="Name" original="IPI">IPI</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IPI">IPI</value>
+  <value column="Help" original="The IPI Tab defines amounts for IPI Tax">A aba IPI define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="8fe2bb9b-b863-43c2-ba26-b8b587bb6da1">
+  <value column="Name" original="PIS">PIS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="PIS">PIS</value>
+  <value column="Help" original="The PIS Tab defines amounts for PIS Tax">A aba PIS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="9f93229f-f22d-4067-91b0-c078ec6f71c8">
+  <value column="Name" original="COFINS">COFINS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="COFINS">COFINS</value>
+  <value column="Help" original="The COFINS Tab defines amounts for COFINS Tax">A aba COFINS define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="f187eb6a-ddad-4b28-9427-54affe5a82fd">
+  <value column="Name" original="Import Tax">Imposto de Importação</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Import Tax">Imposto de Importação</value>
+  <value column="Help" original="The Import Tax Tab defines amounts for Import Tax">A aba Imposto de Importação define valores e parâmetros relativos a este imposto</value>
+ </row>
+ <row trl="Y" uuid="abb6e68f-adde-45ce-8e17-0de019c6d4dc">
+  <value column="Name" original="ISSQN">ISSQN</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="ISSQN">ISSQN</value>
+  <value column="Help" original="The ISSQN Tab defines amounts for ISSQN Tax">A aba ISSQN define valores e parâmetros relativos a este imposto</value>
+ </row>
 </idempiereTrl>
