@@ -5990,4 +5990,104 @@
   <value column="Name" original="55 - NF-e">NF-e</value>
   <value column="Description" original=""/>
  </row>
+ <row trl="Y" uuid="67e6599a-102c-45d1-9e48-989af7d4d7b8">
+  <value column="Name" original="Issuer">0 - Por conta do Emitente</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="5d3ba2a3-4b3c-4f7f-8c68-4f9159e4e46b">
+  <value column="Name" original="Recipient / Sender">1 - Por conta do Destinatário / Remetente</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="4ec93eff-d83a-49be-9080-895b8be140a8">
+  <value column="Name" original="Third parties">2 - Por conta de Terceiros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="ce9f3fcd-f48e-4144-863b-e46fe2c446f4">
+  <value column="Name" original="Without freight">9 - Sem Frete</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="34d6495c-50b0-4eb6-b89b-d2df6455ee2e">
+  <value column="Name" original="Vehicle / trailer">Veículo / Reboque</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="b6f724b3-d99c-4d24-8d82-0b7ec914a52d">
+  <value column="Name" original="Ferry">Balsa</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="89952c1f-a643-40bc-87d7-fd4b5e26c8b2">
+  <value column="Name" original="Wagon">Vagão</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="36cf7d62-0c47-40d2-b86f-28a14c9bde72">
+  <value column="Name" original="Fiscal">Fisco</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="d075d8a7-4fa5-4f80-aec4-660291c6699a">
+  <value column="Name" original="Tax Payer">Contribuinte</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="98690513-6bed-4981-8153-7efab37a917c">
+  <value column="Name" original="SEFAZ">SEFAZ</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="4f7c1004-a950-4a09-a81b-e310d338e304">
+  <value column="Name" original="Justica Federal">Justiça Federal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="76a3848e-cd24-4850-a3c5-ff2d22f324e2">
+  <value column="Name" original="Justica Estadual">Justiça Estadual</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="5e9f6731-4294-4d1f-8fd6-8bc768c8ead4">
+  <value column="Name" original="Secex / RFB">Secex / RFB</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="8bc03902-aad3-4af3-bc0e-94873f737c46">
+  <value column="Name" original="Outros">Outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="62cbcaf2-9700-41f0-9d08-39fce9903dde">
+  <value column="Name" original="01">01</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="43b9385e-92a2-47ed-8c6e-95f0b5b92593">
+  <value column="Name" original="Farmer NF">04 - Nota Fiscal de Produtor</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="617e187c-f115-47df-b840-46c098779ba8">
+  <value column="Name" original="NF">01 - NF (v2.0)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="58a4234a-ac2c-45c3-a12d-c854339452af">
+  <value column="Name" original="2B - Emitido por registradora (nao ECF)">2B - Emitido por Registradora (não ECF)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="9a58599c-00e9-43e9-a656-f551f2b02297">
+  <value column="Name" original="2C - Cupom PDV">2C - Cupom PDV</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="3a1f344b-aa93-4e12-a087-3cf4acb30a92">
+  <value column="Name" original="2D - Emitido por ECF">2D - Emitido por ECF</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="d894c0f4-509a-461c-a463-b47165cfb07c">
+  <value column="Name" original="NF-e">NF-e</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="0758bf32-cfb3-4312-92f4-9928d1daee29">
+  <value column="Name" original="CT-e">CT-e</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="01b56fe5-d725-4a88-b791-6d41396ad737">
+  <value column="Name" original="Nota Fiscal">Nota Fiscal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="29c51bde-8b7d-49a5-8473-04d6f50b6633">
+  <value column="Name" original="Nota Fiscal de Produtor">Nota Fiscal de Produtor</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="e752985c-b606-471b-86de-a539b7cafd1d">
+  <value column="Name" original="Cupom Fiscal">Cupom Fiscal</value>
+  <value column="Description" original=""/>
+ </row>
 </idempiereTrl>

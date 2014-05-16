@@ -570,5 +570,31 @@ public interface I_LBR_NotaFiscal
 	  * Identifies a Transaction Type
 	  */
 	public String getLBR_TransactionType();
+	
+	/** Column name LBR_FiscalInfo */
+    public static final String COLUMNNAME_LBR_FiscalInfo = "LBR_FiscalInfo";
+
+	/** Set Fiscal Info.
+	  * Fiscal Information
+	  */
+	public void setLBR_FiscalInfo (String LBR_FiscalInfo);
+
+	/** Get Fiscal Info.
+	  * Fiscal Information
+	  */
+	public String getLBR_FiscalInfo();
+	
+	/** Column name LBR_TaxPayerInfo */
+    public static final String COLUMNNAME_LBR_TaxPayerInfo = "LBR_TaxPayerInfo";
+
+	/** Set Tax Payer Info.
+	  * Tax Payer Information
+	  */
+	public void setLBR_TaxPayerInfo (String LBR_TaxPayerInfo);
+
+	/** Get Tax Payer Info.
+	  * Tax Payer Information
+	  */
+	public String getLBR_TaxPayerInfo();
 
 }

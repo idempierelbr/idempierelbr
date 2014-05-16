@@ -19,17 +19,59 @@ public class EventHandler extends AbstractEventHandler {
 
 	@Override
 	protected void initialize() {
+		registerTableEvent(IEventTopics.PO_AFTER_NEW, MLBRNotaFiscal.Table_Name);
 		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MLBRNotaFiscal.Table_Name);
 		
 		registerTableEvent(IEventTopics.PO_AFTER_NEW, MLBRNotaFiscalLine.Table_Name);
 		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MLBRNotaFiscalLine.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_DELETE, MLBRNotaFiscalLine.Table_Name);
+		
+		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MLBRNotaFiscalTransp.Table_Name);
+		
+		registerTableEvent(IEventTopics.PO_BEFORE_NEW, X_LBR_NotaFiscalTrailer.Table_Name);
 	}
 
 	@Override
 	protected void doHandleEvent(Event event) {
 		PO po = getPO(event);
 		log.info(po + " Type: " + event.getTopic());
+		
+		// Auto-Create child records when creating header record
+		if (po instanceof MLBRNotaFiscal && event.getTopic().equals(IEventTopics.PO_AFTER_NEW)) {
+			// Transportation
+			X_LBR_NotaFiscalTransp transp = new X_LBR_NotaFiscalTransp(po.getCtx(), 0, po.get_TrxName());
+			transp.setAD_Org_ID(po.getAD_Org_ID());
+			transp.setLBR_NotaFiscal_ID(po.get_ID());
+			transp.setLBR_NFeModShipping("0"); // Issuer
+			transp.saveEx();
+			
+			// Pay
+			MLBRNotaFiscalPay pay = new MLBRNotaFiscalPay(po.getCtx(), 0, po.get_TrxName());
+			pay.setAD_Org_ID(po.getAD_Org_ID());
+			pay.setLBR_NotaFiscal_ID(po.get_ID());
+			pay.saveEx();
+		}
+		
+		// Delete records from Trailer Tab when changing field in NF Transportation Tab
+		if (po instanceof MLBRNotaFiscalTransp && event.getTopic().equals(IEventTopics.PO_AFTER_CHANGE) &&
+				po.is_ValueChanged("LBR_NFeTranspVehicleType")) {
+
+			X_LBR_NotaFiscalTrailer[] trailers = ((MLBRNotaFiscalTransp)po).getTrailers();
+			
+			for (X_LBR_NotaFiscalTrailer trailer : trailers) {
+				trailer.deleteEx(true);
+			}
+		}
+		
+		// Check if there are maximum of 5 entries on NF Trailer Tab
+		if (po instanceof X_LBR_NotaFiscalTrailer && event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)) {
+			int LBR_NotaFiscalTransp_ID = ((X_LBR_NotaFiscalTrailer)po).getLBR_NotaFiscalTransp_ID();
+			MLBRNotaFiscalTransp transp = new MLBRNotaFiscalTransp(po.getCtx(), LBR_NotaFiscalTransp_ID, po.get_TrxName());
+			
+			X_LBR_NotaFiscalTrailer[] trailers = transp.getTrailers();
+			if (trailers.length >= 5)
+				addErrorMessage(event, "Limite de 5 registros por Nota Fiscal");
+		}
 		
 		// Create/update/delete Doc Line Details
 		if (po instanceof MLBRNotaFiscalLine || po instanceof MLBRNotaFiscal) {

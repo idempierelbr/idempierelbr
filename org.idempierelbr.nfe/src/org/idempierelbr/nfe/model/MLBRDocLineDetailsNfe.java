@@ -136,8 +136,8 @@ public class MLBRDocLineDetailsNfe extends MLBRDocLineDetailsTax implements IDoc
 				setLBR_TaxationType(null);
 			}
 			
-			setLBR_QtyTax((BigDecimal)po.get_Value("QtyEntered"));
-			setLBR_PriceTax((BigDecimal)po.get_Value("PriceEntered"));
+			setLBR_QtyTax((BigDecimal)po.get_Value("Qty"));
+			setLBR_PriceTax((BigDecimal)po.get_Value("PriceActual"));
 				
 			// Calculate gross amount
 			setLBR_GrossAmt(((BigDecimal)po.get_Value("LineNetAmt")).add(getDiscountAmt()));
@@ -229,7 +229,9 @@ public class MLBRDocLineDetailsNfe extends MLBRDocLineDetailsTax implements IDoc
 			
 			// Calculate (or recalculate) taxes
 			if (getLBR_Tax_ID() > 0 &&
-					((!newRecord && (is_ValueChanged("LBR_Tax_ID"))) ||	(newRecord))) {
+					((!newRecord && (is_ValueChanged("LBR_Tax_ID") || is_ValueChanged("LBR_GrossAmt") || is_ValueChanged("DiscountAmt"))) ||
+					(newRecord))
+				) {
 	
 				deleteChildren();
 				

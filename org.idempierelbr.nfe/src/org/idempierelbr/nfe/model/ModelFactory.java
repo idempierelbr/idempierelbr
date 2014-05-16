@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import org.adempiere.base.IModelFactory;
 import org.compiere.model.PO;
 import org.compiere.util.Env;
-import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
 
 /**
  * Esta classe é uma implementação da model factory.
@@ -23,6 +22,22 @@ public class ModelFactory implements IModelFactory {
 			return MLBRNotaFiscalLine.class;
 		else if (tableName.equals(MLBRNotaFiscalTax.Table_Name)) // Model MLBRNotaFiscalTax
 			return MLBRNotaFiscalTax.class;
+		else if (tableName.equals(MLBRNotaFiscalTransp.Table_Name)) // Model MLBRNotaFiscalTransp
+			return MLBRNotaFiscalTransp.class;
+		else if (tableName.equals(X_LBR_NotaFiscalTrailer.Table_Name)) // Model X_LBR_NotaFiscalTrailer
+			return X_LBR_NotaFiscalTrailer.class;
+		else if (tableName.equals(X_LBR_NotaFiscalPackage.Table_Name)) // Model X_LBR_NotaFiscalPackage
+			return X_LBR_NotaFiscalPackage.class;
+		else if (tableName.equals(MLBRNotaFiscalPay.Table_Name)) // Model MLBRNotaFiscalPay
+			return MLBRNotaFiscalPay.class;
+		else if (tableName.equals(X_LBR_NotaFiscalPaySched.Table_Name)) // Model X_LBR_NotaFiscalPaySched
+			return X_LBR_NotaFiscalPaySched.class;
+		else if (tableName.equals(X_LBR_NotaFiscalNote.Table_Name)) // Model X_LBR_NotaFiscalNote
+			return X_LBR_NotaFiscalNote.class;
+		else if (tableName.equals(X_LBR_NotaFiscalProc.Table_Name)) // Model X_LBR_NotaFiscalProc
+			return X_LBR_NotaFiscalProc.class;
+		else if (tableName.equals(MLBRNotaFiscalDocRef.Table_Name)) // Model MLBRNotaFiscalDocRef
+			return MLBRNotaFiscalDocRef.class;
 		else if (tableName.equals(MLBRDocLineDetailsNfe.Table_Name)) // Model MLBRDocLineDetails
 			return MLBRDocLineDetailsNfe.class;
 		
@@ -37,6 +52,22 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRNotaFiscalLine(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRNotaFiscalTax.Table_Name)) // Model MLBRNotaFiscalTax
 			return new MLBRNotaFiscalTax(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRNotaFiscalTransp.Table_Name)) // Model MLBRNotaFiscalTransp
+			return new MLBRNotaFiscalTransp(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_NotaFiscalTrailer.Table_Name)) // Model X_LBR_NotaFiscalTrailer
+			return new X_LBR_NotaFiscalTrailer(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_NotaFiscalPackage.Table_Name)) // Model X_LBR_NotaFiscalPackage
+			return new X_LBR_NotaFiscalPackage(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRNotaFiscalPay.Table_Name)) // Model MLBRNotaFiscalPay
+			return new MLBRNotaFiscalPay(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_NotaFiscalPaySched.Table_Name)) // Model X_LBR_NotaFiscalPaySched
+			return new X_LBR_NotaFiscalPaySched(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_NotaFiscalNote.Table_Name)) // Model X_LBR_NotaFiscalNote
+			return new X_LBR_NotaFiscalNote(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(X_LBR_NotaFiscalProc.Table_Name)) // Model X_LBR_NotaFiscalProc
+			return new X_LBR_NotaFiscalProc(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRNotaFiscalDocRef.Table_Name)) // Model MLBRNotaFiscalDocRef
+			return new MLBRNotaFiscalDocRef(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRDocLineDetailsNfe.Table_Name)) // Model MLBRDocLineDetails
 			return new MLBRDocLineDetailsNfe(Env.getCtx(), Record_ID, trxName);
 		
@@ -51,6 +82,22 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRNotaFiscalLine(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRNotaFiscalTax.Table_Name)) // Model MLBRNotaFiscalTax
 			return new MLBRNotaFiscalTax(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRNotaFiscalTransp.Table_Name)) // Model MLBRNotaFiscalTransp
+			return new MLBRNotaFiscalTransp(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(X_LBR_NotaFiscalTrailer.Table_Name)) // Model X_LBR_NotaFiscalTrailer
+			return new X_LBR_NotaFiscalTrailer(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(X_LBR_NotaFiscalPackage.Table_Name)) // Model X_LBR_NotaFiscalPackage
+			return new X_LBR_NotaFiscalPackage(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRNotaFiscalPay.Table_Name)) // Model MLBRNotaFiscalPay
+			return new MLBRNotaFiscalPay(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(X_LBR_NotaFiscalPaySched.Table_Name)) // Model X_LBR_NotaFiscalPaySched
+			return new X_LBR_NotaFiscalPaySched(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(X_LBR_NotaFiscalNote.Table_Name)) // Model X_LBR_NotaFiscalNote
+			return new X_LBR_NotaFiscalNote(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(X_LBR_NotaFiscalProc.Table_Name)) // Model X_LBR_NotaFiscalProc
+			return new X_LBR_NotaFiscalProc(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRNotaFiscalDocRef.Table_Name)) // Model MLBRNotaFiscalDocRef
+			return new MLBRNotaFiscalDocRef(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRDocLineDetailsNfe.Table_Name)) // MLBRDocLineDetails
 			return new MLBRDocLineDetailsNfe(Env.getCtx(), rs, trxName);
 		

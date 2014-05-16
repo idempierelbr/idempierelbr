@@ -2728,7 +2728,47 @@
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="84b4ec5f-53f1-4d1b-b084-06784a7069f7">
+  <value column="Name" original="LBR_NFeModel">LBR_NFModel</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="6c75d36e-a608-4496-83e1-0e8ce5c9ed8e">
+  <value column="Name" original="LBR_NFeModShipping">LBR_NFeModShipping</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="2891d83c-3b6c-4104-b277-e5cbcdbccf73">
+  <value column="Name" original="LBR_NFeTranspVehicleType">LBR_NFeTranspVehicleType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="7392c9c3-2454-4da8-b7e7-acf57e3c07e0">
+  <value column="Name" original="LBR_NFeNoteType">LBR_NFeNoteType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="1869d08c-13d9-43fe-955f-ed2873985613">
+  <value column="Name" original="LBR_NFeProcOrigin">LBR_NFeProcOrigin</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="5ac60476-215f-41dc-99cd-024e5e60d7ea">
   <value column="Name" original="LBR_NFModel">LBR_NFModel</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="41b06a4e-80b7-4abc-940f-2701c8e676cf">
+  <value column="Name" original="LBR_NFProdModel">LBR_NFProdModel</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="90da461d-148a-4c85-875f-5c02ed3221eb">
+  <value column="Name" original="LBR_ECFModel">LBR_ECFModel</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="a7b01e3d-6d2f-443a-8e88-63b40bbd94a9">
+  <value column="Name" original="LBR_NFeDocRefType">LBR_NFeDocRefType</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

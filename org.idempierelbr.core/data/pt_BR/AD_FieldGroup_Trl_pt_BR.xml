@@ -242,4 +242,16 @@
  <row trl="Y" uuid="2fea97c6-0737-4cb3-b814-04a0c0622d10">
   <value column="Name" original="Recipient / Sender (LBR)">Destinatário / Remetente</value>
  </row>
+ <row trl="Y" uuid="e9ab0b01-d9b8-412a-b322-e6e16b4800cd">
+  <value column="Name" original="Shipper (LBR)">Transportadora</value>
+ </row>
+ <row trl="Y" uuid="5c9656c2-a2d0-46b7-ac0b-abd31770b833">
+  <value column="Name" original="ICMS Withholding">Retenção ICMS</value>
+ </row>
+ <row trl="Y" uuid="b1dd9a3f-155d-4223-870e-4716f92c06c0">
+  <value column="Name" original="Identification (LBR)">Identificação</value>
+ </row>
+ <row trl="Y" uuid="d3fec46c-4422-4da9-9c06-0f1ce44d2992">
+  <value column="Name" original="Additional Info (LBR)">Informações Adicionais</value>
+ </row>
 </idempiereTrl>

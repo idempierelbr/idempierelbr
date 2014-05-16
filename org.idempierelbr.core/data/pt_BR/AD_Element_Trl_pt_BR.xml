@@ -56934,4 +56934,424 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row trl="Y" uuid="f766d2ee-c562-483a-a2c8-f0bb31e6325a">
+  <value column="Name" original="NFe Mode of Shipping">Modalidade do Frete</value>
+  <value column="PrintName" original="NFe Mode of Shipping">Modalidade do Frete</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="1e96e1c5-fbb8-4c0d-86e3-03d1ba095156">
+  <value column="Name" original="ICMS Tax exempt">Isento do ICMS</value>
+  <value column="PrintName" original="ICMS Tax exempt">Isento do ICMS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="ea0cf075-6590-45b3-91f0-373875fd675f">
+  <value column="Name" original="NFe Transportation Vehicle Type">Veículo de Transporte</value>
+  <value column="PrintName" original="NFe Transportation Vehicle Type">Veículo de Transporte</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="4428528f-7838-4f8c-ac2f-2c64dbf03823">
+  <value column="Name" original="National Registry of Cargo Carriers">RNTC</value>
+  <value column="PrintName" original="National Registry of Cargo Carriers">Registro Nacional de Transportadores de Cargas</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="30394d39-f4fe-4200-b6f9-3c1523f4f28f">
+  <value column="Name" original="License Plate">Placa</value>
+  <value column="PrintName" original="License Plate">Placa</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="741ba969-477f-4a0b-b062-a79b1fde2f4b">
+  <value column="Name" original="License Plate Region">UF da Placa</value>
+  <value column="PrintName" original="License Plate Region">UF da Placa</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="bd7c04bf-4351-4106-843c-19aefec7454a">
+  <value column="Name" original="Ferry Identification">Identificação da Balsa</value>
+  <value column="PrintName" original="Ferry Identification">Identificação da Balsa</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="98d18d06-d25f-46a8-b68e-2d6b5244cc7a">
+  <value column="Name" original="Wagon Identification">Identificação do Vagão</value>
+  <value column="PrintName" original="Wagon Identification">Identificação do Vagão</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="f87fceb7-4e87-4c94-9807-a65e2e8e6f0d">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Transportation">Brazilian Fiscal Invoice (Nota Fiscal) Transportation</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Transportation">Brazilian Fiscal Invoice (Nota Fiscal) Transportation</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="fc96ac5f-76ff-4a72-b9a8-b1b0eba47148">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Transportation">Brazilian Fiscal Invoice (Nota Fiscal) Transportation</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Transportation">Brazilian Fiscal Invoice (Nota Fiscal) Transportation</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="8ea8bfb1-ec09-4289-814f-12b8753bda5c">
+  <value column="Name" original="Shipper Location">Localização da Transportadora</value>
+  <value column="PrintName" original="Shipper Location">Localização da Transportadora</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="6e3b3b75-316d-4122-81ca-586c5da3e649">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer">Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer">Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="1625c650-d5c1-42e4-93fc-a39147ea7f3c">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer">Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer">Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="ad779bd9-6ec7-4c19-8b12-9a8f33a31f72">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Package">Brazilian Fiscal Invoice (Nota Fiscal) Package</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Package">Brazilian Fiscal Invoice (Nota Fiscal) Package</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="90180a4f-995b-4c3b-98e4-62abfd2865e6">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Package">Brazilian Fiscal Invoice (Nota Fiscal) Package</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Package">Brazilian Fiscal Invoice (Nota Fiscal) Package</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="c50eacd3-a376-4d79-a905-19688cb01116">
+  <value column="Name" original="Brand Name">Marca</value>
+  <value column="PrintName" original="Brand Name">Marca</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="b88dc833-55e4-48a0-8a85-c3ccbc47adf4">
+  <value column="Name" original="Numeration">Numeração</value>
+  <value column="PrintName" original="Numeration">Numeração</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="947c10d6-8c73-42f7-bb41-fc428f01e81c">
+  <value column="Name" original="Net Weight">Peso Líquido</value>
+  <value column="PrintName" original="Net Weight">Peso Líquido</value>
+  <value column="Description" original="Net Weight of a product">Peso Líquido de um Produto</value>
+  <value column="Help" original="The Net Weight indicates the net weight  of the product in the Weight UOM of the Client"/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="6c34372c-fb89-4a02-97ac-c7b5a08d3578">
+  <value column="Name" original="Gross Weight">Peso Bruto</value>
+  <value column="PrintName" original="Gross Weight">Peso Bruto</value>
+  <value column="Description" original="Gross Weight of a product">Peso Bruto de um Produto</value>
+  <value column="Help" original="The Gross Weight indicates the gross weight  of the product in the Weight UOM of the Client"/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="328a0abe-be5a-4d7b-b903-811a2da1f640">
+  <value column="Name" original="Seal">Número(s) do(s) Lacre(s)</value>
+  <value column="PrintName" original="Seal">Lacre(s)</value>
+  <value column="Description" original="Seal No">Número(s) do(s) Lacre(s) separados por ponto-e-vírgula</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="784f901c-550b-4479-bddd-2dced9e1c850">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Pay">Brazilian Fiscal Invoice (Nota Fiscal) Pay</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Pay">Brazilian Fiscal Invoice (Nota Fiscal) Pay</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="af4e2978-cccf-42b0-a16d-2a1e2a30d1ea">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Pay">Brazilian Fiscal Invoice (Nota Fiscal) Pay</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Pay">Brazilian Fiscal Invoice (Nota Fiscal) Pay</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="40daef41-d03b-493f-bc8e-7f4a31c81647">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Pay Schedule">Brazilian Fiscal Invoice (Nota Fiscal) Pay Schedule</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Pay Schedule">Brazilian Fiscal Invoice (Nota Fiscal) Pay Schedule</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="fe48e6d2-05ab-4510-8145-0b45be1e13e5">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Pay Schedule">Brazilian Fiscal Invoice (Nota Fiscal) Pay Schedule</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Pay Schedule">Brazilian Fiscal Invoice (Nota Fiscal) Pay Schedule</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="360dad91-be2b-4a14-9fd5-87a13037fa36">
+  <value column="Name" original="Fiscal Info">Interesse do Fisco</value>
+  <value column="PrintName" original="Fiscal Info">Interesse do Fisco</value>
+  <value column="Description" original="Fiscal Information">Informações Adicionais de Interesse do Fisco</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="4590e397-2a4f-49b7-8a8f-d374d7cf045d">
+  <value column="Name" original="Tax Payer Info">Interesse do Contribuinte</value>
+  <value column="PrintName" original="Tax Payer Info">Interesse do Contribuinte</value>
+  <value column="Description" original="Tax Payer Information">Informações Complementares de Interesse do Contribuinte</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="1eea67bc-2238-4b72-9bcd-cfc0fe36bd06">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Note">Brazilian Fiscal Invoice (Nota Fiscal) Note</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Note">Brazilian Fiscal Invoice (Nota Fiscal) Note</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="cdf89a1c-b933-4478-b06f-5108b6c8cb93">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Note">Brazilian Fiscal Invoice (Nota Fiscal) Note</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Note">Brazilian Fiscal Invoice (Nota Fiscal) Note</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="25119066-f07a-4ce8-9c11-4ac392a08a6e">
+  <value column="Name" original="NFe Note Type">Interesse</value>
+  <value column="PrintName" original="NFe Note Type">Interesse</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="1a6e8588-1502-468c-8dcf-82eddb3c5bf0">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process">Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process">Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="72561af4-9e53-4b99-b12f-a079ac51b5c6">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process">Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process">Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="aba904b2-e3d7-434c-99b1-0c19204d22ee">
+  <value column="Name" original="NFe Process Origin">Origem do Processo</value>
+  <value column="PrintName" original="NFe Process Origin">Origem do Processo</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="2ed6bb75-5799-4eee-9e08-fa3809ce7618">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Referenced Doc">Brazilian Fiscal Invoice (Nota Fiscal) Referenced Doc</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Referenced Doc">Brazilian Fiscal Invoice (Nota Fiscal) Referenced Doc</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="cb46caea-4019-4c2a-bb98-e4a211ff3ccb">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Referenced Doc">Brazilian Fiscal Invoice (Nota Fiscal) Referenced Doc</value>
+  <value column="PrintName" original="Brazilian Fiscal Invoice (Nota Fiscal) Referenced Doc">Brazilian Fiscal Invoice (Nota Fiscal) Referenced Doc</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="58ee0b82-d244-4c64-890f-dab404cd456b">
+  <value column="Name" original="NF Model">Modelo da NF</value>
+  <value column="PrintName" original="NF Model">Modelo da NF</value>
+  <value column="Description" original="Referes to old printed NF"/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="c094bace-0fd2-436c-a08a-ae26018b5475">
+  <value column="Name" original="NF Year/Month">Mês e Ano de Emissão (MM/AA)</value>
+  <value column="PrintName" original="NF Year/Month">Mês e Ano de Emissão</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="edf9797f-bc4d-4294-a4bc-2dd240f20e64">
+  <value column="Name" original="NF Farmer Model">Modelo da NF de Produtor</value>
+  <value column="PrintName" original="NF Farmer Model">Modelo da NF de Produtor</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="e1ef18c3-c9b2-4073-8581-36c982c928d1">
+  <value column="Name" original="ECF Number">Número ECF</value>
+  <value column="PrintName" original="ECF No.">Núm. ECF</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="35c910fd-0e27-4ae0-8ea1-9f3e94c679c9">
+  <value column="Name" original="COO Number">Número COO</value>
+  <value column="PrintName" original="COO No.">Núm. COO</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="d8fef761-c1b2-4d65-b2d0-c9ad55eb03e5">
+  <value column="Name" original="ECF Model">Modelo do Cupom</value>
+  <value column="PrintName" original="ECF Model">Modelo do Cupom</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="0706b532-5c4d-4d9b-b744-203790ddbb55">
+  <value column="Name" original="NFe Doc Ref. Type">Tipo de Documento</value>
+  <value column="PrintName" original="NFe Doc Ref. Type">Tipo de Doc.</value>
+  <value column="Description" original="NFe Referenced Document Type">Tipo de Documento Referenciado</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="3e145f05-79f7-4bab-9f5a-d2068fc01276">
+  <value column="Name" original="Document">Documento</value>
+  <value column="PrintName" original="Document">Documento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
 </idempiereTrl>

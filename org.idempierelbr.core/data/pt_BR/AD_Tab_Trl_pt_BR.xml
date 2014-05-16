@@ -6756,4 +6756,52 @@ Printing:
   <value column="Description" original="ISSQN">ISSQN</value>
   <value column="Help" original="The ISSQN Tab defines amounts for ISSQN Tax">A aba ISSQN define valores e parâmetros relativos a este imposto</value>
  </row>
+ <row trl="Y" uuid="88ab9137-669b-4d52-acb7-ad36b7291c4e">
+  <value column="Name" original="Transportation">Transporte</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Transportation">Transporte</value>
+  <value column="Help" original="The Transportation Tab displays fields for entering information about transportation">A aba Transporte apresenta informações relativas a transportadora, volumes, pesos, etc.</value>
+ </row>
+ <row trl="Y" uuid="2c14c921-022e-469d-899e-a703bdec974c">
+  <value column="Name" original="Trailer">Reboque</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Trailer">Reboque</value>
+  <value column="Help" original="The Trailer Tab displays fields for entering information about transportation Trailer">A aba Reboque permite a informação de até 5 registros. Observe que o campo Veículo de Transporte deve ser apropriadamente selecionado.</value>
+ </row>
+ <row trl="Y" uuid="b04cf18d-5297-4f1b-9968-5e348496ddc4">
+  <value column="Name" original="Package">Volume</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Package">Volume</value>
+  <value column="Help" original="The Package Tab displays fields for entering information about package in a fiscal invoice">A aba Volume permite informar os volumes que compõem a Nota Fiscal</value>
+ </row>
+ <row trl="Y" uuid="9184f86f-c399-44d1-856f-a079523de64c">
+  <value column="Name" original="Pay">Cobrança</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Pay">Cobrança</value>
+  <value column="Help" original="The Pay Tab displays fields for entering information about invoices and payment">A aba Cobrança permite inserir informações sobre o pagamento devido ao emissor da NF</value>
+ </row>
+ <row trl="Y" uuid="7c02d80e-54b7-4fc9-983c-f93573feb7d0">
+  <value column="Name" original="Pay Schedule">Duplicata</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Pay Schedule">Duplicata</value>
+  <value column="Help" original="The Pay Schedule Tab displays fields for entering information about payment schedules">A aba Duplicata permite informar duplicatas para a NF</value>
+ </row>
+ <row trl="Y" uuid="416ea63d-cb14-4f0c-bf96-d80d6b1d842c">
+  <value column="Name" original="Note">Observação</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Note">Observação</value>
+  <value column="Help" original="The Note Tab displays fields for entering remarks to the tax authorities and taxpayers">A aba Observação permite inserir informações de interesse do fisco ou do contribuinte</value>
+ </row>
+ <row trl="Y" uuid="645f3703-e5e2-40d4-acd9-5446bf50624c">
+  <value column="Name" original="Ref. Process">Processo Ref.</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Ref. Process">Processo Referenciado</value>
+  <value column="Help" original="The Ref. Process Tab displays fields for entering information about referenced processes">A aba Processo Referenciado permite a inclusão de processos vinculados à emissão desta NF</value>
+ </row>
+ <row trl="Y" uuid="8a0745a0-e86e-43d1-971c-fc7e6f4bdbd9">
+  <value column="Name" original="Ref. Doc">Documento Ref.</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Ref. Doc">Documento Referenciado</value>
+  <value column="Help" original="The Ref. Doc Tab displays fields for entering information about referenced docs">A aba Documento Referenciado permite a inclusão de documentos (NFs, conhecimentos, cupons) vinculados a esta NF</value>
+ </row>
 </idempiereTrl>

@@ -948,4 +948,38 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TransactionType);
 	}
+	
+	/** Set Fiscal Info.
+	@param LBR_FiscalInfo 
+	Fiscal Information
+	  */
+	public void setLBR_FiscalInfo (String LBR_FiscalInfo)
+	{
+		set_Value (COLUMNNAME_LBR_FiscalInfo, LBR_FiscalInfo);
+	}
+	
+	/** Get Fiscal Info.
+		@return Fiscal Information
+	  */
+	public String getLBR_FiscalInfo () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_FiscalInfo);
+	}
+	
+	/** Set Tax Payer Info.
+	@param LBR_TaxPayerInfo 
+	Tax Payer Information
+	  */
+	public void setLBR_TaxPayerInfo (String LBR_TaxPayerInfo)
+	{
+		set_Value (COLUMNNAME_LBR_TaxPayerInfo, LBR_TaxPayerInfo);
+	}
+	
+	/** Get Tax Payer Info.
+		@return Tax Payer Information
+	  */
+	public String getLBR_TaxPayerInfo () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_TaxPayerInfo);
+	}
 }

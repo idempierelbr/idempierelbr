@@ -281,4 +281,17 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal
 		
 		return false;
 	}
+	
+	/**
+	 *  getNotes
+	 *  @return X_LBR_NotaFiscalNote[] notes
+	 */
+    public X_LBR_NotaFiscalNote[] getNotes() {
+    	MTable table = MTable.get (getCtx(), X_LBR_NotaFiscalNote.Table_Name);
+		Query query =  new Query(getCtx(), table, "LBR_NotaFiscal_ID=?", get_TrxName());
+	 		  query.setParameters(new Object[]{get_ID()});
+	 	//
+	 	List<X_LBR_NotaFiscalNote> list = query.list();
+	 	return list.toArray(new X_LBR_NotaFiscalNote[list.size()]);
+    }
 }
