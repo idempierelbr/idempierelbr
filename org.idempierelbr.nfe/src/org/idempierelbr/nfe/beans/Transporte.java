@@ -12,6 +12,9 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Transporte {
 
 	// Informações do Transporte da NF-E
@@ -20,10 +23,10 @@ public class Transporte {
 	private TransporteGrupo transporta;
 	private TransporteRetencao retTransp;
 	private TransporteGrupoVeiculos veicTransp;
-	private TransporteReboque reboque;
-	private TransporteVol vol;
-	private TransporteLacres lacres;
-	
+	private List<TransporteReboque> reboques = null;
+	private String vagao;
+	private String balsa;
+	private List<TransporteVol> vols = null;
 	
 	public String getModFrete() {
 		return modFrete;
@@ -52,23 +55,38 @@ public class Transporte {
 	public void setVeicTransp(TransporteGrupoVeiculos veicTransp) {
 		this.veicTransp = veicTransp;
 	}
-	public TransporteReboque getReboque() {
-		return reboque;
+	public List<TransporteReboque> getReboques() {
+		return reboques;
 	}
-	public void setReboque(TransporteReboque reboque) {
-		this.reboque = reboque;
+	public void setReboques(List<TransporteReboque> reboques) {
+		this.reboques = reboques;
 	}
-	public TransporteVol getVol() {
-		return vol;
+	public boolean addReboque(TransporteReboque e) {
+		if (reboques == null)
+				reboques = new ArrayList<TransporteReboque>();
+		return reboques.add(e);
 	}
-	public void setVol(TransporteVol vol) {
-		this.vol = vol;
+	public List<TransporteVol> getVols() {
+		return vols;
 	}
-	public TransporteLacres getLacres() {
-		return lacres;
+	public void setVols(List<TransporteVol> vols) {
+		this.vols = vols;
 	}
-	public void setLacres(TransporteLacres lacres) {
-		this.lacres = lacres;
+	public boolean addVol(TransporteVol e) {
+		if (vols == null)
+			vols = new ArrayList<TransporteVol>();
+		return vols.add(e);
 	}
-	
+	public String getVagao() {
+		return vagao;
+	}
+	public void setVagao(String vagao) {
+		this.vagao = vagao;
+	}
+	public String getBalsa() {
+		return balsa;
+	}
+	public void setBalsa(String balsa) {
+		this.balsa = balsa;
+	}
 }

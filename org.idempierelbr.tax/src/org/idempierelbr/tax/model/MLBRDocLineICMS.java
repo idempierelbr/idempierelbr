@@ -23,6 +23,36 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 	 * 
 	 */
 	private static final long serialVersionUID = 8383356153009002225L;
+	
+	/** CST - ICMS Trib. Normal	*/
+	public static final String CST_ICMS_00		= "00";
+	public static final String CST_ICMS_10_ST	= "10_1";
+	public static final String CST_ICMS_10_PART	= "10_2";
+	public static final String CST_ICMS_20		= "20";
+	public static final String CST_ICMS_30		= "30";
+	public static final String CST_ICMS_40		= "40";
+	public static final String CST_ICMS_41		= "41_1";
+	public static final String CST_ICMS_41_RET	= "41_2";
+	public static final String CST_ICMS_50		= "50";
+	public static final String CST_ICMS_51		= "51";
+	public static final String CST_ICMS_60		= "60";
+	public static final String CST_ICMS_70		= "70";
+	public static final String CST_ICMS_90_PART	= "90_1";
+	public static final String CST_ICMS_90		= "90_2";
+	//public static final String CST_ICMS_Part	= "Part";
+	//public static final String CST_ICMS_ST		= "ST";
+	
+	/**	CST - ICMS Simples Nacional */
+	public static final String CSOSN_101	= "101";
+	public static final String CSOSN_102	= "102";
+	public static final String CSOSN_103	= "103";
+	public static final String CSOSN_201	= "201";
+	public static final String CSOSN_202	= "202";
+	public static final String CSOSN_203	= "203";
+	public static final String CSOSN_300	= "300";
+	public static final String CSOSN_400	= "400";
+	public static final String CSOSN_500	= "500";
+	public static final String CSOSN_900	= "900";
 
 	/**
 	 *  Default Constructor
@@ -45,6 +75,140 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 	{
 		super (ctx, rs, trxName);
 	}
+	
+	public BigDecimal getLBR_ICMSST_TaxAdded () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAdded);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_ICMSST_TaxAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_ICMSST_TaxAmtUFDes () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAmtUFDes);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_ICMSST_TaxAmtUFSen () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAmtUFSen);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_ICMSST_TaxAmtWhd () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAmtWhd);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_ICMSST_TaxBAmtUFDes () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBAmtUFDes);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_ICMSST_TaxBAmtUFSen () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBAmtUFSen);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_ICMSST_TaxBAmtWhd () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBAmtWhd);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_ICMSST_TaxBase () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBase);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_ICMSST_TaxBaseAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBaseAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_ICMSST_TaxRate () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxRate);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_ICMS_TaxAmtOp () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMS_TaxAmtOp);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxAmtCredit () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmtCredit);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxBase () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBase);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxBaseAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxBaseOwnOperation () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseOwnOperation);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxDeferralAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxDeferralAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxDeferralRate () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxDeferralRate);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxRate () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRate);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxRateCredit () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRateCredit);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxReliefAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxReliefAmt);
+		return bd;
+	}
+	
+	
 	
 	/**
 	 * 	Get ICMS array of a given Doc Line Details.
@@ -166,5 +330,13 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 		} catch (AdempiereException e) {
 			return false;
 		}
+	}
+
+	public static String getCSTPrefix(String taxStatusDetailed) {
+		if (taxStatusDetailed == null || !taxStatusDetailed.contains("_"))
+			return taxStatusDetailed;
+
+		int slashIndex = taxStatusDetailed.indexOf("_");
+		return taxStatusDetailed.substring(0, slashIndex);
 	}
 }

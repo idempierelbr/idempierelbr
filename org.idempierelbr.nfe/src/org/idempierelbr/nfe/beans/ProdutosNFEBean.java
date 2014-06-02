@@ -39,6 +39,7 @@ public class ProdutosNFEBean {
 	private String indTot;
 	private String xPed;
 	private String nItemPed;
+	private String nFCI;
 	private DeclaracaoDI DI;
 
 	public String getProd() {
@@ -214,5 +215,11 @@ public class ProdutosNFEBean {
 	}
 	public void setDI(DeclaracaoDI DI) {
 		this.DI = DI;
+	}
+	public String getnFCI() {
+		return nFCI;
+	}
+	public void setnFCI(String nFCI) {
+		this.nFCI = nFCI;
 	}
 }

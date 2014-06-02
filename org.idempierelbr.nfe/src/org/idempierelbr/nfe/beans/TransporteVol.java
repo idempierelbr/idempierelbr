@@ -12,6 +12,9 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TransporteVol {
 
 	private String qVol;
@@ -20,6 +23,7 @@ public class TransporteVol {
 	private String nVol;
 	private String pesoL;
 	private String pesoB;
+	private List<TransporteLacres> lacres = null;
 	
 	public String getqVol() {
 		return qVol;
@@ -75,5 +79,15 @@ public class TransporteVol {
 	
 		this.pesoB = pesoB;
 	}
-		
+	public List<TransporteLacres> getLacres() {
+		return lacres;
+	}
+	public void setLacres(List<TransporteLacres> lacres) {
+		this.lacres = lacres;
+	}
+	public boolean addLacre(TransporteLacres e) {
+		if (lacres == null)
+			lacres = new ArrayList<TransporteLacres>();
+		return lacres.add(e);
+	}	
 }

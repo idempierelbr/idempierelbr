@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 
+import org.compiere.model.I_C_TaxProvider;
+import org.compiere.model.I_C_TaxProviderCfg;
 import org.compiere.model.MTax;
 import org.compiere.model.MTaxProvider;
 import org.compiere.process.ProcessInfo;
@@ -40,8 +42,7 @@ public class NFTaxProvider implements ITaxProviderNfe {
 			if (taxID > 0 && !taxList.contains(taxID))
 			{
 				MTax tax = new MTax(nf.getCtx(), taxID, nf.get_TrxName());
-				if (tax.getC_TaxProvider_ID() == 0 ||
-						!tax.getC_TaxProvider().getC_TaxProviderCfg().getTaxProviderClass().equals(TaxProviderFactory.DEFAULT_TAX_PROVIDER))
+				if (tax.getC_TaxProvider_ID() == 0 || !isLBRTaxProvider(tax.getC_TaxProvider()))
 					continue;
 				MLBRNotaFiscalTax nfTax = MLBRNotaFiscalTax.get (line, nf.getPrecision(), false, nf.get_TrxName());	//	current Tax
 				nfTax.setIsTaxIncluded(nf.isTaxIncluded());
@@ -62,8 +63,7 @@ public class NFTaxProvider implements ITaxProviderNfe {
 		for (int i = 0; i < taxes.length; i++)
 		{
 			MLBRNotaFiscalTax nfTax = taxes[i];
-			if (nfTax.getC_TaxProvider_ID() == 0 ||
-					!nfTax.getC_TaxProvider().getC_TaxProviderCfg().getTaxProviderClass().equals(TaxProviderFactory.DEFAULT_TAX_PROVIDER)) {
+			if (nfTax.getC_TaxProvider_ID() == 0 || !isLBRTaxProvider(nfTax.getC_TaxProvider())) {
 				if (!nf.isTaxIncluded())
 					grandTotal = grandTotal.add(nfTax.getTaxAmt());
 				continue;
@@ -229,7 +229,7 @@ public class NFTaxProvider implements ITaxProviderNfe {
 
 	@Override
 	public boolean updateNFTax(MTaxProvider provider, MLBRNotaFiscalLine line) {
-		if (provider.getC_TaxProviderCfg().getTaxProviderClass().equals(TaxProviderFactory.DEFAULT_TAX_PROVIDER))
+		if (isLBRTaxProvider(provider))
 			return line.updateNFTax(false);
     	return true;
 	}
@@ -240,7 +240,7 @@ public class NFTaxProvider implements ITaxProviderNfe {
 		
 		if (!newRecord && line.is_ValueChanged(MLBRNotaFiscalLine.COLUMNNAME_C_Tax_ID) && !line.getParent().isProcessed())
 		{
-	    	if (provider.getC_TaxProviderCfg().getTaxProviderClass().equals(TaxProviderFactory.DEFAULT_TAX_PROVIDER))
+	    	if (isLBRTaxProvider(provider))
 	    	{
 				//	Recalculate Tax for old Tax
 				if (!line.updateNFTax(true))
@@ -294,5 +294,25 @@ public class NFTaxProvider implements ITaxProviderNfe {
 		// TODO Auto-generated method stub
 		s_log.log(Level.SEVERE, "DefaultTaxProvider: validateConnection(MTaxProvider provider, ProcessInfo pi)");
 		return null;
+	}
+	
+	private boolean isLBRTaxProvider(I_C_TaxProvider i_C_TaxProvider) {
+		if (i_C_TaxProvider == null)
+			return false;
+		
+		I_C_TaxProviderCfg cfg = i_C_TaxProvider.getC_TaxProviderCfg();
+		
+		if (cfg == null)
+			return false;
+		
+		String cfgClass = cfg.getTaxProviderClass();
+		
+		if (cfgClass == null)
+			return false;
+		
+		if (cfgClass.equals(TaxProviderFactory.DEFAULT_TAX_PROVIDER))
+			return true;
+		
+		return false;
 	}
 }

@@ -23,7 +23,8 @@ public class CalloutFactory implements IColumnCalloutFactory {
 		
 		// Tabela LBR_NotaFiscal
 		if (tableName.equals(MLBRNotaFiscal.Table_Name)) {
-			if (columnName.equals(MLBRNotaFiscal.COLUMNNAME_C_BPartner_ID))
+			if (columnName.equals(MLBRNotaFiscal.COLUMNNAME_C_BPartner_ID) ||
+					columnName.equals(MLBRNotaFiscal.COLUMNNAME_C_DocType_ID))
 				 callouts.add(new CalloutNotaFiscal());
 		}
 		

@@ -12,6 +12,9 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class IdentNFE {
 
@@ -24,27 +27,22 @@ public class IdentNFE {
 	private String mod;
 	private String serie;
 	private String nNF;
-	private String dEmi;
-	private String dSaiEnt;
-	private String hSaiEnt;
+	private String dhEmi;
+	private String dhSaiEnt;
 	private String tpNF;
+	private String idDest;
 	private String cMunFG;
-	private NFERefenciadaBean NFref;
 	private String tpImp;
 	private String tpEmis;
 	private String cDV;
 	private String tpAmb;
 	private String finNFe;
+	private String indFinal;
+	private String indPres;
 	private String procEmi;
 	private String verProc;
-	
+	private List<NFERefBean> NFrefs = null;
 
-	public NFERefenciadaBean getNFref() {
-		return NFref;
-	}
-	public void setNFref(NFERefenciadaBean fref) {
-		NFref = fref;
-	}
 	public String getcUF() {
 		return cUF;
 	}
@@ -108,29 +106,23 @@ public class IdentNFE {
 	
 		this.nNF = nNF;
 	}
-	public String getdEmi() {
-		return dEmi;
+	public String getdhEmi() {
+		return dhEmi;
 	}
-	public void setdEmi(String dEmi) {
-		if (dEmi != null)
-			dEmi = dEmi.trim();
+	public void setdhEmi(String dhEmi) {
+		if (dhEmi != null)
+			dhEmi = dhEmi.trim();
 	
-		this.dEmi = dEmi;
+		this.dhEmi = dhEmi;
 	}
-	public String gethSaiEnt() {
-		return hSaiEnt;
+	public String getdhSaiEnt() {
+		return dhSaiEnt;
 	}
-	public void sethSaiEnt(String hSaiEnt) {
-		this.hSaiEnt = hSaiEnt;
-	}
-	public String getdSaiEnt() {
-		return dSaiEnt;
-	}
-	public void setdSaiEnt(String dSaiEnt) {
-		if (dSaiEnt != null)
-			dSaiEnt = dSaiEnt.trim();
+	public void setdhSaiEnt(String dhSaiEnt) {
+		if (dhSaiEnt != null)
+			dhSaiEnt = dhSaiEnt.trim();
 	
-		this.dSaiEnt = dSaiEnt;
+		this.dhSaiEnt = dhSaiEnt;
 	}
 	public String getTpNF() {
 		return tpNF;
@@ -140,6 +132,15 @@ public class IdentNFE {
 			tpNF = tpNF.trim();
 	
 		this.tpNF = tpNF;
+	}
+	public String getIdDest() {
+		return idDest;
+	}
+	public void setIdDest(String idDest) {
+		if (idDest != null)
+			idDest = idDest.trim();
+	
+		this.idDest = idDest;
 	}
 	public String getcMunFG() {
 		return cMunFG;
@@ -195,6 +196,24 @@ public class IdentNFE {
 	
 		this.finNFe = finNFe;
 	}
+	public String getIndFinal() {
+		return indFinal;
+	}
+	public void setIndFinal(String indFinal) {
+		if (indFinal != null)
+			indFinal = indFinal.trim();
+		
+		this.indFinal = indFinal;
+	}
+	public String getIndPres() {
+		return indPres;
+	}
+	public void setIndPres(String indPres) {
+		if (indPres != null)
+			indPres = indPres.trim();
+		
+		this.indPres = indPres;
+	}
 	public String getProcEmi() {
 		return procEmi;
 	}
@@ -213,5 +232,15 @@ public class IdentNFE {
 	
 		this.verProc = verProc;
 	}
-
+	public List<NFERefBean> getNFrefs() {
+		return NFrefs;
+	}
+	public void setNFrefs(List<NFERefBean> nFrefs) {
+		NFrefs = nFrefs;
+	}
+	public boolean addNFref(NFERefBean e) {
+		if (NFrefs == null)
+			NFrefs = new ArrayList<NFERefBean>();
+		return NFrefs.add(e);
+	}
 }

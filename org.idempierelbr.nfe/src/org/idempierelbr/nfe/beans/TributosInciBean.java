@@ -12,18 +12,18 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-
 public class TributosInciBean {
 
 	// Tributos Incidentes no Produto ou Serviço
  
 	private ICMSBean ICMS;
-	private ImpostoIPIBean IPI;
-	private ImpostoDIBean II;
+	private IPIBean IPI;
+	private IIBean II;
 	private PISBean PIS;
+	private PISSTBean PISST;
 	private COFINSBean COFINS;
+	private COFINSSTBean COFINSST;
+	private ISSQNBean ISSQN;
 	
 	public ICMSBean getICMS() {
 		return ICMS;
@@ -33,19 +33,19 @@ public class TributosInciBean {
 		ICMS = icms;
 	}
 
-	public ImpostoIPIBean getIPI() {
+	public IPIBean getIPI() {
 		return IPI;
 	}
 
-	public void setIPI(ImpostoIPIBean ipi) {
+	public void setIPI(IPIBean ipi) {
 		IPI = ipi;
 	}
 
-	public ImpostoDIBean getII() {
+	public IIBean getII() {
 		return II;
 	}
 
-	public void setII(ImpostoDIBean ii) {
+	public void setII(IIBean ii) {
 		II = ii;
 	}
 
@@ -64,6 +64,28 @@ public class TributosInciBean {
 	public void setCOFINS(COFINSBean cofins) {
 		COFINS = cofins;
 	}
-	
-	
+
+	public PISSTBean getPISST() {
+		return PISST;
+	}
+
+	public void setPISST(PISSTBean pISST) {
+		PISST = pISST;
+	}
+
+	public COFINSSTBean getCOFINSST() {
+		return COFINSST;
+	}
+
+	public void setCOFINSST(COFINSSTBean cOFINSST) {
+		COFINSST = cOFINSST;
+	}
+
+	public ISSQNBean getISSQN() {
+		return ISSQN;
+	}
+
+	public void setISSQN(ISSQNBean iSSQN) {
+		ISSQN = iSSQN;
+	}	
 }

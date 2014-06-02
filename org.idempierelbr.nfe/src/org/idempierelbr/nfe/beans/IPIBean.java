@@ -12,7 +12,7 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
-public class ImpostoIPIBean {
+public class IPIBean {
 
 	// Imposto sobre Produtos Industrializados
 	
@@ -21,19 +21,19 @@ public class ImpostoIPIBean {
 	private String cSelo;
 	private String qSelo;
 	private String cEnq;
-	private ImpostoIPIGrupoBean IPITrib ;
-	private ImpostoIPIGrupoBean IPINT ;
+	private IPIGrupoBean IPITrib ;
+	private IPIGrupoBean IPINT ;
 	
-	public ImpostoIPIGrupoBean getIPI() {
+	public IPIGrupoBean getIPI() {
 		return IPITrib;
 	}
-	public void setIPI(ImpostoIPIGrupoBean ipi) {
+	public void setIPI(IPIGrupoBean ipi) {
 		IPITrib = ipi;
 	}	
-	public ImpostoIPIGrupoBean getIPINT() {
+	public IPIGrupoBean getIPINT() {
 		return IPINT;
 	}
-	public void setIPINT(ImpostoIPIGrupoBean ipi) {
+	public void setIPINT(IPIGrupoBean ipi) {
 		IPINT = ipi;
 	}
 	public String getClEnq() {

@@ -36,8 +36,8 @@ public class LinhaNFEBean {
 	private int nItem;
 	private DeclaracaoDI DI;
 	private ICMSBean ICMS;
-	private ImpostoIPIBean IPI;
-	private ImpostoDIBean II;
+	private IPIBean IPI;
+	private IIBean II;
 	private PISBean PIS;
 	private COFINSBean COFINS;
 	
@@ -53,16 +53,16 @@ public class LinhaNFEBean {
 	public void setICMS(ICMSBean icms) {
 		ICMS = icms;
 	}
-	public ImpostoIPIBean getIPI() {
+	public IPIBean getIPI() {
 		return IPI;
 	}
-	public void setIPI(ImpostoIPIBean ipi) {
+	public void setIPI(IPIBean ipi) {
 		IPI = ipi;
 	}
-	public ImpostoDIBean getII() {
+	public IIBean getII() {
 		return II;
 	}
-	public void setII(ImpostoDIBean ii) {
+	public void setII(IIBean ii) {
 		II = ii;
 	}
 	public PISBean getPIS() {

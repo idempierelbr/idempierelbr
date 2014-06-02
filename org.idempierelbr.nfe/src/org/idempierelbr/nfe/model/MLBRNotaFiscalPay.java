@@ -1,11 +1,13 @@
 package org.idempierelbr.nfe.model;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
 
 import org.compiere.model.MTable;
 import org.compiere.model.Query;
+import org.compiere.util.Env;
 
 public class MLBRNotaFiscalPay extends X_LBR_NotaFiscalPay {
 
@@ -25,16 +27,34 @@ public class MLBRNotaFiscalPay extends X_LBR_NotaFiscalPay {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public BigDecimal getDiscountAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_DiscountAmt);
+		return bd;
+	}
+	
+	public BigDecimal getGrandTotal () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_GrandTotal);
+		return bd;
+	}
+	
+	public BigDecimal getNetAmtToInvoice () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_NetAmtToInvoice);
+		return bd;
+	}
+	
 	/**
 	 *  getPaySchedules
-	 *  @return X_LBR_NotaFiscalPaySched[] schedules
+	 *  @return MLBRNotaFiscalPaySched[] schedules
 	 */
-    public X_LBR_NotaFiscalPaySched[] getPaySchedules() {
-    	MTable table = MTable.get (getCtx(), X_LBR_NotaFiscalPaySched.Table_Name);
+    public MLBRNotaFiscalPaySched[] getPaySchedules() {
+    	MTable table = MTable.get (getCtx(), MLBRNotaFiscalPaySched.Table_Name);
 		Query query =  new Query(getCtx(), table, "LBR_NotaFiscalPay_ID=?", get_TrxName());
 	 		  query.setParameters(new Object[]{get_ID()});
 	 	//
-	 	List<X_LBR_NotaFiscalPaySched> list = query.list();
-	 	return list.toArray(new X_LBR_NotaFiscalPaySched[list.size()]);
+	 	List<MLBRNotaFiscalPaySched> list = query.list();
+	 	return list.toArray(new MLBRNotaFiscalPaySched[list.size()]);
     }
 }

@@ -18,6 +18,7 @@ public class IdentLocRetirada {
 	
 	private String retirada;
 	private String CNPJ;
+	private String CPF;
 	private String xLgr;
 	private String nro;
 	private String xCpl;
@@ -43,6 +44,15 @@ public class IdentLocRetirada {
 			cNPJ = cNPJ.trim();
 	
 		CNPJ = cNPJ;
+	}
+	public String getCPF() {
+		return CPF;
+	}
+	public void setCPF(String cPF) {
+		if (cPF != null)
+			cPF = cPF.trim();
+		
+		CPF = cPF;
 	}
 	public String getxLgr() {
 		return xLgr;

@@ -206,6 +206,9 @@
  <row id="200016" trl="N">
   <value column="Name" original="Foreign Key">Foreign Key</value>
  </row>
+ <row id="200018" trl="N">
+  <value column="Name" original="Background Job">Background Job</value>
+ </row>
  <row trl="Y" uuid="12c499cb-64e4-44b5-87e2-7b0fae45876c">
   <value column="Name" original="Localização Brasil">Adempiere LBR</value>
  </row>

@@ -12,23 +12,15 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
-public class ImpostoIPIGrupoBean {
-	private String CST;
+public class IIBean {
+	
+	// Imposto de Importação
+	
 	private String vBC;
-	private String pIPI;
-	private String qUnid;
-	private String vUnid;
-	private String vIPI;
+	private String vDespAdu;
+	private String vII;
+	private String vIOF;
 	
-	public String getCST() {
-		return CST;
-	}
-	public void setCST(String cST) {
-		if (cST != null)
-			cST = cST.trim();
-	
-		CST = cST;
-	}
 	public String getvBC() {
 		return vBC;
 	}
@@ -38,41 +30,32 @@ public class ImpostoIPIGrupoBean {
 	
 		this.vBC = vBC;
 	}
-	public String getpIPI() {
-		return pIPI;
+	public String getvDespAdu() {
+		return vDespAdu;
 	}
-	public void setpIPI(String pIPI) {
-		if (pIPI != null)
-			pIPI = pIPI.trim();
+	public void setvDespAdu(String vDespAdu) {
+		if (vDespAdu != null)
+			vDespAdu = vDespAdu.trim();
 	
-		this.pIPI = pIPI;
+		this.vDespAdu = vDespAdu;
 	}
-	public String getvIPI() {
-		return vIPI;
+	public String getvII() {
+		return vII;
 	}
-	public void setvIPI(String vIPI) {
-		if (vIPI != null)
-			vIPI = vIPI.trim();
+	public void setvII(String vII) {
+		if (vII != null)
+			vII = vII.trim();
 	
-		this.vIPI = vIPI;
+		this.vII = vII;
 	}
-	public String getqUnid() {
-		return qUnid;
+	public String getvIOF() {
+		return vIOF;
 	}
-	public void setqUnid(String qUnid) {
-		if (qUnid != null)
-			qUnid = qUnid.trim();
+	public void setvIOF(String vIOF) {
+		if (vIOF != null)
+			vIOF = vIOF.trim();
 	
-		this.qUnid = qUnid;
+		this.vIOF = vIOF;
 	}
-	public String getvUnid() {
-		return vUnid;
-	}
-	public void setvUnid(String vUnid) {
-		if (vUnid != null)
-			vUnid = vUnid.trim();
-	
-		this.vUnid = vUnid;
-	}
-		
+
 }

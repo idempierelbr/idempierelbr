@@ -1,11 +1,13 @@
 package org.idempierelbr.tax.model;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
 
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.Query;
+import org.compiere.util.Env;
 
 public class MLBRDocLineISSQN extends X_LBR_DocLine_ISSQN {
 
@@ -34,6 +36,54 @@ public class MLBRDocLineISSQN extends X_LBR_DocLine_ISSQN {
 	public MLBRDocLineISSQN(Properties ctx, ResultSet rs, String trxName)
 	{
 		super (ctx, rs, trxName);
+	}
+	
+	public BigDecimal getLBR_CondDiscountAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CondDiscountAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_ISS_WithholdingAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ISS_WithholdingAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_OtherWithholdingsAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_OtherWithholdingsAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxBaseAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxBaseDeductionAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseDeductionAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxRate () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRate);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_UncondDiscountAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_UncondDiscountAmt);
+		return bd;
 	}
 	
 	/**

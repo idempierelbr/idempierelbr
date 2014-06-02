@@ -12,7 +12,7 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
-import org.idempierelbr.nfe.base.NFeXMLGenerator;
+import org.idempierelbr.tax.model.MLBRDocLinePIS;
 import org.idempierelbr.core.util.TextUtil;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -63,17 +63,48 @@ public class PISBean
 		if (CST_CSOSN == null || detPIS == null)
 			return;
 		
-		if (TextUtil.match(CST_CSOSN, NFeXMLGenerator.CST_PC_01, NFeXMLGenerator.CST_PC_02))
-			setPIS (detPIS);
+		if (TextUtil.match(CST_CSOSN, MLBRDocLinePIS.CST_PIS_01, MLBRDocLinePIS.CST_PIS_02))
+			setPIS(detPIS);
 
-		else if (TextUtil.match(CST_CSOSN, NFeXMLGenerator.CST_PC_03))
-			setPISQtde (detPIS);
+		else if (TextUtil.match(CST_CSOSN, MLBRDocLinePIS.CST_PIS_03))
+			setPISQtde(detPIS);
 		
-		else if (TextUtil.match(CST_CSOSN, NFeXMLGenerator.CST_PC_04, NFeXMLGenerator.CST_PC_06, NFeXMLGenerator.CST_PC_07, 
-								NFeXMLGenerator.CST_PC_08, NFeXMLGenerator.CST_PC_09))
-			setPISNT (detPIS);
-		
-		else
-			setPISOutr (detPIS);
+		else if (TextUtil.match(CST_CSOSN,
+				MLBRDocLinePIS.CST_PIS_04,
+				MLBRDocLinePIS.CST_PIS_05,
+				MLBRDocLinePIS.CST_PIS_06,
+				MLBRDocLinePIS.CST_PIS_07, 
+				MLBRDocLinePIS.CST_PIS_08,
+				MLBRDocLinePIS.CST_PIS_09)) {
+			
+			setPISNT(detPIS);
+		} else if (TextUtil.match(CST_CSOSN,
+				MLBRDocLinePIS.CST_PIS_49,
+				MLBRDocLinePIS.CST_PIS_50,
+				MLBRDocLinePIS.CST_PIS_51,
+				MLBRDocLinePIS.CST_PIS_52,
+				MLBRDocLinePIS.CST_PIS_53,
+				MLBRDocLinePIS.CST_PIS_54,
+				MLBRDocLinePIS.CST_PIS_55,
+				MLBRDocLinePIS.CST_PIS_56,
+				MLBRDocLinePIS.CST_PIS_60,
+				MLBRDocLinePIS.CST_PIS_61,
+				MLBRDocLinePIS.CST_PIS_62,
+				MLBRDocLinePIS.CST_PIS_63,
+				MLBRDocLinePIS.CST_PIS_64,
+				MLBRDocLinePIS.CST_PIS_65,
+				MLBRDocLinePIS.CST_PIS_66,
+				MLBRDocLinePIS.CST_PIS_67,
+				MLBRDocLinePIS.CST_PIS_70,
+				MLBRDocLinePIS.CST_PIS_71,
+				MLBRDocLinePIS.CST_PIS_72,
+				MLBRDocLinePIS.CST_PIS_73,
+				MLBRDocLinePIS.CST_PIS_74,
+				MLBRDocLinePIS.CST_PIS_75,
+				MLBRDocLinePIS.CST_PIS_98,
+				MLBRDocLinePIS.CST_PIS_99)) {
+			
+			setPISOutr(detPIS);
+		}
 	}
 }	//	PISBean

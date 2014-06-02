@@ -48,6 +48,54 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		super (ctx, rs, trxName);
 	}
 	
+	public BigDecimal getDiscountAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_DiscountAmt);
+		return bd;
+	}
+	
+	public BigDecimal getFreightAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_FreightAmt);
+		return bd;
+	}
+	
+	public BigDecimal getInsuredAmount () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_InsuredAmount);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_GrossAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_GrossAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_PriceTax () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_PriceTax);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_QtyTax () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_QtyTax);
+		return bd;
+	}
+	
+	public BigDecimal getSurcharges () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_Surcharges);
+		return bd;
+	}
+	
+	public BigDecimal getTaxLineTotal () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_TaxLineTotal);
+		return bd;
+	}
+	
 	/**
 	 * 	Calculate the discount amount
 	 * 	@param qty quantity of a product (base UOM)

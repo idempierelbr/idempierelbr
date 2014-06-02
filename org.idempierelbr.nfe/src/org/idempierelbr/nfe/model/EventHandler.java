@@ -19,6 +19,8 @@ public class EventHandler extends AbstractEventHandler {
 
 	@Override
 	protected void initialize() {
+		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MLBRNotaFiscal.Table_Name);
+		registerTableEvent(IEventTopics.PO_BEFORE_CHANGE, MLBRNotaFiscal.Table_Name);
 		registerTableEvent(IEventTopics.PO_AFTER_NEW, MLBRNotaFiscal.Table_Name);
 		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MLBRNotaFiscal.Table_Name);
 		
@@ -29,12 +31,20 @@ public class EventHandler extends AbstractEventHandler {
 		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MLBRNotaFiscalTransp.Table_Name);
 		
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, X_LBR_NotaFiscalTrailer.Table_Name);
+		
+		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MLBRNotaFiscalPay.Table_Name);
 	}
 
 	@Override
 	protected void doHandleEvent(Event event) {
 		PO po = getPO(event);
 		log.info(po + " Type: " + event.getTopic());
+		
+		// Copy DateDoc to DateAcct
+		if (po instanceof MLBRNotaFiscal && (event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)
+				|| event.getTopic().equals(IEventTopics.PO_BEFORE_CHANGE))) {
+			po.set_ValueOfColumn("DateAcct", po.get_Value("DateDoc"));
+		}
 		
 		// Auto-Create child records when creating header record
 		if (po instanceof MLBRNotaFiscal && event.getTopic().equals(IEventTopics.PO_AFTER_NEW)) {
@@ -44,12 +54,6 @@ public class EventHandler extends AbstractEventHandler {
 			transp.setLBR_NotaFiscal_ID(po.get_ID());
 			transp.setLBR_NFeModShipping("0"); // Issuer
 			transp.saveEx();
-			
-			// Pay
-			MLBRNotaFiscalPay pay = new MLBRNotaFiscalPay(po.getCtx(), 0, po.get_TrxName());
-			pay.setAD_Org_ID(po.getAD_Org_ID());
-			pay.setLBR_NotaFiscal_ID(po.get_ID());
-			pay.saveEx();
 		}
 		
 		// Delete records from Trailer Tab when changing field in NF Transportation Tab
@@ -71,6 +75,16 @@ public class EventHandler extends AbstractEventHandler {
 			X_LBR_NotaFiscalTrailer[] trailers = transp.getTrailers();
 			if (trailers.length >= 5)
 				addErrorMessage(event, "Limite de 5 registros por Nota Fiscal");
+		}
+		
+		// Check if there are maximum of 1 entries on NF Pay Tab
+		if (po instanceof MLBRNotaFiscalPay && event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)) {
+			int LBR_NotaFiscal_ID = ((MLBRNotaFiscalPay)po).getLBR_NotaFiscal_ID();
+			MLBRNotaFiscal nf = new MLBRNotaFiscal(po.getCtx(), LBR_NotaFiscal_ID, po.get_TrxName());
+			
+			MLBRNotaFiscalPay[] pays = nf.getPay();
+			if (pays.length >= 1)
+				addErrorMessage(event, "Limite de 1 registro por Nota Fiscal");
 		}
 		
 		// Create/update/delete Doc Line Details

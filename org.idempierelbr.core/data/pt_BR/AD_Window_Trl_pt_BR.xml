@@ -2144,4 +2144,9 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Customer &amp; Vendor Brazilian Fiscal Invoice Entry">Introduzir e Alterar Notas Fiscais (Cliente / Fornecedor)</value>
   <value column="Help" original="The Brazilian Fiscal Invoice Window allows you to display and enter fiscal invoices for a customer or vendor.  Invoices can also be generated from Order, Invoices or RMA's">A janela permite inserir notas fiscais para cliente ou de fornecedor. Eles podem ser geradas a partir de Pedidos, Faturas e ARMs</value>
  </row>
+ <row trl="N" uuid="77fe687d-6f56-4722-99eb-4c6d69743fa3">
+  <value column="Name" original="Digital Certificate (LBR)">Digital Certificate (LBR)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

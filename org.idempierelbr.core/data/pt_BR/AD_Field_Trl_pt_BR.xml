@@ -913,4 +913,144 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="Y" uuid="3c92ad58-740c-48ab-b5ef-ce0e4431335a">
+  <value column="Name" original="Country">País onde o Serviço foi Prestado</value>
+  <value column="Description" original="Country ">País onde o Serviço foi Prestado</value>
+  <value column="Help" original="The Country defines a Country.  Each Country must be defined before it can be used in any document.">O "País" define um país.  Cada País deve ser definido antes que possa ser usado em qualquer documento.</value>
+ </row>
+ <row trl="Y" uuid="e0df67b9-d842-4a86-b254-d20b55770d10">
+  <value column="Name" original="Incidence Region">Região de Incidência</value>
+  <value column="Description" original="Identifies a geographical Region">Identifica a Região de Incidência do Imposto</value>
+  <value column="Help" original="The Region identifies a unique Region for this Country."/>
+ </row>
+ <row trl="Y" uuid="f52adee2-cc0d-4261-bd8a-6b5b63125c1d">
+  <value column="Name" original="Incidence City">Cidade de Incidência</value>
+  <value column="Description" original="Incidence City">Cidade de Incidência do Imposto</value>
+  <value column="Help" original="City in a country"/>
+ </row>
+ <row trl="Y" uuid="c8fd406e-36df-4385-9046-6b7936f3bb96">
+  <value column="Name" original="Process Name">Núm. do Processo</value>
+  <value column="Description" original="Name of the Process">Número do Processo</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="50b3f1d5-860f-4e1f-b639-a852a9b147b3">
+  <value column="Name" original="Country">País onde o Serviço foi Prestado</value>
+  <value column="Description" original="Country ">País onde o Serviço foi Prestado</value>
+  <value column="Help" original="The Country defines a Country.  Each Country must be defined before it can be used in any document.">O "País" define um país.  Cada País deve ser definido antes que possa ser usado em qualquer documento.</value>
+ </row>
+ <row trl="Y" uuid="4854d45c-47d3-4ae0-a501-6a184ecd5ddd">
+  <value column="Name" original="Incidence Region">Região de Incidência</value>
+  <value column="Description" original="Identifies a geographical Region">Identifica a Região de Incidência do Imposto</value>
+  <value column="Help" original="The Region identifies a unique Region for this Country."/>
+ </row>
+ <row trl="Y" uuid="c81db1fb-fb68-4a28-ba8f-43c0a103e51c">
+  <value column="Name" original="Incidence City">Cidade de Incidência</value>
+  <value column="Description" original="Incidence City">Cidade de Incidência do Imposto</value>
+  <value column="Help" original="City in a country"/>
+ </row>
+ <row trl="Y" uuid="0216d452-4915-4e63-8b8b-a0972cfb256e">
+  <value column="Name" original="Process Name">Núm. do Processo</value>
+  <value column="Description" original="Name of the Process">Número do Processo</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="43a097af-f1ec-4931-a735-dd63f384b65b">
+  <value column="Name" original="Country">País onde o Serviço foi Prestado</value>
+  <value column="Description" original="Country ">País onde o Serviço foi Prestado</value>
+  <value column="Help" original="The Country defines a Country.  Each Country must be defined before it can be used in any document.">O "País" define um país.  Cada País deve ser definido antes que possa ser usado em qualquer documento.</value>
+ </row>
+ <row trl="Y" uuid="4424f360-0352-405b-a287-d3c6182f81c1">
+  <value column="Name" original="Incidence Region">Região de Incidência</value>
+  <value column="Description" original="Identifies a geographical Region">Identifica a Região de Incidência do Imposto</value>
+  <value column="Help" original="The Region identifies a unique Region for this Country."/>
+ </row>
+ <row trl="Y" uuid="a8b55a80-4120-4047-a36a-59c0d404c850">
+  <value column="Name" original="Incidence City">Cidade de Incidência</value>
+  <value column="Description" original="Incidence City">Cidade de Incidência do Imposto</value>
+  <value column="Help" original="City in a country"/>
+ </row>
+ <row trl="Y" uuid="41f83dfc-801c-4aa9-866d-2b7719d4f3e0">
+  <value column="Name" original="Process Name">Núm. do Processo</value>
+  <value column="Description" original="Name of the Process">Número do Processo</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="9e2e8c68-fd5f-465a-ac41-77c238788639">
+  <value column="Name" original="Country">País onde o Serviço foi Prestado</value>
+  <value column="Description" original="Country ">País onde o Serviço foi Prestado</value>
+  <value column="Help" original="The Country defines a Country.  Each Country must be defined before it can be used in any document.">O "País" define um país.  Cada País deve ser definido antes que possa ser usado em qualquer documento.</value>
+ </row>
+ <row trl="Y" uuid="4b9dff52-0f61-4a0f-bc58-5b3689a648b9">
+  <value column="Name" original="Incidence Region">Região de Incidência</value>
+  <value column="Description" original="Identifies a geographical Region">Identifica a Região de Incidência do Imposto</value>
+  <value column="Help" original="The Region identifies a unique Region for this Country."/>
+ </row>
+ <row trl="Y" uuid="c13fd389-1c85-470f-a186-7a3d8482b645">
+  <value column="Name" original="Incidence City">Cidade de Incidência</value>
+  <value column="Description" original="Incidence City">Cidade de Incidência do Imposto</value>
+  <value column="Help" original="City in a country"/>
+ </row>
+ <row trl="Y" uuid="3a8d857a-1100-4a86-8a75-c33500d4f480">
+  <value column="Name" original="Process Name">Núm. do Processo</value>
+  <value column="Description" original="Name of the Process">Número do Processo</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="a7d8f814-9c04-45cd-9bfa-75abd3728d01">
+  <value column="Name" original="Country">País onde o Serviço foi Prestado</value>
+  <value column="Description" original="Country ">País onde o Serviço foi Prestado</value>
+  <value column="Help" original="The Country defines a Country.  Each Country must be defined before it can be used in any document.">O "País" define um país.  Cada País deve ser definido antes que possa ser usado em qualquer documento.</value>
+ </row>
+ <row trl="Y" uuid="f3c931a9-6a99-4539-8e22-7272ccb164ab">
+  <value column="Name" original="Incidence Region">Região de Incidência</value>
+  <value column="Description" original="Identifies a geographical Region">Identifica a Região de Incidência do Imposto</value>
+  <value column="Help" original="The Region identifies a unique Region for this Country."/>
+ </row>
+ <row trl="Y" uuid="868bdea3-00bf-4a4a-8598-841d3957b021">
+  <value column="Name" original="Incidence City">Cidade de Incidência</value>
+  <value column="Description" original="Incidence City">Cidade de Incidência do Imposto</value>
+  <value column="Help" original="City in a country"/>
+ </row>
+ <row trl="Y" uuid="ed4b90b4-fe3f-4b3f-9c0e-09b844ddbb33">
+  <value column="Name" original="Process Name">Núm. do Processo</value>
+  <value column="Description" original="Name of the Process">Número do Processo</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="013fa535-00ed-4134-bc71-c0d7253431a6">
+  <value column="Name" original="Country">País onde o Serviço foi Prestado</value>
+  <value column="Description" original="Country ">País onde o Serviço foi Prestado</value>
+  <value column="Help" original="The Country defines a Country.  Each Country must be defined before it can be used in any document.">O "País" define um país.  Cada País deve ser definido antes que possa ser usado em qualquer documento.</value>
+ </row>
+ <row trl="Y" uuid="7b8bf4dd-9159-4eef-8606-988422df63d2">
+  <value column="Name" original="Incidence Region">Região de Incidência</value>
+  <value column="Description" original="Identifies a geographical Region">Identifica a Região de Incidência do Imposto</value>
+  <value column="Help" original="The Region identifies a unique Region for this Country."/>
+ </row>
+ <row trl="Y" uuid="36c97e14-b9b8-4e9b-8057-15284280f5ae">
+  <value column="Name" original="Incidence City">Cidade de Incidência</value>
+  <value column="Description" original="Incidence City">Cidade de Incidência do Imposto</value>
+  <value column="Help" original="City in a country"/>
+ </row>
+ <row trl="Y" uuid="5ac29525-0240-4f02-b01b-e82dc0e1bede">
+  <value column="Name" original="Process Name">Núm. do Processo</value>
+  <value column="Description" original="Name of the Process">Número do Processo</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="519c5993-f22f-4c34-8151-7ff4498d0525">
+  <value column="Name" original="Country">País onde o Serviço foi Prestado</value>
+  <value column="Description" original="Country ">País onde o Serviço foi Prestado</value>
+  <value column="Help" original="The Country defines a Country.  Each Country must be defined before it can be used in any document.">O "País" define um país.  Cada País deve ser definido antes que possa ser usado em qualquer documento.</value>
+ </row>
+ <row trl="Y" uuid="9dbb202d-1d17-4e92-acb7-585f988e1de5">
+  <value column="Name" original="Incidence Region">Região de Incidência</value>
+  <value column="Description" original="Identifies a geographical Region">Identifica a Região de Incidência do Imposto</value>
+  <value column="Help" original="The Region identifies a unique Region for this Country."/>
+ </row>
+ <row trl="Y" uuid="2cddac15-bb88-4bc4-bac7-1583a19e95e2">
+  <value column="Name" original="Incidence City">Cidade de Incidência</value>
+  <value column="Description" original="Incidence City">Cidade de Incidência do Imposto</value>
+  <value column="Help" original="City in a country"/>
+ </row>
+ <row trl="Y" uuid="d9a42cbb-d933-4962-ad59-b0fc0765139b">
+  <value column="Name" original="Process Name">Núm. do Processo</value>
+  <value column="Description" original="Name of the Process">Número do Processo</value>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

@@ -1,11 +1,13 @@
 package org.idempierelbr.tax.model;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
 
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.Query;
+import org.compiere.util.Env;
 
 public class MLBRDocLineImportTax extends X_LBR_DocLine_ImportTax {
 
@@ -34,6 +36,30 @@ public class MLBRDocLineImportTax extends X_LBR_DocLine_ImportTax {
 	public MLBRDocLineImportTax(Properties ctx, ResultSet rs, String trxName)
 	{
 		super (ctx, rs, trxName);
+	}
+	
+	public BigDecimal getCustomsValue () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_CustomsValue);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_IOFAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IOFAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxBaseAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
+		return bd;
 	}
 	
 	/**

@@ -32,7 +32,7 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140402L;
+	private static final long serialVersionUID = 20140526L;
 
     /** Standard Constructor */
     public X_LBR_DocLine_ISSQN (Properties ctx, int LBR_DocLine_ISSQN_ID, String trxName)
@@ -40,6 +40,8 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
       super (ctx, LBR_DocLine_ISSQN_ID, trxName);
       /** if (LBR_DocLine_ISSQN_ID == 0)
         {
+			setIsTaxIncluded (false);
+// N
         } */
     }
 
@@ -99,6 +101,29 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 		return ii.intValue();
 	}
 
+	/** Set Country.
+		@param C_Country_ID 
+		Country 
+	  */
+	public void setC_Country_ID (int C_Country_ID)
+	{
+		if (C_Country_ID < 1) 
+			set_Value (COLUMNNAME_C_Country_ID, null);
+		else 
+			set_Value (COLUMNNAME_C_Country_ID, Integer.valueOf(C_Country_ID));
+	}
+
+	/** Get Country.
+		@return Country 
+	  */
+	public int getC_Country_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_C_Country_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
 	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException
     {
 		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_Name)
@@ -125,6 +150,47 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
+	}
+
+	/** Set Price includes Tax.
+		@param IsTaxIncluded 
+		Tax is included in the price 
+	  */
+	public void setIsTaxIncluded (boolean IsTaxIncluded)
+	{
+		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
+	}
+
+	/** Get Price includes Tax.
+		@return Tax is included in the price 
+	  */
+	public boolean isTaxIncluded () 
+	{
+		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+
+	/** Set Conditioned Discount Amount.
+		@param LBR_CondDiscountAmt Conditioned Discount Amount	  */
+	public void setLBR_CondDiscountAmt (BigDecimal LBR_CondDiscountAmt)
+	{
+		set_Value (COLUMNNAME_LBR_CondDiscountAmt, LBR_CondDiscountAmt);
+	}
+
+	/** Get Conditioned Discount Amount.
+		@return Conditioned Discount Amount	  */
+	public BigDecimal getLBR_CondDiscountAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CondDiscountAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
 	}
 
 	public I_LBR_DocLine_Details getLBR_DocLine_Details() throws RuntimeException
@@ -195,6 +261,139 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 		return (String)get_Value(COLUMNNAME_LBR_DocLine_ISSQN_UU);
 	}
 
+	public org.compiere.model.I_C_City getLBR_IncidenceCity() throws RuntimeException
+    {
+		return (org.compiere.model.I_C_City)MTable.get(getCtx(), org.compiere.model.I_C_City.Table_Name)
+			.getPO(getLBR_IncidenceCity_ID(), get_TrxName());	}
+
+	/** Set Incidence City.
+		@param LBR_IncidenceCity_ID 
+		Incidence City
+	  */
+	public void setLBR_IncidenceCity_ID (int LBR_IncidenceCity_ID)
+	{
+		if (LBR_IncidenceCity_ID < 1) 
+			set_Value (COLUMNNAME_LBR_IncidenceCity_ID, null);
+		else 
+			set_Value (COLUMNNAME_LBR_IncidenceCity_ID, Integer.valueOf(LBR_IncidenceCity_ID));
+	}
+
+	/** Get Incidence City.
+		@return Incidence City
+	  */
+	public int getLBR_IncidenceCity_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_IncidenceCity_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	public org.compiere.model.I_C_Region getLBR_IncidenceRegion() throws RuntimeException
+    {
+		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_Name)
+			.getPO(getLBR_IncidenceRegion_ID(), get_TrxName());	}
+
+	/** Set Incidence Region.
+		@param LBR_IncidenceRegion_ID 
+		Identifies a geographical Region
+	  */
+	public void setLBR_IncidenceRegion_ID (int LBR_IncidenceRegion_ID)
+	{
+		if (LBR_IncidenceRegion_ID < 1) 
+			set_Value (COLUMNNAME_LBR_IncidenceRegion_ID, null);
+		else 
+			set_Value (COLUMNNAME_LBR_IncidenceRegion_ID, Integer.valueOf(LBR_IncidenceRegion_ID));
+	}
+
+	/** Get Incidence Region.
+		@return Identifies a geographical Region
+	  */
+	public int getLBR_IncidenceRegion_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_IncidenceRegion_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	/** Exigivel = 1 */
+	public static final String LBR_ISS_CHARGEABILITY_Exigivel = "1";
+	/** Nao incidencia = 2 */
+	public static final String LBR_ISS_CHARGEABILITY_NaoIncidencia = "2";
+	/** Isencao = 3 */
+	public static final String LBR_ISS_CHARGEABILITY_Isencao = "3";
+	/** Exportacao = 4 */
+	public static final String LBR_ISS_CHARGEABILITY_Exportacao = "4";
+	/** Imunidade = 5 */
+	public static final String LBR_ISS_CHARGEABILITY_Imunidade = "5";
+	/** Exigibilidade suspensa por decisao judicial = 6 */
+	public static final String LBR_ISS_CHARGEABILITY_ExigibilidadeSuspensaPorDecisaoJudicial = "6";
+	/** Exigibilidade suspensa por processo administrativo = 7 */
+	public static final String LBR_ISS_CHARGEABILITY_ExigibilidadeSuspensaPorProcessoAdministrativo = "7";
+	/** Set ISS Chargeability Indicator.
+		@param LBR_ISS_Chargeability ISS Chargeability Indicator	  */
+	public void setLBR_ISS_Chargeability (String LBR_ISS_Chargeability)
+	{
+
+		set_Value (COLUMNNAME_LBR_ISS_Chargeability, LBR_ISS_Chargeability);
+	}
+
+	/** Get ISS Chargeability Indicator.
+		@return ISS Chargeability Indicator	  */
+	public String getLBR_ISS_Chargeability () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_ISS_Chargeability);
+	}
+
+	/** Set ISS Withholding Amount.
+		@param LBR_ISS_WithholdingAmt ISS Withholding Amount	  */
+	public void setLBR_ISS_WithholdingAmt (BigDecimal LBR_ISS_WithholdingAmt)
+	{
+		set_Value (COLUMNNAME_LBR_ISS_WithholdingAmt, LBR_ISS_WithholdingAmt);
+	}
+
+	/** Get ISS Withholding Amount.
+		@return ISS Withholding Amount	  */
+	public BigDecimal getLBR_ISS_WithholdingAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ISS_WithholdingAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set Other Withholdings Amount.
+		@param LBR_OtherWithholdingsAmt Other Withholdings Amount	  */
+	public void setLBR_OtherWithholdingsAmt (BigDecimal LBR_OtherWithholdingsAmt)
+	{
+		set_Value (COLUMNNAME_LBR_OtherWithholdingsAmt, LBR_OtherWithholdingsAmt);
+	}
+
+	/** Get Other Withholdings Amount.
+		@return Other Withholdings Amount	  */
+	public BigDecimal getLBR_OtherWithholdingsAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_OtherWithholdingsAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set Service Code.
+		@param LBR_ServiceCode Service Code	  */
+	public void setLBR_ServiceCode (String LBR_ServiceCode)
+	{
+		set_Value (COLUMNNAME_LBR_ServiceCode, LBR_ServiceCode);
+	}
+
+	/** Get Service Code.
+		@return Service Code	  */
+	public String getLBR_ServiceCode () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_ServiceCode);
+	}
+
 	/** Set Service Type.
 		@param LBR_ServiceType Service Type	  */
 	public void setLBR_ServiceType (String LBR_ServiceType)
@@ -249,6 +448,45 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 		return bd;
 	}
 
+	/** Set Tax Base Deduction Amount.
+		@param LBR_TaxBaseDeductionAmt 
+		Defines the Tax Base Deduction Amount
+	  */
+	public void setLBR_TaxBaseDeductionAmt (BigDecimal LBR_TaxBaseDeductionAmt)
+	{
+		set_Value (COLUMNNAME_LBR_TaxBaseDeductionAmt, LBR_TaxBaseDeductionAmt);
+	}
+
+	/** Get Tax Base Deduction Amount.
+		@return Defines the Tax Base Deduction Amount
+	  */
+	public BigDecimal getLBR_TaxBaseDeductionAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseDeductionAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Yes = 1 */
+	public static final String LBR_TAXINCENTIVE_Yes = "1";
+	/** No = 2 */
+	public static final String LBR_TAXINCENTIVE_No = "2";
+	/** Set Tax Incentive Indicator.
+		@param LBR_TaxIncentive Tax Incentive Indicator	  */
+	public void setLBR_TaxIncentive (String LBR_TaxIncentive)
+	{
+
+		set_Value (COLUMNNAME_LBR_TaxIncentive, LBR_TaxIncentive);
+	}
+
+	/** Get Tax Incentive Indicator.
+		@return Tax Incentive Indicator	  */
+	public String getLBR_TaxIncentive () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_TaxIncentive);
+	}
+
 	/** Set Tax Rate.
 		@param LBR_TaxRate 
 		Indicates the Tax Rate
@@ -268,28 +506,38 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 			 return Env.ZERO;
 		return bd;
 	}
-	
-	/** Set Price includes Tax.
-	@param IsTaxIncluded 
-	Tax is included in the price 
-	  */
-	public void setIsTaxIncluded (boolean IsTaxIncluded)
+
+	/** Set Unconditioned Discount Amount.
+		@param LBR_UncondDiscountAmt Unconditioned Discount Amount	  */
+	public void setLBR_UncondDiscountAmt (BigDecimal LBR_UncondDiscountAmt)
 	{
-		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
+		set_Value (COLUMNNAME_LBR_UncondDiscountAmt, LBR_UncondDiscountAmt);
 	}
-	
-	/** Get Price includes Tax.
-		@return Tax is included in the price 
-	  */
-	public boolean isTaxIncluded () 
+
+	/** Get Unconditioned Discount Amount.
+		@return Unconditioned Discount Amount	  */
+	public BigDecimal getLBR_UncondDiscountAmt () 
 	{
-		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
-		if (oo != null) 
-		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
-			return "Y".equals(oo);
-		}
-		return false;
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_UncondDiscountAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set Process Name.
+		@param ProcessName 
+		Name of the Process
+	  */
+	public void setProcessName (String ProcessName)
+	{
+		set_Value (COLUMNNAME_ProcessName, ProcessName);
+	}
+
+	/** Get Process Name.
+		@return Name of the Process
+	  */
+	public String getProcessName () 
+	{
+		return (String)get_Value(COLUMNNAME_ProcessName);
 	}
 }

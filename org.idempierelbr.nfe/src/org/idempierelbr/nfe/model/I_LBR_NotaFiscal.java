@@ -596,5 +596,69 @@ public interface I_LBR_NotaFiscal
 	  * Tax Payer Information
 	  */
 	public String getLBR_TaxPayerInfo();
+	
+	/** Column name Processing */
+    public static final String COLUMNNAME_Processing = "Processing";
 
+	/** Set Process Now	  */
+	public void setProcessing (boolean Processing);
+
+	/** Get Process Now	  */
+	public boolean isProcessing();
+	
+	/** Column name Posted */
+    public static final String COLUMNNAME_Posted = "Posted";
+
+	/** Set Posted.
+	  * Posting status
+	  */
+	public void setPosted (boolean Posted);
+
+	/** Get Posted.
+	  * Posting status
+	  */
+	public boolean isPosted();
+
+	/** Column name DateAcct */
+    public static final String COLUMNNAME_DateAcct = "DateAcct";
+
+	/** Set Account Date.
+	  * Accounting Date
+	  */
+	public void setDateAcct (Timestamp DateAcct);
+
+	/** Get Account Date.
+	  * Accounting Date
+	  */
+	public Timestamp getDateAcct();
+	
+	/** Column name LBR_BP_Ship_ID */
+    public static final String COLUMNNAME_LBR_BP_Ship_ID = "LBR_BP_Ship_ID";
+
+	/** Set Business Partner (Ship).
+	  * Identifies a Business Partner
+	  */
+	public void setLBR_BP_Ship_ID (int LBR_BP_Ship_ID);
+
+	/** Get Business Partner (Ship).
+	  * Identifies a Business Partner
+	  */
+	public int getLBR_BP_Ship_ID();
+
+	public org.compiere.model.I_C_BPartner getLBR_BP_Ship() throws RuntimeException;
+
+	/** Column name LBR_BP_Pickup_ID */
+    public static final String COLUMNNAME_LBR_BP_Pickup_ID = "LBR_BP_Pickup_ID";
+
+	/** Set Business Partner (Pickup).
+	  * Identifies a Business Partner
+	  */
+	public void setLBR_BP_Pickup_ID (int LBR_BP_Pickup_ID);
+
+	/** Get Business Partner (Pickup).
+	  * Identifies a Business Partner
+	  */
+	public int getLBR_BP_Pickup_ID();
+
+	public org.compiere.model.I_C_BPartner getLBR_BP_Pickup() throws RuntimeException;
 }

@@ -1252,7 +1252,7 @@ PC são criados para todas as linhas das requisições onde o produto tem um for
  <row id="50010" trl="Y">
   <value column="Name" original="Copy Role">CopyRole</value>
   <value column="Description" original="Copy Role">Copy Role</value>
-  <value column="Help" original="Copy role access records from one role to another.  The existing access records for the destination role will be deleted."/>
+  <value column="Help" original="Copy role access records from one role to another.  The existing access records for the destination role will be deleted.  This process can be executed just by advanced roles."/>
  </row>
  <row id="50011" trl="Y">
   <value column="Name" original="Copy Columns from Table">Copy Columns from Table</value>
@@ -2168,6 +2168,11 @@ Please note that base language cannot be a system language.</value>
  </row>
  <row id="200068" trl="N">
   <value column="Name" original="Process Production">Process Production</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="e6df0503-5f93-4a2c-abe6-0c425cc138e9">
+  <value column="Name" original="Process NotaFiscal">Process NotaFiscal</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

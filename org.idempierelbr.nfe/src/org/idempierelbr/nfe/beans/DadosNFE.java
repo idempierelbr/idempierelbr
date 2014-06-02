@@ -33,7 +33,7 @@ public class DadosNFE
 	private IdentDest dest;
 	private IdentLocRetirada retirada;
 	private IdentLocalEntrega entrega;
-	private List<DetailsNFEBean> det = new ArrayList<DetailsNFEBean>();
+	private List<DetalhesProdServBean> det = new ArrayList<DetalhesProdServBean>();
 	private Valores total;
 	private Transporte transp;
 	private Cobranca cobr;
@@ -119,11 +119,11 @@ public class DadosNFE
 	public void setId(String id) {
 		Id = id;
 	}
-	public void add(DetailsNFEBean detailsNFEBean) {
+	public void add(DetalhesProdServBean detailsNFEBean) {
         det.add(detailsNFEBean);
 	}
 
-	public List<DetailsNFEBean> getContent() {
+	public List<DetalhesProdServBean> getContent() {
         return det;
 	}
 	

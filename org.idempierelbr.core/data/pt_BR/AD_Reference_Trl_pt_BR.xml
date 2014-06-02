@@ -2772,4 +2772,39 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="11269b30-a6d9-466d-9b56-c330e24fe9d1">
+  <value column="Name" original="LBR_NFBModel">LBR_NFBModel</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="492806a9-e053-4007-a07e-c611ceeab964">
+  <value column="Name" original="LBR_NFeEnv">LBR_NFeEnv</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="fc34f2c3-de58-47f8-a378-36e13f23ac65">
+  <value column="Name" original="LBR_DANFEFormat">LBR_DANFEFormat</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="27fba129-630d-4606-9d9d-b57d902aff86">
+  <value column="Name" original="LBR_CertType">LBR_CertType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="ebeb2f1d-6096-44c7-9254-8c0b7445c204">
+  <value column="Name" original="LBR_DigitalCertificate">LBR_DigitalCertificate</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="41589cff-9f45-400c-9510-a231bd629536">
+  <value column="Name" original="LBR_ISS_Chargeability">LBR_ISS_Chargeability</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="eb1654c8-aba8-4f1f-82af-b36e0f65db32">
+  <value column="Name" original="LBR_TaxIncentive">LBR_TaxIncentive</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

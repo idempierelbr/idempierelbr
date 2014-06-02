@@ -33,14 +33,18 @@ public class ICMSGrupoBean
 	private String pICMSST;
 	private String vICMSST;
 	private String motDesICMS;
+	private String vICMSDeson;
 	private String vBCSTRet;
 	private String vICMSSTRet;
 	private String vBCSTDest;
 	private String vICMSSTDest;
 	private String pBCOp;
+	private String vICMSOp;
 	private String UFST;
 	private String pCredSN;
 	private String vCredICMSSN;
+	private String pDif;
+	private String vICMSDif;
 	//
 	public String getOrig()
 	{
@@ -233,5 +237,29 @@ public class ICMSGrupoBean
 	public void setvCredICMSSN(String vCredICMSSN)
 	{
 		this.vCredICMSSN = vCredICMSSN;
+	}
+	public String getvICMSDeson() {
+		return vICMSDeson;
+	}
+	public void setvICMSDeson(String vICMSDeson) {
+		this.vICMSDeson = vICMSDeson;
+	}
+	public String getvICMSOp() {
+		return vICMSOp;
+	}
+	public void setvICMSOp(String vICMSOp) {
+		this.vICMSOp = vICMSOp;
+	}
+	public String getpDif() {
+		return pDif;
+	}
+	public void setpDif(String pDif) {
+		this.pDif = pDif;
+	}
+	public String getvICMSDif() {
+		return vICMSDif;
+	}
+	public void setvICMSDif(String vICMSDif) {
+		this.vICMSDif = vICMSDif;
 	}
 }	//	ICMSGrupoBean

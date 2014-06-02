@@ -12,11 +12,17 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class InfAdiFisco
 {
 	// Informações Adicionais
 	private String infAdFisco;
 	private String infCpl;
+	private List<ObsContribGrupo> obsConts = null;
+	private List<ObsFiscoGrupo> obsFiscos = null;
+	private List<ProcessoRefGrupo> procRefs = null;
 	
 	public String getInfAdFisco() {
 		return infAdFisco;
@@ -36,5 +42,41 @@ public class InfAdiFisco
 	
 		this.infCpl = infCpl;
 	}
-	
+	public List<ObsContribGrupo> getObsConts() {
+		if (obsConts.size() < 1)
+			return null;
+		return obsConts;
+	}
+	public void setObsConts(List<ObsContribGrupo> obsConts) {
+		this.obsConts = obsConts;
+	}
+	public List<ObsFiscoGrupo> getObsFiscos() {
+		if (obsFiscos.size() < 1)
+			return null;
+		return obsFiscos;
+	}
+	public void setObsFiscos(List<ObsFiscoGrupo> obsFiscos) {
+		this.obsFiscos = obsFiscos;
+	}
+	public boolean addObsCont(ObsContribGrupo e) {
+		if (obsConts == null)
+			obsConts = new ArrayList<ObsContribGrupo>();
+		return obsConts.add(e);
+	}
+	public boolean addObsFisco(ObsFiscoGrupo e) {
+		if (obsFiscos == null)
+			obsFiscos = new ArrayList<ObsFiscoGrupo>();
+		return obsFiscos.add(e);
+	}
+	public List<ProcessoRefGrupo> getProcRefs() {
+		return procRefs;
+	}
+	public void setProcRefs(List<ProcessoRefGrupo> procRefs) {
+		this.procRefs = procRefs;
+	}
+	public boolean addProcRef(ProcessoRefGrupo e) {
+		if (procRefs == null)
+			procRefs = new ArrayList<ProcessoRefGrupo>();
+		return procRefs.add(e);
+	}
 }	//	InfAdiFisco

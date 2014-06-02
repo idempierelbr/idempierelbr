@@ -12,7 +12,7 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
-public class Informacoes {
+public class InfBean {
 
 	// Informações Adicionais
 	

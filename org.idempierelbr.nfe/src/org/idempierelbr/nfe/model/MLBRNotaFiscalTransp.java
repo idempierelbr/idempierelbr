@@ -1,11 +1,13 @@
 package org.idempierelbr.nfe.model;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
 
 import org.compiere.model.MTable;
 import org.compiere.model.Query;
+import org.compiere.util.Env;
 
 public class MLBRNotaFiscalTransp extends X_LBR_NotaFiscalTransp {
 	/**
@@ -34,6 +36,30 @@ public class MLBRNotaFiscalTransp extends X_LBR_NotaFiscalTransp {
       super (ctx, rs, trxName);
     }
     
+    public BigDecimal getChargeAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_ChargeAmt);
+		return bd;
+	}
+    
+    public BigDecimal getLBR_TaxAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmt);
+		return bd;
+	}
+    
+    public BigDecimal getLBR_TaxBaseAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
+		return bd;
+	}
+    
+    public BigDecimal getLBR_TaxRate () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRate);
+		return bd;
+	}
+    
     /**
 	 *  getTrailers
 	 *  @return X_LBR_NotaFiscalTrailer[] trailers
@@ -49,14 +75,14 @@ public class MLBRNotaFiscalTransp extends X_LBR_NotaFiscalTransp {
     
     /**
 	 *  getPackages
-	 *  @return X_LBR_NotaFiscalPackage[] packages
+	 *  @return MLBRNotaFiscalPackage[] packages
 	 */
-    public X_LBR_NotaFiscalPackage[] getPackages() {
-    	MTable table = MTable.get (getCtx(), X_LBR_NotaFiscalPackage.Table_Name);
+    public MLBRNotaFiscalPackage[] getPackages() {
+    	MTable table = MTable.get (getCtx(), MLBRNotaFiscalPackage.Table_Name);
 		Query query =  new Query(getCtx(), table, "LBR_NotaFiscalTransp_ID=?", get_TrxName());
 	 		  query.setParameters(new Object[]{get_ID()});
 	 	//
-	 	List<X_LBR_NotaFiscalPackage> list = query.list();
-	 	return list.toArray(new X_LBR_NotaFiscalPackage[list.size()]);
+	 	List<MLBRNotaFiscalPackage> list = query.list();
+	 	return list.toArray(new MLBRNotaFiscalPackage[list.size()]);
     }
 }

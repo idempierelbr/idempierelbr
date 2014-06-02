@@ -12,50 +12,68 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
-public class ImpostoDIBean {
-	
-	// Imposto de Importação
-	
-	private String vBC;
-	private String vDespAdu;
-	private String vII;
-	private String vIOF;
-	
-	public String getvBC() {
-		return vBC;
-	}
-	public void setvBC(String vBC) {
-		if (vBC != null)
-			vBC = vBC.trim();
-	
-		this.vBC = vBC;
-	}
-	public String getvDespAdu() {
-		return vDespAdu;
-	}
-	public void setvDespAdu(String vDespAdu) {
-		if (vDespAdu != null)
-			vDespAdu = vDespAdu.trim();
-	
-		this.vDespAdu = vDespAdu;
-	}
-	public String getvII() {
-		return vII;
-	}
-	public void setvII(String vII) {
-		if (vII != null)
-			vII = vII.trim();
-	
-		this.vII = vII;
-	}
-	public String getvIOF() {
-		return vIOF;
-	}
-	public void setvIOF(String vIOF) {
-		if (vIOF != null)
-			vIOF = vIOF.trim();
-	
-		this.vIOF = vIOF;
-	}
+public class InfNFERefBean {
 
+	private String cUF;
+	private String AAMM;
+	private String CNPJ;
+	private String mod;
+	private String serie;
+	private String nNF;
+	
+	public String getcUF() {
+		return cUF;
+	}
+	public void setcUF(String cUF) {
+		if (cUF != null)
+			cUF = cUF.trim();
+	
+		this.cUF = cUF;
+	}
+	public String getAAMM() {
+		return AAMM;
+	}
+	public void setAAMM(String aAMM) {
+		if (aAMM != null)
+			aAMM = aAMM.trim();
+	
+		AAMM = aAMM;
+	}
+	public String getCNPJ() {
+		return CNPJ;
+	}
+	public void setCNPJ(String cNPJ) {
+		if (cNPJ != null)
+			cNPJ = cNPJ.trim();
+	
+		CNPJ = cNPJ;
+	}
+	public String getMod() {
+		return mod;
+	}
+	public void setMod(String mod) {
+		if (mod != null)
+			mod = mod.trim();
+	
+		this.mod = mod;
+	}
+	public String getSerie() {
+		return serie;
+	}
+	public void setSerie(String serie) {
+		if (serie != null)
+			serie = serie.trim();
+	
+		this.serie = serie;
+	}
+	public String getnNF() {
+		return nNF;
+	}
+	public void setnNF(String nNF) {
+		if (nNF != null)
+			nNF = nNF.trim();
+	
+		this.nNF = nNF;
+	}
+	
 }

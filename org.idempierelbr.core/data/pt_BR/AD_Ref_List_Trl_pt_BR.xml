@@ -5378,6 +5378,10 @@
   <value column="Name" original="Set Null">Set Null</value>
   <value column="Description" original=""/>
  </row>
+ <row id="200176" trl="N">
+  <value column="Name" original="UPC-A">UPC-A</value>
+  <value column="Description" original=""/>
+ </row>
  <row trl="Y" uuid="2facadde-7b9b-4619-9161-8f9fe50b2b19">
   <value column="Name" original="No specific release">PJ - Pessoa Jurídica</value>
   <value column="Description" original="No specific release"/>
@@ -6047,7 +6051,7 @@
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="62cbcaf2-9700-41f0-9d08-39fce9903dde">
-  <value column="Name" original="01">01</value>
+  <value column="Name" original="01 - Nota Fiscal">01</value>
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="43b9385e-92a2-47ed-8c6e-95f0b5b92593">
@@ -6088,6 +6092,86 @@
  </row>
  <row trl="N" uuid="e752985c-b606-471b-86de-a539b7cafd1d">
   <value column="Name" original="Cupom Fiscal">Cupom Fiscal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="2ee7a5e8-c40d-45fa-b674-e08aa9eca65e">
+  <value column="Name" original="Nota Fiscal Brasil">Nota Fiscal Brasil</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="7763ed9b-ec2c-4465-a6cf-2c0c6f1c6422">
+  <value column="Name" original="01 - Nota Fiscal">01 - Nota Fiscal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="8f4b11f2-66ec-41b8-bc29-8cd867360f9f">
+  <value column="Name" original="55 - NF-e">55 - NF-e</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="466e85cd-9146-4114-8734-a2843cbec3ee">
+  <value column="Name" original="Production">Production</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="2ebde250-dfaf-43f3-abec-9fbf8fab7061">
+  <value column="Name" original="Homologation">Homologation</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="76207b65-a708-4c95-9c7e-8a120911362e">
+  <value column="Name" original="Portrait">Portrait</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="edd2440e-96ea-45f3-84f3-2ffddbefb056">
+  <value column="Name" original="Landscape">Landscape</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="aa43edf5-2b40-4e6f-ad8b-ade4b89a7f78">
+  <value column="Name" original="ICP TrustStore (JKS)">ICP TrustStore (JKS)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="200b09fb-b2d7-4129-a5cd-34785dedf412">
+  <value column="Name" original="Java Key Store">Java Key Store</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="572bee37-1ed2-4718-9354-cb1a6739a34a">
+  <value column="Name" original="PKCS#11">PKCS#11</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="0a4c1c13-de43-4c7e-9c24-b6be132f9daf">
+  <value column="Name" original="PKCS#12">PKCS#12</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="eba32107-0698-4070-82a3-dfadcbcea8d7">
+  <value column="Name" original="Exigivel">Exigível</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="6a67c7e2-6737-4496-b3ea-1ebe33e926fe">
+  <value column="Name" original="Nao incidencia">Não Incidência</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="6c3a26c0-3aa3-43c2-9ab3-d644ae8c5b7f">
+  <value column="Name" original="Isencao">Isenção</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="01115569-a083-48d6-860a-69902000ea72">
+  <value column="Name" original="Exportacao">Exportação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="6a23a4de-0636-4bd4-bd2d-62cab8054085">
+  <value column="Name" original="Imunidade">Imunidade</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="313dd3a9-61d6-457b-aed3-13621266225d">
+  <value column="Name" original="Exigibilidade suspensa por decisao judicial">Exigibilidade Suspensa por Decisão Judicial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="3df03acc-421d-4240-bf9e-da0dcc3adec7">
+  <value column="Name" original="Exigibilidade suspensa por processo administrativo">Exigibilidade Suspensa por Processo Administrativo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="c1b54bbc-17df-447b-b4ea-19287aa2e60f">
+  <value column="Name" original="Yes">Sim</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="cfaffd41-8fd0-4b28-a048-c3c5c126beb5">
+  <value column="Name" original="No">Não</value>
   <value column="Description" original=""/>
  </row>
 </idempiereTrl>

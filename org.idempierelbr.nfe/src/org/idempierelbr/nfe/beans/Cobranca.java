@@ -19,7 +19,6 @@ public class Cobranca {
 
 	// Dados da Cobrança
 	private CobrancaGrupoFatura fat;
-
 	private List<CobrancaGrupoDuplicata> dups = new ArrayList<CobrancaGrupoDuplicata>();
 
 	public List<CobrancaGrupoDuplicata> getDups() {

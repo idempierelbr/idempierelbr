@@ -55054,6 +55054,36 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="202694" trl="Y">
+  <value column="Name" original="Run as Job">Executar em Background (Trabalho)</value>
+  <value column="PrintName" original="Run as Job">Executar em Background (Trabalho)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202698" trl="N">
+  <value column="Name" original="Default mail template">Default mail template</value>
+  <value column="PrintName" original="Default mail template">Default mail template</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202699" trl="N">
+  <value column="Name" original="Add Mail Text Automatically">Add Mail Text Automatically</value>
+  <value column="PrintName" original="Add Mail Text Automatically">Add Mail Text Automatically</value>
+  <value column="Description" original="The selected mail template will be automatically inserted when creating an email">The selected mail template will be automatically inserted when creating an email</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row trl="Y" uuid="2db1c9d3-13bf-4539-baa0-45ccfb09a7a3">
   <value column="Name" original="Cód. Cidade (IBGE)">Carteira</value>
   <value column="PrintName" original="Cód. Cidade (IBGE)">Carteira</value>
@@ -56855,7 +56885,7 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="d69586a4-3eab-4dcc-a53a-a0dc07284d35">
-  <value column="Name" original="Partner Location">Localização de Entrega (se diferente)</value>
+  <value column="Name" original="Partner Location">Localização de Entrega</value>
   <value column="PrintName" original="Partner Location">Localização de Entrega</value>
   <value column="Description" original="Identifies the (ship to) address for this Business Partner">Identifica o endereço (de entrega) para este Parceiro de Negócios.</value>
   <value column="Help" original="The Partner address indicates the location of a Business Partner">A "Localização de Entrega" indica a localização de um Parceiro de Negócios e só deve ser preenchido se for diferente da Localização do Parceiro</value>
@@ -56865,7 +56895,7 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_PrintName" original="Partner Location (Ship)"/>
  </row>
  <row trl="Y" uuid="586ae8c2-3c5d-4629-b01b-fda76e19d8d3">
-  <value column="Name" original="Partner Location">Localização de Retirada (se diferente)</value>
+  <value column="Name" original="Partner Location">Localização de Retirada</value>
   <value column="PrintName" original="Partner Location">Localização de Retirada</value>
   <value column="Description" original="Identifies the (Pickup) address for this Business Partner">Identifica o endereço (de retirada) para este Parceiro de Negócios.</value>
   <value column="Help" original="The Partner address indicates the location of a Business Partner">A "Localização de Retirada" indica a localização de um Parceiro de Negócios e só deve ser preenchido se for diferente da Localização do Parceiro</value>
@@ -57349,6 +57379,246 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PrintName" original="Document">Documento</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="a18bd44f-6ce4-4128-9acf-1ebc4a7a366c">
+  <value column="Name" original="Is Document Issued by Client/Org?">Is Document Issued by Client/Org?</value>
+  <value column="PrintName" original="Is Doc. Issued by Client/Org?">Is Doc. Issued by Client/Org?</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="43d1c513-21ab-4841-979d-0df97ad04311">
+  <value column="Name" original="NFB (DocType) Model">NFB (DocType) Model</value>
+  <value column="PrintName" original="NFB (DocType) Model">NFB (DocType) Model</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="66862c66-9bdb-497e-a406-14231e9a9145">
+  <value column="Name" original="Sefaz NF-e Environment">Sefaz NF-e Environment</value>
+  <value column="PrintName" original="Sefaz NF-e Env.">Sefaz NF-e Env.</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="41fca469-2d50-41f3-9a4b-9e315c9afbf0">
+  <value column="Name" original="DANFE Format">DANFE Format</value>
+  <value column="PrintName" original="DANFE Format">DANFE Format</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="1f6242a1-8c5a-446f-9886-eec623f6b0b2">
+  <value column="Name" original="Country Code for Nota Fiscal">Country Code for Nota Fiscal</value>
+  <value column="PrintName" original="NF Country Code">NF Country Code</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Country Code used for issue Nota Fiscal. Codes from BCB (Banco Central do Brasil)">Country Code used for issue Nota Fiscal. Codes from BCB (Banco Central do Brasil)</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="445dcb26-4e63-4d3f-8ff8-61ed3efd762c">
+  <value column="Name" original="CNAE">CNAE</value>
+  <value column="PrintName" original="CNAE">CNAE</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="74b30cce-7dd4-4973-9c0d-b6151dda79f8">
+  <value column="Name" original="Digital Certificate">Digital Certificate</value>
+  <value column="PrintName" original="Digital Certificate">Digital Certificate</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="4c35253e-8bad-471e-9053-04b40cb2c92d">
+  <value column="Name" original="Digital Certificate">Digital Certificate</value>
+  <value column="PrintName" original="Digital Certificate">Digital Certificate</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="78ac1d38-b68f-45e5-a5ae-96952cd68da6">
+  <value column="Name" original="Digital Certificate Type">Digital Certificate Type</value>
+  <value column="PrintName" original="Digital Certificate Type">Digital Certificate Type</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="28b2b0f8-e845-4437-a958-adb34cdf3c75">
+  <value column="Name" original="Digital Certificado of Organization">Digital Certificado of Organization</value>
+  <value column="PrintName" original="Digital Certificado of Organization">Digital Certificado of Organization</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="d652e816-9887-4188-ab11-a5c23df2134b">
+  <value column="Name" original="Digital Certificado of Transmission">Digital Certificado of Transmission</value>
+  <value column="PrintName" original="Digital Certificado of Transmission">Digital Certificado of Transmission</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="ccb886f6-8605-4ab2-b8cd-1c4604a5b8d6">
+  <value column="Name" original="Tax Base Deduction Amount">Valor de Dedução da Base de Cálculo</value>
+  <value column="PrintName" original="Tax Base Deduction Amount">Valor de Dedução da BC</value>
+  <value column="Description" original="Defines the Tax Base Deduction Amount">Define o Valor de Dedução da Base de Cálculo</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="8ee5baae-af91-4f90-bf20-730aafe2539f">
+  <value column="Name" original="Other Withholdings Amount">Valor de Outras Retenções</value>
+  <value column="PrintName" original="Other Withholdings Amount">Valor de Outras Retenções</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="98e60253-3700-4d2d-9cad-3a08385b63f6">
+  <value column="Name" original="Unconditioned Discount Amount">Valor do Desconto Incondicionado</value>
+  <value column="PrintName" original="Unconditioned Discount Amount">Valor do Desconto Incondicionado</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="51b2842a-8de0-4848-9ab6-bfc114043ccb">
+  <value column="Name" original="Conditioned Discount Amount">Valor do Desconto Condicionado</value>
+  <value column="PrintName" original="Conditioned Discount Amount">Valor do Desconto Condicionado</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="3d87d898-4b79-4146-82a7-be849b8427b0">
+  <value column="Name" original="ISS Withholding Amount">Valor da Retenção ISS</value>
+  <value column="PrintName" original="ISS Withholding Amount">Valor da Retenção ISS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="ee9bf455-a18f-48a3-b0d5-d8e68d601e0b">
+  <value column="Name" original="ISS Chargeability Indicator">Exigibilidade do ISS</value>
+  <value column="PrintName" original="ISS Chargeability">Exigibilidade do ISS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="3d32b37b-fb82-433b-862d-36b205c53c25">
+  <value column="Name" original="Service Code">Cód. do Serviço Prestado no Município</value>
+  <value column="PrintName" original="Service Code">Cód. do Serviço Prestado no Município</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="57014b7d-7093-4c4a-abc0-7b2705122689">
+  <value column="Name" original="Incidence Region">Incidence Region</value>
+  <value column="PrintName" original="Incidence Region">Incidence Region</value>
+  <value column="Description" original="Identifies a geographical Region">Identifies a geographical Region</value>
+  <value column="Help" original="The Region identifies a unique Region for this Country.">The Region identifies a unique Region for this Country.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="0b56c986-9696-4c7c-be2b-49cef06f8a81">
+  <value column="Name" original="Incidence City">Incidence City</value>
+  <value column="PrintName" original="Incidence City">Incidence City</value>
+  <value column="Description" original="Incidence City">Incidence City</value>
+  <value column="Help" original="City in a country">City in a country</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="feb1baee-c927-43ab-a5f9-52e57f45ebbf">
+  <value column="Name" original="Tax Incentive Indicator">Incentivo Fiscal</value>
+  <value column="PrintName" original="Tax Incentive">Incentivo Fiscal</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="d586142d-5b07-4cf8-8fd1-efd9320167ff">
+  <value column="Name" original="Business Partner (Pickup)">Parceiro de Retirada (se Diferente)</value>
+  <value column="PrintName" original="Business Partner (Pickup)">Parceiro de Retirada</value>
+  <value column="Description" original="Identifies a Business Partner">Identifica o Parceiro de Negócios de Retirada (se Diferente)</value>
+  <value column="Help" original="A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson"/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="12a6a832-4234-4f4e-a437-cacd0eb640f3">
+  <value column="Name" original="Business Partner (Ship)">Parceiro de Entrega (se Diferente)</value>
+  <value column="PrintName" original="Business Partner (Ship)">Parceiro de Entrega</value>
+  <value column="Description" original="Identifies a Business Partner">Identifica o Parceiro de Negócios de Entrega (se Diferente)</value>
+  <value column="Help" original="A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson"/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="2aab1837-5832-4ba2-942c-f87cfc0e9e3f">
+  <value column="Name" original="Region Code for Nota Fiscal">Region Code for Nota Fiscal</value>
+  <value column="PrintName" original="NF Region Code">NF Region Code</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Region Code used for issue Nota Fiscal.">Region Code used for issue Nota Fiscal.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>

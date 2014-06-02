@@ -58,12 +58,16 @@ public class EventHandler extends AbstractEventHandler {
 			
 			if (invoice.getC_Order_ID() > 0) {
 				MOrder order = new MOrder(po.getCtx(), invoice.getC_Order_ID(), po.get_TrxName());
-				invoice.set_ValueOfColumn("LBR_TransactionType", order.get_ValueAsString("LBR_TransactionType"));
+				String transactionType = order.get_ValueAsString("LBR_TransactionType");
+				if (transactionType != null && transactionType.trim().length() > 0)
+					invoice.set_ValueOfColumn("LBR_TransactionType", transactionType);
 			} else if (invoice.getM_RMA_ID() > 0) {
 				MRMA rma = new MRMA(po.getCtx(), invoice.getM_RMA_ID(), po.get_TrxName());
 				MInOut inOut = new MInOut(po.getCtx(), rma.getInOut_ID(), po.get_TrxName());
 				MOrder order = new MOrder(po.getCtx(), inOut.getC_Order_ID(), po.get_TrxName());
-				invoice.set_ValueOfColumn("LBR_TransactionType", order.get_ValueAsString("LBR_TransactionType"));
+				String transactionType = order.get_ValueAsString("LBR_TransactionType");
+				if (transactionType != null && transactionType.trim().length() > 0)
+					invoice.set_ValueOfColumn("LBR_TransactionType", transactionType);
 			}
 		}
 		

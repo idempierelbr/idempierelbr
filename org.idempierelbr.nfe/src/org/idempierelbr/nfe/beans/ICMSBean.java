@@ -12,7 +12,7 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
-import org.idempierelbr.nfe.base.NFeXMLGenerator;
+import org.idempierelbr.tax.model.MLBRDocLineICMS;
 import org.idempierelbr.core.util.TextUtil;
 
 public class ICMSBean
@@ -180,69 +180,93 @@ public class ICMSBean
 	{
 		ICMSSN900 = iCMSSN900;
 	}
-	public void setDetails (ICMSGrupoBean detICMS, String CST_CSOSN)
+	public void setDetails (ICMSGrupoBean detICMS, String taxStatusDetailed)
 	{
-		if (CST_CSOSN == null || detICMS == null)
+		if (taxStatusDetailed == null || detICMS == null)
 			return;
 		
-		else if (CST_CSOSN.length() == 2)
-			detICMS.setCST (CST_CSOSN);
-		
-		else if (CST_CSOSN.length() == 3)
-			detICMS.setCSOSN (CST_CSOSN);
-		
-		else
-			return;
-		//
-		if (NFeXMLGenerator.CST_ICMS_00.equals(CST_CSOSN))
-			setICMS00 (detICMS);
+		// ICMS00
+		if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_00)) {
+			setICMS00(detICMS);
+		}
+		// ICMS10
+		else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_10_ST)) {
+			setICMS10(detICMS);
+		}
+		// ICMS20
+		if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_20)) {
+			setICMS20(detICMS);
+		}
+		// ICMS30
+		else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_30)) {
+			setICMS30(detICMS);
+		}
+		// ICMS40
+		else if (TextUtil.match(taxStatusDetailed,
+				MLBRDocLineICMS.CST_ICMS_40,
+				MLBRDocLineICMS.CST_ICMS_41,
+				MLBRDocLineICMS.CST_ICMS_50)) {
+			
+			setICMS40(detICMS);
+		}
+		// ICMS51
+		else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_51)) {
+			setICMS51(detICMS);
+		}
+		// ICMS60
+		else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_60)) {
+			setICMS60(detICMS);
+		}
+		// ICMS70
+		else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_70)) {
+			setICMS70(detICMS);
+		}
+		// ICMS90
+		else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_90)) {
+			setICMS90(detICMS);
+		}
+		// ICMSPart
+		else if (TextUtil.match(taxStatusDetailed,
+				MLBRDocLineICMS.CST_ICMS_10_PART,
+				MLBRDocLineICMS.CST_ICMS_90_PART)) {
+			
+			setICMSPart(detICMS);
+		}
+		// ICMSST
+		else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_41_RET)) {
+			setICMSST(detICMS);
+		}
+		// ICMSSN101
+		else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CSOSN_101)) {
+			setICMSSN101(detICMS);
+		}
+		// ICMSSN102
+		else if (TextUtil.match(taxStatusDetailed,
+				MLBRDocLineICMS.CSOSN_102,
+				MLBRDocLineICMS.CSOSN_103,
+				MLBRDocLineICMS.CSOSN_300,
+				MLBRDocLineICMS.CSOSN_400)) {
 
-		else if (NFeXMLGenerator.CST_ICMS_10.equals(CST_CSOSN))
-			setICMS10 (detICMS);
-
-		else if (NFeXMLGenerator.CST_ICMS_20.equals(CST_CSOSN))
-			setICMS20 (detICMS);
-
-		else if (NFeXMLGenerator.CST_ICMS_30.equals(CST_CSOSN))
-			setICMS30 (detICMS);
-
-		else if (TextUtil.match(CST_CSOSN, NFeXMLGenerator.CST_ICMS_40, NFeXMLGenerator.CST_ICMS_41, NFeXMLGenerator.CST_ICMS_50))
-			setICMS40 (detICMS);
-
-		else if (NFeXMLGenerator.CST_ICMS_51.equals(CST_CSOSN))
-			setICMS51 (detICMS);
-
-		else if (NFeXMLGenerator.CST_ICMS_60.equals(CST_CSOSN))
-			setICMS60 (detICMS);
-
-		else if (NFeXMLGenerator.CST_ICMS_70.equals(CST_CSOSN))
-			setICMS70 (detICMS);
-
-		else if (NFeXMLGenerator.CST_ICMS_90.equals(CST_CSOSN))
-			setICMS90 (detICMS);
-
-		else if (NFeXMLGenerator.CST_ICMS_Part.equals(CST_CSOSN))
-			setICMSPart (detICMS);
-
-		else if (NFeXMLGenerator.CST_ICMS_ST.equals(CST_CSOSN))
-			setICMSST (detICMS);
-
-		else if (TextUtil.match(CST_CSOSN, NFeXMLGenerator.CSOSN_101))
-			setICMSSN101 (detICMS);
-
-		else if (TextUtil.match(CST_CSOSN, NFeXMLGenerator.CSOSN_102, NFeXMLGenerator.CSOSN_103, NFeXMLGenerator.CSOSN_300, NFeXMLGenerator.CSOSN_400))
-			setICMSSN102 (detICMS);
-
-		else if (TextUtil.match(CST_CSOSN, NFeXMLGenerator.CSOSN_201))
-			setICMSSN201 (detICMS);
-
-		else if (TextUtil.match(CST_CSOSN, NFeXMLGenerator.CSOSN_202, NFeXMLGenerator.CSOSN_203))
-			setICMSSN202 (detICMS);
-
-		else if (TextUtil.match(CST_CSOSN, NFeXMLGenerator.CSOSN_500))
-			setICMSSN500 (detICMS);
-
-		else if (TextUtil.match(CST_CSOSN, NFeXMLGenerator.CSOSN_900))
-			setICMSSN900 (detICMS);
+			setICMSSN102(detICMS);
+		}
+		// ICMSSN201
+		else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CSOSN_201)) {				
+			setICMSSN201(detICMS);
+		}
+		// ICMSSN202
+		else if (TextUtil.match(taxStatusDetailed,
+				MLBRDocLineICMS.CSOSN_202,
+				MLBRDocLineICMS.CSOSN_203)) {
+			
+			setICMSSN202(detICMS);
+		}
+		// ICMSSN500
+		else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CSOSN_500)) {
+			setICMSSN500(detICMS);
+		}
+		// ICMSSN900
+		else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CSOSN_900)) {
+			setICMSSN900(detICMS);
+		} 
 	}	//	setDetails
 }	//	ICMSBean

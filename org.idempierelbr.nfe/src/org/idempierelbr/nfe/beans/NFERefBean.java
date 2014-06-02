@@ -12,15 +12,17 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
-public class NFEReferenciadaBean {
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-	private String refNFe ;
-	private InformacoesNFEReferenciadaBean refNF;
+@XStreamAlias("NFref")
+public class NFERefBean {
 
-	public NFEReferenciadaBean(String refNFe){
-		setRefNFe(refNFe);
-	}
-	
+	private String refNFe;
+	private InfNFERefBean refNF;
+	private InfNFEProdutorRefBean refNFP;
+	private String refCTe;
+	private InfECFRefBean refECF;
+
 	public String getRefNFe() {
 		return refNFe;
 	}
@@ -32,14 +34,35 @@ public class NFEReferenciadaBean {
 		this.refNFe = refNFe;
 	}
 
-	public InformacoesNFEReferenciadaBean getRefNF() {
+	public InfNFERefBean getRefNF() {
 		return refNF;
 	}
 
-	public void setRefNF(InformacoesNFEReferenciadaBean refNF) {
+	public void setRefNF(InfNFERefBean refNF) {
 		this.refNF = refNF;
 	}
-	
-	
-	
+
+	public InfNFEProdutorRefBean getRefNFP() {
+		return refNFP;
+	}
+
+	public void setRefNFP(InfNFEProdutorRefBean refNFP) {
+		this.refNFP = refNFP;
+	}
+
+	public String getRefCTe() {
+		return refCTe;
+	}
+
+	public void setRefCTe(String refCTe) {
+		this.refCTe = refCTe;
+	}
+
+	public InfECFRefBean getRefECF() {
+		return refECF;
+	}
+
+	public void setRefECF(InfECFRefBean refECF) {
+		this.refECF = refECF;
+	}
 }

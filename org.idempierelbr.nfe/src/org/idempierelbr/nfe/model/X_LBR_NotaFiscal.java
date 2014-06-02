@@ -982,4 +982,122 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TaxPayerInfo);
 	}
+	
+	/** Set Process Now.
+		@param Processing Process Now	  */
+	public void setProcessing (boolean Processing)
+	{
+		set_Value (COLUMNNAME_Processing, Boolean.valueOf(Processing));
+	}
+	
+	/** Get Process Now.
+		@return Process Now	  */
+	public boolean isProcessing () 
+	{
+		Object oo = get_Value(COLUMNNAME_Processing);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+	
+	/** Set Posted.
+	@param Posted 
+	Posting status
+	  */
+	public void setPosted (boolean Posted)
+	{
+		set_Value (COLUMNNAME_Posted, Boolean.valueOf(Posted));
+	}
+	
+	/** Get Posted.
+		@return Posting status
+	  */
+	public boolean isPosted () 
+	{
+		Object oo = get_Value(COLUMNNAME_Posted);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+	
+	/** Set Account Date.
+	@param DateAcct 
+	Accounting Date
+	  */
+	public void setDateAcct (Timestamp DateAcct)
+	{
+		set_Value (COLUMNNAME_DateAcct, DateAcct);
+	}
+	
+	/** Get Account Date.
+		@return Accounting Date
+	  */
+	public Timestamp getDateAcct () 
+	{
+		return (Timestamp)get_Value(COLUMNNAME_DateAcct);
+	}
+	
+	public org.compiere.model.I_C_BPartner getLBR_BP_Ship() throws RuntimeException
+    {
+		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_Name)
+			.getPO(getLBR_BP_Ship_ID(), get_TrxName());	}
+
+	/** Set Business Partner (Ship).
+		@param LBR_BP_Ship_ID 
+		Identifies a Business Partner
+	  */
+	public void setLBR_BP_Ship_ID (int LBR_BP_Ship_ID)
+	{
+		if (LBR_BP_Ship_ID < 1) 
+			set_Value (COLUMNNAME_LBR_BP_Ship_ID, null);
+		else 
+			set_Value (COLUMNNAME_LBR_BP_Ship_ID, Integer.valueOf(LBR_BP_Ship_ID));
+	}
+
+	/** Get Business Partner (Ship).
+		@return Identifies a Business Partner
+	  */
+	public int getLBR_BP_Ship_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BP_Ship_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+	
+	public org.compiere.model.I_C_BPartner getLBR_BP_Pickup() throws RuntimeException
+    {
+		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_Name)
+			.getPO(getLBR_BP_Pickup_ID(), get_TrxName());	}
+
+	/** Set Business Partner (Pickup).
+		@param LBR_BP_Pickup_ID 
+		Identifies a Business Partner
+	  */
+	public void setLBR_BP_Pickup_ID (int LBR_BP_Pickup_ID)
+	{
+		if (LBR_BP_Pickup_ID < 1) 
+			set_Value (COLUMNNAME_LBR_BP_Pickup_ID, null);
+		else 
+			set_Value (COLUMNNAME_LBR_BP_Pickup_ID, Integer.valueOf(LBR_BP_Pickup_ID));
+	}
+
+	/** Get Business Partner (Pickup).
+		@return Identifies a Business Partner
+	  */
+	public int getLBR_BP_Pickup_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BP_Pickup_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
 }

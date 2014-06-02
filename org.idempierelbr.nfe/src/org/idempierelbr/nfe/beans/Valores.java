@@ -17,7 +17,7 @@ public class Valores {
 		// Valores Totais da NF-E
 	
 	private ValoresICMS ICMSTot;
-	private ValoresISSQN ISSQNot;
+	private ISSQNBean ISSQNot;
 	private ValoresRetTrib retTrib;
 	
 	public ValoresICMS getICMSTot() {
@@ -26,10 +26,10 @@ public class Valores {
 	public void setICMSTot(ValoresICMS tot) {
 		ICMSTot = tot;
 	}
-	public ValoresISSQN getISSQNot() {
+	public ISSQNBean getISSQNot() {
 		return ISSQNot;
 	}
-	public void setISSQNot(ValoresISSQN not) {
+	public void setISSQNot(ISSQNBean not) {
 		ISSQNot = not;
 	}
 	public ValoresRetTrib getRetTrib() {

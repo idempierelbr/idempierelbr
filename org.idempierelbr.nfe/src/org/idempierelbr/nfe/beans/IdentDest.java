@@ -22,6 +22,7 @@ public class IdentDest {
 	private String CPF;
 	private String xNome;
 	private EnderDest enderDest;
+	private String indIEDest;
 	private String IE;
 	private String ISUF;
 
@@ -67,6 +68,15 @@ public class IdentDest {
 	
 		this.xNome = xNome;
 	}
+	public String getIndIEDest() {
+		return indIEDest;
+	}
+	public void setIndIEDest(String indIEDest) {
+		if (indIEDest != null)
+			indIEDest = indIEDest.trim();
+		
+		this.indIEDest = indIEDest;
+	}
 	public String getIE() {
 		return IE;
 	}
@@ -85,5 +95,4 @@ public class IdentDest {
 	
 		ISUF = iSUF;
 	}
-	
 }

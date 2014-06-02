@@ -17,6 +17,7 @@ public class ValoresICMS {
 	private String ICMSTot;
 	private String vBC;
 	private String vICMS;
+	private String vICMSDeson;
 	private String vBCST;
 	private String vST;
 	private String vProd;
@@ -56,6 +57,15 @@ public class ValoresICMS {
 			vICMS = vICMS.trim();
 	
 		this.vICMS = vICMS;
+	}
+	public String getvICMSDeson() {
+		return vICMSDeson;
+	}
+	public void setvICMSDeson(String vICMSDeson) {
+		if (vICMSDeson != null)
+			vICMSDeson = vICMSDeson.trim();
+		
+		this.vICMSDeson = vICMSDeson;
 	}
 	public String getvBCST() {
 		return vBCST;
@@ -165,5 +175,4 @@ public class ValoresICMS {
 	
 		this.vNF = vNF;
 	}
-
 }

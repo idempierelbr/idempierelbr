@@ -8,6 +8,7 @@ import org.compiere.model.GridField;
 import org.compiere.model.GridTab;
 import org.compiere.model.MBPartner;
 import org.compiere.model.MCurrency;
+import org.compiere.model.MDocType;
 import org.compiere.util.Env;
 import org.idempierelbr.nfe.model.MLBRNotaFiscal;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
@@ -22,6 +23,8 @@ public class CalloutNotaFiscal implements IColumnCallout {
 		if (mTab.getTableName().equals(MLBRNotaFiscal.Table_Name))
 			if (mField.getColumnName().equals(MLBRNotaFiscal.COLUMNNAME_C_BPartner_ID))
 				return setTransactionType(ctx, mTab, value);
+			else if (mField.getColumnName().equals(MLBRNotaFiscal.COLUMNNAME_C_DocType_ID))
+				return setDocTypeRelated(ctx, mTab, value);
 			else 
 				return null;
 		else if (mTab.getTableName().equals(MLBRNotaFiscalLine.Table_Name))
@@ -70,6 +73,25 @@ public class CalloutNotaFiscal implements IColumnCallout {
 				LineNetAmt = LineNetAmt.setScale(stdPrecision, BigDecimal.ROUND_HALF_UP);
 			mTab.setValue("LineNetAmt", LineNetAmt);
 		}
+		
+		return "";
+	}
+	
+	/**
+	 * Define campos relacionados ao DocType
+	 */
+	private String setDocTypeRelated(Properties ctx, GridTab mTab, Object value) {
+		Integer C_DocType_ID = (Integer) value;
+		
+		if (C_DocType_ID == null || C_DocType_ID == 0) {
+			mTab.setValue("LBR_NFeModel", null);
+			mTab.setValue("LBR_NFSerie", null);
+			return "";
+		}
+		
+		MDocType dt = new MDocType(ctx, C_DocType_ID, null);
+		mTab.setValue("LBR_NFeModel", dt.get_Value("LBR_NFBModel"));
+		mTab.setValue("LBR_NFeSerie", dt.get_Value("LBR_NFeSerie"));
 		
 		return "";
 	}

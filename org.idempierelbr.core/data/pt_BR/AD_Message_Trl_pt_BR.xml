@@ -3954,7 +3954,7 @@ Obrigado por usar o Gerenciador de Ativos Personalizado Adempiere
   <value column="MsgTip" original=" "> </value>
  </row>
  <row id="52191" trl="Y">
-  <value column="MsgText" original="Invalid">Invalid</value>
+  <value column="MsgText" original="Invalid">inválido</value>
   <value column="MsgTip" original=" "> </value>
  </row>
  <row id="52192" trl="Y">
@@ -6407,8 +6407,8 @@ Please contact administrator.</value>
   <value column="MsgText" original="Last Run">Last Run</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200241" trl="N">
-  <value column="MsgText" original="Saved Parameters">Saved Parameters</value>
+ <row id="200241" trl="Y">
+  <value column="MsgText" original="Saved Parameters">Parâmetros Salvos</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200242" trl="N">
@@ -6475,12 +6475,48 @@ Please contact administrator.</value>
   <value column="MsgText" original="DR/CR">DR/CR</value>
   <value column="MsgTip" original=""/>
  </row>
+ <row id="200263" trl="Y">
+  <value column="MsgText" original="Exceed maximum number of running jobs allowed per user">O número máximo de trabalhos em execução, permitido para o usuário, foi excedido</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200264" trl="Y">
+  <value column="MsgText" original="Exceed maximum number of running jobs allowed per client">O número máximo de trabalhos em execução, permitido para a empresa, foi excedido</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200265" trl="Y">
+  <value column="MsgText" original="Exceed maximum number of running jobs allowed in the system">O número máximo de trabalhos em execução, permitido pelo sistema, foi excedido</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200266" trl="Y">
+  <value column="MsgText" original="The process has been scheduled as job. The status of the process will be sent as notification to owner of the process.">O processo foi agendado como trabalho. Assim que for finalizado, uma notificação será enviada.</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200267" trl="N">
+  <value column="MsgText" original="Background Job">Background Job</value>
+  <value column="MsgTip" original=""/>
+ </row>
  <row id="200268" trl="N">
   <value column="MsgText" original="System is in maintenance mode, please wait until the access is restored.">System is in maintenance mode, please wait until the access is restored.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200269" trl="N">
   <value column="MsgText" original="You cannot access process {0} with your role : {1}">You cannot access process {0} with your role : {1}</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200271" trl="N">
+  <value column="MsgText" original="Tabs">Tabs</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200272" trl="N">
+  <value column="MsgText" original="Fields">Fields</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200273" trl="N">
+  <value column="MsgText" original="Add default mail text content">Add default mail text content</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200274" trl="N">
+  <value column="MsgText" original="Your search returned more than the maximum number of results allowed.&lt;br&gt;Please narrow down your search criteria and try your search again."><![CDATA[Your search returned more than the maximum number of results allowed.<br>Please narrow down your search criteria and try your search again.]]></value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="520010" trl="Y">
@@ -6521,6 +6557,90 @@ Please contact administrator.</value>
  </row>
  <row trl="Y" uuid="216494c0-7540-4184-a938-8294f7d2274a">
   <value column="MsgText" original="NCM already exists for client/organization">NCM já existe para a empresa/organização</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="b3749697-9564-4e21-a38d-bd6676f63951">
+  <value column="MsgText" original="Error when validating XML, please contact technical support">Erro ao validar o XML, por favor entre em contato com o suporte técnico</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="7a5b0832-773d-4b7a-b566-08426f31ab77">
+  <value column="MsgText" original="Error when generating XML, please contact technical support">Erro ao gerar o XML, por favor entre em contato com o suporte técnico</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="7954b82c-227d-4d43-a904-a8a8e8cab2a9">
+  <value column="MsgText" original="Import Tax">Imposto de Importação</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="4e76b757-4d58-4604-be22-204a267eb1a3">
+  <value column="MsgText" original="Ref. Doc">Documento Ref.</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="e313b6a7-c55b-4c0f-93ce-2fdd2f3d1e1b">
+  <value column="MsgText" original="Transportation">Transporte</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="75a845ba-21d9-4599-9961-73aee379349a">
+  <value column="MsgText" original="Trailer">Reboque</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="07db69b1-2b25-4487-81de-199f62692eef">
+  <value column="MsgText" original="Pay Schedule">Duplicata</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="2bd5781f-3755-47b6-8b7e-cd952ab83032">
+  <value column="MsgText" original="Note">Observação</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="d9a3073c-24f9-456e-a0a7-67b574cdd926">
+  <value column="MsgText" original="LBR_TIMEZONE SysConfig has wrong format. It should be in format: '+03:00'. The default value will be used.">Configuração SysConfig LBR_TIMEZONE está com formato incorreto. Deve ser no formato: '+03:00'. O valor padrão será utilizado.</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="c9565bd7-7780-43fa-8cd8-14e1f038e781">
+  <value column="MsgText" original="Issuer">Emitente</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="512be554-ce44-471c-941d-2d27ef668645">
+  <value column="MsgText" original="Recipient">Destinatário</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="61eea927-1fed-4cae-8b38-5cfef5d2f038">
+  <value column="MsgText" original="Pickup Location">Localização de Retirada</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="3cd1576e-d735-484c-82fb-fbf29c9c3c10">
+  <value column="MsgText" original="Ship Location">Localização de Entrega</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="c02434da-201d-4d9c-af9d-edf7717ab575">
+  <value column="MsgText" original="Invalid IE">IE inválido</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="38b7771b-04fb-4475-a02d-945f44e1b8b6">
+  <value column="MsgText" original="Invalid Address3 value">Bairro inválido</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="8204b476-08f7-4a1e-a5e7-8884e471918e">
+  <value column="MsgText" original="Couldn't find the city">Não foi possível encontrar a cidade</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="b9eebe9e-c61e-4a87-8b41-484134ce8b01">
+  <value column="MsgText" original="Couldn't fing IBGE city code">Código da cidade (IBGE) não cadastrado</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="27cd6a15-c17f-4131-96f6-bdd8005d68f6">
+  <value column="MsgText" original="Invalid Postal Code">CEP inválido</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="f48c3be4-ce2b-4451-8034-eaa0770ef160">
+  <value column="MsgText" original="Invalid Country">País inválido</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="4fbfa1f1-f151-4a07-a3f4-9e7d44a21f71">
+  <value column="MsgText" original="NCM is missing">NCM não informado</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="10baa247-5e3a-4b65-83cd-28410696ab71">
+  <value column="MsgText" original="Invalid CFOP">CFOP inválido</value>
   <value column="MsgTip" original=""/>
  </row>
 </idempiereTrl>

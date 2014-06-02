@@ -79,6 +79,19 @@ public interface I_LBR_DocLine_ISSQN
 
 	public org.compiere.model.I_C_City getC_City() throws RuntimeException;
 
+    /** Column name C_Country_ID */
+    public static final String COLUMNNAME_C_Country_ID = "C_Country_ID";
+
+	/** Set Country.
+	  * Country 
+	  */
+	public void setC_Country_ID (int C_Country_ID);
+
+	/** Get Country.
+	  * Country 
+	  */
+	public int getC_Country_ID();
+
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
 
@@ -123,6 +136,28 @@ public interface I_LBR_DocLine_ISSQN
 	  */
 	public boolean isActive();
 
+    /** Column name IsTaxIncluded */
+    public static final String COLUMNNAME_IsTaxIncluded = "IsTaxIncluded";
+
+	/** Set Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public void setIsTaxIncluded (boolean IsTaxIncluded);
+
+	/** Get Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public boolean isTaxIncluded();
+
+    /** Column name LBR_CondDiscountAmt */
+    public static final String COLUMNNAME_LBR_CondDiscountAmt = "LBR_CondDiscountAmt";
+
+	/** Set Conditioned Discount Amount	  */
+	public void setLBR_CondDiscountAmt (BigDecimal LBR_CondDiscountAmt);
+
+	/** Get Conditioned Discount Amount	  */
+	public BigDecimal getLBR_CondDiscountAmt();
+
     /** Column name LBR_DocLine_Details_ID */
     public static final String COLUMNNAME_LBR_DocLine_Details_ID = "LBR_DocLine_Details_ID";
 
@@ -164,6 +199,72 @@ public interface I_LBR_DocLine_ISSQN
 	  */
 	public String getLBR_DocLine_ISSQN_UU();
 
+    /** Column name LBR_IncidenceCity_ID */
+    public static final String COLUMNNAME_LBR_IncidenceCity_ID = "LBR_IncidenceCity_ID";
+
+	/** Set Incidence City.
+	  * Incidence City
+	  */
+	public void setLBR_IncidenceCity_ID (int LBR_IncidenceCity_ID);
+
+	/** Get Incidence City.
+	  * Incidence City
+	  */
+	public int getLBR_IncidenceCity_ID();
+
+	public org.compiere.model.I_C_City getLBR_IncidenceCity() throws RuntimeException;
+
+    /** Column name LBR_IncidenceRegion_ID */
+    public static final String COLUMNNAME_LBR_IncidenceRegion_ID = "LBR_IncidenceRegion_ID";
+
+	/** Set Incidence Region.
+	  * Identifies a geographical Region
+	  */
+	public void setLBR_IncidenceRegion_ID (int LBR_IncidenceRegion_ID);
+
+	/** Get Incidence Region.
+	  * Identifies a geographical Region
+	  */
+	public int getLBR_IncidenceRegion_ID();
+
+	public org.compiere.model.I_C_Region getLBR_IncidenceRegion() throws RuntimeException;
+
+    /** Column name LBR_ISS_Chargeability */
+    public static final String COLUMNNAME_LBR_ISS_Chargeability = "LBR_ISS_Chargeability";
+
+	/** Set ISS Chargeability Indicator	  */
+	public void setLBR_ISS_Chargeability (String LBR_ISS_Chargeability);
+
+	/** Get ISS Chargeability Indicator	  */
+	public String getLBR_ISS_Chargeability();
+
+    /** Column name LBR_ISS_WithholdingAmt */
+    public static final String COLUMNNAME_LBR_ISS_WithholdingAmt = "LBR_ISS_WithholdingAmt";
+
+	/** Set ISS Withholding Amount	  */
+	public void setLBR_ISS_WithholdingAmt (BigDecimal LBR_ISS_WithholdingAmt);
+
+	/** Get ISS Withholding Amount	  */
+	public BigDecimal getLBR_ISS_WithholdingAmt();
+
+    /** Column name LBR_OtherWithholdingsAmt */
+    public static final String COLUMNNAME_LBR_OtherWithholdingsAmt = "LBR_OtherWithholdingsAmt";
+
+	/** Set Other Withholdings Amount	  */
+	public void setLBR_OtherWithholdingsAmt (BigDecimal LBR_OtherWithholdingsAmt);
+
+	/** Get Other Withholdings Amount	  */
+	public BigDecimal getLBR_OtherWithholdingsAmt();
+
+    /** Column name LBR_ServiceCode */
+    public static final String COLUMNNAME_LBR_ServiceCode = "LBR_ServiceCode";
+
+	/** Set Service Code	  */
+	public void setLBR_ServiceCode (String LBR_ServiceCode);
+
+	/** Get Service Code	  */
+	public String getLBR_ServiceCode();
+
     /** Column name LBR_ServiceType */
     public static final String COLUMNNAME_LBR_ServiceType = "LBR_ServiceType";
 
@@ -199,6 +300,28 @@ public interface I_LBR_DocLine_ISSQN
 	  */
 	public BigDecimal getLBR_TaxBaseAmt();
 
+    /** Column name LBR_TaxBaseDeductionAmt */
+    public static final String COLUMNNAME_LBR_TaxBaseDeductionAmt = "LBR_TaxBaseDeductionAmt";
+
+	/** Set Tax Base Deduction Amount.
+	  * Defines the Tax Base Deduction Amount
+	  */
+	public void setLBR_TaxBaseDeductionAmt (BigDecimal LBR_TaxBaseDeductionAmt);
+
+	/** Get Tax Base Deduction Amount.
+	  * Defines the Tax Base Deduction Amount
+	  */
+	public BigDecimal getLBR_TaxBaseDeductionAmt();
+
+    /** Column name LBR_TaxIncentive */
+    public static final String COLUMNNAME_LBR_TaxIncentive = "LBR_TaxIncentive";
+
+	/** Set Tax Incentive Indicator	  */
+	public void setLBR_TaxIncentive (String LBR_TaxIncentive);
+
+	/** Get Tax Incentive Indicator	  */
+	public String getLBR_TaxIncentive();
+
     /** Column name LBR_TaxRate */
     public static final String COLUMNNAME_LBR_TaxRate = "LBR_TaxRate";
 
@@ -211,6 +334,28 @@ public interface I_LBR_DocLine_ISSQN
 	  * Indicates the Tax Rate
 	  */
 	public BigDecimal getLBR_TaxRate();
+
+    /** Column name LBR_UncondDiscountAmt */
+    public static final String COLUMNNAME_LBR_UncondDiscountAmt = "LBR_UncondDiscountAmt";
+
+	/** Set Unconditioned Discount Amount	  */
+	public void setLBR_UncondDiscountAmt (BigDecimal LBR_UncondDiscountAmt);
+
+	/** Get Unconditioned Discount Amount	  */
+	public BigDecimal getLBR_UncondDiscountAmt();
+
+    /** Column name ProcessName */
+    public static final String COLUMNNAME_ProcessName = "ProcessName";
+
+	/** Set Process Name.
+	  * Name of the Process
+	  */
+	public void setProcessName (String ProcessName);
+
+	/** Get Process Name.
+	  * Name of the Process
+	  */
+	public String getProcessName();
 
     /** Column name Updated */
     public static final String COLUMNNAME_Updated = "Updated";
@@ -227,17 +372,4 @@ public interface I_LBR_DocLine_ISSQN
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
-	
-	/** Column name IsTaxIncluded */
-    public static final String COLUMNNAME_IsTaxIncluded = "IsTaxIncluded";
-
-	/** Set Price includes Tax.
-	  * Tax is included in the price 
-	  */
-	public void setIsTaxIncluded (boolean IsTaxIncluded);
-
-	/** Get Price includes Tax.
-	  * Tax is included in the price 
-	  */
-	public boolean isTaxIncluded();
 }

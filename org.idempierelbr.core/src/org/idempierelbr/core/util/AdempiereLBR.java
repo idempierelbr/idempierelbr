@@ -27,6 +27,7 @@ import org.compiere.model.MCountry;
 import org.compiere.model.MLocator;
 import org.compiere.model.MOrderLine;
 import org.compiere.model.MPeriod;
+import org.compiere.model.MSysConfig;
 import org.compiere.model.MTable;
 import org.compiere.model.MUOM;
 import org.compiere.model.MUser;
@@ -34,7 +35,12 @@ import org.compiere.model.Query;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
+import org.compiere.util.Msg;
+import org.joda.time.DateTime;
+import org.joda.time.LocalTime;
 import org.joda.time.Period;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 /**
  *	ADempiereLBR
@@ -602,4 +608,37 @@ public abstract class AdempiereLBR{
 		}
 		return true;
 	}	//	isNumber
+	
+	/**
+	 * Retorna o timezone configurado (ajusta caso seja horário de verão)
+	 * 
+	 * @param AD_Org_ID
+	 * @return timezone
+	 */
+	public static String getTimezone(int AD_Client_ID, int AD_Org_ID)
+	{
+		String DEFAULT_TIMEZONE = "-03:00";
+		String timezone = MSysConfig.getValue("LBR_TIMEZONE", DEFAULT_TIMEZONE, AD_Client_ID, AD_Org_ID);
+		
+		if (timezone.length() < 5 || timezone.length() > 6) {
+			log.log(Level.SEVERE, Msg.getMsg(Env.getCtx(), "LBR_WrongTimezoneFormat"));
+			timezone = DEFAULT_TIMEZONE;
+		}
+		
+		// 03:00 should be +03:00
+		if (timezone.length() == 5 && !timezone.startsWith("-") && !timezone.startsWith("+"))
+			timezone = "+" + timezone;
+		
+		boolean dayLightSaving = MSysConfig.getBooleanValue("LBR_DAYLIGHT_SAVING", false, AD_Client_ID, AD_Org_ID);
+		
+		if (dayLightSaving) {
+			DateTimeFormatter formatter = DateTimeFormat.forPattern("HH:mm");
+			DateTime time = formatter.parseDateTime(timezone.substring(1));
+			time = time.minusHours(1);
+			
+			timezone = timezone.substring(0, 1) + formatter.print(time);
+		}
+		
+		return timezone;
+	}
 } //AdempiereLBR

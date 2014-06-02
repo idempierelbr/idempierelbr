@@ -1,11 +1,13 @@
 package org.idempierelbr.tax.model;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
 
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.Query;
+import org.compiere.util.Env;
 
 public class MLBRDocLineIPI extends X_LBR_DocLine_IPI {
 
@@ -13,6 +15,22 @@ public class MLBRDocLineIPI extends X_LBR_DocLine_IPI {
 	 * 
 	 */
 	private static final long serialVersionUID = 8383356153009002225L;
+	
+	/** CST	- IPI */
+	public static final String CST_IPI_00 = "00";
+	public static final String CST_IPI_01 = "01";
+	public static final String CST_IPI_02 = "02";
+	public static final String CST_IPI_03 = "03";
+	public static final String CST_IPI_04 = "04";
+	public static final String CST_IPI_05 = "05";
+	public static final String CST_IPI_49 = "49";
+	public static final String CST_IPI_50 = "50";
+	public static final String CST_IPI_51 = "51";
+	public static final String CST_IPI_52 = "52";
+	public static final String CST_IPI_53 = "53";
+	public static final String CST_IPI_54 = "54";
+	public static final String CST_IPI_55 = "55";
+	public static final String CST_IPI_99 = "99";
 
 	/**
 	 *  Default Constructor
@@ -34,6 +52,36 @@ public class MLBRDocLineIPI extends X_LBR_DocLine_IPI {
 	public MLBRDocLineIPI(Properties ctx, ResultSet rs, String trxName)
 	{
 		super (ctx, rs, trxName);
+	}
+	
+	public BigDecimal getLBR_TaxAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxBaseAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
+		return bd;
+	}
+	
+	public BigDecimal getLBR_TaxRate () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRate);
+		return bd;
+	}
+	
+	public BigDecimal getPriceActual () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_PriceActual);
+		return bd;
+	}
+	
+	public BigDecimal getTotalQty () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_TotalQty);
+		return bd;
 	}
 	
 	/**
