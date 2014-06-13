@@ -2176,4 +2176,19 @@ Please note that base language cannot be a system language.</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="3d7c5976-5ad0-4d8f-a6b2-44f88d5cc7a8">
+  <value column="Name" original="Generate Certificates for NF-e Web Services">Generate Certificates for NF-e Web Services</value>
+  <value column="Description" original="Generate Certificates for NF-e Web Services"/>
+  <value column="Help" original="Based on entries in Window NF-e Web Services, a keystore is generated. You should be online so that the system can connect to the webservices."/>
+ </row>
+ <row trl="Y" uuid="506b68bf-f88f-4781-b11a-a965bcf36e89">
+  <value column="Name" original="Send NF-e Lot to Sefaz">Enviar Lote à Sefaz</value>
+  <value column="Description" original="Send NF-e Lot to Sefaz">Enviar Lote à Sefaz</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="c99525cd-78cc-4232-bda4-b3df8ba3eb39">
+  <value column="Name" original="Query NF-e Lot to Sefaz">Consultar Recibo na Sefaz</value>
+  <value column="Description" original="Query NF-e Lot to Sefaz">Consultar Recibo na Sefaz</value>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

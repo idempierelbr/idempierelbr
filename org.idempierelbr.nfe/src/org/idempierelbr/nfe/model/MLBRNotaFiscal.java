@@ -21,15 +21,13 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.adempiere.base.Core;
-import org.adempiere.exceptions.AdempiereException;
-import org.adempiere.model.ITaxProvider;
 import org.compiere.model.MAttachment;
-import org.compiere.model.MAttachmentEntry;
 import org.compiere.model.MCurrency;
 import org.compiere.model.MDocType;
 import org.compiere.model.MFactAcct;
-import org.compiere.model.MOrderLine;
+import org.compiere.model.MLocation;
+import org.compiere.model.MOrg;
+import org.compiere.model.MOrgInfo;
 import org.compiere.model.MPeriod;
 import org.compiere.model.MSysConfig;
 import org.compiere.model.MTable;
@@ -257,7 +255,6 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	
 	/**
 	 *  getLines
-	 *  @param String orderBy or null
 	 *  @return MNotaFiscalLine[] lines
 	 */
 	public MLBRNotaFiscalLine[] getLines()
@@ -399,9 +396,9 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		{
 			if (attachNFe.getEntry(i).getName().endsWith(NFeXMLGenerator.FILE_EXT))
 				attachNFe.deleteEntry(i);
+			
+			attachNFe.saveEx(get_TrxName());
 		}
-		
-		attachNFe.saveEx();
 		
 		// Generate xml
 		m_processMsg = generateXML();
@@ -437,19 +434,44 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		m_processMsg = ModelValidationEngine.get().fireDocValidate(this, ModelValidator.TIMING_BEFORE_COMPLETE);
 		if (m_processMsg != null)
 			return DocAction.STATUS_Invalid;
-		
-		// SEFAZ - Generate Lot
-		if (MSysConfig.getBooleanValue("LBR_SEFAZ_LOT_ON_COMPLETE", true, getAD_Client_ID(), getAD_Org_ID())) {
-			//  SEFAZ Sync
-			if (MSysConfig.getBooleanValue("LBR_SEFAZ_LOT_SYNC", true, getAD_Client_ID(), getAD_Org_ID())) {
-				
-			}
-		}
-		
+
 		m_processMsg = ModelValidationEngine.get().fireDocValidate(this, ModelValidator.TIMING_AFTER_COMPLETE);
 		if (m_processMsg != null)
 			return DocAction.STATUS_Invalid;
-
+		
+		// SEFAZ - Generate NF-e Lot
+		if (MSysConfig.getBooleanValue("LBR_SEFAZ_LOT_ON_COMPLETE", true, getAD_Client_ID(), getAD_Org_ID())) {
+			log.info("Creating NF-e Lot");
+			MLBRNotaFiscalLot lot = null;
+			MLBRNotaFiscalLotLine lotLine = null;
+			
+			try {
+				lot = new MLBRNotaFiscalLot(getCtx(), 0, get_TrxName());
+				lot.setAD_Org_ID(this.getAD_Org_ID());
+				boolean isSync = MSysConfig.getBooleanValue("LBR_SEFAZ_LOT_SYNC", true, getAD_Client_ID(), getAD_Org_ID());
+				log.info("NF-e Lot is " + (isSync ? "synchronous" : "asynchronous"));
+				lot.setLBR_ProcessingType(isSync ? "S" : "A");
+				lot.setLBR_LotSent(false);
+				lot.setLBR_LotQueried(false);
+				lot.saveEx();
+				
+				lotLine = new MLBRNotaFiscalLotLine(getCtx(), 0, get_TrxName());
+				lotLine.setAD_Org_ID(lot.getAD_Org_ID());
+				lotLine.setLBR_NotaFiscalLot_ID(lot.get_ID());
+				lotLine.setLBR_NotaFiscal_ID(this.get_ID());
+				lotLine.saveEx();
+			} catch (Exception e) {
+				e.printStackTrace();
+				m_processMsg = "Couldn't create NF-e Lot";
+				
+				if (lotLine.get_ID() > 0)
+					lotLine.delete(true);
+				
+				if (lot.get_ID() > 0)
+					lot.delete(true);
+			}
+		}
+		
 		setProcessed(true);	
 		m_processMsg = null;
 
@@ -463,6 +485,18 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		
 		// Before Void
 		m_processMsg = ModelValidationEngine.get().fireDocValidate(this, ModelValidator.TIMING_BEFORE_VOID);
+		if (m_processMsg != null)
+			return false;
+		
+		// Check if NF-e can be voided
+		if (hasImmutableStatus()) {
+			m_processMsg = "It is not possible to void because it is registered on Sefaz";
+			if (m_processMsg != null)
+				return false;	
+		}
+		
+		// Check if NF-e is locked by any NF-e Lot
+		m_processMsg = isLockedByLot();
 		if (m_processMsg != null)
 			return false;
 
@@ -544,6 +578,20 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		/* globalqss - 2317928 - Reactivating/Voiding order must reset posted */
 		MFactAcct.deleteEx(MLBRNotaFiscal.Table_ID, get_ID(), get_TrxName());
 		setPosted(false);
+		
+		// Check if NF-e can be reactivated
+		if (hasImmutableStatus()) {
+			m_processMsg = "It is not possible to reactivate because it is registered on Sefaz";
+			return false;	
+		}
+		
+		// Check if NF-e is locked by any NF-e Lot
+		m_processMsg = isLockedByLot();
+		if (m_processMsg != null)
+			return false;
+		
+		setLBR_NFeStatus(null);
+		setLBR_NFeID(null);
 		
 		// After reActivate
 		m_processMsg = ModelValidationEngine.get().fireDocValidate(this, ModelValidator.TIMING_AFTER_REACTIVATE);
@@ -790,4 +838,105 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		providers.values().toArray(retValue);
 		return retValue;
 	}
+	
+	protected boolean beforeSave(boolean newRecord) {
+		// Dados da Org.
+		MOrg org = new MOrg(getCtx(), getAD_Org_ID(), get_TrxName());
+		MOrgInfo orgInfo = MOrgInfo.get(getCtx(), org.get_ID(), get_TrxName());
+		MLocation orgLoc = new MLocation(getCtx(), orgInfo.getC_Location_ID(), get_TrxName());
+		
+		if (getC_Region_ID() != orgLoc.getC_Region_ID()) {
+			log.saveError("Error", Msg.parseTranslation(getCtx(), "NF-e org. region is different than selected on region field"));
+			return false;
+		}
+		
+		return true;
+	}
+
+	public boolean hasImmutableStatus() {
+		if (getLBR_NFeStatus() == null || getLBR_NFeStatus().trim().equals(""))
+			return false;
+		
+		if (isStatusAutorizado() ||
+				isStatusCancelado() ||
+				isStatusDenegado())
+			return true;
+		
+		return false;
+	}
+	
+	public boolean isStatusAutorizado() {
+		if (getLBR_NFeStatus() == null || getLBR_NFeStatus().trim().equals(""))
+			return false;
+		
+		if (getLBR_NFeStatus().equals("100") || 	// 100 - Autorizado o uso da NF-e
+				getLBR_NFeStatus().equals("150"))	// 150 - Autorizado o uso da NF-e
+			return true;
+		
+		return false;
+	}
+	
+	public boolean isStatusCancelado() {
+		if (getLBR_NFeStatus() == null || getLBR_NFeStatus().trim().equals(""))
+			return false;
+		
+		if (getLBR_NFeStatus().equals("101") || 	// 101 - Cancelamento de NF-e homologado
+				getLBR_NFeStatus().equals("151") || // 151 - Cancelamento de NF-e homologado fora de prazo
+				getLBR_NFeStatus().equals("155"))  	// 155 - Cancelamento de NF-e homologado fora de prazo
+			return true;
+		
+		return false;
+	}
+	
+	public boolean isStatusDenegado() {
+		if (getLBR_NFeStatus() == null || getLBR_NFeStatus().trim().equals(""))
+			return false;
+		
+		if (getLBR_NFeStatus().equals("110") || // 110 - Uso Denegado
+				getLBR_NFeStatus().equals("301") || // 301 - Uso Denegado: Irregularidade fiscal do emitente
+				getLBR_NFeStatus().equals("302") || // 302 - Uso Denegado: Irregularidade fiscal do destinatario
+				getLBR_NFeStatus().equals("303")) 	// 303 - Uso Denegado: Destinatario nao habilitado a operar na UF
+			return true;
+		
+		return false;
+	}
+	
+	private String isLockedByLot() {
+		MTable table = MTable.get (getCtx(), MLBRNotaFiscalLotLine.Table_Name);
+		Query query =  new Query(getCtx(), table, "LBR_NFeID=?", get_TrxName());
+	 		  query.setParameters(new Object[]{getLBR_NFeID()});
+	 	List<MLBRNotaFiscalLotLine> list = query.list();
+	 	for (MLBRNotaFiscalLotLine lotLine : list) {
+	 		String error = "NF-e is in the Lot: " + lotLine.getParent().getDocumentNo();
+	 		MLBRNotaFiscalLot lot = lotLine.getParent();
+	 		
+	 		if (lot.getLBR_ProcessingType().equals("A")) {
+	 			if (lot.isLBR_LotSent() && !lot.isLBR_LotQueried())
+	 				return error;
+	 		}
+	 		
+	 		if (!lot.isLBR_LotSent()) {
+	 			try {
+		 			lotLine.deleteEx(false);
+		 		} catch(Exception e) {
+		 			return error;
+		 		}
+	 		}
+	 	}
+	 	
+	 	return null;
+	}	
+	
+	public void setProcessed (boolean processed)
+	{
+		super.setProcessed (processed);
+		if (get_ID() == 0)
+			return;
+		String set = "SET Processed='"
+			+ (processed ? "Y" : "N")
+			+ "' WHERE LBR_NotaFiscal_ID=" + getLBR_NotaFiscal_ID();
+		int noLine = DB.executeUpdateEx("UPDATE LBR_NotaFiscalLine " + set, get_TrxName());
+		int noTax = DB.executeUpdateEx("UPDATE LBR_NotaFiscalTax " + set, get_TrxName());
+		if (log.isLoggable(Level.FINE)) log.fine("setProcessed - " + processed + " - Lines=" + noLine + ", Tax=" + noTax);
+	}	//	setProcessed
 }

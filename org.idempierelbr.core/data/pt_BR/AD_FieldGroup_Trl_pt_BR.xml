@@ -213,10 +213,10 @@
   <value column="Name" original="Localização Brasil">Adempiere LBR</value>
  </row>
  <row trl="Y" uuid="ab4e86d1-d610-473e-b7c0-516aa7578a26">
-  <value column="Name" original="Validation">Validação</value>
+  <value column="Name" original="Validation (LBR)">Validação</value>
  </row>
  <row trl="Y" uuid="9fb757cc-e889-4009-aacd-f5a39d050a40">
-  <value column="Name" original="Tax">Imposto</value>
+  <value column="Name" original="Tax (LBR)">Imposto</value>
  </row>
  <row trl="N" uuid="ed102c95-79e4-459c-8ffb-c16d7e2a2bfd">
   <value column="Name" original="ICMS">ICMS</value>
@@ -256,5 +256,11 @@
  </row>
  <row trl="Y" uuid="d3fec46c-4422-4da9-9c06-0f1ce44d2992">
   <value column="Name" original="Additional Info (LBR)">Informações Adicionais</value>
+ </row>
+ <row trl="Y" uuid="f4098c41-4567-4ec3-a4e6-22b36df06c66">
+  <value column="Name" original="Lot Sending (LBR)">Envio do Lote</value>
+ </row>
+ <row trl="Y" uuid="a6ebe2aa-07df-4d7b-8f4a-a3b2e8f9c8c2">
+  <value column="Name" original="Lot Receipt (LBR)">Recibo</value>
  </row>
 </idempiereTrl>

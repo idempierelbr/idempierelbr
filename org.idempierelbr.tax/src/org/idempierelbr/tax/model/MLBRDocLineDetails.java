@@ -168,7 +168,8 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			MLBRTax tax, int C_Tax_ID, MProduct product, int C_BPartner_ID) {
 		
 		for (MLBRTaxLine tl : tax.getLines()) {
-			if (tl.getLBR_TaxAmt() == null || tl.getLBR_TaxAmt().compareTo(Env.ZERO) == 0 || !tl.isLBR_PostTax())
+			//if (tl.getLBR_TaxAmt() == null || tl.getLBR_TaxAmt().compareTo(Env.ZERO) == 0 || !tl.isLBR_PostTax())
+			if (!tl.isLBR_PostTax())
 				continue;
 			
 			Integer key = tl.getChild_Tax_ID(C_Tax_ID);
@@ -533,9 +534,12 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			BigDecimal taxTotal 	= Env.ZERO;
 			BigDecimal taxBaseTotal = Env.ZERO;
 			
-			if (taxAmt == null 
-					|| taxAmt.compareTo(Env.ZERO) == 0
-					|| !tl.isLBR_PostTax())
+			//if (taxAmt == null 
+			//		|| taxAmt.compareTo(Env.ZERO) == 0
+			//		|| !tl.isLBR_PostTax())
+			//	continue;
+			
+			if (!tl.isLBR_PostTax())
 				continue;
 			
 			Integer key = tl.getChild_Tax_ID(C_Tax_ID);

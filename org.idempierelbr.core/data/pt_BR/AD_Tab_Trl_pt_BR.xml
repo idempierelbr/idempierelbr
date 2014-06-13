@@ -6810,4 +6810,22 @@ Printing:
   <value column="Description" original="Store Digital Certificates">Store Digital Certificates</value>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="36526fe6-20de-4913-83e4-a81a44d6eaf3">
+  <value column="Name" original="Web Service">Web Service</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain NF-e Web Services">Maintain NF-e Web Services</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="59cb9b08-b06c-4c5c-ab2f-19b32a41b237">
+  <value column="Name" original="NF-e Lot">Lote</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="NF-e Lot Entries">Registros de Lote</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="64273b87-f093-424b-8408-d939e4c5d2e2">
+  <value column="Name" original="NF-e Lot Line">Linha do Lote</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="NF-e Lot Line Entries">Registro de Linha do Lote</value>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

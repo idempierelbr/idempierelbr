@@ -661,4 +661,30 @@ public interface I_LBR_NotaFiscal
 	public int getLBR_BP_Pickup_ID();
 
 	public org.compiere.model.I_C_BPartner getLBR_BP_Pickup() throws RuntimeException;
+	
+	/** Column name LBR_DigestValue */
+    public static final String COLUMNNAME_LBR_DigestValue = "LBR_DigestValue";
+
+	/** Set DigestValue.
+	  * Identifies a DigestValue
+	  */
+	public void setLBR_DigestValue (String LBR_DigestValue);
+
+	/** Get DigestValue.
+	  * Identifies a DigestValue
+	  */
+	public String getLBR_DigestValue();
+	
+	/** Column name LBR_LotSendingProt */
+    public static final String COLUMNNAME_LBR_LotSendingProt = "LBR_LotSendingProt";
+
+	/** Set NF-e Lot Sending Protocol.
+	  * Indicates the protocol of the sending process to Sefaz
+	  */
+	public void setLBR_LotSendingProt (String LBR_LotSendingProt);
+
+	/** Get NF-e Lot Sending Protocol.
+	  * Indicates the protocol of the sending process to Sefaz
+	  */
+	public String getLBR_LotSendingProt();
 }

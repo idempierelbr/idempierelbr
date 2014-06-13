@@ -42,6 +42,12 @@ public class ModelFactory implements IModelFactory {
 			return MLBRDocLineDetailsNfe.class;
 		else if (tableName.equals(MLBRDigitalCertificate.Table_Name)) // Model MLBRDigitalCertificate
 			return MLBRDigitalCertificate.class;
+		else if (tableName.equals(MLBRNFeWebService.Table_Name)) // Model MLBRNFeWebService
+			return MLBRNFeWebService.class;
+		else if (tableName.equals(MLBRNotaFiscalLot.Table_Name)) // Model MLBRNotaFiscalLot
+			return MLBRNotaFiscalLot.class;
+		else if (tableName.equals(MLBRNotaFiscalLotLine.Table_Name)) // Model MLBRNotaFiscalLotLine
+			return MLBRNotaFiscalLotLine.class;
 		
 		return null;
 	}
@@ -74,6 +80,12 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRDocLineDetailsNfe(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRDigitalCertificate.Table_Name)) // Model MLBRDigitalCertificate
 			return new MLBRDigitalCertificate(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRNFeWebService.Table_Name)) // Model MLBRNFeWebService
+			return new MLBRNFeWebService(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRNotaFiscalLot.Table_Name)) // Model MLBRNotaFiscalLot
+			return new MLBRNotaFiscalLot(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRNotaFiscalLotLine.Table_Name)) // Model MLBRNotaFiscalLotLine
+			return new MLBRNotaFiscalLotLine(Env.getCtx(), Record_ID, trxName);
 		
 		return null;
 	}
@@ -106,6 +118,12 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRDocLineDetailsNfe(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRDigitalCertificate.Table_Name)) // MLBRDigitalCertificate
 			return new MLBRDigitalCertificate(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRNFeWebService.Table_Name)) // MLBRNFeWebService
+			return new MLBRNFeWebService(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRNotaFiscalLot.Table_Name)) // MLBRNotaFiscalLot
+			return new MLBRNotaFiscalLot(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRNotaFiscalLotLine.Table_Name)) // MLBRNotaFiscalLotLine
+			return new MLBRNotaFiscalLotLine(Env.getCtx(), rs, trxName);
 		
 		return null;
 	}

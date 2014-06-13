@@ -13,10 +13,30 @@
 package org.idempierelbr.nfe.util;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.StringWriter;
+import java.sql.Timestamp;
 
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.compiere.model.MAttachment;
 import org.compiere.model.MAttachmentEntry;
+import org.compiere.model.MDocType;
 import org.compiere.util.CLogger;
+import org.compiere.util.DB;
 import org.compiere.utils.DigestOfFile;
+import org.idempierelbr.core.util.TextUtil;
+import org.idempierelbr.nfe.model.MLBRNotaFiscal;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * 	Utilitários para gerar a NFe.
@@ -34,7 +54,10 @@ public abstract class NFeUtil
 	public static final String VERSAO_APP		= "3.10";
 	
 	/** XML					*/
-	public static final long XML_SIZE   = 500;
+	public static final long XML_SIZE = 500;
+	
+	/** Reference NFeStatus */
+	//public static final int REFERENCE_ID_LBR_NFeStatus = 1000039;
 	
 	/**
 	 * Gera o cabeçalho da NFe
@@ -150,5 +173,173 @@ public abstract class NFeUtil
 		}
 		return attachedFile;
 	}	//	getAttachmentEntryFile
+	
+	public static String XMLtoString(File xml) throws Exception{
 
+		String dados = "";
+		if (xml == null)
+			return dados;
+
+		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        InputStream inputStream = new FileInputStream(xml);
+        org.w3c.dom.Document doc = documentBuilderFactory.newDocumentBuilder().parse(inputStream);
+        StringWriter stw = new StringWriter();
+        Transformer serializer = TransformerFactory.newInstance().newTransformer();
+        serializer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+        serializer.transform(new DOMSource(doc), new StreamResult(stw));
+        dados = stw.toString();
+
+        if (dados.indexOf("<NFe") != -1){
+	        dados = dados.substring(dados.indexOf("<NFe"),dados.indexOf("</NFe>")+6);
+	        if (dados.startsWith("<NFe>")){
+	        	dados = geraCabecNFe() + dados.substring(5);
+	        }
+        }
+
+        return dados;
+	} //XMLtoString
+	
+	/**
+	 * 	Get Value from XML
+	 *
+	 * @param node
+	 * @param Tag
+	 * @return
+	 */
+	public static String getValue (Document doc, String Tag)
+	{
+		if (doc.getElementsByTagName(Tag) == null)
+			return "";
+
+		if (doc.getElementsByTagName(Tag).item(0) == null)
+			return "";
+
+		return doc.getElementsByTagName(Tag).item(0).getTextContent();
+	}	//	getValue
+	
+	/**
+	 * 	Get Value from XML
+	 *
+	 * @param node
+	 * @param Tag
+	 * @return
+	 */
+	public static String getValue (Node node, String Tag)
+	{
+		if (node == null)
+			return "";
+
+		NodeList nl = ((Element) node).getElementsByTagName(Tag);
+		if (nl == null)
+			return "";
+
+		Element el = (Element) nl.item(0);
+		if (el == null)
+			return "";
+
+		nl = el.getChildNodes();
+		if (nl == null)
+			return "";
+
+		return nl.item(0).getNodeValue();
+	}	//	getValue
+	
+	/**
+	 * String para Timestamp
+	 * @param dhRecbto
+	 * @return
+	 */
+	public static Timestamp stringToTime(String dhRecbto){
+		return TextUtil.stringToTime(dhRecbto.replace('T', ' '), "yyyy-MM-dd HH:mm:ss");
+	} //StringToDate
+
+	/**
+	 * Timestamp para String
+	 * @param dhRecbto
+	 * @return
+	 */
+	public static String timeToString(Timestamp dhRecbto){
+		return TextUtil.timeToString(dhRecbto, "yyyy-MM-dd HH:mm:ss").replace(' ', 'T');
+	} //DateToString
+	
+	public static File generateDistribution(MLBRNotaFiscal nf, Node node) throws Exception{
+		String fileExt = ".xml";
+		File attach = null;
+
+		if (nf.getLBR_LotSendingProt() == null || nf.getLBR_LotSendingProt().equals(""))
+			return attach;
+		
+		if (nf.isStatusAutorizado())
+			fileExt = "-dst.xml";
+		else if (nf.isStatusCancelado())
+			fileExt = "-can.xml";
+
+		File xml = getAttachmentEntryFile(nf.getAttachment().getEntry(0));
+		if (xml == null || xml.getName().endsWith(fileExt)) // Já está no padrão de distribuição
+			return attach;
+
+		StringBuilder newXmlContent = new StringBuilder();
+		newXmlContent.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+		newXmlContent.append("<nfeProc xmlns=\"http://www.portalfiscal.inf.br/nfe\" versao=\"");
+		newXmlContent.append(VERSAO);
+		newXmlContent.append("\">");
+		newXmlContent.append(XMLtoString(xml));
+		newXmlContent.append("<protNFe xmlns=\"http://www.portalfiscal.inf.br/nfe\" versao=\"");
+		newXmlContent.append(VERSAO);
+		newXmlContent.append("\">");
+		newXmlContent.append("<infProt>");
+		
+		String tpAmb	= NFeUtil.getValue(node, "tpAmb");
+		String verAplic	= NFeUtil.getValue(node, "verAplic");
+		String chNFe	= NFeUtil.getValue(node, "chNFe");
+		String dhRecbto	= NFeUtil.getValue(node, "dhRecbto");
+		String cStat	= NFeUtil.getValue(node, "cStat");
+		String xMotivo	= NFeUtil.getValue(node, "xMotivo");
+		
+		newXmlContent.append("<tpAmb>");
+		newXmlContent.append(tpAmb);
+		newXmlContent.append("</tpAmb>");
+		newXmlContent.append("<verAplic>");
+		newXmlContent.append(verAplic);
+		newXmlContent.append("</verAplic>");
+		newXmlContent.append("<chNFe>");
+		newXmlContent.append(chNFe);
+		newXmlContent.append("</chNFe>");
+		newXmlContent.append("<dhRecbto>");
+		newXmlContent.append(dhRecbto);
+		newXmlContent.append("</dhRecbto>");
+		newXmlContent.append("<nProt>");
+		newXmlContent.append(nf.getLBR_LotSendingProt());
+		newXmlContent.append("</nProt>");
+		newXmlContent.append("<digVal>");
+		newXmlContent.append(nf.getLBR_DigestValue());
+		newXmlContent.append("</digVal>");
+		newXmlContent.append("<cStat>");
+		newXmlContent.append(cStat);
+		newXmlContent.append("</cStat>");
+		newXmlContent.append("<xMotivo>");
+		newXmlContent.append(xMotivo);
+		newXmlContent.append("</xMotivo>");
+		newXmlContent.append("</infProt></protNFe></nfeProc>");
+
+		attach = new File(TextUtil.generateTmpFile(newXmlContent.toString(), nf.getLBR_NFeID() + fileExt));
+		return attach;
+	} //NFeDistribution
+	
+	/**
+	 * update Attachment
+	 * @param nf
+	 * @param xml
+	 * @return true = success, false = error
+	 */
+	public static boolean updateAttach(MLBRNotaFiscal nf, File xml){
+		if (xml != null){
+			MAttachment attachDist = nf.createAttachment();
+			attachDist.addEntry(xml);
+			return attachDist.save();
+		}
+
+		return true;
+	}
+	
 }	//	NFeUtil

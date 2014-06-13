@@ -387,8 +387,13 @@ public class MLBRTax extends X_LBR_Tax
 			//	Ajusta os parâmetros opcionais (ex. Frete, SISCOMEX)
 			if (params != null) for (String key : params.keySet())
 			{				
-				log.finer ("Set Parameters, Parameter=" + key + "=" + params.get(key).doubleValue());
-				bsh.set(key, params.get(key).doubleValue());
+				BigDecimal value = params.get(key);
+				
+				if (value == null)
+					value = Env.ZERO;
+				
+				log.finer ("Set Parameters, Parameter=" + key + "=" + value.doubleValue());
+				bsh.set(key, value.doubleValue());
 			}
 			//
 			result = new BigDecimal ((Double) bsh.eval(formula));

@@ -1100,4 +1100,38 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 			 return 0;
 		return ii.intValue();
 	}
+	
+	/** Set DigestValue.
+	@param LBR_DigestValue 
+	Identifies a DigestValue
+	  */
+	public void setLBR_DigestValue (String LBR_DigestValue)
+	{
+		set_Value (COLUMNNAME_LBR_DigestValue, LBR_DigestValue);
+	}
+	
+	/** Get DigestValue.
+		@return Identifies a DigestValue
+	  */
+	public String getLBR_DigestValue () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_DigestValue);
+	}
+	
+	/** Set NF-e Lot Sending Protocol.
+	@param LBR_LotSendingProt 
+	Indicates the protocol of the sending process to Sefaz
+	  */
+	public void setLBR_LotSendingProt (String LBR_LotSendingProt)
+	{
+		set_Value (COLUMNNAME_LBR_LotSendingProt, LBR_LotSendingProt);
+	}
+	
+	/** Get NF-e Lot Sending Protocol.
+		@return Indicates the protocol of the sending process to Sefaz
+	  */
+	public String getLBR_LotSendingProt () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_LotSendingProt);
+	}
 }

@@ -2807,4 +2807,24 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="72426844-e17e-4e30-b41a-b3c4d9c724ac">
+  <value column="Name" original="LBR_NFeLotProcessingType">LBR_NFeLotProcessingType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="7d97f996-a2b8-40ee-9836-e75253529268">
+  <value column="Name" original="LBR_NotaFiscal">LBR_NotaFiscal</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="744a3c0a-753c-4cc7-adcc-4a8dcf46c286">
+  <value column="Name" original="RelType NF-e &lt;= NF-e Lot"><![CDATA[RelType NF-e <= NF-e Lot]]></value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="d9c4181a-aa24-4b7e-9a0f-2f08df8c09df">
+  <value column="Name" original="RelType NF-e Lot &lt;= NF-e"><![CDATA[RelType NF-e Lot <= NF-e]]></value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

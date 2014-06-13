@@ -565,7 +565,8 @@ public class NFeXMLGenerator {
 				destinatario.setCNPJ("99999999000191");
 			}
 			destinatario.setxNome("NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL");
-			destinatario.setIE("");
+			destinatario.setIE(null);
+			destinatario.setIndIEDest("2");
 		}
 		
 		destinatario.setEnderDest(enderDest);
@@ -1366,6 +1367,7 @@ public class NFeXMLGenerator {
 			nf.save(trxName);
 			//	Anexa o XML na NF
 			MAttachment attachNFe = nf.createAttachment();
+			attachNFe.setAD_Org_ID(nf.getAD_Org_ID());
 			attachNFe.addEntry(file);
 			attachNFe.save(trxName);
 		}

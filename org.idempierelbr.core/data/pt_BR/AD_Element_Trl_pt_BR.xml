@@ -57624,4 +57624,184 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row trl="N" uuid="f0479807-4095-4ec7-afa3-51877957bde2">
+  <value column="Name" original="NF-e Web Service">NF-e Web Service</value>
+  <value column="PrintName" original="NF-e Web Service">NF-e Web Service</value>
+  <value column="Description" original="Web Service used to communicate with Sefaz">Web Service used to communicate with Sefaz</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="2daa698d-5f6c-40fd-9c5a-5a3a9258db7c">
+  <value column="Name" original="NF-e Web Service">NF-e Web Service</value>
+  <value column="PrintName" original="NF-e Web Service">NF-e Web Service</value>
+  <value column="Description" original="Web Service used to communicate with Sefaz">Web Service used to communicate with Sefaz</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="4ac0c0b5-2fb2-462b-aec4-bbbbacda93c8">
+  <value column="Name" original="NF-e Lot Queried On">Recibo Consultado em</value>
+  <value column="PrintName" original="NF-e Lot Queried On">Recibo Consultado em</value>
+  <value column="Description" original="The date+time (expressed in decimal format) when the NF-e Lot has been queried">O dia+hora em que o recibo foi consultado na Sefaz</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="4949c13e-2139-41ea-8016-c4af0e47e1ac">
+  <value column="Name" original="NF-e Lot Sent On">Lote Enviado em</value>
+  <value column="PrintName" original="NF-e Lot Sent On">Lote Enviado em</value>
+  <value column="Description" original="The date+time (expressed in decimal format) when the NF-e Lot has been sent">O dia+hora do envio do lote à Sefaz</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="6dd47221-6a6a-4743-9a62-0caa873a8495">
+  <value column="Name" original="NF-e Lot">NF-e Lot</value>
+  <value column="PrintName" original="NF-e Lot">NF-e Lot</value>
+  <value column="Description" original="Identifies a NF-e Lot">Identifies a NF-e Lot</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="5c3d28c0-df88-45ea-9c37-b1787117f191">
+  <value column="Name" original="NF-e Lot">NF-e Lot</value>
+  <value column="PrintName" original="NF-e Lot">NF-e Lot</value>
+  <value column="Description" original="Identifies a NF-e Lot">Identifies a NF-e Lot</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="a2bc0f3a-66f4-4629-a259-2bf792f58c17">
+  <value column="Name" original="Processing Type">Tipo de Processamento</value>
+  <value column="PrintName" original="Processing Type">Tipo de Processamento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="4593f19d-45be-481b-a167-3d881479ec45">
+  <value column="Name" original="Send NF-e Lot">Send NF-e Lot</value>
+  <value column="PrintName" original="Send NF-e Lot">Send NF-e Lot</value>
+  <value column="Description" original="Process to send NF-e Lot to Sefaz">Process to send NF-e Lot to Sefaz</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="72507861-2141-4bc8-adc0-f9b57b206fd4">
+  <value column="Name" original="Query NF-e Lot">Query NF-e Lot</value>
+  <value column="PrintName" original="Query NF-e Lot">Query NF-e Lot</value>
+  <value column="Description" original="Process to query NF-e Lot to Sefaz">Process to query NF-e Lot to Sefaz</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="6c1e7044-5266-4fc4-bab8-b44b0e5aa7a5">
+  <value column="Name" original="NF-e Lot Sent">Lote Enviado</value>
+  <value column="PrintName" original="NF-e Lot Sent">Lote Enviado</value>
+  <value column="Description" original="Indicate if the NF-e Lot was sent correctly to Sefaz">Indica se o lote foi enviado corretamente à Sefaz</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="a122a31b-f488-4018-84c9-2fb123023680">
+  <value column="Name" original="NF-e Lot Queried">Recibo Consultado</value>
+  <value column="PrintName" original="NF-e Lot Queried">Recibo Consultado</value>
+  <value column="Description" original="Indicate if the NF-e Lot was queried correctly to Sefaz">Indica se o recibo foi consultado na Sefaz</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="743ada89-4bfd-4b34-92cf-40ea30e57185">
+  <value column="Name" original="NF-e Lot Sending Status">Estado do Envio</value>
+  <value column="PrintName" original="NF-e Lot Sending Status">Estado do Envio</value>
+  <value column="Description" original="Indicates the status of the sending process to Sefaz">Indica o estado do envio do lote à Sefaz</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="c0b97cde-e70a-4417-a951-3b7720a69959">
+  <value column="Name" original="NF-e Lot Query Status">Estado da Consulta</value>
+  <value column="PrintName" original="NF-e Lot Query Status">Estado da Consulta</value>
+  <value column="Description" original="Indicates the status of the query process to Sefaz">Indica o estado da consulta do recibo na Sefaz</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="054075b6-5753-4f10-bc1e-635711b476e6">
+  <value column="Name" original="NF-e Lot Sending Receipt">Recibo do Lote</value>
+  <value column="PrintName" original="NF-e Lot Sending Receipt">Recibo do Lote</value>
+  <value column="Description" original="Indicates the receipt of the sending process to Sefaz">Indica o número do recibo informado pela Sefaz, referente ao envio do lote</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="e621e68c-2e17-4888-afc7-b71a800aba2c">
+  <value column="Name" original="NF-e Lot Sending Protocol">Protocolo do Lote</value>
+  <value column="PrintName" original="NF-e Lot Sending Protocol">Protocolo do Lote</value>
+  <value column="Description" original="Indicates the protocol of the sending process to Sefaz">Indica o número do protocolo do processamento do lote pela Sefaz</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="31436db1-1883-419f-88b5-a351c8c5c349">
+  <value column="Name" original="NF-e Lot Line">NF-e Lot Line</value>
+  <value column="PrintName" original="NF-e Lot Line">NF-e Lot Line</value>
+  <value column="Description" original="Identifies a NF-e Lot Line">Identifies a NF-e Lot Line</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="22426298-e6e8-4037-a479-46afa2d5bbe3">
+  <value column="Name" original="NF-e Lot Line">NF-e Lot Line</value>
+  <value column="PrintName" original="NF-e Lot Line">NF-e Lot Line</value>
+  <value column="Description" original="Identifies a NF-e Lot Line">Identifies a NF-e Lot Line</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="7f70d38f-1a82-4c29-8922-c5f1c6ceb798">
+  <value column="Name" original="DigestValue">DigestValue</value>
+  <value column="PrintName" original="DigestValue">DigestValue</value>
+  <value column="Description" original="Identifies a DigestValue">Identifies a DigestValue</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
 </idempiereTrl>

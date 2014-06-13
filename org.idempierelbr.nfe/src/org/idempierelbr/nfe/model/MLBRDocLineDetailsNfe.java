@@ -140,7 +140,7 @@ public class MLBRDocLineDetailsNfe extends MLBRDocLineDetailsTax implements IDoc
 			setLBR_PriceTax((BigDecimal)po.get_Value("PriceActual"));
 				
 			// Calculate gross amount
-			setLBR_GrossAmt(((BigDecimal)po.get_Value("LineNetAmt")).add(getDiscountAmt()));
+			setLBR_GrossAmt(((BigDecimal)po.get_Value("LineNetAmt")).add(getDiscountAmt() == null ? Env.ZERO : getDiscountAmt()));
 		}
 	}
 	
@@ -174,7 +174,7 @@ public class MLBRDocLineDetailsNfe extends MLBRDocLineDetailsTax implements IDoc
 				params.put(MLBRTax.FREIGHT, getFreightAmt());
 				params.put(MLBRTax.OTHERCHARGES, getSurcharges());
 				params.put(MLBRTax.QTY, getLBR_QtyTax());
-				params.put(MLBRTax.AMT, getLBR_GrossAmt().subtract(getDiscountAmt()));
+				params.put(MLBRTax.AMT, getLBR_GrossAmt().subtract(getDiscountAmt() == null ? Env.ZERO : getDiscountAmt()));
 				
 				//if (getIVARateFromTaxTransaction() != null && getIVARateFromTaxTransaction().signum() == 1)
 				//	params.put("IVA", getAdjustedIva().divide(Env.ONEHUNDRED, 4, BigDecimal.ROUND_HALF_UP));

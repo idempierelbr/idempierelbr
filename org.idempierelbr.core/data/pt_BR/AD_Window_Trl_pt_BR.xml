@@ -2149,4 +2149,14 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="00499137-71c5-4baa-879c-829117782f55">
+  <value column="Name" original="NF-e Web Service">NF-e Web Service</value>
+  <value column="Description" original="Maintain NF-e Web Services">Maintain NF-e Web Services</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="40437224-28a7-420a-b87b-af90f540e211">
+  <value column="Name" original="Brazilian Fiscal Invoice Lot">Lote de Nota Fiscal</value>
+  <value column="Description" original="Customer &amp; Vendor Brazilian Fiscal Invoice Lot Entry">Registro e manutenção de lotes de Nota Fiscal (para envio à Sefaz)</value>
+  <value column="Help" original="The Brazilian Fiscal Invoice Lot Window allows you to display and enter lots and send them to Sefaz."/>
+ </row>
 </idempiereTrl>

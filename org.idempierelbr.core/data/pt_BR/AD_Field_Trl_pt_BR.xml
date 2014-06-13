@@ -1053,4 +1053,9 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Description" original="Name of the Process">Número do Processo</value>
   <value column="Help" original=""/>
  </row>
+ <row trl="Y" uuid="a1b67292-0f9f-41fc-85f3-c5073d9f94f7">
+  <value column="Name" original="NF-e Lot Sending Protocol">Protocolo</value>
+  <value column="Description" original="Indicates the protocol of the sending process to Sefaz">Indica o número do protocolo do processamento do lote pela Sefaz</value>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>
