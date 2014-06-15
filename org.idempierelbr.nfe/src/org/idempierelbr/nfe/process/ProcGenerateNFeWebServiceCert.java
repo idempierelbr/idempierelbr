@@ -108,24 +108,14 @@ public class ProcGenerateNFeWebServiceCert extends SvrProcess
 	private static File generateCertificate(String[] passphrases) throws Exception
 	{
 		File file = File.createTempFile("cert_", ".keystore");
+		KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+		char[] store = ("changeit").toCharArray();
+		ks.load(null, store);
 				
 		for(String passphrase : passphrases){
-		
-			//String load = FilePath + FileName;
-
-			//if (!file.exists())
-			//	load = null;
-			
 			String[] conexao = passphrase.split(":");
-			
-			char[] store = ("changeit").toCharArray();
-			
 			String host = conexao[0];
 			int    port = (conexao.length == 1) ? 443 : Integer.parseInt(conexao[1]);
-			
-			KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-			ks.load(null, store);
-		
 			SSLContext context = SSLContext.getInstance("TLS");
 			TrustManagerFactory tmf =
 			    TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
@@ -191,7 +181,6 @@ public class ProcGenerateNFeWebServiceCert extends SvrProcess
 			System.out.println();
 			System.out.println ("Added certificate to keystore " + file.getName() + " using alias '" + alias + "'");
 		}
-		
 		return file;
 	}
 
