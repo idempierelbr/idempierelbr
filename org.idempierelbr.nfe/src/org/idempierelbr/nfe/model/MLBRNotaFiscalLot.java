@@ -151,6 +151,22 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 
 		try{
 			String xmlLot = geraLote();
+			
+			boolean isContingencia = false;
+			int index = xmlLot.indexOf("<tpEmis>");
+			if (index >= 0) {
+				String tpEmis = xmlLot.substring(index+8, index+9);
+				if (!tpEmis.equals("1"))
+					isContingencia = true;
+			}
+			
+			boolean isHomologacao = false;
+			index = xmlLot.indexOf("<tpAmb>");
+			if (index >= 0) {
+				String tpAmb = xmlLot.substring(index+7, index+8);
+				if (tpAmb.equals("2"))
+					isHomologacao = true;
+			}
 
 			// Validação envio
 			/*String validation = ValidaXML.validaEnvXML(xmlLot);
@@ -160,7 +176,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 			xmlLot = "<nfeDadosMsg>" + xmlLot + "</nfeDadosMsg>";
 			
 			StubConnector connector = new StubConnector(NFeUtil.VERSAO_APP,
-					orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_AUTORIZACAO, false, true);
+					orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_AUTORIZACAO, isContingencia, isHomologacao);
 			String result = connector.sendMessage(xmlLot);
 			
 			// Resposta do Envio
