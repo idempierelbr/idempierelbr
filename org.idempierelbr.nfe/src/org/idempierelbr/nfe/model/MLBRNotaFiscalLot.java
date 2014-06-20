@@ -5,7 +5,6 @@ import java.io.StringReader;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -39,12 +38,10 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 	public MLBRNotaFiscalLot(Properties ctx, int LBR_NotaFiscalLot_ID,
 			String trxName) {
 		super(ctx, LBR_NotaFiscalLot_ID, trxName);
-		// TODO Auto-generated constructor stub
 	}
 
 	public MLBRNotaFiscalLot(Properties ctx, ResultSet rs, String trxName) {
 		super(ctx, rs, trxName);
-		// TODO Auto-generated constructor stub
 	}
 	
 	/**
@@ -62,13 +59,12 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 	}	//	getLines
 	
 	/**
-	 * 	Gera o arquivo de Lote
+	 * 	Generate xml for NF-e Lot (before sending to Sefaz)
 	 *
-	 * @param String envType
-	 * @return String lot
+	 * @return String lot xml
 	 * @throws Exception
 	 */
-	public String geraLote() throws Exception
+	private String generateLot() throws Exception
 	{
 		log.fine("Generating NF-e Lot: " + getDocumentNo());
 		String[] xmlGerado = getXMLs();
@@ -125,12 +121,11 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 	}	//	gerarLote
 
 	/**
-	 * 	Envia Lote NFe
-	 *
-	 *  @return String result
-	 *  @throws Exception
+	 * 	Send NF-e Lot to Sefaz
+	 * 
+	 *  @return String error or ""
 	 */
-	public String enviaNFe() throws Exception
+	public String sendLot()
 	{
 		Properties ctx = getCtx();
 
@@ -147,114 +142,110 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 		MRegion  orgRegion = new MRegion(ctx, orgLoc.getC_Region_ID(), get_TrxName());
 		
 		//INICIALIZA CERTIFICADO
-		MLBRDigitalCertificate.setCertificate(ctx, getAD_Org_ID());
-
-		try{
-			String xmlLot = geraLote();
-			
-			boolean isContingencia = false;
-			int index = xmlLot.indexOf("<tpEmis>");
-			if (index >= 0) {
-				String tpEmis = xmlLot.substring(index+8, index+9);
-				if (!tpEmis.equals("1"))
-					isContingencia = true;
-			}
-			
-			boolean isHomologacao = false;
-			index = xmlLot.indexOf("<tpAmb>");
-			if (index >= 0) {
-				String tpAmb = xmlLot.substring(index+7, index+8);
-				if (tpAmb.equals("2"))
-					isHomologacao = true;
-			}
-
-			// Validação envio
-			/*String validation = ValidaXML.validaEnvXML(xmlLot);
-			if (!validation.equals(""))
-				return validation;*/
-			
-			xmlLot = "<nfeDadosMsg>" + xmlLot + "</nfeDadosMsg>";
-			
-			StubConnector connector = new StubConnector(NFeUtil.VERSAO_APP,
-					orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_AUTORIZACAO, isContingencia, isHomologacao);
-			String result = connector.sendMessage(xmlLot);
-			
-			// Resposta do Envio
-			/*validation = ValidaXML.validaRetXML(result);
-			if (!validation.equals(""))
-				return validation;*/
-
-			MAttachment attachLotNFe = createAttachment();
-			File attachFile = new File(TextUtil.generateTmpFile(result, getDocumentNo() + "-rec.xml"));
-			attachLotNFe.addEntry(attachFile);
-			attachLotNFe.saveEx(get_TrxName());
-
-	        DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-	        Document doc = builder.parse(new InputSource(new StringReader(result)));
-
-	        String cStat = doc.getElementsByTagName("cStat").item(0).getTextContent();
-
-	        String nRec = null;
-	        if (doc.getElementsByTagName("nRec") != null)
-	        	nRec = NFeUtil.getValue(doc, "nRec");
-	        
-	        // Corrige tipo de processamento, caso Sefaz não aceitar método síncrono
-	        if (getLBR_ProcessingType().equals("S") && nRec != null)
-	        	setLBR_ProcessingType("A");
-
-	        String dhRecbto = null;
-	        if (doc.getElementsByTagName("dhRecbto") != null)
-	        	dhRecbto = NFeUtil.getValue(doc, "dhRecbto");
-
-	        setLBR_LotSendingStatus(cStat);
-	        
-	        if (getLBR_ProcessingType().equals("S")) {
-	        	String nProt = null;
-		        if (doc.getElementsByTagName("nProt") != null)
-		        	nProt = NFeUtil.getValue(doc, "nProt");
-		        
-	        	setLBR_LotSendingProt(nProt);
-	        	
-	        	//
-			    String cStatL = NFeUtil.getValue(doc, "cStat");
-			    NodeList infProt =  doc.getElementsByTagName("infProt");
-			    
-	        	// Marcar como processado somente em 104 ou 999
-			    if (cStatL.equals("104") || cStatL.equals("999")) {	//	Lote Processado ou 999 Erro não catalogado
-			    	setLBR_LotQueried(true);
-				    setProcessed(true);
-				    
-				    MLBRNotaFiscalLotLine[] lines = getLines();
-
-				    for (int i=0; i< infProt.getLength(); i++) {
-			        	Node node = infProt.item(i);
-			        	updateLine(lines, node);
-			        }
-				}
-	        } else if (getLBR_ProcessingType().equals("A"))
-	        	setLBR_LotSendingRec(nRec);
-
-	        Timestamp sentOn = NFeUtil.stringToTime(dhRecbto);
-	        setLBR_LotSentOn(sentOn);
-	        setLBR_LotSent(true);
-	        save();
-		}
-		catch (Throwable e1){
-			log.severe(e1.getLocalizedMessage());
-			e1.printStackTrace();
-			return e1.getLocalizedMessage();
+		try {
+			MLBRDigitalCertificate.setCertificate(ctx, getAD_Org_ID());
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Could not set digital certificate";
 		}
 
+		String xmlLot;
+		
+		try {
+			xmlLot = generateLot();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Could not generate xml";
+		}
+
+		// Validação envio
+		/*String validation = ValidaXML.validaEnvXML(xmlLot);
+		if (!validation.equals(""))
+			return validation;*/
+		
+		xmlLot = "<nfeDadosMsg>" + xmlLot + "</nfeDadosMsg>";
+		
+		StubConnector connector = new StubConnector(NFeUtil.VERSAO_APP,
+				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_AUTORIZACAO,
+				isContingencia(xmlLot), isHomologacao(xmlLot));
+		String result = connector.sendMessage(xmlLot);
+		
+		// Resposta do Envio
+		/*validation = ValidaXML.validaRetXML(result);
+		if (!validation.equals(""))
+			return validation;*/
+
+		MAttachment attachLotNFe = createAttachment();
+		File attachFile = new File(TextUtil.generateTmpFile(result, getDocumentNo() + "-rec.xml"));
+		attachLotNFe.addEntry(attachFile);
+		attachLotNFe.saveEx(get_TrxName());
+		
+		DocumentBuilder builder;
+		Document doc;
+
+		try {
+			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+        	doc = builder.parse(new InputSource(new StringReader(result)));
+		} catch (Exception e) {
+        	e.printStackTrace();
+			return "Could not parse xml";
+		}
+
+        String cStat = doc.getElementsByTagName("cStat").item(0).getTextContent();
+
+        String nRec = null;
+        if (doc.getElementsByTagName("nRec") != null)
+        	nRec = NFeUtil.getValue(doc, "nRec");
+        
+        // Corrige tipo de processamento, caso Sefaz não aceitar método síncrono
+        if (getLBR_ProcessingType().equals("S") && nRec != null)
+        	setLBR_ProcessingType("A");
+
+        String dhRecbto = null;
+        if (doc.getElementsByTagName("dhRecbto") != null)
+        	dhRecbto = NFeUtil.getValue(doc, "dhRecbto");
+
+        setLBR_LotSendingStatus(cStat);
+        
+        String cStatL = NFeUtil.getValue(doc, "cStat");
+	    NodeList infProt =  doc.getElementsByTagName("infProt");
+        
+        if (getLBR_ProcessingType().equals("S")) {
+        	String nProt = null;
+	        if (doc.getElementsByTagName("nProt") != null)
+	        	nProt = NFeUtil.getValue(doc, "nProt");
+	        
+        	setLBR_LotSendingProt(nProt);
+        	
+        	setLBR_LotQueried(true);
+		    setProcessed(true);
+        } else if (getLBR_ProcessingType().equals("A"))
+        	setLBR_LotSendingRec(nRec);
+        
+        if (isImmutableStatus(cStatL)) {
+		    MLBRNotaFiscalLotLine[] lines = getLines();
+
+		    for (int i=0; i< infProt.getLength(); i++) {
+	        	Node node = infProt.item(i);
+	        	updateLine(lines, node);
+	        }
+		    
+		    setLBR_LotSent(true);
+		}
+
+        Timestamp sentOn = NFeUtil.stringToTime(dhRecbto);
+        setLBR_LotSentOn(sentOn);
+        save();
+        
 		return "";
 	}
 	
 	/**
-	 * 	Consulta Lote NFe
+	 * 	Query NF-e Lot to Sefaz
 	 *
-	 *  @return String result
-	 *  @throws Exception
+	 *  @return String error or ""
 	 */
-	public String consultaNFe () throws Exception
+	public String queryLot ()
 	{
 		Properties ctx = getCtx();
 		String trxName = get_TrxName();
@@ -263,7 +254,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 
 		if (!isLBR_LotSent()) {
 			log.log(Level.SEVERE, "NF-e Lot not sent yet");
-			throw new Exception("NF-e Lot not sent yet");
+			return "NF-e Lot not sent yet";
 		}
 
 		// Dados da Org.
@@ -273,71 +264,84 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 		MRegion  orgRegion = new MRegion(ctx, orgLoc.getC_Region_ID(), get_TrxName());
 		
 		//INICIALIZA CERTIFICADO
-		MLBRDigitalCertificate.setCertificate(ctx, getAD_Org_ID());
-		//
-		try{
-			StringBuilder xmlLot = new StringBuilder();
-			xmlLot.append("<consReciNFe xmlns=\"http://www.portalfiscal.inf.br/nfe\" versao=\"");
-			xmlLot.append(NFeUtil.VERSAO_APP);
-			xmlLot.append("\">");
-			xmlLot.append("<tpAmb>");
-			xmlLot.append("2");
-			xmlLot.append("</tpAmb>");
-			xmlLot.append("<nRec>");
-			xmlLot.append(getLBR_LotSendingRec());
-			xmlLot.append("</nRec>");
-			xmlLot.append("</consReciNFe>");
+		try {
+			MLBRDigitalCertificate.setCertificate(ctx, getAD_Org_ID());
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Could not set digital certificate";
+		}
 
-			//	Validação envio
-			/*String validation = ValidaXML.validaConsultaProt(nfeConsultaDadosMsg);
-			if (!validation.equals(""))
-				return validation;*/
-			
-			StubConnector connector = new StubConnector(NFeUtil.VERSAO_APP,
-					orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_RET_AUTORIZACAO, false, true);
-			String result = connector.sendMessage("<nfeDadosMsg>" + xmlLot.toString() + "</nfeDadosMsg>");
-			
-			MAttachment attachLotNFe = createAttachment();
-			File attachFile = new File(TextUtil.generateTmpFile(result, getDocumentNo() + "-pro-rec.xml"));
-			attachLotNFe.addEntry(attachFile);
-			attachLotNFe.saveEx(get_TrxName());
+		StringBuilder xmlLot = new StringBuilder();
+		xmlLot.append("<consReciNFe xmlns=\"http://www.portalfiscal.inf.br/nfe\" versao=\"");
+		xmlLot.append(NFeUtil.VERSAO_APP);
+		xmlLot.append("\">");
+		xmlLot.append("<tpAmb>");
+		xmlLot.append("2");
+		xmlLot.append("</tpAmb>");
+		xmlLot.append("<nRec>");
+		xmlLot.append(getLBR_LotSendingRec());
+		xmlLot.append("</nRec>");
+		xmlLot.append("</consReciNFe>");
 
-			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-		    Document doc = builder.parse(new InputSource(new StringReader(result)));
-		    //
-		    String cStatL = NFeUtil.getValue(doc, "cStat");
-		    NodeList infProt =  doc.getElementsByTagName("infProt");
+		//	Validação envio
+		/*String validation = ValidaXML.validaConsultaProt(nfeConsultaDadosMsg);
+		if (!validation.equals(""))
+			return validation;*/
+		
+		StubConnector connector = new StubConnector(NFeUtil.VERSAO_APP,
+				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_RET_AUTORIZACAO,
+				isContingencia(xmlLot.toString()), isHomologacao(xmlLot.toString()));
+		String result = connector.sendMessage("<nfeDadosMsg>" + xmlLot.toString() + "</nfeDadosMsg>");
+		
+		MAttachment attachLotNFe = createAttachment();
+		File attachFile = new File(TextUtil.generateTmpFile(result, getDocumentNo() + "-pro-rec.xml"));
+		attachLotNFe.addEntry(attachFile);
+		attachLotNFe.saveEx(get_TrxName());
 
-		    // Marcar como processado somente em 104 ou 999
-		    if (cStatL.equals("104") || cStatL.equals("999")) {	//	Lote Processado ou 999 Erro não catalogado
-		    	setLBR_LotQueried(true);
-			    setProcessed(true);
-			    
-			    MLBRNotaFiscalLotLine[] lines = getLines();
+		DocumentBuilder builder;
+		Document doc;
+		
+		try {
+			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+		    doc = builder.parse(new InputSource(new StringReader(result)));
+		} catch (Exception e) {
+	    	e.printStackTrace();
+			return "Could not parse xml";
+		}
+	    //
+	    String cStatL = NFeUtil.getValue(doc, "cStat");
+	    NodeList infProt =  doc.getElementsByTagName("infProt");
 
-			    for (int i=0; i< infProt.getLength(); i++) {
-		        	Node node = infProt.item(i);
-		        	updateLine(lines, node);
-		        }
-			}
+	    if (isImmutableStatus(cStatL)) {
+	    	setLBR_LotQueried(true);
+		    setProcessed(true);
 		    
-		    String dhRecbto = null;
-	        if (doc.getElementsByTagName("dhRecbto") != null)
-	        	dhRecbto = NFeUtil.getValue(doc, "dhRecbto");
+		    MLBRNotaFiscalLotLine[] lines = getLines();
 
-		    setLBR_LotQueryStatus(cStatL);
-		    Timestamp queriedOn = NFeUtil.stringToTime(dhRecbto);
-		    setLBR_LotQueriedOn(queriedOn);
-		    save(trxName);
+		    for (int i=0; i< infProt.getLength(); i++) {
+	        	Node node = infProt.item(i);
+	        	updateLine(lines, node);
+	        }
 		}
-		catch (Throwable e1){
-			log.severe(e1.getLocalizedMessage());
-			e1.printStackTrace();
-		}
+	    
+	    String dhRecbto = null;
+        if (doc.getElementsByTagName("dhRecbto") != null)
+        	dhRecbto = NFeUtil.getValue(doc, "dhRecbto");
 
-		return "";
+	    setLBR_LotQueryStatus(cStatL);
+	    Timestamp queriedOn = NFeUtil.stringToTime(dhRecbto);
+	    setLBR_LotQueriedOn(queriedOn);
+	    save(trxName);
+
+	    return "";
 	}
 	
+	/**
+	 * 	Update Lot line and NF-e with result from query to Sefaz
+	 *
+	 * @param lines Lot lines array
+	 * @param node NF-e entry from Sefaz returned message
+	 */
 	private void updateLine(MLBRNotaFiscalLotLine[] lines, Node node) {
 		if (node.getNodeType() == Node.ELEMENT_NODE) {
 			String chNFe	= NFeUtil.getValue(node, "chNFe");
@@ -368,8 +372,8 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 						try {
 							file = NFeUtil.generateDistribution(nf, node);
 						} catch (Exception e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
+							log.severe("Could not generate distribution xml for NF-e " + nf.getDocumentNo());
 						}
 						
 						if (file != null) {
@@ -388,7 +392,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 							attachNFe.saveEx(get_TrxName());
 						}
 					} else {
-						log.warning("NF-e " + nf.getDocumentNo() + " has NF-e ID other than NF-e Lot. It won't be updated");
+						log.severe("NF-e " + nf.getDocumentNo() + " has NF-e ID other than NF-e Lot. It won't be updated");
 					}
 				}
 			}
@@ -396,7 +400,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 	}
 	
 	/**
-	 * XMLs
+	 * Get XMLs array obtained from Lot lines
 	 * @return String[] XML
 	 */
 	public String[] getXMLs ()
@@ -436,5 +440,49 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 		
 		return true;
 	}
-
+	
+	/**
+	 * 	Does NF-e Lot have a status that does not allow a change? 
+	 *
+	 * @param cStatL status returned by Sefaz
+	 */
+	private boolean isImmutableStatus(String cStatL) {
+		if (cStatL.equals("103") ||			// 103 - Lote recebido com sucesso
+				cStatL.equals("104"))		// 104 - Lote processado
+			return true;
+			
+		return false;
+	}
+	
+	/**
+	 * 	Does NF-e contained in this Lot has been issued in contingency mode? 
+	 *
+	 * @param xmlLot xml
+	 */
+	private boolean isContingencia(String xmlLot) {
+		int index = xmlLot.indexOf("<tpEmis>");
+		if (index >= 0) {
+			String tpEmis = xmlLot.substring(index+8, index+9);
+			if (!tpEmis.equals("1"))
+				return true;
+		}
+		
+		return false;
+	}
+	
+	/**
+	 * 	Does NF-e contained in this Lot has been issued in test mode? 
+	 *
+	 * @param xmlLot xml
+	 */
+	private boolean isHomologacao(String xmlLot) {
+		int index = xmlLot.indexOf("<tpAmb>");
+		if (index >= 0) {
+			String tpAmb = xmlLot.substring(index+7, index+8);
+			if (tpAmb.equals("2"))
+				return true;
+		}
+		
+		return false;
+	}
 }

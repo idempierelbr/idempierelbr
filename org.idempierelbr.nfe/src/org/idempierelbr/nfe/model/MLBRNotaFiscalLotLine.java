@@ -23,12 +23,10 @@ public class MLBRNotaFiscalLotLine extends X_LBR_NotaFiscalLotLine {
 	public MLBRNotaFiscalLotLine(Properties ctx, int LBR_NotaFiscalLotLine_ID,
 			String trxName) {
 		super(ctx, LBR_NotaFiscalLotLine_ID, trxName);
-		// TODO Auto-generated constructor stub
 	}
 
 	public MLBRNotaFiscalLotLine(Properties ctx, ResultSet rs, String trxName) {
 		super(ctx, rs, trxName);
-		// TODO Auto-generated constructor stub
 	}
 	
 	/**
@@ -106,12 +104,12 @@ public class MLBRNotaFiscalLotLine extends X_LBR_NotaFiscalLotLine {
 	}
 	 
 	 protected boolean beforeDelete() {
-			if (getParent().isLBR_LotSent()) {
-				log.log(Level.SEVERE, "NF-e Lot had been sent to Sefaz, and thus can not be deleted");
-				return false;
-			}
-			
-			return true;
+		if (getParent().isLBR_LotSent()) {
+			log.log(Level.SEVERE, "NF-e Lot had been sent to Sefaz, and thus can not be deleted");
+			return false;
 		}
+		
+		return true;
+	}
 
 }

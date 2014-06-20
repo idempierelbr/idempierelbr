@@ -1,6 +1,5 @@
 package org.idempierelbr.nfe.process;
 
-import java.io.InputStream;
 import java.util.logging.Level;
 
 import org.compiere.process.ProcessInfoParameter;
@@ -39,28 +38,25 @@ public class SendNFeLot extends SvrProcess
 			throw new Exception("No Organization defined");
 		}
 		
-		if (p_LBR_NotaFiscalLot_ID > 0)
-			send(p_LBR_NotaFiscalLot_ID);
-		else {
+		if (p_LBR_NotaFiscalLot_ID > 0) {
+			String result = send(p_LBR_NotaFiscalLot_ID);
+			
+			if (result != null && !result.equals(""))
+				throw new Exception(result);
+		} else {
 			// TODO:Implement to all org unsent lots
 		}
 
-		return "OK";
-	}
-	
-	private String send(int LBR_NotaFiscalLot_ID) {
-		MLBRNotaFiscalLot lot = new MLBRNotaFiscalLot(getCtx(), LBR_NotaFiscalLot_ID, get_TrxName());
-		try {
-			lot.enviaNFe();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		return "";
 	}
 	
-	private String convertStreamToString(InputStream is) {
-	    java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
-	    return s.hasNext() ? s.next() : "";
+	/**
+	 * 	Send NF-e Lot to Sefaz 
+	 *
+	 * @param LBR_NotaFiscalLot_ID
+	 */
+	private String send(int LBR_NotaFiscalLot_ID) {
+		MLBRNotaFiscalLot lot = new MLBRNotaFiscalLot(getCtx(), LBR_NotaFiscalLot_ID, get_TrxName());
+		return lot.sendLot();
 	}
 }

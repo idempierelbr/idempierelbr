@@ -1,6 +1,5 @@
 package org.idempierelbr.nfe.process;
 
-import java.io.InputStream;
 import java.util.logging.Level;
 
 import org.compiere.process.ProcessInfoParameter;
@@ -39,28 +38,25 @@ public class QueryNFeLot extends SvrProcess
 			throw new Exception("No Organization defined");
 		}
 		
-		if (p_LBR_NotaFiscalLot_ID > 0)
-			query(p_LBR_NotaFiscalLot_ID);
-		else {
+		if (p_LBR_NotaFiscalLot_ID > 0) {
+			String result = query(p_LBR_NotaFiscalLot_ID);
+			
+			if (result != null && !result.equals(""))
+				throw new Exception(result);
+		} else {
 			// TODO:Implement to all org unqueried lots
 		}
 
-		return "OK";
-	}
-	
-	private String query(int LBR_NotaFiscalLot_ID) {
-		MLBRNotaFiscalLot lot = new MLBRNotaFiscalLot(getCtx(), LBR_NotaFiscalLot_ID, get_TrxName());
-		try {
-			lot.consultaNFe();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		return "";
 	}
 	
-	private String convertStreamToString(InputStream is) {
-	    java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
-	    return s.hasNext() ? s.next() : "";
+	/**
+	 * 	Query Sefaz about previous sent NF-e Lot 
+	 *
+	 * @param LBR_NotaFiscalLot_ID
+	 */
+	private String query(int LBR_NotaFiscalLot_ID) {
+		MLBRNotaFiscalLot lot = new MLBRNotaFiscalLot(getCtx(), LBR_NotaFiscalLot_ID, get_TrxName());
+		return lot.queryLot();
 	}
 }
