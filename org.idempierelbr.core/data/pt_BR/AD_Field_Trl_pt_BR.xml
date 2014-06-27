@@ -1058,4 +1058,9 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Description" original="Indicates the protocol of the sending process to Sefaz">Indica o número do protocolo do processamento do lote pela Sefaz</value>
   <value column="Help" original=""/>
  </row>
+ <row trl="Y" uuid="8c12b4fb-aca7-444b-bf2a-400b32ca9b2d">
+  <value column="Name" original="NF-e Lot Sending Protocol">Protocolo</value>
+  <value column="Description" original="Indicates the protocol of the sending process to Sefaz">Indica o número do protocolo do processamento do lote pela Sefaz</value>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

@@ -56805,8 +56805,8 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="f03d55f0-69d2-490e-84b2-8eb94936d307">
-  <value column="Name" original="NF Serie">Série</value>
-  <value column="PrintName" original="NF Serie">Série</value>
+  <value column="Name" original="NF Serie">Série da Nota Fiscal</value>
+  <value column="PrintName" original="NF Serie">Série da NF</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -57384,9 +57384,19 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="a18bd44f-6ce4-4128-9acf-1ebc4a7a366c">
-  <value column="Name" original="Is Document Issued by Client/Org?">Is Document Issued by Client/Org?</value>
-  <value column="PrintName" original="Is Doc. Issued by Client/Org?">Is Doc. Issued by Client/Org?</value>
+ <row trl="Y" uuid="a18bd44f-6ce4-4128-9acf-1ebc4a7a366c">
+  <value column="Name" original="Is Document Issued by Client/Org?">Documento de Emissão Própria</value>
+  <value column="PrintName" original="Is Doc. Issued by Client/Org?">Doc. Emissão Própria</value>
+  <value column="Description" original="">Indica que o documento é de emissão da empresa/organização atual. Isso é o oposto de documento emitido por terceiros.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="43d1c513-21ab-4841-979d-0df97ad04311">
+  <value column="Name" original="NFB (DocType) Model">Modelo de Nota Fiscal</value>
+  <value column="PrintName" original="NFB (DocType) Model">Modelo de Nota Fiscal</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -57394,9 +57404,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="43d1c513-21ab-4841-979d-0df97ad04311">
-  <value column="Name" original="NFB (DocType) Model">NFB (DocType) Model</value>
-  <value column="PrintName" original="NFB (DocType) Model">NFB (DocType) Model</value>
+ <row trl="Y" uuid="66862c66-9bdb-497e-a406-14231e9a9145">
+  <value column="Name" original="Sefaz NF-e Environment">Ambiente da Sefaz</value>
+  <value column="PrintName" original="Sefaz NF-e Env.">Ambiente da Sefaz</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -57404,19 +57414,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="66862c66-9bdb-497e-a406-14231e9a9145">
-  <value column="Name" original="Sefaz NF-e Environment">Sefaz NF-e Environment</value>
-  <value column="PrintName" original="Sefaz NF-e Env.">Sefaz NF-e Env.</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
-  <value column="PO_Description" original=""/>
-  <value column="PO_Help" original=""/>
-  <value column="PO_Name" original=""/>
-  <value column="PO_PrintName" original=""/>
- </row>
- <row trl="N" uuid="41fca469-2d50-41f3-9a4b-9e315c9afbf0">
-  <value column="Name" original="DANFE Format">DANFE Format</value>
-  <value column="PrintName" original="DANFE Format">DANFE Format</value>
+ <row trl="Y" uuid="41fca469-2d50-41f3-9a4b-9e315c9afbf0">
+  <value column="Name" original="DANFE Format">Orientação do DANFE</value>
+  <value column="PrintName" original="DANFE Format">Orientação do DANFE</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -57464,9 +57464,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="78ac1d38-b68f-45e5-a5ae-96952cd68da6">
-  <value column="Name" original="Digital Certificate Type">Digital Certificate Type</value>
-  <value column="PrintName" original="Digital Certificate Type">Digital Certificate Type</value>
+ <row trl="Y" uuid="78ac1d38-b68f-45e5-a5ae-96952cd68da6">
+  <value column="Name" original="Digital Certificate Type">Tipo de Certificado Digital</value>
+  <value column="PrintName" original="Digital Certificate Type">Tipo de Certificado Digital</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -57474,9 +57474,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="28b2b0f8-e845-4437-a958-adb34cdf3c75">
-  <value column="Name" original="Digital Certificado of Organization">Digital Certificado of Organization</value>
-  <value column="PrintName" original="Digital Certificado of Organization">Digital Certificado of Organization</value>
+ <row trl="Y" uuid="28b2b0f8-e845-4437-a958-adb34cdf3c75">
+  <value column="Name" original="Digital Certificado of Organization">Certificado Digital da Organização</value>
+  <value column="PrintName" original="Digital Certificado of Organization">Certificado Digital da Organização</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -57484,9 +57484,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="d652e816-9887-4188-ab11-a5c23df2134b">
-  <value column="Name" original="Digital Certificado of Transmission">Digital Certificado of Transmission</value>
-  <value column="PrintName" original="Digital Certificado of Transmission">Digital Certificado of Transmission</value>
+ <row trl="Y" uuid="d652e816-9887-4188-ab11-a5c23df2134b">
+  <value column="Name" original="Digital Certificado of Transmission">Certificado Digital de Transmissão</value>
+  <value column="PrintName" original="Digital Certificado of Transmission">Certificado Digital de Transmissão</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -57798,6 +57798,86 @@ Strings may be in single quotes (optional)]]></value>
   <value column="Name" original="DigestValue">DigestValue</value>
   <value column="PrintName" original="DigestValue">DigestValue</value>
   <value column="Description" original="Identifies a DigestValue">Identifies a DigestValue</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="408742b8-4584-4bc5-9981-f35cd501d6dd">
+  <value column="Name" original="NF-e Event Lot">NF-e Event Lot</value>
+  <value column="PrintName" original="NF-e Event Lot">NF-e Event Lot</value>
+  <value column="Description" original="Identifies a NF-e Event Lot">Identifies a NF-e Event Lot</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="47a8dc3f-10d6-4e18-aeea-3a7c8039ed14">
+  <value column="Name" original="NF-e Event Lot">NF-e Event Lot</value>
+  <value column="PrintName" original="NF-e Event Lot">NF-e Event Lot</value>
+  <value column="Description" original="Identifies a NF-e Event Lot">Identifies a NF-e Event Lot</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="60d7e0de-adaa-4391-b080-801db0c7145d">
+  <value column="Name" original="NF-e Event Lot Line">NF-e Event Lot Line</value>
+  <value column="PrintName" original="NF-e Event Lot Line">NF-e Event Lot Line</value>
+  <value column="Description" original="Identifies a NF-e Event Lot Line">Identifies a NF-e Event Lot Line</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="fa4140a9-79d6-4e63-96e6-dbdd8acf6b2b">
+  <value column="Name" original="NF-e Event Lot Line">NF-e Event Lot Line</value>
+  <value column="PrintName" original="NF-e Event Lot Line">NF-e Event Lot Line</value>
+  <value column="Description" original="Identifies a NF-e Event Lot Line">Identifies a NF-e Event Lot Line</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="c9934e46-b0ae-4857-8039-f0479cb7f7eb">
+  <value column="Name" original="NF-e Event Type">Tipo de Evento</value>
+  <value column="PrintName" original="NF-e Event Type">Tipo de Evento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="2516feb8-9ec9-4c54-8feb-ac49c2992462">
+  <value column="Name" original="Correction Reason">Correção</value>
+  <value column="PrintName" original="Correction Reason">Correção</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="885f9627-2fa0-4250-8d13-7af9695d5c7b">
+  <value column="Name" original="Justification">Justificativa</value>
+  <value column="PrintName" original="Justification">Justificativa</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="5b7cbf7c-03e6-401f-95ec-9006fbc52898">
+  <value column="Name" original="NF-e Event Sequence Number">Sequência</value>
+  <value column="PrintName" original="NF-e Event Sequence No.">Sequência</value>
+  <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>

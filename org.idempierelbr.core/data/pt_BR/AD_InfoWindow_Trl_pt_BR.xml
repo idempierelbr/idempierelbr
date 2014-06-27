@@ -47,4 +47,9 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="dc115574-51ae-4ed8-a5c0-72b8a8262701">
+  <value column="Name" original="Nota Fiscal Info">Nota Fiscal Info</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

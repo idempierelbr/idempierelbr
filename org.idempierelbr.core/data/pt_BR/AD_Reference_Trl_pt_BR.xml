@@ -2827,4 +2827,9 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="a88d3ec5-bc38-4933-a834-9e62b93455b9">
+  <value column="Name" original="LBR_NFeEventType">LBR_NFeEventType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

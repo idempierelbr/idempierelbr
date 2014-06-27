@@ -5986,7 +5986,7 @@
   <value column="Name" original="Normal">Normal</value>
   <value column="Description" original=""/>
  </row>
- <row trl="N" uuid="5c6898bb-df05-4ab8-a896-68f0c031e4d6">
+ <row trl="Y" uuid="5c6898bb-df05-4ab8-a896-68f0c031e4d6">
   <value column="Name" original="100 - Autorizado o uso da NF-e">100 - Autorizado o uso da NF-e</value>
   <value column="Description" original=""/>
  </row>
@@ -6106,20 +6106,20 @@
   <value column="Name" original="55 - NF-e">55 - NF-e</value>
   <value column="Description" original=""/>
  </row>
- <row trl="N" uuid="466e85cd-9146-4114-8734-a2843cbec3ee">
-  <value column="Name" original="Production">Production</value>
+ <row trl="Y" uuid="466e85cd-9146-4114-8734-a2843cbec3ee">
+  <value column="Name" original="Production">Produção</value>
   <value column="Description" original=""/>
  </row>
- <row trl="N" uuid="2ebde250-dfaf-43f3-abec-9fbf8fab7061">
-  <value column="Name" original="Homologation">Homologation</value>
+ <row trl="Y" uuid="2ebde250-dfaf-43f3-abec-9fbf8fab7061">
+  <value column="Name" original="Homologation">Homologação</value>
   <value column="Description" original=""/>
  </row>
- <row trl="N" uuid="76207b65-a708-4c95-9c7e-8a120911362e">
-  <value column="Name" original="Portrait">Portrait</value>
+ <row trl="Y" uuid="76207b65-a708-4c95-9c7e-8a120911362e">
+  <value column="Name" original="Portrait">Retrato</value>
   <value column="Description" original=""/>
  </row>
- <row trl="N" uuid="edd2440e-96ea-45f3-84f3-2ffddbefb056">
-  <value column="Name" original="Landscape">Landscape</value>
+ <row trl="Y" uuid="edd2440e-96ea-45f3-84f3-2ffddbefb056">
+  <value column="Name" original="Landscape">Paisagem</value>
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="aa43edf5-2b40-4e6f-ad8b-ade4b89a7f78">
@@ -7996,6 +7996,14 @@
  </row>
  <row trl="N" uuid="cf3d3dd7-7be3-4327-a71a-7639e31aab8a">
   <value column="Name" original="999 - Rejeição: Erro não catalogado">999 - Rejeição: Erro não catalogado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="97965164-0016-4350-bdef-701852e3a482">
+  <value column="Name" original="Cancellation">Cancelamento de Nota Fiscal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="97470edc-2aa6-40b5-ac12-8afdf324d4e0">
+  <value column="Name" original="Correction">Carta de Correção</value>
   <value column="Description" original=""/>
  </row>
 </idempiereTrl>

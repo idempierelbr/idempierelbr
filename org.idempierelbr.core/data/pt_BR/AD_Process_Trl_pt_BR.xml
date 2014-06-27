@@ -624,9 +624,9 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
   <value column="Help" original=""/>
  </row>
  <row id="233" trl="Y">
-  <value column="Name" original="Verify Document Types">Verificar Tipos de Documentos</value>
-  <value column="Description" original="Verify Document Types and Period Controls">Verify Document Types and Period Controls</value>
-  <value column="Help" original="Makes sure that there is a DocumentType for all Document Base Types&lt;br&gt;&#10;Creates missing Period Controls for Document Type (You may have to open them)"><![CDATA[Certifica que existe um "DocumentType" para todos os Tipos de Documentos Base<br> Cria Controles de Período faltantes para Tipo de Documento (Você pode ter que abrí-los)]]></value>
+  <value column="Name" original="Verify Document Types">Verificar Tipos de Documento</value>
+  <value column="Description" original="Verify Document Types and Period Controls">Verificar Tipos de Documento e Controle de Períodos</value>
+  <value column="Help" original="Makes sure that there is a DocumentType for all Document Base Types&lt;br&gt;&#10;Creates missing Period Controls for Document Type (You may have to open them)">Este processo verifica se há pelo menos um Tipo de Documento para cada Tipo de Documento Base existente no sistema. Cria também registros de Controle de Períodos correspondentes (pode ser necessário abrir os períodos manualmente, após a execução do processo)</value>
  </row>
  <row id="234" trl="Y">
   <value column="Name" original="Project Margin (Work Order)">Margem de Projeto (Ordem de Trabalho)</value>
@@ -2189,6 +2189,11 @@ Please note that base language cannot be a system language.</value>
  <row trl="Y" uuid="c99525cd-78cc-4232-bda4-b3df8ba3eb39">
   <value column="Name" original="Query NF-e Lot to Sefaz">Consultar Recibo na Sefaz</value>
   <value column="Description" original="Query NF-e Lot to Sefaz">Consultar Recibo na Sefaz</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="0a898e8b-76c4-4330-b07e-2a22c08f36c1">
+  <value column="Name" original="Send NF-e Event Lot to Sefaz">Enviar Lote à Sefaz</value>
+  <value column="Description" original="Send NF-e Event Lot to Sefaz">Enviar Lote à Sefaz</value>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>

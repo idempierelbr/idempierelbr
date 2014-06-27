@@ -12,6 +12,8 @@ public class ProcessFactory implements IProcessFactory {
 			return new SendNFeLot();
 		else if (className.equals("org.idempierelbr.nfe.process.QueryNFeLot"))
 			return new QueryNFeLot();
+		else if (className.equals("org.idempierelbr.nfe.process.SendNFeEvent"))
+			return new SendNFeEvent();
 		else
 			return null;
 	}

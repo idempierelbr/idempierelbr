@@ -52,6 +52,9 @@ public abstract class NFeUtil
 	/** Versão				*/
 	public static final String VERSAO			= "3.10";
 	public static final String VERSAO_APP		= "3.10";
+	public static final String VERSAO_EVENTO	= "1.00";
+	public static final String VERSAO_CCE		= "1.00";
+	public static final String VERSAO_CAN		= "1.00";
 	
 	/** XML					*/
 	public static final long XML_SIZE = 500;

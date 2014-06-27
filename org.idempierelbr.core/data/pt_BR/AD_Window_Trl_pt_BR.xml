@@ -2144,9 +2144,9 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Customer &amp; Vendor Brazilian Fiscal Invoice Entry">Introduzir e Alterar Notas Fiscais (Cliente / Fornecedor)</value>
   <value column="Help" original="The Brazilian Fiscal Invoice Window allows you to display and enter fiscal invoices for a customer or vendor.  Invoices can also be generated from Order, Invoices or RMA's">A janela permite inserir notas fiscais para cliente ou de fornecedor. Eles podem ser geradas a partir de Pedidos, Faturas e ARMs</value>
  </row>
- <row trl="N" uuid="77fe687d-6f56-4722-99eb-4c6d69743fa3">
-  <value column="Name" original="Digital Certificate (LBR)">Digital Certificate (LBR)</value>
-  <value column="Description" original=""/>
+ <row trl="Y" uuid="77fe687d-6f56-4722-99eb-4c6d69743fa3">
+  <value column="Name" original="Digital Certificate (LBR)">Certificado Digital</value>
+  <value column="Description" original="">Manutenção de Certificados Digitais</value>
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="00499137-71c5-4baa-879c-829117782f55">
@@ -2158,5 +2158,10 @@ MRP - 110	 No exists Dem</value>
   <value column="Name" original="Brazilian Fiscal Invoice Lot">Lote de Nota Fiscal</value>
   <value column="Description" original="Customer &amp; Vendor Brazilian Fiscal Invoice Lot Entry">Registro e manutenção de lotes de Nota Fiscal (para envio à Sefaz)</value>
   <value column="Help" original="The Brazilian Fiscal Invoice Lot Window allows you to display and enter lots and send them to Sefaz."/>
+ </row>
+ <row trl="Y" uuid="172c8a9d-1b7e-4a0e-968c-87d4727265ae">
+  <value column="Name" original="Brazilian Fiscal Invoice Event">Evento de Nota Fiscal</value>
+  <value column="Description" original="Customer &amp; Vendor Brazilian Fiscal Invoice Event Entry">Registro e manutenção de eventos de Nota Fiscal (para envio à Sefaz)</value>
+  <value column="Help" original="The Brazilian Fiscal Invoice Event Window allows you to display and enter events and send them to Sefaz."/>
  </row>
 </idempiereTrl>

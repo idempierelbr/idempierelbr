@@ -189,7 +189,26 @@ public class StubConnector {
 		} else if (service.equals(MLBRNFeWebService.SERVICE_NFE_CONSULTA_CADASTRO)) {
 	
 		} else if (service.equals(MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO)) {
-
+			// Header
+			org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub.NfeCabecMsg cabecMsg =
+					new org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub.NfeCabecMsg();
+			org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub.NfeCabecMsgE cabecMsgE =
+					new org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub.NfeCabecMsgE();
+			cabecMsg.setCUF(region.get_ValueAsString("LBR_RegionCode"));
+			cabecMsg.setVersaoDados(versionNo);
+			cabecMsgE.setNfeCabecMsg(cabecMsg);
+			try {
+				// Message
+				org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub.NfeDadosMsg dadosMsg =
+						org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub.NfeDadosMsg.Factory.parse(reader);
+				// Stub
+				org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub stub =
+						new org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub(url);
+				result = stub.nfeRecepcaoEvento(dadosMsg, cabecMsgE).getExtraElement().toString();
+			} catch (Exception e) {
+				e.printStackTrace();
+				return null;
+			}
 		} else if (service.equals(MLBRNFeWebService.SERVICE_NFE_AUTORIZACAO)) {
 			// Header
 			org.idempierelbr.nfe.stub.generic.NfeAutorizacaoStub.NfeCabecMsg cabecMsg =

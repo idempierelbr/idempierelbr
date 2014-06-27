@@ -6804,10 +6804,10 @@ Printing:
   <value column="Description" original="Ref. Doc">Documento Referenciado</value>
   <value column="Help" original="The Ref. Doc Tab displays fields for entering information about referenced docs">A aba Documento Referenciado permite a inclusão de documentos (NFs, conhecimentos, cupons) vinculados a esta NF</value>
  </row>
- <row trl="N" uuid="14bf0651-5c09-475b-96cb-61739881e1c4">
-  <value column="Name" original="Digital Certificate">Digital Certificate</value>
+ <row trl="Y" uuid="14bf0651-5c09-475b-96cb-61739881e1c4">
+  <value column="Name" original="Digital Certificate">Certificado Digital</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Store Digital Certificates">Store Digital Certificates</value>
+  <value column="Description" original="Store Digital Certificates">Manutenção de Certificados Digitais</value>
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="36526fe6-20de-4913-83e4-a81a44d6eaf3">
@@ -6826,6 +6826,18 @@ Printing:
   <value column="Name" original="NF-e Lot Line">Linha do Lote</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="NF-e Lot Line Entries">Registro de Linha do Lote</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="3184b21b-72cb-4c2a-b190-7404097b095d">
+  <value column="Name" original="NF-e Event Lot">Lote</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="NF-e Event Lot Entries">Registros de Lote</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="f30a9e42-2ec6-4028-92da-75e0bd4152d3">
+  <value column="Name" original="NF-e Event Lot Line">Linha do Lote</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="NF-e Event Lot Line Entries">Registro de Linha do Lote</value>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>
