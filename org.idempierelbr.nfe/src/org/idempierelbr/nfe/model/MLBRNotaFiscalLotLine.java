@@ -42,6 +42,9 @@ public class MLBRNotaFiscalLotLine extends X_LBR_NotaFiscalLotLine {
 	
 	
 	 protected boolean beforeSave(boolean newRecord) {
+		 if (!newRecord)
+				return true;
+		 
 		MLBRNotaFiscalLot lot = getParent();
 		MLBRNotaFiscalLotLine[] lines = lot.getLines();
 		
