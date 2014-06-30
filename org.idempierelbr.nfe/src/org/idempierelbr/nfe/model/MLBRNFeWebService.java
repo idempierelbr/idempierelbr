@@ -78,16 +78,22 @@ public class MLBRNFeWebService extends X_LBR_NFeWebService
 	 * 	@return
 	 */
 	public static String[] getURL (String envType){
-		String sql = "SELECT URL FROM LBR_NFeWebService " +
-		             "WHERE LBR_NFeEnv = ?";
+		StringBuilder sql = new StringBuilder();
+		sql.append("SELECT URL FROM LBR_NFeWebService");
+		
+		if (envType != null && !envType.trim().equals(""))
+			sql.append(" WHERE LBR_NFeEnv = ?");
 		
 		ArrayList<String> list = new ArrayList<String>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try
 		{
-			pstmt = DB.prepareStatement (sql, null);
-			pstmt.setString(1, envType);
+			pstmt = DB.prepareStatement (sql.toString(), null);
+			
+			if (envType != null && !envType.trim().equals(""))
+				pstmt.setString(1, envType);
+			
 			rs = pstmt.executeQuery ();
 			while (rs.next ())
 			{

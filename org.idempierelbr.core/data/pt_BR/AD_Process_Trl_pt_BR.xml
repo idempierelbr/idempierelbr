@@ -2196,4 +2196,9 @@ Please note that base language cannot be a system language.</value>
   <value column="Description" original="Send NF-e Event Lot to Sefaz">Enviar Lote à Sefaz</value>
   <value column="Help" original=""/>
  </row>
+ <row trl="Y" uuid="f73e3d4e-c934-4c01-9e73-00e486f7b391">
+  <value column="Name" original="Validate Digital Certificate">Validar o Certificado Digital</value>
+  <value column="Description" original="Validate Digital Certificate">Validar o Certificado Digital em Anexo</value>
+  <value column="Help" original="">Este processo verifica se o certificado digital anexado ao registro é acessível com a senha informada. Caso queira que o processo identifique e preencha automaticamente o pseudônimo (alias) e a validade do certificado, marque a opção abaixo. </value>
+ </row>
 </idempiereTrl>

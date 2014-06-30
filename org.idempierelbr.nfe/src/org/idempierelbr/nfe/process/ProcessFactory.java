@@ -14,6 +14,8 @@ public class ProcessFactory implements IProcessFactory {
 			return new QueryNFeLot();
 		else if (className.equals("org.idempierelbr.nfe.process.SendNFeEvent"))
 			return new SendNFeEvent();
+		else if (className.equals("org.idempierelbr.nfe.process.ValidateDigitalCertificate"))
+			return new ValidateDigitalCertificate();
 		else
 			return null;
 	}

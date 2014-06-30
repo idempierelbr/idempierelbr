@@ -62,7 +62,7 @@ import org.idempierelbr.nfe.model.MLBRNFeWebService;
  */
 public class ProcGenerateNFeWebServiceCert extends SvrProcess
 {
-	private String p_envType  = "1"; //Production
+	private String p_envType  = "";
 	
 	/** Log				*/
 	private static CLogger log = CLogger.getCLogger(ProcGenerateNFeWebServiceCert.class);

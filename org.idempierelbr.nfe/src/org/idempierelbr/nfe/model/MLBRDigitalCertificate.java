@@ -20,7 +20,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.KeyStore;
 import java.security.PrivateKey;
-import java.security.Provider;
 import java.security.Security;
 import java.security.cert.X509Certificate;
 import java.sql.ResultSet;
@@ -34,7 +33,6 @@ import org.compiere.model.MAttachment;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.Query;
 import org.compiere.util.Env;
-import org.compiere.util.Msg;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.nfe.util.NFeUtil;
 import org.idempierelbr.nfe.util.SocketFactoryDinamico;
@@ -254,35 +252,25 @@ public class MLBRDigitalCertificate extends X_LBR_DigitalCertificate
 	}	//	getICPTrustStore
 	
 	/**
-	 * 	Called before Save for Pre-Save Operation
-	 * 	@param newRecord new record
-	 *	@return true if record can be saved
+	 * 	Validate the password against the digital certificate attached
+	 * 	and optionally update alias/date fields
+	 * 	@param updateFields true if alias and dates should be obtained from DC
+	 *	@return "" or error message
 	 */
-	protected boolean beforeSave (boolean newRecord)
-	{		
-		//	No certificate type
-		if (getLBR_CertType() == null)
-		{
-			log.saveError ("Error", Msg.getElement (getCtx(), "LBR_CertType"));
-			return false;
-		}
-	
-		//	Needs an attachment to continue
-		if (newRecord)
-			return true;
+	public String validateIt(boolean updateFields) {
+		String returnMsg = "";
 		
 		MAttachment att = getAttachment (true);
 
 		//	No attachment
-		if ((LBR_CERTTYPE_JavaKeyStore.equals(getLBR_CertType ()) || LBR_CERTTYPE_PKCS12.equals(getLBR_CertType ())) 
-				&& (att == null || att.getEntryCount() == 0))
-		{
-			log.saveError ("Error", Msg.getElement (getCtx(), "AD_Attachment"));
-			return false;
+		if ((LBR_CERTTYPE_JavaKeyStore.equals(getLBR_CertType()) || LBR_CERTTYPE_PKCS12.equals(getLBR_CertType())) 
+				&& (att == null || att.getEntryCount() == 0)) {
+			returnMsg = "No attachment, or digital certificate is not supported";
+			log.info(returnMsg);
+			return returnMsg;
 		}
 		
-		try
-		{
+		try {
 			String certType = getLBR_CertType();
 			String pass = getPassword();
 			
@@ -296,53 +284,59 @@ public class MLBRDigitalCertificate extends X_LBR_DigitalCertificate
 			if (alias == null || alias.length() == 0)
 				alias = "nfe";
 				
-			if (pass == null || pass.length() == 0)
-			{
+			if (pass == null || pass.length() == 0)	{
 				pass = "changeit";
-				setPassword(pass);
+				
+				if (updateFields)
+					setPassword(pass);
 			}
-			//
+
 			KeyStore ks = KeyStore.getInstance (certType);
 			ks.load (att.getEntry(0).getInputStream(), pass.toCharArray());
 			X509Certificate certificate = (X509Certificate) ks.getCertificate(alias);
-			//
-			if (certificate == null)
-			{
+
+			if (certificate == null) {
 				Enumeration<String> aliases = ks.aliases();
-				while (aliases.hasMoreElements()) 
-				{
+				while (aliases.hasMoreElements()) {
 					alias = aliases.nextElement();
 					X509Certificate tmp = (X509Certificate) ks.getCertificate (alias);
 					
-					if (tmp != null && (certificate == null || tmp.getNotAfter().after (Env.getContextAsDate(Env.getCtx(), "#Date"))))
-					{
+					if (tmp != null && (certificate == null ||
+							tmp.getNotAfter().after (Env.getContextAsDate(Env.getCtx(), "#Date")))) {
+						
 						certificate = tmp;
-						setAlias(alias);
+						
+						if (updateFields)
+							setAlias(alias);
+						
 						break;
 					}	
 				}
 				
-				if (certificate == null)
-				{
-					log.saveWarning ("Invalid", "N\u00E3o foi encontrado um certificado v\u00E1lido");
-					return true;
+				if (certificate == null) {
+					returnMsg = "Invalid digital certificate";
+					log.info(returnMsg);
+					return returnMsg;
 				}
 			}
-			setValidFrom (new Timestamp (certificate.getNotBefore().getTime()));
-			setValidTo (new Timestamp (certificate.getNotAfter().getTime()));
-			//
+			
+			if (updateFields) {
+				setValidFrom(new Timestamp(certificate.getNotBefore().getTime()));
+				setValidTo(new Timestamp(certificate.getNotAfter().getTime()));
+				saveEx();
+			}
+
 			if (getValidTo().before(Env.getContextAsDate(Env.getCtx(), "#Date")))
-				log.saveWarning ("Invalid", "Certificado expirado em " + TextUtil.timeToString (certificate.getNotAfter(), "dd/MM/yyyy"));
-		}
-		catch (Exception e)
-		{
+				log.info("Digital certificate has expired in " + TextUtil.timeToString(certificate.getNotAfter(), "dd/MM/yyyy"));
+		} catch (Exception e)	{
+			returnMsg = "Could not validate the digital certificate attached.";
+			log.info(returnMsg);
 			e.printStackTrace();
-			//
-			log.saveWarning ("Error", "Erro ao validar o certificado. Este certificado n\u00E3o funcionar\u00E1 com a NF-e. Verifique o log do sistema.");
+			return returnMsg;
 		}
 		
-		return true;
-	}	//	beforeSave
+		return "";	
+	}
 	
 	/**
 	 * 	Gera um arquivo de configuração para o SmartCard, de acordo com o SO
