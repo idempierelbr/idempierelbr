@@ -310,7 +310,7 @@ public class MLBRDocLineDetailsTax extends MLBRDocLineDetails implements IDocLin
 		if (!success)
 			return success;
 		
-		if (getC_OrderLine_ID() > 0 || getC_InvoiceLine_ID() > 0) {		
+		if (getC_OrderLine_ID() > 0 || getC_InvoiceLine_ID() > 0 || getM_RMALine_ID() > 0) {		
 			if (m_DetailsFrom != null) {
 				copyChildren(m_DetailsFrom);			
 				m_DetailsFrom = null;
