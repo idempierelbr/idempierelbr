@@ -27,10 +27,7 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.compiere.model.MAttachment;
 import org.compiere.model.MAttachmentEntry;
-import org.compiere.model.MDocType;
 import org.compiere.util.CLogger;
-import org.compiere.util.DB;
-import org.compiere.utils.DigestOfFile;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.nfe.model.MLBRNotaFiscal;
 import org.w3c.dom.Document;
