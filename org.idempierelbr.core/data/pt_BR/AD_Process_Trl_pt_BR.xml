@@ -2201,4 +2201,19 @@ Please note that base language cannot be a system language.</value>
   <value column="Description" original="Validate Digital Certificate">Validar o Certificado Digital em Anexo</value>
   <value column="Help" original="">Este processo verifica se o certificado digital anexado ao registro é acessível com a senha informada. Caso queira que o processo identifique e preencha automaticamente o pseudônimo (alias) e a validade do certificado, marque a opção abaixo. </value>
  </row>
+ <row trl="Y" uuid="e6b71e86-1f7c-49bd-8ad9-79a0746ae7b0">
+  <value column="Name" original="Link Nota Fiscal">Vincular Nota Fiscal</value>
+  <value column="Description" original="Link Nota Fiscal to other Documents">Vincular Nota Fiscal a outros Documentos</value>
+  <value column="Help" original="This process allows you to link a Brazilian Fiscal Invoice to other Documents, like an Order, Invoice, RMA, etc.">Este processo permite vincular uma Nota Fiscal a outro(s) documento(s), como um pedido, fatura, ARM, etc. Observe que somente os documentos informados serão vinculados (se já existir o vínculo, o mesmo será alterado). Se um documento for deixado em branco, o mesmo não será desvinculado da Nota Fiscal. Para isso, execute primeiro o processo Desvincular Nota Fiscal e depois execute este processo.</value>
+ </row>
+ <row trl="Y" uuid="c216a892-154d-425d-84c9-7f3968a922d9">
+  <value column="Name" original="Unlink Nota Fiscal">Desvincular Nota Fiscal</value>
+  <value column="Description" original="Unlink Nota Fiscal from other Documents">Desvincular Nota Fiscal de outros Documentos</value>
+  <value column="Help" original="This process allows you to unlink a Brazilian Fiscal Invoice from other Documents, like Order, Invoice, RMA, etc.">Este processo permite desvincular uma Nota Fiscal de outro(s) documento(s), como pedido, fatura, ARM, etc. A Nota Fiscal ficará totalmente desvinculada de qualquer outro documento. É possível depois executar o processo Vincular Nota Fiscal para refazer o(s) vínculo(s) necessário(s).</value>
+ </row>
+ <row trl="Y" uuid="67a75537-387b-403c-8fb8-09ed1bd318dc">
+  <value column="Name" original="Generate Brazilian Fiscal Invoice">Gerar Nota Fiscal</value>
+  <value column="Description" original="Create and process Brazilian Fiscal Invoice from source document">Gerar e processar Nota Fiscal a partir de um documento</value>
+  <value column="Help" original="The document should be correct and completed.">O documento precisa estar completo ou fechado</value>
+ </row>
 </idempiereTrl>

@@ -2527,6 +2527,11 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200083" trl="N">
+  <value column="Name" original="AD_InfoProcess LayoutType">AD_InfoProcess LayoutType</value>
+  <value column="Description" original="Define layout type of info process button">Define layout type of info process button</value>
+  <value column="Help" original=""/>
+ </row>
  <row trl="Y" uuid="050a1289-4030-4328-b311-6a330e1cd8ae">
   <value column="Name" original="LBR_Package_Releases">Tipo de Pessoa</value>
   <value column="Description" original="List of Package Releases (iDempiereLBR)">Usado para Idenficar se o Parceiro é Pessoa Física ou Pessoa Jurídica</value>

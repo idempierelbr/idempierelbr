@@ -285,4 +285,49 @@ public interface I_LBR_NotaFiscalLine
 	  * Unit of Measure
 	  */
 	public int getC_UOM_ID();
+	
+	/** Column name C_InvoiceLine_ID */
+    public static final String COLUMNNAME_C_InvoiceLine_ID = "C_InvoiceLine_ID";
+
+	/** Set Invoice Line.
+	  * Invoice Detail Line
+	  */
+	public void setC_InvoiceLine_ID (int C_InvoiceLine_ID);
+
+	/** Get Invoice Line.
+	  * Invoice Detail Line
+	  */
+	public int getC_InvoiceLine_ID();
+
+	public org.compiere.model.I_C_InvoiceLine getC_InvoiceLine() throws RuntimeException;
+
+    /** Column name C_OrderLine_ID */
+    public static final String COLUMNNAME_C_OrderLine_ID = "C_OrderLine_ID";
+
+	/** Set Sales Order Line.
+	  * Sales Order Line
+	  */
+	public void setC_OrderLine_ID (int C_OrderLine_ID);
+
+	/** Get Sales Order Line.
+	  * Sales Order Line
+	  */
+	public int getC_OrderLine_ID();
+
+	public org.compiere.model.I_C_OrderLine getC_OrderLine() throws RuntimeException;
+	
+	/** Column name M_RMALine_ID */
+    public static final String COLUMNNAME_M_RMALine_ID = "M_RMALine_ID";
+
+	/** Set RMA Line.
+	  * Return Material Authorization Line
+	  */
+	public void setM_RMALine_ID (int M_RMALine_ID);
+
+	/** Get RMA Line.
+	  * Return Material Authorization Line
+	  */
+	public int getM_RMALine_ID();
+
+	public org.compiere.model.I_M_RMALine getM_RMALine() throws RuntimeException;
 }

@@ -5382,6 +5382,18 @@
   <value column="Name" original="UPC-A">UPC-A</value>
   <value column="Description" original=""/>
  </row>
+ <row id="200185" trl="N">
+  <value column="Name" original="Button">Button</value>
+  <value column="Description" original="Display as button">Display as button</value>
+ </row>
+ <row id="200186" trl="N">
+  <value column="Name" original="Menu">Menu</value>
+  <value column="Description" original="Display as menu on a gear button">Display as menu on a gear button</value>
+ </row>
+ <row id="200187" trl="N">
+  <value column="Name" original="List">List</value>
+  <value column="Description" original="Display as list">Display as list</value>
+ </row>
  <row trl="Y" uuid="2facadde-7b9b-4619-9161-8f9fe50b2b19">
   <value column="Name" original="No specific release">PJ - Pessoa Jurídica</value>
   <value column="Description" original="No specific release"/>

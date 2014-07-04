@@ -6204,6 +6204,12 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200116" trl="N">
+  <value column="Name" original="Available Columns">Available Columns</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="You can define on this tab which columns will be available as the print format items">You can define on this tab which columns will be available as the print format items</value>
+  <value column="Help" original=""/>
+ </row>
  <row id="200121" trl="N">
   <value column="Name" original="Translation">Translation</value>
   <value column="CommitWarning" original=""/>
@@ -6284,6 +6290,30 @@ Printing:
  </row>
  <row id="200134" trl="N">
   <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200137" trl="N">
+  <value column="Name" original="Attributes">Attributes</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Product Instance Attribute Material Allocation">Product Instance Attribute Material Allocation</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200138" trl="N">
+  <value column="Name" original="Attributes">Attributes</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Product Instance Attribute Material Allocation">Product Instance Attribute Material Allocation</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200142" trl="N">
+  <value column="Name" original="Process">Process</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200143" trl="N">
+  <value column="Name" original="Translate">Translate</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>

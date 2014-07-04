@@ -6503,6 +6503,10 @@ Please contact administrator.</value>
   <value column="MsgText" original="You cannot access process {0} with your role : {1}">You cannot access process {0} with your role : {1}</value>
   <value column="MsgTip" original=""/>
  </row>
+ <row id="200270" trl="N">
+  <value column="MsgText" original="More than line qty on attribute tab for line ">More than line qty on attribute tab for line </value>
+  <value column="MsgTip" original=""/>
+ </row>
  <row id="200271" trl="N">
   <value column="MsgText" original="Tabs">Tabs</value>
   <value column="MsgTip" original=""/>
@@ -6517,6 +6521,10 @@ Please contact administrator.</value>
  </row>
  <row id="200274" trl="N">
   <value column="MsgText" original="Your search returned more than the maximum number of results allowed.&lt;br&gt;Please narrow down your search criteria and try your search again."><![CDATA[Your search returned more than the maximum number of results allowed.<br>Please narrow down your search criteria and try your search again.]]></value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200275" trl="N">
+  <value column="MsgText" original="Process Menu">Process Menu</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="520010" trl="Y">

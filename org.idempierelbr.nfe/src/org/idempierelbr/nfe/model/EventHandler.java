@@ -3,11 +3,15 @@ package org.idempierelbr.nfe.model;
 import org.adempiere.base.event.AbstractEventHandler;
 import org.adempiere.base.event.IEventTopics;
 import org.adempiere.exceptions.AdempiereException;
+import org.compiere.model.MInvoiceLine;
+import org.compiere.model.MOrderLine;
+import org.compiere.model.MRMALine;
 import org.compiere.model.MTax;
 import org.compiere.model.MTaxProvider;
 import org.compiere.model.PO;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
+import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
 import org.idempierelbr.tax.provider.TaxProviderFactory;
 import org.idempierelbr.nfe.model.MLBRNotaFiscal;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
@@ -164,14 +168,37 @@ public class EventHandler extends AbstractEventHandler {
 		MLBRDocLineDetailsNfe details = MLBRDocLineDetailsNfe.createFromPO(po);
 		
 		if (details != null) {
-			details.populateFromPO(po);
+			PO lineFrom = null;
+			boolean copyDetails = false;
 			
-			Object[] taxation = null;
-			if (details.getLBR_NotaFiscalLine_ID() > 0) {
-				MLBRNotaFiscalLine nfLine = new MLBRNotaFiscalLine(details.getCtx(), details.getLBR_NotaFiscalLine_ID(), details.get_TrxName());
-				taxation = MLBRTaxNfe.getTaxes(details.getCtx(), nfLine, details.get_TrxName());
+			// Check if details should be copied
+			if (po instanceof MLBRNotaFiscalLine) {
+				MLBRNotaFiscalLine nfLine = (MLBRNotaFiscalLine)po;
+
+				if (nfLine.getC_OrderLine_ID() > 0) {
+					copyDetails = true;
+					lineFrom = new MOrderLine(details.getCtx(), nfLine.getC_OrderLine_ID(), details.get_TrxName());
+				} else if (nfLine.getC_InvoiceLine_ID() > 0) {
+					copyDetails = true;
+					lineFrom = new MInvoiceLine(details.getCtx(), nfLine.getC_InvoiceLine_ID(), details.get_TrxName());
+				} else if (nfLine.getM_RMALine_ID() > 0) {
+					copyDetails = true;
+					lineFrom = new MRMALine(details.getCtx(), nfLine.getM_RMALine_ID(), details.get_TrxName());
+				}
 			}
-			details.createTaxTransaction(taxation);
+			
+			if (copyDetails)
+				details.copyFrom(MLBRDocLineDetailsTax.getOfPO(lineFrom));
+			else {
+				details.populateFromPO(po);
+				
+				Object[] taxation = null;
+				if (details.getLBR_NotaFiscalLine_ID() > 0) {
+					MLBRNotaFiscalLine nfLine = new MLBRNotaFiscalLine(details.getCtx(), details.getLBR_NotaFiscalLine_ID(), details.get_TrxName());
+					taxation = MLBRTaxNfe.getTaxes(details.getCtx(), nfLine, details.get_TrxName());
+				}
+				details.createTaxTransaction(taxation);
+			}
 
 			details.saveEx();
 		} else {
