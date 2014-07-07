@@ -376,9 +376,9 @@
   <value column="Help" original="The Locator Tab defines any Locators for that Warehouse.">A Aba "Localizador" define quaisquer localizadores para aquele Armazém.</value>
  </row>
  <row id="179" trl="Y">
-  <value column="Name" original="Storage">Armazenagem</value>
+  <value column="Name" original="Storage">Armazenamento</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Detail Storage Information">Informação Detalhada de Armazenagem</value>
+  <value column="Description" original="Detail Storage Information">Informações Detalhadas de Armazenamentos</value>
   <value column="Help" original=""/>
  </row>
  <row id="180" trl="Y">
@@ -394,10 +394,10 @@
   <value column="Help" original="The Substitute Tab defines products which may be used as a replacement for the selected product.">A Aba "Substituto" define produtos que podem ser usados como alternativas de substituição para o produto selecionado.</value>
  </row>
  <row id="182" trl="Y">
-  <value column="Name" original="Replenish">Reabastecer</value>
+  <value column="Name" original="Replenish">Reabastecimento</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Define Product Replenishment">Definir Reabastecimento de Produto</value>
-  <value column="Help" original="The Replenishment Tab defines the type of replenishment quantities.  This is used for automated ordering.  If you select a custom replenishment type, you need to create a class implementing org.compiere.util.ReplenishInterface and set that on warehouse level.">A Aba "Reabastecimento" define o tipo das quantidades de reabastecimento.  Isto é usado para a geração de pedidos automáticos.  Se você selecionar um tipo de reabastecimento personalizado, você precisa criar uma classe implementando org.adempiere.util.ReplenishInterface e selecioná-la no nível do armazém.</value>
+  <value column="Help" original="The Replenishment Tab defines the type of replenishment quantities.  This is used for automated ordering.  If you select a custom replenishment type, you need to create a class implementing org.compiere.util.ReplenishInterface and set that on warehouse level.">A Aba "Reabastecimento" define o tipo de reabastecimento utilizado. Isto pode ser usado para a geração de pedidos automáticos. Se você selecionar um tipo de reabastecimento personalizado, você precisa criar uma classe implementando org.adempiere.util.ReplenishInterface e selecioná-la no nível do armazém.</value>
  </row>
  <row id="183" trl="Y">
   <value column="Name" original="Price">Preço</value>
@@ -436,10 +436,10 @@
   <value column="Help" original="The Product Category defines unique groupings of products.  Product categories can be used in building price lists.">A Aba "Categoria de Produto" define agrupamentos exclusivos de produtos.  Categorias de Produto podem ser usadas para construir Listas de Preços.</value>
  </row>
  <row id="191" trl="Y">
-  <value column="Name" original="Price List">Lista de Preço</value>
+  <value column="Name" original="Price List">Tabela de Preços</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define Price Lists">Definir Listas de Preços</value>
-  <value column="Help" original="Price lists determine currency of the document as well as tax treatment.">Listas de Preços determinam a moeda do documento assim como o tratamento de impostos.</value>
+  <value column="Description" original="Define Price Lists">Definir Tabela de Preços</value>
+  <value column="Help" original="Price lists determine currency of the document as well as tax treatment.">Tabela de Preços determinam a moeda do documento assim como o tratamento de impostos.</value>
  </row>
  <row id="192" trl="Y">
   <value column="Name" original="Product Price">Preço de Produto</value>
@@ -666,15 +666,15 @@
  <row id="238" trl="Y">
   <value column="Name" original="Version">Versão</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain price list versions">Gerenciamento de Versões de Listas de Preços</value>
-  <value column="Help" original="Price lists are automatically created based on Product Purchasing Information and the Vendor Category Discount.&#10;The other alternative is to copy them from existing pricelists and the re-calculate them.&#10;You can also re-calculate the pricelist by referencing no pricelist or referencing the same pricelist.  If no base price list is selected, the Procuct Purchase records are used as reference.">Listas de Preço são automaticamente criadas com base nas Informações de Compras de Produtos e na Categoria de Descontos do Fornecedor. A outra alternativa é copiá-las de listas de preços existentes e então recalculá-las. Você também pode re-calcular a lista de preços referenciando a mesma lista de preços ou nenhuma lista de preços.  Se nenhuma base de lista de preços for selecionada, os registros de Compra de Produtos serão usados como referência.
+  <value column="Description" original="Maintain price list versions">Gerenciamento de Versões de Tabelas de Preços</value>
+  <value column="Help" original="Price lists are automatically created based on Product Purchasing Information and the Vendor Category Discount.&#10;The other alternative is to copy them from existing pricelists and the re-calculate them.&#10;You can also re-calculate the pricelist by referencing no pricelist or referencing the same pricelist.  If no base price list is selected, the Procuct Purchase records are used as reference.">Tabela de Preços são automaticamente criadas com base nas Informações de Compras de Produtos e na Categoria de Descontos do Fornecedor. A outra alternativa é copiá-las de tabelas de preços existentes e então recalculá-las. Você também pode re-calcular a tabela de preços referenciando a mesma tabela de preços ou nenhuma tabela de preços.  Se nenhuma tabela de preços basefor selecionada, os registros de Compra de Produtos serão usados como referência.
 </value>
  </row>
  <row id="239" trl="Y">
-  <value column="Name" original="Purchasing">Compras</value>
+  <value column="Name" original="Purchasing">Compra</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Purchasing">Compras</value>
-  <value column="Help" original="The Purchasing Tab define the pricing and rules ( pack quantity, UPC, minimum order quantity) for each product.">A Aba "Compras" define os preços e regras (quantidade por pacote, UPC, quantidade mínima por pedido) para cada produto.</value>
+  <value column="Description" original="Purchasing">Compra</value>
+  <value column="Help" original="The Purchasing Tab define the pricing and rules ( pack quantity, UPC, minimum order quantity) for each product.">A Aba "Compra" define os preços e regras (quantidade por embalagem, UPC, quantidade mínima por pedido, etc.) para cada produto.</value>
  </row>
  <row id="241" trl="Y">
   <value column="Name" original="Withholding">Retenção</value>
@@ -761,10 +761,10 @@
   <value column="Help" original="The Move Tab defines and identifies the movement of an item or items in inventory.">A Aba "Movimento" define e identifica a movimentação de um item ou itens no estoque.</value>
  </row>
  <row id="260" trl="Y">
-  <value column="Name" original="Move Line">Linha de Movimento</value>
+  <value column="Name" original="Move Line">Linha do Movimento</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Enter Inventory Movement Line">Introduzir a Linha de Movimentação de Estoque</value>
-  <value column="Help" original="The Move Line Tab defines the product and quantity to be moved and the location it is moving from and to.  ">A Aba "Linha de Movimento" define o produto, quantidade a ser movimentada e o local que ele está sendo movido de e para.  </value>
+  <value column="Description" original="Enter Inventory Movement Line">Introduzir a Linha do Movimento de Estoque</value>
+  <value column="Help" original="The Move Line Tab defines the product and quantity to be moved and the location it is moving from and to.  ">A Aba "Linha do Movimento" define o produto, quantidade e o locais envolvidos no movimento.</value>
  </row>
  <row id="262" trl="Y">
   <value column="Name" original="Product Transactions">Transações de Produtos</value>
@@ -1484,21 +1484,21 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Trade discount schema calculates the trade discount percentage">O Esquema de Desconto Comercial calcula a percentagem de desconto comercial</value>
  </row>
  <row id="405" trl="Y">
-  <value column="Name" original="Schema Line">Linha de Esquema</value>
+  <value column="Name" original="Schema Line">Linha do Esquema</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Trade Discount Price List Lines">Linhas de desconto comercial de Preço de Lista</value>
-  <value column="Help" original="Pricelists are created based on Product Purchase and Category Discounts.&#10;The parameters listed here allow to copy and calculate pricelists.&lt;BR&gt;&#10;The calculation:&#10;&lt;UL&gt;&#10;&lt;LI&gt;Copy and convert price from referenced price list&#10;&lt;LI&gt;result plus Surcharge Amount&#10;&lt;LI&gt;result minus Discount&#10;&lt;LI&gt;if resulting price is less than the original limit price plus min Margin, use this price (only if Margin is not zero)&#10;&lt;LI&gt;if resulting price is more than the original limit price plus max Margin, use this price (only if Margin us not zero)&#10;&lt;LI&gt;Round resulting price&#10;&lt;/UL&gt;&#10;&lt;B&gt;The Formula&lt;/B&gt; is&lt;BR&gt;&#10;NewPrice = (Convert(BasePrice) + Surcharge) * (100-Discount) / 100;&lt;BR&gt;&#10;if MinMargin &lt;&gt; 0 then NewPrice = Max (NewPrice, Convert(OrigLimitPrice) + MinMargin);&lt;BR&gt;&#10;if MaxMargin &lt;&gt; 0 then NewPrice = Min (NewPrice, Convert(OrigLimitPrice) + MaxMargin);&lt;BR&gt;&#10; &lt;BR&gt;&#10;&lt;B&gt;Example:&lt;/B&gt; (assuming same currency)&lt;BR&gt;&#10;Original Prices:  List=300, Standard=250, Limit=200;&lt;BR&gt;&#10;New List Price: Base=List, Surcharge=0, Discount=0, Round"><![CDATA[Listas de Preços são criadas baseadas nas Compras de Produtos e Descontos de Categoria. Os parâmetros listados aqui permitem copiar e calcular listas de preços.<BR> O cálculo: <UL> <LI>Copia e converte preços da lista de preços referenciada <LI>resultado mais Valor de Sobretaxa <LI>resultado menos Desconto <LI>se o preço resultante for menor que o preço limite original mais a Margem Mínima, use este preço (somente se a Margem for não zero) <LI>se o preço resultante for mais que o preço limite original mais a Margem Máxima, use este preço (somente se a Margem for não zero) <LI>Arredonda o preço resultante </UL> <B>A Fórmula</B> é <BR> NewPrice = (Convert(BasePrice) + Surcharge) * (100-Discount) / 100;<BR> if MinMargin <> 0 then NewPrice = Max (NewPrice, Convert(OrigLimitPrice) + MinMargin);<BR> if MaxMargin <> 0 then NewPrice = Min (NewPrice, Convert(OrigLimitPrice) + MaxMargin);<BR> <BR> <B>Exemplo:</B> (assumindo a mesma moeda)<BR> Preços Originais:  Lista=300, Padrão=250, Limite=200;<BR> Novo Preço de Lista: Base=Lista, Sobretaxa=0, Desconto=0, Arredondar]]></value>
+  <value column="Description" original="Trade Discount Price List Lines">Linhas do desconto comercial da Tabela de Preços</value>
+  <value column="Help" original="Pricelists are created based on Product Purchase and Category Discounts.&#10;The parameters listed here allow to copy and calculate pricelists.&lt;BR&gt;&#10;The calculation:&#10;&lt;UL&gt;&#10;&lt;LI&gt;Copy and convert price from referenced price list&#10;&lt;LI&gt;result plus Surcharge Amount&#10;&lt;LI&gt;result minus Discount&#10;&lt;LI&gt;if resulting price is less than the original limit price plus min Margin, use this price (only if Margin is not zero)&#10;&lt;LI&gt;if resulting price is more than the original limit price plus max Margin, use this price (only if Margin us not zero)&#10;&lt;LI&gt;Round resulting price&#10;&lt;/UL&gt;&#10;&lt;B&gt;The Formula&lt;/B&gt; is&lt;BR&gt;&#10;NewPrice = (Convert(BasePrice) + Surcharge) * (100-Discount) / 100;&lt;BR&gt;&#10;if MinMargin &lt;&gt; 0 then NewPrice = Max (NewPrice, Convert(OrigLimitPrice) + MinMargin);&lt;BR&gt;&#10;if MaxMargin &lt;&gt; 0 then NewPrice = Min (NewPrice, Convert(OrigLimitPrice) + MaxMargin);&lt;BR&gt;&#10; &lt;BR&gt;&#10;&lt;B&gt;Example:&lt;/B&gt; (assuming same currency)&lt;BR&gt;&#10;Original Prices:  List=300, Standard=250, Limit=200;&lt;BR&gt;&#10;New List Price: Base=List, Surcharge=0, Discount=0, Round"><![CDATA[Tabelas de Preços são criadas baseadas nas Compras de Produtos e Descontos de Categoria. Os parâmetros listados aqui permitem copiar e calcular tabelas de preços.<BR> O cálculo: <UL> <LI>Copia e converte preços da tabela referenciada <LI>resultado mais Valor de Sobretaxa <LI>resultado menos Desconto <LI>se o preço resultante for menor que o preço limite original mais a Margem Mínima, use este preço (somente se a Margem for não zero) <LI>se o preço resultante for mais que o preço limite original mais a Margem Máxima, use este preço (somente se a Margem for não zero) <LI>Arredonda o preço resultante </UL> <B>A Fórmula</B> é <BR> NewPrice = (Convert(BasePrice) + Surcharge) * (100-Discount) / 100;<BR> if MinMargin <> 0 then NewPrice = Max (NewPrice, Convert(OrigLimitPrice) + MinMargin);<BR> if MaxMargin <> 0 then NewPrice = Min (NewPrice, Convert(OrigLimitPrice) + MaxMargin);<BR> <BR> <B>Exemplo:</B> (assumindo a mesma moeda)<BR> Preços Originais:  Tabela=300, Padrão=250, Limite=200;<BR> Novo Preço de Tabela: Base=tabela, Sobretaxa=0, Desconto=0, Arredondar]]></value>
  </row>
  <row id="406" trl="Y">
-  <value column="Name" original="Discount Break">Incremento de Desconto</value>
+  <value column="Name" original="Discount Break">Desconto Condicional</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Trade discount based on breaks (steps)">Desconto comercial baseado em incrementos (passos)</value>
+  <value column="Description" original="Trade discount based on breaks (steps)">Desconto comercial baseado em quantidade do produto ou valor da transação</value>
   <value column="Help" original=""/>
  </row>
  <row id="407" trl="Y">
-  <value column="Name" original="Assigned Products">Produtos designados</value>
+  <value column="Name" original="Assigned Products">Produtos Atribuídos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Products assigned to Product Category">Produtos designados a uma Categoria de Produto</value>
+  <value column="Description" original="Products assigned to Product Category">Produtos atribuídos a uma Categoria de Produtos</value>
   <value column="Help" original=""/>
  </row>
  <row id="408" trl="Y">
@@ -3065,10 +3065,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Enter the products / product categories for which the subscriber should be included.  If no product / category is entered, the subscriber is requested to answer requests for all lines in a RfQ">Digitar os produtos / categorias de produtos para os quais o assinante deve ser incluído.  Se nenhum produto / categoria de produtos for digitada, será pedido ao assinante que responda a todas as linhas em uma SdC</value>
  </row>
  <row id="675" trl="Y">
-  <value column="Name" original="Price List Schema">Esquema de Lista de Preço</value>
+  <value column="Name" original="Price List Schema">Esquema de Preços</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Price List Schema">Esquema de Lista de Preço</value>
-  <value column="Help" original="Price List schema defines calculation rules for price lists">O esquema de Lista de Preços define as regras de cálculo para listas de preços</value>
+  <value column="Description" original="Price List Schema">Esquema de Tabela de Preços</value>
+  <value column="Help" original="Price List schema defines calculation rules for price lists">O Esquema de Tabela de Preços define as regras de cálculo para tabelas de preços</value>
  </row>
  <row id="676" trl="Y">
   <value column="Name" original="POS Terminal">Terminal PDV</value>
@@ -3479,10 +3479,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="747" trl="Y">
-  <value column="Name" original="Replenish">Reabastecer</value>
+  <value column="Name" original="Replenish">Reabastecimento</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define Product Replenishment">Definir Reabastecimento de Produto</value>
-  <value column="Help" original="The Replenishment Tab defines the type of replenishment quantities.  This is used for automated ordering.  If you select a custom replenishment type, you need to create a class implementing org.compiere.util.ReplenishInterface and set that on warehouse level.">A Aba "Reabastecimento" define o tipo das quantidades de reabastecimento.  Isto é usado para a geração de pedidos automáticos.  Se você selecionar um tipo de reabastecimento personalizado, você precisa criar uma classe implementando org.adempiere.util.ReplenishInterface e selecioná-la no nível do armazém.</value>
+  <value column="Description" original="Define Product Replenishment">Define Reabastecimento de Produto</value>
+  <value column="Help" original="The Replenishment Tab defines the type of replenishment quantities.  This is used for automated ordering.  If you select a custom replenishment type, you need to create a class implementing org.compiere.util.ReplenishInterface and set that on warehouse level.">A Aba "Reabastecimento" define o tipo de reabastecimento por produto. Isto é usado para a geração de pedidos automáticos. Se você selecionar um tipo de reabastecimento personalizado, você precisa criar uma classe implementando org.adempiere.util.ReplenishInterface e selecioná-la no nível do armazém.</value>
  </row>
  <row id="748" trl="Y">
   <value column="Name" original="Cost Details">Detalhes de Custo</value>
@@ -3518,7 +3518,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Exclude">Excluir</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Exclude the ability to create Lots in Attribute Sets">Exclui a capacidade de criar Lotes nos Conjuntos de Atributos</value>
-  <value column="Help" original="Create a record, if you want to exclude the ability to create Lots in Product Attribute Set information.&#10;Note that the information is cached. To have effect you may have to re-login or reset cache.">Crie um registro, Se você deseja excluir a capacidade de criar Lotes nas informações de Conjuntos de Atributos de Produto. Note que a Informação é armazenada em memória cache. Para efetivar, você deve fazer novo login ou resetar a memória cache.</value>
+  <value column="Help" original="Create a record, if you want to exclude the ability to create Lots in Product Attribute Set information.&#10;Note that the information is cached. To have effect you may have to re-login or reset cache.">Crie um registro, se você deseja excluir a capacidade de criar Lotes nas informações de Conjuntos de Atributos de Produto. Note que a Informação é armazenada em memória cache. Para efetivar, você deve fazer novo login ou resetar a memória cache.</value>
  </row>
  <row id="754" trl="Y">
   <value column="Name" original="Exclude">Excluir</value>
@@ -3551,15 +3551,15 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="759" trl="Y">
-  <value column="Name" original="Shipment, Receipt">Remessa, Recebimento</value>
+  <value column="Name" original="Shipment, Receipt">Remessa e Recebimento</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Material Shipment and Receipt Lines">Linhas de Recebimento e Entrega de Material</value>
+  <value column="Description" original="Material Shipment and Receipt Lines">Linhas de Remessa e Recebimento de Material</value>
   <value column="Help" original=""/>
  </row>
  <row id="760" trl="Y">
-  <value column="Name" original="Movement">Movimentação</value>
+  <value column="Name" original="Movement">Movimento de Estoque</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Material Movement Lines">Linhas de Movimentação de Material</value>
+  <value column="Description" original="Material Movement Lines">Linhas de Movimento de Estoque</value>
   <value column="Help" original=""/>
  </row>
  <row id="761" trl="Y">
@@ -4792,8 +4792,8 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original="History of Payroll Movement">History of Payroll Movement</value>
   <value column="Help" original=""/>
  </row>
- <row id="53134" trl="N">
-  <value column="Name" original="Attributes">Attributes</value>
+ <row id="53134" trl="Y">
+  <value column="Name" original="Attributes">Atributos</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5098,11 +5098,11 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53197" trl="N">
-  <value column="Name" original="Product Price Break">Product Price Break</value>
+ <row id="53197" trl="Y">
+  <value column="Name" original="Product Price Break">Preço Diferenciado</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
+  <value column="Description" original="">Preço Diferenciado de Produto</value>
+  <value column="Help" original="">É possível estipular um preço diferenciado baseado na quantidade mínima (ponto de inflexão) do produto e no parceiro de negócios.</value>
  </row>
  <row id="53198" trl="N">
   <value column="Name" original="Import Price List">Import Price List</value>
@@ -5116,44 +5116,44 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original="Concept Ordering">Concept Ordering</value>
   <value column="Help" original=""/>
  </row>
- <row id="53201" trl="N">
-  <value column="Name" original="Promotion Group">Promotion Group</value>
+ <row id="53201" trl="Y">
+  <value column="Name" original="Promotion Group">Grupo de Promoção</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53202" trl="N">
-  <value column="Name" original="Group Line">Group Line</value>
+ <row id="53202" trl="Y">
+  <value column="Name" original="Group Line">Linha do Grupo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53203" trl="N">
-  <value column="Name" original="Promotion">Promotion</value>
+ <row id="53203" trl="Y">
+  <value column="Name" original="Promotion">Promoção</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53204" trl="N">
-  <value column="Name" original="Pre Condition">Pre Condition</value>
+ <row id="53204" trl="Y">
+  <value column="Name" original="Pre Condition">Precondição</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53205" trl="N">
-  <value column="Name" original="Promotion Line">Promotion Line</value>
+ <row id="53205" trl="Y">
+  <value column="Name" original="Promotion Line">Linha da Promoção</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53206" trl="N">
-  <value column="Name" original="Quantity Distribution">Quantity Distribution</value>
+ <row id="53206" trl="Y">
+  <value column="Name" original="Quantity Distribution">Distribuição de Quantidade</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53207" trl="N">
-  <value column="Name" original="Reward">Reward</value>
+ <row id="53207" trl="Y">
+  <value column="Name" original="Reward">Recompensa</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5230,14 +5230,14 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53244" trl="N">
-  <value column="Name" original="Located at">Located at</value>
+ <row id="53244" trl="Y">
+  <value column="Name" original="Located at">Localizador</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Where are my units located?">Where are my units located?</value>
+  <value column="Description" original="Where are my units located?">Onde o produto está localizado</value>
   <value column="Help" original=""/>
  </row>
- <row id="53246" trl="N">
-  <value column="Name" original="UOM Conversion">UOM Conversion</value>
+ <row id="53246" trl="Y">
+  <value column="Name" original="UOM Conversion">Conversão de UDM</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5358,8 +5358,8 @@ Printing:
   <value column="Description" original="Components">Components</value>
   <value column="Help" original="Components of Bill fo Material">Components of Bill fo Material</value>
  </row>
- <row id="53289" trl="N">
-  <value column="Name" original="Costs">Costs</value>
+ <row id="53289" trl="Y">
+  <value column="Name" original="Costs">Custos</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5502,28 +5502,28 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53344" trl="N">
-  <value column="Name" original="Production">Production</value>
+ <row id="53344" trl="Y">
+  <value column="Name" original="Production">Produção</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53345" trl="N">
-  <value column="Name" original="Production Line">Production Line</value>
+ <row id="53345" trl="Y">
+  <value column="Name" original="Production Line">Linha de Produção</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53346" trl="N">
-  <value column="Name" original="Part">Part</value>
+ <row id="53346" trl="Y">
+  <value column="Name" original="Part">Componente</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="The Product that will be produced from this Bill of Materials">The Product that will be produced from this Bill of Materials</value>
+  <value column="Description" original="The Product that will be produced from this Bill of Materials">Indica o produto produzido a partir da Lista de Materiais</value>
   <value column="Help" original=""/>
  </row>
- <row id="53347" trl="N">
-  <value column="Name" original="Bill of Materials">Bill of Materials</value>
+ <row id="53347" trl="Y">
+  <value column="Name" original="Bill of Materials">Lista de Materiais</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="The component products.">The component products.</value>
+  <value column="Description" original="The component products.">Indica os produtos componentes</value>
   <value column="Help" original=""/>
  </row>
  <row id="53372" trl="N">
@@ -5562,26 +5562,26 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53421" trl="N">
-  <value column="Name" original="QC Test">QC Test</value>
+ <row id="53421" trl="Y">
+  <value column="Name" original="QC Test">Teste de CQ</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53422" trl="N">
-  <value column="Name" original="Test">Test</value>
+ <row id="53422" trl="Y">
+  <value column="Name" original="Test">Teste</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53423" trl="N">
-  <value column="Name" original="Product">Product</value>
+ <row id="53423" trl="Y">
+  <value column="Name" original="Product">Produto</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53424" trl="N">
-  <value column="Name" original="Type">Type</value>
+ <row id="53424" trl="Y">
+  <value column="Name" original="Type">Tipo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5892,22 +5892,22 @@ Printing:
   <value column="Description" original="Shipping Processors">Processador de Remessas</value>
   <value column="Help" original="Shipping processor tab to define integration details with online shipping services.">Define detalhes de integração a serviços online de remessas expressas (ex. FedEx, UPS, DHL, etc.).</value>
  </row>
- <row id="200037" trl="N">
-  <value column="Name" original="Packaging">Packaging</value>
+ <row id="200037" trl="Y">
+  <value column="Name" original="Packaging">Embalagem</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Packaging Options supported by the Shipper">Packaging Options supported by the Shipper</value>
+  <value column="Description" original="Packaging Options supported by the Shipper">Opções de embalagem suportadas pela transportadora</value>
   <value column="Help" original=""/>
  </row>
- <row id="200038" trl="N">
-  <value column="Name" original="Label Type">Label Type</value>
+ <row id="200038" trl="Y">
+  <value column="Name" original="Label Type">Tipo de Etiqueta</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Label Types Supported by the Shipper.">Label Types Supported by the Shipper.</value>
-  <value column="Help" original="Used when booking a shipment online to define the label format that will be printed.">Used when booking a shipment online to define the label format that will be printed.</value>
+  <value column="Description" original="Label Types Supported by the Shipper.">Tipos de etiqueta suportados pela transportadora</value>
+  <value column="Help" original="Used when booking a shipment online to define the label format that will be printed.">Usado em agendamentos online para definir o formato da etiqueta que será impressa.</value>
  </row>
- <row id="200039" trl="N">
-  <value column="Name" original="Pickup Types">Pickup Types</value>
+ <row id="200039" trl="Y">
+  <value column="Name" original="Pickup Types">Tipo de Coleta</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Methods that the Shipper will support for picking up from your location">Methods that the Shipper will support for picking up from your location</value>
+  <value column="Description" original="Methods that the Shipper will support for picking up from your location">Métodos suportados pela transportadora para efetuar coleta na sua localização (endereço)</value>
   <value column="Help" original=""/>
  </row>
  <row id="200040" trl="Y">
@@ -5958,41 +5958,41 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200051" trl="N">
-  <value column="Name" original="Shipping Processor">Shipping Processor</value>
+ <row id="200051" trl="Y">
+  <value column="Name" original="Shipping Processor">Processador de Remessas</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Shipping Processors">Shipping Processors</value>
-  <value column="Help" original="Shipping processor tab to define integration details with online shipping services.">Shipping processor tab to define integration details with online shipping services.</value>
+  <value column="Description" original="Shipping Processors">Processadores de Remessas</value>
+  <value column="Help" original="Shipping processor tab to define integration details with online shipping services.">A aba Processador de Remessas define detalhes de integração com serviços online de envio de remessas.</value>
  </row>
- <row id="200052" trl="N">
-  <value column="Name" original="Shipper">Shipper</value>
+ <row id="200052" trl="Y">
+  <value column="Name" original="Shipper">Transportadora</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Shippers">Shippers</value>
-  <value column="Help" original="The Shippers Tab defines any entity who will provide shipping to or shipping from an Organization.">The Shippers Tab defines any entity who will provide shipping to or shipping from an Organization.</value>
+  <value column="Description" original="Shippers">Transportadoras</value>
+  <value column="Help" original="The Shippers Tab defines any entity who will provide shipping to or shipping from an Organization.">A Aba Transportadora define configurações para o transporte de remessas.</value>
  </row>
- <row id="200053" trl="N">
-  <value column="Name" original="Packaging">Packaging</value>
+ <row id="200053" trl="Y">
+  <value column="Name" original="Packaging">Embalagem</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Packaging Options supported by the Shipper">Packaging Options supported by the Shipper</value>
+  <value column="Description" original="Packaging Options supported by the Shipper">Opções de embalagem suportadas pela transportadora</value>
   <value column="Help" original=""/>
  </row>
- <row id="200054" trl="N">
-  <value column="Name" original="Label Type">Label Type</value>
+ <row id="200054" trl="Y">
+  <value column="Name" original="Label Type">Tipo de Etiqueta</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Label Types Supported by the Shipper.">Label Types Supported by the Shipper.</value>
-  <value column="Help" original="Used when booking a shipment online to define the label format that will be printed.">Used when booking a shipment online to define the label format that will be printed.</value>
+  <value column="Description" original="Label Types Supported by the Shipper.">Tipos de etiqueta suportados pela transportadora</value>
+  <value column="Help" original="Used when booking a shipment online to define the label format that will be printed.">Usado em agendamentos online para definir o formato da etiqueta que será impressa.</value>
  </row>
- <row id="200055" trl="N">
-  <value column="Name" original="Pickup Types">Pickup Types</value>
+ <row id="200055" trl="Y">
+  <value column="Name" original="Pickup Types">Tipo de Coleta</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Methods that the Shipper will support for picking up from your location">Methods that the Shipper will support for picking up from your location</value>
+  <value column="Description" original="Methods that the Shipper will support for picking up from your location">Métodos suportados pela transportadora para efetuar coleta na sua localização (endereço)</value>
   <value column="Help" original=""/>
  </row>
- <row id="200057" trl="N">
-  <value column="Name" original="Shipper">Shipper</value>
+ <row id="200057" trl="Y">
+  <value column="Name" original="Shipper">Transportadora</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Shippers">Shippers</value>
-  <value column="Help" original="The Shippers Tab defines any entity who will provide shipping to or shipping from an Organization.">The Shippers Tab defines any entity who will provide shipping to or shipping from an Organization.</value>
+  <value column="Description" original="Shippers">Transportadoras</value>
+  <value column="Help" original="The Shippers Tab defines any entity who will provide shipping to or shipping from an Organization.">A Aba Transportadora define configurações para o transporte de remessas.</value>
  </row>
  <row id="200058" trl="N">
   <value column="Name" original="Packaging">Packaging</value>
@@ -6126,14 +6126,14 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200102" trl="N">
-  <value column="Name" original="Cost Adjustment">Cost Adjustment</value>
+ <row id="200102" trl="Y">
+  <value column="Name" original="Cost Adjustment">Ajuste de Custo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200103" trl="N">
-  <value column="Name" original="Cost Adjustment Line">Cost Adjustment Line</value>
+ <row id="200103" trl="Y">
+  <value column="Name" original="Cost Adjustment Line">Linha do Ajuste de Custo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>

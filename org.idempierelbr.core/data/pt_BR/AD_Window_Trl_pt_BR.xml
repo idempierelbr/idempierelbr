@@ -203,14 +203,14 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Order Window allows you to enter and modify Sales Orders.  ">A janela permite a você digitar e modificar Pedidos de Venda.  </value>
  </row>
  <row id="144" trl="Y">
-  <value column="Name" original="Product Category">Categoria de Produto</value>
-  <value column="Description" original="Maintain Product Categories">Gerenciamento de Categorias de Produto</value>
-  <value column="Help" original="The Product Category allows you to define different groups of products.  These groups can be used in generating Price Lists, defining margins and for easily assigning different accounting parameters for products.">A Janela "Categoria de Produto" permite a você definir diferentes grupos de produtos.  Estes grupos podem ser usados ao gerar Listas de Preços, definindo margens e por facilidade designando diferentes parâmetros contábeis para produtos.</value>
+  <value column="Name" original="Product Category">Categoria de Produtos</value>
+  <value column="Description" original="Maintain Product Categories">Gerenciamento de Categorias de Produtos</value>
+  <value column="Help" original="The Product Category allows you to define different groups of products.  These groups can be used in generating Price Lists, defining margins and for easily assigning different accounting parameters for products.">A Janela "Categoria de Produtos" permite a você definir diferentes grupos de produtos.  Estes grupos podem ser usados ao gerar Listas de Preços, definindo margens e por facilidade designando diferentes parâmetros contábeis para produtos.</value>
  </row>
  <row id="146" trl="Y">
-  <value column="Name" original="Price List">Lista de Preço</value>
-  <value column="Description" original="Maintain Product Price Lists">Gerenciamento de Listas de Preço</value>
-  <value column="Help" original="The Price List Window allows you to generate product price lists for your Business Partners.  Price lists determine currency and tax treatment.  Price list versions allow to maintain parallel lists for different date ranges.  The most current pricelist version is used based on the document date.&#10;&lt;BR&gt;&#10;All pricelists have three prices: List, Standard and Limit&#10;&lt;BR&gt;&#10;First step is to create a base price list.  You can manually add products and enter the prices or create them automatically.  The base price list is often the purchase price list with list price ('official' retail price), the standard price (your purchase price).  The limit price can be used to check your final purchase costs after discounts, rebates, etc.&#10;&lt;BR&gt; &#10;Pricelists can be calculated and copied.  To speed up the calculation, the parameters are stored an used when creating a new price list version."><![CDATA[A Janela "Lista de Preço" permite a você gerar Listas de Preços de Produto para seus Parceiros de Negócios.  Listas de Preço determinam a moeda e o tratamento de impostos.  Versões de Listas de Preço permitem manter listas em paralelo para diferentes faixas de datas (épocas).  A versão de lista de preços mais atual é usada baseada na data do documento. <BR> Todas as listas de preços tem três preços: Lista, Padrão (Normal) e Limite <BR> O primeiro passo é criar uma lista de preços base.  Você pode acrescentar produtos manualmente e digitar os preços ou criá-los automaticamente.  A lista de preços base é freqüentemente a lista de preços de compra com o "Preço de Lista" (Preço ao consumidor 'oficial'), e o preço padrão (seu preço de compra).  O Preço Limite pode ser usado para conferir seus custos de compras finais após descontos, bonificações, etc. <BR> Listas de Preço podem ser calculadas e copiadas.  Para acelerar os cálculos, os parâmetros são armazenados e usados ao se criar uma nova versão da lista de preços.]]></value>
+  <value column="Name" original="Price List">Tabela de Preços</value>
+  <value column="Description" original="Maintain Product Price Lists">Gerenciamento de Tabelas de Preços</value>
+  <value column="Help" original="The Price List Window allows you to generate product price lists for your Business Partners.  Price lists determine currency and tax treatment.  Price list versions allow to maintain parallel lists for different date ranges.  The most current pricelist version is used based on the document date.&#10;&lt;BR&gt;&#10;All pricelists have three prices: List, Standard and Limit&#10;&lt;BR&gt;&#10;First step is to create a base price list.  You can manually add products and enter the prices or create them automatically.  The base price list is often the purchase price list with list price ('official' retail price), the standard price (your purchase price).  The limit price can be used to check your final purchase costs after discounts, rebates, etc.&#10;&lt;BR&gt; &#10;Pricelists can be calculated and copied.  To speed up the calculation, the parameters are stored an used when creating a new price list version."><![CDATA[A Janela "Tabelas de Preços" permite a você gerar Tabelas de Preços de Produto para seus Parceiros de Negócios. Tabelas de Preços determinam a moeda e o tratamento de impostos. Versões de Tabela de Preços permitem manter tabelas em paralelo para diferentes faixas de datas.  A versão de tabela de preços mais atual é usada com base na data do documento. <BR> Todas as tabelas de preços tem três preços: de tabela, padrão (normal) e limite <BR> O primeiro passo é criar uma tabela de preços base.  Você pode acrescentar produtos manualmente e digitar os preços ou criá-los automaticamente.  A tabela de preços base é freqüentemente a tabela de preços de compra com o "Preço de Tabela" (Preço ao consumidor 'oficial'), e o preço padrão (seu preço de compra).  O Preço Limite pode ser usado para conferir seus custos de compras finais após descontos, bonificações, etc. <BR> Tabelas de Preços podem ser calculadas e copiadas.  Para acelerar os cálculos, os parâmetros são armazenados e usados ao se criar uma nova versão da tabela de preços.]]></value>
  </row>
  <row id="147" trl="Y">
   <value column="Name" original="Invoice Schedule">Programação de Faturamento</value>
@@ -289,8 +289,8 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  </row>
  <row id="168" trl="Y">
   <value column="Name" original="Physical Inventory">Estoque Físico</value>
-  <value column="Description" original="Enter Physical Inventory">Introduzir o Estoque Físico</value>
-  <value column="Help" original="The Physical Inventory Window allows you to generate inventory count lists.  These counts can then be processed which will update the actual inventory with the new counts. Normally you would create inventory count lines automaticelly. If you create them manually, make sure that the book value is correct.">A Janela "Estoque Físico" permite a você gerar listas de contagem de estoque.  Estas contagens podem então ser processadas o que irá atualizar o estoque real com as novas contagens. Normalmente, você iria criar "Linhas de Contagem de Estoque" automaticamente. Se você as criar manualmente, certifique-se que o "Valor Contábil" esteja correto.</value>
+  <value column="Description" original="Enter Physical Inventory">Ajustar o Estoque Físico</value>
+  <value column="Help" original="The Physical Inventory Window allows you to generate inventory count lists.  These counts can then be processed which will update the actual inventory with the new counts. Normally you would create inventory count lines automaticelly. If you create them manually, make sure that the book value is correct.">A Janela "Estoque Físico" permite o ajuste de estoque com listas de contagem. Processe o documento para que o ajuste ocorra efetivamente..</value>
  </row>
  <row id="169" trl="Y">
   <value column="Name" original="Shipment (Customer)">Remessa (Cliente)</value>
@@ -298,9 +298,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Shipment Window defines shipments made or to be made to a customer.  They are generated from an Customer Order.  The Shipment Document will generate the Customer Invoice.">A janela define remessas feitas ou a serem feitas para um cliente.  Elas são geradas a partir de um Pedido. O documento Remessa pode gerar uma Fatura.</value>
  </row>
  <row id="170" trl="Y">
-  <value column="Name" original="Inventory Move">Movimentação de Estoque</value>
-  <value column="Description" original="Inventory Move">Movimentação de Estoque</value>
-  <value column="Help" original="The Inventory Move Window allows you to move inventory from one location or warehouse to another.  After the appropriate lines are entered selecting the 'Process Movements' button will adjust the inventory.">A Janela "Movimentação de Estoque" permite a você movimentar o estoque de um local ou armazém para outro.  Após introduzir as linhas apropriadas, selecione o botão 'Processar Movimentação' para ajustar o estoque.</value>
+  <value column="Name" original="Inventory Move">Movimento de Estoque</value>
+  <value column="Description" original="Inventory Move">Movimento de Estoque</value>
+  <value column="Help" original="The Inventory Move Window allows you to move inventory from one location or warehouse to another.  After the appropriate lines are entered selecting the 'Process Movements' button will adjust the inventory.">A Janela permite mover o estoque de um armazém para outro. Após introduzir as linhas do movimento, processe o documento para ajustar o estoque.</value>
  </row>
  <row id="172" trl="Y">
   <value column="Name" original="Import Business Partner">Importação de Parceiros de Negócios</value>
@@ -1035,9 +1035,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Material Demand can be based on Forecast, Requisitions, Open Orders">A demanda de material pode ser baseada na Previsão, Requisições ou Pedidos em Aberto</value>
  </row>
  <row id="330" trl="Y">
-  <value column="Name" original="Ship/Receipt Confirm">Confirmação de Envio/Recebimento</value>
-  <value column="Description" original="Material Shipment or Receipt Confirmation">Confirmação de Embarque ou Recebimento de Material</value>
-  <value column="Help" original="Confirmation of Shipment or Receipt - Created from the Shipment/Receipt">Confirmação de Entrega ou Recebimento - criado a partir de Entrega/Recebimento</value>
+  <value column="Name" original="Ship/Receipt Confirm">Confirmação de Remessa/Recebimento</value>
+  <value column="Description" original="Material Shipment or Receipt Confirmation">Confirmação de Remessa ou Recebimento de Material</value>
+  <value column="Help" original="Confirmation of Shipment or Receipt - Created from the Shipment/Receipt">Confirmação de Remessa ou Recebimento de Material. Este documento é criado automaticamente a partir de Remessas/Recebimentos</value>
  </row>
  <row id="331" trl="Y">
   <value column="Name" original="RMA Type">Tipo de ARM</value>
@@ -1051,8 +1051,8 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  </row>
  <row id="333" trl="Y">
   <value column="Name" original="Move Confirmation">Confirmação de Movimento</value>
-  <value column="Description" original="Confirm Inventory Moves">Confirmar Movimentações de Estoque</value>
-  <value column="Help" original="The document is automatically created when the document type of the movement indicates In Transit.. If there is a difference quantity, a Physical Inventory is created for the source (from) warehouse. If there is a scrapped quantity, a Physical Inventory is created for the target (to) warehouse.">O documento é automaticamente criado quando o tipo de documento da movimentação indica Trânsito de Entrada. Se houver uma diferença de quantidade, um Estoque Físico é criado para o armazém de origem (de). Se houver uma quantidade sucateada, um Estoque Físico é criado para o armazém de destino (para).</value>
+  <value column="Description" original="Confirm Inventory Moves">Confirmar Movimento de Estoque</value>
+  <value column="Help" original="The document is automatically created when the document type of the movement indicates In Transit.. If there is a difference quantity, a Physical Inventory is created for the source (from) warehouse. If there is a scrapped quantity, a Physical Inventory is created for the target (to) warehouse.">O documento é automaticamente criado quando o tipo de documento do movimento tiver a opção Em Trânsito selecionada. Se houver diferença de quantidade, um Estoque Físico é criado no armazém de origem. Se houver quantidade sucateada, um Estoque Físico é criado no armazém de destino.</value>
  </row>
  <row id="334" trl="Y">
   <value column="Name" original="Import Confirmations">Importar Confirmações</value>
@@ -1070,9 +1070,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Maintain Service Level Agreements for Business Partners">Gerenciar Acordos de Nível de Serviço para Parceiros de Negócios</value>
  </row>
  <row id="337" trl="Y">
-  <value column="Name" original="Price List Schema">Esquema de Lista de Preço</value>
-  <value column="Description" original="Maintain Price List Schema">Gerenciamento dos Esquemas de Lista de Preço</value>
-  <value column="Help" original="Price List schema defines calculation rules for price lists">O esquema de Lista de Preços define as regras de cálculo para listas de preços</value>
+  <value column="Name" original="Price List Schema">Esquema de Preços</value>
+  <value column="Description" original="Maintain Price List Schema">Gerenciamento dos Esquemas de Tabela de Preços</value>
+  <value column="Help" original="Price List schema defines calculation rules for price lists">O Esquema de Preços define as regras de cálculo para tabelas de preços</value>
  </row>
  <row id="338" trl="Y">
   <value column="Name" original="POS Terminal">Terminal PDV</value>
@@ -1723,14 +1723,14 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Import Price Lists">Import Price Lists</value>
   <value column="Help" original="The Import Price List Window is an interim table which is used when importing external data into the system.  Selecting the 'Process' button will either add or modify the appropriate records.">The Import Price List Window is an interim table which is used when importing external data into the system.  Selecting the 'Process' button will either add or modify the appropriate records.</value>
  </row>
- <row id="53073" trl="N">
-  <value column="Name" original="Promotion Group">Promotion Group</value>
-  <value column="Description" original="Grouping of product for promotion setup">Grouping of product for promotion setup</value>
+ <row id="53073" trl="Y">
+  <value column="Name" original="Promotion Group">Grupo de Promoção</value>
+  <value column="Description" original="Grouping of product for promotion setup">Agrupamento de produtos para configuração de promoções</value>
   <value column="Help" original=""/>
  </row>
- <row id="53074" trl="N">
-  <value column="Name" original="Promotion">Promotion</value>
-  <value column="Description" original="Setup promotion rule">Setup promotion rule</value>
+ <row id="53074" trl="Y">
+  <value column="Name" original="Promotion">Promoção</value>
+  <value column="Description" original="Setup promotion rule">Permite a configuração de regras de promoção</value>
   <value column="Help" original=""/>
  </row>
  <row id="53078" trl="N">
@@ -1854,29 +1854,29 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53127" trl="N">
-  <value column="Name" original="Production (Single Product)">Production (Single Product)</value>
+ <row id="53127" trl="Y">
+  <value column="Name" original="Production (Single Product)">Produção (Individual)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53128" trl="N">
-  <value column="Name" original="Parts and BOMs">Parts and BOMs</value>
-  <value column="Description" original="Maintain Bill of Materials">Maintain Bill of Materials</value>
-  <value column="Help" original="The Bill of Materials Window defines all product bills of materials used by an organization for light manufacturing.">The Bill of Materials Window defines all product bills of materials used by an organization for light manufacturing.</value>
+ <row id="53128" trl="Y">
+  <value column="Name" original="Parts and BOMs">Componentes e LDMs</value>
+  <value column="Description" original="Maintain Bill of Materials">Manutenção de Listas de Materiais</value>
+  <value column="Help" original="The Bill of Materials Window defines all product bills of materials used by an organization for light manufacturing.">A janela Componentes e LDMs define todos os produtos do tipo LDM usados pela organização para a produção.</value>
  </row>
  <row id="53134" trl="Y">
   <value column="Name" original="Cash Plan">Planejamento de Caixa</value>
   <value column="Description" original="">Gerenciar os Planejamentos de Caixa</value>
   <value column="Help" original=""/>
  </row>
- <row id="53149" trl="N">
-  <value column="Name" original="Quality Test">Quality Test</value>
+ <row id="53149" trl="Y">
+  <value column="Name" original="Quality Test">Teste de Qualidade</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53150" trl="N">
-  <value column="Name" original="Part Type">Part Type</value>
-  <value column="Description" original="Manufacturing Part Types">Manufacturing Part Types</value>
+ <row id="53150" trl="Y">
+  <value column="Name" original="Part Type">Tipo de Componente</value>
+  <value column="Description" original="Manufacturing Part Types">Tipos de Componentes de Produção</value>
   <value column="Help" original=""/>
  </row>
  <row id="53152" trl="Y">
@@ -2004,13 +2004,13 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200028" trl="N">
-  <value column="Name" original="Shipping Processor Configuration">Shipping Processor Configuration</value>
+ <row id="200028" trl="Y">
+  <value column="Name" original="Shipping Processor Configuration">Configuração de Processador de Remessas</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200029" trl="N">
-  <value column="Name" original="Shipper Configuration">Shipper Configuration</value>
+ <row id="200029" trl="Y">
+  <value column="Name" original="Shipper Configuration">Configuração de Transportadora</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2034,10 +2034,10 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200043" trl="N">
-  <value column="Name" original="Cost Adjustment">Cost Adjustment</value>
-  <value column="Description" original="Enter Inventory Cost Adjustment">Enter Inventory Cost Adjustment</value>
-  <value column="Help" original="The Cost Adjustment Window allow user to enter cost adjustment for products">The Cost Adjustment Window allow user to enter cost adjustment for products</value>
+ <row id="200043" trl="Y">
+  <value column="Name" original="Cost Adjustment">Ajuste de Custo</value>
+  <value column="Description" original="Enter Inventory Cost Adjustment">Manutenção de Ajustes de Custo de Estoque</value>
+  <value column="Help" original="The Cost Adjustment Window allow user to enter cost adjustment for products">A Janela Ajuste de Custo permite o ajuste de custo de produtos</value>
  </row>
  <row id="200044" trl="Y">
   <value column="Name" original="Tax Provider Configuration">Configuração de Provedor de Impostos</value>

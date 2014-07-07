@@ -271,7 +271,7 @@
   <value column="Description" original="Reference -&gt;"><![CDATA[Referência ->]]></value>
  </row>
  <row id="164" trl="Y">
-  <value column="Name" original="Drafted">Em Rascunho</value>
+  <value column="Name" original="Drafted">Em Digitação</value>
   <value column="Description" original=""/>
  </row>
  <row id="165" trl="Y">
@@ -491,27 +491,27 @@
   <value column="Description" original="Low priority">Prioridade baixa</value>
  </row>
  <row id="232" trl="Y">
-  <value column="Name" original="Whole Number .00">Número Inteiro ,00</value>
+  <value column="Name" original="Whole Number .00">Número Inteiro (,00)</value>
   <value column="Description" original="Number w/o decimals">Número sem casas decimais</value>
  </row>
  <row id="233" trl="Y">
-  <value column="Name" original="No Rounding">Sem arredondamento</value>
+  <value column="Name" original="No Rounding">Não Arredondar</value>
   <value column="Description" original=""/>
  </row>
  <row id="234" trl="Y">
-  <value column="Name" original="Quarter .25 .50 .75">Quarto ,25 ,50 ,75</value>
+  <value column="Name" original="Quarter .25 .50 .75">25 Centavos (,25 / ,50 / ,75 / etc.)</value>
   <value column="Description" original=""/>
  </row>
  <row id="235" trl="Y">
-  <value column="Name" original="Dime .10, .20, .30, ...">Décimo .10, .20, .30, ...</value>
+  <value column="Name" original="Dime .10, .20, .30, ...">10 Centavos (,10 / ,20 / ,30 / etc.)</value>
   <value column="Description" original=""/>
  </row>
  <row id="236" trl="Y">
-  <value column="Name" original="Nickel .05, .10, .15, ...">Níquel ,05, ,10, ,15, ...</value>
+  <value column="Name" original="Nickel .05, .10, .15, ...">5 Centavos (,05 / ,10 / ,15 / etc.)</value>
   <value column="Description" original=""/>
  </row>
  <row id="237" trl="Y">
-  <value column="Name" original="Ten 10.00, 20.00, ..">Dezena 10,00, 20,00, ..</value>
+  <value column="Name" original="Ten 10.00, 20.00, ..">10 Reais (10,00 / 20,00 / 30,00 / etc.)</value>
   <value column="Description" original=""/>
  </row>
  <row id="239" trl="Y">
@@ -519,7 +519,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="240" trl="Y">
-  <value column="Name" original="Maintain Maximum Level">Gerenciamento de Nível Máximo</value>
+  <value column="Name" original="Maintain Maximum Level">Manter o Nível Máximo</value>
   <value column="Description" original=""/>
  </row>
  <row id="242" trl="Y">
@@ -527,7 +527,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="244" trl="Y">
-  <value column="Name" original="Reorder below Minimum Level">Emitir pedido de compras abaixo do nível mínimo</value>
+  <value column="Name" original="Reorder below Minimum Level">Emitir Pedido quando Abaixo do Nível Mínimo</value>
   <value column="Description" original=""/>
  </row>
  <row id="245" trl="Y">
@@ -775,7 +775,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="325" trl="Y">
-  <value column="Name" original="List Price">Preço de Lista</value>
+  <value column="Name" original="List Price">Preço de Tabela</value>
   <value column="Description" original=""/>
  </row>
  <row id="326" trl="Y">
@@ -783,7 +783,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="327" trl="Y">
-  <value column="Name" original="Limit (PO) Price">Preço Limite (PC)</value>
+  <value column="Name" original="Limit (PO) Price">Preço Limite</value>
   <value column="Description" original=""/>
  </row>
  <row id="328" trl="Y">
@@ -1055,7 +1055,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="396" trl="Y">
-  <value column="Name" original="not 0">não 0</value>
+  <value column="Name" original="not 0">Diferente de 0</value>
   <value column="Description" original=""/>
  </row>
  <row id="397" trl="Y">
@@ -1415,7 +1415,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="497" trl="Y">
-  <value column="Name" original="Flat Percent">Percentagem Fixa</value>
+  <value column="Name" original="Flat Percent">Desconto Fixo (%)</value>
   <value column="Description" original=""/>
  </row>
  <row id="498" trl="Y">
@@ -1423,11 +1423,11 @@
   <value column="Description" original=""/>
  </row>
  <row id="499" trl="Y">
-  <value column="Name" original="Breaks">Quebras</value>
+  <value column="Name" original="Breaks">Desconto Condicional</value>
   <value column="Description" original=""/>
  </row>
  <row id="500" trl="Y">
-  <value column="Name" original="Pricelist">Lista de Preço</value>
+  <value column="Name" original="Pricelist">Tabela de Preços</value>
   <value column="Description" original=""/>
  </row>
  <row id="501" trl="Y">
@@ -1631,27 +1631,27 @@
   <value column="Description" original=""/>
  </row>
  <row id="551" trl="Y">
-  <value column="Name" original="Standard Part">Peças padrão</value>
+  <value column="Name" original="Standard Part">Componente Padrão</value>
   <value column="Description" original=""/>
  </row>
  <row id="552" trl="Y">
-  <value column="Name" original="Optional Part">Peças opcionais</value>
+  <value column="Name" original="Optional Part">Componente Opcional</value>
   <value column="Description" original=""/>
  </row>
  <row id="553" trl="Y">
-  <value column="Name" original="In alternative Group 1">No Grupo alternativo 1</value>
+  <value column="Name" original="In alternative Group 1">Grupo Alternativo 1</value>
   <value column="Description" original=""/>
  </row>
  <row id="554" trl="Y">
-  <value column="Name" original="In alternative Group 2">No Grupo alternativo 2</value>
+  <value column="Name" original="In alternative Group 2">Grupo Alternativo 2</value>
   <value column="Description" original=""/>
  </row>
  <row id="555" trl="Y">
-  <value column="Name" original="In alternaltve Group 3">No Grupo alternativo 3</value>
+  <value column="Name" original="In alternaltve Group 3">Grupo Alternativo 3</value>
   <value column="Description" original=""/>
  </row>
  <row id="556" trl="Y">
-  <value column="Name" original="In alternative Group 4">No Grupo alternativo 4</value>
+  <value column="Name" original="In alternative Group 4">Grupo Alternativo 4</value>
   <value column="Description" original=""/>
  </row>
  <row id="557" trl="Y">
@@ -1967,23 +1967,23 @@
   <value column="Description" original=""/>
  </row>
  <row id="639" trl="Y">
-  <value column="Name" original="In alternative Group 5">No Grupo alternativo 5</value>
+  <value column="Name" original="In alternative Group 5">Grupo Alternativo 5</value>
   <value column="Description" original=""/>
  </row>
  <row id="640" trl="Y">
-  <value column="Name" original="In alternative Group 6">No Grupo alternativo 6</value>
+  <value column="Name" original="In alternative Group 6">Grupo Alternativo 6</value>
   <value column="Description" original=""/>
  </row>
  <row id="641" trl="Y">
-  <value column="Name" original="In alternative Group 7">No Grupo alternativo 7</value>
+  <value column="Name" original="In alternative Group 7">Grupo Alternativo 7</value>
   <value column="Description" original=""/>
  </row>
  <row id="642" trl="Y">
-  <value column="Name" original="In alternative Group 8">No Grupo alternativo 8</value>
+  <value column="Name" original="In alternative Group 8">Grupo Alternativo 8</value>
   <value column="Description" original=""/>
  </row>
  <row id="643" trl="Y">
-  <value column="Name" original="In alternative Group 9">No Grupo alternativo 9</value>
+  <value column="Name" original="In alternative Group 9">Grupo Alternativo 9</value>
   <value column="Description" original=""/>
  </row>
  <row id="644" trl="Y">
@@ -2103,11 +2103,11 @@
   <value column="Description" original=""/>
  </row>
  <row id="673" trl="Y">
-  <value column="Name" original="Vendor Confirmation">Confirmação do Fornecedor</value>
+  <value column="Name" original="Vendor Confirmation">Confirmação de Fornecedor</value>
   <value column="Description" original=""/>
  </row>
  <row id="674" trl="Y">
-  <value column="Name" original="Customer Confirmation">Confirmação do Cliente</value>
+  <value column="Name" original="Customer Confirmation">Confirmação de Cliente</value>
   <value column="Description" original=""/>
  </row>
  <row id="675" trl="Y">
@@ -2119,7 +2119,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="677" trl="Y">
-  <value column="Name" original="Pick/QA Confirm">Confirmação de Coleta/Controle de Qualidade</value>
+  <value column="Name" original="Pick/QA Confirm">Confirmação de Separação/CQ</value>
   <value column="Description" original=""/>
  </row>
  <row id="678" trl="Y">
@@ -2127,7 +2127,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="679" trl="Y">
-  <value column="Name" original="Alternative">Alternativa</value>
+  <value column="Name" original="Alternative">Alternativo</value>
   <value column="Description" original=""/>
  </row>
  <row id="680" trl="Y">
@@ -2823,11 +2823,11 @@
   <value column="Description" original=""/>
  </row>
  <row id="857" trl="Y">
-  <value column="Name" original="On Hand Qty">Qde Disponível</value>
+  <value column="Name" original="On Hand Qty">Quantidade Disponível</value>
   <value column="Description" original=""/>
  </row>
  <row id="858" trl="Y">
-  <value column="Name" original="Zero">Zero</value>
+  <value column="Name" original="Zero">0</value>
   <value column="Description" original=""/>
  </row>
  <row id="859" trl="Y">
@@ -3319,8 +3319,8 @@
   <value column="Description" original=""/>
  </row>
  <row id="50042" trl="Y">
-  <value column="Name" original="Ending in 9/5">Ending in 9/5</value>
-  <value column="Description" original="The price ends in either a 5 or 9 whole unit">The price ends in either a 5 or 9 whole unit</value>
+  <value column="Name" original="Ending in 9/5">Final 5 ou 9 (,05 / ,09 / ,15 / etc.)</value>
+  <value column="Description" original="The price ends in either a 5 or 9 whole unit">Preço com final 5 ou 9</value>
  </row>
  <row id="50043" trl="Y">
   <value column="Name" original="Message">Message</value>
@@ -4234,36 +4234,36 @@
   <value column="Name" original="&lt;="><![CDATA[<=]]></value>
   <value column="Description" original=""/>
  </row>
- <row id="53464" trl="N">
-  <value column="Name" original="Min">Min</value>
+ <row id="53464" trl="Y">
+  <value column="Name" original="Min">Mínimo</value>
   <value column="Description" original=""/>
  </row>
- <row id="53465" trl="N">
-  <value column="Name" original="Max">Max</value>
+ <row id="53465" trl="Y">
+  <value column="Name" original="Max">Máximo</value>
   <value column="Description" original=""/>
  </row>
- <row id="53466" trl="N">
-  <value column="Name" original="Minus">Minus</value>
+ <row id="53466" trl="Y">
+  <value column="Name" original="Minus">Subtração</value>
   <value column="Description" original=""/>
  </row>
- <row id="53467" trl="N">
-  <value column="Name" original="Ascending">Ascending</value>
+ <row id="53467" trl="Y">
+  <value column="Name" original="Ascending">Crescente</value>
   <value column="Description" original=""/>
  </row>
- <row id="53468" trl="N">
-  <value column="Name" original="Descending">Descending</value>
+ <row id="53468" trl="Y">
+  <value column="Name" original="Descending">Decrescente</value>
   <value column="Description" original=""/>
  </row>
- <row id="53469" trl="N">
-  <value column="Name" original="Percentage">Percentage</value>
+ <row id="53469" trl="Y">
+  <value column="Name" original="Percentage">Porcentagem</value>
   <value column="Description" original=""/>
  </row>
- <row id="53470" trl="N">
-  <value column="Name" original="Flat Discount">Flat Discount</value>
+ <row id="53470" trl="Y">
+  <value column="Name" original="Flat Discount">Desconto Fixo</value>
   <value column="Description" original=""/>
  </row>
- <row id="53471" trl="N">
-  <value column="Name" original="Absolute Amount">Absolute Amount</value>
+ <row id="53471" trl="Y">
+  <value column="Name" original="Absolute Amount">Valor Absoluto</value>
   <value column="Description" original=""/>
  </row>
  <row id="53481" trl="N">
@@ -4314,88 +4314,88 @@
   <value column="Name" original="Entity Type">Entity Type</value>
   <value column="Description" original=""/>
  </row>
- <row id="53514" trl="N">
-  <value column="Name" original="Angle">Angle</value>
+ <row id="53514" trl="Y">
+  <value column="Name" original="Angle">Ângulo</value>
   <value column="Description" original=""/>
  </row>
- <row id="53515" trl="N">
-  <value column="Name" original="Area">Area</value>
+ <row id="53515" trl="Y">
+  <value column="Name" original="Area">Área</value>
   <value column="Description" original=""/>
  </row>
- <row id="53516" trl="N">
-  <value column="Name" original="Data Storage">Data Storage</value>
+ <row id="53516" trl="Y">
+  <value column="Name" original="Data Storage">Armazenamento de Dados</value>
   <value column="Description" original=""/>
  </row>
- <row id="53517" trl="N">
-  <value column="Name" original="Density">Density</value>
+ <row id="53517" trl="Y">
+  <value column="Name" original="Density">Densidade</value>
   <value column="Description" original=""/>
  </row>
- <row id="53518" trl="N">
-  <value column="Name" original="Energy">Energy</value>
+ <row id="53518" trl="Y">
+  <value column="Name" original="Energy">Energia</value>
   <value column="Description" original=""/>
  </row>
- <row id="53519" trl="N">
-  <value column="Name" original="Force">Force</value>
+ <row id="53519" trl="Y">
+  <value column="Name" original="Force">Força</value>
   <value column="Description" original=""/>
  </row>
- <row id="53520" trl="N">
-  <value column="Name" original="Kitchen Measures">Kitchen Measures</value>
+ <row id="53520" trl="Y">
+  <value column="Name" original="Kitchen Measures">Medidas Culinárias</value>
   <value column="Description" original=""/>
  </row>
- <row id="53521" trl="N">
-  <value column="Name" original="Length">Length</value>
+ <row id="53521" trl="Y">
+  <value column="Name" original="Length">Comprimento</value>
   <value column="Description" original=""/>
  </row>
- <row id="53522" trl="N">
-  <value column="Name" original="Power">Power</value>
+ <row id="53522" trl="Y">
+  <value column="Name" original="Power">Potência</value>
   <value column="Description" original=""/>
  </row>
- <row id="53523" trl="N">
-  <value column="Name" original="Pressure">Pressure</value>
+ <row id="53523" trl="Y">
+  <value column="Name" original="Pressure">Pressão</value>
   <value column="Description" original=""/>
  </row>
- <row id="53524" trl="N">
-  <value column="Name" original="Temperature">Temperature</value>
+ <row id="53524" trl="Y">
+  <value column="Name" original="Temperature">Temperatura</value>
   <value column="Description" original=""/>
  </row>
- <row id="53525" trl="N">
-  <value column="Name" original="Time">Time</value>
+ <row id="53525" trl="Y">
+  <value column="Name" original="Time">Tempo</value>
   <value column="Description" original=""/>
  </row>
- <row id="53526" trl="N">
+ <row id="53526" trl="Y">
   <value column="Name" original="Torque">Torque</value>
   <value column="Description" original=""/>
  </row>
- <row id="53527" trl="N">
-  <value column="Name" original="Velocity">Velocity</value>
+ <row id="53527" trl="Y">
+  <value column="Name" original="Velocity">Velocidade</value>
   <value column="Description" original=""/>
  </row>
- <row id="53528" trl="N">
-  <value column="Name" original="Volume Liquid">Volume Liquid</value>
+ <row id="53528" trl="Y">
+  <value column="Name" original="Volume Liquid">Volume (de Líquidos)</value>
   <value column="Description" original=""/>
  </row>
- <row id="53529" trl="N">
-  <value column="Name" original="Volume Dry">Volume Dry</value>
+ <row id="53529" trl="Y">
+  <value column="Name" original="Volume Dry">Volume (de Secos)</value>
   <value column="Description" original=""/>
  </row>
- <row id="53530" trl="N">
-  <value column="Name" original="Weigth">Weigth</value>
+ <row id="53530" trl="Y">
+  <value column="Name" original="Weigth">Peso</value>
   <value column="Description" original=""/>
  </row>
- <row id="53531" trl="N">
-  <value column="Name" original="Currency">Currency</value>
+ <row id="53531" trl="Y">
+  <value column="Name" original="Currency">Moeda</value>
   <value column="Description" original=""/>
  </row>
- <row id="53532" trl="N">
-  <value column="Name" original="Data Speed">Data Speed</value>
+ <row id="53532" trl="Y">
+  <value column="Name" original="Data Speed">Velocidade de Dados</value>
   <value column="Description" original=""/>
  </row>
- <row id="53533" trl="N">
-  <value column="Name" original="Frequency">Frequency</value>
+ <row id="53533" trl="Y">
+  <value column="Name" original="Frequency">Frequência</value>
   <value column="Description" original=""/>
  </row>
- <row id="53534" trl="N">
-  <value column="Name" original="Other">Other</value>
+ <row id="53534" trl="Y">
+  <value column="Name" original="Other">Outro</value>
   <value column="Description" original=""/>
  </row>
  <row id="53536" trl="N">
@@ -5082,17 +5082,17 @@
   <value column="Name" original="Sender">Remetente</value>
   <value column="Description" original=""/>
  </row>
- <row id="200079" trl="N">
-  <value column="Name" original="Eltron">Eltron</value>
-  <value column="Description" original="Print using eltron label printer language">Print using eltron label printer language</value>
+ <row id="200079" trl="Y">
+  <value column="Name" original="Eltron">Linguagem Eltron</value>
+  <value column="Description" original="Print using eltron label printer language">Imprimir usando a linguagem de programação Eltron</value>
  </row>
- <row id="200080" trl="N">
-  <value column="Name" original="Image">Image</value>
-  <value column="Description" original="Print as Image">Print as Image</value>
+ <row id="200080" trl="Y">
+  <value column="Name" original="Image">Imagem</value>
+  <value column="Description" original="Print as Image">Imprimir como uma imagem</value>
  </row>
- <row id="200081" trl="N">
-  <value column="Name" original="Zebra">Zebra</value>
-  <value column="Description" original="Print using zebra label printer language">Print using zebra label printer language</value>
+ <row id="200081" trl="Y">
+  <value column="Name" original="Zebra">Linguagem Zebra</value>
+  <value column="Description" original="Print using zebra label printer language">Imprimir usando a linguagem de programação Zebra</value>
  </row>
  <row id="200082" trl="N">
   <value column="Name" original="Collect">Collect</value>
@@ -5274,8 +5274,8 @@
   <value column="Name" original="Home">Home</value>
   <value column="Description" original=""/>
  </row>
- <row id="200134" trl="N">
-  <value column="Name" original="Product Cost">Product Cost</value>
+ <row id="200134" trl="Y">
+  <value column="Name" original="Product Cost">Custo do Produto</value>
   <value column="Description" original=""/>
  </row>
  <row id="200135" trl="N">

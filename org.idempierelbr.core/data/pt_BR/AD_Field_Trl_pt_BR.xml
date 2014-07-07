@@ -69,10 +69,10 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Description" original="Condition Value">Valor da Condição</value>
   <value column="Help" original=""/>
  </row>
- <row id="10769" trl="N">
-  <value column="Name" original="Schema Type">Schema Type</value>
-  <value column="Description" original="Type of trade schema calculation">Type of trade schema calculation</value>
-  <value column="Help" original="Type of procedure used to calculate the trade schema percentage">Type of procedure used to calculate the trade schema percentage</value>
+ <row id="10769" trl="Y">
+  <value column="Name" original="Schema Type">Tipo de Esquema</value>
+  <value column="Description" original="Type of trade schema calculation">Tipo de cálculo para o esquema</value>
+  <value column="Help" original="Type of procedure used to calculate the trade schema percentage">Tipo de procedimento usado para calcular a porcentagem do esquema</value>
  </row>
  <row id="10886" trl="Y">
   <value column="Name" original="Overwrite Project">Sobrescrever o Projeto</value>
@@ -582,18 +582,18 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Help" original="The Processed checkbox indicates that a document has been processed.">The Processed checkbox indicates that a document has been processed.</value>
  </row>
  <row id="59822" trl="N">
-  <value column="Name" original="Attribute Set Instance">Attribute Set Instance</value>
-  <value column="Description" original="Product Attribute Values">Product Attribute Values</value>
-  <value column="Help" original="The values of the actual Product Attributes. Product Instance attributes are defined in the actual transactions.">The values of the actual Product Attributes. Product Instance attributes are defined in the actual transactions.</value>
+  <value column="Name" original="Attribute Set Instance">Instância do Conjunto de Atributos</value>
+  <value column="Description" original="Product Attribute Values">Instância do Conjunto de Atributos</value>
+  <value column="Help" original="The values of the actual Product Attributes. Product Instance attributes are defined in the actual transactions.">Indica os valores dos atributos de um produto</value>
  </row>
  <row id="60944" trl="Y">
   <value column="Name" original="Copy From Cash Plan">Copiar Linhas</value>
   <value column="Description" original="Copy From Another Cash Plan">Copiar Linhas de outro Planejamento de Caixa</value>
   <value column="Help" original="Copy From Another Cash Plan">Copiar Linhas de outro Planejamento de Caixa</value>
  </row>
- <row id="62015" trl="N">
-  <value column="Name" original="Create/Update Production lines">Create/Update Production lines</value>
-  <value column="Description" original="Process which will create production lines based on BOM, or recreate with an optional adjusted quantity">Process which will create production lines based on BOM, or recreate with an optional adjusted quantity</value>
+ <row id="62015" trl="Y">
+  <value column="Name" original="Create/Update Production lines">Criar/Atualizar Linhas de Produção</value>
+  <value column="Description" original="Process which will create production lines based on BOM, or recreate with an optional adjusted quantity">Processo que cria linhas de produção baseadas na LDM, ou as recria com uma quantidade ajustada (opcional)</value>
   <value column="Help" original=""/>
  </row>
  <row id="62016" trl="N">
@@ -741,10 +741,10 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="202325" trl="N">
-  <value column="Name" original="Cost Adjustment">Cost Adjustment</value>
-  <value column="Description" original="Inventory Cost Adjustment">Inventory Cost Adjustment</value>
-  <value column="Help" original="The Inventory Cost Adjustment document allows user to enter cost adjustment for products">The Inventory Cost Adjustment document allows user to enter cost adjustment for products</value>
+ <row id="202325" trl="Y">
+  <value column="Name" original="Cost Adjustment">Ajuste de Custo</value>
+  <value column="Description" original="Inventory Cost Adjustment">Ajuste de Custo de Estoque</value>
+  <value column="Help" original="The Inventory Cost Adjustment document allows user to enter cost adjustment for products">O ajuste de custo te permite informar o novo custo para produtos</value>
  </row>
  <row id="202443" trl="Y">
   <value column="Name" original="Purchase Order Line">Linha do Pedido de Compra</value>

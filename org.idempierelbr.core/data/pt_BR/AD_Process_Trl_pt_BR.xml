@@ -13,9 +13,9 @@
   <value column="Help" original=""/>
  </row>
  <row id="103" trl="Y">
-  <value column="Name" original="Create Price List ">Criar Lista de Preço </value>
-  <value column="Description" original="Create Prices based on parameters of this version">Criar Preços baseado nos parâmetros desta versão</value>
-  <value column="Help" original="Create Prices for this pricelist version in the sequence of the Discount Schema Price List.&#10;Lines with a higher sequence overwrite existing prices.  The sequence should be from generic to specific.">Criar Preços para esta versão da lista de preços na seqüência do Esquema de Descontos da Lista de Preços. As linhas com uma seqüência maior sobreescrevem os preços existentes.  A seqüência deve ser do genérico ao específico.</value>
+  <value column="Name" original="Create Price List ">Criar Tabela de Preços</value>
+  <value column="Description" original="Create Prices based on parameters of this version">Cria tabela de preços baseado nos parâmetros desta versão</value>
+  <value column="Help" original="Create Prices for this pricelist version in the sequence of the Discount Schema Price List.&#10;Lines with a higher sequence overwrite existing prices.  The sequence should be from generic to specific.">Cria preços para esta versão da tabela na sequência do Esquema de Preços/Descontos da tabela. As linhas com uma seqüência maior sobrescrevem os preços existentes. A seqüência deve ser do genérico ao específico. </value>
  </row>
  <row id="104" trl="Y">
   <value column="Name" original="Process Order">Ordem de Processo</value>
@@ -25,12 +25,12 @@
  <row id="105" trl="Y">
   <value column="Name" original="Create Inventory Count List ">Criar Lista de Contagem de Estoque </value>
   <value column="Description" original="Create Inventory Count List">Criar Lista de Contagem de Estoque</value>
-  <value column="Help" original="The inventory count lines are generated.  You can add new lines or delete lines manually.">As linhas da contagem do estoque são geradas.  Você pode excluir ou acrescentar novas linhas manualmente.</value>
+  <value column="Help" original="The inventory count lines are generated.  You can add new lines or delete lines manually.">Este processo permite a geração automática de linhas. É possível excluir ou adicionar novas linhas manualmente antes de processar o documento.</value>
  </row>
  <row id="106" trl="Y">
   <value column="Name" original="Update Quantity">Atualizar Quantidade</value>
-  <value column="Description" original="The Book Quantity is updated with current book quantity">A Quantidade do Livro é atualizada com quantidade atual do livro</value>
-  <value column="Help" original="The Update Quantity Process will update the book quantity with the current book quantity.  ">O Processo de Atualização de Quantidade irá atualizar a quantidade do livro com a quantidade atual do livro.  </value>
+  <value column="Description" original="The Book Quantity is updated with current book quantity">Atualizar Quantidade das Linhas</value>
+  <value column="Help" original="The Update Quantity Process will update the book quantity with the current book quantity.  ">Este processo atualiza a quantidade das linhas para 0 ou para a quantidade disponível em estoque.</value>
  </row>
  <row id="107" trl="Y">
   <value column="Name" original="Process Inventory Count ">Processar Contagem de Estoque </value>
@@ -75,7 +75,7 @@
  <row id="115" trl="Y">
   <value column="Name" original="Vendor Selection">Seleção de Fornecedor</value>
   <value column="Description" original="Products with more than one vendor">Produtos com mais de um fornecedor</value>
-  <value column="Help" original="Vendor Selection is initiated when there is a product that is supplied by more than one vendor.  It allows the selection of a specific vendor for a Purchase Order.">A Seleção de Fornecedor é iniciada quando há um produto que é fornecido por mais de um fornecedor.  Isto permite a seleção de um fornecedor específico para uma Ordem de Compra.</value>
+  <value column="Help" original="Vendor Selection is initiated when there is a product that is supplied by more than one vendor.  It allows the selection of a specific vendor for a Purchase Order.">O relatório identifica produtos fornecidos por mais de um fornecedor. Isto permite a seleção de um fornecedor específico para um pedido de compra.</value>
  </row>
  <row id="116" trl="Y">
   <value column="Name" original="Invoice Print ">Imprimir Fatura </value>
@@ -118,14 +118,14 @@
   <value column="Help" original=""/>
  </row>
  <row id="124" trl="Y">
-  <value column="Name" original="Product Transaction Summary">Resumo das Transações de Produtos</value>
-  <value column="Description" original="Product Transaction Summary">Resumo das Transações de Produtos</value>
-  <value column="Help" original="The report shows transaction summary for stored products">O relatório mostra o resumo de transações para produtos armazenados</value>
+  <value column="Name" original="Product Transaction Summary">Resumo de Transações</value>
+  <value column="Description" original="Product Transaction Summary">Resumo de Transações de Produtos</value>
+  <value column="Help" original="The report shows transaction summary for stored products">Este relatório mostra um resumo de transações para produtos armazenados.</value>
  </row>
  <row id="125" trl="Y">
   <value column="Name" original="Replenish Report">Relatório de Reabastecimento</value>
   <value column="Description" original="Inventory Replenish Report">Relatório de Reabastecimento de Estoques</value>
-  <value column="Help" original="Report lists products to be replenished. Note that a product can have only one current vendor. If there are more then vendor per product, both records are reset.  You need to select a current vendor manually.&lt;br&gt;&#10;Movements are only created, if a sourcing warehouse is defined for the warehouse to be replenished."><![CDATA[Este relatório lista os produtos a serem reabastecidos. Note que um produto pode ter somente um fornecedor atual. Se houver mais de um fornecedor por produto, ambos os registros são resetados.  You need to select a current vendor manually.<br> Movements are only created, if a sourcing warehouse is defined for the warehouse to be replenished.]]></value>
+  <value column="Help" original="Report lists products to be replenished. Note that a product can have only one current vendor. If there are more then vendor per product, both records are reset.  You need to select a current vendor manually.&lt;br&gt;&#10;Movements are only created, if a sourcing warehouse is defined for the warehouse to be replenished.">Este relatório lista os produtos a serem reabastecidos. Note que o produto precisa ter somente um fornecedor atual. Se houver mais do que um fornecedor por produto, ambos os produtos são resetados. É necessário informar um fornecedor atual manualmente. Movimentos são criados apenas se um armazém de origem for definido para o armazém a ser reabastecido.</value>
  </row>
  <row id="126" trl="Y">
   <value column="Name" original="Order Drilldown">Desdobramento de Pedido (Drilldown)</value>
@@ -278,9 +278,9 @@
   <value column="Help" original=""/>
  </row>
  <row id="161" trl="Y">
-  <value column="Name" original="Product Transaction Value">Valor da Transação de Produto</value>
-  <value column="Description" original="Product Transaction Value">Valor da Transação de Produto</value>
-  <value column="Help" original="The report shows product transactions with current vendor prices">O relatório mostra transações de produto com preços atuais de fornecedores</value>
+  <value column="Name" original="Product Transaction Value">Valor das Transações (Fornecedores)</value>
+  <value column="Description" original="Product Transaction Value">Valor das Transações de Produto</value>
+  <value column="Help" original="The report shows product transactions with current vendor prices">Este relatório mostra as transações de produto incluindo informações de fornecedores (último preço de compra, preço de fornecedores, etc.)</value>
  </row>
  <row id="162" trl="Y">
   <value column="Name" original="Project Status Summary">Resumo do Estado dos Projetos</value>
@@ -358,9 +358,9 @@
   <value column="Help" original="You can Add Missing Translation entries (required after activating an additional System Language) - Delete Translation Records - or Re-Create the translation Records (first delete and add missing entries).&#10;Note that Adding the Missing Translation records creates them by copying the System Language (English).  You would apply the Language Pack after that process.  Run Syncronize Terminology after importing the translation.">Você pode acrescentar Registros de Tradução faltantes (necessário após ativar um Idioma adicional de Sistema) - Excluir Registros de Tradução - ou Re-Criar os Registros de Tradução (primeiramente exclua e só então acrescente os registros faltantes). Note que acrescentar Registros de Tradução faltantes cria novos registros que são copiados do Idioma de Sistema em Inglês.  Você pode aplicar o Pacote de Idiomas após esse processo.  Rode "Sincronizar Terminologia" após importar a tradução.</value>
  </row>
  <row id="180" trl="Y">
-  <value column="Name" original="Inventory Valuation Report">Relatório de Avaliação de Estoques</value>
-  <value column="Description" original="Inventory Valuation Report">Relatório de Avaliação de Estoques</value>
-  <value column="Help" original="Report lists products with their on-hand quantity and values at the valuation date. In addition to several prices, standard costs and an optional other cost element is used to calculate the inventory of the particular warehouse.">Report lists products with their on-hand quantity and values at the valuation date. In addition to several prices, standard costs and an optional other cost element is used to calculate the inventory of the particular warehouse.</value>
+  <value column="Name" original="Inventory Valuation Report">Avaliação de Estoque</value>
+  <value column="Description" original="Inventory Valuation Report">Avaliação de Estoque</value>
+  <value column="Help" original="Report lists products with their on-hand quantity and values at the valuation date. In addition to several prices, standard costs and an optional other cost element is used to calculate the inventory of the particular warehouse.">O relatório lista os produtos de um armazém com suas respectivas quantidades disponíveis e valores na data da avaliação informada. Além dos diversos preços (inclusive de custos), é possível informar um elemento de custo opcional.</value>
  </row>
  <row id="181" trl="Y">
   <value column="Name" original="Synchronize Column">Sincronizar Coluna</value>
@@ -639,14 +639,14 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
   <value column="Help" original=""/>
  </row>
  <row id="236" trl="Y">
-  <value column="Name" original="Storage Detail">Detalhes de Armazenagem</value>
-  <value column="Description" original="Storage Detail Report">Relatório de Detalhes de Armazenagem</value>
-  <value column="Help" original="The report shows storage details including product instance (Lot, Serial No) info">O relatório mostra detalhes de armazenagem incluindo informações de instância de produto (Lote, Núm.Série)</value>
+  <value column="Name" original="Storage Detail">Detalhes de Armazenamento</value>
+  <value column="Description" original="Storage Detail Report">Relatório de Detalhes de Armazenamento</value>
+  <value column="Help" original="The report shows storage details including product instance (Lot, Serial No) info">O relatório mostra detalhes de armazenamento incluindo informações de instância de produto (Lote, Núm.Série)</value>
  </row>
  <row id="237" trl="Y">
-  <value column="Name" original="Transaction Detail">Detalhes de Transação</value>
-  <value column="Description" original="Transaction Detail Report">Relatório de Detalhes de Transação</value>
-  <value column="Help" original="The report shows transaction details (receipts, shipments, inventory, movements, ...) including product instance (Lot, Serial No) info">O relatório mostra detalhes de transações (Recebimentos, Entregas, Estoques, Movimentação, ...) incluindo informações de instância de produto (Lote, Núm.Série)</value>
+  <value column="Name" original="Transaction Detail">Detalhes de Transações</value>
+  <value column="Description" original="Transaction Detail Report">Relatório de Detalhes de Transações</value>
+  <value column="Help" original="The report shows transaction details (receipts, shipments, inventory, movements, ...) including product instance (Lot, Serial No) info">O relatório mostra detalhes de transações (recebimentos, entregas, estoques, movimentações, etc.) incluindo informações de instância de produto (lotes, números de série, etc.)</value>
  </row>
  <row id="238" trl="Y">
   <value column="Name" original="Aging">Recuperação (Cobrança)</value>
@@ -683,14 +683,14 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
   <value column="Help" original=""/>
  </row>
  <row id="244" trl="Y">
-  <value column="Name" original="Warehouse Organization">Organização de Armazém</value>
-  <value column="Description" original="Set and verify Organization ownership of Warehouse">Ajustar e verificar a propriedade de Armazéns na Organização</value>
-  <value column="Help" original="The process allows you to change or verify the organization ownership of a warehouse and its dependent entities (Location, Storage).">O processo permite a você alterar ou verificar a participação da organização em um armazém e suas entidades dependentes (Localização, Armazenagem).</value>
+  <value column="Name" original="Warehouse Organization">Organização do Armazém</value>
+  <value column="Description" original="Set and verify Organization ownership of Warehouse">Altere e verifique a proprietária de um Armazém</value>
+  <value column="Help" original="The process allows you to change or verify the organization ownership of a warehouse and its dependent entities (Location, Storage).">O processo permite a alteração e verificação da organização proprietária de um armazém e suas entidades dependentes (localizadores e armazenamentos).</value>
  </row>
  <row id="245" trl="Y">
-  <value column="Name" original="Product Organization">Organização de Produto</value>
-  <value column="Description" original="Set and verify Organization ownership of Products">Ajustar e Verificar Propriedade de Produtos na Organização</value>
-  <value column="Help" original="The process allows you to change or verify the organization ownership of Products and its dependent entities (BOM, Substitute, Replenish, Purchasing, Business Partner Info, Costing). &lt;br&gt;&#10;Select either a Product Category ar a specific Product."><![CDATA[O processo permite a você alterar ou verificar a participação da organização de Produtos e suas entidades dependentes (LDM, Substitutos, Reabastecimento, Compras, Informações de Parceiro de Negócios, Custos). <br> Selecione ou uma Categoria de Produto ou um Produto específico.]]></value>
+  <value column="Name" original="Product Organization">Organização do Produto</value>
+  <value column="Description" original="Set and verify Organization ownership of Products">Altere e verifique a proprietária de Produtos</value>
+  <value column="Help" original="The process allows you to change or verify the organization ownership of Products and its dependent entities (BOM, Substitute, Replenish, Purchasing, Business Partner Info, Costing). &lt;br&gt;&#10;Select either a Product Category ar a specific Product.">O processo permite a alteração e verificação da organização proprietária de produtos e suas entidades dependentes (LDM, substituto, reabastecimento, custos, etc.). Você pode selecionar uma categoria de produtos ou um produto específico.</value>
  </row>
  <row id="246" trl="Y">
   <value column="Name" original="Business Partner Organization">Organização do Parceiro de Negócios</value>
@@ -888,12 +888,12 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
  </row>
  <row id="284" trl="Y">
   <value column="Name" original="Open Confirmation Details">Detalhes de Confirmações em Aberto</value>
-  <value column="Description" original="Open Shipment or Receipt Confirmation Details">Detalhes da Confirmação de Embarque ou Recebimento de Material em Aberto</value>
-  <value column="Help" original="The Report lists the open confirmation lines">O relatório lista as linhas de confirmação em aberto</value>
+  <value column="Description" original="Open Shipment or Receipt Confirmation Details">Detalhes de Confirmações de Remessa / Recebimento em Aberto</value>
+  <value column="Help" original="The Report lists the open confirmation lines">O relatório lista as linhas (detalhes) das confirmações em aberto</value>
  </row>
  <row id="285" trl="Y">
   <value column="Name" original="Open Confirmations">Confirmações em Aberto</value>
-  <value column="Description" original="Open Shipment or Receipt Confirmations">Confirmações de Embarque ou Recebimento em Aberto</value>
+  <value column="Description" original="Open Shipment or Receipt Confirmations">Confirmações de Remessa / Recebimento em Aberto</value>
   <value column="Help" original="The report lists the open confirmations">O relatório lista as confirmações em aberto</value>
  </row>
  <row id="286" trl="Y">
@@ -1079,8 +1079,8 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
  </row>
  <row id="322" trl="Y">
   <value column="Name" original="Material Reference">Referência de Material</value>
-  <value column="Description" original="Material Transactions Cross Reference (used/resourced)">Referência Cruzada de Transações de Materiais (usado/reservado)</value>
-  <value column="Help" original="The report displays, e.g. where Material Receipts are used or Customer Shipments are resourced from">O relatório exibe, por ex. onde os materiais recebidos são usados ou de onde são retirados as remessas para clientes</value>
+  <value column="Description" original="Material Transactions Cross Reference (used/resourced)">Referência de Transações de Materiais</value>
+  <value column="Help" original="The report displays, e.g. where Material Receipts are used or Customer Shipments are resourced from">O relatório apresenta onde os materiais recebidos são utilizados ou de onde são retirados as remessas para clientes.</value>
  </row>
  <row id="323" trl="Y">
   <value column="Name" original="Create Invoices">Criar Faturas</value>
@@ -1093,9 +1093,9 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original="Create invoice for Request Type with optional Request Group, Category for Business Partner.  If the used product for invoicing is not defined, the product defined in the parameter is used.">Criar faturas para o Tipo de Solicitação com Grupo de Solicitação, e Categoria para Parceiro de Negócios opcional.  O produto definido no parâmetro será utilizado caso o produto usado para o faturamento não estiver definido.</value>
  </row>
  <row id="325" trl="Y">
-  <value column="Name" original="Storage Cleanup">Limpesa de Estoque</value>
-  <value column="Description" original="Inventory Storage Cleanup">Limpesa de estoques de armazens</value>
-  <value column="Help" original="Create Inventory Movements for unbalanced Inventory Location Storage (i.e. within a warehouse move inventory to locations with negative on hand quantity).">Cria "Movimentações de Estoque" para Armazenagem de Localização de Estoque não balanceado (i.e. dentro de um armazém, movimenta o estoque para localizações com quantidades negativas em mãos).</value>
+  <value column="Name" original="Storage Cleanup">Limpeza Geral no Armazenamento</value>
+  <value column="Description" original="Inventory Storage Cleanup">Limpeza Geral no Armazenamento de Estoque</value>
+  <value column="Help" original="Create Inventory Movements for unbalanced Inventory Location Storage (i.e. within a warehouse move inventory to locations with negative on hand quantity).">Este processo executa procedimentos de limpeza nos registros de estoque. Além disso, cria Movimentações de Estoque com a finalidade de equilibrar as quantidades disponíveis em cada localizador dentro de um mesmo armazém. Ex: um armazém possui dois localizadores, sendo que um determinado produto está negativo em um localizador e positivo em outro. Este processo irá movimentar o estoque de um localizador a outro a fim de equilibrar esses estoques.</value>
  </row>
  <row id="326" trl="Y">
   <value column="Name" original="Invoice Not Realized Gain/Loss">Resultados Não Realizados (Faturas)</value>
@@ -1776,9 +1776,9 @@ This process should be implemented when the users are not connected.</value>
   <value column="Description" original="Client Accounting Processor">Client Accounting Processor</value>
   <value column="Help" original="The client accounting processor allows a user to run the accounting processor in a client session.  The system configurator parameter CLIENT_ACCOUNTING must be enabled (configured as [I]mmediate or [Q]ueue).">The client accounting processor allows a user to run the accounting processor in a client session.  The system configurator parameter CLIENT_ACCOUNTING must be enabled (configured as [I]mmediate or [Q]ueue).</value>
  </row>
- <row id="53189" trl="N">
-  <value column="Name" original="Storage per Product">Storage per Product</value>
-  <value column="Description" original=""/>
+ <row id="53189" trl="Y">
+  <value column="Name" original="Storage per Product">Armazenamento por Produto</value>
+  <value column="Description" original="">Relatório de Armazenamento por Produto</value>
   <value column="Help" original=""/>
  </row>
  <row id="53197" trl="N">
@@ -1861,30 +1861,30 @@ This process should be implemented when the users are not connected.</value>
   <value column="Description" original="Reconcile account transactions according to standard rules">Reconcile account transactions according to standard rules</value>
   <value column="Help" original=""/>
  </row>
- <row id="53226" trl="N">
-  <value column="Name" original="Create Production">Create Production</value>
-  <value column="Description" original="Create production lines">Create production lines</value>
-  <value column="Help" original="Create Production will generate the production lines.">Create Production will generate the production lines.</value>
+ <row id="53226" trl="Y">
+  <value column="Name" original="Create Production">Criar Produção</value>
+  <value column="Description" original="Create production lines">Criar Linhas de Produção</value>
+  <value column="Help" original="Create Production will generate the production lines.">Este processo cria automaticamente as linhas de produção</value>
  </row>
  <row id="53227" trl="N">
   <value column="Name" original="Post Production">Post Production</value>
   <value column="Description" original="Process the production">Process the production</value>
   <value column="Help" original="Post Production will process the production.">Post Production will process the production.</value>
  </row>
- <row id="53228" trl="N">
-  <value column="Name" original="Validate BOM Flags">Validate BOM Flags</value>
-  <value column="Description" original="Validate BOM Flags">Validate BOM Flags</value>
-  <value column="Help" original="The Validate BOM Flags process checks that all Products with bills of materials are correctly flagged.">The Validate BOM Flags process checks that all Products with bills of materials are correctly flagged.</value>
+ <row id="53228" trl="Y">
+  <value column="Name" original="Validate BOM Flags">Validar indicadores de LDM</value>
+  <value column="Description" original="Validate BOM Flags">Validar indicadores de LDM</value>
+  <value column="Help" original="The Validate BOM Flags process checks that all Products with bills of materials are correctly flagged.">Este processo verifica se todos os produtos com Lista de Materiais (LDM) estão corretamente identificado como tal. Pode-se verificar este indicador na tela Produto.</value>
  </row>
- <row id="53229" trl="N">
-  <value column="Name" original="Verify BOM Structure">Verify BOM Structure</value>
-  <value column="Description" original="Verify BOM for correctness">Verify BOM for correctness</value>
-  <value column="Help" original="The Verify BOM process checks for circular BOMs (unsupported).">The Verify BOM process checks for circular BOMs (unsupported).</value>
+ <row id="53229" trl="Y">
+  <value column="Name" original="Verify BOM Structure">Verificar estruturas de LDM</value>
+  <value column="Description" original="Verify BOM for correctness">Verifica a LDM para correção</value>
+  <value column="Help" original="The Verify BOM process checks for circular BOMs (unsupported).">Este processo verifica se a LDM é circular (recurso não suportado).</value>
  </row>
- <row id="53230" trl="N">
-  <value column="Name" original="Rollup BOM Cost">Rollup BOM Cost</value>
-  <value column="Description" original="Rollup BOM cost">Rollup BOM cost</value>
-  <value column="Help" original="Rollup BOM costs from the lowest level recursively.">Rollup BOM costs from the lowest level recursively.</value>
+ <row id="53230" trl="Y">
+  <value column="Name" original="Rollup BOM Cost">Acumular Custos de LDM</value>
+  <value column="Description" original="Rollup BOM cost">Acumular Custos de LDM</value>
+  <value column="Help" original="Rollup BOM costs from the lowest level recursively.">Este processo calcula os custos da LDM, recursivamente, com base nos custos dos componentes.</value>
  </row>
  <row id="53245" trl="N">
   <value column="Name" original="Validate">Validate</value>
@@ -1922,22 +1922,20 @@ This process should be implemented when the users are not connected.</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53265" trl="N">
-  <value column="Name" original="Universal substitution">Universal substitution</value>
-  <value column="Description" original="Substitute one product for another in all BOMs">Substitute one product for another in all BOMs</value>
-  <value column="Help" original=""/>
+ <row id="53265" trl="Y">
+  <value column="Name" original="Universal substitution">Substituir Produto</value>
+  <value column="Description" original="Substitute one product for another in all BOMs">Substituir Produto em LDMs</value>
+  <value column="Help" original="">Este processo substitui um produto por outro em TODAS as LDMs</value>
  </row>
- <row id="53266" trl="N">
-  <value column="Name" original="Indented Bill of Material">Indented Bill of Material</value>
-  <value column="Description" original="Indented BOM report">Indented BOM report</value>
-  <value column="Help" original=""/>
+ <row id="53266" trl="Y">
+  <value column="Name" original="Indented Bill of Material">Custos de LDM e Componentes</value>
+  <value column="Description" original="Indented BOM report">Custos de LDM e seus Componentes</value>
+  <value column="Help" original="">Este relatório apresenta os custos da Lista de Materiais de um produto e seus componentes. </value>
  </row>
- <row id="53267" trl="N">
-  <value column="Name" original="Replenish Report incl. Production">Replenish Report incl. Production</value>
-  <value column="Description" original="Inventory Replenish Report">Inventory Replenish Report</value>
-  <value column="Help" original="Report lists products to be replenished. Note that a product can have only one current vendor. If there are more then vendor per product, both records are reset.  You need to select a current vendor manually.&lt;br&gt;&#13;&#10;Movements are only created, if a sourcing warehouse is defined for the warehouse to be replenished."><![CDATA[Report lists products to be replenished. Note that a product can have only one current vendor. If there are more then vendor per product, both records are reset.  You need to select a current vendor manually.<br>
-
-Movements are only created, if a sourcing warehouse is defined for the warehouse to be replenished.]]></value>
+ <row id="53267" trl="Y">
+  <value column="Name" original="Replenish Report incl. Production">Relatório de Reabastecimento (com Produção)</value>
+  <value column="Description" original="Inventory Replenish Report">Relatório de Reabastecimento de Estoques</value>
+  <value column="Help" original="Report lists products to be replenished. Note that a product can have only one current vendor. If there are more then vendor per product, both records are reset.  You need to select a current vendor manually.&lt;br&gt;&#13;&#10;Movements are only created, if a sourcing warehouse is defined for the warehouse to be replenished.">Este relatório lista os produtos a serem reabastecidos. Note que o produto precisa ter somente um fornecedor atual. Se houver mais do que um fornecedor por produto, ambos os produtos são resetados. É necessário informar um fornecedor atual manualmente. Movimentos são criados apenas se um armazém de origem for definido para o armazém a ser reabastecido.</value>
  </row>
  <row id="53276" trl="N">
   <value column="Name" original="Convert Lead">Convert Lead</value>
@@ -2053,8 +2051,8 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200029" trl="N">
-  <value column="Name" original="Shipper Copy From ...">Shipper Copy From ...</value>
+ <row id="200029" trl="Y">
+  <value column="Name" original="Shipper Copy From ...">Copiar de ...</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2083,10 +2081,10 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200036" trl="N">
-  <value column="Name" original="Product/Component Where Used">Product/Component Where Used</value>
-  <value column="Description" original="Product/Component Where Used">Product/Component Where Used</value>
-  <value column="Help" original="Enter a product/component below, and the system will check for BOM(s) that contain that product/component.  This report is non-recursive.  In other words, it will only show one parent level above the product/component.">Enter a product/component below, and the system will check for BOM(s) that contain that product/component.  This report is non-recursive.  In other words, it will only show one parent level above the product/component.</value>
+ <row id="200036" trl="Y">
+  <value column="Name" original="Product/Component Where Used">Utilização de Produto/Componente</value>
+  <value column="Description" original="Product/Component Where Used">Utilização de Produto/Componente em LDMs</value>
+  <value column="Help" original="Enter a product/component below, and the system will check for BOM(s) that contain that product/component.  This report is non-recursive.  In other words, it will only show one parent level above the product/component.">Informe um produto / componente abaixo, e o sistema irá localizar LDMs que contenham o mesmo. O relatório não é recursivo, ou seja, irá mostrar apenas um nível acima do produto / componente informado.</value>
  </row>
  <row id="200037" trl="N">
   <value column="Name" original="Simple Fact View">Simple Fact View</value>

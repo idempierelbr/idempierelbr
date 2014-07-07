@@ -242,18 +242,18 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53516" trl="N">
-  <value column="Name" original="Recreate">Recreate</value>
-  <value column="Description" original="Overwrite existing production lines">Overwrite existing production lines</value>
+ <row id="53516" trl="Y">
+  <value column="Name" original="Recreate">Recriar</value>
+  <value column="Description" original="Overwrite existing production lines">Sobrescrever linhas de produção já existentes</value>
   <value column="Help" original=""/>
  </row>
- <row id="53517" trl="N">
-  <value column="Name" original="Production Quantity">Production Quantity</value>
-  <value column="Description" original="Quantity of products to produce">Quantity of products to produce</value>
-  <value column="Help" original="The Production Quantity identifies the number of products to produce">The Production Quantity identifies the number of products to produce</value>
+ <row id="53517" trl="Y">
+  <value column="Name" original="Production Quantity">Quantidade de Produção</value>
+  <value column="Description" original="Quantity of products to produce">Quantidade de produtos a produzir</value>
+  <value column="Help" original="The Production Quantity identifies the number of products to produce">A quantidade de produção indica o número de produtos a produzir</value>
  </row>
- <row id="53526" trl="N">
-  <value column="Name" original="Is Kanban">Is Kanban</value>
+ <row id="53526" trl="Y">
+  <value column="Name" original="Is Kanban">Kanban</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -272,9 +272,9 @@
   <value column="Description" original="Reset Existing Access">Reset Existing Access</value>
   <value column="Help" original=""/>
  </row>
- <row id="200055" trl="N">
-  <value column="Name" original="Product">Product</value>
-  <value column="Description" original="Please enter the product (component) you wish to search for">Please enter the product (component) you wish to search for</value>
+ <row id="200055" trl="Y">
+  <value column="Name" original="Product">Produto</value>
+  <value column="Description" original="Please enter the product (component) you wish to search for">Informe o produto (componente) que deseja procurar</value>
   <value column="Help" original=""/>
  </row>
  <row id="200060" trl="N">

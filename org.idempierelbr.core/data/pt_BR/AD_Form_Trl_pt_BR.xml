@@ -74,9 +74,9 @@
   <value column="Help" original="Enter Transactions via a POS Terminal.  Automatically, scans or credit card swipes are recongized.">Digitar Transações por meio de um Terminal de PDV.  Leituras de cartões de crédito são reconhecidas automaticamente.</value>
  </row>
  <row id="114" trl="Y">
-  <value column="Name" original="BOM Drop">Abrir LDM</value>
-  <value column="Description" original="Drop (expand) Bill of Materials">Abrir (expandir) Lista de Materiais</value>
-  <value column="Help" original="Drop the extended Bill of Materials into an Order, Invoice, etc.  The documents need to be in a Drafted stage.  Make sure that the items included in the BOM are on the price list of the Order, Invoice, etc. as otherwise the price will be zero!">Expandir a Lista de Materiais estendida em um Pedido, Fatura, etc.  Os documentos tem de estar em um estágio de rascunho.  Certifique-se que os itens incluídos na LDM estão na lista de preços do Pedido, Fatura, etc. já que de outro modo o preço será zero!</value>
+  <value column="Name" original="BOM Drop">Expandir LDM</value>
+  <value column="Description" original="Drop (expand) Bill of Materials">Expandir Lista de Materiais</value>
+  <value column="Help" original="Drop the extended Bill of Materials into an Order, Invoice, etc.  The documents need to be in a Drafted stage.  Make sure that the items included in the BOM are on the price list of the Order, Invoice, etc. as otherwise the price will be zero!">Expandir um produto do tipo Lista de Materiais em seus componentes dentro de um pedido ou fatura. O estado do documento deve estar Em Digitação. Certifique-se que os componentes da LDM estejam na lista de preços, caso contrário o preço será zero!</value>
  </row>
  <row id="115" trl="Y">
   <value column="Name" original="Tree Maintenance">Manutenção de Árvore</value>
@@ -104,7 +104,7 @@
   <value column="Help" original="View all Performance Indicators and Goals">Visualizar todos os Indicadores de Desempenho e Metas</value>
  </row>
  <row id="120" trl="Y">
-  <value column="Name" original="Product Attribute Grid">Grade de Atributo de Produto</value>
+  <value column="Name" original="Product Attribute Grid">Grade de Atributos de Produto</value>
   <value column="Description" original="Maintain Products with Attributes in a Table Grid">Gerenciamento de Produtos com Atributos em uma Grade de Tabela</value>
   <value column="Help" original="Select one or two attributes if a Product Attribute and display/maintain products in a row or table grid.">Selecione um ou dois atributos de um Atributo de Produto e exiba/gerencie os produto em uma linha ou uma grade de tabela.</value>
  </row>
@@ -203,12 +203,10 @@ Select the orders to generate the shipments & Invoices for.]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53017" trl="N">
-  <value column="Name" original="BOM Viewer">BOM Viewer</value>
-  <value column="Description" original="Shows the parent-component relationship for the product entered in the Product field.">Shows the parent-component relationship for the product entered in the Product field.</value>
-  <value column="Help" original="Selecting a product will display a hierarchy of components and sub-BOMs for that product.&#13;&#10;&#13;&#10;Selecting the &quot;Where Used&quot; check box will display the BOMs that this product is used in.">Selecting a product will display a hierarchy of components and sub-BOMs for that product.&#13;
-&#13;
-Selecting the "Where Used" check box will display the BOMs that this product is used in.</value>
+ <row id="53017" trl="Y">
+  <value column="Name" original="BOM Viewer">Visualizador de LDM</value>
+  <value column="Description" original="Shows the parent-component relationship for the product entered in the Product field.">Mostra o relacionamento pai-componente para o produto informado no campo Produto</value>
+  <value column="Help" original="Selecting a product will display a hierarchy of components and sub-BOMs for that product.&#13;&#10;&#13;&#10;Selecting the &quot;Where Used&quot; check box will display the BOMs that this product is used in.">Ao selecionar um produto e clicar em Ok, será mostrada a hierarquia de componentes e sub-componentes (LDM) para aquele produto. Ao selecionar o campo Implosão, serão mostrados os outros produtos que utilizam o produto selecionado.</value>
  </row>
  <row id="200000" trl="N">
   <value column="Name" original="Setup Wizard">Setup Wizard</value>

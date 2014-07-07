@@ -34,9 +34,9 @@
   <value column="Help" original="Define your products manually. You should verify the settings especially if you import your products.">Definir produtos manualmente. Você deve verificar as configurações, especialmente se você importar seus produtos.</value>
  </row>
  <row id="108" trl="Y">
-  <value column="Name" original="Price List Setup">Configuração de Listas de Preços</value>
-  <value column="Description" original="Define your Price Lists and Discounts">Definir Listas de Preços e Descontos</value>
-  <value column="Help" original="You define your price lists after entering or importing your products. In addition to price lists, you can define discounts for business partners.  Assign specific Price Lists and Discounst to Business Partners.">Você define suas listas de preços após inserir ou importar seus produtos. Além das listas de preços, você pode definir descontos para seus parceiros de negócios.  Atribua listas de preços e descontos específicas aous seus parceiros de negócios.</value>
+  <value column="Name" original="Price List Setup">Configuração de Tabelas de Preços</value>
+  <value column="Description" original="Define your Price Lists and Discounts">Definir Tabelas de Preços e Descontos</value>
+  <value column="Help" original="You define your price lists after entering or importing your products. In addition to price lists, you can define discounts for business partners.  Assign specific Price Lists and Discounst to Business Partners.">Você define suas tabelas de preços após inserir ou importar seus produtos. Além das tabelas de preços, você pode definir descontos para seus parceiros de negócios.  Atribua tabelas de preços e descontos específicas aos seus parceiros de negócios.</value>
  </row>
  <row id="109" trl="Y">
   <value column="Name" original="Replication Setup">Configuração de Replicação</value>

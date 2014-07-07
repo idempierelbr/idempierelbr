@@ -843,7 +843,7 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="311" trl="Y">
-  <value column="MsgText" original="One or more Product is more than once in the count list.  Lines deactivated.">Um ou mais Produtos aparece mais de uma vez na lista de contagem.  Linhas desativadas.</value>
+  <value column="MsgText" original="One or more Product is more than once in the count list.  Lines deactivated.">Um ou mais Produtos aparece mais de uma vez na lista de contagem. Linhas desativadas.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="312" trl="Y">
@@ -1293,11 +1293,11 @@ Problema: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="423" trl="Y">
-  <value column="MsgText" original="Pricelist Version">Versão da Lista de Preço</value>
+  <value column="MsgText" original="Pricelist Version">Versão da Tabela de Preços</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="424" trl="Y">
-  <value column="MsgText" original="No active and valid price list version found">Não foi encontrada uma versão ativa e válida da lista de preços</value>
+  <value column="MsgText" original="No active and valid price list version found">Não foi encontrada uma versão ativa e válida da tabela de preços</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="425" trl="Y">
@@ -2790,7 +2790,7 @@ Obrigado por usar o Gerenciador de Ativos Personalizado Adempiere
   <value column="MsgTip" original=""/>
  </row>
  <row id="805" trl="Y">
-  <value column="MsgText" original="Product is not on PriceList">Produto não está na Lista de Preços</value>
+  <value column="MsgText" original="Product is not on PriceList">Produto não está na Tabela de Preços</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="806" trl="Y">
@@ -2950,7 +2950,7 @@ Obrigado por usar o Gerenciador de Ativos Personalizado Adempiere
   <value column="MsgTip" original=""/>
  </row>
  <row id="845" trl="Y">
-  <value column="MsgText" original="Insufficient Qty on Hand">Qde Insuficiente em Mãos</value>
+  <value column="MsgText" original="Insufficient Qty on Hand">Quantidade Disponível Insuficiente</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="846" trl="Y">
@@ -5488,7 +5488,7 @@ Please contact administrator.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="53099" trl="Y">
-  <value column="MsgText" original="The page or component you request is no longer available. This is normally caused by timeout or rebooting the server.">Você atingiu o tempo limite de inatividade no sistema. Por favor faça o login novamente.</value>
+  <value column="MsgText" original="The page or component you request is no longer available. This is normally caused by timeout or rebooting the server.">Sua sessão expirou. Por favor efetue o login novamente.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="53117" trl="N">
@@ -6311,9 +6311,9 @@ Please contact administrator.</value>
   <value column="MsgText" original="Process table: ">Process table: </value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200207" trl="N">
-  <value column="MsgText" original="There are records that haven't been saved yet. ">There are records that haven't been saved yet. </value>
-  <value column="MsgTip" original="Do you still want to proceed?">Do you still want to proceed?</value>
+ <row id="200207" trl="Y">
+  <value column="MsgText" original="There are records that haven't been saved yet. ">Há registros não salvos.</value>
+  <value column="MsgTip" original="Do you still want to proceed?">Deseja realmente continuar?</value>
  </row>
  <row id="200208" trl="Y">
   <value column="MsgText" original="You're trying to close this tab.">Você está tentando fechar esta aba.</value>

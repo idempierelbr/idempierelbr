@@ -2132,10 +2132,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="408" trl="Y">
-  <value column="Name" original="Sales Price list">Lista de Preço de Vendas</value>
-  <value column="PrintName" original="Sales Price list">Lista de Preço de Vendas</value>
-  <value column="Description" original="This is a Sales Price List">Esta é uma Lista de Preço de Vendas</value>
-  <value column="Help" original="The Sales Price List check box indicates if this price list is used for sales transactions.">A caixa de verificação "Lista de Preço de Vendas" indica se esta lista de preços é usada para transações de vendas.</value>
+  <value column="Name" original="Sales Price list">Tabela de Venda</value>
+  <value column="PrintName" original="Sales Price list">Tabela de Venda</value>
+  <value column="Description" original="This is a Sales Price List">Esta é uma Tabela de Preços de Venda</value>
+  <value column="Help" original="The Sales Price List check box indicates if this price list is used for sales transactions.">A caixa de verificação "Tabela de Preços de Venda" indica se esta tabela de preços é usada para transações de venda.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -2383,20 +2383,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="449" trl="Y">
-  <value column="Name" original="Price List">Lista de Preço</value>
-  <value column="PrintName" original="Price List">Lista de Preço</value>
-  <value column="Description" original="Unique identifier of a Price List">Identificador Exclusivo de uma Lista de Preço</value>
-  <value column="Help" original="Price Lists are used to determine the pricing, margin and cost of items purchased or sold.">Listas de Preço são usadas para determinar os preços, margens e custos de itens comprados ou vendidos.</value>
+  <value column="Name" original="Price List">Tabela de Preços</value>
+  <value column="PrintName" original="Price List">Tabela de Preços</value>
+  <value column="Description" original="Unique identifier of a Price List">Identificador Exclusivo de uma Tabela de Preços</value>
+  <value column="Help" original="Price Lists are used to determine the pricing, margin and cost of items purchased or sold.">Tabelas de Preços são usadas para determinar os preços, margens e custos de itens comprados ou vendidos.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="450" trl="Y">
-  <value column="Name" original="Price List Version">Versão da Lista de Preço</value>
-  <value column="PrintName" original="Price List Version">Versão da Lista de Preço</value>
-  <value column="Description" original="Identifies a unique instance of a Price List">Identifica uma instância exclusiva de uma Lista de Preço</value>
-  <value column="Help" original="Each Price List can have multiple versions.  The most common use is to indicate the dates that a Price List is valid for.">Cada Lista de Preço pode ter múltiplas versões.  O uso mais comum é para indicar as datas de validade de uma Lista de Preço.</value>
+  <value column="Name" original="Price List Version">Versão da Tabela de Preços</value>
+  <value column="PrintName" original="Price List Version">Versão da Tabela de Preços</value>
+  <value column="Description" original="Identifies a unique instance of a Price List">Identifica uma instância exclusiva de uma Tabela de Preços</value>
+  <value column="Help" original="Each Price List can have multiple versions.  The most common use is to indicate the dates that a Price List is valid for.">Cada Tabela de Preços pode ter múltiplas versões.  O uso mais comum é para indicar as datas de validade de uma Tabela de Preços.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -2563,10 +2563,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="480" trl="Y">
-  <value column="Name" original="Purchase Pricelist">Lista de Preço de Compra</value>
-  <value column="PrintName" original="Purchase Pricelist">Lista de Preço de Compra</value>
-  <value column="Description" original="Price List used by this Business Partner">Lista de Preço usada por este Parceiro de Negócios</value>
-  <value column="Help" original="Identifies the price list used by a Vendor for products purchased by this organization.">Identifica a lista de preço usada por um fornecedor para produtos comprados por esta organização.</value>
+  <value column="Name" original="Purchase Pricelist">Tabela de Compra</value>
+  <value column="PrintName" original="Purchase Pricelist">Tabela de Compra</value>
+  <value column="Description" original="Price List used by this Business Partner">Tabela de Preços usada por este Parceiro de Negócios</value>
+  <value column="Help" original="Identifies the price list used by a Vendor for products purchased by this organization.">Identifica a tabela de preços usada por um fornecedor para produtos comprados por esta organização.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -2823,10 +2823,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="520" trl="Y">
-  <value column="Name" original="List Price">Preço de Lista</value>
-  <value column="PrintName" original="List Price">Preço de Lista</value>
-  <value column="Description" original="List Price">Preço de Lista</value>
-  <value column="Help" original="The List Price is the official List Price in the document currency.">O "Preço de Lista" é o preço de lista oficial na moeda do documento.</value>
+  <value column="Name" original="List Price">Preço de Tabela</value>
+  <value column="PrintName" original="List Price">Preço de Tabela</value>
+  <value column="Description" original="List Price">Preço de Tabela</value>
+  <value column="Help" original="The List Price is the official List Price in the document currency.">O "Preço de Tabela" é o preço de tabela oficial na moeda do documento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -2863,10 +2863,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="528" trl="Y">
-  <value column="Name" original="Delivered Quantity">Quantidade Remessa</value>
-  <value column="PrintName" original="Delivered Qty">Quantidade Remessa</value>
-  <value column="Description" original="Delivered Quantity">Quantidade Remessa</value>
-  <value column="Help" original="The Delivered Quantity indicates the quantity of a product that has been delivered.">Dependendo da situação, pode significar a quantidade total do produto em remessas geradas, ou a quantidade total de remessas (normalmente em relatórios).</value>
+  <value column="Name" original="Delivered Quantity">Quantidade Remessa / Recebimento</value>
+  <value column="PrintName" original="Delivered Qty">Quantidade Remessa / Recebimento</value>
+  <value column="Description" original="Delivered Quantity">Quantidade Remessa / Recebimento</value>
+  <value column="Help" original="The Delivered Quantity indicates the quantity of a product that has been delivered.">Dependendo da situação, pode significar a quantidade total do produto em remessas/recebimentos gerados, ou a quantidade total de remessas/recebimentos (normalmente em relatórios).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -3363,20 +3363,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="594" trl="Y">
-  <value column="Name" original="To">Para</value>
-  <value column="PrintName" original="To">Para</value>
+  <value column="Name" original="To">País (Destino)</value>
+  <value column="PrintName" original="To">País (Destino)</value>
   <value column="Description" original="Receiving Country">País de Destino</value>
-  <value column="Help" original="The To Country indicates the receiving country on a document">O Campo "Para País de Destino" indica o país de destino em um documento</value>
+  <value column="Help" original="The To Country indicates the receiving country on a document">O Campo "País (Destino)" indica o país de destino em um documento</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="595" trl="Y">
-  <value column="Name" original="To">Para</value>
-  <value column="PrintName" original="To">Para</value>
+  <value column="Name" original="To">Região (Destino)</value>
+  <value column="PrintName" original="To">Região (Destino)</value>
   <value column="Description" original="Receiving Region">Região de Destino</value>
-  <value column="Help" original="The To Region indicates the receiving region on a document">O Campo "Para Região de Destino" indica a região de destino em um documento</value>
+  <value column="Help" original="The To Region indicates the receiving region on a document">O Campo "Região (Destino)" indica a região de destino em um documento</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -3615,20 +3615,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="622" trl="Y">
-  <value column="Name" original="Partner Category">Categoria do Parceiro</value>
-  <value column="PrintName" original="BPartner Category">Categoria do Parceiro de Negócios</value>
-  <value column="Description" original="Product Category of the Business Partner">Categoria de Produto do Parceiro de Negócios</value>
-  <value column="Help" original="The Business Partner Category identifies the category used by the Business Partner for this product.">A "Categoria de Produto do Parceiro de Negócios" identifica a categoria usada pelo Parceiro de Negócios para este produto.</value>
+  <value column="Name" original="Partner Category">Categoria no Parceiro</value>
+  <value column="PrintName" original="BPartner Category">Categoria no Parceiro de Negócios</value>
+  <value column="Description" original="Product Category of the Business Partner">Categoria de Produto no Parceiro de Negócios</value>
+  <value column="Help" original="The Business Partner Category identifies the category used by the Business Partner for this product.">A "Categoria de Produto no Parceiro de Negócios" identifica a categoria usada pelo Parceiro de Negócios para o produto.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="623" trl="Y">
-  <value column="Name" original="Partner Product Key">Chave de Produto de Parceiro</value>
-  <value column="PrintName" original="BPartner Product Key">Chave de Produto de P.Negócios</value>
-  <value column="Description" original="Product Key of the Business Partner">Chave de Produto do Parceiro de Negócios</value>
-  <value column="Help" original="The Business Partner Product Key identifies the number used by the Business Partner for this product. It can be printed on orders and invoices when you include the Product Key in the print format.">A "Chave de Produto do Parceiro de Negócios" identifica o número usado pelo Parceiro de Negócios para este produto. Ele pode ser impresso em pedidos e faturas quando você inclui a Chave de Produto no formato de impressão.</value>
+  <value column="Name" original="Partner Product Key">Cód. do Produto no Parceiro</value>
+  <value column="PrintName" original="BPartner Product Key">Cód. do Produto no Parceiro</value>
+  <value column="Description" original="Product Key of the Business Partner">Cód. do Produto (Chave) no Parceiro de Negócios</value>
+  <value column="Help" original="The Business Partner Product Key identifies the number used by the Business Partner for this product. It can be printed on orders and invoices when you include the Product Key in the print format.">O "Cód. do Produto no Parceiro" identifica o código usado pelo parceiro de negócios para o produto. Ele pode ser impresso em pedidos e faturas quando você inclui a Chave de Produto no formato de impressão.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4255,20 +4255,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="942" trl="Y">
-  <value column="Name" original="Minimum Order Qty">Qde Mínima de Pedido</value>
-  <value column="PrintName" original="Minimum Order Qty">Qde Mínima de Pedido</value>
-  <value column="Description" original="Minimum order quantity in UOM">Quantidade Mínima de Pedido em UDM</value>
-  <value column="Help" original="The Minimum Order Quantity indicates the smallest quantity of this product which can be ordered.">A "Quantidade Mínima de Pedido" indica a menor quantidade deste produto que pode ser pedida.</value>
+  <value column="Name" original="Minimum Order Qty">Quantidade Mínima do Pedido</value>
+  <value column="PrintName" original="Minimum Order Qty">Qtd. Mínima do Pedido</value>
+  <value column="Description" original="Minimum order quantity in UOM">Quantidade Mínima do Pedido em UDM</value>
+  <value column="Help" original="The Minimum Order Quantity indicates the smallest quantity of this product which can be ordered.">A "Quantidade Mínima do Pedido" indica a menor quantidade deste produto que pode ser pedida.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="943" trl="Y">
-  <value column="Name" original="Order Pack Qty">Qde por Pacote do Pedido</value>
-  <value column="PrintName" original="Order Pack Qty">Qde por Pacote do Pedido</value>
-  <value column="Description" original="Package order size in UOM (e.g. order set of 5 units)">O tamanho do pacote em cada pedido em UDM (ex. conjunto de 5 unidades por pacote)</value>
-  <value column="Help" original="The Order Pack Quantity indicates the number of units in each pack of this product.">A "Qde por Pacote do Pedido" indica o número de unidades em cada pacote deste produto.</value>
+  <value column="Name" original="Order Pack Qty">Quantidade por Embalagem (do Pedido)</value>
+  <value column="PrintName" original="Order Pack Qty">Qtd. por Embalagem (do Pedido)</value>
+  <value column="Description" original="Package order size in UOM (e.g. order set of 5 units)">Quantidade por embalagem na UDM informada (ex: 6 unidades por caixa)</value>
+  <value column="Help" original="The Order Pack Quantity indicates the number of units in each pack of this product.">A "Quantidade por Embalagem (do Pedido)" indica o número de unidades em cada embalagem do produto.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4305,10 +4305,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="954" trl="Y">
-  <value column="Name" original="Last PO Price">Preço do Último PC</value>
-  <value column="PrintName" original="Last PO Price">Preço do Último PC</value>
-  <value column="Description" original="Price of the last purchase order for the product">Preço do último pedido de compras para este produto</value>
-  <value column="Help" original="The Last PO Price indicates the last price paid (per the purchase order) for this product.">O "Preço do Último PC" indica o último preço pago por este produto (de acordo com o último pedido de compras).</value>
+  <value column="Name" original="Last PO Price">Preço no Último Pedido de Compra</value>
+  <value column="PrintName" original="Last PO Price">Preço no Último PC</value>
+  <value column="Description" original="Price of the last purchase order for the product">Preço do produto no último pedido de compra</value>
+  <value column="Help" original="The Last PO Price indicates the last price paid (per the purchase order) for this product.">O "Preço no Último Pedido de Compra" indica o último preço pago por este produto (de acordo com o último pedido de compra).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4565,24 +4565,24 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1025" trl="Y">
-  <value column="Name" original="Shipment/Receipt">Remessa</value>
-  <value column="PrintName" original="Shipment/Receipt">Remessa</value>
-  <value column="Description" original="Material Shipment Document">Documento de Remessa de Material</value>
-  <value column="Help" original="The Material Shipment / Receipt ">Remessa de Material </value>
-  <value column="PO_Description" original="Material Receipt Document">Documento de Recebimento de Material</value>
-  <value column="PO_Help" original="The Material Shipment / Receipt ">Recebimento de Material </value>
-  <value column="PO_Name" original="Receipt">Recebimento</value>
-  <value column="PO_PrintName" original="Receipt">Recebimento</value>
+  <value column="Name" original="Shipment/Receipt">Remessa / Recebimento</value>
+  <value column="PrintName" original="Shipment/Receipt">Remessa / Receb.</value>
+  <value column="Description" original="Material Shipment Document">Documento de Remessa / Recebimento de Material</value>
+  <value column="Help" original="The Material Shipment / Receipt "/>
+  <value column="PO_Description" original="Material Receipt Document">Documento de Remessa / Recebimento de Material</value>
+  <value column="PO_Help" original="The Material Shipment / Receipt "/>
+  <value column="PO_Name" original="Receipt">Remessa / Recebimento</value>
+  <value column="PO_PrintName" original="Receipt">Remessa / Receb.</value>
  </row>
  <row id="1026" trl="Y">
-  <value column="Name" original="Shipment/Receipt Line">Linha de Remessa (Cliente)</value>
-  <value column="PrintName" original="Shipment/Receipt Line">Linha de Remessa (Cliente)</value>
-  <value column="Description" original="Line on Shipment or Receipt document">Linha de Remessa de Material(Cliente)</value>
+  <value column="Name" original="Shipment/Receipt Line">Linha de Remessa / Recebimento</value>
+  <value column="PrintName" original="Shipment/Receipt Line">Linha de Remessa / Recebimento</value>
+  <value column="Description" original="Line on Shipment or Receipt document">Linha de Remessa / Recebimento</value>
   <value column="Help" original="The Shipment/Receipt Line indicates a unique line in a Shipment/Receipt document"/>
-  <value column="PO_Description" original="Line on Receipt document">Linha de Recebimento de Material</value>
+  <value column="PO_Description" original="Line on Receipt document">Linha de Remessa / Recebimento</value>
   <value column="PO_Help" original=""/>
-  <value column="PO_Name" original="Receipt Line">Linha de Recebimento de Material</value>
-  <value column="PO_PrintName" original="Receipt Line">Linha de Recebimento de Material</value>
+  <value column="PO_Name" original="Receipt Line">Linha de Remessa / Recebimento</value>
+  <value column="PO_PrintName" original="Receipt Line">Linha de Remessa / Recebimento</value>
  </row>
  <row id="1027" trl="Y">
   <value column="Name" original="Phys.Inventory">Estoque Físico</value>
@@ -4615,10 +4615,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1030" trl="Y">
-  <value column="Name" original="Inventory Move">Movimentação de Estoque</value>
+  <value column="Name" original="Inventory Move">Movimento de Estoque</value>
   <value column="PrintName" original="Move">Movimento</value>
-  <value column="Description" original="Movement of Inventory">Movimentação de Estoque</value>
-  <value column="Help" original="The Inventory Movement uniquely identifies a group of movement lines.">A "Movimentação de Estoque" identifica de modo único e exclusivo um grupo de linhas de movimentação.</value>
+  <value column="Description" original="Movement of Inventory">Movimento de Estoque</value>
+  <value column="Help" original="The Inventory Movement uniquely identifies a group of movement lines.">O "Movimento de Estoque" identifica de modo único e exclusivo um grupo de linhas de movimento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -5035,10 +5035,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1088" trl="Y">
-  <value column="Name" original="Date last inventory count">Data da última contagem de estoque</value>
-  <value column="PrintName" original="Date last inventory count">Data da última contagem de estoque</value>
-  <value column="Description" original="Date of Last Inventory Count">Data da última contagem de estoque</value>
-  <value column="Help" original="The Date Last Inventory Count indicates the last time an Inventory count was done.">A "Data da última contagem de estoque" indica a última vez que foi feita uma contagem de estoque.</value>
+  <value column="Name" original="Date last inventory count">Data da Última Contagem de Estoque</value>
+  <value column="PrintName" original="Date last inventory count">Última Contagem de Estoque</value>
+  <value column="Description" original="Date of Last Inventory Count">Data da Última Contagem de Estoque</value>
+  <value column="Help" original="The Date Last Inventory Count indicates the last time an Inventory count was done.">A "Data da Última Contagem de Estoque" indica a última vez que foi feita uma contagem de estoque.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -5345,20 +5345,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1123" trl="Y">
-  <value column="Name" original="Price effective">Preço vigente</value>
-  <value column="PrintName" original="Effective">Em vigor</value>
-  <value column="Description" original="Effective Date of Price">Data de vigência do Preço</value>
-  <value column="Help" original="The Price Effective indicates the date this price is for. This allows you to enter future prices for products which will become effective when appropriate.">O campo "Preço vigente" indica a data de vigência para este preço. Isto permite a você introduzir preços futuros para produtos que irão se tornar efetivos quando apropriado.</value>
+  <value column="Name" original="Price effective">Data de Início da Vigência do Preço</value>
+  <value column="PrintName" original="Effective">Em Vigor a Partir de</value>
+  <value column="Description" original="Effective Date of Price">Data de Início da Vigência do Preço</value>
+  <value column="Help" original="The Price Effective indicates the date this price is for. This allows you to enter future prices for products which will become effective when appropriate.">O campo "Data de Início da Vigência do Preço" indica a data de vigência para este preço. Isto permite a você introduzir preços futuros para produtos que irão se tornar efetivos quando apropriado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1124" trl="Y">
-  <value column="Name" original="PO Price">Preço do PC</value>
-  <value column="PrintName" original="PO Price">Preço do PC</value>
+  <value column="Name" original="PO Price">Preço no Pedido de Compra</value>
+  <value column="PrintName" original="PO Price">Preço no Pedido de Compra</value>
   <value column="Description" original="Price based on a purchase order">Preço baseado em um pedido de compra</value>
-  <value column="Help" original="The PO Price indicates the price for a product per the purchase order.">O campo "Preço do PC" indica o preço de um produto de acordo com o pedido de compras.</value>
+  <value column="Help" original="The PO Price indicates the price for a product per the purchase order.">O campo "Preço no Pedido de Compra" indica o preço de um produto de acordo com o pedido de compra.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -5615,40 +5615,40 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1215" trl="Y">
-  <value column="Name" original="Limit price Surcharge Amount">Valor de Sobretaxa de Preço Limite</value>
-  <value column="PrintName" original="Limit price Surcharge Amt">Valor de Sobretaxa de Preço Limite</value>
-  <value column="Description" original="Amount added to the converted/copied price before multiplying">Valor adicionado ao preço convertido/copiado antes de multiplicar</value>
-  <value column="Help" original="Indicates the amount to be added to the Limit price prior to multiplication.">Indica o valor a ser adicionado ao preço Limite antes de se fazer a multiplicação.</value>
+  <value column="Name" original="Limit price Surcharge Amount">Sobretaxa no Preço Limite</value>
+  <value column="PrintName" original="Limit price Surcharge Amt">Valor da Sobretaxa no Preço Limite</value>
+  <value column="Description" original="Amount added to the converted/copied price before multiplying">Valor da Sobretaxa no Preço Limite</value>
+  <value column="Help" original="Indicates the amount to be added to the Limit price prior to multiplication.">A "Sobretaxa no Preço Limite" indica um valor a ser adicionado ao preço limite antes da multiplicação.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1216" trl="Y">
-  <value column="Name" original="Limit price Base">Base p/ Preço Limite</value>
-  <value column="PrintName" original="Limit price Base">Base p/ Preço Limite</value>
-  <value column="Description" original="Base price for calculation of the new price">Preço base para cálculo do novo preço</value>
-  <value column="Help" original="Identifies the price to be used as the base for calculating a new price list.">Identifica o preço a ser utilizado como base  para calcular uma nova lista de preços.</value>
+  <value column="Name" original="Limit price Base">Base para o Preço Limite</value>
+  <value column="PrintName" original="Limit price Base">Base para o Preço Limite</value>
+  <value column="Description" original="Base price for calculation of the new price">Preço usado como base para cálculos do preço limite</value>
+  <value column="Help" original="Identifies the price to be used as the base for calculating a new price list.">A "Base para o Preço Limite" indica o preço a ser utilizado como base para os cálculos do preço limite.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1217" trl="Y">
-  <value column="Name" original="Limit price max Margin">Margem Máxima de Preço Limite</value>
-  <value column="PrintName" original="Limit price max Margin">Margem Máxima de Preço Limite</value>
-  <value column="Description" original="Maximum difference to original limit price; ignored if zero">Máxima diferença do preço limite original; será ignorada se for zero</value>
-  <value column="Help" original="Indicates the maximum margin for a product.  The margin is calculated by subtracting the original limit price from the newly calculated price.  If this field contains 0.00 then it is ignored.">Indica a máxima margem para um produto.  A margem é calculada subtraindo o preço limite original do novo preço calculado.  Se este campo contiver 0.00 então ele será ignorado.</value>
+  <value column="Name" original="Limit price max Margin">Margem Máxima para o Preço Limite</value>
+  <value column="PrintName" original="Limit price max Margin">Margem Máxima para o Preço Limite</value>
+  <value column="Description" original="Maximum difference to original limit price; ignored if zero">Margem máxima para um produto</value>
+  <value column="Help" original="Indicates the maximum margin for a product.  The margin is calculated by subtracting the original limit price from the newly calculated price.  If this field contains 0.00 then it is ignored.">A "Margem Máxima para o Preço Limite" indica a margem máxima para um produto. A margem é calculada subtraindo o preço limite original do novo preço calculado. Se este campo contiver 0.00 então ele será ignorado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1218" trl="Y">
-  <value column="Name" original="Limit price min Margin">Margem Mínima de Preço Limite</value>
-  <value column="PrintName" original="Limit price min Margin">Margem Mínima de Preço Limite</value>
-  <value column="Description" original="Minimum difference to original limit price; ignored if zero">Mínima diferença do preço limite original; será ignorada se for zero</value>
-  <value column="Help" original="Indicates the minimum margin for a product.  The margin is calculated by subtracting the original limit price from the newly calculated price.  If this field contains 0.00 then it is ignored.">Indica a mínima margem para um produto.  A margem é calculada subtraindo o preço limite original do novo preço calculado.  Se este campo contiver 0.00 então ele será ignorado.</value>
+  <value column="Name" original="Limit price min Margin">Margem Mínima para o Preço Limite</value>
+  <value column="PrintName" original="Limit price min Margin">Margem Mínima para o Preço Limite</value>
+  <value column="Description" original="Minimum difference to original limit price; ignored if zero">Margem mínima para um produto</value>
+  <value column="Help" original="Indicates the minimum margin for a product.  The margin is calculated by subtracting the original limit price from the newly calculated price.  If this field contains 0.00 then it is ignored.">A "Margem Mínima para o Preço Limite" indica a margem mínima para um produto. A margem é calculada subtraindo o preço limite original do novo preço calculado. Se este campo contiver 0.00 então ele será ignorado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -5657,78 +5657,78 @@ Exemplo de formato "(000)_000-0000"]]></value>
  <row id="1220" trl="Y">
   <value column="Name" original="Limit price Rounding">Arredondamento do Preço Limite</value>
   <value column="PrintName" original="Limit price Rounding">Arredondamento do Preço Limite</value>
-  <value column="Description" original="Rounding of the final result">Arredondamento do resultado final</value>
-  <value column="Help" original="A drop down list box which indicates the rounding (if any) will apply to the final prices in this price list.">Uma caixa de lista de escolha a qual indica o arredondamento (se existir) que será aplicado ao preço final nesta lista de preços.</value>
+  <value column="Description" original="Rounding of the final result">Regra de arredondamento para o preço limite final</value>
+  <value column="Help" original="A drop down list box which indicates the rounding (if any) will apply to the final prices in this price list.">O "Arredondamento do Preço Limite" indica como o preço limite final será arredondado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1221" trl="Y">
-  <value column="Name" original="List price Surcharge Amount">Valor da Sobretaxa de Preço de Lista</value>
-  <value column="PrintName" original="List price Surcharge Amt">Valor da Sobretaxa de Preço de Lista</value>
-  <value column="Description" original="List Price Surcharge Amount">Valor da Sobretaxa de Preço de Lista</value>
-  <value column="Help" original="The List Price Surcharge Amount indicates the amount to be added to the price prior to multiplication.">O "Valor da Sobretaxa de Preço de Lista" indica o valor a ser adicionado ao preço antes da multiplicação.</value>
+  <value column="Name" original="List price Surcharge Amount">Sobretaxa no Preço de Tabela</value>
+  <value column="PrintName" original="List price Surcharge Amt">Valor da Sobretaxa no Preço de Tabela</value>
+  <value column="Description" original="List Price Surcharge Amount">Valor da Sobretaxa no Preço de Tabela</value>
+  <value column="Help" original="The List Price Surcharge Amount indicates the amount to be added to the price prior to multiplication.">A "Sobretaxa no Preço de Tabela" indica um valor a ser adicionado ao preço de tabela antes da multiplicação.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1222" trl="Y">
-  <value column="Name" original="List price Base">Base de Preço de Lista</value>
-  <value column="PrintName" original="List price Base">Base de Preço de Lista</value>
-  <value column="Description" original="Price used as the basis for price list calculations">Preço usado como base para cálculos de listas de preços</value>
-  <value column="Help" original="The List Price Base indicates the price to use as the basis for the calculation of a new price list.">A "Base de Preço de Lista" indica o preço a ser utilizado como base para os cálculos de uma nova lista de preços.</value>
+  <value column="Name" original="List price Base">Base para o Preço de Tabela</value>
+  <value column="PrintName" original="List price Base">Base para o Preço de Tabela</value>
+  <value column="Description" original="Price used as the basis for price list calculations">Preço usado como base para cálculos do preço de tabela</value>
+  <value column="Help" original="The List Price Base indicates the price to use as the basis for the calculation of a new price list.">A "Base para o Preço de Tabela" indica o preço a ser utilizado como base para os cálculos do preço de tabela.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1223" trl="Y">
-  <value column="Name" original="List price max Margin">Margem Máxima do Preço de Lista</value>
-  <value column="PrintName" original="List price max Margin">Margem Máxima do Preço de Lista</value>
-  <value column="Description" original="Maximum margin for a product">Máxima margem para um produto</value>
-  <value column="Help" original="The List Price Max Margin indicates the maximum margin for a product.  The margin is calculated by subtracting the original list price from the newly calculated price.  If this field contains 0.00 then it is ignored.">A "Margem Máxima do Preço de Lista" indica a máxima margem para um produto.  A margem é calculada subtraindo o preço de lista original do novo preço calculado.  Se este campo contiver 0.00 então ele será ignorado.</value>
+  <value column="Name" original="List price max Margin">Margem Máxima para o Preço de Tabela</value>
+  <value column="PrintName" original="List price max Margin">Margem Máxima para o Preço de Tabela</value>
+  <value column="Description" original="Maximum margin for a product">Margem máxima para um produto</value>
+  <value column="Help" original="The List Price Max Margin indicates the maximum margin for a product.  The margin is calculated by subtracting the original list price from the newly calculated price.  If this field contains 0.00 then it is ignored.">A "Margem Máxima para o Preço de Tabela" indica a margem máxima para um produto. A margem é calculada subtraindo o preço de tabela original do novo preço calculado. Se este campo contiver 0.00 então ele será ignorado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1224" trl="Y">
-  <value column="Name" original="List price min Margin">Margem Mínima de Preço de Lista</value>
-  <value column="PrintName" original="List price min Margin">Margem Mínima de Preço de Lista</value>
-  <value column="Description" original="Minimum margin for a product">Mínima margem para um produto</value>
-  <value column="Help" original="The List Price Min Margin indicates the minimum margin for a product.  The margin is calculated by subtracting the original list price from the newly calculated price.  If this field contains 0.00 then it is ignored.">A "Margem Mínima do Preço de Lista" indica a mínima margem para um produto.  A margem é calculada subtraindo o preço de lista original do novo preço calculado.  Se este campo contiver 0.00 então ele será ignorado.</value>
+  <value column="Name" original="List price min Margin">Margem Mínima para o Preço de Tabela</value>
+  <value column="PrintName" original="List price min Margin">Margem Mínima para o Preço de Tabela</value>
+  <value column="Description" original="Minimum margin for a product">Margem mínima para um produto</value>
+  <value column="Help" original="The List Price Min Margin indicates the minimum margin for a product.  The margin is calculated by subtracting the original list price from the newly calculated price.  If this field contains 0.00 then it is ignored.">A "Margem Mínima para o Preço de Tabela" indica a margem mínima para um produto. A margem é calculada subtraindo o preço de tabela original do novo preço calculado. Se este campo contiver 0.00 então ele será ignorado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1226" trl="Y">
-  <value column="Name" original="List price Rounding">Arredondamento do Preço de Lista</value>
-  <value column="PrintName" original="List price Rounding">Arredondamento do Preço de Lista</value>
-  <value column="Description" original="Rounding rule for final list price">Regra de Arredondamento para o preço de lista final</value>
-  <value column="Help" original="The List Price Rounding indicates how the final list price will be rounded.">O "Arredondamento do Preço de Lista" indica como o preço de lista final será arredondado.</value>
+  <value column="Name" original="List price Rounding">Arredondamento do Preço de Tabela</value>
+  <value column="PrintName" original="List price Rounding">Arredondamento do Preço de Tabela</value>
+  <value column="Description" original="Rounding rule for final list price">Regra de arredondamento para o preço de tabela final</value>
+  <value column="Help" original="The List Price Rounding indicates how the final list price will be rounded.">O "Arredondamento do Preço de Tabela" indica como o preço de tabela final será arredondado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1228" trl="Y">
-  <value column="Name" original="Base Price List">Lista de Preços Base</value>
-  <value column="PrintName" original="Base Price List">Lista de Preços Base</value>
-  <value column="Description" original="Source for Price list calculations">Fonte para cálculos de lista de preços</value>
-  <value column="Help" original="The Base Price List identifies the Base Pricelist used for calculating prices (the source)">A "Lista de Preços Base" identifica a lista de preços base para cálculos de preços (é a fonte, origem dos preços)</value>
+  <value column="Name" original="Base Price List">Tabela de Preços Base</value>
+  <value column="PrintName" original="Base Price List">Tabela de Preços Base</value>
+  <value column="Description" original="Source for Price list calculations">Fonte para cálculos de Tabela de preços</value>
+  <value column="Help" original="The Base Price List identifies the Base Pricelist used for calculating prices (the source)">A "Tabela de Preços Base" identifica a tabela de preços base para cálculos de preços (é a fonte, origem dos preços)</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1229" trl="Y">
-  <value column="Name" original="Standard price Surcharge Amount">Valor de Sobretaxa de Preço Padrão</value>
-  <value column="PrintName" original="Standard price Surcharge Amt">Valor de Sobretaxa de Preço Padrão</value>
-  <value column="Description" original="Amount added to a price as a surcharge">Valor adicionado a um preço como uma sobretaxa</value>
-  <value column="Help" original="The Standard Price Surcharge Amount indicates the amount to be added to the price prior to multiplication.&#10;">O "Valor da Sobretaxa de Preço Padrão" indica o valor a ser adicionado ao preço antes da multiplicação.
+  <value column="Name" original="Standard price Surcharge Amount">Sobretaxa no Preço Padrão</value>
+  <value column="PrintName" original="Standard price Surcharge Amt">Valor da Sobretaxa no Preço Padrão</value>
+  <value column="Description" original="Amount added to a price as a surcharge">Valor da Sobretaxa no Preço Padrão</value>
+  <value column="Help" original="The Standard Price Surcharge Amount indicates the amount to be added to the price prior to multiplication.&#10;">A "Sobretaxa no Preço Padrão" indica um valor a ser adicionado ao preço padrão antes da multiplicação.
 </value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -5736,31 +5736,30 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1230" trl="Y">
-  <value column="Name" original="Standard price Base">Base de Preço Padrão</value>
-  <value column="PrintName" original="Standard price Base">Base de Preço Padrão</value>
-  <value column="Description" original="Base price for calculating new standard price">Preço Base para cálculo do novo preço padrão</value>
-  <value column="Help" original="The Standard Price Base indicates the price to use as the basis for the calculation of a new price standard.&#10;">A "Base de Preço Padrão" indica o preço a ser utilizado como base para os cálculos de um novo preço padrão.
-</value>
+  <value column="Name" original="Standard price Base">Base para o Preço Padrão</value>
+  <value column="PrintName" original="Standard price Base">Base para o Preço Padrão</value>
+  <value column="Description" original="Base price for calculating new standard price">Preço usado como base para cálculos do preço padrão</value>
+  <value column="Help" original="The Standard Price Base indicates the price to use as the basis for the calculation of a new price standard.&#10;">A "Base para o Preço Padrão" indica o preço a ser utilizado como base para os cálculos do preço padrão.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1231" trl="Y">
-  <value column="Name" original="Standard max Margin">Margem Máx. Padrão</value>
-  <value column="PrintName" original="Standard max Margin">Margem Máx. Padrão</value>
-  <value column="Description" original="Maximum margin allowed for a product">Máxima margem permitida para um produto</value>
-  <value column="Help" original="The Standard Price Max Margin indicates the maximum margin for a product.  The margin is calculated by subtracting the original Standard price from the newly calculated price.  If this field contains 0.00 then it is ignored.">A "Margem Máxima do Preço Padrão" indica a máxima margem para um produto.  A margem é calculada subtraindo o preço padrão original do novo preço calculado.  Se este campo contiver 0.00 então ele será ignorado.</value>
+  <value column="Name" original="Standard max Margin">Margem Máxima para o Preço Padrão</value>
+  <value column="PrintName" original="Standard max Margin">Margem Máxima para o Preço Padrão</value>
+  <value column="Description" original="Maximum margin allowed for a product">Margem máxima para um produto</value>
+  <value column="Help" original="The Standard Price Max Margin indicates the maximum margin for a product.  The margin is calculated by subtracting the original Standard price from the newly calculated price.  If this field contains 0.00 then it is ignored.">A "Margem Máxima para o Preço Padrão" indica a margem máxima para um produto. A margem é calculada subtraindo o preço padrão original do novo preço calculado. Se este campo contiver 0.00 então ele será ignorado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1232" trl="Y">
-  <value column="Name" original="Standard price min Margin">Margem Mínima de Preço Padrão</value>
-  <value column="PrintName" original="Standard price min Margin">Margem Mínima de Preço Padrão</value>
-  <value column="Description" original="Minimum margin allowed for a product">Mínima margem permitida para um produto</value>
-  <value column="Help" original="The Standard Price Min Margin indicates the minimum margin for a product.  The margin is calculated by subtracting the original Standard price from the newly calculated price.  If this field contains 0.00 then it is ignored.">A "Margem Mínima do Preço Padrão" indica a mínima margem para um produto.  A margem é calculada subtraindo o preço padrão original do novo preço calculado.  Se este campo contiver 0.00 então ele será ignorado.</value>
+  <value column="Name" original="Standard price min Margin">Margem Mínima para o Preço Padrão</value>
+  <value column="PrintName" original="Standard price min Margin">Margem Mínima para o Preço Padrão</value>
+  <value column="Description" original="Minimum margin allowed for a product">Margem mínima para um produto</value>
+  <value column="Help" original="The Standard Price Min Margin indicates the minimum margin for a product.  The margin is calculated by subtracting the original Standard price from the newly calculated price.  If this field contains 0.00 then it is ignored.">A "Margem Mínima para o Preço Padrão" indica a margem mínima para um produto. A margem é calculada subtraindo o preço padrão original do novo preço calculado. Se este campo contiver 0.00 então ele será ignorado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -5769,8 +5768,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
  <row id="1234" trl="Y">
   <value column="Name" original="Standard price Rounding">Arredondamento do Preço Padrão</value>
   <value column="PrintName" original="Standard price Rounding">Arredondamento do Preço Padrão</value>
-  <value column="Description" original="Rounding rule for calculated price">Regra de arredondamento para preços calculados</value>
-  <value column="Help" original="The Standard Price Rounding indicates how the final Standard price will be rounded.">O "Arredondamento do Preço Padrão" indica como o Preço Padrão final será arredondado.</value>
+  <value column="Description" original="Rounding rule for calculated price">Regra de arredondamento para o preço padrão final</value>
+  <value column="Help" original="The Standard Price Rounding indicates how the final Standard price will be rounded.">O "Arredondamento do Preço Padrão" indica como o preço padrão final será arredondado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -5787,30 +5786,30 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1236" trl="Y">
-  <value column="Name" original="Limit price Discount %">Desconto de Preço limite %</value>
-  <value column="PrintName" original="Limit price Discount %">Desconto de Preço limite %</value>
-  <value column="Description" original="Discount in percent to be subtracted from base, if negative it will be added to base price">Desconto em porcentagem a ser subtraído do valor base, se for negativo, ele será somado ao preço base</value>
-  <value column="Help" original="Indicates the discount in percent to be subtracted from base, if negative it will be added to base price">Indica o desconto em porcentagem a ser subtraído do valor base, se for negativo, ele será somado ao preço base</value>
+  <value column="Name" original="Limit price Discount %">Desconto (%) no Preço Limite</value>
+  <value column="PrintName" original="Limit price Discount %">Desconto (%) no Preço Limite</value>
+  <value column="Description" original="Discount in percent to be subtracted from base, if negative it will be added to base price">Desconto no preço limite, em porcentagem</value>
+  <value column="Help" original="Indicates the discount in percent to be subtracted from base, if negative it will be added to base price">O "Desconto (%) no Preço Limite" indica a porcentagem de desconto que será subtraída do preço base. Um valor negativo indica a porcentagem que será adicionada ao preço base.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1237" trl="Y">
-  <value column="Name" original="List price Discount %">Desconto de Preço de Lista %</value>
-  <value column="PrintName" original="List price Discount %">Desconto de Preço de Lista %</value>
-  <value column="Description" original="Discount from list price as a percentage">Desconto do preço de lista em porcentagem</value>
-  <value column="Help" original="The List Price Discount Percentage indicates the percentage discount which will be subtracted from the base price.  A negative amount indicates the percentage which will be added to the base price.">O "Desconto de Preço de Lista %" indica a porcentagem de desconto que será subtraída do preço base.  Um valor negativo indica a porcentagem que será adicionada ao preço base.</value>
+  <value column="Name" original="List price Discount %">Desconto (%) no Preço de Tabela</value>
+  <value column="PrintName" original="List price Discount %">Desconto (%) no Preço de Tabela</value>
+  <value column="Description" original="Discount from list price as a percentage">Desconto no preço de tabela, em porcentagem</value>
+  <value column="Help" original="The List Price Discount Percentage indicates the percentage discount which will be subtracted from the base price.  A negative amount indicates the percentage which will be added to the base price.">O "Desconto (%) no Preço de Tabela" indica a porcentagem de desconto que será subtraída do preço base. Um valor negativo indica a porcentagem que será adicionada ao preço base.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1238" trl="Y">
-  <value column="Name" original="Standard price Discount %">Desconto de Preço Padrão %</value>
-  <value column="PrintName" original="Standard price Discount %">Desconto de Preço Padrão %</value>
-  <value column="Description" original="Discount percentage to subtract from base price">Porcentagem de desconto do preço base</value>
-  <value column="Help" original="The Standard Price Discount Percentage indicates the percentage discount which will be subtracted from the base price.  A negative amount indicates the percentage which will be added to the base price.">O "Desconto de Preço Padrão %" indica a porcentagem de desconto que será subtraída do preço base.  Um valor negativo indica a porcentagem que será adicionada ao preço base.</value>
+  <value column="Name" original="Standard price Discount %">Desconto (%) no Preço Padrão</value>
+  <value column="PrintName" original="Standard price Discount %">Desconto (%) no Preço Padrão</value>
+  <value column="Description" original="Discount percentage to subtract from base price">Desconto no preço padrão, em porcentagem</value>
+  <value column="Help" original="The Standard Price Discount Percentage indicates the percentage discount which will be subtracted from the base price.  A negative amount indicates the percentage which will be added to the base price.">O "Desconto (%) no Preço Padrão" indica a porcentagem de desconto que será subtraída do preço base. Um valor negativo indica a porcentagem que será adicionada ao preço base.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -5947,10 +5946,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1259" trl="Y">
-  <value column="Name" original="Base Pricelist">Lista de Preço Base</value>
-  <value column="PrintName" original="Base">Base</value>
-  <value column="Description" original="Pricelist to be used, if product not found on this pricelist">Lista de Preços a ser utilizada, se o produto não for encontrado nesta lista de preços.</value>
-  <value column="Help" original="The Base Price List identifies the default price list to be used if a product is not found on the selected price list">A "Lista de Preço Base" identifica a lista de preços padrão a ser utilizada se um produto não for encontrado na lista selecionada.</value>
+  <value column="Name" original="Base Pricelist">Tabela de Preços Base</value>
+  <value column="PrintName" original="Base">Tabela de Preços Base</value>
+  <value column="Description" original="Pricelist to be used, if product not found on this pricelist">Tabela de Preços a ser utilizada, se o produto não for encontrado nesta tabela de preços.</value>
+  <value column="Help" original="The Base Price List identifies the default price list to be used if a product is not found on the selected price list">A "Tabela de Preços Base" identifica a tabela de preços padrão a ser utilizada se um produto não for encontrado na tabela selecionada.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -7007,20 +7006,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1398" trl="Y">
-  <value column="Name" original="Host Address">Endereço do Hospedeiro</value>
-  <value column="PrintName" original="Host Address">Endereço do Hospedeiro</value>
-  <value column="Description" original="Host Address URL or DNS">Endereço URL ou DNS do Hospedeiro</value>
-  <value column="Help" original="The Host Address identifies the URL or DNS of the target host">O "Endereço do Hospedeiro" identifica a URL ou DNS do computador alvo (servidor)</value>
+  <value column="Name" original="Host Address">Endereço do Host</value>
+  <value column="PrintName" original="Host Address">Endereço do Host</value>
+  <value column="Description" original="Host Address URL or DNS">Endereço URL ou DNS do Host</value>
+  <value column="Help" original="The Host Address identifies the URL or DNS of the target host">O "Endereço do Host" identifica a URL ou DNS do computador alvo (servidor)</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1399" trl="Y">
-  <value column="Name" original="Host port">Porta do Hospedeiro</value>
-  <value column="PrintName" original="Host port">Porta do Hospedeiro</value>
-  <value column="Description" original="Host Communication Port">Porta de comunicação do computador hospedeiro</value>
-  <value column="Help" original="The Host Port identifies the port to communicate with the host.">A "Porta do Hospedeiro" identifica a porta utilizada para comunicação com o computador hospedeiro (servidor).</value>
+  <value column="Name" original="Host port">Porta do Host</value>
+  <value column="PrintName" original="Host port">Porta do Host</value>
+  <value column="Description" original="Host Communication Port">Porta de comunicação do computador host</value>
+  <value column="Help" original="The Host Port identifies the port to communicate with the host.">A "Porta do Host" identifica a porta utilizada para comunicação com o computador host (servidor).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -7168,10 +7167,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1419" trl="Y">
-  <value column="Name" original="Proxy logon">Proxy logon</value>
-  <value column="PrintName" original="Proxy logon">Proxy logon</value>
+  <value column="Name" original="Proxy logon">Logon do Proxy</value>
+  <value column="PrintName" original="Proxy logon">Logon do Proxy</value>
   <value column="Description" original="Logon of your proxy server">Logon do seu servidor proxy</value>
-  <value column="Help" original="The Proxy Logon identifies the Logon ID for your proxy server.">O "Proxy logon" identifica o ID de registro (Logon) para o seu servidor proxy.</value>
+  <value column="Help" original="The Proxy Logon identifies the Logon ID for your proxy server.">O "Logon do Proxy" identifica o ID de registro (Logon) para o seu servidor proxy.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -9198,9 +9197,9 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1669" trl="Y">
-  <value column="Name" original="Delete old/existing records">Excluir registros antigos/existentes</value>
-  <value column="PrintName" original="Delete old/existing records">Excluir registros antigos/existentes</value>
-  <value column="Description" original="Otherwise records will be added">De outro modo serão adicionados registros</value>
+  <value column="Name" original="Delete old/existing records">Excluir registros existentes</value>
+  <value column="PrintName" original="Delete old/existing records">Excluir registros existentes</value>
+  <value column="Description" original="Otherwise records will be added">Exclui os registros atualmente existentes</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -9540,20 +9539,20 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1707" trl="Y">
-  <value column="Name" original="Break Discount %">Desconto Incremental %</value>
-  <value column="PrintName" original="Break Discount">Desconto Incremental</value>
-  <value column="Description" original="Trade Discount in Percent for the break level">Desconto comercial em porcentagem para um dado nível (ponto de inflexão)</value>
-  <value column="Help" original="Trade Discount in Percent for the break level">Desconto comercial em porcentagem para um dado nível (ponto de inflexão)</value>
+  <value column="Name" original="Break Discount %">Desconto Condicional (%)</value>
+  <value column="PrintName" original="Break Discount">Desconto Condicional (%)</value>
+  <value column="Description" original="Trade Discount in Percent for the break level">Desconto condicional para determinado montante ou quantidade</value>
+  <value column="Help" original="Trade Discount in Percent for the break level">Desconto condicional em porcentagem para determinado montante ou quantidade.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1708" trl="Y">
-  <value column="Name" original="Break Value">Ponto de Inflexão</value>
-  <value column="PrintName" original="Break Value">Ponto de Inflexão</value>
-  <value column="Description" original="Low Value of trade discount break level">Valor Mínimo do ponto de inflexão para desconto comercial</value>
-  <value column="Help" original="Starting Quantity or Amount Value for break level">Quantidade ou Montante Inicial para atingir o ponto de inflexão (Break Level)</value>
+  <value column="Name" original="Break Value">Valor para o Desconto Condicional</value>
+  <value column="PrintName" original="Break Value">Valor p/ Desc. Cond.</value>
+  <value column="Description" original="Low Value of trade discount break level">Montante ou Quantidade Mínima para o desconto condicional</value>
+  <value column="Help" original="Starting Quantity or Amount Value for break level">Montante ou Quantidade Mínima para que o desconto condicional se torne válido.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -9600,14 +9599,14 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1714" trl="Y">
-  <value column="Name" original="Discount Schema">Esquema de Descontos</value>
-  <value column="PrintName" original="Discount Schema">Esquema de Descontos</value>
-  <value column="Description" original="Schema to calculate the trade discount percentage">Esquema para calcular a percentagem do desconto comercial</value>
-  <value column="Help" original="After calculation of the (standard) price, the trade discount percentage is calculated and applied resulting in the final price.">Após o cálculo do preço (padrão), a porcentagem de desconto comercial é calculada e aplicada resultando no preço final.</value>
-  <value column="PO_Description" original="Schema to calculate price lists">Esquema para calcular listas de preços</value>
+  <value column="Name" original="Discount Schema">Esquema de Preços / Descontos</value>
+  <value column="PrintName" original="Discount Schema">Esquema de Preços / Descontos</value>
+  <value column="Description" original="Schema to calculate the trade discount percentage">Esquema para calcular preços e descontos</value>
+  <value column="Help" original="After calculation of the (standard) price, the trade discount percentage is calculated and applied resulting in the final price."/>
+  <value column="PO_Description" original="Schema to calculate price lists">Esquema para calcular preços e descontos</value>
   <value column="PO_Help" original=""/>
-  <value column="PO_Name" original="Price List Schema">Esquema de Lista de Preço</value>
-  <value column="PO_PrintName" original="Price List Schema">Esquema de Lista de Preço</value>
+  <value column="PO_Name" original="Price List Schema">Esquema de Preços / Descontos</value>
+  <value column="PO_PrintName" original="Price List Schema">Esquema de Preços / Descontos</value>
  </row>
  <row id="1715" trl="Y">
   <value column="Name" original="Discount Schema Break">Esquema de Descontos Incrementais</value>
@@ -9750,9 +9749,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1729" trl="Y">
-  <value column="Name" original="List price Value">Avaliação em Preço de Lista</value>
-  <value column="PrintName" original="List price Value">Avaliação em Preço de Lista</value>
-  <value column="Description" original="Valuation with List Price">Avaliação com Preço de Lista</value>
+  <value column="Name" original="List price Value">Avaliação em Preço de Tabela</value>
+  <value column="PrintName" original="List price Value">Avaliação em Preço de Tabela</value>
+  <value column="Description" original="Valuation with List Price">Avaliação com Preço de Tabela</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -9860,10 +9859,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1740" trl="Y">
-  <value column="Name" original="Last Invoice Price">Preço da Última Fatura</value>
-  <value column="PrintName" original="Last Invoice Price">Preço da Última Fatura</value>
-  <value column="Description" original="Price of the last invoice for the product">Preço da última fatura para este produto</value>
-  <value column="Help" original="The Last Invoice Price indicates the last price paid (per the invoice) for this product.">O "Preço da Última Fatura" indica o último preço pago por este produto (de acordo com a última fatura).</value>
+  <value column="Name" original="Last Invoice Price">Preço na Última Fatura</value>
+  <value column="PrintName" original="Last Invoice Price">Preço na Última Fatura</value>
+  <value column="Description" original="Price of the last invoice for the product">Preço deste produto na última fatura</value>
+  <value column="Help" original="The Last Invoice Price indicates the last price paid (per the invoice) for this product.">O "Preço na Última Fatura" indica o último preço pago por este produto (de acordo com a última fatura).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -9910,9 +9909,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1745" trl="Y">
-  <value column="Name" original="Fixed List Price">Preço de Lista Fixo</value>
-  <value column="PrintName" original="Fixed List">Lista Fixa</value>
-  <value column="Description" original="Fixes List Price (not calculated)">Preço de Lista Fixo (não calculado)</value>
+  <value column="Name" original="Fixed List Price">Preço de Tabela Fixo</value>
+  <value column="PrintName" original="Fixed List">Preço de Tabela Fixo</value>
+  <value column="Description" original="Fixes List Price (not calculated)">Preço de Tabela Fixo (não calculado)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -11511,9 +11510,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1918" trl="Y">
-  <value column="Name" original="Royalty Amount">Valor do Direito de Exploração</value>
-  <value column="PrintName" original="Royalty Amount">Valor do Direito de Exploração</value>
-  <value column="Description" original="(Included) Amount for copyright, etc.">(incluindo) Valor para direito autoral (copyright), etc.</value>
+  <value column="Name" original="Royalty Amount">Valor do Royalty</value>
+  <value column="PrintName" original="Royalty Amount">Valor do Royalty (Direito de Exploração)</value>
+  <value column="Description" original="(Included) Amount for copyright, etc.">Valor do royalty, copyright, etc.</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -11671,10 +11670,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1936" trl="Y">
-  <value column="Name" original="Guarantee Date">Vencimento da Garantia</value>
-  <value column="PrintName" original="Guarantee date">Data de Garantia</value>
-  <value column="Description" original="Date when guarantee expires">Data em que a garantia expira</value>
-  <value column="Help" original="Date when the normal guarantee or availability expires">Data de vencimento da disponibilidade ou da garantia normal</value>
+  <value column="Name" original="Guarantee Date">Data de Validade</value>
+  <value column="PrintName" original="Guarantee date">Data de Validade</value>
+  <value column="Description" original="Date when guarantee expires">Data de validade, ou data de expiração da garantia</value>
+  <value column="Help" original="Date when the normal guarantee or availability expires"/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -11683,8 +11682,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="1937" trl="Y">
   <value column="Name" original="Guarantee Days">Prazo de Validade</value>
   <value column="PrintName" original="Guarantee days">Prazo de Validade</value>
-  <value column="Description" original="Number of days the product is guaranteed or available">Prazo de Garantia/Validade (em dias)</value>
-  <value column="Help" original="If the value is 0, there is no limit to the availability or guarantee, otherwise the guarantee date is calculated by adding the days to the delivery date.">Se o valor for 0, a garantia/validade/disponibilidade é por tempo ilimitado. Caso contrário, a garantia é calculada adicionando-se os dias informados à data de entrega.</value>
+  <value column="Description" original="Number of days the product is guaranteed or available">Prazo de Validade (em dias)</value>
+  <value column="Help" original="If the value is 0, there is no limit to the availability or guarantee, otherwise the guarantee date is calculated by adding the days to the delivery date.">Se o valor for 0, a validade/garantia/disponibilidade é por tempo ilimitado. Caso contrário, a validade/garantia é calculada adicionando-se os dias informados à data de entrega.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -12391,10 +12390,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2011" trl="Y">
-  <value column="Name" original="Guarantee Date">Vencimento da Garantia</value>
-  <value column="PrintName" original="Guarantee Date">Vencimento da Garantia</value>
-  <value column="Description" original="Product has Guarantee or Expiry Date">Produto tem Garantia ou Data de Validade</value>
-  <value column="Help" original="For individual products, you can define a guarantee or expiry date">Você pode definir uma garantia ou data de validade para cada produto individualmente</value>
+  <value column="Name" original="Guarantee Date">Data de Validade</value>
+  <value column="PrintName" original="Guarantee Date">Data de Validade</value>
+  <value column="Description" original="Product has Guarantee or Expiry Date">Indica se o produto possui data de validade, ou expiração da garantia</value>
+  <value column="Help" original="For individual products, you can define a guarantee or expiry date"/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -12501,10 +12500,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2025" trl="Y">
-  <value column="Name" original="Attribute Search">Procura de Atributo</value>
-  <value column="PrintName" original="Attribute Search">Procura de Atributo</value>
-  <value column="Description" original="Common Search Attribute ">Procura de Atributo Comum </value>
-  <value column="Help" original="Attributes are specific to a Product Attribute Set (e.g. Size for T-Shirts: S,M,L). If you have multiple attributes and want to search under a common attribute, you define a search attribute. Example: have one Size search attribute combining the values of all different sizes (Size for Dress Shirt  XL,L,M,S,XS). The Attribute Search allows you to have all values available for selection.  This eases the maintenance of the individual product attribute.">Atributos são específicos a um Conjunto de Atributos de Produto (ex. Tamanho de Camisetas: P,M,G). Se você tiver múltiplos atributos e quiser pesquisar sob um atributo comum, você define um atributo de pesquisa. Exemplo: tenha um atributo de pesquisa Tamanho combinando os valores de todos os diferentes tamanhos (Tamanho para Vestidos GG,G,M,P,PP). O Atributo de Pesquisa permite a você ter todos os valores para seleção.  Isto facilita a manutenção de atributos individuais de produtos.</value>
+  <value column="Name" original="Attribute Search">Atributo de Pesquisa</value>
+  <value column="PrintName" original="Attribute Search">Atributo de Pesquisa</value>
+  <value column="Description" original="Common Search Attribute ">Atributo Comum para Pesquisas</value>
+  <value column="Help" original="Attributes are specific to a Product Attribute Set (e.g. Size for T-Shirts: S,M,L). If you have multiple attributes and want to search under a common attribute, you define a search attribute. Example: have one Size search attribute combining the values of all different sizes (Size for Dress Shirt  XL,L,M,S,XS). The Attribute Search allows you to have all values available for selection.  This eases the maintenance of the individual product attribute.">Atributos são específicos a um Conjunto de Atributos de Produto (ex. tamanhos P, M, G de camisetas). Se você tiver múltiplos atributos e quiser pesquisar sob um atributo comum, você define um atributo de pesquisa. Exemplo: um atributo de pesquisa Tamanho combinando os valores de todos os diferentes tamanhos (tamanhos GG, G, M, P, PP de vestidos). O Atributo de Pesquisa permite a você ter todos os valores para seleção. Isto facilita a manutenção de atributos individuais de produtos.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -14127,8 +14126,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2197" trl="Y">
   <value column="Name" original="Min Guarantee Days">Prazo Mín. de Validade</value>
   <value column="PrintName" original="Min Guarantee">Prazo Mín. de Validade</value>
-  <value column="Description" original="Minimum number of guarantee days">Prazo Mínimo de Garantia/Validade (em dias)</value>
-  <value column="Help" original="When selecting batch/products with a guarantee date, the minimum left guarantee days for automatic picking.  You can pick any batch/product manually. ">É o número mínimo de dias restantes do prazo de validade para escolha automática quando se seleciona produtos/lotes com data de validade.  Você pode escolher qualquer produto/lote manualmente. </value>
+  <value column="Description" original="Minimum number of guarantee days">Prazo Mínimo de Validade/Garantia/ (em dias)</value>
+  <value column="Help" original="When selecting batch/products with a guarantee date, the minimum left guarantee days for automatic picking.  You can pick any batch/product manually. ">É o número mínimo de dias restantes do prazo de validade para escolha automática quando se seleciona produtos/lotes com data de validade. Você pode escolher qualquer produto/lote manualmente. </value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -14515,10 +14514,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2240" trl="Y">
-  <value column="Name" original="Min Shelf Life %">% Validade Mínima</value>
-  <value column="PrintName" original="Min Shelf Life %">% Validade Mínima</value>
-  <value column="Description" original="Minimum Shelf Life in percent based on Product Instance Guarantee Date">Validade mínima em porcentagem baseada na Data de Validade da Instância do Produto</value>
-  <value column="Help" original="Minimum Shelf Life of products with Guarantee Date instance. If &gt; 0 you cannot select products with a shelf life ((Guarantee Date-Today) / Guarantee Days) less than the minimum shelf life, unless you select &quot;Show All&quot;"><![CDATA[Validade mínima de produtos com Data de Validade na Instância. Se > 0, você não pode selecionar produtos com uma vida de prateleira ((Data de Validade-Hoje) / Prazo de Validade) menor que a validade mínima, a menos que você selecione "Mostrar Todos".]]></value>
+  <value column="Name" original="Min Shelf Life %">Shelf Life Mínimo (em %)</value>
+  <value column="PrintName" original="Min Shelf Life %">Shelf Life Mínimo em Porcentagem</value>
+  <value column="Description" original="Minimum Shelf Life in percent based on Product Instance Guarantee Date">Shelf Life mínimo em porcentagem baseado na Data de Validade da Instância do Produto</value>
+  <value column="Help" original="Minimum Shelf Life of products with Guarantee Date instance. If &gt; 0 you cannot select products with a shelf life ((Guarantee Date-Today) / Guarantee Days) less than the minimum shelf life, unless you select &quot;Show All&quot;"><![CDATA[Shelf Life mínimo dos produtos com data de validade na instância. Se > 0, você não poderá selecionar produtos com um shelf life ((Data de Validade - Hoje) / Prazo de Validade) menor que o shelf life mínimo, a menos que você selecione "Mostrar Todos".]]></value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -14727,7 +14726,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2261" trl="Y">
   <value column="Name" original="Mandatory Guarantee Date">Obrigatório Data de Validade</value>
   <value column="PrintName" original="Mandatory Guarantee Date">Obrigatório Data de Validade</value>
-  <value column="Description" original="The entry of a Guarantee Date is mandatory when creating a Product Instance">A digitação de uma "Data de Validade" é obrigatória ao se criar uma "Instância deste Produto"</value>
+  <value column="Description" original="The entry of a Guarantee Date is mandatory when creating a Product Instance">A digitação de uma "Data de Validade / Garantia" é obrigatória ao se criar uma "Instância deste Produto"</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -14755,10 +14754,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2264" trl="Y">
-  <value column="Name" original="Min Shelf Life Days">Mín. Vida de Prateleira em Dias</value>
-  <value column="PrintName" original="Min Shelf Life Days">Mín. Vida de Prateleira em Dias</value>
-  <value column="Description" original="Minimum Shelf Life in days based on Product Instance Guarantee Date">Mínima Vida de Prateleira em dias baseado na Data de Validade da Instância do Produto</value>
-  <value column="Help" original="Minimum Shelf Life of products with Guarantee Date instance. If &gt; 0 you cannot select products with a shelf life less than the minimum shelf life, unless you select &quot;Show All&quot;"><![CDATA[Mínima Vida de Prateleira de produtos com instância de Data de Validade. Se > 0, você não pode selecionar produtos com uma vida de prateleira (Data de Validade-Hoje) menor que a "mínima vida de prateleira", a menos que você selecione "Mostrar Todos"]]></value>
+  <value column="Name" original="Min Shelf Life Days">Shelf Life Mínimo (em Dias)</value>
+  <value column="PrintName" original="Min Shelf Life Days">Shelf Life Mínimo em Dias</value>
+  <value column="Description" original="Minimum Shelf Life in days based on Product Instance Guarantee Date">Shelf Life mínimo em dias baseado na Data de Validade da Instância do Produto</value>
+  <value column="Help" original="Minimum Shelf Life of products with Guarantee Date instance. If &gt; 0 you cannot select products with a shelf life less than the minimum shelf life, unless you select &quot;Show All&quot;"><![CDATA[Shelf Life mínimo dos produtos com data de validade na instância. Se > 0, você não poderá selecionar produtos com um shelf life (Data de Validade - Hoje) menor que o shelf life mínimo, a menos que você selecione "Mostrar Todos".]]></value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -17355,10 +17354,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2544" trl="Y">
-  <value column="Name" original="B.Partner Flat Discount">Desconto Raso do P.Negócios</value>
-  <value column="PrintName" original="Partner Flat Discount">Desconto Raso do Parceiro</value>
-  <value column="Description" original="Use flat discount defined on Business Partner Level">Use o desconto raso definido no Nível de Parceiro de Negócios</value>
-  <value column="Help" original="For calculation of the discount, use the discount defined on Business Partner Level">Para calcular o desconto, use o desconto definido no Nível de Parceiro de Negócios</value>
+  <value column="Name" original="B.Partner Flat Discount">Desconto Fixo do Parceiro</value>
+  <value column="PrintName" original="Partner Flat Discount">Desconto Fixo do Parceiro</value>
+  <value column="Description" original="Use flat discount defined on Business Partner Level">Use o desconto fixo definido no Parceiro de Negócios</value>
+  <value column="Help" original="For calculation of the discount, use the discount defined on Business Partner Level">Para calcular o desconto, use o desconto definido no Parceiro de Negócios</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -17415,10 +17414,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2552" trl="Y">
-  <value column="Name" original="Move Confirm">Confirmação de Movimentação</value>
-  <value column="PrintName" original="Move Confirm">Confirmação de Movimentação</value>
-  <value column="Description" original="Inventory Move Confirmation">Confirmação de Movimentação de Estoque</value>
-  <value column="Help" original="The document is automatically created when the document type of the movement indicates In Transit.">O documento é automaticamente criado quando o tipo de documento da movimentação indica Trânsito de Entrada.</value>
+  <value column="Name" original="Move Confirm">Confirmação de Movimento</value>
+  <value column="PrintName" original="Move Confirm">Confirmação de Movimento</value>
+  <value column="Description" original="Inventory Move Confirmation">Confirmação de Movimento de Estoque</value>
+  <value column="Help" original="The document is automatically created when the document type of the movement indicates In Transit.">O documento é automaticamente criado quando o tipo de documento do movimento tiver a opção Em Trânsito selecionada.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -17785,10 +17784,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2590" trl="Y">
-  <value column="Name" original="List Prive">Preço de Lista</value>
-  <value column="PrintName" original="List Price">Preço de Lista</value>
-  <value column="Description" original="Entered List Price">Preço de Lista Introduzido</value>
-  <value column="Help" original="Price List converted to entered UOM">Lista de Preço convertido à UDM utilizada</value>
+  <value column="Name" original="List Prive">Preço de Tabela</value>
+  <value column="PrintName" original="List Price">Preço de Tabela</value>
+  <value column="Description" original="Entered List Price">Preço de tabela informado</value>
+  <value column="Help" original="Price List converted to entered UOM">Preço de tabela convertido à UDM utilizada</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -18416,10 +18415,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2654" trl="Y">
-  <value column="Name" original="Internal Use Qty">Qde de Uso Interno</value>
-  <value column="PrintName" original="Internal Use">Uso Interno</value>
-  <value column="Description" original="Internal Use Quantity removed from Inventory">Quantidade de Uso Interno removida do Estoque</value>
-  <value column="Help" original="Quantity of product inventory used internally (positive if taken out - negative if returned)">Quantidade de produto estocado usado internamente (positivo se retirado do estoque - negativo se retornado)</value>
+  <value column="Name" original="Internal Use Qty">Quantidade de Uso Interno</value>
+  <value column="PrintName" original="Internal Use">Qtd. Uso Interno</value>
+  <value column="Description" original="Internal Use Quantity removed from Inventory">Quantidade de Uso Interno a ser removida do Estoque</value>
+  <value column="Help" original="Quantity of product inventory used internally (positive if taken out - negative if returned)">Quantidade de produto estocado usado internamente (positivo se retirado do estoque ou negativo se retornado)</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -21387,9 +21386,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2968" trl="Y">
-  <value column="Name" original="Set Inventory Count to">Set Inventory Count to</value>
-  <value column="PrintName" original="Set Inventory Count to">Set Inventory Count to</value>
-  <value column="Description" original="Set the value of the inventory count to Zero or On Hand Quantity">Set the value of the inventory count to Zero or On Hand Quantity</value>
+  <value column="Name" original="Set Inventory Count to">Valor da Contagem</value>
+  <value column="PrintName" original="Set Inventory Count to">Valor da Contagem</value>
+  <value column="Description" original="Set the value of the inventory count to Zero or On Hand Quantity">Define o valor da contagem como sendo 0 ou a quantidade disponível</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -22148,9 +22147,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3051" trl="Y">
-  <value column="Name" original="Re-Validate">Re-Validate</value>
-  <value column="PrintName" original="Re-Validate">Re-Validate</value>
-  <value column="Description" original="Re-Validate entries">Re-Validate entries</value>
+  <value column="Name" original="Re-Validate">Revalidar</value>
+  <value column="PrintName" original="Re-Validate">Revalidar</value>
+  <value column="Description" original="Re-Validate entries">Revalidar registros</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -23318,8 +23317,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50070" trl="Y">
-  <value column="Name" original="Parent Product Category">Parent Product Category</value>
-  <value column="PrintName" original="Parent Product Category">Parent Product Category</value>
+  <value column="Name" original="Parent Product Category">Categoria-pai de Produtos</value>
+  <value column="PrintName" original="Parent Product Category">Categoria-pai de Produtos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -24207,9 +24206,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53243" trl="N">
-  <value column="Name" original="Qty Batch Size">Qty Batch Size</value>
-  <value column="PrintName" original="Qty Batch Size">Qty Batch Size</value>
+ <row id="53243" trl="Y">
+  <value column="Name" original="Qty Batch Size">Tamanho do Lote (em Quantidade)</value>
+  <value column="PrintName" original="Qty Batch Size">Tamanho do Lote (em Quantidade)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -24351,14 +24350,14 @@ Use the field Backflush Group for grouping the component in a Backflush Method.<
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53255" trl="N">
-  <value column="Name" original="Quantity">Quantity</value>
-  <value column="PrintName" original="Quantity">Quantity</value>
-  <value column="Description" original="Indicate the Quantity  use in this BOM">Indicate the Quantity  use in this BOM</value>
-  <value column="Help" original="Exist two way the add a compenent to a BOM or Formula:&#10;&#10;1.- Adding a Component based in quantity to use in this BOM&#10;2.- Adding a Component based in % to use the Order Quantity of Manufacturing Order in this Formula.&#10;">Exist two way the add a compenent to a BOM or Formula:
+ <row id="53255" trl="Y">
+  <value column="Name" original="Quantity">Quantidade</value>
+  <value column="PrintName" original="Quantity">Quantidade</value>
+  <value column="Description" original="Indicate the Quantity  use in this BOM">Indica a quantidade utilizada na LDM</value>
+  <value column="Help" original="Exist two way the add a compenent to a BOM or Formula:&#10;&#10;1.- Adding a Component based in quantity to use in this BOM&#10;2.- Adding a Component based in % to use the Order Quantity of Manufacturing Order in this Formula.&#10;">Há duas maneiras de adicionar um componente a uma LDM ou Fórmula:
 
-1.- Adding a Component based in quantity to use in this BOM
-2.- Adding a Component based in % to use the Order Quantity of Manufacturing Order in this Formula.
+1.- Adicionando um componente baseado na quantidade utilizada na LDM
+2.- Adicionando um componente baseado na % utilizada.
 </value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -24741,18 +24740,17 @@ Take care when setting yield to anything but 100% particularly when yied is used
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53296" trl="N">
-  <value column="Name" original="Current Cost Price Lower Level">Current Cost Price Lower Level</value>
-  <value column="PrintName" original="Current Cost Price Lower Level">Current Cost Price Lower Level</value>
-  <value column="Description" original="Current Price Lower Level Is the sum of the costs of the components of this product manufactured for this level.">Current Price Lower Level Is the sum of the costs of the components of this product manufactured for this level.</value>
-  <value column="Help" original="Current Price Lower Level is used for get the total costs for lower level the a product manufactured.&#10;&#10;The Current Price Lower Level always will be calculated.&#10;&#10;You can see the Current Cost Price and Current Cost Price Lower Level with Cost  Bill of Material &amp; Formula Detail Report.&#10; &#10;The sum the Current Cost Price + Current Cost Price Lower Level is the total cost to a product manufactured.&#10;"><![CDATA[Current Price Lower Level is used for get the total costs for lower level the a product manufactured.
+ <row id="53296" trl="Y">
+  <value column="Name" original="Current Cost Price Lower Level">Preço de Custo Atual (Nível Inferior)</value>
+  <value column="PrintName" original="Current Cost Price Lower Level">Preço de Custo Atual (Nível Inferior)</value>
+  <value column="Description" original="Current Price Lower Level Is the sum of the costs of the components of this product manufactured for this level.">Preço de Custo Atual de Nível Inferior é a soma dos custos de todos os componentes (materiais e matérias-primas)</value>
+  <value column="Help" original="Current Price Lower Level is used for get the total costs for lower level the a product manufactured.&#10;&#10;The Current Price Lower Level always will be calculated.&#10;&#10;You can see the Current Cost Price and Current Cost Price Lower Level with Cost  Bill of Material &amp; Formula Detail Report.&#10; &#10;The sum the Current Cost Price + Current Cost Price Lower Level is the total cost to a product manufactured.&#10;">Preço de Custo Atual de Nível Inferior é utilizado para obter o custo total de nível inferior do produto produzido.
 
-The Current Price Lower Level always will be calculated.
+O Preço de Custo Atual de Nível Inferior sempre é calculado.
 
-You can see the Current Cost Price and Current Cost Price Lower Level with Cost  Bill of Material & Formula Detail Report.
+Você pode acompanhar esses custos através dos relatórios de LDM.
  
-The sum the Current Cost Price + Current Cost Price Lower Level is the total cost to a product manufactured.
-]]></value>
+A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o custo total de um produto produzido.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -24888,9 +24886,9 @@ The sum the Current Cost Price + Current Cost Price Lower Level is the total cos
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53310" trl="N">
-  <value column="Name" original="Manufacturing Cost Collector">Manufacturing Cost Collector</value>
-  <value column="PrintName" original="Manufacturing Cost Collector">Manufacturing Cost Collector</value>
+ <row id="53310" trl="Y">
+  <value column="Name" original="Manufacturing Cost Collector">Coletor de Custos de Produção</value>
+  <value column="PrintName" original="Manufacturing Cost Collector">Coletor de Custos de Produção</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -25931,9 +25929,9 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53464" trl="N">
-  <value column="Name" original="Selected Product">Selected Product</value>
-  <value column="PrintName" original="Selected Product">Selected Product</value>
+ <row id="53464" trl="Y">
+  <value column="Name" original="Selected Product">Produto Selecionado</value>
+  <value column="PrintName" original="Selected Product">Produto Selecionado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -25951,11 +25949,11 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53466" trl="N">
-  <value column="Name" original="Implosion">Implosion</value>
-  <value column="PrintName" original="Implosion">Implosion</value>
-  <value column="Description" original="Implosion of a Bill of Materials refers to finding all the BOM''s in which a component is used.">Implosion of a Bill of Materials refers to finding all the BOM''s in which a component is used.</value>
-  <value column="Help" original="Commonly called a Where-Used report.">Commonly called a Where-Used report.</value>
+ <row id="53466" trl="Y">
+  <value column="Name" original="Implosion">Implosão</value>
+  <value column="PrintName" original="Implosion">Implosão</value>
+  <value column="Description" original="Implosion of a Bill of Materials refers to finding all the BOM''s in which a component is used.">Implosão de Lista de Materiais significa localizar todas as LDMs em que ela é utilizada.</value>
+  <value column="Help" original="Commonly called a Where-Used report.">Também conhecido como relatório de utilização.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -28335,9 +28333,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53763" trl="N">
-  <value column="Name" original="Future Cost Price Lower Level">Future Cost Price Lower Level</value>
-  <value column="PrintName" original="Future Cost price Lower Level">Future Cost price Lower Level</value>
+ <row id="53763" trl="Y">
+  <value column="Name" original="Future Cost Price Lower Level">Preço de Custo Futuro (Nível Inferior)</value>
+  <value column="PrintName" original="Future Cost price Lower Level">Preço de Custo Futuro (Nível Inferior)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28345,10 +28343,10 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53764" trl="N">
-  <value column="Name" original="Cost Frozen">Cost Frozen</value>
-  <value column="PrintName" original="Cost Frozen">Cost Frozen</value>
-  <value column="Description" original="Indicated that the Standard Cost is frozen">Indicated that the Standard Cost is frozen</value>
+ <row id="53764" trl="Y">
+  <value column="Name" original="Cost Frozen">Custo Congelado</value>
+  <value column="PrintName" original="Cost Frozen">Custo Congelado</value>
+  <value column="Description" original="Indicated that the Standard Cost is frozen">Indica se o custo está congelado e não pode ser alterado</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -28485,9 +28483,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53797" trl="N">
-  <value column="Name" original="Import Price List">Import Price List</value>
-  <value column="PrintName" original="Import Price List">Import Price List</value>
+ <row id="53797" trl="Y">
+  <value column="Name" original="Import Price List">Importar Tabela de Preços</value>
+  <value column="PrintName" original="Import Price List">Importar Tabela de Preços</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28495,9 +28493,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53800" trl="N">
-  <value column="Name" original="Promotion Group">Promotion Group</value>
-  <value column="PrintName" original="Promotion Group">Promotion Group</value>
+ <row id="53800" trl="Y">
+  <value column="Name" original="Promotion Group">Grupo de Promoção</value>
+  <value column="PrintName" original="Promotion Group">Grupo de Promoção</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28515,9 +28513,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53802" trl="N">
-  <value column="Name" original="Promotion">Promotion</value>
-  <value column="PrintName" original="Promotion">Promotion</value>
+ <row id="53802" trl="Y">
+  <value column="Name" original="Promotion">Promoção</value>
+  <value column="PrintName" original="Promotion">Promoção</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28525,19 +28523,19 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53803" trl="N">
-  <value column="Name" original="Relative Priority">Relative Priority</value>
-  <value column="PrintName" original="Relative Priority">Relative Priority</value>
-  <value column="Description" original="Which promotion should be apply to a product">Which promotion should be apply to a product</value>
-  <value column="Help" original="The relative priority indicate the promotion to use when a product exists in more than one promotion. Promotion with the highest priority take precedence.">The relative priority indicate the promotion to use when a product exists in more than one promotion. Promotion with the highest priority take precedence.</value>
+ <row id="53803" trl="Y">
+  <value column="Name" original="Relative Priority">Prioridade Relativa</value>
+  <value column="PrintName" original="Relative Priority">Prioridade Relativa</value>
+  <value column="Description" original="Which promotion should be apply to a product">Define qual promoção deve ser aplicada a um produto</value>
+  <value column="Help" original="The relative priority indicate the promotion to use when a product exists in more than one promotion. Promotion with the highest priority take precedence.">A prioridade relativa define qual promoção usar quando um produto participar de mais de uma promoção. A promoção com prioridade mais alta tem preferência.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53804" trl="N">
-  <value column="Name" original="Promotion Line">Promotion Line</value>
-  <value column="PrintName" original="Promotion Line">Promotion Line</value>
+ <row id="53804" trl="Y">
+  <value column="Name" original="Promotion Line">Linha da Promoção</value>
+  <value column="PrintName" original="Promotion Line">Linha da Promoção</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28545,11 +28543,11 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53805" trl="N">
-  <value column="Name" original="Mandatory Promotion Line">Mandatory Promotion Line</value>
-  <value column="PrintName" original="Mandatory Promotion Line">Mandatory Promotion Line</value>
-  <value column="Description" original="Order must have this promotion line">Order must have this promotion line</value>
-  <value column="Help" original="The mandatory promotion check box indicates that the order must have this promotion line">The mandatory promotion check box indicates that the order must have this promotion line</value>
+ <row id="53805" trl="Y">
+  <value column="Name" original="Mandatory Promotion Line">Linha da Promoção Obrigatória</value>
+  <value column="PrintName" original="Mandatory Promotion Line">Linha da Promoção Obrigatória</value>
+  <value column="Description" original="Order must have this promotion line">Indica se o pedido deve ter esta linha da promoção</value>
+  <value column="Help" original="The mandatory promotion check box indicates that the order must have this promotion line">O campo Indica se o pedido deve ter esta linha da promoção.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -28565,21 +28563,21 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53807" trl="N">
-  <value column="Name" original="Usage Counter">Usage Counter</value>
-  <value column="PrintName" original="Usage Counter">Usage Counter</value>
-  <value column="Description" original="Usage counter">Usage counter</value>
-  <value column="Help" original="Counter to record how many times this promotion have been used">Counter to record how many times this promotion have been used</value>
+ <row id="53807" trl="Y">
+  <value column="Name" original="Usage Counter">Contador de Uso</value>
+  <value column="PrintName" original="Usage Counter">Contador de Uso</value>
+  <value column="Description" original="Usage counter">Contador de Uso da Promoção</value>
+  <value column="Help" original="Counter to record how many times this promotion have been used">Indica quantas vezes a promoção já foi utilizada.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53808" trl="N">
-  <value column="Name" original="Usage Limit">Usage Limit</value>
-  <value column="PrintName" original="Usage Limit">Usage Limit</value>
-  <value column="Description" original="Maximum usage limit">Maximum usage limit</value>
-  <value column="Help" original="Maximum number of time this promotion can be use">Maximum number of time this promotion can be use</value>
+ <row id="53808" trl="Y">
+  <value column="Name" original="Usage Limit">Limite de Uso</value>
+  <value column="PrintName" original="Usage Limit">Limite de Uso</value>
+  <value column="Description" original="Maximum usage limit">Limite máximo de uso da promoção</value>
+  <value column="Help" original="Maximum number of time this promotion can be use">Indica a quantidade máxima de uso permitida para esta promoção</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -28595,20 +28593,20 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53810" trl="N">
-  <value column="Name" original="Distribution Type">Distribution Type</value>
-  <value column="PrintName" original="Distribution Type">Distribution Type</value>
-  <value column="Description" original="Type of quantity distribution calculation using comparison qty and order qty as operand">Type of quantity distribution calculation using comparison qty and order qty as operand</value>
+ <row id="53810" trl="Y">
+  <value column="Name" original="Distribution Type">Tipo de Distribuição</value>
+  <value column="PrintName" original="Distribution Type">Tipo de Distribuição</value>
+  <value column="Description" original="Type of quantity distribution calculation using comparison qty and order qty as operand">Tipo de cálculo para a distribuição de quantidade utilizando a qtd. de comparação e a qtd. do pedido como operandos.</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53811" trl="N">
-  <value column="Name" original="Distribution Sorting">Distribution Sorting</value>
-  <value column="PrintName" original="Distribution Sorting">Distribution Sorting</value>
-  <value column="Description" original="Quantity distribution sorting by unit price">Quantity distribution sorting by unit price</value>
+ <row id="53811" trl="Y">
+  <value column="Name" original="Distribution Sorting">Classificação da Distribuição</value>
+  <value column="PrintName" original="Distribution Sorting">Classificação da Distribuição</value>
+  <value column="Description" original="Quantity distribution sorting by unit price">Distribuição da quantidade classificada pelo preço unitário</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -28625,40 +28623,40 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53813" trl="N">
-  <value column="Name" original="For all distribution">For all distribution</value>
-  <value column="PrintName" original="For all distribution">For all distribution</value>
-  <value column="Description" original="This reward is for all distribution">This reward is for all distribution</value>
+ <row id="53813" trl="Y">
+  <value column="Name" original="For all distribution">Para todas as Distribuições</value>
+  <value column="PrintName" original="For all distribution">Para todas as Distribuições</value>
+  <value column="Description" original="This reward is for all distribution">Esta recompensa é para todas as distribuições</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53814" trl="N">
-  <value column="Name" original="Same distribution for source and target">Same distribution for source and target</value>
-  <value column="PrintName" original="Same distribution for source and target">Same distribution for source and target</value>
-  <value column="Description" original="Use the same distribution for source and target">Use the same distribution for source and target</value>
-  <value column="Help" original="Use the same distribution for source and target. Source distribution is for the entitlement of the reward, target distribution is the distribution to get the product to apply the reward to">Use the same distribution for source and target. Source distribution is for the entitlement of the reward, target distribution is the distribution to get the product to apply the reward to</value>
+ <row id="53814" trl="Y">
+  <value column="Name" original="Same distribution for source and target">Mesma Distribuição de Origem e Destino</value>
+  <value column="PrintName" original="Same distribution for source and target">Mesma Distribuição de Origem e Destino</value>
+  <value column="Description" original="Use the same distribution for source and target">Utilizar a mesma distribuição de origem e destino</value>
+  <value column="Help" original="Use the same distribution for source and target. Source distribution is for the entitlement of the reward, target distribution is the distribution to get the product to apply the reward to">Utilizar a mesma distribuição de origem e destino. Distribuição de origem é utilizada para o direito de recompensa. Distribuição de destino é utilizada para obter o produto onde será aplicada a recompensa.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53815" trl="N">
-  <value column="Name" original="Target distribution">Target distribution</value>
-  <value column="PrintName" original="Target distribution">Target distribution</value>
-  <value column="Description" original="Get product from target distribution to apply the promotion reward">Get product from target distribution to apply the promotion reward</value>
+ <row id="53815" trl="Y">
+  <value column="Name" original="Target distribution">Distribuição de Destino</value>
+  <value column="PrintName" original="Target distribution">Distribuição de Destino</value>
+  <value column="Description" original="Get product from target distribution to apply the promotion reward">Obtém o produto da distribuição de destino para aplicar a recompensa da promoção</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53816" trl="N">
-  <value column="Name" original="Reward Type">Reward Type</value>
-  <value column="PrintName" original="Reward Type">Reward Type</value>
-  <value column="Description" original="Type of reward which consists of percentage discount, flat discount or absolute amount">Type of reward which consists of percentage discount, flat discount or absolute amount</value>
+ <row id="53816" trl="Y">
+  <value column="Name" original="Reward Type">Tipo de Recompensa</value>
+  <value column="PrintName" original="Reward Type">Tipo de Recompensa</value>
+  <value column="Description" original="Type of reward which consists of percentage discount, flat discount or absolute amount">O tipo de recompensa consiste em uma porcentagem de desconto, um desconto fixo ou um valor absoluto.</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -28885,9 +28883,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53891" trl="N">
-  <value column="Name" original="Promotion Distribution">Promotion Distribution</value>
-  <value column="PrintName" original="Promotion Distribution">Promotion Distribution</value>
+ <row id="53891" trl="Y">
+  <value column="Name" original="Promotion Distribution">Distribuição da Promoção</value>
+  <value column="PrintName" original="Promotion Distribution">Distribuição da Promoção</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28995,9 +28993,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53927" trl="N">
-  <value column="Name" original="UOM Type">UOM Type</value>
-  <value column="PrintName" original="UOM Type">UOM Type</value>
+ <row id="53927" trl="Y">
+  <value column="Name" original="UOM Type">Tipo de Unidade de Medida</value>
+  <value column="PrintName" original="UOM Type">Tipo de UDM</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -29165,9 +29163,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54096" trl="N">
-  <value column="Name" original="Import List price">Import List price</value>
-  <value column="PrintName" original="Import List price">Import List price</value>
+ <row id="54096" trl="Y">
+  <value column="Name" original="Import List price">Importar Tabela de Preços</value>
+  <value column="PrintName" original="Import List price">Importar Tabela de Preços</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -30367,11 +30365,11 @@ Produto: usado para adicionar produtos com facilidade ao pedido no PDV</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54377" trl="N">
-  <value column="Name" original="Disallow Negative Inventory">Disallow Negative Inventory</value>
-  <value column="PrintName" original="Disallow Negative Inventory">Disallow Negative Inventory</value>
-  <value column="Description" original="Negative Inventory is not allowed in this warehouse">Negative Inventory is not allowed in this warehouse</value>
-  <value column="Help" original="If checked, any transaction that results in the onhand inventory being driven negative will be prevented.">If checked, any transaction that results in the onhand inventory being driven negative will be prevented.</value>
+ <row id="54377" trl="Y">
+  <value column="Name" original="Disallow Negative Inventory">Não Permitir Estoque Negativo</value>
+  <value column="PrintName" original="Disallow Negative Inventory">Não Permitir Estoque Negativo</value>
+  <value column="Description" original="Negative Inventory is not allowed in this warehouse">Estoque negativo não é permitido neste armazém</value>
+  <value column="Help" original="If checked, any transaction that results in the onhand inventory being driven negative will be prevented.">Se selecionado, transações que resultam em estoque disponível negativo serão negadas.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -37738,9 +37736,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="55236" trl="N">
-  <value column="Name" original="Quantity Used">Quantity Used</value>
-  <value column="PrintName" original="Quantity Used in production">Quantity Used in production</value>
+ <row id="55236" trl="Y">
+  <value column="Name" original="Quantity Used">Quantidade Utilizada</value>
+  <value column="PrintName" original="Quantity Used in production">Quantidade Utilizada na Produção</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -37748,10 +37746,10 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="55237" trl="N">
-  <value column="Name" original="End Product">End Product</value>
-  <value column="PrintName" original="End Product">End Product</value>
-  <value column="Description" original="End Product of production">End Product of production</value>
+ <row id="55237" trl="Y">
+  <value column="Name" original="End Product">Produto Final</value>
+  <value column="PrintName" original="End Product">Produto Final</value>
+  <value column="Description" original="End Product of production">Produto Final da Produção</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -37768,9 +37766,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="55239" trl="N">
-  <value column="Name" original="Quality Test">Quality Test</value>
-  <value column="PrintName" original="Quality Test">Quality Test</value>
+ <row id="55239" trl="Y">
+  <value column="Name" original="Quality Test">Teste de Qualidade</value>
+  <value column="PrintName" original="Quality Test">Teste de Qualidade</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -37778,9 +37776,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="55240" trl="N">
-  <value column="Name" original="QC Pass">QC Pass</value>
-  <value column="PrintName" original="QC Pass">QC Pass</value>
+ <row id="55240" trl="Y">
+  <value column="Name" original="QC Pass">CQ Aprovado</value>
+  <value column="PrintName" original="QC Pass">CQ Aprovado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -37788,9 +37786,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="55241" trl="N">
-  <value column="Name" original="Expected Result">Expected Result</value>
-  <value column="PrintName" original="Expected Result">Expected Result</value>
+ <row id="55241" trl="Y">
+  <value column="Name" original="Expected Result">Resultado Esperado</value>
+  <value column="PrintName" original="Expected Result">Resultado Esperado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -37808,9 +37806,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="55243" trl="N">
-  <value column="Name" original="Part Type">Part Type</value>
-  <value column="PrintName" original="Part Type">Part Type</value>
+ <row id="55243" trl="Y">
+  <value column="Name" original="Part Type">Tipo de Componente</value>
+  <value column="PrintName" original="Part Type">Tipo de Componente</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -37838,11 +37836,11 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="55246" trl="N">
-  <value column="Name" original="Bill of Materials">Bill of Materials</value>
-  <value column="PrintName" original="BOM">BOM</value>
-  <value column="Description" original="Bill of Materials">Bill of Materials</value>
-  <value column="Help" original="The Bill of Materials check box indicates if this product consists of a bill of materials.">The Bill of Materials check box indicates if this product consists of a bill of materials.</value>
+ <row id="55246" trl="Y">
+  <value column="Name" original="Bill of Materials">Lista de Materiais</value>
+  <value column="PrintName" original="BOM">LDM</value>
+  <value column="Description" original="Bill of Materials">Lista de Materiais</value>
+  <value column="Help" original="The Bill of Materials check box indicates if this product consists of a bill of materials.">Indica se o produto é uma Lista de Materiais</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -38138,10 +38136,10 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200008" trl="N">
-  <value column="Name" original="New Cost Price">New Cost Price</value>
-  <value column="PrintName" original="New Cost Price">New Cost Price</value>
-  <value column="Description" original="New current cost price after processing of M_CostDetail">New current cost price after processing of M_CostDetail</value>
+ <row id="200008" trl="Y">
+  <value column="Name" original="New Cost Price">Novo Preço de Custo</value>
+  <value column="PrintName" original="New Cost Price">Novo Preço de Custo</value>
+  <value column="Description" original="New current cost price after processing of M_CostDetail">Novo preço de custo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -39288,10 +39286,10 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200188" trl="N">
-  <value column="Name" original="Reservation Locator">Reservation Locator</value>
-  <value column="PrintName" original="Reserve Locator">Reserve Locator</value>
-  <value column="Description" original="Reservation Locator (just for reporting purposes)">Reservation Locator (just for reporting purposes)</value>
+ <row id="200188" trl="Y">
+  <value column="Name" original="Reservation Locator">Localizador de Reservados</value>
+  <value column="PrintName" original="Reserve Locator">Localizador de Reservados</value>
+  <value column="Description" original="Reservation Locator (just for reporting purposes)">Localizador para os produtos reservados (apenas para fins de relatório)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -39898,9 +39896,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200261" trl="N">
-  <value column="Name" original="Connection Key">Connection Key</value>
-  <value column="PrintName" original="Connection Key">Connection Key</value>
+ <row id="200261" trl="Y">
+  <value column="Name" original="Connection Key">Key / Chave (Conexão)</value>
+  <value column="PrintName" original="Connection Key">Key / Chave (Conexão)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -39908,9 +39906,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200262" trl="N">
-  <value column="Name" original="Connection Password">Connection Password</value>
-  <value column="PrintName" original="Connection Password">Connection Password</value>
+ <row id="200262" trl="Y">
+  <value column="Name" original="Connection Password">Senha (Conexão)</value>
+  <value column="PrintName" original="Connection Password">Senha (Conexão)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -39918,9 +39916,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200263" trl="N">
-  <value column="Name" original="Service Path">Service Path</value>
-  <value column="PrintName" original="Service Path">Service Path</value>
+ <row id="200263" trl="Y">
+  <value column="Name" original="Service Path">Path / Endereço do Serviço</value>
+  <value column="PrintName" original="Service Path">Path / Endereço do Serviço</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -39928,9 +39926,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200264" trl="N">
-  <value column="Name" original="Shipping Processor Class">Shipping Processor Class</value>
-  <value column="PrintName" original="Shipping Processor Class">Shipping Processor Class</value>
+ <row id="200264" trl="Y">
+  <value column="Name" original="Shipping Processor Class">Classe (Java) do Processador de Remessas</value>
+  <value column="PrintName" original="Shipping Processor Class">Classe (Java) do Processador de Remessas</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -39938,9 +39936,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200265" trl="N">
-  <value column="Name" original="Service Code">Service Code</value>
-  <value column="PrintName" original="Service Code">Service Code</value>
+ <row id="200265" trl="Y">
+  <value column="Name" original="Service Code">Cód. de Serviço</value>
+  <value column="PrintName" original="Service Code">Cód. de Serviço</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40159,8 +40157,8 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="200287" trl="Y">
-  <value column="Name" original="Residential">Residencial</value>
-  <value column="PrintName" original="Residential">Residencial</value>
+  <value column="Name" original="Residential">Residência</value>
+  <value column="PrintName" original="Residential">Residência</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40298,9 +40296,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200301" trl="N">
-  <value column="Name" original="Label Print Method">Label Print Method</value>
-  <value column="PrintName" original="Label Print Method">Label Print Method</value>
+ <row id="200301" trl="Y">
+  <value column="Name" original="Label Print Method">Método de Impressão de Etiqueta</value>
+  <value column="PrintName" original="Label Print Method">Método de Impressão de Etiqueta</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -43138,9 +43136,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200599" trl="N">
-  <value column="Name" original="Shipping Processor Configuration">Shipping Processor Configuration</value>
-  <value column="PrintName" original="Shipping Processor Configuration">Shipping Processor Configuration</value>
+ <row id="200599" trl="Y">
+  <value column="Name" original="Shipping Processor Configuration">Configuração do Processador de Remessas</value>
+  <value column="PrintName" original="Shipping Processor Configuration">Configuração do Processador de Remessas</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -43158,9 +43156,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200601" trl="N">
-  <value column="Name" original="Shipper Configuration">Shipper Configuration</value>
-  <value column="PrintName" original="Shipper Configuration">Shipper Configuration</value>
+ <row id="200601" trl="Y">
+  <value column="Name" original="Shipper Configuration">Configuração de Transportadora</value>
+  <value column="PrintName" original="Shipper Configuration">Configuração de Transportadora</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -43178,9 +43176,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200603" trl="N">
-  <value column="Name" original="Shipper Labels Configuration">Shipper Labels Configuration</value>
-  <value column="PrintName" original="Shipper Labels Configuration">Shipper Labels Configuration</value>
+ <row id="200603" trl="Y">
+  <value column="Name" original="Shipper Labels Configuration">Configuração de Etiquetas de Transportadora</value>
+  <value column="PrintName" original="Shipper Labels Configuration">Configuração de Etiquetas de Transportadora</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -43198,9 +43196,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200605" trl="N">
-  <value column="Name" original="Shipper Packaging Configuration">Shipper Packaging Configuration</value>
-  <value column="PrintName" original="Shipper Packaging Configuration">Shipper Packaging Configuration</value>
+ <row id="200605" trl="Y">
+  <value column="Name" original="Shipper Packaging Configuration">Configuração de Embalagens de Transportadora</value>
+  <value column="PrintName" original="Shipper Packaging Configuration">Configuração de Embalagens de Transportadora</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -43218,9 +43216,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200607" trl="N">
-  <value column="Name" original="Shipper Pickup Types Configuration">Shipper Pickup Types Configuration</value>
-  <value column="PrintName" original="Shipper Pickup Types Configuration">Shipper Pickup Types Configuration</value>
+ <row id="200607" trl="Y">
+  <value column="Name" original="Shipper Pickup Types Configuration">Configuração de Tipos de Coleta da Transportadora</value>
+  <value column="PrintName" original="Shipper Pickup Types Configuration">Configuração de Tipos de Coleta da Transportadora</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -53048,9 +53046,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202185" trl="N">
-  <value column="Name" original="Use Guarantee Date for Material Policy">Use Guarantee Date for Material Policy</value>
-  <value column="PrintName" original="Use Guarantee Date for Material Policy">Use Guarantee Date for Material Policy</value>
+ <row id="202185" trl="Y">
+  <value column="Name" original="Use Guarantee Date for Material Policy">Usar a Data de Validade para a Política de Materiais</value>
+  <value column="PrintName" original="Use Guarantee Date for Material Policy">Usar a Data de Validade para a Política de Materiais</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -55094,11 +55092,11 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202701" trl="N">
-  <value column="Name" original="Auto Generated">Auto Generated</value>
-  <value column="PrintName" original="Auto Generated">Auto Generated</value>
+ <row id="202701" trl="Y">
+  <value column="Name" original="Auto Generated">Gerado automaticamente</value>
+  <value column="PrintName" original="Auto Generated">Gerado automaticamente</value>
   <value column="Description" original=""/>
-  <value column="Help" original="Record is Auto Generated by System.">Record is Auto Generated by System.</value>
+  <value column="Help" original="Record is Auto Generated by System.">Registro gerado automaticamente pelo sistema</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
