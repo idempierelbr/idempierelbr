@@ -6,7 +6,9 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.adempiere.base;bundle-version="2.0.0",
  org.idempierelbr.core;bundle-version="1.0.0",
- org.idempierelbr.tax;bundle-version="1.0.0"
+ org.idempierelbr.tax;bundle-version="1.0.0",
+ org.adempiere.report.jasper.library;bundle-version="2.0.0",
+ org.adempiere.report.jasper;bundle-version="2.0.0"
 Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/CalloutFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/DocFactory.xml,
  OSGI-INF/ProcessFactory.xml
 Export-Package: org.idempierelbr.nfe.model
@@ -30,5 +32,4 @@ Bundle-ClassPath: .,
  lib/axis2/commons-logging-1.1.1.jar,
  lib/axis2/axiom-impl-1.2.13.jar,
  lib/xstream-1.4.7.jar,
- lib/axis2/xalan-2.7.0.jar,
  lib/axis2/mail-1.4.jar

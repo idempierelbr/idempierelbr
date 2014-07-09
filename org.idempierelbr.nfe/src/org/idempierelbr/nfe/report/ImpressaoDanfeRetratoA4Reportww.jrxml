@@ -1,0 +1,2336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ImpressaoDanfeRetratoA4Reportww" pageWidth="595" pageHeight="842" columnWidth="565" leftMargin="15" rightMargin="15" topMargin="15" bottomMargin="15">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="280"/>
+	<property name="ireport.y" value="152"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="Frente" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PreImpresso" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[new Boolean(false)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="protocoloDataAutorizacao" class="java.lang.String">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ImpressaoDanfeItemRetratoA4Reportww" class="java.io.InputStream" isForPrompting="false"/>
+	<parameter name="ImpressaoDanfeFaturaRetratoA4Reportww" class="java.io.InputStream" isForPrompting="false"/>
+	<parameter name="logotipo" class="java.io.InputStream" isForPrompting="false"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/allgood/Desktop/DANFE/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Fatura_Datasource" class="net.sf.jasperreports.engine.JRDataSource" isForPrompting="false"/>
+	<queryString language="xPath">
+		<![CDATA[/nfeProc/NFe/infNFe//det]]>
+	</queryString>
+	<field name="codigoBarras" class="java.awt.Image"/>
+	<field name="emitenteLotoTipo" class="java.awt.Image"/>
+	<field name="codigoBarrasContingencia" class="java.awt.Image"/>
+	<field name="saidaEntrada" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/ide/tpNF]]></fieldDescription>
+	</field>
+	<field name="chaveAcesso" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/@Id]]></fieldDescription>
+	</field>
+	<field name="dataEmissao" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/ide/dEmi]]></fieldDescription>
+	</field>
+	<field name="dataSaidaEntrada" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/ide/dSaiEnt]]></fieldDescription>
+	</field>
+	<field name="horaSaida" class="java.lang.String"/>
+	<field name="emitenteRazaoSocial" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/xNome]]></fieldDescription>
+	</field>
+	<field name="emitenteEndereco" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/enderEmit/xLgr]]></fieldDescription>
+	</field>
+	<field name="emitenteEnderecoNro" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/enderEmit/nro]]></fieldDescription>
+	</field>
+	<field name="emitenteBairro" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/enderEmit/xBairro]]></fieldDescription>
+	</field>
+	<field name="emitenteMunicipio" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/enderEmit/xMun]]></fieldDescription>
+	</field>
+	<field name="emitenteUf" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/enderEmit/UF]]></fieldDescription>
+	</field>
+	<field name="emitenteInscricaoEstadual" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/IE]]></fieldDescription>
+	</field>
+	<field name="emitenteInscricaoEstadualSubtributario" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/IEST]]></fieldDescription>
+	</field>
+	<field name="emitenteCnpj" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/CNPJ]]></fieldDescription>
+	</field>
+	<field name="emitenteCep" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/enderEmit/CEP]]></fieldDescription>
+	</field>
+	<field name="emitenteTelefone" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/enderEmit/fone]]></fieldDescription>
+	</field>
+	<field name="destinatarioRazaoSocial" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/xNome]]></fieldDescription>
+	</field>
+	<field name="destinatarioCnpjCpf" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/CNPJ | /nfeProc/NFe/infNFe/dest/CPF]]></fieldDescription>
+	</field>
+	<field name="destinatarioCnpj" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/CNPJ]]></fieldDescription>
+	</field>
+	<field name="destinatarioCpf" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/CPF]]></fieldDescription>
+	</field>
+	<field name="destinatarioEndereco" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/enderDest/xLgr]]></fieldDescription>
+	</field>
+	<field name="destinatarioBairro" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/enderDest/xBairro]]></fieldDescription>
+	</field>
+	<field name="destinatarioCep" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/enderDest/CEP]]></fieldDescription>
+	</field>
+	<field name="destinatarioMunicipio" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/enderDest/xMun]]></fieldDescription>
+	</field>
+	<field name="destinatarioFoneFax" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/enderDest/fone]]></fieldDescription>
+	</field>
+	<field name="destinatarioUf" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/enderDest/UF]]></fieldDescription>
+	</field>
+	<field name="destinatarioInscricaoEstadual" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/IE]]></fieldDescription>
+	</field>
+	<field name="fatura" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/cobr/dup/nDup]]></fieldDescription>
+	</field>
+	<field name="baseIcms" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ICMSTot/vBC]]></fieldDescription>
+	</field>
+	<field name="valorIcms" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ICMSTot/vICMS]]></fieldDescription>
+	</field>
+	<field name="baseIcmsSubstituicao" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ICMSTot/vBCST]]></fieldDescription>
+	</field>
+	<field name="valorIcmsSubstituicao" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ICMSTot/vST]]></fieldDescription>
+	</field>
+	<field name="valorTotalProduto" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ICMSTot/vProd]]></fieldDescription>
+	</field>
+	<field name="valorFrete" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ICMSTot/vFrete]]></fieldDescription>
+	</field>
+	<field name="valorSeguro" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ICMSTot/vSeg]]></fieldDescription>
+	</field>
+	<field name="desconto" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ICMSTot/vDesc]]></fieldDescription>
+	</field>
+	<field name="outrasDespesas" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ICMSTot/vOutro]]></fieldDescription>
+	</field>
+	<field name="valorIpi" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ICMSTot/vIPI]]></fieldDescription>
+	</field>
+	<field name="valorTotalNota" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ICMSTot/vNF]]></fieldDescription>
+	</field>
+	<field name="transportadorRazaoSocial" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/transporta/xNome]]></fieldDescription>
+	</field>
+	<field name="transportadorFretePorConta" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/modFrete]]></fieldDescription>
+	</field>
+	<field name="transportadorCodigoAntt" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/veicTransp/RNTC]]></fieldDescription>
+	</field>
+	<field name="transportadorPlacaVeiculo" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/veicTransp/placa]]></fieldDescription>
+	</field>
+	<field name="transportadorUfVeiculo" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/veicTransp/UF]]></fieldDescription>
+	</field>
+	<field name="transportadorCnpjCpf" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/transporta/CNPJ | infNFe/transp/transporta/CPF]]></fieldDescription>
+	</field>
+	<field name="transportadorEndereço" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/transporta/xEnder]]></fieldDescription>
+	</field>
+	<field name="transportadorMunicipio" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/transporta/xMun]]></fieldDescription>
+	</field>
+	<field name="transportadorUf" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/transporta/UF]]></fieldDescription>
+	</field>
+	<field name="transportadorInscricaoEstadual" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/transporta/IE]]></fieldDescription>
+	</field>
+	<field name="transportadorQuantidade" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/vol[*]/qVol]]></fieldDescription>
+	</field>
+	<field name="transportadorEspecie" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/vol[*]/esp]]></fieldDescription>
+	</field>
+	<field name="transportadorMarca" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/vol[*]/marca]]></fieldDescription>
+	</field>
+	<field name="transportadorNumeracao" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/vol[*]/nVol]]></fieldDescription>
+	</field>
+	<field name="transportadorPesoBruto" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/vol[*]/pesoB]]></fieldDescription>
+	</field>
+	<field name="transportadorPesoLiquido" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/transp/vol[*]/pesoL]]></fieldDescription>
+	</field>
+	<field name="inscricaoMunicipal" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/IM]]></fieldDescription>
+	</field>
+	<field name="valorTotalServicos" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ISSQNtot/vServ]]></fieldDescription>
+	</field>
+	<field name="baseIssqn" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ISSQNtot/vBC]]></fieldDescription>
+	</field>
+	<field name="valorIssqn" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ISSQNtot/vISS]]></fieldDescription>
+	</field>
+	<field name="informacoesComplementares" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/infAdic/infAdFisco]]></fieldDescription>
+	</field>
+	<field name="tipoEmissao" class="java.lang.String">
+		<fieldDescription><![CDATA["1"]]></fieldDescription>
+	</field>
+	<field name="informacoesComplementares2" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/infAdic/infCpl]]></fieldDescription>
+	</field>
+	<field name="dadosNfe" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/det]]></fieldDescription>
+	</field>
+	<field name="codigoTipoEmissao" class="java.lang.String"/>
+	<field name="numeroRegistroDPEC" class="java.lang.String"/>
+	<field name="dataRegistroDPEC" class="java.lang.String"/>
+	<field name="situacao" class="java.lang.String"/>
+	<field name="nNF" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/ide/nNF]]></fieldDescription>
+	</field>
+	<field name="serie" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/ide/serie]]></fieldDescription>
+	</field>
+	<field name="natOp" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/ide/natOp]]></fieldDescription>
+	</field>
+	<field name="nfReferenciada" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/ide//NFref/refNFe]]></fieldDescription>
+	</field>
+	<field name="destinatarioEnderecoNro" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/enderDest/nro]]></fieldDescription>
+	</field>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/cProd]]></fieldDescription>
+	</field>
+	<field name="descricao" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/xProd]]></fieldDescription>
+	</field>
+	<field name="lbaseIcms" class="java.lang.String">
+		<fieldDescription><![CDATA[imposto/ICMS/ICMS00/vBC |
+imposto/ICMS/ICMS10/vBC |
+imposto/ICMS/ICMS20/vBC |
+imposto/ICMS/ICMS51/vBC |
+imposto/ICMS/ICMS70/vBC |
+imposto/ICMS/ICMS90/vBC]]></fieldDescription>
+	</field>
+	<field name="lvalorIcms" class="java.lang.String">
+		<fieldDescription><![CDATA[imposto/ICMS/ICMS00/vICMS |
+imposto/ICMS/ICMS10/vICMS |
+imposto/ICMS/ICMS20/vICMS |
+imposto/ICMS/ICMS51/vICMS |
+imposto/ICMS/ICMS70/vICMS |
+imposto/ICMS/ICMS90/vICMS]]></fieldDescription>
+	</field>
+	<field name="lvalorIpi" class="java.lang.String">
+		<fieldDescription><![CDATA[imposto/IPI/IPITrib/vIPI]]></fieldDescription>
+	</field>
+	<field name="ncm" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/NCM]]></fieldDescription>
+	</field>
+	<field name="cst" class="java.lang.String">
+		<fieldDescription><![CDATA[imposto/ICMS/ICMS00/CST |
+imposto/ICMS/ICMS10/CST |
+imposto/ICMS/ICMS20/CST |
+imposto/ICMS/ICMS30/CST |
+imposto/ICMS/ICMS40/CST |
+imposto/ICMS/ICMS50/CST |
+imposto/ICMS/ICMS60/CST |
+imposto/ICMS/ICMS70/CST |
+imposto/ICMS/ICMS90/CST]]></fieldDescription>
+	</field>
+	<field name="cfop" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/CFOP]]></fieldDescription>
+	</field>
+	<field name="valorTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/vProd]]></fieldDescription>
+	</field>
+	<field name="aliquotaIcms" class="java.lang.String">
+		<fieldDescription><![CDATA[imposto/ICMS/ICMS00/pICMS |
+imposto/ICMS/ICMS10/pICMS |
+imposto/ICMS/ICMS20/pICMS |
+imposto/ICMS/ICMS51/pICMS |
+imposto/ICMS/ICMS70/pICMS |
+imposto/ICMS/ICMS90/pICMS]]></fieldDescription>
+	</field>
+	<field name="aliquotaIpi" class="java.lang.String">
+		<fieldDescription><![CDATA[imposto/IPI/IPITrib/pIPI]]></fieldDescription>
+	</field>
+	<field name="unidadeTributaria" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/uTrib]]></fieldDescription>
+	</field>
+	<field name="valorUnitarioComercial" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/vUnCom]]></fieldDescription>
+	</field>
+	<field name="quantidadeComercial" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/qCom]]></fieldDescription>
+	</field>
+	<field name="valorUnitarioTributario" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/vUnTrib]]></fieldDescription>
+	</field>
+	<field name="quantidadeTributaria" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/qTrib]]></fieldDescription>
+	</field>
+	<field name="unidadeComercial" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/uCom]]></fieldDescription>
+	</field>
+	<field name="valorICMSST" class="java.lang.String">
+		<fieldDescription><![CDATA[imposto/ICMS/ICMS10/vICMSST |
+imposto/ICMS/ICMS30/vICMSST |
+imposto/ICMS/ICMS60/vICMSST |
+imposto/ICMS/ICMS70/vICMSST |
+imposto/ICMS/ICMS90/vICMSST]]></fieldDescription>
+	</field>
+	<field name="baseICMSST" class="java.lang.String">
+		<fieldDescription><![CDATA[imposto/ICMS/ICMS10/vBCST |
+imposto/ICMS/ICMS30/vBCST |
+imposto/ICMS/ICMS60/vBCST |
+imposto/ICMS/ICMS70/vBCST |
+imposto/ICMS/ICMS90/vBCST]]></fieldDescription>
+	</field>
+	<field name="ldesconto" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/vDesc]]></fieldDescription>
+	</field>
+	<group name="Grupo03" isStartNewPage="true" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{nNF}]]></groupExpression>
+		<groupHeader>
+			<band height="136" splitType="Stretch">
+				<rectangle radius="2">
+					<reportElement key="rectangle-9" mode="Transparent" x="376" y="117" width="189" height="19">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<textField evaluationTime="Report">
+					<reportElement x="310" y="82" width="25" height="12"/>
+					<textElement>
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<rectangle radius="2">
+					<reportElement key="rectangle-5" mode="Transparent" x="0" y="2" width="241" height="95">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-4" mode="Transparent" x="266" y="0" width="45" height="14">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold"/>
+					</textElement>
+					<text><![CDATA[DANFE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-5" mode="Transparent" x="242" y="14" width="96" height="19">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="8" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[Documento Auxiliar da Nota Fiscal Eletrônica]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-6" mode="Transparent" x="246" y="45" width="42" height="11">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="8" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[1 - Saída]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-7" mode="Transparent" x="246" y="34" width="42" height="11">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="8" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[0 - Entrada]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-7" mode="Transparent" x="293" y="34" width="27" height="21">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-8" mode="Transparent" x="0" y="97" width="339" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-9" mode="Transparent" x="6" y="99" width="96" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[NATUREZA DA OPERAÇÃO]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-9" mode="Transparent" x="0" y="117" width="189" height="19">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-10" mode="Transparent" x="6" y="118" width="78" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[INSCRIÇÃO ESTADUAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-11" mode="Transparent" x="191" y="118" width="103" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[INSCRIÇÃO ESTADUAL DO SUBST. TRIB. TRIBUTARIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-12" mode="Transparent" x="376" y="117" width="71" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[CNPJ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-13" mode="Transparent" x="347" y="38" width="174" height="7">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[CHAVE DE ACESSO]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField-7" mode="Transparent" x="77" y="5" width="162" height="43"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{emitenteRazaoSocial}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField-9" mode="Transparent" x="77" y="49" width="162" height="47"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="8" isBold="true" pdfFontName="Times-Bold"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{emitenteEndereco}+", "+$F{emitenteEnderecoNro}
++ "\n" + $F{emitenteBairro} +" - " + $F{emitenteMunicipio} +", " + $F{emitenteUf}
++ "\n" + ($F{emitenteCep}!=null? "CEP: " + $F{emitenteCep}: "")
++ "\n" + ( $F{emitenteTelefone}!=null ? "Fone/Fax: " + $F{emitenteTelefone} : "")]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-12" mode="Transparent" x="297" y="37" width="19" height="17"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{saidaEntrada}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-13" mode="Transparent" x="246" y="57" width="89" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Nº " + $F{nNF}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-14" mode="Transparent" x="246" y="70" width="89" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["SÉRIE: " + $F{serie}]]></textFieldExpression>
+				</textField>
+				<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isUsingCache="true" onErrorType="Blank" evaluationTime="Page">
+					<reportElement key="image-1" mode="Opaque" x="3" y="14" width="72" height="75"/>
+					<imageExpression class="java.io.InputStream"><![CDATA[$P{logotipo}]]></imageExpression>
+				</image>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-15" mode="Transparent" x="5" y="104" width="330" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{natOp}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-16" mode="Transparent" x="2" y="123" width="183" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{emitenteInscricaoEstadual}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-17" mode="Transparent" x="190" y="123" width="186" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{emitenteInscricaoEstadualSubtributario}]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement key="textField-18" mode="Transparent" x="376" y="123" width="188" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{emitenteCnpj}.substring(0, 2) + "." + $F{emitenteCnpj}.substring(2, 5) + "." + $F{emitenteCnpj}.substring(5, 8) + "/" + $F{emitenteCnpj}.substring(8, 12) + "-" + $F{emitenteCnpj}.substring(12,14)]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement key="textField-19" mode="Transparent" x="347" y="45" width="208" height="10"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="7" isBold="true" pdfFontName="Times-Bold"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{chaveAcesso}.substring(3,7)+ " " +
+$F{chaveAcesso}.substring(7,11)+ " " +
+$F{chaveAcesso}.substring(11,15)+ " " +
+$F{chaveAcesso}.substring(15,19)+ " " +
+$F{chaveAcesso}.substring(19,23)+ " " +
+$F{chaveAcesso}.substring(23,27)+ " " +
+$F{chaveAcesso}.substring(27,31)+ " " +
+$F{chaveAcesso}.substring(31,35)+ " " +
+$F{chaveAcesso}.substring(35,39)+ " " +
+$F{chaveAcesso}.substring(39,43)+ " " +
+$F{chaveAcesso}.substring(43,47)]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-66" mode="Transparent" x="347" y="104" width="208" height="12"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="7" isBold="true" pdfFontName="Times-Bold"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{protocoloDataAutorizacao}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-71" x="346" y="61" width="209" height="32">
+						<printWhenExpression><![CDATA[new Boolean(true)]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="8" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[Consulta de autenticidade no portal nacional da NF-e
+www.nfe.fazenda.gov.br/portal ou no site da Sefaz Autorizadora]]></text>
+				</staticText>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-67" x="343" y="99" width="187" height="8"/>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["PROTOCOLO DE AUTORIZAÇÃO DE USO"]]></textFieldExpression>
+				</textField>
+				<componentElement>
+					<reportElement stretchType="RelativeToBandHeight" x="338" y="14" width="231" height="30"/>
+					<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128C" drawText="false" checksumRequired="false" barHeight="0">
+						<jr:codeExpression><![CDATA[$F{chaveAcesso}]]></jr:codeExpression>
+					</jr:barbecue>
+				</componentElement>
+				<rectangle radius="2">
+					<reportElement key="rectangle-60" mode="Transparent" x="339" y="97" width="226" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-9" mode="Transparent" x="189" y="117" width="187" height="19">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<textField>
+					<reportElement x="252" y="82" width="59" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+				</textField>
+				<rectangle radius="2">
+					<reportElement key="rectangle-6" mode="Transparent" x="339" y="2" width="226" height="95">
+						<printWhenExpression><![CDATA[Boolean.valueOf(true)]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+			</band>
+			<band height="72">
+				<rectangle radius="2">
+					<reportElement key="rectangle-28" mode="Transparent" x="492" y="52" width="73" height="19">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-29" mode="Transparent" x="492" y="32" width="73" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-30" mode="Transparent" x="492" y="11" width="73" height="21">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-31" mode="Transparent" x="382" y="11" width="110" height="21">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-22" mode="Transparent" x="4" y="2" width="136" height="10">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfFontName="Times-Bold"/>
+					</textElement>
+					<text><![CDATA[DESTINATÁRIO/REMETENTE]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-32" mode="Transparent" x="0" y="11" width="382" height="21">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-23" mode="Transparent" x="6" y="13" width="96" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[NOME/RAZÃO SOCIAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-24" mode="Transparent" x="386" y="13" width="71" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[CNPJ/CPF]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-25" mode="Transparent" x="493" y="13" width="71" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[DATA DA EMISSÃO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-26" mode="Transparent" x="492" y="33" width="72" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[DATA DE ENTRADA/SAÍDA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-27" mode="Transparent" x="492" y="53" width="72" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[HORA DE ENTRADA/SAÍDA]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-33" mode="Transparent" x="0" y="32" width="304" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-28" mode="Transparent" x="6" y="33" width="96" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[ENDEREÇO]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-34" mode="Transparent" x="304" y="32" width="103" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-29" mode="Transparent" x="305" y="33" width="71" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[BAIRRO/DISTRITO]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-35" mode="Transparent" x="407" y="32" width="85" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-30" mode="Transparent" x="411" y="33" width="57" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[CEP]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-36" mode="Transparent" x="0" y="52" width="267" height="19">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-31" mode="Transparent" x="6" y="53" width="71" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[MUNÍCIPIO]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-37" mode="Transparent" x="304" y="52" width="103" height="19">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-32" mode="Transparent" x="308" y="53" width="71" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[FONE/FAX]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-38" mode="Transparent" x="267" y="52" width="37" height="19">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-33" mode="Transparent" x="269" y="54" width="24" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[UF]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-39" mode="Transparent" x="407" y="52" width="85" height="19">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-34" mode="Transparent" x="411" y="53" width="76" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[INSCRIÇÃO ESTADUAL]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-25" mode="Transparent" x="6" y="18" width="375" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{destinatarioRazaoSocial}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-30" mode="Transparent" x="305" y="38" width="101" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{destinatarioBairro}]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement key="textField-26" mode="Transparent" x="385" y="18" width="106" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[($F{destinatarioCnpj}==null)?$F{destinatarioCpf}.substring(0, 3) + "." + $F{destinatarioCpf}.substring(3, 6) + "." + $F{destinatarioCpf}.substring(6, 9)+"-"+$F{destinatarioCpf}.substring(9,11):$F{destinatarioCnpj}.substring(0, 2) + "." + $F{destinatarioCnpj}.substring(2, 5) + "." + $F{destinatarioCnpj}.substring(5, 8) + "/" + $F{destinatarioCnpj}.substring(8, 12) + "-" + $F{destinatarioCnpj}.substring(12,14)]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement key="textField-27" mode="Transparent" x="493" y="18" width="71" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{dataEmissao}.substring(8,10)+"-"+
+$F{dataEmissao}.substring(5,7)+"-"+
+$F{dataEmissao}.substring(0,4)]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement key="textField-28" mode="Transparent" x="492" y="38" width="72" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{dataSaidaEntrada}.substring(8,10)+"-"+
+$F{dataSaidaEntrada}.substring(5,7)+"-"+
+$F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-29" mode="Transparent" x="410" y="38" width="81" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{destinatarioCep}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-31" mode="Transparent" x="5" y="38" width="293" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{destinatarioEndereco}+", "+$F{destinatarioEnderecoNro}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-32" mode="Transparent" x="5" y="58" width="259" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{destinatarioMunicipio}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-33" mode="Transparent" x="307" y="58" width="90" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{destinatarioFoneFax}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-34" mode="Transparent" x="269" y="59" width="34" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{destinatarioUf}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-35" mode="Transparent" x="411" y="58" width="80" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{destinatarioInscricaoEstadual}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-36" mode="Transparent" x="493" y="58" width="71" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{horaSaida}]]></textFieldExpression>
+				</textField>
+			</band>
+			<band height="19">
+				<printWhenExpression><![CDATA[!$F{fatura}.isEmpty() && $V{PAGE_NUMBER}==1]]></printWhenExpression>
+				<staticText>
+					<reportElement key="staticText-35" mode="Transparent" x="6" y="0" width="136" height="10">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfFontName="Times-Bold"/>
+					</textElement>
+					<text><![CDATA[FATURA / DUPLICATA]]></text>
+				</staticText>
+				<subreport>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="10" width="565" height="5"/>
+					<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{Fatura_Datasource})]]></dataSourceExpression>
+					<subreportExpression class="java.io.InputStream"><![CDATA[$P{ImpressaoDanfeFaturaRetratoA4Reportww}]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Grupo04" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{nNF}]]></groupExpression>
+		<groupHeader>
+			<band height="129" splitType="Stretch">
+				<printWhenExpression><![CDATA[$V{PAGE_NUMBER} == 1]]></printWhenExpression>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="491" y="108" width="75" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="0" y="31" width="94" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-21" mode="Transparent" x="378" y="31" width="94" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-22" mode="Transparent" x="188" y="31" width="94" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-23" mode="Transparent" x="94" y="31" width="94" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-40" mode="Transparent" x="0" y="10" width="114" height="21">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-37" mode="Transparent" x="2" y="12" width="89" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[BASE DE CÁLCULO DO ICMS]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-41" mode="Transparent" x="114" y="10" width="113" height="21">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="1.0"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-38" mode="Transparent" x="115" y="11" width="86" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[VALOR DO ICMS]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-42" mode="Transparent" x="227" y="10" width="113" height="21">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-39" mode="Transparent" x="233" y="12" width="90" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[BASE DE CÁLCULO DO ICMS ST SUBSTITUIÇÃO]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-43" mode="Transparent" x="340" y="10" width="113" height="21">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-40" mode="Transparent" x="344" y="12" width="86" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[VALOR DO ICMS ST]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-44" mode="Transparent" x="453" y="10" width="113" height="21">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-41" mode="Transparent" x="461" y="12" width="101" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[VALOR TOTAL DOS PRODUTOS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-42" mode="Transparent" x="4" y="56" width="184" height="10">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfFontName="Times-Bold"/>
+					</textElement>
+					<text><![CDATA[TRANSPORTADOR/VOLUMES TRANSPORTADOS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-43" mode="Transparent" x="2" y="68" width="86" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[RAZÃO SOCIAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-44" mode="Transparent" x="216" y="68" width="53" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[FRETE POR CONTA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-45" mode="Transparent" x="219" y="73" width="53" height="12">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[0 - EMITENTE
+1 - DESTINATÁRIO]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-47" mode="Transparent" x="266" y="71" width="19" height="14">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-46" mode="Transparent" x="293" y="68" width="53" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[CÓDIGO ANTT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-47" mode="Transparent" x="352" y="68" width="53" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[PLACA DO VEÍCULO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-48" mode="Transparent" x="418" y="68" width="13" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[UF]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-49" mode="Transparent" x="442" y="68" width="63" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[CNPJ/CPF]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-50" mode="Transparent" x="2" y="88" width="86" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[ENDEREÇO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-51" mode="Transparent" x="272" y="88" width="86" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[MUNICÍPIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-52" mode="Transparent" x="418" y="88" width="13" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[UF]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-53" mode="Transparent" x="442" y="88" width="95" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[INSCRIÇÃO ESTADUAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-54" mode="Transparent" x="2" y="108" width="53" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[QUANTIDADE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-55" mode="Transparent" x="76" y="108" width="53" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[ESPÉCIE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-56" mode="Transparent" x="188" y="108" width="53" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[MARCA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-57" mode="Transparent" x="492" y="108" width="53" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[PESO LÍQUIDO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-58" mode="Transparent" x="417" y="108" width="53" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[PESO BRUTO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-59" mode="Transparent" x="323" y="108" width="53" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[NUMERAÇÃO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-61" mode="Transparent" x="2" y="32" width="61" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[VALOR DO FRETE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-62" mode="Transparent" x="115" y="32" width="61" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[VALOR DO SEGURO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-63" mode="Transparent" x="193" y="33" width="61" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[DESCONTO]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement key="rectangle-59" mode="Transparent" x="282" y="31" width="96" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-64" mode="Transparent" x="288" y="33" width="88" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[OUTRAS DESPESAS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-65" mode="Transparent" x="382" y="33" width="86" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[VALOR DO IPI]]></text>
+				</staticText>
+				<textField pattern="#,##0.00" isBlankWhenNull="false">
+					<reportElement key="textField-38" mode="Transparent" x="6" y="16" width="107" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{baseIcms})]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement key="textField-39" mode="Transparent" x="115" y="16" width="112" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{valorIcms})]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement key="textField-40" mode="Transparent" x="227" y="17" width="108" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{baseIcmsSubstituicao})]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement key="textField-41" mode="Transparent" x="343" y="19" width="110" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{valorIcmsSubstituicao})]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement key="textField-42" mode="Transparent" x="461" y="17" width="101" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{valorTotalProduto})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-67" mode="Transparent" x="477" y="33" width="80" height="8">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[VALOR TOTAL DA NOTA]]></text>
+				</staticText>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement key="textField-43" mode="Transparent" x="380" y="38" width="88" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{valorIpi})]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement key="textField-44" mode="Transparent" x="288" y="38" width="88" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{outrasDespesas})]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement key="textField-45" mode="Transparent" x="193" y="38" width="88" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{desconto})]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement key="textField-46" mode="Transparent" x="96" y="37" width="88" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{valorSeguro})]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement key="textField-47" mode="Transparent" x="2" y="37" width="89" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{valorFrete})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-48" mode="Transparent" x="2" y="73" width="209" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorRazaoSocial}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-49" mode="Transparent" x="267" y="72" width="16" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorFretePorConta}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-50" mode="Transparent" x="291" y="73" width="57" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorCodigoAntt}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-51" mode="Transparent" x="352" y="73" width="61" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorPlacaVeiculo}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-52" mode="Transparent" x="416" y="73" width="22" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorUfVeiculo}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-53" mode="Transparent" x="441" y="73" width="122" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorCnpjCpf}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-54" mode="Transparent" x="441" y="93" width="123" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorInscricaoEstadual}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-55" mode="Transparent" x="415" y="93" width="23" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorUf}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-56" mode="Transparent" x="272" y="93" width="138" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorMunicipio}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-57" mode="Transparent" x="2" y="93" width="264" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorEndereço}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-58" mode="Transparent" x="2" y="113" width="73" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorQuantidade}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-59" mode="Transparent" x="77" y="113" width="106" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorEspecie}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-60" mode="Transparent" x="188" y="113" width="130" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorMarca}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-61" mode="Transparent" x="323" y="113" width="87" height="12"/>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorNumeracao}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-62" mode="Transparent" x="415" y="113" width="74" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{transportadorPesoBruto}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.###" isBlankWhenNull="true">
+					<reportElement key="textField-63" mode="Transparent" x="492" y="113" width="68" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{transportadorPesoLiquido})]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement key="textField-64" mode="Transparent" x="475" y="38" width="88" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{valorTotalNota})]]></textFieldExpression>
+				</textField>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="0" y="88" width="269" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="214" y="68" width="74" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="0" y="68" width="214" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="288" y="68" width="62" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="350" y="68" width="62" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="412" y="68" width="28" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="412" y="88" width="28" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="269" y="88" width="143" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="320" y="108" width="92" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="440" y="68" width="126" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="440" y="88" width="126" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-19" mode="Transparent" x="472" y="31" width="94" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="0" y="108" width="75" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="75" y="108" width="110" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="185" y="108" width="135" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<rectangle radius="2">
+					<reportElement key="rectangle-20" mode="Transparent" x="412" y="108" width="79" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-36" mode="Transparent" x="4" y="2" width="136" height="10">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfFontName="Times-Bold"/>
+					</textElement>
+					<text><![CDATA[CÁLCULO DO IMPOSTO]]></text>
+				</staticText>
+			</band>
+			<band height="27">
+				<line>
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="477" y="20" width="1" height="7" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<line>
+					<reportElement key="line-37" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="548" y="20" width="1" height="7" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<staticText>
+					<reportElement key="staticText-68" x="274" y="14" width="35" height="13"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Valor Unitário]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-79" x="533" y="14" width="30" height="6"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Alíquota]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-75" x="533" y="20" width="15" height="7"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ ICMS]]></text>
+				</staticText>
+				<line>
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="449" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<staticText>
+					<reportElement key="staticText-65" x="222" y="14" width="16" height="13"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[CFOP]]></text>
+				</staticText>
+				<line>
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="379" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<staticText>
+					<reportElement key="staticText-78" x="379" y="14" width="70" height="6"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Base de Cálculo]]></text>
+				</staticText>
+				<line>
+					<reportElement key="line-36" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="505" y="20" width="1" height="7" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<line>
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="49" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<staticText>
+					<reportElement key="staticText-77" x="449" y="20" width="28" height="7"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ ICMS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-61" x="1" y="14" width="48" height="13"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Código do Produto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-71" x="414" y="20" width="35" height="7"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ ICMS ST]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-73" x="477" y="20" width="28" height="7"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ ICMS ST]]></text>
+				</staticText>
+				<line>
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="207" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<staticText>
+					<reportElement key="staticText-64" x="207" y="14" width="15" height="13"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[CST]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-76" x="548" y="20" width="15" height="7"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ IPI]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-70" x="379" y="20" width="35" height="7"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ ICMS]]></text>
+				</staticText>
+				<line>
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="182" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<line>
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="309" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<line>
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="222" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<staticText>
+					<reportElement key="staticText-66" x="238" y="14" width="10" height="13"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Un]]></text>
+				</staticText>
+				<line>
+					<reportElement key="line-40" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="380" y="20" width="184" height="1" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<staticText>
+					<reportElement key="staticText-69" x="344" y="14" width="35" height="13"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Valor Total]]></text>
+				</staticText>
+				<line>
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="344" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<line>
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="248" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<rectangle radius="1">
+					<reportElement key="rectangle-1" mode="Transparent" x="0" y="14" width="564" height="13">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-62" x="49" y="14" width="133" height="13"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Descrição dos Produtos e Serviços]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-80" x="309" y="14" width="35" height="13"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Desconto]]></text>
+				</staticText>
+				<line>
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="238" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<staticText>
+					<reportElement key="staticText-63" x="182" y="14" width="25" height="13"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ NCM/SH]]></text>
+				</staticText>
+				<line>
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="274" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<line>
+					<reportElement key="line-37" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="533" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<staticText>
+					<reportElement key="staticText-74" x="505" y="20" width="28" height="7"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ IPI]]></text>
+				</staticText>
+				<line>
+					<reportElement key="line-34" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="414" y="20" width="1" height="7" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+				</line>
+				<staticText>
+					<reportElement key="staticText-67" x="248" y="14" width="26" height="13"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Quantidade]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-60" mode="Transparent" x="4" y="1" width="136" height="10" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfFontName="Times-Bold" isPdfEmbedded="false"/>
+					</textElement>
+					<text><![CDATA[DADOS DO PRODUTO/SERVIÇO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-72" mode="Transparent" x="449" y="14" width="84" height="6" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+						<font fontName="Times New Roman" size="5" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					</textElement>
+					<text><![CDATA[Valor Impostos]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band height="640" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-68" x="200" y="60" width="121" height="575" forecolor="#919191">
+					<printWhenExpression><![CDATA[new Boolean($F{tipoEmissao}.equalsIgnoreCase("Contingência") || $F{tipoEmissao}.equalsIgnoreCase("Contingência FS-DA"))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" rotation="Left">
+					<font fontName="Times New Roman" size="30" isBold="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Danfe em contingência.
+Impresso em decorrência de problemas técnicos.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-69" x="199" y="60" width="121" height="575" forecolor="#919191">
+					<printWhenExpression><![CDATA[new Boolean($F{tipoEmissao}.equalsIgnoreCase("Contingência via DPEC"))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" rotation="Left">
+					<font fontName="Times New Roman" size="30" isBold="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[DANFE impresso em contingência -
+DPEC regularmente recebido pela Receita Federal do Brasil]]></text>
+			</staticText>
+		</band>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="59" splitType="Stretch">
+			<line>
+				<reportElement key="line-1" mode="Transparent" x="2" y="56" width="563" height="1" forecolor="#000000">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<rectangle radius="2">
+				<reportElement key="rectangle-1" mode="Transparent" x="2" y="2" width="473" height="25">
+					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle radius="2">
+				<reportElement key="rectangle-2" mode="Transparent" x="2" y="27" width="127" height="25">
+					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle radius="2">
+				<reportElement key="rectangle-3" mode="Transparent" x="129" y="27" width="346" height="25">
+					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle radius="2">
+				<reportElement key="rectangle-4" mode="Transparent" x="475" y="2" width="90" height="50">
+					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="staticText-1" mode="Transparent" x="6" y="30" width="96" height="8">
+					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[DATA DE RECEBIMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-2" mode="Transparent" x="132" y="30" width="166" height="8">
+					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[IDENTIFICAÇÃO E ASSINATURA DO RECEBEDOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-3" x="475" y="4" width="90" height="20">
+					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true" isItalic="false" pdfFontName="Times-Bold"/>
+				</textElement>
+				<text><![CDATA[NF-e]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-1" x="475" y="24" width="90" height="12">
+					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="8" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Nº " + $F{nNF}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-2" x="475" y="36" width="90" height="12">
+					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="8" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["SÉRIE: " + $F{serie}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-6" mode="Transparent" x="6" y="4" width="469" height="8">
+					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1))]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["RECEBEMOS DE " + $F{emitenteRazaoSocial} + " OS PRODUTOS/SERVIÇOS CONSTANTES DA NOTA FISCAL INDICADA AO LADO"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="11">
+			<textField isStretchWithOverflow="true" pattern="#0.###" isBlankWhenNull="true">
+				<reportElement key="textField-3" mode="Transparent" x="548" y="1" width="15" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{aliquotaIpi})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-11" mode="Transparent" x="238" y="1" width="10" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{unidadeComercial}.equals($F{unidadeTributaria}) ? $F{unidadeComercial} : $F{unidadeComercial} + "\n" + $F{unidadeTributaria} )]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-10" mode="Transparent" x="248" y="1" width="26" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{unidadeComercial}.equals($F{unidadeTributaria}) ? (new DecimalFormat("#,##0.##")).format(new Double($F{quantidadeComercial})) : (new DecimalFormat("#,##0.##")).format(new Double($F{quantidadeComercial})) + "\n" + (new DecimalFormat("#,##0.###")).format(new Double($F{quantidadeTributaria}))]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-9" mode="Transparent" x="274" y="1" width="35" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{unidadeComercial}.toString().equals($F{unidadeTributaria}.toString()) ? (new DecimalFormat("#,##0.00##")).format(new Double($F{valorUnitarioComercial})) : (new DecimalFormat("#,##0.00##")).format(new Double($F{valorUnitarioComercial})) + "\n" + (new DecimalFormat("#,##0.00##")).format(new Double($F{valorUnitarioTributario}))]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-8" mode="Transparent" x="344" y="1" width="35" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{valorTotal})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-14" mode="Transparent" x="182" y="1" width="25" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ncm}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-6" mode="Transparent" x="449" y="1" width="28" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{lvalorIcms})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-1" mode="Transparent" x="2" y="0" width="47" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-15" mode="Transparent" x="414" y="1" width="35" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{baseICMSST})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-16" mode="Transparent" x="477" y="1" width="28" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{valorICMSST})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-17" mode="Transparent" x="309" y="1" width="35" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{ldesconto})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#0.###" isBlankWhenNull="true">
+				<reportElement key="textField-4" mode="Transparent" x="533" y="1" width="15" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{aliquotaIcms})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-7" mode="Transparent" x="379" y="1" width="35" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{lbaseIcms})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-5" mode="Transparent" x="505" y="1" width="28" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[new Double($F{lvalorIpi})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-2" mode="Transparent" x="50" y="1" width="132" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-13" mode="Transparent" x="207" y="1" width="15" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cst}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-12" mode="Transparent" x="222" y="1" width="16" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="5" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cfop}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="309" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="477" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="533" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="49" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="182" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="344" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="379" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="248" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="548" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="238" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="449" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="564" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="274" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="222" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="414" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="505" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="207" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement key="line-56" mode="Transparent" x="0" y="10" width="564" height="1" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="29" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}==1 && !$F{valorTotalServicos}.isEmpty()]]></printWhenExpression>
+			<rectangle radius="2">
+				<reportElement key="rectangle-13" mode="Transparent" x="0" y="9" width="143" height="20">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="staticText-14" mode="Transparent" x="4" y="11" width="86" height="8">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[INSCRIÇÃO MUNICIPAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-18" mode="Transparent" x="2" y="0" width="136" height="10">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfFontName="Times-Bold"/>
+				</textElement>
+				<text><![CDATA[CÁLCULO DO ISSQN]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-20" mode="Transparent" x="3" y="17" width="137" height="12"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{inscricaoMunicipal}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="2">
+				<reportElement key="rectangle-14" mode="Transparent" x="143" y="9" width="141" height="20">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="staticText-15" mode="Transparent" x="147" y="11" width="86" height="8">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[VALOR TOTAL DOS SERVIÇOS]]></text>
+			</staticText>
+			<rectangle radius="2">
+				<reportElement key="rectangle-15" mode="Transparent" x="284" y="9" width="141" height="20">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="staticText-16" mode="Transparent" x="287" y="11" width="86" height="8">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[BASE DE CÁLCULO DO ISSQN]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-21" mode="Transparent" x="145" y="17" width="121" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{valorTotalServicos}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-22" mode="Transparent" x="287" y="17" width="131" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{baseIssqn}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="2">
+				<reportElement key="rectangle-16" mode="Transparent" x="425" y="9" width="141" height="20">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="staticText-17" mode="Transparent" x="428" y="11" width="92" height="8">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[VALOR DO ISSQN]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-23" mode="Transparent" x="428" y="17" width="134" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{valorIssqn}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="103" splitType="Stretch">
+			<printWhenExpression><![CDATA[Boolean.valueOf($V{PAGE_NUMBER}.intValue() == 1)]]></printWhenExpression>
+			<rectangle radius="2">
+				<reportElement key="rectangle-17" mode="Transparent" x="0" y="11" width="284" height="92">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="staticText-19" mode="Transparent" x="2" y="0" width="136" height="10">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfFontName="Times-Bold"/>
+				</textElement>
+				<text><![CDATA[DADOS ADICIONAIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-20" mode="Transparent" x="4" y="13" width="86" height="8">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[INFORMAÇÕES COMPLEMENTARES]]></text>
+			</staticText>
+			<rectangle radius="2">
+				<reportElement key="rectangle-18" mode="Transparent" x="284" y="11" width="282" height="92">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="staticText-21" mode="Transparent" x="288" y="13" width="86" height="8">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="5" isItalic="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[RESERVADO AO FISCO]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-69" x="4" y="21" width="277" height="52" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{informacoesComplementares2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-70" x="4" y="73" width="277" height="27" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nfReferenciada}!=null?"Chave NF Referenciada: \n" + $F{nfReferenciada}:""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

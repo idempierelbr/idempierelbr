@@ -12,23 +12,35 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.model;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.logging.Level;
+
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRXmlDataSource;
+import net.sf.jasperreports.engine.util.JRLoader;
 
 import org.compiere.model.MAttachment;
 import org.compiere.model.MCurrency;
 import org.compiere.model.MDocType;
 import org.compiere.model.MFactAcct;
+import org.compiere.model.MImage;
 import org.compiere.model.MLocation;
 import org.compiere.model.MOrg;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.MPeriod;
+import org.compiere.model.MProcess;
 import org.compiere.model.MSysConfig;
 import org.compiere.model.MTable;
 import org.compiere.model.MTax;
@@ -40,6 +52,8 @@ import org.compiere.model.X_C_TaxProviderCfg;
 import org.compiere.process.DocAction;
 import org.compiere.process.DocOptions;
 import org.compiere.process.DocumentEngine;
+import org.compiere.process.ProcessInfo;
+import org.compiere.process.ServerProcessCtl;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
@@ -70,6 +84,9 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	private MLBRNotaFiscalTax[] 	m_taxes = null;
 	/**	Process Message 			*/
 	private String		m_processMsg = null;
+	
+	private static Integer GENERATE_DANFE_PROCESS_ID;
+	private final static String JASPER_FILENAME = "ImpressaoDanfeRetratoA4Reportww.jasper";
 
 	/**************************************************************************
 	 *  Default Constructor
@@ -643,8 +660,35 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	 */
 	public File createPDF (File file)
 	{
-		return null;
-	}	//	createPDF
+		if (GENERATE_DANFE_PROCESS_ID == null) {
+			GENERATE_DANFE_PROCESS_ID = getGenerateDanfeProcessID();
+		}
+				
+		if (GENERATE_DANFE_PROCESS_ID == null || GENERATE_DANFE_PROCESS_ID <= 0)
+			return null;
+		
+		ProcessInfo pi = new ProcessInfo("DANFE", GENERATE_DANFE_PROCESS_ID);
+		pi.setRecord_ID(get_ID());
+		pi.setIsBatch(true);		
+		ServerProcessCtl.process(pi, null);
+		
+		return pi.getPDFReport();
+	}
+	
+	/**
+	 * 	Get GenerateDanfe AD_Process_ID, based on class name and entity type  
+	 *	@return AD_Process_ID
+	 */
+	private Integer getGenerateDanfeProcessID() {
+		StringBuilder sql = new StringBuilder();
+		sql.append("SELECT AD_Process_ID FROM AD_Process ");
+		sql.append("WHERE Classname = ? AND EntityType=?");
+
+		Integer AD_Process_ID = DB.getSQLValue (get_TrxName(), sql.toString(),
+				new Object[]{"org.idempierelbr.nfe.process.GenerateDanfe", "LBR"});
+		
+		return AD_Process_ID;
+	}
 
 	@Override
 	public String getProcessMsg() {
@@ -939,4 +983,89 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		int noTax = DB.executeUpdateEx("UPDATE LBR_NotaFiscalTax " + set, get_TrxName());
 		if (log.isLoggable(Level.FINE)) log.fine("setProcessed - " + processed + " - Lines=" + noLine + ", Tax=" + noTax);
 	}	//	setProcessed
+	
+	/**
+	 * Get an object JasperPrint with jasper report and parameters (subreports and logo)
+	 * used for generating DANFE PDF
+	 * 
+	 * @return JasperPrint
+	 */
+	public JasperPrint getJasperPrint() {
+		if (!isStatusAutorizado() && !isStatusCancelado())
+			return null;
+		
+		// Check process
+		if (GENERATE_DANFE_PROCESS_ID == null) {
+			GENERATE_DANFE_PROCESS_ID = getGenerateDanfeProcessID();
+		}
+				
+		if (GENERATE_DANFE_PROCESS_ID == null || GENERATE_DANFE_PROCESS_ID <= 0)
+			return null;
+		
+		// Get distribution xml
+		InputStream xmlInputStream = null;
+		MAttachment attachNFe = createAttachment();
+		
+		for (int i = attachNFe.getEntryCount() - 1; i >= 0; i--) 
+		{
+			if (attachNFe.getEntry(i).getName().endsWith(NFeXMLGenerator.DISTRIBUTION_FILE_EXT))
+				xmlInputStream = attachNFe.getEntry(i).getInputStream();
+		}
+		
+		if (xmlInputStream == null)
+			return null;
+		
+		// Get jasper file(s) and parameters
+		InputStream mainJasperInputStream = null;
+		Map<String, Object> jasperParameters = new HashMap<String, Object>();
+		MProcess process = new MProcess(getCtx(), GENERATE_DANFE_PROCESS_ID, get_TrxName());
+		
+		MAttachment attachProcess = process.createAttachment();
+		
+		for (int i = attachProcess.getEntryCount() - 1; i >= 0; i--) 
+		{
+			if (attachProcess.getEntry(i).getName().equals(JASPER_FILENAME))
+				mainJasperInputStream = attachProcess.getEntry(i).getInputStream();
+				
+			jasperParameters.put(attachProcess.getEntry(i).getName(),
+					attachProcess.getEntry(i).getInputStream());
+		}
+		
+		// If attachment not found, try to get from resources
+		if (mainJasperInputStream == null) {
+			mainJasperInputStream = getClass().getClassLoader()
+					.getResourceAsStream("org/idempierelbr/nfe/report/" + JASPER_FILENAME);
+			
+			jasperParameters.put(JASPER_FILENAME, mainJasperInputStream);
+		}
+		
+		if (mainJasperInputStream == null)
+			return null;
+		
+		// Add org logo to parameters
+		MOrgInfo oi = MOrgInfo.get(getCtx(), getAD_Org_ID(), get_TrxName());
+
+		if (oi.getLogo_ID() > 0) {
+			MImage mImage = MImage.get(getCtx(), oi.getLogo_ID());
+		
+			if (mImage.getBinaryData() != null)
+			{
+				InputStream is = new ByteArrayInputStream(mImage.getBinaryData());
+				jasperParameters.put("LOGO", is);
+			}
+		}
+		
+		// Generate JasperPrint
+		JasperPrint jasperPrint = null;
+		
+		try {
+			JasperReport jasperReport = (JasperReport)JRLoader.loadObject(mainJasperInputStream);
+			JRXmlDataSource dataSource = new JRXmlDataSource(xmlInputStream, jasperReport.getQuery().getText());
+			jasperPrint = JasperFillManager.fillReport(jasperReport, jasperParameters, dataSource);
+		} catch(Exception e) {
+			log.warning("Could not generate JasperPrint for Nota Fiscal " + getDocumentNo());
+		}
+		
+		return jasperPrint;
+	}
 }

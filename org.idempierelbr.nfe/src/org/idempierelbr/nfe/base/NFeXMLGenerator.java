@@ -105,6 +105,9 @@ public class NFeXMLGenerator {
 	/** XML File Extension */
 	public static final String FILE_EXT = "-nfe.xml";
 	
+	/** XML Distribution File Extension */
+	public static final String DISTRIBUTION_FILE_EXT = "-dst.xml";
+	
 	/**
 	 * Gera o corpo da NF
 	 * 

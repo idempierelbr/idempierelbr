@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry exported="true" kind="lib" path="lib/axis2/mail-1.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/axis2/xalan-2.7.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/xstream-1.4.7.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/axis2/axiom-impl-1.2.13.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/axis2/commons-logging-1.1.1.jar"/>
