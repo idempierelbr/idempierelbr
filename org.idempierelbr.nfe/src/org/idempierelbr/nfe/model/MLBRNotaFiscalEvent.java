@@ -170,8 +170,8 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 				isContingencia(xmlLot), isHomologacao(xmlLot));
 		String result = connector.sendMessage(xmlLot);
 		
-		if (result == null)
-			return "Could not send NF-e Event Lot";
+		if (result == null || result.trim().equals(""))
+			return "Could not connect to webservice. Please try again later";
 		
 		MAttachment attachLotNFe = createAttachment();
 		File attachFile = new File(TextUtil.generateTmpFile(result, getDocumentNo() + "-pro-eve.xml"));

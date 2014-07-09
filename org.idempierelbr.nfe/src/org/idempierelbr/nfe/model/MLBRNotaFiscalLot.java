@@ -170,6 +170,9 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 				isContingencia(xmlLot), isHomologacao(xmlLot));
 		String result = connector.sendMessage(xmlLot);
 		
+		if (result == null || result.trim().equals(""))
+			return "Could not connect to webservice. Please try again later";
+		
 		// Resposta do Envio
 		/*validation = ValidaXML.validaRetXML(result);
 		if (!validation.equals(""))
@@ -292,6 +295,9 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_RET_AUTORIZACAO,
 				isContingencia(xmlLot.toString()), isHomologacao(xmlLot.toString()));
 		String result = connector.sendMessage("<nfeDadosMsg>" + xmlLot.toString() + "</nfeDadosMsg>");
+		
+		if (result == null || result.trim().equals(""))
+			return "Could not connect to webservice. Please try again later";
 		
 		MAttachment attachLotNFe = createAttachment();
 		File attachFile = new File(TextUtil.generateTmpFile(result, getDocumentNo() + "-pro-rec.xml"));
