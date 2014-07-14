@@ -24,7 +24,7 @@ import org.idempierelbr.tax.wrapper.I_W_C_Tax;
 import org.compiere.model.MTax;
 
 /**
- * 		Cálculo do Imposto por Linha
+ * 		CÃ¡lculo do Imposto por Linha
  * 
  * 	@author Ricardo Santana (Kenos, www.kenos.com.br)
  * 			<li> Sponsored by Soliton, www.soliton.com.br
@@ -116,8 +116,8 @@ public class MLBRTaxLine extends X_LBR_TaxLine implements Comparator<Object>, Co
 	}	//	compare
 
 	/**
-	 * 		Comparador necessário pois os impostos do tipo 
-	 * 	Substituição Tributária precisam ser calculados por último.
+	 * 		Comparador necessÃ¡rio pois os impostos do tipo 
+	 * 	SubstituiÃ§Ã£o TributÃ¡ria precisam ser calculados por Ãºltimo.
 	 */
 	public int compareTo (Object arg0)
 	{

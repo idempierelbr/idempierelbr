@@ -60,7 +60,7 @@ public class MLBRISSMatrix extends X_LBR_ISSMatrix
 	}	//	MLBRISSMatrix
 
 	/**
-	 *  	Retorna a configuração da Matriz de ISS
+	 *  	Retorna a configuraÃ§Ã£o da Matriz de ISS
 	 *  
 	 *  @return MLBRISSMatrix matriz
 	 */

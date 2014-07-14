@@ -9,7 +9,7 @@ import org.idempierelbr.nfe.model.MLBRNotaFiscal;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
 
 /**
- * Esta classe é uma implementação da callout factory.
+ * Esta classe Ã© uma implementaÃ§Ã£o da callout factory.
  * Ela fornece uma forma centralizada para o mecanismo de callout.
  *
  * @author Alan <alan.lesc1@gmail.com>

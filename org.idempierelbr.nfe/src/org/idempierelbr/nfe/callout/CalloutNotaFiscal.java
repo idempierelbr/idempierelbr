@@ -38,7 +38,7 @@ public class CalloutNotaFiscal implements IColumnCallout {
 	}
 	
 	/**
-	 * Define o Tipo de Transação com base no Parceiro de Negócios
+	 * Define o Tipo de TransaÃ§Ã£o com base no Parceiro de NegÃ³cios
 	 */
 	private String setTransactionType(Properties ctx, GridTab mTab, Object value) {
 		Integer C_BPartner_ID = (Integer) value;
@@ -60,7 +60,7 @@ public class CalloutNotaFiscal implements IColumnCallout {
 	}
 	
 	/**
-	 * Define o Tipo de Transação com base no Parceiro de Negócios
+	 * Define o Tipo de TransaÃ§Ã£o com base no Parceiro de NegÃ³cios
 	 */
 	private String setLineNetAmount(Properties ctx, GridTab mTab, Object value) {
 		BigDecimal qty = (BigDecimal)mTab.getValue("Qty");

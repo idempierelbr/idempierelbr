@@ -1,18 +1,18 @@
 /*
- * SSL - Suporte a Socket Din‚mico
+ * SSL - Suporte a Socket Din√¢mico
  * 
  * Obtido em http://goo.gl/kkeli
  * 
- * @author Maciel GonÁalves ( http://www.javac.com.br/jc/user/profile/3.page )
+ * @author Maciel Gon√ßalves ( http://www.javac.com.br/jc/user/profile/3.page )
  * 
  * @contributor Claudemir Todo Bom ( http://todobom.com )
- *     -- utilizaÁ„o de InputStream
+ *     -- utiliza√ß√£o de InputStream
  *     
  * @contributor Ricardo Santana (Kenos, www.kenos.com.br)
- * 		-- Modificado o package e log para o padr„o do Adempiere
+ * 		-- Modificado o package e log para o padr√£o do Adempiere
  *     
- * Original sem licenÁa especÌfica, obtida permiss„o por
- * e-mail do autor para republicaÁ„o.
+ * Original sem licen√ßa espec√≠fica, obtida permiss√£o por
+ * e-mail do autor para republica√ß√£o.
  */
 package org.idempierelbr.nfe.util;
 
@@ -113,7 +113,7 @@ public class SocketFactoryDinamico implements ProtocolSocketFactory {
 			socket.connect(remoteaddr, timeout);
 		} catch (Exception e) {
 			error(e.toString());
-			throw new ConnectTimeoutException("PossÌvel timeout de conex„o", e);
+			throw new ConnectTimeoutException("Poss√≠vel timeout de conex√£o", e);
 		}
 
 		return socket;

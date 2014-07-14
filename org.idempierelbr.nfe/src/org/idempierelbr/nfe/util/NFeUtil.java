@@ -36,7 +36,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * 	Utilit·rios para gerar a NFe.
+ * 	Utilit√°rios para gerar a NFe.
  *
  * @author Ricardo Santana
  */
@@ -46,7 +46,7 @@ public abstract class NFeUtil
 	/**	Logger				*/
 	private static CLogger log = CLogger.getCLogger(NFeUtil.class);
 
-	/** Vers„o				*/
+	/** Vers√£o				*/
 	public static final String VERSAO			= "3.10";
 	public static final String VERSAO_APP		= "3.10";
 	public static final String VERSAO_EVENTO	= "1.00";
@@ -60,7 +60,7 @@ public abstract class NFeUtil
 	//public static final int REFERENCE_ID_LBR_NFeStatus = 1000039;
 	
 	/**
-	 * Gera o cabeÁalho da NFe
+	 * Gera o cabe√ßalho da NFe
 	 *
 	 * @return cabecalho
 	 */
@@ -70,7 +70,7 @@ public abstract class NFeUtil
 	} //geraCabecNFe
 
 	/**
-	 * Gera o rodapÈ da NFe
+	 * Gera o rodap√© da NFe
 	 *
 	 * return rodape
 	 */
@@ -124,7 +124,7 @@ public abstract class NFeUtil
 
 		long size = file.length(); //bytes
 		if ((size/1024) > XML_SIZE){ //check kbytes
-			String erro = "Tamanho do Arquivo XML inv·lido > " + XML_SIZE + " kbytes";
+			String erro = "Tamanho do Arquivo XML inv√°lido > " + XML_SIZE + " kbytes";
 			log.severe(erro);
 			return erro;
 		}
@@ -275,7 +275,7 @@ public abstract class NFeUtil
 			fileExt = "-can.xml";
 
 		File xml = getAttachmentEntryFile(nf.getAttachment().getEntry(0));
-		if (xml == null || xml.getName().endsWith(fileExt)) // J· est· no padr„o de distribuiÁ„o
+		if (xml == null || xml.getName().endsWith(fileExt)) // J√° est√° no padr√£o de distribui√ß√£o
 			return attach;
 
 		StringBuilder newXmlContent = new StringBuilder();

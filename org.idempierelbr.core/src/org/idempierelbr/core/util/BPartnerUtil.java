@@ -48,7 +48,7 @@ public abstract class BPartnerUtil
 
 	
 	/**
-	 * 	Retorna se o PN é Pessoa Física ou Pessoa Jurídica
+	 * 	Retorna se o PN Ã© Pessoa FÃ­sica ou Pessoa JurÃ­dica
 	 * 
 	 * @param bp Business Partner
 	 * @return PF, PJ or null
@@ -64,7 +64,7 @@ public abstract class BPartnerUtil
 
 	
 	/**
-	 * 		Retorna o Cadastro Nacional de Pessoa Jurídica (CNPJ) do Parceiro
+	 * 		Retorna o Cadastro Nacional de Pessoa JurÃ­dica (CNPJ) do Parceiro
 	 * 		
 	 * 	@param bpLocation
 	 * 	@return CNPJ
@@ -82,13 +82,13 @@ public abstract class BPartnerUtil
 				&& !lbr_BPTypeBR.equals(""))
 		{
 			/**
-			 * 	Pessoa física sempre é definido no Parceiro
+			 * 	Pessoa fÃ­sica sempre Ã© definido no Parceiro
 			 */
 			if (lbr_BPTypeBR.equalsIgnoreCase("PF"))
 				return bp.getLBR_CPF();
 			
 			/**
-			 * 	Parceiro com CNPJ definido na localização
+			 * 	Parceiro com CNPJ definido na localizaÃ§Ã£o
 			 */
 			else if(!MSysConfig.getBooleanValue("LBR_USE_UNIFIED_BP", true))
 				return bpLW.getLBR_CNPJ();
@@ -104,7 +104,7 @@ public abstract class BPartnerUtil
 	}	//	getCNPJ
 
 	/**
-	 * 		Retorna a Inscrição Estadual (IE) do Parceiro
+	 * 		Retorna a InscriÃ§Ã£o Estadual (IE) do Parceiro
 	 * 		
 	 * 	@param bpLocation
 	 * 	@return IE
@@ -133,7 +133,7 @@ public abstract class BPartnerUtil
 			}
 			
 			/**
-			 * 	Parceiro com IE definido na Localização 
+			 * 	Parceiro com IE definido na LocalizaÃ§Ã£o 
 			 */
 			else
 			{
@@ -163,7 +163,7 @@ public abstract class BPartnerUtil
 	} //getUF
 
 	/**
-	 * 		Retorna o código da Superintendência da Zona 
+	 * 		Retorna o cÃ³digo da SuperintendÃªncia da Zona 
 	 * 			Franca de Manaus (SUFRAMA) do Parceiro
 	 * 		
 	 * 	@param bpLocation
@@ -188,7 +188,7 @@ public abstract class BPartnerUtil
 				return bp.getLBR_Suframa();
 			
 			/**
-			 * 	Parceiro com IE definido na Localização 
+			 * 	Parceiro com IE definido na LocalizaÃ§Ã£o
 			 */
 			else	//	FIXME: Incluir campo na LocalizaÃ§Ã£o
 				return bp.getLBR_Suframa();

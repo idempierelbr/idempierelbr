@@ -17,11 +17,11 @@ package org.idempierelbr.core.util;
  * 
  * 	@author Unkown
  *	@author Ricardo Santana (Kenos, www.kenos.com.br)
- *		<li> Melhoria na chamada dos métodos
+ *		<li> Melhoria na chamada dos mÃ©todos
  */
 public abstract class RemoverAcentos 
 {
-	static String acentuado = "çÇáéíóúıÁÉÍÓÚİàèìòùÀÈÌÒÙãõñäëïöüÿÄËÏÖÜÃÕÑâêîôûÂÊÎÔÛ¹²³ªº";
+	static String acentuado = "Ã§Ã‡Ã¡Ã©Ã­Ã³ÃºÃ½ÃÃ‰ÃÃ“ÃšÃÃ Ã¨Ã¬Ã²Ã¹Ã€ÃˆÃŒÃ’Ã™Ã£ÃµÃ±Ã¤Ã«Ã¯Ã¶Ã¼Ã¿Ã„Ã‹ÃÃ–ÃœÃƒÃ•Ã‘Ã¢ÃªÃ®Ã´Ã»Ã‚ÃŠÃÃ”Ã›Â¹Â²Â³ÂªÂº";
 	static String semAcento = "cCaeiouyAEIOUYaeiouAEIOUaonaeiouyAEIOUAONaeiouAEIOU123ao";
 	static char[] tabela;
 	static 
@@ -89,7 +89,7 @@ public abstract class RemoverAcentos
 		
 		String retorno = sb.toString();
 		//
-		retorno = retorno.replaceAll("½", "1/2").replaceAll("¼", "1/4").replaceAll("¾", "3/4");
+		retorno = retorno.replaceAll("Â½", "1/2").replaceAll("Â¼", "1/4").replaceAll("Â¾", "3/4");
 		retorno = retorno.replaceAll("[^A-Za-z0-9 ]", " ").replaceAll(" +", " ");
 		//
 		return retorno.trim();

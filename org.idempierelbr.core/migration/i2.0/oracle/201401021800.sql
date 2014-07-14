@@ -2,7 +2,7 @@ SET SQLBLANKLINES ON
 SET DEFINE OFF
 
 -- 02/01/2014 17h51min16s BRST
--- Inclus„o dos campos CNPJ, CPF na Info BPartner
+-- Inclus√£o dos campos CNPJ, CPF na Info BPartner
 INSERT INTO AD_InfoColumn (Help,SeqNo,AD_InfoColumn_UU,AD_InfoColumn_ID,IsQueryCriteria,EntityType,Description,Created,CreatedBy,Updated,AD_Org_ID,UpdatedBy,Name,IsCentrallyMaintained,ColumnName,IsDisplayed,IsActive,QueryOperator,SelectClause,SeqNoSelection,IsIdentifier,AD_Client_ID,AD_Element_ID,AD_InfoWindow_ID,AD_Reference_ID,AD_Reference_Value_ID) VALUES ('Used to identify if the Business Partner is a Legal Entity or an Individual',190,'cc9ece76-92b6-47e7-be10-c0a3ce4c5a43',1000000,'Y','LBR','Brazilian BP Type (identifies if the BP is a Legal Entity or an Individual)',TO_DATE('2014-01-02 17:51:16','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2014-01-02 17:51:16','YYYY-MM-DD HH24:MI:SS'),0,0,'Brazilian BP Type','Y','LBR_BPTypeBR','Y','Y','=','bp.LBR_BPTypeBR',0,'N',0,1000003,200001,17,1000001)
 ;
 

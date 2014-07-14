@@ -37,7 +37,7 @@ public class MLBRNCM extends org.idempierelbr.core.model.MLBRNCM {
 	/**
 	 * 		Retorna o registro mais relevante do imposto do NCM
 	 * 
-	 * 	@param 	Organização
+	 * 	@param 	OrganizaÃ§Ã£o
 	 * 	@param 	Valid From
 	 * 	@return X_LBR_NCMTax
 	 */

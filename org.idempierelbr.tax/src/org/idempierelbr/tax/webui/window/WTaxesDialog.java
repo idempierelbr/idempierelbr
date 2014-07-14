@@ -290,7 +290,7 @@ public final class WTaxesDialog extends Window
 		Row row = new Row();
 		f_Description.setStyle("font-decoration: italic;");
 		f_Description.setText("Para ADICIONAR um imposto, clique em 'Desfazer', preencha os campos e clique em 'Salvar'." +
-				" Para ALTERAR, clique sobre o imposto na grade, faça as alterações no(s) campo(s) e clique em 'Salvar'." +
+				" Para ALTERAR, clique sobre o imposto na grade, faÃ§a as alteraÃ§Ãµes no(s) campo(s) e clique em 'Salvar'." +
 				" Para EXCLUIR, clique sobre o imposto na grade e clique em 'Excluir'.");
 		Cell cell = new Cell();
 		cell.setColspan(4);

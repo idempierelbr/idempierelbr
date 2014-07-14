@@ -68,7 +68,7 @@ public class MLBRTaxConfiguration extends X_LBR_TaxConfiguration
 	}	//	MLBRTaxConfiguration
 	
 	/**	
-	 * 		Retorna o imposto adequado de acordo com a configuraÁ„o
+	 * 		Retorna o imposto adequado de acordo com a configura√ß√£o
 	 * 
 	 * 	@param ctx
 	 * 	@param AD_Org_ID
@@ -76,7 +76,7 @@ public class MLBRTaxConfiguration extends X_LBR_TaxConfiguration
 	 * 	@param LBR_FiscalGroup_Product_ID
 	 * 	@param isSOTrx
 	 * 	@param trxName
-	 * 	@return	ConfiguraÁ„o de Impostos
+	 * 	@return	Configura√ß√£o de Impostos
 	 */
 	public static MLBRTaxConfiguration get (Properties ctx, int AD_Org_ID, int M_Product_ID, 
 			int LBR_FiscalGroup_Product_ID, boolean isSOTrx, String trxName)
@@ -151,7 +151,7 @@ public class MLBRTaxConfiguration extends X_LBR_TaxConfiguration
 	}	//	getTC_Product
 	
 	/**
-	 * 		Retorna o grupo mais relevante para o estado (regi„o)
+	 * 		Retorna o grupo mais relevante para o estado (regi√£o)
 	 * 
 	 * 	@param 	AD_Org_ID
 	 * 	@param 	C_Region_ID
@@ -305,7 +305,7 @@ public class MLBRTaxConfiguration extends X_LBR_TaxConfiguration
 	} //hasPOTrx
 	
 	/**
-	 * 	Valida se n„o h· dados repetidos
+	 * 	Valida se h√° dados repetidos
 	 */
 	protected boolean beforeSave (boolean newRecord)
 	{
@@ -349,8 +349,8 @@ public class MLBRTaxConfiguration extends X_LBR_TaxConfiguration
 			get_ID()});
 		
 		if (count > 0) {
-			log.saveError("Error", Msg.getMsg(Env.getCtx(), "ConfiguraÁ„o do " + (getM_Product_ID() > 0 ? "produto" : "grupo") +
-					" j· existe para a empresa/organizaÁ„o"));
+			log.saveError("Error", Msg.getMsg(Env.getCtx(), "Configura√ß√£o do " + (getM_Product_ID() > 0 ? "produto" : "grupo") +
+					" j√° existe para a empresa/organiza√ß√£o"));
 		}
 		
 		return count < 1;

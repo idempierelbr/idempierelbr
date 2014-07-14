@@ -111,7 +111,7 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	}	//	MLBRNotaFiscal
 
 	/**
-	 * Retorna as Notas Fiscais por perÌodo (compra e venda)
+	 * Retorna as Notas Fiscais por per√≠odo (compra e venda)
 	 * @param dateFrom
 	 * @param dateTo
 	 * @return MNotaFiscal[]
@@ -122,7 +122,7 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	}	//	get
 
 	/**
-	 * Retorna as Notas Fiscais por perÌodo (compra, venda ou ambos)
+	 * Retorna as Notas Fiscais por per√≠odo (compra, venda ou ambos)
 	 * @param dateFrom
 	 * @param dateTo
 	 * @param isSOTrx: true = venda, false = compra, null = ambos
@@ -191,7 +191,7 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	}	//	get
 
 	/**
-	 * 	Verifica se existe NF registrada com este n˙mero para Cliente/Fornecedor
+	 * 	Verifica se existe NF registrada com este n√∫mero para Cliente/Fornecedor
 	 *
 	 * @param String DocumentNo
 	 * @param int C_BPartner_ID
@@ -212,10 +212,10 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	}//ifExists
 
 	/**
-	 * Extrai a SÈrie da NF
+	 * Extrai a S√©rie da NF
 	 *
-	 * @param	String	No da NF com a SÈrie
-	 * @return	String	SÈrie da NF
+	 * @param	String	No da NF com a S√©rie
+	 * @return	String	S√©rie da NF
 	 */
 	public static String getSerieNo(String documentNo)
 	{
@@ -232,7 +232,7 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	}
 	
 	/**
-	 * 	Necess·rio para ajustar a precis„o
+	 * 	Necess√°rio para ajustar a precis√£o
 	 * 		de casas decimais
 	 */
 	public void setGrandTotal (BigDecimal GrandTotal)
@@ -240,12 +240,12 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		if (GrandTotal == null)
 			GrandTotal = Env.ZERO;
 		
-		//	Manual de IntegraÁ„o 4.01 - p·gina 152
+		//	Manual de Integra√ß√£o 4.01 - p√°gina 152
 		super.setGrandTotal(GrandTotal.setScale(2, BigDecimal.ROUND_HALF_UP));
 	}	//	setGrandTotal
 	
 	/**
-	 * 	Necess·rio para ajustar a precis„o
+	 * 	Necess√°rio para ajustar a precis√£o
 	 * 		de casas decimais
 	 */
 	public void setTotalLines (BigDecimal TotalLines)

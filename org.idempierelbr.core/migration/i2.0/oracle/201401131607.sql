@@ -2,7 +2,7 @@ SET SQLBLANKLINES ON
 SET DEFINE OFF
 
 -- 13/01/2014 15h9min24s BRST
--- Criação do campo NCM na tela Produto, e criação da NCM Info
+-- CriaÃ§Ã£o do campo NCM na tela Produto, e criaÃ§Ã£o da NCM Info
 INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,AD_Client_ID,IsEncrypted,IsSecure,FKConstraintType,AD_Element_ID,AD_Reference_ID,AD_Table_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,1000029,'N','N','N',0,'N',22,'N','N','N','Y','0012edbd-5e0e-482f-8028-548099f3bea3','N','LBR_NCM_ID','NCM stands for Nomenclatura Comum do MERCOSUL','NCM','Y',TO_DATE('2014-01-13 15:09:23','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2014-01-13 15:09:23','YYYY-MM-DD HH24:MI:SS'),0,'N','N',0,'N','N','N',1000012,30,208,0,'LBR')
 ;
 

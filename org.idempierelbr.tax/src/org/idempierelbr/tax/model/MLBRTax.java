@@ -148,7 +148,7 @@ public class MLBRTax extends X_LBR_Tax
 		MLBRTaxLine[] taxLines = getLines();
 		
 		/**
-		 * 	Os impostos de ST devem ser calculados por ˙ltimo
+		 * 	Os impostos de ST devem ser calculados por √∫ltimo
 		 */
 		Arrays.sort (taxLines, new Comparator<MLBRTaxLine>()
 		{
@@ -161,7 +161,7 @@ public class MLBRTax extends X_LBR_Tax
 		});
 		
 		/**
-		 * 	Faz o c·lculo para todos os impostos
+		 * 	Faz o c√°lculo para todos os impostos
 		 */
 		for (MLBRTaxLine taxLine : taxLines)
 		{
@@ -178,8 +178,8 @@ public class MLBRTax extends X_LBR_Tax
 			int calculationType = getCalculationType(taxLine);
 			
 			/**
-			 * 		Valor da OperaÁ„o
-			 * 	Apenas o valor dos produtos, sem c·lculos adicionais
+			 * 		Valor da Opera√ß√£o
+			 * 	Apenas o valor dos produtos, sem c√°lculos adicionais
 			 */
 			if (calculationType == TYPE_AMOUNT)
 			{
@@ -189,7 +189,7 @@ public class MLBRTax extends X_LBR_Tax
 			
 			/**
 			 * 		Valor de Pauta
-			 * 	Valor do imposto definido, multiplicado pela quantidade. Ex. SÍlo do IPI
+			 * 	Valor do imposto definido, multiplicado pela quantidade. Ex. Selo do IPI
 			 */
 			else if (calculationType == TYPE_TARIFF)
 			{
@@ -200,8 +200,8 @@ public class MLBRTax extends X_LBR_Tax
 			}
 			
 			/**
-			 * 		Valor de Lista ou M·ximo
-			 * 	Valor da BC definida, multiplicado pela quantidade, multiplicado pela alÌquota. Ex. SubstiruiÁ„o por Valor Fixo
+			 * 		Valor de Lista ou M√°ximo
+			 * 	Valor da BC definida, multiplicado pela quantidade, multiplicado pela al√≠quota. Ex. Substitu√ß√£o por Valor Fixo
 			 */
 			else if (calculationType == TYPE_LIST_MAX)
 			{
@@ -212,11 +212,11 @@ public class MLBRTax extends X_LBR_Tax
 			}
 			
 			/**
-			 * 		C·lculo por AlÌquota ou Margem de Valor Agregado
+			 * 		C√°lculo por Al√≠quota ou Margem de Valor Agregado
 			 */
 			else if (calculationType == TYPE_RATE_OR_IVA)
 			{
-				//	Calcular por fÛrmula
+				//	Calcular por f√≥rmula
 				if (taxFormula != null)
 				{
 					//	Fator do imposto
@@ -226,19 +226,19 @@ public class MLBRTax extends X_LBR_Tax
 					if (taxFormula.getLBR_FormulaAdd_ID() > 0)
 						taxBaseAdd = evalFormula (taxFormula.getLBR_FormulaAdd().getLBR_Formula(), params).setScale(17, BigDecimal.ROUND_HALF_UP);
 					
-					//	Valor base para Ìnicio do c·lculo
+					//	Valor base para in√≠cio do c√°lculo
 					if (taxFormula.getLBR_FormulaBase_ID() > 0)
 						amountBase = evalFormula (taxFormula.getLBR_FormulaBase().getLBR_Formula(), params).setScale(17, BigDecimal.ROUND_HALF_UP);
 					
-					//	Caso n„o tenha sido parametrizado, utilizar apenas o valor do documento
+					//	Caso n√£o tenha sido parametrizado, utilizar apenas o valor do documento
 					else
 						amountBase = params.get(AMT).setScale(17, BigDecimal.ROUND_HALF_UP);
 					
-					//	Marca se o imposto est· incluso no preÁo
+					//	Marca se o imposto est√° incluso no pre√ßo
 					taxLine.setIsTaxIncluded(taxFormula.isTaxIncluded());
 				}
 				
-				//	Caso n„o tenha uma fÛrmula atribuida, considerar o flag da Lista de PreÁos
+				//	Caso n√£o tenha uma f√≥rmula atribuida, considerar o flag da Tabela de Pre√ßos
 				else
 					taxLine.setIsTaxIncluded(isTaxIncludedPriceList);
 				
@@ -259,7 +259,7 @@ public class MLBRTax extends X_LBR_Tax
 			{
 				for (MLBRTaxLine taxLineSubs : taxLines)
 				{
-					//	Calcula a diferenÁa do imposto
+					//	Calcula a diferen√ßa do imposto
 					if (taxLineSubs.getLBR_TaxName_ID() == taxName.getLBR_TaxSubstitution_ID())
 					{
 						taxAmt = taxAmt.subtract (taxLineSubs.getLBR_TaxAmt());
@@ -268,12 +268,12 @@ public class MLBRTax extends X_LBR_Tax
 				}
 			}
 			
-			//	Inverte o valor dos impostos para os casos de retenÁ„o
+			//	Inverte o valor dos impostos para os casos de reten√ß√£o
 			if (MLBRTaxName.LBR_TAXTYPE_Service.equals(taxName.getLBR_TaxType())
 					&& taxName.isLBR_HasWithHold())
 				taxAmt = taxAmt.negate();
 			
-			//	N„o postar
+			//	N√£o postar
 //			if (!taxLine.islbr_PostTax())
 //			{
 //				taxBase = Env.ZERO;
@@ -299,7 +299,7 @@ public class MLBRTax extends X_LBR_Tax
 		//
 		for (MLBRTaxLine taxLineSubs : taxLines)
 		{
-			//	Calcula a diferenÁa do imposto
+			//	Calcula a diferen√ßa do imposto
 			if (includedTaxes.contains(taxLineSubs.getLBR_TaxName_ID()))
 			{
 				included = included.add (taxLineSubs.getLBR_TaxAmt());
@@ -359,14 +359,14 @@ public class MLBRTax extends X_LBR_Tax
 			log.finer ("Formula=" + formula);
 			
 			/**
-			 * 	Permite recursividade nas fÛrmulas
+			 * 	Permite recursividade nas f√≥rmulas
 			 */
 			formula = MLBRFormula.parseFormulas (formula);
 			
 			/**
-			 * 	Assim o erro de divis„o por ZERO È evitado
-			 * 		ent„o n„o implica em ter que criar uma fÛrmula nova
-			 * 		para casos onde alguma alÌquota especÌfica È zero.
+			 * 	Assim o erro de divis√£o por ZERO √© evitado
+			 * 		ent√£o n√£o implica em ter que criar uma f√≥rmula nova
+			 * 		para casos onde alguma al√≠quota espec√≠fica √© zero.
 			 */
 			for (MLBRTaxName txName : MLBRTaxName.getTaxNames())
 				if (formula.indexOf(txName.getName().trim()) > 0)
@@ -375,7 +375,7 @@ public class MLBRTax extends X_LBR_Tax
 					bsh.set(txName.getName().trim(), 1/Math.pow (10, 17));
 				}
 			
-			//	Ajusta as alÌquotas
+			//	Ajusta as al√≠quotas
 			for (MLBRTaxLine tLine : getLines())
 			{
 				Double amt = tLine.getLBR_TaxRate().setScale(17, BigDecimal.ROUND_HALF_UP)
@@ -384,7 +384,7 @@ public class MLBRTax extends X_LBR_Tax
 				log.finer ("Set Tax Rate, TaxName=" + tLine.getLBR_TaxName().getName().trim() + "=" + amt);
 				bsh.set(tLine.getLBR_TaxName().getName().trim(), amt);
 			}
-			//	Ajusta os par‚metros opcionais (ex. Frete, SISCOMEX)
+			//	Ajusta os par√¢metros opcionais (ex. Frete, SISCOMEX)
 			if (params != null) for (String key : params.keySet())
 			{				
 				BigDecimal value = params.get(key);
@@ -590,7 +590,7 @@ public class MLBRTax extends X_LBR_Tax
 	/**
 	 * 		Retorna o registro do imposto baseado na pesquisa
 	 * 
-	 * 		N„o usar este mÈtodo em Callouts, pois a Callout pode acion·=lo antes que 
+	 * 		N√£o usar este m√©todo em Callouts, pois a Callout pode acion√°-lo antes que 
 	 * 			a linha tenha sido salva.
 	 * 
 	 * 	@param ctx context
@@ -613,7 +613,7 @@ public class MLBRTax extends X_LBR_Tax
 	/**
 	 * 		Retorna o registro do imposto baseado na pesquisa
 	 * 
-	 * 		N„o usar este mÈtodo em Callouts, pois a Callout pode acion·=lo antes que 
+	 * 		N√£o usar este m√©todo em Callouts, pois a Callout pode acion√°-lo antes que 
 	 * 			a linha tenha sido salva.
 	 * 
 	 * 	@param ctx context
@@ -750,7 +750,7 @@ public class MLBRTax extends X_LBR_Tax
 		}
 		
 		/**
-		 * 	Janela de ConfiguraÁ„o de Impostos
+		 * 	Janela de Configura√ß√£o de Impostos
 		 */
 		MLBRTaxConfiguration tc = MLBRTaxConfiguration.get (ctx, oi.getAD_Org_ID(), p.getM_Product_ID(), 
 				0, isSOTrx, trxName);
@@ -877,7 +877,7 @@ public class MLBRTax extends X_LBR_Tax
 			lbr_DestionationType = X_LBR_CFOPLine.LBR_DESTIONATIONTYPE_ZonaFranca;
 		
 		/**
-		 * 	ImportaÁ„o ou ExportaÁ„o
+		 * 	Importa√ß√£o ou Exporta√ß√£o
 		 */
 		else if (bpLoc != null && (oiLocation.getC_Location_ID() < 1 || bpLoc.getC_Location().getC_Country_ID() != oiLocation.getC_Country_ID()))
 			lbr_DestionationType = X_LBR_CFOPLine.LBR_DESTIONATIONTYPE_Estrangeiro;

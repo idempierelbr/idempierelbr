@@ -7,7 +7,7 @@ import org.compiere.model.PO;
 import org.compiere.util.Env;
 
 /**
- * Esta classe é uma implementação da model factory.
+ * Esta classe Ã© uma implementaÃ§Ã£o da model factory.
  * Ela fornece uma forma centralizada para o mecanismo de models.
  *
  * @author Alan <alan.lesc1@gmail.com>

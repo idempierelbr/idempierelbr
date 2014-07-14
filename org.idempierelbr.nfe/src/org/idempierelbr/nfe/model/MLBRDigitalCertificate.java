@@ -90,10 +90,10 @@ public class MLBRDigitalCertificate extends X_LBR_DigitalCertificate
 		MLBRDigitalCertificate dcICP = MLBRDigitalCertificate.getICPTrustStore();
 		
 		if (dcICP != null)
-			//	TrustStore dinamica, compatÌvel com todos os endereÁos da NF-e
+			//	TrustStore dinamica, compat√≠vel com todos os endere√ßos da NF-e
 			setTrustStoreDynamic (dcOrg, dcICP);
 		else
-			//	Necess·rio um certificado para cada webservice
+			//	Necess√°rio um certificado para cada webservice
 			setTrustStore (dcOrg, dcWS);
 	}	//	setCertificate
 
@@ -110,7 +110,7 @@ public class MLBRDigitalCertificate extends X_LBR_DigitalCertificate
 		String certType = null;
 		InputStream certFileOrg = null;
 
-		//	PKCS11 - A3 (Cart„o)
+		//	PKCS11 - A3 (Cart√£o)
 		if (MLBRDigitalCertificate.LBR_CERTTYPE_PKCS11.equals (dcOrg.getLBR_CertType()))
 		{
 			certType = "PKCS11";
@@ -339,7 +339,7 @@ public class MLBRDigitalCertificate extends X_LBR_DigitalCertificate
 	}
 	
 	/**
-	 * 	Gera um arquivo de configuraÁ„o para o SmartCard, de acordo com o SO
+	 * 	Gera um arquivo de configura√ß√£o para o SmartCard, de acordo com o SO
 	 * 	@return configuration file or null for error
 	 */
 	public String getConfigurationFile ()

@@ -302,7 +302,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 			int linked2OrgC_BPartner_ID = org.getLinkedC_BPartner_ID(get_TrxName());
 			
 			if (linked2OrgC_BPartner_ID < 1)
-				return "Nenhum Parceiro vinculado à Organização";
+				return "Nenhum Parceiro vinculado Ã  OrganizaÃ§Ã£o";
 			
 			MBPartner bpLinked2Org = new MBPartner(getCtx(), linked2OrgC_BPartner_ID, get_TrxName());
 			
@@ -312,7 +312,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 				det.setVersao(NFeUtil.VERSAO_CCE);
 				det.setXCorrecao(line.getLBR_CorrectionReason().trim());
 				
-				// Informações
+				// InformaÃ§Ãµes
 				InfEvento cce = new InfEvento();
 				cce.setCOrgao(orgRegion.get_ValueAsString("LBR_RegionCode"));
 				cce.setTpAmb(nfDocType.get_ValueAsString("LBR_NFeEnv"));				
@@ -342,7 +342,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 				log.fine("Signing NF-e XML");
 				AssinaturaDigital.Assinar(xmlFile, orgInfo, AssinaturaDigital.CARTADECORRECAO_CCE);
 				
-				// Lê o arquivo assinado
+				// LÃª o arquivo assinado
 				xstream = new XStream(new DomDriver("UTF-8"));
 				xstream.alias("detEvento", I_DetEvento.class, DetEventoCartaDeCorrecao.class);
 				xstream.processAnnotations(classForAnnotation);
@@ -352,7 +352,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 				// Popula o envio do Evento com o XML assinado
 				env.addEvento(evento);
 				
-				// Validação envio
+				// ValidaÃ§Ã£o envio
 				/*String validation = ValidaXML.ValidaDoc(xml.toString(), "Evento_CCe_PL_v1.01/envCCe_v1.00.xsd");
 				if (!validation.equals(""))
 					return validation;*/
@@ -365,7 +365,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 				det.setnProt(nf.getLBR_LotSendingProt());
 				det.setxJust(TextUtil.retiraEspecial(line.getLBR_Justification().trim()));
 				
-				// Informações
+				// InformaÃ§Ãµes
 				InfEvento cancel = new InfEvento();
 				cancel.setCOrgao(orgRegion.get_ValueAsString("LBR_RegionCode"));
 				cancel.setTpAmb(nfDocType.get_ValueAsString("LBR_NFeEnv"));	
@@ -395,7 +395,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 				log.fine("Signing NF-e XML");
 				AssinaturaDigital.Assinar(xmlFile, orgInfo, AssinaturaDigital.CARTADECORRECAO_CCE);
 				
-				// Lê o arquivo assinado
+				// LÃª o arquivo assinado
 				xstream = new XStream(new DomDriver("UTF-8"));
 				xstream.alias("detEvento", I_DetEvento.class, DetEventoCancelamento.class);
 				xstream.processAnnotations(classForAnnotation);
@@ -405,7 +405,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 				// Popula o envio do Evento com o XML assinado
 				env.addEvento(evento);
 				
-				// Validação envio
+				// ValidaÃ§Ã£o envio
 				/*String validation = ValidaXML.ValidaDoc(xml.toString(), "Evento_Canc_PL_v1.01/envEventoCancNFe_v1.00.xsd");
 				if (!validation.equals(""))
 					return validation;*/

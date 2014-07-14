@@ -2,7 +2,7 @@ SET SQLBLANKLINES ON
 SET DEFINE OFF
 
 -- 26/12/2013 12h7min35s BRST
--- Cria colunas para informações brasileiras na tabela Parceiro de Negócios
+-- Cria colunas para informaÃ§Ãµes brasileiras na tabela Parceiro de NegÃ³cios
 INSERT INTO AD_Element (ColumnName,AD_Element_ID,Help,Name,Description,PrintName,AD_Element_UU,Created,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType) VALUES ('LBR_BPTypeBR',1000003,'Used to identify if the Business Partner is a Legal Entity or an Individual','Brazilian BP Type','Brazilian BP Type (identifies if the BP is a Legal Entity or an Individual)','Brazilian BP Type','4e48f0ae-f231-4474-aa5d-5898c94710d1',TO_DATE('2013-12-26 12:07:35','YYYY-MM-DD HH24:MI:SS'),TO_DATE('2013-12-26 12:07:35','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'LBR')
 ;
 

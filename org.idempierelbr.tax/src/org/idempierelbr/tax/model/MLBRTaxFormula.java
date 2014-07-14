@@ -18,7 +18,7 @@ import java.sql.ResultSet;
 import java.util.Properties;
 
 /**
- * 		FÛrmulas relacionadas no cadastro dos impostos
+ * 		F√≥rmulas relacionadas no cadastro dos impostos
  * 
  * 	@author Ricardo Santana (Kenos, www.kenos.com.br)
  * 			<li> Sponsored by Soliton, www.soliton.com.br
@@ -54,8 +54,8 @@ public class MLBRTaxFormula extends X_LBR_TaxFormula
 	}	//	MLBRTaxFormula
 	
 	/**
-	 * 		Retorna a formula para c·lculo do fator. 
-	 * 	Este fator multiplicado pelo valor ir· gerar a base de c·lculo para c·lculo do imposto.
+	 * 		Retorna a formula para c√°lculo do fator. 
+	 * 	Este fator multiplicado pelo valor ir√° gerar a base de c√°lculo para c√°lculo do imposto.
 	 * 
 	 * 	@param isTaxIncluded
 	 * 	@return formula

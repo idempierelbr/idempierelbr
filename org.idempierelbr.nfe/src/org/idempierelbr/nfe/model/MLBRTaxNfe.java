@@ -41,7 +41,7 @@ public class MLBRTaxNfe extends MLBRTax
 	/**
 	 * 		Retorna o registro do imposto baseado na pesquisa
 	 * 
-	 * 		N„o usar este mÈtodo em Callouts, pois a Callout pode acion·=lo antes que 
+	 * 		N√£o usar este m√©todo em Callouts, pois a Callout pode acion√°-lo antes que 
 	 * 			a linha tenha sido salva.
 	 * 
 	 * 	@param ctx context

@@ -115,7 +115,7 @@ public class MLBRTaxName extends X_LBR_TaxName
 			return false;
 		}
 		//
-		String taxName = getName().trim().replaceAll("[^A-Za-z]*", "");	//	Salva sempre sem espaços
+		String taxName = getName().trim().replaceAll("[^A-Za-z]*", "");	//	Salva sempre sem espaÃ§os
 		if (taxName.length() == 0)
 		{
 			log.saveError("FillMandatory", Msg.getElement(getCtx(), "Name"));

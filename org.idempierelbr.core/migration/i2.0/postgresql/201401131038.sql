@@ -1,5 +1,5 @@
 -- 13/01/2014 9h56min46s BRST
--- Criação da Tabela e janela: NCM
+-- CriaÃ§Ã£o da Tabela e janela: NCM
 INSERT INTO AD_Table (ImportTable,CopyColumnsFromTable,IsSecurityEnabled,AccessLevel,LoadSeq,AD_Table_ID,IsHighVolume,IsView,IsChangeLog,EntityType,ReplicationType,AD_Table_UU,IsCentrallyMaintained,IsDeleteable,TableName,Description,Name,IsActive,AD_Org_ID,CreatedBy,Updated,UpdatedBy,Created,AD_Client_ID,Processing,DatabaseViewDrop) VALUES ('N','N','N','6',0,1000000,'Y','N','N','LBR','L','362b9bb0-f594-409e-85e3-99c42175938f','Y','Y','LBR_NCM','NCM - Nomenclatura Comum do MERCOSUL','NCM','Y',0,0,TO_TIMESTAMP('2014-01-13 09:56:46','YYYY-MM-DD HH24:MI:SS'),0,TO_TIMESTAMP('2014-01-13 09:56:46','YYYY-MM-DD HH24:MI:SS'),0,'N','N')
 ;
 

@@ -112,7 +112,7 @@ public class NFeXMLGenerator {
 	 * Gera o corpo da NF
 	 * 
 	 * @param LBR_NotaFiscal_ID
-	 * @param trxName Transação
+	 * @param trxName TransaÃ§Ã£o
 	 * @return
 	 */
 	public static String geraCorpoNFe (Properties ctx, int LBR_NotaFiscal_ID, String trxName) throws Exception {
@@ -125,7 +125,7 @@ public class NFeXMLGenerator {
 		XStream xstream = new XStream();
 		xstream.autodetectAnnotations(true);
 
-		// A. Dados da Nota Fiscal eletrônica
+		// A. Dados da Nota Fiscal eletrÃ´nica
 		DadosNFE dados = new DadosNFE();
 		xstream.alias("infNFe", DadosNFE.class);
 		xstream.useAttributeFor(DadosNFE.class, "versao");
@@ -139,7 +139,7 @@ public class NFeXMLGenerator {
 		int linked2OrgC_BPartner_ID = org.getLinkedC_BPartner_ID(trxName);
 		
 		if (linked2OrgC_BPartner_ID < 1)
-			return "Nenhum Parceiro vinculado à Organização";
+			return "Nenhum Parceiro vinculado Ã  OrganizaÃ§Ã£o";
 		
 		MBPartner bpLinked2Org = new MBPartner(ctx, linked2OrgC_BPartner_ID, trxName);
 
@@ -164,52 +164,52 @@ public class NFeXMLGenerator {
 
 		/**
 		 * Indicador da forma de pagamento:
-		 * 0 – pagamento à vista
-		 * 1 – pagamento à prazo
-		 * 2 – outros
+		 * 0 - pagamento a vista
+		 * 1 - pagamento a prazo
+		 * 2 - outros
 		 */
 		String indPag = nf.getPaymentRule();
 
 		//	Tipo de Documento
 		MDocType docType = new MDocType(ctx, nf.getC_DocType_ID(), trxName);
 		
-		/** Identificação do Ambiente (1 - Produção; 2 - Homologação) */
+		/** IdentificaÃ§Ã£o do Ambiente (1 - ProduÃ§Ã£o; 2 - HomologaÃ§Ã£o) */
 		String tpAmb = docType.get_ValueAsString("LBR_NFeEnv");
 
-		/** Formato de impressão do DANFE (1 - Retrato; 2 - Paisagem) */
+		/** Formato de impressÃ£o do DANFE (1 - Retrato; 2 - Paisagem) */
 		String tpImp = docType.get_ValueAsString("LBR_DANFEFormat");
 
 		/**
-		 * Processo de emissão utilizado com a seguinte codificação:
-		 * 0 - emissão de NF-e com aplicativo do contribuinte
-		 * 1 - emissão de NF-e avulsa pelo Fisco
-		 * 2 - emissão de NF-e avulsa, pelo contribuinte com seu certificado digital, através do site do Fisco
-		 * 3 - emissão de NF-e pelo contribuinte com aplicativo fornecido pelo Fisco
+		 * Processo de emissÃ£o utilizado com a seguinte codificaÃ§Ã£o:
+		 * 0 - emissÃ£o de NF-e com aplicativo do contribuinte
+		 * 1 - emissÃ£o de NF-e avulsa pelo Fisco
+		 * 2 - emissÃ£o de NF-e avulsa, pelo contribuinte com seu certificado digital, atravÃ©s do site do Fisco
+		 * 3 - emissÃ£o de NF-e pelo contribuinte com aplicativo fornecido pelo Fisco
 		 */
 		String procEmi = "0";
 		
-		/** Versão do aplicativo utilizado no processo de emissão */
+		/** VersÃ£o do aplicativo utilizado no processo de emissÃ£o */
 		String verProc = NFeUtil.VERSAO_APP;
 
 		/**
-		 * Forma de emissão da NF-e:
+		 * Forma de emissÃ£o da NF-e:
 		 * 1 - Normal
-		 * 2 - Contingência FS
-		 * 3 - Contingência SCAN
-		 * 4 - Contingência DPEC
-		 * 5 - Contingência FSDA
+		 * 2 - ContingÃªncia FS
+		 * 3 - ContingÃªncia SCAN
+		 * 4 - ContingÃªncia DPEC
+		 * 5 - ContingÃªncia FSDA
 		 */
 		String tpEmis = nf.getLBR_NFeTpEmis();
 
 		/**
-		 * Finalidade da emissão da NF-e:
+		 * Finalidade da emissÃ£o da NF-e:
 		 * 1 - NFe normal
 		 * 2 - NFe complementar
 		 * 3 - NFe de ajuste
 		 */
 		String FinNFE = nf.getLBR_FinNFe();
 		
-		// Identificação NFE
+		// IdentificaÃ§Ã£o NFE
 		if (FinNFE.equals("2"))
 		{
 			// TODO: refatorar
@@ -220,9 +220,9 @@ public class NFeXMLGenerator {
 		
 		/**
 		 * CRT
-		 * 1 – Simples Nacional (SN)
-		 * 2 – Simples Nacional – excesso de sublimite de receita bruta;
-		 * 3 – Regime Normal (TN)
+		 * 1 - Simples Nacional (SN)
+		 * 2 - Simples Nacional - excesso de sublimite de receita bruta;
+		 * 3 - Regime Normal (TN)
 		 */
 		String CRT = MSysConfig.getValue ("LBR_ICMS_REGIME", "TN", nf.getAD_Client_ID(), nf.getAD_Org_ID());
 		
@@ -258,7 +258,7 @@ public class NFeXMLGenerator {
 		String TSaiEnt 	= TextUtil.timeToString(dateSaiEnt, "HH:mm:ss");
 		String timezone = AdempiereLBR.getTimezone(nf.getAD_Client_ID(), nf.getAD_Org_ID());
 		
-		// B. Identificação da Nota Fiscal eletrônica
+		// B. IdentificaÃ§Ã£o da Nota Fiscal eletrÃ´nica
 		IdentNFE identNFe = new IdentNFE();
 		identNFe.setcUF(chaveNFE.getCUF());
 		identNFe.setcNF(chaveNFE.getCNF());
@@ -435,7 +435,7 @@ public class NFeXMLGenerator {
 
 		dados.setIde(identNFe);
 		
-		// C. Identificação do Emitente da Nota Fiscal eletrônica
+		// C. IdentificaÃ§Ã£o do Emitente da Nota Fiscal eletrÃ´nica
 		IdentEmit emitente = new IdentEmit();
 		emitente.setCNPJ(chaveNFE.getCNPJ());
 		String orgNome = RemoverAcentos.remover(bpLinked2Org.getName());
@@ -465,7 +465,7 @@ public class NFeXMLGenerator {
 		
 		String orgIE = bpLinked2Org.get_ValueAsString("LBR_IE");
 		UF uf = UF.valueOf(orgRegion.getName());
-		// Validação IE
+		// ValidaÃ§Ã£o IE
 		orgIE = BPartnerUtilNfe.validaIE(orgIE,uf);
 		
 		if (orgIE == null)
@@ -483,7 +483,7 @@ public class NFeXMLGenerator {
 		emitente.setCRT(CRT);
 		dados.setEmit(emitente);
 
-		// E. Identificação do Destinatário da Nota Fiscal eletrônica
+		// E. IdentificaÃ§Ã£o do DestinatÃ¡rio da Nota Fiscal eletrÃ´nica
 		IdentDest destinatario = new IdentDest();
 		String bpCNPJ = TextUtil.formatStringCodes(bp.get_ValueAsString("LBR_CNPJ"));
 		
@@ -542,7 +542,7 @@ public class NFeXMLGenerator {
 		boolean bpIEIsento = bp.get_ValueAsBoolean("LBR_IsIEExempt");
 		uf = UF.valueOf(bpLoc.getRegionName());
 
-		// Validação IE
+		// ValidaÃ§Ã£o IE
 		bpIE = BPartnerUtilNfe.validaIE(bpIE,uf);
 		
 		if (bpIE == null && !bpIEIsento) {
@@ -561,7 +561,7 @@ public class NFeXMLGenerator {
 		if (!suframa.isEmpty())	
 			destinatario.setISUF(suframa);
 		
-		// Homologação
+		// HomologaÃ§Ã£o
 		if (tpAmb.equals("2")){
 			if (uf != null){
 				destinatario.setCPF(null);
@@ -575,7 +575,7 @@ public class NFeXMLGenerator {
 		destinatario.setEnderDest(enderDest);
 		dados.setDest(destinatario);
 		
-		// F. Identificação do Local de Retirada
+		// F. IdentificaÃ§Ã£o do Local de Retirada
 		if (nf.getLBR_BP_Pickup_ID() > 0) {
 			IdentLocRetirada retirada = new IdentLocRetirada();
 			MBPartner bpRetirada = new MBPartner(ctx, nf.getLBR_BP_Pickup_ID(), trxName);
@@ -690,7 +690,7 @@ public class NFeXMLGenerator {
 			dados.setEntrega(entrega);
 		}
 		
-		// H. Detalhamento de Produtos e Serviços da NF-e
+		// H. Detalhamento de Produtos e ServiÃ§os da NF-e
 		MLBRNotaFiscalLine[] nfLines = nf.getLines();
 		int linhaNF = 1;
 		
@@ -789,18 +789,18 @@ public class NFeXMLGenerator {
 			
 			produtos.setIndTot(details.isLBR_IsGrossAmtInTotal() ? "1" : "0");
 			
-			// Declaração de Importação
+			// DeclaraÃ§Ã£o de ImportaÃ§Ã£o
 			// TODO: Refatorar DI
 			/*DeclaracaoDI declaracao = new DeclaracaoDI();
-			//Importação - nDI Obrigatório
+			//ImportaÃ§Ã£o - nDI ObrigatÃ³rio
 			if (nfLine.getlbr_CFOPName() != null &&
 					nfLine.getlbr_CFOPName().startsWith("3")){
 				if (nfLine.get_Value("LBR_NFDI_ID") == null)
-					return "Linha: " + nfLine.getLine() + " CFOP Importação. " +
-							"DI Obrigatório!";
+					return "Linha: " + nfLine.getLine() + " CFOP ImportaÃ§Ã£o. " +
+							"DI ObrigatÃ³rio!";
 			}
 
-			//	DI e Adições
+			//	DI e AdiÃ§Ãµes
 			if (nfLine.get_Value("LBR_NFDI_ID") != null) {
 				X_LBR_NFDI di = new X_LBR_NFDI(Env.getCtx(), (Integer) nfLine.get_Value("LBR_NFDI_ID"), null);
 				//
@@ -833,7 +833,7 @@ public class NFeXMLGenerator {
 			if (details.getLBR_FCIControlNo() != null)
 				produtos.setnFCI(details.getLBR_FCIControlNo());
 			
-			// Tributos incidentes no Produto ou Serviço
+			// Tributos incidentes no Produto ou ServiÃ§o
 			TributosInciBean impostos = new TributosInciBean();
 			String desc = RemoverAcentos.remover(TextUtil.removeEOL(details.get_ValueAsString("Memo")));
 			
@@ -935,11 +935,11 @@ public class NFeXMLGenerator {
 		valoresicms.setvICMSDeson(TextUtil.ZERO_STRING); // vICMS - Valor Total do ICMS desonerado
 		valoresicms.setvBCST(TextUtil.ZERO_STRING); // vBCST - BC do ICMS ST
 		valoresicms.setvST(TextUtil.ZERO_STRING); // vST - Valor Total do ICMS ST
-		valoresicms.setvProd(TextUtil.bigdecimalToString(nf.getTotalLines())); // vProd - Valor Total dos produtos e serviços
-		// TODO: refatorar valores de frete/seguro/despesas acessórias
+		valoresicms.setvProd(TextUtil.bigdecimalToString(nf.getTotalLines())); // vProd - Valor Total dos produtos e serviÃ§os
+		// TODO: refatorar valores de frete/seguro/despesas acessÃ³rias
 		valoresicms.setvFrete(TextUtil.ZERO_STRING); // vFrete - Valor Total do Frete
 		valoresicms.setvSeg(TextUtil.ZERO_STRING); // vSeg - Valor Total do Seguro
-		valoresicms.setvOutro(TextUtil.ZERO_STRING); // vOutro - Despesa acessórias
+		valoresicms.setvOutro(TextUtil.ZERO_STRING); // vOutro - Despesa acessÃ³rias
 		BigDecimal vDesc = nf.getDiscount(); // Valor do Desconto total da NF
 		valoresicms.setvDesc(TextUtil.bigdecimalToString(vDesc)); // vDesc - Valor Total do Desconto
 		valoresicms.setvII(TextUtil.ZERO_STRING); // vII - Valor Total do II
@@ -985,7 +985,7 @@ public class NFeXMLGenerator {
 		valores.setICMSTot(valoresicms);
 		dados.setTotal(valores);
 	
-		// X. Informações de Transporte da NF-e
+		// X. InformaÃ§Ãµes de Transporte da NF-e
 		MLBRNotaFiscalTransp transp = nf.getTransp();
 		Transporte transporte = new Transporte();
 		TransporteGrupo transgrupo = new TransporteGrupo();
@@ -1020,7 +1020,7 @@ public class NFeXMLGenerator {
 						if (shipperIEIsento)
 							transgrupo.setIE("ISENTO");
 						else {
-							// Validação IE
+							// ValidaÃ§Ã£o IE
 							shipperIE = BPartnerUtilNfe.validaIE(shipperIE, shipperUF);
 							
 							if (shipperIE == null)
@@ -1031,7 +1031,7 @@ public class NFeXMLGenerator {
 					}
 
 					String end = (transpLoc.getAddress1() == null ? "" : transpLoc.getAddress1() + ", ") + 	//	Rua
-						(transpLoc.getAddress2() == null ? "" : transpLoc.getAddress2() + " - ") + 			//	Número
+						(transpLoc.getAddress2() == null ? "" : transpLoc.getAddress2() + " - ") + 			//	NÃºmero
 						(transpLoc.getAddress4() == null ? "" : transpLoc.getAddress4() + " - ") +			//	Complemento
 						(transpLoc.getAddress3() == null ? "" : transpLoc.getAddress3());					//	Bairro
 
@@ -1085,7 +1085,7 @@ public class NFeXMLGenerator {
 			xstream.addImplicitCollection(Transporte.class, "reboques");
 			xstream.alias("reboque", TransporteReboque.class);
 			
-			// Veículo / Reboque
+			// VeÃ­culo / Reboque
 			if (transp.getLBR_NFeTranspVehicleType().equals("0")) {
 				TransporteGrupoVeiculos transVeic = new TransporteGrupoVeiculos(); 
 				
@@ -1130,7 +1130,7 @@ public class NFeXMLGenerator {
 			else if (transp.getLBR_NFeTranspVehicleType().equals("1")) {
 				transporte.setBalsa(transp.getLBR_Ferry());
 			}
-			// Vagão
+			// VagÃ£o
 			else if (transp.getLBR_NFeTranspVehicleType().equals("2")) {
 				transporte.setVagao(transp.getLBR_Wagon());
 			}
@@ -1182,7 +1182,7 @@ public class NFeXMLGenerator {
 		
 		dados.setTransp(transporte);
 
-		// Y. Dados da Cobrança
+		// Y. Dados da CobranÃ§a
 		MLBRNotaFiscalPay[] pays = nf.getPay();
 		
 		if (pays.length > 0) {
@@ -1233,12 +1233,12 @@ public class NFeXMLGenerator {
 			}
 		}
 		
-		// TODO: Quando preparar DI, corrigir localização/função destas linhas
+		// TODO: Quando preparar DI, corrigir localizaÃ§Ã£o/funÃ§Ã£o destas linhas
 		xstream.alias("adi", AdicoesDI.class);
 		xstream.addImplicitCollection(DeclaracaoDI.class, "adi");
 		xstream.omitField(AdicoesDI.class, "nDI");
 		
-		// Z. Informações Adicionais da NF-e
+		// Z. InformaÃ§Ãµes Adicionais da NF-e
 		String fiscalInfo = nf.getLBR_FiscalInfo();
 		String taxPayerInfo = nf.getLBR_TaxPayerInfo();
 		X_LBR_NotaFiscalNote[] notes = nf.getNotes();

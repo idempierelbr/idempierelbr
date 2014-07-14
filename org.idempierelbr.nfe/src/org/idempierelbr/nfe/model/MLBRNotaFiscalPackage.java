@@ -4,9 +4,12 @@ import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.Properties;
 
-import org.compiere.util.Env;
-
 public class MLBRNotaFiscalPackage extends X_LBR_NotaFiscalPackage {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -88393430765239748L;
 
 	public MLBRNotaFiscalPackage(Properties ctx, int LBR_NotaFiscalPackage_ID,
 			String trxName) {

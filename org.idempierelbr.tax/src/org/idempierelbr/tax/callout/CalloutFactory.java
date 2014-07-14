@@ -13,8 +13,8 @@ import org.idempierelbr.tax.model.MLBRDocLineIPI;
 import org.idempierelbr.tax.model.MLBRDocLinePIS;
 
 /**
- * Esta classe é uma implementação da callout factory.
- * Ela fornece uma forma centralizada para o mecanismo de callout.
+ * This class implements the callout factory.
+ * It provides a centralized mechanism for callout.
  *
  * @author Alan <alan.lesc1@gmail.com>
  */

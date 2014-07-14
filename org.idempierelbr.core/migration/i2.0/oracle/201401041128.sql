@@ -2,7 +2,7 @@ SET SQLBLANKLINES ON
 SET DEFINE OFF
 
 -- 04/01/2014 10h34min27s BRST
--- Funcionalidade LBR_USE_UNIFIED_BP: criação de colunas e campos
+-- Funcionalidade LBR_USE_UNIFIED_BP: criaÃ§Ã£o de colunas e campos
 INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,DefaultValue,Help,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,AD_Client_ID,IsEncrypted,IsSecure,FKConstraintType,AD_Element_ID,AD_Reference_ID,AD_Table_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,1000012,'N','N','N',0,'N',1,'N','N','N','Y','b329a341-f4bc-44b9-9309-909859f91d82','Y','LBR_BPTypeBRIsValid','Brazilian BP is Valid','''N''','Indicates the CNPJ/CPF is valid and there are no duplicates in DB. It''s not possible to change CNPJ/CPF after validation','Brazilian BP Valid','Y',TO_DATE('2014-01-04 10:34:27','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2014-01-04 10:34:27','YYYY-MM-DD HH24:MI:SS'),0,'N','N',0,'N','N','N',1000011,20,293,0,'LBR')
 ;
 

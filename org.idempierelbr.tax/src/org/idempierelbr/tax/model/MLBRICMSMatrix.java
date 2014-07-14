@@ -60,7 +60,7 @@ public class MLBRICMSMatrix extends X_LBR_ICMSMatrix
 	}	//	MLBRICMSMatrix
 
 	/**
-	 *  	Retorna a configuração da Matriz de ICMS
+	 *  	Retorna a configuraÃ§Ã£o da Matriz de ICMS
 	 *  
 	 *  @return MLBRICMSMatrix matriz
 	 */

@@ -47,13 +47,13 @@ public class ValidaXML
 	private static CLogger log = CLogger.getCLogger(ValidaXML.class);
 	
 	/**
-	 * Variavel que armazena os arquivos para validaÁ„o da Nota Fiscal de forma Static,
-	 * deixando os arquivos em memÛria apÛs a primeira chamada.
+	 * Variavel que armazena os arquivos para valida√ß√£o da Nota Fiscal de forma Static,
+	 * deixando os arquivos em mem√≥ria ap√≥s a primeira chamada.
 	 */
 	private static Map<String,Validator> mapvalidator = new HashMap<String,Validator>();
 	
 	/** 
-	 * 		MÈtodo que faz a validaÁ„o de arquivos XML. 
+	 * 		M√©todo que faz a valida√ß√£o de arquivos XML. 
 	 * 
 	 * @param xmlContent 
 	 * @param xsdName 
@@ -68,7 +68,7 @@ public class ValidaXML
 	}	//	ValidaDocEx
 	
 	 /** 
-	 * MÈtodo que faz a validaÁ„o de arquivos XML. 
+	 * M√©todo que faz a valida√ß√£o de arquivos XML. 
 	 * 
 	 * @param fullFileName 
 	 * @param xsdFullFileName 
@@ -77,7 +77,7 @@ public class ValidaXML
 	 */  
 	public static String ValidaDoc (String fullFileName, String xsdFullFileName)
 	{ 
-		// Guardo os erros de validaÁ„o.   
+		// Guardo os erros de valida√ß√£o.   
 		ErrorHandler errorHandler = new ErrorHandler();
 		
 		try 
@@ -92,7 +92,7 @@ public class ValidaXML
 			documentBuilderFactory.setNamespaceAware(true);  
 			documentBuilderFactory.setValidating(true);  
 	  
-			// Atributos para validaÁ„o.  
+			// Atributos para valida√ß√£o.  
 			documentBuilderFactory.setAttribute("http://java.sun.com/xml/jaxp/properties/schemaLanguage", "http://www.w3.org/2001/XMLSchema");  
 			documentBuilderFactory.setAttribute("http://java.sun.com/xml/jaxp/properties/schemaSource", xsdPath.toURI().toString());  
 	  
@@ -121,9 +121,9 @@ public class ValidaXML
 				mapvalidator.put(xsdFullFileName, validator);
 			}
 			
-			// Indica o objeto que ir· tratar os error. Observe que ao encontrar
-			// um erro, este È simplesmente guardado e processo de validaÁ„o continua.
-			// Efetua a validaÁ„o propriamente. 
+			// Indica o objeto que ir√° tratar os error. Observe que ao encontrar
+			// um erro, este √© simplesmente guardado e processo de valida√ß√£o continua.
+			// Efetua a valida√ß√£o propriamente. 
 			log.fine ("Validating XML...");
 			mapvalidator.get(xsdFullFileName).validate(new DOMSource(document));
 		}

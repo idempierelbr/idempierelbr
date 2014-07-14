@@ -41,7 +41,7 @@ public class TextUtil {
 	public static final String UTF8     = "UTF-8";
 	public static final String ISO88591 = "ISO-8859-1";
 
-	/** Formatação de Números    */
+	/** FormataÃ§Ã£o de NÃºmeros    */
 	private static String nFormat = "#,##0.00";
     private static DecimalFormat decimalFormat = new DecimalFormat(nFormat,
     		new DecimalFormatSymbols(Locale.US));
@@ -63,8 +63,8 @@ public class TextUtil {
 						                  "AK","AL","AM","AN","AO"};
 	
 	/**
-	 * Obtém apenas os números [0-9] de uma String
-	 * @return String apenas os números, null ou vazio
+	 * ObtÃ©m apenas os nÃºmeros [0-9] de uma String
+	 * @return String apenas os nÃºmeros, null ou vazio
 	 */
 	public String getNumbersOnly(String text)
 	{
@@ -163,7 +163,7 @@ public class TextUtil {
 	 * 
 	 * @param dados a serem gravados no arquivo
 	 * @param nome do arquivo
-	 * @param codificação (ex. UTF-8, ISO-8859-1, etc)
+	 * @param codificaÃ§Ã£o (ex. UTF-8, ISO-8859-1, etc)
 	 */
 	public static String generateFile (String data, String filePath, String encoding)
 	{
@@ -175,7 +175,7 @@ public class TextUtil {
 		}
 		catch (UnsupportedEncodingException e)
 		{
-			log.log(Level.SEVERE, "Formato não suportado="+encoding+", arquivo: " + filePath, e);
+			log.log(Level.SEVERE, "Formato nÃ£o suportado="+encoding+", arquivo: " + filePath, e);
 		}
 		catch (IOException e)
 		{
@@ -534,13 +534,13 @@ public class TextUtil {
 	 *
 	 * <BR>Por Exemplo:
 	 * <BR>Uma <tt>{@link String} "14.568-910"</tt>
-	 * <BR>é automaticamente passada para <tt>"14568910"</tt>.
+	 * <BR>Ã© automaticamente passada para <tt>"14568910"</tt>.
 	 * <BR>Uma <tt>{@link String} "1%4#5?55%16a8&910"</tt>
-	 * <BR>é automaticamente passada para <tt>"14555168"</tt>,
-	 * <BR>só levando em conta os números.
+	 * <BR>Ã© automaticamente passada para <tt>"14555168"</tt>,
+	 * <BR>sÃ³ levando em conta os nÃºmeros.
 	 *
 	 * @param 	String Valor Original
-	 * @return	String Somente Números
+	 * @return	String Somente NÃºmeros
 	 * */
 	public static String toNumeric(String value)
 	{
@@ -551,7 +551,7 @@ public class TextUtil {
 	}	//	toNumeric
 
 	/**
-	 * 	Verifica se a string está entre os valores minímos e máximo
+	 * 	Verifica se a string estÃ¡ entre os valores minimos e mÃ¡ximo
 	 *
 	 * @param 	value
 	 * @param 	min
@@ -567,7 +567,7 @@ public class TextUtil {
 	}
 
 	/**
-	 * 	Verifica se a string está entre os valores minímos e máximo
+	 * 	Verifica se a string estÃ¡ entre os valores minimos e mÃ¡ximo
 	 *
 	 * @param 	value
 	 * @param 	min
@@ -582,7 +582,7 @@ public class TextUtil {
 	}
 
 	/**
-	 * 	Verifica se a string está entre os valores minímos e máximo
+	 * 	Verifica se a string estÃ¡ entre os valores minimos e mÃ¡ximo
 	 *
 	 * @param 	value
 	 * @param 	min
@@ -606,7 +606,7 @@ public class TextUtil {
 	}
 
 	/**
-	 * 	Verifica se a string está entre os valores minímos e máximo
+	 * 	Verifica se a string estÃ¡ entre os valores minimos e mÃ¡ximo
 	 *
 	 * @param 	value
 	 * @param 	min
@@ -635,7 +635,7 @@ public class TextUtil {
 	 *
 	 * <BR>Por Exemplo:
 	 * <BR>Um <tt>{@link BigDecimal} "14568.910"</tt>
-	 * <BR>é automaticamente passada para <tt>"14568,910"</tt>.
+	 * <BR>Ã© automaticamente passada para <tt>"14568,910"</tt>.
 	 *
 	 * @param 	BigDecimal Valor Original
 	 * @param 	min
@@ -656,7 +656,7 @@ public class TextUtil {
 	 *
 	 * <BR>Por Exemplo:
 	 * <BR>Um <tt>{@link BigDecimal} "14568.910"</tt>
-	 * <BR>é automaticamente passada para <tt>"14568,910"</tt>.
+	 * <BR>Ã© automaticamente passada para <tt>"14568,910"</tt>.
 	 *
 	 * @param 	BigDecimal Valor Original
 	 * @param 	min
@@ -674,7 +674,7 @@ public class TextUtil {
 	 *
 	 * <BR>Por Exemplo:
 	 * <BR>Um <tt>{@link BigDecimal} "14568.910"</tt>
-	 * <BR>é automaticamente passada para <tt>"14568,910"</tt>.
+	 * <BR>Ã© automaticamente passada para <tt>"14568,910"</tt>.
 	 *
 	 * @param 	BigDecimal Valor Original
 	 * @param 	min
@@ -709,7 +709,7 @@ public class TextUtil {
 	 *
 	 * <BR>Por Exemplo:
 	 * <BR>Um <tt>{@link BigDecimal} "14568.910"</tt>
-	 * <BR>é automaticamente passada para <tt>"14568,910"</tt>.
+	 * <BR>Ã© automaticamente passada para <tt>"14568,910"</tt>.
 	 *
 	 * @param 	BigDecimal Valor Original
 	 * @return	String Numero formatado
@@ -725,7 +725,7 @@ public class TextUtil {
 	 *
 	 * <BR>Por Exemplo:
 	 * <BR>Um <tt>{@link BigDecimal} "14568.910"</tt>
-	 * <BR>é automaticamente passada para <tt>"14568,910"</tt>.
+	 * <BR>Ã© automaticamente passada para <tt>"14568,910"</tt>.
 	 *
 	 * @param 	BigDecimal Valor Original
 	 * @return	String Numero formatado
@@ -745,13 +745,13 @@ public class TextUtil {
 	 *
 	 * <BR>Por Exemplo:
 	 * <BR>Uma <tt>{@link String} "123ABC##&&%%999"</tt>
-	 * <BR>é automaticamente passada para <tt>"123ABC999"</tt>.
+	 * <BR>Ã© automaticamente passada para <tt>"123ABC999"</tt>.
 	 * <BR>Uma <tt>{@link String} "1%4#5?55%16a8&910bbb"</tt>
-	 * <BR>é automaticamente passada para <tt>"1455516a8bbb"</tt>,
-	 * <BR>só levando em conta os números.
+	 * <BR>Ã© automaticamente passada para <tt>"1455516a8bbb"</tt>,
+	 * <BR>sÃ³ levando em conta os nÃºmeros.
 	 *
 	 * @param 	String Valor Original
-	 * @return	String Somente Letras e Números
+	 * @return	String Somente Letras e NÃºmeros
 	 * */
 	public static String retiraEspecial(String value)
 	{
@@ -773,7 +773,7 @@ public class TextUtil {
 	 *
 	 * @param	Timestamp Data
 	 * @param	String Formato da data
-	 * @param	boolean Obrigatório
+	 * @param	boolean ObrigatÃ³rio
 	 * @return	String Data Formatada
 	 * */
 	public static String timeToString(Timestamp ts, String format, boolean mandatory)
@@ -852,7 +852,7 @@ public class TextUtil {
 	} //stringToTime
 
 	/**
-	 * Transforma BigDecimal em String seguindo o padrão #.##0,00
+	 * Transforma BigDecimal em String seguindo o padrÃ£o #.##0,00
 	 * @param value
 	 * @return  String formatada
 	 */
@@ -904,7 +904,7 @@ public class TextUtil {
     }
     
 	/**
-	 * Verifica se uma String contém exclusivamente dígitos
+	 * Verifica se uma String contÃ©m exclusivamente dÃ­gitos
 	 *
 	 * @param documentNo
 	 * @return
@@ -949,11 +949,11 @@ public class TextUtil {
 	} //checkWhereClause
 	
 	/**
-	 * 	Verifica se lista contém uma determinada string.
+	 * 	Verifica se lista contÃ©m uma determinada string.
 	 * 
 	 * 	@param stra
 	 * 	@param strings
-	 * 	@return TRUE se a lista contém a string, senão FALSO
+	 * 	@return TRUE se a lista contÃ©m a string, senÃ£o FALSO
 	 */
 	public static boolean match (Object obj, Object... objects)
 	{

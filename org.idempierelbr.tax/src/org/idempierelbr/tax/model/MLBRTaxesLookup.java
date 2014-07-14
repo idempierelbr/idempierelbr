@@ -27,7 +27,7 @@ import org.compiere.util.NamePair;
  *	
  *	@author Mario Grigioni (Kenos, www.kenos.com.br)
  *	@contributor Ricardo Santana (Kenos, www.kenos.com.br)
- *		<li>	Reforma no módulo de impostos
+ *		<li>	Reforma no mÃ³dulo de impostos
  *	@version $Id: MLBRTaxesLookup.java, v1.0 2007/11/14 13:48:41 AM, mgrigioni Exp $
  */
 public final class MLBRTaxesLookup extends Lookup

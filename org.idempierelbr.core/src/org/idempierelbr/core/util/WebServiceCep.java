@@ -23,13 +23,13 @@ import org.dom4j.io.SAXReader;
 import org.dom4j.io.aelfred2.SAXDriver;
 
 /**
- * Ferramenta de busca de CEP, veja o mÈtodo {@link WebServiceCep#searchCep(String)} para
- * maiores informaÁıes.
+ * Ferramenta de busca de CEP, veja o m√©todo {@link WebServiceCep#searchCep(String)} para
+ * maiores informa√ß√µes.
  * <BR>
  * <BR>Constroi um objeto {@link WebServiceCep} com os dados XML encapsulados, a partir
- * da chamada do mÈtodo estatico {@link WebServiceCep#searchCep(String)}.
+ * da chamada do m√©todo estatico {@link WebServiceCep#searchCep(String)}.
  * <BR>
- * <BR>Objeto contem todas as informaÁıes do XML, alÈm de informaÁıes referente ao
+ * <BR>Objeto contem todas as informa√ß√µes do XML, al√©m de informa√ß√µes referente ao
  * resultado da pesquisa.
  * <BR>
  * <BR>Esta ferramente depende diretamente do pacote <tt>org.dom4j</tt> para fazer o 
@@ -46,27 +46,27 @@ import org.dom4j.io.aelfred2.SAXDriver;
  * <BR>&nbsp; &nbsp; System.out.println("Bairro: "+cep.getBairro());
  * <BR>&nbsp; &nbsp; System.out.println("Cidade: "+
  * 			cep.getCidade()+"/"+ cep.cep());
- * <BR>//caso haja problemas imprime o cÛdigo e msg de erro.
+ * <BR>//caso haja problemas imprime o c√≥digo e msg de erro.
  * <BR>} else {
- * <BR>&nbsp; &nbsp; System.out.println("Erro n˙mero: " + cep.getResulCode());
- * <BR>&nbsp; &nbsp; System.out.println("DescriÁ„o do erro: " + cep.getResultText());
+ * <BR>&nbsp; &nbsp; System.out.println("Erro n√∫mero: " + cep.getResulCode());
+ * <BR>&nbsp; &nbsp; System.out.println("Descri√ß√£o do erro: " + cep.getResultText());
  * <BR>}
  * <BR></tt>
  * <BR>A resposta do console seria:
  * <BR><tt>
  * <BR>Cep: 13345325
  * <BR>Logradouro: Rua Cinco
- * <BR>Bairro: Jardim RÙmulo Zoppi
+ * <BR>Bairro: Jardim R√¥mulo Zoppi
  * <BR>Cidade: Indaiatuba/SP
  * <BR></tt>
- * <BR>Ultima revis„o: 09/01/2009
+ * <BR>Ultima revis√£o: 09/01/2009
  * @author Tomaz Lavieri
  */
 public final class WebServiceCep {
 	
 /* Classes Internas, que auxiliam na busca do CEP */
 	/**
-	 * Enumeration para setar os parametros do XML, cada constante conhece o seu mÈtodo
+	 * Enumeration para setar os parametros do XML, cada constante conhece o seu m√©todo
 	 * correspondente, invocando a partir de um atalho comum
 	 * {@link Xml#setCep(String, WebServiceCep)}.
 	 * @author Tomaz Lavieri
@@ -119,7 +119,7 @@ public final class WebServiceCep {
 		public abstract void setCep(String text,WebServiceCep webServiceCep);
 	}
 	/**
-	 * Classe utilit·ria apenas encapsula o Iterator de elements da root dentro de um
+	 * Classe utilit√°ria apenas encapsula o Iterator de elements da root dentro de um
 	 * Iterable, para ser usado dentro de um for.
 	 * @see Iterable
 	 * @see Iterator
@@ -160,7 +160,7 @@ public final class WebServiceCep {
 	    	}
 		}
 		/**
-		 * Busca um Enum {@link Xml} a partir do seu nome, a busca n„o È case sensitive,
+		 * Busca um Enum {@link Xml} a partir do seu nome, a busca n√£o √© case sensitive,
 		 * portanto o nome pode ser escrito ignorando lowercases or uppercases.
 		 * @see Xml
 		 * @param xmlName {@link String} contendo o nome do enumeration {@link Xml}.
@@ -172,7 +172,7 @@ public final class WebServiceCep {
 	}
 /* M√©todos e variaveis estaticas, respons√°veis pela busca do CEP */
     /**
-     * Mascara para a string url de conex√£o, onde <tt>"%s"</tt> È substituido pelo valor
+     * Mascara para a string url de conex√£o, onde <tt>"%s"</tt> √© substituido pelo valor
      * do cep. 
      */
 	private static final String URL_STRING = 
@@ -180,10 +180,10 @@ public final class WebServiceCep {
 
     /**
      * Carrega o Documento xml a partir do CEP enviado.
-     * @param cep n˙mero do cep.
+     * @param cep n√∫mero do cep.
      * @return {@link Document} xml WebService do site Republic Virtual
-     * @throws DocumentException Quando h· problema na formaÁ„o do documento XML.
-     * @throws MalformedURLException Quando a h· problema no link url.
+     * @throws DocumentException Quando h√° problema na forma√ß√£o do documento XML.
+     * @throws MalformedURLException Quando a h√° problema no link url.
      */
 	private static Document getDocument(String cep) 
 			throws DocumentException, MalformedURLException {
@@ -195,10 +195,10 @@ public final class WebServiceCep {
 	}
 	/**
 	 * Retorna o elemento principal (root) da arvore XML.
-     * @param cep n˙mero do cep.
+     * @param cep n√∫mero do cep.
 	 * @return {@link Element} principal (root) da arvore XML.
-     * @throws DocumentException Quando h· problema na formaÁ„o do documento XML.
-     * @throws MalformedURLException Quando a h· problema no link url.
+     * @throws DocumentException Quando h√° problema na forma√ß√£o do documento XML.
+     * @throws MalformedURLException Quando a h√° problema no link url.
 	 */
 	private static Element getRootElement(String cep) 
 			throws DocumentException, MalformedURLException {
@@ -213,10 +213,10 @@ public final class WebServiceCep {
 	 * <BR><tt>for (Element e : getElements(cep)) {
 	 * <BR>//...
 	 * <BR>}
-     * @param cep n˙mero do cep.
+     * @param cep n√∫mero do cep.
 	 * @return
-     * @throws DocumentException Quando h· problema na formaÁ„o do documento XML.
-     * @throws MalformedURLException Quando a h· problema no link url.
+     * @throws DocumentException Quando h√° problema na forma√ß√£o do documento XML.
+     * @throws MalformedURLException Quando a h√° problema no link url.
 	 */
 	private static IterableElement getElements(String cep) 
 			throws DocumentException, MalformedURLException {
@@ -228,17 +228,17 @@ public final class WebServiceCep {
 	 * target="_blank">republicavirtual.com.br</a>, retornando o resultado em um objeto
 	 * {@link WebServiceCep}.
 	 * <BR>
-	 * <BR>N„o se faz necess·rio formataÁıes, a string pode ser enviada em qualquer
-	 * formataÁ„o, pois sÛ ser„o consideradas os primeiros 8 numeros da string.
+	 * <BR>N√£o se faz necess√°rio formata√ß√µes, a string pode ser enviada em qualquer
+	 * formata√ß√£o, pois s√≥ ser√£o consideradas os primeiros 8 numeros da string.
 	 * <BR>Por Exemplo:
-	 * <BR>Uma <tt>{@link String} "14.568-910"</tt> È automaticamente passada para
+	 * <BR>Uma <tt>{@link String} "14.568-910"</tt> √© automaticamente passada para
 	 * <tt>"14568910"</tt>.
-	 * <BR>Uma <tt>{@link String} "1%4#5?55%16a8&910"</tt> È automaticamente passada para
-	 * <tt>"14555168"</tt>, sÛ levando em conta os primeiros 8 n˙meros.
-	 * @param	cep N˙mero do cep a ser carregado. SÛ ser„o considerados os primeiros 8 
-	 * 			n˙meros da {@link String} enviada. Todos os caracters n„o numÈricos ser„o
-	 * 			removidos, e a string ser„o truncada caso seja maior que 8 caracters.
-	 * @return {@link WebServiceCep} contendo as informaÁıes da pesquisa.
+	 * <BR>Uma <tt>{@link String} "1%4#5?55%16a8&910"</tt> √© automaticamente passada para
+	 * <tt>"14555168"</tt>, s√≥ levando em conta os primeiros 8 n√∫meros.
+	 * @param	cep N√∫mero do cep a ser carregado. S√≥ ser√£o considerados os primeiros 8 
+	 * 			n√∫meros da {@link String} enviada. Todos os caracters n√£o num√©ricos ser√£o
+	 * 			removidos, e a string ser√£o truncada caso seja maior que 8 caracters.
+	 * @return {@link WebServiceCep} contendo as informa√ß√µes da pesquisa.
 	 */
 	public static WebServiceCep searchCep(String cep) {
 		cep = cep.replaceAll( "\\D*", "" ); //To numeric digits only
@@ -252,16 +252,16 @@ public final class WebServiceCep {
 		} catch (DocumentException ex) {
 			if (ex.getNestedException() != null && ex.getNestedException() 
 					instanceof java.net.UnknownHostException) {
-				loadCep.setResultText("Site n„o encontrado.");
+				loadCep.setResultText("Site n√£o encontrado.");
 				loadCep.setResulCode(-14);
 			} else {
-				loadCep.setResultText("N„o foi possivel ler o documento xml.");
+				loadCep.setResultText("N√£o foi possivel ler o documento xml.");
 				loadCep.setResulCode(-15);
 			}
 			loadCep.setExceptio(ex);
 		} catch (MalformedURLException ex) {
 			loadCep.setExceptio(ex);
-			loadCep.setResultText("Erro na formaÁ„o da url.");
+			loadCep.setResultText("Erro na forma√ß√£o da url.");
 			loadCep.setResulCode(-16);
 		} catch (Exception ex) {
 			loadCep.setExceptio(ex);
@@ -274,7 +274,7 @@ public final class WebServiceCep {
 /* Campos internos de resultado da busca */
 	
 	private int resulCode = -1;
-	private String resultText = "busca n„o realizada.";
+	private String resultText = "busca n√£o realizada.";
 	private String cep = null;
 	private String bairro = null;
 	private String cidade = null;
@@ -285,7 +285,7 @@ public final class WebServiceCep {
     
 	
 	/**
-	 * Privado para que seja invocado apenas atravÈs de {@link #searchCep(String)}
+	 * Privado para que seja invocado apenas atrav√©s de {@link #searchCep(String)}
 	 * @param cep
 	 */
     public WebServiceCep(String cep) {
@@ -293,13 +293,13 @@ public final class WebServiceCep {
     }
 	
 	/**
-	 * ExceÁıes lanÁadas pelo {@link #searchCep(String)}.
+	 * Exce√ß√µes lan√ßadas pelo {@link #searchCep(String)}.
 	 * @param ex
 	 */
 	private void setExceptio(Exception ex) {
 		this.exception = ex;
 	}
-/* PRIVATE mÈtodos set, usados pela classe Xml para setar o objeto CepWebService */
+/* PRIVATE m√©todos set, usados pela classe Xml para setar o objeto CepWebService */
 	
 	private void setCidade(String cidade) {
 		this.cidade = cidade;
@@ -329,27 +329,27 @@ public final class WebServiceCep {
 		this.uf = uf;
 	}
 
-/* PUBLIC mÈtodos get e is, usado para acessar o objeto apÛs carregado. */
+/* PUBLIC m√©todos get e is, usado para acessar o objeto ap√≥s carregado. */
 	/**
-	 * Informa o cÛdigo do resultado da pesquisa.
-	 * <BR>CÛdigos conhecidos:
-	 * <BR><tt>-1</tt> : busca n„o realizada
-	 * <BR><tt>0</tt> : cep n„o encontrado
+	 * Informa o c√≥digo do resultado da pesquisa.
+	 * <BR>C√≥digos conhecidos:
+	 * <BR><tt>-1</tt> : busca n√£o realizada
+	 * <BR><tt>0</tt> : cep n√£o encontrado
 	 * <BR><tt>1</tt> : cep encontrado
-	 * <BR><tt>-14</tt> : Site n„o encontrado (pode ser por problemas na internet).
-	 * <BR><tt>-15</tt> : N„o foi possivel ler o documento xml
-	 * <BR><tt>-16</tt> : Erro na formaÁ„o da url
+	 * <BR><tt>-14</tt> : Site n√£o encontrado (pode ser por problemas na internet).
+	 * <BR><tt>-15</tt> : N√£o foi possivel ler o documento xml
+	 * <BR><tt>-16</tt> : Erro na forma√ß√£o da url
 	 * <BR><tt>-17</tt> : Erro inesperado
 	 * 
 	 * 
-	 * @return <tt>int</tt> CÛdigo do resultado.
+	 * @return <tt>int</tt> C√≥digo do resultado.
 	 */
 	public int getResulCode() {
 		return resulCode;
 	}
 	/**
-	 * InformaÁ„o textual sobre o resultado da pesquisa
-	 * @return {@link String} contendo a descriÁ„o do resultado da pesquisa.
+	 * Informa√ß√£o textual sobre o resultado da pesquisa
+	 * @return {@link String} contendo a descri√ß√£o do resultado da pesquisa.
 	 */
 	public String getResultText() {
 		return resultText;
@@ -357,15 +357,15 @@ public final class WebServiceCep {
 	/**
 	 * Informa se o cep foi encontrado com sucesso.
 	 * @return	<tt>true</tt> - caso a pesquisa ache um resultado no banco.
-	 * 			<BR><tt>false</tt> - caso haja falhas, ou o cep enviado n„o esteja 
+	 * 			<BR><tt>false</tt> - caso haja falhas, ou o cep enviado n√£o esteja 
 	 * 			cadastrado.
 	 */
 	public boolean wasSuccessful() {
 		return (resulCode == 1 && exception == null);
 	}
 	/**
-	 * Informa se n„o existe o cep cadastrado.
-	 * @return	<tt>true</tt> - Caso o cep n„o tenha cido encontrado.
+	 * Informa se n√£o existe o cep cadastrado.
+	 * @return	<tt>true</tt> - Caso o cep n√£o tenha cido encontrado.
 	 * 			<BR><tt>false</tt> - Caso haja falhas, ou caso o cep esteja cadastrado.
 	 */
 	public boolean isCepNotFound() {
@@ -374,15 +374,15 @@ public final class WebServiceCep {
 	/**
 	 * Informa se houve falhas na busca do cep
 	 * @return	<tt>true</tt> - Caso ocorra falhas
-	 * 			<BR><tt>false</tt> - Caso n„o haja falhas.
+	 * 			<BR><tt>false</tt> - Caso n√£o haja falhas.
 	 */
 	public boolean hasException() {
 		return (exception != null);
 	}
 	/**
-	 * Pega a exceÁ„o que ocorreu durante a busca, retorna null caso n„o haja exceÁıes.
+	 * Pega a exce√ß√£o que ocorreu durante a busca, retorna null caso n√£o haja exce√ß√µes.
 	 * @return	<tt>{@link Exception}</tt> - Caso ocorra falhas
-	 * 			<BR><tt>null</tt> - Caso n„o haja falhas.
+	 * 			<BR><tt>null</tt> - Caso n√£o haja falhas.
 	 */
 	public Exception getException() {
 		return exception;

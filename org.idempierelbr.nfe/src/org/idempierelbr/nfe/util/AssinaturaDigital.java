@@ -100,7 +100,7 @@ public class AssinaturaDigital
 	 */
 	public static void Assinar (String xmlPath, MOrgInfo oi, String docType) throws Exception
 	{
-		//	Lê o arquivo e assina
+		//	LÃª o arquivo e assina
 		StringBuilder xml = Assinar (new StringBuilder (TextUtil.readFile (new File (xmlPath))), oi, docType);
 		
 		//	Grava o arquivo
@@ -191,16 +191,16 @@ public class AssinaturaDigital
 		//	Factory
 		XMLSignatureFactory sig = XMLSignatureFactory.getInstance("DOM");
 
-		//	Transformações
+		//	TransformaÃ§Ãµes
 		ArrayList<Transform> transformList = new ArrayList<Transform>();
 		
-		//	Adiciona Transformação (1) Enveloped (http://www.w3c.org/2000/09/xmldsig#enveloped-signature)
+		//	Adiciona TransformaÃ§Ã£o (1) Enveloped (http://www.w3c.org/2000/09/xmldsig#enveloped-signature)
 		transformList.add (sig.newTransform(Transform.ENVELOPED, (TransformParameterSpec) null));
 		
-		// 	Adiciona Transformação (2) C14N (http://www.w3c.org/TR/2001/REC-xml-c14n-20010315)
+		// 	Adiciona TransformaÃ§Ã£o (2) C14N (http://www.w3c.org/TR/2001/REC-xml-c14n-20010315)
 		transformList.add (sig.newTransform(C14N_TRANSFORM_METHOD, (TransformParameterSpec) null));
 		
-		//	TAG de Referência para posicionar a Assinatura
+		//	TAG de ReferÃªncia para posicionar a Assinatura
 		String tag = null;
 
 		if (docType.equals(RECEPCAO_NFE))
@@ -219,7 +219,7 @@ public class AssinaturaDigital
 		Reference r = null;
 		
 		/**
-		 * 	Para RPS não é necessário assinar uma URI especifica
+		 * 	Para RPS nÃ£o Ã© necessÃ¡rio assinar uma URI especifica
 		 */
 		if (docType.equals(RPS))
 			r = sig.newReference("", sig.newDigestMethod(DigestMethod.SHA1, null), transformList, null, null);
@@ -227,7 +227,7 @@ public class AssinaturaDigital
 		else
 		{
 			/**
-			 * 	Encontra a URI ID para assiná-la
+			 * 	Encontra a URI ID para assinÃ¡-la
 			 */
 			NodeList elements = doc.getElementsByTagName(tag);
 			org.w3c.dom.Element el = (org.w3c.dom.Element) elements.item(0);

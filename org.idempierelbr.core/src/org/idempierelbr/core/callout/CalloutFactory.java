@@ -11,7 +11,7 @@ import org.idempierelbr.core.wrapper.I_W_C_BPartner;
 import org.idempierelbr.core.wrapper.I_W_C_BPartner_Location;
 
 /**
- * Esta classe é uma implementação da callout factory.
+ * Esta classe Ã© uma implementaÃ§Ã£o da callout factory.
  * Ela fornece uma forma centralizada para o mecanismo de callout.
  *
  * @author Alan <alan.lesc1@gmail.com>

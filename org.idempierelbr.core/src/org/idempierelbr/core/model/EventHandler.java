@@ -73,7 +73,7 @@ public class EventHandler extends AbstractEventHandler {
 	}
 	
 	/**
-	 *	Verifica se o campo CNPJ È v·lido
+	 *	Verifica se o campo CNPJ √© v√°lido
 	 *	@return mensagem de erro ou null
 	 */
 	private String validateBPTypeBR(MBPartnerLocation bpl) {
@@ -99,21 +99,21 @@ public class EventHandler extends AbstractEventHandler {
 
 		if (CNPJMatriz.substring(0, 8).equalsIgnoreCase(CNPJFilial.substring(0, 8)))	{
 			if (!isValidCNPJ(bplW.getLBR_CNPJ()))
-				return "CNPJ Inv·lido, por favor verifique";
+				return "CNPJ Inv√°lido, por favor verifique";
 
 			MCNPJ cnpj = new MCNPJ(CNPJFilial);
 			
 			if (!cnpj.isUniqueOnBP(bpl.getAD_Client_ID(), bpl.get_ID(), bpl.get_TableName(), bpl.get_TrxName()))
-				return "CNPJ Duplicado. Existe outro Parceiro de NegÛcios com este CNPJ";
+				return "CNPJ Duplicado. Existe outro Parceiro de Neg√≥cios com este CNPJ";
 		} else
-			return "CNPJ Inv·lido. Raiz do CNPJ n„o corresponde com o informado na aba Parceiro de NegÛcios";
+			return "CNPJ Inv√°lido. Raiz do CNPJ n√£o corresponde com o informado na aba Parceiro de Neg√≥cios";
 
 		bplW.setLBR_BPTypeBRIsValid(true);
 		return null;
 	}
 
 	/**
-	 *	Verifica se os campos CPF, CNPJ e IE s„o v·lidos
+	 *	Verifica se os campos CPF, CNPJ e IE s√£o v√°lidos
 	 *	@return mensagem de erro ou null
 	 */
 	private String validateBPTypeBR(MBPartner bp) {
@@ -124,46 +124,46 @@ public class EventHandler extends AbstractEventHandler {
 		if (bpW.getLBR_BPTypeBR() == null || bpW.getLBR_BPTypeBR().equals(""))
 			return null;
 
-		// se n„o estiver validado ou tentando ativar um registro desativado
+		// se n√£o estiver validado ou tentando ativar um registro desativado
 		if (!bpW.isLBR_BPTypeBRIsValid() || (bp.is_ValueChanged("IsActive") && bp.isActive())) {
-			// se PF, valida Pessoa FÌsica
+			// se PF, valida Pessoa F√≠sica
 			if (bpW.getLBR_BPTypeBR().equalsIgnoreCase(I_W_C_BPartner.LBR_BPTYPEBR_PF_Individual)){
 				if (bpW.getLBR_CPF() == null){
 					return "Por favor, informe o CPF";
 				}
 
 				if (bpW.getLBR_CPF().length() < 11 || !isValidCPF(bpW.getLBR_CPF())){
-					return "CPF Inv·lido, por favor verifique";
+					return "CPF Inv√°lido, por favor verifique";
 				}
 				
 				MCPF cpf = new MCPF(bpW.getLBR_CPF());
 
 				if (!cpf.isUniqueOnBP(AD_Client_ID, bp.get_ID(), bp.get_TrxName())){
-					return "CPF Duplicado. Existe outro Parceiro de NegÛcios com este CPF";
+					return "CPF Duplicado. Existe outro Parceiro de Neg√≥cios com este CPF";
 				}
 
 			}
-			// se PJ, valida Pessoa JurÌdica
+			// se PJ, valida Pessoa Jur√≠dica
 			else if (bpW.getLBR_BPTypeBR().equalsIgnoreCase(I_W_C_BPartner.LBR_BPTYPEBR_PJ_LegalEntity)) {
 				if (bpW.getLBR_CNPJ() == null){
 					return "Por favor, informe o CNPJ";
 				}
 
 				if (bpW.getLBR_CNPJ().length() < 14 || !isValidCNPJ(bpW.getLBR_CNPJ())){
-					return "CNPJ Inv·lido, por favor verifique";
+					return "CNPJ Inv√°lido, por favor verifique";
 				}
 				
 				MCNPJ cnpj = new MCNPJ(bpW.getLBR_CNPJ());
 				
 				if (!cnpj.isUniqueOnBP(AD_Client_ID, bp.get_ID(), bp.get_TableName(), bp.get_TrxName())){
-					return "CNPJ Duplicado. Existe outro Parceiro de NegÛcios com este CNPJ (ou raiz, caso PN Unificado)";
+					return "CNPJ Duplicado. Existe outro Parceiro de Neg√≥cios com este CNPJ (ou raiz, caso PN Unificado)";
 				}
 
 				if(MSysConfig.getBooleanValue("LBR_USE_UNIFIED_BP", false, AD_Client_ID)) {
 					// salva apenas a raiz do CNPJ
 					bpW.setLBR_CNPJ(bpW.getLBR_CNPJ().substring(0, 8) + "000000");
 					
-					// Marca LBR_IsIEExempt como true, para manter consistÍncia do DB
+					// Marca LBR_IsIEExempt como true, para manter consist√™ncia do DB
 					bpW.setLBR_IsIEExempt(true);
 				}
 			}
@@ -184,7 +184,7 @@ public class EventHandler extends AbstractEventHandler {
 	}
 	
 	/**
-	 *	Verifica se o CPF possui a sequÍncia de caracteres e os dÌgitos verificadores v·lidos 
+	 *	Verifica se o CPF possui a sequ√™ncia de caracteres e os d√≠gitos verificadores v√°lidos 
 	 * @param bpW 
 	 *	@return boolean true or false
 	 */
@@ -195,7 +195,7 @@ public class EventHandler extends AbstractEventHandler {
 	}
 	
 	/**
-	 *	Verifica se o CNPJ possui a sequÍncia de caracteres e os dÌgitos verificadores v·lidos 
+	 *	Verifica se o CNPJ possui a sequ√™ncia de caracteres e os d√≠gitos verificadores v√°lidos 
 	 *	@return boolean true or false
 	 */
 	private boolean isValidCNPJ(String cnpj) {

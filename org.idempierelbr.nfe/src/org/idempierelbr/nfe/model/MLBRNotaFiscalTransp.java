@@ -7,7 +7,6 @@ import java.util.Properties;
 
 import org.compiere.model.MTable;
 import org.compiere.model.Query;
-import org.compiere.util.Env;
 
 public class MLBRNotaFiscalTransp extends X_LBR_NotaFiscalTransp {
 	/**

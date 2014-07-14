@@ -27,7 +27,7 @@ public class CalloutOrder implements IColumnCallout {
 	}
 	
 	/**
-	 * Define o Tipo de Transação com base no Parceiro de Negócios
+	 * Define Transaction Type based on Business Partner
 	 */
 	private String setTransactionType(Properties ctx, GridTab mTab, Object value) {
 		Integer C_BPartner_ID = (Integer) value;

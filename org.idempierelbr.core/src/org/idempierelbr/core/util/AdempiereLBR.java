@@ -37,7 +37,6 @@ import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.compiere.util.Msg;
 import org.joda.time.DateTime;
-import org.joda.time.LocalTime;
 import org.joda.time.Period;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -47,7 +46,7 @@ import org.joda.time.format.DateTimeFormatter;
  *
  *	Utility class for ADempiereLBR project
  *
- *	[ 2719395 ] BF - As contas de DR e CR colocadas no Tipo de Documento não funcionam
+ *	[ 2719395 ] BF - As contas de DR e CR colocadas no Tipo de Documento nÃ£o funcionam
  *
  *	@author Mario Grigioni (Kenos, www.kenos.com.br)
  *	@version $Id: AdempiereLBR.java, 18/12/2009 09:37:00 mgrigioni
@@ -265,8 +264,8 @@ public abstract class AdempiereLBR{
 	 * 	Returns the locator ID created automatically for
 	 * 	the given business partner
 	 *  @return C_Locator_ID
-	 *  @contributor mgrigioni - Alterada a verificação do locator para o C_BPartner_ID,
-	 *  	                     se o usuário alterar o value do parceiro o mesmo é replicado para o locator
+	 *  @contributor mgrigioni - Alterada a verificaÃ§Ã£o do locator para o C_BPartner_ID,
+	 *  	                     se o usuÃ¡rio alterar o value do parceiro o mesmo Ã© replicado para o locator
 	 */
 	public static int getM_Locator_ID(int M_Warehouse_ID, MBPartner bpartner, String trx)
 	{
@@ -295,7 +294,7 @@ public abstract class AdempiereLBR{
 	} //getM_Locator_ID
 
 	 /**
-	 * Verifica se é um estado brasileiro
+	 * Verifica se Ã© um estado brasileiro
 	 * @param UF
 	 * @return true = success, false = error
 	 */
@@ -505,7 +504,7 @@ public abstract class AdempiereLBR{
 	
 	/**
 	 * getMonths
-	 * Retorna um array com o primeiro dia de todos os mês no intervalo das datas
+	 * Retorna um array com o primeiro dia de todos os meses no intervalo das datas
 	 * @param dateFrom
 	 * @param dateTo
 	 * @return Timestamp[]
@@ -539,7 +538,7 @@ public abstract class AdempiereLBR{
 	/**
 	 * firstDayMonth
 	 * @param date
-	 * @return Timestamp - Primeiro dia do mês
+	 * @return Timestamp - Primeiro dia do mÃªs
 	 */
 	public static Timestamp firstDayMonth(Timestamp date){
 		Calendar cal = new GregorianCalendar();
@@ -552,8 +551,8 @@ public abstract class AdempiereLBR{
 	/**
 	 * firstDayMonth
 	 * @param Ano Ex. 2010
-	 * @param Mes Ex. 1=Janeiro, 2=Fevereiro, 3=Março....
-	 * @return Timestamp - Primeiro dia do mês
+	 * @param Mes Ex. 1=Janeiro, 2=Fevereiro, 3=MarÃ§o....
+	 * @return Timestamp - Primeiro dia do mÃªs
 	 */
 	public static Timestamp firstDayMonth(Integer Ano, Integer Mes){
 		Calendar cal = new GregorianCalendar(Ano, Mes - 1, 1);
@@ -565,7 +564,7 @@ public abstract class AdempiereLBR{
 	/**
 	 * lastDayMonth
 	 * @param date
-	 * @return Timestamp - Último dia do mês
+	 * @return Timestamp - Ãšltimo dia do mÃªs
 	 */
 	public static Timestamp lastDayMonth(Timestamp date){
 		Calendar cal = new GregorianCalendar();
@@ -578,8 +577,8 @@ public abstract class AdempiereLBR{
 	/**
 	 * lastDayMonth
 	 * @param Ano Ex. 2010
-	 * @param Mes Ex. 1=Janeiro, 2=Fevereiro, 3=Março....
-	 * @return Timestamp - Último dia do mês
+	 * @param Mes Ex. 1=Janeiro, 2=Fevereiro, 3=MarÃ§o....
+	 * @return Timestamp - Ãšltimo dia do mÃªs
 	 */
 	public static Timestamp lastDayMonth(Integer Ano, Integer Mes){
 		Calendar cal = new GregorianCalendar(Ano, Mes - 1, 1);
@@ -589,7 +588,7 @@ public abstract class AdempiereLBR{
 	}
 	
 	/**
-	 * Verifica se uma String contém exclusivamente dígitos
+	 * Verifica se uma String contÃ©m exclusivamente dÃ­gitos
 	 * 
 	 * @param documentNo
 	 * @return
@@ -610,7 +609,7 @@ public abstract class AdempiereLBR{
 	}	//	isNumber
 	
 	/**
-	 * Retorna o timezone configurado (ajusta caso seja horário de verão)
+	 * Retorna o timezone configurado (ajusta caso seja horÃ¡rio de verÃ£o)
 	 * 
 	 * @param AD_Org_ID
 	 * @return timezone

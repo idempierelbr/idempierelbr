@@ -749,7 +749,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 				} else if (cep.getResulCode() == 0) {
 					onSaveError = true;
 					FDialog.error(0, this, "Error", Msg.parseTranslation(Env.getCtx(),
-							"O CEP/ZIP n„o foi localizado na base de dados."), new Callback<Integer>() {					
+							"O CEP/ZIP n√£o foi localizado na base de dados."), new Callback<Integer>() {					
 						@Override
 						public void onCallback(Integer result) {
 							Events.echoEvent("onSaveError", WLocationDialogLBR.this, null);
@@ -760,7 +760,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 				} else if (cep.getResulCode() == 14) {
 					onSaveError = true;
 					FDialog.error(0, this, "Error", Msg.parseTranslation(Env.getCtx(),
-							"N„o foi possÌvel fazer a busca (possÌvel problema com a internet)."), new Callback<Integer>() {					
+							"N√£o foi poss√≠vel fazer a busca (poss√≠vel problema com a internet)."), new Callback<Integer>() {					
 						@Override
 						public void onCallback(Integer result) {
 							Events.echoEvent("onSaveError", WLocationDialogLBR.this, null);
@@ -963,7 +963,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 	}
 
 	/**
-	 *  Formata o CEP/ZIP para o padr„o do paÌs
+	 *  Formata o CEP/ZIP para o padr√£o do pa√≠s
 	 */
 	private String getFormatedCepZip(String cep, int C_Country_ID) {
 		if (cep == null)

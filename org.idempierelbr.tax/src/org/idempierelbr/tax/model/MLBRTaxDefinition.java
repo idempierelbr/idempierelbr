@@ -59,7 +59,7 @@ public class MLBRTaxDefinition extends X_LBR_TaxDefinition
 	}	//	MLBRTaxDefinition
 	
 	/**
-	 * 		Retorna o grupo mais relevante de impost0
+	 * 		Retorna o grupo mais relevante de imposto
 	 */
 	public static MLBRTaxDefinition[] get (int AD_Org_ID, int C_BPartner_ID, int C_DocType_ID, 
 			int C_Region_ID, int To_Region_ID, int LBR_BPartnerCategory_ID, int LBR_FiscalGroup_BPartner_ID,

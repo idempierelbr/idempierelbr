@@ -76,7 +76,7 @@ public class MLBRCFOP extends X_LBR_CFOP
 	}
 
 	/**
-	 * 		Verifica se o CFOP È v·lido para o Documento Escolhido
+	 * 		Verifica se o CFOP √© v√°lido para o Documento Escolhido
 	 * 
 	 * @param isSOTrx
 	 * @param orgLocation
@@ -104,17 +104,17 @@ public class MLBRCFOP extends X_LBR_CFOP
 
 		//VALIDACAO
 		if (isSOTrx){
-			if (!sameCountry && getValue().charAt(0) != '7') //SaÌda fora do Pais)
+			if (!sameCountry && getValue().charAt(0) != '7') //Sa√≠da fora do Pa√≠s)
 				return false;
 
-			if (!sameRegion && sameCountry && getValue().charAt(0) != '6') //SaÌda fora Estado
+			if (!sameRegion && sameCountry && getValue().charAt(0) != '6') //Sa√≠da fora Estado
 				return false;
 
-			if (sameRegion && sameCountry && getValue().charAt(0) != '5') //SaÌda mesmo Estado
+			if (sameRegion && sameCountry && getValue().charAt(0) != '5') //Sa√≠da mesmo Estado
 				return false;
 		}
 		else{
-			if (!sameCountry && getValue().charAt(0) != '3') //Entrada fora do Pais)
+			if (!sameCountry && getValue().charAt(0) != '3') //Entrada fora do Pa√≠s)
 				return false;
 
 			if (!sameRegion && sameCountry && getValue().charAt(0) != '2') //Entrada fora Estado
@@ -152,7 +152,7 @@ public class MLBRCFOP extends X_LBR_CFOP
 	}	//	validateCFOP
 	
 	/**
-	 * 		Retorna qual È o CFOP
+	 * 		Return best CFOP based on config table
 	 * 
 	 * 	@param 	C_DocType_ID
 	 * 	@param 	LBR_ProductCategory_ID

@@ -25,7 +25,7 @@ public class MCPF {
 	}
 
 	/**
-	 *	Verifica se o CPF possui a sequência de caracteres e os dígitos verificadores válidos 
+	 *	Verifica se o CPF possui a sequÃªncia de caracteres e os dÃ­gitos verificadores vÃ¡lidos 
 	 *	@return boolean true or false
 	 */
 	public boolean isValid()
@@ -97,7 +97,7 @@ public class MCPF {
 	}
 	
 	/**
-	 *	Verifica se o CPF informado é único nos registros de Parceiro de Negócios
+	 *	Verifica se o CPF informado Ã© Ãºnico nos registros de Parceiro de NegÃ³cios
 	 *	@return boolean true or false
 	 */
 	public boolean isUniqueOnBP(int AD_Client_ID, int C_BPartner_ID, String trxName) {

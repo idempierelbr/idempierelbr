@@ -121,7 +121,7 @@ public class MLBRNotaFiscalLine extends X_LBR_NotaFiscalLine {
 	}	//	setHeaderInfo
 	
 	/**
-	 * 	Necess·rio para ajustar a precis„o
+	 * 	Necess√°rio para ajustar a precis√£o
 	 * 		de casas decimais
 	 */
 	public void setPriceActual (BigDecimal Price)
@@ -133,7 +133,7 @@ public class MLBRNotaFiscalLine extends X_LBR_NotaFiscalLine {
 	}	//	setPrice
 	
 	/**
-	 * 	Necess·rio para ajustar a precis„o
+	 * 	Necess√°rio para ajustar a precis√£o
 	 * 		de casas decimais
 	 */
 	public void setQty (BigDecimal Qty)
@@ -739,7 +739,7 @@ public class MLBRNotaFiscalLine extends X_LBR_NotaFiscalLine {
 					MLBRDocLineIPI.CST_IPI_99)) {
 				
 				if (ipiLines[0].getCalculationType() == null)
-					throw new AdempiereException("Campo X È obrigatÛrio");
+					throw new AdempiereException("Campo X √© obrigat√≥rio");
 				
 				if (ipiLines[0].getCalculationType().equals("PER")) {
 					if (ipiLines[0].getLBR_TaxBaseAmt() == null)

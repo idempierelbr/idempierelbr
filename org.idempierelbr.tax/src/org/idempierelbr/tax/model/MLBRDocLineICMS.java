@@ -272,7 +272,7 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 		String sql = "SELECT MAX(tl.lbr_TaxRate) FROM LBR_TaxLine tl WHERE tl.LBR_Tax_ID = ?";
 		aliqInternaDestino = DB.getSQLValueBD(null, sql, icmsMatrix.getLBR_Tax_ID());
 		
-		// NF-e - Nota Técnica 2012/005 (4% de icms nas operações interestaduais para produtos importados)
+		// NF-e - Nota TÃ©cnica 2012/005 (4% de icms nas operaÃ§Ãµes interestaduais para produtos importados)
 		if (product != null &&
 				(product.get_ValueAsString("LBR_ProductSource").equals("1") ||
 						product.get_ValueAsString("LBR_ProductSource").equals("2") ||

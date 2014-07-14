@@ -351,7 +351,7 @@ UPDATE AD_PrintFormatItem SET PrintName='NF Country Code', Name='Country Code fo
 
 ----------------------------------------------------------------------
 --		ADempiereLBR.Org
---	Atualização do Codigo do Pais (Kenos, www.kenos.com.br)
+--	AtualizaÃ§Ã£o do Codigo do Pais (Kenos, www.kenos.com.br)
 --
 -- 	ALTER TABLE C_Country ADD lbr_CountryCode VARCHAR;
 ----------------------------------------------------------------------

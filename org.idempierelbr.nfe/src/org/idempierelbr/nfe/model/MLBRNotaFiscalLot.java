@@ -108,7 +108,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 
 		File attachFile = new File(TextUtil.generateTmpFile(xmlLot.toString(), getDocumentNo() + "-env-lot.xml"));
 
-		//VerificaÁ„o tamanho do Arquivo - Erro 214 / Tamanho Arquivo
+		//Verifica√ß√£o tamanho do Arquivo - Erro 214 / Tamanho Arquivo
 		String error = NFeUtil.validateSize(attachFile);
 		if (error != null)
 			return error;
@@ -158,7 +158,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 			return "Could not generate xml";
 		}
 
-		// ValidaÁ„o envio
+		// Valida√ß√£o envio
 		/*String validation = ValidaXML.validaEnvXML(xmlLot);
 		if (!validation.equals(""))
 			return validation;*/
@@ -200,7 +200,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
         if (doc.getElementsByTagName("nRec") != null)
         	nRec = NFeUtil.getValue(doc, "nRec");
         
-        // Corrige tipo de processamento, caso Sefaz n„o aceitar mÈtodo sÌncrono
+        // Corrige tipo de processamento, caso Sefaz n√£o aceitar m√©todo s√≠ncrono
         if (getLBR_ProcessingType().equals("S") && nRec != null)
         	setLBR_ProcessingType("A");
 
@@ -286,7 +286,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 		xmlLot.append("</nRec>");
 		xmlLot.append("</consReciNFe>");
 
-		//	ValidaÁ„o envio
+		//	Valida√ß√£o envio
 		/*String validation = ValidaXML.validaConsultaProt(nfeConsultaDadosMsg);
 		if (!validation.equals(""))
 			return validation;*/
@@ -372,7 +372,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 						nf.setLBR_NFeStatus(cStat);
 						nf.saveEx();
 						
-						// Atualiza XML para padr„o de distribuiÁ„o
+						// Atualiza XML para padr√£o de distribui√ß√£o
 						File file = null;
 
 						try {

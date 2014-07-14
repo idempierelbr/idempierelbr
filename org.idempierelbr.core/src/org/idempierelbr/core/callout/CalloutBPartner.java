@@ -52,7 +52,7 @@ public class CalloutBPartner implements IColumnCallout {
 	}
 
 	/**
-	* Limpa campos n„o relacionados ‡ opÁ„o (PF ou PJ) selecionada, para manter o DB consistente
+	* Limpa campos n√£o relacionados √† op√ß√£o (PF ou PJ) selecionada, para manter o DB consistente
 	*/
 	private String clearBPTypeBRUnnecessaryFields(GridTab mTab, Object value) {
 		if (value == null || value.equals("")) {

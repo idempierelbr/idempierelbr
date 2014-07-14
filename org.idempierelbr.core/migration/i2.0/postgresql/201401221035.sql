@@ -1,5 +1,5 @@
 -- Jan 22, 2014 10:19:52 AM BRST
--- Ajuste em tamanho de campos para tradução correta, e inserção de mensagens do sistema
+-- Ajuste em tamanho de campos para traduÃ§Ã£o correta, e inserÃ§Ã£o de mensagens do sistema
 UPDATE AD_Menu SET IsCentrallyMaintained='N',Updated=TO_TIMESTAMP('2014-01-22 10:19:51','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Menu_ID=53363
 ;
 

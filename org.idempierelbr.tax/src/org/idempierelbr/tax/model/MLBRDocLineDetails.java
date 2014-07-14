@@ -299,7 +299,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			MBPartner bp = new MBPartner(getCtx(), C_BPartner_ID, get_TrxName());
 			I_W_C_BPartner bpW = POWrapper.create(bp, I_W_C_BPartner.class);
 			
-			// TODO: Criar condições para preencher outros valores
+			// TODO: Criar condiÃ§Ãµes para preencher outros valores
 			if (bpW.getLBR_Suframa() != null && !bpW.getLBR_Suframa().isEmpty())
 				icms.setLBR_ICMS_TaxReliefType(MLBRDocLineICMS.LBR_ICMS_TAXRELIEFTYPE_SUFRAMA);
 			else

@@ -7,7 +7,6 @@ import java.util.Properties;
 
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.Query;
-import org.compiere.util.Env;
 
 public class MLBRDocLinePIS extends X_LBR_DocLine_PIS {
 
