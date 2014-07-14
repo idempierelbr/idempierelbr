@@ -60,12 +60,12 @@ import org.idempierelbr.nfe.model.MLBRNFeWebService;
  *  @author Mario Grigioni
  *  @version $Id: ProcGenerateCert.java, 28/01/2011 09:52 mgrigioni Exp $
  */
-public class ProcGenerateNFeWebServiceCert extends SvrProcess
+public class GenerateSefazWSCerts extends SvrProcess
 {
 	private String p_envType  = "";
 	
 	/** Log				*/
-	private static CLogger log = CLogger.getCLogger(ProcGenerateNFeWebServiceCert.class);
+	private static CLogger log = CLogger.getCLogger(GenerateSefazWSCerts.class);
 	
 	/**
 	 * 	Prepare

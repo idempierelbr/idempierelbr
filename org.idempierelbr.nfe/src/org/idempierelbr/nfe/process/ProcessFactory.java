@@ -6,8 +6,8 @@ import org.compiere.process.ProcessCall;
 public class ProcessFactory implements IProcessFactory {
 	@Override
 	public ProcessCall newProcessInstance(String className) {
-		if (className.equals("org.idempierelbr.nfe.process.ProcGenerateNFeWebServiceCert"))
-			return new ProcGenerateNFeWebServiceCert();
+		if (className.equals("org.idempierelbr.nfe.process.GenerateSefazWSCerts"))
+			return new GenerateSefazWSCerts();
 		else if (className.equals("org.idempierelbr.nfe.process.SendNFeLot"))
 			return new SendNFeLot();
 		else if (className.equals("org.idempierelbr.nfe.process.QueryNFeLot"))
