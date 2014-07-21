@@ -12,6 +12,7 @@ import org.compiere.model.MSysConfig;
 import org.compiere.model.MTax;
 import org.compiere.model.PO;
 import org.compiere.util.CLogger;
+import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.core.wrapper.I_W_C_BPartner;
@@ -334,6 +335,14 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSSN_900_Outros)) {
 
 			icms.setLBR_ICMSST_TaxBaseType(new Integer(taxBaseTypeCode - 100).toString());
+			
+			if (tl.getLBR_TaxBase().compareTo(Env.ZERO) != 0)
+				icms.setLBR_ICMSST_TaxBase(tl.getLBR_TaxBase());
+			
+			BigDecimal iva = getIVAST(new MLBRTax(getCtx(), tl.getLBR_Tax_ID(), get_TrxName()));
+			if (iva.compareTo(Env.ZERO) != 0)
+				icms.setLBR_ICMSST_TaxAdded(iva);
+			
 			icms.setLBR_ICMSST_TaxBaseAmt(tl.getLBR_TaxBaseAmt());
 			icms.setLBR_ICMSST_TaxRate(tl.getLBR_TaxRate());
 			icms.setLBR_ICMSST_TaxAmt(tl.getLBR_TaxAmt());
@@ -735,10 +744,13 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 					tl.setLBR_Tax_ID(tax.getLBR_Tax_ID());
 					
 					// Adjust IVA-ST
-					if (tl.getLBR_TaxName_ID() == 1000012)
-						tl.setLBR_TaxRate(getAdjustedIva(tl.getLBR_TaxRate()));
+					//if (tl.getLBR_TaxName_ID() == 1000012)
+					//	tl.setLBR_TaxRate(getAdjustedIva(tl.getLBR_TaxRate()));
 					tl.saveEx();
 				}
+				
+				// Check if it is necessary to adjust the IVA-ST 
+				checkIVAST(tax);
 
 				tax.setDescription();
 				tax.saveEx();
@@ -762,4 +774,56 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 
 		return;
 	}
+	
+	/**
+	 * 	Check and adjust (if necessary) the IVA-ST percentage in the transaction
+	 * 	@param tax MLBRTax
+	 */
+	private void checkIVAST(MLBRTax tax) {
+		MLBRTaxLine[] lines = tax.getLines();
+		
+		BigDecimal aliqInterestadual = Env.ZERO;
+		BigDecimal aliqInternaDestino = Env.ZERO;
+		BigDecimal ivaOriginal = Env.ZERO;
+		
+		MLBRTaxLine ivaLine = null;
+		
+		// Get ICMS tax rate
+		for (MLBRTaxLine line : lines) {
+			if (line.getLBR_TaxName().getName().equals("ICMSPROD") ||
+					line.getLBR_TaxName().getName().equals("ICMSSERV"))
+				aliqInterestadual = line.getLBR_TaxRate();
+			else if (line.getLBR_TaxName().getName().equals("ICMSST"))
+				aliqInternaDestino = line.getLBR_TaxRate();
+			else if (line.getLBR_TaxName().getName().equals("IVA")) {
+				ivaOriginal = line.getLBR_TaxRate();
+				ivaLine = line;
+			}
+		}
+		
+		if (ivaOriginal.compareTo(Env.ZERO) != 0) {
+			ivaLine.setLBR_TaxRate(MLBRDocLineICMS.getAdjustedIva(ivaOriginal, aliqInterestadual, aliqInternaDestino));
+			ivaLine.saveEx();
+		}
+		
+		return;		
+	}
+	
+	/**
+	 * 	Get the IVA-ST percentage in a MLBRTax.	
+	 * 	@param tax MLBRTax
+	 *	@return IVA-ST percentage
+	 */
+	private BigDecimal getIVAST(MLBRTax tax) {
+		BigDecimal iva = Env.ZERO;
+		MLBRTaxLine[] lines = tax.getLines();
+		
+		// Get ICMS tax rate
+		for (MLBRTaxLine line : lines) {
+			if (line.getLBR_TaxName().getName().equals("IVA"))
+				iva = line.getLBR_TaxRate();
+		}
+		
+		return iva;
+	}	
 }

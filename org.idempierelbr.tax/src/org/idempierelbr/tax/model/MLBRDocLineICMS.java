@@ -240,7 +240,7 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 	 * 
 	 * 	@return adjusted or original iva-st
 	 */
-	public static BigDecimal getInterstateAdjustedIva(BigDecimal originalIVA, int AD_Org_ID, boolean isSOTrx,
+	/*public static BigDecimal getInterstateAdjustedIva(BigDecimal originalIVA, int AD_Org_ID, boolean isSOTrx,
 			Timestamp docDate, MProduct product, I_C_BPartner_Location bpLocation){
 		if (bpLocation == null)
 			return originalIVA;
@@ -286,7 +286,7 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 		}
 		
 		return MLBRDocLineICMS.getAdjustedIva(originalIVA, aliqInterestadual, aliqInternaDestino);
-	}
+	}*/
 	
 	/**
 	 * 	Get adjusted IVA-ST based on UF's rate

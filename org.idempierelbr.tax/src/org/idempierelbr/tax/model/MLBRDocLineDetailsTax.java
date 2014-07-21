@@ -276,7 +276,7 @@ public class MLBRDocLineDetailsTax extends MLBRDocLineDetails implements IDocLin
 	 * 
 	 * 	@return adjusted or original iva-st
 	 */
-	protected BigDecimal getAdjustedIva(BigDecimal originalIVA){
+	/*protected BigDecimal getAdjustedIva(BigDecimal originalIVA){
 		boolean isSOTrx = true;
 		Timestamp docDate = null;
 		MProduct product = null;
@@ -302,7 +302,7 @@ public class MLBRDocLineDetailsTax extends MLBRDocLineDetails implements IDocLin
 		}
 		
 		return MLBRDocLineICMS.getInterstateAdjustedIva(originalIVA, AD_Org_ID, isSOTrx, docDate, product, bpLocation);
-	}
+	}*/
 	
 	protected boolean afterSave(boolean newRecord, boolean success) {
 		success = super.afterSave(newRecord, success);
