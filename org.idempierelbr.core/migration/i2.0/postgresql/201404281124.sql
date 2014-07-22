@@ -156,7 +156,7 @@ INSERT INTO AD_Ref_List (AD_Ref_List_ID,AD_Reference_ID,AD_Ref_List_UU,Value,Cre
 ;
 
 -- Apr 28, 2014 12:46:55 PM BRT
-INSERT INTO AD_Ref_List (AD_Ref_List_ID,AD_Reference_ID,AD_Ref_List_UU,Value,Created,CreatedBy,Updated,UpdatedBy,IsActive,EntityType,AD_Client_ID,AD_Org_ID,Name) VALUES (1000131,1000032,'2f3a928a-3042-4d97-b016-cdea077ef02d','2',TO_TIMESTAMP('2014-04-28 12:46:55','YYYY-MM-DD HH24:MI:SS'),0,TO_TIMESTAMP('2014-04-28 12:46:55','YYYY-MM-DD HH24:MI:SS'),0,'Y','U',0,0,'Operacao Interestadual')
+INSERT INTO AD_Ref_List (AD_Ref_List_ID,AD_Reference_ID,AD_Ref_List_UU,Value,Created,CreatedBy,Updated,UpdatedBy,IsActive,EntityType,AD_Client_ID,AD_Org_ID,Name) VALUES (1000131,1000032,'2f3a928a-3042-4d97-b016-cdea077ef02d','2',TO_TIMESTAMP('2014-04-28 12:46:55','YYYY-MM-DD HH24:MI:SS'),0,TO_TIMESTAMP('2014-04-28 12:46:55','YYYY-MM-DD HH24:MI:SS'),0,'Y','LBR',0,0,'Operacao Interestadual')
 ;
 
 -- Apr 28, 2014 12:47:04 PM BRT
@@ -240,7 +240,7 @@ INSERT INTO AD_Element (ColumnName,AD_Element_ID,Help,Name,Description,PrintName
 ;
 
 -- May 5, 2014 12:33:46 PM BRT
-INSERT INTO AD_Element (ColumnName,AD_Element_ID,Help,Name,Description,PrintName,AD_Element_UU,Created,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType) VALUES ('LBR_NotaFiscal_UU',1000170,'The Brazilian Fiscal Invoice (Nota Fiscal) Document.','Brazilian Fiscal Invoice (Nota Fiscal)','Brazilian Fiscal Invoice (Nota Fiscal) Identifier','Nota Fiscal','8efef898-0afc-4fe6-aaa6-2717384d4816',TO_TIMESTAMP('2014-05-05 12:33:46','YYYY-MM-DD HH24:MI:SS'),TO_TIMESTAMP('2014-05-05 12:33:46','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'U')
+INSERT INTO AD_Element (ColumnName,AD_Element_ID,Help,Name,Description,PrintName,AD_Element_UU,Created,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType) VALUES ('LBR_NotaFiscal_UU',1000170,'The Brazilian Fiscal Invoice (Nota Fiscal) Document.','Brazilian Fiscal Invoice (Nota Fiscal)','Brazilian Fiscal Invoice (Nota Fiscal) Identifier','Nota Fiscal','8efef898-0afc-4fe6-aaa6-2717384d4816',TO_TIMESTAMP('2014-05-05 12:33:46','YYYY-MM-DD HH24:MI:SS'),TO_TIMESTAMP('2014-05-05 12:33:46','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'LBR')
 ;
 
 -- May 5, 2014 12:34:20 PM BRT
@@ -3111,7 +3111,7 @@ ALTER TABLE LBR_NotaFiscal ADD COLUMN IsTaxIncluded CHAR(1) CHECK (IsTaxIncluded
 ;
 
 -- May 8, 2014 1:32:46 PM BRT
-INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,Help,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,AD_Client_ID,IsEncrypted,IsSecure,AD_Element_ID,AD_Reference_ID,AD_Table_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,1000676,'Y','N','N',0,'N',1,'N','N','N','Y','0a766278-ce76-416e-969f-d2541befc0d7','Y','Processed','The document has been processed','The Processed checkbox indicates that a document has been processed.','Processed','Y',TO_TIMESTAMP('2014-05-08 13:32:46','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_TIMESTAMP('2014-05-08 13:32:46','YYYY-MM-DD HH24:MI:SS'),0,'N','N',0,'N','N',1047,20,1000034,0,'U')
+INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,Help,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,AD_Client_ID,IsEncrypted,IsSecure,AD_Element_ID,AD_Reference_ID,AD_Table_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,1000676,'Y','N','N',0,'N',1,'N','N','N','Y','0a766278-ce76-416e-969f-d2541befc0d7','Y','Processed','The document has been processed','The Processed checkbox indicates that a document has been processed.','Processed','Y',TO_TIMESTAMP('2014-05-08 13:32:46','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_TIMESTAMP('2014-05-08 13:32:46','YYYY-MM-DD HH24:MI:SS'),0,'N','N',0,'N','N',1047,20,1000034,0,'LBR')
 ;
 
 -- May 8, 2014 1:32:50 PM BRT

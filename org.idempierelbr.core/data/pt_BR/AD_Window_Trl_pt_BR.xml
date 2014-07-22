@@ -93,13 +93,13 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  </row>
  <row id="117" trl="Y">
   <value column="Name" original="Calendar Year and Period">Período e Ano Civil</value>
-  <value column="Description" original="Maintain Calendars Years Periods">Gerenciamento de Períodos e Anos Civís</value>
-  <value column="Help" original="The Calendar Year and Periods defines the calendars that will be used for period control and reporting. You can also define non-standard calendars (e.g. business year from July to June).">A Janela "Períodos e Anos Civís" define os calendários que serão utilizados para controle de períodos e relatórios. Você também pode definir calendários não padronizados (ex. ano fiscal de Julho a Junho).</value>
+  <value column="Description" original="Maintain Calendars Years Periods">Gerenciamento de Períodos e Anos Civis</value>
+  <value column="Help" original="The Calendar Year and Periods defines the calendars that will be used for period control and reporting. You can also define non-standard calendars (e.g. business year from July to June).">A Janela "Período e Ano Civil" define os calendários que serão utilizados para controle de períodos e relatórios. Você também pode definir calendários não padronizados (ex. ano fiscal de Julho a Junho).</value>
  </row>
  <row id="118" trl="Y">
-  <value column="Name" original="Account Element">Elemento de Contas</value>
-  <value column="Description" original="Maintain Account Elements">Gerenciamento dos Elementos de Contas</value>
-  <value column="Help" original="The Account Element Window is used to define and maintain the Accounting Element and User Defined Elements. &#10;One of the account segments is your natural account segment (Chart of Account). You may add a new account element for parallel reporting or for user defined accounting segments.">A Janela "Elemento Contábil" é usada para definir e manter o Elemento Contábil e os Elementos Definidos pelo Usuário. Um dos segmentos de contabilidade é o seu segmento de contabilidade natural (Plano de Contas). Você pode acrescentar um novo Elemento Contábil para relatórios paralelos ou para segmentos de contabilidade definidos pelo usuário. </value>
+  <value column="Name" original="Account Element">Elemento Contábil</value>
+  <value column="Description" original="Maintain Account Elements">Gerenciamento dos Elementos Contábeis</value>
+  <value column="Help" original="The Account Element Window is used to define and maintain the Accounting Element and User Defined Elements. &#10;One of the account segments is your natural account segment (Chart of Account). You may add a new account element for parallel reporting or for user defined accounting segments.">A Janela "Elemento Contábil" é usada para definir e manter o Elementos Contábeis e os Elementos Definidos pelo Usuário. Um dos segmentos de contabilidade é o seu segmento de contabilidade natural (Plano de Contas). Você pode acrescentar um novo Elemento Contábil para relatórios paralelos ou para segmentos de contabilidade definidos pelo usuário. </value>
  </row>
  <row id="120" trl="Y">
   <value column="Name" original="Unit of Measure">Unidade de Medida</value>
@@ -148,14 +148,14 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Project Window is used to define the projects which will can be tracked by phases and tasks.">The Project Window is used to define the projects which will can be tracked by phases and tasks.</value>
  </row>
  <row id="131" trl="Y">
-  <value column="Name" original="GL Category">Categoria de Razão Geral</value>
-  <value column="Description" original="Maintain General Ledger Categories">Gerenciamento de Categorias de Razão Geral</value>
-  <value column="Help" original="The GL Category Window allows you to define categories to be used in journals.  These categories provide a method of optionally grouping and reporting on journals.">A Janela "Categoria de Razão Geral" permite a você definir categorias a serem utilizadas em diários.  Estas categorias oferecem um método opcional de agrupamento e reportagem nos diários.</value>
+  <value column="Name" original="GL Category">Categoria de Livro Razão</value>
+  <value column="Description" original="Maintain General Ledger Categories">Gerenciamento de Categorias de Livro Razão</value>
+  <value column="Help" original="The GL Category Window allows you to define categories to be used in journals.  These categories provide a method of optionally grouping and reporting on journals.">A Janela "Categoria de Livro Razão" permite a você definir categorias a serem utilizadas em Livro Razão. Estas categorias oferecem um método opcional de agrupamento para fins de relatório.</value>
  </row>
  <row id="132" trl="Y">
-  <value column="Name" original="GL Journal Batch">Diário de Razão Geral</value>
-  <value column="Description" original="Enter and change Manual Journal Entries">Introduzir e Alterar Entradas Diárias (Manual)</value>
-  <value column="Help" original="The GL Journal Window allows you to enter and modify manual journal entries">A Janela "Diário de Razão Geral" permite a você digitar e modificar lançamentos manuais no diário</value>
+  <value column="Name" original="GL Journal Batch">Lote de Livro Razão (Lançamento)</value>
+  <value column="Description" original="Enter and change Manual Journal Entries">Lote de Lançamentos manuais no Livro Razão</value>
+  <value column="Help" original="The GL Journal Window allows you to enter and modify manual journal entries">A Janela "Lote de Livro Razão (Lançamento)" permite lançamentos no Livro Razão, em lote.</value>
  </row>
  <row id="134" trl="Y">
   <value column="Name" original="Activity (ABC)">Atividades (ABC)</value>
@@ -269,8 +269,8 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  </row>
  <row id="162" trl="Y">
   <value column="Name" original="Accounting Fact Details">Detalhes de Fatos Contábeis</value>
-  <value column="Description" original="Query Accounting Facts">Questionar Fatos Contábeis</value>
-  <value column="Help" original="Query the detail accounting transactions">Questionar os detalhes das transações contábeis</value>
+  <value column="Description" original="Query Accounting Facts">Verificação de Detalhes de Fatos Contábeis</value>
+  <value column="Help" original="Query the detail accounting transactions">Verificação de Detalhes de Fatos Contábeis</value>
  </row>
  <row id="163" trl="Y">
   <value column="Name" original="Tree">Árvore</value>
@@ -657,9 +657,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Before reimbursing expenses, check the open expense items">Antes de reembolsar fornecedores/funcionários, conferira as linhas de despesa.</value>
  </row>
  <row id="255" trl="Y">
-  <value column="Name" original="Accounting Fact Balances">Balanços de Fatos Contábeis</value>
-  <value column="Description" original="Query Accounting Daily Balances">Questionar Balanços Contábeis Diários</value>
-  <value column="Help" original="Query daily account balances">Questionar balanços de contas diários</value>
+  <value column="Name" original="Accounting Fact Balances">Saldos de Fatos Contábeis</value>
+  <value column="Description" original="Query Accounting Daily Balances">Visualização de saldos diários de Fatos Contábeis</value>
+  <value column="Help" original="Query daily account balances">Permite visualizar os saldos diários de Fatos Contábeis.</value>
  </row>
  <row id="256" trl="Y">
   <value column="Name" original="Attribute Set">Conjunto de Atributos</value>
@@ -1924,10 +1924,10 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200005" trl="N">
-  <value column="Name" original="GL Journal">GL Journal</value>
-  <value column="Description" original="Enter and change Manual Journal Entries">Enter and change Manual Journal Entries</value>
-  <value column="Help" original="The GL Journal Window allows you to enter and modify manual journal entries">The GL Journal Window allows you to enter and modify manual journal entries</value>
+ <row id="200005" trl="Y">
+  <value column="Name" original="GL Journal">Livro Razão (Lançamento)</value>
+  <value column="Description" original="Enter and change Manual Journal Entries">Lançamentos manuais no Livro Razão</value>
+  <value column="Help" original="The GL Journal Window allows you to enter and modify manual journal entries">A janela Livro Razão (Lançamento) permite lançamentos no Livro Razão</value>
  </row>
  <row id="200006" trl="N">
   <value column="Name" original="Dashboard Preference">Dashboard Preference</value>
@@ -1949,8 +1949,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Times for the scheduler">Times for the scheduler</value>
   <value column="Help" original=""/>
  </row>
- <row id="200013" trl="N">
-  <value column="Name" original="GL Journal Generator">GL Journal Generator</value>
+ <row id="200013" trl="Y">
+  <value column="Name" original="GL Journal Generator">Gerador de Livro Razão (Lançamento)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2070,77 +2070,77 @@ MRP - 110	 No exists Dem</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="68928e29-e04a-4d4d-92ee-d230e06891f7">
-  <value column="Name" original="NCM">NCM</value>
+  <value column="Name" original="NCM (LBR)">NCM</value>
   <value column="Description" original="NCM stands for Nomenclatura Comum do MERCOSUL">Manutenção de NCM - Nomenclatura Comum do MERCOSUL e seus impostos</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="12e468e7-43df-4b62-86a5-3bf97a8664b4">
-  <value column="Name" original="Legal Message">Mensagem Legal</value>
+  <value column="Name" original="Legal Message (LBR)">Mensagem Legal</value>
   <value column="Description" original="Maintain Legal Messages">Manutenção de mensagens legais impressas em documentos fiscais </value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="9327ad2d-4ad3-4881-b334-95dfbb8acd28">
-  <value column="Name" original="Tax Group (NF)">Grupo de Tributação de NF</value>
+  <value column="Name" original="Tax Group (NF) (LBR)">Grupo de Tributação de NF</value>
   <value column="Description" original="Maintain NF Tax Groups">Manutenção dos grupos de tributação segregadas em Notas Fiscais</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="40a3a716-a730-4bc9-b737-ea1cf9578205">
-  <value column="Name" original="Product Fiscal Group">Grupo de Tributação de Produto</value>
+  <value column="Name" original="Product Fiscal Group (LBR)">Grupo de Tributação de Produto</value>
   <value column="Description" original="Maintain Product Fiscal Groups">Gerenciamento de grupos de tributação de Produtos</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="ee501c5e-9dfc-43ac-8f59-4522ce3dd1ba">
-  <value column="Name" original="BP Fiscal Group">Grupo de Tributação de PN</value>
+  <value column="Name" original="BP Fiscal Group (LBR)">Grupo de Tributação de PN</value>
   <value column="Description" original="Maintain Business Partner Fiscal Groups">Gerenciamento de grupos de tributação de Parceiros de Negócios</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="603e54ab-fbf3-451b-9fcf-ad3d927c136c">
-  <value column="Name" original="CFOP Product Category">Categoria CFOP de Produto</value>
+  <value column="Name" original="CFOP Product Category (LBR)">Categoria CFOP de Produto</value>
   <value column="Description" original="Maintain CFOP Product Categories">Gerenciamento de categorias CFOP de Produtos</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="71faf0fd-f396-4ec1-aa51-7e77b248fe3b">
-  <value column="Name" original="CFOP BP Category">Categoria CFOP de PN</value>
+  <value column="Name" original="CFOP BP Category (LBR)">Categoria CFOP de PN</value>
   <value column="Description" original="Maintain CFOP Business Partner Categories">Gerenciamento de categorias CFOP de Parceiros de Negócios</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="e5bf831a-fbb8-4cdd-a4bd-9a483d8b3056">
-  <value column="Name" original="Tax (Brazil)">Imposto (Brasil)</value>
+  <value column="Name" original="Tax (Brazil) (LBR)">Imposto (Brasil)</value>
   <value column="Description" original="">Gerenciamento e Manutenção de Impostos Brasileiros</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="85a92339-145c-4afc-b2b0-29d196865ebe">
-  <value column="Name" original="Tax Formula (Brazil)">Fórmula de Imposto (Brasil)</value>
+  <value column="Name" original="Tax Formula (Brazil) (LBR)">Fórmula de Imposto (Brasil)</value>
   <value column="Description" original="">Manutenção e Gerenciamento de Fórmulas de Imposto (Brasil)</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="e4d5080b-c2ed-4386-af10-3db53ae1bb73">
-  <value column="Name" original="ICMS Matrix">Matriz de ICMS</value>
+  <value column="Name" original="ICMS Matrix (LBR)">Matriz de ICMS</value>
   <value column="Description" original="Maintain ICMS Matriz">Manutenção de Matriz de ICMS</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="340b974e-1739-4f26-87a4-6fa6a30d56c9">
-  <value column="Name" original="ISS Matrix">Matriz de ISS</value>
+  <value column="Name" original="ISS Matrix (LBR)">Matriz de ISS</value>
   <value column="Description" original="Maintain ISS (Services) Matrix">Manutenção da Matriz de ISS</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="c1b7f14e-5ecf-4109-acf5-044d1fa7e456">
-  <value column="Name" original="Tax Configuration">Configuração de Impostos</value>
+  <value column="Name" original="Tax Configuration (LBR)">Configuração de Impostos</value>
   <value column="Description" original="Defines Tax Configuration">Define a Configuração de Impostos</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="70c0b0f9-02e6-4361-8078-ee1afc3c52cb">
-  <value column="Name" original="CFOP">CFOP</value>
+  <value column="Name" original="CFOP (LBR)">CFOP</value>
   <value column="Description" original="Maintain CFOP">Manutenção de CFOP</value>
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="06389dc4-c8ab-469f-8dbf-1d080984bd80">
-  <value column="Name" original="Transaction Tax">Transaction Tax</value>
+  <value column="Name" original="Transaction Tax (LBR)">Transaction Tax</value>
   <value column="Description" original="View Transaction Tax">View Transaction Tax</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="df8ad221-e4c0-4415-80cb-4be3f5af2af3">
-  <value column="Name" original="Brazilian Fiscal Invoice">Nota Fiscal</value>
+  <value column="Name" original="Brazilian Fiscal Invoice (LBR)">Nota Fiscal</value>
   <value column="Description" original="Customer &amp; Vendor Brazilian Fiscal Invoice Entry">Introduzir e Alterar Notas Fiscais (Cliente / Fornecedor)</value>
   <value column="Help" original="The Brazilian Fiscal Invoice Window allows you to display and enter fiscal invoices for a customer or vendor.  Invoices can also be generated from Order, Invoices or RMA's">A janela permite inserir notas fiscais para cliente ou de fornecedor. Eles podem ser geradas a partir de Pedidos, Faturas e ARMs</value>
  </row>
@@ -2150,18 +2150,23 @@ MRP - 110	 No exists Dem</value>
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="00499137-71c5-4baa-879c-829117782f55">
-  <value column="Name" original="NF-e Web Service">NF-e Web Service</value>
+  <value column="Name" original="NF-e Web Service (LBR)">NF-e Web Service</value>
   <value column="Description" original="Maintain NF-e Web Services">Maintain NF-e Web Services</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="40437224-28a7-420a-b87b-af90f540e211">
-  <value column="Name" original="Brazilian Fiscal Invoice Lot">Lote de Nota Fiscal</value>
+  <value column="Name" original="Brazilian Fiscal Invoice Lot (LBR)">Lote de Nota Fiscal</value>
   <value column="Description" original="Customer &amp; Vendor Brazilian Fiscal Invoice Lot Entry">Registro e manutenção de lotes de Nota Fiscal (para envio à Sefaz)</value>
   <value column="Help" original="The Brazilian Fiscal Invoice Lot Window allows you to display and enter lots and send them to Sefaz."/>
  </row>
  <row trl="Y" uuid="172c8a9d-1b7e-4a0e-968c-87d4727265ae">
-  <value column="Name" original="Brazilian Fiscal Invoice Event">Evento de Nota Fiscal</value>
+  <value column="Name" original="Brazilian Fiscal Invoice Event (LBR)">Evento de Nota Fiscal</value>
   <value column="Description" original="Customer &amp; Vendor Brazilian Fiscal Invoice Event Entry">Registro e manutenção de eventos de Nota Fiscal (para envio à Sefaz)</value>
   <value column="Help" original="The Brazilian Fiscal Invoice Event Window allows you to display and enter events and send them to Sefaz."/>
+ </row>
+ <row trl="Y" uuid="e0b2f319-cb52-4644-b3f5-e11ebd468660">
+  <value column="Name" original="Tax Definition (LBR)">Definição de Impostos</value>
+  <value column="Description" original="Defines Additional Tax Configuration based on Relative Priority">Define Configurações Adicionais de Impostos baseadas em Prioridade Relativa</value>
+  <value column="Help" original=""/>
  </row>
 </idempiereTrl>

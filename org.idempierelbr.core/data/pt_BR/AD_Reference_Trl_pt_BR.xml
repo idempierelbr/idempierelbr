@@ -2837,4 +2837,14 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="c78dc60d-462c-48f3-bc49-5489a0e050fd">
+  <value column="Name" original="RelType NF-e &lt;= NF-e Event Lot"><![CDATA[RelType NF-e <= NF-e Event Lot]]></value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="3f0a3a9e-6365-4d2f-89ba-3e856ac9b043">
+  <value column="Name" original="RelType NF-e Event Lot &lt;= NF-e"><![CDATA[RelType NF-e Event Lot <= NF-e]]></value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

@@ -1815,7 +1815,7 @@ ALTER TABLE LBR_NotaFiscalLine ADD COLUMN C_UOM_ID NUMERIC(10) NOT NULL
 ;
 
 -- May 23, 2014 10:08:44 AM BRT
-INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,SeqNo,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,Help,EntityType,Description,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,Created,CreatedBy,Updated,IsActive,XPosition,AD_Client_ID,ColumnSpan,AD_Column_ID) VALUES ('N',1000069,1,'N','N',110,'Y',1001535,'N','The Processed checkbox indicates that a document has been processed.','U','The document has been processed','Processed','ec9e74df-7405-4157-931e-a283fabfdeef','N','Y',0,0,TO_TIMESTAMP('2014-05-23 10:08:44','YYYY-MM-DD HH24:MI:SS'),0,TO_TIMESTAMP('2014-05-23 10:08:44','YYYY-MM-DD HH24:MI:SS'),'Y',2,0,2,1000676)
+INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,SeqNo,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,Help,EntityType,Description,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,Created,CreatedBy,Updated,IsActive,XPosition,AD_Client_ID,ColumnSpan,AD_Column_ID) VALUES ('N',1000069,1,'N','N',110,'Y',1001535,'N','The Processed checkbox indicates that a document has been processed.','LBR','The document has been processed','Processed','ec9e74df-7405-4157-931e-a283fabfdeef','N','Y',0,0,TO_TIMESTAMP('2014-05-23 10:08:44','YYYY-MM-DD HH24:MI:SS'),0,TO_TIMESTAMP('2014-05-23 10:08:44','YYYY-MM-DD HH24:MI:SS'),'Y',2,0,2,1000676)
 ;
 
 -- May 23, 2014 10:08:44 AM BRT

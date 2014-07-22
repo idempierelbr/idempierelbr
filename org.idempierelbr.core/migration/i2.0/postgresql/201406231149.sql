@@ -68,7 +68,7 @@ INSERT INTO AD_InfoColumn (Help,SeqNo,AD_InfoColumn_UU,AD_InfoColumn_ID,IsQueryC
 ;
 
 -- Jun 23, 2014 10:32:15 AM BRT
-INSERT INTO AD_InfoColumn (Help,SeqNo,AD_InfoColumn_UU,AD_InfoColumn_ID,IsQueryCriteria,EntityType,Description,CreatedBy,Updated,AD_Org_ID,UpdatedBy,Name,IsCentrallyMaintained,ColumnName,IsDisplayed,IsActive,QueryFunction,QueryOperator,SelectClause,SeqNoSelection,IsIdentifier,AD_Client_ID,AD_Element_ID,AD_InfoWindow_ID,AD_Reference_ID,Created) VALUES ('The Document Date indicates the date the document was generated.  It may or may not be the same as the accounting date.',70,'c185dbb5-8379-4353-a5dc-92395cf0ce08',1000013,'Y','U','Date of the Document',0,TO_TIMESTAMP('2014-06-23 10:32:15','YYYY-MM-DD HH24:MI:SS'),0,0,'Document Date','Y','DateDoc','N','Y','Trunc','<=','a.DateDoc',0,'N',0,265,1000001,16,TO_TIMESTAMP('2014-06-23 10:32:15','YYYY-MM-DD HH24:MI:SS'))
+INSERT INTO AD_InfoColumn (Help,SeqNo,AD_InfoColumn_UU,AD_InfoColumn_ID,IsQueryCriteria,EntityType,Description,CreatedBy,Updated,AD_Org_ID,UpdatedBy,Name,IsCentrallyMaintained,ColumnName,IsDisplayed,IsActive,QueryFunction,QueryOperator,SelectClause,SeqNoSelection,IsIdentifier,AD_Client_ID,AD_Element_ID,AD_InfoWindow_ID,AD_Reference_ID,Created) VALUES ('The Document Date indicates the date the document was generated.  It may or may not be the same as the accounting date.',70,'c185dbb5-8379-4353-a5dc-92395cf0ce08',1000013,'Y','LBR','Date of the Document',0,TO_TIMESTAMP('2014-06-23 10:32:15','YYYY-MM-DD HH24:MI:SS'),0,0,'Document Date','Y','DateDoc','N','Y','Trunc','<=','a.DateDoc',0,'N',0,265,1000001,16,TO_TIMESTAMP('2014-06-23 10:32:15','YYYY-MM-DD HH24:MI:SS'))
 ;
 
 -- Jun 23, 2014 10:32:20 AM BRT

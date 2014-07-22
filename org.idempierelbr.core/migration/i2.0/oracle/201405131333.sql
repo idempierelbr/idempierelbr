@@ -59,7 +59,7 @@ INSERT INTO AD_Element (ColumnName,AD_Element_ID,Name,PrintName,AD_Element_UU,Cr
 ;
 
 -- May 13, 2014 10:02:24 AM BRT
-INSERT INTO AD_Element (ColumnName,AD_Element_ID,Name,PrintName,AD_Element_UU,Created,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType) VALUES ('LBR_LicensePlateRegion_ID',1000195,'License Plate Region','License Plate Region','741ba969-477f-4a0b-b062-a79b1fde2f4b',TO_DATE('2014-05-13 10:02:23','YYYY-MM-DD HH24:MI:SS'),TO_DATE('2014-05-13 10:02:23','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'U')
+INSERT INTO AD_Element (ColumnName,AD_Element_ID,Name,PrintName,AD_Element_UU,Created,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType) VALUES ('LBR_LicensePlateRegion_ID',1000195,'License Plate Region','License Plate Region','741ba969-477f-4a0b-b062-a79b1fde2f4b',TO_DATE('2014-05-13 10:02:23','YYYY-MM-DD HH24:MI:SS'),TO_DATE('2014-05-13 10:02:23','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'LBR')
 ;
 
 -- May 13, 2014 10:02:50 AM BRT
@@ -2398,7 +2398,7 @@ INSERT INTO AD_Element (ColumnName,AD_Element_ID,Name,PrintName,AD_Element_UU,Cr
 ;
 
 -- May 15, 2014 8:17:53 AM BRT
-INSERT INTO AD_Element (ColumnName,AD_Element_ID,Name,PrintName,AD_Element_UU,Created,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType) VALUES ('LBR_NotaFiscalNote_UU',1000217,'Brazilian Fiscal Invoice (Nota Fiscal) Note','Brazilian Fiscal Invoice (Nota Fiscal) Note','cdf89a1c-b933-4478-b06f-5108b6c8cb93',TO_DATE('2014-05-15 08:17:53','YYYY-MM-DD HH24:MI:SS'),TO_DATE('2014-05-15 08:17:53','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'U')
+INSERT INTO AD_Element (ColumnName,AD_Element_ID,Name,PrintName,AD_Element_UU,Created,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType) VALUES ('LBR_NotaFiscalNote_UU',1000217,'Brazilian Fiscal Invoice (Nota Fiscal) Note','Brazilian Fiscal Invoice (Nota Fiscal) Note','cdf89a1c-b933-4478-b06f-5108b6c8cb93',TO_DATE('2014-05-15 08:17:53','YYYY-MM-DD HH24:MI:SS'),TO_DATE('2014-05-15 08:17:53','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'LBR')
 ;
 
 -- May 15, 2014 8:27:45 AM BRT
@@ -2489,7 +2489,7 @@ ALTER TABLE LBR_NotaFiscalNote ADD CONSTRAINT CreatedBy_LBRNotaFiscalNote FOREIG
 ;
 
 -- May 15, 2014 8:29:59 AM BRT
-INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,Help,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,AD_Client_ID,IsEncrypted,IsSecure,AD_Element_ID,AD_Reference_ID,AD_Table_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,1000771,'N','N','N',0,'N',7,'N','N','N','Y','583b84bf-565e-4498-9303-df3c54b63266','N','Updated','Date this record was updated','The Updated field indicates the date that this record was updated.','Updated','N',TO_DATE('2014-05-15 08:29:59','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2014-05-15 08:29:59','YYYY-MM-DD HH24:MI:SS'),0,'N','N',0,'N','N',607,16,1000041,0,'U')
+INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,Help,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,AD_Client_ID,IsEncrypted,IsSecure,AD_Element_ID,AD_Reference_ID,AD_Table_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,1000771,'N','N','N',0,'N',7,'N','N','N','Y','583b84bf-565e-4498-9303-df3c54b63266','N','Updated','Date this record was updated','The Updated field indicates the date that this record was updated.','Updated','N',TO_DATE('2014-05-15 08:29:59','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2014-05-15 08:29:59','YYYY-MM-DD HH24:MI:SS'),0,'N','N',0,'N','N',607,16,1000041,0,'LBR')
 ;
 
 -- May 15, 2014 8:30:01 AM BRT

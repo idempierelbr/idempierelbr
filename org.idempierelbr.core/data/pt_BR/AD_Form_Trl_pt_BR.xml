@@ -198,8 +198,8 @@ Select the orders to generate the shipments & Invoices for.]]></value>
   <value column="Description" original="Edit Manufacturing Workflows">Edit Manufacturing Workflows</value>
   <value column="Help" original="Edit the graphical layout of manufacturing workflows">Edit the graphical layout of manufacturing workflows</value>
  </row>
- <row id="53016" trl="N">
-  <value column="Name" original="Accounting Fact Reconcilation (manual)">Accounting Fact Reconcilation (manual)</value>
+ <row id="53016" trl="Y">
+  <value column="Name" original="Accounting Fact Reconcilation (manual)">Conciliação de Fatos Contábeis (Manual)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

@@ -308,8 +308,8 @@
   <value column="Help" original=""/>
  </row>
  <row id="168" trl="Y">
-  <value column="Name" original="Open/Close">Abrir/Fechar</value>
-  <value column="Description" original="Change Period Status">Altera o Estado do Período</value>
+  <value column="Name" original="Open/Close">Abrir / Fechar</value>
+  <value column="Description" original="Change Period Status">Permite alterar o estado do Período</value>
   <value column="Help" original=""/>
  </row>
  <row id="169" trl="Y">
@@ -528,12 +528,12 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
  </row>
  <row id="214" trl="Y">
   <value column="Name" original="Copy Details">Copiar Detalhes</value>
-  <value column="Description" original="Copy Journal/Lines from other Journal Batch">Copiar Diários/Linhas a partir de outro Lote de Diários</value>
+  <value column="Description" original="Copy Journal/Lines from other Journal Batch">Copiar Linhas de outro Lote de Livro Razão (Lançamento)</value>
   <value column="Help" original=""/>
  </row>
  <row id="215" trl="Y">
   <value column="Name" original="Set Project Type">Configurar Tipo de Projeto</value>
-  <value column="Description" original="Set Project Type and for Service Projects copy Phases and Tasks of Project Type into Project">Configura Tipo de Projeto e para Projetos de Serviços copia Fases e Tarefas de um Tipo de Projeto no Projeto</value>
+  <value column="Description" original="Set Project Type and for Service Projects copy Phases and Tasks of Project Type into Project">Copia fases e tarefas de um Tipo de Projeto ao seu Projeto</value>
   <value column="Help" original="&#10;">
 </value>
  </row>
@@ -726,17 +726,17 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
  <row id="252" trl="Y">
   <value column="Name" original="Accounting Fact Details">Detalhes de Fatos Contábeis</value>
   <value column="Description" original="Accounting Fact Details Report">Relatório Detalhado de Fatos Contábeis</value>
-  <value column="Help" original="Report with detail accounting details.">Relatório detalhado de contabilidade.</value>
+  <value column="Help" original="Report with detail accounting details."/>
  </row>
  <row id="253" trl="Y">
   <value column="Name" original="Accounting Fact Daily">Fatos Contábeis Diários</value>
-  <value column="Description" original="Accounting Fact Details summarized by Accounting Date">Detalhes de Fatos Contábeis resumidos por Data de Lançamento</value>
-  <value column="Help" original="The report lists the daily summary of accounting transactions">O relatório lista o resumo diário das transações contábeis</value>
+  <value column="Description" original="Accounting Fact Details summarized by Accounting Date">Detalhes de Fatos Contábeis por Data Contábil</value>
+  <value column="Help" original="The report lists the daily summary of accounting transactions">O relatório lista fatos contábeis com base no intervalo de datas selecionado</value>
  </row>
  <row id="254" trl="Y">
-  <value column="Name" original="Accounting Fact Period">Períodos de Fatos Contábeis</value>
-  <value column="Description" original="Accounting Fact Details summarized by Accounting Period">Detalhes de Fatos Contábeis resumidos por Período Contábil</value>
-  <value column="Help" original="The Period is based on the the Calendar defined on Client level.">O Período é baseado no Calendário definido no nível da Empresa.</value>
+  <value column="Name" original="Accounting Fact Period">Fatos Contábeis por Período</value>
+  <value column="Description" original="Accounting Fact Details summarized by Accounting Period">Detalhes de Fatos Contábeis por Período Contábil</value>
+  <value column="Help" original="The Period is based on the the Calendar defined on Client level.">O relatório lista fatos contábeis com base no período contábil selecionado</value>
  </row>
  <row id="255" trl="Y">
   <value column="Name" original="Reopen Order">Reabrir um Pedido Fechado</value>
@@ -1100,7 +1100,7 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
  <row id="326" trl="Y">
   <value column="Name" original="Invoice Not Realized Gain/Loss">Resultados Não Realizados (Faturas)</value>
   <value column="Description" original="Invoice Not Realized Gain &amp; Loss Report">Faturas com Resultados Não Realizados (Ganhos e Perdas)</value>
-  <value column="Help" original="The Report lists not fully paid invoices with open amount, the GL amounts and the revalued amounts.  If an invoice is partially paid, the percentage of the open amount is used to calculate the revaluation amount.&lt;br&gt;&#10;If you select a currency, only invoices of that currency are included; if you select Include All Currencies, all invoices are included and you can use the report to reconcile your AP/AR accounts.&lt;br&gt;&#10;If you select a GL Document Type, a GL Journal is created. &#10;Note that the report only includes posted invoices.">O relatório exibe as faturas com pagamentos em aberto, os valores no Livro Razão e os valores reavaliados. Se uma fatura teve um pagamento parcial, a porcentagem do saldo em aberto é utilizada para calcular o valor de reavaliação. Se uma moeda for selecionada, apenas faturas naquela moeda serão exibidas no relatório. Se o campo Incluir Todas as Moedas for selecionado, todas as faturas serão exibidas e você pode utilizar o relatório para reconciliar  suas contas AP/AR (contabilidade de fornecedores e clientes). Se um Tipo de Documento de Reavaliação for selecionado, um Livro Diário será gerado. Atenção: apenas faturas lançadas (contabilmente) são consideradas no relatório.</value>
+  <value column="Help" original="The Report lists not fully paid invoices with open amount, the GL amounts and the revalued amounts.  If an invoice is partially paid, the percentage of the open amount is used to calculate the revaluation amount.&lt;br&gt;&#10;If you select a currency, only invoices of that currency are included; if you select Include All Currencies, all invoices are included and you can use the report to reconcile your AP/AR accounts.&lt;br&gt;&#10;If you select a GL Document Type, a GL Journal is created. &#10;Note that the report only includes posted invoices.">O relatório exibe as faturas com pagamentos em aberto, os valores no Livro Razão e os valores reavaliados. Se uma fatura teve um pagamento parcial, a porcentagem do saldo em aberto é utilizada para calcular o valor de reavaliação. Se uma moeda for selecionada, apenas faturas naquela moeda serão exibidas no relatório. Se o campo Incluir Todas as Moedas for selecionado, todas as faturas serão exibidas e você pode utilizar o relatório para reconciliar  suas contas AP/AR (contabilidade de fornecedores e clientes). Se um Tipo de Documento de Reavaliação for selecionado, um Livro Razão (Lançamento) será gerado. Atenção: apenas faturas lançadas (contabilmente) são consideradas no relatório.</value>
  </row>
  <row id="327" trl="Y">
   <value column="Name" original="Test EMail">Teste de email</value>
@@ -1851,15 +1851,15 @@ This process should be implemented when the users are not connected.</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53220" trl="N">
-  <value column="Name" original="Unreconciled accounting facts">Unreconciled accounting facts</value>
+ <row id="53220" trl="Y">
+  <value column="Name" original="Unreconciled accounting facts">Fatos Contábeis Não Conciliados</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53221" trl="N">
-  <value column="Name" original="Automatic account reconciliation">Automatic account reconciliation</value>
-  <value column="Description" original="Reconcile account transactions according to standard rules">Reconcile account transactions according to standard rules</value>
-  <value column="Help" original=""/>
+ <row id="53221" trl="Y">
+  <value column="Name" original="Automatic account reconciliation">Conciliação de Fatos Contábeis (Automática)</value>
+  <value column="Description" original="Reconcile account transactions according to standard rules">Conciliação Automática de Fatos Contábeis</value>
+  <value column="Help" original="">Este processo permite a conciliação automática de fatos contábeis com base em regras pré-estabelecidas.</value>
  </row>
  <row id="53226" trl="Y">
   <value column="Name" original="Create Production">Criar Produção</value>
@@ -1951,9 +1951,9 @@ b. Product, is the asset product that will be act as the base for the newly crea
 c. UseLifeYears, is an optional parameter. Use this if you want a different use life years for the newly created asset, instead of the default uselifeyears from asset group accounting.
 d. Transaction Date, will become in-service-date for the newly created asset.</value>
  </row>
- <row id="200005" trl="N">
-  <value column="Name" original="Copy Details">Copy Details</value>
-  <value column="Description" original="Copy Journal/Lines from other Journal">Copy Journal/Lines from other Journal</value>
+ <row id="200005" trl="Y">
+  <value column="Name" original="Copy Details">Copiar Detalhes</value>
+  <value column="Description" original="Copy Journal/Lines from other Journal">Copiar Linhas de outro Livro Razão (Lançamento)</value>
   <value column="Help" original=""/>
  </row>
  <row id="200006" trl="Y">
@@ -1971,8 +1971,8 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original="Reset Locked Account for User">Reset Locked Account for User</value>
   <value column="Help" original=""/>
  </row>
- <row id="200010" trl="N">
-  <value column="Name" original="Generate GL Journal">Generate GL Journal</value>
+ <row id="200010" trl="Y">
+  <value column="Name" original="Generate GL Journal">Gerar Livro Razão (Lançamento)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2086,8 +2086,8 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original="Product/Component Where Used">Utilização de Produto/Componente em LDMs</value>
   <value column="Help" original="Enter a product/component below, and the system will check for BOM(s) that contain that product/component.  This report is non-recursive.  In other words, it will only show one parent level above the product/component.">Informe um produto / componente abaixo, e o sistema irá localizar LDMs que contenham o mesmo. O relatório não é recursivo, ou seja, irá mostrar apenas um nível acima do produto / componente informado.</value>
  </row>
- <row id="200037" trl="N">
-  <value column="Name" original="Simple Fact View">Simple Fact View</value>
+ <row id="200037" trl="Y">
+  <value column="Name" original="Simple Fact View">Fatos Contábeis (Simplificado)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2175,8 +2175,8 @@ Please note that base language cannot be a system language.</value>
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="3d7c5976-5ad0-4d8f-a6b2-44f88d5cc7a8">
-  <value column="Name" original="Generate Certificates for NF-e Web Services">Generate Certificates for NF-e Web Services</value>
-  <value column="Description" original="Generate Certificates for NF-e Web Services"/>
+  <value column="Name" original="Generate Sefaz WS Certificates">Generate Certificates for NF-e Web Services</value>
+  <value column="Description" original="Generate Sefaz WS Certificates"/>
   <value column="Help" original="Based on entries in Window NF-e Web Services, a keystore is generated. You should be online so that the system can connect to the webservices."/>
  </row>
  <row trl="Y" uuid="506b68bf-f88f-4781-b11a-a965bcf36e89">
@@ -2213,5 +2213,10 @@ Please note that base language cannot be a system language.</value>
   <value column="Name" original="Generate Brazilian Fiscal Invoice">Gerar Nota Fiscal</value>
   <value column="Description" original="Create and process Brazilian Fiscal Invoice from source document">Gerar e processar Nota Fiscal a partir de um documento</value>
   <value column="Help" original="The document should be correct and completed.">O documento precisa estar completo ou fechado</value>
+ </row>
+ <row trl="N" uuid="8d99f496-dfa0-4f36-890c-790a6ddcb3a4">
+  <value column="Name" original="Generate DANFE">Generate DANFE</value>
+  <value column="Description" original="Generate DANFE">Generate DANFE</value>
+  <value column="Help" original=""/>
  </row>
 </idempiereTrl>

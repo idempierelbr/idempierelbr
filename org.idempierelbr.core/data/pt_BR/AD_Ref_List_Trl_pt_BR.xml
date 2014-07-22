@@ -120,19 +120,19 @@
  </row>
  <row id="122" trl="Y">
   <value column="Name" original="Revenue">Receita</value>
-  <value column="Description" original="Revenue (P&amp;L) Account"><![CDATA[Conta de  Receitas (L&P)]]></value>
+  <value column="Description" original="Revenue (P&amp;L) Account">Conta de  Receitas (Ganhos e Perdas)</value>
  </row>
  <row id="123" trl="Y">
   <value column="Name" original="Expense">Despesa</value>
-  <value column="Description" original="Expense (P&amp;L) Account"><![CDATA[Conta de Despesas (L&P)]]></value>
+  <value column="Description" original="Expense (P&amp;L) Account">Conta de Despesas (Ganhos e Perdas)</value>
  </row>
  <row id="124" trl="Y">
-  <value column="Name" original="Owner's Equity">Patrimônio dos Proprietários</value>
-  <value column="Description" original="Owner's Equity (Balance Sheet) Account">Conta de Patrimônio dos Proprietários (Balanço Patrimonial)</value>
+  <value column="Name" original="Owner's Equity">Patrimônio Líquido</value>
+  <value column="Description" original="Owner's Equity (Balance Sheet) Account">Conta de Patrimônio Líquido (Balanço Patrimonial)</value>
  </row>
  <row id="125" trl="Y">
   <value column="Name" original="Memo">Memorando</value>
-  <value column="Description" original="Memo (Non Balance Sheet nor P&amp;L) Account"><![CDATA[Conta de Memorando (Nem Balanço Patrimonial nem L&P)]]></value>
+  <value column="Description" original="Memo (Non Balance Sheet nor P&amp;L) Account">Conta de Memorando (nem Balanço Patrimonial, nem Ganhos e Perdas)</value>
  </row>
  <row id="126" trl="Y">
   <value column="Name" original="Natural">Natural</value>
@@ -2535,11 +2535,11 @@
   <value column="Description" original="Internal Commitment">Comprometimento Interno</value>
  </row>
  <row id="784" trl="Y">
-  <value column="Name" original="PO Commitment only">Só Comprometimento</value>
+  <value column="Name" original="PO Commitment only">Comprometimento (PC) de Recursos</value>
   <value column="Description" original=""/>
  </row>
  <row id="785" trl="Y">
-  <value column="Name" original="PO Commitment &amp; Reservation"><![CDATA[Comprometimento & Reservas]]></value>
+  <value column="Name" original="PO Commitment &amp; Reservation">Comprometimento (PC) e Reserva de Recursos</value>
   <value column="Description" original=""/>
  </row>
  <row id="786" trl="Y">
@@ -3355,15 +3355,15 @@
   <value column="Description" original=""/>
  </row>
  <row id="53223" trl="Y">
-  <value column="Name" original="PO/SO Commitment &amp; Reservation"><![CDATA[PO;SO Commitment & Reservation]]></value>
+  <value column="Name" original="PO/SO Commitment &amp; Reservation">Comprometimento (PC/PV) e Reserva de Recursos</value>
   <value column="Description" original=""/>
  </row>
  <row id="53224" trl="Y">
-  <value column="Name" original="SO Commitment only">SO Commitment only</value>
+  <value column="Name" original="SO Commitment only">Comprometimento (PV) de Recursos</value>
   <value column="Description" original=""/>
  </row>
  <row id="53225" trl="Y">
-  <value column="Name" original="PO/SO Commitment">PO;SO Commitment</value>
+  <value column="Name" original="PO/SO Commitment">Comprometimento (PC/PV) de Recursos</value>
   <value column="Description" original=""/>
  </row>
  <row id="53227" trl="N">
@@ -4926,16 +4926,16 @@
   <value column="Name" original="Card">Cartão</value>
   <value column="Description" original=""/>
  </row>
- <row id="200027" trl="N">
-  <value column="Name" original="Column">Column</value>
+ <row id="200027" trl="Y">
+  <value column="Name" original="Column">Coluna</value>
   <value column="Description" original=""/>
  </row>
- <row id="200028" trl="N">
-  <value column="Name" original="Fixed">Fixed</value>
+ <row id="200028" trl="Y">
+  <value column="Name" original="Fixed">Fixo</value>
   <value column="Description" original=""/>
  </row>
- <row id="200029" trl="N">
-  <value column="Name" original="Same">Same</value>
+ <row id="200029" trl="Y">
+  <value column="Name" original="Same">Mesmo</value>
   <value column="Description" original=""/>
  </row>
  <row id="200039" trl="N">

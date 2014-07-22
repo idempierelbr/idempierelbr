@@ -114,7 +114,7 @@ INSERT INTO AD_Element (ColumnName,AD_Element_ID,Name,Description,PrintName,AD_E
 ;
 
 -- Jun 25, 2014 12:00:40 PM BRT
-INSERT INTO AD_Element (ColumnName,AD_Element_ID,Name,Description,PrintName,AD_Element_UU,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType,Created,Updated) VALUES ('LBR_NotaFiscalEvent_UU',1000275,'NF-e Event Lot','Identifies a NF-e Event Lot','NF-e Event Lot','47a8dc3f-10d6-4e18-aeea-3a7c8039ed14',0,0,0,'Y',0,'U',TO_DATE('2014-06-25 12:00:40','YYYY-MM-DD HH24:MI:SS'),TO_DATE('2014-06-25 12:00:40','YYYY-MM-DD HH24:MI:SS'))
+INSERT INTO AD_Element (ColumnName,AD_Element_ID,Name,Description,PrintName,AD_Element_UU,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType,Created,Updated) VALUES ('LBR_NotaFiscalEvent_UU',1000275,'NF-e Event Lot','Identifies a NF-e Event Lot','NF-e Event Lot','47a8dc3f-10d6-4e18-aeea-3a7c8039ed14',0,0,0,'Y',0,'LBR',TO_DATE('2014-06-25 12:00:40','YYYY-MM-DD HH24:MI:SS'),TO_DATE('2014-06-25 12:00:40','YYYY-MM-DD HH24:MI:SS'))
 ;
 
 -- Jun 25, 2014 12:01:02 PM BRT

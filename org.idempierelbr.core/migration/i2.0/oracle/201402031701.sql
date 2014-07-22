@@ -3219,7 +3219,7 @@ UPDATE AD_Tab SET SeqNo=80,Updated=TO_DATE('2014-02-05 13:00:14','YYYY-MM-DD HH2
 ;
 
 -- Feb 5, 2014 1:49:43 PM BRST
-INSERT INTO AD_Table (ImportTable,CopyColumnsFromTable,IsSecurityEnabled,AccessLevel,LoadSeq,AD_Window_ID,AD_Table_ID,IsHighVolume,IsView,IsChangeLog,EntityType,ReplicationType,AD_Table_UU,IsCentrallyMaintained,IsDeleteable,TableName,Name,IsActive,AD_Org_ID,CreatedBy,Updated,UpdatedBy,Created,AD_Client_ID,Processing,DatabaseViewDrop) VALUES ('N','N','N','3',0,1000012,1000025,'N','N','N','U','L','5734a73b-8190-4bea-acd7-6d7f65ed472f','Y','Y','LBR_CFOPLine','CFOP Line','Y',0,0,TO_DATE('2014-02-05 13:49:43','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2014-02-05 13:49:43','YYYY-MM-DD HH24:MI:SS'),0,'N','N')
+INSERT INTO AD_Table (ImportTable,CopyColumnsFromTable,IsSecurityEnabled,AccessLevel,LoadSeq,AD_Window_ID,AD_Table_ID,IsHighVolume,IsView,IsChangeLog,EntityType,ReplicationType,AD_Table_UU,IsCentrallyMaintained,IsDeleteable,TableName,Name,IsActive,AD_Org_ID,CreatedBy,Updated,UpdatedBy,Created,AD_Client_ID,Processing,DatabaseViewDrop) VALUES ('N','N','N','3',0,1000012,1000025,'N','N','N','LBR','L','5734a73b-8190-4bea-acd7-6d7f65ed472f','Y','Y','LBR_CFOPLine','CFOP Line','Y',0,0,TO_DATE('2014-02-05 13:49:43','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2014-02-05 13:49:43','YYYY-MM-DD HH24:MI:SS'),0,'N','N')
 ;
 
 -- Feb 5, 2014 1:49:44 PM BRST

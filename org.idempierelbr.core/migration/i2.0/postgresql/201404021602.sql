@@ -215,7 +215,7 @@ ALTER TABLE LBR_DocLine_ISSQN ADD CONSTRAINT CCity_LBRDocLineISSQN FOREIGN KEY (
 ;
 
 -- Apr 2, 2014 3:44:46 PM BRT
-INSERT INTO AD_Tab (ImportFields,Processing,IsSingleRow,AD_Window_ID,SeqNo,Help,IsTranslationTab,IsSortTab,HasTree,IsInfoTab,IsReadOnly,IsInsertRecord,IsAdvancedTab,TabLevel,AD_Tab_UU,EntityType,Name,Description,AD_Tab_ID,ReadOnlyLogic,AD_Org_ID,Created,CreatedBy,Updated,UpdatedBy,IsActive,AD_Client_ID,AD_Column_ID,AD_Table_ID,TreeDisplayedOn) VALUES ('N','N','Y',143,90,'The ISSQN Tab defines amounts for ISSQN Tax','N','N','N','N','N','N','N',3,'4b28be47-4341-496a-9571-33b4108c7e85','U','ISSQN','ISSQN',1000032,'@Processed@=Y',0,TO_TIMESTAMP('2014-04-02 15:44:46','YYYY-MM-DD HH24:MI:SS'),0,TO_TIMESTAMP('2014-04-02 15:44:46','YYYY-MM-DD HH24:MI:SS'),0,'Y',0,1000581,1000032,'B')
+INSERT INTO AD_Tab (ImportFields,Processing,IsSingleRow,AD_Window_ID,SeqNo,Help,IsTranslationTab,IsSortTab,HasTree,IsInfoTab,IsReadOnly,IsInsertRecord,IsAdvancedTab,TabLevel,AD_Tab_UU,EntityType,Name,Description,AD_Tab_ID,ReadOnlyLogic,AD_Org_ID,Created,CreatedBy,Updated,UpdatedBy,IsActive,AD_Client_ID,AD_Column_ID,AD_Table_ID,TreeDisplayedOn) VALUES ('N','N','Y',143,90,'The ISSQN Tab defines amounts for ISSQN Tax','N','N','N','N','N','N','N',3,'4b28be47-4341-496a-9571-33b4108c7e85','LBR','ISSQN','ISSQN',1000032,'@Processed@=Y',0,TO_TIMESTAMP('2014-04-02 15:44:46','YYYY-MM-DD HH24:MI:SS'),0,TO_TIMESTAMP('2014-04-02 15:44:46','YYYY-MM-DD HH24:MI:SS'),0,'Y',0,1000581,1000032,'B')
 ;
 
 -- Apr 2, 2014 3:45:42 PM BRT

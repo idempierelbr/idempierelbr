@@ -183,10 +183,10 @@
   <value column="Help" original="The Period Tab defines a Period No, Name and Start Date for each Calendar Year.  Each period begins on the defined Start Date and ends one day prior to the next period's Start Date.">A Aba "Período" define um Número de Período, Nome e Data de Início para cada Ano Civil.  Cada período começa em uma Data de Início definida e Termina um dia antes da Data de Início do próximo período.</value>
  </row>
  <row id="131" trl="Y">
-  <value column="Name" original="Non Business Day">Dia não útil</value>
+  <value column="Name" original="Non Business Day">Dia não Útil</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define Non Business Days">Definir Dias Não Úteis</value>
-  <value column="Help" original="The Non Business Days Tab defines those days to exclude when calculating the due date for given payment terms.  For example, if an invoice terms was Net 10 days and the Invoice Date was 2/17/2000 the due date would be 2/27/2000.  If 2/27/2000 was defined as a non business day then the due date  on the Invoice would be 2/28/2000.">A Aba "Dias Não Úteis" define os dias a serem excluídos ao calcular a data de vencimento para certos termos de pagamento.  Por exemplo, se os termos de uma fatura forem 10ddl e a Data da Fatura foi 17/02/2004, a data do vencimento seria  27/02/2004.  Se 27/02/2004 for definido como um dia não útil, então a data de vencimento na Fatura seria 28/02/2004.</value>
+  <value column="Description" original="Define Non Business Days">Definir Dias não Úteis</value>
+  <value column="Help" original="The Non Business Days Tab defines those days to exclude when calculating the due date for given payment terms.  For example, if an invoice terms was Net 10 days and the Invoice Date was 2/17/2000 the due date would be 2/27/2000.  If 2/27/2000 was defined as a non business day then the due date  on the Invoice would be 2/28/2000.">A Aba "Dia não Útil" define os dias a serem excluídos ao calcular a data de vencimento para certos termos de pagamento.  Por exemplo, se os termos de uma fatura forem 10ddl e a Data da Fatura foi 17/02/2004, a data do vencimento seria  27/02/2004.  Se 27/02/2004 for definido como um dia não útil, então a data de vencimento na Fatura seria 28/02/2004.</value>
  </row>
  <row id="132" trl="Y">
   <value column="Name" original="Element Value">Valor do Elemento</value>
@@ -291,10 +291,10 @@
   <value column="Help" original="The Project Tab is used to define the Value, Name and Description for each project.  It also is defines the tracks the amounts assigned to, committed to and used for this project. Note that when the project Type is changed, the Phases and Tasks are re-created.">A Aba "Projeto" é usada para definir o Valor, Nome e Descrição para cada projeto.  Ela também define os rastreamentos dos montantes designados para, comprometidos com e usados para este projeto. Note que quando o Tipo de Projeto é alterado, as Fases e Tarefas são re-criadas.</value>
  </row>
  <row id="158" trl="Y">
-  <value column="Name" original="GL Category">Categoria de Razão Geral</value>
+  <value column="Name" original="GL Category">Categoria de Livro Razão</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define General Ledger Categories">Definir Categorias de Razão Geral</value>
-  <value column="Help" original="The GL Category Tab defines optional identifiers for a document or journal.  Each Category may be used on a document, manual journal or import">A Aba "Categoria de Razão Geral" define identificadores opcionais para um documento ou diário.  Cada Categoria pode ser usada em um documento, diário manual ou importação</value>
+  <value column="Description" original="Define General Ledger Categories">Definir Categorias de Livro Razão</value>
+  <value column="Help" original="The GL Category Tab defines optional identifiers for a document or journal.  Each Category may be used on a document, manual journal or import">A Aba "Categoria de Livro Razão" define identificadores opcionais para um documento de Livro Razão.</value>
  </row>
  <row id="159" trl="Y">
   <value column="Name" original="Batch">Lote</value>
@@ -303,16 +303,16 @@
   <value column="Help" original="The GL Journal Batch Tab defines the control parameters for a Journal Batch.  A Batch can consist of multiple Journals.&#10;If the Control Amount is not zero, it is compared to the Total Debit Amount. The Control/Debit/Credit Amount is in Source Document Currency.">A Aba "Lote Diário de Razão Geral" define os parâmetros de controle para um Lote Diário.  Um Lote pode consistir de diversos Diários. Se o Montante de Controle não for zero, ele é comparado com Montante de Débito Total. O Montante de Controle/Débito/Crédito está na Moeda da Documentação Original.</value>
  </row>
  <row id="160" trl="Y">
-  <value column="Name" original="Journal">Diário</value>
+  <value column="Name" original="Journal">Livro Razão</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="General Ledger Journal">Diário de Razão Geral</value>
-  <value column="Help" original="The GL Journal Tab defines the control parameters for a single GL Journal.&#10;If the Control Amount is not zero, it is compared to the Total Debit Amount. The Control/Debit/Credit Amount is in Source Document Currency.">A Aba "Diário de Razão Geral" define os parâmetros de controle para um único Diário de RG. Se o Montante de Controle não for zero, ele é comparado com Montante de Débito Total. O Montante de Controle/Débito/Crédito está na Moeda da Documentação Original.</value>
+  <value column="Description" original="General Ledger Journal">Livro Razão</value>
+  <value column="Help" original="The GL Journal Tab defines the control parameters for a single GL Journal.&#10;If the Control Amount is not zero, it is compared to the Total Debit Amount. The Control/Debit/Credit Amount is in Source Document Currency."/>
  </row>
  <row id="161" trl="Y">
   <value column="Name" original="Line">Linha</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="General Ledger Journal Line">Linha de Diário de Razão Geral</value>
-  <value column="Help" original="The GL Journal Line Tab defines the individual debit and credit transactions that comprise a journal.">A Aba "Linha de Diário de Razão Geral" define as transações individuais de débito e crédito que compreendem um diário.</value>
+  <value column="Description" original="General Ledger Journal Line">Linha de Lançamento no Livro Razão</value>
+  <value column="Help" original="The GL Journal Line Tab defines the individual debit and credit transactions that comprise a journal.">A aba Linha define os lançamentos a débito e crédito que compõem o Livro Razão.</value>
  </row>
  <row id="167" trl="Y">
   <value column="Name" original="Document Type">Tipo de Documento</value>
@@ -1804,9 +1804,9 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="459" trl="Y">
-  <value column="Name" original="Daily Balances">Balanços Diários</value>
+  <value column="Name" original="Daily Balances">Saldos Diários</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="View daily accounting balances">Visualização dos balanços contábeis diários</value>
+  <value column="Description" original="View daily accounting balances">Visualização de saldos diários de Fatos Contábeis</value>
   <value column="Help" original=""/>
  </row>
  <row id="460" trl="Y">
@@ -3641,10 +3641,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="774" trl="Y">
-  <value column="Name" original="Sub Account">Sub Conta</value>
+  <value column="Name" original="Sub Account">Subconta</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Sub Account for Element Value">Sub Account for Element Value</value>
-  <value column="Help" original="The Element Value (e.g. Account) may have optional sub accounts for further detail. The sub account is dependent on the value of the account, so a further specification. If the sub-accounts are more or less the same, consider using another accounting dimension.">The Element Value (e.g. Account) may have optional sub accounts for further detail. The sub account is dependent on the value of the account, so a further specification. If the sub-accounts are more or less the same, consider using another accounting dimension.</value>
+  <value column="Description" original="Sub Account for Element Value">Subconta do Valor do Elemento</value>
+  <value column="Help" original="The Element Value (e.g. Account) may have optional sub accounts for further detail. The sub account is dependent on the value of the account, so a further specification. If the sub-accounts are more or less the same, consider using another accounting dimension.">O Valor do Elemento (Conta) pode ter subcontas opcionais para detalhes adicionais. A subconta é dependente do valor da conta, assim como suas especificações. Se as subcontas são mais ou menos as mesmas, considere a utilização de uma dimensão contábil.</value>
  </row>
  <row id="775" trl="Y">
   <value column="Name" original="Translation">Tradução</value>
@@ -5754,17 +5754,17 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200007" trl="N">
-  <value column="Name" original="Journal">Journal</value>
+ <row id="200007" trl="Y">
+  <value column="Name" original="Journal">Livro Razão</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="General Ledger Journal">General Ledger Journal</value>
+  <value column="Description" original="General Ledger Journal">Livro Razão</value>
   <value column="Help" original=""/>
  </row>
- <row id="200008" trl="N">
-  <value column="Name" original="Line">Line</value>
+ <row id="200008" trl="Y">
+  <value column="Name" original="Line">Linha</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="General Ledger Journal Line">General Ledger Journal Line</value>
-  <value column="Help" original="The GL Journal Line Tab defines the individual debit and credit transactions that comprise a journal.">The GL Journal Line Tab defines the individual debit and credit transactions that comprise a journal.</value>
+  <value column="Description" original="General Ledger Journal Line">Linha de Lançamento no Livro Razão</value>
+  <value column="Help" original="The GL Journal Line Tab defines the individual debit and credit transactions that comprise a journal.">A aba Linha define os lançamentos a débito e crédito que compõem o Livro Razão.</value>
  </row>
  <row id="200009" trl="N">
   <value column="Name" original="Grid Sequence">Grid Sequence</value>
@@ -5808,20 +5808,20 @@ Printing:
   <value column="Description" original="Schedule">Schedule</value>
   <value column="Help" original=""/>
  </row>
- <row id="200020" trl="N">
-  <value column="Name" original="GL Journal Generator">GL Journal Generator</value>
+ <row id="200020" trl="Y">
+  <value column="Name" original="GL Journal Generator">Gerador de Livro Razão (Lançamento)</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200021" trl="N">
-  <value column="Name" original="Generator Line">Generator Line</value>
+ <row id="200021" trl="Y">
+  <value column="Name" original="Generator Line">Linha</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200022" trl="N">
-  <value column="Name" original="Generator Source">Generator Source</value>
+ <row id="200022" trl="Y">
+  <value column="Name" original="Generator Source">Origem</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6390,10 +6390,10 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row trl="N" uuid="84d06b55-40f5-4c82-868b-9df7615fffc5">
-  <value column="Name" original="NCM Tax">NCM Tax</value>
+ <row trl="Y" uuid="84d06b55-40f5-4c82-868b-9df7615fffc5">
+  <value column="Name" original="NCM Tax">Impostos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Taxes for the NCM ">Taxes for the NCM </value>
+  <value column="Description" original="Taxes for the NCM ">Manutenção de NCM - Nomenclatura Comum do MERCOSUL e seus impostos</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="f6f3cb12-bcfc-4bfc-b7b0-452892ea7170">
@@ -6868,6 +6868,12 @@ Printing:
   <value column="Name" original="NF-e Event Lot Line">Linha do Lote</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="NF-e Event Lot Line Entries">Registro de Linha do Lote</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="b594a11e-1738-4901-9556-d47a6753d786">
+  <value column="Name" original="Tax Definition">Definição de Impostos</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain Tax Definition">Define Configurações Adicionais de Impostos baseadas em Prioridade Relativa</value>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>
