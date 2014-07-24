@@ -254,9 +254,9 @@ public class MLBRDocLineDetailsTax extends MLBRDocLineDetails implements IDocLin
 				
 				Map<String, BigDecimal> params = new HashMap<String, BigDecimal>();
 				params.put(MLBRTax.SISCOMEX, Env.ZERO.multiply(reversal));
-				params.put(MLBRTax.INSURANCE, getInsuredAmount().multiply(reversal));
-				params.put(MLBRTax.FREIGHT, getFreightAmt().multiply(reversal));
-				params.put(MLBRTax.OTHERCHARGES, getSurcharges().multiply(reversal));
+				params.put(MLBRTax.INSURANCE, getInsuredAmount() == null ? Env.ZERO : getInsuredAmount().multiply(reversal));
+				params.put(MLBRTax.FREIGHT, getFreightAmt() == null ? Env.ZERO : getFreightAmt().multiply(reversal));
+				params.put(MLBRTax.OTHERCHARGES, getSurcharges() == null ? Env.ZERO : getSurcharges().multiply(reversal));
 				params.put(MLBRTax.QTY, getLBR_QtyTax());
 				params.put(MLBRTax.AMT, getLBR_GrossAmt().subtract(getDiscountAmt()));
 				
