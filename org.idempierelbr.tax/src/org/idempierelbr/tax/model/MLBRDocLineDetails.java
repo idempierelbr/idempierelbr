@@ -315,7 +315,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSTN_90_Outras,
 				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSSN_900_Outros)) {
 				
-			if (icms.getLBR_TaxBase() != null && icms.getLBR_TaxBase().signum() == 1) {
+			if (tl.getLBR_TaxBase() != null && tl.getLBR_TaxBase().signum() == 1) {
 				if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMS)
 					icms.setLBR_TaxBase(tl.getLBR_TaxBase());
 				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMSST)
