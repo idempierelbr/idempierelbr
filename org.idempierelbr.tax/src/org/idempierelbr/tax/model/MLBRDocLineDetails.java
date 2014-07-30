@@ -199,7 +199,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				Integer taxBaseTypeCode = null;
 				
 				try {
-					taxBaseTypeCode = new Integer(taxBaseType.getName());
+					taxBaseTypeCode = new Integer(taxBaseType.getValue());
 				} catch (Exception e) {
 					log.fine("Couldn't get Tax Base Type for " + tl);
 				}
