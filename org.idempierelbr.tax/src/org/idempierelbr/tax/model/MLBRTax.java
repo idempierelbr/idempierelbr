@@ -421,7 +421,7 @@ public class MLBRTax extends X_LBR_Tax
 		Integer taxBaseTypeCode = null;
 		
 		try {
-			taxBaseTypeCode = new Integer(taxBaseType.getName());
+			taxBaseTypeCode = new Integer(taxBaseType.getValue());
 		} catch (NumberFormatException e) {
 			log.fine("Script will be avaluated to get calculation type");
 		}
