@@ -5394,6 +5394,14 @@
   <value column="Name" original="List">List</value>
   <value column="Description" original="Display as list">Display as list</value>
  </row>
+ <row id="200188" trl="N">
+  <value column="Name" original="Window">Window</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200189" trl="N">
+  <value column="Name" original="Process">Process</value>
+  <value column="Description" original=""/>
+ </row>
  <row trl="Y" uuid="2facadde-7b9b-4619-9161-8f9fe50b2b19">
   <value column="Name" original="No specific release">PJ - Pessoa Jurídica</value>
   <value column="Description" original="No specific release"/>
@@ -8016,6 +8024,430 @@
  </row>
  <row trl="Y" uuid="97470edc-2aa6-40b5-ac12-8afdf324d4e0">
   <value column="Name" original="Correction">Carta de Correção</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="59aa87ca-6ac8-4950-869f-d6b6cf3d5dab">
+  <value column="Name" original="Simples">Cobrança Simples</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="9f117df2-66f0-44ff-9f1a-a17d525d086d">
+  <value column="Name" original="Vinculada">Cobrança Vinculada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="c224ca27-7379-4126-aa54-95d48b40e39c">
+  <value column="Name" original="Caucionada">Cobrança Caucionada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="d0568d0d-0f50-400e-89a6-b8b834814291">
+  <value column="Name" original="Descontada">Cobrança Descontada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="06fc28d1-5a09-4272-902e-6f1597598188">
+  <value column="Name" original="Vendor">Cobrança Vendor</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="a1384b5c-baf9-4c0d-8007-98fe9536be77">
+  <value column="Name" original="1 - Protestar Dias Corridos">1 - Protestar Dias Corridos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="58ee85be-7b34-4040-8871-57b30feb2f18">
+  <value column="Name" original="2 - Protestar Dias Uteis">2 - Protestar Dias Úteis</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="95abe954-fd47-4876-ab3a-f123bd5c5358">
+  <value column="Name" original="3 - Nao Protestar">3 - Não Protestar</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="5a52a9bb-4155-404e-a308-83639f1a348b">
+  <value column="Name" original="4 - Protestar Fim Falimentar - Dias Uteis">4 - Protestar Fim Falimentar - Dias Úteis</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="0e2d55c0-80e9-4f5f-9bf7-5d05fb4bd0aa">
+  <value column="Name" original="5 - Protestar Fim Falimentar - Dias Corridos">5 - Protestar Fim Falimentar - Dias Corridos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="6c0eee54-4208-41f9-9af7-65b88bb81c8f">
+  <value column="Name" original="8 - Negativacao sem Protesto">8 - Negativação sem Protesto</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="e38bc250-8cdc-400b-83b5-df101311ccdf">
+  <value column="Name" original="9 - Cancelamento Protesto Automatico">9 - Cancelamento Protesto Automático</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="6b587ed0-435d-432e-b877-594612c9e8d8">
+  <value column="Name" original="1 - Amount">1 - Valor Fixo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="d404ddd8-2276-4b9b-89cd-dcd3dac62d1a">
+  <value column="Name" original="2 - Percentage">2 - Percentual</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="f25400f3-c82f-4430-a6df-46ef2ae2db43">
+  <value column="Name" original="1 - Valor por Dia">1 - Valor por Dia</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="f93be3be-d9c7-47d4-a80a-719a812d67c4">
+  <value column="Name" original="2 - Taxa Mensal">2 - Taxa Mensal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="5235607c-5b7e-41c8-b4b2-4b8491965ad3">
+  <value column="Name" original="3 - Isento">3 - Isento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="ed833db4-0d2a-4318-b225-f3999d07f4dc">
+  <value column="Name" original="1 - Baixar / Devolver">1 - Baixar / Devolver</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="cc4b36fb-2533-4432-8abe-0e7792214b63">
+  <value column="Name" original="2 - Nao Baixar / Nao Devolver">2 - Não Baixar / Não Devolver</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="e064d3e9-2353-4ad4-8fec-182897c01c5b">
+  <value column="Name" original="01 - CH Cheque">01 - CH Cheque</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="314949dd-d619-42a8-a4cf-b0687eaa3d3c">
+  <value column="Name" original="02 - DM Duplicata Mercantil">02 - DM Duplicata Mercantil</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="c778b198-72ba-45fe-943e-3fa8462cbb75">
+  <value column="Name" original="03 - DMI Duplicata Mercantil p/ Indicacao">03 - DMI Duplicata Mercantil p/ Indicação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="529a2469-5080-44f6-adc4-69da91df3bed">
+  <value column="Name" original="04 - DS Duplicata de Servico">04 - DS Duplicata de Serviço</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="e1eff272-3e89-4b8f-8cf0-442533b53467">
+  <value column="Name" original="05 - DSI Duplicata de Servico p/ Indicacao">05 - DSI Duplicata de Serviço p/ Indicação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="b7ddc9d4-06a0-4044-a269-1df4373b73df">
+  <value column="Name" original="06 - DR Duplicata Rural">06 - DR Duplicata Rural</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="9828fd0d-8132-4e5b-acd0-b9108ae79207">
+  <value column="Name" original="07 - LC Letra de Cambio">07 - LC Letra de Câmbio</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="b7fd0d21-1af4-4cd2-996e-732a8b75320b">
+  <value column="Name" original="08 - NCC Nota de Credito Comercial">08 - NCC Nota de Crédito Comercial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="ea076016-0fc3-4658-b408-fa82f3dd442c">
+  <value column="Name" original="09 - NCE Nota de Credito a Exportacao">09 - NCE Nota de Crédito a Exportação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="934f1b14-f67a-469d-9df7-b4a38642522e">
+  <value column="Name" original="10 - NCI Nota de Credito Industrial">10 - NCI Nota de Crédito Industrial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="eb12e7a0-e699-4608-a995-3b17b04fc834">
+  <value column="Name" original="11 - NCR Nota de Credito Rural">11 - NCR Nota de Crédito Rural</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="69beaef1-055b-441d-89a9-b50d69b8ded8">
+  <value column="Name" original="12 - NP Nota Promissoria">12 - NP Nota Promissória</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="d398ce80-080d-445c-a29a-da3235c3a41e">
+  <value column="Name" original="13 - NPR Nota Promissoria Rural">13 - NPR Nota Promissória Rural</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="c424d7d3-edbd-4b86-856c-4a0ed924dfc2">
+  <value column="Name" original="14 - TM Triplicata Mercantil">14 - TM Triplicata Mercantil</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="5fee59ea-d832-480d-b7be-1d843351c20d">
+  <value column="Name" original="15 - TS Triplicata de Servico">15 - TS Triplicata de Serviço</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="6f1c44bd-7be6-499b-926e-307bf127f4a4">
+  <value column="Name" original="16 - NS Nota de Seguro">16 - NS Nota de Seguro</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="176fc534-70e5-4d34-a1b3-7c3d7456650d">
+  <value column="Name" original="17 - RC Recibo">17 - RC Recibo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="a3bf3b44-3b9f-456d-b54b-6e8c00d026b2">
+  <value column="Name" original="18 - FAT Fatura">18 - FAT Fatura</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="4833a8ad-6481-4625-909d-bdf7ad1ba5a4">
+  <value column="Name" original="19 - ND Nota de Debito">19 - ND Nota de Débito</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="10265af2-b804-4e1a-bf96-ce96a9c59de4">
+  <value column="Name" original="20 - AP Apolice de Seguro">20 - AP Apólice de Seguro</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="abf984a0-c8c3-46ec-984f-91b2f9d15dac">
+  <value column="Name" original="21 - ME Mensalidade Escolar">21 - ME Mensalidade Escolar</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="fd7fc3a8-d2ee-4f3e-b2af-93ce3eaccdb7">
+  <value column="Name" original="22 - PC Parcela de Consorcio">22 - PC Parcela de Consórcio</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="a74d6845-3e6d-49e0-84ff-fa35a5efc4fa">
+  <value column="Name" original="23 - NF Nota Fiscal">23 - NF Nota Fiscal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="98895985-c35a-4577-ad99-da1ddbc70e80">
+  <value column="Name" original="24 - DD Documento de Divida">24 - DD Documento de Dívida</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="e62e994e-448e-4d5b-a4ad-67586b43b793">
+  <value column="Name" original="25 - Cedula de Produto Rural">25 - Cédula de Produto Rural</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="4573eb9a-900f-43b1-8d9a-fdabfc45f813">
+  <value column="Name" original="26 - Warrant">26 - Warrant</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="0902a47e-c5d8-4ccd-9e14-19d138a3a4af">
+  <value column="Name" original="27 - Divida Ativa de Estado">27 - Dívida Ativa de Estado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="d682ffed-0522-44d8-9fa8-c23e38004a0e">
+  <value column="Name" original="28 - Divida Ativa de Municipio">28 - Dívida Ativa de Município</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="9947f691-7e05-4a6e-9d07-2000f1aa824c">
+  <value column="Name" original="29 - Divida Ativa da Uniao">29 - Dívida Ativa da União</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="36a4f35d-b04c-47c3-ad0b-2f9070b36285">
+  <value column="Name" original="30 - Encargos Condominiais">30 - Encargos Condominiais</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="dabfa322-6078-4db8-b3e5-c7251ed2fefd">
+  <value column="Name" original="31 - CC Cartao de Credito">31 - CC Cartão de Crédito</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="42aaa435-16fb-4242-a8f6-43a4f65fc148">
+  <value column="Name" original="99 - Outros">99 - Outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="c2d119c1-df41-4df6-bdca-93b952f21c3f">
+  <value column="Name" original="A - Accepted">A - Aceite</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="69f0a8c7-fe6c-4fc3-b7ff-96ea58cc86cd">
+  <value column="Name" original="N - Not Accepted">N - Não Aceite</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="23b54d13-937f-4c40-9418-d2622362c2e4">
+  <value column="Name" original="1 - Nao Autoriza Pagamento Parcial">1 - Não Autoriza Pagamento Parcial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="fc6f292e-3908-417d-9a62-42278142b0cd">
+  <value column="Name" original="2 - Autoriza Pagamentos Parciais">2 - Autoriza Pagamentos Parciais</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="5721fbf1-eb23-4830-8882-85fb9ee7e2e2">
+  <value column="Name" original="1 - Emite com Endereco do Arquivo Remessa">1 - Emite, com Endereço do Arquivo Remessa</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="f16cdc81-1461-4c08-9283-15bac90ad78c">
+  <value column="Name" original="2 - Nao Emite Aviso ao Sacado">2 - Não Emite Aviso ao Sacado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="b5ca8a86-4b89-4b4a-9dc9-af9afd21f8a1">
+  <value column="Name" original="3 - Emite com Endereco do Cadastro no Banco">3 - Emite, com Endereço do Cadastro no Banco</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="7895cfe1-45af-43af-8d8d-2b936a948e14">
+  <value column="Name" original="01 - Reservado para Uso Futuro">01 - Reservado para Uso Futuro</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="32b0f2d7-289c-438b-b5fa-6aa8db805509">
+  <value column="Name" original="02 - Dolar Americano Comercial (Venda)">02 - Dólar Americano Comercial (Venda)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="b7ac12a3-8d79-4def-b86a-c22d5b21fc84">
+  <value column="Name" original="03 - Dolar Americano Turismo (Venda)">03 - Dólar Americano Turismo (Venda)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="6f26e131-ae45-4840-9415-ad83c41f7c4d">
+  <value column="Name" original="04 - ITRD">04 - ITRD</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="1ff27e4d-8392-4273-bf8f-37e84e749e5f">
+  <value column="Name" original="05 - IDTR">05 - IDTR</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="93723e6a-ea30-4c91-b7e5-3b2cd0be2a83">
+  <value column="Name" original="06 - UFIR Diaria">06 - UFIR Diária</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="1a9798fc-ffb8-460c-8471-4b037262dcf2">
+  <value column="Name" original="07 - UFIR Mensal">07 - UFIR Mensal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="51bb749c-0f49-4d6a-aa19-5a8a90e943c8">
+  <value column="Name" original="08 - FAJ-TR">08 - FAJ-TR</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="a7b409a8-93d5-48d3-8b9a-ea4893de9bfe">
+  <value column="Name" original="09 - Real">09 - Real</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="22ef8fab-d700-40f3-8514-26bc9291865f">
+  <value column="Name" original="10 - TR">10 - TR</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="1bf53aba-b328-41d4-abb2-5e3208855e79">
+  <value column="Name" original="11 - IGPM">11 - IGPM</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="4e2b1154-570f-437d-a70a-d913cb6acb9b">
+  <value column="Name" original="12 - CDI">12 - CDI</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="1e7daff8-acc0-46d5-8299-797e02c52174">
+  <value column="Name" original="13 - Percentual do CDI">13 - Percentual do CDI</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="8817c720-841b-488c-93bb-864324f60ba9">
+  <value column="Name" original="14 - Euro">14 - Euro</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="6b9ff5e6-0884-4240-b494-e9502abaf19e">
+  <value column="Name" original="1 - Tradicional">1 - Tradicional</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="db911e61-d4d9-4f1c-9c74-89d15649b4a9">
+  <value column="Name" original="2 - Escritural">2 - Escritural</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="42eab788-e5d1-4e48-813d-0bd564824207">
+  <value column="Name" original="1 - Com Cadastramento (Cobranca Registrada)">1 - Com Cadastramento (Cobrança Registrada)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="860775c4-b120-41cb-b394-11c8bb9b154a">
+  <value column="Name" original="2 - Sem Cadastramento (Cobranca sem Registro)">2 - Sem Cadastramento (Cobrança sem Registro)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="68f18501-ff0f-44a3-91a1-7958fdd09dbe">
+  <value column="Name" original="3 - Com Cadastramento / Recusa Debito Automatico">3 - Com Cadastramento / Recusa Débito Automático</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="5bff3613-d26a-48a4-9e58-6d218c8608bc">
+  <value column="Name" original="1 - Banco Emite">1 - Banco Emite</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="528bc924-bfb8-417f-99d1-68a5e1ba39c7">
+  <value column="Name" original="2 - Cliente Emite">2 - Cliente Emite</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="266ecd8f-ad17-4faf-ac10-f0bcab323b60">
+  <value column="Name" original="3 - Banco Pre-emite e Cliente Complementa">3 - Banco Pré-emite e Cliente Complementa</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="d1b56fb8-ee16-48ca-8c6d-9f3e40d03771">
+  <value column="Name" original="4 - Banco Reemite">4 - Banco Reemite</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="d735172d-1c8f-4198-8e00-03f752e9a6ab">
+  <value column="Name" original="5 - Banco nao Reemite">5 - Banco não Reemite</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="1f607109-eeb6-4bd4-bb43-261b12c8050b">
+  <value column="Name" original="7 - Banco Emitente - Aberta">7 - Banco Emitente - Aberta</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="29d842a6-f9a9-4a36-9bd4-82e66b2e25e9">
+  <value column="Name" original="8 - Banco Emitente - Auto-envelopavel">8 - Banco Emitente - Auto-envelopável</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="faf7c936-fd9f-4a94-96bb-339a82f2a0f7">
+  <value column="Name" original="1 - Banco Distribui">1 - Banco Distribui</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="0fc3121f-6067-49e7-9d53-001ff47402dd">
+  <value column="Name" original="2 - Cliente Distribui">2 - Cliente Distribui</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="8a87f802-410f-45eb-b42a-5b3f46187c2d">
+  <value column="Name" original="3 - Banco Envia E-mail">3 - Banco Envia E-mail</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="0f6cce31-ccf3-4c04-97e9-7573e3141ed3">
+  <value column="Name" original="4 - Banco Envia SMS">4 - Banco Envia SMS</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="e407467a-d521-4c6f-a208-b4b9d945eb97">
+  <value column="Name" original="Boleto Bancario Brasil">Boleto Bancário Brasil</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="d97d951f-80ac-4ca2-9eaa-7702f4893580">
+  <value column="Name" original="1 - Valor Fixo ate a Data Informada">1 - Valor Fixo até a Data Informada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="663b5264-3566-4aba-8d3d-527ae84b35a9">
+  <value column="Name" original="2 - Percentual ate a Data Informada">2 - Percentual até a Data Informada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="d1c46c01-dfbe-439e-9387-2ad5f5cd0257">
+  <value column="Name" original="3 - Valor por Antecipacao Dia Corrido">3 - Valor por Antecipação Dia Corrido</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="f3dd7095-5cc4-4d8f-9e9b-2555e7689f6a">
+  <value column="Name" original="4 - Valor por Antecipacao Dia Util">4 - Valor por Antecipação Dia Útil</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="13dd7059-a081-4e52-8aef-a6073f608ce0">
+  <value column="Name" original="5 - Percentual sobre o Valor Nominal Dia Corrido">5 - Percentual sobre o Valor Nominal Dia Corrido</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="83997e93-17b4-4f19-9d7d-64d7ebc35870">
+  <value column="Name" original="6 - Percentual sobre o Valor Nominal Dia Util">6 - Percentual sobre o Valor Nominal Dia Útil</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="bf0214e4-986c-42d9-b8db-7ed44d54d6d4">
+  <value column="Name" original="7 - Cancelamento de Desconto">7 - Cancelamento de Desconto</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="3f4fc8e3-a3f3-44b3-821f-d47da8ae41a6">
+  <value column="Name" original="Pagador (Sacado)">Pagador (Sacado)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="72b594aa-be4d-4955-879b-337557803417">
+  <value column="Name" original="Sacador / Avalista">Sacador / Avalista</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="19213e53-f6f7-4933-8705-817faa65549f">
+  <value column="Name" original="0 - Isento / Nao Informado">0 - Isento / Não Informado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="f8e2497f-d0d4-487b-9ac2-00cc1e07906c">
+  <value column="Name" original="1 - CPF">1 - CPF</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="650bdaac-dfda-4060-b45f-8cc08aa3a617">
+  <value column="Name" original="2 - CGC / CNPJ">2 - CGC / CNPJ</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="a1e75d92-a9a6-4c52-839a-666d9e98e279">
+  <value column="Name" original="3 - PIS / PASEP">3 - PIS / PASEP</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="7524d342-4c2b-4c4d-9266-fea84c420e02">
+  <value column="Name" original="9 - Outros">9 - Outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="2ff85828-7dbf-4f84-85fc-b0ac14700de0">
+  <value column="Name" original="Organization">Empresa</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="0fb6f9ef-ee9a-4d46-a675-8898c72bfe78">
+  <value column="Name" original="Bank">Banco</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="Y" uuid="90edb0b3-3a5a-4edf-863d-e179c6fdc5a1">
+  <value column="Name" original="Bank Collection">Boleto Bancário</value>
   <value column="Description" original=""/>
  </row>
 </idempiereTrl>

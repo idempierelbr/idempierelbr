@@ -200,8 +200,8 @@
  <row id="200014" trl="N">
   <value column="Name" original="Business Partner Group Accounts">Business Partner Group Accounts</value>
  </row>
- <row id="200015" trl="N">
-  <value column="Name" original="Technical">Technical</value>
+ <row id="200015" trl="Y">
+  <value column="Name" original="Technical">Técnico</value>
  </row>
  <row id="200016" trl="N">
   <value column="Name" original="Foreign Key">Foreign Key</value>
@@ -262,5 +262,23 @@
  </row>
  <row trl="Y" uuid="a6ebe2aa-07df-4d7b-8f4a-a3b2e8f9c8c2">
   <value column="Name" original="Lot Receipt (LBR)">Recibo</value>
+ </row>
+ <row trl="Y" uuid="f165a339-91c1-4af9-8381-0b39b364c605">
+  <value column="Name" original="Bank (LBR)">Banco</value>
+ </row>
+ <row trl="Y" uuid="030f9e47-c40a-422c-9887-681484569565">
+  <value column="Name" original="Protest (LBR)">Protesto</value>
+ </row>
+ <row trl="Y" uuid="358ccb56-f383-473e-9bcc-7e179e277c06">
+  <value column="Name" original="Late Payment Penaulty (LBR)">Multa</value>
+ </row>
+ <row trl="Y" uuid="fb35477b-0c6a-4d43-8676-e72eb14f1fe4">
+  <value column="Name" original="Interest (LBR)">Juros de Mora</value>
+ </row>
+ <row trl="Y" uuid="1f1cc65e-de9f-4e36-a041-b526ad77ac7d">
+  <value column="Name" original="Collection Return (LBR)">Baixa / Devolução</value>
+ </row>
+ <row trl="Y" uuid="f9a26c82-cbb8-407b-afae-c5a8bfa0f95f">
+  <value column="Name" original="Discount (LBR)">Desconto</value>
  </row>
 </idempiereTrl>

@@ -322,4 +322,9 @@ If you cannot cover the MPS as you had planned, this module gives you informatio
   <value column="Description" original="(Standard Process NotaFiscal)">(Standard Process NotaFiscal)</value>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="2e858aff-d17e-4840-aba5-40cc854fd5a9">
+  <value column="Name" original="Process_Boleto">Process_Boleto</value>
+  <value column="Description" original="(Standard Process Boleto)">(Standard Process Boleto)</value>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

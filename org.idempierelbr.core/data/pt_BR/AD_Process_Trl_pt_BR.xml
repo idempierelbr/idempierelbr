@@ -18,7 +18,7 @@
   <value column="Help" original="Create Prices for this pricelist version in the sequence of the Discount Schema Price List.&#10;Lines with a higher sequence overwrite existing prices.  The sequence should be from generic to specific.">Cria preços para esta versão da tabela na sequência do Esquema de Preços/Descontos da tabela. As linhas com uma seqüência maior sobrescrevem os preços existentes. A seqüência deve ser do genérico ao específico. </value>
  </row>
  <row id="104" trl="Y">
-  <value column="Name" original="Process Order">Ordem de Processo</value>
+  <value column="Name" original="Process Order">Processar Pedido</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -34,7 +34,7 @@
  </row>
  <row id="107" trl="Y">
   <value column="Name" original="Process Inventory Count ">Processar Contagem de Estoque </value>
-  <value column="Description" original="Process Inventory count and update Inventory">Processar Contagem de Estoque e atualizar o Estoque</value>
+  <value column="Description" original="Process Inventory count and update Inventory">Processar Contagem de Estoque e Atualizar o Estoque</value>
   <value column="Help" original=""/>
  </row>
  <row id="108" trl="Y">
@@ -43,9 +43,9 @@
   <value column="Help" original="Either add missing accounts - or copy and overwrite all default accounts.  If you copy and overwrite the current default values, you may have to repeat previous updates (e.g. set the bank account asset accounts, ...).  If no Accounting Schema is selected all Accounting Schemas will be updated / inserted.">Ou acrescente as contas faltantes ou copie e sobreescreva todas as contas padrão  Se você copiar e sobreescrever os valores padrão atuais, você pode ter de repetir as atualizações anteriores (por ex. contas bancárias, contas de patrimônio, ...)</value>
  </row>
  <row id="109" trl="Y">
-  <value column="Name" original="Process Shipment ">Processar Expedição </value>
-  <value column="Description" original="Process Shipment/Receipt (Update Inventory)">Processar Expedição/Recebimento (atualizar estoque)</value>
-  <value column="Help" original="Process Shipment/Receipt will move products out of/into  inventory and mark line items as shipped/received.">O processo de Expedição/Recebimento irá movimentar produtos para fora/dentro do estoque e marcar os itens das linhas como despachados/recebidos.</value>
+  <value column="Name" original="Process Shipment ">Processar Remessa/Recebimento</value>
+  <value column="Description" original="Process Shipment/Receipt (Update Inventory)">Processar Remessa/Recebimento (e Atualizar o Estoque)</value>
+  <value column="Help" original="Process Shipment/Receipt will move products out of/into  inventory and mark line items as shipped/received.">Ao processar Remessa/Recebimento isto irá movimentar produtos para fora/dentro do estoque e marcar os itens das linhas como enviados/recebidos.</value>
  </row>
  <row id="110" trl="Y">
   <value column="Name" original="Order Print">Imprimir Pedido</value>
@@ -108,9 +108,9 @@
   <value column="Help" original="Orders with quantities to deliver (Backordered) or quantities to invoice">Este relatório lista pedidos em que ainda faltam gerar remessa(s)/recebimento(s) e/ou fatura(s).</value>
  </row>
  <row id="122" trl="Y">
-  <value column="Name" original="Process Movements">Processar Movimentações</value>
-  <value column="Description" original="Process Inventory Movements">Processar Movimentação de Estoque</value>
-  <value column="Help" original="Process Inventory Movements will update inventory quantities based on the defined movements between warehouses or locations.">Processar Movimentação de Estoque irá atualizar quantidades do Estoque baseado nas movimentações definidas entre armazéns ou localizações.</value>
+  <value column="Name" original="Process Movements">Processar Movimentos</value>
+  <value column="Description" original="Process Inventory Movements">Processar Movimentos de Estoque</value>
+  <value column="Help" original="Process Inventory Movements will update inventory quantities based on the defined movements between warehouses or locations.">Processar Movimentos de Estoque irá atualizar quantidades do Estoque baseado nos movimentos definidos entre armazéns ou localizações.</value>
  </row>
  <row id="123" trl="Y">
   <value column="Name" original="Generate Commission">Gerar Comissão</value>
@@ -233,7 +233,7 @@
   <value column="Help" original="The report displays invoice allocations to payments and cash journals.  Previous allocations are displayed as reversed.">O relatório exibe alocações de faturas para pagamentos e diários de caixa.  Alocações anteriores são exibidas como estornadas.</value>
  </row>
  <row id="149" trl="Y">
-  <value column="Name" original="Process Payment">Processar Pagamentos</value>
+  <value column="Name" original="Process Payment">Processar Pagamento</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -313,7 +313,7 @@
   <value column="Help" original=""/>
  </row>
  <row id="169" trl="Y">
-  <value column="Name" original="Process Journal">Processar Diário</value>
+  <value column="Name" original="Process Journal">Processar Livro Razão (Lançamento)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -393,7 +393,7 @@
   <value column="Help" original=""/>
  </row>
  <row id="188" trl="Y">
-  <value column="Name" original="Process Batch">Processar Lote</value>
+  <value column="Name" original="Process Batch">Processar Lote de Livro Razão (Lançamento)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -898,7 +898,7 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
  </row>
  <row id="286" trl="Y">
   <value column="Name" original="Process Confirmation">Processar Confirmação</value>
-  <value column="Description" original="Process Inventory Movement Confirmation">Processar Confirmação da Movimentação de Estoque</value>
+  <value column="Description" original="Process Inventory Movement Confirmation">Processar Confirmação de Movimento de Estoque</value>
   <value column="Help" original=""/>
  </row>
  <row id="287" trl="Y">
@@ -2217,6 +2217,11 @@ Please note that base language cannot be a system language.</value>
  <row trl="N" uuid="8d99f496-dfa0-4f36-890c-790a6ddcb3a4">
   <value column="Name" original="Generate DANFE">Generate DANFE</value>
   <value column="Description" original="Generate DANFE">Generate DANFE</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="b2285060-9f5a-4690-ad8e-3cc074cabf9d">
+  <value column="Name" original="Process Boleto">Process Boleto</value>
+  <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>

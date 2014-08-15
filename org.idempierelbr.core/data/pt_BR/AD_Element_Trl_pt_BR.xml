@@ -4665,10 +4665,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1037" trl="Y">
-  <value column="Name" original="Movement Date">Data da Movimentação</value>
-  <value column="PrintName" original="Movement Date">Data da Movimentação</value>
+  <value column="Name" original="Movement Date">Data do Movimento</value>
+  <value column="PrintName" original="Movement Date">Data do Movimento</value>
   <value column="Description" original="Date a product was moved in or out of inventory">Data em que um produto foi movido para dentro ou para fora de um estoque</value>
-  <value column="Help" original="The Movement Date indicates the date that a product moved in or out of inventory.  This is the result of a shipment, receipt or inventory movement.">A "Data de Movimentação" indica a data em que um produto foi movido para dentro ou para fora de um estoque.  Este é o resultado de uma movimentação de estoque, de remessa ou recebimento.</value>
+  <value column="Help" original="The Movement Date indicates the date that a product moved in or out of inventory.  This is the result of a shipment, receipt or inventory movement.">A "Data do Movimento" indica a data em que um produto foi movido para dentro ou para fora de um estoque.  Este é o resultado de um movimento de estoque, de remessa ou recebimento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4685,10 +4685,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1039" trl="Y">
-  <value column="Name" original="Movement Type">Tipo de Movimentação</value>
-  <value column="PrintName" original="Movement Type">Tipo de Movimentação</value>
-  <value column="Description" original="Method of moving the inventory">Método de Movimentação de Estoque</value>
-  <value column="Help" original="The Movement Type indicates the type of movement (in, out, to production, etc)">O "Tipo de Movimentação" indica o tipo de movimento (entrada, saída, para produção, etc)</value>
+  <value column="Name" original="Movement Type">Tipo de Movimento</value>
+  <value column="PrintName" original="Movement Type">Tipo de Movimento</value>
+  <value column="Description" original="Method of moving the inventory">Método de Movimento de Estoque</value>
+  <value column="Help" original="The Movement Type indicates the type of movement (in, out, to production, etc)">O "Tipo de Movimento" indica o tipo de movimento (entrada, saída, para produção, etc)</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -7447,10 +7447,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1450" trl="Y">
-  <value column="Name" original="Write-off Amount">Valor da Baixa</value>
-  <value column="PrintName" original="Write-off">Baixa total</value>
-  <value column="Description" original="Amount to write-off">Valor a ser dado baixa total</value>
-  <value column="Help" original="The Write Off Amount indicates the amount to be written off as uncollectible.">O "Valor da Baixa" indica o valor a ser dado baixa como incobrável.</value>
+  <value column="Name" original="Write-off Amount">Valor do Abatimento</value>
+  <value column="PrintName" original="Write-off">Valor do Abatimento</value>
+  <value column="Description" original="Amount to write-off">Valor do Abatimento (Perda) no Recebimento de Duplicatas</value>
+  <value column="Help" original="The Write Off Amount indicates the amount to be written off as uncollectible.">O "Valor do Abatimento" indica o valor a ser dado baixa como incobrável. O lançamento contábil deste campo normalmente ocorre na conta de despesa Despesas com Devedores Duvidosos</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -9399,9 +9399,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1689" trl="Y">
-  <value column="Name" original="Match Invoice">Confrontar Fatura</value>
-  <value column="PrintName" original="Match Invoice">Confrontar Fatura</value>
-  <value column="Description" original="Match Shipment/Receipt to Invoice">Confrontar Remessa / Recebimento com a Fatura</value>
+  <value column="Name" original="Match Invoice">Conciliação de Fatura</value>
+  <value column="PrintName" original="Match Invoice">Conciliação de Fatura</value>
+  <value column="Description" original="Match Shipment/Receipt to Invoice">Conciliação de Remessa / Recebimento com Fatura</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -9409,8 +9409,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1690" trl="Y">
-  <value column="Name" original="Match PO">Confrontar PC (Pedido de Compra)</value>
-  <value column="PrintName" original="Match PO">Confrontar PC (Pedido de Compra)</value>
+  <value column="Name" original="Match PO">Conciliação de Pedido de Compra</value>
+  <value column="PrintName" original="Match PO">Conciliação de Pedido de Compra</value>
   <value column="Description" original="Match Purchase Order to Shipment/Receipt and Invoice">Match Purchase Order to Shipment/Receipt and Invoice</value>
   <value column="Help" original="The matching record is usually created automatically.  If price matching is enabled on business partner group level, the matching might have to be approved.">The matching record is usually created automatically.  If price matching is enabled on business partner group level, the matching might have to be approved.</value>
   <value column="PO_Description" original=""/>
@@ -30446,8 +30446,8 @@ Produto: usado para adicionar produtos com facilidade ao pedido no PDV</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="54397" trl="Y">
-  <value column="Name" original="Cash Plan Line">Linha do Planej. de Caixa</value>
-  <value column="PrintName" original="Cash Plan Line">Linha do Planej. de Caixa</value>
+  <value column="Name" original="Cash Plan Line">Linha do Planejamento de Caixa</value>
+  <value column="PrintName" original="Cash Plan Line">Linha do Planejamento de Caixa</value>
   <value column="Description" original="">Linha do Planejamento de Caixa</value>
   <value column="Help" original="">O planejamento de caixa é um demonstrativo dos fluxos das entradas e saídas projetadas de caixa da empresa, usado para estimar suas 
 necessidades de caixa para curto prazo.</value>
@@ -54922,6 +54922,46 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="202671" trl="N">
+  <value column="Name" original="EMail sent from">EMail sent from</value>
+  <value column="PrintName" original="EMail sent from">EMail sent from</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202672" trl="N">
+  <value column="Name" original="To">To</value>
+  <value column="PrintName" original="To">To</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202673" trl="N">
+  <value column="Name" original="Cc">Cc</value>
+  <value column="PrintName" original="Cc">Cc</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202674" trl="N">
+  <value column="Name" original="Bcc">Bcc</value>
+  <value column="PrintName" original="Bcc">Bcc</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row id="202675" trl="N">
   <value column="Name" original="GL_Category_Trl_UU">GL_Category_Trl_UU</value>
   <value column="PrintName" original="GL_Category_Trl_UU">GL_Category_Trl_UU</value>
@@ -55137,6 +55177,26 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PrintName" original="AD_PrintFormat_Trl_UU">AD_PrintFormat_Trl_UU</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202716" trl="N">
+  <value column="Name" original="Preference For">Preference For</value>
+  <value column="PrintName" original="Preference For">Preference For</value>
+  <value column="Description" original="Type of preference, it can window, info window or parameter process">Type of preference, it can window, info window or parameter process</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202750" trl="N">
+  <value column="Name" original="Cost Adjustment Line">Cost Adjustment Line</value>
+  <value column="PrintName" original="Cost Adjustment Line">Cost Adjustment Line</value>
+  <value column="Description" original="Unique line in an Inventory cost adjustment document">Unique line in an Inventory cost adjustment document</value>
+  <value column="Help" original="The Cost Adjustment Line indicates the inventory cost adjustment document line (if applicable) for this transaction">The Cost Adjustment Line indicates the inventory cost adjustment document line (if applicable) for this transaction</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -57957,6 +58017,716 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PrintName" original="Doc Type NF">Tipo Doc. de NF</value>
   <value column="Description" original="Document type used for Brazilian Fiscal Invoice generated from this document">Tipo de Documento utilizado para Notas Fiscais geradas a partir deste documento</value>
   <value column="Help" original="The Document Type for Brazilian Fiscal Invoice indicates the document type that will be used when an Brazilian Fiscal Invoice is generated from this document. This field will display only for some base document type.">O "Tipo de Documento para Nota Fiscal" indica o tipo do documento que será usado quando uma Nota Fiscal é gerada a partir deste documento. Este campo será exibido apenas para alguns tipos de documento base.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="b640dc8a-fcf2-457c-8a78-a1771cb69497">
+  <value column="Name" original="Bank Account Convênio">Convênio</value>
+  <value column="PrintName" original="Convênio">Convênio</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Defines the Convênio number for a specific bank account">Define o Convênio para uma conta bancária</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="f172222d-4571-4d92-8f28-8929392df524">
+  <value column="Name" original="Bank Account Convênio">Convênio</value>
+  <value column="PrintName" original="Convênio">Convênio</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Defines the Convênio number for a specific bank account">Define o Convênio para uma conta bancária</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="8a762435-773c-439d-826e-41873edf4e96">
+  <value column="Name" original="Convênio No.">Núm. do Convênio</value>
+  <value column="PrintName" original="Convênio No.">Núm. do Convênio</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Defines the Convênio number">Define o Número do Convênio</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="438364a5-397a-44a9-9ec2-35bd45cadad3">
+  <value column="Name" original="Bank Account Carteira">Carteira</value>
+  <value column="PrintName" original="Carteira">Carteira</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Defines the Carteira number for a specific bank account">Define o número da Carteira para uma conta bancária específica</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="d54f01c0-cfe5-417b-bc50-d5be0af154bf">
+  <value column="Name" original="Bank Account Carteira">Carteira</value>
+  <value column="PrintName" original="Carteira">Carteira</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Defines the Carteira number for a specific bank account">Define o número da Carteira para uma conta bancária específica</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="ba4fde44-0d9b-4b91-b479-32ad509df1ce">
+  <value column="Name" original="Carteira No.">Núm. da Carteira</value>
+  <value column="PrintName" original="Carteira No.">Núm. da Carteira</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Defines the Carteira number">Define o Número da Carteira</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="7e283696-df79-4494-8e25-a7f245b9e192">
+  <value column="Name" original="Bank Account Carteira Type">Tipo de Carteira</value>
+  <value column="PrintName" original="Carteira Type">Tipo de Carteira</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Defines the Carteira type according to Febraban">Define o tipo de carteira de acordo com a Febraban</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="8feebde0-4927-4ddb-a285-d3a65af6665e">
+  <value column="Name" original="Bank Collection Defaults">Padrão de Cobrança Bancária</value>
+  <value column="PrintName" original="Bank Collection Defaults">Padrão de Cobrança Bancária</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="2977eb1f-fe13-4344-a0fc-b6f361352dca">
+  <value column="Name" original="Bank Collection Defaults">Bank Collection Defaults</value>
+  <value column="PrintName" original="Bank Collection Defaults">Bank Collection Defaults</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="145b4569-d734-4b39-a13b-efb280e7ca5b">
+  <value column="Name" original="Protest Code">Código para Protesto</value>
+  <value column="PrintName" original="Protest Code">Cód. para Protesto</value>
+  <value column="Description" original="Protest Code"/>
+  <value column="Help" original="Protest code according to Febraban">Código adotado pela Febraban para identificar o tipo de prazo a ser considerado para o protesto.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="6735501c-b317-46cf-9451-bd95d1aca12e">
+  <value column="Name" original="Protest Days">Dias para o Protesto</value>
+  <value column="PrintName" original="Protest Days">Dias para Protesto</value>
+  <value column="Description" original="Protest Days"/>
+  <value column="Help" original="Protest days after the due date according to Febraban">Número de dias decorrentes após a data de vencimento para inicialização do processo de cobrança via protesto.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="b93849e9-6255-495d-9c23-f99c33a40944">
+  <value column="Name" original="Late Payment Penaulty Code">Código da Multa</value>
+  <value column="PrintName" original="Penaulty Code">Código da Multa</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Late payment penaulty code according to Febraban">Código adotado pela Febraban para identificação do critério de pagamento de pena pecuniária, a ser aplicada pelo straso do pagamento do Título.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="3f5d0a7b-a3fd-41e0-9521-8f1f43de0837">
+  <value column="Name" original="Late Payment Penaulty Days">Dias para a Multa</value>
+  <value column="PrintName" original="Penaulty Days">Dias para a Multa</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Late payment penaulty days applied after the due date">Quantidade de dias após o vencimento em que o valor/percentual da multa será aplicada ao pagador.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="03e50d06-1bf9-4a22-a962-7d10c01f2355">
+  <value column="Name" original="Late Payment Penaulty Amount/Percentage">Valor / Percentual da Multa</value>
+  <value column="PrintName" original="Penaulty Amount/Percentage">Valor/Percentual da Multa</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Late payment penaulty amount or pencentage">Valor ou percentual de multa a ser aplicado sobre o valor do Título, por atraso no pagamento.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="de86fd0f-ddd9-40e7-b610-b7e96387d31c">
+  <value column="Name" original="Late Payment Interest Code">Código do Juros de Mora</value>
+  <value column="PrintName" original="Interest Code">Cód. Juros de Mora</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Late payment interest code according to Febraban">Código adotado pela Febraban para identificação do tipo de pagamento de juros de mora.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="c59df82b-6b00-46c3-b0f6-de6d4e3643be">
+  <value column="Name" original="Interest Amount/Percentage">Valor / Percentual do Juros de Mora por Dia</value>
+  <value column="PrintName" original="Interest Amount/Percentage">Juros de Mora por Dia</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Late payment interest amount or pencentage">Valor ou porcentagem sobre o valor do título a ser cobrada de juros de mora.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="cd38c3e3-c0d1-4160-8bb6-a20c3856e14a">
+  <value column="Name" original="Interest Days">Dias para o Juros de Mora</value>
+  <value column="PrintName" original="Interest Days">Dias para o Juros de Mora</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Interest days applied after the due date">Quantidade de dias (após a data de vencimento) em que os juros serão aplicados sobre o valor do Título por atraso no pagamento.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="49862382-a4ae-4468-9de0-57ec60b6ea54">
+  <value column="Name" original="Collection Return Code">Código para Baixa / Devolução</value>
+  <value column="PrintName" original="Return Code">Cód. Baixa / Devolução</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Collection return code according to Febraban">Código adotado pela Febraban para identificar qual o procedimento a ser adotado com o Título.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="e18eca3d-4fbc-4e65-9a0a-bb3bf9e4d7ab">
+  <value column="Name" original="Collection Return Days">Dias para a Baixa / Devolução</value>
+  <value column="PrintName" original="Return Days">Dias Baixa / Devolução</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Collection return days after due date, according to Febraban">Número de dias corridos após a data de vencimento de um Título não pago, que deverá ser baixado e devolvido para o cedente.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="007bce4e-d0c6-4129-b2df-c702f323563d">
+  <value column="Name" original="Message 1">Mensagem 1</value>
+  <value column="PrintName" original="Message 1">Mensagem 1</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Message 1">Mensagem 1</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="5da9edd1-99f8-4786-b861-c7028aa5720b">
+  <value column="Name" original="Message 2">Mensagem 2</value>
+  <value column="PrintName" original="Message 2">Mensagem 2</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Message 2">Mensagem 2</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="1ba05ac1-df8d-4600-accd-59d6c81a2597">
+  <value column="Name" original="Collection Type">Espécie de Título</value>
+  <value column="PrintName" original="Collection Type">Espécie de Título</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Código adotado pela Febraban para identificar o tipo de título de cobrança</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="62e9fbd6-ada2-4147-9b8f-aa7ec8b52b7f">
+  <value column="Name" original="Accepted">Aceite</value>
+  <value column="PrintName" original="Accepted">Aceite</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="67b90a2d-12a1-46df-806d-369b09e94412">
+  <value column="Name" original="Authorize Partial Payment">Autoriza Pagamento Parcial</value>
+  <value column="PrintName" original="Partial Payment">Pagto. Parcial</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="c1fbc8c6-6eb4-4151-8b02-42117fa109df">
+  <value column="Name" original="Direct Debit Notice">Aviso para Débito Automático</value>
+  <value column="PrintName" original="Direct Debit Notice">Aviso Débito Automático</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="be790746-07bf-4c70-8e32-819d89800f39">
+  <value column="Name" original="Brazilian Bank Collection (Boleto)">Boleto</value>
+  <value column="PrintName" original="Boleto">Boleto</value>
+  <value column="Description" original="Brazilian Bank Collection (Boleto) Identifier">Identificador do Boleto</value>
+  <value column="Help" original="The Brazilian Bank Collection (Boleto) Document.">Identifica o Boleto</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="ff75ca4a-3089-4ca3-a8cb-b08227ffb507">
+  <value column="Name" original="Brazilian Bank Collection (Boleto)">Brazilian Bank Collection (Boleto)</value>
+  <value column="PrintName" original="Boleto">Boleto</value>
+  <value column="Description" original="Brazilian Bank Collection (Boleto) Identifier">Brazilian Bank Collection (Boleto) Identifier</value>
+  <value column="Help" original="The Brazilian Bank Collection (Boleto) Document.">The Brazilian Bank Collection (Boleto) Document.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="002b2e9a-daa4-42d0-8743-9b489d9e09c4">
+  <value column="Name" original="Guarantor (Partner) Location">Localização do Sacador / Avalista</value>
+  <value column="PrintName" original="Guarantor (Partner) Location">Localização do Sacador/Avalista</value>
+  <value column="Description" original="Identifies the address for this guarantor (Business Partner)">Identifica a localização do sacador/avalista</value>
+  <value column="Help" original="The Guarantor (Partner) address indicates the location of a Business Partner">A localização (endereço de pagamento a terceiros e cobrança) do sacador/avalista.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="1d2657da-4ebc-4f1f-9f20-1306c23471fe">
+  <value column="Name" original="Guarantor (Business Partner)">Sacador / Avalista</value>
+  <value column="PrintName" original="Guarantor (Business Partner)">Sacador/Avalista</value>
+  <value column="Description" original="Identifies a guarantor (Business Partner)">Identifica um Sacador/Avalista</value>
+  <value column="Help" original="">Sacador/Avalista é o cedente original do Título (quem realizou a transação comercial ou mercantil com o sacado e endossou o título a um terceiro).</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="1fa325b2-18be-4416-98aa-026e1e6f8078">
+  <value column="Name" original="Correspondent Bank">Banco Correspondente</value>
+  <value column="PrintName" original="Correspondent Bank">Banco Correspondente</value>
+  <value column="Description" original="Correspondent Bank"/>
+  <value column="Help" original="The Bank is a unique identifier of a Bank for this Organization or for a Business Partner with whom this Organization transacts."/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="7c0d141d-347c-4780-8939-4d68e20a6078">
+  <value column="Name" original="Number in the Bank">Nosso Número</value>
+  <value column="PrintName" original="Number in the Bank">Nosso Número</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="d897d9b0-b014-47f0-9e01-1e2767f18dfc">
+  <value column="Name" original="Number in the Correspondent Bank">Nosso Número no Banco Correspondente</value>
+  <value column="PrintName" original="Number in the Correspondent Bank">Nosso Número no Banco Correspondente</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="54416fa1-1488-49ec-9fc9-ed59089c045e">
+  <value column="Name" original="Number in the Org">Seu Número</value>
+  <value column="PrintName" original="Number in the Org">Seu Número</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="85b4696f-02a5-48ff-b79c-6e7d409e9de6">
+  <value column="Name" original="Currency">Moeda</value>
+  <value column="PrintName" original="Currency">Moeda</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Currency used for CNAB 240">Moeda usada pelo CNAB 240</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="0122be00-b50b-4d61-adb0-48a85b8a4ec1">
+  <value column="Name" original="Loan Contract No.">Núm. do Contrato da Operação de Crédito</value>
+  <value column="PrintName" original="Loan Contract No.">Contrato Op. Crédito</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="72e7281b-d16a-42df-abb2-91bfaec42450">
+  <value column="Name" original="Febraban Document Type">Tipo de Documento de Cobrança</value>
+  <value column="PrintName" original="Febraban Doc. Type">Tipo Doc. Cobrança</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Collection document type, according to Febraban.">Código adotado pela Febraban para identificar a existência material do documento no processo.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="871832c8-63f4-4377-9eea-bdb04b8a432c">
+  <value column="Name" original="Registration Type">Forma de Cadastramento</value>
+  <value column="PrintName" original="Registration Type">Forma de Cadastramento</value>
+  <value column="Description" original="Collection Registration Type">Forma de Cadastramento do Título no Banco</value>
+  <value column="Help" original="Collection Registration yype in the Bank">Código adotado pela Febraban para indicar a existência de registro do título no banco.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="f6350e32-a861-4ea5-8fac-039973a007af">
+  <value column="Name" original="Issue Type">Emissão</value>
+  <value column="PrintName" original="Issue Type">Emissão</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Responsible for issuing the collection, according to Febraban.">Código adotado pela Febraban para identificar o responsável e a forma de emissão do boleto.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="7ab4ee45-439e-4073-b290-c11618253a35">
+  <value column="Name" original="Distribution Type">Identificação da Distribuição</value>
+  <value column="PrintName" original="Distribution Type">Ident. da Distribuição</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Responsible for distributing the collection, according to Febraban.">Código adotado pela Febraban para identificar o responsável pela distribuição do boleto.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="8813958b-3df2-4888-bec8-1a049a89b37b">
+  <value column="Name" original="Boleto Details">Detalhes do Boleto</value>
+  <value column="PrintName" original="Boleto Details">Detalhes do Boleto</value>
+  <value column="Description" original="Brazilian Bank Collection (Boleto) Details"/>
+  <value column="Help" original="The Brazilian Bank Collection (Boleto) Details."/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="4880268d-6bff-4686-be5c-ff9f0a8098b7">
+  <value column="Name" original="Boleto Details">Boleto Details</value>
+  <value column="PrintName" original="Boleto Details">Boleto Details</value>
+  <value column="Description" original="Brazilian Bank Collection (Boleto) Details">Brazilian Bank Collection (Boleto) Details</value>
+  <value column="Help" original="The Brazilian Bank Collection (Boleto) Details.">The Brazilian Bank Collection (Boleto) Details.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="43954401-c1fd-41d0-8a49-1f74444473c1">
+  <value column="Name" original="Late Payment Penaulty Date">Data da Multa</value>
+  <value column="PrintName" original="Penaulty Date">Data da Multa</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Late payment penaulty date.">Data para a aplicação da multa.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="65e67b5f-59a7-49c8-a8a1-a58415d5796f">
+  <value column="Name" original="Interest Date">Data do Juros de Mora</value>
+  <value column="PrintName" original="Interest Date">Data do Juros</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Interest date.">Data para aplicação do juros de mora.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="b0361e3f-4b0e-40fc-b014-138eb1dcde0a">
+  <value column="Name" original="Discount 1 Code">Código do Desconto 1</value>
+  <value column="PrintName" original="Discount 1 Code">Cód. Desc. 1</value>
+  <value column="Description" original="Discount 1 Code used for CNAB 240">Código do Desconto 1, usado para o CNAB 240.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="64b69060-4732-4576-ad27-db9e85256045">
+  <value column="Name" original="Discount 2 Code">Código do Desconto 2</value>
+  <value column="PrintName" original="Discount 2 Code">Cód. Desc. 2</value>
+  <value column="Description" original="Discount 2 Code used for CNAB 240">Código do Desconto 2, usado para o CNAB 240.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="975e02c9-51a5-4b93-9ae3-81d6698955e1">
+  <value column="Name" original="Discount 3 Code">Código do Desconto 3</value>
+  <value column="PrintName" original="Discount 3 Code">Cód. Desc. 3</value>
+  <value column="Description" original="Discount 3 Code used for CNAB 240">Código do Desconto 3, usado para o CNAB 240.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="f06f79be-3488-4a98-9586-b1099ac47022">
+  <value column="Name" original="Discount 1 Date">Data do Desconto 1</value>
+  <value column="PrintName" original="Discount 1 Date">Data Desc. 1</value>
+  <value column="Description" original="Discount 1 Date used for CNAB 240">Data do Desconto 1, usado para o CNAB 240.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="cac98f57-c366-4e52-aa4f-79c2024c372c">
+  <value column="Name" original="Discount 2 Date">Data do Desconto 2</value>
+  <value column="PrintName" original="Discount 2 Date">Data Desc. 2</value>
+  <value column="Description" original="Discount 2 Date used for CNAB 240">Data do Desconto 2, usado para o CNAB 240.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="64d59df0-ddba-4121-a2fe-0f2c0b9ff1d4">
+  <value column="Name" original="Discount 3 Date">Data do Desconto 3</value>
+  <value column="PrintName" original="Discount 3 Date">Data Desc. 3</value>
+  <value column="Description" original="Discount 3 Date used for CNAB 240">Data do Desconto 3, usado para o CNAB 240.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="b5486a49-9981-42c0-b45b-a2c3fe3e7241">
+  <value column="Name" original="Discount 1 Amount/%">Valor / Percentual do Desconto 1</value>
+  <value column="PrintName" original="Discount 1 Amount/%">Valor / % do Desc. 1</value>
+  <value column="Description" original="Discount 1 Amount / Percentage used for CNAB 240">Valor / Percentual do Desconto 1, usado para o CNAB 240</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="617fd248-1fa4-45d2-a59e-f632b952668e">
+  <value column="Name" original="Discount 2 Amount/%">Valor / Percentual do Desconto 2</value>
+  <value column="PrintName" original="Discount 2 Amount/%">Valor / % do Desc. 2</value>
+  <value column="Description" original="Discount 2 Amount / Percentage used for CNAB 240">Valor / Percentual do Desconto 2, usado para o CNAB 240</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="35a060c9-289f-4fc1-a619-58e20f4b09f7">
+  <value column="Name" original="Discount 3 Amount/%">Valor / Percentual do Desconto 3</value>
+  <value column="PrintName" original="Discount 3 Amount/%">Valor / % do Desc. 3</value>
+  <value column="Description" original="Discount 3 Amount / Percentage used for CNAB 240">Valor / Percentual do Desconto 3, usado para o CNAB 240</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="e0a34e7d-2914-4785-b7dc-ba5107f98831">
+  <value column="Name" original="Message 5">Mensagem 5</value>
+  <value column="PrintName" original="Message 5">Mensagem 5</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Message 5">Mensagem 5</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="cc5ff8d7-3f27-4fb3-b811-2e29d8987fe0">
+  <value column="Name" original="Message 6">Mensagem 6</value>
+  <value column="PrintName" original="Message 6">Mensagem 6</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Message 6">Mensagem 6</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="9aa12ee4-c7e2-4216-b590-80609ca122c2">
+  <value column="Name" original="Message 7">Mensagem 7</value>
+  <value column="PrintName" original="Message 7">Mensagem 7</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Message 7">Mensagem 7</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="1ca4ef98-90f2-4c80-a20b-9c4cb8231258">
+  <value column="Name" original="Message 8">Mensagem 8</value>
+  <value column="PrintName" original="Message 8">Mensagem 8</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Message 8">Mensagem 8</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="1e467195-9a9b-4fc4-ad19-f715dd87b451">
+  <value column="Name" original="Message 9">Mensagem 9</value>
+  <value column="PrintName" original="Message 9">Mensagem 9</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Message 9">Mensagem 9</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="7fe87006-6003-4be0-a5a9-ef3b6fba7472">
+  <value column="Name" original="Boleto Static Data">Boleto Static Data</value>
+  <value column="PrintName" original="Boleto Static Data">Boleto Static Data</value>
+  <value column="Description" original="Boleto Static Data Identifier">Boleto Static Data Identifier</value>
+  <value column="Help" original="The Boleto Static Data Document.">The Boleto Static Data Document.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="2fc08b82-fbd2-41e9-8154-b8c6bcd7a618">
+  <value column="Name" original="Boleto Static Data">Boleto Static Data</value>
+  <value column="PrintName" original="Boleto Static Data">Boleto Static Data</value>
+  <value column="Description" original="Boleto Static Data Identifier">Boleto Static Data Identifier</value>
+  <value column="Help" original="The Boleto Static Data Document.">The Boleto Static Data Document.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="80cd5765-21a5-4a9f-810c-250cab035781">
+  <value column="Name" original="Static Data Type">Tipo de Dados Estáticos</value>
+  <value column="PrintName" original="Static Data Type">Tipo de Dados Estáticos</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="95addd8a-1e8d-4f9d-9fb9-853ecda0995a">
+  <value column="Name" original="Company Number Type">Company Number Type</value>
+  <value column="PrintName" original="Company Number Type">Company Number Type</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Company Number Type, according to Febraban">Company Number Type, according to Febraban</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="c99a2aa2-60a5-4219-af6c-6b617b0fa89f">
+  <value column="Name" original="Company Number">Company Number</value>
+  <value column="PrintName" original="Company Number">Company Number</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Company Number Number, according to Febraban">Company Number Number, according to Febraban</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="d252bf10-9bb7-4e30-9673-c2b9d27b90e8">
+  <value column="Name" original="Message 3">Mensagem 3</value>
+  <value column="PrintName" original="Message 3">Mensagem 3</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Message 3">Mensagem 3</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="6fa74bc4-754b-4a67-876f-49af9ac186ae">
+  <value column="Name" original="Message 4">Mensagem 4</value>
+  <value column="PrintName" original="Message 4">Mensagem 4</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Message 4">Mensagem 4</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="a7e14773-095d-496e-9e3e-f1020c745c49">
+  <value column="Name" original="Payment Instrument">Instrumento de Pagamento</value>
+  <value column="PrintName" original="Pay Instrument">Instrumento de Pagto.</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="8b4880cb-6491-4316-ad1d-8507f389fc9e">
+  <value column="Name" original="Issue / Distribution">Emissão / Distribuição</value>
+  <value column="PrintName" original="Issue / Distrib.">Emissão / Distrib.</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="c52db3d3-ec4d-40c3-9e29-04514e70c881">
+  <value column="Name" original="Bank Account">Conta Bancária</value>
+  <value column="PrintName" original="Bank Account">Conta Bancária</value>
+  <value column="Description" original="Account at the Bank">Conta no Banco</value>
+  <value column="Help" original="The Bank Account identifies an account at this Bank.">A "Conta Bancária" identifica uma conta neste Banco.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="ea076478-b4b2-4840-8f2f-261f81de25cc">
+  <value column="Name" original="Allow Bank Collection">Emite Boleto Bancário</value>
+  <value column="PrintName" original="Allow Bank Collection">Emite Boleto</value>
+  <value column="Description" original="A flag to allow the issue of bank collection (boleto)">O campo define se é possível emitir boleto bancário para esta conta bancária</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="eef2af3c-ead0-4179-8c22-21eddf650fdd">
+  <value column="Name" original="Sequence for Number in Bank">Seqüência para o Nosso Número</value>
+  <value column="PrintName" original="Sequence Number in Bank">Seqüência Nosso Número</value>
+  <value column="Description" original="Sequence for Number in Bank">Seqüência para o Nosso Número</value>
+  <value column="Help" original="The Sequence for Number in Bank defines the numbering sequence to be used for documents that use Number in Bank.">A Seqüência para o Nosso Número define a sequência a ser utilizada para documentos (ex: Boletos) que fazem uso do Nosso Número bancário.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="aff7ff72-495a-4b3c-aeeb-f3db06adc596">
+  <value column="Name" original="Sequence for Lot (CNAB)">Seqüência para o Lote (CNAB)</value>
+  <value column="PrintName" original="Sequence Lot">Seqüência Lote</value>
+  <value column="Description" original="Sequence for Lot (CNAB)">Seqüência para o Lote (CNAB)</value>
+  <value column="Help" original="The Sequence for Lot (CNAB) defines the numbering sequence to be used for Lot entries in the generated file destinated to banks.">A Seqüência para o Lote (CNAB) define a sequência a ser utilizada para lotes de registros contidos em arquivos remessas. Normalmente esta sequência é considerada a principal para a remessa, e não a sequência do arquivo.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="8f542bcd-7671-42a7-8a91-77b845056a60">
+  <value column="Name" original="Sequence for File (CNAB)">Seqüência para o Arquivo (CNAB)</value>
+  <value column="PrintName" original="Sequence File">Seqüência Arquivo</value>
+  <value column="Description" original="Sequence for File (CNAB)">Seqüência para o Arquivo (CNAB)</value>
+  <value column="Help" original="The Sequence for File (CNAB) defines the numbering sequence to be used for files in the generated file destinated to banks.">A Seqüência para o Arquivo (CNAB) define a sequência a ser utilizada para os arquivos remessas.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>

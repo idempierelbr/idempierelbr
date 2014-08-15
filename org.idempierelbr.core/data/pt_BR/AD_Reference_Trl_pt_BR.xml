@@ -2532,6 +2532,11 @@
   <value column="Description" original="Define layout type of info process button">Define layout type of info process button</value>
   <value column="Help" original=""/>
  </row>
+ <row id="200084" trl="N">
+  <value column="Name" original="ParentPreferenceType">ParentPreferenceType</value>
+  <value column="Description" original="Type of preference WEditor lie on (process, info window, window)">Type of preference WEditor lie on (process, info window, window)</value>
+  <value column="Help" original=""/>
+ </row>
  <row trl="Y" uuid="050a1289-4030-4328-b311-6a330e1cd8ae">
   <value column="Name" original="LBR_Package_Releases">Tipo de Pessoa</value>
   <value column="Description" original="List of Package Releases (iDempiereLBR)">Usado para Idenficar se o Parceiro é Pessoa Física ou Pessoa Jurídica</value>
@@ -2844,6 +2849,101 @@
  </row>
  <row trl="N" uuid="3f0a3a9e-6365-4d2f-89ba-3e856ac9b043">
   <value column="Name" original="RelType NF-e Event Lot &lt;= NF-e"><![CDATA[RelType NF-e Event Lot <= NF-e]]></value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="200a2526-77e1-4f82-a24a-ae6d5ab3aa64">
+  <value column="Name" original="LBR_CarteiraCode">LBR_CarteiraCode</value>
+  <value column="Description" original="Bank Account Carteira Code (Febraban)">Bank Account Carteira Code (Febraban)</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="1fcd5ce0-9659-4814-a126-11a8e3d523d5">
+  <value column="Name" original="LBR_ProtestConfigType">LBR_ProtestType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="dafacc4c-607a-4fb6-af56-1e2e526b9610">
+  <value column="Name" original="LBR_LatePaymentPenaltyType">LBR_LatePaymentPenaltyType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="92cf9c0c-0f1a-4940-8d69-42f8ab46f524">
+  <value column="Name" original="LBR_InterestType">LBR_InterestType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="39035e0c-fe53-4ee8-a4ca-90612b3ae014">
+  <value column="Name" original="LBR_CollecRetConfigType">LBR_CollecRetConfigType</value>
+  <value column="Description" original="Collection Return Configuration Type">Collection Return Configuration Type</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="1f372b76-15da-41ed-8d8f-94c9aa040f2d">
+  <value column="Name" original="LBR_CollectionType">LBR_CollectionType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="6e47f3eb-8897-4fe7-bf28-9488c998bcf3">
+  <value column="Name" original="LBR_Accepted">LBR_Accepted</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="5780e092-0e2c-46f1-9414-ea7f008c883e">
+  <value column="Name" original="LBR_PartialPayment">LBR_PartialPayment</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="57bb793d-4bdc-4bca-a265-0faaef7ab7e0">
+  <value column="Name" original="LBR_DirectDebitNotice">LBR_DirectDebitNotice</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="ec5f7d8c-e50d-41b5-8497-5ae8f4d5dc66">
+  <value column="Name" original="LBR_CNAB240Currency">LBR_CNAB240Currency</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="2e65a8a0-6a13-4f4d-be5d-946747a4a1f8">
+  <value column="Name" original="LBR_CNAB240DocType">LBR_CNAB240DocType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="79d98470-ef14-41a4-b9d8-6fe831b24b37">
+  <value column="Name" original="LBR_CollectionRegType">LBR_CollectionRegType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="10b3acb6-874b-47c7-baf4-04d75c293451">
+  <value column="Name" original="LBR_CollectionIssueType">LBR_CollectionIssueType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="0a16c309-cfd5-412d-89b0-c51dea993d54">
+  <value column="Name" original="LBR_CollectionDistribType">LBR_CollectionDistribType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="7b84e51b-de34-4912-9395-d9b871b47c56">
+  <value column="Name" original="LBR_CNABDiscountType">LBR_CNABDiscountType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="82569aaa-3db7-430d-92af-7a674304216d">
+  <value column="Name" original="LBR_BoletoSDType">LBR_BoletoSDType</value>
+  <value column="Description" original="Boleto Static Data Type">Boleto Static Data Type</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="fd5bbece-ad85-4181-80ff-e862b3235f00">
+  <value column="Name" original="LBR_CNABInscEmpType">LBR_CNABInscEmpType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="e373be03-74f3-43f0-8a32-bc9c8c19d1b9">
+  <value column="Name" original="LBR_CollectionIssueDistrib">LBR_CollectionIssueDistrib</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="ab303b7a-b896-4e13-866d-c5f2a3b95718">
+  <value column="Name" original="LBR_PayInstrument">LBR_PayInstrument</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

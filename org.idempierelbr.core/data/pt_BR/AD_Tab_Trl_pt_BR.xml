@@ -6318,6 +6318,12 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200144" trl="N">
+  <value column="Name" original="Role Access">Role Access</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row trl="Y" uuid="07721587-32fd-4a79-b306-94c8ed672f52">
   <value column="Name" original="NCM">NCM</value>
   <value column="CommitWarning" original=""/>
@@ -6874,6 +6880,42 @@ Printing:
   <value column="Name" original="Tax Definition">Definição de Impostos</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Maintain Tax Definition">Define Configurações Adicionais de Impostos baseadas em Prioridade Relativa</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="c7a5dbdb-aa1a-4e8a-bbd1-d3218f5b4de3">
+  <value column="Name" original="Convênio">Convênio</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain Bank Account Convênio Numbers">Gerencia Números de Convênios Bancários</value>
+  <value column="Help" original="In this tab, you define the Convênios used for this bank account.">Nesta aba, você pode definir Convênios utilizados para esta conta bancária.</value>
+ </row>
+ <row trl="Y" uuid="733b73be-9dba-49f0-9441-edd423363e40">
+  <value column="Name" original="Carteira">Carteira</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain Bank Account Carteira Numbers">Manutenção de Números de Carteira</value>
+  <value column="Help" original="In this tab, you define the Carteiras used for this bank account.">Nesta aba você define Carteiras utilizadas para esta conta bancária.</value>
+ </row>
+ <row trl="Y" uuid="1663d186-fa8b-427c-9f67-e88476788c95">
+  <value column="Name" original="Collection Defaults">Padrões de Cobrança</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="9dfe2d9c-a11f-49a1-b509-40d5d3ad4df9">
+  <value column="Name" original="Bank Collection">Boleto</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Brazilian Bank Collection">Boleto Bancário</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="6380c355-6e4d-44b1-99c6-86cc2409dcde">
+  <value column="Name" original="Payments">Pagamentos</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Brazilian Bank Collection Payments">Pagamento(s) vinculado(s) ao boleto</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="e6418bde-83af-4d2b-bd3e-e12f15dbe744">
+  <value column="Name" original="Details">Detalhes</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>

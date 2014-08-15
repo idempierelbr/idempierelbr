@@ -2946,7 +2946,7 @@ Obrigado por usar o Gerenciador de Ativos Personalizado Adempiere
   <value column="MsgTip" original=""/>
  </row>
  <row id="844" trl="Y">
-  <value column="MsgText" original="Available to Promise">Disponível para Prometer</value>
+  <value column="MsgText" original="Available to Promise">Qtd. Reservada / Pedida</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="845" trl="Y">
@@ -5166,7 +5166,7 @@ Obrigado por usar o Gerenciador de Ativos Personalizado Adempiere
   <value column="MsgTip" original=""/>
  </row>
  <row id="53001" trl="Y">
-  <value column="MsgText" original="Item Availability in other Warehouses">Item Availability in other Warehouses</value>
+  <value column="MsgText" original="Item Availability in other Warehouses">Disponibilidade em outros Armazéns</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="53002" trl="Y">
@@ -5194,7 +5194,7 @@ Obrigado por usar o Gerenciador de Ativos Personalizado Adempiere
   <value column="MsgTip" original="Log Migration Script - Save migration scripts file in %TEMP%/migration_script_*.sql">Gera scripts de migração - Os arquivos são salvos em %TEMP%/migration_script_*.sql</value>
  </row>
  <row id="53008" trl="Y">
-  <value column="MsgText" original="Vendor">Vendor</value>
+  <value column="MsgText" original="Vendor">Fornecedor</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="53009" trl="Y">
@@ -5271,9 +5271,9 @@ Please contact administrator.</value>
   <value column="MsgText" original="xls - Excel file">xls - Excel file</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="53027" trl="N">
-  <value column="MsgText" original="Only from same warehouse">Only from same warehouse</value>
-  <value column="MsgTip" original="Show only orders with the same warehouse as selected in the material receipt">Show only orders with the same warehouse as selected in the material receipt</value>
+ <row id="53027" trl="Y">
+  <value column="MsgText" original="Only from same warehouse">Apenas do mesmo armazém</value>
+  <value column="MsgTip" original="Show only orders with the same warehouse as selected in the material receipt">Exibe apenas os pedidos com o mesmo armazém selecionado no recebimento de material</value>
  </row>
  <row id="53029" trl="N">
   <value column="MsgText" original="Choose the date of the most recent payment that you plan to allocate, but it must be in an open accounting period or it will not post.">Choose the date of the most recent payment that you plan to allocate, but it must be in an open accounting period or it will not post.</value>
@@ -6525,6 +6525,10 @@ Please contact administrator.</value>
  </row>
  <row id="200275" trl="N">
   <value column="MsgText" original="Process Menu">Process Menu</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200303" trl="N">
+  <value column="MsgText" original="Select tab to export">Select tab to export</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="520010" trl="Y">

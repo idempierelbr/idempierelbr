@@ -751,6 +751,11 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original="Purchase Order Line">Linha do Pedido de Compra</value>
   <value column="Help" original="The Purchase Order Line is a unique identifier for a line in an order.">A "Linha do Pedido de Compra" é um identificador exclusivo para uma linha em um pedido de compra.</value>
  </row>
+ <row id="203108" trl="N">
+  <value column="Name" original="ViewID Column">ViewID Column</value>
+  <value column="Description" original="Name of unique column in a view. value of this column will save to t_selection table">Name of unique column in a view. value of this column will save to t_selection table</value>
+  <value column="Help" original="Column to resolve issue in https://idempiere.atlassian.net/browse/IDEMPIERE-1970">Column to resolve issue in https://idempiere.atlassian.net/browse/IDEMPIERE-1970</value>
+ </row>
  <row trl="Y" uuid="1571ea6a-cfc0-4a9e-ab5e-017bbbfa1958">
   <value column="Name" original="Memo">Informações Adicionais (NF-e)</value>
   <value column="Description" original="Memo">Informações Adicionais (NF-e)</value>
@@ -1062,5 +1067,25 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Name" original="NF-e Lot Sending Protocol">Protocolo</value>
   <value column="Description" original="Indicates the protocol of the sending process to Sefaz">Indica o número do protocolo do processamento do lote pela Sefaz</value>
   <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="c5265b44-e530-4dbf-8c82-3fcaa4bccf6c">
+  <value column="Name" original="Document Date">Data de Emissão</value>
+  <value column="Description" original="Date of the Document">Data de Emissão do Documento</value>
+  <value column="Help" original="The Document Date indicates the date the document was generated.  It may or may not be the same as the accounting date.">A "Data de Emissão" indica a data em que o documento foi emitido.  Ela pode ser ou não a mesma da data contábil.</value>
+ </row>
+ <row trl="Y" uuid="ec6ce2b5-2c4f-46cb-8736-ff4880e280fd">
+  <value column="Name" original="Grand Total">Valor do Título</value>
+  <value column="Description" original="Total amount of document">Valor do Título</value>
+  <value column="Help" original="The Grand Total displays the total amount including Tax and Freight in document currency">Indica o valor do título</value>
+ </row>
+ <row trl="Y" uuid="d22c2779-52cb-45d2-875c-7c2ed997e2a0">
+  <value column="Name" original="Business Partner ">Sacado</value>
+  <value column="Description" original="Identifies a Business Partner">Identifica um Sacado</value>
+  <value column="Help" original="A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson">Pessoa física ou jurídica indicada no título como responsável pelo pagamento.</value>
+ </row>
+ <row trl="Y" uuid="816170a9-d209-434e-9e3f-0b4895505807">
+  <value column="Name" original="Partner Location">Localização do Sacado</value>
+  <value column="Description" original="Identifies the (ship to) address for this Business Partner">Identifica a localização do sacado</value>
+  <value column="Help" original="The Partner address indicates the location of a Business Partner">A localização (endereço de pagamento a terceiros e cobrança) do sacado</value>
  </row>
 </idempiereTrl>

@@ -4,3 +4,8 @@ Bundle-Name: org.idempierelbr.open-items
 Bundle-SymbolicName: org.idempierelbr.open-items
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.adempiere.base,
+ org.idempierelbr.core;bundle-version="1.0.0"
+Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/CalloutFactory.xml,
+ OSGI-INF/DocFactory.xml
+Import-Package: org.osgi.service.event
