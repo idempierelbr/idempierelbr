@@ -8,6 +8,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.model.MBPartner;
+import org.compiere.model.MBankAccount;
 import org.compiere.model.MDocType;
 import org.compiere.model.MFactAcct;
 import org.compiere.model.MInvoice;
@@ -15,6 +16,7 @@ import org.compiere.model.MInvoicePaySchedule;
 import org.compiere.model.MLocation;
 import org.compiere.model.MPayment;
 import org.compiere.model.MPeriod;
+import org.compiere.model.MSequence;
 import org.compiere.model.MTable;
 import org.compiere.model.ModelValidationEngine;
 import org.compiere.model.ModelValidator;
@@ -228,6 +230,17 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 		if (getLBR_Guarantor_Location_ID() > 0) {
 			createStaticData(MLBRBoletoStaticData.LBR_STATICDATATYPE_SacadorAvalista,
 					getC_BPartner_Location_ID());
+		}
+		
+		// Generate Number In Bank (only if null)
+		if (getLBR_NumberInBank() == null || getLBR_NumberInBank().trim().equals("")) {
+			MBankAccount bA = new MBankAccount(getCtx(), getC_BankAccount_ID(), get_TrxName());
+			int LBR_SeqNumberInBank_ID =  bA.get_ValueAsInt("LBR_SeqNumberInBank_ID");
+			
+			if (LBR_SeqNumberInBank_ID > 0) {
+				MSequence seq = new MSequence(getCtx(), LBR_SeqNumberInBank_ID, get_TrxName());
+				setLBR_NumberInBank(MSequence.getDocumentNoFromSeq(seq, get_TrxName(), this));			
+			}
 		}
 
 		m_processMsg = ModelValidationEngine.get().fireDocValidate(this, ModelValidator.TIMING_AFTER_COMPLETE);
