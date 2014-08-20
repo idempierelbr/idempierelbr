@@ -167,8 +167,8 @@
  <row id="128" trl="Y">
   <value column="Name" original="Calendar">Calendário</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define your calendar">Definir seu calendário</value>
-  <value column="Help" original="The Calendar Tab defines each calendar that will be used by an Organization.">A Aba "Calendário" define cada calendário que será usado por uma Organização.</value>
+  <value column="Description" original="Define your calendar">Definição de calendário</value>
+  <value column="Help" original="The Calendar Tab defines each calendar that will be used by an Organization.">A Aba "Calendário" permite definir cada calendário que será usado por uma Organização.</value>
  </row>
  <row id="129" trl="Y">
   <value column="Name" original="Year">Ano</value>
@@ -177,10 +177,10 @@
   <value column="Help" original="The Year Window is used to define each year for the specified calendar.">A Janela Ano é usada para definir cada ano para o calendário especificado.</value>
  </row>
  <row id="130" trl="Y">
-  <value column="Name" original="Period">Período (Ano Fiscal)</value>
+  <value column="Name" original="Period">Período</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Define Calendar Periods">Definir Períodos de Calendário</value>
-  <value column="Help" original="The Period Tab defines a Period No, Name and Start Date for each Calendar Year.  Each period begins on the defined Start Date and ends one day prior to the next period's Start Date.">A Aba "Período" define um Número de Período, Nome e Data de Início para cada Ano Civil.  Cada período começa em uma Data de Início definida e Termina um dia antes da Data de Início do próximo período.</value>
+  <value column="Help" original="The Period Tab defines a Period No, Name and Start Date for each Calendar Year.  Each period begins on the defined Start Date and ends one day prior to the next period's Start Date.">A Aba "Período" define um Número do Período, Nome e Datas de Início e Fim. Cada período começa em uma Data de Início definida e termina um dia antes da Data de Início do próximo período.</value>
  </row>
  <row id="131" trl="Y">
   <value column="Name" original="Non Business Day">Dia não Útil</value>
@@ -352,7 +352,7 @@
   <value column="Help" original="The Attachment tab displays the attributes of an attachment.">A Aba "Anexo" mostra os atributos de um anexo.</value>
  </row>
  <row id="174" trl="Y">
-  <value column="Name" original="Tax">Taxa</value>
+  <value column="Name" original="Tax">Alíquota</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Tax definition">Definição de Impostos</value>
   <value column="Help" original="The Tax Rate Window defines the different taxes used for each tax category.  For example Sales Tax must be defined for each State in which it applies.&lt;br&gt;&#10;If you have multiple taxes create a summary level tax with the approximate total tax rate and the actual tax rates pointing to the summary level tax as their parent. When entering the order or invoice lines the tax is estimated the correct tax is calculated when the document is processed.  The tax is always calculated from the line net amount. If one tax has a the tax basis the line net amount and another tax you need to adjust the percentage to result in the correct amount.&lt;br&gt;&#10;Valid From/To is determined by the parent tax."><![CDATA[A Janela de "Alíquota de Imposto" define as diferentes taxas usadas para cada categoria de impostos.  Por exemplo, Impostos sobre Vendas devem ser definidos para cada estado ao qual eles se aplicam.<br> Se você tiver múltiplos impostos, crie um nível de resumo de impostos com a taxa total aproximada dos impostos e as taxas reais apontando ao nível de resumo de impostos como seu nível superior. Ao inserir as linhas de pedido ou fatura, o imposto é estimado, o imposto correto é calculado quando o documento for processado.  O imposto é sempre calculado a partir da linha de montante líquido. Se um imposto tem o montante líquido mais um outro imposto como base, você precisa ajustar o percentual para resultar no valor correto.<br> A Validação De/Para é determinada pelo imposto superior (pai).]]></value>
@@ -466,10 +466,10 @@
   <value column="Help" original="The Accounting Schema Tab defines the controls used for accounting.  You can define multiple accounting schema per client (for parallel accounting).  &#10;Postings are generated for an accounting schema, if the schema is valid and you have defined GL and Default accounts and after completion of the Add / Copy Accounts process.">A Aba "Esquema Contábil" define os controles utilizados na contabilidade.  Você pode definir múltiplos esquemas contábeis por empresa (para contabilidade paralela). Após a finalização dos processos de Adicionar/Copiar Contas, os lançamento nos livros serão gerados para um Esquema Contábil, se o esquema for válido e você tiver definido o RG e Contas padrão.</value>
  </row>
  <row id="200" trl="Y">
-  <value column="Name" original="General Ledger">Razão Geral</value>
+  <value column="Name" original="General Ledger">Livro Razão</value>
   <value column="CommitWarning" original="For changes to become effective, you must re-login and re-start the Application Server.">Para as alterações se tornarem efetivas, você deve re-iniciar o Servidor de Aplicação e se re-logar.</value>
-  <value column="Description" original="Accounts for GL">Contabilidade por RG</value>
-  <value column="Help" original="The General Ledger Tab defines error and balance handling to use as well as  the necessary accounts for posting to General Ledger.  ">A Aba "Razão Geral" define a manipulação de erros e balanços a ser usada assim como as contas necessárias para os  lançamento nos livros de Razão Geral.  </value>
+  <value column="Description" original="Accounts for GL">Contas para o Livro Razão</value>
+  <value column="Help" original="The General Ledger Tab defines error and balance handling to use as well as  the necessary accounts for posting to General Ledger.  ">A Aba "Livro Razão" permite a configuração para lidar com erros e contrapartidas, bem como define as contas necessárias para lançamentos no Livro Razão.</value>
  </row>
  <row id="201" trl="Y">
   <value column="Name" original="Campaign">Campanha</value>
@@ -516,8 +516,8 @@
  <row id="208" trl="Y">
   <value column="Name" original="Budget">Orçamento</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="The GL Budget Tab defines a General Ledger Budget">A Aba "Orçamento RG" define o Orçamento de Razão Geral</value>
-  <value column="Help" original="The GL Budgets are used to define the anticipated costs of doing business.  They are used in reporting as a comparison to actual amounts.">Os Orçamentos de RG são usados para definir os custos antecipados ao se fazer negócios.  Eles são usados em relatórios em comparação aos valores reais.</value>
+  <value column="Description" original="The GL Budget Tab defines a General Ledger Budget">A Aba "Orçamento" permite definir orçamentos contábeis</value>
+  <value column="Help" original="The GL Budgets are used to define the anticipated costs of doing business.  They are used in reporting as a comparison to actual amounts.">Os orçamentos contábeis são usados para definir custos antecipados. Eles são usados em relatórios para comparação com os valores reais.</value>
  </row>
  <row id="209" trl="Y">
   <value column="Name" original="Accounting">Contabilidade</value>
@@ -658,10 +658,10 @@
   <value column="Help" original="The Order Tax Tab displays the tax amount for an Order based on the lines entered.">A Aba "Imposto do Pedido" mostra o montante de impostos associados a um pedido baseado nas linhas digitadas.</value>
  </row>
  <row id="237" trl="Y">
-  <value column="Name" original="Charge">Despesa</value>
+  <value column="Name" original="Charge">Referência Contábil</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Charge">Despesa</value>
-  <value column="Help" original="The Charge Tab defines the unique charges that may be associated with a document.&#10;The optional Business Partner allows to create Purchase Orders from Requisitions.">A Aba "Despesa" define as despesas exclusivas que podem ser associadas a um documento. The optional Business Partner allows to create Purchase Orders from Requisitions.</value>
+  <value column="Description" original="Charge">Referência Contábil</value>
+  <value column="Help" original="The Charge Tab defines the unique charges that may be associated with a document.&#10;The optional Business Partner allows to create Purchase Orders from Requisitions.">A Aba "Referência Contábil" permite definir referências que permitem o mapeamento de documentos a contas contábeis. Por exemplo, você pode criar um referência chamada Tarifas Bancárias (despesa) e vincular a uma conta específica do plano de contas. Você pode também criar uma referência Juros Recebidos (receita) e assim por diante. A informação de uma Parceiro de Negócios (opcional) permite a criação de Pedidos de Compra a partir de Requisições.</value>
  </row>
  <row id="238" trl="Y">
   <value column="Name" original="Version">Versão</value>
@@ -1316,13 +1316,13 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="373" trl="Y">
-  <value column="Name" original="Report Column Set">Conjunto de Colunas de Relatórios</value>
+  <value column="Name" original="Report Column Set">Conjunto de Colunas de Relatório</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Maintain Financial Report Column Sets">Gerenciamento de Conjuntos de Colunas de Relatórios Financeiros</value>
   <value column="Help" original="Column Sets are the combination of Columns to be included in a Financial Report">Conjuntos de Colunas são a combinação de Colunas a serem incluídas em um Relatório Financeiro</value>
  </row>
  <row id="374" trl="Y">
-  <value column="Name" original="Report Column">Colunas de Relatório</value>
+  <value column="Name" original="Report Column">Coluna de Relatório</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Maintain Financial Report Column">Gerenciamento de Coluna de Relatório Financeiro</value>
   <value column="Help" original="A column represents a column in a Financial Report">Uma coluna representa uma coluna em um Relatório Financeiro</value>
@@ -1340,9 +1340,9 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="377" trl="Y">
-  <value column="Name" original="Report Source">Origem de Relatório</value>
+  <value column="Name" original="Report Source">Origem</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Segment Values of Report Line Source ">Gerenciamento de Valores de Segmentos de Origem de Linha de Relatório </value>
+  <value column="Description" original="Maintain Segment Values of Report Line Source ">Gerenciamento da origem dos Valores de Segmentos da linha de relatório</value>
   <value column="Help" original=""/>
  </row>
  <row id="378" trl="Y">
@@ -2861,10 +2861,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="You can send the notifications to users or roles">Você pode enviar notificações para usuários ou papéis</value>
  </row>
  <row id="640" trl="Y">
-  <value column="Name" original="Tax ZIP">ZIP do Imposto</value>
+  <value column="Name" original="Tax ZIP">CEP/ZIP do Imposto</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Tax Postal/ZIP">CEP do Imposto</value>
-  <value column="Help" original="For local tax you may have to define a list of (ranges of) postal codes or ZIPs">Para taxas ou impostos locais, você pode ter que definir uma lista de (faixas de ) códigos postais ou CEPs</value>
+  <value column="Description" original="Tax Postal/ZIP">CEP/ZIP do Imposto</value>
+  <value column="Help" original="For local tax you may have to define a list of (ranges of) postal codes or ZIPs">Para taxas ou impostos locais, você pode ter que definir uma lista (faixas) de códigos postais ou CEPs</value>
  </row>
  <row id="641" trl="Y">
   <value column="Name" original="Requisition">Requisição</value>
@@ -2893,7 +2893,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
  <row id="646" trl="Y">
   <value column="Name" original="Distribution">Distribuição</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="General Ledger Distribution">Distribuição de Razão Geral</value>
+  <value column="Description" original="General Ledger Distribution">Distribuição Contábil</value>
   <value column="Help" original="If the account combination criteria of the Distribution is met, the posting to the account combination is replaced by the account combinations of the distribution lines.  &#10;The distribution is prorated based on the percentage of the lines. If the total percent is less then 100 and one line is 0 (null), it gets the remainder.  If there is no line with 0, any rounding is adjusted in the line with the biggest amount.">Se os critérios de combinação de contas da distribuição forem atingidos, a contabilização na combinação de contas é substituída pelas combinações de contas das linhas de distribuição. A distribuição é pro-rateada com base na percentagem das linhas. Se o percentual total for menor que 100% e uma linha for 0 (nula), ela recebe o resto.  Se não houver linhas com 0, qualquer arredondamento será feito na linha com o maior valor.</value>
  </row>
  <row id="647" trl="Y">
@@ -2987,9 +2987,9 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="The Reverse Allocation Tab defines the Payment Allocation to be reversed.">A Aba "Estornar Alocação" define a Alocação de Pagamento a ser estornada.</value>
  </row>
  <row id="662" trl="Y">
-  <value column="Name" original="Unposted Documents">Documentos não Lançados</value>
+  <value column="Name" original="Unposted Documents">Documentos Não Lançados</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="View unposted Documents">Visualizar os documentos não lançados</value>
+  <value column="Description" original="View unposted Documents">Visualizar os documentos não lançados (contabilmente)</value>
   <value column="Help" original=""/>
  </row>
  <row id="663" trl="Y">
@@ -5008,14 +5008,14 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original="Define Depreciation Method">Define Depreciation Method</value>
   <value column="Help" original=""/>
  </row>
- <row id="53176" trl="N">
-  <value column="Name" original="Charge Type">Charge Type</value>
+ <row id="53176" trl="Y">
+  <value column="Name" original="Charge Type">Tipo de Referência Contábil</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53177" trl="N">
-  <value column="Name" original="Charge Type by Doc Type">Charge Type by Doc Type</value>
+ <row id="53177" trl="Y">
+  <value column="Name" original="Charge Type by Doc Type">Tipo de Referência por Tipo de Documento</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5200,8 +5200,8 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53219" trl="N">
-  <value column="Name" original="Report Cube">Report Cube</value>
+ <row id="53219" trl="Y">
+  <value column="Name" original="Report Cube">Relatório Cubo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5730,8 +5730,8 @@ Printing:
   <value column="Description" original="Show movement of cost by transaction">Show movement of cost by transaction</value>
   <value column="Help" original=""/>
  </row>
- <row id="200001" trl="N">
-  <value column="Name" original="Sequence No">Sequence No</value>
+ <row id="200001" trl="Y">
+  <value column="Name" original="Sequence No">Núm. de Sequência</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>

@@ -92,9 +92,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Conversion Rates window is used to define the conversion rates that will be used when converting document amounts from one currency to another. Note that only the multiply rate is used; The divide rate is for visualization only.">A Janela "Taxa de Conversão" é usada para definir as taxas de conversão que serão usadas ao converter valores de documento de uma moeda a outra. Note que somente a taxa de multiplicação é utilizada; A taxa de divisão é somente para visualização.</value>
  </row>
  <row id="117" trl="Y">
-  <value column="Name" original="Calendar Year and Period">Período e Ano Civil</value>
-  <value column="Description" original="Maintain Calendars Years Periods">Gerenciamento de Períodos e Anos Civis</value>
-  <value column="Help" original="The Calendar Year and Periods defines the calendars that will be used for period control and reporting. You can also define non-standard calendars (e.g. business year from July to June).">A Janela "Período e Ano Civil" define os calendários que serão utilizados para controle de períodos e relatórios. Você também pode definir calendários não padronizados (ex. ano fiscal de Julho a Junho).</value>
+  <value column="Name" original="Calendar Year and Period">Calendário, Ano e Período</value>
+  <value column="Description" original="Maintain Calendars Years Periods">Gerenciamento de Calendários (Anos Civis e seus Períodos)</value>
+  <value column="Help" original="The Calendar Year and Periods defines the calendars that will be used for period control and reporting. You can also define non-standard calendars (e.g. business year from July to June).">A Janela "Calendário, Ano e Período" define os anos/meses que serão utilizados para controle de períodos contábeis e relatórios diversos. Você também pode definir calendários não padronizados (ex. ano fiscal de julho a junho).</value>
  </row>
  <row id="118" trl="Y">
   <value column="Name" original="Account Element">Elemento Contábil</value>
@@ -158,9 +158,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The GL Journal Window allows you to enter and modify manual journal entries">A Janela "Lote de Livro Razão (Lançamento)" permite lançamentos no Livro Razão, em lote.</value>
  </row>
  <row id="134" trl="Y">
-  <value column="Name" original="Activity (ABC)">Atividades (ABC)</value>
+  <value column="Name" original="Activity (ABC)">Atividade (Custeio ABC)</value>
   <value column="Description" original="Maintain Activities for Activity Based Costing">Gerenciamento de Atividades para Custeio Baseado em Atividades</value>
-  <value column="Help" original="The Activity Based Costing Window defines the different activities for which you want to capture costs.">A Janela "Custeio Baseado em Atividades" define as diferentes atividades para as quais você deseja capturar os custos.</value>
+  <value column="Help" original="The Activity Based Costing Window defines the different activities for which you want to capture costs.">A Janela "Atividade (Custeio ABC)" define as diferentes atividades para as quais você deseja capturar custos.</value>
  </row>
  <row id="135" trl="Y">
   <value column="Name" original="Document Type">Tipo de Documento</value>
@@ -243,8 +243,8 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Account Combination Window defines and displays valid account combinations. ">A Janela "Combinação de Contas" define e mostra Combinações de Contas Válidas. </value>
  </row>
  <row id="154" trl="Y">
-  <value column="Name" original="GL Budget">Orçamento de Razão Geral</value>
-  <value column="Description" original="Maintain General Ledger Budgets">Gerenciamento de Orçamentos de Razão Geral</value>
+  <value column="Name" original="GL Budget">Orçamento Contábil</value>
+  <value column="Description" original="Maintain General Ledger Budgets">Gerenciamento de Orçamentos Contábeis</value>
   <value column="Help" original=""/>
  </row>
  <row id="158" trl="Y">
@@ -263,9 +263,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Withholding Window defines the rule used for calculating withholding amounts.">A Janela "Retenção" define a regra usada para calcular montantes de retenção.</value>
  </row>
  <row id="161" trl="Y">
-  <value column="Name" original="Charge">Despesa</value>
-  <value column="Description" original="Maintain Charges">Gerenciamento de Despesas</value>
-  <value column="Help" original="The Charges Window defines the different charges that may be incurred.  These can include Bank Charges, Vendor Charges and Handling Charges.">A Janela "Despesa" define as diferentes despesas a que se pode ficar sujeito.  Estas podem incluir Taxas de Banco, Taxas de Fornecedores e Custos de Manuseio.</value>
+  <value column="Name" original="Charge">Referência Contábil</value>
+  <value column="Description" original="Maintain Charges">Gerenciamento de Referências Contábeis</value>
+  <value column="Help" original="The Charges Window defines the different charges that may be incurred.  These can include Bank Charges, Vendor Charges and Handling Charges.">A Janela "Referência Contábil" permite definir referências que permitem o mapeamento de documentos a contas contábeis. Por exemplo, você pode criar um referência chamada Tarifas Bancárias (despesa) e vincular a uma conta específica do plano de contas. Você pode também criar uma referência Juros Recebidos (receita) e assim por diante.</value>
  </row>
  <row id="162" trl="Y">
   <value column="Name" original="Accounting Fact Details">Detalhes de Fatos Contábeis</value>
@@ -482,14 +482,14 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Financial Reports are the combination of a Report Column Set and Line Set.">Relatórios Financeiros são a combinação de um Conjunto de Colunas e um Conjunto de Linhas de Relatório.</value>
  </row>
  <row id="217" trl="Y">
-  <value column="Name" original="Report Column Set">Conjunto de Colunas de Relatórios</value>
+  <value column="Name" original="Report Column Set">Conjunto de Colunas de Relatório</value>
   <value column="Description" original="Maintain Financial Report Column Sets">Gerenciamento de Conjuntos de Colunas de Relatórios Financeiros</value>
-  <value column="Help" original="The Report Column Set defines what data is printed in the columns of a report.">O Conjunto de Colunas de Relatórios define quais dados são impressos nas colunas de um relatório.</value>
+  <value column="Help" original="The Report Column Set defines what data is printed in the columns of a report.">O Conjunto de Colunas de Relatório define quais dados são impressos nas colunas de um relatório.</value>
  </row>
  <row id="218" trl="Y">
   <value column="Name" original="Report Line Set">Conjunto de Linhas de Relatório</value>
   <value column="Description" original="Maintain Financial Report Line Sets">Gerenciamento de Conjuntos de Linhas de Relatórios Financeiros</value>
-  <value column="Help" original="The Line Set determines, which lines are printed in a Financial Report">O Conjunto de Linhas determina quais linhas serão impressas em um Relatório Financeiro</value>
+  <value column="Help" original="The Line Set determines, which lines are printed in a Financial Report">O Conjunto de Linhas de Relatório determina as linhas impressas em um Relatório Financeiro.</value>
  </row>
  <row id="220" trl="Y">
   <value column="Name" original="Service Level">Nível de Serviço</value>
@@ -855,14 +855,14 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="This window allows you to view Company agent related information">Esta janela permite a você visualizar informações relacionas aos Representantes da Companhia</value>
  </row>
  <row id="294" trl="Y">
-  <value column="Name" original="UnPosted Documents">Documentos não Lançados</value>
-  <value column="Description" original="Unposted Documents">Documentos não Lançados</value>
-  <value column="Help" original="View unposted documents">Visualizar os documentos não lançados</value>
+  <value column="Name" original="UnPosted Documents">Documentos Não Lançados</value>
+  <value column="Description" original="Unposted Documents">Documentos Não Lançados</value>
+  <value column="Help" original="View unposted documents">Visualizar os documentos não lançados (contabilmente).</value>
  </row>
  <row id="295" trl="Y">
-  <value column="Name" original="Currency Type">Tipo de Moeda</value>
-  <value column="Description" original="Maintain Currency Conversion Rate Types">Gerenciamento de Tipos de Taxas de Conversão de Moedas</value>
-  <value column="Help" original="The Currency Conversion Rate Type lets you define different type of rates, e.g. Spot, Corporate and/or Sell/Buy rates.">O Tipo de Taxas de Conversão de Moedas define diferentes tipos de taxas, ex. taxas Spot (mercado à vista), taxas Corporativas e/ou taxas de Compra/Venda.</value>
+  <value column="Name" original="Currency Type">Tipo de Cotação de Moedas</value>
+  <value column="Description" original="Maintain Currency Conversion Rate Types">Gerenciamento de Tipos de Cotação de Moedas</value>
+  <value column="Help" original="The Currency Conversion Rate Type lets you define different type of rates, e.g. Spot, Corporate and/or Sell/Buy rates.">A janela permite definir diferentes tipos de cotação de moedas, como por exemplo a Ptax do dia.</value>
  </row>
  <row id="296" trl="Y">
   <value column="Name" original="Import Currency Rate">Importar Taxas de Moedas</value>
@@ -1000,9 +1000,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Enter and maintain Material Requisitions. Material Requisition can be created automatically via Replenishment.  You create generate optionally consolidated Purchase Orders.">Introduzir e gerenciar Requisições de Material. Requisição de Material pode ser criada automaticamente via Reabastecimento.  Opcionalmente você cria ou gera Pedidos de Compras consolidados.</value>
  </row>
  <row id="323" trl="Y">
-  <value column="Name" original="GL Distribution">Distribuição RG</value>
-  <value column="Description" original="General Ledger Distribution">Distribuição de Razão Geral</value>
-  <value column="Help" original="If the account combination criteria of the Distribution is met, the posting to the account combination is replaced by the account combinations of the distribution lines.  The distribution is a one-step operation based on the percentage of the lines.">Se os critérios de combinação de contas da distribuição forem atingidos, a contabilização na combinação de contas é substituída pelas combinações de contas das linhas de distribuição.  A distribuição é uma operação de um único passo baseada na percentagem das linhas.</value>
+  <value column="Name" original="GL Distribution">Distribuição Contábil</value>
+  <value column="Description" original="General Ledger Distribution">Distribuição Contábil</value>
+  <value column="Help" original="If the account combination criteria of the Distribution is met, the posting to the account combination is replaced by the account combinations of the distribution lines.  The distribution is a one-step operation based on the percentage of the lines.">Se os critérios de combinação de contas da distribuição forem atingidos, o lançamento na combinação de contas é substituído pelas combinações das linhas da distribuição. A distribuição é uma operação de um único passo baseada na percentagem das linhas.</value>
  </row>
  <row id="324" trl="Y">
   <value column="Name" original="RfQ Response">Resposta de SdC</value>
@@ -1683,8 +1683,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Define Calculation Methods used in depreciation expense calculation">Define Calculation Methods used in depreciation expense calculation</value>
   <value column="Help" original="The Depreciation Calcualtion Method window allows the user to define how adjustments to the fixed asset depreciation expense are handled">The Depreciation Calcualtion Method window allows the user to define how adjustments to the fixed asset depreciation expense are handled</value>
  </row>
- <row id="53062" trl="N">
-  <value column="Name" original="Charge Type">Charge Type</value>
+ <row id="53062" trl="Y">
+  <value column="Name" original="Charge Type">Tipo de Referência Contábil</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1733,10 +1733,10 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Setup promotion rule">Permite a configuração de regras de promoção</value>
   <value column="Help" original=""/>
  </row>
- <row id="53078" trl="N">
-  <value column="Name" original="Report Cube">Report Cube</value>
-  <value column="Description" original="Define reporting cube for pre-calculation of summary accounting data.">Define reporting cube for pre-calculation of summary accounting data.</value>
-  <value column="Help" original="Summary data will be generated for each period of the selected calendar, grouped by the selected dimensions..">Summary data will be generated for each period of the selected calendar, grouped by the selected dimensions..</value>
+ <row id="53078" trl="Y">
+  <value column="Name" original="Report Cube">Relatório Cubo</value>
+  <value column="Description" original="Define reporting cube for pre-calculation of summary accounting data.">Define relatórios cubo para o pré-calculo de resumos de dados contábeis.</value>
+  <value column="Help" original="Summary data will be generated for each period of the selected calendar, grouped by the selected dimensions..">Resumos de dados serão gerados para cada período do calendário selecionado, agrupados pelas dimensões selecionadas.</value>
  </row>
  <row id="53085" trl="N">
   <value column="Name" original="MRP Notice (all)">MRP Notice (all)</value>

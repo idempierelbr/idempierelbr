@@ -3,8 +3,8 @@
 <!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
 <idempiereTrl language="pt_BR" table="AD_Process_Para">
  <row id="227" trl="Y">
-  <value column="Name" original="Delete existing Accounting Entries">Apagar Lançamentos Contábeis Existentes</value>
-  <value column="Description" original="The selected accounting entries will be deleted!  DANGEROUS !!!">Os lançamentos contábeis selecionados serão apagados!  PERIGOSO !!!</value>
+  <value column="Name" original="Delete existing Accounting Entries">Apagar os Lançamentos Contábeis Existentes</value>
+  <value column="Description" original="The selected accounting entries will be deleted!  DANGEROUS !!!">Os lançamentos contábeis existentes serão apagados! CUIDADO!!</value>
   <value column="Help" original=""/>
  </row>
  <row id="233" trl="Y">
@@ -222,14 +222,14 @@
   <value column="Description" original="Location of the chart of accounts to be used with this client.  At this stage just the default accounts will be created.">Location of the chart of accounts to be used with this client.  At this stage just the default accounts will be created.</value>
   <value column="Help" original=""/>
  </row>
- <row id="53314" trl="N">
-  <value column="Name" original="Full rebuild">Full rebuild</value>
-  <value column="Description" original="Delete all existing summary data and recalculate.">Delete all existing summary data and recalculate.</value>
-  <value column="Help" original="If not selected, only those periods with recently posted accounting facts will be recalculated.">If not selected, only those periods with recently posted accounting facts will be recalculated.</value>
+ <row id="53314" trl="Y">
+  <value column="Name" original="Full rebuild">Recálculo Completo</value>
+  <value column="Description" original="Delete all existing summary data and recalculate.">Apaga todos os dados de resumo existentes e recalcula.</value>
+  <value column="Help" original="If not selected, only those periods with recently posted accounting facts will be recalculated.">Se não for selecionado, apenas os períodos com lançamento contábeis recentes serão recalculados.</value>
  </row>
- <row id="53316" trl="N">
-  <value column="Name" original="Force">Force</value>
-  <value column="Description" original="Force rebuild of cube even if locked.">Force rebuild of cube even if locked.</value>
+ <row id="53316" trl="Y">
+  <value column="Name" original="Force">Forçar</value>
+  <value column="Description" original="Force rebuild of cube even if locked.">Forçar o recálculo do cubo, mesmo se estiver bloqueado.</value>
   <value column="Help" original=""/>
  </row>
  <row id="53485" trl="Y">

@@ -4,8 +4,8 @@
 <idempiereTrl language="pt_BR" table="AD_Process">
  <row id="100" trl="Y">
   <value column="Name" original="Create Periods ">Criar Períodos </value>
-  <value column="Description" original="Create 12 standard calendar periods.">Criar 12 períodos de calendário padrão (Jan-Dez)</value>
-  <value column="Help" original="Creates 12 calendar month long standard periods from the specified start date.  If no start date is specified, 1st of Jan will be used.  The period name will be generated from the start date of each period using the java SimpleDateFormat pattern provided. "/>
+  <value column="Description" original="Create 12 standard calendar periods.">Criar 12 períodos de calendário padrão</value>
+  <value column="Help" original="Creates 12 calendar month long standard periods from the specified start date.  If no start date is specified, 1st of Jan will be used.  The period name will be generated from the start date of each period using the java SimpleDateFormat pattern provided. ">Este processo cria 12 meses a partir de uma data inicial específica. Se nenhuma data for informada, será  considerada como sendo 1º de Janeiro. Os nomes dos períodos serão gerados a partir da data inicial usando os padrões do SimpleDateFormat (Java).</value>
  </row>
  <row id="101" trl="Y">
   <value column="Name" original="Renumber">Renumerar</value>
@@ -38,9 +38,9 @@
   <value column="Help" original=""/>
  </row>
  <row id="108" trl="Y">
-  <value column="Name" original="Add or Copy Accounts">Acrescer ou Copiar Contas</value>
-  <value column="Description" original="Add missing Accounts - or Copy&amp;Overwrite Accounts (DANGEROUS!!)"><![CDATA[Acrescente as Contas faltantes - ou copie&Sobrescreve as Contas (PERIGOSO!!)]]></value>
-  <value column="Help" original="Either add missing accounts - or copy and overwrite all default accounts.  If you copy and overwrite the current default values, you may have to repeat previous updates (e.g. set the bank account asset accounts, ...).  If no Accounting Schema is selected all Accounting Schemas will be updated / inserted.">Ou acrescente as contas faltantes ou copie e sobreescreva todas as contas padrão  Se você copiar e sobreescrever os valores padrão atuais, você pode ter de repetir as atualizações anteriores (por ex. contas bancárias, contas de patrimônio, ...)</value>
+  <value column="Name" original="Add or Copy Accounts">Adicionar ou Copiar Contas</value>
+  <value column="Description" original="Add missing Accounts - or Copy&amp;Overwrite Accounts (DANGEROUS!!)">Adiciona as contas faltantes ou copia e sobrescreve (CUIDADO!!)</value>
+  <value column="Help" original="Either add missing accounts - or copy and overwrite all default accounts.  If you copy and overwrite the current default values, you may have to repeat previous updates (e.g. set the bank account asset accounts, ...).  If no Accounting Schema is selected all Accounting Schemas will be updated / inserted.">Este processo adiciona as contas faltantes ou copia e sobrescreve todas as contas padrão. Se você copiar e sobrescrever, pode ser necessário refazer algumas configurações como por exemplo as contas de ativo bancário. Se nenhum Esquema Contábil for selecionado, TODOS os Esquemas serão processados.</value>
  </row>
  <row id="109" trl="Y">
   <value column="Name" original="Process Shipment ">Processar Remessa/Recebimento</value>
@@ -303,14 +303,14 @@
   <value column="Help" original=""/>
  </row>
  <row id="167" trl="Y">
-  <value column="Name" original="Open/Close All">Abrir/Fechar tudo</value>
-  <value column="Description" original="Change Period Status for all Period Controls of this Period">Altera o Estado do Período para todos os Controles de Período deste Período</value>
+  <value column="Name" original="Open/Close All">Abrir / Fechar Tudo</value>
+  <value column="Description" original="Change Period Status for all Period Controls of this Period">Altera o estado de todos os Controles de Períodos, de acordo com a ação selecionada.</value>
   <value column="Help" original=""/>
  </row>
  <row id="168" trl="Y">
   <value column="Name" original="Open/Close">Abrir / Fechar</value>
-  <value column="Description" original="Change Period Status">Permite alterar o estado do Período</value>
-  <value column="Help" original=""/>
+  <value column="Description" original="Change Period Status">Altera o estado do Período</value>
+  <value column="Help" original="">Este processo permite alterar o estado de acordo com a ação selecionada no próprio registro.</value>
  </row>
  <row id="169" trl="Y">
   <value column="Name" original="Process Journal">Processar Livro Razão (Lançamento)</value>
@@ -343,14 +343,14 @@
   <value column="Help" original="Based on the table columns of this Tab, this procedure creates the missing Fields">Eeste procedimento cria os campos faltantes baseado nas Colunas da Tabela desta Aba.</value>
  </row>
  <row id="175" trl="Y">
-  <value column="Name" original="Resubmit Posting">Refazer a Contabilização</value>
-  <value column="Description" original="Resubmit posting of documents with posting errors or locked documents">Resubmit posting of documents with posting errors or locked documents</value>
-  <value column="Help" original="After resubmitting, the accounting engine will try to post the document again. You resubmit documents, if they are locked or when the document had posting errors - after fixing the cause (e.g. opening period).">After resubmitting, the accounting engine will try to post the document again. You resubmit documents, if they are locked or when the document had posting errors - after fixing the cause (e.g. opening period).</value>
+  <value column="Name" original="Resubmit Posting">Lançar Documentos</value>
+  <value column="Description" original="Resubmit posting of documents with posting errors or locked documents">Tenta lançar os documentos que apresentaram erros de lançamento ou que estavam bloqueados</value>
+  <value column="Help" original="After resubmitting, the accounting engine will try to post the document again. You resubmit documents, if they are locked or when the document had posting errors - after fixing the cause (e.g. opening period).">Este processo tenta lançar novamente os documentos com erro de contabilização. Isso é necessário após as devidas correções dos problemas.</value>
  </row>
  <row id="176" trl="Y">
-  <value column="Name" original="Reset Accounting">Reinicializar Contabilidade (Reset)</value>
-  <value column="Description" original="Reset Accounting Entries ** Stop Accounting Server before starting **">Reinicializar Lançamentos Contábeis ** Pare o Servidor de Contabilidade antes de iniciar **</value>
-  <value column="Help" original="Delete accounting records of documents to be re-created by the next run of the accounting engine.  This is a dramatic step and you want to do this ONLY after changes of the accounting structure (e.g. different default accounts, etc.) and if fixing via manual Journal entries is not sensible.">Excluir registros contábeis de documentos a serem recriados pela próxima execução do motor de contabilidade.  Este é um passo dramático e você irá querer fazer isto SOMENTE depois de alterar a estrutura de contabilidade (ex. diferentes contas padrão, etc.) e se reparar via registros manuais do Diário não for uma solução razoável.</value>
+  <value column="Name" original="Reset Accounting">Refazer a Contabilidade</value>
+  <value column="Description" original="Reset Accounting Entries ** Stop Accounting Server before starting **">Refaz todos os lançamentos contábeis ** Pare o servidor de contabilidade antes de executar **</value>
+  <value column="Help" original="Delete accounting records of documents to be re-created by the next run of the accounting engine.  This is a dramatic step and you want to do this ONLY after changes of the accounting structure (e.g. different default accounts, etc.) and if fixing via manual Journal entries is not sensible.">Este processo exclui os lançamentos contábeis de documentos para permitir lançá-los novamente. Cuidado ao executá-lo! Isso deve ser feito somente quando houver alguma mudança significativa no mecanismo contábil (ex: alteração de contas padrão) e não é possível corrigir utilizando a tela de Livro Razão (Lançamento).</value>
  </row>
  <row id="179" trl="Y">
   <value column="Name" original="Language Maintenance">Manutenção de Idiomas</value>
@@ -399,13 +399,13 @@
  </row>
  <row id="189" trl="Y">
   <value column="Name" original="Copy Columns">Copiar Colunas</value>
-  <value column="Description" original="Copy Report Columns from other Column Set">Copiar Colunas de Relatório a partir de outro Conjunto de Colunas</value>
-  <value column="Help" original="Copy columns at the end of this Column Set. Please note that you need to re-set the calculation operands.">Copiar colunas no fim deste Conjunto de Colunas. Por favor note que você precisa re-ajustar os operandos de cálculos.</value>
+  <value column="Description" original="Copy Report Columns from other Column Set">Copiar Colunas de Relatórios a partir de outro Conjunto de Colunas</value>
+  <value column="Help" original="Copy columns at the end of this Column Set. Please note that you need to re-set the calculation operands.">Este processo copia colunas (sem excluir as atuais) de outro conjunto de colunas de relatórios. Observe que é necessário reajustar os operandos de cálculo.</value>
  </row>
  <row id="190" trl="Y">
   <value column="Name" original="Copy Lines">Copiar Linhas</value>
   <value column="Description" original="Copy Report Lines from other Line Set">Copiar Linhas de Relatórios a partir de outro Conjunto de Linhas</value>
-  <value column="Help" original="Copy lines at the end of this Line Set. Please note that you need to re-set the calculation operands.">Copiar linhas no fim deste Conjunto de Linhas. Por favor note que você precisa re-ajustar os operandos de cálculos.</value>
+  <value column="Help" original="Copy lines at the end of this Line Set. Please note that you need to re-set the calculation operands.">Este processo copia linhas (sem excluir as atuais) de outro conjunto de linhas de relatórios. Observe que é necessário reajustar os operandos de cálculo.</value>
  </row>
  <row id="191" trl="Y">
   <value column="Name" original="Set Print Format">Configurar Formato de Impressão</value>
@@ -467,9 +467,9 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
   <value column="Help" original="Send Mail to customers and attach new delivery (optional).">Enviar Correspondência a clientes e anexar novas entregas (opcional).</value>
  </row>
  <row id="202" trl="Y">
-  <value column="Name" original="Create Report">Criar Relatório</value>
-  <value column="Description" original="Create Financial Report">Criar Relatório Financeiro</value>
-  <value column="Help" original="The default period is the current period. You can optionally enter other restrictions.  You can select an alternative Reporting Hierarchy.">O período padrão é o período atual. Você pode opcionalmente digitar outras restrições.  Você pode selecionar uma Hierarquia de Relatórios alternativa.</value>
+  <value column="Name" original="Create Report">Gerar Relatório</value>
+  <value column="Description" original="Create Financial Report">Gerar Relatório Financeiro</value>
+  <value column="Help" original="The default period is the current period. You can optionally enter other restrictions.  You can select an alternative Reporting Hierarchy.">O período padrão é o período atual. Você pode adicionalmente informar outras restrições, e até mesmo uma Hierarquia de Relatórios diferente.</value>
  </row>
  <row id="203" trl="Y">
   <value column="Name" original="Update Accounting Balance">Atualizar Balanço Contábil</value>
@@ -478,8 +478,8 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
  </row>
  <row id="204" trl="Y">
   <value column="Name" original="Statement of Accounts">Demonstrativo de Contas</value>
-  <value column="Description" original="Report Account Statement Beginning Balance and Transactions">Relatório do Balanço Inicial do Extrato de Contas e Transações</value>
-  <value column="Help" original="Select a Period (current period if empty) or enter a Account Date Range. You can select an alternative Reporting Hierarchy.">Selecione um Período (período atual se vazio) ou digite uma Faixas de Datas Contábeis. Você pode selecionar uma Hierarquia de Relatórios alternativa.</value>
+  <value column="Description" original="Report Account Statement Beginning Balance and Transactions">Demonstrativo de Contas (Saldo Inicial e Transações)</value>
+  <value column="Help" original="Select a Period (current period if empty) or enter a Account Date Range. You can select an alternative Reporting Hierarchy.">Selecione um período (atual, caso não seja informado) ou informe um intervalo de datas. Você pode também selecionar uma Hierarquia de Relatórios alternativa.</value>
  </row>
  <row id="205" trl="Y">
   <value column="Name" original="Cache Reset">Reiniciar Cache de Memória (Reset)</value>
@@ -963,7 +963,7 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
  </row>
  <row id="299" trl="Y">
   <value column="Name" original="Verify">Verificar</value>
-  <value column="Description" original="Verify GL Distribution">Verifica a Distribuição do Razão Geral</value>
+  <value column="Description" original="Verify GL Distribution">Verifica a Distribuição Contábil</value>
   <value column="Help" original=""/>
  </row>
  <row id="300" trl="Y">
@@ -1018,8 +1018,8 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
  </row>
  <row id="310" trl="Y">
   <value column="Name" original="Trial Balance">Balancete de Verificação</value>
-  <value column="Description" original="Trial Balance for a period or date range">Balancete de Verificação para um período ou intervalo de datas</value>
-  <value column="Help" original="Select a Period (current period if empty) or enter a Account Date Range. If an account is selected, the balance is calculated based on the account type and the primary calendar of the client (i.e. for revenue/expense accounts from the beginning of the year). If no account is selected, the balance is the sum of all transactions before the selected account range or first day of the period selected. You can select an alternative Reporting Hierarchy.">Selecione um Período (período atual se vazio) ou digite uma Faixas de Datas Contábeis. Se uma conta for selecionada, o balanço será calculado baseado no tipo de conta e no calendário primário da empresa (i.e. para contas de receitas/despesas a partir do início do ano). Se nenhuma conta for selecionada, o balanço será a soma de todas as transações antes da Faixa de Datas Contábeis ou o primeiro dia do período selecionado. Você pode selecionar uma Hierarquia de Relatórios alternativa.</value>
+  <value column="Description" original="Trial Balance for a period or date range">Balancete de Verificação (Período ou Intervalo de Datas)</value>
+  <value column="Help" original="Select a Period (current period if empty) or enter a Account Date Range. If an account is selected, the balance is calculated based on the account type and the primary calendar of the client (i.e. for revenue/expense accounts from the beginning of the year). If no account is selected, the balance is the sum of all transactions before the selected account range or first day of the period selected. You can select an alternative Reporting Hierarchy.">Selecione um período (atual, caso não seja informado) ou informe um intervalo de datas. Se uma conta for selecionada, o saldo será calculado com base no tipo de conta e no calendário da empresa (ex: contas de receita/despesa a partir do início do ano). Se nenhuma conta for selecionada, o saldo será a soma de todas as transações anteriores ao intervalo de datas (ou do primeiro dia do período informado). Você pode também selecionar uma Hierarquia de Relatórios alternativa.</value>
  </row>
  <row id="311" trl="Y">
   <value column="Name" original="Product UOM Convert">Converter UDM de Produto</value>
@@ -1160,9 +1160,9 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
 PC são criados para todas as linhas das requisições onde o produto tem um fornecedor definido. É necessário também que os produtos estejam na versão de lista de preços atual. A UDM é mantida.</value>
  </row>
  <row id="338" trl="Y">
-  <value column="Name" original="Create GL/Default">Cria o RG/Padrão</value>
-  <value column="Description" original="Copy matching account element values from existing Accounting Schema">Copia os respectivos valores dos elementos contábeis a partir do Esquema Contábil existente</value>
-  <value column="Help" original="Create the GL and Default accounts for this accounting schema and copy matching account element values.">Cria o RG e contas padrão para este esquema contábil e copia os respectivos valores dos elementos contábeis.</value>
+  <value column="Name" original="Create GL/Default">Copiar Livro Razão e Padrões</value>
+  <value column="Description" original="Copy matching account element values from existing Accounting Schema">Copia os respectivos valores dos elementos contábeis a partir de outro Esquema Contábil</value>
+  <value column="Help" original="Create the GL and Default accounts for this accounting schema and copy matching account element values.">Este processo cria os registros de Livro Razão e Padrões para este esquema contábil e os copia de outro Esquema Contábil</value>
  </row>
  <row id="339" trl="Y">
   <value column="Name" original="Report or Update Issue">Report or Update Issue</value>
@@ -1524,10 +1524,10 @@ Total BOM Cost = Sum every Element Cost]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53072" trl="N">
-  <value column="Name" original="C_Invoice Calculate Tax">C_Invoice Calculate Tax</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
+ <row id="53072" trl="Y">
+  <value column="Name" original="C_Invoice Calculate Tax">Recalcular Impostos de Fatura</value>
+  <value column="Description" original="">Recalcula os impostos de uma fatura</value>
+  <value column="Help" original="">Este processo exclui os lançamentos contábeis de uma fatura e recalcula os impostos. Isso pode ser necessário ao se alterar o mecanismo de cálculo de impostos.</value>
  </row>
  <row id="53074" trl="N">
   <value column="Name" original="Test Import Model">Test Import Model</value>
@@ -1756,9 +1756,9 @@ This process should be implemented when the users are not connected.</value>
   <value column="Description" original="Imports price lists from a file into the application">Imports price lists from a file into the application</value>
   <value column="Help" original=""/>
  </row>
- <row id="53166" trl="N">
-  <value column="Name" original="Recalculate Cube">Recalculate Cube</value>
-  <value column="Description" original="Recalculate summary facts based on report cube definitions.">Recalculate summary facts based on report cube definitions.</value>
+ <row id="53166" trl="Y">
+  <value column="Name" original="Recalculate Cube">Recalcular Cubo</value>
+  <value column="Description" original="Recalculate summary facts based on report cube definitions.">Recalcular resumo de lançamentos contábeis</value>
   <value column="Help" original=""/>
  </row>
  <row id="53176" trl="Y">
@@ -1771,10 +1771,10 @@ This process should be implemented when the users are not connected.</value>
   <value column="Description" original="Copy settings from one report and process to another.">Copy settings from one report and process to another.</value>
   <value column="Help" original="Copy the settings from the selected report and process to the current one.  This overwrites existing settings and translations.">Copy the settings from the selected report and process to the current one.  This overwrites existing settings and translations.</value>
  </row>
- <row id="53187" trl="N">
-  <value column="Name" original="Client Accounting Processor">Client Accounting Processor</value>
-  <value column="Description" original="Client Accounting Processor">Client Accounting Processor</value>
-  <value column="Help" original="The client accounting processor allows a user to run the accounting processor in a client session.  The system configurator parameter CLIENT_ACCOUNTING must be enabled (configured as [I]mmediate or [Q]ueue).">The client accounting processor allows a user to run the accounting processor in a client session.  The system configurator parameter CLIENT_ACCOUNTING must be enabled (configured as [I]mmediate or [Q]ueue).</value>
+ <row id="53187" trl="Y">
+  <value column="Name" original="Client Accounting Processor">Processador de Contabilidade (Empresa)</value>
+  <value column="Description" original="Client Accounting Processor">Processador de Contabilidade (Empresa)</value>
+  <value column="Help" original="The client accounting processor allows a user to run the accounting processor in a client session.  The system configurator parameter CLIENT_ACCOUNTING must be enabled (configured as [I]mmediate or [Q]ueue).">Este processo permite executar o servidor de contabilidade apenas para a empresa atual. É necessário existir um registro (CLIENT_ACCOUNTING) na tela Configurador do Sistema com uma configuração válida: 'I' para Imediatamente ou 'Q' para Fila (Queue).</value>
  </row>
  <row id="53189" trl="Y">
   <value column="Name" original="Storage per Product">Armazenamento por Produto</value>

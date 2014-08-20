@@ -403,9 +403,9 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="148" trl="Y">
-  <value column="Name" original="Account">Conta</value>
-  <value column="PrintName" original="Account">Conta</value>
-  <value column="Description" original="Account used">Conta utilizada</value>
+  <value column="Name" original="Account">Conta Contábil</value>
+  <value column="PrintName" original="Account">Conta Contábil</value>
+  <value column="Description" original="Account used">Conta contábil utilizada</value>
   <value column="Help" original="The (natural) account used">A Conta (natural) utilizada</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -473,10 +473,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="159" trl="Y">
-  <value column="Name" original="Alias">Pseudônimo</value>
-  <value column="PrintName" original="Alias">Pseudônimo</value>
+  <value column="Name" original="Alias">Pseudônimo (Alias)</value>
+  <value column="PrintName" original="Alias">Pseudônimo (Alias)</value>
   <value column="Description" original="Defines an alternate method of indicating an account combination.">Define um método alternativo de indicar uma combinação de conta.</value>
-  <value column="Help" original="The Alias field allows you to define a alternate method for referring to a full account combination.  For example, the Account Receivable Account for Garden World may be aliased as GW_AR.">O campo "Pseudônimo" permite a você definir um método alternativo para se referir a uma combinação de conta completa.  Por exemplo, a conta "Contas a Receber" para a Empresa Garden World pode usar GW_CR como pseudônimo (aliás).</value>
+  <value column="Help" original="The Alias field allows you to define a alternate method for referring to a full account combination.  For example, the Account Receivable Account for Garden World may be aliased as GW_AR.">O campo "Pseudônimo (Alias)" permite a você definir um método alternativo para se referir a uma combinação de conta completa.  Por exemplo, a conta "Contas a Receber" para a Empresa Garden World pode usar GW_CR como pseudônimo (alias).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -683,10 +683,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="195" trl="Y">
-  <value column="Name" original="Currency To">Moeda para</value>
-  <value column="PrintName" original="Currency To">Moeda para</value>
+  <value column="Name" original="Currency To">Moeda (Destino)</value>
+  <value column="PrintName" original="Currency To">Moeda (Destino)</value>
   <value column="Description" original="Target currency">Moeda de Destino</value>
-  <value column="Help" original="The Currency To defines the target currency for this conversion rate.">A "Moeda para" define a moeda alvo para esta taxa de conversão.</value>
+  <value column="Help" original="The Currency To defines the target currency for this conversion rate.">A "Moeda (Destino)" define a moeda alvo para esta taxa de conversão.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -793,8 +793,8 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="206" trl="Y">
-  <value column="Name" original="Period">Período (Ano Fiscal)</value>
-  <value column="PrintName" original="Period">Período (Ano Fiscal)</value>
+  <value column="Name" original="Period">Período</value>
+  <value column="PrintName" original="Period">Período</value>
   <value column="Description" original="Period of the Calendar">Período do Calendário</value>
   <value column="Help" original="The Period indicates an exclusive range of dates for a calendar.">O "Período" indica uma faixa exclusiva de datas para um calendário.</value>
   <value column="PO_Description" original=""/>
@@ -1053,10 +1053,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="242" trl="Y">
-  <value column="Name" original="Costing Precision">Precisão do Custeio</value>
-  <value column="PrintName" original="Costing Precision">Precisão do Custeio</value>
-  <value column="Description" original="Rounding used costing calculations">Arredondamentos usados em cálculos de formação de custos (custeio)</value>
-  <value column="Help" original="The Costing Precision defines the number of decimal places that amounts will be rounded to when performing costing calculations.">A "Precisão do Custeio" define o número de casas decimais a que os valores serão arredondados ao se executar cálculos de formação de custos.</value>
+  <value column="Name" original="Costing Precision">Precisão do Custo</value>
+  <value column="PrintName" original="Costing Precision">Precisão do Custo</value>
+  <value column="Description" original="Rounding used costing calculations">Arredondamentos usados em cálculos de formação de custos</value>
+  <value column="Help" original="The Costing Precision defines the number of decimal places that amounts will be rounded to when performing costing calculations.">A "Precisão do Custo" define o número de casas decimais a que os valores serão arredondados ao se executar cálculos de formação de custos.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1522,10 +1522,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="308" trl="Y">
-  <value column="Name" original="Budget">Orçamento</value>
-  <value column="PrintName" original="Budget">Orçamento</value>
-  <value column="Description" original="General Ledger Budget">Orçamento de Razão Geral</value>
-  <value column="Help" original="The General Ledger Budget identifies a user defined budget.  These can be used in reporting as a comparison against your actual amounts.">O "Orçamento de Razão Geral" identifica um orçamento definido pelo usuário.  Estes podem ser usado em reportagens como uma comparação contra os seus valores reais.</value>
+  <value column="Name" original="Budget">Orçamento Contábil</value>
+  <value column="PrintName" original="Budget">Orçamento Contábil</value>
+  <value column="Description" original="General Ledger Budget">Orçamento Contábil</value>
+  <value column="Help" original="The General Ledger Budget identifies a user defined budget.  These can be used in reporting as a comparison against your actual amounts.">O "Orçamento Contábil" identifica um orçamento definido pelo usuário.  Estes podem ser usado em relatórios para comparações com os valores reais.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1582,10 +1582,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="317" trl="Y">
-  <value column="Name" original="Use Account Alias">Use Pseudônimo de Contas (Alias)</value>
+  <value column="Name" original="Use Account Alias">Usar Pseudônimo de Contas (Alias)</value>
   <value column="PrintName" original="Alias">Pseudônimo</value>
   <value column="Description" original="Ability to select (partial) account combinations by an Alias">Abilidade de selecionar combinações de contas (parciais) por um Pseudônimo (Alias)</value>
-  <value column="Help" original="The Alias checkbox indicates that account combination can be selected using a user defined alias or short key.">A caixa de verificação "Pseudônimo" indica que combinação de conta pode ser selecionada usando um Pseudônimo ou atalho definido pelo usuário.</value>
+  <value column="Help" original="The Alias checkbox indicates that account combination can be selected using a user defined alias or short key.">A caixa de verificação "Usar Pseudônimo de Contas (Alias)" indica se uma combinação de conta pode ser selecionada usando um Pseudônimo ou atalho definido pelo usuário.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1792,8 +1792,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="354" trl="Y">
-  <value column="Name" original="Balanced">Equilibrado</value>
-  <value column="PrintName" original="Balanced">Equilibrado</value>
+  <value column="Name" original="Balanced">Contrapartida</value>
+  <value column="PrintName" original="Balanced">Contrapartida</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -1892,7 +1892,7 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="370" trl="Y">
-  <value column="Name" original="Document is Number Controlled">Documento é controlado numericamente</value>
+  <value column="Name" original="Document is Number Controlled">Documento Controlado Numericamente</value>
   <value column="PrintName" original="Doc Number Controlled">Documento Controlado Numericamente</value>
   <value column="Description" original="The document has a document sequence">O Documento tem uma Seqüência de Documento</value>
   <value column="Help" original="The Document Number Controlled checkbox indicates if this document type will have a sequence number.">A caixa de verificação "Documento Controlado Numericamente" indica se este tipo de documento terá um número sequencial.</value>
@@ -2683,20 +2683,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="503" trl="Y">
-  <value column="Name" original="Future Days">Dias Futuros</value>
-  <value column="PrintName" original="Future Days">Dias Futuros</value>
+  <value column="Name" original="Future Days">Qtd. de Dias (Futuro)</value>
+  <value column="PrintName" original="Future Days">Dias (Futuro)</value>
   <value column="Description" original="Number of days to be able to post to a future date (based on system date)">Número de dias para possibilitar lançamentos em uma data futura (baseado na data do sistema)</value>
-  <value column="Help" original="If Automatic Period Control is enabled, the current period is calculated based on the system date and you can always post to all days in the current period.  Future Days enable to post to future periods. E.g. today is Apr 15th and Future Days is set to 30, you can post up to May 15th">Se o "Controle Automático de Período" estiver habilitado, o período atual é calculado baseado na data do sistema e você sempre pode lançar em todas as datas do período atual.  "Dias Futuros" possibilita o lançamento em períodos futuros. Ex. hoje é 25 de Abril, e "Dias Futuros" está ajustado em 30, você pode lançar até 15 de Maio</value>
+  <value column="Help" original="If Automatic Period Control is enabled, the current period is calculated based on the system date and you can always post to all days in the current period.  Future Days enable to post to future periods. E.g. today is Apr 15th and Future Days is set to 30, you can post up to May 15th">Se o "Controle Automático de Período" estiver habilitado, o período atual é calculado baseado na data do sistema e você sempre pode lançar em todas as datas do período atual.  "Qtd. de Dias (Futuro)" possibilita o lançamento em períodos futuros. Ex. hoje é 15 de Abril, e "Qtd. de Dias (Futuro)" está ajustado em 30, você pode fazer lançamentos até o limite de 15 de Maio.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="504" trl="Y">
-  <value column="Name" original="History Days">Dias de Histórico</value>
-  <value column="PrintName" original="History Days">Dias de Histórico</value>
+  <value column="Name" original="History Days">Qtd. de Dias (Passado)</value>
+  <value column="PrintName" original="History Days">Dias (Passado)</value>
   <value column="Description" original="Number of days to be able to post in the past (based on system date)">Número de dias para possibilitar lançamentos em uma data passada (baseado na data do sistema)</value>
-  <value column="Help" original="If Automatic Period Control is enabled, the current period is calculated based on the system date and you can always post to all days in the current period.  History Days enable to post to previous periods.  E.g. today is May 15th and History Days is set to 30, you can post back to April 15th">Se o "Controle Automático de Período" estiver habilitado, o período atual é calculado baseado na data do sistema e você sempre pode lançar em todas as datas do período atual.  "Dias de Histórico" possibilita o lançamento em períodos anteriores. Ex. hoje é 25 de Maio, e "Dias de Histórico" está ajustado em 30, você pode lançar em datas passadas até 15 de Abril</value>
+  <value column="Help" original="If Automatic Period Control is enabled, the current period is calculated based on the system date and you can always post to all days in the current period.  History Days enable to post to previous periods.  E.g. today is May 15th and History Days is set to 30, you can post back to April 15th">Se o "Controle Automático de Período" estiver habilitado, o período atual é calculado baseado na data do sistema e você sempre pode lançar em todas as datas do período atual.  "Qtd. de Dias (Passado)" possibilita o lançamento em períodos anteriores. Ex. hoje é 15 de Maio, e "Qtd. de Dias (Passado)" está ajustado em 30, você pode lançar em datas passadas até o limite de 15 de Abril.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -2913,10 +2913,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original="On Order Quantity">Qtd. Requisitada</value>
  </row>
  <row id="534" trl="Y">
-  <value column="Name" original="Rate">Taxa</value>
-  <value column="PrintName" original="Rate">Taxa</value>
-  <value column="Description" original="Rate or Tax or Exchange">Alíquota ou Imposto ou Câmbio</value>
-  <value column="Help" original="The Rate indicates the percentage to be multiplied by the source to arrive at the tax or exchange amount.">A "Taxa (Alíquota)" indica a percentagem a ser multiplicada pelo valor de origem para obter o valor do Imposto ou do Câmbio.</value>
+  <value column="Name" original="Rate">Alíquota</value>
+  <value column="PrintName" original="Rate">Alíquota</value>
+  <value column="Description" original="Rate or Tax or Exchange">Alíquota, Imposto ou Câmbio</value>
+  <value column="Help" original="The Rate indicates the percentage to be multiplied by the source to arrive at the tax or exchange amount.">A "Alíquota" indica a percentagem a ser multiplicada pelo valor de origem para obter o valor do Imposto ou do Câmbio.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -3023,10 +3023,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="550" trl="Y">
-  <value column="Name" original="Campaign">Campanha</value>
-  <value column="PrintName" original="Campaign">Campanha</value>
+  <value column="Name" original="Campaign">Campanha de Marketing</value>
+  <value column="PrintName" original="Campaign">Campanha de Marketing</value>
   <value column="Description" original="Marketing Campaign">Campanha de Marketing</value>
-  <value column="Help" original="The Campaign defines a unique marketing program.  Projects can be associated with a pre defined Marketing Campaign.  You can then report based on a specific Campaign.">A "Campanha" define um programa exclusivo de marketing.  Os projetos podem ser associados com uma Campanha de Marketing pré-definida.  Você pode então fazer relatórios baseados em uma Campanha específica.</value>
+  <value column="Help" original="The Campaign defines a unique marketing program.  Projects can be associated with a pre defined Marketing Campaign.  You can then report based on a specific Campaign.">A "Campanha de Marketing" define um programa exclusivo de marketing.  Os projetos podem ser associados com uma Campanha de Marketing pré-definida.  Você pode então fazer relatórios baseados em uma Campanha específica.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -3213,10 +3213,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="575" trl="Y">
-  <value column="Name" original="Restart sequence every Year">Reiniciar a seqüência todos os Anos</value>
-  <value column="PrintName" original="Restart sequence every Year">Reiniciar a seqüência todos os Anos</value>
-  <value column="Description" original="Restart the sequence with Start on every 1/1">Reiniciar a seqüência com início em todo 1/1</value>
-  <value column="Help" original="The Restart Sequence Every Year checkbox indicates that the documents sequencing should return to the starting number on the first day of the year.">A caixa de verificação "Reiniciar a seqüência todos os Anos" indica que a seqüência de documentos deve retornar ao número inicial no primeiro dia de cada ano.</value>
+  <value column="Name" original="Restart sequence every Year">Reiniciar a Seqüência Anualmente</value>
+  <value column="PrintName" original="Restart sequence every Year">Reiniciar a Seqüência Anualmente</value>
+  <value column="Description" original="Restart the sequence with Start on every 1/1">Reiniciar a seqüência em 1º de Janeiro</value>
+  <value column="Help" original="The Restart Sequence Every Year checkbox indicates that the documents sequencing should return to the starting number on the first day of the year.">A caixa de verificação "Reiniciar a seqüência Anualmente" indica que a seqüência de documentos deve retornar ao número inicial no primeiro dia de cada ano.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -3503,8 +3503,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="609" trl="Y">
-  <value column="Name" original="Use Currency Balancing">Use Contrapartida cambial</value>
-  <value column="PrintName" original="Use Currency Balancing">Use Contrapartida cambial</value>
+  <value column="Name" original="Use Currency Balancing">Usar Contrapartida Cambial</value>
+  <value column="PrintName" original="Use Currency Balancing">Usar Contrapartida Cambial</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -3513,8 +3513,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="611" trl="Y">
-  <value column="Name" original="Use Suspense Balancing">Use Contrapartida suspensa</value>
-  <value column="PrintName" original="Use Suspense Balancing">Use Contrapartida suspensa</value>
+  <value column="Name" original="Use Suspense Balancing">Usar Contrapartida Suspensa</value>
+  <value column="PrintName" original="Use Suspense Balancing">Usar Contrapartida Suspensa</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -3815,10 +3815,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="849" trl="Y">
-  <value column="Name" original="Charge amount">Valor da Despesa</value>
-  <value column="PrintName" original="Charge Amt">Valor da Despesa</value>
-  <value column="Description" original="Charge Amount">Valor da Despesa</value>
-  <value column="Help" original="The Charge Amount indicates the amount for an additional charge.">O "Valor da Despesa" indica o montante de uma despesa adicional.</value>
+  <value column="Name" original="Charge amount">Valor da Referência Contábil</value>
+  <value column="PrintName" original="Charge Amt">Valor da Referência Contábil</value>
+  <value column="Description" original="Charge Amount">Valor da Referência Contábil</value>
+  <value column="Help" original="The Charge Amount indicates the amount for an additional charge.">O "Valor da Referência Contábil" indica o montante da referência contábil.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -3915,10 +3915,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="866" trl="Y">
-  <value column="Name" original="Document Copies">Cópias de Documentos</value>
+  <value column="Name" original="Document Copies">Cópias do Documento</value>
   <value column="PrintName" original="Copies">Cópias</value>
   <value column="Description" original="Number of copies to be printed">Número de cópias a serem impressas</value>
-  <value column="Help" original="The Document Copies indicates the number of copies of each document that will be generated.">O campo "Cópias de Documentos" indica o número de cópias de cada documento que será gerado.</value>
+  <value column="Help" original="The Document Copies indicates the number of copies of each document that will be generated.">O campo "Cópias do Documento" indica o número de cópias de cada documento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4075,10 +4075,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="917" trl="Y">
-  <value column="Name" original="Document Level">Nível do Documento</value>
+  <value column="Name" original="Document Level">Nível de Documento</value>
   <value column="PrintName" original="Doc Level">Nível de Doc</value>
-  <value column="Description" original="Tax is calculated on document level (rather than line by line)">O Imposto é calculado no nível do documento (ao invés de linha por linha)</value>
-  <value column="Help" original="If the tax is calculated on document level, all lines with that tax rate are added before calculating the total tax for the document.&#10;Otherwise the tax is calculated per line and then added.&#10;Due to rounding, the tax amount can differ.">Se o imposto for calculado no nível do documento, todas as linhas com aquela alíquota de imposto são somadas antes de calcular o imposto total para o documento. De outro modo, o imposto é calculado linha por linha e então somado. Devido a erros de arredondamento, o valor do imposto pode ser levemente diferente.</value>
+  <value column="Description" original="Tax is calculated on document level (rather than line by line)">O Imposto é calculado no nível de documento (ao invés de linha por linha)</value>
+  <value column="Help" original="If the tax is calculated on document level, all lines with that tax rate are added before calculating the total tax for the document.&#10;Otherwise the tax is calculated per line and then added.&#10;Due to rounding, the tax amount can differ.">Se o imposto for calculado no nível de documento, todas as linhas com aquela alíquota de imposto são somadas antes de calcular o imposto total para o documento. De outro modo, o imposto é calculado linha por linha e então somado. Devido a erros de arredondamento, o valor do imposto pode ser levemente diferente.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4195,10 +4195,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="930" trl="Y">
-  <value column="Name" original="SO Tax exempt">Isento de Impostos PV</value>
-  <value column="PrintName" original="SO Tax exempt">Isento de Impostos PV</value>
-  <value column="Description" original="Business partner is exempt from tax on sales">O Parceiro de Negócios é isento de imposto em Pedidos de Venda</value>
-  <value column="Help" original="If a business partner is exempt from tax on sales, the exempt tax rate is used. For this, you need to set up a tax rate with a 0% rate and indicate that this is your tax exempt rate.  This is required for tax reporting, so that you can track tax exempt transactions.">A alíquota de isenção de imposto é utilizada se um parceiro de negócios for isento de impostos. Para isto, você precisa ajustar a alíquota de imposto em 0% e indicar que esta é a sua alíquota de isenção de impostos.  Isto é necessário para relatórios de impostos, de tal forma que você possa rastrear transações isentas de impostos.</value>
+  <value column="Name" original="SO Tax exempt">Isento de Impostos na Venda</value>
+  <value column="PrintName" original="SO Tax exempt">Isento de Impostos na Venda</value>
+  <value column="Description" original="Business partner is exempt from tax on sales">O Parceiro de Negócios é isento de imposto na venda</value>
+  <value column="Help" original="If a business partner is exempt from tax on sales, the exempt tax rate is used. For this, you need to set up a tax rate with a 0% rate and indicate that this is your tax exempt rate.  This is required for tax reporting, so that you can track tax exempt transactions.">Se um parceiro de negócios é isento de impostos na venda, a alíquota de isenção será utilizada. Para isto, você precisa ajustar a alíquota de imposto em 0% e indicar que esta é a sua alíquota de isenção de impostos. Isto é necessário para fins de relatório, para que você possa rastrear as transações isentas de impostos.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4335,10 +4335,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="958" trl="Y">
-  <value column="Name" original="Print Text">Texto de Impressão</value>
-  <value column="PrintName" original="Text">Texto</value>
-  <value column="Description" original="The label text to be printed on a document or correspondence.">O texto da etiqueta a ser impresso em um documento ou correspondência.</value>
-  <value column="Help" original="The Label to be printed indicates the name that will be printed on a document or correspondence. The max length is 2000 characters.">O "Rótulo a ser Impresso" indica o nome que será impresso em um documento ou correspondência. O máximo comprimento é 2000 caracteres.</value>
+  <value column="Name" original="Print Text">Nome Impresso</value>
+  <value column="PrintName" original="Text">Nome Impresso</value>
+  <value column="Description" original="The label text to be printed on a document or correspondence.">O nome a ser impresso em um documento ou correspondência.</value>
+  <value column="Help" original="The Label to be printed indicates the name that will be printed on a document or correspondence. The max length is 2000 characters.">O "Nome Impresso" indica o nome que será impresso em um documento ou correspondência. O máximo comprimento é 2000 caracteres.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4375,10 +4375,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="968" trl="Y">
-  <value column="Name" original="Charge">Despesa</value>
-  <value column="PrintName" original="Charge">Despesa</value>
-  <value column="Description" original="Additional document charges">Despesas adicionais do documento</value>
-  <value column="Help" original="The Charge indicates a type of Charge (Handling, Shipping, Restocking)">O campo "Despesa" indica o tipo de despesa (Manipulação, Despacho, Re-estocagem)</value>
+  <value column="Name" original="Charge">Referência Contábil</value>
+  <value column="PrintName" original="Charge">Referência Contábil</value>
+  <value column="Description" original="Additional document charges">Referência contábil do documento</value>
+  <value column="Help" original="The Charge indicates a type of Charge (Handling, Shipping, Restocking)">O campo "Referência Contábil" indica uma referência que permite o mapeamento de documentos a contas contábeis. Por exemplo, você pode criar um referência chamada Tarifas Bancárias (despesa) e vincular a uma conta específica do plano de contas. Você pode também criar uma referência Juros Recebidos (receita) e assim por diante.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4445,10 +4445,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1005" trl="Y">
-  <value column="Name" original="Activity">Atividade</value>
-  <value column="PrintName" original="Activity">Atividade</value>
+  <value column="Name" original="Activity">Atividade (Custeio ABC)</value>
+  <value column="PrintName" original="Activity">Atividade (Custeio ABC)</value>
   <value column="Description" original="Business Activity">Atividade de Negócio</value>
-  <value column="Help" original="Activities indicate tasks that are performed and used to utilize Activity based Costing">"Atividade" indica tarefas que são executadas e utilizadas para Cálculo de Custo Baseado em Atividade</value>
+  <value column="Help" original="Activities indicate tasks that are performed and used to utilize Activity based Costing">"Atividade (Custeio ABC)" indica tarefa executada (e utilizada) para cálculo de Custo Baseado em Atividade (Custeio ABC)</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4515,10 +4515,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1018" trl="Y">
-  <value column="Name" original="SO Sub Type">Sub Tipo de PV</value>
-  <value column="PrintName" original="SO Sub Type">Sub Tipo de PV</value>
-  <value column="Description" original="Sales Order Sub Type">Sub Tipo de Pedido de Venda</value>
-  <value column="Help" original="The SO Sub Type indicates the type of sales order this document refers to.  This field only appears when the Document Base Type is Sales Order.  The selection made here will determine which documents will be generated when an order is processed and which documents must be generated manually or in batches.  &lt;br&gt;&#10;The following outlines this process.&lt;br&gt;&#10;SO Sub Type of &lt;b&gt;Standard Order&lt;/b&gt; will generate just the &lt;b&gt;Order&lt;/b&gt; document when the order is processed.  &lt;br&gt;&#10;The &lt;b&gt;Delivery Note&lt;/b&gt;, &lt;b&gt;Invoice&lt;/b&gt; and &lt;b&gt;Receipt&lt;/b&gt; must be generated via other processes.  &lt;br&gt;&#10;SO Sub Type of &lt;b&gt;Warehouse Order&lt;/b&gt; will generate the &lt;b&gt;Order&lt;/b&gt; and &lt;b&gt;Delivery Note&lt;/b&gt;. &lt;br&gt; The &lt;b&gt;Invoice&lt;/b&gt; and &lt;b&gt;Receipt&lt;/b&gt; must be generated via other processes.&lt;br&gt;&#10;SO Sub Type of &lt;b&gt;Credit Order&lt;/b&gt; will generate the &lt;b&gt;Order&lt;/b&gt;, &lt;b&gt;Delivery Note&lt;/b&gt; and &lt;b&gt;Invoice&lt;/b&gt;. &lt;br&gt; The &lt;b&gt;Receipt&lt;/b&gt; must be generated via other processes.&lt;br&gt;&#10;SO Sub Type of &lt;b&gt;POS&lt;/b&gt; (Point of Sale) will generate all document"><![CDATA[O "Sub Tipo de PV" indica o tipo de pedido de venda a que este documento se refere.  Este campo somente aparece quando o Tipo de Base de Documento for Pedido de Vendas.  A seleção feita aqui, irá determinar quais documentos serão gerados quando um pedido for processado e quais documentos devem ser gerados manualmente ou em lotes.  <br> O texto a seguir detalha este processo.<br> Sub tipo de PV <b>Pedido Padrão</b> somente irá gerar o documento do <b>Pedido</b> quando o pedido for processado.  <br> A <b>Nota de Entrega</b>, <b>Fatura</b> e o <b>Recibo</b> devem ser gerados através de outros processos.  <br> Sub Tipo de PV <b>Pedido de Armazém</b> irá gerar o <b>Pedido</b> e <b>Nota de Entrega</b>. <br> A <b>Fatura</b> e o <b>Recibo</b> devem ser gerados através de outros processos.<br> Sub Tipo de PV <b>Ordem de Crédito</b> irá gerar o <b>Pedido</b>, <b>Note de Entrega</b> e a <b>Fatura</b>. <br> O <b>Recibo</b> deve ser gerado através de outros processos.<br> Sub Tipo de PV <b>PDV</b> (Ponto de Vendas) irá gerar todos os documentos]]></value>
+  <value column="Name" original="SO Sub Type">Subtipo de Pedido de Venda</value>
+  <value column="PrintName" original="SO Sub Type">Subtipo de Pedido de Venda</value>
+  <value column="Description" original="Sales Order Sub Type">Subtipo de Pedido de Venda</value>
+  <value column="Help" original="The SO Sub Type indicates the type of sales order this document refers to.  This field only appears when the Document Base Type is Sales Order.  The selection made here will determine which documents will be generated when an order is processed and which documents must be generated manually or in batches.  &lt;br&gt;&#10;The following outlines this process.&lt;br&gt;&#10;SO Sub Type of &lt;b&gt;Standard Order&lt;/b&gt; will generate just the &lt;b&gt;Order&lt;/b&gt; document when the order is processed.  &lt;br&gt;&#10;The &lt;b&gt;Delivery Note&lt;/b&gt;, &lt;b&gt;Invoice&lt;/b&gt; and &lt;b&gt;Receipt&lt;/b&gt; must be generated via other processes.  &lt;br&gt;&#10;SO Sub Type of &lt;b&gt;Warehouse Order&lt;/b&gt; will generate the &lt;b&gt;Order&lt;/b&gt; and &lt;b&gt;Delivery Note&lt;/b&gt;. &lt;br&gt; The &lt;b&gt;Invoice&lt;/b&gt; and &lt;b&gt;Receipt&lt;/b&gt; must be generated via other processes.&lt;br&gt;&#10;SO Sub Type of &lt;b&gt;Credit Order&lt;/b&gt; will generate the &lt;b&gt;Order&lt;/b&gt;, &lt;b&gt;Delivery Note&lt;/b&gt; and &lt;b&gt;Invoice&lt;/b&gt;. &lt;br&gt; The &lt;b&gt;Receipt&lt;/b&gt; must be generated via other processes.&lt;br&gt;&#10;SO Sub Type of &lt;b&gt;POS&lt;/b&gt; (Point of Sale) will generate all document"><![CDATA[O "Subtipo de Pedido de Venda" indica o tipo de pedido de venda a que este documento se refere.  Este campo somente aparece quando o Tipo de Base de Documento for Pedido de Venda.  A seleção feita aqui, irá determinar quais documentos serão gerados quando um pedido for processado e quais documentos devem ser gerados manualmente ou em lotes. O texto a seguir detalha este processo: <b>Pedido Padrão</b> irá gerar somente o pedido, quando o mesmo for processado. A remessa de material, a fatura e o recebimento de valores podem ser gerados posteriormente.<br><b>Pedido de Armazém</b> irá gerar o pedido e a remessa de material. A fatura e o recebimento de valores podem ser gerados posteriormente.<br><b>Pedido a Crédito</b> irá gerar o pedido, a remessa de material e a fatura. O recebimento de valores pode ser gerado posteriormente.<br><b>Pedido em PDV (Ponto de Venda)</b> irá gerar todos os documentos.]]></value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4875,10 +4875,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1067" trl="Y">
-  <value column="Name" original="Charges">Despesas</value>
-  <value column="PrintName" original="Charges">Despesas</value>
-  <value column="Description" original="Charges can be added to the document">Despesas podem ser adicionadas ao documento</value>
-  <value column="Help" original="The Charges checkbox indicates that charges can be added to this document.  Charges can include items like shipping, handling or bank charges.">A caixa de verificação "Despesas" indica que despesas podem ser adicionadas a este documento.  Despesas podem incluir itens como remessa, manipulação ou despesas bancárias.</value>
+  <value column="Name" original="Charges">Referências Contábeis</value>
+  <value column="PrintName" original="Charges">Referências Contábeis</value>
+  <value column="Description" original="Charges can be added to the document">Referências Contábeis podem ser adicionadas ao documento</value>
+  <value column="Help" original="The Charges checkbox indicates that charges can be added to this document.  Charges can include items like shipping, handling or bank charges.">A caixa de verificação "Referências Contábeis" indica se Referências Contábeis podem ser adicionadas a este documento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4915,20 +4915,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1073" trl="Y">
-  <value column="Name" original="Document Type for ProForma">Tipo de Documento para a ProForma</value>
-  <value column="PrintName" original="Doc Type ProForma">Tipo de Documento da ProForma</value>
-  <value column="Description" original="Document type used for pro forma invoices generated from this sales document">Tipo de Documento utilizado por faturas pro-forma geradas a partir deste documento de vendas</value>
-  <value column="Help" original="he Document Type for Invoice indicates the document type that will be used when an invoice is generated from this sales document.  This field will display only when the base document type is Sales Order and the Pro Forma Invoice checkbox is selected">O "Tipo de Documento da ProForma" indica o tipo do documento que será utilizado quando uma fatura for gerada a partir deste documento de vendas.  Este campo será exibido apenas quando o tipo de documento base for "Pedido de Vendas" e a caixa de verificação "Fatura ProForma" for selecionada</value>
+  <value column="Name" original="Document Type for ProForma">Tipo de Documento para Fatura Proforma</value>
+  <value column="PrintName" original="Doc Type ProForma">Tipo de Documento para Fatura Proforma</value>
+  <value column="Description" original="Document type used for pro forma invoices generated from this sales document">Tipo de Documento utilizado por faturas proforma geradas a partir deste documento de vendas</value>
+  <value column="Help" original="he Document Type for Invoice indicates the document type that will be used when an invoice is generated from this sales document.  This field will display only when the base document type is Sales Order and the Pro Forma Invoice checkbox is selected">O "Tipo de Documento para Fatura Proforma" indica o tipo do documento que será utilizado quando uma fatura proforma for gerada a partir deste documento de vendas.  Este campo será exibido apenas quando o tipo de documento base for "Pedido de Vendas" e a caixa de verificação "Permite Fatura Proforma" for selecionada</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1074" trl="Y">
-  <value column="Name" original="Document Type for Shipment">Tipo de Documento para Entrega</value>
-  <value column="PrintName" original="Doc Type Shipment">Tipo Doc. p/ Entrega</value>
-  <value column="Description" original="Document type used for shipments generated from this sales document">Tipo de Documento utilizado para Entregas geradas a partir deste documento de vendas</value>
-  <value column="Help" original="he Document Type for Shipments indicates the document type that will be used when a shipment is generated from this sales document.  This field will display only when the base document type is Sales Order.">O "Tipo de Documento para Entrega" indica o tipo do documento que será utilizado quando uma entrega for gerada a partir deste documento de vendas.  Este campo será exibido apenas quando o tipo de documento base for Pedido de Vendas.</value>
+  <value column="Name" original="Document Type for Shipment">Tipo de Documento para Remessa / Recebimento</value>
+  <value column="PrintName" original="Doc Type Shipment">Tipo de Documento para Remessa / Recebimento</value>
+  <value column="Description" original="Document type used for shipments generated from this sales document">Tipo de Documento utilizado para remessas/recebimentos geradas a partir deste documento</value>
+  <value column="Help" original="he Document Type for Shipments indicates the document type that will be used when a shipment is generated from this sales document.  This field will display only when the base document type is Sales Order.">O "Tipo de Documento para Remessa / Recebimento" indica o tipo do documento que será utilizado quando uma remessa/recebimento for gerada a partir deste documento.  Este campo será exibido apenas quando o tipo de documento base for Pedido de Venda ou Pedido de Compra.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -5105,10 +5105,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1097" trl="Y">
-  <value column="Name" original="Pro forma Invoice">Fatura Pro Forma</value>
-  <value column="PrintName" original="Pro forma Invoice">Fatura Pro Forma</value>
-  <value column="Description" original="Indicates if Pro Forma Invoices can be generated from this document">Indica se "Faturas Pro Forma" podem ser geradas a partir deste documento</value>
-  <value column="Help" original="The Pro Forma Invoice checkbox indicates if pro forma invoices can be generated from this sales document. A pro forma invoice indicates the amount that will be due should an order be shipped.">A caixa de verificação "Fatura Pro Forma" indica se Faturas Pro Forma podem ser geradas a partir deste documento de vendas. Uma "Fatura Pro Forma" indica o valor que será devido caso um pedido seja enviado.</value>
+  <value column="Name" original="Pro forma Invoice">Permite Fatura Proforma</value>
+  <value column="PrintName" original="Pro forma Invoice">Permite Fatura Proforma</value>
+  <value column="Description" original="Indicates if Pro Forma Invoices can be generated from this document">Indica se faturas proforma podem ser geradas a partir deste documento</value>
+  <value column="Help" original="The Pro Forma Invoice checkbox indicates if pro forma invoices can be generated from this sales document. A pro forma invoice indicates the amount that will be due should an order be shipped.">A caixa de verificação "Permite Gerar Fatura Proforma" indica se Faturas Proforma podem ser geradas a partir deste documento de vendas. Uma "Fatura Proforma" indica o valor que será devido caso um pedido seja enviado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -6926,10 +6926,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1387" trl="Y">
-  <value column="Name" original="Charge Account">Gastos com Despesas</value>
-  <value column="PrintName" original="Charge Account">Gastos com Despesas</value>
-  <value column="Description" original="Charge Account">Conta de Gastos com Despesas</value>
-  <value column="Help" original="The Charge Account identifies the account to use when recording charges">A conta "Gastos com Despesas" identifica a conta a ser usada ao registrar despesas pagas a fornecedores (Despesas de remessa, manipulação, reestocagem, etc).</value>
+  <value column="Name" original="Charge Account">Conta da Referência Contábil</value>
+  <value column="PrintName" original="Charge Account">Conta da Referência Contábil</value>
+  <value column="Description" original="Charge Account">Conta da Referência Contábil</value>
+  <value column="Help" original="The Charge Account identifies the account to use when recording charges">A conta "Conta da Referência Contábil" identifica a conta a ser usada ao registrar transações que utilizam a referência.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -8457,10 +8457,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1580" trl="Y">
-  <value column="Name" original="Date Column">Coluna de Data</value>
-  <value column="PrintName" original="Date Column">Coluna de Data</value>
-  <value column="Description" original="Fully qualified date column">Coluna de Data Totalmente Qualificada</value>
-  <value column="Help" original="The Date Column indicates the date to be used when calculating this measurement">A "Coluna de Data" indica a data a ser usada ao calcular esta medida</value>
+  <value column="Name" original="Date Column">Coluna da Data</value>
+  <value column="PrintName" original="Date Column">Coluna da Data</value>
+  <value column="Description" original="Fully qualified date column">Coluna da Data Totalmente Qualificada</value>
+  <value column="Help" original="The Date Column indicates the date to be used when calculating this measurement">A "Coluna da Data" indica a data a ser usada ao calcular esta medida</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -8557,8 +8557,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1591" trl="Y">
-  <value column="Name" original="Org Column">Coluna da Org.</value>
-  <value column="PrintName" original="Org Column">Coluna da Org.</value>
+  <value column="Name" original="Org Column">Coluna da Organização</value>
+  <value column="PrintName" original="Org Column">Coluna da Organização</value>
   <value column="Description" original="Fully qualified Organization column (AD_Org_ID)">Coluna da Organização Totalmente Qualificada (AD_Org_ID)</value>
   <value column="Help" original="The Organization Column indicates the organization to be used in calculating this measurement.">A "Coluna da Organização" indica a organização a ser usada ao calcular esta medida.</value>
   <value column="PO_Description" original=""/>
@@ -8747,10 +8747,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1613" trl="Y">
-  <value column="Name" original="Report Column Set">Conjunto de Colunas de Relatórios</value>
-  <value column="PrintName" original="Report Column Set">Conjunto de Colunas de Relatórios</value>
+  <value column="Name" original="Report Column Set">Conjunto de Colunas de Relatório</value>
+  <value column="PrintName" original="Report Column Set">Conjunto de Colunas de Relatório</value>
   <value column="Description" original="Collection of Columns for Report">Coleção de Colunas a serem incluídas no Relatório</value>
-  <value column="Help" original="The Report Column Set identifies the columns used in a Report.">O "Conjunto de Colunas de Relatórios" identifica um conjunto de colunas utilizado em um Relatório.</value>
+  <value column="Help" original="The Report Column Set identifies the columns used in a Report.">O "Conjunto de Colunas de Relatório" identifica um conjunto de colunas utilizado em um Relatório.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -13040,9 +13040,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2083" trl="Y">
-  <value column="Name" original="Account Key">Chave de Conta</value>
-  <value column="PrintName" original="Account Key">Chave de Conta</value>
-  <value column="Description" original="Key of Account Element">Chave de um Elemento Contábil</value>
+  <value column="Name" original="Account Key">Chave da Conta</value>
+  <value column="PrintName" original="Account Key">Chave da Conta</value>
+  <value column="Description" original="Key of Account Element">Chave da um Elemento Contábil</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -13170,9 +13170,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2096" trl="Y">
-  <value column="Name" original="Charge Name">Nome da Despesa</value>
-  <value column="PrintName" original="Charge Name">Nome da Despesa</value>
-  <value column="Description" original="Name of the Charge">Nome da Despesa</value>
+  <value column="Name" original="Charge Name">Nome da Referência Contábil</value>
+  <value column="PrintName" original="Charge Name">Nome da Referência Contábil</value>
+  <value column="Description" original="Name of the Charge">Nome da Referência Contábil</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -14874,10 +14874,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2278" trl="Y">
-  <value column="Name" original="Currency Type">Tipo de Moeda</value>
-  <value column="PrintName" original="Currency Type">Tipo de Moeda</value>
+  <value column="Name" original="Currency Type">Tipo de Cotação de Moedas</value>
+  <value column="PrintName" original="Currency Type">Tipo de Cotação de Moedas</value>
   <value column="Description" original="Currency Conversion Rate Type">Tipo de Taxa de Conversão de Moedas</value>
-  <value column="Help" original="The Currency Conversion Rate Type lets you define different type of rates, e.g. Spot, Corporate and/or Sell/Buy rates.">O Tipo de Taxas de Conversão de Moedas define diferentes tipos de taxas, ex. taxas Spot (mercado à vista), taxas Corporativas e/ou taxas de Compra/Venda.</value>
+  <value column="Help" original="The Currency Conversion Rate Type lets you define different type of rates, e.g. Spot, Corporate and/or Sell/Buy rates.">Define o tipo de cotação de moedas, como por exemplo a Ptax do dia.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -14934,10 +14934,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2286" trl="Y">
-  <value column="Name" original="Date Format">Formato de Data</value>
-  <value column="PrintName" original="Date Format">Formato de Data</value>
-  <value column="Description" original="Date format used in the input format">Formato de Data utilizado no formato de entrada</value>
-  <value column="Help" original="The date format is usually detected, but sometimes need to be defined.">O "Formato de Data" é usualmente detectado, mas às vezes precisa ser definido.</value>
+  <value column="Name" original="Date Format">Formato da Data</value>
+  <value column="PrintName" original="Date Format">Formato da Data</value>
+  <value column="Description" original="Date format used in the input format">Formato da Data utilizado para formatação</value>
+  <value column="Help" original="The date format is usually detected, but sometimes need to be defined.">O "Formato da Data" é geralmente detectado, mas às vezes precisa ser definido manualmente.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -15956,8 +15956,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2397" trl="Y">
   <value column="Name" original="In Transit">Em Trânsito</value>
   <value column="PrintName" original="In Transit">Em Trânsito</value>
-  <value column="Description" original="Movement is in transit">Movimentação é do tipo Em Trânsito</value>
-  <value column="Help" original="Material Movement is in transit - shipped, but not received.&#10;The transaction is completed, if confirmed.">Movimentação de Material está em Trânsito - enviado, mas não recebido. A transação está completa se confirmada.</value>
+  <value column="Description" original="Movement is in transit">O Movimento está em Trânsito</value>
+  <value column="Help" original="Material Movement is in transit - shipped, but not received.&#10;The transaction is completed, if confirmed.">O Movimento de Material está em Trânsito (enviado, mas ainda não recebido). A transação será completada quando for confirmada.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -16524,8 +16524,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2455" trl="Y">
-  <value column="Name" original="ZIP To">CEP/ZIP (Destinatário)</value>
-  <value column="PrintName" original="ZIP To">CEP/ZIP (Destinatário)</value>
+  <value column="Name" original="ZIP To">CEP/ZIP (Destino)</value>
+  <value column="PrintName" original="ZIP To">CEP/ZIP (Destino)</value>
   <value column="Description" original="Postal code to">Código Postal de Destinatário</value>
   <value column="Help" original="Consecutive range to"/>
   <value column="PO_Description" original=""/>
@@ -16664,9 +16664,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2469" trl="Y">
-  <value column="Name" original="GL Distribution">Distribuição RG</value>
-  <value column="PrintName" original="GL Distribution">Distribuição RG</value>
-  <value column="Description" original="General Ledger Distribution">Distribuição de Razão Geral</value>
+  <value column="Name" original="GL Distribution">Distribuição Contábil</value>
+  <value column="PrintName" original="GL Distribution">Distribuição Contábil</value>
+  <value column="Description" original="General Ledger Distribution">Distribuição Contábil</value>
   <value column="Help" original="If the account combination criteria of the Distribution is met, the posting to the account combination is replaced by the account combinations of the distribution lines.  The distribution is prorated based on the ratio of the lines. The distribution must be valid to be used.">Se os critérios de combinação de contas da distribuição forem atingidos, a contabilização na combinação de contas é substituída pelas combinações de contas das linhas de distribuição.  A distribuição é pro-rateada com base na razão das linhas. A distribuição tem que ser válida para ser utilizada.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -17164,20 +17164,20 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2521" trl="Y">
-  <value column="Name" original="Pick/QA Confirmation">Confirmação de Coleta/QA</value>
-  <value column="PrintName" original="Pick/QA Confirm">Confirmação de Coleta/QA</value>
-  <value column="Description" original="Require Pick or QA Confirmation before processing">Exige Confirmação de Coleta ou CQ antes de processar</value>
-  <value column="Help" original="The processing of the Shipment (Receipt) requires Pick (QA) Confirmation. Note that shipments for automatic documents like POS/Warehouse Orders cannot have confirmations!">O processamento da Entrega (Recebimento) exige confirmação de Coleta (QA). Note que remessas para documentos automáticos tais como PDV/Pedidos de Armazens não podem ter confirmações!</value>
+  <value column="Name" original="Pick/QA Confirmation">Confirmação de Separação/CQ</value>
+  <value column="PrintName" original="Pick/QA Confirm">Confirmação de Separação/CQ</value>
+  <value column="Description" original="Require Pick or QA Confirmation before processing">Exige confirmação de separação do material ou controle de qualidade antes de processar o documento</value>
+  <value column="Help" original="The processing of the Shipment (Receipt) requires Pick (QA) Confirmation. Note that shipments for automatic documents like POS/Warehouse Orders cannot have confirmations!">O processamento da remessa/recebimento de material exige confirmação de separação ou controle de qualidade. Observe que remessas para documentos automáticos tais como Pedido em PDV ou Pedido de Armazém não podem ter confirmações!</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2522" trl="Y">
-  <value column="Name" original="Ship/Receipt Confirmation">Confirmação de Envio/Recebimento</value>
-  <value column="PrintName" original="Ship/Receipt Confirm">Confirmação de Envio/Recebimento</value>
-  <value column="Description" original="Require Ship or Receipt Confirmation before processing">Exige Confirmação de Entrega ou Recebimento antes de processar</value>
-  <value column="Help" original="The processing of the Shipment (Receipt) requires Ship (Receipt) Confirmation. Note that shipments for automatic documents like POS/Warehouse Orders cannot have confirmations!">O processamento da Entrega (Recebimento) exige confirmação de Entrega (Recebimento). Note que remessas para documentos automáticos tais como PDV/Pedidos de Armazens não podem ter confirmações!</value>
+  <value column="Name" original="Ship/Receipt Confirmation">Confirmação de Remessa/Recebimento</value>
+  <value column="PrintName" original="Ship/Receipt Confirm">Confirmação de Remessa/Recebimento</value>
+  <value column="Description" original="Require Ship or Receipt Confirmation before processing">Exige Confirmação de Remessa ou Recebimento antes de processar o documento</value>
+  <value column="Help" original="The processing of the Shipment (Receipt) requires Ship (Receipt) Confirmation. Note that shipments for automatic documents like POS/Warehouse Orders cannot have confirmations!">O processamento da remessa/recebimento exige confirmação de remessa/recebimento. Observe que remessas para documentos automáticos tais como Pedido em PDV ou Pedido de Armazém não podem ter confirmações!</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -17334,10 +17334,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2542" trl="Y">
-  <value column="Name" original="Difference Document">Documento de Diferença</value>
-  <value column="PrintName" original="Difference Doc">Doc. Diferença</value>
-  <value column="Description" original="Document type for generating in dispute Shipments">Tipo de documento a ser gerado em Entregas sob disputa</value>
-  <value column="Help" original="If the confirmation contains differences, the original document is split allowing the original document (shipment) to be processed and updating Inventory - and the newly created document for handling the dispute at a later time. Until the confirmation is processed, the inventory is not updated.">Se a confirmação contiver diferenças, o documento original é dividido permitindo assim que o documento original (entrega) seja processado e atualizando o estoque - e o documento recém criado será utilizado para manipular a disputa a posteriori. Até que a confirmação seja processada, o estoque não é atualizado. </value>
+  <value column="Name" original="Difference Document">Documento para a Diferença</value>
+  <value column="PrintName" original="Difference Doc">Documento para a Diferença</value>
+  <value column="Description" original="Document type for generating in dispute Shipments">Tipo de documento a ser gerado para remessa/recebimento sob disputa</value>
+  <value column="Help" original="If the confirmation contains differences, the original document is split allowing the original document (shipment) to be processed and updating Inventory - and the newly created document for handling the dispute at a later time. Until the confirmation is processed, the inventory is not updated.">Se a confirmação tiver diferença, o documento original é dividido permitindo assim que o documento original (remessa/recebimento) seja processado e atualizando o estoque. O documento recém criado será utilizado para manipular a disputa posteriormente. Até que a confirmação seja processada, o estoque não é atualizado. </value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -17384,10 +17384,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2547" trl="Y">
-  <value column="Name" original="Split when Difference">Dividir Quando Diferente</value>
-  <value column="PrintName" original="Split Difference">Div. Diferente</value>
-  <value column="Description" original="Split document when there is a difference">Dividir o documento quando houver uma diferença</value>
-  <value column="Help" original="If the confirmation contains differences, the original document is split allowing the original document (shipment) to be processed and updating Inventory - and the newly created document for handling the dispute at a later time. Until the confirmation is processed, the inventory is not updated.">Se a confirmação contiver diferenças, o documento original é dividido permitindo assim que o documento original (entrega) seja processado e atualizando o estoque - e o documento recém criado será utilizado para manipular a disputa a posteriori. Até que a confirmação seja processada, o estoque não é atualizado. </value>
+  <value column="Name" original="Split when Difference">Dividir Quando Surgir Diferença</value>
+  <value column="PrintName" original="Split Difference">Dividir Quando Surgir Diferença</value>
+  <value column="Description" original="Split document when there is a difference">Dividir o documento quando surgir diferença</value>
+  <value column="Help" original="If the confirmation contains differences, the original document is split allowing the original document (shipment) to be processed and updating Inventory - and the newly created document for handling the dispute at a later time. Until the confirmation is processed, the inventory is not updated.">Se a confirmação tiver diferença, o documento original é dividido permitindo assim que o documento original (remessa/recebimento) seja processado e tenha o estoque atualizando. O novo documento criado pode ser analisado posteriormente. Até que a confirmação seja processada, o estoque não é atualizado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -17794,8 +17794,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2591" trl="Y">
-  <value column="Name" original="Any Account">Qualquer Conta</value>
-  <value column="PrintName" original="Any Acct">Qualquer Conta</value>
+  <value column="Name" original="Any Account">Qualquer Conta Contábil</value>
+  <value column="PrintName" original="Any Acct">Qualquer Conta Contábil</value>
   <value column="Description" original="Match any value of the Account segment">Combinar com qualquer valor de segmento Contábil</value>
   <value column="Help" original="If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined).">Se selecionado, qualquer valor do segmento de conta será confrontado Se não for selecionado, mas nenhum valor do segmento de conta for selecionado, o valor confrontado tem que ser nulo (ou seja, não definido).</value>
   <value column="PO_Description" original=""/>
@@ -17814,7 +17814,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2593" trl="Y">
-  <value column="Name" original="Any Bus.Partner">Qualquer P.Negócios</value>
+  <value column="Name" original="Any Bus.Partner">Qualquer Parceiro de Negócios</value>
   <value column="PrintName" original="Any BPartner">Qualquer Parceiro</value>
   <value column="Description" original="Match any value of the Business Partner segment">Combinar com qualquer valor de segmento de Parceiro de Negócios</value>
   <value column="Help" original="If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined).">Se selecionado, qualquer valor do segmento de conta será confrontado Se não for selecionado, mas nenhum valor do segmento de conta for selecionado, o valor confrontado tem que ser nulo (ou seja, não definido).</value>
@@ -17934,8 +17934,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2605" trl="Y">
-  <value column="Name" original="Overwrite Account">Sobrescrever Conta</value>
-  <value column="PrintName" original="Overwrite Account">Sobrescrever Conta</value>
+  <value column="Name" original="Overwrite Account">Sobrescrever Conta Contábil</value>
+  <value column="PrintName" original="Overwrite Account">Sobrescrever Conta Contábil</value>
   <value column="Description" original="Overwrite the account segment Account with the value specified">Sobrescrever o segmento de Conta com o valor especificado</value>
   <value column="Help" original="If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null.">Se não for sobre-escrito, o valor da combinação de conta original será utilizado. Se selecionado, mas não especificado, o segmento é ajustado para nulo.</value>
   <value column="PO_Description" original=""/>
@@ -17954,7 +17954,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2607" trl="Y">
-  <value column="Name" original="Overwrite Bus.Partner">Sobrescrever Parc. Negócios</value>
+  <value column="Name" original="Overwrite Bus.Partner">Sobrescrever Parceiro de Negócios</value>
   <value column="PrintName" original="Overwrite BPartner">Sobrescrever Parceiro</value>
   <value column="Description" original="Overwrite the account segment Business Partner with the value specified">Sobrescrever o segmento contábil Parceiro de Negócios com o valor especificado</value>
   <value column="Help" original="If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null.">Se não for sobre-escrito, o valor da combinação de conta original será utilizado. Se selecionado, mas não especificado, o segmento é ajustado para nulo.</value>
@@ -18014,8 +18014,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2613" trl="Y">
-  <value column="Name" original="Overwrite Product">Sobrescrever o Produto</value>
-  <value column="PrintName" original="Overwrite Product">Sobrescrever o Produto</value>
+  <value column="Name" original="Overwrite Product">Sobrescrever Produto</value>
+  <value column="PrintName" original="Overwrite Product">Sobrescrever Produto</value>
   <value column="Description" original="Overwrite the account segment Product with the value specified">Sobrescrever o segmento contábil do Produto com o valor especificado</value>
   <value column="Help" original="If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null.">Se não for sobre-escrito, o valor da combinação de conta original será utilizado. Se selecionado, mas não especificado, o segmento é ajustado para nulo.</value>
   <value column="PO_Description" original=""/>
@@ -18024,8 +18024,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2614" trl="Y">
-  <value column="Name" original="Overwrite Project">Sobrescrever o Projeto</value>
-  <value column="PrintName" original="Overwrite Project">Sobrescrever o Projeto</value>
+  <value column="Name" original="Overwrite Project">Sobrescrever Projeto</value>
+  <value column="PrintName" original="Overwrite Project">Sobrescrever Projeto</value>
   <value column="Description" original="Overwrite the account segment Project with the value specified">Sobrescrever o segmento contábil do Projeto com o valor especificado</value>
   <value column="Help" original="If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null.">Se não for sobre-escrito, o valor da combinação de conta original será utilizado. Se selecionado, mas não especificado, o segmento é ajustado para nulo.</value>
   <value column="PO_Description" original=""/>
@@ -18064,8 +18064,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2618" trl="Y">
-  <value column="Name" original="Total Percent">Total Porcentagens</value>
-  <value column="PrintName" original="Total Percent">Total Porcentagens</value>
+  <value column="Name" original="Total Percent">Porcentagem Total</value>
+  <value column="PrintName" original="Total Percent">Porcentagem Total</value>
   <value column="Description" original="Sum of the Percent details ">Soma dos detalhes percentuais </value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -18165,9 +18165,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2628" trl="Y">
-  <value column="Name" original="Details/Source First">Detalhes/Origem Primeiro</value>
-  <value column="PrintName" original="Details/Source First">Detalhes/Origem Primeiro</value>
-  <value column="Description" original="Details and Sources are printed before the Line">Detalhes e Origens são imprimidos antes da Linha</value>
+  <value column="Name" original="Details/Source First">Listar Primeiro as Origens</value>
+  <value column="PrintName" original="Details/Source First">Listar Primeiro as Origens</value>
+  <value column="Description" original="Details and Sources are printed before the Line">As origens são impressas antes da Linha</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -19955,10 +19955,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2816" trl="Y">
-  <value column="Name" original="Costing Level">Nível de Custeio</value>
-  <value column="PrintName" original="Costing Level">Nível de Custeio</value>
-  <value column="Description" original="The lowest level to accumulate Costing Information">É o menor nível para acumular informação de custeio</value>
-  <value column="Help" original="If you want to maintain different costs per organization (warehouse) or per Batch/Lot, you need to make sure that you define the costs for each of the organizations or batch/lot. The Costing Level is defined per Accounting Schema and can be overwritten by Product Category and Accounting Schema.">Se você deseja gerenciar diferentes custos por organização (armazém) ou por batelada/lote, você precisa certificar-se que sejam definidos os custos para cada uma das organizações ou batelada/lote. O Nível de Custeio é definido por Esquema Contábil e pode ser sobrescrito pela Categoria de Produto e Esquema Contábil.</value>
+  <value column="Name" original="Costing Level">Nível do Custo</value>
+  <value column="PrintName" original="Costing Level">Nível do Custo</value>
+  <value column="Description" original="The lowest level to accumulate Costing Information">É o menor nível para acumular informação de custo</value>
+  <value column="Help" original="If you want to maintain different costs per organization (warehouse) or per Batch/Lot, you need to make sure that you define the costs for each of the organizations or batch/lot. The Costing Level is defined per Accounting Schema and can be overwritten by Product Category and Accounting Schema.">Se você deseja gerenciar diferentes custos por organização (armazém) ou por lote, você precisa certificar-se que sejam definidos os custos para cada uma das organizações ou batelada/lote. O Nível do Custo é definido por Esquema Contábil e pode ser sobrescrito pela Categoria de Produto e pelo Esquema Contábil.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -20035,9 +20035,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2824" trl="Y">
-  <value column="Name" original="Copy Overwrite">Copie e Sobrescreva</value>
-  <value column="PrintName" original="Copy Overwrite">Copie e Sobrescreva</value>
-  <value column="Description" original="Copy and Overwrite Default Accounts (DANGEROUS!!)">Copie e Sobrescreva as contas padrão (PERIGOSO!!)</value>
+  <value column="Name" original="Copy Overwrite">Copiar e Sobrescrever</value>
+  <value column="PrintName" original="Copy Overwrite">Copiar e Sobrescrever</value>
+  <value column="Description" original="Copy and Overwrite Default Accounts (DANGEROUS!!)">Copiar e sobrescrever as contas padrão (CUIDADO!!!)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -20466,9 +20466,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2870" trl="Y">
-  <value column="Name" original="Sales Tax">Imposto de Vendas</value>
-  <value column="PrintName" original="Sales Tax">Imposto de Vendas</value>
-  <value column="Description" original="This is a sales tax (i.e. not a value added tax)">Isto é um imposto sobre vendas (i.e. não é um Imposto sobre o Valor Agregado)</value>
+  <value column="Name" original="Sales Tax">Imposto sobre Venda</value>
+  <value column="PrintName" original="Sales Tax">Imposto sobre Venda</value>
+  <value column="Description" original="This is a sales tax (i.e. not a value added tax)">Isto é um imposto sobre venda (i.e. não é um Imposto sobre o Valor Agregado)</value>
   <value column="Help" original="If selected AP tax is handled as expense, otherwise it is handled as a VAT credit.">Se selecionado, o imposto AP é manipulado como despesa, de outro modo será tratado como um crédito de IVA (VAT).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -22427,10 +22427,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3079" trl="Y">
-  <value column="Name" original="Tax Correction">Tax Correction</value>
-  <value column="PrintName" original="Tax Correction">Tax Correction</value>
-  <value column="Description" original="Type of Tax Correction">Type of Tax Correction</value>
-  <value column="Help" original="Determines if/when tax is corrected. Discount could be agreed or granted underpayments; Write-off may be partial or complete write-off.">Determines if/when tax is corrected. Discount could be agreed or granted underpayments; Write-off may be partial or complete write-off.</value>
+  <value column="Name" original="Tax Correction">Correção de Impostos</value>
+  <value column="PrintName" original="Tax Correction">Correção de Impostos</value>
+  <value column="Description" original="Type of Tax Correction">Tipo de Correção de Impostos</value>
+  <value column="Help" original="Determines if/when tax is corrected. Discount could be agreed or granted underpayments; Write-off may be partial or complete write-off.">Determina se/quando os impostos são corrigidos. Descontos podem ser acordados ou realizados via pagamentos parciais. Abatimentos podem ser parciais ou abatimento total.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -23297,9 +23297,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50064" trl="Y">
-  <value column="Name" original="Jasper Process">Jasper Process</value>
-  <value column="PrintName" original="Jasper Process">Jasper Process</value>
-  <value column="Description" original="The Jasper Process used by the printengine if any process defined">The Jasper Process used by the printengine if any process defined</value>
+  <value column="Name" original="Jasper Process">Processo Jasper</value>
+  <value column="PrintName" original="Jasper Process">Processo Jasper</value>
+  <value column="Description" original="The Jasper Process used by the printengine if any process defined">Indica o Processo Jasper usado pelo mecanismo de impressão se um processo for definido</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -23307,9 +23307,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50065" trl="Y">
-  <value column="Name" original="Allow Negative Posting">Allow Negative Posting</value>
-  <value column="PrintName" original="Allow Negative Posting">Allow Negative Posting</value>
-  <value column="Description" original="Allow to post negative accounting values">Allow to post negative accounting values</value>
+  <value column="Name" original="Allow Negative Posting">Permitir Lançamentos Negativos</value>
+  <value column="PrintName" original="Allow Negative Posting">Permitir Lançamentos Negativos</value>
+  <value column="Description" original="Allow to post negative accounting values">Permitir o lançamento contábil de valores negativos</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -24047,9 +24047,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53227" trl="Y">
-  <value column="Name" original="Post if Clearing Equal">Post if Clearing Equal</value>
-  <value column="PrintName" original="Post if Clearing Equal">Post if Clearing Equal</value>
-  <value column="Description" original="This flag controls if Adempiere must post when clearing (transit) and final accounts are the same">This flag controls if Adempiere must post when clearing (transit) and final accounts are the same</value>
+  <value column="Name" original="Post if Clearing Equal">Lançar se as Conciliações forem Iguais</value>
+  <value column="PrintName" original="Post if Clearing Equal">Lançar se as Conciliações forem Iguais</value>
+  <value column="Description" original="This flag controls if Adempiere must post when clearing (transit) and final accounts are the same">Este flag controla se o sistema deve lançar (contabilmente) se os valores nas contas de conciliação e finais forem iguais.</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -24987,8 +24987,8 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53320" trl="Y">
-  <value column="Name" original="Overwrite Sequence on Complete">Overwrite Sequence on Complete</value>
-  <value column="PrintName" original="Overwrite Sequence on Complete">Overwrite Sequence on Complete</value>
+  <value column="Name" original="Overwrite Sequence on Complete">Sobrescrever Sequência ao Completar</value>
+  <value column="PrintName" original="Overwrite Sequence on Complete">Sobrescrever Sequência ao Completar</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -24997,8 +24997,8 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53321" trl="Y">
-  <value column="Name" original="Definite Sequence">Definite Sequence</value>
-  <value column="PrintName" original="Definite Sequence">Definite Sequence</value>
+  <value column="Name" original="Definite Sequence">Sequência Definitiva</value>
+  <value column="PrintName" original="Definite Sequence">Sequência Definitiva</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -25007,8 +25007,8 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53322" trl="Y">
-  <value column="Name" original="Overwrite Date on Complete">Overwrite Date on Complete</value>
-  <value column="PrintName" original="Overwrite Date on Complete">Overwrite Date on Complete</value>
+  <value column="Name" original="Overwrite Date on Complete">Sobrescrever Data ao Completar</value>
+  <value column="PrintName" original="Overwrite Date on Complete">Sobrescrever Data ao Completar</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -25186,11 +25186,11 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53342" trl="N">
-  <value column="Name" original="Decimal Pattern">Decimal Pattern</value>
-  <value column="PrintName" original="Decimal Pattern">Decimal Pattern</value>
-  <value column="Description" original="Java Decimal Pattern">Java Decimal Pattern</value>
-  <value column="Help" original="Option Decimal pattern in Java notation. Examples: 0000 will format 23 to 0023">Option Decimal pattern in Java notation. Examples: 0000 will format 23 to 0023</value>
+ <row id="53342" trl="Y">
+  <value column="Name" original="Decimal Pattern">Padrão Decimal</value>
+  <value column="PrintName" original="Decimal Pattern">Padrão Decimal</value>
+  <value column="Description" original="Java Decimal Pattern">Padrão Decimal (Java)</value>
+  <value column="Help" original="Option Decimal pattern in Java notation. Examples: 0000 will format 23 to 0023">Opção para formatar o número decimal. Exemplo: 0000 irá formatar 23 como 0023.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -26119,9 +26119,9 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53485" trl="N">
-  <value column="Name" original="Expense">Expense</value>
-  <value column="PrintName" original="Expense">Expense</value>
+ <row id="53485" trl="Y">
+  <value column="Name" original="Expense">Despesa</value>
+  <value column="PrintName" original="Expense">Despesa</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -27719,111 +27719,111 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53657" trl="N">
-  <value column="Name" original="Include Nulls in Org">Include Nulls in Org</value>
-  <value column="PrintName" original="Include Nulls in Org">Include Nulls in Org</value>
-  <value column="Description" original="Include nulls in the selection of the organization">Include nulls in the selection of the organization</value>
-  <value column="Help" original=""/>
+ <row id="53657" trl="Y">
+  <value column="Name" original="Include Nulls in Org">Incluir Nulos na Organização</value>
+  <value column="PrintName" original="Include Nulls in Org">Incluir Nulos na Organização</value>
+  <value column="Description" original="Include nulls in the selection of the organization">Incluir nulos (null) na seleção (where clause) da Organização</value>
+  <value column="Help" original="">Se selecionado, incluir valores nulos, como por exemplo: (COLUMNNAME_ID IS NULL OR COLUMNNAME_ID = 100000). Caso contrário, usa apenas (COLUMNNAME_ID = 100000).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53658" trl="N">
-  <value column="Name" original="Include Nulls in Account">Include Nulls in Account</value>
-  <value column="PrintName" original="Include Nulls in Account">Include Nulls in Account</value>
-  <value column="Description" original="Include nulls in the selection of the account">Include nulls in the selection of the account</value>
-  <value column="Help" original=""/>
+ <row id="53658" trl="Y">
+  <value column="Name" original="Include Nulls in Account">Incluir Nulos na Conta</value>
+  <value column="PrintName" original="Include Nulls in Account">Incluir Nulos na Conta</value>
+  <value column="Description" original="Include nulls in the selection of the account">Incluir nulos (null) na seleção (where clause) da Conta</value>
+  <value column="Help" original="">Se selecionado, incluir valores nulos, como por exemplo: (COLUMNNAME_ID IS NULL OR COLUMNNAME_ID = 100000). Caso contrário, usa apenas (COLUMNNAME_ID = 100000).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53659" trl="N">
-  <value column="Name" original="Include Nulls in BPartner">Include Nulls in BPartner</value>
-  <value column="PrintName" original="Include Nulls in BPartner">Include Nulls in BPartner</value>
-  <value column="Description" original="Include nulls in the selection of the business partner">Include nulls in the selection of the business partner</value>
-  <value column="Help" original=""/>
+ <row id="53659" trl="Y">
+  <value column="Name" original="Include Nulls in BPartner">Incluir Nulos no Parceiro</value>
+  <value column="PrintName" original="Include Nulls in BPartner">Incluir Nulos no Parceiro</value>
+  <value column="Description" original="Include nulls in the selection of the business partner">Incluir nulos (null) na seleção (where clause) do Parceiro de Negócios</value>
+  <value column="Help" original="">Se selecionado, incluir valores nulos, como por exemplo: (COLUMNNAME_ID IS NULL OR COLUMNNAME_ID = 100000). Caso contrário, usa apenas (COLUMNNAME_ID = 100000).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53660" trl="N">
-  <value column="Name" original="Include Nulls in Product">Include Nulls in Product</value>
-  <value column="PrintName" original="Include Nulls in Product">Include Nulls in Product</value>
-  <value column="Description" original="Include nulls in the selection of the product">Include nulls in the selection of the product</value>
-  <value column="Help" original=""/>
+ <row id="53660" trl="Y">
+  <value column="Name" original="Include Nulls in Product">Incluir Nulos no Produto</value>
+  <value column="PrintName" original="Include Nulls in Product">Incluir Nulos no Produto</value>
+  <value column="Description" original="Include nulls in the selection of the product">Incluir nulos (null) na seleção (where clause) do Produto</value>
+  <value column="Help" original="">Se selecionado, incluir valores nulos, como por exemplo: (COLUMNNAME_ID IS NULL OR COLUMNNAME_ID = 100000). Caso contrário, usa apenas (COLUMNNAME_ID = 100000).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53661" trl="N">
-  <value column="Name" original="Include Nulls in Location">Include Nulls in Location</value>
-  <value column="PrintName" original="Include Nulls in Location">Include Nulls in Location</value>
-  <value column="Description" original="Include nulls in the selection of the location">Include nulls in the selection of the location</value>
-  <value column="Help" original=""/>
+ <row id="53661" trl="Y">
+  <value column="Name" original="Include Nulls in Location">Incluir Nulos na Localização</value>
+  <value column="PrintName" original="Include Nulls in Location">Incluir Nulos na Localização</value>
+  <value column="Description" original="Include nulls in the selection of the location">Incluir nulos (null) na seleção (where clause) da Localização</value>
+  <value column="Help" original="">Se selecionado, incluir valores nulos, como por exemplo: (COLUMNNAME_ID IS NULL OR COLUMNNAME_ID = 100000). Caso contrário, usa apenas (COLUMNNAME_ID = 100000).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53662" trl="N">
-  <value column="Name" original="Include Nulls in Project">Include Nulls in Project</value>
-  <value column="PrintName" original="Include Nulls in Project">Include Nulls in Project</value>
-  <value column="Description" original="Include nulls in the selection of the project">Include nulls in the selection of the project</value>
-  <value column="Help" original=""/>
+ <row id="53662" trl="Y">
+  <value column="Name" original="Include Nulls in Project">Incluir Nulos no Projeto</value>
+  <value column="PrintName" original="Include Nulls in Project">Incluir Nulos no Projeto</value>
+  <value column="Description" original="Include nulls in the selection of the project">Incluir nulos (null) na seleção (where clause) do Projeto</value>
+  <value column="Help" original="">Se selecionado, incluir valores nulos, como por exemplo: (COLUMNNAME_ID IS NULL OR COLUMNNAME_ID = 100000). Caso contrário, usa apenas (COLUMNNAME_ID = 100000).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53663" trl="N">
-  <value column="Name" original="Include Nulls in Sales Region">Include Nulls in Sales Region</value>
-  <value column="PrintName" original="Include Nulls in Sales Region">Include Nulls in Sales Region</value>
-  <value column="Description" original="Include nulls in the selection of the sales region">Include nulls in the selection of the sales region</value>
-  <value column="Help" original=""/>
+ <row id="53663" trl="Y">
+  <value column="Name" original="Include Nulls in Sales Region">Incluir Nulos na Região de Vendas</value>
+  <value column="PrintName" original="Include Nulls in Sales Region">Incluir Nulos na Região de Vendas</value>
+  <value column="Description" original="Include nulls in the selection of the sales region">Incluir nulos (null) na seleção (where clause) da Região de Vendas</value>
+  <value column="Help" original="">Se selecionado, incluir valores nulos, como por exemplo: (COLUMNNAME_ID IS NULL OR COLUMNNAME_ID = 100000). Caso contrário, usa apenas (COLUMNNAME_ID = 100000).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53664" trl="N">
-  <value column="Name" original="Include Nulls in Activity">Include Nulls in Activity</value>
-  <value column="PrintName" original="Include Nulls in Activity">Include Nulls in Activity</value>
-  <value column="Description" original="Include nulls in the selection of the activity">Include nulls in the selection of the activity</value>
-  <value column="Help" original=""/>
+ <row id="53664" trl="Y">
+  <value column="Name" original="Include Nulls in Activity">Incluir Nulos na Atividade</value>
+  <value column="PrintName" original="Include Nulls in Activity">Incluir Nulos na Atividade</value>
+  <value column="Description" original="Include nulls in the selection of the activity">Incluir nulos (null) na seleção (where clause) da Atividade</value>
+  <value column="Help" original="">Se selecionado, incluir valores nulos, como por exemplo: (COLUMNNAME_ID IS NULL OR COLUMNNAME_ID = 100000). Caso contrário, usa apenas (COLUMNNAME_ID = 100000).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53665" trl="N">
-  <value column="Name" original="Include Nulls in Campaign">Include Nulls in Campaign</value>
-  <value column="PrintName" original="Include Nulls in Campaign">Include Nulls in Campaign</value>
-  <value column="Description" original="Include nulls in the selection of the campaign">Include nulls in the selection of the campaign</value>
-  <value column="Help" original=""/>
+ <row id="53665" trl="Y">
+  <value column="Name" original="Include Nulls in Campaign">Incluir Nulos na Campanha</value>
+  <value column="PrintName" original="Include Nulls in Campaign">Incluir Nulos na Campanha</value>
+  <value column="Description" original="Include nulls in the selection of the campaign">Incluir nulos (null) na seleção (where clause) da Campanha</value>
+  <value column="Help" original="">Se selecionado, incluir valores nulos, como por exemplo: (COLUMNNAME_ID IS NULL OR COLUMNNAME_ID = 100000). Caso contrário, usa apenas (COLUMNNAME_ID = 100000).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53666" trl="N">
-  <value column="Name" original="Include Nulls in User Element 1">Include Nulls in User Element 1</value>
-  <value column="PrintName" original="Include Nulls in User Element 1">Include Nulls in User Element 1</value>
-  <value column="Description" original="Include nulls in the selection of the user element 1">Include nulls in the selection of the user element 1</value>
-  <value column="Help" original=""/>
+ <row id="53666" trl="Y">
+  <value column="Name" original="Include Nulls in User Element 1">Incluir Nulos no Elemento do Usuário (1)</value>
+  <value column="PrintName" original="Include Nulls in User Element 1">Incluir Nulos no Elemento do Usuário (1)</value>
+  <value column="Description" original="Include nulls in the selection of the user element 1">Incluir nulos (null) na seleção (where clause) do Elemento do Usuário (1)</value>
+  <value column="Help" original="">Se selecionado, incluir valores nulos, como por exemplo: (COLUMNNAME_ID IS NULL OR COLUMNNAME_ID = 100000). Caso contrário, usa apenas (COLUMNNAME_ID = 100000).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53667" trl="N">
-  <value column="Name" original="Include Nulls in User Element 2">Include Nulls in User Element 2</value>
-  <value column="PrintName" original="Include Nulls in User Element 2">Include Nulls in User Element 2</value>
-  <value column="Description" original="Include nulls in the selection of the user element 2">Include nulls in the selection of the user element 2</value>
-  <value column="Help" original=""/>
+ <row id="53667" trl="Y">
+  <value column="Name" original="Include Nulls in User Element 2">Incluir Nulos no Elemento do Usuário (2)</value>
+  <value column="PrintName" original="Include Nulls in User Element 2">Incluir Nulos no Elemento do Usuário (2)</value>
+  <value column="Description" original="Include nulls in the selection of the user element 2">Incluir nulos (null) na seleção (where clause) do Elemento do Usuário (2)</value>
+  <value column="Help" original="">Se selecionado, incluir valores nulos, como por exemplo: (COLUMNNAME_ID IS NULL OR COLUMNNAME_ID = 100000). Caso contrário, usa apenas (COLUMNNAME_ID = 100000).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -27899,9 +27899,9 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53677" trl="N">
-  <value column="Name" original="Charge Type">Charge Type</value>
-  <value column="PrintName" original="Charge Type">Charge Type</value>
+ <row id="53677" trl="Y">
+  <value column="Name" original="Charge Type">Tipo de Referência Contábil</value>
+  <value column="PrintName" original="Charge Type">Tipo de Referência Contábil</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -27909,9 +27909,9 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53678" trl="N">
-  <value column="Name" original="Allow Positive">Allow Positive</value>
-  <value column="PrintName" original="Allow Positive">Allow Positive</value>
+ <row id="53678" trl="Y">
+  <value column="Name" original="Allow Positive">Permite Positivo</value>
+  <value column="PrintName" original="Allow Positive">Permite Positivo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -27919,9 +27919,9 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53679" trl="N">
-  <value column="Name" original="Allow Negative">Allow Negative</value>
-  <value column="PrintName" original="Allow Negative">Allow Negative</value>
+ <row id="53679" trl="Y">
+  <value column="Name" original="Allow Negative">Permite Negativo</value>
+  <value column="PrintName" original="Allow Negative">Permite Negativo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -27989,21 +27989,21 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53687" trl="N">
-  <value column="Name" original="Format Pattern">Format Pattern</value>
-  <value column="PrintName" original="Format Pattern">Format Pattern</value>
-  <value column="Description" original="The pattern used to format a number or date.">The pattern used to format a number or date.</value>
-  <value column="Help" original="A string complying with either Java SimpleDateFormat or DecimalFormat pattern syntax used to override the default presentation format of a date or number type field.">A string complying with either Java SimpleDateFormat or DecimalFormat pattern syntax used to override the default presentation format of a date or number type field.</value>
+ <row id="53687" trl="Y">
+  <value column="Name" original="Format Pattern">Padrão de Formato</value>
+  <value column="PrintName" original="Format Pattern">Padrão de Formato</value>
+  <value column="Description" original="The pattern used to format a number or date.">Padrão utilizado para formatar um número ou data.</value>
+  <value column="Help" original="A string complying with either Java SimpleDateFormat or DecimalFormat pattern syntax used to override the default presentation format of a date or number type field.">É uma string de acordo com os padrões estipulados pelas classes Java SimpleDateFormat ou DecimalFormat, para sobrescrever a apresentação padrão de um campo numérico ou de data.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53688" trl="N">
-  <value column="Name" original="Factor">Factor</value>
-  <value column="PrintName" original="Factor">Factor</value>
-  <value column="Description" original="Scaling factor.">Scaling factor.</value>
-  <value column="Help" original="Numbers are divided by the scaling factor for presentation.  E.g. 123,000 with a scaling factor of 1,000 will display as 123.">Numbers are divided by the scaling factor for presentation.  E.g. 123,000 with a scaling factor of 1,000 will display as 123.</value>
+ <row id="53688" trl="Y">
+  <value column="Name" original="Factor">Fator</value>
+  <value column="PrintName" original="Factor">Fator</value>
+  <value column="Description" original="Scaling factor.">Fator de escala</value>
+  <value column="Help" original="Numbers are divided by the scaling factor for presentation.  E.g. 123,000 with a scaling factor of 1,000 will display as 123.">Número são divididos pelo fator de escala para apresentação. Ex: 123.000 com um fator de escala de 1.000 vai apresentar o valor como sendo 123.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -28079,11 +28079,11 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53716" trl="N">
-  <value column="Name" original="Include Nulls in Org Trx">Include Nulls in Org Trx</value>
-  <value column="PrintName" original="Include Nulls in Org Trx">Include Nulls in Org Trx</value>
-  <value column="Description" original="Include nulls in the selection of the organization transaction">Include nulls in the selection of the organization transaction</value>
-  <value column="Help" original=""/>
+ <row id="53716" trl="Y">
+  <value column="Name" original="Include Nulls in Org Trx">Incluir Nulos na Organização (Trx)</value>
+  <value column="PrintName" original="Include Nulls in Org Trx">Incluir Nulos na Organização (Trx)</value>
+  <value column="Description" original="Include nulls in the selection of the organization transaction">Incluir nulos (null) na seleção (where clause) da Organização da Transação (Trx)</value>
+  <value column="Help" original="">Se selecionado, incluir valores nulos, como por exemplo: (COLUMNNAME_ID IS NULL OR COLUMNNAME_ID = 100000). Caso contrário, usa apenas (COLUMNNAME_ID = 100000).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -28463,10 +28463,10 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53795" trl="N">
-  <value column="Name" original="Create Reversal">Create Reversal</value>
-  <value column="PrintName" original="Create Reversal">Create Reversal</value>
-  <value column="Description" original="Indicates that reversal movement will be created, if disabled the original movement will be deleted.">Indicates that reversal movement will be created, if disabled the original movement will be deleted.</value>
+ <row id="53795" trl="Y">
+  <value column="Name" original="Create Reversal">Criar Estorno</value>
+  <value column="PrintName" original="Create Reversal">Criar Estorno</value>
+  <value column="Description" original="Indicates that reversal movement will be created, if disabled the original movement will be deleted.">Indica que um lançamento de estorno será criado, se desativado o lançamento original será excluído</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -28663,170 +28663,170 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53821" trl="N">
-  <value column="Name" original="Report Cube">Report Cube</value>
-  <value column="PrintName" original="Report Cube">Report Cube</value>
-  <value column="Description" original="Define reporting cube for pre-calculation of summary accounting data.">Define reporting cube for pre-calculation of summary accounting data.</value>
-  <value column="Help" original="Summary data will be generated for each period of the selected calendar, grouped by the selected dimensions..">Summary data will be generated for each period of the selected calendar, grouped by the selected dimensions..</value>
+ <row id="53821" trl="Y">
+  <value column="Name" original="Report Cube">Relatório Cubo</value>
+  <value column="PrintName" original="Report Cube">Relatório Cubo</value>
+  <value column="Description" original="Define reporting cube for pre-calculation of summary accounting data.">Define relatórios cubo para o pré-calculo de resumos de dados contábeis.</value>
+  <value column="Help" original="Summary data will be generated for each period of the selected calendar, grouped by the selected dimensions..">Resumos de dados serão gerados para cada período do calendário selecionado, agrupados pelas dimensões selecionadas.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53822" trl="N">
-  <value column="Name" original="Activity Dimension">Activity Dimension</value>
-  <value column="PrintName" original="Activity Dimension">Activity Dimension</value>
-  <value column="Description" original="Include Activity as a cube dimension">Include Activity as a cube dimension</value>
+ <row id="53822" trl="Y">
+  <value column="Name" original="Activity Dimension">Dimensão de Atividade</value>
+  <value column="PrintName" original="Activity Dimension">Dimensão de Atividade</value>
+  <value column="Description" original="Include Activity as a cube dimension">Inclui Atividade como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53823" trl="N">
-  <value column="Name" original="OrgTrx Dimension">OrgTrx Dimension</value>
-  <value column="PrintName" original="OrgTrx Dimension">OrgTrx Dimension</value>
-  <value column="Description" original="Include OrgTrx as a cube dimension">Include OrgTrx as a cube dimension</value>
+ <row id="53823" trl="Y">
+  <value column="Name" original="OrgTrx Dimension">Dimensão de Organização (Trx)</value>
+  <value column="PrintName" original="OrgTrx Dimension">Dimensão de Organização (Trx)</value>
+  <value column="Description" original="Include OrgTrx as a cube dimension">Inclui Organização (Trx) como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53824" trl="N">
-  <value column="Name" original="Business Partner Dimension">Business Partner Dimension</value>
-  <value column="PrintName" original="Business Partner Dimension">Business Partner Dimension</value>
-  <value column="Description" original="Include Business Partner as a cube dimension">Include Business Partner as a cube dimension</value>
+ <row id="53824" trl="Y">
+  <value column="Name" original="Business Partner Dimension">Dimensão de Parceiro de Negócios</value>
+  <value column="PrintName" original="Business Partner Dimension">Dimensão de Parceiro de Negócios</value>
+  <value column="Description" original="Include Business Partner as a cube dimension">Inclui Parceiro de Negócios como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53825" trl="N">
-  <value column="Name" original="Campaign Dimension">Campaign Dimension</value>
-  <value column="PrintName" original="Campaign Dimension">Campaign Dimension</value>
-  <value column="Description" original="Include Campaign as a cube dimension">Include Campaign as a cube dimension</value>
+ <row id="53825" trl="Y">
+  <value column="Name" original="Campaign Dimension">Dimensão de Campanha</value>
+  <value column="PrintName" original="Campaign Dimension">Dimensão de Campanha</value>
+  <value column="Description" original="Include Campaign as a cube dimension">Inclui Campanha como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53826" trl="N">
-  <value column="Name" original="Location From Dimension">Location From Dimension</value>
-  <value column="PrintName" original="Location From Dimension">Location From Dimension</value>
-  <value column="Description" original="Include Location From as a cube dimension">Include Location From as a cube dimension</value>
+ <row id="53826" trl="Y">
+  <value column="Name" original="Location From Dimension">Dimensão de Localização de Origem</value>
+  <value column="PrintName" original="Location From Dimension">Dimensão de Localização de Origem</value>
+  <value column="Description" original="Include Location From as a cube dimension">Inclui Localização de Origem como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53827" trl="N">
-  <value column="Name" original="Location To  Dimension">Location To  Dimension</value>
-  <value column="PrintName" original="Location To Dimension">Location To Dimension</value>
-  <value column="Description" original="Include Location To as a cube dimension">Include Location To as a cube dimension</value>
+ <row id="53827" trl="Y">
+  <value column="Name" original="Location To  Dimension">Dimensão de Localização de Destino</value>
+  <value column="PrintName" original="Location To Dimension">Dimensão de Localização de Destino</value>
+  <value column="Description" original="Include Location To as a cube dimension">Inclui Localização de Destino como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53828" trl="N">
-  <value column="Name" original="Project Phase  Dimension">Project Phase  Dimension</value>
-  <value column="PrintName" original="Project Phase Dimension">Project Phase Dimension</value>
-  <value column="Description" original="Include Project Phase as a cube dimension">Include Project Phase as a cube dimension</value>
+ <row id="53828" trl="Y">
+  <value column="Name" original="Project Phase  Dimension">Dimensão de Fase de Projeto</value>
+  <value column="PrintName" original="Project Phase Dimension">Dimensão de Fase de Projeto</value>
+  <value column="Description" original="Include Project Phase as a cube dimension">Inclui Fase de Projeto como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53829" trl="N">
-  <value column="Name" original="Project Task  Dimension">Project Task  Dimension</value>
-  <value column="PrintName" original="Project Task Dimension">Project Task Dimension</value>
-  <value column="Description" original="Include Project Task as a cube dimension">Include Project Task as a cube dimension</value>
+ <row id="53829" trl="Y">
+  <value column="Name" original="Project Task  Dimension">Dimensão de Tarefa de Projeto</value>
+  <value column="PrintName" original="Project Task Dimension">Dimensão de Tarefa de Projeto</value>
+  <value column="Description" original="Include Project Task as a cube dimension">Inclui Tarefa de Projeto como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53830" trl="N">
-  <value column="Name" original="Project Dimension">Project Dimension</value>
-  <value column="PrintName" original="Project Dimension">Project Dimension</value>
-  <value column="Description" original="Include Project as a cube dimension">Include Project as a cube dimension</value>
+ <row id="53830" trl="Y">
+  <value column="Name" original="Project Dimension">Dimensão de Projeto</value>
+  <value column="PrintName" original="Project Dimension">Dimensão de Projeto</value>
+  <value column="Description" original="Include Project as a cube dimension">Inclui Projeto como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53831" trl="N">
-  <value column="Name" original="Sales Region Dimension">Sales Region Dimension</value>
-  <value column="PrintName" original="Sales Region Dimension">Sales Region Dimension</value>
-  <value column="Description" original="Include Sales Region as a cube dimension">Include Sales Region as a cube dimension</value>
+ <row id="53831" trl="Y">
+  <value column="Name" original="Sales Region Dimension">Dimensão de Região de Vendas</value>
+  <value column="PrintName" original="Sales Region Dimension">Dimensão de Região de Vendas</value>
+  <value column="Description" original="Include Sales Region as a cube dimension">Inclui Região de Vendas como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53832" trl="N">
-  <value column="Name" original="Sub Acct Dimension">Sub Acct Dimension</value>
-  <value column="PrintName" original="Sub Acct Dimension">Sub Acct Dimension</value>
-  <value column="Description" original="Include Sub Acct as a cube dimension">Include Sub Acct as a cube dimension</value>
+ <row id="53832" trl="Y">
+  <value column="Name" original="Sub Acct Dimension">Dimensão de Subconta</value>
+  <value column="PrintName" original="Sub Acct Dimension">Dimensão de Subconta</value>
+  <value column="Description" original="Include Sub Acct as a cube dimension">Inclui Subconta como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53833" trl="N">
-  <value column="Name" original="GL Budget Dimension">GL Budget Dimension</value>
-  <value column="PrintName" original="GL Budget Dimension">GL Budget Dimension</value>
-  <value column="Description" original="Include GL Budget as a cube dimension">Include GL Budget as a cube dimension</value>
+ <row id="53833" trl="Y">
+  <value column="Name" original="GL Budget Dimension">Dimensão de Orçamento</value>
+  <value column="PrintName" original="GL Budget Dimension">Dimensão de Orçamento</value>
+  <value column="Description" original="Include GL Budget as a cube dimension">Inclui Orçamento como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53834" trl="N">
-  <value column="Name" original="Product Dimension">Product Dimension</value>
-  <value column="PrintName" original="Product Dimension">Product Dimension</value>
-  <value column="Description" original="Include Product as a cube dimension">Include Product as a cube dimension</value>
+ <row id="53834" trl="Y">
+  <value column="Name" original="Product Dimension">Dimensão de Produto</value>
+  <value column="PrintName" original="Product Dimension">Dimensão de Produto</value>
+  <value column="Description" original="Include Product as a cube dimension">Inclui Produto como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53835" trl="N">
-  <value column="Name" original="User Element List 1 Dimension">User 1 Dimension</value>
-  <value column="PrintName" original="User Element List 1 Dimension">User 1 Dimension</value>
-  <value column="Description" original="Include User Element List 1 as a cube dimension">Include User 1 as a cube dimension</value>
+ <row id="53835" trl="Y">
+  <value column="Name" original="User Element List 1 Dimension">Dimensão de Lista do Usuário (1)</value>
+  <value column="PrintName" original="User Element List 1 Dimension">Dimensão de Lista do Usuário (1)</value>
+  <value column="Description" original="Include User Element List 1 as a cube dimension">Inclui Lista do Usuário (1) como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53836" trl="N">
-  <value column="Name" original="User Element List 2 Dimension">User 2 Dimension</value>
-  <value column="PrintName" original="User Element List 2 Dimension">User 2 Dimension</value>
-  <value column="Description" original="Include User Element List 2 as a cube dimension">Include User 2 as a cube dimension</value>
+ <row id="53836" trl="Y">
+  <value column="Name" original="User Element List 2 Dimension">Dimensão de Lista do Usuário (2)</value>
+  <value column="PrintName" original="User Element List 2 Dimension">Dimensão de Lista do Usuário (2)</value>
+  <value column="Description" original="Include User Element List 2 as a cube dimension">Inclui Lista do Usuário (2) como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53837" trl="N">
-  <value column="Name" original="Last Recalculated">Last Recalculated</value>
-  <value column="PrintName" original="Last Recalculated">Last Recalculated</value>
-  <value column="Description" original="The time last recalculated.">The time last recalculated.</value>
+ <row id="53837" trl="Y">
+  <value column="Name" original="Last Recalculated">Último Recálculo</value>
+  <value column="PrintName" original="Last Recalculated">Último Recálculo</value>
+  <value column="Description" original="The time last recalculated.">Quando ocorreu o último recálculo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -28933,20 +28933,20 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53897" trl="N">
-  <value column="Name" original="User Column 2 Dimension">User Element 2 Dimension</value>
-  <value column="PrintName" original="User Column 2 Dimension">User Element 2 Dimension</value>
-  <value column="Description" original="Include User Element 2 as a cube dimension">Include User Element 2 as a cube dimension</value>
+ <row id="53897" trl="Y">
+  <value column="Name" original="User Column 2 Dimension">Dimensão de Elemento do Usuário (2)</value>
+  <value column="PrintName" original="User Column 2 Dimension">Dimensão de Elemento do Usuário (2)</value>
+  <value column="Description" original="Include User Element 2 as a cube dimension">Inclui Elemento do Usuário (2) como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53898" trl="N">
-  <value column="Name" original="User Column 1 Dimension">User Element 1 Dimension</value>
-  <value column="PrintName" original="User Column 1 Dimension">User Element 1 Dimension</value>
-  <value column="Description" original="Include User Element 1 as a cube dimension">Include User Element 1 as a cube dimension</value>
+ <row id="53898" trl="Y">
+  <value column="Name" original="User Column 1 Dimension">Dimensão de Elemento do Usuário (1)</value>
+  <value column="PrintName" original="User Column 1 Dimension">Dimensão de Elemento do Usuário (1)</value>
+  <value column="Description" original="Include User Element 1 as a cube dimension">Inclui Elemento do Usuário (1) como dimensão do cubo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -29013,21 +29013,21 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54061" trl="N">
-  <value column="Name" original="Period Type">Period Type</value>
-  <value column="PrintName" original="Period Type">Period Type</value>
-  <value column="Description" original="PA Period Type">PA Period Type</value>
-  <value column="Help" original="The Period Type to report on: Period, Year, Total or Natural. Natural = Year for P &amp; L accounts, Total for Balance Sheet accounts."><![CDATA[The Period Type to report on: Period, Year, Total or Natural. Natural = Year for P & L accounts, Total for Balance Sheet accounts.]]></value>
+ <row id="54061" trl="Y">
+  <value column="Name" original="Period Type">Tipo de Período</value>
+  <value column="PrintName" original="Period Type">Tipo de Período</value>
+  <value column="Description" original="PA Period Type">Tipo de Período</value>
+  <value column="Help" original="The Period Type to report on: Period, Year, Total or Natural. Natural = Year for P &amp; L accounts, Total for Balance Sheet accounts.">Indica o tipo de período para apresentar nos relatórios: Período, Ano, Total ou Natural. Observe que Natural é igual a Ano para as contas de resultado, e Total para contas de balanço.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54062" trl="N">
-  <value column="Name" original="Amount Type">Amount Type</value>
-  <value column="PrintName" original="Amount Type">Amount Type</value>
-  <value column="Description" original="PA Amount Type for reporting">PA Amount Type for reporting</value>
-  <value column="Help" original="The amount type to report on: Quantity, Credit Only, Debit Only, Balance (expected sign) or Balance (accounted sign). &quot;Expected sign&quot; adjusts the sign of the result based on the Account Type and Expected Sign of each Account Element, whereas &quot;accounted sign&quot; always returns DR-CR.">The amount type to report on: Quantity, Credit Only, Debit Only, Balance (expected sign) or Balance (accounted sign). "Expected sign" adjusts the sign of the result based on the Account Type and Expected Sign of each Account Element, whereas "accounted sign" always returns DR-CR.</value>
+ <row id="54062" trl="Y">
+  <value column="Name" original="Amount Type">Tipo de Valor</value>
+  <value column="PrintName" original="Amount Type">Tipo de Valor</value>
+  <value column="Description" original="PA Amount Type for reporting">Tipo de valor, para relatórios</value>
+  <value column="Help" original="The amount type to report on: Quantity, Credit Only, Debit Only, Balance (expected sign) or Balance (accounted sign). &quot;Expected sign&quot; adjusts the sign of the result based on the Account Type and Expected Sign of each Account Element, whereas &quot;accounted sign&quot; always returns DR-CR.">Indica o tipo de valor para mostrar nos relatórios: Quantidade,  Somente Crédito, Somente Débito ou Saldo. O termo 'Sinal Esperado' ajusta o sinal do resultado baseando-se no Tipo de Conta e no Sinal da Conta (configurações disponíveis na tela Elemento Contábil). O termo 'Sinal Contabilizado' sempre retorna o sinal do lançamento contábil.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -29313,11 +29313,11 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54128" trl="N">
-  <value column="Name" original="Processed On">Processed On</value>
-  <value column="PrintName" original="Processed On">Processed On</value>
-  <value column="Description" original="The date+time (expressed in decimal format) when the document has been processed">The date+time (expressed in decimal format) when the document has been processed</value>
-  <value column="Help" original="The ProcessedOn Date+Time save the exact moment (nanoseconds precision if allowed by the DB) when a document has been processed.">The ProcessedOn Date+Time save the exact moment (nanoseconds precision if allowed by the DB) when a document has been processed.</value>
+ <row id="54128" trl="Y">
+  <value column="Name" original="Processed On">Data do Processamento</value>
+  <value column="PrintName" original="Processed On">Data do Processamento</value>
+  <value column="Description" original="The date+time (expressed in decimal format) when the document has been processed">A data e hora (em formato decimal) de quando o documento foi processado</value>
+  <value column="Help" original="The ProcessedOn Date+Time save the exact moment (nanoseconds precision if allowed by the DB) when a document has been processed.">Apresenta o exato momento (com precisão de nanosegundos se o banco de dados permitir) de quando o documento foi processado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -29425,10 +29425,10 @@ Produto: usado para adicionar produtos com facilidade ao pedido no PDV</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54150" trl="N">
-  <value column="Name" original="Prepare Split Document">Prepare Split Document</value>
-  <value column="PrintName" original="Prepare Split Doc">Prepare Split Doc</value>
-  <value column="Description" original="Prepare generated split shipment/receipt document">Prepare generated split shipment/receipt document</value>
+ <row id="54150" trl="Y">
+  <value column="Name" original="Prepare Split Document">Preparar o Documento da Diferença</value>
+  <value column="PrintName" original="Prepare Split Doc">Preparar o Documento da Diferença</value>
+  <value column="Description" original="Prepare generated split shipment/receipt document">Preparar o documento da diferença na remessa/recebimento</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -29925,9 +29925,9 @@ Produto: usado para adicionar produtos com facilidade ao pedido no PDV</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54213" trl="N">
-  <value column="Name" original="Expense (fiscal)">Expense (fiscal)</value>
-  <value column="PrintName" original="Expense (fiscal)">Expense (fiscal)</value>
+ <row id="54213" trl="Y">
+  <value column="Name" original="Expense (fiscal)">Despesa (Fiscal)</value>
+  <value column="PrintName" original="Expense (fiscal)">Despesa (Fiscal)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -38096,9 +38096,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200004" trl="N">
-  <value column="Name" original="Mandatory Charge or Product">Mandatory Charge or Product</value>
-  <value column="PrintName" original="Mandatory Charge or Product">Mandatory Charge or Product</value>
+ <row id="200004" trl="Y">
+  <value column="Name" original="Mandatory Charge or Product">Obrigatório um Produto ou Referência Contábil</value>
+  <value column="PrintName" original="Mandatory Charge or Product">Obrigatório um Produto ou Referência Contábil</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -38456,9 +38456,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200060" trl="N">
-  <value column="Name" original="Restart sequence every month">Restart sequence every month</value>
-  <value column="PrintName" original="Restart sequence every month">Restart sequence every month</value>
+ <row id="200060" trl="Y">
+  <value column="Name" original="Restart sequence every month">Reiniciar a Sequência Mensalmente</value>
+  <value column="PrintName" original="Restart sequence every month">Reiniciar a Sequência Mensalmente</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -38466,19 +38466,19 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200061" trl="N">
-  <value column="Name" original="Organization level">Organization level</value>
-  <value column="PrintName" original="Organization level">Organization level</value>
-  <value column="Description" original="This sequence can be defined for each organization">This sequence can be defined for each organization</value>
+ <row id="200061" trl="Y">
+  <value column="Name" original="Organization level">Nível de Organização</value>
+  <value column="PrintName" original="Organization level">Nível de Organização</value>
+  <value column="Description" original="This sequence can be defined for each organization">Esta sequência pode ser definida para cada organização</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200062" trl="N">
-  <value column="Name" original="YearMonth">YearMonth</value>
-  <value column="PrintName" original="YearMonth">YearMonth</value>
+ <row id="200062" trl="Y">
+  <value column="Name" original="YearMonth">Ano-Mês</value>
+  <value column="PrintName" original="YearMonth">Ano-Mês</value>
   <value column="Description" original="YYYYMM">YYYYMM</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -40506,9 +40506,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200322" trl="N">
-  <value column="Name" original="Charge for Freight">Charge for Freight</value>
-  <value column="PrintName" original="Charge for Freight">Charge for Freight</value>
+ <row id="200322" trl="Y">
+  <value column="Name" original="Charge for Freight">Referência Contábil para o Frete</value>
+  <value column="PrintName" original="Charge for Freight">Referência Contábil para o Frete</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -53976,30 +53976,30 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202293" trl="N">
-  <value column="Name" original="Include source accounts with no transaction">Include source accounts with no transaction</value>
-  <value column="PrintName" original="Include source accounts with no transaction">Include source accounts with no transaction</value>
-  <value column="Description" original="Include source accounts with no transaction for list report line sources">Include source accounts with no transaction for list report line sources</value>
-  <value column="Help" original="List the Source Accounts with or without transactions for Summary Accounts selected">List the Source Accounts with or without transactions for Summary Accounts selected</value>
+ <row id="202293" trl="Y">
+  <value column="Name" original="Include source accounts with no transaction">Incluir Contas de Origem sem Transação</value>
+  <value column="PrintName" original="Include source accounts with no transaction">Incluir Contas de Origem sem Transação</value>
+  <value column="Description" original="Include source accounts with no transaction for list report line sources">Incluir Contas de Origem sem Transação para as origens de linha de relatório</value>
+  <value column="Help" original="List the Source Accounts with or without transactions for Summary Accounts selected">Lista as Contas de Origem com ou sem transações para o Resumo de Contas selecionado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202294" trl="N">
-  <value column="Name" original="Operand 2 Line Name">Operand 2 Line Name</value>
-  <value column="PrintName" original="Operand 2 Line Name">Operand 2 Line Name</value>
-  <value column="Description" original="Name of the financial report line to take values from">Name of the financial report line to take values from</value>
+ <row id="202294" trl="Y">
+  <value column="Name" original="Operand 2 Line Name">Nome da Linha do Operando 2</value>
+  <value column="PrintName" original="Operand 2 Line Name">Nome da Linha do Operando 2</value>
+  <value column="Description" original="Name of the financial report line to take values from">Nome da linha do relatório financeiro para obter os valores</value>
   <value column="Help" original="When specify this identified the name of the financial report line to take values from for column Oper_2_ID. No validation at entry time, value will be zero if the name doesn't match any line.">When specify this identified the name of the financial report line to take values from for column Oper_2_ID. No validation at entry time, value will be zero if the name doesn't match any line.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202295" trl="N">
-  <value column="Name" original="Inverse Operation for Debit/Credit Only Column">Inverse Operation for Debit/Credit Only Column</value>
-  <value column="PrintName" original="Inverse Operation for Debit/Credit Only Column">Inverse Operation for Debit/Credit Only Column</value>
-  <value column="Description" original="Apply inverse operation to debit or credit only column">Apply inverse operation to debit or credit only column</value>
+ <row id="202295" trl="Y">
+  <value column="Name" original="Inverse Operation for Debit/Credit Only Column">Operação Inversa para Débito/Crédito</value>
+  <value column="PrintName" original="Inverse Operation for Debit/Credit Only Column">Operação Inversa para Débito/Crédito</value>
+  <value column="Description" original="Apply inverse operation to debit or credit only column">Aplicar a operação inversa para débito ou crédito</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -54076,11 +54076,11 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202506" trl="N">
-  <value column="Name" original="Inv Sub Type">Inv Sub Type</value>
-  <value column="PrintName" original="Inv Sub Type">Inv Sub Type</value>
-  <value column="Description" original="Inventory Sub Type">Inventory Sub Type</value>
-  <value column="Help" original="The Inventory Sub Type indicates the type of inventory this document refers to.  This field only appears when the Document Base Type is Material Physical Inventory.  The selection made here will determine which window must be used and which data in the lines is relevant for the document.  Internal Use inventory (based on Internal Used Quantity) or Physical Inventory (based on difference between Qty Counted vs Qty Book)">The Inventory Sub Type indicates the type of inventory this document refers to.  This field only appears when the Document Base Type is Material Physical Inventory.  The selection made here will determine which window must be used and which data in the lines is relevant for the document.  Internal Use inventory (based on Internal Used Quantity) or Physical Inventory (based on difference between Qty Counted vs Qty Book)</value>
+ <row id="202506" trl="Y">
+  <value column="Name" original="Inv Sub Type">Subtipo de Estoque Físico de Material</value>
+  <value column="PrintName" original="Inv Sub Type">Subtipo de Estoque Físico de Material</value>
+  <value column="Description" original="Inventory Sub Type">Subtipo de Estoque Físico de Material</value>
+  <value column="Help" original="The Inventory Sub Type indicates the type of inventory this document refers to.  This field only appears when the Document Base Type is Material Physical Inventory.  The selection made here will determine which window must be used and which data in the lines is relevant for the document.  Internal Use inventory (based on Internal Used Quantity) or Physical Inventory (based on difference between Qty Counted vs Qty Book)">O Subtipo de Estoque Físico de Material indica o tipo de estoque físico que este documento se refere. Este campo apenas aparece quando o Tipo de Documento Base selecionado for Estoque Físico de Material. A seleção feita aqui determina a janela a ser utilizada bem como as informações nas linhas que são relevantes ao documento. Estoque de Uso Interno (baseado na quantidade utilizada internamente) ou Estoque Físico (baseado na diferença entre a quantidade contada e a quantidade contábil)</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>

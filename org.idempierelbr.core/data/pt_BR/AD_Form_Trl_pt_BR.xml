@@ -28,9 +28,9 @@
   <value column="Help" original=""/>
  </row>
  <row id="105" trl="Y">
-  <value column="Name" original="Generate Charges">Gerar Despesas</value>
-  <value column="Description" original="Generate Charges from natural accounts">Gerar Despesas a partir das Contas Naturais</value>
-  <value column="Help" original="Use the upper portion to create new charges using the general charge accounts.  Use the lower portion to create charges based on the natural account.">Use a parte superior para criar novos débitos usando as contas de despesas gerais .  Use a parte inferior para criar débitos baseado nas contas naturais.</value>
+  <value column="Name" original="Generate Charges">Gerar Referências Contábeis</value>
+  <value column="Description" original="Generate Charges from natural accounts">Gerar Referências a partir das Contas Contábeis</value>
+  <value column="Help" original="Use the upper portion to create new charges using the general charge accounts.  Use the lower portion to create charges based on the natural account.">Utilize a parte superior da tela para criar novas contas no plano de contas juntamente com novas referências. Utilize a parte inferior para criar apenas as referência com base em contas já existentes.</value>
  </row>
  <row id="106" trl="Y">
   <value column="Name" original="Payment Print/Export">Imprimir/Exportar Pagamentos (de Seleção)</value>

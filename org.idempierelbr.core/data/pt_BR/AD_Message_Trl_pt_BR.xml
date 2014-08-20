@@ -287,11 +287,11 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="172" trl="Y">
-  <value column="MsgText" original="Charge created">Despesa criada</value>
+  <value column="MsgText" original="Charge created">Referência Contábil Criada</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="173" trl="Y">
-  <value column="MsgText" original="Create Charge from Account">Criar Despesa a partir da Conta</value>
+  <value column="MsgText" original="Create Charge from Account">Criar Referência a partir de uma Conta Contábil Existente</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="174" trl="Y">
@@ -299,11 +299,11 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="175" trl="Y">
-  <value column="MsgText" original="Create Account and Charge">Criar Conta e Débito</value>
+  <value column="MsgText" original="Create Account and Charge">Criar um nova Conta Contábil e sua Referência</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="176" trl="Y">
-  <value column="MsgText" original="Charge NOT created">Débito não criado</value>
+  <value column="MsgText" original="Charge NOT created">Referência Contábil NÃO Criada</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="177" trl="Y">
@@ -547,7 +547,7 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="237" trl="Y">
-  <value column="MsgText" original="Enter &amp;Query"><![CDATA[Introduzir &Pesquisa]]></value>
+  <value column="MsgText" original="Enter &amp;Query"><![CDATA[Inserir a &Pesquisa]]></value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="238" trl="Y">
@@ -703,7 +703,7 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="276" trl="Y">
-  <value column="MsgText" original="Enter Query criteria with optional % wildcard (case insensitive)">Introduzir critérios de Questionamento com o caracter coringa % opcional (insensível ao caso)</value>
+  <value column="MsgText" original="Enter Query criteria with optional % wildcard (case insensitive)">Introduzir critérios de pesquisa com o símbolo % opcional (não é case sensitive).</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="277" trl="Y">
@@ -1233,7 +1233,7 @@ Problema: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="408" trl="Y">
-  <value column="MsgText" original="Post now and create Accounting entries?">Lançar agora e criar os Registros Contábeis?</value>
+  <value column="MsgText" original="Post now and create Accounting entries?">Lançar agora e criar os registros contábeis?</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="409" trl="Y">
@@ -2017,7 +2017,7 @@ Detalhes: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="603" trl="Y">
-  <value column="MsgText" original="View Result">Ver Resultado</value>
+  <value column="MsgText" original="View Result">Visualizar o Resultado</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="604" trl="Y">
@@ -2309,7 +2309,7 @@ Detalhes: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="677" trl="Y">
-  <value column="MsgText" original="Charge cannot be selected, if there is an existing Product selection (either-or). A charge needs to have it's own line.">Se houver uma seleção de produto existente (ou-ou) as despesas não podem ser selecionadas. Uma despesa precisa ter sua própria linha.</value>
+  <value column="MsgText" original="Charge cannot be selected, if there is an existing Product selection (either-or). A charge needs to have it's own line.">Não é possível informar uma referência contábil se um produto já tiver sido infomado. Uma referência contábil deve estar numa linha própria.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="678" trl="Y">
@@ -5311,8 +5311,8 @@ Please contact administrator.</value>
   <value column="MsgText" original="UOM can't be changed if the product has movements or costs">UOM can't be changed if the product has movements or costs</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="53044" trl="N">
-  <value column="MsgText" original="Payment Allocate must not exists if the payment header has charge/invoice/order.">Payment Allocate must not exists if the payment header has charge/invoice/order.</value>
+ <row id="53044" trl="Y">
+  <value column="MsgText" original="Payment Allocate must not exists if the payment header has charge/invoice/order.">Alocação de Pagamento não deve existir se na aba Pagamento for informado uma referência contábil, uma fatura ou um pedido.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="53045" trl="N">
@@ -5599,8 +5599,8 @@ Please contact administrator.</value>
   <value column="MsgText" original="Route">Rota</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200003" trl="N">
-  <value column="MsgText" original="On this document is mandatory to fill the product or the charge">On this document is mandatory to fill the product or the charge</value>
+ <row id="200003" trl="Y">
+  <value column="MsgText" original="On this document is mandatory to fill the product or the charge">Neste documento é necessário informar um produto ou uma referência contábil</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200004" trl="N">
@@ -6211,8 +6211,8 @@ Please contact administrator.</value>
   <value column="MsgText" original="Inactive payment processor">Inactive payment processor</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200177" trl="N">
-  <value column="MsgText" original="Posting">Posting</value>
+ <row id="200177" trl="Y">
+  <value column="MsgText" original="Posting">Lançamento</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200178" trl="N">
@@ -6543,12 +6543,12 @@ Please contact administrator.</value>
   <value column="MsgText" original="The parent record (document) is already processed">The parent record (document) is already processed</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="523849" trl="N">
-  <value column="MsgText" original="Shipment/Receipt Line or product or charge should be entered">Shipment/Receipt Line or product or charge should be entered</value>
+ <row id="523849" trl="Y">
+  <value column="MsgText" original="Shipment/Receipt Line or product or charge should be entered">É necessário informar uma linha de remessa/recebimento, ou um produto, ou uma referência contábil</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="523850" trl="N">
-  <value column="MsgText" original="Either product or charge should be selected">Either product or charge should be selected</value>
+ <row id="523850" trl="Y">
+  <value column="MsgText" original="Either product or charge should be selected">É necessário informar um produto ou uma referência contábil.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="523851" trl="N">
