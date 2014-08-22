@@ -21,6 +21,7 @@ public class EventHandler extends AbstractEventHandler {
 		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MLBRBoleto.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MLBRBoletoDetails.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MInvoice.Table_Name);
+		registerTableEvent(IEventTopics.PO_BEFORE_DELETE, MLBRBoletoMovement.Table_Name);
 	}
 
 	@Override
@@ -94,6 +95,14 @@ public class EventHandler extends AbstractEventHandler {
 			MLBRBoletoDetails[] details = boleto.getDetails();
 			if (details.length >= 1)
 				addErrorMessage(event, "Limite de 1 registro por boleto");
+		}
+		
+		// Don't let delete movements with generated file
+		if (po instanceof MLBRBoletoMovement && event.getTopic().equals(IEventTopics.PO_BEFORE_DELETE)) {
+			MLBRBoletoMovement mov = (MLBRBoletoMovement)po;
+			
+			if (mov.getLBR_FileGeneratingDate() != null)
+				addErrorMessage(event, "Não é possível excluir movimento anteriormente salvo em arquivo");
 		}
 	}
 }

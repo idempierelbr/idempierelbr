@@ -1088,4 +1088,29 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Description" original="Identifies the (ship to) address for this Business Partner">Identifica a localização do sacado</value>
   <value column="Help" original="The Partner address indicates the location of a Business Partner">A localização (endereço de pagamento a terceiros e cobrança) do sacado</value>
  </row>
+ <row trl="Y" uuid="cbe93897-564c-4d5e-af7b-e9bb9a374af6">
+  <value column="Name" original="Grand Total">Valor do Título</value>
+  <value column="Description" original="Total amount of document">Valor do Título</value>
+  <value column="Help" original="The Grand Total displays the total amount including Tax and Freight in document currency">Indica o valor do título</value>
+ </row>
+ <row trl="Y" uuid="304599f9-d790-4967-bdec-230f4a95783b">
+  <value column="Name" original="Fee Amount">Valor da Tarifa / Custas</value>
+  <value column="Description" original="Fee amount in invoice currency"/>
+  <value column="Help" original="The Fee Amount indicates the charge amount on a dunning letter for overdue invoices.  This field will only display if the charge fee checkbox has been selected.">Indica o valor da tarifa cobrada pelo serviço prestado pelo Banco Cedente referente ao título, expresso em moeda corrente.</value>
+ </row>
+ <row trl="Y" uuid="1a6b9da2-e965-41f9-adae-56fde8191393">
+  <value column="Name" original="Interest Amount">Valor dos Acréscimos</value>
+  <value column="Description" original="Interest Amount">Valor dos Juros / Multa / Encargos</value>
+  <value column="Help" original="The Interest Amount indicates any interest charged or received on a Bank Statement.">Indica o valor dos acréscimos efetuados no título de cobrança, expresso em moeda corrente.</value>
+ </row>
+ <row trl="Y" uuid="c254ad23-9d14-463b-85a0-9053500a9ad4">
+  <value column="Name" original="Payment amount">Valor Pago</value>
+  <value column="Description" original="Amount being paid">Valor que está sendo pago</value>
+  <value column="Help" original="Indicates the amount this payment is for.  The payment amount can be for single or multiple invoices or a partial payment for an invoice.">Indica o valor deste pagamento.  O "Valor do Pagamento" pode ser para uma única ou para múltiplas faturas ou ainda um pagamento parcial de uma fatura.</value>
+ </row>
+ <row trl="Y" uuid="51e23eab-45d1-4571-b5f8-9e6db931165c">
+  <value column="Name" original="Available Amount">Valor Líquido</value>
+  <value column="Description" original="Amount available for allocation for this document">Valor líquido a ser creditado</value>
+  <value column="Help" original="">Valor efetivo a ser creditado referente ao título, expresso em moeda corrente.</value>
+ </row>
 </idempiereTrl>

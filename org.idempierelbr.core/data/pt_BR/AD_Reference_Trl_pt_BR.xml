@@ -2947,4 +2947,14 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="N" uuid="78dc98a8-5335-4c87-867f-2bb343f51cf3">
+  <value column="Name" original="LBR_CNAB240MovementType">LBR_CNAB240MovementType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="981f7b38-1b6a-481d-b3c2-d1806d65652e">
+  <value column="Name" original="LBR_Cob_Ocorrencia">LBR_Cob_Ocorrencia</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>

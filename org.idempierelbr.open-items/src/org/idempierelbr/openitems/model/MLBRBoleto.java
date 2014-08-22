@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.adempiere.exceptions.DBException;
 import org.compiere.model.MBPartner;
 import org.compiere.model.MBankAccount;
 import org.compiere.model.MDocType;
@@ -17,6 +18,7 @@ import org.compiere.model.MLocation;
 import org.compiere.model.MPayment;
 import org.compiere.model.MPeriod;
 import org.compiere.model.MSequence;
+import org.compiere.model.MSysConfig;
 import org.compiere.model.MTable;
 import org.compiere.model.ModelValidationEngine;
 import org.compiere.model.ModelValidator;
@@ -24,6 +26,7 @@ import org.compiere.model.Query;
 import org.compiere.process.DocAction;
 import org.compiere.process.DocOptions;
 import org.compiere.process.DocumentEngine;
+import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.compiere.util.Msg;
 import org.idempierelbr.core.util.TextUtil;
@@ -242,6 +245,19 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 				setLBR_NumberInBank(MSequence.getDocumentNoFromSeq(seq, get_TrxName(), this));			
 			}
 		}
+		
+		// Generate movement
+		int LBR_Cob_Movimento_ID = MSysConfig.getIntValue("LBR_BOLETO_MOVIMENTO_ID_ON_COMPLETE", 1000000, getAD_Client_ID(), getAD_Org_ID());
+		
+		if (LBR_Cob_Movimento_ID > 0 && getMovements().length == 0) {
+			MLBRBoletoMovement mov = new MLBRBoletoMovement(getCtx(), 0, get_TrxName());
+			mov.setAD_Org_ID(getAD_Org_ID());
+			mov.setLBR_Boleto_ID(get_ID());
+			mov.setSeqNo(10);
+			mov.setLBR_CNAB240MovementType(MLBRCobMovimento.LBR_CNAB240MOVEMENTTYPE_1_RemessaCliente_GtBanco);
+			mov.setLBR_Cob_Movimento_ID(LBR_Cob_Movimento_ID);
+			mov.saveEx();
+		}
 
 		m_processMsg = ModelValidationEngine.get().fireDocValidate(this, ModelValidator.TIMING_AFTER_COMPLETE);
 		if (m_processMsg != null)
@@ -252,6 +268,19 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 
 		setDocAction(DOCACTION_Close);
 		return DocAction.STATUS_Completed;	
+	}
+	
+	/**
+	 *  Get Movements
+	 *  @return MLBRBoletoMovement[] movements
+	 */
+	public MLBRBoletoMovement[] getMovements() {
+		MTable table = MTable.get (getCtx(), MLBRBoletoMovement.Table_Name);
+		Query query =  new Query(getCtx(), table, "LBR_Boleto_ID=?", get_TrxName());
+		query.setParameters(new Object[]{getLBR_Boleto_ID()});
+	
+		List<MLBRBoletoMovement> list = query.list();
+	 	return list.toArray(new MLBRBoletoMovement[list.size()]);
 	}
 
 	/**
@@ -341,6 +370,14 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 		if (getPayments().length > 0)
 			return true;
 		
+		// Check if there is any movement
+		MLBRBoletoMovement[] movs = getMovements();
+		
+		for (MLBRBoletoMovement mov : movs) {
+			if (mov.getLBR_FileGeneratingDate() != null)
+				return true;
+		}
+		
 		return false;
 	}
 	
@@ -405,6 +442,9 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 			return false;	
 		}
 		
+		// Delete any movement
+		deleteMovements();
+		
 		// After reActivate
 		m_processMsg = ModelValidationEngine.get().fireDocValidate(this, ModelValidator.TIMING_AFTER_REACTIVATE);
 		if (m_processMsg != null)
@@ -413,6 +453,13 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 		setDocAction(DOCACTION_Complete);
 		setProcessed(false);
 		return true;	
+	}
+	
+	private int deleteMovements() throws DBException
+	{
+		final String sql = "DELETE LBR_BoletoMovement WHERE LBR_Boleto_ID=?";
+		int no = DB.executeUpdateEx(sql, new Object[]{get_ID()}, get_TrxName());
+		return no;
 	}
 
 	@Override

@@ -2180,8 +2180,18 @@ MRP - 110	 No exists Dem</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="59d90b71-f14f-4c6d-bcbb-0dfb5f92c848">
-  <value column="Name" original="Brazilian Bank Collection (LBR)">Boleto</value>
-  <value column="Description" original="Brazilian Bank Collection (Boleto) Entry">Manutenção de Boletos</value>
+  <value column="Name" original="Brazilian Bank Collection (LBR)">Boleto Bancário</value>
+  <value column="Description" original="Brazilian Bank Collection (Boleto) Entry">Manutenção de Boletos Bancários</value>
   <value column="Help" original="The Brazilian Bank Collection (Boleto) Window allows you to display and enter collections.">A tela permite inserir e manter boletos bancários.</value>
+ </row>
+ <row trl="Y" uuid="3a96da18-f266-4f2c-8b5b-e1c7ea765afc">
+  <value column="Name" original="Collection Occurrences Group">Grupo de Ocorrências</value>
+  <value column="Description" original="Maintain groups for occurrences">Manutenção de Grupos de Ocorrências de Cobrança</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="66c3aecb-f0aa-49d7-85d2-856b5bf488a1">
+  <value column="Name" original="Collection Movement">Código de Movimento</value>
+  <value column="Description" original="Maintain movement codes">Manutenção de Códigos de Movimento</value>
+  <value column="Help" original=""/>
  </row>
 </idempiereTrl>

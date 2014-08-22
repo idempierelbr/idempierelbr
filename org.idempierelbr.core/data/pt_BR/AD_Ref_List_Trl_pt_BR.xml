@@ -8450,4 +8450,12 @@
   <value column="Name" original="Bank Collection">Boleto Bancário</value>
   <value column="Description" original=""/>
  </row>
+ <row trl="Y" uuid="19e3a88c-b345-4785-befc-b34caabee7f3">
+  <value column="Name" original="1 - Remessa (Cliente -&gt; Banco)"><![CDATA[1 - Remessa (Cliente -> Banco)]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="3946bcef-d2ee-4837-bfd6-e3cd66129d66">
+  <value column="Name" original="2 - Retorno (Banco -&gt; Cliente)"><![CDATA[2 - Retorno (Banco -> Cliente)]]></value>
+  <value column="Description" original=""/>
+ </row>
 </idempiereTrl>

@@ -28,6 +28,14 @@ public class ModelFactory implements IModelFactory {
 			return MLBRBoletoDetails.class;
 		else if (tableName.equals(MLBRBoletoStaticData.Table_Name)) // Model MLBRBoletoStaticData
 			return MLBRBoletoStaticData.class;
+		else if (tableName.equals(MLBRCobGrupoOcorrencia.Table_Name)) // Model MLBRCobGrupoOcorrencia
+			return MLBRCobGrupoOcorrencia.class;
+		else if (tableName.equals(MLBRCobOcorrencia.Table_Name)) // Model MLBRCobOcorrencia
+			return MLBRCobOcorrencia.class;
+		else if (tableName.equals(MLBRCobMovimento.Table_Name)) // Model MLBRCobMovimento
+			return MLBRCobMovimento.class;
+		else if (tableName.equals(MLBRBoletoMovement.Table_Name)) // Model MLBRBoletoMovement
+			return MLBRBoletoMovement.class;
 		
 		return null;
 	}
@@ -46,6 +54,14 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRBoletoDetails(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRBoletoStaticData.Table_Name)) // Model MLBRBoletoStaticData
 			return new MLBRBoletoStaticData(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRCobGrupoOcorrencia.Table_Name)) // Model MLBRCobGrupoOcorrencia
+			return new MLBRCobGrupoOcorrencia(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRCobOcorrencia.Table_Name)) // Model MLBRCobOcorrencia
+			return new MLBRCobOcorrencia(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRCobMovimento.Table_Name)) // Model MLBRCobMovimento
+			return new MLBRCobMovimento(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRBoletoMovement.Table_Name)) // Model MLBRBoletoMovement
+			return new MLBRBoletoMovement(Env.getCtx(), Record_ID, trxName);
 		
 		return null;
 	}
@@ -64,6 +80,14 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRBoletoDetails(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRBoletoStaticData.Table_Name)) // MLBRBoletoStaticData
 			return new MLBRBoletoStaticData(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRCobGrupoOcorrencia.Table_Name)) // MLBRCobGrupoOcorrencia
+			return new MLBRCobGrupoOcorrencia(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRCobOcorrencia.Table_Name)) // MLBRCobOcorrencia
+			return new MLBRCobOcorrencia(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRCobMovimento.Table_Name)) // MLBRCobMovimento
+			return new MLBRCobMovimento(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRBoletoMovement.Table_Name)) // MLBRBoletoMovement
+			return new MLBRBoletoMovement(Env.getCtx(), rs, trxName);
 		
 		return null;
 	}

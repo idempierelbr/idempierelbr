@@ -315,7 +315,7 @@
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="7f120301-866b-498f-a699-932faba2224b">
-  <value column="Name" original="Bank Collections">Boletos</value>
+  <value column="Name" original="Bank Collections">Boletos Bancários</value>
   <value column="Description" original=""/>
  </row>
 </idempiereTrl>

@@ -6918,4 +6918,28 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row trl="Y" uuid="8db94921-899a-4e28-9516-e6e87a644c82">
+  <value column="Name" original="Group">Grupo</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain groups for occurrences">Manutenção de Grupos de Ocorrências de Cobrança</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="76f1a42e-a9ce-43d0-83cc-8a7722d8e0aa">
+  <value column="Name" original="Occurrences">Ocorrências</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain occurrences">Manutenção de Motivos de Ocorrências</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="e8d4dc11-9ad6-4796-b553-e0ddaadda65f">
+  <value column="Name" original="Movement">Movimento</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Maintain movement codes">Manutenção de Códigos de Movimento</value>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="695a9aa3-a33a-4bce-97e2-5dc5a8c9f16a">
+  <value column="Name" original="Movements">Movimentos</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Boleto Movements">Movimentos do Boleto</value>
+  <value column="Help" original=""/>
+ </row>
 </idempiereTrl>
