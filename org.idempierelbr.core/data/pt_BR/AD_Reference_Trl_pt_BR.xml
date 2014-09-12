@@ -28,17 +28,17 @@
   <value column="Help" original=""/>
  </row>
  <row id="10" trl="Y">
-  <value column="Name" original="String">Texto</value>
-  <value column="Description" original="Character String">Texto de caracteres alfa-numéricos</value>
+  <value column="Name" original="String">String</value>
+  <value column="Description" original="Character String">String de Caracteres</value>
   <value column="Help" original=""/>
  </row>
  <row id="11" trl="Y">
-  <value column="Name" original="Integer">Inteiro</value>
-  <value column="Description" original="10 Digit numeric">10 Dígitos numérico</value>
+  <value column="Name" original="Integer">Inteiro (Integer)</value>
+  <value column="Description" original="10 Digit numeric">Número de até 10 dígitos</value>
   <value column="Help" original=""/>
  </row>
  <row id="12" trl="Y">
-  <value column="Name" original="Amount">Valor</value>
+  <value column="Name" original="Amount">Valor (Montante)</value>
   <value column="Description" original="Number with 4 decimals">Número com 4 casas decimais</value>
   <value column="Help" original=""/>
  </row>
@@ -48,8 +48,8 @@
   <value column="Help" original=""/>
  </row>
  <row id="14" trl="Y">
-  <value column="Name" original="Text">Texto</value>
-  <value column="Description" original="Character String up to 2000 characters">Texto alfa-numérico com até 2000 caracteres</value>
+  <value column="Name" original="Text">Texto (Text)</value>
+  <value column="Description" original="Character String up to 2000 characters">Texto com até 2000 caracteres</value>
   <value column="Help" original=""/>
  </row>
  <row id="15" trl="Y">
@@ -58,8 +58,8 @@
   <value column="Help" original=""/>
  </row>
  <row id="16" trl="Y">
-  <value column="Name" original="Date+Time">Data+Hora</value>
-  <value column="Description" original="Date with time">Data e hora</value>
+  <value column="Name" original="Date+Time">Data e Hora</value>
+  <value column="Description" original="Date with time">Data e Hora</value>
   <value column="Help" original=""/>
  </row>
  <row id="17" trl="Y">
@@ -78,7 +78,7 @@
   <value column="Help" original=""/>
  </row>
  <row id="20" trl="Y">
-  <value column="Name" original="Yes-No">Sim-Não</value>
+  <value column="Name" original="Yes-No">Sim / Não</value>
   <value column="Description" original="CheckBox">Caixa de Verificação</value>
   <value column="Help" original=""/>
  </row>
@@ -88,7 +88,7 @@
   <value column="Help" original=""/>
  </row>
  <row id="22" trl="Y">
-  <value column="Name" original="Number">Número</value>
+  <value column="Name" original="Number">Número (Number)</value>
   <value column="Description" original="Float Number">Ponto Flutuante</value>
   <value column="Help" original=""/>
  </row>
@@ -103,7 +103,7 @@
   <value column="Help" original=""/>
  </row>
  <row id="25" trl="Y">
-  <value column="Name" original="Account">Conta</value>
+  <value column="Name" original="Account">Conta Contábil</value>
   <value column="Description" original="Account Element">Elemento de Contas</value>
   <value column="Help" original=""/>
  </row>
@@ -128,18 +128,18 @@
   <value column="Help" original=""/>
  </row>
  <row id="30" trl="Y">
-  <value column="Name" original="Search">Procurar</value>
-  <value column="Description" original="Search Field">Campo de Pesquisa</value>
+  <value column="Name" original="Search">Pesquisa</value>
+  <value column="Description" original="Search Field">Campo de Busca/Pesquisa</value>
   <value column="Help" original=""/>
  </row>
  <row id="31" trl="Y">
-  <value column="Name" original="Locator (WH)">Locator (Armazém)</value>
-  <value column="Description" original="Warehouse Locator Data type">Tipo de Dados do Localizador do Armazém</value>
+  <value column="Name" original="Locator (WH)">Localizador (Armazém)</value>
+  <value column="Description" original="Warehouse Locator Data type">Tipo de Dados de Localizador do Armazém</value>
   <value column="Help" original=""/>
  </row>
  <row id="32" trl="Y">
   <value column="Name" original="Image">Imagem</value>
-  <value column="Description" original="Binary Image Data">Dados de Imagem Binária</value>
+  <value column="Description" original="Binary Image Data">Dados Binários de Imagem</value>
   <value column="Help" original=""/>
  </row>
  <row id="33" trl="Y">
@@ -148,8 +148,8 @@
   <value column="Help" original=""/>
  </row>
  <row id="34" trl="Y">
-  <value column="Name" original="Memo">Memorando</value>
-  <value column="Description" original="Large Text Editor - Character String up to 2000 characters">Editor de Textos Grandes - Até 2000 caracteres alfa-numéricos</value>
+  <value column="Name" original="Memo">Memo</value>
+  <value column="Description" original="Large Text Editor - Character String up to 2000 characters">Textos longos - Até 2000 caracteres</value>
   <value column="Help" original=""/>
  </row>
  <row id="35" trl="Y">
@@ -158,23 +158,23 @@
   <value column="Help" original=""/>
  </row>
  <row id="36" trl="Y">
-  <value column="Name" original="Text Long">Texto Longo</value>
-  <value column="Description" original="Text (Long) - Text &gt; 2000 characters"><![CDATA[Texto (Longo) - Texto > 2000 caracteres]]></value>
+  <value column="Name" original="Text Long">Texto Longo (Text Long)</value>
+  <value column="Description" original="Text (Long) - Text &gt; 2000 characters">Texto longo, mais de 2000 caracteres</value>
   <value column="Help" original=""/>
  </row>
  <row id="37" trl="Y">
-  <value column="Name" original="Costs+Prices">Custos+Preços</value>
-  <value column="Description" original="Costs + Prices (minimum currency precision but if exists more)">Custos + Preços (mínima precisão de moeda, apenas se existir mais)</value>
+  <value column="Name" original="Costs+Prices">Custo / Preço</value>
+  <value column="Description" original="Costs + Prices (minimum currency precision but if exists more)">Custo / Preço (utilizando precisão de moeda)</value>
   <value column="Help" original=""/>
  </row>
  <row id="38" trl="Y">
-  <value column="Name" original="FilePath">FilePath</value>
-  <value column="Description" original="Local File Path">Local File Path</value>
+  <value column="Name" original="FilePath">Caminho de Arquivo (Path)</value>
+  <value column="Description" original="Local File Path">Caminho de arquivo local</value>
   <value column="Help" original=""/>
  </row>
  <row id="39" trl="Y">
-  <value column="Name" original="FileName">FileName</value>
-  <value column="Description" original="Local File">Local File</value>
+  <value column="Name" original="FileName">Nome de Arquivo</value>
+  <value column="Description" original="Local File">Arquivo local</value>
   <value column="Help" original=""/>
  </row>
  <row id="40" trl="Y">
@@ -183,7 +183,7 @@
   <value column="Help" original=""/>
  </row>
  <row id="42" trl="Y">
-  <value column="Name" original="Printer Name">Nome da Impressora</value>
+  <value column="Name" original="Printer Name">Nome de Impressora</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2172,10 +2172,10 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53370" trl="N">
-  <value column="Name" original="Chart">Chart</value>
-  <value column="Description" original="Chart">Chart</value>
-  <value column="Help" original="A chart provides a graphical display of information.">A chart provides a graphical display of information.</value>
+ <row id="53370" trl="Y">
+  <value column="Name" original="Chart">Gráfico de Dados</value>
+  <value column="Description" original="Chart">Gráfico de Dados</value>
+  <value column="Help" original="A chart provides a graphical display of information.">Permite exibir dados em formato gráfico.</value>
  </row>
  <row id="53371" trl="N">
   <value column="Name" original="Reconciliation Type">Reconciliation Type</value>
@@ -2287,9 +2287,9 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200012" trl="N">
-  <value column="Name" original="Payment">Payment</value>
-  <value column="Description" original="Payment Rule list and Process Payment button">Payment Rule list and Process Payment button</value>
+ <row id="200012" trl="Y">
+  <value column="Name" original="Payment">Pagamento</value>
+  <value column="Description" original="Payment Rule list and Process Payment button">Lista de Regras de Pagamento e Botão de Processar o Pagamento</value>
   <value column="Help" original=""/>
  </row>
  <row id="200014" trl="N">
@@ -2587,9 +2587,9 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row trl="N" uuid="3c69aac5-12e9-4577-9735-2c8c41e3cab6">
-  <value column="Name" original="Brazilian Taxes">Brazilian Taxes</value>
-  <value column="Description" original="Brazilian Taxes">Brazilian Taxes</value>
+ <row trl="Y" uuid="3c69aac5-12e9-4577-9735-2c8c41e3cab6">
+  <value column="Name" original="Brazilian Taxes">Impostos Brasileiros (Transação)</value>
+  <value column="Description" original="Brazilian Taxes">Impostos Brasileiros (Transação)</value>
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="8ec2c866-a1d6-4139-94ff-98087a5331ab">
@@ -2954,6 +2954,11 @@
  </row>
  <row trl="N" uuid="981f7b38-1b6a-481d-b3c2-d1806d65652e">
   <value column="Name" original="LBR_Cob_Ocorrencia">LBR_Cob_Ocorrencia</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="1de643e1-1ca2-46ee-ab5d-1a187f66fc47">
+  <value column="Name" original="LBR_Cob_Movimento">LBR_Cob_Movimento</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

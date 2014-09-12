@@ -253,6 +253,123 @@ public interface I_LBR_BoletoMovement
 	/** Get CNAB 240 Sequence No.	  */
 	public int getLBR_CNAB240SeqNo();
 
+    /** Column name LBR_CNABDiscount1AP */
+    public static final String COLUMNNAME_LBR_CNABDiscount1AP = "LBR_CNABDiscount1AP";
+
+	/** Set Discount 1 Amount/%.
+	  * Discount 1 Amount / Percentage used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount1AP (BigDecimal LBR_CNABDiscount1AP);
+
+	/** Get Discount 1 Amount/%.
+	  * Discount 1 Amount / Percentage used for CNAB 240
+	  */
+	public BigDecimal getLBR_CNABDiscount1AP();
+
+    /** Column name LBR_CNABDiscount1Code */
+    public static final String COLUMNNAME_LBR_CNABDiscount1Code = "LBR_CNABDiscount1Code";
+
+	/** Set Discount 1 Code.
+	  * Discount 1 Code used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount1Code (String LBR_CNABDiscount1Code);
+
+	/** Get Discount 1 Code.
+	  * Discount 1 Code used for CNAB 240
+	  */
+	public String getLBR_CNABDiscount1Code();
+
+    /** Column name LBR_CNABDiscount1Date */
+    public static final String COLUMNNAME_LBR_CNABDiscount1Date = "LBR_CNABDiscount1Date";
+
+	/** Set Discount 1 Date.
+	  * Discount 1 Date used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount1Date (Timestamp LBR_CNABDiscount1Date);
+
+	/** Get Discount 1 Date.
+	  * Discount 1 Date used for CNAB 240
+	  */
+	public Timestamp getLBR_CNABDiscount1Date();
+
+    /** Column name LBR_CNABDiscount2AP */
+    public static final String COLUMNNAME_LBR_CNABDiscount2AP = "LBR_CNABDiscount2AP";
+
+	/** Set Discount 2 Amount/%.
+	  * Discount 2 Amount / Percentage used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount2AP (BigDecimal LBR_CNABDiscount2AP);
+
+	/** Get Discount 2 Amount/%.
+	  * Discount 2 Amount / Percentage used for CNAB 240
+	  */
+	public BigDecimal getLBR_CNABDiscount2AP();
+
+    /** Column name LBR_CNABDiscount2Code */
+    public static final String COLUMNNAME_LBR_CNABDiscount2Code = "LBR_CNABDiscount2Code";
+
+	/** Set Discount 2 Code.
+	  * Discount 2 Code used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount2Code (String LBR_CNABDiscount2Code);
+
+	/** Get Discount 2 Code.
+	  * Discount 2 Code used for CNAB 240
+	  */
+	public String getLBR_CNABDiscount2Code();
+
+    /** Column name LBR_CNABDiscount2Date */
+    public static final String COLUMNNAME_LBR_CNABDiscount2Date = "LBR_CNABDiscount2Date";
+
+	/** Set Discount 2 Date.
+	  * Discount 2 Date used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount2Date (Timestamp LBR_CNABDiscount2Date);
+
+	/** Get Discount 2 Date.
+	  * Discount 2 Date used for CNAB 240
+	  */
+	public Timestamp getLBR_CNABDiscount2Date();
+
+    /** Column name LBR_CNABDiscount3AP */
+    public static final String COLUMNNAME_LBR_CNABDiscount3AP = "LBR_CNABDiscount3AP";
+
+	/** Set Discount 3 Amount/%.
+	  * Discount 3 Amount / Percentage used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount3AP (BigDecimal LBR_CNABDiscount3AP);
+
+	/** Get Discount 3 Amount/%.
+	  * Discount 3 Amount / Percentage used for CNAB 240
+	  */
+	public BigDecimal getLBR_CNABDiscount3AP();
+
+    /** Column name LBR_CNABDiscount3Code */
+    public static final String COLUMNNAME_LBR_CNABDiscount3Code = "LBR_CNABDiscount3Code";
+
+	/** Set Discount 3 Code.
+	  * Discount 3 Code used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount3Code (String LBR_CNABDiscount3Code);
+
+	/** Get Discount 3 Code.
+	  * Discount 3 Code used for CNAB 240
+	  */
+	public String getLBR_CNABDiscount3Code();
+
+    /** Column name LBR_CNABDiscount3Date */
+    public static final String COLUMNNAME_LBR_CNABDiscount3Date = "LBR_CNABDiscount3Date";
+
+	/** Set Discount 3 Date.
+	  * Discount 3 Date used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount3Date (Timestamp LBR_CNABDiscount3Date);
+
+	/** Get Discount 3 Date.
+	  * Discount 3 Date used for CNAB 240
+	  */
+	public Timestamp getLBR_CNABDiscount3Date();
+
     /** Column name LBR_Cob_Movimento_ID */
     public static final String COLUMNNAME_LBR_Cob_Movimento_ID = "LBR_Cob_Movimento_ID";
 
@@ -404,6 +521,33 @@ public interface I_LBR_BoletoMovement
 	/** Get File Generating Date	  */
 	public Timestamp getLBR_FileGeneratingDate();
 
+    /** Column name LBR_InterestAP */
+    public static final String COLUMNNAME_LBR_InterestAP = "LBR_InterestAP";
+
+	/** Set Interest Amount/Percentage	  */
+	public void setLBR_InterestAP (BigDecimal LBR_InterestAP);
+
+	/** Get Interest Amount/Percentage	  */
+	public BigDecimal getLBR_InterestAP();
+
+    /** Column name LBR_InterestCode */
+    public static final String COLUMNNAME_LBR_InterestCode = "LBR_InterestCode";
+
+	/** Set Late Payment Interest Code	  */
+	public void setLBR_InterestCode (String LBR_InterestCode);
+
+	/** Get Late Payment Interest Code	  */
+	public String getLBR_InterestCode();
+
+    /** Column name LBR_InterestDate */
+    public static final String COLUMNNAME_LBR_InterestDate = "LBR_InterestDate";
+
+	/** Set Interest Date	  */
+	public void setLBR_InterestDate (Timestamp LBR_InterestDate);
+
+	/** Get Interest Date	  */
+	public Timestamp getLBR_InterestDate();
+
     /** Column name LBR_IOFAmt */
     public static final String COLUMNNAME_LBR_IOFAmt = "LBR_IOFAmt";
 
@@ -416,6 +560,33 @@ public interface I_LBR_BoletoMovement
 	  * Defines the IOF Amount
 	  */
 	public BigDecimal getLBR_IOFAmt();
+
+    /** Column name LBR_LatePaymentPenaltyAP */
+    public static final String COLUMNNAME_LBR_LatePaymentPenaltyAP = "LBR_LatePaymentPenaltyAP";
+
+	/** Set Late Payment Penaulty Amount/Percentage	  */
+	public void setLBR_LatePaymentPenaltyAP (BigDecimal LBR_LatePaymentPenaltyAP);
+
+	/** Get Late Payment Penaulty Amount/Percentage	  */
+	public BigDecimal getLBR_LatePaymentPenaltyAP();
+
+    /** Column name LBR_LatePaymentPenaltyCode */
+    public static final String COLUMNNAME_LBR_LatePaymentPenaltyCode = "LBR_LatePaymentPenaltyCode";
+
+	/** Set Late Payment Penaulty Code	  */
+	public void setLBR_LatePaymentPenaltyCode (String LBR_LatePaymentPenaltyCode);
+
+	/** Get Late Payment Penaulty Code	  */
+	public String getLBR_LatePaymentPenaltyCode();
+
+    /** Column name LBR_LatePaymentPenaltyDate */
+    public static final String COLUMNNAME_LBR_LatePaymentPenaltyDate = "LBR_LatePaymentPenaltyDate";
+
+	/** Set Late Payment Penaulty Date	  */
+	public void setLBR_LatePaymentPenaltyDate (Timestamp LBR_LatePaymentPenaltyDate);
+
+	/** Get Late Payment Penaulty Date	  */
+	public Timestamp getLBR_LatePaymentPenaltyDate();
 
     /** Column name LBR_LoanContractNo */
     public static final String COLUMNNAME_LBR_LoanContractNo = "LBR_LoanContractNo";

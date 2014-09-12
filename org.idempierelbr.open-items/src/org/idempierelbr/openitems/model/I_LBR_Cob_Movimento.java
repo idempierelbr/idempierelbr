@@ -64,6 +64,21 @@ public interface I_LBR_Cob_Movimento
 	  */
 	public int getAD_Org_ID();
 
+    /** Column name C_Bank_ID */
+    public static final String COLUMNNAME_C_Bank_ID = "C_Bank_ID";
+
+	/** Set Bank.
+	  * Bank
+	  */
+	public void setC_Bank_ID (int C_Bank_ID);
+
+	/** Get Bank.
+	  * Bank
+	  */
+	public int getC_Bank_ID();
+
+	public org.compiere.model.I_C_Bank getC_Bank() throws RuntimeException;
+
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
 
@@ -143,6 +158,17 @@ public interface I_LBR_Cob_Movimento
 
 	/** Get Collection Movement	  */
 	public String getLBR_Cob_Movimento_UU();
+
+    /** Column name LBR_ParentCob_Movimento_ID */
+    public static final String COLUMNNAME_LBR_ParentCob_Movimento_ID = "LBR_ParentCob_Movimento_ID";
+
+	/** Set Parent Collection Movement	  */
+	public void setLBR_ParentCob_Movimento_ID (int LBR_ParentCob_Movimento_ID);
+
+	/** Get Parent Collection Movement	  */
+	public int getLBR_ParentCob_Movimento_ID();
+
+	public I_LBR_Cob_Movimento getLBR_ParentCob_Movimento() throws RuntimeException;
 
     /** Column name Name */
     public static final String COLUMNNAME_Name = "Name";

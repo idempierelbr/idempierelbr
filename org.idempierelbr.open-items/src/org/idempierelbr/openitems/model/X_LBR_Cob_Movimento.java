@@ -30,7 +30,7 @@ public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Pe
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140821L;
+	private static final long serialVersionUID = 20140902L;
 
     /** Standard Constructor */
     public X_LBR_Cob_Movimento (Properties ctx, int LBR_Cob_Movimento_ID, String trxName)
@@ -70,6 +70,34 @@ public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Pe
         .append(get_ID()).append("]");
       return sb.toString();
     }
+
+	public org.compiere.model.I_C_Bank getC_Bank() throws RuntimeException
+    {
+		return (org.compiere.model.I_C_Bank)MTable.get(getCtx(), org.compiere.model.I_C_Bank.Table_Name)
+			.getPO(getC_Bank_ID(), get_TrxName());	}
+
+	/** Set Bank.
+		@param C_Bank_ID 
+		Bank
+	  */
+	public void setC_Bank_ID (int C_Bank_ID)
+	{
+		if (C_Bank_ID < 1) 
+			set_Value (COLUMNNAME_C_Bank_ID, null);
+		else 
+			set_Value (COLUMNNAME_C_Bank_ID, Integer.valueOf(C_Bank_ID));
+	}
+
+	/** Get Bank.
+		@return Bank
+	  */
+	public int getC_Bank_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_C_Bank_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
 
 	/** Set Description.
 		@param Description 
@@ -164,6 +192,31 @@ public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Pe
 	public String getLBR_Cob_Movimento_UU () 
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Cob_Movimento_UU);
+	}
+
+	public I_LBR_Cob_Movimento getLBR_ParentCob_Movimento() throws RuntimeException
+    {
+		return (I_LBR_Cob_Movimento)MTable.get(getCtx(), I_LBR_Cob_Movimento.Table_Name)
+			.getPO(getLBR_ParentCob_Movimento_ID(), get_TrxName());	}
+
+	/** Set Parent Collection Movement.
+		@param LBR_ParentCob_Movimento_ID Parent Collection Movement	  */
+	public void setLBR_ParentCob_Movimento_ID (int LBR_ParentCob_Movimento_ID)
+	{
+		if (LBR_ParentCob_Movimento_ID < 1) 
+			set_Value (COLUMNNAME_LBR_ParentCob_Movimento_ID, null);
+		else 
+			set_Value (COLUMNNAME_LBR_ParentCob_Movimento_ID, Integer.valueOf(LBR_ParentCob_Movimento_ID));
+	}
+
+	/** Get Parent Collection Movement.
+		@return Parent Collection Movement	  */
+	public int getLBR_ParentCob_Movimento_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_ParentCob_Movimento_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
 	}
 
 	/** Set Name.

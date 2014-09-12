@@ -30,7 +30,7 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140806L;
+	private static final long serialVersionUID = 20140902L;
 
     /** Standard Constructor */
     public X_LBR_BankAccount_Carteira (Properties ctx, int LBR_BankAccount_Carteira_ID, String trxName)
@@ -38,6 +38,8 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
       super (ctx, LBR_BankAccount_Carteira_ID, trxName);
       /** if (LBR_BankAccount_Carteira_ID == 0)
         {
+			setIsDefault (false);
+// N
 			setLBR_BankAccount_Convenio_ID (0);
 			setLBR_CarteiraNo (null);
         } */
@@ -86,6 +88,30 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 	public String getDescription () 
 	{
 		return (String)get_Value(COLUMNNAME_Description);
+	}
+
+	/** Set Default.
+		@param IsDefault 
+		Default value
+	  */
+	public void setIsDefault (boolean IsDefault)
+	{
+		set_Value (COLUMNNAME_IsDefault, Boolean.valueOf(IsDefault));
+	}
+
+	/** Get Default.
+		@return Default value
+	  */
+	public boolean isDefault () 
+	{
+		Object oo = get_Value(COLUMNNAME_IsDefault);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
 	}
 
 	/** Set Bank Account Carteira.

@@ -32,19 +32,25 @@ public class EventHandler extends AbstractEventHandler {
 		// Copy LBR fields from Order to Invoice
 		if (po instanceof MInvoice && event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)) {
 			MInvoice invoice = (MInvoice) po;
+			MOrder order = null;			
 			
 			if (invoice.getC_Order_ID() > 0) {
-				MOrder order = new MOrder(po.getCtx(), invoice.getC_Order_ID(), po.get_TrxName());
-				invoice.set_ValueOfColumn("LBR_PayInstrument", order.get_ValueAsString("LBR_PayInstrument"));
-				invoice.set_ValueOfColumn("LBR_CollectionIssueDistrib", order.get_ValueAsString("LBR_CollectionIssueDistrib"));
-				invoice.set_ValueOfColumn("LBR_BankAccount_ID", order.get_ValueAsInt("LBR_BankAccount_ID"));
+				order = new MOrder(po.getCtx(), invoice.getC_Order_ID(), po.get_TrxName());
 			} else if (invoice.getM_RMA_ID() > 0) {
 				MRMA rma = new MRMA(po.getCtx(), invoice.getM_RMA_ID(), po.get_TrxName());
 				MInOut inOut = new MInOut(po.getCtx(), rma.getInOut_ID(), po.get_TrxName());
-				MOrder order = new MOrder(po.getCtx(), inOut.getC_Order_ID(), po.get_TrxName());
-				invoice.set_ValueOfColumn("LBR_PayInstrument", order.get_ValueAsString("LBR_PayInstrument"));
-				invoice.set_ValueOfColumn("LBR_CollectionIssueDistrib", order.get_ValueAsString("LBR_CollectionIssueDistrib"));
-				invoice.set_ValueOfColumn("LBR_BankAccount_ID", order.get_ValueAsInt("LBR_BankAccount_ID"));
+				order = new MOrder(po.getCtx(), inOut.getC_Order_ID(), po.get_TrxName());
+			}
+			
+			if (order != null) {
+				if (!order.get_ValueAsString("LBR_PayInstrument").equals(""))
+					invoice.set_ValueOfColumn("LBR_PayInstrument", order.get_ValueAsString("LBR_PayInstrument"));
+				
+				if (!order.get_ValueAsString("LBR_CollectionIssueDistrib").equals(""))
+					invoice.set_ValueOfColumn("LBR_CollectionIssueDistrib", order.get_ValueAsString("LBR_CollectionIssueDistrib"));
+				
+				if (order.get_ValueAsInt("LBR_BankAccount_ID") > 0)
+					invoice.set_ValueOfColumn("LBR_BankAccount_ID", order.get_ValueAsInt("LBR_BankAccount_ID"));
 			}
 		}
 		

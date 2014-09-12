@@ -11,6 +11,8 @@ import org.compiere.model.MDocType;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MInvoicePaySchedule;
 import org.compiere.util.Env;
+import org.idempierelbr.openitems.model.MLBRBankAccountCarteira;
+import org.idempierelbr.openitems.model.MLBRBankAccountConvenio;
 import org.idempierelbr.openitems.model.MLBRBoleto;
 import org.idempierelbr.openitems.model.MLBRCollectionDefault;
 
@@ -28,6 +30,8 @@ public class CalloutBoleto implements IColumnCallout {
 				return setInvoicePaySchedRelated(ctx, mTab, value);
 			else if (mField.getColumnName().equals(MLBRBoleto.COLUMNNAME_C_BankAccount_ID))
 				return setBankAccountRelated(ctx, mTab, value);
+			else if (mField.getColumnName().equals(MLBRBoleto.COLUMNNAME_LBR_BankAccount_Carteira_ID))
+				return setCarteiraRelated(ctx, mTab, value);
 			else 
 				return null;
 		else
@@ -112,7 +116,7 @@ public class CalloutBoleto implements IColumnCallout {
 				mTab.setValue("C_Bank_ID", bA.getC_Bank_ID());
 				mTab.setValue("C_BankAccount_ID", bA.get_ID());
 				mTab.setValue("LBR_CorrespBank_ID", bA.get_ValueAsInt("LBR_CorrespBank_ID"));
-				mTab.setValue("LBR_CNAB240Currency", getConvertedCurrencyForCNAB(bA.getC_Currency_ID()));
+				mTab.setValue("LBR_CNAB240Currency", MLBRBoleto.getConvertedCurrencyForCNAB(bA.getC_Currency_ID()));
 			}
 			
 			// Issue & Distribution
@@ -171,12 +175,28 @@ public class CalloutBoleto implements IColumnCallout {
 		
 			// Only change currency if it's not set yet
 			if (mTab.getValue("LBR_CNAB240Currency") == null)
-				mTab.setValue("LBR_CNAB240Currency", getConvertedCurrencyForCNAB(bA.getC_Currency_ID()));
+				mTab.setValue("LBR_CNAB240Currency", MLBRBoleto.getConvertedCurrencyForCNAB(bA.getC_Currency_ID()));
 			
 			// Only change correspondent bank if it's not set yet
 			if (mTab.getValue("LBR_CorrespBank_ID") == null) {
 				mTab.setValue("LBR_CorrespBank_ID", bA.get_ValueAsInt("LBR_CorrespBank_ID"));
 				mTab.setValue("LBR_NumberInCorrespBank", bA.get_ValueAsInt("LBR_NumberInCorrespBank"));
+			}
+			
+			// Only change convenio/carteira if it's not set yet
+			if (mTab.getValue("LBR_BankAccount_Convenio_ID") == null) {
+				MLBRBankAccountConvenio[] convenios = MLBRBankAccountConvenio.getConvenios(ctx, C_BankAccount_ID, null);
+				
+				if (convenios.length > 0) {
+					mTab.setValue("LBR_BankAccount_Convenio_ID", convenios[0].get_ID());
+					
+					MLBRBankAccountCarteira[] carteiras = convenios[0].getCarteiras();
+					
+					if (carteiras.length > 0) {
+						mTab.setValue("LBR_BankAccount_Carteira_ID", carteiras[0].get_ID());
+						mTab.setValue("LBR_CarteiraType", carteiras[0].getLBR_CarteiraType());
+					}
+				}
 			}
 		}
 		
@@ -184,12 +204,18 @@ public class CalloutBoleto implements IColumnCallout {
 	}
 	
 	/**
-	 * Get the CNAB currency based on system currency
+	 * Set the fields related to the selected Carteira
 	 */
-	private String getConvertedCurrencyForCNAB(int C_Currency_ID) {
-		if (C_Currency_ID == 297)
-			return MLBRBoleto.LBR_CNAB240CURRENCY_09_Real;
+	private String setCarteiraRelated(Properties ctx, GridTab mTab, Object value) {
+		Integer LBR_BankAccount_Carteira_ID = (Integer) value;
 		
-		return null;
+		if (LBR_BankAccount_Carteira_ID != null && LBR_BankAccount_Carteira_ID > 0) {
+			MLBRBankAccountCarteira carteira = new MLBRBankAccountCarteira(ctx, LBR_BankAccount_Carteira_ID, null);
+			mTab.setValue("LBR_CarteiraType", carteira.getLBR_CarteiraType());
+		} else {
+			mTab.setValue("LBR_CarteiraType", null);
+		}
+		
+		return "";
 	}
 }

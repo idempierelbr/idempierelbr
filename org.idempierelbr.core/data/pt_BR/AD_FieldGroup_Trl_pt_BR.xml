@@ -158,17 +158,17 @@
  <row id="50020" trl="N">
   <value column="Name" original="Depreciation">Depreciation</value>
  </row>
- <row id="200000" trl="N">
-  <value column="Name" original="Swing Position">Swing Position</value>
+ <row id="200000" trl="Y">
+  <value column="Name" original="Swing Position">Posição Interface Swing</value>
  </row>
- <row id="200001" trl="N">
-  <value column="Name" original="Web Position">Web Position</value>
+ <row id="200001" trl="Y">
+  <value column="Name" original="Web Position">Posição Interface Web</value>
  </row>
  <row id="200003" trl="N">
   <value column="Name" original="User Locking">User Locking</value>
  </row>
- <row id="200004" trl="N">
-  <value column="Name" original="Overwritten From Column">Overwritten From Column</value>
+ <row id="200004" trl="Y">
+  <value column="Name" original="Overwritten From Column">Sobrescrito da Aba Coluna</value>
  </row>
  <row id="200005" trl="Y">
   <value column="Name" original="Customer Information">Informações de Cliente</value>

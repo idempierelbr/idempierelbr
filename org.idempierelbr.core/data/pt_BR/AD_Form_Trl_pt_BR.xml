@@ -223,8 +223,8 @@ Select the orders to generate the shipments & Invoices for.]]></value>
   <value column="Description" original="Report Wizard">Report Wizard</value>
   <value column="Help" original=""/>
  </row>
- <row id="200005" trl="N">
-  <value column="Name" original="Tab Editor">Tab Editor</value>
+ <row id="200005" trl="Y">
+  <value column="Name" original="Tab Editor">Editor de Aba</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -237,5 +237,10 @@ Select the orders to generate the shipments & Invoices for.]]></value>
   <value column="Name" original="Captured Process Parameter">Captured Process Parameter</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="31ee0732-43d7-4aef-8204-ac262e8d4d8d">
+  <value column="Name" original="Generate CNAB (manual)">Gerar CNAB (Manual)</value>
+  <value column="Description" original="Select boletos movements and generate CNAB">Selecionar movimentos de boletos e gerar CNAB</value>
+  <value column="Help" original="Generate CNAB from Boletos Movements.">Gerar CNAB a partir dos movimentos de boletos.</value>
  </row>
 </idempiereTrl>

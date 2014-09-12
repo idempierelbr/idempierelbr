@@ -302,8 +302,8 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200077" trl="N">
-  <value column="Name" original="Created Since">Created Since</value>
+ <row id="200077" trl="Y">
+  <value column="Name" original="Created Since">Coluna Criada Desde</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -315,6 +315,16 @@
  <row trl="Y" uuid="61fed42b-e8b6-4654-81bd-f6b8f95dd7ef">
   <value column="Name" original="Update Fields based on Attachment">Atualizar os Campos baseado no Anexo</value>
   <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="a4668c71-1334-42bd-a457-c78d7533a474">
+  <value column="Name" original="Movement Date">Data do Movimento</value>
+  <value column="Description" original="Date when movement was created">Data de quando o movimento de boleto foi criado</value>
+  <value column="Help" original="The Movement Date indicates the date when the movement was created on system.">A Data do Movimento indica quando o movimento de boleto foi criado no sistema.</value>
+ </row>
+ <row trl="Y" uuid="2b89fad1-ffe5-4a16-8a0a-f802439963d7">
+  <value column="Name" original="CNAB File">Arquivo CNAB</value>
+  <value column="Description" original="Location of the CNAB file to be processed.">Localização do arquivo CNAB a ser processado.</value>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>

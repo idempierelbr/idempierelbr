@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.adempiere.base.IColumnCallout;
 import org.adempiere.base.IColumnCalloutFactory;
+import org.compiere.model.MBankAccount;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MOrder;
 import org.idempierelbr.openitems.model.MLBRBoleto;
@@ -27,7 +28,8 @@ public class CalloutFactory implements IColumnCalloutFactory {
 			if (columnName.equals(MLBRBoleto.COLUMNNAME_C_DocType_ID) ||
 					columnName.equals(MLBRBoleto.COLUMNNAME_C_Invoice_ID) ||
 					columnName.equals(MLBRBoleto.COLUMNNAME_C_InvoicePaySchedule_ID) ||
-					columnName.equals(MLBRBoleto.COLUMNNAME_C_BankAccount_ID))
+					columnName.equals(MLBRBoleto.COLUMNNAME_C_BankAccount_ID) ||
+					columnName.equals(MLBRBoleto.COLUMNNAME_LBR_BankAccount_Carteira_ID))
 				 callouts.add(new CalloutBoleto());
 		}
 		
@@ -41,6 +43,13 @@ public class CalloutFactory implements IColumnCalloutFactory {
 		if (tableName.equals(MInvoice.Table_Name)) {
 			if (columnName.equals(MInvoice.COLUMNNAME_C_BPartner_ID))
 				 callouts.add(new CalloutInvoice());
+		}
+		
+		// Tabela C_BankAccount
+		if (tableName.equals(MBankAccount.Table_Name)) {
+			if (columnName.equals(MBankAccount.COLUMNNAME_AccountNo) ||
+					columnName.equals("LBR_BankAgencyNo"))
+				 callouts.add(new CalloutBank());
 		}
 	
 		return callouts != null ? callouts.toArray(new IColumnCallout[0]) : new IColumnCallout[0];

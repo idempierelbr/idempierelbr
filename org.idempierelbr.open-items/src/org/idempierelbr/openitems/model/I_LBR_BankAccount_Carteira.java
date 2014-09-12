@@ -106,6 +106,19 @@ public interface I_LBR_BankAccount_Carteira
 	  */
 	public boolean isActive();
 
+    /** Column name IsDefault */
+    public static final String COLUMNNAME_IsDefault = "IsDefault";
+
+	/** Set Default.
+	  * Default value
+	  */
+	public void setIsDefault (boolean IsDefault);
+
+	/** Get Default.
+	  * Default value
+	  */
+	public boolean isDefault();
+
     /** Column name LBR_BankAccount_Carteira_ID */
     public static final String COLUMNNAME_LBR_BankAccount_Carteira_ID = "LBR_BankAccount_Carteira_ID";
 

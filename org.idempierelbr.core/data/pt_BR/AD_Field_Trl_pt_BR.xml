@@ -4,8 +4,8 @@
 <idempiereTrl language="pt_BR" table="AD_Field">
  <row id="1546" trl="Y">
   <value column="Name" original="Link Column">Coluna de Vínculo</value>
-  <value column="Description" original="Link Column for Multi-Parent tables">Coluna de Vínculo para tabelas de Múltiplos Ascendentes</value>
-  <value column="Help" original="The Link Column indicates which column is the primary key for those situations where there is more than one parent.  Only define it, if the table has more than one parent column (e.g. AD_User_Roles).">A coluna de vínculo indica qual coluna é a chave primária para as situações onde existe mais de um ascendente  Definir somente se a tabela tem mais de uma coluna pai (ascendente). Ex. AD_User_Roles.</value>
+  <value column="Description" original="Link Column for Multi-Parent tables">Coluna de Vínculo para Tabelas com múltiplos Pais</value>
+  <value column="Help" original="The Link Column indicates which column is the primary key for those situations where there is more than one parent.  Only define it, if the table has more than one parent column (e.g. AD_User_Roles).">A coluna de vínculo indica qual coluna é a chave primária para as situações onde existe mais de um pai (ascendente). Definir somente se a tabela tem mais de uma coluna pai (ascendente). Ex. AD_User_Roles.</value>
  </row>
  <row id="2124" trl="Y">
   <value column="Name" original="Language">Idioma</value>
@@ -135,8 +135,8 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Help" original=""/>
  </row>
  <row id="50071" trl="Y">
-  <value column="Name" original="Name of Package">Name of Package</value>
-  <value column="Description" original="Name of Package">Name of Package</value>
+  <value column="Name" original="Name of Package">Nome do Pacote</value>
+  <value column="Description" original="Name of Package">Nome do Pacote</value>
   <value column="Help" original=""/>
  </row>
  <row id="50075" trl="Y">
@@ -165,12 +165,12 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Help" original=""/>
  </row>
  <row id="50082" trl="Y">
-  <value column="Name" original="Description of Package">Description of Package</value>
+  <value column="Name" original="Description of Package">Descrição do Pacote</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="50085" trl="Y">
-  <value column="Name" original="Export Package">Export Package</value>
+  <value column="Name" original="Export Package">PackOut - Criar o Pacote</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -200,22 +200,22 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Help" original=""/>
  </row>
  <row id="50091" trl="Y">
-  <value column="Name" original="Package Build ID">Package Build ID</value>
+  <value column="Name" original="Package Build ID">PackOut</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="50092" trl="Y">
-  <value column="Name" original="Client">Client</value>
+  <value column="Name" original="Client">Empresa</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="50093" trl="Y">
-  <value column="Name" original="Organization">Organization</value>
+  <value column="Name" original="Organization">Organização</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="50096" trl="Y">
-  <value column="Name" original="Type">Type</value>
+  <value column="Name" original="Type">Tipo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -225,27 +225,27 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Help" original=""/>
  </row>
  <row id="50099" trl="Y">
-  <value column="Name" original="Source File Directory">Source File Directory</value>
-  <value column="Description" original="Current location of source file">Current location of source file</value>
+  <value column="Name" original="Source File Directory">Diretório do Arquivo Fonte</value>
+  <value column="Description" original="Current location of source file"/>
   <value column="Help" original=""/>
  </row>
  <row id="50103" trl="Y">
-  <value column="Name" original="Table">Table</value>
+  <value column="Name" original="Table">Tabela</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="50108" trl="Y">
-  <value column="Name" original="Form">Form</value>
+  <value column="Name" original="Form">Formulário (Form)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="50109" trl="Y">
-  <value column="Name" original="Process">Process</value>
+  <value column="Name" original="Process">Processo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="50110" trl="Y">
-  <value column="Name" original="Workflow">Workflow</value>
+  <value column="Name" original="Workflow">Fluxo de Trabalho</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -255,7 +255,7 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Help" original=""/>
  </row>
  <row id="50117" trl="Y">
-  <value column="Name" original="Notes">Notes</value>
+  <value column="Name" original="Notes">Observações</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -631,10 +631,10 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original="Restrict accepting only this currency">Restringe a aceitação da Moeda</value>
   <value column="Help" original="The Only Currency field indicates that this bank account accepts only the currency identified here.">Indica a moeda aceita pela conta bancária.</value>
  </row>
- <row id="200858" trl="N">
-  <value column="Name" original="Reference Overwrite">Reference Overwrite</value>
-  <value column="Description" original="System Reference - optional Overwrite">System Reference - optional Overwrite</value>
-  <value column="Help" original="You can overwrite the Display Type, but only use this if you aware of the consequences.">You can overwrite the Display Type, but only use this if you aware of the consequences.</value>
+ <row id="200858" trl="Y">
+  <value column="Name" original="Reference Overwrite">Referência Sobrescrita</value>
+  <value column="Description" original="System Reference - optional Overwrite">Sobrescrita opcional da Referência do Sistema</value>
+  <value column="Help" original="You can overwrite the Display Type, but only use this if you aware of the consequences.">Você pode sobrescrever a referência original definida para a coluna, mas esteja atento sobre as possíveis consequências indesejadas.</value>
  </row>
  <row id="200948" trl="N">
   <value column="Name" original="Attachment Store">Attachment Store</value>
@@ -731,13 +731,13 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="202210" trl="N">
-  <value column="Name" original="Index Validate">Index Validate</value>
+ <row id="202210" trl="Y">
+  <value column="Name" original="Index Validate">Validar Índice</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="202252" trl="N">
-  <value column="Name" original="View Validate">View Validate</value>
+ <row id="202252" trl="Y">
+  <value column="Name" original="View Validate">Validar a Visão (View)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -751,10 +751,10 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original="Purchase Order Line">Linha do Pedido de Compra</value>
   <value column="Help" original="The Purchase Order Line is a unique identifier for a line in an order.">A "Linha do Pedido de Compra" é um identificador exclusivo para uma linha em um pedido de compra.</value>
  </row>
- <row id="203108" trl="N">
-  <value column="Name" original="ViewID Column">ViewID Column</value>
-  <value column="Description" original="Name of unique column in a view. value of this column will save to t_selection table">Name of unique column in a view. value of this column will save to t_selection table</value>
-  <value column="Help" original="Column to resolve issue in https://idempiere.atlassian.net/browse/IDEMPIERE-1970">Column to resolve issue in https://idempiere.atlassian.net/browse/IDEMPIERE-1970</value>
+ <row id="203108" trl="Y">
+  <value column="Name" original="ViewID Column">Coluna da Visão (View)</value>
+  <value column="Description" original="Name of unique column in a view. value of this column will save to t_selection table">Nome único da coluna em uma view. O valor desta coluna será salvo na tabela t_selection</value>
+  <value column="Help" original="Column to resolve issue in https://idempiere.atlassian.net/browse/IDEMPIERE-1970">Para obter detalhes da utilização deste campo, consulte: https://idempiere.atlassian.net/browse/IDEMPIERE-1970</value>
  </row>
  <row trl="Y" uuid="1571ea6a-cfc0-4a9e-ab5e-017bbbfa1958">
   <value column="Name" original="Memo">Informações Adicionais (NF-e)</value>

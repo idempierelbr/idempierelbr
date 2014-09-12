@@ -159,7 +159,7 @@
   <value column="Description" original="Collaboration and Content Management">Colaboração e Gerenciamento de Conteúdo</value>
  </row>
  <row id="50001" trl="Y">
-  <value column="Name" original="Application Packaging">Pacotes de Aplicativos</value>
+  <value column="Name" original="Application Packaging">Pacotes de Aplicação</value>
   <value column="Description" original="Import and export packaging">Importação e Exportação de Pacotes</value>
  </row>
  <row id="52001" trl="N">

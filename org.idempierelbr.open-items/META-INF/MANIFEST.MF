@@ -5,7 +5,14 @@ Bundle-SymbolicName: org.idempierelbr.open-items
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.adempiere.base,
- org.idempierelbr.core;bundle-version="1.0.0"
-Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/CalloutFactory.xml,
- OSGI-INF/DocFactory.xml
+ org.idempierelbr.core;bundle-version="1.0.0",
+ org.adempiere.ui.zk;bundle-version="2.0.0",
+ org.zkoss.zk.library;bundle-version="6.0.0",
+ org.adempiere.ui
+Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/CalloutFactory.xml,OSGI-INF/DocFactory.xml,OSGI-INF/FormFactory.xml,
+ OSGI-INF/ProcessFactory.xml
 Import-Package: org.osgi.service.event
+Bundle-ClassPath: .
+Export-Package: org.idempierelbr.openitems.model,
+ org.idempierelbr.openitems.process,
+ org.idempierelbr.openitems.util

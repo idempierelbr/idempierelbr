@@ -479,7 +479,7 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="220" trl="Y">
-  <value column="MsgText" original="Detail record">Detalhar Registro</value>
+  <value column="MsgText" original="Detail record">Detalhes do Registro</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="221" trl="Y">
@@ -1389,7 +1389,7 @@ Problema: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="447" trl="Y">
-  <value column="MsgText" original="Processing ... Please wait ...">Processando ... Favor aguardar ...</value>
+  <value column="MsgText" original="Processing ... Please wait ...">Processando... Por favor, aguarde.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="448" trl="Y">
@@ -5911,8 +5911,8 @@ Please contact administrator.</value>
   <value column="MsgText" original="Report Wizard">Report Wizard</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200091" trl="N">
-  <value column="MsgText" original="Fields Displayed">Fields Displayed</value>
+ <row id="200091" trl="Y">
+  <value column="MsgText" original="Fields Displayed">Campos Exibidos</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200092" trl="N">
@@ -5927,8 +5927,8 @@ Please contact administrator.</value>
   <value column="MsgText" original="Grouping Criteria">Grouping Criteria</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200095" trl="N">
-  <value column="MsgText" original="Summary Fields">Summary Fields</value>
+ <row id="200095" trl="Y">
+  <value column="MsgText" original="Summary Fields">Campos de Resumo</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200096" trl="N">
@@ -5987,16 +5987,16 @@ Please contact administrator.</value>
   <value column="MsgText" original="Cannot Approve - No Approver">Cannot Approve - No Approver</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200112" trl="N">
-  <value column="MsgText" original="Property">Property</value>
+ <row id="200112" trl="Y">
+  <value column="MsgText" original="Property">Propriedade</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200113" trl="N">
-  <value column="MsgText" original="Visible Fields">Visible Fields</value>
+ <row id="200113" trl="Y">
+  <value column="MsgText" original="Visible Fields">Campos Visíveis</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200114" trl="N">
-  <value column="MsgText" original="Non Visible Fields">Non Visible Fields</value>
+ <row id="200114" trl="Y">
+  <value column="MsgText" original="Non Visible Fields">Campos Não Visíveis</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200117" trl="N">
@@ -6511,8 +6511,8 @@ Please contact administrator.</value>
   <value column="MsgText" original="Tabs">Tabs</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200272" trl="N">
-  <value column="MsgText" original="Fields">Fields</value>
+ <row id="200272" trl="Y">
+  <value column="MsgText" original="Fields">Campos</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200273" trl="N">
@@ -6653,6 +6653,10 @@ Please contact administrator.</value>
  </row>
  <row trl="Y" uuid="10baa247-5e3a-4b65-83cd-28410696ab71">
   <value column="MsgText" original="Invalid CFOP">CFOP inválido</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row trl="Y" uuid="0b43f08d-b837-428d-a90a-13786dd91ba8">
+  <value column="MsgText" original="CNAB File Generated">Arquivo CNAB (Remessa) Gerado</value>
   <value column="MsgTip" original=""/>
  </row>
 </idempiereTrl>

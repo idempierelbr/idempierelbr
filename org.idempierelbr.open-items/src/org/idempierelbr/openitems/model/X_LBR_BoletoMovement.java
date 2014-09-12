@@ -33,7 +33,7 @@ public class X_LBR_BoletoMovement extends PO implements I_LBR_BoletoMovement, I_
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140822L;
+	private static final long serialVersionUID = 20140828L;
 
     /** Standard Constructor */
     public X_LBR_BoletoMovement (Properties ctx, int LBR_BoletoMovement_ID, String trxName)
@@ -373,6 +373,213 @@ public class X_LBR_BoletoMovement extends PO implements I_LBR_BoletoMovement, I_
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
+	}
+
+	/** Set Discount 1 Amount/%.
+		@param LBR_CNABDiscount1AP 
+		Discount 1 Amount / Percentage used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount1AP (BigDecimal LBR_CNABDiscount1AP)
+	{
+		set_Value (COLUMNNAME_LBR_CNABDiscount1AP, LBR_CNABDiscount1AP);
+	}
+
+	/** Get Discount 1 Amount/%.
+		@return Discount 1 Amount / Percentage used for CNAB 240
+	  */
+	public BigDecimal getLBR_CNABDiscount1AP () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CNABDiscount1AP);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** 1 - Valor Fixo ate a Data Informada = 1 */
+	public static final String LBR_CNABDISCOUNT1CODE_1_ValorFixoAteADataInformada = "1";
+	/** 2 - Percentual ate a Data Informada = 2 */
+	public static final String LBR_CNABDISCOUNT1CODE_2_PercentualAteADataInformada = "2";
+	/** 3 - Valor por Antecipacao Dia Corrido = 3 */
+	public static final String LBR_CNABDISCOUNT1CODE_3_ValorPorAntecipacaoDiaCorrido = "3";
+	/** 4 - Valor por Antecipacao Dia Util = 4 */
+	public static final String LBR_CNABDISCOUNT1CODE_4_ValorPorAntecipacaoDiaUtil = "4";
+	/** 5 - Percentual sobre o Valor Nominal Dia Corrido = 5 */
+	public static final String LBR_CNABDISCOUNT1CODE_5_PercentualSobreOValorNominalDiaCorrido = "5";
+	/** 6 - Percentual sobre o Valor Nominal Dia Util = 6 */
+	public static final String LBR_CNABDISCOUNT1CODE_6_PercentualSobreOValorNominalDiaUtil = "6";
+	/** 7 - Cancelamento de Desconto = 7 */
+	public static final String LBR_CNABDISCOUNT1CODE_7_CancelamentoDeDesconto = "7";
+	/** Set Discount 1 Code.
+		@param LBR_CNABDiscount1Code 
+		Discount 1 Code used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount1Code (String LBR_CNABDiscount1Code)
+	{
+
+		set_Value (COLUMNNAME_LBR_CNABDiscount1Code, LBR_CNABDiscount1Code);
+	}
+
+	/** Get Discount 1 Code.
+		@return Discount 1 Code used for CNAB 240
+	  */
+	public String getLBR_CNABDiscount1Code () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_CNABDiscount1Code);
+	}
+
+	/** Set Discount 1 Date.
+		@param LBR_CNABDiscount1Date 
+		Discount 1 Date used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount1Date (Timestamp LBR_CNABDiscount1Date)
+	{
+		set_Value (COLUMNNAME_LBR_CNABDiscount1Date, LBR_CNABDiscount1Date);
+	}
+
+	/** Get Discount 1 Date.
+		@return Discount 1 Date used for CNAB 240
+	  */
+	public Timestamp getLBR_CNABDiscount1Date () 
+	{
+		return (Timestamp)get_Value(COLUMNNAME_LBR_CNABDiscount1Date);
+	}
+
+	/** Set Discount 2 Amount/%.
+		@param LBR_CNABDiscount2AP 
+		Discount 2 Amount / Percentage used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount2AP (BigDecimal LBR_CNABDiscount2AP)
+	{
+		set_Value (COLUMNNAME_LBR_CNABDiscount2AP, LBR_CNABDiscount2AP);
+	}
+
+	/** Get Discount 2 Amount/%.
+		@return Discount 2 Amount / Percentage used for CNAB 240
+	  */
+	public BigDecimal getLBR_CNABDiscount2AP () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CNABDiscount2AP);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** 1 - Valor Fixo ate a Data Informada = 1 */
+	public static final String LBR_CNABDISCOUNT2CODE_1_ValorFixoAteADataInformada = "1";
+	/** 2 - Percentual ate a Data Informada = 2 */
+	public static final String LBR_CNABDISCOUNT2CODE_2_PercentualAteADataInformada = "2";
+	/** 3 - Valor por Antecipacao Dia Corrido = 3 */
+	public static final String LBR_CNABDISCOUNT2CODE_3_ValorPorAntecipacaoDiaCorrido = "3";
+	/** 4 - Valor por Antecipacao Dia Util = 4 */
+	public static final String LBR_CNABDISCOUNT2CODE_4_ValorPorAntecipacaoDiaUtil = "4";
+	/** 5 - Percentual sobre o Valor Nominal Dia Corrido = 5 */
+	public static final String LBR_CNABDISCOUNT2CODE_5_PercentualSobreOValorNominalDiaCorrido = "5";
+	/** 6 - Percentual sobre o Valor Nominal Dia Util = 6 */
+	public static final String LBR_CNABDISCOUNT2CODE_6_PercentualSobreOValorNominalDiaUtil = "6";
+	/** 7 - Cancelamento de Desconto = 7 */
+	public static final String LBR_CNABDISCOUNT2CODE_7_CancelamentoDeDesconto = "7";
+	/** Set Discount 2 Code.
+		@param LBR_CNABDiscount2Code 
+		Discount 2 Code used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount2Code (String LBR_CNABDiscount2Code)
+	{
+
+		set_Value (COLUMNNAME_LBR_CNABDiscount2Code, LBR_CNABDiscount2Code);
+	}
+
+	/** Get Discount 2 Code.
+		@return Discount 2 Code used for CNAB 240
+	  */
+	public String getLBR_CNABDiscount2Code () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_CNABDiscount2Code);
+	}
+
+	/** Set Discount 2 Date.
+		@param LBR_CNABDiscount2Date 
+		Discount 2 Date used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount2Date (Timestamp LBR_CNABDiscount2Date)
+	{
+		set_Value (COLUMNNAME_LBR_CNABDiscount2Date, LBR_CNABDiscount2Date);
+	}
+
+	/** Get Discount 2 Date.
+		@return Discount 2 Date used for CNAB 240
+	  */
+	public Timestamp getLBR_CNABDiscount2Date () 
+	{
+		return (Timestamp)get_Value(COLUMNNAME_LBR_CNABDiscount2Date);
+	}
+
+	/** Set Discount 3 Amount/%.
+		@param LBR_CNABDiscount3AP 
+		Discount 3 Amount / Percentage used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount3AP (BigDecimal LBR_CNABDiscount3AP)
+	{
+		set_Value (COLUMNNAME_LBR_CNABDiscount3AP, LBR_CNABDiscount3AP);
+	}
+
+	/** Get Discount 3 Amount/%.
+		@return Discount 3 Amount / Percentage used for CNAB 240
+	  */
+	public BigDecimal getLBR_CNABDiscount3AP () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CNABDiscount3AP);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** 1 - Valor Fixo ate a Data Informada = 1 */
+	public static final String LBR_CNABDISCOUNT3CODE_1_ValorFixoAteADataInformada = "1";
+	/** 2 - Percentual ate a Data Informada = 2 */
+	public static final String LBR_CNABDISCOUNT3CODE_2_PercentualAteADataInformada = "2";
+	/** 3 - Valor por Antecipacao Dia Corrido = 3 */
+	public static final String LBR_CNABDISCOUNT3CODE_3_ValorPorAntecipacaoDiaCorrido = "3";
+	/** 4 - Valor por Antecipacao Dia Util = 4 */
+	public static final String LBR_CNABDISCOUNT3CODE_4_ValorPorAntecipacaoDiaUtil = "4";
+	/** 5 - Percentual sobre o Valor Nominal Dia Corrido = 5 */
+	public static final String LBR_CNABDISCOUNT3CODE_5_PercentualSobreOValorNominalDiaCorrido = "5";
+	/** 6 - Percentual sobre o Valor Nominal Dia Util = 6 */
+	public static final String LBR_CNABDISCOUNT3CODE_6_PercentualSobreOValorNominalDiaUtil = "6";
+	/** 7 - Cancelamento de Desconto = 7 */
+	public static final String LBR_CNABDISCOUNT3CODE_7_CancelamentoDeDesconto = "7";
+	/** Set Discount 3 Code.
+		@param LBR_CNABDiscount3Code 
+		Discount 3 Code used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount3Code (String LBR_CNABDiscount3Code)
+	{
+
+		set_Value (COLUMNNAME_LBR_CNABDiscount3Code, LBR_CNABDiscount3Code);
+	}
+
+	/** Get Discount 3 Code.
+		@return Discount 3 Code used for CNAB 240
+	  */
+	public String getLBR_CNABDiscount3Code () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_CNABDiscount3Code);
+	}
+
+	/** Set Discount 3 Date.
+		@param LBR_CNABDiscount3Date 
+		Discount 3 Date used for CNAB 240
+	  */
+	public void setLBR_CNABDiscount3Date (Timestamp LBR_CNABDiscount3Date)
+	{
+		set_Value (COLUMNNAME_LBR_CNABDiscount3Date, LBR_CNABDiscount3Date);
+	}
+
+	/** Get Discount 3 Date.
+		@return Discount 3 Date used for CNAB 240
+	  */
+	public Timestamp getLBR_CNABDiscount3Date () 
+	{
+		return (Timestamp)get_Value(COLUMNNAME_LBR_CNABDiscount3Date);
 	}
 
 	public I_LBR_Cob_Movimento getLBR_Cob_Movimento() throws RuntimeException
@@ -725,6 +932,58 @@ public class X_LBR_BoletoMovement extends PO implements I_LBR_BoletoMovement, I_
 		return (Timestamp)get_Value(COLUMNNAME_LBR_FileGeneratingDate);
 	}
 
+	/** Set Interest Amount/Percentage.
+		@param LBR_InterestAP Interest Amount/Percentage	  */
+	public void setLBR_InterestAP (BigDecimal LBR_InterestAP)
+	{
+		set_Value (COLUMNNAME_LBR_InterestAP, LBR_InterestAP);
+	}
+
+	/** Get Interest Amount/Percentage.
+		@return Interest Amount/Percentage	  */
+	public BigDecimal getLBR_InterestAP () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_InterestAP);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** 1 - Valor por Dia = 1 */
+	public static final String LBR_INTERESTCODE_1_ValorPorDia = "1";
+	/** 2 - Taxa Mensal = 2 */
+	public static final String LBR_INTERESTCODE_2_TaxaMensal = "2";
+	/** 3 - Isento = 3 */
+	public static final String LBR_INTERESTCODE_3_Isento = "3";
+	/** Set Late Payment Interest Code.
+		@param LBR_InterestCode Late Payment Interest Code	  */
+	public void setLBR_InterestCode (String LBR_InterestCode)
+	{
+
+		set_Value (COLUMNNAME_LBR_InterestCode, LBR_InterestCode);
+	}
+
+	/** Get Late Payment Interest Code.
+		@return Late Payment Interest Code	  */
+	public String getLBR_InterestCode () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_InterestCode);
+	}
+
+	/** Set Interest Date.
+		@param LBR_InterestDate Interest Date	  */
+	public void setLBR_InterestDate (Timestamp LBR_InterestDate)
+	{
+		set_Value (COLUMNNAME_LBR_InterestDate, LBR_InterestDate);
+	}
+
+	/** Get Interest Date.
+		@return Interest Date	  */
+	public Timestamp getLBR_InterestDate () 
+	{
+		return (Timestamp)get_Value(COLUMNNAME_LBR_InterestDate);
+	}
+
 	/** Set IOF Amount.
 		@param LBR_IOFAmt 
 		Defines the IOF Amount
@@ -743,6 +1002,56 @@ public class X_LBR_BoletoMovement extends PO implements I_LBR_BoletoMovement, I_
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;
+	}
+
+	/** Set Late Payment Penaulty Amount/Percentage.
+		@param LBR_LatePaymentPenaltyAP Late Payment Penaulty Amount/Percentage	  */
+	public void setLBR_LatePaymentPenaltyAP (BigDecimal LBR_LatePaymentPenaltyAP)
+	{
+		set_Value (COLUMNNAME_LBR_LatePaymentPenaltyAP, LBR_LatePaymentPenaltyAP);
+	}
+
+	/** Get Late Payment Penaulty Amount/Percentage.
+		@return Late Payment Penaulty Amount/Percentage	  */
+	public BigDecimal getLBR_LatePaymentPenaltyAP () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_LatePaymentPenaltyAP);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** 1 - Amount = 1 */
+	public static final String LBR_LATEPAYMENTPENALTYCODE_1_Amount = "1";
+	/** 2 - Percentage = 2 */
+	public static final String LBR_LATEPAYMENTPENALTYCODE_2_Percentage = "2";
+	/** Set Late Payment Penaulty Code.
+		@param LBR_LatePaymentPenaltyCode Late Payment Penaulty Code	  */
+	public void setLBR_LatePaymentPenaltyCode (String LBR_LatePaymentPenaltyCode)
+	{
+
+		set_Value (COLUMNNAME_LBR_LatePaymentPenaltyCode, LBR_LatePaymentPenaltyCode);
+	}
+
+	/** Get Late Payment Penaulty Code.
+		@return Late Payment Penaulty Code	  */
+	public String getLBR_LatePaymentPenaltyCode () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_LatePaymentPenaltyCode);
+	}
+
+	/** Set Late Payment Penaulty Date.
+		@param LBR_LatePaymentPenaltyDate Late Payment Penaulty Date	  */
+	public void setLBR_LatePaymentPenaltyDate (Timestamp LBR_LatePaymentPenaltyDate)
+	{
+		set_Value (COLUMNNAME_LBR_LatePaymentPenaltyDate, LBR_LatePaymentPenaltyDate);
+	}
+
+	/** Get Late Payment Penaulty Date.
+		@return Late Payment Penaulty Date	  */
+	public Timestamp getLBR_LatePaymentPenaltyDate () 
+	{
+		return (Timestamp)get_Value(COLUMNNAME_LBR_LatePaymentPenaltyDate);
 	}
 
 	/** Set Loan Contract No..

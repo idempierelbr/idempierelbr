@@ -37,10 +37,15 @@ public class CalloutInvoice implements IColumnCallout {
 		}
 		
 		MBPartner bp = new MBPartner(ctx, C_BPartner_ID, null);
-
-		mTab.setValue("LBR_PayInstrument", bp.get_ValueAsString("LBR_PayInstrument"));
-		mTab.setValue("LBR_CollectionIssueDistrib", bp.get_ValueAsString("LBR_CollectionIssueDistrib"));
-		mTab.setValue("LBR_BankAccount_ID", bp.get_ValueAsInt("LBR_BankAccount_ID"));
+		
+		if (!bp.get_ValueAsString("LBR_PayInstrument").equals(""))
+			mTab.setValue("LBR_PayInstrument", bp.get_ValueAsString("LBR_PayInstrument"));
+		
+		if (!bp.get_ValueAsString("LBR_CollectionIssueDistrib").equals(""))
+			mTab.setValue("LBR_CollectionIssueDistrib", bp.get_ValueAsString("LBR_CollectionIssueDistrib"));
+		
+		if (bp.get_ValueAsInt("LBR_BankAccount_ID") > 0)
+			mTab.setValue("LBR_BankAccount_ID", bp.get_ValueAsInt("LBR_BankAccount_ID"));
 		
 		return "";
 	}

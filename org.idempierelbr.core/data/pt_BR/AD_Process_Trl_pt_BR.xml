@@ -63,12 +63,12 @@
   <value column="Help" original="If you copy and overwrite the current default values, you may have to repeat previous updates (e.g. set the receivebles account, ...)">Se você copiar e sobreescrever os valores padrão atuais, você pode ter de repetir as atualizações anteriores (por ex. contas a receber, ...)</value>
  </row>
  <row id="113" trl="Y">
-  <value column="Name" original="Copy Window Tabs">Copiar Abas de Janela</value>
+  <value column="Name" original="Copy Window Tabs">Copiar Abas</value>
   <value column="Description" original="Copy all Tabs and Fields from other Window">Copiar todas as Abas e Campos de outra Janela</value>
   <value column="Help" original=""/>
  </row>
  <row id="114" trl="Y">
-  <value column="Name" original="Copy Tab Fields">Copiar Campos de Abas</value>
+  <value column="Name" original="Copy Tab Fields">Copiar Campos</value>
   <value column="Description" original="Copy Fields from other Tab">Copiar Campos de outra Aba</value>
   <value column="Help" original=""/>
  </row>
@@ -334,13 +334,13 @@
  </row>
  <row id="173" trl="Y">
   <value column="Name" original="Create Columns from DB">Criar Colunas a partir do Banco de Dados</value>
-  <value column="Description" original="Create Dictionary Columns of Table not existing as a Column but in the Database">Criar Colunas de Dicionário de Tabelas não existentes como uma Coluna mas no Banco de Dados</value>
-  <value column="Help" original="If you have added columns in the database to this table, this procedure creates the Column records in the Dictionary.  Please be aware, that they may deleted, if the entity type is not set to User.">Se você tiver acrescentado colunas a esta tabela no banco de dados, este procedimento criará registros de Coluna no Dicionário.  Por favor esteja ciente que elas podem ser excluídas, se o tipo da entidade não for configurado ao Usuário.</value>
+  <value column="Description" original="Create Dictionary Columns of Table not existing as a Column but in the Database">Criar colunas que estão no BD, mas não estão no Dicionário de Aplicação</value>
+  <value column="Help" original="If you have added columns in the database to this table, this procedure creates the Column records in the Dictionary.  Please be aware, that they may deleted, if the entity type is not set to User.">Caso você tenha adicionado colunas diretamente no banco de dados, pode executar este processo para criar os registros no Dicionário de Aplicação.</value>
  </row>
  <row id="174" trl="Y">
   <value column="Name" original="Create Fields">Criar Campos</value>
-  <value column="Description" original="Create Field from Table Column, which do not exist in the Tab yet">Criar Campo a partir da Coluna de Tabela, o qual ainda não exista nesta Aba</value>
-  <value column="Help" original="Based on the table columns of this Tab, this procedure creates the missing Fields">Eeste procedimento cria os campos faltantes baseado nas Colunas da Tabela desta Aba.</value>
+  <value column="Description" original="Create Field from Table Column, which do not exist in the Tab yet">Criar Campos a partir de Colunas (da Tabela)</value>
+  <value column="Help" original="Based on the table columns of this Tab, this procedure creates the missing Fields">Este processo cria os campos faltantes para as colunas definidas na janela Tabela e Coluna. Você pode especificar critérios de busca caso queira limitar a criação dos campos.</value>
  </row>
  <row id="175" trl="Y">
   <value column="Name" original="Resubmit Posting">Lançar Documentos</value>
@@ -364,8 +364,8 @@
  </row>
  <row id="181" trl="Y">
   <value column="Name" original="Synchronize Column">Sincronizar Coluna</value>
-  <value column="Description" original="Change database table definition from application dictionary">Alterar a definição da tabela de banco de dados a partir do dicionário de aplicação</value>
-  <value column="Help" original="When selected, the database column definition is updated based on your entries in the Column definition of the Application Dictionary. Note that not all changes are supported by the database and may result in an error.">Quando selecionada, a definição da coluna do banco de dados é atualizada baseada em seus registros na definição de coluna do dicionário de aplicação. Note que nem todas as alterações são suportadas pelo banco de dados e podem resultar em um erro.</value>
+  <value column="Description" original="Change database table definition from application dictionary">Alterar a definição da tabela no BD a partir do Dicionário de Aplicação</value>
+  <value column="Help" original="When selected, the database column definition is updated based on your entries in the Column definition of the Application Dictionary. Note that not all changes are supported by the database and may result in an error.">Este processo altera o banco de dados para refletir as opções definidas na aba Coluna (no Dicionário de Aplicação). Observe que nem todas as alterações são suportadas pelo banco de dados, e a execução deste processo pode resultar em erro.</value>
  </row>
  <row id="182" trl="Y">
   <value column="Name" original="Standard Cost Update">Standard Cost Update</value>
@@ -1108,9 +1108,9 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original="Test EMail Connection based on info defined. An EMail is sent from the request user to the request user.  Also, the web store mail settings are tested.">Testa a conexão de email baseado nas informações fornecidas. Um email é enviado do usuário selecionado para o usuário selecionado.  Os ajustes de email da loja virtual também são testados.</value>
  </row>
  <row id="328" trl="Y">
-  <value column="Name" original="Column Encryption">Criptografar Colunas</value>
-  <value column="Description" original="Test and enable Column Encryption">Testa e habilita criptografia de colunas</value>
-  <value column="Help" original="To enable storage encryption or remove encryption is dangerous as you may loose data. You need to verify that the column is big enough to hold the encrypted value.  You can provide your own encryption method, but cannot change it once enabled.  &lt;br&gt;&#10;The default implementation supports US ASCII String conversion (not Unicode, Numbers, Dates)&lt;br&gt;&#10;Note that support is restricted to setup and test, but not data recovery."><![CDATA[Habilitar ou remover a criptografia de colunas é muito perigoso pois você pode perder dados. Você precisa certifcar-se que a coluna é grande o suficiente para armazenar o valor criptografado.  Você pode fornecer o seu próprio método de criptografia mas não pode alterá-lo a posteriori.  <br> A implementação padrão suporta conversão de seqüências de caracteres US ASCII  (Mas não Unicode, Números, Datas)<br> Note que o suporte a encriptação é restrito a ajuste e testes, mas não há suporte para recuperação de dados.]]></value>
+  <value column="Name" original="Column Encryption">Encriptar a Coluna</value>
+  <value column="Description" original="Test and enable Column Encryption">Testa e habilita a encriptação da coluna</value>
+  <value column="Help" original="To enable storage encryption or remove encryption is dangerous as you may loose data. You need to verify that the column is big enough to hold the encrypted value.  You can provide your own encryption method, but cannot change it once enabled.  &lt;br&gt;&#10;The default implementation supports US ASCII String conversion (not Unicode, Numbers, Dates)&lt;br&gt;&#10;Note that support is restricted to setup and test, but not data recovery."><![CDATA[Habilitar ou remover a encriptação da coluna um processo perigoso que exige atenção pois você pode perder dados. Você precisa certificar-se que a coluna é grande o suficiente para armazenar o valor encriptado. Você pode fornecer seu próprio método de encriptação, mas uma vez habilitado, não é possível alterá-lo. <br> A implementação padrão suporta conversão de seqüências de caracteres US ASCII  (mas não Unicode, Números, Datas). <br> Note que o suporte a encriptação é restrito a ajuste e testes, mas não há suporte para recuperação de dados.]]></value>
  </row>
  <row id="329" trl="Y">
   <value column="Name" original="Product Cost">Custeio de Produto</value>
@@ -1216,8 +1216,8 @@ PC são criados para todas as linhas das requisições onde o produto tem um for
  </row>
  <row id="349" trl="Y">
   <value column="Name" original="Validate">Validar</value>
-  <value column="Description" original="Validate Info Window SQL">Validate Info Window SQL</value>
-  <value column="Help" original="Validate generated Info Window SQL">Validate generated Info Window SQL</value>
+  <value column="Description" original="Validate Info Window SQL">Validar o SQL da Janela de Informações</value>
+  <value column="Help" original="Validate generated Info Window SQL"/>
  </row>
  <row id="350" trl="Y">
   <value column="Name" original="Rebuild Index">Rebuild Index</value>
@@ -1230,13 +1230,13 @@ PC são criados para todas as linhas das requisições onde o produto tem um for
   <value column="Help" original=""/>
  </row>
  <row id="50002" trl="Y">
-  <value column="Name" original="PackRoll">PackRoll</value>
-  <value column="Description" original=""/>
+  <value column="Name" original="PackRoll">Efetuar Rollback</value>
+  <value column="Description" original="">Efetuar Rollback do Pacote</value>
   <value column="Help" original=""/>
  </row>
  <row id="50004" trl="Y">
-  <value column="Name" original="PackOut">PackOut</value>
-  <value column="Description" original="Process to create package export">Process to create package export</value>
+  <value column="Name" original="PackOut">PackOut - Criar o Pacote</value>
+  <value column="Description" original="Process to create package export">Criar o Pacote</value>
   <value column="Help" original=""/>
  </row>
  <row id="50006" trl="Y">
@@ -1245,9 +1245,9 @@ PC são criados para todas as linhas das requisições onde o produto tem um for
   <value column="Help" original=""/>
  </row>
  <row id="50008" trl="Y">
-  <value column="Name" original="PackIn">PackIn</value>
-  <value column="Description" original="Import Package">Import Package</value>
-  <value column="Help" original="Import a package">Import a package</value>
+  <value column="Name" original="PackIn">PackIn - Importar o Pacote</value>
+  <value column="Description" original="Import Package">Importar o Pacote</value>
+  <value column="Help" original="Import a package">Este processo permite importar no sistema o pacote anexado no registro.</value>
  </row>
  <row id="50010" trl="Y">
   <value column="Name" original="Copy Role">CopyRole</value>
@@ -1255,8 +1255,8 @@ PC são criados para todas as linhas das requisições onde o produto tem um for
   <value column="Help" original="Copy role access records from one role to another.  The existing access records for the destination role will be deleted.  This process can be executed just by advanced roles."/>
  </row>
  <row id="50011" trl="Y">
-  <value column="Name" original="Copy Columns from Table">Copy Columns from Table</value>
-  <value column="Description" original="Create Dictionary Columns for a Table taking another as base">Create Dictionary Columns for a Table taking another as base</value>
+  <value column="Name" original="Copy Columns from Table">Copiar Colunas de outra Tabela</value>
+  <value column="Description" original="Create Dictionary Columns for a Table taking another as base">Este processo cria colunas no Dicionário de Aplicação copiando-as de outra tabela.</value>
   <value column="Help" original=""/>
  </row>
  <row id="50012" trl="Y">
@@ -1766,10 +1766,10 @@ This process should be implemented when the users are not connected.</value>
   <value column="Description" original="Sales Order Transaction Report">Relatório de Transações de Pedidos</value>
   <value column="Help" original=""/>
  </row>
- <row id="53179" trl="N">
-  <value column="Name" original="Copy From Report and Process">Copy From Report and Process</value>
-  <value column="Description" original="Copy settings from one report and process to another.">Copy settings from one report and process to another.</value>
-  <value column="Help" original="Copy the settings from the selected report and process to the current one.  This overwrites existing settings and translations.">Copy the settings from the selected report and process to the current one.  This overwrites existing settings and translations.</value>
+ <row id="53179" trl="Y">
+  <value column="Name" original="Copy From Report and Process">Copiar Parâmetros de outro Relatório e Processo</value>
+  <value column="Description" original="Copy settings from one report and process to another.">Copiar parâmetros de um relatório e processo para outro</value>
+  <value column="Help" original="Copy the settings from the selected report and process to the current one.  This overwrites existing settings and translations.">Este processo permite copiar os parâmetros do relatório e processo selecionado para o atual. Isto irá sobrescrever os parâmetros existentes e as traduções.</value>
  </row>
  <row id="53187" trl="Y">
   <value column="Name" original="Client Accounting Processor">Processador de Contabilidade (Empresa)</value>
@@ -1986,8 +1986,8 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200015" trl="N">
-  <value column="Name" original="Tab Editor">Tab Editor</value>
+ <row id="200015" trl="Y">
+  <value column="Name" original="Tab Editor">Editor de Aba</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2109,23 +2109,23 @@ If you don't want to have a base language choose a language that won't be used f
 If all languages are going to be used as login, create a xx_XX language not login and use it as base.
 Please note that base language cannot be a system language.</value>
  </row>
- <row id="200055" trl="N">
-  <value column="Name" original="Index Validate">Index Validate</value>
+ <row id="200055" trl="Y">
+  <value column="Name" original="Index Validate">Validar Índice</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200056" trl="N">
-  <value column="Name" original="View Validate">View Validate</value>
+ <row id="200056" trl="Y">
+  <value column="Name" original="View Validate">Validar a Visão (View)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200057" trl="N">
-  <value column="Name" original="Create Table Index">Create Table Index</value>
+ <row id="200057" trl="Y">
+  <value column="Name" original="Create Table Index">Criar Índice de Tabela</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200058" trl="N">
-  <value column="Name" original="Create Foreign Key">Create Foreign Key</value>
+ <row id="200058" trl="Y">
+  <value column="Name" original="Create Foreign Key">Criar Chave Estrangeira</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2149,18 +2149,18 @@ Please note that base language cannot be a system language.</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200065" trl="N">
-  <value column="Name" original="Drop Table Index">Drop Table Index</value>
+ <row id="200065" trl="Y">
+  <value column="Name" original="Drop Table Index">Remover (Drop) Índice de Tabela</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200066" trl="N">
-  <value column="Name" original="Drop view">Drop view</value>
+ <row id="200066" trl="Y">
+  <value column="Name" original="Drop view">Remover (Drop) a Visão (View)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200067" trl="N">
-  <value column="Name" original="Copy Info Window Columns">Copy Info Window Columns</value>
+ <row id="200067" trl="Y">
+  <value column="Name" original="Copy Info Window Columns">Copiar Colunas de Janela de Informações</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2223,5 +2223,25 @@ Please note that base language cannot be a system language.</value>
   <value column="Name" original="Process Boleto">Process Boleto</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
+ </row>
+ <row trl="Y" uuid="1030394d-f8a4-42cc-80a0-ce476a83149d">
+  <value column="Name" original="Generate Boletos">Gerar Boletos</value>
+  <value column="Description" original="Generate and print Boletos from open Invoices">Gerar e Imprimir Boletos a partir das Faturas em aberto</value>
+  <value column="Help" original="This process allows to generate boletos to completed and not-paid invoices.">Este processo permite a geração de boletos para as faturas (cliente) completadas e não pagas. Atenção: boletos não são gerados para faturas sem informação do Instrumento de Pagamento, Emissão/Distribuição ou Conta Bancária. Utilize o relatório apropriado para identificar faturas sem essas informações.</value>
+ </row>
+ <row trl="Y" uuid="f185dcf6-ebf6-42c3-b6f1-36767264fe45">
+  <value column="Name" original="Generate CNAB (manual) ">Gerar CNAB (Manual)</value>
+  <value column="Description" original="Generate and download CNAB manually">Gerar CNAB com Movimentos (de Boletos) Não Enviados</value>
+  <value column="Help" original="">Este processo permite a geração de arquivo CNAB com todos os Movimentos (de boletos) ainda não enviados ao banco. Observe que é necessário gerar um arquivo por convênio (caso a conta bancária possua mais de um). Todas as carteiras do convênio são incluídas em um mesmo arquivo.</value>
+ </row>
+ <row trl="Y" uuid="2dfb3f5e-aba1-404f-bd04-f2d07fbfc72c">
+  <value column="Name" original="Generate CNAB">Gerar CNAB</value>
+  <value column="Description" original="Generate and download CNAB from unsent Boletos Movements">Gerar CNAB com Movimentos (de Boletos) Não Enviados</value>
+  <value column="Help" original="This process allows to generate CNAB from unsent Boletos Movements.">Este processo permite a geração de arquivo CNAB com todos os Movimentos (de boletos) ainda não enviados ao banco. Observe que é necessário gerar um arquivo por convênio (caso a conta bancária possua mais de um). Todas as carteiras do convênio são incluídas em um mesmo arquivo.</value>
+ </row>
+ <row trl="Y" uuid="4cd5c0fd-e5be-4413-83ef-a8aef4f45fef">
+  <value column="Name" original="Return CNAB">Retornar CNAB</value>
+  <value column="Description" original="Process CNAB file returned by a bank">Processar o arquivo CNAB (Retorno) enviado pelo banco</value>
+  <value column="Help" original="This process allows to process a CNAB sent by a bank.">Este processo permite o processamento do arquivo retorno enviado pelo banco.</value>
  </row>
 </idempiereTrl>

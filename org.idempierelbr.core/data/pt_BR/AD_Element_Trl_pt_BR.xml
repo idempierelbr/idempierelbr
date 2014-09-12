@@ -33,10 +33,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="105" trl="Y">
-  <value column="Name" original="Display column">Mostra Coluna</value>
-  <value column="PrintName" original="Display column">Mostra Coluna</value>
-  <value column="Description" original="Column that will display">Coluna que será mostrada</value>
-  <value column="Help" original="The Display Column indicates the column that will display.">"Mostrar Coluna" indica a coluna que será mostrada.</value>
+  <value column="Name" original="Display column">Coluna Exibida</value>
+  <value column="PrintName" original="Display column">Coluna Exibida</value>
+  <value column="Description" original="Column that will display">Coluna que será exibida</value>
+  <value column="Help" original="The Display Column indicates the column that will display.">"Coluna Exibida" indica a coluna que será exibida.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -133,10 +133,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="117" trl="Y">
-  <value column="Name" original="Process">Processo</value>
-  <value column="PrintName" original="Process">Processo</value>
-  <value column="Description" original="Process or Report">Processo ou Relatório</value>
-  <value column="Help" original="The Process field identifies a unique Process or Report in the system.">O campo "Processo" identifica um único Processo ou Relatório no sistema.</value>
+  <value column="Name" original="Process">Relatório / Processo</value>
+  <value column="PrintName" original="Process">Relatório / Processo</value>
+  <value column="Description" original="Process or Report">Relatório / Processo</value>
+  <value column="Help" original="The Process field identifies a unique Process or Report in the system.">O campo "Relatório / Processo" identifica um único Processo ou Relatório no sistema.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -173,20 +173,20 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="121" trl="Y">
-  <value column="Name" original="Reference Key">Chave de Referência</value>
-  <value column="PrintName" original="Reference Key">Chave de Referência</value>
+  <value column="Name" original="Reference Key">Chave da Referência</value>
+  <value column="PrintName" original="Reference Key">Chave da Referência</value>
   <value column="Description" original="Required to specify, if data type is Table or List">É preciso especificar, se o tipo de dados for Tabela ou Lista</value>
-  <value column="Help" original="The Reference Value indicates where the reference values are stored.  It must be specified if the data type is Table or List.  ">O "Valor de Referência" indica onde os valores de referência são armazenados.  Tem que ser especificado se o tipo de dados é Tabela ou Lista.  </value>
+  <value column="Help" original="The Reference Value indicates where the reference values are stored.  It must be specified if the data type is Table or List.  ">O campo "Chave da Referência" indica onde os valores de referência são armazenados. Tem que ser especificado se o tipo de dados é Tabela ou Lista.  </value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="123" trl="Y">
-  <value column="Name" original="Role">Papel (Função)</value>
-  <value column="PrintName" original="Role">Papel (Função)</value>
-  <value column="Description" original="Responsibility Role">Responsabilidade do Papel (Função)</value>
-  <value column="Help" original="The Role determines security and access a user who has this Role will have in the System.">O "Papel (Função) determina o nível de segurança e acesso que um usuário que exerça este Papel terá no Sistema.</value>
+  <value column="Name" original="Role">Perfil de Acesso</value>
+  <value column="PrintName" original="Role">Perfil de Acesso</value>
+  <value column="Description" original="Responsibility Role">Define um Perfil de Acesso de Usuário</value>
+  <value column="Help" original="The Role determines security and access a user who has this Role will have in the System.">O Perfil de Acesso determina questões de segurança e quais informações um usuário pode ter acesso dentro do sistema.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -253,10 +253,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="132" trl="Y">
-  <value column="Name" original="Tree">Árvore</value>
-  <value column="PrintName" original="Tree">Árvore</value>
-  <value column="Description" original="Identifies a Tree">Identifica uma Árvore</value>
-  <value column="Help" original="The Tree field identifies a unique Tree in the system. Trees define roll ups or summary levels of information.  They are used in reports for defining report points and summarization levels.">O campo "Árvore" identifica uma árvore única no sistema. As árvores definem a estrutura (roll ups) ou níveis de resumo de informação.  São usadas nos relatórios para definir pontos de relatório e níveis de resumo.</value>
+  <value column="Name" original="Tree">Árvore (Tree)</value>
+  <value column="PrintName" original="Tree">Árvore (Tree)</value>
+  <value column="Description" original="Identifies a Tree">Identifica uma Árvore (Tree)</value>
+  <value column="Help" original="The Tree field identifies a unique Tree in the system. Trees define roll ups or summary levels of information.  They are used in reports for defining report points and summarization levels.">O campo "Árvore (Tree)" identifica uma árvore única no sistema. As árvores definem a estrutura (roll ups) ou níveis de resumo de informação.  São usadas nos relatórios para definir pontos de relatório e níveis de resumo.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -373,8 +373,8 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="145" trl="Y">
-  <value column="Name" original="Data Access Level">Nível de Acesso de Dados</value>
-  <value column="PrintName" original="Data Access Level">Nível de Acesso de Dados</value>
+  <value column="Name" original="Data Access Level">Nível de Acesso aos Dados</value>
+  <value column="PrintName" original="Data Access Level">Nível de Acesso aos Dados</value>
   <value column="Description" original="Access Level required">Nível de Acesso exigido</value>
   <value column="Help" original="Indicates the access level required for this record or process.">Indica o nível de acesso exigido para este registro ou processo.</value>
   <value column="PO_Description" original=""/>
@@ -973,10 +973,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="228" trl="Y">
-  <value column="Name" original="DB Column Name">Nome da Coluna BD</value>
-  <value column="PrintName" original="DB Column Name">Nome da Coluna BD</value>
+  <value column="Name" original="DB Column Name">Nome da Coluna (BD)</value>
+  <value column="PrintName" original="DB Column Name">Nome da Coluna (BD)</value>
   <value column="Description" original="Name of the column in the database">Nome da coluna no banco de dados</value>
-  <value column="Help" original="The Column Name indicates the name of a column on a table as defined in the database.">O "Nome da Coluna" indica o nome de uma coluna na tabela como definido no banco de dados.</value>
+  <value column="Help" original="The Column Name indicates the name of a column on a table as defined in the database.">O "Nome da Coluna no BD" indica o nome de uma coluna na tabela como definido no banco de dados.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1003,10 +1003,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="231" trl="Y">
-  <value column="Name" original="Commit Warning">Aviso de Comprometimento</value>
-  <value column="PrintName" original="Commit Warning">Aviso de Comprometimento</value>
-  <value column="Description" original="Warning displayed when saving">Aviso mostrado ao salvar</value>
-  <value column="Help" original="Warning or information displayed when committing the record">Aviso ou informação mostrada ao comprometer o registro</value>
+  <value column="Name" original="Commit Warning">Aviso ao Salvar um Registro</value>
+  <value column="PrintName" original="Commit Warning">Aviso ao Salvar um Registro</value>
+  <value column="Description" original="Warning displayed when saving">Aviso mostrado ao salvar um registro</value>
+  <value column="Help" original="Warning or information displayed when committing the record">Aviso ou informação mostrada ao salvar um registro</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1233,10 +1233,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="272" trl="Y">
-  <value column="Name" original="Default Logic">Lógica Padrão</value>
-  <value column="PrintName" original="Default Logic">Lógica Padrão</value>
-  <value column="Description" original="Default value hierarchy, separated by ;">Hierarquia de Valor padrão, separada por ;</value>
-  <value column="Help" original="The defaults are evaluated in the order of definition, the first not null value becomes the default value of the column. The values are separated by comma or semicolon. a) Literals:. 'Text' or 123 b) Variables - in format @Variable@ - Login e.g. #Date, #AD_Org_ID, #AD_Client_ID - Accounting Schema: e.g. $C_AcctSchema_ID, $C_Calendar_ID - Global defaults: e.g. DateFormat - Window values (all Picks, CheckBoxes, RadioButtons, and DateDoc/DateAcct) c) SQL code with the tag: @SQL=SELECT something AS DefaultValue FROM ... The SQL statement can contain variables.  There can be no other value other than the SQL statement. The default is only evaluated, if no user preference is defined.  Default definitions are ignored for record columns as Key, Parent, Client as well as Buttons.">Os padrões são calculados na ordem de definição, o primeiro valor não nulo se torna o valor padrão da coluna. Os valores são separados por vírgula ou ponto e vírgula. a) Literais:. 'Texto' ou 123 b) Variáveis - no formato @Variável@ - Login ex. #Date, #AD_Org_ID, #AD_Client_ID - Esquema Contábil: ex. $C_AcctSchema_ID, $C_Calendar_ID - Padrões Globais: ex. DateFormat - Valores de Janela (Todas as Seleções, Caixas de Verificação, Botões tipo Rádio, e DateDoc/DateAcct) c) Código SQL com o tag: @SQL=SELECT algumaCoisa AS ValorPadrão FROM ... A declaração SQL pode conter variáveis.  Não pode haver outro valor que não seja a declaração SQL. O padrão só é calculado se não for definida nenhuma preferência do usuário.  Definições padrão, assim como Botões, são ignoradas para colunas de registro tais como Chave, Pai, Empresa.</value>
+  <value column="Name" original="Default Logic">Lógica de Valor Padrão</value>
+  <value column="PrintName" original="Default Logic">Lógica de Valor Padrão</value>
+  <value column="Description" original="Default value hierarchy, separated by ;">Hierarquia de padrões (valores), separados por ponto e vírgula</value>
+  <value column="Help" original="The defaults are evaluated in the order of definition, the first not null value becomes the default value of the column. The values are separated by comma or semicolon. a) Literals:. 'Text' or 123 b) Variables - in format @Variable@ - Login e.g. #Date, #AD_Org_ID, #AD_Client_ID - Accounting Schema: e.g. $C_AcctSchema_ID, $C_Calendar_ID - Global defaults: e.g. DateFormat - Window values (all Picks, CheckBoxes, RadioButtons, and DateDoc/DateAcct) c) SQL code with the tag: @SQL=SELECT something AS DefaultValue FROM ... The SQL statement can contain variables.  There can be no other value other than the SQL statement. The default is only evaluated, if no user preference is defined.  Default definitions are ignored for record columns as Key, Parent, Client as well as Buttons.">Os padrões são calculados na ordem em que foram apresentados, sendo que o primeiro valor não nulo se torna o valor padrão da coluna. Os valores podem ser separados por vírgula ou ponto e vírgula. a) Literais: 'Texto' ou 123; b) Variáveis - no formato @Variável@; de login ex. #Date, #AD_Org_ID, #AD_Client_ID; de esquema contábil ex. $C_AcctSchema_ID, $C_Calendar_ID; de padrões globais: ex. DateFormat; de valores de campos/janela (seleções, CheckBoxes, RadioButtons e campos de data); c) SQL com o tag: @SQL=SELECT xx AS DefaultValue FROM yy... A declaração SQL pode conter variáveis.  Não pode haver outro valor que não seja a declaração SQL. O padrão só é calculado se não for definida nenhuma preferência do usuário. Definições padrão são ignoradas para colunas do tipo Chave, Pai, Empresa e Botão.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1303,10 +1303,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="282" trl="Y">
-  <value column="Name" original="Display Length">Comprimento do Mostrador</value>
-  <value column="PrintName" original="Display Length">Comprimento do Mostrador</value>
-  <value column="Description" original="Length of the display in characters">Comprimento do Mostrador em caracteres</value>
-  <value column="Help" original="The display length is mainly for String fields. The length has no impact, if the data type of the field is - Integer, Number, Amount&#9;(length determined by the system) - YesNo&#9;(Checkbox) - List, Table, TableDir&#9;(length of combo boxes are determined by their content at runtime)">O "Comprimento do Mostrador" é principalmente para campos de texto. O Comprimento não tem impacto, se o tipo do dado for - Inteiro, Número, Valor	(comprimento determinado pelo sistema) - Sim Não	(Caixa de Verificação) - Lista, Tabela, TableDir	(comprimento de caixas combinadas é determinado pelo seu conteúdo durante a execução)</value>
+  <value column="Name" original="Display Length">Comprimento do Campo</value>
+  <value column="PrintName" original="Display Length">Comprimento do Campo</value>
+  <value column="Description" original="Length of the display in characters">Comprimento do Campo em caracteres</value>
+  <value column="Help" original="The display length is mainly for String fields. The length has no impact, if the data type of the field is - Integer, Number, Amount&#9;(length determined by the system) - YesNo&#9;(Checkbox) - List, Table, TableDir&#9;(length of combo boxes are determined by their content at runtime)">O Comprimento do Campo é utilizado principalmente para campos do tipo String. Outros tipos são definidos automaticamente pelo sistema.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1324,10 +1324,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="284" trl="Y">
-  <value column="Name" original="Display Value">Mostrar Valor</value>
-  <value column="PrintName" original="Display Value">Mostrar Valor</value>
-  <value column="Description" original="Displays Value column with the Display column">Mostra a coluna de Valor com a coluna do mostrador</value>
-  <value column="Help" original="The Display Value checkbox indicates if the value column will display with the display column.">A caixa de verificação "Mostrar Valor" indica se a coluna de valor será mostrada com a coluna do mostrador.</value>
+  <value column="Name" original="Display Value">Exibir Chave</value>
+  <value column="PrintName" original="Display Value">Exibir Chave</value>
+  <value column="Description" original="Displays Value column with the Display column">Exibir a coluna Chave de Busca junto com a coluna exibida selecionada</value>
+  <value column="Help" original="The Display Value checkbox indicates if the value column will display with the display column.">A caixa de verificação "Exibir Chave" indica se a coluna Chave de Busca será mostrada com a coluna exibida selecionada.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1622,19 +1622,19 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="325" trl="Y">
-  <value column="Name" original="Has Tree">Tem Árvore</value>
-  <value column="PrintName" original="Has Tree">Tem Árvore</value>
-  <value column="Description" original="Window has Tree Graph">Janela tem Gráfico de Árvore</value>
-  <value column="Help" original="The Has Tree checkbox indicates if this window displays a tree metaphor.">A caixa de verificação "Tem Árvore" indica se esta janela mostra um desenho de árvore.</value>
+  <value column="Name" original="Has Tree">Possui Árvore (Tree)</value>
+  <value column="PrintName" original="Has Tree">Possui Árvore (Tree)</value>
+  <value column="Description" original="Window has Tree Graph">Janela possui Gráfico de Árvore (Tree)</value>
+  <value column="Help" original="The Has Tree checkbox indicates if this window displays a tree metaphor.">A caixa de verificação "Possui Árvore (Tree)" indica se esta janela mostra um gráfico de árvore (tree).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="326" trl="Y">
-  <value column="Name" original="Comment/Help">Comentário/Ajuda</value>
-  <value column="PrintName" original="Comment">Comentário</value>
-  <value column="Description" original="Comment or Hint">Comentário ou Sugestão</value>
+  <value column="Name" original="Comment/Help">Ajuda</value>
+  <value column="PrintName" original="Comment">Ajuda</value>
+  <value column="Description" original="Comment or Hint">Ajuda, Comentário ou Sugestão</value>
   <value column="Help" original="The Help field contains a hint, comment or help about the use of this item.">Um comentário, ajuda ou sugestão sobre o uso deste item.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -1822,10 +1822,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="362" trl="Y">
-  <value column="Name" original="Centrally maintained">Mantido Centralizadamente</value>
-  <value column="PrintName" original="Centrally maintained">Mantido Centralizadamente</value>
-  <value column="Description" original="Information maintained in System Element table">Informação mantida na tabela de Elemento de Sistema</value>
-  <value column="Help" original="The Centrally Maintained checkbox indicates if the Name, Description and Help maintained in 'System Element' table  or 'Window' table.">A caixa de verificação "Gerenciamento Centralizado" indica se o Nome, Descrição e Ajuda são gerenciados na tabela 'Elemento de Sistema' ou na tabela 'Janela'.</value>
+  <value column="Name" original="Centrally maintained">Tradução Centralizada</value>
+  <value column="PrintName" original="Centrally maintained">Tradução Centralizada</value>
+  <value column="Description" original="Information maintained in System Element table">A tradução é centralizada no elemento</value>
+  <value column="Help" original="The Centrally Maintained checkbox indicates if the Name, Description and Help maintained in 'System Element' table  or 'Window' table.">A caixa de verificação "Tradução Centralizada" indica se o Nome, Descrição e Ajuda são obtidos a partir do Elemento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1852,10 +1852,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="366" trl="Y">
-  <value column="Name" original="Records deletable">Registros Excluíveis</value>
-  <value column="PrintName" original="Records deletable">Registros Excluíveis</value>
+  <value column="Name" original="Records deletable">Registros podem ser Excluídos</value>
+  <value column="PrintName" original="Records deletable">Registros podem ser Excluídos</value>
   <value column="Description" original="Indicates if records can be deleted from the database">Indica se os registros podem ser excluídos do banco de dados</value>
-  <value column="Help" original="The Records Deletable checkbox indicates if a record can be deleted from the database.  If records cannot be deleted, you can only deselect the Active flag">A caixa de verificação "Registros Excluíveis" indica se um registro pode ser excluído do banco de dados.  Se os registros não podem ser excluídos, você pode apenas de-selecionar o sinalizador "Ativo"</value>
+  <value column="Help" original="The Records Deletable checkbox indicates if a record can be deleted from the database.  If records cannot be deleted, you can only deselect the Active flag">A caixa de verificação "Registros podem ser Excluídos" indica se um registro pode ser excluído do banco de dados. Se não puderem, ainda sim eles podem ser desativados.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1872,10 +1872,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="368" trl="Y">
-  <value column="Name" original="Displayed">Mostrado</value>
-  <value column="PrintName" original="Displayed">Mostrado</value>
-  <value column="Description" original="Determines, if this field is displayed">Determina se um campo é mostrado</value>
-  <value column="Help" original="If the field is displayed, the field Display Logic will determine at runtime, if it is actually displayed">Se o campo for mostrado, o campo "Lógica de Visualização" irá determinar em tempo de execução, se ele será realmente mostrado</value>
+  <value column="Name" original="Displayed">Exibido</value>
+  <value column="PrintName" original="Displayed">Exibido</value>
+  <value column="Description" original="Determines, if this field is displayed">Determina se um campo é exibido</value>
+  <value column="Help" original="If the field is displayed, the field Display Logic will determine at runtime, if it is actually displayed">Se for exibido, o campo Lógica de Visualização irá determinar em tempo de execução, se ele será realmente exibido</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1942,10 +1942,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="376" trl="Y">
-  <value column="Name" original="Field Only">Somente Campo</value>
-  <value column="PrintName" original="Field Only">Somente Campo</value>
-  <value column="Description" original="Label is not displayed">Etiqueta não é mostrada</value>
-  <value column="Help" original="The Field Only checkbox indicates that the column will display without a label.">A caixa de verificação "Somente Campo" indica que a coluna será mostrada sem um rótulo.</value>
+  <value column="Name" original="Field Only">Somente o Campo</value>
+  <value column="PrintName" original="Field Only">Somente o Campo</value>
+  <value column="Description" original="Label is not displayed">Rótulo (Label) não é exibido</value>
+  <value column="Help" original="The Field Only checkbox indicates that the column will display without a label.">A caixa de verificação "Somente o Campo" indica que a coluna será mostrada sem um rótulo (label).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1972,10 +1972,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="381" trl="Y">
-  <value column="Name" original="Heading only">Somente Cabeçalho</value>
-  <value column="PrintName" original="Heading only">Somente Cabeçalho</value>
-  <value column="Description" original="Field without Column - Only label is displayed">Campo sem Coluna - Somente o Rótulo é mostrado</value>
-  <value column="Help" original="The Heading Only checkbox indicates if just the label will display on the screen">A caixa de verificação "Somente Cabeçalho" indica se apenas o rótulo será mostrado na tela</value>
+  <value column="Name" original="Heading only">Somente o Cabeçalho</value>
+  <value column="PrintName" original="Heading only">Somente o Cabeçalho</value>
+  <value column="Description" original="Field without Column - Only label is displayed">Campo sem Coluna - Somente o Rótulo (Label) é exibido</value>
+  <value column="Help" original="The Heading Only checkbox indicates if just the label will display on the screen">A caixa de verificação "Somente o Cabeçalho" indica se apenas o rótulo (label) será exibido na tela</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -2012,18 +2012,18 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="389" trl="Y">
-  <value column="Name" original="Key column">Coluna Chave</value>
-  <value column="PrintName" original="Key column">Coluna Chave</value>
+  <value column="Name" original="Key column">Coluna Chave (Key)</value>
+  <value column="PrintName" original="Key column">Coluna Chave (Key)</value>
   <value column="Description" original="This column is the key in this table">Esta coluna é a chave nesta tabela</value>
-  <value column="Help" original="The key column must also be display sequence 0 in the field definition and may be hidden.">A coluna chave tem também que mostrar seqüência 0 na definição de campo e pode ser escondida.</value>
+  <value column="Help" original="The key column must also be display sequence 0 in the field definition and may be hidden.">A coluna chave deve possuir a sequência de exibição 0 na definição do campo, e pode também ser oculta.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="392" trl="Y">
-  <value column="Name" original="Mandatory">Obrigatório</value>
-  <value column="PrintName" original="Mandatory">Obrigatório</value>
+  <value column="Name" original="Mandatory">Obrigatório (NOT NULL)</value>
+  <value column="PrintName" original="Mandatory">Obrigatório (NOT NULL)</value>
   <value column="Description" original="Data entry is required in this column">É exigida a entrada de dados nesta coluna</value>
   <value column="Help" original="The field must have a value for the record to be saved to the database.">O campo tem que ter um valor para que o registro seja salvo no banco de dados.</value>
   <value column="PO_Description" original=""/>
@@ -2042,10 +2042,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="395" trl="Y">
-  <value column="Name" original="Parent link column">Coluna de Vínculo com o Pai</value>
-  <value column="PrintName" original="Parent link column">Coluna de Vínculo com o Pai</value>
-  <value column="Description" original="This column is a link to the parent table (e.g. header from lines) - incl. Association key columns">Esta coluna é um vínculo com a tabela pai (ex. cabeçalhos de linhas) - incluindo colunas de associações de chaves</value>
-  <value column="Help" original="The Parent checkbox indicates if this column is a link to the parent table.">A caixa de verificação "Pai" indica se esta coluna é um vínculo a uma tabela Pai.</value>
+  <value column="Name" original="Parent link column">Coluna de Vínculo à Tabela Pai</value>
+  <value column="PrintName" original="Parent link column">Coluna de Vínculo à Tabela Pai</value>
+  <value column="Description" original="This column is a link to the parent table (e.g. header from lines) - incl. Association key columns">Esta coluna é um vínculo a uma tabela pai (ex. C_Order_ID na tabela C_OrderLine) - incluindo colunas de associações de chaves</value>
+  <value column="Help" original="The Parent checkbox indicates if this column is a link to the parent table.">A caixa de verificação "Coluna de Vínculo à Tabela Pai" indica se esta coluna é um vínculo a uma tabela Pai.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -2122,10 +2122,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="406" trl="Y">
-  <value column="Name" original="Read Write">Escrita e Leitura</value>
-  <value column="PrintName" original="Read Write">Escrita e Leitura</value>
-  <value column="Description" original="Field is read / write">Campo para leitura e escrita</value>
-  <value column="Help" original="The Read Write indicates that this field may be read and updated.">O "Escrita e Leitura" indica que este campo pode ser lido e atualizado.</value>
+  <value column="Name" original="Read Write">Atualizável (ReadWrite)</value>
+  <value column="PrintName" original="Read Write">Atualizável (ReadWrite)</value>
+  <value column="Description" original="Field is read / write">Indica que o campo é atualizável</value>
+  <value column="Help" original="The Read Write indicates that this field may be read and updated.">O campo "Atualizável (ReadWrite)" indica que este campo pode ser lido e atualizado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -2172,10 +2172,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="413" trl="Y">
-  <value column="Name" original="Single Row Layout">Layout em Linha Única</value>
-  <value column="PrintName" original="Single Row Layout">Layout em Linha Única</value>
-  <value column="Description" original="Default for toggle between Single- and Multi-Row (Grid) Layout">Padrão para a seleção entre layout de registro único ou de múltiplas linhas (grade, planilha)</value>
-  <value column="Help" original="The Single Row Layout checkbox indicates if the default display type for this window is a single row as opposed to multi row.">A caixa de verificação "Layout em Linha Única" indica se o tipo de exibição padrão para esta janela é uma linha única em oposição a múltiplas linhas como em uma planilha.</value>
+  <value column="Name" original="Single Row Layout">Visualização em Linha Única</value>
+  <value column="PrintName" original="Single Row Layout">Visualização em Linha Única</value>
+  <value column="Description" original="Default for toggle between Single- and Multi-Row (Grid) Layout">Define que o padrão é a Visualização em Linha Única (oposto de Visualização em Grade)</value>
+  <value column="Help" original="The Single Row Layout checkbox indicates if the default display type for this window is a single row as opposed to multi row.">O checkbox Visualização em Linha Única indica que o padrão para a exibição dos campos é desta maneira. O oposto é a Visualização em Grade.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -2242,10 +2242,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="420" trl="Y">
-  <value column="Name" original="Translated">Traduzida</value>
-  <value column="PrintName" original="Translated">Traduzida</value>
-  <value column="Description" original="This column is translated">Esta coluna está traduzida</value>
-  <value column="Help" original="The Translated checkbox indicates if this column is translated.">A caixa de verificação "Traduzido" indica se esta coluna está traduzida.</value>
+  <value column="Name" original="Translated">Traduzido</value>
+  <value column="PrintName" original="Translated">Traduzido</value>
+  <value column="Description" original="This column is translated">Este elemento/coluna está traduzido</value>
+  <value column="Help" original="The Translated checkbox indicates if this column is translated.">A caixa de verificação "Traduzido" indica se este elemento/coluna está traduzido.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -2453,10 +2453,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="464" trl="Y">
-  <value column="Name" original="Message Tip">Dicas de Mensagem</value>
-  <value column="PrintName" original="Message Tip">Dicas de Mensagem</value>
+  <value column="Name" original="Message Tip">Dica de Mensagem</value>
+  <value column="PrintName" original="Message Tip">Dica de Mensagem</value>
   <value column="Description" original="Additional tip or help for this message">Dica adicional ou ajuda para esta mensagem</value>
-  <value column="Help" original="The Message Tip defines additional help or information about this message.">As "Dicas de Mensagem" definem ajuda ou informação adicional sobre esta mensagem.</value>
+  <value column="Help" original="The Message Tip defines additional help or information about this message.">A "Dica de Mensagem" define ajuda ou informação adicional sobre esta mensagem.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -2543,10 +2543,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="475" trl="Y">
-  <value column="Name" original="Sql ORDER BY">Sql ORDER BY</value>
-  <value column="PrintName" original="Order by clause">Cláusula de ordenação</value>
-  <value column="Description" original="Fully qualified ORDER BY clause">Cláusula de ordenação (ORDER BY) totalmente qualificada</value>
-  <value column="Help" original="The ORDER BY Clause indicates the SQL ORDER BY clause to use for record selection">"Ordenar SQL por Cláusula" indica a cláusula SQL ORDER BY para usar para esta seleção de registros</value>
+  <value column="Name" original="Sql ORDER BY">Cláusula ORDER BY (SQL)</value>
+  <value column="PrintName" original="Order by clause">Cláusula ORDER BY (SQL)</value>
+  <value column="Description" original="Fully qualified ORDER BY clause">Cláusula SQL ORDER BY totalmente qualificada</value>
+  <value column="Help" original="The ORDER BY Clause indicates the SQL ORDER BY clause to use for record selection">A "Cláusula ORDER BY (SQL)" indica a cláusula utilizada para ordenação dos registros.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -3193,10 +3193,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="573" trl="Y">
-  <value column="Name" original="Record Sort No">Número de Classificação do Registro</value>
-  <value column="PrintName" original="Record Sort No">Número de Classificação do Registro</value>
-  <value column="Description" original="Determines in what order the records are displayed">Determina em que ordem os registros são exibidos</value>
-  <value column="Help" original="The Record Sort No indicates the ascending sort sequence of the records. If the number is negative, the records are sorted descending. &#10;Example: A tab with C_DocType_ID (1), DocumentNo (-2) will be sorted ascending by document type and descending by document number (SQL: ORDER BY C_DocType, DocumentNo DESC)">O "Número de Classificação do Registro" indica a seqüência de classificação crescente dos registros. Se o número for negativo, os registros são ordenados em ordem decrescente. Exemplo: Uma Aba com C_DocType_ID (1), DocumentNo (-2) será classificada em ordem crescente por tipo de documento e decrescente por número de documento (SQL: ORDER BY C_DocType, DocumentNo DESC)</value>
+  <value column="Name" original="Record Sort No">Número para Classificação de Registros</value>
+  <value column="PrintName" original="Record Sort No">Número para Classificação de Registros</value>
+  <value column="Description" original="Determines in what order the records are displayed">Determina a ordem de exibição de registros</value>
+  <value column="Help" original="The Record Sort No indicates the ascending sort sequence of the records. If the number is negative, the records are sorted descending. &#10;Example: A tab with C_DocType_ID (1), DocumentNo (-2) will be sorted ascending by document type and descending by document number (SQL: ORDER BY C_DocType, DocumentNo DESC)">O campo Número para Classificação de Registros indica a seqüência para a classificação ascendente dos registros. Se o número foi negativo, a classificação é descendente. Por exemplo: uma aba com C_DocType_ID (1) e DocumentNo (-2) será classificada como ascendente pelo tipo de documento e descendente pelo número do documento (SQL: ORDER BY C_DocType_ID, DocumentNo DESC).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -3333,8 +3333,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="587" trl="Y">
-  <value column="Name" original="DB Table Name">Nome da Tabela no BD</value>
-  <value column="PrintName" original="DB Table Name">Nome da Tabela no BD</value>
+  <value column="Name" original="DB Table Name">Nome da Tabela (BD)</value>
+  <value column="PrintName" original="DB Table Name">Nome da Tabela (BD)</value>
   <value column="Description" original="Name of the table in the database">Nome da tabela no banco de dados</value>
   <value column="Help" original="The DB Table Name indicates the name of the table in database.">O "Nome da Tabela no BD" indica o nome da tabela no banco de dados.</value>
   <value column="PO_Description" original=""/>
@@ -3665,10 +3665,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="630" trl="Y">
-  <value column="Name" original="Sql WHERE">Sql WHERE</value>
-  <value column="PrintName" original="Where clause">Cláusula Where</value>
+  <value column="Name" original="Sql WHERE">Cláusula WHERE (SQL)</value>
+  <value column="PrintName" original="Where clause">Cláusula WHERE (SQL)</value>
   <value column="Description" original="Fully qualified SQL WHERE clause">Cláusula SQL WHERE totalmente qualificada</value>
-  <value column="Help" original="The Where Clause indicates the SQL WHERE clause to use for record selection. The WHERE clause is added to the query. Fully qualified means &quot;tablename.columnname&quot;.">A "Cláusula Where" indica a cláusula SQL WHERE a ser usada para seleção de registros. A cláusula SQL "WHERE" é adicionada ao query. Totalmente qualificada significa "nomedetabela.nomedecoluna".</value>
+  <value column="Help" original="The Where Clause indicates the SQL WHERE clause to use for record selection. The WHERE clause is added to the query. Fully qualified means &quot;tablename.columnname&quot;.">A "Cláusula WHERE (SQL)" indica a cláusula SQL WHERE a ser usada para seleção de registros. A cláusula SQL "WHERE" é adicionada ao query. Totalmente qualificada significa "nomedetabela.nomedecoluna".</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4435,10 +4435,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="998" trl="Y">
-  <value column="Name" original="Procedure">Procedimento</value>
-  <value column="PrintName" original="Procedure">Procedimento</value>
-  <value column="Description" original="Name of the Database Procedure">Nome do Procedimento do Banco de Dados</value>
-  <value column="Help" original="The Procedure indicates the name of the database procedure called by this report or process.">O "Procedimento" indica o nome do Procedimento do Banco de Dados chamado por este relatório ou processo.</value>
+  <value column="Name" original="Procedure">Nome da Procedure (BD)</value>
+  <value column="PrintName" original="Procedure">Procedure (BD)</value>
+  <value column="Description" original="Name of the Database Procedure">Nome da Procedure no Banco de Dados</value>
+  <value column="Help" original="The Procedure indicates the name of the database procedure called by this report or process.">O "Nome da Procedure (BD)" indica o nome da Procedure do Banco de Dados chamado por este relatório ou processo.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4805,20 +4805,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1059" trl="Y">
-  <value column="Name" original="Max. Value">Máx. Valor</value>
-  <value column="PrintName" original="Max. Value">Máx. Valor</value>
-  <value column="Description" original="Maximum Value for a field">Máximo Valor para um campo</value>
-  <value column="Help" original="The Maximum Value indicates the highest allowable value for a field">O "Máximo Valor" indica o maior valor permissível para um campo</value>
+  <value column="Name" original="Max. Value">Valor Máximo</value>
+  <value column="PrintName" original="Max. Value">Valor Máximo</value>
+  <value column="Description" original="Maximum Value for a field">Valor máximo para um campo</value>
+  <value column="Help" original="The Maximum Value indicates the highest allowable value for a field">O "Valor Máximo" indica o maior valor permitido para um campo.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1060" trl="Y">
-  <value column="Name" original="Min. Value">Mín. Valor</value>
-  <value column="PrintName" original="Min. Value">Mín. Valor</value>
-  <value column="Description" original="Minimum Value for a field">Mínimo Valor para um campo</value>
-  <value column="Help" original="The Minimum Value indicates the lowest  allowable value for a field.">O "Mínimo Valor" indica o menor valor permissível para um campo.</value>
+  <value column="Name" original="Min. Value">Valor Mínimo</value>
+  <value column="PrintName" original="Min. Value">Valor Mínimo</value>
+  <value column="Description" original="Minimum Value for a field">Valor mínimo para um campo</value>
+  <value column="Help" original="The Minimum Value indicates the lowest  allowable value for a field.">O "Valor Mínimo" indica o menor valor permitido para um campo.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -5545,10 +5545,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1174" trl="Y">
-  <value column="Name" original="High Volume">Alto Volume</value>
-  <value column="PrintName" original="High Volume">Alto Volume</value>
-  <value column="Description" original="Use Search instead of Pick list">Use "Pesquisa" ao invés de "Lista de Separação"</value>
-  <value column="Help" original="The High Volume Checkbox indicates if a search screen will display as opposed to a pick list for selecting records from this table.">A caixa de verificação "Alto Volume" indica se uma tela de pesquisa será exibida ao invés da lista de separação para selecionar registros desta tabela.</value>
+  <value column="Name" original="High Volume">Alto Volume de Dados</value>
+  <value column="PrintName" original="High Volume">Alto Volume de Dados</value>
+  <value column="Description" original="Use Search instead of Pick list">Indica se possui alto volume de dados</value>
+  <value column="Help" original="The High Volume Checkbox indicates if a search screen will display as opposed to a pick list for selecting records from this table.">Caso seja alto volume de dados, uma janela de busca será exibida antes de abrir a janela.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -5876,10 +5876,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1252" trl="Y">
-  <value column="Name" original="Report View">Visualização de Relatório</value>
-  <value column="PrintName" original="Report View">Visualização de Relatório</value>
-  <value column="Description" original="View used to generate this report">Visualização usada para gerar este relatório</value>
-  <value column="Help" original="The Report View indicates the view used to generate this report.">Uma "Visualização de Relatório" indica a visualização usada para gerar este relatório.</value>
+  <value column="Name" original="Report View">Visão (View) de Relatório</value>
+  <value column="PrintName" original="Report View">View de Relatório</value>
+  <value column="Description" original="View used to generate this report">View usada para gerar este relatório</value>
+  <value column="Help" original="The Report View indicates the view used to generate this report.">Uma "Visão (View) de Relatório" indica a view (banco de dados) usada para gerar este relatório.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -6326,20 +6326,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1298" trl="Y">
-  <value column="Name" original="Special Form">Formulário Especial</value>
-  <value column="PrintName" original="Special Form">Formulário Especial</value>
-  <value column="Description" original="Special Form">Formulário Especial</value>
-  <value column="Help" original="The Special Form field identifies a unique Special Form in the system.">O campo "Formulário Especial" identifica um Formulário Especial único no sistema.</value>
+  <value column="Name" original="Special Form">Formulário (Form)</value>
+  <value column="PrintName" original="Special Form">Formulário (Form)</value>
+  <value column="Description" original="Special Form">Formulário (Form)</value>
+  <value column="Help" original="The Special Form field identifies a unique Special Form in the system.">O campo "Formulário (Form)" identifica um Form único no sistema.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1299" trl="Y">
-  <value column="Name" original="Classname">Classname</value>
-  <value column="PrintName" original="Classname">Classname</value>
-  <value column="Description" original="Java Classname">Java Classname</value>
-  <value column="Help" original="The Classname identifies the Java classname used by this report or process.">O campo "Classname" identifica um Nome de Classe Java usado por este relatório ou processo.</value>
+  <value column="Name" original="Classname">Nome da Classe (Java)</value>
+  <value column="PrintName" original="Classname">Nome da Classe (Java)</value>
+  <value column="Description" original="Java Classname">Nome da Classe (Java)</value>
+  <value column="Help" original="The Classname identifies the Java classname used by this report or process.">O campo "Nome da Classe (Java)" identifica um Nome de Classe Java usado por este relatório ou processo.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -8067,10 +8067,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1531" trl="Y">
-  <value column="Name" original="SQL Group Function">Função de Grupo SQL</value>
-  <value column="PrintName" original="SQL Group Function">Função de Grupo SQL</value>
-  <value column="Description" original="This function will generate a Group By Clause">Esta função irá gerar um Grupo por Cláusula</value>
-  <value column="Help" original="The SQL Group Function checkbox indicates that this function will generate a Group by Clause in the resulting SQL.">A caixa de verificação "Função de Grupo SQL" indica que esta função irá gerar um Grupo por Cláusula no SQL resultante.</value>
+  <value column="Name" original="SQL Group Function">Função de Grupo</value>
+  <value column="PrintName" original="SQL Group Function">Função de Grupo</value>
+  <value column="Description" original="This function will generate a Group By Clause">Esta função gera uma cláusula GROUP BY</value>
+  <value column="Help" original="The SQL Group Function checkbox indicates that this function will generate a Group by Clause in the resulting SQL.">Indica se esta função irá gerar uma cláusula GROUP BY no resultado do SQL.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -8127,10 +8127,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1541" trl="Y">
-  <value column="Name" original="Function Column">Coluna de Função</value>
-  <value column="PrintName" original="Function Column">Coluna de Função</value>
-  <value column="Description" original="Overwrite Column with Function ">Sobreescreve a Coluna com uma Função </value>
-  <value column="Help" original="The Function Column indicates that the column will be overridden with a function">A "Coluna de Função" indica que a coluna será sobreescrita com uma função</value>
+  <value column="Name" original="Function Column">Função (BD) para a Coluna</value>
+  <value column="PrintName" original="Function Column">Função (BD) para a Coluna</value>
+  <value column="Description" original="Overwrite Column with Function ">Sobrescreve a Coluna com uma Função (BD)</value>
+  <value column="Help" original="The Function Column indicates that the column will be overridden with a function">A "Função (BD) para a Coluna" indica que a coluna será sobrescrita com uma função de banco de dados.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -8617,10 +8617,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1599" trl="Y">
-  <value column="Name" original="Sql SELECT">Sql SELECT</value>
-  <value column="PrintName" original="Select Clause">Cláusula Select</value>
-  <value column="Description" original="SQL SELECT clause">Cláusula SQL SELECT</value>
-  <value column="Help" original="The Select Clause indicates the SQL SELECT clause to use for selecting the record for a measure calculation. Do not include the SELECT itself.">A "Cláusula Select" indica a cláusula SQL SELECT a ser utilizada para selecionar o registro para um cálculo de medida. Não inclua a palavra SELECT.</value>
+  <value column="Name" original="Sql SELECT">Cláusula SELECT (SQL)</value>
+  <value column="PrintName" original="Select Clause">Cláusula SELECT (SQL)</value>
+  <value column="Description" original="SQL SELECT clause">Cláusula SELECT (SQL)</value>
+  <value column="Help" original="The Select Clause indicates the SQL SELECT clause to use for selecting the record for a measure calculation. Do not include the SELECT itself.">A "Cláusula SELECT (SQL)" indica a cláusula SELECT a ser utilizada para selecionar o registro para um cálculo de medida. Não inclua a palavra SELECT.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -8877,10 +8877,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1629" trl="Y">
-  <value column="Name" original="View">Exibir</value>
-  <value column="PrintName" original="View">Exibir</value>
-  <value column="Description" original="This is a view">Isto é uma visualização</value>
-  <value column="Help" original="This is a view rather than a table.  A view is always treated as read only in the system.">Isto é uma visualização ao invés de uma tabela.  Uma visualização é sempre tratada como somente de leitura pelo sistema.</value>
+  <value column="Name" original="View">Visão (View)</value>
+  <value column="PrintName" original="View">Visão (View)</value>
+  <value column="Description" original="This is a view">Isto é uma visão (view)</value>
+  <value column="Help" original="This is a view rather than a table.  A view is always treated as read only in the system.">Isto é uma visão ao invés de uma tabela. Uma visão é sempre tratada como somente de leitura pelo sistema.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -8927,9 +8927,9 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1636" trl="Y">
-  <value column="Name" original="System Color">Cor do Sistema</value>
+  <value column="Name" original="System Color">Cor</value>
   <value column="PrintName" original="Color">Cor</value>
-  <value column="Description" original="Color for backgrounds or indicators">Cor para panos de fundo ou indicadores</value>
+  <value column="Description" original="Color for backgrounds or indicators">Cor para fundos ou indicadores</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -8977,8 +8977,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1644" trl="Y">
-  <value column="Name" original="User defined Tab">Aba Definida pelo Usuário</value>
-  <value column="PrintName" original="User Tab">Aba do Usuário</value>
+  <value column="Name" original="User defined Tab">Aba Personalizada</value>
+  <value column="PrintName" original="User Tab">Aba Personalizada</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -8987,8 +8987,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1645" trl="Y">
-  <value column="Name" original="User defined Window">Janela Definida pelo Usuário</value>
-  <value column="PrintName" original="User Win">Janela do Usuário</value>
+  <value column="Name" original="User defined Window">Janela Personalizada</value>
+  <value column="PrintName" original="User Win">Janela Personalizada</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -9117,9 +9117,9 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1659" trl="Y">
-  <value column="Name" original="PO Description">Descrição PC</value>
-  <value column="PrintName" original="PO Description">Descrição PC</value>
-  <value column="Description" original="Description in PO Screens">Descrição nas telas de Pedido de Compras</value>
+  <value column="Name" original="PO Description">Descrição (Compra)</value>
+  <value column="PrintName" original="PO Description">Descrição (Compra)</value>
+  <value column="Description" original="Description in PO Screens">Descrição nas telas de Transação de Compra</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -9127,9 +9127,9 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1660" trl="Y">
-  <value column="Name" original="PO Help">Ajuda PC</value>
-  <value column="PrintName" original="PO Help">Ajuda PC</value>
-  <value column="Description" original="Help for PO Screens">Ajuda para Telas de Pedidos de Compras</value>
+  <value column="Name" original="PO Help">Ajuda (Compra)</value>
+  <value column="PrintName" original="PO Help">Ajuda (Compra)</value>
+  <value column="Description" original="Help for PO Screens">Ajuda para Telas de Transação de Compra</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -9137,9 +9137,9 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1661" trl="Y">
-  <value column="Name" original="PO Name">Nome PC</value>
-  <value column="PrintName" original="PO Name">Nome PC</value>
-  <value column="Description" original="Name on PO Screens">Nome nas Telas de Pedidos de Compras</value>
+  <value column="Name" original="PO Name">Nome (Compra)</value>
+  <value column="PrintName" original="PO Name">Nome (Compra)</value>
+  <value column="Description" original="Name on PO Screens">Nome nas Telas de Transação de Compra</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -9147,9 +9147,9 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1662" trl="Y">
-  <value column="Name" original="PO Print name">Imprimir Nome PC</value>
-  <value column="PrintName" original="PO Print">Imprimir PC</value>
-  <value column="Description" original="Print name on PO Screens/Reports">Imprimir nome nas Telas / Relatórios de Pedidos de Compras</value>
+  <value column="Name" original="PO Print name">Nome Impresso (Compra)</value>
+  <value column="PrintName" original="PO Print">Nome Impresso (Compra)</value>
+  <value column="Description" original="Print name on PO Screens/Reports">Nome impresso nas Telas / Relatórios (Transação de Compra)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -9157,9 +9157,9 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1663" trl="Y">
-  <value column="Name" original="Read Only Logic">Lógica Somente de Leitura</value>
-  <value column="PrintName" original="Read Only Logic">Lógica Somente de Leitura</value>
-  <value column="Description" original="Logic to determine if field is read only (applies only when field is read-write)">Lógica para determinar se o campo é somente de leitura (read only) .Aplicável somente quando os campos forem de leitura-escrita (read-write)</value>
+  <value column="Name" original="Read Only Logic">Lógica de Somente Leitura</value>
+  <value column="PrintName" original="Read Only Logic">Lógica de Somente Leitura</value>
+  <value column="Description" original="Logic to determine if field is read only (applies only when field is read-write)">Lógica para determinar se o campo é de somente leitura (read only) .Aplicável somente quando os campos forem de leitura-escrita (read-write)</value>
   <value column="Help" original="format := {expression} [{logic} {expression}]&lt;br&gt; &#10;expression := @{context}@{operand}{value} or @{context}@{operand}{value}&lt;br&gt; &#10;logic := {|}|{&amp;}&lt;br&gt;&#10;context := any global or window context &lt;br&gt;&#10;value := strings or numbers&lt;br&gt;&#10;logic operators&#9;:= AND or OR with the previous result from left to right &lt;br&gt;&#10;operand := eq{=}, gt{&amp;gt;}, le{&amp;lt;}, not{~^!} &lt;br&gt;&#10;Examples: &lt;br&gt;&#10;@AD_Table_ID@=14 | @Language@!GERGER &lt;br&gt;&#10;@PriceLimit@&gt;10 | @PriceList@&gt;@PriceActual@&lt;br&gt;&#10;@Name@&gt;J&lt;br&gt;&#10;Strings may be in single quotes (optional)"><![CDATA[format := {expression} [{logic} {expression}]<br> expression := @{context}@{operand}{value} or @{context}@{operand}{value}<br> logic := {|}|{&}<br> context := qualquer contexto global ou de janela <br> value := textos ou números<br> operadores lógicos	:= AND ou OR com o resultado anterior da esquerda para a direita <br> operand := eq{=}, gt{&gt;}, le{&lt;}, not{~^!} <br> Exemplos: <br> @AD_Table_ID@=14 | @Language@!GERGER <br> @PriceLimit@>10 | @PriceList@>@PriceActual@<br> @Name@>J<br> Textos podem estar entre aspas simples (opcional)]]></value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -9639,10 +9639,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1718" trl="Y">
-  <value column="Name" original="Script">Roteiro (Script)</value>
-  <value column="PrintName" original="Script">Roteiro (Script)</value>
-  <value column="Description" original="Dynamic Java Language Script to calculate result">Script Dinâmico em Linguagem Java para calcular o resultado</value>
-  <value column="Help" original="Use Java language constructs to define the result of the calculation">Use construções em linguagem Java para definir o resultado dos cálculos</value>
+  <value column="Name" original="Script">Script</value>
+  <value column="PrintName" original="Script">Script</value>
+  <value column="Description" original="Dynamic Java Language Script to calculate result">Script Dinâmico em Java para calcular um resultado</value>
+  <value column="Help" original="Use Java language constructs to define the result of the calculation">Permite a utilização de construtores Java para calcular resultados.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -9689,8 +9689,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1723" trl="Y">
-  <value column="Name" original="Statistic Count">Contagem Estatística</value>
-  <value column="PrintName" original="Statistic Count">Contagem Estatística</value>
+  <value column="Name" original="Statistic Count">Contagem (Estatística)</value>
+  <value column="PrintName" original="Statistic Count">Contagem (Estatística)</value>
   <value column="Description" original="Internal statistics how often the entity was used">Estatísticas Internas sobre a freqüência de utilização da entidade</value>
   <value column="Help" original="For internal use.">Para uso interno.</value>
   <value column="PO_Description" original=""/>
@@ -9699,8 +9699,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1724" trl="Y">
-  <value column="Name" original="Statistic Seconds">Segundos de Estatística</value>
-  <value column="PrintName" original="Statistic Seconds">Segundos de Estatística</value>
+  <value column="Name" original="Statistic Seconds">Segundos (Estatística)</value>
+  <value column="PrintName" original="Statistic Seconds">Segundos (Estatística)</value>
   <value column="Description" original="Internal statistics how many seconds a process took">Estatísticas Internas sobre quantos segundos durou um processo</value>
   <value column="Help" original="For internal use">Para uso interno</value>
   <value column="PO_Description" original=""/>
@@ -10279,10 +10279,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1787" trl="Y">
-  <value column="Name" original="Included Column">Coluna Incluída</value>
-  <value column="PrintName" original="Included Column">Coluna Incluída</value>
+  <value column="Name" original="Included Column">Coluna de Inclusão</value>
+  <value column="PrintName" original="Included Column">Coluna de Inclusão</value>
   <value column="Description" original="Column determining if a Table Column is included in Ordering">Coluna que determina se uma Coluna da Tabela será incluída na Ordenação.</value>
-  <value column="Help" original="If a Included Column is defined, it decides, if a column is active in the ordering - otherwise it is determined that the Order Column has a value of one or greater">Se uma "Coluna Incluída" for definida, ela decide, se uma coluna será ativa na ordenação - por outro lado é obrigatório que a "Coluna de Ordenação" tenha um valor maior ou igual a 1.</value>
+  <value column="Help" original="If a Included Column is defined, it decides, if a column is active in the ordering - otherwise it is determined that the Order Column has a value of one or greater">Se uma "Coluna de Inclusão" for definida, ela decide, se uma coluna será ativa na ordenação - por outro lado é obrigatório que a "Coluna de Ordenação" tenha um valor maior ou igual a 1.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -10511,8 +10511,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="1810" trl="Y">
   <value column="Name" original="X Position">Posição X</value>
   <value column="PrintName" original="X Position">Posição X</value>
-  <value column="Description" original="Absolute X (horizontal) position in 1/72 of an inch">Posição horizontal (X) absoluta em 1/72 de polegada</value>
-  <value column="Help" original="Absolute X (horizontal) position in 1/72 of an inch">Posição horizontal (X) absoluta em 1/72 de polegada</value>
+  <value column="Description" original="Absolute X (horizontal) position in 1/72 of an inch">Posição absoluta horizontal (X) em 1/72 de polegada</value>
+  <value column="Help" original="Absolute X (horizontal) position in 1/72 of an inch">Posição absoluta horizontal (X) em 1/72 de polegada</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -12710,9 +12710,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2046" trl="Y">
-  <value column="Name" original="Maintain Change Log">Gerenciamento do Registro de Alterações</value>
-  <value column="PrintName" original="Change Log">Registro de Alteração</value>
-  <value column="Description" original="Maintain a log of changes">Gerencia um registro (log) das alterações</value>
+  <value column="Name" original="Maintain Change Log">Registrar Alterações</value>
+  <value column="PrintName" original="Change Log">Registrar Alterações</value>
+  <value column="Description" original="Maintain a log of changes">Registrar log de alterações</value>
   <value column="Help" original="If selected, a log of all changes is maintained.">Se selecionado, será mantido um registro (log) de todas as alterações.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -13220,10 +13220,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2101" trl="Y">
-  <value column="Name" original="Sql FROM">Sql FROM</value>
-  <value column="PrintName" original="From Clause">Cláusula De (Origem)</value>
-  <value column="Description" original="SQL FROM clause">Cláusula SQL FROM</value>
-  <value column="Help" original="The Select Clause indicates the SQL FROM clause to use for selecting the record for a measure calculation. It can have JOIN clauses. Do not include the FROM itself.">A "Cláusula de Seleção" indica a cláusula SQL FROM a ser utilizada para selecionar o registro para um cálculo de medida. Ela pode ter cláusulas JOIN (juntar). Não inclua a palavra FROM.</value>
+  <value column="Name" original="Sql FROM">Cláusula FROM (SQL)</value>
+  <value column="PrintName" original="From Clause">Cláusula FROM (SQL)</value>
+  <value column="Description" original="SQL FROM clause">Cláusula FROM (SQL)</value>
+  <value column="Help" original="The Select Clause indicates the SQL FROM clause to use for selecting the record for a measure calculation. It can have JOIN clauses. Do not include the FROM itself.">A "Cláusula FROM (SQL)" indica a cláusula SQL FROM a ser utilizada para selecionar o registro para um cálculo de medida. Ela pode ter cláusulas JOIN. Não inclua a palavra FROM.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -13430,9 +13430,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2122" trl="Y">
-  <value column="Name" original="Release No">Núm. Liberação</value>
-  <value column="PrintName" original="Release No">Núm. Liberação</value>
-  <value column="Description" original="Internal Release Number">Número Interno da Liberação</value>
+  <value column="Name" original="Release No">Núm. da Versão</value>
+  <value column="PrintName" original="Release No">Núm. da Versão</value>
+  <value column="Description" original="Internal Release Number">Número Interno de Versão</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -13561,10 +13561,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2136" trl="Y">
-  <value column="Name" original="PO Window">Janela de PC</value>
-  <value column="PrintName" original="PO Window">Janela de PC</value>
-  <value column="Description" original="Purchase Order Window">Janela de Pedido de Compra</value>
-  <value column="Help" original="Window for Purchase Order (AP) Zooms">Janela para zooms de Pedido de Compra (CAP)</value>
+  <value column="Name" original="PO Window">Janela (Compra)</value>
+  <value column="PrintName" original="PO Window">Janela (Compra)</value>
+  <value column="Description" original="Purchase Order Window">Janela (Transação de Compra)</value>
+  <value column="Help" original="Window for Purchase Order (AP) Zooms">Janela utilizada em transações de compra.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -14314,9 +14314,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2216" trl="Y">
-  <value column="Name" original="Obscure">Obscurecer</value>
-  <value column="PrintName" original="Obscure">Obscurecer</value>
-  <value column="Description" original="Type of obscuring the data (limiting the display)">Tipo de obscurecimento dos dados (limitando a exibição)</value>
+  <value column="Name" original="Obscure">Ocultar Dados</value>
+  <value column="PrintName" original="Obscure">Ocultar Dados</value>
+  <value column="Description" original="Type of obscuring the data (limiting the display)">Tipo de ocultação de dados (para limitar a exibição)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -18305,9 +18305,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2642" trl="Y">
-  <value column="Name" original="Other SQL Clause">Outra Cláusula SQL</value>
-  <value column="PrintName" original="Other Clause">Outra Cláusula</value>
-  <value column="Description" original="Other SQL Clause">Outra Cláusula SQL</value>
+  <value column="Name" original="Other SQL Clause">Outras Cláusulas (SQL)</value>
+  <value column="PrintName" original="Other Clause">Outras Cláusulas (SQL)</value>
+  <value column="Description" original="Other SQL Clause">Outras Cláusulas (SQL)</value>
   <value column="Help" original="Any other complete clause like GROUP BY, HAVING, ORDER BY, etc. after WHERE clause.">Qualquer outra cláusula completa tal como GROUP BY, HAVING, ORDER BY, etc. após a cláusula WHERE.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -18805,9 +18805,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2693" trl="Y">
-  <value column="Name" original="Multi Row Only">Só Multi Linhas</value>
-  <value column="PrintName" original="Multi Row Only">Só Multi Linhas</value>
-  <value column="Description" original="This applies to Multi-Row view only">Isto se aplica somente a visualizações de múltiplas linhas</value>
+  <value column="Name" original="Multi Row Only">Somente Visualização em Grade</value>
+  <value column="PrintName" original="Multi Row Only">Somente Visualização em Grade</value>
+  <value column="Description" original="This applies to Multi-Row view only">Isto se aplica somente quando em visualização em grade</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -18825,9 +18825,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2698" trl="Y">
-  <value column="Name" original="Check all DB Tables">Conferir todas Tabelas BD</value>
-  <value column="PrintName" original="Check all DB Tables">Conferir todas Tabelas BD</value>
-  <value column="Description" original="Check not just this table">Conferir não apenas esta tabela</value>
+  <value column="Name" original="Check all DB Tables">Verificar todas as Tabelas (BD)</value>
+  <value column="PrintName" original="Check all DB Tables">Verificar todas as Tabelas (BD)</value>
+  <value column="Description" original="Check not just this table">Verificar não apenas esta tabela, mas todas.</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -18835,10 +18835,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2699" trl="Y">
-  <value column="Name" original="Column SQL">Coluna SQL</value>
-  <value column="PrintName" original="Column SQL">Coluna SQL</value>
-  <value column="Description" original="Virtual Column (r/o)">Coluna Virtual (r/o)</value>
-  <value column="Help" original="You can define virtual columns (not stored in the database). If defined, the Column name is the synonym of the SQL expression defined here. The SQL expression must be valid.&lt;br&gt;&#10;Example: &quot;Updated-Created&quot; would list the age of the entry in days"><![CDATA[Você pode definir colunas virtuais (não armazenadas no banco de dados). Se definido, o nome da Coluna é o sinônimo da expressão SQL aqui definida. A expressão SQL tem que ser válida.<br> Exemplo: "Updated-Created" iria listar a idade do lançamento em dias]]></value>
+  <value column="Name" original="Column SQL">Coluna Virtual (SQL)</value>
+  <value column="PrintName" original="Column SQL">Coluna Virtual (SQL)</value>
+  <value column="Description" original="Virtual Column (r/o)">Coluna Virtual (SQL, apenas leitura)</value>
+  <value column="Help" original="You can define virtual columns (not stored in the database). If defined, the Column name is the synonym of the SQL expression defined here. The SQL expression must be valid.&lt;br&gt;&#10;Example: &quot;Updated-Created&quot; would list the age of the entry in days"><![CDATA[Você pode definir colunas virtuais (não armazenadas no banco de dados). Se definido, o nome da Coluna é o sinônimo da expressão SQL aqui definida. A expressão SQL tem que ser válida.<br> Exemplo: "Updated-Created" iria trazer a idade do registro.]]></value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -20326,10 +20326,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2854" trl="Y">
-  <value column="Name" original="Max Query Records">Max Registros Perguntas</value>
-  <value column="PrintName" original="Max Query Records">Max Registros Perguntas</value>
-  <value column="Description" original="If defined, you cannot query more records as defined - the query criteria needs to be changed to query less records">Se definido, você não pode inquerir mais registros do que o valor definido - o critério de inquisição precisa ser alterado para retornar menos registros</value>
-  <value column="Help" original="Enter the number of records a user will be able to query to avoid unnecessary system load.  If 0, no restrictions are imposed.">Digite o número máximo de registros que o usuário será capaz de inquerir para evitar sobrecarga desnecessária do sistema.  Se 0, não haverá restrições.</value>
+  <value column="Name" original="Max Query Records">Núm. Máximo de Registros da Query</value>
+  <value column="PrintName" original="Max Query Records">Núm. Máximo de Registros da Query</value>
+  <value column="Description" original="If defined, you cannot query more records as defined - the query criteria needs to be changed to query less records">Se definido, o banco de dados não retornará mais registro do que o definido. Os critérios de busca precisarão ser alterados para retornar menos registros</value>
+  <value column="Help" original="Enter the number of records a user will be able to query to avoid unnecessary system load.  If 0, no restrictions are imposed.">Informe o número máximo de registros que um usuário será capaz de retornar (busca) para evitar sobrecarga desnecessária do banco de dados. Se informar 0, não haverá restrição.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -21597,10 +21597,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2991" trl="Y">
-  <value column="Name" original="Secure content">Secure content</value>
-  <value column="PrintName" original="Secure content">Secure content</value>
-  <value column="Description" original="Defines whether content must be treated as secure">Defines whether content needs to get encrypted</value>
-  <value column="Help" original="">If you select this parameter this container will only get delivered over a secure connection i.e. SSL etc. if no encryption can be found no content will be delivered</value>
+  <value column="Name" original="Secure content">Conteúdo Seguro</value>
+  <value column="PrintName" original="Secure content">Conteúdo Seguro</value>
+  <value column="Description" original="Defines whether content must be treated as secure">Define se o conteúdo precisa ser encriptado</value>
+  <value column="Help" original="">Se você selecionar esta opção, o conteúdo será apresentado apenas quando utilizar uma conexão segura, como por exemplo SSL. Se não houver uma conexão segura, o conteúdo não será apresentado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -22167,10 +22167,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3053" trl="Y">
-  <value column="Name" original="ModelPackage">ModelPackage</value>
-  <value column="PrintName" original="ModelPackage">ModelPackage</value>
-  <value column="Description" original="Java Package of the model classes">Java Package of the model classes</value>
-  <value column="Help" original="By default, the Java model classes for extensions are in the compiere.model package.  If you provide a jar file in the classpath, you can define here your specific model package.  The model classes are used to save/modify/delete entries and as well as in Workflow.  Refer to the Compiere naming convention to make sure that your class is used rather then the base classes.">By default, the Java model classes for extensions are in the compiere.model package.  If you provide a jar file in the classpath, you can define here your specific model package.  The model classes are used to save/modify/delete entries and as well as in Workflow.  Refer to the Compiere naming convention to make sure that your class is used rather then the base classes.</value>
+  <value column="Name" original="ModelPackage">Pacote (Java) de Model</value>
+  <value column="PrintName" original="ModelPackage">Pacote (Java) de Model</value>
+  <value column="Description" original="Java Package of the model classes">Pacote (Java) das classes model</value>
+  <value column="Help" original="By default, the Java model classes for extensions are in the compiere.model package.  If you provide a jar file in the classpath, you can define here your specific model package.  The model classes are used to save/modify/delete entries and as well as in Workflow.  Refer to the Compiere naming convention to make sure that your class is used rather then the base classes.">Por padrão, as classes estão no pacote compiere.model. Se você está incluindo uma jar ao classpath, você pode definir aqui seu pacote específico. As classes model são utilizadas para salvar/alterar/excluir registros, bem como pelos fluxos de trabalho.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -22317,30 +22317,30 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3068" trl="Y">
-  <value column="Name" original="Info Window">Info Window</value>
-  <value column="PrintName" original="Info Window">Info Window</value>
-  <value column="Description" original="Info and search/select Window">Info and search/select Window</value>
-  <value column="Help" original="The Info window is used to search and select records as well as display information relevant to the selection.">The Info window is used to search and select records as well as display information relevant to the selection.</value>
+  <value column="Name" original="Info Window">Janela de Informações</value>
+  <value column="PrintName" original="Info Window">Janela de Informações</value>
+  <value column="Description" original="Info and search/select Window">Janela de informações (busca/seleção)</value>
+  <value column="Help" original="The Info window is used to search and select records as well as display information relevant to the selection.">A janela de informações é utilizada para buscar e selecionar registros, bem como apresentar informações relevantes à seleção.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3069" trl="Y">
-  <value column="Name" original="Info Column">Info Column</value>
-  <value column="PrintName" original="Info Column">Info Column</value>
-  <value column="Description" original="Info Window Column">Info Window Column</value>
-  <value column="Help" original="Column in the Info Window for display and/or selection.  If used for selection, the column cannot be a SQL expression. The SQL clause must be fully qualified based on the FROM clause in the Info Window definition">Column in the Info Window for display and/or selection.  If used for selection, the column cannot be a SQL expression. The SQL clause must be fully qualified based on the FROM clause in the Info Window definition</value>
+  <value column="Name" original="Info Column">Coluna (Informações)</value>
+  <value column="PrintName" original="Info Column">Coluna (Informações)</value>
+  <value column="Description" original="Info Window Column">Coluna da Janela de Informações</value>
+  <value column="Help" original="Column in the Info Window for display and/or selection.  If used for selection, the column cannot be a SQL expression. The SQL clause must be fully qualified based on the FROM clause in the Info Window definition">Coluna utilizada nas janelas de informações para apresentar informações e permitir a seleção de registros. Se utilizada para seleção, a coluna não pode ser um expressão SQL. O SQL deve ser totalmente qualificado baseado na cláusula FROM na definição da janela de informações.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3070" trl="Y">
-  <value column="Name" original="Query Criteria">Query Criteria</value>
-  <value column="PrintName" original="Query Criteria">Query Criteria</value>
-  <value column="Description" original="The column is also used as a query criteria">The column is also used as a query criteria</value>
-  <value column="Help" original="The column is used to enter queries - the SQL cannot be an expression">The column is used to enter queries - the SQL cannot be an expression</value>
+  <value column="Name" original="Query Criteria">Critério de Busca</value>
+  <value column="PrintName" original="Query Criteria">Critério de Busca</value>
+  <value column="Description" original="The column is also used as a query criteria">A coluna é utilizada também para critério de busca</value>
+  <value column="Help" original="The column is used to enter queries - the SQL cannot be an expression">A coluna é utilizada para informar critérios de busca. O SQL não pode ser uma expressão.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -22707,8 +22707,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50003" trl="Y">
-  <value column="Name" original="Package Version">PK_Version</value>
-  <value column="PrintName" original="Package Version">PK_Version</value>
+  <value column="Name" original="Package Version">Versão do Pacote</value>
+  <value column="PrintName" original="Package Version">Versão do Pacote</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22717,8 +22717,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50004" trl="Y">
-  <value column="Name" original="UpdatedDate">UpdatedDate</value>
-  <value column="PrintName" original="UpdatedDate">UpdatedDate</value>
+  <value column="Name" original="UpdatedDate">Atualizado Em</value>
+  <value column="PrintName" original="UpdatedDate">Atualizado Em</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22727,8 +22727,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50005" trl="Y">
-  <value column="Name" original="Uninstall">Uninstall</value>
-  <value column="PrintName" original="Uninstall">Uninstall</value>
+  <value column="Name" original="Uninstall">Desinstalação</value>
+  <value column="PrintName" original="Uninstall">Desinstalação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22737,8 +22737,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50006" trl="Y">
-  <value column="Name" original="Package Status">PK_Status</value>
-  <value column="PrintName" original="Package Status">PK_Status</value>
+  <value column="Name" original="Package Status">Estado do Pacote</value>
+  <value column="PrintName" original="Package Status">Estado do Pacote</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22767,8 +22767,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50009" trl="Y">
-  <value column="Name" original="Imp. Package Backup">AD_Package_Imp_Backup_ID</value>
-  <value column="PrintName" original="Imp. Package Backup">AD_Package_Imp_Backup_ID</value>
+  <value column="Name" original="Imp. Package Backup">Backups de Objetos</value>
+  <value column="PrintName" original="Imp. Package Backup">Backups de Objetos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22777,8 +22777,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50010" trl="Y">
-  <value column="Name" original="Imp. Package Detail">AD_Package_Imp_Detail_ID</value>
-  <value column="PrintName" original="Imp. Package Detail">AD_Package_Imp_Detail_ID</value>
+  <value column="Name" original="Imp. Package Detail">Objetos Instalados</value>
+  <value column="PrintName" original="Imp. Package Detail">Objetos Instalados</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22787,8 +22787,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50011" trl="Y">
-  <value column="Name" original="Package Imp. Org. Dir.">AD_Package_Imp_Org_Dir</value>
-  <value column="PrintName" original="Package Imp. Org. Dir.">AD_Package_Imp_Org_Dir</value>
+  <value column="Name" original="Package Imp. Org. Dir.">Pacote Importado Original</value>
+  <value column="PrintName" original="Package Imp. Org. Dir.">Pacote Importado Original</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22797,8 +22797,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50012" trl="Y">
-  <value column="Name" original="ColValue">ColValue</value>
-  <value column="PrintName" original="ColValue">ColValue</value>
+  <value column="Name" original="ColValue">Valor da Coluna</value>
+  <value column="PrintName" original="ColValue">Valor da Coluna</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22807,8 +22807,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50013" trl="Y">
-  <value column="Name" original="Package Imp.">AD_Package_Imp_ID</value>
-  <value column="PrintName" original="Package Imp.">AD_Package_Imp_ID</value>
+  <value column="Name" original="Package Imp.">PackIn</value>
+  <value column="PrintName" original="Package Imp.">PackIn</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22817,8 +22817,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50014" trl="Y">
-  <value column="Name" original="Package Imp. Bck. Directory">AD_Package_Imp_Bck_Dir</value>
-  <value column="PrintName" original="Package Imp. Bck. Directory">AD_Package_Imp_Bck_Dir</value>
+  <value column="Name" original="Package Imp. Bck. Directory">Backup do Pacote Instalado</value>
+  <value column="PrintName" original="Package Imp. Bck. Directory">Backup do Pacote Instalado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22827,8 +22827,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50015" trl="Y">
-  <value column="Name" original="Original">AD_Original_ID</value>
-  <value column="PrintName" original="Original">AD_Original_ID</value>
+  <value column="Name" original="Original">Original</value>
+  <value column="PrintName" original="Original">Original</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22837,8 +22837,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50016" trl="Y">
-  <value column="Name" original="Backup">Ad_Backup_ID</value>
-  <value column="PrintName" original="Backup">Ad_Backup_ID</value>
+  <value column="Name" original="Backup">Backup</value>
+  <value column="PrintName" original="Backup">Backup</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22847,8 +22847,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50017" trl="Y">
-  <value column="Name" original="Success">Success</value>
-  <value column="PrintName" original="Success">Success</value>
+  <value column="Name" original="Success">Sucesso</value>
+  <value column="PrintName" original="Success">Sucesso</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22857,8 +22857,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50018" trl="Y">
-  <value column="Name" original="Package Exp.">AD_Package_Exp_ID</value>
-  <value column="PrintName" original="Package Exp.">AD_Package_Exp_ID</value>
+  <value column="Name" original="Package Exp.">PackOut</value>
+  <value column="PrintName" original="Package Exp.">PackOut</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22877,8 +22877,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50020" trl="Y">
-  <value column="Name" original="Instructions">Instructions</value>
-  <value column="PrintName" original="Instructions">Instructions</value>
+  <value column="Name" original="Instructions">Instruções</value>
+  <value column="PrintName" original="Instructions">Instruções</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22907,8 +22907,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50024" trl="Y">
-  <value column="Name" original="Destination_FileName">Destination_FileName</value>
-  <value column="PrintName" original="Destination_FileName">Destination_FileName</value>
+  <value column="Name" original="Destination_FileName">Nome do Arquivo (Destino)</value>
+  <value column="PrintName" original="Destination_FileName">Nome do Arquivo (Destino)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22917,8 +22917,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50025" trl="Y">
-  <value column="Name" original="Destination_Directory">Destination_Directory</value>
-  <value column="PrintName" original="Destination_Directory">Destination_Directory</value>
+  <value column="Name" original="Destination_Directory">Diretório (Destino)</value>
+  <value column="PrintName" original="Destination_Directory">Diretório (Destino)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22927,8 +22927,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50026" trl="Y">
-  <value column="Name" original="DBType">DBType</value>
-  <value column="PrintName" original="DBType">DBType</value>
+  <value column="Name" original="DBType">Tipo de Banco de Dados</value>
+  <value column="PrintName" original="DBType">Tipo de Banco de Dados</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22937,8 +22937,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50027" trl="Y">
-  <value column="Name" original="Target_Directory">Target_Directory</value>
-  <value column="PrintName" original="Target_Directory">Target_Directory</value>
+  <value column="Name" original="Target_Directory">Diretório (Alvo)</value>
+  <value column="PrintName" original="Target_Directory">Diretório (Alvo)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22947,8 +22947,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50028" trl="Y">
-  <value column="Name" original="SQLStatement">SQLStatement</value>
-  <value column="PrintName" original="SQLStatement">SQLStatement</value>
+  <value column="Name" original="SQLStatement">Instrução SQL</value>
+  <value column="PrintName" original="SQLStatement">Instrução SQL</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22957,8 +22957,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50029" trl="Y">
-  <value column="Name" original="New Package Code">AD_Package_Code_New</value>
-  <value column="PrintName" original="New Package Code">AD_Package_Code_New</value>
+  <value column="Name" original="New Package Code">Código Novo</value>
+  <value column="PrintName" original="New Package Code">Código Novo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -22967,8 +22967,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50030" trl="Y">
-  <value column="Name" original="Old Package Code">AD_Package_Code_Old</value>
-  <value column="PrintName" original="Old Package Code">AD_Package_Code_Old</value>
+  <value column="Name" original="Old Package Code">Código Antigo</value>
+  <value column="PrintName" original="Old Package Code">Código Antigo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -23037,8 +23037,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50038" trl="Y">
-  <value column="Name" original="Show Help">Show Help</value>
-  <value column="PrintName" original="Show Help">Show Help</value>
+  <value column="Name" original="Show Help">Exibir Ajuda</value>
+  <value column="PrintName" original="Show Help">Exibir Ajuda</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -23047,8 +23047,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50039" trl="Y">
-  <value column="Name" original="Jasper Report">Jasper Report</value>
-  <value column="PrintName" original="Jasper Report">Jasper Report</value>
+  <value column="Name" original="Jasper Report">Relatório Jasper</value>
+  <value column="PrintName" original="Jasper Report">Relatório Jasper</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -23357,8 +23357,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50074" trl="Y">
-  <value column="Name" original="Mandatory Logic">Mandatory Logic</value>
-  <value column="PrintName" original="Mandatory Logic">Mandatory Logic</value>
+  <value column="Name" original="Mandatory Logic">Lógica de Obrigatório</value>
+  <value column="PrintName" original="Mandatory Logic">Lógica de Obrigatório</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -23987,8 +23987,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53002" trl="Y">
-  <value column="Name" original="Field Group Type">Field Group Type</value>
-  <value column="PrintName" original="Field Group Type">Field Group Type</value>
+  <value column="Name" original="Field Group Type">Tipo de Grupo de Campos</value>
+  <value column="PrintName" original="Field Group Type">Tipo de Grupo de Campos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -24027,8 +24027,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53225" trl="Y">
-  <value column="Name" original="Model Validator">Model Validator</value>
-  <value column="PrintName" original="Model Validator">Model Validator</value>
+  <value column="Name" original="Model Validator">Validador de Model</value>
+  <value column="PrintName" original="Model Validator">Validador de Model</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -24037,8 +24037,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53226" trl="Y">
-  <value column="Name" original="Model Validation Class">Model Validation Class</value>
-  <value column="PrintName" original="Model Validation Class">Model Validation Class</value>
+  <value column="Name" original="Model Validation Class">Classe (Java) do Validador de Model</value>
+  <value column="PrintName" original="Model Validation Class">Classe (Java) do Validador de Model</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -25116,9 +25116,9 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53333" trl="N">
-  <value column="Name" original="Rule Type">Rule Type</value>
-  <value column="PrintName" original="Rule Type">Rule Type</value>
+ <row id="53333" trl="Y">
+  <value column="Name" original="Rule Type">Tipo de Regra</value>
+  <value column="PrintName" original="Rule Type">Tipo de Regra</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -25136,10 +25136,10 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53336" trl="N">
-  <value column="Name" original="Collapsed By Default">Collapsed By Default</value>
-  <value column="PrintName" original="Collapsed By Default">Collapsed By Default</value>
-  <value column="Description" original="Flag to set the initial state of collapsible field group.">Flag to set the initial state of collapsible field group.</value>
+ <row id="53336" trl="Y">
+  <value column="Name" original="Collapsed By Default">Minimizado por Padrão</value>
+  <value column="PrintName" original="Collapsed By Default">Minimizado por Padrão</value>
+  <value column="Description" original="Flag to set the initial state of collapsible field group.">Identifica se o estado inicial do grupo é minimizado.</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -25156,9 +25156,9 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53338" trl="N">
-  <value column="Name" original="Event Model Validator">Event Model Validator</value>
-  <value column="PrintName" original="Event Model Validator">Event Model Validator</value>
+ <row id="53338" trl="Y">
+  <value column="Name" original="Event Model Validator">Evento do Validador de Model</value>
+  <value column="PrintName" original="Event Model Validator">Evento do Validador de Model</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -25246,11 +25246,11 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53348" trl="N">
-  <value column="Name" original="Order By Value">Order By Value</value>
-  <value column="PrintName" original="Order By Value">Order By Value</value>
-  <value column="Description" original="Order list using the value column instead of the name column">Order list using the value column instead of the name column</value>
-  <value column="Help" original="Order list using the value column instead of the name column">Order list using the value column instead of the name column</value>
+ <row id="53348" trl="Y">
+  <value column="Name" original="Order By Value">Ordenar pela Chave</value>
+  <value column="PrintName" original="Order By Value">Ordenar pela Chave</value>
+  <value column="Description" original="Order list using the value column instead of the name column">Ordena a lista usando a Chave de Busca ao invés da coluna Nome</value>
+  <value column="Help" original="Order list using the value column instead of the name column">Ordena a lista usando a Chave de Busca ao invés da coluna Nome</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -25276,9 +25276,9 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53351" trl="N">
-  <value column="Name" original="Developer Name">Developer Name</value>
-  <value column="PrintName" original="Developer Name">Developer Name</value>
+ <row id="53351" trl="Y">
+  <value column="Name" original="Developer Name">Nome do Desenvolvedor</value>
+  <value column="PrintName" original="Developer Name">Nome do Desenvolvedor</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -25286,9 +25286,9 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53352" trl="N">
-  <value column="Name" original="Apply Script">Apply Script</value>
-  <value column="PrintName" original="Apply Script">Apply Script</value>
+ <row id="53352" trl="Y">
+  <value column="Name" original="Apply Script">Aplicar Script</value>
+  <value column="PrintName" original="Apply Script">Aplicar Script</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -27699,11 +27699,11 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53655" trl="N">
-  <value column="Name" original="Autocomplete">Autocomplete</value>
-  <value column="PrintName" original="Autocomplete">Autocomplete</value>
-  <value column="Description" original="Automatic completion for textfields">Automatic completion for textfields</value>
-  <value column="Help" original="The autocompletion uses all existing values (from the same client and organization) of the field.">The autocompletion uses all existing values (from the same client and organization) of the field.</value>
+ <row id="53655" trl="Y">
+  <value column="Name" original="Autocomplete">Autocompletar</value>
+  <value column="PrintName" original="Autocomplete">Autocompletar</value>
+  <value column="Description" original="Automatic completion for textfields">Permite completar automticamente campos de texto</value>
+  <value column="Help" original="The autocompletion uses all existing values (from the same client and organization) of the field.">O recurso de autocompletar apresenta sugestões para todos os valores existentes (do campo), da mesma empresa/organização.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -27829,10 +27829,10 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53669" trl="N">
-  <value column="Name" original="Allow Logging">Allow Logging</value>
-  <value column="PrintName" original="Allow Logging">Allow Logging</value>
-  <value column="Description" original="Determine if a column must be recorded into the change log">Determine if a column must be recorded into the change log</value>
+ <row id="53669" trl="Y">
+  <value column="Name" original="Allow Logging">Permitir o Registro de Alterações</value>
+  <value column="PrintName" original="Allow Logging">Permitir o Registro de Alterações</value>
+  <value column="Description" original="Determine if a column must be recorded into the change log">Determinado se alterações nos valores da coluna precisam ser registradas no log de alterações.</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -28433,7 +28433,7 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53775" trl="N">
+ <row id="53775" trl="Y">
   <value column="Name" original="Query">Query</value>
   <value column="PrintName" original="Query">Query</value>
   <value column="Description" original="SQL">SQL</value>
@@ -28443,20 +28443,20 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53776" trl="N">
-  <value column="Name" original="Search Type">Search Type</value>
-  <value column="PrintName" original="Search Type">Search Type</value>
-  <value column="Description" original="Which kind of search is used (Query or Table)">Which kind of search is used (Query or Table)</value>
+ <row id="53776" trl="Y">
+  <value column="Name" original="Search Type">Tipo de Pesquisa</value>
+  <value column="PrintName" original="Search Type">Tipo de Pesquisa</value>
+  <value column="Description" original="Which kind of search is used (Query or Table)">Indica o tipo de pesquisa utilizado (Query ou Tabela)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53777" trl="N">
-  <value column="Name" original="Transaction Code">Transaction Code</value>
-  <value column="PrintName" original="Transaction Code">Transaction Code</value>
-  <value column="Description" original="The transaction code represents the search definition">The transaction code represents the search definition</value>
+ <row id="53777" trl="Y">
+  <value column="Name" original="Transaction Code">Código de Transação</value>
+  <value column="PrintName" original="Transaction Code">Código de Transação</value>
+  <value column="Description" original="The transaction code represents the search definition">O código de Transação representa a definição de pesquisa</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -28873,10 +28873,10 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53874" trl="N">
-  <value column="Name" original="Parent Column">Parent Column</value>
-  <value column="PrintName" original="Parent Column">Parent Column</value>
-  <value column="Description" original="The link column on the parent tab.">The link column on the parent tab.</value>
+ <row id="53874" trl="Y">
+  <value column="Name" original="Parent Column">Coluna de Vínculo (na Aba Pai)</value>
+  <value column="PrintName" original="Parent Column">Coluna de Vínculo (na Aba Pai)</value>
+  <value column="Description" original="The link column on the parent tab.">Indica a coluna de vínculo na aba pai</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -30235,9 +30235,9 @@ Produto: usado para adicionar produtos com facilidade ao pedido no PDV</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54268" trl="N">
-  <value column="Name" original="Chart">Chart</value>
-  <value column="PrintName" original="Chart">Chart</value>
+ <row id="54268" trl="Y">
+  <value column="Name" original="Chart">Gráfico de Dados</value>
+  <value column="PrintName" original="Chart">Gráfico de Dados</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -38006,10 +38006,10 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="55297" trl="N">
-  <value column="Name" original="Allow Copy">Allow Copy</value>
-  <value column="PrintName" original="Allow Copy">Allow Copy</value>
-  <value column="Description" original="Determine if a column must be copied when pushing the button to copy record">Determine if a column must be copied when pushing the button to copy record</value>
+ <row id="55297" trl="Y">
+  <value column="Name" original="Allow Copy">Permitir a Cópia</value>
+  <value column="PrintName" original="Allow Copy">Permitir a Cópia</value>
+  <value column="Description" original="Determine if a column must be copied when pushing the button to copy record">Determina se a coluna deve ser copiada quando utilizado o botão para copiar registro.</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -38226,9 +38226,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200017" trl="N">
-  <value column="Name" original="Component Name">Component Name</value>
-  <value column="PrintName" original="Component Name">Component Name</value>
+ <row id="200017" trl="Y">
+  <value column="Name" original="Component Name">Nome do Componente</value>
+  <value column="PrintName" original="Component Name">Nome do Componente</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -38236,11 +38236,11 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200018" trl="N">
-  <value column="Name" original="Service Component Name">Service Component Name</value>
-  <value column="PrintName" original="Service Component Name">Service Component Name</value>
-  <value column="Description" original="The service component name that implements the interface for toolbar actions">The service component name that implements the interface for toolbar actions</value>
-  <value column="Help" original="The OSGi service component name that implements the IAction interface for toolbar action">The OSGi service component name that implements the IAction interface for toolbar action</value>
+ <row id="200018" trl="Y">
+  <value column="Name" original="Service Component Name">Nome do Serviço OSGI</value>
+  <value column="PrintName" original="Service Component Name">Nome do Serviço OSGI</value>
+  <value column="Description" original="The service component name that implements the interface for toolbar actions">O nome do serviço OSGI que implementa a interface para ações de barra de ferramentas</value>
+  <value column="Help" original="The OSGi service component name that implements the IAction interface for toolbar action">O nome do serviço OSGI que implementa a interface IAction para ações de barra de ferramentas.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -38396,9 +38396,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200035" trl="N">
-  <value column="Name" original="Date Processed">Date Processed</value>
-  <value column="PrintName" original="Date Processed">Date Processed</value>
+ <row id="200035" trl="Y">
+  <value column="Name" original="Date Processed">Processado Em</value>
+  <value column="PrintName" original="Date Processed">Processado Em</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -38586,10 +38586,10 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200074" trl="N">
-  <value column="Name" original="Show in Dashboard">Show in Dashboard</value>
-  <value column="PrintName" original="Show in Dashboard">Show in Dashboard</value>
-  <value column="Description" original="Show the dashlet in the dashboard">Show the dashlet in the dashboard</value>
+ <row id="200074" trl="Y">
+  <value column="Name" original="Show in Dashboard">Exibir no Painel</value>
+  <value column="PrintName" original="Show in Dashboard">Exibir no Painel</value>
+  <value column="Description" original="Show the dashlet in the dashboard">Exibir o item no painel</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -38676,9 +38676,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200083" trl="N">
-  <value column="Name" original="Show in Grid">Show in Grid</value>
-  <value column="PrintName" original="Show in Grid">Show in Grid</value>
+ <row id="200083" trl="Y">
+  <value column="Name" original="Show in Grid">Exibido na Visualização em Grade</value>
+  <value column="PrintName" original="Show in Grid">Exibido na Visualização em Grade</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -38686,9 +38686,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200084" trl="N">
-  <value column="Name" original="Grid Sequence No">Grid Sequence No</value>
-  <value column="PrintName" original="Grid Sequence No">Grid Sequence No</value>
+ <row id="200084" trl="Y">
+  <value column="Name" original="Grid Sequence No">Sequência na Visualização em Grade</value>
+  <value column="PrintName" original="Grid Sequence No">Sequência na Visualização em Grade</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -38746,11 +38746,11 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200096" trl="N">
-  <value column="Name" original="Selection Column Sequence">Selection Column Sequence</value>
-  <value column="PrintName" original="Selection Column Sequence">Selection Column Sequence</value>
-  <value column="Description" original="Selection Column Sequence">Selection Column Sequence</value>
-  <value column="Help" original="For ordering sequence of selection column">For ordering sequence of selection column</value>
+ <row id="200096" trl="Y">
+  <value column="Name" original="Selection Column Sequence">Sequência da Coluna de Seleção</value>
+  <value column="PrintName" original="Selection Column Sequence">Sequência da Coluna de Seleção</value>
+  <value column="Description" original="Selection Column Sequence">Sequência da Coluna de Seleção</value>
+  <value column="Help" original="For ordering sequence of selection column">Utilizado para ordenar colunas de seleção.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -38766,21 +38766,21 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200098" trl="N">
-  <value column="Name" original="Column Span">Column Span</value>
-  <value column="PrintName" original="Column Span">Column Span</value>
-  <value column="Description" original="Number of column for a box of field">Number of column for a box of field</value>
+ <row id="200098" trl="Y">
+  <value column="Name" original="Column Span">Núm. (Span) de Colunas</value>
+  <value column="PrintName" original="Column Span">Núm. (Span) de Colunas</value>
+  <value column="Description" original="Number of column for a box of field">Define quantas colunas o campo irá abranger.</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200099" trl="N">
-  <value column="Name" original="Number of Lines">Number of Lines</value>
-  <value column="PrintName" original="Number of Lines">Number of Lines</value>
-  <value column="Description" original="Number of lines for a field">Number of lines for a field</value>
-  <value column="Help" original="Number of lines for a field">Number of lines for a field</value>
+ <row id="200099" trl="Y">
+  <value column="Name" original="Number of Lines">Núm. de Linhas</value>
+  <value column="PrintName" original="Number of Lines">Núm. de Linhas</value>
+  <value column="Description" original="Number of lines for a field">Número de linhas para o campo</value>
+  <value column="Help" original="Number of lines for a field">Número de linhas que o campo irá abranger.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -39276,11 +39276,11 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200187" trl="N">
-  <value column="Name" original="Toolbar Button">Toolbar Button</value>
-  <value column="PrintName" original="Toolbar Button">Toolbar Button</value>
-  <value column="Description" original="Add the column button to the toolbar">Add the column button to the toolbar</value>
-  <value column="Help" original="There IsToolbarButton check box indicates if this column button is part of the toolbar's process button popup list or render as field.">There IsToolbarButton check box indicates if this column button is part of the toolbar's process button popup list or render as field.</value>
+ <row id="200187" trl="Y">
+  <value column="Name" original="Toolbar Button">Botão na Barra de Ferramentas</value>
+  <value column="PrintName" original="Toolbar Button">Botão na Barra de Ferramentas</value>
+  <value column="Description" original="Add the column button to the toolbar">Adiciona o botão à Barra de Ferramentas</value>
+  <value column="Help" original="There IsToolbarButton check box indicates if this column button is part of the toolbar's process button popup list or render as field.">Indica se o botão de processo é parte da lista de processos contida em ícone específico na barra de ferramentas.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -39556,9 +39556,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200216" trl="N">
-  <value column="Name" original="Quick Entry">Quick Entry</value>
-  <value column="PrintName" original="Quick Entry">Quick Entry</value>
+ <row id="200216" trl="Y">
+  <value column="Name" original="Quick Entry">Entrada Rápida</value>
+  <value column="PrintName" original="Quick Entry">Entrada Rápida</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -53056,31 +53056,31 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202186" trl="N">
-  <value column="Name" original="Distinct">Distinct</value>
-  <value column="PrintName" original="Distinct">Distinct</value>
-  <value column="Description" original="Select Distinct">Select Distinct</value>
+ <row id="202186" trl="Y">
+  <value column="Name" original="Distinct">Cláusula Distinct (BD)</value>
+  <value column="PrintName" original="Distinct">Cláusula Distinct (BD)</value>
+  <value column="Description" original="Select Distinct">Select Distinct do banco de dados</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202188" trl="N">
-  <value column="Name" original="Query Operator">Query Operator</value>
-  <value column="PrintName" original="Query Operator">Query Operator</value>
-  <value column="Description" original="Operator for database query">Operator for database query</value>
+ <row id="202188" trl="Y">
+  <value column="Name" original="Query Operator">Operador da Query</value>
+  <value column="PrintName" original="Query Operator">Operador da Query</value>
+  <value column="Description" original="Operator for database query">Operador da Query do banco de dados</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202189" trl="N">
-  <value column="Name" original="Query Function">Query Function</value>
-  <value column="PrintName" original="Query Function">Query Function</value>
-  <value column="Description" original="Database function for query">Database function for query</value>
-  <value column="Help" original="Database function for user query. If the database function takes more than just the column name parameter, use ? to indicate where the column name should goes to. E.g: Upper, Trunc and To_Char(?,'MM')">Database function for user query. If the database function takes more than just the column name parameter, use ? to indicate where the column name should goes to. E.g: Upper, Trunc and To_Char(?,'MM')</value>
+ <row id="202189" trl="Y">
+  <value column="Name" original="Query Function">Função da Query</value>
+  <value column="PrintName" original="Query Function">Função da Query</value>
+  <value column="Description" original="Database function for query">Função da Query do banco de dados</value>
+  <value column="Help" original="Database function for user query. If the database function takes more than just the column name parameter, use ? to indicate where the column name should goes to. E.g: Upper, Trunc and To_Char(?,'MM')">Função do banco de dados utilizado na query. Se a função utilizar mais do que o parâmetro da coluna, utilize o ? para indicar onde o nome da coluna deve ser utilizado. Ex: Upper, Trunc e TO_Char(?,'MM').</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -53196,9 +53196,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202212" trl="N">
-  <value column="Name" original="Context Help">Context Help</value>
-  <value column="PrintName" original="Context Help">Context Help</value>
+ <row id="202212" trl="Y">
+  <value column="Name" original="Context Help">Ajuda de Contexto</value>
+  <value column="PrintName" original="Context Help">Ajuda de Contexto</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -53216,19 +53216,19 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202214" trl="N">
-  <value column="Name" original="Context Type">Context Type</value>
-  <value column="PrintName" original="Context Type">Context Type</value>
-  <value column="Description" original="Type of Context Help">Type of Context Help</value>
-  <value column="Help" original="The Context Type field indicates the type of context help (tab, process, form etc) this context help is defined as">The Context Type field indicates the type of context help (tab, process, form etc) this context help is defined as</value>
+ <row id="202214" trl="Y">
+  <value column="Name" original="Context Type">Tipo de Contexto</value>
+  <value column="PrintName" original="Context Type">Tipo de Contexto</value>
+  <value column="Description" original="Type of Context Help">Tipo de Ajuda de Contexto</value>
+  <value column="Help" original="The Context Type field indicates the type of context help (tab, process, form etc) this context help is defined as">O campo Tipo de Contexto permite indicar o tipo de ajuda de contexto (aba, processo, formulário, etc.) a que se refere.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202215" trl="N">
-  <value column="Name" original="Context Help Message">Context Help Message</value>
-  <value column="PrintName" original="Context Help Message">Context Help Message</value>
+ <row id="202215" trl="Y">
+  <value column="Name" original="Context Help Message">Mensagem de Ajuda de Contexto</value>
+  <value column="PrintName" original="Context Help Message">Mensagem de Ajuda de Contexto</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54136,9 +54136,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202542" trl="N">
-  <value column="Name" original="Table Index">Table Index</value>
-  <value column="PrintName" original="Table Index">Table Index</value>
+ <row id="202542" trl="Y">
+  <value column="Name" original="Table Index">Índice de Tabela</value>
+  <value column="PrintName" original="Table Index">Índice de Tabela</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54156,9 +54156,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202544" trl="N">
-  <value column="Name" original="Create Constraint">Create Constraint</value>
-  <value column="PrintName" original="Create Constraint">Create Constraint</value>
+ <row id="202544" trl="Y">
+  <value column="Name" original="Create Constraint">Criar Restrição (DB)</value>
+  <value column="PrintName" original="Create Constraint">Criar Restrição (DB)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54166,9 +54166,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202545" trl="N">
-  <value column="Name" original="Unique">Unique</value>
-  <value column="PrintName" original="Unique">Unique</value>
+ <row id="202545" trl="Y">
+  <value column="Name" original="Unique">Única</value>
+  <value column="PrintName" original="Unique">Única</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54196,9 +54196,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202548" trl="N">
-  <value column="Name" original="Database View Component">Database View Component</value>
-  <value column="PrintName" original="Database View Component">Database View Component</value>
+ <row id="202548" trl="Y">
+  <value column="Name" original="Database View Component">Componente de Visão (View)</value>
+  <value column="PrintName" original="Database View Component">Componente de Visão (View)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54216,9 +54216,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202550" trl="N">
-  <value column="Name" original="Referenced Table">Referenced Table</value>
-  <value column="PrintName" original="Referenced Table">Referenced Table</value>
+ <row id="202550" trl="Y">
+  <value column="Name" original="Referenced Table">Tabela Referenciada</value>
+  <value column="PrintName" original="Referenced Table">Tabela Referenciada</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54246,9 +54246,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202553" trl="N">
-  <value column="Name" original="Database Data Type">Database Data Type</value>
-  <value column="PrintName" original="Database Data Type">Database Data Type</value>
+ <row id="202553" trl="Y">
+  <value column="Name" original="Database Data Type">Tipo de Dados (BD)</value>
+  <value column="PrintName" original="Database Data Type">Tipo de Dados (BD)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54266,9 +54266,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202557" trl="N">
-  <value column="Name" original="Related Info Window">Related Info Window</value>
-  <value column="PrintName" original="Related Info Window">Related Info Window</value>
+ <row id="202557" trl="Y">
+  <value column="Name" original="Related Info Window">Janela de Informações Relacionada</value>
+  <value column="PrintName" original="Related Info Window">Janela de Informações Relacionada</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54276,9 +54276,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202558" trl="N">
-  <value column="Name" original="Related Info Column">Related Info Column</value>
-  <value column="PrintName" original="Related Info Column">Related Info Column</value>
+ <row id="202558" trl="Y">
+  <value column="Name" original="Related Info Column">Coluna da Janela de Informações Relacionada</value>
+  <value column="PrintName" original="Related Info Column">Coluna da Janela de Informações Relacionada</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54346,9 +54346,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202572" trl="N">
-  <value column="Name" original="Default Focus">Default Focus</value>
-  <value column="PrintName" original="Default Focus">Default Focus</value>
+ <row id="202572" trl="Y">
+  <value column="Name" original="Default Focus">Foco por Padrão</value>
+  <value column="PrintName" original="Default Focus">Foco por Padrão</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54356,9 +54356,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202574" trl="N">
-  <value column="Name" original="Advanced Field">Advanced Field</value>
-  <value column="PrintName" original="Advanced Field">Advanced Field</value>
+ <row id="202574" trl="Y">
+  <value column="Name" original="Advanced Field">Campo Avançado</value>
+  <value column="PrintName" original="Advanced Field">Campo Avançado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54706,24 +54706,19 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202611" trl="N">
-  <value column="Name" original="Title Logic">Title Logic</value>
-  <value column="PrintName" original="Title Logic">Title Logic</value>
-  <value column="Description" original="The result determines the title to be displayed for this window">The result determines the title to be displayed for this window</value>
-  <value column="Help" original="The result determines the title to be displayed for this Window, used also as the label for Recent Items.&#13;&#10;Format is just one or several context variables surrounded by @, examples:&#13;&#10;@TaxID@&#13;&#10;@DocumentNo@&#13;&#10;@Value@ @Name@&#13;&#10;if this field is left empty a default title/label is created using the DocumentNo, Value and Name fields if they exist.">The result determines the title to be displayed for this Window, used also as the label for Recent Items.&#13;
-Format is just one or several context variables surrounded by @, examples:&#13;
-@TaxID@&#13;
-@DocumentNo@&#13;
-@Value@ @Name@&#13;
-if this field is left empty a default title/label is created using the DocumentNo, Value and Name fields if they exist.</value>
+ <row id="202611" trl="Y">
+  <value column="Name" original="Title Logic">Lógica do Título</value>
+  <value column="PrintName" original="Title Logic">Lógica do Título</value>
+  <value column="Description" original="The result determines the title to be displayed for this window">O resultado determina o título a ser exibido para esta janela</value>
+  <value column="Help" original="The result determines the title to be displayed for this Window, used also as the label for Recent Items.&#13;&#10;Format is just one or several context variables surrounded by @, examples:&#13;&#10;@TaxID@&#13;&#10;@DocumentNo@&#13;&#10;@Value@ @Name@&#13;&#10;if this field is left empty a default title/label is created using the DocumentNo, Value and Name fields if they exist.">O resultado determinado o título a ser exibido para esta janela, e utilizado também como label para o Itens Recentes. O formato é determinado pelas variáveis de contexto, como por exemplo: @TaxID@, @DocumentNo@, @Value@ @Name@, etc... Se este campo for deixado em branco, o título é criado utilizando-se os campos DocumentNo, Value e Name (caso eles existam).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202612" trl="N">
-  <value column="Name" original="Constraint Name">Constraint Name</value>
-  <value column="PrintName" original="Constraint Name">Constraint Name</value>
+ <row id="202612" trl="Y">
+  <value column="Name" original="Constraint Name">Nome da Restrição (BD)</value>
+  <value column="PrintName" original="Constraint Name">Nome da Restrição (BD)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54731,9 +54726,9 @@ if this field is left empty a default title/label is created using the DocumentN
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202613" trl="N">
-  <value column="Name" original="Constraint Type">Constraint Type</value>
-  <value column="PrintName" original="Constraint Type">Constraint Type</value>
+ <row id="202613" trl="Y">
+  <value column="Name" original="Constraint Type">Tipo de Restrição (BD)</value>
+  <value column="PrintName" original="Constraint Type">Tipo de Restrição (BD)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54741,9 +54736,9 @@ if this field is left empty a default title/label is created using the DocumentN
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202618" trl="N">
-  <value column="Name" original="Export Dictionary Entity">Export Dictionary Entity</value>
-  <value column="PrintName" original="Export Dictionary Entity">Export Dictionary Entity</value>
+ <row id="202618" trl="Y">
+  <value column="Name" original="Export Dictionary Entity">Exportar o Tipo de Entidade Dictionary</value>
+  <value column="PrintName" original="Export Dictionary Entity">Exportar o Tipo de Entidade Dictionary</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54751,11 +54746,11 @@ if this field is left empty a default title/label is created using the DocumentN
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202620" trl="N">
-  <value column="Name" original="Advanced Button">Advanced Button</value>
-  <value column="PrintName" original="Advanced Button">Advanced Button</value>
-  <value column="Description" original="This Button contains advanced Functionality">This Button contains advanced Functionality</value>
-  <value column="Help" original="The button with advanced functionality is only displayed for role that can access advanced functionality">The button with advanced functionality is only displayed for role that can access advanced functionality</value>
+ <row id="202620" trl="Y">
+  <value column="Name" original="Advanced Button">Botão Avançado</value>
+  <value column="PrintName" original="Advanced Button">Botão Avançado</value>
+  <value column="Description" original="This Button contains advanced Functionality">Este botão contém funcionalidade avançada</value>
+  <value column="Help" original="The button with advanced functionality is only displayed for role that can access advanced functionality">O botão com funcionalidade avançada apenas é exibido para perfis de acesso que podem acessar funcionalidades avançadas.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -54811,10 +54806,10 @@ if this field is left empty a default title/label is created using the DocumentN
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202629" trl="N">
-  <value column="Name" original="Zoom Logic">Zoom Logic</value>
-  <value column="PrintName" original="Zoom Logic">Zoom Logic</value>
-  <value column="Description" original="the result determines if the zoom condition is applied">the result determines if the zoom condition is applied</value>
+ <row id="202629" trl="Y">
+  <value column="Name" original="Zoom Logic">Lógica de Zoom</value>
+  <value column="PrintName" original="Zoom Logic">Lógica de Zoom</value>
+  <value column="Description" original="the result determines if the zoom condition is applied">O resultado determina se a condição do zoom é válida</value>
   <value column="Help" original="format := {expression} [{logic} {expression}]&lt;br&gt; &#10;expression := @{context}@{operand}{value} or @{context}@{operand}{value}&lt;br&gt; &#10;logic := {|}|{&amp;}&lt;br&gt;&#10;context := any global or window context &lt;br&gt;&#10;value := strings or numbers&lt;br&gt;&#10;logic operators&#9;:= AND or OR with the previous result from left to right &lt;br&gt;&#10;operand := eq{=}, gt{&amp;gt;}, le{&amp;lt;}, not{~^!} &lt;br&gt;&#10;Examples: &lt;br&gt;&#10;@AD_Table_ID@=14 | @Language@!GERGER &lt;br&gt;&#10;@PriceLimit@&gt;10 | @PriceList@&gt;@PriceActual@&lt;br&gt;&#10;@Name@&gt;J&lt;br&gt;&#10;Strings may be in single quotes (optional)"><![CDATA[format := {expression} [{logic} {expression}]<br> 
 expression := @{context}@{operand}{value} or @{context}@{operand}{value}<br> 
 logic := {|}|{&}<br>
@@ -54842,9 +54837,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202632" trl="N">
-  <value column="Name" original="Add Separator">Add Separator</value>
-  <value column="PrintName" original="Add Separator">Add Separator</value>
+ <row id="202632" trl="Y">
+  <value column="Name" original="Add Separator">Adicionar Separador</value>
+  <value column="PrintName" original="Add Separator">Adicionar Separador</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54852,9 +54847,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202635" trl="N">
-  <value column="Name" original="Status Line">Status Line</value>
-  <value column="PrintName" original="Status Line">Status Line</value>
+ <row id="202635" trl="Y">
+  <value column="Name" original="Status Line">Linha de Status</value>
+  <value column="PrintName" original="Status Line">Linha de Status</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54892,11 +54887,11 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202639" trl="N">
-  <value column="Name" original="Status Line">Status Line</value>
-  <value column="PrintName" original="Status Line">Status Line</value>
-  <value column="Description" original="Defines if this record refers to a status line or to a help widget">Defines if this record refers to a status line or to a help widget</value>
-  <value column="Help" original="If checked the definition corresponds to a status line, when unchecked it corresponds to a help widget">If checked the definition corresponds to a status line, when unchecked it corresponds to a help widget</value>
+ <row id="202639" trl="Y">
+  <value column="Name" original="Status Line">Linha de Status</value>
+  <value column="PrintName" original="Status Line">Linha de Status</value>
+  <value column="Description" original="Defines if this record refers to a status line or to a help widget">Define se o registro se refere a uma linha de status ou a uma ajuda de contexto.</value>
+  <value column="Help" original="If checked the definition corresponds to a status line, when unchecked it corresponds to a help widget">Se selecionado, refere-se a uma linha de status. Caso contrário, refere-se a uma ajuda de contexto.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -55162,11 +55157,11 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202714" trl="N">
-  <value column="Name" original="LayoutType">LayoutType</value>
-  <value column="PrintName" original="Layout Type">Layout Type</value>
-  <value column="Description" original="Layout type of info process">Layout type of info process</value>
-  <value column="Help" original="Process info can display as button, list, menu">Process info can display as button, list, menu</value>
+ <row id="202714" trl="Y">
+  <value column="Name" original="LayoutType">Tipo de Layout</value>
+  <value column="PrintName" original="Layout Type">Tipo de Layout</value>
+  <value column="Description" original="Layout type of info process">Tipo de layout do processo na janela de informações</value>
+  <value column="Help" original="Process info can display as button, list, menu">Processo pode estar disponível como um botão, lista ou menu.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -58967,6 +58962,36 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PrintName" original="Correspondente Bank Number">Cód. do Banco Correspondente</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="9e4b707e-3e89-4f62-b2c5-77d04cb7f0ca">
+  <value column="Name" original="Bank Agency No.">Núm. da Agência</value>
+  <value column="PrintName" original="Bank Agency No.">Núm. da Agência</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Indicates the bank agency number.">Indica o número da agência responsável pela conta bancária.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="5f641b48-73e5-4dfa-9802-396d92826d4f">
+  <value column="Name" original="Parent Collection Movement">Código de Movimento Pai</value>
+  <value column="PrintName" original="Parent Collection Movement">Código de Movimento Pai</value>
+  <value column="Description" original="">Define um Código de Movimento Pai</value>
+  <value column="Help" original="">Você pode definir um código de movimento pai quando um determinado banco não segue as regras da Febraban, e utiliza outro código para um determinado movimento. Por exemplo: No layout CNAB 240 da Febraban, o cód. de movimento remessa para a ação 'Sustar Protesto' é a 10. O banco Itaú utiliza o cód. 18 para a mesma ação. Então neste caso, você pode criar um novo registro com o cód. 18, banco Itaú, e informar 10 como cód. pai. Isso facilita a padronização pois um processo personalizado para sustar protesto pode saber apenas o cód. 10, mas ao gerar o CNAB, esse código é automaticamente convertido para o 10 (específico para aquele banco).</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="Y" uuid="81916c0d-b286-4a2c-97ca-3e2942d9a274">
+  <value column="Name" original="Document Type for Boleto">Tipo de Documento para Boleto</value>
+  <value column="PrintName" original="Doc Type Boleto">Tipo Doc. de Boleto</value>
+  <value column="Description" original="Document type used for Boleto generated from this document">Tipo de Documento utilizado para Boletos gerados a partir deste documento</value>
+  <value column="Help" original="The Document Type for Boleto indicates the document type that will be used when an Boleto is generated from this document. This field will display only for some base document type.">O "Tipo de Documento para Boleto" indica o tipo do documento que será usado quando um Boleto é gerado a partir deste documento. Este campo será exibido apenas para alguns tipos de documento base.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>

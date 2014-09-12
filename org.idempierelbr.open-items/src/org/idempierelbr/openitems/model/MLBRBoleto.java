@@ -2,7 +2,9 @@ package org.idempierelbr.openitems.model;
 
 import java.io.File;
 import java.math.BigDecimal;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -232,7 +234,7 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 		// Guarantor
 		if (getLBR_Guarantor_Location_ID() > 0) {
 			createStaticData(MLBRBoletoStaticData.LBR_STATICDATATYPE_SacadorAvalista,
-					getC_BPartner_Location_ID());
+					getLBR_Guarantor_Location_ID());
 		}
 		
 		// Generate Number In Bank (only if null)
@@ -253,10 +255,13 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 			MLBRBoletoMovement mov = new MLBRBoletoMovement(getCtx(), 0, get_TrxName());
 			mov.setAD_Org_ID(getAD_Org_ID());
 			mov.setLBR_Boleto_ID(get_ID());
-			mov.setSeqNo(10);
+			mov.setSeqNo(getNewMovementSeqNo());
 			mov.setLBR_CNAB240MovementType(MLBRCobMovimento.LBR_CNAB240MOVEMENTTYPE_1_RemessaCliente_GtBanco);
 			mov.setLBR_Cob_Movimento_ID(LBR_Cob_Movimento_ID);
 			mov.saveEx();
+		} else {
+			m_processMsg = "Could not create intial movement";
+			return DocAction.STATUS_Invalid;
 		}
 
 		m_processMsg = ModelValidationEngine.get().fireDocValidate(this, ModelValidator.TIMING_AFTER_COMPLETE);
@@ -340,6 +345,7 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 		}
 		
 		addDescription(Msg.getMsg(getCtx(), "Voided"));
+		setC_InvoicePaySchedule_ID(0);
 		
 		/* Reactivating/Voiding must reset posted */
 		MFactAcct.deleteEx(MLBRBoleto.Table_ID, get_ID(), get_TrxName());
@@ -362,9 +368,9 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 	 */
 	public boolean hasCriticalDependencies() {
 		// Check if it's in bank
-		if (getLBR_BankAccount_Convenio_ID() > 0 ||
+		/*if (getLBR_BankAccount_Convenio_ID() > 0 ||
 				getLBR_BankAccount_Carteira_ID() > 0)
-			return true;
+			return true;*/
 		
 		// Check if there is any payment
 		if (getPayments().length > 0)
@@ -535,5 +541,45 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 		}
 		
 		return documentNo;
+	}
+	
+	/**
+	 * Get the CNAB currency based on system currency
+	 */
+	public static String getConvertedCurrencyForCNAB(int C_Currency_ID) {
+		if (C_Currency_ID == 297)
+			return LBR_CNAB240CURRENCY_09_Real;
+		
+		return null;
+	}
+
+	public static MLBRBoleto getByDocumentNo(Properties ctx, String documentNo,	String trxName) {
+		MTable table = MTable.get (ctx, MLBRBoleto.Table_Name);
+		Query query =  new Query(ctx, table, "DocumentNo=?", trxName);
+		query.setParameters(new Object[]{documentNo});
+		return query.firstOnly();
+	}
+	
+	public int getNewMovementSeqNo() {
+		final String sql = "SELECT COALESCE(MAX(SeqNo),0)+10 AS DefaultValue FROM LBR_BoletoMovement WHERE LBR_Boleto_ID=?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+		      pstmt = DB.prepareStatement(sql, get_TrxName());
+		      DB.setParameters(pstmt, new Object[]{get_ID()});
+		      rs = pstmt.executeQuery();
+		      
+		      while(rs.next()) {
+		    	  return rs.getInt(1);
+		      }
+		 } catch (SQLException e) {
+		      throw new DBException(e, sql);
+		 } finally {
+		      DB.close(rs, pstmt);
+		      rs = null; pstmt = null;
+		 }
+		
+		return 10;
 	}
 }

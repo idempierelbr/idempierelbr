@@ -21,16 +21,16 @@
   <value column="Help" original="The Reference Tab defines the references that are used to validate data">A Aba "Referência" define as referências que são usadas para validar dados</value>
  </row>
  <row id="103" trl="Y">
-  <value column="Name" original="Table Validation">Tabela de Validação</value>
+  <value column="Name" original="Table Validation">Validação de Tabela</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Table validation">Tabela de Validação</value>
-  <value column="Help" original="The Table Validation Tab defines tables to validate data">A Aba "Tabela de Validação" define tabelas para validar dados</value>
+  <value column="Description" original="Table validation">Validação de Tabela</value>
+  <value column="Help" original="The Table Validation Tab defines tables to validate data">A Aba "Validação de Tabela" define tabelas para validar dados</value>
  </row>
  <row id="104" trl="Y">
-  <value column="Name" original="List Validation">Lista de Validação</value>
+  <value column="Name" original="List Validation">Validação de Lista</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Reference List">Lista de Referência</value>
-  <value column="Help" original="The List Validation Tab defines lists to validate data">A Aba "Lista de Validação" define listas para validar dados</value>
+  <value column="Description" original="Reference List">Validação de Lista</value>
+  <value column="Help" original="The List Validation Tab defines lists to validate data">A Aba "Validação de Lista" define listas para validar dados</value>
  </row>
  <row id="105" trl="Y">
   <value column="Name" original="Window">Janela</value>
@@ -87,13 +87,13 @@
   <value column="Help" original=""/>
  </row>
  <row id="115" trl="Y">
-  <value column="Name" original="Field Translation">Tradução de Campos</value>
+  <value column="Name" original="Field Translation">Tradução de Campo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Menu Translation - May not need to be translated">Tradução de Menu - Pode não precisar ser traduzido</value>
   <value column="Help" original="Fields are automatically translated, if centrally maintained.  You only need to translate not centrally maintained Fields.">Campos são traduzidos automaticamente, se forem mantidos centralizadamente.  Você necessita apenas traduzir Campos que não forem mantidos centralizadamente.</value>
  </row>
  <row id="116" trl="Y">
-  <value column="Name" original="Tab Translation">Tradução de Abas</value>
+  <value column="Name" original="Tab Translation">Tradução de Aba</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -695,9 +695,9 @@
   <value column="Help" original="The Tree Tab defines a Tree which will be displayed.">A Aba "Árvore" define a Árvore a ser mostrada.</value>
  </row>
  <row id="245" trl="Y">
-  <value column="Name" original="Report &amp; Process"><![CDATA[Relatório & Processo]]></value>
+  <value column="Name" original="Report &amp; Process">Relatório e Processo</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define Report &amp; Process"><![CDATA[Definir Relatório & Processo]]></value>
+  <value column="Description" original="Define Report &amp; Process">Definir Relatório e Processo</value>
   <value column="Help" original="The Report and Process Tab defines each report and process run in the system.  &#10;Please note that the Print Format is only used for Document Print when you want to share a common format defined on System level. For normal reports and formats, you would not define a Print Format here, but modify the generated print format and set it as the default.">A Aba "Relatório e Processo" define cada relatório e processo que roda no sistema. Por favor note que o Formato de Impressão só é usado para Imprimir Documentos quando você deseja compartilhar um formato comum definido no nível de sistema. Para relatórios e formatos normais, você não deveria definir um formato de impressão aqui, e sim, modificar o formato de impressão gerado e selecioná-lo como padrão.</value>
  </row>
  <row id="246" trl="Y">
@@ -851,10 +851,10 @@
   <value column="Help" original=""/>
  </row>
  <row id="288" trl="Y">
-  <value column="Name" original="Report View">Visualização de Relatório</value>
+  <value column="Name" original="Report View">Visão (View) de Relatório</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define Report View">Definir Visualização de Relatório</value>
-  <value column="Help" original="The Define Report View defines the views used in report generation">A Aba "Visualização de Relatório" define as visualizações usadas na geração de relatórios</value>
+  <value column="Description" original="Define Report View">Definir View de Relatório</value>
+  <value column="Help" original="The Define Report View defines the views used in report generation">A Aba "Visão (View) de Relatório" define as views (banco de dados) usadas na geração de relatórios</value>
  </row>
  <row id="289" trl="Y">
   <value column="Name" original="Transactions">Transações</value>
@@ -930,10 +930,10 @@
   <value column="Help" original=""/>
  </row>
  <row id="302" trl="Y">
-  <value column="Name" original="Form">Formulário</value>
+  <value column="Name" original="Form">Formulário (Form)</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Special Form">Formulário Especial</value>
-  <value column="Help" original="The Forms Tab defines any window which is not automatically generated.  For System Admin use only.">A Aba "Formulário" define quaisquer janelas que não forem geradas automaticamente.  Somente para uso do Administrador do Sistema.</value>
+  <value column="Description" original="Special Form">Formulário (Form)</value>
+  <value column="Help" original="The Forms Tab defines any window which is not automatically generated.  For System Admin use only.">A Aba "Formulário (Form)" define forms que não são gerados automaticamente. Somente para uso do Administrador do Sistema.</value>
  </row>
  <row id="303" trl="Y">
   <value column="Name" original="Translation">Tradução</value>
@@ -966,16 +966,16 @@
   <value column="Help" original="The Workflow Access Tab defines the Workflows and type of access that this Role is granted.">A Aba "Acesso a Fluxos de Trabalho" define os Fluxos de Trabalho e o tipo de acesso que é outorgado a este Papel (Função).</value>
  </row>
  <row id="308" trl="Y">
-  <value column="Name" original="Report Access">Acesso a Relatórios</value>
+  <value column="Name" original="Report Access">Acesso</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Report Access">Acesso a Relatórios</value>
-  <value column="Help" original="The Report Access Tab determines who can access a report or process">A Aba "Acesso a Relatórios" determina quem pode acessar um relatório ou processo</value>
+  <value column="Description" original="Report Access">Acesso</value>
+  <value column="Help" original="The Report Access Tab determines who can access a report or process">A Aba "Acesso" determina quem pode acessar um relatório ou processo</value>
  </row>
  <row id="309" trl="Y">
   <value column="Name" original="Access">Acesso</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Form Access">Acesso a Formulários</value>
-  <value column="Help" original="The Forms Access Tab defines the access rules for this form">A Aba "Acesso a Formulários" define as regras de acesso para este formulário</value>
+  <value column="Description" original="Form Access">Acesso ao Formulário (Form)</value>
+  <value column="Help" original="The Forms Access Tab defines the access rules for this form">A Aba "Acesso" define as regras de acesso a este form.</value>
  </row>
  <row id="310" trl="Y">
   <value column="Name" original="Access">Acesso</value>
@@ -1159,9 +1159,9 @@ Imprimindo: - Usualmente, somente a informação da LDM é impressa - Para fatur
   <value column="Help" original="Electronic Fund Transfer Payment Batch.">Lote de Pagamentos por Transferência Eletrônica de Fundos.</value>
  </row>
  <row id="342" trl="Y">
-  <value column="Name" original="Field group">Grupo de Campo</value>
+  <value column="Name" original="Field group">Grupo de Campos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="System Admin use only.  Field Groups allow for grouping of fields within a window">Somente para uso do Administrador do Sistema.  Grupos de Campo permitem o agrupamento de campos em uma janela</value>
+  <value column="Description" original="System Admin use only.  Field Groups allow for grouping of fields within a window">Somente para uso do Administrador do Sistema.  Grupos de Campos permitem o agrupamento de campos em uma janela</value>
   <value column="Help" original=""/>
  </row>
  <row id="343" trl="Y">
@@ -1219,10 +1219,10 @@ Imprimindo: - Usualmente, somente a informação da LDM é impressa - Para fatur
   <value column="Help" original="The Payment Selection Line Tab defines the individual invoices an organization is paying to a Vendor with this payment.">A Aba "Linha de Seleção de Pagamentos" define as faturas individuais que uma organização está pagando a um Fornecedor com este pagamento.</value>
  </row>
  <row id="354" trl="Y">
-  <value column="Name" original="Report View Column">Coluna de Visualização de Relatório</value>
+  <value column="Name" original="Report View Column">Coluna da Visão (View) de Relatório</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Report View Column">Coluna de Visualização de Relatório</value>
-  <value column="Help" original="The Report View Column Tab defines any columns which will be overridden in the generation of the select SQL">A Aba "Coluna de Visualização de Relatório" define quaisquer colunas que serão ignoradas (overridden) na geração da SQL selecionada.</value>
+  <value column="Description" original="Report View Column">Coluna da View de Relatório</value>
+  <value column="Help" original="The Report View Column Tab defines any columns which will be overridden in the generation of the select SQL">A Aba "Coluna da Visão (View) de Relatório" define as colunas que serão sobrescritas utilizando-se uma SQL personalizada.</value>
  </row>
  <row id="355" trl="Y">
   <value column="Name" original="Commission">Comissão</value>
@@ -1274,7 +1274,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="For each commission line, a line is generated.  You can overwrite the amount and quantity to modify the commission amount, but the suggested way is creating additional Commission Detail lines.  Please be aware that manual changes will not reconcile with the Commission Details.">Uma linha é gerada para cada linha de comissão.  Você pode sobreescrever o valor e a quantidade para modificar o valor da comissão, mas o meio sugerido é criar linhas adicionais de Detalhes de Comissão.  Por favor esteja ciente que alterações manuais não irão reconciliar com os Detalhes de Comissão.</value>
  </row>
  <row id="364" trl="Y">
-  <value column="Name" original="Used in Column">Usado na Coluna</value>
+  <value column="Name" original="Used in Column">Uso em Coluna</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Used  in Column">Usado na Coluna</value>
   <value column="Help" original="The Used in Column Tab defines the table and column this element resides in.">A Aba "Usado na Coluna" define a tabela e coluna em que este elemento reside.</value>
@@ -3053,9 +3053,9 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Define a criteria to measure service level agreements (e.g. Quality, Delivery meets Promised date, ..). If you define a process class, it need to implement org.compiere.sla.SLACriteria (see example)">Define os critérios para medir os acordos de nível de serviço (por ex. Qualidade, Entrega dentro do Prazo Prometido, ... ). Se você definir uma classe de processos, é necessário implementar org.adempiere.sla.SLACriteria (veja exemplo)</value>
  </row>
  <row id="673" trl="Y">
-  <value column="Name" original="Table Translation">Tradução de Tabelas</value>
+  <value column="Name" original="Table Translation">Tradução de Tabela</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Table Translation">Tradução de Tabelas</value>
+  <value column="Description" original="Table Translation">Tradução de Tabela</value>
   <value column="Help" original="Note that many Table names will be overwritten / translated automatically">Note que muitos nomes de Tabelas serão sobrescritos / traduzidos automaticamente</value>
  </row>
  <row id="674" trl="Y">
@@ -3955,14 +3955,14 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
  <row id="831" trl="Y">
   <value column="Name" original="Entity Type">Tipo de Entidade</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="System Entity Type">System Entity Type</value>
-  <value column="Help" original="The entity type determines the ownership of Application Dictionary entries.  The types &quot;Dictionary&quot; and &quot;iDempiere&quot; should not be used and are maintainted by iDempiere (i.e. all changes are reversed during migration to the current definition).">The entity type determines the ownership of Application Dictionary entries.  The types "Dictionary" and "Compiere" should not be used and are maintainted by ComPiere (i.e. all changes are reversed during migration to the current definition).</value>
+  <value column="Description" original="System Entity Type">Tipos de Entidade de Sistema</value>
+  <value column="Help" original="The entity type determines the ownership of Application Dictionary entries.  The types &quot;Dictionary&quot; and &quot;iDempiere&quot; should not be used and are maintainted by iDempiere (i.e. all changes are reversed during migration to the current definition).">O tipo de entidade determina o proprietário de registros no Dicionário de Aplicação. Os tipos "Dictionary' e 'Compiere" não devem ser utilizados pois são mantidos pela equipe oficial de desenvolvedores. Caso utilizado para customizações, as suas alterações podem ser revertidas ao se atualizar a aplicação.</value>
  </row>
  <row id="832" trl="Y">
-  <value column="Name" original="System Modifin">System Modifin</value>
+  <value column="Name" original="System Modifin">Modificação do Sistema</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="System Modification or Extension">System Modification or Extension</value>
-  <value column="Help" original="Description of the System modification or extension">Description of the System modification or extension</value>
+  <value column="Description" original="System Modification or Extension">Modificação ou extensão do Sistema</value>
+  <value column="Help" original="Description of the System modification or extension">Descrição da modificação ou extensão do sistema.</value>
  </row>
  <row id="833" trl="Y">
   <value column="Name" original="Web Access Profile">Web Access Profile</value>
@@ -4019,10 +4019,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="842" trl="Y">
-  <value column="Name" original="Window">Janela</value>
+  <value column="Name" original="Window">Janela de Informações</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Info and search/select Window">Info and search/select Window</value>
-  <value column="Help" original="The Info window is used to search and select records as well as display information relevant to the selection.">The Info window is used to search and select records as well as display information relevant to the selection.</value>
+  <value column="Description" original="Info and search/select Window">Define Janela de Informações (Selecionar / Buscar)</value>
+  <value column="Help" original="The Info window is used to search and select records as well as display information relevant to the selection.">A Janela de Informações é utilizada para buscar e selecionar registros, bem como exibir informações relevantes à seleção.</value>
  </row>
  <row id="843" trl="Y">
   <value column="Name" original="Window Translation">Tradução de Janela</value>
@@ -4033,8 +4033,8 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
  <row id="844" trl="Y">
   <value column="Name" original="Column">Coluna</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Info Window Column">Info Window Column</value>
-  <value column="Help" original="Column in the Info Window for display and/or selection.  If used for selection, the column cannot be a SQL expression. The SQL clause must be fully qualified based on the FROM clause in the Info Window definition">Column in the Info Window for display and/or selection.  If used for selection, the column cannot be a SQL expression. The SQL clause must be fully qualified based on the FROM clause in the Info Window definition</value>
+  <value column="Description" original="Info Window Column">Coluna de Janela de Informações</value>
+  <value column="Help" original="Column in the Info Window for display and/or selection.  If used for selection, the column cannot be a SQL expression. The SQL clause must be fully qualified based on the FROM clause in the Info Window definition">Coluna na Janela de Informações utilizada para exibição ou seleção. Se utilizada para seleção, a coluna não pode ser uma instrução SQL. A cláusula SQL deve ser totalmente qualificada baseada na cláusula FROM na definição da Janela de Informações.</value>
  </row>
  <row id="845" trl="Y">
   <value column="Name" original="Column Translation">Tradução de Coluna</value>
@@ -4085,37 +4085,37 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="50001" trl="Y">
-  <value column="Name" original="Packages Installed">Packages Installed</value>
+  <value column="Name" original="Packages Installed">Pacotes Instalados</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Packages Installed">Packages Installed</value>
+  <value column="Description" original="Packages Installed">Pacotes Instalados</value>
   <value column="Help" original=""/>
  </row>
  <row id="50002" trl="Y">
-  <value column="Name" original="Object Backups">Object Backups</value>
+  <value column="Name" original="Object Backups">Backups de Objetos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Details by column original values before the record was overwritten">Details by column original values before the record was overwritten</value>
-  <value column="Help" original="Displays values for each column for each record that was updated by a package install.  This backup is used in the package reversal process.">Displays values for each column for each record that was updated by a package install.  This backup is used in the package reversal process.</value>
+  <value column="Description" original="Details by column original values before the record was overwritten">Detalhes de valores originais de colunas antes de serem sobrescritas</value>
+  <value column="Help" original="Displays values for each column for each record that was updated by a package install.  This backup is used in the package reversal process.">Exibe valores de cada coluna, para cada registro atualizado pela instalação do pacote. Este backup é utilizado pelo processo de rollback.</value>
  </row>
  <row id="50003" trl="Y">
-  <value column="Name" original="Package Installation Log">Package Installation Log</value>
+  <value column="Name" original="Package Installation Log">Log de Instalação</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Installation history of packages">Installation history of packages</value>
+  <value column="Description" original="Installation history of packages">Log de instalação de pacotes</value>
   <value column="Help" original=""/>
  </row>
  <row id="50004" trl="Y">
-  <value column="Name" original="Objects Installed">Objects Installed</value>
+  <value column="Name" original="Objects Installed">Objetos Instalados</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="50005" trl="Y">
-  <value column="Name" original="Export Package">Export Package</value>
+  <value column="Name" original="Export Package">PackOut - Criar um Pacote</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original=""/>
+  <value column="Description" original="">Criar um Pacote de Aplicação</value>
   <value column="Help" original=""/>
  </row>
  <row id="50006" trl="Y">
-  <value column="Name" original="Package Details">Package Details</value>
+  <value column="Name" original="Package Details">Detalhes do Pacote</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -4127,9 +4127,9 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="50008" trl="Y">
-  <value column="Name" original="PackIn">PackIn</value>
+  <value column="Name" original="PackIn">PackIn - Importar um Pacote</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Import a package created by PackOut">Import a package created by PackOut</value>
+  <value column="Description" original="Import a package created by PackOut">Importar um pacote previamente criado pelo PackOut.</value>
   <value column="Help" original=""/>
  </row>
  <row id="50009" trl="Y">
@@ -4175,7 +4175,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Define access to document type / document action / role combinations.">Define access to document type / document action / role combinations.</value>
  </row>
  <row id="53014" trl="Y">
-  <value column="Name" original="Model Validator">Model Validator</value>
+  <value column="Name" original="Model Validator">Validador de Model</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -4494,14 +4494,14 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53068" trl="N">
-  <value column="Name" original="Rule">Rule</value>
+ <row id="53068" trl="Y">
+  <value column="Name" original="Rule">Regra</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53069" trl="N">
-  <value column="Name" original="Table Script Validator">Table Script Validator</value>
+ <row id="53069" trl="Y">
+  <value column="Name" original="Table Script Validator">Script Validador de Tabela</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -4518,8 +4518,8 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53073" trl="N">
-  <value column="Name" original="Migration Scripts">Migration Scripts</value>
+ <row id="53073" trl="Y">
+  <value column="Name" original="Migration Scripts">Scripts de Migração</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5092,8 +5092,8 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53193" trl="N">
-  <value column="Name" original="Searches">Searches</value>
+ <row id="53193" trl="Y">
+  <value column="Name" original="Searches">Pesquisas</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5364,14 +5364,14 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53297" trl="N">
-  <value column="Name" original="Used in Process Parameter">Used in Process Parameter</value>
+ <row id="53297" trl="Y">
+  <value column="Name" original="Used in Process Parameter">Uso em Parâmetro de Processo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53298" trl="N">
-  <value column="Name" original="Used in Field">Used in Field</value>
+ <row id="53298" trl="Y">
+  <value column="Name" original="Used in Field">Uso em Campo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5736,8 +5736,8 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200002" trl="N">
-  <value column="Name" original="ToolBar Button">ToolBar Button</value>
+ <row id="200002" trl="Y">
+  <value column="Name" original="ToolBar Button">Botão de Barra de Ferramentas</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5766,10 +5766,10 @@ Printing:
   <value column="Description" original="General Ledger Journal Line">Linha de Lançamento no Livro Razão</value>
   <value column="Help" original="The GL Journal Line Tab defines the individual debit and credit transactions that comprise a journal.">A aba Linha define os lançamentos a débito e crédito que compõem o Livro Razão.</value>
  </row>
- <row id="200009" trl="N">
-  <value column="Name" original="Grid Sequence">Grid Sequence</value>
+ <row id="200009" trl="Y">
+  <value column="Name" original="Grid Sequence">Sequência em Grade</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Defined field order for grid layout">Defined field order for grid layout</value>
+  <value column="Description" original="Defined field order for grid layout">Sequência de campos quando visualização em grade</value>
   <value column="Help" original=""/>
  </row>
  <row id="200010" trl="N">
@@ -5850,8 +5850,8 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200028" trl="N">
-  <value column="Name" original="Toolbar Button">Toolbar Button</value>
+ <row id="200028" trl="Y">
+  <value column="Name" original="Toolbar Button">Botão de Barra de Ferramentas</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6054,26 +6054,26 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200074" trl="N">
-  <value column="Name" original="Context Help">Context Help</value>
+ <row id="200074" trl="Y">
+  <value column="Name" original="Context Help">Ajuda de Contexto</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Context Helps">Context Helps</value>
-  <value column="Help" original="The Context Help tab defines the type of context help">The Context Help tab defines the type of context help</value>
+  <value column="Description" original="Context Helps">Ajuda de Contexto</value>
+  <value column="Help" original="The Context Help tab defines the type of context help">A aba Ajuda de Contexto permite definir tipos de ajuda de contexto.</value>
  </row>
- <row id="200075" trl="N">
-  <value column="Name" original="Message">Message</value>
+ <row id="200075" trl="Y">
+  <value column="Name" original="Message">Mensagem</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Context Help Messages">Context Help Messages</value>
-  <value column="Help" original="The Message tab displays message text">The Message tab displays message text</value>
+  <value column="Description" original="Context Help Messages">Mensagens da Ajuda de Contexto</value>
+  <value column="Help" original="The Message tab displays message text">A aba Mensagem permite definir mensagens de texto.</value>
  </row>
- <row id="200076" trl="N">
-  <value column="Name" original="Translation">Translation</value>
+ <row id="200076" trl="Y">
+  <value column="Name" original="Translation">Tradução</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200077" trl="N">
-  <value column="Name" original="Zoom Condition">Zoom Condition</value>
+ <row id="200077" trl="Y">
+  <value column="Name" original="Zoom Condition">Condição de Zoom</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6084,8 +6084,8 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200079" trl="N">
-  <value column="Name" original="Used in Field">Used in Field</value>
+ <row id="200079" trl="Y">
+  <value column="Name" original="Used in Field">Uso em Campo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6096,32 +6096,32 @@ Printing:
   <value column="Description" original="Cities without Region">Cities without Region</value>
   <value column="Help" original=""/>
  </row>
- <row id="200096" trl="N">
-  <value column="Name" original="Table Index">Table Index</value>
+ <row id="200096" trl="Y">
+  <value column="Name" original="Table Index">Índice de Tabela</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200097" trl="N">
-  <value column="Name" original="Index Column">Index Column</value>
+ <row id="200097" trl="Y">
+  <value column="Name" original="Index Column">Coluna de Índice</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200098" trl="N">
-  <value column="Name" original="View Component">View Component</value>
+ <row id="200098" trl="Y">
+  <value column="Name" original="View Component">Componente de Visão (View)</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200099" trl="N">
-  <value column="Name" original="View Column">View Column</value>
+ <row id="200099" trl="Y">
+  <value column="Name" original="View Column">Coluna de Visão (View)</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200100" trl="N">
-  <value column="Name" original="Related Info Window">Related Info Window</value>
+ <row id="200100" trl="Y">
+  <value column="Name" original="Related Info Window">Janela de Informações Relacionada</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6186,28 +6186,28 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200113" trl="N">
-  <value column="Name" original="Used in Info Column">Used in Info Column</value>
+ <row id="200113" trl="Y">
+  <value column="Name" original="Used in Info Column">Uso em Coluna (Informações)</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200114" trl="N">
-  <value column="Name" original="Status Line">Status Line</value>
+ <row id="200114" trl="Y">
+  <value column="Name" original="Status Line">Linha de Status</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200115" trl="N">
-  <value column="Name" original="Used In">Used In</value>
+ <row id="200115" trl="Y">
+  <value column="Name" original="Used In">Uso</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200116" trl="N">
-  <value column="Name" original="Available Columns">Available Columns</value>
+ <row id="200116" trl="Y">
+  <value column="Name" original="Available Columns">Colunas Disponíveis</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="You can define on this tab which columns will be available as the print format items">You can define on this tab which columns will be available as the print format items</value>
+  <value column="Description" original="You can define on this tab which columns will be available as the print format items">Você pode definir nesta aba quais colunas estarão disponíveis como itens do formato de impressão</value>
   <value column="Help" original=""/>
  </row>
  <row id="200121" trl="N">
@@ -6306,8 +6306,8 @@ Printing:
   <value column="Description" original="Product Instance Attribute Material Allocation">Product Instance Attribute Material Allocation</value>
   <value column="Help" original=""/>
  </row>
- <row id="200142" trl="N">
-  <value column="Name" original="Process">Process</value>
+ <row id="200142" trl="Y">
+  <value column="Name" original="Process">Processo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6318,8 +6318,8 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200144" trl="N">
-  <value column="Name" original="Role Access">Role Access</value>
+ <row id="200144" trl="Y">
+  <value column="Name" original="Role Access">Acesso</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>

@@ -13,9 +13,9 @@
   <value column="Help" original="The Reference Window defines field/display types and validations. This window is for System Admin use only.">The Reference Window defines field/display types and validations. Esta Janela é somente para uso do Administrador do Sistema.</value>
  </row>
  <row id="102" trl="Y">
-  <value column="Name" original="Window, Tab &amp; Field"><![CDATA[Janela, Aba & Campo]]></value>
-  <value column="Description" original="Maintain Windows, Tabs &amp; Fields"><![CDATA[Gerenciamento de Janelas, Abas & Campos]]></value>
-  <value column="Help" original="The Window, Tab &amp; Field Window defines the presentation of tables and columns within each window."><![CDATA[A Janela "Janela, Aba & Campo" define a apresentação de tabelas e colunas dentro de cada janela.]]></value>
+  <value column="Name" original="Window, Tab &amp; Field">Janela, Aba e Campo</value>
+  <value column="Description" original="Maintain Windows, Tabs &amp; Fields">Gerenciamento de Janelas, Abas e Campos</value>
+  <value column="Help" original="The Window, Tab &amp; Field Window defines the presentation of tables and columns within each window.">A Janela "Janela, Aba e Campo" define a apresentação de tabelas e colunas dentro de cada janela.</value>
  </row>
  <row id="103" trl="Y">
   <value column="Name" original="Validation Rules">Regras de Validação</value>
@@ -278,9 +278,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Tree Window defines the descriptors and images that will be used when a Tree is displayed.">A Janela "Árvore" define os textos descritivos e as imagens que serão utilizados quando uma Árvore for exibida.</value>
  </row>
  <row id="165" trl="Y">
-  <value column="Name" original="Report &amp; Process"><![CDATA[Relatório & Processo]]></value>
-  <value column="Description" original="Maintain Reports &amp; Processes"><![CDATA[Gerenciamento de Relatórios & Processos]]></value>
-  <value column="Help" original="The Report &amp; Process Window is used to define the parameters and access rules for every Report and Process within the system.  This window is for System Admin use only."><![CDATA[A Janela "Relatório & Processo" é usada para definir os parâmetros e as regras de acesso para todos os Relatórios e Processos dentro do sistema.  Esta Janela é somente para uso do Administrador do Sistema.]]></value>
+  <value column="Name" original="Report &amp; Process">Relatório e Processo</value>
+  <value column="Description" original="Maintain Reports &amp; Processes">Gerenciamento de Relatórios e Processos</value>
+  <value column="Help" original="The Report &amp; Process Window is used to define the parameters and access rules for every Report and Process within the system.  This window is for System Admin use only.">A Janela "Relatório e Processo" é usada para definir os parâmetros e as regras de acesso para todos os Relatórios e Processos dentro do sistema.  Esta Janela é somente para uso do Administrador do Sistema.</value>
  </row>
  <row id="167" trl="Y">
   <value column="Name" original="Invoice (Customer)">Fatura (Cliente)</value>
@@ -328,9 +328,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Greeting Window defines a greeting that is then associated with a Business Partner or Business Partner Contact.">A Janela "Saudação" define uma saudação que é então associada a um Parceiro de Negócios ou Contato de Parceiro de Negócios.</value>
  </row>
  <row id="180" trl="Y">
-  <value column="Name" original="Report View">Visualização de Relatório</value>
-  <value column="Description" original="Maintain Report Views">Gerenciamento das Vistas de Relatórios</value>
-  <value column="Help" original="The Report View Window defines the views used when generating reports.  This window is for System Admin use only.">A Janela "Visualização de Relatório" define as visualizações utilizadas ao gerar relatórios.  Esta Janela é somente para uso do Administrador do Sistema.</value>
+  <value column="Name" original="Report View">Visão (View) de Relatório</value>
+  <value column="Description" original="Maintain Report Views">Gerenciamento das Views de Relatórios</value>
+  <value column="Help" original="The Report View Window defines the views used when generating reports.  This window is for System Admin use only.">A Janela "Visão (View) de Relatório" define as views utilizadas ao gerar relatórios.  Esta Janela é somente para uso do Administrador do Sistema.</value>
  </row>
  <row id="181" trl="Y">
   <value column="Name" original="Purchase Order">Pedido de Compra</value>
@@ -358,9 +358,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original=""/>
  </row>
  <row id="187" trl="Y">
-  <value column="Name" original="Form">Formulário</value>
-  <value column="Description" original="Special Forms">Formulários Especiais</value>
-  <value column="Help" original="The Forms Window defines any window which is not automatically generated.  For System Admin use only.">A Janela "Formulário" define quaisquer janelas que não forem geradas automaticamente.  Somente para uso do Administrador do Sistema.</value>
+  <value column="Name" original="Form">Formulário (Form)</value>
+  <value column="Description" original="Special Forms">Formulário (Form)</value>
+  <value column="Help" original="The Forms Window defines any window which is not automatically generated.  For System Admin use only.">A Janela "Formulário (Form)" define forms que não são gerados automaticamente. Somente para uso do Administrador do Sistema.</value>
  </row>
  <row id="188" trl="Y">
   <value column="Name" original="Error Message">Mensagem de Erro</value>
@@ -413,9 +413,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Cash Journal Window is used to record disbursements from and receipts to Petty Cash">A Janela "Diário de Caixa (Cash Journal)" é usada para registrar entradas e saídas do caixa interno para pequenas despesas.</value>
  </row>
  <row id="200" trl="Y">
-  <value column="Name" original="Field Group">Grupo de Campo</value>
-  <value column="Description" original="Define Field Group">Definir Grupo de Campo</value>
-  <value column="Help" original="The Field Group Window allows you to define subsections in a tab.  For System Admin use only.">A Janela "Grupo de Campo" permite a você definir subseções em uma Aba.  Somente para uso do Administrador do Sistema.</value>
+  <value column="Name" original="Field Group">Grupo de Campos</value>
+  <value column="Description" original="Define Field Group">Definir Grupo de Campos</value>
+  <value column="Help" original="The Field Group Window allows you to define subsections in a tab.  For System Admin use only.">A Janela "Grupo de Campos" permite a você definir subseções em uma Aba.  Somente para uso do Administrador do Sistema.</value>
  </row>
  <row id="201" trl="Y">
   <value column="Name" original="Request">Solicitação</value>
@@ -533,8 +533,8 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  </row>
  <row id="229" trl="Y">
   <value column="Name" original="Window Customization">Personalização de Janela</value>
-  <value column="Description" original="Define Window Customization for Role/User">Define Personalização de Janela para o Papel (Função)/Usuário</value>
-  <value column="Help" original="The customization values defined here overwrite/replace the default system definition if defined.">Os valores personalizados aqui sobrescrevem/substituem a definição padrão do sistema.</value>
+  <value column="Description" original="Define Window Customization for Role/User">Define personalizações de janela para um perfil de acesso ou usuário</value>
+  <value column="Help" original="The customization values defined here overwrite/replace the default system definition if defined.">As personalizações definidas aqui tem preferência sobre as definições originais do sistema.</value>
  </row>
  <row id="231" trl="Y">
   <value column="Name" original="Workbench">Bancada de Trabalho</value>
@@ -1281,8 +1281,8 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  </row>
  <row id="381" trl="Y">
   <value column="Name" original="Entity Type">Tipo de Entidade</value>
-  <value column="Description" original="Maintain System Entity Type">Maintain System Entity Type</value>
-  <value column="Help" original="The entity type determines the ownership of Application Dictionary entries.  The types &quot;Dictionary&quot; and &quot;iDempiere&quot; should not be used and are maintainted by iDempiere (i.e. all changes are reversed during migration to the current definition).">The entity type determines the ownership of Application Dictionary entries.  The types "Dictionary" and "Compiere" should not be used and are maintainted by ComPiere (i.e. all changes are reversed during migration to the current definition).</value>
+  <value column="Description" original="Maintain System Entity Type">Manutenção de Tipos de Entidade de Sistema</value>
+  <value column="Help" original="The entity type determines the ownership of Application Dictionary entries.  The types &quot;Dictionary&quot; and &quot;iDempiere&quot; should not be used and are maintainted by iDempiere (i.e. all changes are reversed during migration to the current definition).">O tipo de entidade determina o proprietário de registros no Dicionário de Aplicação. Os tipos "Dictionary' e 'Compiere" não devem ser utilizados pois são mantidos pela equipe oficial de desenvolvedores. Caso utilizado para customizações, as suas alterações podem ser revertidas ao se atualizar a aplicação.</value>
  </row>
  <row id="383" trl="Y">
   <value column="Name" original="Web Access">Web Access</value>
@@ -1295,9 +1295,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original=""/>
  </row>
  <row id="385" trl="Y">
-  <value column="Name" original="Info Window">Info Window</value>
-  <value column="Description" original="Define Info and search/select Window">Define Info and search/select Window</value>
-  <value column="Help" original="The Info window is used to search and select records as well as display information relevant to the selection.">The Info window is used to search and select records as well as display information relevant to the selection.</value>
+  <value column="Name" original="Info Window">Janela de Informações</value>
+  <value column="Description" original="Define Info and search/select Window">Define Janela de Informações (Selecionar / Buscar)</value>
+  <value column="Help" original="The Info window is used to search and select records as well as display information relevant to the selection.">A Janela de Informações é utilizada para buscar e selecionar registros, bem como exibir informações relevantes à seleção.</value>
  </row>
  <row id="386" trl="Y">
   <value column="Name" original="Text Index">Text Index</value>
@@ -1320,18 +1320,18 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The LDAP Server allows third party software (e.g. Apache) to use the users defined in the system to authentificate and authorize them.  There is only one server per iDempiere system.  The &quot;o&quot; is the Client key and the optional &quot;ou&quot; is the Interest Area key.">The LDAP Server allows third party software (e.g. Apache) to use the users defined in the system to authentificate and authorize them.  There is only one server per Compiere system.  The "o" is the Client key and the optional "ou" is the Interest Area key.</value>
  </row>
  <row id="50001" trl="Y">
-  <value column="Name" original="Packages Installed">Packages Installed</value>
-  <value column="Description" original="List of packages installed">List of packages installed</value>
+  <value column="Name" original="Packages Installed">Pacotes Instalados</value>
+  <value column="Description" original="List of packages installed">Relação de Pacotes Instalados</value>
   <value column="Help" original=""/>
  </row>
  <row id="50002" trl="Y">
-  <value column="Name" original="Package Maintenance">Package Maintenance</value>
-  <value column="Description" original="Package installation history and maintenance">Package installation history and maintenance</value>
-  <value column="Help" original="Review package installation.  Also perform package rollback if required">Review package installation.  Also perform package rollback if required</value>
+  <value column="Name" original="Package Maintenance">Manutenção de Pacote</value>
+  <value column="Description" original="Package installation history and maintenance">Log de instalação e manutenção de pacotes</value>
+  <value column="Help" original="Review package installation.  Also perform package rollback if required">Revise a instalação de pacotes. Também permite um rollback se necessário.</value>
  </row>
  <row id="50003" trl="Y">
-  <value column="Name" original="Pack Out">PackOut - Create a package</value>
-  <value column="Description" original="Create 2pack package">Package build Application</value>
+  <value column="Name" original="Pack Out">PackOut - Criar um Pacote</value>
+  <value column="Description" original="Create 2pack package">Criar um Pacote de Aplicação</value>
   <value column="Help" original=""/>
  </row>
  <row id="50004" trl="Y">
@@ -1340,9 +1340,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Create and maintain common package element details">Create and maintain common package element details</value>
  </row>
  <row id="50005" trl="Y">
-  <value column="Name" original="Pack In">PackIn - Import a package</value>
-  <value column="Description" original="Imports a package">Imports a package</value>
-  <value column="Help" original="Imports a package previously created by PackOut">Imports a package previously created by PackOut</value>
+  <value column="Name" original="Pack In">PackIn - Importar um Pacote</value>
+  <value column="Description" original="Imports a package">Importar um Pacote de Aplicação</value>
+  <value column="Help" original="Imports a package previously created by PackOut">Importa um pacote previamente criado pelo PackOut.</value>
  </row>
  <row id="50006" trl="Y">
   <value column="Name" original="System Configurator">System Configurator</value>
@@ -1375,7 +1375,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original=""/>
  </row>
  <row id="53003" trl="Y">
-  <value column="Name" original="Model Validator">Model Validator</value>
+  <value column="Name" original="Model Validator">Validador de Model</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1483,8 +1483,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53017" trl="N">
-  <value column="Name" original="Rule">Rule</value>
+ <row id="53017" trl="Y">
+  <value column="Name" original="Rule">Regra</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1493,8 +1493,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Distribution Network define the supply relationships">Distribution Network define the supply relationships</value>
   <value column="Help" original="Each realtionship in the network contains a receiving warehouse and a warehouse source and a supply percentage. A relationship is one-way, warehouse to warehouse relationship.">Each realtionship in the network contains a receiving warehouse and a warehouse source and a supply percentage. A relationship is one-way, warehouse to warehouse relationship.</value>
  </row>
- <row id="53019" trl="N">
-  <value column="Name" original="Migration Scripts">Migration Scripts</value>
+ <row id="53019" trl="Y">
+  <value column="Name" original="Migration Scripts">Scripts de Migração</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1713,9 +1713,9 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53069" trl="N">
-  <value column="Name" original="Search Definition">Search Definition</value>
-  <value column="Description" original="Define transactioncodes for the QuickSearch bar">Define transactioncodes for the QuickSearch bar</value>
+ <row id="53069" trl="Y">
+  <value column="Name" original="Search Definition">Definição de Pesquisa</value>
+  <value column="Description" original="Define transactioncodes for the QuickSearch bar">Define códigos de transação para a barra de pesquisa</value>
   <value column="Help" original=""/>
  </row>
  <row id="53071" trl="N">
@@ -1909,8 +1909,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200000" trl="N">
-  <value column="Name" original="Toolbar Button">Toolbar Button</value>
+ <row id="200000" trl="Y">
+  <value column="Name" original="Toolbar Button">Botão de Barra de Ferramentas</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2024,10 +2024,10 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Process Payments">Processamento de Pagamentos</value>
   <value column="Help" original="The Process Payments Window allows you to enter payments for invoices.  If the payment is for a single invoice then it can be processed here.">A janela Pagamentos em Lote permite o pagamento de faturas. Se o pagamento é para uma única fatura, ele pode ser processado aqui.</value>
  </row>
- <row id="200034" trl="N">
-  <value column="Name" original="Context Help">Context Help</value>
-  <value column="Description" original="Maintain Context Helps">Maintain Context Helps</value>
-  <value column="Help" original="The Context Help window defines the context help message text to display in the help pane. It is for Web UI only.">The Context Help window defines the context help message text to display in the help pane. It is for Web UI only.</value>
+ <row id="200034" trl="Y">
+  <value column="Name" original="Context Help">Ajuda de Contexto</value>
+  <value column="Description" original="Maintain Context Helps">Manutenção de Ajudas de Contexto</value>
+  <value column="Help" original="The Context Help window defines the context help message text to display in the help pane. It is for Web UI only.">A janela Ajuda de Contexto define mensagens de texto que podem ser exibidas no painel de ajuda. Utilizado apenas para interface web.</value>
  </row>
  <row id="200036" trl="N">
   <value column="Name" original="1099 Box">1099 Box</value>
@@ -2064,8 +2064,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200049" trl="N">
-  <value column="Name" original="Status Line">Status Line</value>
+ <row id="200049" trl="Y">
+  <value column="Name" original="Status Line">Linha de Status</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
