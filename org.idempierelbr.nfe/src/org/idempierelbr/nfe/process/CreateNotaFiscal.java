@@ -209,6 +209,7 @@ public class CreateNotaFiscal extends SvrProcess
 		nf.setLBR_NFeSerie(nfDocType.get_ValueAsString("LBR_NFeSerie"));
 		
 		nf.setC_DocType_ID(p_C_DocType_ID);
+		nf.setLBR_IsDocIssuedByOrg(nfDocType.get_ValueAsBoolean("LBR_IsDocIssuedByOrg"));
 		nf.setLBR_NFE_OperationType(getOperationType());
 		nf.setDateDoc(new Timestamp(new java.util.Date().getTime()));
 		nf.setPaymentRule(getPaymentRule());

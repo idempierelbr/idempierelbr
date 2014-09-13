@@ -687,4 +687,13 @@ public interface I_LBR_NotaFiscal
 	  * Indicates the protocol of the sending process to Sefaz
 	  */
 	public String getLBR_LotSendingProt();
+	
+	/** Column name LBR_IsDocIssuedByOrg */
+    public static final String COLUMNNAME_LBR_IsDocIssuedByOrg = "LBR_IsDocIssuedByOrg";
+
+	/** Set Is Document Issued by Client/Org?	  */
+	public void setLBR_IsDocIssuedByOrg (boolean LBR_IsDocIssuedByOrg);
+
+	/** Get Is Document Issued by Client/Org?	  */
+	public boolean isLBR_IsDocIssuedByOrg();
 }

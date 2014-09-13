@@ -88,6 +88,7 @@ public class CalloutNotaFiscal implements IColumnCallout {
 			mTab.setValue("LBR_NFSerie", null);
 			mTab.setValue("LBR_NFeIndFinal", null);
 			mTab.setValue("LBR_NFeIndPres", null);
+			mTab.setValue("LBR_IsDocIssuedByOrg", false);
 			return "";
 		}
 		
@@ -96,6 +97,7 @@ public class CalloutNotaFiscal implements IColumnCallout {
 		mTab.setValue("LBR_NFeSerie", dt.get_Value("LBR_NFeSerie"));
 		mTab.setValue("LBR_NFeIndFinal", dt.get_Value("LBR_NFeIndFinal"));
 		mTab.setValue("LBR_NFeIndPres", dt.get_Value("LBR_NFeIndPres"));
+		mTab.setValue("LBR_IsDocIssuedByOrg", dt.get_Value("LBR_IsDocIssuedByOrg"));
 		
 		return "";
 	}

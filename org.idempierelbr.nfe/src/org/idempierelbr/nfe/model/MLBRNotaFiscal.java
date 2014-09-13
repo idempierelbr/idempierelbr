@@ -406,21 +406,23 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 			return DocAction.STATUS_Invalid;
 		}
 		
-		// Delete any xml attachment
-		MAttachment attachNFe = createAttachment();
-		
-		for (int i = attachNFe.getEntryCount() - 1; i >= 0; i--) 
-		{
-			if (attachNFe.getEntry(i).getName().endsWith(NFeXMLGenerator.FILE_EXT))
-				attachNFe.deleteEntry(i);
+		if (isLBR_IsDocIssuedByOrg()) {
+			// Delete any xml attachment
+			MAttachment attachNFe = createAttachment();
 			
-			attachNFe.saveEx(get_TrxName());
+			for (int i = attachNFe.getEntryCount() - 1; i >= 0; i--) 
+			{
+				if (attachNFe.getEntry(i).getName().endsWith(NFeXMLGenerator.FILE_EXT))
+					attachNFe.deleteEntry(i);
+				
+				attachNFe.saveEx(get_TrxName());
+			}
+			
+			// Generate xml
+			m_processMsg = generateXML();
+			if (m_processMsg != null)
+				return DocAction.STATUS_Invalid;
 		}
-		
-		// Generate xml
-		m_processMsg = generateXML();
-		if (m_processMsg != null)
-			return DocAction.STATUS_Invalid;
 		
 		return DocAction.STATUS_InProgress;
 	}
@@ -456,36 +458,38 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		if (m_processMsg != null)
 			return DocAction.STATUS_Invalid;
 		
-		// SEFAZ - Generate NF-e Lot
-		if (MSysConfig.getBooleanValue("LBR_SEFAZ_LOT_ON_COMPLETE", true, getAD_Client_ID(), getAD_Org_ID())) {
-			log.info("Creating NF-e Lot");
-			MLBRNotaFiscalLot lot = null;
-			MLBRNotaFiscalLotLine lotLine = null;
-			
-			try {
-				lot = new MLBRNotaFiscalLot(getCtx(), 0, get_TrxName());
-				lot.setAD_Org_ID(this.getAD_Org_ID());
-				boolean isSync = MSysConfig.getBooleanValue("LBR_SEFAZ_LOT_SYNC", true, getAD_Client_ID(), getAD_Org_ID());
-				log.info("NF-e Lot is " + (isSync ? "synchronous" : "asynchronous"));
-				lot.setLBR_ProcessingType(isSync ? "S" : "A");
-				lot.setLBR_LotSent(false);
-				lot.setLBR_LotQueried(false);
-				lot.saveEx();
+		if (isLBR_IsDocIssuedByOrg()) {
+			// SEFAZ - Generate NF-e Lot
+			if (MSysConfig.getBooleanValue("LBR_SEFAZ_LOT_ON_COMPLETE", true, getAD_Client_ID(), getAD_Org_ID())) {
+				log.info("Creating NF-e Lot");
+				MLBRNotaFiscalLot lot = null;
+				MLBRNotaFiscalLotLine lotLine = null;
 				
-				lotLine = new MLBRNotaFiscalLotLine(getCtx(), 0, get_TrxName());
-				lotLine.setAD_Org_ID(lot.getAD_Org_ID());
-				lotLine.setLBR_NotaFiscalLot_ID(lot.get_ID());
-				lotLine.setLBR_NotaFiscal_ID(this.get_ID());
-				lotLine.saveEx();
-			} catch (Exception e) {
-				e.printStackTrace();
-				m_processMsg = "Couldn't create NF-e Lot";
-				
-				if (lotLine.get_ID() > 0)
-					lotLine.delete(true);
-				
-				if (lot.get_ID() > 0)
-					lot.delete(true);
+				try {
+					lot = new MLBRNotaFiscalLot(getCtx(), 0, get_TrxName());
+					lot.setAD_Org_ID(this.getAD_Org_ID());
+					boolean isSync = MSysConfig.getBooleanValue("LBR_SEFAZ_LOT_SYNC", true, getAD_Client_ID(), getAD_Org_ID());
+					log.info("NF-e Lot is " + (isSync ? "synchronous" : "asynchronous"));
+					lot.setLBR_ProcessingType(isSync ? "S" : "A");
+					lot.setLBR_LotSent(false);
+					lot.setLBR_LotQueried(false);
+					lot.saveEx();
+					
+					lotLine = new MLBRNotaFiscalLotLine(getCtx(), 0, get_TrxName());
+					lotLine.setAD_Org_ID(lot.getAD_Org_ID());
+					lotLine.setLBR_NotaFiscalLot_ID(lot.get_ID());
+					lotLine.setLBR_NotaFiscal_ID(this.get_ID());
+					lotLine.saveEx();
+				} catch (Exception e) {
+					e.printStackTrace();
+					m_processMsg = "Couldn't create NF-e Lot";
+					
+					if (lotLine.get_ID() > 0)
+						lotLine.delete(true);
+					
+					if (lot.get_ID() > 0)
+						lot.delete(true);
+				}
 			}
 		}
 		
@@ -884,20 +888,25 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	}
 	
 	protected boolean beforeSave(boolean newRecord) {
-		// Dados da Org.
-		MOrg org = new MOrg(getCtx(), getAD_Org_ID(), get_TrxName());
-		MOrgInfo orgInfo = MOrgInfo.get(getCtx(), org.get_ID(), get_TrxName());
-		MLocation orgLoc = new MLocation(getCtx(), orgInfo.getC_Location_ID(), get_TrxName());
-		
-		if (getC_Region_ID() != orgLoc.getC_Region_ID()) {
-			log.saveError("Error", Msg.parseTranslation(getCtx(), "NF-e org. region is different than selected on region field"));
-			return false;
+		// Validate Region (only if the doc. is issued by the client/org.)
+		if (isLBR_IsDocIssuedByOrg()) {
+			MOrg org = new MOrg(getCtx(), getAD_Org_ID(), get_TrxName());
+			MOrgInfo orgInfo = MOrgInfo.get(getCtx(), org.get_ID(), get_TrxName());
+			MLocation orgLoc = new MLocation(getCtx(), orgInfo.getC_Location_ID(), get_TrxName());
+			
+			if (getC_Region_ID() != orgLoc.getC_Region_ID()) {
+				log.saveError("Error", Msg.parseTranslation(getCtx(), "NF-e org. region is different than selected on region field"));
+				return false;
+			}
 		}
 		
 		return true;
 	}
 
 	public boolean hasImmutableStatus() {
+		if (!isLBR_IsDocIssuedByOrg())
+			return false;
+		
 		if (getLBR_NFeStatus() == null || getLBR_NFeStatus().trim().equals(""))
 			return false;
 		

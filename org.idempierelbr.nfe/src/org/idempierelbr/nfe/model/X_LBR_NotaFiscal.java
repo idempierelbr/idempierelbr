@@ -1134,4 +1134,25 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 	{
 		return (String)get_Value(COLUMNNAME_LBR_LotSendingProt);
 	}
+	
+	/** Set Is Document Issued by Client/Org?.
+	@param LBR_IsDocIssuedByOrg Is Document Issued by Client/Org?	  */
+	public void setLBR_IsDocIssuedByOrg (boolean LBR_IsDocIssuedByOrg)
+	{
+		set_Value (COLUMNNAME_LBR_IsDocIssuedByOrg, Boolean.valueOf(LBR_IsDocIssuedByOrg));
+	}
+	
+	/** Get Is Document Issued by Client/Org?.
+		@return Is Document Issued by Client/Org?	  */
+	public boolean isLBR_IsDocIssuedByOrg () 
+	{
+		Object oo = get_Value(COLUMNNAME_LBR_IsDocIssuedByOrg);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
+	}
 }
