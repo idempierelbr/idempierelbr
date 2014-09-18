@@ -1092,7 +1092,8 @@ public class FebrabanGenerate extends SvrProcess
 	
 	private File generateFile(ArquivoBanco arquivoBanco) throws IOException {
 		String now = new SimpleDateFormat("ddMMyyHHmmss").format(new Date());
-		File file = new File(System.getProperty("java.io.tmpdir") + now + ".REM");
+		File file = new File(System.getProperty("java.io.tmpdir") +
+				System.getProperty("file.separator") + now + ".REM");
 		FileWriter arq = new FileWriter(file);
 		arq.append(quebrarEmLinhas(arquivoBanco.toString()));
 		arq.close();
