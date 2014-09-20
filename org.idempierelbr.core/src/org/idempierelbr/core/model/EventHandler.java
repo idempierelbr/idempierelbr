@@ -169,7 +169,7 @@ public class EventHandler extends AbstractEventHandler {
 			}
 			
 			// formata IE
-			if (bpW.getLBR_IE() != null || bpW.getLBR_IE().length() > 0) {
+			if (bpW.getLBR_IE() != null && bpW.getLBR_IE().length() > 0) {
 				MIE ie = new MIE(bpW.getLBR_IE());
 				String ieFormated = ie.getFormated();
 				
