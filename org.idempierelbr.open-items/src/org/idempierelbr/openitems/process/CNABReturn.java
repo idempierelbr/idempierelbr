@@ -59,7 +59,7 @@ public class CNABReturn extends SvrProcess
 		String routingNo = bA.getC_Bank().getRoutingNo();
 		
 		if (routingNo != null) {
-			ProcessCall process = getProcess(routingNo, false);
+			ProcessCall process = getProcess(routingNo, true);
 			process.setProcessUI(processUI);
 			
 			Trx trx = Trx.get(get_TrxName(), true);
