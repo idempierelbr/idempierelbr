@@ -771,7 +771,7 @@
   <value column="MsgTip" original=""/>
  </row>
  <row id="293" trl="Y">
-  <value column="MsgText" original="&amp;Home"><![CDATA[&Menu]]></value>
+  <value column="MsgText" original="&amp;Home"><![CDATA[&Início]]></value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="294" trl="Y">

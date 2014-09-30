@@ -8,11 +8,14 @@ Require-Bundle: org.adempiere.base;bundle-version="2.0.0",
  org.idempierelbr.core;bundle-version="1.0.0",
  org.idempierelbr.tax;bundle-version="1.0.0",
  org.adempiere.report.jasper.library;bundle-version="2.0.0",
- org.adempiere.report.jasper;bundle-version="2.0.0"
-Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/CalloutFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/DocFactory.xml,
- OSGI-INF/ProcessFactory.xml
+ org.adempiere.report.jasper;bundle-version="2.0.0",
+ org.zkoss.zk.library;bundle-version="6.0.0",
+ org.adempiere.ui.zk
+Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/CalloutFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/DocFactory.xml,OSGI-INF/ProcessFactory.xml,
+ OSGI-INF/FormFactory.xml
 Export-Package: org.idempierelbr.nfe.model
-Import-Package: org.apache.xerces.jaxp,
+Import-Package: org.adempiere.webui.panel,
+ org.apache.xerces.jaxp,
  org.osgi.service.event,
  org.xml.sax
 Bundle-ClassPath: .,

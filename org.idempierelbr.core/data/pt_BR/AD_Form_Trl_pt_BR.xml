@@ -243,4 +243,9 @@ Select the orders to generate the shipments & Invoices for.]]></value>
   <value column="Description" original="Select boletos movements and generate CNAB">Selecionar movimentos de boletos e gerar CNAB</value>
   <value column="Help" original="Generate CNAB from Boletos Movements.">Gerar CNAB a partir dos movimentos de boletos.</value>
  </row>
+ <row trl="Y" uuid="bfe627a3-79f9-4274-9609-32b800a8623c">
+  <value column="Name" original="Generate NF From XML (manual)">Gerar NF a partir do XML (Manual)</value>
+  <value column="Description" original="Select NF-e XML and generate Brazilian Fiscal Invoice">Selecione um XML de NF-e e gere uma Nota Fiscal</value>
+  <value column="Help" original="Generate Brazilian Fiscal Invoice from NF-e XML.">Gerar Nota Fiscal a partir do XML de NF-e.</value>
+ </row>
 </idempiereTrl>
