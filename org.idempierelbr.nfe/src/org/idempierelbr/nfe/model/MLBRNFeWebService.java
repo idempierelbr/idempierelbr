@@ -82,7 +82,9 @@ public class MLBRNFeWebService extends X_LBR_NFeWebService
 		sql.append("SELECT URL FROM LBR_NFeWebService");
 		
 		if (envType != null && !envType.trim().equals(""))
-			sql.append(" WHERE LBR_NFeEnv = ?");
+			sql.append(" WHERE LBR_NFeEnv = ? AND IsActive='Y'");
+		else
+			sql.append(" WHERE IsActive='Y'");
 		
 		ArrayList<String> list = new ArrayList<String>();
 		PreparedStatement pstmt = null;
