@@ -2,12 +2,14 @@ package org.idempierelbr.nfe.stub;
 
 import java.io.StringReader;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamReader;
 
 import org.adempiere.exceptions.AdempiereException;
+import org.apache.axiom.om.OMElement;
 import org.compiere.model.MRegion;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
@@ -201,6 +203,10 @@ public class StubConnector {
 				// Message
 				org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub.NfeDadosMsg dadosMsg =
 						org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub.NfeDadosMsg.Factory.parse(reader);
+				
+				OMElement ome = addAttribute(dadosMsg.getExtraElement(), "evento", "xmlns", "http://www.portalfiscal.inf.br/nfe");			  
+				dadosMsg.setExtraElement(ome);
+				
 				// Stub
 				org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub stub =
 						new org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub(url);
@@ -222,6 +228,10 @@ public class StubConnector {
 				// Message
 				org.idempierelbr.nfe.stub.generic.NfeAutorizacaoStub.NfeDadosMsg dadosMsg =
 						org.idempierelbr.nfe.stub.generic.NfeAutorizacaoStub.NfeDadosMsg.Factory.parse(reader);
+				
+				OMElement ome = addAttribute(dadosMsg.getExtraElement(), "NFe", "xmlns", "http://www.portalfiscal.inf.br/nfe");			  
+				dadosMsg.setExtraElement(ome);
+
 				// Stub
 				org.idempierelbr.nfe.stub.generic.NfeAutorizacaoStub stub =
 						new org.idempierelbr.nfe.stub.generic.NfeAutorizacaoStub(url);
@@ -255,5 +265,19 @@ public class StubConnector {
 			throw new UnsupportedOperationException();
 		
 		return result;
+	}
+	
+	private OMElement addAttribute(OMElement ome, String childrenName, String attribName, String attribValue) {
+		Iterator<?> children = ome.getChildrenWithLocalName(childrenName);
+		
+		while (children.hasNext()) {  
+			OMElement omElement = (OMElement) children.next();
+			
+			if ((omElement != null) && (childrenName.equals(omElement.getLocalName()))) {    
+				omElement.addAttribute(attribName, attribValue, null);    
+			}  
+		}
+		
+		return ome;
 	}
 }
