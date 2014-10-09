@@ -459,7 +459,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://www.portalfiscal.inf.br/nfe/wsdl/NfeStatusServico2",
                 "nfeCabecMsg",
-                "ns1");
+                "");
 
             
 
@@ -537,7 +537,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeStatusServico2")){
-                return "ns1";
+                return "";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -798,7 +798,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://www.portalfiscal.inf.br/nfe/wsdl/NfeStatusServico2",
                 "nfeStatusServicoNF2Result",
-                "ns1");
+                "");
 
             
 
@@ -905,7 +905,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeStatusServico2")){
-                return "ns1";
+                return "";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -1242,7 +1242,7 @@
         /* This type was generated from the piece of schema that had
                 name = nfeCabecMsg
                 Namespace URI = http://www.portalfiscal.inf.br/nfe/wsdl/NfeStatusServico2
-                Namespace Prefix = ns1
+                Namespace Prefix = 
                 */
             
 
@@ -1514,7 +1514,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeStatusServico2")){
-                return "ns1";
+                return "";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -1890,7 +1890,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://www.portalfiscal.inf.br/nfe/wsdl/NfeStatusServico2",
                 "nfeDadosMsg",
-                "ns1");
+                "");
 
             
 
@@ -1997,7 +1997,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeStatusServico2")){
-                return "ns1";
+                return "";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
