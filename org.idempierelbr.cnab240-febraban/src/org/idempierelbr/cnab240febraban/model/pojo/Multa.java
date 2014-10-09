@@ -34,7 +34,12 @@ public class Multa {
 	public String toString() {
 		StringBuilder sb = new StringBuilder(TAMANHO_JUROS);
 		sb.append(ArquivoUtils.getCampoNumerico(getCodigoMulta(), 1));
-		sb.append(ArquivoUtils.getCampoDataFormatada(getDataMulta()));
+		
+		if (getDataMulta() == null)
+			sb.append(ArquivoUtils.getCampoNumerico(0, 8));
+		else
+			sb.append(ArquivoUtils.getCampoDataFormatada(getDataMulta()));
+		
 		sb.append(ArquivoUtils.getCampoDecimal(getValorPercentualMulta(), 13, 2));
 		
 		return sb.toString();
