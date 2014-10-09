@@ -56,10 +56,10 @@ public class MLBRNotaFiscalEventLine extends X_LBR_NotaFiscalEventLine {
 		}
 		
 		// Check if NF-e can be added to a Lot
-		if (!thisNf.isStatusAutorizado()) {
+		/*if (!thisNf.isStatusAutorizado()) {
 			log.saveError("Error", Msg.parseTranslation(getCtx(), "NF-e can't be added to a Lot"));
 			return false;
-		}
+		}*/
 		
 		// Check consistency with other lines
 		if (lines.length > 0) {
