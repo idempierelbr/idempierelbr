@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.compiere.model.MAttachment;
+import org.compiere.model.MDocType;
 import org.compiere.model.MLocation;
 import org.compiere.model.MOrg;
 import org.compiere.model.MOrgInfo;
@@ -279,7 +280,17 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 		xmlLot.append(NFeUtil.VERSAO_APP);
 		xmlLot.append("\">");
 		xmlLot.append("<tpAmb>");
-		xmlLot.append("2");
+		
+		String tpAmb = "1";
+		
+		MLBRNotaFiscalLotLine[] linesNF = getLines();
+		if (linesNF.length > 0) {
+			int C_DocType_ID = linesNF[0].getLBR_NotaFiscal().getC_DocType_ID();
+			MDocType dt = new MDocType(getCtx(), C_DocType_ID, null);
+			tpAmb = dt.get_ValueAsString("LBR_NFeEnv");
+		}		
+		
+		xmlLot.append(tpAmb);
 		xmlLot.append("</tpAmb>");
 		xmlLot.append("<nRec>");
 		xmlLot.append(getLBR_LotSendingRec());
