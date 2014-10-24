@@ -560,6 +560,13 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 		return query.firstOnly();
 	}
 	
+	public static MLBRBoleto getByNumberInBank(Properties ctx, String numberInBank,	String trxName) {
+		MTable table = MTable.get (ctx, MLBRBoleto.Table_Name);
+		Query query =  new Query(ctx, table, "LBR_NumberInBank=?", trxName);
+		query.setParameters(new Object[]{numberInBank});
+		return query.firstOnly();
+	}
+	
 	public int getNewMovementSeqNo() {
 		final String sql = "SELECT COALESCE(MAX(SeqNo),0)+10 AS DefaultValue FROM LBR_BoletoMovement WHERE LBR_Boleto_ID=?";
 		PreparedStatement pstmt = null;

@@ -6,7 +6,10 @@ import java.util.logging.Level;
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
-import org.idempierelbr.cnab240febraban.model.pojo.ArquivoBanco;
+import org.idempierelbr.cnab240bradesco.annotated.BradescoCNABCobrancaRetornoHeaderLote;
+import org.idempierelbr.cnab240bradesco.annotated.BradescoCNABSegmentT;
+import org.idempierelbr.cnab240febraban.annotated.CNABRecords;
+import org.idempierelbr.cnab240febraban.process.CNABRecordsProcess;
 
 /**
  *	Return CNAB
@@ -54,15 +57,13 @@ public class BradescoReturn extends SvrProcess
 		if (CNABFile.length() <= 0L)
 			throw new AdempiereException("CNABFile " + p_CNABFile + " is empty");
 		
-		ArquivoBanco arquivoBanco = new ArquivoBanco(CNABFile);
+		CNABRecords returnRecords = new CNABRecords();
+		returnRecords.setHeaderLoteClass(BradescoCNABCobrancaRetornoHeaderLote.class);
+		returnRecords.setSegmentTClass(BradescoCNABSegmentT.class);
 		
-		if (!arquivoBanco.isFileRead())
-			throw new AdempiereException("CNAB Return failed");
-				
-		return process(arquivoBanco);	
+		returnRecords.loadRecords(CNABFile);
+		
+		return CNABRecordsProcess.process(returnRecords, this);
 	}	//	doIt
 
-	private String process(ArquivoBanco arquivoBanco) {
-		return null;
-	}
 }	//	CNABReturn

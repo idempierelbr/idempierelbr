@@ -12,7 +12,9 @@ Require-Bundle: org.adempiere.base,
 Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/CalloutFactory.xml,OSGI-INF/DocFactory.xml,OSGI-INF/FormFactory.xml,
  OSGI-INF/ProcessFactory.xml
 Import-Package: org.osgi.service.event
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ lib/commons-lang-2.6.jar
 Export-Package: org.idempierelbr.openitems.model,
+ org.idempierelbr.openitems.printboleto.customizer,
  org.idempierelbr.openitems.process,
  org.idempierelbr.openitems.util

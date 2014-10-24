@@ -54,6 +54,22 @@ public class MLBRBankAccountConvenio extends X_LBR_BankAccount_Convenio {
 	 	return cart;
 	}
 	
+	/**
+	 *  Get Carteira By Number
+	 *  @return MLBRBankAccountCarteira carteira
+	 */
+	public MLBRBankAccountCarteira getCarteiraByNumber(String number)
+	{
+		MTable table = MTable.get (getCtx(), MLBRBankAccountCarteira.Table_Name);
+		Query query =  new Query(getCtx(), table, "LBR_BankAccount_Convenio_ID=? AND LBR_CarteiraNo=?", get_TrxName());
+		query.setOrderBy("IsDefault DESC");
+		query.setParameters(new Object[]{get_ID(), number});
+
+		MLBRBankAccountCarteira cart = query.first();
+		
+	 	return cart;
+	}
+	
 	public static MLBRBankAccountConvenio[] getConvenios(Properties ctx, int C_BankAccount_ID, String trxName) {
 		MTable table = MTable.get (ctx, MLBRBankAccountConvenio.Table_Name);
 		Query query =  new Query(ctx, table, "C_BankAccount_ID=?", trxName);

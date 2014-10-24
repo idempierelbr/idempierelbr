@@ -1,5 +1,9 @@
 package org.idempierelbr.openitems.util;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.compiere.util.CLogger;
 
 public class OpenItemsUtil {
@@ -33,4 +37,13 @@ public class OpenItemsUtil {
 		else
 			return main;
 	}
+
+	public static File createFile() throws IOException {
+	
+		String now = new SimpleDateFormat("ddMMyyHHmmss").format(new Date());
+		File file = new File(System.getProperty("java.io.tmpdir") +
+				System.getProperty("file.separator") + now + ".log");
+		
+		return file;
+	}	
 }
