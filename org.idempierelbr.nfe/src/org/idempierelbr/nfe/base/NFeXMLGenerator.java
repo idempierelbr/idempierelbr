@@ -1150,7 +1150,7 @@ public class NFeXMLGenerator {
 			
 			if (pack.getC_UOM_ID() > 0) {
 				MUOM uom = new MUOM(ctx, pack.getC_UOM_ID(), trxName);
-				transVol.setEsp(uom.getUOMSymbol());
+				transVol.setEsp(uom.getName());
 			}
 			
 			transVol.setMarca(pack.getLBR_BrandName());
