@@ -13,6 +13,8 @@ import org.compiere.model.MInOut;
 import org.compiere.model.MInOutLine;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MInvoiceLine;
+import org.compiere.model.MInvoicePaySchedule;
+import org.compiere.model.MInvoiceSchedule;
 import org.compiere.model.MLocation;
 import org.compiere.model.MOrder;
 import org.compiere.model.MOrderLine;
@@ -40,6 +42,8 @@ import org.idempierelbr.nfe.model.MLBRDocLineDetailsNfe;
 import org.idempierelbr.nfe.model.MLBRNotaFiscal;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalPackage;
+import org.idempierelbr.nfe.model.MLBRNotaFiscalPay;
+import org.idempierelbr.nfe.model.MLBRNotaFiscalPaySched;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalTransp;
 import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
 
@@ -378,7 +382,40 @@ public class CreateNotaFiscal extends SvrProcess
 		pack.setLBR_NetWeight(totalWeight);
 		pack.saveEx();
 		
-		// TODO: Generate Nota Fiscal Pay and Pay Schedule
+		// Generate Nota Fiscal Pay and Pay Schedule
+		// TODO: Change Pay Sched No. to reflect Boleto
+		if (po instanceof MInvoice) {
+			BigDecimal openAmt = Env.ZERO;
+			MInvoicePaySchedule[] scheds = MInvoicePaySchedule.getInvoicePaySchedule(getCtx(),
+					invoice.get_ID(), 0, get_TrxName());
+			
+			for (MInvoicePaySchedule sched : scheds) {
+				openAmt = openAmt.add(sched.getDueAmt());
+			}
+			
+			if (openAmt.signum() >= 0) {
+				MLBRNotaFiscalPay pay = new MLBRNotaFiscalPay(getCtx(), 0, get_TrxName());
+				pay.setAD_Org_ID(nf.getAD_Org_ID());
+				pay.setLBR_NotaFiscal_ID(nf.get_ID());
+				pay.setLBR_Document(nf.getDocumentNo());
+				pay.setGrandTotal(openAmt);
+				pay.setNetAmtToInvoice(openAmt);
+				pay.setDiscountAmt(null);
+				pay.saveEx();
+				
+				int no = 1;
+				// Pay Schedule
+				for (MInvoicePaySchedule sched : scheds) {
+					MLBRNotaFiscalPaySched pSched = new MLBRNotaFiscalPaySched(getCtx(), 0, get_TrxName());
+					pSched.setAD_Org_ID(nf.getAD_Org_ID());
+					pSched.setLBR_NotaFiscalPay_ID(pay.get_ID());
+					pSched.setLBR_Document(nf.getDocumentNo() + "/" + no++);
+					pSched.setDueDate(sched.getDueDate());
+					pSched.setDueAmt(sched.getDueAmt());
+					pSched.saveEx();
+				}
+			}
+		}
 		
 		// Process it
 		if (!DocAction.ACTION_None.equals(p_docAction))	{
