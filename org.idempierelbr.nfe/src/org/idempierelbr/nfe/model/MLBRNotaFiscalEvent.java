@@ -238,14 +238,16 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 							cStat = "151"; // 151 - Cancelamento de NF-e homologado fora de prazo
 						
 						// Update NF-e (only cancellation)
-						MLBRNotaFiscal nf = new MLBRNotaFiscal(getCtx(), line.getLBR_NotaFiscal_ID(), get_TrxName());
-						
-						if (nf.getLBR_NFeID().equals(chNFe)) {
-							nf.setLBR_LotSendingProt(nProt);
-							nf.setLBR_NFeStatus(cStat);
-							nf.saveEx();
-						} else {
-							log.severe("NF-e " + nf.getDocumentNo() + " has NF-e ID other than NF-e Lot. It won't be updated");
+						if (cStat.equals("101") || cStat.equals("151")) {
+							MLBRNotaFiscal nf = new MLBRNotaFiscal(getCtx(), line.getLBR_NotaFiscal_ID(), get_TrxName());
+							
+							if (nf.getLBR_NFeID().equals(chNFe)) {
+								nf.setLBR_LotSendingProt(nProt);
+								nf.setLBR_NFeStatus(cStat);
+								nf.saveEx();
+							} else {
+								log.severe("NF-e " + nf.getDocumentNo() + " has NF-e ID other than NF-e Lot. It won't be updated");
+							}
 						}
 					}
 					
