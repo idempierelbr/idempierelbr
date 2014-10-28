@@ -21,6 +21,7 @@ import org.compiere.model.MOrgInfo;
 import org.compiere.model.MRegion;
 import org.compiere.model.MTable;
 import org.compiere.model.Query;
+import org.idempierelbr.core.util.AdempiereLBR;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.nfe.beans.DetEventoCancelamento;
 import org.idempierelbr.nfe.beans.DetEventoCartaDeCorrecao;
@@ -320,7 +321,12 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 				cce.setTpAmb(nfDocType.get_ValueAsString("LBR_NFeEnv"));				
 				cce.setCNPJ(TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ")));				
 				cce.setChNFe(line.getLBR_NFeID());
-				cce.setDhEvento(line.getCreated());
+				
+				String DEv 	= TextUtil.timeToString(line.getCreated(), "yyyy-MM-dd");
+				String TEv 	= TextUtil.timeToString(line.getCreated(), "HH:mm:ss");
+				String timezone = AdempiereLBR.getTimezone(nf.getAD_Client_ID(), nf.getAD_Org_ID());
+				cce.setDhEvento(DEv + "T" + TEv + timezone);
+
 				cce.setNSeqEvento("" + line.getLBR_NFeEventSeqNo());
 				cce.setVerEvento(NFeUtil.VERSAO_CCE);
 				cce.setDetEvento(det);
@@ -373,7 +379,12 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 				cancel.setTpAmb(nfDocType.get_ValueAsString("LBR_NFeEnv"));	
 				cancel.setCNPJ(TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ")));
 				cancel.setChNFe(line.getLBR_NFeID());
-				cancel.setDhEvento(line.getCreated());
+				
+				String DEv 	= TextUtil.timeToString(line.getCreated(), "yyyy-MM-dd");
+				String TEv 	= TextUtil.timeToString(line.getCreated(), "HH:mm:ss");
+				String timezone = AdempiereLBR.getTimezone(nf.getAD_Client_ID(), nf.getAD_Org_ID());
+				cancel.setDhEvento(DEv + "T" + TEv + timezone);
+				
 				cancel.setNSeqEvento("" + line.getLBR_NFeEventSeqNo());
 				cancel.setVerEvento(NFeUtil.VERSAO_CAN);
 				cancel.setDetEvento(det);

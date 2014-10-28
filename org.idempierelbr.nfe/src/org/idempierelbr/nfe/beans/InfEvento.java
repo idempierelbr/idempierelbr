@@ -129,6 +129,11 @@ public class InfEvento
 	{
 		this.dhEvento = TextUtil.timeToString (dhEvento, "yyyy-MM-dd'T'HH:mm:ss") + MSysConfig.getValue ("LBR_TIMEZONE", "-03:00", Env.getAD_Client_ID (Env.getCtx()));
 	}	//	setDhEvento
+	
+	public void setDhEvento (String dhEvento)
+	{
+		this.dhEvento = dhEvento;
+	}	//	setDhEvento
 
 	public void setTpEvento(String tpEvento)
 	{
