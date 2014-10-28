@@ -18,6 +18,7 @@ import org.compiere.model.MPInstance;
 import org.compiere.model.MSysConfig;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.Env;
+import org.compiere.util.Msg;
 import org.idempierelbr.cnab240febraban.annotated.CNABBaseRecord;
 import org.idempierelbr.cnab240febraban.annotated.CNABCobrancaHeaderLoteRecord;
 import org.idempierelbr.cnab240febraban.annotated.CNABRecords;
@@ -85,7 +86,18 @@ public class CNABRecordsProcess {
 				
 			
 			if ( boleto == null ) {
-				svrP.addLog("Não foi possível localizar Boleto com o Núm. de Documento: " + docNo + " / " + nossoNumero );
+				StringBuilder log = new StringBuilder(Msg.getMsg(svrP.getCtx(), "SearchError"))
+					.append(Msg.getElement(svrP.getCtx(), "LBR_Boleto_ID"))
+					.append(", ")
+					.append(Msg.getElement(svrP.getCtx(), "DocumentNo"))
+					.append(" ")
+					.append(docNo)
+					.append(", ")
+					.append(Msg.getElement(svrP.getCtx(), "LBR_NumberInBank"))
+					.append(" ")
+					.append(nossoNumero);
+
+				svrP.addLog(log.toString());
 				continue;
 			}
 			
@@ -99,10 +111,18 @@ public class CNABRecordsProcess {
 			MLBRCobMovimento cobMov = getCobMovimento(boleto, bC.getSegT().getCodigoMovimento() , svrP );
 			
 			if (cobMov == null) {
-				svrP.addLog("Não foi possível localizar Cód. de Movimento informado ("
-						+ bC.getSegT().getCodigoMovimento()
-						+ ") no arquivo retorno, para Boleto com o Núm. de Documento: "
-						+ bC.getSegT().getNumeroTituloNaEmpresa().trim());
+				StringBuilder log = new StringBuilder(Msg.getMsg(svrP.getCtx(), "SearchError"))
+					.append(Msg.getElement(svrP.getCtx(), "LBR_Cob_Movimento_ID"))
+					.append(" ")
+					.append(bC.getSegT().getCodigoMovimento())
+					.append(", ")
+					.append(Msg.getElement(svrP.getCtx(), "LBR_Boleto_ID"))
+					.append(" ")
+					.append(Msg.getElement(svrP.getCtx(), "DocumentNo"))
+					.append(" ")
+					.append(bC.getSegT().getNumeroTituloNaEmpresa().trim());
+				
+				svrP.addLog(log.toString());
 				continue;
 			}
 			
@@ -136,10 +156,18 @@ public class CNABRecordsProcess {
 				
 				if (carteira == null) {
 					// Se carteira do retorno não existir, utiliza a do cadastro do boleto
-					svrP.addLog("Não foi possível localizar Carteira informada ("
-							+ bC.getSegT().getCarteira()
-							+ ") no arquivo retorno, para Boleto com o Núm. de Documento: "
-							+ bC.getSegT().getNumeroTituloNaEmpresa().trim());
+					StringBuilder log = new StringBuilder(Msg.getMsg(svrP.getCtx(), "SearchError"))
+						.append(Msg.getElement(svrP.getCtx(), "LBR_BankAccount_Carteira_ID"))
+						.append(" ")
+						.append(bC.getSegT().getCarteira())
+						.append(", ")
+						.append(Msg.getElement(svrP.getCtx(), "LBR_Boleto_ID"))
+						.append(" ")
+						.append(Msg.getElement(svrP.getCtx(), "DocumentNo"))
+						.append(" ")
+						.append(bC.getSegT().getNumeroTituloNaEmpresa().trim());
+					
+					svrP.addLog(log.toString());
 					carteira = (MLBRBankAccountCarteira) boleto.getLBR_BankAccount_Carteira();
 				}
 				
@@ -310,11 +338,23 @@ public class CNABRecordsProcess {
 			mov.saveEx();
 			boleto.saveEx();
 			
-			if ( mov.getPayAmt().compareTo(Env.ZERO) == 1)  {
+			StringBuilder log = new StringBuilder(Msg.getMsg(svrP.getCtx(), "DocProcessed"))
+				.append(": ")
+				.append(Msg.getElement(svrP.getCtx(), "LBR_Boleto_ID"))
+				.append(" ")
+				.append(boleto.getDocumentNo());
+			
+			if (mov.getPayAmt().compareTo(Env.ZERO) == 1)  {
+				log.append(", ")
+					.append(Msg.getElement(svrP.getCtx(), "PayAmt"))
+					.append(" ")
+					.append(TextUtil.toNumeric(mov.getPayAmt()));
 				String returnMsg = mov.createPayment();
 				TextUtil.addText(fw, returnMsg);
 				TextUtil.addEOL(fw);
 			}
+			
+			svrP.addLog(log.toString());
 		
 		}
 
@@ -323,7 +363,17 @@ public class CNABRecordsProcess {
 		// Create Notice
 		if (MSysConfig.getBooleanValue("LBR_CNAB_CREATE_NOTICE", true, Env.getAD_Client_ID(svrP.getCtx()), Env.getAD_Org_ID(svrP.getCtx()))) {
 			MNote note = new MNote(svrP.getCtx(), "LBR_CNABGenerated", Env.getAD_User_ID(svrP.getCtx()), svrP.get_TrxName());
-			note.setTextMsg("Retorno CNAB (Banco " + lote.getBanco() + ", Convênio " + lote.getConvenio() + ")\n" );
+			
+			StringBuilder noteMsg = new StringBuilder("Retorno CNAB: ")
+				.append(Msg.getElement(svrP.getCtx(), "C_Bank_ID"))
+				.append(" ")
+				.append(lote.getBanco())
+				.append(", ")
+				.append(Msg.getElement(svrP.getCtx(), "LBR_BankAccount_Convenio_ID"))
+				.append(" ")
+				.append(lote.getConvenio());
+			
+			note.setTextMsg(noteMsg.toString());
 			note.setRecord(MPInstance.Table_ID, svrP.getProcessInfo().getAD_PInstance_ID());
 			note.saveEx();
 

@@ -15,6 +15,7 @@ import org.compiere.model.MBank;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.Env;
+import org.compiere.util.Msg;
 import org.idempierelbr.cnab240febraban.model.pojo.ArquivoBanco;
 import org.idempierelbr.cnab240febraban.model.pojo.Lote;
 import org.idempierelbr.cnab240febraban.model.registro.Registro;
@@ -123,7 +124,14 @@ public class FebrabanReturn extends SvrProcess
 			MLBRBoleto boleto = MLBRBoleto.getByDocumentNo(getCtx(), bC.getSegT().getCampoUsoEmpresa().trim(), get_TrxName());
 			
 			if (boleto == null) {
-				addLog("Não foi possível localizar Boleto com o Núm. de Documento: " + bC.getSegT().getCampoUsoEmpresa().trim());
+				StringBuilder log = new StringBuilder(Msg.getMsg(getCtx(), "SearchError"))
+					.append(Msg.getElement(getCtx(), "LBR_Boleto_ID"))
+					.append(", ")
+					.append(Msg.getElement(getCtx(), "DocumentNo"))
+					.append(" ")
+					.append(bC.getSegT().getCampoUsoEmpresa().trim());
+
+				addLog(log.toString());
 				continue;
 			}
 			
@@ -137,10 +145,18 @@ public class FebrabanReturn extends SvrProcess
 			MLBRCobMovimento cobMov = getCobMovimento(boleto, bC.getSegT().getServico().getCodigoMovimentoRemessa());
 			
 			if (cobMov == null) {
-				addLog("Não foi possível localizar Cód. de Movimento informado ("
-						+ bC.getSegT().getServico().getCodigoMovimentoRemessa()
-						+ ") no arquivo retorno, para Boleto com o Núm. de Documento: "
-						+ bC.getSegT().getCampoUsoEmpresa().trim());
+				StringBuilder log = new StringBuilder(Msg.getMsg(getCtx(), "SearchError"))
+					.append(Msg.getElement(getCtx(), "LBR_Cob_Movimento_ID"))
+					.append(" ")
+					.append(bC.getSegT().getServico().getCodigoMovimentoRemessa())
+					.append(", ")
+					.append(Msg.getElement(getCtx(), "LBR_Boleto_ID"))
+					.append(" ")
+					.append(Msg.getElement(getCtx(), "DocumentNo"))
+					.append(" ")
+					.append(bC.getSegT().getCampoUsoEmpresa().trim());
+			
+				addLog(log.toString());
 				continue;
 			}
 			
@@ -172,10 +188,18 @@ public class FebrabanReturn extends SvrProcess
 				}
 				
 				if (carteira == null) {
-					addLog("Não foi possível localizar Carteira informada ("
-							+ bC.getSegT().getCodigoCarteira()
-							+ ") no arquivo retorno, para Boleto com o Núm. de Documento: "
-							+ bC.getSegT().getCampoUsoEmpresa().trim());
+					StringBuilder log = new StringBuilder(Msg.getMsg(getCtx(), "SearchError"))
+						.append(Msg.getElement(getCtx(), "LBR_BankAccount_Carteira_ID"))
+						.append(" ")
+						.append(bC.getSegT().getCodigoCarteira())
+						.append(", ")
+						.append(Msg.getElement(getCtx(), "LBR_Boleto_ID"))
+						.append(" ")
+						.append(Msg.getElement(getCtx(), "DocumentNo"))
+						.append(" ")
+						.append(bC.getSegT().getCampoUsoEmpresa().trim());
+
+					addLog(log.toString());
 					continue;
 				}
 				
@@ -333,6 +357,14 @@ public class FebrabanReturn extends SvrProcess
 			
 			mov.saveEx();
 			boleto.saveEx();
+			
+			StringBuilder log = new StringBuilder(Msg.getMsg(getCtx(), "DocProcessed"))
+				.append(": ")
+				.append(Msg.getElement(getCtx(), "LBR_Boleto_ID"))
+				.append(" ")
+				.append(boleto.getDocumentNo());
+			
+			addLog(log.toString());
 		}
 		
 		return "Ok";
