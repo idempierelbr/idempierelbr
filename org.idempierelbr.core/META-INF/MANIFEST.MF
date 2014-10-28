@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.idempierelbr.core
+Bundle-Name: iDempiereLBR Core
 Bundle-SymbolicName: org.idempierelbr.core
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
