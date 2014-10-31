@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report4" columnCount="10" printOrder="Horizontal" pageWidth="595" pageHeight="200" whenNoDataType="BlankPage" columnWidth="59" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="81b168ee-3e7d-47f2-952a-a24634d6502d">
+	<property name="ireport.zoom" value="5.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="xPath">
+		<![CDATA[/nfeProc/NFe/infNFe/cobr//dup]]>
+	</queryString>
+	<field name="nDup" class="java.lang.String">
+		<fieldDescription><![CDATA[nDup]]></fieldDescription>
+	</field>
+	<field name="dVenc" class="java.lang.String">
+		<fieldDescription><![CDATA[dVenc]]></fieldDescription>
+	</field>
+	<field name="vDup" class="java.lang.String">
+		<fieldDescription><![CDATA[vDup]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<rectangle radius="3">
+				<reportElement uuid="dfebef7d-1f80-47db-b8d3-e453f83a6f18" x="0" y="0" width="57" height="23"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="f4aaeb9b-4923-46d9-99cc-38a14a79b3ac" x="18" y="8" width="39" height="7"/>
+				<textElement>
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dVenc}.substring(8,10)+"/"+ $F{dVenc}.substring(5,7)+"/"+ $F{dVenc}.substring(0,4)]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="cfce7beb-6aac-44f5-8cdd-0bd1c9b117ef" x="18" y="15" width="39" height="7"/>
+				<textElement>
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Double($F{vDup})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ca94565f-0700-4af2-9869-e0c4e84b485b" x="0" y="1" width="18" height="7"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<text><![CDATA[Núm.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="e2270832-ca20-49d6-8a0b-952d9d4577ce" x="18" y="1" width="39" height="7"/>
+				<textElement>
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nDup}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="1c20be28-2a81-4cea-890e-55759b5b602f" x="0" y="15" width="18" height="7"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<text><![CDATA[Valor:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6dae41bb-f76c-430a-85d9-9c6b3f67ef5b" x="0" y="8" width="18" height="7"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="6"/>
+				</textElement>
+				<text><![CDATA[Venc.:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
