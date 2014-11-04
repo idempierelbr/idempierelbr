@@ -486,11 +486,12 @@ public class NFeXMLGenerator {
 		// E. Identificação do Destinatário da Nota Fiscal eletrônica
 		IdentDest destinatario = new IdentDest();
 		String bpCNPJ = TextUtil.formatStringCodes(bp.get_ValueAsString("LBR_CNPJ"));
+		String bpCPF = TextUtil.formatStringCodes(bp.get_ValueAsString("LBR_CPF"));
 		
-		if (bpCNPJ.length() == 11)
-			destinatario.setCPF(bpCNPJ);
-		else
+		if (bpCNPJ != null && bpCNPJ.length() > 0)
 			destinatario.setCNPJ(bpCNPJ);
+		else if (bpCPF != null && bpCPF.length() > 0)
+			destinatario.setCPF(bpCPF);
 		
 		destinatario.setxNome(RemoverAcentos.remover(bp.getName()));
 		
@@ -543,18 +544,18 @@ public class NFeXMLGenerator {
 		uf = UF.valueOf(bpLoc.getRegionName());
 
 		// Validação IE
-		bpIE = BPartnerUtilNfe.validaIE(bpIE,uf);
+		if (!bpIEIsento)
+			bpIE = BPartnerUtilNfe.validaIE(bpIE,uf);
 		
 		if (bpIE == null && !bpIEIsento) {
 			return "@LBR_Recipient@: @LBR_WrongIE@";
 		}
 		
-		if (!bpIEIsento)
+		if (!bpIEIsento) {
 			destinatario.setIndIEDest("1");
-		else if (bpIEIsento)
+			destinatario.setIE(bpIE);
+		} else if (bpIEIsento)
 			destinatario.setIndIEDest("2");
-
-		destinatario.setIE(bpIE);							
 
 		String suframa = TextUtil.formatStringCodes(bp.get_ValueAsString("LBR_Suframa"));
 		
