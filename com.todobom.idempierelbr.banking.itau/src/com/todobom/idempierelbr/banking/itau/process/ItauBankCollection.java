@@ -34,7 +34,7 @@ public class ItauBankCollection implements IBankCollection {
 	}
 	
 	@Override
-	public boolean postProcessBoleto(MLBRBoleto boleto) {
+	public void postProcessBoleto(MLBRBoleto boleto) {
 		
 		String agencia = OpenItemsUtil.getPartialText( ( (PO) boleto.getC_BankAccount()).get_ValueAsString("LBR_BankAgencyNo") , false );
 		String conta = OpenItemsUtil.getPartialText(boleto.getC_BankAccount().getAccountNo(),false);
@@ -61,7 +61,6 @@ public class ItauBankCollection implements IBankCollection {
 		
 		boleto.setLBR_Fmt_Billfold( carteiraFmt );
 		
-		return true;
 	}
 
 	@Override

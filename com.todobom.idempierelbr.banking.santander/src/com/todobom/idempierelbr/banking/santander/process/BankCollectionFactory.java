@@ -8,7 +8,7 @@ public class BankCollectionFactory implements IBankCollectionFactory {
 	@Override
 	public IBankCollection newBankCollectionInstance(String routingNo) {
 		if (routingNo.equals("033") || routingNo.equals("008") || routingNo.equals("353"))
-			return new SantanderBoletoCustomizer();
+			return new SantanderBankCollection();
 		
 		return null;
 	}

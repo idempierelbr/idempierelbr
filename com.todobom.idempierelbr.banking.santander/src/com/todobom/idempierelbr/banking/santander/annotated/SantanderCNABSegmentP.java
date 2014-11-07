@@ -13,6 +13,12 @@ public class SantanderCNABSegmentP extends CNABSegmentPRecord {
 	private long contaCobranca;
 	private String dvContaCobranca;
 	
+	public SantanderCNABSegmentP() {
+		super();
+		this.setDecimaisPercentualDesconto(5);
+		this.setDecimaisPercentualJurosMora(5);
+	}
+
 	@Override
 	@Field( offset=18 , length=4, paddingChar = '0' , align = Align.RIGHT)
 	public int getAgenciaCedente() {

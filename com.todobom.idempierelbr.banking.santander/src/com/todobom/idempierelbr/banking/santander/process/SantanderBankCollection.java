@@ -13,10 +13,10 @@ import org.idempierelbr.openitems.util.OpenItemsUtil;
 import com.todobom.idempierelbr.banking.santander.annotated.SantanderCNABRecords;
 import com.todobom.idempierelbr.banking.santander.utils.SantanderUtils;
 
-public class SantanderBoletoCustomizer implements IBankCollection {
+public class SantanderBankCollection implements IBankCollection {
 
 	@Override
-	public boolean postProcessBoleto(MLBRBoleto boleto) {
+	public void postProcessBoleto(MLBRBoleto boleto) {
 		
 		String agencia = OpenItemsUtil.getPartialText( ( (PO) boleto.getC_BankAccount()).get_ValueAsString("LBR_BankAgencyNo") , false );
 		String convenio = boleto.getLBR_BankAccount_Convenio().getLBR_ConvenioNo();
@@ -41,7 +41,6 @@ public class SantanderBoletoCustomizer implements IBankCollection {
 		
 		boleto.setLBR_Fmt_Billfold( carteiraFmt );
 		
-		return true;
 	}
 
 	@Override

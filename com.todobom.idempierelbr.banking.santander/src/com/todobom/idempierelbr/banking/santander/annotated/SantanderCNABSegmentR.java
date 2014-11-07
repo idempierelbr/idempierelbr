@@ -12,6 +12,7 @@ public class SantanderCNABSegmentR extends CNABSegmentRRecord {
 	public SantanderCNABSegmentR() {
 		super();
 		super.setDecimaisPercentualMulta(2);
+		super.setDecimaisPercentualDesconto(5);
 	}
 	
 	@Override

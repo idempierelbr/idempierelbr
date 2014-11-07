@@ -14,7 +14,7 @@ public class SantanderCNABRecords extends CNABRecords {
 		super.setHeaderLoteClass(SantanderCNABCobrancaRetornoHeaderLote.class);
 		super.setHeaderLoteCobrancaClass(SantanderCNABCobrancaRemessaHeaderLote.class);
 		super.setHeaderLoteRetornoCobrancaClass(SantanderCNABCobrancaRetornoHeaderLote.class);
-		super.setHeaderArquivo(SantanderCNABHeaderArquivo.class);
+		super.setHeaderArquivoClass(SantanderCNABHeaderArquivo.class);
 		super.setTrailerLoteCobrancaClass(SantanderCNABCobrancaRemessaTrailerLote.class);
 		super.setTrailerArquivoClass(SantanderCNABCobrancaTrailerArquivo.class);
 

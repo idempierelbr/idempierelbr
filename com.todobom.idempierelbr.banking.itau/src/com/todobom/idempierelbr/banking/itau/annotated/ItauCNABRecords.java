@@ -7,7 +7,7 @@ public class ItauCNABRecords extends CNABRecords {
 	public ItauCNABRecords() {
 		super();
 
-		super.setHeaderArquivo(ItauCNABHeaderArquivo.class);
+		super.setHeaderArquivoClass(ItauCNABHeaderArquivo.class);
 		super.setHeaderLoteClass(ItauCNABCobrancaHeaderLote.class);
 		super.setHeaderLoteCobrancaClass(ItauCNABCobrancaHeaderLote.class);
 		super.setTrailerLoteCobrancaClass(ItauCNABCobrancaTrailerLote.class);
