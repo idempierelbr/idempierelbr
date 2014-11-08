@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: iDempiereLBR Plugin Banco do Brasil
+Bundle-SymbolicName: com.todobom.idempierelbr.banking.bancodobrasil
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: todobom.com
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: com.ancientprogramming.fixedformat4j.annotation,
+ org.adempiere.exceptions,
+ org.compiere.model,
+ org.compiere.process,
+ org.idempierelbr.cnab240.annotated,
+ org.idempierelbr.core.util,
+ org.idempierelbr.openitems.model,
+ org.idempierelbr.openitems.process,
+ org.idempierelbr.openitems.processcnab240,
+ org.idempierelbr.openitems.util,
+ org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy
+Service-Component: OSGI-INF/BankCollectionFactory.xml
