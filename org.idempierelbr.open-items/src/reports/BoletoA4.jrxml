@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BoletoA4" pageWidth="595" pageHeight="842" columnWidth="565" leftMargin="15" rightMargin="15" topMargin="20" bottomMargin="4" uuid="a1f89160-0476-4ec7-bfaa-2804cc61b999">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="906"/>
+	<property name="ireport.y" value="740"/>
 	<parameter name="RECORD_ID" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
 	</parameter>
@@ -206,7 +206,7 @@ ORDER BY
 				<textElement textAlignment="Right">
 					<font size="7" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Sacado: ]]></text>
+				<text><![CDATA[Pagador: ]]></text>
 			</staticText>
 			<rectangle radius="5">
 				<reportElement uuid="28c508c8-005b-4391-a867-25ac83637702" x="400" y="271" width="165" height="20"/>
@@ -237,7 +237,7 @@ ORDER BY
 				<textElement>
 					<font size="7" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Instruções (Texto de responsabilidade do Cedente)]]></text>
+				<text><![CDATA[Instruções (Texto de responsabilidade do Beneficiário)]]></text>
 			</staticText>
 			<rectangle radius="5">
 				<reportElement uuid="baabdbea-f9a6-4903-8a59-ab3ee9f321ee" x="400" y="175" width="165" height="20"/>
@@ -400,11 +400,11 @@ ORDER BY
 				<text><![CDATA[Nosso Número]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="7c1d10f8-cd97-4fd5-8d5b-f206f92d3162" x="403" y="151" width="107" height="7"/>
+				<reportElement uuid="7c1d10f8-cd97-4fd5-8d5b-f206f92d3162" x="403" y="151" width="152" height="7"/>
 				<textElement textAlignment="Left">
 					<font size="6" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Agência / Código do Cedente]]></text>
+				<text><![CDATA[Agência / Código do Beneficiário]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="cdf58c0e-b4d5-47c6-a3be-59a8ed07f790" x="299" y="175" width="83" height="7"/>
@@ -446,7 +446,7 @@ ORDER BY
 				<textElement textAlignment="Left">
 					<font size="6" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Cedente]]></text>
+				<text><![CDATA[Beneficiário]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="24fcb1b6-8fdc-4991-a180-917892054ccf" x="3" y="115" width="78" height="7"/>
@@ -476,11 +476,11 @@ ORDER BY
 				<text><![CDATA[Corte na linha abaixo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="b1e1915a-d314-4cc9-aa93-85113e4d6c66" x="3" y="7" width="29" height="7"/>
+				<reportElement uuid="b1e1915a-d314-4cc9-aa93-85113e4d6c66" x="3" y="7" width="43" height="7"/>
 				<textElement textAlignment="Left">
 					<font size="6" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Cedente]]></text>
+				<text><![CDATA[Beneficiário]]></text>
 			</staticText>
 			<rectangle radius="5">
 				<reportElement uuid="19c51d81-4356-480d-ba66-7ed36fedb0e5" x="0" y="22" width="311" height="20"/>
@@ -493,7 +493,7 @@ ORDER BY
 				<textElement textAlignment="Left">
 					<font size="6" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Sacado]]></text>
+				<text><![CDATA[Pagador]]></text>
 			</staticText>
 			<rectangle radius="5">
 				<reportElement uuid="c9602faa-c9e2-4142-ae98-bb1f7eff6e20" x="0" y="46" width="121" height="20"/>
@@ -557,7 +557,7 @@ ORDER BY
 				<textElement textAlignment="Left">
 					<font size="6" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Ag / Código do Cedente]]></text>
+				<text><![CDATA[Ag / Código do Beneficiário]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="b4d3b066-a7f4-4299-8992-f80fd7de1717" x="128" y="46" width="78" height="7"/>
@@ -585,7 +585,7 @@ ORDER BY
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[RECIBO DO SACADO]]></text>
+				<text><![CDATA[RECIBO DO PAGADOR]]></text>
 			</staticText>
 			<line>
 				<reportElement uuid="1d35162a-9738-4ba7-ada9-5d5f65e2a8e4" x="0" y="0" width="565" height="1"/>
@@ -727,7 +727,7 @@ ORDER BY
 				<textFieldExpression><![CDATA[$F{lbr_conveniono}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="566b491f-7aa9-45b6-b1ea-1a6c285f7e52" x="32" y="7" width="382" height="12"/>
+				<reportElement uuid="566b491f-7aa9-45b6-b1ea-1a6c285f7e52" x="46" y="7" width="368" height="12"/>
 				<textElement>
 					<font size="9"/>
 				</textElement>
@@ -768,12 +768,18 @@ ORDER BY
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(($F{lbr_cnabdiscount1date} != null)?("Conceder desconto de R$ " + new DecimalFormat("#,##0.00").format($F{lbr_cnabdiscount1ap}) + " até " + new SimpleDateFormat("dd/MM/yyyy").format($F{lbr_cnabdiscount1date}) + "\n"):"") +
-(($F{lbr_latepaymentpenaltydate} != null)?("A partir de " + new SimpleDateFormat("dd/MM/yyyy").format($F{lbr_latepaymentpenaltydate}) + " cobrar multa de " + (($F{lbr_latepaymentpenaltycode}.equals("1"))?"R$ ":"")  + new DecimalFormat("#,##0.00").format($F{lbr_latepaymentpenaltyap}) + (($F{lbr_latepaymentpenaltycode}.equals("2"))?"%\n":"\n")):"") +
-(($F{lbr_interestcode}.equals("1"))?("A partir de " + new SimpleDateFormat("dd/MM/yyyy").format($F{lbr_interestdate}) + " cobrar juros de R$ " + new DecimalFormat("#,##0.00").format($F{lbr_interestap}) + " ao dia\n" ):"") +
-(($F{lbr_interestcode}.equals("2"))?("A partir de " + new SimpleDateFormat("dd/MM/yyyy").format($F{lbr_interestdate}) + " cobrar juros de " + new DecimalFormat("#,##0.00").format($F{lbr_interestap}) + "% ao mês\n" ):"") +
+
+(($F{lbr_latepaymentpenaltydate} != null && $F{lbr_latepaymentpenaltycode}.equals("1"))?("Após " + new SimpleDateFormat("dd/MM/yyyy").format($F{lbr_latepaymentpenaltydate}) + " cobrar multa de R$ " + (new DecimalFormat("#,##0.00").format($F{lbr_latepaymentpenaltyap})) + "\n"):"") +
+(($F{lbr_latepaymentpenaltydate} != null && $F{lbr_latepaymentpenaltycode}.equals("2"))?("Após " + new SimpleDateFormat("dd/MM/yyyy").format($F{lbr_latepaymentpenaltydate}) + " cobrar multa de R$ " + (new DecimalFormat("#,##0.00").format($F{lbr_boleto_grandtotal}.multiply($F{lbr_latepaymentpenaltyap}).divide( new BigDecimal(100) , 2 , RoundingMode.HALF_UP ) )  ) + "\n"):"") +
+
+(($F{lbr_interestcode}.equals("1"))?("Após " + new SimpleDateFormat("dd/MM/yyyy").format($F{lbr_interestdate}) + " cobrar juros de R$ " + new DecimalFormat("#,##0.00").format($F{lbr_interestap}) + " ao dia\n" ):"") +
+(($F{lbr_interestcode}.equals("2"))?("Após " + new SimpleDateFormat("dd/MM/yyyy").format($F{lbr_interestdate}) + " cobrar juros de R$ " + new DecimalFormat("#,##0.00").format($F{lbr_interestap}.multiply($F{lbr_boleto_grandtotal}).divide( new BigDecimal(3000) , 2 , RoundingMode.HALF_UP )) + " ao dia\n" ):"") +
+
 (($F{lbr_protestcode}.equals("1") || $F{lbr_protestcode}.equals("2"))?("Protestar após " + new DecimalFormat("#,##0").format($F{lbr_protestdays}) + ($F{lbr_protestcode}.equals("1")?" dias corridos\n":" dias úteis\n")  ):"") +
+
 (($F{notafiscal} != null)?("Nota Fiscal "+$F{notafiscal}):"") +
-(($F{lbr_message5} != null)?($F{lbr_message5} + " - "):"") + (($F{lbr_message5} != null)?($F{lbr_message5} + " - "):"") + (($F{lbr_message6} != null)?($F{lbr_message6} + " - "):"") + (($F{lbr_message7} != null)?($F{lbr_message7} + " - "):"") + (($F{lbr_message8} != null)?($F{lbr_message8}):"")]]></textFieldExpression>
+(($F{lbr_message5} != null)?($F{lbr_message5} + " - "):"") + (($F{lbr_message5} != null)?($F{lbr_message5} + " - "):"") + (($F{lbr_message6} != null)?($F{lbr_message6} + " - "):"") + (($F{lbr_message7} != null)?($F{lbr_message7} + " - "):"") + (($F{lbr_message8} != null)?($F{lbr_message8}):"")
+]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement uuid="f58a00ae-4d82-443a-9d13-234aa1432c0c" x="108" y="347" width="454" height="12"/>
