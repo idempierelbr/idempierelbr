@@ -2169,6 +2169,11 @@ Please note that base language cannot be a system language.</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200074" trl="N">
+  <value column="Name" original="Recurring Run">Recurring Run</value>
+  <value column="Description" original="Recurring Run">Recurring Run</value>
+  <value column="Help" original=""/>
+ </row>
  <row trl="N" uuid="e6df0503-5f93-4a2c-abe6-0c425cc138e9">
   <value column="Name" original="Process NotaFiscal">Process NotaFiscal</value>
   <value column="Description" original=""/>
@@ -2243,5 +2248,10 @@ Please note that base language cannot be a system language.</value>
   <value column="Name" original="Return CNAB">Retornar CNAB</value>
   <value column="Description" original="Process CNAB file returned by a bank">Processar o arquivo CNAB (Retorno) enviado pelo banco</value>
   <value column="Help" original="This process allows to process a CNAB sent by a bank.">Este processo permite o processamento do arquivo retorno enviado pelo banco.</value>
+ </row>
+ <row trl="N" uuid="98cad063-dd95-4b75-9b71-f5942f311723">
+  <value column="Name" original="Generate and Print Boletos">Gera e imprime boletos de cobrança</value>
+  <value column="Description" original="Generate and Print Boletos from Invoice">Gera e imprime boletos de cobrança a partir da fatura</value>
+  <value column="Help" original=""/>
  </row>
 </idempiereTrl>

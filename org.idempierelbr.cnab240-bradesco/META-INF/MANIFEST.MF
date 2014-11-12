@@ -8,6 +8,8 @@ Require-Bundle: org.idempierelbr.cnab240-febraban;bundle-version="1.0.0",
  org.adempiere.base,
  org.idempierelbr.open-items;bundle-version="1.0.0",
  org.idempierelbr.core;bundle-version="1.0.0"
-Service-Component: OSGI-INF/ProcessFactory.xml
-Import-Package: org.osgi.service.event,
+Service-Component: OSGI-INF/BankCollectionFactory.xml
+Import-Package: com.ancientprogramming.fixedformat4j.annotation,
+ org.idempierelbr.cnab240.annotated,
+ org.osgi.service.event,
  org.zkoss.zul

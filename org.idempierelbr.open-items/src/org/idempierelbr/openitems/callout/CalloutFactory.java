@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.adempiere.base.IColumnCallout;
 import org.adempiere.base.IColumnCalloutFactory;
+import org.compiere.model.MBank;
 import org.compiere.model.MBankAccount;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MOrder;
@@ -51,7 +52,13 @@ public class CalloutFactory implements IColumnCalloutFactory {
 					columnName.equals("LBR_BankAgencyNo"))
 				 callouts.add(new CalloutBank());
 		}
-	
+		
+		// Tabela C_Bank
+		if (tableName.equals(MBank.Table_Name)) {
+			if (columnName.equals(MBank.COLUMNNAME_RoutingNo))
+				 callouts.add(new CalloutBank());
+		}
+		
 		return callouts != null ? callouts.toArray(new IColumnCallout[0]) : new IColumnCallout[0];
 	}
 }

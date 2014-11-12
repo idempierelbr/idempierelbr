@@ -23,6 +23,7 @@ import java.sql.Timestamp;
 import java.util.Properties;
 import org.compiere.model.*;
 import org.compiere.util.Env;
+import org.compiere.util.KeyNamePair;
 
 /** Generated Model for LBR_Boleto
  *  @author iDempiere (generated) 
@@ -33,7 +34,7 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140811L;
+	private static final long serialVersionUID = 20141010L;
 
     /** Standard Constructor */
     public X_LBR_Boleto (Properties ctx, int LBR_Boleto_ID, String trxName)
@@ -59,6 +60,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 			setDueDate (new Timestamp( System.currentTimeMillis() ));
 			setGrandTotal (Env.ZERO);
 			setLBR_Accepted (null);
+			setLBR_BankAccount_Carteira_ID (0);
+			setLBR_BankAccount_Convenio_ID (0);
 			setLBR_CNAB240Currency (null);
 			setLBR_CNAB240DocType (null);
 			setLBR_CollectionRegType (null);
@@ -474,6 +477,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 		return (Timestamp)get_Value(COLUMNNAME_DueDate);
 	}
 
+    /** Get Record ID/ColumnName
+        @return ID/ColumnName pair
+      */
+    public KeyNamePair getKeyNamePair() 
+    {
+        return new KeyNamePair(get_ID(), String.valueOf(getDueDate()));
+    }
+
 	/** Set Grand Total.
 		@param GrandTotal 
 		Total amount of document
@@ -561,6 +572,40 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
+	}
+
+	/** Set Bank Use.
+		@param LBR_BankUse 
+		Bank Use
+	  */
+	public void setLBR_BankUse (String LBR_BankUse)
+	{
+		set_Value (COLUMNNAME_LBR_BankUse, LBR_BankUse);
+	}
+
+	/** Get Bank Use.
+		@return Bank Use
+	  */
+	public String getLBR_BankUse () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_BankUse);
+	}
+
+	/** Set Barcode.
+		@param LBR_Barcode 
+		Barcode
+	  */
+	public void setLBR_Barcode (String LBR_Barcode)
+	{
+		set_Value (COLUMNNAME_LBR_Barcode, LBR_Barcode);
+	}
+
+	/** Get Barcode.
+		@return Barcode
+	  */
+	public String getLBR_Barcode () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_Barcode);
 	}
 
 	/** Set Brazilian Bank Collection (Boleto).
@@ -865,6 +910,74 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 		return (String)get_Value(COLUMNNAME_LBR_DistributionType);
 	}
 
+	/** Set Agency and Client Formatted.
+		@param LBR_Fmt_AgencyClient 
+		Agency and Client Formatted
+	  */
+	public void setLBR_Fmt_AgencyClient (String LBR_Fmt_AgencyClient)
+	{
+		set_Value (COLUMNNAME_LBR_Fmt_AgencyClient, LBR_Fmt_AgencyClient);
+	}
+
+	/** Get Agency and Client Formatted.
+		@return Agency and Client Formatted
+	  */
+	public String getLBR_Fmt_AgencyClient () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_Fmt_AgencyClient);
+	}
+
+	/** Set Billfold Formatted.
+		@param LBR_Fmt_Billfold 
+		Billfold Formatted
+	  */
+	public void setLBR_Fmt_Billfold (String LBR_Fmt_Billfold)
+	{
+		set_Value (COLUMNNAME_LBR_Fmt_Billfold, LBR_Fmt_Billfold);
+	}
+
+	/** Get Billfold Formatted.
+		@return Billfold Formatted
+	  */
+	public String getLBR_Fmt_Billfold () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_Fmt_Billfold);
+	}
+
+	/** Set Document Type Formatted.
+		@param LBR_Fmt_Doctype 
+		Document Type Formatted
+	  */
+	public void setLBR_Fmt_Doctype (String LBR_Fmt_Doctype)
+	{
+		set_Value (COLUMNNAME_LBR_Fmt_Doctype, LBR_Fmt_Doctype);
+	}
+
+	/** Get Document Type Formatted.
+		@return Document Type Formatted
+	  */
+	public String getLBR_Fmt_Doctype () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_Fmt_Doctype);
+	}
+
+	/** Set Number In Bank Formatted.
+		@param LBR_Fmt_NumberInBank 
+		Number In Bank Formatted
+	  */
+	public void setLBR_Fmt_NumberInBank (String LBR_Fmt_NumberInBank)
+	{
+		set_Value (COLUMNNAME_LBR_Fmt_NumberInBank, LBR_Fmt_NumberInBank);
+	}
+
+	/** Get Number In Bank Formatted.
+		@return Number In Bank Formatted
+	  */
+	public String getLBR_Fmt_NumberInBank () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_Fmt_NumberInBank);
+	}
+
 	public org.compiere.model.I_C_BPartner getLBR_Guarantor() throws RuntimeException
     {
 		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_Name)
@@ -949,8 +1062,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	public static final String LBR_ISSUETYPE_3_BancoPre_EmiteEClienteComplementa = "3";
 	/** 4 - Banco Reemite = 4 */
 	public static final String LBR_ISSUETYPE_4_BancoReemite = "4";
-	/** 5 - Banco não Reemite = 5 */
-	public static final String LBR_ISSUETYPE_5_BancoNãoReemite = "5";
+	/** 5 - Banco nao Reemite = 5 */
+	public static final String LBR_ISSUETYPE_5_BancoNaoReemite = "5";
 	/** 7 - Banco Emitente - Aberta = 7 */
 	public static final String LBR_ISSUETYPE_7_BancoEmitente_Aberta = "7";
 	/** 8 - Banco Emitente - Auto-envelopavel = 8 */
@@ -1043,6 +1156,23 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	public String getLBR_PartialPayment () 
 	{
 		return (String)get_Value(COLUMNNAME_LBR_PartialPayment);
+	}
+
+	/** Set Typeable Line.
+		@param LBR_TypeableLine 
+		Typeable Line
+	  */
+	public void setLBR_TypeableLine (String LBR_TypeableLine)
+	{
+		set_Value (COLUMNNAME_LBR_TypeableLine, LBR_TypeableLine);
+	}
+
+	/** Get Typeable Line.
+		@return Typeable Line
+	  */
+	public String getLBR_TypeableLine () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_TypeableLine);
 	}
 
 	/** Set Posted.

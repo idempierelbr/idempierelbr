@@ -1,7 +1,12 @@
 package org.idempierelbr.openitems.model;
 
+import java.util.List;
+
+import org.adempiere.base.Service;
+import org.adempiere.base.ServiceQuery;
 import org.adempiere.base.event.AbstractEventHandler;
 import org.adempiere.base.event.IEventTopics;
+import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MInOut;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MOrder;
@@ -9,6 +14,8 @@ import org.compiere.model.MRMA;
 import org.compiere.model.PO;
 import org.compiere.process.DocAction;
 import org.compiere.util.CLogger;
+import org.idempierelbr.openitems.process.IBankCollection;
+import org.idempierelbr.openitems.process.IBankCollectionFactory;
 import org.osgi.service.event.Event;
 
 public class EventHandler extends AbstractEventHandler {
@@ -19,6 +26,8 @@ public class EventHandler extends AbstractEventHandler {
 	protected void initialize() {
 		registerTableEvent(IEventTopics.PO_AFTER_NEW, MLBRBoleto.Table_Name);
 		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MLBRBoleto.Table_Name);
+		registerTableEvent(IEventTopics.DOC_AFTER_COMPLETE , MLBRBoleto.Table_Name);
+		registerTableEvent(IEventTopics.DOC_BEFORE_COMPLETE , MLBRBoleto.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MLBRBoletoDetails.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MInvoice.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_DELETE, MLBRBoletoMovement.Table_Name);
@@ -92,6 +101,29 @@ public class EventHandler extends AbstractEventHandler {
 				}				
 			}			
 		}
+
+		// avoid completion of Boleto without a bank plugin
+		if (po instanceof MLBRBoleto && event.getTopic().equals(IEventTopics.DOC_BEFORE_COMPLETE)) {
+			MLBRBoleto boleto = (MLBRBoleto) getPO(event);
+			String routingNo = boleto.getRoutingNo( );
+			IBankCollection bankCollection = getBankCollectionInstance( routingNo );
+			
+			if (bankCollection == null) {
+				throw new AdempiereException( "Não encontrado plugin para o banco "+routingNo );			
+			}
+		}
+
+		// execute the process of the bank plugin for the Boleto document
+		if (po instanceof MLBRBoleto && event.getTopic().equals(IEventTopics.DOC_AFTER_COMPLETE)) {
+			MLBRBoleto boleto = (MLBRBoleto) getPO(event);
+			String routingNo = boleto.getRoutingNo( );
+			IBankCollection bankCollection = getBankCollectionInstance( routingNo );
+			bankCollection.postProcessBoleto(boleto);
+			if ( boleto.getLBR_IssueType().equals(MLBRBoleto.LBR_ISSUETYPE_2_ClienteEmite)) {
+				boleto.genBarcode( bankCollection.getCampoLivre( boleto ) );
+			}
+			boleto.saveEx();
+		}
 		
 		// Check if there are maximum of 1 entries in the Details Tab
 		if (po instanceof MLBRBoletoDetails && event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)) {
@@ -111,4 +143,21 @@ public class EventHandler extends AbstractEventHandler {
 				addErrorMessage(event, "Não é possível excluir movimento anteriormente salvo em arquivo");
 		}
 	}
+	
+	
+	public static IBankCollection getBankCollectionInstance( String routingno ) {
+		ServiceQuery query = new ServiceQuery();
+		List<IBankCollectionFactory> factoryList = Service.locator().list(IBankCollectionFactory.class, query).getServices();
+		if (factoryList != null)
+		{
+			for(IBankCollectionFactory factory : factoryList)
+			{
+				IBankCollection customizer = factory.newBankCollectionInstance(routingno);
+				if (customizer != null)
+					return customizer;
+			}
+		}
+		return null;
+	}
+
 }

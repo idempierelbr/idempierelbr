@@ -1,15 +1,14 @@
 package org.idempierelbr.openitems.process;
 
-import java.util.List;
 import java.util.logging.Level;
 
-import org.adempiere.base.Service;
-import org.adempiere.base.ServiceQuery;
+import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MBankAccount;
 import org.compiere.process.ProcessCall;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.Trx;
+import org.idempierelbr.openitems.util.OpenItemsUtil;
 
 /**
  *	Return CNAB
@@ -59,7 +58,14 @@ public class CNABReturn extends SvrProcess
 		String routingNo = bA.getC_Bank().getRoutingNo();
 		
 		if (routingNo != null) {
-			ProcessCall process = getProcess(routingNo, true);
+			
+			IBankCollection bankCollection = OpenItemsUtil.getBankCollectionInstance(routingNo);
+
+			if ( bankCollection == null ) {
+				throw new AdempiereException ( "BankCollection não encontrado para o banco nr. " + routingNo  );
+			}
+			
+			ProcessCall process = bankCollection.getProcessReturn();
 			process.setProcessUI(processUI);
 			
 			Trx trx = Trx.get(get_TrxName(), true);
@@ -70,19 +76,4 @@ public class CNABReturn extends SvrProcess
 		return "Ok";
 	}	//	doIt
 
-	private ProcessCall getProcess(String routingNo, boolean isReturn) {
-		ServiceQuery query = new ServiceQuery();
-		List<ICNABFactory> factoryList = Service.locator().list(ICNABFactory.class, query).getServices();
-		if (factoryList != null)
-		{
-			for(ICNABFactory factory : factoryList)
-			{
-				ProcessCall process = factory.newProcessInstance(routingNo, isReturn);
-				if (process != null)
-					return process;
-			}
-		}
-		
-		return null;
-	}
 }	//	CNABReturn

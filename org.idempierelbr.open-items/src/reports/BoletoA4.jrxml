@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BoletoA4" pageWidth="595" pageHeight="842" columnWidth="565" leftMargin="15" rightMargin="15" topMargin="20" bottomMargin="4" uuid="a1f89160-0476-4ec7-bfaa-2804cc61b999">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="906"/>
+	<parameter name="RECORD_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INVOICE_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+  lbr_boleto.lbr_boleto_id AS lbr_boleto_lbr_boleto_id,
+  lbr_boletosd.name AS lbr_boleto_name,
+  lbr_boletosd.address1 AS lbr_boleto_address1,
+  lbr_boletosd.address2 AS lbr_boleto_address2,
+  lbr_boletosd.address3 AS lbr_boleto_address3,
+  lbr_boletosd.address4 AS lbr_boleto_address4,
+  lbr_boletosd.postal AS lbr_boleto_postal,
+  lbr_boletosd.city AS lbr_boleto_city,
+  lbr_boletosd.regionname AS lbr_boleto_regionname,
+  lbr_boletosd.lbr_cnabinscemptype AS lbr_cpfcnpj,
+  lbr_boletosd.lbr_cnabinscempno AS lbr_inscemp,
+  lbr_boleto.datedoc AS lbr_boleto_lbr_docdate,
+  lbr_boleto.grandtotal AS lbr_boleto_grandtotal,
+  lbr_boleto.duedate AS lbr_boleto_duedate,
+  lbr_boleto.lbr_fmt_numberinbank AS lbr_boleto_documentno,
+  lbr_boleto.lbr_collectiontype AS lbr_boleto_lbr_collectiontype,
+  lbr_boleto.lbr_accepted  AS lbr_boleto_lbr_accepted,
+  c_bpartner.name AS lbr_legalentity,
+  regexp_replace(c_bpartner.lbr_cnpj,'(..)(...)(...)(....)(..)','\1.\2.\3/\4-\5') as lbr_cnpj,
+  regexp_replace(c_bpartner.lbr_cpf,'(...)(...)(...)(..)','\1.\2.\3-\4') as lbr_cpf,
+  c_location.address1,
+  c_location.address2,
+  c_location.address3,
+  c_location.city,
+  c_location.postal AS postal,
+  c_location.regionname AS orgregion,
+  lbr_boleto.lbr_fmt_agencyclient AS lbr_conveniono,
+  lbr_boleto.lbr_fmt_billfold AS lbr_carteirano,
+  lbr_boleto.lbr_typeableline,
+  lbr_boleto.lbr_barcode,
+  lbr_boleto.lbr_bankuse,
+  substring(ad_ref_list.name,'^[^A-Z]+([A-Z]+)') as lbr_boleto_fmt_doctype,
+  lbr_boletodetails.lbr_latepaymentpenaltycode,
+  lbr_boletodetails.lbr_latepaymentpenaltydate,
+  lbr_boletodetails.lbr_latepaymentpenaltyap,
+  lbr_boletodetails.lbr_interestcode,
+  lbr_boletodetails.lbr_interestdate,
+  lbr_boletodetails.lbr_interestap,
+  lbr_boletodetails.lbr_cnabdiscount1code,
+  lbr_boletodetails.lbr_cnabdiscount1date,
+  lbr_boletodetails.lbr_cnabdiscount1ap,
+  lbr_boletodetails.lbr_protestcode,
+  lbr_boletodetails.lbr_protestdays,
+  lbr_boletodetails.lbr_message5,
+  lbr_boletodetails.lbr_message6,
+  lbr_boletodetails.lbr_message7,
+  lbr_boletodetails.lbr_message8,
+  lbr_boletodetails.lbr_message9,
+  lbr_notafiscal.documentno AS notafiscal,
+  CASE WHEN lbr_boleto.lbr_cnab240currency = '09' THEN 'REAL'
+     ELSE lbr_boleto.lbr_cnab240currency END AS lbr_boleto_currency,
+  c_invoice.documentno AS c_invoice_documentno,
+  c_bank.routingno,
+  c_bank.lbr_routingcheckdigit,
+  c_bank.name as bankname,
+  orglogo."binarydata" AS orglogo_binarydata,
+  c_bank."logo_id" AS lbr_bank_logo_id,
+  ad_image."binarydata" AS lbr_bank_logo_binarydata
+FROM
+  adempiere.lbr_boleto
+   LEFT JOIN adempiere.lbr_boletosd ON lbr_boleto.lbr_boleto_id = lbr_boletosd.lbr_boleto_id AND lbr_boletosd.lbr_staticdatatype = 'PAG'
+   LEFT JOIN adempiere.lbr_boletodetails ON lbr_boleto.lbr_boleto_id = lbr_boletodetails.lbr_boleto_id
+   LEFT JOIN adempiere.lbr_bankaccount_convenio ON lbr_boleto.lbr_bankaccount_convenio_id = lbr_bankaccount_convenio.lbr_bankaccount_convenio_id
+   LEFT JOIN adempiere.lbr_bankaccount_carteira ON lbr_boleto.lbr_bankaccount_carteira_id = lbr_bankaccount_carteira.lbr_bankaccount_carteira_id
+   LEFT JOIN adempiere.c_invoice ON lbr_boleto.c_invoice_id = c_invoice.c_invoice_id
+   LEFT JOIN adempiere.c_bank ON lbr_boleto.c_bank_id = c_bank.c_bank_id
+   LEFT JOIN adempiere.c_bpartner ON c_bpartner.AD_OrgBP_ID = lbr_boleto.ad_org_id
+   LEFT JOIN adempiere.ad_orginfo ON lbr_boleto.ad_org_id = ad_orginfo.ad_org_id
+   LEFT JOIN adempiere.ad_org ON lbr_boleto.ad_org_id = ad_org.ad_org_id
+   LEFT JOIN ( SELECT DISTINCT ON ("c_bpartner_id") * FROM adempiere.c_bpartner_location bps ORDER BY c_bpartner_id,isbillto DESC) bpl ON bpl.c_bpartner_id = c_bpartner.c_bparTner_id
+   LEFT JOIN adempiere.c_location ON c_location.c_location_id=bpl.c_location_id
+   LEFT JOIN adempiere.lbr_notafiscal ON lbr_boleto.c_invoice_id = lbr_notafiscal.c_invoice_id
+   LEFT JOIN "ad_image" orglogo ON ad_orginfo."logo_id" = orglogo."ad_image_id"
+   LEFT JOIN ad_reference ON ad_reference.name = 'LBR_CollectionType'
+   LEFT JOIN ad_ref_list ON ad_ref_list.ad_reference_id = ad_reference.ad_reference_id AND ad_ref_list.value = lbr_boleto.lbr_collectiontype
+   LEFT JOIN "ad_image" ad_image ON c_bank."logo_id" = ad_image."ad_image_id"
+
+WHERE (lbr_boleto.C_Invoice_ID = $P{INVOICE_ID} OR lbr_boleto.LBR_Boleto_ID = $P{RECORD_ID}) AND lbr_boleto.DocStatus = 'CO'
+ORDER BY
+     lbr_boleto.duedate]]>
+	</queryString>
+	<field name="lbr_boleto_lbr_boleto_id" class="java.math.BigDecimal"/>
+	<field name="lbr_boleto_name" class="java.lang.String"/>
+	<field name="lbr_boleto_address1" class="java.lang.String"/>
+	<field name="lbr_boleto_address2" class="java.lang.String"/>
+	<field name="lbr_boleto_address3" class="java.lang.String"/>
+	<field name="lbr_boleto_address4" class="java.lang.String"/>
+	<field name="lbr_boleto_postal" class="java.lang.String"/>
+	<field name="lbr_boleto_city" class="java.lang.String"/>
+	<field name="lbr_boleto_regionname" class="java.lang.String"/>
+	<field name="lbr_cpfcnpj" class="java.lang.String"/>
+	<field name="lbr_inscemp" class="java.lang.String"/>
+	<field name="lbr_boleto_lbr_docdate" class="java.sql.Timestamp"/>
+	<field name="lbr_boleto_grandtotal" class="java.math.BigDecimal"/>
+	<field name="lbr_boleto_duedate" class="java.sql.Timestamp"/>
+	<field name="lbr_boleto_documentno" class="java.lang.String"/>
+	<field name="lbr_boleto_lbr_collectiontype" class="java.lang.String"/>
+	<field name="lbr_boleto_lbr_accepted" class="java.lang.String"/>
+	<field name="lbr_legalentity" class="java.lang.String"/>
+	<field name="lbr_cnpj" class="java.lang.String"/>
+	<field name="lbr_cpf" class="java.lang.String"/>
+	<field name="address1" class="java.lang.String"/>
+	<field name="address2" class="java.lang.String"/>
+	<field name="address3" class="java.lang.String"/>
+	<field name="city" class="java.lang.String"/>
+	<field name="postal" class="java.lang.String"/>
+	<field name="orgregion" class="java.lang.String"/>
+	<field name="lbr_conveniono" class="java.lang.String"/>
+	<field name="lbr_carteirano" class="java.lang.String"/>
+	<field name="lbr_typeableline" class="java.lang.String"/>
+	<field name="lbr_barcode" class="java.lang.String"/>
+	<field name="lbr_bankuse" class="java.lang.String"/>
+	<field name="lbr_boleto_fmt_doctype" class="java.lang.String"/>
+	<field name="lbr_latepaymentpenaltycode" class="java.lang.String"/>
+	<field name="lbr_latepaymentpenaltydate" class="java.sql.Timestamp"/>
+	<field name="lbr_latepaymentpenaltyap" class="java.math.BigDecimal"/>
+	<field name="lbr_interestcode" class="java.lang.String"/>
+	<field name="lbr_interestdate" class="java.sql.Timestamp"/>
+	<field name="lbr_interestap" class="java.math.BigDecimal"/>
+	<field name="lbr_cnabdiscount1code" class="java.lang.String"/>
+	<field name="lbr_cnabdiscount1date" class="java.sql.Timestamp"/>
+	<field name="lbr_cnabdiscount1ap" class="java.math.BigDecimal"/>
+	<field name="lbr_protestcode" class="java.lang.String"/>
+	<field name="lbr_protestdays" class="java.math.BigDecimal"/>
+	<field name="lbr_message5" class="java.lang.String"/>
+	<field name="lbr_message6" class="java.lang.String"/>
+	<field name="lbr_message7" class="java.lang.String"/>
+	<field name="lbr_message8" class="java.lang.String"/>
+	<field name="lbr_message9" class="java.lang.String"/>
+	<field name="notafiscal" class="java.lang.String"/>
+	<field name="lbr_boleto_currency" class="java.lang.String"/>
+	<field name="c_invoice_documentno" class="java.lang.String"/>
+	<field name="routingno" class="java.lang.String"/>
+	<field name="lbr_routingcheckdigit" class="java.lang.String"/>
+	<field name="bankname" class="java.lang.String"/>
+	<field name="orglogo_binarydata" class="java.io.InputStream"/>
+	<field name="lbr_bank_logo_id" class="java.math.BigDecimal"/>
+	<field name="lbr_bank_logo_binarydata" class="java.io.InputStream"/>
+	<variable name="HyperionLogo" class="java.lang.String">
+		<variableExpression><![CDATA["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"]]></variableExpression>
+	</variable>
+	<pageHeader>
+		<band height="72">
+			<textField>
+				<reportElement uuid="5785851c-3439-4825-8e78-4e70bb21d564" x="78" y="0" width="487" height="23"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_legalentity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56d15cd5-2c69-4455-a4e0-8ef55e4f28bf" x="78" y="23" width="487" height="49"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address1}+", "+$F{address2}+" - "+$F{address3}+"\n"+$F{postal}+" - "+$F{city}+" - "+$F{orgregion}+"\n\n" + ( $F{lbr_cnpj} != null ? "CNPJ: "+$F{lbr_cnpj} + " " : "" ) + ( $F{lbr_cpf} != null ? "CPF: "+$F{lbr_cpf} : "" )]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="fbd0bb47-0773-4b34-b289-e22ae616bf8e" x="3" y="0" width="72" height="72"/>
+				<imageExpression><![CDATA[$F{orglogo_binarydata}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="349">
+			<staticText>
+				<reportElement uuid="62bb8e65-5eaf-41b3-bac6-6acc1f835165" x="15" y="53" width="529" height="12">
+					<printWhenExpression><![CDATA[]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[Informações adicionais da fatura:]]></text>
+			</staticText>
+		</band>
+		<band height="397">
+			<staticText>
+				<reportElement uuid="ae05d404-6d4b-43a2-970f-89f60b67268f" x="0" y="347" width="108" height="12"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sacador/Avalista:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="10625baa-e1a9-4cfa-b62b-3359613c2f21" x="309" y="364" width="256" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Autenticação Mecânica / FICHA DE COMPENSAÇÃO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0b00b833-e49a-44da-8fa0-fa252b3e3754" x="39" y="291" width="69" height="12"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sacado: ]]></text>
+			</staticText>
+			<rectangle radius="5">
+				<reportElement uuid="28c508c8-005b-4391-a867-25ac83637702" x="400" y="271" width="165" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="41537fa0-c0a0-407b-9b4d-063825bfed22" x="400" y="247" width="165" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="f2617c4a-6638-4bc4-ae56-ea3c399015c5" x="400" y="223" width="165" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="432656aa-1dbf-44fc-b316-af8662c32999" x="400" y="199" width="165" height="20"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="4adaff13-5a12-41d4-91f1-f46da2d532c4" x="0" y="219" width="396" height="12"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Instruções (Texto de responsabilidade do Cedente)]]></text>
+			</staticText>
+			<rectangle radius="5">
+				<reportElement uuid="baabdbea-f9a6-4903-8a59-ab3ee9f321ee" x="400" y="175" width="165" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="771035c2-a776-4e07-8137-6a0428337934" x="400" y="151" width="165" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="b6a29bc0-a51e-450a-ad20-266a94a8496e" x="400" y="115" width="165" height="32"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="23584fd8-e8ea-46db-951a-cf2e7dbcbb00" x="296" y="199" width="100" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="caaeb34c-4fb9-4d50-a0aa-a950557469d9" x="296" y="175" width="100" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="ff5be7a9-5d48-46c4-9d97-cef65204997e" x="182" y="199" width="110" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="63da9654-d5cc-4d30-ac0f-61580216f30e" x="125" y="199" width="53" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="50994ad2-7e44-4df6-a047-e8f317d98815" x="68" y="199" width="53" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="a773fbaf-42bc-44dc-bddd-560f734dafb1" x="0" y="199" width="64" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="9e6dbc02-081e-4937-b20d-813a746ae3ea" x="0" y="175" width="64" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="50809c9e-ec3a-4530-aa03-809e580b5fc1" x="262" y="175" width="30" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="c52482f3-0d09-4e91-b33d-a7a777be219b" x="68" y="175" width="77" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="252403ed-0e18-412b-a566-770f604d18cf" x="182" y="175" width="76" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="9324a8c5-c55e-4096-aa6e-2d854929c1e1" x="0" y="151" width="396" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="cdf1f85f-6b73-4a5e-9ed6-0f8663e2d718" x="0" y="115" width="396" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="c4ae8c78-b6e2-404a-b38a-fcc35a13c9be" x="3" y="199" width="51" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Uso do Banco]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1f8f8c4c-c219-4026-8bad-4baac7cf4f0e" x="71" y="199" width="50" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Carteira]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c3066b4f-7362-426c-9f38-429859a185ca" x="128" y="199" width="50" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Espécie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e4c0935e-6f59-41d7-b1b2-3c5ff53f658e" x="185" y="199" width="50" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a6106461-5529-423b-b251-ed551a59a43d" x="299" y="199" width="50" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6758d52a-4580-406c-8321-07e3fcc1b4a9" x="403" y="199" width="83" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor do Documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="66042a6e-1547-4cdd-ae42-392d406c95da" x="403" y="223" width="158" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(-) Descontos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d87618d4-d2e3-400f-8efa-129e2097f5a5" x="403" y="272" width="158" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(=) Valor Cobrado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a9168da4-b45d-42ad-ad48-a5aec8c89156" x="403" y="247" width="158" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(+) Acréscimos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5dbe8d5d-084a-4d1b-ae82-0cd337083860" x="403" y="175" width="83" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nosso Número]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7c1d10f8-cd97-4fd5-8d5b-f206f92d3162" x="403" y="151" width="107" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Agência / Código do Cedente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cdf58c0e-b4d5-47c6-a3be-59a8ed07f790" x="299" y="175" width="83" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data de Processamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a7237f35-ef59-42f5-a8be-02a688956556" x="265" y="175" width="27" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aceite]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7af6c21d-8835-44dd-8d2b-b365cfb696c9" x="185" y="175" width="71" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Espécie de Docto.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7132561b-0422-49e5-adb2-56e1e96654e0" x="71" y="175" width="74" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número do Docto.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="43323398-8a4d-4224-ac68-f1fb4c85c611" x="3" y="175" width="57" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data do Docto.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="daa3a14b-177a-4ab1-8f4f-a06fa409d0d3" x="3" y="151" width="78" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cedente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="24fcb1b6-8fdc-4991-a180-917892054ccf" x="3" y="115" width="78" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Local de Pagamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4f83019c-ce8f-41fb-b90f-de6e8e3b20a8" x="403" y="115" width="107" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vencimento]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="7b476a67-2e7a-4929-a4f5-d713f95faeb7" x="0" y="85" width="565" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="9caf518c-8e77-41f2-9b35-d7453b8229de" x="458" y="79" width="107" height="7"/>
+				<textElement textAlignment="Right">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Corte na linha abaixo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b1e1915a-d314-4cc9-aa93-85113e4d6c66" x="3" y="7" width="29" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cedente]]></text>
+			</staticText>
+			<rectangle radius="5">
+				<reportElement uuid="19c51d81-4356-480d-ba66-7ed36fedb0e5" x="0" y="22" width="311" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="7d770ca0-b38a-4e8b-87b1-391f0daa2335" x="3" y="23" width="78" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sacado]]></text>
+			</staticText>
+			<rectangle radius="5">
+				<reportElement uuid="c9602faa-c9e2-4142-ae98-bb1f7eff6e20" x="0" y="46" width="121" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="a94891bf-bbcb-488b-baa5-511adcd61670" x="125" y="46" width="105" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="abc9d943-bec8-4179-9841-5f4628d1335c" x="234" y="46" width="77" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="c289ee61-7921-4ee8-961d-4020ace33b94" x="314" y="22" width="66" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="93c8e9fd-be84-48b7-82c9-9eecbbda2c0d" x="383" y="22" width="89" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement uuid="56eeafc8-aa02-40b2-9b70-eab7c6d9178f" x="475" y="22" width="90" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="e703d890-822e-4735-8a50-5152201d71ea" x="386" y="22" width="83" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor do Documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4062d692-5f50-4247-824e-b4791a557089" x="478" y="22" width="83" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(=) Valor Cobrado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="03f0a459-abbe-409f-8422-ce74adc7e502" x="318" y="23" width="44" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vencimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1f9c2825-e2db-4e9a-9bfc-56be0ab39012" x="3" y="46" width="115" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ag / Código do Cedente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b4d3b066-a7f4-4299-8992-f80fd7de1717" x="128" y="46" width="78" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nosso Número]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b35b1296-d94f-40bb-95ae-0b91f43ea6b3" x="237" y="46" width="74" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número do Docto.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8d1ba490-59e6-495d-a3f6-ef8c2aa5d99e" x="345" y="46" width="220" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Autenticação Mecânica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="683a7319-22af-4bfc-9ade-7ebdc9d3fbff" x="414" y="0" width="151" height="19"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECIBO DO SACADO]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="1d35162a-9738-4ba7-ada9-5d5f65e2a8e4" x="0" y="0" width="565" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="false">
+				<reportElement uuid="7da79d2d-c654-4809-b0cf-2a869e630a5b" x="403" y="123" width="159" height="24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_duedate}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ ###,###,##0.00">
+				<reportElement uuid="b2b7c68a-5717-4483-aa75-f6f8dc9424ec" x="403" y="206" width="159" height="12"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_grandtotal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="5982c2eb-2bf3-43cb-b7b5-85348042ad08" x="3" y="123" width="390" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Até o vencimento, pague preferencialmente no " + $F{bankname}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="55b197ad-ccb2-4f0c-90a2-de23932cfc64" x="3" y="135" width="390" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Após o vencimento, pague somente no " + $F{bankname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="738f2472-a9e5-4d27-b3d0-4f4e5c53c456" x="3" y="159" width="390" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_legalentity}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="false">
+				<reportElement uuid="5f16a779-4d69-4fb5-a754-857dd9ce7bf1" x="318" y="30" width="59" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_duedate}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ ###,###,##0.00">
+				<reportElement uuid="229906ba-18f6-43a8-b2ec-9b672a106708" x="386" y="29" width="83" height="12"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_grandtotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="94e8b068-4bd3-48f7-8847-749f01debe05" x="185" y="183" width="71" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_fmt_doctype}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c095e18f-5d1d-4f80-aa0a-327843b5c6e4" x="265" y="183" width="27" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_lbr_accepted}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bd47e1f9-4cc0-4083-94a2-9c55aba1ae63" x="71" y="183" width="71" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_invoice_documentno}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="9d6deae1-2743-464e-8f37-54dd54e65752" x="403" y="182" width="159" height="12"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_documentno}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="cd4b8358-b27e-4d01-90e8-35281838356a" x="128" y="54" width="99" height="12"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_documentno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f722624d-bb70-48e0-8d94-49f0cf16c375" x="237" y="54" width="69" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_invoice_documentno}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="6f1dd4f4-5401-414e-816a-0ff4f5d99590" x="403" y="159" width="159" height="12"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_conveniono}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="e428f94f-3bbf-4403-9883-97cd2b331f77" x="71" y="206" width="47" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_carteirano}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="5f3cee46-2ea7-4aa1-92da-b1e335aa5400" x="128" y="206" width="47" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_currency}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="afb1b58f-0b21-45d7-a2ac-32489d574121" x="3" y="183" width="57" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_lbr_docdate}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="d7c2217d-1046-462e-8b70-227af173f0e6" x="299" y="183" width="94" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_lbr_docdate}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="0c37f382-4988-4b73-84cd-9ecce0ee2c53" x="3" y="54" width="116" height="12"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_conveniono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="566b491f-7aa9-45b6-b1ea-1a6c285f7e52" x="32" y="7" width="382" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_legalentity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="88182ec2-e06c-48d9-a2c1-f6874ba22a14" x="3" y="30" width="299" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="24bdfba2-c4f9-48dc-8e89-f4139e059bd1" x="108" y="291" width="454" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_name} + (($F{lbr_cpfcnpj}.equals("2"))?" / CNPJ: ":" / CPF: ") + $F{lbr_inscemp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fcf2696f-db78-485e-921f-2a7eb28d900e" x="108" y="303" width="454" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_address1}+($F{lbr_boleto_address2}==null?"":", "+$F{lbr_boleto_address2})+($F{lbr_boleto_address4}==null?"":" / "+$F{lbr_boleto_address4})+($F{lbr_boleto_address3}==null?"":" / "+$F{lbr_boleto_address3})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="101ec002-4210-4b2a-b78a-902b00b0f80a" x="108" y="315" width="454" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_postal}+" - "+$F{lbr_boleto_city}+" - "+$F{lbr_boleto_regionname}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="c8177bee-f73a-4c71-b77a-b81529ceaf67" x="0" y="228" width="396" height="43"/>
+				<textElement>
+					<font size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{lbr_cnabdiscount1date} != null)?("Conceder desconto de R$ " + new DecimalFormat("#,##0.00").format($F{lbr_cnabdiscount1ap}) + " até " + new SimpleDateFormat("dd/MM/yyyy").format($F{lbr_cnabdiscount1date}) + "\n"):"") +
+(($F{lbr_latepaymentpenaltydate} != null)?("A partir de " + new SimpleDateFormat("dd/MM/yyyy").format($F{lbr_latepaymentpenaltydate}) + " cobrar multa de " + (($F{lbr_latepaymentpenaltycode}.equals("1"))?"R$ ":"")  + new DecimalFormat("#,##0.00").format($F{lbr_latepaymentpenaltyap}) + (($F{lbr_latepaymentpenaltycode}.equals("2"))?"%\n":"\n")):"") +
+(($F{lbr_interestcode}.equals("1"))?("A partir de " + new SimpleDateFormat("dd/MM/yyyy").format($F{lbr_interestdate}) + " cobrar juros de R$ " + new DecimalFormat("#,##0.00").format($F{lbr_interestap}) + " ao dia\n" ):"") +
+(($F{lbr_interestcode}.equals("2"))?("A partir de " + new SimpleDateFormat("dd/MM/yyyy").format($F{lbr_interestdate}) + " cobrar juros de " + new DecimalFormat("#,##0.00").format($F{lbr_interestap}) + "% ao mês\n" ):"") +
+(($F{lbr_protestcode}.equals("1") || $F{lbr_protestcode}.equals("2"))?("Protestar após " + new DecimalFormat("#,##0").format($F{lbr_protestdays}) + ($F{lbr_protestcode}.equals("1")?" dias corridos\n":" dias úteis\n")  ):"") +
+(($F{notafiscal} != null)?("Nota Fiscal "+$F{notafiscal}):"") +
+(($F{lbr_message5} != null)?($F{lbr_message5} + " - "):"") + (($F{lbr_message5} != null)?($F{lbr_message5} + " - "):"") + (($F{lbr_message6} != null)?($F{lbr_message6} + " - "):"") + (($F{lbr_message7} != null)?($F{lbr_message7} + " - "):"") + (($F{lbr_message8} != null)?($F{lbr_message8}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f58a00ae-4d82-443a-9d13-234aa1432c0c" x="108" y="347" width="454" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6fae4482-d95c-4b2d-97c9-0ab6cc2c0cd4" x="175" y="86" width="387" height="29"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lbr_typeableline}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="394d1cd7-e0c6-457d-add9-94a577313790" x="117" y="86" width="55" height="29"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{routingno}  + (  $F{lbr_routingcheckdigit}==null ? "" : "-"+$F{lbr_routingcheckdigit} )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="5c1a53ad-d64e-4685-b8bd-764e9f05c69e" x="3" y="206" width="57" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+			</textField>
+			<componentElement>
+				<reportElement uuid="1329dd54-0c45-467a-a316-39a3d045959f" x="108" y="279" width="170" height="12"/>
+				<jr:POSTNET xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.8" textPosition="none" shortBarHeight="4.3" checksumMode="add" intercharGapWidth="2.7">
+					<jr:codeExpression><![CDATA[$F{lbr_boleto_postal}]]></jr:codeExpression>
+				</jr:POSTNET>
+			</componentElement>
+			<componentElement>
+				<reportElement uuid="ab86470c-bfa4-4d54-bbd7-dd296da6d0b1" x="0" y="364" width="309" height="33"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Int2of5" drawText="false" checksumRequired="false" barHeight="80">
+					<jr:codeExpression><![CDATA[$F{lbr_barcode}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<line>
+				<reportElement uuid="45a46d13-e5c7-4020-8699-9a90f0a00d86" x="0" y="271" width="396" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<rectangle radius="5">
+				<reportElement uuid="6e005197-c2e1-411f-a8c6-17e7aed211ca" x="149" y="175" width="29" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="b6cb0c49-e205-4a68-a13a-75b8fd5ca46e" x="152" y="175" width="26" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Parcela]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="9231e9b0-131c-4057-b67b-9a00c32df7e8" x="151" y="183" width="27" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<rectangle radius="5">
+				<reportElement uuid="f36ffdbd-8ab7-489e-9817-fa3836e7240b" x="314" y="46" width="31" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="67e9df4c-8df7-43c8-9b3b-12f9456a448b" x="318" y="54" width="27" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f4c38a91-da9b-4122-9b2e-03a660dd7a80" x="318" y="47" width="26" height="7"/>
+				<textElement textAlignment="Left">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Parcela]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="cca077a1-40e4-4c0b-92f8-cf6489038c30" x="0" y="86" width="117" height="29">
+					<printWhenExpression><![CDATA[$F{lbr_bank_logo_id} == null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bankname}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement uuid="8bb82c31-a656-4200-8646-472d38a00687" x="0" y="86" width="115" height="25">
+					<printWhenExpression><![CDATA[$F{lbr_bank_logo_id} != null]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+				<imageExpression><![CDATA[$F{lbr_bank_logo_binarydata}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

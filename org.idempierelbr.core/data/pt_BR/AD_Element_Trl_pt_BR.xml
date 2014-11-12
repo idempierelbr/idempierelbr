@@ -55197,6 +55197,106 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="202755" trl="N">
+  <value column="Name" original="Recurring Group">Recurring Group</value>
+  <value column="PrintName" original="Recurring Group">Recurring Group</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202756" trl="N">
+  <value column="Name" original="C_RecurringGroup_UU">C_RecurringGroup_UU</value>
+  <value column="PrintName" original="C_RecurringGroup_UU">C_RecurringGroup_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202757" trl="N">
+  <value column="Name" original="Parameter Comment">Parameter Comment</value>
+  <value column="PrintName" original="Parameter Comment">Parameter Comment</value>
+  <value column="Description" original="To replace the tag @Prm_Comment@ on the description of the documents being generated with the text you fill on the parameter">To replace the tag @Prm_Comment@ on the description of the documents being generated with the text you fill on the parameter</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202761" trl="N">
+  <value column="Name" original="Country on Country Group">Country on Country Group</value>
+  <value column="PrintName" original="Country on Country Group">Country on Country Group</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202762" trl="N">
+  <value column="Name" original="C_CountryGroupCountry_UU">C_CountryGroupCountry_UU</value>
+  <value column="PrintName" original="C_CountryGroupCountry_UU">C_CountryGroupCountry_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202763" trl="N">
+  <value column="Name" original="Country Group">Country Group</value>
+  <value column="PrintName" original="Country Group">Country Group</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202764" trl="N">
+  <value column="Name" original="C_CountryGroup_UU">C_CountryGroup_UU</value>
+  <value column="PrintName" original="C_CountryGroup_UU">C_CountryGroup_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202765" trl="N">
+  <value column="Name" original="C_CountryGroup_Trl_UU">C_CountryGroup_Trl_UU</value>
+  <value column="PrintName" original="C_CountryGroup_Trl_UU">C_CountryGroup_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202766" trl="N">
+  <value column="Name" original="Country Group To">Country Group To</value>
+  <value column="PrintName" original="Country Group To">Country Group To</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202767" trl="N">
+  <value column="Name" original="Country Group From">Country Group From</value>
+  <value column="PrintName" original="Country Group From">Country Group From</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row trl="Y" uuid="2db1c9d3-13bf-4539-baa0-45ccfb09a7a3">
   <value column="Name" original="Cód. Cidade (IBGE)">Carteira</value>
   <value column="PrintName" original="Cód. Cidade (IBGE)">Carteira</value>
@@ -58992,6 +59092,96 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PrintName" original="Doc Type Boleto">Tipo Doc. de Boleto</value>
   <value column="Description" original="Document type used for Boleto generated from this document">Tipo de Documento utilizado para Boletos gerados a partir deste documento</value>
   <value column="Help" original="The Document Type for Boleto indicates the document type that will be used when an Boleto is generated from this document. This field will display only for some base document type.">O "Tipo de Documento para Boleto" indica o tipo do documento que será usado quando um Boleto é gerado a partir deste documento. Este campo será exibido apenas para alguns tipos de documento base.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="88c10982-0a33-4447-b5cc-f4a0d2b96365">
+  <value column="Name" original="Number In Bank Formatted">Nosso Número Formatado</value>
+  <value column="PrintName" original="Number In Bank Formatted">Nosso Número Formatado</value>
+  <value column="Description" original="Number In Bank Formatted">Nosso Número Formatado</value>
+  <value column="Help" original="This field will be filled with the &quot;Number In Bank&quot; formatted as it needs to be printed on the Collection Slip">Este campo recebe o  "Nosso Número" formatado para a impressão do boleto.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="7239d92e-d262-4c85-8523-8394ee2cf444">
+  <value column="Name" original="Agency and Client Formatted">Agência e Convênio formatados</value>
+  <value column="PrintName" original="Agency and Client Formatted">Agência e Convênio formatados</value>
+  <value column="Description" original="Agency and Client Formatted">Agência e Convênio formatados</value>
+  <value column="Help" original="This field will be filled with the &quot;Agency and Client&quot; formatted as it needs to be printed on the Collection Slip">Este campo recebe a Agência e o Convênio formatados para a impressão do boleto.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="d943e309-4632-4b20-afdc-0813df5f9658">
+  <value column="Name" original="Billfold Formatted">Carteira formatada</value>
+  <value column="PrintName" original="Billfold Formatted">Carteira formatada</value>
+  <value column="Description" original="Billfold Formatted">Carteira formatada</value>
+  <value column="Help" original="This field will be filled with the &quot;Billfold&quot; formatted as it needs to be printed on the Collection Slip">Este campo recebe a Carteira formatada para a impressão do boleto.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="4f4e60a0-ec89-49df-af47-3bc283d7cfa5">
+  <value column="Name" original="Document Type Formatted">Tipo de Documento formatado</value>
+  <value column="PrintName" original="Document Type Formatted">Tipo de Documento formatado</value>
+  <value column="Description" original="Document Type Formatted">Tipo de Documento formatado</value>
+  <value column="Help" original="This field will be filled with the &quot;Document Type&quot; formatted as it needs to be printed on the Collection Slip">Este campo recebe o Tipo do Documento formatado para a impressão do boleto.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="e9ba3970-211f-40d7-bcb1-974dd6c4b771">
+  <value column="Name" original="Bank Use">Uso do Banco</value>
+  <value column="PrintName" original="Bank Use">Uso do Banco</value>
+  <value column="Description" original="Bank Use">Uso do Banco</value>
+  <value column="Help" original="This field will be filled with the &quot;Bank Use&quot; formatted as it needs to be printed on the Collection Slip">Este campo recebe o valor para preenchimento do "Uso do Banco" na impressão do boleto.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="9eb63526-2468-407d-8205-2c6a2c2ceac4">
+  <value column="Name" original="Barcode">Código de Barras do Boleto</value>
+  <value column="PrintName" original="Barcode">Código de Barras do Boleto</value>
+  <value column="Description" original="Barcode">Código de Barras do Boleto</value>
+  <value column="Help" original="This field will be filled with the barcode value to be printed on the Collection Slip">valor para o código de barras do boleto</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="32bdd753-ded2-4eab-9258-0b08fab10e3d">
+  <value column="Name" original="Typeable Line">Linha Digitável</value>
+  <value column="PrintName" original="Typeable Line">Linha Digitável</value>
+  <value column="Description" original="Typeable Line">Linha Digitável</value>
+  <value column="Help" original="This field will be filled with the typeable line to be printed on the Collection Slip">Linha Digitável para impressão do boleto</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="444b1067-f198-42cb-8594-7a7e553a0d00">
+  <value column="Name" original="Routing Check Digit">Routing Check Digit</value>
+  <value column="PrintName" original="Routing Check Digit">Routing Check Digit</value>
+  <value column="Description" original="Routing Check Digit">Routing Check Digit</value>
+  <value column="Help" original="This field can be filled with the check digit for the bank number, to be printed on the Collection Slip">This field can be filled with the check digit for the bank number, to be printed on the Collection Slip</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row trl="N" uuid="d29d0d53-a4b8-4f10-a698-995ee37793e1">
+  <value column="Name" original="Generate and Print Boletos">Gera e Imprime Boleto(s)</value>
+  <value column="PrintName" original="Generate and Print Boletos">Gera e Imprime Boleto(s)</value>
+  <value column="Description" original="Generate and Print Boletos">Gera Imprime boletos de cobrança</value>
+  <value column="Help" original="This button print the collection slips for the invoice, it generates the collection documents if needed,  based on the pay schedule of the invoice.">Este botão aciona a impressão dos boletos de cobrança para a fatura. Caso necessário os documentos de boleto serão gerados baseando-se na programação de pagamentos da fatura.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>

@@ -1,6 +1,6 @@
 package org.idempierelbr.cnab240bradesco.annotated;
 
-import org.idempierelbr.cnab240febraban.annotated.CNABCobrancaHeaderLoteRecord;
+import org.idempierelbr.cnab240.annotated.CNABCobrancaHeaderLoteRecord;
 
 import com.ancientprogramming.fixedformat4j.annotation.Align;
 import com.ancientprogramming.fixedformat4j.annotation.Field;

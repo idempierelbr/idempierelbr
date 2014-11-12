@@ -333,6 +333,32 @@ public interface I_LBR_Boleto
 
 	public I_LBR_BankAccount_Convenio getLBR_BankAccount_Convenio() throws RuntimeException;
 
+    /** Column name LBR_BankUse */
+    public static final String COLUMNNAME_LBR_BankUse = "LBR_BankUse";
+
+	/** Set Bank Use.
+	  * Bank Use
+	  */
+	public void setLBR_BankUse (String LBR_BankUse);
+
+	/** Get Bank Use.
+	  * Bank Use
+	  */
+	public String getLBR_BankUse();
+
+    /** Column name LBR_Barcode */
+    public static final String COLUMNNAME_LBR_Barcode = "LBR_Barcode";
+
+	/** Set Barcode.
+	  * Barcode
+	  */
+	public void setLBR_Barcode (String LBR_Barcode);
+
+	/** Get Barcode.
+	  * Barcode
+	  */
+	public String getLBR_Barcode();
+
     /** Column name LBR_Boleto_ID */
     public static final String COLUMNNAME_LBR_Boleto_ID = "LBR_Boleto_ID";
 
@@ -441,6 +467,58 @@ public interface I_LBR_Boleto
 	/** Get Distribution Type	  */
 	public String getLBR_DistributionType();
 
+    /** Column name LBR_Fmt_AgencyClient */
+    public static final String COLUMNNAME_LBR_Fmt_AgencyClient = "LBR_Fmt_AgencyClient";
+
+	/** Set Agency and Client Formatted.
+	  * Agency and Client Formatted
+	  */
+	public void setLBR_Fmt_AgencyClient (String LBR_Fmt_AgencyClient);
+
+	/** Get Agency and Client Formatted.
+	  * Agency and Client Formatted
+	  */
+	public String getLBR_Fmt_AgencyClient();
+
+    /** Column name LBR_Fmt_Billfold */
+    public static final String COLUMNNAME_LBR_Fmt_Billfold = "LBR_Fmt_Billfold";
+
+	/** Set Billfold Formatted.
+	  * Billfold Formatted
+	  */
+	public void setLBR_Fmt_Billfold (String LBR_Fmt_Billfold);
+
+	/** Get Billfold Formatted.
+	  * Billfold Formatted
+	  */
+	public String getLBR_Fmt_Billfold();
+
+    /** Column name LBR_Fmt_Doctype */
+    public static final String COLUMNNAME_LBR_Fmt_Doctype = "LBR_Fmt_Doctype";
+
+	/** Set Document Type Formatted.
+	  * Document Type Formatted
+	  */
+	public void setLBR_Fmt_Doctype (String LBR_Fmt_Doctype);
+
+	/** Get Document Type Formatted.
+	  * Document Type Formatted
+	  */
+	public String getLBR_Fmt_Doctype();
+
+    /** Column name LBR_Fmt_NumberInBank */
+    public static final String COLUMNNAME_LBR_Fmt_NumberInBank = "LBR_Fmt_NumberInBank";
+
+	/** Set Number In Bank Formatted.
+	  * Number In Bank Formatted
+	  */
+	public void setLBR_Fmt_NumberInBank (String LBR_Fmt_NumberInBank);
+
+	/** Get Number In Bank Formatted.
+	  * Number In Bank Formatted
+	  */
+	public String getLBR_Fmt_NumberInBank();
+
     /** Column name LBR_Guarantor_ID */
     public static final String COLUMNNAME_LBR_Guarantor_ID = "LBR_Guarantor_ID";
 
@@ -537,6 +615,19 @@ public interface I_LBR_Boleto
 
 	/** Get Authorize Partial Payment	  */
 	public String getLBR_PartialPayment();
+
+    /** Column name LBR_TypeableLine */
+    public static final String COLUMNNAME_LBR_TypeableLine = "LBR_TypeableLine";
+
+	/** Set Typeable Line.
+	  * Typeable Line
+	  */
+	public void setLBR_TypeableLine (String LBR_TypeableLine);
+
+	/** Get Typeable Line.
+	  * Typeable Line
+	  */
+	public String getLBR_TypeableLine();
 
     /** Column name Posted */
     public static final String COLUMNNAME_Posted = "Posted";

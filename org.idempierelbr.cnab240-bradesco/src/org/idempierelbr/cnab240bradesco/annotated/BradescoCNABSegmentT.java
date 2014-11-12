@@ -2,7 +2,7 @@ package org.idempierelbr.cnab240bradesco.annotated;
 
 import java.util.Date;
 
-import org.idempierelbr.cnab240febraban.annotated.CNABSegmentTRecord;
+import org.idempierelbr.cnab240.annotated.CNABSegmentTRecord;
 
 import com.ancientprogramming.fixedformat4j.annotation.Align;
 import com.ancientprogramming.fixedformat4j.annotation.Field;
@@ -35,11 +35,11 @@ public class BradescoCNABSegmentT extends CNABSegmentTRecord {
 	
 	@Field( offset=58 , length=1, paddingChar='0' , align = Align.RIGHT)
 	public int getCarteira() {
-		return super.getCarteira();
+		return super.getCodigoCarteira();
 		// return carteira;
 	}
 	public void setCarteira(int carteira) {
-		super.setCarteira(carteira);
+		super.setCodigoCarteira(carteira);
 		// this.carteira = carteira;
 	}
 
@@ -84,19 +84,19 @@ public class BradescoCNABSegmentT extends CNABSegmentTRecord {
 	
 	@Field( offset=106 , length=25 , paddingChar=' ' , align = Align.LEFT)
 	public String getNumeroTituloNaEmpresa() {
-		return super.getNumeroTituloNaEmpresa();
+		return super.getIdentificacaoTituloNaEmpresa();
 		// return numeroTituloNaEmpresa;
 	}
 	public void setNumeroTituloNaEmpresa(String numeroTituloNaEmpresa) {
-		super.setNumeroTituloNaEmpresa(numeroTituloNaEmpresa);
+		super.setIdentificacaoTituloNaEmpresa(numeroTituloNaEmpresa);
 		// this.numeroTituloNaEmpresa = numeroTituloNaEmpresa;
 	}	
 
 	@Field( offset=100 , length=5 , paddingChar='0' , align = Align.RIGHT)
-	public String getAgenciaCobradora() {
+	public int getAgenciaCobradora() {
 		return super.getAgenciaCobradora();
 	}
-	public void setAgenciaCobradora(String agenciaCobradora) {
+	public void setAgenciaCobradora(int agenciaCobradora) {
 		super.setAgenciaCobradora(agenciaCobradora);
 	}
 	

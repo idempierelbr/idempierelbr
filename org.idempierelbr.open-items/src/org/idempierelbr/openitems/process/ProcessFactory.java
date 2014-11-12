@@ -12,6 +12,8 @@ public class ProcessFactory implements IProcessFactory {
 			return new CNABGenerate();
 		else if (className.equals("org.idempierelbr.openitems.process.CNABReturn"))
 			return new CNABReturn();
+		if (className.equals("org.idempierelbr.openitems.process.BoletoGenerateAndPrint"))
+			return new BoletoGenerateAndPrint();
 		else
 			return null;
 	}

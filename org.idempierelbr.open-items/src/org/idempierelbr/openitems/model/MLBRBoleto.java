@@ -32,6 +32,7 @@ import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.compiere.util.Msg;
 import org.idempierelbr.core.util.TextUtil;
+import org.idempierelbr.openitems.util.OpenItemsUtil;
 
 public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 
@@ -589,4 +590,31 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 		
 		return 10;
 	}
+	
+	public String getRoutingNo ( ) {
+		return getC_Bank().getRoutingNo();
+	}
+
+	/**
+	 * Calculates and stores the Barcode and Typeable Lines
+	 * of Brazilian Bank Collection document
+	 * 
+	 * @param campolivre
+	 * @return
+	 */
+	public void genBarcode( String campolivre ) {
+		String fatorVencimento = OpenItemsUtil.fatorVencimento(getDueDate());
+		String valor = OpenItemsUtil.getCampoDecimal(getGrandTotal().doubleValue() , 8 , 2  );
+		String routingNo = getRoutingNo( );
+		
+		String barcode = routingNo+"9"+fatorVencimento+valor+campolivre;
+		String dv = OpenItemsUtil.barcodeDV(barcode);
+
+		String barcodeWithDV = barcode.substring(0, 4)+dv+barcode.substring(4);
+		
+		setLBR_Barcode(barcodeWithDV);
+		this.setLBR_TypeableLine( OpenItemsUtil.genTypeAble(barcodeWithDV) );
+	}
+
+	
 }
