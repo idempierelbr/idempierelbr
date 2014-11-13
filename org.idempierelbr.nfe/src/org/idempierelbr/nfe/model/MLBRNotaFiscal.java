@@ -409,6 +409,9 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 			return DocAction.STATUS_Invalid;
 		}
 		
+		// Save everything
+		this.saveEx();
+
 		if (isLBR_IsDocIssuedByOrg()) {
 			// Delete any xml attachment
 			MAttachment attachNFe = createAttachment();
@@ -772,6 +775,7 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		} 
 		catch(Exception ex) 
 		{
+			ex.printStackTrace();
 			return Msg.getMsg(Env.getCtx(), "LBR_ErrorGeneratingXML") + ". Nota Fiscal " + getDocumentNo();
 		}
 		
