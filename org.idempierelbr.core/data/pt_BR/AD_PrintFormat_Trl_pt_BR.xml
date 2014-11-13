@@ -358,4 +358,12 @@
   <value column="Name" original="Complex Fact View">Complex Fact View</value>
   <value column="Description" original=""/>
  </row>
+ <row trl="N" uuid="cc546a16-e233-4299-8827-508b2a7fba1a">
+  <value column="Name" original="Parceiro de Negócios">Parceiro de Negócios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="0311b142-0bbe-4c6d-9f1c-5d021635dc25">
+  <value column="Name" original="Parceiro de Negócios_20141107132028">Parceiro de Negócios_20141107132028</value>
+  <value column="Description" original=""/>
+ </row>
 </idempiereTrl>

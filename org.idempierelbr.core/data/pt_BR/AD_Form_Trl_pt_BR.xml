@@ -48,9 +48,9 @@
   <value column="Help" original="Make sure that the Receipts and Invoices are processed. If you want to match partial shipment, make sure that &quot;Same Quantity&quot; is not selected.">Para conciliar documentos, é necessários que os mesmos estejam processados. Para conciliar remessas parciais, desmarque a opção Mesma Quantidade.</value>
  </row>
  <row id="109" trl="Y">
-  <value column="Name" original="Translation Import/Export">Importação/Exportação de Traduções</value>
-  <value column="Description" original="Import or Export Language Translation">Importar ou Exportar Traduções de Idiomas</value>
-  <value column="Help" original="Export/Import Translation info to/from xml for translation in external tool. Please note that the Language MUST be an enabled and verified System Langage.">Exportar/Importar Informações de Tradução de/para arquivos xml para tradução em uma ferramenta externa. Note que o Idioma TEM que ser um Idioma de Sistema liberado e verificado.</value>
+  <value column="Name" original="Translation Import/Export">Importação / Exportação de Traduções</value>
+  <value column="Description" original="Import or Export Language Translation">Importação / Exportação de Traduções de Idiomas</value>
+  <value column="Help" original="Export/Import Translation info to/from xml for translation in external tool. Please note that the Language MUST be an enabled and verified System Langage.">Importação e exportação de traduções (arquivos XML). Isso permite que as traduções sejam realizadas em ferramentas externas, e permite uma melhor facilidade de distribuição de pacotes de traduções. É importante que ele seja um idioma de sistema (janela Idioma).</value>
  </row>
  <row id="110" trl="Y">
   <value column="Name" original="Generate Shipments (manual)">Gerar Remessas (Manual)</value>
@@ -58,9 +58,9 @@
   <value column="Help" original="Generate Shipments from Orders.  &#10;Select the orders to generate the shipments for.">Gera remessas a partir de pedidos/ARM. Selecione os pedidos/ARM para os quais devem ser geradas as remessas.</value>
  </row>
  <row id="111" trl="Y">
-  <value column="Name" original="SQL Process">Processo SQL</value>
-  <value column="Description" original="Process SQL Statements">Processar Declarações SQL</value>
-  <value column="Help" original="Process SQL DDL Statements">Processar Declarações SQL DDL</value>
+  <value column="Name" original="SQL Process">Processamento de SQL</value>
+  <value column="Description" original="Process SQL Statements">Processamento de declarações SQL</value>
+  <value column="Help" original="Process SQL DDL Statements">Processamento de declarações SQL</value>
  </row>
  <row id="112" trl="Y">
   <value column="Name" original="Merge Entities">Fundir Entidades</value>
@@ -79,7 +79,7 @@
   <value column="Help" original="Drop the extended Bill of Materials into an Order, Invoice, etc.  The documents need to be in a Drafted stage.  Make sure that the items included in the BOM are on the price list of the Order, Invoice, etc. as otherwise the price will be zero!">Expandir um produto do tipo Lista de Materiais em seus componentes dentro de um pedido ou fatura. O estado do documento deve estar Em Digitação. Certifique-se que os componentes da LDM estejam na lista de preços, caso contrário o preço será zero!</value>
  </row>
  <row id="115" trl="Y">
-  <value column="Name" original="Tree Maintenance">Manutenção de Árvore</value>
+  <value column="Name" original="Tree Maintenance">Manutenção de Árvore (Tree)</value>
   <value column="Description" original="Maintain Trees">Gerenciamento de Árvores</value>
   <value column="Help" original="View and change trees. Maintain the entries in their specific Windows.">Visualiza e edita árvores. Gerenciamento de registros em suas janelas específicas.</value>
  </row>
@@ -213,9 +213,9 @@ Select the orders to generate the shipments & Invoices for.]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200001" trl="N">
-  <value column="Name" original="Reset Password">Reset Password</value>
-  <value column="Description" original="Reset Password">Reset Password</value>
+ <row id="200001" trl="Y">
+  <value column="Name" original="Reset Password">Redefinir Senha</value>
+  <value column="Description" original="Reset Password">Redefinir Senha</value>
   <value column="Help" original=""/>
  </row>
  <row id="200002" trl="N">

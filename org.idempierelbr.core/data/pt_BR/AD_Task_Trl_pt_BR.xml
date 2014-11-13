@@ -8,13 +8,13 @@
   <value column="Help" original="The java version used by the application might be different.">A versão do java usado pela aplicação pode ser diferente.</value>
  </row>
  <row id="103" trl="Y">
-  <value column="Name" original="Database export">Exportar Base de Dados</value>
-  <value column="Description" original="Export (save) the database">Exportar (salvar) o banco de dados</value>
+  <value column="Name" original="Database export">Exportar Banco de Dados</value>
+  <value column="Description" original="Export (save) the database">Exportar, em arquivo, o banco de dados</value>
   <value column="Help" original="Run this command from the server">Rode este comando diretamente do servidor</value>
  </row>
  <row id="104" trl="Y">
-  <value column="Name" original="Database transfer">Transferência do Banco de Dados</value>
-  <value column="Description" original="Transfer the database">Transferir o banco de dados</value>
+  <value column="Name" original="Database transfer">Transferir Banco de Dados</value>
+  <value column="Description" original="Transfer the database">Transferir Banco de Dados</value>
   <value column="Help" original="Run this command from the server">Rode este comando diretamente do servidor</value>
  </row>
 </idempiereTrl>

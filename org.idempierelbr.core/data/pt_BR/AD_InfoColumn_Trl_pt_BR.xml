@@ -7,9 +7,9 @@
   <value column="Description" original="Current Vendor">Current Vendor</value>
   <value column="Help" original=""/>
  </row>
- <row id="200006" trl="N">
+ <row id="200006" trl="Y">
   <value column="Name" original="D">D</value>
-  <value column="Description" original="This product is no longer available">This product is no longer available</value>
-  <value column="Help" original="The Discontinued check box indicates a product that has been discontinued.">The Discontinued check box indicates a product that has been discontinued.</value>
+  <value column="Description" original="This product is no longer available">Este produto foi descontinuado</value>
+  <value column="Help" original="The Discontinued check box indicates a product that has been discontinued.">Indica se o produto foi descontinuado.</value>
  </row>
 </idempiereTrl>

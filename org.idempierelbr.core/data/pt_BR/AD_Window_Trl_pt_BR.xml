@@ -49,7 +49,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  <row id="108" trl="Y">
   <value column="Name" original="User">Usuário</value>
   <value column="Description" original="Maintain Users of the system">Gerenciamento dos Usuários do Sistema</value>
-  <value column="Help" original="The User Window allows you to maintain User of the system.  Users can log into the system and have access to functionality via one or more roles.  A user can also be a business partner contact.">The User Window allows you to maintain User of the system.  Usuários podem se logar no sistema e obter acesso à funcionalidade através de uma ou mais funções (ou papéis).  A user can also be a business aprtner contact.</value>
+  <value column="Help" original="The User Window allows you to maintain User of the system.  Users can log into the system and have access to functionality via one or more roles.  A user can also be a business partner contact.">A janela Usuário permite a manutenção de usuários do sistema. Usuários podem se logar no sistema e obter acesso às funcionalidades através de um ou mais perfis de acesso. Um usuário pode ser também um contato de parceiro de negócios.</value>
  </row>
  <row id="109" trl="Y">
   <value column="Name" original="Client">Empresa</value>
@@ -62,9 +62,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Organization Window allows you to define and maintain Organizational entities.  An Organization is often a legal entity or sub-unit for which documents and transactions are processed">A Janela "Organização" permite a você definir e manter entidades Organizacionais.  Uma Organização é freqüentemente uma entidade legal ou sub-unidade para a qual documentos e transações são processados</value>
  </row>
  <row id="111" trl="Y">
-  <value column="Name" original="Role">Papel (Função)</value>
+  <value column="Name" original="Role">Perfil de Acesso</value>
   <value column="Description" original="Maintain User Responsibilities">Gerenciamento das Responsabilidades dos Usuários</value>
-  <value column="Help" original="The Role Window allows you to define the different roles that users of this system will have.  Roles control access to windows, tasks, reports, etc. For a client an Administrator and User role are predefined. You may add additional roles to control access for specific functionality or data.&#10;You can add users to the role.&#10;Note that access information is cached and requires re-login or reset of cache.">A Janela "Papel (Função)" permite a você definir os diferentes papéis (funções) que os usuários deste sistema terão.  Papéis (Funções) controlam o acesso a janelas, tarefas, relatórios, etc. Para cada Empresa são predefinidos um Papel de Administrador e de Usuário. Você pode acrescentar Papéis (Funções) adicionais para controlar o acesso a funcionalidades ou dados específicos. Você pode acrescentar usuários ao Papel (Função). Note que a informação de acesso é memorizada e requer re-login ou reset da memória cache.</value>
+  <value column="Help" original="The Role Window allows you to define the different roles that users of this system will have.  Roles control access to windows, tasks, reports, etc. For a client an Administrator and User role are predefined. You may add additional roles to control access for specific functionality or data.&#10;You can add users to the role.&#10;Note that access information is cached and requires re-login or reset of cache.">A Janela "Perfil de Acesso" permite a você definir os diferentes perfis que os usuários deste sistema terão. Perfis de acesso controlam o acesso a janelas, tarefas, relatórios, etc. Para cada Empresa são predefinidos um perfil de Administrador e de Usuário. Você pode acrescentar perfis adicionais para controlar o acesso a funcionalidades ou dados específicos. Você pode acrescentar usuários ao perfil. Note que a informação de acesso é memorizada e requer re-login ou reset da memória cache.</value>
  </row>
  <row id="112" trl="Y">
   <value column="Name" original="Document Sequence">Seqüência de Documento</value>
@@ -112,9 +112,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Location Window defines the address data within the system.  This window is for System Admin only.  Users would access location entries using the location button or tab on the appropriate window (i.e Order Entry or Business Partner)">A Janela "Localização" define os dados de endereço dentro do sistema.  Esta Janela é somente para uso do Administrador do Sistema.  Os usuários deveriam acessar dados de Localização usando o "Botão de Localização" ou Aba na janela apropriada (i.e Registro de Pedidos ou Parceiro de Negócios)</value>
  </row>
  <row id="122" trl="Y">
-  <value column="Name" original="Country Region and City">Estado e Cidade</value>
-  <value column="Description" original="Maintain Countries Regions and Cities">Gerenciamento de Estados e Cidades</value>
-  <value column="Help" original="The Countries, Regions and Cities Window defines the different entities that can be used in any address field.  It defines the format of the address as well as associating Regions with Countries and Cities with Regions or Countries. &#10;&lt;p&gt;You would define Countries usually only on System level."><![CDATA[A Janela "Países, Estados e Cidades" define as diferentes entidades que podem ser usadas em qualquer campo de endereço.  Ela define o formato do endereço assim como associa Estados (ou Regiões) a Países e Cidades a Estados ou Países. <p>Você deveria definir Países usualmente no Nível do Sistema.]]></value>
+  <value column="Name" original="Country Region and City">País, Região (UF) e Cidade</value>
+  <value column="Description" original="Maintain Countries Regions and Cities">Gerenciamento de Países, Regiões (UFs) e Cidades</value>
+  <value column="Help" original="The Countries, Regions and Cities Window defines the different entities that can be used in any address field.  It defines the format of the address as well as associating Regions with Countries and Cities with Regions or Countries. &#10;&lt;p&gt;You would define Countries usually only on System level."><![CDATA[A Janela "País, Região (UF) e Cidade" define as diferentes entidades que podem ser usadas em qualquer campo de endereço.  Ela define o formato do endereço assim como cria o relacionamento entre cidades, UFs e países. <p>Normalmente define-se o país a nível de sistema.]]></value>
  </row>
  <row id="123" trl="Y">
   <value column="Name" original="Business Partner">Parceiro de Negócios</value>
@@ -273,9 +273,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Query the detail accounting transactions">Verificação de Detalhes de Fatos Contábeis</value>
  </row>
  <row id="163" trl="Y">
-  <value column="Name" original="Tree">Árvore</value>
-  <value column="Description" original="Maintain Tree definition">Gerenciamento das Definições de Árvore</value>
-  <value column="Help" original="The Tree Window defines the descriptors and images that will be used when a Tree is displayed.">A Janela "Árvore" define os textos descritivos e as imagens que serão utilizados quando uma Árvore for exibida.</value>
+  <value column="Name" original="Tree">Árvore (Tree)</value>
+  <value column="Description" original="Maintain Tree definition">Gerenciamento das Definições de Árvore (Tree)</value>
+  <value column="Help" original="The Tree Window defines the descriptors and images that will be used when a Tree is displayed.">A Janela "Árvore (Tree)" define os textos descritivos e as imagens que serão utilizados quando uma Árvore for exibida.</value>
  </row>
  <row id="165" trl="Y">
   <value column="Name" original="Report &amp; Process">Relatório e Processo</value>
@@ -512,9 +512,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Define the documents you use for this Client/Organnization.  Note that the check format is defined in the Bank (Account) Window.&lt;p&gt;&#10;The highest priotity has the Print Format, you define on a Document Type (example specific Export Invoice format). The next level is the set of Print Formats, you defined for the organziation of the document printed. The default is the set of Print Formats defines for all organizations of the Client (Organization=*)."><![CDATA[Define os documentos que você usa para esta Empresa/Organização.  Note que o formato do cheque é definido na Janela "Banco (Conta)".<p> O Formato de Impressão que você define em um Tipo de Documento tem a maior prioridade (ex. Formato específico de Exportação de Fatura). O próximo nível é o conjunto de Formatos de Impressão que você definiu para a organização do documento impresso. O padrão é que o conjunto de Formatos de Impressão seja definido para todas as organizações da Empresa (Organization=*).]]></value>
  </row>
  <row id="225" trl="Y">
-  <value column="Name" original="System Color">Cores do Sistema</value>
-  <value column="Description" original="Maintain System Colors">Gerenciamento das Cores do Sistema</value>
-  <value column="Help" original="System colors are used for background and indicators">Cores do Sistema são usadas para o pano de fundo e para os indicadores</value>
+  <value column="Name" original="System Color">Cor no Sistema</value>
+  <value column="Description" original="Maintain System Colors">Gerenciamento de Cores no Sistema</value>
+  <value column="Help" original="System colors are used for background and indicators">Cores no Sistema são usadas para o pano de fundo e para os indicadores de desempenho</value>
  </row>
  <row id="226" trl="Y">
   <value column="Name" original="Desktop">Área de Trabalho</value>
@@ -522,8 +522,8 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Desktop is a collection of Workbenches">A Área de Trabalho é uma coleção de Bancadas de Trabalho</value>
  </row>
  <row id="227" trl="Y">
-  <value column="Name" original="System Image">Imagens do Sistema</value>
-  <value column="Description" original="Maintain Images and Icons">Gerenciamento de Imagens e Ícones</value>
+  <value column="Name" original="System Image">Imagem no Sistema</value>
+  <value column="Description" original="Maintain Images and Icons">Gerenciamento de Imagens e Ícones no Sistema</value>
   <value column="Help" original=""/>
  </row>
  <row id="228" trl="Y">
@@ -632,9 +632,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Import Report Line Set Window is an interim table which is used when importing external data into the system.  Selecting the 'Process' button will either add or modify the appropriate records.">A Janela "Importação do Conjunto de Linhas de Relatório" é uma tabela interina que é utilizada ao importar dados externos para dentro do sistema.  Selecionar o botão 'Processar' vai acrescentar ou modificar os registros apropriados.</value>
  </row>
  <row id="250" trl="Y">
-  <value column="Name" original="System Translation Check">Verificação de Tradução de Sistema</value>
-  <value column="Description" original="Check System Language Translations">Verificar Traduções de Idiomas do Sistema</value>
-  <value column="Help" original="Verify your language translations for selected entities. You should use Translation Export / Import for effective translation. This window allows you to check the translation of the main translation entities.">Verifique as suas traduções de idioma para as entidades selecionadas. Você deveria usar Importação/Exportação de Traduções para uma tradução efetiva. Esta janela permite a você conferir a tradução das principais entidades de tradução.</value>
+  <value column="Name" original="System Translation Check">Verificação de Traduções do Sistema</value>
+  <value column="Description" original="Check System Language Translations">Verificação de Traduções de Idiomas do Sistema</value>
+  <value column="Help" original="Verify your language translations for selected entities. You should use Translation Export / Import for effective translation. This window allows you to check the translation of the main translation entities.">Esta janela permite a conferência/ajuste da tradução das principais entidades de tradução.</value>
  </row>
  <row id="251" trl="Y">
   <value column="Name" original="Asset">Ativo</value>
@@ -722,9 +722,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Validate and Import Inventory Transactions">Validar e Importar Transações de Estoque</value>
  </row>
  <row id="268" trl="Y">
-  <value column="Name" original="Role Data Access">Acesso a Dados de Função</value>
-  <value column="Description" original="Maintain Data Access Rules">Gerenciamento de Regras de Acesso a Dados</value>
-  <value column="Help" original="Maintain Data Access Roles of Roles/Responsibilties.&#10;Note that access information is cached and requires re-login or reset of cache.">Gerenciamento de Regras de Acesso a Dados de Papéis (Funções)/Responsabilidades. Note que a informação de acesso é memorizada e requer re-login ou reset da memória cache.</value>
+  <value column="Name" original="Role Data Access">Acesso do Perfil a Dados</value>
+  <value column="Description" original="Maintain Data Access Rules">Gerenciamento de Regras de Acesso de Perfis aos Dados</value>
+  <value column="Help" original="Maintain Data Access Roles of Roles/Responsibilties.&#10;Note that access information is cached and requires re-login or reset of cache.">Gerenciamento de Regras de Acesso de Perfis aos Dados. Observe que essas informações são armazenadas em cache, portanto é necessário limpar o cache após alterações.</value>
  </row>
  <row id="269" trl="Y">
   <value column="Name" original="Advertisement">Anúncio</value>
@@ -732,8 +732,8 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Maintain Advertisements on the Web">Gerenciamento de Anúncios na Web</value>
  </row>
  <row id="270" trl="Y">
-  <value column="Name" original="Change Audit">Auditoria de Alterações</value>
-  <value column="Description" original="Audit of data changes">Auditoria de alterações de dados</value>
+  <value column="Name" original="Change Audit">Auditoria de Alteração</value>
+  <value column="Description" original="Audit of data changes">Auditoria de alteração de dados</value>
   <value column="Help" original="Log of data changes">Registro de alterações de dados</value>
  </row>
  <row id="271" trl="Y">
@@ -1200,9 +1200,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="System Issues are created to speed up the resolution of any system related issues (potential bugs).  If enabled, they are automatically reported to iDempiere.  No data or confidential information is transferred.">System Issues are created to speed up the resolution of any system related issues (potential bugs).  If enabled, they are automatically reported to Compiere.  No data or confidential information is transferred.</value>
  </row>
  <row id="364" trl="Y">
-  <value column="Name" original="Performance Color Schema">Performance Color Schema</value>
-  <value column="Description" original="Maintain Performance Color Schema">Maintain Performance Color Schema</value>
-  <value column="Help" original="Visual representation of performance by color.  The Schema has often three levels (e.g. red-yellow-green).  iDempiere support two levels (e.g. red-green) or four levels (e.g. gray-bronce-silver-gold).  Note that Measures without a goal are represented white.  The percentages could be beween 0 and unlimited (i.e. above 100%).">Visual representation of performance by color.  The Schema has often three levels (e.g. red-yellow-green).  Compiere support two levels (e.g. red-green) or four levels (e.g. gray-bronce-silver-gold).  Note that Measures without a goal are represented white.  The percentages could be beween 0 and unlimited (i.e. above 100%).</value>
+  <value column="Name" original="Performance Color Schema">Esquema de Cores de Desempenho</value>
+  <value column="Description" original="Maintain Performance Color Schema">Manutenção de Esquemas de Cores de Desempenho</value>
+  <value column="Help" original="Visual representation of performance by color.  The Schema has often three levels (e.g. red-yellow-green).  iDempiere support two levels (e.g. red-green) or four levels (e.g. gray-bronce-silver-gold).  Note that Measures without a goal are represented white.  The percentages could be beween 0 and unlimited (i.e. above 100%).">Representação visual do desempenho através de cores. O esquema normalmente possui três níveis (ex: vermelho, amarelo, verde). As porcentagens podem ser entre 0 e infinito (ex: acima de 100%).</value>
  </row>
  <row id="365" trl="Y">
   <value column="Name" original="Performance Benchmark">Performance Benchmark</value>
@@ -1345,7 +1345,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Imports a package previously created by PackOut">Importa um pacote previamente criado pelo PackOut.</value>
  </row>
  <row id="50006" trl="Y">
-  <value column="Name" original="System Configurator">System Configurator</value>
+  <value column="Name" original="System Configurator">Configurador do Sistema</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1708,8 +1708,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53068" trl="N">
-  <value column="Name" original="Web Service Security">Web Service Security</value>
+ <row id="53068" trl="Y">
+  <value column="Name" original="Web Service Security">Segurança de Web Service</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1769,9 +1769,9 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Manage Return Material Authorization">Gerenciar as Autorizações de Retorno de Material ao Fornecedor</value>
   <value column="Help" original="A Return Material Authorization may be required to accept returns and to create Credit Memos">Dependendo das regras de negócios do fornecedor, pode ser necessário informar um ARM no momento do envio da devoluções e também para criar Memorandos de Crédito.</value>
  </row>
- <row id="53100" trl="N">
-  <value column="Name" original="My Profile">My Profile</value>
-  <value column="Description" original="My user information">My user information</value>
+ <row id="53100" trl="Y">
+  <value column="Name" original="My Profile">Meu Perfil</value>
+  <value column="Description" original="My user information">Minhas informações de usuário</value>
   <value column="Help" original=""/>
  </row>
  <row id="53101" trl="Y">
@@ -1914,13 +1914,13 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200001" trl="N">
-  <value column="Name" original="Role Toolbar Button Access">Role Toolbar Button Access</value>
-  <value column="Description" original="Maintain toolbar button access rule">Maintain toolbar button access rule</value>
+ <row id="200001" trl="Y">
+  <value column="Name" original="Role Toolbar Button Access">Restrição de Acesso à Barra de Ferramentas</value>
+  <value column="Description" original="Maintain toolbar button access rule">Manutenção de regras para acesso aos botões da barra de ferramentas</value>
   <value column="Help" original=""/>
  </row>
- <row id="200002" trl="N">
-  <value column="Name" original="Password Rule">Password Rule</value>
+ <row id="200002" trl="Y">
+  <value column="Name" original="Password Rule">Regra de Senha</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1959,9 +1959,9 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200016" trl="N">
-  <value column="Name" original="Active Session">Active Session</value>
-  <value column="Description" original="List of Current Logged in user">List of Current Logged in user</value>
+ <row id="200016" trl="Y">
+  <value column="Name" original="Active Session">Sessões Ativas</value>
+  <value column="Description" original="List of Current Logged in user">Lista de usuários logados no momento</value>
   <value column="Help" original=""/>
  </row>
  <row id="200017" trl="Y">

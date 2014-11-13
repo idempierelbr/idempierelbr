@@ -1251,7 +1251,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="454" trl="Y">
-  <value column="Name" original="Client+Organization">Empresa+Organização</value>
+  <value column="Name" original="Client+Organization">Empresa e Organização</value>
   <value column="Description" original=""/>
  </row>
  <row id="455" trl="Y">
@@ -1787,15 +1787,15 @@
   <value column="Description" original=""/>
  </row>
  <row id="591" trl="Y">
-  <value column="Name" original="Accessing">Acessando</value>
+  <value column="Name" original="Accessing">Acesso</value>
   <value column="Description" original="General Access">Acesso Geral</value>
  </row>
  <row id="592" trl="Y">
-  <value column="Name" original="Reporting">Gerando o Relatório</value>
+  <value column="Name" original="Reporting">Relatório</value>
   <value column="Description" original=""/>
  </row>
  <row id="593" trl="Y">
-  <value column="Name" original="Exporting">Exportando</value>
+  <value column="Name" original="Exporting">Exportação</value>
   <value column="Description" original=""/>
  </row>
  <row id="594" trl="Y">
@@ -2003,15 +2003,15 @@
   <value column="Description" original=""/>
  </row>
  <row id="648" trl="Y">
-  <value column="Name" original="Re-Create Translation">Re-Criar Tradução</value>
+  <value column="Name" original="Re-Create Translation">Recriar Traduções</value>
   <value column="Description" original=""/>
  </row>
  <row id="649" trl="Y">
-  <value column="Name" original="Add Missing Translations">Adicionar traduções faltantes</value>
+  <value column="Name" original="Add Missing Translations">Inserir Traduções Inexistentes</value>
   <value column="Description" original=""/>
  </row>
  <row id="650" trl="Y">
-  <value column="Name" original="Delete Translation">Apagar tradução</value>
+  <value column="Name" original="Delete Translation">Excluir Traduções</value>
   <value column="Description" original=""/>
  </row>
  <row id="651" trl="Y">
@@ -2043,15 +2043,15 @@
   <value column="Description" original=""/>
  </row>
  <row id="658" trl="Y">
-  <value column="Name" original="Quote Total only">Cotar somente o Total</value>
+  <value column="Name" original="Quote Total only">Cotar Somente o Valor Total</value>
   <value column="Description" original=""/>
  </row>
  <row id="659" trl="Y">
-  <value column="Name" original="Quote Selected Lines">Cotar Linhas Selecionadas</value>
+  <value column="Name" original="Quote Selected Lines">Permite Cotar Apenas Linhas de Interesse</value>
   <value column="Description" original=""/>
  </row>
  <row id="660" trl="Y">
-  <value column="Name" original="Quote All Lines">Cotar Todas as Linhas</value>
+  <value column="Name" original="Quote All Lines">Obrigatório Cotar Todas as Linhas</value>
   <value column="Description" original=""/>
  </row>
  <row id="661" trl="Y">
@@ -2795,11 +2795,11 @@
   <value column="Description" original=""/>
  </row>
  <row id="850" trl="Y">
-  <value column="Name" original="Evaluation">Evaluation</value>
+  <value column="Name" original="Evaluation">Avaliação</value>
   <value column="Description" original=""/>
  </row>
  <row id="851" trl="Y">
-  <value column="Name" original="Implementation">Implementation</value>
+  <value column="Name" original="Implementation">Implementação</value>
   <value column="Description" original=""/>
  </row>
  <row id="852" trl="Y">
@@ -3371,16 +3371,16 @@
   <value column="Description" original=""/>
  </row>
  <row id="53228" trl="Y">
-  <value column="Name" original="System">System</value>
-  <value column="Description" original="Just allowed system configuration">Just allowed system configuration</value>
+  <value column="Name" original="System">Sistema</value>
+  <value column="Description" original="Just allowed system configuration">Configuração a nível de Sistema</value>
  </row>
  <row id="53229" trl="Y">
-  <value column="Name" original="Client">Client</value>
-  <value column="Description" original="Allowed system and client configuration">Allowed system and client configuration</value>
+  <value column="Name" original="Client">Empresa</value>
+  <value column="Description" original="Allowed system and client configuration">Configuração a nível de Empresa</value>
  </row>
  <row id="53230" trl="Y">
-  <value column="Name" original="Organization">Organization</value>
-  <value column="Description" original="Allowed system, client and organization configuration">Allowed system, client and organization configuration</value>
+  <value column="Name" original="Organization">Organização</value>
+  <value column="Description" original="Allowed system, client and organization configuration">Configuração a nível de Organização</value>
  </row>
  <row id="53232" trl="Y">
   <value column="Name" original="Maintenance Order">Ordem de Manutenção</value>
@@ -4198,12 +4198,12 @@
   <value column="Name" original="Make-To-Kit">Make-To-Kit</value>
   <value column="Description" original="Create a Manufacturing Order, Receipt the finish product and issue the Components automaticaly ">Create a Manufacturing Order, Receipt the finish product and issue the Components automaticaly </value>
  </row>
- <row id="53451" trl="N">
-  <value column="Name" original="Constant">Constant</value>
+ <row id="53451" trl="Y">
+  <value column="Name" original="Constant">Constante</value>
   <value column="Description" original=""/>
  </row>
- <row id="53452" trl="N">
-  <value column="Name" original="Free">Free</value>
+ <row id="53452" trl="Y">
+  <value column="Name" original="Free">Livre</value>
   <value column="Description" original=""/>
  </row>
  <row id="53453" trl="Y">

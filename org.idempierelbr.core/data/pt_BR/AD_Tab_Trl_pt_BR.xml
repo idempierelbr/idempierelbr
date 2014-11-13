@@ -105,28 +105,28 @@
   <value column="Help" original=""/>
  </row>
  <row id="118" trl="Y">
-  <value column="Name" original="User Contact">User Contact</value>
+  <value column="Name" original="User Contact">Usuário</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain User or Business Partner Contact">Maintain User or Business Partner Contact</value>
-  <value column="Help" original="The User Tab defines the log in for Users who have access to the system.  For application access, users need to have a role assigned.">A Aba "Usuário" define o "login" para Usuários que têm acesso ao sistema.  For application access, users need to have a role assigned.</value>
+  <value column="Description" original="Maintain User or Business Partner Contact">Gerenciamento de Contatos e Usuários do Sistema</value>
+  <value column="Help" original="The User Tab defines the log in for Users who have access to the system.  For application access, users need to have a role assigned.">A aba Usuário define informações de login para aqueles que acessam o sistema. Para acesso ao sistema, é preciso também um perfil de acesso associado.</value>
  </row>
  <row id="119" trl="Y">
-  <value column="Name" original="Role">Papel (Função)</value>
+  <value column="Name" original="Role">Perfil de Acesso</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define responsibility roles">Definir funções (papéis) e responsabilidades</value>
-  <value column="Help" original="Define the role and add the client and organizations the role has access to. You can give users access to this role and modify the access of this role to windows, forms, processes and reports as well as tasks. &lt;br&gt;&#10;If the Role User Level is Manual, the assigned acces rights are not automatically updated (e.g. if a role has a restricted number of Windows/Processes it can access). You need to add organizational access unless the role has access to all organizations. The SuperUser and the user creating a new role are assigned to the role automatically.  &lt;br&gt;&#10;If you select an Organization Tree, the user has access to the leaves of  summary organizations.&#10;Note: You cannot change the System Administrator role."><![CDATA[Define a função (papel) e acrescenta as empresas e organizações a que esta função tem acesso. Você pode dar acesso de usuários a esta função (papel) e modificar o acesso desta função a janelas, formulários, processos e relatórios assim como tarefas. <br> Se o Nível de Usuário de Função estiver em Manual, os direitos de acesso designados não são automaticamente atualizados (ex. se um papel tiver um número restrito de Janelas/Processos que ele pode acessar). Você precisa adicionar acesso organizacional a menos que o papel (função) tenha acesso a todas as organizações. O novo Papel (Função) é atribuido automaticamente ao SuperUsuário e ao usuário que estiver criando o papel.  <br> Se você selecionar uma Árvore de Organizacional, o usuário terá acesso às folhas das sub Organizações. Nota: Você não pode alterar o papel do Administrador do Sistema.]]></value>
+  <value column="Description" original="Define responsibility roles">Definir perfis de acesso e responsabilidades</value>
+  <value column="Help" original="Define the role and add the client and organizations the role has access to. You can give users access to this role and modify the access of this role to windows, forms, processes and reports as well as tasks. &lt;br&gt;&#10;If the Role User Level is Manual, the assigned acces rights are not automatically updated (e.g. if a role has a restricted number of Windows/Processes it can access). You need to add organizational access unless the role has access to all organizations. The SuperUser and the user creating a new role are assigned to the role automatically.  &lt;br&gt;&#10;If you select an Organization Tree, the user has access to the leaves of  summary organizations.&#10;Note: You cannot change the System Administrator role."><![CDATA[Define perfis de acesso e acrescenta as empresas e organizações a que este perfil tem acesso. Você pode dar acesso de usuários a este perfil e modificar o acesso deste perfil a janelas, formulários, processos e relatórios assim como tarefas. <br> Se o Nível de Usuário de Função estiver em Manual, os direitos de acesso designados não são automaticamente atualizados (ex. se um perfil tiver um número restrito de Janelas/Processos que ele pode acessar). Você precisa adicionar acesso organizacional a menos que o perfil tenha acesso a todas as organizações. O novo perfil é atribuido automaticamente ao SuperUsuário e ao usuário que estiver criando o perfil.  <br> Se você selecionar uma Árvore de Organizacional, o usuário terá acesso às folhas das sub Organizações. Nota: Você não pode alterar o perfil do Administrador do Sistema.]]></value>
  </row>
  <row id="120" trl="Y">
-  <value column="Name" original="User Assignment">Designação de Usuário</value>
+  <value column="Name" original="User Assignment">Usuário</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Users with this Role">Usuários com esta Função (papel)</value>
-  <value column="Help" original="The User Assignment Tab displays Users who have been defined for this Role.">A Aba "Designação de Usuários" mostra usuários que tenham sido definidos para esta Função (Papel).</value>
+  <value column="Description" original="Users with this Role">Usuários com esta Perfil</value>
+  <value column="Help" original="The User Assignment Tab displays Users who have been defined for this Role.">A Aba "Usuário" mostra usuários que tenham sido definidos para este Perfil.</value>
  </row>
  <row id="121" trl="Y">
-  <value column="Name" original="User Roles">Funções de Usuários</value>
+  <value column="Name" original="User Roles">Perfil de Acesso</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="User Roles">Funções de Usuários</value>
-  <value column="Help" original="The User Roles Tab define the Roles each user may have.  The Roles will determine what windows, tasks, processes and workflows that a User has access to.">A Aba "Funções de Usuários" define as Funções (papéis) que cada usuário pode assumir.  As Funções vão determinar quais janelas, tarefas, processos e fluxos de trabalho a que um determinado usuário terá acesso.</value>
+  <value column="Description" original="User Roles">Perfil de Acesso</value>
+  <value column="Help" original="The User Roles Tab define the Roles each user may have.  The Roles will determine what windows, tasks, processes and workflows that a User has access to.">A Aba "Perfil de Acesso" define os perfis que cada usuário pode assumir. Os perfis determinam quais janelas, tarefas, processos e fluxos de trabalho um determinado usuário terá acesso.</value>
  </row>
  <row id="122" trl="Y">
   <value column="Name" original="Node">Nó</value>
@@ -213,9 +213,9 @@
   <value column="Help" original="The Country Tab defines any country in which you do business.  Values entered here are referenced in location records for Business Partners.">A Aba "País" define qualquer país com o qual você negocia.  Valores digitados aqui são referenciados em registros de localização de Parceiros de Negócios.</value>
  </row>
  <row id="136" trl="Y">
-  <value column="Name" original="Region">Região</value>
+  <value column="Name" original="Region">Região (UF)</value>
   <value column="CommitWarning" original="Please create a support request (http://www.idempiere.org/support/requests.html), if the region info is not correct/incomplete.">Por favor crie uma solicitação de suporte (http://www.adempiere.org/support/requests.html), se as informações de região não estiverem corretas ou forem incompletas.</value>
-  <value column="Description" original="Define Regions">Definir Regiões</value>
+  <value column="Description" original="Define Regions">Definir Regiões (UFs)</value>
   <value column="Help" original="The Region Tab  defines a Region within a Country.  This tab is enabled only if the Has Region checkbox is selected for the Country.">A Aba "Região" define uma Região dentro de um País.  Esta Aba é habilitada somente se a caixa de verificação Tem Região for selecionada para o país.</value>
  </row>
  <row id="143" trl="Y">
@@ -689,10 +689,10 @@
   <value column="Help" original=""/>
  </row>
  <row id="243" trl="Y">
-  <value column="Name" original="Tree">Árvore</value>
+  <value column="Name" original="Tree">Árvore (Tree)</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Tree">Árvore</value>
-  <value column="Help" original="The Tree Tab defines a Tree which will be displayed.">A Aba "Árvore" define a Árvore a ser mostrada.</value>
+  <value column="Help" original="The Tree Tab defines a Tree which will be displayed.">A Aba "Árvore (Tree)" define a Árvore a ser mostrada.</value>
  </row>
  <row id="245" trl="Y">
   <value column="Name" original="Report &amp; Process">Relatório e Processo</value>
@@ -942,28 +942,28 @@
   <value column="Help" original=""/>
  </row>
  <row id="304" trl="Y">
-  <value column="Name" original="Window Access">Acesso a Janelas</value>
+  <value column="Name" original="Window Access">Acesso a Janela</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Window Access">Acesso a Janelas</value>
-  <value column="Help" original="The Window Access Tab defines the Windows and type of access that this Role is granted.">A Aba "Acesso a Janelas" define as Janelas e o tipo de acesso que é outorgado a este Papel (Função).</value>
+  <value column="Description" original="Window Access">Acesso a Janela</value>
+  <value column="Help" original="The Window Access Tab defines the Windows and type of access that this Role is granted.">A Aba "Acesso a Janela" define as Janelas e o tipo de acesso que é outorgado a este Perfil.</value>
  </row>
  <row id="305" trl="Y">
-  <value column="Name" original="Process Access">Acesso a Processos</value>
+  <value column="Name" original="Process Access">Acesso a Processo</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Process Access">Acesso a Processos</value>
-  <value column="Help" original="The Process Access Tab defines the Processes and type of access that this Role is granted.">A Aba "Acesso a Processos" define os Processos e o tipo de acesso que é outorgado a este Papel (Função).</value>
+  <value column="Description" original="Process Access">Acesso a Processo</value>
+  <value column="Help" original="The Process Access Tab defines the Processes and type of access that this Role is granted.">A Aba "Acesso a Processo" define os Processos e o tipo de acesso que é outorgado a este Perfil.</value>
  </row>
  <row id="306" trl="Y">
-  <value column="Name" original="Form Access">Acesso a Formulários</value>
+  <value column="Name" original="Form Access">Acesso a Formulário</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Form Access">Acesso a Formulários</value>
-  <value column="Help" original="The Form Access Tab defines the Forms and type of access that this Role is granted.">A Aba "Acesso a Formulários" define os Formulários e o tipo de acesso que é outorgado a este Papel (Função).</value>
+  <value column="Description" original="Form Access">Acesso a Formulário</value>
+  <value column="Help" original="The Form Access Tab defines the Forms and type of access that this Role is granted.">A Aba "Acesso a Formulário" define os Formulários e o tipo de acesso que é outorgado a este Perfil.</value>
  </row>
  <row id="307" trl="Y">
-  <value column="Name" original="Workflow Access">Acesso a Fluxos de Trabalho</value>
+  <value column="Name" original="Workflow Access">Acesso a Fluxo de Trabalho</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Access">Acesso a Fluxos de Trabalho</value>
-  <value column="Help" original="The Workflow Access Tab defines the Workflows and type of access that this Role is granted.">A Aba "Acesso a Fluxos de Trabalho" define os Fluxos de Trabalho e o tipo de acesso que é outorgado a este Papel (Função).</value>
+  <value column="Description" original="Workflow Access">Acesso a Fluxo de Trabalho</value>
+  <value column="Help" original="The Workflow Access Tab defines the Workflows and type of access that this Role is granted.">A Aba "Acesso a Fluxo de Trabalho" define os Fluxos de Trabalho e o tipo de acesso que é outorgado a este Perfil.</value>
  </row>
  <row id="308" trl="Y">
   <value column="Name" original="Report Access">Acesso</value>
@@ -996,10 +996,10 @@
   <value column="Help" original="The Workflow Access Tab defines the Roles who have access to this Workflow. ">A Aba "Acesso a Fluxos de Trabalho" define os Papéis (Funções) que tem acesso a este Fluxo de Trabalho. </value>
  </row>
  <row id="313" trl="Y">
-  <value column="Name" original="Task Access">Acesso a Tarefas</value>
+  <value column="Name" original="Task Access">Acesso a Tarefa</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Task Access">Acesso a Tarefas</value>
-  <value column="Help" original="The Task Access Tab defines the Task and type of access that this Role is granted.">A Aba "Acesso a Tarefas" define as Tarefas e o tipo de acesso que é outorgado a este Papel (Função).</value>
+  <value column="Description" original="Task Access">Acesso a Tarefa</value>
+  <value column="Help" original="The Task Access Tab defines the Task and type of access that this Role is granted.">A Aba "Acesso a Tarefa" define as Tarefas e o tipo de acesso que é outorgado a este Perfil.</value>
  </row>
  <row id="314" trl="Y">
   <value column="Name" original="Error Message">Mensagem de Erro</value>
@@ -1201,10 +1201,10 @@ Imprimindo: - Usualmente, somente a informação da LDM é impressa - Para fatur
   <value column="Help" original="View Allocation Line Details">Visualizar Detalhes das Linhas de Alocação</value>
  </row>
  <row id="351" trl="Y">
-  <value column="Name" original="Org Access">Acesso Org</value>
+  <value column="Name" original="Org Access">Acesso a Organização</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Role Org Access">Gerenciamento de Acesso do Papel (Função) à Organização</value>
-  <value column="Help" original="Add the client and organizations the user has access to. Entries here are ignored, if User Org Access is selected or the role has access to all roles.&lt;br&gt;&#10;Note that access information is cached and requires re-login or reset of cache."><![CDATA[Acrescentar as Empresas e Organizações a que o usuário tem acesso. Estes lançamentos serão ignorados se o "Acesso de Usuários à Organização" for selecionado ou o papel tiver acesso a todos os papéis.<br> Note que a informação de acesso é memorizada e requer re-login ou reset da memória cache.]]></value>
+  <value column="Description" original="Maintain Role Org Access">Gerenciamento de Acesso do Perfil a Organização</value>
+  <value column="Help" original="Add the client and organizations the user has access to. Entries here are ignored, if User Org Access is selected or the role has access to all roles.&lt;br&gt;&#10;Note that access information is cached and requires re-login or reset of cache."><![CDATA[Acrescentar as Empresas e Organizações a que o usuário tem acesso. Estes lançamentos serão ignorados se o "Acesso de Usuários a Organização" for selecionado ou o perfil tiver acesso a todos os papéis.<br> Note que a informação de acesso é memorizada e requer re-login ou reset da memória cache.]]></value>
  </row>
  <row id="352" trl="Y">
   <value column="Name" original="Payment Selection">Seleção de Pagamentos</value>
@@ -1394,9 +1394,9 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="In this tab, you define the documents used for this bank account.  You define your check and other payment document (sequence) number as well as format.">A Aba "Documento de Conta Bancária" define os documentos utilizados para esta conta bancária.  Você define seu cheque e outro número de documento de pagamento (seqüência) assim como o formato.</value>
  </row>
  <row id="387" trl="Y">
-  <value column="Name" original="System Color">Cor do Sistema</value>
+  <value column="Name" original="System Color">Cor no Sistema</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="System color for backgrounds and indicators">Cor do Sistema para pano de fundo e indicadores</value>
+  <value column="Description" original="System color for backgrounds and indicators">Cor no Sistema para pano de fundo e indicadores de desempenho</value>
   <value column="Help" original=""/>
  </row>
  <row id="388" trl="Y">
@@ -1732,25 +1732,25 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="The Language needs to be a (verified) System Language">O Idioma precisa ser um Idioma de Sistema (verificado)</value>
  </row>
  <row id="446" trl="Y">
-  <value column="Name" original="Element Translation">Tradução de Elemento</value>
+  <value column="Name" original="Element Translation">Tradução de Elementos</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="447" trl="Y">
-  <value column="Name" original="Message Translation">Tradução de Mensagem</value>
+  <value column="Name" original="Message Translation">Tradução de Mensagens</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="448" trl="Y">
-  <value column="Name" original="Window Translation">Tradução de Janela</value>
+  <value column="Name" original="Window Translation">Tradução de Janelas</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="449" trl="Y">
-  <value column="Name" original="Process Translation">Tradução de Processo</value>
+  <value column="Name" original="Process Translation">Tradução de Processos</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -1942,28 +1942,28 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Validate and Import Inventory Transactions. The Locator is primarily determined by the Locator Key, then the Warehouse and X,Y,Z fields.&lt;p&gt;&#10;A Physical Inventory is created per Warehouse and Movement Date."><![CDATA[Validar e Importar Transações de Estoque. O Localizador é primariamente determinado pela Chave de Localização, então o Armazém e os Campos X,Y,Z.<p> Um Estoque Físico é criado por Armazém e Data de Movimentação.]]></value>
  </row>
  <row id="482" trl="Y">
-  <value column="Name" original="Table Access">Acesso de Tabela</value>
+  <value column="Name" original="Table Access">Acesso a Tabela</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Table Access">Gerenciamento de Acesso de Tabela</value>
-  <value column="Help" original="If listed here, the Role can(not) access all data of this table, even if the role has access to the functionality.&#10;&lt;br&gt;If you Include Access to a table and select Read Only, you can only read data (otherwise full access).&#10;&lt;br&gt;If you Exclude Access to a table and select Read Only, you can only read data (otherwise no access).&#10;&lt;br&gt;Please note that table access rules here are in addition to the Data Access Levels defined for a Table and the User Level defined for a Role. These rules are evaulated first and you only need to define the exceptions to these rules here.&#10;&lt;p&gt;&#10;Note that access information is cached and requires re-login or reset of cache. Be aware that if you use Include rules, that you need to include also several supporting entiries. As an alternative, grant access only to functionality required."><![CDATA[Se listado aqui, o Papel (Função) pode (ou não) acessar todos os dados desta tabela, mesmo se o Papel (Função) tiver acesso à funcionalidade. <br>Se você "Inclui Acesso" a uma Tabela e seleciona "Somente Leitura", você pode somente ler os dados (senão, terá acesso completo). <br>Se você "Exclui Acesso" a uma Tabela e seleciona "Somente Leitura", você pode somente ler os dados (senão, não terá acesso). <br>Por favor, note que as regras de acesso a tabelas aqui são em adição aos Níveis de Acesso de Dados definidos para uma Tabela e o Nível de Usuário definido para um Papel (Função). Estas regras são avaliadas primeiro e você somente precisa definir as exceções a estas regras aqui. <p> Note que a informação de acesso é memorizada e requer re-login ou reset da memória cache. Esteja ciente que se você usa "Regras de Inclusão", que você necessita incluir também diversas entidades de apoio. Como uma alternativa, outorgue acesso somente à funcionalidade exigida.]]></value>
+  <value column="Description" original="Maintain Table Access">Gerenciamento de Acessos a Tabela</value>
+  <value column="Help" original="If listed here, the Role can(not) access all data of this table, even if the role has access to the functionality.&#10;&lt;br&gt;If you Include Access to a table and select Read Only, you can only read data (otherwise full access).&#10;&lt;br&gt;If you Exclude Access to a table and select Read Only, you can only read data (otherwise no access).&#10;&lt;br&gt;Please note that table access rules here are in addition to the Data Access Levels defined for a Table and the User Level defined for a Role. These rules are evaulated first and you only need to define the exceptions to these rules here.&#10;&lt;p&gt;&#10;Note that access information is cached and requires re-login or reset of cache. Be aware that if you use Include rules, that you need to include also several supporting entiries. As an alternative, grant access only to functionality required.">Se definido aqui, o perfil pode (ou não) acessar os dados da tabela, mesmo se o perfil tiver acesso à funcionalidade. Se você incluir acesso (opção 'Excluir' desmarcada) a uma tabela e selecionar a opção 'Somente Leitura', é possível apenas a leitura de dados (caso contrário, terá acesso completo). Se você  excluir acesso (opção 'Excluir' selecionada) a uma tabela e selecionar a opção 'Somente Leitura', é possível apenas a leitura de dados (caso contrário, não terá nenhum acesso). Observe que essas regras são apenas exceções às configurações da janela Tabela e Coluna, e da janela Perfil de Acesso. As informações desta janela são armazenadas em cache.</value>
  </row>
  <row id="483" trl="Y">
-  <value column="Name" original="Record Access">Acesso de Registro</value>
+  <value column="Name" original="Record Access">Acesso a Registro</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Record Access">Gerenciamento de Acesso de Registro</value>
-  <value column="Help" original="You create Record Access records by enabling &quot;Personal Lock&quot; for the administrative role and Ctl-Lock (holding the Ctrl key while clicking on the Lock button).&#10;&lt;p&gt;&#10;If listed here, the Role can(not) access the data records of this table, even if the role has access to the functionality.&#10;&lt;br&gt;If you Include Access to a record and select Read Only, you can only read data (otherwise full access).&#10;&lt;br&gt;If you Exclude Access to a recorf and select Read Only, you can only read data (otherwise no access).&#10;Note that access information is cached and requires re-login or reset of cache."><![CDATA[Você cria registros de "Acesso de Registro" habilitando "Trava Pessoal" para o Papel (Função) administrativo e dando um Ctl-Lock (segurando a tecla Ctrl ao clicar o Botão de Trava). <p> Se listado aqui, o Papel (Função) pode (ou não) acessar os registros de dados desta tabela, mesmo se o Papel (Função) tiver acesso à funcionalidade. <br>Se você "Inclui Acesso" a um registro e seleciona "Somente Leitura", você pode somente ler os dados (senão, terá acesso completo). <br>Se você "Exclui Acesso" a uma registro e seleciona "Somente Leitura", você pode somente ler os dados (senão, não terá acesso). Note que a informação de acesso é memorizada e requer re-login ou reset da memória cache.]]></value>
+  <value column="Description" original="Maintain Record Access">Gerenciamento de Acessos a Registro</value>
+  <value column="Help" original="You create Record Access records by enabling &quot;Personal Lock&quot; for the administrative role and Ctl-Lock (holding the Ctrl key while clicking on the Lock button).&#10;&lt;p&gt;&#10;If listed here, the Role can(not) access the data records of this table, even if the role has access to the functionality.&#10;&lt;br&gt;If you Include Access to a record and select Read Only, you can only read data (otherwise full access).&#10;&lt;br&gt;If you Exclude Access to a recorf and select Read Only, you can only read data (otherwise no access).&#10;Note that access information is cached and requires re-login or reset of cache.">Usuários podem definir registros privados se a opção 'Pode Definir Registros Privados' (janela Perfil de Acesso) estiver selecionada. Após isso, ao visualizar o registro em uma janela, basta pressionar Control e clicar no botão Acesso Privado. Se definido aqui, o perfil pode (ou não) acessar o registro, mesmo se o perfil tiver acesso à funcionalidade. Se você incluir acesso (opção 'Excluir' desmarcada) a um registro e selecionar a opção 'Somente Leitura', é possível apenas a leitura de dados (caso contrário, terá acesso completo). Se você  excluir acesso (opção 'Excluir' selecionada) a uma tabela e selecionar a opção 'Somente Leitura', é possível apenas a leitura de dados (caso contrário, não terá nenhum acesso). As informações desta janela são armazenadas em cache.</value>
  </row>
  <row id="484" trl="Y">
-  <value column="Name" original="Column Access">Acesso de Coluna</value>
+  <value column="Name" original="Column Access">Acesso a Coluna</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Column Access">Gerenciamento de Acesso de Coluna</value>
-  <value column="Help" original="If listed here, the Role can(not) access the column of this table, even if the role has access to the functionality.&#10;&lt;br&gt;If you Include Access to a column and select Read Only, you can only read data (otherwise full access).&#10;&lt;br&gt;If you Exclude Access to a column and select Read Only, you can only read data (otherwise no access).&#10;Note that access information is cached and requires re-login or reset of cache."><![CDATA[Se listado aqui, o Papel (Função) pode (ou não) acessar as colunas desta tabela, mesmo se o Papel (Função) tiver acesso à funcionalidade. <br>Se você "Inclui Acesso" a uma coluna e seleciona "Somente Leitura", você pode somente ler os dados (senão, terá acesso completo). <br>Se você "Exclui Acesso" a uma coluna e seleciona "Somente Leitura", você pode somente ler os dados (senão, não terá acesso). Note que a informação de acesso é memorizada e requer re-login ou reset da memória cache.]]></value>
+  <value column="Description" original="Maintain Column Access">Gerenciamento de Acessos a Coluna</value>
+  <value column="Help" original="If listed here, the Role can(not) access the column of this table, even if the role has access to the functionality.&#10;&lt;br&gt;If you Include Access to a column and select Read Only, you can only read data (otherwise full access).&#10;&lt;br&gt;If you Exclude Access to a column and select Read Only, you can only read data (otherwise no access).&#10;Note that access information is cached and requires re-login or reset of cache.">Se definido aqui, o perfil pode (ou não) acessar os dados da coluna de uma tabela, mesmo se o perfil tiver acesso à funcionalidade. Se você incluir acesso (opção 'Excluir' desmarcada) a uma tabela e selecionar a opção 'Somente Leitura', é possível apenas a leitura de dados (caso contrário, terá acesso completo). Se você  excluir acesso (opção 'Excluir' selecionada) a uma tabela e selecionar a opção 'Somente Leitura', é possível apenas a leitura de dados (caso contrário, não terá nenhum acesso). As informações desta janela são armazenadas em cache.</value>
  </row>
  <row id="485" trl="Y">
-  <value column="Name" original="Role">Papel (Função)</value>
+  <value column="Name" original="Role">Perfil de Acesso</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Role with Data Access Restriction">Papel (Função) com Restrição de Acesso de Dados</value>
-  <value column="Help" original="Select Role for with Data Access Restrictions.&#10;Note that access information is cached and requires re-login or reset of cache.">Selecione o Papel (Função) com Restrição de Acesso de Dados. Note que a informação de acesso é memorizada e requer re-login ou reset da memória cache.</value>
+  <value column="Description" original="Role with Data Access Restriction">Perfil de Acesso com Restrição de Acesso a Dados</value>
+  <value column="Help" original="Select Role for with Data Access Restrictions.&#10;Note that access information is cached and requires re-login or reset of cache.">Selecione o Perfil com Restrição de Acesso a Dados. Observe que essas informações são armazenadas em cache, portanto é necessário limpar o cache após alterações.</value>
  </row>
  <row id="486" trl="Y">
   <value column="Name" original="Advertisement">Anúncio</value>
@@ -1978,7 +1978,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Log of data changes">Registro de alterações de dados</value>
  </row>
  <row id="488" trl="Y">
-  <value column="Name" original="Change Audit">Auditoria de Alterações</value>
+  <value column="Name" original="Change Audit">Auditoria de Alteração</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Log of data changes">Registro de alterações de dados</value>
   <value column="Help" original="Log of data changes">Registro de alterações de dados</value>
@@ -2207,7 +2207,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="528" trl="Y">
-  <value column="Name" original="Reference List Translation">Tradução de Lista de Referência</value>
+  <value column="Name" original="Reference List Translation">Tradução de Listas de Referência</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -2225,7 +2225,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Run Synchronize Terminology to update menu translation. You need only to translate Fields, which are not centrally maintained.">Rode Sincronizar Terminologia para atualizar a tradução do menu. Você necessita apenas traduzir Campos que não forem mantidos centralizadamente.</value>
  </row>
  <row id="531" trl="Y">
-  <value column="Name" original="Form Translation">Tradução de Formulário</value>
+  <value column="Name" original="Form Translation">Tradução de Formulários</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -2237,13 +2237,13 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="533" trl="Y">
-  <value column="Name" original="Workflow Translation">Tradução de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Translation">Tradução de Fluxos de Trabalho</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="534" trl="Y">
-  <value column="Name" original="Workflow Node Translation">Tradução de Nó de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Node Translation">Tradução de Nós de Fluxo de Trabalho</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -2471,9 +2471,9 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="573" trl="Y">
-  <value column="Name" original="User Substitute">Substituto do Usuário</value>
+  <value column="Name" original="User Substitute">Substituto</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Substitute of the user">Substituto do Usuário</value>
+  <value column="Description" original="Substitute of the user">Substituto</value>
   <value column="Help" original="A user who can act for this user.">Um usuário que pode atuar por este usuário.</value>
  </row>
  <row id="574" trl="Y">
@@ -2999,15 +2999,15 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="664" trl="Y">
-  <value column="Name" original="Parameter Audit">Parâmetros de Auditoria</value>
+  <value column="Name" original="Parameter Audit">Auditoria de Parâmetro</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Audit Process Parameter Values">Auditar Valores de Parâmetros de Processo</value>
+  <value column="Description" original="Audit Process Parameter Values">Auditar os Parâmetros do Processo</value>
   <value column="Help" original=""/>
  </row>
  <row id="665" trl="Y">
-  <value column="Name" original="Log">Registro</value>
+  <value column="Name" original="Log">Log</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Process Log">Registro (log) de Processo</value>
+  <value column="Description" original="Process Log">Logs do Processo</value>
   <value column="Help" original=""/>
  </row>
  <row id="666" trl="Y">
@@ -3191,10 +3191,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="A new invoice is created, if there is a different Document Number, Business Partner or Location (address).&#10;Note that the Document Number may be overwritten - depending on the Number control of the selected Document Type.">Você pode criar faturas contendo uma ou mais despesas. Para criar por exemplo, uma única fatura com duas despesas diferentes, crie duas linhas com os mesmos valores nos campos Número do Documento, Parceiro de Negócios e Localização do Parceiro. O sistema verifica e agrupa automaticamente numa mesma fatura as despesas que possuem valores idênticos para esses três campos. Atenção: o Número do Documento pode ser alterado pelo sistema, dependendo das configurações do Tipo de Documento.</value>
  </row>
  <row id="696" trl="Y">
-  <value column="Name" original="Org Access">Acesso Org</value>
+  <value column="Name" original="Org Access">Acesso a Organização</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain User Org Access">Gerenciamento de Acesso de Usuários à Organização</value>
-  <value column="Help" original="Add the client and organizations the user has access to. Entries here are ignored, if in the Role, User Org Access is not selected or the role has access to all roles.&lt;br&gt;&#10;Note that access information is cached and requires re-login or reset of cache."><![CDATA[Acrescentar as Empresas e Organizações a que o usuário tem acesso. Estes lançamentos serão ignorados se, neste papel, o "Acesso de Usuários à Organização" não for selecionado ou o papel tiver acesso a todos os papéis.<br> Note que a informação de acesso é memorizada e requer re-login ou reset da memória cache.]]></value>
+  <value column="Description" original="Maintain User Org Access">Gerenciamento de Acesso de Usuários a Organização</value>
+  <value column="Help" original="Add the client and organizations the user has access to. Entries here are ignored, if in the Role, User Org Access is not selected or the role has access to all roles.&lt;br&gt;&#10;Note that access information is cached and requires re-login or reset of cache.">Adicione as empresas e organizações que o usuário possui acesso. Os registros nesta aba são ignorados se a opção 'Acesso do Usuário à Organização' (janela Perfil de Acesso) estiver desmarcada ou o perfil tiver acesso a todos os perfis de acesso. Observe que informações de acesso ficam armazenadas em cache, portanto para efetivar qualquer alteração é necessário limpar o cache ou o usuário deve fazer o login novamente.</value>
  </row>
  <row id="697" trl="Y">
   <value column="Name" original="Landed Costs">Custo de Entrada</value>
@@ -3269,10 +3269,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="709" trl="Y">
-  <value column="Name" original="User Mail">Enviar mensagem para usuário</value>
+  <value column="Name" original="User Mail">E-mails Enviados</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Mail sent to the user">O email foi enviado ao usuário</value>
-  <value column="Help" original="Archive of mails sent to users">Arquivo de emails enviados a usuários</value>
+  <value column="Description" original="Mail sent to the user">E-mails enviados ao usuário</value>
+  <value column="Help" original="Archive of mails sent to users">Arquivo dos e-mails enviados a usuários</value>
  </row>
  <row id="710" trl="Y">
   <value column="Name" original="Web Store">Loja de Web</value>
@@ -3539,9 +3539,9 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="If on User level, &quot;Full BP Access&quot; is NOT selected, you need to give access explicitly here. ">Se na aba Contato (Usuário) o campo Acesso Total ao Parceiro estiver desmarcado, é necessário preencher esta aba para que o mesmo tenha algum direito de acesso às informações do Parceiro.</value>
  </row>
  <row id="757" trl="Y">
-  <value column="Name" original="Queries">Perguntas</value>
+  <value column="Name" original="Queries">Pesquisas Salvas</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="View and maintain saved queries">Visualizar e gerenciar as perguntas salvas</value>
+  <value column="Description" original="View and maintain saved queries">Visualizar e gerenciar as pesquisas salvas</value>
   <value column="Help" original=""/>
  </row>
  <row id="758" trl="Y">
@@ -3671,10 +3671,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="779" trl="Y">
-  <value column="Name" original="Color Schema">Color Schema</value>
+  <value column="Name" original="Color Schema">Esquema de Cores</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Performance Color Schema">Performance Color Schema</value>
-  <value column="Help" original="Visual representation of performance by color.  The Schema has often three levels (e.g. red-yellow-green).  iDempiere support two levels (e.g. red-green) or four levels (e.g. gray-bronce-silver-gold).  Note that Measures without a goal are represented white.  The percentages could be beween 0 and unlimited (i.e. above 100%).">Visual representation of performance by color.  The Schema has often three levels (e.g. red-yellow-green).  Compiere support two levels (e.g. red-green) or four levels (e.g. gray-bronce-silver-gold).  Note that Measures without a goal are represented white.  The percentages could be beween 0 and unlimited (i.e. above 100%).</value>
+  <value column="Description" original="Performance Color Schema">Esquema de Cores de Desempenho</value>
+  <value column="Help" original="Visual representation of performance by color.  The Schema has often three levels (e.g. red-yellow-green).  iDempiere support two levels (e.g. red-green) or four levels (e.g. gray-bronce-silver-gold).  Note that Measures without a goal are represented white.  The percentages could be beween 0 and unlimited (i.e. above 100%).">Representação visual do desempenho através de cores. O esquema normalmente possui três níveis (ex: vermelho, amarelo, verde). As porcentagens podem ser entre 0 e infinito (ex: acima de 100%).</value>
  </row>
  <row id="780" trl="Y">
   <value column="Name" original="Restriction">Restrição</value>
@@ -4073,9 +4073,9 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="851" trl="Y">
-  <value column="Name" original="LDAP Access">LDAP Access</value>
+  <value column="Name" original="LDAP Access">Acesso LDAP</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="User Access via LDAP">User Access via LDAP</value>
+  <value column="Description" original="User Access via LDAP">Acesso do usuário via LDAP</value>
   <value column="Help" original=""/>
  </row>
  <row id="852" trl="Y">
@@ -4133,7 +4133,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="50009" trl="Y">
-  <value column="Name" original="System Configurator">System Configurator</value>
+  <value column="Name" original="System Configurator">Configurador do Sistema</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -4169,10 +4169,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="53013" trl="Y">
-  <value column="Name" original="Document Action Access">Document Action Access</value>
+  <value column="Name" original="Document Action Access">Acesso a Ação de Documento</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define access to document type / document action / role combinations.">Define access to document type / document action / role combinations.</value>
-  <value column="Help" original="Define access to document type / document action / role combinations.">Define access to document type / document action / role combinations.</value>
+  <value column="Description" original="Define access to document type / document action / role combinations.">Define acesso a tipos de documentos e suas ações</value>
+  <value column="Help" original="Define access to document type / document action / role combinations.">Define acesso a tipos de documentos e suas ações.</value>
  </row>
  <row id="53014" trl="Y">
   <value column="Name" original="Model Validator">Validador de Model</value>
@@ -5056,32 +5056,32 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53187" trl="N">
-  <value column="Name" original="Web Service Type">Web Service Type</value>
+ <row id="53187" trl="Y">
+  <value column="Name" original="Web Service Type">Tipo de Web Service</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53188" trl="N">
-  <value column="Name" original="Web Service Parameters">Web Service Parameters</value>
+ <row id="53188" trl="Y">
+  <value column="Name" original="Web Service Parameters">Parâmetro do Web Service</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53189" trl="N">
-  <value column="Name" original="Web Service Field Input">Web Service Field Input</value>
+ <row id="53189" trl="Y">
+  <value column="Name" original="Web Service Field Input">Campo de Entrada</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53190" trl="N">
-  <value column="Name" original="Web Service Field Output">Web Service Field Output</value>
+ <row id="53190" trl="Y">
+  <value column="Name" original="Web Service Field Output">Campo de Saída</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53191" trl="N">
-  <value column="Name" original="Web Service Access">Web Service Access</value>
+ <row id="53191" trl="Y">
+  <value column="Name" original="Web Service Access">Acesso do Web Service</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5224,8 +5224,8 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53240" trl="N">
-  <value column="Name" original="Included roles">Included roles</value>
+ <row id="53240" trl="Y">
+  <value column="Name" original="Included roles">Perfil Incluído</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5308,17 +5308,17 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original="Return Material Authorization Line">Linha de Autorização de Retorno de Material</value>
   <value column="Help" original="Detail information about the returned goods">Informação detalhada sobre os bens devolvidos.</value>
  </row>
- <row id="53282" trl="N">
-  <value column="Name" original="User Contact">User Contact</value>
+ <row id="53282" trl="Y">
+  <value column="Name" original="User Contact">Usuário</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain User or Business Partner Contact">Maintain User or Business Partner Contact</value>
-  <value column="Help" original="The User Tab defines the log in for Users who have access to the system.  For application access, users need to have a role assigned.">The User Tab defines the log in for Users who have access to the system.  For application access, users need to have a role assigned.</value>
+  <value column="Description" original="Maintain User or Business Partner Contact">Gerenciamento de Contatos e Usuários do Sistema</value>
+  <value column="Help" original="The User Tab defines the log in for Users who have access to the system.  For application access, users need to have a role assigned.">A aba Usuário define informações de login para aqueles que acessam o sistema. Para acesso ao sistema, é preciso também um perfil de acesso associado.</value>
  </row>
- <row id="53283" trl="N">
-  <value column="Name" original="User Mail">User Mail</value>
+ <row id="53283" trl="Y">
+  <value column="Name" original="User Mail">E-mails Enviados</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Mail sent to the user">Mail sent to the user</value>
-  <value column="Help" original="Archive of mails sent to users">Archive of mails sent to users</value>
+  <value column="Description" original="Mail sent to the user">E-mails enviados ao usuário</value>
+  <value column="Help" original="Archive of mails sent to users">Arquivo dos e-mails enviados a usuários</value>
  </row>
  <row id="53284" trl="Y">
   <value column="Name" original="Order Source">Origem do Pedido</value>
@@ -5742,14 +5742,14 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200003" trl="N">
-  <value column="Name" original="Toolbar Button Access">Toolbar Button Access</value>
+ <row id="200003" trl="Y">
+  <value column="Name" original="Toolbar Button Access">Restrição de Acesso à Barra de Ferramentas</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200004" trl="N">
-  <value column="Name" original="Password Rule">Password Rule</value>
+ <row id="200004" trl="Y">
+  <value column="Name" original="Password Rule">Regra de Senha</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5832,10 +5832,10 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200025" trl="N">
-  <value column="Name" original="Sessions">Sessions</value>
+ <row id="200025" trl="Y">
+  <value column="Name" original="Sessions">Sessões</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Current Sessions">Current Sessions</value>
+  <value column="Description" original="Current Sessions">Sessões Ativas</value>
   <value column="Help" original=""/>
  </row>
  <row id="200026" trl="Y">
@@ -6024,8 +6024,8 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200064" trl="N">
-  <value column="Name" original="Info Access">Info Access</value>
+ <row id="200064" trl="Y">
+  <value column="Name" original="Info Access">Acesso a Janela de Informações</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6090,10 +6090,10 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200095" trl="N">
-  <value column="Name" original="City (Without Regions)">City (Without Regions)</value>
+ <row id="200095" trl="Y">
+  <value column="Name" original="City (Without Regions)">Cidade (sem Regiões)</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Cities without Region">Cities without Region</value>
+  <value column="Description" original="Cities without Region">Cidades sem Regiões</value>
   <value column="Help" original=""/>
  </row>
  <row id="200096" trl="Y">
@@ -6228,8 +6228,8 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200124" trl="N">
-  <value column="Name" original="Translation">Translation</value>
+ <row id="200124" trl="Y">
+  <value column="Name" original="Translation">Tradução</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6252,8 +6252,8 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200128" trl="N">
-  <value column="Name" original="Translation">Translation</value>
+ <row id="200128" trl="Y">
+  <value column="Name" original="Translation">Tradução</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>

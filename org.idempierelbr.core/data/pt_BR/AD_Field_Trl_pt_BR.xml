@@ -105,8 +105,8 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Help" original="You can overwrite the Display Type, but only use this if you aware of the consequences.">Você pode sobreescrever o tipo de exibição, mas somente faça isso se você estiver ciente das conseqüências.</value>
  </row>
  <row id="13755" trl="Y">
-  <value column="Name" original="Search Key">Chave de Busca</value>
-  <value column="Description" original="Search key for the record in the format required">Search key for the record in the format required</value>
+  <value column="Name" original="Search Key">Código</value>
+  <value column="Description" original="Search key for the record in the format required">Código para o registro no formato necessário</value>
   <value column="Help" original="7 bit lower case alpha numeric - max length 8 - can be used for operating system names.">7 bit lower case alpha numeric - max length 8 - can be used for operating system names.</value>
  </row>
  <row id="50066" trl="Y">
@@ -259,10 +259,10 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="50166" trl="N">
-  <value column="Name" original="Configured Value">Configured Value</value>
-  <value column="Description" original="Value for the configuration key">Value for the configuration key</value>
-  <value column="Help" original="You can check the valid variables and values at http://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)">You can check the valid variables and values at http://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)</value>
+ <row id="50166" trl="Y">
+  <value column="Name" original="Configured Value">Valor Configurado</value>
+  <value column="Description" original="Value for the configuration key">Valor Configurado</value>
+  <value column="Help" original="You can check the valid variables and values at http://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)">Você pode verificar valores válidos no site http://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)</value>
  </row>
  <row id="53360" trl="N">
   <value column="Name" original="Value">Value</value>
@@ -534,10 +534,10 @@ To Manufacturing Order is the date when the last manufacturing order movement is
   <value column="Description" original="Return to Vendor Document">Return to Vendor Document</value>
   <value column="Help" original="The Return to Vendor">The Return to Vendor</value>
  </row>
- <row id="57987" trl="N">
-  <value column="Name" original="Search Key">Search Key</value>
-  <value column="Description" original="Search key for the record in the format required">Search key for the record in the format required</value>
-  <value column="Help" original="7 bit lower case alpha numeric - max length 8 - can be used for operating system names.">7 bit lower case alpha numeric - max length 8 - can be used for operating system names.</value>
+ <row id="57987" trl="Y">
+  <value column="Name" original="Search Key">Código</value>
+  <value column="Description" original="Search key for the record in the format required"/>
+  <value column="Help" original="7 bit lower case alpha numeric - max length 8 - can be used for operating system names."/>
  </row>
  <row id="58101" trl="N">
   <value column="Name" original="Copy BOM Lines From">Copy BOM Lines From</value>

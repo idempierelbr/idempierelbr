@@ -328,9 +328,9 @@
   <value column="Help" original="Write-off receivables causes the invoices selected by the criteria to be marked as paid and the open invoice amount to be written off.  Alternatively you can create payments.">Este processo dá baixa em itens em aberto, ou seja, marca as faturas selecionadas pelos critérios abaixo como pagas. Você pode também criar pagamentos.</value>
  </row>
  <row id="172" trl="Y">
-  <value column="Name" original="Synchronize Terminology">Sincronização de Terminologia</value>
-  <value column="Description" original="Synchronize the terminology within the system.">Sincronizar a terminologia dentro do sistema.</value>
-  <value column="Help" original="Based on the entries in Window Element, the fields in windows, parameters, etc. are synchronized, if they are centrally maintained.  Also synchronizes Language Translation.">Baseado nos registros na Janela "Elemento", os campos nas janelas, em parâmetros, etc. serão sincronizados, se eles forem mantidos centralizadamente.  Também sincroniza as traduções de idioma.</value>
+  <value column="Name" original="Synchronize Terminology">Sincronizar Terminologia</value>
+  <value column="Description" original="Synchronize the terminology within the system.">Sincronizar a terminologia (traduções) no sistema</value>
+  <value column="Help" original="Based on the entries in Window Element, the fields in windows, parameters, etc. are synchronized, if they are centrally maintained.  Also synchronizes Language Translation.">Baseado nos registros da Janela "Elemento", os campos de janelas, parâmetros, etc., serão sincronizados (se eles forem mantidos centralizadamente). Também sincroniza as traduções de idioma.</value>
  </row>
  <row id="173" trl="Y">
   <value column="Name" original="Create Columns from DB">Criar Colunas a partir do Banco de Dados</value>
@@ -355,7 +355,7 @@
  <row id="179" trl="Y">
   <value column="Name" original="Language Maintenance">Manutenção de Idiomas</value>
   <value column="Description" original="Maintain language translation in system">Gerenciamento de traduções de idioma no sistema</value>
-  <value column="Help" original="You can Add Missing Translation entries (required after activating an additional System Language) - Delete Translation Records - or Re-Create the translation Records (first delete and add missing entries).&#10;Note that Adding the Missing Translation records creates them by copying the System Language (English).  You would apply the Language Pack after that process.  Run Syncronize Terminology after importing the translation.">Você pode acrescentar Registros de Tradução faltantes (necessário após ativar um Idioma adicional de Sistema) - Excluir Registros de Tradução - ou Re-Criar os Registros de Tradução (primeiramente exclua e só então acrescente os registros faltantes). Note que acrescentar Registros de Tradução faltantes cria novos registros que são copiados do Idioma de Sistema em Inglês.  Você pode aplicar o Pacote de Idiomas após esse processo.  Rode "Sincronizar Terminologia" após importar a tradução.</value>
+  <value column="Help" original="You can Add Missing Translation entries (required after activating an additional System Language) - Delete Translation Records - or Re-Create the translation Records (first delete and add missing entries).&#10;Note that Adding the Missing Translation records creates them by copying the System Language (English).  You would apply the Language Pack after that process.  Run Syncronize Terminology after importing the translation.">Você pode inserir registros de tradução inexistentes (necessário após ativar um idioma de sistema), excluir registros de tradução ou recriá-los (excluir e inserir). Observe que ao inserir registros inexistentes, o sistema simplesmente os copia do idioma de sistema (normalmente em inglês). Após isso, é possível importar traduções e finalmente sincronizar a terminologia.</value>
  </row>
  <row id="180" trl="Y">
   <value column="Name" original="Inventory Valuation Report">Avaliação de Estoque</value>
@@ -378,9 +378,9 @@
   <value column="Help" original=""/>
  </row>
  <row id="185" trl="Y">
-  <value column="Name" original="Recompile DB Objects">Recompilar Objetos do Banco de Dados (BD)</value>
-  <value column="Description" original="Recompile Database Objects">Recompilar Objetos do Banco de Dados (BD)</value>
-  <value column="Help" original="Recompile Functions, Procedures, Triggers, Views, etc.">Recompilar Funções, Procedimentos, Gatilhos (disparadores), Visualizações, etc.</value>
+  <value column="Name" original="Recompile DB Objects">Recompilar Objetos do Banco de Dados</value>
+  <value column="Description" original="Recompile Database Objects">Recompilar Objetos do Banco de Dados</value>
+  <value column="Help" original="Recompile Functions, Procedures, Triggers, Views, etc.">Este processo recompila as functions, procedures, triggers, views, etc.</value>
  </row>
  <row id="186" trl="Y">
   <value column="Name" original="Create Sales Orders from Expense">Gerar Pedidos de Venda (de Despesas)</value>
@@ -482,9 +482,9 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
   <value column="Help" original="Select a Period (current period if empty) or enter a Account Date Range. You can select an alternative Reporting Hierarchy.">Selecione um período (atual, caso não seja informado) ou informe um intervalo de datas. Você pode também selecionar uma Hierarquia de Relatórios alternativa.</value>
  </row>
  <row id="205" trl="Y">
-  <value column="Name" original="Cache Reset">Reiniciar Cache de Memória (Reset)</value>
-  <value column="Description" original="Reset Cache of the System ** Close all Windows before proceeding **">Reiniciar Cache do Sistema ** Feche todas as Janelas antes de Prosseguir **</value>
-  <value column="Help" original="To increase performance, iDempiere caches repeatedly used data. This process clears the local cache.">Para aumentar o desempenho, o Adempiere guarda dados utilizados repetidamente na memória cache. Este processo limpa a memória cache local.</value>
+  <value column="Name" original="Cache Reset">Limpar o Cache</value>
+  <value column="Description" original="Reset Cache of the System ** Close all Windows before proceeding **">Limpar o Cache do Sistema.</value>
+  <value column="Help" original="To increase performance, iDempiere caches repeatedly used data. This process clears the local cache.">Para aumentar o desempenho, o iDempiere mantém em memória alguns dados.guarda dados utilizados repetidamente na memória cache. Este processo limpa a memória cache. Atenção! Feche todas as janelas antes de executá-lo.</value>
  </row>
  <row id="206" trl="Y">
   <value column="Name" original="Import Orders">Importar Pedidos</value>
@@ -754,9 +754,9 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
   <value column="Help" original=""/>
  </row>
  <row id="258" trl="Y">
-  <value column="Name" original="Sequence Check">Verificação Seqüencial</value>
-  <value column="Description" original="Check System and Document Sequences">Verificar Seqüências de Documento e Sistema</value>
-  <value column="Help" original="Check that System and Document sequences are correct.  Run this process, if you get Duplicate Key error messages.">Confira se as seqüências de Sistema e Documentos estão corretas.  Rode este processo se você receber mensagens de erro de Chave Duplicada.</value>
+  <value column="Name" original="Sequence Check">Verificar Seqüencias</value>
+  <value column="Description" original="Check System and Document Sequences">Verificar Seqüências do Sistema e de Documentos</value>
+  <value column="Help" original="Check that System and Document sequences are correct.  Run this process, if you get Duplicate Key error messages.">Este processo verifica se as sequências do sistema e de documentos estão corretas. Execute sempre que aparecer alguma mensagem de erro relacionada a Chave Duplicada (Duplicate Key).</value>
  </row>
  <row id="259" trl="Y">
   <value column="Name" original="Create Orders">Criar Pedidos</value>
@@ -769,14 +769,14 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
   <value column="Help" original="If the Business Partner is another Organization, select the Organization or set to empty to create a new Organization.  You link a Business Partner to an Organization to create explicit Documents for Inter-Org transaction.&#10;If you create a new Organization, you may supply a Organization Type.  If you select a Role, the access to the new Organization is limited to that role, otherwise all (non manual) roles of the Client will have access to the new Organization.">Este processo vincula um Parceiro de Negócios a uma Organização. Fazendo isso, o sistema pode gerar contra-documentos automaticamente ao efetuar uma transação com aquele parceiro. Selecione uma organização existente ou deixe em branco para criar uma nova. Se estiver criando uma nova, pode-se selecionar o tipo de organização e a função (limita o acesso à função. Se deixado em branco, todas as funções não manuais terão acesso).</value>
  </row>
  <row id="261" trl="Y">
-  <value column="Name" original="Create &amp; Invite"><![CDATA[Criar & Convite]]></value>
-  <value column="Description" original="Create RfQ and Invite Vendors">Cria SdC e convida fornecedores</value>
-  <value column="Help" original="Create (missing) RfQ Responses and optionally send EMail Invitation/Reminder to Vendors to respond to RfQ">Cria Respostas de SdC (faltantes) e opcionalmente envia email de Convite/Lembrete a fornecedores para responder à SdC</value>
+  <value column="Name" original="Create &amp; Invite">Gerar Respostas em Branco</value>
+  <value column="Description" original="Create RfQ and Invite Vendors">Gerar Respostas em Branco e Notificar Fornecedores</value>
+  <value column="Help" original="Create (missing) RfQ Responses and optionally send EMail Invitation/Reminder to Vendors to respond to RfQ">Este processo cria registros de respostas faltantes para que os fornecedores participantes da SdC possam respondê-las. Você pode selecionar a opção abaixo para que um e-mail de notificação seja enviado para cada um deles.</value>
  </row>
  <row id="262" trl="Y">
-  <value column="Name" original="Invite &amp; Remind">Gerar Convite ou Lembrete</value>
-  <value column="Description" original="EMail Invite or Remind Vendor to answer RfQ">Envia e-mail de Convite ou Lembra o Fornecedore de responder às SdC</value>
-  <value column="Help" original="Send Invitation/Reminder to Vendors to respond to RfQ per email">Envia por e-mail um Convite/Lembrete ao fornecedor para responder à Solicitação de Cotação.</value>
+  <value column="Name" original="Invite &amp; Remind">Notificar o Fornecedor</value>
+  <value column="Description" original="EMail Invite or Remind Vendor to answer RfQ">Enviar E-mail de Notificação ao Fornecedor</value>
+  <value column="Help" original="Send Invitation/Reminder to Vendors to respond to RfQ per email">Este processo envia um e-mail de notificação ao fornecedor, lembrando-o de responder a SdC.</value>
  </row>
  <row id="263" trl="Y">
   <value column="Name" original="RfQ Unanswered">SdC Não-Respondidas</value>
@@ -789,22 +789,19 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
   <value column="Help" original="Lists detail Responses of active RfQs (not closed/processed) where the Response is marked as complete. ">Lista detalhes de respostas de SdC ativas (não fechadas/processadas) onde a resposta estiver marcada como completa. </value>
  </row>
  <row id="265" trl="Y">
-  <value column="Name" original="Rank Responses">Classificar Respostas</value>
-  <value column="Description" original="Rank Completed RfQ Responses">Classificar Respostas SdC completadas</value>
-  <value column="Help" original="Invalid responses are ranked with 999 per Quantity. The Quantity Responses are ranked among each other and the RfQ Best Response updated.  The response Lines is maked as Selected winner, where the line quantity purchase quantity is selected.  A total winner is only selected, if the RfQ type is &quot;Quote All Lines&quot; or &quot;Quote Total only&quot;.&#10;&#10;Then the rankings of all Quantity Responses are added for the total ranking of the response. The response with the lowest total ranking is marked as Selected Winner.">Respostas inválidas são classificadas com 999 por Quantidade. As Respostas são classificadas entre si e a Melhor Resposta de SdC é atualizada.  A Linha de Resposta é marcada como vencedor selecionado, onde a linha de quantidade de compras for selecionada.  Só é selecionado um vencedor total se o tipo de RdC for "Cotar Todas as Linhas" ou "Somente Cotar Total".
-
-Então a Classificação de todas as Respostas de quantidades são somadas para obter a classificação total da resposta. A resposta com a menor classificação total é marcada como Vencedor Selecionado.
-</value>
+  <value column="Name" original="Rank Responses">Classificar as Respostas</value>
+  <value column="Description" original="Rank Completed RfQ Responses">Classificar as Respostas Completadas</value>
+  <value column="Help" original="Invalid responses are ranked with 999 per Quantity. The Quantity Responses are ranked among each other and the RfQ Best Response updated.  The response Lines is maked as Selected winner, where the line quantity purchase quantity is selected.  A total winner is only selected, if the RfQ type is &quot;Quote All Lines&quot; or &quot;Quote Total only&quot;.&#10;&#10;Then the rankings of all Quantity Responses are added for the total ranking of the response. The response with the lowest total ranking is marked as Selected Winner.">Este processo classifica as respostas completadas dos fornecedores. Respostas inválidas são classificadas com o valor 999. Somente registros que possuem a seleção marcada 'Qtd. de Compra' na janela SdC são passíveis de classificação. Um fornecedor vencedor único é escolhido somente se a SdC for do tipo 'Obrigatório Cotar Todas as Linhas' ou 'Cotar Somente o Valor Total'. As respostas com o menor número de classificação são marcadas como vencedoras.</value>
  </row>
  <row id="266" trl="Y">
-  <value column="Name" original="Create Purchase Order">Cria Pedido de Compras</value>
-  <value column="Description" original="Create Purchase Order(s) for RfQ Winner(s)">Cria o(s) Pedido(s) de Compra para o(s) Vencedor(es) das SdC</value>
-  <value column="Help" original="Create purchase order(s) for the resonse(s) and lines marked as Selected Winner using the selected Purchase Quantity (in RfQ Line Quantity) . If a Response is marked as Selected Winner, all lines are created (and Selected Winner of other responses ignored).  If there is no response marked as Selected Winner, the lines are used.">Cria Pedido(s) de Compra para as respostas e linhas marcadas como Vencedor Selecionado usando a Quantidade de Compras (na Linha Quantidade da SdC). Se uma resposta for marcada como Vencedor Selecionado, todas as linhas serão criadas (e o Vencedor Selecionado de outras respostas será ignorado)  Se não houver resposta marcada como Vencedor Selecionado, as linhas serão utilizadas.</value>
+  <value column="Name" original="Create Purchase Order">Gerar Pedido(s) de Compra</value>
+  <value column="Description" original="Create Purchase Order(s) for RfQ Winner(s)">Gerar Pedido(s) de Compra para os Vencedores</value>
+  <value column="Help" original="Create purchase order(s) for the resonse(s) and lines marked as Selected Winner using the selected Purchase Quantity (in RfQ Line Quantity) . If a Response is marked as Selected Winner, all lines are created (and Selected Winner of other responses ignored).  If there is no response marked as Selected Winner, the lines are used.">Este processo permite gerar pedido(s) de compra para resposta(s) e linhas marcadas como vencedoras. A quantidade utilizada na linha do pedido é obtida do registro que possui a seleção marcada 'Qtd. de Compra' na janela SdC. Se uma resposta estiver marcada como vencedora, todas as linhas são criadas a partir desta resposta (e outras respostas são ignoradas). Se não houver nenhuma resposta marcada como vencedora, as linhas vencedoras serão consideradas.</value>
  </row>
  <row id="267" trl="Y">
-  <value column="Name" original="Create Sales Order">Criar Ordem de Venda</value>
-  <value column="Description" original="Create Sales Order">Criar Ordem de Venda</value>
-  <value column="Help" original="A Sales Order is created for the entered Business Partner.  A sales order line is created for each RfQ line quantity, where &quot;Offer Quantity&quot; is selected.  If on the RfQ Line Quantity, an offer amount is entered (not 0), that price is used. &#10;If a magin is entered on RfQ Line Quantity, it overwrites the general margin.  The margin is the percentage added to the Best Response Amount.">Uma Ordem de Venda é criada para o Parceiro de Negócios selecionado.  Uma linha de Ordem de Venda é criada para cada linha de quantidade de SdC, onde "Quantidade Ofertada" for selecionada.  Se um valor ofertado (não zero) for digitado na Linha Quantidade da SdC, esse preço será utilizado. Se uma margem for digitada na Linha de Quantidade de SdC, ela sobre-escreve a margem geral.  A margem é a porcentagem adicionada ao Valor da Melhor Resposta.</value>
+  <value column="Name" original="Create Sales Order">Gerar Pedido de Venda</value>
+  <value column="Description" original="Create Sales Order">Gerar Pedido de Venda</value>
+  <value column="Help" original="A Sales Order is created for the entered Business Partner.  A sales order line is created for each RfQ line quantity, where &quot;Offer Quantity&quot; is selected.  If on the RfQ Line Quantity, an offer amount is entered (not 0), that price is used. &#10;If a magin is entered on RfQ Line Quantity, it overwrites the general margin.  The margin is the percentage added to the Best Response Amount.">Este processo permite a geração de um pedido de venda para o parceiro de negócios informado na SdC. A quantidade utilizada na linha do pedido é obtida do registro que possui a seleção marcada 'Qtd. Ofertada' na janela SdC. Se um 'Preço de Referência' for informado, este será utilizado na linha do pedido. Se um valor de margem for informado na SdC, ele será aplicado sobre o valor do campo 'Valor da Melhor Resposta' para obter o preço da linha</value>
  </row>
  <row id="268" trl="Y">
   <value column="Name" original="Copy Lines">Copiar Linhas</value>
@@ -942,9 +939,9 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
   <value column="Help" original="The report provides Material Shipment Header and Line with locator information.  You can use the report to create a Consolidated Picking List.">Este relatório fornece informações detalhadas de remessas. Pode ser utilizado para criar uma lista de separação (picking) consolidada.</value>
  </row>
  <row id="295" trl="Y">
-  <value column="Name" original="Role Access Update">Atualização do Acesso de Função (Papel)</value>
-  <value column="Description" original="Update the access rights of a role or roles of a client">Atualizar os direitos de acesso de um papel ou papéis de um cliente</value>
-  <value column="Help" original="Update the access rights of a role or all roles of a client to windows, forms, processes and workflows. If run for System, all roles of all clients are updated. Note that a role is only updated if it is not marked as manual.">Atualizar os direitos de acesso de um papel ou todos os papéis de um cliente a janelas, formulários, processos e fluxos de trabalho. Se for executado para o Sistema, todos os papéis de todos as empresas serão atualizadas. Note que um papel somente será atualizado se ele não for marcado como manual.</value>
+  <value column="Name" original="Role Access Update">Atualizar Perfil de Acesso</value>
+  <value column="Description" original="Update the access rights of a role or roles of a client">Atualizar os direitos de acesso de um ou mais perfis de acesso</value>
+  <value column="Help" original="Update the access rights of a role or all roles of a client to windows, forms, processes and workflows. If run for System, all roles of all clients are updated. Note that a role is only updated if it is not marked as manual.">Este processo atualiza um ou mais perfis de acesso, dando acesso automático a janelas, formulários, processos, etc... Observe que o perfil é atualizado apenas se o mesmo não tiver a opção 'Manual' selecionada.</value>
  </row>
  <row id="296" trl="Y">
   <value column="Name" original="Import Confirmations">Importar Confirmações</value>
@@ -998,13 +995,13 @@ Então a Classificação de todas as Respostas de quantidades são somadas para 
  </row>
  <row id="306" trl="Y">
   <value column="Name" original="Un-Do Changes">Desfazer Alterações</value>
-  <value column="Description" original="Undo changes">Desfazer modificações</value>
-  <value column="Help" original="You can undo certain changes.">Você pode desfazer certas alterações.</value>
+  <value column="Description" original="Undo changes">Desfazer as alterações</value>
+  <value column="Help" original="You can undo certain changes.">É possível executar este processo para desfazer certas alterações.</value>
  </row>
  <row id="307" trl="Y">
   <value column="Name" original="Re-Do Changes">Refazer Alterações</value>
-  <value column="Description" original="Reapply changes">Reaplica as alterações</value>
-  <value column="Help" original="You can reapply certain changes.">Você pode reaplicar certas alterações.</value>
+  <value column="Description" original="Reapply changes">Refazer as alterações</value>
+  <value column="Help" original="You can reapply certain changes.">É possível executar este processo para refazer certas alterações.</value>
  </row>
  <row id="308" trl="Y">
   <value column="Name" original="Reapply Customizations">Reaplicar Personalizações</value>
@@ -1180,9 +1177,9 @@ PC são criados para todas as linhas das requisições onde o produto tem um for
   <value column="Help" original="Invoiced Amount by Product and Quarter">Este relatório lista o valor das faturas geradas trimestralmente consolidadas por produto.</value>
  </row>
  <row id="342" trl="Y">
-  <value column="Name" original="Validate Support">Validate Support</value>
-  <value column="Description" original="Validate Support Contract">Validate Support Contract</value>
-  <value column="Help" original="The process connects to the iDempiere Support Services server and validates the support contract.  To sign up for support, please go to http://www.idempiere.org">The process connects to the Compiere Support Services server and validates the support contract.  To sign up for support, please go to http://www.compiere.org</value>
+  <value column="Name" original="Validate Support">Validar o Suporte</value>
+  <value column="Description" original="Validate Support Contract">Validar o Contrato de Suporte</value>
+  <value column="Help" original="The process connects to the iDempiere Support Services server and validates the support contract.  To sign up for support, please go to http://www.idempiere.org">Este processo se conecta ao servidor de serviços de suporte do Compiere e valida o contrato de suporte.</value>
  </row>
  <row id="343" trl="Y">
   <value column="Name" original="Import Payments">Importar Pagamentos</value>
@@ -1250,8 +1247,8 @@ PC são criados para todas as linhas das requisições onde o produto tem um for
   <value column="Help" original="Import a package">Este processo permite importar no sistema o pacote anexado no registro.</value>
  </row>
  <row id="50010" trl="Y">
-  <value column="Name" original="Copy Role">CopyRole</value>
-  <value column="Description" original="Copy Role">Copy Role</value>
+  <value column="Name" original="Copy Role">Copiar Perfil</value>
+  <value column="Description" original="Copy Role">Copiar Perfil</value>
   <value column="Help" original="Copy role access records from one role to another.  The existing access records for the destination role will be deleted.  This process can be executed just by advanced roles."/>
  </row>
  <row id="50011" trl="Y">
@@ -1729,12 +1726,10 @@ Consolidate to one Document let the distribution in current Documents with range
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53156" trl="N">
-  <value column="Name" original="Enable Native Sequence">Enable Native Sequence</value>
-  <value column="Description" original="Enable Native Sequence">Enable Native Sequence</value>
-  <value column="Help" original="This process allows Enable the native sequences based in the current AD_Sequence.&#10;&#10;This process should be implemented when the users are not connected.">This process allows Enable the native sequences based in the current AD_Sequence.
-
-This process should be implemented when the users are not connected.</value>
+ <row id="53156" trl="Y">
+  <value column="Name" original="Enable Native Sequence">Habilitar Sequências Nativas</value>
+  <value column="Description" original="Enable Native Sequence">Habilitar Sequências Nativas</value>
+  <value column="Help" original="This process allows Enable the native sequences based in the current AD_Sequence.&#10;&#10;This process should be implemented when the users are not connected.">Este processo permite habilitar as sequências nativas com base na AD_Sequence atual. Ele deve ser executado somente quando nenhum outro usuário estive conectado ao sistema.</value>
  </row>
  <row id="53159" trl="N">
   <value column="Name" original="Cost BOM Multi Level Review">Cost BOM Multi Level Review</value>
@@ -1906,16 +1901,15 @@ This process should be implemented when the users are not connected.</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53252" trl="N">
-  <value column="Name" original="UUID Generator">UUID Generator</value>
+ <row id="53252" trl="Y">
+  <value column="Name" original="UUID Generator">Gerador de UUID</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53259" trl="N">
-  <value column="Name" original="Convert passwords to hashes">Convert passwords to hashes</value>
-  <value column="Description" original="Convert existing plain text/encrypted user passwords to one way hash">Convert existing plain text/encrypted user passwords to one way hash</value>
-  <value column="Help" original="This process will overwrite existing user passwords with a salted SHA-512 hash of the password so that they cannot be recovered if your database is compromised.&#10;(Note: If your password column is currently encrypted, the hash will also be encrypted.)">This process will overwrite existing user passwords with a salted SHA-512 hash of the password so that they cannot be recovered if your database is compromised.
-(Note: If your password column is currently encrypted, the hash will also be encrypted.)</value>
+ <row id="53259" trl="Y">
+  <value column="Name" original="Convert passwords to hashes">Criptografar Senhas</value>
+  <value column="Description" original="Convert existing plain text/encrypted user passwords to one way hash">Converter senhas em texto puro para hash</value>
+  <value column="Help" original="This process will overwrite existing user passwords with a salted SHA-512 hash of the password so that they cannot be recovered if your database is compromised.&#10;(Note: If your password column is currently encrypted, the hash will also be encrypted.)">Este processo altera (no banco de dados) a senha dos usuários em texto puro para hash (salted SHA-512) de modo que não seja possível descobri-las caso o banco de dados fique comprometido. Observe que se a senha já estiver criptografada, o hash também será criptografado.</value>
  </row>
  <row id="53264" trl="N">
   <value column="Name" original="Production Plan">Production Plan</value>
@@ -1966,9 +1960,9 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original="Create Shipment for single ordered product">Gerar Remessa para o Produto Pedido</value>
   <value column="Help" original=""/>
  </row>
- <row id="200008" trl="N">
-  <value column="Name" original="Reset Locked Account">Reset Locked Account</value>
-  <value column="Description" original="Reset Locked Account for User">Reset Locked Account for User</value>
+ <row id="200008" trl="Y">
+  <value column="Name" original="Reset Locked Account">Liberar Conta Bloqueada</value>
+  <value column="Description" original="Reset Locked Account for User">Liberar Conta Bloqueada</value>
   <value column="Help" original=""/>
  </row>
  <row id="200010" trl="Y">
@@ -2016,13 +2010,13 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original="Test and verify message before broadcasting">Test and verify message before broadcasting</value>
   <value column="Help" original=""/>
  </row>
- <row id="200021" trl="N">
-  <value column="Name" original="Kill Current Session">Kill Current Session</value>
+ <row id="200021" trl="Y">
+  <value column="Name" original="Kill Current Session">Finalizar a Sessão</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200022" trl="N">
-  <value column="Name" original="Kill All Session">Kill All Session</value>
+ <row id="200022" trl="Y">
+  <value column="Name" original="Kill All Session">Finalizar Todas as Sessões</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2096,18 +2090,15 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200039" trl="N">
-  <value column="Name" original="Verify Language Configuration">Verify Language Configuration</value>
+ <row id="200039" trl="Y">
+  <value column="Name" original="Verify Language Configuration">Verificar Configurações de Idioma</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200040" trl="N">
-  <value column="Name" original="Change Base Language">Change Base Language</value>
-  <value column="Description" original="Change Base Language">Change Base Language</value>
-  <value column="Help" original="In order to enable en_US as a translation you can enable any other language as base language.&#10;If you don't want to have a base language choose a language that won't be used for login.&#10;If all languages are going to be used as login, create a xx_XX language not login and use it as base.&#10;Please note that base language cannot be a system language.">In order to enable en_US as a translation you can enable any other language as base language.
-If you don't want to have a base language choose a language that won't be used for login.
-If all languages are going to be used as login, create a xx_XX language not login and use it as base.
-Please note that base language cannot be a system language.</value>
+ <row id="200040" trl="Y">
+  <value column="Name" original="Change Base Language">Alterar Idioma Base</value>
+  <value column="Description" original="Change Base Language">Alterar Idioma Base</value>
+  <value column="Help" original="In order to enable en_US as a translation you can enable any other language as base language.&#10;If you don't want to have a base language choose a language that won't be used for login.&#10;If all languages are going to be used as login, create a xx_XX language not login and use it as base.&#10;Please note that base language cannot be a system language.">A fim de habilitar o idioma en_US como uma tradução, você pode selecionar qualquer outro idioma como sendo o idioma base. Se você não quiser ter um idioma base, escolha um que não será utilizado para login. Se todos os idiomas serão utilizados para o login, crie um novo idioma xx_XX e utilize-o somente como base. Observe que o idioma base não pode ser o idioma de sistema.</value>
  </row>
  <row id="200055" trl="Y">
   <value column="Name" original="Index Validate">Validar Índice</value>
@@ -2167,11 +2158,6 @@ Please note that base language cannot be a system language.</value>
  <row id="200068" trl="N">
   <value column="Name" original="Process Production">Process Production</value>
   <value column="Description" original=""/>
-  <value column="Help" original=""/>
- </row>
- <row id="200074" trl="N">
-  <value column="Name" original="Recurring Run">Recurring Run</value>
-  <value column="Description" original="Recurring Run">Recurring Run</value>
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="e6df0503-5f93-4a2c-abe6-0c425cc138e9">
@@ -2250,8 +2236,8 @@ Please note that base language cannot be a system language.</value>
   <value column="Help" original="This process allows to process a CNAB sent by a bank.">Este processo permite o processamento do arquivo retorno enviado pelo banco.</value>
  </row>
  <row trl="N" uuid="98cad063-dd95-4b75-9b71-f5942f311723">
-  <value column="Name" original="Generate and Print Boletos">Gera e imprime boletos de cobrança</value>
-  <value column="Description" original="Generate and Print Boletos from Invoice">Gera e imprime boletos de cobrança a partir da fatura</value>
+  <value column="Name" original="Generate and Print Boletos">Gerar e imprimir boletos de cobrança</value>
+  <value column="Description" original="Generate and Print Boletos from Invoice">Gerar e imprimir boletos de cobrança a partir da fatura</value>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>

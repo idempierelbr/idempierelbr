@@ -67,15 +67,15 @@
   <value column="Description" original="Currency to create Dunning Letters">Moeda a ser utilizada na Recuperação</value>
   <value column="Help" original=""/>
  </row>
- <row id="50001" trl="N">
-  <value column="Name" original="Role To">Role To</value>
-  <value column="Description" original="Responsibility Role">Responsibility Role</value>
-  <value column="Help" original="The Role determines security and access a user who has this Role will have in the System.">The Role determines security and access a user who has this Role will have in the System.</value>
+ <row id="50001" trl="Y">
+  <value column="Name" original="Role To">Perfil de Destino</value>
+  <value column="Description" original="Responsibility Role"/>
+  <value column="Help" original="The Role determines security and access a user who has this Role will have in the System."/>
  </row>
- <row id="50002" trl="N">
-  <value column="Name" original="Role From">Role From</value>
-  <value column="Description" original="Responsibility Role">Responsibility Role</value>
-  <value column="Help" original="The Role determines security and access a user who has this Role will have in the System.">The Role determines security and access a user who has this Role will have in the System.</value>
+ <row id="50002" trl="Y">
+  <value column="Name" original="Role From">Perfil de Origem</value>
+  <value column="Description" original="Responsibility Role"/>
+  <value column="Help" original="The Role determines security and access a user who has this Role will have in the System."/>
  </row>
  <row id="50019" trl="Y">
   <value column="Name" original="Shipment Date">Data da Remessa</value>
@@ -267,9 +267,9 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200007" trl="N">
-  <value column="Name" original="Reset Existing Access">Reset Existing Access</value>
-  <value column="Description" original="Reset Existing Access">Reset Existing Access</value>
+ <row id="200007" trl="Y">
+  <value column="Name" original="Reset Existing Access">Limpar o Acesso Existente</value>
+  <value column="Description" original="Reset Existing Access">Limpar o Acesso Existente</value>
   <value column="Help" original=""/>
  </row>
  <row id="200055" trl="Y">

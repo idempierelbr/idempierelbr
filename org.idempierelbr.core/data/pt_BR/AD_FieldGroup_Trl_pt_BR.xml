@@ -108,7 +108,7 @@
   <value column="Name" original="Access">Acesso</value>
  </row>
  <row id="50000" trl="Y">
-  <value column="Name" original="Allow Info In Role">Allow Info In Role</value>
+  <value column="Name" original="Allow Info In Role">Permissões de Janelas de Informações</value>
  </row>
  <row id="50001" trl="N">
   <value column="Name" original="Accounts">Accounts</value>
@@ -164,8 +164,8 @@
  <row id="200001" trl="Y">
   <value column="Name" original="Web Position">Posição Interface Web</value>
  </row>
- <row id="200003" trl="N">
-  <value column="Name" original="User Locking">User Locking</value>
+ <row id="200003" trl="Y">
+  <value column="Name" original="User Locking">Bloqueio de Usuário</value>
  </row>
  <row id="200004" trl="Y">
   <value column="Name" original="Overwritten From Column">Sobrescrito da Aba Coluna</value>
@@ -206,8 +206,8 @@
  <row id="200016" trl="N">
   <value column="Name" original="Foreign Key">Foreign Key</value>
  </row>
- <row id="200018" trl="N">
-  <value column="Name" original="Background Job">Background Job</value>
+ <row id="200018" trl="Y">
+  <value column="Name" original="Background Job">Background (Trabalho)</value>
  </row>
  <row trl="Y" uuid="12c499cb-64e4-44b5-87e2-7b0fae45876c">
   <value column="Name" original="Localização Brasil">Adempiere LBR</value>
