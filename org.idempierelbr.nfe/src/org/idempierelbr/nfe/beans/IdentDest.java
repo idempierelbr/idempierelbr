@@ -20,6 +20,7 @@ public class IdentDest {
 	private String dest;
 	private String CNPJ;
 	private String CPF;
+	private String idEstrangeiro;
 	private String xNome;
 	private EnderDest enderDest;
 	private String indIEDest;
@@ -94,5 +95,15 @@ public class IdentDest {
 			iSUF = iSUF.trim();
 	
 		ISUF = iSUF;
+	}
+	public String getIdEstrangeiro() {
+		return idEstrangeiro;
+	}
+
+	public void setIdEstrangeiro(String idEstrangeiro) {
+		if (idEstrangeiro != null)
+			idEstrangeiro = idEstrangeiro.trim();
+		
+		this.idEstrangeiro = idEstrangeiro;
 	}
 }

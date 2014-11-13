@@ -12,6 +12,9 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProdutosNFEBean {
 
 	// Produtos e Serviços da NF-E
@@ -40,7 +43,7 @@ public class ProdutosNFEBean {
 	private String xPed;
 	private String nItemPed;
 	private String nFCI;
-	private DeclaracaoDI DI;
+	private List<DeclaracaoDI> DI = new ArrayList<DeclaracaoDI>();
 
 	public String getProd() {
 		return prod;
@@ -210,12 +213,19 @@ public class ProdutosNFEBean {
 	public void setnItemPed(String nItemPed) {
 		this.nItemPed = nItemPed;
 	}
-	public DeclaracaoDI getDI() {
+	
+	public void addDI( DeclaracaoDI DI ) {
+		this.DI.add(DI);
+	}
+	
+	public List<DeclaracaoDI> getDI () {
 		return DI;
 	}
-	public void setDI(DeclaracaoDI DI) {
+	
+	public void setDI( List<DeclaracaoDI> DI ) {
 		this.DI = DI;
 	}
+	
 	public String getnFCI() {
 		return nFCI;
 	}

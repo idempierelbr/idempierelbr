@@ -21,6 +21,11 @@ public class DeclaracaoDI {
 	private String xLocDesemb;
 	private String UFDesemb;
 	private String dDesemb;
+	private String tpViaTransp;
+	private String vAFRMM;
+	private String tpIntermedio;
+	private String CNPJ;
+	private String UFTerceiro;
 	private String cExportador;
 	private List<AdicoesDI> adi = new ArrayList<AdicoesDI>();
 	
@@ -83,6 +88,51 @@ public class DeclaracaoDI {
 	}
 	public void addAdi(AdicoesDI adi) {
 		this.adi.add(adi);
+	}
+
+	/**
+	 * suporte NFE 3.10
+	 * @contributor Claudemir Todo Bom <claudemir@todobom.com>
+	 */
+	
+	public String getTpViaTransp() {
+		return tpViaTransp;
+	}
+	public void setTpViaTransp(String tpViaTransp) {
+		if (tpViaTransp != null)
+			tpViaTransp = tpViaTransp.trim();
+
+		this.tpViaTransp = tpViaTransp;
+	}
+	public String getvAFRMM() {
+		return vAFRMM;
+	}
+	public void setvAFRMM(String vAFRMM) {
+		this.vAFRMM = vAFRMM;
+	}
+	public String getTpIntermedio() {
+		return tpIntermedio;
+	}
+	public void setTpIntermedio(String tpIntermedio) {
+		if (tpIntermedio != null)
+			tpIntermedio = tpIntermedio.trim();
+		this.tpIntermedio = tpIntermedio;
+	}
+	public String getCNPJ() {
+		return CNPJ;
+	}
+	public void setCNPJ(String CNPJ) {
+		if (CNPJ != null)
+			CNPJ = CNPJ.trim();
+		this.CNPJ = CNPJ;
+	}
+	public String getUFTerceiro() {
+		return UFTerceiro;
+	}
+	public void setUFTerceiro(String UFTerceiro) {
+		if (UFTerceiro != null)
+			UFTerceiro = UFTerceiro.trim();
+		this.UFTerceiro = UFTerceiro;
 	}
 	
 }
