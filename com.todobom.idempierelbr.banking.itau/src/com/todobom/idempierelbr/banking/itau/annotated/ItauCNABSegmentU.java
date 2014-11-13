@@ -13,13 +13,13 @@ public class ItauCNABSegmentU extends CNABSegmentURecord {
 	@Override
 	public Double getOutrasDespesas() {
 		// TODO Auto-generated method stub
-		return super.getOutrasDespesas();
+		return new Double(0);
 	}
 
 	@Override
 	public Double getOutrosCreditos() {
 		// TODO Auto-generated method stub
-		return super.getOutrosCreditos();
+		return new Double(0);
 	}
 
 	@Override

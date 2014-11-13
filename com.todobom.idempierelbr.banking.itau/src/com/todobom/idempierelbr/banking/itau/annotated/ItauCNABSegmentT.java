@@ -51,8 +51,7 @@ public class ItauCNABSegmentT extends CNABSegmentTRecord {
 	// campo vazio neste registro
 	@Override
 	public int getCodigoCarteira() {
-		// TODO Auto-generated method stub
-		return super.getCodigoCarteira();
+		return 0;
 	}
 
 	@Override

@@ -51,7 +51,7 @@ public class ItauBankCollection implements IBankCollection {
 		// formata nosso número para o boleto impresso
 		boleto.setLBR_Fmt_NumberInBank(carteira + "/" + docNo + "-" + docDAC );
 
-		// adiciona dv ao nosso número limpo
+		// armazena o "Nosso Número" com o DAC
 		boleto.setLBR_NumberInBank( boleto.getLBR_NumberInBank() + docDAC );
 
 		boleto.setLBR_Fmt_AgencyClient( agencia + " / " + conta + "-" + agAccDAC );
@@ -70,15 +70,14 @@ public class ItauBankCollection implements IBankCollection {
 		String agencia = TextUtil.pad(OpenItemsUtil.getPartialText( ( (PO) boleto.getC_BankAccount()).get_ValueAsString("LBR_BankAgencyNo") , false ),'0',4,true);
 		String conta = TextUtil.pad(OpenItemsUtil.getPartialText(boleto.getC_BankAccount().getAccountNo(),false),'0',5,true);
 		String carteira = TextUtil.pad(boleto.getLBR_BankAccount_Carteira().getLBR_CarteiraNo(),'0',3,true);
-		String docNo = TextUtil.pad(boleto.getLBR_NumberInBank(),'0',8,true);
-
-		// calcula DAC do documento
-		String docDAC = getDocDAC ( agencia , conta, carteira , docNo );
+		
+		// número no banco já é armazenado com o DAC - por isso 9 posições
+		String docNo = TextUtil.pad(boleto.getLBR_NumberInBank(),'0',9,true);
 
 		// calcula DAC da agencia + conta
 		String agAccDAC = OpenItemsUtil.genTypeAbleDV ( agencia + conta );
 		
- 		String campolivre = carteira + docNo + docDAC + agencia + conta + agAccDAC + "000" ;
+ 		String campolivre = carteira + docNo + agencia + conta + agAccDAC + "000" ;
 		return campolivre;
 	}
 
