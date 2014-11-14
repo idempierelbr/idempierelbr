@@ -162,7 +162,7 @@ public class CNABRecords {
 		listaRegistros.clear();
 		
 		String linha;
-		while ( (linha = lerArq.readLine() ) !=null ) {
+		while ( (linha = lerArq.readLine() ) !=null && !linha.trim().equals("") ) {
 			CNABBaseRecord record = loadRecord(linha);
 			
 			if (record != null) {
