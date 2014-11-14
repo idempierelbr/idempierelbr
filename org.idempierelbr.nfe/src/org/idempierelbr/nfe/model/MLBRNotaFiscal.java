@@ -18,7 +18,6 @@ import java.io.InputStream;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
@@ -89,7 +88,6 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	
 	private static Integer GENERATE_DANFE_PROCESS_ID;
 	private final static String JASPER_FILENAME = "DanfeMainPortraitA4.jasper";
-	private final static String JASPER_FATURA_FILENAME = "DanfeFaturaPortraitA4.jasper";
 
 	/**************************************************************************
 	 *  Default Constructor
@@ -1020,14 +1018,12 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		
 		// Get distribution xml
 		InputStream xmlInputStream = null;
-		InputStream xmlInputStreamFatura = null;
 		MAttachment attachNFe = createAttachment();
 		
 		for (int i = attachNFe.getEntryCount() - 1; i >= 0; i--) 
 		{
 			if (attachNFe.getEntry(i).getName().endsWith(NFeXMLGenerator.DISTRIBUTION_FILE_EXT)) {
 				xmlInputStream = attachNFe.getEntry(i).getInputStream();
-				xmlInputStreamFatura = attachNFe.getEntry(i).getInputStream();
 			}
 		}
 		
@@ -1036,7 +1032,6 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		
 		// Get jasper file(s) and parameters
 		InputStream mainJasperInputStream = null;
-		InputStream faturaJasperInputStream = null;
 		Map<String, Object> jasperParameters = new HashMap<String, Object>();
 		MProcess process = new MProcess(getCtx(), GENERATE_DANFE_PROCESS_ID, get_TrxName());
 		
@@ -1047,9 +1042,6 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 			if (attachProcess.getEntry(i).getName().equals(JASPER_FILENAME))
 				mainJasperInputStream = attachProcess.getEntry(i).getInputStream();
 			
-			if (attachProcess.getEntry(i).getName().equals(JASPER_FATURA_FILENAME))
-				faturaJasperInputStream = attachProcess.getEntry(i).getInputStream();
-				
 			jasperParameters.put(attachProcess.getEntry(i).getName(),
 					attachProcess.getEntry(i).getInputStream());
 		}
@@ -1060,13 +1052,6 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 					.getResourceAsStream("org/idempierelbr/nfe/report/" + JASPER_FILENAME);
 			
 			jasperParameters.put("DanfeMainPortraitA4", mainJasperInputStream);
-		}
-		
-		if (faturaJasperInputStream == null) {
-			faturaJasperInputStream = getClass().getClassLoader()
-					.getResourceAsStream("org/idempierelbr/nfe/report/" + JASPER_FATURA_FILENAME);
-			
-			jasperParameters.put("DanfeFaturaPortraitA4", faturaJasperInputStream);
 		}
 		
 		if (mainJasperInputStream == null)
@@ -1084,27 +1069,16 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 				jasperParameters.put("logotipo", is);
 			}
 		}
-		
-		// Protocolo de Autorização
-		String protocoloAutorizacao = getLBR_LotSendingProt();
-		Timestamp ts = (Timestamp)getDateDoc();
-		String dadosProtocolo = protocoloAutorizacao + "  "
-				+ new SimpleDateFormat("dd/MM/yyyy  HH:mm:ss").format(ts);
 
-		jasperParameters.put("protocoloDataAutorizacao", dadosProtocolo);
-		
-		// Duplicatas
+		// Load report file and datasource
 		JasperReport jasperReport = null;
 		JRXmlDataSource dataSource = null;
-		JRXmlDataSource faturaDatasource = null;
 		
 		try {
 			jasperReport = (JasperReport)JRLoader.loadObject(mainJasperInputStream);
 			dataSource = new JRXmlDataSource(xmlInputStream, jasperReport.getQuery().getText());
-			faturaDatasource = new JRXmlDataSource(xmlInputStreamFatura, "//dup");
-			jasperParameters.put("Fatura_Datasource", faturaDatasource);
 		} catch (JRException e1) {
-			log.severe("Não foi possível obter as duplicatas do XML");
+			log.severe("Não foi possível carregar arquivo jasper");
 			e1.printStackTrace();
 		}
 		
@@ -1115,6 +1089,7 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 			jasperPrint = JasperFillManager.fillReport(jasperReport, jasperParameters, dataSource);
 		} catch(Exception e) {
 			log.warning("Could not generate JasperPrint for Nota Fiscal " + getDocumentNo());
+			e.printStackTrace();
 		}
 		
 		return jasperPrint;
