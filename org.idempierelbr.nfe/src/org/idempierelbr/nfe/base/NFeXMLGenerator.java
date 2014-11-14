@@ -1235,9 +1235,11 @@ public class NFeXMLGenerator {
 		}
 		
 		// TODO: Quando preparar DI, corrigir localização/função destas linhas
+		xstream.alias("DI", DeclaracaoDI.class);
 		xstream.alias("adi", AdicoesDI.class);
 		xstream.addImplicitCollection(DeclaracaoDI.class, "adi");
-		xstream.omitField(AdicoesDI.class, "nDI");
+		xstream.addImplicitCollection(ProdutosNFEBean.class, "DI");
+		// xstream.omitField(AdicoesDI.class, "nDI");
 		
 		// Z. Informações Adicionais da NF-e
 		String fiscalInfo = nf.getLBR_FiscalInfo();
