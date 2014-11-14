@@ -8,6 +8,7 @@ public class BradescoCNABRecords extends CNABRecords {
 		super();
 		this.setHeaderLoteRetornoCobrancaClass(BradescoCNABCobrancaRetornoHeaderLote.class);
 		this.setSegmentTClass(BradescoCNABSegmentT.class);
+		this.setSegmentUClass(BradescoCNABSegmentU.class);
 	}
 
 }
