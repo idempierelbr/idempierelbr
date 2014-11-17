@@ -1,6 +1,5 @@
 package org.idempierelbr.openitems.model;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,7 +34,7 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 		super(ctx, rs, trxName);
 	}
 	
-	public String createPayment() throws IOException {
+	public String createPayment() {
 		String returnMsg = null;		
 		MLBRBoleto boleto = new MLBRBoleto(getCtx(), getLBR_Boleto_ID(), get_TrxName());
 		
@@ -44,8 +43,6 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 	
 		// Payschedule
 		MInvoicePaySchedule paySchedule = (MInvoicePaySchedule) boleto.getC_InvoicePaySchedule();
-		
-		String docNo = "Boleto: " + boleto.getDocumentNo() + " Movimento: " + getLBR_DocumentNo();
 		
 		if ( (invoice != null) && (invoice.getDocStatus()).equals("CO")){
 			if (!invoice.isPaid()){
@@ -101,27 +98,24 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 	
 					// Colocar no log uma indicação do resultado
 					if(Payment.getDocStatus().equals(DocAction.STATUS_Completed) && boleto.save(get_TrxName()))
-						returnMsg = docNo + ";" + Payment.getPayAmt() + ";LANCAMENTO REALIZADO";
+						returnMsg = "Pagamento Realizado";
 					else 
-						returnMsg = docNo + ";" + Payment.getPayAmt() + ";ERRO AO EFETUAR LANÇAMENTO";
+						returnMsg = "Erro ao Efetuar o Pagamento";
 	
 				} 
 				else 
 				{
-					returnMsg = docNo + ";" + Payment.getPayAmt() + ";ERRO AO EFETUAR LANÇAMENTO";
+					returnMsg = "Erro ao Efetuar o Pagamento";
 				}
 			}//BAIXA
 			else{
-				returnMsg = docNo + ";;DOCUMENTO JA LANCADO";
+				returnMsg = "Documento já está Pago";
 			}//JA LANCADO
 	
 		}//FATURA COMPLETADA
 		else{
 			// TODO: registrar pagamentos sem faturas
-			boleto.setDocStatus("FATURA NAO COMPLETADA OU INEXISTENTE");
-			boleto.saveEx();
-	
-			returnMsg = docNo + ";;FATURA NAO COMPLETADA OU INEXISTENTE";
+			returnMsg = "Fatura não Completada ou Inexistente";
 		}
 	
 		return returnMsg;

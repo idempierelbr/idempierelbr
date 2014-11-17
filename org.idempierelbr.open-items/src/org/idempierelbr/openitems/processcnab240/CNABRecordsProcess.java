@@ -1,7 +1,5 @@
 package org.idempierelbr.openitems.processcnab240;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -11,10 +9,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.compiere.model.MAttachment;
 import org.compiere.model.MBank;
 import org.compiere.model.MNote;
 import org.compiere.model.MPInstance;
+import org.compiere.model.MSysConfig;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.Env;
 import org.compiere.util.Msg;
@@ -34,7 +32,6 @@ import org.idempierelbr.openitems.model.MLBRCobGrupoOcorrencia;
 import org.idempierelbr.openitems.model.MLBRCobMovimento;
 import org.idempierelbr.openitems.model.MLBRCobOcorrencia;
 import org.idempierelbr.openitems.process.IBankCollection;
-import org.idempierelbr.openitems.util.OpenItemsUtil;
 
 /*
  * Processa registros CNAB
@@ -80,9 +77,9 @@ public class CNABRecordsProcess {
 				currentGroup.addRecord((CNABCobrancaSegmentBaseRecord) currentRecord);
 			}
 		}
-		
-		File messageFile = OpenItemsUtil.createFile();
-		FileWriter fw = new FileWriter(messageFile);
+
+		int AD_Client_ID = 0;
+		int AD_Org_ID = 0;
 		
 		// Check entries and updated Boleto
 		for (CNABSegmentGroup segmentGroup : m_SegmentGroupList) {
@@ -102,7 +99,7 @@ public class CNABRecordsProcess {
 			if ( boleto == null ) {
 				StringBuilder log = new StringBuilder(Msg.getMsg(svrP.getCtx(), "SearchError"))
 					.append(Msg.getElement(svrP.getCtx(), "LBR_Boleto_ID"))
-					.append(", ")
+					.append(": ")
 					.append(Msg.getElement(svrP.getCtx(), "DocumentNo"))
 					.append(" ")
 					.append(docNo)
@@ -113,6 +110,11 @@ public class CNABRecordsProcess {
 
 				svrP.addLog(log.toString());
 				continue;
+			}
+			
+			if (AD_Client_ID <= 0) {
+				AD_Client_ID = boleto.getAD_Client_ID();
+				AD_Org_ID = boleto.getAD_Org_ID();
 			}
 			
 			// Prepare movement
@@ -131,7 +133,7 @@ public class CNABRecordsProcess {
 					.append(segmentGroup.getSegT().getCodigoMovimento())
 					.append(", ")
 					.append(Msg.getElement(svrP.getCtx(), "LBR_Boleto_ID"))
-					.append(" ")
+					.append(": ")
 					.append(Msg.getElement(svrP.getCtx(), "DocumentNo"))
 					.append(" ")
 					.append(segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim());
@@ -349,29 +351,38 @@ public class CNABRecordsProcess {
 			mov.saveEx();
 			boleto.saveEx();
 			
-			if (mov.getPayAmt().compareTo(Env.ZERO) == 1)  {
-				StringBuilder log = new StringBuilder(Msg.getMsg(svrP.getCtx(), "DocProcessed"))
+			StringBuilder log = new StringBuilder(Msg.getMsg(svrP.getCtx(), "DocProcessed"))
 				.append(": ")
 				.append(Msg.getElement(svrP.getCtx(), "LBR_Boleto_ID"))
 				.append(" ")
-				.append(boleto.getDocumentNo());
+				.append(boleto.getDocumentNo())
+				.append(", ")
+				.append(Msg.getElement(svrP.getCtx(), "LBR_Cob_Movimento_ID"))
+				.append(" ")
+				.append(cobMov.getName());
+		
+			svrP.addLog(log.toString());
 			
-				log.append(", ")
+			if (mov.getPayAmt().compareTo(Env.ZERO) == 1)  {
+				log = new StringBuilder(Msg.getMsg(svrP.getCtx(), "DocProcessed"))
+					.append(": ")
+					.append(Msg.getElement(svrP.getCtx(), "LBR_Boleto_ID"))
+					.append(" ")
+					.append(boleto.getDocumentNo())
+					.append(", ")
 					.append(Msg.getElement(svrP.getCtx(), "PayAmt"))
 					.append(" ")
-					.append(TextUtil.toNumeric(mov.getPayAmt()));
-				String returnMsg = mov.createPayment();
-				TextUtil.addText(fw, returnMsg);
-				TextUtil.addEOL(fw);
+					.append(TextUtil.toNumeric(mov.getPayAmt()))
+					.append(", ")
+					.append(mov.createPayment());
+				
+				svrP.addLog(log.toString());
 			}
 		
 		}
-
-		fw.close();
 		
 		// Create Notice
-		// FIXME:  verificar configuração
-		// if (MSysConfig.getBooleanValue("LBR_CNAB_CREATE_NOTICE", true, getAD_Client_ID(), p_AD_Org_ID)) {
+		if (MSysConfig.getBooleanValue("LBR_CNAB_CREATE_NOTICE", true, AD_Client_ID, AD_Org_ID)) {
 			MNote note = new MNote(svrP.getCtx(), "LBR_CNABGenerated", Env.getAD_User_ID(svrP.getCtx()), svrP.get_TrxName());
 			
 			StringBuilder noteMsg = new StringBuilder("Retorno CNAB: ")
@@ -386,19 +397,7 @@ public class CNABRecordsProcess {
 			note.setTextMsg(noteMsg.toString());
 			note.setRecord(MPInstance.Table_ID, svrP.getProcessInfo().getAD_PInstance_ID());
 			note.saveEx();
-
-			MAttachment attachment = note.createAttachment();
-			attachment.addEntry(messageFile);	
-
-			String log = svrP.getProcessInfo().getLogInfo(true);
-			if (log != null && log.trim().length() > 0)
-				attachment.addEntry("ProcessLog.html", log.getBytes("UTF-8"));
-
-			if (attachment != null)
-				attachment.saveEx();
-
-			// }
-
+		}
 		
 		return "Ok";
 				
