@@ -27,6 +27,5 @@ Export-Package: org.idempierelbr.cnab240febraban,
 Require-Bundle: org.adempiere.base,
  org.idempierelbr.core;bundle-version="1.0.0",
  org.idempierelbr.open-items
-Service-Component: OSGI-INF/BankCollectionFactory.xml
 Import-Package: org.idempierelbr.cnab240.annotated,
  org.zkoss.zul
