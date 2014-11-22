@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 import java.util.logging.Level;
@@ -493,6 +494,9 @@ public class NFeXMLGenerator {
 		else if (bpCPF != null && bpCPF.length() > 0)
 			destinatario.setCPF(bpCPF);
 		
+		if (bpLoc.getC_Country_ID() != BPartnerUtil.BRASIL )
+			destinatario.setIdEstrangeiro("");
+		
 		destinatario.setxNome(RemoverAcentos.remover(bp.getName()));
 		
 		EnderDest enderDest = new EnderDest();
@@ -551,7 +555,9 @@ public class NFeXMLGenerator {
 			return "@LBR_Recipient@: @LBR_WrongIE@";
 		}
 		
-		if (!bpIEIsento) {
+		if (bpLoc.getC_Country_ID() != BPartnerUtil.BRASIL ) {
+			destinatario.setIndIEDest("9");
+		} else if (!bpIEIsento) {
 			destinatario.setIndIEDest("1");
 			destinatario.setIE(bpIE);
 		} else if (bpIEIsento)
@@ -569,8 +575,10 @@ public class NFeXMLGenerator {
 				destinatario.setCNPJ("99999999000191");
 			}
 			destinatario.setxNome("NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL");
-			destinatario.setIE(null);
-			destinatario.setIndIEDest("2");
+			if (bpLoc.getC_Country_ID() == BPartnerUtil.BRASIL ) {
+				destinatario.setIE(null);
+				destinatario.setIndIEDest("2");
+			}
 		}
 		
 		destinatario.setEnderDest(enderDest);
@@ -791,37 +799,18 @@ public class NFeXMLGenerator {
 			produtos.setIndTot(details.isLBR_IsGrossAmtInTotal() ? "1" : "0");
 			
 			// Declaração de Importação
-			// TODO: Refatorar DI
-			/*DeclaracaoDI declaracao = new DeclaracaoDI();
-			//Importação - nDI Obrigatório
-			if (nfLine.getlbr_CFOPName() != null &&
-					nfLine.getlbr_CFOPName().startsWith("3")){
-				if (nfLine.get_Value("LBR_NFDI_ID") == null)
+			if (cfopName.startsWith("3")) {
+				
+				List<DeclaracaoDI> diList = nfLine.getDeclaracaoDI();
+
+				if ( diList.size() == 0 )
 					return "Linha: " + nfLine.getLine() + " CFOP Importação. " +
 							"DI Obrigatório!";
+
+				produtos.setDI(diList);
+				
 			}
 
-			//	DI e Adições
-			if (nfLine.get_Value("LBR_NFDI_ID") != null) {
-				X_LBR_NFDI di = new X_LBR_NFDI(Env.getCtx(), (Integer) nfLine.get_Value("LBR_NFDI_ID"), null);
-				//
-				declaracao.setcExportador(RemoverAcentos.remover(di.getlbr_CodExportador()));
-				declaracao.setdDesemb(TextUtil.timeToString(di.getlbr_DataDesemb(), "yyyy-MM-dd"));
-				declaracao.setdDI(TextUtil.timeToString(di.getDateTrx(), "yyyy-MM-dd"));
-				declaracao.setnDI(di.getlbr_DI());
-				declaracao.setUFDesemb(di.getlbr_BPRegion());
-				declaracao.setxLocDesemb(RemoverAcentos.remover(di.getlbr_LocDesemb()));
-
-				AdicoesDI adicao = new AdicoesDI();
-				adicao.setcFabricante(RemoverAcentos.remover(nfLine.get_ValueAsString("Manufacturer")));
-				adicao.setnAdicao(nfLine.get_ValueAsString("lbr_NumAdicao"));
-				adicao.setnSeqAdic(nfLine.get_ValueAsString("lbr_NumSeqItem"));
-			  //adicao.setVDescDI(Env.ZERO);	//TODO
-				adicao.setnDI(di.getlbr_DI());
-				declaracao.addAdi(adicao);
-				produtos.setDI(declaracao);
-			} //DI
-			*/			
 			
 			// Pedido de Compra
 			if (details.getPOReference() != null && !details.getPOReference().trim().isEmpty())
@@ -940,7 +929,7 @@ public class NFeXMLGenerator {
 		// TODO: refatorar valores de frete/seguro/despesas acessórias
 		valoresicms.setvFrete(TextUtil.ZERO_STRING); // vFrete - Valor Total do Frete
 		valoresicms.setvSeg(TextUtil.ZERO_STRING); // vSeg - Valor Total do Seguro
-		valoresicms.setvOutro(TextUtil.ZERO_STRING); // vOutro - Despesa acessórias
+		valoresicms.setvOutro(TextUtil.bigdecimalToString(nf.getTotalSurcharges())); // vOutro - Despesa acessórias
 		BigDecimal vDesc = nf.getDiscount(); // Valor do Desconto total da NF
 		valoresicms.setvDesc(TextUtil.bigdecimalToString(vDesc)); // vDesc - Valor Total do Desconto
 		valoresicms.setvII(TextUtil.ZERO_STRING); // vII - Valor Total do II
@@ -1349,7 +1338,6 @@ public class NFeXMLGenerator {
 
 			FileInputStream stream = new FileInputStream(file);
 			InputStreamReader streamReader = new InputStreamReader(stream);
-			@SuppressWarnings("resource")
 			BufferedReader reader = new BufferedReader(streamReader);
 
 			String validar = "";
@@ -1357,6 +1345,7 @@ public class NFeXMLGenerator {
 			while( (line=reader.readLine() ) != null ) {
 				validar += line;
 			}
+			reader.close();
 			//
 			retValidacao = ValidaXML.validaXML(validar);
 		}

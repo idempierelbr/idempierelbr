@@ -1094,4 +1094,17 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		
 		return jasperPrint;
 	}
+
+	public BigDecimal getTotalSurcharges() {
+		
+		BigDecimal totalSurcharges = new BigDecimal( 0 );
+		
+		for ( MLBRNotaFiscalLine line : getLines() ) {
+			MLBRDocLineDetailsNfe detail = MLBRDocLineDetailsNfe.getOfPO(line);
+			BigDecimal surcharges = detail.getSurcharges();
+			totalSurcharges = totalSurcharges.add( surcharges != null ? surcharges : Env.ZERO );
+		}
+		
+		return totalSurcharges;
+	}
 }

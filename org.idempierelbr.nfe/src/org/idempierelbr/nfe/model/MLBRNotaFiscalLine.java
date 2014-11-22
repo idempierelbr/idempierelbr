@@ -14,20 +14,25 @@ package org.idempierelbr.nfe.model;
 
 import java.math.BigDecimal;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import org.adempiere.exceptions.AdempiereException;
+import org.adempiere.model.GenericPO;
 import org.compiere.model.MCity;
 import org.compiere.model.MCountry;
 import org.compiere.model.MProduct;
 import org.compiere.model.MRegion;
 import org.compiere.model.MTax;
 import org.compiere.model.MTaxProvider;
+import org.compiere.model.Query;
 import org.compiere.util.Env;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.nfe.beans.COFINSBean;
 import org.idempierelbr.nfe.beans.COFINSGrupoBean;
 import org.idempierelbr.nfe.beans.COFINSSTBean;
+import org.idempierelbr.nfe.beans.DeclaracaoDI;
 import org.idempierelbr.nfe.beans.ICMSBean;
 import org.idempierelbr.nfe.beans.ICMSGrupoBean;
 import org.idempierelbr.nfe.beans.IIBean;
@@ -37,6 +42,7 @@ import org.idempierelbr.nfe.beans.PISBean;
 import org.idempierelbr.nfe.beans.PISGrupoBean;
 import org.idempierelbr.nfe.beans.PISSTBean;
 import org.idempierelbr.nfe.beans.ISSQNBean;
+import org.idempierelbr.tax.model.I_LBR_DI;
 import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
 import org.idempierelbr.tax.model.MLBRDocLineICMS;
 import org.idempierelbr.tax.model.MLBRDocLineIPI;
@@ -404,9 +410,11 @@ public class MLBRNotaFiscalLine extends X_LBR_NotaFiscalLine {
 				icmsGrupo.setpRedBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBase()));
 				icmsGrupo.setvBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBaseAmt()));
 				icmsGrupo.setpICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxRate()));
-				icmsGrupo.setvICMSOp(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMS_TaxAmtOp()));
-				icmsGrupo.setpDif(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxDeferralRate()));
-				icmsGrupo.setvICMSDif(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxDeferralAmt()));
+				if ( icmsLines[0].getLBR_TaxRate().compareTo(Env.ZERO) != 0 ) {
+					icmsGrupo.setvICMSOp(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMS_TaxAmtOp()));
+					icmsGrupo.setpDif(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxDeferralRate()));
+					icmsGrupo.setvICMSDif(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxDeferralAmt()));
+				}
 				icmsGrupo.setvICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxAmt()));
 			}
 			// ICMS60
@@ -1163,4 +1171,44 @@ public class MLBRNotaFiscalLine extends X_LBR_NotaFiscalLine {
 		
 		return null;
 	}
+	
+	public List<DeclaracaoDI> getDeclaracaoDI() {
+		
+		MLBRNotaFiscalDI[] additionItems = getNotaFiscalDI();
+		
+		I_LBR_DI currentDI = null;
+		DeclaracaoDI diBean = null;
+		List<DeclaracaoDI> diList = new ArrayList<DeclaracaoDI>();
+
+		for ( MLBRNotaFiscalDI item: additionItems ) {
+			if ( !item.getLBR_DI_Addition().getLBR_DI().equals(currentDI)) {
+				currentDI = item.getLBR_DI_Addition().getLBR_DI();
+				diBean = item.getDIBean( );
+				diList.add(diBean);
+			}
+			diBean.addAdi(  item.getAdditionBean( ) );
+		}
+
+		return diList;
+	}
+
+	/**
+	 * 
+	 * Return DI Additions to a Line
+	 * 
+	 * @param parent
+	 * @return MLBRNotaFiscalDI Array
+	 */
+	public MLBRNotaFiscalDI[] getNotaFiscalDI () {	
+		
+		List<MLBRNotaFiscalDI> list = new Query ( getCtx(), MLBRNotaFiscalDI.Table_Name,
+				"LBR_NotaFiscalLine_ID=?", get_TrxName())
+		.setParameters(new Object[]{get_ID()})
+		.addJoinClause("LEFT JOIN LBR_DI_Addition on LBR_DI_Addition.LBR_DI_Addition_ID=LBR_NotaFiscalDI.LBR_DI_Addition_ID")
+		.setOrderBy("LBR_DI_Addition.LBR_DI_ID")
+		.list();
+		
+		return list.toArray(new MLBRNotaFiscalDI[list.size()]);	
+	}
+	
 }

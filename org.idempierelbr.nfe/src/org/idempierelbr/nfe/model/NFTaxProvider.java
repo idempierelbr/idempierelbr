@@ -222,6 +222,9 @@ public class NFTaxProvider implements ITaxProviderNfe {
 				return false;
 		}
 		
+		// add surcharges (vOutro)
+		grandTotal = grandTotal.add(nf.getTotalSurcharges());
+		
 		nf.setTotalLines(totalLines);
 		nf.setGrandTotal(grandTotal);
 		return true;	
