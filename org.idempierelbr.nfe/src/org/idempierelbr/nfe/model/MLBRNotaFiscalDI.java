@@ -2,11 +2,9 @@ package org.idempierelbr.nfe.model;
 
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
-import java.util.List;
 import java.util.Properties;
 
 import org.compiere.model.I_C_BPartner;
-import org.compiere.model.Query;
 import org.idempierelbr.nfe.beans.AdicoesDI;
 import org.idempierelbr.nfe.beans.DeclaracaoDI;
 import org.idempierelbr.tax.model.I_LBR_DI;

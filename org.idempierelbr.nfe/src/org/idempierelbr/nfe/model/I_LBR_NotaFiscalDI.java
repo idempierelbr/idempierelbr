@@ -20,6 +20,8 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import org.compiere.model.*;
 import org.compiere.util.KeyNamePair;
+import org.idempierelbr.tax.model.I_LBR_DI_Addition;
+import org.idempierelbr.tax.model.I_LBR_DI_AdditionProd;
 
 /** Generated Interface for LBR_NotaFiscalDI
  *  @author iDempiere (generated) 

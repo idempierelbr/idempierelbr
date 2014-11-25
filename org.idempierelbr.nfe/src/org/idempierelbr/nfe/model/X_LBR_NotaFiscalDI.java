@@ -22,6 +22,8 @@ import java.sql.ResultSet;
 import java.util.Properties;
 import org.compiere.model.*;
 import org.compiere.util.Env;
+import org.idempierelbr.tax.model.I_LBR_DI_Addition;
+import org.idempierelbr.tax.model.I_LBR_DI_AdditionProd;
 
 /** Generated Model for LBR_NotaFiscalDI
  *  @author iDempiere (generated) 
