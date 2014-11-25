@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.0_2013-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
 <!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
 <idempiereTrl language="pt_BR" table="AD_Tab">
  <row id="100" trl="Y">
@@ -6323,6 +6323,60 @@ Printing:
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
+ </row>
+ <row id="200154" trl="N">
+  <value column="Name" original="Recurring Group">Recurring Group</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200156" trl="N">
+  <value column="Name" original="Country Group">Country Group</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200157" trl="N">
+  <value column="Name" original="Country">Country</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200158" trl="N">
+  <value column="Name" original="Country Group">Country Group</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200159" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800000" trl="Y">
+  <value column="Name" original="Import Declaration (DI)">Declaração de Importação (DI)</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800001" trl="Y">
+  <value column="Name" original="Addition">Adição</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800002" trl="Y">
+  <value column="Name" original="Product">Produto</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800003" trl="Y">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) DI">DI</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Brazilian Fiscal Invoice (Nota Fiscal) DI">Declaração de Importação (DI)</value>
+  <value column="Help" original="The Brazilian Fiscal Invoice (Nota Fiscal) DI Tab displays information about selected DIs.">A aba permite referenciar DIs anteriormente registradas no sistema.</value>
  </row>
  <row trl="Y" uuid="07721587-32fd-4a79-b306-94c8ed672f52">
   <value column="Name" original="NCM">NCM</value>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.0_2013-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
 <!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
 <idempiereTrl language="pt_BR" table="AD_InfoWindow">
  <row id="200000" trl="Y">
@@ -39,6 +39,16 @@
  </row>
  <row id="200007" trl="Y">
   <value column="Name" original="Asset Info">Informações de Ativos</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800000" trl="Y">
+  <value column="Name" original="DI Addition Info">Informações de Adição (DI)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800001" trl="Y">
+  <value column="Name" original="DI Info">Informações de DI</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

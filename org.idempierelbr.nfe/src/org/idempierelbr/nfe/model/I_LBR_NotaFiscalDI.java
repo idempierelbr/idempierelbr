@@ -18,15 +18,12 @@ package org.idempierelbr.nfe.model;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-
 import org.compiere.model.*;
 import org.compiere.util.KeyNamePair;
-import org.idempierelbr.tax.model.I_LBR_DI_Addition;
-import org.idempierelbr.tax.model.I_LBR_DI_AdditionProd;
 
 /** Generated Interface for LBR_NotaFiscalDI
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 2.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_NotaFiscalDI 
@@ -95,6 +92,15 @@ public interface I_LBR_NotaFiscalDI
 	  * The record is active in the system
 	  */
 	public boolean isActive();
+
+    /** Column name LBR_AfrmmAmt */
+    public static final String COLUMNNAME_LBR_AfrmmAmt = "LBR_AfrmmAmt";
+
+	/** Set AFRMM Amount	  */
+	public void setLBR_AfrmmAmt (BigDecimal LBR_AfrmmAmt);
+
+	/** Get AFRMM Amount	  */
+	public BigDecimal getLBR_AfrmmAmt();
 
     /** Column name LBR_DI_Addition_ID */
     public static final String COLUMNNAME_LBR_DI_Addition_ID = "LBR_DI_Addition_ID";

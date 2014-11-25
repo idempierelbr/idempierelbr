@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.0_2013-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
 <!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
 <idempiereTrl language="pt_BR" table="AD_Process">
  <row id="100" trl="Y">
@@ -2159,6 +2159,16 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Name" original="Process Production">Process Production</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
+ </row>
+ <row id="200074" trl="N">
+  <value column="Name" original="Recurring Run">Recurring Run</value>
+  <value column="Description" original="Recurring Run">Recurring Run</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800000" trl="Y">
+  <value column="Name" original="Distribute Amount to Doc Line Details">Distribuir Valor aos Detalhes</value>
+  <value column="Description" original="Distribute a given amount to line details of a document">Distribuir Valor aos Detalhes das Linhas</value>
+  <value column="Help" original="">Este processo permite distribuir (dividir) um valor aos detalhes das linhas com base em regras de distribuição. A regra 'Núm. de Linhas' permite a distribuição de valores iguais para cada linha. As regras 'Quantidade' e 'Valor' permitem valores proporcionais a cada linha. Se você selecionar o campo 'Zerar Antes de Distribuir', o valor existente no campo será desconsiderado. Caso contrário, será somado ao mesmo.</value>
  </row>
  <row trl="N" uuid="e6df0503-5f93-4a2c-abe6-0c425cc138e9">
   <value column="Name" original="Process NotaFiscal">Process NotaFiscal</value>

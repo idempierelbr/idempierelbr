@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.0_2013-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
 <!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
 <idempiereTrl language="pt_BR" table="AD_Reference">
  <row id="1" trl="Y">
@@ -2535,6 +2535,41 @@
  <row id="200084" trl="N">
   <value column="Name" original="ParentPreferenceType">ParentPreferenceType</value>
   <value column="Description" original="Type of preference WEditor lie on (process, info window, window)">Type of preference WEditor lie on (process, info window, window)</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200092" trl="N">
+  <value column="Name" original="Country Group">Country Group</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800000" trl="N">
+  <value column="Name" original="LBR_DI_TranspType">LBR_DI_TranspType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800001" trl="N">
+  <value column="Name" original="LBR_DI_MediationImpType">LBR_DI_MediationImpType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800002" trl="N">
+  <value column="Name" original="LBR_DI_Addition">LBR_DI_Addition</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800003" trl="N">
+  <value column="Name" original="LBR_DI">LBR_DI</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800004" trl="N">
+  <value column="Name" original="LBR_DistribAmtToDetailsTarget">LBR_DistribAmtToDetailsTarget</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800005" trl="N">
+  <value column="Name" original="LBR_DistribAmtToDetailsType">LBR_DistribAmtToDetailsType</value>
+  <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="050a1289-4030-4328-b311-6a330e1cd8ae">

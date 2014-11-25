@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_DI
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 2.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_DI 
@@ -149,6 +149,15 @@ public interface I_LBR_DI
 	  */
 	public boolean isActive();
 
+    /** Column name LBR_AfrmmAmt */
+    public static final String COLUMNNAME_LBR_AfrmmAmt = "LBR_AfrmmAmt";
+
+	/** Set AFRMM Amount	  */
+	public void setLBR_AfrmmAmt (BigDecimal LBR_AfrmmAmt);
+
+	/** Get AFRMM Amount	  */
+	public BigDecimal getLBR_AfrmmAmt();
+
     /** Column name LBR_BP_Buyer_ID */
     public static final String COLUMNNAME_LBR_BP_Buyer_ID = "LBR_BP_Buyer_ID";
 
@@ -163,6 +172,21 @@ public interface I_LBR_DI
 	public int getLBR_BP_Buyer_ID();
 
 	public org.compiere.model.I_C_BPartner getLBR_BP_Buyer() throws RuntimeException;
+
+    /** Column name LBR_BP_BuyerLocation_ID */
+    public static final String COLUMNNAME_LBR_BP_BuyerLocation_ID = "LBR_BP_BuyerLocation_ID";
+
+	/** Set Business Partner (Buyer) Location.
+	  * Identifies a Business Partner Location
+	  */
+	public void setLBR_BP_BuyerLocation_ID (int LBR_BP_BuyerLocation_ID);
+
+	/** Get Business Partner (Buyer) Location.
+	  * Identifies a Business Partner Location
+	  */
+	public int getLBR_BP_BuyerLocation_ID();
+
+	public org.compiere.model.I_C_BPartner_Location getLBR_BP_BuyerLocation() throws RuntimeException;
 
     /** Column name LBR_BP_Importer_ID */
     public static final String COLUMNNAME_LBR_BP_Importer_ID = "LBR_BP_Importer_ID";

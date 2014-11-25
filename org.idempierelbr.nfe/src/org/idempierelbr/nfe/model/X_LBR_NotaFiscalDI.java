@@ -17,23 +17,22 @@
 /** Generated Model - DO NOT CHANGE */
 package org.idempierelbr.nfe.model;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.Properties;
-
 import org.compiere.model.*;
-import org.idempierelbr.tax.model.I_LBR_DI_Addition;
-import org.idempierelbr.tax.model.I_LBR_DI_AdditionProd;
+import org.compiere.util.Env;
 
 /** Generated Model for LBR_NotaFiscalDI
  *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
+ *  @version Release 2.1 - $Id$ */
 public class X_LBR_NotaFiscalDI extends PO implements I_LBR_NotaFiscalDI, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20141120L;
+	private static final long serialVersionUID = 20141125L;
 
     /** Standard Constructor */
     public X_LBR_NotaFiscalDI (Properties ctx, int LBR_NotaFiscalDI_ID, String trxName)
@@ -75,6 +74,23 @@ public class X_LBR_NotaFiscalDI extends PO implements I_LBR_NotaFiscalDI, I_Pers
         .append(get_ID()).append("]");
       return sb.toString();
     }
+
+	/** Set AFRMM Amount.
+		@param LBR_AfrmmAmt AFRMM Amount	  */
+	public void setLBR_AfrmmAmt (BigDecimal LBR_AfrmmAmt)
+	{
+		set_Value (COLUMNNAME_LBR_AfrmmAmt, LBR_AfrmmAmt);
+	}
+
+	/** Get AFRMM Amount.
+		@return AFRMM Amount	  */
+	public BigDecimal getLBR_AfrmmAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_AfrmmAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
 
 	public I_LBR_DI_Addition getLBR_DI_Addition() throws RuntimeException
     {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.0_2013-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
 <!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
 <idempiereTrl language="pt_BR" table="AD_Field">
  <row id="1546" trl="Y">
@@ -755,6 +755,16 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Name" original="ViewID Column">Coluna da Visão (View)</value>
   <value column="Description" original="Name of unique column in a view. value of this column will save to t_selection table">Nome único da coluna em uma view. O valor desta coluna será salvo na tabela t_selection</value>
   <value column="Help" original="Column to resolve issue in https://idempiere.atlassian.net/browse/IDEMPIERE-1970">Para obter detalhes da utilização deste campo, consulte: https://idempiere.atlassian.net/browse/IDEMPIERE-1970</value>
+ </row>
+ <row id="203325" trl="N">
+  <value column="Name" original="Country Group">Country Group</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="203326" trl="N">
+  <value column="Name" original="To">To</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="1571ea6a-cfc0-4a9e-ab5e-017bbbfa1958">
   <value column="Name" original="Memo">Informações Adicionais (NF-e)</value>

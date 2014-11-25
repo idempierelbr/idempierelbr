@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.0_2013-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
 <!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
 <idempiereTrl language="pt_BR" table="AD_Element">
  <row id="101" trl="Y">
@@ -55192,6 +55192,316 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PrintName" original="Cost Adjustment Line">Cost Adjustment Line</value>
   <value column="Description" original="Unique line in an Inventory cost adjustment document">Unique line in an Inventory cost adjustment document</value>
   <value column="Help" original="The Cost Adjustment Line indicates the inventory cost adjustment document line (if applicable) for this transaction">The Cost Adjustment Line indicates the inventory cost adjustment document line (if applicable) for this transaction</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202755" trl="N">
+  <value column="Name" original="Recurring Group">Recurring Group</value>
+  <value column="PrintName" original="Recurring Group">Recurring Group</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202756" trl="N">
+  <value column="Name" original="C_RecurringGroup_UU">C_RecurringGroup_UU</value>
+  <value column="PrintName" original="C_RecurringGroup_UU">C_RecurringGroup_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202757" trl="N">
+  <value column="Name" original="Parameter Comment">Parameter Comment</value>
+  <value column="PrintName" original="Parameter Comment">Parameter Comment</value>
+  <value column="Description" original="To replace the tag @Prm_Comment@ on the description of the documents being generated with the text you fill on the parameter">To replace the tag @Prm_Comment@ on the description of the documents being generated with the text you fill on the parameter</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202761" trl="N">
+  <value column="Name" original="Country on Country Group">Country on Country Group</value>
+  <value column="PrintName" original="Country on Country Group">Country on Country Group</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202762" trl="N">
+  <value column="Name" original="C_CountryGroupCountry_UU">C_CountryGroupCountry_UU</value>
+  <value column="PrintName" original="C_CountryGroupCountry_UU">C_CountryGroupCountry_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202763" trl="N">
+  <value column="Name" original="Country Group">Country Group</value>
+  <value column="PrintName" original="Country Group">Country Group</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202764" trl="N">
+  <value column="Name" original="C_CountryGroup_UU">C_CountryGroup_UU</value>
+  <value column="PrintName" original="C_CountryGroup_UU">C_CountryGroup_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202765" trl="N">
+  <value column="Name" original="C_CountryGroup_Trl_UU">C_CountryGroup_Trl_UU</value>
+  <value column="PrintName" original="C_CountryGroup_Trl_UU">C_CountryGroup_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202766" trl="N">
+  <value column="Name" original="Country Group To">Country Group To</value>
+  <value column="PrintName" original="Country Group To">Country Group To</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202767" trl="N">
+  <value column="Name" original="Country Group From">Country Group From</value>
+  <value column="PrintName" original="Country Group From">Country Group From</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800000" trl="Y">
+  <value column="Name" original="Import Declaration (DI)">Declaração de Importação (DI)</value>
+  <value column="PrintName" original="DI">DI</value>
+  <value column="Description" original="Identifies an Import Declaration (DI)">Identifica uma Declaração de Importação (DI)</value>
+  <value column="Help" original="The DI is a document used in a product/service import.">A DI é um dos documentos utilizados no processo de importação de bens/serviços.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800001" trl="N">
+  <value column="Name" original="Import Declaration (DI)">Import Declaration (DI)</value>
+  <value column="PrintName" original="DI">DI</value>
+  <value column="Description" original="Identifies an Import Declaration (DI)">Identifies an Import Declaration (DI)</value>
+  <value column="Help" original="The DI is a document used in a product/service import.">The DI is a document used in a product/service import.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800002" trl="Y">
+  <value column="Name" original="Import Declaration (DI) No">Núm. da DI</value>
+  <value column="PrintName" original="DI No">Núm. da DI</value>
+  <value column="Description" original="Document sequence number of the document"/>
+  <value column="Help" original="The document number is usually automatically generated by the system and determined by the document type of the document. If the document is not saved, the preliminary number is displayed in &quot;&lt;&gt;&quot;.&#10;&#10;If the document type of your document has no automatic document sequence defined, the field is empty if you create a new document. This is for documents which usually have an external number (like vendor invoice).  If you leave the field empty, the system will generate a document number for you. The document sequence used for this fallback number is defined in the &quot;Maintain Sequence&quot; window with the name &quot;DocumentNo_&lt;TableName&gt;&quot;, where TableName is the actual name of the table (e.g. C_Order)."/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800003" trl="Y">
+  <value column="Name" original="Business Partner (Importer)">Importador</value>
+  <value column="PrintName" original="Business Partner (Importer)">Importador</value>
+  <value column="Description" original="Identifies a Business Partner">Identifica um Importador</value>
+  <value column="Help" original="A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson"/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800004" trl="Y">
+  <value column="Name" original="Business Partner (Buyer)">Adquirente</value>
+  <value column="PrintName" original="Business Partner (Buyer)">Adquirente</value>
+  <value column="Description" original="Identifies a Business Partner">Identifica o Adquirente</value>
+  <value column="Help" original="A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson"/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800005" trl="Y">
+  <value column="Name" original="Clearance Date">Data do Desembaraço</value>
+  <value column="PrintName" original="Clearance Date">Data do Desembaraço</value>
+  <value column="Description" original="Date of the clearance">Data do Desembaraço</value>
+  <value column="Help" original="The Clearance Date for imported / exported goods">Data do desembaraço na importação dos bens/serviços.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800006" trl="Y">
+  <value column="Name" original="Transportation Type">Via de Transporte</value>
+  <value column="PrintName" original="Transportation Type">Via de Transporte</value>
+  <value column="Description" original="Type of transportation">Via de Transporte</value>
+  <value column="Help" original="Indicates the type of transportation used in an Import Declaration (DI)">Indica a Via de Transporte usada na DI.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800007" trl="Y">
+  <value column="Name" original="Mediation Type">Forma de Importação</value>
+  <value column="PrintName" original="Mediation Type">Forma de Importação</value>
+  <value column="Description" original="Type of mediation">Forma de Importação</value>
+  <value column="Help" original="Indicates the type of mediation used in an Import Declaration (DI)">Indica a Forma de Importação usada na DI.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800008" trl="Y">
+  <value column="Name" original="Import Declaration (DI) Addition">Adição da DI</value>
+  <value column="PrintName" original="DI Addiction">Adição da DI</value>
+  <value column="Description" original="Identifies an Import Declaration (DI) Addiction">Identifica uma Adição da DI</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800009" trl="N">
+  <value column="Name" original="Import Declaration (DI) Addition">Import Declaration (DI) Addition</value>
+  <value column="PrintName" original="DI Addiction">DI Addiction</value>
+  <value column="Description" original="Identifies an Import Declaration (DI) Addiction">Identifies an Import Declaration (DI) Addiction</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800010" trl="Y">
+  <value column="Name" original="Business Partner (Exporter)">Exportador</value>
+  <value column="PrintName" original="Business Partner (Exporter)">Exportador</value>
+  <value column="Description" original="Identifies a Business Partner">Identifica o Exportador</value>
+  <value column="Help" original="A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson"/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800011" trl="Y">
+  <value column="Name" original="Business Partner (Manufacturer)">Fabricante / Produtor</value>
+  <value column="PrintName" original="Business Partner (Manufacturer)">Fabricante / Produtor</value>
+  <value column="Description" original="Identifies a Business Partner">Identifica o Fabricante / Produtor</value>
+  <value column="Help" original="A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson"/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800012" trl="Y">
+  <value column="Name" original="DI Addition Product">Produto da Adição (DI)</value>
+  <value column="PrintName" original="DI Addiction Product">Produto da Adição (DI)</value>
+  <value column="Description" original="Identifies an Import Declaration (DI) Addiction Product">Identifica um produto (item) da adição da DI</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800013" trl="N">
+  <value column="Name" original="DI Addition Product">DI Addition Product</value>
+  <value column="PrintName" original="DI Addiction Product">DI Addiction Product</value>
+  <value column="Description" original="Identifies an Import Declaration (DI) Addiction Product">Identifies an Import Declaration (DI) Addiction Product</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800014" trl="Y">
+  <value column="Name" original="Specification">Especificação</value>
+  <value column="PrintName" original="Specification">Especificação</value>
+  <value column="Description" original="Optional short description of the record"/>
+  <value column="Help" original="A description is limited to 255 characters."/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800015" trl="N">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) DI">Brazilian Fiscal Invoice (Nota Fiscal) DI</value>
+  <value column="PrintName" original="Nota Fiscal DI">Nota Fiscal DI</value>
+  <value column="Description" original="Identifies a Brazilian Fiscal Invoice (Nota Fiscal) DI">Identifies a Brazilian Fiscal Invoice (Nota Fiscal) DI</value>
+  <value column="Help" original="The DI is a document used in a product/service import.">The DI is a document used in a product/service import.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800016" trl="N">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) DI">Brazilian Fiscal Invoice (Nota Fiscal) DI</value>
+  <value column="PrintName" original="Nota Fiscal DI">Nota Fiscal DI</value>
+  <value column="Description" original="Identifies a Brazilian Fiscal Invoice (Nota Fiscal) DI">Identifies a Brazilian Fiscal Invoice (Nota Fiscal) DI</value>
+  <value column="Help" original="The DI is a document used in a product/service import.">The DI is a document used in a product/service import.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800018" trl="Y">
+  <value column="Name" original="AFRMM Amount">Valor do AFRMM</value>
+  <value column="PrintName" original="AFRMM Amount">Valor do AFRMM</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800019" trl="Y">
+  <value column="Name" original="Business Partner (Buyer) Location">Localização do Adquirente</value>
+  <value column="PrintName" original="Business Partner (Buyer) Location">Localização do Adquirente</value>
+  <value column="Description" original="Identifies a Business Partner Location">Identifica a Localização do Adquirente</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800020" trl="N">
+  <value column="Name" original="Reset Amount">Reset Amount</value>
+  <value column="PrintName" original="Reset Amount">Reset Amount</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800021" trl="N">
+  <value column="Name" original="Amount Distribution">Amount Distribution</value>
+  <value column="PrintName" original="Amt Distribution">Amt Distribution</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>

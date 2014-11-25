@@ -24,6 +24,8 @@ public class ProcessFactory implements IProcessFactory {
 			return new UnlinkNotaFiscal();
 		else if (className.equals("org.idempierelbr.nfe.process.GenerateDanfe"))
 			return new GenerateDanfe();
+		else if (className.equals("org.idempierelbr.tax.process.DistributeAmtToDetails"))
+			return new DistributeAmtToDetails();
 		else
 			return null;
 	}

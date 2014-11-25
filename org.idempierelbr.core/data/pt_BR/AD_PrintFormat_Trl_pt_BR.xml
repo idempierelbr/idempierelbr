@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.0_2013-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
 <!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
 <idempiereTrl language="pt_BR" table="AD_PrintFormat">
  <row id="100" trl="N">
@@ -356,14 +356,6 @@
  </row>
  <row id="200008" trl="N">
   <value column="Name" original="Complex Fact View">Complex Fact View</value>
-  <value column="Description" original=""/>
- </row>
- <row trl="N" uuid="cc546a16-e233-4299-8827-508b2a7fba1a">
-  <value column="Name" original="Parceiro de Negócios">Parceiro de Negócios</value>
-  <value column="Description" original=""/>
- </row>
- <row trl="N" uuid="0311b142-0bbe-4c6d-9f1c-5d021635dc25">
-  <value column="Name" original="Parceiro de Negócios_20141107132028">Parceiro de Negócios_20141107132028</value>
   <value column="Description" original=""/>
  </row>
 </idempiereTrl>

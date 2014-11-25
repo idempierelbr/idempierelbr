@@ -17,22 +17,24 @@
 /** Generated Model - DO NOT CHANGE */
 package org.idempierelbr.tax.model;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.Properties;
 import org.compiere.model.*;
+import org.compiere.util.Env;
 import org.compiere.util.KeyNamePair;
 
 /** Generated Model for LBR_DI
  *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
+ *  @version Release 2.1 - $Id$ */
 public class X_LBR_DI extends PO implements I_LBR_DI, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20141120L;
+	private static final long serialVersionUID = 20141125L;
 
     /** Standard Constructor */
     public X_LBR_DI (Properties ctx, int LBR_DI_ID, String trxName)
@@ -178,6 +180,23 @@ public class X_LBR_DI extends PO implements I_LBR_DI, I_Persistent
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
+	/** Set AFRMM Amount.
+		@param LBR_AfrmmAmt AFRMM Amount	  */
+	public void setLBR_AfrmmAmt (BigDecimal LBR_AfrmmAmt)
+	{
+		set_Value (COLUMNNAME_LBR_AfrmmAmt, LBR_AfrmmAmt);
+	}
+
+	/** Get AFRMM Amount.
+		@return AFRMM Amount	  */
+	public BigDecimal getLBR_AfrmmAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_AfrmmAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
 	public org.compiere.model.I_C_BPartner getLBR_BP_Buyer() throws RuntimeException
     {
 		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_Name)
@@ -201,6 +220,34 @@ public class X_LBR_DI extends PO implements I_LBR_DI, I_Persistent
 	public int getLBR_BP_Buyer_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BP_Buyer_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	public org.compiere.model.I_C_BPartner_Location getLBR_BP_BuyerLocation() throws RuntimeException
+    {
+		return (org.compiere.model.I_C_BPartner_Location)MTable.get(getCtx(), org.compiere.model.I_C_BPartner_Location.Table_Name)
+			.getPO(getLBR_BP_BuyerLocation_ID(), get_TrxName());	}
+
+	/** Set Business Partner (Buyer) Location.
+		@param LBR_BP_BuyerLocation_ID 
+		Identifies a Business Partner Location
+	  */
+	public void setLBR_BP_BuyerLocation_ID (int LBR_BP_BuyerLocation_ID)
+	{
+		if (LBR_BP_BuyerLocation_ID < 1) 
+			set_Value (COLUMNNAME_LBR_BP_BuyerLocation_ID, null);
+		else 
+			set_Value (COLUMNNAME_LBR_BP_BuyerLocation_ID, Integer.valueOf(LBR_BP_BuyerLocation_ID));
+	}
+
+	/** Get Business Partner (Buyer) Location.
+		@return Identifies a Business Partner Location
+	  */
+	public int getLBR_BP_BuyerLocation_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BP_BuyerLocation_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();

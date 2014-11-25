@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.0_2013-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
 <!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
 <idempiereTrl language="pt_BR" table="AD_Process_Para">
  <row id="227" trl="Y">
@@ -307,8 +307,33 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200084" trl="N">
+  <value column="Name" original="Use Default CoA">Use Default CoA</value>
+  <value column="Description" original="Use Default Chart of Accounts">Use Default Chart of Accounts</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200085" trl="N">
+  <value column="Name" original="Activity Accounting">Activity Accounting</value>
+  <value column="Description" original="Use Activity accounting dimension">Use Activity accounting dimension</value>
+  <value column="Help" original="Define if this client will use activity accounting dimension.  This can be changed later in Accounting Schema window of the client.">Define if this client will use activity accounting dimension.  This can be changed later in Accounting Schema window of the client.</value>
+ </row>
+ <row id="200086" trl="N">
+  <value column="Name" original="Inactivate Defaults">Inactivate Defaults</value>
+  <value column="Description" original="Inactivate Defaults after Created">Inactivate Defaults after Created</value>
+  <value column="Help" original=""/>
+ </row>
  <row id="200102" trl="N">
   <value column="Name" original="Cost Adjustment Document Type">Cost Adjustment Document Type</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800000" trl="Y">
+  <value column="Name" original="Target">Alvo</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800002" trl="Y">
+  <value column="Name" original="Reset Amount">Zerar Antes de Distribuir</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

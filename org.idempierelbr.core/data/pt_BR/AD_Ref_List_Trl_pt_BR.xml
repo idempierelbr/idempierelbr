@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.0_2013-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
 <!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
 <idempiereTrl language="pt_BR" table="AD_Ref_List">
  <row id="51" trl="Y">
@@ -5400,6 +5400,86 @@
  </row>
  <row id="200189" trl="N">
   <value column="Name" original="Process">Process</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200278" trl="N">
+  <value column="Name" original="Model Cascade">Model Cascade</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800000" trl="Y">
+  <value column="Name" original="Maritima">Marítima</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800001" trl="Y">
+  <value column="Name" original="Fluvial">Fluvial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800002" trl="Y">
+  <value column="Name" original="Lacustre">Lacustre</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800003" trl="Y">
+  <value column="Name" original="Aerea">Aérea</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800004" trl="Y">
+  <value column="Name" original="Postal">Postal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800005" trl="Y">
+  <value column="Name" original="Ferroviaria">Ferroviária</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800006" trl="Y">
+  <value column="Name" original="Rodoviaria">Rodoviária</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800007" trl="Y">
+  <value column="Name" original="Conduto / Rede de Transmissao">Conduto / Rede de Transmissão</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800008" trl="Y">
+  <value column="Name" original="Meios Proprios">Meios Próprios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800009" trl="Y">
+  <value column="Name" original="Entrada / Saida Ficta.">Entrada / Saída Ficta.</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800010" trl="Y">
+  <value column="Name" original="Importacao por Conta Propria">Importação por Conta Própria</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800011" trl="Y">
+  <value column="Name" original="Importacao por Conta e Ordem">Importação por Conta e Ordem</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800012" trl="Y">
+  <value column="Name" original="Importacao por Encomenda">Importação por Encomenda</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800013" trl="Y">
+  <value column="Name" original="Insurance">Seguro</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800014" trl="Y">
+  <value column="Name" original="Freight">Frete</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800015" trl="Y">
+  <value column="Name" original="Surcharges">Sobretaxa</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800016" trl="Y">
+  <value column="Name" original="Lines No.">Núm. de Linhas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800017" trl="Y">
+  <value column="Name" original="Quantity">Quantidade</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800018" trl="Y">
+  <value column="Name" original="Amount">Valor</value>
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="2facadde-7b9b-4619-9161-8f9fe50b2b19">
