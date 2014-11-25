@@ -1,10 +1,12 @@
 package org.idempierelbr.nfe.model;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Properties;
 
 import org.compiere.model.I_C_BPartner;
+import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.nfe.beans.AdicoesDI;
 import org.idempierelbr.nfe.beans.DeclaracaoDI;
 import org.idempierelbr.tax.model.I_LBR_DI;
@@ -40,8 +42,12 @@ public class MLBRNotaFiscalDI extends X_LBR_NotaFiscalDI {
 		diBean.setdDesemb( (new SimpleDateFormat("yyyy-MM-dd")).format(di.getLBR_ClearanceDate()) );
 		diBean.setTpViaTransp( di.getLBR_DI_TranspType() );
 		if ( diBean.getTpViaTransp().equals("1") ) {
-			// diBean.setvAFRMM(this.getLBR_AFRMM().toString());
-			diBean.setvAFRMM("0.00");
+			BigDecimal afrmmAmt = this.getLBR_AfrmmAmt();
+			if ( afrmmAmt != null ) {
+				diBean.setvAFRMM( TextUtil.bigdecimalToString(this.getLBR_AfrmmAmt() ) );
+			} else {
+				diBean.setvAFRMM("0.00");
+			}
 		}
 		diBean.setTpIntermedio( di.getLBR_DI_MediationImpType() );
 		diBean.setcExportador( this.getLBR_DI_Addition().getLBR_BP_Exporter().getValue() );
