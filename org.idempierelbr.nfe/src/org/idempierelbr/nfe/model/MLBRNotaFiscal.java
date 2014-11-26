@@ -14,6 +14,7 @@ package org.idempierelbr.nfe.model;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
@@ -32,7 +33,9 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRXmlDataSource;
 import net.sf.jasperreports.engine.util.JRLoader;
 
+import org.apache.commons.io.IOUtils;
 import org.compiere.model.MAttachment;
+import org.compiere.model.MAttachmentEntry;
 import org.compiere.model.MCurrency;
 import org.compiere.model.MDocType;
 import org.compiere.model.MFactAcct;
@@ -1016,14 +1019,24 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		if (GENERATE_DANFE_PROCESS_ID == null || GENERATE_DANFE_PROCESS_ID <= 0)
 			return null;
 		
-		// Get distribution xml
+		// Get distribution xml for NF and Events
 		InputStream xmlInputStream = null;
 		MAttachment attachNFe = createAttachment();
+		String events="";
 		
-		for (int i = attachNFe.getEntryCount() - 1; i >= 0; i--) 
+		for (int i = 0 ; i < attachNFe.getEntryCount() ; i++) 
 		{
-			if (attachNFe.getEntry(i).getName().endsWith(NFeXMLGenerator.DISTRIBUTION_FILE_EXT)) {
-				xmlInputStream = attachNFe.getEntry(i).getInputStream();
+			MAttachmentEntry entry = attachNFe.getEntry(i);
+			if (entry.getName().endsWith(NFeXMLGenerator.DISTRIBUTION_FILE_EXT)) {
+				xmlInputStream = entry.getInputStream();
+			}
+
+			if (entry.getName().endsWith("-procEventoNFe.xml")) {
+				try {
+					events += IOUtils.toString(entry.getInputStream());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 		
@@ -1068,6 +1081,11 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 				InputStream is = new ByteArrayInputStream(mImage.getBinaryData());
 				jasperParameters.put("logotipo", is);
 			}
+		}
+		
+		if ( ! events.equals("") ) {
+			jasperParameters.put("Eventos_Datasource", 
+					IOUtils.toInputStream("<LBREventList>" + events + "</LBREventList>" ));
 		}
 
 		// Load report file and datasource

@@ -11,7 +11,14 @@ import java.util.logging.Level;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
+import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MAttachment;
 import org.compiere.model.MBPartner;
 import org.compiere.model.MDocType;
@@ -156,9 +163,11 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 		}
 
 		String xmlLot;
+		EnvEvento envLot;
 		
 		try {
-			xmlLot = generateLot(lines).trim().replaceFirst("^([\\W]+)<","<");
+			envLot = generateLot(lines);
+			xmlLot = envToString(envLot).trim().replaceFirst("^([\\W]+)<","<");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "Could not generate xml";
@@ -199,12 +208,16 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
         setLBR_LotSendingStatus(cStat);
         
         String cStatL = NFeUtil.getValue(doc, "cStat");
-	    NodeList infEvento =  doc.getElementsByTagName("infEvento");
-        
+	    NodeList retEvento =  doc.getElementsByTagName("retEvento");
         if (isImmutableStatus(cStatL)) {
-		    for (int i=0; i< infEvento.getLength(); i++) {
-	        	Node node = infEvento.item(i);
-	        	updateLine(lines, node);
+		    for (int i=0; i< retEvento.getLength(); i++) {
+	        	Node node = retEvento.item(i);
+	        	// Since the batch was processed, any individual line error should not break the process 
+	        	try {
+	        		updateLine( lines, node , findEvento( envLot , NFeUtil.getValue(node, "chNFe") ) );
+	        	} catch (Exception e) {
+	        		e.printStackTrace();
+	        	}
 	        }
 		    
 		    setLBR_LotSent(true);
@@ -223,75 +236,91 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 	 *
 	 * @param lines Lot lines array
 	 * @param node NF-e entry from Sefaz returned message
+	 * @param sent The event that was sent to Sefaz
 	 */
-	private void updateLine(MLBRNotaFiscalEventLine[] lines, Node node) {
+	private void updateLine(MLBRNotaFiscalEventLine[] lines, Node node, Evento sent) {
 		if (node.getNodeType() == Node.ELEMENT_NODE) {
 			String chNFe	= NFeUtil.getValue(node, "chNFe");
 			String cStat 	= NFeUtil.getValue(node, "cStat");
 			String nProt 	= NFeUtil.getValue(node, "nProt");
+			String tpEvento = NFeUtil.getValue(node, "tpEvento");
+			String nSeqEvento = NFeUtil.getValue(node, "nSeqEvento");
 			
 			for (MLBRNotaFiscalEventLine line : lines) {
+				// Update Lot Line
+				// Movido para o início, de forma que qualquer Exception posterior não impedirá o registro adequado
+				line.setLBR_LotSendingProt(nProt);
+				line.setLBR_NFeStatus(cStat);
+				line.saveEx();					
+
 				if (line.getLBR_NFeID().equals(chNFe)) {
+					
+					// Find the NF-e object
+					MLBRNotaFiscal nf = new MLBRNotaFiscal(getCtx(), line.getLBR_NotaFiscal_ID(), get_TrxName());
+
+					// Attach distribution file to the referenced NF-e
+					if ( cStat.equals("135") || cStat.equals("136") || cStat.equals("155") ) {
+						MAttachment attachNFe = nf.createAttachment();
+						File attachFile = new File(TextUtil.generateTmpFile(  generateDistributionXMLString ( sent , node )  , chNFe + "_"
+								+ tpEvento + ( nSeqEvento.equals("1") ? "" : "_"+nSeqEvento ) + "-procEventoNFe.xml"));
+						attachNFe.addEntry(attachFile);
+						attachNFe.saveEx(get_TrxName());
+					}
+
 					if (line.getLBR_NFeEventType().equals("CAN")) {
+						String cStatNFe = "";
 						if (cStat.equals("135"))
-							cStat = "101"; // 101 - Cancelamento de NF-e homologado
+							cStatNFe = "101"; // 101 - Cancelamento de NF-e homologado
 						else if (cStat.equals("155"))
-							cStat = "151"; // 151 - Cancelamento de NF-e homologado fora de prazo
+							cStatNFe = "151"; // 151 - Cancelamento de NF-e homologado fora de prazo
 						
-						// Update NF-e (only cancellation)
-						if (cStat.equals("101") || cStat.equals("151")) {
-							MLBRNotaFiscal nf = new MLBRNotaFiscal(getCtx(), line.getLBR_NotaFiscal_ID(), get_TrxName());
+						if (cStatNFe.equals("101") || cStatNFe.equals("151")) {
 							
 							if (nf.getLBR_NFeID().equals(chNFe)) {
 								nf.setLBR_LotSendingProt(nProt);
-								nf.setLBR_NFeStatus(cStat);
+								nf.setLBR_NFeStatus(cStatNFe);
 								nf.saveEx();
 							} else {
 								log.severe("NF-e " + nf.getDocumentNo() + " has NF-e ID other than NF-e Lot. It won't be updated");
 							}
 						}
 					}
-					
-					// Update Lot Line
-					line.setLBR_LotSendingProt(nProt);
-					line.setLBR_NFeStatus(cStat);
-					line.saveEx();					
 				}
 			}
 		}
 	}
 
+	// Classes usadas para annotation
+	private Class<?>[] classForAnnotation = new Class[]{DetEventoCartaDeCorrecao.class,
+			DetEventoCancelamento.class,
+			InfEvento.class,
+			Evento.class,
+			EnvEvento.class,
+			Signature.CanonicalizationMethod.class, 
+			Signature.DigestMethod.class,
+			Signature.KeyInfo.class,
+			Signature.Reference.class,
+			Signature.SignatureMethod.class, 
+			Signature.SignedInfo.class,
+			Signature.Transform.class,
+			Signature.Transforms.class,
+			Signature.X509Data.class};
+	
 	/**
 	 * 	Generate xml for NF-e Lot (before sending to Sefaz)
 	 *
 	 * @return String lot xml
 	 * @throws Exception
 	 */
-	private String generateLot(MLBRNotaFiscalEventLine[] lines) throws Exception
+	private EnvEvento generateLot(MLBRNotaFiscalEventLine[] lines) throws Exception
 	{
 		log.fine("Generating NF-e Event Lot: " + getDocumentNo());
 		StringBuilder linesXml = new StringBuilder();
 		
 		// Dados do Envio
-		EnvEvento env = new EnvEvento();
-		env.setVersao(NFeUtil.VERSAO_EVENTO);
-		env.setIdLote(getDocumentNo());
-		
-		// Classes usadas para annotation
-		Class<?>[] classForAnnotation = new Class[]{DetEventoCartaDeCorrecao.class,
-				DetEventoCancelamento.class,
-				InfEvento.class,
-				Evento.class,
-				EnvEvento.class,
-				Signature.CanonicalizationMethod.class, 
-				Signature.DigestMethod.class,
-				Signature.KeyInfo.class,
-				Signature.Reference.class,
-				Signature.SignatureMethod.class, 
-				Signature.SignedInfo.class,
-				Signature.Transform.class,
-				Signature.Transforms.class,
-				Signature.X509Data.class};
+		EnvEvento envEvento = new EnvEvento();
+		envEvento.setVersao(NFeUtil.VERSAO_EVENTO);
+		envEvento.setIdLote(getDocumentNo());
 		
 		for (MLBRNotaFiscalEventLine line : lines) {
 			MLBRNotaFiscal nf = new MLBRNotaFiscal (getCtx(), line.getLBR_NotaFiscal_ID(), get_TrxName());
@@ -305,7 +334,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 			int linked2OrgC_BPartner_ID = org.getLinkedC_BPartner_ID(get_TrxName());
 			
 			if (linked2OrgC_BPartner_ID < 1)
-				return "Nenhum Parceiro vinculado à Organização";
+				throw new AdempiereException ( "Nenhum Parceiro vinculado à Organização" );
 			
 			MBPartner bpLinked2Org = new MBPartner(getCtx(), linked2OrgC_BPartner_ID, get_TrxName());
 			
@@ -358,7 +387,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 				evento = (Evento) xstream.fromXML(TextUtil.readFile(new File(xmlFile)));
 				
 				// Popula o envio do Evento com o XML assinado
-				env.addEvento(evento);
+				envEvento.addEvento(evento);
 				
 				// Validação envio
 				/*String validation = ValidaXML.ValidaDoc(xml.toString(), "Evento_CCe_PL_v1.01/envCCe_v1.00.xsd");
@@ -416,7 +445,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 				evento = (Evento) xstream.fromXML(TextUtil.readFile(new File(xmlFile)));
 				
 				// Popula o envio do Evento com o XML assinado
-				env.addEvento(evento);
+				envEvento.addEvento(evento);
 				
 				// Validação envio
 				/*String validation = ValidaXML.ValidaDoc(xml.toString(), "Evento_Canc_PL_v1.01/envEventoCancNFe_v1.00.xsd");
@@ -427,6 +456,10 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 			}
 		}
 
+		return envEvento;
+	}
+	
+	public String envToString ( EnvEvento env ) {
 		StringWriter sw = new StringWriter();
 		XStream xstream = new XStream();
 		xstream.aliasSystemAttribute(null, "class");
@@ -439,4 +472,47 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 
 		return sw.toString();
 	}	//	gerarLote
+	
+	public String generateDistributionXMLString(  Evento sent , Node returned ) {
+		String procEventoString = "<procEventoNFe xmlns=\"http://www.portalfiscal.inf.br/nfe\" versao=\"1.00\">";
+
+		// convert returned node into xml string
+		TransformerFactory transFactory = TransformerFactory.newInstance();
+		StringWriter buffer = new StringWriter();
+		try {
+			Transformer transformer = transFactory.newTransformer();
+			transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+			transformer.transform(new DOMSource(returned),
+					new StreamResult(buffer));
+		} catch (TransformerException e) {
+			e.printStackTrace();
+			return null;
+		}
+		String str = buffer.toString();
+
+		// convert xml string into Evento bean
+		StringWriter sw = new StringWriter();
+		XStream xstream = new XStream(new DomDriver("UTF-8"));
+		xstream.aliasSystemAttribute(null, "class");
+		xstream.alias("retEvento", Evento.class);
+		xstream.processAnnotations(classForAnnotation);
+		xstream.addImplicitCollection(EnvEvento.class, "eventos");
+		
+		xstream.marshal(sent, new CompactWriter(sw));
+		procEventoString += sw.toString();
+		procEventoString += str;
+		procEventoString += "</procEventoNFe>";
+		
+		return procEventoString;
+	}
+	
+	public Evento findEvento( EnvEvento eventos , String chNFE ) {
+		for ( Evento evento : eventos.getEvento() ) {
+			if (evento.getInfEvento().getChNFe().toString().equals(chNFE)) {
+				return evento;
+			}
+		}
+		return null;
+	}
+	
 }
