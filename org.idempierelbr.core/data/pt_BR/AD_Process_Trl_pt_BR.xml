@@ -2170,6 +2170,11 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original="Distribute a given amount to line details of a document">Distribuir Valor aos Detalhes das Linhas</value>
   <value column="Help" original="">Este processo permite distribuir (dividir) um valor aos detalhes das linhas com base em regras de distribuição. A regra 'Núm. de Linhas' permite a distribuição de valores iguais para cada linha. As regras 'Quantidade' e 'Valor' permitem valores proporcionais a cada linha. Se você selecionar o campo 'Zerar Antes de Distribuir', o valor existente no campo será desconsiderado. Caso contrário, será somado ao mesmo.</value>
  </row>
+ <row id="800001" trl="Y">
+  <value column="Name" original="Create PO From Nota Fiscal">Gerar Pedido de Compra</value>
+  <value column="Description" original="Generate and Process PO from Nota Fiscal">Gerar Pedido de Compra a partir da Nota Fiscal</value>
+  <value column="Help" original="This process allows to generate purchase order to completed Nota Fiscal.">Este processo permite gerar um pedido de compra baseado na nota fiscal.</value>
+ </row>
  <row trl="N" uuid="e6df0503-5f93-4a2c-abe6-0c425cc138e9">
   <value column="Name" original="Process NotaFiscal">Process NotaFiscal</value>
   <value column="Description" original=""/>
