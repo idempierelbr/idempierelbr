@@ -1101,8 +1101,11 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		
 		for ( MLBRNotaFiscalLine line : getLines() ) {
 			MLBRDocLineDetailsNfe detail = MLBRDocLineDetailsNfe.getOfPO(line);
-			BigDecimal surcharges = detail.getSurcharges();
-			totalSurcharges = totalSurcharges.add( surcharges != null ? surcharges : Env.ZERO );
+			
+			if (detail != null) {
+				BigDecimal surcharges = detail.getSurcharges();
+				totalSurcharges = totalSurcharges.add( surcharges != null ? surcharges : Env.ZERO );
+			}
 		}
 		
 		return totalSurcharges;
