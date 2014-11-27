@@ -8,9 +8,9 @@
 
    <fontFamily name="Arial">
        <normal><![CDATA[Arial.ttf]]></normal>
-       <bold><![CDATA[/usr/share/fonts/truetype/msttcorefonts/Arial_Bold.ttf]]></bold>
-       <italic><![CDATA[/usr/share/fonts/truetype/msttcorefonts/Arial_Italic.ttf]]></italic>
-       <boldItalic><![CDATA[/usr/share/fonts/truetype/msttcorefonts/Arial_Bold_Italic.ttf]]></boldItalic>
+       <bold><![CDATA[Arial_Bold.ttf]]></bold>
+       <italic><![CDATA[Arial_Italic.ttf]]></italic>
+       <boldItalic><![CDATA[Arial_Bold_Italic.ttf]]></boldItalic>
        <pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
        <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
    </fontFamily>
