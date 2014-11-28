@@ -359,6 +359,24 @@ public class NFFromXMLGen
 				// Line Amount
 				infoGroup.xmlLineAmt = eElement.getElementsByTagName("vProd").item(0).getTextContent();
 				
+				// Freight Amt
+				if (eElement.getElementsByTagName("vFrete").item(0) != null) {
+					infoGroup.xmlFreightAmt = eElement.getElementsByTagName("vFrete").item(0).getTextContent();
+					infoGroup.freightAmt = toBigDecimal(infoGroup.xmlFreightAmt);
+				}
+
+				// Other Charges
+				if (eElement.getElementsByTagName("vOutro").item(0) != null) {
+					infoGroup.xmlSurCharges = eElement.getElementsByTagName("vOutro").item(0).getTextContent();
+					infoGroup.surCharges = toBigDecimal(infoGroup.xmlSurCharges);
+				}
+				
+				// Insurance Amt
+				if (eElement.getElementsByTagName("vSeg").item(0) != null) {
+					infoGroup.xmlInsuredAmount = eElement.getElementsByTagName("vSeg").item(0).getTextContent();
+					infoGroup.InsuredAmount = toBigDecimal(infoGroup.xmlInsuredAmount);
+				}
+				
 				xmlProductMap.put(String.valueOf(temp + 1), infoGroup);
 		    }
 		}
@@ -628,6 +646,12 @@ public class NFFromXMLGen
 			if (details != null) {
 				details.setProductValue(group.xmlValue);
 				details.setProductName(group.xmlName);
+				
+				// freight and other charges
+				details.setFreightAmt(group.freightAmt);
+				details.setSurcharges(group.surCharges);
+				details.setInsuredAmount(group.InsuredAmount);
+				
 				details.saveEx();
 				
 				// ICMS
@@ -1221,6 +1245,13 @@ public class NFFromXMLGen
 		Integer C_UOM_ID;
 		BigDecimal qty;
 		BigDecimal unitPrice;
+		
+		String xmlFreightAmt;
+		BigDecimal freightAmt;
+		String xmlSurCharges;
+		BigDecimal surCharges;
+		String xmlInsuredAmount;
+		BigDecimal InsuredAmount;
 		
 		MProductPO pPO;
 	}	
