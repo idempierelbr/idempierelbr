@@ -231,9 +231,11 @@ public class CreateNotaFiscal extends SvrProcess
 		
 		if (po instanceof MOrder) {
 			nf.setC_Order_ID(order.get_ID());
+			nf.setLBR_TaxPayerInfo(order.get_ValueAsString("LBR_TaxPayerInfo"));
 		} else if (po instanceof MInvoice) {
 			nf.setC_Order_ID(invoice.getC_Order_ID());
 			nf.setC_Invoice_ID(invoice.get_ID());
+			nf.setLBR_TaxPayerInfo(invoice.get_ValueAsString("LBR_TaxPayerInfo"));
 		} else if (po instanceof MRMA) {
 			nf.setC_Order_ID(rmaOrder.get_ID());
 			nf.setM_RMA_ID(rma.get_ID());

@@ -3,7 +3,9 @@ package org.idempierelbr.nfe.model;
 import org.adempiere.base.event.AbstractEventHandler;
 import org.adempiere.base.event.IEventTopics;
 import org.adempiere.exceptions.AdempiereException;
+import org.compiere.model.MInvoice;
 import org.compiere.model.MInvoiceLine;
+import org.compiere.model.MOrder;
 import org.compiere.model.MOrderLine;
 import org.compiere.model.MRMALine;
 import org.compiere.model.MTax;
@@ -37,6 +39,8 @@ public class EventHandler extends AbstractEventHandler {
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, X_LBR_NotaFiscalTrailer.Table_Name);
 		
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MLBRNotaFiscalPay.Table_Name);
+		
+		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MInvoice.Table_Name);
 	}
 
 	@Override
@@ -132,6 +136,18 @@ public class EventHandler extends AbstractEventHandler {
 					}
 				} else if (event.getTopic().equals(IEventTopics.PO_BEFORE_DELETE)) // Delete
 					deleteLBRDocLineDetails(po);
+			}
+		}
+		
+		// Copy LBR fields from Order to Invoice
+		if (po instanceof MInvoice && event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)) {
+			MInvoice invoice = (MInvoice) po;
+			
+			if (invoice.getC_Order_ID() > 0) {
+				MOrder order = new MOrder(po.getCtx(), invoice.getC_Order_ID(), po.get_TrxName());
+				String taxPayerInfo = order.get_ValueAsString("LBR_TaxPayerInfo");
+				if (taxPayerInfo != null && taxPayerInfo.trim().length() > 0)
+					invoice.set_ValueOfColumn("LBR_TaxPayerInfo", taxPayerInfo);
 			}
 		}
 	}
