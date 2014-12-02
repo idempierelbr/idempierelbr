@@ -438,7 +438,7 @@ public class CreateNotaFiscal extends SvrProcess
 	/**
 	 * Get operation type (IN/OUT) based on source document type
 	 * 
-	 * @return 1 (OUT) or 2 (IN)
+	 * @return 1 (OUT) or 0 (IN)
 	 */
 	private String getOperationType() {
 		// Default: OUT
@@ -449,7 +449,8 @@ public class CreateNotaFiscal extends SvrProcess
 		if (docBaseType.equals(MDocType.DOCBASETYPE_APInvoice) ||
 				docBaseType.equals(MDocType.DOCBASETYPE_ARCreditMemo) ||
 				docBaseType.equals(MDocType.DOCBASETYPE_PurchaseOrder) ||
-				docBaseType.equals(MDocType.DOCBASETYPE_PurchaseRequisition))
+				docBaseType.equals(MDocType.DOCBASETYPE_PurchaseRequisition) ||
+				(docBaseType.equals(MDocType.DOCBASETYPE_SalesOrder) && poDocType.getDocSubTypeSO().equals(MDocType.DOCSUBTYPESO_ReturnMaterial)))
 			opType = "0"; // IN		
 		
 		return opType;
