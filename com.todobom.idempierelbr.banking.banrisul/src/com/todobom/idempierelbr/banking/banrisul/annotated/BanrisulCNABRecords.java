@@ -8,6 +8,8 @@ public class BanrisulCNABRecords extends CNABRecords {
 		super();
 		this.setHeaderArquivoClass(BanrisulCNABHeaderArquivo.class);
 		this.setHeaderLoteCobrancaClass(BanrisulCNABCobrancaHeaderLote.class);
+		this.setSegmentPClass(BanrisulCNABSegmentP.class);
+		this.setSegmentRClass(BanrisulCNABSegmentR.class);
 	}
 
 }

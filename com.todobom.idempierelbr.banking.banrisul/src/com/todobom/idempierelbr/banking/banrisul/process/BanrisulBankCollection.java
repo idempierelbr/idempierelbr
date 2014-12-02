@@ -48,7 +48,7 @@ public class BanrisulBankCollection implements IBankCollection {
 	@Override
 	public String getCampoLivre(MLBRBoleto boleto) {
 		String agencia = TextUtil.pad(OpenItemsUtil.getPartialText( ( (PO) boleto.getC_BankAccount()).get_ValueAsString("LBR_BankAgencyNo") , false ),'0',4,true);
-		String convenio = TextUtil.pad( boleto.getLBR_BankAccount_Convenio().getLBR_ConvenioNo().trim().replaceAll("[^0-9]*", "") , '0' , 9 , true );
+		String convenio = TextUtil.pad(OpenItemsUtil.getPartialText( boleto.getLBR_BankAccount_Convenio().getLBR_ConvenioNo() ,false )  , '0' , 7 , true );
 		String docNo = boleto.getLBR_NumberInBank().substring(0, 8);
 
     	/*
