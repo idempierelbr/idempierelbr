@@ -9,7 +9,7 @@ import com.ancientprogramming.fixedformat4j.annotation.FixedFormatPattern;
 import com.ancientprogramming.fixedformat4j.annotation.Record;
 
 @Record
-public abstract class CNABSegmentTRecord extends CNABCobrancaSegmentBaseRecord {
+public class CNABSegmentTRecord extends CNABCobrancaSegmentBaseRecord {
 
 	private int agenciaCedente;
 	private String dvAgenciaCedente;
