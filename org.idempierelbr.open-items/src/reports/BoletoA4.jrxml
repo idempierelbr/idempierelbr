@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BoletoA4" pageWidth="595" pageHeight="842" columnWidth="565" leftMargin="15" rightMargin="15" topMargin="20" bottomMargin="4" uuid="a1f89160-0476-4ec7-bfaa-2804cc61b999">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="874"/>
+	<property name="ireport.y" value="755"/>
 	<parameter name="RECORD_ID" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
 	</parameter>
@@ -264,7 +264,7 @@ ORDER BY
 				</graphicElement>
 			</rectangle>
 			<rectangle radius="5">
-				<reportElement uuid="b6a29bc0-a51e-450a-ad20-266a94a8496e" x="400" y="115" width="165" height="32"/>
+				<reportElement uuid="b6a29bc0-a51e-450a-ad20-266a94a8496e" x="400" y="111" width="165" height="36"/>
 				<graphicElement>
 					<pen lineWidth="1.0"/>
 				</graphicElement>
@@ -318,7 +318,7 @@ ORDER BY
 				</graphicElement>
 			</rectangle>
 			<rectangle radius="5">
-				<reportElement uuid="c52482f3-0d09-4e91-b33d-a7a777be219b" x="68" y="175" width="77" height="20"/>
+				<reportElement uuid="c52482f3-0d09-4e91-b33d-a7a777be219b" x="68" y="175" width="110" height="20"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -330,13 +330,13 @@ ORDER BY
 				</graphicElement>
 			</rectangle>
 			<rectangle radius="5">
-				<reportElement uuid="9324a8c5-c55e-4096-aa6e-2d854929c1e1" x="0" y="151" width="396" height="20"/>
+				<reportElement uuid="9324a8c5-c55e-4096-aa6e-2d854929c1e1" x="0" y="143" width="396" height="28"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle radius="5">
-				<reportElement uuid="cdf1f85f-6b73-4a5e-9ed6-0f8663e2d718" x="0" y="115" width="396" height="32"/>
+				<reportElement uuid="cdf1f85f-6b73-4a5e-9ed6-0f8663e2d718" x="0" y="111" width="396" height="28"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -388,7 +388,7 @@ ORDER BY
 				<textElement textAlignment="Left">
 					<font fontName="Verdana" size="6" isBold="true"/>
 				</textElement>
-				<text><![CDATA[(-) Descontos]]></text>
+				<text><![CDATA[(-) Desconto / Abatimento]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="d87618d4-d2e3-400f-8efa-129e2097f5a5" x="403" y="272" width="158" height="8"/>
@@ -454,21 +454,21 @@ ORDER BY
 				<text><![CDATA[Data do Docto.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="daa3a14b-177a-4ab1-8f4f-a06fa409d0d3" x="3" y="151" width="78" height="8"/>
+				<reportElement uuid="daa3a14b-177a-4ab1-8f4f-a06fa409d0d3" x="3" y="143" width="51" height="8"/>
 				<textElement textAlignment="Left">
 					<font fontName="Verdana" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Beneficiário]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="24fcb1b6-8fdc-4991-a180-917892054ccf" x="3" y="115" width="78" height="8"/>
+				<reportElement uuid="24fcb1b6-8fdc-4991-a180-917892054ccf" x="3" y="111" width="78" height="8"/>
 				<textElement textAlignment="Left">
 					<font fontName="Verdana" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Local de Pagamento]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="4f83019c-ce8f-41fb-b90f-de6e8e3b20a8" x="403" y="115" width="107" height="8"/>
+				<reportElement uuid="4f83019c-ce8f-41fb-b90f-de6e8e3b20a8" x="403" y="111" width="107" height="8"/>
 				<textElement textAlignment="Left">
 					<font fontName="Verdana" size="6" isBold="true"/>
 				</textElement>
@@ -488,7 +488,7 @@ ORDER BY
 				<text><![CDATA[Corte na linha abaixo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="b1e1915a-d314-4cc9-aa93-85113e4d6c66" x="3" y="7" width="43" height="8"/>
+				<reportElement uuid="b1e1915a-d314-4cc9-aa93-85113e4d6c66" x="3" y="1" width="43" height="8"/>
 				<textElement textAlignment="Left">
 					<font fontName="Verdana" size="6" isBold="true"/>
 				</textElement>
@@ -520,7 +520,7 @@ ORDER BY
 				</graphicElement>
 			</rectangle>
 			<rectangle radius="5">
-				<reportElement uuid="abc9d943-bec8-4179-9841-5f4628d1335c" x="234" y="46" width="77" height="20"/>
+				<reportElement uuid="abc9d943-bec8-4179-9841-5f4628d1335c" x="234" y="46" width="111" height="20"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -606,7 +606,7 @@ ORDER BY
 				</graphicElement>
 			</line>
 			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="false">
-				<reportElement uuid="7da79d2d-c654-4809-b0cf-2a869e630a5b" x="403" y="123" width="159" height="24"/>
+				<reportElement uuid="7da79d2d-c654-4809-b0cf-2a869e630a5b" x="403" y="119" width="159" height="28"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Verdana" size="14"/>
 				</textElement>
@@ -620,21 +620,15 @@ ORDER BY
 				<textFieldExpression><![CDATA[$F{lbr_boleto_grandtotal}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement uuid="5982c2eb-2bf3-43cb-b7b5-85348042ad08" x="3" y="123" width="390" height="12"/>
+				<reportElement uuid="5982c2eb-2bf3-43cb-b7b5-85348042ad08" x="3" y="117" width="390" height="20"/>
 				<textElement>
 					<font fontName="Verdana" size="9"/>
+					<paragraph lineSpacing="Fixed" lineSpacingSize="7.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Até o vencimento, pague preferencialmente no " + $F{bankname}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement uuid="55b197ad-ccb2-4f0c-90a2-de23932cfc64" x="3" y="135" width="390" height="12"/>
-				<textElement>
-					<font fontName="Verdana" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Após o vencimento, pague somente no " + $F{bankname}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Até o vencimento, pague preferencialmente no " + $F{bankname} + "\n" + "Após o vencimento, pague somente no " + $F{bankname}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="738f2472-a9e5-4d27-b3d0-4f4e5c53c456" x="3" y="159" width="390" height="12"/>
+				<reportElement uuid="738f2472-a9e5-4d27-b3d0-4f4e5c53c456" x="3" y="149" width="390" height="11"/>
 				<textElement>
 					<font fontName="Verdana" size="9"/>
 				</textElement>
@@ -669,7 +663,7 @@ ORDER BY
 				<textFieldExpression><![CDATA[$F{lbr_boleto_lbr_accepted}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="bd47e1f9-4cc0-4083-94a2-9c55aba1ae63" x="71" y="183" width="71" height="12"/>
+				<reportElement uuid="bd47e1f9-4cc0-4083-94a2-9c55aba1ae63" x="71" y="183" width="104" height="12"/>
 				<textElement>
 					<font fontName="Verdana" size="9"/>
 				</textElement>
@@ -690,7 +684,7 @@ ORDER BY
 				<textFieldExpression><![CDATA[$F{lbr_boleto_documentno}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="f722624d-bb70-48e0-8d94-49f0cf16c375" x="237" y="54" width="69" height="12"/>
+				<reportElement uuid="f722624d-bb70-48e0-8d94-49f0cf16c375" x="237" y="54" width="108" height="12"/>
 				<textElement>
 					<font fontName="Verdana" size="9"/>
 				</textElement>
@@ -739,14 +733,14 @@ ORDER BY
 				<textFieldExpression><![CDATA[$F{lbr_conveniono}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="566b491f-7aa9-45b6-b1ea-1a6c285f7e52" x="46" y="7" width="368" height="12"/>
+				<reportElement uuid="566b491f-7aa9-45b6-b1ea-1a6c285f7e52" x="46" y="1" width="368" height="11"/>
 				<textElement>
 					<font fontName="Verdana" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_legalentity}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="88182ec2-e06c-48d9-a2c1-f6874ba22a14" x="3" y="30" width="299" height="12"/>
+				<reportElement uuid="88182ec2-e06c-48d9-a2c1-f6874ba22a14" x="3" y="30" width="306" height="12"/>
 				<textElement>
 					<font fontName="Verdana" size="9"/>
 				</textElement>
@@ -776,8 +770,8 @@ ORDER BY
 			<textField isBlankWhenNull="true">
 				<reportElement uuid="c8177bee-f73a-4c71-b77a-b81529ceaf67" x="0" y="228" width="396" height="43"/>
 				<textElement>
-					<font fontName="Verdana" size="7"/>
-					<paragraph lineSpacing="Single"/>
+					<font fontName="Verdana" size="6"/>
+					<paragraph lineSpacing="Fixed" lineSpacingSize="5.5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(($F{lbr_cnabdiscount1date} != null)?("Conceder desconto de R$ " + new DecimalFormat("#,##0.00").format($F{lbr_cnabdiscount1ap}) + " até " + new SimpleDateFormat("dd/MM/yyyy").format($F{lbr_cnabdiscount1date}) + "\n"):"") +
 
@@ -789,7 +783,7 @@ ORDER BY
 
 (($F{lbr_protestcode}.equals("1") || $F{lbr_protestcode}.equals("2"))?("Protestar após " + new DecimalFormat("#,##0").format($F{lbr_protestdays}) + ($F{lbr_protestcode}.equals("1")?" dias corridos\n":" dias úteis\n")  ):"") +
 
-(($F{notafiscal} != null)?("Nota Fiscal "+$F{notafiscal}):"") +
+(($F{notafiscal} != null)?("Nota Fiscal "+$F{notafiscal})+"\n":"") +
 (($F{lbr_message5} != null)?($F{lbr_message5} + " - "):"") + (($F{lbr_message5} != null)?($F{lbr_message5} + " - "):"") + (($F{lbr_message6} != null)?($F{lbr_message6} + " - "):"") + (($F{lbr_message7} != null)?($F{lbr_message7} + " - "):"") + (($F{lbr_message8} != null)?($F{lbr_message8}):"")]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
@@ -800,14 +794,14 @@ ORDER BY
 				<textFieldExpression><![CDATA[$F{sacador_name} != null ? ( $F{sacador_name} + (($F{sacador_bptypebr}.equals("PJ"))?" / CNPJ: " + $F{sacador_cnpj}:" / CPF: " + $F{sacador_cpf}) ) : ""]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="6fae4482-d95c-4b2d-97c9-0ab6cc2c0cd4" x="175" y="86" width="387" height="29"/>
+				<reportElement uuid="6fae4482-d95c-4b2d-97c9-0ab6cc2c0cd4" x="175" y="86" width="387" height="25"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_typeableline}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="394d1cd7-e0c6-457d-add9-94a577313790" x="117" y="86" width="55" height="29"/>
+				<reportElement uuid="394d1cd7-e0c6-457d-add9-94a577313790" x="117" y="86" width="55" height="25"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Verdana" size="15" isBold="true"/>
 				</textElement>
@@ -837,48 +831,8 @@ ORDER BY
 					<pen lineWidth="0.5" lineStyle="Dotted"/>
 				</graphicElement>
 			</line>
-			<rectangle radius="5">
-				<reportElement uuid="6e005197-c2e1-411f-a8c6-17e7aed211ca" x="149" y="175" width="29" height="20"/>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<staticText>
-				<reportElement uuid="b6cb0c49-e205-4a68-a13a-75b8fd5ca46e" x="152" y="175" width="26" height="8"/>
-				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Parcela]]></text>
-			</staticText>
 			<textField>
-				<reportElement uuid="9231e9b0-131c-4057-b67b-9a00c32df7e8" x="151" y="183" width="27" height="12"/>
-				<textElement>
-					<font fontName="Verdana" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[""]]></textFieldExpression>
-			</textField>
-			<rectangle radius="5">
-				<reportElement uuid="f36ffdbd-8ab7-489e-9817-fa3836e7240b" x="314" y="46" width="31" height="20"/>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<textField>
-				<reportElement uuid="67e9df4c-8df7-43c8-9b3b-12f9456a448b" x="318" y="54" width="27" height="12"/>
-				<textElement>
-					<font fontName="Verdana" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[""]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement uuid="f4c38a91-da9b-4122-9b2e-03a660dd7a80" x="318" y="47" width="26" height="8"/>
-				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Parcela]]></text>
-			</staticText>
-			<textField>
-				<reportElement uuid="cca077a1-40e4-4c0b-92f8-cf6489038c30" x="0" y="86" width="117" height="29">
+				<reportElement uuid="cca077a1-40e4-4c0b-92f8-cf6489038c30" x="0" y="86" width="117" height="25">
 					<printWhenExpression><![CDATA[$F{lbr_bank_logo_id} == null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -887,7 +841,7 @@ ORDER BY
 				<textFieldExpression><![CDATA[$F{bankname}]]></textFieldExpression>
 			</textField>
 			<image hAlign="Center" vAlign="Middle" isUsingCache="true" onErrorType="Blank">
-				<reportElement uuid="8bb82c31-a656-4200-8646-472d38a00687" x="0" y="86" width="115" height="25">
+				<reportElement uuid="8bb82c31-a656-4200-8646-472d38a00687" x="0" y="86" width="115" height="24">
 					<printWhenExpression><![CDATA[$F{lbr_bank_logo_id} != null]]></printWhenExpression>
 				</reportElement>
 				<graphicElement>
@@ -895,6 +849,20 @@ ORDER BY
 				</graphicElement>
 				<imageExpression><![CDATA[$F{lbr_bank_logo_binarydata}]]></imageExpression>
 			</image>
+			<textField>
+				<reportElement uuid="f43bdd5f-03e9-462c-97d0-79399f3cbc19" x="46" y="11" width="368" height="11"/>
+				<textElement>
+					<font fontName="Verdana" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{lbr_cnpj} != null ? "CNPJ: "+$F{lbr_cnpj} + " " : "" ) + ( $F{lbr_cpf} != null ? "CPF: "+$F{lbr_cpf} : "" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="83a5133b-3134-4d73-85f8-29ef8ab5b542" x="3" y="159" width="390" height="11"/>
+				<textElement>
+					<font fontName="Verdana" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{lbr_cnpj} != null ? "CNPJ: "+$F{lbr_cnpj} + " " : "" ) + ( $F{lbr_cpf} != null ? "CPF: "+$F{lbr_cpf} : "" )]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>
