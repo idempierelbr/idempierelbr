@@ -193,15 +193,12 @@ public class CNABRecordsProcess {
 			if ( convenio != null && boleto.getLBR_BankAccount_Convenio_ID() != convenio.get_ID() ) {
 				boleto.setLBR_BankAccount_Convenio_ID(convenio.get_ID());
 			}
-
-			// FIXME: Faz sentido alterar o número do título na organização
-			//        com base no arquivo de retorno?
 			
 			// Updated Document No
-			mov.setLBR_DocumentNo(segmentGroup.getSegT().getNumeroDocumento().trim());
-			if (!boleto.getLBR_NumberInOrg().equals(segmentGroup.getSegT().getNumeroDocumento().trim())) {
-				if (!segmentGroup.getSegT().getNumeroDocumento().trim().equals("")) {
-					boleto.setDocumentNo(segmentGroup.getSegT().getNumeroDocumento().trim());
+			mov.setLBR_DocumentNo(segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim());
+			if (!boleto.getDocumentNo().equals(segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim())) {
+				if (!segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim().equals("")) {
+					boleto.setDocumentNo(segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim());
 				}
 			}
 			
@@ -225,10 +222,10 @@ public class CNABRecordsProcess {
 			mov.setPayAmt(paidAmt);
 			
 			// Updated Number In Org
-			mov.setLBR_NumberInOrg(segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim());
-			if (!boleto.getLBR_NumberInOrg().equals(segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim())) {
-				if (!segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim().equals("")) {
-					boleto.setLBR_NumberInOrg(segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim());
+			mov.setLBR_NumberInOrg(segmentGroup.getSegT().getNumeroDocumento().trim());
+			if (!boleto.getLBR_NumberInOrg().equals(segmentGroup.getSegT().getNumeroDocumento().trim())) {
+				if (!segmentGroup.getSegT().getNumeroDocumento().trim().equals("")) {
+					boleto.setLBR_NumberInOrg(segmentGroup.getSegT().getNumeroDocumento().trim());
 				}
 			}
 

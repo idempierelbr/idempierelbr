@@ -549,7 +549,7 @@ public class CNAB240Generate extends SvrProcess
 			LBR_NumberInOrg = m_boleto.getLBR_NumberInOrg();
 		}
 		
-		segP.setIdentificacaoTituloEmpresa(LBR_NumberInOrg);
+		segP.setNumeroDocumento(LBR_NumberInOrg);
 		
 		Timestamp DueDate;
 		
@@ -625,7 +625,7 @@ public class CNAB240Generate extends SvrProcess
 		else if (m_boleto.getWriteOffAmt() != null)
 			segP.setValorAbatimento(m_boleto.getWriteOffAmt().doubleValue());
 		
-		segP.setNumeroDocumento(m_boleto.getDocumentNo());
+		segP.setIdentificacaoTituloEmpresa(m_boleto.getDocumentNo());
 		
 		if (m_movementCode.equals("22") && mov.getLBR_DocumentNo() != null)
 			segP.setNumeroDocumento(mov.getLBR_DocumentNo());
