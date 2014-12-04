@@ -16,8 +16,6 @@ public class BancoDoBrasilCNABRecords extends CNABRecords {
 			throws InstantiationException, IllegalAccessException {
 		// TODO Auto-generated method stub
 		
-		super.addHeaderLote(tipoServico, lote);
-		
 		BancoDoBrasilCNABHeaderArquivo header = (BancoDoBrasilCNABHeaderArquivo) this.getFileHeader();
 		String adendo = header.getAdendoConvenioBB();
 		
