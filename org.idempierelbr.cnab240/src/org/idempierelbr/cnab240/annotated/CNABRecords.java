@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.adempiere.exceptions.AdempiereException;
 import org.apache.commons.lang.StringUtils;
 
 public class CNABRecords {
@@ -162,20 +163,32 @@ public class CNABRecords {
 		listaRegistros.clear();
 		
 		String linha;
-		while ( (linha = lerArq.readLine() ) !=null && !linha.trim().equals("") ) {
-			CNABBaseRecord record = loadRecord(linha);
-			
-			if (record != null) {
-				listaRegistros.add(record);
-			}
-		}
+		int lineCount = 1;
+		try {
+			while ( (linha = lerArq.readLine() ) !=null && !linha.trim().equals("") ) {
+				CNABBaseRecord record = loadRecord(linha);
 
-		lerArq.close();
-		arq.close();
+				if (record != null) {
+					listaRegistros.add(record);
+				}
+
+				lineCount++;
+			}
+		} catch ( Exception e ) {
+			throw new AdempiereException("Erro processando linha " + lineCount + ": " + e.getMessage() , e );
+		} finally {
+			lerArq.close();
+			arq.close();
+		}
 
 	}
 
 	CNABBaseRecord loadRecord( String linha ) {
+		
+		if ( linha.length() != 240 ) {
+			throw new AdempiereException( "Tamanho de registro diferente de 240 caracteres");
+		}
+		
 		CNABBaseRecord record = manager.load(baseClass, linha);
 
 		switch (record.getTipoRegistro()) {

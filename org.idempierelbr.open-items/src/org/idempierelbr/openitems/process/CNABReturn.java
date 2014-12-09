@@ -73,7 +73,10 @@ public class CNABReturn extends SvrProcess
 			process.startProcess(getCtx(), getProcessInfo(), trx);			
 		}
 		
-		return "Ok";
+		String summary = getProcessInfo().getSummary();
+		boolean error = getProcessInfo().isError();
+		return (error?"@Error@ ":"Ok ") + summary;
+		
 	}	//	doIt
 
 }	//	CNABReturn

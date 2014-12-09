@@ -88,7 +88,7 @@ public class CNAB240Return extends SvrProcess
 		}
 		
 		if (bankCollection == null) {
-			throw new AdempiereException ( "BankCollection não encontrado para banco nr. " + routingNo );
+			return "@Error@ BankCollection não encontrado para banco nr. " + routingNo;
 		}
 		
 		if (records == null) {
