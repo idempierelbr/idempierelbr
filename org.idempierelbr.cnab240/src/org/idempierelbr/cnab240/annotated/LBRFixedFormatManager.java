@@ -30,6 +30,7 @@ import org.apache.commons.logging.LogFactory;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.math.RoundingMode;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -297,7 +298,7 @@ public class LBRFixedFormatManager implements FixedFormatManager {
 
     String dataToParse = fetchData(data, formatdata, context);
 
-    Object loadedData;
+    Object loadedData = null;
 
     Annotation recordAnno = datatype.getAnnotation(Record.class);
     if (recordAnno != null) {
@@ -306,7 +307,21 @@ public class LBRFixedFormatManager implements FixedFormatManager {
       try {
         loadedData = formatter.parse(dataToParse, formatdata);
       } catch (RuntimeException e) {
-        throw new ParseException(data, dataToParse, clazz, method, context, formatdata, e);
+    	  if (dataToParse.trim().isEmpty()) {
+        	  // Support empty fields
+    		  try {
+    			  if ( datatype.equals(java.util.Date.class) ) {
+    				  // empty Date objects is null
+    				  loadedData = null;
+    			  } else {
+    				  loadedData = datatype.newInstance();
+    			  }
+    		  } catch ( Exception e1) {
+    			  throw new ParseException(data, dataToParse, clazz, method, context, formatdata, e1);
+    		  }
+    	  } else {
+    		  throw new ParseException(data, dataToParse, clazz, method, context, formatdata, e);
+    	  }
       }
     }
     if (LOG.isDebugEnabled()) {
