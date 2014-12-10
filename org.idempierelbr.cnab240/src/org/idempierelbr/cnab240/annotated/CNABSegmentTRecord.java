@@ -17,7 +17,7 @@ public class CNABSegmentTRecord extends CNABCobrancaSegmentBaseRecord {
 	private String dvContaCedente;
 	private String dvAgenciaContaCedente;
 	private String nossoNumero;
-	private int codigoCarteira;
+	private String codigoCarteira;
 	private String numeroDocumento;
 	private Date vencimento;
 	private Double valorTitulo;
@@ -92,10 +92,10 @@ public class CNABSegmentTRecord extends CNABCobrancaSegmentBaseRecord {
 	}
 
 	@Field( offset=58 , length=1, paddingChar='0' , align = Align.RIGHT)
-	public int getCodigoCarteira() {
+	public String getCodigoCarteira() {
 		return codigoCarteira;
 	}
-	public void setCodigoCarteira(int carteira) {
+	public void setCodigoCarteira(String carteira) {
 		this.codigoCarteira = carteira;
 	}
 

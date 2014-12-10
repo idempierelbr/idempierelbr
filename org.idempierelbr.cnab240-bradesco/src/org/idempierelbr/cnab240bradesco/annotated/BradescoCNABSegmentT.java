@@ -34,11 +34,11 @@ public class BradescoCNABSegmentT extends CNABSegmentTRecord {
 	}
 	
 	@Field( offset=58 , length=1, paddingChar='0' , align = Align.RIGHT)
-	public int getCarteira() {
+	public String getCarteira() {
 		return super.getCodigoCarteira();
 		// return carteira;
 	}
-	public void setCarteira(int carteira) {
+	public void setCarteira(String carteira) {
 		super.setCodigoCarteira(carteira);
 		// this.carteira = carteira;
 	}

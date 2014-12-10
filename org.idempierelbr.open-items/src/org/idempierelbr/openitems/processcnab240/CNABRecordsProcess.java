@@ -155,8 +155,8 @@ public class CNABRecordsProcess {
 			// Update Carteira
 			MLBRBankAccountConvenio convenio = null;
 			MLBRBankAccountCarteira carteira = null;
-			String tipoCarteira = String.valueOf(segmentGroup.getSegT().getCodigoCarteira());
-			if (segmentGroup.getSegT().getCodigoCarteira() > 0) {
+			String tipoCarteira = segmentGroup.getSegT().getCodigoCarteira();
+			if ( ! tipoCarteira.equals("0") ) {
 				mov.setLBR_CarteiraType(tipoCarteira);
 				
 				MLBRBankAccountConvenio[] convenios = MLBRBankAccountConvenio.getConvenios(svrP.getCtx(),

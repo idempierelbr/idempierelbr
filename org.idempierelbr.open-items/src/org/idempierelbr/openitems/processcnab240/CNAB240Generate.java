@@ -524,12 +524,12 @@ public class CNAB240Generate extends SvrProcess
 		
 		//--------------------------Característica Cobrança------------------------------
 
-		int LBR_CarteiraType;
+		String LBR_CarteiraType;
 		
 		if (m_movementCode.equals("40") || m_movementCode.equals("43")) {
-			LBR_CarteiraType = Integer.parseInt(mov.getLBR_CarteiraType());
+			LBR_CarteiraType = mov.getLBR_CarteiraType();
 		} else {
-			LBR_CarteiraType = Integer.parseInt(m_boleto.getLBR_CarteiraType());
+			LBR_CarteiraType = m_boleto.getLBR_CarteiraType();
 		}
 
 		segP.setCodigoCarteira(LBR_CarteiraType);
