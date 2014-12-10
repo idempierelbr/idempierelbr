@@ -55507,6 +55507,706 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="800022" trl="Y">
+  <value column="Name" original="Protested">Protestado</value>
+  <value column="PrintName" original="Protested">Protestado</value>
+  <value column="Description" original="The document is protested">O documento está/foi protestado</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800023" trl="N">
+  <value column="Name" original="Baixado">Baixado</value>
+  <value column="PrintName" original="Baixado">Baixado</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800024" trl="N">
+  <value column="Name" original="Sustado">Sustado</value>
+  <value column="PrintName" original="Sustado">Sustado</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800025" trl="Y">
+  <value column="Name" original="boleto_details_ad_client_id">Empresa (Detalhes)</value>
+  <value column="PrintName" original="boleto_details_ad_client_id">Empresa (Detalhes)</value>
+  <value column="Description" original="">Empresa/Locatário para esta instalação.</value>
+  <value column="Help" original="">Uma Empresa é uma Companhia ou uma Entidade Legal (pessoa jurídica). Dados não podem ser compartilhados entre Empresas. Locatário é um sinônimo para Empresa (Client).</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800026" trl="Y">
+  <value column="Name" original="boleto_details_ad_org_id">Organização (Detalhes)</value>
+  <value column="PrintName" original="boleto_details_ad_org_id">Organização (Detalhes)</value>
+  <value column="Description" original="">Entidade organizacional dentro da Empresa</value>
+  <value column="Help" original="">Uma "Organização" é uma unidade de sua "Empresa" ou "Entidade Legal" - os exemplos são loja, departamento. Você pode compartilhar dados entre organizações.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800027" trl="Y">
+  <value column="Name" original="boleto_details_isactive">Ativo (Detalhes)</value>
+  <value column="PrintName" original="boleto_details_isactive">Ativo (Detalhes)</value>
+  <value column="Description" original="">O registro está ativo no sistema</value>
+  <value column="Help" original="">Existem dois métodos de tornar um registro indisponível no sistema: O primeiro é excluir o registro, o outro é desativar o registro. Um registro desativado não está disponível para seleção, mas está disponível para relatórios. Existem duas razões para desativar um registro ao invés de excluí-lo: (1) O sistema exige o registro para fins de auditoria. (2) O registro é referenciado por outros registros. Ex. você não pode excluir um Parceiro de Negócios, se existirem faturas para este parceiro de negócios. Você desativa o Parceiro de Negócios e previne que este registro seja usado para entradas futuras.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800028" trl="Y">
+  <value column="Name" original="boleto_details_created">Criado (Detalhes)</value>
+  <value column="PrintName" original="boleto_details_created">Criado (Detalhes)</value>
+  <value column="Description" original="">Data de criação deste registro</value>
+  <value column="Help" original="">O Campo "Criado" indica a data em que este registro foi criado.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800029" trl="Y">
+  <value column="Name" original="boleto_details_createdby">Criado por (Detalhes)</value>
+  <value column="PrintName" original="boleto_details_createdby">Criado por (Detalhes)</value>
+  <value column="Description" original="">O usuário que criou este registro</value>
+  <value column="Help" original="">O Campo "Criado por" indica o usuário que criou este registro.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800030" trl="Y">
+  <value column="Name" original="boleto_details_updated">Atualizado (Detalhes)</value>
+  <value column="PrintName" original="boleto_details_updated">Atualizado (Detalhes)</value>
+  <value column="Description" original="">Data em que este registro foi atualizado</value>
+  <value column="Help" original="">O Campo "Atualizado" indica a data em que este registro foi atualizado.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800031" trl="Y">
+  <value column="Name" original="boleto_details_updatedby">Atualizado por (Detalhes)</value>
+  <value column="PrintName" original="boleto_details_updatedby">Atualizado por (Detalhes)</value>
+  <value column="Description" original="">O usuário que atualizou este registro</value>
+  <value column="Help" original="">O Campo "Atualizado por" indica o usuário que atualizou este registro.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800032" trl="Y">
+  <value column="Name" original="boleto_details_lbr_boleto_id">Boleto (Detalhes)</value>
+  <value column="PrintName" original="boleto_details_lbr_boleto_id">Boleto (Detalhes)</value>
+  <value column="Description" original="">Identificador do Boleto</value>
+  <value column="Help" original="">Identifica o Boleto</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800033" trl="Y">
+  <value column="Name" original="boleto_sd_ad_client_id">Empresa (Dados)</value>
+  <value column="PrintName" original="boleto_sd_ad_client_id">Empresa (Dados)</value>
+  <value column="Description" original="">Empresa/Locatário para esta instalação.</value>
+  <value column="Help" original="">Uma Empresa é uma Companhia ou uma Entidade Legal (pessoa jurídica). Dados não podem ser compartilhados entre Empresas. Locatário é um sinônimo para Empresa (Client).</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800034" trl="Y">
+  <value column="Name" original="boleto_sd_ad_org_id">Organização (Dados)</value>
+  <value column="PrintName" original="boleto_sd_ad_org_id">Organização (Dados)</value>
+  <value column="Description" original="">Entidade organizacional dentro da Empresa</value>
+  <value column="Help" original="">Uma "Organização" é uma unidade de sua "Empresa" ou "Entidade Legal" - os exemplos são loja, departamento. Você pode compartilhar dados entre organizações.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800035" trl="Y">
+  <value column="Name" original="boleto_sd_isactive">Ativo (Dados)</value>
+  <value column="PrintName" original="boleto_sd_isactive">Ativo (Dados)</value>
+  <value column="Description" original="">O registro está ativo no sistema</value>
+  <value column="Help" original="">Existem dois métodos de tornar um registro indisponível no sistema: O primeiro é excluir o registro, o outro é desativar o registro. Um registro desativado não está disponível para seleção, mas está disponível para relatórios. Existem duas razões para desativar um registro ao invés de excluí-lo: (1) O sistema exige o registro para fins de auditoria. (2) O registro é referenciado por outros registros. Ex. você não pode excluir um Parceiro de Negócios, se existirem faturas para este parceiro de negócios. Você desativa o Parceiro de Negócios e previne que este registro seja usado para entradas futuras.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800036" trl="Y">
+  <value column="Name" original="boleto_sd_created">Criado (Dados)</value>
+  <value column="PrintName" original="boleto_sd_created">Criado (Dados)</value>
+  <value column="Description" original="">Data de criação deste registro</value>
+  <value column="Help" original="">O Campo "Criado" indica a data em que este registro foi criado.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800037" trl="Y">
+  <value column="Name" original="boleto_sd_createdby">Criado por (Dados)</value>
+  <value column="PrintName" original="boleto_sd_createdby">Criado por (Dados)</value>
+  <value column="Description" original="">O usuário que criou este registro</value>
+  <value column="Help" original="">O Campo "Criado por" indica o usuário que criou este registro.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800038" trl="Y">
+  <value column="Name" original="boleto_sd_updated">Atualizado (Dados)</value>
+  <value column="PrintName" original="boleto_sd_updated">Atualizado (Dados)</value>
+  <value column="Description" original="">Data em que este registro foi atualizado</value>
+  <value column="Help" original="">O Campo "Atualizado" indica a data em que este registro foi atualizado.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800039" trl="Y">
+  <value column="Name" original="boleto_sd_updatedby">Atualizado por (Dados)</value>
+  <value column="PrintName" original="boleto_sd_updatedby">Atualizado por (Dados)</value>
+  <value column="Description" original="">O usuário que atualizou este registro</value>
+  <value column="Help" original="">O Campo "Atualizado por" indica o usuário que atualizou este registro.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800040" trl="Y">
+  <value column="Name" original="boleto_sd_lbr_boleto_id">Boleto (Dados)</value>
+  <value column="PrintName" original="boleto_sd_lbr_boleto_id">Boleto (Dados)</value>
+  <value column="Description" original="">Identificador do Boleto</value>
+  <value column="Help" original="">Identifica o Boleto</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800041" trl="Y">
+  <value column="Name" original="boleto_mov_ad_client_id">Empresa (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_ad_client_id">Empresa (Movimento)</value>
+  <value column="Description" original="">Empresa/Locatário para esta instalação.</value>
+  <value column="Help" original="">Uma Empresa é uma Companhia ou uma Entidade Legal (pessoa jurídica). Dados não podem ser compartilhados entre Empresas. Locatário é um sinônimo para Empresa (Client).</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800042" trl="Y">
+  <value column="Name" original="boleto_mov_ad_org_id">Organização (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_ad_org_id">Organização (Movimento)</value>
+  <value column="Description" original="">Entidade organizacional dentro da Empresa</value>
+  <value column="Help" original="">Uma "Organização" é uma unidade de sua "Empresa" ou "Entidade Legal" - os exemplos são loja, departamento. Você pode compartilhar dados entre organizações.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800043" trl="Y">
+  <value column="Name" original="boleto_mov_created">Criado (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_created">Criado (Movimento)</value>
+  <value column="Description" original="">Data de criação deste registro</value>
+  <value column="Help" original="">O Campo "Criado" indica a data em que este registro foi criado.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800044" trl="Y">
+  <value column="Name" original="boleto_mov_createdby">Criado por (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_createdby">Criado por (Movimento)</value>
+  <value column="Description" original="">O usuário que criou este registro</value>
+  <value column="Help" original="">O Campo "Criado por" indica o usuário que criou este registro.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800045" trl="Y">
+  <value column="Name" original="boleto_mov_updated">Atualizado (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_updated">Atualizado (Movimento)</value>
+  <value column="Description" original="">Data em que este registro foi atualizado</value>
+  <value column="Help" original="">O Campo "Atualizado" indica a data em que este registro foi atualizado.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800046" trl="Y">
+  <value column="Name" original="boleto_mov_updatedby">Atualizado por (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_updatedby">Atualizado por (Movimento)</value>
+  <value column="Description" original="">O usuário que atualizou este registro</value>
+  <value column="Help" original="">O Campo "Atualizado por" indica o usuário que atualizou este registro.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800047" trl="Y">
+  <value column="Name" original="boleto_mov_isactive">Ativo (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_isactive">Ativo (Movimento)</value>
+  <value column="Description" original="">O registro está ativo no sistema</value>
+  <value column="Help" original="">Existem dois métodos de tornar um registro indisponível no sistema: O primeiro é excluir o registro, o outro é desativar o registro. Um registro desativado não está disponível para seleção, mas está disponível para relatórios. Existem duas razões para desativar um registro ao invés de excluí-lo: (1) O sistema exige o registro para fins de auditoria. (2) O registro é referenciado por outros registros. Ex. você não pode excluir um Parceiro de Negócios, se existirem faturas para este parceiro de negócios. Você desativa o Parceiro de Negócios e previne que este registro seja usado para entradas futuras.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800048" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_boleto_id">Boleto (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_boleto_id">Boleto (Movimento)</value>
+  <value column="Description" original="">Identificador do Boleto</value>
+  <value column="Help" original="">Identifica o Boleto</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800049" trl="Y">
+  <value column="Name" original="boleto_mov_description">Descrição (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_description">Descrição (Movimento)</value>
+  <value column="Description" original="">Descrição resumida opcional do registro</value>
+  <value column="Help" original="">Uma descrição é limitada a 255 caracteres.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800050" trl="Y">
+  <value column="Name" original="boleto_mov_seqno">Seqüência (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_seqno">Seqüência (Movimento)</value>
+  <value column="Description" original="">Método de ordenação de registros; o menor número vem primeiro</value>
+  <value column="Help" original="">A "Seqüência" indica a ordem dos registros</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800051" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_cnab240seqno">Núm. Sequencial do CNAB 240 (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_cnab240seqno">Núm. Sequencial do CNAB 240 (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Indica o número sequencial que identifica o arquivo/lote em um arquivo CNAB 240. Pode ser utilizado como o sequencial do arquivo de cobrança.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800052" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_numberinbank">Nosso Número (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_numberinbank">Nosso Número (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800053" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_carteiratype">Tipo de Carteira (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_carteiratype">Tipo de Carteira (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Define o tipo de carteira de acordo com a Febraban</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800054" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_numberinorg">Seu Número</value>
+  <value column="PrintName" original="boleto_mov_lbr_numberinorg">Seu Número</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800055" trl="Y">
+  <value column="Name" original="boleto_mov_duedate">Data do Vencimento (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_duedate">Data do Vencimento (Movimento)</value>
+  <value column="Description" original="">Data em que o pagamento deve ser efetuado</value>
+  <value column="Help" original="">Data em que o pagamento deve ser feito sem deduções ou descontos</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800056" trl="Y">
+  <value column="Name" original="boleto_mov_grandtotal">Valor do Título (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_grandtotal">Valor do Título (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Indica o valor do título</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800057" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_collectbankno">Núm. do Banco Cobrador / Recebedor (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_collectbankno">Núm. do Banco Cobrador / Recebedor (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Código fornecido pelo Banco Central para identificação do Banco responsável pela cobrança ou recebimento. Somente informado nos casos de cobrança/liquidação em outros bancos.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800058" trl="Y">
+  <value column="Name" original="boleto_mov_collectbankagencyno">Núm. da Agência do Banco Cobrador / Recebedor (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_collectbankagencyno">Núm. da Agência do Banco Cobrador / Recebedor (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Código da agência bancária responsável pela cobrança ou recebimento. Somente informado nos casos de cobrança/liquidação em outros bancos.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800059" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_documentno">Número do Documento (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_documentno">Número do Documento (Movimento)</value>
+  <value column="Description" original="">Documenta o número seqüencial dos documentos</value>
+  <value column="Help" original=""><![CDATA[O número do documento é usualmente gerado automaticamente pelo sistema e determinado pelo tipo de documento. Se o documento não for salvo, o número preliminar é mostrado em "<>".]]></value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800060" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_cnab240currency">Moeda (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_cnab240currency">Moeda (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Moeda usada pelo CNAB 240</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800061" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_loancontractno">Núm. do Contrato da Operação de Crédito (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_loancontractno">Contrato Op. Crédito (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800062" trl="Y">
+  <value column="Name" original="boleto_mov_feeamt">Valor da Tarifa / Custas (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_feeamt">Valor da Tarifa / Custas (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Indica o valor da tarifa cobrada pelo serviço prestado pelo Banco Cedente referente ao título, expresso em moeda corrente.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800063" trl="Y">
+  <value column="Name" original="boleto_mov_interestamt">Valor dos Acréscimos (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_interestamt">Valor dos Acréscimos (Movimento)</value>
+  <value column="Description" original="">Valor dos Juros / Multa / Encargos</value>
+  <value column="Help" original="">Indica o valor dos acréscimos efetuados no título de cobrança, expresso em moeda corrente.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800064" trl="Y">
+  <value column="Name" original="boleto_mov_discountamt">Valor do Desconto (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_discountamt">Desconto (Movimento)</value>
+  <value column="Description" original="">Valor calculado do desconto</value>
+  <value column="Help" original="">O "Valor do Desconto" indica o montante de desconto para uma linha de documento.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800065" trl="Y">
+  <value column="Name" original="boleto_mov_writeoffamt">Valor do Abatimento (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_writeoffamt">Valor do Abatimento (Movimento)</value>
+  <value column="Description" original="">Valor do Abatimento (Perda) no Recebimento de Duplicatas</value>
+  <value column="Help" original="">O "Valor do Abatimento" indica o valor a ser dado baixa como incobrável. O lançamento contábil deste campo normalmente ocorre na conta de despesa Despesas com Devedores Duvidosos</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800066" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_iofamt">Valor do IOF (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_iofamt">Valor do IOF (Movimento)</value>
+  <value column="Description" original="">Define o Valor do IOF</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800067" trl="Y">
+  <value column="Name" original="boleto_mov_payamt">Valor do Pagamento (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_payamt">Valor do Pagamento (Movimento)</value>
+  <value column="Description" original="">Valor que está sendo pago</value>
+  <value column="Help" original="">Indica o valor deste pagamento.  O "Valor do Pagamento" pode ser para uma única ou para múltiplas faturas ou ainda um pagamento parcial de uma fatura.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800068" trl="Y">
+  <value column="Name" original="boleto_mov_availableamt">Valor Disponível (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_availableamt">Valor Disponível (Movimento)</value>
+  <value column="Description" original="">Valor disponível para alocação para este documento</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800069" trl="Y">
+  <value column="Name" original="boleto_mov_otherexpensesamt">Valor de Outras Despesas (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_otherexpensesamt">Valor de Outras Despesas (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Outras despesas, na moeda atual.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800070" trl="Y">
+  <value column="Name" original="boleto_mov_otherincomesamt">Valor de Outros Créditos (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_otherincomesamt">Valor de Outros Créditos (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Outros créditos, na moeda atual.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800071" trl="Y">
+  <value column="Name" original="boleto_mov_cob_ocorrenciadate">Data da Ocorrência (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_cob_ocorrenciadate">Data da Ocorrência (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800072" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_creditdate">Data do Crédito (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_creditdate">Data do Crédito (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800073" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_correspbankno">Cód. do Banco Correspondente (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_correspbankno">Cód. do Banco Correspondente (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800074" trl="Y">
+  <value column="Name" original="boleto_mov_numberincorrespbank">Nosso Número no Banco Correspondente (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_numberincorrespbank">Nosso Número no Banco Correspondente (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800075" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_conveniono">Núm. do Convênio (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_conveniono">Núm. do Convênio (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Define o Número do Convênio</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800076" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_collectiontype">Espécie de Título (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_collectiontype">Espécie de Título (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Código adotado pela Febraban para identificar o tipo de título de cobrança</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800077" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_interestcode">Código do Juros de Mora (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_interestcode">Cód. Juros de Mora (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Código adotado pela Febraban para identificação do tipo de pagamento de juros de mora.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800078" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_interestdate">Data do Juros de Mora (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_interestdate">Data do Juros (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Data para aplicação do juros de mora.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800079" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_interestap">Valor / Percentual do Juros de Mora por Dia (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_interestap">Juros de Mora por Dia (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Valor ou porcentagem sobre o valor do título a ser cobrada de juros de mora.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800080" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_cnabdiscount1ap">Valor / Percentual do Desconto 1 (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_cnabdiscount1ap">Valor / % do Desc. 1 (Movimento)</value>
+  <value column="Description" original="">Valor / Percentual do Desconto 1, usado para o CNAB 240</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800081" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_cnabdiscount2ap">Valor / Percentual do Desconto 2 (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_cnabdiscount2ap">Valor / % do Desc. 2 (Movimento)</value>
+  <value column="Description" original="">Valor / Percentual do Desconto 2, usado para o CNAB 240</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800082" trl="Y">
+  <value column="Name" original="boleto_mov_lbr_cnabdiscount3ap">Valor / Percentual do Desconto 3 (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_lbr_cnabdiscount3ap">Valor / % do Desc. 3 (Movimento)</value>
+  <value column="Description" original="">Valor / Percentual do Desconto 3, usado para o CNAB 240</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800083" trl="Y">
+  <value column="Name" original="boleto_mov_cnabdiscount1code">Código do Desconto 1 (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_cnabdiscount1code">Cód. Desc. 1 (Movimento)</value>
+  <value column="Description" original="">Código do Desconto 1, usado para o CNAB 240.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800084" trl="Y">
+  <value column="Name" original="boleto_mov_cnabdiscount2code">Código do Desconto 2 (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_cnabdiscount2code">Cód. Desc. 2 (Movimento)</value>
+  <value column="Description" original="">Código do Desconto 2, usado para o CNAB 240.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800085" trl="Y">
+  <value column="Name" original="boleto_mov_cnabdiscount3code">Código do Desconto 3 (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_cnabdiscount3code">Cód. Desc. 3 (Movimento)</value>
+  <value column="Description" original="">Código do Desconto 3, usado para o CNAB 240.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800086" trl="Y">
+  <value column="Name" original="boleto_mov_cnabdiscount1date">Data do Desconto 1 (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_cnabdiscount1date">Data Desc. 1 (Movimento)</value>
+  <value column="Description" original="">Data do Desconto 1, usado para o CNAB 240.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800087" trl="Y">
+  <value column="Name" original="boleto_mov_cnabdiscount2date">Data do Desconto 2 (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_cnabdiscount2date">Data Desc. 2 (Movimento)</value>
+  <value column="Description" original="">Data do Desconto 2, usado para o CNAB 240.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800088" trl="Y">
+  <value column="Name" original="boleto_mov_cnabdiscount3date">Data do Desconto 3 (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_cnabdiscount3date">Data Desc. 3 (Movimento)</value>
+  <value column="Description" original="">Data do Desconto 3, usado para o CNAB 240.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800089" trl="Y">
+  <value column="Name" original="boleto_mov_latepaypenaltyap">Valor / Percentual da Multa (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_latepaypenaltyap">Valor/Percentual da Multa (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Valor ou percentual de multa a ser aplicado sobre o valor do Título, por atraso no pagamento.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800090" trl="Y">
+  <value column="Name" original="boleto_mov_latepaypenaltycode">Código da Multa (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_latepaypenaltycode">Código da Multa (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Código adotado pela Febraban para identificação do critério de pagamento de pena pecuniária, a ser aplicada pelo straso do pagamento do Título.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800091" trl="Y">
+  <value column="Name" original="boleto_mov_latepaypenaltydate">Data da Multa (Movimento)</value>
+  <value column="PrintName" original="boleto_mov_latepaypenaltydate">Data da Multa (Movimento)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Data para a aplicação da multa.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row trl="Y" uuid="2db1c9d3-13bf-4539-baa0-45ccfb09a7a3">
   <value column="Name" original="Cód. Cidade (IBGE)">Cód. Cidade (IBGE)</value>
   <value column="PrintName" original="Cód. Cidade (IBGE)">Cód. Cidade (IBGE)</value>

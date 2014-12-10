@@ -27,14 +27,14 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Model for LBR_Boleto
  *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
+ *  @version Release 2.1 - $Id$ */
 public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20141010L;
+	private static final long serialVersionUID = 20141205L;
 
     /** Standard Constructor */
     public X_LBR_Boleto (Properties ctx, int LBR_Boleto_ID, String trxName)
@@ -505,6 +505,30 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 		return bd;
 	}
 
+	/** Set Paid.
+		@param IsPaid 
+		The document is paid
+	  */
+	public void setIsPaid (boolean IsPaid)
+	{
+		set_Value (COLUMNNAME_IsPaid, Boolean.valueOf(IsPaid));
+	}
+
+	/** Get Paid.
+		@return The document is paid
+	  */
+	public boolean isPaid () 
+	{
+		Object oo = get_Value(COLUMNNAME_IsPaid);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+
 	/** A - Accepted = A */
 	public static final String LBR_ACCEPTED_A_Accepted = "A";
 	/** N - Not Accepted = N */
@@ -733,6 +757,45 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	public String getLBR_CNAB240DocType () 
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CNAB240DocType);
+	}
+
+	/** 1 - Remessa (Cliente -> Banco) = 1 */
+	public static final String LBR_CNAB240MOVEMENTTYPE_1_RemessaCliente_GtBanco = "1";
+	/** 2 - Retorno (Banco -> Cliente) = 2 */
+	public static final String LBR_CNAB240MOVEMENTTYPE_2_RetornoBanco_GtCliente = "2";
+	/** Set Movement Type.
+		@param LBR_CNAB240MovementType Movement Type	  */
+	public void setLBR_CNAB240MovementType (String LBR_CNAB240MovementType)
+	{
+
+		throw new IllegalArgumentException ("LBR_CNAB240MovementType is virtual column");	}
+
+	/** Get Movement Type.
+		@return Movement Type	  */
+	public String getLBR_CNAB240MovementType () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_CNAB240MovementType);
+	}
+
+	public I_LBR_Cob_Movimento getLBR_Cob_Movimento() throws RuntimeException
+    {
+		return (I_LBR_Cob_Movimento)MTable.get(getCtx(), I_LBR_Cob_Movimento.Table_Name)
+			.getPO(getLBR_Cob_Movimento_ID(), get_TrxName());	}
+
+	/** Set Collection Movement.
+		@param LBR_Cob_Movimento_ID Collection Movement	  */
+	public void setLBR_Cob_Movimento_ID (int LBR_Cob_Movimento_ID)
+	{
+		throw new IllegalArgumentException ("LBR_Cob_Movimento_ID is virtual column");	}
+
+	/** Get Collection Movement.
+		@return Collection Movement	  */
+	public int getLBR_Cob_Movimento_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Cob_Movimento_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
 	}
 
 	/** 1 - Com Cadastramento (Cobranca Registrada) = 1 */
@@ -1054,6 +1117,51 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 		return bd;
 	}
 
+	/** Set Baixado.
+		@param LBR_IsBaixado Baixado	  */
+	public void setLBR_IsBaixado (boolean LBR_IsBaixado)
+	{
+		set_Value (COLUMNNAME_LBR_IsBaixado, Boolean.valueOf(LBR_IsBaixado));
+	}
+
+	/** Get Baixado.
+		@return Baixado	  */
+	public boolean isLBR_IsBaixado () 
+	{
+		Object oo = get_Value(COLUMNNAME_LBR_IsBaixado);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+
+	/** Set Protested.
+		@param LBR_IsProtested 
+		The document is protested
+	  */
+	public void setLBR_IsProtested (boolean LBR_IsProtested)
+	{
+		set_Value (COLUMNNAME_LBR_IsProtested, Boolean.valueOf(LBR_IsProtested));
+	}
+
+	/** Get Protested.
+		@return The document is protested
+	  */
+	public boolean isLBR_IsProtested () 
+	{
+		Object oo = get_Value(COLUMNNAME_LBR_IsProtested);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+
 	/** 1 - Banco Emite = 1 */
 	public static final String LBR_ISSUETYPE_1_BancoEmite = "1";
 	/** 2 - Cliente Emite = 2 */
@@ -1081,6 +1189,27 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	public String getLBR_IssueType () 
 	{
 		return (String)get_Value(COLUMNNAME_LBR_IssueType);
+	}
+
+	/** Set Sustado.
+		@param LBR_IsSustado Sustado	  */
+	public void setLBR_IsSustado (boolean LBR_IsSustado)
+	{
+		set_Value (COLUMNNAME_LBR_IsSustado, Boolean.valueOf(LBR_IsSustado));
+	}
+
+	/** Get Sustado.
+		@return Sustado	  */
+	public boolean isLBR_IsSustado () 
+	{
+		Object oo = get_Value(COLUMNNAME_LBR_IsSustado);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
 	}
 
 	/** Set Loan Contract No..

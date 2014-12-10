@@ -39,8 +39,35 @@ public class BradescoBankCollection implements IBankCollection {
 	@Override
 	public void postProcessReturn(Object returned, MLBRBoletoMovement mov,
 			MLBRBoleto boleto) {
-		// TODO Auto-generated method stub
-
+		// Check status flags based on return movement code
+		String returnMovCode = mov.getLBR_Cob_Movimento().getValue();
+		
+		// 06 - Liquidação
+		// 17 - Liquidação Após Baixa
+		if (returnMovCode.equals("06") || returnMovCode.equals("17")) 
+			boleto.setIsPaid(true);
+		
+		// 09 - Baixa
+		// 54 - Confirmação da Instrução de Baixa de Título Negativado
+		else if (returnMovCode.equals("09") || returnMovCode.equals("54"))
+			boleto.setLBR_IsBaixado(true);
+		
+		// 19 - Confirmação Instrução de Protesto
+		// 23 - Remessa a Cartório
+		// 47 - Instrução Protesto fins Falimentares
+		else if (returnMovCode.equals("19") || returnMovCode.equals("23") || returnMovCode.equals("47"))
+			boleto.setLBR_IsProtested(true);
+		
+		// 20 - Confirmação Instrução de Sustação
+		// 24 - Retirada de Cartório
+		else if (returnMovCode.equals("20") || returnMovCode.equals("24"))
+			boleto.setLBR_IsSustado(true);
+		
+		// 25 - Protestado e Baixado
+		else if (returnMovCode.equals("25")) {
+			boleto.setLBR_IsProtested(true);
+			boleto.setLBR_IsBaixado(true);
+		}
 	}
 
 }

@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_Boleto
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 2.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_Boleto 
@@ -302,6 +302,19 @@ public interface I_LBR_Boleto
 	  */
 	public boolean isActive();
 
+    /** Column name IsPaid */
+    public static final String COLUMNNAME_IsPaid = "IsPaid";
+
+	/** Set Paid.
+	  * The document is paid
+	  */
+	public void setIsPaid (boolean IsPaid);
+
+	/** Get Paid.
+	  * The document is paid
+	  */
+	public boolean isPaid();
+
     /** Column name LBR_Accepted */
     public static final String COLUMNNAME_LBR_Accepted = "LBR_Accepted";
 
@@ -411,6 +424,26 @@ public interface I_LBR_Boleto
 
 	/** Get Febraban Document Type	  */
 	public String getLBR_CNAB240DocType();
+
+    /** Column name LBR_CNAB240MovementType */
+    public static final String COLUMNNAME_LBR_CNAB240MovementType = "LBR_CNAB240MovementType";
+
+	/** Set Movement Type	  */
+	public void setLBR_CNAB240MovementType (String LBR_CNAB240MovementType);
+
+	/** Get Movement Type	  */
+	public String getLBR_CNAB240MovementType();
+
+    /** Column name LBR_Cob_Movimento_ID */
+    public static final String COLUMNNAME_LBR_Cob_Movimento_ID = "LBR_Cob_Movimento_ID";
+
+	/** Set Collection Movement	  */
+	public void setLBR_Cob_Movimento_ID (int LBR_Cob_Movimento_ID);
+
+	/** Get Collection Movement	  */
+	public int getLBR_Cob_Movimento_ID();
+
+	public I_LBR_Cob_Movimento getLBR_Cob_Movimento() throws RuntimeException;
 
     /** Column name LBR_CollectionRegType */
     public static final String COLUMNNAME_LBR_CollectionRegType = "LBR_CollectionRegType";
@@ -562,6 +595,28 @@ public interface I_LBR_Boleto
 	  */
 	public BigDecimal getLBR_IOFAmt();
 
+    /** Column name LBR_IsBaixado */
+    public static final String COLUMNNAME_LBR_IsBaixado = "LBR_IsBaixado";
+
+	/** Set Baixado	  */
+	public void setLBR_IsBaixado (boolean LBR_IsBaixado);
+
+	/** Get Baixado	  */
+	public boolean isLBR_IsBaixado();
+
+    /** Column name LBR_IsProtested */
+    public static final String COLUMNNAME_LBR_IsProtested = "LBR_IsProtested";
+
+	/** Set Protested.
+	  * The document is protested
+	  */
+	public void setLBR_IsProtested (boolean LBR_IsProtested);
+
+	/** Get Protested.
+	  * The document is protested
+	  */
+	public boolean isLBR_IsProtested();
+
     /** Column name LBR_IssueType */
     public static final String COLUMNNAME_LBR_IssueType = "LBR_IssueType";
 
@@ -570,6 +625,15 @@ public interface I_LBR_Boleto
 
 	/** Get Issue Type	  */
 	public String getLBR_IssueType();
+
+    /** Column name LBR_IsSustado */
+    public static final String COLUMNNAME_LBR_IsSustado = "LBR_IsSustado";
+
+	/** Set Sustado	  */
+	public void setLBR_IsSustado (boolean LBR_IsSustado);
+
+	/** Get Sustado	  */
+	public boolean isLBR_IsSustado();
 
     /** Column name LBR_LoanContractNo */
     public static final String COLUMNNAME_LBR_LoanContractNo = "LBR_LoanContractNo";

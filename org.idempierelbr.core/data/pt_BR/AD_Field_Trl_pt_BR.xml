@@ -766,6 +766,16 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="800067" trl="N">
+  <value column="Name" original="Collection Movement">Collection Movement</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800068" trl="N">
+  <value column="Name" original="Movement Type">Movement Type</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row trl="Y" uuid="1571ea6a-cfc0-4a9e-ab5e-017bbbfa1958">
   <value column="Name" original="Memo">Informações Adicionais (NF-e)</value>
   <value column="Description" original="Memo">Informações Adicionais (NF-e)</value>

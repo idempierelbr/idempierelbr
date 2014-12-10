@@ -2175,6 +2175,26 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original="Generate and Process PO from Nota Fiscal">Gerar Pedido de Compra a partir da Nota Fiscal</value>
   <value column="Help" original="This process allows to generate purchase order to completed Nota Fiscal.">Este processo permite gerar um pedido de compra baseado na nota fiscal.</value>
  </row>
+ <row id="800002" trl="Y">
+  <value column="Name" original="Export NF-e and Event XMLs">Exportar XMLs de NF-e</value>
+  <value column="Description" original="Export NF-e and Event XMLs to ZIP">Exportar XMLs de NF-e (e de Eventos) em ZIP</value>
+  <value column="Help" original="This process exports the xml files related to NF-e (including the registered events).">Este processo permite a exportação de XMLs de NF-e (e de todos os seus eventos registrados).</value>
+ </row>
+ <row id="800003" trl="Y">
+  <value column="Name" original="Boleto Detail Report">Detalhes de Boletos</value>
+  <value column="Description" original="Boleto Detail Report">Relatório de Detalhes de Boletos</value>
+  <value column="Help" original="">Esse relatório apresenta os detalhes de boletos (e todos os seus movimentos).</value>
+ </row>
+ <row id="800004" trl="Y">
+  <value column="Name" original="Boleto Summary Report">Resumo de Boletos</value>
+  <value column="Description" original="Boleto Summary Report">Relatório de Resumo de Boletos</value>
+  <value column="Help" original="">Esse relatório apresenta informações de boletos (e seu último movimento, se existir).</value>
+ </row>
+ <row id="800005" trl="Y">
+  <value column="Name" original="Boleto Open Report">Boletos em Aberto</value>
+  <value column="Description" original="Boleto Open Report">Relatório de Boletos em Aberto</value>
+  <value column="Help" original="">Esse relatório apresenta informações de boletos processados e não pagos/baixados (e seu último movimento, se existir).</value>
+ </row>
  <row trl="N" uuid="e6df0503-5f93-4a2c-abe6-0c425cc138e9">
   <value column="Name" original="Process NotaFiscal">Process NotaFiscal</value>
   <value column="Description" original=""/>

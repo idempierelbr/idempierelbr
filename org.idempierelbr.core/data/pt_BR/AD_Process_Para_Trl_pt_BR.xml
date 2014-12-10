@@ -337,6 +337,41 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="800011" trl="Y">
+  <value column="Name" original="Issue Date">Data de Emissão</value>
+  <value column="Description" original="Issue Date">Data de Emissão</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800014" trl="Y">
+  <value column="Name" original="Issue Date">Data de Emissão</value>
+  <value column="Description" original="Date of the Issue">Data de Emissão do Documento</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800019" trl="Y">
+  <value column="Name" original="Business Partner ">Sacado</value>
+  <value column="Description" original="Identifies a Business Partner">Identifica o Sacado</value>
+  <value column="Help" original="A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson"/>
+ </row>
+ <row id="800026" trl="Y">
+  <value column="Name" original="Issue Date">Data de Emissão</value>
+  <value column="Description" original="Date of the Issue">Data de Emissão do Documento</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800031" trl="Y">
+  <value column="Name" original="Business Partner ">Sacado</value>
+  <value column="Description" original="Identifies a Business Partner">Identifica o Sacado</value>
+  <value column="Help" original="A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson"/>
+ </row>
+ <row id="800038" trl="Y">
+  <value column="Name" original="Issue Date">Data de Emissão</value>
+  <value column="Description" original="Date of the Issue">Data de Emissão do Documento</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800043" trl="Y">
+  <value column="Name" original="Business Partner ">Sacado</value>
+  <value column="Description" original="Identifies a Business Partner">Identifica o Sacado</value>
+  <value column="Help" original="A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson"/>
+ </row>
  <row trl="Y" uuid="61fed42b-e8b6-4654-81bd-f6b8f95dd7ef">
   <value column="Name" original="Update Fields based on Attachment">Atualizar os Campos baseado no Anexo</value>
   <value column="Description" original=""/>
