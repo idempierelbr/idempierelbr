@@ -55,7 +55,7 @@ public class SantanderCNABSegmentT extends CNABSegmentTRecord {
 	}
 	
 	@Field( offset=54 , length=1, paddingChar='0' , align = Align.RIGHT)
-	public int getCodigoCarteira() {
+	public String getCodigoCarteira() {
 		return super.getCodigoCarteira();
 		// return carteira;
 	}

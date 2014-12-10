@@ -50,8 +50,8 @@ public class ItauCNABSegmentT extends CNABSegmentTRecord {
 
 	// campo vazio neste registro
 	@Override
-	public int getCodigoCarteira() {
-		return 0;
+	public String getCodigoCarteira() {
+		return "0";
 	}
 
 	@Override

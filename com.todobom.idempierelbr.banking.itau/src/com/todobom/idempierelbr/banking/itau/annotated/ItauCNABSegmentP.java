@@ -49,11 +49,11 @@ public class ItauCNABSegmentP extends CNABSegmentPRecord {
 		return super.getNossoNumero();
 	}
 
-	// campo vazio neste registro
+	// campo vazio neste registro - default "0"
 	@Override
-	public int getCodigoCarteira() {
+	public String getCodigoCarteira() {
 		// TODO Auto-generated method stub
-		return super.getCodigoCarteira();
+		return "0";
 	}
 
 	// campo vazio neste registro
