@@ -143,6 +143,14 @@ public class CNABRecordsProcess {
 			}
 			
 			mov.setLBR_Cob_Movimento_ID(cobMov.get_ID());
+
+			// Obtain parent movement code
+			String returnMovCode;
+			if (cobMov.getLBR_ParentCob_Movimento_ID() != 0 ) {
+				returnMovCode = cobMov.getLBR_ParentCob_Movimento().getValue(); 
+			} else {
+				returnMovCode = cobMov.getValue();
+			}
 			
 			// Update Number In Bank
 			mov.setLBR_NumberInBank(segmentGroup.getSegT().getNossoNumero().trim());
@@ -342,6 +350,9 @@ public class CNABRecordsProcess {
 			/* */
 
 			
+			// seta flags do boleto
+			setBoletoFlags( boleto , returnMovCode );
+			
 			// Executa código customizado do retorno
 			bankCollection.postProcessReturn(segmentGroup, mov, boleto);
 			
@@ -360,7 +371,8 @@ public class CNABRecordsProcess {
 		
 			svrP.addLog(log.toString());
 			
-			if (mov.getPayAmt().compareTo(Env.ZERO) == 1)  {
+			if (mov.getPayAmt().compareTo(Env.ZERO) == 1 
+					&& ( returnMovCode.equals("06") || returnMovCode.equals("17") ) )  {
 				log = new StringBuilder(Msg.getMsg(svrP.getCtx(), "DocProcessed"))
 					.append(": ")
 					.append(Msg.getElement(svrP.getCtx(), "LBR_Boleto_ID"))
@@ -424,6 +436,37 @@ public class CNABRecordsProcess {
 			return true;
 			
 		return false;
+	}
+	
+	private static void setBoletoFlags( MLBRBoleto boleto , String returnMovCode ) {
+		
+		// 06 - Liquidação
+		// 17 - Liquidação Após Baixa
+		if (returnMovCode.equals("06") || returnMovCode.equals("17")) 
+			boleto.setIsPaid(true);
+		
+		// 09 - Baixa
+		// 54 - Confirmação da Instrução de Baixa de Título Negativado
+		else if (returnMovCode.equals("09") || returnMovCode.equals("54"))
+			boleto.setLBR_IsBaixado(true);
+		
+		// 19 - Confirmação Instrução de Protesto
+		// 23 - Remessa a Cartório
+		// 47 - Instrução Protesto fins Falimentares
+		else if (returnMovCode.equals("19") || returnMovCode.equals("23") || returnMovCode.equals("47"))
+			boleto.setLBR_IsProtested(true);
+		
+		// 20 - Confirmação Instrução de Sustação
+		// 24 - Retirada de Cartório
+		else if (returnMovCode.equals("20") || returnMovCode.equals("24"))
+			boleto.setLBR_IsSustado(true);
+		
+		// 25 - Protestado e Baixado
+		else if (returnMovCode.equals("25")) {
+			boleto.setLBR_IsProtested(true);
+			boleto.setLBR_IsBaixado(true);
+		}
+
 	}
 
 
