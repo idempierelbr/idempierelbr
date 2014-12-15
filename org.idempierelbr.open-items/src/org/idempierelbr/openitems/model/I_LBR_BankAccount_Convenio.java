@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_BankAccount_Convenio
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 2.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_BankAccount_Convenio 
@@ -160,6 +160,36 @@ public interface I_LBR_BankAccount_Convenio
 
 	/** Get Convênio No.	  */
 	public String getLBR_ConvenioNo();
+
+    /** Column name LBR_SeqCNAB240File_ID */
+    public static final String COLUMNNAME_LBR_SeqCNAB240File_ID = "LBR_SeqCNAB240File_ID";
+
+	/** Set Sequence for File (CNAB).
+	  * Sequence for File (CNAB)
+	  */
+	public void setLBR_SeqCNAB240File_ID (int LBR_SeqCNAB240File_ID);
+
+	/** Get Sequence for File (CNAB).
+	  * Sequence for File (CNAB)
+	  */
+	public int getLBR_SeqCNAB240File_ID();
+
+	public org.compiere.model.I_AD_Sequence getLBR_SeqCNAB240File() throws RuntimeException;
+
+    /** Column name LBR_SeqCNAB240Lot_ID */
+    public static final String COLUMNNAME_LBR_SeqCNAB240Lot_ID = "LBR_SeqCNAB240Lot_ID";
+
+	/** Set Sequence for Lot (CNAB).
+	  * Sequence for Lot (CNAB)
+	  */
+	public void setLBR_SeqCNAB240Lot_ID (int LBR_SeqCNAB240Lot_ID);
+
+	/** Get Sequence for Lot (CNAB).
+	  * Sequence for Lot (CNAB)
+	  */
+	public int getLBR_SeqCNAB240Lot_ID();
+
+	public org.compiere.model.I_AD_Sequence getLBR_SeqCNAB240Lot() throws RuntimeException;
 
     /** Column name Name */
     public static final String COLUMNNAME_Name = "Name";

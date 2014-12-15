@@ -191,7 +191,7 @@ public class CNAB240Generate extends SvrProcess
 	}
 
 	private int getNextSequence( String seqName ) {
-		int seq_ID =  bA.get_ValueAsInt(seqName);
+		int seq_ID = convenio.get_ValueAsInt(seqName);
 		MSequence seq = new MSequence(getCtx(), seq_ID, get_TrxName());
 		int nextId = seq.getNextID();
 		seq.save(get_TrxName());

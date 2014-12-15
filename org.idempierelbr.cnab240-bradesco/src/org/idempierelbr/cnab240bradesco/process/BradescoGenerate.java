@@ -877,8 +877,8 @@ public class BradescoGenerate extends SvrProcess
 		arquivo.setDataHoraGeracao(new java.util.Date(m_LBR_FileGeneratingDate.getTime()));
 		
 		// Sequência (NSA)
-		MBankAccount bA = new MBankAccount(getCtx(), m_boleto.getC_BankAccount_ID(), get_TrxName());
-		int LBR_SeqCNAB240File_ID =  bA.get_ValueAsInt("LBR_SeqCNAB240File_ID");
+		MLBRBankAccountConvenio bConvenio = new MLBRBankAccountConvenio(getCtx(), m_boleto.getLBR_BankAccount_Convenio_ID(), get_TrxName());
+		int LBR_SeqCNAB240File_ID = bConvenio.getLBR_SeqCNAB240File_ID();
 		
 		if (LBR_SeqCNAB240File_ID > 0) {
 			MSequence seq = new MSequence(getCtx(), LBR_SeqCNAB240File_ID, get_TrxName());
@@ -952,8 +952,8 @@ public class BradescoGenerate extends SvrProcess
 		//---------------------------Controle da Cobrança--------------------------------
 		ControleCobranca controleCobranca = new ControleCobranca();
 		
-		MBankAccount bA = new MBankAccount(getCtx(), m_boleto.getC_BankAccount_ID(), get_TrxName());
-		int LBR_SeqCNAB240Lot_ID =  bA.get_ValueAsInt("LBR_SeqCNAB240Lot_ID");
+		MLBRBankAccountConvenio bConvenio = new MLBRBankAccountConvenio(getCtx(), m_boleto.getLBR_BankAccount_Convenio_ID(), get_TrxName());
+		int LBR_SeqCNAB240Lot_ID =  bConvenio.getLBR_SeqCNAB240Lot_ID();
 		
 		if (LBR_SeqCNAB240Lot_ID > 0) {
 			MSequence seq = new MSequence(getCtx(), LBR_SeqCNAB240Lot_ID, get_TrxName());

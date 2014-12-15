@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_BankAccount_Carteira
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 2.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_BankAccount_Carteira 
@@ -148,6 +148,15 @@ public interface I_LBR_BankAccount_Carteira
 
 	public I_LBR_BankAccount_Convenio getLBR_BankAccount_Convenio() throws RuntimeException;
 
+    /** Column name LBR_CarteiraCode */
+    public static final String COLUMNNAME_LBR_CarteiraCode = "LBR_CarteiraCode";
+
+	/** Set Carteira Code	  */
+	public void setLBR_CarteiraCode (String LBR_CarteiraCode);
+
+	/** Get Carteira Code	  */
+	public String getLBR_CarteiraCode();
+
     /** Column name LBR_CarteiraNo */
     public static final String COLUMNNAME_LBR_CarteiraNo = "LBR_CarteiraNo";
 
@@ -165,6 +174,21 @@ public interface I_LBR_BankAccount_Carteira
 
 	/** Get Bank Account Carteira Type	  */
 	public String getLBR_CarteiraType();
+
+    /** Column name LBR_SeqNumberInBank_ID */
+    public static final String COLUMNNAME_LBR_SeqNumberInBank_ID = "LBR_SeqNumberInBank_ID";
+
+	/** Set Sequence for Number in Bank.
+	  * Sequence for Number in Bank
+	  */
+	public void setLBR_SeqNumberInBank_ID (int LBR_SeqNumberInBank_ID);
+
+	/** Get Sequence for Number in Bank.
+	  * Sequence for Number in Bank
+	  */
+	public int getLBR_SeqNumberInBank_ID();
+
+	public org.compiere.model.I_AD_Sequence getLBR_SeqNumberInBank() throws RuntimeException;
 
     /** Column name Name */
     public static final String COLUMNNAME_Name = "Name";

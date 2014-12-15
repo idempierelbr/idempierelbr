@@ -240,8 +240,8 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 		
 		// Generate Number In Bank (only if null)
 		if (getLBR_NumberInBank() == null || getLBR_NumberInBank().trim().equals("")) {
-			MBankAccount bA = new MBankAccount(getCtx(), getC_BankAccount_ID(), get_TrxName());
-			int LBR_SeqNumberInBank_ID =  bA.get_ValueAsInt("LBR_SeqNumberInBank_ID");
+			MLBRBankAccountCarteira bCarteira = new MLBRBankAccountCarteira(getCtx(), getLBR_BankAccount_Carteira_ID(), get_TrxName());
+			int LBR_SeqNumberInBank_ID =  bCarteira.getLBR_SeqNumberInBank_ID();
 			
 			if (LBR_SeqNumberInBank_ID > 0) {
 				MSequence seq = new MSequence(getCtx(), LBR_SeqNumberInBank_ID, get_TrxName());

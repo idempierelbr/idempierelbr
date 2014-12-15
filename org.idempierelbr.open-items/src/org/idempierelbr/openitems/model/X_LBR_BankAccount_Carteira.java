@@ -23,14 +23,14 @@ import org.compiere.model.*;
 
 /** Generated Model for LBR_BankAccount_Carteira
  *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
+ *  @version Release 2.1 - $Id$ */
 public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_Carteira, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140902L;
+	private static final long serialVersionUID = 20141215L;
 
     /** Standard Constructor */
     public X_LBR_BankAccount_Carteira (Properties ctx, int LBR_BankAccount_Carteira_ID, String trxName)
@@ -41,6 +41,7 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 			setIsDefault (false);
 // N
 			setLBR_BankAccount_Convenio_ID (0);
+			setLBR_CarteiraCode (null);
 			setLBR_CarteiraNo (null);
         } */
     }
@@ -173,6 +174,20 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 		return ii.intValue();
 	}
 
+	/** Set Carteira Code.
+		@param LBR_CarteiraCode Carteira Code	  */
+	public void setLBR_CarteiraCode (String LBR_CarteiraCode)
+	{
+		set_Value (COLUMNNAME_LBR_CarteiraCode, LBR_CarteiraCode);
+	}
+
+	/** Get Carteira Code.
+		@return Carteira Code	  */
+	public String getLBR_CarteiraCode () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_CarteiraCode);
+	}
+
 	/** Set Carteira No..
 		@param LBR_CarteiraNo Carteira No.	  */
 	public void setLBR_CarteiraNo (String LBR_CarteiraNo)
@@ -210,6 +225,34 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 	public String getLBR_CarteiraType () 
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CarteiraType);
+	}
+
+	public org.compiere.model.I_AD_Sequence getLBR_SeqNumberInBank() throws RuntimeException
+    {
+		return (org.compiere.model.I_AD_Sequence)MTable.get(getCtx(), org.compiere.model.I_AD_Sequence.Table_Name)
+			.getPO(getLBR_SeqNumberInBank_ID(), get_TrxName());	}
+
+	/** Set Sequence for Number in Bank.
+		@param LBR_SeqNumberInBank_ID 
+		Sequence for Number in Bank
+	  */
+	public void setLBR_SeqNumberInBank_ID (int LBR_SeqNumberInBank_ID)
+	{
+		if (LBR_SeqNumberInBank_ID < 1) 
+			set_Value (COLUMNNAME_LBR_SeqNumberInBank_ID, null);
+		else 
+			set_Value (COLUMNNAME_LBR_SeqNumberInBank_ID, Integer.valueOf(LBR_SeqNumberInBank_ID));
+	}
+
+	/** Get Sequence for Number in Bank.
+		@return Sequence for Number in Bank
+	  */
+	public int getLBR_SeqNumberInBank_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_SeqNumberInBank_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
 	}
 
 	/** Set Name.
