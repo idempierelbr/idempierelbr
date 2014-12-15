@@ -74,7 +74,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  <row id="113" trl="Y">
   <value column="Name" original="Workflow">Fluxo de Trabalho</value>
   <value column="Description" original="Maintain Workflow">Gerenciamento de Fluxo de Trabalho</value>
-  <value column="Help" original="The Workflow Window defines Workflows in the system, the access level for the Workflow and the Nodes or Steps within the Workflow.">A Janela "Fluxo de Trabalho" define Fluxos de Trabalho no sistema, o nível de acesso para o Fluxo de Trabalho e os Nós ou Passos dentro do Fluxo de Trabalho.</value>
+  <value column="Help" original="The Workflow Window defines Workflows in the system, the access level for the Workflow and the Nodes or Steps within the Workflow.">A Janela "Fluxo de Trabalho" define fluxos de trabalho no sistema, seus níveis de acesso e os nós (ou passos).</value>
  </row>
  <row id="114" trl="Y">
   <value column="Name" original="Task">Tarefa</value>
@@ -423,9 +423,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Request Window is used to define and track any request assigned to you.">A Janela "Solicitação" é usada para definir e rastrear qualquer solicitação atribuída a você.</value>
  </row>
  <row id="203" trl="Y">
-  <value column="Name" original="Request Processor">Processador de Solicitação</value>
-  <value column="Description" original="Define Request Processors">Definir Processadores de Solicitação</value>
-  <value column="Help" original="The Request Processor Window allows you to define different processes that you want to occur and the frequency and timing of these processes  A Request Processor can be just for a specific Request Type or for all.">A janela "Processador de Solicitação" permite a você definir os diferentes processos que você quer que ocorram e a freqüência e horário desses processos. Um Processador de Solicitação pode ser apenas para um tipo de solicitação específico ou para todos.</value>
+  <value column="Name" original="Request Processor">Processador de Solicitações</value>
+  <value column="Description" original="Define Request Processors">Define Processadores de Solicitações</value>
+  <value column="Help" original="The Request Processor Window allows you to define different processes that you want to occur and the frequency and timing of these processes  A Request Processor can be just for a specific Request Type or for all.">A janela "Processador de Solicitações" permite a definir diferentes processos para cada tipo de solicitação (ou para todos), e a frequência de execução.</value>
  </row>
  <row id="204" trl="Y">
   <value column="Name" original="Mail Template">Modelo de Correspondência</value>
@@ -572,14 +572,14 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Maintain Resource types and their principal availability. it is used to calculate the available time in a resource. It allows input of starting time and end time for the slot according to the working days.">Gerenciamento de Tipos de Recurso e sua disponibilidade principal.</value>
  </row>
  <row id="238" trl="Y">
-  <value column="Name" original="Print Color">Cor de Impressão</value>
-  <value column="Description" original="Maintain Print Color">Gerenciamento das Cores de Impressão</value>
-  <value column="Help" original="Colors used for printing">Cor utilizada para impressão</value>
+  <value column="Name" original="Print Color">Cor (Impressão)</value>
+  <value column="Description" original="Maintain Print Color">Gerenciamento de Cores para Impressão</value>
+  <value column="Help" original="Colors used for printing">Cor utilizada para impressão.</value>
  </row>
  <row id="239" trl="Y">
-  <value column="Name" original="Print Font">Fonte de Impressão</value>
-  <value column="Description" original="Maintain Print Font">Gerenciamento das Fontes de Impressão</value>
-  <value column="Help" original="Font used for printing">Fonte utilizada para impressão</value>
+  <value column="Name" original="Print Font">Fonte (Impressão)</value>
+  <value column="Description" original="Maintain Print Font">Gerenciamento de Fontes para Impressão</value>
+  <value column="Help" original="Font used for printing">Fontes utilizada para impressão.</value>
  </row>
  <row id="240" trl="Y">
   <value column="Name" original="Print Format">Formato de Impressão</value>
@@ -587,9 +587,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The print format determines how data is rendered for print.">O formato de impressão determina como os dados são manipulados para impressão.</value>
  </row>
  <row id="241" trl="Y">
-  <value column="Name" original="Print Paper">Papel de Impressão</value>
-  <value column="Description" original="Maintain Print Paper">Gerenciamento dos Papéis de Impressão</value>
-  <value column="Help" original="Printer Paper Size, Orientation and Margins">Tamanho, Orientação e Margens do Papel da Impressora</value>
+  <value column="Name" original="Print Paper">Papel (Impressão)</value>
+  <value column="Description" original="Maintain Print Paper">Gerenciamento de Papéis para Impressão</value>
+  <value column="Help" original="Printer Paper Size, Orientation and Margins">Tamanho, orientação e margens de papel para impressão.</value>
  </row>
  <row id="242" trl="Y">
   <value column="Name" original="Expenses (to be invoiced)">Despesas sem Fatura (Cliente)</value>
@@ -597,9 +597,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Before invoicing to customers, check the expense lines to be invoiced">Antes de emitir a fatura aos seus clientes, conferira as linhas de despesa a serem faturadas.</value>
  </row>
  <row id="243" trl="Y">
-  <value column="Name" original="Print Table Format">Formato de Impressão de Tabela</value>
-  <value column="Description" original="Define Report Table Format">Definir Formato de Tabela de Relatório</value>
-  <value column="Help" original="The Print Table Format lets you define how table header, etc. is printed. Please note that the Report Table FOrmat is cached to improve performance.">O Formato de Impressão de Tabela permite definir como o cabeçalho de uma tabela, etc. é impresso. Por favor note que o Formato de Tabela de Relatório é armazenado em memória cache para melhorar a performance.</value>
+  <value column="Name" original="Print Table Format">Formatação de Tabela (Impressão)</value>
+  <value column="Description" original="Define Report Table Format">Definições de Formatações de Tabela para Relatórios</value>
+  <value column="Help" original="The Print Table Format lets you define how table header, etc. is printed. Please note that the Report Table FOrmat is cached to improve performance.">A Formatação de Tabela permite definir como os elementos são impressos (ex: cabeçalho) em relatórios. Observe que essas informações são armazenadas em cache para melhorar a performance.</value>
  </row>
  <row id="244" trl="Y">
   <value column="Name" original="Request Type">Tipo de Solicitação</value>
@@ -871,18 +871,18 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  </row>
  <row id="297" trl="Y">
   <value column="Name" original="Workflow Process">Processo de Fluxo de Trabalho</value>
-  <value column="Description" original="Monitor workflow processes">Monitorar Processos de Fluxo de Trabalho</value>
-  <value column="Help" original="View and Maintain Workflow Process Instance Information">Visualizar e Gerenciar Informações da Instância de Processo de Fluxo de Trabalho</value>
+  <value column="Description" original="Monitor workflow processes">Monitoração de Processos de Fluxo de Trabalho</value>
+  <value column="Help" original="View and Maintain Workflow Process Instance Information">Visualização e Gerenciamento de Informações de Instância de Processo de Fluxo de Trabalho</value>
  </row>
  <row id="298" trl="Y">
-  <value column="Name" original="Workflow Activities (all)">Atividades de Fluxo de Trabalho (todas)</value>
-  <value column="Description" original="Monitor all Workflow activities">Monitorar todas as atividades de Fluxo de Trabalho</value>
-  <value column="Help" original="Maintain all Workflow activities">Gerenciar todas as atividades de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Activities (all)">Atividades de Fluxo de Trabalho (Todas)</value>
+  <value column="Description" original="Monitor all Workflow activities">Monitoração de todas as atividades de Fluxo de Trabalho</value>
+  <value column="Help" original="Maintain all Workflow activities">Gerenciamento de todas as atividades de Fluxo de Trabalho</value>
  </row>
  <row id="299" trl="Y">
   <value column="Name" original="Workflow Responsible">Responsável pelo Fluxo de Trabalho</value>
-  <value column="Description" original="Responsible for Workflow Execution">Responsável pela Execução do Fluxo de Trabalho</value>
-  <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um Fluxo de Trabalho é do usuário real. A Responsabilidade do Fluxo de Trabalho permite definir meios de encontrar aquele usuário real.</value>
+  <value column="Description" original="Responsible for Workflow Execution">Responsável pela Execução de Fluxo de Trabalho</value>
+  <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um Fluxo de Trabalho é de um usuário real. A Responsabilidade do Fluxo de Trabalho permite definir meios de encontrar esse usuário real.</value>
  </row>
  <row id="300" trl="Y">
   <value column="Name" original="Registration Attributes">Atributos de Registros</value>
@@ -911,13 +911,13 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  </row>
  <row id="305" trl="Y">
   <value column="Name" original="Scheduler">Agendador</value>
-  <value column="Description" original="Maintain Schedule Processes and Logs">Gerenciamento dos Processos de Agendamento e Registros (logs)</value>
-  <value column="Help" original="Schedule processes to be executed asynchronously">Agendar Processos a serem executados asincronamente</value>
+  <value column="Description" original="Maintain Schedule Processes and Logs">Manutenção de Processos Agendados e Logs</value>
+  <value column="Help" original="Schedule processes to be executed asynchronously">Processos agendados e executados de forma assíncrona</value>
  </row>
  <row id="306" trl="Y">
-  <value column="Name" original="Workflow Processor">Processador de Fluxo de Trabalho</value>
-  <value column="Description" original="Maintain Workflow Processor and Logs">Gerenciamento do Processador de Fluxo de Trabalho e Registros (logs)</value>
-  <value column="Help" original="Workflow Processor Server Parameters">Parâmetros do Servidor do Processador de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Processor">Processador de Fluxos de Trabalho</value>
+  <value column="Description" original="Maintain Workflow Processor and Logs">Gerenciamento do Processador de Fluxos de Trabalho e Logs</value>
+  <value column="Help" original="Workflow Processor Server Parameters">Parâmetros do Processador de Fluxos de Trabalho</value>
  </row>
  <row id="307" trl="Y">
   <value column="Name" original="Bid Topic">Tópico do Lance</value>
@@ -941,13 +941,13 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  </row>
  <row id="311" trl="Y">
   <value column="Name" original="Accounting Processor">Processador de Contabilidade</value>
-  <value column="Description" original="Maintain Accounting Processor and Logs">Gerenciamento do Processador de Contabilidade e Registros (logs)</value>
-  <value column="Help" original="Accounting Processor/Server Parameters and Logs">Parâmetros e Registros (logs) do Processador/Servidor de Contabilidade</value>
+  <value column="Description" original="Maintain Accounting Processor and Logs">Gerenciamento do Processador de Contabilidade e Logs</value>
+  <value column="Help" original="Accounting Processor/Server Parameters and Logs">Parâmetros e Logs do Processador de Contabilidade</value>
  </row>
  <row id="312" trl="Y">
   <value column="Name" original="Alert Processor">Processador de Alertas</value>
-  <value column="Description" original="Maintain Alert Processor/Server Parameter and Logs">Gerenciamento dos parâmetros do Servidor/Processador de Alertas e Registros (logs)</value>
-  <value column="Help" original="Alert Processor/Server Parameter">Parâmetros do Processador/Servidor de Alerta</value>
+  <value column="Description" original="Maintain Alert Processor/Server Parameter and Logs">Gerenciamento dos parâmetros do Processador de Alertas e Logs</value>
+  <value column="Help" original="Alert Processor/Server Parameter">Parâmetros do Processador de Alertas</value>
  </row>
  <row id="313" trl="Y">
   <value column="Name" original="Partner Relation">Relacionamento entre Parceiros</value>
@@ -1315,9 +1315,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original=""/>
  </row>
  <row id="389" trl="Y">
-  <value column="Name" original="LDAP Server">LDAP Server</value>
-  <value column="Description" original="LDAP Server to authenticate and authorize external systems based on iDempiere">LDAP Server to authenticate and authorize external systems based on Compiere</value>
-  <value column="Help" original="The LDAP Server allows third party software (e.g. Apache) to use the users defined in the system to authentificate and authorize them.  There is only one server per iDempiere system.  The &quot;o&quot; is the Client key and the optional &quot;ou&quot; is the Interest Area key.">The LDAP Server allows third party software (e.g. Apache) to use the users defined in the system to authentificate and authorize them.  There is only one server per Compiere system.  The "o" is the Client key and the optional "ou" is the Interest Area key.</value>
+  <value column="Name" original="LDAP Server">Servidor LDAP</value>
+  <value column="Description" original="LDAP Server to authenticate and authorize external systems based on iDempiere">Servidor LDAP para autenticar e autorizar sistemas externos baseados no Compiere</value>
+  <value column="Help" original="The LDAP Server allows third party software (e.g. Apache) to use the users defined in the system to authentificate and authorize them.  There is only one server per iDempiere system.  The &quot;o&quot; is the Client key and the optional &quot;ou&quot; is the Interest Area key.">O servidor LDAP permite que softwares de terceiros (ex: Apache) utilizem os usuários definidos no sistema para autorizá-los e autenticá-los. Defina apenas um único servidor por sistema.</value>
  </row>
  <row id="50001" trl="Y">
   <value column="Name" original="Packages Installed">Pacotes Instalados</value>
@@ -1688,10 +1688,10 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53063" trl="N">
-  <value column="Name" original="House Keeping">House Keeping</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
+ <row id="53063" trl="Y">
+  <value column="Name" original="House Keeping">Exclusão de Registros (BD)</value>
+  <value column="Description" original="">Exclusão (backup opcional) de registros em tabelas do banco de dados</value>
+  <value column="Help" original="">Esta janela permite a exclusão de registros em tabelas específicas do banco de dados, de acordo com a cláusula WHERE definida. Isso pode ser muito útil para evitar a sobrecarga e o excesso de registros em determinadas tabelas. Os registros excluídos podem ser exportados para um arquivo XML ou armazenados em uma outra tabela de histórico (opcionalmente em outro tablespace). Se você selecionar a exportação para outra tabela, é necessário que exista previamente uma tabela com nome idêntico à original, mas com o prefixo 'HST_'. Por exemplo, se a tabela original for a T_Aging, a tabela de histórico (backup) deve se chamar HST_T_Aging.</value>
  </row>
  <row id="53064" trl="N">
   <value column="Name" original="View MRP Records">View MRP Records</value>
@@ -1703,8 +1703,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53067" trl="N">
-  <value column="Name" original="Web Service Definition">Web Service Definition</value>
+ <row id="53067" trl="Y">
+  <value column="Name" original="Web Service Definition">Definição de Web Service</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1944,9 +1944,9 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200012" trl="N">
-  <value column="Name" original="Schedule">Schedule</value>
-  <value column="Description" original="Times for the scheduler">Times for the scheduler</value>
+ <row id="200012" trl="Y">
+  <value column="Name" original="Schedule">Programação</value>
+  <value column="Description" original="Times for the scheduler">Programações para o Agendador</value>
   <value column="Help" original=""/>
  </row>
  <row id="200013" trl="Y">
@@ -2079,8 +2079,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Recurring Group">Recurring Group</value>
   <value column="Help" original=""/>
  </row>
- <row id="200061" trl="N">
-  <value column="Name" original="Country Group">Country Group</value>
+ <row id="200061" trl="Y">
+  <value column="Name" original="Country Group">Grupo de Países</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

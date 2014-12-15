@@ -168,7 +168,7 @@
   <value column="Name" original="User Locking">Bloqueio de Usuário</value>
  </row>
  <row id="200004" trl="Y">
-  <value column="Name" original="Overwritten From Column">Sobrescrito da Aba Coluna</value>
+  <value column="Name" original="Overwritten From Column">Sobrescrita da Aba Coluna</value>
  </row>
  <row id="200005" trl="Y">
   <value column="Name" original="Customer Information">Informações de Cliente</value>

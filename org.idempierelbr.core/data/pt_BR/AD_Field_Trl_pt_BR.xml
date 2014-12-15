@@ -95,12 +95,12 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Help" original="UserName / Login to use for the login&#10;Email of the responsible person for the system (registered in WebStore)">Nome do Usuário / Nome utilizado para o email da pessoa responsável pelo sistema (registrado na loja virtual)</value>
  </row>
  <row id="13424" trl="Y">
-  <value column="Name" original="Mandatory Overwrite">Obrigatório Sobreescrever</value>
-  <value column="Description" original="Overwrite Field Mandatory status">Estado do Campo de Sobreescrita Obrigatório</value>
+  <value column="Name" original="Mandatory Overwrite">Obrigatório (NOT NULL) (Sobrescrita)</value>
+  <value column="Description" original="Overwrite Field Mandatory status">Estado do campo, indicando que um valor é obrigatório</value>
   <value column="Help" original="The field must have a value for the record to be saved to the database.">O campo tem que ter um valor para que o registro seja salvo no banco de dados.</value>
  </row>
  <row id="13425" trl="Y">
-  <value column="Name" original="Reference Overwrite">Sobreescrever Referência</value>
+  <value column="Name" original="Reference Overwrite">Referência (Sobrescrita)</value>
   <value column="Description" original="System Reference - optional Overwrite">Referência do Sistema - Sobrescrita Opcional</value>
   <value column="Help" original="You can overwrite the Display Type, but only use this if you aware of the consequences.">Você pode sobreescrever o tipo de exibição, mas somente faça isso se você estiver ciente das conseqüências.</value>
  </row>
@@ -766,13 +766,13 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="800067" trl="N">
-  <value column="Name" original="Collection Movement">Collection Movement</value>
+ <row id="800067" trl="Y">
+  <value column="Name" original="Collection Movement">Código de Movimento (Último)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="800068" trl="N">
-  <value column="Name" original="Movement Type">Movement Type</value>
+ <row id="800068" trl="Y">
+  <value column="Name" original="Movement Type">Tipo de Movimento (Último)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

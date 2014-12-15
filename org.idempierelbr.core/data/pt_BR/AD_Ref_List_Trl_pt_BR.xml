@@ -927,11 +927,11 @@
   <value column="Description" original="Special Forms">Formulário (Form)</value>
  </row>
  <row id="364" trl="Y">
-  <value column="Name" original="And">E</value>
+  <value column="Name" original="And">E (AND)</value>
   <value column="Description" original=""/>
  </row>
  <row id="365" trl="Y">
-  <value column="Name" original="Or">Ou</value>
+  <value column="Name" original="Or">OU (OR)</value>
   <value column="Description" original=""/>
  </row>
  <row id="366" trl="Y">
@@ -1203,15 +1203,15 @@
   <value column="Description" original=""/>
  </row>
  <row id="442" trl="Y">
-  <value column="Name" original="Overdue">Prazo Vencido</value>
+  <value column="Name" original="Overdue">Vencido</value>
   <value column="Description" original=""/>
  </row>
  <row id="443" trl="Y">
-  <value column="Name" original="Due">Dentro do Prazo</value>
+  <value column="Name" original="Due">A Vencer</value>
   <value column="Description" original=""/>
  </row>
  <row id="444" trl="Y">
-  <value column="Name" original="Scheduled">Agendado</value>
+  <value column="Name" original="Scheduled">Programado</value>
   <value column="Description" original=""/>
  </row>
  <row id="445" trl="Y">
@@ -1827,15 +1827,15 @@
   <value column="Description" original=""/>
  </row>
  <row id="601" trl="Y">
-  <value column="Name" original="hour">hora</value>
+  <value column="Name" original="hour">Hora</value>
   <value column="Description" original=""/>
  </row>
  <row id="602" trl="Y">
-  <value column="Name" original="minute">minuto</value>
+  <value column="Name" original="minute">Minuto</value>
   <value column="Description" original=""/>
  </row>
  <row id="603" trl="Y">
-  <value column="Name" original="second">segundo</value>
+  <value column="Name" original="second">Segundo</value>
   <value column="Description" original=""/>
  </row>
  <row id="604" trl="Y">
@@ -1851,15 +1851,15 @@
   <value column="Description" original=""/>
  </row>
  <row id="607" trl="Y">
-  <value column="Name" original="AND">E</value>
+  <value column="Name" original="AND">E (AND)</value>
   <value column="Description" original=""/>
  </row>
  <row id="608" trl="Y">
-  <value column="Name" original="XOR">XOU</value>
+  <value column="Name" original="XOR">XOU (XOR)</value>
   <value column="Description" original=""/>
  </row>
  <row id="609" trl="Y">
-  <value column="Name" original="Wait (Sleep)">Espera (Dormir)</value>
+  <value column="Name" original="Wait (Sleep)">Esperar (Sleep)</value>
   <value column="Description" original=""/>
  </row>
  <row id="610" trl="Y">
@@ -1867,7 +1867,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="611" trl="Y">
-  <value column="Name" original="Sub Workflow">Sub Fluxo de Trabalho</value>
+  <value column="Name" original="Sub Workflow">Subfluxo de Trabalho</value>
   <value column="Description" original=""/>
  </row>
  <row id="612" trl="Y">
@@ -1883,7 +1883,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="615" trl="Y">
-  <value column="Name" original="User Window">Janela de Usuário</value>
+  <value column="Name" original="User Window">Janela</value>
   <value column="Description" original=""/>
  </row>
  <row id="616" trl="Y">
@@ -1895,7 +1895,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="618" trl="Y">
-  <value column="Name" original="Role">Papel (Função)</value>
+  <value column="Name" original="Role">Perfil de Acesso</value>
   <value column="Description" original=""/>
  </row>
  <row id="619" trl="Y">
@@ -1907,7 +1907,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="621" trl="Y">
-  <value column="Name" original="Running">Rodando</value>
+  <value column="Name" original="Running">Executando</value>
   <value column="Description" original=""/>
  </row>
  <row id="622" trl="Y">
@@ -1931,16 +1931,16 @@
   <value column="Description" original=""/>
  </row>
  <row id="627" trl="Y">
-  <value column="Name" original="State Changed">Estado Alterado</value>
+  <value column="Name" original="State Changed">Alteração de Estado</value>
   <value column="Description" original=""/>
  </row>
  <row id="628" trl="Y">
-  <value column="Name" original="Asynchronously">Asincronamente</value>
+  <value column="Name" original="Asynchronously">Assíncrono</value>
   <value column="Description" original="Fork">Bifurcação</value>
  </row>
  <row id="629" trl="Y">
-  <value column="Name" original="Synchronously">Sincronizadamente</value>
-  <value column="Description" original="Serial">Serial</value>
+  <value column="Name" original="Synchronously">Síncrono</value>
+  <value column="Description" original="Serial">Em Série</value>
  </row>
  <row id="630" trl="Y">
   <value column="Name" original="While Loop">Laço Enquanto</value>
@@ -1951,19 +1951,19 @@
   <value column="Description" original=""/>
  </row>
  <row id="633" trl="Y">
-  <value column="Name" original="User Form">Formulário do Usuário</value>
+  <value column="Name" original="User Form">Formulário (Form)</value>
   <value column="Description" original=""/>
  </row>
  <row id="634" trl="Y">
-  <value column="Name" original="Apps Task">Tarefa de Aplicação</value>
+  <value column="Name" original="Apps Task">Tarefa</value>
   <value column="Description" original=""/>
  </row>
  <row id="636" trl="Y">
-  <value column="Name" original="Apps Report">Relatório de Aplicação</value>
+  <value column="Name" original="Apps Report">Relatório</value>
   <value column="Description" original=""/>
  </row>
  <row id="637" trl="Y">
-  <value column="Name" original="Apps Process">Processo de Aplicação</value>
+  <value column="Name" original="Apps Process">Processo</value>
   <value column="Description" original=""/>
  </row>
  <row id="639" trl="Y">
@@ -2167,11 +2167,11 @@
   <value column="Description" original="General Workflow">Fluxo de Trabalho Geral</value>
  </row>
  <row id="689" trl="Y">
-  <value column="Name" original="Document Process">Processar Documentos</value>
+  <value column="Name" original="Document Process">Processador de Documentos</value>
   <value column="Description" original=""/>
  </row>
  <row id="690" trl="Y">
-  <value column="Name" original="Document Value">Valor do Documento</value>
+  <value column="Name" original="Document Value">Valor de Documento</value>
   <value column="Description" original=""/>
  </row>
  <row id="691" trl="Y">
@@ -2307,7 +2307,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="726" trl="Y">
-  <value column="Name" original="Partner Confidential">Partner Confidential</value>
+  <value column="Name" original="Partner Confidential">Parceiro de Negócios</value>
   <value column="Description" original=""/>
  </row>
  <row id="727" trl="Y">
@@ -2435,7 +2435,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="758" trl="Y">
-  <value column="Name" original="Internal">Interno</value>
+  <value column="Name" original="Internal">Interna</value>
   <value column="Description" original=""/>
  </row>
  <row id="759" trl="Y">
@@ -2591,19 +2591,19 @@
   <value column="Description" original="User Column 2">Elemento do Usuário (2)</value>
  </row>
  <row id="798" trl="Y">
-  <value column="Name" original="EMail">Email</value>
+  <value column="Name" original="EMail">E-mail</value>
   <value column="Description" original=""/>
  </row>
  <row id="799" trl="Y">
-  <value column="Name" original="Document Owner">Document Owner</value>
+  <value column="Name" original="Document Owner">Proprietário do Documento</value>
   <value column="Description" original=""/>
  </row>
  <row id="800" trl="Y">
-  <value column="Name" original="Document Business Partner">Document Business Partner</value>
+  <value column="Name" original="Document Business Partner">Parceiro de Negócios do Documento</value>
   <value column="Description" original=""/>
  </row>
  <row id="801" trl="Y">
-  <value column="Name" original="WF Responsible">WF Responsible</value>
+  <value column="Name" original="WF Responsible">Responsável pelo Fluxo de Trabalho</value>
   <value column="Description" original=""/>
  </row>
  <row id="802" trl="Y">
@@ -2659,39 +2659,39 @@
   <value column="Description" original=""/>
  </row>
  <row id="815" trl="Y">
-  <value column="Name" original=" 0% Not Started"> 0% Not Started</value>
+  <value column="Name" original=" 0% Not Started"> 0% (Não Iniciado)</value>
   <value column="Description" original=""/>
  </row>
  <row id="816" trl="Y">
-  <value column="Name" original="100% Complete">100% Complete</value>
+  <value column="Name" original="100% Complete">100% (Completo)</value>
   <value column="Description" original=""/>
  </row>
  <row id="817" trl="Y">
-  <value column="Name" original=" 20% Started"> 20% Started</value>
+  <value column="Name" original=" 20% Started"> 20% (Iniciado)</value>
   <value column="Description" original=""/>
  </row>
  <row id="818" trl="Y">
-  <value column="Name" original=" 80% Nearly Done"> 80% Nearly Done</value>
+  <value column="Name" original=" 80% Nearly Done"> 80% (Próximo de Finalizar)</value>
   <value column="Description" original=""/>
  </row>
  <row id="819" trl="Y">
-  <value column="Name" original=" 40% Busy"> 40% Busy</value>
+  <value column="Name" original=" 40% Busy"> 40% (Ocupado)</value>
   <value column="Description" original=""/>
  </row>
  <row id="820" trl="Y">
-  <value column="Name" original=" 60% Good Progress"> 60% Good Progress</value>
+  <value column="Name" original=" 60% Good Progress"> 60% (Progredindo)</value>
   <value column="Description" original=""/>
  </row>
  <row id="821" trl="Y">
-  <value column="Name" original=" 90% Finishing"> 90% Finishing</value>
+  <value column="Name" original=" 90% Finishing"> 90% (Finalizando)</value>
   <value column="Description" original=""/>
  </row>
  <row id="822" trl="Y">
-  <value column="Name" original=" 95% Almost Done"> 95% Almost Done</value>
+  <value column="Name" original=" 95% Almost Done"> 95% (Quase Finalizado)</value>
   <value column="Description" original=""/>
  </row>
  <row id="823" trl="Y">
-  <value column="Name" original=" 99% Cleaning up"> 99% Cleaning up</value>
+  <value column="Name" original=" 99% Cleaning up"> 99% (Limpando)</value>
   <value column="Description" original=""/>
  </row>
  <row id="824" trl="Y">
@@ -2815,11 +2815,11 @@
   <value column="Description" original=""/>
  </row>
  <row id="855" trl="Y">
-  <value column="Name" original="MM">MM</value>
+  <value column="Name" original="MM">Milímetro (mm)</value>
   <value column="Description" original=""/>
  </row>
  <row id="856" trl="Y">
-  <value column="Name" original="Inch">Inch</value>
+  <value column="Name" original="Inch">Polegada (Inch)</value>
   <value column="Description" original=""/>
  </row>
  <row id="857" trl="Y">
@@ -3430,12 +3430,12 @@
   <value column="Name" original="User Workbench">User Workbench</value>
   <value column="Description" original=""/>
  </row>
- <row id="53249" trl="N">
-  <value column="Name" original="Manufacturing">Manufacturing</value>
+ <row id="53249" trl="Y">
+  <value column="Name" original="Manufacturing">Produção</value>
   <value column="Description" original=""/>
  </row>
- <row id="53250" trl="N">
-  <value column="Name" original="Quality">Quality</value>
+ <row id="53250" trl="Y">
+  <value column="Name" original="Quality">Qualidade</value>
   <value column="Description" original=""/>
  </row>
  <row id="53251" trl="N">
@@ -4470,9 +4470,9 @@
   <value column="Name" original="Safety Stock">Safety Stock</value>
   <value column="Description" original=""/>
  </row>
- <row id="53574" trl="N">
-  <value column="Name" original="Cron Scheduling Pattern">Cron Scheduling Pattern</value>
-  <value column="Description" original="Use cron style scheduling pattern">Use cron style scheduling pattern</value>
+ <row id="53574" trl="Y">
+  <value column="Name" original="Cron Scheduling Pattern">Padrão de Agendamento Cron/Crontab</value>
+  <value column="Description" original="Use cron style scheduling pattern">Utilização de padrão de agendamento estilo Cron/Contrab</value>
  </row>
  <row id="53578" trl="Y">
   <value column="Name" original="Keyboard">Alfanumérico</value>
@@ -4894,8 +4894,8 @@
   <value column="Name" original="Delayed">Delayed</value>
   <value column="Description" original=""/>
  </row>
- <row id="200014" trl="N">
-  <value column="Name" original="Wizard">Wizard</value>
+ <row id="200014" trl="Y">
+  <value column="Name" original="Wizard">Assistente</value>
   <value column="Description" original=""/>
  </row>
  <row id="200020" trl="Y">

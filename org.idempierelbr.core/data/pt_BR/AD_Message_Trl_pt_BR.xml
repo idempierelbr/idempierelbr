@@ -2570,7 +2570,7 @@ Obrigado por usar o Gerenciador de Ativos Personalizado Adempiere
   <value column="MsgTip" original=""/>
  </row>
  <row id="750" trl="Y">
-  <value column="MsgText" original="Forward">Avançar</value>
+  <value column="MsgText" original="Forward">Encaminhar</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="751" trl="Y">
@@ -3002,7 +3002,7 @@ Obrigado por usar o Gerenciador de Ativos Personalizado Adempiere
   <value column="MsgTip" original=""/>
  </row>
  <row id="858" trl="Y">
-  <value column="MsgText" original="Workflow &amp;Activities"><![CDATA[Atividade de &Fluxo]]></value>
+  <value column="MsgText" original="Workflow &amp;Activities"><![CDATA[Atividade de &Workflow]]></value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="859" trl="Y">
@@ -5588,7 +5588,7 @@ Please contact administrator.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200000" trl="Y">
-  <value column="MsgText" original="Unprocessed Documents">Doc. Não Processado</value>
+  <value column="MsgText" original="Unprocessed Documents">Documento Pendente</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200001" trl="Y">
@@ -5639,8 +5639,8 @@ Please contact administrator.</value>
   <value column="MsgText" original="Flat View">Menu Plano</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200013" trl="N">
-  <value column="MsgText" original="Properties">Properties</value>
+ <row id="200013" trl="Y">
+  <value column="MsgText" original="Properties">Propriedades</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200014" trl="N">

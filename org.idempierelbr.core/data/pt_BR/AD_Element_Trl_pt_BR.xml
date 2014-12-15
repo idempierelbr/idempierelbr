@@ -233,8 +233,8 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="128" trl="Y">
-  <value column="Name" original="OS Task">Tarefa SO</value>
-  <value column="PrintName" original="OS Task">Tarefa SO</value>
+  <value column="Name" original="OS Task">Tarefa de SO</value>
+  <value column="PrintName" original="OS Task">Tarefa de SO</value>
   <value column="Description" original="Operation System Task">Tarefa de Sistema Operacional (SO)</value>
   <value column="Help" original="The Task field identifies a Operation System Task in the system.">O campo "Tarefa" identifica uma Tarefa do Sistema Operacional no sistema.</value>
   <value column="PO_Description" original=""/>
@@ -5045,10 +5045,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1089" trl="Y">
-  <value column="Name" original="Date last run">Data da Última Geração</value>
-  <value column="PrintName" original="Date last run">Data da Última Geração</value>
-  <value column="Description" original="Date the process was last run.">Data em que a comissão foi gerada pela última vez (processo executado)</value>
-  <value column="Help" original="The Date Last Run indicates the last time that a process was run.">A "Data da Última Geração" indica a última vez que a comissão foi gerada (processo executado).</value>
+  <value column="Name" original="Date last run">Data da Última Execução</value>
+  <value column="PrintName" original="Date last run">Data da Última Execução</value>
+  <value column="Description" original="Date the process was last run.">Data em que ocorreu a última execução do processo</value>
+  <value column="Help" original="The Date Last Run indicates the last time that a process was run.">A "Data da Última Execução" indica a última vez que o processo foi executado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -7467,9 +7467,9 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1452" trl="Y">
-  <value column="Name" original="And/Or">E / Ou</value>
-  <value column="PrintName" original="And/Or">E / Ou</value>
-  <value column="Description" original="Logical operation: AND or OR">Operação lógica : E ou OU</value>
+  <value column="Name" original="And/Or">E (AND) / OU (OR)</value>
+  <value column="PrintName" original="And/Or">E (AND) / OU (OR)</value>
+  <value column="Description" original="Logical operation: AND or OR">Operação lógica : AND ou OR</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -7497,9 +7497,9 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1455" trl="Y">
-  <value column="Name" original="Value To">Valor Para</value>
-  <value column="PrintName" original="Value To">Valor Para</value>
-  <value column="Description" original="Value To">Valor Para</value>
+  <value column="Name" original="Value To">Valor (Até)</value>
+  <value column="PrintName" original="Value To">Valor (Até)</value>
+  <value column="Description" original="Value To">Valor (Até)</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -7897,10 +7897,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1509" trl="Y">
-  <value column="Name" original="Escalated">Elevado</value>
-  <value column="PrintName" original="Escalated">Elevado</value>
-  <value column="Description" original="This request has been escalated">A prioridade desta solicitação foi elevada</value>
-  <value column="Help" original="The Escalated checkbox indicates that this request has been escalated or raised in importance.">A caixa de verificação "Elevado" indica que a prioridade desta solicitação foi elevada, aumentou em importância.</value>
+  <value column="Name" original="Escalated">Escalonada</value>
+  <value column="PrintName" original="Escalated">Escalonada</value>
+  <value column="Description" original="This request has been escalated">A prioridade desta solicitação foi escalonada (elevada)</value>
+  <value column="Help" original="The Escalated checkbox indicates that this request has been escalated or raised in importance.">A caixa de verificação "Escalonada" indica que a prioridade desta solicitação foi elevada, aumentou em importância.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -7987,8 +7987,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1519" trl="Y">
-  <value column="Name" original="Request Processor">Processador de Solicitação</value>
-  <value column="PrintName" original="Request Processor">Processador de Solicitação</value>
+  <value column="Name" original="Request Processor">Processador de Solicitações</value>
+  <value column="PrintName" original="Request Processor">Processador de Solicitações</value>
   <value column="Description" original="Processor for Requests">Processador para Solicitações</value>
   <value column="Help" original="Processor for Requests">Processador para Solicitações</value>
   <value column="PO_Description" original=""/>
@@ -8959,8 +8959,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
  <row id="1639" trl="Y">
   <value column="Name" original="Image">Imagem</value>
   <value column="PrintName" original="Image">Imagem</value>
-  <value column="Description" original="Image or Icon">Image or Icon</value>
-  <value column="Help" original="Images and Icon can be used to display supported graphic formats (gif, jpg, png).&#10;You can either load the image (in the database) or point to a graphic via a URI (i.e. it can point to a resource, http address)">Images and Icon can be used to display supported graphic formats (gif, jpg, png). You can either load the image (in the database) or point to a graphic via a URI (i.e. it can point to a resource, http address)</value>
+  <value column="Description" original="Image or Icon">Imagem ou Ícone</value>
+  <value column="Help" original="Images and Icon can be used to display supported graphic formats (gif, jpg, png).&#10;You can either load the image (in the database) or point to a graphic via a URI (i.e. it can point to a resource, http address)">Imagens e ícones podem ser utilizados para apresentar gráficos suportados (gif, jpg, png). Você pode carregar uma imagem armazenada em banco de dados/sistema de arquivos, ou utilizar uma referência URI (ex. endereço http).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -9439,20 +9439,20 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1695" trl="Y">
-  <value column="Name" original="Alert after Days Due">Alertar após Dias em Atraso</value>
-  <value column="PrintName" original="Alert days Due">Dias em Atraso para Alerta</value>
-  <value column="Description" original="Send email alert after number of days due (0=no alerts)">Enviar email de alerta após um certo número de dias em atraso (0=sem alertas)</value>
-  <value column="Help" original="Send an email alert after the item is Due (after Date Next Action). If set to zero, no alert is sent.">Enviar um email de alerta após um item estar em atraso (após a Data da Próxima Ação). Nenhum alerta será enviado se estiver ajustado em zero.</value>
+  <value column="Name" original="Alert after Days Due">Dias após o Vencimento para o Alerta</value>
+  <value column="PrintName" original="Alert days Due">Dias após o Vencimento para o Alerta</value>
+  <value column="Description" original="Send email alert after number of days due (0=no alerts)">Enviar alerta após a quantidade definida de dias vencidos. (0 = não enviar alerta)</value>
+  <value column="Help" original="Send an email alert after the item is Due (after Date Next Action). If set to zero, no alert is sent.">Enviar alerta após um item estar vencido (em atraso), com base no campo Data da Próxima Ação. Nenhum alerta será enviado se estiver definido em zero.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1696" trl="Y">
-  <value column="Name" original="Escalate after Days Due">Escalar após Dias de Atraso</value>
-  <value column="PrintName" original="Escalate after Days">Escalar após Dias em Atraso</value>
-  <value column="Description" original="Escalation to superior after number of due days (0 = no)">Elevar ao superior após um número de dias em atraso (0 = não)</value>
-  <value column="Help" original="The item will be escalated and assigned to the supervisor after the number of days over due. If 0, there is no escalation.">O item será elevado e designado ao supervisor após um determinado número de dias em atraso. Se for igual a zero não haverá elevação.</value>
+  <value column="Name" original="Escalate after Days Due">Dias após o Vencimento para o Escalonamento</value>
+  <value column="PrintName" original="Escalate after Days">Dias após o Vencimento para o Escalonamento</value>
+  <value column="Description" original="Escalation to superior after number of due days (0 = no)">Escalona a um superior após a quantidade definida de dias vencidos. (0 = não escalona)</value>
+  <value column="Help" original="The item will be escalated and assigned to the supervisor after the number of days over due. If 0, there is no escalation.">O item será escalonado e designado ao supervisor após um determinado número de dias em atraso. Se for igual a zero não haverá escalonamento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -10289,20 +10289,20 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1788" trl="Y">
-  <value column="Name" original="Print Color">Cor de Impressão</value>
-  <value column="PrintName" original="Print Color">Cor de Impressão</value>
-  <value column="Description" original="Color used for printing and display">Cor usada para impressão e visualização</value>
-  <value column="Help" original="Colors used for printing and display">Cores usadas para impressão e visualização</value>
+  <value column="Name" original="Print Color">Cor (Impressão)</value>
+  <value column="PrintName" original="Print Color">Cor (Impressão)</value>
+  <value column="Description" original="Color used for printing and display">Cor utilizada para impressão e visualização</value>
+  <value column="Help" original="Colors used for printing and display">Cores utilizadas para impressão e visualização</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1789" trl="Y">
-  <value column="Name" original="Print Font">Fonte de Impressão</value>
-  <value column="PrintName" original="Print Font">Fonte de Impressão</value>
-  <value column="Description" original="Maintain Print Font">Gerenciamento das Fontes de Impressão</value>
-  <value column="Help" original="Font used for printing">Fonte utilizada para impressão</value>
+  <value column="Name" original="Print Font">Fonte (Impressão)</value>
+  <value column="PrintName" original="Print Font">Fonte (Impressão)</value>
+  <value column="Description" original="Maintain Print Font">Identificador de Fonte para Impressão</value>
+  <value column="Help" original="Font used for printing">Fonte utilizada para impressão.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -10339,10 +10339,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1793" trl="Y">
-  <value column="Name" original="Print Paper">Papel de Impressão</value>
-  <value column="PrintName" original="Print Paper">Papel de Impressão</value>
-  <value column="Description" original="Printer paper definition">Definição do papel da impressora</value>
-  <value column="Help" original="Printer Paper Size, Orientation and Margins">Tamanho, Orientação e Margens do Papel da Impressora</value>
+  <value column="Name" original="Print Paper">Papel (Impressão)</value>
+  <value column="PrintName" original="Print Paper">Papel (Impressão)</value>
+  <value column="Description" original="Printer paper definition">Definição de Papel para Impressão</value>
+  <value column="Help" original="Printer Paper Size, Orientation and Margins">Tamanho, orientação e margens de papel para impressão.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -10880,10 +10880,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1853" trl="Y">
-  <value column="Name" original="Print Table Format">Formato de Impressão de Tabela</value>
-  <value column="PrintName" original="Table Format">Formato da Tabela</value>
-  <value column="Description" original="Table Format in Reports">Formato da Tabela nos Relatórios</value>
-  <value column="Help" original="Print Table Format determines Fonts, Colors of  the printed Table">O "Formato de Impressão de Tabela" determina as fontes e cores da tabela impressa</value>
+  <value column="Name" original="Print Table Format">Formatação de Tabela (Impressão)</value>
+  <value column="PrintName" original="Table Format">Formatação de Tabela (Impressão)</value>
+  <value column="Description" original="Table Format in Reports">Definições de Formatação de Tabela para Relatórios</value>
+  <value column="Help" original="Print Table Format determines Fonts, Colors of  the printed Table">A Formatação de Tabela permite definir como os elementos são impressos (ex: cabeçalho) em relatórios.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -10962,28 +10962,28 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="1861" trl="Y">
   <value column="Name" original="Function Font">Fonte da Função</value>
   <value column="PrintName" original="Function Font">Fonte da Função</value>
-  <value column="Description" original="Function row Font">Fonte da linha da Função</value>
-  <value column="Help" original="Font of the function row">Fonte da linha da função</value>
+  <value column="Description" original="Function row Font">Fonte da função</value>
+  <value column="Help" original="Font of the function row">Fonte da função.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1862" trl="Y">
-  <value column="Name" original="Function BG Color">Cor de fundo da função</value>
-  <value column="PrintName" original="Function BG Color">Cor de fundo da função</value>
-  <value column="Description" original="Function Background Color">Cor de fundo da função</value>
-  <value column="Help" original="Background color of a function row">Cor de fundo de uma linha de função</value>
+  <value column="Name" original="Function BG Color">Cor Background da Função</value>
+  <value column="PrintName" original="Function BG Color">Cor Background da Função</value>
+  <value column="Description" original="Function Background Color">Cor do fundo (background) da função</value>
+  <value column="Help" original="Background color of a function row">Cor do fundo (background) da função.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1863" trl="Y">
-  <value column="Name" original="Function Color">Cor da Função</value>
-  <value column="PrintName" original="Function Color">Cor da Função</value>
-  <value column="Description" original="Function Foreground Color">Cor de Frente da Função</value>
-  <value column="Help" original="Foreground color of a function row">Cor de frente de uma linha de função</value>
+  <value column="Name" original="Function Color">Cor Foreground da Função</value>
+  <value column="PrintName" original="Function Color">Cor Foreground da Função</value>
+  <value column="Description" original="Function Foreground Color">Cor do primeiro plano (foreground) da função</value>
+  <value column="Help" original="Foreground color of a function row">Cor do primeiro plano (foreground; normalmente o texto) da função.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -11000,70 +11000,70 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1865" trl="Y">
-  <value column="Name" original="Header Row Font">Fonte da Linha de Cabeçalho</value>
-  <value column="PrintName" original="Header Row Font">Fonte da Linha de Cabeçalho</value>
-  <value column="Description" original="Header row Font">Fonte da Linha de Cabeçalho</value>
-  <value column="Help" original="Font of the table header row">Fonte da linha de cabeçalho da tabela</value>
+  <value column="Name" original="Header Row Font">Fonte do Cabeçalho</value>
+  <value column="PrintName" original="Header Row Font">Fonte do Cabeçalho</value>
+  <value column="Description" original="Header row Font">Fonte do Cabeçalho</value>
+  <value column="Help" original="Font of the table header row">Fonte do cabeçalho da tabela.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1866" trl="Y">
-  <value column="Name" original="Header Line Color">Cor da Linha do Cabeçalho</value>
-  <value column="PrintName" original="Header Line Color">Cor da Linha do Cabeçalho</value>
-  <value column="Description" original="Table header row line color">Cor da linha do cabeçalho da tabela</value>
-  <value column="Help" original="Color of the table header row lines">Cor das linhas de cabeçalho da tabela</value>
+  <value column="Name" original="Header Line Color">Cor da Borda do Cabeçalho</value>
+  <value column="PrintName" original="Header Line Color">Cor da Borda do Cabeçalho</value>
+  <value column="Description" original="Table header row line color">Cor da linha de borda do cabeçalho da tabela</value>
+  <value column="Help" original="Color of the table header row lines">Cor das linhas de borda do cabeçalho da tabela.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1867" trl="Y">
-  <value column="Name" original="Header Row BG Color">Cor de Fundo da Linha do Cabeçalho</value>
-  <value column="PrintName" original="Header Row GB Color">Cor de Fundo da Linha do Cabeçalho</value>
-  <value column="Description" original="Background color of header row">Cor de Fundo da Linha do Cabeçalho</value>
-  <value column="Help" original="Table header row background color">Cor de fundo da linha do cabeçalho da tabela</value>
+  <value column="Name" original="Header Row BG Color">Cor Background do Cabeçalho</value>
+  <value column="PrintName" original="Header Row GB Color">Cor Background do Cabeçalho</value>
+  <value column="Description" original="Background color of header row">Cor do fundo (background) do cabeçalho da tabela</value>
+  <value column="Help" original="Table header row background color">Cor do fundo (background) do cabeçalho da tabela.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1868" trl="Y">
-  <value column="Name" original="Header Row Color">Cor da Linha do Cabeçalho</value>
-  <value column="PrintName" original="Header Row Color">Cor da Linha do Cabeçalho</value>
-  <value column="Description" original="Foreground color if the table header row">Cor de frente da linha do cabeçalho da tabela</value>
-  <value column="Help" original="Table header row foreground color">Cor de frente da linha do cabeçalho da tabela</value>
+  <value column="Name" original="Header Row Color">Cor Foreground do Cabeçalho</value>
+  <value column="PrintName" original="Header Row Color">Cor Foreground do Cabeçalho</value>
+  <value column="Description" original="Foreground color if the table header row">Cor do primeiro plano (foreground) do cabeçalho da tabela</value>
+  <value column="Help" original="Table header row foreground color">Cor do primeiro plano (foreground; normalmente o texto) do cabeçalho da tabela.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1869" trl="Y">
-  <value column="Name" original="Paint Boundary Lines">Pintar Linhas de Borda</value>
-  <value column="PrintName" original="Paint boundary Lines">Pintar Linhas de Borda</value>
-  <value column="Description" original="Paint table boundary lines">Pintar linhas de borda da tabela</value>
-  <value column="Help" original="Paint lines around table">Pintar linhas ao redor da tabela</value>
+  <value column="Name" original="Paint Boundary Lines">Desenhar Bordas Externas da Tabela</value>
+  <value column="PrintName" original="Paint boundary Lines">Desenhar Bordas Externas da Tabela</value>
+  <value column="Description" original="Paint table boundary lines">Desenhar as bordas externas da tabela</value>
+  <value column="Help" original="Paint lines around table">Desenhar as bordas externas da tabela.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1870" trl="Y">
-  <value column="Name" original="Paint Horizontal Lines">Pintar Linhas Horizontais</value>
-  <value column="PrintName" original="Paint H Lines">Pintar Linhas H</value>
-  <value column="Description" original="Paint horizontal lines">Pintar linhas horizontais</value>
-  <value column="Help" original="Paint horizontal table lines">Pintar linhas de tabela horizontais</value>
+  <value column="Name" original="Paint Horizontal Lines">Desenhar Bordas Horizontais das Células</value>
+  <value column="PrintName" original="Paint H Lines">Desenhar Bordas Horizontais das Células</value>
+  <value column="Description" original="Paint horizontal lines">Desenhar bordas horizontais das células da tabela</value>
+  <value column="Help" original="Paint horizontal table lines">Desenhar bordas horizontais das células da tabela.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1871" trl="Y">
-  <value column="Name" original="Paint Vertical Lines">Pintar Linhas Verticais</value>
-  <value column="PrintName" original="Paint V Lines">Pintar Linhas V</value>
-  <value column="Description" original="Paint vertical lines">Pintar linhas verticais</value>
-  <value column="Help" original="Paint vertical table lines">Pintar linhas de tabela verticais</value>
+  <value column="Name" original="Paint Vertical Lines">Desenhar Bordas Verticais das Células</value>
+  <value column="PrintName" original="Paint V Lines">Desenhar Bordas Verticais das Células</value>
+  <value column="Description" original="Paint vertical lines">Desenhar bordas verticais das células da tabela</value>
+  <value column="Help" original="Paint vertical table lines">Desenhar bordas verticais das células da tabela.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -11080,9 +11080,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1873" trl="Y">
-  <value column="Name" original="Line Color">Cor da Linha</value>
-  <value column="PrintName" original="Line Color">Cor da Linha</value>
-  <value column="Description" original="Table line color">Cor da linha de tabela</value>
+  <value column="Name" original="Line Color">Cor da Borda</value>
+  <value column="PrintName" original="Line Color">Cor da Borda</value>
+  <value column="Description" original="Table line color">Cor das bordas das células e da tabela.</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -15154,10 +15154,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2310" trl="Y">
-  <value column="Name" original="Workflow Event Audit">Auditor de Evento de Fluxo de Trabalho</value>
-  <value column="PrintName" original="Wf Event Audit">Auditor de Evento de Flx Trab.</value>
-  <value column="Description" original="Workflow Process Activity Event Audit Information">Informação de Auditoria de Eventos de Atividade do Processo de Fluxo de Trabalho</value>
-  <value column="Help" original="History of changes of the Workflow Process Activity">Histórico de alterações de Atividade do Processo de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Event Audit">Auditoria de Evento de Fluxo de Trabalho</value>
+  <value column="PrintName" original="Wf Event Audit">Auditoria de Evento de Fluxo de Trabalho</value>
+  <value column="Description" original="Workflow Process Activity Event Audit Information">Informação para Auditoria de Eventos de Atividade de Processo de Fluxo de Trabalho</value>
+  <value column="Help" original="History of changes of the Workflow Process Activity">Histórico de alterações de atividade de processo de fluxo de trabalho.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -15294,8 +15294,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2327" trl="Y">
-  <value column="Name" original="Start Mode">Modo de Início</value>
-  <value column="PrintName" original="Start Mode">Modo de Início</value>
+  <value column="Name" original="Start Mode">Modo de Inicialização</value>
+  <value column="PrintName" original="Start Mode">Modo de Inicialização</value>
   <value column="Description" original="Workflow Activity Start Mode ">Modo de Inicialização da Atividade de Fluxo de Trabalho </value>
   <value column="Help" original="How is the execution of an activity triggered. Automatic are triggered implicitly by the system, Manual explicitly by the User.">Define como a execução de uma atividade é disparada. "Automático" implica que a execução é disparada implicitamente pelo sistema. "Manual" exige que seja disparada explicitamente pelo usuário.</value>
   <value column="PO_Description" original=""/>
@@ -15304,9 +15304,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2328" trl="Y">
-  <value column="Name" original="Subflow Execution">Execução de Subfluxo</value>
-  <value column="PrintName" original="Subflow Execution">Execução de Subfluxo</value>
-  <value column="Description" original="Mode how the sub-workflow is executed">Modo como o sub-fluxo de trabalho é executado</value>
+  <value column="Name" original="Subflow Execution">Execução do Subfluxo</value>
+  <value column="PrintName" original="Subflow Execution">Execução do Subfluxo</value>
+  <value column="Description" original="Mode how the sub-workflow is executed">Modo como o subfluxo de trabalho é executado</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -15344,9 +15344,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2333" trl="Y">
-  <value column="Name" original="Working Time">Tempo de Trabalho</value>
-  <value column="PrintName" original="Working Time">Tempo de Trabalho</value>
-  <value column="Description" original="Workflow Simulation Execution Time">Tempo de Execução da Simulação do Fluxo de Trabalho</value>
+  <value column="Name" original="Working Time">Tempo Acumulado</value>
+  <value column="PrintName" original="Working Time">Tempo Acumulado</value>
+  <value column="Description" original="Workflow Simulation Execution Time">Tempo de Execução Acumulado da Simulação do Fluxo de Trabalho</value>
   <value column="Help" original="Amount of time the performer of the activity needs to perform the task in Duration Unit">Quantidade de tempo que o executor da atividade necessita para executar a tarefa em "Unidades de Duração"</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -15364,20 +15364,20 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2336" trl="Y">
-  <value column="Name" original="Join Element">Unir Elemento</value>
-  <value column="PrintName" original="Join Element">Unir Elemento</value>
-  <value column="Description" original="Semantics for multiple incoming Transitions">Semântica para múltiplas Transições de entrada</value>
-  <value column="Help" original="Semantics for multiple incoming Transitions for a Node/Activity. AND joins all concurrent threads - XOR requires one thread (no synchronization).">Semântica para múltiplas Transições de entrada para um Nó/Atividade. AND une todas as operações (threads) concorrentes - XOR exige uma única operação (sem sincronização).</value>
+  <value column="Name" original="Join Element">Elemento de União (Join)</value>
+  <value column="PrintName" original="Join Element">Elemento de União (Join)</value>
+  <value column="Description" original="Semantics for multiple incoming Transitions">Semântica para múltiplas transições de entrada</value>
+  <value column="Help" original="Semantics for multiple incoming Transitions for a Node/Activity. AND joins all concurrent threads - XOR requires one thread (no synchronization).">Semântica para múltiplas transições de entrada para um Nó/Atividade. 'E (AND)' une todas as threads concorrentes. 'XOU (XOR)' exige uma única thread (sem sincronização).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2337" trl="Y">
-  <value column="Name" original="Split Element">Separar Elemento</value>
-  <value column="PrintName" original="Split Element">Separar Elemento</value>
-  <value column="Description" original="Semantics for multiple outgoing Transitions">Semântica para múltiplas Transições de saída</value>
-  <value column="Help" original="Semantics for multiple outgoing Transitions for a Node/Activity.  AND represents multiple concurrent threads - XOR represents the first transition with a true Transition condition.">Semântica para múltiplas Transições de saída para um Nó/Atividade.  AND representa múltiplas operações concorrentes - XOR representa a primeira transição com uma condição de Transição TRUE.</value>
+  <value column="Name" original="Split Element">Elemento de Separação (Split)</value>
+  <value column="PrintName" original="Split Element">Elemento de Separação (Split)</value>
+  <value column="Description" original="Semantics for multiple outgoing Transitions">Semântica para múltiplas transições de saída</value>
+  <value column="Help" original="Semantics for multiple outgoing Transitions for a Node/Activity.  AND represents multiple concurrent threads - XOR represents the first transition with a true Transition condition.">Semântica para múltiplas transições de saída para um Nó/Atividade. 'E (AND)' representa múltiplas threads concorrentes. 'XOU (XOR)' representa a primeira transição com uma condição de transição verdadeira (true).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -15494,50 +15494,50 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2349" trl="Y">
-  <value column="Name" original="Header Stroke">Espessura do Cabeçalho</value>
-  <value column="PrintName" original="Hdr Stroke">Espessura do Cabeçalho</value>
-  <value column="Description" original="Width of the Header Line Stroke">Largura da Linha de Cabeçalho</value>
-  <value column="Help" original="The width of the header line stroke (line thickness) in Points.">É a largura da linha de cabeçalho (espessura da linha) em Pontos.</value>
+  <value column="Name" original="Header Stroke">Espessura da Borda do Cabeçalho</value>
+  <value column="PrintName" original="Hdr Stroke">Espessura da Borda do Cabeçalho</value>
+  <value column="Description" original="Width of the Header Line Stroke">Espessura da linha de borda do cabeçalho</value>
+  <value column="Help" original="The width of the header line stroke (line thickness) in Points.">Espessura da linha de borda do cabeçalho (em pontos).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2350" trl="Y">
-  <value column="Name" original="Header Stroke Type">Tipo da Espessura do Cabeçalho</value>
-  <value column="PrintName" original="Hdr Stroke Type">Tipo da Espessura do Cabeçalho</value>
-  <value column="Description" original="Type of the Header Line Stroke">Tipo da Espessura da Linha de Cabeçalho</value>
-  <value column="Help" original="Type of the line printed">Tipo da linha impressa</value>
+  <value column="Name" original="Header Stroke Type">Tipo de Borda do Cabeçalho</value>
+  <value column="PrintName" original="Hdr Stroke Type">Tipo de Borda do Cabeçalho</value>
+  <value column="Description" original="Type of the Header Line Stroke">Tipo de linha da borda do cabeçalho</value>
+  <value column="Help" original="Type of the line printed">Tipo de linha da borda do cabeçalho.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2351" trl="Y">
-  <value column="Name" original="Paint Header Lines">Desenhar Linhas de Cabeçalho</value>
-  <value column="PrintName" original="Header Lines">Linhas de Cabeçalho</value>
-  <value column="Description" original="Paint Lines over/under the Header Line ">Desenhar Linhas sobre/sob a Linha de Cabeçalho </value>
-  <value column="Help" original="If selected, a line is painted above and below the header line using the stroke information">Se selecionado, uma linha é desenhada acima e abaixo da linha do cabeçalho usando a informação de espessura</value>
+  <value column="Name" original="Paint Header Lines">Desenhar Bordas do Cabeçalho</value>
+  <value column="PrintName" original="Header Lines">Bordas do Cabeçalho</value>
+  <value column="Description" original="Paint Lines over/under the Header Line ">Desenhar Bordas Sobre/Sob o Cabeçalho </value>
+  <value column="Help" original="If selected, a line is painted above and below the header line using the stroke information">Se selecionado, uma linha de borda é desenhada acima e abaixo do cabeçalho, usando a informação de espessura definida no campo apropriado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2352" trl="Y">
-  <value column="Name" original="Line Stroke">Espessura da Linha</value>
-  <value column="PrintName" original="Line Stroke">Espessura da Linha</value>
-  <value column="Description" original="Width of the Line Stroke">É a Largura da Linha</value>
-  <value column="Help" original="The width of the line stroke (line thickness) in Points.">É a largura da linha (espessura) em Pontos.</value>
+  <value column="Name" original="Line Stroke">Espessura da Borda</value>
+  <value column="PrintName" original="Line Stroke">Espessura da Borda</value>
+  <value column="Description" original="Width of the Line Stroke">Espessura da linha de borda das células e da tabela</value>
+  <value column="Help" original="The width of the line stroke (line thickness) in Points.">Espessura da linha de borda das células e da tabela</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2353" trl="Y">
-  <value column="Name" original="Line Stroke Type">Tipo de Espessura da Linha</value>
-  <value column="PrintName" original="Line Stroke Type">Tipo de Espessura da Linha</value>
-  <value column="Description" original="Type of the Line Stroke">É o tipo de espessura de linha</value>
-  <value column="Help" original="Type of the line printed">Tipo da linha impressa</value>
+  <value column="Name" original="Line Stroke Type">Tipo de Borda</value>
+  <value column="PrintName" original="Line Stroke Type">Tipo de Borda</value>
+  <value column="Description" original="Type of the Line Stroke">Tipo de linha da borda das células e da tabela</value>
+  <value column="Help" original="Type of the line printed">Tipo de linha da borda das células e da tabela.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -15584,10 +15584,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2358" trl="Y">
-  <value column="Name" original="Workflow Processor">Processador de Fluxo de Trabalho</value>
-  <value column="PrintName" original="Workflow Processor">Processador de Fluxo de Trabalho</value>
-  <value column="Description" original="Workflow Processor Server">Servidor do Processador de Fluxo de Trabalho</value>
-  <value column="Help" original="Workflow Processor Server">Servidor do Processador de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Processor">Processador de Fluxos de Trabalho</value>
+  <value column="PrintName" original="Workflow Processor">Processador de Fluxos de Trabalho</value>
+  <value column="Description" original="Workflow Processor Server">Processador de Fluxos de Trabalho</value>
+  <value column="Help" original="Workflow Processor Server">Processador de Fluxos de Trabalho</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -16054,10 +16054,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2407" trl="Y">
-  <value column="Name" original="Days to keep Log">Dias para manter registro (log)</value>
-  <value column="PrintName" original="Days keep Log">Dias de Log</value>
-  <value column="Description" original="Number of days to keep the log entries">Número de dias para manter entradas de registro (log)</value>
-  <value column="Help" original="Older Log entries may be deleted">Entradas de registro (log) anteriores podem ser excluídas</value>
+  <value column="Name" original="Days to keep Log">Histórico de Logs (em Dias)</value>
+  <value column="PrintName" original="Days keep Log">Histórico de Logs (em Dias)</value>
+  <value column="Description" original="Number of days to keep the log entries">Número de dias para manter registros de logs</value>
+  <value column="Help" original="Older Log entries may be deleted">Logs mais antigos que o prazo estipulado podem ser excluídos automaticamente pelo sistema.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -16616,8 +16616,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2464" trl="Y">
   <value column="Name" original="Wait Time">Tempo de Espera</value>
   <value column="PrintName" original="Wait Time">Tempo de Espera</value>
-  <value column="Description" original="Time in minutes to wait (sleep)">Tempo de espera em minutos (dormir)</value>
-  <value column="Help" original="Time in minutes to be suspended (sleep)">Tempo de espera em minutos (dormir)</value>
+  <value column="Description" original="Time in minutes to wait (sleep)">Tempo de espera (sleep) em minutos</value>
+  <value column="Help" original="Time in minutes to be suspended (sleep)">Tempo de espera (sleep) em minutos</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -16704,10 +16704,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2474" trl="Y">
-  <value column="Name" original="Elapsed Time ms">Tempo Decorrido [ms]</value>
-  <value column="PrintName" original="Elapsed Time">Tempo Decorrido</value>
-  <value column="Description" original="Elapsed Time in milli seconds">Tempo decorrido em milisegundos</value>
-  <value column="Help" original="Elapsed Time in milli seconds">Tempo decorrido em milisegundos</value>
+  <value column="Name" original="Elapsed Time ms">Tempo Decorrido (Milissegundos)</value>
+  <value column="PrintName" original="Elapsed Time">Tempo Decorrido (Milissegundos)</value>
+  <value column="Description" original="Elapsed Time in milli seconds">Tempo decorrido em milissegundos</value>
+  <value column="Help" original="Elapsed Time in milli seconds">Tempo decorrido em milissegundos</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -16804,10 +16804,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2484" trl="Y">
-  <value column="Name" original="End Wait">Final de Espera</value>
-  <value column="PrintName" original="End Wait">Final de Espera</value>
-  <value column="Description" original="End of sleep time">Final do tempo de espera (sleep)</value>
-  <value column="Help" original="End of suspension (sleep)">Fim da suspensão (sleep)</value>
+  <value column="Name" original="End Wait">Término da Espera (Sleep)</value>
+  <value column="PrintName" original="End Wait">Término da Espera (Sleep)</value>
+  <value column="Description" original="End of sleep time">Término do tempo de espera (Sleep)</value>
+  <value column="Help" original="End of suspension (sleep)">Data/Hora em que termina o sleep</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -16964,10 +16964,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2501" trl="Y">
-  <value column="Name" original="Std User Workflow">Fluxo de Trabalho do Usuário Padrão</value>
-  <value column="PrintName" original="Std User Workflow">Fluxo de Trabalho do Usuário Padrão</value>
-  <value column="Description" original="Standard Manual User Approval Workflow">Fluxo de Trabalho de Aprovação Manual do Usuário Padrão</value>
-  <value column="Help" original="If selected, only documents with an open status (drafted, in progress, approved, rejected, invalid) and standard user actions (prepare, complete, approve, reject) are allowed to continue.  Use this to prevent having to define details on how automatic processes (unlock, invalidate, post, re-activate) and when the document is closed for normal user action (completed, waiting, closed, voided, reversed).">Se selecionado, somente documentos cujo estado esteja "em aberto" (rascunhado, em progresso, aprovado, rejeitado, inválido) e ações padrão do usuário (preparar, completar, aprovar, rejeitar) são permitidas para continuar.  Use isto para evitar definir detalhes sobre processos automáticos (destravar, invalidar, lançar, reativar) e quando o documento for fechado para ação normal do usuário (completado, em espera, fechado, anulado, estornado).</value>
+  <value column="Name" original="Std User Workflow">Fluxo de Trabalho Padrão de Usuário</value>
+  <value column="PrintName" original="Std User Workflow">Fluxo de Trabalho Padrão de Usuário</value>
+  <value column="Description" original="Standard Manual User Approval Workflow">Fluxo de Trabalho de Aprovação Manual Padrão de Usuário</value>
+  <value column="Help" original="If selected, only documents with an open status (drafted, in progress, approved, rejected, invalid) and standard user actions (prepare, complete, approve, reject) are allowed to continue.  Use this to prevent having to define details on how automatic processes (unlock, invalidate, post, re-activate) and when the document is closed for normal user action (completed, waiting, closed, voided, reversed).">Se selecionado, somente documentos com estados em aberto (Em Digitação, Em Progresso, Aprovado, Rejeitado ou Inválido) e ações padrão do usuário (Preparar, Completar, Aprovar, Rejeitar) são permitidas para continuar. Isto é útil para evitar ter que definir detalhes de processos automáticos (Destravar, Invalidar, Lançar, Reativar) e quando o documento for fechado por ação normal do usuário (Completo, Em Espera, Fechado, Anulado, Estornado).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -17134,8 +17134,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2518" trl="Y">
-  <value column="Name" original="Abort Process">Abortar Processo</value>
-  <value column="PrintName" original="Abort Process">Abortar Processo</value>
+  <value column="Name" original="Abort Process">Abortar o Processo</value>
+  <value column="PrintName" original="Abort Process">Abortar o Processo</value>
   <value column="Description" original="Aborts the current process">Aborta o processo atual</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -18125,10 +18125,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2624" trl="Y">
-  <value column="Name" original="Document Value Logic">Valor Lógico do Documento</value>
-  <value column="PrintName" original="Doc Value Logic">Valor Lógico Doc.</value>
-  <value column="Description" original="Logic to determine Workflow Start - If true, a workflow process is started for the document">Lógica para determinar o início do Fluxo de Trabalho - Se "Verdadeiro", um processo de fluxo de trabalho será iniciado para este documento</value>
-  <value column="Help" original="You can enter simple logic using variables like @Created@=@Updated@, which fires, when a record is created. If you need to evaluate also values of other records, you need to use SQL logic and need to prefix this logic with &quot;SQL=&quot;. Example: start a Order verify workflow, when a business partner ordered something and is over the credit limit  &quot;SQL=EXISTS (SELECT * FROM C_BPartner bp WHERE C_Order. C_BPartner_ID=bp. C_BPartner_ID AND SO_CreditUsed &gt; SO_CreditLimit)&quot;.&#10;Note that the SQL based logic checks for duplicate workflows (i.e. a workflow is started only once per record)."><![CDATA[Você pode digitar lógicas simples usando variáveis tais como @Created@=@Updated@, as quais disparam quando é criado um registro. Se você também precisa calcular valores de outros registros, você precisa usar lógica SQL e precisa usar o prefixo "SQL=". Exemplo: Inicia um Fluxo de Trabalho de verificação de Pedido, quando um Parceiro de Negócios pediu algo e está acima do limite de crédito "SQL=EXISTS (SELECT * FROM C_BPartner bp WHERE C_Order. C_BPartner_ID=bp. C_BPartner_ID AND SO_CreditUsed > SO_CreditLimit)". Note que a lógica baseada em SQL checa por fluxos de trabalho duplicados (i.e. um fluxo de trabalho é iniciado apenas uma vez por registro).]]></value>
+  <value column="Name" original="Document Value Logic">Lógica do Valor de Documento</value>
+  <value column="PrintName" original="Doc Value Logic">Lógica do Valor de Documento</value>
+  <value column="Description" original="Logic to determine Workflow Start - If true, a workflow process is started for the document">Lógica para determinar o início do Fluxo de Trabalho - Se "Verdadeiro", um processo de fluxo de trabalho será iniciado para o documento</value>
+  <value column="Help" original="You can enter simple logic using variables like @Created@=@Updated@, which fires, when a record is created. If you need to evaluate also values of other records, you need to use SQL logic and need to prefix this logic with &quot;SQL=&quot;. Example: start a Order verify workflow, when a business partner ordered something and is over the credit limit  &quot;SQL=EXISTS (SELECT * FROM C_BPartner bp WHERE C_Order. C_BPartner_ID=bp. C_BPartner_ID AND SO_CreditUsed &gt; SO_CreditLimit)&quot;.&#10;Note that the SQL based logic checks for duplicate workflows (i.e. a workflow is started only once per record)."><![CDATA[Você pode informar lógicas simples usando variáveis tais como @Created@=@Updated@, as quais disparam quando é criado um registro. Se você também precisa calcular valores de outros registros, você precisa usar lógica SQL com um prefixo "SQL=". Exemplo: para iniciar um fluxo de trabalho de verificação de Pedido de Venda, quando um Parceiro de Negócios fez o pedido mas o total geral está acima do limite de crédito, utilize "SQL=EXISTS (SELECT * FROM C_BPartner bp WHERE C_Order. C_BPartner_ID=bp. C_BPartner_ID AND SO_CreditUsed > SO_CreditLimit)". Note que a lógica baseada em SQL checa por fluxos de trabalho duplicados (ex: um fluxo de trabalho é iniciado apenas uma vez por registro).]]></value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -18195,10 +18195,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2631" trl="Y">
-  <value column="Name" original="Reminder Days">Dias de Lembrete</value>
-  <value column="PrintName" original="Reminder Days">Dias de Lembrete</value>
-  <value column="Description" original="Days between sending Reminder Emails for a due or inactive Document">Dias entre envios de emails de lembrete para um documento vencido ou inativo.</value>
-  <value column="Help" original="When a document is due for too long without activity, a reminder is sent. 0 means no reminders.&#10;The Remind Days are the days when the next email reminder is sent.">Será enviado um lembrete quando um documento estiver vencido ou estiver por muito tempo sem atividade. "0" significa sem lembretes. Os "Dias de Lembrete" são a quantidade de dias até que o próximo email de lembrança seja enviado.</value>
+  <value column="Name" original="Reminder Days">Intervalo de Dias entre os Alertas</value>
+  <value column="PrintName" original="Reminder Days">Intervalo de Dias entre os Alertas</value>
+  <value column="Description" original="Days between sending Reminder Emails for a due or inactive Document">Intervalo de dias para o envio de novos alertas para documentos vencidos ou sem atividades</value>
+  <value column="Help" original="When a document is due for too long without activity, a reminder is sent. 0 means no reminders.&#10;The Remind Days are the days when the next email reminder is sent.">Será enviado um novo alerta quando um documento estiver vencido ou estiver por muito tempo sem atividade. "0" significa sem novos alertas. O "Intervalo de Dias entre os Alertas" indica a quantidade de dias até que o próximo alerta seja enviado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -18225,30 +18225,30 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2634" trl="Y">
-  <value column="Name" original="Inactivity Alert Days">Dias de Alerta de Inatividade</value>
-  <value column="PrintName" original="Inactivity Alert Days">Dias de Alerta de Inatividade</value>
-  <value column="Description" original="Send Alert when there is no activity after days (0= no alert)">Enviar alerta quando não houver atividade após tantos dias (0= sem alerta)</value>
-  <value column="Help" original="An email alert is sent when the request shows no activity for the number of days defined.">Um email de alerta será enviado quando a solicitação não apresentar nenhuma atividade por um certo número de dias consecutivos aqui definido.</value>
+  <value column="Name" original="Inactivity Alert Days">Dias após Inatividade para o Alerta</value>
+  <value column="PrintName" original="Inactivity Alert Days">Dias após Inatividade para o Alerta</value>
+  <value column="Description" original="Send Alert when there is no activity after days (0= no alert)">Enviar alerta após a quantidade definida de dias de inatividade (nenhuma atualização). (0 = não enviar alerta)</value>
+  <value column="Help" original="An email alert is sent when the request shows no activity for the number of days defined.">Enviar alerta após um item estar inativo (nenhuma atualização) pela quantidade definida de dias. Nenhum alerta será enviado se estiver definido em zero.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2635" trl="Y">
-  <value column="Name" original="Alert over Priority">Alerta sobre Prioridade</value>
-  <value column="PrintName" original="Alert over Priority">Alerta sobre Prioridade</value>
-  <value column="Description" original="Send alert email when over priority">Enviar email de alerta quando em prioridade maior</value>
-  <value column="Help" original="Send alert email when a suspended activity is over the  priority defined">Enviar email de alerta quando uma atividade suspensa estiver acima da prioridade definida.</value>
+  <value column="Name" original="Alert over Priority">Prioridade para o Alerta</value>
+  <value column="PrintName" original="Alert over Priority">Prioridade para o Alerta</value>
+  <value column="Description" original="Send alert email when over priority">Envia um alerta quando uma atividade de fluxo de trabalho suspensa tiver uma prioridade maior ou igual à definida neste campo</value>
+  <value column="Help" original="Send alert email when a suspended activity is over the  priority defined">Envia um alerta quando uma atividade de fluxo de trabalho suspensa tiver uma prioridade maior ou igual à definida neste campo</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2636" trl="Y">
-  <value column="Name" original="Dynamic Priority Change">Alteração Dinâmica de Prioridade</value>
-  <value column="PrintName" original="Dyn Priority Change">Alt.Dinân.Prioridade</value>
-  <value column="Description" original="Change of priority when Activity is suspended waiting for user">Alteração de prioridade quando a atividade estiver suspensa esperando pelo usuário</value>
-  <value column="Help" original="Starting with the Process / Node priority level, the priority of the suspended activity can be changed dynamically. Example +5 every 10 minutes">Iniciando com o nível de prioridade de Processo / Nó, a prioridade da atividade suspensa pode ser alterada dinamicamente. Exemplo: +5 a cada 10 minutos</value>
+  <value column="Name" original="Dynamic Priority Change">Alteração da Prioridade Dinâmica</value>
+  <value column="PrintName" original="Dyn Priority Change">Alteração da Prioridade Dinâmica</value>
+  <value column="Description" original="Change of priority when Activity is suspended waiting for user">Alteração de prioridade enquanto a atividade estiver suspensa esperando pelo usuário</value>
+  <value column="Help" original="Starting with the Process / Node priority level, the priority of the suspended activity can be changed dynamically. Example +5 every 10 minutes">Iniciando com o nível de prioridade do processo/nó, a prioridade da atividade suspensa pode ser alterada dinamicamente. Exemplo: +5 a cada 10 minutos.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -18265,10 +18265,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2638" trl="Y">
-  <value column="Name" original="Dynamic Priority Unit">Unidade de Prioridade Dinâmica</value>
-  <value column="PrintName" original="Dyn Priority Unit">Un.Prioridade Dinâm.</value>
-  <value column="Description" original="Change of priority when Activity is suspended waiting for user">Alteração de prioridade quando a atividade estiver suspensa esperando pelo usuário</value>
-  <value column="Help" original="Starting with the Process / Node priority level, the priority of the suspended activity can be changed dynamically. Example +5 every 10 minutes">Iniciando com o nível de prioridade de Processo / Nó, a prioridade da atividade suspensa pode ser alterada dinamicamente. Exemplo: +5 a cada 10 minutos</value>
+  <value column="Name" original="Dynamic Priority Unit">Unidade da Prioridade Dinâmica</value>
+  <value column="PrintName" original="Dyn Priority Unit">Unidade da Prioridade Dinâmica</value>
+  <value column="Description" original="Change of priority when Activity is suspended waiting for user">Alteração de prioridade enquanto a atividade estiver suspensa esperando pelo usuário</value>
+  <value column="Help" original="Starting with the Process / Node priority level, the priority of the suspended activity can be changed dynamically. Example +5 every 10 minutes">Iniciando com o nível de prioridade do processo/nó, a prioridade da atividade suspensa pode ser alterada dinamicamente. Exemplo: +5 a cada 10 minutos.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -20556,9 +20556,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2879" trl="Y">
-  <value column="Name" original="EMail Recipient">Recipiente de Email</value>
-  <value column="PrintName" original="EMail Recipient">Recipiente de Email</value>
-  <value column="Description" original="Recipient of the EMail">Recipient of the EMail</value>
+  <value column="Name" original="EMail Recipient">Destinatário do E-mail</value>
+  <value column="PrintName" original="EMail Recipient">Destinatário do E-mail</value>
+  <value column="Description" original="Recipient of the EMail">Destinatário do E-mail</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -20746,10 +20746,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2898" trl="Y">
-  <value column="Name" original="Task Status">Task Status</value>
-  <value column="PrintName" original="Task Status">Task Status</value>
-  <value column="Description" original="Status of the Task">Status of the Task</value>
-  <value column="Help" original="Completion Rate and Status of the Task">Completion Rate and Status of the Task</value>
+  <value column="Name" original="Task Status">Estado da Tarefa</value>
+  <value column="PrintName" original="Task Status">Estado da Tarefa</value>
+  <value column="Description" original="Status of the Task">Estado da Tarefa</value>
+  <value column="Help" original="Completion Rate and Status of the Task">Porcentagem da resolução e o estado da tarefa</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -20766,8 +20766,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2900" trl="Y">
-  <value column="Name" original="Quantity Plan">Quantity Plan</value>
-  <value column="PrintName" original="Quantity Plan">Quantity Plan</value>
+  <value column="Name" original="Quantity Plan">Quantidade Planejada</value>
+  <value column="PrintName" original="Quantity Plan">Quantidade Planejada</value>
   <value column="Description" original="Planned Quantity">Quantidade Planejada</value>
   <value column="Help" original="Planned Quantity">Quantidade Planejada</value>
   <value column="PO_Description" original=""/>
@@ -21356,29 +21356,29 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2965" trl="Y">
-  <value column="Name" original="Size X">Size X</value>
-  <value column="PrintName" original="Size X">Size X</value>
-  <value column="Description" original="X (horizontal) dimension size">X (horizontal) dimension size</value>
-  <value column="Help" original="Size of X (horizontal) dimension in Units">Size of X (horizontal) dimension in Units</value>
+  <value column="Name" original="Size X">Tamanho X</value>
+  <value column="PrintName" original="Size X">Tamanho X</value>
+  <value column="Description" original="X (horizontal) dimension size">Tamanho da dimensão X (horizontal)</value>
+  <value column="Help" original="Size of X (horizontal) dimension in Units">Tamanho da dimensão X (horizontal) na unidade de dimensão.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2966" trl="Y">
-  <value column="Name" original="Size Y">Size Y</value>
-  <value column="PrintName" original="Size Y">Size Y</value>
-  <value column="Description" original="Y (vertical) dimension size">Y (vertical) dimension size</value>
-  <value column="Help" original="Size of Y (vertical) dimension in Units">Size of Y (vertical) dimension in Units</value>
+  <value column="Name" original="Size Y">Tamanho Y</value>
+  <value column="PrintName" original="Size Y">Tamanho Y</value>
+  <value column="Description" original="Y (vertical) dimension size">Tamanho da dimensão Y (vertical)</value>
+  <value column="Help" original="Size of Y (vertical) dimension in Units">Tamanho da dimensão Y (vertical) na unidade de dimensão.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2967" trl="Y">
-  <value column="Name" original="Dimension Units">Dimension Units</value>
-  <value column="PrintName" original="Units">Units</value>
-  <value column="Description" original="Units of Dimension">Units of Dimension</value>
+  <value column="Name" original="Dimension Units">Unidade de Dimensão</value>
+  <value column="PrintName" original="Units">Unidade de Dimensão</value>
+  <value column="Description" original="Units of Dimension">Unidade de Dimensão</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -22577,10 +22577,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3094" trl="Y">
-  <value column="Name" original="Ldap Port">Ldap Port</value>
-  <value column="PrintName" original="Ldap Port">Ldap Port</value>
-  <value column="Description" original="The port the server is listening">The port the server is listening</value>
-  <value column="Help" original="The default LDAP port is 389">The default LDAP port is 389</value>
+  <value column="Name" original="Ldap Port">Porta do Servidor LDAP</value>
+  <value column="PrintName" original="Ldap Port">Porta do Servidor LDAP</value>
+  <value column="Description" original="The port the server is listening">Define a porta utilizada pelo servidor LDAP</value>
+  <value column="Help" original="The default LDAP port is 389">A porta padrão é a 389.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -23217,8 +23217,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50056" trl="Y">
-  <value column="Name" original="Inbox Folder">Inbox Folder</value>
-  <value column="PrintName" original="Inbox Folder">Inbox Folder</value>
+  <value column="Name" original="Inbox Folder">Pasta Inbox</value>
+  <value column="PrintName" original="Inbox Folder">Pasta Inbox</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -23227,9 +23227,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50057" trl="Y">
-  <value column="Name" original="Confidentiality">Confidentiality</value>
-  <value column="PrintName" original="Confidentiality">Confidentiality</value>
-  <value column="Description" original="Type of Confidentiality">Type of Confidentiality</value>
+  <value column="Name" original="Confidentiality">Confidencialidade</value>
+  <value column="PrintName" original="Confidentiality">Confidencialidade</value>
+  <value column="Description" original="Type of Confidentiality">Tipo de Confidencialidade</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -23237,8 +23237,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50058" trl="Y">
-  <value column="Name" original="IMAP User">IMAP User</value>
-  <value column="PrintName" original="IMAP User">IMAP User</value>
+  <value column="Name" original="IMAP User">Usuário IMAP</value>
+  <value column="PrintName" original="IMAP User">Usuário IMAP</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -23247,8 +23247,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50059" trl="Y">
-  <value column="Name" original="IMAP Password">IMAP Password</value>
-  <value column="PrintName" original="IMAP Password">IMAP Password</value>
+  <value column="Name" original="IMAP Password">Senha IMAP</value>
+  <value column="PrintName" original="IMAP Password">Senha IMAP</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -23257,8 +23257,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50060" trl="Y">
-  <value column="Name" original="IMAP Host">IMAP Host</value>
-  <value column="PrintName" original="IMAP Host">IMAP Host</value>
+  <value column="Name" original="IMAP Host">Host IMAP</value>
+  <value column="PrintName" original="IMAP Host">Host IMAP</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -23267,9 +23267,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50061" trl="Y">
-  <value column="Name" original="User Importance">User Importance</value>
-  <value column="PrintName" original="User Importance">User Importance</value>
-  <value column="Description" original="Priority of the issue for the User">Priority of the issue for the User</value>
+  <value column="Name" original="User Importance">Prioridade para o Usuário</value>
+  <value column="PrintName" original="User Importance">Prioridade para o Usuário</value>
+  <value column="Description" original="Priority of the issue for the User">Prioridade do assunto para o usuário</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -23277,8 +23277,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50062" trl="Y">
-  <value column="Name" original="Request Folder">Request Folder</value>
-  <value column="PrintName" original="Request Folder">Request Folder</value>
+  <value column="Name" original="Request Folder">Pasta de Solicitações</value>
+  <value column="PrintName" original="Request Folder">Pasta de Solicitações</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -23287,8 +23287,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="50063" trl="Y">
-  <value column="Name" original="Error Folder">Error Folder</value>
-  <value column="PrintName" original="Error Folder">Error Folder</value>
+  <value column="Name" original="Error Folder">Pasta de Erros</value>
+  <value column="PrintName" original="Error Folder">Pasta de Erros</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -27929,9 +27929,9 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53680" trl="N">
-  <value column="Name" original="House Keeping Configuration">House Keeping Configuration</value>
-  <value column="PrintName" original="House Keeping Configuration">House Keeping Configuration</value>
+ <row id="53680" trl="Y">
+  <value column="Name" original="House Keeping Configuration">Exclusão de Registros (BD)</value>
+  <value column="PrintName" original="House Keeping Configuration">Exclusão de Registros (BD)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -27939,9 +27939,9 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53681" trl="N">
-  <value column="Name" original="Last Deleted">Last Deleted</value>
-  <value column="PrintName" original="Last Deleted">Last Deleted</value>
+ <row id="53681" trl="Y">
+  <value column="Name" original="Last Deleted">Última Exclusão</value>
+  <value column="PrintName" original="Last Deleted">Última Exclusão</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -27949,19 +27949,19 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53682" trl="N">
-  <value column="Name" original="Backup Folder">Backup Folder</value>
-  <value column="PrintName" original="Backup Folder">Backup Folder</value>
-  <value column="Description" original="Backup Folder">Backup Folder</value>
+ <row id="53682" trl="Y">
+  <value column="Name" original="Backup Folder">Diretório do Backup</value>
+  <value column="PrintName" original="Backup Folder">Diretório do Backup</value>
+  <value column="Description" original="Backup Folder">Diretório do Backup</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53683" trl="N">
-  <value column="Name" original="Export XML Backup">Export XML Backup</value>
-  <value column="PrintName" original="Export XML Backup">Export XML Backup</value>
+ <row id="53683" trl="Y">
+  <value column="Name" original="Export XML Backup">Exportar um Backup em XML</value>
+  <value column="PrintName" original="Export XML Backup">Exportar um Backup em XML</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -27969,9 +27969,9 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53684" trl="N">
-  <value column="Name" original="Save In Historic">Save In Historic</value>
-  <value column="PrintName" original="Save In Historic">Save In Historic</value>
+ <row id="53684" trl="Y">
+  <value column="Name" original="Save In Historic">Salvar em Tabela de Histórico</value>
+  <value column="PrintName" original="Save In Historic">Salvar em Tabela de Histórico</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -27979,9 +27979,9 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53685" trl="N">
-  <value column="Name" original="Last Run">Last Run</value>
-  <value column="PrintName" original="Last Run">Last Run</value>
+ <row id="53685" trl="Y">
+  <value column="Name" original="Last Run">Última Execução</value>
+  <value column="PrintName" original="Last Run">Última Execução</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28019,11 +28019,11 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53690" trl="N">
-  <value column="Name" original="Multi Line Header">Multi Line Header</value>
-  <value column="PrintName" original="Multi Line Header">Multi Line Header</value>
-  <value column="Description" original="Print column headers on mutliple lines if necessary.">Print column headers on mutliple lines if necessary.</value>
-  <value column="Help" original="If selected, column header text will wrap onto the next line -- otherwise the text will be truncated.">If selected, column header text will wrap onto the next line -- otherwise the text will be truncated.</value>
+ <row id="53690" trl="Y">
+  <value column="Name" original="Multi Line Header">Cabeçalho Multilinhas</value>
+  <value column="PrintName" original="Multi Line Header">Cabeçalho Multilinhas</value>
+  <value column="Description" original="Print column headers on mutliple lines if necessary.">Imprime cabeçalhos de coluna em múltiplas linhas, se necessário</value>
+  <value column="Help" original="If selected, column header text will wrap onto the next line -- otherwise the text will be truncated.">Se selecionado, o texto do cabeçalho pode ser quebrado em mais de uma linha. Caso contrário, o texto será truncado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -29293,21 +29293,21 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54123" trl="N">
-  <value column="Name" original="Ignore Processing Time">Ignore Processing Time</value>
-  <value column="PrintName" original="Ignore Proccessing Time">Ignore Proccessing Time</value>
-  <value column="Description" original="Do not include processing time for the DateNextRun calculation">Do not include processing time for the DateNextRun calculation</value>
-  <value column="Help" original="When this is selected, the previous DateNextRun is always use as the source for the next DateNextRun calculation.">When this is selected, the previous DateNextRun is always use as the source for the next DateNextRun calculation.</value>
+ <row id="54123" trl="Y">
+  <value column="Name" original="Ignore Processing Time">Ignorar o Tempo de Processamento</value>
+  <value column="PrintName" original="Ignore Proccessing Time">Ignorar o Tempo de Processamento</value>
+  <value column="Description" original="Do not include processing time for the DateNextRun calculation">Não incluir o tempo de processamento para o cálculo da Data da Próxima Execução</value>
+  <value column="Help" original="When this is selected, the previous DateNextRun is always use as the source for the next DateNextRun calculation.">Quando selecionado, o valor anterior do campo Data da Próxima Execução é usado como base para o cálculo da nova data, sem considerar o tempo do último processamento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54124" trl="N">
-  <value column="Name" original="Cron Scheduling Pattern">Cron Scheduling Pattern</value>
-  <value column="PrintName" original="Cron Scheduling Pattern">Cron Scheduling Pattern</value>
-  <value column="Description" original="Cron pattern to define when the process should be invoked.">Cron pattern to define when the process should be invoked.</value>
-  <value column="Help" original="Cron pattern to define when the process should be invoked. See http://www.sauronsoftware.it/projects/cron4j/api/it/sauronsoftware/cron4j/SchedulingPattern.html">Cron pattern to define when the process should be invoked. See http://www.sauronsoftware.it/projects/cron4j/api/it/sauronsoftware/cron4j/SchedulingPattern.html</value>
+ <row id="54124" trl="Y">
+  <value column="Name" original="Cron Scheduling Pattern">Padrão de Agendamento Cron/Crontab</value>
+  <value column="PrintName" original="Cron Scheduling Pattern">Padrão de Agendamento Cron/Crontab</value>
+  <value column="Description" original="Cron pattern to define when the process should be invoked.">Padrão de Agendamento Cron/Crontab define quando processo deve ser executado</value>
+  <value column="Help" original="Cron pattern to define when the process should be invoked. See http://www.sauronsoftware.it/projects/cron4j/api/it/sauronsoftware/cron4j/SchedulingPattern.html">Padrão de Agendamento Cron/Crontab define quando processo deve ser executado. Consulte http://www.sauronsoftware.it/projects/cron4j/api/it/sauronsoftware/cron4j/SchedulingPattern.html</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -38966,9 +38966,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200132" trl="N">
-  <value column="Name" original="Schedule">Schedule</value>
-  <value column="PrintName" original="Schedule">Schedule</value>
+ <row id="200132" trl="Y">
+  <value column="Name" original="Schedule">Programação</value>
+  <value column="PrintName" original="Schedule">Programação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -39136,10 +39136,10 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200157" trl="N">
-  <value column="Name" original="System Schedule">System Schedule</value>
-  <value column="PrintName" original="System Schedule">System Schedule</value>
-  <value column="Description" original="Schedule Just For System">Schedule Just For System</value>
+ <row id="200157" trl="Y">
+  <value column="Name" original="System Schedule">Programação para o System</value>
+  <value column="PrintName" original="System Schedule">Programação para o System</value>
+  <value column="Description" original="Schedule Just For System">Programação apenas para a empresa System</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -39156,9 +39156,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200159" trl="N">
-  <value column="Name" original="Run only on IP">Run only on IP</value>
-  <value column="PrintName" original="Run only on IP">Run only on IP</value>
+ <row id="200159" trl="Y">
+  <value column="Name" original="Run only on IP">Executar Somente no IP</value>
+  <value column="PrintName" original="Run only on IP">Executar Somente no IP</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -54756,11 +54756,11 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202621" trl="N">
-  <value column="Name" original="Default To Parameter">Default To Parameter</value>
-  <value column="PrintName" original="Default To Parameter">Default To Parameter</value>
-  <value column="Description" original="Default value of the to parameter">Default value of the to parameter</value>
-  <value column="Help" original="The default value can be a variable like @#Date@ ">The default value can be a variable like @#Date@ </value>
+ <row id="202621" trl="Y">
+  <value column="Name" original="Default To Parameter">Parâmetro Padrão (Até)</value>
+  <value column="PrintName" original="Default To Parameter">Parâmetro Padrão (Até)</value>
+  <value column="Description" original="Default value of the to parameter">Valor padrão do parâmetro</value>
+  <value column="Help" original="The default value can be a variable like @#Date@ ">O valor padrão pode ser uma variável tal como @#Date@ </value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -55247,9 +55247,9 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202763" trl="N">
-  <value column="Name" original="Country Group">Country Group</value>
-  <value column="PrintName" original="Country Group">Country Group</value>
+ <row id="202763" trl="Y">
+  <value column="Name" original="Country Group">Grupo de Países</value>
+  <value column="PrintName" original="Country Group">Grupo de Países</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -56202,6 +56202,16 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PrintName" original="boleto_mov_latepaypenaltydate">Data da Multa (Movimento)</value>
   <value column="Description" original=""/>
   <value column="Help" original="">Data para a aplicação da multa.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800092" trl="Y">
+  <value column="Name" original="Carteira Code">Cód. da Carteira</value>
+  <value column="PrintName" original="Carteira Code">Cód. da Carteira</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Defines the Carteira code">Define o código da Carteira.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>

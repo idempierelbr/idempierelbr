@@ -131,8 +131,8 @@
  <row id="122" trl="Y">
   <value column="Name" original="Node">Nó</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define workflow nodes">Definir Nós de Fluxo de Trabalho</value>
-  <value column="Help" original="The Node Tab defines each Node, Activity or step in this Workflow.&lt;br&gt;&#10;The action (actibity) type determines the execution: &quot;Route&quot; may be used in routing control conditions.  &quot;None&quot; identifies manual execution."><![CDATA[A Aba "Nó" define cada Nó, Atividade ou passo neste Fluxo de Trabalho.<br> O tipo de ação (atividade) determina a execução: "Rota" pode ser usada em condições de controle de roteamento.  "Nenhum" identifica execução manual.]]></value>
+  <value column="Description" original="Define workflow nodes">Define Nós de Fluxo de Trabalho</value>
+  <value column="Help" original="The Node Tab defines each Node, Activity or step in this Workflow.&lt;br&gt;&#10;The action (actibity) type determines the execution: &quot;Route&quot; may be used in routing control conditions.  &quot;None&quot; identifies manual execution.">A Aba "Nó" define cada nó, atividade ou passo neste Fluxo de Trabalho.</value>
  </row>
  <row id="123" trl="Y">
   <value column="Name" original="Node Translation">Tradução de Nó</value>
@@ -144,7 +144,7 @@
   <value column="Name" original="Transition">Transição</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Workflow Node Transition">Transição de Nó de Fluxo de Trabalho</value>
-  <value column="Help" original="The Next Nodes Tab defines the order or Nodes or Steps in a Workflow.">A Aba "Próximos Nós" define a ordem ou Nós, ou Passos em um Fluxo de Trabalho.</value>
+  <value column="Help" original="The Next Nodes Tab defines the order or Nodes or Steps in a Workflow.">A Aba "Transição" define a ordem,  Nós, ou Passos em um Fluxo de Trabalho.</value>
  </row>
  <row id="125" trl="Y">
   <value column="Name" original="Previous Node">Nó Anterior</value>
@@ -239,8 +239,8 @@
  <row id="148" trl="Y">
   <value column="Name" original="Workflow">Fluxo de Trabalho</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define Workflow">Definir Fluxo de Trabalho</value>
-  <value column="Help" original="The Workflow Tab defines Workflows in the system.">A Aba "Fluxo de Trabalho" define os Fluxos de Trabalho no sistema.</value>
+  <value column="Description" original="Define Workflow">Definição de Fluxos de Trabalho</value>
+  <value column="Help" original="The Workflow Tab defines Workflows in the system.">A Aba "Fluxo de Trabalho" permite definir os fluxos de trabalho no sistema.</value>
  </row>
  <row id="149" trl="Y">
   <value column="Name" original="Workflow Translation">Tradução de Fluxo de Trabalho</value>
@@ -1177,10 +1177,10 @@ Imprimindo: - Usualmente, somente a informação da LDM é impressa - Para fatur
   <value column="Help" original="The Request Tab defines any Request submitted by a Business Partner or internally.">A Aba "Solicitação" define qualquer solicitação submetida por um Parceiro de Negócios ou internamente.</value>
  </row>
  <row id="346" trl="Y">
-  <value column="Name" original="Request Processor">Processador de Solicitação</value>
+  <value column="Name" original="Request Processor">Processador de Solicitações</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Request Processor">Processador de Solicitação</value>
-  <value column="Help" original="The Request Processor Tab allows you to define processes that you want to occur and the frequency and timing of these processes. If no other user is found, the items are assigned to the supervisor. A Request Processor can be just for a specific Request Type or for all.">A Aba "Processador de Solicitação" permite a você definir os processos que você deseja que ocorram, assim como a freqüência e horário destes processos. Se não for encontrado nenhum outro usuário, os itens são designados ao supervisor. Um Processador de Solicitação pode ser apenas para um tipo específico de solicitação ou para todos.</value>
+  <value column="Description" original="Request Processor">Define Processadores de Solicitações</value>
+  <value column="Help" original="The Request Processor Tab allows you to define processes that you want to occur and the frequency and timing of these processes. If no other user is found, the items are assigned to the supervisor. A Request Processor can be just for a specific Request Type or for all.">A janela "Processador de Solicitações" permite a definir diferentes processos para cada tipo de solicitação (ou para todos), e a frequência de execução.</value>
  </row>
  <row id="347" trl="Y">
   <value column="Name" original="Mail Template">Modelo de Correspondência</value>
@@ -1460,10 +1460,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="401" trl="Y">
-  <value column="Name" original="Routing">Roteamento</value>
+  <value column="Name" original="Routing">Encaminhamento</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Request Routing">Encaminhamento de Solicitação</value>
-  <value column="Help" original="Define the sequence of request types and keywords and to whom the web and mail requests should be routed to. The keywords are separated by space, comma, semicolon, tab or new line. The first match wins (first request type then keyword.">Define a seqüência de tipos de solicitação e palavras chave e para quem as solicitações da web e e-mail devem ser encaminhadas. As palavras-chave são separadas por um espaço, vírgula, ponto e vírgula, tabulação ou nova linha. A primeira coincidência vence (primeiramente o tipo de solicitação e então a palavra chave).</value>
+  <value column="Description" original="Request Routing">Encaminhamento de Solicitações</value>
+  <value column="Help" original="Define the sequence of request types and keywords and to whom the web and mail requests should be routed to. The keywords are separated by space, comma, semicolon, tab or new line. The first match wins (first request type then keyword.">Define os responsáveis pela resolução de solicitações. Você pode definir por tipo de solicitação e por palavra-chave. Múltiplas palavras-chaves podem ser separadas por espaço, vírgula, ponto-e-vírgula, tabulação ou por linha. A primeira coincidência encontrada define o responsável.</value>
  </row>
  <row id="402" trl="Y">
   <value column="Name" original="Request">Solicitação</value>
@@ -1592,16 +1592,16 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="The Accounting Tab defines the defaults to use when generating accounting transactions for orders and invoices which contain this resource.  Not all accounts apply to resources.">A Aba "Contabilidade" define os padrões a serem usados ao gerar transações contábeis para pedidos e faturas que envolvam este recurso.  Nem todas as contas se aplicam aos recursos.</value>
  </row>
  <row id="423" trl="Y">
-  <value column="Name" original="Print Color">Cor de Impressão</value>
+  <value column="Name" original="Print Color">Cor (Impressão)</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Print Color">Gerenciamento das Cores de Impressão</value>
-  <value column="Help" original="Colors used for printing">Cor utilizada para impressão</value>
+  <value column="Description" original="Maintain Print Color">Gerenciamento de Cores para Impressão</value>
+  <value column="Help" original="Colors used for printing">Cor utilizada para impressão.</value>
  </row>
  <row id="424" trl="Y">
-  <value column="Name" original="Print Font">Fonte de Impressão</value>
+  <value column="Name" original="Print Font">Fonte (Impressão)</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Print Font">Gerenciamento das Fontes de Impressão</value>
-  <value column="Help" original="Font used for printing">Fonte utilizada para impressão</value>
+  <value column="Description" original="Maintain Print Font">Gerenciamento de Fontes para Impressão</value>
+  <value column="Help" original="Font used for printing">Fontes utilizadas para impressão.</value>
  </row>
  <row id="425" trl="Y">
   <value column="Name" original="Print Format">Formato de Impressão</value>
@@ -1618,10 +1618,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
 <p>O layout lógico para formulários é: <br> - se não for imprimido: ignore <br> - configure a Nova Posição da Linha <br> - nova página <br> - nova linha, se algo foi impresso desde a ultima nova linha<br> - item de formato<br> - imprimir (se não for selecionado nulo/vazio)<br> (i.e. suprimir nulo não previne nova linha)]]></value>
  </row>
  <row id="427" trl="Y">
-  <value column="Name" original="Print Paper">Papel de Impressão</value>
+  <value column="Name" original="Print Paper">Papel (Impressão)</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Print Paper">Gerenciamento dos Papéis de Impressão</value>
-  <value column="Help" original="Printer Paper Size, Orientation and Margins. &#10;The Validation Code contains the Media Size name. The names of the media sizes correspond to those in the IPP 1.1 RFC 2911 - http://www.ietf.org/rfc/rfc2911.txt  &lt;br&gt;&#10;If the name is not found, the SizeX/Y with the dimension is used. Size and dimension are ignored, if a valid media size name is used."><![CDATA[Tamanho, Orientação e Margens do Papel da Impressora. O Código de Validação contém o nome do Tamanho da Mídia. The names of the media sizes correspond to those in the IPP 1.1 RFC 2911 - http://www.ietf.org/rfc/rfc2911.txt  <br> If the name is not found, the SizeX/Y with the dimension is used. Size and dimension are ignored, if a valid media size name is used.]]></value>
+  <value column="Description" original="Maintain Print Paper">Gerenciamento de Papéis para Impressão</value>
+  <value column="Help" original="Printer Paper Size, Orientation and Margins. &#10;The Validation Code contains the Media Size name. The names of the media sizes correspond to those in the IPP 1.1 RFC 2911 - http://www.ietf.org/rfc/rfc2911.txt  &lt;br&gt;&#10;If the name is not found, the SizeX/Y with the dimension is used. Size and dimension are ignored, if a valid media size name is used."><![CDATA[Tamanho, orientação e margens de papel para impressão. O Código de Validação contém o nome do tamanho da mídia. Os nomes dos tamanhos de mídia podem ser encontrados na referência IPP 1.1 RFC 2911 - http://www.ietf.org/rfc/rfc2911.txt  <br> Se o nome não for encontrado, os campos Tamanho X e Tamanho Y são utilizados. Tamanhos e dimensões são ignorados caso seja utilizado um nome válido do tamanho da mídia.]]></value>
  </row>
  <row id="428" trl="Y">
   <value column="Name" original="Display Order">Ordem de Exposição</value>
@@ -1666,10 +1666,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="435" trl="Y">
-  <value column="Name" original="Print Table Format">Formato de Impressão de Tabela</value>
+  <value column="Name" original="Print Table Format">Formatação de Tabela (Impressão)</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define Report Table Format">Definir Formato de Tabela de Relatório</value>
-  <value column="Help" original="The Print Table Format lets you define how table header, etc. is printed. If you leave the entries empty, the default colors and fonts are used:&lt;br&gt;&#10;Fonts are based on the Font used in the Report; Page Header and Table Header will be bold, the Function Font is Bold-Italic, the Footer Font is two points smaller, the Parameter Font is Italic."><![CDATA[O Formato de Impressão de Tabela permite definir como o cabeçalho de uma tabela, etc. é impresso. As cores e fontes padrão serão utilizadas se você deixar os campos vazios:<br> Fontes são baseadas na Fonte usada no Relatório; Cabeçalho de Página e Cabeçalho de Tabela estarão em Negrito, a Fonte de Função será Negrito-Itálica, a fonte do Rodapé será dois pontos menor, e a Fonte dos Parâmetros será Itálica.]]></value>
+  <value column="Description" original="Define Report Table Format">Definições de Formatações de Tabela para Relatórios</value>
+  <value column="Help" original="The Print Table Format lets you define how table header, etc. is printed. If you leave the entries empty, the default colors and fonts are used:&lt;br&gt;&#10;Fonts are based on the Font used in the Report; Page Header and Table Header will be bold, the Function Font is Bold-Italic, the Footer Font is two points smaller, the Parameter Font is Italic.">A Formatação de Tabela permite definir como os elementos são impressos (ex: cabeçalho) em relatórios.</value>
  </row>
  <row id="436" trl="Y">
   <value column="Name" original="Prepared Payment">Pagamentos Preparados</value>
@@ -2479,20 +2479,20 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
  <row id="574" trl="Y">
   <value column="Name" original="Process">Processo</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Actual Workflow Process Instance">Instância de Processo de Fluxo de Trabalho Real</value>
-  <value column="Help" original="Instance of a workflow execution">Instância de execução de fluxo de trabalho</value>
+  <value column="Description" original="Actual Workflow Process Instance">Instância de Processo de Fluxo de Trabalho</value>
+  <value column="Help" original="Instance of a workflow execution">Instância da execução de fluxo de trabalho.</value>
  </row>
  <row id="575" trl="Y">
   <value column="Name" original="Activity">Atividade</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Activity">Atividade de Fluxo de Trabalho</value>
-  <value column="Help" original="The Workflow Activity is the actual Workflow Node in a Workflow Process instance">A Atividade do Fluxo de Trabalho é o Nó de Fluxo de Trabalho real em uma Instância de Processo de Fluxo de Trabalho</value>
+  <value column="Description" original="Workflow Activity">Atividades de Fluxo de Trabalho</value>
+  <value column="Help" original="The Workflow Activity is the actual Workflow Node in a Workflow Process instance">A atividade de fluxo de trabalho é o nó real em uma instância de processo de fluxo de trabalho.</value>
  </row>
  <row id="576" trl="Y">
   <value column="Name" original="Activity">Atividade</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Workflow Activities">Atividades de Fluxo de Trabalho</value>
-  <value column="Help" original="The Workflow Activity is the actual Workflow Node in a Workflow Process instance">A Atividade do Fluxo de Trabalho é o Nó de Fluxo de Trabalho real em uma Instância de Processo de Fluxo de Trabalho</value>
+  <value column="Help" original="The Workflow Activity is the actual Workflow Node in a Workflow Process instance">A atividade de fluxo de trabalho é o nó real em uma instância de processo de fluxo de trabalho.</value>
  </row>
  <row id="577" trl="Y">
   <value column="Name" original="Parameter">Parâmetro</value>
@@ -2503,8 +2503,8 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
  <row id="578" trl="Y">
   <value column="Name" original="Responsible">Responsável</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Responsible for Workflow Execution">Responsável pela Execução do Fluxo de Trabalho</value>
-  <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um Fluxo de Trabalho é do usuário real. A Responsabilidade do Fluxo de Trabalho permite definir meios de encontrar aquele usuário real.</value>
+  <value column="Description" original="Responsible for Workflow Execution">Responsável pela Execução de Fluxo de Trabalho</value>
+  <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um Fluxo de Trabalho é de um usuário real. A Responsabilidade do Fluxo de Trabalho permite definir meios de encontrar esse usuário real.</value>
  </row>
  <row id="579" trl="Y">
   <value column="Name" original="Block">Bloco</value>
@@ -2527,8 +2527,8 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
  <row id="582" trl="Y">
   <value column="Name" original="Event">Evento</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Process Activity Event Audit Information">Informação de Auditoria de Eventos de Atividade do Processo de Fluxo de Trabalho</value>
-  <value column="Help" original="History of chenges ov the Workflow Process Activity">Histórico de alterações de Atividade do Processo de Fluxo de Trabalho</value>
+  <value column="Description" original="Workflow Process Activity Event Audit Information">Informações para Auditoria de Eventos de Atividade de Processo de Fluxo de Trabalho</value>
+  <value column="Help" original="History of chenges ov the Workflow Process Activity">Histórico de mudanças na atividade do processo de fluxo de trabalho.</value>
  </row>
  <row id="583" trl="Y">
   <value column="Name" original="Attribute">Atributo</value>
@@ -2567,33 +2567,33 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Organization Type allows you to categorize your organizations for reporting purposes">O Tipo da Organização permite a você classificar as suas organizações por categorias para fins de relatórios</value>
  </row>
  <row id="589" trl="Y">
-  <value column="Name" original="Schedule Process">Agendar Processo</value>
+  <value column="Name" original="Schedule Process">Processo Agendado</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Schedule processes">Agendar Processos</value>
-  <value column="Help" original="Schedule processes to be executed asynchronously">Agendar Processos a serem executados asincronamente</value>
+  <value column="Description" original="Schedule processes">Processos Agendados</value>
+  <value column="Help" original="Schedule processes to be executed asynchronously">Processos agendados e executados de forma assíncrona</value>
  </row>
  <row id="590" trl="Y">
   <value column="Name" original="Parameter">Parâmetro</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Scheduler Parameter">Agendar Parâmetro</value>
+  <value column="Description" original="Scheduler Parameter">Parâmetro do Agendador</value>
   <value column="Help" original="Provide parameter for scheduled process">Fornece parâmetros para processos agendados</value>
  </row>
  <row id="591" trl="Y">
-  <value column="Name" original="Log">Registro</value>
+  <value column="Name" original="Log">Log</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Scheduler Log">Registro diário (log) do Agendador</value>
-  <value column="Help" original="Result of the execution of the Scheduler">Resultado da execução do Agendador</value>
+  <value column="Description" original="Scheduler Log">Logs do Agendador</value>
+  <value column="Help" original="Result of the execution of the Scheduler">Resultados da execução do Agendador</value>
  </row>
  <row id="592" trl="Y">
-  <value column="Name" original="Workflow Processor">Processador de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Processor">Processador de Fluxos de Trabalho</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Processor Server">Servidor do Processador de Fluxo de Trabalho</value>
-  <value column="Help" original="Workflow Processor Server">Servidor do Processador de Fluxo de Trabalho</value>
+  <value column="Description" original="Workflow Processor Server">Processador de Fluxos de Trabalho</value>
+  <value column="Help" original="Workflow Processor Server">Processador de Fluxos de Trabalho</value>
  </row>
  <row id="593" trl="Y">
-  <value column="Name" original="Log">Registro</value>
+  <value column="Name" original="Log">Log</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Processor Log">Registro (log) do Processador de Fluxo de Trabalho</value>
+  <value column="Description" original="Workflow Processor Log">Logs do Processador de Fluxo de Trabalho</value>
   <value column="Help" original="Result of the execution of the Workflow Processor">Resultado da execução do Processador de Fluxo de Trabalho</value>
  </row>
  <row id="594" trl="Y">
@@ -2683,11 +2683,11 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
  <row id="608" trl="Y">
   <value column="Name" original="Accounting Processor">Processador de Contabilidade</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Accounting Processor/Server Parameters">Gerenciamento dos Parâmetros do Processador/Servidor de Contabilidade</value>
-  <value column="Help" original="Accounting Processor/Server Parameters. If no account schema is selected, all accounting schema are processed. If no transaction table is selected, accounting for all transaction is created.">Parâmetros do Processador/Servidor de Contabilidade. Se não for selecionado um esquema de contabilidade , todos os esquemas contábeis serão processados. Se não for selecionada uma tabela de transação, serão criadas contabilidades para todas as transações.</value>
+  <value column="Description" original="Maintain Accounting Processor/Server Parameters">Gerenciamento de Parâmetros do Processador de Contabilidade</value>
+  <value column="Help" original="Accounting Processor/Server Parameters. If no account schema is selected, all accounting schema are processed. If no transaction table is selected, accounting for all transaction is created.">Parâmetros do Processador de Contabilidade. Se não for selecionado um esquema contábil, todos os esquemas serão processados. Se não for selecionada uma tabela de transação, serão criadas contabilidades para todas as transações.</value>
  </row>
  <row id="609" trl="Y">
-  <value column="Name" original="Log">Registro</value>
+  <value column="Name" original="Log">Log</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Result of the execution of the Accounting Processor">Resultado da execução do Processador de Contabilidade</value>
   <value column="Help" original="Result of the execution of the Accounting Processor">Resultado da execução do Processador de Contabilidade</value>
@@ -2813,9 +2813,9 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="632" trl="Y">
-  <value column="Name" original="Log">Registro</value>
+  <value column="Name" original="Log">Log</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Alert Processor Log">Registro (log) do Processador de Alertas</value>
+  <value column="Description" original="Alert Processor Log">Logs do Processador de Alertas</value>
   <value column="Help" original=""/>
  </row>
  <row id="633" trl="Y">
@@ -2849,7 +2849,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Assign Users to Organizations">Designar Usuários a Organizações</value>
  </row>
  <row id="638" trl="Y">
-  <value column="Name" original="Log">Registro</value>
+  <value column="Name" original="Log">Log</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -2858,7 +2858,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Scheduler Recipient">Destinatário do Agendador</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Recipient of the Scheduler Notification">Destinatário da Notificação de Agendamento</value>
-  <value column="Help" original="You can send the notifications to users or roles">Você pode enviar notificações para usuários ou papéis</value>
+  <value column="Help" original="You can send the notifications to users or roles">Você pode enviar notificações para usuários ou perfis de acesso.</value>
  </row>
  <row id="640" trl="Y">
   <value column="Name" original="Tax ZIP">CEP/ZIP do Imposto</value>
@@ -2888,7 +2888,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Condition">Condição</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Workflow Node Transition Condition">Condição de Transição de Nó de Fluxo de Trabalho</value>
-  <value column="Help" original="Optional restriction of transition of one node to the next. The (string) value is converted to the datatype.  Booleans (Yes-No) are represented by &quot;true&quot; and &quot;false&quot;, the date format is YYYY-mm-DD">Optional restriction of transition of one node to the next. The (string) value is converted to the datatype.  Booleans (Yes-No) are represented by "true" and "false", the date format is YYYY-mm-DD</value>
+  <value column="Help" original="Optional restriction of transition of one node to the next. The (string) value is converted to the datatype.  Booleans (Yes-No) are represented by &quot;true&quot; and &quot;false&quot;, the date format is YYYY-mm-DD">Restrição opcional da transição do atual para o próximo nó. O campo Valor é convertido para o tipo de dados específico da Coluna. Booleans são representados por 'true' ou 'false'. Datas podem ser representadas utilizando o formato YYY-mm-DD.</value>
  </row>
  <row id="646" trl="Y">
   <value column="Name" original="Distribution">Distribuição</value>
@@ -4061,15 +4061,15 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="849" trl="Y">
-  <value column="Name" original="LDAP Server">LDAP Server</value>
+  <value column="Name" original="LDAP Server">Servidor LDAP</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="LDAP Server to authenticate and authorize external systems based on iDempiere">LDAP Server to authenticate and authorize external systems based on Compiere</value>
-  <value column="Help" original="The LDAP Server allows third party software (e.g. Apache) to use the users defined in the system to authentificate and authorize them.  There is only one server per iDempiere system.  The &quot;o&quot; is the Client key and the optional &quot;ou&quot; is the Interest Area key.">The LDAP Server allows third party software (e.g. Apache) to use the users defined in the system to authentificate and authorize them.  There is only one server per Compiere system.  The "o" is the Client key and the optional "ou" is the Interest Area key.</value>
+  <value column="Description" original="LDAP Server to authenticate and authorize external systems based on iDempiere">Servidor LDAP para autenticar e autorizar sistemas externos baseados no Compiere</value>
+  <value column="Help" original="The LDAP Server allows third party software (e.g. Apache) to use the users defined in the system to authentificate and authorize them.  There is only one server per iDempiere system.  The &quot;o&quot; is the Client key and the optional &quot;ou&quot; is the Interest Area key.">O servidor LDAP permite que softwares de terceiros (ex: Apache) utilizem os usuários definidos no sistema para autorizá-los e autenticá-los. Defina apenas um único servidor por sistema.</value>
  </row>
  <row id="850" trl="Y">
-  <value column="Name" original="LDAP Server Log">LDAP Server Log</value>
+  <value column="Name" original="LDAP Server Log">Log</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Log of the LDAP Server">Log of the LDAP Server</value>
+  <value column="Description" original="Log of the LDAP Server">Logs do Servidor LDAP</value>
   <value column="Help" original=""/>
  </row>
  <row id="851" trl="Y">
@@ -5020,11 +5020,11 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53178" trl="N">
-  <value column="Name" original="House Keeping">House Keeping</value>
+ <row id="53178" trl="Y">
+  <value column="Name" original="House Keeping">Exclusão de Registros (BD)</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
+  <value column="Description" original="">Exclusão (backup opcional) de registros em tabelas do banco de dados</value>
+  <value column="Help" original="">Esta janela permite a exclusão de registros em tabelas específicas do banco de dados, de acordo com a cláusula WHERE definida. Isso pode ser muito útil para evitar a sobrecarga e o excesso de registros em determinadas tabelas. Os registros excluídos podem ser exportados para um arquivo XML ou armazenados em uma outra tabela de histórico (opcionalmente em outro tablespace). Se você selecionar a exportação para outra tabela, é necessário que exista previamente uma tabela com nome idêntico à original, mas com o prefixo 'HST_'. Por exemplo, se a tabela original for a T_Aging, a tabela de histórico (backup) deve se chamar HST_T_Aging.</value>
  </row>
  <row id="53179" trl="N">
   <value column="Name" original="BOM &amp; Formula"><![CDATA[BOM & Formula]]></value>
@@ -5044,14 +5044,14 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53185" trl="N">
+ <row id="53185" trl="Y">
   <value column="Name" original="Web Service">Web Service</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53186" trl="N">
-  <value column="Name" original="Web Service Method">Web Service Method</value>
+ <row id="53186" trl="Y">
+  <value column="Name" original="Web Service Method">Método de Web Service</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5802,10 +5802,10 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200019" trl="N">
-  <value column="Name" original="Schedule">Schedule</value>
+ <row id="200019" trl="Y">
+  <value column="Name" original="Schedule">Programação</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Schedule">Schedule</value>
+  <value column="Description" original="Schedule">Programação</value>
   <value column="Help" original=""/>
  </row>
  <row id="200020" trl="Y">
@@ -6234,8 +6234,8 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200125" trl="N">
-  <value column="Name" original="Translation">Translation</value>
+ <row id="200125" trl="Y">
+  <value column="Name" original="Translation">Tradução</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6330,14 +6330,14 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200156" trl="N">
-  <value column="Name" original="Country Group">Country Group</value>
+ <row id="200156" trl="Y">
+  <value column="Name" original="Country Group">Grupo de Países</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200157" trl="N">
-  <value column="Name" original="Country">Country</value>
+ <row id="200157" trl="Y">
+  <value column="Name" original="Country">País</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6348,8 +6348,8 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200159" trl="N">
-  <value column="Name" original="Translation">Translation</value>
+ <row id="200159" trl="Y">
+  <value column="Name" original="Translation">Tradução</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>

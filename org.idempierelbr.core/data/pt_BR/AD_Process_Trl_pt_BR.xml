@@ -408,9 +408,9 @@
   <value column="Help" original="Copy lines at the end of this Line Set. Please note that you need to re-set the calculation operands.">Este processo copia linhas (sem excluir as atuais) de outro conjunto de linhas de relatórios. Observe que é necessário reajustar os operandos de cálculo.</value>
  </row>
  <row id="191" trl="Y">
-  <value column="Name" original="Set Print Format">Configurar Formato de Impressão</value>
-  <value column="Description" original="Set for all Print Formats with same Landscape/Portrait">Ajustar para todos os Formatos de Impressão com o mesmo Paisagem/Retrato.</value>
-  <value column="Help" original=""/>
+  <value column="Name" original="Set Print Format">Ajustar os Formatos de Impressão</value>
+  <value column="Description" original="Set for all Print Formats with same Landscape/Portrait">Ajustar a Orientação dos Formatos de Impressão</value>
+  <value column="Help" original="">Este processo permite ajustar a orientação (retrato ou paisagem) de todos os Formatos de Impressão da empresa.</value>
  </row>
  <row id="192" trl="Y">
   <value column="Name" original="Copy/Create">Copiar/Criar</value>
@@ -855,13 +855,13 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
  </row>
  <row id="278" trl="Y">
   <value column="Name" original="Manage Activity">Gerenciar Atividade</value>
-  <value column="Description" original="Manage Workflow Activity">Manage Workflow Activity</value>
-  <value column="Help" original="Update or stop Workflow Activity">Update or stop Workflow Activity</value>
+  <value column="Description" original="Manage Workflow Activity">Gerenciar Atividade de Fluxo de Trabalho</value>
+  <value column="Help" original="Update or stop Workflow Activity">Este processo permite atualizar ou abortar uma atividade de fluxo de trabalho.</value>
  </row>
  <row id="279" trl="Y">
-  <value column="Name" original="Manage Process">Gerenciar Processos</value>
-  <value column="Description" original="Manage Workflow Process">Manage Workflow Process</value>
-  <value column="Help" original="Update or stop Workflow Process">Update or stop Workflow Process</value>
+  <value column="Name" original="Manage Process">Gerenciar Processo</value>
+  <value column="Description" original="Manage Workflow Process">Gerenciar Processo de Fluxo de Trabalho</value>
+  <value column="Help" original="Update or stop Workflow Process">Este processo permite atualizar ou abortar o processo de fluxo de trabalho.</value>
  </row>
  <row id="280" trl="Y">
   <value column="Name" original="Process Confirmation">Processar Confirmação</value>
@@ -985,8 +985,8 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
  </row>
  <row id="304" trl="Y">
   <value column="Name" original="Validate Workflow">Validar o Fluxo de Trabalho</value>
-  <value column="Description" original="Validate that the workflow is correct">Validar que o Fluxo de Trabalho esteja correto</value>
-  <value column="Help" original="(limited checking)">(verificação com limitações)</value>
+  <value column="Description" original="Validate that the workflow is correct">Verifica se o Fluxo de Trabalho está correto</value>
+  <value column="Help" original="(limited checking)">Este processo verifica se o Fluxo de Trabalho está correto. Observe que a validação, neste momento, ainda é limitada a apenas algumas verificações.</value>
  </row>
  <row id="305" trl="Y">
   <value column="Name" original="Document Value based Workflows">Valor de Documento baseado em Fluxos de Trabalho</value>
@@ -1009,9 +1009,9 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
   <value column="Help" original="The migration &quot;resets&quot; the system to the current/original setting.  If selected in the Change Log, you can save the customization and re-apply them.  Please note that you need to check, if your customization has no negative side effect in the new release. &lt;br&gt;&#10;Shut down the Application Server before running this process and set the Trace level (in Preference) higher or equals  WARNING."><![CDATA[A migração "reseta" o sistema para a configuração atual/original.  Se for selecionado no Registro de Alteração (log), você pode salvar a personalização e reaplicá-la.  Please note that you need to check, if your customization has no negative side effect in the new release. <br> Shut down the Application Server before running this process and set the Trace level (in Preference) higher or equals  WARNING.]]></value>
  </row>
  <row id="309" trl="Y">
-  <value column="Name" original="Workflow to Client">Fluxo de Trabalho para Empresa</value>
-  <value column="Description" original="Move custom workflow elements to the current client">Move o fluxo de trabalho personalizado para a empresa atual</value>
-  <value column="Help" original="The security architecture prevents you from adding client specific modifications/customizations to existing standard workflows.  This process moves your customization made on system level to this client to add client specific details.">A arquitetura de segurança evita que você adicione personalizações/modificações específicas de empresas aos fluxos de trabalho padronizados existentes.  Este processo move a sua personalização feita no nível do sistema para esta empresa para adicionar detalhes específicos desta empresa.</value>
+  <value column="Name" original="Workflow to Client">Mover Fluxo de Trabalho</value>
+  <value column="Description" original="Move custom workflow elements to the current client">Mover personalizações de fluxo de trabalho para nível de empresa</value>
+  <value column="Help" original="The security architecture prevents you from adding client specific modifications/customizations to existing standard workflows.  This process moves your customization made on system level to this client to add client specific details.">A arquitetura de segurança não permite que registros a nível de empresa sejam acessados a nível de sistema (System). Este processo permite mover personalizações dos fluxos de trabalho existentes feitas a nível de sistema (System) para nível de empresa. Isso permite adicionar detalhes específicos da mesma.</value>
  </row>
  <row id="310" trl="Y">
   <value column="Name" original="Trial Balance">Balancete de Verificação</value>
@@ -1257,7 +1257,7 @@ PC são criados para todas as linhas das requisições onde o produto tem um for
   <value column="Help" original=""/>
  </row>
  <row id="50012" trl="Y">
-  <value column="Name" original="Request EMail Processor">Request EMail Processor</value>
+  <value column="Name" original="Request EMail Processor">Processador de E-mails de Solicitação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1716,13 +1716,13 @@ Consolidate to one Document let the distribution in current Documents with range
   <value column="Description" original="Bank Transfer let money tranfer between Banks">Transferência de dinheiro entre contas bancárias ou de caixas</value>
   <value column="Help" original=""/>
  </row>
- <row id="53154" trl="N">
-  <value column="Name" original="HouseKeeping">HouseKeeping</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
+ <row id="53154" trl="Y">
+  <value column="Name" original="HouseKeeping">Excluir Registros (BD)</value>
+  <value column="Description" original="">Excluir Registros do Banco de Dados</value>
+  <value column="Help" original="">Este processo permite a exclusão (com backup opcional) de registros de tabelas específicas do banco de dados.</value>
  </row>
- <row id="53155" trl="N">
-  <value column="Name" original="House Keeping">House Keeping</value>
+ <row id="53155" trl="Y">
+  <value column="Name" original="House Keeping">Excluir Registros (BD)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
