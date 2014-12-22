@@ -90,6 +90,10 @@ public class NotaFiscalCreatePO extends SvrProcess
 		String message = Msg.parseTranslation(getCtx(), "@GeneratedPO@ " + order.getDocumentNo());
 		addBufferLog(0, null, order.getGrandTotal(), message, order.get_Table_ID(), order.getC_Order_ID());
 		
+		// Link Order to Nota Fiscal
+		nf.setC_Order_ID(order.get_ID());
+		nf.saveEx();
+		
 		return "Ok";
 	}
 
