@@ -266,15 +266,32 @@ public class NFFromXMLGen
 					AD_Org_ID = org.get_ID();
 				
 				// Location
-				StringBuilder location = new StringBuilder(eElement.getElementsByTagName("xLgr").item(0).getTextContent())
-					.append(", ")
-					.append(eElement.getElementsByTagName("nro").item(0).getTextContent())
-					.append(", ")
-					.append(eElement.getElementsByTagName("xMun").item(0).getTextContent())
-					.append("-")
-					.append(eElement.getElementsByTagName("UF").item(0).getTextContent())
-					.append(", CEP ")
-					.append(eElement.getElementsByTagName("CEP").item(0).getTextContent());
+				StringBuilder location = new StringBuilder();
+				NodeList xLgr = eElement.getElementsByTagName("xLgr");
+				
+				if (xLgr != null && xLgr.getLength() > 0)
+					location.append(xLgr.item(0).getTextContent());
+				
+				NodeList nro = eElement.getElementsByTagName("nro");
+				
+				if (nro != null && nro.getLength() > 0)
+					location.append(", ").append(nro.item(0).getTextContent());
+				
+				NodeList xMun = eElement.getElementsByTagName("xMun");
+				
+				if (xMun != null && xMun.getLength() > 0)
+					location.append(", ").append(xMun.item(0).getTextContent());
+				
+				NodeList UF = eElement.getElementsByTagName("UF");
+				
+				if (UF != null && UF.getLength() > 0)
+					location.append("-").append(UF.item(0).getTextContent());
+				
+				NodeList CEP = eElement.getElementsByTagName("CEP");
+				
+				if (CEP != null && CEP.getLength() > 0)
+					location.append(", CEP ").append(CEP.item(0).getTextContent());
+
 				xmlOrgLocation = location.toString();
 		    }
 		}
