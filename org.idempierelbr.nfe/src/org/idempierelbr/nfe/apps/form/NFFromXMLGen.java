@@ -774,7 +774,14 @@ public class NFFromXMLGen
 	private MLBRDocLineICMS createICMS(Properties ctx, MLBRDocLineDetailsNfe details, Element element, String trxName) {
 		NodeList nList = element.getElementsByTagName("ICMS");
 		for (int temp = 0; temp < nList.getLength(); temp++) {
-			MLBRDocLineICMS icms = new MLBRDocLineICMS(ctx, 0, trxName);
+			MLBRDocLineICMS icms;
+			MLBRDocLineICMS[] icmsEntries = MLBRDocLineICMS.getOfDetails(details);
+			
+			if (icmsEntries != null && icmsEntries.length > 0)
+				icms = icmsEntries[0];
+			else
+				icms = new MLBRDocLineICMS(ctx, 0, trxName);
+			
 			icms.setAD_Org_ID(details.getAD_Org_ID());
 			icms.setLBR_DocLine_Details_ID(details.get_ID());
 			
@@ -991,7 +998,14 @@ public class NFFromXMLGen
 	private MLBRDocLineIPI createIPI(Properties ctx, MLBRDocLineDetailsNfe details, Element element, String trxName) {
 		NodeList nList = element.getElementsByTagName("IPI");
 		for (int temp = 0; temp < nList.getLength(); temp++) {
-			MLBRDocLineIPI ipi = new MLBRDocLineIPI(ctx, 0, trxName);
+			MLBRDocLineIPI ipi;
+			MLBRDocLineIPI[] ipiEntries = MLBRDocLineIPI.getOfDetails(details);
+			
+			if (ipiEntries != null && ipiEntries.length > 0)
+				ipi = ipiEntries[0];
+			else
+				ipi = new MLBRDocLineIPI(ctx, 0, trxName);
+
 			ipi.setAD_Org_ID(details.getAD_Org_ID());
 			ipi.setLBR_DocLine_Details_ID(details.get_ID());
 			ipi.setIsTaxIncluded(false);
@@ -1052,7 +1066,14 @@ public class NFFromXMLGen
 	private MLBRDocLineImportTax createII(Properties ctx, MLBRDocLineDetailsNfe details, Element element, String trxName) {
 		NodeList nList = element.getElementsByTagName("II");
 		for (int temp = 0; temp < nList.getLength(); temp++) {
-			MLBRDocLineImportTax ii = new MLBRDocLineImportTax(ctx, 0, trxName);
+			MLBRDocLineImportTax ii;
+			MLBRDocLineImportTax[] iiEntries = MLBRDocLineImportTax.getOfDetails(details);
+			
+			if (iiEntries != null && iiEntries.length > 0)
+				ii = iiEntries[0];
+			else
+				ii = new MLBRDocLineImportTax(ctx, 0, trxName);
+			
 			ii.setAD_Org_ID(details.getAD_Org_ID());
 			ii.setLBR_DocLine_Details_ID(details.get_ID());
 			ii.setIsTaxIncluded(true);
@@ -1100,7 +1121,14 @@ public class NFFromXMLGen
 	private MLBRDocLinePIS createPIS(Properties ctx, MLBRDocLineDetailsNfe details, Element element, String trxName) {
 		NodeList nList = element.getElementsByTagName("PIS");
 		for (int temp = 0; temp < nList.getLength(); temp++) {
-			MLBRDocLinePIS pis = new MLBRDocLinePIS(ctx, 0, trxName);
+			MLBRDocLinePIS pis;
+			MLBRDocLinePIS[] pisEntries = MLBRDocLinePIS.getOfDetails(details);
+			
+			if (pisEntries != null && pisEntries.length > 0)
+				pis = pisEntries[0];
+			else
+				pis = new MLBRDocLinePIS(ctx, 0, trxName);
+			
 			pis.setAD_Org_ID(details.getAD_Org_ID());
 			pis.setLBR_DocLine_Details_ID(details.get_ID());
 			pis.setIsTaxIncluded(true);
@@ -1148,7 +1176,14 @@ public class NFFromXMLGen
 	private MLBRDocLineCOFINS createCOFINS(Properties ctx, MLBRDocLineDetailsNfe details, Element element, String trxName) {
 		NodeList nList = element.getElementsByTagName("COFINS");
 		for (int temp = 0; temp < nList.getLength(); temp++) {
-			MLBRDocLineCOFINS cofins = new MLBRDocLineCOFINS(ctx, 0, trxName);
+			MLBRDocLineCOFINS cofins;
+			MLBRDocLineCOFINS[] cofinsEntries = MLBRDocLineCOFINS.getOfDetails(details);
+			
+			if (cofinsEntries != null && cofinsEntries.length > 0)
+				cofins = cofinsEntries[0];
+			else
+				cofins = new MLBRDocLineCOFINS(ctx, 0, trxName);
+
 			cofins.setAD_Org_ID(details.getAD_Org_ID());
 			cofins.setLBR_DocLine_Details_ID(details.get_ID());
 			cofins.setIsTaxIncluded(true);
@@ -1196,7 +1231,14 @@ public class NFFromXMLGen
 	private MLBRDocLineISSQN createISSQN(Properties ctx, MLBRDocLineDetailsNfe details, Element element, String trxName) {
 		NodeList nList = element.getElementsByTagName("ISSQN");
 		for (int temp = 0; temp < nList.getLength(); temp++) {
-			MLBRDocLineISSQN issqn = new MLBRDocLineISSQN(ctx, 0, trxName);
+			MLBRDocLineISSQN issqn;
+			MLBRDocLineISSQN[] issqnEntries = MLBRDocLineISSQN.getOfDetails(details);
+			
+			if (issqnEntries != null && issqnEntries.length > 0)
+				issqn = issqnEntries[0];
+			else
+				issqn = new MLBRDocLineISSQN(ctx, 0, trxName);
+
 			issqn.setAD_Org_ID(details.getAD_Org_ID());
 			issqn.setLBR_DocLine_Details_ID(details.get_ID());
 			issqn.setIsTaxIncluded(true);
