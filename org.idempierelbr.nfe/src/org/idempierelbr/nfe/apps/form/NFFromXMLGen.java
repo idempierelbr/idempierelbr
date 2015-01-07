@@ -723,6 +723,8 @@ public class NFFromXMLGen
 	private String getPresumedDestinationType() {
 		String cPaisEmit = "";
 		String cPaisDest = "";
+		String xPaisEmit = "";
+		String xPaisDest = "";
 		String UFEmit = "";
 		String UFDest = "";
 		
@@ -732,7 +734,15 @@ public class NFFromXMLGen
 
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
-				cPaisEmit = eElement.getElementsByTagName("cPais").item(0).getTextContent();
+				
+				//
+				if (eElement.getElementsByTagName("cPais").item(0) != null)
+					cPaisEmit = eElement.getElementsByTagName("cPais").item(0).getTextContent();
+				
+				//
+				if (eElement.getElementsByTagName("xPais").item(0) != null)
+					xPaisEmit = eElement.getElementsByTagName("xPais").item(0).getTextContent();
+				
 				UFEmit = eElement.getElementsByTagName("UF").item(0).getTextContent();
 			}
 		}
@@ -743,12 +753,20 @@ public class NFFromXMLGen
 
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
-				cPaisDest = eElement.getElementsByTagName("cPais").item(0).getTextContent();
+				
+				//
+				if (eElement.getElementsByTagName("cPais").item(0) != null)
+					cPaisDest = eElement.getElementsByTagName("cPais").item(0).getTextContent();
+				
+				//
+				if (eElement.getElementsByTagName("xPais").item(0) != null)
+					xPaisDest = eElement.getElementsByTagName("xPais").item(0).getTextContent();
+
 				UFDest = eElement.getElementsByTagName("UF").item(0).getTextContent();
 			}
 		}
 		
-		if (!cPaisEmit.equals(cPaisDest))
+		if (!(cPaisEmit.equals(cPaisDest) || xPaisEmit.equalsIgnoreCase(xPaisDest)))
 			return "3"; // Operação com o Exterior
 		
 		if (UFEmit.equals(UFDest))
