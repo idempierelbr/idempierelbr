@@ -466,6 +466,10 @@ public class CNABRecordsProcess {
 			boleto.setLBR_IsProtested(true);
 			boleto.setLBR_IsBaixado(true);
 		}
+		
+		// 02 - Entrada Confirmada (necessário nas mudanças de carteira)
+		else if (returnMovCode.equals("02"))
+			boleto.setLBR_IsBaixado(false);
 
 	}
 
