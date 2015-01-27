@@ -1128,4 +1128,20 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		
 		return totalSurcharges;
 	}
+	
+	public BigDecimal getTotalFreight() {
+		
+		BigDecimal totalFreight = new BigDecimal( 0 );
+		
+		for ( MLBRNotaFiscalLine line : getLines() ) {
+			MLBRDocLineDetailsNfe detail = MLBRDocLineDetailsNfe.getOfPO(line);
+			
+			if (detail != null) {
+				BigDecimal freight = detail.getFreightAmt();
+				totalFreight = totalFreight.add( freight != null ? freight : Env.ZERO );
+			}
+		}
+		
+		return totalFreight;
+	}
 }

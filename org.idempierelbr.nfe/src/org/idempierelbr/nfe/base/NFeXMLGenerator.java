@@ -927,7 +927,7 @@ public class NFeXMLGenerator {
 		valoresicms.setvST(TextUtil.ZERO_STRING); // vST - Valor Total do ICMS ST
 		valoresicms.setvProd(TextUtil.bigdecimalToString(nf.getTotalLines())); // vProd - Valor Total dos produtos e serviços
 		// TODO: refatorar valores de frete/seguro/despesas acessórias
-		valoresicms.setvFrete(TextUtil.ZERO_STRING); // vFrete - Valor Total do Frete
+		valoresicms.setvFrete(TextUtil.bigdecimalToString(nf.getTotalFreight())); // vFrete - Valor Total do Frete
 		valoresicms.setvSeg(TextUtil.ZERO_STRING); // vSeg - Valor Total do Seguro
 		valoresicms.setvOutro(TextUtil.bigdecimalToString(nf.getTotalSurcharges())); // vOutro - Despesa acessórias
 		BigDecimal vDesc = nf.getDiscount(); // Valor do Desconto total da NF
