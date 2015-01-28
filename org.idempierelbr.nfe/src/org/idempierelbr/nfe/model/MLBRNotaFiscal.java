@@ -830,20 +830,18 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	 */
 	public BigDecimal getDiscount()
 	{
-		BigDecimal discount = Env.ZERO;
-
-		for (MLBRNotaFiscalLine nfl : getLines())
-		{
-			MLBRDocLineDetailsNfe details = MLBRDocLineDetailsNfe.getOfPO(nfl);
-			
-			if (details.getDiscountAmt() != null)
-				discount = discount.add(details.getDiscountAmt());
-		}
-
-		if (discount.signum() == 1)
-			return discount;
+		BigDecimal totalDiscount = new BigDecimal( 0 );
 		
-		return null;
+		for ( MLBRNotaFiscalLine line : getLines() ) {
+			MLBRDocLineDetailsNfe detail = MLBRDocLineDetailsNfe.getOfPO(line);
+			
+			if (detail != null) {
+				BigDecimal discount = detail.getDiscountAmt();
+				totalDiscount = totalDiscount.add( discount != null ? discount : Env.ZERO );
+			}
+		}
+		
+		return totalDiscount;
 	}
 	
 	/**
@@ -1143,5 +1141,21 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		}
 		
 		return totalFreight;
+	}
+	
+	public BigDecimal getTotalInsurance() {
+		
+		BigDecimal totalInsurance = new BigDecimal( 0 );
+		
+		for ( MLBRNotaFiscalLine line : getLines() ) {
+			MLBRDocLineDetailsNfe detail = MLBRDocLineDetailsNfe.getOfPO(line);
+			
+			if (detail != null) {
+				BigDecimal insurance = detail.getInsuredAmount();
+				totalInsurance = totalInsurance.add( insurance != null ? insurance : Env.ZERO );
+			}
+		}
+		
+		return totalInsurance;
 	}
 }

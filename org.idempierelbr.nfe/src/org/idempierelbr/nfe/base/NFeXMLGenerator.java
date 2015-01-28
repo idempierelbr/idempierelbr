@@ -783,16 +783,19 @@ public class NFeXMLGenerator {
 			
 			produtos.setvUnTrib(TextUtil.bigdecimalToString(details.getLBR_PriceTax(), 10));
 			
-			// TODO: Refatorar valores do frete e do seguro
-			/*if (nf.getFreightAmt().signum() == 1 && nfLine.getFreightAmt(nf.getTotalLines(), nf.getFreightAmt()).compareTo(Env.ZERO) != 0) //FRETE
-				produtos.setvFrete(TextUtil.bigdecimalToString(nfLine.getFreightAmt(nf.getTotalLines(), nf.getFreightAmt())));
-				
-			if (nf.getlbr_InsuranceAmt().signum() == 1) //SEGURO
-				produtos.setvSeg(TextUtil.bigdecimalToString(nfLine.getInsuranceAmt(nf.getTotalLines(), nf.getlbr_InsuranceAmt())));*/
+			// freight
+			if (details.getFreightAmt() != null && details.getFreightAmt().compareTo(Env.ZERO) != 0)
+				produtos.setvFrete(TextUtil.bigdecimalToString(details.getFreightAmt()));
+
+			// insurance
+			if (details.getInsuredAmount() != null && details.getInsuredAmount().compareTo(Env.ZERO) != 0)
+				produtos.setvSeg(TextUtil.bigdecimalToString(details.getInsuredAmount()));
 			
+			// Discount
 			if (details.getDiscountAmt() != null && details.getDiscountAmt().compareTo(Env.ZERO) != 0)
 				produtos.setvDesc(TextUtil.bigdecimalToString(details.getDiscountAmt().abs(),2));
 			
+			// Surcharges
 			if (details.getSurcharges() != null && details.getSurcharges().compareTo(Env.ZERO) != 0)
 				produtos.setvOutro(TextUtil.bigdecimalToString(details.getSurcharges()));
 			
@@ -926,12 +929,10 @@ public class NFeXMLGenerator {
 		valoresicms.setvBCST(TextUtil.ZERO_STRING); // vBCST - BC do ICMS ST
 		valoresicms.setvST(TextUtil.ZERO_STRING); // vST - Valor Total do ICMS ST
 		valoresicms.setvProd(TextUtil.bigdecimalToString(nf.getTotalLines())); // vProd - Valor Total dos produtos e serviços
-		// TODO: refatorar valores de frete/seguro/despesas acessórias
 		valoresicms.setvFrete(TextUtil.bigdecimalToString(nf.getTotalFreight())); // vFrete - Valor Total do Frete
-		valoresicms.setvSeg(TextUtil.ZERO_STRING); // vSeg - Valor Total do Seguro
+		valoresicms.setvSeg(TextUtil.bigdecimalToString(nf.getTotalInsurance())); // vSeg - Valor Total do Seguro
 		valoresicms.setvOutro(TextUtil.bigdecimalToString(nf.getTotalSurcharges())); // vOutro - Despesa acessórias
-		BigDecimal vDesc = nf.getDiscount(); // Valor do Desconto total da NF
-		valoresicms.setvDesc(TextUtil.bigdecimalToString(vDesc)); // vDesc - Valor Total do Desconto
+		valoresicms.setvDesc(TextUtil.bigdecimalToString(nf.getDiscount())); // vDesc - Valor Total do Desconto
 		valoresicms.setvII(TextUtil.ZERO_STRING); // vII - Valor Total do II
 		valoresicms.setvIPI(TextUtil.ZERO_STRING); // vIPI - Valor Total do IPI
 		valoresicms.setvPIS(TextUtil.ZERO_STRING); // vPIS - Valor do PIS
