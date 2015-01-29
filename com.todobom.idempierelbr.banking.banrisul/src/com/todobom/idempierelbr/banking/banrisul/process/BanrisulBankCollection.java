@@ -15,7 +15,7 @@ import com.todobom.idempierelbr.banking.banrisul.annotated.BanrisulCNABRecords;
 public class BanrisulBankCollection implements IBankCollection {
 
 	
-	public static String dacMod10and11( String input ) {
+	private static String dacMod10and11( String input ) {
 		int soma = OpenItemsUtil.dacWeightedSum(input, 2, 1 , false , true );
 
 		int firstdac = 10-(soma%10);
