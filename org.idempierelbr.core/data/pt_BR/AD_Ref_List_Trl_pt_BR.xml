@@ -5482,6 +5482,34 @@
   <value column="Name" original="Amount">Valor</value>
   <value column="Description" original=""/>
  </row>
+ <row id="800019" trl="Y">
+  <value column="Name" original="FS-IA">Contingência FS-IA</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800020" trl="Y">
+  <value column="Name" original="SCAN">Contingência SCAN</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800021" trl="Y">
+  <value column="Name" original="DPEC">Contingência DPEC</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800022" trl="Y">
+  <value column="Name" original="FS-DA">Contingência FS-DA</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800023" trl="Y">
+  <value column="Name" original="SVC-AN">Contingência SVC-AN</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800024" trl="Y">
+  <value column="Name" original="SVC-RS">Contingência SVC-RS</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800025" trl="Y">
+  <value column="Name" original="Off-line">Contingência Off-line</value>
+  <value column="Description" original=""/>
+ </row>
  <row trl="Y" uuid="2facadde-7b9b-4619-9161-8f9fe50b2b19">
   <value column="Name" original="No specific release">PJ - Pessoa Jurídica</value>
   <value column="Description" original="No specific release"/>
