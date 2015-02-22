@@ -2,6 +2,7 @@ package org.idempierelbr.openitems.process;
 
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.logging.Level;
 
@@ -104,6 +105,7 @@ public class BoletoGenerateAndPrint extends SvrProcess
 					.getResourceAsStream("reports/" + JASPER_FILENAME);
 			
 			jasperParameters.put(JASPER_FILENAME, mainJasperInputStream);
+			jasperParameters.put("REPORT_LOCALE", new Locale("pt", "BR"));
 		}
 		
 		if (mainJasperInputStream == null)
