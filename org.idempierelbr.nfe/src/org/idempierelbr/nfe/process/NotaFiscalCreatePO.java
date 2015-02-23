@@ -80,11 +80,15 @@ public class NotaFiscalCreatePO extends SvrProcess
 		
 		// Process it
 		if (!DocAction.ACTION_None.equals(p_docAction))	{
+			order.setDocAction(p_docAction);
+			
 			if (!order.processIt(p_docAction)) {
 				log.warning("Failed: " + order);
 				throw new IllegalStateException("PO Generate Process Failed: " +
 						order + " - " + order.getProcessMsg());
-			}
+			} 
+			
+			order.saveEx();
 		}
 		
 		String message = Msg.parseTranslation(getCtx(), "@GeneratedPO@ " + order.getDocumentNo());
@@ -120,12 +124,12 @@ public class NotaFiscalCreatePO extends SvrProcess
 			MLBRDocLineDetailsNfe nflDetails = MLBRDocLineDetailsNfe.getOfPO(nfLine);
 			
 			if (nflDetails != null) {
-				MLBRDocLineDetailsNfe olDetails = MLBRDocLineDetailsNfe.createFromPO(orderLine);
+				MLBRDocLineDetailsTax olDetails = MLBRDocLineDetailsTax.createFromPO(orderLine);
 			
 				if (olDetails != null) {
 					olDetails.copyFrom(nflDetails);
-					//details.saveEx();
-					olDetails.copyChildren(MLBRDocLineDetailsTax.getOfPO(nfLine));
+					olDetails.saveEx();
+					olDetails.copyChildren(MLBRDocLineDetailsNfe.getOfPO(nfLine));
 				}
 			}
 		}

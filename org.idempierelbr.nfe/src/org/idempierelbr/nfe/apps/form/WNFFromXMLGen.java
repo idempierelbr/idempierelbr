@@ -860,9 +860,11 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 		
 		if (propertyName.equals("C_DocType_ID")) {
 			C_DocType_ID = (Integer)e.getNewValue();
+		} else if (propertyName.equals("LBR_TransactionType")) {
+			LBR_TransactionType = (String)e.getNewValue();
 		} else if (propertyName.equals("DocAction")) {
 			docAction = (String)e.getNewValue();
-		}else if (propertyName.equals("C_BPartner_ID")) {
+		} else if (propertyName.equals("C_BPartner_ID")) {
 			C_BPartner_ID = (Integer)e.getNewValue();
 			
 			if (C_BPartner_ID == null)

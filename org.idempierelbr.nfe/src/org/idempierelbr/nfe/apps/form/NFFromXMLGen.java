@@ -63,6 +63,7 @@ public class NFFromXMLGen
 	
 	// Document Fields
 	Integer C_DocType_ID;
+	String LBR_TransactionType;
 	String description;
 	String docAction;
 	
@@ -521,6 +522,7 @@ public class NFFromXMLGen
 		nf.setLBR_NFeStatus(xmlStatusCode);
 		nf.setLBR_NFeID(xmlNFeID);
 		nf.setDocumentNo(xmlDocumentNo);
+		nf.setLBR_TransactionType(LBR_TransactionType);
 		nf.setC_DocType_ID(C_DocType_ID);
 		
 		String versionNo = "";
