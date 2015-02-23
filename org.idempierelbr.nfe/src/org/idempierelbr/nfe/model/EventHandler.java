@@ -1,8 +1,14 @@
 package org.idempierelbr.nfe.model;
 
+import java.math.BigDecimal;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import org.adempiere.base.event.AbstractEventHandler;
 import org.adempiere.base.event.IEventTopics;
 import org.adempiere.exceptions.AdempiereException;
+import org.adempiere.exceptions.DBException;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MInvoiceLine;
 import org.compiere.model.MOrder;
@@ -12,6 +18,7 @@ import org.compiere.model.MTax;
 import org.compiere.model.MTaxProvider;
 import org.compiere.model.PO;
 import org.compiere.util.CLogger;
+import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
 import org.idempierelbr.tax.provider.TaxProviderFactory;
@@ -25,6 +32,10 @@ public class EventHandler extends AbstractEventHandler {
 
 	@Override
 	protected void initialize() {
+		registerTableEvent(IEventTopics.PO_AFTER_NEW, MOrderLine.Table_Name);
+		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MOrderLine.Table_Name);
+		registerTableEvent(IEventTopics.PO_BEFORE_DELETE, MOrderLine.Table_Name);
+		
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MLBRNotaFiscal.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_CHANGE, MLBRNotaFiscal.Table_Name);
 		registerTableEvent(IEventTopics.PO_AFTER_NEW, MLBRNotaFiscal.Table_Name);
@@ -96,7 +107,8 @@ public class EventHandler extends AbstractEventHandler {
 		}
 		
 		// Create/update/delete Doc Line Details
-		if (po instanceof MLBRNotaFiscalLine || po instanceof MLBRNotaFiscal) {
+		if (po instanceof MLBRNotaFiscalLine || po instanceof MLBRNotaFiscal ||
+				po instanceof MOrder || po instanceof MOrderLine) {
 			
 			if (event.getTopic().equals(IEventTopics.PO_AFTER_CHANGE)) {  // Update
 				boolean requery = false;
@@ -126,7 +138,7 @@ public class EventHandler extends AbstractEventHandler {
 				}
 			}
 			
-			if (po instanceof MLBRNotaFiscalLine) {
+			if (po instanceof MLBRNotaFiscalLine || po instanceof MOrderLine) {
 				if (event.getTopic().equals(IEventTopics.PO_AFTER_NEW)) { // Create
 					if (isLBRDefaultTaxProvider(po, true)) {
 						String msg = createLBRDocLineDetails(po);
@@ -186,22 +198,66 @@ public class EventHandler extends AbstractEventHandler {
 		if (details != null) {
 			PO lineFrom = null;
 			boolean copyDetails = false;
+			BigDecimal qtyFrom = null;
+			BigDecimal qtyTo = null;
 			
 			// Check if details should be copied
 			if (po instanceof MLBRNotaFiscalLine) {
 				MLBRNotaFiscalLine nfLine = (MLBRNotaFiscalLine)po;
 
 				if (nfLine.getC_OrderLine_ID() > 0) {
-					copyDetails = true;
 					lineFrom = new MOrderLine(details.getCtx(), nfLine.getC_OrderLine_ID(), details.get_TrxName());
+					qtyFrom = ((MOrderLine) lineFrom).getQtyOrdered();
 				} else if (nfLine.getC_InvoiceLine_ID() > 0) {
-					copyDetails = true;
 					lineFrom = new MInvoiceLine(details.getCtx(), nfLine.getC_InvoiceLine_ID(), details.get_TrxName());
+					qtyFrom = ((MInvoiceLine) lineFrom).getQtyInvoiced();
 				} else if (nfLine.getM_RMALine_ID() > 0) {
-					copyDetails = true;
 					lineFrom = new MRMALine(details.getCtx(), nfLine.getM_RMALine_ID(), details.get_TrxName());
+					qtyFrom = ((MRMALine) lineFrom).getQty();
+				}
+				
+				qtyTo = nfLine.getQty();
+			}
+			
+			if (po instanceof MOrderLine) {
+				MOrderLine oLine = (MOrderLine)po;
+				
+				if (!oLine.getC_Order().isSOTrx()) { // Only Purchase Order
+					// Is there any NF with that linked order?
+					MLBRNotaFiscalLine nfLine = null;
+					
+					String sql = "SELECT LBR_NotaFiscalLine_ID FROM LBR_NotaFiscalLine nfl" +
+						" JOIN LBR_NotaFiscal nf ON nf.LBR_NotaFiscal_ID = nfl.LBR_NotaFiscal_ID" +
+						" JOIN C_Order o ON o.C_Order_ID = nf.C_Order_ID" +
+						" WHERE o.C_Order_ID = ? AND nfl.Line = ?";
+					PreparedStatement pstmt = null;
+					ResultSet rs = null;
+					
+					try {
+					      pstmt = DB.prepareStatement(sql, details.get_TrxName());
+					      DB.setParameters(pstmt, new Object[]{oLine.getC_Order_ID(), oLine.getLine()});
+					      rs = pstmt.executeQuery();
+					      
+					      while(rs.next()) {
+					    	  nfLine = new MLBRNotaFiscalLine(details.getCtx(), rs.getInt(1), details.get_TrxName());
+					      }
+					} catch (SQLException e) {
+					      throw new DBException(e, sql);
+					} finally {
+					      DB.close(rs, pstmt);
+					      rs = null; pstmt = null;
+					}
+
+					if (nfLine != null) {
+						lineFrom = nfLine;
+						qtyFrom = nfLine.getQty();
+						qtyTo = oLine.getQtyOrdered();
+					}
 				}
 			}
+			
+			if (qtyFrom != null && qtyTo != null && qtyFrom.compareTo(qtyTo) == 0)
+				copyDetails = true;
 			
 			if (copyDetails)
 				details.copyFrom(MLBRDocLineDetailsTax.getOfPO(lineFrom));

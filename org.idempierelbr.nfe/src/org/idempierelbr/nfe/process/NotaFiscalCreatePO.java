@@ -11,7 +11,14 @@ import org.compiere.util.Msg;
 import org.idempierelbr.nfe.model.MLBRDocLineDetailsNfe;
 import org.idempierelbr.nfe.model.MLBRNotaFiscal;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
+import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
 import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
+import org.idempierelbr.tax.model.MLBRDocLineICMS;
+import org.idempierelbr.tax.model.MLBRDocLineIPI;
+import org.idempierelbr.tax.model.MLBRDocLineISSQN;
+import org.idempierelbr.tax.model.MLBRDocLineImportTax;
+import org.idempierelbr.tax.model.MLBRDocLinePIS;
+import org.idempierelbr.tax.model.MLBRICMSMatrix;
 
 public class NotaFiscalCreatePO extends SvrProcess
 {
@@ -73,7 +80,11 @@ public class NotaFiscalCreatePO extends SvrProcess
 			throw new Exception("The document should be completed or closed");
 		
 		// Order
-		MOrder order = createOrder();	
+		MOrder order = createOrder();
+		
+		// Link Order to Nota Fiscal
+		nf.setC_Order_ID(order.get_ID());
+		nf.saveEx();
 		
 		// Create lines
 		createOrderLines(order);
@@ -94,10 +105,6 @@ public class NotaFiscalCreatePO extends SvrProcess
 		String message = Msg.parseTranslation(getCtx(), "@GeneratedPO@ " + order.getDocumentNo());
 		addBufferLog(0, null, order.getGrandTotal(), message, order.get_Table_ID(), order.getC_Order_ID());
 		
-		// Link Order to Nota Fiscal
-		nf.setC_Order_ID(order.get_ID());
-		nf.saveEx();
-		
 		return "Ok";
 	}
 
@@ -106,6 +113,8 @@ public class NotaFiscalCreatePO extends SvrProcess
 		
 		for (MLBRNotaFiscalLine nfLine : nfLines) {
 			MOrderLine orderLine = new MOrderLine(order);
+			
+			orderLine.setLine(nfLine.getLine());
 			
 			if (nfLine.getM_Product() != null) {
 				orderLine.setM_Product_ID(nfLine.getM_Product_ID());
@@ -127,8 +136,38 @@ public class NotaFiscalCreatePO extends SvrProcess
 				MLBRDocLineDetailsTax olDetails = MLBRDocLineDetailsTax.createFromPO(orderLine);
 			
 				if (olDetails != null) {
+					// Delete
+					MLBRDocLineCOFINS[] cofins = MLBRDocLineCOFINS.getOfDetails(olDetails);
+					for (MLBRDocLineCOFINS cofinsEntry : cofins) {
+						cofinsEntry.deleteEx(true);
+					}
+					
+					MLBRDocLineICMS[] icms = MLBRDocLineICMS.getOfDetails(olDetails);
+					for (MLBRDocLineICMS icmsEntry : icms) {
+						icmsEntry.deleteEx(true);
+					}
+					
+					MLBRDocLineImportTax[] ii = MLBRDocLineImportTax.getOfDetails(olDetails);
+					for (MLBRDocLineImportTax iiEntry : ii) {
+						iiEntry.deleteEx(true);
+					}
+					
+					MLBRDocLineIPI[] ipi = MLBRDocLineIPI.getOfDetails(olDetails);
+					for (MLBRDocLineIPI ipiEntry : ipi) {
+						ipiEntry.deleteEx(true);
+					}
+					
+					MLBRDocLineISSQN[] issqn = MLBRDocLineISSQN.getOfDetails(olDetails);
+					for (MLBRDocLineISSQN issqnEntry : issqn) {
+						issqnEntry.deleteEx(true);
+					}
+					
+					MLBRDocLinePIS[] pis = MLBRDocLinePIS.getOfDetails(olDetails);
+					for (MLBRDocLinePIS pisEntry : pis) {
+						pisEntry.deleteEx(true);
+					}
+					
 					olDetails.copyFrom(nflDetails);
-					olDetails.saveEx();
 					olDetails.copyChildren(MLBRDocLineDetailsNfe.getOfPO(nfLine));
 				}
 			}
