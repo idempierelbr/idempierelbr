@@ -14,7 +14,6 @@ import org.compiere.model.MInOutLine;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MInvoiceLine;
 import org.compiere.model.MInvoicePaySchedule;
-import org.compiere.model.MInvoiceSchedule;
 import org.compiere.model.MLocation;
 import org.compiere.model.MOrder;
 import org.compiere.model.MOrderLine;
@@ -336,21 +335,39 @@ public class CreateNotaFiscal extends SvrProcess
 		// Transp
 		MLBRNotaFiscalTransp transp = nf.getTransp();
 		int M_Shipper_ID = 0;
+		String DeliveryViaRule = ""; // Forma de Entrega (P-Cliente Retira, D-Entrega Própria, S-Transportadora)
+		String FreightCostRule = ""; // Regra de Custo de Frete (C-Frete Calculado, F-Frete Fixo, I-Frete Incluso)
 		
 		if (po instanceof MOrder) {
+			DeliveryViaRule = order.getDeliveryViaRule();
+			FreightCostRule = order.getFreightCostRule();
 			M_Shipper_ID = order.getM_Shipper_ID();
-			transp.setLBR_NFeModShipping(getModShipping(order, transp.getLBR_NFeModShipping()));
 		} else if (po instanceof MInvoice) {
-			if (invoice.getC_Order_ID() > 0) {
-				MOrder invOrder = new MOrder(getCtx(), invoice.getC_Order_ID(), get_TrxName());
-				
-				M_Shipper_ID = invOrder.getM_Shipper_ID();
-				transp.setLBR_NFeModShipping(getModShipping(invOrder, transp.getLBR_NFeModShipping()));
-			}
+			MOrder invOrder = new MOrder(getCtx(), invoice.getC_Order_ID(), get_TrxName());
+			DeliveryViaRule = invOrder.getDeliveryViaRule();
+			FreightCostRule = invOrder.getFreightCostRule();
+			M_Shipper_ID = invOrder.getM_Shipper_ID();
 		} else if (po instanceof MRMA) {
+			DeliveryViaRule = rmaInOut.getDeliveryViaRule();
+			FreightCostRule = rmaInOut.getFreightCostRule();
 			M_Shipper_ID = rmaInOut.getM_Shipper_ID();
-			transp.setLBR_NFeModShipping(getModShipping(rmaInOut, transp.getLBR_NFeModShipping()));
 		}
+		
+		if (DeliveryViaRule == null)
+			DeliveryViaRule = "";
+		
+		if (FreightCostRule == null)
+			FreightCostRule = "";
+		
+		String NFeModShipping = "1";
+		
+		if (FreightCostRule.equals("I"))
+			NFeModShipping = "0";
+		
+		transp.setLBR_NFeModShipping(NFeModShipping);
+		
+		if (!DeliveryViaRule.equals("S"))
+			M_Shipper_ID = 0;
 		
 		if (M_Shipper_ID > 0) {
 			transp.setM_Shipper_ID(M_Shipper_ID);
@@ -660,26 +677,5 @@ public class CreateNotaFiscal extends SvrProcess
 		}
 		
 		return new PO[0];
-	}
-	
-	/**
-	 * Get shipping modal
-	 * 
-	 * @return shipping modal
-	 */
-	private String getModShipping(PO poShipping, String defaultModShipping) {
-		if (defaultModShipping == null || defaultModShipping.trim().equals(""))
-			defaultModShipping = "0"; // ISSUER
-		
-		String deliveryViaRule = poShipping.get_ValueAsString("DeliveryViaRule");
-		String freightCostRule = poShipping.get_ValueAsString("FreightCostRule");
-		
-		if (freightCostRule.equals("I"))
-			defaultModShipping = "0"; // ISSUER
-		
-		if (deliveryViaRule.equals("P"))
-			defaultModShipping = "9"; // NO FREIGHT
-		
-		return defaultModShipping;
 	}
 }
