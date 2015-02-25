@@ -1,7 +1,9 @@
 package org.idempierelbr.openitems.process;
 
+import java.math.BigDecimal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.logging.Level;
@@ -18,6 +20,7 @@ import org.compiere.process.DocAction;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.DB;
+import org.compiere.util.Env;
 import org.idempierelbr.openitems.model.MLBRBankAccountCarteira;
 import org.idempierelbr.openitems.model.MLBRBankAccountConvenio;
 import org.idempierelbr.openitems.model.MLBRBoleto;
@@ -226,7 +229,7 @@ public class BoletoGenerate extends SvrProcess
 		MBPartnerLocation[] locs = MBPartnerLocation.getForBPartner(getCtx(), invoice.getC_BPartner_ID(), get_TrxName());
 		
 		for (MBPartnerLocation loc : locs) {
-			if (loc.isPayFrom())
+			if (loc.isPayFrom() && loc.isActive())
 				bpartnerLoc = loc;
 		}
 
@@ -304,7 +307,36 @@ public class BoletoGenerate extends SvrProcess
 		boleto.setLBR_BankAccount_Carteira_ID(carteiras[0].get_ID());
 		boleto.setLBR_CarteiraType(carteiras[0].getLBR_CarteiraType());
 		boleto.setDueDate(sched.getDueDate());
-		boleto.setGrandTotal(sched.getDueAmt());
+		
+		// Adjust GrandTotal if necessary
+		BigDecimal GrandTotal = null;
+		
+		String sql = "SELECT invoiceOpen(?, ?)"
+			+ " FROM dual";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try
+		{
+			pstmt = DB.prepareStatement (sql, null);
+			pstmt.setInt (1, sched.getC_Invoice_ID());
+			pstmt.setInt (2, sched.getC_InvoicePaySchedule_ID());
+			rs = pstmt.executeQuery ();
+			if (rs.next ())
+			{
+				GrandTotal = rs.getBigDecimal(1);
+				
+				if (GrandTotal == null)
+					GrandTotal = sched.getDueAmt();
+			}
+		} catch (SQLException e) {
+			log.log (Level.SEVERE, sql, e);
+		} finally {
+			DB.close (rs, pstmt);
+			rs = null;
+			pstmt = null;
+		}			
+
+		boleto.setGrandTotal(GrandTotal);
 		boleto.saveEx();
 		
 		if (!boleto.processIt(p_docAction)) {
