@@ -2,6 +2,7 @@ package org.idempierelbr.nfe.process;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.logging.Level;
 
 import org.compiere.model.MBPartner;
@@ -29,6 +30,7 @@ import org.compiere.model.MShipper;
 import org.compiere.model.MUOM;
 import org.compiere.model.MUOMConversion;
 import org.compiere.model.PO;
+import org.compiere.model.Query;
 import org.compiere.model.X_C_City;
 import org.compiere.process.DocAction;
 import org.compiere.process.ProcessInfoParameter;
@@ -215,6 +217,7 @@ public class CreateNotaFiscal extends SvrProcess
 		nf.setLBR_IsDocIssuedByOrg(nfDocType.get_ValueAsBoolean("LBR_IsDocIssuedByOrg"));
 		nf.setLBR_NFE_OperationType(getOperationType());
 		nf.setDateDoc(new Timestamp(new java.util.Date().getTime()));
+		nf.setDateAcct(new Timestamp(new java.util.Date().getTime()));
 		nf.setPaymentRule(getPaymentRule());
 		nf.setLBR_NFeTpEmis(getTpEmis());
 		nf.setLBR_FinNFe(getFinNFe());
@@ -395,7 +398,13 @@ public class CreateNotaFiscal extends SvrProcess
 		MLBRNotaFiscalPackage pack = new MLBRNotaFiscalPackage(getCtx(), 0, get_TrxName());
 		pack.setAD_Org_ID(nf.getAD_Org_ID());
 		pack.setLBR_NotaFiscalTransp_ID(transp.get_ID());
-		pack.setQty(packQty);
+		//pack.setQty(packQty);
+		BigDecimal packQtyBasedOnShipments = getQtyBaseOnShipments();
+		
+		if (packQtyBasedOnShipments == null || packQtyBasedOnShipments.signum() <= 0)
+			packQtyBasedOnShipments = packQty;
+		
+		pack.setQty(packQtyBasedOnShipments);
 		pack.setC_UOM_ID(MUOM.getDefault_UOM_ID(getCtx()));
 		pack.setLBR_GrossWeight(totalWeight);
 		pack.setLBR_NetWeight(totalWeight);
@@ -452,6 +461,29 @@ public class CreateNotaFiscal extends SvrProcess
 		return "Ok";
 	}
 	
+	private BigDecimal getQtyBaseOnShipments() {
+		MOrder tmpOrder = null;
+		
+		if (po instanceof MOrder)
+			tmpOrder = order;
+		else if (po instanceof MInvoice)
+			tmpOrder = invoice.getOriginalOrder();
+		
+		List<MInOut> list = new Query (getCtx(), MInOut.Table_Name,
+					"C_Order_ID=? AND DocStatus IN ('DR', 'IP', 'CO')", get_TrxName())
+				.setParameters(new Object[]{tmpOrder.get_ID()})
+				.list();
+		
+		int qty = 0;
+		
+		for (MInOut inOut : list) {
+			if (inOut.getNoPackages() > 0)
+				qty = qty + inOut.getNoPackages();
+		}
+		
+		return new BigDecimal(qty);
+	}
+		
 	/**
 	 * Get operation type (IN/OUT) based on source document type
 	 * 
