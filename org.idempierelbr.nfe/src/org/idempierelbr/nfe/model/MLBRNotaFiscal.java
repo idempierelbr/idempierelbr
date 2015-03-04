@@ -22,6 +22,7 @@ import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -1063,6 +1064,7 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 					.getResourceAsStream("org/idempierelbr/nfe/report/" + JASPER_FILENAME);
 			
 			jasperParameters.put("DanfeMainPortraitA4", mainJasperInputStream);
+			jasperParameters.put("REPORT_LOCALE", new Locale("pt", "BR"));
 		}
 		
 		if (mainJasperInputStream == null)
