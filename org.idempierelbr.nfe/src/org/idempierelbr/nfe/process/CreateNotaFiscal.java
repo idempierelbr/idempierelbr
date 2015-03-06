@@ -462,6 +462,16 @@ public class CreateNotaFiscal extends SvrProcess
 	}
 	
 	private BigDecimal getQtyBaseOnShipments() {
+		if (po instanceof MRMA) {
+			MRMA rma = (MRMA)po;
+			MInOut shipment = rma.getShipment();
+			
+			if (shipment.getNoPackages() > 0)
+				return new BigDecimal(shipment.getNoPackages());
+			
+			return Env.ZERO;
+		}
+		
 		MOrder tmpOrder = null;
 		
 		if (po instanceof MOrder)
