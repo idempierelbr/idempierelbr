@@ -317,7 +317,7 @@ public class BoletoGenerate extends SvrProcess
 		ResultSet rs = null;
 		try
 		{
-			pstmt = DB.prepareStatement (sql, null);
+			pstmt = DB.prepareStatement (sql, get_TrxName());
 			pstmt.setInt (1, sched.getC_Invoice_ID());
 			pstmt.setInt (2, sched.getC_InvoicePaySchedule_ID());
 			rs = pstmt.executeQuery ();

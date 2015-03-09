@@ -24,6 +24,7 @@ import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
+import org.compiere.util.Trx;
 
 public class BoletoGenerateAndPrint extends SvrProcess
 {
@@ -119,7 +120,7 @@ public class BoletoGenerateAndPrint extends SvrProcess
 		
 		try {
 			JasperReport jasperReport = (JasperReport)JRLoader.loadObject(mainJasperInputStream);
-			jasperPrint = JasperFillManager.fillReport(jasperReport, jasperParameters, DB.getConnectionRW());
+			jasperPrint = JasperFillManager.fillReport(jasperReport, jasperParameters, Trx.get(get_TrxName(), false).getConnection());
 		} catch(Exception e) {
 			log.warning("Could not generate JasperPrint for Boletos " /* + getDocumentNo() */ );
 		}
@@ -146,7 +147,7 @@ public class BoletoGenerateAndPrint extends SvrProcess
 		ProcessInfoParameter pi2 = new ProcessInfoParameter("C_Invoice_ID", p_C_Invoice_ID, "","","");
 		pi.setParameter(new ProcessInfoParameter[] { pi1 , pi2 });
 		
-		MProcess pr = new Query(Env.getCtx(), MProcess.Table_Name, "value=?", null)
+		MProcess pr = new Query(Env.getCtx(), MProcess.Table_Name, "value=?", get_TrxName())
 		                        .setParameters(new Object[]{"LBR_Boleto_Generate"})
 		                        .first();
 		if (pr==null) {
@@ -161,7 +162,7 @@ public class BoletoGenerateAndPrint extends SvrProcess
 			pi.setAD_PInstance_ID(mpi.get_ID());
 
 			// run the process
-			if ( ! bolgen.startProcess(Env.getCtx(), pi, null) )
+			if ( ! bolgen.startProcess(Env.getCtx(), pi, Trx.get(get_TrxName(), false)) )
 				throw new AdempiereException("Could not generate LBR_Boleto records");
 		}
 		
