@@ -113,6 +113,7 @@ public class MLBRNFeWebService extends X_LBR_NFeWebService
 		}
 		finally{
 		       DB.close(rs, pstmt);
+		       rs = null; pstmt = null;
 		}
 
 		String[] retValue = new String[list.size()];

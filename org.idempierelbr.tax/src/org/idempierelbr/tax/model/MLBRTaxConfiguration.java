@@ -257,6 +257,7 @@ public class MLBRTaxConfiguration extends X_LBR_TaxConfiguration
 		}
 		finally{
 		       DB.close(rs, pstmt);
+		       rs = null; pstmt = null;
 		}
 		
 		return hasSOTrx;
@@ -299,6 +300,7 @@ public class MLBRTaxConfiguration extends X_LBR_TaxConfiguration
 		}
 		finally{
 		       DB.close(rs, pstmt);
+		       rs = null; pstmt = null;
 		}
 		
 		return hasPOTrx;

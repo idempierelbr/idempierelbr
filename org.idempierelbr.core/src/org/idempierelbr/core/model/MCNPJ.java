@@ -143,6 +143,7 @@ public class MCNPJ {
 		}
 		finally{
 			DB.close(rs, pstmt);
+			rs = null; pstmt = null;
 		}
 
 		if (iCNPJ > 0)

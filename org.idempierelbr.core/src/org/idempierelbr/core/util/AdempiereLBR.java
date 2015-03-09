@@ -366,6 +366,7 @@ public abstract class AdempiereLBR{
 		}
 		finally{
 		  DB.close(rs, pstmt);
+		  rs = null; pstmt = null;
 		}
 
 		if (C_OrderLine_ID == null || C_OrderLine_ID.intValue() == 0){

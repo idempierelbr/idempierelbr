@@ -126,6 +126,7 @@ public class MCPF {
 		}
 		finally{
 			DB.close(rs, pstmt);
+			rs = null; pstmt = null;
 		}
 
 		if (iCPF > 0)
