@@ -227,7 +227,7 @@ public class MLBRDocLineDetailsTax extends MLBRDocLineDetails implements IDocLin
 			
 			if (getLBR_Tax_ID() > 0) {
 				Map<String, BigDecimal> params = new HashMap<String, BigDecimal>();
-				params.put(MLBRTax.SISCOMEX, Env.ZERO);
+				params.put(MLBRTax.SISCOMEX, getLBR_SiscomexAmt());
 				params.put(MLBRTax.INSURANCE, getInsuredAmount());
 				params.put(MLBRTax.FREIGHT, getFreightAmt());
 				params.put(MLBRTax.OTHERCHARGES, getSurcharges());
@@ -253,7 +253,7 @@ public class MLBRDocLineDetailsTax extends MLBRDocLineDetails implements IDocLin
 				BigDecimal reversal = (getLBR_QtyTax().signum() < 0) ? Env.ONE.negate() : Env.ONE;
 				
 				Map<String, BigDecimal> params = new HashMap<String, BigDecimal>();
-				params.put(MLBRTax.SISCOMEX, Env.ZERO.multiply(reversal));
+				params.put(MLBRTax.SISCOMEX, getLBR_SiscomexAmt().multiply(reversal));
 				params.put(MLBRTax.INSURANCE, getInsuredAmount() == null ? Env.ZERO : getInsuredAmount().multiply(reversal));
 				params.put(MLBRTax.FREIGHT, getFreightAmt() == null ? Env.ZERO : getFreightAmt().multiply(reversal));
 				params.put(MLBRTax.OTHERCHARGES, getSurcharges() == null ? Env.ZERO : getSurcharges().multiply(reversal));

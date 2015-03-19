@@ -478,4 +478,12 @@ public interface I_LBR_DocLine_Details
 	  */
 	public int getLBR_NotaFiscalLine_ID();
 
+	/** Column name LBR_SiscomexAmt */
+    public static final String COLUMNNAME_LBR_SiscomexAmt = "LBR_SiscomexAmt";
+
+	/** Set Siscomex Amount	  */
+	public void setLBR_SiscomexAmt (BigDecimal LBR_SiscomexAmt);
+
+	/** Get Siscomex Amount	  */
+	public BigDecimal getLBR_SiscomexAmt();
 }

@@ -674,4 +674,21 @@ public class X_LBR_DocLine_Details extends PO implements I_LBR_DocLine_Details, 
 			 return 0;
 		return ii.intValue();
 	}
+	
+	/** Set Siscomex Amount.
+	@param LBR_SiscomexAmt Siscomex Amount	  */
+	public void setLBR_SiscomexAmt (BigDecimal LBR_SiscomexAmt)
+	{
+		set_Value (COLUMNNAME_LBR_SiscomexAmt, LBR_SiscomexAmt);
+	}
+	
+	/** Get Siscomex Amount.
+		@return Siscomex Amount	  */
+	public BigDecimal getLBR_SiscomexAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_SiscomexAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
 }

@@ -174,6 +174,11 @@ public class DistributeAmtToDetails extends SvrProcess
 							poLinesAmt[i] = poLinesAmt[i].add(details.getSurcharges());
 						
 						details.setSurcharges(poLinesAmt[i]);
+					} else if (p_Target.equals("4")) { // Siscomex
+						if (!p_ResetTarget && details.getLBR_SiscomexAmt() != null)
+							poLinesAmt[i] = poLinesAmt[i].add(details.getLBR_SiscomexAmt());
+						
+						details.setLBR_SiscomexAmt(poLinesAmt[i]);
 					}
 				
 					details.saveEx();

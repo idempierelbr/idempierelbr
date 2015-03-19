@@ -169,7 +169,7 @@ public class MLBRDocLineDetailsNfe extends MLBRDocLineDetailsTax implements IDoc
 			
 			if (getLBR_Tax_ID() > 0) {
 				Map<String, BigDecimal> params = new HashMap<String, BigDecimal>();
-				params.put(MLBRTax.SISCOMEX, Env.ZERO);
+				params.put(MLBRTax.SISCOMEX, getLBR_SiscomexAmt());
 				params.put(MLBRTax.INSURANCE, getInsuredAmount());
 				params.put(MLBRTax.FREIGHT, getFreightAmt());
 				params.put(MLBRTax.OTHERCHARGES, getSurcharges());
