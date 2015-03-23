@@ -402,6 +402,10 @@ public class BradescoGenerate extends SvrProcess
 				LBR_NumberInBank = m_boleto.getLBR_NumberInBank();
 		}
 		
+		// Remove dígito do Nosso Número (caso possua)
+		if (LBR_NumberInBank != null && LBR_NumberInBank.length() == 12)
+			LBR_NumberInBank = LBR_NumberInBank.substring(0, 11);
+		
 		MLBRBankAccountConvenio convenio = new MLBRBankAccountConvenio(getCtx(), p_LBR_BankAccount_Convenio_ID, get_TrxName());
 		
 		if (convenio != null) {
