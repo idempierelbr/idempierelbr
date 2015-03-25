@@ -113,16 +113,18 @@ public class BoletoGenerate extends SvrProcess
 		else
 		{
 			sql = new StringBuilder("SELECT * FROM C_Invoice i ")
-			.append("WHERE DocStatus IN('CO','CL') AND IsSOTrx='Y' AND IsPaid<>'Y' AND PaymentRule='P'")
-			.append(" AND LBR_PayInstrument='BC' AND LBR_CollectionIssueDistrib IN ('BAN','ORG') AND LBR_BankAccount_ID>0");
+			.append("JOIN C_DocType dt ON dt.C_DocType_ID = i.C_DocType_ID ")
+			.append("WHERE i.DocStatus IN('CO','CL') AND i.IsSOTrx='Y' AND i.IsPaid<>'Y' AND i.PaymentRule='P'")
+			.append(" AND i.LBR_PayInstrument='BC' AND i.LBR_CollectionIssueDistrib IN ('BAN','ORG') AND i.LBR_BankAccount_ID>0")
+			.append(" AND dt.DocBaseType='ARI'");
 		if (p_AD_Org_ID != 0)
-			sql.append(" AND AD_Org_ID=?");
+			sql.append(" AND i.AD_Org_ID=?");
 		if (p_C_BPartner_ID != 0)
-			sql.append(" AND C_BPartner_ID=?");
+			sql.append(" AND i.C_BPartner_ID=?");
 		if (p_C_Invoice_ID != 0)
-			sql.append(" AND C_Invoice_ID=?");
+			sql.append(" AND i.C_Invoice_ID=?");
 		if (p_LBR_CollectionIssueDistrib != null)
-			sql.append(" AND LBR_CollectionIssueDistrib=?");
+			sql.append(" AND i.LBR_CollectionIssueDistrib=?");
 		//
 		sql.append(" AND EXISTS (SELECT * FROM C_InvoicePaySchedule ips ")
 				.append("WHERE i.C_Invoice_ID=ips.C_Invoice_ID ");
