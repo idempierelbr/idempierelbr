@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Annotated CNAB240
+Bundle-Name: iDempiereLBR Annotated CNAB240
 Bundle-SymbolicName: org.idempierelbr.cnab240
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
