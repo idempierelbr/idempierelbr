@@ -20,6 +20,7 @@ import org.compiere.model.MRMALine;
 import org.compiere.model.MRMATax;
 import org.compiere.model.MTax;
 import org.compiere.model.MTaxProvider;
+import org.compiere.model.PO;
 import org.compiere.process.ProcessInfo;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
@@ -231,6 +232,18 @@ public class DefaultTaxProvider implements ITaxProvider {
 		  else if (!newOTax.save(order.get_TrxName()))
 				return false;
 		}
+		
+		// add surcharges (vOutro)
+		grandTotal = grandTotal.add(getTotalSurcharges(order));
+		
+		// add freight (vFrete)
+		grandTotal = grandTotal.add(getTotalFreight(order));
+		
+		// add insurance (vSeg)
+		grandTotal = grandTotal.add(getTotalInsurance(order));
+		
+		// subtract discount (vDesc)
+		grandTotal = grandTotal.subtract(getTotalDiscount(order));
 		
 		order.setTotalLines(totalLines);
 		order.setGrandTotal(grandTotal);
@@ -497,6 +510,18 @@ public class DefaultTaxProvider implements ITaxProvider {
 				return false;
 		}
 		
+		// add surcharges (vOutro)
+		grandTotal = grandTotal.add(getTotalSurcharges(invoice));
+		
+		// add freight (vFrete)
+		grandTotal = grandTotal.add(getTotalFreight(invoice));
+		
+		// add insurance (vSeg)
+		grandTotal = grandTotal.add(getTotalInsurance(invoice));
+		
+		// subtract discount (vDesc)
+		grandTotal = grandTotal.subtract(getTotalDiscount(invoice));
+		
 		invoice.setTotalLines(totalLines);
 		invoice.setGrandTotal(grandTotal);
 		return true;	
@@ -755,7 +780,19 @@ public class DefaultTaxProvider implements ITaxProvider {
 			  newOTax.delete(true, rma.get_TrxName());
 		  else if (!newOTax.save(rma.get_TrxName()))
 				return false;
-		}		
+		}	
+		
+		// add surcharges (vOutro)
+		grandTotal = grandTotal.add(getTotalSurcharges(rma));
+		
+		// add freight (vFrete)
+		grandTotal = grandTotal.add(getTotalFreight(rma));
+		
+		// add insurance (vSeg)
+		grandTotal = grandTotal.add(getTotalInsurance(rma));
+		
+		// subtract discount (vDesc)
+		grandTotal = grandTotal.subtract(getTotalDiscount(rma));
 		
 		rma.setAmt(grandTotal);
 		return true;	
@@ -870,5 +907,82 @@ public class DefaultTaxProvider implements ITaxProvider {
 		}
 		return true;
 	}
-
+	
+	private PO[] getLines(PO po) {
+		if (po == null)
+			return null;
+		
+		if (po instanceof MOrder)
+			return ((MOrder)po).getLines();
+		else if (po instanceof MInvoice)
+			return ((MInvoice)po).getLines();
+		else if (po instanceof MRMA)
+			return ((MRMA)po).getLines(false);
+		
+		return null;
+	}
+	
+	private BigDecimal getTotalSurcharges(PO po) {		
+		BigDecimal totalSurcharges = new BigDecimal( 0 );
+		PO lines[] = getLines(po);
+		
+		for (PO poLine : lines) {
+			MLBRDocLineDetailsTax detail = MLBRDocLineDetailsTax.getOfPO(poLine);
+			
+			if (detail != null) {
+				BigDecimal surcharges = detail.getSurcharges();
+				totalSurcharges = totalSurcharges.add( surcharges != null ? surcharges : Env.ZERO );
+			}
+		}
+		
+		return totalSurcharges;
+	}
+	
+	private BigDecimal getTotalFreight(PO po) {
+		BigDecimal totalFreight = new BigDecimal( 0 );
+		PO lines[] = getLines(po);
+		
+		for (PO poLine : lines) {
+			MLBRDocLineDetailsTax detail = MLBRDocLineDetailsTax.getOfPO(poLine);
+			
+			if (detail != null) {
+				BigDecimal freight = detail.getFreightAmt();
+				totalFreight = totalFreight.add( freight != null ? freight : Env.ZERO );
+			}
+		}
+		
+		return totalFreight;
+	}
+	
+	private BigDecimal getTotalInsurance(PO po) {		
+		BigDecimal totalInsurance = new BigDecimal( 0 );
+		PO lines[] = getLines(po);
+		
+		for (PO poLine : lines) {
+			MLBRDocLineDetailsTax detail = MLBRDocLineDetailsTax.getOfPO(poLine);
+			
+			if (detail != null) {
+				BigDecimal insurance = detail.getInsuredAmount();
+				totalInsurance = totalInsurance.add( insurance != null ? insurance : Env.ZERO );
+			}
+		}
+		
+		return totalInsurance;
+	}
+	
+	private BigDecimal getTotalDiscount(PO po) {
+		BigDecimal totalDiscount = new BigDecimal( 0 );
+		PO lines[] = getLines(po);
+		
+		for (PO poLine : lines) {
+			MLBRDocLineDetailsTax detail = MLBRDocLineDetailsTax.getOfPO(poLine);
+			
+			if (detail != null) {
+				BigDecimal discount = detail.getDiscountAmt();
+				totalDiscount = totalDiscount.add( discount != null ? discount : Env.ZERO );
+			}
+		}
+		
+		return totalDiscount;
+	}
 }
