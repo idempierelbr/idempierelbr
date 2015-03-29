@@ -37,6 +37,7 @@ import org.idempierelbr.core.wrapper.I_W_C_BPartner;
 import org.idempierelbr.nfe.model.MLBRDocLineDetailsNfe;
 import org.idempierelbr.nfe.model.MLBRNotaFiscal;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
+import org.idempierelbr.tax.model.MLBRCFOP;
 import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
 import org.idempierelbr.tax.model.MLBRDocLineICMS;
 import org.idempierelbr.tax.model.MLBRDocLineIPI;
@@ -395,6 +396,8 @@ public class NFFromXMLGen
 					infoGroup.InsuredAmount = toBigDecimal(infoGroup.xmlInsuredAmount);
 				}
 				
+				infoGroup.xmlCFOP = eElement.getElementsByTagName("CFOP").item(0).getTextContent();
+				
 				xmlProductMap.put(String.valueOf(temp + 1), infoGroup);
 		    }
 		}
@@ -665,6 +668,19 @@ public class NFFromXMLGen
 			if (details != null) {
 				details.setProductValue(group.xmlValue);
 				details.setProductName(group.xmlName);
+				
+				// CFOP
+				
+				// puts a dot after the first CFOP digit
+				
+				if(group.xmlCFOP != null && !group.xmlCFOP.isEmpty()){
+					String cfopValue = group.xmlCFOP.substring(0,1)+"."+group.xmlCFOP.substring(1,4);
+					
+					MLBRCFOP cfop = MLBRCFOP.getCFOP(Env.getCtx(), cfopValue, trx.getTrxName());
+					
+					if (cfop != null)
+						details.setLBR_CFOP_ID(cfop.get_ID());
+				}
 				
 				// freight and other charges
 				details.setFreightAmt(group.freightAmt);
@@ -1318,6 +1334,7 @@ public class NFFromXMLGen
 		String xmlQty;
 		String xmlUnitPrice;
 		String xmlLineAmt;
+		String xmlCFOP;
 		
 		Integer M_Product_ID;
 		Integer C_Charge_ID;
@@ -1333,5 +1350,5 @@ public class NFFromXMLGen
 		BigDecimal InsuredAmount;
 		
 		MProductPO pPO;
-	}	
+	}
 }
