@@ -168,6 +168,9 @@ public class WCNABGen extends CNABGen implements IFormController, EventListener<
 		MLBRBankAccountCarteira[] carteiras = convenio.getCarteiras();
 		
 		for (MLBRBankAccountCarteira carteira : carteiras) {
+			if (!carteira.isActive())
+				continue;
+			
 			if (carteiraList.length() == 0)
 				carteiraList.append(" / ");
 			else
