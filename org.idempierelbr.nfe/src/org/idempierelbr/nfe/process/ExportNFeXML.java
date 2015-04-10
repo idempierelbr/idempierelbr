@@ -62,6 +62,7 @@ public class ExportNFeXML extends SvrProcess
 		
 		ArrayList<File> files = new ArrayList<File>();
 		StringBuilder sql = new StringBuilder("SELECT * FROM LBR_NotaFiscal nf WHERE ");
+		sql.append("AD_Org_ID=? AND ");
 		
 		if (p_LBR_IsDocIssuedByOrg != null)
 			sql.append("LBR_IsDocIssuedByOrg=? AND ");
@@ -81,6 +82,7 @@ public class ExportNFeXML extends SvrProcess
 		try {
 			int index = 1;
 			pstmt = DB.prepareStatement (sql.toString(), get_TrxName());
+			pstmt.setInt(index++, p_AD_Org_ID);
 			
 			if (p_LBR_IsDocIssuedByOrg != null)
 				pstmt.setString(index++, p_LBR_IsDocIssuedByOrg);
