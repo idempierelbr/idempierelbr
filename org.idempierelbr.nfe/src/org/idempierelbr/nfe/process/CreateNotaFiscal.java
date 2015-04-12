@@ -42,6 +42,7 @@ import org.idempierelbr.core.util.BPartnerUtil;
 import org.idempierelbr.nfe.model.MLBRDocLineDetailsNfe;
 import org.idempierelbr.nfe.model.MLBRNotaFiscal;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
+import org.idempierelbr.nfe.model.MLBRNotaFiscalLineComb;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalPackage;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalPay;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalPaySched;
@@ -181,13 +182,38 @@ public class CreateNotaFiscal extends SvrProcess
 		} else if (po instanceof MInvoice) {
 			bpartnerLoc = new MBPartnerLocation(getCtx(), invoice.getC_BPartner_Location_ID(), get_TrxName());
 		} else if (po instanceof MRMA) {
-			if (rmaInOut.getC_Order_ID() > 0) {
-				if (rmaOrder.getBill_Location_ID() > 0)
-					bpartnerLoc = new MBPartnerLocation(getCtx(), rmaOrder.getBill_Location_ID(), get_TrxName());
-				else
-					bpartnerLoc = new MBPartnerLocation(getCtx(), rmaOrder.getC_BPartner_Location_ID(), get_TrxName());
-			} else {
-				bpartnerLoc = new MBPartnerLocation(getCtx(), rmaInOut.getC_BPartner_Location_ID(), get_TrxName());
+
+			// same bpartner in SO and RMA
+			if (rma.getC_BPartner_ID() == rmaInOut.getC_BPartner_ID()) {
+				if (rmaInOut.getC_Order_ID() > 0) {
+					if (rmaOrder.getBill_Location_ID() > 0)
+						bpartnerLoc = new MBPartnerLocation(getCtx(), rmaOrder.getBill_Location_ID(), get_TrxName());
+					else
+						bpartnerLoc = new MBPartnerLocation(getCtx(), rmaOrder.getC_BPartner_Location_ID(), get_TrxName());
+				} else {
+					bpartnerLoc = new MBPartnerLocation(getCtx(), rmaInOut.getC_BPartner_Location_ID(), get_TrxName());
+				}
+			} 
+			
+			// rma has diff bpartner from source SO, then get default bill address or first
+			else {
+			
+				// get bill
+				MBPartnerLocation[] bpartnerLocs = MBPartnerLocation.getForBPartner(getCtx(), rma.getC_BPartner_ID(), get_TrxName());
+				for (MBPartnerLocation bpartnerLocDefaultBP : bpartnerLocs){
+					if (bpartnerLocDefaultBP.isBillTo()) {
+						bpartnerLoc = bpartnerLocDefaultBP;
+						break;
+					}
+				}
+				
+				// get first
+				if ((bpartnerLoc == null || bpartnerLoc.get_ID() <= 0)){
+					if (bpartnerLocs.length > 0) 
+						bpartnerLoc = bpartnerLocs[0];
+					else 
+						throw new Exception("EndereÃ§o do DestinatÃ¡rio Ã© invalido");
+				} 
 			}
 		}		
 		bpLoc = new MLocation(getCtx(), bpartnerLoc.getC_Location_ID(), get_TrxName());
@@ -333,6 +359,25 @@ public class CreateNotaFiscal extends SvrProcess
 				//details.saveEx();
 				details.copyChildren(MLBRDocLineDetailsTax.getOfPO(poLine));
 			}
+			
+			// Generate Comb information if the product has an ANP Code
+			
+			// Load product:
+			int M_Product_ID = poLine.get_ValueAsInt("M_Product_ID");
+			
+			if(M_Product_ID > 0){
+				MProduct mProduct = new MProduct(getCtx(), M_Product_ID, get_TrxName());
+				
+				String LBR_CodANP = mProduct.get_ValueAsString("LBR_CodANP");
+				
+				if(!LBR_CodANP.isEmpty()){
+					MLBRNotaFiscalLineComb mComb = new MLBRNotaFiscalLineComb(getCtx(), 0, get_TrxName());
+					mComb.setLBR_NotaFiscalLine_ID(nfLine.get_ID());
+					mComb.setLBR_CodANP(LBR_CodANP);
+					mComb.setC_Region_ID(bpRegion.get_ID());
+					mComb.saveEx();
+				}
+			}
 		}
 		
 		// Transp
@@ -413,34 +458,43 @@ public class CreateNotaFiscal extends SvrProcess
 		// Generate Nota Fiscal Pay and Pay Schedule
 		// TODO: Change Pay Sched No. to reflect Boleto
 		if (po instanceof MInvoice) {
+			
+			// 
 			BigDecimal openAmt = Env.ZERO;
-			MInvoicePaySchedule[] scheds = MInvoicePaySchedule.getInvoicePaySchedule(getCtx(),
-					invoice.get_ID(), 0, get_TrxName());
 			
-			for (MInvoicePaySchedule sched : scheds) {
-				openAmt = openAmt.add(sched.getDueAmt());
-			}
+			//
+			MInvoicePaySchedule[] scheds = MInvoicePaySchedule.getInvoicePaySchedule(getCtx(), invoice.get_ID(), 0, get_TrxName());
 			
-			if (openAmt.signum() >= 0) {
-				MLBRNotaFiscalPay pay = new MLBRNotaFiscalPay(getCtx(), 0, get_TrxName());
-				pay.setAD_Org_ID(nf.getAD_Org_ID());
-				pay.setLBR_NotaFiscal_ID(nf.get_ID());
-				pay.setLBR_Document(nf.getDocumentNo());
-				pay.setGrandTotal(openAmt);
-				pay.setNetAmtToInvoice(openAmt);
-				pay.setDiscountAmt(null);
-				pay.saveEx();
+			// check if has sched
+			if (scheds != null && scheds.length > 0) {
 				
-				int no = 1;
-				// Pay Schedule
+				//
 				for (MInvoicePaySchedule sched : scheds) {
-					MLBRNotaFiscalPaySched pSched = new MLBRNotaFiscalPaySched(getCtx(), 0, get_TrxName());
-					pSched.setAD_Org_ID(nf.getAD_Org_ID());
-					pSched.setLBR_NotaFiscalPay_ID(pay.get_ID());
-					pSched.setLBR_Document(nf.getDocumentNo() + "/" + no++);
-					pSched.setDueDate(sched.getDueDate());
-					pSched.setDueAmt(sched.getDueAmt());
-					pSched.saveEx();
+					openAmt = openAmt.add(sched.getDueAmt());
+				}
+				
+				//
+				if (openAmt.signum() >= 0) {
+					MLBRNotaFiscalPay pay = new MLBRNotaFiscalPay(getCtx(), 0, get_TrxName());
+					pay.setAD_Org_ID(nf.getAD_Org_ID());
+					pay.setLBR_NotaFiscal_ID(nf.get_ID());
+					pay.setLBR_Document(nf.getDocumentNo());
+					pay.setGrandTotal(openAmt);
+					pay.setNetAmtToInvoice(openAmt);
+					pay.setDiscountAmt(null);
+					pay.saveEx();
+					
+					int no = 1;
+					// Pay Schedule
+					for (MInvoicePaySchedule sched : scheds) {
+						MLBRNotaFiscalPaySched pSched = new MLBRNotaFiscalPaySched(getCtx(), 0, get_TrxName());
+						pSched.setAD_Org_ID(nf.getAD_Org_ID());
+						pSched.setLBR_NotaFiscalPay_ID(pay.get_ID());
+						pSched.setLBR_Document(nf.getDocumentNo() + "/" + no++);
+						pSched.setDueDate(sched.getDueDate());
+						pSched.setDueAmt(sched.getDueAmt());
+						pSched.saveEx();
+					}
 				}
 			}
 		}
@@ -507,9 +561,11 @@ public class CreateNotaFiscal extends SvrProcess
 		// Document Base Types for IN operation
 		if (docBaseType.equals(MDocType.DOCBASETYPE_APInvoice) ||
 				docBaseType.equals(MDocType.DOCBASETYPE_ARCreditMemo) ||
-				docBaseType.equals(MDocType.DOCBASETYPE_PurchaseOrder) ||
+				(docBaseType.equals(MDocType.DOCBASETYPE_PurchaseOrder) && 
+						!poDocType.getDocSubTypeSO().equals(MDocType.DOCSUBTYPESO_ReturnMaterial))||
 				docBaseType.equals(MDocType.DOCBASETYPE_PurchaseRequisition) ||
-				(docBaseType.equals(MDocType.DOCBASETYPE_SalesOrder) && poDocType.getDocSubTypeSO().equals(MDocType.DOCSUBTYPESO_ReturnMaterial)))
+				(docBaseType.equals(MDocType.DOCBASETYPE_SalesOrder) && 
+						poDocType.getDocSubTypeSO().equals(MDocType.DOCSUBTYPESO_ReturnMaterial)))
 			opType = "0"; // IN		
 		
 		return opType;

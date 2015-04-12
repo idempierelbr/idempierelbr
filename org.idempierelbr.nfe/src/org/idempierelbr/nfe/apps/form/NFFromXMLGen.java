@@ -32,11 +32,13 @@ import org.compiere.process.DocAction;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
 import org.compiere.util.Trx;
+import org.idempierelbr.core.util.AdempiereLBR;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.core.wrapper.I_W_C_BPartner;
 import org.idempierelbr.nfe.model.MLBRDocLineDetailsNfe;
 import org.idempierelbr.nfe.model.MLBRNotaFiscal;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
+import org.idempierelbr.nfe.model.MLBRNotaFiscalLineComb;
 import org.idempierelbr.tax.model.MLBRCFOP;
 import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
 import org.idempierelbr.tax.model.MLBRDocLineICMS;
@@ -396,7 +398,44 @@ public class NFFromXMLGen
 					infoGroup.InsuredAmount = toBigDecimal(infoGroup.xmlInsuredAmount);
 				}
 				
+				// Discount Amt
+				if (eElement.getElementsByTagName("vDesc").item(0) != null) {
+					infoGroup.xmlDiscountAmt = eElement.getElementsByTagName("vDesc").item(0).getTextContent();
+					infoGroup.DiscountAmt = toBigDecimal(infoGroup.xmlDiscountAmt);
+				}
+				
 				infoGroup.xmlCFOP = eElement.getElementsByTagName("CFOP").item(0).getTextContent();
+				
+				// Fuels and Lubricants
+				if (eElement.getElementsByTagName("comb").item(0) != null) {
+					Element comb = (Element) eElement.getElementsByTagName("comb").item(0);
+					
+					// cProdANP
+					infoGroup.xmlcProdANP = comb.getElementsByTagName("cProdANP").item(0).getTextContent();
+					
+					// pMixGN
+					if (eElement.getElementsByTagName("pMixGN").item(0) != null) {
+						infoGroup.xmlpMixGN = eElement.getElementsByTagName("pMixGN").item(0).getTextContent();
+						infoGroup.pMixGN = toBigDecimal(infoGroup.xmlpMixGN);
+					}
+					
+					// CODIF
+					
+					if (eElement.getElementsByTagName("CODIF").item(0) != null) {
+						infoGroup.xmlCODIF = eElement.getElementsByTagName("CODIF").item(0).getTextContent();
+					}
+					
+					// qTemp
+					
+					if (eElement.getElementsByTagName("qTemp").item(0) != null) {
+						infoGroup.xmlqTemp = eElement.getElementsByTagName("qTemp").item(0).getTextContent();
+						infoGroup.qTemp = toBigDecimal(infoGroup.xmlqTemp);
+					}
+					
+					// UFCons
+					
+					infoGroup.xmlUFCons = comb.getElementsByTagName("UFCons").item(0).getTextContent();
+				}
 				
 				xmlProductMap.put(String.valueOf(temp + 1), infoGroup);
 		    }
@@ -517,6 +556,17 @@ public class NFFromXMLGen
 		// Create Trx
 		String trxName = Trx.createTrxName("NFX");
 		Trx trx = Trx.get(trxName, true);
+		
+		// check if NFe already imported
+		if (xmlNFeID != null) {
+			MLBRNotaFiscal oldNF = MLBRNotaFiscal.getNFe(xmlNFeID, trxName);
+			if (oldNF != null && 
+					(oldNF.isStatusAutorizado() && 
+							(oldNF.getDocStatus().equals(MLBRNotaFiscal.DOCSTATUS_Completed) || 
+									oldNF.getDocStatus().equals(MLBRNotaFiscal.DOCSTATUS_Closed))))
+				return "Nota Fiscal jÃ¡ importada anteriormente. NÃºmero: " + xmlDocumentNo;
+		} 
+		
 		
 		// Create Brazilian Fiscal Invoice
 		MLBRNotaFiscal nf = new MLBRNotaFiscal(Env.getCtx(), 0, trx.getTrxName());
@@ -686,6 +736,7 @@ public class NFFromXMLGen
 				details.setFreightAmt(group.freightAmt);
 				details.setSurcharges(group.surCharges);
 				details.setInsuredAmount(group.InsuredAmount);
+				details.setDiscountAmt(group.DiscountAmt);
 				
 				details.saveEx();
 				
@@ -702,6 +753,20 @@ public class NFFromXMLGen
 				// ISSQN
 				createISSQN(Env.getCtx(), details, group.eElement, trx.getTrxName());
 			}
+			
+			// Create Fuel and Lubricants group:
+			
+			if(group.xmlcProdANP != null){
+				MLBRNotaFiscalLineComb nfLineComb = MLBRNotaFiscalLineComb.createFromPO(line);
+				nfLineComb.setLBR_CodANP(group.xmlcProdANP);
+				nfLineComb.setLBR_pMixGN(group.pMixGN);
+				nfLineComb.setLBR_CODIF(group.xmlCODIF);
+				nfLineComb.setLBR_qTemp(group.qTemp);
+				nfLineComb.setC_Region_ID(AdempiereLBR.getC_Region_ID(group.xmlUFCons, trx.getTrxName()));
+				
+				nfLineComb.saveEx();
+			}
+			
 		}
 		
 		nf.calculateTaxTotal();
@@ -1336,6 +1401,16 @@ public class NFFromXMLGen
 		String xmlLineAmt;
 		String xmlCFOP;
 		
+		// Fuel and Lubricants
+		String xmlcProdANP;
+		String xmlpMixGN;
+		String xmlCODIF;
+		String xmlqTemp;
+		String xmlUFCons;
+		
+		BigDecimal pMixGN;
+		BigDecimal qTemp;
+		
 		Integer M_Product_ID;
 		Integer C_Charge_ID;
 		Integer C_UOM_ID;
@@ -1348,6 +1423,9 @@ public class NFFromXMLGen
 		BigDecimal surCharges;
 		String xmlInsuredAmount;
 		BigDecimal InsuredAmount;
+		String xmlDiscountAmt;
+		BigDecimal DiscountAmt;
+
 		
 		MProductPO pPO;
 	}

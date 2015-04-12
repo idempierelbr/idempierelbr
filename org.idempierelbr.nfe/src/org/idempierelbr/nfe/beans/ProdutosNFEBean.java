@@ -43,6 +43,7 @@ public class ProdutosNFEBean {
 	private String xPed;
 	private String nItemPed;
 	private String nFCI;
+	private Comb comb;
 	private List<DeclaracaoDI> DI = new ArrayList<DeclaracaoDI>();
 
 	public String getProd() {
@@ -231,5 +232,11 @@ public class ProdutosNFEBean {
 	}
 	public void setnFCI(String nFCI) {
 		this.nFCI = nFCI;
+	}
+	public Comb getComb() {
+		return comb;
+	}
+	public void setComb(Comb comb) {
+		this.comb = comb;
 	}
 }
