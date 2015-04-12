@@ -18,7 +18,6 @@ import org.idempierelbr.tax.model.MLBRDocLineIPI;
 import org.idempierelbr.tax.model.MLBRDocLineISSQN;
 import org.idempierelbr.tax.model.MLBRDocLineImportTax;
 import org.idempierelbr.tax.model.MLBRDocLinePIS;
-import org.idempierelbr.tax.model.MLBRICMSMatrix;
 
 public class NotaFiscalCreatePO extends SvrProcess
 {
@@ -168,6 +167,7 @@ public class NotaFiscalCreatePO extends SvrProcess
 					}
 					
 					olDetails.copyFrom(nflDetails);
+					olDetails.saveEx();
 					olDetails.copyChildren(MLBRDocLineDetailsNfe.getOfPO(nfLine));
 				}
 			}
