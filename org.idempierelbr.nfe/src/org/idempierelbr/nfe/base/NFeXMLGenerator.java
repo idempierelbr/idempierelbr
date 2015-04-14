@@ -40,6 +40,7 @@ import org.idempierelbr.nfe.beans.ChaveNFE;
 import org.idempierelbr.nfe.beans.Cobranca;
 import org.idempierelbr.nfe.beans.CobrancaGrupoDuplicata;
 import org.idempierelbr.nfe.beans.CobrancaGrupoFatura;
+import org.idempierelbr.nfe.beans.Comb;
 import org.idempierelbr.nfe.beans.DadosNFE;
 import org.idempierelbr.nfe.beans.DeclaracaoDI;
 import org.idempierelbr.nfe.beans.DetalhesProdServBean;
@@ -79,6 +80,7 @@ import org.idempierelbr.nfe.model.MLBRDocLineDetailsNfe;
 import org.idempierelbr.nfe.model.MLBRNotaFiscal;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalDocRef;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
+import org.idempierelbr.nfe.model.MLBRNotaFiscalLineComb;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalPackage;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalPay;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalPaySched;
@@ -800,6 +802,16 @@ public class NFeXMLGenerator {
 				produtos.setvOutro(TextUtil.bigdecimalToString(details.getSurcharges()));
 			
 			produtos.setIndTot(details.isLBR_IsGrossAmtInTotal() ? "1" : "0");
+			
+			// Combustíveis e lubrificantes
+			MLBRNotaFiscalLineComb mNFLineComb = MLBRNotaFiscalLineComb.getOfPO(nfLine);
+			
+			if(mNFLineComb != null){
+				Comb comb = new Comb();
+				comb.setcProdANP(mNFLineComb.getLBR_CodANP());
+				comb.setUFCons(mNFLineComb.getC_Region().getName());
+				produtos.setComb(comb);
+			}
 			
 			// Declaração de Importação
 			if (cfopName.startsWith("3")) {
