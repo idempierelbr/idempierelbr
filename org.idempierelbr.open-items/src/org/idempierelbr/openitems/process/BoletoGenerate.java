@@ -114,9 +114,9 @@ public class BoletoGenerate extends SvrProcess
 		{
 			sql = new StringBuilder("SELECT * FROM C_Invoice i ")
 			.append("JOIN C_DocType dt ON dt.C_DocType_ID = i.C_DocType_ID ")
-			.append("WHERE i.DocStatus IN('CO','CL') AND i.IsSOTrx='Y' AND i.IsPaid<>'Y' AND i.PaymentRule='P'")
-			.append(" AND i.LBR_PayInstrument='BC' AND i.LBR_CollectionIssueDistrib IN ('BAN','ORG') AND i.LBR_BankAccount_ID>0")
-			.append(" AND dt.DocBaseType='ARI'");
+			.append("WHERE i.DocStatus IN('CO','CL') AND ((i.IsSOTrx='Y' AND dt.DocBaseType='ARI') OR (i.IsSOTrx='N' AND dt.DocBaseType='APC'))")
+			.append(" AND i.IsPaid<>'Y' AND i.PaymentRule='P'")
+			.append(" AND i.LBR_PayInstrument='BC' AND i.LBR_CollectionIssueDistrib IN ('BAN','ORG') AND i.LBR_BankAccount_ID>0");
 		if (p_AD_Org_ID != 0)
 			sql.append(" AND i.AD_Org_ID=?");
 		if (p_C_BPartner_ID != 0)
@@ -329,6 +329,9 @@ public class BoletoGenerate extends SvrProcess
 				
 				if (GrandTotal == null)
 					GrandTotal = sched.getDueAmt();
+				
+				if (!invoice.isSOTrx())
+					GrandTotal = GrandTotal.multiply(new BigDecimal(-1));
 			}
 		} catch (SQLException e) {
 			log.log (Level.SEVERE, sql, e);
