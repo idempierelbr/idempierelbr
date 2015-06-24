@@ -47,7 +47,10 @@ import org.idempierelbr.nfe.model.MLBRNotaFiscalPackage;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalPay;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalPaySched;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalTransp;
+import org.idempierelbr.tax.model.I_LBR_LegalMessage;
 import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
+import org.idempierelbr.tax.model.MLBRTax;
+import org.idempierelbr.tax.model.MLBRTaxLine;
 
 public class CreateNotaFiscal extends SvrProcess
 {
@@ -360,6 +363,21 @@ public class CreateNotaFiscal extends SvrProcess
 				details.copyChildren(MLBRDocLineDetailsTax.getOfPO(poLine));
 			}
 			
+			// Add fiscal information
+			int LBR_Tax_ID = details.getLBR_Tax_ID();
+			
+			if (LBR_Tax_ID > 0) {
+				MLBRTax lineTax = new MLBRTax(getCtx(), LBR_Tax_ID, get_TrxName());
+				MLBRTaxLine[] taxes = lineTax.getLines();
+				
+				for (MLBRTaxLine tax : taxes) {
+					I_LBR_LegalMessage legalMessage = tax.getLBR_LegalMessage();
+					
+					if (legalMessage != null)
+						appendLegalMessage(nf, legalMessage);
+				}
+			}	
+			
 			// Generate Comb information if the product has an ANP Code
 			
 			// Load product:
@@ -515,6 +533,21 @@ public class CreateNotaFiscal extends SvrProcess
 		return "Ok";
 	}
 	
+	private void appendLegalMessage(MLBRNotaFiscal nf, I_LBR_LegalMessage legalMessage) {
+		String legalMessageValue = legalMessage.getValue();
+		
+		if (nf == null || legalMessage == null || legalMessageValue == null)
+			return;
+		
+		String fiscalInfo = nf.getLBR_FiscalInfo();
+		
+		if (fiscalInfo == null)
+			fiscalInfo = "";
+		
+		if (!fiscalInfo.contains(legalMessageValue))
+			nf.setLBR_FiscalInfo(fiscalInfo.concat(legalMessageValue));
+	}
+
 	private BigDecimal getQtyBaseOnShipments() {
 		if (po instanceof MRMA) {
 			MRMA rma = (MRMA)po;
