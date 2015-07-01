@@ -183,7 +183,30 @@ public class StubConnector {
 		String result = null;
 		
 		if (service.equals(MLBRNFeWebService.SERVICE_NFE_INUTILIZACAO)) {
-		
+			// Header
+			org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub.NfeCabecMsg cabecMsg =
+					new org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub.NfeCabecMsg();
+			org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub.NfeCabecMsgE cabecMsgE =
+					new org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub.NfeCabecMsgE();
+			cabecMsg.setCUF(region.get_ValueAsString("LBR_RegionCode"));
+			cabecMsg.setVersaoDados(versionNo);
+			cabecMsgE.setNfeCabecMsg(cabecMsg);
+			try {
+				// Message
+				org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub.NfeDadosMsg dadosMsg =
+						org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub.NfeDadosMsg.Factory.parse(reader);
+				
+				OMElement ome = addAttribute(dadosMsg.getExtraElement(), "evento", "xmlns", "http://www.portalfiscal.inf.br/nfe");			  
+				dadosMsg.setExtraElement(ome);
+				
+				// Stub
+				org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub stub =
+						new org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub(url);
+				result = stub.nfeInutilizacaoNF2(dadosMsg, cabecMsgE).getExtraElement().toString();
+			} catch (Exception e) {
+				e.printStackTrace();
+				return null;
+			}
 		} else if (service.equals(MLBRNFeWebService.SERVICE_NFE_CONSULTA_PROTOCOLO)) {
 
 		} else if (service.equals(MLBRNFeWebService.SERVICE_NFE_STATUS_SERVICO)) {

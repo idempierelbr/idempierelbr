@@ -5510,6 +5510,10 @@
   <value column="Name" original="Off-line">Contingência Off-line</value>
   <value column="Description" original=""/>
  </row>
+ <row id="800026" trl="N">
+  <value column="Name" original="Siscomex">Siscomex</value>
+  <value column="Description" original=""/>
+ </row>
  <row trl="Y" uuid="2facadde-7b9b-4619-9161-8f9fe50b2b19">
   <value column="Name" original="No specific release">PJ - Pessoa Jurídica</value>
   <value column="Description" original="No specific release"/>

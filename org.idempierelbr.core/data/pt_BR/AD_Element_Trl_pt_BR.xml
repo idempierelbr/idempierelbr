@@ -56217,6 +56217,206 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="800094" trl="N">
+  <value column="Name" original="Exception">Exception</value>
+  <value column="PrintName" original="Exception">Exception</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800095" trl="N">
+  <value column="Name" original="Federal Tax (Domestic Products)">Federal Tax (Domestic Products)</value>
+  <value column="PrintName" original="Federal Tax (Domestic)">Federal Tax (Domestic)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800096" trl="N">
+  <value column="Name" original="Federal Tax (Imported Products)">Federal Tax (Imported Products)</value>
+  <value column="PrintName" original="Federal Tax (Imported)">Federal Tax (Imported)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800097" trl="N">
+  <value column="Name" original="State Tax">State Tax</value>
+  <value column="PrintName" original="State Tax">State Tax</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800098" trl="N">
+  <value column="Name" original="Municipal Tax">Municipal Tax</value>
+  <value column="PrintName" original="Municipal Tax">Municipal Tax</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800099" trl="N">
+  <value column="Name" original="IBPTax">IBPTax</value>
+  <value column="PrintName" original="IBPTax">IBPTax</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800100" trl="N">
+  <value column="Name" original="IBPTax">IBPTax</value>
+  <value column="PrintName" original="IBPTax">IBPTax</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800101" trl="N">
+  <value column="Name" original="IBPTax Key">IBPTax Key</value>
+  <value column="PrintName" original="IBPTax Key">IBPTax Key</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800102" trl="N">
+  <value column="Name" original="Source">Source</value>
+  <value column="PrintName" original="Source">Source</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800103" trl="N">
+  <value column="Name" original="Siscomex Amount">Siscomex Amount</value>
+  <value column="PrintName" original="Siscomex Amt">Siscomex Amt</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800104" trl="N">
+  <value column="Name" original="ANP Code">ANP Code</value>
+  <value column="PrintName" original="ANP Code">ANP Code</value>
+  <value column="Description" original="Product Code issued by the brazilian National Petrol Agency to fuels and lubricants.">Product Code issued by the brazilian National Petrol Agency to fuels and lubricants.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800105" trl="N">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Line Comb">Brazilian Fiscal Invoice (Nota Fiscal) Line Comb</value>
+  <value column="PrintName" original="Nota Fiscal Line Comb">Nota Fiscal Line Comb</value>
+  <value column="Description" original="Brazilian Fiscal Invoice (Nota Fiscal) Line Comb Identifier">Brazilian Fiscal Invoice (Nota Fiscal) Line Comb Identifier</value>
+  <value column="Help" original="The Brazilian Fiscal Invoice (Nota Fiscal) Line Comb">The Brazilian Fiscal Invoice (Nota Fiscal) Line Comb</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800106" trl="N">
+  <value column="Name" original="Brazilian Fiscal Invoice (Nota Fiscal) Line Comb">Brazilian Fiscal Invoice (Nota Fiscal) Line Comb</value>
+  <value column="PrintName" original="Nota Fiscal Line Comb">Nota Fiscal Line Comb</value>
+  <value column="Description" original="Brazilian Fiscal Invoice (Nota Fiscal) Line Comb Identifier">Brazilian Fiscal Invoice (Nota Fiscal) Line Comb Identifier</value>
+  <value column="Help" original="The Brazilian Fiscal Invoice (Nota Fiscal) Line Comb">The Brazilian Fiscal Invoice (Nota Fiscal) Line Comb</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800107" trl="N">
+  <value column="Name" original="CODIF Authorisation Code">CODIF Authorisation Code</value>
+  <value column="PrintName" original="CODIF Authorisation Code">CODIF Authorisation Code</value>
+  <value column="Description" original="CODIF Authorisation Code">CODIF Authorisation Code</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800108" trl="N">
+  <value column="Name" original="Natural Gas Mix Percent">Natural Gas Mix Percent</value>
+  <value column="PrintName" original="Natural Gas Mix Percent">Natural Gas Mix Percent</value>
+  <value column="Description" original="Natural gas mix percent in a LPG product.">Natural gas mix percent in a LPG product.</value>
+  <value column="Help" original="Natural gas mix percent in a LPG product.">Natural gas mix percent in a LPG product.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800109" trl="N">
+  <value column="Name" original="Amount of fuel at room temperature">Amount of fuel at room temperature</value>
+  <value column="PrintName" original="Amount of fuel at room temperature">Amount of fuel at room temperature</value>
+  <value column="Description" original="Amount of fuel sold at room temperature">Amount of fuel sold at room temperature</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800110" trl="N">
+  <value column="Name" original="Unused NF-e Numbering">Unused NF-e Numbering</value>
+  <value column="PrintName" original="Unused NF-e Numbering">Unused NF-e Numbering</value>
+  <value column="Description" original="Identifies a Unused NF-e Numbering">Identifies a Unused NF-e Numbering</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800111" trl="N">
+  <value column="Name" original="Unused NF-e Numbering">Unused NF-e Numbering</value>
+  <value column="PrintName" original="Unused NF-e Numbering">Unused NF-e Numbering</value>
+  <value column="Description" original="Identifies a Unused NF-e Numbering">Identifies a Unused NF-e Numbering</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800112" trl="Y">
+  <value column="Name" original="Number (Start)">Número Inicial</value>
+  <value column="PrintName" original="Number (Start)">Número Inicial</value>
+  <value column="Description" original="Indicates the start number">Indica o Número Inicial</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800113" trl="Y">
+  <value column="Name" original="Number (End)">Número Final</value>
+  <value column="PrintName" original="Number (End)">Número Final</value>
+  <value column="Description" original="Indicates the end number">Indica o Número Final</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row trl="Y" uuid="2db1c9d3-13bf-4539-baa0-45ccfb09a7a3">
   <value column="Name" original="Cód. Cidade (IBGE)">Cód. Cidade (IBGE)</value>
   <value column="PrintName" original="Cód. Cidade (IBGE)">Cód. Cidade (IBGE)</value>

@@ -52,8 +52,10 @@ public class ModelFactory implements IModelFactory {
 			return MLBRNotaFiscalEvent.class;
 		else if (tableName.equals(MLBRNotaFiscalEventLine.Table_Name)) // Model MLBRNotaFiscalEventLine
 			return MLBRNotaFiscalEventLine.class;
-		else if (tableName.equals(MLBRNotaFiscalDI.Table_Name)) // Model MLBRNotaFiscalEventLine
+		else if (tableName.equals(MLBRNotaFiscalDI.Table_Name)) // Model MLBRNotaFiscalDI
 			return MLBRNotaFiscalDI.class;
+		else if (tableName.equals(MLBRNotaFiscalInut.Table_Name)) // Model MLBRNotaFiscalInut
+			return MLBRNotaFiscalInut.class;
 		
 		return null;
 	}
@@ -96,8 +98,10 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRNotaFiscalEvent(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRNotaFiscalEventLine.Table_Name)) // Model MLBRNotaFiscalEventLine
 			return new MLBRNotaFiscalEventLine(Env.getCtx(), Record_ID, trxName);
-		else if (tableName.equals(MLBRNotaFiscalDI.Table_Name)) // Model MLBRNotaFiscalEventLine
+		else if (tableName.equals(MLBRNotaFiscalDI.Table_Name)) // Model MLBRNotaFiscalDI
 			return new MLBRNotaFiscalDI(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRNotaFiscalInut.Table_Name)) // Model MLBRNotaFiscalInut
+			return new MLBRNotaFiscalInut(Env.getCtx(), Record_ID, trxName);
 		
 		return null;
 	}
@@ -140,8 +144,10 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRNotaFiscalEvent(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRNotaFiscalEventLine.Table_Name)) // MLBRNotaFiscalEventLine
 			return new MLBRNotaFiscalEventLine(Env.getCtx(), rs, trxName);
-		else if (tableName.equals(MLBRNotaFiscalDI.Table_Name)) // Model MLBRNotaFiscalEventLine
+		else if (tableName.equals(MLBRNotaFiscalDI.Table_Name)) // Model MLBRNotaFiscalDI
 			return new MLBRNotaFiscalDI(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRNotaFiscalInut.Table_Name)) // Model MLBRNotaFiscalInut
+			return new MLBRNotaFiscalInut(Env.getCtx(), rs, trxName);
 		
 		return null;
 	}

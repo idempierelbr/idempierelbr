@@ -30,6 +30,8 @@ public class ProcessFactory implements IProcessFactory {
 			return new NotaFiscalCreatePO();
 		else if (className.equals("org.idempierelbr.nfe.process.ExportNFeXML"))
 			return new ExportNFeXML();
+		else if (className.equals("org.idempierelbr.nfe.process.InutNotaFiscal"))
+			return new InutNotaFiscal();
 		else
 			return null;
 	}

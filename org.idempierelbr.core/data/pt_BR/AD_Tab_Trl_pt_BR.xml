@@ -6378,6 +6378,18 @@ Printing:
   <value column="Description" original="Brazilian Fiscal Invoice (Nota Fiscal) DI">Declaração de Importação (DI)</value>
   <value column="Help" original="The Brazilian Fiscal Invoice (Nota Fiscal) DI Tab displays information about selected DIs.">A aba permite referenciar DIs anteriormente registradas no sistema.</value>
  </row>
+ <row id="800006" trl="N">
+  <value column="Name" original="Fiscal Invoice Line Comb">Fiscal Invoice Line Comb</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Fiscal Invoice Line Comb">Fiscal Invoice Line Comb</value>
+  <value column="Help" original="Fiscal Invoice Line Fuels and Lubricants Information.">Fiscal Invoice Line Fuels and Lubricants Information.</value>
+ </row>
+ <row id="800007" trl="Y">
+  <value column="Name" original="NF-e Unused Numbering">Numeração Inutilizada de NF-e</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="NF-e Unused Numbering Entries">Registro de Inutilização de Nota Fiscal (na Sefaz)</value>
+  <value column="Help" original=""/>
+ </row>
  <row trl="Y" uuid="07721587-32fd-4a79-b306-94c8ed672f52">
   <value column="Name" original="NCM">NCM</value>
   <value column="CommitWarning" original=""/>

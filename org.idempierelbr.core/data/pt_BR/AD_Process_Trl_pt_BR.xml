@@ -2195,6 +2195,16 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original="Boleto Open Report">Relatório de Boletos em Aberto</value>
   <value column="Help" original="">Esse relatório apresenta informações de boletos processados e não pagos/baixados (e seu último movimento, se existir).</value>
  </row>
+ <row id="800007" trl="N">
+  <value column="Name" original="Import IBPTax">Import IBPTax</value>
+  <value column="Description" original="Import IBPTax file provided by IBPT">Import IBPTax file provided by IBPT</value>
+  <value column="Help" original="This process allows to import a tax file provided by IBPT.">This process allows to import a tax file provided by IBPT.</value>
+ </row>
+ <row id="800008" trl="Y">
+  <value column="Name" original="Void NF-e Numbering">Inutilizar Numeração de NF-e</value>
+  <value column="Description" original="Void NF-e Numbering Sequence">Inutilizar Sequência de Numeração de NF-e</value>
+  <value column="Help" original="">Este processo permite inutilizar uma numeração de NF-e. No campo Número do Documento, informe o intervalo de números. Caso estiver inutilizando apenas um número, informe-o nos dois campos. No campo Justificativa é necessário no mínimo 15 caracteres, e no máximo 255. Os pedidos de inutilização ficam registrados na janela Numeração Inutilizada de NF-e, com o XML anexado.</value>
+ </row>
  <row trl="N" uuid="e6df0503-5f93-4a2c-abe6-0c425cc138e9">
   <value column="Name" original="Process NotaFiscal">Process NotaFiscal</value>
   <value column="Description" original=""/>
