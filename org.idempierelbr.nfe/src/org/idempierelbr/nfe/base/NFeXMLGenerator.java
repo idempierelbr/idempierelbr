@@ -104,12 +104,6 @@ import com.thoughtworks.xstream.XStream;
 public class NFeXMLGenerator {
 	/** Log				*/
 	private static CLogger log = CLogger.getCLogger(NFeXMLGenerator.class);
-
-	/** XML File Extension */
-	public static final String FILE_EXT = "-nfe.xml";
-	
-	/** XML Distribution File Extension */
-	public static final String DISTRIBUTION_FILE_EXT = "-dst.xml";
 	
 	/**
 	 * Gera o corpo da NF
@@ -1324,7 +1318,7 @@ public class NFeXMLGenerator {
 		}
 
 		String nfeID = dados.getId().substring(3);
-		String arquivoXML = nfeID + FILE_EXT;
+		String arquivoXML = nfeID + MLBRNotaFiscal.INDIVIDUAL_FILE_EXT;
 		String NFeEmXML = NFeUtil.geraCabecNFe() + TextUtil.removeEOL(xstream.toXML(dados)) + NFeUtil.geraRodapNFe();
 		
 		try

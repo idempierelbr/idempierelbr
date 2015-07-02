@@ -30,6 +30,10 @@ import com.thoughtworks.xstream.XStream;
 public class MLBRNotaFiscalInut extends X_LBR_NotaFiscalInut {
 
 	private static final long serialVersionUID = -5437720661465297525L;
+	
+	public static final String PEDIDO_FILE_EXT = "-ped-inu.xml";
+	public static final String RESPOSTA_FILE_EXT = "-inu.xml";
+	public static final String DISTRIBUICAO_FILE_EXT = "-procInutNfe.xml";
 
 	public MLBRNotaFiscalInut(Properties ctx, int LBR_NotaFiscalInut_ID,
 			String trxName) {
@@ -87,7 +91,7 @@ public class MLBRNotaFiscalInut extends X_LBR_NotaFiscalInut {
 		Trx.get(get_TrxName(), false).commit();
 		
 		MAttachment attachLotNFe = createAttachment();
-		File attachFile = new File(TextUtil.generateTmpFile(result, xmlFile.getName().replace("-ped-inu.xml", "-inu.xml")));
+		File attachFile = new File(TextUtil.generateTmpFile(result, xmlFile.getName().replace(PEDIDO_FILE_EXT, DISTRIBUICAO_FILE_EXT)));
 		attachLotNFe.addEntry(attachFile);
 		attachLotNFe.saveEx(get_TrxName());
 		
@@ -187,7 +191,7 @@ public class MLBRNotaFiscalInut extends X_LBR_NotaFiscalInut {
 		
 		String inutMsg = NFeUtil.removeIndent(inut.toString());
 		
-		String xmlFile = TextUtil.generateTmpFile(inutMsg, iNF.getID() + "-ped-inu.xml");
+		String xmlFile = TextUtil.generateTmpFile(inutMsg, iNF.getID() + PEDIDO_FILE_EXT);
 		log.fine("Signing NF-e XML");
 		AssinaturaDigital.Assinar(xmlFile, orgInfo, AssinaturaDigital.INUTILIZACAO_NFE);
 		

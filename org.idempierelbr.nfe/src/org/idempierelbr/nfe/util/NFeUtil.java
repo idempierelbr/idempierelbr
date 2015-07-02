@@ -30,6 +30,7 @@ import org.compiere.model.MAttachmentEntry;
 import org.compiere.util.CLogger;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.nfe.model.MLBRNotaFiscal;
+import org.idempierelbr.nfe.model.MLBRNotaFiscalEvent;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -270,9 +271,9 @@ public abstract class NFeUtil
 			return attach;
 		
 		if (nf.isStatusAutorizado())
-			fileExt = "-dst.xml";
+			fileExt = MLBRNotaFiscal.DISTRIBUICAO_FILE_EXT;
 		else if (nf.isStatusCancelado())
-			fileExt = "-can.xml";
+			fileExt = MLBRNotaFiscalEvent.INDIVIDUAL_CANCELAMENTO_FILE_EXT;
 
 		File xml = getAttachmentEntryFile(nf.getAttachment().getEntry(0));
 		if (xml == null || xml.getName().endsWith(fileExt)) // Já está no padrão de distribuição

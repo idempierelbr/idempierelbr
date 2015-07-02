@@ -77,6 +77,12 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	/** XML File Extension */
+	public static final String INDIVIDUAL_FILE_EXT = "-nfe.xml";
+	
+	/** XML Distribution File Extension */
+	public static final String DISTRIBUICAO_FILE_EXT = "-procNfe.xml";
 
 	/**	Logger			*/
 	private static CLogger log = CLogger.getCLogger(MLBRNotaFiscal.class);
@@ -420,7 +426,7 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 			
 			for (int i = attachNFe.getEntryCount() - 1; i >= 0; i--) 
 			{
-				if (attachNFe.getEntry(i).getName().endsWith(NFeXMLGenerator.FILE_EXT))
+				if (attachNFe.getEntry(i).getName().endsWith(INDIVIDUAL_FILE_EXT))
 					attachNFe.deleteEntry(i);
 				
 				attachNFe.saveEx(get_TrxName());
@@ -1026,11 +1032,13 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		for (int i = 0 ; i < attachNFe.getEntryCount() ; i++) 
 		{
 			MAttachmentEntry entry = attachNFe.getEntry(i);
-			if (entry.getName().endsWith(NFeXMLGenerator.DISTRIBUTION_FILE_EXT)) {
+			if (entry.getName().endsWith(DISTRIBUICAO_FILE_EXT)) {
 				xmlInputStream = entry.getInputStream();
 			}
 
-			if (entry.getName().endsWith("-procEventoNFe.xml")) {
+			if (entry.getName().endsWith(MLBRNotaFiscalEvent.DISTRIBUICAO_FILE_EXT) ||
+					entry.getName().endsWith("-procEventoNFe.xml")) // Preserved for backward compatibility
+			{
 				try {
 					events += IOUtils.toString(entry.getInputStream());
 				} catch (IOException e) {

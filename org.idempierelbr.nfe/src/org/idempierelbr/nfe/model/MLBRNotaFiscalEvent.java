@@ -55,6 +55,11 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 	 * 
 	 */
 	private static final long serialVersionUID = -5008981170781809596L;
+	
+	public static final String INDIVIDUAL_CORRECAO_FILE_EXT = "-cce.xml";
+	public static final String INDIVIDUAL_CANCELAMENTO_FILE_EXT = "-can.xml";
+	public static final String RESPOSTA_FILE_EXT = "-pro-eve.xml";
+	public static final String DISTRIBUICAO_FILE_EXT = "-procEventoNfe.xml";
 
 	public MLBRNotaFiscalEvent(Properties ctx, int LBR_NotaFiscalEvent_ID,
 			String trxName) {
@@ -184,7 +189,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 			return "Could not connect to webservice. Please try again later";
 		
 		MAttachment attachLotNFe = createAttachment();
-		File attachFile = new File(TextUtil.generateTmpFile(result, getDocumentNo() + "-pro-eve.xml"));
+		File attachFile = new File(TextUtil.generateTmpFile(result, getDocumentNo() + RESPOSTA_FILE_EXT));
 		attachLotNFe.addEntry(attachFile);
 		attachLotNFe.saveEx(get_TrxName());
 		
@@ -262,7 +267,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 					if ( cStat.equals("135") || cStat.equals("136") || cStat.equals("155") ) {
 						MAttachment attachNFe = nf.createAttachment();
 						File attachFile = new File(TextUtil.generateTmpFile(  generateDistributionXMLString ( sent , node )  , chNFe + "_"
-								+ tpEvento + ( nSeqEvento.equals("1") ? "" : "_"+nSeqEvento ) + "-procEventoNFe.xml"));
+								+ tpEvento + ( nSeqEvento.equals("1") ? "" : "_"+nSeqEvento ) + DISTRIBUICAO_FILE_EXT));
 						attachNFe.addEntry(attachFile);
 						attachNFe.saveEx(get_TrxName());
 					}
@@ -374,7 +379,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 				StringWriter sw = new StringWriter();
 				xstream.marshal(evento, new CompactWriter(sw));
 				StringBuilder xml = new StringBuilder(sw.toString());
-				String xmlFile = TextUtil.generateTmpFile(xml.toString(), cce.getId() + "-cce.xml");
+				String xmlFile = TextUtil.generateTmpFile(xml.toString(), cce.getId() + INDIVIDUAL_CORRECAO_FILE_EXT);
 				
 				log.fine("Signing NF-e XML");
 				AssinaturaDigital.Assinar(xmlFile, orgInfo, AssinaturaDigital.CARTADECORRECAO_CCE);
@@ -432,7 +437,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 				StringWriter sw = new StringWriter();
 				xstream.marshal(evento, new CompactWriter(sw));
 				StringBuilder xml = new StringBuilder(sw.toString());
-				String xmlFile = TextUtil.generateTmpFile (xml.toString(), cancel.getId() + "-can.xml");
+				String xmlFile = TextUtil.generateTmpFile (xml.toString(), cancel.getId() + INDIVIDUAL_CANCELAMENTO_FILE_EXT);
 				
 				log.fine("Signing NF-e XML");
 				AssinaturaDigital.Assinar(xmlFile, orgInfo, AssinaturaDigital.CARTADECORRECAO_CCE);

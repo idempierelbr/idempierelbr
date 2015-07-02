@@ -35,6 +35,11 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 	 * 
 	 */
 	private static final long serialVersionUID = 8204166675147122969L;
+	
+	public static final String PEDIDO_FILE_EXT = "-env-lot.xml";
+	public static final String RESPOSTA_PEDIDO_FILE_EXT = "-rec.xml";
+	public static final String CONSULTA_RECIBO_FILE_EXT = "-ped-rec.xml";
+	public static final String RESPOSTA_RECIBO_FILE_EXT = "-proc-rec.xml";
 
 	public MLBRNotaFiscalLot(Properties ctx, int LBR_NotaFiscalLot_ID,
 			String trxName) {
@@ -107,7 +112,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 			throw new Exception(error);
 		}*/
 
-		File attachFile = new File(TextUtil.generateTmpFile(xmlLot.toString(), getDocumentNo() + "-env-lot.xml"));
+		File attachFile = new File(TextUtil.generateTmpFile(xmlLot.toString(), getDocumentNo() + PEDIDO_FILE_EXT));
 
 		//Verificação tamanho do Arquivo - Erro 214 / Tamanho Arquivo
 		String error = NFeUtil.validateSize(attachFile);
@@ -180,7 +185,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 			return validation;*/
 
 		MAttachment attachLotNFe = createAttachment();
-		File attachFile = new File(TextUtil.generateTmpFile(result, getDocumentNo() + "-rec.xml"));
+		File attachFile = new File(TextUtil.generateTmpFile(result, getDocumentNo() + RESPOSTA_PEDIDO_FILE_EXT));
 		attachLotNFe.addEntry(attachFile);
 		attachLotNFe.saveEx(get_TrxName());
 		
@@ -311,7 +316,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 			return "Could not connect to webservice. Please try again later";
 		
 		MAttachment attachLotNFe = createAttachment();
-		File attachFile = new File(TextUtil.generateTmpFile(result, getDocumentNo() + "-pro-rec.xml"));
+		File attachFile = new File(TextUtil.generateTmpFile(result, getDocumentNo() + RESPOSTA_RECIBO_FILE_EXT));
 		attachLotNFe.addEntry(attachFile);
 		attachLotNFe.saveEx(get_TrxName());
 
@@ -399,7 +404,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 							
 							for (int i = attachNFe.getEntryCount() - 1; i >= 0; i--) 
 							{
-								if (attachNFe.getEntry(i).getName().endsWith(NFeXMLGenerator.FILE_EXT))
+								if (attachNFe.getEntry(i).getName().endsWith(MLBRNotaFiscal.INDIVIDUAL_FILE_EXT))
 									attachNFe.deleteEntry(i);
 								
 								attachNFe.saveEx(get_TrxName());
@@ -436,7 +441,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 				MAttachment attachNFe = nf.getAttachment();
 				
 				for (int i = attachNFe.getEntryCount() - 1; i >= 0; i--) {
-					if (attachNFe.getEntry(i).getName().endsWith(NFeXMLGenerator.FILE_EXT)) {
+					if (attachNFe.getEntry(i).getName().endsWith(MLBRNotaFiscal.INDIVIDUAL_FILE_EXT)) {
 						//xmlArray.add(convertStreamToString(attachNFe.getEntry(i).getInputStream()));
 						xmlArray.add(attachNFe.getEntry(i).getFile().toString());
 					}
