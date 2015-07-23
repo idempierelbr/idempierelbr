@@ -84,6 +84,12 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	/** XML Distribution File Extension */
 	public static final String DISTRIBUICAO_FILE_EXT = "-procNfe.xml";
 
+	/** Old XML file extension **/
+	public static final String DISTRIBUICAO_OLD_FILE_EXT = "-dst.xml";
+	
+	/** Prefix for Imported XML Files */
+	private static final String IMPORTED_FILE_PREFIX = "GenNFFromXML_";
+
 	/**	Logger			*/
 	private static CLogger log = CLogger.getCLogger(MLBRNotaFiscal.class);
 
@@ -98,6 +104,7 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	
 	private static Integer GENERATE_DANFE_PROCESS_ID;
 	private final static String JASPER_FILENAME = "DanfeMainPortraitA4.jasper";
+
 
 	/**************************************************************************
 	 *  Default Constructor
@@ -1032,7 +1039,9 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		for (int i = 0 ; i < attachNFe.getEntryCount() ; i++) 
 		{
 			MAttachmentEntry entry = attachNFe.getEntry(i);
-			if (entry.getName().endsWith(DISTRIBUICAO_FILE_EXT)) {
+			if (entry.getName().endsWith(DISTRIBUICAO_FILE_EXT) 
+					|| entry.getName().endsWith(DISTRIBUICAO_OLD_FILE_EXT)
+					|| entry.getName().startsWith(IMPORTED_FILE_PREFIX)) {
 				xmlInputStream = entry.getInputStream();
 			}
 
@@ -1079,12 +1088,17 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 			return null;
 		
 		// Add org logo to parameters
-		MOrgInfo oi = MOrgInfo.get(getCtx(), getAD_Org_ID(), get_TrxName());
-
-		if (oi.getLogo_ID() > 0) {
-			MImage mImage = MImage.get(getCtx(), oi.getLogo_ID());
+		int logoID = 0;
+		if ( isLBR_IsDocIssuedByOrg() ) {
+			MOrgInfo oi = MOrgInfo.get(getCtx(), getAD_Org_ID(), get_TrxName());
+			logoID = oi.getLogo_ID();
+		} else {
+			logoID = this.getC_BPartner().getLogo_ID();
+		}
 		
-			if (mImage.getBinaryData() != null)
+		if ( logoID > 0) {
+			MImage mImage = MImage.get(getCtx(), logoID);
+			if ( mImage != null && mImage.getBinaryData() != null)
 			{
 				InputStream is = new ByteArrayInputStream(mImage.getBinaryData());
 				jasperParameters.put("logotipo", is);
