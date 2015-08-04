@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.TreeMap;
 import java.util.logging.Level;
@@ -20,9 +21,12 @@ import org.adempiere.model.POWrapper;
 import org.adempiere.webui.util.ReaderInputStream;
 import org.compiere.model.MAttachment;
 import org.compiere.model.MBPartner;
+import org.compiere.model.MBPartnerLocation;
 import org.compiere.model.MCity;
 import org.compiere.model.MCurrency;
 import org.compiere.model.MOrg;
+import org.compiere.model.MOrgInfo;
+import org.compiere.model.MProduct;
 import org.compiere.model.MProductPO;
 import org.compiere.model.MSysConfig;
 import org.compiere.model.MTable;
@@ -46,6 +50,8 @@ import org.idempierelbr.tax.model.MLBRDocLineIPI;
 import org.idempierelbr.tax.model.MLBRDocLineISSQN;
 import org.idempierelbr.tax.model.MLBRDocLineImportTax;
 import org.idempierelbr.tax.model.MLBRDocLinePIS;
+import org.idempierelbr.tax.model.MLBRTax;
+import org.idempierelbr.tax.model.MLBRTaxLine;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -715,7 +721,14 @@ public class NFFromXMLGen
 			// Generate details and taxes
 			MLBRDocLineDetailsNfe details = MLBRDocLineDetailsNfe.createFromPO(line);
 			
+			
+			Object[] ownInfo = getTaxes(Env.getCtx(), line, trxName);
+			
 			if (details != null) {
+
+				// obtém CFOP do declarante
+				details.set_ValueOfColumn("LBR_OwnCFOP_ID", ownInfo[2]);
+
 				details.setProductValue(group.xmlValue);
 				details.setProductName(group.xmlName);
 				
@@ -741,17 +754,45 @@ public class NFFromXMLGen
 				details.saveEx();
 				
 				// ICMS
-				createICMS(Env.getCtx(), details, group.eElement, trx.getTrxName());
+				MLBRDocLineICMS docLineICMS = createICMS(Env.getCtx(), details, group.eElement, trx.getTrxName());
 				// IPI
-				createIPI(Env.getCtx(), details, group.eElement, trx.getTrxName());
+				MLBRDocLineIPI docLineIPI = createIPI(Env.getCtx(), details, group.eElement, trx.getTrxName());
 				// PIS
-				createPIS(Env.getCtx(), details, group.eElement, trx.getTrxName());
+				MLBRDocLinePIS docLinePIS = createPIS(Env.getCtx(), details, group.eElement, trx.getTrxName());
 				// COFINS
-				createCOFINS(Env.getCtx(), details, group.eElement, trx.getTrxName());
+				MLBRDocLineCOFINS docLineCOFINS = createCOFINS(Env.getCtx(), details, group.eElement, trx.getTrxName());
 				// II
 				createII(Env.getCtx(), details, group.eElement, trx.getTrxName());
 				// ISSQN
 				createISSQN(Env.getCtx(), details, group.eElement, trx.getTrxName());
+				
+				@SuppressWarnings("unchecked")
+				Map<Integer, MLBRTaxLine> ownTaxesMap = (Map<Integer, MLBRTaxLine>) ownInfo[0];
+				for ( Entry<Integer, MLBRTaxLine> entry : ownTaxesMap.entrySet() ) {
+					MLBRTaxLine taxline = entry.getValue();
+					String taxName = taxline.getLBR_TaxName().getName();
+					
+					if (taxName.equals("ICMSPROD")) {
+						docLineICMS.set_ValueOfColumn("LBR_ICMS_OwnTaxStatus", taxline.getLBR_TaxStatus().getName());
+						docLineICMS.saveEx();
+					} else if (taxName.equals("IPI")) {
+						docLineIPI.set_ValueOfColumn("LBR_IPI_OwnTaxStatus", taxline.getLBR_TaxStatus().getPO_Name());
+						docLineIPI.saveEx();
+					} else if (taxName.equals("PISPROD")) {
+						docLinePIS.set_ValueOfColumn("LBR_PIS_OwnTaxStatus", taxline.getLBR_TaxStatus().getName());
+						docLinePIS.saveEx();
+					} else if (taxName.equals("COFINSPROD")) {
+						docLineCOFINS.set_ValueOfColumn("LBR_COF_OwnTaxStatus", taxline.getLBR_TaxStatus().getName());
+						docLineCOFINS.saveEx();
+					}
+					
+					// FIXME??? - ICMSSERV?
+
+					// remove dados de impostos temporários - precisávamos apenas das CST
+					taxline.deleteEx(true);
+
+				}
+				
 			}
 			
 			// Create Fuel and Lubricants group:
@@ -1429,4 +1470,36 @@ public class NFFromXMLGen
 		
 		MProductPO pPO;
 	}
+	
+	
+	/**
+	 * Retorna o registro do imposto baseado na pesquisa
+	 * 
+	 * Não usar este método em Callouts, pois a Callout pode acioná-lo antes que
+	 * a linha tenha sido salva.
+	 * 
+	 * @param ctx
+	 *            context
+	 * @param ol
+	 *            line
+	 * @param trxName
+	 *            transaction name
+	 * @return Object Array (Taxes, Legal Msg, CFOP and CST)
+	 * 
+	 * @contributor Pablo Boff - RoundIT
+	 * 
+	 */
+	public static Object[] getTaxes(Properties ctx, MLBRNotaFiscalLine ol, String trxName) {
+
+		//
+		MLBRNotaFiscal o = new MLBRNotaFiscal(ctx, ol.getLBR_NotaFiscal_ID(), trxName);
+		MProduct p = new MProduct(ctx, ol.getM_Product_ID(), trxName);
+		MOrgInfo oi = MOrgInfo.get(ctx, o.getAD_Org_ID(), trxName);
+		MBPartner bp = new MBPartner(ctx, o.getC_BPartner_ID(), trxName);
+		MBPartnerLocation bpLoc = (MBPartnerLocation) o.getC_BPartner_Location();
+
+		//
+		return MLBRTax.getTaxes(ctx, o.getC_DocType_ID(), o.isSOTrx(), "", p,
+				oi, bp, bpLoc, o.getDateAcct(), trxName);
+	} // getTaxes	
 }
