@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_Element">
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Element">
  <row id="101" trl="Y">
   <value column="Name" original="Attachment">Anexo</value>
   <value column="PrintName" original="Attachment">Anexo</value>
@@ -56411,6 +56409,56 @@ Strings may be in single quotes (optional)]]></value>
   <value column="Name" original="Number (End)">Número Final</value>
   <value column="PrintName" original="Number (End)">Número Final</value>
   <value column="Description" original="Indicates the end number">Indica o Número Final</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800114" trl="Y">
+  <value column="Name" original="Declarant CFOP Code">CFOP do declarante</value>
+  <value column="PrintName" original="Declarant CFOP Code">CFOP do declarante</value>
+  <value column="Description" original="CFOP code from the point of view of the declarant">Código CFOP pelo enfoque do declarante</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800115" trl="Y">
+  <value column="Name" original="Declarant COFINS Tax Status">CST COFINS do declarante</value>
+  <value column="PrintName" original="Declarant COFINS Tax Status">CST COFINS do declarante</value>
+  <value column="Description" original="COFINS tax status from the point of view of the declarant">CST do COFINS pelo enfoque do declarante</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800116" trl="Y">
+  <value column="Name" original="Declarant ICMS Tax Status">CST ICMS do declarante</value>
+  <value column="PrintName" original="Declarant ICMS Tax Status">CST ICMS do declarante</value>
+  <value column="Description" original="ICMS tax status from the point of view of the declarant">CST do ICMS pelo enfoque do declarante</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800117" trl="Y">
+  <value column="Name" original="Declarant IPI Tax Status">CST IPI do declarante</value>
+  <value column="PrintName" original="Declarant IPI Tax Status">CST IPI do declarante</value>
+  <value column="Description" original="IPI tax status from the point of view of the declarant">CST do IPI pelo enfoque do declarante</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800118" trl="Y">
+  <value column="Name" original="Declarant PIS Tax Status">CST PIS do declarante</value>
+  <value column="PrintName" original="Declarant PIS Tax Status">CST PIS do declarante</value>
+  <value column="Description" original="PIS tax status from the point of view of the declarant">CST do PIS pelo enfoque do declarante</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
