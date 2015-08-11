@@ -772,16 +772,16 @@ public class NFFromXMLGen
 					MLBRTaxLine taxline = entry.getValue();
 					String taxName = taxline.getLBR_TaxName().getName();
 					
-					if (taxName.equals("ICMSPROD")) {
+					if (docLineICMS != null && taxName.equals("ICMSPROD")) {
 						docLineICMS.set_ValueOfColumn("LBR_ICMS_OwnTaxStatus", taxline.getLBR_TaxStatus().getName());
 						docLineICMS.saveEx();
-					} else if (taxName.equals("IPI")) {
+					} else if (docLineIPI != null && taxName.equals("IPI")) {
 						docLineIPI.set_ValueOfColumn("LBR_IPI_OwnTaxStatus", taxline.getLBR_TaxStatus().getPO_Name());
 						docLineIPI.saveEx();
-					} else if (taxName.equals("PISPROD")) {
+					} else if (docLinePIS != null && taxName.equals("PISPROD")) {
 						docLinePIS.set_ValueOfColumn("LBR_PIS_OwnTaxStatus", taxline.getLBR_TaxStatus().getName());
 						docLinePIS.saveEx();
-					} else if (taxName.equals("COFINSPROD")) {
+					} else if (docLineCOFINS != null && taxName.equals("COFINSPROD")) {
 						docLineCOFINS.set_ValueOfColumn("LBR_COF_OwnTaxStatus", taxline.getLBR_TaxStatus().getName());
 						docLineCOFINS.saveEx();
 					}
@@ -1499,7 +1499,7 @@ public class NFFromXMLGen
 		MBPartnerLocation bpLoc = (MBPartnerLocation) o.getC_BPartner_Location();
 
 		//
-		return MLBRTax.getTaxes(ctx, o.getC_DocType_ID(), o.isSOTrx(), "", p,
+		return MLBRTax.getTaxes(ctx, o.getC_DocType_ID(), o.isSOTrx(), ol.getLBR_NotaFiscal().getLBR_TransactionType(), p,
 				oi, bp, bpLoc, o.getDateAcct(), trxName);
 	} // getTaxes	
 }
