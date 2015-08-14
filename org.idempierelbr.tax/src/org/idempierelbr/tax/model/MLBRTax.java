@@ -919,7 +919,7 @@ public class MLBRTax extends X_LBR_Tax
 				(oiLocation.getC_Location_ID() < 1 ? -1 : oiLocation.getC_Region_ID()), (bpLoc != null ? bpLoc.getC_Location().getC_Region_ID() : 0),
 				(isSOTrx ? bpW.getLBR_CustomerCategory_ID() : bpW.getLBR_VendorCategory_ID()), 
 				(isSOTrx ? bpW.getLBR_FiscalGroup_Customer_ID() : bpW.getLBR_FiscalGroup_Vendor_ID()), pW.getLBR_FiscalGroup_Product_ID(), 
-				pW.getLBR_NCM_ID(),  pW.getLBR_ProductCategory_ID(), hasSubstitution, isSOTrx, lbr_TransactionType, dateAcct);
+				pW.getLBR_NCM_ID(),  pW.getLBR_ProductCategory_ID(), p.getM_Product_ID() , hasSubstitution, isSOTrx, lbr_TransactionType, dateAcct);
 
 		for (MLBRTaxDefinition td : taxesDef)
 		{

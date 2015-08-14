@@ -63,7 +63,7 @@ public class MLBRTaxDefinition extends X_LBR_TaxDefinition
 	 */
 	public static MLBRTaxDefinition[] get (int AD_Org_ID, int C_BPartner_ID, int C_DocType_ID, 
 			int C_Region_ID, int To_Region_ID, int LBR_BPartnerCategory_ID, int LBR_FiscalGroup_BPartner_ID,
-			int LBR_FiscalGroup_Product_ID, int LBR_NCM_ID, int LBR_ProductCategory_ID, boolean lbr_IsSubTributaria,
+			int LBR_FiscalGroup_Product_ID, int LBR_NCM_ID, int LBR_ProductCategory_ID, int M_Product_ID , boolean lbr_IsSubTributaria,
 			boolean isSOTrx, String lbr_TransactionType, Timestamp validFrom)
 	{
 		String where = "IsActive='Y' AND AD_Org_ID IN (0, ?) ";
@@ -77,6 +77,7 @@ public class MLBRTaxDefinition extends X_LBR_TaxDefinition
 		where += "AND (LBR_FiscalGroup_Product_ID IS NULL OR LBR_FiscalGroup_Product_ID=?) ";
 		where += "AND (LBR_NCM_ID IS NULL OR LBR_NCM_ID=?) ";
 		where += "AND (LBR_ProductCategory_ID IS NULL OR LBR_ProductCategory_ID=?) ";
+		where += "AND (M_Product_ID IS NULL OR M_Product_ID=?) ";
 		where += "AND lbr_IsSubTributaria IN ('B', ?) ";
 		where += "AND IsSOTrx IN ('B', ?) ";
 		where += "AND (lbr_TransactionType IS NULL OR lbr_TransactionType=?) ";
@@ -87,7 +88,7 @@ public class MLBRTaxDefinition extends X_LBR_TaxDefinition
 		List<MLBRTaxDefinition> list = new Query (Env.getCtx(), MLBRTaxDefinition.Table_Name, where, null)
 			.setParameters(new Object[]{AD_Org_ID, C_BPartner_ID, C_DocType_ID, C_Region_ID, To_Region_ID, 
 					LBR_BPartnerCategory_ID, LBR_FiscalGroup_BPartner_ID, LBR_FiscalGroup_Product_ID, LBR_NCM_ID, 
-					LBR_ProductCategory_ID, (lbr_IsSubTributaria ? "Y" : "N"), (isSOTrx ? "Y" : "N"), lbr_TransactionType})
+					LBR_ProductCategory_ID, M_Product_ID, (lbr_IsSubTributaria ? "Y" : "N"), (isSOTrx ? "Y" : "N"), lbr_TransactionType})
 			.setOrderBy("PriorityNo, ValidFrom").list();
 		//
 		return list.toArray(new MLBRTaxDefinition[list.size()]);
