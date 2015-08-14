@@ -255,7 +255,7 @@ public class NFFromXMLGen
 				Element eElement = (Element) nNode;
 				
 				// Name
-				xmlOrgName = eElement.getElementsByTagName("xNome").item(0).getTextContent();
+				xmlOrgName = TextUtil.unescapeHtml3( eElement.getElementsByTagName("xNome").item(0).getTextContent() ); 
 				
 				// CPF
 				NodeList cpf = eElement.getElementsByTagName("CPF");
@@ -280,7 +280,7 @@ public class NFFromXMLGen
 				NodeList xLgr = eElement.getElementsByTagName("xLgr");
 				
 				if (xLgr != null && xLgr.getLength() > 0)
-					location.append(xLgr.item(0).getTextContent());
+					location.append(TextUtil.unescapeHtml3(xLgr.item(0).getTextContent()));
 				
 				NodeList nro = eElement.getElementsByTagName("nro");
 				
@@ -290,7 +290,7 @@ public class NFFromXMLGen
 				NodeList xMun = eElement.getElementsByTagName("xMun");
 				
 				if (xMun != null && xMun.getLength() > 0)
-					location.append(", ").append(xMun.item(0).getTextContent());
+					location.append(", ").append(TextUtil.unescapeHtml3(xMun.item(0).getTextContent()));
 				
 				NodeList UF = eElement.getElementsByTagName("UF");
 				
@@ -315,7 +315,7 @@ public class NFFromXMLGen
 				Element eElement = (Element) nNode;
 				
 				// Name
-				xmlBPartnerName = eElement.getElementsByTagName("xNome").item(0).getTextContent();
+				xmlBPartnerName = TextUtil.unescapeHtml3(eElement.getElementsByTagName("xNome").item(0).getTextContent());
 				
 				// CPF
 				NodeList cpf = eElement.getElementsByTagName("CPF");
@@ -336,11 +336,11 @@ public class NFFromXMLGen
 					C_BPartner_ID = bp.get_ID();
 				
 				// Location
-				StringBuilder location = new StringBuilder(eElement.getElementsByTagName("xLgr").item(0).getTextContent())
+				StringBuilder location = new StringBuilder(TextUtil.unescapeHtml3(eElement.getElementsByTagName("xLgr").item(0).getTextContent()))
 					.append(", ")
 					.append(eElement.getElementsByTagName("nro").item(0).getTextContent())
 					.append(", ")
-					.append(eElement.getElementsByTagName("xMun").item(0).getTextContent())
+					.append(TextUtil.unescapeHtml3(eElement.getElementsByTagName("xMun").item(0).getTextContent()))
 					.append("-")
 					.append(eElement.getElementsByTagName("UF").item(0).getTextContent())
 					.append(", CEP ")
@@ -367,7 +367,7 @@ public class NFFromXMLGen
 				infoGroup.xmlLineNo = String.valueOf(temp + 1);
 				
 				// Name
-				infoGroup.xmlName = eElement.getElementsByTagName("xProd").item(0).getTextContent();
+				infoGroup.xmlName = TextUtil.unescapeHtml3(eElement.getElementsByTagName("xProd").item(0).getTextContent());
 				
 				// Value
 				infoGroup.xmlValue = eElement.getElementsByTagName("cProd").item(0).getTextContent();

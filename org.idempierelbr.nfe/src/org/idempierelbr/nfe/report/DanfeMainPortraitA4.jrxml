@@ -2,9 +2,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ImpressaoDanfeRetratoA4Reportww" pageWidth="595" pageHeight="842" columnWidth="565" leftMargin="15" rightMargin="15" topMargin="15" bottomMargin="15" uuid="f55d8211-51b1-4464-b481-39f9a27a2ced">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="3.0"/>
-	<property name="ireport.x" value="692"/>
-	<property name="ireport.y" value="1185"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="480"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -480,14 +480,14 @@
 				</staticText>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement uuid="43648b78-aeaa-4ef8-a568-a75c52c6dc0e" key="textField-7" mode="Transparent" x="7" y="52" width="226" height="24"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
 						<font fontName="Times New Roman" size="12" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{emitenteRazaoSocial}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement uuid="ce61146d-e4f7-49fc-a4ea-ed56d491d39f" key="textField-9" mode="Transparent" x="7" y="77" width="226" height="19"/>
-					<textElement textAlignment="Left" verticalAlignment="Top">
+					<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
 						<font fontName="Times New Roman" size="8" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{emitenteEndereco}+", "+$F{emitenteEnderecoNro}
@@ -801,14 +801,14 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 				</staticText>
 				<textField isBlankWhenNull="true">
 					<reportElement uuid="5c164f57-fb4b-44d5-9230-7fd6a9b3ac69" key="textField-25" mode="Transparent" x="2" y="18" width="379" height="12"/>
-					<textElement textAlignment="Left">
+					<textElement textAlignment="Left" markup="html">
 						<font fontName="Times New Roman" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{destinatarioRazaoSocial}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement uuid="7efa7fc9-f2e2-4f1b-9dc7-939d270ddf3e" key="textField-30" mode="Transparent" x="306" y="38" width="101" height="12"/>
-					<textElement textAlignment="Left">
+					<textElement textAlignment="Left" markup="html">
 						<font fontName="Times New Roman" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{destinatarioBairro}]]></textFieldExpression>
@@ -847,14 +847,14 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement uuid="2f98db86-2888-4a8d-b071-10d3398dab1a" key="textField-31" mode="Transparent" x="2" y="38" width="297" height="12"/>
-					<textElement textAlignment="Left">
+					<textElement textAlignment="Left" markup="html">
 						<font fontName="Times New Roman" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{destinatarioEndereco}+", "+$F{destinatarioEnderecoNro}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement uuid="4560a540-6251-4cc6-ac47-4f2b43b088aa" key="textField-32" mode="Transparent" x="2" y="58" width="263" height="12"/>
-					<textElement textAlignment="Left">
+					<textElement textAlignment="Left" markup="html">
 						<font fontName="Times New Roman" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{destinatarioMunicipio}]]></textFieldExpression>
@@ -1374,7 +1374,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement uuid="cdaa8507-8fe5-45c4-8956-73237620126c" key="textField-48" mode="Transparent" x="2" y="74" width="209" height="12"/>
-					<textElement textAlignment="Left">
+					<textElement textAlignment="Left" markup="html">
 						<font fontName="Times New Roman" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorRazaoSocial}]]></textFieldExpression>
@@ -1430,14 +1430,14 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement uuid="372ab629-586c-4380-9031-7121a862aa5a" key="textField-56" mode="Transparent" x="271" y="94" width="138" height="12"/>
-					<textElement textAlignment="Left">
+					<textElement textAlignment="Left" markup="html">
 						<font fontName="Times New Roman" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorMunicipio}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement uuid="e6673120-1a6e-49cb-ba75-d00fd610c7e2" key="textField-57" mode="Transparent" x="2" y="94" width="264" height="12"/>
-					<textElement textAlignment="Left">
+					<textElement textAlignment="Left" markup="html">
 						<font fontName="Times New Roman" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorEndereço}]]></textFieldExpression>
@@ -2103,7 +2103,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 								<reportElement uuid="e75cb15e-1c5e-4b2b-943b-d054127aa9fb" key="textField-2" mode="Transparent" x="35" y="0" width="144" height="9"/>
-								<textElement verticalAlignment="Middle">
+								<textElement verticalAlignment="Middle" markup="html">
 									<font fontName="Times New Roman" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{descricao}
@@ -2610,7 +2610,7 @@ Sem Valor Fiscal]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
 				<reportElement uuid="f6d01a1f-ac09-49bd-976d-bc2af3dcbf06" key="textField-69" x="2" y="20" width="280" height="83" isRemoveLineWhenBlank="true"/>
-				<textElement>
+				<textElement markup="html">
 					<font fontName="Times New Roman" size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{informacoesComplementares}!=null ? "Interesse do fisco: " + $F{informacoesComplementares} + "\n" : "" )
