@@ -148,6 +148,16 @@ public class OpenItemsUtil {
 	/** Using Calendar - THE CORRECT (& Faster) WAY**/  
 	public static long daysBetween(final Calendar startDate, final Calendar endDate)
 	{
+	  // Remove time part from startDate and endDate
+	  startDate.set(Calendar.HOUR_OF_DAY, 0);
+	  startDate.set(Calendar.MINUTE, 0);
+	  startDate.set(Calendar.SECOND, 0);
+	  startDate.set(Calendar.MILLISECOND, 0);
+	  endDate.set(Calendar.HOUR_OF_DAY, 0);
+	  endDate.set(Calendar.MINUTE, 0);
+	  endDate.set(Calendar.SECOND, 0);
+	  endDate.set(Calendar.MILLISECOND, 0);
+		
 	  //assert: startDate must be before endDate  
 	  long endInstant = endDate.getTimeInMillis();  
 	  int presumedDays = 
