@@ -10,6 +10,7 @@ public class BanrisulCNABRecords extends CNABRecords {
 		this.setHeaderLoteCobrancaClass(BanrisulCNABCobrancaHeaderLote.class);
 		this.setSegmentPClass(BanrisulCNABSegmentP.class);
 		this.setSegmentRClass(BanrisulCNABSegmentR.class);
+		this.setSegmentTClass(BanrisulCNABSegmentT.class);
 	}
 
 }
