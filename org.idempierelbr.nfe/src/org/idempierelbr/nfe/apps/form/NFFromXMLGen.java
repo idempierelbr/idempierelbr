@@ -3,6 +3,7 @@ package org.idempierelbr.nfe.apps.form;
 import java.io.File;
 import java.io.InputStream;
 import java.math.BigDecimal;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -829,7 +830,12 @@ public class NFFromXMLGen
 			}
 			
 			// Commit Trx
-			trx.commit();
+			try {
+				trx.commit(true);
+			} catch (SQLException e) {
+				errorMsg = "Erro ao salvar nota.\n\n" + e.getMessage();
+				trx.rollback();
+			}
 			trx.close();
 		}
 
