@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_Ref_List">
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Ref_List">
  <row id="51" trl="Y">
   <value column="Name" original="Organization">Organização</value>
   <value column="Description" original=""/>
@@ -5512,6 +5510,26 @@
  </row>
  <row id="800026" trl="N">
   <value column="Name" original="Siscomex">Siscomex</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800027" trl="Y">
+  <value column="Name" original="Capital / Penalty / Interest">Valor / Multa / Juros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800028" trl="Y">
+  <value column="Name" original="Capital / Interest / Penalty">Valor / Juros / Multa</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800029" trl="Y">
+  <value column="Name" original="Penalty / Interest / Capital">Multa / Juros / Valor</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800030" trl="Y">
+  <value column="Name" original="Interest / Capital / Penalty">Juros / Valor / Multa</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800031" trl="Y">
+  <value column="Name" original="Penalty / Capital / Interest">Multa / Valor / Juros</value>
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="2facadde-7b9b-4619-9161-8f9fe50b2b19">

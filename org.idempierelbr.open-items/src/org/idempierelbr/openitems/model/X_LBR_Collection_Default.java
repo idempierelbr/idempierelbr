@@ -25,14 +25,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for LBR_Collection_Default
  *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
+ *  @version Release 2.1 - $Id$ */
 public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Default, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140814L;
+	private static final long serialVersionUID = 20150825L;
 
     /** Standard Constructor */
     public X_LBR_Collection_Default (Properties ctx, int LBR_Collection_Default_ID, String trxName)
@@ -338,6 +338,34 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 		return bd;
 	}
 
+	public org.compiere.model.I_C_Charge getLBR_InterestCharge() throws RuntimeException
+    {
+		return (org.compiere.model.I_C_Charge)MTable.get(getCtx(), org.compiere.model.I_C_Charge.Table_Name)
+			.getPO(getLBR_InterestCharge_ID(), get_TrxName());	}
+
+	/** Set Interest Charge.
+		@param LBR_InterestCharge_ID 
+		Charge to allocate interests
+	  */
+	public void setLBR_InterestCharge_ID (int LBR_InterestCharge_ID)
+	{
+		if (LBR_InterestCharge_ID < 1) 
+			set_Value (COLUMNNAME_LBR_InterestCharge_ID, null);
+		else 
+			set_Value (COLUMNNAME_LBR_InterestCharge_ID, Integer.valueOf(LBR_InterestCharge_ID));
+	}
+
+	/** Get Interest Charge.
+		@return Charge to allocate interests
+	  */
+	public int getLBR_InterestCharge_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_InterestCharge_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
 	/** 1 - Valor por Dia = 1 */
 	public static final String LBR_INTERESTCODE_1_ValorPorDia = "1";
 	/** 2 - Taxa Mensal = 2 */
@@ -474,6 +502,61 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	public String getLBR_PartialPayment () 
 	{
 		return (String)get_Value(COLUMNNAME_LBR_PartialPayment);
+	}
+
+	/** LBR_PaymentAllocationPriority AD_Reference_ID=800009 */
+	public static final int LBR_PAYMENTALLOCATIONPRIORITY_AD_Reference_ID=800009;
+	/** Capital / Penalty / Interest = CPI */
+	public static final String LBR_PAYMENTALLOCATIONPRIORITY_CapitalPenaltyInterest = "CPI";
+	/** Capital / Interest / Penalty = CIP */
+	public static final String LBR_PAYMENTALLOCATIONPRIORITY_CapitalInterestPenalty = "CIP";
+	/** Penalty / Interest / Capital = PIC */
+	public static final String LBR_PAYMENTALLOCATIONPRIORITY_PenaltyInterestCapital = "PIC";
+	/** Interest / Capital / Penalty = ICP */
+	public static final String LBR_PAYMENTALLOCATIONPRIORITY_InterestCapitalPenalty = "ICP";
+	/** Penalty / Capital / Interest = PCI */
+	public static final String LBR_PAYMENTALLOCATIONPRIORITY_PenaltyCapitalInterest = "PCI";
+	/** Set Payment Allocation Priority.
+		@param LBR_PaymentAllocationPriority Payment Allocation Priority	  */
+	public void setLBR_PaymentAllocationPriority (String LBR_PaymentAllocationPriority)
+	{
+
+		set_Value (COLUMNNAME_LBR_PaymentAllocationPriority, LBR_PaymentAllocationPriority);
+	}
+
+	/** Get Payment Allocation Priority.
+		@return Payment Allocation Priority	  */
+	public String getLBR_PaymentAllocationPriority () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_PaymentAllocationPriority);
+	}
+
+	public org.compiere.model.I_C_Charge getLBR_PenaltyCharge() throws RuntimeException
+    {
+		return (org.compiere.model.I_C_Charge)MTable.get(getCtx(), org.compiere.model.I_C_Charge.Table_Name)
+			.getPO(getLBR_PenaltyCharge_ID(), get_TrxName());	}
+
+	/** Set Penalty Charge.
+		@param LBR_PenaltyCharge_ID 
+		Charge to allocate penalty payments
+	  */
+	public void setLBR_PenaltyCharge_ID (int LBR_PenaltyCharge_ID)
+	{
+		if (LBR_PenaltyCharge_ID < 1) 
+			set_Value (COLUMNNAME_LBR_PenaltyCharge_ID, null);
+		else 
+			set_Value (COLUMNNAME_LBR_PenaltyCharge_ID, Integer.valueOf(LBR_PenaltyCharge_ID));
+	}
+
+	/** Get Penalty Charge.
+		@return Charge to allocate penalty payments
+	  */
+	public int getLBR_PenaltyCharge_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_PenaltyCharge_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
 	}
 
 	/** 1 - Protestar Dias Corridos = 1 */

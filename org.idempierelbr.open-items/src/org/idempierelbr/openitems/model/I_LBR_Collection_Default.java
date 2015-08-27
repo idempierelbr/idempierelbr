@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_Collection_Default
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 2.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_Collection_Default 
@@ -200,6 +200,21 @@ public interface I_LBR_Collection_Default
 	/** Get Interest Amount/Percentage	  */
 	public BigDecimal getLBR_InterestAP();
 
+    /** Column name LBR_InterestCharge_ID */
+    public static final String COLUMNNAME_LBR_InterestCharge_ID = "LBR_InterestCharge_ID";
+
+	/** Set Interest Charge.
+	  * Charge to allocate interests
+	  */
+	public void setLBR_InterestCharge_ID (int LBR_InterestCharge_ID);
+
+	/** Get Interest Charge.
+	  * Charge to allocate interests
+	  */
+	public int getLBR_InterestCharge_ID();
+
+	public org.compiere.model.I_C_Charge getLBR_InterestCharge() throws RuntimeException;
+
     /** Column name LBR_InterestCode */
     public static final String COLUMNNAME_LBR_InterestCode = "LBR_InterestCode";
 
@@ -271,6 +286,30 @@ public interface I_LBR_Collection_Default
 
 	/** Get Authorize Partial Payment	  */
 	public String getLBR_PartialPayment();
+
+    /** Column name LBR_PaymentAllocationPriority */
+    public static final String COLUMNNAME_LBR_PaymentAllocationPriority = "LBR_PaymentAllocationPriority";
+
+	/** Set Payment Allocation Priority	  */
+	public void setLBR_PaymentAllocationPriority (String LBR_PaymentAllocationPriority);
+
+	/** Get Payment Allocation Priority	  */
+	public String getLBR_PaymentAllocationPriority();
+
+    /** Column name LBR_PenaltyCharge_ID */
+    public static final String COLUMNNAME_LBR_PenaltyCharge_ID = "LBR_PenaltyCharge_ID";
+
+	/** Set Penalty Charge.
+	  * Charge to allocate penalty payments
+	  */
+	public void setLBR_PenaltyCharge_ID (int LBR_PenaltyCharge_ID);
+
+	/** Get Penalty Charge.
+	  * Charge to allocate penalty payments
+	  */
+	public int getLBR_PenaltyCharge_ID();
+
+	public org.compiere.model.I_C_Charge getLBR_PenaltyCharge() throws RuntimeException;
 
     /** Column name LBR_ProtestCode */
     public static final String COLUMNNAME_LBR_ProtestCode = "LBR_ProtestCode";

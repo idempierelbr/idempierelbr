@@ -7,9 +7,14 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import org.compiere.model.I_C_DocType;
+import org.compiere.model.MAllocationHdr;
+import org.compiere.model.MAllocationLine;
+import org.compiere.model.MDocType;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MInvoicePaySchedule;
 import org.compiere.model.MPayment;
+import org.compiere.model.MPaymentAllocate;
 import org.compiere.process.DocAction;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
@@ -24,6 +29,8 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 	private static final long serialVersionUID = 2081329273070797159L;
 	/**	Logger			*/
 	private static CLogger log = CLogger.getCLogger(MLBRBoletoMovement.class);
+	private BigDecimal interestAmt;
+	private BigDecimal penaltyAmt;
 
 	public MLBRBoletoMovement(Properties ctx, int LBR_BoletoMovement_ID,
 			String trxName) {
@@ -75,9 +82,16 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 	
 				Payment.setDateAcct(getLBR_Cob_OcorrenciaDate()); 		// Data da Conta
 				Payment.setDateTrx(getLBR_Cob_OcorrenciaDate());		// Data da Transação
-				
+
+				// calcula valor pago pelo sacado
+				BigDecimal payAmt = getPayAmt()								// valor principal
+									.add(getInterestAmt()) 					// juros e multa
+									.add(getLBR_OtherIncomesAmt())			// outros adicionais
+									.subtract(getDiscountAmt())				// desconto
+									.subtract(getWriteOffAmt())				// abatimento autorizado
+									.subtract(getLBR_OtherExpensesAmt());	// outras deduções
 	
-				Payment.setPayAmt(getPayAmt()); 	// Valor Pago
+				Payment.setPayAmt(payAmt); 	// Valor Pago
 				
 				// atualiza valor do desconto conforme regras da payschedule
 				// ajusta valor pago a maior/menor
@@ -97,16 +111,24 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 					// mov.saveEx();
 	
 					// Colocar no log uma indicação do resultado
-					if(Payment.getDocStatus().equals(DocAction.STATUS_Completed) && boleto.save(get_TrxName()))
+					if(Payment.getDocStatus().equals(DocAction.STATUS_Completed) && boleto.save(get_TrxName())) {
 						returnMsg = "Pagamento Realizado";
-					else 
+						
+						// Aloca Juros e Multa para as respectivas referências contábeis
+						if (interestAmt.add(penaltyAmt).compareTo(Env.ZERO)>0) {
+							allocateCharges(Payment);
+						}
+
+						
+					} else { 
 						returnMsg = "Erro ao Efetuar o Pagamento";
-	
+					}
 				} 
 				else 
 				{
 					returnMsg = "Erro ao Efetuar o Pagamento";
 				}
+				
 			}//BAIXA
 			else{
 				returnMsg = "Documento já está Pago";
@@ -119,6 +141,100 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 		}
 	
 		return returnMsg;
+	}
+
+	private void allocateCharges(MPayment payment) {
+
+		// obtém dados padrão de cobrança deste boleto
+		MDocType dt = (MDocType) getLBR_Boleto().getC_DocType();
+		MLBRCollectionDefault cd = new MLBRCollectionDefault(p_ctx, dt.get_ValueAsInt("LBR_Collection_Default_ID"), get_TrxName() );
+		
+		String allocationPriority = cd.getLBR_PaymentAllocationPriority();
+		
+		// valor não alocado pago a maior (atenção para a inversão de sinal)
+		BigDecimal uAmt = payment.getOverUnderAmt().negate();
+		BigDecimal tAmt = Env.ZERO;
+
+		if ( uAmt.compareTo(Env.ZERO)>0 && interestAmt.add(penaltyAmt).compareTo(Env.ZERO)>0) {
+
+			String boletoID = getLBR_Boleto().getDocumentNo();
+			
+			MAllocationHdr allocation = new MAllocationHdr(p_ctx, 0, get_TrxName());
+			allocation.setAD_Org_ID(payment.getAD_Org_ID());
+			allocation.setC_Currency_ID(payment.getC_Currency_ID());
+			allocation.setDescription("Alocação automática de Juros e/ou Multa do boleto "+boletoID);
+			allocation.setDateTrx(payment.getDateTrx());
+			allocation.setDateAcct(payment.getDateAcct());
+			allocation.saveEx(get_TrxName());
+			
+			// Distribui valor maior/menor na ordem definida nos padrões da cobrança
+			for(char c : allocationPriority.toCharArray()) {
+
+				// (re)inicializa valores
+				BigDecimal value=Env.ZERO;
+				int chargeID=0;
+				
+			    switch (c) {
+			    case 'I':		// juros
+			    	value = interestAmt;
+					chargeID = cd.getLBR_InterestCharge_ID();
+			    	break;
+			    case 'P':		// multa
+			    	value = penaltyAmt;
+					chargeID = cd.getLBR_PenaltyCharge_ID();
+			    	break;
+			    default:
+			    	break;
+			    }
+
+			    // se valor positivo e disponível, inclui linha de alocação
+			    if (chargeID>0 && value.compareTo(Env.ZERO)>0 && uAmt.compareTo(Env.ZERO)>0) {
+			    	// se valor for maior que o disponível, aloca apenas o disponível
+			    	if (value.compareTo(uAmt)>0)
+			    		// copia novo valor
+			    		value = uAmt.add(Env.ZERO);
+
+			    	// diminui valor disponível
+			    	uAmt = uAmt.subtract(value);
+			    	
+			    	// incrementa valor total distribuído
+			    	tAmt = tAmt.add(value);
+			    	
+			    	MAllocationLine al = new MAllocationLine( p_ctx , 0 , this.get_TrxName());
+			    	
+			    	al.setAD_Org_ID(payment.getAD_Org_ID());
+			    	al.setDateTrx(payment.getDateTrx());
+			    	al.setC_BPartner_ID(payment.getC_BPartner_ID());
+			    	al.setAmount(value.negate());
+			    	al.setC_AllocationHdr_ID(allocation.getC_AllocationHdr_ID());
+			    	al.setC_Charge_ID(chargeID);
+			    	
+			    	al.saveEx(get_TrxName());
+			    }
+			    
+			}
+
+			// se houver distribuição, inclui contrapartida
+		    if (tAmt.compareTo(Env.ZERO)>0) {
+		    	MAllocationLine al = new MAllocationLine( p_ctx , 0 , this.get_TrxName());
+		    	
+		    	al.setAD_Org_ID(payment.getAD_Org_ID());
+		    	al.setDateTrx(payment.getDateTrx());
+		    	al.setC_BPartner_ID(payment.getC_BPartner_ID());
+		    	al.setAmount(tAmt);
+		    	al.setC_AllocationHdr_ID(allocation.getC_AllocationHdr_ID());
+		    	al.setC_Payment_ID(payment.getC_Payment_ID());
+		    	
+		    	al.saveEx(get_TrxName());
+		    }
+			
+			// completa alocação
+			allocation.setDocAction(DocAction.ACTION_Complete);
+			if(allocation.processIt(DocAction.ACTION_Complete))
+				allocation.saveEx(get_TrxName());
+
+		}
+		
 	}
 
 	/**
@@ -134,18 +250,62 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 		// Get Open Amount & Invoice Currency
 		BigDecimal InvoiceOpenAmt = Env.ZERO;
 		BigDecimal InvoiceDiscountAmt = Env.ZERO;
+
+		interestAmt = Env.ZERO;
+		penaltyAmt = Env.ZERO;
+		
+		BigDecimal underOverAmt = Env.ZERO;
 		
 		if (C_Invoice_ID != 0)
 		{
-			String sql = "SELECT C_BPartner_ID,C_Currency_ID," // 1..2
+			String sqlDiscount = "SELECT C_BPartner_ID,C_Currency_ID," // 1..2
 				+ " invoiceOpen(C_Invoice_ID,?)," // 3 #1
 				+ " invoiceDiscount(C_Invoice_ID,?,?), IsSOTrx " // 4..5 #2/3
 				+ "FROM C_Invoice WHERE C_Invoice_ID=?"; // #4
+			
+			String sqlCharges = "SELECT C_BPartner_ID," // 1
+					+ " boletoJuros(LBR_Boleto_ID::integer,?)," // 2 #1
+					+ " boletoMulta(LBR_Boleto_ID::integer,?) " // 3 #2
+					+ "FROM LBR_Boleto WHERE LBR_Boleto_ID=?"; // #3
+
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
+
+			// Juros e Multa
+			try {
+				pstmt = DB.prepareStatement (sqlCharges, null);
+				pstmt.setTimestamp (1, payment.getDateTrx());
+				pstmt.setTimestamp (2, payment.getDateTrx());
+				pstmt.setInt (3, getLBR_Boleto_ID());
+				rs = pstmt.executeQuery ();
+				if (rs.next ())
+				{
+					interestAmt = rs.getBigDecimal (2); // Set interests
+					if (interestAmt == null)
+						interestAmt = Env.ZERO;
+					
+					penaltyAmt = rs.getBigDecimal (3); // Set interests
+					if (penaltyAmt == null)
+						penaltyAmt = Env.ZERO;
+					
+				}
+			}
+			catch (SQLException e)
+			{
+				log.log (Level.SEVERE, sqlCharges, e);
+				return;
+			}
+			finally
+			{
+				DB.close (rs, pstmt);
+				rs = null;
+				pstmt = null;
+			}
+			
+			// Desconto e Abatimento
 			try
 			{
-				pstmt = DB.prepareStatement (sql, null);
+				pstmt = DB.prepareStatement (sqlDiscount, null);
 				pstmt.setInt (1, C_InvoicePaySchedule_ID);
 				pstmt.setTimestamp (2, payment.getDateTrx());
 				pstmt.setInt (3, C_InvoicePaySchedule_ID);
@@ -162,19 +322,10 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 						InvoiceOpenAmt = Env.ZERO;
 					
 				}
-				
-				payment.setDiscountAmt(InvoiceDiscountAmt);
-				BigDecimal amtpay = payment.getPayAmt(true);
-				
-				if ( ! amtpay.add(InvoiceDiscountAmt).equals(InvoiceOpenAmt) ) {
-					payment.setIsOverUnderPayment(true);
-					payment.setOverUnderAmt(InvoiceOpenAmt.subtract(InvoiceDiscountAmt).subtract(amtpay));
-				}
-				
 			}
 			catch (SQLException e)
 			{
-				log.log (Level.SEVERE, sql, e);
+				log.log (Level.SEVERE, sqlDiscount, e);
 				return;
 			}
 			finally
@@ -182,7 +333,40 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 				DB.close (rs, pstmt);
 				rs = null;
 				pstmt = null;
-			}			
+			}
+
+			payment.setDiscountAmt(InvoiceDiscountAmt);
+			BigDecimal amtpay = payment.getPayAmt(true);
+			
+			if ( amtpay.add(InvoiceDiscountAmt).compareTo(InvoiceOpenAmt)!=0 ) {
+				underOverAmt = InvoiceOpenAmt.subtract(InvoiceDiscountAmt).subtract(amtpay);
+			}
+
+			// IMPORTANTE: valores pagos a mais são negativos no campo underOverAmt
+			//             por isso valor de multa e juros é invertido e
+			//             também a lógica de comparação
+			
+			// soma juros e multa
+			BigDecimal fineAndInterestAmt = penaltyAmt.add(interestAmt).negate();
+
+			// obtém dados padrão de cobrança deste boleto
+			MDocType dt = (MDocType) getLBR_Boleto().getC_DocType();
+			MLBRCollectionDefault cd = new MLBRCollectionDefault(p_ctx, dt.get_ValueAsInt("LBR_Collection_Default_ID"), get_TrxName());
+
+			// se foi escolhida prioridade para juros e multa
+			// e o pagamento foi menor que o esperado
+			// altera o valor maior/menor para fechar com
+			// o total de juros e multa
+			if ( underOverAmt.compareTo(fineAndInterestAmt)>0 
+					&& cd.getLBR_PaymentAllocationPriority().endsWith("C")  ) {
+				payment.setOverUnderAmt(fineAndInterestAmt);
+				payment.setIsOverUnderPayment(true);
+
+			} else if ( underOverAmt.compareTo(Env.ZERO)!=0 ){
+				payment.setOverUnderAmt(underOverAmt);
+				payment.setIsOverUnderPayment(true);
+			}
+
 		} // get Invoice Info		
 	}
 

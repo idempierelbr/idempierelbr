@@ -56465,6 +56465,66 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="800119" trl="Y">
+  <value column="Name" original="Penalty Amount">Valor de multa</value>
+  <value column="PrintName" original="Penalty Amount">Valor de multa</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800120" trl="Y">
+  <value column="Name" original="Penalty Charge">Contabilização de Multa</value>
+  <value column="PrintName" original="Penalty Charge">Contabilização de Multa</value>
+  <value column="Description" original="Charge to allocate penalty payments">Referência contábil para Multa</value>
+  <value column="Help" original="This field must be filled with a charge that will receive late payment penalty values paid by customers">Este campo deve indicar uma Referência Contábil que receberá os valores recebidos a título de multa</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800121" trl="Y">
+  <value column="Name" original="Interest Charge">Contabilização de Juros</value>
+  <value column="PrintName" original="Interest Charge">Contabilização de Juros</value>
+  <value column="Description" original="Charge to allocate interests">Referência Bancária para contabilização de juros</value>
+  <value column="Help" original="This field must be filled with a charge that will receive the interests paid by customers">Este campo deve indicar uma Referência Contábil que receberá os valores recebidos a título de juros</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800122" trl="Y">
+  <value column="Name" original="Payment Allocation Priority">Prioridade de Alocação de Pagamento</value>
+  <value column="PrintName" original="Payment Allocation Priority">Prioridade de Alocação de Pagamento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800123" trl="Y">
+  <value column="Name" original="Bank Collection Charge">Contabilização de Taxas Bancárias</value>
+  <value column="PrintName" original="Bank Collection Charge">Contabilização de Taxas Bancárias</value>
+  <value column="Description" original="Charge to allocate bank collection costs">Referência Contábil para taxas bancárias</value>
+  <value column="Help" original="In this field you place the charge that will receive the bank collection costs">Neste campo deve ser selecionada uma referência contábil que receberá os valores pagos a título de taxas bancárias</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800124" trl="Y">
+  <value column="Name" original="Bank Account Business Partner">Parceiro da Conta Bancária</value>
+  <value column="PrintName" original="Bank Account Business Partner">Parceiro da Conta Bancária</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="This field defines the Business Partner associated with a Bank Account.">Este campo define o Parceiro de Negócios associado a uma Conta Bancária</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row trl="Y" uuid="2db1c9d3-13bf-4539-baa0-45ccfb09a7a3">
   <value column="Name" original="Cód. Cidade (IBGE)">Cód. Cidade (IBGE)</value>
   <value column="PrintName" original="Cód. Cidade (IBGE)">Cód. Cidade (IBGE)</value>

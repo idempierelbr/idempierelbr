@@ -8,11 +8,18 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
+import java.util.logging.Level;
 
+import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MBank;
+import org.compiere.model.MBankAccount;
 import org.compiere.model.MNote;
 import org.compiere.model.MPInstance;
+import org.compiere.model.MPayment;
 import org.compiere.model.MSysConfig;
+import org.compiere.process.DocAction;
+import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.Env;
 import org.compiere.util.Msg;
@@ -23,6 +30,7 @@ import org.idempierelbr.cnab240.annotated.CNABRecords;
 import org.idempierelbr.cnab240.annotated.CNABSegmentTRecord;
 import org.idempierelbr.cnab240.annotated.CNABSegmentURecord;
 import org.idempierelbr.cnab240.annotated.CNABSegmentGroup;
+import org.idempierelbr.core.util.AdempiereLBR;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.openitems.model.MLBRBankAccountCarteira;
 import org.idempierelbr.openitems.model.MLBRBankAccountConvenio;
@@ -52,7 +60,7 @@ import org.idempierelbr.openitems.process.IBankCollection;
  */
 public class CNABRecordsProcess {
 
-	public static String process(CNABRecords returnRecords , SvrProcess svrP, IBankCollection bankCollection ) throws IOException {
+	public static String process(CNABRecords returnRecords , CNAB240Return svrP, IBankCollection bankCollection ) throws IOException {
 		// TODO Auto-generated method stub
 		
 		List<CNABBaseRecord> records = returnRecords.getListaRegistros();
@@ -80,6 +88,8 @@ public class CNABRecordsProcess {
 
 		int AD_Client_ID = 0;
 		int AD_Org_ID = 0;
+		
+		BigDecimal totalFeeAmt = Env.ZERO;
 		
 		// Check entries and updated Boleto
 		for (CNABSegmentGroup segmentGroup : m_SegmentGroupList) {
@@ -219,7 +229,7 @@ public class CNABRecordsProcess {
 			}
 			
 			// Paid related fields
-			BigDecimal paidAmt = new BigDecimal(segmentGroup.getSegU().getValorPago(), MathContext.DECIMAL64);
+			BigDecimal paidAmt = BigDecimal.valueOf(segmentGroup.getSegU().getValorPago());
 			
 			if (paidAmt.compareTo(Env.ZERO) == 1) {
 				// Update Collect Bank / Agency
@@ -244,10 +254,12 @@ public class CNABRecordsProcess {
 			}
 			
 			// Update FeeAmt (Valor da Tarifa/Custas)
-			BigDecimal feeAmt = new BigDecimal(segmentGroup.getSegT().getValorTarifas(), MathContext.DECIMAL64);
-			
+			BigDecimal feeAmt = BigDecimal.valueOf(segmentGroup.getSegT().getValorTarifas());
+
 			if (feeAmt.compareTo(Env.ZERO) == 1) {
 				mov.setFeeAmt(feeAmt);
+				// acumula tarifas
+				totalFeeAmt = totalFeeAmt.add(feeAmt);
 			}
 			
 			// Update Motivo da Ocorrência
@@ -283,49 +295,49 @@ public class CNABRecordsProcess {
 			}
 			
 			// Update Interest Amt (Valor dos Acréscimos)
-			BigDecimal interestAmt = new BigDecimal(segmentGroup.getSegU().getValorAcrescimos(), MathContext.DECIMAL64);
+			BigDecimal interestAmt = BigDecimal.valueOf(segmentGroup.getSegU().getValorAcrescimos());
 			
 			if (interestAmt.compareTo(Env.ZERO) == 1) {
 				mov.setInterestAmt(interestAmt);
 			}
 			
 			// Update Discount Amt (Valor do Desconto)
-			BigDecimal discountAmt = new BigDecimal(segmentGroup.getSegU().getValorDesconto(), MathContext.DECIMAL64);
+			BigDecimal discountAmt = BigDecimal.valueOf(segmentGroup.getSegU().getValorDesconto());
 			
 			if (discountAmt.compareTo(Env.ZERO) == 1) {
 				mov.setDiscountAmt(discountAmt);
 			}
 			
 			// Update WriteOff Amt (Valor do Abatimento)
-			BigDecimal writeOffAmt = new BigDecimal(segmentGroup.getSegU().getValorAbatimento(), MathContext.DECIMAL64);
+			BigDecimal writeOffAmt = BigDecimal.valueOf(segmentGroup.getSegU().getValorAbatimento());
 			
 			if (writeOffAmt.compareTo(Env.ZERO) == 1) {
 				mov.setWriteOffAmt(writeOffAmt);
 			}
 			
 			// Update IOF Amt (Valor do IOF)
-			BigDecimal iofAmt = new BigDecimal(segmentGroup.getSegU().getValorIOF(), MathContext.DECIMAL64);
+			BigDecimal iofAmt = BigDecimal.valueOf(segmentGroup.getSegU().getValorIOF());
 			
 			if (iofAmt.compareTo(Env.ZERO) == 1) {
 				mov.setLBR_IOFAmt(iofAmt);
 			}
 			
 			// Update Available Amt (Valor Líquido)
-			BigDecimal availableAmt = new BigDecimal(segmentGroup.getSegU().getValorLiquido(), MathContext.DECIMAL64);
+			BigDecimal availableAmt = BigDecimal.valueOf(segmentGroup.getSegU().getValorLiquido());
 			
 			if (availableAmt.compareTo(Env.ZERO) == 1) {
 				mov.setAvailableAmt(availableAmt);
 			}
 			
 			// Update Other Expenses Amt (Outras Despesas)
-			BigDecimal otherExpensesAmt = new BigDecimal(segmentGroup.getSegU().getOutrasDespesas(), MathContext.DECIMAL64);
+			BigDecimal otherExpensesAmt = BigDecimal.valueOf(segmentGroup.getSegU().getOutrasDespesas());
 			
 			if (otherExpensesAmt.compareTo(Env.ZERO) == 1) {
 				mov.setLBR_OtherExpensesAmt(otherExpensesAmt);
 			}
 			
 			// Update Other Incomes Amt (Outros Créditos)
-			BigDecimal otherIncomesAmt = new BigDecimal(segmentGroup.getSegU().getOutrosCreditos(), MathContext.DECIMAL64);
+			BigDecimal otherIncomesAmt = BigDecimal.valueOf(segmentGroup.getSegU().getOutrosCreditos());
 			
 			if (otherIncomesAmt.compareTo(Env.ZERO) == 1) {
 				mov.setLBR_OtherIncomesAmt(otherIncomesAmt);
@@ -371,6 +383,16 @@ public class CNABRecordsProcess {
 		
 			svrP.addLog(log.toString());
 			
+			// para o código de registro de tarifas
+			if ( returnMovCode.equals("28") 
+					&& ( mov.getLBR_OtherExpensesAmt().compareTo(Env.ZERO)>0
+							|| mov.getLBR_OtherIncomesAmt().compareTo(Env.ZERO)>0 )
+							) {
+				// acumula tarifas pagas e deduz ressarcimentos e descontos do banco
+				totalFeeAmt = totalFeeAmt.add(otherExpensesAmt).subtract(otherIncomesAmt);
+			}
+			
+			// se houver valor pago e for código de pagamento/liquidação
 			if (mov.getPayAmt().compareTo(Env.ZERO) == 1 
 					&& ( returnMovCode.equals("06") || returnMovCode.equals("17") ) )  {
 				log = new StringBuilder(Msg.getMsg(svrP.getCtx(), "DocProcessed"))
@@ -388,6 +410,11 @@ public class CNABRecordsProcess {
 				svrP.addLog(log.toString());
 			}
 		
+		}
+		
+		// se houver totalizado tarifas ou ressarcimentos bancários, cria pagamento relacionado
+		if ( totalFeeAmt.compareTo(Env.ZERO)!=0) {
+			createFeePayment( svrP.getCtx() , svrP.getBankAccount() , lote , totalFeeAmt , svrP.get_TrxName() );
 		}
 		
 		// Create Notice
@@ -413,6 +440,56 @@ public class CNABRecordsProcess {
 	}
 	
 	
+	private static void createFeePayment(Properties ctx, MBankAccount mBankAccount,
+			CNABCobrancaHeaderLoteRecord lote, BigDecimal totalFeeAmt, String trxName) {
+
+		int baBPartnerID = mBankAccount.get_ValueAsInt("LBR_BA_BPartner_ID");
+		int chargeID = mBankAccount.get_ValueAsInt("LBR_BankCollectionCharge_ID");
+		
+		if (baBPartnerID == 0 || chargeID == 0) {
+			return;
+		}
+		
+		Date dataCredito = lote.getDataCredito();
+		Date dataLote = lote.getDataGravacaoLote();
+		
+		Timestamp dateTrx = new Timestamp( (dataCredito!=null?dataCredito:dataLote).getTime() );
+		
+		MPayment Payment = new MPayment(ctx, 0, trxName);
+		
+		Integer C_BankAccount_ID = mBankAccount.getC_BankAccount_ID();
+
+		Payment.setAD_Org_ID(mBankAccount.getAD_Org_ID());
+		
+		Payment.setC_BankAccount_ID(C_BankAccount_ID);
+
+		Payment.setC_DocType_ID(AdempiereLBR.getAPPayment()); 		// Contas a Pagar
+		Payment.setC_BPartner_ID(baBPartnerID);						// BP
+		Payment.setC_Currency_ID(297);   							// apenas em reais
+		Payment.setTenderType(MPayment.TENDERTYPE_DirectDebit); 	// Débito Direto
+		Payment.setDescription("Pagamento de tarifas gerado automaticamente - CNAB");
+
+		Payment.setC_Charge_ID(chargeID);							// referência para tarifas
+
+		Payment.setDateAcct(dateTrx); 		// Data da Conta
+		Payment.setDateTrx(dateTrx);		// Data da Transação
+
+		Payment.setPayAmt(totalFeeAmt); 	// Valor Pago
+		
+		// Save and process
+		if(Payment.save(trxName)) 
+		{
+			Payment.setDocAction(DocAction.ACTION_Complete);
+			if(Payment.processIt(DocAction.ACTION_Complete))
+				Payment.saveEx(trxName);
+		} 
+		else 
+		{
+			throw new AdempiereException("Falha gerando pagamento de tarifas");
+		}
+		
+	}
+
 	private static MLBRCobMovimento getCobMovimento(MLBRBoleto boleto, int codMovimento , SvrProcess svrP ) {
 		if (boleto == null || codMovimento < 1)
 			return null;

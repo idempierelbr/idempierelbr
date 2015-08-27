@@ -624,6 +624,10 @@ public class NFFromXMLGen
 					nf.setDateDoc(getTimestamp(eElement.getElementsByTagName("dEmi").item(0).getTextContent()));
 					
 				nf.setDateAcct(nf.getDateDoc());
+				
+				// TODO: verificar melhor forma de definir a data de fato gerador
+				nf.setDateDelivered(new Timestamp(new java.util.Date().getTime()));
+				
 				nf.setPaymentRule(eElement.getElementsByTagName("indPag").item(0).getTextContent());
 				nf.setLBR_NFeTpEmis(eElement.getElementsByTagName("tpEmis").item(0).getTextContent());
 				nf.setLBR_FinNFe(eElement.getElementsByTagName("finNFe").item(0).getTextContent());

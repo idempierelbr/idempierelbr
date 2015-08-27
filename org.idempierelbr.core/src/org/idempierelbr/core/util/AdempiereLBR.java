@@ -161,6 +161,16 @@ public abstract class AdempiereLBR{
 		return C_DocType_ID;
 	}	//	getARReceipt
 
+	public static int getAPPayment(){
+
+		String sql = "SELECT C_DocType_ID FROM C_DocType " +
+				     "WHERE DocBaseType = 'APP' AND AD_Client_ID = ?";
+
+		int C_DocType_ID = DB.getSQLValue(null, sql, Env.getAD_Client_ID(Env.getCtx()));
+
+		return C_DocType_ID;
+	}	//	getAPPayment
+
 	public static int getDocTypeAcct(int C_DocType_ID){
 
 		String sql = "SELECT LBR_DocType_Acct_ID FROM LBR_DocType_Acct " +

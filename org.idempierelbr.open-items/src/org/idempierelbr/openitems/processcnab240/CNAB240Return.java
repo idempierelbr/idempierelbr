@@ -24,6 +24,7 @@ public class CNAB240Return extends SvrProcess
 	private CNABRecords records = null;
 	
 	private IBankCollection bankCollection;
+	private MBankAccount bankAccount;
 	
 	public CNAB240Return(CNABRecords records , IBankCollection bankCollection ) {
 		super();
@@ -78,9 +79,9 @@ public class CNAB240Return extends SvrProcess
 		if (CNABFile.length() <= 0L)
 			throw new AdempiereException("CNABFile " + p_CNABFile + " is empty");
 
-		MBankAccount bA = new MBankAccount(this.getCtx(), p_C_BankAccount_ID, this.get_TrxName());
-		MBank m_bank = (MBank) bA.getC_Bank();
-
+		bankAccount = new MBankAccount(this.getCtx(), p_C_BankAccount_ID, this.get_TrxName());
+		MBank m_bank = (MBank) bankAccount.getC_Bank();
+		
 		String routingNo = m_bank.getRoutingNo();
 		
 		if (bankCollection == null ) {
@@ -101,6 +102,10 @@ public class CNAB240Return extends SvrProcess
 		return CNABRecordsProcess.process( records , this , bankCollection );
 
 	}	//	doIt
+
+	public MBankAccount getBankAccount() {
+		return bankAccount;
+	}
 
 
 }	//	CNABReturn
