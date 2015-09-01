@@ -428,17 +428,6 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		this.saveEx();
 
 		if (isLBR_IsDocIssuedByOrg()) {
-			// Delete any xml attachment
-			MAttachment attachNFe = createAttachment();
-			
-			for (int i = attachNFe.getEntryCount() - 1; i >= 0; i--) 
-			{
-				if (attachNFe.getEntry(i).getName().endsWith(INDIVIDUAL_FILE_EXT))
-					attachNFe.deleteEntry(i);
-				
-				attachNFe.saveEx(get_TrxName());
-			}
-			
 			// Generate xml
 			m_processMsg = generateXML();
 			if (m_processMsg != null)
@@ -634,6 +623,22 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		
 		setLBR_NFeStatus(null);
 		setLBR_NFeID(null);
+		
+		if (isLBR_IsDocIssuedByOrg()) {
+			// Delete any xml attachment
+			MAttachment attachNFe = createAttachment();
+			
+			for (int i = attachNFe.getEntryCount() - 1; i >= 0; i--) 
+			{
+				if (attachNFe.getEntry(i).getName().endsWith(INDIVIDUAL_FILE_EXT))
+					attachNFe.deleteEntry(i);
+				
+				attachNFe.saveEx(get_TrxName());
+			}
+			
+			if (attachNFe.getEntryCount() == 0)
+				attachNFe.deleteEx(true);
+		}
 		
 		// After reActivate
 		m_processMsg = ModelValidationEngine.get().fireDocValidate(this, ModelValidator.TIMING_AFTER_REACTIVATE);
