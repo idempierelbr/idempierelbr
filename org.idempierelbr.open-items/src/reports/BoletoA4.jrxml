@@ -31,6 +31,7 @@
   lbr_boleto.lbr_fmt_numberinbank AS lbr_boleto_documentno,
   lbr_boleto.lbr_collectiontype AS lbr_boleto_lbr_collectiontype,
   lbr_boleto.lbr_accepted  AS lbr_boleto_lbr_accepted,
+  lbr_boleto.lbr_numberinorg AS lbr_boleto_lbr_numberinorg,
   c_bpartner.name AS lbr_legalentity,
   regexp_replace(c_bpartner.lbr_cnpj,'(..)(...)(...)(....)(..)','\1.\2.\3/\4-\5') as lbr_cnpj,
   regexp_replace(c_bpartner.lbr_cpf,'(...)(...)(...)(..)','\1.\2.\3-\4') as lbr_cpf,
@@ -117,6 +118,7 @@ ORDER BY
 	<field name="lbr_boleto_documentno" class="java.lang.String"/>
 	<field name="lbr_boleto_lbr_collectiontype" class="java.lang.String"/>
 	<field name="lbr_boleto_lbr_accepted" class="java.lang.String"/>
+	<field name="lbr_boleto_lbr_numberinorg" class="java.lang.String"/>
 	<field name="lbr_legalentity" class="java.lang.String"/>
 	<field name="lbr_cnpj" class="java.lang.String"/>
 	<field name="lbr_cpf" class="java.lang.String"/>
@@ -667,7 +669,7 @@ ORDER BY
 				<textElement>
 					<font fontName="Verdana" size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{c_invoice_documentno}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{lbr_boleto_lbr_numberinorg}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="9d6deae1-2743-464e-8f37-54dd54e65752" x="403" y="182" width="159" height="12"/>

@@ -257,7 +257,7 @@ public class BoletoGenerate extends SvrProcess
 		
 		boleto.setC_Bank_ID(bA.getC_Bank_ID());
 		boleto.setC_BankAccount_ID(bA.get_ID());
-		boleto.setLBR_NumberInOrg(MLBRBoleto.generateRelativeNumberInOrg(sched.get_ID(), false));
+		boleto.setLBR_NumberInOrg(MLBRBoleto.generateRelativeNumberInOrg(sched.get_ID(), true, get_TrxName()));
 
 		MDocType docTypeBoleto = new MDocType(getCtx(), LBR_C_DocTypeBoleto_ID, get_TrxName());
 		Integer LBR_Collection_Default_ID = docTypeBoleto.get_ValueAsInt("LBR_Collection_Default_ID");

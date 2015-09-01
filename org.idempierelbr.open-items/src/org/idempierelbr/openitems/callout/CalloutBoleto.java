@@ -158,7 +158,7 @@ public class CalloutBoleto implements IColumnCallout {
 				mTab.setValue("GrandTotal", sched.getDueAmt());
 			
 			// Number In Org
-			mTab.setValue("LBR_NumberInOrg", MLBRBoleto.generateRelativeNumberInOrg(C_InvoicePaySchedule_ID, false));
+			mTab.setValue("LBR_NumberInOrg", MLBRBoleto.generateRelativeNumberInOrg(C_InvoicePaySchedule_ID, true, null));
 		}
 		
 		return "";

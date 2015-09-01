@@ -523,14 +523,37 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 	 *  will be used the invoice document number.
 	 *  @return generated Number In Org
 	 */
-	public static String generateRelativeNumberInOrg(int C_InvoicePaySchedule_ID, boolean nfBased) {
-		MInvoicePaySchedule sched = new MInvoicePaySchedule(Env.getCtx(), C_InvoicePaySchedule_ID, null);
-		MInvoice invoice = new MInvoice(Env.getCtx(), sched.getC_Invoice_ID(), null);
+	public static String generateRelativeNumberInOrg(int C_InvoicePaySchedule_ID, boolean nfBased, String trxName) {
+		MInvoicePaySchedule sched = new MInvoicePaySchedule(Env.getCtx(), C_InvoicePaySchedule_ID, trxName);
+		MInvoice invoice = new MInvoice(Env.getCtx(), sched.getC_Invoice_ID(), trxName);
 		MInvoicePaySchedule[] schedules = MInvoicePaySchedule.getInvoicePaySchedule(Env.getCtx(),
-				sched.getC_Invoice_ID(), 0, null);
+				sched.getC_Invoice_ID(), 0, trxName);
 		
-		// TODO: implement nfBased. For now, only invoiceBased
 		String documentNo = invoice.getDocumentNo();
+		
+		// Get NF number (if nfBased and NF does exist)
+		if (nfBased) {
+			StringBuilder sql = new StringBuilder("SELECT DocumentNo FROM LBR_NotaFiscal")
+				.append(" WHERE C_Invoice_ID=? AND DocStatus IN ('CO', 'CL')")
+				.append(" ORDER BY LBR_NotaFiscal_ID");
+			
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			try {
+				pstmt = DB.prepareStatement (sql.toString(), trxName);
+				pstmt.setInt (1, invoice.get_ID());
+				rs = pstmt.executeQuery ();
+				
+				if (rs.next ())	{
+					documentNo = rs.getString(1);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DB.close(rs, pstmt);
+				rs = null; pstmt = null;
+			}
+		}
 		
 		int index = 1;
 		
