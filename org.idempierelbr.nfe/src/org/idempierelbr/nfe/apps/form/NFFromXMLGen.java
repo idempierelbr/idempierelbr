@@ -731,8 +731,10 @@ public class NFFromXMLGen
 			
 			if (details != null) {
 
-				// obtém CFOP do declarante
-				details.set_ValueOfColumn("LBR_OwnCFOP_ID", ownInfo[2]);
+				// armazena CFOP do declarante
+				if ((Integer) ownInfo[2] > 0) {
+					details.set_ValueOfColumn("LBR_OwnCFOP_ID", ownInfo[2]);
+				}
 
 				details.setProductValue(group.xmlValue);
 				details.setProductName(group.xmlName);
