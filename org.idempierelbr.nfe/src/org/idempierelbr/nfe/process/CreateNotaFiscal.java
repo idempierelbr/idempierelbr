@@ -566,6 +566,10 @@ public class CreateNotaFiscal extends SvrProcess
 		else if (po instanceof MInvoice)
 			tmpOrder = invoice.getOriginalOrder();
 		
+		if (tmpOrder==null) {
+			return Env.ZERO;
+		}
+		
 		List<MInOut> list = new Query (getCtx(), MInOut.Table_Name,
 					"C_Order_ID=? AND DocStatus IN ('DR', 'IP', 'CO')", get_TrxName())
 				.setParameters(new Object[]{tmpOrder.get_ID()})
