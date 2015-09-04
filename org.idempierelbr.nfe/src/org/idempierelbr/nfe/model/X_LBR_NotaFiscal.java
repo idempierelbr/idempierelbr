@@ -1155,4 +1155,21 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		}
 		return false;
 	}
+	
+	/** Set Declarant Date Delivered.
+	@param LBR_OwnDateDelivered 
+	Date Delivered from the point of view of the declarant
+	  */
+	public void setLBR_OwnDateDelivered (Timestamp LBR_OwnDateDelivered)
+	{
+		set_Value (COLUMNNAME_LBR_OwnDateDelivered, LBR_OwnDateDelivered);
+	}
+	
+	/** Get Declarant Date Delivered.
+		@return Date Delivered from the point of view of the declarant
+	  */
+	public Timestamp getLBR_OwnDateDelivered () 
+	{
+		return (Timestamp)get_Value(COLUMNNAME_LBR_OwnDateDelivered);
+	}
 }

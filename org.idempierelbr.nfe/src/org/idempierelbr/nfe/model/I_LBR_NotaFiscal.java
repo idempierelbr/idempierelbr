@@ -696,4 +696,17 @@ public interface I_LBR_NotaFiscal
 
 	/** Get Is Document Issued by Client/Org?	  */
 	public boolean isLBR_IsDocIssuedByOrg();
+	
+	/** Column name LBR_OwnDateDelivered */
+    public static final String COLUMNNAME_LBR_OwnDateDelivered = "LBR_OwnDateDelivered";
+
+	/** Set Declarant Date Delivered.
+	  * Date Delivered from the point of view of the declarant
+	  */
+	public void setLBR_OwnDateDelivered (Timestamp LBR_OwnDateDelivered);
+
+	/** Get Declarant Date Delivered.
+	  * Date Delivered from the point of view of the declarant
+	  */
+	public Timestamp getLBR_OwnDateDelivered();
 }

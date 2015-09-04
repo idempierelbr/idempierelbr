@@ -2,6 +2,7 @@ package org.idempierelbr.nfe.apps.form;
 
 import static org.compiere.model.SystemIDs.COLUMN_C_INVOICE_C_BPARTNER_ID;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,6 +22,7 @@ import org.adempiere.webui.component.ListHeader;
 import org.adempiere.webui.component.Listbox;
 import org.adempiere.webui.component.Row;
 import org.adempiere.webui.component.Rows;
+import org.adempiere.webui.editor.WDateEditor;
 import org.adempiere.webui.editor.WEditor;
 import org.adempiere.webui.editor.WNumberEditor;
 import org.adempiere.webui.editor.WSearchEditor;
@@ -37,6 +39,7 @@ import org.compiere.model.MColumn;
 import org.compiere.model.MField;
 import org.compiere.model.MLookup;
 import org.compiere.model.MLookupFactory;
+import org.compiere.model.MSysConfig;
 import org.compiere.util.DisplayType;
 import org.compiere.util.Env;
 import org.compiere.util.KeyNamePair;
@@ -69,6 +72,7 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 	WEditor editorC_DocType_ID = null;
 	WEditor editorLBR_TransactionType = null;
 	WEditor editorDescription = null;
+	WEditor editorLBR_OwnDateDelivered = null;
 	WEditor editorDocAction = null;	
 
 	// The grid components
@@ -694,6 +698,22 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 		rows.appendChild(row);
 		
 		row = new Row();
+		Label labelLBR_OwnDateDelivered =  new Label(Msg.getElement(Env.getCtx(), "LBR_OwnDateDelivered"));
+		
+		boolean isReadOnly = MSysConfig.getBooleanValue("LBR_READONLYDELIVERYDATE_WHEN_GEN_NF_FROM_XML",
+				false, Env.getAD_Client_ID(Env.getCtx()), Env.getAD_Org_ID(Env.getCtx()));
+		
+		editorLBR_OwnDateDelivered = new WDateEditor("LBR_OwnDateDelivered", false, isReadOnly, true,
+				Msg.getElement(Env.getCtx(), "LBR_OwnDateDelivered"));
+		((WDateEditor) editorLBR_OwnDateDelivered).getComponent().setHflex("1");
+		row.appendChild(labelLBR_OwnDateDelivered.rightAlign());
+		row.appendChild(editorLBR_OwnDateDelivered.getComponent());
+		editorLBR_OwnDateDelivered.addValueChangeListener(this);
+		((WDateEditor) editorLBR_OwnDateDelivered).setValue(new Timestamp(new java.util.Date().getTime()));
+		row.setGroup(group);
+		rows.appendChild(row);
+		
+		row = new Row();
 		Label labelDocAction =  new Label(Msg.getElement(Env.getCtx(), "DocAction") + "*");
 		labelDocAction.setStyle("color: red;");
 		try {
@@ -832,6 +852,9 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 				genform.detach();
 				return;
 			}
+
+			if (LBR_OwnDateDelivered == null)
+				LBR_OwnDateDelivered = (Timestamp)editorLBR_OwnDateDelivered.getValue();
 			
 			String errorMsg = cmd_save();
 			if (errorMsg != null && errorMsg.length() > 0) {
@@ -862,6 +885,8 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 			C_DocType_ID = (Integer)e.getNewValue();
 		} else if (propertyName.equals("LBR_TransactionType")) {
 			LBR_TransactionType = (String)e.getNewValue();
+		} else if (propertyName.equals("LBR_OwnDateDelivered")) {
+			LBR_OwnDateDelivered = (Timestamp)e.getNewValue();
 		} else if (propertyName.equals("DocAction")) {
 			docAction = (String)e.getNewValue();
 		} else if (propertyName.equals("C_BPartner_ID")) {

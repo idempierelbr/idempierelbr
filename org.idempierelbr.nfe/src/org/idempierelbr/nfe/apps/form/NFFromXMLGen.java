@@ -75,6 +75,7 @@ public class NFFromXMLGen
 	Integer C_DocType_ID;
 	String LBR_TransactionType;
 	String description;
+	Timestamp LBR_OwnDateDelivered;
 	String docAction;
 	
 	// XML Fields
@@ -625,8 +626,13 @@ public class NFFromXMLGen
 					
 				nf.setDateAcct(nf.getDateDoc());
 				
-				// TODO: verificar melhor forma de definir a data de fato gerador
-				nf.setDateDelivered(new Timestamp(new java.util.Date().getTime()));
+				if (LBR_OwnDateDelivered != null)
+					nf.setLBR_OwnDateDelivered(LBR_OwnDateDelivered);
+				else
+					nf.setLBR_OwnDateDelivered(new Timestamp(new java.util.Date().getTime()));
+				
+				if (eElement.getElementsByTagName("dhSaiEnt").item(0) != null)
+					nf.setDateDelivered(getTimestamp(eElement.getElementsByTagName("dhSaiEnt").item(0).getTextContent()));	
 				
 				nf.setPaymentRule(eElement.getElementsByTagName("indPag").item(0).getTextContent());
 				nf.setLBR_NFeTpEmis(eElement.getElementsByTagName("tpEmis").item(0).getTextContent());

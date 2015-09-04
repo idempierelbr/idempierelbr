@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Element">
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
+<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
+<idempiereTrl language="pt_BR" table="AD_Element">
  <row id="101" trl="Y">
   <value column="Name" original="Attachment">Anexo</value>
   <value column="PrintName" original="Attachment">Anexo</value>
@@ -56520,6 +56522,16 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PrintName" original="Bank Account Business Partner">Parceiro da Conta Bancária</value>
   <value column="Description" original=""/>
   <value column="Help" original="This field defines the Business Partner associated with a Bank Account.">Este campo define o Parceiro de Negócios associado a uma Conta Bancária</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800135" trl="Y">
+  <value column="Name" original="Declarant Date Delivered">Data de Entrega (Declarante)</value>
+  <value column="PrintName" original="Declarant Date Delivered">Data de Entrega (Declarante)</value>
+  <value column="Description" original="Date Delivered from the point of view of the declarant">Data em que o produto foi entregue pelo enfoque do declarante</value>
+  <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
