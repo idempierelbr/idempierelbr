@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
@@ -53,6 +54,7 @@ public class CNABGen extends GenForm
 		miniTable.addColumn("C_Invoice_ID");
 		miniTable.addColumn("LBR_Cob_Movimento_ID");
 		miniTable.addColumn("GrandTotal");
+		miniTable.addColumn("Created");
 		//
 		miniTable.setMultiSelection(true);
 		//  set details
@@ -64,6 +66,7 @@ public class CNABGen extends GenForm
 		miniTable.setColumnClass(5, String.class, true, Msg.translate(Env.getCtx(), "C_Invoice_ID"));
 		miniTable.setColumnClass(6, String.class, true, Msg.translate(Env.getCtx(), "LBR_Cob_Movimento_ID"));
 		miniTable.setColumnClass(7, BigDecimal.class, true, "Valor do Título");
+		miniTable.setColumnClass(8, Timestamp.class, true, Msg.translate(Env.getCtx(), "Created"));
 		//
 		miniTable.autoSize();
 	}
@@ -75,7 +78,7 @@ public class CNABGen extends GenForm
 	private String getBoletoMovementSQL()
 	{
 		StringBuilder sql = new StringBuilder(
-			"SELECT bm.LBR_BoletoMovement_ID, dt.Name, c.Name, b.DocumentNo, bp.Name, i.DocumentNo, cm.Name, b.GrandTotal "
+			"SELECT bm.LBR_BoletoMovement_ID, dt.Name, c.Name, b.DocumentNo, bp.Name, i.DocumentNo, cm.Name, b.GrandTotal, bm.Created "
 			+ "FROM LBR_BoletoMovement bm"
 			+ " JOIN LBR_Boleto b ON b.LBR_Boleto_ID=bm.LBR_Boleto_ID"
 			+ " JOIN C_BPartner bp ON bp.C_BPartner_ID=b.C_BPartner_ID"
@@ -135,6 +138,7 @@ public class CNABGen extends GenForm
 				miniTable.setValueAt(rs.getString(6), row, 5);              //  Invoice
 				miniTable.setValueAt(rs.getString(7), row, 6);           	//  Movement
 				miniTable.setValueAt(rs.getBigDecimal(8), row, 7);          //  GrandTotal
+				miniTable.setValueAt(rs.getTimestamp(9), row, 8);          	//  Created
 				//  prepare next
 				row++;
 			}
