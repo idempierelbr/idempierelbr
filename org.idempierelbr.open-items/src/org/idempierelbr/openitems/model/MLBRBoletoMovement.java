@@ -7,18 +7,20 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import org.compiere.model.I_C_DocType;
+import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MAllocationHdr;
 import org.compiere.model.MAllocationLine;
+import org.compiere.model.MBankAccount;
 import org.compiere.model.MDocType;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MInvoicePaySchedule;
 import org.compiere.model.MPayment;
-import org.compiere.model.MPaymentAllocate;
 import org.compiere.process.DocAction;
 import org.compiere.util.CLogger;
+import org.compiere.util.CPreparedStatement;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
+import org.idempierelbr.cnab240.annotated.CNABSegmentTRecord;
 import org.idempierelbr.core.util.AdempiereLBR;
 
 public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
@@ -31,6 +33,7 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 	private static CLogger log = CLogger.getCLogger(MLBRBoletoMovement.class);
 	private BigDecimal interestAmt;
 	private BigDecimal penaltyAmt;
+	private MBankAccount bankAccount = null;
 
 	public MLBRBoletoMovement(Properties ctx, int LBR_BoletoMovement_ID,
 			String trxName) {
@@ -56,7 +59,13 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 	
 				MPayment Payment = new MPayment(getCtx(), 0, get_TrxName());
 				
-				Integer C_BankAccount_ID = boleto.getC_BankAccount_ID();
+				Integer C_BankAccount_ID;
+				
+				if (getBankAccount()!=null)
+					C_BankAccount_ID = getBankAccount().getC_BankAccount_ID();
+				else
+					C_BankAccount_ID = boleto.getC_BankAccount_ID();
+				
 				//
 				if (C_BankAccount_ID == null)
 					C_BankAccount_ID = (Integer)invoice.get_Value("C_BankAccount_ID");
@@ -368,6 +377,54 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 			}
 
 		} // get Invoice Info		
+	}
+
+	public MBankAccount getBankAccount() {
+		return bankAccount;
+	}
+
+	private void setBankAccount(MBankAccount bankAccount) {
+		this.bankAccount = bankAccount;
+	}
+
+	public void detectBankAccount(CNABSegmentTRecord segT, String routingNo) {
+		String agencyDV = segT.getDvAgenciaCedente(); 
+		String agencyWithDV = String.format( "%d-%s", segT.getAgenciaCedente(), agencyDV!=null?agencyDV:"0" );
+		String agency = String.format("%d", segT.getAgenciaCedente());
+		
+		String accountDV = segT.getDvContaCedente();
+		String accountWithDV = String.format( "%d-%s", segT.getContaCedente(), accountDV!=null?accountDV:"0" );
+		String account = String.format("%d", segT.getContaCedente());
+		
+		String query = "SELECT ba.* FROM C_BankAccount ba "
+				+ " JOIN C_Bank b ON ba.C_Bank_ID=b.C_Bank_ID "
+				+ " WHERE ba.AD_Client_ID=?" // #1
+				+ "   AND b.isActive='Y' AND ba.isActive='Y'"
+				+ "   AND b.RoutingNo=? " // # 2
+				+ "   AND TRIM(LTRIM(LBR_BankAgencyNo,'0')) IN(?,?)" // #3 #4
+				+ "   AND TRIM(LTRIM(AccountNo,'0')) IN (?,?)"; // #5 #6
+		
+		CPreparedStatement pstmt = DB.prepareStatement (query, null);
+
+		ResultSet rs = null;
+		try {
+			pstmt.setInt(1, this.getAD_Client_ID());
+			pstmt.setString(2, routingNo);
+			pstmt.setString(3, agencyWithDV);
+			pstmt.setString(4, agency);
+			pstmt.setString(5, accountWithDV);
+			pstmt.setString(6, account);
+			rs = pstmt.executeQuery ();
+
+			if (rs == null || !rs.next() )
+				return;
+			
+		} catch (SQLException e) {
+			throw new AdempiereException("Erro ao tentar identificar conta bancária",e);
+		}
+		
+		setBankAccount(new MBankAccount(p_ctx, rs, account));
+				
 	}
 
 }
