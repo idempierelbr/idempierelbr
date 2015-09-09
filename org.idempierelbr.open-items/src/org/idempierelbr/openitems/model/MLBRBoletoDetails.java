@@ -103,8 +103,11 @@ public class MLBRBoletoDetails extends X_LBR_BoletoDetails {
 		if (def != null) {
 			if (def.getLBR_LatePaymentPenaltyCode() != null) {
 				setLBR_LatePaymentPenaltyCode(def.getLBR_LatePaymentPenaltyCode());
-				setLBR_LatePaymentPenaltyDate(AdempiereLBR.addDays(getParent().getDueDate(),
-						def.getLBR_LatePaymentPenaltyDays()));
+				
+				if (def.getLBR_LatePaymentPenaltyDays() > 0)
+					setLBR_LatePaymentPenaltyDate(AdempiereLBR.addDays(getParent().getDueDate(),
+							def.getLBR_LatePaymentPenaltyDays()));
+				
 				setLBR_LatePaymentPenaltyAP(def.getLBR_LatePaymentPenaltyAP());
 			}
 		}
@@ -119,8 +122,11 @@ public class MLBRBoletoDetails extends X_LBR_BoletoDetails {
 		if (def != null) {
 			if (def.getLBR_InterestCode() != null) {
 				setLBR_InterestCode(def.getLBR_InterestCode());
-				setLBR_InterestDate(AdempiereLBR.addDays(getParent().getDueDate(),
-						def.getLBR_InterestDays()));
+				
+				if (def.getLBR_InterestDays() > 0)
+					setLBR_InterestDate(AdempiereLBR.addDays(getParent().getDueDate(),
+							def.getLBR_InterestDays()));
+				
 				setLBR_InterestAP(def.getLBR_InterestAP());
 			}
 		}
