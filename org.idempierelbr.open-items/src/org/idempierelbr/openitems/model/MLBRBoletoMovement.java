@@ -84,14 +84,14 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 				Payment.setDateTrx(getLBR_Cob_OcorrenciaDate());		// Data da Transação
 
 				// calcula valor pago pelo sacado
-				BigDecimal payAmt = getPayAmt()								// valor principal
+				/*BigDecimal payAmt = getPayAmt()								// valor principal
 									.add(getInterestAmt()) 					// juros e multa
 									.add(getLBR_OtherIncomesAmt())			// outros adicionais
 									.subtract(getDiscountAmt())				// desconto
 									.subtract(getWriteOffAmt())				// abatimento autorizado
 									.subtract(getLBR_OtherExpensesAmt());	// outras deduções
-	
-				Payment.setPayAmt(payAmt); 	// Valor Pago
+*/	
+				Payment.setPayAmt(getPayAmt()); 	// Valor Pago
 				
 				// atualiza valor do desconto conforme regras da payschedule
 				// ajusta valor pago a maior/menor
