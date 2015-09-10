@@ -224,8 +224,9 @@ public class CNABRecordsProcess {
 			}
 			
 			// Update Due Date
-			mov.setDueDate(new Timestamp(segmentGroup.getSegT().getVencimento().getTime()));
 			if (segmentGroup.getSegT().getVencimento() != null) {
+				mov.setDueDate(new Timestamp(segmentGroup.getSegT().getVencimento().getTime()));
+				
 				if (!isSameDate(segmentGroup.getSegT().getVencimento(), boleto.getDueDate())) {
 					boleto.setDueDate(new Timestamp(segmentGroup.getSegT().getVencimento().getTime()));
 				}
