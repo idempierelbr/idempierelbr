@@ -396,7 +396,7 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 		String accountWithDV = String.format( "%d-%s", segT.getContaCedente(), accountDV!=null?accountDV:"0" );
 		String account = String.format("%d", segT.getContaCedente());
 		
-		String query = "SELECT ba.* FROM C_BankAccount ba "
+		String query = "SELECT ba.C_BankAccount_ID FROM C_BankAccount ba "
 				+ " JOIN C_Bank b ON ba.C_Bank_ID=b.C_Bank_ID "
 				+ " WHERE ba.AD_Client_ID=?" // #1
 				+ "   AND b.isActive='Y' AND ba.isActive='Y'"
@@ -407,6 +407,8 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 		CPreparedStatement pstmt = DB.prepareStatement (query, null);
 
 		ResultSet rs = null;
+		Integer C_BankAccount_ID = null;
+		
 		try {
 			pstmt.setInt(1, this.getAD_Client_ID());
 			pstmt.setString(2, routingNo);
@@ -416,15 +418,18 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 			pstmt.setString(6, account);
 			rs = pstmt.executeQuery ();
 
-			if (rs == null || !rs.next() )
-				return;
+			if (rs.next())
+				C_BankAccount_ID = rs.getInt(1);
 			
 		} catch (SQLException e) {
 			throw new AdempiereException("Erro ao tentar identificar conta bancária",e);
+		} finally {
+			DB.close(rs, pstmt);
+			rs = null; pstmt = null;
 		}
 		
-		setBankAccount(new MBankAccount(p_ctx, rs, account));
-				
+		if (C_BankAccount_ID != null)
+			setBankAccount(new MBankAccount(getCtx(), C_BankAccount_ID, get_TrxName()));				
 	}
 
 }
