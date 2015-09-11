@@ -28,18 +28,6 @@ public class ItauCNABSegmentU extends CNABSegmentURecord {
 		return super.getCodigoBancoCorrespondente();
 	}
 
-	@Override
-	public Double getValorPago() {
-		/*
-		 * O banco Itaú não segue o padrão e retorna no campo ValorPago
-		 * o valor sem incluir juros multas e descontos.
-		 */
-		
-		return ( super.getValorPago()
-				+ this.getValorAcrescimos()
-				- this.getValorAbatimento()
-				- this.getValorDesconto() );
-	}
 	
     // zeros deste registro
 	@Field(offset=108, length=30, paddingChar='0', align=Align.RIGHT)
@@ -54,6 +42,5 @@ public class ItauCNABSegmentU extends CNABSegmentURecord {
 
 	public void setZeros1( int zeros ) {}
 	public void setZeros2( int zeros ) {}
-
 
 }
