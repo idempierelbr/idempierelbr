@@ -2,15 +2,12 @@ package org.idempierelbr.openitems.processcnab240;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
-import java.util.logging.Level;
-
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MBank;
 import org.compiere.model.MBankAccount;
@@ -19,17 +16,16 @@ import org.compiere.model.MPInstance;
 import org.compiere.model.MPayment;
 import org.compiere.model.MSysConfig;
 import org.compiere.process.DocAction;
-import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.Env;
 import org.compiere.util.Msg;
 import org.idempierelbr.cnab240.annotated.CNABBaseRecord;
 import org.idempierelbr.cnab240.annotated.CNABCobrancaHeaderLoteRecord;
-import org.idempierelbr.cnab240.annotated.CNABCobrancaSegmentBaseRecord;
 import org.idempierelbr.cnab240.annotated.CNABRecords;
+import org.idempierelbr.cnab240.annotated.CNABSegmentBaseRecord;
+import org.idempierelbr.cnab240.annotated.CNABSegmentGroup;
 import org.idempierelbr.cnab240.annotated.CNABSegmentTRecord;
 import org.idempierelbr.cnab240.annotated.CNABSegmentURecord;
-import org.idempierelbr.cnab240.annotated.CNABSegmentGroup;
 import org.idempierelbr.core.util.AdempiereLBR;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.openitems.model.MLBRBankAccountCarteira;
@@ -66,23 +62,27 @@ public class CNABRecordsProcess {
 		List<CNABBaseRecord> records = returnRecords.getListaRegistros();
 
 		CNABCobrancaHeaderLoteRecord lote = null;
-		CNABSegmentGroup currentGroup = null;
 		
-		ArrayList<CNABSegmentGroup> m_SegmentGroupList = new ArrayList<CNABSegmentGroup>();
+		CNABSegmentGroup currentGroup = null;
+
+		ArrayList<CNABSegmentGroup> sgList = new ArrayList<CNABSegmentGroup>();
 
 		for (CNABBaseRecord currentRecord : records ) {
+			// cabeçalho do lote
 			if ( CNABCobrancaHeaderLoteRecord.class.isAssignableFrom(currentRecord.getClass())) {
 				lote = (CNABCobrancaHeaderLoteRecord) currentRecord;
-			} else if ( CNABSegmentTRecord.class.isAssignableFrom(currentRecord.getClass()))  {
-				currentGroup = new CNABSegmentGroup();
-				CNABSegmentTRecord segT = (CNABSegmentTRecord) currentRecord;
-				m_SegmentGroupList.add(currentGroup);
-				currentGroup.setSegT(segT);
-			} else if ( CNABSegmentURecord.class.isAssignableFrom(currentRecord.getClass())) {
-				CNABSegmentURecord segU = (CNABSegmentURecord)currentRecord;
-				currentGroup.setSegU(segU);
-			} else if ( CNABCobrancaSegmentBaseRecord.class.isAssignableFrom(currentRecord.getClass())) {
-				currentGroup.addRecord((CNABCobrancaSegmentBaseRecord) currentRecord);
+			}
+			
+			// segmento T
+			else if ( CNABSegmentTRecord.class.isAssignableFrom(currentRecord.getClass()))  {
+				CNABSegmentGroup group = new CNABSegmentGroup();
+				sgList.add(group);
+				currentGroup=group;
+				currentGroup.addRecord((CNABSegmentBaseRecord) currentRecord);
+			}
+			// qualquer outro registro de segmento
+			else if ( CNABSegmentBaseRecord.class.isAssignableFrom(currentRecord.getClass())) {
+				currentGroup.addRecord((CNABSegmentBaseRecord) currentRecord);
 			}
 		}
 
@@ -92,9 +92,13 @@ public class CNABRecordsProcess {
 		BigDecimal totalFeeAmt = Env.ZERO;
 		
 		// Check entries and updated Boleto
-		for (CNABSegmentGroup segmentGroup : m_SegmentGroupList) {
-			String docNo = segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim();
-			String nossoNumero = segmentGroup.getSegT().getNossoNumero();
+		for (CNABSegmentGroup sg : sgList) {
+			
+			CNABSegmentURecord segU = (CNABSegmentURecord) sg.getRecord("U");
+			CNABSegmentTRecord segT = (CNABSegmentTRecord) sg.getRecord("T");
+			
+			String docNo = segT.getIdentificacaoTituloNaEmpresa().trim();
+			String nossoNumero = segT.getNossoNumero();
 			MLBRBoleto boleto = null;
 			if ( docNo != null && !docNo.isEmpty() ) {
 				boleto = MLBRBoleto.getByDocumentNo( svrP.getCtx(), docNo , svrP.get_TrxName());
@@ -135,21 +139,21 @@ public class CNABRecordsProcess {
 			mov.setLBR_CNAB240MovementType(MLBRCobMovimento.LBR_CNAB240MOVEMENTTYPE_2_RetornoBanco_GtCliente);
 			
 			// detecta conta bancária
-			mov.detectBankAccount(segmentGroup.getSegT() , boleto.getC_Bank().getRoutingNo());
+			mov.detectBankAccount(segT , boleto.getC_Bank().getRoutingNo());
 			
-			MLBRCobMovimento cobMov = getCobMovimento(boleto, segmentGroup.getSegT().getCodigoMovimento() , svrP );
+			MLBRCobMovimento cobMov = getCobMovimento(boleto, segT.getCodigoMovimento() , svrP );
 			
 			if (cobMov == null) {
 				StringBuilder log = new StringBuilder(Msg.getMsg(svrP.getCtx(), "SearchError"))
 					.append(Msg.getElement(svrP.getCtx(), "LBR_Cob_Movimento_ID"))
 					.append(" ")
-					.append(segmentGroup.getSegT().getCodigoMovimento())
+					.append(segT.getCodigoMovimento())
 					.append(", ")
 					.append(Msg.getElement(svrP.getCtx(), "LBR_Boleto_ID"))
 					.append(": ")
 					.append(Msg.getElement(svrP.getCtx(), "DocumentNo"))
 					.append(" ")
-					.append(segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim());
+					.append(segT.getIdentificacaoTituloNaEmpresa().trim());
 				
 				svrP.addLog(log.toString());
 				continue;
@@ -166,17 +170,17 @@ public class CNABRecordsProcess {
 			}
 			
 			// Update Number In Bank
-			mov.setLBR_NumberInBank(segmentGroup.getSegT().getNossoNumero().trim());
-			if (boleto.getLBR_NumberInBank() == null || !boleto.getLBR_NumberInBank().equals(segmentGroup.getSegT().getNossoNumero().trim())) {
-				if (!segmentGroup.getSegT().getNossoNumero().trim().equals("")) {
-					boleto.setLBR_NumberInBank(segmentGroup.getSegT().getNossoNumero().trim());
+			mov.setLBR_NumberInBank(segT.getNossoNumero().trim());
+			if (boleto.getLBR_NumberInBank() == null || !boleto.getLBR_NumberInBank().equals(segT.getNossoNumero().trim())) {
+				if (!segT.getNossoNumero().trim().equals("")) {
+					boleto.setLBR_NumberInBank(segT.getNossoNumero().trim());
 				}
 			}
 			
 			// Update Carteira
 			MLBRBankAccountConvenio convenio = null;
 			MLBRBankAccountCarteira carteira = null;
-			String tipoCarteira = segmentGroup.getSegT().getCodigoCarteira();
+			String tipoCarteira = segT.getCodigoCarteira();
 			if ( ! tipoCarteira.equals("0") ) {
 				mov.setLBR_CarteiraType(tipoCarteira);
 				
@@ -216,49 +220,49 @@ public class CNABRecordsProcess {
 			}
 			
 			// Updated Document No
-			mov.setLBR_DocumentNo(segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim());
-			if (!boleto.getDocumentNo().equals(segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim())) {
-				if (!segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim().equals("")) {
-					boleto.setDocumentNo(segmentGroup.getSegT().getIdentificacaoTituloNaEmpresa().trim());
+			mov.setLBR_DocumentNo(segT.getIdentificacaoTituloNaEmpresa().trim());
+			if (!boleto.getDocumentNo().equals(segT.getIdentificacaoTituloNaEmpresa().trim())) {
+				if (!segT.getIdentificacaoTituloNaEmpresa().trim().equals("")) {
+					boleto.setDocumentNo(segT.getIdentificacaoTituloNaEmpresa().trim());
 				}
 			}
 			
 			// Update Due Date
-			if (segmentGroup.getSegT().getVencimento() != null) {
-				mov.setDueDate(new Timestamp(segmentGroup.getSegT().getVencimento().getTime()));
+			if (segT.getVencimento() != null) {
+				mov.setDueDate(new Timestamp(segT.getVencimento().getTime()));
 				
-				if (!isSameDate(segmentGroup.getSegT().getVencimento(), boleto.getDueDate())) {
-					boleto.setDueDate(new Timestamp(segmentGroup.getSegT().getVencimento().getTime()));
+				if (!isSameDate(segT.getVencimento(), boleto.getDueDate())) {
+					boleto.setDueDate(new Timestamp(segT.getVencimento().getTime()));
 				}
 			}
 			
 			// Paid related fields
-			BigDecimal paidAmt = BigDecimal.valueOf(segmentGroup.getSegU().getValorPago());
+			BigDecimal paidAmt = BigDecimal.valueOf(segU.getValorPago());
 			
 			if (paidAmt.compareTo(Env.ZERO) == 1) {
 				// Update Collect Bank / Agency
-				mov.setLBR_CollectBankNo( segmentGroup.getSegT().getBanco());
-				mov.setLBR_CollectBankAgencyNo(Integer.toString(segmentGroup.getSegT().getAgenciaCobradora()));
+				mov.setLBR_CollectBankNo( segT.getBanco());
+				mov.setLBR_CollectBankAgencyNo(Integer.toString(segT.getAgenciaCobradora()));
 			}
 
 			mov.setPayAmt(paidAmt);
 			
 			// Updated Number In Org
-			mov.setLBR_NumberInOrg(segmentGroup.getSegT().getNumeroDocumento().trim());
-			if (!boleto.getLBR_NumberInOrg().equals(segmentGroup.getSegT().getNumeroDocumento().trim())) {
-				if (!segmentGroup.getSegT().getNumeroDocumento().trim().equals("")) {
-					boleto.setLBR_NumberInOrg(segmentGroup.getSegT().getNumeroDocumento().trim());
+			mov.setLBR_NumberInOrg(segT.getNumeroDocumento().trim());
+			if (!boleto.getLBR_NumberInOrg().equals(segT.getNumeroDocumento().trim())) {
+				if (!segT.getNumeroDocumento().trim().equals("")) {
+					boleto.setLBR_NumberInOrg(segT.getNumeroDocumento().trim());
 				}
 			}
 
 			// Update Contract Number
-			if (segmentGroup.getSegT().getNumeroContrato() > 0) {
-				mov.setLBR_LoanContractNo(String.valueOf(segmentGroup.getSegT().getNumeroContrato()));
-				boleto.setLBR_LoanContractNo(String.valueOf(segmentGroup.getSegT().getNumeroContrato()));
+			if (segT.getNumeroContrato() > 0) {
+				mov.setLBR_LoanContractNo(String.valueOf(segT.getNumeroContrato()));
+				boleto.setLBR_LoanContractNo(String.valueOf(segT.getNumeroContrato()));
 			}
 			
 			// Update FeeAmt (Valor da Tarifa/Custas)
-			BigDecimal feeAmt = BigDecimal.valueOf(segmentGroup.getSegT().getValorTarifas());
+			BigDecimal feeAmt = BigDecimal.valueOf(segT.getValorTarifas());
 
 			if (feeAmt.compareTo(Env.ZERO) == 1) {
 				mov.setFeeAmt(feeAmt);
@@ -267,7 +271,7 @@ public class CNABRecordsProcess {
 			}
 			
 			// Update Motivo da Ocorrência
-			String motivoOcorrencia = segmentGroup.getSegT().getMotivoOcorrencia();
+			String motivoOcorrencia = segT.getMotivoOcorrencia();
 			
 			if (motivoOcorrencia.trim().length() > 0 && cobMov.getLBR_Cob_GO_ID() > 0) {
 				MLBRCobGrupoOcorrencia gO = new MLBRCobGrupoOcorrencia(svrP.getCtx(), cobMov.getLBR_Cob_GO_ID(), svrP.get_TrxName());
@@ -299,62 +303,62 @@ public class CNABRecordsProcess {
 			}
 			
 			// Update Interest Amt (Valor dos Acréscimos)
-			BigDecimal interestAmt = BigDecimal.valueOf(segmentGroup.getSegU().getValorAcrescimos());
+			BigDecimal interestAmt = BigDecimal.valueOf(segU.getValorAcrescimos());
 			
 			if (interestAmt.compareTo(Env.ZERO) == 1) {
 				mov.setInterestAmt(interestAmt);
 			}
 			
 			// Update Discount Amt (Valor do Desconto)
-			BigDecimal discountAmt = BigDecimal.valueOf(segmentGroup.getSegU().getValorDesconto());
+			BigDecimal discountAmt = BigDecimal.valueOf(segU.getValorDesconto());
 			
 			if (discountAmt.compareTo(Env.ZERO) == 1) {
 				mov.setDiscountAmt(discountAmt);
 			}
 			
 			// Update WriteOff Amt (Valor do Abatimento)
-			BigDecimal writeOffAmt = BigDecimal.valueOf(segmentGroup.getSegU().getValorAbatimento());
+			BigDecimal writeOffAmt = BigDecimal.valueOf(segU.getValorAbatimento());
 			
 			if (writeOffAmt.compareTo(Env.ZERO) == 1) {
 				mov.setWriteOffAmt(writeOffAmt);
 			}
 			
 			// Update IOF Amt (Valor do IOF)
-			BigDecimal iofAmt = BigDecimal.valueOf(segmentGroup.getSegU().getValorIOF());
+			BigDecimal iofAmt = BigDecimal.valueOf(segU.getValorIOF());
 			
 			if (iofAmt.compareTo(Env.ZERO) == 1) {
 				mov.setLBR_IOFAmt(iofAmt);
 			}
 			
 			// Update Available Amt (Valor Líquido)
-			BigDecimal availableAmt = BigDecimal.valueOf(segmentGroup.getSegU().getValorLiquido());
+			BigDecimal availableAmt = BigDecimal.valueOf(segU.getValorLiquido());
 			
 			if (availableAmt.compareTo(Env.ZERO) == 1) {
 				mov.setAvailableAmt(availableAmt);
 			}
 			
 			// Update Other Expenses Amt (Outras Despesas)
-			BigDecimal otherExpensesAmt = BigDecimal.valueOf(segmentGroup.getSegU().getOutrasDespesas());
+			BigDecimal otherExpensesAmt = BigDecimal.valueOf(segU.getOutrasDespesas());
 			
 			if (otherExpensesAmt.compareTo(Env.ZERO) == 1) {
 				mov.setLBR_OtherExpensesAmt(otherExpensesAmt);
 			}
 			
 			// Update Other Incomes Amt (Outros Créditos)
-			BigDecimal otherIncomesAmt = BigDecimal.valueOf(segmentGroup.getSegU().getOutrosCreditos());
+			BigDecimal otherIncomesAmt = BigDecimal.valueOf(segU.getOutrosCreditos());
 			
 			if (otherIncomesAmt.compareTo(Env.ZERO) == 1) {
 				mov.setLBR_OtherIncomesAmt(otherIncomesAmt);
 			}
 			
 			// Data da Ocorrência
-			if (segmentGroup.getSegU().getDataOcorrencia() != null) {
-				mov.setLBR_Cob_OcorrenciaDate(new Timestamp(segmentGroup.getSegU().getDataOcorrencia().getTime()));
+			if (segU.getDataOcorrencia() != null) {
+				mov.setLBR_Cob_OcorrenciaDate(new Timestamp(segU.getDataOcorrencia().getTime()));
 			}
 			
 			// Data do Crédito
-			if (segmentGroup.getSegU().getDataCredito() != null) {
-				mov.setLBR_CreditDate(new Timestamp(segmentGroup.getSegU().getDataCredito().getTime()));
+			if (segU.getDataCredito() != null) {
+				mov.setLBR_CreditDate(new Timestamp(segU.getDataCredito().getTime()));
 			}
 			
 			/*
@@ -370,7 +374,7 @@ public class CNABRecordsProcess {
 			setBoletoFlags( boleto , returnMovCode );
 			
 			// Executa código customizado do retorno
-			bankCollection.postProcessReturn(segmentGroup, mov, boleto);
+			bankCollection.postProcessReturn(sg, mov, boleto);
 			
 			mov.saveEx();
 			boleto.saveEx();

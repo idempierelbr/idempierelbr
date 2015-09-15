@@ -9,6 +9,7 @@ public class CNABSegmentBaseRecord extends CNABBaseRecord {
 
 	private Integer sequencia;
 	private String tipoSegmento;
+	private CNABSegmentGroup group;
 
 	public CNABSegmentBaseRecord() {
 		super();
@@ -29,6 +30,23 @@ public class CNABSegmentBaseRecord extends CNABBaseRecord {
 	}
 	public void setTipoSegmento(String tipoSegmento) {
 		this.tipoSegmento = tipoSegmento;
+	}
+
+	public CNABSegmentGroup getGroup() {
+		return group;
+	}
+
+	public void setGroup(CNABSegmentGroup group) {
+		this.group = group;
+	}
+
+	// codigo opcional utilizado principalmente nos registros Y.
+	public String getCodigoOpcional() {
+		return "";
+	}
+
+	public void setCodigoOpcional(String codigoOpcional) {
+		return;
 	}
 	
 }

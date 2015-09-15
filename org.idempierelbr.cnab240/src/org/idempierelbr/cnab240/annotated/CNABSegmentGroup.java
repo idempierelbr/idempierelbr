@@ -1,33 +1,24 @@
 package org.idempierelbr.cnab240.annotated;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class CNABSegmentGroup {
-	private CNABSegmentTRecord segT;
-	private CNABSegmentURecord segU;
-	private ArrayList<CNABCobrancaSegmentBaseRecord> otherRecords = null;
 	
+	private Map<String,CNABSegmentBaseRecord> records;
 	
 	public CNABSegmentGroup() {
-		otherRecords = new ArrayList<CNABCobrancaSegmentBaseRecord>();
+		records = new HashMap<String,CNABSegmentBaseRecord>();
 	}
 	
-	public CNABSegmentTRecord getSegT() {
-		return segT;
-	}
-	public void setSegT(CNABSegmentTRecord segT) {
-		this.segT = segT;
-	}
-	public CNABSegmentURecord getSegU() {
-		return segU;
-	}
-	public void setSegU(CNABSegmentURecord segU) {
-		this.segU = segU;
+	public void addRecord(CNABSegmentBaseRecord record) {
+		records.put(record.getTipoSegmento()+record.getCodigoOpcional(), record);
+		record.setGroup(this);
 	}
 	
-	public void addRecord( CNABCobrancaSegmentBaseRecord record ) {
-		otherRecords.add(record);
+	public CNABSegmentBaseRecord getRecord(String recordType) {
+		return records.get(recordType);
 	}
 	
 }
