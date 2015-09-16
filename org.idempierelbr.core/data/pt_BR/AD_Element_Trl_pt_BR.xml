@@ -473,10 +473,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="159" trl="Y">
-  <value column="Name" original="Alias">Pseudônimo (Alias)</value>
-  <value column="PrintName" original="Alias">Pseudônimo (Alias)</value>
+  <value column="Name" original="Alias">Alias</value>
+  <value column="PrintName" original="Alias">Alias</value>
   <value column="Description" original="Defines an alternate method of indicating an account combination.">Define um método alternativo de indicar uma combinação de conta.</value>
-  <value column="Help" original="The Alias field allows you to define a alternate method for referring to a full account combination.  For example, the Account Receivable Account for Garden World may be aliased as GW_AR.">O campo "Pseudônimo (Alias)" permite a você definir um método alternativo para se referir a uma combinação de conta completa.  Por exemplo, a conta "Contas a Receber" para a Empresa Garden World pode usar GW_CR como pseudônimo (alias).</value>
+  <value column="Help" original="The Alias field allows you to define a alternate method for referring to a full account combination.  For example, the Account Receivable Account for Garden World may be aliased as GW_AR.">O campo Alias permite definir um método alternativo para se referir a uma combinação de conta completa.  Por exemplo, a conta "Contas a Receber" para a Empresa Garden World pode usar GW_CR como alias.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1334,10 +1334,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="285" trl="Y">
-  <value column="Name" original="Address Print Format">Formato de Impressão do Endereço</value>
-  <value column="PrintName" original="Address Print Format">Formato de Impressão do Endereço</value>
-  <value column="Description" original="Format for printing this Address">Formato para imprimir este Endereço</value>
-  <value column="Help" original="The Address Print format defines the format to be used when this address prints.  The following notations are used: @C@=City  @P@=Postal  @A@=PostalAdd  @R@=Region">O "Formato de Impressão de Endereço" define o formato a ser utilizado ao imprimir este endereço.  As seguintes notações são utilizadas: @C@=Cidade  @P@=Código Postal  @A@=Endereço Postal  @R@=Região (Estado)</value>
+  <value column="Name" original="Address Print Format">Formatação de Impressão do Endereço</value>
+  <value column="PrintName" original="Address Print Format">Formatação de Impressão do Endereço</value>
+  <value column="Description" original="Format for printing this Address">Formatação para imprimir este Endereço</value>
+  <value column="Help" original="The Address Print format defines the format to be used when this address prints.  The following notations are used: @C@=City  @P@=Postal  @A@=PostalAdd  @R@=Region">A "Formatação de Impressão de Endereço" define a formatação a ser utilizado ao imprimir este endereço.  As seguintes notações são utilizadas: @C@=Cidade  @P@=Código Postal  @A@=Endereço Postal  @R@=Região (Estado)</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1582,10 +1582,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="317" trl="Y">
-  <value column="Name" original="Use Account Alias">Usar Pseudônimo de Contas (Alias)</value>
-  <value column="PrintName" original="Alias">Pseudônimo</value>
-  <value column="Description" original="Ability to select (partial) account combinations by an Alias">Abilidade de selecionar combinações de contas (parciais) por um Pseudônimo (Alias)</value>
-  <value column="Help" original="The Alias checkbox indicates that account combination can be selected using a user defined alias or short key.">A caixa de verificação "Usar Pseudônimo de Contas (Alias)" indica se uma combinação de conta pode ser selecionada usando um Pseudônimo ou atalho definido pelo usuário.</value>
+  <value column="Name" original="Use Account Alias">Usar Alias de Conta</value>
+  <value column="PrintName" original="Alias">Alias</value>
+  <value column="Description" original="Ability to select (partial) account combinations by an Alias">Habilidade de selecionar combinações de contas (parciais) por um Alias</value>
+  <value column="Help" original="The Alias checkbox indicates that account combination can be selected using a user defined alias or short key.">A opção "Usar Alias" indica se uma combinação de conta pode ser selecionada usando um Alias ou atalho definido pelo usuário.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -10309,30 +10309,30 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1790" trl="Y">
-  <value column="Name" original="Print Format">Formato de Impressão</value>
-  <value column="PrintName" original="Print Format">Formato de Impressão</value>
-  <value column="Description" original="Data Print Format">Formato de Impressão de Dados</value>
-  <value column="Help" original="The print format determines how data is rendered for print.">O formato de impressão determina como os dados são manipulados para impressão.</value>
+  <value column="Name" original="Print Format">Formatação de Impressão</value>
+  <value column="PrintName" original="Print Format">Formatação de Impressão</value>
+  <value column="Description" original="Data Print Format">Formatação de Impressão de Dados</value>
+  <value column="Help" original="The print format determines how data is rendered for print.">A Formatação de Impressão determina como os dados são manipulados para impressão.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1791" trl="Y">
-  <value column="Name" original="Included Print Format">Formato de Impressão Incluído</value>
-  <value column="PrintName" original="Included Print Format">Formato de Impressão Incluído</value>
-  <value column="Description" original="Print format that is included here.">Formato de Impressão que é incluído aqui.</value>
-  <value column="Help" original="Included Print formats allow to e.g. Lines to Header records. The Column provides the parent link.">Os "Formatos de Impressão Incluídos" possibilitam por exemplo registros de Linhas para Cabeçalhos. A "Coluna" fornece o vínculo ao pai.</value>
+  <value column="Name" original="Included Print Format">Formatação de Impressão Incluída</value>
+  <value column="PrintName" original="Included Print Format">Formatação de Impressão Incluída</value>
+  <value column="Description" original="Print format that is included here.">Formatação de Impressão que é incluída aqui.</value>
+  <value column="Help" original="Included Print formats allow to e.g. Lines to Header records. The Column provides the parent link.">A Formatação de Impressão Incluída permite, por exemplo, a impressão de linhas nos registros de cabeçalho. A coluna permite vínculo ao registro principal</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1792" trl="Y">
-  <value column="Name" original="Print Format Item">Item de Formato de Impressão</value>
-  <value column="PrintName" original="Print Format Item">Item de Formato de Impressão</value>
-  <value column="Description" original="Item/Column in the Print format">Item/Coluna no Formato de Impressão</value>
-  <value column="Help" original="Item/Column in the print format maintaining layout information">Item/Coluna no Formato de Impressão que contém as informações de disposição de impressão (layout)</value>
+  <value column="Name" original="Print Format Item">Item de Formatação de Impressão</value>
+  <value column="PrintName" original="Print Format Item">Item de Formatação de Impressão</value>
+  <value column="Description" original="Item/Column in the Print format">Item/Coluna na Formatação de Impressão</value>
+  <value column="Help" original="Item/Column in the print format maintaining layout information">Item/Coluna na Formatação de Impressão que contém as informações de disposição de impressão (layout)</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -10409,8 +10409,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1800" trl="Y">
-  <value column="Name" original="One Line Only">Somente Uma Linha</value>
-  <value column="PrintName" original="One Line">Uma Linha</value>
+  <value column="Name" original="One Line Only">Linha Única</value>
+  <value column="PrintName" original="One Line">Linha Única</value>
   <value column="Description" original="If selected, only one line is printed">Se selecionado, somente uma linha será impressa</value>
   <value column="Help" original="If the column has a width restriction, the text is broken into multiple lines. If One Line is selected, only the first line is printed.">Se a coluna tiver uma restrição de largura, o texto será quebrado em múltiplas linhas. Se for selecionado "Uma Linha" somente a primeira linha será impressa.</value>
   <value column="PO_Description" original=""/>
@@ -10569,10 +10569,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1816" trl="Y">
-  <value column="Name" original="Format Type">Tipo do Formato</value>
-  <value column="PrintName" original="Format Type">Tipo do Formato</value>
-  <value column="Description" original="Print Format Type">Tipo do Formato de Impressão</value>
-  <value column="Help" original="The print format type determines what will be printed.">O Tipo do Formato de Impressão determina o que será impresso.</value>
+  <value column="Name" original="Format Type">Tipo de Formatação</value>
+  <value column="PrintName" original="Format Type">Tipo de Formatação</value>
+  <value column="Description" original="Print Format Type">Tipo de Formatação de Impressão</value>
+  <value column="Help" original="The print format type determines what will be printed.">O Tipo de Formatação de Impressão determina o que será impresso.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -10609,60 +10609,60 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1820" trl="Y">
-  <value column="Name" original="Check Print Format">Formato de Impressão do Cheque</value>
-  <value column="PrintName" original="Check Print Format">Formato de Impressão do Cheque</value>
-  <value column="Description" original="Print Format for printing Checks">Formato de Impressão para imprimir cheques</value>
-  <value column="Help" original="You need to define a Print Format to print the document.">Você precisa definir um Formato de Impressão para imprimir o documento.</value>
+  <value column="Name" original="Check Print Format">Formatação de Impressão do Cheque</value>
+  <value column="PrintName" original="Check Print Format">Formatação de Impressão do Cheque</value>
+  <value column="Description" original="Print Format for printing Checks">Formatação de Impressão para imprimir cheques</value>
+  <value column="Help" original="You need to define a Print Format to print the document.">Você precisa definir uma Formatação de Impressão para imprimir o documento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1821" trl="Y">
-  <value column="Name" original="Dunning Print Format">Formato de Impressão da Cobrança</value>
-  <value column="PrintName" original="Dunning Print Format">Formato de Impressão da Cobrança</value>
-  <value column="Description" original="Print Format for printing Dunning Letters">Formato de Impressão para imprimir Cartas de Cobrança</value>
-  <value column="Help" original="You need to define a Print Format to print the document.">Você precisa definir um Formato de Impressão para imprimir o documento.</value>
+  <value column="Name" original="Dunning Print Format">Formatação de Impressão da Cobrança</value>
+  <value column="PrintName" original="Dunning Print Format">Formatação de Impressão da Cobrança</value>
+  <value column="Description" original="Print Format for printing Dunning Letters">Formatação de Impressão para imprimir Cartas de Cobrança</value>
+  <value column="Help" original="You need to define a Print Format to print the document.">Você precisa definir uma Formatação de Impressão para imprimir o documento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1822" trl="Y">
-  <value column="Name" original="Invoice Print Format">Formato de Impressão da Fatura</value>
-  <value column="PrintName" original="Invoice Print Format">Formato de Impressão da Fatura</value>
-  <value column="Description" original="Print Format for printing Invoices">Formato de Impressão para imprimir faturas</value>
-  <value column="Help" original="You need to define a Print Format to print the document.">Você precisa definir um Formato de Impressão para imprimir o documento.</value>
+  <value column="Name" original="Invoice Print Format">Formatação de Impressão da Fatura</value>
+  <value column="PrintName" original="Invoice Print Format">Formatação de Impressão da Fatura</value>
+  <value column="Description" original="Print Format for printing Invoices">Formatação de Impressão para imprimir faturas</value>
+  <value column="Help" original="You need to define a Print Format to print the document.">Você precisa definir uma Formatação de Impressão para imprimir o documento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1823" trl="Y">
-  <value column="Name" original="Order Print Format">Formato de Impressão do Pedido</value>
-  <value column="PrintName" original="Order Print Format">Formato de Impressão do Pedido</value>
-  <value column="Description" original="Print Format for Orders, Quotes, Offers">Formato de Impressão para Pedidos, Cotações, Ofertas</value>
-  <value column="Help" original="You need to define a Print Format to print the document.">Você precisa definir um Formato de Impressão para imprimir o documento.</value>
+  <value column="Name" original="Order Print Format">Formatação de Impressão do Pedido</value>
+  <value column="PrintName" original="Order Print Format">Formatação de Impressão do Pedido</value>
+  <value column="Description" original="Print Format for Orders, Quotes, Offers">Formatação de Impressão para Pedidos, Cotações, Ofertas</value>
+  <value column="Help" original="You need to define a Print Format to print the document.">Você precisa definir uma Formatação de Impressão para imprimir o documento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1824" trl="Y">
-  <value column="Name" original="Remittance Print Format">Formato de Impressão de Remessa de Valores</value>
-  <value column="PrintName" original="Remittance Print Format">Formato de Impressão de Remessa de Valores</value>
-  <value column="Description" original="Print Format for separate Remittances">Formato de Impressão para separar remessas de valores</value>
-  <value column="Help" original="You need to define a Print Format to print the document.">Você precisa definir um Formato de Impressão para imprimir o documento.</value>
+  <value column="Name" original="Remittance Print Format">Formatação de Impressão de Remessa de Valores</value>
+  <value column="PrintName" original="Remittance Print Format">Formatação de Impressão de Remessa de Valores</value>
+  <value column="Description" original="Print Format for separate Remittances">Formatação de Impressão para separar remessas de valores</value>
+  <value column="Help" original="You need to define a Print Format to print the document.">Você precisa definir uma Formatação de Impressão para imprimir o documento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1825" trl="Y">
-  <value column="Name" original="Shipment Print Format">Formato de Impressão da Remessa / Recebimento</value>
-  <value column="PrintName" original="Shipment Print Format">Formato de Impressão da Remessa / Recebimento</value>
-  <value column="Description" original="Print Format for Shipments, Receipts, Pick Lists">Formato de Impressão para Entregas, Recebimentos, Listas de Separação</value>
-  <value column="Help" original="You need to define a Print Format to print the document.">Você precisa definir um Formato de Impressão para imprimir o documento.</value>
+  <value column="Name" original="Shipment Print Format">Formatação de Impressão da Remessa / Recebimento</value>
+  <value column="PrintName" original="Shipment Print Format">Formatação de Impressão da Remessa / Recebimento</value>
+  <value column="Description" original="Print Format for Shipments, Receipts, Pick Lists">Formatação de Impressão para Entregas, Recebimentos, Listas de Separação</value>
+  <value column="Help" original="You need to define a Print Format to print the document.">Você precisa definir uma Formatação de Impressão para imprimir o documento.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -10712,8 +10712,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="1833" trl="Y">
   <value column="Name" original="Image attached">Imagem Anexada</value>
   <value column="PrintName" original="Image attached">Imagem Anexada</value>
-  <value column="Description" original="The image to be printed is attached to the record">A imagem a ser impressa é anexada ao registro</value>
-  <value column="Help" original="The image to be printed is stored in the database as attachment to this record. The image can be a gif, jpeg or png.">A imagem a ser impressa é armazenada no banco de dados como um anexo a este registro. A imagem pode ser gif, jpeg ou png (linux).</value>
+  <value column="Description" original="The image to be printed is attached to the record">A imagem a ser impressa está anexada ao registro</value>
+  <value column="Help" original="The image to be printed is stored in the database as attachment to this record. The image can be a gif, jpeg or png.">A imagem a ser impressa está armazenada no banco de dados como um anexo a este registro. A imagem pode ser gif, jpeg ou png (linux).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -10810,10 +10810,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1844" trl="Y">
-  <value column="Name" original="Set NL Position">Ajustar a Posição da NL</value>
-  <value column="PrintName" original="Set NL Position">Ajustar a Posição da NL</value>
+  <value column="Name" original="Set NL Position">Ajustar a Posição da Nova Linha</value>
+  <value column="PrintName" original="Set NL Position">Ajustar a Posição da Nova Linha</value>
   <value column="Description" original="Set New Line Position">Ajustar a Posição da Nova Linha</value>
-  <value column="Help" original="When enabled, the current x (horizontal) Position before printing the item is saved. The next New Line will use the saved x (horizontal) Position, enabling to print data in columns.&#10;The setting is not restricted to an area (header, content, footer), allowing to align information also with Header and Footer with the Content.">Quando habilitado, a Posição horizontal (X) atual antes de imprimir o item será salva. A próxima "Nova Linha" irá usar a Posição horizontal (X) salva, permitindo assim imprimir dados em colunas. Este ajuste não é restrito a uma área (cabeçalho, conteúdo, rodapé), permitindo alinhar informação também com Rodapé e Cabeçalho com o Conteúdo.</value>
+  <value column="Help" original="When enabled, the current x (horizontal) Position before printing the item is saved. The next New Line will use the saved x (horizontal) Position, enabling to print data in columns.&#10;The setting is not restricted to an area (header, content, footer), allowing to align information also with Header and Footer with the Content.">Quando habilitado, a Posição horizontal (X) atual antes da impressão do item será salva. A próxima "Nova Linha" irá usar a Posição horizontal (X) salva, permitindo assim imprimir dados em colunas. Este ajuste não é restrito a uma área (cabeçalho, conteúdo, rodapé), permitindo alinhar informação também do Rodapé e Cabeçalho com o Conteúdo.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -10890,9 +10890,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1854" trl="Y">
-  <value column="Name" original="Below Column">Coluna em Baixo</value>
-  <value column="PrintName" original="Below Column">Coluna em Baixo</value>
-  <value column="Description" original="Print this column below the column index entered">Imprimir esta coluna em baixo do índice de coluna digitado</value>
+  <value column="Name" original="Below Column">Coluna Abaixo</value>
+  <value column="PrintName" original="Below Column">Coluna Abaixo</value>
+  <value column="Description" original="Print this column below the column index entered">Imprimir esta coluna embaixo do índice de coluna digitado</value>
   <value column="Help" original="This column is printed in a second line below the content of the first line identified. Please be aware, that this is depends on the actual sequence. Enter a 1 to add the info below the first column.">Esta coluna é impressa em uma segunda linha abaixo do conteúdo da primeira linha identificada. Por favor esteja ciente que isto depende da seqüência real. Digite um "1" para adicionar a informação abaixo da primeira coluna.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -12170,10 +12170,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1987" trl="Y">
-  <value column="Name" original="Print Label Suffix">Sufixo da Etiqueta de Impressão</value>
-  <value column="PrintName" original="Label Suffix">Sufixo da Etiqueta</value>
-  <value column="Description" original="The label text to be printed on a document or correspondence after the field">O texto da etiqueta a ser impresso em um documento ou correspondência após o campo.</value>
-  <value column="Help" original="The Label to be printed indicates the name that will be printed on a document or correspondence after the field. The max length is 60 characters.">O "Rótulo a ser Impresso" indica o nome que será impresso em um documento ou correspondência após o campo. O máximo comprimento é 60 caracteres.</value>
+  <value column="Name" original="Print Label Suffix">Sufixo do Campo</value>
+  <value column="PrintName" original="Label Suffix">Sufixo do Campo</value>
+  <value column="Description" original="The label text to be printed on a document or correspondence after the field">Sufixo a ser impresso após o campo</value>
+  <value column="Help" original="The Label to be printed indicates the name that will be printed on a document or correspondence after the field. The max length is 60 characters.">Indica o que será impresso após o campo. O comprimento máximo é de 60 caracteres.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -12780,10 +12780,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2053" trl="Y">
-  <value column="Name" original="Project Print Format">Formato de Impressão do Projeto</value>
-  <value column="PrintName" original="Project Print Format">Formato de Impressão do Projeto</value>
-  <value column="Description" original="Standard Project Print Format">Formato Padrão de Impressão de Projeto</value>
-  <value column="Help" original="Standard Project Print Format">Formato Padrão de Impressão de Projeto</value>
+  <value column="Name" original="Project Print Format">Formatação de Impressão do Projeto</value>
+  <value column="PrintName" original="Project Print Format">Formatação de Impressão do Projeto</value>
+  <value column="Description" original="Standard Project Print Format">Formatação Padrão de Impressão de Projeto</value>
+  <value column="Help" original="Standard Project Print Format">Formatação Padrão de Impressão de Projeto</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -14274,9 +14274,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2212" trl="Y">
-  <value column="Name" original="Running Total">Soma Parcial</value>
-  <value column="PrintName" original="Running Total">Soma Parcial</value>
-  <value column="Description" original="Create a running total (sum)">Cria uma soma parcial (running total)</value>
+  <value column="Name" original="Running Total">Soma Parcial por Página</value>
+  <value column="PrintName" original="Running Total">Soma Parcial por Página</value>
+  <value column="Description" original="Create a running total (sum)">Cria uma soma parcial</value>
   <value column="Help" original="A running total creates a sum at the end of a page and on the top of the next page for all columns, which have a Sum function.  You should define running total only once per format.">Uma "Soma Parcial" cria uma soma no final da página e no topo da próxima página para todas as colunas que tenham uma função de Soma.  Você deve definir a "Soma Parcial" apenas uma vez por formato.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -21406,9 +21406,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2971" trl="Y">
-  <value column="Name" original="Barcode Type">Barcode Type</value>
-  <value column="PrintName" original="Barcode">Barcode</value>
-  <value column="Description" original="Type of barcode">Type of barcode</value>
+  <value column="Name" original="Barcode Type">Tipo de Código de Barras</value>
+  <value column="PrintName" original="Barcode">Código de Barras</value>
+  <value column="Description" original="Type of barcode">Tipo de Código de Barras</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -25017,8 +25017,8 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53323" trl="Y">
-  <value column="Name" original="Jasper Process Now">Jasper Process Now</value>
-  <value column="PrintName" original="Jasper Process Now">Jasper Process Now</value>
+  <value column="Name" original="Jasper Process Now">Processar Relatório Jasper</value>
+  <value column="PrintName" original="Jasper Process Now">Processar Relatório Jasper</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28029,11 +28029,11 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53691" trl="N">
-  <value column="Name" original="Suppress Repeats">Suppress Repeats</value>
-  <value column="PrintName" original="Suppress Repeats">Suppress Repeats</value>
-  <value column="Description" original="Suppress repeated elements in column.">Suppress repeated elements in column.</value>
-  <value column="Help" original="Determines whether repeated elements in a column are repeated in a printed table.">Determines whether repeated elements in a column are repeated in a printed table.</value>
+ <row id="53691" trl="Y">
+  <value column="Name" original="Suppress Repeats">Suprimir Repetidos</value>
+  <value column="PrintName" original="Suppress Repeats">Suprimir Repetidos</value>
+  <value column="Description" original="Suppress repeated elements in column.">Suprimir elementos repetidos na coluna.</value>
+  <value column="Help" original="Determines whether repeated elements in a column are repeated in a printed table.">Determina se elementos repetidos em uma coluna são repetidos em uma tabela.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -38086,10 +38086,10 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200003" trl="N">
-  <value column="Name" original="Descending">Descending</value>
-  <value column="PrintName" original="Descending">Descending</value>
-  <value column="Description" original="Sort your data using a SQL Desc Order By statement">Sort your data using a SQL Desc Order By statement</value>
+ <row id="200003" trl="Y">
+  <value column="Name" original="Descending">Descendente</value>
+  <value column="PrintName" original="Descending">Descendente</value>
+  <value column="Description" original="Sort your data using a SQL Desc Order By statement">Ordena os dados utilizando a cláusula SQL "Order By Desc"</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -38487,9 +38487,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="200063" trl="Y">
-  <value column="Name" original="Alias List">Combinação de Conta (Pseudônimo)</value>
-  <value column="PrintName" original="Alias List">Combinação de Conta (Pseudônimo)</value>
-  <value column="Description" original="Valid Account Alias List">Combinação de Conta (Pseudônimo)</value>
+  <value column="Name" original="Alias List">Alias</value>
+  <value column="PrintName" original="Alias List">Alias</value>
+  <value column="Description" original="Valid Account Alias List">Alias</value>
   <value column="Help" original="The Combination identifies a valid combination of element which represent a GL account.">Identifica uma combinação válida de elementos, que representa uma conta contábil.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>

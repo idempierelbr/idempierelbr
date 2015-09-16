@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Ref_List">
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
+<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
+<idempiereTrl language="pt_BR" table="AD_Ref_List">
  <row id="51" trl="Y">
   <value column="Name" original="Organization">Organização</value>
   <value column="Description" original=""/>
@@ -1533,7 +1535,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="527" trl="Y">
-  <value column="Name" original="Print Format">Formato de Impressão</value>
+  <value column="Name" original="Print Format">Formatação de Impressão</value>
   <value column="Description" original=""/>
  </row>
  <row id="528" trl="Y">

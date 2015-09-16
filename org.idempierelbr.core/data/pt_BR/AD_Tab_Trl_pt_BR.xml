@@ -1604,18 +1604,18 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Font used for printing">Fontes utilizadas para impressão.</value>
  </row>
  <row id="425" trl="Y">
-  <value column="Name" original="Print Format">Formato de Impressão</value>
+  <value column="Name" original="Print Format">Formatação de Impressão</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Print Format">Gerenciamento dos Formatos de Impressão</value>
-  <value column="Help" original="The print format determines how data is rendered for print.">O formato de impressão determina como os dados são manipulados para impressão.</value>
+  <value column="Description" original="Maintain Print Format">Gerenciamento das Formatações de Impressão</value>
+  <value column="Help" original="The print format determines how data is rendered for print.">A formatação de impressão determina como os dados são manipulados para impressão.</value>
  </row>
  <row id="426" trl="Y">
-  <value column="Name" original="Format Item">Item de Formato</value>
+  <value column="Name" original="Format Item">Item da Formatação</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Print Format Item">Item de Formato de Impressão</value>
-  <value column="Help" original="Item in the print format maintaining layout information.  The following additional variables are available when printing:&#10;&lt;p&gt;@*Page@ - the current page number&#10;&lt;br&gt;@*PageCount@ - the total number of pages&#10;&lt;br&gt;@*MultiPageInfo@ - &quot;Page x of y&quot; - only printed if more than one page&#10;&lt;br&gt;@*CopyInfo@ - if it is a copy of the document &quot;Duplicate&quot; is printed&#10;&lt;br&gt;@*ReportName@ - name of the report&#10;&lt;br&gt;@*Header@ - Full Header with user/client/org name and connection&#10;&lt;br&gt;@*CurrentDate@ - the print date&#10;&lt;br&gt;@*CurrentDateTime@ - the print time&#10;&#10;&lt;p&gt;The layoit logic for forms is: &lt;br&gt;&#10;- if not printed: ignore &lt;br&gt;&#10;- set New Line Position &lt;br&gt;&#10;- new page &lt;br&gt;&#10;- new line, if something was printed since last new line&lt;br&gt;&#10;- format item&lt;br&gt;&#10;- print it (if not null/empty selected)&lt;br&gt;&#10;(i.e. supress null does not prevent new line)"><![CDATA[Item no Formato de Impressão que contém as informações de disposição de impressão (layout).  As seguintes variáveis adicionais estão disponíveis ao imprimir: <p>@*Page@ - número da página atual <br>@*PageCount@ - número total de páginas <br>@*MultiPageInfo@ - "Página x de y" - somente impresso se houver mais de uma página <br>@*CopyInfo@ - Imprime "Duplicado" se for uma cópia de documento <br>@*ReportName@ - nome do relatório <br>@*Header@ - Cabeçalho Completo o nome e a conexão do usuário/empresa/organização <br>@*CurrentDate@ - data de impressão <br>@*CurrentDateTime@ - hora da impressão
+  <value column="Description" original="Print Format Item">Item da Formatação de Impressão</value>
+  <value column="Help" original="Item in the print format maintaining layout information.  The following additional variables are available when printing:&#10;&lt;p&gt;@*Page@ - the current page number&#10;&lt;br&gt;@*PageCount@ - the total number of pages&#10;&lt;br&gt;@*MultiPageInfo@ - &quot;Page x of y&quot; - only printed if more than one page&#10;&lt;br&gt;@*CopyInfo@ - if it is a copy of the document &quot;Duplicate&quot; is printed&#10;&lt;br&gt;@*ReportName@ - name of the report&#10;&lt;br&gt;@*Header@ - Full Header with user/client/org name and connection&#10;&lt;br&gt;@*CurrentDate@ - the print date&#10;&lt;br&gt;@*CurrentDateTime@ - the print time&#10;&#10;&lt;p&gt;The layoit logic for forms is: &lt;br&gt;&#10;- if not printed: ignore &lt;br&gt;&#10;- set New Line Position &lt;br&gt;&#10;- new page &lt;br&gt;&#10;- new line, if something was printed since last new line&lt;br&gt;&#10;- format item&lt;br&gt;&#10;- print it (if not null/empty selected)&lt;br&gt;&#10;(i.e. supress null does not prevent new line)"><![CDATA[Item na Formatação de Impressão que contém as informações de disposição de impressão (layout).  As seguintes variáveis adicionais estão disponíveis ao imprimir: <p>@*Page@ - número da página atual <br>@*PageCount@ - número total de páginas <br>@*MultiPageInfo@ - "Página x de y" - somente impresso se houver mais de uma página <br>@*CopyInfo@ - Imprime "Duplicado" se for uma cópia de documento <br>@*ReportName@ - nome do relatório <br>@*Header@ - Cabeçalho Completo o nome e a conexão do usuário/empresa/organização <br>@*CurrentDate@ - data de impressão <br>@*CurrentDateTime@ - hora da impressão
 
-<p>O layout lógico para formulários é: <br> - se não for imprimido: ignore <br> - configure a Nova Posição da Linha <br> - nova página <br> - nova linha, se algo foi impresso desde a ultima nova linha<br> - item de formato<br> - imprimir (se não for selecionado nulo/vazio)<br> (i.e. suprimir nulo não previne nova linha)]]></value>
+<p>O layout lógico para formulários é: <br> - se não for imprimido: ignore <br> - configure a Nova Posição da Linha <br> - nova página <br> - nova linha, se algo foi impresso desde a ultima nova linha<br> - item da formatação<br> - imprimir (se não for selecionado nulo/vazio)<br> (i.e. suprimir nulo não previne nova linha)]]></value>
  </row>
  <row id="427" trl="Y">
   <value column="Name" original="Print Paper">Papel (Impressão)</value>
@@ -6312,8 +6312,8 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200143" trl="N">
-  <value column="Name" original="Translate">Translate</value>
+ <row id="200143" trl="Y">
+  <value column="Name" original="Translate">Tradução</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>

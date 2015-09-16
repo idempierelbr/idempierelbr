@@ -899,9 +899,9 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
   <value column="Help" original=""/>
  </row>
  <row id="287" trl="Y">
-  <value column="Name" original="Print Format Detail">Detalhe de Formato de Impressão</value>
-  <value column="Description" original="Print Format Detail Report">Relatório de Detalhe de Formato de Impressão</value>
-  <value column="Help" original="Print Format with Item details">Formato de Impressão com detalhes dos itens</value>
+  <value column="Name" original="Print Format Detail">Detalhe de Formatação de Impressão</value>
+  <value column="Description" original="Print Format Detail Report">Relatório de Detalhe de Formatação de Impressão</value>
+  <value column="Help" original="Print Format with Item details">Formatação de Impressão com detalhes dos itens</value>
  </row>
  <row id="288" trl="Y">
   <value column="Name" original="Reset Password">Resetar Senha</value>
@@ -1492,9 +1492,9 @@ Element Cost = Element Cost this level + Element Cost this low level
 Total BOM Cost = Sum every Element Cost]]></value>
  </row>
  <row id="53063" trl="Y">
-  <value column="Name" original="Create Report (Jasper)">Create Report (Jasper)</value>
-  <value column="Description" original="Create Financial Report  (Jasper)">Create Financial Report  (Jasper)</value>
-  <value column="Help" original="The default period is the current period. You can optionally enter other restrictions.  You can select an alternative Reporting Hierarchy.">The default period is the current period. You can optionally enter other restrictions.  You can select an alternative Reporting Hierarchy.</value>
+  <value column="Name" original="Create Report (Jasper)">Gerar Relatório (Jasper)</value>
+  <value column="Description" original="Create Financial Report  (Jasper)">Gerar Relatório Financeiro (Jasper)</value>
+  <value column="Help" original="The default period is the current period. You can optionally enter other restrictions.  You can select an alternative Reporting Hierarchy.">O período padrão é o período atual. Você pode adicionalmente informar outras restrições, e até mesmo uma Hierarquia de Relatórios diferente.</value>
  </row>
  <row id="53065" trl="N">
   <value column="Name" original="ASP Generate Fields">ASP Generate Fields</value>
