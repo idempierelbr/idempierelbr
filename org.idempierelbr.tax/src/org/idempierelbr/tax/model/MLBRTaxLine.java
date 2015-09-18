@@ -130,7 +130,7 @@ public class MLBRTaxLine extends X_LBR_TaxLine implements Comparator<Object>, Co
 	public MLBRTaxLine copy (Properties ctx, String trxName)
 	{
 		MLBRTaxLine tl = new MLBRTaxLine (ctx, 0, trxName);
-		super.copyValues(this, tl);
+		super.copyValues(this, tl, getAD_Client_ID(), getAD_Org_ID());
 		tl.setLBR_Tax_ID(0);
 		//
 		return tl;

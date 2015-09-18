@@ -495,8 +495,9 @@ public class MLBRTax extends X_LBR_Tax
 	public MLBRTax copyTo ()
 	{
 		MLBRTax newTax = new MLBRTax(getCtx(), 0, get_TrxName());
+		newTax.setAD_Org_ID(getAD_Org_ID());
 		newTax.setDescription(getDescription());
-		newTax.save(get_TrxName());
+		newTax.saveEx();
 		copyLinesTo(newTax);
 		//
 		return newTax;
@@ -515,7 +516,8 @@ public class MLBRTax extends X_LBR_Tax
 		MLBRTaxLine[] lines = getLines();
 		for (int i=0; i<lines.length; i++)
 		{
-			MLBRTaxLine newLine = new MLBRTaxLine (getCtx(), 0, get_TrxName());
+			MLBRTaxLine newLine = new MLBRTaxLine (newTax.getCtx(), 0, newTax.get_TrxName());
+			newLine.setAD_Org_ID(newTax.getAD_Org_ID());
 			newLine.setLBR_Tax_ID(newTax.getLBR_Tax_ID());
 			newLine.setLBR_TaxName_ID(lines[i].getLBR_TaxName_ID());
 			newLine.setLBR_TaxRate(lines[i].getLBR_TaxRate());
@@ -529,7 +531,7 @@ public class MLBRTax extends X_LBR_Tax
 			newLine.setQty(lines[i].getQty());
 			newLine.setLBR_TaxBaseType_ID(lines[i].getLBR_TaxBaseType_ID());
 			newLine.setLBR_TaxListAmt(lines[i].getLBR_TaxListAmt());
-			newLine.save(get_TrxName());
+			newLine.saveEx();
 		}
 
 		newTax.setDescription();
