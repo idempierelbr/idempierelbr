@@ -474,15 +474,15 @@ public class NFFromXMLGen
 		
 		MTable table = MTable.get (Env.getCtx(), MBPartner.Table_Name);
 		
-		String where;
+		String where = "IsActive=?";
 		
 		if (documentNo.length() == 11)
-			where = "LBR_CPF=?";
+			where += " AND LBR_CPF=?";
 		else
-			where = "LBR_CNPJ=?";
-			
+			where += " AND LBR_CNPJ=?";
+
 		Query query =  new Query(Env.getCtx(), table, where, null);
-		query.setParameters(new Object[]{documentNo});
+		query.setParameters(new Object[]{true, documentNo});
 
 		return query.first();
 	}
