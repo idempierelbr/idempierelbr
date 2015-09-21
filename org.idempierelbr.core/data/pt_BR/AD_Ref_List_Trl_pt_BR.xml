@@ -1256,14 +1256,14 @@
  </row>
  <row id="455" trl="Y">
   <value column="Name" original="Manual">Manual</value>
-  <value column="Description" original="Manual Entry">Lançamento Manual</value>
+  <value column="Description" original="Manual Entry">Registro Manual</value>
  </row>
  <row id="456" trl="Y">
   <value column="Name" original="Calculated">Calculado</value>
   <value column="Description" original=""/>
  </row>
  <row id="457" trl="Y">
-  <value column="Name" original="Achievements">Achievements</value>
+  <value column="Name" original="Achievements">Realizações</value>
   <value column="Description" original=""/>
  </row>
  <row id="458" trl="Y">
@@ -1467,27 +1467,27 @@
   <value column="Description" original=""/>
  </row>
  <row id="510" trl="Y">
-  <value column="Name" original="Average PO">PC Médio</value>
+  <value column="Name" original="Average PO">Pedido de Compra (Média)</value>
   <value column="Description" original=""/>
  </row>
  <row id="511" trl="Y">
-  <value column="Name" original="Last PO Price">Preço do Último PC</value>
+  <value column="Name" original="Last PO Price">Preço no Último Pedido de Compra</value>
   <value column="Description" original=""/>
  </row>
  <row id="512" trl="Y">
-  <value column="Name" original="Last Invoice Price">Preço da Última Fatura</value>
+  <value column="Name" original="Last Invoice Price">Preço na Última Fatura</value>
   <value column="Description" original=""/>
  </row>
  <row id="513" trl="Y">
-  <value column="Name" original="Price List (Limit)">Lista de Preço (Limite)</value>
+  <value column="Name" original="Price List (Limit)">Tabela de Preços (Limite)</value>
   <value column="Description" original=""/>
  </row>
  <row id="514" trl="Y">
-  <value column="Name" original="Average PO History">Average PO History</value>
+  <value column="Name" original="Average PO History">Pedido de Compra (Média Histórica)</value>
   <value column="Description" original=""/>
  </row>
  <row id="515" trl="Y">
-  <value column="Name" original="Average Invoice History">Average Invoice History</value>
+  <value column="Name" original="Average Invoice History">Fatura (Média Histórica)</value>
   <value column="Description" original=""/>
  </row>
  <row id="516" trl="Y">
@@ -2263,24 +2263,24 @@
   <value column="Description" original=""/>
  </row>
  <row id="714" trl="Y">
-  <value column="Name" original="Material">Material</value>
+  <value column="Name" original="Material">Custo de Material Direto (Matéria-prima)</value>
   <value column="Description" original=""/>
  </row>
  <row id="715" trl="Y">
-  <value column="Name" original="Overhead">Custos Indiretos</value>
+  <value column="Name" original="Overhead">Custo Indireto</value>
   <value column="Description" original=""/>
  </row>
  <row id="716" trl="Y">
-  <value column="Name" original="Burden (M.Overhead)">Ônus (Desp.Indir.Material)</value>
-  <value column="Description" original="Material Overhead">Custos Indiretos de Material</value>
+  <value column="Name" original="Burden (M.Overhead)">Custo de Material Indireto</value>
+  <value column="Description" original="Material Overhead">Material Indireto</value>
  </row>
  <row id="717" trl="Y">
-  <value column="Name" original="Outside Processing">Processamento Externo</value>
+  <value column="Name" original="Outside Processing">Custo de Processamento Externo</value>
   <value column="Description" original=""/>
  </row>
  <row id="718" trl="Y">
-  <value column="Name" original="Resource">Recurso</value>
-  <value column="Description" original="Labor">Mão-de-Obra</value>
+  <value column="Name" original="Resource">Custo de Mão de Obra</value>
+  <value column="Description" original="Labor">Mão de Obra</value>
  </row>
  <row id="719" trl="Y">
   <value column="Name" original="Quantity">Quantidade Pedida/Fatura</value>
@@ -2635,23 +2635,23 @@
   <value column="Description" original=""/>
  </row>
  <row id="809" trl="Y">
-  <value column="Name" original="FiFo">PePs</value>
+  <value column="Name" original="FiFo">PEPS (FIFO)</value>
   <value column="Description" original=""/>
  </row>
  <row id="810" trl="Y">
-  <value column="Name" original="LiFo">UePs</value>
+  <value column="Name" original="LiFo">UEPS (LIFO)</value>
   <value column="Description" original=""/>
  </row>
  <row id="811" trl="Y">
-  <value column="Name" original="Average Invoice">Fatura Média</value>
+  <value column="Name" original="Average Invoice">Fatura (Média)</value>
   <value column="Description" original=""/>
  </row>
  <row id="812" trl="Y">
-  <value column="Name" original="Old Standard Cost">Old Standard Cost</value>
+  <value column="Name" original="Old Standard Cost">Custo Padrão (Antigo)</value>
   <value column="Description" original=""/>
  </row>
  <row id="813" trl="Y">
-  <value column="Name" original="Future Standard Cost">Future Standard Cost</value>
+  <value column="Name" original="Future Standard Cost">Custo Padrão Futuro</value>
   <value column="Description" original=""/>
  </row>
  <row id="814" trl="Y">
@@ -2731,7 +2731,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="833" trl="Y">
-  <value column="Name" original="Bus.Partner Group">Bus.Partner Group</value>
+  <value column="Name" original="Bus.Partner Group">Grupo de Parceiros</value>
   <value column="Description" original=""/>
  </row>
  <row id="834" trl="Y">
@@ -2739,19 +2739,19 @@
   <value column="Description" original=""/>
  </row>
  <row id="835" trl="Y">
-  <value column="Name" original="User defined">Definido pelo usuário</value>
+  <value column="Name" original="User defined">Definido pelo Usuário</value>
   <value column="Description" original=""/>
  </row>
  <row id="836" trl="Y">
-  <value column="Name" original="Qty/Amount in Time">Qty/Amount in Time</value>
+  <value column="Name" original="Qty/Amount in Time">Período (Qtd/Valor)</value>
   <value column="Description" original=""/>
  </row>
  <row id="837" trl="Y">
-  <value column="Name" original="Status Qty/Amount">Status Qty/Amount</value>
+  <value column="Name" original="Status Qty/Amount">Estado (Qtd/Valor)</value>
   <value column="Description" original=""/>
  </row>
  <row id="838" trl="Y">
-  <value column="Name" original="Ratio">Razão</value>
+  <value column="Name" original="Ratio">Relação</value>
   <value column="Description" original=""/>
  </row>
  <row id="839" trl="Y">
@@ -2763,7 +2763,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="841" trl="Y">
-  <value column="Name" original="Ratio">Razão</value>
+  <value column="Name" original="Ratio">Relação</value>
   <value column="Description" original=""/>
  </row>
  <row id="842" trl="Y">
@@ -2771,19 +2771,19 @@
   <value column="Description" original=""/>
  </row>
  <row id="843" trl="Y">
-  <value column="Name" original="Plus">Plus</value>
+  <value column="Name" original="Plus">Adição</value>
   <value column="Description" original=""/>
  </row>
  <row id="844" trl="Y">
-  <value column="Name" original="Minus">Minus</value>
+  <value column="Name" original="Minus">Subtração</value>
   <value column="Description" original=""/>
  </row>
  <row id="845" trl="Y">
-  <value column="Name" original="Multiply">Multiply</value>
+  <value column="Name" original="Multiply">Multiplicação</value>
   <value column="Description" original=""/>
  </row>
  <row id="846" trl="Y">
-  <value column="Name" original="Divide">Divide</value>
+  <value column="Name" original="Divide">Divisão</value>
   <value column="Description" original=""/>
  </row>
  <row id="848" trl="Y">
@@ -2791,7 +2791,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="849" trl="Y">
-  <value column="Name" original="Account Value">Account Value</value>
+  <value column="Name" original="Account Value">Valor de Conta Contábil</value>
   <value column="Description" original=""/>
  </row>
  <row id="850" trl="Y">
@@ -4270,28 +4270,28 @@
   <value column="Name" original="Co-Product">Co-Product</value>
   <value column="Description" original=""/>
  </row>
- <row id="53495" trl="N">
-  <value column="Name" original="Bar Chart">Bar Chart</value>
+ <row id="53495" trl="Y">
+  <value column="Name" original="Bar Chart">Gráfico de Barras</value>
   <value column="Description" original=""/>
  </row>
- <row id="53496" trl="N">
-  <value column="Name" original="Pie Chart">Pie Chart</value>
+ <row id="53496" trl="Y">
+  <value column="Name" original="Pie Chart">Gráfico de Setores</value>
   <value column="Description" original=""/>
  </row>
- <row id="53497" trl="N">
-  <value column="Name" original="Ring Chart">Ring Chart</value>
+ <row id="53497" trl="Y">
+  <value column="Name" original="Ring Chart">Gráfico em Anel</value>
   <value column="Description" original=""/>
  </row>
- <row id="53498" trl="N">
-  <value column="Name" original="Line Chart">Line Chart</value>
+ <row id="53498" trl="Y">
+  <value column="Name" original="Line Chart">Gráfico de Linhas</value>
   <value column="Description" original=""/>
  </row>
- <row id="53499" trl="N">
-  <value column="Name" original="Area Chart">Area Chart</value>
+ <row id="53499" trl="Y">
+  <value column="Name" original="Area Chart">Gráfico de Área</value>
   <value column="Description" original=""/>
  </row>
- <row id="53500" trl="N">
-  <value column="Name" original="Waterfall Chart">Waterfall Chart</value>
+ <row id="53500" trl="Y">
+  <value column="Name" original="Waterfall Chart">Gráfico em Cascata</value>
   <value column="Description" original=""/>
  </row>
  <row id="53501" trl="N">

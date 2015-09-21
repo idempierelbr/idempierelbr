@@ -472,9 +472,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Performance Measure Calculation defines how performance measures will be calculated. &#10;The sql needs to return a single value.  Please check examples.&lt;br&gt;&#10;The date trestriction is defined in the Goal. &#10;Any restrictions for Organizations, Business Partners, Products, etc. are  as Performance Goal Restrictions."><![CDATA[A Aba "Cálculos de Medidas de Desempenho" define como as medidas de desempenho serão calculadas. The sql needs to return a single value.  Please check examples.<br> The date trestriction is defined in the Goal. Any restrictions for Organizations, Business Partners, Products, etc. are  as Performance Goal Restrictions.]]></value>
  </row>
  <row id="215" trl="Y">
-  <value column="Name" original="Performance Measure">Medida de Desempenho</value>
-  <value column="Description" original="Define your Performance Measures">Definir suas Medidas de Desempenho</value>
-  <value column="Help" original="The Performance Measure Window allows you to define the rules and restrictions for performance measurement.  You can, for example, restrict performance measurement to sales for a certain product category for a defined time frame.">A Janela "Medidas de Desempenho" permite a você definir as regras e restrições para medir o desempenho.  Você pode, por exemplo, restringir a medição de desempenho a vendas por uma certa categoria de produtos por um período de tempo definido.</value>
+  <value column="Name" original="Performance Measure">Medição de Desempenho</value>
+  <value column="Description" original="Define your Performance Measures">Definir suas Medições de Desempenho</value>
+  <value column="Help" original="The Performance Measure Window allows you to define the rules and restrictions for performance measurement.  You can, for example, restrict performance measurement to sales for a certain product category for a defined time frame.">A Janela "Medição de Desempenho" permite a você definir as regras e restrições para medir o desempenho. Você pode, por exemplo, restringir a medição de desempenho a vendas por uma certa categoria de produtos por um período de tempo definido.</value>
  </row>
  <row id="216" trl="Y">
   <value column="Name" original="Financial Report">Relatório Financeiro</value>
@@ -1205,14 +1205,14 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Visual representation of performance by color.  The Schema has often three levels (e.g. red-yellow-green).  iDempiere support two levels (e.g. red-green) or four levels (e.g. gray-bronce-silver-gold).  Note that Measures without a goal are represented white.  The percentages could be beween 0 and unlimited (i.e. above 100%).">Representação visual do desempenho através de cores. O esquema normalmente possui três níveis (ex: vermelho, amarelo, verde). As porcentagens podem ser entre 0 e infinito (ex: acima de 100%).</value>
  </row>
  <row id="365" trl="Y">
-  <value column="Name" original="Performance Benchmark">Performance Benchmark</value>
-  <value column="Description" original="Performance Benchmark">Performance Benchmark</value>
-  <value column="Help" original="Data Series to compare internal performance with (e.g. stock price, ...)">Data Series to compare internal performance with (e.g. stock price, ...)</value>
+  <value column="Name" original="Performance Benchmark">Benchmark de Desempenho</value>
+  <value column="Description" original="Performance Benchmark">Benchmark de Desempenho</value>
+  <value column="Help" original="Data Series to compare internal performance with (e.g. stock price, ...)">Série de dados para comparação de desempenho (ex: preços de ações)</value>
  </row>
  <row id="366" trl="Y">
-  <value column="Name" original="Performance Ratio">Performance Ratio</value>
-  <value column="Description" original="Maintain Performance Ratios">Maintain Performance Ratios</value>
-  <value column="Help" original="Calculation instruction for a ratio">Calculation instruction for a ratio</value>
+  <value column="Name" original="Performance Ratio">Relação de Desempenho</value>
+  <value column="Description" original="Maintain Performance Ratios">Manutenção de Relações de Desempenho</value>
+  <value column="Help" original="Calculation instruction for a ratio">Cálculos para determinar uma relação</value>
  </row>
  <row id="367" trl="Y">
   <value column="Name" original="Issue Recommendation">Issue Recommendation</value>

@@ -368,9 +368,9 @@
   <value column="Help" original="When selected, the database column definition is updated based on your entries in the Column definition of the Application Dictionary. Note that not all changes are supported by the database and may result in an error.">Este processo altera o banco de dados para refletir as opções definidas na aba Coluna (no Dicionário de Aplicação). Observe que nem todas as alterações são suportadas pelo banco de dados, e a execução deste processo pode resultar em erro.</value>
  </row>
  <row id="182" trl="Y">
-  <value column="Name" original="Standard Cost Update">Standard Cost Update</value>
-  <value column="Description" original="Set standard and future cost price">Set standard and future cost price</value>
-  <value column="Help" original="For Standard Costs you can set/recalculate the current or future cost price (for the cost type of the accounting schema). If the Costing Level of the Accounting Schema is set to Client, missing cost records are created. The historical costs are calculated based on the accumulated amount/quantity of the costing method.">For Standard Costs you can set/recalculate the current or future cost price (for the cost type of the accounting schema). If the Costing Level of the Accounting Schema is set to Client, missing cost records are created. The historical costs are calculated based on the accumulated amount/quantity of the costing method.</value>
+  <value column="Name" original="Standard Cost Update">Atualizar Custo Padrão</value>
+  <value column="Description" original="Set standard and future cost price">Atualizar preço do custo padrão e futuro</value>
+  <value column="Help" original="For Standard Costs you can set/recalculate the current or future cost price (for the cost type of the accounting schema). If the Costing Level of the Accounting Schema is set to Client, missing cost records are created. The historical costs are calculated based on the accumulated amount/quantity of the costing method.">Para o Custo Padrão, é possível definir/recalcular o preço de custo atual ou futuro (para o tipo de custo do Esquema Contábil). Se o nível do custo no esquema contábil está definido como Empresa, os registros ausentes serão criados. O histórico dos custos serão calculados baseando-se no valor/quantidade acumulados do método de custo.</value>
  </row>
  <row id="184" trl="Y">
   <value column="Name" original="Process Expenses">Processar Despesas</value>
@@ -1110,19 +1110,19 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
   <value column="Help" original="To enable storage encryption or remove encryption is dangerous as you may loose data. You need to verify that the column is big enough to hold the encrypted value.  You can provide your own encryption method, but cannot change it once enabled.  &lt;br&gt;&#10;The default implementation supports US ASCII String conversion (not Unicode, Numbers, Dates)&lt;br&gt;&#10;Note that support is restricted to setup and test, but not data recovery."><![CDATA[Habilitar ou remover a encriptação da coluna um processo perigoso que exige atenção pois você pode perder dados. Você precisa certificar-se que a coluna é grande o suficiente para armazenar o valor encriptado. Você pode fornecer seu próprio método de encriptação, mas uma vez habilitado, não é possível alterá-lo. <br> A implementação padrão suporta conversão de seqüências de caracteres US ASCII  (mas não Unicode, Números, Datas). <br> Note que o suporte a encriptação é restrito a ajuste e testes, mas não há suporte para recuperação de dados.]]></value>
  </row>
  <row id="329" trl="Y">
-  <value column="Name" original="Product Cost">Custeio de Produto</value>
+  <value column="Name" original="Product Cost">Custos de Produto</value>
   <value column="Description" original="Product Cost Report">Relatório de Custos de Produto</value>
-  <value column="Help" original="The Product Cost  report lists the product costs for the product, cost type and cost element">O relatório de "Custeio de Produtos" lista os custos de produto para o produto, tipo de custo e elemento de custo</value>
+  <value column="Help" original="The Product Cost  report lists the product costs for the product, cost type and cost element">Este relatório apresenta os custos do produto, incluindo os tipos e elementos de custo</value>
  </row>
  <row id="330" trl="Y">
-  <value column="Name" original="Product Cost Summary">Resumo de Custo de Produto</value>
-  <value column="Description" original="Product Cost Summary Report">Resumo de Relatório de Custos de Produto</value>
-  <value column="Help" original="The Product Cost  report lists the summarized product costs for the product">O relatório de "Custeio de Produtos" lista o resumo de custos para o produto</value>
+  <value column="Name" original="Product Cost Summary">Resumo do Custo de Produto</value>
+  <value column="Description" original="Product Cost Summary Report">Relatório Resumido do Custo de Produto</value>
+  <value column="Help" original="The Product Cost  report lists the summarized product costs for the product">Este relatório apresenta informações resumidas do custo de produto</value>
  </row>
  <row id="331" trl="Y">
-  <value column="Name" original="Product Cost Detail">Detalhe de Custo de Produto</value>
-  <value column="Description" original="Product Invoice Cost Detail Report">Relatório Detalhado de Custo de Produto</value>
-  <value column="Help" original="The Product Invoice Cost Detail Report lists the products with the individual invoice cost allocation">O Relatório Detalhado de Custo de Produto lista os produtos com a alocação individual de custo faturado</value>
+  <value column="Name" original="Product Cost Detail">Detalhes do Custo de Produto</value>
+  <value column="Description" original="Product Invoice Cost Detail Report">Relatório Detalhado do Custo de Produto</value>
+  <value column="Help" original="The Product Invoice Cost Detail Report lists the products with the individual invoice cost allocation">Este relatório apresenta os produtos e suas alocações de custo</value>
  </row>
  <row id="332" trl="Y">
   <value column="Name" original="Distribute Costs">Distribuir Custos</value>
@@ -1142,7 +1142,7 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
  <row id="335" trl="Y">
   <value column="Name" original="Create Costing Records">Criar Registros de Custos</value>
   <value column="Description" original="Create Costing Records">Criar Registros de Custos</value>
-  <value column="Help" original="The costing records are created when needed or by batch processes. You can force the creation of the costing information here.">Os registros de custos são criados quando necessário ou por processos de batelada. Você pode forçar a criação da informação de custo aqui.</value>
+  <value column="Help" original="The costing records are created when needed or by batch processes. You can force the creation of the costing information here.">Os registros de custos são criados automaticamente quando necessário ou através de processos em lote. Entretanto, é possível forçar a criação desses registros através deste processo.</value>
  </row>
  <row id="336" trl="Y">
   <value column="Name" original="Create Tax Declaration">Criar Declaração de Impostos</value>

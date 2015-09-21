@@ -23,7 +23,7 @@
   <value column="Description" original="Maintain Data">Gerenciamento de Dados</value>
  </row>
  <row id="158" trl="Y">
-  <value column="Name" original="Performance Measurement">Avaliação de Desempenho</value>
+  <value column="Name" original="Performance Measurement">Medição de Desempenho</value>
   <value column="Description" original=""/>
  </row>
  <row id="159" trl="Y">
@@ -91,7 +91,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="278" trl="Y">
-  <value column="Name" original="Performance Analysis">Análise de Desempenho</value>
+  <value column="Name" original="Performance Analysis">Avaliação de Desempenho</value>
   <value column="Description" original=""/>
  </row>
  <row id="280" trl="Y">

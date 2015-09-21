@@ -1304,10 +1304,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="The Performance Achievement Tab defines the Tasks to be achieved.  The performance is measured by the percentage of reached achievements.">A Aba "Objetivo de Desempenho" define as Tarefas a serem cumpridas.  O desempenho é medido pela percentagem de objetivos alcançados.</value>
  </row>
  <row id="371" trl="Y">
-  <value column="Name" original="Measure">Medida</value>
+  <value column="Name" original="Measure">Medição</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Performance Measure">Medida de Desempenho</value>
-  <value column="Help" original="The Performance Measure Tab defines the date range and method to be used for measuring performance.">A Aba "Medida de Desempenho" define a faixa de datas e o método a ser usado para medir o desempenho.</value>
+  <value column="Description" original="Performance Measure">Medição de Desempenho</value>
+  <value column="Help" original="The Performance Measure Tab defines the date range and method to be used for measuring performance.">A Aba "Medição de Desempenho" define a faixa de datas e o método a ser usado para medir o desempenho.</value>
  </row>
  <row id="372" trl="Y">
   <value column="Name" original="Financial Report">Relatório Financeiro</value>
@@ -3212,18 +3212,18 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Cost Element">Elemento de Custo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Maintain product cost elements">Gerenciamento de Elementos de Custo de Produto</value>
-  <value column="Help" original="You can maintain multiple Material Costs. Which of the Material Cost Types is used for accounting is determined by the costing method.&lt;br&gt;&#10;Define a Costing Method (for Material Elements) only if you want the cost calculated for that costing method. For accounting, the costing method defined in the Accounting Schema or Product Category Acct is used."><![CDATA[Você pode gerenciar múltiplos Custos de Materiais. O método de formação de custos determina qual Tipo de Custo de Material será utilizado para a contabilidade.<br> Defina um Método de Formação de Custos (para elementos materiais) apenas se você quer que os custos sejam calculados por esse método de custeio. O Método de Formação de Custos definido no Esquema Contábil ou Conta de Categoria de Produto será utilizado para a contabilidade.]]></value>
+  <value column="Help" original="You can maintain multiple Material Costs. Which of the Material Cost Types is used for accounting is determined by the costing method.&lt;br&gt;&#10;Define a Costing Method (for Material Elements) only if you want the cost calculated for that costing method. For accounting, the costing method defined in the Accounting Schema or Product Category Acct is used."><![CDATA[É possível gerenciar múltiplos Custos de Material. O método de formação de custos determina qual Tipo de Custo de Material será utilizado para a contabilidade.<br> Defina um Método de Formação de Custos (para elementos do tipo Material) apenas se você desejar que os custos sejam calculados por esse método de custeio. O Método de Formação de Custos definido no Esquema Contábil ou na Categoria de Produto será utilizado para a contabilidade.]]></value>
  </row>
  <row id="700" trl="Y">
-  <value column="Name" original="Select Product">Selecione o Produto</value>
+  <value column="Name" original="Select Product">Produto</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Select the product">Selecione o produto</value>
   <value column="Help" original=""/>
  </row>
  <row id="701" trl="Y">
-  <value column="Name" original="Product Costs">Custos de Produto</value>
+  <value column="Name" original="Product Costs">Custos do Produto</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Product Costs">Gerenciamento de Custo de Produto</value>
+  <value column="Description" original="Maintain Product Costs">Gerenciamento de Custo do Produto</value>
   <value column="Help" original=""/>
  </row>
  <row id="702" trl="Y">
@@ -3485,9 +3485,9 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="The Replenishment Tab defines the type of replenishment quantities.  This is used for automated ordering.  If you select a custom replenishment type, you need to create a class implementing org.compiere.util.ReplenishInterface and set that on warehouse level.">A Aba "Reabastecimento" define o tipo de reabastecimento por produto. Isto é usado para a geração de pedidos automáticos. Se você selecionar um tipo de reabastecimento personalizado, você precisa criar uma classe implementando org.adempiere.util.ReplenishInterface e selecioná-la no nível do armazém.</value>
  </row>
  <row id="748" trl="Y">
-  <value column="Name" original="Cost Details">Detalhes de Custo</value>
+  <value column="Name" original="Cost Details">Detalhes do Custo</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="View Product Cost Details">Visualizar Detalhes de Custo de Produto</value>
+  <value column="Description" original="View Product Cost Details">Visualizar Detalhes do Custo do Produto</value>
   <value column="Help" original=""/>
  </row>
  <row id="749" trl="Y">
@@ -3569,10 +3569,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="762" trl="Y">
-  <value column="Name" original="Cost Queue">Cost Queue</value>
+  <value column="Name" original="Cost Queue">Fila de Custos</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Cost Queue for Lifo/Fifo">Fila de Custos para UePs/PePs (Lifo/Fifo)</value>
-  <value column="Help" original="Note thet the cost queue may not be the same as the physical movement cost queue due to differences in costing level and warehouse priority.">Note que a fila de custos pode não ser a mesma que a fila de custo da movimentação física devido a diferenças no nível de custeio e na prioridade do armazém.</value>
+  <value column="Description" original="Cost Queue for Lifo/Fifo">Fila de Custos para UEPS/PEPS (LIFO/FIFO)</value>
+  <value column="Help" original="Note thet the cost queue may not be the same as the physical movement cost queue due to differences in costing level and warehouse priority.">Observe que a fila de custos pode não ser a mesma que a fila de custos do movimento físico devido a diferenças no nível de custeio e na prioridade do armazém.</value>
  </row>
  <row id="763" trl="Y">
   <value column="Name" original="Declaration">Declaração</value>
@@ -3685,8 +3685,8 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
  <row id="782" trl="Y">
   <value column="Name" original="Benchmark">Benchmark</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Performance Benchmark">Performance Benchmark</value>
-  <value column="Help" original="Data Series to compare internal performance with (e.g. stock price, ...)">Data Series to compare internal performance with (e.g. stock price, ...)</value>
+  <value column="Description" original="Performance Benchmark">Benchmark de Desempenho</value>
+  <value column="Help" original="Data Series to compare internal performance with (e.g. stock price, ...)">Série de dados para comparação de desempenho (ex: preços de ações)</value>
  </row>
  <row id="783" trl="Y">
   <value column="Name" original="Data">Dados</value>
@@ -3695,16 +3695,16 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Data Series Point to compare internal performance with (e.g. stock price, ...)">Data Series Point to compare internal performance with (e.g. stock price, ...)</value>
  </row>
  <row id="784" trl="Y">
-  <value column="Name" original="Ratio">Razão</value>
+  <value column="Name" original="Ratio">Relação de Desempenho</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Performance Ratio">Performance Ratio</value>
-  <value column="Help" original="Calculation instruction set  for a performance ratio">Calculation instruction set  for a performance ratio</value>
+  <value column="Description" original="Performance Ratio">Relação de Desempenho</value>
+  <value column="Help" original="Calculation instruction set  for a performance ratio">Cálculos para determinar uma relação de desempenho</value>
  </row>
  <row id="785" trl="Y">
   <value column="Name" original="Element">Elemento</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Performance Ratio Element">Performance Ratio Element</value>
-  <value column="Help" original="Individual calculation instruction for a ratio">Individual calculation instruction for a ratio</value>
+  <value column="Description" original="Performance Ratio Element">Elemento da Relação de Desempenho</value>
+  <value column="Help" original="Individual calculation instruction for a ratio">Cálculo individual de uma relação</value>
  </row>
  <row id="786" trl="Y">
   <value column="Name" original="Issue Recommendation">Issue Recommendation</value>
@@ -5724,10 +5724,10 @@ Printing:
   <value column="Description" original="Opportunities">Oportunidades de Vendas</value>
   <value column="Help" original=""/>
  </row>
- <row id="200000" trl="N">
-  <value column="Name" original="Cost Movement">Cost Movement</value>
+ <row id="200000" trl="Y">
+  <value column="Name" original="Cost Movement">Movimentos do Custo</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Show movement of cost by transaction">Show movement of cost by transaction</value>
+  <value column="Description" original="Show movement of cost by transaction">Exibe os movimentos do custo, por transação</value>
   <value column="Help" original=""/>
  </row>
  <row id="200001" trl="Y">

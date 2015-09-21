@@ -8437,20 +8437,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1578" trl="Y">
-  <value column="Name" original="B.Partner Column">Coluna Parc.Negócios</value>
-  <value column="PrintName" original="BPartner Column">Coluna Parc.Negócios</value>
-  <value column="Description" original="Fully qualified Business Partner key column (C_BPartner_ID)">Coluna chave de Parceiro de Negócios Totalmente Qualificada (C_BPartner_ID)</value>
-  <value column="Help" original="The Business Partner Column indicates the Business Partner to use when calculating this measurement">A coluna "Parceiro de Negócios" indica o Parceiro de Negócios a ser usado ao calcular esta medida</value>
+  <value column="Name" original="B.Partner Column">Coluna do Parceiro</value>
+  <value column="PrintName" original="BPartner Column">Coluna do Parceiro</value>
+  <value column="Description" original="Fully qualified Business Partner key column (C_BPartner_ID)">Nome da coluna que representa o Parceiro de Negócios (C_BPartner_ID)</value>
+  <value column="Help" original="The Business Partner Column indicates the Business Partner to use when calculating this measurement">Indica o Parceiro de Negócios a ser usado ao calcular esta medida</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1579" trl="Y">
-  <value column="Name" original="Calculation Class">Classe de Cálculo</value>
-  <value column="PrintName" original="Calculation Class">Classe de Cálculo</value>
-  <value column="Description" original="Java Class for calculation, implementing Interface Measure">Classe Java para cálculo, implementando Medida de Interface</value>
-  <value column="Help" original="The Calculation Class indicates the Java Class used for calculating measures.">A "Classe de Cálculo" indica a classe Java usada para calcular medições.</value>
+  <value column="Name" original="Calculation Class">Classe (Java) do Cálculo</value>
+  <value column="PrintName" original="Calculation Class">Classe (Java) do Cálculo</value>
+  <value column="Description" original="Java Class for calculation, implementing Interface Measure">Classe (Java) que implementa a Interface Measure</value>
+  <value column="Help" original="The Calculation Class indicates the Java Class used for calculating measures.">A "Classe (Java) do Cálculo" indica a classe Java utilizada para calcular medições.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -8507,10 +8507,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1586" trl="Y">
-  <value column="Name" original="Manual Actual">Real Manual</value>
-  <value column="PrintName" original="Manual Actual">Real Manual</value>
-  <value column="Description" original="Manually entered actual value">Valor real digitado manualmente</value>
-  <value column="Help" original="The Manual Active identifies a manually entered actual measurement value.">O caixa de verificação "Real Manual" identifica um valor de medida real digitado manualmente.</value>
+  <value column="Name" original="Manual Actual">Valor Real (Manual)</value>
+  <value column="PrintName" original="Manual Actual">Valor Real (Manual)</value>
+  <value column="Description" original="Manually entered actual value">Valor real informado manualmente</value>
+  <value column="Help" original="The Manual Active identifies a manually entered actual measurement value.">O caixa de verificação "Valor Real (Manual)" identifica um valor de medida real informado manualmente.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -8537,20 +8537,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1589" trl="Y">
-  <value column="Name" original="Measure Target">Alvo da Medida</value>
-  <value column="PrintName" original="Measure Target">Alvo da Medida</value>
-  <value column="Description" original="Target value for measure">Valor alvo desta medida</value>
-  <value column="Help" original="The Measure Target indicates the target or goal for this measure.  It is used as in comparing against the actual measures">O "Alvo da Medida" indica o alvo ou meta para esta medida.  Ele é usado em comparações com as medidas reais</value>
+  <value column="Name" original="Measure Target">Alvo da Medição</value>
+  <value column="PrintName" original="Measure Target">Alvo da Medição</value>
+  <value column="Description" original="Target value for measure">Valor alvo desta medição</value>
+  <value column="Help" original="The Measure Target indicates the target or goal for this measure.  It is used as in comparing against the actual measures">O "Alvo da Medição" indica o alvo ou meta para esta medição. Ele é usado em comparações com as medições reais</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1590" trl="Y">
-  <value column="Name" original="Measure Type">Tipo de Medida</value>
-  <value column="PrintName" original="Measure Type">Tipo de Medida</value>
-  <value column="Description" original="Determines how the actual performance is derived">Determina como o desempenho real é calculado</value>
-  <value column="Help" original="The Measure Type indicates how the actual measure is determined.  For example, one measure may be manual while another is calculated.">O "Tipo de Medida" indica como a medida real é determinada.  Por exemplo, uma medida pode ser manual, enquanto que outra pode ser calculada.</value>
+  <value column="Name" original="Measure Type">Tipo de Medição</value>
+  <value column="PrintName" original="Measure Type">Tipo de Medição</value>
+  <value column="Description" original="Determines how the actual performance is derived">Indica como o desempenho real é determinado</value>
+  <value column="Help" original="The Measure Type indicates how the actual measure is determined.  For example, one measure may be manual while another is calculated.">O "Tipo de Medição" indica como a medição real é determinada. Por exemplo, uma medição pode ser manual, enquanto outra pode ser calculada.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -8577,39 +8577,39 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1594" trl="Y">
-  <value column="Name" original="Goal">Objetivo</value>
-  <value column="PrintName" original="Goal">Objetivo</value>
+  <value column="Name" original="Goal">Meta de Desempenho</value>
+  <value column="PrintName" original="Goal">Meta de Desempenho</value>
   <value column="Description" original="Performance Goal">Meta de Desempenho</value>
-  <value column="Help" original="The Performance Goal indicates what this users performance will be measured against.">A "Meta de Desempenho" indica com que a performance deste usuário será comparada.</value>
+  <value column="Help" original="The Performance Goal indicates what this users performance will be measured against.">A "Meta de Desempenho" indica o método de cálculo do comparativo para determinar o desempenho</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1596" trl="Y">
-  <value column="Name" original="Measure">Medida</value>
-  <value column="PrintName" original="Measure">Medida</value>
-  <value column="Description" original="Concrete Performance Measurement">Medida de Desempenho Concreta</value>
-  <value column="Help" original="The Measure identifies a concrete, measurable indicator of performance.  For example, sales dollars, prospects contacted.">A "Medida" identifica um indicador concreto e mensurável de desempenho (performance).  Por exemplo, Valor das vendas realizadas, clientes em potencial contatados, etc.</value>
+  <value column="Name" original="Measure">Medição</value>
+  <value column="PrintName" original="Measure">Medição</value>
+  <value column="Description" original="Concrete Performance Measurement">Medição de Desempenho Concreta</value>
+  <value column="Help" original="The Measure identifies a concrete, measurable indicator of performance.  For example, sales dollars, prospects contacted.">A "Medição" identifica um indicador concreto e mensurável de desempenho. Por exemplo, o valor do faturamento, clientes em potencial contatados, etc.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1597" trl="Y">
-  <value column="Name" original="Measure Calculation">Cálculo de Medida</value>
-  <value column="PrintName" original="Measure Calculation">Cálculo de Medida</value>
+  <value column="Name" original="Measure Calculation">Cálculo de Medição</value>
+  <value column="PrintName" original="Measure Calculation">Cálculo de Medição</value>
   <value column="Description" original="Calculation method for measuring performance">Método de Cálculo para medição de desempenho</value>
-  <value column="Help" original="The Measure Calculation indicates the method of measuring performance.">O "Cálculo de Medida" indica o método de medição de desempenho.</value>
+  <value column="Help" original="The Measure Calculation indicates the method of measuring performance.">O "Cálculo de Medição" indica o método de medição do desempenho.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1598" trl="Y">
-  <value column="Name" original="Product Column">Coluna de Produto</value>
-  <value column="PrintName" original="Product Column">Coluna de Produto</value>
-  <value column="Description" original="Fully qualified Product column (M_Product_ID)">Coluna de Produto Totalmente Qualificada (M_Product_ID)</value>
+  <value column="Name" original="Product Column">Coluna do Produto</value>
+  <value column="PrintName" original="Product Column">Coluna do Produto</value>
+  <value column="Description" original="Fully qualified Product column (M_Product_ID)">Nome da coluna que representa o Produto (M_Product_ID)</value>
   <value column="Help" original="The Product Column indicates the product to use to use when calculating this measurement.">A "Coluna de Produto" indica o produto a ser utilizado ao calcular esta medição.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -9929,9 +9929,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1747" trl="Y">
-  <value column="Name" original="Set Future Costs to">Ajustar Custos Futuros a</value>
-  <value column="PrintName" original="Set Future Costs to">Ajustar Custos Futuros a</value>
-  <value column="Description" original="Set the Future costs to the selection">Ajusta os Custos Futuros à seleção</value>
+  <value column="Name" original="Set Future Costs to">Ajustar o Custo Futuro ao</value>
+  <value column="PrintName" original="Set Future Costs to">Ajustar o Custo Futuro ao</value>
+  <value column="Description" original="Set the Future costs to the selection">Ajusta o Custo Futuro à opção selecionada</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -9939,9 +9939,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1748" trl="Y">
-  <value column="Name" original="Set Standard Cost to">Set Standard Cost to</value>
-  <value column="PrintName" original="Set Standard Cost to">Set Standard Cost to</value>
-  <value column="Description" original="Set new Standard Costs to the selection">Set new Standard Costs to the selection</value>
+  <value column="Name" original="Set Standard Cost to">Ajustar o Custo Padrão ao</value>
+  <value column="PrintName" original="Set Standard Cost to">Ajustar o Custo Padrão ao</value>
+  <value column="Description" original="Set new Standard Costs to the selection">Ajusta o Custo Padrão à opção selecionada</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -19965,8 +19965,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2817" trl="Y">
-  <value column="Name" original="Cost Detail">Detalhe de Custo</value>
-  <value column="PrintName" original="Cost Detail">Detalhe de Custo</value>
+  <value column="Name" original="Cost Detail">Detalhes de Custo</value>
+  <value column="PrintName" original="Cost Detail">Detalhes de Custo</value>
   <value column="Description" original="Cost Detail Information">É a Informação Detalhada de Custo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -20185,9 +20185,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2840" trl="Y">
-  <value column="Name" original="Delta Amount">Delta de Valor</value>
-  <value column="PrintName" original="Delta Amt">Delta Val.</value>
-  <value column="Description" original="Difference Amount">Valor da Diferença</value>
+  <value column="Name" original="Delta Amount">Delta do Valor</value>
+  <value column="PrintName" original="Delta Amt">Delta do Valor</value>
+  <value column="Description" original="Difference Amount">Diferença dos valores</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -20195,9 +20195,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2841" trl="Y">
-  <value column="Name" original="Delta Quantity">Delta de Quantidade</value>
-  <value column="PrintName" original="Delta Qty">Delta Qtd.</value>
-  <value column="Description" original="Quantity Difference">Diferença de Quantidade</value>
+  <value column="Name" original="Delta Quantity">Delta da Quantidade</value>
+  <value column="PrintName" original="Delta Qty">Delta da Qtd.</value>
+  <value column="Description" original="Quantity Difference">Diferença das quantidades</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -20786,10 +20786,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2903" trl="Y">
-  <value column="Name" original="Color Schema">Color Schema</value>
-  <value column="PrintName" original="Color Schema">Color Schema</value>
-  <value column="Description" original="Performance Color Schema">Performance Color Schema</value>
-  <value column="Help" original="Visual representation of performance by color.  The Schema has often three levels (e.g. red-yellow-green).  iDempiere support two levels (e.g. red-green) or four levels (e.g. gray-bronce-silver-gold).  Note that Measures without a goal are represented white.  The percentages could be beween 0 and unlimited (i.e. above 100%).">Visual representation of performance by color.  The Schema has often three levels (e.g. red-yellow-green).  Compiere support two levels (e.g. red-green) or four levels (e.g. gray-bronce-silver-gold).  Note that Measures without a goal are represented white.  The percentages could be beween 0 and unlimited (i.e. above 100%).</value>
+  <value column="Name" original="Color Schema">Esquema de Cores</value>
+  <value column="PrintName" original="Color Schema">Esquema de Cores</value>
+  <value column="Description" original="Performance Color Schema">Esquema de Cores de Desempenho</value>
+  <value column="Help" original="Visual representation of performance by color.  The Schema has often three levels (e.g. red-yellow-green).  iDempiere support two levels (e.g. red-green) or four levels (e.g. gray-bronce-silver-gold).  Note that Measures without a goal are represented white.  The percentages could be beween 0 and unlimited (i.e. above 100%).">Representação visual do desempenho através de cores. O esquema normalmente possui três níveis (ex: vermelho, amarelo, verde). As porcentagens podem ser entre 0 e infinito (ex: acima de 100%).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -20876,29 +20876,29 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2912" trl="Y">
-  <value column="Name" original="Parent Goal">Parent Goal</value>
-  <value column="PrintName" original="Parent Goal">Parent Goal</value>
-  <value column="Description" original="Parent Goal">Parent Goal</value>
-  <value column="Help" original="You can create a hierarchy of goals by linking the sub-goals to the summary goal.&#10;The measures are automatically rolled up">You can create a hierarchy of goals by linking the sub-goals to the summary goal. The measures are automatically rolled up</value>
+  <value column="Name" original="Parent Goal">Meta-pai</value>
+  <value column="PrintName" original="Parent Goal">Meta-pai</value>
+  <value column="Description" original="Parent Goal">Meta-pai</value>
+  <value column="Help" original="You can create a hierarchy of goals by linking the sub-goals to the summary goal.&#10;The measures are automatically rolled up">É possível criar uma hierarquia de metas vinculando metas-filho a uma meta-pai do tipo resumo. Deste modo, as medições são automaticamente acumuladas</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2913" trl="Y">
-  <value column="Name" original="Measure Scope">Measure Scope</value>
-  <value column="PrintName" original="Measure Scope">Measure Scope</value>
-  <value column="Description" original="Performance Measure Scope">Performance Measure Scope</value>
-  <value column="Help" original="The scope of the goal can be broken down for initial display. &#10;Example: Scope is Year, Display is Month - the goal is entered as a yearly number, the display divides the goal by 12">The scope of the goal can be broken down for initial display. Exemplo: Scope is Year, Display is Month - the goal is entered as a yearly number, the display divides the goal by 12</value>
+  <value column="Name" original="Measure Scope">Escopo da Medição</value>
+  <value column="PrintName" original="Measure Scope">Escopo da Medição</value>
+  <value column="Description" original="Performance Measure Scope">Escopo da Medição de Desempenho</value>
+  <value column="Help" original="The scope of the goal can be broken down for initial display. &#10;Example: Scope is Year, Display is Month - the goal is entered as a yearly number, the display divides the goal by 12">Indica o escopo a ser considerado. Por exemplo: se o campo Escopo da Medição tiver a seleção Ano e o campo Exibição da Medição tiver a seleção Mês, o valor da meta será o total anual mas sua exibição será divida por 12</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2914" trl="Y">
-  <value column="Name" original="Measure Display">Measure Display</value>
-  <value column="PrintName" original="Measure Display">Measure Display</value>
-  <value column="Description" original="Measure Scope initially displayed">Measure Scope initially displayed</value>
+  <value column="Name" original="Measure Display">Exibição da Medição</value>
+  <value column="PrintName" original="Measure Display">Exibição da Medição</value>
+  <value column="Description" original="Measure Scope initially displayed">Escopo da Medição a ser exibida</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -20916,19 +20916,19 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2916" trl="Y">
-  <value column="Name" original="Restriction Type">Restriction Type</value>
-  <value column="PrintName" original="Restriction Type">Restriction Type</value>
-  <value column="Description" original="Goal Restriction Type">Goal Restriction Type</value>
-  <value column="Help" original="Enter one or more records per Goal Restriction Type (e.g. Org o1, o2)">Enter one or more records per Goal Restriction Type (e.g. Org o1, o2)</value>
+  <value column="Name" original="Restriction Type">Tipo de Restrição</value>
+  <value column="PrintName" original="Restriction Type">Tipo de Restrição</value>
+  <value column="Description" original="Goal Restriction Type">Tipo de Restrição da Meta</value>
+  <value column="Help" original="Enter one or more records per Goal Restriction Type (e.g. Org o1, o2)">É possível informar um ou mais registros do mesmo tipo, exemplo: Organização 1, Organização 2, etc...</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2917" trl="Y">
-  <value column="Name" original="Key Column">Key Column</value>
-  <value column="PrintName" original="Key Column">Key Column</value>
-  <value column="Description" original="Key Column for Table">Key Column for Table</value>
+  <value column="Name" original="Key Column">Coluna Chave</value>
+  <value column="PrintName" original="Key Column">Coluna Chave</value>
+  <value column="Description" original="Key Column for Table">Coluna Chave da Tabela</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -20938,38 +20938,38 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2918" trl="Y">
   <value column="Name" original="Benchmark">Benchmark</value>
   <value column="PrintName" original="Benchmark">Benchmark</value>
-  <value column="Description" original="Performance Benchmark">Performance Benchmark</value>
-  <value column="Help" original="Data Series to compare internal performance with (e.g. stock price, ...)">Data Series to compare internal performance with (e.g. stock price, ...)</value>
+  <value column="Description" original="Performance Benchmark">Benchmark de Desempenho</value>
+  <value column="Help" original="Data Series to compare internal performance with (e.g. stock price, ...)">Série de dados para comparação de desempenho (ex: preços de ações)</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2919" trl="Y">
-  <value column="Name" original="Ratio">Razão</value>
-  <value column="PrintName" original="Ratio">Razão</value>
-  <value column="Description" original="Performance Ratio">Performace Ratio</value>
-  <value column="Help" original="Calculation instruction set  for a performance ratio">Calculation instruction set  for a perfomance ratio</value>
+  <value column="Name" original="Ratio">Relação de Desempenho</value>
+  <value column="PrintName" original="Ratio">Relação de Desempenho</value>
+  <value column="Description" original="Performance Ratio">Relação de Desempenho</value>
+  <value column="Help" original="Calculation instruction set  for a performance ratio">Conjunto de cálculos utilizados para determinar uma relação de desempenho</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2920" trl="Y">
-  <value column="Name" original="Measure Data Type">Measure Data Type</value>
+  <value column="Name" original="Measure Data Type">Tipo de Dados da Medição</value>
   <value column="PrintName" original="Data Type">Tipo de Dados</value>
-  <value column="Description" original="Type of data - Status or in Time">Type of data - Status or in Time</value>
-  <value column="Help" original="Status represents values valid at a certain time (e.g. Open Invoices) - No history is maintained.&lt;br&gt;&#10;Time represents a values at a given time (e.g. Invoice Amount on 1/1) - History is maintained"><![CDATA[Status represents values valid at a certain time (e.g. Open Invoices) - No history is maintained.<br> Time represents a values at a given time (e.g. Invoice Amount on 1/1) - History is maintained]]></value>
+  <value column="Description" original="Type of data - Status or in Time">Tipo de Dados: Estado ou Período</value>
+  <value column="Help" original="Status represents values valid at a certain time (e.g. Open Invoices) - No history is maintained.&lt;br&gt;&#10;Time represents a values at a given time (e.g. Invoice Amount on 1/1) - History is maintained"><![CDATA[Estado representa valores válidos em um determinado tempo (ex: faturas em aberto). O histórico não é mantido.<br>Período representa valores em um determinado período de tempo (ex: valor faturado em 31/12). O histórico é mantido]]></value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2921" trl="Y">
-  <value column="Name" original="Accumulation Type">Accumulation Type</value>
-  <value column="PrintName" original="Accumulation Type">Accumulation Type</value>
-  <value column="Description" original="How to accumulate data on time axis">How to accumulate data on time axis</value>
-  <value column="Help" original="Sum adds the data points (e.g. stock volume) - Average is appropriate for e.g. Stock Price">Sum adds the data points (e.g. stock volume) - Average is appropriate for e.g. Stock Price</value>
+  <value column="Name" original="Accumulation Type">Tipo de Acumulação</value>
+  <value column="PrintName" original="Accumulation Type">Tipo de Acumulação</value>
+  <value column="Description" original="How to accumulate data on time axis">Tipo de acumulação dos dados na coordenada do tempo (gráfico)</value>
+  <value column="Help" original="Sum adds the data points (e.g. stock volume) - Average is appropriate for e.g. Stock Price">Selecione a opção Soma quando deseja somar os dados (ex: quantidade de ações). Utilize a opção Média quando deseja fazer uma média aritmética (ex: preços de ações)</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -21016,30 +21016,30 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2927" trl="Y">
-  <value column="Name" original="Operand">Operand</value>
-  <value column="PrintName" original="Operand">Operand</value>
-  <value column="Description" original="Ratio Operand">Ratio Operand</value>
-  <value column="Help" original="Operand how data is calculated.  If it is the first in the series, 'minus' will create a negative value, otherwise ignored.">Operand how data is calculated.  If it is the first in the series, 'minus' will create a negative value, otherwise ignored.</value>
+  <value column="Name" original="Operand">Sinal do Operando</value>
+  <value column="PrintName" original="Operand">Sinal do Operando</value>
+  <value column="Description" original="Ratio Operand">Sinal do Operando</value>
+  <value column="Help" original="Operand how data is calculated.  If it is the first in the series, 'minus' will create a negative value, otherwise ignored.">Indica como o operando é calculado. Se ele é o primeiro de uma série de operandos, a opção subtração indica uma valor negativo. Caso contrário, é ignorado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2928" trl="Y">
-  <value column="Name" original="Element Type">Element Type</value>
-  <value column="PrintName" original="Element Type">Element Type</value>
-  <value column="Description" original="Ratio Element Type">Ratio Element Type</value>
-  <value column="Help" original="Type of data used for the calculation">Type of data used for the calculation</value>
+  <value column="Name" original="Element Type">Tipo de Elemento</value>
+  <value column="PrintName" original="Element Type">Tipo de Elemento</value>
+  <value column="Description" original="Ratio Element Type">Tipo de Elemento da Relação</value>
+  <value column="Help" original="Type of data used for the calculation">Tipo de dado utilizado no cálculo</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2929" trl="Y">
-  <value column="Name" original="Ratio Used">Ratio Used</value>
-  <value column="PrintName" original="Ratio Used">Ratio Used</value>
-  <value column="Description" original="Performance Ratio Used">Performace Ratio Used</value>
-  <value column="Help" original="Existing Performance Ratio to be used in the calculation.  Make sure that the Ratio is not self-referencing (loop).">Existing Performance Ratio to be used in the calculation.  Make sure that the Ratio is not self-referencing (loop).</value>
+  <value column="Name" original="Ratio Used">Relação de Desempenho</value>
+  <value column="PrintName" original="Ratio Used">Relação de Desempenho</value>
+  <value column="Description" original="Performance Ratio Used">Relação de Desempenho</value>
+  <value column="Help" original="Existing Performance Ratio to be used in the calculation.  Make sure that the Ratio is not self-referencing (loop).">Relação de Desempenho existente a ser utilizada no cálculo. Certifique-se de que não haja loop infinito.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -24743,8 +24743,8 @@ Take care when setting yield to anything but 100% particularly when yied is used
  <row id="53296" trl="Y">
   <value column="Name" original="Current Cost Price Lower Level">Preço de Custo Atual (Nível Inferior)</value>
   <value column="PrintName" original="Current Cost Price Lower Level">Preço de Custo Atual (Nível Inferior)</value>
-  <value column="Description" original="Current Price Lower Level Is the sum of the costs of the components of this product manufactured for this level.">Preço de Custo Atual de Nível Inferior é a soma dos custos de todos os componentes (materiais e matérias-primas)</value>
-  <value column="Help" original="Current Price Lower Level is used for get the total costs for lower level the a product manufactured.&#10;&#10;The Current Price Lower Level always will be calculated.&#10;&#10;You can see the Current Cost Price and Current Cost Price Lower Level with Cost  Bill of Material &amp; Formula Detail Report.&#10; &#10;The sum the Current Cost Price + Current Cost Price Lower Level is the total cost to a product manufactured.&#10;">Preço de Custo Atual de Nível Inferior é utilizado para obter o custo total de nível inferior do produto produzido.
+  <value column="Description" original="Current Price Lower Level Is the sum of the costs of the components of this product manufactured for this level.">Preço de Custo Atual de Nível Inferior é a soma dos custos (para este nível) dos componentes na produção deste produto</value>
+  <value column="Help" original="Current Price Lower Level is used for get the total costs for lower level the a product manufactured.&#10;&#10;The Current Price Lower Level always will be calculated.&#10;&#10;You can see the Current Cost Price and Current Cost Price Lower Level with Cost  Bill of Material &amp; Formula Detail Report.&#10; &#10;The sum the Current Cost Price + Current Cost Price Lower Level is the total cost to a product manufactured.&#10;">O Preço de Custo Atual de Nível Inferior é utilizado para obter o custo total de nível inferior de um produto produzido.
 
 O Preço de Custo Atual de Nível Inferior sempre é calculado.
 
@@ -28903,10 +28903,10 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53894" trl="N">
-  <value column="Name" original="Chart Type">Chart Type</value>
-  <value column="PrintName" original="Chart Type">Chart Type</value>
-  <value column="Description" original="Type of chart to render">Type of chart to render</value>
+ <row id="53894" trl="Y">
+  <value column="Name" original="Chart Type">Tipo de Gráfico</value>
+  <value column="PrintName" original="Chart Type">Tipo de Gráfico</value>
+  <value column="Description" original="Type of chart to render">Tipo de Gráfico renderizado</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -38126,10 +38126,10 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200007" trl="N">
-  <value column="Name" original="New Accumulated Amt">New Accumulated Amt</value>
-  <value column="PrintName" original="New Accumulated Amt">New Accumulated Amt</value>
-  <value column="Description" original="Accumulated Amt after processing of M_CostDetail">Accumulated Amt after processing of M_CostDetail</value>
+ <row id="200007" trl="Y">
+  <value column="Name" original="New Accumulated Amt">Valor Acumulado (Novo)</value>
+  <value column="PrintName" original="New Accumulated Amt">Valor Acumulado (Novo)</value>
+  <value column="Description" original="Accumulated Amt after processing of M_CostDetail">Indica o valor acumulado após o processamento do M_CostDetail</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -38137,69 +38137,69 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="200008" trl="Y">
-  <value column="Name" original="New Cost Price">Novo Preço de Custo</value>
-  <value column="PrintName" original="New Cost Price">Novo Preço de Custo</value>
-  <value column="Description" original="New current cost price after processing of M_CostDetail">Novo preço de custo</value>
+  <value column="Name" original="New Cost Price">Preço de Custo Atual (Novo)</value>
+  <value column="PrintName" original="New Cost Price">Preço de Custo Atual (Novo)</value>
+  <value column="Description" original="New current cost price after processing of M_CostDetail">Indica o preço de custo atual após o processamento do M_CostDetail</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200009" trl="N">
-  <value column="Name" original="New Accumulated Qty">New Accumulated Qty</value>
-  <value column="PrintName" original="New Accumulated Qty">New Accumulated Qty</value>
-  <value column="Description" original="New Accumulated Qty after processing of M_CostDetail">New Accumulated Qty after processing of M_CostDetail</value>
+ <row id="200009" trl="Y">
+  <value column="Name" original="New Accumulated Qty">Qtd. Acumulada (Nova)</value>
+  <value column="PrintName" original="New Accumulated Qty">Qtd. Acumulada (Nova)</value>
+  <value column="Description" original="New Accumulated Qty after processing of M_CostDetail">Indica a quantidade acumulada após o processamento do M_CostDetail</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200010" trl="N">
-  <value column="Name" original="New Current Quantity">New Current Quantity</value>
-  <value column="PrintName" original="New Current Quantity">New Current Quantity</value>
-  <value column="Description" original="New current quantity after processing of M_CostDetail">New current quantity after processing of M_CostDetail</value>
+ <row id="200010" trl="Y">
+  <value column="Name" original="New Current Quantity">Qtd. Atual (Nova)</value>
+  <value column="PrintName" original="New Current Quantity">Qtd. Atual (Nova)</value>
+  <value column="Description" original="New current quantity after processing of M_CostDetail">Indica a quantidade atual após o processamento do M_CostDetail</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200011" trl="N">
-  <value column="Name" original="Old Accumulated Amt">Old Accumulated Amt</value>
-  <value column="PrintName" original="Old Accumulated Amt">Old Accumulated Amt</value>
-  <value column="Description" original="Old accumulated amt before the processing of M_CostDetail">Old accumulated amt before the processing of M_CostDetail</value>
+ <row id="200011" trl="Y">
+  <value column="Name" original="Old Accumulated Amt">Valor Acumulado (Antigo)</value>
+  <value column="PrintName" original="Old Accumulated Amt">Valor Acumulado (Antigo)</value>
+  <value column="Description" original="Old accumulated amt before the processing of M_CostDetail">Indica o valor acumulado antes do processamento do M_CostDetail</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200012" trl="N">
-  <value column="Name" original="Old Current Cost Price">Old Current Cost Price</value>
-  <value column="PrintName" original="Old Current Cost Price">Old Current Cost Price</value>
-  <value column="Description" original="Old current cost price before the processing of M_CostDetail">Old current cost price before the processing of M_CostDetail</value>
+ <row id="200012" trl="Y">
+  <value column="Name" original="Old Current Cost Price">Preço de Custo Atual (Antigo)</value>
+  <value column="PrintName" original="Old Current Cost Price">Preço de Custo Atual (Antigo)</value>
+  <value column="Description" original="Old current cost price before the processing of M_CostDetail">Indica o preço de custo atual antes do processamento do M_CostDetail</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200013" trl="N">
-  <value column="Name" original="Old Accumulated Qty">Old Accumulated Qty</value>
-  <value column="PrintName" original="Old Accumulated Qty">Old Accumulated Qty</value>
-  <value column="Description" original="Old accumulated qty before the processing of M_CostDetail">Old accumulated qty before the processing of M_CostDetail</value>
+ <row id="200013" trl="Y">
+  <value column="Name" original="Old Accumulated Qty">Qtd. Acumulada (Antiga)</value>
+  <value column="PrintName" original="Old Accumulated Qty">Qtd. Acumulada (Antiga)</value>
+  <value column="Description" original="Old accumulated qty before the processing of M_CostDetail">Indica a quantidade acumulada antes do processamento do M_CostDetail</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200014" trl="N">
-  <value column="Name" original="Old Current Quantity">Old Current Quantity</value>
-  <value column="PrintName" original="Old Current Quantity">Old Current Quantity</value>
-  <value column="Description" original="Old current quantity before the processing of M_CostDetail">Old current quantity before the processing of M_CostDetail</value>
+ <row id="200014" trl="Y">
+  <value column="Name" original="Old Current Quantity">Qtd. Atual (Antiga)</value>
+  <value column="PrintName" original="Old Current Quantity">Qtd. Atual (Antiga)</value>
+  <value column="Description" original="Old current quantity before the processing of M_CostDetail">Indica a quantidade atual antes do processamento do M_CostDetail</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
