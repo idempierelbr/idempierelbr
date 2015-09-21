@@ -171,14 +171,14 @@ ORDER BY
 			<textField>
 				<reportElement uuid="5785851c-3439-4825-8e78-4e70bb21d564" x="78" y="0" width="487" height="23"/>
 				<textElement>
-					<font fontName="Verdana" size="13"/>
+					<font fontName="DejaVu Sans" size="13"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_legalentity}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="56d15cd5-2c69-4455-a4e0-8ef55e4f28bf" x="78" y="23" width="487" height="49"/>
 				<textElement>
-					<font fontName="Verdana"/>
+					<font fontName="DejaVu Sans"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{address1}+", "+$F{address2}+" - "+$F{address3}+"\n"+$F{postal}+" - "+$F{city}+" - "+$F{orgregion}+"\n\n" + ( $F{lbr_cnpj} != null ? "CNPJ: "+$F{lbr_cnpj} + " " : "" ) + ( $F{lbr_cpf} != null ? "CPF: "+$F{lbr_cpf} : "" )]]></textFieldExpression>
 			</textField>
@@ -195,7 +195,7 @@ ORDER BY
 					<printWhenExpression><![CDATA[]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="Verdana"/>
+					<font fontName="DejaVu Sans"/>
 				</textElement>
 				<text><![CDATA[Informações adicionais da fatura:]]></text>
 			</staticText>
@@ -204,21 +204,21 @@ ORDER BY
 			<staticText>
 				<reportElement uuid="ae05d404-6d4b-43a2-970f-89f60b67268f" x="0" y="347" width="108" height="12"/>
 				<textElement textAlignment="Right">
-					<font fontName="Verdana" size="7" isBold="true"/>
+					<font fontName="DejaVu Sans" size="7" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Sacador/Avalista:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="10625baa-e1a9-4cfa-b62b-3359613c2f21" x="309" y="364" width="256" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Verdana" size="7" isBold="true"/>
+					<font fontName="DejaVu Sans" size="7" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Autenticação Mecânica / FICHA DE COMPENSAÇÃO]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="0b00b833-e49a-44da-8fa0-fa252b3e3754" x="39" y="291" width="69" height="12"/>
 				<textElement textAlignment="Right">
-					<font fontName="Verdana" size="7" isBold="true"/>
+					<font fontName="DejaVu Sans" size="7" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Pagador: ]]></text>
 			</staticText>
@@ -249,7 +249,7 @@ ORDER BY
 			<staticText>
 				<reportElement uuid="4adaff13-5a12-41d4-91f1-f46da2d532c4" x="0" y="219" width="396" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="7" isBold="true"/>
+					<font fontName="DejaVu Sans" size="7" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Instruções (Texto de responsabilidade do Beneficiário)]]></text>
 			</staticText>
@@ -346,133 +346,133 @@ ORDER BY
 			<staticText>
 				<reportElement uuid="c4ae8c78-b6e2-404a-b38a-fcc35a13c9be" x="3" y="199" width="51" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Uso do Banco]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="1f8f8c4c-c219-4026-8bad-4baac7cf4f0e" x="71" y="199" width="50" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Carteira]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="c3066b4f-7362-426c-9f38-429859a185ca" x="128" y="199" width="50" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Espécie]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="e4c0935e-6f59-41d7-b1b2-3c5ff53f658e" x="185" y="199" width="50" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Quantidade]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="a6106461-5529-423b-b251-ed551a59a43d" x="299" y="199" width="50" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Valor]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="6758d52a-4580-406c-8321-07e3fcc1b4a9" x="403" y="199" width="83" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Valor do Documento]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="66042a6e-1547-4cdd-ae42-392d406c95da" x="403" y="223" width="158" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[(-) Desconto / Abatimento]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="d87618d4-d2e3-400f-8efa-129e2097f5a5" x="403" y="272" width="158" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[(=) Valor Cobrado]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="a9168da4-b45d-42ad-ad48-a5aec8c89156" x="403" y="247" width="158" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[(+) Acréscimos]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="5dbe8d5d-084a-4d1b-ae82-0cd337083860" x="403" y="175" width="83" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nosso Número]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="7c1d10f8-cd97-4fd5-8d5b-f206f92d3162" x="403" y="151" width="152" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Agência / Código do Beneficiário]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="cdf58c0e-b4d5-47c6-a3be-59a8ed07f790" x="299" y="175" width="83" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Data de Processamento]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="a7237f35-ef59-42f5-a8be-02a688956556" x="265" y="175" width="27" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Aceite]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="7af6c21d-8835-44dd-8d2b-b365cfb696c9" x="185" y="175" width="71" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Espécie de Docto.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="7132561b-0422-49e5-adb2-56e1e96654e0" x="71" y="175" width="74" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Número do Docto.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="43323398-8a4d-4224-ac68-f1fb4c85c611" x="3" y="175" width="57" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Data do Docto.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="daa3a14b-177a-4ab1-8f4f-a06fa409d0d3" x="3" y="143" width="51" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Beneficiário]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="24fcb1b6-8fdc-4991-a180-917892054ccf" x="3" y="111" width="78" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Local de Pagamento]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="4f83019c-ce8f-41fb-b90f-de6e8e3b20a8" x="403" y="111" width="107" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Vencimento]]></text>
 			</staticText>
@@ -485,14 +485,14 @@ ORDER BY
 			<staticText>
 				<reportElement uuid="9caf518c-8e77-41f2-9b35-d7453b8229de" x="458" y="78" width="107" height="8"/>
 				<textElement textAlignment="Right">
-					<font fontName="Verdana" size="6" isBold="false"/>
+					<font fontName="DejaVu Sans" size="6" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Corte na linha abaixo]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="b1e1915a-d314-4cc9-aa93-85113e4d6c66" x="3" y="1" width="43" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Beneficiário]]></text>
 			</staticText>
@@ -505,7 +505,7 @@ ORDER BY
 			<staticText>
 				<reportElement uuid="7d770ca0-b38a-4e8b-87b1-391f0daa2335" x="3" y="23" width="78" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Pagador]]></text>
 			</staticText>
@@ -548,56 +548,56 @@ ORDER BY
 			<staticText>
 				<reportElement uuid="e703d890-822e-4735-8a50-5152201d71ea" x="386" y="22" width="83" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Valor do Documento]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="4062d692-5f50-4247-824e-b4791a557089" x="478" y="22" width="83" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[(=) Valor Cobrado]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="03f0a459-abbe-409f-8422-ce74adc7e502" x="318" y="23" width="44" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Vencimento]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="1f9c2825-e2db-4e9a-9bfc-56be0ab39012" x="3" y="46" width="115" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Ag / Código do Beneficiário]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="b4d3b066-a7f4-4299-8992-f80fd7de1717" x="128" y="46" width="78" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nosso Número]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="b35b1296-d94f-40bb-95ae-0b91f43ea6b3" x="237" y="46" width="74" height="8"/>
 				<textElement textAlignment="Left">
-					<font fontName="Verdana" size="6" isBold="true"/>
+					<font fontName="DejaVu Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Número do Docto.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="8d1ba490-59e6-495d-a3f6-ef8c2aa5d99e" x="345" y="46" width="220" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Verdana" size="7" isBold="true"/>
+					<font fontName="DejaVu Sans" size="7" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Autenticação Mecânica]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="683a7319-22af-4bfc-9ade-7ebdc9d3fbff" x="414" y="0" width="151" height="19"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Verdana" size="12" isBold="true"/>
+					<font fontName="DejaVu Sans" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[RECIBO DO PAGADOR]]></text>
 			</staticText>
@@ -610,21 +610,21 @@ ORDER BY
 			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="false">
 				<reportElement uuid="7da79d2d-c654-4809-b0cf-2a869e630a5b" x="403" y="119" width="159" height="28"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Verdana" size="14"/>
+					<font fontName="DejaVu Sans" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_duedate}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤ #,##0.00">
 				<reportElement uuid="b2b7c68a-5717-4483-aa75-f6f8dc9424ec" x="403" y="206" width="159" height="12"/>
 				<textElement textAlignment="Right">
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_grandtotal}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement uuid="5982c2eb-2bf3-43cb-b7b5-85348042ad08" x="3" y="117" width="390" height="20"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="7.0"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Até o vencimento, pague preferencialmente no " + $F{bankname} + "\n" + "Após o vencimento, pague somente no " + $F{bankname}]]></textFieldExpression>
@@ -632,147 +632,147 @@ ORDER BY
 			<textField>
 				<reportElement uuid="738f2472-a9e5-4d27-b3d0-4f4e5c53c456" x="3" y="149" width="390" height="11"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_legalentity}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="false">
 				<reportElement uuid="5f16a779-4d69-4fb5-a754-857dd9ce7bf1" x="318" y="30" width="59" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Verdana" size="9" isBold="false"/>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_duedate}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤ ###,###,##0.00">
 				<reportElement uuid="229906ba-18f6-43a8-b2ec-9b672a106708" x="386" y="29" width="83" height="12"/>
 				<textElement textAlignment="Right">
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_grandtotal}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="94e8b068-4bd3-48f7-8847-749f01debe05" x="185" y="183" width="71" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_fmt_doctype}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="c095e18f-5d1d-4f80-aa0a-327843b5c6e4" x="265" y="183" width="27" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_lbr_accepted}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="bd47e1f9-4cc0-4083-94a2-9c55aba1ae63" x="71" y="183" width="104" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_lbr_numberinorg}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="9d6deae1-2743-464e-8f37-54dd54e65752" x="403" y="182" width="159" height="12"/>
 				<textElement textAlignment="Right">
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_documentno}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="cd4b8358-b27e-4d01-90e8-35281838356a" x="128" y="54" width="99" height="12"/>
 				<textElement textAlignment="Right">
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_documentno}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="f722624d-bb70-48e0-8d94-49f0cf16c375" x="237" y="54" width="108" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{c_invoice_documentno}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="6f1dd4f4-5401-414e-816a-0ff4f5d99590" x="403" y="159" width="159" height="12"/>
 				<textElement textAlignment="Right">
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_conveniono}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement uuid="e428f94f-3bbf-4403-9883-97cd2b331f77" x="71" y="206" width="47" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_carteirano}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement uuid="5f3cee46-2ea7-4aa1-92da-b1e335aa5400" x="128" y="206" width="47" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_currency}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
 				<reportElement uuid="afb1b58f-0b21-45d7-a2ac-32489d574121" x="3" y="183" width="57" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_lbr_docdate}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
 				<reportElement uuid="d7c2217d-1046-462e-8b70-227af173f0e6" x="299" y="183" width="94" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_lbr_docdate}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="0c37f382-4988-4b73-84cd-9ecce0ee2c53" x="3" y="54" width="116" height="12"/>
 				<textElement textAlignment="Right">
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_conveniono}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="566b491f-7aa9-45b6-b1ea-1a6c285f7e52" x="46" y="1" width="368" height="11"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_legalentity}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="88182ec2-e06c-48d9-a2c1-f6874ba22a14" x="3" y="30" width="306" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_name}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="24bdfba2-c4f9-48dc-8e89-f4139e059bd1" x="108" y="291" width="454" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_name} + (($F{lbr_cpfcnpj}.equals("2"))?" / CNPJ: ":" / CPF: ") + $F{lbr_inscemp}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="fcf2696f-db78-485e-921f-2a7eb28d900e" x="108" y="303" width="454" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_address1}+($F{lbr_boleto_address2}==null?"":", "+$F{lbr_boleto_address2})+($F{lbr_boleto_address4}==null?"":" / "+$F{lbr_boleto_address4})+($F{lbr_boleto_address3}==null?"":" / "+$F{lbr_boleto_address3})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="101ec002-4210-4b2a-b78a-902b00b0f80a" x="108" y="315" width="454" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_boleto_postal}+" - "+$F{lbr_boleto_city}+" - "+$F{lbr_boleto_regionname}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement uuid="c8177bee-f73a-4c71-b77a-b81529ceaf67" x="0" y="228" width="396" height="43"/>
 				<textElement>
-					<font fontName="Verdana" size="6"/>
+					<font fontName="DejaVu Sans" size="6"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="5.5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(($F{lbr_cnabdiscount1date} != null)?("Conceder desconto de R$ " + new DecimalFormat("#,##0.00").format($F{lbr_cnabdiscount1ap}) + " até " + new SimpleDateFormat("dd/MM/yyyy").format($F{lbr_cnabdiscount1date}) + "\n"):"") +
@@ -791,28 +791,28 @@ ORDER BY
 			<textField isBlankWhenNull="true">
 				<reportElement uuid="f58a00ae-4d82-443a-9d13-234aa1432c0c" x="108" y="347" width="454" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{sacador_name} != null ? ( $F{sacador_name} + (($F{sacador_bptypebr}.equals("PJ"))?" / CNPJ: " + $F{sacador_cnpj}:" / CPF: " + $F{sacador_cpf}) ) : ""]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="6fae4482-d95c-4b2d-97c9-0ab6cc2c0cd4" x="175" y="86" width="387" height="25"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Liberation Sans" size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lbr_typeableline}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="394d1cd7-e0c6-457d-add9-94a577313790" x="117" y="86" width="55" height="25"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Verdana" size="15" isBold="true"/>
+					<font fontName="DejaVu Sans" size="15" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{routingno}  + (  $F{lbr_routingcheckdigit}==null ? "" : "-"+$F{lbr_routingcheckdigit} )]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement uuid="5c1a53ad-d64e-4685-b8bd-764e9f05c69e" x="3" y="206" width="57" height="12"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 			</textField>
 			<componentElement>
@@ -838,7 +838,7 @@ ORDER BY
 					<printWhenExpression><![CDATA[$F{lbr_bank_logo_id} == null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Verdana" size="15" isBold="true"/>
+					<font fontName="DejaVu Sans" size="15" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{bankname}]]></textFieldExpression>
 			</textField>
@@ -854,14 +854,14 @@ ORDER BY
 			<textField>
 				<reportElement uuid="f43bdd5f-03e9-462c-97d0-79399f3cbc19" x="46" y="11" width="368" height="11"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( $F{lbr_cnpj} != null ? "CNPJ: "+$F{lbr_cnpj} + " " : "" ) + ( $F{lbr_cpf} != null ? "CPF: "+$F{lbr_cpf} : "" )]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="83a5133b-3134-4d73-85f8-29ef8ab5b542" x="3" y="159" width="390" height="11"/>
 				<textElement>
-					<font fontName="Verdana" size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( $F{lbr_cnpj} != null ? "CNPJ: "+$F{lbr_cnpj} + " " : "" ) + ( $F{lbr_cpf} != null ? "CPF: "+$F{lbr_cpf} : "" )]]></textFieldExpression>
 			</textField>

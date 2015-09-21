@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+
+   <fontFamily name="Arial">
+       <normal><![CDATA[LiberationSans-Regular.ttf]]></normal>
+       <bold><![CDATA[LiberationSans-Bold.ttf]]></bold>
+       <italic><![CDATA[LiberationSans-Italic.ttf]]></italic>
+       <boldItalic><![CDATA[LiberationSans-BoldItalic.ttf]]></boldItalic>
+       <pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+       <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+   </fontFamily>
+
+   <fontFamily name="Courier New">
+       <normal><![CDATA[LiberationMono-Regular.ttf]]></normal>
+       <bold><![CDATA[LiberationMono-Bold.ttf]]></bold>
+       <italic><![CDATA[LiberationMono-Italic.ttf]]></italic>
+       <boldItalic><![CDATA[LiberationMono-BoldItalic.ttf]]></boldItalic>
+       <pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+       <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+   </fontFamily>
+
+   <fontFamily name="Times New Roman">
+       <normal><![CDATA[LiberationSerif-Regular.ttf]]></normal>
+       <bold><![CDATA[LiberationSerif-Bold.ttf]]></bold>
+       <italic><![CDATA[LiberationSerif-Italic.ttf]]></italic>
+       <boldItalic><![CDATA[LiberationSerif-BoldItalic.ttf]]></boldItalic>
+       <pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+       <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+   </fontFamily>
+
+   <fontFamily name="Liberation Sans">
+       <normal><![CDATA[LiberationSans-Regular.ttf]]></normal>
+       <bold><![CDATA[LiberationSans-Bold.ttf]]></bold>
+       <italic><![CDATA[LiberationSans-Italic.ttf]]></italic>
+       <boldItalic><![CDATA[LiberationSans-BoldItalic.ttf]]></boldItalic>
+       <pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+       <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+   </fontFamily>
+
+   <fontFamily name="Liberation Mono">
+       <normal><![CDATA[LiberationMono-Regular.ttf]]></normal>
+       <bold><![CDATA[LiberationMono-Bold.ttf]]></bold>
+       <italic><![CDATA[LiberationMono-Italic.ttf]]></italic>
+       <boldItalic><![CDATA[LiberationMono-BoldItalic.ttf]]></boldItalic>
+       <pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+       <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+   </fontFamily>
+
+   <fontFamily name="Liberation Serif">
+       <normal><![CDATA[LiberationSerif-Regular.ttf]]></normal>
+       <bold><![CDATA[LiberationSerif-Bold.ttf]]></bold>
+       <italic><![CDATA[LiberationSerif-Italic.ttf]]></italic>
+       <boldItalic><![CDATA[LiberationSerif-BoldItalic.ttf]]></boldItalic>
+       <pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+       <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+   </fontFamily>
+
+   <fontFamily name="DejaVu Sans">
+       <normal><![CDATA[DejaVuSans.ttf]]></normal>
+       <bold><![CDATA[DejaVuSans-Bold.ttf]]></bold>
+       <italic><![CDATA[DejaVuSans-Oblique.ttf]]></italic>
+       <boldItalic><![CDATA[DejaVuSans-BoldOblique.ttf]]></boldItalic>
+       <pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+       <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+   </fontFamily>
+
+</fontFamilies>
