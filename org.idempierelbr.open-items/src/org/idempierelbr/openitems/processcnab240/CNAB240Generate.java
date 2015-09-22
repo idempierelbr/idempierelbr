@@ -395,7 +395,10 @@ public class CNAB240Generate extends SvrProcess
 
 		if ( LBR_LatePaymentPenaltyCode > 0) {
 			segR.setCodigoMulta(LBR_LatePaymentPenaltyCode);
-			segR.setDataMulta(new java.util.Date(LBR_LatePaymentPenaltyDate.getTime()));
+			
+			if (LBR_LatePaymentPenaltyDate!=null)
+				segR.setDataMulta(new java.util.Date(LBR_LatePaymentPenaltyDate.getTime()));
+			
 			double multaValue = LBR_LatePaymentPenaltyAP.doubleValue();
 			segR.setMulta(multaValue , LBR_LatePaymentPenaltyCode == 2);
 			haveValues = true;
@@ -595,7 +598,10 @@ public class CNAB240Generate extends SvrProcess
 		}
 
 		segP.setCodigoJurosMora(LBR_InterestCode);
-		segP.setDataJurosMora(new java.util.Date(LBR_InterestDate.getTime()));
+
+		if (LBR_InterestDate!=null)
+			segP.setDataJurosMora(new java.util.Date(LBR_InterestDate.getTime()));
+
 		double jurosValue = LBR_InterestAP.doubleValue();
 		segP.setJurosMora(jurosValue , LBR_InterestCode == 2 );
 		
