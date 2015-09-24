@@ -63,9 +63,11 @@ import bsh.Interpreter;
  */
 public class MLBRTax extends X_LBR_Tax 
 {
-	/** Serial			*/
-	private static final long serialVersionUID = 1932340299220283663L;
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7380313176139633140L;
+
 	/**	Logger			*/
 	private static CLogger log = CLogger.getCLogger(MLBRTax.class);
 
@@ -108,9 +110,6 @@ public class MLBRTax extends X_LBR_Tax
 	public static final int TAX_GROUP_II	 	= 1000004;
 	public static final int TAX_GROUP_IR	 	= 1000005;
 	public static final int TAX_GROUP_ICMSST 	= 1000006;
-	
-	/**	ST				*/
-	private static boolean hasSubstitution    	= false;
 	
 	/**	Included Taxes	*/
 	private List<Integer> includedTaxes = new ArrayList<Integer>();
@@ -678,6 +677,7 @@ public class MLBRTax extends X_LBR_Tax
 		int LBR_LegalMessage_ID 	= 0;
 		int LBR_CFOP_ID				= 0;
 		String lbr_TaxStatus 		= "";
+		boolean hasSubstitution    	= false;
 		//
 		
 		/**
