@@ -23,7 +23,8 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 5436412104911684345L;
+	private static final long serialVersionUID = -697605258747714507L;
+
 	private static final CLogger log = CLogger.getCLogger(MLBRDocLineDetails.class);
 	protected MLBRDocLineDetails m_DetailsFrom = null;
 
@@ -259,6 +260,12 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		} else {
 			icms.setAD_Org_ID(getAD_Org_ID());
 			icms.setLBR_DocLine_Details_ID(get_ID());
+			icms.setLBR_ProductSource(productSource);
+		}
+		
+		I_LBR_TaxName LBR_TaxName = tl.getLBR_TaxName();
+		
+		if (LBR_TaxName != null && LBR_TaxName.getName().equals("ICMSPROD")) {
 			icms.setIsTaxIncluded(tl.isTaxIncluded());
 		
 			String icmsRegime = MSysConfig.getValue("LBR_ICMS_REGIME", "TN", getAD_Client_ID(), getAD_Org_ID());
@@ -268,8 +275,6 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				icms.setLBR_ICMS_TaxStatusTN(taxStatus);
 			else
 				icms.setLBR_ICMS_TaxStatusSN(taxStatus);
-			
-			icms.setLBR_ProductSource(productSource);
 		}
 		
 		// ICMS-ST don't need a Tax Status. We get it from ICMS

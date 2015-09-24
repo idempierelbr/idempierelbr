@@ -19,6 +19,7 @@ import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -556,6 +557,7 @@ public class MLBRTax extends X_LBR_Tax
 	 *  
 	 *  @return MLBRTaxLine[] lines
 	 */
+	@SuppressWarnings("unchecked")
 	public MLBRTaxLine[] getLines ()
 	{
 		String whereClause = "LBR_Tax_ID = ?";
@@ -565,6 +567,7 @@ public class MLBRTax extends X_LBR_Tax
 		q.setParameters(new Object[]{getLBR_Tax_ID()});
 
 		List<MLBRTaxLine> list = q.list();
+		Collections.sort(list);
 		MLBRTaxLine[] lines = new MLBRTaxLine[list.size()];
 		return list.toArray(lines);
 	} 	//	getLines
