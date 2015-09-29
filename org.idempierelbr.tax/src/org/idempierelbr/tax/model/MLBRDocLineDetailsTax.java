@@ -266,6 +266,44 @@ public class MLBRDocLineDetailsTax extends MLBRDocLineDetails implements IDocLin
 				MLBRTax tax = new MLBRTax (getCtx(), getLBR_Tax_ID(), get_TrxName());
 				tax.calculate (invoice.isTaxIncluded(), invoice.getDateInvoiced(), params, invoice.get_ValueAsString("LBR_TransactionType"));
 			}
+		} else if (MRMALine.Table_Name.equals(poLine.get_TableName())) {
+			MRMA rma = null;
+			MRMALine rmaline = (MRMALine) poLine;
+			
+			if (po != null) 
+				rma = (MRMA) po;
+			else 
+				rma = rmaline.getParent();
+			
+			if (getLBR_Tax_ID() > 0) {
+				
+				BigDecimal reversal = (getLBR_QtyTax().signum() < 0) ? Env.ONE.negate() : Env.ONE;
+				
+				Map<String, BigDecimal> params = new HashMap<String, BigDecimal>();
+				params.put(MLBRTax.SISCOMEX, getLBR_SiscomexAmt().multiply(reversal));
+				params.put(MLBRTax.INSURANCE, getInsuredAmount() == null ? Env.ZERO : getInsuredAmount().multiply(reversal));
+				params.put(MLBRTax.FREIGHT, getFreightAmt() == null ? Env.ZERO : getFreightAmt().multiply(reversal));
+				params.put(MLBRTax.OTHERCHARGES, getSurcharges() == null ? Env.ZERO : getSurcharges().multiply(reversal));
+				params.put(MLBRTax.QTY, getLBR_QtyTax());
+				params.put(MLBRTax.AMT, getLBR_GrossAmt().subtract(getDiscountAmt()));
+				
+				//if (getIVARateFromTaxTransaction() != null && getIVARateFromTaxTransaction().signum() == 1)
+				//	params.put("IVA", getAdjustedIva().divide(Env.ONEHUNDRED, 4, BigDecimal.ROUND_HALF_UP));
+				
+				// default re-sale
+				String transactionType = "RES";
+				
+				// get from order
+				MOrder m_order = null; 
+				if (rma.getInOut() != null && rma.getInOut().getC_Order_ID() > 0) {
+					m_order = new MOrder(getCtx(), rma.getInOut().getC_Order_ID(), get_TrxName());
+					if (!m_order.get_ValueAsString("LBR_TransactionType").isEmpty())
+						transactionType = m_order.get_ValueAsString("LBR_TransactionType");
+				}
+				
+				MLBRTax tax = new MLBRTax (getCtx(), getLBR_Tax_ID(), get_TrxName());
+				tax.calculate (rma.isTaxIncluded(), rma.getInOut().getMovementDate(), params, transactionType);
+			}
 		}
 		
 		return null;
@@ -343,6 +381,13 @@ public class MLBRDocLineDetailsTax extends MLBRDocLineDetails implements IDocLin
 					processTax(taxes, tax, invoiceLine.getC_Tax_ID());
 					createChildren(taxes, tax, invoiceLine.getC_Tax_ID(), (MProduct)invoiceLine.getM_Product(), invoice.getC_BPartner_ID());
 					invoiceLine.updateHeaderTax();
+				} else if (getM_RMALine_ID() > 0) {
+					MRMALine rmaLine = new MRMALine(getCtx(), getM_RMALine_ID(), get_TrxName());
+					MRMA rma = rmaLine.getParent();
+					calculateTaxes(rma, rmaLine);
+					processTax(taxes, tax, rmaLine.getC_Tax_ID());
+					createChildren(taxes, tax, rmaLine.getC_Tax_ID(), (MProduct)rmaLine.getM_Product(), rma.getC_BPartner_ID());
+					rmaLine.updateHeaderAmt();
 				}
 			}
 		}
