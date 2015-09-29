@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Jasperfonts
+Bundle-Name: iDempiereLBR Jasper Fonts
 Bundle-SymbolicName: org.idempierelbr.jasperfonts
 Bundle-Version: 1.0.0.qualifier
 Fragment-Host: org.adempiere.report.jasper.library;bundle-version="1.0.0"
