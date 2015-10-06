@@ -786,14 +786,11 @@ public class NFeXMLGenerator {
 			MProduct prdt = new MProduct(ctx, nfLine.getM_Product_ID(), null);
 			produtos.setcProd(RemoverAcentos.remover(details.getProductValue()));
 			
-			// check size and normalize ean
-			String productEAN = TextUtil.retiraEspecial(TextUtil.toNumeric(prdt.getUPC()));
-			if (productEAN.length() != 13)
+			if (prdt.getUPC() == null || (prdt.getUPC().length() < 12 || prdt.getUPC().length() > 14))
 				produtos.setcEAN("");
 			else
-				produtos.setcEAN(productEAN);
-	
-			// 
+				produtos.setcEAN(prdt.getUPC());
+			
 			produtos.setxProd(RemoverAcentos.remover(details.getProductName()));
 			
 			MLBRNCM ncm = new MLBRNCM(ctx, details.getLBR_NCM_ID(), trxName);
@@ -836,12 +833,10 @@ public class NFeXMLGenerator {
 			
 			produtos.setvProd(TextUtil.bigdecimalToString(details.getLBR_GrossAmt()));
 			
-			// check size and normalize ean trib
-			String productEANTrib = TextUtil.retiraEspecial(TextUtil.toNumeric(details.getLBR_UPCTax()));
-			if (productEANTrib.length() != 13)
+			if (details.getLBR_UPCTax() == null || (details.getLBR_UPCTax().length() < 12 || details.getLBR_UPCTax().length() > 14))
 				produtos.setcEANTrib("");
 			else
-				produtos.setcEANTrib(productEANTrib);
+				produtos.setcEANTrib(details.getLBR_UPCTax());
 			
 			if (details.getLBR_UOMTax_ID() < 1)
 				return "@Line@: " + nfLine.getLine() + prefixLineMandatory + "'@LBR_UOMTax_ID@'";

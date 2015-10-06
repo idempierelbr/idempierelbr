@@ -490,8 +490,15 @@ $F{chaveAcesso}.substring(43,47)]]></textFieldExpression>
 	</group>
 	<title>
 		<band height="69" splitType="Stretch">
-			<image>
-				<reportElement x="3" y="2" width="40" height="40" uuid="6284d318-17d3-4c2b-9770-9942cffa8cdd"/>
+			<image scaleImage="FillFrame">
+				<reportElement x="3" y="9" width="45" height="31" uuid="6284d318-17d3-4c2b-9770-9942cffa8cdd">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
 				<imageExpression><![CDATA[$P{logotipo}]]></imageExpression>
 			</image>
 			<staticText>
@@ -502,14 +509,14 @@ $F{chaveAcesso}.substring(43,47)]]></textFieldExpression>
 				<text><![CDATA[NFC-e]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-7" mode="Transparent" x="44" y="13" width="203" height="16" uuid="b4c16ac9-2760-43f0-9ed8-9d1e1dc392c6"/>
+				<reportElement key="textField-7" mode="Transparent" x="50" y="13" width="197" height="16" uuid="b4c16ac9-2760-43f0-9ed8-9d1e1dc392c6"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
 					<font fontName="Liberation Sans" size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{emitenteRazaoSocial}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-18" mode="Transparent" x="44" y="29" width="106" height="12" uuid="a6ad7021-b399-4eb1-9896-b1e7d5670a1b"/>
+				<reportElement key="textField-18" mode="Transparent" x="50" y="29" width="100" height="12" uuid="a6ad7021-b399-4eb1-9896-b1e7d5670a1b"/>
 				<textElement textAlignment="Left">
 					<font fontName="Liberation Sans" size="8" isBold="false"/>
 				</textElement>
@@ -523,11 +530,13 @@ $F{chaveAcesso}.substring(43,47)]]></textFieldExpression>
 				<textFieldExpression><![CDATA[$F{emitenteInscricaoEstadualSubtributario}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-9" mode="Transparent" x="3" y="41" width="244" height="15" uuid="e01c231d-29be-4f1f-a2b6-ca57210cae86">
+				<reportElement key="textField-9" mode="Transparent" x="3" y="40" width="244" height="16" uuid="e01c231d-29be-4f1f-a2b6-ca57210cae86">
 					<property name="local_mesure_unity" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Bottom" markup="html">
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
 					<font fontName="Liberation Sans" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{emitenteEndereco}+", "+$F{emitenteEnderecoNro}
@@ -535,7 +544,7 @@ $F{chaveAcesso}.substring(43,47)]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-9" mode="Transparent" x="3" y="56" width="244" height="12" uuid="a75afab2-3d16-425b-b469-fa8142d08671"/>
-				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
 					<font fontName="Liberation Sans" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{emitenteCep}!=null? "CEP: " + $F{emitenteCep}: "")
@@ -575,9 +584,14 @@ da Nota Fiscal de Consumidor Eletrônica]]></text>
 		</band>
 	</pageHeader>
 	<summary>
-		<band height="89">
-			<image>
-				<reportElement x="101" y="14" width="64" height="60" uuid="628caaf7-30b3-45d3-b0c6-ae014451d35a"/>
+		<band height="105">
+			<image scaleImage="RetainShape">
+				<reportElement x="88" y="15" width="75" height="75" uuid="628caaf7-30b3-45d3-b0c6-ae014451d35a">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<imageExpression><![CDATA[$P{qrcode}]]></imageExpression>
 			</image>
 			<staticText>
@@ -588,7 +602,7 @@ da Nota Fiscal de Consumidor Eletrônica]]></text>
 				<text><![CDATA[Consulta via Leitor QR Code]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-66" mode="Transparent" x="3" y="74" width="244" height="12" uuid="01c0c69e-fe93-445d-8828-1fc2acea0a19"/>
+				<reportElement key="textField-66" mode="Transparent" x="3" y="90" width="244" height="12" uuid="01c0c69e-fe93-445d-8828-1fc2acea0a19"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Liberation Sans" size="7" isBold="false"/>
 				</textElement>

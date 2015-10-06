@@ -214,7 +214,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
         	nRec = NFeUtil.getValue(doc, "nRec");
         
         // Corrige tipo de processamento, caso Sefaz não aceitar método síncrono
-        if (getLBR_ProcessingType().equals("S") && nRec != null)
+        if (nRec != null && !nRec.isEmpty())
         	setLBR_ProcessingType("A");
 
         String dhRecbto = null;
@@ -230,9 +230,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
         	String nProt = null;
 	        if (doc.getElementsByTagName("nProt") != null)
 	        	nProt = NFeUtil.getValue(doc, "nProt");
-	        
         	setLBR_LotSendingProt(nProt);
-        	
         	setLBR_LotQueried(true);
 		    setProcessed(true);
         } else if (getLBR_ProcessingType().equals("A"))
