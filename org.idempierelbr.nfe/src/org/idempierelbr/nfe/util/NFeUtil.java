@@ -167,6 +167,25 @@ public abstract class NFeUtil
 	} //validateSize
 	
 	/**
+	 * Valida tamanho do Arquivo XML
+	 * @param file
+	 * @return error or null
+	 */
+	public static String validateSize(String str){
+
+		long size = str.getBytes().length; //bytes
+		if ((size/1024) > XML_SIZE){ //check kbytes
+			String erro = "Tamanho do Arquivo XML inválido > " + XML_SIZE + " kbytes";
+			log.severe(erro);
+			return erro;
+		}
+
+		return null;
+	} //validateSize
+	
+	
+	
+	/**
 	 * Get Attachment
 	 *
 	 * @param entry
@@ -465,26 +484,20 @@ public abstract class NFeUtil
 	 * Generate QRCode
 	 * 
 	 * @param nf
-	 * @param ws
-	 * @param csc
 	 * @param digestValue
+	 * @param nfeID
 	 * @return
 	 * @throws Exception
 	 */
-	public static String generateQRCodeNFCeURL(MLBRNotaFiscal nf, MLBRNFeWebService ws, MLBRCSC csc, String digestValue, String nfeID) throws Exception {
+	public static String generateQRCodeNFCeURL(MLBRNotaFiscal nf, String digestValue, String nfeID) throws Exception {
 	
-		//
-		if (ws == null)
-			throw new Exception("URL inválida");
-		
-		if (csc == null)
-			throw new Exception("CSC/Token inválido");
-		
-		if (digestValue == null || digestValue.isEmpty())
-			throw new Exception("Digest da NFC-e é inválido");
-		
-		if (nf == null)
-			throw new Exception("NF inválida");
+		// url
+		String url = MLBRNFeWebService.getURL(MLBRNFeWebService.SERVICE_NFCE_CONSULTA_QRCODE,
+				MDocType.get(nf.getCtx(), nf.getC_DocType_ID()).get_ValueAsString("LBR_NFeEnv"), NFeUtil.VERSAO_QR_CODE,
+				nf.getC_Region_ID(), nf.getLBR_NFeModel());
+
+		// csc
+		MLBRCSC csc = MLBRCSC.get(nf.getAD_Org_ID());
 		
 		// 
 		String chNFe = nfeID;
@@ -494,7 +507,6 @@ public abstract class NFeUtil
 		String digest = digestValue;
 		String tokenID = csc.getValue();
 		String token = csc.getName();
-		String url = ws.getURL();
 		Timestamp dhEmi = nf.getDateDoc();
 
 		// icms
@@ -552,16 +564,13 @@ public abstract class NFeUtil
 		
 		// 
 		if (url == null || url.isEmpty())
-			throw new Exception("URL inválida");
+			throw new Exception("URL de consulta pelo QrCode é inválida");
 		
-		// 
+		//
 		if (tokenID == null || tokenID.isEmpty() || token == null || token.isEmpty())
-			throw new Exception("CSC/Token inválido");
-		
-		// 
-		if (digest == null || digest.isEmpty())
-			throw new Exception("Digest da NFC-e é inválido");
-		
+			throw new Exception(
+					"CSC inválido! Empresa não possui chave de segurança para o QR-Code cadastrada na UF, ou as chaves existentes foram revogadas");
+
 		//
 		Map<String, String> parametros = new LinkedHashMap<String, String>();
 		parametros.put("chNFe", chNFe);
@@ -572,7 +581,7 @@ public abstract class NFeUtil
 		parametros.put("dhEmi", TextUtil.convertStringToHex(TextUtil.timeToUTC(dhEmi)));
 		parametros.put("vNF", vNF);
 		parametros.put("vICMS", vICMS);
-		parametros.put("digVal", digest);
+		parametros.put("digVal", TextUtil.convertStringToHex(digest));
 		parametros.put("cIdToken", TextUtil.lPad(tokenID, 6) + token);
 
 		// Calcula o hash do QR Code:

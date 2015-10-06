@@ -1,14 +1,12 @@
 package org.idempierelbr.nfe.base;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Properties;
 import java.util.Random;
-import java.util.logging.Level;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MAttachment;
@@ -78,9 +76,7 @@ import org.idempierelbr.nfe.beans.TransporteVol;
 import org.idempierelbr.nfe.beans.TributosInciBean;
 import org.idempierelbr.nfe.beans.Valores;
 import org.idempierelbr.nfe.beans.ValoresICMS;
-import org.idempierelbr.nfe.model.MLBRCSC;
 import org.idempierelbr.nfe.model.MLBRDocLineDetailsNfe;
-import org.idempierelbr.nfe.model.MLBRNFeWebService;
 import org.idempierelbr.nfe.model.MLBRNotaFiscal;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalDocRef;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
@@ -1452,146 +1448,120 @@ public class NFeXMLGenerator {
 
 		// get nfe ID
 		String nfeID = dados.getId().substring(3);
-		String arquivoXML = nfeID + MLBRNotaFiscal.INDIVIDUAL_FILE_EXT;		
-		
+		StringBuilder nfeXML = new StringBuilder(NFeUtil.removeIndent(
+				NFeUtil.geraCabecNFe() + TextUtil.removeEOL(xstream.toXML(dados)) + NFeUtil.geraRodapNFe()));
+
+		try {
+
+			//
+			log.fine("Signing NF-e XML");
+
+			//
+			nfeXML = AssinaturaDigital.Assinar(nfeXML, orgInfo, AssinaturaDigital.RECEPCAO_NFE);
+
+		} catch (Exception e) {
+
+			// log
+			log.severe("Não foi possível assinar o arquivo XML. Erro: " + e.getMessage());
+
+			// throw exception
+			throw new AdempiereException("Não foi possível assinar o arquivo XML. Erro: " + e.getMessage());
+		}
+
+	
 		/*
-		 * Tag de Informações Suplementares
+		 * Generate NFC-e QrCode URL and put it into XML
+		 * 
+		 * tag: infNFeSupl
 		 */
 		xstream.alias("infNFeSupl", InfNFeSupl.class);
 		InfNFeSupl infSupl = new InfNFeSupl();
 		
-		//  qrcode 
-		String NFCeQRCodeURL = "";
-		
-		// only nfce
+		// only to NFC-e
 		if (isNFCe) {
 			
+			// 
 			try {
 
-				/*
-				 * QRCode da NFC-e
-				 */
-				log.info("Generating NFC-e QRCode URL");
+				//
+				log.fine("Generate NFC-e URL QrCode");
 
-				// get nfe content to generate digest value
-				String xmlContent = NFeUtil.geraCabecNFe() + TextUtil.removeEOL(xstream.toXML(dados))
-						+ NFeUtil.geraRodapNFe();
+				// get digest value
+				String digestValue = null;
+				Pattern digestValueTagPattern = Pattern.compile("(<DigestValue>)(.*)(</DigestValue>)", Pattern.DOTALL);
+				Matcher digestValueTagMatcher = digestValueTagPattern.matcher(nfeXML);
+				if (digestValueTagMatcher.find())
+					digestValue = digestValueTagMatcher.group(2);
 
-				// generate digest value
-				String digestValue = TextUtil
-						.convertStringToHex(NFeUtil.getDigestBase64String(xmlContent.getBytes("UTF-8")));
+				// generate nfe qrcode
+				String urlQrCodeNFCe = NFeUtil.generateQRCodeNFCeURL(nf, digestValue, nfeID);
 
-				// ws
-				MLBRNFeWebService ws = MLBRNFeWebService.get(MLBRNFeWebService.SERVICE_NFCE_CONSULTA_QRCODE, tpAmb,
-						NFeUtil.VERSAO_QR_CODE, nf.getC_Region_ID(), nf.getLBR_NFeModel());
+				// check sysconfig
+				if (urlQrCodeNFCe != null && !urlQrCodeNFCe.isEmpty()) {
 
-				// csc
-				MLBRCSC csc = MLBRCSC.get(nf.getAD_Org_ID());
+					// set qrcode
+					infSupl.setQrCode(urlQrCodeNFCe);
 
-				// generate qrcode url current info
-				NFCeQRCodeURL = NFeUtil.generateQRCodeNFCeURL(nf, ws, csc, digestValue, nfeID);
-
-				/*
-				 * add xml tag
-				 */
-				if (NFCeQRCodeURL != null && !NFCeQRCodeURL.isEmpty())
-					infSupl.setQrCode(NFCeQRCodeURL);
-
+					// put into xml
+					if (MSysConfig.getBooleanValue("ALLOW_NFCE_INFSUPL_XML", false, nf.getAD_Client_ID(),
+							nf.getAD_Org_ID())) {
+						int idx = nfeXML.indexOf("</infNFe>");
+						nfeXML = nfeXML.replace(idx, idx + 9,
+								"</infNFe>" + NFeUtil.removeIndent(TextUtil.removeEOL(xstream.toXML(infSupl))));
+					}
+				}
 			} catch (Exception e) {
 
-				//
+				// log
 				log.severe("Não foi possível gerar o QRCode da NFC-e. Erro: " + e.getMessage());
+
+				// throw exception
 				throw new Exception("Não foi possível gerar o QRCode da NFC-e. Erro: " + e.getMessage());
 			}
 		}
 
-		// header
-		String xmlContent = NFeUtil.geraCabecNFe();
 		
-		// infNfe
-		xmlContent += TextUtil.removeEOL(xstream.toXML(dados));
-		
-		// infSupl
-		// add tag only if is allowed by SysConfig because the WS doesn't working yet
-		if (MSysConfig.getBooleanValue("LBR_NFCE_QRCODE_INTO_XML", false, nf.getAD_Client_ID()))
-			if (infSupl.getQrCode() != null && !infSupl.getQrCode().isEmpty())
-				xmlContent += TextUtil.removeEOL(xstream.toXML(infSupl));
-		
-		// footer
-		xmlContent += NFeUtil.geraRodapNFe();
-		
+		// validate
 		try {
-			
-			// 
-			log.fine("Signing NF-e XML");
-			
-			// generate temp file and 
-			arquivoXML = TextUtil.generateTmpFile(NFeUtil.removeIndent(xmlContent), arquivoXML);
-			AssinaturaDigital.Assinar(arquivoXML, orgInfo, AssinaturaDigital.RECEPCAO_NFE);
-			
-		} catch (Exception e){
-			
-			// log
-			log.severe("Não foi possível assinar o arquivo XML. Erro: " + e.getMessage());
-			throw new AdempiereException("Não foi possível assinar o arquivo XML. Erro: " + e.getMessage());
-		}
 
-		String retValidacao = "";
-		File file = new File(arquivoXML);
-		try{
-			
 			log.fine("Validating NF-e XML");
 
-			// validate xml size 
-			retValidacao = NFeUtil.validateSize(file);
-			if (retValidacao != null)
-				return retValidacao;
+			// validate xml size
+			String retValidacao = NFeUtil.validateSize(nfeXML.toString());
+			if (retValidacao != null && !retValidacao.isEmpty())
+				throw new Exception(retValidacao);
 
-			// 
-			FileInputStream stream = new FileInputStream(file);
-			InputStreamReader streamReader = new InputStreamReader(stream);
-			BufferedReader reader = new BufferedReader(streamReader);
+			// validate xml content
+			retValidacao = ValidaXML.validaXML(nfeXML.toString());
+			if (retValidacao != null && !retValidacao.isEmpty())
+				throw new Exception(retValidacao);
+			
+		} catch (Exception e) {
 
-			// read file 
-			String validar = "";
-			String line    = null;
-			while( (line=reader.readLine() ) != null )
-				validar += line;
-			
-			// close stream
-			reader.close();
-			
-			// validate
-			retValidacao = ValidaXML.validaXML(validar);
-		}
-		catch (Exception e){
-			
 			// log
-			log.severe("Não foi possível validar o arquivo XML. Erro de validação: " + e.getMessage());
-			e.printStackTrace();
+			log.severe("Falha ao validar arquivo XML! Msg: " + e.getMessage());
+
+			// hrow exception
+			throw new Exception("Falha ao validar arquivo XML! Msg: " + e.getMessage());
 		}
 
-		if (!retValidacao.equals("")){
-			
-			// log error and return it
-			log.log(Level.SEVERE, retValidacao);
-			return retValidacao;
-			
-		} else {
-			
-			//	save nfe ID and qrcode generated from XML
-			if (infSupl.getQrCode() != null)
-				nf.setLBR_NFCeQRCodeURL(NFCeQRCodeURL);
-			nf.setLBR_NFeID(nfeID);
-			nf.save(trxName);
-			
-			//	attach nf xml
-			MAttachment attachNFe = nf.createAttachment();
-			attachNFe.setAD_Org_ID(nf.getAD_Org_ID());
-			attachNFe.addEntry(file);
-			attachNFe.save(trxName);
-		}
+		// save nfe info
+		nf.setLBR_NFCeQRCodeURL(infSupl.getQrCode());
+		nf.setLBR_NFeID(nfeID);
+		nf.save(trxName);
 
+		// create file
+		File xmlFile = new File(
+				TextUtil.generateTmpFile(nfeXML.toString(), nfeID + MLBRNotaFiscal.INDIVIDUAL_FILE_EXT));
+		xmlFile.deleteOnExit();
+
+		// attach nf xml
+		MAttachment attachNFe = nf.createAttachment();
+		attachNFe.setAD_Org_ID(nf.getAD_Org_ID());
+		attachNFe.addEntry(xmlFile);
+		attachNFe.save(trxName);
+		
+		//
 		return null;
 	}
 }
