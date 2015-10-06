@@ -105,8 +105,8 @@ public class IBPTaxImport extends SvrProcess implements ImportProcess {
 					continue;
 				
 				// check if exists, if true, cancel
-				if (idx == 2 && MLBRIBPTax.exists(content[11], p_AD_Org_ID))
-					return "Um arquivo de impostos do IBPT para este período já foi importado";
+				if (idx == 2 && MLBRIBPTax.exists(content[10], p_AD_Org_ID))
+					throw new Exception("Um arquivo este período já foi importado!");
 
 				// ibptax
 				MLBRIBPTax m_ibptax = new MLBRIBPTax(getCtx(), 0, get_TrxName());
@@ -133,7 +133,7 @@ public class IBPTaxImport extends SvrProcess implements ImportProcess {
 			log.severe("Falha ao importar dados do IBPT. Erro: " + ex.getMessage());
 			
 			//
-			throw new Exception("Falha ao importar dados do IBPT. Erro: " + ex.getMessage());
+			throw new Exception("Erro: " + ex.getMessage());
 		} finally {
 			in.close();
 			fis.close();
