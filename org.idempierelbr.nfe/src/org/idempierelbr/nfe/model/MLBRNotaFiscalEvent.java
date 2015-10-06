@@ -142,7 +142,7 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 	 * 
 	 *  @return String error or ""
 	 */
-	public String sendLot()
+	public String sendLot() throws Exception
 	{
 		Properties ctx = getCtx();
 		log.fine("Sending NF-e Event Lot: " + getDocumentNo());
@@ -180,9 +180,16 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 		
 		xmlLot = "<nfeDadosMsg>" + xmlLot + "</nfeDadosMsg>";
 		
+		String LBR_NFeModel = null;
+		try{
+			LBR_NFeModel = getNFeModel();
+		} catch(Exception ex){
+			return "Could not get NFe Model: "+ex.getMessage();
+		}
+		
 		StubConnector connector = new StubConnector(NFeUtil.VERSAO_EVENTO,
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO,
-				isContingencia(xmlLot), isHomologacao(xmlLot));
+				isContingencia(xmlLot), isHomologacao(xmlLot), LBR_NFeModel);
 		String result = connector.sendMessage(xmlLot);
 		
 		if (result == null || result.trim().equals(""))
@@ -520,4 +527,24 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 		return null;
 	}
 	
+	/**
+	 * Returns the model of the NF inside this Lote.
+	 * @return
+	 * @throws Exception
+	 */
+	private String getNFeModel() throws Exception{
+		MLBRNotaFiscalEventLine[] lines = getLines();
+		
+		if (lines == null || lines.length < 1) {
+			return null; 
+		}
+
+		for (MLBRNotaFiscalEventLine line : lines) {
+			MLBRNotaFiscal nf = new MLBRNotaFiscal (getCtx(), line.getLBR_NotaFiscal_ID(), get_TrxName());
+			
+			return nf.getLBR_NFeModel();
+		}
+		
+		return null;
+	}	
 }

@@ -37,9 +37,11 @@ public class DadosNFE
 	private Valores total;
 	private Transporte transp;
 	private Cobranca cobr;
+	private List<FormasPagamentoNFEBean> pag = new ArrayList<FormasPagamentoNFEBean>();
 	private InfAdiFisco infAdic;
 	private InfComex exporta;
 	private InfAssinatura Signature;
+
 	
 	public String getVersao() {
 		return versao;
@@ -140,5 +142,14 @@ public class DadosNFE
 	}
 	public void setExporta(InfComex exporta) {
 		this.exporta = exporta;
+	}
+	public void addPag(FormasPagamentoNFEBean pagamento){
+		this.pag.add(pagamento);
+	}
+	public List<FormasPagamentoNFEBean> getPag(){
+		return pag;
+	}
+	public void setPag(List<FormasPagamentoNFEBean> pag){
+		this.pag = pag;  
 	}
 }

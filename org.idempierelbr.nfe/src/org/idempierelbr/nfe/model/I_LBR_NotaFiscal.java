@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NotaFiscal
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 2.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_NotaFiscal 
@@ -154,6 +154,21 @@ public interface I_LBR_NotaFiscal
 
 	public org.compiere.model.I_C_Order getC_Order() throws RuntimeException;
 
+    /** Column name C_Region_ID */
+    public static final String COLUMNNAME_C_Region_ID = "C_Region_ID";
+
+	/** Set Region.
+	  * Identifies a geographical Region
+	  */
+	public void setC_Region_ID (int C_Region_ID);
+
+	/** Get Region.
+	  * Identifies a geographical Region
+	  */
+	public int getC_Region_ID();
+
+	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException;
+
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
 
@@ -170,20 +185,18 @@ public interface I_LBR_NotaFiscal
 	  */
 	public int getCreatedBy();
 
-    /** Column name C_Region_ID */
-    public static final String COLUMNNAME_C_Region_ID = "C_Region_ID";
+    /** Column name DateAcct */
+    public static final String COLUMNNAME_DateAcct = "DateAcct";
 
-	/** Set Region.
-	  * Identifies a geographical Region
+	/** Set Account Date.
+	  * Accounting Date
 	  */
-	public void setC_Region_ID (int C_Region_ID);
+	public void setDateAcct (Timestamp DateAcct);
 
-	/** Get Region.
-	  * Identifies a geographical Region
+	/** Get Account Date.
+	  * Accounting Date
 	  */
-	public int getC_Region_ID();
-
-	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException;
+	public Timestamp getDateAcct();
 
     /** Column name DateDelivered */
     public static final String COLUMNNAME_DateDelivered = "DateDelivered";
@@ -263,6 +276,19 @@ public interface I_LBR_NotaFiscal
 	  */
 	public String getDocumentNo();
 
+    /** Column name GenerateOrder */
+    public static final String COLUMNNAME_GenerateOrder = "GenerateOrder";
+
+	/** Set Generate Order.
+	  * Generate Order
+	  */
+	public void setGenerateOrder (String GenerateOrder);
+
+	/** Get Generate Order.
+	  * Generate Order
+	  */
+	public String getGenerateOrder();
+
     /** Column name GrandTotal */
     public static final String COLUMNNAME_GrandTotal = "GrandTotal";
 
@@ -302,6 +328,15 @@ public interface I_LBR_NotaFiscal
 	  */
 	public boolean isTaxIncluded();
 
+    /** Column name LBR_AmtDistribution */
+    public static final String COLUMNNAME_LBR_AmtDistribution = "LBR_AmtDistribution";
+
+	/** Set Amount Distribution	  */
+	public void setLBR_AmtDistribution (String LBR_AmtDistribution);
+
+	/** Get Amount Distribution	  */
+	public String getLBR_AmtDistribution();
+
     /** Column name LBR_BP_PickupLocation_ID */
     public static final String COLUMNNAME_LBR_BP_PickupLocation_ID = "LBR_BP_PickupLocation_ID";
 
@@ -317,6 +352,21 @@ public interface I_LBR_NotaFiscal
 
 	public org.compiere.model.I_C_BPartner_Location getLBR_BP_PickupLocation() throws RuntimeException;
 
+    /** Column name LBR_BP_Pickup_ID */
+    public static final String COLUMNNAME_LBR_BP_Pickup_ID = "LBR_BP_Pickup_ID";
+
+	/** Set Business Partner (Pickup).
+	  * Identifies a Business Partner
+	  */
+	public void setLBR_BP_Pickup_ID (int LBR_BP_Pickup_ID);
+
+	/** Get Business Partner (Pickup).
+	  * Identifies a Business Partner
+	  */
+	public int getLBR_BP_Pickup_ID();
+
+	public org.compiere.model.I_C_BPartner getLBR_BP_Pickup() throws RuntimeException;
+
     /** Column name LBR_BP_ShipLocation_ID */
     public static final String COLUMNNAME_LBR_BP_ShipLocation_ID = "LBR_BP_ShipLocation_ID";
 
@@ -331,6 +381,21 @@ public interface I_LBR_NotaFiscal
 	public int getLBR_BP_ShipLocation_ID();
 
 	public org.compiere.model.I_C_BPartner_Location getLBR_BP_ShipLocation() throws RuntimeException;
+
+    /** Column name LBR_BP_Ship_ID */
+    public static final String COLUMNNAME_LBR_BP_Ship_ID = "LBR_BP_Ship_ID";
+
+	/** Set Business Partner (Ship).
+	  * Identifies a Business Partner
+	  */
+	public void setLBR_BP_Ship_ID (int LBR_BP_Ship_ID);
+
+	/** Get Business Partner (Ship).
+	  * Identifies a Business Partner
+	  */
+	public int getLBR_BP_Ship_ID();
+
+	public org.compiere.model.I_C_BPartner getLBR_BP_Ship() throws RuntimeException;
 
     /** Column name LBR_ContingencyDate */
     public static final String COLUMNNAME_LBR_ContingencyDate = "LBR_ContingencyDate";
@@ -350,6 +415,19 @@ public interface I_LBR_NotaFiscal
 	/** Get Contingency Reason	  */
 	public String getLBR_ContingencyReason();
 
+    /** Column name LBR_DigestValue */
+    public static final String COLUMNNAME_LBR_DigestValue = "LBR_DigestValue";
+
+	/** Set DigestValue.
+	  * Identifies a DigestValue
+	  */
+	public void setLBR_DigestValue (String LBR_DigestValue);
+
+	/** Get DigestValue.
+	  * Identifies a DigestValue
+	  */
+	public String getLBR_DigestValue();
+
     /** Column name LBR_FinNFe */
     public static final String COLUMNNAME_LBR_FinNFe = "LBR_FinNFe";
 
@@ -359,6 +437,54 @@ public interface I_LBR_NotaFiscal
 	/** Get NFe Issue Goal	  */
 	public String getLBR_FinNFe();
 
+    /** Column name LBR_FiscalInfo */
+    public static final String COLUMNNAME_LBR_FiscalInfo = "LBR_FiscalInfo";
+
+	/** Set Fiscal Info.
+	  * Fiscal Information
+	  */
+	public void setLBR_FiscalInfo (String LBR_FiscalInfo);
+
+	/** Get Fiscal Info.
+	  * Fiscal Information
+	  */
+	public String getLBR_FiscalInfo();
+
+    /** Column name LBR_IsDocIssuedByOrg */
+    public static final String COLUMNNAME_LBR_IsDocIssuedByOrg = "LBR_IsDocIssuedByOrg";
+
+	/** Set Is Document Issued by Client/Org?	  */
+	public void setLBR_IsDocIssuedByOrg (boolean LBR_IsDocIssuedByOrg);
+
+	/** Get Is Document Issued by Client/Org?	  */
+	public boolean isLBR_IsDocIssuedByOrg();
+
+    /** Column name LBR_LotSendingProt */
+    public static final String COLUMNNAME_LBR_LotSendingProt = "LBR_LotSendingProt";
+
+	/** Set NF-e Lot Sending Protocol.
+	  * Indicates the protocol of the sending process to Sefaz
+	  */
+	public void setLBR_LotSendingProt (String LBR_LotSendingProt);
+
+	/** Get NF-e Lot Sending Protocol.
+	  * Indicates the protocol of the sending process to Sefaz
+	  */
+	public String getLBR_LotSendingProt();
+
+    /** Column name LBR_NFCeQRCodeURL */
+    public static final String COLUMNNAME_LBR_NFCeQRCodeURL = "LBR_NFCeQRCodeURL";
+
+	/** Set NFC-e QRCode URL.
+	  * QRCode URL of NFC-e
+	  */
+	public void setLBR_NFCeQRCodeURL (String LBR_NFCeQRCodeURL);
+
+	/** Get NFC-e QRCode URL.
+	  * QRCode URL of NFC-e
+	  */
+	public String getLBR_NFCeQRCodeURL();
+
     /** Column name LBR_NFE_DestinationType */
     public static final String COLUMNNAME_LBR_NFE_DestinationType = "LBR_NFE_DestinationType";
 
@@ -367,6 +493,15 @@ public interface I_LBR_NotaFiscal
 
 	/** Get NFe Destination Type	  */
 	public String getLBR_NFE_DestinationType();
+
+    /** Column name LBR_NFE_OperationType */
+    public static final String COLUMNNAME_LBR_NFE_OperationType = "LBR_NFE_OperationType";
+
+	/** Set NFe Operation Type	  */
+	public void setLBR_NFE_OperationType (String LBR_NFE_OperationType);
+
+	/** Get NFe Operation Type	  */
+	public String getLBR_NFE_OperationType();
 
     /** Column name LBR_NFeID */
     public static final String COLUMNNAME_LBR_NFeID = "LBR_NFeID";
@@ -412,15 +547,6 @@ public interface I_LBR_NotaFiscal
 
 	/** Get NFe Nature of Operation	  */
 	public String getLBR_NFeNatOp();
-
-    /** Column name LBR_NFE_OperationType */
-    public static final String COLUMNNAME_LBR_NFE_OperationType = "LBR_NFE_OperationType";
-
-	/** Set NFe Operation Type	  */
-	public void setLBR_NFE_OperationType (String LBR_NFE_OperationType);
-
-	/** Get NFe Operation Type	  */
-	public String getLBR_NFE_OperationType();
 
     /** Column name LBR_NFeSerie */
     public static final String COLUMNNAME_LBR_NFeSerie = "LBR_NFeSerie";
@@ -475,6 +601,54 @@ public interface I_LBR_NotaFiscal
 	  */
 	public String getLBR_NotaFiscal_UU();
 
+    /** Column name LBR_OwnDateDelivered */
+    public static final String COLUMNNAME_LBR_OwnDateDelivered = "LBR_OwnDateDelivered";
+
+	/** Set Declarant Date Delivered.
+	  * Date Delivered from the point of view of the declarant
+	  */
+	public void setLBR_OwnDateDelivered (Timestamp LBR_OwnDateDelivered);
+
+	/** Get Declarant Date Delivered.
+	  * Date Delivered from the point of view of the declarant
+	  */
+	public Timestamp getLBR_OwnDateDelivered();
+
+    /** Column name LBR_TaxPayerInfo */
+    public static final String COLUMNNAME_LBR_TaxPayerInfo = "LBR_TaxPayerInfo";
+
+	/** Set Tax Payer Info.
+	  * Tax Payer Information
+	  */
+	public void setLBR_TaxPayerInfo (String LBR_TaxPayerInfo);
+
+	/** Get Tax Payer Info.
+	  * Tax Payer Information
+	  */
+	public String getLBR_TaxPayerInfo();
+
+    /** Column name LBR_TransactionType */
+    public static final String COLUMNNAME_LBR_TransactionType = "LBR_TransactionType";
+
+	/** Set Transaction Type.
+	  * Identifies a Transaction Type
+	  */
+	public void setLBR_TransactionType (String LBR_TransactionType);
+
+	/** Get Transaction Type.
+	  * Identifies a Transaction Type
+	  */
+	public String getLBR_TransactionType();
+
+    /** Column name LBR_UnidentifiedCustomerCPF */
+    public static final String COLUMNNAME_LBR_UnidentifiedCustomerCPF = "LBR_UnidentifiedCustomerCPF";
+
+	/** Set Unidentified Customer’s CPF Number	  */
+	public void setLBR_UnidentifiedCustomerCPF (String LBR_UnidentifiedCustomerCPF);
+
+	/** Get Unidentified Customer’s CPF Number	  */
+	public String getLBR_UnidentifiedCustomerCPF();
+
     /** Column name M_RMA_ID */
     public static final String COLUMNNAME_M_RMA_ID = "M_RMA_ID";
 
@@ -503,6 +677,19 @@ public interface I_LBR_NotaFiscal
 	  */
 	public String getPaymentRule();
 
+    /** Column name Posted */
+    public static final String COLUMNNAME_Posted = "Posted";
+
+	/** Set Posted.
+	  * Posting status
+	  */
+	public void setPosted (boolean Posted);
+
+	/** Get Posted.
+	  * Posting status
+	  */
+	public boolean isPosted();
+
     /** Column name Processed */
     public static final String COLUMNNAME_Processed = "Processed";
 
@@ -515,6 +702,28 @@ public interface I_LBR_NotaFiscal
 	  * The document has been processed
 	  */
 	public boolean isProcessed();
+
+    /** Column name ProcessedOn */
+    public static final String COLUMNNAME_ProcessedOn = "ProcessedOn";
+
+	/** Set Processed On.
+	  * The date+time (expressed in decimal format) when the document has been processed
+	  */
+	public void setProcessedOn (BigDecimal ProcessedOn);
+
+	/** Get Processed On.
+	  * The date+time (expressed in decimal format) when the document has been processed
+	  */
+	public BigDecimal getProcessedOn();
+
+    /** Column name Processing */
+    public static final String COLUMNNAME_Processing = "Processing";
+
+	/** Set Process Now	  */
+	public void setProcessing (boolean Processing);
+
+	/** Get Process Now	  */
+	public boolean isProcessing();
 
     /** Column name TotalLines */
     public static final String COLUMNNAME_TotalLines = "TotalLines";
@@ -557,156 +766,4 @@ public interface I_LBR_NotaFiscal
 	  * Version Number
 	  */
 	public String getVersionNo();
-	
-	/** Column name LBR_TransactionType */
-    public static final String COLUMNNAME_LBR_TransactionType = "LBR_TransactionType";
-
-	/** Set Transaction Type.
-	  * Identifies a Transaction Type
-	  */
-	public void setLBR_TransactionType (String LBR_TransactionType);
-
-	/** Get Transaction Type.
-	  * Identifies a Transaction Type
-	  */
-	public String getLBR_TransactionType();
-	
-	/** Column name LBR_FiscalInfo */
-    public static final String COLUMNNAME_LBR_FiscalInfo = "LBR_FiscalInfo";
-
-	/** Set Fiscal Info.
-	  * Fiscal Information
-	  */
-	public void setLBR_FiscalInfo (String LBR_FiscalInfo);
-
-	/** Get Fiscal Info.
-	  * Fiscal Information
-	  */
-	public String getLBR_FiscalInfo();
-	
-	/** Column name LBR_TaxPayerInfo */
-    public static final String COLUMNNAME_LBR_TaxPayerInfo = "LBR_TaxPayerInfo";
-
-	/** Set Tax Payer Info.
-	  * Tax Payer Information
-	  */
-	public void setLBR_TaxPayerInfo (String LBR_TaxPayerInfo);
-
-	/** Get Tax Payer Info.
-	  * Tax Payer Information
-	  */
-	public String getLBR_TaxPayerInfo();
-	
-	/** Column name Processing */
-    public static final String COLUMNNAME_Processing = "Processing";
-
-	/** Set Process Now	  */
-	public void setProcessing (boolean Processing);
-
-	/** Get Process Now	  */
-	public boolean isProcessing();
-	
-	/** Column name Posted */
-    public static final String COLUMNNAME_Posted = "Posted";
-
-	/** Set Posted.
-	  * Posting status
-	  */
-	public void setPosted (boolean Posted);
-
-	/** Get Posted.
-	  * Posting status
-	  */
-	public boolean isPosted();
-
-	/** Column name DateAcct */
-    public static final String COLUMNNAME_DateAcct = "DateAcct";
-
-	/** Set Account Date.
-	  * Accounting Date
-	  */
-	public void setDateAcct (Timestamp DateAcct);
-
-	/** Get Account Date.
-	  * Accounting Date
-	  */
-	public Timestamp getDateAcct();
-	
-	/** Column name LBR_BP_Ship_ID */
-    public static final String COLUMNNAME_LBR_BP_Ship_ID = "LBR_BP_Ship_ID";
-
-	/** Set Business Partner (Ship).
-	  * Identifies a Business Partner
-	  */
-	public void setLBR_BP_Ship_ID (int LBR_BP_Ship_ID);
-
-	/** Get Business Partner (Ship).
-	  * Identifies a Business Partner
-	  */
-	public int getLBR_BP_Ship_ID();
-
-	public org.compiere.model.I_C_BPartner getLBR_BP_Ship() throws RuntimeException;
-
-	/** Column name LBR_BP_Pickup_ID */
-    public static final String COLUMNNAME_LBR_BP_Pickup_ID = "LBR_BP_Pickup_ID";
-
-	/** Set Business Partner (Pickup).
-	  * Identifies a Business Partner
-	  */
-	public void setLBR_BP_Pickup_ID (int LBR_BP_Pickup_ID);
-
-	/** Get Business Partner (Pickup).
-	  * Identifies a Business Partner
-	  */
-	public int getLBR_BP_Pickup_ID();
-
-	public org.compiere.model.I_C_BPartner getLBR_BP_Pickup() throws RuntimeException;
-	
-	/** Column name LBR_DigestValue */
-    public static final String COLUMNNAME_LBR_DigestValue = "LBR_DigestValue";
-
-	/** Set DigestValue.
-	  * Identifies a DigestValue
-	  */
-	public void setLBR_DigestValue (String LBR_DigestValue);
-
-	/** Get DigestValue.
-	  * Identifies a DigestValue
-	  */
-	public String getLBR_DigestValue();
-	
-	/** Column name LBR_LotSendingProt */
-    public static final String COLUMNNAME_LBR_LotSendingProt = "LBR_LotSendingProt";
-
-	/** Set NF-e Lot Sending Protocol.
-	  * Indicates the protocol of the sending process to Sefaz
-	  */
-	public void setLBR_LotSendingProt (String LBR_LotSendingProt);
-
-	/** Get NF-e Lot Sending Protocol.
-	  * Indicates the protocol of the sending process to Sefaz
-	  */
-	public String getLBR_LotSendingProt();
-	
-	/** Column name LBR_IsDocIssuedByOrg */
-    public static final String COLUMNNAME_LBR_IsDocIssuedByOrg = "LBR_IsDocIssuedByOrg";
-
-	/** Set Is Document Issued by Client/Org?	  */
-	public void setLBR_IsDocIssuedByOrg (boolean LBR_IsDocIssuedByOrg);
-
-	/** Get Is Document Issued by Client/Org?	  */
-	public boolean isLBR_IsDocIssuedByOrg();
-	
-	/** Column name LBR_OwnDateDelivered */
-    public static final String COLUMNNAME_LBR_OwnDateDelivered = "LBR_OwnDateDelivered";
-
-	/** Set Declarant Date Delivered.
-	  * Date Delivered from the point of view of the declarant
-	  */
-	public void setLBR_OwnDateDelivered (Timestamp LBR_OwnDateDelivered);
-
-	/** Get Declarant Date Delivered.
-	  * Date Delivered from the point of view of the declarant
-	  */
-	public Timestamp getLBR_OwnDateDelivered();
 }

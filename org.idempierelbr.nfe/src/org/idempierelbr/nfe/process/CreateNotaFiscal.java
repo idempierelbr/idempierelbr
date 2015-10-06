@@ -59,11 +59,15 @@ public class CreateNotaFiscal extends SvrProcess
 	private int 	p_M_RMA_ID = 0;
 	private int 	p_C_DocType_ID = 0;
 	private String	p_docAction = DocAction.ACTION_None;
+	private String 	p_LBR_NFeModel = "55"; // Default = 55 NF-e
 	
 	private MOrder order;
 	private MInvoice invoice;
 	private MRMA rma;
 	private PO po;
+	
+	private static String NFE_MODEL_NFE = "55";
+	private static String NFE_MODEL_NFCe = "65";
 	
 	private MDocType poDocType;
 	
@@ -88,6 +92,8 @@ public class CreateNotaFiscal extends SvrProcess
 				p_C_DocType_ID = para[i].getParameterAsInt();
 			} else if (name.equals("DocAction")) {
 				p_docAction = (String)para[i].getParameter();
+			} else if (name.equals("LBR_NFeModel")){
+				p_LBR_NFeModel = (String)para[i].getParameter();
 			} else {
 				log.log(Level.SEVERE, "Unknown Parameter: " + name);
 			}
@@ -107,6 +113,11 @@ public class CreateNotaFiscal extends SvrProcess
 		// Check source document
 		if (p_C_Order_ID <= 0 && p_C_Invoice_ID <= 0 && p_M_RMA_ID <= 0)
 			throw new Exception("No document defined");
+		
+		// Check model target:
+		if(!p_LBR_NFeModel.equals(NFE_MODEL_NFE) && !p_LBR_NFeModel.equals(NFE_MODEL_NFCe)){
+			throw new Exception("Não é possível gerar NF deste modelo");
+		}
 		
 		// Order
 		if (p_C_Order_ID > 0) {
@@ -263,10 +274,12 @@ public class CreateNotaFiscal extends SvrProcess
 		if (po instanceof MOrder) {
 			nf.setC_Order_ID(order.get_ID());
 			nf.setLBR_TaxPayerInfo(order.get_ValueAsString("LBR_TaxPayerInfo"));
+			nf.setLBR_UnidentifiedCustomerCPF(order.get_ValueAsString("LBR_UnidentifiedCustomerCPF"));
 		} else if (po instanceof MInvoice) {
 			nf.setC_Order_ID(invoice.getC_Order_ID());
 			nf.setC_Invoice_ID(invoice.get_ID());
 			nf.setLBR_TaxPayerInfo(invoice.get_ValueAsString("LBR_TaxPayerInfo"));
+			nf.setLBR_UnidentifiedCustomerCPF(invoice.get_ValueAsString("LBR_UnidentifiedCustomerCPF"));
 		} else if (po instanceof MRMA) {
 			nf.setC_Order_ID(rmaOrder.get_ID());
 			nf.setM_RMA_ID(rma.get_ID());
@@ -306,7 +319,7 @@ public class CreateNotaFiscal extends SvrProcess
 			
 			if (poLine instanceof MOrderLine || poLine instanceof MInvoiceLine) {
 				qty = (BigDecimal)poLine.get_Value("QtyEntered");
-				priceActual = (BigDecimal)poLine.get_Value("PriceEntered");
+				priceActual = (BigDecimal)poLine.get_Value("PriceActual");
 				nfLine.setC_UOM_ID(poLine.get_ValueAsInt("C_UOM_ID"));
 				
 				if (poLine instanceof MOrderLine)
@@ -317,7 +330,7 @@ public class CreateNotaFiscal extends SvrProcess
 				qty = rmaLine.getQty();
 				
 				if (rmaOrderLine.getPriceEntered() != null)
-					priceActual = rmaOrderLine.getPriceEntered();	
+					priceActual = rmaOrderLine.getPriceActual();
 				
 				nfLine.setC_UOM_ID(rmaLine.getC_UOM_ID());
 				nfLine.setM_RMALine_ID(rmaLine.get_ID());
@@ -425,10 +438,15 @@ public class CreateNotaFiscal extends SvrProcess
 		if (FreightCostRule == null)
 			FreightCostRule = "";
 		
-		String NFeModShipping = "1";
-		
-		if (FreightCostRule.equals("I"))
-			NFeModShipping = "0";
+		String NFeModShipping = "";
+		if(DeliveryViaRule.equals("P")) {
+			NFeModShipping = "9";
+		} else {
+			NFeModShipping = "1";
+			
+			if (FreightCostRule.equals("I"))
+				NFeModShipping = "0";
+		}
 		
 		transp.setLBR_NFeModShipping(NFeModShipping);
 		
@@ -614,7 +632,13 @@ public class CreateNotaFiscal extends SvrProcess
 	 * @return doc type
 	 */
 	private MDocType getDocType() {
-		int LBR_C_DocTypeNF_ID = poDocType.get_ValueAsInt("LBR_C_DocTypeNF_ID");
+		int LBR_C_DocTypeNF_ID;
+		
+		if(p_LBR_NFeModel.equals(NFE_MODEL_NFE)){
+			LBR_C_DocTypeNF_ID = poDocType.get_ValueAsInt("LBR_C_DocTypeNF_ID");
+		} else {
+			LBR_C_DocTypeNF_ID = poDocType.get_ValueAsInt("LBR_C_DocTypeNFCe_ID");	
+		}
 		
 		if (LBR_C_DocTypeNF_ID > 0)
 			return new MDocType(getCtx(), LBR_C_DocTypeNF_ID, get_TrxName());

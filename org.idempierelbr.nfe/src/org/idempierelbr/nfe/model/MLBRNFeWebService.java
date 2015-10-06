@@ -46,6 +46,8 @@ public class MLBRNFeWebService extends X_LBR_NFeWebService
 	public static final String SERVICE_NFE_RECEPCAO_EVENTO 		= "RecepcaoEvento";
 	public static final String SERVICE_NFE_AUTORIZACAO 			= "NFeAutorizacao";
 	public static final String SERVICE_NFE_RET_AUTORIZACAO 		= "NFeRetAutorizacao";
+	public static final String SERVICE_NFCE_CONSULTA 			= "NFCeConsulta";
+	public static final String SERVICE_NFCE_CONSULTA_QRCODE		= "NFCeConsultaQRCode";
 	
 	/** Log				*/
 	private static CLogger log = CLogger.getCLogger(MLBRNFeWebService.class);
@@ -129,12 +131,13 @@ public class MLBRNFeWebService extends X_LBR_NFeWebService
 	 * 	@param C_Region_ID
 	 * 	@return
 	 */
-	public static String getURL (String name, String envType, String versionNo, int C_Region_ID)
+	public static String getURL (String name, String envType, String versionNo, int C_Region_ID, String LBR_NFeModel)
 	{
-		MLBRNFeWebService ws = get (name, envType, versionNo, C_Region_ID);
+		MLBRNFeWebService ws = get (name, envType, versionNo, C_Region_ID, LBR_NFeModel);
 		//
 		if (ws == null)
-			throw new AdempiereException ("Webservice not found for region [" + name + ", " + Integer.toString(C_Region_ID)  + "] environment [" + envType + "]");
+			throw new AdempiereException ("Webservice not found for region [" + name + ", " 
+					+ Integer.toString(C_Region_ID)  + "] environment [" + envType + "] model ["+LBR_NFeModel+"] version ["+versionNo+"]");
 		//
 		return ws.getURL();
 	}	//	getURL
@@ -147,11 +150,11 @@ public class MLBRNFeWebService extends X_LBR_NFeWebService
 	 * 	@param C_Region_ID
 	 * 	@return
 	 */
-	public static MLBRNFeWebService get (String name, String envType, String versionNo, int C_Region_ID)
+	public static MLBRNFeWebService get (String name, String envType, String versionNo, int C_Region_ID, String LBR_NFeModel)
 	{
-		String where = "UPPER(Name) LIKE ? AND lbr_NFeEnv=? AND VersionNo=? AND C_Region_ID=?";
+		String where = "UPPER(Name) LIKE ? AND lbr_NFeEnv=? AND VersionNo=? AND C_Region_ID=? AND LBR_NFeModel=? ";
 		return new Query (Env.getCtx(),MLBRNFeWebService.Table_Name, where, null)
-						.setParameters(new Object[]{name.toUpperCase(), envType, versionNo, C_Region_ID})
+						.setParameters(new Object[]{name.toUpperCase(), envType, versionNo, C_Region_ID, LBR_NFeModel})
 						.first();
 	}	//	get
 }	//	MNFeWebService

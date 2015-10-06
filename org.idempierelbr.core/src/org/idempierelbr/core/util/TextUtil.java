@@ -14,7 +14,9 @@ import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.math.RoundingMode;
+import java.security.MessageDigest;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -1160,4 +1162,67 @@ public class TextUtil {
             lookupMap.put(seq[1].toString(), seq[0]);
     }
 	
+    
+    /**
+     * Convert String to Hex
+     * 
+     * @param arg
+     * @return String Hex
+     * @throws Exception
+     */
+    public static String convertStringToHex(String arg) throws Exception {
+    	if (arg == null)
+    		return null;
+		
+		return String.format("%040x", new BigInteger(1, arg.getBytes("UTF-8")));
+	}
+
+	/**
+	 * Generate SHA1 to param string
+	 * 
+	 * From: http://stackoverflow.com/questions/4895523/java-string-to-sha1
+	 * 
+	 * @param string
+	 * @return byte[]
+	 * @throws Exception
+	 */
+	public static byte[] generateSHA1(String string) throws Exception {
+		if (string == null)
+			return null;
+		
+		MessageDigest crypt = MessageDigest.getInstance("SHA-1");
+		crypt.reset();
+		crypt.update(string.getBytes("UTF-8"));
+
+		return crypt.digest();
+	}
+
+	/**
+	 * From: http://stackoverflow.com/questions/4895523/java-string-to-sha1
+	 * 
+	 * @param b
+	 * @return
+	 */
+	public static String byteArrayToHexString(byte[] b) {
+		String result = "";
+		for (int i = 0; i < b.length; i++) {
+			result += Integer.toString((b[i] & 0xff) + 0x100, 16).substring(1);
+		}
+		return result.toUpperCase();
+	}
+	
+	/**
+	 * Converte timestamp para o formato UTC utilizado na NF-e 3.10.
+	 * 
+	 * @param ts
+	 * @return
+	 */
+	public static String timeToUTC(Timestamp ts) {
+
+		String timeToString = TextUtil.timeToString(ts, "yyyy-MM-dd'T'HH:mm:ssZ");
+		timeToString = timeToString.substring(0, timeToString.length() - 2) + ":"
+				+ timeToString.substring(timeToString.length() - 2);
+
+		return timeToString;
+	}
 }

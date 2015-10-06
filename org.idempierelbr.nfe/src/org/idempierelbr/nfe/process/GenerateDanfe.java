@@ -36,14 +36,14 @@ public class GenerateDanfe extends SvrProcess
 	@Override
 	protected String doIt() throws Exception {
 		if (p_LBR_NotaFiscal_ID <= 0)
-			throw new Exception("No Nota Fiscal defined");
+			throw new Exception("Nota Fiscal inválida!");
 		
 		MLBRNotaFiscal nf = new MLBRNotaFiscal(getCtx(), p_LBR_NotaFiscal_ID, get_TrxName());
 		
 		JasperPrint nfJasperPrint = nf.getJasperPrint();
 		
 		if (nfJasperPrint == null)
-			throw new AdempiereException("Could not generate DANFE");
+			throw new AdempiereException("Não foi possível gerar a DANFE!");
 		
 		if (!getProcessInfo().isBatch()) {
 			JRViewerProvider viewerLauncher = Service.locator().locate(JRViewerProvider.class).getService();

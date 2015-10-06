@@ -5534,6 +5534,26 @@
   <value column="Name" original="Penalty / Capital / Interest">Multa / Valor / Juros</value>
   <value column="Description" original=""/>
  </row>
+ <row id="800033" trl="Y">
+  <value column="Name" original="65 - NFC-e">65 - NFC-e</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800034" trl="N">
+  <value column="Name" original="65 - NFC-e">65 - NFC-e</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800035" trl="N">
+  <value column="Name" original="Simplified DANFE">NFC-e - DANFE Simplificada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800036" trl="N">
+  <value column="Name" original="DANFE NFC-e">NFC-e - DANFE Padrão</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800037" trl="N">
+  <value column="Name" original="DANFE NFC-e in Electronic Message">NFC-e - DANFE para mensagem eletrônica</value>
+  <value column="Description" original=""/>
+ </row>
  <row trl="Y" uuid="2facadde-7b9b-4619-9161-8f9fe50b2b19">
   <value column="Name" original="No specific release">PJ - Pessoa Jurídica</value>
   <value column="Description" original="No specific release"/>
@@ -6142,8 +6162,8 @@
   <value column="Name" original="100 - Autorizado o uso da NF-e">100 - Autorizado o uso da NF-e</value>
   <value column="Description" original=""/>
  </row>
- <row trl="N" uuid="153b3fd1-bcd1-4706-a947-ea8a85fca671">
-  <value column="Name" original="55 - NF-e">NF-e</value>
+ <row trl="Y" uuid="153b3fd1-bcd1-4706-a947-ea8a85fca671">
+  <value column="Name" original="55 - NF-e">55 - NF-e</value>
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="67e6599a-102c-45d1-9e48-989af7d4d7b8">
@@ -6227,7 +6247,7 @@
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="d894c0f4-509a-461c-a463-b47165cfb07c">
-  <value column="Name" original="NF-e">NF-e</value>
+  <value column="Name" original="NF-e">55 - NF-e</value>
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="0758bf32-cfb3-4312-92f4-9928d1daee29">

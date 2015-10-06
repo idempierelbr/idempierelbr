@@ -56,6 +56,8 @@ public class ModelFactory implements IModelFactory {
 			return MLBRNotaFiscalDI.class;
 		else if (tableName.equals(MLBRNotaFiscalInut.Table_Name)) // Model MLBRNotaFiscalInut
 			return MLBRNotaFiscalInut.class;
+		else if (tableName.equals(MLBRCSC.Table_Name)) // Model MLBRCSC
+			return MLBRCSC.class;
 		
 		return null;
 	}
@@ -102,6 +104,8 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRNotaFiscalDI(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRNotaFiscalInut.Table_Name)) // Model MLBRNotaFiscalInut
 			return new MLBRNotaFiscalInut(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRCSC.Table_Name)) // Model MLBRCSC
+			return new MLBRCSC(Env.getCtx(), Record_ID, trxName);
 		
 		return null;
 	}
@@ -148,6 +152,8 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRNotaFiscalDI(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRNotaFiscalInut.Table_Name)) // Model MLBRNotaFiscalInut
 			return new MLBRNotaFiscalInut(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRCSC.Table_Name)) // Model MLBRCSC
+			return new MLBRCSC(Env.getCtx(), rs, trxName);
 		
 		return null;
 	}

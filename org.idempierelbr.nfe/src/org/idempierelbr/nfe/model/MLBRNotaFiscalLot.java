@@ -131,7 +131,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 	 * 
 	 *  @return String error or ""
 	 */
-	public String sendLot()
+	public String sendLot() throws Exception
 	{
 		Properties ctx = getCtx();
 
@@ -171,9 +171,16 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 		
 		xmlLot = "<nfeDadosMsg>" + xmlLot + "</nfeDadosMsg>";
 		
+		String LBR_NFeModel = null;
+		try{
+			LBR_NFeModel = getNFeModel();
+		} catch(Exception ex){
+			return "Could not get NFe Model: "+ex.getMessage();
+		}
+		
 		StubConnector connector = new StubConnector(NFeUtil.VERSAO_APP,
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_AUTORIZACAO,
-				isContingencia(xmlLot), isHomologacao(xmlLot));
+				isContingencia(xmlLot), isHomologacao(xmlLot), LBR_NFeModel);
 		String result = connector.sendMessage(xmlLot);
 		
 		if (result == null || result.trim().equals(""))
@@ -254,7 +261,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 	 *
 	 *  @return String error or ""
 	 */
-	public String queryLot ()
+	public String queryLot () throws Exception
 	{
 		Properties ctx = getCtx();
 		String trxName = get_TrxName();
@@ -307,9 +314,16 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 		if (!validation.equals(""))
 			return validation;*/
 		
+		String LBR_NFeModel = null;
+		try{
+			LBR_NFeModel = getNFeModel();
+		} catch(Exception ex){
+			return "Could not get NFe Model: "+ex.getMessage();
+		}
+		
 		StubConnector connector = new StubConnector(NFeUtil.VERSAO_APP,
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_RET_AUTORIZACAO,
-				isContingencia(xmlLot.toString()), isHomologacao(xmlLot.toString()));
+				isContingencia(xmlLot.toString()), isHomologacao(xmlLot.toString()), LBR_NFeModel);
 		String result = connector.sendMessage("<nfeDadosMsg>" + xmlLot.toString() + "</nfeDadosMsg>");
 		
 		if (result == null || result.trim().equals(""))
@@ -506,5 +520,27 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 		}
 		
 		return false;
+	}
+	
+	/**
+	 * Returns the model of the NF inside this Lote.
+	 * @return
+	 */
+	public String getNFeModel ()
+	{
+		MLBRNotaFiscalLotLine[] lines = getLines();
+		
+		if (lines == null || lines.length == 0)
+			return null;
+		
+		for (MLBRNotaFiscalLotLine line : lines) {
+			if (line.getLBR_NotaFiscal_ID() > 0) {
+				MLBRNotaFiscal nf = new MLBRNotaFiscal(getCtx(), line.getLBR_NotaFiscal_ID(), get_TrxName());
+				
+				return nf.getLBR_NFeModel();
+			}
+		}
+
+		return null;
 	}
 }

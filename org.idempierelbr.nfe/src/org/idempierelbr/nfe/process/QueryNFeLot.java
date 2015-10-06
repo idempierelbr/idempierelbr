@@ -55,7 +55,7 @@ public class QueryNFeLot extends SvrProcess
 	 *
 	 * @param LBR_NotaFiscalLot_ID
 	 */
-	private String query(int LBR_NotaFiscalLot_ID) {
+	private String query(int LBR_NotaFiscalLot_ID) throws Exception{
 		MLBRNotaFiscalLot lot = new MLBRNotaFiscalLot(getCtx(), LBR_NotaFiscalLot_ID, get_TrxName());
 		return lot.queryLot();
 	}

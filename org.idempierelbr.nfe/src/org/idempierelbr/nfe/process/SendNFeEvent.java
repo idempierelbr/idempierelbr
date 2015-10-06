@@ -55,7 +55,7 @@ public class SendNFeEvent extends SvrProcess
 	 *
 	 * @param LBR_NotaFiscalLot_ID
 	 */
-	private String send(int LBR_NotaFiscalEvent_ID) {
+	private String send(int LBR_NotaFiscalEvent_ID) throws Exception{
 		MLBRNotaFiscalEvent lot = new MLBRNotaFiscalEvent(getCtx(), LBR_NotaFiscalEvent_ID, get_TrxName());
 		return lot.sendLot();
 	}

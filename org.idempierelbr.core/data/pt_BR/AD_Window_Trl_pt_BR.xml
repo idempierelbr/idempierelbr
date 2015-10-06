@@ -2094,6 +2094,11 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Unused Brazilian Fiscal Invoice Numbering">Registro de Inutilização de Nota Fiscal (na Sefaz)</value>
   <value column="Help" original="The Unused Brazilian Fiscal Invoice Numbering Window allows tracking all registered (Sefaz) unused numbering."/>
  </row>
+<row id="800003" trl="Y">
+  <value column="Name" original="Taxpayer Security Code">Código de Segurança do Contribuinte - CSC</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">O CSC NFC-e e seu respectivo número de identificação constituem informações fundamentais para a correta geração do QR-Code que deverá ser impresso no DANFE NFC-e. Cada contribuinte (CNPJ Raiz) poderá manter até dois CSC ativos simultaneamente.</value>
+ </row>
  <row trl="Y" uuid="68928e29-e04a-4d4d-92ee-d230e06891f7">
   <value column="Name" original="NCM (LBR)">NCM</value>
   <value column="Description" original="NCM stands for Nomenclatura Comum do MERCOSUL">Manutenção de NCM - Nomenclatura Comum do MERCOSUL e seus impostos</value>

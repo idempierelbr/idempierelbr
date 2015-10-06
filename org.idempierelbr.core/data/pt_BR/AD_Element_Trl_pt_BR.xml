@@ -56527,6 +56527,26 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="800129" trl="N">
+  <value column="Name" original="Unidentified Customer’s CPF Number">CPF para Cliente não Identificado</value>
+  <value column="PrintName" original="Unidentified Customer’s CPF Number">CPF para Cliente não Identificado</value>
+  <value column="Description" original="">Este campo destina-se a situações nas quais o Cliente não quer ser identificado, no entanto gostaria de ter seu CPF informado para fins de utilização em programas do governo como o "Nota Fiscal Paulista".</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800134" trl="Y">
+  <value column="Name" original="Document Type for Brazilian Customer Fiscal Invoice">Tipo de Documento para NFC-e</value>
+  <value column="PrintName" original="Doc Type NFC-e">Tipo de Documento para NFC-e</value>
+  <value column="Description" original="Document type used for Brazilian Customer Fiscal Invoice generated from this document">Tipo de Documento utilizado para Notas Fiscais de Consumidor geradas a partir deste documento</value>
+  <value column="Help" original="The Document Type for Brazilian Customer Fiscal Invoice indicates the document type that will be used when an Brazilian Customer Fiscal Invoice is generated from this document. This field will display only for some base document type."/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row id="800135" trl="Y">
   <value column="Name" original="Declarant Date Delivered">Data de Entrega (Declarante)</value>
   <value column="PrintName" original="Declarant Date Delivered">Data de Entrega (Declarante)</value>
@@ -56537,6 +56557,26 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="800137" trl="Y">
+  <value column="Name" original="Taxpayer Security Code">Código de Segurança do Contribuinte - CSC</value>
+  <value column="PrintName" original="Taxpayer Security Code">Código de Segurança do Contribuinte - CSC</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800138" trl="N">
+  <value column="Name" original="LBR_CSC_UU">LBR_CSC_UU</value>
+  <value column="PrintName" original="LBR_CSC_UU">LBR_CSC_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row> 
  <row trl="Y" uuid="2db1c9d3-13bf-4539-baa0-45ccfb09a7a3">
   <value column="Name" original="Cód. Cidade (IBGE)">Cód. Cidade (IBGE)</value>
   <value column="PrintName" original="Cód. Cidade (IBGE)">Cód. Cidade (IBGE)</value>

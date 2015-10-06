@@ -146,6 +146,11 @@ public class EventHandler extends AbstractEventHandler {
 				String taxPayerInfo = order.get_ValueAsString("LBR_TaxPayerInfo");
 				if (taxPayerInfo != null && taxPayerInfo.trim().length() > 0)
 					invoice.set_ValueOfColumn("LBR_TaxPayerInfo", taxPayerInfo);
+				
+				String LBR_CPF = order.get_ValueAsString("LBR_UnidentifiedCustomerCPF");
+				if(LBR_CPF != null){
+					invoice.set_ValueOfColumn("LBR_UnidentifiedCustomerCPF", LBR_CPF);
+				}
 			}
 		}
 	}

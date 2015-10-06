@@ -47,7 +47,7 @@ public class MLBRNotaFiscalInut extends X_LBR_NotaFiscalInut {
 	/**
 	 * 	Send NF-e Inut to Sefaz
 	 */
-	public String send() {
+	public String send() throws Exception{
 		Properties ctx = getCtx();
 		log.fine("Sending NF-e Inut: " + getDocumentNo());
 
@@ -80,7 +80,7 @@ public class MLBRNotaFiscalInut extends X_LBR_NotaFiscalInut {
 		
 		StubConnector connector = new StubConnector(NFeUtil.VERSAO_APP,
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_INUTILIZACAO,
-				false, getLBR_NFeEnv().equals("2") ? true : false);
+				false, getLBR_NFeEnv().equals("2") ? true : false, getLBR_NFBModel());
 		
 		String result = connector.sendMessage(xml);
 		

@@ -46,7 +46,7 @@ public class SendNFeLot extends SvrProcess
 		} else {
 			// TODO:Implement to all org unsent lots
 		}
-
+		
 		return "";
 	}
 	
@@ -55,7 +55,7 @@ public class SendNFeLot extends SvrProcess
 	 *
 	 * @param LBR_NotaFiscalLot_ID
 	 */
-	private String send(int LBR_NotaFiscalLot_ID) {
+	private String send(int LBR_NotaFiscalLot_ID) throws Exception{
 		MLBRNotaFiscalLot lot = new MLBRNotaFiscalLot(getCtx(), LBR_NotaFiscalLot_ID, get_TrxName());
 		return lot.sendLot();
 	}

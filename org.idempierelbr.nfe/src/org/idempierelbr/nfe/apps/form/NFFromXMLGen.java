@@ -1174,12 +1174,13 @@ public class NFFromXMLGen
 
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElementIPI = (Element) nNode;
-
+				String taxBaseAmt = null;
+				
 				if (eElementIPI.getElementsByTagName("CST").item(0) != null)
 					ipi.setLBR_IPI_TaxStatus(eElementIPI.getElementsByTagName("CST").item(0).getTextContent());
 				
 				if (eElementIPI.getElementsByTagName("vBC").item(0) != null) {
-					String taxBaseAmt = eElementIPI.getElementsByTagName("vBC").item(0).getTextContent();
+					taxBaseAmt = eElementIPI.getElementsByTagName("vBC").item(0).getTextContent();
 					if (taxBaseAmt != null)
 						ipi.setLBR_TaxBaseAmt(new BigDecimal(taxBaseAmt));
 				}
@@ -1210,6 +1211,11 @@ public class NFFromXMLGen
 					String taxAmt = eElementIPI.getElementsByTagName("vIPI").item(0).getTextContent();
 					if (taxAmt != null)
 						ipi.setLBR_TaxAmt(new BigDecimal(taxAmt));
+					
+					
+					// force taxbaseamt
+					if (taxBaseAmt == null)
+						ipi.setLBR_TaxBaseAmt(Env.ZERO);
 				}
 				
 				ipi.saveEx();
@@ -1242,9 +1248,10 @@ public class NFFromXMLGen
 
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
+				String taxBaseAmt = null;
 				
 				if (eElement.getElementsByTagName("vBC").item(0) != null) {
-					String taxBaseAmt = eElement.getElementsByTagName("vBC").item(0).getTextContent();
+					taxBaseAmt = eElement.getElementsByTagName("vBC").item(0).getTextContent();
 					if (taxBaseAmt != null)
 						ii.setLBR_TaxBaseAmt(new BigDecimal(taxBaseAmt));
 				}
@@ -1265,6 +1272,10 @@ public class NFFromXMLGen
 					String iofAmt = eElement.getElementsByTagName("vIOF").item(0).getTextContent();
 					if (iofAmt != null)
 						ii.setLBR_IOFAmt(new BigDecimal(iofAmt));
+					
+					if (taxBaseAmt == null)
+						ii.setLBR_TaxBaseAmt(Env.ZERO);
+						
 				}
 				
 				ii.saveEx();
@@ -1304,8 +1315,9 @@ public class NFFromXMLGen
 						pis.setLBR_PIS_TaxStatus(taxStatus);
 				}
 				
+				String taxBaseAmt = null;
 				if (eElementPIS.getElementsByTagName("vBC").item(0) != null) {
-					String taxBaseAmt = eElementPIS.getElementsByTagName("vBC").item(0).getTextContent();
+					taxBaseAmt = eElementPIS.getElementsByTagName("vBC").item(0).getTextContent();
 					if (taxBaseAmt != null)
 						pis.setLBR_TaxBaseAmt(new BigDecimal(taxBaseAmt));
 				}
@@ -1318,8 +1330,13 @@ public class NFFromXMLGen
 				
 				if (eElementPIS.getElementsByTagName("vPIS").item(0) != null) {
 					String taxAmt = eElementPIS.getElementsByTagName("vPIS").item(0).getTextContent();
-					if (taxAmt != null)
+					if (taxAmt != null) {
 						pis.setLBR_TaxAmt(new BigDecimal(taxAmt));
+						
+						// force taxbaseamt
+						if (taxBaseAmt == null)
+							pis.setLBR_TaxBaseAmt(Env.ZERO);
+					}
 				}
 				
 				pis.saveEx();
@@ -1359,8 +1376,9 @@ public class NFFromXMLGen
 						cofins.setLBR_COF_TaxStatus(taxStatus);
 				}
 				
+				String taxBaseAmt = null;
 				if (eElementCOFINS.getElementsByTagName("vBC").item(0) != null) {
-					String taxBaseAmt = eElementCOFINS.getElementsByTagName("vBC").item(0).getTextContent();
+					taxBaseAmt = eElementCOFINS.getElementsByTagName("vBC").item(0).getTextContent();
 					if (taxBaseAmt != null)
 						cofins.setLBR_TaxBaseAmt(new BigDecimal(taxBaseAmt));
 				}
@@ -1375,6 +1393,10 @@ public class NFFromXMLGen
 					String taxAmt = eElementCOFINS.getElementsByTagName("vCOFINS").item(0).getTextContent();
 					if (taxAmt != null)
 						cofins.setLBR_TaxAmt(new BigDecimal(taxAmt));
+					
+					// force taxbaseamt
+					if (taxBaseAmt == null)
+						cofins.setLBR_TaxBaseAmt(Env.ZERO);
 				}
 				
 				cofins.saveEx();

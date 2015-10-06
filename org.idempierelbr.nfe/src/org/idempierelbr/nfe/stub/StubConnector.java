@@ -45,8 +45,9 @@ public class StubConnector {
 	private String versionNo, autorizador, service;
 	private boolean isHomologacao;
 	private MRegion region;
+	private String LBR_NFeModel;
 	
-	public StubConnector(String versionNo, int C_Region_ID, String service, boolean isContingencia, boolean isHomologacao)
+	public StubConnector(String versionNo, int C_Region_ID, String service, boolean isContingencia, boolean isHomologacao, String LBR_NFeModel)
 			throws NullPointerException, IllegalArgumentException {
 		
 		if (versionNo == null || C_Region_ID <= 0 || service == null)
@@ -55,6 +56,7 @@ public class StubConnector {
 		this.versionNo = versionNo;
 		this.service = service;
 		this.isHomologacao = isHomologacao;
+		this.LBR_NFeModel = LBR_NFeModel;
 		
 		if (autorizadores == null)
 			autorizadores = getAutorizadoresMap();
@@ -151,7 +153,7 @@ public class StubConnector {
 		return autorizadoresContingencia.get(uf);
 	}
 	
-	public String sendMessage(String message) throws UnsupportedOperationException {
+	public String sendMessage(String message) throws Exception {
 		if (message == null || message.trim().equals("")) {
 			log.warning("Cannot send message. It is null/empty");
 			return null;
@@ -160,7 +162,7 @@ public class StubConnector {
 		return sendMessageToGenericStub(message);
 	}
 	
-	private String sendMessageToGenericStub(String message) throws UnsupportedOperationException {
+	private String sendMessageToGenericStub(String message) throws Exception {
 		if (message == null || message.trim().equals(""))
 			return null;
 		
@@ -174,7 +176,10 @@ public class StubConnector {
 		}
 		
 		String envType = isHomologacao ? "2" : "1";
-		String url = MLBRNFeWebService.getURL(service, envType, versionNo, region.getC_Region_ID());
+		String url = MLBRNFeWebService.getURL(service, envType, versionNo, region.getC_Region_ID(), LBR_NFeModel);
+		
+		System.out.println("Using URL: "+url);
+		System.out.println("Service: "+service+" Env Type: "+envType+" Version No: "+versionNo+" Region: "+region.getC_Region_ID()+" Model: "+LBR_NFeModel);
 		
 		if (url == null || url.trim().equals(""))
 			throw new AdempiereException("Couldn't get WebService URL for: " + service + " " +
@@ -282,7 +287,8 @@ public class StubConnector {
 				result = stub.nfeRetAutorizacaoLote(dadosMsg, cabecMsgE).getExtraElement().toString();
 			} catch (Exception e) {
 				e.printStackTrace();
-				return null;
+				throw e;
+				//return null;
 			}
 		} else
 			throw new UnsupportedOperationException();

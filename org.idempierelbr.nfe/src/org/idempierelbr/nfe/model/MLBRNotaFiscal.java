@@ -13,6 +13,7 @@
 package org.idempierelbr.nfe.model;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,13 +28,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.data.JRXmlDataSource;
-import net.sf.jasperreports.engine.util.JRLoader;
-
+import org.adempiere.exceptions.AdempiereException;
 import org.apache.commons.io.IOUtils;
 import org.compiere.model.MAttachment;
 import org.compiere.model.MAttachmentEntry;
@@ -45,7 +40,6 @@ import org.compiere.model.MLocation;
 import org.compiere.model.MOrg;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.MPeriod;
-import org.compiere.model.MProcess;
 import org.compiere.model.MSysConfig;
 import org.compiere.model.MTable;
 import org.compiere.model.MTax;
@@ -65,7 +59,19 @@ import org.compiere.util.Env;
 import org.compiere.util.Msg;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.nfe.base.NFeXMLGenerator;
+import org.idempierelbr.nfe.util.NFeUtil;
 import org.idempierelbr.tax.provider.TaxProviderFactory;
+
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.qrcode.QRCodeWriter;
+
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRXmlDataSource;
+import net.sf.jasperreports.engine.util.JRLoader;
 
 /**
  *		Nota Fiscal Model
@@ -104,6 +110,8 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	
 	private static Integer GENERATE_DANFE_PROCESS_ID;
 	private final static String JASPER_FILENAME = "DanfeMainPortraitA4.jasper";
+	private static final String MODEL_NFE = "55";
+	private static final String MODEL_NFCE = "65";
 
 
 	/**************************************************************************
@@ -788,7 +796,7 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 
 				if (model == null)
 					log.log(Level.INFO, "NF Model is null");
-				else if (model.equals("55"))
+				else if (model.equals(MODEL_NFE) || model.equals(MODEL_NFCE))
 					msg = NFeXMLGenerator.geraCorpoNFe(getCtx(), getLBR_NotaFiscal_ID(), get_TrxName());
 			}
 		} 
@@ -1018,124 +1026,154 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	}	//	setProcessed
 	
 	/**
-	 * Get an object JasperPrint with jasper report and parameters (subreports and logo)
-	 * used for generating DANFE PDF
+	 * Get an object JasperPrint with jasper report and parameters (subreports
+	 * and logo) used for generating DANFE PDF
 	 * 
 	 * @return JasperPrint
 	 */
 	public JasperPrint getJasperPrint() {
 		if (!isStatusAutorizado() && !isStatusCancelado())
 			return null;
-		
+
+		//
+		boolean isNFCe = getLBR_NFeModel().equals(MODEL_NFCE);
+
 		// Check process
 		if (GENERATE_DANFE_PROCESS_ID == null) {
 			GENERATE_DANFE_PROCESS_ID = getGenerateDanfeProcessID();
 		}
-				
+
 		if (GENERATE_DANFE_PROCESS_ID == null || GENERATE_DANFE_PROCESS_ID <= 0)
 			return null;
-		
+
 		// Get distribution xml for NF and Events
 		InputStream xmlInputStream = null;
 		MAttachment attachNFe = createAttachment();
-		String events="";
+		String events = "";
 		
-		for (int i = 0 ; i < attachNFe.getEntryCount() ; i++) 
-		{
-			MAttachmentEntry entry = attachNFe.getEntry(i);
-			if (entry.getName().endsWith(DISTRIBUICAO_FILE_EXT) 
-					|| entry.getName().endsWith(DISTRIBUICAO_OLD_FILE_EXT)
-					|| entry.getName().startsWith(IMPORTED_FILE_PREFIX)) {
-				xmlInputStream = entry.getInputStream();
-			}
+		// jasper NF-e
+		String JASPER_FILENAME = "DanfeMainPortraitA4.jasper";
+		
+		// jasper NFC-e
+		if (isNFCe)
+			JASPER_FILENAME = "DanfeNFCe.jasper";
 
-			if (entry.getName().endsWith(MLBRNotaFiscalEvent.DISTRIBUICAO_FILE_EXT) ||
-					entry.getName().endsWith("-procEventoNFe.xml")) // Preserved for backward compatibility
-			{
+		for (int i = 0; i < attachNFe.getEntryCount(); i++) {
+			MAttachmentEntry entry = attachNFe.getEntry(i);
+			if (entry.getName().endsWith(DISTRIBUICAO_FILE_EXT) || entry.getName().endsWith(DISTRIBUICAO_OLD_FILE_EXT)
+					|| entry.getName().startsWith(IMPORTED_FILE_PREFIX)) 
+				xmlInputStream = entry.getInputStream();
+			
+
+			if (entry.getName().endsWith(MLBRNotaFiscalEvent.DISTRIBUICAO_FILE_EXT)
+					|| entry.getName().endsWith("-procEventoNFe.xml")) // Preserved for backward compatibility
 				try {
 					events += IOUtils.toString(entry.getInputStream());
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-			}
 		}
-		
+
 		if (xmlInputStream == null)
 			return null;
-		
-		// Get jasper file(s) and parameters
-		InputStream mainJasperInputStream = null;
+
+		// get jasper file(s) and parameters
 		Map<String, Object> jasperParameters = new HashMap<String, Object>();
-		MProcess process = new MProcess(getCtx(), GENERATE_DANFE_PROCESS_ID, get_TrxName());
-		
-		MAttachment attachProcess = process.createAttachment();
-		
-		for (int i = attachProcess.getEntryCount() - 1; i >= 0; i--) 
-		{
-			if (attachProcess.getEntry(i).getName().equals(JASPER_FILENAME))
-				mainJasperInputStream = attachProcess.getEntry(i).getInputStream();
-			
-			jasperParameters.put(attachProcess.getEntry(i).getName(),
-					attachProcess.getEntry(i).getInputStream());
-		}
-		
-		// If attachment not found, try to get from resources
-		if (mainJasperInputStream == null) {
-			mainJasperInputStream = getClass().getClassLoader()
-					.getResourceAsStream("org/idempierelbr/nfe/report/" + JASPER_FILENAME);
-			
+
+		// get from resources
+		InputStream mainJasperInputStream = getClass().getClassLoader()
+				.getResourceAsStream("org/idempierelbr/nfe/report/" + JASPER_FILENAME);
+
+		jasperParameters.put("REPORT_LOCALE", new Locale("pt", "BR"));
+
+		// only for nfe
+		if (!isNFCe)
 			jasperParameters.put("DanfeMainPortraitA4", mainJasperInputStream);
-			jasperParameters.put("REPORT_LOCALE", new Locale("pt", "BR"));
-		}
-		
+
+		// check DANFE
 		if (mainJasperInputStream == null)
-			return null;
-		
+			throw new AdempiereException("Arquivo da DANFE não foi encontrado!");
+
 		// Add org logo to parameters
 		int logoID = 0;
-		if ( isLBR_IsDocIssuedByOrg() ) {
+		if (isLBR_IsDocIssuedByOrg()) {
 			MOrgInfo oi = MOrgInfo.get(getCtx(), getAD_Org_ID(), get_TrxName());
 			logoID = oi.getLogo_ID();
 		} else {
 			logoID = this.getC_BPartner().getLogo_ID();
 		}
-		
-		if ( logoID > 0) {
+
+		if (logoID > 0) {
 			MImage mImage = MImage.get(getCtx(), logoID);
-			if ( mImage != null && mImage.getBinaryData() != null)
-			{
+			if (mImage != null && mImage.getBinaryData() != null) {
 				InputStream is = new ByteArrayInputStream(mImage.getBinaryData());
 				jasperParameters.put("logotipo", is);
 			}
 		}
-		
-		if ( ! events.equals("") ) {
-			jasperParameters.put("Eventos_Datasource", 
-					IOUtils.toInputStream("<LBREventList>" + events + "</LBREventList>" ));
+
+		// events of nfe
+		if (!isNFCe && !events.equals("")) {
+			jasperParameters.put("Eventos_Datasource",
+					IOUtils.toInputStream("<LBREventList>" + events + "</LBREventList>"));
+		}
+
+		// generate NFCe QRCode inputstream
+		if (isNFCe) {
+
+			try {
+
+				// check url
+				if (getLBR_NFCeQRCodeURL() == null || getLBR_NFCeQRCodeURL().isEmpty())
+					throw new AdempiereException("URL/QRCode da NFC-e é inválido!");
+				
+				// ws
+				MLBRNFeWebService queryWS = MLBRNFeWebService.get(MLBRNFeWebService.SERVICE_NFCE_CONSULTA,
+						MDocType.get(getCtx(), getC_DocType_ID()).get_ValueAsString("LBR_NFeEnv"),
+						NFeUtil.VERSAO_QR_CODE, getC_Region_ID(), getLBR_NFeModel());
+				if (queryWS == null)
+					throw new AdempiereException("Link de Consulta da NFC-e é inválido!");
+				
+				//
+				ByteArrayOutputStream out = new ByteArrayOutputStream();
+				MatrixToImageWriter.writeToStream(
+						new QRCodeWriter().encode(getLBR_NFCeQRCodeURL(), BarcodeFormat.QR_CODE, 300, 300), "PNG", out);
+				jasperParameters.put("qrcode", new ByteArrayInputStream(((ByteArrayOutputStream) out).toByteArray()));
+				jasperParameters.put("urlconsulta", queryWS.getURL());
+				
+
+			} catch (Exception e) {
+
+				e.printStackTrace();
+				log.severe("Não foi possível gerar o DANFE da NFC-e. Erro: " + e.getMessage());
+				throw new AdempiereException("Não foi possível gerar o QRCode da NFC-e.");
+			}
 		}
 
 		// Load report file and datasource
 		JasperReport jasperReport = null;
 		JRXmlDataSource dataSource = null;
-		
+
 		try {
-			jasperReport = (JasperReport)JRLoader.loadObject(mainJasperInputStream);
+			jasperReport = (JasperReport) JRLoader.loadObject(mainJasperInputStream);
 			dataSource = new JRXmlDataSource(xmlInputStream, jasperReport.getQuery().getText());
 		} catch (JRException e1) {
-			log.severe("Não foi possível carregar arquivo jasper");
 			e1.printStackTrace();
+			log.severe("Não foi possível carregar o arquivo da DANFE para está Nota Fiscal. Erro: " + e1.getMessage());
+			throw new AdempiereException("Não foi possível carregar o arquivo da DANFE para está Nota Fiscal");
 		}
-		
+
 		// Generate JasperPrint
 		JasperPrint jasperPrint = null;
-		
+
 		try {
 			jasperPrint = JasperFillManager.fillReport(jasperReport, jasperParameters, dataSource);
-		} catch(Exception e) {
-			log.warning("Could not generate JasperPrint for Nota Fiscal " + getDocumentNo());
+		} catch (Exception e) {
 			e.printStackTrace();
+			log.warning("Falha ao gerar impressão do DANFE para a Nota Fiscal " + getDocumentNo() + ". Erro: "
+					+ e.getMessage());
+			throw new AdempiereException("Falha ao gerar impressão do DANFE para a Nota Fiscal " + getDocumentNo());
 		}
-		
+
 		return jasperPrint;
 	}
 
