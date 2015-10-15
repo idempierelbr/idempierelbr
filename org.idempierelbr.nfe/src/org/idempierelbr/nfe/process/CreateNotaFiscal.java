@@ -319,7 +319,7 @@ public class CreateNotaFiscal extends SvrProcess
 			
 			if (poLine instanceof MOrderLine || poLine instanceof MInvoiceLine) {
 				qty = (BigDecimal)poLine.get_Value("QtyEntered");
-				priceActual = (BigDecimal)poLine.get_Value("PriceActual");
+				priceActual = (BigDecimal)poLine.get_Value("PriceEntered");
 				nfLine.setC_UOM_ID(poLine.get_ValueAsInt("C_UOM_ID"));
 				
 				if (poLine instanceof MOrderLine)
@@ -330,7 +330,7 @@ public class CreateNotaFiscal extends SvrProcess
 				qty = rmaLine.getQty();
 				
 				if (rmaOrderLine.getPriceEntered() != null)
-					priceActual = rmaOrderLine.getPriceActual();
+					priceActual = rmaOrderLine.getPriceEntered();	
 				
 				nfLine.setC_UOM_ID(rmaLine.getC_UOM_ID());
 				nfLine.setM_RMALine_ID(rmaLine.get_ID());
