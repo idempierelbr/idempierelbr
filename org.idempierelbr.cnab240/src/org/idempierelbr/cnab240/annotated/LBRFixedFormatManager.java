@@ -313,6 +313,12 @@ public class LBRFixedFormatManager implements FixedFormatManager {
     			  if ( datatype.equals(java.util.Date.class) ) {
     				  // empty Date objects is null
     				  loadedData = null;
+    			  } else if ( datatype.equals(Integer.class) || datatype.equals(int.class) ) {
+    				  loadedData = 0;
+    			  } else if ( datatype.equals(Double.class) ) {
+    				  loadedData = new Double(0);
+    			  } else if ( datatype.equals(double.class) ) {
+    				  loadedData = 0;
     			  } else {
     				  loadedData = datatype.newInstance();
     			  }
