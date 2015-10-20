@@ -161,7 +161,7 @@ public class NFeXMLGenerator {
 		String serie = nf.getLBR_NFeSerie();
 
 		// Lê dados do cliente para posterior uso
-		boolean isConsumidor = NFeUtil.isBPartnerCashTrx(ctx, bp);
+		boolean isBPartnerCashTrx = NFeUtil.isBPartnerCashTrx(ctx, bp);
 		boolean bpIEIsento = bp.get_ValueAsBoolean("LBR_IsIEExempt");
 		
 		// verifica se é NFC-e
@@ -497,7 +497,7 @@ public class NFeXMLGenerator {
 		 * Preenche a tag destinatário de maneira distinta caso o cliente não seja identificado.
 		 */
 		
-		if(isConsumidor){
+		if(isBPartnerCashTrx){
 			/*
 			 * Consumidor não identificado por cadastro. Preenche seu CPF se o mesmo tiver sido informado (dado opcional)
 			 */
@@ -635,7 +635,7 @@ public class NFeXMLGenerator {
 		/*
 		 * Somente preenche a tag de destinatário caso o consumidor tenha cadastro ou o CPF tenha sido preenchido
 		 */
-		if(!isConsumidor || (LBR_UnidentifiedCustomerCPF != null && !LBR_UnidentifiedCustomerCPF.isEmpty())){
+		if(!isBPartnerCashTrx || (LBR_UnidentifiedCustomerCPF != null && !LBR_UnidentifiedCustomerCPF.isEmpty())){
 			dados.setDest(destinatario);			
 		}
 		
