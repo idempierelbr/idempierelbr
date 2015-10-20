@@ -1,4 +1,4 @@
-package org.idempierelbr.nfe.process;
+package org.idempierelbr.nfe.beans;
 import java.math.BigDecimal;
 
 import org.compiere.model.MPayment;
