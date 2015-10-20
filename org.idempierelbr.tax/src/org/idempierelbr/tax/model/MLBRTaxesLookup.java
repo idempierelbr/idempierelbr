@@ -145,4 +145,8 @@ public final class MLBRTaxesLookup extends Lookup
 		log.log(Level.SEVERE, "not implemented");
 		return null;
 	}   //  getArray
+
+	public boolean containsKeyNoDirect(Object key) {
+		return false;
+	}
 }	//	MLBRTaxesLookup
