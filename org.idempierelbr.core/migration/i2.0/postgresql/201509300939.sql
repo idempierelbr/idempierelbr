@@ -522,6 +522,7 @@ INSERT INTO t_alter_column values('lbr_nfewebservice','LBR_NFeModel',null,'NOT N
 UPDATE AD_Field SET SeqNo=30, AD_FieldGroup_ID=NULL,Updated=TO_TIMESTAMP('2015-08-30 11:02:20','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Field_ID=800154
 ;
 
+/*
 -- 30/08/2015 11h8min44s BRT
 INSERT INTO LBR_NFeWebService (LBR_NFeModel,AD_Client_ID,AD_Org_ID,Created,CreatedBy,Updated,UpdatedBy,LBR_NFeWebService_ID,LBR_NFeWebService_UU,IsActive,Name,VersionNo,LBR_NFeEnv,C_Region_ID,URL) VALUES ('65',0,0,TO_TIMESTAMP('2015-08-30 11:08:44','YYYY-MM-DD HH24:MI:SS'),0,TO_TIMESTAMP('2015-08-30 11:08:44','YYYY-MM-DD HH24:MI:SS'),0,1000014,'9997bd81-8c93-4ad9-86e6-2d151f3477bd','Y','NFeAutorizacao','3.10','2',465,'https://homologacao.nfce.fazenda.sp.gov.br/ws/nfeautorizacao.asmx')
 ;
@@ -585,6 +586,7 @@ INSERT INTO LBR_NFeWebService (LBR_NFeModel,AD_Client_ID,AD_Org_ID,Created,Creat
 -- 29/09/2015 11h6min23s BRT
 INSERT INTO LBR_NFeWebService (LBR_NFeModel,AD_Client_ID,AD_Org_ID,Created,CreatedBy,Updated,UpdatedBy,LBR_NFeWebService_ID,LBR_NFeWebService_UU,IsActive,Name,VersionNo,LBR_NFeEnv,C_Region_ID,URL) VALUES ('65',0,0,TO_TIMESTAMP('2015-09-29 11:06:23','YYYY-MM-DD HH24:MI:SS'),100,TO_TIMESTAMP('2015-09-29 11:06:23','YYYY-MM-DD HH24:MI:SS'),100,1000029,'0f3cb98d-dba8-4e92-9598-2a46366837f3','Y','NFCeConsultaQRCode','100','1',465,'https://www.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaQRCode.aspx')
 ;
+*/
 
 -- 31/08/2015 21h16min21s BRT
 UPDATE AD_Ref_List SET Name='65 -NFC-e',Updated=TO_TIMESTAMP('2015-08-31 21:16:21','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Ref_List_ID=800033
