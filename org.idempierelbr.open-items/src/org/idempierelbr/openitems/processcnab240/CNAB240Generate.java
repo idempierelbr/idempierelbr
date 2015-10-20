@@ -19,15 +19,11 @@ import org.compiere.model.MAttachment;
 import org.compiere.model.MBPartner;
 import org.compiere.model.MBank;
 import org.compiere.model.MBankAccount;
-import org.compiere.model.MNote;
 import org.compiere.model.MOrg;
-import org.compiere.model.MPInstance;
 import org.compiere.model.MSequence;
-import org.compiere.model.MSysConfig;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.DB;
-import org.compiere.util.Env;
 import org.compiere.util.Msg;
 import org.idempierelbr.cnab240.annotated.CNABHeaderArquivoRecord;
 import org.idempierelbr.cnab240.annotated.CNABHeaderLoteRecord;
@@ -44,6 +40,7 @@ import org.idempierelbr.openitems.model.MLBRBoleto;
 import org.idempierelbr.openitems.model.MLBRBoletoDetails;
 import org.idempierelbr.openitems.model.MLBRBoletoMovement;
 import org.idempierelbr.openitems.model.MLBRBoletoStaticData;
+import org.idempierelbr.openitems.model.MLBRCNAB;
 import org.idempierelbr.openitems.model.MLBRCobMovimento;
 import org.idempierelbr.openitems.process.IBankCollection;
 import org.idempierelbr.openitems.util.OpenItemsUtil;
@@ -245,9 +242,19 @@ public class CNAB240Generate extends SvrProcess
 		lote.setTipoOperacao("R");
 		bankCollection.postProcessGenerated(lote, convenio);
 
+		// Create CNAB File record
+		MLBRCNAB cnab = new MLBRCNAB(getCtx() , 0 , get_TrxName() );
+		cnab.setC_Bank_ID(m_bank.get_ID());
+		cnab.setC_BankAccount_ID(convenio.getC_BankAccount_ID());
+		cnab.setLBR_FileGeneratingDate(m_LBR_FileGeneratingDate);
+		cnab.setLBR_CNAB240MovementType(MLBRCNAB.LBR_CNAB240MOVEMENTTYPE_1_RemessaCliente_GtBanco);
+		cnab.setLBR_CNAB240SeqNo(sequenciaArquivo);
+		cnab.saveEx();
+			
 		for ( MLBRBoletoMovement mov : listMov ) {
 			generateRegistroDeDetalhe(mov);
 			mov.setLBR_FileGeneratingDate(m_LBR_FileGeneratingDate);
+			mov.setLBR_CNAB_ID(cnab.get_ID());
 			mov.saveEx();
 		}
 		
@@ -265,24 +272,19 @@ public class CNAB240Generate extends SvrProcess
 				this.processUI.download(file);
 			else
 				Filedownload.save(file, null);
-			
-			// Create Notice
-			if (MSysConfig.getBooleanValue("LBR_CNAB_CREATE_NOTICE", true, getAD_Client_ID(), p_AD_Org_ID)) {
-				MNote note = new MNote(getCtx(), "LBR_CNABGenerated", Env.getAD_User_ID(getCtx()), get_TrxName());
-				note.setTextMsg(getName() + " (" + m_bank.getName() + ")\n" + getProcessInfo().getSummary());
-				note.setRecord(MPInstance.Table_ID, getProcessInfo().getAD_PInstance_ID());
-				note.saveEx();
-				
-				MAttachment attachment = note.createAttachment();
-				attachment.addEntry(file);	
 
-				String log = getProcessInfo().getLogInfo(true);
-				if (log != null && log.trim().length() > 0)
-					attachment.addEntry("ProcessLog.html", log.getBytes("UTF-8"));
+			cnab.setDescription(getName() + " (" + m_bank.getName() + ")\n" + getProcessInfo().getSummary());
+			cnab.saveEx();
 
-				if (attachment != null)
-					attachment.saveEx();
-			}
+			MAttachment attachment = cnab.createAttachment();
+			attachment.addEntry(file);	
+
+			String log = getProcessInfo().getLogInfo(true);
+			if (log != null && log.trim().length() > 0)
+				attachment.addEntry("ProcessLog.html", log.getBytes("UTF-8"));
+
+			if (attachment != null)
+				attachment.saveEx();
 		} else {
 			throw new AdempiereException("Could not generate CNAB");
 		}

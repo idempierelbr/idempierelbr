@@ -1,14 +1,19 @@
 package org.idempierelbr.openitems.processcnab240;
 
 import java.io.File;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.logging.Level;
 
 import org.adempiere.exceptions.AdempiereException;
+import org.compiere.model.MAttachment;
 import org.compiere.model.MBank;
 import org.compiere.model.MBankAccount;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
+import org.idempierelbr.cnab240.annotated.CNABHeaderArquivoRecord;
 import org.idempierelbr.cnab240.annotated.CNABRecords;
+import org.idempierelbr.openitems.model.MLBRCNAB;
 import org.idempierelbr.openitems.process.IBankCollection;
 import org.idempierelbr.openitems.util.OpenItemsUtil;
 
@@ -25,6 +30,7 @@ public class CNAB240Return extends SvrProcess
 	
 	private IBankCollection bankCollection;
 	private MBankAccount bankAccount;
+	private MLBRCNAB cnab;
 	
 	public CNAB240Return(CNABRecords records , IBankCollection bankCollection ) {
 		super();
@@ -98,8 +104,34 @@ public class CNAB240Return extends SvrProcess
 		}
 
 		records.loadRecords(CNABFile);
+
+		// Create CNAB File record
+		cnab = new MLBRCNAB(getCtx() , 0 , get_TrxName() );
+		cnab.setC_Bank_ID(m_bank.get_ID());
+		cnab.setC_BankAccount_ID(bankAccount.get_ID());
+		CNABHeaderArquivoRecord fileHeader = records.getFileHeader();
+		cnab.setLBR_FileGeneratingDate(new Timestamp(fileHeader.getDataHoraGeracao().getTime()));
+		cnab.setLBR_CNAB240MovementType(MLBRCNAB.LBR_CNAB240MOVEMENTTYPE_2_RetornoBanco_GtCliente);
+		cnab.setLBR_CNAB240SeqNo(fileHeader.getSequenciaArquivo());
+		cnab.saveEx();
 		
-		return CNABRecordsProcess.process( records , this , bankCollection );
+		MAttachment attachment = cnab.createAttachment();
+		attachment.addEntry(CNABFile);
+
+		String log = getProcessInfo().getLogInfo(true);
+		if (log != null && log.trim().length() > 0)
+			attachment.addEntry("ProcessLog.html", log.getBytes("UTF-8"));
+
+		if (attachment != null)
+			attachment.saveEx();
+
+
+		String result = CNABRecordsProcess.process( records , this , bankCollection );
+
+		cnab.setDescription(getName() + " (" + m_bank.getName() + ")\n" + getProcessInfo().getSummary());
+		cnab.saveEx();
+
+		return result;
 
 	}	//	doIt
 
@@ -107,5 +139,8 @@ public class CNAB240Return extends SvrProcess
 		return bankAccount;
 	}
 
+	public MLBRCNAB getCnab() {
+		return cnab;
+	}
 
 }	//	CNABReturn

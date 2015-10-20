@@ -194,6 +194,7 @@ public class CNABRecords {
 		switch (record.getTipoRegistro()) {
 		case 0:
 			record = loadHeaderArquivo( linha );
+			fileHeader = (CNABHeaderArquivoRecord) record;
 			break;
 		case 1:
 			record = loadHeaderLote( linha );
@@ -283,7 +284,7 @@ public class CNABRecords {
 	}
 
 	private CNABBaseRecord loadHeaderArquivo(String linha) {
-		CNABBaseRecord record = manager.load( baseClass, linha);
+		CNABBaseRecord record = manager.load( headerArquivoClass, linha);
 		return record;
 	}
 

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_Tab">
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Tab">
  <row id="100" trl="Y">
   <value column="Name" original="Table">Tabela</value>
   <value column="CommitWarning" original=""/>
@@ -6388,6 +6386,24 @@ Printing:
   <value column="Name" original="NF-e Unused Numbering">Numeração Inutilizada de NF-e</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="NF-e Unused Numbering Entries">Registro de Inutilização de Nota Fiscal (na Sefaz)</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800009" trl="N">
+  <value column="Name" original="Taxpayer Security Code">Taxpayer Security Code</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800010" trl="Y">
+  <value column="Name" original="CNAB Files">Arquivos CNAB</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Brazilian bank integration files">Arquivos de integração bancária</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800011" trl="Y">
+  <value column="Name" original="Movements">Movimentos CNAB</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="07721587-32fd-4a79-b306-94c8ed672f52">

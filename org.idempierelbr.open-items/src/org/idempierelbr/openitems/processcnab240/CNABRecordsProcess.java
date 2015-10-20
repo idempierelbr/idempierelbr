@@ -137,6 +137,7 @@ public class CNABRecordsProcess {
 			mov.setLBR_Boleto_ID(boleto.get_ID());
 			mov.setSeqNo(boleto.getNewMovementSeqNo());
 			mov.setLBR_CNAB240MovementType(MLBRCobMovimento.LBR_CNAB240MOVEMENTTYPE_2_RetornoBanco_GtCliente);
+			mov.setLBR_CNAB_ID(svrP.getCnab().get_ID());
 			
 			// detecta conta bancária
 			mov.detectBankAccount(segT , boleto.getC_Bank().getRoutingNo());

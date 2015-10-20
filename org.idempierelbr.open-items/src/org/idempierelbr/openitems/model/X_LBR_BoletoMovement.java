@@ -33,7 +33,7 @@ public class X_LBR_BoletoMovement extends PO implements I_LBR_BoletoMovement, I_
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20150823L;
+	private static final long serialVersionUID = 20151016L;
 
     /** Standard Constructor */
     public X_LBR_BoletoMovement (Properties ctx, int LBR_BoletoMovement_ID, String trxName)
@@ -580,6 +580,31 @@ public class X_LBR_BoletoMovement extends PO implements I_LBR_BoletoMovement, I_
 	public Timestamp getLBR_CNABDiscount3Date () 
 	{
 		return (Timestamp)get_Value(COLUMNNAME_LBR_CNABDiscount3Date);
+	}
+
+	public I_LBR_CNAB getLBR_CNAB() throws RuntimeException
+    {
+		return (I_LBR_CNAB)MTable.get(getCtx(), I_LBR_CNAB.Table_Name)
+			.getPO(getLBR_CNAB_ID(), get_TrxName());	}
+
+	/** Set CNAB Files.
+		@param LBR_CNAB_ID CNAB Files	  */
+	public void setLBR_CNAB_ID (int LBR_CNAB_ID)
+	{
+		if (LBR_CNAB_ID < 1) 
+			set_ValueNoCheck (COLUMNNAME_LBR_CNAB_ID, null);
+		else 
+			set_ValueNoCheck (COLUMNNAME_LBR_CNAB_ID, Integer.valueOf(LBR_CNAB_ID));
+	}
+
+	/** Get CNAB Files.
+		@return CNAB Files	  */
+	public int getLBR_CNAB_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_CNAB_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
 	}
 
 	public I_LBR_Cob_Movimento getLBR_Cob_Movimento() throws RuntimeException

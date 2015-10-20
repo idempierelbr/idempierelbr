@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_Window">
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Window">
  <row id="100" trl="Y">
   <value column="Name" original="Table and Column">Tabela e Coluna</value>
   <value column="Description" original="Maintain Tables and Columns">Gerenciamento de Tabelas e Colunas</value>
@@ -2094,10 +2092,15 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Unused Brazilian Fiscal Invoice Numbering">Registro de Inutilização de Nota Fiscal (na Sefaz)</value>
   <value column="Help" original="The Unused Brazilian Fiscal Invoice Numbering Window allows tracking all registered (Sefaz) unused numbering."/>
  </row>
-<row id="800003" trl="Y">
+ <row id="800003" trl="Y">
   <value column="Name" original="Taxpayer Security Code">Código de Segurança do Contribuinte - CSC</value>
   <value column="Description" original=""/>
   <value column="Help" original="">O CSC NFC-e e seu respectivo número de identificação constituem informações fundamentais para a correta geração do QR-Code que deverá ser impresso no DANFE NFC-e. Cada contribuinte (CNPJ Raiz) poderá manter até dois CSC ativos simultaneamente.</value>
+ </row>
+ <row id="800004" trl="Y">
+  <value column="Name" original="CNAB Files">Arquivos CNAB</value>
+  <value column="Description" original="Brazilian bank integration files">Arquivos de integração bancária</value>
+  <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="68928e29-e04a-4d4d-92ee-d230e06891f7">
   <value column="Name" original="NCM (LBR)">NCM</value>

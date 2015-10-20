@@ -370,6 +370,17 @@ public interface I_LBR_BoletoMovement
 	  */
 	public Timestamp getLBR_CNABDiscount3Date();
 
+    /** Column name LBR_CNAB_ID */
+    public static final String COLUMNNAME_LBR_CNAB_ID = "LBR_CNAB_ID";
+
+	/** Set CNAB Files	  */
+	public void setLBR_CNAB_ID (int LBR_CNAB_ID);
+
+	/** Get CNAB Files	  */
+	public int getLBR_CNAB_ID();
+
+	public I_LBR_CNAB getLBR_CNAB() throws RuntimeException;
+
     /** Column name LBR_Cob_Movimento_ID */
     public static final String COLUMNNAME_LBR_Cob_Movimento_ID = "LBR_Cob_Movimento_ID";
 
