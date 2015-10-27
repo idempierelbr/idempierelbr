@@ -644,8 +644,11 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		if (m_processMsg != null)
 			return false;
 		
-		setLBR_NFeStatus(null);
-		setLBR_NFeID(null);
+		// reactive only if is own doc
+		if(isLBR_IsDocIssuedByOrg()) {
+			setLBR_NFeStatus(null);
+			setLBR_NFeID(null);
+		}
 		
 		// After reActivate
 		m_processMsg = ModelValidationEngine.get().fireDocValidate(this, ModelValidator.TIMING_AFTER_REACTIVATE);
