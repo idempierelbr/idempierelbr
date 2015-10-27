@@ -787,7 +787,11 @@ public class NFeXMLGenerator {
 			else
 				produtos.setcEAN(prdt.getUPC());
 			
-			produtos.setxProd(RemoverAcentos.remover(details.getProductName()));
+			//
+			if (isHomolog)
+				produtos.setxProd("NOTA FISCAL EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL");
+			else
+				produtos.setxProd(RemoverAcentos.remover(details.getProductName()));
 			
 			MLBRNCM ncm = new MLBRNCM(ctx, details.getLBR_NCM_ID(), trxName);
 			String ncmValue = ncm.getValue();
@@ -1479,8 +1483,8 @@ public class NFeXMLGenerator {
 		
 		// only to NFC-e
 		if (isNFCe) {
-			
-			// 
+
+			//
 			try {
 
 				//
@@ -1493,8 +1497,16 @@ public class NFeXMLGenerator {
 				if (digestValueTagMatcher.find())
 					digestValue = digestValueTagMatcher.group(2);
 
+				String cDest = "";
+				if (dados.getDest() != null && dados.getDest().getCPF() != null && !dados.getDest().getCPF().isEmpty())
+					cDest = dados.getDest().getCPF();
+				else if (dados.getDest() != null && dados.getDest().getCNPJ() != null
+						&& !dados.getDest().getCNPJ().isEmpty())
+					cDest = dados.getDest().getCNPJ();
+
 				// generate nfe qrcode
-				String urlQrCodeNFCe = NFeUtil.generateQRCodeNFCeURL(nf, digestValue, nfeID);
+				String urlQrCodeNFCe = NFeUtil.generateQRCodeNFCeURL(nf, digestValue, nfeID, cDest,
+						dados.getTotal().getICMSTot().getvICMS(), tpAmb);
 
 				// check sysconfig
 				if (urlQrCodeNFCe != null && !urlQrCodeNFCe.isEmpty()) {
@@ -1503,12 +1515,8 @@ public class NFeXMLGenerator {
 					infSupl.setQrCode(urlQrCodeNFCe);
 
 					// put into xml
-					if (MSysConfig.getBooleanValue("ALLOW_NFCE_INFSUPL_XML", false, nf.getAD_Client_ID(),
-							nf.getAD_Org_ID())) {
-						int idx = nfeXML.indexOf("</infNFe>");
-						nfeXML = nfeXML.replace(idx, idx + 9,
-								"</infNFe>" + NFeUtil.removeIndent(TextUtil.removeEOL(xstream.toXML(infSupl))));
-					}
+					int idx = nfeXML.indexOf("</infNFe>") + 9;
+					nfeXML = nfeXML.replace(idx, idx, NFeUtil.removeIndent(TextUtil.removeEOL(xstream.toXML(infSupl))));
 				}
 			} catch (Exception e) {
 
@@ -1519,7 +1527,6 @@ public class NFeXMLGenerator {
 				throw new Exception("Não foi possível gerar o QRCode da NFC-e. Erro: " + e.getMessage());
 			}
 		}
-
 		
 		// validate
 		try {

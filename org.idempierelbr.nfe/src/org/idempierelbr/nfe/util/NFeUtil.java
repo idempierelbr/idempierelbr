@@ -489,7 +489,7 @@ public abstract class NFeUtil
 	 * @return
 	 * @throws Exception
 	 */
-	public static String generateQRCodeNFCeURL(MLBRNotaFiscal nf, String digestValue, String nfeID) throws Exception {
+	public static String generateQRCodeNFCeURL(MLBRNotaFiscal nf, String digestValue, String nfeID, String cDest, String vICMS, String tpAmb) throws Exception {
 	
 		// url
 		String url = MLBRNFeWebService.getURL(MLBRNFeWebService.SERVICE_NFCE_CONSULTA_QRCODE,
@@ -502,35 +502,11 @@ public abstract class NFeUtil
 		// 
 		String chNFe = nfeID;
 		String nVersao = NFeUtil.VERSAO_QR_CODE;
-		String tpAmb = MDocType.get(nf.getCtx(), nf.getC_DocType_ID()).get_ValueAsString("LBR_NFeEnv");
 		String vNF = TextUtil.bigdecimalToString(nf.getGrandTotal());
 		String digest = digestValue;
 		String tokenID = csc.getValue();
 		String token = csc.getName();
 		Timestamp dhEmi = nf.getDateDoc();
-
-		// icms
-		BigDecimal icmsAmt = Env.ZERO;		
-		MLBRNotaFiscalTax[] nfTaxes = nf.getTaxes(true);
-		for (MLBRNotaFiscalTax nfTax : nfTaxes){
-			MTax tax = new MTax(nf.getCtx(), nfTax.getC_Tax_ID(), nf.get_TrxName());
-			X_LBR_TaxGroup taxGroup = new X_LBR_TaxGroup(nf.getCtx(), tax.get_ValueAsInt("LBR_TaxGroup_ID"), nf.get_TrxName());			
-			if (taxGroup.getName().toUpperCase().equals("ICMS")) 
-				icmsAmt = nfTax.getTaxAmt();
-		}
-		
-		// text utils
-		String vICMS = TextUtil.bigdecimalToString(icmsAmt);
-
-		// bpartner info
-		String cDest = "";
-		MBPartner bp = MBPartner.get(nf.getCtx(), nf.getC_BPartner_ID());
-		if (!nf.get_ValueAsString("LBR_UnidentifiedCustomerCPF").isEmpty())
-			cDest = nf.get_ValueAsString("LBR_UnidentifiedCustomerCPF");
-		else if (bp.get_ValueAsString("LBR_BPTypeBR").equals("PF"))
-			cDest = bp.get_ValueAsString("LBR_CPF");
-		else if (bp.get_ValueAsString("LBR_BPTypeBR").equals("PF"))
-			cDest = bp.get_ValueAsString("LBR_CNPJ");
 
 		// generate
 		return generateQRCodeNFCeURL(chNFe, nVersao, tpAmb, cDest, dhEmi, vNF, vICMS, digest, tokenID, token, url);
