@@ -38,6 +38,18 @@ public class CaixaCNABSegmentP extends CNABSegmentPRecord {
 		return super.getNumeroDocumento();
 	}
 
+	
+	// Campos com manipulação de conteúdo
+	@Override
+	public void setDistribuicaoBloqueto(String distribuicaoBloqueto) {
+
+		if ( distribuicaoBloqueto.equals("2") ) {
+			super.setDistribuicaoBloqueto("0");
+		} else {
+			super.setDistribuicaoBloqueto(distribuicaoBloqueto);
+		}
+	}
+	
 
 
 	// campos adicionados

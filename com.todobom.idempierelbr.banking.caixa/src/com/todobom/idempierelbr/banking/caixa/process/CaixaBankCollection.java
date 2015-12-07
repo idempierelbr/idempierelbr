@@ -143,7 +143,7 @@ public class CaixaBankCollection implements IBankCollection {
 				&& originClassName.equals("MLBRBoletoMovement")) {
 			MLBRBoletoMovement mov = (MLBRBoletoMovement) origin ;
 			MLBRBoleto boleto = (MLBRBoleto) mov.getLBR_Boleto();
-			String convenio = mov.getLBR_ConvenioNo();
+			String convenio = mov.getLBR_Boleto().getLBR_BankAccount_Convenio().getLBR_ConvenioNo();
 			
 			CaixaCNABSegmentP segP = (CaixaCNABSegmentP) generated;
 			segP.setConvenio(convenio);
