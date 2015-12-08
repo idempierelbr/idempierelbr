@@ -79,6 +79,14 @@ public class CaixaCNABHeaderArquivo extends CNABHeaderArquivoRecord {
 		return;
 	}
 	
+	@Field( offset = 167, length = 5 , paddingChar = '0' , align = Align.RIGHT )
+	public int getZeros4() {
+		return 0;
+	}
+
+	public void setZeros4( int Zero ) {
+		return;
+	}
 
 	// campo adicional da Caixa
 	private String versaoAplicativo;
@@ -91,7 +99,5 @@ public class CaixaCNABHeaderArquivo extends CNABHeaderArquivoRecord {
 	public void setVersaoAplicativo(String versaoAplicativo) {
 		this.versaoAplicativo = versaoAplicativo;
 	}
-
-	
 	
 }
