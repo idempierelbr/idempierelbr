@@ -1,9 +1,11 @@
 package com.todobom.idempierelbr.banking.caixa.process;
 
 import org.adempiere.exceptions.AdempiereException;
+import org.compiere.model.MSysConfig;
 import org.compiere.model.PO;
 import org.compiere.process.ProcessCall;
 import org.idempierelbr.cnab240.utils.ArquivoUtils;
+import org.idempierelbr.openitems.model.MLBRBankAccountConvenio;
 import org.idempierelbr.openitems.model.MLBRBoleto;
 import org.idempierelbr.openitems.model.MLBRBoletoMovement;
 import org.idempierelbr.openitems.process.IBankCollection;
@@ -11,6 +13,7 @@ import org.idempierelbr.openitems.processcnab240.CNAB240Generate;
 import org.idempierelbr.openitems.processcnab240.CNAB240Return;
 import org.idempierelbr.openitems.util.OpenItemsUtil;
 
+import com.todobom.idempierelbr.banking.caixa.annotated.CaixaCNABHeaderArquivo;
 import com.todobom.idempierelbr.banking.caixa.annotated.CaixaCNABRecords;
 import com.todobom.idempierelbr.banking.caixa.annotated.CaixaCNABSegmentP;
 
@@ -137,9 +140,21 @@ public class CaixaBankCollection implements IBankCollection {
 
 		String generatedClassName = generated.getClass().getSimpleName();
 		String originClassName = origin.getClass().getSimpleName();
-		
-		// personaliza header do arquivo de cobrança
-		if (  generatedClassName.equals("CaixaCNABSegmentP") 
+
+		// personaliza o header do arquivo de cobrança
+		if (  generatedClassName.equals("CaixaCNABHeaderArquivo") 
+				&& originClassName.equals("MLBRBankAccountConvenio")) {
+			MLBRBankAccountConvenio convenio = (MLBRBankAccountConvenio) origin;
+			CaixaCNABHeaderArquivo headerArquivo = (CaixaCNABHeaderArquivo) generated;
+			
+			String tipoRemessa = MSysConfig.getValue("LBR_CNAB_CEF_TIPOREMESSA",
+					"REMESSA-PRODUCAO", convenio.getAD_Client_ID(), convenio.getAD_Org_ID());
+			
+			headerArquivo.setUsoEmpresa(tipoRemessa);
+
+		}
+		// personaliza segmento P do arquivo de cobrança
+		else if (  generatedClassName.equals("CaixaCNABSegmentP") 
 				&& originClassName.equals("MLBRBoletoMovement")) {
 			MLBRBoletoMovement mov = (MLBRBoletoMovement) origin ;
 			MLBRBoleto boleto = (MLBRBoleto) mov.getLBR_Boleto();
