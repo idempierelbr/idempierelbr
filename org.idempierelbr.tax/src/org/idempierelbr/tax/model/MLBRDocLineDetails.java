@@ -53,48 +53,80 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	public BigDecimal getDiscountAmt () 
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_DiscountAmt);
+		
+		if (bd == null)
+			return Env.ZERO;
+		
 		return bd;
 	}
 	
 	public BigDecimal getFreightAmt () 
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_FreightAmt);
+		
+		if (bd == null)
+			return Env.ZERO;
+		
 		return bd;
 	}
 	
 	public BigDecimal getInsuredAmount () 
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_InsuredAmount);
+		
+		if (bd == null)
+			return Env.ZERO;
+		
 		return bd;
 	}
 	
 	public BigDecimal getLBR_GrossAmt () 
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_GrossAmt);
+		
+		if (bd == null)
+			return Env.ZERO;
+		
 		return bd;
 	}
 	
 	public BigDecimal getLBR_PriceTax () 
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_PriceTax);
+		
+		if (bd == null)
+			return Env.ZERO;
+		
 		return bd;
 	}
 	
 	public BigDecimal getLBR_QtyTax () 
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_QtyTax);
+		
+		if (bd == null)
+			return Env.ZERO;
+		
 		return bd;
 	}
 	
 	public BigDecimal getSurcharges () 
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_Surcharges);
+		
+		if (bd == null)
+			return Env.ZERO;
+		
 		return bd;
 	}
 	
 	public BigDecimal getTaxLineTotal () 
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_TaxLineTotal);
+		
+		if (bd == null)
+			return Env.ZERO;
+		
 		return bd;
 	}
 	
