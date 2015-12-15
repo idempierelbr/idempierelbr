@@ -403,7 +403,11 @@ public class CNABRecordsProcess {
 			
 			// se houver valor pago e for código de pagamento/liquidação
 			if (mov.getPayAmt().compareTo(Env.ZERO) == 1 
-					&& ( returnMovCode.equals("06") || returnMovCode.equals("17") ) )  {
+					&& (returnMovCode.equals("06")
+							|| returnMovCode.equals("17")
+							|| (boleto.getC_Bank().getRoutingNo().startsWith("341")
+									&& returnMovCode.equals("08"))
+					)){
 				log = new StringBuilder(Msg.getMsg(svrP.getCtx(), "DocProcessed"))
 					.append(": ")
 					.append(Msg.getElement(svrP.getCtx(), "LBR_Boleto_ID"))
