@@ -9,6 +9,7 @@ public class BancoDoBrasilCNABRecords extends CNABRecords {
 		super();
 		this.setHeaderArquivoClass(BancoDoBrasilCNABHeaderArquivo.class);
 		this.setHeaderLoteCobrancaClass(BancoDoBrasilCNABCobrancaHeaderLote.class);
+		this.setSegmentTClass(BancoDoBrasilCNABSegmentT.class);
 	}
 
 	@Override
