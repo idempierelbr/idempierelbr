@@ -329,8 +329,10 @@ public class CreateNotaFiscal extends SvrProcess
 			} else if (poLine instanceof MRMALine) {
 				qty = rmaLine.getQty();
 				
-				if (rmaOrderLine.getPriceEntered() != null)
+				if (rmaOrderLine.getPriceEntered() != null && rmaOrderLine.getPriceEntered().signum() != 0)
 					priceActual = rmaOrderLine.getPriceEntered();	
+				else 
+					priceActual = rmaOrderLine.getPriceActual();
 				
 				nfLine.setC_UOM_ID(rmaLine.getC_UOM_ID());
 				nfLine.setM_RMALine_ID(rmaLine.get_ID());
@@ -346,7 +348,7 @@ public class CreateNotaFiscal extends SvrProcess
 				MProduct product = new MProduct(getCtx(), nfLine.getM_Product_ID(), get_TrxName());
 				BigDecimal productWeight = product.getWeight();
 
-				if (productWeight != null) {
+				if (productWeight != null && productWeight.signum() != 0) {
 					BigDecimal multiplier = MUOMConversion.convertProductFrom(getCtx(),
 							nfLine.getM_Product_ID(), nfLine.getC_UOM_ID(), nfLine.getQty()) ;
 					totalWeight = totalWeight.add(productWeight.multiply(multiplier));

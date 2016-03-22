@@ -18,6 +18,7 @@ import org.compiere.model.MOrderLine;
 import org.compiere.model.MProduct;
 import org.compiere.model.MRMA;
 import org.compiere.model.MRMALine;
+import org.compiere.model.MSysConfig;
 import org.compiere.model.PO;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
@@ -123,7 +124,13 @@ public class MLBRDocLineDetailsTax extends MLBRDocLineDetails implements IDocLin
 			if (product.get_ID() > 0) {
 				I_W_M_Product pW = POWrapper.create(product, I_W_M_Product.class);
 				setProductValue(product.getValue());
-				setProductName(product.getName());
+				
+				// use category name as product description
+				if (MSysConfig.getBooleanValue("LBR_PRODUCT_FISCAL_NAME_SIMPLIFIED", false, po.getAD_Client_ID(), po.getAD_Org_ID()))
+					setProductName(product.getM_Product_Category().getName());
+				else
+					setProductName(product.getName());
+				
 				setLBR_NCM_ID(pW.getLBR_NCM_ID());
 				setLBR_UPCTax(product.getUPC());
 				

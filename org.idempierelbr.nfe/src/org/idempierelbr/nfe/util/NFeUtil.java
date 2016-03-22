@@ -497,7 +497,7 @@ public abstract class NFeUtil
 				nf.getC_Region_ID(), nf.getLBR_NFeModel());
 
 		// csc
-		MLBRCSC csc = MLBRCSC.get(nf.getAD_Org_ID());
+		MLBRCSC csc = MLBRCSC.get(nf.getAD_Org_ID(), tpAmb);
 		
 		// 
 		String chNFe = nfeID;
@@ -567,5 +567,39 @@ public abstract class NFeUtil
 		parametros.put("cIdToken", TextUtil.lPad(tokenID, 6));
 		parametros.put("cHashQRCode", hashQRCode);
 		return url + "?" + NFeUtil.generateQRCodeParamsURL(parametros);
+	}
+	
+	
+	/**
+	 * Check EAN Code
+	 * 
+	 * Validade digit calculator Link:
+	 * http://www.gs1.org/how-calculate-check-digit-manually
+	 * 
+	 * @param value
+	 *            ean
+	 * @return
+	 */
+	public static boolean isValidEAN(String value) {
+
+		if (value != null && !value.isEmpty()
+				&& (value.length() == 8 || value.length() == 12 || value.length() == 13 || value.length() == 14)) {
+			int factor = 3;
+			int sum = 0;
+
+			for (int index = value.length() - 1; index > 0; --index) {
+				int mult = Integer.valueOf(value.substring(index - 1, index));
+				sum = sum + mult * factor;
+				factor = 4 - factor;
+			}
+
+			int cc = ((1000 - sum) % 10);
+			int ca = Integer.valueOf(value.substring(value.length() - 1));
+
+			if (cc == ca)
+				return Boolean.TRUE;
+		}
+
+		return Boolean.FALSE;
 	}
 }	//	NFeUtil

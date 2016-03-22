@@ -30,14 +30,14 @@ public class MLBRCSC extends X_LBR_CSC {
 	 * @param AD_Org_ID
 	 * @return MRDTConfig
 	 */
-	public static MLBRCSC get(int AD_Org_ID) {
+	public static MLBRCSC get(int AD_Org_ID, String tpEnv) {
 		
 		// where
-		String where = "AD_Org_ID = ? AND IsActive='Y' ";
+		String where = "AD_Org_ID = ? AND IsActive='Y' AND LBR_NFeEnv = ? ";
 		
 		// query
 		Query q = new Query(Env.getCtx(), MLBRCSC.Table_Name, where, null);
-		q.setParameters(new Object[] { AD_Org_ID});
+		q.setParameters(new Object[] { AD_Org_ID, tpEnv});
 		q.setOrderBy("IsDefault, Value DESC");
 		
 		//

@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version last-->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DanfeNFCe" pageWidth="252" pageHeight="451" columnWidth="250" leftMargin="1" rightMargin="1" topMargin="1" bottomMargin="1" isIgnorePagination="true" uuid="2ee59f2c-90ef-45b6-820e-6d2b3ab6db90">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DanfeNFCe" pageWidth="226" pageHeight="909" columnWidth="226" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2ee59f2c-90ef-45b6-820e-6d2b3ab6db90">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="336"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Adapter from XML"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<subDataset name="detalhes" uuid="d402eb6a-5484-4328-a03d-55ba7b288e4b">
 		<parameter name="PreImpresso" class="java.lang.Boolean">
 			<defaultValueExpression><![CDATA[new Boolean(false)]]></defaultValueExpression>
@@ -201,51 +211,59 @@
 	<group name="group">
 		<groupExpression><![CDATA[$F{nNF}]]></groupExpression>
 		<groupHeader>
-			<band height="40" splitType="Stretch">
+			<band height="22" splitType="Stretch">
 				<componentElement>
-					<reportElement x="0" y="18" width="250" height="22" uuid="53046d50-8f3a-4673-b2fe-493f91d92fb4"/>
+					<reportElement x="0" y="0" width="226" height="22" uuid="53046d50-8f3a-4673-b2fe-493f91d92fb4">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
 					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
 						<datasetRun subDataset="detalhes" uuid="d0cfe676-781a-44aa-8e97-6e03688dd3c1">
 							<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("//det")]]></dataSourceExpression>
 						</datasetRun>
-						<jr:listContents height="22" width="250">
+						<jr:listContents height="22" width="226">
 							<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-								<reportElement key="textField-11" positionType="FixRelativeToBottom" mode="Transparent" x="126" y="12" width="14" height="9" uuid="244d2984-48f6-421e-8904-d545ae974847"/>
+								<reportElement key="textField-11" positionType="FixRelativeToBottom" mode="Transparent" x="101" y="12" width="14" height="9" uuid="244d2984-48f6-421e-8904-d545ae974847"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Liberation Sans" size="7"/>
 								</textElement>
 								<textFieldExpression><![CDATA[( $F{unidadeComercial}.equals($F{unidadeTributaria}) ? $F{unidadeComercial} : $F{unidadeComercial} + "\n" + $F{unidadeTributaria} )]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement key="textField-10" positionType="FixRelativeToBottom" mode="Transparent" x="94" y="12" width="28" height="9" uuid="bcf8350e-3546-4317-b7a8-7e2e0ff0a1be"/>
+								<reportElement key="textField-10" positionType="FixRelativeToBottom" mode="Transparent" x="69" y="12" width="28" height="9" uuid="bcf8350e-3546-4317-b7a8-7e2e0ff0a1be"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Sans" size="7"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{unidadeComercial}.equals($F{unidadeTributaria}) ? (new DecimalFormat("#,##0.##")).format(new Double($F{quantidadeComercial})) : (new DecimalFormat("#,##0.##")).format(new Double($F{quantidadeComercial})) + "\n" + (new DecimalFormat("#,##0.###")).format(new Double($F{quantidadeTributaria}))]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-								<reportElement key="textField-9" positionType="FixRelativeToBottom" mode="Transparent" x="147" y="12" width="37" height="9" uuid="cea51a21-f004-4b92-8e7a-0fda92cf3bd9"/>
+								<reportElement key="textField-9" positionType="FixRelativeToBottom" mode="Transparent" x="122" y="12" width="37" height="9" uuid="cea51a21-f004-4b92-8e7a-0fda92cf3bd9"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Sans" size="7"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{unidadeComercial}.toString().equals($F{unidadeTributaria}.toString()) ? (new DecimalFormat("#,##0.00##")).format(new Double($F{valorUnitarioComercial})) : (new DecimalFormat("#,##0.00##")).format(new Double($F{valorUnitarioComercial})) + "\n" + (new DecimalFormat("#,##0.00##")).format(new Double($F{valorUnitarioTributario}))]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-								<reportElement key="textField-8" positionType="FixRelativeToBottom" mode="Transparent" x="184" y="12" width="66" height="9" uuid="2d1f09d3-3c02-46ca-bfc5-27cc01222b3f"/>
+								<reportElement key="textField-8" positionType="FixRelativeToBottom" mode="Transparent" x="159" y="12" width="64" height="9" uuid="2d1f09d3-3c02-46ca-bfc5-27cc01222b3f">
+									<property name="local_mesure_unitwidth" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Sans" size="7"/>
 								</textElement>
 								<textFieldExpression><![CDATA[new Double($F{valorTotal})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement key="textField-2" mode="Transparent" x="16" y="3" width="168" height="9" uuid="d400bdca-d9c9-4959-9222-17a66f0e51a9"/>
+								<reportElement key="textField-2" mode="Transparent" x="16" y="3" width="210" height="9" uuid="d400bdca-d9c9-4959-9222-17a66f0e51a9"/>
 								<textElement verticalAlignment="Middle" markup="html">
 									<font fontName="Liberation Sans" size="7"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{codigo}+" "+$F{descricao}]]></textFieldExpression>
 							</textField>
 							<staticText>
-								<reportElement positionType="FixRelativeToBottom" x="140" y="12" width="7" height="9" uuid="351ed10a-dbc0-45d6-9e7c-7975001b07d6"/>
+								<reportElement positionType="FixRelativeToBottom" x="115" y="12" width="7" height="9" uuid="351ed10a-dbc0-45d6-9e7c-7975001b07d6"/>
 								<textElement textAlignment="Center">
 									<font fontName="Liberation Sans" size="7" isBold="false"/>
 								</textElement>
@@ -261,50 +279,8 @@
 						</jr:listContents>
 					</jr:list>
 				</componentElement>
-				<staticText>
-					<reportElement x="16" y="0" width="168" height="9" uuid="931ae768-135f-4520-8dc5-0f502ef95987"/>
-					<textElement verticalAlignment="Middle">
-						<font fontName="Liberation Sans" size="7" isBold="true" isItalic="false"/>
-					</textElement>
-					<text><![CDATA[Código / Descrição]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="0" y="0" width="13" height="9" uuid="20c5fc80-bb08-4ad2-9c64-88763d39d6a9"/>
-					<textElement verticalAlignment="Middle">
-						<font fontName="Liberation Sans" size="7" isBold="true" isItalic="false"/>
-					</textElement>
-					<text><![CDATA[#]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="94" y="9" width="28" height="9" uuid="f38e90a0-e4a7-47eb-bd1d-ab398fd10e84"/>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="Liberation Sans" size="7" isBold="true" isItalic="false"/>
-					</textElement>
-					<text><![CDATA[Qtd]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="184" y="9" width="66" height="9" uuid="dead8151-7e00-4791-a3ba-f8b7ba07e898"/>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="Liberation Sans" size="7" isBold="true" isItalic="false"/>
-					</textElement>
-					<text><![CDATA[Valor do Item]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="127" y="9" width="13" height="9" uuid="7cc905dd-ba09-4eda-89eb-baa20f2fab66"/>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="Liberation Sans" size="7" isBold="true" isItalic="false"/>
-					</textElement>
-					<text><![CDATA[Un]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="147" y="9" width="37" height="9" uuid="9ff9de13-e6b4-4e07-a29c-512b59c43717"/>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="Liberation Sans" size="7" isBold="true" isItalic="false"/>
-					</textElement>
-					<text><![CDATA[Vlr Unit]]></text>
-				</staticText>
 			</band>
-			<band height="60">
+			<band height="64">
 				<staticText>
 					<reportElement x="0" y="10" width="100" height="13" uuid="5ef84e79-5441-4a36-8f1e-f2fae381befa"/>
 					<textElement verticalAlignment="Middle">
@@ -313,7 +289,9 @@
 					<text><![CDATA[Qtd. Total de Itens]]></text>
 				</staticText>
 				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement key="textField-42" mode="Transparent" x="159" y="23" width="88" height="13" uuid="110a618c-2a86-451c-b547-82949b384718"/>
+					<reportElement key="textField-42" mode="Transparent" x="135" y="23" width="88" height="13" uuid="110a618c-2a86-451c-b547-82949b384718">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="Liberation Sans" size="8"/>
 					</textElement>
@@ -334,42 +312,41 @@
 					<text><![CDATA[Valor Total]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="159" y="36" width="88" height="13" uuid="dd5efe40-01b1-4ede-baf8-3e4803566b39"/>
+					<reportElement x="135" y="36" width="88" height="13" uuid="dd5efe40-01b1-4ede-baf8-3e4803566b39">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="Liberation Sans" size="8" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Valor Pago R$]]></text>
 				</staticText>
-				<line>
-					<reportElement positionType="FixRelativeToBottom" x="0" y="59" width="250" height="1" uuid="d2d9f836-8df5-486b-8983-fa702be74dbf"/>
-					<graphicElement>
-						<pen lineStyle="Dotted"/>
-					</graphicElement>
-				</line>
 				<textField pattern="#0" isBlankWhenNull="true">
-					<reportElement key="textField-42" mode="Transparent" x="159" y="10" width="88" height="13" uuid="979f01b1-3478-4852-a2c0-1da81be4bbc6"/>
+					<reportElement key="textField-42" mode="Transparent" x="135" y="10" width="88" height="13" uuid="979f01b1-3478-4852-a2c0-1da81be4bbc6">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="Liberation Sans" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{detCount})]]></textFieldExpression>
 				</textField>
 				<componentElement>
-					<reportElement x="0" y="49" width="247" height="10" uuid="23e246f5-7bfa-4d79-bd8e-c5cce9750c45"/>
+					<reportElement x="0" y="49" width="226" height="13" uuid="23e246f5-7bfa-4d79-bd8e-c5cce9750c45"/>
 					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
 						<datasetRun subDataset="pagamentos" uuid="dd1d55d7-168f-472b-8bab-097ba14c8566">
 							<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("//pag")]]></dataSourceExpression>
 						</datasetRun>
-						<jr:listContents height="10" width="247">
+						<jr:listContents height="13" width="226">
 							<textField pattern="#,##0.00">
-								<reportElement positionType="FixRelativeToBottom" x="168" y="0" width="79" height="10" uuid="94c651e6-8236-473a-aaf8-d585ebb1a66b"/>
-								<textElement textAlignment="Right">
+								<reportElement positionType="FixRelativeToBottom" x="158" y="0" width="65" height="13" uuid="94c651e6-8236-473a-aaf8-d585ebb1a66b"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Sans" size="8"/>
 								</textElement>
 								<textFieldExpression><![CDATA[new Double($F{vPag})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="">
-								<reportElement x="0" y="0" width="168" height="10" uuid="8525d390-6d68-47d3-8ae6-b4c405f6fc52"/>
-								<textElement textAlignment="Left">
+								<reportElement x="0" y="0" width="158" height="13" uuid="8525d390-6d68-47d3-8ae6-b4c405f6fc52"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
 									<font fontName="Liberation Sans" size="8"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{tPag}.equals("01")?"Dinheiro":
@@ -389,32 +366,46 @@ $F{tPag}.equals("13")?"Vale Combustível":
 			</band>
 			<band height="23">
 				<printWhenExpression><![CDATA[$F{informacoesComplementares2}!=null]]></printWhenExpression>
-				<line>
-					<reportElement positionType="FixRelativeToBottom" x="0" y="22" width="250" height="1" uuid="8ebff3e9-af42-4928-8c75-b382db6da654"/>
-					<graphicElement>
-						<pen lineStyle="Dotted"/>
-					</graphicElement>
-				</line>
 				<textField isStretchWithOverflow="true">
-					<reportElement x="0" y="10" width="250" height="12" uuid="7dabd4a4-621a-40db-a6e1-c8294250fb1d"/>
-					<textElement markup="html">
+					<reportElement x="0" y="10" width="226" height="13" uuid="7dabd4a4-621a-40db-a6e1-c8294250fb1d">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="html">
 						<font fontName="Liberation Sans" size="7"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{informacoesComplementares2}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="3" y="0" width="244" height="9" uuid="18b2d90c-63cb-4b8f-ad96-6b398eb09950"/>
+					<reportElement x="0" y="1" width="226" height="9" uuid="18b2d90c-63cb-4b8f-ad96-6b398eb09950">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
 					<textElement textAlignment="Center">
 						<font fontName="Liberation Sans" size="7" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Informações de interesse do contribuinte:]]></text>
 				</staticText>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="226" height="1" uuid="d2d9f836-8df5-486b-8983-fa702be74dbf">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
 			</band>
-			<band height="80">
+			<band height="96">
 				<textField>
-					<reportElement x="0" y="0" width="250" height="9" uuid="28e13e05-82c6-4bd9-9881-fefb8f85280e"/>
+					<reportElement x="0" y="4" width="225" height="11" uuid="28e13e05-82c6-4bd9-9881-fefb8f85280e">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-						<font fontName="Liberation Sans" size="7"/>
+						<font fontName="Liberation Sans" size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Nº " + $F{nNF}+" Serie:  "+$F{serie}+" Emissão: "+
 $F{dataEmissao}.substring(8,10)+"/"+
@@ -422,7 +413,12 @@ $F{dataEmissao}.substring(5,7)+"/"+
 $F{dataEmissao}.substring(0,4)]]></textFieldExpression>
 				</textField>
 				<textField pattern="" isBlankWhenNull="true">
-					<reportElement key="textField-19" mode="Transparent" x="0" y="39" width="250" height="10" uuid="5b1b6a1d-b935-4534-81ac-e691e29920a7"/>
+					<reportElement key="textField-19" mode="Transparent" x="0" y="57" width="226" height="12" uuid="5b1b6a1d-b935-4534-81ac-e691e29920a7">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Liberation Sans" size="7" isBold="true"/>
 					</textElement>
@@ -438,60 +434,72 @@ $F{chaveAcesso}.substring(35,39)+ " " +
 $F{chaveAcesso}.substring(39,43)+ " " +
 $F{chaveAcesso}.substring(43,47)]]></textFieldExpression>
 				</textField>
-				<line>
-					<reportElement x="0" y="49" width="250" height="1" uuid="39b4e73b-90da-4a8b-b5ca-85dfc1d140e5"/>
-					<graphicElement>
-						<pen lineStyle="Dotted"/>
-					</graphicElement>
-				</line>
 				<staticText>
-					<reportElement x="3" y="9" width="244" height="9" uuid="4bdb66b1-d021-45b8-bcdb-38833705e652"/>
+					<reportElement x="0" y="18" width="225" height="9" uuid="4bdb66b1-d021-45b8-bcdb-38833705e652">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
 					<textElement textAlignment="Center">
 						<font fontName="Liberation Sans" size="7" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Consulte pela chave de acesso em]]></text>
 				</staticText>
-				<textField>
-					<reportElement x="0" y="18" width="250" height="9" uuid="8b10200e-be7b-47f7-9f36-f5c63e94c713"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="27" width="225" height="18" uuid="8b10200e-be7b-47f7-9f36-f5c63e94c713">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-						<font fontName="Liberation Sans" size="7"/>
+						<font fontName="Liberation Sans" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$P{urlconsulta}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="3" y="30" width="244" height="9" uuid="b843f1b2-5cf3-491e-bd70-4cb4828b5aa5"/>
-					<textElement textAlignment="Center">
+					<reportElement x="0" y="48" width="226" height="9" uuid="b843f1b2-5cf3-491e-bd70-4cb4828b5aa5">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
 						<font fontName="Liberation Sans" size="7" isBold="true"/>
 					</textElement>
-					<text><![CDATA[Chave de Acesso:]]></text>
+					<text><![CDATA[Chave de Acesso]]></text>
 				</staticText>
-				<line>
-					<reportElement x="0" y="78" width="250" height="1" uuid="35965cc1-f7a9-4ca7-aa95-5e54547d79f0"/>
-					<graphicElement>
-						<pen lineStyle="Dotted"/>
-					</graphicElement>
-				</line>
 				<textField pattern="" isBlankWhenNull="true">
-					<reportElement key="textField-26" mode="Transparent" x="3" y="68" width="244" height="12" uuid="1234e498-c45a-486f-8dfe-fe7c6ef5cd07"/>
-					<textElement textAlignment="Center">
+					<reportElement key="textField-26" mode="Transparent" x="0" y="82" width="226" height="12" uuid="1234e498-c45a-486f-8dfe-fe7c6ef5cd07"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Liberation Sans" size="7"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{destinatarioCnpj}==null)?$F{destinatarioCpf}.substring(0, 3) + "." + $F{destinatarioCpf}.substring(3, 6) + "." + $F{destinatarioCpf}.substring(6, 9)+"-"+$F{destinatarioCpf}.substring(9,11):$F{destinatarioCnpj}.substring(0, 2) + "." + $F{destinatarioCnpj}.substring(2, 5) + "." + $F{destinatarioCnpj}.substring(5, 8) + "/" + $F{destinatarioCnpj}.substring(8, 12) + "-" + $F{destinatarioCnpj}.substring(12,14)]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement key="textField-25" mode="Transparent" x="3" y="57" width="244" height="12" uuid="c951e907-152a-44e9-9296-69bd53489b8b"/>
-					<textElement textAlignment="Center" markup="html">
+					<reportElement key="textField-25" mode="Transparent" x="0" y="70" width="226" height="12" uuid="c951e907-152a-44e9-9296-69bd53489b8b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
 						<font fontName="Liberation Sans" size="7"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{destinatarioRazaoSocial}]]></textFieldExpression>
 				</textField>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="1" width="225" height="1" uuid="8ebff3e9-af42-4928-8c75-b382db6da654">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
 			</band>
 		</groupHeader>
 	</group>
 	<title>
-		<band height="69" splitType="Stretch">
+		<band height="69" splitType="Immediate">
 			<image scaleImage="FillFrame">
-				<reportElement x="3" y="9" width="45" height="31" uuid="6284d318-17d3-4c2b-9770-9942cffa8cdd">
+				<reportElement x="0" y="12" width="45" height="30" uuid="6284d318-17d3-4c2b-9770-9942cffa8cdd">
 					<property name="local_mesure_unitheight" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="local_mesure_unitwidth" value="pixel"/>
@@ -502,35 +510,38 @@ $F{chaveAcesso}.substring(43,47)]]></textFieldExpression>
 				<imageExpression><![CDATA[$P{logotipo}]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="94" y="1" width="74" height="13" uuid="5d635f91-def3-40a7-ab6d-491347aec61e"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<reportElement x="0" y="0" width="226" height="14" uuid="5d635f91-def3-40a7-ab6d-491347aec61e"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="Liberation Sans" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[NFC-e]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-7" mode="Transparent" x="50" y="13" width="197" height="16" uuid="b4c16ac9-2760-43f0-9ed8-9d1e1dc392c6"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+				<reportElement key="textField-7" mode="Transparent" x="45" y="12" width="181" height="17" uuid="b4c16ac9-2760-43f0-9ed8-9d1e1dc392c6">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" markup="html">
 					<font fontName="Liberation Sans" size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{emitenteRazaoSocial}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-18" mode="Transparent" x="50" y="29" width="100" height="12" uuid="a6ad7021-b399-4eb1-9896-b1e7d5670a1b"/>
-				<textElement textAlignment="Left">
+				<reportElement key="textField-18" mode="Transparent" x="45" y="29" width="105" height="12" uuid="a6ad7021-b399-4eb1-9896-b1e7d5670a1b"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Liberation Sans" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{emitenteCnpj}.substring(0, 2) + "." + $F{emitenteCnpj}.substring(2, 5) + "." + $F{emitenteCnpj}.substring(5, 8) + "/" + $F{emitenteCnpj}.substring(8, 12) + "-" + $F{emitenteCnpj}.substring(12,14)]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-17" mode="Transparent" x="151" y="29" width="96" height="12" uuid="478c7767-9539-4b7a-90ed-9983b0b4960b"/>
-				<textElement textAlignment="Left">
+				<reportElement key="textField-17" mode="Transparent" x="150" y="29" width="76" height="12" uuid="478c7767-9539-4b7a-90ed-9983b0b4960b"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Liberation Sans" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{emitenteInscricaoEstadualSubtributario}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-9" mode="Transparent" x="3" y="40" width="244" height="16" uuid="e01c231d-29be-4f1f-a2b6-ca57210cae86">
+				<reportElement key="textField-9" mode="Transparent" x="0" y="41" width="226" height="14" uuid="e01c231d-29be-4f1f-a2b6-ca57210cae86">
 					<property name="local_mesure_unity" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="local_mesure_unitheight" value="pixel"/>
@@ -543,7 +554,7 @@ $F{chaveAcesso}.substring(43,47)]]></textFieldExpression>
 + " - " + $F{emitenteBairro} +" - " + $F{emitenteMunicipio} + "/" + $F{emitenteUf}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-9" mode="Transparent" x="3" y="56" width="244" height="12" uuid="a75afab2-3d16-425b-b469-fa8142d08671"/>
+				<reportElement key="textField-9" mode="Transparent" x="0" y="56" width="226" height="12" uuid="a75afab2-3d16-425b-b469-fa8142d08671"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
 					<font fontName="Liberation Sans" size="8" isBold="false"/>
 				</textElement>
@@ -551,7 +562,7 @@ $F{chaveAcesso}.substring(43,47)]]></textFieldExpression>
 + ($F{emitenteTelefone}!=null ? " - Fone/Fax: " + $F{emitenteTelefone} : "")]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="0" y="68" width="250" height="1" uuid="426f7310-5d03-4935-9bbc-86b91efc0080"/>
+				<reportElement x="0" y="68" width="225" height="1" uuid="426f7310-5d03-4935-9bbc-86b91efc0080"/>
 				<graphicElement>
 					<pen lineStyle="Dotted"/>
 				</graphicElement>
@@ -559,15 +570,19 @@ $F{chaveAcesso}.substring(43,47)]]></textFieldExpression>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="46" splitType="Stretch">
+		<band height="63" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}.intValue() == 1]]></printWhenExpression>
 			<line>
-				<reportElement x="0" y="38" width="250" height="1" uuid="042e6385-ca27-4f06-acdc-ba039d9656fe"/>
+				<reportElement x="0" y="37" width="225" height="1" uuid="042e6385-ca27-4f06-acdc-ba039d9656fe">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<graphicElement>
 					<pen lineStyle="Dotted"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="3" y="0" width="244" height="23" uuid="15fbb548-a16f-42a1-a2f8-e7b24f263e9e"/>
+				<reportElement x="0" y="0" width="226" height="23" uuid="15fbb548-a16f-42a1-a2f8-e7b24f263e9e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font fontName="Liberation Sans" size="8"/>
 				</textElement>
@@ -575,18 +590,72 @@ $F{chaveAcesso}.substring(43,47)]]></textFieldExpression>
 da Nota Fiscal de Consumidor Eletrônica]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="3" y="24" width="244" height="13" uuid="7a562ece-8c12-46f0-b37d-7d685d237756"/>
+				<reportElement x="0" y="24" width="226" height="13" uuid="7a562ece-8c12-46f0-b37d-7d685d237756"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font fontName="Liberation Sans" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Não Permite aproveitamento de crédito de ICMS]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="68" y="52" width="28" height="9" uuid="f38e90a0-e4a7-47eb-bd1d-ab398fd10e84">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Liberation Sans" size="7" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Qtd]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="102" y="52" width="13" height="9" uuid="7cc905dd-ba09-4eda-89eb-baa20f2fab66"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Liberation Sans" size="7" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Un]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="52" width="66" height="9" uuid="dead8151-7e00-4791-a3ba-f8b7ba07e898"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Liberation Sans" size="7" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Valor do Item]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="43" width="13" height="9" uuid="20c5fc80-bb08-4ad2-9c64-88763d39d6a9">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Liberation Sans" size="7" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[#]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="52" width="39" height="9" uuid="9ff9de13-e6b4-4e07-a29c-512b59c43717">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Liberation Sans" size="7" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Vlr Unit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="43" width="175" height="9" uuid="931ae768-135f-4520-8dc5-0f502ef95987">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Liberation Sans" size="7" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Código / Descrição]]></text>
+			</staticText>
 		</band>
 	</pageHeader>
 	<summary>
-		<band height="105">
+		<band height="166">
 			<image scaleImage="RetainShape">
-				<reportElement x="88" y="15" width="75" height="75" uuid="628caaf7-30b3-45d3-b0c6-ae014451d35a">
+				<reportElement x="40" y="7" width="150" height="150" uuid="628caaf7-30b3-45d3-b0c6-ae014451d35a">
 					<property name="local_mesure_unitwidth" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="local_mesure_unitheight" value="pixel"/>
@@ -595,15 +664,18 @@ da Nota Fiscal de Consumidor Eletrônica]]></text>
 				<imageExpression><![CDATA[$P{qrcode}]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="3" y="2" width="244" height="13" uuid="8762d33b-70e7-4f75-970a-57ed4c090df9"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<reportElement x="0" y="0" width="226" height="8" uuid="8762d33b-70e7-4f75-970a-57ed4c090df9">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="Liberation Sans" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Consulta via Leitor QR Code]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-66" mode="Transparent" x="3" y="90" width="244" height="12" uuid="01c0c69e-fe93-445d-8828-1fc2acea0a19"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<reportElement key="textField-66" mode="Transparent" x="0" y="154" width="226" height="12" uuid="01c0c69e-fe93-445d-8828-1fc2acea0a19"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="Liberation Sans" size="7" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Protocolo de Autorização: "+$F{nProt}+" "+$F{dhRecbto}.substring(8,10)+"/"+

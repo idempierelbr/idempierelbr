@@ -528,7 +528,12 @@ public class NFeXMLGenerator {
 			
 			EnderDest enderDest = new EnderDest();
 			enderDest.setXLgr(RemoverAcentos.remover(bpLoc.getAddress1()));
-			enderDest.setNro(RemoverAcentos.remover(bpLoc.getAddress2()));
+
+			// validate num
+			if (bpLoc.getAddress2() != null && !bpLoc.getAddress2().isEmpty())
+				enderDest.setNro(RemoverAcentos.remover(bpLoc.getAddress2()));
+			else
+				return "Endereço do Destinatário: Número inválido!";
 			
 			if (bpLoc.getAddress3() != null)
 				enderDest.setXBairro(RemoverAcentos.remover(bpLoc.getAddress3()));
@@ -782,10 +787,11 @@ public class NFeXMLGenerator {
 			MProduct prdt = new MProduct(ctx, nfLine.getM_Product_ID(), null);
 			produtos.setcProd(RemoverAcentos.remover(details.getProductValue()));
 			
-			if (prdt.getUPC() == null || (prdt.getUPC().length() < 12 || prdt.getUPC().length() > 14))
-				produtos.setcEAN("");
-			else
-				produtos.setcEAN(prdt.getUPC());
+			// check digit calculator
+			produtos.setcEAN("");
+			String productEAN = prdt.getUPC();
+			if (NFeUtil.isValidEAN(productEAN))
+				produtos.setcEAN(productEAN);
 			
 			//
 			if (isHomolog)
@@ -833,10 +839,12 @@ public class NFeXMLGenerator {
 			
 			produtos.setvProd(TextUtil.bigdecimalToString(details.getLBR_GrossAmt()));
 			
-			if (details.getLBR_UPCTax() == null || (details.getLBR_UPCTax().length() < 12 || details.getLBR_UPCTax().length() > 14))
-				produtos.setcEANTrib("");
-			else
-				produtos.setcEANTrib(details.getLBR_UPCTax());
+			// check ean
+			produtos.setcEANTrib("");
+			String productEANTrib = details.getLBR_UPCTax();
+			if (NFeUtil.isValidEAN(productEANTrib))
+				produtos.setcEANTrib(productEANTrib);
+			
 			
 			if (details.getLBR_UOMTax_ID() < 1)
 				return "@Line@: " + nfLine.getLine() + prefixLineMandatory + "'@LBR_UOMTax_ID@'";
@@ -1373,7 +1381,7 @@ public class NFeXMLGenerator {
 			if (taxPayerInfo == null || taxPayerInfo.isEmpty())
 				taxPayerInfo = ibptax;
 			else 
-				taxPayerInfo += "\n" + ibptax;
+				taxPayerInfo = ibptax + "\n  " + taxPayerInfo;
 		}
 		
 		if ((fiscalInfo != null && !fiscalInfo.trim().equals("")) ||
@@ -1515,8 +1523,12 @@ public class NFeXMLGenerator {
 					infSupl.setQrCode(urlQrCodeNFCe);
 
 					// put into xml
-					int idx = nfeXML.indexOf("</infNFe>") + 9;
-					nfeXML = nfeXML.replace(idx, idx, NFeUtil.removeIndent(TextUtil.removeEOL(xstream.toXML(infSupl))));
+					if (MSysConfig.getBooleanValue("ALLOW_NFCE_INFSUPL_XML", false, nf.getAD_Client_ID(),
+							nf.getAD_Org_ID())) {
+						int idx = nfeXML.indexOf("</infNFe>");
+						nfeXML = nfeXML.replace(idx, idx + 9,
+								"</infNFe>" + NFeUtil.removeIndent(TextUtil.removeEOL(xstream.toXML(infSupl))));
+					}
 				}
 			} catch (Exception e) {
 
