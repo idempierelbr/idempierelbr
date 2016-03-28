@@ -409,6 +409,11 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			icms.setLBR_TaxAmtCredit(tl.getLBR_TaxAmt());
 		}
 		
+		// fill CEST
+		MLBRCestNCMProd m_cest = MLBRCestNCMProd.get(getCtx(), product.get_ID(), getLBR_NCM_ID(), get_TrxName());
+		if (m_cest != null && m_cest.get_ID() > 0)
+			icms.set_ValueOfColumn("LBR_CEST_ID", m_cest.get_ID());
+		
 		icms.saveEx();
 	}
 	

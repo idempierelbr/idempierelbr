@@ -25,6 +25,7 @@ public class ProdutosNFEBean {
 	//
 	private String xProd;
 	private String NCM;
+	private String CEST;
 	private String CFOP;
 	private String uCom;
 	private String qCom;
@@ -90,6 +91,15 @@ public class ProdutosNFEBean {
 			nCM = nCM.trim();
 
 		NCM = nCM;
+	}
+	public String getCEST() {
+		return CEST;
+	}
+	public void setCEST(String cEST) {
+		if (cEST != null)
+			cEST = cEST.trim();
+		
+		CEST = cEST;
 	}
 	public String getCFOP() {
 		return CFOP;

@@ -94,8 +94,10 @@ import org.idempierelbr.nfe.util.BPartnerUtilNfe;
 import org.idempierelbr.nfe.util.NFeUtil;
 import org.idempierelbr.nfe.util.ValidaXML;
 import org.idempierelbr.tax.model.MLBRCFOP;
+import org.idempierelbr.tax.model.MLBRDocLineICMS;
 import org.idempierelbr.tax.model.MLBRIBPTax;
 import org.idempierelbr.tax.model.MLBRNCM;
+import org.idempierelbr.tax.model.X_LBR_CEST;
 import org.idempierelbr.tax.model.X_LBR_TaxGroup;
 
 import com.thoughtworks.xstream.XStream;
@@ -804,8 +806,15 @@ public class NFeXMLGenerator {
 
 			if (ncmValue == null)
 				return "@Line@: " + nfLine.getLine() + ": @LBR_MissingNCM@";
-
+			
 			produtos.setNCM(TextUtil.toNumeric(ncmValue));
+			
+			// CEST
+			MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(MLBRDocLineDetailsNfe.getOfPO(nfLine));
+			if (icmsLines.length > 0 && icmsLines[0].get_ValueAsInt("LBR_CEST_ID") > 0) {
+				X_LBR_CEST cest = new X_LBR_CEST(ctx, icmsLines[0].get_ValueAsInt("LBR_CEST_ID"), trxName);
+				produtos.setCEST(TextUtil.toNumeric(cest.getValue()));
+			}
 			
 			MLBRCFOP cfop = new MLBRCFOP(ctx, details.getLBR_CFOP_ID(), trxName);
 			String cfopName = cfop.getValue();
@@ -879,7 +888,7 @@ public class NFeXMLGenerator {
 				produtos.setvOutro(TextUtil.bigdecimalToString(details.getSurcharges()));
 			
 			produtos.setIndTot(details.isLBR_IsGrossAmtInTotal() ? "1" : "0");
-			
+						
 			// Combustíveis e lubrificantes
 			MLBRNotaFiscalLineComb mNFLineComb = MLBRNotaFiscalLineComb.getOfPO(nfLine);
 			

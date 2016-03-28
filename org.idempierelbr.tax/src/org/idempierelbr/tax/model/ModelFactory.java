@@ -86,6 +86,8 @@ public class ModelFactory implements IModelFactory {
 			return X_LBR_DI_Addition.class;
 		else if (tableName.equals(X_LBR_DI_AdditionProd.Table_Name)) // Model MLBRDocLineISSQN
 			return X_LBR_DI_AdditionProd.class;
+		else if (tableName.equals(MLBRCestNCMProd.Table_Name)) // Model MLBRDocLineISSQN
+			return MLBRCestNCMProd.class;
 		
 		return null;
 	}
@@ -162,6 +164,8 @@ public class ModelFactory implements IModelFactory {
 			return new X_LBR_DI_Addition(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(X_LBR_DI_AdditionProd.Table_Name)) // Model MLBRDocLineISSQN
 			return new X_LBR_DI_AdditionProd(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRCestNCMProd.Table_Name)) // Model MLBRDocLineISSQN
+			return new MLBRCestNCMProd(Env.getCtx(), Record_ID, trxName);
 		
 		return null;
 	}
@@ -238,6 +242,8 @@ public class ModelFactory implements IModelFactory {
 			return new X_LBR_DI_Addition(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(X_LBR_DI_AdditionProd.Table_Name)) // Model MLBRDocLineISSQN
 			return new X_LBR_DI_AdditionProd(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRCestNCMProd.Table_Name)) // Model MLBRCestNCMProd
+			return new MLBRCestNCMProd(Env.getCtx(), rs, trxName);
 		
 		return null;
 	}
