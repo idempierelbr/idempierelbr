@@ -36,16 +36,16 @@ public class MLBRCestNCMProd extends X_LBR_CEST_NCMProd {
 			int LBR_NCM_ID, String trxName) {
 
 		//
-		String where = " LBR_NCM_ID = ? OR M_Product_ID = ? ";
+		String where = "AD_Client_ID IN (0, ?) AND (LBR_NCM_ID = ? OR M_Product_ID = ?) ";
 
 		// query
 		Query q = new Query(Env.getCtx(), MLBRCestNCMProd.Table_Name, where,
 				null);
-		q.setParameters(new Object[] { LBR_NCM_ID, M_Product_ID });
+		q.setParameters(new Object[] { Env.getAD_Client_ID(ctx), LBR_NCM_ID, M_Product_ID });
 		q.setOrderBy(" M_Product_ID DESC ");
 		return q.first();
 	}
-
+	
 	/**
 	 * Get CEST value by NCM and Product, priority to M_Product_ID
 	 * 

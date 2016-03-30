@@ -27,7 +27,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 24, 2016 4:32:31 PM BRT
-INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,Help,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,IsEncrypted,IsSecure,FKConstraintType,AD_Element_ID,AD_Reference_ID,AD_Table_ID,AD_Client_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,800776,'N','N','N',0,'N',255,'Y','N','N','Y','ed497a05-52ce-4136-8a1d-6fca75b4ef28','Y','Description','Optional short description of the record','A description is limited to 255 characters.','Description','Y',TO_DATE('2016-03-24 16:32:30','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2016-03-24 16:32:30','YYYY-MM-DD HH24:MI:SS'),0,'N','N','N','N','N',275,34,800024,0,0,'LBR')
+INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,Help,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,IsEncrypted,IsSecure,FKConstraintType,AD_Element_ID,AD_Reference_ID,AD_Table_ID,AD_Client_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,800776,'N','N','N',0,'N',512,'Y','N','N','Y','ed497a05-52ce-4136-8a1d-6fca75b4ef28','Y','Description','Optional short description of the record','A description is limited to 255 characters.','Description','Y',TO_DATE('2016-03-24 16:32:30','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2016-03-24 16:32:30','YYYY-MM-DD HH24:MI:SS'),0,'N','N','N','N','N',275,34,800024,0,0,'LBR')
 ;
 
 -- Mar 24, 2016 4:32:32 PM BRT
@@ -62,7 +62,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 24, 2016 4:32:37 PM BRT
-INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,Help,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,IsEncrypted,IsSecure,FKConstraintType,AD_Element_ID,AD_Reference_ID,AD_Table_ID,AD_Client_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,800782,'Y','N','N',0,'N',5,'Y','N','N','Y','b125f950-ca04-4869-8901-1ec33eea0a51','Y','Value','Search key for the record in the format required - must be unique','A search key allows you a fast method of finding a particular record.
+INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,Help,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,IsEncrypted,IsSecure,FKConstraintType,AD_Element_ID,AD_Reference_ID,AD_Table_ID,AD_Client_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,800782,'Y','N','N',0,'N',9,'Y','N','N','Y','b125f950-ca04-4869-8901-1ec33eea0a51','Y','Value','Search key for the record in the format required - must be unique','A search key allows you a fast method of finding a particular record.
 If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_<TableName>", where TableName is the actual name of the table (e.g. C_Order).','Search Key','Y',TO_DATE('2016-03-24 16:32:37','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2016-03-24 16:32:37','YYYY-MM-DD HH24:MI:SS'),0,'N','N','N','N','N',620,10,800024,0,0,'LBR')
 ;
 
@@ -158,7 +158,7 @@ UPDATE AD_Column SET FKConstraintName='UpdatedBy_LBRCEST', FKConstraintType='N',
 ;
 
 -- Mar 24, 2016 4:49:02 PM BRT
-CREATE TABLE LBR_CEST (AD_Client_ID NUMBER(10) DEFAULT NULL , AD_Org_ID NUMBER(10) DEFAULT NULL , Created DATE DEFAULT NULL , CreatedBy NUMBER(10) DEFAULT NULL , Description VARCHAR2(255) DEFAULT NULL , IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')), LBR_CEST_ID NUMBER(10) NOT NULL, LBR_CEST_UU VARCHAR2(36) DEFAULT NULL , Updated DATE DEFAULT NULL , UpdatedBy NUMBER(10) DEFAULT NULL , Value VARCHAR2(5) NOT NULL, CONSTRAINT LBR_CEST_Key PRIMARY KEY (LBR_CEST_ID), CONSTRAINT LBR_CEST_UU_idx UNIQUE (LBR_CEST_UU))
+CREATE TABLE LBR_CEST (AD_Client_ID NUMBER(10) DEFAULT NULL , AD_Org_ID NUMBER(10) DEFAULT NULL , Created DATE DEFAULT NULL , CreatedBy NUMBER(10) DEFAULT NULL , Description VARCHAR2(512) DEFAULT NULL , IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')), LBR_CEST_ID NUMBER(10) NOT NULL, LBR_CEST_UU VARCHAR2(36) DEFAULT NULL , Updated DATE DEFAULT NULL , UpdatedBy NUMBER(10) DEFAULT NULL , Value VARCHAR2(9) NOT NULL, CONSTRAINT LBR_CEST_Key PRIMARY KEY (LBR_CEST_ID), CONSTRAINT LBR_CEST_UU_idx UNIQUE (LBR_CEST_UU))
 ;
 
 -- Mar 24, 2016 4:49:02 PM BRT
