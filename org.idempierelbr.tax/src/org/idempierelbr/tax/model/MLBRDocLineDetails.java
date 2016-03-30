@@ -412,7 +412,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		// fill CEST
 		MLBRCestNCMProd m_cest = MLBRCestNCMProd.get(getCtx(), product.get_ID(), getLBR_NCM_ID(), get_TrxName());
 		if (m_cest != null && m_cest.get_ID() > 0)
-			icms.set_ValueOfColumn("LBR_CEST_ID", m_cest.get_ID());
+			icms.set_ValueOfColumn("LBR_CEST_ID", m_cest.getLBR_CEST_ID());
 		
 		icms.saveEx();
 	}

@@ -1,8 +1,11 @@
 package org.idempierelbr.tax.model;
 
 import java.sql.ResultSet;
+import java.util.List;
 import java.util.Properties;
 
+import org.adempiere.exceptions.AdempiereException;
+import org.compiere.model.PO;
 import org.compiere.model.Query;
 import org.compiere.util.Env;
 
@@ -43,7 +46,19 @@ public class MLBRCestNCMProd extends X_LBR_CEST_NCMProd {
 				null);
 		q.setParameters(new Object[] { Env.getAD_Client_ID(ctx), LBR_NCM_ID, M_Product_ID });
 		q.setOrderBy(" M_Product_ID DESC ");
-		return q.first();
+
+		// list of results
+		List<MLBRCestNCMProd> l = q.list();
+
+		if (l.size() == 0) {
+			return null;
+		}
+		
+		if (l.size() == 1 || l.get(0).getM_Product_ID()>0) {
+			return l.get(0);
+		}
+
+		return null;
 	}
 	
 	/**
