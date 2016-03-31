@@ -77,6 +77,30 @@
   <value column="Description" original="Responsibility Role"/>
   <value column="Help" original="The Role determines security and access a user who has this Role will have in the System."/>
  </row>
+ <row id="50008" trl="N">
+  <value column="Name" original="IMAP Password">IMAP Password</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="50009" trl="N">
+  <value column="Name" original="Request Folder">Request Folder</value>
+  <value column="Description" original="After take email form inbox folder, and process it success, email will move to this folder">After take email form inbox folder, and process it success, email will move to this folder</value>
+  <value column="Help" original="folder can define as hierarchy, use &quot;\&quot; to separate folder. example customer\vietnam&#10;will read email from folder vietnam under folder customer&#10;after take email form inbox folder, and process it success, email will move to this folder">folder can define as hierarchy, use "\" to separate folder. example customer\vietnam
+will read email from folder vietnam under folder customer
+after take email form inbox folder, and process it success, email will move to this folder</value>
+ </row>
+ <row id="50010" trl="N">
+  <value column="Name" original="Inbox Folder">Inbox Folder</value>
+  <value column="Description" original="Mail folder, where process will take email and make request">Mail folder, where process will take email and make request</value>
+  <value column="Help" original="folder can define as hierarchy, use &quot;\&quot; to separate folder. example customer\vietnam&#10;will read email from folder vietnam under folder customer">folder can define as hierarchy, use "\" to separate folder. example customer\vietnam
+will read email from folder vietnam under folder customer</value>
+ </row>
+ <row id="50011" trl="N">
+  <value column="Name" original="Error Folder">Error Folder</value>
+  <value column="Description" original="Mail folder to push unsuccess email  ">Mail folder to push unsuccess email  </value>
+  <value column="Help" original="folder can define as hierarchy, use &quot;\&quot; to separate folder. example customer\error\vietnam&#10;will puss email can't process to folder vietnam under folder error under folder customer">folder can define as hierarchy, use "\" to separate folder. example customer\error\vietnam
+will puss email can't process to folder vietnam under folder error under folder customer</value>
+ </row>
  <row id="50019" trl="Y">
   <value column="Name" original="Shipment Date">Data da Remessa</value>
   <value column="Description" original="Date printed on shipment">Data impressa na remessa</value>
@@ -326,6 +350,12 @@
   <value column="Name" original="Cost Adjustment Document Type">Cost Adjustment Document Type</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
+ </row>
+ <row id="200121" trl="N">
+  <value column="Name" original="Inbox As Root Folder">Inbox As Root Folder</value>
+  <value column="Description" original="True if other folder (request, error,..) occupy in inbox folder">True if other folder (request, error,..) occupy in inbox folder</value>
+  <value column="Help" original="Some email server as outlook, every folder occupy in inbox, with web mail as google, we easy create my folder outside inbox folder.&#10;this field define where request, error,.. occupy.">Some email server as outlook, every folder occupy in inbox, with web mail as google, we easy create my folder outside inbox folder.
+this field define where request, error,.. occupy.</value>
  </row>
  <row id="800000" trl="Y">
   <value column="Name" original="Target">Alvo</value>

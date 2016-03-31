@@ -2522,6 +2522,11 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200076" trl="N">
+  <value column="Name" original="C_ElementValue Account BPartner Type">C_ElementValue Account BPartner Type</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row id="200080" trl="N">
   <value column="Name" original="M_Production">M_Production</value>
   <value column="Description" original=""/>
@@ -2539,6 +2544,16 @@
  </row>
  <row id="200092" trl="N">
   <value column="Name" original="Country Group">Country Group</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200098" trl="N">
+  <value column="Name" original="Import Mode">Import Mode</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200099" trl="N">
+  <value column="Name" original="IsToolbarButton">IsToolbarButton</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2589,6 +2604,71 @@
  </row>
  <row id="800009" trl="N">
   <value column="Name" original="LBR_PaymentAllocationPriority">LBR_PaymentAllocationPriority</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800013" trl="N">
+  <value column="Name" original="LBR_Cod_OR">LBR_Cod_OR</value>
+  <value column="Description" original="Obligation Code">Obligation Code</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800014" trl="N">
+  <value column="Name" original="LBR_Ind_Proc">LBR_Ind_Proc</value>
+  <value column="Description" original="Process' Origin Code">Process' Origin Code</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800015" trl="N">
+  <value column="Name" original="LBR_TaxAssessmentType">LBR_TaxAssessmentType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800016" trl="N">
+  <value column="Name" original="LBR_Cod_Aj_Apur">LBR_Cod_Aj_Apur</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800017" trl="N">
+  <value column="Name" original="LBR_SPED_Activity">LBR_SPED_Activity</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800018" trl="N">
+  <value column="Name" original="LBR_SPED_Profile">LBR_SPED_Profile</value>
+  <value column="Description" original="SPED Profile">SPED Profile</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800019" trl="N">
+  <value column="Name" original="LBR_FiscalDoc_Model">LBR_FiscalDoc_Model</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800020" trl="N">
+  <value column="Name" original="LBR_CodCons">LBR_CodCons</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800021" trl="N">
+  <value column="Name" original="LBR_TpLigacao">LBR_TpLigacao</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800022" trl="N">
+  <value column="Name" original="LBR_CodGrupoTensao">LBR_CodGrupoTensao</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800023" trl="N">
+  <value column="Name" original="LBR_TpCTe">LBR_TpCTe</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800024" trl="N">
+  <value column="Name" original="LBR_IndFrt">LBR_IndFrt</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800025" trl="N">
+  <value column="Name" original="LBR_TpAssinante">LBR_TpAssinante</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

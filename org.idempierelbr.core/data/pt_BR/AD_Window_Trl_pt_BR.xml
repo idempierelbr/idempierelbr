@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Window">
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
+<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
+<idempiereTrl language="pt_BR" table="AD_Window">
  <row id="100" trl="Y">
   <value column="Name" original="Table and Column">Tabela e Coluna</value>
   <value column="Description" original="Maintain Tables and Columns">Gerenciamento de Tabelas e Colunas</value>
@@ -2082,6 +2084,16 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200063" trl="N">
+  <value column="Name" original="Import Template">Import Template</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200073" trl="N">
+  <value column="Name" original="User Preference">User Preference</value>
+  <value column="Description" original="This window is use to set up the preferences entries for each user.">This window is use to set up the preferences entries for each user.</value>
+  <value column="Help" original=""/>
+ </row>
  <row id="800000" trl="Y">
   <value column="Name" original="Import Declaration (DI)">Declaração de Importação (DI)</value>
   <value column="Description" original=""/>
@@ -2100,6 +2112,21 @@ MRP - 110	 No exists Dem</value>
  <row id="800004" trl="Y">
   <value column="Name" original="CNAB Files">Arquivos CNAB</value>
   <value column="Description" original="Brazilian bank integration files">Arquivos de integração bancária</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800009" trl="Y">
+  <value column="Name" original="ICMS and IPI Tax Assessment">Apuração de ICMS e IPI</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800010" trl="Y">
+  <value column="Name" original="SPED Options">Configurações do Sped</value>
+  <value column="Description" original="SPED Options">Configurações do Sped</value>
+  <value column="Help" original="Options for the processing of SPED">Configurações necessárias para o processamento do Sped</value>
+ </row>
+ <row id="800011" trl="Y">
+  <value column="Name" original="Geração SPED-EFD">Gerador Sped EFD</value>
+  <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="68928e29-e04a-4d4d-92ee-d230e06891f7">
