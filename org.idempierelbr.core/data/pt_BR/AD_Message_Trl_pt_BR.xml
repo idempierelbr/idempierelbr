@@ -6536,6 +6536,54 @@ Por favor, informe o administrador do sistema.</value>
   <value column="MsgText" original="This process creates and complete payments automatically, do you want to print and at the same time create/complete payments?">Este processo cria e completa pagamentos automaticamente. Deseja imprimir e ao mesmo tempo criar/completar pagamentos?</value>
   <value column="MsgTip" original=""/>
  </row>
+ <row id="200326" trl="N">
+  <value column="MsgText" original="CSV Import File Loader">CSV Import File Loader</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200327" trl="N">
+  <value column="MsgText" original="CSV Header doesn't match template">CSV Header doesn't match template</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200328" trl="N">
+  <value column="MsgText" original="No attribute set configured on product ">No attribute set configured on product </value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200329" trl="N">
+  <value column="MsgText" original="Banks From and To must be different">Banks From and To must be different</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200331" trl="N">
+  <value column="MsgText" original="User {0} is not locked">User {0} is not locked</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200332" trl="N">
+  <value column="MsgText" original="Could not unlock user account">Could not unlock user account</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200333" trl="N">
+  <value column="MsgText" original="The user {0} has been unlocked">The user {0} has been unlocked</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200334" trl="N">
+  <value column="MsgText" original="locked account has been reset">locked account has been reset</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200349" trl="N">
+  <value column="MsgText" original="Force change on next login">Force change on next login</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200350" trl="N">
+  <value column="MsgText" original="More Preferences">More Preferences</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200351" trl="N">
+  <value column="MsgText" original="Processing... {0} of {1} ({2}%)">Processing... {0} of {1} ({2}%)</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200352" trl="N">
+  <value column="MsgText" original="Checking for errors... {0} preprocessed.">Checking for errors... {0} preprocessed.</value>
+  <value column="MsgTip" original=""/>
+ </row>
  <row id="520010" trl="Y">
   <value column="MsgText" original="1 Rupee">1 rupia</value>
   <value column="MsgTip" original=" "> </value>

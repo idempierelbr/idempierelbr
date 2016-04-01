@@ -4379,7 +4379,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="53530" trl="Y">
-  <value column="Name" original="Weigth">Peso</value>
+  <value column="Name" original="Weight">Peso</value>
   <value column="Description" original=""/>
  </row>
  <row id="53531" trl="Y">
@@ -5378,6 +5378,18 @@
   <value column="Name" original="Set Null">SET NULL</value>
   <value column="Description" original=""/>
  </row>
+ <row id="200165" trl="N">
+  <value column="Name" original="Customer">Customer</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200166" trl="N">
+  <value column="Name" original="Vendor">Vendor</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200167" trl="N">
+  <value column="Name" original="Employee">Employee</value>
+  <value column="Description" original=""/>
+ </row>
  <row id="200176" trl="N">
   <value column="Name" original="UPC-A">UPC-A</value>
   <value column="Description" original=""/>
@@ -5404,6 +5416,30 @@
  </row>
  <row id="200278" trl="N">
   <value column="Name" original="Model Cascade">Model Cascade</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200281" trl="N">
+  <value column="Name" original="Insert">Insert</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200282" trl="N">
+  <value column="Name" original="Update">Update</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200283" trl="N">
+  <value column="Name" original="Merge">Merge</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200285" trl="N">
+  <value column="Name" original="Toolbar">Toolbar</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200286" trl="N">
+  <value column="Name" original="Window">Window</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200287" trl="N">
+  <value column="Name" original="Both">Both</value>
   <value column="Description" original=""/>
  </row>
  <row id="800000" trl="Y">
@@ -5518,10 +5554,6 @@
   <value column="Name" original="Capital / Penalty / Interest">Valor / Multa / Juros</value>
   <value column="Description" original=""/>
  </row>
- <row id="800028" trl="Y">
-  <value column="Name" original="Capital / Interest / Penalty">Valor / Juros / Multa</value>
-  <value column="Description" original=""/>
- </row>
  <row id="800029" trl="Y">
   <value column="Name" original="Penalty / Interest / Capital">Multa / Juros / Valor</value>
   <value column="Description" original=""/>
@@ -5534,7 +5566,7 @@
   <value column="Name" original="Penalty / Capital / Interest">Multa / Valor / Juros</value>
   <value column="Description" original=""/>
  </row>
- <row id="800033" trl="Y">
+ <row id="800033" trl="N">
   <value column="Name" original="65 - NFC-e">65 - NFC-e</value>
   <value column="Description" original=""/>
  </row>
@@ -5552,6 +5584,386 @@
  </row>
  <row id="800037" trl="N">
   <value column="Name" original="DANFE NFC-e in Electronic Message">NFC-e - DANFE para mensagem eletrônica</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800038" trl="N">
+  <value column="Name" original="693 - Aliquota de ICMS superior a definida para a operacao interestadual">693 - Aliquota de ICMS superior a definida para a operacao interestadual</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800043" trl="N">
+  <value column="Name" original="ICMS">ICMS</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800044" trl="N">
+  <value column="Name" original="ICMS-ST pelas entradas">ICMS-ST pelas entradas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800045" trl="N">
+  <value column="Name" original="ICMS da substituição tributária pelas saídas para o Estado">ICMS da substituição tributária pelas saídas para o Estado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800046" trl="N">
+  <value column="Name" original="Antecipação do diferencial de alíquotas do ICMS">Antecipação do diferencial de alíquotas do ICMS</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800047" trl="N">
+  <value column="Name" original="Antecipação do ICMS da importação">Antecipação do ICMS da importação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800048" trl="N">
+  <value column="Name" original="Antecipação tributária">Antecipação tributária</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800049" trl="N">
+  <value column="Name" original="ICMS resultante da alíquota adicional dos itens incluídos no Fundo de Combate à Pobreza">ICMS resultante da alíquota adicional dos itens incluídos no Fundo de Combate à Pobreza</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800050" trl="N">
+  <value column="Name" original="Outras obrigações do ICMS">Outras obrigações do ICMS</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800051" trl="N">
+  <value column="Name" original="ICMS da substituição tributária pelas saídas para outro Estado">ICMS da substituição tributária pelas saídas para outro Estado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800052" trl="Y">
+  <value column="Name" original="SEFAZ">SEFAZ</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800053" trl="Y">
+  <value column="Name" original="Federal Justice">Justiça Federal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800054" trl="Y">
+  <value column="Name" original="State Justice">Justiça Estadual</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800055" trl="Y">
+  <value column="Name" original="Others">Outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800056" trl="Y">
+  <value column="Name" original="Other Debits">Outros Débitos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800057" trl="Y">
+  <value column="Name" original="Credit Reversal">Estorno de Crédito</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800058" trl="Y">
+  <value column="Name" original="Other Credits">Outros Créditos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800059" trl="Y">
+  <value column="Name" original="Debit Reversal">Estorno de Débito</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800060" trl="Y">
+  <value column="Name" original="Other Debit ICMS">Outros débitos para ajuste de apuração ICMS</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800061" trl="Y">
+  <value column="Name" original="Credit Reversal ICMS">Estorno de créditos para ajuste de apuração ICMS</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800062" trl="Y">
+  <value column="Name" original="Other Credit ICMS">Outros créditos para ajuste de apuração ICMS</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800063" trl="Y">
+  <value column="Name" original="Debit Reversal ICMS">Estorno de débitos para ajuste de apuração ICMS</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800064" trl="Y">
+  <value column="Name" original="Tax Deduction ICMS">Deduções do imposto apurado na apuração ICMS</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800065" trl="Y">
+  <value column="Name" original="Special Debit ICMS">Débito especial de ICMS</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800066" trl="Y">
+  <value column="Name" original="Control ICMS">Controle do ICMS extra-apuração</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800067" trl="Y">
+  <value column="Name" original="Other Debit ICMS-ST">Outros débitos para ajuste de apuração ICMS-ST</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800068" trl="Y">
+  <value column="Name" original="Credit Reversal ICMS-ST">Estorno de créditos para ajuste de apuração ICMS-ST</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800069" trl="Y">
+  <value column="Name" original="Other Credit ICMS-ST">Outros créditos para ajuste de apuração ICMS-ST</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800070" trl="Y">
+  <value column="Name" original="Debit Reversal ICMS-ST">Estorno de débitos para ajuste de apuração ICMS-ST</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800071" trl="Y">
+  <value column="Name" original="Tax Deduction ICMS-ST">Deduções do imposto apurado na apuração ICMS-ST</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800072" trl="Y">
+  <value column="Name" original="Special Debit ICMS-ST">Débito especial de ICMS-ST</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800073" trl="Y">
+  <value column="Name" original="Industry or Equivalent">Indústria ou equivalente</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800074" trl="Y">
+  <value column="Name" original="Service Provider">Prestador de serviços</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800075" trl="Y">
+  <value column="Name" original="Comercial Activity">Atividade de comércio</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800076" trl="Y">
+  <value column="Name" original="Legal person with special deductions">Pessoa jurídica referida nos §§ 6º 8º e 9º do art 3º da lei 9718/98</value>
+  <value column="Description" original="Special deductions as defined in §§ 6º 8º abd 9º of article 3º from Brazilian Law  #9178/98"/>
+ </row>
+ <row id="800077" trl="Y">
+  <value column="Name" original="Real estate activity">Atividade imobiliária</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800078" trl="Y">
+  <value column="Name" original="Others">Outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800079" trl="Y">
+  <value column="Name" original="Profile A">Perfil A</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800080" trl="Y">
+  <value column="Name" original="Profile B">Perfil B</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800081" trl="Y">
+  <value column="Name" original="Profile C">Perfil C</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800082" trl="Y">
+  <value column="Name" original="01 - Fiscal document models 1 and 1A">01 - Nota fiscal modelos 1 e 1A</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800083" trl="Y">
+  <value column="Name" original="04 - Farmers' fiscal document">04 - Nota Fiscal de Produtor Rural</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800084" trl="Y">
+  <value column="Name" original="06 - Electricity fiscal document">06 - Nota Fiscal de Energia Elétrica</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800085" trl="Y">
+  <value column="Name" original="07 - Transportation fiscal document">07 - Nota Fiscal de Serviço de Transporte</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800086" trl="Y">
+  <value column="Name" original="08 - Bill of Road Transport">08 - Conhecimento de transporte rodoviário de cargas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800087" trl="Y">
+  <value column="Name" original="09 - Bill of Waterway transport">09 - Conhecimento de transporte aquaviário de cargas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800088" trl="Y">
+  <value column="Name" original="10 - Bill of aerial transport">10 - Conhecimento Aéreo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800089" trl="Y">
+  <value column="Name" original="11- Bill of railway transport">11 - Conhecimento de transporte ferroviário de cargas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800090" trl="Y">
+  <value column="Name" original="1B - Single fiscal document">1B - Nota Fiscal Avulsa</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800091" trl="Y">
+  <value column="Name" original="21 - Comunications fiscal document">21 - Nota Fiscal de Serviço de Comunicação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800092" trl="Y">
+  <value column="Name" original="22 - Telecomunications fiscal document">22 - Nota fiscal de serviço de telecomunicações</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800093" trl="Y">
+  <value column="Name" original="26 - Bill of transports through multiple means">26 - Conhecimento de transporte multimodal de cargas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800094" trl="Y">
+  <value column="Name" original="27 - Railway transportation fiscal document">27 - Nota fiscal de transporte ferroviário de cargas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800095" trl="Y">
+  <value column="Name" original="28 - Piped Gas fiscal document">28 - Nota fiscal de Gás encanado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800096" trl="Y">
+  <value column="Name" original="29 - Piped water fiscal document">29 - Nota fiscal de água canalizada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800097" trl="Y">
+  <value column="Name" original="57 - Electronic bill of transport">57 - CT-e Conhecimento de Transporte eletrônico</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800098" trl="Y">
+  <value column="Name" original="8B - Single Bill of Road Transport">8B - Conhecimento de transporte rodoviário de cargas avulso</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800099" trl="N">
+  <value column="Name" original="01 - Comercial">01 - Comercial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800100" trl="N">
+  <value column="Name" original="02 - Consumo Próprio">02 - Consumo Próprio</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800101" trl="N">
+  <value column="Name" original="03 - Iluminação Pública">03 - Iluminação Pública</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800102" trl="N">
+  <value column="Name" original="04 - Industrial">04 - Industrial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800103" trl="N">
+  <value column="Name" original="05 - Poder Público">05 - Poder Público</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800104" trl="N">
+  <value column="Name" original="06 - Residencial">06 - Residencial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800105" trl="N">
+  <value column="Name" original="07 - Rural">07 - Rural</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800106" trl="N">
+  <value column="Name" original="1 - Monofásico">1 - Monofásico</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800107" trl="N">
+  <value column="Name" original="2 - Bifásico">2 - Bifásico</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800108" trl="N">
+  <value column="Name" original="3 - Trifásico">3 - Trifásico</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800109" trl="N">
+  <value column="Name" original="A1 - Alta Tensão (230kV ou mais)">A1 - Alta Tensão (230kV ou mais)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800110" trl="N">
+  <value column="Name" original="A2 - Alta Tensão (88 a 138kV)">A2 - Alta Tensão (88 a 138kV)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800111" trl="N">
+  <value column="Name" original="A3 - Alta Tensão (69kV)">A3 - Alta Tensão (69kV)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800112" trl="N">
+  <value column="Name" original="A3a - Alta Tensão (30kV a 44kV)">A3a - Alta Tensão (30kV a 44kV)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800113" trl="N">
+  <value column="Name" original="A4 - Alta Tensão (2,3kV a 25kV)">A4 - Alta Tensão (2,3kV a 25kV)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800114" trl="N">
+  <value column="Name" original="AS - Alta tensão subterrâneo">AS - Alta tensão subterrâneo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800115" trl="N">
+  <value column="Name" original="B1 - Residencial">B1 - Residencial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800116" trl="N">
+  <value column="Name" original="B1 - Residencial baixa renda">B1 - Residencial baixa renda</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800117" trl="N">
+  <value column="Name" original="B2 - Rural">B2 - Rural</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800118" trl="N">
+  <value column="Name" original="B2 - Cooperativa de eletrificação rural">B2 - Cooperativa de eletrificação rural</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800119" trl="N">
+  <value column="Name" original="B2 - Serviço público de irrigação">B2 - Serviço público de irrigação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800120" trl="N">
+  <value column="Name" original="B3 - Demais classes">B3 - Demais classes</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800121" trl="N">
+  <value column="Name" original="B4a - Iluminação pública - Rede de distribuição">B4a - Iluminação pública - Rede de distribuição</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800122" trl="N">
+  <value column="Name" original="B4b - Iluminação pública - bulbo de lâmpada">B4b - Iluminação pública - bulbo de lâmpada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800123" trl="N">
+  <value column="Name" original="0 - CT-e Normal">0 - CT-e Normal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800124" trl="N">
+  <value column="Name" original="1 - CT-e de complemento de valores">1 - CT-e de complemento de valores</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800125" trl="N">
+  <value column="Name" original="2 - CT-e de anulação">2 - CT-e de anulação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800126" trl="N">
+  <value column="Name" original="3 - CT-e substituto">3 - CT-e substituto</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800127" trl="N">
+  <value column="Name" original="0 - por conta do emitente">0 - por conta do emitente</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800128" trl="N">
+  <value column="Name" original="1 - por conta do destinatário/remetente">1 - por conta do destinatário/remetente</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800129" trl="N">
+  <value column="Name" original="2 - por conta de terceiros">2 - por conta de terceiros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800130" trl="N">
+  <value column="Name" original="9 - sem cobrança de frete">9 - sem cobrança de frete</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800131" trl="N">
+  <value column="Name" original="1 - Comercial/Industrial">1 - Comercial/Industrial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800132" trl="N">
+  <value column="Name" original="2 - Poder Público">2 - Poder Público</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800133" trl="N">
+  <value column="Name" original="3 - Residencial/Pessoa Física">3 - Residencial/Pessoa Física</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800134" trl="N">
+  <value column="Name" original="4 - Público">4 - Público</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800135" trl="N">
+  <value column="Name" original="5 - Semi-Público">5 - Semi-Público</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800136" trl="N">
+  <value column="Name" original="6 - Outros">6 - Outros</value>
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="2facadde-7b9b-4619-9161-8f9fe50b2b19">
@@ -6162,8 +6574,8 @@
   <value column="Name" original="100 - Autorizado o uso da NF-e">100 - Autorizado o uso da NF-e</value>
   <value column="Description" original=""/>
  </row>
- <row trl="Y" uuid="153b3fd1-bcd1-4706-a947-ea8a85fca671">
-  <value column="Name" original="55 - NF-e">55 - NF-e</value>
+ <row trl="N" uuid="153b3fd1-bcd1-4706-a947-ea8a85fca671">
+  <value column="Name" original="55 - NF-e">NF-e</value>
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="67e6599a-102c-45d1-9e48-989af7d4d7b8">

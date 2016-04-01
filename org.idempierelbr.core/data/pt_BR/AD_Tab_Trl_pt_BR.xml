@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Tab">
+<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
+<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
+<idempiereTrl language="pt_BR" table="AD_Tab">
  <row id="100" trl="Y">
   <value column="Name" original="Table">Tabela</value>
   <value column="CommitWarning" original=""/>
@@ -6352,6 +6354,30 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200167" trl="N">
+  <value column="Name" original="Import Template">Import Template</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200168" trl="N">
+  <value column="Name" original="Import Template Access">Import Template Access</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200189" trl="N">
+  <value column="Name" original="User Preference">User Preference</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200191" trl="N">
+  <value column="Name" original="Package Installation">Package Installation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row id="800000" trl="Y">
   <value column="Name" original="Import Declaration (DI)">Declaração de Importação (DI)</value>
   <value column="CommitWarning" original=""/>
@@ -6402,6 +6428,36 @@ Printing:
  </row>
  <row id="800011" trl="Y">
   <value column="Name" original="Movements">Movimentos CNAB</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800022" trl="Y">
+  <value column="Name" original="ICMS and IPI Tax Assessment">Apuração de ICMS e IPI</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800023" trl="Y">
+  <value column="Name" original="Tax Assessment Lines">Linhas de Apuração de Imposto</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800024" trl="Y">
+  <value column="Name" original="SPED Options">Configurações do Sped</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800025" trl="Y">
+  <value column="Name" original="Geração SPED-EFD">Geração SPED-EFD</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="Janela de Geração dos arquivos de escrituração fiscal digital">Janela de Geração dos arquivos de escrituração fiscal digital</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800026" trl="N">
+  <value column="Name" original="Detalhes Fiscais">Detalhes Fiscais</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
