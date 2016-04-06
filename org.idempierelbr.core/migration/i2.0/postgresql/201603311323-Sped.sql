@@ -2360,42 +2360,6 @@ INSERT INTO AD_Field (AD_Field_ID,Name,AD_Tab_ID,AD_Column_ID,IsDisplayed,Displa
 INSERT INTO AD_Field (AD_Field_ID,Name,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,XPosition,ColumnSpan,NumLines,IsQuickEntry,IsDefaultFocus,IsAdvancedField) VALUES (800484,'Fiscal Details',800026,800981,'N',22,'N','N','N','N',0,0,'Y',TO_TIMESTAMP('2016-03-31 10:39:15','YYYY-MM-DD HH24:MI:SS'),0,TO_TIMESTAMP('2016-03-31 10:39:15','YYYY-MM-DD HH24:MI:SS'),0,'N','Y','LBR','7ae1d5ed-a6c9-4508-9db2-4b44853a82fd','N',1,2,1,'N','N','N')
 ;
 
--- 31/03/2016 10h39min21s BRT
-INSERT INTO AD_Package_Exp (AD_Package_Exp_ID,AD_Client_ID,AD_Package_Type,CreatedBy,EMail,Instructions,Name,Processed,UpdatedBy,Updated,Processing,PK_Version,IsActive,Description,Created,AD_Org_ID,AD_Package_Exp_UU,IsExportDictionaryEntity) VALUES (1000000,0,'X',0,'claudemir@todobom.com','é só instalar','iDempiereLBR-SPED','N',0,TO_TIMESTAMP('2016-03-31 10:39:21','YYYY-MM-DD HH24:MI:SS'),'N','1','Y','Módulo para geração do SPED EFD',TO_TIMESTAMP('2016-03-31 10:39:21','YYYY-MM-DD HH24:MI:SS'),0,'88e5b652-c483-453d-ae12-f692ce3b0894','N')
-;
-
--- 31/03/2016 10h39min21s BRT
-INSERT INTO AD_Package_Exp_Detail (AD_Package_Exp_Detail_ID,AD_Client_ID,AD_Menu_ID,AD_Role_ID,IsActive,DBType,CreatedBy,Created,UpdatedBy,Updated,Type,Processing,Processed,Line,AD_Package_Exp_ID,AD_Org_ID,AD_Package_Exp_Detail_UU) VALUES (1000000,0,800023,0,'Y','ALL',0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),'M','N','N',10,1000000,0,'227a029c-9977-4bf8-80bd-a4a1e69c4b36')
-;
-
--- 31/03/2016 10h39min21s BRT
-INSERT INTO AD_Package_Exp_Detail (AD_Package_Exp_Detail_ID,AD_Client_ID,AD_Role_ID,IsActive,DBType,CreatedBy,Created,UpdatedBy,Updated,Type,Processing,Processed,Line,AD_Table_ID,AD_Package_Exp_ID,AD_Org_ID,AD_Package_Exp_Detail_UU) VALUES (1000001,0,0,'Y','ALL',0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),'T','N','N',20,800026,1000000,0,'506105a0-8793-4f7d-8008-65739dc9d91a')
-;
-
--- 31/03/2016 10h39min21s BRT
-INSERT INTO AD_Package_Exp_Detail (AD_Package_Exp_Detail_ID,AD_Client_ID,AD_Role_ID,IsActive,DBType,CreatedBy,Created,UpdatedBy,Updated,Type,Processing,Processed,Line,AD_Table_ID,AD_Package_Exp_ID,AD_Org_ID,AD_Package_Exp_Detail_UU) VALUES (1000002,0,0,'Y','ALL',0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),'T','N','N',30,800027,1000000,0,'960d03a3-6ea5-4fc2-b436-10db0ba8203e')
-;
-
--- 31/03/2016 10h39min21s BRT
-INSERT INTO AD_Package_Exp_Detail (AD_Package_Exp_Detail_ID,AD_Client_ID,AD_Role_ID,IsActive,DBType,CreatedBy,Created,UpdatedBy,Updated,Type,Processing,Processed,Line,AD_Table_ID,AD_Package_Exp_ID,AD_Org_ID,AD_Package_Exp_Detail_UU) VALUES (1000003,0,0,'Y','ALL',0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),'T','N','N',40,800029,1000000,0,'aa0c652a-7182-4b8b-8754-22157ad8dcba')
-;
-
--- 31/03/2016 10h39min21s BRT
-INSERT INTO AD_Package_Exp_Detail (AD_Package_Exp_Detail_ID,AD_Client_ID,AD_Role_ID,IsActive,DBType,CreatedBy,Created,UpdatedBy,Updated,Type,Processing,Processed,Line,AD_Table_ID,AD_Package_Exp_ID,AD_Org_ID,AD_Package_Exp_Detail_UU) VALUES (1000004,0,0,'Y','ALL',0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),'T','N','N',50,800030,1000000,0,'2ee10bff-576b-44e8-ac3f-2ee924a4877e')
-;
-
--- 31/03/2016 10h39min21s BRT
-INSERT INTO AD_Package_Exp_Detail (AD_Package_Exp_Detail_ID,AD_Client_ID,AD_Role_ID,IsActive,DBType,CreatedBy,Created,UpdatedBy,Updated,Type,SQLStatement,Processing,Processed,Line,AD_Table_ID,AD_Package_Exp_ID,AD_Org_ID,AD_Package_Exp_Detail_UU) VALUES (1000005,0,0,'Y','ALL',0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),'D','SELECT * FROM AD_Package_Exp WHERE AD_Package_Exp_UU=''88e5b652-c483-453d-ae12-f692ce3b0894'';AD_Package_Exp_Detail','N','N',999,50005,1000000,0,'8b7afda6-585a-48a1-9ab0-4443badb2afe')
-;
-
--- 31/03/2016 10h39min21s BRT
-INSERT INTO AD_Package_Exp_Detail (AD_Package_Exp_Detail_ID,AD_Client_ID,AD_Role_ID,IsActive,DBType,CreatedBy,Created,UpdatedBy,Updated,Type,Processing,Processed,Line,AD_Table_ID,AD_Package_Exp_ID,AD_Org_ID,AD_Package_Exp_Detail_UU) VALUES (1000006,0,0,'Y','ALL',0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),'T','N','N',60,800031,1000000,0,'52de8f8c-86d9-41a3-9ccb-e00f4d7bfe1a')
-;
-
--- 31/03/2016 10h39min21s BRT
-INSERT INTO AD_Package_Exp_Detail (AD_Package_Exp_Detail_ID,AD_Client_ID,AD_Role_ID,IsActive,DBType,CreatedBy,Created,UpdatedBy,Updated,Type,SQLStatement,Processing,Processed,Line,AD_Table_ID,AD_Package_Exp_ID,AD_Org_ID,AD_Package_Exp_Detail_UU) VALUES (1000007,0,0,'Y','ALL',0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),0,TO_TIMESTAMP('2016-03-31','YYYY-MM-DD'),'D','SELECT * FROM AD_Tab WHERE AD_Tab_UU=''e1df8d4d-6a23-4d7c-96dd-8564819e2946'';AD_Field','N','N',70,106,1000000,0,'82fbdfc1-7d9a-4f24-864d-c2610f747f9f')
-;
-
 -- 31/03/2016 10h39min23s BRT
 INSERT INTO AD_Menu (AD_Menu_ID,Name,"action",AD_Window_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsSummary,IsSOTrx,IsReadOnly,EntityType,IsCentrallyMaintained,AD_Menu_UU) VALUES (800024,'ICMS and IPI Tax Assessment','W',800009,0,0,'Y',TO_TIMESTAMP('2016-03-31 10:39:21','YYYY-MM-DD HH24:MI:SS'),0,TO_TIMESTAMP('2016-03-31 10:39:21','YYYY-MM-DD HH24:MI:SS'),0,'N','N','N','LBR','Y','c793342b-1ebc-4692-8bc4-b3217125f8b3')
 ;
