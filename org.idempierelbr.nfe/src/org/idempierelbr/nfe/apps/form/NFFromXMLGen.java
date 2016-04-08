@@ -831,10 +831,14 @@ public class NFFromXMLGen
 			{
 				String msg = "Não foi possível gerar/processar a Nota Fiscal.";
 				try {
+					// process it
 					if (!nf.processIt(docAction)) {
-						log.warning("Failed: " + nf);
+						log.warning("Falha ao processar NF. Erro: " + nf.getProcessMsg());
 						return msg;
 					}
+					
+					// save nf after processed
+					nf.save(trx.getTrxName());					
 				} catch (Exception e) {
 					e.printStackTrace();
 					return msg;
