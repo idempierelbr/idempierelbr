@@ -80,13 +80,13 @@ public class ModelFactory implements IModelFactory {
 			return MLBRDocLineImportTax.class;
 		else if (tableName.equals(MLBRDocLineISSQN.Table_Name)) // Model MLBRDocLineISSQN
 			return MLBRDocLineISSQN.class;
-		else if (tableName.equals(X_LBR_DI.Table_Name)) // Model MLBRDocLineISSQN
+		else if (tableName.equals(X_LBR_DI.Table_Name)) // Model X_LBR_DI
 			return X_LBR_DI.class;
-		else if (tableName.equals(X_LBR_DI_Addition.Table_Name)) // Model MLBRDocLineISSQN
+		else if (tableName.equals(X_LBR_DI_Addition.Table_Name)) // Model X_LBR_DI_Addition
 			return X_LBR_DI_Addition.class;
-		else if (tableName.equals(X_LBR_DI_AdditionProd.Table_Name)) // Model MLBRDocLineISSQN
+		else if (tableName.equals(X_LBR_DI_AdditionProd.Table_Name)) // Model X_LBR_DI_AdditionProd
 			return X_LBR_DI_AdditionProd.class;
-		else if (tableName.equals(MLBRCestNCMProd.Table_Name)) // Model MLBRDocLineISSQN
+		else if (tableName.equals(MLBRCestNCMProd.Table_Name)) // Model MLBRCestNCMProd
 			return MLBRCestNCMProd.class;
 		
 		return null;
@@ -158,13 +158,13 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRDocLineImportTax(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRDocLineISSQN.Table_Name)) // Model MLBRDocLineISSQN
 			return new MLBRDocLineISSQN(Env.getCtx(), Record_ID, trxName);
-		else if (tableName.equals(X_LBR_DI.Table_Name)) // Model MLBRDocLineISSQN
+		else if (tableName.equals(X_LBR_DI.Table_Name)) // Model X_LBR_DI
 			return new X_LBR_DI(Env.getCtx(), Record_ID, trxName);
-		else if (tableName.equals(X_LBR_DI_Addition.Table_Name)) // Model MLBRDocLineISSQN
+		else if (tableName.equals(X_LBR_DI_Addition.Table_Name)) // Model X_LBR_DI_Addition
 			return new X_LBR_DI_Addition(Env.getCtx(), Record_ID, trxName);
-		else if (tableName.equals(X_LBR_DI_AdditionProd.Table_Name)) // Model MLBRDocLineISSQN
+		else if (tableName.equals(X_LBR_DI_AdditionProd.Table_Name)) // Model X_LBR_DI_AdditionProd
 			return new X_LBR_DI_AdditionProd(Env.getCtx(), Record_ID, trxName);
-		else if (tableName.equals(MLBRCestNCMProd.Table_Name)) // Model MLBRDocLineISSQN
+		else if (tableName.equals(MLBRCestNCMProd.Table_Name)) // Model MLBRCestNCMProd
 			return new MLBRCestNCMProd(Env.getCtx(), Record_ID, trxName);
 		
 		return null;
@@ -236,11 +236,11 @@ public class ModelFactory implements IModelFactory {
 			return new MLBRDocLineImportTax(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRDocLineISSQN.Table_Name)) // MLBRDocLineISSQN
 			return new MLBRDocLineISSQN(Env.getCtx(), rs, trxName);
-		else if (tableName.equals(X_LBR_DI.Table_Name)) // Model MLBRDocLineISSQN
+		else if (tableName.equals(X_LBR_DI.Table_Name)) // Model X_LBR_DI
 			return new X_LBR_DI(Env.getCtx(), rs, trxName);
-		else if (tableName.equals(X_LBR_DI_Addition.Table_Name)) // Model MLBRDocLineISSQN
+		else if (tableName.equals(X_LBR_DI_Addition.Table_Name)) // Model X_LBR_DI_Addition
 			return new X_LBR_DI_Addition(Env.getCtx(), rs, trxName);
-		else if (tableName.equals(X_LBR_DI_AdditionProd.Table_Name)) // Model MLBRDocLineISSQN
+		else if (tableName.equals(X_LBR_DI_AdditionProd.Table_Name)) // Model X_LBR_DI_AdditionProd
 			return new X_LBR_DI_AdditionProd(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRCestNCMProd.Table_Name)) // Model MLBRCestNCMProd
 			return new MLBRCestNCMProd(Env.getCtx(), rs, trxName);
