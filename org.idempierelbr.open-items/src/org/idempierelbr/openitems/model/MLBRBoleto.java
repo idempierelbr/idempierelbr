@@ -32,6 +32,7 @@ import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.compiere.util.Msg;
 import org.idempierelbr.core.util.TextUtil;
+import org.idempierelbr.nfe.model.MLBRNotaFiscal;
 import org.idempierelbr.openitems.util.OpenItemsUtil;
 
 public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
@@ -533,7 +534,7 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 		
 		// Get NF number (if nfBased and NF does exist)
 		if (nfBased) {
-			StringBuilder sql = new StringBuilder("SELECT DocumentNo FROM LBR_NotaFiscal")
+			StringBuilder sql = new StringBuilder("SELECT LBR_NotaFiscal_ID FROM LBR_NotaFiscal")
 				.append(" WHERE C_Invoice_ID=? AND DocStatus IN ('CO', 'CL')")
 				.append(" ORDER BY LBR_NotaFiscal_ID");
 			
@@ -545,7 +546,10 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 				rs = pstmt.executeQuery ();
 				
 				if (rs.next ())	{
-					documentNo = rs.getString(1);
+					MLBRNotaFiscal nf = new MLBRNotaFiscal(Env.getCtx(), rs.getInt(1), trxName);
+					
+					if (nf.isStatusAutorizado())
+						documentNo = nf.getDocumentNo();
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

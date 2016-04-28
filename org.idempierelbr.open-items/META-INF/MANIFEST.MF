@@ -11,7 +11,8 @@ Require-Bundle: org.adempiere.base,
  org.adempiere.ui,
  org.adempiere.report.jasper.library,
  org.adempiere.report.jasper,
- org.idempierelbr.cnab240
+ org.idempierelbr.cnab240,
+ org.idempierelbr.nfe;bundle-version="1.0.0"
 Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/CalloutFactory.xml,OSGI-INF/DocFactory.xml,OSGI-INF/FormFactory.xml,
  OSGI-INF/ProcessFactory.xml
 Import-Package: org.osgi.service.event
