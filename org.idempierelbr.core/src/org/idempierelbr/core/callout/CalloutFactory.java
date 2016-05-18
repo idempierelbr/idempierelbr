@@ -26,13 +26,13 @@ public class CalloutFactory implements IColumnCalloutFactory {
 		// Tabela C_BPartner
 		if (tableName.equals(MBPartner.Table_Name)) {
 			if (columnName.equals(I_W_C_BPartner.COLUMNNAME_LBR_BPTypeBR) ||
-					columnName.equals(I_W_C_BPartner.COLUMNNAME_LBR_IsIEExempt))
+					columnName.equals(I_W_C_BPartner.COLUMNNAME_LBR_TypeIE))
 				 callouts.add(new CalloutBPartner());
 		}
 		
 		// Tabela C_BPartner_Location
 		if (tableName.equals(MBPartnerLocation.Table_Name)) {
-			if (columnName.equals(I_W_C_BPartner_Location.COLUMNNAME_LBR_IsIEExempt))
+			if (columnName.equals(I_W_C_BPartner_Location.COLUMNNAME_LBR_TypeIE))
 				 callouts.add(new CalloutBPartner());
 		}
 		

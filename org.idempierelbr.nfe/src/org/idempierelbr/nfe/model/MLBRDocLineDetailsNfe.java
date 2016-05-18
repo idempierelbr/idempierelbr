@@ -244,7 +244,11 @@ public class MLBRDocLineDetailsNfe extends MLBRDocLineDetailsTax implements IDoc
 					MLBRNotaFiscal nf = nfLine.getParent();
 					calculateTaxes(nf, nfLine);
 					processTax(taxes, tax, nfLine.getC_Tax_ID());
-					createChildren(taxes, tax, nfLine.getC_Tax_ID(), (MProduct)nfLine.getM_Product(), nf.getC_BPartner_ID());
+					createChildren(taxes, tax, nfLine.getC_Tax_ID(),
+							(MProduct) nfLine.getM_Product(),
+							nf.getC_BPartner_ID(),
+							nf.getC_BPartner_Location_ID(),
+							nf.getLBR_TransactionType(), nf.getDateDoc());
 					nfLine.updateHeaderTax();
 				}
 			}

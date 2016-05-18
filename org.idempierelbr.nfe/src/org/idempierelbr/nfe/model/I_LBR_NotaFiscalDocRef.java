@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NotaFiscalDocRef
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 3.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_NotaFiscalDocRef 
@@ -64,6 +64,21 @@ public interface I_LBR_NotaFiscalDocRef
 	  */
 	public int getAD_Org_ID();
 
+    /** Column name C_Region_ID */
+    public static final String COLUMNNAME_C_Region_ID = "C_Region_ID";
+
+	/** Set Region.
+	  * Identifies a geographical Region
+	  */
+	public void setC_Region_ID (int C_Region_ID);
+
+	/** Get Region.
+	  * Identifies a geographical Region
+	  */
+	public int getC_Region_ID();
+
+	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException;
+
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
 
@@ -79,21 +94,6 @@ public interface I_LBR_NotaFiscalDocRef
 	  * User who created this records
 	  */
 	public int getCreatedBy();
-
-    /** Column name C_Region_ID */
-    public static final String COLUMNNAME_C_Region_ID = "C_Region_ID";
-
-	/** Set Region.
-	  * Identifies a geographical Region
-	  */
-	public void setC_Region_ID (int C_Region_ID);
-
-	/** Get Region.
-	  * Identifies a geographical Region
-	  */
-	public int getC_Region_ID();
-
-	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException;
 
     /** Column name IsActive */
     public static final String COLUMNNAME_IsActive = "IsActive";
@@ -196,18 +196,36 @@ public interface I_LBR_NotaFiscalDocRef
 	  */
 	public String getLBR_IE();
 
-    /** Column name LBR_IsIEExempt */
-    public static final String COLUMNNAME_LBR_IsIEExempt = "LBR_IsIEExempt";
+    /** Column name LBR_NFModel */
+    public static final String COLUMNNAME_LBR_NFModel = "LBR_NFModel";
 
-	/** Set IE Exempt.
-	  * Business Partner is IE Exempt
+	/** Set NF Model.
+	  * Referes to old printed NF
 	  */
-	public void setLBR_IsIEExempt (boolean LBR_IsIEExempt);
+	public void setLBR_NFModel (String LBR_NFModel);
 
-	/** Get IE Exempt.
-	  * Business Partner is IE Exempt
+	/** Get NF Model.
+	  * Referes to old printed NF
 	  */
-	public boolean isLBR_IsIEExempt();
+	public String getLBR_NFModel();
+
+    /** Column name LBR_NFProdModel */
+    public static final String COLUMNNAME_LBR_NFProdModel = "LBR_NFProdModel";
+
+	/** Set NF Farmer Model	  */
+	public void setLBR_NFProdModel (String LBR_NFProdModel);
+
+	/** Get NF Farmer Model	  */
+	public String getLBR_NFProdModel();
+
+    /** Column name LBR_NFYearMonth */
+    public static final String COLUMNNAME_LBR_NFYearMonth = "LBR_NFYearMonth";
+
+	/** Set NF Year/Month	  */
+	public void setLBR_NFYearMonth (String LBR_NFYearMonth);
+
+	/** Get NF Year/Month	  */
+	public String getLBR_NFYearMonth();
 
     /** Column name LBR_NFeDocRefType */
     public static final String COLUMNNAME_LBR_NFeDocRefType = "LBR_NFeDocRefType";
@@ -239,37 +257,6 @@ public interface I_LBR_NotaFiscalDocRef
 
 	/** Get NF Serie	  */
 	public String getLBR_NFeSerie();
-
-    /** Column name LBR_NFModel */
-    public static final String COLUMNNAME_LBR_NFModel = "LBR_NFModel";
-
-	/** Set NF Model.
-	  * Referes to old printed NF
-	  */
-	public void setLBR_NFModel (String LBR_NFModel);
-
-	/** Get NF Model.
-	  * Referes to old printed NF
-	  */
-	public String getLBR_NFModel();
-
-    /** Column name LBR_NFProdModel */
-    public static final String COLUMNNAME_LBR_NFProdModel = "LBR_NFProdModel";
-
-	/** Set NF Farmer Model	  */
-	public void setLBR_NFProdModel (String LBR_NFProdModel);
-
-	/** Get NF Farmer Model	  */
-	public String getLBR_NFProdModel();
-
-    /** Column name LBR_NFYearMonth */
-    public static final String COLUMNNAME_LBR_NFYearMonth = "LBR_NFYearMonth";
-
-	/** Set NF Year/Month	  */
-	public void setLBR_NFYearMonth (String LBR_NFYearMonth);
-
-	/** Get NF Year/Month	  */
-	public String getLBR_NFYearMonth();
 
     /** Column name LBR_NotaFiscalDocRef_ID */
     public static final String COLUMNNAME_LBR_NotaFiscalDocRef_ID = "LBR_NotaFiscalDocRef_ID";
@@ -303,6 +290,15 @@ public interface I_LBR_NotaFiscalDocRef
 	public int getLBR_NotaFiscal_ID();
 
 	public I_LBR_NotaFiscal getLBR_NotaFiscal() throws RuntimeException;
+
+    /** Column name LBR_TypeIE */
+    public static final String COLUMNNAME_LBR_TypeIE = "LBR_TypeIE";
+
+	/** Set IE Inscription Type	  */
+	public void setLBR_TypeIE (String LBR_TypeIE);
+
+	/** Get IE Inscription Type	  */
+	public String getLBR_TypeIE();
 
     /** Column name Updated */
     public static final String COLUMNNAME_Updated = "Updated";

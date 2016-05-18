@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ImpressaoDanfeRetratoA4Reportww" pageWidth="595" pageHeight="842" columnWidth="565" leftMargin="15" rightMargin="15" topMargin="15" bottomMargin="15" uuid="f55d8211-51b1-4464-b481-39f9a27a2ced">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
@@ -366,24 +367,24 @@
 		<groupHeader>
 			<band height="136" splitType="Stretch">
 				<rectangle radius="2">
-					<reportElement uuid="571a47a6-3fff-48b1-914a-04512710be2c" key="rectangle-5" mode="Transparent" x="0" y="2" width="241" height="95">
+					<reportElement key="rectangle-5" mode="Transparent" x="0" y="2" width="241" height="95" uuid="571a47a6-3fff-48b1-914a-04512710be2c">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<textField evaluationTime="Report">
-					<reportElement uuid="2e1adc8b-638a-42e1-a1f4-dd481449122b" x="310" y="82" width="25" height="12"/>
+					<reportElement x="310" y="82" width="25" height="12" uuid="2e1adc8b-638a-42e1-a1f4-dd481449122b"/>
 					<textElement>
 						<font fontName="Liberation Serif"/>
 					</textElement>
 					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<rectangle radius="2">
-					<reportElement uuid="42c36d55-82a8-4c83-bc4a-d25be6c0320b" key="rectangle-9" mode="Transparent" x="376" y="117" width="189" height="19">
+					<reportElement key="rectangle-9" mode="Transparent" x="376" y="117" width="189" height="19" uuid="42c36d55-82a8-4c83-bc4a-d25be6c0320b">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="d22bb0fb-ae59-476c-b052-ad75beca96c0" key="staticText-4" mode="Transparent" x="266" y="0" width="45" height="14">
+					<reportElement key="staticText-4" mode="Transparent" x="266" y="0" width="45" height="14" uuid="d22bb0fb-ae59-476c-b052-ad75beca96c0">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -392,7 +393,7 @@
 					<text><![CDATA[DANFE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="d03d4137-d2ee-4f8c-988e-f1154ef75bc6" key="staticText-5" mode="Transparent" x="242" y="14" width="96" height="19">
+					<reportElement key="staticText-5" mode="Transparent" x="242" y="14" width="96" height="19" uuid="d03d4137-d2ee-4f8c-988e-f1154ef75bc6">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Center">
@@ -401,7 +402,7 @@
 					<text><![CDATA[Documento Auxiliar da Nota Fiscal Eletrônica]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="f31c44cb-6c55-4a93-bdde-94dbe1d95cf5" key="staticText-6" mode="Transparent" x="246" y="45" width="42" height="11">
+					<reportElement key="staticText-6" mode="Transparent" x="246" y="45" width="42" height="11" uuid="f31c44cb-6c55-4a93-bdde-94dbe1d95cf5">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -410,7 +411,7 @@
 					<text><![CDATA[1 - Saída]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="07697ea1-b590-4f77-affb-9092bdcebda7" key="staticText-7" mode="Transparent" x="246" y="34" width="42" height="11">
+					<reportElement key="staticText-7" mode="Transparent" x="246" y="34" width="42" height="11" uuid="07697ea1-b590-4f77-affb-9092bdcebda7">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -419,17 +420,17 @@
 					<text><![CDATA[0 - Entrada]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="0181b95a-ce32-4933-b6a2-613b7528a172" key="rectangle-7" mode="Transparent" x="293" y="34" width="27" height="21">
+					<reportElement key="rectangle-7" mode="Transparent" x="293" y="34" width="27" height="21" uuid="0181b95a-ce32-4933-b6a2-613b7528a172">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="20256db8-2539-4c15-aed9-895452a2ac6b" key="rectangle-8" mode="Transparent" x="0" y="97" width="339" height="20">
+					<reportElement key="rectangle-8" mode="Transparent" x="0" y="97" width="339" height="20" uuid="20256db8-2539-4c15-aed9-895452a2ac6b">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="e94d603d-0c1f-41ef-8bc4-0cd8490f5159" key="staticText-9" mode="Transparent" x="2" y="98" width="96" height="8">
+					<reportElement key="staticText-9" mode="Transparent" x="2" y="98" width="96" height="8" uuid="e94d603d-0c1f-41ef-8bc4-0cd8490f5159">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -438,12 +439,12 @@
 					<text><![CDATA[NATUREZA DA OPERAÇÃO]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="8b88383b-a78e-4e18-9ccf-74e7f6429088" key="rectangle-9" mode="Transparent" x="0" y="117" width="189" height="19">
+					<reportElement key="rectangle-9" mode="Transparent" x="0" y="117" width="189" height="19" uuid="8b88383b-a78e-4e18-9ccf-74e7f6429088">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="e3889424-0ac4-47f0-9445-8dd592463c2b" key="staticText-10" mode="Transparent" x="2" y="118" width="78" height="8">
+					<reportElement key="staticText-10" mode="Transparent" x="2" y="118" width="78" height="8" uuid="e3889424-0ac4-47f0-9445-8dd592463c2b">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -452,7 +453,7 @@
 					<text><![CDATA[INSCRIÇÃO ESTADUAL]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="77b21cc5-adf7-43a8-b97a-18d12c9a8d1a" key="staticText-11" mode="Transparent" x="191" y="118" width="103" height="8">
+					<reportElement key="staticText-11" mode="Transparent" x="191" y="118" width="103" height="8" uuid="77b21cc5-adf7-43a8-b97a-18d12c9a8d1a">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -461,7 +462,7 @@
 					<text><![CDATA[INSCRIÇÃO ESTADUAL DO SUBST. TRIB. TRIBUTARIO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="0b257aaf-b557-4935-ae36-46d15c109f42" key="staticText-12" mode="Transparent" x="378" y="118" width="71" height="8">
+					<reportElement key="staticText-12" mode="Transparent" x="378" y="118" width="71" height="8" uuid="0b257aaf-b557-4935-ae36-46d15c109f42">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -470,7 +471,7 @@
 					<text><![CDATA[CNPJ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="af7bdaba-713a-467c-9619-d55f8ecf9de4" key="staticText-13" mode="Transparent" x="347" y="38" width="174" height="7">
+					<reportElement key="staticText-13" mode="Transparent" x="347" y="38" width="174" height="7" uuid="af7bdaba-713a-467c-9619-d55f8ecf9de4">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -479,14 +480,14 @@
 					<text><![CDATA[CHAVE DE ACESSO]]></text>
 				</staticText>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-					<reportElement uuid="43648b78-aeaa-4ef8-a568-a75c52c6dc0e" key="textField-7" mode="Transparent" x="7" y="52" width="226" height="24"/>
+					<reportElement key="textField-7" mode="Transparent" x="7" y="52" width="226" height="24" uuid="43648b78-aeaa-4ef8-a568-a75c52c6dc0e"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
 						<font fontName="Liberation Serif" size="12" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{emitenteRazaoSocial}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-					<reportElement uuid="ce61146d-e4f7-49fc-a4ea-ed56d491d39f" key="textField-9" mode="Transparent" x="7" y="77" width="226" height="19"/>
+					<reportElement key="textField-9" mode="Transparent" x="7" y="77" width="226" height="19" uuid="ce61146d-e4f7-49fc-a4ea-ed56d491d39f"/>
 					<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
 						<font fontName="Liberation Serif" size="8" isBold="true"/>
 					</textElement>
@@ -496,60 +497,60 @@
 + ($F{emitenteTelefone}!=null ? " - Fone/Fax: " + $F{emitenteTelefone} : "")]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="75a0aa5b-2479-4ac6-85c2-84a0ea4aa752" key="textField-12" mode="Transparent" x="297" y="35" width="19" height="19"/>
+					<reportElement key="textField-12" mode="Transparent" x="297" y="35" width="19" height="19" uuid="75a0aa5b-2479-4ac6-85c2-84a0ea4aa752"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Liberation Serif" size="10" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{saidaEntrada}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="43ed7953-f913-4fbb-b680-8a9b2ba15e36" key="textField-13" mode="Transparent" x="246" y="57" width="89" height="12"/>
+					<reportElement key="textField-13" mode="Transparent" x="246" y="57" width="89" height="12" uuid="43ed7953-f913-4fbb-b680-8a9b2ba15e36"/>
 					<textElement textAlignment="Center">
 						<font fontName="Liberation Serif" size="10" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Nº " + $F{nNF}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="5d058a1c-3943-46e0-890c-9c2d0bea7479" key="textField-14" mode="Transparent" x="246" y="70" width="89" height="12"/>
+					<reportElement key="textField-14" mode="Transparent" x="246" y="70" width="89" height="12" uuid="5d058a1c-3943-46e0-890c-9c2d0bea7479"/>
 					<textElement textAlignment="Center">
 						<font fontName="Liberation Serif" size="10" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA["SÉRIE: " + $F{serie}]]></textFieldExpression>
 				</textField>
 				<image scaleImage="RetainShape" hAlign="Center" vAlign="Middle" isUsingCache="true" onErrorType="Blank" evaluationTime="Page">
-					<reportElement uuid="b3b86059-dfba-4c8b-a31b-3482ac758424" key="image-1" mode="Opaque" x="7" y="3" width="226" height="48"/>
+					<reportElement key="image-1" mode="Opaque" x="7" y="3" width="226" height="48" uuid="b3b86059-dfba-4c8b-a31b-3482ac758424"/>
 					<imageExpression><![CDATA[$P{logotipo}]]></imageExpression>
 				</image>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="ae42764c-22c5-4832-b4cb-876237882580" key="textField-15" mode="Transparent" x="2" y="104" width="334" height="12"/>
+					<reportElement key="textField-15" mode="Transparent" x="2" y="104" width="334" height="12" uuid="ae42764c-22c5-4832-b4cb-876237882580"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{natOp}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="3cafd303-93e1-4666-8ac8-7a026d2edcd0" key="textField-16" mode="Transparent" x="2" y="123" width="183" height="12"/>
+					<reportElement key="textField-16" mode="Transparent" x="2" y="123" width="183" height="12" uuid="3cafd303-93e1-4666-8ac8-7a026d2edcd0"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{emitenteInscricaoEstadual}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="220fcc50-c4cb-4dab-a85f-77efa0a364c4" key="textField-17" mode="Transparent" x="191" y="123" width="183" height="12"/>
+					<reportElement key="textField-17" mode="Transparent" x="191" y="123" width="183" height="12" uuid="220fcc50-c4cb-4dab-a85f-77efa0a364c4"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{emitenteInscricaoEstadualSubtributario}]]></textFieldExpression>
 				</textField>
 				<textField pattern="" isBlankWhenNull="true">
-					<reportElement uuid="ffd1e195-5e1d-403e-9bee-6a0ceb859d03" key="textField-18" mode="Transparent" x="378" y="123" width="188" height="12"/>
+					<reportElement key="textField-18" mode="Transparent" x="378" y="123" width="188" height="12" uuid="ffd1e195-5e1d-403e-9bee-6a0ceb859d03"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{emitenteCnpj}.substring(0, 2) + "." + $F{emitenteCnpj}.substring(2, 5) + "." + $F{emitenteCnpj}.substring(5, 8) + "/" + $F{emitenteCnpj}.substring(8, 12) + "-" + $F{emitenteCnpj}.substring(12,14)]]></textFieldExpression>
 				</textField>
 				<textField pattern="" isBlankWhenNull="true">
-					<reportElement uuid="9b13547d-cd92-468f-a15d-302c33064852" key="textField-19" mode="Transparent" x="347" y="45" width="208" height="10"/>
+					<reportElement key="textField-19" mode="Transparent" x="347" y="45" width="208" height="10" uuid="9b13547d-cd92-468f-a15d-302c33064852"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Liberation Serif" size="7" isBold="true"/>
 					</textElement>
@@ -566,7 +567,7 @@ $F{chaveAcesso}.substring(39,43)+ " " +
 $F{chaveAcesso}.substring(43,47)]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement uuid="344e1a17-3fec-4ab0-b478-506658b0928b" key="staticText-71" x="346" y="61" width="211" height="32">
+					<reportElement key="staticText-71" x="346" y="61" width="211" height="32" uuid="344e1a17-3fec-4ab0-b478-506658b0928b">
 						<printWhenExpression><![CDATA[new Boolean(true)]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -576,42 +577,42 @@ $F{chaveAcesso}.substring(43,47)]]></textFieldExpression>
 www.nfe.fazenda.gov.br/portal ou no site da Sefaz Autorizadora]]></text>
 				</staticText>
 				<textField isBlankWhenNull="false">
-					<reportElement uuid="476b2dd1-a3af-43b1-9548-91adb071ec1c" key="textField-67" x="341" y="98" width="187" height="8"/>
+					<reportElement key="textField-67" x="341" y="98" width="187" height="8" uuid="476b2dd1-a3af-43b1-9548-91adb071ec1c"/>
 					<textElement>
 						<font fontName="Liberation Serif" size="5" isItalic="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["PROTOCOLO DE AUTORIZAÇÃO DE USO"]]></textFieldExpression>
 				</textField>
 				<componentElement>
-					<reportElement uuid="97410a2c-3067-48b8-9720-a8831189858f" stretchType="RelativeToBandHeight" x="338" y="14" width="225" height="30"/>
+					<reportElement stretchType="RelativeToBandHeight" x="338" y="14" width="225" height="30" uuid="97410a2c-3067-48b8-9720-a8831189858f"/>
 					<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128C" drawText="false" checksumRequired="false" barHeight="0">
 						<jr:codeExpression><![CDATA[$F{chaveAcesso}.substring(3,47)]]></jr:codeExpression>
 					</jr:barbecue>
 				</componentElement>
 				<rectangle radius="2">
-					<reportElement uuid="89902201-5f32-4a63-a678-08f5d1f9daf9" key="rectangle-60" mode="Transparent" x="339" y="97" width="226" height="20">
+					<reportElement key="rectangle-60" mode="Transparent" x="339" y="97" width="226" height="20" uuid="89902201-5f32-4a63-a678-08f5d1f9daf9">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="11c2103e-5cd6-4aa9-a0a6-d46556865cc9" key="rectangle-6" mode="Transparent" x="339" y="2" width="226" height="95">
+					<reportElement key="rectangle-6" mode="Transparent" x="339" y="2" width="226" height="95" uuid="11c2103e-5cd6-4aa9-a0a6-d46556865cc9">
 						<printWhenExpression><![CDATA[Boolean.valueOf(true)]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<textField>
-					<reportElement uuid="c828cfe0-9afd-4bc5-9af8-ac3456ddaf3d" x="252" y="82" width="59" height="12"/>
+					<reportElement x="252" y="82" width="59" height="12" uuid="c828cfe0-9afd-4bc5-9af8-ac3456ddaf3d"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
 				</textField>
 				<rectangle radius="2">
-					<reportElement uuid="e7d231cd-5504-4ae0-af4d-5cf2e916f850" key="rectangle-9" mode="Transparent" x="189" y="117" width="187" height="19">
+					<reportElement key="rectangle-9" mode="Transparent" x="189" y="117" width="187" height="19" uuid="e7d231cd-5504-4ae0-af4d-5cf2e916f850">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="3d3b385e-cc25-45a7-a969-99b988c57406" key="textField-66" mode="Transparent" x="343" y="104" width="220" height="12"/>
+					<reportElement key="textField-66" mode="Transparent" x="343" y="104" width="220" height="12" uuid="3d3b385e-cc25-45a7-a969-99b988c57406"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Liberation Serif" size="7" isBold="true"/>
 					</textElement>
@@ -623,27 +624,27 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 			</band>
 			<band height="72">
 				<rectangle radius="2">
-					<reportElement uuid="f5bc7e9c-46fb-4057-87a2-52c9028b4e55" key="rectangle-28" mode="Transparent" x="492" y="52" width="73" height="19">
+					<reportElement key="rectangle-28" mode="Transparent" x="492" y="52" width="73" height="19" uuid="f5bc7e9c-46fb-4057-87a2-52c9028b4e55">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="a4ffce7f-31b8-426e-a71b-67d047269b7a" key="rectangle-29" mode="Transparent" x="492" y="32" width="73" height="20">
+					<reportElement key="rectangle-29" mode="Transparent" x="492" y="32" width="73" height="20" uuid="a4ffce7f-31b8-426e-a71b-67d047269b7a">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="0fb60ade-4d61-47f0-ab58-a37ef9eb878d" key="rectangle-30" mode="Transparent" x="492" y="11" width="73" height="21">
+					<reportElement key="rectangle-30" mode="Transparent" x="492" y="11" width="73" height="21" uuid="0fb60ade-4d61-47f0-ab58-a37ef9eb878d">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="bd6c91c6-ed5d-43ef-8859-c10a482c4509" key="rectangle-31" mode="Transparent" x="382" y="11" width="110" height="21">
+					<reportElement key="rectangle-31" mode="Transparent" x="382" y="11" width="110" height="21" uuid="bd6c91c6-ed5d-43ef-8859-c10a482c4509">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="e12ef2ef-6a8e-41cd-a095-cb66630fb9ad" key="staticText-22" mode="Transparent" x="4" y="2" width="136" height="10">
+					<reportElement key="staticText-22" mode="Transparent" x="4" y="2" width="136" height="10" uuid="e12ef2ef-6a8e-41cd-a095-cb66630fb9ad">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -652,12 +653,12 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 					<text><![CDATA[DESTINATÁRIO/REMETENTE]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="2dbad129-7206-46f7-95bd-9f540ba2836b" key="rectangle-32" mode="Transparent" x="0" y="11" width="382" height="21">
+					<reportElement key="rectangle-32" mode="Transparent" x="0" y="11" width="382" height="21" uuid="2dbad129-7206-46f7-95bd-9f540ba2836b">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="503753a3-af44-4cc2-b194-035eadb560d6" key="staticText-23" mode="Transparent" x="2" y="12" width="96" height="8">
+					<reportElement key="staticText-23" mode="Transparent" x="2" y="12" width="96" height="8" uuid="503753a3-af44-4cc2-b194-035eadb560d6">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -666,7 +667,7 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 					<text><![CDATA[NOME/RAZÃO SOCIAL]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="106a6881-c620-4385-abb1-e0e5915bf73f" key="staticText-24" mode="Transparent" x="384" y="12" width="71" height="8">
+					<reportElement key="staticText-24" mode="Transparent" x="384" y="12" width="71" height="8" uuid="106a6881-c620-4385-abb1-e0e5915bf73f">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -675,7 +676,7 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 					<text><![CDATA[CNPJ/CPF]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="72753138-9dd5-466a-a386-6728007d2157" key="staticText-25" mode="Transparent" x="494" y="12" width="70" height="8">
+					<reportElement key="staticText-25" mode="Transparent" x="494" y="12" width="70" height="8" uuid="72753138-9dd5-466a-a386-6728007d2157">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -684,7 +685,7 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 					<text><![CDATA[DATA DA EMISSÃO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="e0f261ab-33ce-43ef-b00b-9574b291f2d5" key="staticText-26" mode="Transparent" x="494" y="33" width="70" height="8">
+					<reportElement key="staticText-26" mode="Transparent" x="494" y="33" width="70" height="8" uuid="e0f261ab-33ce-43ef-b00b-9574b291f2d5">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -693,7 +694,7 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 					<text><![CDATA[DATA DE ENTRADA/SAÍDA]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="b0a72265-1bd4-46ec-8223-26c97eccd9b1" key="staticText-27" mode="Transparent" x="494" y="53" width="70" height="8">
+					<reportElement key="staticText-27" mode="Transparent" x="494" y="53" width="70" height="8" uuid="b0a72265-1bd4-46ec-8223-26c97eccd9b1">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -702,12 +703,12 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 					<text><![CDATA[HORA DE ENTRADA/SAÍDA]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="f0808a75-97c4-492f-bc6f-dc29e3f90caf" key="rectangle-33" mode="Transparent" x="0" y="32" width="304" height="20">
+					<reportElement key="rectangle-33" mode="Transparent" x="0" y="32" width="304" height="20" uuid="f0808a75-97c4-492f-bc6f-dc29e3f90caf">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="d7e1af64-81d1-4a15-8736-4d86d750d414" key="staticText-28" mode="Transparent" x="2" y="33" width="96" height="8">
+					<reportElement key="staticText-28" mode="Transparent" x="2" y="33" width="96" height="8" uuid="d7e1af64-81d1-4a15-8736-4d86d750d414">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -716,12 +717,12 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 					<text><![CDATA[ENDEREÇO]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="da481dd6-86d8-44e7-b176-bdfdb1186c00" key="rectangle-34" mode="Transparent" x="304" y="32" width="103" height="20">
+					<reportElement key="rectangle-34" mode="Transparent" x="304" y="32" width="103" height="20" uuid="da481dd6-86d8-44e7-b176-bdfdb1186c00">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="4d0bce89-d337-45e7-9f13-aab5c330e797" key="staticText-29" mode="Transparent" x="306" y="33" width="71" height="8">
+					<reportElement key="staticText-29" mode="Transparent" x="306" y="33" width="71" height="8" uuid="4d0bce89-d337-45e7-9f13-aab5c330e797">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -730,12 +731,12 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 					<text><![CDATA[BAIRRO/DISTRITO]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="f0a59a02-7946-4c60-b32a-11e86ad7ed9c" key="rectangle-35" mode="Transparent" x="407" y="32" width="85" height="20">
+					<reportElement key="rectangle-35" mode="Transparent" x="407" y="32" width="85" height="20" uuid="f0a59a02-7946-4c60-b32a-11e86ad7ed9c">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="7f26b243-89dd-46c9-a382-456b3c8bc711" key="staticText-30" mode="Transparent" x="409" y="33" width="57" height="8">
+					<reportElement key="staticText-30" mode="Transparent" x="409" y="33" width="57" height="8" uuid="7f26b243-89dd-46c9-a382-456b3c8bc711">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -744,12 +745,12 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 					<text><![CDATA[CEP]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="f4afbe41-e8e8-42a9-a5f2-93d971326124" key="rectangle-36" mode="Transparent" x="0" y="52" width="267" height="19">
+					<reportElement key="rectangle-36" mode="Transparent" x="0" y="52" width="267" height="19" uuid="f4afbe41-e8e8-42a9-a5f2-93d971326124">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="3f25b904-c05f-497e-bb8a-72ae1379ef2f" key="staticText-31" mode="Transparent" x="2" y="53" width="71" height="8">
+					<reportElement key="staticText-31" mode="Transparent" x="2" y="53" width="71" height="8" uuid="3f25b904-c05f-497e-bb8a-72ae1379ef2f">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -758,12 +759,12 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 					<text><![CDATA[MUNÍCIPIO]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="36961f39-2a63-4359-8040-34aabbbbbae7" key="rectangle-37" mode="Transparent" x="304" y="52" width="103" height="19">
+					<reportElement key="rectangle-37" mode="Transparent" x="304" y="52" width="103" height="19" uuid="36961f39-2a63-4359-8040-34aabbbbbae7">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="53bf6cd1-3c9c-4cdb-8c4e-98b2f5d3cc2e" key="staticText-32" mode="Transparent" x="306" y="53" width="71" height="8">
+					<reportElement key="staticText-32" mode="Transparent" x="306" y="53" width="71" height="8" uuid="53bf6cd1-3c9c-4cdb-8c4e-98b2f5d3cc2e">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -772,12 +773,12 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 					<text><![CDATA[FONE/FAX]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="440d157a-8f0f-4df4-ad35-5ddcccf4cb39" key="rectangle-38" mode="Transparent" x="267" y="52" width="37" height="19">
+					<reportElement key="rectangle-38" mode="Transparent" x="267" y="52" width="37" height="19" uuid="440d157a-8f0f-4df4-ad35-5ddcccf4cb39">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="b6823eab-0507-4c7d-8bd5-50e1f2789538" key="staticText-33" mode="Transparent" x="269" y="53" width="24" height="8">
+					<reportElement key="staticText-33" mode="Transparent" x="269" y="53" width="24" height="8" uuid="b6823eab-0507-4c7d-8bd5-50e1f2789538">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -786,12 +787,12 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 					<text><![CDATA[UF]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="e1cdeda0-824c-4ca0-8edb-fb4f2f780952" key="rectangle-39" mode="Transparent" x="407" y="52" width="85" height="19">
+					<reportElement key="rectangle-39" mode="Transparent" x="407" y="52" width="85" height="19" uuid="e1cdeda0-824c-4ca0-8edb-fb4f2f780952">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="5f531223-0837-49f3-a3b1-1745268c1e69" key="staticText-34" mode="Transparent" x="409" y="53" width="76" height="8">
+					<reportElement key="staticText-34" mode="Transparent" x="409" y="53" width="76" height="8" uuid="5f531223-0837-49f3-a3b1-1745268c1e69">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -800,28 +801,28 @@ $F{dhRecbto}.substring(11,19)]]></textFieldExpression>
 					<text><![CDATA[INSCRIÇÃO ESTADUAL]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="5c164f57-fb4b-44d5-9230-7fd6a9b3ac69" key="textField-25" mode="Transparent" x="2" y="18" width="379" height="12"/>
+					<reportElement key="textField-25" mode="Transparent" x="2" y="18" width="379" height="12" uuid="5c164f57-fb4b-44d5-9230-7fd6a9b3ac69"/>
 					<textElement textAlignment="Left" markup="html">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{destinatarioRazaoSocial}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="7efa7fc9-f2e2-4f1b-9dc7-939d270ddf3e" key="textField-30" mode="Transparent" x="306" y="38" width="101" height="12"/>
+					<reportElement key="textField-30" mode="Transparent" x="306" y="38" width="101" height="12" uuid="7efa7fc9-f2e2-4f1b-9dc7-939d270ddf3e"/>
 					<textElement textAlignment="Left" markup="html">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{destinatarioBairro}]]></textFieldExpression>
 				</textField>
 				<textField pattern="" isBlankWhenNull="true">
-					<reportElement uuid="ed397d46-978e-45af-951e-2efc541737f2" key="textField-26" mode="Transparent" x="384" y="18" width="106" height="12"/>
+					<reportElement key="textField-26" mode="Transparent" x="384" y="18" width="106" height="12" uuid="ed397d46-978e-45af-951e-2efc541737f2"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{destinatarioCnpj}==null)?$F{destinatarioCpf}.substring(0, 3) + "." + $F{destinatarioCpf}.substring(3, 6) + "." + $F{destinatarioCpf}.substring(6, 9)+"-"+$F{destinatarioCpf}.substring(9,11):$F{destinatarioCnpj}.substring(0, 2) + "." + $F{destinatarioCnpj}.substring(2, 5) + "." + $F{destinatarioCnpj}.substring(5, 8) + "/" + $F{destinatarioCnpj}.substring(8, 12) + "-" + $F{destinatarioCnpj}.substring(12,14)]]></textFieldExpression>
 				</textField>
 				<textField pattern="" isBlankWhenNull="true">
-					<reportElement uuid="0799be8b-534a-4890-b3b6-1613bb5decd9" key="textField-27" mode="Transparent" x="494" y="18" width="70" height="12"/>
+					<reportElement key="textField-27" mode="Transparent" x="494" y="18" width="70" height="12" uuid="0799be8b-534a-4890-b3b6-1613bb5decd9"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
@@ -830,7 +831,7 @@ $F{dataEmissao}.substring(5,7)+"/"+
 $F{dataEmissao}.substring(0,4)]]></textFieldExpression>
 				</textField>
 				<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-					<reportElement uuid="05fd901d-771f-4b19-9928-6f3eb2928a3f" key="textField-28" mode="Transparent" x="494" y="38" width="70" height="12"/>
+					<reportElement key="textField-28" mode="Transparent" x="494" y="38" width="70" height="12" uuid="05fd901d-771f-4b19-9928-6f3eb2928a3f"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
@@ -839,49 +840,49 @@ $F{dataSaidaEntrada}.substring(5,7)+"/"+
 $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="47b6c947-2db2-4df4-a0ef-193dea76ea1e" key="textField-29" mode="Transparent" x="409" y="38" width="81" height="12"/>
+					<reportElement key="textField-29" mode="Transparent" x="409" y="38" width="81" height="12" uuid="47b6c947-2db2-4df4-a0ef-193dea76ea1e"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{destinatarioCep}.substring(0,5)+"-"+$F{destinatarioCep}.substring(5,8)]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="2f98db86-2888-4a8d-b071-10d3398dab1a" key="textField-31" mode="Transparent" x="2" y="38" width="297" height="12"/>
+					<reportElement key="textField-31" mode="Transparent" x="2" y="38" width="297" height="12" uuid="2f98db86-2888-4a8d-b071-10d3398dab1a"/>
 					<textElement textAlignment="Left" markup="html">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{destinatarioEndereco}+", "+$F{destinatarioEnderecoNro}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="4560a540-6251-4cc6-ac47-4f2b43b088aa" key="textField-32" mode="Transparent" x="2" y="58" width="263" height="12"/>
+					<reportElement key="textField-32" mode="Transparent" x="2" y="58" width="263" height="12" uuid="4560a540-6251-4cc6-ac47-4f2b43b088aa"/>
 					<textElement textAlignment="Left" markup="html">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{destinatarioMunicipio}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="1977b8ac-526b-4578-8013-2af02c60d6d0" key="textField-33" mode="Transparent" x="306" y="58" width="90" height="12"/>
+					<reportElement key="textField-33" mode="Transparent" x="306" y="58" width="90" height="12" uuid="1977b8ac-526b-4578-8013-2af02c60d6d0"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{destinatarioFoneFax}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="b9178591-1d54-48cc-a18a-449268bdcf3c" key="textField-34" mode="Transparent" x="269" y="58" width="34" height="12"/>
+					<reportElement key="textField-34" mode="Transparent" x="269" y="58" width="34" height="12" uuid="b9178591-1d54-48cc-a18a-449268bdcf3c"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{destinatarioUf}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="62a2ca79-3b18-4b11-a637-8de81c290b2c" key="textField-35" mode="Transparent" x="409" y="58" width="80" height="12"/>
+					<reportElement key="textField-35" mode="Transparent" x="409" y="58" width="80" height="12" uuid="62a2ca79-3b18-4b11-a637-8de81c290b2c"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{destinatarioInscricaoEstadual}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="37d0aed8-8dc0-4b93-88b6-b0018ae56347" key="textField-36" mode="Transparent" x="494" y="58" width="70" height="12"/>
+					<reportElement key="textField-36" mode="Transparent" x="494" y="58" width="70" height="12" uuid="37d0aed8-8dc0-4b93-88b6-b0018ae56347"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
@@ -891,7 +892,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 			<band height="38">
 				<printWhenExpression><![CDATA[!$F{fatura}.isEmpty() && $V{PAGE_NUMBER}==1]]></printWhenExpression>
 				<staticText>
-					<reportElement uuid="bd6856b4-105f-4785-b6e5-d1c9ad46a020" key="staticText-35" mode="Transparent" x="4" y="1" width="136" height="10">
+					<reportElement key="staticText-35" mode="Transparent" x="4" y="1" width="136" height="10" uuid="bd6856b4-105f-4785-b6e5-d1c9ad46a020">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -900,52 +901,52 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[FATURA/DUPLICATA]]></text>
 				</staticText>
 				<componentElement>
-					<reportElement uuid="762297f9-89bd-4a71-b16b-0e3fdb284ce2" x="0" y="13" width="565" height="25"/>
+					<reportElement x="0" y="13" width="565" height="25" uuid="762297f9-89bd-4a71-b16b-0e3fdb284ce2"/>
 					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Horizontal">
 						<datasetRun subDataset="duplicatas" uuid="41cbb778-1333-495b-83d0-cbb7f363cdf9">
 							<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("//dup")]]></dataSourceExpression>
 						</datasetRun>
 						<jr:listContents height="25" width="62">
 							<rectangle radius="3">
-								<reportElement uuid="6543bf06-005e-4f1b-8b9c-11169c46210d" mode="Transparent" x="0" y="0" width="60" height="23"/>
+								<reportElement mode="Transparent" x="0" y="0" width="60" height="23" uuid="6543bf06-005e-4f1b-8b9c-11169c46210d"/>
 							</rectangle>
 							<textField>
-								<reportElement uuid="3c2f54b2-9547-4838-99f7-57fcbc536e84" x="26" y="7" width="34" height="7"/>
+								<reportElement x="26" y="7" width="34" height="7" uuid="3c2f54b2-9547-4838-99f7-57fcbc536e84"/>
 								<textElement>
 									<font fontName="Liberation Serif" size="6"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{dVenc}.substring(8,10)+"/"+ $F{dVenc}.substring(5,7)+"/"+ $F{dVenc}.substring(0,4)]]></textFieldExpression>
 							</textField>
 							<textField pattern="#,##0.00">
-								<reportElement uuid="b4dc76db-5ce6-4876-8b5e-d3d4ca2e47e6" x="26" y="14" width="34" height="7"/>
+								<reportElement x="26" y="14" width="34" height="7" uuid="b4dc76db-5ce6-4876-8b5e-d3d4ca2e47e6"/>
 								<textElement>
 									<font fontName="Liberation Serif" size="6"/>
 								</textElement>
 								<textFieldExpression><![CDATA[new Double($F{vDup})]]></textFieldExpression>
 							</textField>
 							<staticText>
-								<reportElement uuid="7ff5c3d9-41bc-41a3-a683-b17e737447f1" x="0" y="0" width="26" height="7"/>
+								<reportElement x="0" y="0" width="26" height="7" uuid="7ff5c3d9-41bc-41a3-a683-b17e737447f1"/>
 								<textElement textAlignment="Right">
 									<font fontName="Liberation Serif" size="6"/>
 								</textElement>
 								<text><![CDATA[Número:]]></text>
 							</staticText>
 							<textField>
-								<reportElement uuid="fd35e1c8-8d2a-4b51-af68-f36d1826d6e4" x="26" y="0" width="34" height="7"/>
+								<reportElement x="26" y="0" width="34" height="7" uuid="fd35e1c8-8d2a-4b51-af68-f36d1826d6e4"/>
 								<textElement>
 									<font fontName="Liberation Serif" size="6"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{nDup}]]></textFieldExpression>
 							</textField>
 							<staticText>
-								<reportElement uuid="4467a225-3b89-4506-989d-1bc00a455e6f" x="0" y="14" width="26" height="7"/>
+								<reportElement x="0" y="14" width="26" height="7" uuid="4467a225-3b89-4506-989d-1bc00a455e6f"/>
 								<textElement textAlignment="Right">
 									<font fontName="Liberation Serif" size="6"/>
 								</textElement>
 								<text><![CDATA[Valor:]]></text>
 							</staticText>
 							<staticText>
-								<reportElement uuid="811bf190-d842-4e80-864b-6d8eb888aa4e" x="0" y="7" width="26" height="7"/>
+								<reportElement x="0" y="7" width="26" height="7" uuid="811bf190-d842-4e80-864b-6d8eb888aa4e"/>
 								<textElement textAlignment="Right">
 									<font fontName="Liberation Serif" size="6"/>
 								</textElement>
@@ -963,52 +964,52 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 			<band height="128" splitType="Stretch">
 				<printWhenExpression><![CDATA[$V{PAGE_NUMBER} == 1]]></printWhenExpression>
 				<rectangle radius="2">
-					<reportElement uuid="6901acd0-b74a-4223-aee5-389545b3da58" key="rectangle-21" mode="Transparent" x="402" y="31" width="77" height="20">
+					<reportElement key="rectangle-21" mode="Transparent" x="402" y="31" width="77" height="20" uuid="6901acd0-b74a-4223-aee5-389545b3da58">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="e83f7f60-e24e-42ae-8f2b-53af7a7d2106" key="rectangle-21" mode="Transparent" x="402" y="10" width="77" height="21">
+					<reportElement key="rectangle-21" mode="Transparent" x="402" y="10" width="77" height="21" uuid="e83f7f60-e24e-42ae-8f2b-53af7a7d2106">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="9b23b380-79ad-47ce-89fc-1e897a1e3935" key="rectangle-21" mode="Transparent" x="322" y="10" width="80" height="21">
+					<reportElement key="rectangle-21" mode="Transparent" x="322" y="10" width="80" height="21" uuid="9b23b380-79ad-47ce-89fc-1e897a1e3935">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="29d9b7da-cdbe-4f02-b080-2738cd46ea2d" key="rectangle-20" mode="Transparent" x="412" y="88" width="28" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="412" y="88" width="28" height="20" uuid="29d9b7da-cdbe-4f02-b080-2738cd46ea2d">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="2dd43168-b42c-405c-b62e-899ffc80e2f5" key="rectangle-20" mode="Transparent" x="0" y="31" width="82" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="0" y="31" width="82" height="20" uuid="2dd43168-b42c-405c-b62e-899ffc80e2f5">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="f4645559-78cc-47e0-a147-6614a60c3200" key="rectangle-21" mode="Transparent" x="322" y="31" width="80" height="20">
+					<reportElement key="rectangle-21" mode="Transparent" x="322" y="31" width="80" height="20" uuid="f4645559-78cc-47e0-a147-6614a60c3200">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="24837e1a-f045-470b-b855-eda7ac3f9112" key="rectangle-22" mode="Transparent" x="162" y="31" width="80" height="20">
+					<reportElement key="rectangle-22" mode="Transparent" x="162" y="31" width="80" height="20" uuid="24837e1a-f045-470b-b855-eda7ac3f9112">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="98e5b76b-8a74-4d67-b60e-b81009b90089" key="rectangle-23" mode="Transparent" x="82" y="31" width="80" height="20">
+					<reportElement key="rectangle-23" mode="Transparent" x="82" y="31" width="80" height="20" uuid="98e5b76b-8a74-4d67-b60e-b81009b90089">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="5377f3c4-9f88-4525-b638-48f588500174" key="rectangle-40" mode="Transparent" x="0" y="10" width="82" height="21">
+					<reportElement key="rectangle-40" mode="Transparent" x="0" y="10" width="82" height="21" uuid="5377f3c4-9f88-4525-b638-48f588500174">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="8ca7e90e-ffd9-4ef6-b4b8-d52dfb30ad41" key="staticText-37" mode="Transparent" x="2" y="11" width="75" height="8">
+					<reportElement key="staticText-37" mode="Transparent" x="2" y="11" width="75" height="8" uuid="8ca7e90e-ffd9-4ef6-b4b8-d52dfb30ad41">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1017,7 +1018,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[BASE DE CÁLCULO DO ICMS]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="6c672928-aaf1-43f4-b21f-dc3084c5a5de" key="rectangle-41" mode="Transparent" x="82" y="10" width="80" height="21">
+					<reportElement key="rectangle-41" mode="Transparent" x="82" y="10" width="80" height="21" uuid="6c672928-aaf1-43f4-b21f-dc3084c5a5de">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<graphicElement>
@@ -1025,7 +1026,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					</graphicElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="c681a057-49eb-4fc8-98ed-caa07db34072" key="staticText-38" mode="Transparent" x="85" y="11" width="75" height="8">
+					<reportElement key="staticText-38" mode="Transparent" x="85" y="11" width="75" height="8" uuid="c681a057-49eb-4fc8-98ed-caa07db34072">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1034,12 +1035,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[VALOR DO ICMS]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="53738f79-7c49-4453-a99c-943de6c7b08b" key="rectangle-42" mode="Transparent" x="162" y="10" width="80" height="21">
+					<reportElement key="rectangle-42" mode="Transparent" x="162" y="10" width="80" height="21" uuid="53738f79-7c49-4453-a99c-943de6c7b08b">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="320ce1ae-a280-42c8-bb23-460164d3c605" key="staticText-39" mode="Transparent" x="164" y="11" width="76" height="8">
+					<reportElement key="staticText-39" mode="Transparent" x="164" y="11" width="76" height="8" uuid="320ce1ae-a280-42c8-bb23-460164d3c605">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1048,12 +1049,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[BASE DE CÁLCULO DO ICMS ST SUBSTITUIÇÃO]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="192ac5d8-eab8-45c6-961a-279d263e80ca" key="rectangle-43" mode="Transparent" x="242" y="10" width="80" height="21">
+					<reportElement key="rectangle-43" mode="Transparent" x="242" y="10" width="80" height="21" uuid="192ac5d8-eab8-45c6-961a-279d263e80ca">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="78d899ed-431d-4b3a-83b0-6915ac5c7c54" key="staticText-40" mode="Transparent" x="243" y="11" width="77" height="8">
+					<reportElement key="staticText-40" mode="Transparent" x="243" y="11" width="77" height="8" uuid="78d899ed-431d-4b3a-83b0-6915ac5c7c54">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1062,12 +1063,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[VALOR DO ICMS ST]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="7d1f7b7f-4947-4885-8c26-8bf09483f4cd" key="rectangle-44" mode="Transparent" x="479" y="10" width="86" height="21">
+					<reportElement key="rectangle-44" mode="Transparent" x="479" y="10" width="86" height="21" uuid="7d1f7b7f-4947-4885-8c26-8bf09483f4cd">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="e4bf260d-9b65-402a-8246-cb4a7034b29e" key="staticText-41" mode="Transparent" x="481" y="11" width="82" height="8">
+					<reportElement key="staticText-41" mode="Transparent" x="481" y="11" width="82" height="8" uuid="e4bf260d-9b65-402a-8246-cb4a7034b29e">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1076,7 +1077,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[VALOR TOTAL DOS PRODUTOS]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="e45293d2-46cb-44df-907d-f3887266d16e" key="staticText-42" mode="Transparent" x="4" y="56" width="184" height="10">
+					<reportElement key="staticText-42" mode="Transparent" x="4" y="56" width="184" height="10" uuid="e45293d2-46cb-44df-907d-f3887266d16e">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1085,7 +1086,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[TRANSPORTADOR/VOLUMES TRANSPORTADOS]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="41dbb861-808b-4aeb-9f55-64f4ea4bff64" key="staticText-43" mode="Transparent" x="2" y="69" width="86" height="8">
+					<reportElement key="staticText-43" mode="Transparent" x="2" y="69" width="86" height="8" uuid="41dbb861-808b-4aeb-9f55-64f4ea4bff64">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1094,7 +1095,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[RAZÃO SOCIAL]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="75c419d2-44f8-4201-a5e3-3534875ac337" key="staticText-44" mode="Transparent" x="216" y="69" width="53" height="8">
+					<reportElement key="staticText-44" mode="Transparent" x="216" y="69" width="53" height="8" uuid="75c419d2-44f8-4201-a5e3-3534875ac337">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1103,7 +1104,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[FRETE POR CONTA]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="bf01fb2e-dad8-4133-a218-a0f548c63c4b" key="staticText-45" mode="Transparent" x="219" y="75" width="53" height="12">
+					<reportElement key="staticText-45" mode="Transparent" x="219" y="75" width="53" height="12" uuid="bf01fb2e-dad8-4133-a218-a0f548c63c4b">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1113,12 +1114,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 1 - DESTINATÁRIO]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="13a0b0c7-1a41-44fc-a58a-a6f58c508240" key="rectangle-47" mode="Transparent" x="266" y="71" width="19" height="14">
+					<reportElement key="rectangle-47" mode="Transparent" x="266" y="71" width="19" height="14" uuid="13a0b0c7-1a41-44fc-a58a-a6f58c508240">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="45680155-ec95-41e9-8f1c-09f92d2ce0ed" key="staticText-46" mode="Transparent" x="290" y="69" width="53" height="8">
+					<reportElement key="staticText-46" mode="Transparent" x="290" y="69" width="53" height="8" uuid="45680155-ec95-41e9-8f1c-09f92d2ce0ed">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1127,7 +1128,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[CÓDIGO ANTT]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="4b5d6fa3-9b18-491b-8a9d-9eb2986de28e" key="staticText-47" mode="Transparent" x="352" y="69" width="53" height="8">
+					<reportElement key="staticText-47" mode="Transparent" x="352" y="69" width="53" height="8" uuid="4b5d6fa3-9b18-491b-8a9d-9eb2986de28e">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1136,7 +1137,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[PLACA DO VEÍCULO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="7bbe636e-abf6-4745-9d6a-91744a0db06e" key="staticText-48" mode="Transparent" x="414" y="69" width="13" height="8">
+					<reportElement key="staticText-48" mode="Transparent" x="414" y="69" width="13" height="8" uuid="7bbe636e-abf6-4745-9d6a-91744a0db06e">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1145,7 +1146,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[UF]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="087b717a-04fa-4966-b07d-04c6af95e956" key="staticText-49" mode="Transparent" x="442" y="69" width="63" height="8">
+					<reportElement key="staticText-49" mode="Transparent" x="442" y="69" width="63" height="8" uuid="087b717a-04fa-4966-b07d-04c6af95e956">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1154,7 +1155,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[CNPJ/CPF]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="d7f4cbd0-9700-4d77-8a56-e112e30e5254" key="staticText-50" mode="Transparent" x="2" y="89" width="86" height="8">
+					<reportElement key="staticText-50" mode="Transparent" x="2" y="89" width="86" height="8" uuid="d7f4cbd0-9700-4d77-8a56-e112e30e5254">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1163,7 +1164,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[ENDEREÇO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="0beb6ee6-410d-4288-b5d9-6d0ec7b9cfe9" key="staticText-51" mode="Transparent" x="271" y="89" width="86" height="8">
+					<reportElement key="staticText-51" mode="Transparent" x="271" y="89" width="86" height="8" uuid="0beb6ee6-410d-4288-b5d9-6d0ec7b9cfe9">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1172,7 +1173,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[MUNICÍPIO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="9d994436-2ce7-4c72-bd5b-0d5ec7707be9" key="staticText-52" mode="Transparent" x="414" y="89" width="13" height="8">
+					<reportElement key="staticText-52" mode="Transparent" x="414" y="89" width="13" height="8" uuid="9d994436-2ce7-4c72-bd5b-0d5ec7707be9">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1181,7 +1182,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[UF]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="5f9202bd-ccff-4297-8063-f3dd789b58db" key="staticText-53" mode="Transparent" x="442" y="89" width="95" height="8">
+					<reportElement key="staticText-53" mode="Transparent" x="442" y="89" width="95" height="8" uuid="5f9202bd-ccff-4297-8063-f3dd789b58db">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1190,7 +1191,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[INSCRIÇÃO ESTADUAL]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="8622ee37-de83-4c66-ae0b-7b906476e8d1" key="staticText-54" mode="Transparent" x="2" y="109" width="53" height="8">
+					<reportElement key="staticText-54" mode="Transparent" x="2" y="109" width="53" height="8" uuid="8622ee37-de83-4c66-ae0b-7b906476e8d1">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1199,7 +1200,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[QUANTIDADE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="65f01d2a-d8a9-46d0-9b0d-d3c1763d8b8d" key="staticText-55" mode="Transparent" x="77" y="109" width="53" height="8">
+					<reportElement key="staticText-55" mode="Transparent" x="77" y="109" width="53" height="8" uuid="65f01d2a-d8a9-46d0-9b0d-d3c1763d8b8d">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1208,7 +1209,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[ESPÉCIE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="728e9026-01db-495a-a6cb-2be3b260c5b8" key="staticText-56" mode="Transparent" x="187" y="109" width="53" height="8">
+					<reportElement key="staticText-56" mode="Transparent" x="187" y="109" width="53" height="8" uuid="728e9026-01db-495a-a6cb-2be3b260c5b8">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1217,7 +1218,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[MARCA]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="033490e8-cba7-4028-a123-c08dfdd09dc6" key="staticText-57" mode="Transparent" x="493" y="109" width="53" height="8">
+					<reportElement key="staticText-57" mode="Transparent" x="493" y="109" width="53" height="8" uuid="033490e8-cba7-4028-a123-c08dfdd09dc6">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1226,7 +1227,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[PESO LÍQUIDO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="98588959-390f-43c0-931c-9e49f84fac3c" key="staticText-58" mode="Transparent" x="414" y="109" width="53" height="8">
+					<reportElement key="staticText-58" mode="Transparent" x="414" y="109" width="53" height="8" uuid="98588959-390f-43c0-931c-9e49f84fac3c">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1235,7 +1236,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[PESO BRUTO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="b29ca5d4-bacc-4e13-9074-09927dfdfb36" key="staticText-59" mode="Transparent" x="322" y="109" width="53" height="8">
+					<reportElement key="staticText-59" mode="Transparent" x="322" y="109" width="53" height="8" uuid="b29ca5d4-bacc-4e13-9074-09927dfdfb36">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1244,7 +1245,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[NUMERAÇÃO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="7e37155c-d36b-4693-b7a8-3e572502e163" key="staticText-61" mode="Transparent" x="2" y="32" width="61" height="8">
+					<reportElement key="staticText-61" mode="Transparent" x="2" y="32" width="61" height="8" uuid="7e37155c-d36b-4693-b7a8-3e572502e163">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1253,7 +1254,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[VALOR DO FRETE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="fa20a007-a19d-41a6-8fc8-b6dfb939443d" key="staticText-62" mode="Transparent" x="85" y="32" width="75" height="8">
+					<reportElement key="staticText-62" mode="Transparent" x="85" y="32" width="75" height="8" uuid="fa20a007-a19d-41a6-8fc8-b6dfb939443d">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1262,7 +1263,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[VALOR DO SEGURO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="8d5cd017-3d1d-41ee-bdc8-709035e0d22e" key="staticText-63" mode="Transparent" x="164" y="32" width="76" height="8">
+					<reportElement key="staticText-63" mode="Transparent" x="164" y="32" width="76" height="8" uuid="8d5cd017-3d1d-41ee-bdc8-709035e0d22e">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1271,12 +1272,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[DESCONTO]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="b957f16b-f9d1-42a3-a0f1-45899e956d42" key="rectangle-59" mode="Transparent" x="242" y="31" width="80" height="20">
+					<reportElement key="rectangle-59" mode="Transparent" x="242" y="31" width="80" height="20" uuid="b957f16b-f9d1-42a3-a0f1-45899e956d42">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="25600b99-bc03-4f45-a2fa-1148045eb4fd" key="staticText-64" mode="Transparent" x="243" y="32" width="77" height="8">
+					<reportElement key="staticText-64" mode="Transparent" x="243" y="32" width="77" height="8" uuid="25600b99-bc03-4f45-a2fa-1148045eb4fd">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1285,7 +1286,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[OUTRAS DESPESAS]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="f03757a9-b5e3-495f-b491-c4f6a657d0e4" key="staticText-65" mode="Transparent" x="323" y="32" width="78" height="8">
+					<reportElement key="staticText-65" mode="Transparent" x="323" y="32" width="78" height="8" uuid="f03757a9-b5e3-495f-b491-c4f6a657d0e4">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1294,42 +1295,42 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[VALOR DO IPI]]></text>
 				</staticText>
 				<textField pattern="#,##0.00" isBlankWhenNull="false">
-					<reportElement uuid="f7ab6c53-b54a-46aa-b702-fdcba2d71727" key="textField-38" mode="Transparent" x="2" y="17" width="78" height="12"/>
+					<reportElement key="textField-38" mode="Transparent" x="2" y="17" width="78" height="12" uuid="f7ab6c53-b54a-46aa-b702-fdcba2d71727"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{baseIcms})]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement uuid="4971d321-7fd6-432a-a577-d49d85a6685b" key="textField-39" mode="Transparent" x="84" y="17" width="76" height="12"/>
+					<reportElement key="textField-39" mode="Transparent" x="84" y="17" width="76" height="12" uuid="4971d321-7fd6-432a-a577-d49d85a6685b"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{valorIcms})]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement uuid="29d539c9-53d0-40c9-ada6-608848dde71b" key="textField-40" mode="Transparent" x="164" y="17" width="76" height="12"/>
+					<reportElement key="textField-40" mode="Transparent" x="164" y="17" width="76" height="12" uuid="29d539c9-53d0-40c9-ada6-608848dde71b"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{baseIcmsSubstituicao})]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement uuid="f9c94318-ba5a-4d39-843d-5b9293c75813" key="textField-41" mode="Transparent" x="243" y="17" width="77" height="12"/>
+					<reportElement key="textField-41" mode="Transparent" x="243" y="17" width="77" height="12" uuid="f9c94318-ba5a-4d39-843d-5b9293c75813"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{valorIcmsSubstituicao})]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement uuid="af8541b9-b39c-4cf2-a1b2-8d16644210e5" key="textField-42" mode="Transparent" x="481" y="17" width="82" height="12"/>
+					<reportElement key="textField-42" mode="Transparent" x="481" y="17" width="82" height="12" uuid="af8541b9-b39c-4cf2-a1b2-8d16644210e5"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{valorTotalProduto})]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement uuid="ac957192-1872-4c36-813f-a1b362ec2fdf" key="staticText-67" mode="Transparent" x="481" y="32" width="73" height="8">
+					<reportElement key="staticText-67" mode="Transparent" x="481" y="32" width="73" height="8" uuid="ac957192-1872-4c36-813f-a1b362ec2fdf">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1338,241 +1339,241 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[VALOR TOTAL DA NOTA]]></text>
 				</staticText>
 				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement uuid="dd6807d4-1bbd-44dc-8e1f-914792161bd8" key="textField-43" mode="Transparent" x="323" y="37" width="78" height="12"/>
+					<reportElement key="textField-43" mode="Transparent" x="323" y="37" width="78" height="12" uuid="dd6807d4-1bbd-44dc-8e1f-914792161bd8"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{valorIpi})]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement uuid="c87f2a52-97dd-4f58-9be1-07b1dcfb9ecf" key="textField-44" mode="Transparent" x="243" y="37" width="77" height="12"/>
+					<reportElement key="textField-44" mode="Transparent" x="243" y="37" width="77" height="12" uuid="c87f2a52-97dd-4f58-9be1-07b1dcfb9ecf"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{outrasDespesas})]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement uuid="18bb5c12-8d66-483d-aeff-ff9dff0c34d9" key="textField-45" mode="Transparent" x="164" y="37" width="76" height="12"/>
+					<reportElement key="textField-45" mode="Transparent" x="164" y="37" width="76" height="12" uuid="18bb5c12-8d66-483d-aeff-ff9dff0c34d9"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{desconto})]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement uuid="cf89f397-ac0d-4980-94cf-a6a269fe4d2e" key="textField-46" mode="Transparent" x="84" y="37" width="76" height="12"/>
+					<reportElement key="textField-46" mode="Transparent" x="84" y="37" width="76" height="12" uuid="cf89f397-ac0d-4980-94cf-a6a269fe4d2e"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{valorSeguro})]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement uuid="e5a36505-1a0a-4bcc-8341-c5fcf81d7960" key="textField-47" mode="Transparent" x="2" y="37" width="78" height="12"/>
+					<reportElement key="textField-47" mode="Transparent" x="2" y="37" width="78" height="12" uuid="e5a36505-1a0a-4bcc-8341-c5fcf81d7960"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{valorFrete})]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="cdaa8507-8fe5-45c4-8956-73237620126c" key="textField-48" mode="Transparent" x="2" y="74" width="209" height="12"/>
+					<reportElement key="textField-48" mode="Transparent" x="2" y="74" width="209" height="12" uuid="cdaa8507-8fe5-45c4-8956-73237620126c"/>
 					<textElement textAlignment="Left" markup="html">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorRazaoSocial}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="4e84139d-7112-4a1b-bff8-9596825177d8" key="textField-49" mode="Transparent" x="267" y="72" width="17" height="12"/>
+					<reportElement key="textField-49" mode="Transparent" x="267" y="72" width="17" height="12" uuid="4e84139d-7112-4a1b-bff8-9596825177d8"/>
 					<textElement textAlignment="Center">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorFretePorConta}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="4b45f998-2402-47da-ac22-766554e0ba68" key="textField-50" mode="Transparent" x="290" y="74" width="57" height="12"/>
+					<reportElement key="textField-50" mode="Transparent" x="290" y="74" width="57" height="12" uuid="4b45f998-2402-47da-ac22-766554e0ba68"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorCodigoAntt}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="46639e66-a36e-4927-ac97-2d7976e33a2c" key="textField-51" mode="Transparent" x="352" y="74" width="61" height="12"/>
+					<reportElement key="textField-51" mode="Transparent" x="352" y="74" width="61" height="12" uuid="46639e66-a36e-4927-ac97-2d7976e33a2c"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorPlacaVeiculo}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="99731c27-0058-4040-b5a6-217a3afa199f" key="textField-52" mode="Transparent" x="414" y="74" width="22" height="12"/>
+					<reportElement key="textField-52" mode="Transparent" x="414" y="74" width="22" height="12" uuid="99731c27-0058-4040-b5a6-217a3afa199f"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorUfVeiculo}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="e77464c9-2092-4173-8776-e582c944669c" key="textField-53" mode="Transparent" x="442" y="74" width="122" height="12"/>
+					<reportElement key="textField-53" mode="Transparent" x="442" y="74" width="122" height="12" uuid="e77464c9-2092-4173-8776-e582c944669c"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorCnpjCpf}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="26fa9e97-4cfe-4aab-9312-d7108546801f" key="textField-54" mode="Transparent" x="442" y="94" width="123" height="12"/>
+					<reportElement key="textField-54" mode="Transparent" x="442" y="94" width="123" height="12" uuid="26fa9e97-4cfe-4aab-9312-d7108546801f"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorInscricaoEstadual}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="21be830a-d671-4615-82d5-3223adfb17db" key="textField-55" mode="Transparent" x="414" y="94" width="23" height="12"/>
+					<reportElement key="textField-55" mode="Transparent" x="414" y="94" width="23" height="12" uuid="21be830a-d671-4615-82d5-3223adfb17db"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorUf}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="372ab629-586c-4380-9031-7121a862aa5a" key="textField-56" mode="Transparent" x="271" y="94" width="138" height="12"/>
+					<reportElement key="textField-56" mode="Transparent" x="271" y="94" width="138" height="12" uuid="372ab629-586c-4380-9031-7121a862aa5a"/>
 					<textElement textAlignment="Left" markup="html">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorMunicipio}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="e6673120-1a6e-49cb-ba75-d00fd610c7e2" key="textField-57" mode="Transparent" x="2" y="94" width="264" height="12"/>
+					<reportElement key="textField-57" mode="Transparent" x="2" y="94" width="264" height="12" uuid="e6673120-1a6e-49cb-ba75-d00fd610c7e2"/>
 					<textElement textAlignment="Left" markup="html">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorEndereço}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="8c04b64e-7bd1-4fba-bd83-2d55cbeb80c2" key="textField-58" mode="Transparent" x="2" y="114" width="71" height="12"/>
+					<reportElement key="textField-58" mode="Transparent" x="2" y="114" width="71" height="12" uuid="8c04b64e-7bd1-4fba-bd83-2d55cbeb80c2"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorQuantidade}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="f0534e56-bf5d-4f04-b994-639d5dd019f0" key="textField-59" mode="Transparent" x="77" y="114" width="106" height="12"/>
+					<reportElement key="textField-59" mode="Transparent" x="77" y="114" width="106" height="12" uuid="f0534e56-bf5d-4f04-b994-639d5dd019f0"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorEspecie}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="c4a62c34-8dc7-498e-a2d0-02de40ed50e0" key="textField-60" mode="Transparent" x="187" y="114" width="130" height="12"/>
+					<reportElement key="textField-60" mode="Transparent" x="187" y="114" width="130" height="12" uuid="c4a62c34-8dc7-498e-a2d0-02de40ed50e0"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorMarca}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="63b4a64b-9cec-4103-8eea-c2295c6013d2" key="textField-61" mode="Transparent" x="322" y="114" width="87" height="12"/>
+					<reportElement key="textField-61" mode="Transparent" x="322" y="114" width="87" height="12" uuid="63b4a64b-9cec-4103-8eea-c2295c6013d2"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{transportadorNumeracao}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.###" isBlankWhenNull="true">
-					<reportElement uuid="546c58b0-1fc3-43f0-aa31-af0109dc05e1" key="textField-62" mode="Transparent" x="414" y="114" width="75" height="12"/>
+					<reportElement key="textField-62" mode="Transparent" x="414" y="114" width="75" height="12" uuid="546c58b0-1fc3-43f0-aa31-af0109dc05e1"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{transportadorPesoBruto})]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.###" isBlankWhenNull="true">
-					<reportElement uuid="3b284d48-9799-42f4-a2cb-39640d2294b4" key="textField-63" mode="Transparent" x="493" y="114" width="70" height="12"/>
+					<reportElement key="textField-63" mode="Transparent" x="493" y="114" width="70" height="12" uuid="3b284d48-9799-42f4-a2cb-39640d2294b4"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{transportadorPesoLiquido})]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement uuid="ef89c24e-9175-4d28-99f1-c21e66237332" key="textField-64" mode="Transparent" x="481" y="37" width="82" height="12"/>
+					<reportElement key="textField-64" mode="Transparent" x="481" y="37" width="82" height="12" uuid="ef89c24e-9175-4d28-99f1-c21e66237332"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{valorTotalNota})]]></textFieldExpression>
 				</textField>
 				<rectangle radius="2">
-					<reportElement uuid="09a28027-b883-4904-8e6f-f7314918aa3b" key="rectangle-19" mode="Transparent" x="479" y="31" width="86" height="20">
+					<reportElement key="rectangle-19" mode="Transparent" x="479" y="31" width="86" height="20" uuid="09a28027-b883-4904-8e6f-f7314918aa3b">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="c3dc9689-28f9-405e-814c-ec0dcdd3a180" key="rectangle-20" mode="Transparent" x="0" y="68" width="214" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="0" y="68" width="214" height="20" uuid="c3dc9689-28f9-405e-814c-ec0dcdd3a180">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="2394cfef-5006-4b89-a8b1-631ad566c38a" key="rectangle-20" mode="Transparent" x="269" y="88" width="143" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="269" y="88" width="143" height="20" uuid="2394cfef-5006-4b89-a8b1-631ad566c38a">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="f91f12e5-2c5e-4665-af83-9102df4345aa" key="rectangle-20" mode="Transparent" x="214" y="68" width="74" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="214" y="68" width="74" height="20" uuid="f91f12e5-2c5e-4665-af83-9102df4345aa">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="c3ad76f3-6667-4f67-bead-68980fb7792e" key="rectangle-20" mode="Transparent" x="288" y="68" width="62" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="288" y="68" width="62" height="20" uuid="c3ad76f3-6667-4f67-bead-68980fb7792e">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="2c111979-2673-4759-bfc4-2ac485825076" key="rectangle-20" mode="Transparent" x="350" y="68" width="62" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="350" y="68" width="62" height="20" uuid="2c111979-2673-4759-bfc4-2ac485825076">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="051faba6-7c93-4db4-b82d-92d1d925ca61" key="rectangle-20" mode="Transparent" x="491" y="108" width="74" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="491" y="108" width="74" height="20" uuid="051faba6-7c93-4db4-b82d-92d1d925ca61">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="21ccf94e-bf61-44ca-b26d-81577a8ee55e" key="rectangle-20" mode="Transparent" x="320" y="108" width="92" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="320" y="108" width="92" height="20" uuid="21ccf94e-bf61-44ca-b26d-81577a8ee55e">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="7ce06a3c-0af3-4b0c-91a5-0d216c227426" key="rectangle-20" mode="Transparent" x="185" y="108" width="135" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="185" y="108" width="135" height="20" uuid="7ce06a3c-0af3-4b0c-91a5-0d216c227426">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="b47a80a2-dddf-43c3-a8ed-9cf2dd5f94da" key="rectangle-20" mode="Transparent" x="440" y="88" width="125" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="440" y="88" width="125" height="20" uuid="b47a80a2-dddf-43c3-a8ed-9cf2dd5f94da">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="5723e9cd-788e-4cde-bce8-eee3ca3ac1f1" key="rectangle-20" mode="Transparent" x="440" y="68" width="125" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="440" y="68" width="125" height="20" uuid="5723e9cd-788e-4cde-bce8-eee3ca3ac1f1">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="ed0ed779-3b4f-49d5-8c28-0fdd316858e2" key="rectangle-20" mode="Transparent" x="412" y="68" width="28" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="412" y="68" width="28" height="20" uuid="ed0ed779-3b4f-49d5-8c28-0fdd316858e2">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="da9904e5-6267-4953-a9f8-1579cc77e303" key="rectangle-20" mode="Transparent" x="0" y="88" width="269" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="0" y="88" width="269" height="20" uuid="da9904e5-6267-4953-a9f8-1579cc77e303">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="34c2f288-0973-4e76-83dd-0ce4a8871df4" key="rectangle-20" mode="Transparent" x="0" y="108" width="75" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="0" y="108" width="75" height="20" uuid="34c2f288-0973-4e76-83dd-0ce4a8871df4">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="7427c451-bdab-450c-a075-7933362df33f" key="rectangle-20" mode="Transparent" x="75" y="108" width="110" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="75" y="108" width="110" height="20" uuid="7427c451-bdab-450c-a075-7933362df33f">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<rectangle radius="2">
-					<reportElement uuid="615c0fb0-84c9-4516-876f-0cbed8926642" key="rectangle-20" mode="Transparent" x="412" y="108" width="79" height="20">
+					<reportElement key="rectangle-20" mode="Transparent" x="412" y="108" width="79" height="20" uuid="615c0fb0-84c9-4516-876f-0cbed8926642">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="471a634b-4740-40e7-82e5-e5f890b9ebed" key="staticText-36" mode="Transparent" x="4" y="1" width="136" height="10">
+					<reportElement key="staticText-36" mode="Transparent" x="4" y="1" width="136" height="10" uuid="471a634b-4740-40e7-82e5-e5f890b9ebed">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1581,7 +1582,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[CÁLCULO DO IMPOSTO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="8cd4b075-c3d5-487e-89aa-37b2211ef893" key="staticText-65" mode="Transparent" x="323" y="12" width="78" height="8">
+					<reportElement key="staticText-65" mode="Transparent" x="323" y="12" width="78" height="8" uuid="8cd4b075-c3d5-487e-89aa-37b2211ef893">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1590,14 +1591,14 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[VALOR IMP. DE IMPORTAÇÃO]]></text>
 				</staticText>
 				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement uuid="3d609b54-a50d-48c4-a435-139a1dfeaf21" key="textField-43" mode="Transparent" x="403" y="17" width="74" height="12"/>
+					<reportElement key="textField-43" mode="Transparent" x="403" y="17" width="74" height="12" uuid="3d609b54-a50d-48c4-a435-139a1dfeaf21"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{valorPIS})]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement uuid="e0cac13c-e6f0-4268-83f7-a744aa2f215b" key="staticText-65" mode="Transparent" x="404" y="32" width="76" height="8">
+					<reportElement key="staticText-65" mode="Transparent" x="404" y="32" width="76" height="8" uuid="e0cac13c-e6f0-4268-83f7-a744aa2f215b">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1606,7 +1607,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[VALOR DA COFINS]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="004aad36-cb69-41e6-8ba5-ab4b2c7f8173" key="staticText-65" mode="Transparent" x="404" y="12" width="76" height="8">
+					<reportElement key="staticText-65" mode="Transparent" x="404" y="12" width="76" height="8" uuid="004aad36-cb69-41e6-8ba5-ab4b2c7f8173">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1615,14 +1616,14 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[VALOR DO PIS]]></text>
 				</staticText>
 				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement uuid="b991ebd8-a5ae-4eab-b714-e9c129198eb4" key="textField-43" mode="Transparent" x="323" y="17" width="78" height="12"/>
+					<reportElement key="textField-43" mode="Transparent" x="323" y="17" width="78" height="12" uuid="b991ebd8-a5ae-4eab-b714-e9c129198eb4"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new Double($F{valorII})]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement uuid="1debc6a0-90d0-411a-89fa-187a0f111f54" key="textField-43" mode="Transparent" x="403" y="37" width="74" height="12"/>
+					<reportElement key="textField-43" mode="Transparent" x="403" y="37" width="74" height="12" uuid="1debc6a0-90d0-411a-89fa-187a0f111f54"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
@@ -1631,7 +1632,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 			</band>
 			<band height="27">
 				<staticText>
-					<reportElement uuid="0eff3663-4c6f-46c8-8803-c23f42960472" key="staticText-61" x="0" y="14" width="34" height="13"/>
+					<reportElement key="staticText-61" x="0" y="14" width="34" height="13" uuid="0eff3663-4c6f-46c8-8803-c23f42960472"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1644,12 +1645,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[Cód. Produto]]></text>
 				</staticText>
 				<line>
-					<reportElement uuid="57134f58-d6fc-4203-9b99-ea29d225db11" key="line-37" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="548" y="20" width="1" height="7" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-37" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="548" y="20" width="1" height="7" isPrintWhenDetailOverflows="true" uuid="57134f58-d6fc-4203-9b99-ea29d225db11">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement uuid="d6b2914a-48be-41dd-b93a-52cfbf64e066" key="staticText-68" x="286" y="14" width="29" height="13"/>
+					<reportElement key="staticText-68" x="286" y="14" width="29" height="13" uuid="d6b2914a-48be-41dd-b93a-52cfbf64e066"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1662,7 +1663,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[V. Unitário]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="803c968f-9621-4dca-b6c9-390c365ff6af" key="staticText-79" x="534" y="14" width="30" height="6"/>
+					<reportElement key="staticText-79" x="534" y="14" width="30" height="6" uuid="803c968f-9621-4dca-b6c9-390c365ff6af"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1675,7 +1676,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[Alíquota]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="312d3b48-bbdc-459a-8baf-13beb32f2ecc" key="staticText-75" x="533" y="20" width="15" height="7"/>
+					<reportElement key="staticText-75" x="533" y="20" width="15" height="7" uuid="312d3b48-bbdc-459a-8baf-13beb32f2ecc"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1688,12 +1689,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[ ICMS]]></text>
 				</staticText>
 				<line>
-					<reportElement uuid="d33ca4ef-dd71-4601-acec-f8b9bea8b70d" key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="449" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="449" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="d33ca4ef-dd71-4601-acec-f8b9bea8b70d">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement uuid="2dce242e-dbf7-452a-b55a-10ed4de751b1" key="staticText-65" x="223" y="14" width="19" height="13"/>
+					<reportElement key="staticText-65" x="223" y="14" width="19" height="13" uuid="2dce242e-dbf7-452a-b55a-10ed4de751b1"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1706,12 +1707,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[CFOP]]></text>
 				</staticText>
 				<line>
-					<reportElement uuid="f4fe64cd-a1ee-493c-88a8-8b32a3c36e64" key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="379" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="379" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="f4fe64cd-a1ee-493c-88a8-8b32a3c36e64">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement uuid="50c6132e-9e1a-4b69-b2b3-c77def4c381a" key="staticText-78" x="379" y="14" width="70" height="6"/>
+					<reportElement key="staticText-78" x="379" y="14" width="70" height="6" uuid="50c6132e-9e1a-4b69-b2b3-c77def4c381a"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1724,17 +1725,17 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[Base de Cálculo]]></text>
 				</staticText>
 				<line>
-					<reportElement uuid="4a4b0898-65b8-4a1d-a54d-a0f24d09d043" key="line-36" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="505" y="20" width="1" height="7" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-36" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="505" y="20" width="1" height="7" isPrintWhenDetailOverflows="true" uuid="4a4b0898-65b8-4a1d-a54d-a0f24d09d043">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<line>
-					<reportElement uuid="f5349aff-17cb-4ed1-96fb-7c850caf070c" key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="34" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="34" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="f5349aff-17cb-4ed1-96fb-7c850caf070c">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement uuid="e96e594b-2e01-4e2f-9f10-1086af362332" key="staticText-77" x="449" y="20" width="28" height="7"/>
+					<reportElement key="staticText-77" x="449" y="20" width="28" height="7" uuid="e96e594b-2e01-4e2f-9f10-1086af362332"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1747,12 +1748,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[ ICMS]]></text>
 				</staticText>
 				<rectangle radius="1">
-					<reportElement uuid="cc1c1c68-d4c6-46ca-a5ae-3922b85ba893" key="rectangle-1" mode="Transparent" x="0" y="14" width="565" height="13">
+					<reportElement key="rectangle-1" mode="Transparent" x="0" y="14" width="565" height="13" uuid="cc1c1c68-d4c6-46ca-a5ae-3922b85ba893">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="cb203e44-1ead-42ff-843b-7bf13fb330b3" key="staticText-71" x="414" y="20" width="35" height="7"/>
+					<reportElement key="staticText-71" x="414" y="20" width="35" height="7" uuid="cb203e44-1ead-42ff-843b-7bf13fb330b3"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1765,7 +1766,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[ ICMS ST]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="bca4de1f-0828-44a0-8a69-24ade1836aa9" key="staticText-73" x="477" y="20" width="28" height="7"/>
+					<reportElement key="staticText-73" x="477" y="20" width="28" height="7" uuid="bca4de1f-0828-44a0-8a69-24ade1836aa9"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1778,12 +1779,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[ ICMS ST]]></text>
 				</staticText>
 				<line>
-					<reportElement uuid="a898428a-a422-46be-b035-572275bc8b19" key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="207" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="207" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="a898428a-a422-46be-b035-572275bc8b19">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement uuid="285fcd97-6d4d-4c6d-899a-2a3989b07ed4" key="staticText-64" x="208" y="14" width="14" height="13"/>
+					<reportElement key="staticText-64" x="208" y="14" width="14" height="13" uuid="285fcd97-6d4d-4c6d-899a-2a3989b07ed4"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1796,7 +1797,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[CST]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="d3408805-f718-495f-92de-99d03efa6fbc" key="staticText-76" x="548" y="20" width="16" height="7"/>
+					<reportElement key="staticText-76" x="548" y="20" width="16" height="7" uuid="d3408805-f718-495f-92de-99d03efa6fbc"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1809,7 +1810,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[ IPI]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="b42dbe47-2fad-4df1-a7d8-36baab5d1e50" key="staticText-70" x="379" y="20" width="35" height="7"/>
+					<reportElement key="staticText-70" x="379" y="20" width="35" height="7" uuid="b42dbe47-2fad-4df1-a7d8-36baab5d1e50"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1822,22 +1823,22 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[ ICMS]]></text>
 				</staticText>
 				<line>
-					<reportElement uuid="e2197999-33ed-4b1e-9eb8-e585b9593ca8" key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="179" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="179" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="e2197999-33ed-4b1e-9eb8-e585b9593ca8">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<line>
-					<reportElement uuid="c3436510-3c6d-4ce9-b611-74944ce5fbba" key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="315" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="315" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="c3436510-3c6d-4ce9-b611-74944ce5fbba">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<line>
-					<reportElement uuid="e9bc1110-b829-40f3-b17e-f0712dcd7475" key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="222" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="222" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="e9bc1110-b829-40f3-b17e-f0712dcd7475">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement uuid="6a58e1a6-13cc-409b-923c-c30461c432de" key="staticText-66" x="243" y="14" width="14" height="13"/>
+					<reportElement key="staticText-66" x="243" y="14" width="14" height="13" uuid="6a58e1a6-13cc-409b-923c-c30461c432de"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1850,12 +1851,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[Un]]></text>
 				</staticText>
 				<line>
-					<reportElement uuid="47cf31b8-0302-4b5a-b625-0ca9c22dd3b2" key="line-40" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="380" y="20" width="185" height="1" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-40" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="380" y="20" width="185" height="1" isPrintWhenDetailOverflows="true" uuid="47cf31b8-0302-4b5a-b625-0ca9c22dd3b2">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement uuid="79cbeabb-1c5a-4dec-b876-1f9a14695b78" key="staticText-69" x="344" y="14" width="35" height="13"/>
+					<reportElement key="staticText-69" x="344" y="14" width="35" height="13" uuid="79cbeabb-1c5a-4dec-b876-1f9a14695b78"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1868,22 +1869,22 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[Valor Total]]></text>
 				</staticText>
 				<line>
-					<reportElement uuid="cd9c4b0b-8207-4a75-99f4-314e615edf60" key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="344" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="344" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="cd9c4b0b-8207-4a75-99f4-314e615edf60">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<line>
-					<reportElement uuid="3be5080d-cb69-4276-ad27-f962bee956df" key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="257" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="257" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="3be5080d-cb69-4276-ad27-f962bee956df">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<line>
-					<reportElement uuid="16c3d7c7-8f8f-4643-a37c-32ad5d160e82" key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="477" y="20" width="1" height="7" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="477" y="20" width="1" height="7" isPrintWhenDetailOverflows="true" uuid="16c3d7c7-8f8f-4643-a37c-32ad5d160e82">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement uuid="25589c42-61fa-4fc6-bb18-19e4350d01c7" key="staticText-62" x="35" y="14" width="144" height="13"/>
+					<reportElement key="staticText-62" x="35" y="14" width="144" height="13" uuid="25589c42-61fa-4fc6-bb18-19e4350d01c7"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1896,7 +1897,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[Descrição dos Produtos e Serviços]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="aa1f882c-0cb6-4d71-8fad-06998ff9d094" key="staticText-80" x="316" y="14" width="28" height="13"/>
+					<reportElement key="staticText-80" x="316" y="14" width="28" height="13" uuid="aa1f882c-0cb6-4d71-8fad-06998ff9d094"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1909,12 +1910,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[V. Desc.]]></text>
 				</staticText>
 				<line>
-					<reportElement uuid="6c4850d3-63fb-4776-a658-ae3d4ad32beb" key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="242" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="242" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="6c4850d3-63fb-4776-a658-ae3d4ad32beb">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement uuid="82601489-bb8d-4784-9785-d8b80112fac9" key="staticText-63" x="180" y="14" width="27" height="13"/>
+					<reportElement key="staticText-63" x="180" y="14" width="27" height="13" uuid="82601489-bb8d-4784-9785-d8b80112fac9"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1927,17 +1928,17 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[NCM/SH]]></text>
 				</staticText>
 				<line>
-					<reportElement uuid="da418c33-2a8f-41ea-bc42-67639a90b3a8" key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="285" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="285" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="da418c33-2a8f-41ea-bc42-67639a90b3a8">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<line>
-					<reportElement uuid="3944d4a6-b86d-43bb-b0ca-f3edfae375b2" key="line-37" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="533" y="14" width="1" height="13" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-37" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="533" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="3944d4a6-b86d-43bb-b0ca-f3edfae375b2">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement uuid="8a10aee5-09d9-4d5b-a927-0afc65c75d0e" key="staticText-74" x="506" y="20" width="27" height="7"/>
+					<reportElement key="staticText-74" x="506" y="20" width="27" height="7" uuid="8a10aee5-09d9-4d5b-a927-0afc65c75d0e"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1950,12 +1951,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[ IPI]]></text>
 				</staticText>
 				<line>
-					<reportElement uuid="369dd9bc-94cf-4a27-89e2-d161d55626e0" key="line-34" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="414" y="20" width="1" height="7" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-34" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="414" y="20" width="1" height="7" isPrintWhenDetailOverflows="true" uuid="369dd9bc-94cf-4a27-89e2-d161d55626e0">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement uuid="452901f8-43c9-4252-97cd-0a96edca93bc" key="staticText-67" x="258" y="14" width="27" height="13"/>
+					<reportElement key="staticText-67" x="258" y="14" width="27" height="13" uuid="452901f8-43c9-4252-97cd-0a96edca93bc"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1968,7 +1969,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[Qtd.]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="ba7e662d-7b1f-44e1-b9ef-79a24c841493" key="staticText-60" mode="Transparent" x="4" y="2" width="136" height="10" isPrintWhenDetailOverflows="true">
+					<reportElement key="staticText-60" mode="Transparent" x="4" y="2" width="136" height="10" isPrintWhenDetailOverflows="true" uuid="ba7e662d-7b1f-44e1-b9ef-79a24c841493">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1977,7 +1978,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[DADOS DO PRODUTO/SERVIÇO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="431ccc44-7fdf-46e1-aa91-f7c0a95fc3d4" key="staticText-72" mode="Transparent" x="449" y="14" width="84" height="6" forecolor="#000000" backcolor="#FFFFFF"/>
+					<reportElement key="staticText-72" mode="Transparent" x="449" y="14" width="84" height="6" forecolor="#000000" backcolor="#FFFFFF" uuid="431ccc44-7fdf-46e1-aa91-f7c0a95fc3d4"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1997,112 +1998,112 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 		<groupHeader>
 			<band height="11">
 				<componentElement>
-					<reportElement uuid="c4a4eca5-a7f0-4f0c-a32c-87cf82dd943c" x="0" y="0" width="565" height="11"/>
+					<reportElement x="0" y="0" width="565" height="11" uuid="c4a4eca5-a7f0-4f0c-a32c-87cf82dd943c"/>
 					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
 						<datasetRun subDataset="detalhes" uuid="a6c3c544-bf80-441f-bf92-00e08e807ce2">
 							<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("//det")]]></dataSourceExpression>
 						</datasetRun>
 						<jr:listContents height="11" width="565">
 							<textField isStretchWithOverflow="true" pattern="#0.###" isBlankWhenNull="true">
-								<reportElement uuid="f0dd4672-c392-4970-8f56-132bfb559639" key="textField-3" mode="Transparent" x="548" y="1" width="15" height="9"/>
+								<reportElement key="textField-3" mode="Transparent" x="548" y="1" width="15" height="9" uuid="f0dd4672-c392-4970-8f56-132bfb559639"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[new Double($F{aliquotaIpi})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-								<reportElement uuid="e5a01fd5-7d04-4f0e-9d6f-533759fd17fc" key="textField-11" mode="Transparent" x="243" y="1" width="14" height="9"/>
+								<reportElement key="textField-11" mode="Transparent" x="243" y="1" width="14" height="9" uuid="e5a01fd5-7d04-4f0e-9d6f-533759fd17fc"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[( $F{unidadeComercial}.equals($F{unidadeTributaria}) ? $F{unidadeComercial} : $F{unidadeComercial} + "\n" + $F{unidadeTributaria} )]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement uuid="2899125f-9cc4-42c1-8737-890b6cbb69bc" key="textField-10" mode="Transparent" x="257" y="1" width="28" height="9"/>
+								<reportElement key="textField-10" mode="Transparent" x="257" y="1" width="28" height="9" uuid="2899125f-9cc4-42c1-8737-890b6cbb69bc"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{unidadeComercial}.equals($F{unidadeTributaria}) ? (new DecimalFormat("#,##0.##")).format(new Double($F{quantidadeComercial})) : (new DecimalFormat("#,##0.##")).format(new Double($F{quantidadeComercial})) + "\n" + (new DecimalFormat("#,##0.###")).format(new Double($F{quantidadeTributaria}))]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-								<reportElement uuid="dc63ac57-63ff-4db1-9248-457ac17f99e8" key="textField-9" mode="Transparent" x="286" y="1" width="29" height="9"/>
+								<reportElement key="textField-9" mode="Transparent" x="286" y="1" width="29" height="9" uuid="dc63ac57-63ff-4db1-9248-457ac17f99e8"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{unidadeComercial}.toString().equals($F{unidadeTributaria}.toString()) ? (new DecimalFormat("#,##0.00##")).format(new Double($F{valorUnitarioComercial})) : (new DecimalFormat("#,##0.00##")).format(new Double($F{valorUnitarioComercial})) + "\n" + (new DecimalFormat("#,##0.00##")).format(new Double($F{valorUnitarioTributario}))]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-								<reportElement uuid="99806137-af35-403e-a9f4-f44f1b6add14" key="textField-8" mode="Transparent" x="344" y="1" width="35" height="9"/>
+								<reportElement key="textField-8" mode="Transparent" x="344" y="1" width="35" height="9" uuid="99806137-af35-403e-a9f4-f44f1b6add14"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[new Double($F{valorTotal})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement uuid="0fd012aa-3832-4239-8881-7fafe6313345" key="textField-14" mode="Transparent" x="180" y="1" width="27" height="9"/>
+								<reportElement key="textField-14" mode="Transparent" x="180" y="1" width="27" height="9" uuid="0fd012aa-3832-4239-8881-7fafe6313345"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{ncm}]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-								<reportElement uuid="24cb9abd-0049-43a6-936b-cf3c8919a39b" key="textField-6" mode="Transparent" x="449" y="1" width="28" height="9"/>
+								<reportElement key="textField-6" mode="Transparent" x="449" y="1" width="28" height="9" uuid="24cb9abd-0049-43a6-936b-cf3c8919a39b"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[new Double($F{lvalorIcms})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-								<reportElement uuid="f5a773cc-12c8-4d9f-a0bb-65d8ce0114e0" key="textField-1" mode="Transparent" x="2" y="0" width="32" height="9"/>
+								<reportElement key="textField-1" mode="Transparent" x="2" y="0" width="32" height="9" uuid="f5a773cc-12c8-4d9f-a0bb-65d8ce0114e0"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-								<reportElement uuid="ed9e2bd7-c099-41d6-99f2-71627f38e4ed" key="textField-15" mode="Transparent" x="414" y="1" width="35" height="9"/>
+								<reportElement key="textField-15" mode="Transparent" x="414" y="1" width="35" height="9" uuid="ed9e2bd7-c099-41d6-99f2-71627f38e4ed"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[new Double($F{baseICMSST})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-								<reportElement uuid="7370376f-9327-49b9-8725-41672326ab01" key="textField-16" mode="Transparent" x="477" y="1" width="28" height="9"/>
+								<reportElement key="textField-16" mode="Transparent" x="477" y="1" width="28" height="9" uuid="7370376f-9327-49b9-8725-41672326ab01"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[new Double($F{valorICMSST})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-								<reportElement uuid="4d408849-e34a-4a82-a447-dfdf218cda9f" key="textField-17" mode="Transparent" x="317" y="1" width="27" height="9"/>
+								<reportElement key="textField-17" mode="Transparent" x="317" y="1" width="27" height="9" uuid="4d408849-e34a-4a82-a447-dfdf218cda9f"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[new Double($F{ldesconto})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="#0.###" isBlankWhenNull="true">
-								<reportElement uuid="6d6ceb38-10f6-400e-8a21-4cbb3e789812" key="textField-4" mode="Transparent" x="533" y="1" width="15" height="9"/>
+								<reportElement key="textField-4" mode="Transparent" x="533" y="1" width="15" height="9" uuid="6d6ceb38-10f6-400e-8a21-4cbb3e789812"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[new Double($F{aliquotaIcms})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-								<reportElement uuid="cb62c351-cf02-471a-a809-e30aa3e747ef" key="textField-7" mode="Transparent" x="379" y="1" width="35" height="9"/>
+								<reportElement key="textField-7" mode="Transparent" x="379" y="1" width="35" height="9" uuid="cb62c351-cf02-471a-a809-e30aa3e747ef"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[new Double($F{lbaseIcms})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-								<reportElement uuid="e4043740-ec62-4841-bc90-8fdd33314efc" key="textField-5" mode="Transparent" x="505" y="1" width="28" height="9"/>
+								<reportElement key="textField-5" mode="Transparent" x="505" y="1" width="28" height="9" uuid="e4043740-ec62-4841-bc90-8fdd33314efc"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[new Double($F{lvalorIpi})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement uuid="e75cb15e-1c5e-4b2b-943b-d054127aa9fb" key="textField-2" mode="Transparent" x="35" y="0" width="144" height="9"/>
+								<reportElement key="textField-2" mode="Transparent" x="35" y="0" width="144" height="9" uuid="e75cb15e-1c5e-4b2b-943b-d054127aa9fb"/>
 								<textElement verticalAlignment="Middle" markup="html">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
@@ -2111,111 +2112,111 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 ( $F{informacoesAdicionais}!=null ? "\n"+$F{informacoesAdicionais} : "" )]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement uuid="19f5a4a8-1efb-420a-8ce6-18c120b8a180" key="textField-12" mode="Transparent" x="222" y="1" width="20" height="9"/>
+								<reportElement key="textField-12" mode="Transparent" x="222" y="1" width="20" height="9" uuid="19f5a4a8-1efb-420a-8ce6-18c120b8a180"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{cfop}]]></textFieldExpression>
 							</textField>
 							<line>
-								<reportElement uuid="5f0b74e5-328a-4bc9-a8a7-529775f9f0b5" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="1" height="11" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="1" height="11" isPrintWhenDetailOverflows="true" uuid="5f0b74e5-328a-4bc9-a8a7-529775f9f0b5">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="61c4751c-0db2-452a-b575-6535fbd7e149" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="315" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="315" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="61c4751c-0db2-452a-b575-6535fbd7e149">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="79674730-6680-4a83-82c6-8f0e2e7e7e68" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="477" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="477" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="79674730-6680-4a83-82c6-8f0e2e7e7e68">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="3d7f2917-cd85-4eda-a9db-8622b02f6cd3" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="533" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="533" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="3d7f2917-cd85-4eda-a9db-8622b02f6cd3">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="7762d831-a3aa-48ff-a0e0-47932593c472" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="34" y="1" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="34" y="1" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="7762d831-a3aa-48ff-a0e0-47932593c472">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="382f0f0b-94fc-46c1-9441-9b2ae46b7a19" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="179" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="179" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="382f0f0b-94fc-46c1-9441-9b2ae46b7a19">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="7a476285-acaa-4c52-984c-882928d0f3a2" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="344" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="344" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="7a476285-acaa-4c52-984c-882928d0f3a2">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="adf980d5-3eb1-4452-a77f-447046d14b7e" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="379" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="379" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="adf980d5-3eb1-4452-a77f-447046d14b7e">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="215c87db-2373-456a-8ac1-9b045fbd1445" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="257" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="257" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="215c87db-2373-456a-8ac1-9b045fbd1445">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="b5b08d7c-cd2c-4bc2-972e-b985ccf6e7c3" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="548" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="548" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="b5b08d7c-cd2c-4bc2-972e-b985ccf6e7c3">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="b32962b0-4a7a-43ca-8c21-713617b25bbf" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="242" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="242" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="b32962b0-4a7a-43ca-8c21-713617b25bbf">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="36f08630-5143-46ad-aa04-09d16eac6c01" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="449" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="449" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="36f08630-5143-46ad-aa04-09d16eac6c01">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="627eb8fc-2dd5-4cc8-abf0-599f23fe30a1" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="564" y="0" width="1" height="11" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="564" y="0" width="1" height="11" isPrintWhenDetailOverflows="true" uuid="627eb8fc-2dd5-4cc8-abf0-599f23fe30a1">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="622eae3a-d0a0-4a1e-a174-5e06f5713e5e" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="285" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="285" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="622eae3a-d0a0-4a1e-a174-5e06f5713e5e">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="8d831e6c-9ba2-46ad-a3b1-67391ee0779c" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="222" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="222" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="8d831e6c-9ba2-46ad-a3b1-67391ee0779c">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="0fc07311-fe47-4f44-9b16-9e4d890354ae" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="414" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="414" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="0fc07311-fe47-4f44-9b16-9e4d890354ae">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="ae96d7f2-459e-4cb9-bc68-3a79ef0f3495" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="505" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="505" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="ae96d7f2-459e-4cb9-bc68-3a79ef0f3495">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement uuid="fc216807-da82-44d5-9315-22d183decd88" key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="207" y="0" width="1" height="10" isPrintWhenDetailOverflows="true">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="207" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="fc216807-da82-44d5-9315-22d183decd88">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement uuid="175f93d1-6e4a-4ae1-841e-39fe71da876d" key="textField-13" mode="Transparent" x="208" y="1" width="15" height="9"/>
+								<reportElement key="textField-13" mode="Transparent" x="208" y="1" width="15" height="9" uuid="175f93d1-6e4a-4ae1-841e-39fe71da876d"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{orig}+$F{cst}]]></textFieldExpression>
 							</textField>
 							<line>
-								<reportElement uuid="be26aff4-2ad6-47d9-bd79-0969699fca42" key="tracejada" positionType="FixRelativeToBottom" mode="Transparent" x="0" y="10" width="564" height="1" isPrintWhenDetailOverflows="true"/>
+								<reportElement key="tracejada" positionType="FixRelativeToBottom" mode="Transparent" x="0" y="10" width="564" height="1" isPrintWhenDetailOverflows="true" uuid="be26aff4-2ad6-47d9-bd79-0969699fca42"/>
 								<graphicElement>
 									<pen lineWidth="0.5" lineStyle="Dashed"/>
 								</graphicElement>
@@ -2224,7 +2225,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					</jr:list>
 				</componentElement>
 				<line>
-					<reportElement uuid="454b3b06-57d7-45ab-97c7-73522470f27d" key="line-56" positionType="FixRelativeToBottom" mode="Transparent" x="0" y="10" width="565" height="1" isPrintWhenDetailOverflows="true">
+					<reportElement key="line-56" positionType="FixRelativeToBottom" mode="Transparent" x="0" y="10" width="565" height="1" isPrintWhenDetailOverflows="true" uuid="454b3b06-57d7-45ab-97c7-73522470f27d">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
@@ -2232,14 +2233,14 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 			<band height="60">
 				<printWhenExpression><![CDATA[$P{Eventos_Datasource} != null]]></printWhenExpression>
 				<componentElement>
-					<reportElement uuid="5abbf2a9-2cd0-4219-8907-84dd545d6880" x="0" y="23" width="565" height="36"/>
+					<reportElement x="0" y="23" width="565" height="36" uuid="5abbf2a9-2cd0-4219-8907-84dd545d6880"/>
 					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
 						<datasetRun subDataset="eventos" uuid="11888342-d77c-48b6-9484-61399671fbda">
 							<dataSourceExpression><![CDATA[($P{Eventos_Datasource} == null ) ? new net.sf.jasperreports.engine.JREmptyDataSource(1) : new net.sf.jasperreports.engine.data.JRXmlDataSource($P{Eventos_Datasource} , "//procEventoNFe" )]]></dataSourceExpression>
 						</datasetRun>
 						<jr:listContents height="36" width="565">
 							<frame>
-								<reportElement uuid="c37c2e05-fd87-4687-8dc3-31377eb27e73" stretchType="RelativeToTallestObject" x="0" y="0" width="565" height="31"/>
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="565" height="31" uuid="c37c2e05-fd87-4687-8dc3-31377eb27e73"/>
 								<box>
 									<pen lineWidth="0.75"/>
 									<topPen lineWidth="0.75"/>
@@ -2248,7 +2249,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 									<rightPen lineWidth="0.75"/>
 								</box>
 								<textField>
-									<reportElement uuid="5636a5f2-1c2f-492a-8d0d-a37289e87f79" x="196" y="0" width="77" height="14"/>
+									<reportElement x="196" y="0" width="77" height="14" uuid="5636a5f2-1c2f-492a-8d0d-a37289e87f79"/>
 									<textElement>
 										<font fontName="Liberation Serif"/>
 									</textElement>
@@ -2258,14 +2259,14 @@ $F{dhEvento}.substring(0,4) + " " +
 $F{dhEvento}.substring(11,16)]]></textFieldExpression>
 								</textField>
 								<textField>
-									<reportElement uuid="92673623-c9b9-4485-a07f-2936a11d3ff5" x="27" y="0" width="91" height="14"/>
+									<reportElement x="27" y="0" width="91" height="14" uuid="92673623-c9b9-4485-a07f-2936a11d3ff5"/>
 									<textElement>
 										<font fontName="Liberation Serif" isPdfEmbedded="false"/>
 									</textElement>
 									<textFieldExpression><![CDATA[$F{descEvento}]]></textFieldExpression>
 								</textField>
 								<textField isStretchWithOverflow="true">
-									<reportElement uuid="2d233eb6-bd76-4eff-be95-df176b6f6db3" x="0" y="16" width="564" height="14" isPrintWhenDetailOverflows="true"/>
+									<reportElement x="0" y="16" width="564" height="14" isPrintWhenDetailOverflows="true" uuid="2d233eb6-bd76-4eff-be95-df176b6f6db3"/>
 									<textElement>
 										<font fontName="Liberation Mono" isBold="true"/>
 									</textElement>
@@ -2274,28 +2275,28 @@ $F{xCorrecao} != null ? "Correção: " + $F{xCorrecao}
 : ""]]></textFieldExpression>
 								</textField>
 								<staticText>
-									<reportElement uuid="ce943efe-7f83-4dca-9b0f-7b17e314a442" x="0" y="0" width="26" height="10"/>
+									<reportElement x="0" y="0" width="26" height="10" uuid="ce943efe-7f83-4dca-9b0f-7b17e314a442"/>
 									<textElement>
 										<font fontName="Liberation Serif" size="8"/>
 									</textElement>
 									<text><![CDATA[Evento:]]></text>
 								</staticText>
 								<staticText>
-									<reportElement uuid="3156aa6b-66e2-49ea-b333-9a8bb2a579b6" x="118" y="0" width="78" height="10"/>
+									<reportElement x="118" y="0" width="78" height="10" uuid="3156aa6b-66e2-49ea-b333-9a8bb2a579b6"/>
 									<textElement>
 										<font fontName="Liberation Serif" size="8"/>
 									</textElement>
 									<text><![CDATA[Data e Hora do Evento:]]></text>
 								</staticText>
 								<staticText>
-									<reportElement uuid="4a136e30-a250-46a0-8f2e-80a22586c414" x="276" y="0" width="81" height="10"/>
+									<reportElement x="276" y="0" width="81" height="10" uuid="4a136e30-a250-46a0-8f2e-80a22586c414"/>
 									<textElement>
 										<font fontName="Liberation Serif" size="8"/>
 									</textElement>
 									<text><![CDATA[Data e Hora do Registro:]]></text>
 								</staticText>
 								<textField>
-									<reportElement uuid="14a32b0a-6693-43bc-aa3b-e43571eeb470" x="357" y="0" width="77" height="14"/>
+									<reportElement x="357" y="0" width="77" height="14" uuid="14a32b0a-6693-43bc-aa3b-e43571eeb470"/>
 									<textElement>
 										<font fontName="Liberation Serif"/>
 									</textElement>
@@ -2305,14 +2306,14 @@ $F{dhRegEvento}.substring(0,4) + " " +
 $F{dhRegEvento}.substring(11,16)]]></textFieldExpression>
 								</textField>
 								<staticText>
-									<reportElement uuid="f032c499-66e8-4751-a0cc-0bccf1e37e48" x="434" y="0" width="37" height="10"/>
+									<reportElement x="434" y="0" width="37" height="10" uuid="f032c499-66e8-4751-a0cc-0bccf1e37e48"/>
 									<textElement>
 										<font fontName="Liberation Serif" size="8"/>
 									</textElement>
 									<text><![CDATA[Protocolo:]]></text>
 								</staticText>
 								<textField>
-									<reportElement uuid="67999e48-f78a-4d9f-b13f-8fc0a6180450" x="471" y="0" width="93" height="14"/>
+									<reportElement x="471" y="0" width="93" height="14" uuid="67999e48-f78a-4d9f-b13f-8fc0a6180450"/>
 									<textElement>
 										<font fontName="Liberation Serif"/>
 									</textElement>
@@ -2323,7 +2324,7 @@ $F{dhRegEvento}.substring(11,16)]]></textFieldExpression>
 					</jr:list>
 				</componentElement>
 				<staticText>
-					<reportElement uuid="01640875-b98b-48f9-abac-2d892b63b19f" x="2" y="3" width="271" height="20"/>
+					<reportElement x="2" y="3" width="271" height="20" uuid="01640875-b98b-48f9-abac-2d892b63b19f"/>
 					<textElement>
 						<font fontName="Liberation Serif" size="14" isBold="true"/>
 					</textElement>
@@ -2337,12 +2338,12 @@ $F{dhRegEvento}.substring(11,16)]]></textFieldExpression>
 			<band height="31">
 				<printWhenExpression><![CDATA[$V{PAGE_NUMBER}==1 && !$F{valorTotalServicos}.isEmpty()]]></printWhenExpression>
 				<rectangle radius="2">
-					<reportElement uuid="d06fe7f0-a217-4590-9470-1e184ea613b7" key="rectangle-13" mode="Transparent" x="0" y="9" width="143" height="20">
+					<reportElement key="rectangle-13" mode="Transparent" x="0" y="9" width="143" height="20" uuid="d06fe7f0-a217-4590-9470-1e184ea613b7">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="b44bf887-8302-4f2b-a2f1-04b010ae1668" key="staticText-14" mode="Transparent" x="2" y="10" width="86" height="8">
+					<reportElement key="staticText-14" mode="Transparent" x="2" y="10" width="86" height="8" uuid="b44bf887-8302-4f2b-a2f1-04b010ae1668">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -2351,7 +2352,7 @@ $F{dhRegEvento}.substring(11,16)]]></textFieldExpression>
 					<text><![CDATA[INSCRIÇÃO MUNICIPAL]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="4746811f-1a83-485f-9fd4-c251e1f6422f" key="staticText-18" mode="Transparent" x="4" y="0" width="136" height="10">
+					<reportElement key="staticText-18" mode="Transparent" x="4" y="0" width="136" height="10" uuid="4746811f-1a83-485f-9fd4-c251e1f6422f">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -2360,19 +2361,19 @@ $F{dhRegEvento}.substring(11,16)]]></textFieldExpression>
 					<text><![CDATA[CÁLCULO DO ISSQN]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="3270259b-5bc7-4e49-b687-be6f9cb7894d" key="textField-20" mode="Transparent" x="2" y="16" width="137" height="12"/>
+					<reportElement key="textField-20" mode="Transparent" x="2" y="16" width="137" height="12" uuid="3270259b-5bc7-4e49-b687-be6f9cb7894d"/>
 					<textElement textAlignment="Left">
 						<font fontName="Liberation Serif" size="10" pdfFontName="Times-Roman"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{inscricaoMunicipal}]]></textFieldExpression>
 				</textField>
 				<rectangle radius="2">
-					<reportElement uuid="18c12549-3d06-4d8c-bc2c-9f9d32f5dbfe" key="rectangle-14" mode="Transparent" x="143" y="9" width="141" height="20">
+					<reportElement key="rectangle-14" mode="Transparent" x="143" y="9" width="141" height="20" uuid="18c12549-3d06-4d8c-bc2c-9f9d32f5dbfe">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="870f6f75-49e2-45ad-be3e-5f64a9b645a5" key="staticText-15" mode="Transparent" x="145" y="10" width="86" height="8">
+					<reportElement key="staticText-15" mode="Transparent" x="145" y="10" width="86" height="8" uuid="870f6f75-49e2-45ad-be3e-5f64a9b645a5">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -2381,12 +2382,12 @@ $F{dhRegEvento}.substring(11,16)]]></textFieldExpression>
 					<text><![CDATA[VALOR TOTAL DOS SERVIÇOS]]></text>
 				</staticText>
 				<rectangle radius="2">
-					<reportElement uuid="32d746fd-13d4-4531-974b-ec83d6ca01f5" key="rectangle-15" mode="Transparent" x="284" y="9" width="141" height="20">
+					<reportElement key="rectangle-15" mode="Transparent" x="284" y="9" width="141" height="20" uuid="32d746fd-13d4-4531-974b-ec83d6ca01f5">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="614bb7f8-62e2-40d3-bcac-7e4a56865050" key="staticText-16" mode="Transparent" x="286" y="10" width="86" height="8">
+					<reportElement key="staticText-16" mode="Transparent" x="286" y="10" width="86" height="8" uuid="614bb7f8-62e2-40d3-bcac-7e4a56865050">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -2395,26 +2396,26 @@ $F{dhRegEvento}.substring(11,16)]]></textFieldExpression>
 					<text><![CDATA[BASE DE CÁLCULO DO ISSQN]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="b3ede8f3-59dc-4c3b-ac18-950afd341ab0" key="textField-21" mode="Transparent" x="145" y="16" width="137" height="12"/>
+					<reportElement key="textField-21" mode="Transparent" x="145" y="16" width="137" height="12" uuid="b3ede8f3-59dc-4c3b-ac18-950afd341ab0"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10" pdfFontName="Times-Roman"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{valorTotalServicos}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="086a8da6-5613-4c76-8c22-41a33646e51d" key="textField-22" mode="Transparent" x="287" y="16" width="136" height="12"/>
+					<reportElement key="textField-22" mode="Transparent" x="287" y="16" width="136" height="12" uuid="086a8da6-5613-4c76-8c22-41a33646e51d"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10" pdfFontName="Times-Roman"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{baseIssqn}]]></textFieldExpression>
 				</textField>
 				<rectangle radius="2">
-					<reportElement uuid="6186ec5d-c24f-473b-82f4-ef58fbd07d99" key="rectangle-16" mode="Transparent" x="425" y="9" width="140" height="20">
+					<reportElement key="rectangle-16" mode="Transparent" x="425" y="9" width="140" height="20" uuid="6186ec5d-c24f-473b-82f4-ef58fbd07d99">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement uuid="d0e8af64-610b-4672-bec8-8c5a8901bf68" key="staticText-17" mode="Transparent" x="427" y="10" width="92" height="8">
+					<reportElement key="staticText-17" mode="Transparent" x="427" y="10" width="92" height="8" uuid="d0e8af64-610b-4672-bec8-8c5a8901bf68">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -2423,7 +2424,7 @@ $F{dhRegEvento}.substring(11,16)]]></textFieldExpression>
 					<text><![CDATA[VALOR DO ISSQN]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="08c191ca-855c-4b98-83b3-9282090b9ee2" key="textField-23" mode="Transparent" x="428" y="16" width="135" height="12"/>
+					<reportElement key="textField-23" mode="Transparent" x="428" y="16" width="135" height="12" uuid="08c191ca-855c-4b98-83b3-9282090b9ee2"/>
 					<textElement textAlignment="Right">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
@@ -2435,7 +2436,7 @@ $F{dhRegEvento}.substring(11,16)]]></textFieldExpression>
 	<background>
 		<band height="640" splitType="Stretch">
 			<staticText>
-				<reportElement uuid="f4bfd85b-66c6-400e-9963-f70777e250a3" key="staticText-68" x="200" y="60" width="121" height="575" forecolor="#919191">
+				<reportElement key="staticText-68" x="200" y="60" width="121" height="575" forecolor="#919191" uuid="f4bfd85b-66c6-400e-9963-f70777e250a3">
 					<printWhenExpression><![CDATA[new Boolean($F{tipoEmissao}.equalsIgnoreCase("Contingência") || $F{tipoEmissao}.equalsIgnoreCase("Contingência FS-DA"))]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center" rotation="Left">
@@ -2445,7 +2446,7 @@ $F{dhRegEvento}.substring(11,16)]]></textFieldExpression>
 Impresso em decorrência de problemas técnicos.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="58897811-55e9-4fcd-9c9f-4a2175ead695" key="staticText-69" x="199" y="60" width="121" height="575" forecolor="#919191">
+				<reportElement key="staticText-69" x="199" y="60" width="121" height="575" forecolor="#919191" uuid="58897811-55e9-4fcd-9c9f-4a2175ead695">
 					<printWhenExpression><![CDATA[new Boolean($F{tipoEmissao}.equalsIgnoreCase("Contingência via DPEC"))]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center" rotation="Left">
@@ -2455,7 +2456,7 @@ Impresso em decorrência de problemas técnicos.]]></text>
 DPEC regularmente recebido pela Receita Federal do Brasil]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="b5fb2524-d4ad-425c-9f90-275ff5c5fd1d" key="" x="211" y="60" width="121" height="575" forecolor="#919191">
+				<reportElement key="" x="211" y="60" width="121" height="575" forecolor="#919191" uuid="b5fb2524-d4ad-425c-9f90-275ff5c5fd1d">
 					<printWhenExpression><![CDATA[$F{tpAmb}.equals( "2" )]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
@@ -2472,7 +2473,7 @@ Sem Valor Fiscal]]></text>
 	<pageHeader>
 		<band height="59" splitType="Stretch">
 			<line>
-				<reportElement uuid="bd5570b5-8f06-4fed-bd00-a83f0a34ed42" key="line-1" mode="Transparent" x="0" y="56" width="565" height="1" forecolor="#000000">
+				<reportElement key="line-1" mode="Transparent" x="0" y="56" width="565" height="1" forecolor="#000000" uuid="bd5570b5-8f06-4fed-bd00-a83f0a34ed42">
 					<printWhenExpression><![CDATA[$V{PAGE_NUMBER}.intValue() == 1]]></printWhenExpression>
 				</reportElement>
 				<graphicElement fill="Solid">
@@ -2480,27 +2481,27 @@ Sem Valor Fiscal]]></text>
 				</graphicElement>
 			</line>
 			<rectangle radius="2">
-				<reportElement uuid="26c9f025-4651-44ab-84f1-2f24cb696065" key="rectangle-1" mode="Transparent" x="-200" y="-100" width="475" height="25">
+				<reportElement key="rectangle-1" mode="Transparent" x="-200" y="-100" width="475" height="25" uuid="26c9f025-4651-44ab-84f1-2f24cb696065">
 					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
 				</reportElement>
 			</rectangle>
 			<rectangle radius="2">
-				<reportElement uuid="5218b0c2-d750-485d-b9f5-b332882ccecc" key="rectangle-2" mode="Transparent" x="0" y="27" width="85" height="25">
+				<reportElement key="rectangle-2" mode="Transparent" x="0" y="27" width="85" height="25" uuid="5218b0c2-d750-485d-b9f5-b332882ccecc">
 					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
 				</reportElement>
 			</rectangle>
 			<rectangle radius="2">
-				<reportElement uuid="f2a099ca-1187-4e1c-beed-cddd6676bb97" key="rectangle-3" mode="Transparent" x="85" y="27" width="290" height="25">
+				<reportElement key="rectangle-3" mode="Transparent" x="85" y="27" width="290" height="25" uuid="f2a099ca-1187-4e1c-beed-cddd6676bb97">
 					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
 				</reportElement>
 			</rectangle>
 			<rectangle radius="2">
-				<reportElement uuid="4a360537-6c3f-4435-8cc1-e704c4b7f927" key="rectangle-4" mode="Transparent" x="475" y="2" width="90" height="50">
+				<reportElement key="rectangle-4" mode="Transparent" x="475" y="2" width="90" height="50" uuid="4a360537-6c3f-4435-8cc1-e704c4b7f927">
 					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
 				</reportElement>
 			</rectangle>
 			<staticText>
-				<reportElement uuid="d9798a5a-9366-46b1-be6c-14727072044c" key="staticText-1" mode="Transparent" x="2" y="29" width="75" height="8">
+				<reportElement key="staticText-1" mode="Transparent" x="2" y="29" width="75" height="8" uuid="d9798a5a-9366-46b1-be6c-14727072044c">
 					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -2509,7 +2510,7 @@ Sem Valor Fiscal]]></text>
 				<text><![CDATA[DATA DE RECEBIMENTO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="fa1e4e40-7e57-4645-a603-e1dca23199f1" key="staticText-2" mode="Transparent" x="87" y="29" width="223" height="8">
+				<reportElement key="staticText-2" mode="Transparent" x="87" y="29" width="223" height="8" uuid="fa1e4e40-7e57-4645-a603-e1dca23199f1">
 					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -2518,7 +2519,7 @@ Sem Valor Fiscal]]></text>
 				<text><![CDATA[IDENTIFICAÇÃO E ASSINATURA DO RECEBEDOR]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="1062bc32-0666-4f0e-baea-bfdeafcf75d9" key="staticText-3" x="475" y="4" width="90" height="20">
+				<reportElement key="staticText-3" x="475" y="4" width="90" height="20" uuid="1062bc32-0666-4f0e-baea-bfdeafcf75d9">
 					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -2527,7 +2528,7 @@ Sem Valor Fiscal]]></text>
 				<text><![CDATA[NF-e]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement uuid="96a5c659-62be-4d75-b55f-f686972c9056" key="textField-1" x="475" y="24" width="90" height="12">
+				<reportElement key="textField-1" x="475" y="24" width="90" height="12" uuid="96a5c659-62be-4d75-b55f-f686972c9056">
 					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1))]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center">
@@ -2536,7 +2537,7 @@ Sem Valor Fiscal]]></text>
 				<textFieldExpression><![CDATA["Nº " + $F{nNF}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement uuid="48257a23-c4db-49e6-9726-bffeb6c80096" key="textField-2" x="475" y="36" width="90" height="12">
+				<reportElement key="textField-2" x="475" y="36" width="90" height="12" uuid="48257a23-c4db-49e6-9726-bffeb6c80096">
 					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1))]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center">
@@ -2545,7 +2546,7 @@ Sem Valor Fiscal]]></text>
 				<textFieldExpression><![CDATA["SÉRIE: " + $F{serie}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement uuid="d0e3ac60-2bf0-4e7e-a5f6-9d3f2186a186" key="textField-6" mode="Transparent" x="2" y="4" width="469" height="8">
+				<reportElement key="textField-6" mode="Transparent" x="2" y="4" width="469" height="8" uuid="d0e3ac60-2bf0-4e7e-a5f6-9d3f2186a186">
 					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1))]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -2554,7 +2555,7 @@ Sem Valor Fiscal]]></text>
 				<textFieldExpression><![CDATA["RECEBEMOS DE " + $F{emitenteRazaoSocial} + " OS PRODUTOS/SERVIÇOS CONSTANTES DA NOTA FISCAL INDICADA AO LADO"]]></textFieldExpression>
 			</textField>
 			<componentElement>
-				<reportElement uuid="1b21a06f-a09c-48d2-a7c4-e7699ea54e71" stretchType="RelativeToBandHeight" x="377" y="29" width="97" height="30">
+				<reportElement stretchType="RelativeToBandHeight" x="377" y="29" width="97" height="30" uuid="1b21a06f-a09c-48d2-a7c4-e7699ea54e71">
 					<printWhenExpression><![CDATA[$V{PAGE_NUMBER}.intValue() == 1]]></printWhenExpression>
 				</reportElement>
 				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128C" drawText="false" checksumRequired="false" barHeight="0">
@@ -2562,7 +2563,7 @@ Sem Valor Fiscal]]></text>
 				</jr:barbecue>
 			</componentElement>
 			<rectangle radius="2">
-				<reportElement uuid="da7c979e-8b05-4571-916a-09588000312c" key="rectangle-2" mode="Transparent" x="0" y="2" width="475" height="25">
+				<reportElement key="rectangle-2" mode="Transparent" x="0" y="2" width="475" height="25" uuid="da7c979e-8b05-4571-916a-09588000312c">
 					<printWhenExpression><![CDATA[Boolean.valueOf(($V{PAGE_NUMBER}.intValue() == 1) && !($P{PreImpresso}.booleanValue()))]]></printWhenExpression>
 				</reportElement>
 			</rectangle>
@@ -2572,12 +2573,12 @@ Sem Valor Fiscal]]></text>
 		<band height="103" splitType="Stretch">
 			<printWhenExpression><![CDATA[Boolean.valueOf($V{PAGE_NUMBER}.intValue() == 1)]]></printWhenExpression>
 			<rectangle radius="2">
-				<reportElement uuid="9b648bb1-98ef-4aed-9ca1-93fab3d2b73b" key="rectangle-17" mode="Transparent" x="0" y="11" width="284" height="92">
+				<reportElement key="rectangle-17" mode="Transparent" x="0" y="11" width="284" height="92" uuid="9b648bb1-98ef-4aed-9ca1-93fab3d2b73b">
 					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 				</reportElement>
 			</rectangle>
 			<staticText>
-				<reportElement uuid="4606afb5-99e5-498f-ba31-4362a4c12a5c" key="staticText-19" mode="Transparent" x="4" y="1" width="136" height="10">
+				<reportElement key="staticText-19" mode="Transparent" x="4" y="1" width="136" height="10" uuid="4606afb5-99e5-498f-ba31-4362a4c12a5c">
 					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -2586,7 +2587,7 @@ Sem Valor Fiscal]]></text>
 				<text><![CDATA[DADOS ADICIONAIS]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="d5f7e485-373f-4e96-8a31-72912038b47b" key="staticText-20" mode="Transparent" x="2" y="12" width="86" height="8">
+				<reportElement key="staticText-20" mode="Transparent" x="2" y="12" width="86" height="8" uuid="d5f7e485-373f-4e96-8a31-72912038b47b">
 					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -2595,12 +2596,12 @@ Sem Valor Fiscal]]></text>
 				<text><![CDATA[INFORMAÇÕES COMPLEMENTARES]]></text>
 			</staticText>
 			<rectangle radius="2">
-				<reportElement uuid="b5e269d0-e611-4419-8535-8710a6afae7b" key="rectangle-18" mode="Transparent" x="284" y="11" width="281" height="92">
+				<reportElement key="rectangle-18" mode="Transparent" x="284" y="11" width="281" height="92" uuid="b5e269d0-e611-4419-8535-8710a6afae7b">
 					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 				</reportElement>
 			</rectangle>
 			<staticText>
-				<reportElement uuid="e3150e26-3fd3-4e7d-ab97-c20b57317c83" key="staticText-21" mode="Transparent" x="286" y="12" width="86" height="8">
+				<reportElement key="staticText-21" mode="Transparent" x="286" y="12" width="86" height="8" uuid="e3150e26-3fd3-4e7d-ab97-c20b57317c83">
 					<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -2609,14 +2610,12 @@ Sem Valor Fiscal]]></text>
 				<text><![CDATA[RESERVADO AO FISCO]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement uuid="f6d01a1f-ac09-49bd-976d-bc2af3dcbf06" key="textField-69" x="2" y="20" width="280" height="83" isRemoveLineWhenBlank="true"/>
+				<reportElement key="textField-69" x="2" y="20" width="280" height="83" isRemoveLineWhenBlank="true" uuid="f6d01a1f-ac09-49bd-976d-bc2af3dcbf06"/>
 				<textElement markup="html">
 					<font fontName="Liberation Serif" size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($F{informacoesComplementares}!=null ? "Interesse do fisco: " + $F{informacoesComplementares} + "\n" : "" )
- +
-($F{informacoesComplementares2}!=null ? "Interesse do contribuinte: " + $F{informacoesComplementares2} + "\n" : "" )
- +
+				<textFieldExpression><![CDATA[($F{informacoesComplementares}!=null ? "Interesse do fisco: " + $F{informacoesComplementares}.replaceAll(" - ", "<br>") + "<br>" : "" ) +
+($F{informacoesComplementares2}!=null ? "Interesse do contribuinte: " + $F{informacoesComplementares2}.replaceAll(" - ", "<br>") + "<br>" : "" ) +
 ($F{nfReferenciada}!=null ? "Chave NF Referenciada: " + $F{nfReferenciada} : "" )]]></textFieldExpression>
 			</textField>
 		</band>

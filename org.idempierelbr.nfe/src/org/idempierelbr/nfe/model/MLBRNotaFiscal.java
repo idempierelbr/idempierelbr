@@ -60,6 +60,7 @@ import org.compiere.util.Msg;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.nfe.base.NFeXMLGenerator;
 import org.idempierelbr.nfe.util.NFeUtil;
+import org.idempierelbr.tax.model.MLBRDocLineICMS;
 import org.idempierelbr.tax.provider.TaxProviderFactory;
 
 import com.google.zxing.BarcodeFormat;
@@ -1226,5 +1227,89 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 		}
 		
 		return totalInsurance;
+	}
+	
+	/**
+	 * Get ICMS tax amt of DIFAL in Receiver UF
+	 * 
+	 * @return
+	 */
+	public BigDecimal getTotalTaxAmtDifalDest() {
+
+		// total
+		BigDecimal totalTaxAmt = Env.ZERO;
+		
+		// for each line, get details and ICMS lines
+		for (MLBRNotaFiscalLine line : getLines()) {
+
+			// detail
+			MLBRDocLineDetailsNfe detail = MLBRDocLineDetailsNfe.getOfPO(line);
+			if (detail != null) {
+
+				// icms line
+				MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(detail);
+				if (icmsLines != null && icmsLines.length > 0) {
+					BigDecimal taxAmt = icmsLines[0].getLBR_DIFAL_TaxAmtICMSUFDest();
+					totalTaxAmt = totalTaxAmt.add(taxAmt != null ? taxAmt: Env.ZERO);
+				}
+			}
+		}
+		return totalTaxAmt;
+	}
+	
+	/**
+	 * Get ICMS tax amt of DIFAL in Sender UF
+	 * 
+	 * @return
+	 */
+	public BigDecimal getTotalTaxAmtDifalRemet() {
+
+		// total
+		BigDecimal totalTaxAmt = Env.ZERO;
+		
+		// for each line, get details and ICMS lines
+		for (MLBRNotaFiscalLine line : getLines()) {
+
+			// detail
+			MLBRDocLineDetailsNfe detail = MLBRDocLineDetailsNfe.getOfPO(line);
+			if (detail != null) {
+				
+				// icms line
+				MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(detail);
+				if (icmsLines != null && icmsLines.length > 0) {
+					BigDecimal taxAmt = icmsLines[0].getLBR_DIFAL_TaxAmtICMSUFRemet();
+					totalTaxAmt = totalTaxAmt.add(taxAmt != null ? taxAmt: Env.ZERO);
+				}
+			}
+		}
+		return totalTaxAmt;
+	}
+	
+	/**
+	 * Get ICMS tax amt of FCP
+	 * 
+	 * @return
+	 */
+	public BigDecimal getTotalTaxAmtDifalFCP() {
+
+		// total
+		BigDecimal totalTaxAmt = Env.ZERO;
+		
+		// for each line, get details and ICMS lines
+		for (MLBRNotaFiscalLine line : getLines()) {
+
+			// detail
+			MLBRDocLineDetailsNfe detail = MLBRDocLineDetailsNfe.getOfPO(line);
+			if (detail != null) {
+
+				// icms line
+				MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(detail);
+				if (icmsLines != null && icmsLines.length > 0) {
+					BigDecimal taxAmt = icmsLines[0].getLBR_DIFAL_TaxAmtFCPUFDest();
+					totalTaxAmt = totalTaxAmt.add(taxAmt != null ? taxAmt: Env.ZERO);
+				}
+			}
+		}
+		return totalTaxAmt;
 	}
 }

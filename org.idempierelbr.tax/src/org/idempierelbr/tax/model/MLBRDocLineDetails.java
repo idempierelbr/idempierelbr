@@ -3,16 +3,21 @@ package org.idempierelbr.tax.model;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Map;
 import java.util.Properties;
+
 import org.adempiere.model.POWrapper;
 import org.compiere.model.MBPartner;
+import org.compiere.model.MBPartnerLocation;
+import org.compiere.model.MOrgInfo;
 import org.compiere.model.MProduct;
 import org.compiere.model.MSysConfig;
 import org.compiere.model.MTax;
 import org.compiere.model.PO;
 import org.compiere.util.CLogger;
-import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.core.wrapper.I_W_C_BPartner;
@@ -198,8 +203,10 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	/**
 	 * 	Create all children (taxes) of Doc Line Details
 	 */
-	protected void createChildren(Map<Integer, Object[]> taxes,
-			MLBRTax tax, int C_Tax_ID, MProduct product, int C_BPartner_ID) {
+	protected void createChildren(Map<Integer, Object[]> taxes, MLBRTax tax,
+			int C_Tax_ID, MProduct product, int C_BPartner_ID,
+			int C_BPartnerLocationTo_ID, String LBR_TransactionType,
+			Timestamp dateDoc) {
 		
 		for (MLBRTaxLine tl : tax.getLines()) {
 			//if (tl.getLBR_TaxAmt() == null || tl.getLBR_TaxAmt().compareTo(Env.ZERO) == 0 || !tl.isLBR_PostTax())
@@ -253,7 +260,8 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMS ||
 						taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMSST) {
 					
-					createICMS(taxStatus.getName(), taxBaseTypeCode, tl, product, taxChildW, C_BPartner_ID);
+					createICMS(taxStatus.getName(), taxBaseTypeCode, tl, product, taxChildW, 
+							C_BPartner_ID, C_BPartnerLocationTo_ID, LBR_TransactionType, dateDoc);
 				} 
 				// IPI
 				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_IPI) {
@@ -278,7 +286,9 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	/**
 	 * 	Create ICMS (child of Doc Line Details)
 	 */
-	private void createICMS(String taxStatus, Integer taxBaseTypeCode, MLBRTaxLine tl, MProduct product, I_W_C_Tax taxChildW, int C_BPartner_ID) {
+	private void createICMS(String taxStatus, Integer taxBaseTypeCode, MLBRTaxLine tl, MProduct product, 
+			I_W_C_Tax taxChildW, int C_BPartner_ID, int C_BPartnerLocationTo_ID, String LBR_TransactionType, Timestamp dateDoc) {
+		
 		String productSource = product.get_ValueAsString("LBR_ProductSource");
 		
 		if (productSource != null && productSource.isEmpty())
@@ -409,14 +419,175 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			icms.setLBR_TaxAmtCredit(tl.getLBR_TaxAmt());
 		}
 		
-		// fill CEST
+		/*
+		 * Fill CEST
+		 */
 		MLBRCestNCMProd m_cest = MLBRCestNCMProd.get(getCtx(), product.get_ID(), getLBR_NCM_ID(), get_TrxName());
-		if (m_cest != null && m_cest.get_ID() > 0)
+		if (m_cest != null && m_cest.get_ID() > 0) {
 			icms.set_ValueOfColumn("LBR_CEST_ID", m_cest.getLBR_CEST_ID());
+		}
+		
+		
+		/* 
+		 * Calculate DIFAL
+		 *  
+		 * Only when: Não Contribuinte de ICMS 
+		 * 				+ Venda Interestadual 
+		 * 				+ Consumidor Final 
+		 * 				+ Não Possuí ST 
+		 * 				+ Possuí ICMS Integral
+		*/  
+		if (TextUtil
+				.match(taxStatus,
+						MLBRDocLineICMS.LBR_ICMS_TAXSTATUSTN_00_TributadaIntegralmente,
+						MLBRDocLineICMS.LBR_ICMS_TAXSTATUSSN_101_TributadaComPermissaoDeCredito)
+				&& MBPartner.get(getCtx(), C_BPartner_ID)
+						.get_ValueAsString("LBR_TypeIE")
+						.equals(I_W_C_BPartner.LBR_TYPEIE_NãoContribuinte)
+				&& LBR_TransactionType != null
+				&& LBR_TransactionType.equals("END")
+				&& getLBR_CFOP_ID() > 0
+				&& getLBR_CFOP().getValue().startsWith("6")
+				&& taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMS) {
+		
+			// do calc 
+			calculateDIFAL(icms, C_BPartnerLocationTo_ID, dateDoc);
+		}
 		
 		icms.saveEx();
 	}
 	
+	
+	/**
+	 * Calculate DIFAL - NT 2015-003
+	 * 
+	 * @param icms
+	 * @param C_BPartnerLocationTo_ID
+	 * @param dateDoc
+	 */
+	private void calculateDIFAL(MLBRDocLineICMS icms, int C_BPartnerLocationTo_ID, Timestamp dateDoc) {
+
+		// local vars 
+		BigDecimal taxBaseAmt = Env.ZERO;
+		BigDecimal internalTaxRate = Env.ZERO;
+		BigDecimal externalTaxRate = Env.ZERO;
+		BigDecimal partRate = Env.ZERO;
+		BigDecimal taxAmtSenderUF = Env.ZERO;
+		BigDecimal taxAmtReceiverUF = Env.ZERO;
+		BigDecimal diffTaxRate = Env.ZERO;
+		BigDecimal diffTaxAmt = Env.ZERO;
+		
+		// org info
+		MOrgInfo orgInfo = MOrgInfo.get(getCtx(), icms.getAD_Org_ID(),
+				get_TrxName());
+		if (orgInfo.getC_Location_ID() <= 0
+				|| orgInfo.getC_Location().getC_Region_ID() <= 0) {
+			log.severe("DIFAL não pode ser calculado. Erro: UF da Organização é inválida!");
+			return;
+		}
+
+		// bpartner location to
+		MBPartnerLocation bpLocationTo = new MBPartnerLocation(getCtx(),
+				C_BPartnerLocationTo_ID, get_TrxName());
+		if (bpLocationTo.getC_Location_ID() <= 0
+				|| bpLocationTo.getC_Location().getC_Region_ID() <= 0) {
+			log.severe("DIFAL não pode ser calculado. Erro: UF do Parceiro de Negócios é inválida!");
+			return;
+		}
+
+		// check is is the same location, if true, return
+		if (bpLocationTo.getC_Location().getC_Region_ID() == orgInfo
+				.getC_Location().getC_Region_ID())
+			return;
+
+		// receiver internal tax, from icmsmatrix
+		MLBRICMSMatrix internalTax = MLBRICMSMatrix.get(getCtx(), icms
+				.getAD_Org_ID(), bpLocationTo.getC_Location().getC_Region_ID(),
+				bpLocationTo.getC_Location().getC_Region_ID(), dateDoc,
+				get_TrxName());
+
+		// check receiver internal tax
+		if (internalTax == null || internalTax.getLBR_Tax_ID() <= 0) {
+			log.severe("DIFAL não pode ser calculado. Erro: Nenhuma Alíquota interna definida para a UF do Destinatário!");
+			return;
+		}
+
+		// icms from internal tax matrix
+		MLBRTax tax = new MLBRTax(getCtx(), internalTax.getLBR_Tax_ID(),
+				get_TrxName());
+		for (MLBRTaxLine tl : tax.getLines()) {
+			if (tl.getLBR_TaxName_ID() > 0
+					&& tl.getLBR_TaxName().getName().equals("ICMSPROD")) {
+				internalTaxRate = tl.getLBR_TaxRate();
+				break;
+			}
+		}
+
+		// check internal rate
+		if (internalTaxRate == null || internalTaxRate.signum() == 0) {
+			log.severe("DIFAL não pode ser calculado. Erro: Alíquota Interna definida para a UF do Destinatário é inválida!");
+			return;
+		}
+
+		// tax base amt of icms record
+		taxBaseAmt = icms.getLBR_TaxBaseAmt();
+		if (taxBaseAmt == null || taxBaseAmt.signum() == 0) {
+			log.severe("DIFAL não pode ser calculado. Erro: Base de cálculo do ICMS é inválida!");
+			return;
+		}
+
+		// get transaction tax rate (external) of icms record
+		externalTaxRate = icms.getLBR_TaxRate();
+		if (externalTaxRate == null
+				|| !(externalTaxRate.compareTo(new BigDecimal(12)) == 0
+						|| externalTaxRate.compareTo(new BigDecimal(7)) == 0 || externalTaxRate
+						.compareTo(new BigDecimal(4)) == 0)) {
+			log.severe("DIFAL não pode ser calculado. Erro: Alíquota Externa utilizada na transação com a UF do Destinatário é inválida!");
+			return;
+		}
+	
+		// get icms share part by date
+		Calendar cal = new GregorianCalendar ();
+		cal.setTimeInMillis(dateDoc.getTime());
+		if (cal.before (new GregorianCalendar (2017, 01, 01)))
+			partRate = new BigDecimal (40);
+		else if (cal.before (new GregorianCalendar (2018, 01, 01)))
+			partRate = new BigDecimal (60);
+		else if (cal.before (new GregorianCalendar (2019, 01, 01)))
+			partRate = new BigDecimal (80);
+		else
+			partRate = new BigDecimal (100);
+		
+		// set scale for all calc vars
+		internalTaxRate = internalTaxRate.setScale(17, RoundingMode.HALF_UP);
+		externalTaxRate = externalTaxRate.setScale(17, RoundingMode.HALF_UP);
+		partRate = partRate.setScale(17, RoundingMode.HALF_UP);
+		taxBaseAmt = taxBaseAmt.setScale(17, RoundingMode.HALF_UP);
+				
+		// tax rate diff = (internal - external)/100
+		diffTaxRate = (internalTaxRate.subtract(externalTaxRate)).divide(Env.ONEHUNDRED);
+
+		// calc diff tax amt = tax base amt * diff tax rate
+		diffTaxAmt = taxBaseAmt.multiply(diffTaxRate);
+
+		// calc receiver part
+		taxAmtReceiverUF = diffTaxAmt.multiply(partRate.divide(Env.ONEHUNDRED));
+
+		// calc sender part
+		taxAmtSenderUF = diffTaxAmt.subtract(taxAmtReceiverUF);
+		
+		// set amt to icms details
+		icms.setLBR_DIFAL_RateICMSInterPart(partRate.setScale(2, RoundingMode.HALF_UP));
+		icms.setLBR_DIFAL_TaxRateICMSUFDest(internalTaxRate.setScale(2, RoundingMode.HALF_UP));
+		icms.setLBR_DIFAL_TaxAmtICMSUFDest(taxAmtReceiverUF.setScale(2, RoundingMode.HALF_UP));
+		icms.setLBR_DIFAL_TaxAmtICMSUFRemet(taxAmtSenderUF.setScale(2, RoundingMode.HALF_UP));
+		
+		// TODO: Fundo de Combate a Pobreza
+		icms.setLBR_DIFAL_TaxRateFCPUFDest(Env.ZERO);
+		icms.setLBR_DIFAL_TaxAmtFCPUFDest(Env.ZERO);		
+	}
+	
+
 	/**
 	 * 	Create IPI (child of Doc Line Details)
 	 */

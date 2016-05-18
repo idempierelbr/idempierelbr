@@ -19,12 +19,12 @@ public class CalloutBPartner implements IColumnCallout {
 		if (mTab.getTableName().equals(MBPartner.Table_Name))
 			if (mField.getColumnName().equals(I_W_C_BPartner.COLUMNNAME_LBR_BPTypeBR))
 				return clearBPTypeBRUnnecessaryFields(mTab, value);
-			else if (mField.getColumnName().equals(I_W_C_BPartner.COLUMNNAME_LBR_IsIEExempt))
+			else if (mField.getColumnName().equals(I_W_C_BPartner.COLUMNNAME_LBR_TypeIE))
 				return clearIEField(mTab, value);
 			else 
 				return null;
 		else if (mTab.getTableName().equals(MBPartnerLocation.Table_Name))
-			if (mField.getColumnName().equals(I_W_C_BPartner_Location.COLUMNNAME_LBR_IsIEExempt))
+			if (mField.getColumnName().equals(I_W_C_BPartner_Location.COLUMNNAME_LBR_TypeIE))
 				return clearIEField(mTab, value);
 			else 
 				return null;
@@ -33,21 +33,17 @@ public class CalloutBPartner implements IColumnCallout {
 	}
 
 	/**
-	* Limpa o campo LBR_IE
-	*/
+	 * Limpa o campo LBR_IE
+	 */
 	private String clearIEField(GridTab mTab, Object value) {
-		String columnName = "";
-		
-		if (mTab.getTableName().equals(MBPartner.Table_Name))
-			columnName = I_W_C_BPartner.COLUMNNAME_LBR_IE;
-		else if (mTab.getTableName().equals(MBPartnerLocation.Table_Name))
-			columnName = I_W_C_BPartner_Location.COLUMNNAME_LBR_IE;
-		
-		String ie = (String) mTab.getValue(columnName);
-		
-		if (ie != null && !ie.equals(""))
+
+		// get column name
+		String columnName = I_W_C_BPartner.COLUMNNAME_LBR_IE;
+
+		// clear field always when bpartner type ie is diff "1"
+		if (value == null || !value.equals("1"))
 			mTab.setValue(columnName, null);
-		
+
 		return null;
 	}
 
@@ -61,16 +57,16 @@ public class CalloutBPartner implements IColumnCallout {
 			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_Suframa, null);
 			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_CPF, null);
 			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_RG, null);
-			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_IsIEExempt, false);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_TypeIE, null);
 		} else if (value.equals("PF")) {
 			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_CNPJ, null);
 			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_CCM, null);
 			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_Suframa, null);
-			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_IsIEExempt, true);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_TypeIE, null);
 		} else if (value.equals("PJ")) {
 			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_CPF, null);
 			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_RG, null);
-			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_IsIEExempt, false);
+			mTab.setValue(I_W_C_BPartner.COLUMNNAME_LBR_TypeIE, null);
 		}
 		
 		clearIEField(mTab, value);	

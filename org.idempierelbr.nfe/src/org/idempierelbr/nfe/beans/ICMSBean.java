@@ -28,6 +28,7 @@ public class ICMSBean
 	private ICMSGrupoBean ICMS70;
 	private ICMSGrupoBean ICMS90;
 	private ICMSGrupoBean ICMSPart;
+	private ICMSGrupoBean ICMSUFDest;
 	private ICMSGrupoBean ICMSST;
 	private ICMSGrupoBean ICMSSN101;
 	private ICMSGrupoBean ICMSSN102;
@@ -180,6 +181,12 @@ public class ICMSBean
 	{
 		ICMSSN900 = iCMSSN900;
 	}
+	public ICMSGrupoBean getICMSUFDest() {
+		return ICMSUFDest;
+	}
+	public void setICMSUFDest(ICMSGrupoBean iCMSUFDest) {
+		ICMSUFDest = iCMSUFDest;
+	}
 	public void setDetails (ICMSGrupoBean detICMS, String taxStatusDetailed)
 	{
 		if (taxStatusDetailed == null || detICMS == null)
@@ -268,5 +275,7 @@ public class ICMSBean
 		else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CSOSN_900)) {
 			setICMSSN900(detICMS);
 		} 
-	}	//	setDetails
+	}	//	setDetails	
+	
+
 }	//	ICMSBean

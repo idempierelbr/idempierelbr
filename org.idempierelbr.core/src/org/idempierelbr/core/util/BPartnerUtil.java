@@ -126,7 +126,7 @@ public abstract class BPartnerUtil
 			 */
 			if (MSysConfig.getBooleanValue("LBR_USE_UNIFIED_BP", true))
 			{
-				if (bp.isLBR_IsIEExempt())
+				if (bp.getLBR_TypeIE().equals(I_W_C_BPartner.LBR_TYPEIE_Isento))
 					return "ISENTO";
 				else
 					return bp.getLBR_IE();
@@ -137,7 +137,7 @@ public abstract class BPartnerUtil
 			 */
 			else
 			{
-				if (bpLW.isLBR_IsIEExempt())
+				if (bpLW.getLBR_TypeIE().equals(I_W_C_BPartner.LBR_TYPEIE_Isento))
 					return "ISENTO";
 				else
 					return bpLW.getLBR_IE();

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_Element">
+<!--iDempiere(r) Release 3.1_2015-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Element">
  <row id="101" trl="Y">
   <value column="Name" original="Attachment">Anexo</value>
   <value column="PrintName" original="Attachment">Anexo</value>
@@ -56880,6 +56878,46 @@ Example this value = 60. user can't reuse password in history has age < 60
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="800176" trl="N">
+  <value column="Name" original="CEST">CEST</value>
+  <value column="PrintName" original="CEST">CEST</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800177" trl="N">
+  <value column="Name" original="LBR_CEST_UU">LBR_CEST_UU</value>
+  <value column="PrintName" original="LBR_CEST_UU">LBR_CEST_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800178" trl="N">
+  <value column="Name" original="CEST relations to NCM and products">Relação de CEST com Produto ou NCM</value>
+  <value column="PrintName" original="CEST relations to NCM and products">Relação de CEST com Produto ou NCM</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800179" trl="N">
+  <value column="Name" original="LBR_CEST_NCMProd_UU">LBR_CEST_NCMProd_UU</value>
+  <value column="PrintName" original="LBR_CEST_NCMProd_UU">LBR_CEST_NCMProd_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row id="800180" trl="Y">
   <value column="Name" original="Tax Assessment">Apuração de Impostos</value>
   <value column="PrintName" original="Tax Assessment">Apuração de Impostos</value>
@@ -57750,6 +57788,83 @@ Example this value = 60. user can't reuse password in history has age < 60
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="800269" trl="Y">
+  <value column="Name" original="DIFAL Tax Rate of &quot;Fundo de Combate a Pobreza&quot;">Alíquota do "Fundo de Combate a Pobreza" - DIFAL</value>
+  <value column="PrintName" original="DIFAL Tax Rate of &quot;Fundo de Combate a Pobreza&quot;">Alíquota do "Fundo de Combate a Pobreza" - DIFAL</value>
+  <value column="Description" original="">Alíquota utilizada para o "Fundo de Combate a Pobreza" no DIFAL</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800270" trl="Y">
+  <value column="Name" original="DIFAL Internal Tax Rate in Receiver UF">Alíquota Interna na UF de Destino - DIFAL</value>
+  <value column="PrintName" original="DIFAL Internal Tax Rate in Receiver UF">Alíquota Interna na UF de Destino - DIFAL</value>
+  <value column="Description" original="">Alíquota Utilizada para Vendas Internas na UF de Destino</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800271" trl="Y">
+  <value column="Name" original="DIFAL Share Rate">Percentual Provisório de Partilha - DIFAL</value>
+  <value column="PrintName" original="DIFAL Share Rate">Percentual Provisório de Partilha - DIFAL</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="">Percentual de ICMS Interestadual para a UF de destino: - 40% em 2016;
+- 60% em 2017;
+- 80% em 2018;
+- 100% a partir de 2019.</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800272" trl="Y">
+  <value column="Name" original="DIFAL Tax Amt of &quot;Fundo de Combate a Pobreza&quot;">Valor do ICMS do FCP da UF de Destino</value>
+  <value column="PrintName" original="DIFAL Tax Amt of &quot;Fundo de Combate a Pobreza&quot;">Valor do ICMS do FCP da UF de Destino</value>
+  <value column="Description" original="">Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP) da UF de destino.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800273" trl="Y">
+  <value column="Name" original="DIFAL Tax Amt in Receiver UF">Valor do ICMS da UF de Destino</value>
+  <value column="PrintName" original="DIFAL Tax Amt in Receiver UF">Valor do ICMS da UF de Destino</value>
+  <value column="Description" original="">Valor do ICMS Interestadual para a UF de destino (sem o valor do ICMS relativo ao FCP)</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800274" trl="Y">
+  <value column="Name" original="DIFAL Tax Amt in Sender UF">Valor do ICMS da UF Remetente</value>
+  <value column="PrintName" original="DIFAL Tax Amt in Sender UF">Valor do ICMS da UF Remetente</value>
+  <value column="Description" original="">Valor do ICMS Interestadual para a UF do remetente. Nota: A partir de 2019, este valor será zero.</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800275" trl="Y">
+  <value column="Name" original="IE Inscription Type">Tipo da IE</value>
+  <value column="PrintName" original="IE Inscription Type">Tipo da IE</value>
+  <value column="Description" original="">Tipo da Inscrição Estadual para Contribuinte de ICMS</value>
+  <value column="Help" original="">Tipo da Inscrição Estadual para Contribuinte de ICMS. Opções: 
+
+Contribuinte
+Isento
+Não Contribuinte</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row trl="Y" uuid="2db1c9d3-13bf-4539-baa0-45ccfb09a7a3">
   <value column="Name" original="Cód. Cidade (IBGE)">Cód. Cidade (IBGE)</value>
   <value column="PrintName" original="Cód. Cidade (IBGE)">Cód. Cidade (IBGE)</value>
@@ -57845,16 +57960,6 @@ Example this value = 60. user can't reuse password in history has age < 60
   <value column="PrintName" original="IE">IE</value>
   <value column="Description" original="Used to identify the IE (State Tax ID)">Inscrição Estadual</value>
   <value column="Help" original="Used to identify the IE (State Tax ID)">Usado para identificar a Inscrição Estadual do Parceiro de Negócios</value>
-  <value column="PO_Description" original=""/>
-  <value column="PO_Help" original=""/>
-  <value column="PO_Name" original=""/>
-  <value column="PO_PrintName" original=""/>
- </row>
- <row trl="Y" uuid="f58346e9-043a-4da7-9bbb-85b20af37286">
-  <value column="Name" original="IE Exempt">Isento de IE</value>
-  <value column="PrintName" original="IE Exempt">Isento de IE</value>
-  <value column="Description" original="Business Partner is IE Exempt">Identifica se o PN é isento de IE</value>
-  <value column="Help" original="Business Partner is IE Exempt">Usado para identificar se o Parceiro de Negócios é isento de Inscrição Estadual</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>

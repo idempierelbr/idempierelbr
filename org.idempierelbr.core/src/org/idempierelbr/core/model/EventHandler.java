@@ -163,8 +163,8 @@ public class EventHandler extends AbstractEventHandler {
 					// salva apenas a raiz do CNPJ
 					bpW.setLBR_CNPJ(bpW.getLBR_CNPJ().substring(0, 8) + "000000");
 					
-					// Marca LBR_IsIEExempt como true, para manter consistência do DB
-					bpW.setLBR_IsIEExempt(true);
+					// Marca como ISENTO, para manter consistência do DB
+					bpW.setLBR_TypeIE(I_W_C_BPartner.LBR_TYPEIE_Isento);
 				}
 			}
 			

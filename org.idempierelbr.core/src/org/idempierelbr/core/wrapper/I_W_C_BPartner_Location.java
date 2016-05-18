@@ -18,6 +18,7 @@ package org.idempierelbr.core.wrapper;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+
 import org.compiere.model.*;
 import org.compiere.util.KeyNamePair;
 
@@ -80,18 +81,21 @@ public interface I_W_C_BPartner_Location
 	  */
 	public String getLBR_IE();
 
-    /** Column name LBR_IsIEExempt */
-    public static final String COLUMNNAME_LBR_IsIEExempt = "LBR_IsIEExempt";
+	/** Contribuinte = 1 */
+	public static final String LBR_TYPEIE_Contribuinte = "1";
+	/** Isento = 2 */
+	public static final String LBR_TYPEIE_Isento = "2";
+	/** Não Contribuinte = 9 */
+	public static final String LBR_TYPEIE_NãoContribuinte = "9";
 
-	/** Set IE Exempt.
-	  * Business Partner is IE Exempt
-	  */
-	public void setLBR_IsIEExempt (boolean LBR_IsIEExempt);
+	/** Column name LBR_TypeIE */
+	public static final String COLUMNNAME_LBR_TypeIE = "LBR_TypeIE";
 
-	/** Get IE Exempt.
-	  * Business Partner is IE Exempt
-	  */
-	public boolean isLBR_IsIEExempt();
+	/** Set IE Inscription Type */
+	public void setLBR_TypeIE(String LBR_TypeIE);
+
+	/** Get IE Inscription Type */
+	public String getLBR_TypeIE();
 
     /** Column name LBR_Suframa */
     public static final String COLUMNNAME_LBR_Suframa = "LBR_Suframa";

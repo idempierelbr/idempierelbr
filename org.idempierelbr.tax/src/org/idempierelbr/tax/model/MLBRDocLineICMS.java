@@ -39,6 +39,7 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 	public static final String CST_ICMS_70		= "70";
 	public static final String CST_ICMS_90_PART	= "90_1";
 	public static final String CST_ICMS_90		= "90_2";
+	public static final String CST_ICMS_DIFAL	= "ICMSUFDest";
 	//public static final String CST_ICMS_Part	= "Part";
 	//public static final String CST_ICMS_ST		= "ST";
 	

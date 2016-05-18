@@ -3344,7 +3344,7 @@ Operação interestadual para consumidor final com partilha do ICMS  devido na o
 																			<xs:documentation>Código do Município de Incidência do Imposto</xs:documentation>
 																		</xs:annotation>
 																	</xs:element>
-																	<xs:element name="cPais">
+																	<xs:element name="cPais" minOccurs="0">
 																		<xs:annotation>
 																			<xs:documentation>Código de Pais</xs:documentation>
 																		</xs:annotation>
@@ -5370,14 +5370,14 @@ alterado para tamanho variavel 1-4. (NT2011/004)</xs:documentation>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="cPais">
+			<xs:element name="cPais" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Código de Pais</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
 						<xs:whiteSpace value="preserve"/>
-						<xs:pattern value="[0-9]{3,4}"/>
+						<xs:pattern value="[0-9]{1,4}"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>

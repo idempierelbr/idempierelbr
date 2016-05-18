@@ -31,6 +31,7 @@ import org.idempierelbr.core.util.AdempiereLBR;
 import org.idempierelbr.core.util.BPartnerUtil;
 import org.idempierelbr.core.util.RemoverAcentos;
 import org.idempierelbr.core.util.TextUtil;
+import org.idempierelbr.core.wrapper.I_W_C_BPartner;
 import org.idempierelbr.nfe.beans.AdicoesDI;
 import org.idempierelbr.nfe.beans.COFINSBean;
 import org.idempierelbr.nfe.beans.COFINSSTBean;
@@ -46,6 +47,7 @@ import org.idempierelbr.nfe.beans.EnderDest;
 import org.idempierelbr.nfe.beans.EnderEmit;
 import org.idempierelbr.nfe.beans.FormasPagamentoNFEBean;
 import org.idempierelbr.nfe.beans.ICMSBean;
+import org.idempierelbr.nfe.beans.ICMSUFDestBean;
 import org.idempierelbr.nfe.beans.IIBean;
 import org.idempierelbr.nfe.beans.IPIBean;
 import org.idempierelbr.nfe.beans.ISSQNBean;
@@ -164,7 +166,6 @@ public class NFeXMLGenerator {
 
 		// Lê dados do cliente para posterior uso
 		boolean isBPartnerCashTrx = NFeUtil.isBPartnerCashTrx(ctx, bp);
-		boolean bpIEIsento = bp.get_ValueAsBoolean("LBR_IsIEExempt");
 		
 		// verifica se é NFC-e
 		boolean isNFCe = modNF.equals("65");
@@ -387,7 +388,7 @@ public class NFeXMLGenerator {
 						refNFP.setCPF(docRef.getLBR_CPF());
 					}
 					
-					if (docRef.isLBR_IsIEExempt())
+					if (docRef.getLBR_TypeIE().equals(MLBRNotaFiscalDocRef.LBR_TYPEIE_Isento))
 						refNFP.setIE("ISENTO");
 					else {
 						if (docRef.getLBR_IE() == null || docRef.getLBR_IE().trim().equals(""))
@@ -582,6 +583,64 @@ public class NFeXMLGenerator {
 			
 		}
 
+	
+		/*
+		 * Trata inscrição estadual e TAG indIeDest 
+		 */
+		
+		if (bpLoc.getC_Country_ID() != BPartnerUtil.BRASIL || isNFCe) {
+
+			/* 
+			 * Quando destinatário é estrangeiro ou documento emitido é NFC-e,
+			 * Destinatário não tem direito a crédito ICMS, por isso indiedest sempre é 9 (Não contribuinte)
+			 */
+			destinatario.setIndIEDest("9");
+			
+		} else{
+			
+			/*
+			 * Contribuinte 
+			 * Pode ter IE, set Isento ou Não-Contribuinte
+			 */
+
+			String bpIE = bp.get_ValueAsString("LBR_IE");
+			uf = UF.valueOf(bpLoc.getRegionName());
+
+			// Validação IE (validar somente quando é contribuinte)
+			if (bp.get_ValueAsString("LBR_TypeIE").equals(
+					I_W_C_BPartner.LBR_TYPEIE_Contribuinte))
+				bpIE = BPartnerUtilNfe.validaIE(bpIE, uf);
+
+			// return error
+			if (bpIE == null
+					&& bp.get_ValueAsString("LBR_TypeIE").equals(
+							I_W_C_BPartner.LBR_TYPEIE_Contribuinte))
+				return "@LBR_Recipient@: @LBR_WrongIE@";
+
+			// get suframa
+			String suframa = TextUtil.formatStringCodes(bp
+					.get_ValueAsString("LBR_Suframa"));
+
+			if (!suframa.isEmpty())
+				destinatario.setISUF(suframa);
+
+			/*
+			 * Contribuinte -> 1 + IE
+			 * Isento 		-> 2
+			 * Não Contrib. -> 9
+			 */
+			if (bp.get_ValueAsString("LBR_TypeIE").equals(
+					I_W_C_BPartner.LBR_TYPEIE_Contribuinte)) {
+				destinatario.setIndIEDest("1");
+				destinatario.setIE(bpIE);
+			} else if (bp.get_ValueAsString("LBR_TypeIE").equals(
+					I_W_C_BPartner.LBR_TYPEIE_Isento)) {
+				destinatario.setIndIEDest("2");
+			} else {
+				destinatario.setIndIEDest("9");
+			}
+		}
+		
 		/*
 		 * Preenche tags necessárias para homologação com dados fixos.
 		 */
@@ -593,51 +652,10 @@ public class NFeXMLGenerator {
 			destinatario.setxNome("NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL");
 			if (bpLoc.getC_Country_ID() == BPartnerUtil.BRASIL && !isNFCe) {
 				destinatario.setIE(null);
-				destinatario.setIndIEDest("2");
+				destinatario.setIndIEDest("9");
 			}
 		}
 		
-		/*
-		 * Trata inscrição estadual e TAG indIeDest 
-		 */
-		
-		if (bpLoc.getC_Country_ID() != BPartnerUtil.BRASIL || isNFCe) {
-
-			/* 
-			 * Quando destinatário é estrangeiro ou documento emitido é NFC-e,
-			 * Destinatário não tem direito a crédito ICMS, por isso indiedest sempre é 9 (Não contribuinte)
-			 */
-			
-			destinatario.setIndIEDest("9");
-		} else{
-			
-			/*
-			 * Contribuinte. Pode ter IE ou ser Isento 
-			 */
-			
-			String bpIE = bp.get_ValueAsString("LBR_IE");
-			uf = UF.valueOf(bpLoc.getRegionName());
-
-			// Validação IE
-			if (!bpIEIsento)
-				bpIE = BPartnerUtilNfe.validaIE(bpIE,uf);
-			
-			if (bpIE == null && !bpIEIsento) {
-				return "@LBR_Recipient@: @LBR_WrongIE@";
-			}
-			
-			String suframa = TextUtil.formatStringCodes(bp.get_ValueAsString("LBR_Suframa"));
-			
-			if (!suframa.isEmpty())	
-				destinatario.setISUF(suframa);
-			
-			if (!bpIEIsento) {
-				destinatario.setIndIEDest("1");
-				destinatario.setIE(bpIE);
-			} else { 
-				destinatario.setIndIEDest("2");
-			}
-		}
 
 		/*
 		 * Somente preenche a tag de destinatário caso o consumidor tenha cadastro ou o CPF tenha sido preenchido
@@ -1016,14 +1034,26 @@ public class NFeXMLGenerator {
 			}
 			if (issqn != null)
 				impostos.setISSQN(issqn);
+			
+			// ICMS DIFAL
+			ICMSUFDestBean icmsUFDest = null;
+			try {
+				icmsUFDest = nfLine.getICMSDIFAL();
+			} catch(AdempiereException e) {
+				return e.getMessage();
+			}
+			if (icmsUFDest != null)
+				impostos.setICMSUFDest(icmsUFDest);
 		}
 		
 		// Total da NF-e
 		ValoresICMS valoresicms = new ValoresICMS();
 		valoresicms.setvBC(TextUtil.ZERO_STRING); // vBC - BC do ICMS
 		valoresicms.setvICMS(TextUtil.ZERO_STRING); // vICMS - Valor Total do ICMS
-		// TODO: Refatorar icms desonerado
-		valoresicms.setvICMSDeson(TextUtil.ZERO_STRING); // vICMS - Valor Total do ICMS desonerado
+		valoresicms.setvICMSUFDest(TextUtil.bigdecimalToString(nf.getTotalTaxAmtDifalDest())); // vICMSUFDest - Valor Total do DIFAL do dest
+		valoresicms.setvICMSUFRemet(TextUtil.bigdecimalToString(nf.getTotalTaxAmtDifalRemet())); // vICMSUFRemet - Valor Total do DIFAL do remet
+		valoresicms.setvFCPUFDest(TextUtil.bigdecimalToString(nf.getTotalTaxAmtDifalFCP())); // vFCPUFDest - Valor Total do FCP
+		valoresicms.setvICMSDeson(TextUtil.ZERO_STRING); // vICMS - Valor Total do ICMS desonerado. TODO: Refatorar icms desonerado
 		valoresicms.setvBCST(TextUtil.ZERO_STRING); // vBCST - BC do ICMS ST
 		valoresicms.setvST(TextUtil.ZERO_STRING); // vST - Valor Total do ICMS ST
 		valoresicms.setvProd(TextUtil.bigdecimalToString(nf.getTotalLines())); // vProd - Valor Total dos produtos e serviços
@@ -1099,14 +1129,16 @@ public class NFeXMLGenerator {
 				transgrupo.setxNome(RemoverAcentos.remover(bpTransp.getName()));
 
 				String shipperIE = bpTransp.get_ValueAsString("LBR_IE");	
-				boolean shipperIEIsento = bpTransp.get_ValueAsBoolean("LBR_IsIEExempt");
 				MBPartnerLocation bpTranspLoc = new MBPartnerLocation(ctx, transp.getLBR_M_Shipper_Location_ID(), trxName);
 				MLocation transpLoc = bpTranspLoc.getLocation(false);
 				UF shipperUF = UF.valueOf(transpLoc.getRegionName());
 
 				if (shipperUF != null) {
 					if (!transp.isLBR_IsICMSTaxExempt()) {
-						if (shipperIEIsento)
+						
+						// isento ou não contrib, use ISENTO
+						if (bpTransp.get_ValueAsString("LBR_TypeIE").equals(I_W_C_BPartner.LBR_TYPEIE_Isento)
+								|| bpTransp.get_ValueAsString("LBR_TypeIE").equals(I_W_C_BPartner.LBR_TYPEIE_NãoContribuinte))
 							transgrupo.setIE("ISENTO");
 						else {
 							// Validação IE
@@ -1383,16 +1415,34 @@ public class NFeXMLGenerator {
 		String taxPayerInfo = nf.getLBR_TaxPayerInfo();
 		X_LBR_NotaFiscalNote[] notes = nf.getNotes();
 		X_LBR_NotaFiscalProc[] procs = nf.getProcs();
-		
-		// concat ibptax description into taxPayerInfo
+				
+		// ibptax description
 		String ibptax = MLBRIBPTax.getIBPTaxDescription(nf, isNFCe);
 		if (ibptax != null && !ibptax.isEmpty()) {
 			if (taxPayerInfo == null || taxPayerInfo.isEmpty())
 				taxPayerInfo = ibptax;
 			else 
-				taxPayerInfo = ibptax + "\n  " + taxPayerInfo;
+				taxPayerInfo += " - " + ibptax;
 		}
 		
+		// DIFAL taxpayer mandatory info
+		if (valoresicms.getvICMSUFDest() != null
+				&& !valoresicms.getvICMSUFDest().trim().isEmpty()
+				&& !valoresicms.getvICMSUFDest().equals("0.00")) {
+			
+			// DANFE EOL
+			if (taxPayerInfo != null && !taxPayerInfo.isEmpty())
+				taxPayerInfo += " - ";
+			
+			// difal descr
+			taxPayerInfo += "Valores totais do ICMS Interestadual: "
+					+ " DIFAL da UF destino R$ " + valoresicms.getvICMSUFDest().replace(".", ",") 
+					+ " + FCP R$ " + valoresicms.getvFCPUFDest().replace(".", ",") 
+					+ "; DIFAL da UF Origem R$ " + valoresicms.getvICMSUFRemet().replace(".", ",") + " ";
+
+		}
+		
+		//
 		if ((fiscalInfo != null && !fiscalInfo.trim().equals("")) ||
 			(taxPayerInfo != null && !taxPayerInfo.trim().equals("")) ||
 			notes.length > 0 ||
@@ -1531,13 +1581,9 @@ public class NFeXMLGenerator {
 					// set qrcode
 					infSupl.setQrCode(urlQrCodeNFCe);
 
-					// put into xml
-					if (MSysConfig.getBooleanValue("ALLOW_NFCE_INFSUPL_XML", false, nf.getAD_Client_ID(),
-							nf.getAD_Org_ID())) {
-						int idx = nfeXML.indexOf("</infNFe>");
-						nfeXML = nfeXML.replace(idx, idx + 9,
-								"</infNFe>" + NFeUtil.removeIndent(TextUtil.removeEOL(xstream.toXML(infSupl))));
-					}
+					int idx = nfeXML.indexOf("</infNFe>");
+					nfeXML = nfeXML.replace(idx, idx + 9,
+							"</infNFe>" + NFeUtil.removeIndent(TextUtil.removeEOL(xstream.toXML(infSupl))));
 				}
 			} catch (Exception e) {
 

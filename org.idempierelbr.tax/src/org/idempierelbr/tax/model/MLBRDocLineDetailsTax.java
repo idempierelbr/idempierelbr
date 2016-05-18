@@ -379,21 +379,44 @@ public class MLBRDocLineDetailsTax extends MLBRDocLineDetails implements IDocLin
 					MOrder order = orderLine.getParent();
 					calculateTaxes(order, orderLine);
 					processTax(taxes, tax, orderLine.getC_Tax_ID());
-					createChildren(taxes, tax, orderLine.getC_Tax_ID(), (MProduct)orderLine.getM_Product(), order.getC_BPartner_ID());
+					createChildren(taxes, tax, orderLine.getC_Tax_ID(),
+							(MProduct) orderLine.getM_Product(),
+							order.getC_BPartner_ID(),
+							order.getC_BPartner_Location_ID(),
+							order.get_ValueAsString("LBR_TransactionType"),
+							order.getDateOrdered());
 					orderLine.updateHeaderTax();
+					
 				} else if (getC_InvoiceLine_ID() > 0) {
 					MInvoiceLine invoiceLine = new MInvoiceLine(getCtx(), getC_InvoiceLine_ID(), get_TrxName());
 					MInvoice invoice = invoiceLine.getParent();
 					calculateTaxes(invoice, invoiceLine);
 					processTax(taxes, tax, invoiceLine.getC_Tax_ID());
-					createChildren(taxes, tax, invoiceLine.getC_Tax_ID(), (MProduct)invoiceLine.getM_Product(), invoice.getC_BPartner_ID());
+					createChildren(taxes, tax, invoiceLine.getC_Tax_ID(),
+							(MProduct) invoiceLine.getM_Product(),
+							invoice.getC_BPartner_ID(),
+							invoice.getC_BPartner_Location_ID(),
+							invoice.get_ValueAsString("LBR_TransactionType"),
+							invoice.getDateInvoiced());
 					invoiceLine.updateHeaderTax();
+					
 				} else if (getM_RMALine_ID() > 0) {
 					MRMALine rmaLine = new MRMALine(getCtx(), getM_RMALine_ID(), get_TrxName());
 					MRMA rma = rmaLine.getParent();
+					
+					// get trxTypeBR from original order
+					MOrder originalOrder = rma.getOriginalOrder();
+
+					// 
 					calculateTaxes(rma, rmaLine);
 					processTax(taxes, tax, rmaLine.getC_Tax_ID());
-					createChildren(taxes, tax, rmaLine.getC_Tax_ID(), (MProduct)rmaLine.getM_Product(), rma.getC_BPartner_ID());
+					createChildren(taxes, tax, rmaLine.getC_Tax_ID(),
+							(MProduct) rmaLine.getM_Product(),
+							rma.getC_BPartner_ID(),
+							originalOrder.getC_BPartner_Location_ID(),
+							originalOrder
+									.get_ValueAsString("LBR_TransactionType"),
+							rma.getInOut().getMovementDate());
 					rmaLine.updateHeaderAmt();
 				}
 			}

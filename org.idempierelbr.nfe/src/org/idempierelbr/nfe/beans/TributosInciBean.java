@@ -24,6 +24,7 @@ public class TributosInciBean {
 	private COFINSBean COFINS;
 	private COFINSSTBean COFINSST;
 	private ISSQNBean ISSQN;
+	private ICMSUFDestBean ICMSUFDest;
 	
 	public ICMSBean getICMS() {
 		return ICMS;
@@ -87,5 +88,13 @@ public class TributosInciBean {
 
 	public void setISSQN(ISSQNBean iSSQN) {
 		ISSQN = iSSQN;
+	}
+
+	public ICMSUFDestBean getICMSUFDest() {
+		return ICMSUFDest;
+	}
+
+	public void setICMSUFDest(ICMSUFDestBean iCMSUFDest) {
+		ICMSUFDest = iCMSUFDest;
 	}	
 }

@@ -23,14 +23,14 @@ import org.compiere.model.*;
 
 /** Generated Model for LBR_NotaFiscalDocRef
  *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
+ *  @version Release 3.1 - $Id$ */
 public class X_LBR_NotaFiscalDocRef extends PO implements I_LBR_NotaFiscalDocRef, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140516L;
+	private static final long serialVersionUID = 20160516L;
 
     /** Standard Constructor */
     public X_LBR_NotaFiscalDocRef (Properties ctx, int LBR_NotaFiscalDocRef_ID, String trxName)
@@ -38,8 +38,6 @@ public class X_LBR_NotaFiscalDocRef extends PO implements I_LBR_NotaFiscalDocRef
       super (ctx, LBR_NotaFiscalDocRef_ID, trxName);
       /** if (LBR_NotaFiscalDocRef_ID == 0)
         {
-			setLBR_IsIEExempt (false);
-// 'N'
 			setLBR_NFeDocRefType (null);
 			setLBR_NotaFiscalDocRef_ID (0);
 			setLBR_NotaFiscal_ID (0);
@@ -238,28 +236,57 @@ public class X_LBR_NotaFiscalDocRef extends PO implements I_LBR_NotaFiscalDocRef
 		return (String)get_Value(COLUMNNAME_LBR_IE);
 	}
 
-	/** Set IE Exempt.
-		@param LBR_IsIEExempt 
-		Business Partner is IE Exempt
+	/** 01 - Nota Fiscal = 01 */
+	public static final String LBR_NFMODEL_01_NotaFiscal = "01";
+	/** Set NF Model.
+		@param LBR_NFModel 
+		Referes to old printed NF
 	  */
-	public void setLBR_IsIEExempt (boolean LBR_IsIEExempt)
+	public void setLBR_NFModel (String LBR_NFModel)
 	{
-		set_Value (COLUMNNAME_LBR_IsIEExempt, Boolean.valueOf(LBR_IsIEExempt));
+
+		set_Value (COLUMNNAME_LBR_NFModel, LBR_NFModel);
 	}
 
-	/** Get IE Exempt.
-		@return Business Partner is IE Exempt
+	/** Get NF Model.
+		@return Referes to old printed NF
 	  */
-	public boolean isLBR_IsIEExempt () 
+	public String getLBR_NFModel () 
 	{
-		Object oo = get_Value(COLUMNNAME_LBR_IsIEExempt);
-		if (oo != null) 
-		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
-			return "Y".equals(oo);
-		}
-		return false;
+		return (String)get_Value(COLUMNNAME_LBR_NFModel);
+	}
+
+	/** Farmer NF = 04 */
+	public static final String LBR_NFPRODMODEL_FarmerNF = "04";
+	/** NF = 01 */
+	public static final String LBR_NFPRODMODEL_NF = "01";
+	/** Set NF Farmer Model.
+		@param LBR_NFProdModel NF Farmer Model	  */
+	public void setLBR_NFProdModel (String LBR_NFProdModel)
+	{
+
+		set_Value (COLUMNNAME_LBR_NFProdModel, LBR_NFProdModel);
+	}
+
+	/** Get NF Farmer Model.
+		@return NF Farmer Model	  */
+	public String getLBR_NFProdModel () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_NFProdModel);
+	}
+
+	/** Set NF Year/Month.
+		@param LBR_NFYearMonth NF Year/Month	  */
+	public void setLBR_NFYearMonth (String LBR_NFYearMonth)
+	{
+		set_Value (COLUMNNAME_LBR_NFYearMonth, LBR_NFYearMonth);
+	}
+
+	/** Get NF Year/Month.
+		@return NF Year/Month	  */
+	public String getLBR_NFYearMonth () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_NFYearMonth);
 	}
 
 	/** NF-e = 0 */
@@ -316,59 +343,6 @@ public class X_LBR_NotaFiscalDocRef extends PO implements I_LBR_NotaFiscalDocRef
 	public String getLBR_NFeSerie () 
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NFeSerie);
-	}
-
-	/** 01 = 01 */
-	public static final String LBR_NFMODEL_01 = "01";
-	/** Set NF Model.
-		@param LBR_NFModel 
-		Referes to old printed NF
-	  */
-	public void setLBR_NFModel (String LBR_NFModel)
-	{
-
-		set_Value (COLUMNNAME_LBR_NFModel, LBR_NFModel);
-	}
-
-	/** Get NF Model.
-		@return Referes to old printed NF
-	  */
-	public String getLBR_NFModel () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_NFModel);
-	}
-
-	/** Farmer NF = 04 */
-	public static final String LBR_NFPRODMODEL_FarmerNF = "04";
-	/** NF = 01 */
-	public static final String LBR_NFPRODMODEL_NF = "01";
-	/** Set NF Farmer Model.
-		@param LBR_NFProdModel NF Farmer Model	  */
-	public void setLBR_NFProdModel (String LBR_NFProdModel)
-	{
-
-		set_Value (COLUMNNAME_LBR_NFProdModel, LBR_NFProdModel);
-	}
-
-	/** Get NF Farmer Model.
-		@return NF Farmer Model	  */
-	public String getLBR_NFProdModel () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_NFProdModel);
-	}
-
-	/** Set NF Year/Month.
-		@param LBR_NFYearMonth NF Year/Month	  */
-	public void setLBR_NFYearMonth (String LBR_NFYearMonth)
-	{
-		set_Value (COLUMNNAME_LBR_NFYearMonth, LBR_NFYearMonth);
-	}
-
-	/** Get NF Year/Month.
-		@return NF Year/Month	  */
-	public String getLBR_NFYearMonth () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_NFYearMonth);
 	}
 
 	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Referenced Doc.
@@ -431,5 +405,28 @@ public class X_LBR_NotaFiscalDocRef extends PO implements I_LBR_NotaFiscalDocRef
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
+	}
+
+	/** LBR_TypeIE AD_Reference_ID=800026 */
+	public static final int LBR_TYPEIE_AD_Reference_ID=800026;
+	/** Contribuinte = 1 */
+	public static final String LBR_TYPEIE_Contribuinte = "1";
+	/** Isento = 2 */
+	public static final String LBR_TYPEIE_Isento = "2";
+	/** Não Contribuinte = 9 */
+	public static final String LBR_TYPEIE_NãoContribuinte = "9";
+	/** Set IE Inscription Type.
+		@param LBR_TypeIE IE Inscription Type	  */
+	public void setLBR_TypeIE (String LBR_TypeIE)
+	{
+
+		set_Value (COLUMNNAME_LBR_TypeIE, LBR_TypeIE);
+	}
+
+	/** Get IE Inscription Type.
+		@return IE Inscription Type	  */
+	public String getLBR_TypeIE () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_TypeIE);
 	}
 }

@@ -18,14 +18,15 @@ package org.idempierelbr.tax.model;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import org.compiere.model.*;
+
+import org.compiere.model.I_C_Region;
+import org.compiere.model.MTable;
 import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_DocLine_ICMS
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 3.1
  */
-@SuppressWarnings("all")
 public interface I_LBR_DocLine_ICMS 
 {
 
@@ -93,6 +94,84 @@ public interface I_LBR_DocLine_ICMS
 	  */
 	public boolean isActive();
 
+    /** Column name IsTaxIncluded */
+    public static final String COLUMNNAME_IsTaxIncluded = "IsTaxIncluded";
+
+	/** Set Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public void setIsTaxIncluded (boolean IsTaxIncluded);
+
+	/** Get Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public boolean isTaxIncluded();
+
+    /** Column name LBR_CEST_ID */
+    public static final String COLUMNNAME_LBR_CEST_ID = "LBR_CEST_ID";
+
+	/** Set CEST	  */
+	public void setLBR_CEST_ID (int LBR_CEST_ID);
+
+	/** Get CEST	  */
+	public int getLBR_CEST_ID();
+
+	public I_LBR_CEST getLBR_CEST() throws RuntimeException;
+
+    /** Column name LBR_DIFAL_RateICMSInterPart */
+    public static final String COLUMNNAME_LBR_DIFAL_RateICMSInterPart = "LBR_DIFAL_RateICMSInterPart";
+
+	/** Set DIFAL Share Rate (%)	  */
+	public void setLBR_DIFAL_RateICMSInterPart (BigDecimal LBR_DIFAL_RateICMSInterPart);
+
+	/** Get DIFAL Share Rate (%)	  */
+	public BigDecimal getLBR_DIFAL_RateICMSInterPart();
+
+    /** Column name LBR_DIFAL_TaxAmtFCPUFDest */
+    public static final String COLUMNNAME_LBR_DIFAL_TaxAmtFCPUFDest = "LBR_DIFAL_TaxAmtFCPUFDest";
+
+	/** Set DIFAL Tax Amt of "Fundo de Combate a Pobreza"	  */
+	public void setLBR_DIFAL_TaxAmtFCPUFDest (BigDecimal LBR_DIFAL_TaxAmtFCPUFDest);
+
+	/** Get DIFAL Tax Amt of "Fundo de Combate a Pobreza"	  */
+	public BigDecimal getLBR_DIFAL_TaxAmtFCPUFDest();
+
+    /** Column name LBR_DIFAL_TaxAmtICMSUFDest */
+    public static final String COLUMNNAME_LBR_DIFAL_TaxAmtICMSUFDest = "LBR_DIFAL_TaxAmtICMSUFDest";
+
+	/** Set DIFAL Tax Amt in Receiver UF	  */
+	public void setLBR_DIFAL_TaxAmtICMSUFDest (BigDecimal LBR_DIFAL_TaxAmtICMSUFDest);
+
+	/** Get DIFAL Tax Amt in Receiver UF	  */
+	public BigDecimal getLBR_DIFAL_TaxAmtICMSUFDest();
+
+    /** Column name LBR_DIFAL_TaxAmtICMSUFRemet */
+    public static final String COLUMNNAME_LBR_DIFAL_TaxAmtICMSUFRemet = "LBR_DIFAL_TaxAmtICMSUFRemet";
+
+	/** Set DIFAL Tax Amt in Sender UF	  */
+	public void setLBR_DIFAL_TaxAmtICMSUFRemet (BigDecimal LBR_DIFAL_TaxAmtICMSUFRemet);
+
+	/** Get DIFAL Tax Amt in Sender UF	  */
+	public BigDecimal getLBR_DIFAL_TaxAmtICMSUFRemet();
+
+    /** Column name LBR_DIFAL_TaxRateFCPUFDest */
+    public static final String COLUMNNAME_LBR_DIFAL_TaxRateFCPUFDest = "LBR_DIFAL_TaxRateFCPUFDest";
+
+	/** Set DIFAL Tax Rate of "Fundo de Combate a Pobreza"	  */
+	public void setLBR_DIFAL_TaxRateFCPUFDest (BigDecimal LBR_DIFAL_TaxRateFCPUFDest);
+
+	/** Get DIFAL Tax Rate of "Fundo de Combate a Pobreza"	  */
+	public BigDecimal getLBR_DIFAL_TaxRateFCPUFDest();
+
+    /** Column name LBR_DIFAL_TaxRateICMSUFDest */
+    public static final String COLUMNNAME_LBR_DIFAL_TaxRateICMSUFDest = "LBR_DIFAL_TaxRateICMSUFDest";
+
+	/** Set DIFAL Internal Tax Rate in Receiver UF	  */
+	public void setLBR_DIFAL_TaxRateICMSUFDest (BigDecimal LBR_DIFAL_TaxRateICMSUFDest);
+
+	/** Get DIFAL Internal Tax Rate in Receiver UF	  */
+	public BigDecimal getLBR_DIFAL_TaxRateICMSUFDest();
+
     /** Column name LBR_DocLine_Details_ID */
     public static final String COLUMNNAME_LBR_DocLine_Details_ID = "LBR_DocLine_Details_ID";
 
@@ -146,6 +225,19 @@ public interface I_LBR_DocLine_ICMS
 	  * Identifies a ICMS Regime for taxes
 	  */
 	public String getLBR_ICMSRegime();
+
+    /** Column name LBR_ICMSST_IsTaxIncluded */
+    public static final String COLUMNNAME_LBR_ICMSST_IsTaxIncluded = "LBR_ICMSST_IsTaxIncluded";
+
+	/** Set Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public void setLBR_ICMSST_IsTaxIncluded (boolean LBR_ICMSST_IsTaxIncluded);
+
+	/** Get Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public boolean isLBR_ICMSST_IsTaxIncluded();
 
     /** Column name LBR_ICMSST_TaxAdded */
     public static final String COLUMNNAME_LBR_ICMSST_TaxAdded = "LBR_ICMSST_TaxAdded";
@@ -317,6 +409,19 @@ public interface I_LBR_DocLine_ICMS
 	public int getLBR_ICMSST_TaxUFDue_ID();
 
 	public org.compiere.model.I_C_Region getLBR_ICMSST_TaxUFDue() throws RuntimeException;
+
+    /** Column name LBR_ICMS_OwnTaxStatus */
+    public static final String COLUMNNAME_LBR_ICMS_OwnTaxStatus = "LBR_ICMS_OwnTaxStatus";
+
+	/** Set Declarant ICMS Tax Status.
+	  * ICMS tax status from the point of view of the declarant
+	  */
+	public void setLBR_ICMS_OwnTaxStatus (String LBR_ICMS_OwnTaxStatus);
+
+	/** Get Declarant ICMS Tax Status.
+	  * ICMS tax status from the point of view of the declarant
+	  */
+	public String getLBR_ICMS_OwnTaxStatus();
 
     /** Column name LBR_ICMS_TaxAmtOp */
     public static final String COLUMNNAME_LBR_ICMS_TaxAmtOp = "LBR_ICMS_TaxAmtOp";
@@ -541,30 +646,4 @@ public interface I_LBR_DocLine_ICMS
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
-	
-	/** Column name IsTaxIncluded */
-    public static final String COLUMNNAME_IsTaxIncluded = "IsTaxIncluded";
-
-	/** Set Price includes Tax.
-	  * Tax is included in the price 
-	  */
-	public void setIsTaxIncluded (boolean IsTaxIncluded);
-
-	/** Get Price includes Tax.
-	  * Tax is included in the price 
-	  */
-	public boolean isTaxIncluded();
-	
-    /** Column name LBR_ICMSST_IsTaxIncluded */
-    public static final String COLUMNNAME_LBR_ICMSST_IsTaxIncluded = "LBR_ICMSST_IsTaxIncluded";
-
-	/** Set Price includes Tax.
-	  * Tax is included in the price 
-	  */
-	public void setLBR_ICMSST_IsTaxIncluded (boolean LBR_ICMSST_IsTaxIncluded);
-
-	/** Get Price includes Tax.
-	  * Tax is included in the price 
-	  */
-	public boolean isLBR_ICMSST_IsTaxIncluded();
 }
