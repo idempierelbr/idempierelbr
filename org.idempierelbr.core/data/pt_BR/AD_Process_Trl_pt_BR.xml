@@ -2206,9 +2206,9 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Help" original="">Esse relatório apresenta informações de boletos processados e não pagos/baixados (e seu último movimento, se existir).</value>
  </row>
  <row id="800007" trl="N">
-  <value column="Name" original="Import IBPTax">Import IBPTax</value>
-  <value column="Description" original="Import IBPTax file provided by IBPT">Import IBPTax file provided by IBPT</value>
-  <value column="Help" original="This process allows to import a tax file provided by IBPT.">This process allows to import a tax file provided by IBPT.</value>
+  <value column="Name" original="Import IBPTax">Importar Arquivo 'De Olho no Imposto' do IBPT</value>
+  <value column="Description" original="Import IBPTax file provided by IBPT">Importar Arquivo 'De Olho no Imposto' do IBPT</value>
+  <value column="Help" original="This process allows to import a tax file provided by IBPT.">Este processo importa o arquivo atualizado do programa "De Olho no Imposto" do IBPT.</value>
  </row>
  <row id="800008" trl="Y">
   <value column="Name" original="Void NF-e Numbering">Inutilizar Numeração de NF-e</value>
