@@ -31,6 +31,7 @@ import org.compiere.model.MProduct;
 import org.compiere.model.MProductPO;
 import org.compiere.model.MSysConfig;
 import org.compiere.model.MTable;
+import org.compiere.model.MTax;
 import org.compiere.model.Query;
 import org.compiere.model.Tax;
 import org.compiere.process.DocAction;
@@ -53,6 +54,8 @@ import org.idempierelbr.tax.model.MLBRDocLineImportTax;
 import org.idempierelbr.tax.model.MLBRDocLinePIS;
 import org.idempierelbr.tax.model.MLBRTax;
 import org.idempierelbr.tax.model.MLBRTaxLine;
+import org.idempierelbr.tax.model.X_LBR_TaxGroup;
+import org.idempierelbr.tax.model.X_LBR_TaxStatus;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -572,7 +575,7 @@ public class NFFromXMLGen
 					(oldNF.isStatusAutorizado() && 
 							(oldNF.getDocStatus().equals(MLBRNotaFiscal.DOCSTATUS_Completed) || 
 									oldNF.getDocStatus().equals(MLBRNotaFiscal.DOCSTATUS_Closed))))
-				return "Nota Fiscal jÃ¡ importada anteriormente. NÃºmero: " + xmlDocumentNo;
+				return "Nota Fiscal já foi importada anteriormente. Número: " + xmlDocumentNo;
 		} 
 		
 		
@@ -806,10 +809,26 @@ public class NFFromXMLGen
 
 				}
 				
+				try {
+					
+					// check SYSCONFIG to allow update lbr_taxlines from xml taxes 
+					if (MSysConfig.getBooleanValue("LBR_CREATE_NF_LBR_TAXLINES_FROM_XML", false,
+							nf.getAD_Client_ID(), nf.getAD_Org_ID())) {
+
+						/*
+						 * Generate LBR_Tax and LBR_TaxLine records from XML taxes  
+						 */
+						generateLBRTaxFromNFeTaxes(Env.getCtx(), line, details, trx.getTrxName());
+						
+					}
+				} catch (Exception e) {
+					log.severe("Falha ao criar registros de impostos na LBR_TaxLine a partir do XML. Erro: "
+							+ e.getMessage());
+					e.printStackTrace();
+				}
 			}
 			
 			// Create Fuel and Lubricants group:
-			
 			if(group.xmlcProdANP != null){
 				MLBRNotaFiscalLineComb nfLineComb = MLBRNotaFiscalLineComb.createFromPO(line);
 				nfLineComb.setLBR_CodANP(group.xmlcProdANP);
@@ -950,7 +969,6 @@ public class NFFromXMLGen
 			icms.setLBR_DocLine_Details_ID(details.get_ID());
 			
 			Node nNode = nList.item(temp);
-
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElementICMS = (Element) nNode;
 				
@@ -1147,6 +1165,63 @@ public class NFFromXMLGen
 					}
 				}
 				
+				
+				// DIFAL
+				NodeList nICMSUFDest = element.getElementsByTagName("ICMSUFDest");
+				if (nICMSUFDest != null && nICMSUFDest.getLength() > 0) {
+
+					// get element
+					Node nNodeItem = nICMSUFDest.item(0);
+					if (nNodeItem.getNodeType() == Node.ELEMENT_NODE) {
+						
+						// 
+						Element eElementDIFAL = (Element) nNodeItem;
+						
+						//
+						if (eElementDIFAL.getElementsByTagName("pFCPUFDest").item(0) != null) {
+							String amt = eElementDIFAL.getElementsByTagName("pFCPUFDest").item(0).getTextContent();
+							if (amt != null)
+								icms.setLBR_DIFAL_TaxRateFCPUFDest(new BigDecimal(amt));
+						}
+						
+						//
+						if (eElementDIFAL.getElementsByTagName("pICMSUFDest").item(0) != null) {
+							String amt = eElementDIFAL.getElementsByTagName("pICMSUFDest").item(0).getTextContent();
+							if (amt != null)
+								icms.setLBR_DIFAL_TaxRateICMSUFDest(new BigDecimal(amt));
+						}
+						
+						//
+						if (eElementDIFAL.getElementsByTagName("pICMSInterPart").item(0) != null) {
+							String amt = eElementDIFAL.getElementsByTagName("pICMSInterPart").item(0).getTextContent();
+							if (amt != null)
+								icms.setLBR_DIFAL_RateICMSInterPart(new BigDecimal(amt));
+						}
+						
+						//
+						if (eElementDIFAL.getElementsByTagName("vFCPUFDest").item(0) != null) {
+							String amt = eElementDIFAL.getElementsByTagName("vFCPUFDest").item(0).getTextContent();
+							if (amt != null)
+								icms.setLBR_DIFAL_TaxAmtFCPUFDest(new BigDecimal(amt));
+						}
+						
+						//
+						if (eElementDIFAL.getElementsByTagName("vICMSUFDest").item(0) != null) {
+							String amt = eElementDIFAL.getElementsByTagName("vICMSUFDest").item(0).getTextContent();
+							if (amt != null)
+								icms.setLBR_DIFAL_TaxAmtICMSUFDest(new BigDecimal(amt));
+						}
+						
+						//
+						if (eElementDIFAL.getElementsByTagName("vICMSUFRemet").item(0) != null) {
+							String amt = eElementDIFAL.getElementsByTagName("vICMSUFRemet").item(0).getTextContent();
+							if (amt != null)
+								icms.setLBR_DIFAL_TaxAmtICMSUFRemet(new BigDecimal(amt));
+						}
+					}
+					
+				}
+											
 				icms.saveEx();
 				return icms;
 			}
@@ -1546,4 +1621,358 @@ public class NFFromXMLGen
 		return MLBRTax.getTaxes(ctx, o.getC_DocType_ID(), o.isSOTrx(), ol.getLBR_NotaFiscal().getLBR_TransactionType(), p,
 				oi, bp, bpLoc, o.getDateAcct(), trxName);
 	} // getTaxes	
+	
+	/**
+	 * Create a LBR_Tax and LBR_TaxLine by XML imported taxes 
+	 * 
+	 * Do a reverse enginnering to get tax in Details Tax Lines and put 
+	 * in LBR_Tax and LBR_TaxLine
+	 * 
+	 * 
+	 * @param ctx
+	 * @param nfline
+	 * @param details
+	 * @param trxName
+	 * @throws Exception
+	 * 
+	 * @author pablo, 26/09/2015, pablo@roundit.com.br
+	 */
+	public void generateLBRTaxFromNFeTaxes(Properties ctx, MLBRNotaFiscalLine nfline, MLBRDocLineDetailsNfe details,
+			String trxName) throws Exception {
+
+		// get lbr_tax_id
+		int LBR_Tax_ID = details.getLBR_Tax_ID();
+
+		// load/create and overide infos
+		MLBRTax m_tax = new MLBRTax(ctx, LBR_Tax_ID, trxName);
+		m_tax.setAD_Org_ID(details.getAD_Org_ID());
+		m_tax.save(trxName);
+
+		// delete lines to recreate
+		m_tax.deleteLines();
+
+		// create taxlines
+		createLBRTaxLineICMS(ctx, LBR_Tax_ID, nfline.getC_Tax_ID(), details, trxName);
+		createLBRTaxLinePIS(ctx, LBR_Tax_ID, nfline.getC_Tax_ID(), details, trxName);
+		createLBRTaxLineCOFINS(ctx, LBR_Tax_ID, nfline.getC_Tax_ID(), details, trxName);
+		createLBRTaxLineIPI(ctx, LBR_Tax_ID, nfline.getC_Tax_ID(), details, trxName);
+		
+		// save with new description
+		m_tax.setDescription();
+		m_tax.save(trxName);
+	}
+
+	/**
+	 * Create ICMS and/or ST taxLine
+	 * 
+	 * @param ctx
+	 * @param LBR_Tax_ID
+	 * @param C_Tax_ID
+	 * @param taxFrom
+	 * @param trxName
+	 * @throws Exception
+	 */
+	public void createLBRTaxLineICMS(Properties ctx, int LBR_Tax_ID, int C_Tax_ID, MLBRDocLineDetailsNfe details,
+			String trxName) throws Exception {
+
+		// get c_tax
+		MTax m_taxICMS = getC_Tax(ctx, C_Tax_ID, "ICMS", trxName);
+
+		// check if has c_tax
+		if (m_taxICMS == null || m_taxICMS.get_ID() == 0) {
+			log.severe("Alíquota de Imposto não cadastrada para o ICMS!");
+			return;
+		}
+		
+		// get icms from
+		MLBRDocLineICMS[] taxesFrom = MLBRDocLineICMS.getOfDetails(details);
+		if (taxesFrom == null || taxesFrom.length <= 0) 
+			throw new Exception("Nenhum registro de ICMS encontrado!");
+
+		// get first
+		MLBRDocLineICMS taxFrom = taxesFrom[0];
+		
+		// taxstatus
+		String taxStatus = taxFrom.getLBR_ICMSRegime().equals(MLBRDocLineICMS.LBR_ICMSREGIME_DefaultTaxation)
+				? taxFrom.getLBR_ICMS_TaxStatusTN() : taxFrom.getLBR_ICMS_TaxStatusSN();
+
+		// create ICMS
+		MLBRTaxLine icms = new MLBRTaxLine(ctx, 0, trxName);
+		icms.setAD_Org_ID(details.getAD_Org_ID());
+		icms.setLBR_Tax_ID(LBR_Tax_ID);
+		icms.setLBR_TaxName_ID(m_taxICMS.get_ValueAsInt("LBR_TaxName_ID"));
+		icms.setLBR_TaxRate(checkAmt(taxFrom.getLBR_TaxRate()));
+		icms.setLBR_TaxBase(checkAmt(taxFrom.getLBR_TaxBase()));
+		icms.setLBR_TaxStatus_ID(getLBR_TaxStatus_ID(ctx, taxStatus, icms.getLBR_TaxName_ID(), trxName));
+		icms.setLBR_TaxAmt(checkAmt(taxFrom.getLBR_TaxAmt()));
+		icms.setLBR_TaxBaseAmt(checkAmt(taxFrom.getLBR_TaxBaseAmt()));
+		icms.setIsTaxIncluded(taxFrom.isTaxIncluded());
+		icms.saveEx(trxName);
+		
+			
+		//	create ICMS-ST (is ST and has taxRate)
+		if (TextUtil.match (taxStatus,
+				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSTN_10_TributadaEComCobrancaDoICMSPorSubTributaria,
+				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSTN_30_IsentaOuNao_TribEComCobrDoICMSPorSubTribut,
+				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSTN_70_ComRedDeBaseDeCalcECobrDoICMSPorSubTrib,
+				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSTN_90_Outras,
+				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSSN_201_TributadaComPermissaoDeCredito,
+				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSSN_202_TributadaSemPermissaoDeCredito,
+				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSSN_203_IsencaoDoICMSParaFaixaDeReceitaBruta,
+				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSSN_900_Outros)
+				&& checkAmt(taxFrom.getLBR_ICMSST_TaxRate()).signum() == 1) {
+			
+			// get c_tax
+			MTax m_taxICMSST = getC_Tax(ctx, C_Tax_ID, "ICMSST", trxName);
+
+			// check if has c_tax
+			if (m_taxICMSST == null || m_taxICMSST.get_ID() == 0) {
+				log.severe("Alíquota de Imposto não cadastrada para o ICMS-ST!");
+				return;
+			}
+			
+			// create lbr_taxline
+			MLBRTaxLine icmsST = new MLBRTaxLine(ctx, 0, trxName);
+			icmsST.setAD_Org_ID(details.getAD_Org_ID());
+			icmsST.setLBR_Tax_ID(LBR_Tax_ID);
+			icmsST.setLBR_TaxName_ID(m_taxICMSST.get_ValueAsInt("LBR_TaxName_ID"));
+			icmsST.setLBR_TaxStatus_ID(getLBR_TaxStatus_ID(ctx, taxStatus, icmsST.getLBR_TaxName_ID(), trxName));
+			icmsST.setLBR_TaxRate(checkAmt(taxFrom.getLBR_ICMSST_TaxRate()));
+			icmsST.setLBR_TaxBase(checkAmt(taxFrom.getLBR_ICMSST_TaxBase()));
+			icmsST.setLBR_TaxAmt(checkAmt(taxFrom.getLBR_ICMSST_TaxAmt()));
+			icmsST.setLBR_TaxBaseAmt(checkAmt(taxFrom.getLBR_ICMSST_TaxBaseAmt()));
+			icmsST.setIsTaxIncluded(taxFrom.isLBR_ICMSST_IsTaxIncluded());
+			icmsST.saveEx(trxName);
+		}
+	}
+	
+	/**
+	 * Create PIS lbr_taxline
+	 * 
+	 * @param ctx
+	 * @param LBR_Tax_ID
+	 * @param C_Tax_ID
+	 * @param taxFrom
+	 * @param trxName
+	 * @throws Exception
+	 */
+	public void createLBRTaxLinePIS(Properties ctx, int LBR_Tax_ID, int C_Tax_ID, MLBRDocLineDetailsNfe details,
+			String trxName) throws Exception {
+
+		// get c_tax
+		MTax m_tax = getC_Tax(ctx, C_Tax_ID, "PIS", trxName);
+
+		// check if has c_tax
+		if (m_tax == null || m_tax.get_ID() == 0) {
+			log.warning("Alíquota de Imposto não cadastrada para o PIS!");
+			return;
+		}
+
+		// get taxes from
+		MLBRDocLinePIS[] taxesFrom = MLBRDocLinePIS.getOfDetails(details);
+		if (taxesFrom == null || taxesFrom.length <= 0) 
+			return;
+
+		// get first
+		MLBRDocLinePIS taxFrom = taxesFrom[0];
+
+		// create PIS
+		MLBRTaxLine tax = new MLBRTaxLine(ctx, 0, trxName);
+		tax.setAD_Org_ID(details.getAD_Org_ID());
+		tax.setLBR_TaxBase(Env.ZERO);
+		tax.setLBR_Tax_ID(LBR_Tax_ID);
+		tax.setLBR_TaxName_ID(m_tax.get_ValueAsInt("LBR_TaxName_ID"));
+		tax.setLBR_TaxRate(checkAmt(taxFrom.getLBR_TaxRate()));
+		tax.setLBR_TaxAmt(checkAmt(taxFrom.getLBR_TaxAmt()));
+		tax.setLBR_TaxBaseAmt(checkAmt(taxFrom.getLBR_TaxBaseAmt()));
+		tax.setLBR_TaxStatus_ID(getLBR_TaxStatus_ID(ctx, taxFrom.getLBR_PIS_TaxStatus(), tax.getLBR_TaxName_ID(), trxName));
+		tax.setIsTaxIncluded(taxFrom.isTaxIncluded());
+		tax.saveEx(trxName);
+	}	
+	
+	/**
+	 * Create COFINS lbr_taxline
+	 * 
+	 * @param ctx
+	 * @param LBR_Tax_ID
+	 * @param C_Tax_ID
+	 * @param taxFrom
+	 * @param trxName
+	 * @throws Exception
+	 */
+	public void createLBRTaxLineCOFINS(Properties ctx, int LBR_Tax_ID, int C_Tax_ID, MLBRDocLineDetailsNfe details,
+			String trxName) throws Exception {
+
+		// get c_tax
+		MTax m_tax = getC_Tax(ctx, C_Tax_ID, "COFINS", trxName);
+
+		// check if has c_tax
+		if (m_tax == null || m_tax.get_ID() == 0) {
+			log.warning("Alíquota de Imposto não cadastrada para o COFINS!");
+			return;
+		}
+
+		// get taxes from
+		MLBRDocLineCOFINS[] taxesFrom = MLBRDocLineCOFINS.getOfDetails(details);
+		if (taxesFrom == null || taxesFrom.length <= 0) 
+			return;
+
+		// get first
+		MLBRDocLineCOFINS taxFrom = taxesFrom[0];
+
+		// create COFINS
+		MLBRTaxLine tax = new MLBRTaxLine(ctx, 0, trxName);
+		tax.setAD_Org_ID(details.getAD_Org_ID());
+		tax.setLBR_TaxBase(Env.ZERO);
+		tax.setLBR_Tax_ID(LBR_Tax_ID);
+		tax.setLBR_TaxName_ID(m_tax.get_ValueAsInt("LBR_TaxName_ID"));
+		tax.setLBR_TaxRate(checkAmt(taxFrom.getLBR_TaxRate()));
+		tax.setLBR_TaxAmt(checkAmt(taxFrom.getLBR_TaxAmt()));
+		tax.setLBR_TaxBaseAmt(checkAmt(taxFrom.getLBR_TaxBaseAmt()));
+		tax.setLBR_TaxStatus_ID(getLBR_TaxStatus_ID(ctx, taxFrom.getLBR_COF_TaxStatus(), tax.getLBR_TaxName_ID(), trxName));
+		tax.setIsTaxIncluded(taxFrom.isTaxIncluded());
+		tax.saveEx(trxName);
+	}	
+	
+	
+	/**
+	 * Create IPI lbr_taxline
+	 * 
+	 * @param ctx
+	 * @param LBR_Tax_ID
+	 * @param C_Tax_ID
+	 * @param taxFrom
+	 * @param trxName
+	 * @throws Exception
+	 */
+	public void createLBRTaxLineIPI(Properties ctx, int LBR_Tax_ID, int C_Tax_ID, MLBRDocLineDetailsNfe details,
+			String trxName) throws Exception {
+
+		// get c_tax
+		MTax m_tax = getC_Tax(ctx, C_Tax_ID, "IPI", trxName);
+
+		// check if has c_tax
+		if (m_tax == null || m_tax.get_ID() == 0) {
+			log.warning("Alíquota de Imposto não cadastrada para o IPI!");
+			return;
+		}
+
+		// get taxes from
+		MLBRDocLineIPI[] taxesFrom = MLBRDocLineIPI.getOfDetails(details);
+		if (taxesFrom == null || taxesFrom.length <= 0) 
+			return;
+
+		// get first
+		MLBRDocLineIPI taxFrom = taxesFrom[0];
+
+		// create IPI
+		MLBRTaxLine tax = new MLBRTaxLine(ctx, 0, trxName);
+		tax.setAD_Org_ID(details.getAD_Org_ID());
+		tax.setLBR_Tax_ID(LBR_Tax_ID);
+		tax.setLBR_TaxName_ID(m_tax.get_ValueAsInt("LBR_TaxName_ID"));
+		tax.setLBR_TaxRate(checkAmt(taxFrom.getLBR_TaxRate()));
+		tax.setLBR_TaxBase(Env.ZERO);
+		tax.setLBR_TaxAmt(checkAmt(taxFrom.getLBR_TaxAmt()));
+		tax.setLBR_TaxBaseAmt(checkAmt(taxFrom.getLBR_TaxBaseAmt()));
+		tax.setLBR_TaxStatus_ID(getLBR_TaxStatus_ID(ctx, taxFrom.getLBR_IPI_TaxStatus(), tax.getLBR_TaxName_ID(), trxName));
+		tax.setIsTaxIncluded(taxFrom.isTaxIncluded());
+		tax.saveEx(trxName);
+	}	
+	
+
+	/**
+	 * Return always a valid amt or zero
+	 * 
+	 * @param amt
+	 * @return
+	 */
+	public static BigDecimal checkAmt(BigDecimal amt) {
+		return checkAmt(amt, Env.ZERO);
+	}
+	
+	/**
+	 * Return always a valid amt or zero
+	 * 
+	 * @param amt
+	 * @param defaultAmt
+	 * @return
+	 */
+	public static BigDecimal checkAmt(BigDecimal amt, BigDecimal defaultAmt) {
+		
+		if (defaultAmt == null)
+			defaultAmt = Env.ZERO;
+		
+		if (amt == null)
+			return defaultAmt;
+		
+		return amt;
+	}
+	
+
+	/**
+	 * Get C_Tax by LBR_TaxGroup
+	 * 
+	 * @param ctx
+	 * @param C_Tax_ID
+	 * @param LBR_TaxGroup_ID
+	 * @param trxName
+	 * @return
+	 */
+	private MTax getC_Tax(Properties ctx, int C_Tax_ID, String taxName, String trxName) {
+
+		// get lbr_taxgroup_id
+		int LBR_TaxGroup_ID = getLBR_TaxGroup_ID(ctx, taxName, trxName);
+
+		// no group tax found
+		if (LBR_TaxGroup_ID <= 0)
+			return null;
+
+		// where
+		String where = " LBR_TaxGroup_ID=? AND Parent_Tax_ID=? AND IsActive = 'Y'";
+
+		// query
+		Query q = new Query(Env.getCtx(), MTax.Table_Name, where, null);
+		q.setParameters(new Object[] { LBR_TaxGroup_ID, C_Tax_ID });
+		return q.first();
+	}
+
+	/**
+	 * Get LBR_TaxGroup_ID by Name
+	 * 
+	 * @param ctx
+	 * @param name
+	 * @param trxName
+	 * @return
+	 */
+	private int getLBR_TaxGroup_ID(Properties ctx, String name, String trxName) {
+
+		// where
+		String where = " Name=? AND IsActive = 'Y'";
+
+		// query
+		Query q = new Query(Env.getCtx(), X_LBR_TaxGroup.Table_Name, where, null);
+		q.setParameters(new Object[] { name });
+		return q.firstId();
+	}
+
+	/**
+	 * Get LBR_TaxStatus_ID by CST and LBR_TaxName_ID
+	 * 
+	 * @param ctx
+	 * @param name
+	 * @param LBR_TaxName_ID
+	 * @param trxName
+	 * @return
+	 */
+	private int getLBR_TaxStatus_ID(Properties ctx, String name, int LBR_TaxName_ID, String trxName) {
+
+		// where
+		String where = " Name=? AND LBR_TaxName_ID=? AND IsActive = 'Y' ";
+
+		// query
+		Query q = new Query(Env.getCtx(), X_LBR_TaxStatus.Table_Name, where, null);
+		q.setParameters(new Object[] { name, LBR_TaxName_ID });
+		return q.firstId();
+	}
+	
 }

@@ -451,7 +451,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				&& taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMS) {
 		
 			// do calc 
-			calculateDIFAL(icms, C_BPartnerLocationTo_ID, dateDoc);
+			calculateDIFAL(icms, C_BPartnerLocationTo_ID, dateDoc, tl);
 		}
 		
 		icms.saveEx();
@@ -465,7 +465,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	 * @param C_BPartnerLocationTo_ID
 	 * @param dateDoc
 	 */
-	private void calculateDIFAL(MLBRDocLineICMS icms, int C_BPartnerLocationTo_ID, Timestamp dateDoc) {
+	private void calculateDIFAL(MLBRDocLineICMS icms, int C_BPartnerLocationTo_ID, Timestamp dateDoc, MLBRTaxLine tl) {
 
 		// local vars 
 		BigDecimal taxBaseAmt = Env.ZERO;
@@ -474,6 +474,8 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		BigDecimal partRate = Env.ZERO;
 		BigDecimal taxAmtSenderUF = Env.ZERO;
 		BigDecimal taxAmtReceiverUF = Env.ZERO;
+		BigDecimal fcpTaxAmt = Env.ZERO;
+		BigDecimal fcpTaxRate = Env.ZERO;
 		BigDecimal diffTaxRate = Env.ZERO;
 		BigDecimal diffTaxAmt = Env.ZERO;
 		
@@ -513,12 +515,11 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		}
 
 		// icms from internal tax matrix
-		MLBRTax tax = new MLBRTax(getCtx(), internalTax.getLBR_Tax_ID(),
-				get_TrxName());
-		for (MLBRTaxLine tl : tax.getLines()) {
-			if (tl.getLBR_TaxName_ID() > 0
-					&& tl.getLBR_TaxName().getName().equals("ICMSPROD")) {
-				internalTaxRate = tl.getLBR_TaxRate();
+		MLBRTax tax = new MLBRTax(getCtx(), internalTax.getLBR_Tax_ID(), get_TrxName());
+		for (MLBRTaxLine taxLine : tax.getLines()) {
+			if (taxLine.getLBR_TaxName_ID() > 0
+					&& taxLine.getLBR_TaxName().getName().equals("ICMSPROD")) {
+				internalTaxRate = taxLine.getLBR_TaxRate();
 				break;
 			}
 		}
@@ -559,6 +560,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			partRate = new BigDecimal (100);
 		
 		// set scale for all calc vars
+		fcpTaxRate = getFCP(new MLBRTax(getCtx(), tl.getLBR_Tax_ID(), get_TrxName()));
 		internalTaxRate = internalTaxRate.setScale(17, RoundingMode.HALF_UP);
 		externalTaxRate = externalTaxRate.setScale(17, RoundingMode.HALF_UP);
 		partRate = partRate.setScale(17, RoundingMode.HALF_UP);
@@ -576,15 +578,22 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		// calc sender part
 		taxAmtSenderUF = diffTaxAmt.subtract(taxAmtReceiverUF);
 		
-		// set amt to icms details
+		// calculate FCP
+		if (fcpTaxRate.signum() != 0) {
+			
+			// taxamt = taxamt * taxrate
+			fcpTaxAmt = taxBaseAmt.multiply(fcpTaxRate.divide(Env.ONEHUNDRED));
+		}
+		
+		// DIFAL
 		icms.setLBR_DIFAL_RateICMSInterPart(partRate.setScale(2, RoundingMode.HALF_UP));
 		icms.setLBR_DIFAL_TaxRateICMSUFDest(internalTaxRate.setScale(2, RoundingMode.HALF_UP));
 		icms.setLBR_DIFAL_TaxAmtICMSUFDest(taxAmtReceiverUF.setScale(2, RoundingMode.HALF_UP));
 		icms.setLBR_DIFAL_TaxAmtICMSUFRemet(taxAmtSenderUF.setScale(2, RoundingMode.HALF_UP));
 		
-		// TODO: Fundo de Combate a Pobreza
-		icms.setLBR_DIFAL_TaxRateFCPUFDest(Env.ZERO);
-		icms.setLBR_DIFAL_TaxAmtFCPUFDest(Env.ZERO);		
+		// FCP
+		icms.setLBR_DIFAL_TaxRateFCPUFDest(fcpTaxRate.setScale(2, RoundingMode.HALF_UP));
+		icms.setLBR_DIFAL_TaxAmtFCPUFDest(fcpTaxAmt.setScale(2, RoundingMode.HALF_UP));		
 	}
 	
 
@@ -1038,5 +1047,23 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		}
 		
 		return iva;
+	}	
+	
+	/**
+	 * 	Get FCP (fundo de combate a pobreza) Rate
+	 * 	@param tax MLBRTax
+	 *	@return IVA-ST percentage
+	 */
+	private BigDecimal getFCP(MLBRTax tax) {
+		BigDecimal rate = Env.ZERO;
+		MLBRTaxLine[] lines = tax.getLines();
+		
+		// Get FCP tax rate
+		for (MLBRTaxLine line : lines) {
+			if (line.getLBR_TaxName().getName().equals("FCP"))
+				rate = line.getLBR_TaxRate();
+		}
+		
+		return rate;
 	}	
 }
