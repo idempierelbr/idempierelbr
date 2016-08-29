@@ -36,6 +36,11 @@ public class ItauBankCollection implements IBankCollection {
 	@Override
 	public void postProcessBoleto(MLBRBoleto boleto) {
 		
+		// usado apenas para carteiras com emissão pelo cliente
+		if ( ! boleto.getLBR_IssueType().equals(MLBRBoleto.LBR_ISSUETYPE_2_ClienteEmite) ) {
+			return;
+		}
+		
 		String agencia = OpenItemsUtil.getPartialText( ( (PO) boleto.getC_BankAccount()).get_ValueAsString("LBR_BankAgencyNo") , false );
 		String conta = OpenItemsUtil.getPartialText(boleto.getC_BankAccount().getAccountNo(),false);
 
