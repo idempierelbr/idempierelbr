@@ -3,11 +3,11 @@
 <!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
 <idempiereTrl language="pt_BR" table="C_SalesRegion">
  <row id="101" trl="N">
-  <value column="Name" original="East">East</value>
+  <value column="Name" original="East">Leste</value>
   <value column="Description" original=""/>
  </row>
  <row id="102" trl="N">
-  <value column="Name" original="West">West</value>
+  <value column="Name" original="West">Oeste</value>
   <value column="Description" original=""/>
  </row>
 </idempiereTrl>
