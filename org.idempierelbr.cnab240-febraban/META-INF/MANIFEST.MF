@@ -24,8 +24,8 @@ Export-Package: org.idempierelbr.cnab240febraban,
  org.idempierelbr.cnab240febraban.process,
  org.idempierelbr.cnab240febraban.util,
  org.idempierelbr.cnab240febraban.validador
-Require-Bundle: org.adempiere.base,
+Require-Bundle: org.adempiere.base;bundle-version="3.1.0",
  org.idempierelbr.core;bundle-version="1.0.0",
- org.idempierelbr.open-items
+ org.idempierelbr.open-items;bundle-version="1.0.0"
 Import-Package: org.idempierelbr.cnab240.annotated,
  org.zkoss.zul

@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.idempierelbr.cnab240-bradesco
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.idempierelbr.cnab240-febraban;bundle-version="1.0.0",
- org.adempiere.base,
+ org.adempiere.base;bundle-version="3.1.0",
  org.idempierelbr.open-items;bundle-version="1.0.0",
  org.idempierelbr.core;bundle-version="1.0.0"
 Service-Component: OSGI-INF/BankCollectionFactory.xml

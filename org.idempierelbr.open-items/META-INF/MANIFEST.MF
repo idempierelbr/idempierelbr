@@ -4,14 +4,14 @@ Bundle-Name: iDempiereLBR Open Items
 Bundle-SymbolicName: org.idempierelbr.open-items
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Require-Bundle: org.adempiere.base,
+Require-Bundle: org.adempiere.base;bundle-version="3.1.0",
  org.idempierelbr.core;bundle-version="1.0.0",
- org.adempiere.ui.zk;bundle-version="2.0.0",
- org.zkoss.zk.library;bundle-version="6.0.0",
- org.adempiere.ui,
- org.adempiere.report.jasper.library,
- org.adempiere.report.jasper,
- org.idempierelbr.cnab240,
+ org.adempiere.ui.zk;bundle-version="3.1.0",
+ org.zkoss.zk.library;bundle-version="7.0.7",
+ org.adempiere.ui;bundle-version="3.1.0",
+ org.adempiere.report.jasper.library;bundle-version="3.1.0",
+ org.adempiere.report.jasper;bundle-version="3.1.0",
+ org.idempierelbr.cnab240;bundle-version="1.0.0",
  org.idempierelbr.nfe;bundle-version="1.0.0"
 Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/CalloutFactory.xml,OSGI-INF/DocFactory.xml,OSGI-INF/FormFactory.xml,
  OSGI-INF/ProcessFactory.xml
