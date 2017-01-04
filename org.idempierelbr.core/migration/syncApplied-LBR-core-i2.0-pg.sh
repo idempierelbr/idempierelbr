@@ -1,6 +1,8 @@
 DATABASE=idempiere
+HOSTNAME=localhost
 USER=adempiere
-ADDPG="-h idempiere -p 5432"
+ADDPG="-h $HOSTNAME -p 5432"
+export PGPASSWORD=SuaSenhaPostgres
 
 MIGRATIONDIR=/tmp/migrationLBR/core
 cd $MIGRATIONDIR
