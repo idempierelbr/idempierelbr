@@ -172,11 +172,9 @@ public final class WTaxesDialog extends Window
 	{
 		Caption caption = new Caption(Msg.getMsg(Env.getCtx(),"Parameter"));
 		parameterPanel.appendChild(caption);
-		parameterPanel.setHflex("95");
 		parameterPanel.setStyle("background-color: transparent;");
 		toolBar.setOrient("vertical");
 		toolBar.setStyle("border: none; margin: 5px");
-		toolBar.setHflex("5");
 
 		bSave.setImage(ThemeManager.getThemeResource("images/Save24.png"));
 		bSave.setTooltiptext(Msg.getMsg(Env.getCtx(),"Save"));
@@ -206,7 +204,6 @@ public final class WTaxesDialog extends Window
 
 		North nRegion = new North();
 		nRegion.setParent(layout);
-		northPanel.setHflex("false");
 		northPanel.setVflex("false");
 		nRegion.appendChild(northPanel);
 		nRegion.setStyle("background-color: transparent; border: none");
@@ -214,7 +211,6 @@ public final class WTaxesDialog extends Window
 
 		Center cRegion = new Center();
 		cRegion.setParent(layout);
-		m_adTabPanel.setHflex("true");
 		m_adTabPanel.setVflex("true");
 		cRegion.appendChild(m_adTabPanel);
 

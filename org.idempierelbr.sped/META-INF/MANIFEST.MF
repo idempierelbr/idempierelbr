@@ -2,9 +2,9 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Sped
 Bundle-SymbolicName: org.idempierelbr.sped
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 4.1.0.qualifier
 Bundle-Vendor: claudemir@todobom.com, aomelo@live.com, pblobp@gmail.com
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: org.adempiere.base,
  org.adempiere.exceptions,
  org.adempiere.model,
@@ -25,3 +25,4 @@ Service-Component: OSGI-INF/ProcessFactory.xml,
  OSGI-INF/ModelFactory.xml
 Bundle-ClassPath: lib/xstream-1.4.7.jar,
  .
+Bundle-ActivationPolicy: lazy

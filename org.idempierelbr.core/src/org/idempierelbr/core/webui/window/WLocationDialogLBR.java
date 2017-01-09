@@ -44,6 +44,7 @@ import org.adempiere.webui.component.Row;
 import org.adempiere.webui.component.Rows;
 import org.adempiere.webui.component.Textbox;
 import org.adempiere.webui.component.Window;
+import org.adempiere.webui.util.ZKUpdateUtil;
 import org.adempiere.webui.window.FDialog;
 import org.adempiere.webui.window.WAutoCompleterCity;
 import org.compiere.model.GridField;
@@ -325,47 +326,47 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 		Row pnlAddress1 = new Row();
 		pnlAddress1.appendChild(lblAddress1.rightAlign());
 		pnlAddress1.appendChild(txtAddress1);
-		txtAddress1.setHflex("1");
+		ZKUpdateUtil.setHflex(txtAddress1, "true");
 
 		Row pnlAddress2 = new Row();
 		pnlAddress2.appendChild(lblAddress2.rightAlign());
 		pnlAddress2.appendChild(txtAddress2);
-		txtAddress2.setHflex("1");
+		ZKUpdateUtil.setHflex(txtAddress2, "true");
 
 		Row pnlAddress3 = new Row();
 		pnlAddress3.appendChild(lblAddress3.rightAlign());
 		pnlAddress3.appendChild(txtAddress3);
-		txtAddress3.setHflex("1");
+		ZKUpdateUtil.setHflex(txtAddress3, "true");
 
 		Row pnlAddress4 = new Row();
 		pnlAddress4.appendChild(lblAddress4.rightAlign());
 		pnlAddress4.appendChild(txtAddress4);
-		txtAddress4.setHflex("1");
+		ZKUpdateUtil.setHflex(txtAddress4, "true");
 
 		Row pnlCity     = new Row();
 		pnlCity.appendChild(lblCity.rightAlign());
 		pnlCity.appendChild(txtCity);
-		txtCity.setHflex("1");
+		ZKUpdateUtil.setHflex(txtCity, "true");
 
 		Row pnlPostal   = new Row();
 		pnlPostal.appendChild(lblPostal.rightAlign());
 		pnlPostal.appendChild(txtPostal);
-		txtPostal.setHflex("1");
+		ZKUpdateUtil.setHflex(txtPostal, "true");
 
 		Row pnlPostalAdd = new Row();
 		pnlPostalAdd.appendChild(lblPostalAdd.rightAlign());
 		pnlPostalAdd.appendChild(txtPostalAdd);
-		txtPostalAdd.setHflex("1");
+		ZKUpdateUtil.setHflex(txtPostalAdd, "true");
 
 		Row pnlRegion    = new Row();
 		pnlRegion.appendChild(lblRegion.rightAlign());
 		pnlRegion.appendChild(lstRegion);
-		lstRegion.setHflex("1");
+		ZKUpdateUtil.setHflex(lstRegion, "true");
 
 		Row pnlCountry  = new Row();
 		pnlCountry.appendChild(lblCountry.rightAlign());
 		pnlCountry.appendChild(lstCountry);
-		lstCountry.setHflex("1");
+		ZKUpdateUtil.setHflex(lstCountry, "true");
 
 		Panel pnlLinks    = new Panel();
 		pnlLinks.appendChild(getCepZipAddress);
@@ -380,7 +381,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 		
 		Borderlayout borderlayout = new Borderlayout();
 		this.appendChild(borderlayout);
-		borderlayout.setHflex("1");
+		ZKUpdateUtil.setHflex(borderlayout, "true");
 		borderlayout.setVflex("1");
 		
 		Center centerPane = new Center();
@@ -420,7 +421,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 			Row row = new Row();
 			rows.appendChild(row);
 			row.appendCellChild(lstAddressValidation, 2);
-			lstAddressValidation.setHflex("1");			
+			ZKUpdateUtil.setHflex(lstAddressValidation, "true");
 			
 			MAddressValidation[] validations = MAddressValidation.getAddressValidation(Env.getCtx(), Env.getAD_Client_ID(Env.getCtx()), null);
 			for (MAddressValidation validation : validations)
@@ -436,7 +437,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 			row = new Row();
 			rows.appendChild(row);
 			row.appendCellChild(txtResult, 2);
-			txtResult.setHflex("1");
+			ZKUpdateUtil.setHflex(txtResult, "true");
 			txtResult.setText(m_location.getResult());
 			
 			row = new Row();
@@ -469,7 +470,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 		}
 		
 		vbox.setVflex("1");
-		vbox.setHflex("1");
+		ZKUpdateUtil.setHflex(vbox, "true");
 
 		South southPane = new South();
 		southPane.setSclass("dialog-footer");

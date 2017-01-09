@@ -2,23 +2,36 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Open Items
 Bundle-SymbolicName: org.idempierelbr.open-items
-Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Require-Bundle: org.adempiere.base;bundle-version="3.1.0",
- org.idempierelbr.core;bundle-version="1.0.0",
- org.adempiere.ui.zk;bundle-version="3.1.0",
- org.zkoss.zk.library;bundle-version="7.0.7",
- org.adempiere.ui;bundle-version="3.1.0",
- org.adempiere.report.jasper.library;bundle-version="3.1.0",
- org.adempiere.report.jasper;bundle-version="3.1.0",
- org.idempierelbr.cnab240;bundle-version="1.0.0",
- org.idempierelbr.nfe;bundle-version="1.0.0"
+Bundle-Version: 4.1.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.adempiere.base;bundle-version="4.1.0",
+ org.idempierelbr.core;bundle-version="4.1.0",
+ org.adempiere.ui;bundle-version="4.1.0",
+ org.adempiere.report.jasper;bundle-version="4.1.0",
+ org.idempierelbr.cnab240;bundle-version="4.1.0",
+ org.idempierelbr.nfe;bundle-version="4.1.0",
+ org.adempiere.report.jasper.library
 Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/CalloutFactory.xml,OSGI-INF/DocFactory.xml,OSGI-INF/FormFactory.xml,
  OSGI-INF/ProcessFactory.xml
-Import-Package: org.osgi.service.event
+Import-Package: org.adempiere.webui.apps.form,
+ org.adempiere.webui.component,
+ org.adempiere.webui.editor,
+ org.adempiere.webui.event,
+ org.adempiere.webui.factory,
+ org.adempiere.webui.panel,
+ org.adempiere.webui.util,
+ org.apache.commons.io;version="2.2.0",
+ org.osgi.service.event,
+ org.zkoss.xel.zel,
+ org.zkoss.zel,
+ org.zkoss.zk.ui,
+ org.zkoss.zk.ui.event,
+ org.zkoss.zul,
+ org.zkoss.zul.impl
 Bundle-ClassPath: .,
  lib/commons-lang-2.6.jar
 Export-Package: org.idempierelbr.openitems.model,
  org.idempierelbr.openitems.process,
  org.idempierelbr.openitems.processcnab240,
  org.idempierelbr.openitems.util
+Bundle-ActivationPolicy: lazy

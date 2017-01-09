@@ -26,6 +26,7 @@ import org.adempiere.webui.event.ValueChangeEvent;
 import org.adempiere.webui.event.ValueChangeListener;
 import org.adempiere.webui.panel.ADForm;
 import org.adempiere.webui.panel.IFormController;
+import org.adempiere.webui.util.ZKUpdateUtil;
 import org.compiere.model.MBankAccount;
 import org.compiere.model.MLookup;
 import org.compiere.model.MLookupFactory;
@@ -94,18 +95,18 @@ public class WCNABGen extends CNABGen implements IFormController, EventListener<
 
 		Row row = form.getParameterPanel().newRows().newRow();
 		row.appendCellChild(lOrg.rightAlign());
-		fOrg.getComponent().setHflex("true");
+		ZKUpdateUtil.setHflex(fOrg.getComponent(), "true");
 		row.appendCellChild(fOrg.getComponent());
 		row.appendCellChild(new Space());
 		row.appendCellChild(lBankAccount.rightAlign());
-		fBankAccount.setHflex("true");
+		ZKUpdateUtil.setHflex(fBankAccount, "true");
 		row.appendCellChild(fBankAccount);
 		row.appendCellChild(new Space());
 		
 		row = new Row();
 		form.getParameterPanel().getRows().appendChild(row);
 		row.appendCellChild(lConvenio.rightAlign());
-		fConvenio.setHflex("true");
+		ZKUpdateUtil.setHflex(fConvenio, "true");
 		row.appendCellChild(fConvenio);
 		row.appendCellChild(new Space());
 	}	//	jbInit

@@ -33,6 +33,7 @@ import org.adempiere.webui.event.ValueChangeListener;
 import org.adempiere.webui.panel.ADForm;
 import org.adempiere.webui.panel.IFormController;
 import org.adempiere.webui.session.SessionManager;
+import org.adempiere.webui.util.ZKUpdateUtil;
 import org.adempiere.webui.window.FDialog;
 import org.compiere.model.GridField;
 import org.compiere.model.MColumn;
@@ -295,7 +296,7 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 	    		Label lInternalBPartnerLoc = new Label(Msg.getElement(Env.getCtx(), "C_BPartner_Location_ID") + "*");
 	    		MLookup lookupBPLoc = MLookupFactory.get (Env.getCtx(), genform.getWindowNo(), 0, 3501, DisplayType.TableDir);
 	    		WEditor editorInternalBPartnerLoc = new WTableDirEditor("C_BPartner_Location_ID", true, false, true, lookupBPLoc);
-	    		((WTableDirEditor) editorInternalBPartnerLoc).getComponent().setHflex("1");
+	    		ZKUpdateUtil.setHflex(((WTableDirEditor) editorInternalBPartnerLoc).getComponent(), "true");
 	    		
 	    		editorInternalBPartnerLoc.addValueChangeListener(this);
 	    		
@@ -364,7 +365,7 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 	    		Label lInternalOrg = new Label(Msg.getElement(Env.getCtx(), "AD_Org_ID") + "*");
 	    		MLookup lookupOrg = MLookupFactory.get (Env.getCtx(), genform.getWindowNo(), 0, 3486, DisplayType.TableDir);
 	    		WEditor editorInternalOrg = new WTableDirEditor("AD_Org_ID", true, false, true, lookupOrg);
-	    		((WTableDirEditor) editorInternalOrg).getComponent().setHflex("1");
+	    		ZKUpdateUtil.setHflex(((WTableDirEditor) editorInternalOrg).getComponent(), "true");
 	    		editorInternalOrg.addValueChangeListener(this);
 	    		
 	    		lInternalOrg.setStyle("color: red;");
@@ -496,7 +497,7 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 		    		Label lInternalCharge = new Label(Msg.getElement(Env.getCtx(), "C_Charge_ID") + "*");
 		    		MLookup lookupCharge = MLookupFactory.get (Env.getCtx(), genform.getWindowNo(), 0, 3845, DisplayType.TableDir);
 		    		WEditor editorInternalCharge = new WTableDirEditor("C_Charge_ID", true, readonly, true, lookupCharge);
-		    		((WTableDirEditor) editorInternalCharge).getComponent().setHflex("1");
+		    		ZKUpdateUtil.setHflex(((WTableDirEditor) editorInternalCharge).getComponent(), "true");
 		    		((WTableDirEditor) editorInternalCharge).getComponent().setAttribute("id", key);
 		    		
 		    		editorInternalCharge.addValueChangeListener(this);
@@ -522,7 +523,7 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 		    		Label lInternalUOM = new Label(Msg.getElement(Env.getCtx(), "C_UOM_ID") + "*");
 		    		MLookup lookupUOM = MLookupFactory.get (Env.getCtx(), genform.getWindowNo(), 0, 1760, DisplayType.TableDir);
 		    		WEditor editorInternalUOM = new WTableDirEditor("C_UOM_ID", true, false, true, lookupUOM);
-		    		((WTableDirEditor) editorInternalUOM).getComponent().setHflex("1");
+		    		ZKUpdateUtil.setHflex(((WTableDirEditor) editorInternalUOM).getComponent(), "true");
 		    		((WTableDirEditor) editorInternalUOM).getComponent().setAttribute("id", key);
 		    		
 		    		editorInternalUOM.addValueChangeListener(this);
@@ -668,7 +669,7 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 				MColumn.getColumn_ID("LBR_NotaFiscal", "C_DocType_ID"), DisplayType.TableDir);
 		editorC_DocType_ID = new WTableDirEditor("C_DocType_ID", true, false, true, lookup);
 		editorC_DocType_ID.setMandatory(true);
-		((WTableDirEditor) editorC_DocType_ID).getComponent().setHflex("1");
+		ZKUpdateUtil.setHflex(((WTableDirEditor) editorC_DocType_ID).getComponent(), "true");
 		row.appendChild(labelC_DocType_ID.rightAlign());
 		row.appendChild(editorC_DocType_ID.getComponent());
 		editorC_DocType_ID.addValueChangeListener(this);
@@ -680,7 +681,7 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 		lookup = MLookupFactory.get (Env.getCtx(), genform.getWindowNo(), 0,
 				MColumn.getColumn_ID("LBR_NotaFiscal", "LBR_TransactionType"), DisplayType.List);
 		editorLBR_TransactionType = new WTableDirEditor("LBR_TransactionType", false, false, true, lookup);
-		((WTableDirEditor) editorLBR_TransactionType).getComponent().setHflex("1");
+		ZKUpdateUtil.setHflex(((WTableDirEditor) editorLBR_TransactionType).getComponent(), "true");
 		row.appendChild(labelLBR_TransactionType.rightAlign());
 		row.appendChild(editorLBR_TransactionType.getComponent());
 		editorLBR_TransactionType.addValueChangeListener(this);
@@ -725,7 +726,7 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 		}
 		editorDocAction = new WTableDirEditor("DocAction", true, false, true, lookup);
 		editorDocAction.setMandatory(true);
-		((WTableDirEditor) editorDocAction).getComponent().setHflex("1");
+		ZKUpdateUtil.setHflex(((WTableDirEditor) editorDocAction).getComponent(), "true");
 		row.appendChild(labelDocAction.rightAlign());
 		row.appendChild(editorDocAction.getComponent());
 		editorDocAction.addValueChangeListener(this);
