@@ -1,4 +1,4 @@
-/******************************************************************************
+﻿/******************************************************************************
  * Product: ADempiereLBR - ADempiere Localization Brazil                      *
  * This program is free software; you can redistribute it and/or modify it    *
  * under the terms version 2 of the GNU General Public License as published   *
@@ -361,7 +361,7 @@ public final class WebServiceCep {
 	 * 			cadastrado.
 	 */
 	public boolean wasSuccessful() {
-		return (resulCode == 1 && exception == null);
+		return ( ((resulCode == 1)||(resulCode == 2)) && exception == null );
 	}
 	/**
 	 * Informa se não existe o cep cadastrado.
