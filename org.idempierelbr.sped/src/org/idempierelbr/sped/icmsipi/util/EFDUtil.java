@@ -277,8 +277,10 @@ public class EFDUtil {
 	 */
 	public static String getCOD_SIT(MLBRFactFiscal factFiscal) throws Exception
 	{
-
-		int nfeStatus = Integer.parseInt(factFiscal.getLBR_NFeStatus());
+		int nfeStatus = 0;
+		
+		if (factFiscal.getLBR_NFeStatus() != null)
+			nfeStatus = Integer.parseInt(factFiscal.getLBR_NFeStatus());
 
 		String cod_sit = null;
 		
