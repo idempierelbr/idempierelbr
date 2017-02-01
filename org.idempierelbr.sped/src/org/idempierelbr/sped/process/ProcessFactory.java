@@ -7,13 +7,13 @@ public class ProcessFactory implements IProcessFactory {
 
 	@Override
 	public ProcessCall newProcessInstance(String className) {
-		if (className.equals("org.idempierelbr.sped.process.ProcGenerateEFDICMSIPI"))
+		if (className.equals("org.idempierelbr.sped.efd.process.ProcGenerateEFDICMSIPI"))
 			return new ProcGenerateEFDICMSIPI();
 		
-		if (className.equals("org.idempierelbr.sped.process.ProcTaxAssessment"))
+		if (className.equals("org.idempierelbr.sped.efd.process.ProcTaxAssessment"))
 			return new ProcTaxAssessment();
 		
-		if (className.equals("org.idempierelbr.sped.process.ProcGenerateEFDPISCOFINS"))
+		if (className.equals("org.idempierelbr.sped.efd.process.ProcGenerateEFDPISCOFINS"))
                     return new ProcGenerateEFDPISCOFINS();
 		
 		return null;
