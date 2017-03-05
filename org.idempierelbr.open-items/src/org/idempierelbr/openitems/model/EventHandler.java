@@ -1,5 +1,7 @@
 package org.idempierelbr.openitems.model;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 
 import org.adempiere.base.Service;
@@ -7,9 +9,11 @@ import org.adempiere.base.ServiceQuery;
 import org.adempiere.base.event.AbstractEventHandler;
 import org.adempiere.base.event.IEventTopics;
 import org.adempiere.exceptions.AdempiereException;
+import org.compiere.model.MAllocationLine;
 import org.compiere.model.MInOut;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MOrder;
+import org.compiere.model.MPayment;
 import org.compiere.model.MRMA;
 import org.compiere.model.PO;
 import org.compiere.process.DocAction;
@@ -31,6 +35,8 @@ public class EventHandler extends AbstractEventHandler {
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MLBRBoletoDetails.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MInvoice.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_DELETE, MLBRBoletoMovement.Table_Name);
+		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MAllocationLine.Table_Name);
+		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MPayment.Table_Name);
 	}
 
 	@Override
@@ -142,8 +148,35 @@ public class EventHandler extends AbstractEventHandler {
 			if (mov.getLBR_FileGeneratingDate() != null)
 				addErrorMessage(event, "Não é possível excluir movimento anteriormente salvo em arquivo");
 		}
-	}
-	
+		
+		// change interest amount signal when reversing a payment
+		if (po instanceof MPayment && event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)) {
+			MPayment p = (MPayment) po;
+			
+			if (p.getReversal_ID() > 0) {
+				BigDecimal interestAmt = (BigDecimal) p.get_Value("InterestAmt");
+				
+				if (interestAmt != null && interestAmt.signum() != 0)
+					p.set_ValueOfColumn("InterestAmt", interestAmt.negate());
+			}
+		}
+		
+		// change allocation amount when payment has interest amount
+		if (po instanceof MAllocationLine && event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)) {
+			MAllocationLine al = (MAllocationLine) po;
+			int C_Payment_ID = al.getC_Payment_ID();
+			
+			if (C_Payment_ID != 0) {
+				MPayment p = new MPayment(po.getCtx(), C_Payment_ID, po.get_TrxName());
+				BigDecimal interestAmt = (BigDecimal) p.get_Value("InterestAmt");
+				
+				if (interestAmt != null && interestAmt.signum() != 0
+						&& (p.getPayAmt().setScale(4, RoundingMode.HALF_UP).negate().equals(al.getAmount().setScale(4, RoundingMode.HALF_UP))
+								|| p.getPayAmt().setScale(4, RoundingMode.HALF_UP).equals(al.getAmount().setScale(4, RoundingMode.HALF_UP))))
+					al.setAmount(p.isReceipt() ? al.getAmount().subtract(interestAmt) : al.getAmount().add(interestAmt));
+			}
+		}
+	}	
 	
 	public static IBankCollection getBankCollectionInstance( String routingno ) {
 		ServiceQuery query = new ServiceQuery();

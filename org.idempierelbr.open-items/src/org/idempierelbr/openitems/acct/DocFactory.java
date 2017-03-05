@@ -58,9 +58,10 @@ public class DocFactory implements IDocFactory {
 		Doc doc = null;
 		String tableName = MTable.getTableName(Env.getCtx(), AD_Table_ID);
 		
-		if (tableName.equals("LBR_Boleto")) {
+		if (tableName.equals("LBR_Boleto"))
 			doc = new Doc_Boleto(as, rs, trxName);
-		}
+		else if (tableName.equals("C_Payment"))
+			doc = new Doc_Payment(as, rs, trxName);
 		
 		return doc;
 	}
