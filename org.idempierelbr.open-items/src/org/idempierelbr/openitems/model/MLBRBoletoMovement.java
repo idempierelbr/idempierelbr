@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 import org.adempiere.exceptions.AdempiereException;
+import org.compiere.model.MBank;
 import org.compiere.model.MBankAccount;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MPayment;
@@ -180,6 +181,26 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 		
 		if (C_BankAccount_ID != null)
 			setBankAccount(new MBankAccount(getCtx(), C_BankAccount_ID, get_TrxName()));				
+	}
+
+	/**
+	 * 
+	 * Cria e inicializa um movimento de cobrança para um boleto
+	 * 
+	 * @param ctx Contexto
+	 * @param boleto Boleto que receberá o movimento
+	 * @param cobMovCode Código do movimento de remessa (Manual Febraban C004)
+	 * @param trxName Nome da transação no banco
+	 * @return
+	 */
+	public static MLBRBoletoMovement createNewMovement( Properties ctx, MLBRBoleto boleto, String cobMovCode, String trxName ) {
+		MLBRBoletoMovement newMov = new MLBRBoletoMovement( ctx , 0 , trxName);
+		newMov.setAD_Org_ID(boleto.getAD_Org_ID());
+		newMov.setLBR_Boleto_ID(boleto.get_ID());
+		newMov.setLBR_CNAB240MovementType(MLBRBoletoMovement.LBR_CNAB240MOVEMENTTYPE_1_RemessaCliente_GtBanco);
+		MLBRCobMovimento cobMov = MLBRCobMovimento.getMovimento(ctx, cobMovCode, MLBRBoletoMovement.LBR_CNAB240MOVEMENTTYPE_1_RemessaCliente_GtBanco, (MBank) boleto.getC_Bank(), trxName);
+		newMov.setLBR_Cob_Movimento_ID(cobMov.get_ID());
+		return newMov;
 	}
 
 }

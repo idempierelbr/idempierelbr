@@ -24,6 +24,7 @@ import org.compiere.model.MSysConfig;
 import org.compiere.model.MTable;
 import org.compiere.model.ModelValidationEngine;
 import org.compiere.model.ModelValidator;
+import org.compiere.model.PO;
 import org.compiere.model.Query;
 import org.compiere.process.DocAction;
 import org.compiere.process.DocOptions;
@@ -593,6 +594,31 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 		Query query =  new Query(ctx, table, "LBR_NumberInBank=?", trxName);
 		query.setParameters(new Object[]{numberInBank});
 		return query.firstOnly();
+	}
+	
+	public static MLBRBoleto getByInvoicePaySchedule(Properties ctx, MInvoicePaySchedule ips , String trxName) {
+		MTable table = MTable.get (ctx, MLBRBoleto.Table_Name);
+		Query query =  new Query(ctx, table, "C_InvoicePaySchedule_ID=?", trxName);
+		query.setParameters(new Object[]{ips.get_ID()});
+		return query.firstOnly();
+	}
+	
+	public static MLBRBoleto getByPayment(Properties ctx, MPayment payment , String trxName) {
+		if (payment == null) {
+			return null;
+		}
+		int boletoID = payment.get_ValueAsInt("lbr_boleto_id");
+		if (boletoID==0) {
+			return null;
+		}
+		return new MLBRBoleto(ctx, boletoID, trxName);
+	}
+	
+	public static List<MLBRBoleto> getByInvoice(Properties ctx, MInvoice invoice , String trxName) {
+		MTable table = MTable.get (ctx, MLBRBoleto.Table_Name);
+		Query query =  new Query(ctx, table, "C_Invoice_ID=?", trxName);
+		query.setParameters(new Object[]{invoice.get_ID()});
+		return query.list();
 	}
 	
 	public int getNewMovementSeqNo() {

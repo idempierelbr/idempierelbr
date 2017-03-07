@@ -2,6 +2,7 @@ package org.idempierelbr.openitems.model;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.adempiere.base.Service;
@@ -9,9 +10,11 @@ import org.adempiere.base.ServiceQuery;
 import org.adempiere.base.event.AbstractEventHandler;
 import org.adempiere.base.event.IEventTopics;
 import org.adempiere.exceptions.AdempiereException;
+import org.compiere.model.MAllocationHdr;
 import org.compiere.model.MAllocationLine;
 import org.compiere.model.MInOut;
 import org.compiere.model.MInvoice;
+import org.compiere.model.MInvoicePaySchedule;
 import org.compiere.model.MOrder;
 import org.compiere.model.MPayment;
 import org.compiere.model.MRMA;
@@ -37,6 +40,11 @@ public class EventHandler extends AbstractEventHandler {
 		registerTableEvent(IEventTopics.PO_BEFORE_DELETE, MLBRBoletoMovement.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MAllocationLine.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MPayment.Table_Name);
+		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MInvoicePaySchedule.Table_Name);
+		registerTableEvent(IEventTopics.DOC_BEFORE_REVERSEACCRUAL , MInvoice.Table_Name);
+		registerTableEvent(IEventTopics.DOC_BEFORE_REVERSECORRECT , MInvoice.Table_Name);
+		registerTableEvent(IEventTopics.DOC_BEFORE_VOID , MInvoice.Table_Name);
+		registerTableEvent(IEventTopics.DOC_AFTER_COMPLETE, MAllocationHdr.Table_Name);
 	}
 
 	@Override
@@ -80,6 +88,29 @@ public class EventHandler extends AbstractEventHandler {
 		
 		if (po instanceof MLBRBoleto && event.getTopic().equals(IEventTopics.PO_AFTER_CHANGE)) {
 			MLBRBoleto boleto = (MLBRBoleto)po;
+
+			// Only for completed boletos
+			if (boleto.getDocStatus().equals(DocAction.STATUS_Completed)) {
+				// alterações no abatimento
+				if (po.is_ValueChanged(MLBRBoleto.COLUMNNAME_WriteOffAmt)) {
+					BigDecimal newWriteOffAmt = boleto.getWriteOffAmt();
+					BigDecimal oldWriteOffAmt = (BigDecimal) po.get_ValueOld(MLBRBoleto.COLUMNNAME_WriteOffAmt);
+					String newMovCode;
+					if (oldWriteOffAmt == null || oldWriteOffAmt.equals(BigDecimal.ZERO)) {
+						// concessão
+						newMovCode="04";
+					} else if (newWriteOffAmt.equals(BigDecimal.ZERO)) {
+						// cancelamento
+						newMovCode="05";
+					} else {
+						// alteração
+						newMovCode="18";
+					}
+					MLBRBoletoMovement newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), boleto, newMovCode, po.get_TrxName());
+					newMov.setWriteOffAmt(newWriteOffAmt);
+					newMov.saveEx();
+				}
+			}
 			
 			// Only drafted/in progress/invalid boletos
 			if (boleto.getDocStatus().equals(DocAction.STATUS_Drafted) ||
@@ -174,6 +205,92 @@ public class EventHandler extends AbstractEventHandler {
 						&& (p.getPayAmt().setScale(4, RoundingMode.HALF_UP).negate().equals(al.getAmount().setScale(4, RoundingMode.HALF_UP))
 								|| p.getPayAmt().setScale(4, RoundingMode.HALF_UP).equals(al.getAmount().setScale(4, RoundingMode.HALF_UP))))
 					al.setAmount(p.isReceipt() ? al.getAmount().subtract(interestAmt) : al.getAmount().add(interestAmt));
+			}
+		}
+		
+		// Include instructions on Boleto when Invoice is Voided/Reversed
+		if (po instanceof MInvoice && ( event.getTopic().equals(IEventTopics.DOC_BEFORE_VOID) || 
+										event.getTopic().equals(IEventTopics.DOC_BEFORE_REVERSEACCRUAL) ||
+										event.getTopic().equals(IEventTopics.DOC_BEFORE_REVERSECORRECT) ) ) {
+
+			List<MLBRBoleto> boletos = MLBRBoleto.getByInvoice(po.getCtx(), (MInvoice)po, po.get_TrxName());
+
+			for (MLBRBoleto b : boletos) {
+				if (!b.isLBR_IsBaixado() && !b.isPaid()) {
+					MLBRBoletoMovement newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), b, b.isLBR_IsProtested()?"10":"02", po.get_TrxName());
+					newMov.saveEx();
+				}
+			}
+		}
+		
+		MLBRBoleto boleto = null;
+
+		// Include instructions on Boleto when Payment Schedule is changed
+		if (po instanceof MInvoicePaySchedule && event.getTopic().equals(IEventTopics.PO_AFTER_CHANGE) && (boleto = MLBRBoleto.getByInvoicePaySchedule(po.getCtx(), (MInvoicePaySchedule) po, po.get_TrxName()))!=null) {
+
+			MInvoicePaySchedule paySchedule = (MInvoicePaySchedule) po;
+			MLBRBoletoDetails[] detailsEntries = boleto.getDetails();
+
+			MLBRBoletoMovement newMov = null;
+			// Vencimento
+			if (boleto != null && po.is_ValueChanged(MInvoicePaySchedule.COLUMNNAME_DueDate)) {
+				if (detailsEntries.length > 0) {
+					// change DueDate on boleto
+					boleto.setDueDate(paySchedule.getDueDate());
+					boleto.saveEx();
+					detailsEntries[0].updateInterest();
+					detailsEntries[0].updateLatePaymentPenalty();
+				}				
+				newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), boleto, "06", po.get_TrxName());
+				newMov.setDueDate(((MInvoicePaySchedule)po).getDueDate());
+				newMov.saveEx();
+			}
+			// Data e/ou Valor de desconto
+			if (boleto != null && (    po.is_ValueChanged(MInvoicePaySchedule.COLUMNNAME_DiscountAmt)
+					                || po.is_ValueChanged(MInvoicePaySchedule.COLUMNNAME_DiscountDate))) {
+				newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), boleto, "16", po.get_TrxName());
+				newMov.setLBR_CNABDiscount1Code( MLBRBoletoMovement.LBR_CNABDISCOUNT1CODE_1_ValorFixoAteADataInformada );
+				newMov.setDiscountAmt(((MInvoicePaySchedule)po).getDiscountAmt());
+				newMov.setLBR_CNABDiscount1Date(((MInvoicePaySchedule)po).getDiscountDate());
+				detailsEntries[0].updateDiscounts();
+				newMov.saveEx();
+			}
+		}
+		
+		// Include instructions to Boleto when allocating credits to its invoice
+		if (po instanceof MAllocationHdr && event.getTopic().equals(IEventTopics.DOC_AFTER_COMPLETE)) {
+			MAllocationHdr allocation = (MAllocationHdr) po;
+			MAllocationLine[] lines = allocation.getLines(false);
+			
+			List<MLBRBoleto> boletos = new ArrayList<MLBRBoleto>();
+			
+			if (lines.length == 1) {
+				// detect direct allocation to a Boleto
+				boleto = MLBRBoleto.getByPayment(po.getCtx(), (MPayment) (lines[0].getC_Payment()) , po.get_TrxName());
+				if (boleto != null && !boleto.isPaid() && !boleto.isLBR_IsBaixado()) {
+					boletos.add(boleto);
+				}
+			} else if (lines.length > 1) {
+				// detect allocation to fully paid invoices
+				List<MInvoice> arInvoices = new ArrayList<MInvoice>();
+				for ( MAllocationLine a : lines ) {
+					MInvoice invoice = a.getInvoice();
+					if (invoice.isSOTrx() && !invoice.isCreditMemo() && invoice.isPaid() && !arInvoices.contains(invoice)) {
+						// Only for AR Invoice
+						arInvoices.add(invoice);
+						List<MLBRBoleto> bList = MLBRBoleto.getByInvoice(po.getCtx(), invoice, po.get_TrxName());
+						for ( MLBRBoleto b : bList) {
+							if (!b.isPaid() && !b.isLBR_IsBaixado()) {
+								boletos.add(b);
+							}
+						}
+					}
+				}
+			}
+
+			for (MLBRBoleto b : boletos) {
+				MLBRBoletoMovement newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), b, b.isLBR_IsProtested()?"10":"02", po.get_TrxName());
+				newMov.saveEx();
 			}
 		}
 	}	

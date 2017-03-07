@@ -627,8 +627,9 @@ public class CNAB240Generate extends SvrProcess
 			segP.setValorIOF(m_boleto.getLBR_IOFAmt().doubleValue());
 		
 		segP.setValorAbatimento(0.00);
-		
-		if (m_movementCode.equals("04") && mov.getWriteOffAmt() != null)
+
+		// concessão ou alteração de abatimento
+		if ( (m_movementCode.equals("04") || m_movementCode.equals("18")) && mov.getWriteOffAmt() != null)
 			segP.setValorAbatimento(mov.getWriteOffAmt().doubleValue());
 		else if (m_boleto.getWriteOffAmt() != null)
 			segP.setValorAbatimento(m_boleto.getWriteOffAmt().doubleValue());
