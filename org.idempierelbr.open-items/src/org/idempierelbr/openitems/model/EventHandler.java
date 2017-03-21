@@ -1,4 +1,4 @@
-package org.idempierelbr.openitems.model;
+﻿package org.idempierelbr.openitems.model;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -337,7 +337,7 @@ public class EventHandler extends AbstractEventHandler {
 				List<MInvoice> arInvoices = new ArrayList<MInvoice>();
 				for ( MAllocationLine a : lines ) {
 					MInvoice invoice = a.getInvoice();
-					if (invoice.isSOTrx() && !invoice.isCreditMemo() && invoice.isPaid() && !arInvoices.contains(invoice)) {
+					if (invoice != null && invoice.isSOTrx() && !invoice.isCreditMemo() && invoice.isPaid() && !arInvoices.contains(invoice)) {
 						// Only for AR Invoice
 						arInvoices.add(invoice);
 						List<MLBRBoleto> bList = MLBRBoleto.getByInvoice(po.getCtx(), invoice, po.get_TrxName());
