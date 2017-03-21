@@ -10,6 +10,7 @@ import org.compiere.model.MBankAccount;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MOrder;
 import org.compiere.model.MPayment;
+import org.compiere.model.MPaymentAllocate;
 import org.idempierelbr.openitems.model.MLBRBoleto;
 
 /**
@@ -60,13 +61,19 @@ public class CalloutFactory implements IColumnCalloutFactory {
 				 callouts.add(new CalloutBank());
 		}
 		
-		// Tabela M_Payment
+		// Tabela C_Payment
 		if (tableName.equals(MPayment.Table_Name)) {
 			if (columnName.equals("InterestAmt") || columnName.equals("PayAmt") || columnName.equals("DiscountAmt")
 					|| columnName.equals("WriteOffAmt") || columnName.equals("OverUnderAmt")
 					|| columnName.equals("C_Currency_ID") || columnName.equals("IsOverUnderPayment")
-					|| columnName.equals("C_ConversionType_ID"))
+					|| columnName.equals("C_ConversionType_ID") || columnName.equals("C_Invoice_ID"))
 				 callouts.add(new CalloutPayment());
+		}
+		
+		// Tabela C_PaymentAllocate
+		if (tableName.equals(MPaymentAllocate.Table_Name)) {
+			if (columnName.equals("C_Invoice_ID"))
+				 callouts.add(new CalloutPaymentAllocate());
 		}
 		
 		return callouts != null ? callouts.toArray(new IColumnCallout[0]) : new IColumnCallout[0];

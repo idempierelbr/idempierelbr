@@ -62,6 +62,8 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 				
 				Payment.setC_Invoice_ID(invoice.get_ID());						// Fatura
 				
+				Payment.set_ValueOfColumn("C_InvoicePaySchedule_ID", boleto.getC_InvoicePaySchedule_ID());
+				
 				Payment.set_ValueOfColumn("LBR_Boleto_ID", boleto.get_ID());	// Boleto
 				
 				

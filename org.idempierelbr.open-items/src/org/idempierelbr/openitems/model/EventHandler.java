@@ -4,11 +4,14 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import org.adempiere.base.Service;
 import org.adempiere.base.ServiceQuery;
 import org.adempiere.base.event.AbstractEventHandler;
+import org.adempiere.base.event.IEventManager;
 import org.adempiere.base.event.IEventTopics;
+import org.adempiere.base.event.LoginEventData;
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MAllocationHdr;
 import org.compiere.model.MAllocationLine;
@@ -17,10 +20,15 @@ import org.compiere.model.MInvoice;
 import org.compiere.model.MInvoicePaySchedule;
 import org.compiere.model.MOrder;
 import org.compiere.model.MPayment;
+import org.compiere.model.MPaymentAllocate;
 import org.compiere.model.MRMA;
+import org.compiere.model.MSysConfig;
+import org.compiere.model.MTable;
 import org.compiere.model.PO;
+import org.compiere.model.Query;
 import org.compiere.process.DocAction;
 import org.compiere.util.CLogger;
+import org.compiere.util.Env;
 import org.idempierelbr.openitems.process.IBankCollection;
 import org.idempierelbr.openitems.process.IBankCollectionFactory;
 import org.osgi.service.event.Event;
@@ -33,18 +41,29 @@ public class EventHandler extends AbstractEventHandler {
 	protected void initialize() {
 		registerTableEvent(IEventTopics.PO_AFTER_NEW, MLBRBoleto.Table_Name);
 		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MLBRBoleto.Table_Name);
-		registerTableEvent(IEventTopics.DOC_AFTER_COMPLETE , MLBRBoleto.Table_Name);
-		registerTableEvent(IEventTopics.DOC_BEFORE_COMPLETE , MLBRBoleto.Table_Name);
-		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MLBRBoletoDetails.Table_Name);
-		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MInvoice.Table_Name);
+		registerTableEvent(IEventTopics.DOC_AFTER_COMPLETE, MLBRBoleto.Table_Name);
+		registerTableEvent(IEventTopics.DOC_BEFORE_COMPLETE, MLBRBoleto.Table_Name);
+		
 		registerTableEvent(IEventTopics.PO_BEFORE_DELETE, MLBRBoletoMovement.Table_Name);
-		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MAllocationLine.Table_Name);
-		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MPayment.Table_Name);
+		
+		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MLBRBoletoDetails.Table_Name);
+		
+		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MInvoice.Table_Name);
+		registerTableEvent(IEventTopics.DOC_BEFORE_REVERSEACCRUAL, MInvoice.Table_Name);
+		registerTableEvent(IEventTopics.DOC_BEFORE_REVERSECORRECT, MInvoice.Table_Name);
+		registerTableEvent(IEventTopics.DOC_BEFORE_VOID, MInvoice.Table_Name);
+		
 		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MInvoicePaySchedule.Table_Name);
-		registerTableEvent(IEventTopics.DOC_BEFORE_REVERSEACCRUAL , MInvoice.Table_Name);
-		registerTableEvent(IEventTopics.DOC_BEFORE_REVERSECORRECT , MInvoice.Table_Name);
-		registerTableEvent(IEventTopics.DOC_BEFORE_VOID , MInvoice.Table_Name);
+		
 		registerTableEvent(IEventTopics.DOC_AFTER_COMPLETE, MAllocationHdr.Table_Name);
+		
+		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MAllocationLine.Table_Name);
+		registerTableEvent(IEventTopics.PO_AFTER_NEW, MAllocationLine.Table_Name);
+		
+		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MPayment.Table_Name);
+		registerTableEvent(IEventTopics.DOC_BEFORE_COMPLETE, MPayment.Table_Name);
+		
+		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MPaymentAllocate.Table_Name);
 	}
 
 	@Override
@@ -192,19 +211,62 @@ public class EventHandler extends AbstractEventHandler {
 			}
 		}
 		
-		// change allocation amount when payment has interest amount
+		// change allocation amount (interest amt) and copy invoice pay schedule from payment
 		if (po instanceof MAllocationLine && event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)) {
 			MAllocationLine al = (MAllocationLine) po;
 			int C_Payment_ID = al.getC_Payment_ID();
 			
 			if (C_Payment_ID != 0) {
 				MPayment p = new MPayment(po.getCtx(), C_Payment_ID, po.get_TrxName());
+				
+				// Interest Amt
 				BigDecimal interestAmt = (BigDecimal) p.get_Value("InterestAmt");
 				
 				if (interestAmt != null && interestAmt.signum() != 0
 						&& (p.getPayAmt().setScale(4, RoundingMode.HALF_UP).negate().equals(al.getAmount().setScale(4, RoundingMode.HALF_UP))
 								|| p.getPayAmt().setScale(4, RoundingMode.HALF_UP).equals(al.getAmount().setScale(4, RoundingMode.HALF_UP))))
 					al.setAmount(p.isReceipt() ? al.getAmount().subtract(interestAmt) : al.getAmount().add(interestAmt));
+				
+				// Invoice Pay Schedule
+				if (al.getC_Invoice_ID() > 0)
+					al.set_ValueOfColumn("C_InvoicePaySchedule_ID", (Integer)p.get_Value("C_InvoicePaySchedule_ID"));
+			}
+		}
+		
+		// copy invoice pay schedule from payment allocate
+		if (po instanceof MPaymentAllocate && event.getTopic().equals(IEventTopics.PO_AFTER_CHANGE)) {
+			MPaymentAllocate pa = (MPaymentAllocate)po;
+			
+			if (pa.is_ValueChanged("C_AllocationLine_ID") && pa.getC_AllocationLine_ID() > 0 && pa.get_ValueAsInt("C_InvoicePaySchedule_ID") > 0) {
+				MAllocationLine al = new MAllocationLine(pa.getCtx(), pa.getC_AllocationLine_ID(), pa.get_TrxName());
+				al.set_ValueOfColumn("C_InvoicePaySchedule_ID", (Integer)pa.get_Value("C_InvoicePaySchedule_ID"));
+				al.saveEx();
+			}
+		}
+		
+		// copy invoice pay schedule from payment allocate
+		if (po instanceof MAllocationHdr && event.getTopic().equals(IEventTopics.DOC_AFTER_COMPLETE)) {
+			MAllocationHdr allocationReversed = (MAllocationHdr) po;
+			
+			if (allocationReversed.getReversal_ID() > 0) {
+				List<MAllocationLine> linesReversed = getAllocationLines(po.getCtx(), allocationReversed.get_ID(), po.get_TrxName());
+				
+				if (linesReversed.size() > 0) {
+					MAllocationHdr allocationOriginal =  new MAllocationHdr(po.getCtx(), allocationReversed.getReversal_ID(), po.get_TrxName());
+					List<MAllocationLine> linesOriginal = getAllocationLines(po.getCtx(), allocationOriginal.get_ID(), po.get_TrxName());
+					
+					if (linesReversed.size() == linesOriginal.size()) {
+						for (int i=0; i<linesReversed.size(); i++) {
+							Integer ipsOriginal = (Integer) linesOriginal.get(i).get_Value("C_InvoicePaySchedule_ID");
+							
+							if (ipsOriginal != null && ipsOriginal > 0) {
+								linesReversed.get(i).set_ValueOfColumn("C_InvoicePaySchedule_ID", ipsOriginal);
+								linesReversed.get(i).saveEx();
+							}
+						}
+					} else
+						throw new AdempiereException("LBR: Couldn't reverse allocation due to diferent lines no.");					
+				}
 			}
 		}
 		
@@ -293,6 +355,17 @@ public class EventHandler extends AbstractEventHandler {
 				newMov.saveEx();
 			}
 		}
+		
+		// ensure C_InvoicePaySchedule is consistent
+		if (po instanceof MPayment && event.getTopic().equals(IEventTopics.DOC_BEFORE_COMPLETE)) {
+			MPayment p = (MPayment) getPO(event);
+
+			if (getNoOfAllocationsToInvoiceOnly(po.getCtx(), p.getC_Invoice_ID(), po.get_TrxName()) > 0 &&
+					p.get_ValueAsInt("C_InvoicePaySchedule_ID") > 0) {
+				p.set_ValueOfColumn("C_InvoicePaySchedule_ID", null);
+				p.saveEx();
+			}
+		}
 	}	
 	
 	public static IBankCollection getBankCollectionInstance( String routingno ) {
@@ -308,6 +381,35 @@ public class EventHandler extends AbstractEventHandler {
 			}
 		}
 		return null;
+	}
+	
+	public static int getNoOfAllocationsToInvoiceOnly(Properties ctx, Integer C_Invoice_ID, String trxName) {
+		int result = 0;
+		
+		if (C_Invoice_ID != null && C_Invoice_ID > 0) {
+			MTable table = MTable.get (ctx, MAllocationLine.Table_Name);
+			Query query =  new Query(ctx, table, "C_Invoice_ID=? AND (C_InvoicePaySchedule_ID=null OR C_InvoicePaySchedule_ID<=0)", trxName);
+			query.setParameters(new Object[]{C_Invoice_ID});
+			
+			result = query.count();
+		}
+		
+		return result;
+	}
+	
+	private List<MAllocationLine> getAllocationLines(Properties ctx, Integer C_AllocationHdr_ID, String trxName) {
+		List<MAllocationLine> result = new ArrayList<MAllocationLine>();
+		
+		if (C_AllocationHdr_ID != null && C_AllocationHdr_ID > 0) {
+			MTable table = MTable.get (ctx, MAllocationLine.Table_Name);
+			Query query =  new Query(ctx, table, "C_AllocationHdr_ID=?", trxName);
+			query.setParameters(new Object[]{C_AllocationHdr_ID});
+			query.setOrderBy("C_Invoice_ID ASC, Amount ASC, C_AllocationLine_ID ASC");
+			
+			result = query.list();
+		}
+		
+		return result;
 	}
 
 }
