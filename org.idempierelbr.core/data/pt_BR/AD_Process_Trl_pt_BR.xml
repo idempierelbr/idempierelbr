@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_Process">
+<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Process">
  <row id="100" trl="Y">
   <value column="Name" original="Create Periods ">Criar Períodos </value>
   <value column="Description" original="Create 12 standard calendar periods.">Criar 12 períodos de calendário padrão</value>
@@ -2175,6 +2173,11 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original="Generate Production from Project Line(s)">Generate Production from Project Line(s)</value>
   <value column="Help" original=""/>
  </row>
+ <row id="200086" trl="N">
+  <value column="Name" original="Copy Components From View">Copy Components From View</value>
+  <value column="Description" original="Create dictionary view components for a table taking another as base">Create dictionary view components for a table taking another as base</value>
+  <value column="Help" original=""/>
+ </row>
  <row id="800000" trl="Y">
   <value column="Name" original="Distribute Amount to Doc Line Details">Distribuir Valor aos Detalhes</value>
   <value column="Description" original="Distribute a given amount to line details of a document">Distribuir Valor aos Detalhes das Linhas</value>
@@ -2229,6 +2232,11 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Name" original="Process SPED EFD PISCOFINS">Processar Sped EFD PIS / COFINS</value>
   <value column="Description" original="Brazilian process to create digital document  of fiscal bookkeeping of pis/cofins tax">Processo brasileiro para criar documento de escrituração fiscal digital do imposto PIS / COFINS</value>
   <value column="Help" original=""/>
+ </row>
+ <row id="800046" trl="Y">
+  <value column="Name" original="Generate Boletos Instructions">Gerar Instruções Bancárias</value>
+  <value column="Description" original="Generate bank instructions for existing Boletos">Gera instruções bancárias para boletos existentes</value>
+  <value column="Help" original="This process allows to generate instructions for existing boletos.">Este processo permite gerar instruções bancárias para boletos exitentes.</value>
  </row>
  <row trl="N" uuid="e6df0503-5f93-4a2c-abe6-0c425cc138e9">
   <value column="Name" original="Process NotaFiscal">Process NotaFiscal</value>

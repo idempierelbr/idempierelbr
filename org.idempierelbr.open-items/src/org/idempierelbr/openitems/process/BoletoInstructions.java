@@ -44,15 +44,13 @@ public class BoletoInstructions extends SvrProcess {
 		
 		MLBRCobMovimento movimento = new MLBRCobMovimento(getCtx(), p_LBR_Cob_Movimento_ID, get_TrxName());
 		
-		if (getTable_ID() == MInvoice.Table_ID || p_C_Invoice_ID > 0) {
-			MInvoice invoice = new MInvoice(getCtx(),
-					getTable_ID() == MInvoice.Table_ID ? getRecord_ID() : p_C_Invoice_ID, get_TrxName());
-			boletos = MLBRBoleto.getByInvoice(getCtx(), invoice, get_TrxName());
-		} else if (getTable_ID() == MLBRBoleto.Table_ID || p_LBR_Boleto_ID > 0) {
+		if (p_LBR_Boleto_ID > 0) {
 			boletos = new ArrayList<MLBRBoleto>();
-			MLBRBoleto boleto = new MLBRBoleto(getCtx(),
-					getTable_ID() == MLBRBoleto.Table_ID ? getRecord_ID() : p_LBR_Boleto_ID, get_TrxName());
+			MLBRBoleto boleto = new MLBRBoleto(getCtx(), p_LBR_Boleto_ID, get_TrxName());
 			boletos.add(boleto);
+		} else if (p_C_Invoice_ID > 0) {
+			MInvoice invoice = new MInvoice(getCtx(), p_C_Invoice_ID, get_TrxName());
+			boletos = MLBRBoleto.getByInvoice(getCtx(), invoice, get_TrxName());
 		}
 		
 		for ( MLBRBoleto boleto : boletos) {
