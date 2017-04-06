@@ -148,7 +148,7 @@ public class Doc_Payment extends Doc
 				fl.setAD_Org_ID(AD_Org_ID);
 			
 			// LBR: Interest Amount
-			if (interestAmt.signum() != 0) {
+			if (interestAmt != null && interestAmt.signum() != 0) {
 				fl = fact.createLine(null, getAccount(Doc.ACCTTYPE_InterestRev, as),
 						getC_Currency_ID(), null, interestAmt);
 				if (fl != null && AD_Org_ID != 0)
@@ -182,7 +182,7 @@ public class Doc_Payment extends Doc
 				fl.setAD_Org_ID(AD_Org_ID);
 			
 			// LBR: Interest Amount
-			if (interestAmt.signum() != 0) {
+			if (interestAmt != null && interestAmt.signum() != 0) {
 				fl = fact.createLine(null, getAccount(Doc.ACCTTYPE_InterestExp, as),
 						getC_Currency_ID(), interestAmt, null);
 				if (fl != null && AD_Org_ID != 0)
