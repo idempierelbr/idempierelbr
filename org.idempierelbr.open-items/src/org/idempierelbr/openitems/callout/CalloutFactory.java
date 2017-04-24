@@ -63,10 +63,7 @@ public class CalloutFactory implements IColumnCalloutFactory {
 		
 		// Tabela C_Payment
 		if (tableName.equals(MPayment.Table_Name)) {
-			if (columnName.equals("InterestAmt") || columnName.equals("PayAmt") || columnName.equals("DiscountAmt")
-					|| columnName.equals("WriteOffAmt") || columnName.equals("OverUnderAmt")
-					|| columnName.equals("C_Currency_ID") || columnName.equals("IsOverUnderPayment")
-					|| columnName.equals("C_ConversionType_ID") || columnName.equals("C_Invoice_ID"))
+			if (columnName.equals("C_Invoice_ID"))
 				 callouts.add(new CalloutPayment());
 		}
 		

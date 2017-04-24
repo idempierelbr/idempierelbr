@@ -45,7 +45,7 @@ AS
     --
 	CURSOR	Cur_Alloc	IS
 		SELECT	a.AD_Client_ID, a.AD_Org_ID,
-            al.Amount, al.DiscountAmt, al.WriteOffAmt,
+            al.Amount, al.DiscountAmt, al.WriteOffAmt, al.InterestAmt,
             a.C_Currency_ID, a.DateTrx
 		FROM	C_AllocationLine al
           INNER JOIN C_AllocationHdr a ON (al.C_AllocationHdr_ID=a.C_AllocationHdr_ID)
@@ -89,7 +89,7 @@ BEGIN
 		--  iDempiere
 	    --	Calculate Allocated Amount
 		FOR a IN Cur_Alloc LOOP
-	        v_Temp := a.Amount + a.DisCountAmt + a.WriteOffAmt;
+	        v_Temp := a.Amount + a.DisCountAmt + a.WriteOffAmt - ar.InterestAmt;
 			v_PaidAmt := v_PaidAmt
 	        -- Allocation
 				+ currencyConvert(v_Temp * v_MultiplierAP,

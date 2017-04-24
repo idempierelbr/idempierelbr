@@ -1,0 +1,601 @@
+diff --git a/org.adempiere.base.callout/src/org/compiere/model/CalloutPayment.java b/org.adempiere.base.callout/src/org/compiere/model/CalloutPayment.java
+--- a/org.adempiere.base.callout/src/org/compiere/model/CalloutPayment.java
++++ b/org.adempiere.base.callout/src/org/compiere/model/CalloutPayment.java
+@@ -67,6 +67,7 @@
+ 		mTab.setValue ("WriteOffAmt", Env.ZERO);
+ 		// mTab.setValue ("IsOverUnderPayment", Boolean.FALSE);
+ 		mTab.setValue ("OverUnderAmt", Env.ZERO);
++		mTab.setValue ("InterestAmt", Env.ZERO);
+ 		int C_InvoicePaySchedule_ID = 0;
+ 		if (Env.getContextAsInt (ctx, WindowNo, Env.TAB_INFO, "C_Invoice_ID") == C_Invoice_ID.intValue ()
+ 			&& Env.getContextAsInt (ctx, WindowNo, Env.TAB_INFO, "C_InvoicePaySchedule_ID") != 0)
+@@ -152,6 +153,7 @@
+ 		mTab.setValue ("WriteOffAmt", Env.ZERO);
+ 		mTab.setValue ("IsOverUnderPayment", Boolean.FALSE);
+ 		mTab.setValue ("OverUnderAmt", Env.ZERO);
++		mTab.setValue ("InterestAmt", Env.ZERO);
+ 		// Payment Date
+ 		Timestamp ts = (Timestamp)mTab.getValue ("DateTrx");
+ 		if (ts == null)
+@@ -223,6 +225,7 @@
+ 		mTab.setValue ("WriteOffAmt", Env.ZERO);
+ 		mTab.setValue ("IsOverUnderPayment", Boolean.FALSE);
+ 		mTab.setValue ("OverUnderAmt", Env.ZERO);
++		mTab.setValue ("InterestAmt", Env.ZERO);
+ 		return "";
+ 	} // charge
+ 
+@@ -374,8 +377,11 @@
+ 		BigDecimal OverUnderAmt = (BigDecimal)mTab.getValue ("OverUnderAmt");
+ 		if (OverUnderAmt == null)
+ 			OverUnderAmt = Env.ZERO;
++		BigDecimal InterestAmt = (BigDecimal)mTab.getValue ("InterestAmt");
++		if (InterestAmt == null)
++			InterestAmt = Env.ZERO;
+ 		if (log.isLoggable(Level.FINE)) log.fine ("Pay=" + PayAmt + ", Discount=" + DiscountAmt + ", WriteOff="
+-			+ WriteOffAmt + ", OverUnderAmt=" + OverUnderAmt);
++			+ WriteOffAmt + ", OverUnderAmt=" + OverUnderAmt + ", InterestAmt=" + InterestAmt);
+ 		// Get Currency Info
+ 		Integer curr_int = (Integer) mTab.getValue ("C_Currency_ID");
+ 		if (curr_int == null)
+@@ -431,6 +437,9 @@
+ 			OverUnderAmt = OverUnderAmt.multiply (CurrencyRate).setScale (
+ 				currency.getStdPrecision (), BigDecimal.ROUND_HALF_UP);
+ 			mTab.setValue ("OverUnderAmt", OverUnderAmt);
++			InterestAmt = InterestAmt.multiply (CurrencyRate).setScale (
++					currency.getStdPrecision (), BigDecimal.ROUND_HALF_UP);
++				mTab.setValue ("InterestAmt", InterestAmt);
+ 		}
+ 		// No Invoice - Set Discount, Witeoff, Under/Over to 0
+ 		else if (C_Invoice_ID == 0)
+@@ -441,6 +450,8 @@
+ 				mTab.setValue ("WriteOffAmt", Env.ZERO);
+ 			if (Env.ZERO.compareTo (OverUnderAmt) != 0)
+ 				mTab.setValue ("OverUnderAmt", Env.ZERO);
++			if (Env.ZERO.compareTo (InterestAmt) != 0)
++				mTab.setValue ("InterestAmt", Env.ZERO);
+ 		} else {
+ 			boolean processed = mTab.getValueAsBoolean(MPayment.COLUMNNAME_Processed);
+ 			if (colName.equals ("PayAmt")
+@@ -448,14 +459,14 @@
+ 				&& "Y".equals (Env.getContext (ctx, WindowNo, "IsOverUnderPayment")))
+ 			{
+ 				OverUnderAmt = InvoiceOpenAmt.subtract (PayAmt).subtract (
+-					DiscountAmt).subtract (WriteOffAmt);
++					DiscountAmt).subtract (WriteOffAmt).add(InterestAmt);
+ 				mTab.setValue ("OverUnderAmt", OverUnderAmt);
+ 			}
+ 			else if (colName.equals ("PayAmt")
+ 				&& (!processed))
+ 			{
+ 				WriteOffAmt = InvoiceOpenAmt.subtract (PayAmt).subtract (
+-					DiscountAmt).subtract (OverUnderAmt);
++					DiscountAmt).subtract (OverUnderAmt).add(InterestAmt);
+ 				mTab.setValue ("WriteOffAmt", WriteOffAmt);
+ 			}
+ 			else if (colName.equals ("IsOverUnderPayment")
+@@ -466,12 +477,12 @@
+ 				if (overUnderPaymentActive)
+ 				{
+ 					OverUnderAmt = InvoiceOpenAmt.subtract (PayAmt).subtract (
+-						DiscountAmt);
++						DiscountAmt).add(InterestAmt);
+ 					mTab.setValue ("WriteOffAmt", Env.ZERO);
+ 					mTab.setValue ("OverUnderAmt", OverUnderAmt);
+ 				}else{
+ 					WriteOffAmt = InvoiceOpenAmt.subtract (PayAmt).subtract (
+-						DiscountAmt);
++						DiscountAmt).add(InterestAmt);
+ 					mTab.setValue ("WriteOffAmt", WriteOffAmt);
+ 					mTab.setValue ("OverUnderAmt", Env.ZERO);
+ 				}
+@@ -486,7 +497,7 @@
+ 			// End By Goodwill
+ 			{
+ 				PayAmt = InvoiceOpenAmt.subtract (DiscountAmt).subtract (
+-					WriteOffAmt).subtract (OverUnderAmt);
++					WriteOffAmt).subtract (OverUnderAmt).add(InterestAmt);
+ 				mTab.setValue ("PayAmt", PayAmt);
+ 			}
+ 		}
+diff --git a/org.adempiere.base.callout/src/org/compiere/model/CalloutPaymentAllocate.java b/org.adempiere.base.callout/src/org/compiere/model/CalloutPaymentAllocate.java
+--- a/org.adempiere.base.callout/src/org/compiere/model/CalloutPaymentAllocate.java
++++ b/org.adempiere.base.callout/src/org/compiere/model/CalloutPaymentAllocate.java
+@@ -163,6 +163,9 @@
+ 		BigDecimal OverUnderAmt = (BigDecimal)mTab.getValue ("OverUnderAmt");
+ 		if (OverUnderAmt == null)
+ 			OverUnderAmt = Env.ZERO;
++		BigDecimal InterestAmt = (BigDecimal)mTab.getValue ("InterestAmt");
++		if (InterestAmt == null)
++			InterestAmt = Env.ZERO;
+ 		BigDecimal InvoiceAmt = (BigDecimal)mTab.getValue("InvoiceAmt");
+ 		if (log.isLoggable(Level.FINE)) log.fine("Amt=" + Amount + ", Discount=" + DiscountAmt
+ 			+ ", WriteOff=" + WriteOffAmt + ", OverUnder=" + OverUnderAmt
+@@ -173,12 +176,12 @@
+ 		//  PayAmt - calculate write off
+ 		if (colName.equals("Amount"))
+ 		{
+-			OverUnderAmt = InvoiceAmt.subtract(Amount).subtract(DiscountAmt).subtract(WriteOffAmt);
++			OverUnderAmt = InvoiceAmt.subtract(Amount).subtract(DiscountAmt).subtract(WriteOffAmt).add(InterestAmt);
+ 			mTab.setValue("OverUnderAmt", OverUnderAmt);
+ 		}
+ 		else    //  calculate Amount
+ 		{
+-			Amount = InvoiceAmt.subtract(DiscountAmt).subtract(WriteOffAmt).subtract(OverUnderAmt);
++			Amount = InvoiceAmt.subtract(DiscountAmt).subtract(WriteOffAmt).subtract(OverUnderAmt).add(InterestAmt);
+ 			mTab.setValue("Amount", Amount);
+ 		}
+ 
+diff --git a/org.adempiere.base/src/org/compiere/acct/DocLine_Allocation.java b/org.adempiere.base/src/org/compiere/acct/DocLine_Allocation.java
+--- a/org.adempiere.base/src/org/compiere/acct/DocLine_Allocation.java
++++ b/org.adempiere.base/src/org/compiere/acct/DocLine_Allocation.java
+@@ -53,6 +53,7 @@
+ 		m_DiscountAmt = line.getDiscountAmt();
+ 		m_WriteOffAmt = line.getWriteOffAmt();
+ 		m_OverUnderAmt = line.getOverUnderAmt();
++		m_InterestAmt = line.getInterestAmt();
+ 
+ 		//	Get Payment Conversion Rate
+ 		if (line.getC_Payment_ID() != 0)
+@@ -71,6 +72,7 @@
+ 	private BigDecimal	m_DiscountAmt; 
+ 	private BigDecimal	m_WriteOffAmt; 
+ 	private BigDecimal	m_OverUnderAmt; 
++	private BigDecimal	m_InterestAmt; 
+ 	
+ 	
+ 	/**
+@@ -100,6 +102,7 @@
+ 			.append(",Discount=").append(getDiscountAmt())
+ 			.append(",WriteOff=").append(getWriteOffAmt())
+ 			.append(",OverUnderAmt=").append(getOverUnderAmt())
++			.append(",InterestAmt=").append(getInterestAmt())
+ 			.append(" - C_Payment_ID=").append(m_C_Payment_ID)
+ 			.append(",C_CashLine_ID=").append(m_C_CashLine_ID)
+ 			.append(",C_Invoice_ID=").append(m_C_Invoice_ID)
+@@ -137,6 +140,13 @@
+ 		return m_WriteOffAmt;
+ 	}
+ 	/**
++	 * @return Returns the interestAmt.
++	 */
++	public BigDecimal getInterestAmt ()
++	{
++		return m_InterestAmt;
++	}
++	/**
+ 	 * @return Returns the c_CashLine_ID.
+ 	 */
+ 	public int getC_CashLine_ID ()
+diff --git a/org.adempiere.base/src/org/compiere/acct/Doc_AllocationHdr.java b/org.adempiere.base/src/org/compiere/acct/Doc_AllocationHdr.java
+--- a/org.adempiere.base/src/org/compiere/acct/Doc_AllocationHdr.java
++++ b/org.adempiere.base/src/org/compiere/acct/Doc_AllocationHdr.java
+@@ -131,6 +131,7 @@
+ 	 *      or C_Prepayment
+ 	 *      DiscountExp     DR
+ 	 *      WriteOff        DR
++	 *      Interest        		CR
+ 	 *      Receivables             CR
+ 	 *  AR_Invoice_Cash
+ 	 *      CashTransfer    DR
+@@ -142,6 +143,7 @@
+ 	 *      Liability       DR
+ 	 *      DiscountRev             CR
+ 	 *      WriteOff                CR
++	 *      Interest        DR
+ 	 *      PaymentSelect           CR
+ 	 *      or V_Prepayment
+ 	 *  AP_Invoice_Cash
+@@ -182,13 +184,15 @@
+ 				&& line.getC_Invoice_ID() == 0 && line.getC_Order_ID() == 0
+ 				&& line.getC_CashLine_ID() == 0 && line.getC_BPartner_ID() == 0
+ 				&& Env.ZERO.compareTo(line.getDiscountAmt()) == 0
+-				&& Env.ZERO.compareTo(line.getWriteOffAmt()) == 0)
++				&& Env.ZERO.compareTo(line.getWriteOffAmt()) == 0
++				&& Env.ZERO.compareTo(line.getInterestAmt()) == 0)
+ 				continue;
+ 
+ 			//	Receivables/Liability Amt
+ 			BigDecimal allocationSource = line.getAmtSource()
+ 				.add(line.getDiscountAmt())
+-				.add(line.getWriteOffAmt());
++				.add(line.getWriteOffAmt())
++				.subtract(line.getInterestAmt());
+ 			BigDecimal allocationSourceForRGL = allocationSource; // for realized gain & loss purposes
+ 			BigDecimal allocationAccounted = Env.ZERO;	// AR/AP balance corrected
+ 			@SuppressWarnings("unused")
+@@ -248,8 +252,8 @@
+ 				if ((!as.isPostIfClearingEqual()) && acct_unallocated_cash != null && acct_unallocated_cash.equals(acct_receivable) && (!isInterOrg)) {
+ 
+ 					// if not using clearing accounts, then don't post amtsource
+-					// change the allocationsource to be writeoff + discount
+-					allocationSource = line.getDiscountAmt().add(line.getWriteOffAmt());
++					// change the allocationsource to be writeoff + discount - interest
++					allocationSource = line.getDiscountAmt().add(line.getWriteOffAmt()).subtract(line.getInterestAmt());
+ 
+ 
+ 				} else {
+@@ -292,6 +296,14 @@
+ 					if (fl != null && payment != null)
+ 						fl.setAD_Org_ID(payment.getAD_Org_ID());
+ 				}
++				// Interest 		CR
++				if (Env.ZERO.compareTo(line.getInterestAmt()) != 0)
++				{
++					fl = fact.createLine (line, getAccount(Doc.ACCTTYPE_InterestRev, as),
++						getC_Currency_ID(), null, line.getInterestAmt());
++					if (fl != null && payment != null)
++						fl.setAD_Org_ID(payment.getAD_Org_ID());
++				}
+ 
+ 				//	AR Invoice Amount	CR
+ 				if (as.isAccrual())
+@@ -339,7 +351,7 @@
+ 
+ 					// if not using clearing accounts, then don't post amtsource
+ 					// change the allocationsource to be writeoff + discount
+-					allocationSource = line.getDiscountAmt().add(line.getWriteOffAmt());
++					allocationSource = line.getDiscountAmt().add(line.getWriteOffAmt()).subtract(line.getInterestAmt());
+ 					isUsingClearing = false;
+ 
+ 				}
+@@ -386,6 +398,14 @@
+ 					if (fl != null && payment != null)
+ 						fl.setAD_Org_ID(payment.getAD_Org_ID());
+ 				}
++				//	Interest		DR
++				if (Env.ZERO.compareTo(line.getInterestAmt()) != 0)
++				{
++					fl = fact.createLine (line, getAccount(Doc.ACCTTYPE_InterestExp, as),
++						getC_Currency_ID(), line.getInterestAmt().negate(), null);
++					if (fl != null && payment != null)
++						fl.setAD_Org_ID(payment.getAD_Org_ID());
++				}
+ 				//	Payment/Cash	CR
+ 				if (isUsingClearing && line.getC_Payment_ID() != 0) // Avoid usage of clearing accounts
+ 				{
+diff --git a/org.adempiere.base/src/org/compiere/model/MAllocationHdr.java b/org.adempiere.base/src/org/compiere/model/MAllocationHdr.java
+--- a/org.adempiere.base/src/org/compiere/model/MAllocationHdr.java
++++ b/org.adempiere.base/src/org/compiere/model/MAllocationHdr.java
+@@ -431,7 +431,8 @@
+ 		for (int i = 0; i < m_lines.length; i++)
+ 		{
+ 			MAllocationLine line = m_lines[i];
+-			approval = approval.add(line.getWriteOffAmt()).add(line.getDiscountAmt());
++			approval = approval.add(line.getWriteOffAmt()).add(line.getDiscountAmt())
++					.subtract(line.getInterestAmt());
+ 			//	Make sure there is BP
+ 			if (line.getC_BPartner_ID() == 0)
+ 			{
+@@ -579,6 +580,7 @@
+ 				line.setDiscountAmt(Env.ZERO);
+ 				line.setWriteOffAmt(Env.ZERO);
+ 				line.setOverUnderAmt(Env.ZERO);
++				line.setInterestAmt(Env.ZERO);
+ 				line.saveEx();
+ 				// Unlink invoices
+ 				line.processIt(true);
+@@ -852,6 +854,7 @@
+ 				rLine.setDiscountAmt(rLine.getDiscountAmt().negate());
+ 				rLine.setWriteOffAmt(rLine.getWriteOffAmt().negate());
+ 				rLine.setOverUnderAmt(rLine.getOverUnderAmt().negate());
++				rLine.setInterestAmt(rLine.getInterestAmt().negate());
+ 				if (!rLine.save(get_TrxName()))
+ 				{
+ 					m_processMsg = "Could not correct Payment Allocation Reversal Line";
+@@ -904,6 +907,7 @@
+ 				line.setDiscountAmt(Env.ZERO);
+ 				line.setWriteOffAmt(Env.ZERO);
+ 				line.setOverUnderAmt(Env.ZERO);
++				line.setInterestAmt(Env.ZERO);
+ 				line.saveEx();
+ 				line.processIt(true);	//	reverse
+ 			}			
+@@ -937,7 +941,8 @@
+ 			MBPartner bpartner = new MBPartner (getCtx(), line.getC_BPartner_ID(), get_TrxName());
+ 			DB.getDatabase().forUpdate(bpartner, 0);
+ 
+-			BigDecimal allocAmt = line.getAmount().add(line.getDiscountAmt()).add(line.getWriteOffAmt());
++			BigDecimal allocAmt = line.getAmount().add(line.getDiscountAmt()).add(line.getWriteOffAmt())
++					.subtract(line.getInterestAmt());
+ 			BigDecimal openBalanceDiff = Env.ZERO;
+ 			MClient client = MClient.get(getCtx(), getAD_Client_ID());
+ 			
+@@ -963,7 +968,7 @@
+ 					if (invoice != null)
+ 					{
+ 						// If payment is already processed, only adjust open balance by discount and write off amounts.
+-						BigDecimal amt = MConversionRate.convertBase(getCtx(), line.getWriteOffAmt().add(line.getDiscountAmt()),
++						BigDecimal amt = MConversionRate.convertBase(getCtx(), line.getWriteOffAmt().add(line.getDiscountAmt()).subtract(line.getInterestAmt()),
+ 								getC_Currency_ID(), paymentDate, convTypeID, getAD_Client_ID(), getAD_Org_ID());
+ 						if (amt == null)
+ 						{
+@@ -1003,7 +1008,7 @@
+ 			else if (invoice != null)
+ 			{
+ 				// adjust open balance by discount and write off amounts.
+-				BigDecimal amt = MConversionRate.convertBase(getCtx(), line.getWriteOffAmt().add(line.getDiscountAmt()),
++				BigDecimal amt = MConversionRate.convertBase(getCtx(), line.getWriteOffAmt().add(line.getDiscountAmt()).subtract(line.getInterestAmt()),
+ 						getC_Currency_ID(), invoice.getDateAcct(), invoice.getC_ConversionType_ID(), getAD_Client_ID(), getAD_Org_ID());
+ 				if (amt == null)
+ 				{
+diff --git a/org.adempiere.base/src/org/compiere/model/MAllocationLine.java b/org.adempiere.base/src/org/compiere/model/MAllocationLine.java
+--- a/org.adempiere.base/src/org/compiere/model/MAllocationLine.java
++++ b/org.adempiere.base/src/org/compiere/model/MAllocationLine.java
+@@ -57,6 +57,7 @@
+ 			setDiscountAmt (Env.ZERO);
+ 			setWriteOffAmt (Env.ZERO);
+ 			setOverUnderAmt(Env.ZERO);
++			setInterestAmt(Env.ZERO);
+ 		}	
+ 	}	//	MAllocationLine
+ 
+@@ -83,6 +84,21 @@
+ 		m_parent = parent;
+ 		set_TrxName(parent.get_TrxName());
+ 	}	//	MAllocationLine
++	
++	/**
++	 * 	Parent Constructor
++	 *	@param parent parent
++	 *	@param Amount amount
++	 *	@param DiscountAmt optional discount
++	 *	@param WriteOffAmt optional write off
++	 *	@param OverUnderAmt over/underpayment
++	 *	@param InterestAmt optional interest
++	 */
++	public MAllocationLine (MAllocationHdr parent, BigDecimal Amount, 
++		BigDecimal DiscountAmt, BigDecimal WriteOffAmt, BigDecimal OverUnderAmt)
++	{
++		this (parent, Amount, DiscountAmt, WriteOffAmt, OverUnderAmt, Env.ZERO);
++	}	//	MAllocationLine
+ 
+ 	/**
+ 	 * 	Parent Constructor
+@@ -91,15 +107,18 @@
+ 	 *	@param DiscountAmt optional discount
+ 	 *	@param WriteOffAmt optional write off
+ 	 *	@param OverUnderAmt over/underpayment
++	 *	@param InterestAmt optional interest
+ 	 */
+ 	public MAllocationLine (MAllocationHdr parent, BigDecimal Amount, 
+-		BigDecimal DiscountAmt, BigDecimal WriteOffAmt, BigDecimal OverUnderAmt)
++		BigDecimal DiscountAmt, BigDecimal WriteOffAmt, BigDecimal OverUnderAmt,
++		BigDecimal InterestAmt)
+ 	{
+ 		this (parent);
+ 		setAmount (Amount);
+ 		setDiscountAmt (DiscountAmt == null ? Env.ZERO : DiscountAmt);
+ 		setWriteOffAmt (WriteOffAmt == null ? Env.ZERO : WriteOffAmt);
+ 		setOverUnderAmt (OverUnderAmt == null ? Env.ZERO : OverUnderAmt);
++		setInterestAmt (InterestAmt == null ? Env.ZERO : InterestAmt);
+ 	}	//	MAllocationLine
+ 	
+ 	/**	Static Logger	*/
+@@ -235,7 +254,8 @@
+ 		sb.append(", Amount=").append(getAmount())
+ 			.append(",Discount=").append(getDiscountAmt())
+ 			.append(",WriteOff=").append(getWriteOffAmt())
+-			.append(",OverUnder=").append(getOverUnderAmt());
++			.append(",OverUnder=").append(getOverUnderAmt())
++			.append(",Interest=").append(getInterestAmt());
+ 		sb.append ("]");
+ 		return sb.toString ();
+ 	}	//	toString
+@@ -348,4 +368,24 @@
+ 		return getC_BPartner_ID();
+ 	}	//	processIt
+ 	
++	/**
++	 *  Interest Amt
++	 *  @param InterestAmt Interest
++	 */
++	public void setInterestAmt (BigDecimal InterestAmt)
++	{
++		set_Value("InterestAmt", InterestAmt == null ? Env.ZERO : InterestAmt);
++	}	//	setInterestAmt
++	
++	/** Get Interest Amount.
++	 *	@return Calculated amount of interest
++	 */
++	public BigDecimal getInterestAmt () 
++	{
++		BigDecimal bd = (BigDecimal)get_Value("InterestAmt");
++		if (bd == null)
++			 return Env.ZERO;
++		return bd;
++	}
++	
+ }	//	MAllocationLine
+diff --git a/org.adempiere.base/src/org/compiere/model/MInvoice.java b/org.adempiere.base/src/org/compiere/model/MInvoice.java
+--- a/org.adempiere.base/src/org/compiere/model/MInvoice.java
++++ b/org.adempiere.base/src/org/compiere/model/MInvoice.java
+@@ -1143,7 +1143,7 @@
+ 	public BigDecimal getAllocatedAmt ()
+ 	{
+ 		BigDecimal retValue = null;
+-		String sql = "SELECT SUM(currencyConvert(al.Amount+al.DiscountAmt+al.WriteOffAmt,"
++		String sql = "SELECT SUM(currencyConvert(al.Amount+al.DiscountAmt+al.WriteOffAmt-al.InterestAmt,"
+ 				+ "ah.C_Currency_ID, i.C_Currency_ID,ah.DateTrx,COALESCE(i.C_ConversionType_ID,0), al.AD_Client_ID,al.AD_Org_ID)) "
+ 			+ "FROM C_AllocationLine al"
+ 			+ " INNER JOIN C_AllocationHdr ah ON (al.C_AllocationHdr_ID=ah.C_AllocationHdr_ID)"
+diff --git a/org.adempiere.base/src/org/compiere/model/MPayment.java b/org.adempiere.base/src/org/compiere/model/MPayment.java
+--- a/org.adempiere.base/src/org/compiere/model/MPayment.java
++++ b/org.adempiere.base/src/org/compiere/model/MPayment.java
+@@ -144,6 +144,7 @@
+ 			setWriteOffAmt(Env.ZERO);
+ 			setIsOverUnderPayment (true);
+ 			setOverUnderAmt(Env.ZERO);
++			setInterestAmt(Env.ZERO);
+ 			//
+ 			setDateTrx (new Timestamp(System.currentTimeMillis()));
+ 			setDateAcct (getDateTrx());
+@@ -669,7 +670,8 @@
+              || is_ValueChanged(COLUMNNAME_DateTrx)
+              || is_ValueChanged(COLUMNNAME_DiscountAmt)
+              || is_ValueChanged(COLUMNNAME_PayAmt)
+-             || is_ValueChanged(COLUMNNAME_WriteOffAmt))) {
++             || is_ValueChanged(COLUMNNAME_WriteOffAmt)
++             || is_ValueChanged("InterestAmt"))) {
+ 			log.saveError("PaymentAlreadyProcessed", Msg.translate(getCtx(), "C_Payment_ID"));
+ 			return false;
+ 		}
+@@ -701,6 +703,7 @@
+ 				setDiscountAmt(Env.ZERO);
+ 				setIsOverUnderPayment(false);
+ 				setOverUnderAmt(Env.ZERO);
++				setInterestAmt(Env.ZERO);
+ 				setIsPrepayment(false);
+ 			}
+ 		}
+@@ -734,6 +737,7 @@
+ 				setDiscountAmt(Env.ZERO);
+ 				setIsOverUnderPayment(false);
+ 				setOverUnderAmt(Env.ZERO);
++				setInterestAmt(Env.ZERO);
+ 			}
+ 		}
+ 		
+@@ -1355,6 +1359,26 @@
+ 		super.setOverUnderAmt (OverUnderAmt == null ? Env.ZERO : OverUnderAmt);
+ 		setIsOverUnderPayment(getOverUnderAmt().compareTo(Env.ZERO) != 0);
+ 	}	//	setOverUnderAmt
++	
++	/**
++	 *  Interest Amt
++	 *  @param InterestAmt Interest
++	 */
++	public void setInterestAmt (BigDecimal InterestAmt)
++	{
++		set_Value("InterestAmt", InterestAmt == null ? Env.ZERO : InterestAmt);
++	}	//	setInterestAmt
++	
++	/** Get Interest Amount.
++	 *	@return Calculated amount of interest
++	 */
++	public BigDecimal getInterestAmt () 
++	{
++		BigDecimal bd = (BigDecimal)get_Value("InterestAmt");
++		if (bd == null)
++			 return Env.ZERO;
++		return bd;
++	}
+ 
+ 	/**
+ 	 *  Tax Amt
+@@ -2187,6 +2211,7 @@
+ 		counter.setWriteOffAmt(getWriteOffAmt());
+ 		counter.setIsOverUnderPayment (isOverUnderPayment());
+ 		counter.setOverUnderAmt(getOverUnderAmt());
++		counter.setInterestAmt(getInterestAmt());
+ 		counter.setC_Currency_ID(getC_Currency_ID());
+ 		counter.setC_ConversionType_ID(getC_ConversionType_ID());
+ 		//
+@@ -2270,10 +2295,10 @@
+ 			MAllocationLine aLine = null;
+ 			if (isReceipt())
+ 				aLine = new MAllocationLine (alloc, pa.getAmount(), 
+-					pa.getDiscountAmt(), pa.getWriteOffAmt(), pa.getOverUnderAmt());
++					pa.getDiscountAmt(), pa.getWriteOffAmt(), pa.getOverUnderAmt(), pa.getInterestAmt());
+ 			else
+ 				aLine = new MAllocationLine (alloc, pa.getAmount().negate(), 
+-					pa.getDiscountAmt().negate(), pa.getWriteOffAmt().negate(), pa.getOverUnderAmt().negate());
++					pa.getDiscountAmt().negate(), pa.getWriteOffAmt().negate(), pa.getOverUnderAmt().negate(), pa.getInterestAmt().negate());
+ 			aLine.setDocInfo(pa.getC_BPartner_ID(), 0, pa.getC_Invoice_ID());
+ 			aLine.setPaymentInfo(getC_Payment_ID(), 0);
+ 			if (!aLine.save(get_TrxName()))
+@@ -2312,10 +2337,10 @@
+ 		MAllocationLine aLine = null;
+ 		if (isReceipt())
+ 			aLine = new MAllocationLine (alloc, allocationAmt, 
+-				getDiscountAmt(), getWriteOffAmt(), getOverUnderAmt());
++				getDiscountAmt(), getWriteOffAmt(), getOverUnderAmt(), getInterestAmt());
+ 		else
+ 			aLine = new MAllocationLine (alloc, allocationAmt.negate(), 
+-				getDiscountAmt().negate(), getWriteOffAmt().negate(), getOverUnderAmt().negate());
++				getDiscountAmt().negate(), getWriteOffAmt().negate(), getOverUnderAmt().negate(), getInterestAmt().negate());
+ 		aLine.setDocInfo(getC_BPartner_ID(), 0, getC_Invoice_ID());
+ 		aLine.setC_Payment_ID(getC_Payment_ID());
+ 		aLine.saveEx(get_TrxName());
+@@ -2530,6 +2555,7 @@
+ 			setDiscountAmt(Env.ZERO);
+ 			setWriteOffAmt(Env.ZERO);
+ 			setOverUnderAmt(Env.ZERO);
++			setInterestAmt(Env.ZERO);
+ 			setIsAllocated(false);
+ 			//	Unlink & De-Allocate
+ 			deAllocate(false);
+@@ -2637,6 +2663,7 @@
+ 		reversal.setDiscountAmt(getDiscountAmt().negate());
+ 		reversal.setWriteOffAmt(getWriteOffAmt().negate());
+ 		reversal.setOverUnderAmt(getOverUnderAmt().negate());
++		reversal.setInterestAmt(getInterestAmt().negate());
+ 		//
+ 		reversal.setIsAllocated(true);
+ 		reversal.setIsReconciled(false);
+@@ -2799,7 +2826,8 @@
+ 			.append(",PayAmt=").append(getPayAmt())
+ 			.append(",Discount=").append(getDiscountAmt())
+ 			.append(",WriteOff=").append(getWriteOffAmt())
+-			.append(",OverUnder=").append(getOverUnderAmt());
++			.append(",OverUnder=").append(getOverUnderAmt())
++			.append(",Interest=").append(getInterestAmt());
+ 		return sb.toString ();
+ 	}	//	toString
+ 	
+@@ -2856,7 +2884,8 @@
+ 		//	: Total Lines = 123.00 (#1)
+ 		sb.append(": ")
+ 			.append(Msg.translate(getCtx(),"PayAmt")).append("=").append(getPayAmt())
+-			.append(",").append(Msg.translate(getCtx(),"WriteOffAmt")).append("=").append(getWriteOffAmt());
++			.append(",").append(Msg.translate(getCtx(),"WriteOffAmt")).append("=").append(getWriteOffAmt())
++			.append(",").append(Msg.translate(getCtx(),"InterestAmt")).append("=").append(getInterestAmt());
+ 		//	 - Description
+ 		if (getDescription() != null && getDescription().length() > 0)
+ 			sb.append(" - ").append(getDescription());
+diff --git a/org.adempiere.base/src/org/compiere/model/MPaymentAllocate.java b/org.adempiere.base/src/org/compiere/model/MPaymentAllocate.java
+--- a/org.adempiere.base/src/org/compiere/model/MPaymentAllocate.java
++++ b/org.adempiere.base/src/org/compiere/model/MPaymentAllocate.java
+@@ -68,6 +68,7 @@
+ 			setDiscountAmt (Env.ZERO);
+ 			setOverUnderAmt (Env.ZERO);
+ 			setWriteOffAmt (Env.ZERO);
++			setInterestAmt (Env.ZERO);
+ 			setInvoiceAmt(Env.ZERO);
+ 		}	
+ 	}	//	MPaymentAllocate
+@@ -141,7 +142,8 @@
+ 		BigDecimal check = getAmount()
+ 			.add(getDiscountAmt())
+ 			.add(getWriteOffAmt())
+-			.add(getOverUnderAmt());
++			.add(getOverUnderAmt())
++			.subtract(getInterestAmt());
+ 		if (check.compareTo(getInvoiceAmt()) != 0)
+ 		{
+ 			log.saveError("Error", Msg.parseTranslation(getCtx(), 
+@@ -161,4 +163,24 @@
+ 		return true;
+ 	}	//	beforeSave
+ 	
++	/**
++	 *  Interest Amt
++	 *  @param InterestAmt Interest
++	 */
++	public void setInterestAmt (BigDecimal InterestAmt)
++	{
++		set_Value("InterestAmt", InterestAmt == null ? Env.ZERO : InterestAmt);
++	}	//	setInterestAmt
++	
++	/** Get Interest Amount.
++	 *	@return Calculated amount of interest
++	 */
++	public BigDecimal getInterestAmt () 
++	{
++		BigDecimal bd = (BigDecimal)get_Value("InterestAmt");
++		if (bd == null)
++			 return Env.ZERO;
++		return bd;
++	}
++	
+ }	//	MPaymentAllocate

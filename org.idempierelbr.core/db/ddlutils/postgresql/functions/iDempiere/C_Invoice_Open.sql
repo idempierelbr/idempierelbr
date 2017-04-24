@@ -69,14 +69,14 @@ BEGIN
 		--	Calculate Allocated Amount
 		FOR ar IN 
 			SELECT	a.AD_Client_ID, a.AD_Org_ID,
-			al.Amount, al.DiscountAmt, al.WriteOffAmt,
+			al.Amount, al.DiscountAmt, al.WriteOffAmt, al.InterestAmt,
 			a.C_Currency_ID, a.DateTrx
 			FROM	C_AllocationLine al
 			INNER JOIN C_AllocationHdr a ON (al.C_AllocationHdr_ID=a.C_AllocationHdr_ID)
 			WHERE	al.C_Invoice_ID = p_C_Invoice_ID
 	          	AND   a.IsActive='Y'
 		LOOP
-	        v_Temp := ar.Amount + ar.DisCountAmt + ar.WriteOffAmt;
+	        v_Temp := ar.Amount + ar.DisCountAmt + ar.WriteOffAmt - ar.InterestAmt;
 			v_PaidAmt := v_PaidAmt
 	        -- Allocation
 				+ currencyConvert(v_Temp * v_MultiplierAP,

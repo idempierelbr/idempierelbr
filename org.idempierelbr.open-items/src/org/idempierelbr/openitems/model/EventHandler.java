@@ -60,7 +60,6 @@ public class EventHandler extends AbstractEventHandler {
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MAllocationLine.Table_Name);
 		registerTableEvent(IEventTopics.PO_AFTER_NEW, MAllocationLine.Table_Name);
 		
-		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MPayment.Table_Name);
 		registerTableEvent(IEventTopics.DOC_BEFORE_COMPLETE, MPayment.Table_Name);
 		
 		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MPaymentAllocate.Table_Name);
@@ -199,34 +198,14 @@ public class EventHandler extends AbstractEventHandler {
 				addErrorMessage(event, "Não é possível excluir movimento anteriormente salvo em arquivo");
 		}
 		
-		// change interest amount signal when reversing a payment
-		if (po instanceof MPayment && event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)) {
-			MPayment p = (MPayment) po;
-			
-			if (p.getReversal_ID() > 0) {
-				BigDecimal interestAmt = (BigDecimal) p.get_Value("InterestAmt");
-				
-				if (interestAmt != null && interestAmt.signum() != 0)
-					p.set_ValueOfColumn("InterestAmt", interestAmt.negate());
-			}
-		}
-		
-		// change allocation amount (interest amt) and copy invoice pay schedule from payment
+		// copy invoice pay schedule from payment
 		if (po instanceof MAllocationLine && event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)) {
 			MAllocationLine al = (MAllocationLine) po;
 			int C_Payment_ID = al.getC_Payment_ID();
 			
 			if (C_Payment_ID != 0) {
 				MPayment p = new MPayment(po.getCtx(), C_Payment_ID, po.get_TrxName());
-				
-				// Interest Amt
-				BigDecimal interestAmt = (BigDecimal) p.get_Value("InterestAmt");
-				
-				if (interestAmt != null && interestAmt.signum() != 0
-						&& (p.getPayAmt().setScale(4, RoundingMode.HALF_UP).negate().equals(al.getAmount().setScale(4, RoundingMode.HALF_UP))
-								|| p.getPayAmt().setScale(4, RoundingMode.HALF_UP).equals(al.getAmount().setScale(4, RoundingMode.HALF_UP))))
-					al.setAmount(p.isReceipt() ? al.getAmount().subtract(interestAmt) : al.getAmount().add(interestAmt));
-				
+
 				// Invoice Pay Schedule
 				if (al.getC_Invoice_ID() > 0)
 					al.set_ValueOfColumn("C_InvoicePaySchedule_ID", (Integer)p.get_Value("C_InvoicePaySchedule_ID"));

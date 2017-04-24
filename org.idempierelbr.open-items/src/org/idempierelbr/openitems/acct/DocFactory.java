@@ -60,8 +60,6 @@ public class DocFactory implements IDocFactory {
 		
 		if (tableName.equals("LBR_Boleto"))
 			doc = new Doc_Boleto(as, rs, trxName);
-		else if (tableName.equals("C_Payment"))
-			doc = new Doc_Payment(as, rs, trxName);
 		
 		return doc;
 	}
