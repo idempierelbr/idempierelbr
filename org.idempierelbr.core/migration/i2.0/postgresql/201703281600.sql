@@ -17,5 +17,5 @@ UPDATE AD_Process_Para SET DefaultValue='@C_DocType_ID@',Updated=TO_TIMESTAMP('2
 ;
 
 
-SELECT lbr_register_migration_script('2017032281600.sql') FROM dual
+SELECT lbr_register_migration_script('201703281600.sql') FROM dual
 ;
