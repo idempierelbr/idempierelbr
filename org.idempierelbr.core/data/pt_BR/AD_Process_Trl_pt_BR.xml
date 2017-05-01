@@ -853,13 +853,13 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
  </row>
  <row id="278" trl="Y">
   <value column="Name" original="Manage Activity">Gerenciar Atividade</value>
-  <value column="Description" original="Manage Workflow Activity">Gerenciar Atividade de Fluxo de Trabalho</value>
-  <value column="Help" original="Update or stop Workflow Activity">Este processo permite atualizar ou abortar uma atividade de fluxo de trabalho.</value>
+  <value column="Description" original="Manage Workflow Activity">Gerenciar Atividade de Workflow</value>
+  <value column="Help" original="Update or stop Workflow Activity">Este processo permite atualizar ou abortar uma atividade de workflow.</value>
  </row>
  <row id="279" trl="Y">
   <value column="Name" original="Manage Process">Gerenciar Processo</value>
-  <value column="Description" original="Manage Workflow Process">Gerenciar Processo de Fluxo de Trabalho</value>
-  <value column="Help" original="Update or stop Workflow Process">Este processo permite atualizar ou abortar o processo de fluxo de trabalho.</value>
+  <value column="Description" original="Manage Workflow Process">Gerenciar Processo de Workflow</value>
+  <value column="Help" original="Update or stop Workflow Process">Este processo permite atualizar ou abortar o processo de workflow.</value>
  </row>
  <row id="280" trl="Y">
   <value column="Name" original="Process Confirmation">Processar Confirmação</value>
@@ -982,12 +982,12 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
   <value column="Help" original="Delete Allocations for a business partner or business partner group, accounting date range or individual allocation. In contrast to &quot;Void&quot; in &quot;View Allocation&quot;, the allocation is deleted (no trace), if the period is open.">Este processo permite excluir alocações baseando-se nos critérios abaixo. Ao contrário da ação de documento Anular (em Visualizar Alocação), este processo exclui as alocações sem deixar rastros (caso o período esteja aberto).</value>
  </row>
  <row id="304" trl="Y">
-  <value column="Name" original="Validate Workflow">Validar o Fluxo de Trabalho</value>
-  <value column="Description" original="Validate that the workflow is correct">Verifica se o Fluxo de Trabalho está correto</value>
-  <value column="Help" original="(limited checking)">Este processo verifica se o Fluxo de Trabalho está correto. Observe que a validação, neste momento, ainda é limitada a apenas algumas verificações.</value>
+  <value column="Name" original="Validate Workflow">Validar o Workflow</value>
+  <value column="Description" original="Validate that the workflow is correct">Verifica se o workflow está correto</value>
+  <value column="Help" original="(limited checking)">Este processo verifica se o workflow está correto. Observe que a validação, neste momento, ainda é limitada a apenas algumas verificações.</value>
  </row>
  <row id="305" trl="Y">
-  <value column="Name" original="Document Value based Workflows">Valor de Documento baseado em Fluxos de Trabalho</value>
+  <value column="Name" original="Document Value based Workflows">Valor de Documento baseado em workflows</value>
   <value column="Description" original="*** DO NOT MODIFY ***">*** NÃO ALTERE ***</value>
   <value column="Help" original=""/>
  </row>
@@ -1007,9 +1007,9 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
   <value column="Help" original="The migration &quot;resets&quot; the system to the current/original setting.  If selected in the Change Log, you can save the customization and re-apply them.  Please note that you need to check, if your customization has no negative side effect in the new release. &lt;br&gt;&#10;Shut down the Application Server before running this process and set the Trace level (in Preference) higher or equals  WARNING."><![CDATA[A migração "reseta" o sistema para a configuração atual/original.  Se for selecionado no Registro de Alteração (log), você pode salvar a personalização e reaplicá-la.  Please note that you need to check, if your customization has no negative side effect in the new release. <br> Shut down the Application Server before running this process and set the Trace level (in Preference) higher or equals  WARNING.]]></value>
  </row>
  <row id="309" trl="Y">
-  <value column="Name" original="Workflow to Client">Mover Fluxo de Trabalho</value>
-  <value column="Description" original="Move custom workflow elements to the current client">Mover personalizações de fluxo de trabalho para nível de empresa</value>
-  <value column="Help" original="The security architecture prevents you from adding client specific modifications/customizations to existing standard workflows.  This process moves your customization made on system level to this client to add client specific details.">A arquitetura de segurança não permite que registros a nível de empresa sejam acessados a nível de sistema (System). Este processo permite mover personalizações dos fluxos de trabalho existentes feitas a nível de sistema (System) para nível de empresa. Isso permite adicionar detalhes específicos da mesma.</value>
+  <value column="Name" original="Workflow to Client">Mover Workflow</value>
+  <value column="Description" original="Move custom workflow elements to the current client">Mover personalizações em workflow para nível de empresa</value>
+  <value column="Help" original="The security architecture prevents you from adding client specific modifications/customizations to existing standard workflows.  This process moves your customization made on system level to this client to add client specific details.">A arquitetura de segurança não permite que registros a nível de empresa sejam acessados a nível de sistema (System). Este processo permite mover personalizações em workflows existentes feitas a nível de sistema (System) para nível de empresa. Isso permite adicionar detalhes específicos da mesma.</value>
  </row>
  <row id="310" trl="Y">
   <value column="Name" original="Trial Balance">Balancete de Verificação</value>
@@ -1494,13 +1494,13 @@ Total BOM Cost = Sum every Element Cost]]></value>
   <value column="Description" original="Create Financial Report  (Jasper)">Gerar Relatório Financeiro (Jasper)</value>
   <value column="Help" original="The default period is the current period. You can optionally enter other restrictions.  You can select an alternative Reporting Hierarchy.">O período padrão é o período atual. Você pode adicionalmente informar outras restrições, e até mesmo uma Hierarquia de Relatórios diferente.</value>
  </row>
- <row id="53065" trl="N">
-  <value column="Name" original="ASP Generate Fields">ASP Generate Fields</value>
+ <row id="53065" trl="Y">
+  <value column="Name" original="ASP Generate Fields">Gerar Campos SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53067" trl="N">
-  <value column="Name" original="ASP Generate Level">ASP Generate Level</value>
+ <row id="53067" trl="Y">
+  <value column="Name" original="ASP Generate Level">Gerar Nível SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1993,19 +1993,19 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200018" trl="N">
-  <value column="Name" original="Expire Broadcast Message">Expire Broadcast Message</value>
-  <value column="Description" original="Expire Broadcast Message">Expire Broadcast Message</value>
-  <value column="Help" original="Selecting OK will expire current message. Do you want to expire message?">Selecting OK will expire current message. Do you want to expire message?</value>
+ <row id="200018" trl="Y">
+  <value column="Name" original="Expire Broadcast Message">Expirar Mensagem Broadcast</value>
+  <value column="Description" original="Expire Broadcast Message">Expirar Mensagem Broadcast</value>
+  <value column="Help" original="Selecting OK will expire current message. Do you want to expire message?">Ao clicar em OK, a mensagem será expirada. Deseja continuar?</value>
  </row>
- <row id="200019" trl="N">
-  <value column="Name" original="Publish Broadcast message">Publish Broadcast message</value>
-  <value column="Description" original="Publish Broadcast message">Publish Broadcast message</value>
-  <value column="Help" original="Selecting ok will publish message.  Do you want to publish message?">Selecting ok will publish message.  Do you want to publish message?</value>
+ <row id="200019" trl="Y">
+  <value column="Name" original="Publish Broadcast message">Publicar a Mensagem Broadcast</value>
+  <value column="Description" original="Publish Broadcast message">Publicar a Mensagem Broadcast</value>
+  <value column="Help" original="Selecting ok will publish message.  Do you want to publish message?">Ao clicar em OK, a mensagem será publicada. Deseja continuar?</value>
  </row>
- <row id="200020" trl="N">
-  <value column="Name" original="Test Broadcast Message">Test Broadcast Message</value>
-  <value column="Description" original="Test and verify message before broadcasting">Test and verify message before broadcasting</value>
+ <row id="200020" trl="Y">
+  <value column="Name" original="Test Broadcast Message">Testar a Mensagem Broadcast</value>
+  <value column="Description" original="Test and verify message before broadcasting">Testar e verificar a mensagem broadcast</value>
   <value column="Help" original=""/>
  </row>
  <row id="200021" trl="Y">

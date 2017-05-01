@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_Reference">
+<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Reference">
  <row id="1" trl="Y">
   <value column="Name" original="AD_Reference Data Types">Tipos de Dados AD_Reference</value>
   <value column="Description" original="Data Type selection">Seleção do Tipo de Dados</value>
@@ -229,7 +227,7 @@
  </row>
  <row id="109" trl="Y">
   <value column="Name" original="AD_WF_Next Nodes">Nó AD_WF_Next</value>
-  <value column="Description" original="Next workflow node selection">Seleção do Próximo Nó do Fluxo de Trabalho</value>
+  <value column="Description" original="Next workflow node selection">Seleção do Próximo Nó do Workflow</value>
   <value column="Help" original=""/>
  </row>
  <row id="110" trl="Y">
@@ -514,7 +512,7 @@
  </row>
  <row id="174" trl="Y">
   <value column="Name" original="AD_Workflow">AD_Workflow</value>
-  <value column="Description" original="Workflows">Fluxo de Trabalho</value>
+  <value column="Description" original="Workflows">Workflow</value>
   <value column="Help" original=""/>
  </row>
  <row id="175" trl="Y">
@@ -1239,7 +1237,7 @@
  </row>
  <row id="328" trl="Y">
   <value column="Name" original="AD_Workflow Type">Tipo AD_Workflow</value>
-  <value column="Description" original="Workflow Type">Tipo de Fluxo de Trabalho</value>
+  <value column="Description" original="Workflow Type">Tipo de Workflow</value>
   <value column="Help" original=""/>
  </row>
  <row id="329" trl="Y">
@@ -2557,6 +2555,26 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200121" trl="N">
+  <value column="Name" original="AD_Style">AD_Style</value>
+  <value column="Description" original="CSS Style">CSS Style</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200122" trl="N">
+  <value column="Name" original="Dashboard Content">Dashboard Content</value>
+  <value column="Description" original="Dashboard Content">Dashboard Content</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200127" trl="N">
+  <value column="Name" original="Single Selection Grid">Single Selection Grid</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200128" trl="N">
+  <value column="Name" original="Multiple Selection Grid">Multiple Selection Grid</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row id="800000" trl="N">
   <value column="Name" original="LBR_DI_TranspType">LBR_DI_TranspType</value>
   <value column="Description" original=""/>
@@ -2604,6 +2622,11 @@
  </row>
  <row id="800009" trl="N">
   <value column="Name" original="LBR_PaymentAllocationPriority">LBR_PaymentAllocationPriority</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800012" trl="N">
+  <value column="Name" original="LBR_CEST">LBR_CEST</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2669,6 +2692,11 @@
  </row>
  <row id="800025" trl="N">
   <value column="Name" original="LBR_TpAssinante">LBR_TpAssinante</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800026" trl="N">
+  <value column="Name" original="LBR_TypeIE">LBR_TypeIE</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 3.1_2015-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Element">
+<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Element">
  <row id="101" trl="Y">
   <value column="Name" original="Attachment">Anexo</value>
   <value column="PrintName" original="Attachment">Anexo</value>
@@ -333,8 +333,8 @@
  <row id="141" trl="Y">
   <value column="Name" original="Next Node">Próximo Nó</value>
   <value column="PrintName" original="Next Node">Próximo Nó</value>
-  <value column="Description" original="Next Node in workflow">Próximo Nó do Fluxo de Trabalho</value>
-  <value column="Help" original="The Next Node indicates the next step or task in this Workflow.">O "Próximo Nó" indica o próximo passo ou tarefa neste Fluxo de Trabalho.</value>
+  <value column="Description" original="Next Node in workflow">Próximo Nó do Workflow</value>
+  <value column="Help" original="The Next Node indicates the next step or task in this Workflow.">O "Próximo Nó" indica o próximo passo ou tarefa neste Workflow.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -343,8 +343,8 @@
  <row id="142" trl="Y">
   <value column="Name" original="Node">Nó</value>
   <value column="PrintName" original="Node">Nó</value>
-  <value column="Description" original="Workflow Node (activity), step or process">Nó de Fluxo de Trabalho (atividade), passo ou processo</value>
-  <value column="Help" original="The Workflow Node indicates a unique step or process in a Workflow.">O Nó do Fluxo de Trabalho indica um único passo ou processo em um Fluxo de Trabalho.</value>
+  <value column="Description" original="Workflow Node (activity), step or process">Nó de Workflow (atividade), passo ou processo</value>
+  <value column="Help" original="The Workflow Node indicates a unique step or process in a Workflow.">O Nó do Workflow indica um único passo ou processo em um Workflow.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -361,10 +361,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="144" trl="Y">
-  <value column="Name" original="Workflow">Fluxo de Trabalho</value>
-  <value column="PrintName" original="Workflow">Fluxo de Trabalho</value>
-  <value column="Description" original="Workflow or combination of tasks">Fluxo de Trabalho ou combinação de tarefas</value>
-  <value column="Help" original="The Workflow field identifies a unique Workflow in the system.">O campo "Fluxo de Trabalho" identifica um Fluxo de Trabalho único no sistema.</value>
+  <value column="Name" original="Workflow">Workflow</value>
+  <value column="PrintName" original="Workflow">Workflow</value>
+  <value column="Description" original="Workflow or combination of tasks">Workflow ou combinação de tarefas</value>
+  <value column="Help" original="The Workflow field identifies a unique Workflow in the system.">O campo "Workflow" identifica um workflow único no sistema.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1081,8 +1081,8 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="245" trl="Y">
-  <value column="Name" original="Created">Criado</value>
-  <value column="PrintName" original="Created">Criado</value>
+  <value column="Name" original="Created">Criado em</value>
+  <value column="PrintName" original="Created">Criado em</value>
   <value column="Description" original="Date this record was created">Data de criação deste registro</value>
   <value column="Help" original="The Created field indicates the date that this record was created.">O Campo "Criado" indica a data em que este registro foi criado.</value>
   <value column="PO_Description" original=""/>
@@ -2511,8 +2511,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="472" trl="Y">
-  <value column="Name" original="Node">Node_ID</value>
-  <value column="PrintName" original="Node">Node_ID</value>
+  <value column="Name" original="Node">Nó</value>
+  <value column="PrintName" original="Node">Nó</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -2941,10 +2941,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="538" trl="Y">
-  <value column="Name" original="Record ID">ID do Registro</value>
-  <value column="PrintName" original="Record ID">ID do Registro</value>
-  <value column="Description" original="Direct internal record ID">ID do Registro Direto Interno</value>
-  <value column="Help" original="The Record ID is the internal unique identifier of a record. Please note that zooming to the record may not be successful for Orders, Invoices and Shipment/Receipts as sometimes the Sales Order type is not known.">O "ID do Registro" é o identificador interno exclusivo de um registro. Por favor note que dar um "zoom" no registro mode não ser bem sucedido para Pedidos, Faturas e Entregas/Recebimentos já que às vezes o tipo de Pedido de Vendas não é conhecido.</value>
+  <value column="Name" original="Record ID">Registro</value>
+  <value column="PrintName" original="Record ID">Registro</value>
+  <value column="Description" original="Direct internal record ID">ID do Registro</value>
+  <value column="Help" original="The Record ID is the internal unique identifier of a record. Please note that zooming to the record may not be successful for Orders, Invoices and Shipment/Receipts as sometimes the Sales Order type is not known.">Identificador interno exclusivo de um registro. Por favor note que dar um "zoom" no registro mode não ser bem sucedido para Pedidos, Faturas e Entregas/Recebimentos já que às vezes o tipo de Pedido de Vendas não é conhecido.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -3481,8 +3481,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="607" trl="Y">
-  <value column="Name" original="Updated">Atualizado</value>
-  <value column="PrintName" original="Updated">Atualizado</value>
+  <value column="Name" original="Updated">Atualizado em</value>
+  <value column="PrintName" original="Updated">Atualizado em</value>
   <value column="Description" original="Date this record was updated">Data em que este registro foi atualizado</value>
   <value column="Help" original="The Updated field indicates the date that this record was updated.">O Campo "Atualizado" indica a data em que este registro foi atualizado.</value>
   <value column="PO_Description" original=""/>
@@ -3683,10 +3683,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="632" trl="Y">
-  <value column="Name" original="Workflow">Fluxo de Trabalho</value>
-  <value column="PrintName" original="Workflow">Fluxo de Trabalho</value>
-  <value column="Description" original="Workflow or tasks">Fluxo de Trabalho ou Tarefas</value>
-  <value column="Help" original="The Workflow field identifies a unique workflow.   A workflow is a grouping of related tasks, in a specified sequence and optionally including approvals">O campo "Fluxo de Trabalho" identifica um Fluxo de Trabalho exclusivo.   Um Fluxo de Trabalho é um agrupamento de tarefas relacionadas, em uma seqüência especificada e opcionalmente incluindo aprovações</value>
+  <value column="Name" original="Workflow">Workflow</value>
+  <value column="PrintName" original="Workflow">Workflow</value>
+  <value column="Description" original="Workflow or tasks">Workflow ou Tarefas</value>
+  <value column="Help" original="The Workflow field identifies a unique workflow.   A workflow is a grouping of related tasks, in a specified sequence and optionally including approvals">O campo "Workflow" identifica um Workflow exclusivo. Um workflow é um agrupamento de tarefas relacionadas, em uma seqüência especificada e opcionalmente incluindo aprovações</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -14402,9 +14402,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2228" trl="Y">
-  <value column="Name" original="Character Data">Dados de Caracteres</value>
-  <value column="PrintName" original="Character Data">Dados de Caracteres</value>
-  <value column="Description" original="Long Character Field">Campo de Caracteres Longo</value>
+  <value column="Name" original="Character Data">Dados</value>
+  <value column="PrintName" original="Character Data">Dados</value>
+  <value column="Description" original="Long Character Field">Campo de Caracteres do Tipo Long</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -15122,80 +15122,80 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2307" trl="Y">
-  <value column="Name" original="Workflow Activity">Atividade de Fluxo de Trabalho</value>
-  <value column="PrintName" original="Wf Activity">Atividade de Flx Trab.</value>
-  <value column="Description" original="Workflow Activity">Atividade de Fluxo de Trabalho</value>
-  <value column="Help" original="The Workflow Activity is the actual Workflow Node in a Workflow Process instance">A Atividade do Fluxo de Trabalho é o Nó de Fluxo de Trabalho real em uma Instância de Processo de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Activity">Atividade de Workflow</value>
+  <value column="PrintName" original="Wf Activity">Atividade de Workflow</value>
+  <value column="Description" original="Workflow Activity">Atividade de Workflow</value>
+  <value column="Help" original="The Workflow Activity is the actual Workflow Node in a Workflow Process instance">A atividade de workflow é o nó em uma instância de processo de workflow</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2308" trl="Y">
-  <value column="Name" original="Workflow Activity Result">Resultado da Atividade de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Activity Result">Resultado da Atividade de Workflow</value>
   <value column="PrintName" original="Wf Activity Result">Resultado da Atividade Flx Trab.</value>
-  <value column="Description" original="Result of the Workflow Process Activity">Resultado da Atividade do Processo de Fluxo de Trabalho</value>
-  <value column="Help" original="Activity Result of the execution of the Workflow Process Instance">Resultado da Atividade da execução da Instância de Processo de Fluxo de Trabalho</value>
+  <value column="Description" original="Result of the Workflow Process Activity">Resultado da Atividade do Processo de Workflow</value>
+  <value column="Help" original="Activity Result of the execution of the Workflow Process Instance">Resultado da Atividade da execução da Instância de Processo de Workflow</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2309" trl="Y">
-  <value column="Name" original="Workflow Block">Bloco de Fluxo de Trabalho</value>
-  <value column="PrintName" original="Wf Block">Bloco de Flx Trab.</value>
-  <value column="Description" original="Workflow Transaction Execution Block">Bloco de Execução de Transação de Fluxo de Trabalho</value>
-  <value column="Help" original="A workflow execution block is optional and allows all work to be performed in a single transaction. If one step (node activity) fails, the entire work is rolled back.">Um Bloco de Execução de Fluxo de Trabalho é opcional e permite que todo o trabalho seja executado em uma única transação. Se um passo (atividade de nó) falhar, todo o trabalho é desfeito.</value>
+  <value column="Name" original="Workflow Block">Bloco de Workflow</value>
+  <value column="PrintName" original="Wf Block">Bloco de Workflow</value>
+  <value column="Description" original="Workflow Transaction Execution Block">Bloco de Execução de Transação de Workflow</value>
+  <value column="Help" original="A workflow execution block is optional and allows all work to be performed in a single transaction. If one step (node activity) fails, the entire work is rolled back.">Um Bloco de Execução de Workflow é opcional e permite que todo o trabalho seja executado em uma única transação. Se um passo (atividade de nó) falhar, todo o trabalho é desfeito.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2310" trl="Y">
-  <value column="Name" original="Workflow Event Audit">Auditoria de Evento de Fluxo de Trabalho</value>
-  <value column="PrintName" original="Wf Event Audit">Auditoria de Evento de Fluxo de Trabalho</value>
-  <value column="Description" original="Workflow Process Activity Event Audit Information">Informação para Auditoria de Eventos de Atividade de Processo de Fluxo de Trabalho</value>
-  <value column="Help" original="History of changes of the Workflow Process Activity">Histórico de alterações de atividade de processo de fluxo de trabalho.</value>
+  <value column="Name" original="Workflow Event Audit">Auditoria de Evento de Workflow</value>
+  <value column="PrintName" original="Wf Event Audit">Auditoria de Evento de Workflow</value>
+  <value column="Description" original="Workflow Process Activity Event Audit Information">Informação para Auditoria de Eventos de Atividade de Processo de Workflow</value>
+  <value column="Help" original="History of changes of the Workflow Process Activity">Histórico de alterações de atividade de processo de workflow.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2311" trl="Y">
-  <value column="Name" original="Workflow Node Parameter">Parâmetro de Nó de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Node Parameter">Parâmetro de Nó de Workflow</value>
   <value column="PrintName" original="Wf Node Parameter">Parâmetro de Nó de Flx Trab.</value>
-  <value column="Description" original="Workflow Node Execution Parameter">Parâmetro de Execução de Nó de Fluxo de Trabalho</value>
-  <value column="Help" original="Parameter for the execution of the Workflow Node">Parâmetro para a execução do Nó de Fluxo de Trabalho</value>
+  <value column="Description" original="Workflow Node Execution Parameter">Parâmetro de Execução de Nó de Workflow</value>
+  <value column="Help" original="Parameter for the execution of the Workflow Node">Parâmetro para a execução do Nó de Workflow</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2312" trl="Y">
-  <value column="Name" original="Workflow Process">Processo de Fluxo de Trabalho</value>
-  <value column="PrintName" original="Wf Process">Processo de Flx Trab.</value>
-  <value column="Description" original="Actual Workflow Process Instance">Instância de Processo de Fluxo de Trabalho Real</value>
-  <value column="Help" original="Instance of a workflow execution">Instância de execução de fluxo de trabalho</value>
+  <value column="Name" original="Workflow Process">Processo de Workflow</value>
+  <value column="PrintName" original="Wf Process">Processo de Workflow</value>
+  <value column="Description" original="Actual Workflow Process Instance">Instância de Processo de Workflow</value>
+  <value column="Help" original="Instance of a workflow execution">Instância de execução do workflow</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2313" trl="Y">
-  <value column="Name" original="Workflow Process Data">Dados de Processo de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Process Data">Dados de Processo de Workflow</value>
   <value column="PrintName" original="Wf Process Data">Dados de Processo de Flx Trab.</value>
-  <value column="Description" original="Workflow Process Context">Contexto do Processo de Fluxo de Trabalho</value>
-  <value column="Help" original="Context information of the workflow process and activity">Informação de Contexto do Processo de Fluxo de Trabalho e atividade</value>
+  <value column="Description" original="Workflow Process Context">Contexto do Processo de Workflow</value>
+  <value column="Help" original="Context information of the workflow process and activity">Informação de Contexto do Processo de Workflow e atividade</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2314" trl="Y">
-  <value column="Name" original="Workflow Responsible">Responsável pelo Fluxo de Trabalho</value>
-  <value column="PrintName" original="Wf Responsible">Responsável pelo Flx Trab.</value>
-  <value column="Description" original="Responsible for Workflow Execution">Responsável pela Execução do Fluxo de Trabalho</value>
-  <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um Fluxo de Trabalho é do usuário real. A Responsabilidade do Fluxo de Trabalho permite definir meios de encontrar aquele usuário real.</value>
+  <value column="Name" original="Workflow Responsible">Responsável pelo Workflow</value>
+  <value column="PrintName" original="Wf Responsible">Responsável pelo Workflow</value>
+  <value column="Description" original="Responsible for Workflow Execution">Responsável pela Execução do Workflow</value>
+  <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um workflow é do usuário real. A Responsabilidade do workflow permite definir meios de encontrar aquele usuário real.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -15264,7 +15264,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2322" trl="Y">
   <value column="Name" original="Finish Mode">Modo de Finalização</value>
   <value column="PrintName" original="Finish Mode">Modo de Finalização</value>
-  <value column="Description" original="Workflow Activity Finish Mode">Modo de Finalização da Atividade de Fluxo de Trabalho</value>
+  <value column="Description" original="Workflow Activity Finish Mode">Modo de Finalização da Atividade de Workflow</value>
   <value column="Help" original="How the system operated at the end of an activity. Automatic  implies return when the invoked applications finished control - Manual the user has to explicitly terminate the activity.">Especifica como o sistema irá se comportar no final de uma atividade. "Automático" implica em retornar quando as aplicações invocadas terminam - "Manual" requer que o usuário termine a atividade explicitamente.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -15284,8 +15284,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2326" trl="Y">
   <value column="Name" original="Responsible Type">Tipo de Responsabilidade</value>
   <value column="PrintName" original="Responsible Type">Tipo de Responsabilidade</value>
-  <value column="Description" original="Type of the Responsibility for a workflow">Tipo de Responsabilidade para um Fluxo de Trabalho</value>
-  <value column="Help" original="Type how the responsible user for the execution of a workflow is determined">Como é determinado o responsável pela execução de um fluxo de trabalho</value>
+  <value column="Description" original="Type of the Responsibility for a workflow">Tipo de Responsabilidade para um Workflow</value>
+  <value column="Help" original="Type how the responsible user for the execution of a workflow is determined">Como é determinado o responsável pela execução de um workflow</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -15294,7 +15294,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2327" trl="Y">
   <value column="Name" original="Start Mode">Modo de Inicialização</value>
   <value column="PrintName" original="Start Mode">Modo de Inicialização</value>
-  <value column="Description" original="Workflow Activity Start Mode ">Modo de Inicialização da Atividade de Fluxo de Trabalho </value>
+  <value column="Description" original="Workflow Activity Start Mode ">Modo de Inicialização da Atividade de Workflow </value>
   <value column="Help" original="How is the execution of an activity triggered. Automatic are triggered implicitly by the system, Manual explicitly by the User.">Define como a execução de uma atividade é disparada. "Automático" implica que a execução é disparada implicitamente pelo sistema. "Manual" exige que seja disparada explicitamente pelo usuário.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -15304,7 +15304,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2328" trl="Y">
   <value column="Name" original="Subflow Execution">Execução do Subfluxo</value>
   <value column="PrintName" original="Subflow Execution">Execução do Subfluxo</value>
-  <value column="Description" original="Mode how the sub-workflow is executed">Modo como o subfluxo de trabalho é executado</value>
+  <value column="Description" original="Mode how the sub-workflow is executed">Modo como o subworkflow é executado</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -15324,7 +15324,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2331" trl="Y">
   <value column="Name" original="Waiting Time">Tempo de Espera</value>
   <value column="PrintName" original="Waiting Time">Tempo de Espera</value>
-  <value column="Description" original="Workflow Simulation Waiting time">Tempo de Espera da Simulação do Fluxo de Trabalho</value>
+  <value column="Description" original="Workflow Simulation Waiting time">Tempo de Espera da Simulação do Workflow</value>
   <value column="Help" original="Amount of time needed to prepare the performance of the task on Duration Units">Quantidade de tempo necessário para preparar o executor da tarefa em "Unidades de Duração"</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -15332,9 +15332,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2332" trl="Y">
-  <value column="Name" original="Workflow State">Estado do Fluxo de Trabalho</value>
-  <value column="PrintName" original="Wf State">Estado do Flx de Trab.</value>
-  <value column="Description" original="State of the execution of the workflow">Estado da execução do fluxo de trabalho</value>
+  <value column="Name" original="Workflow State">Estado do Workflow</value>
+  <value column="PrintName" original="Wf State">Estado do Workflow</value>
+  <value column="Description" original="State of the execution of the workflow">Estado da execução do workflow</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -15344,7 +15344,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2333" trl="Y">
   <value column="Name" original="Working Time">Tempo Acumulado</value>
   <value column="PrintName" original="Working Time">Tempo Acumulado</value>
-  <value column="Description" original="Workflow Simulation Execution Time">Tempo de Execução Acumulado da Simulação do Fluxo de Trabalho</value>
+  <value column="Description" original="Workflow Simulation Execution Time">Tempo de Execução Acumulado da Simulação do Workflow</value>
   <value column="Help" original="Amount of time the performer of the activity needs to perform the task in Duration Unit">Quantidade de tempo que o executor da atividade necessita para executar a tarefa em "Unidades de Duração"</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -15582,20 +15582,20 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2358" trl="Y">
-  <value column="Name" original="Workflow Processor">Processador de Fluxos de Trabalho</value>
-  <value column="PrintName" original="Workflow Processor">Processador de Fluxos de Trabalho</value>
-  <value column="Description" original="Workflow Processor Server">Processador de Fluxos de Trabalho</value>
-  <value column="Help" original="Workflow Processor Server">Processador de Fluxos de Trabalho</value>
+  <value column="Name" original="Workflow Processor">Processador de Workflow</value>
+  <value column="PrintName" original="Workflow Processor">Processador de Workflow</value>
+  <value column="Description" original="Workflow Processor Server">Processador de Workflow</value>
+  <value column="Help" original="Workflow Processor Server">Processador de Workflow</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2359" trl="Y">
-  <value column="Name" original="Workflow Processorl Log">Registro (log) do Processador de Fluxo de Trabalho</value>
-  <value column="PrintName" original="Workflow Processor Log">Registro (log) do Processador de Fluxo de Trabalho</value>
-  <value column="Description" original="Result of the execution of the Workflow Processor">Resultado da execução do Processador de Fluxo de Trabalho</value>
-  <value column="Help" original="Result of the execution of the Workflow Processor">Resultado da execução do Processador de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Processorl Log">Registro (log) do Processador de Workflow</value>
+  <value column="PrintName" original="Workflow Processor Log">Registro (log) do Processador de Workflow</value>
+  <value column="Description" original="Result of the execution of the Workflow Processor">Resultado da execução do Processador de Workflow</value>
+  <value column="Help" original="Result of the execution of the Workflow Processor">Resultado da execução do Processador de Workflow</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -16584,7 +16584,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2461" trl="Y">
   <value column="Name" original="Transition Condition">Condição de Transição</value>
   <value column="PrintName" original="Condition">Condição</value>
-  <value column="Description" original="Workflow Node Transition Condition">Condição de Transição de Nó de Fluxo de Trabalho</value>
+  <value column="Description" original="Workflow Node Transition Condition">Condição de Transição de Nó de Workflow</value>
   <value column="Help" original="Optional restriction of transition of one node to the next">Restrição opcional de transição de um nó ao próximo</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -16594,16 +16594,16 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2462" trl="Y">
   <value column="Name" original="Node Transition">Transição de Nó</value>
   <value column="PrintName" original="Transition">Transição</value>
-  <value column="Description" original="Workflow Node Transition">Transição de Nó de Fluxo de Trabalho</value>
-  <value column="Help" original="The Next Nodes Tab defines the order or Nodes or Steps in a Workflow.">A Aba "Próximos Nós" define a ordem ou Nós, ou Passos em um Fluxo de Trabalho.</value>
+  <value column="Description" original="Workflow Node Transition">Transição de Nó de Workflow</value>
+  <value column="Help" original="The Next Nodes Tab defines the order or Nodes or Steps in a Workflow.">A Aba "Próximos Nós" define a ordem ou Nós, ou Passos em um Workflow.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2463" trl="Y">
-  <value column="Name" original="Validate Workflow">Validar o Fluxo de Trabalho</value>
-  <value column="PrintName" original="Validateworkflow">Validar Fluxo de Trabalho</value>
+  <value column="Name" original="Validate Workflow">Validar o Workflow</value>
+  <value column="PrintName" original="Validateworkflow">Validar Workflow</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -16622,9 +16622,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2465" trl="Y">
-  <value column="Name" original="Workflow Key">Cód. do Fluxo de Trabalho</value>
-  <value column="PrintName" original="Workflow">Cód. do Fluxo de Trabalho</value>
-  <value column="Description" original="Key of the Workflow to start">Código para iniciar o Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Key">Cód. do Workflow</value>
+  <value column="PrintName" original="Workflow">Cód. do Workflow</value>
+  <value column="Description" original="Key of the Workflow to start">Código para iniciar o workflow</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -16962,9 +16962,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2501" trl="Y">
-  <value column="Name" original="Std User Workflow">Fluxo de Trabalho Padrão de Usuário</value>
-  <value column="PrintName" original="Std User Workflow">Fluxo de Trabalho Padrão de Usuário</value>
-  <value column="Description" original="Standard Manual User Approval Workflow">Fluxo de Trabalho de Aprovação Manual Padrão de Usuário</value>
+  <value column="Name" original="Std User Workflow">Workflow Padrão de Usuário</value>
+  <value column="PrintName" original="Std User Workflow">Workflow Padrão de Usuário</value>
+  <value column="Description" original="Standard Manual User Approval Workflow">Workflow de Aprovação Manual Padrão de Usuário</value>
   <value column="Help" original="If selected, only documents with an open status (drafted, in progress, approved, rejected, invalid) and standard user actions (prepare, complete, approve, reject) are allowed to continue.  Use this to prevent having to define details on how automatic processes (unlock, invalidate, post, re-activate) and when the document is closed for normal user action (completed, waiting, closed, voided, reversed).">Se selecionado, somente documentos com estados em aberto (Em Digitação, Em Progresso, Aprovado, Rejeitado ou Inválido) e ações padrão do usuário (Preparar, Completar, Aprovar, Rejeitar) são permitidas para continuar. Isto é útil para evitar ter que definir detalhes de processos automáticos (Destravar, Invalidar, Lançar, Reativar) e quando o documento for fechado por ação normal do usuário (Completo, Em Espera, Fechado, Anulado, Estornado).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -17275,7 +17275,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="Name" original="Approval Amount">Valor da Aprovação</value>
   <value column="PrintName" original="Approval Amt">Valor da Aprovação</value>
   <value column="Description" original="Document Approval Amount">Valor da Aprovação do Documento</value>
-  <value column="Help" original="Approval Amount for Workflow">Valor da Aprovação para o Fluxo de Trabalho</value>
+  <value column="Help" original="Approval Amount for Workflow">Valor da Aprovação para o Workflow</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -18125,8 +18125,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2624" trl="Y">
   <value column="Name" original="Document Value Logic">Lógica do Valor de Documento</value>
   <value column="PrintName" original="Doc Value Logic">Lógica do Valor de Documento</value>
-  <value column="Description" original="Logic to determine Workflow Start - If true, a workflow process is started for the document">Lógica para determinar o início do Fluxo de Trabalho - Se "Verdadeiro", um processo de fluxo de trabalho será iniciado para o documento</value>
-  <value column="Help" original="You can enter simple logic using variables like @Created@=@Updated@, which fires, when a record is created. If you need to evaluate also values of other records, you need to use SQL logic and need to prefix this logic with &quot;SQL=&quot;. Example: start a Order verify workflow, when a business partner ordered something and is over the credit limit  &quot;SQL=EXISTS (SELECT * FROM C_BPartner bp WHERE C_Order. C_BPartner_ID=bp. C_BPartner_ID AND SO_CreditUsed &gt; SO_CreditLimit)&quot;.&#10;Note that the SQL based logic checks for duplicate workflows (i.e. a workflow is started only once per record)."><![CDATA[Você pode informar lógicas simples usando variáveis tais como @Created@=@Updated@, as quais disparam quando é criado um registro. Se você também precisa calcular valores de outros registros, você precisa usar lógica SQL com um prefixo "SQL=". Exemplo: para iniciar um fluxo de trabalho de verificação de Pedido de Venda, quando um Parceiro de Negócios fez o pedido mas o total geral está acima do limite de crédito, utilize "SQL=EXISTS (SELECT * FROM C_BPartner bp WHERE C_Order. C_BPartner_ID=bp. C_BPartner_ID AND SO_CreditUsed > SO_CreditLimit)". Note que a lógica baseada em SQL checa por fluxos de trabalho duplicados (ex: um fluxo de trabalho é iniciado apenas uma vez por registro).]]></value>
+  <value column="Description" original="Logic to determine Workflow Start - If true, a workflow process is started for the document">Lógica para determinar o início do Workflow - Se "Verdadeiro", um processo de workflow será iniciado para o documento</value>
+  <value column="Help" original="You can enter simple logic using variables like @Created@=@Updated@, which fires, when a record is created. If you need to evaluate also values of other records, you need to use SQL logic and need to prefix this logic with &quot;SQL=&quot;. Example: start a Order verify workflow, when a business partner ordered something and is over the credit limit  &quot;SQL=EXISTS (SELECT * FROM C_BPartner bp WHERE C_Order. C_BPartner_ID=bp. C_BPartner_ID AND SO_CreditUsed &gt; SO_CreditLimit)&quot;.&#10;Note that the SQL based logic checks for duplicate workflows (i.e. a workflow is started only once per record)."><![CDATA[Você pode informar lógicas simples usando variáveis tais como @Created@=@Updated@, as quais disparam quando é criado um registro. Se você também precisa calcular valores de outros registros, você precisa usar lógica SQL com um prefixo "SQL=". Exemplo: para iniciar um workflow de verificação de Pedido de Venda, quando um Parceiro de Negócios fez o pedido mas o total geral está acima do limite de crédito, utilize "SQL=EXISTS (SELECT * FROM C_BPartner bp WHERE C_Order. C_BPartner_ID=bp. C_BPartner_ID AND SO_CreditUsed > SO_CreditLimit)". Note que a lógica baseada em SQL checa por fluxos de trabalho duplicados (ex: um workflow é iniciado apenas uma vez por registro).]]></value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -18143,10 +18143,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2626" trl="Y">
-  <value column="Name" original="Workflow Type">Tipo de Fluxo de Trabalho</value>
-  <value column="PrintName" original="Workflow Type">Tipo de Fluxo de Trabalho</value>
-  <value column="Description" original="Type of Workflow">Tipo de Fluxo de Trabalho</value>
-  <value column="Help" original="The type of workflow determines how the workflow is started.">O tipo de fluxo de trabalho determina como o fluxo de trabalho será iniciado.</value>
+  <value column="Name" original="Workflow Type">Tipo de Workflow</value>
+  <value column="PrintName" original="Workflow Type">Tipo de Workflow</value>
+  <value column="Description" original="Type of Workflow">Tipo de Workflow</value>
+  <value column="Help" original="The type of workflow determines how the workflow is started.">O tipo de workflow determina como ele será iniciado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -18235,8 +18235,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2635" trl="Y">
   <value column="Name" original="Alert over Priority">Prioridade para o Alerta</value>
   <value column="PrintName" original="Alert over Priority">Prioridade para o Alerta</value>
-  <value column="Description" original="Send alert email when over priority">Envia um alerta quando uma atividade de fluxo de trabalho suspensa tiver uma prioridade maior ou igual à definida neste campo</value>
-  <value column="Help" original="Send alert email when a suspended activity is over the  priority defined">Envia um alerta quando uma atividade de fluxo de trabalho suspensa tiver uma prioridade maior ou igual à definida neste campo</value>
+  <value column="Description" original="Send alert email when over priority">Envia um alerta quando uma atividade de workflow suspensa tiver uma prioridade maior ou igual à definida neste campo</value>
+  <value column="Help" original="Send alert email when a suspended activity is over the  priority defined">Envia um alerta quando uma atividade de workflow suspensa tiver uma prioridade maior ou igual à definida neste campo</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -20634,19 +20634,19 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2887" trl="Y">
-  <value column="Name" original="System Issue">Emissão de Sistema</value>
-  <value column="PrintName" original="System Issue">Emissão de Sistema</value>
-  <value column="Description" original="Automatically created or manually entered System Issue">Automatically created or manually entered System Issue</value>
-  <value column="Help" original="System Issues are created to speed up the resolution of any system related issues (potential bugs).  If enabled, they are automatically reported to iDempiere.  No data or confidential information is transferred.">System Issues are created to speed up the resolution of any system related issues (potential bugs).  If enabled, they are automatically reported to Compiere.  No data or confidential information is transferred.</value>
+  <value column="Name" original="System Issue">Problema no Sistema</value>
+  <value column="PrintName" original="System Issue">Problema no Sistema</value>
+  <value column="Description" original="Automatically created or manually entered System Issue">Reportes manuais/automáticos de problemas no sistema</value>
+  <value column="Help" original="System Issues are created to speed up the resolution of any system related issues (potential bugs).  If enabled, they are automatically reported to iDempiere.  No data or confidential information is transferred.">Registros são criados para facilitar a resolução dos problemas ocorridos no sistema.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2888" trl="Y">
-  <value column="Name" original="Local Host">Local Host</value>
-  <value column="PrintName" original="Local Host">Local Host</value>
-  <value column="Description" original="Local Host Info">Local Host Info</value>
+  <value column="Name" original="Local Host">Host Local</value>
+  <value column="PrintName" original="Local Host">Host Local</value>
+  <value column="Description" original="Local Host Info">Informações do host local</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -20656,7 +20656,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2889" trl="Y">
   <value column="Name" original="Error Trace">Error Trace</value>
   <value column="PrintName" original="Error Trace">Error Trace</value>
-  <value column="Description" original="System Error Trace">System Error Trace</value>
+  <value column="Description" original="System Error Trace">Error Trace do sistema</value>
   <value column="Help" original="Java Trace Info">Java Trace Info</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -20674,9 +20674,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2891" trl="Y">
-  <value column="Name" original="Request Document No">Request Document No</value>
-  <value column="PrintName" original="Request Document No">Request Document No</value>
-  <value column="Description" original="iDempiere Request Document No">Compiere Request Document No</value>
+  <value column="Name" original="Request Document No">Núm. da Solicitação</value>
+  <value column="PrintName" original="Request Document No">Núm. da Solicitação</value>
+  <value column="Description" original="iDempiere Request Document No">Núm. da Solicitação Compiere</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -20684,9 +20684,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2892" trl="Y">
-  <value column="Name" original="Operating System">Operating System</value>
-  <value column="PrintName" original="Operating System">Operating System</value>
-  <value column="Description" original="Operating System Info">Operating System Info</value>
+  <value column="Name" original="Operating System">Sistema Operacional</value>
+  <value column="PrintName" original="Operating System">Sistema Operacional</value>
+  <value column="Description" original="Operating System Info">Informações do Sistema Operacional</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -20704,20 +20704,20 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2894" trl="Y">
-  <value column="Name" original="Vanilla System">Vanilla System</value>
-  <value column="PrintName" original="Vanilla System">Vanilla System</value>
-  <value column="Description" original="The system was NOT compiled from Source - i.e. standard distribution">The system was NOT compiled from Source - i.e. standard distribution</value>
-  <value column="Help" original="You may have customizations, like additional columns, tables, etc - but no code modifications which require compiling from source.">You may have customizations, like additional columns, tables, etc - but no code modifications which require compiling from source.</value>
+  <value column="Name" original="Vanilla System">Compilação Original</value>
+  <value column="PrintName" original="Vanilla System">Compilação Original</value>
+  <value column="Description" original="The system was NOT compiled from Source - i.e. standard distribution">O sistema não foi recompilado do código-fonte</value>
+  <value column="Help" original="You may have customizations, like additional columns, tables, etc - but no code modifications which require compiling from source.">Podem existir customizações, como por exemplo novas colunas e tabelas, mas isso implica em alterações no código que requerem uma nova compilação.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2895" trl="Y">
-  <value column="Name" original="Reproducible">Reproducible</value>
-  <value column="PrintName" original="Reproducible">Reproducible</value>
-  <value column="Description" original="Problem can re reproduced in Gardenworld">Problem can re reproduced in Gardenworld</value>
-  <value column="Help" original="The problem occurs also in the standard distribution in the demo client Gardenworld.">The problem occurs also in the standard distribution in the demo client Gardenworld.</value>
+  <value column="Name" original="Reproducible">Reproduzível</value>
+  <value column="PrintName" original="Reproducible">Reproduzível</value>
+  <value column="Description" original="Problem can re reproduced in Gardenworld">O problema pode ser reproduzível no Gardenworld</value>
+  <value column="Help" original="The problem occurs also in the standard distribution in the demo client Gardenworld.">O problema ocorre também na empresa demo da distribuição padrão.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -21124,9 +21124,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2939" trl="Y">
-  <value column="Name" original="Release Tag">Release Tag</value>
-  <value column="PrintName" original="Release Tag">Release Tag</value>
-  <value column="Description" original="Release Tag">Release Tag</value>
+  <value column="Name" original="Release Tag">Release</value>
+  <value column="PrintName" original="Release Tag">Release</value>
+  <value column="Description" original="Release Tag">Release</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -21144,9 +21144,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2941" trl="Y">
-  <value column="Name" original="Issue Summary">Issue Summary</value>
-  <value column="PrintName" original="Issue Summary">Issue Summary</value>
-  <value column="Description" original="Issue Summary">Issue Summary</value>
+  <value column="Name" original="Issue Summary">Resumo do Problema</value>
+  <value column="PrintName" original="Issue Summary">Resumo do Problema</value>
+  <value column="Description" original="Issue Summary">Resumo do Problema</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -21154,9 +21154,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2942" trl="Y">
-  <value column="Name" original="Source Class">Source Class</value>
-  <value column="PrintName" original="Source Class">Source Class</value>
-  <value column="Description" original="Source Class Name">Source Class Name</value>
+  <value column="Name" original="Source Class">Classe Java (Origem)</value>
+  <value column="PrintName" original="Source Class">Classe Java (Origem)</value>
+  <value column="Description" original="Source Class Name">Nome da classe Java que originou</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -21164,9 +21164,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2943" trl="Y">
-  <value column="Name" original="Source Method">Source Method</value>
-  <value column="PrintName" original="Source Method">Source Method</value>
-  <value column="Description" original="Source Method Name">Source Method Name</value>
+  <value column="Name" original="Source Method">Método (Origem)</value>
+  <value column="PrintName" original="Source Method">Método (Origem)</value>
+  <value column="Description" original="Source Method Name">Nome do método que originou</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -21176,7 +21176,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2944" trl="Y">
   <value column="Name" original="Logger">Logger</value>
   <value column="PrintName" original="Logger">Logger</value>
-  <value column="Description" original="Logger Name">Logger Name</value>
+  <value column="Description" original="Logger Name">Nome do Logger</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -21194,9 +21194,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2946" trl="Y">
-  <value column="Name" original="Known Issue">Known Issue</value>
-  <value column="PrintName" original="Known Issue">Known Issue</value>
-  <value column="Description" original="Known Issue">Known Issue</value>
+  <value column="Name" original="Known Issue">Problema Conhecido</value>
+  <value column="PrintName" original="Known Issue">Problema Conhecido</value>
+  <value column="Description" original="Known Issue">Problema Conhecido</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -21234,9 +21234,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2951" trl="Y">
-  <value column="Name" original="Java Info">Java Info</value>
-  <value column="PrintName" original="Java Info">Java Info</value>
-  <value column="Description" original="Java Version Info">Java Version Info</value>
+  <value column="Name" original="Java Info">Informação do Java</value>
+  <value column="PrintName" original="Java Info">Informação do Java</value>
+  <value column="Description" original="Java Version Info">Informação do Java</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -22075,30 +22075,30 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3044" trl="Y">
-  <value column="Name" original="Chat Type">Chat Type</value>
-  <value column="PrintName" original="Chat Type">Chat Type</value>
-  <value column="Description" original="Type of discussion / chat">Type of discussion / chat</value>
-  <value column="Help" original="Chat Type allows you to receive subscriptions for particular content of discussions. It is linked to a table.">Chat Type allows you to receive subscriptions for particular content of discussions. It is linked to a table.</value>
+  <value column="Name" original="Chat Type">Tipo de Anotação</value>
+  <value column="PrintName" original="Chat Type">Tipo de Anotação</value>
+  <value column="Description" original="Type of discussion / chat">Tipo de Anotação</value>
+  <value column="Help" original="Chat Type allows you to receive subscriptions for particular content of discussions. It is linked to a table."/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3045" trl="Y">
-  <value column="Name" original="Chat">Bate-Papo (Chat)</value>
-  <value column="PrintName" original="Chat">Bate-Papo (Chat)</value>
-  <value column="Description" original="Chat or discussion thread">Chat or discussion thread</value>
-  <value column="Help" original="Thread of discussion">Thread of discussion</value>
+  <value column="Name" original="Chat">Anotação</value>
+  <value column="PrintName" original="Chat">Anotação</value>
+  <value column="Description" original="Chat or discussion thread">Anotação</value>
+  <value column="Help" original="Thread of discussion">Anotação</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3046" trl="Y">
-  <value column="Name" original="Chat Entry">Chat Entry</value>
-  <value column="PrintName" original="Chat Entry">Chat Entry</value>
-  <value column="Description" original="Individual Chat / Discussion Entry">Individual Chat / Discussion Entry</value>
-  <value column="Help" original="The entry can not be changed - just the confidentiality">The entry can not be changed - just the confidentiality</value>
+  <value column="Name" original="Chat Entry">Registro de Anotação</value>
+  <value column="PrintName" original="Chat Entry">Registro de Anotação</value>
+  <value column="Description" original="Individual Chat / Discussion Entry">Registro de Anotação</value>
+  <value column="Help" original="The entry can not be changed - just the confidentiality">O registro não pode ser alterado, apenas a sua confidencialidade.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -22605,9 +22605,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3097" trl="Y">
-  <value column="Name" original="Moderation Type">Moderation Type</value>
-  <value column="PrintName" original="Moderation Type">Moderation Type</value>
-  <value column="Description" original="Type of moderation">Type of moderation</value>
+  <value column="Name" original="Moderation Type">Tipo de Moderação</value>
+  <value column="PrintName" original="Moderation Type">Tipo de Moderação</value>
+  <value column="Description" original="Type of moderation">Tipo de Moderação</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -22615,9 +22615,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3098" trl="Y">
-  <value column="Name" original="Chat Entry Parent">Chat Entry Parent</value>
-  <value column="PrintName" original="Chat Entry Parent">Chat Entry Parent</value>
-  <value column="Description" original="Link to direct Parent">Link to direct Parent</value>
+  <value column="Name" original="Chat Entry Parent">Registro de Anotação Pai</value>
+  <value column="PrintName" original="Chat Entry Parent">Registro de Anotação Pai</value>
+  <value column="Description" original="Link to direct Parent">Link para o Registro de Anotação Pai</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -22625,9 +22625,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3099" trl="Y">
-  <value column="Name" original="Chat Entry Grandparent">Chat Entry Grandparent</value>
-  <value column="PrintName" original="Chat Entry Grandparent">Chat Entry Grandparent</value>
-  <value column="Description" original="Link to Grand Parent (root level)">Link to Grand Parent (root level)</value>
+  <value column="Name" original="Chat Entry Grandparent">Registro de Anotação Avô</value>
+  <value column="PrintName" original="Chat Entry Grandparent">Registro de Anotação Avô</value>
+  <value column="Description" original="Link to Grand Parent (root level)">Link para o Registro de Anotação Avô</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -22635,9 +22635,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3100" trl="Y">
-  <value column="Name" original="Chat Entry Type">Chat Entry Type</value>
-  <value column="PrintName" original="Chat Entry Type">Chat Entry Type</value>
-  <value column="Description" original="Type of Chat/Forum Entry">Type of Chat/Forum Entry</value>
+  <value column="Name" original="Chat Entry Type">Tipo de Registro de Anotação</value>
+  <value column="PrintName" original="Chat Entry Type">Tipo de Registro de Anotação</value>
+  <value column="Description" original="Type of Chat/Forum Entry">Tipo de Registro de Anotação</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -22645,9 +22645,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="3101" trl="Y">
-  <value column="Name" original="Moderation Status">Moderation Status</value>
-  <value column="PrintName" original="Moderation Status">Moderation Status</value>
-  <value column="Description" original="Status of Moderation">Status of Moderation</value>
+  <value column="Name" original="Moderation Status">Estado da Moderação</value>
+  <value column="PrintName" original="Moderation Status">Estado da Moderação</value>
+  <value column="Description" original="Status of Moderation">Estado da Moderação</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -25044,9 +25044,9 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53326" trl="N">
-  <value column="Name" original="ASP Level">ASP Level</value>
-  <value column="PrintName" original="ASP Level">ASP Level</value>
+ <row id="53326" trl="Y">
+  <value column="Name" original="ASP Level">Nível SaaS</value>
+  <value column="PrintName" original="ASP Level">Nível SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -25054,9 +25054,9 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53327" trl="N">
-  <value column="Name" original="ASP Status">ASP Status</value>
-  <value column="PrintName" original="ASP Status">ASP Status</value>
+ <row id="53327" trl="Y">
+  <value column="Name" original="ASP Status">Estado</value>
+  <value column="PrintName" original="ASP Status">Estado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -25064,9 +25064,9 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53328" trl="N">
-  <value column="Name" original="AllFields">AllFields</value>
-  <value column="PrintName" original="AllFields">AllFields</value>
+ <row id="53328" trl="Y">
+  <value column="Name" original="AllFields">Todos os Campos</value>
+  <value column="PrintName" original="AllFields">Todos os Campos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -25074,9 +25074,9 @@ A soma do Preço de Custo Atual + Preço de Custo Atual de Nível Inferior é o 
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53329" trl="N">
-  <value column="Name" original="ASP Module">ASP Module</value>
-  <value column="PrintName" original="ASP Module">ASP Module</value>
+ <row id="53329" trl="Y">
+  <value column="Name" original="ASP Module">Módulo SaaS</value>
+  <value column="PrintName" original="ASP Module">Módulo SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28221,9 +28221,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53750" trl="N">
-  <value column="Name" original="ASP Window">ASP Window</value>
-  <value column="PrintName" original="ASP Window">ASP Window</value>
+ <row id="53750" trl="Y">
+  <value column="Name" original="ASP Window">Janela SaaS</value>
+  <value column="PrintName" original="ASP Window">Janela SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28231,9 +28231,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53751" trl="N">
-  <value column="Name" original="ASP Tab">ASP Tab</value>
-  <value column="PrintName" original="ASP Tab">ASP Tab</value>
+ <row id="53751" trl="Y">
+  <value column="Name" original="ASP Tab">Aba SaaS</value>
+  <value column="PrintName" original="ASP Tab">Aba SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28241,9 +28241,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53752" trl="N">
-  <value column="Name" original="ASP Field">ASP Field</value>
-  <value column="PrintName" original="ASP Field">ASP Field</value>
+ <row id="53752" trl="Y">
+  <value column="Name" original="ASP Field">Campo SaaS</value>
+  <value column="PrintName" original="ASP Field">Campo SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28251,9 +28251,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53753" trl="N">
-  <value column="Name" original="ASP Process">ASP Process</value>
-  <value column="PrintName" original="ASP Process">ASP Process</value>
+ <row id="53753" trl="Y">
+  <value column="Name" original="ASP Process">Processo SaaS</value>
+  <value column="PrintName" original="ASP Process">Processo SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28261,9 +28261,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53754" trl="N">
-  <value column="Name" original="ASP Process Parameter">ASP Process Parameter</value>
-  <value column="PrintName" original="ASP Process Parameter">ASP Process Parameter</value>
+ <row id="53754" trl="Y">
+  <value column="Name" original="ASP Process Parameter">Parâmetro de Processo SaaS</value>
+  <value column="PrintName" original="ASP Process Parameter">Parâmetro de Processo SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28271,9 +28271,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53755" trl="N">
-  <value column="Name" original="ASP Form">ASP Form</value>
-  <value column="PrintName" original="ASP Form">ASP Form</value>
+ <row id="53755" trl="Y">
+  <value column="Name" original="ASP Form">Formulário (Form) SaaS</value>
+  <value column="PrintName" original="ASP Form">Formulário (Form) SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28281,9 +28281,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53756" trl="N">
-  <value column="Name" original="ASP Task">ASP Task</value>
-  <value column="PrintName" original="ASP Task">ASP Task</value>
+ <row id="53756" trl="Y">
+  <value column="Name" original="ASP Task">Tarefa SaaS</value>
+  <value column="PrintName" original="ASP Task">Tarefa SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -28291,9 +28291,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53757" trl="N">
-  <value column="Name" original="ASP Workflow">ASP Workflow</value>
-  <value column="PrintName" original="ASP Workflow">ASP Workflow</value>
+ <row id="53757" trl="Y">
+  <value column="Name" original="ASP Workflow">Workflow SaaS</value>
+  <value column="PrintName" original="ASP Workflow">Workflow SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -29031,9 +29031,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54070" trl="N">
-  <value column="Name" original="Relation Type">Relation Type</value>
-  <value column="PrintName" original="Relation Type">Relation Type</value>
+ <row id="54070" trl="Y">
+  <value column="Name" original="Relation Type">Tipo de Relação</value>
+  <value column="PrintName" original="Relation Type">Tipo de Relação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -29041,9 +29041,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54071" trl="N">
-  <value column="Name" original="Source Reference">Source Reference</value>
-  <value column="PrintName" original="Source Reference">Source Reference</value>
+ <row id="54071" trl="Y">
+  <value column="Name" original="Source Reference">Referência (Origem)</value>
+  <value column="PrintName" original="Source Reference">Referência (Origem)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -29051,9 +29051,9 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54072" trl="N">
-  <value column="Name" original="Target Reference">Target Reference</value>
-  <value column="PrintName" original="Target Reference">Target Reference</value>
+ <row id="54072" trl="Y">
+  <value column="Name" original="Target Reference">Referência (Alvo)</value>
+  <value column="PrintName" original="Target Reference">Referência (Alvo)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -29061,30 +29061,30 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54073" trl="N">
-  <value column="Name" original="Source Role">Source Role</value>
-  <value column="PrintName" original="Source Role">Source Role</value>
-  <value column="Description" original="If set, this role will be used as label for the zoom destination instead of the destinations's window name">If set, this role will be used as label for the zoom destination instead of the destinations's window name</value>
+ <row id="54073" trl="Y">
+  <value column="Name" original="Source Role">Perfil (Origem)</value>
+  <value column="PrintName" original="Source Role">Perfil (Origem)</value>
+  <value column="Description" original="If set, this role will be used as label for the zoom destination instead of the destinations's window name">Se definido, este perfil será utilizado como nome para o destino do zoom ao invés do nome da janela</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54074" trl="N">
-  <value column="Name" original="Directed">Directed</value>
-  <value column="PrintName" original="Directed">Directed</value>
-  <value column="Description" original="Tells whether one &quot;sees&quot; the other end of the relation from each end or just from the source">Tells whether one "sees" the other end of the relation from each end or just from the source</value>
+ <row id="54074" trl="Y">
+  <value column="Name" original="Directed">Direcionado</value>
+  <value column="PrintName" original="Directed">Direcionado</value>
+  <value column="Description" original="Tells whether one &quot;sees&quot; the other end of the relation from each end or just from the source">Indica se a ponta da relação é visualizada pelas outras, ou somente pela origem</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54075" trl="N">
-  <value column="Name" original="Target Role">Target Role</value>
-  <value column="PrintName" original="Target Role">Target Role</value>
-  <value column="Description" original="If set, this role will be used as label for the zoom destination instead of the destinations's window name">If set, this role will be used as label for the zoom destination instead of the destinations's window name</value>
+ <row id="54075" trl="Y">
+  <value column="Name" original="Target Role">Perfil (Alvo)</value>
+  <value column="PrintName" original="Target Role">Perfil (Alvo)</value>
+  <value column="Description" original="If set, this role will be used as label for the zoom destination instead of the destinations's window name">Se definido, este perfil será utilizado como nome para o destino do zoom ao invés do nome da janela</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -38694,9 +38694,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200090" trl="N">
-  <value column="Name" original="ASP_Ref_List">ASP_Ref_List</value>
-  <value column="PrintName" original="ASP_Ref_List">ASP_Ref_List</value>
+ <row id="200090" trl="Y">
+  <value column="Name" original="ASP_Ref_List">Lista de Referência SaaS</value>
+  <value column="PrintName" original="ASP_Ref_List">Lista de Referência SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -39734,100 +39734,100 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200242" trl="N">
-  <value column="Name" original="Broadcast Frequency">Broadcast Frequency</value>
-  <value column="PrintName" original="Broadcast Frequency">Broadcast Frequency</value>
-  <value column="Description" original="How Many Times Message Should be Broadcasted">How Many Times Message Should be Broadcasted</value>
+ <row id="200242" trl="Y">
+  <value column="Name" original="Broadcast Frequency">Frequência do Broadcast</value>
+  <value column="PrintName" original="Broadcast Frequency">Frequência do Broadcast</value>
+  <value column="Description" original="How Many Times Message Should be Broadcasted">Quantas vezes a mensagem deve ser enviada</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200243" trl="N">
-  <value column="Name" original="Broadcast Message">Broadcast Message</value>
-  <value column="PrintName" original="Broadcast Message">Broadcast Message</value>
-  <value column="Description" original="Broadcast Message">Broadcast Message</value>
+ <row id="200243" trl="Y">
+  <value column="Name" original="Broadcast Message">Mensagem Broadcast</value>
+  <value column="PrintName" original="Broadcast Message">Mensagem Broadcast</value>
+  <value column="Description" original="Broadcast Message">Mensagem Broadcast</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200244" trl="N">
-  <value column="Name" original="Broadcast Type">Broadcast Type</value>
-  <value column="PrintName" original="Broadcast Type">Broadcast Type</value>
-  <value column="Description" original="Type of Broadcast">Type of Broadcast</value>
+ <row id="200244" trl="Y">
+  <value column="Name" original="Broadcast Type">Tipo de Broadcast</value>
+  <value column="PrintName" original="Broadcast Type">Tipo de Broadcast</value>
+  <value column="Description" original="Type of Broadcast">Tipo de Broadcast</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200245" trl="N">
-  <value column="Name" original="Expire On">Expire On</value>
-  <value column="PrintName" original="Expire On">Expire On</value>
-  <value column="Description" original="Expire On">Expire On</value>
+ <row id="200245" trl="Y">
+  <value column="Name" original="Expire On">Expira em</value>
+  <value column="PrintName" original="Expire On">Expira em</value>
+  <value column="Description" original="Expire On">Expira em</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200246" trl="N">
-  <value column="Name" original="Log Acknowledge">Log Acknowledge</value>
-  <value column="PrintName" original="Log Acknowledge">Log Acknowledge</value>
-  <value column="Description" original="Want to Log the Acknowledgement of Message?">Want to Log the Acknowledgement of Message?</value>
+ <row id="200246" trl="Y">
+  <value column="Name" original="Log Acknowledge">Registrar a Confirmação de Leitura</value>
+  <value column="PrintName" original="Log Acknowledge">Registrar a Confirmação de Leitura</value>
+  <value column="Description" original="Want to Log the Acknowledgement of Message?">Deseja registrar a confirmação de leitura da mensagem?</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200247" trl="N">
-  <value column="Name" original="Target">Target</value>
-  <value column="PrintName" original="Target">Target</value>
-  <value column="Description" original="Target client">Target client</value>
+ <row id="200247" trl="Y">
+  <value column="Name" original="Target">Alvo</value>
+  <value column="PrintName" original="Target">Alvo</value>
+  <value column="Description" original="Target client">Alvo</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200248" trl="N">
-  <value column="Name" original="Test Message">Test Message</value>
-  <value column="PrintName" original="Test Message">Test Message</value>
-  <value column="Description" original="Test broadcast message">Test broadcast message</value>
+ <row id="200248" trl="Y">
+  <value column="Name" original="Test Message">Testar a Mensagem</value>
+  <value column="PrintName" original="Test Message">Testar a Mensagem</value>
+  <value column="Description" original="Test broadcast message">Testar a Mensagem Broadcast</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200249" trl="N">
-  <value column="Name" original="Publish">Publish</value>
-  <value column="PrintName" original="Publish">Publish</value>
-  <value column="Description" original="Publish Broadcast Message">Publish Broadcast Message</value>
+ <row id="200249" trl="Y">
+  <value column="Name" original="Publish">Publicar</value>
+  <value column="PrintName" original="Publish">Publicar</value>
+  <value column="Description" original="Publish Broadcast Message">Publicar a Mensagem Broadcast</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200250" trl="N">
-  <value column="Name" original="Expire Now">Expire Now</value>
-  <value column="PrintName" original="Expire Now">Expire Now</value>
-  <value column="Description" original="Expire the broadcast message">Expire the broadcast message</value>
+ <row id="200250" trl="Y">
+  <value column="Name" original="Expire Now">Expirar Agora</value>
+  <value column="PrintName" original="Expire Now">Expirar Agora</value>
+  <value column="Description" original="Expire the broadcast message">Expirar a Mensagem Broadcast</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200251" trl="N">
-  <value column="Name" original="Broadcast Message">Broadcast Message</value>
-  <value column="PrintName" original="Broadcast Message">Broadcast Message</value>
-  <value column="Description" original="Broadcast Message">Broadcast Message</value>
+ <row id="200251" trl="Y">
+  <value column="Name" original="Broadcast Message">Mensagem Broadcast</value>
+  <value column="PrintName" original="Broadcast Message">Mensagem Broadcast</value>
+  <value column="Description" original="Broadcast Message">Mensagem Broadcast</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -39844,9 +39844,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200253" trl="N">
-  <value column="Name" original="Expired">Expired</value>
-  <value column="PrintName" original="Expired">Expired</value>
+ <row id="200253" trl="Y">
+  <value column="Name" original="Expired">Expirado</value>
+  <value column="PrintName" original="Expired">Expirado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -55568,6 +55568,266 @@ Example this value = 60. user can't reuse password in history has age < 60
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="202886" trl="N">
+  <value column="Name" original="Available for Replenishment">Available for Replenishment</value>
+  <value column="PrintName" original="Available for Replenishment">Available for Replenishment</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202887" trl="N">
+  <value column="Name" original="Available for Reservation">Available for Reservation</value>
+  <value column="PrintName" original="Available for Reservation">Available for Reservation</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202888" trl="N">
+  <value column="Name" original="Available for Shipping">Available for Shipping</value>
+  <value column="PrintName" original="Available for Shipping">Available for Shipping</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202889" trl="N">
+  <value column="Name" original="Locator Type">Locator Type</value>
+  <value column="PrintName" original="Locator Type">Locator Type</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202890" trl="N">
+  <value column="Name" original="M_LocatorType_UU">M_LocatorType_UU</value>
+  <value column="PrintName" original="M_LocatorType_UU">M_LocatorType_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202897" trl="N">
+  <value column="Name" original="Load Page Num">Load Page Num</value>
+  <value column="PrintName" original="Load Page Num">Load Page Num</value>
+  <value column="Description" original="When load data for info window, also load number of paging">When load data for info window, also load number of paging</value>
+  <value column="Help" original="Load number of paging maybe affect to performance when info window is join of many table">Load number of paging maybe affect to performance when info window is join of many table</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202909" trl="N">
+  <value column="Name" original="Product Price">Product Price</value>
+  <value column="PrintName" original="Product Price">Product Price</value>
+  <value column="Description" original="Intersection between a Product and a Price List Version">Intersection between a Product and a Price List Version</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202920" trl="N">
+  <value column="Name" original="Toggle on Double Click">Toggle on Double Click</value>
+  <value column="PrintName" original="Toggle on Double Click">Toggle on Double Click</value>
+  <value column="Description" original="Defines if double click in a field on grid mode switch to form view">Defines if double click in a field on grid mode switch to form view</value>
+  <value column="Help" original="Defines if double click in a field on grid mode switch to form view">Defines if double click in a field on grid mode switch to form view</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202958" trl="Y">
+  <value column="Name" original="Favourite">Favorito</value>
+  <value column="PrintName" original="Favourite">Favorito</value>
+  <value column="Description" original="This record is a favourite">Este registro é um favorito</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202959" trl="Y">
+  <value column="Name" original="Login automatic open sequence">Sequência de Abertura Automática no Login</value>
+  <value column="PrintName" original="Login automatic open sequence">Sequência de Abertura Automática no Login</value>
+  <value column="Description" original="Determine the order items will be automatically opened when user logs in">Determina a ordem que itens serão abertos quando o usuário faz o login</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="202975" trl="N">
+  <value column="Name" original="Copy Components From View">Copy Components From View</value>
+  <value column="PrintName" original="Copy Components From View">Copy Components From View</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203005" trl="N">
+  <value column="Name" original="Style">Style</value>
+  <value column="PrintName" original="Style">Style</value>
+  <value column="Description" original="CSS style for field and label">CSS style for field and label</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203006" trl="N">
+  <value column="Name" original="Style">Style</value>
+  <value column="PrintName" original="Style">Style</value>
+  <value column="Description" original="CSS Style for field and label">CSS Style for field and label</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203007" trl="N">
+  <value column="Name" original="Style Line">Style Line</value>
+  <value column="PrintName" original="Style Line">Style Line</value>
+  <value column="Description" original="CSS Style Line">CSS Style Line</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203008" trl="N">
+  <value column="Name" original="Style Line">Style Line</value>
+  <value column="PrintName" original="Style Line">Style Line</value>
+  <value column="Description" original="CSS Style Line">CSS Style Line</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203009" trl="N">
+  <value column="Name" original="Inline Style">Inline Style</value>
+  <value column="PrintName" original="Inline Style">Inline Style</value>
+  <value column="Description" original="CSS Inline Style">CSS Inline Style</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203010" trl="N">
+  <value column="Name" original="Theme">Theme</value>
+  <value column="PrintName" original="Theme">Theme</value>
+  <value column="Description" original="Theme name">Theme name</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203011" trl="N">
+  <value column="Name" original="Label Style">Label Style</value>
+  <value column="PrintName" original="Label Style">Label Style</value>
+  <value column="Description" original="Label CSS Style">Label CSS Style</value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203012" trl="N">
+  <value column="Name" original="Field Style">Field Style</value>
+  <value column="PrintName" original="Field Style">Field Style</value>
+  <value column="Description" original="Field CSS Style ">Field CSS Style </value>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203069" trl="N">
+  <value column="Name" original="Document Status">Document Status</value>
+  <value column="PrintName" original="Document Status">Document Status</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203070" trl="N">
+  <value column="Name" original="Print Color for Name">Print Color for Name</value>
+  <value column="PrintName" original="Print Color for Name">Print Color for Name</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203071" trl="N">
+  <value column="Name" original="Print Font for Name">Print Font for Name</value>
+  <value column="PrintName" original="Print Font for Name">Print Font for Name</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203072" trl="N">
+  <value column="Name" original="Print Color for Number">Print Color for Number</value>
+  <value column="PrintName" original="Print Color for Number">Print Color for Number</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203073" trl="N">
+  <value column="Name" original="Print Font for Number">Print Font for Number</value>
+  <value column="PrintName" original="Print Font for Number">Print Font for Number</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203076" trl="N">
+  <value column="Name" original="PA_DocumentStatus_UU">PA_DocumentStatus_UU</value>
+  <value column="PrintName" original="PA_DocumentStatus_UU">PA_DocumentStatus_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203077" trl="N">
+  <value column="Name" original="PA_DocumentStatus_Trl_UU">PA_DocumentStatus_Trl_UU</value>
+  <value column="PrintName" original="PA_DocumentStatus_Trl_UU">PA_DocumentStatus_Trl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row id="800000" trl="Y">
   <value column="Name" original="Import Declaration (DI)">Declaração de Importação (DI)</value>
   <value column="PrintName" original="DI">DI</value>
@@ -57809,8 +58069,8 @@ Example this value = 60. user can't reuse password in history has age < 60
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="800271" trl="Y">
-  <value column="Name" original="DIFAL Share Rate">Percentual Provisório de Partilha - DIFAL</value>
-  <value column="PrintName" original="DIFAL Share Rate">Percentual Provisório de Partilha - DIFAL</value>
+  <value column="Name" original="DIFAL Share Rate (%)">Percentual Provisório de Partilha - DIFAL</value>
+  <value column="PrintName" original="DIFAL Share Rate (%)">Percentual Provisório de Partilha - DIFAL</value>
   <value column="Description" original=""/>
   <value column="Help" original="">Percentual de ICMS Interestadual para a UF de destino: - 40% em 2016;
 - 60% em 2017;
@@ -57860,6 +58120,16 @@ Example this value = 60. user can't reuse password in history has age < 60
 Contribuinte
 Isento
 Não Contribuinte</value>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800441" trl="N">
+  <value column="Name" original="Generate Boleto Instruction">Generate Boleto Instruction</value>
+  <value column="PrintName" original="Generate Boleto Instruction">Generate Boleto Instruction</value>
+  <value column="Description" original="Generate Boleto Instruction">Generate Boleto Instruction</value>
+  <value column="Help" original="This button generate instruction for boleto(s)">This button generate instruction for boleto(s)</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>

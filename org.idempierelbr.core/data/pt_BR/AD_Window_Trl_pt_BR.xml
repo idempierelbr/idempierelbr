@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_Window">
+<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Window">
  <row id="100" trl="Y">
   <value column="Name" original="Table and Column">Tabela e Coluna</value>
   <value column="Description" original="Maintain Tables and Columns">Gerenciamento de Tabelas e Colunas</value>
@@ -72,9 +70,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Sequence Window defines how document numbers will be sequenced.&#10;Change the way document numbers are generated. You may add a prefix or a suffix or change the current number.">A janela "Seqüência" define como os números dos documentos serão seqüenciados. Alterar o modo que os números de documentos são gerados. Você pode acrescentar um prefixo ou um sufixo ou alterar o número atual.</value>
  </row>
  <row id="113" trl="Y">
-  <value column="Name" original="Workflow">Fluxo de Trabalho</value>
-  <value column="Description" original="Maintain Workflow">Gerenciamento de Fluxo de Trabalho</value>
-  <value column="Help" original="The Workflow Window defines Workflows in the system, the access level for the Workflow and the Nodes or Steps within the Workflow.">A Janela "Fluxo de Trabalho" define fluxos de trabalho no sistema, seus níveis de acesso e os nós (ou passos).</value>
+  <value column="Name" original="Workflow">Workflow</value>
+  <value column="Description" original="Maintain Workflow">Gerenciamento de Workflow</value>
+  <value column="Help" original="The Workflow Window defines Workflows in the system, the access level for the Workflow and the Nodes or Steps within the Workflow.">A Janela "Workflow" define workflows no sistema, seus níveis de acesso e os nós (ou passos).</value>
  </row>
  <row id="114" trl="Y">
   <value column="Name" original="Task">Tarefa</value>
@@ -722,9 +720,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Validate and Import Inventory Transactions">Validar e Importar Transações de Estoque</value>
  </row>
  <row id="268" trl="Y">
-  <value column="Name" original="Role Data Access">Acesso do Perfil a Dados</value>
-  <value column="Description" original="Maintain Data Access Rules">Gerenciamento de Regras de Acesso de Perfis aos Dados</value>
-  <value column="Help" original="Maintain Data Access Roles of Roles/Responsibilties.&#10;Note that access information is cached and requires re-login or reset of cache.">Gerenciamento de Regras de Acesso de Perfis aos Dados. Observe que essas informações são armazenadas em cache, portanto é necessário limpar o cache após alterações.</value>
+  <value column="Name" original="Role Data Access">Acesso de Perfil a Dados</value>
+  <value column="Description" original="Maintain Data Access Rules">Gerenciamento de Regras de Acesso de Perfis a Dados</value>
+  <value column="Help" original="Maintain Data Access Roles of Roles/Responsibilties.&#10;Note that access information is cached and requires re-login or reset of cache.">Gerenciamento de Regras de Acesso de Perfis a Dados. Observe que essas informações são armazenadas em cache, portanto é necessário limpar o cache após alterações.</value>
  </row>
  <row id="269" trl="Y">
   <value column="Name" original="Advertisement">Anúncio</value>
@@ -870,19 +868,19 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The rates are imported after validation of currencies and conversion rate type as well as rates. The multiply rate is used. If a reciprocal rate is to be created, the divide rate is used. ">As taxas são importadas após a validação de moedas, tipo de taxa de conversão e taxas. A Taxa multiplicativa é usada. Se uma taxa recíproca for criada, a Taxa divisora será usada. </value>
  </row>
  <row id="297" trl="Y">
-  <value column="Name" original="Workflow Process">Processo de Fluxo de Trabalho</value>
-  <value column="Description" original="Monitor workflow processes">Monitoração de Processos de Fluxo de Trabalho</value>
-  <value column="Help" original="View and Maintain Workflow Process Instance Information">Visualização e Gerenciamento de Informações de Instância de Processo de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Process">Processo de Workflow</value>
+  <value column="Description" original="Monitor workflow processes">Monitoração de Processos de Workflow</value>
+  <value column="Help" original="View and Maintain Workflow Process Instance Information">Visualização e Gerenciamento de Informações de Instância de Processo de Workflow</value>
  </row>
  <row id="298" trl="Y">
-  <value column="Name" original="Workflow Activities (all)">Atividades de Fluxo de Trabalho (Todas)</value>
-  <value column="Description" original="Monitor all Workflow activities">Monitoração de todas as atividades de Fluxo de Trabalho</value>
-  <value column="Help" original="Maintain all Workflow activities">Gerenciamento de todas as atividades de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Activities (all)">Atividades de Workflow (Todas)</value>
+  <value column="Description" original="Monitor all Workflow activities">Monitoração de todas as atividades de workflow</value>
+  <value column="Help" original="Maintain all Workflow activities">Gerenciamento de todas as atividades de workflow</value>
  </row>
  <row id="299" trl="Y">
-  <value column="Name" original="Workflow Responsible">Responsável pelo Fluxo de Trabalho</value>
-  <value column="Description" original="Responsible for Workflow Execution">Responsável pela Execução de Fluxo de Trabalho</value>
-  <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um Fluxo de Trabalho é de um usuário real. A Responsabilidade do Fluxo de Trabalho permite definir meios de encontrar esse usuário real.</value>
+  <value column="Name" original="Workflow Responsible">Responsável pelo Workflow</value>
+  <value column="Description" original="Responsible for Workflow Execution">Responsável pela execução do workflow</value>
+  <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um workflow é de um usuário real. A Responsabilidade do workflow permite definir meios de encontrar esse usuário real.</value>
  </row>
  <row id="300" trl="Y">
   <value column="Name" original="Registration Attributes">Atributos de Registros</value>
@@ -1195,9 +1193,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="General Ledger Funds Control allows you to restrict the use of funds.  This is independent from budget control.">O Controle de Fundos do Razão Geral permite a você restringir o uso dos fundos.  Isto é independente do controle de orçamento.</value>
  </row>
  <row id="363" trl="Y">
-  <value column="Name" original="System Issue Report">System Issue Report</value>
-  <value column="Description" original="Automatically created or manually entered System Issue Reports">Automatically created or manually entered System Issue Reports</value>
-  <value column="Help" original="System Issues are created to speed up the resolution of any system related issues (potential bugs).  If enabled, they are automatically reported to iDempiere.  No data or confidential information is transferred.">System Issues are created to speed up the resolution of any system related issues (potential bugs).  If enabled, they are automatically reported to Compiere.  No data or confidential information is transferred.</value>
+  <value column="Name" original="System Issue Report">Reporte de Problemas no Sistema</value>
+  <value column="Description" original="Automatically created or manually entered System Issue Reports">Reportes manuais/automáticos de problemas no sistema</value>
+  <value column="Help" original="System Issues are created to speed up the resolution of any system related issues (potential bugs).  If enabled, they are automatically reported to iDempiere.  No data or confidential information is transferred.">Registros são criados para facilitar a resolução dos problemas ocorridos no sistema.</value>
  </row>
  <row id="364" trl="Y">
   <value column="Name" original="Performance Color Schema">Esquema de Cores de Desempenho</value>
@@ -1265,9 +1263,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Define News Channels, write and publish articles">Define News Channels, write and publish articles</value>
  </row>
  <row id="377" trl="Y">
-  <value column="Name" original="View Chat">View Chat</value>
-  <value column="Description" original="View discussions / chats">View discussions / chats</value>
-  <value column="Help" original="View chat / discussion threads">View chat / discussion threads</value>
+  <value column="Name" original="View Chat">Visualizar Anotação</value>
+  <value column="Description" original="View discussions / chats">Visualizar Anotações</value>
+  <value column="Help" original="View chat / discussion threads">Visualizar Anotações</value>
  </row>
  <row id="379" trl="Y">
   <value column="Name" original="Media Item">Media Item</value>
@@ -1275,9 +1273,9 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="Maintain Content Management Media">Maintain Content Management Media</value>
  </row>
  <row id="380" trl="Y">
-  <value column="Name" original="Chat Type">Chat Type</value>
-  <value column="Description" original="Maintain Chat Types">Maintain Chat Types</value>
-  <value column="Help" original="Chat Types">Chat Types</value>
+  <value column="Name" original="Chat Type">Tipo de Anotação</value>
+  <value column="Description" original="Maintain Chat Types">Manutenção de Tipos de Anotação</value>
+  <value column="Help" original="Chat Types">Tipos de Anotações</value>
  </row>
  <row id="381" trl="Y">
   <value column="Name" original="Entity Type">Tipo de Entidade</value>
@@ -1473,8 +1471,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="The cost collector is a repository of all the MO transactions.">The cost collector is a repository of all the MO transactions.</value>
   <value column="Help" original="The cost collector is a repository of all the MO transactions. This real transactions relation allows to compare it with the standard transactions in order to be able to calculate variations by cost element.">The cost collector is a repository of all the MO transactions. This real transactions relation allows to compare it with the standard transactions in order to be able to calculate variations by cost element.</value>
  </row>
- <row id="53015" trl="N">
-  <value column="Name" original="ASP Modules">ASP Modules</value>
+ <row id="53015" trl="Y">
+  <value column="Name" original="ASP Modules">Módulo SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1779,8 +1777,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53102" trl="N">
-  <value column="Name" original="Relation Type">Relation Type</value>
+ <row id="53102" trl="Y">
+  <value column="Name" original="Relation Type">Tipo de Relação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1984,10 +1982,10 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200023" trl="N">
-  <value column="Name" original="Broadcast Message">Broadcast Message</value>
-  <value column="Description" original="Broadcast Message">Broadcast Message</value>
-  <value column="Help" original="Window allows to enter broadcast messages">Window allows to enter broadcast messages</value>
+ <row id="200023" trl="Y">
+  <value column="Name" original="Broadcast Message">Mensagem Broadcast</value>
+  <value column="Description" original="Broadcast Message">Mensagem Broadcast</value>
+  <value column="Help" original="Window allows to enter broadcast messages">Janela que permite a criação de mensagens broadcast</value>
  </row>
  <row id="200024" trl="Y">
   <value column="Name" original="Shipping Processor">Processador de Remessas</value>
@@ -2094,6 +2092,26 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="This window is use to set up the preferences entries for each user.">This window is use to set up the preferences entries for each user.</value>
   <value column="Help" original=""/>
  </row>
+ <row id="200074" trl="N">
+  <value column="Name" original="Locator Type">Locator Type</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200083" trl="Y">
+  <value column="Name" original="Menu favourites">Favorito</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200086" trl="N">
+  <value column="Name" original="CSS Style">CSS Style</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200090" trl="N">
+  <value column="Name" original="Document Status">Document Status</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row id="800000" trl="Y">
   <value column="Name" original="Import Declaration (DI)">Declaração de Importação (DI)</value>
   <value column="Description" original=""/>
@@ -2112,6 +2130,16 @@ MRP - 110	 No exists Dem</value>
  <row id="800004" trl="Y">
   <value column="Name" original="CNAB Files">Arquivos CNAB</value>
   <value column="Description" original="Brazilian bank integration files">Arquivos de integração bancária</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800007" trl="N">
+  <value column="Name" original="CEST">CEST</value>
+  <value column="Description" original="CEST">CEST</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800008" trl="N">
+  <value column="Name" original="CEST relations to NCM and products">CEST relations to NCM and products</value>
+  <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="800009" trl="Y">

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_WF_Node">
+<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_WF_Node">
  <row id="116" trl="Y">
   <value column="Name" original="Accounting Schema">Esquema Contábil</value>
   <value column="Description" original="Project as Account Segment">Projete como um segmento de contas</value>
@@ -48,7 +46,7 @@
   <value column="Help" original="Set up the sales representative as Employee and Sales Representative in the Employee tab.  Also set up the Vendor part, if you want to create payments.">Configurar o representante de vendas como Funcionário e Representante de Vendas na Aba "Funcionário"  Configurar também a parte do Fornecedor se você quiser criar pagamentos.</value>
  </row>
  <row id="146" trl="Y">
-  <value column="Name" original="Workflow">Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow">Workflow</value>
   <value column="Description" original="Translate Workflows">Traduzir Fluxos de Trabalho</value>
   <value column="Help" original="Translate Name, Description and Help of Workflows and their Nodes.  You only need to translate the List Elements !!">Traduza o Nome, Descrição e Ajuda dos Fluxos de Trabalho e seus Nós.  Você só precisa traduzir a Lista de Elementos !!</value>
  </row>

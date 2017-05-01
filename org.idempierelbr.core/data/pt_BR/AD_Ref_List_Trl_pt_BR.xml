@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_Ref_List">
+<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Ref_List">
  <row id="51" trl="Y">
   <value column="Name" original="Organization">Organização</value>
   <value column="Description" original=""/>
@@ -51,7 +49,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="105" trl="Y">
-  <value column="Name" original="WorkFlow">Fluxo de Trabalho</value>
+  <value column="Name" original="WorkFlow">Workflow</value>
   <value column="Description" original=""/>
  </row>
  <row id="106" trl="Y">
@@ -1867,7 +1865,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="611" trl="Y">
-  <value column="Name" original="Sub Workflow">Subfluxo de Trabalho</value>
+  <value column="Name" original="Sub Workflow">Sub-Workflow</value>
   <value column="Description" original=""/>
  </row>
  <row id="612" trl="Y">
@@ -2164,7 +2162,7 @@
  </row>
  <row id="688" trl="Y">
   <value column="Name" original="General">Geral</value>
-  <value column="Description" original="General Workflow">Fluxo de Trabalho Geral</value>
+  <value column="Description" original="General Workflow">Workflow Geral</value>
  </row>
  <row id="689" trl="Y">
   <value column="Name" original="Document Process">Processador de Documentos</value>
@@ -2603,7 +2601,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="801" trl="Y">
-  <value column="Name" original="WF Responsible">Responsável pelo Fluxo de Trabalho</value>
+  <value column="Name" original="WF Responsible">Responsável pelo Workflow</value>
   <value column="Description" original=""/>
  </row>
  <row id="802" trl="Y">
@@ -3103,19 +3101,19 @@
   <value column="Description" original=""/>
  </row>
  <row id="928" trl="Y">
-  <value column="Name" original="Not moderated">Not moderated</value>
+  <value column="Name" original="Not moderated">Não Moderado</value>
   <value column="Description" original=""/>
  </row>
  <row id="929" trl="Y">
-  <value column="Name" original="Before Publishing">Before Publishing</value>
+  <value column="Name" original="Before Publishing">Antes da Publicação</value>
   <value column="Description" original=""/>
  </row>
  <row id="930" trl="Y">
-  <value column="Name" original="After Publishing">After Publishing</value>
+  <value column="Name" original="After Publishing">Após a Publicação</value>
   <value column="Description" original=""/>
  </row>
  <row id="931" trl="Y">
-  <value column="Name" original="Not Displayed">Not Displayed</value>
+  <value column="Name" original="Not Displayed">Não Exibido</value>
   <value column="Description" original=""/>
  </row>
  <row id="932" trl="Y">
@@ -3123,7 +3121,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="933" trl="Y">
-  <value column="Name" original="To be reviewed">To be reviewed</value>
+  <value column="Name" original="To be reviewed">A ser Revisado</value>
   <value column="Description" original=""/>
  </row>
  <row id="934" trl="Y">
@@ -3151,11 +3149,11 @@
   <value column="Description" original=""/>
  </row>
  <row id="941" trl="Y">
-  <value column="Name" original="Note (flat)">Note (flat)</value>
+  <value column="Name" original="Note (flat)">Anotação (Flat)</value>
   <value column="Description" original=""/>
  </row>
  <row id="942" trl="Y">
-  <value column="Name" original="Forum (threaded)">Forum (threaded)</value>
+  <value column="Name" original="Forum (threaded)">Forum (Thread)</value>
   <value column="Description" original=""/>
  </row>
  <row id="50001" trl="Y">
@@ -3247,7 +3245,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="50023" trl="Y">
-  <value column="Name" original="Workflow">Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow">Workflow</value>
   <value column="Description" original=""/>
  </row>
  <row id="50024" trl="Y">
@@ -3570,16 +3568,16 @@
   <value column="Name" original="Forward">Forward</value>
   <value column="Description" original="Scheduke Forward">Scheduke Forward</value>
  </row>
- <row id="53284" trl="N">
-  <value column="Name" original="Hide">Hide</value>
+ <row id="53284" trl="Y">
+  <value column="Name" original="Hide">Ocultar</value>
   <value column="Description" original=""/>
  </row>
- <row id="53285" trl="N">
-  <value column="Name" original="Show">Show</value>
+ <row id="53285" trl="Y">
+  <value column="Name" original="Show">Exibir</value>
   <value column="Description" original=""/>
  </row>
- <row id="53286" trl="N">
-  <value column="Name" original="Undefined">Undefined</value>
+ <row id="53286" trl="Y">
+  <value column="Name" original="Undefined">Indefinido</value>
   <value column="Description" original=""/>
  </row>
  <row id="53287" trl="N">
@@ -4450,12 +4448,12 @@
   <value column="Name" original="Invoice">Invoice</value>
   <value column="Description" original=""/>
  </row>
- <row id="53554" trl="N">
-  <value column="Name" original="Implicit">Implicit</value>
+ <row id="53554" trl="Y">
+  <value column="Name" original="Implicit">Implícito</value>
   <value column="Description" original=""/>
  </row>
- <row id="53555" trl="N">
-  <value column="Name" original="Explicit">Explicit</value>
+ <row id="53555" trl="Y">
+  <value column="Name" original="Explicit">Explícito</value>
   <value column="Description" original=""/>
  </row>
  <row id="53556" trl="Y">
@@ -4950,41 +4948,41 @@
   <value column="Name" original="Database">Database</value>
   <value column="Description" original=""/>
  </row>
- <row id="200045" trl="N">
-  <value column="Name" original="Just Once">Just Once</value>
-  <value column="Description" original="Message will be broadcasted one time">Message will be broadcasted one time</value>
+ <row id="200045" trl="Y">
+  <value column="Name" original="Just Once">Apenas Uma Vez</value>
+  <value column="Description" original="Message will be broadcasted one time">Mensagem será enviada apenas uma vez</value>
  </row>
- <row id="200046" trl="N">
-  <value column="Name" original="Until Expiration">Until Expiration</value>
-  <value column="Description" original="Repeat it until message expiration value">Repeat it until message expiration value</value>
+ <row id="200046" trl="Y">
+  <value column="Name" original="Until Expiration">Até Expirar</value>
+  <value column="Description" original="Repeat it until message expiration value">Repete até que a mensagem expire</value>
  </row>
- <row id="200047" trl="N">
-  <value column="Name" original="Immediate">Immediate</value>
-  <value column="Description" original="show a modal popup dialog to all users connected">show a modal popup dialog to all users connected</value>
+ <row id="200047" trl="Y">
+  <value column="Name" original="Immediate">Imediato</value>
+  <value column="Description" original="show a modal popup dialog to all users connected">Apresenta um popup para todos os usuários logados</value>
  </row>
- <row id="200048" trl="N">
-  <value column="Name" original="Immediate + Login">Immediate + Login</value>
-  <value column="Description" original="Immediate + Login">Immediate + Login</value>
+ <row id="200048" trl="Y">
+  <value column="Name" original="Immediate + Login">Imediato + Login</value>
+  <value column="Description" original="Immediate + Login">Imediato + Login</value>
  </row>
- <row id="200049" trl="N">
+ <row id="200049" trl="Y">
   <value column="Name" original="Login">Login</value>
-  <value column="Description" original="Shows a modal popup dialog at login time">Shows a modal popup dialog at login time</value>
+  <value column="Description" original="Shows a modal popup dialog at login time">Apresenta um popup no momento do login</value>
  </row>
- <row id="200050" trl="N">
-  <value column="Name" original="Client">Client</value>
-  <value column="Description" original="Client">Client</value>
+ <row id="200050" trl="Y">
+  <value column="Name" original="Client">Empresa</value>
+  <value column="Description" original="Client">Empresa</value>
  </row>
- <row id="200051" trl="N">
-  <value column="Name" original="Everybody">Everybody</value>
-  <value column="Description" original="Everybody will receive message">Everybody will receive message</value>
+ <row id="200051" trl="Y">
+  <value column="Name" original="Everybody">Todos os Usuários</value>
+  <value column="Description" original="Everybody will receive message">Todos os usuários receberão a mensagem</value>
  </row>
- <row id="200052" trl="N">
-  <value column="Name" original="Role">Role</value>
-  <value column="Description" original="Message will reach out to all users with this role">Message will reach out to all users with this role</value>
+ <row id="200052" trl="Y">
+  <value column="Name" original="Role">Perfil de Acesso</value>
+  <value column="Description" original="Message will reach out to all users with this role">Mensagem será enviada a todos os usuários com este perfil de acesso</value>
  </row>
- <row id="200053" trl="N">
-  <value column="Name" original="User">User</value>
-  <value column="Description" original="User will receive message">User will receive message</value>
+ <row id="200053" trl="Y">
+  <value column="Name" original="User">Usuário</value>
+  <value column="Description" original="User will receive message">O usuário informado receberá a mensagem</value>
  </row>
  <row id="200054" trl="Y">
   <value column="Name" original="Class 1 - Explosives">Classe 1 - Explosivos</value>
@@ -5263,7 +5261,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="200130" trl="Y">
-  <value column="Name" original="Workflow">Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow">Workflow</value>
   <value column="Description" original=""/>
  </row>
  <row id="200132" trl="Y">
@@ -5342,13 +5340,13 @@
   <value column="Name" original="Cost Adjustment">Ajuste de Custo</value>
   <value column="Description" original="Inventory Cost Adjustment">Ajuste de Custo de Estoque</value>
  </row>
- <row id="200156" trl="N">
-  <value column="Name" original="Until Acknowledge">Until Acknowledge</value>
-  <value column="Description" original="Repeat it until the message has been acknowledged">Repeat it until the message has been acknowledged</value>
+ <row id="200156" trl="Y">
+  <value column="Name" original="Until Acknowledge">Até Confirmar a Leitura</value>
+  <value column="Description" original="Repeat it until the message has been acknowledged">Repete até que a leitura tenha sido confirmada</value>
  </row>
- <row id="200157" trl="N">
-  <value column="Name" original="Until Expiration or Acknowledge">Until Expiration or Acknowledge</value>
-  <value column="Description" original="Repeat it until the message expires or until it has been acknowledged, whatever happens first">Repeat it until the message expires or until it has been acknowledged, whatever happens first</value>
+ <row id="200157" trl="Y">
+  <value column="Name" original="Until Expiration or Acknowledge">Até Expirar ou Confirmar a Leitura</value>
+  <value column="Description" original="Repeat it until the message expires or until it has been acknowledged, whatever happens first">Repete até que a mensagem expire ou até que tenha a leitura confirmada (o que ocorrer primeiro)</value>
  </row>
  <row id="200158" trl="N">
   <value column="Name" original="Both">Both</value>
@@ -5440,6 +5438,22 @@
  </row>
  <row id="200287" trl="N">
   <value column="Name" original="Both">Both</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200310" trl="N">
+  <value column="Name" original="Custom Table">Custom Table</value>
+  <value column="Description" original="Custom Table">Custom Table</value>
+ </row>
+ <row id="200318" trl="N">
+  <value column="Name" original="Detail">Detail</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200345" trl="N">
+  <value column="Name" original="Payment">Payment</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200356" trl="N">
+  <value column="Name" original="SQL Mandatory">SQL Mandatory</value>
   <value column="Description" original=""/>
  </row>
  <row id="800000" trl="Y">
@@ -5964,6 +5978,18 @@
  </row>
  <row id="800136" trl="N">
   <value column="Name" original="6 - Outros">6 - Outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800138" trl="N">
+  <value column="Name" original="Contribuinte">Contribuinte</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800139" trl="N">
+  <value column="Name" original="Isento">Isento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800140" trl="N">
+  <value column="Name" original="Não Contribuinte">Não Contribuinte</value>
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="2facadde-7b9b-4619-9161-8f9fe50b2b19">

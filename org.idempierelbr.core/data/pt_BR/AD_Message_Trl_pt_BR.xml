@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_Message">
+<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Message">
  <row id="101" trl="Y">
   <value column="MsgText" original="zero">zero</value>
   <value column="MsgTip" original=""/>
@@ -2021,23 +2019,23 @@ Detalhes: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="604" trl="Y">
-  <value column="MsgText" original="Cannot start Workflow - Definition not correct">Não é possível iniciar o Fluxo de Trabalho - Definição incorreta</value>
+  <value column="MsgText" original="Cannot start Workflow - Definition not correct">Não é possível iniciar o workflow. Definição incorreta!</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="605" trl="Y">
-  <value column="MsgText" original="Exit Workflow">Sair do Fluxo de Trabalho</value>
+  <value column="MsgText" original="Exit Workflow">Sair do Workflow</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="606" trl="Y">
-  <value column="MsgText" original="Next workflow step">Próximo passo do Fluxo de Trabalho</value>
+  <value column="MsgText" original="Next workflow step">Próximo passo do workflow</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="607" trl="Y">
-  <value column="MsgText" original="Previous workflow step">Passo anterior do Fluxo de Trabalho</value>
+  <value column="MsgText" original="Previous workflow step">Passo anterior do workflow</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="608" trl="Y">
-  <value column="MsgText" original="Back to start of workflow">Voltar ao início do Fluxo de Trabalho</value>
+  <value column="MsgText" original="Back to start of workflow">Voltar ao início do workflow</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="609" trl="Y">
@@ -2578,11 +2576,11 @@ Obrigado por utilizar o Gerenciador de Ativos de Clientes do iDempiere</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="752" trl="Y">
-  <value column="MsgText" original="Your Workflow Activities">Suas Atividades de Fluxo de Trabalho</value>
+  <value column="MsgText" original="Your Workflow Activities">Suas Atividades de Workflow</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="753" trl="Y">
-  <value column="MsgText" original="Workflow Result">Resultado do Fluxo de Trabalho</value>
+  <value column="MsgText" original="Workflow Result">Resultado do Workflow</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="754" trl="Y">
@@ -2590,7 +2588,7 @@ Obrigado por utilizar o Gerenciador de Ativos de Clientes do iDempiere</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="755" trl="Y">
-  <value column="MsgText" original="Active Workflow for this Record exists (complete first):">Existe um Fluxo de Trabalho ativo para este registro (completar primeiramente):</value>
+  <value column="MsgText" original="Active Workflow for this Record exists (complete first):">Existe um workflow ativo para este registro. Complete-o primeiro.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="756" trl="Y">
@@ -2598,7 +2596,7 @@ Obrigado por utilizar o Gerenciador de Ativos de Clientes do iDempiere</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="757" trl="Y">
-  <value column="MsgText" original="Active &amp;Workflows"><![CDATA[&Fluxos de Trabalho Ativos]]></value>
+  <value column="MsgText" original="Active &amp;Workflows"><![CDATA[&Workflows Ativos]]></value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="758" trl="Y">
@@ -2754,19 +2752,19 @@ Obrigado por utilizar o Gerenciador de Ativos de Clientes do iDempiere</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="796" trl="Y">
-  <value column="MsgText" original="Workflow Not Valid">Fluxo de Trabalho inválido</value>
+  <value column="MsgText" original="Workflow Not Valid">Workflow inválido</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="797" trl="Y">
-  <value column="MsgText" original="Inactivity Alert: Workflow Activity {0}">Alerta de Inatividade: Atividade do Fluxo de Trabalho {0}</value>
+  <value column="MsgText" original="Inactivity Alert: Workflow Activity {0}">Alerta de Inatividade: Atividade de Workflow {0}</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="798" trl="Y">
-  <value column="MsgText" original="Alert Workflow Activity: Max Wait Time Ended {0}">Alerta de Atividade do Fluxo de Trabalho: o tempo máximo de espera foi atingido {0}</value>
+  <value column="MsgText" original="Alert Workflow Activity: Max Wait Time Ended {0}">Alerta de Atividade de Workflow: o tempo máximo de espera foi atingido {0}</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="799" trl="Y">
-  <value column="MsgText" original="Alert Workflow Activity Over Priority {0}">Alerta de Prioridade da Atividade do Fluxo de Trabalho {0}</value>
+  <value column="MsgText" original="Alert Workflow Activity Over Priority {0}">Alerta de Prioridade da Atividade de Workflow {0}</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="800" trl="Y">
@@ -3003,11 +3001,11 @@ Deseja realmente continuar?</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="858" trl="Y">
-  <value column="MsgText" original="Workflow &amp;Activities"><![CDATA[Atividade de &Workflow]]></value>
+  <value column="MsgText" original="Workflow &amp;Activities">Atividades de Workflow</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="859" trl="Y">
-  <value column="MsgText" original="&amp;Workflow"><![CDATA[&Fluxo de Trabalho]]></value>
+  <value column="MsgText" original="&amp;Workflow"><![CDATA[&Workflow]]></value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="860" trl="Y">
@@ -6582,6 +6580,54 @@ Por favor, informe o administrador do sistema.</value>
  </row>
  <row id="200352" trl="N">
   <value column="MsgText" original="Checking for errors... {0} preprocessed.">Checking for errors... {0} preprocessed.</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200353" trl="N">
+  <value column="MsgText" original="Locator not available for shipping">Locator not available for shipping</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200354" trl="N">
+  <value column="MsgText" original="Do you want to create a new account combination ?">Do you want to create a new account combination ?</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200355" trl="N">
+  <value column="MsgText" original="Selected {0} rows">Selected {0} rows</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200393" trl="N">
+  <value column="MsgText" original="Could not convert currency {0} to project currency {1} - conversion type : {2} / conversion date : {3,date,short}">Could not convert currency {0} to project currency {1} - conversion type : {2} / conversion date : {3,date,short}</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200394" trl="N">
+  <value column="MsgText" original="Could not convert currency {0} to base currency {1} - conversion type : {2} / conversion date : {3,date,short}">Could not convert currency {0} to base currency {1} - conversion type : {2} / conversion date : {3,date,short}</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200395" trl="N">
+  <value column="MsgText" original="Could not convert allocation currency {0} to base currency {1} - conversion type : {2} / conversion date : {3}">Could not convert allocation currency {0} to base currency {1} - conversion type : {2} / conversion date : {3}</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200396" trl="N">
+  <value column="MsgText" original="Could not convert invoice currency {0} to base currency {1} - conversion type : {2} / conversion date : {3,date,short}">Could not convert invoice currency {0} to base currency {1} - conversion type : {2} / conversion date : {3,date,short}</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200397" trl="N">
+  <value column="MsgText" original="Target table must not have view components">Target table must not have view components</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200398" trl="N">
+  <value column="MsgText" original="Target table must not have columns">Target table must not have columns</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200404" trl="N">
+  <value column="MsgText" original="Clear Selection">Clear Selection</value>
+  <value column="MsgTip" original="Clear current selections">Clear current selections</value>
+ </row>
+ <row id="200405" trl="N">
+  <value column="MsgText" original="{0} resolved multiple times = ({1})">{0} resolved multiple times = ({1})</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200414" trl="N">
+  <value column="MsgText" original="@#System_Name@ Trace Information">@#System_Name@ Trace Information</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="520010" trl="Y">

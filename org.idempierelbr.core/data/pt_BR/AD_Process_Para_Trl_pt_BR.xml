@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_Process_Para">
+<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Process_Para">
  <row id="227" trl="Y">
   <value column="Name" original="Delete existing Accounting Entries">Apagar os Lançamentos Contábeis Existentes</value>
   <value column="Description" original="The selected accounting entries will be deleted!  DANGEROUS !!!">Os lançamentos contábeis existentes serão apagados! CUIDADO!!</value>
@@ -43,9 +41,9 @@
   <value column="Help" original="The User identifies a unique user in the system. This could be an internal user or a business partner contact">O Usuário identifica um usuário único e exclusivo dentro do sistema. Este poderia ser um usuário interno ou um contato de parceiro de negócios</value>
  </row>
  <row id="494" trl="Y">
-  <value column="Name" original="New Workflow Responsible">Novo Responsável pelo Fluxo de Trabalho</value>
-  <value column="Description" original="Responsible for Workflow Execution">Responsável pela Execução do Fluxo de Trabalho</value>
-  <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um Fluxo de Trabalho é do usuário real. A Responsabilidade do Fluxo de Trabalho permite definir meios de encontrar aquele usuário real.</value>
+  <value column="Name" original="New Workflow Responsible">Novo Responsável pelo Workflow</value>
+  <value column="Description" original="Responsible for Workflow Execution">Responsável pela Execução do Workflow</value>
+  <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um Workflow é do usuário real. A Responsabilidade do Workflow permite definir meios de encontrar aquele usuário real.</value>
  </row>
  <row id="496" trl="Y">
   <value column="Name" original="New User/Contact">Novo Usuário/Contato</value>
@@ -53,9 +51,9 @@
   <value column="Help" original="The User identifies a unique user in the system. This could be an internal user or a business partner contact">O Usuário identifica um usuário único e exclusivo dentro do sistema. Este poderia ser um usuário interno ou um contato de parceiro de negócios</value>
  </row>
  <row id="497" trl="Y">
-  <value column="Name" original="New Workflow Responsible">Novo Responsável pelo Fluxo de Trabalho</value>
-  <value column="Description" original="Responsible for Workflow Execution">Responsável pela Execução do Fluxo de Trabalho</value>
-  <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um Fluxo de Trabalho é do usuário real. A Responsabilidade do Fluxo de Trabalho permite definir meios de encontrar aquele usuário real.</value>
+  <value column="Name" original="New Workflow Responsible">Novo Responsável pelo Workflow</value>
+  <value column="Description" original="Responsible for Workflow Execution">Responsável pela Execução do Workflow</value>
+  <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um Workflow é do usuário real. A Responsabilidade do Workflow permite definir meios de encontrar aquele usuário real.</value>
  </row>
  <row id="523" trl="Y">
   <value column="Name" original="Default Sales Rep">Representante</value>
@@ -141,8 +139,8 @@ will puss email can't process to folder vietnam under folder error under folder 
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53127" trl="N">
-  <value column="Name" original="Generate Fields">Generate Fields</value>
+ <row id="53127" trl="Y">
+  <value column="Name" original="Generate Fields">Gerar Campos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

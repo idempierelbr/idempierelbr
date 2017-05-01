@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_Workflow">
+<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Workflow">
  <row id="101" trl="Y">
   <value column="Name" original="Project Setup and Use">Configurar Projeto e Uso</value>
   <value column="Description" original="Setup of projects and project reporting">Configuração e relatórios de projetos</value>
@@ -15,18 +13,18 @@
  <row id="104" trl="Y">
   <value column="Name" original="Initial Client Setup Review">Revisão da Configuração Inicial da Empresa</value>
   <value column="Description" original="Review of system level setup of a new  Client">Revisão em nível de sistema da configuração de uma nova Empresa</value>
-  <value column="Help" original="This workflow reviews the system setup of a new client as performed by the automatic Initial Client Setup.&#10;You may want to check also the following Workflows:&#10;- Accounting Setup&#10;- Business Partner Setup&#10;- Product Setup&#10;- Price list Setup&#10;- Warehouse Setup&#10;- Tax Setup">Este Fluxo de Trabalho revisa a configuração de sistema de uma nova empresa criada pela configuração automática inicial de empresas. Você pode querer conferir também os seguintes Fluxos de Trabalho: - Configuração Contábil - Configuração de Parceiros de Negócios - Configuração de Produto - Configuração de Lista de Preços - Configuração de Armazém - Configuração de Impostos
+  <value column="Help" original="This workflow reviews the system setup of a new client as performed by the automatic Initial Client Setup.&#10;You may want to check also the following Workflows:&#10;- Accounting Setup&#10;- Business Partner Setup&#10;- Product Setup&#10;- Price list Setup&#10;- Warehouse Setup&#10;- Tax Setup">Este Workflow revisa a configuração de sistema de uma nova empresa criada pela configuração automática inicial de empresas. Você pode querer conferir também os seguintes Fluxos de Trabalho: - Configuração Contábil - Configuração de Parceiros de Negócios - Configuração de Produto - Configuração de Lista de Preços - Configuração de Armazém - Configuração de Impostos
 </value>
  </row>
  <row id="105" trl="Y">
   <value column="Name" original="Accounting Setup">Configuração Contábil</value>
   <value column="Description" original="Review and change Accounting Setup">Revisão e Modificações da Configuração Contábil</value>
-  <value column="Help" original="This workflow allows you to review and change your Accounting Rules. ">Este Fluxo de Trabalho permite revisar e alterar as Regras Contábeis. </value>
+  <value column="Help" original="This workflow allows you to review and change your Accounting Rules. ">Este Workflow permite revisar e alterar as Regras Contábeis. </value>
  </row>
  <row id="106" trl="Y">
   <value column="Name" original="Business Partner Setup">Configuração de Parceiros de Negócios</value>
   <value column="Description" original="Setup Business Partner Rules">Configuração de Regras de Parceiros de Negócios</value>
-  <value column="Help" original="This workflow defines the Business Partners and the supporting rules.">Este Fluxo de Trabalho define os Parceiros de Negócios e as regras de suporte.</value>
+  <value column="Help" original="This workflow defines the Business Partners and the supporting rules.">Este Workflow define os Parceiros de Negócios e as regras de suporte.</value>
  </row>
  <row id="107" trl="Y">
   <value column="Name" original="Product Setup">Configuração de Produto</value>
@@ -57,7 +55,7 @@
  <row id="112" trl="Y">
   <value column="Name" original="Performance Measurement Setup">Configuração da Medição de Desempenho</value>
   <value column="Description" original="Setup your Performance Measurement">Configurar sua Medição de Desempenho</value>
-  <value column="Help" original="This workflow guides you through setting up your performance measurement based on Key Performance Indicators, Balanced Scorecard, etc.&#10;&#10;Most important: Do your analysis first!&#10;- What are your goals and how do you measure it?&#10;&#10;When you are setting up the system, you do it in reverse:&#10;First you define how you measure it and last you define the goals for the measurements.&#10;You have three ways measuring performance:&#10;- via quantifiable measures (e.g. sales of $3 million in Q1)&#10;- via manual measures&#10;- via achievements (tasks)&#10;&#10;The system converts the measures into percentages (based on the target and achieved measure - or number of total and reached achievements)">Este Fluxo de Trabalho guia você através da configuração das Medidas de Desempenho baseado nos principais indicadores  de performance, cartão de pontuação, etc.
+  <value column="Help" original="This workflow guides you through setting up your performance measurement based on Key Performance Indicators, Balanced Scorecard, etc.&#10;&#10;Most important: Do your analysis first!&#10;- What are your goals and how do you measure it?&#10;&#10;When you are setting up the system, you do it in reverse:&#10;First you define how you measure it and last you define the goals for the measurements.&#10;You have three ways measuring performance:&#10;- via quantifiable measures (e.g. sales of $3 million in Q1)&#10;- via manual measures&#10;- via achievements (tasks)&#10;&#10;The system converts the measures into percentages (based on the target and achieved measure - or number of total and reached achievements)">Este Workflow guia você através da configuração das Medidas de Desempenho baseado nos principais indicadores  de performance, cartão de pontuação, etc.
 
 O mais importante: Faça a sua análise primeiro! - Quais são os seus objetivos e como você os mede?
 
@@ -157,7 +155,7 @@ O sistema converte as medidas em porcentagens (baseado nos valores alcançados e
  </row>
  <row id="131" trl="Y">
   <value column="Name" original="Business Partner Approval">Aprovação de Parceiro de Negócios</value>
-  <value column="Description" original="Example Document based workflow">Exemplo de fluxo de trabalho baseado em documentos</value>
+  <value column="Description" original="Example Document based workflow">Exemplo de workflow baseado em documentos</value>
   <value column="Help" original="When a new Business Partner is created, it is forwarded for review and credit check.">Quando um novo Parceiro de Negócios é criado, ele é encaminhado para revisão e verificação de crédito.</value>
  </row>
  <row id="50000" trl="N">

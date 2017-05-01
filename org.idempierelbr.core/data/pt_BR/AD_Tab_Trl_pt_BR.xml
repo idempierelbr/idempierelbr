@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_Tab">
+<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Tab">
  <row id="100" trl="Y">
   <value column="Name" original="Table">Tabela</value>
   <value column="CommitWarning" original=""/>
@@ -131,8 +129,8 @@
  <row id="122" trl="Y">
   <value column="Name" original="Node">Nó</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define workflow nodes">Define Nós de Fluxo de Trabalho</value>
-  <value column="Help" original="The Node Tab defines each Node, Activity or step in this Workflow.&lt;br&gt;&#10;The action (actibity) type determines the execution: &quot;Route&quot; may be used in routing control conditions.  &quot;None&quot; identifies manual execution.">A Aba "Nó" define cada nó, atividade ou passo neste Fluxo de Trabalho.</value>
+  <value column="Description" original="Define workflow nodes">Define Nós de Workflow</value>
+  <value column="Help" original="The Node Tab defines each Node, Activity or step in this Workflow.&lt;br&gt;&#10;The action (actibity) type determines the execution: &quot;Route&quot; may be used in routing control conditions.  &quot;None&quot; identifies manual execution.">A Aba "Nó" define cada nó, atividade ou passo neste Workflow.</value>
  </row>
  <row id="123" trl="Y">
   <value column="Name" original="Node Translation">Tradução de Nó</value>
@@ -143,8 +141,8 @@
  <row id="124" trl="Y">
   <value column="Name" original="Transition">Transição</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Node Transition">Transição de Nó de Fluxo de Trabalho</value>
-  <value column="Help" original="The Next Nodes Tab defines the order or Nodes or Steps in a Workflow.">A Aba "Transição" define a ordem,  Nós, ou Passos em um Fluxo de Trabalho.</value>
+  <value column="Description" original="Workflow Node Transition">Transição de Nó de Workflow</value>
+  <value column="Help" original="The Next Nodes Tab defines the order or Nodes or Steps in a Workflow.">A Aba "Transição" define a ordem,  Nós, ou Passos em um Workflow.</value>
  </row>
  <row id="125" trl="Y">
   <value column="Name" original="Previous Node">Nó Anterior</value>
@@ -237,13 +235,13 @@
   <value column="Help" original="The Sequence Tab defines the numeric sequencing to use for documents.  These can also include a alpha suffix and / or prefix.">A Aba "Seqüência" define o sequenciamento numérico a ser usado para os documentos.  Estes também podem incluir um sufixo e/ou prefixo alfabético.</value>
  </row>
  <row id="148" trl="Y">
-  <value column="Name" original="Workflow">Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow">Workflow</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define Workflow">Definição de Fluxos de Trabalho</value>
-  <value column="Help" original="The Workflow Tab defines Workflows in the system.">A Aba "Fluxo de Trabalho" permite definir os fluxos de trabalho no sistema.</value>
+  <value column="Description" original="Define Workflow">Definição de Workflow</value>
+  <value column="Help" original="The Workflow Tab defines Workflows in the system.">A Aba "Workflow" permite definir os workflows no sistema.</value>
  </row>
  <row id="149" trl="Y">
-  <value column="Name" original="Workflow Translation">Tradução de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Translation">Tradução de Workflow</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -960,10 +958,10 @@
   <value column="Help" original="The Form Access Tab defines the Forms and type of access that this Role is granted.">A Aba "Acesso a Formulário" define os Formulários e o tipo de acesso que é outorgado a este Perfil.</value>
  </row>
  <row id="307" trl="Y">
-  <value column="Name" original="Workflow Access">Acesso a Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Access">Acesso a Workflow</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Access">Acesso a Fluxo de Trabalho</value>
-  <value column="Help" original="The Workflow Access Tab defines the Workflows and type of access that this Role is granted.">A Aba "Acesso a Fluxo de Trabalho" define os Fluxos de Trabalho e o tipo de acesso que é outorgado a este Perfil.</value>
+  <value column="Description" original="Workflow Access">Acesso aWorkflow</value>
+  <value column="Help" original="The Workflow Access Tab defines the Workflows and type of access that this Role is granted.">A Aba "Acesso a Workflow" define os workflows e o tipo de acesso que é outorgado a este Perfil.</value>
  </row>
  <row id="308" trl="Y">
   <value column="Name" original="Report Access">Acesso</value>
@@ -993,7 +991,7 @@
   <value column="Name" original="Access">Acesso</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Workflow Access">Acesso a Fluxos de Trabalho</value>
-  <value column="Help" original="The Workflow Access Tab defines the Roles who have access to this Workflow. ">A Aba "Acesso a Fluxos de Trabalho" define os Papéis (Funções) que tem acesso a este Fluxo de Trabalho. </value>
+  <value column="Help" original="The Workflow Access Tab defines the Roles who have access to this Workflow. ">A Aba "Acesso a Fluxos de Trabalho" define os Papéis (Funções) que tem acesso a este Workflow. </value>
  </row>
  <row id="313" trl="Y">
   <value column="Name" original="Task Access">Acesso a Tarefa</value>
@@ -2237,13 +2235,13 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original=""/>
  </row>
  <row id="533" trl="Y">
-  <value column="Name" original="Workflow Translation">Tradução de Fluxos de Trabalho</value>
+  <value column="Name" original="Workflow Translation">Tradução de Workflow</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="534" trl="Y">
-  <value column="Name" original="Workflow Node Translation">Tradução de Nós de Fluxo de Trabalho</value>
+  <value column="Name" original="Workflow Node Translation">Tradução de Nós de Workflow</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -2479,56 +2477,56 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
  <row id="574" trl="Y">
   <value column="Name" original="Process">Processo</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Actual Workflow Process Instance">Instância de Processo de Fluxo de Trabalho</value>
-  <value column="Help" original="Instance of a workflow execution">Instância da execução de fluxo de trabalho.</value>
+  <value column="Description" original="Actual Workflow Process Instance">Instância de Processo de Workflow</value>
+  <value column="Help" original="Instance of a workflow execution">Instância da execução do workflow.</value>
  </row>
  <row id="575" trl="Y">
   <value column="Name" original="Activity">Atividade</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Activity">Atividades de Fluxo de Trabalho</value>
-  <value column="Help" original="The Workflow Activity is the actual Workflow Node in a Workflow Process instance">A atividade de fluxo de trabalho é o nó real em uma instância de processo de fluxo de trabalho.</value>
+  <value column="Description" original="Workflow Activity">Atividades de Workflow</value>
+  <value column="Help" original="The Workflow Activity is the actual Workflow Node in a Workflow Process instance">A atividade de workflow é o nó real em uma instância de processo de workflow.</value>
  </row>
  <row id="576" trl="Y">
   <value column="Name" original="Activity">Atividade</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Activities">Atividades de Fluxo de Trabalho</value>
-  <value column="Help" original="The Workflow Activity is the actual Workflow Node in a Workflow Process instance">A atividade de fluxo de trabalho é o nó real em uma instância de processo de fluxo de trabalho.</value>
+  <value column="Description" original="Workflow Activities">Atividades de Workflow</value>
+  <value column="Help" original="The Workflow Activity is the actual Workflow Node in a Workflow Process instance">A atividade de workflow é o nó real em uma instância de processo de workflow.</value>
  </row>
  <row id="577" trl="Y">
   <value column="Name" original="Parameter">Parâmetro</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Node Parameter">Parâmetro de Nó de Fluxo de Trabalho</value>
-  <value column="Help" original="Parameter for the execution of the Workflow Node">Parâmetro para a execução do Nó de Fluxo de Trabalho</value>
+  <value column="Description" original="Workflow Node Parameter">Parâmetro de Nó de Workflow</value>
+  <value column="Help" original="Parameter for the execution of the Workflow Node">Parâmetro para a execução do Nó de Workflow</value>
  </row>
  <row id="578" trl="Y">
   <value column="Name" original="Responsible">Responsável</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Responsible for Workflow Execution">Responsável pela Execução de Fluxo de Trabalho</value>
-  <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um Fluxo de Trabalho é de um usuário real. A Responsabilidade do Fluxo de Trabalho permite definir meios de encontrar esse usuário real.</value>
+  <value column="Description" original="Responsible for Workflow Execution">Responsável pela Execução de Workflow</value>
+  <value column="Help" original="The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User.">A responsabilidade final por um Workflow é de um usuário real. A Responsabilidade do Workflow permite definir meios de encontrar esse usuário real.</value>
  </row>
  <row id="579" trl="Y">
   <value column="Name" original="Block">Bloco</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Transaction Execution Block">Bloco de Execução de Transação de Fluxo de Trabalho</value>
-  <value column="Help" original="A workflow execution block is optional and allows all work to be performed in a single transaction. If one step (node activity) fails, the entire work is rolled back.">Um Bloco de Execução de Fluxo de Trabalho é opcional e permite que todo o trabalho seja executado em uma única transação. Se um passo (atividade de nó) falhar, todo o trabalho é desfeito.</value>
+  <value column="Description" original="Workflow Transaction Execution Block">Bloco de Execução de Transação de Workflow</value>
+  <value column="Help" original="A workflow execution block is optional and allows all work to be performed in a single transaction. If one step (node activity) fails, the entire work is rolled back.">Um Bloco de Execução de Workflow é opcional e permite que todo o trabalho seja executado em uma única transação. Se um passo (atividade de nó) falhar, todo o trabalho é desfeito.</value>
  </row>
  <row id="580" trl="Y">
   <value column="Name" original="Data">Dados</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Process Context">Contexto do Processo de Fluxo de Trabalho</value>
-  <value column="Help" original="Context information of the workflow process and activity">Informação de Contexto do Processo de Fluxo de Trabalho e atividade</value>
+  <value column="Description" original="Workflow Process Context">Contexto do Processo de Workflow</value>
+  <value column="Help" original="Context information of the workflow process and activity">Informação de Contexto do Processo de Workflow e atividade</value>
  </row>
  <row id="581" trl="Y">
   <value column="Name" original="Result">Resultado</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Result of the Workflow Process Activity">Resultado da Atividade do Processo de Fluxo de Trabalho</value>
-  <value column="Help" original="Activity Result of the execution of the Workflow Process Instrance">Resultado da Atividade da execução da Instância de Processo de Fluxo de Trabalho</value>
+  <value column="Description" original="Result of the Workflow Process Activity">Resultado da Atividade do Processo de Workflow</value>
+  <value column="Help" original="Activity Result of the execution of the Workflow Process Instrance">Resultado da Atividade da execução da Instância de Processo de Workflow</value>
  </row>
  <row id="582" trl="Y">
   <value column="Name" original="Event">Evento</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Process Activity Event Audit Information">Informações para Auditoria de Eventos de Atividade de Processo de Fluxo de Trabalho</value>
-  <value column="Help" original="History of chenges ov the Workflow Process Activity">Histórico de mudanças na atividade do processo de fluxo de trabalho.</value>
+  <value column="Description" original="Workflow Process Activity Event Audit Information">Informações para Auditoria de Eventos de Atividade de Processo de Workflow</value>
+  <value column="Help" original="History of chenges ov the Workflow Process Activity">Histórico de mudanças na atividade do processo de workflow.</value>
  </row>
  <row id="583" trl="Y">
   <value column="Name" original="Attribute">Atributo</value>
@@ -2593,8 +2591,8 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
  <row id="593" trl="Y">
   <value column="Name" original="Log">Log</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Processor Log">Logs do Processador de Fluxo de Trabalho</value>
-  <value column="Help" original="Result of the execution of the Workflow Processor">Resultado da execução do Processador de Fluxo de Trabalho</value>
+  <value column="Description" original="Workflow Processor Log">Logs do Processador de Workflow</value>
+  <value column="Help" original="Result of the execution of the Workflow Processor">Resultado da execução do Processador de Workflow</value>
  </row>
  <row id="594" trl="Y">
   <value column="Name" original="Bid Topic">Tópico do Lance</value>
@@ -2887,7 +2885,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
  <row id="644" trl="Y">
   <value column="Name" original="Condition">Condição</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Workflow Node Transition Condition">Condição de Transição de Nó de Fluxo de Trabalho</value>
+  <value column="Description" original="Workflow Node Transition Condition">Condição de Transição de Nó de Workflow</value>
   <value column="Help" original="Optional restriction of transition of one node to the next. The (string) value is converted to the datatype.  Booleans (Yes-No) are represented by &quot;true&quot; and &quot;false&quot;, the date format is YYYY-mm-DD">Restrição opcional da transição do atual para o próximo nó. O campo Valor é convertido para o tipo de dados específico da Coluna. Booleans são representados por 'true' ou 'false'. Datas podem ser representadas utilizando o formato YYY-mm-DD.</value>
  </row>
  <row id="646" trl="Y">
@@ -3659,10 +3657,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Business Partner can be either defined on Client level (shared) or on Org level (not shared).  You can define here of Products are always shared (i.e. always created under Organization &quot;*&quot;) or if they are not shared (i.e. you cannot enter them with Organization &quot;*&quot;).&lt;br&gt;&#10;The creation of  &quot;Client and Org&quot; shared records is the default and is ignored."><![CDATA[Business Partner can be either defined on Client level (shared) or on Org level (not shared).  You can define here of Products are always shared (i.e. always created under Organization "*") or if they are not shared (i.e. you cannot enter them with Organization "*").<br> The creation of  "Client and Org" shared records is the default and is ignored.]]></value>
  </row>
  <row id="777" trl="Y">
-  <value column="Name" original="System Issue">Emissão de Sistema</value>
+  <value column="Name" original="System Issue">Problema</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Automatically created or manually entered System Issue Reporting">Automatically created or manually entered System Issue Reporting</value>
-  <value column="Help" original="System Issues are created to speed up the resolution of any system related issues (potential bugs).  If enabled, they are automatically reported to iDempiere.  No data or confidential information is transferred.">System Issues are created to speed up the resolution of any system related issues (potential bugs).  If enabled, they are automatically reported to Compiere.  No data or confidential information is transferred.</value>
+  <value column="Description" original="Automatically created or manually entered System Issue Reporting">Reportes manuais/automáticos de problemas no sistema</value>
+  <value column="Help" original="System Issues are created to speed up the resolution of any system related issues (potential bugs).  If enabled, they are automatically reported to iDempiere.  No data or confidential information is transferred.">Registros são criados para facilitar a resolução dos problemas ocorridos no sistema.</value>
  </row>
  <row id="778" trl="Y">
   <value column="Name" original="Assigned Partners">Parceiros Atribuídos</value>
@@ -3881,10 +3879,10 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="CM Project Template">CM Project Template</value>
  </row>
  <row id="819" trl="Y">
-  <value column="Name" original="Chat Type">Chat Type</value>
+  <value column="Name" original="Chat Type">Tipo de Anotação</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Maintain Type of discussion / chat">Maintain Type of discussion / chat</value>
-  <value column="Help" original="Chat Type allows you to receive subscriptions for particular content of discussions. It is linked to a table.">Chat Type allows you to receive subscriptions for particular content of discussions. It is linked to a table.</value>
+  <value column="Description" original="Maintain Type of discussion / chat">Manutenção de Tipos de Anotação</value>
+  <value column="Help" original="Chat Type allows you to receive subscriptions for particular content of discussions. It is linked to a table.">Tipo de Anotação permite que você recebe inscrições para conteúdos de discussões. É vinculado à tabelas.</value>
  </row>
  <row id="820" trl="Y">
   <value column="Name" original="Updates">Atualizações</value>
@@ -3893,16 +3891,16 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Help" original="Subscribers receive updates per email or notice">Subscribers receive updates per email or notice</value>
  </row>
  <row id="821" trl="Y">
-  <value column="Name" original="Chat">Bate-Papo (Chat)</value>
+  <value column="Name" original="Chat">Anotação</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="View Chat or discussion thread">View Chat or discussion thread</value>
-  <value column="Help" original="Thread of discussion">Thread of discussion</value>
+  <value column="Description" original="View Chat or discussion thread">Visualizar Anotações</value>
+  <value column="Help" original="Thread of discussion">Visualizar Anotações</value>
  </row>
  <row id="822" trl="Y">
-  <value column="Name" original="Chat Entry">Chat Entry</value>
+  <value column="Name" original="Chat Entry">Registro de Anotação</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Individual Chat / Discussion Entry">Individual Chat / Discussion Entry</value>
-  <value column="Help" original="The entry can not be changed - just the confidentiality">The entry can not be changed - just the confidentiality</value>
+  <value column="Description" original="Individual Chat / Discussion Entry">Registro de Anotação</value>
+  <value column="Help" original="The entry can not be changed - just the confidentiality">O registro não pode ser alterado, apenas sua confidencialidade.</value>
  </row>
  <row id="823" trl="Y">
   <value column="Name" original="Updates">Atualizações</value>
@@ -4422,62 +4420,62 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Description" original="Distribution Order allow create Order inter warehouse to supply a demand ">Distribution Order allow create Order inter warehouse to supply a demand </value>
   <value column="Help" original="Distribution Order allow create Order inter warehouse to supply a demand ">Distribution Order allow create Order inter warehouse to supply a demand </value>
  </row>
- <row id="53056" trl="N">
-  <value column="Name" original="Window">Window</value>
+ <row id="53056" trl="Y">
+  <value column="Name" original="Window">Janela</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53057" trl="N">
-  <value column="Name" original="Tab">Tab</value>
+ <row id="53057" trl="Y">
+  <value column="Name" original="Tab">Aba</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53058" trl="N">
-  <value column="Name" original="Field">Field</value>
+ <row id="53058" trl="Y">
+  <value column="Name" original="Field">Campo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53059" trl="N">
-  <value column="Name" original="Process">Process</value>
+ <row id="53059" trl="Y">
+  <value column="Name" original="Process">Processo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53060" trl="N">
-  <value column="Name" original="Process Parameter">Process Parameter</value>
+ <row id="53060" trl="Y">
+  <value column="Name" original="Process Parameter">Parâmetro de Processo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53061" trl="N">
-  <value column="Name" original="Form">Form</value>
+ <row id="53061" trl="Y">
+  <value column="Name" original="Form">Formulário (Form)</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53062" trl="N">
-  <value column="Name" original="Task">Task</value>
+ <row id="53062" trl="Y">
+  <value column="Name" original="Task">Tarefa</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53063" trl="N">
+ <row id="53063" trl="Y">
   <value column="Name" original="Workflow">Workflow</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53064" trl="N">
-  <value column="Name" original="Module">Module</value>
+ <row id="53064" trl="Y">
+  <value column="Name" original="Module">Módulo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53065" trl="N">
-  <value column="Name" original="Level">Level</value>
+ <row id="53065" trl="Y">
+  <value column="Name" original="Level">Nível</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5326,8 +5324,8 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53285" trl="N">
-  <value column="Name" original="Relation Type">Relation Type</value>
+ <row id="53285" trl="Y">
+  <value column="Name" original="Relation Type">Tipo de Relação</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5772,8 +5770,8 @@ Printing:
   <value column="Description" original="Defined field order for grid layout">Sequência de campos quando visualização em grade</value>
   <value column="Help" original=""/>
  </row>
- <row id="200010" trl="N">
-  <value column="Name" original="Ref List">Ref List</value>
+ <row id="200010" trl="Y">
+  <value column="Name" original="Ref List">Lista de Referência</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -5874,14 +5872,14 @@ Printing:
   <value column="Description" original="Storage Provider">Storage Provider</value>
   <value column="Help" original=""/>
  </row>
- <row id="200033" trl="N">
-  <value column="Name" original="Broadcast Message">Broadcast Message</value>
+ <row id="200033" trl="Y">
+  <value column="Name" original="Broadcast Message">Mensagem Broadcast</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Broadcast Message">Broadcast Message</value>
+  <value column="Description" original="Broadcast Message">Mensagem Broadcast</value>
   <value column="Help" original=""/>
  </row>
- <row id="200035" trl="N">
-  <value column="Name" original="Message Log">Message Log</value>
+ <row id="200035" trl="Y">
+  <value column="Name" original="Message Log">Log</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6282,8 +6280,8 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200133" trl="N">
-  <value column="Name" original="Translation">Translation</value>
+ <row id="200133" trl="Y">
+  <value column="Name" original="Translation">Tradução</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6372,8 +6370,44 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200190" trl="N">
+  <value column="Name" original="Locator Type">Locator Type</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row id="200191" trl="N">
   <value column="Name" original="Package Installation">Package Installation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200209" trl="Y">
+  <value column="Name" original="Menu entries">Favorito</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="In this tab, you'll be able to manage favourites and entries which will open automatically on login">Nesta aba é possível gerenciar os favoritos de usuários e os que devem ser abertos automaticamente no login</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200213" trl="N">
+  <value column="Name" original="CSS Style">CSS Style</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="CSS Inline Style Definitions">CSS Inline Style Definitions</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200214" trl="N">
+  <value column="Name" original="Style Line">Style Line</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="CSS Style Lines">CSS Style Lines</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200222" trl="N">
+  <value column="Name" original="Document Status Indicator">Document Status Indicator</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200223" trl="N">
+  <value column="Name" original="Document Status Translation">Document Status Translation</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -6428,6 +6462,18 @@ Printing:
  </row>
  <row id="800011" trl="Y">
   <value column="Name" original="Movements">Movimentos CNAB</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800020" trl="N">
+  <value column="Name" original="CEST">CEST</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800021" trl="N">
+  <value column="Name" original="CEST relations to NCM and products">CEST relations to NCM and products</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>

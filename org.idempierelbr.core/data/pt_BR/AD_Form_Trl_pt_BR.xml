@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 2.1_2014-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2013 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community-->
-<!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">-->
-<idempiereTrl language="pt_BR" table="AD_Form">
+<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Form">
  <row id="100" trl="Y">
   <value column="Name" original="Generate Invoices (manual)">Gerar Faturas (Manual)</value>
   <value column="Description" original="Select and generate invoices">Selecionar e gerar faturas</value>
@@ -84,14 +82,14 @@
   <value column="Help" original="View and change trees. Maintain the entries in their specific Windows.">Visualiza e edita árvores. Gerenciamento de registros em suas janelas específicas.</value>
  </row>
  <row id="116" trl="Y">
-  <value column="Name" original="Workflow Editor">Editor de Fluxo de Trabalho</value>
-  <value column="Description" original="Edit Workflows">Edita Fluxos de Trabalho</value>
-  <value column="Help" original="Edit the graphical layout of workflows">Edita o layout gráfico dos fluxos de trabalho</value>
+  <value column="Name" original="Workflow Editor">Editor de Workflow</value>
+  <value column="Description" original="Edit Workflows">Editor de Workflows</value>
+  <value column="Help" original="Edit the graphical layout of workflows">Edita o layout gráfico de workflows</value>
  </row>
  <row id="117" trl="Y">
-  <value column="Name" original="Workflow Activities">Atividades de Fluxo de Trabalho</value>
-  <value column="Description" original="My active workflow activities">Minhas atividades de fluxo de trabalho ativas</value>
-  <value column="Help" original="View active worflow activities">Visualização das atividades de fluxo de trabalho ativas</value>
+  <value column="Name" original="Workflow Activities">Atividades de Workflow</value>
+  <value column="Description" original="My active workflow activities">Minhas atividades de workflow ativas</value>
+  <value column="Help" original="View active worflow activities">Visualização das atividades de workflow ativas</value>
  </row>
  <row id="118" trl="Y">
   <value column="Name" original="Archive Viewer">Visualizador de Arquivos</value>
