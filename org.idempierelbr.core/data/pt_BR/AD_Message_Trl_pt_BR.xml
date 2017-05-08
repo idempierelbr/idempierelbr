@@ -4209,7 +4209,7 @@ Deseja realmente continuar?</value>
   <value column="MsgTip" original=" "> </value>
  </row>
  <row id="52255" trl="Y">
-  <value column="MsgText" original="Payment Allocation">Payment Allocation</value>
+  <value column="MsgText" original="Payment Allocation">Alocação de Pagamento</value>
   <value column="MsgTip" original=" "> </value>
  </row>
  <row id="52256" trl="Y">
@@ -4693,7 +4693,7 @@ Deseja realmente continuar?</value>
   <value column="MsgTip" original=" "> </value>
  </row>
  <row id="52376" trl="Y">
-  <value column="MsgText" original="Payment Allocations History">Payment Allocations History</value>
+  <value column="MsgText" original="Payment Allocations History">Histórico de Alocações de Pagamento</value>
   <value column="MsgTip" original=" "> </value>
  </row>
  <row id="52377" trl="Y">
@@ -6602,8 +6602,8 @@ Por favor, informe o administrador do sistema.</value>
   <value column="MsgText" original="Could not convert currency {0} to base currency {1} - conversion type : {2} / conversion date : {3,date,short}">Could not convert currency {0} to base currency {1} - conversion type : {2} / conversion date : {3,date,short}</value>
   <value column="MsgTip" original=""/>
  </row>
- <row id="200395" trl="N">
-  <value column="MsgText" original="Could not convert allocation currency {0} to base currency {1} - conversion type : {2} / conversion date : {3}">Could not convert allocation currency {0} to base currency {1} - conversion type : {2} / conversion date : {3}</value>
+ <row id="200395" trl="Y">
+  <value column="MsgText" original="Could not convert allocation currency {0} to base currency {1} - conversion type : {2} / conversion date : {3}">Não foi possível converter da moeda da alocação ({0}) para a moeda base ({1}). Tipo de Conversão: {2}. Data de Conversão: {3}</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200396" trl="N">

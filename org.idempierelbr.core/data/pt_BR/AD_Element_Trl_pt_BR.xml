@@ -631,14 +631,14 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="189" trl="Y">
-  <value column="Name" original="Partner Location">Localização do Parceiro</value>
-  <value column="PrintName" original="Partner Location">Localização do Parceiro</value>
+  <value column="Name" original="Partner Location">Endereço do Parceiro</value>
+  <value column="PrintName" original="Partner Location">Endereço do Parceiro</value>
   <value column="Description" original="Identifies the (ship to) address for this Business Partner">Identifica o endereço (de remessa para) este Parceiro de Negócios.</value>
-  <value column="Help" original="The Partner address indicates the location of a Business Partner">O "Endereço do Parceiro" indica a localização de um Parceiro de Negócios.</value>
+  <value column="Help" original="The Partner address indicates the location of a Business Partner">O "Endereço do Parceiro" indica o endereço de um Parceiro de Negócios.</value>
   <value column="PO_Description" original="Identifies the (ship from) address for this Business Partner">Identifica o endereço (de remessa de) deste Parceiro de Negócios.</value>
-  <value column="PO_Help" original="The Partner address indicates the location of a Business Partner">O "Endereço do Parceiro" indica a localização de um Parceiro de Negócios.</value>
-  <value column="PO_Name" original="Partner Location">Localização do Parceiro</value>
-  <value column="PO_PrintName" original="Partner Location">Localização do Parceiro</value>
+  <value column="PO_Help" original="The Partner address indicates the location of a Business Partner">O "Endereço do Parceiro" indica o endereço de um Parceiro de Negócios.</value>
+  <value column="PO_Name" original="Partner Location">Endereço do Parceiro</value>
+  <value column="PO_PrintName" original="Partner Location">Endereço do Parceiro</value>
  </row>
  <row id="190" trl="Y">
   <value column="Name" original="Calendar">Calendário</value>
@@ -754,7 +754,7 @@
   <value column="Name" original="Address">Endereço</value>
   <value column="PrintName" original="Address">Endereço</value>
   <value column="Description" original="Location or Address">Localização ou Endereço</value>
-  <value column="Help" original="The Location / Address field defines the location of an entity.">O campo "Localização/Endereço" define a localização de uma entidade.</value>
+  <value column="Help" original="The Location / Address field defines the location of an entity.">O campo "Endereço" define o endereço de uma entidade.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1473,7 +1473,7 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="Name" original="Fax">Fax</value>
   <value column="PrintName" original="Fax">Fax</value>
   <value column="Description" original="Facsimile number">Número do Facsímile</value>
-  <value column="Help" original="The Fax identifies a facsimile number for this Business Partner or  Location">O "Fax" identifica um número de facsímile para este Parceiro de Negócios ou Localização</value>
+  <value column="Help" original="The Fax identifies a facsimile number for this Business Partner or  Location">O "Fax" identifica um número de facsímile para este Parceiro de Negócios ou Endereço</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4066,7 +4066,7 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="Name" original="Invoice Address">Endereço de Fatura e NF</value>
   <value column="PrintName" original="Invoice Address">Endereço de Fatura e NF</value>
   <value column="Description" original="Business Partner Invoice/Bill Address">Endereço de Fatura e NF do Parceiro de Negócios</value>
-  <value column="Help" original="If the Invoice Address is selected, the location is used to send invoices to a customer or receive invoices from a vendor.">Se selecionado, a localização pode ser utilizada para enviar faturas (e constar como o endereço do destinatário em Nota Fiscal) para o cliente. No caso de fornecedor, pode ser o endereço do remetente da Nota Fiscal ou o endereço onde ocorre o faturamento (setor de faturamento).</value>
+  <value column="Help" original="If the Invoice Address is selected, the location is used to send invoices to a customer or receive invoices from a vendor.">Se selecionado, o endereço pode ser utilizada para enviar faturas (e constar como o endereço do destinatário em Nota Fiscal) para o cliente. No caso de fornecedor, pode ser o endereço do remetente da Nota Fiscal ou o endereço onde ocorre o faturamento (setor de faturamento).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4146,7 +4146,7 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="Name" original="Pay-From Address">Endereço de Pagamento (a Terceiros) e Cobrança</value>
   <value column="PrintName" original="Pay-From Address">Endereço de Pagamento (a Terceiros) e Cobrança</value>
   <value column="Description" original="Business Partner pays from that address and we'll send dunning letters there">Endereço em que o Parceiro de Negócios faz pagamentos a terceiros (normalmente onde fica o setor financeiro). Cartas de cobrança são enviadas para o este endereço </value>
-  <value column="Help" original="If the Pay-From Address is selected, this location is the address the Business Partner pays from and where dunning letters will be sent to.">Se selecionado, a localização pode ser utilizada para enviar cartas de cobrança ao cliente. Se ele faz pagamento presencial (cheque, espécie, etc.), este é o endereço do local.</value>
+  <value column="Help" original="If the Pay-From Address is selected, this location is the address the Business Partner pays from and where dunning letters will be sent to.">Se selecionado, o endereço pode ser utilizada para enviar cartas de cobrança ao cliente. Se ele faz pagamento presencial (cheque, espécie, etc.), este é o endereço do local.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4166,7 +4166,7 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="Name" original="Remit-To Address">Endereço de Pagamento (de Terceiros)</value>
   <value column="PrintName" original="Remit-To Address">Endereço de Pagamento (de Terceiros)</value>
   <value column="Description" original="Business Partner payment address">Endereço em que o Parceiro de Negócios recebe pagamentos de terceiros (caso ele receba pagamento presencial). Normalmente é onde fica o setor financeiro</value>
-  <value column="Help" original="If the Remit-To Address is selected, the location is used to send payments to the vendor.">Se selecionado, a localização pode ser utilizada para efetuar pagamento presencial ao parceiro de negócios.</value>
+  <value column="Help" original="If the Remit-To Address is selected, the location is used to send payments to the vendor.">Se selecionado, o endereço pode ser utilizada para efetuar pagamento presencial ao parceiro de negócios.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4186,7 +4186,7 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="Name" original="Ship Address">Endereço de Remessa/Recebimento</value>
   <value column="PrintName" original="Ship address">Endereço de Remessa/Recebimento</value>
   <value column="Description" original="Business Partner Shipment Address">Endereço de Remessa/Recebimento do Parceiro de Negócios</value>
-  <value column="Help" original="If the Ship Address is selected, the location is used to ship goods to a customer or receive goods from a vendor.">Se selecionado, a localização pode ser utilizada para enviar mercadorias para o cliente. No caso de fornecedor, é o endereço de onde a mercadoria é enviada.</value>
+  <value column="Help" original="If the Ship Address is selected, the location is used to ship goods to a customer or receive goods from a vendor.">Se selecionado, o endereço pode ser utilizado para enviar mercadorias para o cliente. No caso de fornecedor, é o endereço de onde a mercadoria é enviada.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -12638,8 +12638,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2039" trl="Y">
-  <value column="Name" original="Invoice Partner">Parceiro da Fatura</value>
-  <value column="PrintName" original="Invoice Partner">Parceiro da Fatura</value>
+  <value column="Name" original="Invoice Partner">Parceiro de Negócios (Fatura)</value>
+  <value column="PrintName" original="Invoice Partner">Parceiro de Negócios (Fatura)</value>
   <value column="Description" original="Business Partner to be invoiced">Parceiro de Negócios a ser faturado</value>
   <value column="Help" original="If empty the shipment business partner will be invoiced">Se for deixado em vazio, a fatura será emitida para o parceiro de negócios do local de entrega</value>
   <value column="PO_Description" original=""/>
@@ -12648,9 +12648,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2040" trl="Y">
-  <value column="Name" original="Invoice Location">Localização da Fatura</value>
-  <value column="PrintName" original="Invoice Location">Localização da Fatura</value>
-  <value column="Description" original="Business Partner Location for invoicing">Localização do parceiro de negócios para a fatura</value>
+  <value column="Name" original="Invoice Location">Endereço do Parceiro (Fatura)</value>
+  <value column="PrintName" original="Invoice Location">Endereço do Parceiro (Fatura)</value>
+  <value column="Description" original="Business Partner Location for invoicing">Endereço do parceiro de negócios na fatura</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -12658,7 +12658,7 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2041" trl="Y">
-  <value column="Name" original="Invoice Contact">Contato da Fatura</value>
+  <value column="Name" original="Invoice Contact">Usuário / Contato (Fatura)</value>
   <value column="PrintName" original="Invoice Contact">Contato da Fatura</value>
   <value column="Description" original="Business Partner Contact for invoicing">Contato do parceiro de negócios para fatura</value>
   <value column="Help" original=""/>
@@ -15742,9 +15742,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2374" trl="Y">
-  <value column="Name" original="Related Partner Location">Localização do Parceiro Relacionado</value>
-  <value column="PrintName" original="Related Partner Location">Localização do Parceiro Relacionado</value>
-  <value column="Description" original="Location of the related Business Partner">Localização do Parceiro de Negócios Relacionado</value>
+  <value column="Name" original="Related Partner Location">Endereço do Parceiro Relacionado</value>
+  <value column="PrintName" original="Related Partner Location">Endereço do Parceiro Relacionado</value>
+  <value column="Description" original="Location of the related Business Partner">Endereço do Parceiro de Negócios Relacionado</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -16192,9 +16192,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2421" trl="Y">
-  <value column="Name" original="Payment Location">Localização do pagamento</value>
-  <value column="PrintName" original="Payment Location">Localização do pagamento</value>
-  <value column="Description" original="Location of the Business Partner responsible for the payment">Localização do Parceiro de Negócios responsável pelo pagamento</value>
+  <value column="Name" original="Payment Location">Endereço do Pagamento</value>
+  <value column="PrintName" original="Payment Location">Endereço do Pagamento</value>
+  <value column="Description" original="Location of the Business Partner responsible for the payment">Endereço do Parceiro de Negócios responsável pelo pagamento</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -16992,9 +16992,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2504" trl="Y">
-  <value column="Name" original="Invoice Address">Endereço de Fatura</value>
-  <value column="PrintName" original="Invoice Address">Endereço de Fatura</value>
-  <value column="Description" original="Address Used for Invoicing">Endereço Utilizado para Fatura</value>
+  <value column="Name" original="Invoice Address">Endereço de Faturamento</value>
+  <value column="PrintName" original="Invoice Address">Endereço de Faturamento</value>
+  <value column="Description" original="Address Used for Invoicing">Endereço Utilizado na Fatura</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -25878,9 +25878,9 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53459" trl="Y">
-  <value column="Name" original="Drop Shipment Location">Localização da Remessa</value>
-  <value column="PrintName" original="Drop Shipment Location">Localização da Remessa</value>
-  <value column="Description" original="Business Partner Location for shipping to">Localização do Parceiro de Negócios para a Remessa.</value>
+  <value column="Name" original="Drop Shipment Location">Endereço da Remessa</value>
+  <value column="PrintName" original="Drop Shipment Location">Endereço da Remessa</value>
+  <value column="Description" original="Business Partner Location for shipping to">Endereço do Parceiro de Negócios para a Remessa.</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -27758,9 +27758,9 @@ http://en.wikipedia.org/wiki/Safety_stock</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53661" trl="Y">
-  <value column="Name" original="Include Nulls in Location">Incluir Nulos na Localização</value>
-  <value column="PrintName" original="Include Nulls in Location">Incluir Nulos na Localização</value>
-  <value column="Description" original="Include nulls in the selection of the location">Incluir nulos (null) na seleção (where clause) da Localização</value>
+  <value column="Name" original="Include Nulls in Location">Incluir Nulos no Endereço</value>
+  <value column="PrintName" original="Include Nulls in Location">Incluir Nulos no Endereço</value>
+  <value column="Description" original="Include nulls in the selection of the location">Incluir nulos (null) na seleção (where clause) do Endereço</value>
   <value column="Help" original="">Se selecionado, incluir valores nulos, como por exemplo: (COLUMNNAME_ID IS NULL OR COLUMNNAME_ID = 100000). Caso contrário, usa apenas (COLUMNNAME_ID = 100000).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -40135,8 +40135,8 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="200284" trl="Y">
-  <value column="Name" original="Hold At Location">Manter em uma Localização</value>
-  <value column="PrintName" original="Hold At Location">Manter em uma Localização</value>
+  <value column="Name" original="Hold At Location">Manter no Endereço</value>
+  <value column="PrintName" original="Hold At Location">Manter no Endereço</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -41914,9 +41914,9 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="200462" trl="N">
-  <value column="Name" original="Sales Representative Location">Sales Representative Location</value>
-  <value column="PrintName" original="Sales Representative Location">Sales Representative Location</value>
+ <row id="200462" trl="Y">
+  <value column="Name" original="Sales Representative Location">Endereço do Representante</value>
+  <value column="PrintName" original="Sales Representative Location">Endereço do Representante</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -42685,8 +42685,8 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="200539" trl="Y">
-  <value column="Name" original="Return Location">Localização da Devolução</value>
-  <value column="PrintName" original="Return Location">Localização da Devolução</value>
+  <value column="Name" original="Return Location">Endereço da Devolução</value>
+  <value column="PrintName" original="Return Location">Endereço da Devolução</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -56009,9 +56009,9 @@ Example this value = 60. user can't reuse password in history has age < 60
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="800019" trl="Y">
-  <value column="Name" original="Business Partner (Buyer) Location">Localização do Adquirente</value>
-  <value column="PrintName" original="Business Partner (Buyer) Location">Localização do Adquirente</value>
-  <value column="Description" original="Identifies a Business Partner Location">Identifica a Localização do Adquirente</value>
+  <value column="Name" original="Business Partner (Buyer) Location">Endereço do Adquirente</value>
+  <value column="PrintName" original="Business Partner (Buyer) Location">Endereço do Adquirente</value>
+  <value column="Description" original="Identifies a Business Partner Location">Identifica o Endereço do Adquirente</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -59926,20 +59926,20 @@ Não Contribuinte</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="d69586a4-3eab-4dcc-a53a-a0dc07284d35">
-  <value column="Name" original="Partner Location">Localização de Entrega</value>
-  <value column="PrintName" original="Partner Location">Localização de Entrega</value>
+  <value column="Name" original="Partner Location">Endereço de Entrega</value>
+  <value column="PrintName" original="Partner Location">Endereço de Entrega</value>
   <value column="Description" original="Identifies the (ship to) address for this Business Partner">Identifica o endereço (de entrega) para este Parceiro de Negócios.</value>
-  <value column="Help" original="The Partner address indicates the location of a Business Partner">A "Localização de Entrega" indica a localização de um Parceiro de Negócios e só deve ser preenchido se for diferente da Localização do Parceiro</value>
+  <value column="Help" original="The Partner address indicates the location of a Business Partner">O "Endereço de Entrega" indica a localização de um Parceiro de Negócios e só deve ser preenchido se for diferente do Endereço do Parceiro</value>
   <value column="PO_Description" original="Identifies the (ship from) address for this Business Partner"/>
   <value column="PO_Help" original="The Partner address indicates the location of a Business Partner"/>
   <value column="PO_Name" original="Partner Location (Ship)"/>
   <value column="PO_PrintName" original="Partner Location (Ship)"/>
  </row>
  <row trl="Y" uuid="586ae8c2-3c5d-4629-b01b-fda76e19d8d3">
-  <value column="Name" original="Partner Location">Localização de Retirada</value>
-  <value column="PrintName" original="Partner Location">Localização de Retirada</value>
+  <value column="Name" original="Partner Location">Endereço de Retirada</value>
+  <value column="PrintName" original="Partner Location">Endereço de Retirada</value>
   <value column="Description" original="Identifies the (Pickup) address for this Business Partner">Identifica o endereço (de retirada) para este Parceiro de Negócios.</value>
-  <value column="Help" original="The Partner address indicates the location of a Business Partner">A "Localização de Retirada" indica a localização de um Parceiro de Negócios e só deve ser preenchido se for diferente da Localização do Parceiro</value>
+  <value column="Help" original="The Partner address indicates the location of a Business Partner">O "Endereço de Retirada" indica a localização de um Parceiro de Negócios e só deve ser preenchido se for diferente do Endereço do Parceiro</value>
   <value column="PO_Description" original="Identifies the (Pickup) address for this Business Partner"/>
   <value column="PO_Help" original="The Partner address indicates the location of a Business Partner"/>
   <value column="PO_Name" original="Partner Location (Pickup)"/>
@@ -60106,8 +60106,8 @@ Não Contribuinte</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="8ea8bfb1-ec09-4289-814f-12b8753bda5c">
-  <value column="Name" original="Shipper Location">Localização da Transportadora</value>
-  <value column="PrintName" original="Shipper Location">Localização da Transportadora</value>
+  <value column="Name" original="Shipper Location">Endereço da Transportadora</value>
+  <value column="PrintName" original="Shipper Location">Endereço da Transportadora</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -61216,10 +61216,10 @@ Não Contribuinte</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row trl="Y" uuid="002b2e9a-daa4-42d0-8743-9b489d9e09c4">
-  <value column="Name" original="Guarantor (Partner) Location">Localização do Sacador / Avalista</value>
-  <value column="PrintName" original="Guarantor (Partner) Location">Localização do Sacador/Avalista</value>
-  <value column="Description" original="Identifies the address for this guarantor (Business Partner)">Identifica a localização do sacador/avalista</value>
-  <value column="Help" original="The Guarantor (Partner) address indicates the location of a Business Partner">A localização (endereço de pagamento a terceiros e cobrança) do sacador/avalista.</value>
+  <value column="Name" original="Guarantor (Partner) Location">Endereço do Sacador / Avalista</value>
+  <value column="PrintName" original="Guarantor (Partner) Location">Endereço do Sacador/Avalista</value>
+  <value column="Description" original="Identifies the address for this guarantor (Business Partner)">Identifica o endereço do sacador/avalista</value>
+  <value column="Help" original="The Guarantor (Partner) address indicates the location of a Business Partner">O endereço (de pagamento a terceiros e cobrança) do sacador/avalista.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>

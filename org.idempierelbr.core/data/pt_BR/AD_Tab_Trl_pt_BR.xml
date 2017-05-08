@@ -271,10 +271,10 @@
   <value column="Help" original="The Element Tab defines the Name, Description and Format for an Element.  Additionally, a Type of Account or User Defined is selected. Each Account Schema must have an Account Element type.  The User Defined Elements are optional.">A Aba "Elemento" define o Nome, Descrição e Formato de um Elemento.  Adicionalmente, um  "Tipo de Conta" ou "Definido pelo Usuário" é selecionado. Cada Esquema de Contas tem que ter um tipo de Elemento Contábil.  Os Elementos Definidos pelo Usuário são opcionais.</value>
  </row>
  <row id="154" trl="Y">
-  <value column="Name" original="Location">Localização</value>
+  <value column="Name" original="Location">Endereço</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define Location">Definir Localização</value>
-  <value column="Help" original="The Location Tab defines the location of an Organization.">A Aba "Localização" define a localização de uma Organização.</value>
+  <value column="Description" original="Define Location">Definir Endereço</value>
+  <value column="Help" original="The Location Tab defines the location of an Organization.">A Aba "Endereço" define o endereço de uma Organização.</value>
  </row>
  <row id="156" trl="Y">
   <value column="Name" original="Preference">Preferência</value>
@@ -572,10 +572,10 @@
   <value column="Help" original="The Business Partner Tab defines any Entity with whom an organization transacts.">A Aba "Parceiro de Negócios" define qualquer Entidade com a qual uma Organização transaciona.</value>
  </row>
  <row id="222" trl="Y">
-  <value column="Name" original="Location">Localização</value>
+  <value column="Name" original="Location">Endereço</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define Location">Definir Localização</value>
-  <value column="Help" original="The Location Tab defines the physical location of a business partner.  A business partner may have multiple location records.">A Aba "Localização" define a localização física de um parceiro de negócios.  Um parceiro de negócios pode ter múltiplos registros de localização.</value>
+  <value column="Description" original="Define Location">Definir Endereço</value>
+  <value column="Help" original="The Location Tab defines the physical location of a business partner.  A business partner may have multiple location records.">A Aba "Endereço" define o endereço físico de um parceiro de negócios.  Um parceiro de negócios pode ter múltiplos registros de endereço.</value>
  </row>
  <row id="223" trl="Y">
   <value column="Name" original="Customer">Cliente</value>
