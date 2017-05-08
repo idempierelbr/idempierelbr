@@ -1121,10 +1121,10 @@
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="252" trl="Y">
-  <value column="Name" original="Currency Balancing Acct">Conta de Contrapartida Cambial</value>
-  <value column="PrintName" original="Currency Balancing Acct">Conta de Contrapartida Cambial</value>
+  <value column="Name" original="Currency Balancing Acct">Contrapartida Cambial</value>
+  <value column="PrintName" original="Currency Balancing Acct">Contrapartida Cambial</value>
   <value column="Description" original="Account used when a currency is out of balance">Conta usada quando uma moeda estiver desbalanceada</value>
-  <value column="Help" original="The Currency Balancing Account indicates the account to used when a currency is out of balance (generally due to rounding)">A "Conta de Contrapartida Cambial" indica a conta a ser usada quando uma moeda estiver causando erros de balanço (geralmente devido ao arredondamento)</value>
+  <value column="Help" original="The Currency Balancing Account indicates the account to used when a currency is out of balance (generally due to rounding)">Indica a conta a ser usada quando uma moeda estiver causando erros de saldo (geralmente devido a arredondamento)</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -1680,20 +1680,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="337" trl="Y">
-  <value column="Name" original="Intercompany Due From Acct">Conta de Devido de coligadas</value>
-  <value column="PrintName" original="Intercompany Due From Acct">Conta de Devido de coligadas</value>
-  <value column="Description" original="Intercompany Due From / Receivables Account">Devido de coligadas / Contas a Receber</value>
-  <value column="Help" original="The Intercompany Due From account indicates the account that represents money owed to this organization from other organizations.">A conta "Devido de coligadas" indica a conta que representa dinheiro devido a esta organização de outras organizações da mesma empresa.</value>
+  <value column="Name" original="Intercompany Due From Acct">Devido de Empresas do Grupo (Ativo)</value>
+  <value column="PrintName" original="Intercompany Due From Acct">Devido de Empresas do Grupo (Ativo)</value>
+  <value column="Description" original="Intercompany Due From / Receivables Account">Devido de Empresas do Grupo (Ativo)</value>
+  <value column="Help" original="The Intercompany Due From account indicates the account that represents money owed to this organization from other organizations.">Indica a conta que representa dinheiro devido de outras organizações da mesma empresa.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="338" trl="Y">
-  <value column="Name" original="Intercompany Due To Acct">Conta de Devido a coligadas</value>
-  <value column="PrintName" original="Intercompany Due To Acct">Conta de Devido a coligadas</value>
-  <value column="Description" original="Intercompany Due To / Payable Account">Devido a coligadas / Contas a Pagar</value>
-  <value column="Help" original="The Intercompany Due To Account indicates the account that represents money owed to other organizations.">A conta "Devido a coligadas" indica a conta que representa dinheiro devido a outras organizações da mesma empresa.</value>
+  <value column="Name" original="Intercompany Due To Acct">Devido a Empresas do Grupo (Passivo)</value>
+  <value column="PrintName" original="Intercompany Due To Acct">Devido a Empresas do Grupo (Passivo)</value>
+  <value column="Description" original="Intercompany Due To / Payable Account">Devido a Empresas do Grupo (Passivo)</value>
+  <value column="Help" original="The Intercompany Due To Account indicates the account that represents money owed to other organizations.">Indica a conta que representa dinheiro devido a outras organizações da mesma empresa.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -2921,20 +2921,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="535" trl="Y">
-  <value column="Name" original="Realized Gain Acct">Conta de Ganhos Realizados</value>
-  <value column="PrintName" original="Realized Gain Acct">Conta de Ganhos Realizados</value>
-  <value column="Description" original="Realized Gain Account">Conta de Ganhos Realizados</value>
-  <value column="Help" original="The Realized Gain Account indicates the account to be used when recording gains achieved from currency revaluation that have been realized.">A "Conta de Ganhos Realizados" indica a conta a ser utilizada ao registrar ganhos obtidos de reavaliação de moedas que já tenham sido realizados.</value>
+  <value column="Name" original="Realized Gain Acct">Ganho Realizado</value>
+  <value column="PrintName" original="Realized Gain Acct">Ganho Realizado</value>
+  <value column="Description" original="Realized Gain Account">Conta para Ganho Realizado</value>
+  <value column="Help" original="The Realized Gain Account indicates the account to be used when recording gains achieved from currency revaluation that have been realized.">Indica a conta a ser utilizada ao registrar ganhos obtidos e realizados.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="536" trl="Y">
-  <value column="Name" original="Realized Loss Acct">Conta de Perdas Realizadas</value>
-  <value column="PrintName" original="Realized Loss Acct">Conta de Perdas Realizadas</value>
-  <value column="Description" original="Realized Loss Account">Conta de Perdas Realizadas</value>
-  <value column="Help" original="The Realized Loss Account indicates the account to be used when recording losses incurred from currency revaluation that have yet to be realized.">A "Conta de Perdas Realizadas" indica a conta a ser utilizada ao registrar perdas incorridas na reavaliação de moedas que ainda estão para ser realizadas.</value>
+  <value column="Name" original="Realized Loss Acct">Perda Realizada</value>
+  <value column="PrintName" original="Realized Loss Acct">Perda Realizada</value>
+  <value column="Description" original="Realized Loss Account">Conta para Perda Realizada</value>
+  <value column="Help" original="The Realized Loss Account indicates the account to be used when recording losses incurred from currency revaluation that have yet to be realized.">Indica a conta a ser utilizada ao registrar perdas obtidas e realizadas.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -3261,8 +3261,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="580" trl="Y">
-  <value column="Name" original="Suspense Balancing Acct">Conta de Contrapartidas Suspensas</value>
-  <value column="PrintName" original="Suspense Balancing Acct">Conta de Contrapartidas Suspensas</value>
+  <value column="Name" original="Suspense Balancing Acct">Contrapartida Suspensa</value>
+  <value column="PrintName" original="Suspense Balancing Acct">Contrapartida Suspensa</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
@@ -3461,20 +3461,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="605" trl="Y">
-  <value column="Name" original="Unrealized Gain Acct">Conta de Ganhos não Realizados</value>
-  <value column="PrintName" original="Unrealized Gain Acct">Conta de Ganhos não Realizados</value>
-  <value column="Description" original="Unrealized Gain Account for currency revaluation">Conta de Ganhos não realizados por reavaliação de moedas</value>
-  <value column="Help" original="The Unrealized Gain Account indicates the account to be used when recording gains achieved from currency revaluation that have yet to be realized.">A "Conta de Ganhos não Realizados" indica a conta a ser utilizada ao registrar ganhos obtidos de reavaliação de moedas que ainda tem que ser realizados.</value>
+  <value column="Name" original="Unrealized Gain Acct">Ganho não Realizado</value>
+  <value column="PrintName" original="Unrealized Gain Acct">Ganho não Realizado</value>
+  <value column="Description" original="Unrealized Gain Account for currency revaluation">Conta para Ganho não Realizado</value>
+  <value column="Help" original="The Unrealized Gain Account indicates the account to be used when recording gains achieved from currency revaluation that have yet to be realized.">Indica a conta a ser utilizada ao registrar ganhos obtidos e ainda não realizados.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="606" trl="Y">
-  <value column="Name" original="Unrealized Loss Acct">Conta de Perdas não Realizadas</value>
-  <value column="PrintName" original="Unrealized Loss Acct">Conta de Perdas não Realizadas</value>
-  <value column="Description" original="Unrealized Loss Account for currency revaluation">Conta de Perdas não realizadas por reavaliação de moedas</value>
-  <value column="Help" original="The Unrealized Loss Account indicates the account to be used when recording losses incurred from currency revaluation that have yet to be realized.">A "Conta de Perdas não Realizadas" indica a conta a ser utilizada ao registrar perdas incorridas na reavaliação de moedas que ainda estão para ser realizadas.</value>
+  <value column="Name" original="Unrealized Loss Acct">Perda não Realizada</value>
+  <value column="PrintName" original="Unrealized Loss Acct">Perda não Realizada</value>
+  <value column="Description" original="Unrealized Loss Account for currency revaluation">Conta para Perda não Realizada</value>
+  <value column="Help" original="The Unrealized Loss Account indicates the account to be used when recording losses incurred from currency revaluation that have yet to be realized.">Indica a conta a ser utilizada ao registrar perdas obtidas e ainda não realizadas.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4473,20 +4473,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1009" trl="Y">
-  <value column="Name" original="Customer Prepayment">Pagamentos Antecipados de Clientes</value>
-  <value column="PrintName" original="Customer Prepayment">Pagamentos Antecipados de Clientes</value>
-  <value column="Description" original="Account for customer prepayments">Conta para Pagamentos Antecipados de Clientes</value>
-  <value column="Help" original="The Customer Prepayment account indicates the account to be used for recording prepayments from a customer.">A conta para "Pagamentos Antecipados de Clientes" indica a conta a ser utilizada para registrar pagamentos antecipados de um cliente.</value>
+  <value column="Name" original="Customer Prepayment">Adiantamento de Cliente</value>
+  <value column="PrintName" original="Customer Prepayment">Adiantamento de Cliente</value>
+  <value column="Description" original="Account for customer prepayments">Conta para Adiantamento de Cliente</value>
+  <value column="Help" original="The Customer Prepayment account indicates the account to be used for recording prepayments from a customer.">Indica a conta a ser utilizada para registrar adiantamentos de cliente.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1010" trl="Y">
-  <value column="Name" original="Customer Receivables">Recebíveis de Clientes</value>
-  <value column="PrintName" original="Customer Receivables">Recebíveis de Clientes</value>
-  <value column="Description" original="Account for Customer Receivables">Conta para Recebíveis de Clientes</value>
-  <value column="Help" original="The Customer Receivables Accounts indicates the account to be used for recording transaction for customers receivables.">A conta "Recebíveis de Clientes" indica a conta a ser utilizada para registrar transações de recebíveis de clientes.</value>
+  <value column="Name" original="Customer Receivables">Recebível de Cliente</value>
+  <value column="PrintName" original="Customer Receivables">Recebível de Cliente</value>
+  <value column="Description" original="Account for Customer Receivables">Conta para Recebível de Cliente</value>
+  <value column="Help" original="The Customer Receivables Accounts indicates the account to be used for recording transaction for customers receivables.">Indica a conta a ser utilizada para registrar recebíveis de clientes.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4693,20 +4693,20 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1042" trl="Y">
-  <value column="Name" original="Product Asset">Patrimônio de Produto</value>
-  <value column="PrintName" original="Product Asset">Patrimônio de Produto</value>
-  <value column="Description" original="Account for Product Asset (Inventory)">Conta de Patrimônio de Produto (Inventário)</value>
-  <value column="Help" original="The Product Asset Account indicates the account used for valuing this a product in inventory.">A conta de "Patrimônio de Produto" indica a conta utilizada para avaliar este produto em estoque.</value>
+  <value column="Name" original="Product Asset">Estoque (Ativo)</value>
+  <value column="PrintName" original="Product Asset">Estoque (Ativo)</value>
+  <value column="Description" original="Account for Product Asset (Inventory)">Conta para Estoque (Ativo)</value>
+  <value column="Help" original="The Product Asset Account indicates the account used for valuing this a product in inventory.">Indica a conta utilizada para avaliar o produto em estoque.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1043" trl="Y">
-  <value column="Name" original="Product COGS">CMV de Produto</value>
-  <value column="PrintName" original="Product COGS">CMV de Produto</value>
-  <value column="Description" original="Account for Cost of Goods Sold">Conta para Custo das Mercadorias Vendidas</value>
-  <value column="Help" original="The Product COGS Account indicates the account used when recording costs associated with this product.">A conta "CMV de Produto" indica a conta utilizada ao registrar custos associados com este produto.</value>
+  <value column="Name" original="Product COGS">Custo de Produto Vendido (CMV)</value>
+  <value column="PrintName" original="Product COGS">Custo de Produto Vendido (CMV)</value>
+  <value column="Description" original="Account for Cost of Goods Sold">Conta para Custo de Produto Vendido (CMV)</value>
+  <value column="Help" original="The Product COGS Account indicates the account used when recording costs associated with this product.">Indica a conta utilizada para registrar custos associados ao produto.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4716,7 +4716,7 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="Name" original="Product Expense">Despesa de Produto</value>
   <value column="PrintName" original="Product Expense">Despesa de Produto</value>
   <value column="Description" original="Account for Product Expense">Conta para Despesa de Produto</value>
-  <value column="Help" original="The Product Expense Account indicates the account used to record expenses associated with this product.">A conta "Despesa de Produto" indica a conta utilizada ao registrar despesas associadas a este produto.</value>
+  <value column="Help" original="The Product Expense Account indicates the account used to record expenses associated with this product.">Indica a conta utilizada ao registrar despesas associadas ao produto.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4725,18 +4725,18 @@ Exemplo de formato "(000)_000-0000"]]></value>
  <row id="1045" trl="Y">
   <value column="Name" original="Product Revenue">Receita de Produto</value>
   <value column="PrintName" original="Product Revenue">Receita de Produto</value>
-  <value column="Description" original="Account for Product Revenue (Sales Account)">Conta para Receitas de Produto (Conta de Vendas)</value>
-  <value column="Help" original="The Product Revenue Account indicates the account used for recording sales revenue for this product.">A conta de "Receita de Produto" indica a conta utilizada para registrar receitas de vendas deste produto.</value>
+  <value column="Description" original="Account for Product Revenue (Sales Account)">Conta para Receita de Produto</value>
+  <value column="Help" original="The Product Revenue Account indicates the account used for recording sales revenue for this product.">Indica a conta utilizada ao registrar receitas de vendas associadas ao produto.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1046" trl="Y">
-  <value column="Name" original="Project Asset">Patrimônio de Projeto</value>
-  <value column="PrintName" original="Project Asset">Patrimônio de Projeto</value>
-  <value column="Description" original="Project Asset Account">Conta de Patrimônio de Projeto</value>
-  <value column="Help" original="The Project Asset account is the account used as the final asset account in capital projects">A conta de "Patrimônio de Projeto" é a conta utilizada como conta de ativo final em projetos de capital</value>
+  <value column="Name" original="Project Asset">Projeto (Ativo)</value>
+  <value column="PrintName" original="Project Asset">Projeto (Ativo)</value>
+  <value column="Description" original="Project Asset Account">Conta para Projeto (Ativo)</value>
+  <value column="Help" original="The Project Asset account is the account used as the final asset account in capital projects">Indica a conta final de ativo em projetos financeiros.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4775,8 +4775,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
  <row id="1056" trl="Y">
   <value column="Name" original="Vendor Liability">Exigível de Fornecedor</value>
   <value column="PrintName" original="Vendor Liability">Exigível de Fornecedor</value>
-  <value column="Description" original="Account for Vendor Liability">Conta para Dívidas de Fornecedor</value>
-  <value column="Help" original="The Vendor Liability account indicates the account used for recording transactions for vendor liabilities">A conta "Exigível de Fornecedor" indica a conta utilizada para registrar transações para dívidas de fornecedor</value>
+  <value column="Description" original="Account for Vendor Liability">Conta para Exigível de Fornecedor</value>
+  <value column="Help" original="The Vendor Liability account indicates the account used for recording transactions for vendor liabilities">Indica a conta utilizada para registrar exigíveis de fornecedor.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4795,8 +4795,8 @@ Exemplo de formato "(000)_000-0000"]]></value>
  <row id="1058" trl="Y">
   <value column="Name" original="Vendor Prepayment">Adiantamento a Fornecedor</value>
   <value column="PrintName" original="Vendor Prepayment">Adiantamento a Fornecedor</value>
-  <value column="Description" original="Account for Vendor Prepayments">Conta para Dívidas de Fornecedor</value>
-  <value column="Help" original="The Vendor Prepayment Account indicates the account used to record prepayments from a vendor.">A conta "Adiantamento a Fornecedor" indica a conta utilizada para registrar pagamentos antecipados a um fornecedor.</value>
+  <value column="Description" original="Account for Vendor Prepayments">Conta para Adiantamento a Fornecedor</value>
+  <value column="Help" original="The Vendor Prepayment Account indicates the account used to record prepayments from a vendor.">Indica a conta utilizada para registrar pagamentos antecipados a fornecedor.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -4823,10 +4823,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1061" trl="Y">
-  <value column="Name" original="Warehouse Differences">Diferenças de Estoque</value>
-  <value column="PrintName" original="Warehouse Differences">Diferenças de Estoque</value>
-  <value column="Description" original="Warehouse Differences Account">Conta de Diferenças de Estoque</value>
-  <value column="Help" original="The Warehouse Differences Account indicates the account used recording differences identified during inventory counts.">A conta "Diferenças de Estoque" indica a conta utilizada para registrar diferenças identificadas durante a contagem de estoque.</value>
+  <value column="Name" original="Warehouse Differences">Diferença de Estoque</value>
+  <value column="PrintName" original="Warehouse Differences">Diferença de Estoque</value>
+  <value column="Description" original="Warehouse Differences Account">Conta de Diferença de Estoque</value>
+  <value column="Help" original="The Warehouse Differences Account indicates the account used recording differences identified during inventory counts.">Indica a conta utilizada para registrar diferenças em inventários e contagens de estoque.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -5283,10 +5283,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1117" trl="Y">
-  <value column="Name" original="Not-invoiced Receipts">Recebimentos Não Faturados</value>
-  <value column="PrintName" original="Not-invoiced Receipts">Recebimentos Não Faturados</value>
-  <value column="Description" original="Account for not-invoiced Material Receipts">Conta para materiais recebidos porém não faturados</value>
-  <value column="Help" original="The Not Invoiced Receipts account indicates the account used for recording receipts for materials that have not yet been invoiced.">A conta "Recebimentos Não Faturados" indica a conta utilizada para registrar recebimentos de materiais que ainda não foram faturados.</value>
+  <value column="Name" original="Not-invoiced Receipts">Produtos Recebidos e não Faturados</value>
+  <value column="PrintName" original="Not-invoiced Receipts">Produtos Recebidos e não Faturados</value>
+  <value column="Description" original="Account for not-invoiced Material Receipts">Conta para Produtos Recebidos e não Faturados</value>
+  <value column="Help" original="The Not Invoiced Receipts account indicates the account used for recording receipts for materials that have not yet been invoiced.">Indica a conta utilizada para registrar recebimentos de materiais que ainda não foram faturados.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -6754,10 +6754,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1368" trl="Y">
-  <value column="Name" original="Bank Asset">Ativo Bancário</value>
-  <value column="PrintName" original="Bank Asset">Ativo Bancário</value>
-  <value column="Description" original="Bank Asset Account">Conta de Ativo Bancário</value>
-  <value column="Help" original="The Bank Asset Account identifies the account to be used for booking changes to the balance in this bank account">A "Conta de Ativo Bancário" identifica a conta a ser usada para registrar alterações no saldo desta conta bancária</value>
+  <value column="Name" original="Bank Asset">Banco (Ativo)</value>
+  <value column="PrintName" original="Bank Asset">Banco (Ativo)</value>
+  <value column="Description" original="Bank Asset Account">Conta para Banco (Ativo)</value>
+  <value column="Help" original="The Bank Asset Account identifies the account to be used for booking changes to the balance in this bank account">Indica a conta a ser usada para registrar lançamentos na conta bancária</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -6774,30 +6774,30 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1370" trl="Y">
-  <value column="Name" original="Bank Interest Expense">Despesa de Juros Bancários</value>
-  <value column="PrintName" original="Bank Interest Expense">Despesa de Juros Bancários</value>
-  <value column="Description" original="Bank Interest Expense Account">Conta de Despesa de Juros Bancários</value>
-  <value column="Help" original="The Bank Interest Expense Account identifies the account to be used for recording interest expenses.">A "Conta de Despesa de Juros Bancários" identifica a conta a ser usada para registrar despesas com juros.</value>
+  <value column="Name" original="Bank Interest Expense">Juro Bancário (Despesa)</value>
+  <value column="PrintName" original="Bank Interest Expense">Juro Bancário (Despesa)</value>
+  <value column="Description" original="Bank Interest Expense Account">Conta para Juro Bancário (Despesa)</value>
+  <value column="Help" original="The Bank Interest Expense Account identifies the account to be used for recording interest expenses.">Indica a conta a ser usada para registrar despesas com juros bancários.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1371" trl="Y">
-  <value column="Name" original="Bank Interest Revenue">Receitas de Juros Bancários</value>
-  <value column="PrintName" original="Bank Interest Revenue">Receitas de Juros Bancários</value>
-  <value column="Description" original="Bank Interest Revenue Account">Conta de Receitas de Juros Bancários</value>
-  <value column="Help" original="The Bank Interest Revenue Account identifies the account to be used for recording interest revenue from this Bank.">A "Conta de Receitas de Juros Bancários" identifica a conta a ser usada para registrar receitas provenientes de juros deste Banco.</value>
+  <value column="Name" original="Bank Interest Revenue">Juro Bancário (Receita)</value>
+  <value column="PrintName" original="Bank Interest Revenue">Juro Bancário (Receita)</value>
+  <value column="Description" original="Bank Interest Revenue Account">Conta para Juro Bancário (Receita)</value>
+  <value column="Help" original="The Bank Interest Revenue Account identifies the account to be used for recording interest revenue from this Bank.">Indica a conta a ser usada para registrar receitas com juros bancários.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1372" trl="Y">
-  <value column="Name" original="Bank In Transit">Em Trânsito</value>
-  <value column="PrintName" original="Bank In Transit">Em Trânsito</value>
-  <value column="Description" original="Bank In Transit Account">Conta Bancária Em Trânsito</value>
-  <value column="Help" original="The Bank in Transit Account identifies the account to be used for funds which are in transit.">A conta bancária "Em Trânsito" identifica a conta a ser usada para fundos que estiverem em trânsito.</value>
+  <value column="Name" original="Bank In Transit">Transação não Conciliada</value>
+  <value column="PrintName" original="Bank In Transit">Transação não Conciliada</value>
+  <value column="Description" original="Bank In Transit Account">Conta para Transação não Conciliada</value>
+  <value column="Help" original="The Bank in Transit Account identifies the account to be used for funds which are in transit.">Indica a conta usada para transações de pagamento/recebimento ainda não conciliadas.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -6924,10 +6924,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1387" trl="Y">
-  <value column="Name" original="Charge Account">Conta da Referência Contábil</value>
-  <value column="PrintName" original="Charge Account">Conta da Referência Contábil</value>
-  <value column="Description" original="Charge Account">Conta da Referência Contábil</value>
-  <value column="Help" original="The Charge Account identifies the account to use when recording charges">A conta "Conta da Referência Contábil" identifica a conta a ser usada ao registrar transações que utilizam a referência.</value>
+  <value column="Name" original="Charge Account">Referência Contábil</value>
+  <value column="PrintName" original="Charge Account">Referência Contábil</value>
+  <value column="Description" original="Charge Account">Conta para Referência Contábil</value>
+  <value column="Help" original="The Charge Account identifies the account to use when recording charges">Indica a conta a ser usada para registrar transações que utilizam a referência contábil (receita/despesa).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -7075,10 +7075,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1410" trl="Y">
-  <value column="Name" original="Purchase Price Variance">Variação do Preço de Compra</value>
-  <value column="PrintName" original="Purchase Price Variance">Variação do Preço de Compra</value>
-  <value column="Description" original="Difference between Standard Cost and Purchase Price (PPV)">Diferença entre preço de aquisição e o custo padrão</value>
-  <value column="Help" original="The Purchase Price Variance is used in Standard Costing. It reflects the difference between the Standard Cost and the Purchase Order Price.">A "Variação do Preço de Compra" é utilizada em Custeio Padrão. Ela reflete a diferença entre o Custo Padrão e o Preço do Pedido de Compra.</value>
+  <value column="Name" original="Purchase Price Variance">Desvio (Variação) de Preço de Compra</value>
+  <value column="PrintName" original="Purchase Price Variance">Desvio (Variação) de Preço de Compra</value>
+  <value column="Description" original="Difference between Standard Cost and Purchase Price (PPV)">Diferença entre o custo do produto e o preço de compra</value>
+  <value column="Help" original="The Purchase Price Variance is used in Standard Costing. It reflects the difference between the Standard Cost and the Purchase Order Price.">Utilizado no custo padrão. Reflete a diferença entre o custo do produto e o preço de compra.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -7095,30 +7095,30 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1412" trl="Y">
-  <value column="Name" original="Payment Discount Expense">Custos de Desconto de Pagamento</value>
-  <value column="PrintName" original="Pay discount expense">Custos de Desconto de Pagamento</value>
-  <value column="Description" original="Payment Discount Expense Account">Conta de Custos de Desconto de Pagamento</value>
-  <value column="Help" original="Indicates the account to be charged for payment discount expenses.">Indica a conta a ser debitada para despesas com descontos de pagamento.</value>
+  <value column="Name" original="Payment Discount Expense">Desconto Concedido (Despesa)</value>
+  <value column="PrintName" original="Pay discount expense">Desconto Concedido (Despesa)</value>
+  <value column="Description" original="Payment Discount Expense Account">Conta para Desconto Concedido (Despesa)</value>
+  <value column="Help" original="Indicates the account to be charged for payment discount expenses.">Indica a conta de despesa para descontos concedidos no recebimento de valores.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1413" trl="Y">
-  <value column="Name" original="Payment Discount Revenue">Receita de Desconto de Pagamento</value>
-  <value column="PrintName" original="Pay discount revenue">Receita de Desconto de Pagamento</value>
-  <value column="Description" original="Payment Discount Revenue Account">Conta de Receita de Desconto de Pagamento</value>
-  <value column="Help" original="Indicates the account to be charged for payment discount revenues.">Indica a conta a ser creditada para receitas com descontos de pagamento.</value>
+  <value column="Name" original="Payment Discount Revenue">Desconto Obtido (Receita)</value>
+  <value column="PrintName" original="Pay discount revenue">Desconto Obtido (Receita)</value>
+  <value column="Description" original="Payment Discount Revenue Account">Conta para Desconto Obtido (Receita)</value>
+  <value column="Help" original="Indicates the account to be charged for payment discount revenues.">Indica a conta de receita para descontos obtidos no pagamento de valores.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1414" trl="Y">
-  <value column="Name" original="Work In Progress">Trabalho em Andamento</value>
-  <value column="PrintName" original="WIP Account">Conta TEA</value>
-  <value column="Description" original="Account for Work in Progress">Conta para Trabalho em Andamento</value>
-  <value column="Help" original="The Work in Process account is the account used in capital projects until the project is completed">A "Conta para Trabalho em Andamento" é a conta utilizada em projetos de capital (investimento) até que o projeto seja concluído</value>
+  <value column="Name" original="Work In Progress">Projeto em Andamento (Ativo)</value>
+  <value column="PrintName" original="WIP Account">Projeto em Andamento (Ativo)</value>
+  <value column="Description" original="Account for Work in Progress">Conta para Projeto em Andamento (Ativo)</value>
+  <value column="Help" original="The Work in Process account is the account used in capital projects until the project is completed">Indica a conta de ativo em projetos financeiros até que o mesmo seja concluído.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -7325,30 +7325,30 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1436" trl="Y">
-  <value column="Name" original="Tax Credit">Crédito Fiscal</value>
-  <value column="PrintName" original="Tax Credit">Crédito Fiscal</value>
-  <value column="Description" original="Account for Tax you can reclaim">Conta para Impostos que você pode recuperar</value>
-  <value column="Help" original="The Tax Credit Account indicates the account used to record taxes that can be reclaimed">A conta "Crédito Fiscal" indica a conta utilizada para registrar impostos que podem ser recuperados</value>
+  <value column="Name" original="Tax Credit">Imposto a Recuperar</value>
+  <value column="PrintName" original="Tax Credit">Imposto a Recuperar</value>
+  <value column="Description" original="Account for Tax you can reclaim">Conta para Imposto a Recuperar</value>
+  <value column="Help" original="The Tax Credit Account indicates the account used to record taxes that can be reclaimed">Indica a conta utilizada para registrar impostos a recuperar.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1437" trl="Y">
-  <value column="Name" original="Tax Due">Imposto Devido</value>
-  <value column="PrintName" original="Tax Due">Imposto Devido</value>
-  <value column="Description" original="Account for Tax you have to pay">Conta para Impostos que você tem que pagar</value>
-  <value column="Help" original="The Tax Due Account indicates the account used to record taxes that you are liable to pay.">A conta "Imposto Devido" indica a conta utilizada para registrar impostos que você está sujeito a pagar.</value>
+  <value column="Name" original="Tax Due">Imposto a Recolher</value>
+  <value column="PrintName" original="Tax Due">Imposto a Recolher</value>
+  <value column="Description" original="Account for Tax you have to pay">Conta para Imposto a Recolher</value>
+  <value column="Help" original="The Tax Due Account indicates the account used to record taxes that you are liable to pay.">Indica a conta utilizada para registrar impostos a recolher.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1438" trl="Y">
-  <value column="Name" original="Tax Expense">Despesa de Imposto</value>
-  <value column="PrintName" original="Tax Expense">Despesa de Imposto</value>
-  <value column="Description" original="Account for paid tax you cannot reclaim">Conta para Impostos já pagos e que você não pode recuperar</value>
-  <value column="Help" original="The Tax Expense Account indicates the account used to record the taxes that have been paid that cannot be reclaimed.">A conta "Despesa de Imposto" indica a conta utilizada para registrar os impostos que você tem pago e que não podem ser recuperados.</value>
+  <value column="Name" original="Tax Expense">Imposto (Despesa)</value>
+  <value column="PrintName" original="Tax Expense">Imposto (Despesa)</value>
+  <value column="Description" original="Account for paid tax you cannot reclaim">Conta para Imposto (Despesa)</value>
+  <value column="Help" original="The Tax Expense Account indicates the account used to record the taxes that have been paid that cannot be reclaimed.">Indica a conta utilizada para registrar impostos pagos.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -7435,10 +7435,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1449" trl="Y">
-  <value column="Name" original="Write-off">Baixa total</value>
-  <value column="PrintName" original="Write-off">Baixa total</value>
-  <value column="Description" original="Account for Receivables write-off">Conta para baixa de contas a receber</value>
-  <value column="Help" original="The Write Off Account identifies the account to book write off transactions to.">A conta "Baixa Total" identifica a conta para registrar baixas de transações.</value>
+  <value column="Name" original="Write-off">Abatimento</value>
+  <value column="PrintName" original="Write-off">Abatimento</value>
+  <value column="Description" original="Account for Receivables write-off">Conta para Abatimento</value>
+  <value column="Help" original="The Write Off Account identifies the account to book write off transactions to.">Indica a conta para registrar abatimentos.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -8835,10 +8835,10 @@ Exemplo de formato "(000)_000-0000"]]></value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1624" trl="Y">
-  <value column="Name" original="Invoice Price Variance">Variação de Preço da Fatura</value>
-  <value column="PrintName" original="Invoice Price Variance">Variação de Preço da Fatura</value>
-  <value column="Description" original="Difference between Costs and Invoice Price (IPV)">Diferença entre Custos da Mercadoria Vendida e Preço da Fatura (PF)</value>
-  <value column="Help" original="The Invoice Price Variance is used reflects the difference between the current Costs and the Invoice Price.">A "Variação de Preço da Fatura" é utilizada para refletir a diferença entre os Custos atuais e o Preço Faturado.</value>
+  <value column="Name" original="Invoice Price Variance">Desvio (Variação) de Preço Faturado</value>
+  <value column="PrintName" original="Invoice Price Variance">Desvio (Variação) de Preço Faturado</value>
+  <value column="Description" original="Difference between Costs and Invoice Price (IPV)">Diferença entre o custo do produto e o preço faturado</value>
+  <value column="Help" original="The Invoice Price Variance is used reflects the difference between the current Costs and the Invoice Price.">Reflete a diferença entre o custo do produto e o preço faturado.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -8847,18 +8847,18 @@ Exemplo de formato "(000)_000-0000"]]></value>
  <row id="1625" trl="Y">
   <value column="Name" original="Trade Discount Granted">Desconto Comercial Concedido</value>
   <value column="PrintName" original="Trade Discount Grant">Desconto Comercial Concedido</value>
-  <value column="Description" original="Trade Discount Granted Account">Conta de Desconto Comercial Concedido</value>
-  <value column="Help" original="The Trade Discount Granted Account indicates the account for granted trade discount in sales invoices">A conta de "Desconto Comercial Concedido" indica a conta para descontos comerciais concedidos nas faturas de vendas</value>
+  <value column="Description" original="Trade Discount Granted Account">Conta para Desconto Comercial Concedido</value>
+  <value column="Help" original="The Trade Discount Granted Account indicates the account for granted trade discount in sales invoices">Indica a conta para descontos comerciais concedidos a clientes.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1626" trl="Y">
-  <value column="Name" original="Trade Discount Received">Desconto Comercial Recebido</value>
-  <value column="PrintName" original="Trade Discount Received">Desconto Comercial Recebido</value>
-  <value column="Description" original="Trade Discount Receivable Account">Conta de Desconto Comercial Recebido</value>
-  <value column="Help" original="The Trade Discount Receivables Account indicates the account for received trade discounts in vendor invoices">A conta de "Desconto Comercial Recebido" indica a conta para descontos comerciais recebidos nas faturas de fornecedores</value>
+  <value column="Name" original="Trade Discount Received">Desconto Comercial Obtido</value>
+  <value column="PrintName" original="Trade Discount Received">Desconto Comercial Obtido</value>
+  <value column="Description" original="Trade Discount Receivable Account">Conta para Desconto Comercial Obtido</value>
+  <value column="Help" original="The Trade Discount Receivables Account indicates the account for received trade discounts in vendor invoices">Indica a conta para descontos comerciais obtidos de fornecedores.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -9367,9 +9367,9 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1686" trl="Y">
-  <value column="Name" original="Payment Selection">Seleção de Pagamento</value>
-  <value column="PrintName" original="Payment selection">Seleção de pagamentos</value>
-  <value column="Description" original="AP Payment Selection Clearing Account">Conta de Compensação da Seleção de Pagamento de Contas a Pagar</value>
+  <value column="Name" original="Payment Selection">Pagamento não Alocado</value>
+  <value column="PrintName" original="Payment selection">Pagamento não Alocado</value>
+  <value column="Description" original="AP Payment Selection Clearing Account">Conta para Pagamento não Alocado</value>
   <value column="Help" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -9377,10 +9377,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1687" trl="Y">
-  <value column="Name" original="Unallocated Cash">Verba não alocada</value>
-  <value column="PrintName" original="Unallocated Cash">Verba não alocada</value>
-  <value column="Description" original="Unallocated Cash Clearing Account">Conta de Compensação de Verba não alocada</value>
-  <value column="Help" original="Receipts not allocated to Invoices">Recebimentos não alocados a faturas.</value>
+  <value column="Name" original="Unallocated Cash">Recebimento não Alocado</value>
+  <value column="PrintName" original="Unallocated Cash">Recebimento não Alocado</value>
+  <value column="Description" original="Unallocated Cash Clearing Account">Conta para Recebimento não Alocado</value>
+  <value column="Help" original="Receipts not allocated to Invoices">Indica a conta utilizada para recebimentos de valores não alocados a faturas.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -9847,10 +9847,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="1739" trl="Y">
-  <value column="Name" original="PPV Offset">Ajuste de VPC</value>
-  <value column="PrintName" original="PPV Offset">Ajuste de VPC</value>
-  <value column="Description" original="Purchase Price Variance Offset Account">Conta de Ajuste (Offset) de Variação de Preço de Compra</value>
-  <value column="Help" original="Offset account for standard costing purchase price variances. The counter account is Product PPV.">Conta de Ajuste (Offset, correção) para variações de preço de compra de custeio padrão A contra-partida é VPC de Produto</value>
+  <value column="Name" original="PPV Offset">Diferença do Desvio (Variação) de Preço de Compra</value>
+  <value column="PrintName" original="PPV Offset">Diferença do Desvio (Variação) de Preço de Compra</value>
+  <value column="Description" original="Purchase Price Variance Offset Account">Conta para Diferença do Desvio (Variação) de Preço de Compra</value>
+  <value column="Help" original="Offset account for standard costing purchase price variances. The counter account is Product PPV.">Conta utilizada nas variações de preço de compra sobre o custo padrão.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -20253,11 +20253,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2847" trl="Y">
-  <value column="Name" original="Inventory Clearing">Limpeza de Estoque</value>
-  <value column="PrintName" original="Inventory Clearing">Limpeza de Estoque</value>
-  <value column="Description" original="Product Inventory Clearing Account">Conta de Compensação de Estoque de Produto</value>
-  <value column="Help" original="Account used for posting matched product (item) expenses (e.g. AP Invoice, Invoice Match).  You would use a different account then Product Expense, if you want to differentiate service related costs from item related costs. The balance on the clearing account should be zero and accounts for the timing difference between invoice receipt and matching.">Conta utilizada para lançar despesas de conferência de produtos (item) (por ex. Faturas AP, Conferência de Fatura).  Você deve usar uma conta diferente de "Despesa de Produto" se desejar diferenciar entre custos relativos a serviços e custos relacionados a itens. O saldo (balanço) da conta de compensação deveria ser zero e responde pelas diferenças temporárias ente o recebimento de faturas e a confrontação.
-</value>
+  <value column="Name" original="Inventory Clearing">Transitória de Estoque</value>
+  <value column="PrintName" original="Inventory Clearing">Transitória de Estoque</value>
+  <value column="Description" original="Product Inventory Clearing Account">Conta para Transitória de Estoque</value>
+  <value column="Help" original="Account used for posting matched product (item) expenses (e.g. AP Invoice, Invoice Match).  You would use a different account then Product Expense, if you want to differentiate service related costs from item related costs. The balance on the clearing account should be zero and accounts for the timing difference between invoice receipt and matching.">Indica a conta utilizada nas conciliações de produtos comprados. Saldo nesta conta indica diferenças temporárias devido a falta de conciliação entre faturas a pagar, recebimentos de materiais e respectivas conciliações.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -20266,8 +20265,8 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
  <row id="2848" trl="Y">
   <value column="Name" original="Cost Adjustment">Ajuste de Custo</value>
   <value column="PrintName" original="Cost Adjustment">Ajuste de Custo</value>
-  <value column="Description" original="Product Cost Adjustment Account">Conta de Ajuste de Custo do Produto</value>
-  <value column="Help" original="Account used for posting product cost adjustments (e.g. landed costs)">Conta utilizada para lançar ajustes de custo de produtos (por ex. custos finais)</value>
+  <value column="Description" original="Product Cost Adjustment Account">Conta para Ajuste de Custo</value>
+  <value column="Help" original="Account used for posting product cost adjustments (e.g. landed costs)">Indica a conta utilizada para registrar ajustes de custo de produtos.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -20384,10 +20383,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2861" trl="Y">
-  <value column="Name" original="Commitment Offset">Ajuste de Comprometimento</value>
-  <value column="PrintName" original="Commitment Offset">Ajuste de Comprometimento</value>
-  <value column="Description" original="Budgetary Commitment Offset Account">Conta de Ajuste de Comprometimento Orçamentário</value>
-  <value column="Help" original="The Commitment Offset Account is used for posting Commitments and Reservations.  It is usually an off-balance sheet and gain-and-loss account.">A Conta de Ajuste de Comprometimento é utilizada para lançar os Comprometimentos e Reservas.  Ela é usualmente uma conta de ganhos-e-perdas e uma folha de ajuste de saldo (balanço).</value>
+  <value column="Name" original="Commitment Offset">Comprometimento (Compras)</value>
+  <value column="PrintName" original="Commitment Offset">Comprometimento (Compras)</value>
+  <value column="Description" original="Budgetary Commitment Offset Account">Conta para Comprometimento Orçamentário</value>
+  <value column="Help" original="The Commitment Offset Account is used for posting Commitments and Reservations.  It is usually an off-balance sheet and gain-and-loss account.">Utilizada para lançar os Comprometimentos e Reservas.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -24055,10 +24054,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53228" trl="Y">
-  <value column="Name" original="Commitment Offset Sales">Commitment Offset Sales</value>
-  <value column="PrintName" original="Commitment Offset Sales">Commitment Offset Sales</value>
-  <value column="Description" original="Budgetary Commitment Offset Account for Sales">Budgetary Commitment Offset Account for Sales</value>
-  <value column="Help" original="The Commitment Offset Account is used for posting Commitments Sales and Reservations.  It is usually an off-balance sheet and gain-and-loss account.">The Commitment Offset Account is used for posting Commitments Sales and Reservations.  It is usually an off-balance sheet and gain-and-loss account.</value>
+  <value column="Name" original="Commitment Offset Sales">Comprometimento (Vendas)</value>
+  <value column="PrintName" original="Commitment Offset Sales">Comprometimento (Vendas)</value>
+  <value column="Description" original="Budgetary Commitment Offset Account for Sales">Conta para Comprometimento Orçamentário</value>
+  <value column="Help" original="The Commitment Offset Account is used for posting Commitments Sales and Reservations.  It is usually an off-balance sheet and gain-and-loss account.">Utilizada para lançar os Comprometimentos e Reservas.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -28121,13 +28120,11 @@ If you change the Quantities or Time  defined in BOM or Workflow Manufacturig th
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="53724" trl="N">
-  <value column="Name" original="Rate Variance">Rate Variance</value>
-  <value column="PrintName" original="Account for Rate Variance">Account for Rate Variance</value>
-  <value column="Description" original="The Rate Variance account is the account used Manufacturing Order">The Rate Variance account is the account used Manufacturing Order</value>
-  <value column="Help" original="The Rate Variance is used in Standard Costing. It reflects the difference between the Standard Cost Rates and  The Cost Rates of Manufacturing Order.&#10;&#10;If you change the Standard Rates then this variance is generate.">The Rate Variance is used in Standard Costing. It reflects the difference between the Standard Cost Rates and  The Cost Rates of Manufacturing Order.
-
-If you change the Standard Rates then this variance is generate.</value>
+ <row id="53724" trl="Y">
+  <value column="Name" original="Rate Variance">Taxa de Desvio (Variação)</value>
+  <value column="PrintName" original="Account for Rate Variance">Taxa de Desvio (Variação)</value>
+  <value column="Description" original="The Rate Variance account is the account used Manufacturing Order">Conta utilizada nas Ordens de Produção</value>
+  <value column="Help" original="The Rate Variance is used in Standard Costing. It reflects the difference between the Standard Cost Rates and  The Cost Rates of Manufacturing Order.&#10;&#10;If you change the Standard Rates then this variance is generate.">Utilizada no custo padrão. Reflete a diferença entre o custo padrão e o custo de produção.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -29331,11 +29328,11 @@ Credit Work in Process Account ]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="54132" trl="N">
-  <value column="Name" original="Average Cost Variance">Average Cost Variance</value>
-  <value column="PrintName" original="Average Cost Variance">Average Cost Variance</value>
-  <value column="Description" original="Average Cost Variance">Average Cost Variance</value>
-  <value column="Help" original="The Average Cost Variance is used in weighted average costing to reflect differences when posting costs for negative inventory.">The Average Cost Variance is used in weighted average costing to reflect differences when posting costs for negative inventory.</value>
+ <row id="54132" trl="Y">
+  <value column="Name" original="Average Cost Variance">Desvio (Variação) de Custo Médio</value>
+  <value column="PrintName" original="Average Cost Variance">Desvio (Variação) de Custo Médio</value>
+  <value column="Description" original="Average Cost Variance">Conta para Desvio (Variação) de Custo Médio</value>
+  <value column="Help" original="The Average Cost Variance is used in weighted average costing to reflect differences when posting costs for negative inventory.">Utilizada no custo médio ponderado, e reflete a diferenças ao lançar custos para estoques negativos.</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
@@ -54474,11 +54471,11 @@ necessidades de caixa para curto prazo.</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row id="202587" trl="N">
-  <value column="Name" original="Landed Cost Clearing">Landed Cost Clearing</value>
-  <value column="PrintName" original="Landed Cost Clearing">Landed Cost Clearing</value>
-  <value column="Description" original="Product Landed Cost Clearing Account">Product Landed Cost Clearing Account</value>
-  <value column="Help" original="Account used for posting of estimated and actual landed cost amount.  The balance on the clearing account should be zero and accounts for the timing difference between material receipt and landed cost invoice.">Account used for posting of estimated and actual landed cost amount.  The balance on the clearing account should be zero and accounts for the timing difference between material receipt and landed cost invoice.</value>
+ <row id="202587" trl="Y">
+  <value column="Name" original="Landed Cost Clearing">Transitória de Custos de Entrega</value>
+  <value column="PrintName" original="Landed Cost Clearing">Transitória de Custos de Entrega</value>
+  <value column="Description" original="Product Landed Cost Clearing Account">Conta para Transitória de Custos de Entrega</value>
+  <value column="Help" original="Account used for posting of estimated and actual landed cost amount.  The balance on the clearing account should be zero and accounts for the timing difference between material receipt and landed cost invoice.">Utilizada para registrar custos de entrega estimados e finais. O saldo deve ser zero, mas saldos podem indicar diferenças entre recebimentos de materiais e custos de entrada (na fatura).</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>

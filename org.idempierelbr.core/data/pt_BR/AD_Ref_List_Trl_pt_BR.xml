@@ -2533,11 +2533,11 @@
   <value column="Description" original="Internal Commitment">Comprometimento Interno</value>
  </row>
  <row id="784" trl="Y">
-  <value column="Name" original="PO Commitment only">Comprometimento (PC) de Recursos</value>
+  <value column="Name" original="PO Commitment only">Comprometimento nas Compras</value>
   <value column="Description" original=""/>
  </row>
  <row id="785" trl="Y">
-  <value column="Name" original="PO Commitment &amp; Reservation">Comprometimento (PC) e Reserva de Recursos</value>
+  <value column="Name" original="PO Commitment &amp; Reservation">Comprometimento e Reserva de Recursos nas Compras</value>
   <value column="Description" original=""/>
  </row>
  <row id="786" trl="Y">
@@ -3353,15 +3353,15 @@
   <value column="Description" original=""/>
  </row>
  <row id="53223" trl="Y">
-  <value column="Name" original="PO/SO Commitment &amp; Reservation">Comprometimento (PC/PV) e Reserva de Recursos</value>
+  <value column="Name" original="PO/SO Commitment &amp; Reservation">Comprometimento e Reserva de Recursos nas Compras e Vendas</value>
   <value column="Description" original=""/>
  </row>
  <row id="53224" trl="Y">
-  <value column="Name" original="SO Commitment only">Comprometimento (PV) de Recursos</value>
+  <value column="Name" original="SO Commitment only">Comprometimento nas Vendas</value>
   <value column="Description" original=""/>
  </row>
  <row id="53225" trl="Y">
-  <value column="Name" original="PO/SO Commitment">Comprometimento (PC/PV) de Recursos</value>
+  <value column="Name" original="PO/SO Commitment">Comprometimento nas Compras e Vendas</value>
   <value column="Description" original=""/>
  </row>
  <row id="53227" trl="Y">

@@ -10,7 +10,7 @@
   <value column="Name" original="Notice">Avisos</value>
  </row>
  <row id="200003" trl="N">
-  <value column="Name" original="Request">Solicitaçõest</value>
+  <value column="Name" original="Request">Solicitações</value>
  </row>
  <row id="200004" trl="N">
   <value column="Name" original="Workflow Activities">Atividades de Workflow</value>

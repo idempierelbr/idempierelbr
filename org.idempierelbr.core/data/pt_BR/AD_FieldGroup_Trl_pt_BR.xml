@@ -180,23 +180,23 @@
  <row id="200008" trl="Y">
   <value column="Name" original="Document Preferences">Preferências de Documento</value>
  </row>
- <row id="200009" trl="N">
-  <value column="Name" original="Charge Account">Charge Account</value>
+ <row id="200009" trl="Y">
+  <value column="Name" original="Charge Account">Conta de Referência Contábil</value>
  </row>
- <row id="200010" trl="N">
-  <value column="Name" original="Business Partner Accounts">Business Partner Accounts</value>
+ <row id="200010" trl="Y">
+  <value column="Name" original="Business Partner Accounts">Contas do Parceiro de Negócios</value>
  </row>
  <row id="200011" trl="N">
   <value column="Name" original="Product Accounts">Product Accounts</value>
  </row>
- <row id="200012" trl="N">
-  <value column="Name" original="Warehouse Accounts">Warehouse Accounts</value>
+ <row id="200012" trl="Y">
+  <value column="Name" original="Warehouse Accounts">Contas de Armazém</value>
  </row>
- <row id="200013" trl="N">
-  <value column="Name" original="Product Category Accounts">Product Category Accounts</value>
+ <row id="200013" trl="Y">
+  <value column="Name" original="Product Category Accounts">Contas de Categoria de Produtos</value>
  </row>
- <row id="200014" trl="N">
-  <value column="Name" original="Business Partner Group Accounts">Business Partner Group Accounts</value>
+ <row id="200014" trl="Y">
+  <value column="Name" original="Business Partner Group Accounts">Contas de Parceiro de Negócios</value>
  </row>
  <row id="200015" trl="Y">
   <value column="Name" original="Technical">Técnico</value>
