@@ -19,6 +19,7 @@ import org.compiere.util.Env;
 import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
 import org.idempierelbr.tax.model.MLBRDocLineICMS;
 import org.idempierelbr.tax.model.MLBRDocLineIPI;
+import org.idempierelbr.tax.model.MLBRDocLineISSQN;
 import org.idempierelbr.tax.model.MLBRDocLineImportTax;
 import org.idempierelbr.tax.model.MLBRDocLinePIS;
 import org.idempierelbr.tax.model.MLBRTax;
@@ -111,8 +112,8 @@ public class NFTaxProvider implements ITaxProviderNfe {
 					
 					// ICMS
 					if (icms.getLBR_TaxAmt() != null) {
-						if (nfTaxList.containsKey(MLBRTax.TAX_GROUP_ICMS)) {
-							MLBRNotaFiscalTax newOTax = nfTaxList.get(MLBRTax.TAX_GROUP_ICMS);
+						if (nfTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME))) {
+							MLBRNotaFiscalTax newOTax = nfTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME));
 							newOTax.setIsTaxIncluded(icms.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(icms.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(icms.getLBR_TaxAmt()));
@@ -124,8 +125,8 @@ public class NFTaxProvider implements ITaxProviderNfe {
 					
 					// ICMS-ST
 					if (icms.getLBR_ICMSST_TaxAmt() != null) {
-						if (nfTaxList.containsKey(MLBRTax.TAX_GROUP_ICMSST)) {
-							MLBRNotaFiscalTax newOTax = nfTaxList.get(MLBRTax.TAX_GROUP_ICMSST);
+						if (nfTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME))) {
+							MLBRNotaFiscalTax newOTax = nfTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME));
 							newOTax.setIsTaxIncluded(icms.isLBR_ICMSST_IsTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(icms.getLBR_ICMSST_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(icms.getLBR_ICMSST_TaxAmt()));
@@ -142,8 +143,8 @@ public class NFTaxProvider implements ITaxProviderNfe {
 					MLBRDocLineIPI ipi = ipiLines[0];
 					
 					if (ipi.getLBR_TaxAmt() != null) {
-						if (nfTaxList.containsKey(MLBRTax.TAX_GROUP_IPI)) {
-							MLBRNotaFiscalTax newOTax = nfTaxList.get(MLBRTax.TAX_GROUP_IPI);
+						if (nfTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IPI_NAME))) {
+							MLBRNotaFiscalTax newOTax = nfTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IPI_NAME));
 							newOTax.setIsTaxIncluded(ipi.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(ipi.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(ipi.getLBR_TaxAmt()));
@@ -160,8 +161,8 @@ public class NFTaxProvider implements ITaxProviderNfe {
 					MLBRDocLinePIS pis = pisLines[0];
 					
 					if (pis.getLBR_TaxAmt() != null) {
-						if (nfTaxList.containsKey(MLBRTax.TAX_GROUP_PIS)) {
-							MLBRNotaFiscalTax newOTax = nfTaxList.get(MLBRTax.TAX_GROUP_PIS);
+						if (nfTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_PIS_NAME))) {
+							MLBRNotaFiscalTax newOTax = nfTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_PIS_NAME));
 							newOTax.setIsTaxIncluded(pis.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(pis.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(pis.getLBR_TaxAmt()));
@@ -178,8 +179,8 @@ public class NFTaxProvider implements ITaxProviderNfe {
 					MLBRDocLineCOFINS cofins = cofinsLines[0];
 					
 					if (cofins.getLBR_TaxAmt() != null) {
-						if (nfTaxList.containsKey(MLBRTax.TAX_GROUP_COFINS)) {
-							MLBRNotaFiscalTax newOTax = nfTaxList.get(MLBRTax.TAX_GROUP_COFINS);
+						if (nfTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_COFINS_NAME))) {
+							MLBRNotaFiscalTax newOTax = nfTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_COFINS_NAME));
 							newOTax.setIsTaxIncluded(cofins.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(cofins.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(cofins.getLBR_TaxAmt()));
@@ -196,8 +197,8 @@ public class NFTaxProvider implements ITaxProviderNfe {
 					MLBRDocLineImportTax importTax = importTaxLines[0];
 					
 					if (importTax.getLBR_TaxAmt() != null) {
-						if (nfTaxList.containsKey(MLBRTax.TAX_GROUP_II)) {
-							MLBRNotaFiscalTax newOTax = nfTaxList.get(MLBRTax.TAX_GROUP_II);
+						if (nfTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_II_NAME))) {
+							MLBRNotaFiscalTax newOTax = nfTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_II_NAME));
 							newOTax.setIsTaxIncluded(importTax.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(importTax.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(importTax.getLBR_TaxAmt()));
@@ -205,6 +206,24 @@ public class NFTaxProvider implements ITaxProviderNfe {
 						
 						if (!importTax.isTaxIncluded())
 							grandTotal = grandTotal.add(importTax.getLBR_TaxAmt());
+					}
+				}
+				
+				// ISSQN
+				MLBRDocLineISSQN[] issqnLines = MLBRDocLineISSQN.getOfDetails(details);
+				if (issqnLines.length > 0) {
+					MLBRDocLineISSQN issqn = issqnLines[0];
+					
+					if (issqn.getLBR_TaxAmt() != null) {
+						if (nfTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME))) {
+							MLBRNotaFiscalTax newOTax = nfTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME));
+							newOTax.setIsTaxIncluded(issqn.isTaxIncluded());
+							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(issqn.getLBR_TaxBaseAmt()));
+							newOTax.setTaxAmt(newOTax.getTaxAmt().add(issqn.getLBR_TaxAmt()));
+						}
+						
+						if (!issqn.isTaxIncluded())
+							grandTotal = grandTotal.add(issqn.getLBR_TaxAmt());
 					}
 				}
 			}

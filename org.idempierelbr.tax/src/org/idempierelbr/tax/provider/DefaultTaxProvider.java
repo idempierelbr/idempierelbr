@@ -29,6 +29,7 @@ import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
 import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
 import org.idempierelbr.tax.model.MLBRDocLineICMS;
 import org.idempierelbr.tax.model.MLBRDocLineIPI;
+import org.idempierelbr.tax.model.MLBRDocLineISSQN;
 import org.idempierelbr.tax.model.MLBRDocLineImportTax;
 import org.idempierelbr.tax.model.MLBRDocLinePIS;
 import org.idempierelbr.tax.model.MLBRTax;
@@ -122,8 +123,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					
 					// ICMS
 					if (icms.getLBR_TaxAmt() != null) {
-						if (oTaxList.containsKey(MLBRTax.TAX_GROUP_ICMS)) {
-							MOrderTax newOTax = oTaxList.get(MLBRTax.TAX_GROUP_ICMS);
+						if (oTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME))) {
+							MOrderTax newOTax = oTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME));
 							newOTax.setIsTaxIncluded(icms.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(icms.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(icms.getLBR_TaxAmt()));
@@ -135,8 +136,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					
 					// ICMS-ST
 					if (icms.getLBR_ICMSST_TaxAmt() != null) {
-						if (oTaxList.containsKey(MLBRTax.TAX_GROUP_ICMSST)) {
-							MOrderTax newOTax = oTaxList.get(MLBRTax.TAX_GROUP_ICMSST);
+						if (oTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME))) {
+							MOrderTax newOTax = oTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME));
 							newOTax.setIsTaxIncluded(icms.isLBR_ICMSST_IsTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(icms.getLBR_ICMSST_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(icms.getLBR_ICMSST_TaxAmt()));
@@ -153,8 +154,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					MLBRDocLineIPI ipi = ipiLines[0];
 					
 					if (ipi.getLBR_TaxAmt() != null) {
-						if (oTaxList.containsKey(MLBRTax.TAX_GROUP_IPI)) {
-							MOrderTax newOTax = oTaxList.get(MLBRTax.TAX_GROUP_IPI);
+						if (oTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IPI_NAME))) {
+							MOrderTax newOTax = oTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IPI_NAME));
 							newOTax.setIsTaxIncluded(ipi.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(ipi.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(ipi.getLBR_TaxAmt()));
@@ -171,8 +172,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					MLBRDocLinePIS pis = pisLines[0];
 					
 					if (pis.getLBR_TaxAmt() != null) {
-						if (oTaxList.containsKey(MLBRTax.TAX_GROUP_PIS)) {
-							MOrderTax newOTax = oTaxList.get(MLBRTax.TAX_GROUP_PIS);
+						if (oTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_PIS_NAME))) {
+							MOrderTax newOTax = oTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_PIS_NAME));
 							newOTax.setIsTaxIncluded(pis.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(pis.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(pis.getLBR_TaxAmt()));
@@ -189,8 +190,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					MLBRDocLineCOFINS cofins = cofinsLines[0];
 					
 					if (cofins.getLBR_TaxAmt() != null) {
-						if (oTaxList.containsKey(MLBRTax.TAX_GROUP_COFINS)) {
-							MOrderTax newOTax = oTaxList.get(MLBRTax.TAX_GROUP_COFINS);
+						if (oTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_COFINS_NAME))) {
+							MOrderTax newOTax = oTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_COFINS_NAME));
 							newOTax.setIsTaxIncluded(cofins.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(cofins.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(cofins.getLBR_TaxAmt()));
@@ -207,8 +208,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					MLBRDocLineImportTax importTax = importTaxLines[0];
 					
 					if (importTax.getLBR_TaxAmt() != null) {
-						if (oTaxList.containsKey(MLBRTax.TAX_GROUP_II)) {
-							MOrderTax newOTax = oTaxList.get(MLBRTax.TAX_GROUP_II);
+						if (oTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_II_NAME))) {
+							MOrderTax newOTax = oTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_II_NAME));
 							newOTax.setIsTaxIncluded(importTax.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(importTax.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(importTax.getLBR_TaxAmt()));
@@ -216,6 +217,24 @@ public class DefaultTaxProvider implements ITaxProvider {
 						
 						if (!importTax.isTaxIncluded())
 							grandTotal = grandTotal.add(importTax.getLBR_TaxAmt());
+					}
+				}
+				
+				// ISSQN
+				MLBRDocLineISSQN[] issqnLines = MLBRDocLineISSQN.getOfDetails(details);
+				if (issqnLines.length > 0) {
+					MLBRDocLineISSQN issqn = issqnLines[0];
+					
+					if (issqn.getLBR_TaxAmt() != null) {
+						if (oTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME))) {
+							MOrderTax newOTax = oTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME));
+							newOTax.setIsTaxIncluded(issqn.isTaxIncluded());
+							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(issqn.getLBR_TaxBaseAmt()));
+							newOTax.setTaxAmt(newOTax.getTaxAmt().add(issqn.getLBR_TaxAmt()));
+						}
+						
+						if (!issqn.isTaxIncluded())
+							grandTotal = grandTotal.add(issqn.getLBR_TaxAmt());
 					}
 				}
 			}
@@ -399,8 +418,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					
 					// ICMS
 					if (icms.getLBR_TaxAmt() != null) {
-						if (iTaxList.containsKey(MLBRTax.TAX_GROUP_ICMS)) {
-							MInvoiceTax newITax = iTaxList.get(MLBRTax.TAX_GROUP_ICMS);
+						if (iTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME))) {
+							MInvoiceTax newITax = iTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME));
 							newITax.setIsTaxIncluded(icms.isTaxIncluded());
 							newITax.setTaxBaseAmt(newITax.getTaxBaseAmt().add(icms.getLBR_TaxBaseAmt()));
 							newITax.setTaxAmt(newITax.getTaxAmt().add(icms.getLBR_TaxAmt()));
@@ -412,8 +431,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					
 					// ICMS-ST
 					if (icms.getLBR_ICMSST_TaxAmt() != null) {
-						if (iTaxList.containsKey(MLBRTax.TAX_GROUP_ICMSST)) {
-							MInvoiceTax newITax = iTaxList.get(MLBRTax.TAX_GROUP_ICMSST);
+						if (iTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME))) {
+							MInvoiceTax newITax = iTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME));
 							newITax.setIsTaxIncluded(icms.isLBR_ICMSST_IsTaxIncluded());
 							newITax.setTaxBaseAmt(newITax.getTaxBaseAmt().add(icms.getLBR_ICMSST_TaxBaseAmt()));
 							newITax.setTaxAmt(newITax.getTaxAmt().add(icms.getLBR_ICMSST_TaxAmt()));
@@ -430,8 +449,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					MLBRDocLineIPI ipi = ipiLines[0];
 					
 					if (ipi.getLBR_TaxAmt() != null) {
-						if (iTaxList.containsKey(MLBRTax.TAX_GROUP_IPI)) {
-							MInvoiceTax newITax = iTaxList.get(MLBRTax.TAX_GROUP_IPI);
+						if (iTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IPI_NAME))) {
+							MInvoiceTax newITax = iTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IPI_NAME));
 							newITax.setIsTaxIncluded(ipi.isTaxIncluded());
 							newITax.setTaxBaseAmt(newITax.getTaxBaseAmt().add(ipi.getLBR_TaxBaseAmt()));
 							newITax.setTaxAmt(newITax.getTaxAmt().add(ipi.getLBR_TaxAmt()));
@@ -448,8 +467,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					MLBRDocLinePIS pis = pisLines[0];
 					
 					if (pis.getLBR_TaxAmt() != null) {
-						if (iTaxList.containsKey(MLBRTax.TAX_GROUP_PIS)) {
-							MInvoiceTax newITax = iTaxList.get(MLBRTax.TAX_GROUP_PIS);
+						if (iTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_PIS_NAME))) {
+							MInvoiceTax newITax = iTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_PIS_NAME));
 							newITax.setIsTaxIncluded(pis.isTaxIncluded());
 							newITax.setTaxBaseAmt(newITax.getTaxBaseAmt().add(pis.getLBR_TaxBaseAmt()));
 							newITax.setTaxAmt(newITax.getTaxAmt().add(pis.getLBR_TaxAmt()));
@@ -466,8 +485,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					MLBRDocLineCOFINS cofins = cofinsLines[0];
 					
 					if (cofins.getLBR_TaxAmt() != null) {
-						if (iTaxList.containsKey(MLBRTax.TAX_GROUP_COFINS)) {
-							MInvoiceTax newITax = iTaxList.get(MLBRTax.TAX_GROUP_COFINS);
+						if (iTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_COFINS_NAME))) {
+							MInvoiceTax newITax = iTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_COFINS_NAME));
 							newITax.setIsTaxIncluded(cofins.isTaxIncluded());
 							newITax.setTaxBaseAmt(newITax.getTaxBaseAmt().add(cofins.getLBR_TaxBaseAmt()));
 							newITax.setTaxAmt(newITax.getTaxAmt().add(cofins.getLBR_TaxAmt()));
@@ -484,8 +503,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					MLBRDocLineImportTax importTax = importTaxLines[0];
 					
 					if (importTax.getLBR_TaxAmt() != null) {
-						if (iTaxList.containsKey(MLBRTax.TAX_GROUP_II)) {
-							MInvoiceTax newITax = iTaxList.get(MLBRTax.TAX_GROUP_II);
+						if (iTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_II_NAME))) {
+							MInvoiceTax newITax = iTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_II_NAME));
 							newITax.setIsTaxIncluded(importTax.isTaxIncluded());
 							newITax.setTaxBaseAmt(newITax.getTaxBaseAmt().add(importTax.getLBR_TaxBaseAmt()));
 							newITax.setTaxAmt(newITax.getTaxAmt().add(importTax.getLBR_TaxAmt()));
@@ -493,6 +512,24 @@ public class DefaultTaxProvider implements ITaxProvider {
 						
 						if (!importTax.isTaxIncluded())
 							grandTotal = grandTotal.add(importTax.getLBR_TaxAmt());
+					}
+				}
+				
+				// ISSQN
+				MLBRDocLineISSQN[] issqnLines = MLBRDocLineISSQN.getOfDetails(details);
+				if (issqnLines.length > 0) {
+					MLBRDocLineISSQN issqn = issqnLines[0];
+					
+					if (issqn.getLBR_TaxAmt() != null) {
+						if (iTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME))) {
+							MInvoiceTax newITax = iTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME));
+							newITax.setIsTaxIncluded(issqn.isTaxIncluded());
+							newITax.setTaxBaseAmt(newITax.getTaxBaseAmt().add(issqn.getLBR_TaxBaseAmt()));
+							newITax.setTaxAmt(newITax.getTaxAmt().add(issqn.getLBR_TaxAmt()));
+						}
+						
+						if (!issqn.isTaxIncluded())
+							grandTotal = grandTotal.add(issqn.getLBR_TaxAmt());
 					}
 				}
 			}
@@ -671,8 +708,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					
 					// ICMS
 					if (icms.getLBR_TaxAmt() != null) {
-						if (rmaTaxList.containsKey(MLBRTax.TAX_GROUP_ICMS)) {
-							MRMATax newOTax = rmaTaxList.get(MLBRTax.TAX_GROUP_ICMS);
+						if (rmaTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME))) {
+							MRMATax newOTax = rmaTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME));
 							newOTax.setIsTaxIncluded(icms.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(icms.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(icms.getLBR_TaxAmt()));
@@ -684,8 +721,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					
 					// ICMS-ST
 					if (icms.getLBR_ICMSST_TaxAmt() != null) {
-						if (rmaTaxList.containsKey(MLBRTax.TAX_GROUP_ICMSST)) {
-							MRMATax newOTax = rmaTaxList.get(MLBRTax.TAX_GROUP_ICMSST);
+						if (rmaTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME))) {
+							MRMATax newOTax = rmaTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME));
 							newOTax.setIsTaxIncluded(icms.isLBR_ICMSST_IsTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(icms.getLBR_ICMSST_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(icms.getLBR_ICMSST_TaxAmt()));
@@ -702,8 +739,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					MLBRDocLineIPI ipi = ipiLines[0];
 					
 					if (ipi.getLBR_TaxAmt() != null) {
-						if (rmaTaxList.containsKey(MLBRTax.TAX_GROUP_IPI)) {
-							MRMATax newOTax = rmaTaxList.get(MLBRTax.TAX_GROUP_IPI);
+						if (rmaTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IPI_NAME))) {
+							MRMATax newOTax = rmaTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IPI_NAME));
 							newOTax.setIsTaxIncluded(ipi.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(ipi.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(ipi.getLBR_TaxAmt()));
@@ -720,8 +757,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					MLBRDocLinePIS pis = pisLines[0];
 					
 					if (pis.getLBR_TaxAmt() != null) {
-						if (rmaTaxList.containsKey(MLBRTax.TAX_GROUP_PIS)) {
-							MRMATax newOTax = rmaTaxList.get(MLBRTax.TAX_GROUP_PIS);
+						if (rmaTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_PIS_NAME))) {
+							MRMATax newOTax = rmaTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_PIS_NAME));
 							newOTax.setIsTaxIncluded(pis.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(pis.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(pis.getLBR_TaxAmt()));
@@ -738,8 +775,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					MLBRDocLineCOFINS cofins = cofinsLines[0];
 					
 					if (cofins.getLBR_TaxAmt() != null) {
-						if (rmaTaxList.containsKey(MLBRTax.TAX_GROUP_COFINS)) {
-							MRMATax newOTax = rmaTaxList.get(MLBRTax.TAX_GROUP_COFINS);
+						if (rmaTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_COFINS_NAME))) {
+							MRMATax newOTax = rmaTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_COFINS_NAME));
 							newOTax.setIsTaxIncluded(cofins.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(cofins.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(cofins.getLBR_TaxAmt()));
@@ -756,8 +793,8 @@ public class DefaultTaxProvider implements ITaxProvider {
 					MLBRDocLineImportTax importTax = importTaxLines[0];
 					
 					if (importTax.getLBR_TaxAmt() != null) {
-						if (rmaTaxList.containsKey(MLBRTax.TAX_GROUP_II)) {
-							MRMATax newOTax = rmaTaxList.get(MLBRTax.TAX_GROUP_II);
+						if (rmaTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_II_NAME))) {
+							MRMATax newOTax = rmaTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_II_NAME));
 							newOTax.setIsTaxIncluded(importTax.isTaxIncluded());
 							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(importTax.getLBR_TaxBaseAmt()));
 							newOTax.setTaxAmt(newOTax.getTaxAmt().add(importTax.getLBR_TaxAmt()));
@@ -765,6 +802,24 @@ public class DefaultTaxProvider implements ITaxProvider {
 						
 						if (!importTax.isTaxIncluded())
 							grandTotal = grandTotal.add(importTax.getLBR_TaxAmt());
+					}
+				}
+				
+				// ISSQN
+				MLBRDocLineISSQN[] issqnLines = MLBRDocLineISSQN.getOfDetails(details);
+				if (issqnLines.length > 0) {
+					MLBRDocLineISSQN issqn = issqnLines[0];
+					
+					if (issqn.getLBR_TaxAmt() != null) {
+						if (rmaTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME))) {
+							MRMATax newOTax = rmaTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME));
+							newOTax.setIsTaxIncluded(issqn.isTaxIncluded());
+							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(issqn.getLBR_TaxBaseAmt()));
+							newOTax.setTaxAmt(newOTax.getTaxAmt().add(issqn.getLBR_TaxAmt()));
+						}
+						
+						if (!issqn.isTaxIncluded())
+							grandTotal = grandTotal.add(issqn.getLBR_TaxAmt());
 					}
 				}
 			}

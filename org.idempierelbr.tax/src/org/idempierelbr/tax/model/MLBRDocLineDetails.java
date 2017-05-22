@@ -225,10 +225,10 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				X_LBR_TaxStatus taxStatus = new X_LBR_TaxStatus(getCtx(), tl.getLBR_TaxStatus_ID(), get_TrxName());
 
 				// Some taxes requires Tax Status
-				if ((taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMS ||
-						taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_IPI ||
-						taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_PIS ||
-						taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_COFINS) &&					
+				if ((taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME) ||
+						taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IPI_NAME) ||
+						taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_PIS_NAME) ||
+						taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_COFINS_NAME)) &&					
 						(taxStatus.getName() == null || taxStatus.getName().isEmpty())) {
 					log.warning("Couldn't find a valid Tax Status for " + tl + ". An entry won't be created.");
 					continue;
@@ -257,27 +257,31 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				}
 				
 				// ICMS or ICMS-ST
-				if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMS ||
-						taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMSST) {
+				if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME) ||
+						taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME)) {
 					
 					createICMS(taxStatus.getName(), taxBaseTypeCode, tl, product, taxChildW, 
 							C_BPartner_ID, C_BPartnerLocationTo_ID, LBR_TransactionType, dateDoc);
 				} 
 				// IPI
-				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_IPI) {
+				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IPI_NAME)) {
 					createIPI(taxStatus.getName(), tl);
 				}
 				// PIS
-				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_PIS) {
+				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_PIS_NAME)) {
 					createPIS(taxStatus.getName(), tl);
 				}
 				// COFINS
-				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_COFINS) {
+				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_COFINS_NAME)) {
 					createCOFINS(taxStatus.getName(), tl);
 				}
 				// Import Tax
-				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_II) {
+				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_II_NAME)) {
 					createImportTax(tl);
+				}
+				// ISSQN
+				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME)) {
+					createISSQN(tl);
 				}
 			}
 		}
@@ -323,7 +327,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		if (taxStatus == null || (taxStatus != null && taxStatus.isEmpty()))
 			taxStatus = icms.getLBR_ICMS_TaxStatusTN();
 		
-		if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMS && TextUtil.match (taxStatus,
+		if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME) && TextUtil.match (taxStatus,
 				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSTN_00_TributadaIntegralmente,
 				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSTN_10_TributadaEComCobrancaDoICMSPorSubTributaria,
 				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSTN_20_ComReducaoDeBaseDeCalculo,
@@ -363,15 +367,15 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSSN_900_Outros)) {
 				
 			if (tl.getLBR_TaxBase() != null && tl.getLBR_TaxBase().signum() == 1) {
-				if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMS)
+				if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME))
 					icms.setLBR_TaxBase(tl.getLBR_TaxBase());
-				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMSST)
+				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME))
 					icms.setLBR_ICMSST_TaxBase(tl.getLBR_TaxBase());
 			}
 		}
 		
 		//	ICMS-ST
-		if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMSST && TextUtil.match (taxStatus,
+		if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME) && TextUtil.match (taxStatus,
 				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSTN_10_TributadaEComCobrancaDoICMSPorSubTributaria,
 				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSTN_30_IsentaOuNao_TribEComCobrDoICMSPorSubTribut,
 				MLBRDocLineICMS.LBR_ICMS_TAXSTATUSTN_70_ComRedDeBaseDeCalcECobrDoICMSPorSubTrib,
@@ -448,7 +452,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				&& LBR_TransactionType.equals("END")
 				&& getLBR_CFOP_ID() > 0
 				&& getLBR_CFOP().getValue().startsWith("6")
-				&& taxChildW.getLBR_TaxGroup_ID() == MLBRTax.TAX_GROUP_ICMS) {
+				&& taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME)) {
 		
 			// do calc 
 			calculateDIFAL(icms, C_BPartnerLocationTo_ID, dateDoc, tl);
@@ -747,6 +751,24 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		ii.setLBR_TaxBaseAmt(tl.getLBR_TaxBaseAmt());
 		ii.setLBR_TaxAmt(tl.getLBR_TaxAmt());
 		ii.saveEx();
+	}	
+
+	/**
+	 * 	Create ISSQN (child of Doc Line Details)
+	 */
+	private void createISSQN(MLBRTaxLine tl) {
+		MLBRDocLineISSQN[] issqnArray = MLBRDocLineISSQN.getOfDetails(this);
+		MLBRDocLineISSQN issqn = new MLBRDocLineISSQN(getCtx(), 0, get_TrxName());
+		
+		if (issqnArray.length > 0)
+			issqn = issqnArray[0];
+
+		issqn.setAD_Org_ID(getAD_Org_ID());
+		issqn.setLBR_DocLine_Details_ID(get_ID());
+		issqn.setIsTaxIncluded(tl.isTaxIncluded());
+		issqn.setLBR_TaxBaseAmt(tl.getLBR_TaxBaseAmt());
+		issqn.setLBR_TaxAmt(tl.getLBR_TaxAmt());
+		issqn.saveEx();
 	}	
 
 	/**

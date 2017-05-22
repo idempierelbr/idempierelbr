@@ -104,13 +104,15 @@ public class MLBRTax extends X_LBR_Tax
 	public static final int TYPE_LIST_NEGATIVE 	= 106;
 	
 	/**	Tax Group IDs	*/
-	public static final int TAX_GROUP_ICMS	 	= 1000000;
-	public static final int TAX_GROUP_PIS 		= 1000001;
-	public static final int TAX_GROUP_COFINS	= 1000002;
-	public static final int TAX_GROUP_IPI 		= 1000003;
-	public static final int TAX_GROUP_II	 	= 1000004;
-	public static final int TAX_GROUP_IR	 	= 1000005;
-	public static final int TAX_GROUP_ICMSST 	= 1000006;
+	private static Map<String, Integer> taxGroups = null;
+	public static final String TAX_GROUP_ICMS_NAME	 	= "ICMS";
+	public static final String TAX_GROUP_PIS_NAME 		= "PIS";
+	public static final String TAX_GROUP_COFINS_NAME	= "COFINS";
+	public static final String TAX_GROUP_IPI_NAME 		= "IPI";
+	public static final String TAX_GROUP_II_NAME	 	= "II";
+	public static final String TAX_GROUP_IR_NAME	 	= "IR";
+	public static final String TAX_GROUP_ICMSST_NAME 	= "ICMSST";
+	public static final String TAX_GROUP_ISSQN_NAME 	= "ISSQN";
 	
 	/**	Included Taxes	*/
 	private List<Integer> includedTaxes = new ArrayList<Integer>();
@@ -973,6 +975,28 @@ public class MLBRTax extends X_LBR_Tax
 			taxes.put (tl.getLBR_TaxName_ID(), tl.copy(ctx, trxName));
 		}
 	}	//	processTaxes
+	
+	public static int getTaxGroupID(String taxGroupName) {
+		if (taxGroupName == null)
+			return 0;
+		
+		taxGroupName = taxGroupName.toUpperCase();
+		
+		if (taxGroups == null || !taxGroups.containsKey(taxGroupName)) {
+			taxGroups = new HashMap<String, Integer>();
+			
+			MLBRTaxGroup[] groups = MLBRTaxGroup.getAll();
+			
+			for (MLBRTaxGroup group : groups) {
+				taxGroups.put(group.getName().toUpperCase(), group.get_ID());
+			}
+		}
+		
+		if (taxGroups.containsKey(taxGroupName))
+			return taxGroups.get(taxGroupName);
+		
+		return 0;
+	}
 	
 	/**
 	 * 	To String

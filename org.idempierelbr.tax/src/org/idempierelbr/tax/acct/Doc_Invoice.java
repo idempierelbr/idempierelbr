@@ -51,6 +51,7 @@ import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
 import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
 import org.idempierelbr.tax.model.MLBRDocLineICMS;
 import org.idempierelbr.tax.model.MLBRDocLineIPI;
+import org.idempierelbr.tax.model.MLBRDocLineISSQN;
 import org.idempierelbr.tax.model.MLBRDocLineImportTax;
 import org.idempierelbr.tax.model.MLBRDocLinePIS;
 import org.idempierelbr.tax.model.MLBRTax;
@@ -225,7 +226,7 @@ public class Doc_Invoice extends Doc
 							for (int t = 0; t < m_taxes.length; t++)
 							{
 								MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
-								if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.TAX_GROUP_ICMS)
+								if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME))
 								{
 									m_taxes[t].addIncludedTax(icms.getLBR_TaxAmt());
 									break;
@@ -243,7 +244,7 @@ public class Doc_Invoice extends Doc
 							for (int t = 0; t < m_taxes.length; t++)
 							{
 								MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
-								if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.TAX_GROUP_ICMSST)
+								if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME))
 								{
 									m_taxes[t].addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
 									break;
@@ -266,7 +267,7 @@ public class Doc_Invoice extends Doc
 							for (int t = 0; t < m_taxes.length; t++)
 							{
 								MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
-								if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.TAX_GROUP_ICMSST)
+								if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IPI_NAME))
 								{
 									m_taxes[t].addIncludedTax(ipi.getLBR_TaxAmt());
 									break;
@@ -289,7 +290,7 @@ public class Doc_Invoice extends Doc
 							for (int t = 0; t < m_taxes.length; t++)
 							{
 								MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
-								if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.TAX_GROUP_ICMSST)
+								if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_PIS_NAME))
 								{
 									m_taxes[t].addIncludedTax(pis.getLBR_TaxAmt());
 									break;
@@ -312,7 +313,7 @@ public class Doc_Invoice extends Doc
 							for (int t = 0; t < m_taxes.length; t++)
 							{
 								MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
-								if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.TAX_GROUP_ICMSST)
+								if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_COFINS_NAME))
 								{
 									m_taxes[t].addIncludedTax(cofins.getLBR_TaxAmt());
 									break;
@@ -335,9 +336,32 @@ public class Doc_Invoice extends Doc
 							for (int t = 0; t < m_taxes.length; t++)
 							{
 								MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
-								if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.TAX_GROUP_ICMSST)
+								if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_II_NAME))
 								{
 									m_taxes[t].addIncludedTax(importTax.getLBR_TaxAmt());
+									break;
+								}
+							}
+						}
+					}
+				}
+				
+				// ISSQN
+				MLBRDocLineISSQN[] issqnLines = MLBRDocLineISSQN.getOfDetails(details);
+				if (issqnLines.length > 0) {
+					MLBRDocLineISSQN issqn = issqnLines[0];
+					
+					if (issqn.getLBR_TaxAmt() != null) {
+						
+						if (!issqn.isTaxIncluded())
+							lineTaxAmt = lineTaxAmt.add(issqn.getLBR_TaxAmt());
+						else {
+							for (int t = 0; t < m_taxes.length; t++)
+							{
+								MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+								if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME))
+								{
+									m_taxes[t].addIncludedTax(issqn.getLBR_TaxAmt());
 									break;
 								}
 							}
