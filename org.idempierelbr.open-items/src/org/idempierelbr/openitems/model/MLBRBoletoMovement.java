@@ -196,6 +196,10 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 	 * @return
 	 */
 	public static MLBRBoletoMovement createNewMovement( Properties ctx, MLBRBoleto boleto, String cobMovCode, String trxName ) {
+		// Somente boletos já registrados podem receber instruções
+		if (!boleto.isRegistered())
+			throw new AdempiereException("Somente boletos já registrados no banco podem receber instruções");
+		
 		MLBRBoletoMovement newMov = new MLBRBoletoMovement( ctx , 0 , trxName);
 		newMov.setAD_Org_ID(boleto.getAD_Org_ID());
 		newMov.setLBR_Boleto_ID(boleto.get_ID());

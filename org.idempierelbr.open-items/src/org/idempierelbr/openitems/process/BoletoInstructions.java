@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
+import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MInvoice;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
@@ -63,20 +64,25 @@ public class BoletoInstructions extends SvrProcess {
 				// baixa de título protestado
 				movcode = "10";
 			
-			MLBRBoletoMovement newMov = MLBRBoletoMovement.createNewMovement(getCtx(), boleto, movcode, get_TrxName());
-			newMov.saveEx();
-			addLog( new StringBuilder(Msg.getMsg(getCtx(), "DocProcessed"))
+			StringBuilder logMsg = new StringBuilder(Msg.getMsg(getCtx(), "DocProcessed"))
 					.append(": ")
 					.append(Msg.getElement(getCtx(), "LBR_Boleto_ID"))
 					.append(" ")
 					.append(boleto.getDocumentNo())
-					.append(", ")
-					.append("Movimento")
+					.append(", ");
+			try {
+				MLBRBoletoMovement newMov = MLBRBoletoMovement.createNewMovement(getCtx(), boleto, movcode, get_TrxName());
+				newMov.saveEx();
+				logMsg.append("Movimento")
 					.append(" ")
-					.append(newMov.getLBR_Cob_Movimento().getName()
-							).toString() );
-
+					.append(newMov.getLBR_Cob_Movimento().getName());
+			} catch (AdempiereException e) {
+				logMsg.append("NÃO COMANDADA: " + e.getMessage());
+			}
+			
+			addLog(logMsg.toString());
 		}
+		
 		return "Ok";
 	}
 

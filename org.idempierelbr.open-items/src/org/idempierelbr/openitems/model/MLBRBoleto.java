@@ -390,6 +390,35 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 		return false;
 	}
 	
+	public boolean isRegistered() {
+		StringBuffer sql = new StringBuffer("SELECT LBR_BoletoMovement_ID FROM LBR_BoletoMovement bm ")
+			.append("LEFT JOIN LBR_Boleto b ON (b.LBR_Boleto_ID=bm.LBR_Boleto_ID) ")
+			.append("LEFT JOIN LBR_Cob_Movimento cm ON (cm.LBR_Cob_Movimento_ID=bm.LBR_Cob_Movimento_ID) ")
+			.append("WHERE cm.Value='02' ") // 02 - Entrada Confirmada 
+			.append(" AND bm.LBR_CNAB240MovementType='2' ") // 2 - Retorno (Banco -> Cliente)
+			.append(" AND b.LBR_IsBaixado='N'") // Não Baixado
+			.append(" AND b.LBR_Boleto_ID=?");
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try	{
+			pstmt = DB.prepareStatement (sql.toString(), get_TrxName());
+			pstmt.setInt (1, get_ID());
+			rs = pstmt.executeQuery ();
+			
+			if (rs.next())
+				return true;
+		} catch (Exception e)	{
+			log.log(Level.SEVERE, sql.toString(), e);
+		} finally {
+			DB.close(rs, pstmt);
+			rs = null; pstmt = null;
+		}
+		
+		return false;
+	}
+	
 	/**
 	 * 	Add to Description
 	 *	@param description text
