@@ -20463,10 +20463,10 @@ Para personalizações, copie a entidade e selecione "Usuário"!</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="2870" trl="Y">
-  <value column="Name" original="Sales Tax">Imposto sobre Venda</value>
-  <value column="PrintName" original="Sales Tax">Imposto sobre Venda</value>
-  <value column="Description" original="This is a sales tax (i.e. not a value added tax)">Isto é um imposto sobre venda (i.e. não é um Imposto sobre o Valor Agregado)</value>
-  <value column="Help" original="If selected AP tax is handled as expense, otherwise it is handled as a VAT credit.">Se selecionado, o imposto AP é manipulado como despesa, de outro modo será tratado como um crédito de IVA (VAT).</value>
+  <value column="Name" original="Sales Tax">Imposto não Recuperável</value>
+  <value column="PrintName" original="Sales Tax">Imposto não Recuperável</value>
+  <value column="Description" original="This is a sales tax (i.e. not a value added tax)">Indica se o imposto é recuperável ou não</value>
+  <value column="Help" original="If selected AP tax is handled as expense, otherwise it is handled as a VAT credit."/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
   <value column="PO_Name" original=""/>
