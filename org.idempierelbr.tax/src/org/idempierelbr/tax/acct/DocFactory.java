@@ -8,6 +8,9 @@ import org.adempiere.base.DefaultDocumentFactory;
 import org.adempiere.base.IDocFactory;
 import org.compiere.acct.Doc;
 import org.compiere.model.MAcctSchema;
+import org.compiere.model.MInOut;
+import org.compiere.model.MInvoice;
+import org.compiere.model.MMatchPO;
 import org.compiere.model.MTable;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
@@ -59,8 +62,12 @@ public class DocFactory implements IDocFactory {
 		Doc doc = null;
 		String tableName = MTable.getTableName(Env.getCtx(), AD_Table_ID);
 		
-		if (tableName.equals("C_Invoice")) {
+		if (tableName.equals(MInvoice.Table_Name)) {
 			doc = new Doc_Invoice(as, rs, trxName);
+		} else if (tableName.equals(MInOut.Table_Name)) {
+			doc = new Doc_InOut(as, rs, trxName);
+		} else if (tableName.equals(MMatchPO.Table_Name)) {
+			doc = new Doc_MatchPO(as, rs, trxName);
 		}
 		
 		return doc;
