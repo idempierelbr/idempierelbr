@@ -207,7 +207,7 @@ public class EventHandler extends AbstractEventHandler {
 				MPayment p = new MPayment(po.getCtx(), C_Payment_ID, po.get_TrxName());
 
 				// Invoice Pay Schedule
-				if (al.getC_Invoice_ID() > 0)
+				if (al.getC_Invoice_ID() > 0  && p.get_ValueAsInt("C_InvoicePaySchedule_ID") > 0)
 					al.set_ValueOfColumn("C_InvoicePaySchedule_ID", (Integer)p.get_Value("C_InvoicePaySchedule_ID"));
 			}
 		}
