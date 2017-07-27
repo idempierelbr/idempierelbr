@@ -23,6 +23,7 @@ import java.sql.SQLException;
 import java.sql.Savepoint;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -91,6 +92,8 @@ public class Doc_Invoice extends Doc
 	protected boolean			m_allLinesService = true;
 	/** All lines are product item		*/
 	protected boolean			m_allLinesItem = true;
+	/** LBR							    */
+	protected DocTax[]        m_LBRTaxes = null;
 
 	/**
 	 *  Load Specific Document Details
@@ -292,260 +295,6 @@ public class Doc_Invoice extends Doc
 		//	Return Array
 		return dls;
 	}	//	loadLines
-	
-	private BigDecimal adjustIncludedLBRTaxes(MInvoiceLine line, BigDecimal lineNetAmt) {
-		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
-		
-		if (details != null) {
-			// ICMS and ICMS-ST
-			MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(details);
-			if (icmsLines.length > 0) {
-				MLBRDocLineICMS icms = icmsLines[0];
-				
-				// ICMS
-				if (icms.getLBR_TaxAmt() != null) {
-					for (int t = 0; t < m_taxes.length; t++) {
-						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
-						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME))	{
-							m_taxes[t] = getUpdatedDocTax(m_taxes[t], line);
-							
-							if (isSOTrx()) {
-								if (icms.isTaxIncluded())
-									m_taxes[t].addIncludedTax(icms.getLBR_TaxAmt());
-								else
-									lineNetAmt = lineNetAmt.add(icms.getLBR_TaxAmt());
-							} else {
-								if (!tax.isSalesTax())
-									lineNetAmt = lineNetAmt.subtract(icms.getLBR_TaxAmt());
-								
-								if (!icms.isTaxIncluded())
-									lineNetAmt = lineNetAmt.add(icms.getLBR_TaxAmt());
-								
-								if (tax.isSalesTax() || icms.isTaxIncluded())
-									m_taxes[t].addIncludedTax(icms.getLBR_TaxAmt());
-							}
-							
-							break;
-						}
-					}
-				}
-				
-				// ICMS-ST
-				if (icms.getLBR_ICMSST_TaxAmt() != null) {
-					for (int t = 0; t < m_taxes.length; t++) {
-						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
-						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME))	{
-							m_taxes[t] = getUpdatedDocTax(m_taxes[t], line);
-							
-							if (isSOTrx()) {
-								if (icms.isLBR_ICMSST_IsTaxIncluded())
-									m_taxes[t].addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
-								else
-									lineNetAmt = lineNetAmt.add(icms.getLBR_ICMSST_TaxAmt());
-							} else {
-								if (!tax.isSalesTax())
-									lineNetAmt = lineNetAmt.subtract(icms.getLBR_ICMSST_TaxAmt());
-								
-								if (!icms.isLBR_ICMSST_IsTaxIncluded())
-									lineNetAmt = lineNetAmt.add(icms.getLBR_ICMSST_TaxAmt());
-								
-								if (tax.isSalesTax() || icms.isLBR_ICMSST_IsTaxIncluded())
-									m_taxes[t].addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
-							}
-							
-							break;
-						}
-					}
-				}
-			}
-			
-			// IPI
-			MLBRDocLineIPI[] ipiLines = MLBRDocLineIPI.getOfDetails(details);
-			if (ipiLines.length > 0) {
-				MLBRDocLineIPI ipi = ipiLines[0];
-				
-				if (ipi.getLBR_TaxAmt() != null) {
-					for (int t = 0; t < m_taxes.length; t++) {
-						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
-						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IPI_NAME))	{
-							m_taxes[t] = getUpdatedDocTax(m_taxes[t], line);
-							
-							if (isSOTrx()) {
-								if (ipi.isTaxIncluded())
-									m_taxes[t].addIncludedTax(ipi.getLBR_TaxAmt());
-								else
-									lineNetAmt = lineNetAmt.add(ipi.getLBR_TaxAmt());
-							} else {
-								if (!tax.isSalesTax())
-									lineNetAmt = lineNetAmt.subtract(ipi.getLBR_TaxAmt());
-								
-								if (!ipi.isTaxIncluded())
-									lineNetAmt = lineNetAmt.add(ipi.getLBR_TaxAmt());
-								
-								if (tax.isSalesTax() || ipi.isTaxIncluded())
-									m_taxes[t].addIncludedTax(ipi.getLBR_TaxAmt());
-							}	
-							
-							break;
-						}
-					}
-				}
-			}
-			
-			// PIS
-			MLBRDocLinePIS[] pisLines = MLBRDocLinePIS.getOfDetails(details);
-			if (pisLines.length > 0) {
-				MLBRDocLinePIS pis = pisLines[0];
-				
-				if (pis.getLBR_TaxAmt() != null) {
-					for (int t = 0; t < m_taxes.length; t++) {
-						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
-						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_PIS_NAME))	{
-							m_taxes[t] = getUpdatedDocTax(m_taxes[t], line);
-							
-							if (isSOTrx()) {
-								if (pis.isTaxIncluded())
-									m_taxes[t].addIncludedTax(pis.getLBR_TaxAmt());
-								else
-									lineNetAmt = lineNetAmt.add(pis.getLBR_TaxAmt());							
-							} else {
-								if (!tax.isSalesTax())
-									lineNetAmt = lineNetAmt.subtract(pis.getLBR_TaxAmt());
-								
-								if (!pis.isTaxIncluded())
-									lineNetAmt = lineNetAmt.add(pis.getLBR_TaxAmt());
-								
-								if (tax.isSalesTax() || pis.isTaxIncluded())
-									m_taxes[t].addIncludedTax(pis.getLBR_TaxAmt());
-							}
-							
-							break;
-						}
-					}
-				}
-			}
-			
-			// COFINS
-			MLBRDocLineCOFINS[] cofinsLines = MLBRDocLineCOFINS.getOfDetails(details);
-			if (cofinsLines.length > 0) {
-				MLBRDocLineCOFINS cofins = cofinsLines[0];
-				
-				if (cofins.getLBR_TaxAmt() != null) {
-					for (int t = 0; t < m_taxes.length; t++) {
-						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
-						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_COFINS_NAME))	{
-							m_taxes[t] = getUpdatedDocTax(m_taxes[t], line);
-							
-							if (isSOTrx()) {
-								if (cofins.isTaxIncluded())
-									m_taxes[t].addIncludedTax(cofins.getLBR_TaxAmt());
-								else
-									lineNetAmt = lineNetAmt.add(cofins.getLBR_TaxAmt());							
-							} else {
-								if (!tax.isSalesTax())
-									lineNetAmt = lineNetAmt.subtract(cofins.getLBR_TaxAmt());
-								
-								if (!cofins.isTaxIncluded())
-									lineNetAmt = lineNetAmt.add(cofins.getLBR_TaxAmt());
-								
-								if (tax.isSalesTax() || cofins.isTaxIncluded())
-									m_taxes[t].addIncludedTax(cofins.getLBR_TaxAmt());
-							}
-							
-							break;
-						}
-					}
-				}
-			}
-			
-			// II
-			MLBRDocLineImportTax[] iiLines = MLBRDocLineImportTax.getOfDetails(details);
-			if (iiLines.length > 0) {
-				MLBRDocLineImportTax ii = iiLines[0];
-				
-				if (ii.getLBR_TaxAmt() != null) {
-					for (int t = 0; t < m_taxes.length; t++) {
-						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
-						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_II_NAME)) {
-							m_taxes[t] = getUpdatedDocTax(m_taxes[t], line);
-							
-							if (isSOTrx()) {
-								if (ii.isTaxIncluded())
-									m_taxes[t].addIncludedTax(ii.getLBR_TaxAmt());
-								else
-									lineNetAmt = lineNetAmt.add(ii.getLBR_TaxAmt());
-							} else {
-								if (!tax.isSalesTax())
-									lineNetAmt = lineNetAmt.subtract(ii.getLBR_TaxAmt());
-								
-								if (!ii.isTaxIncluded())
-									lineNetAmt = lineNetAmt.add(ii.getLBR_TaxAmt());
-								
-								if (tax.isSalesTax() || ii.isTaxIncluded())
-									m_taxes[t].addIncludedTax(ii.getLBR_TaxAmt());
-							}
-							
-							break;
-						}
-					}
-				}
-			}
-			
-			// ISSQN
-			MLBRDocLineISSQN[] issqnLines = MLBRDocLineISSQN.getOfDetails(details);
-			if (issqnLines.length > 0) {
-				MLBRDocLineISSQN issqn = issqnLines[0];
-				
-				if (issqn.getLBR_TaxAmt() != null) {
-					for (int t = 0; t < m_taxes.length; t++) {
-						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
-						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME))	{
-							m_taxes[t] = getUpdatedDocTax(m_taxes[t], line);
-							
-							if (isSOTrx()) {
-								if (issqn.isTaxIncluded())
-									m_taxes[t].addIncludedTax(issqn.getLBR_TaxAmt());
-								else
-									lineNetAmt = lineNetAmt.add(issqn.getLBR_TaxAmt());							
-							} else {
-								if (!tax.isSalesTax())
-									lineNetAmt = lineNetAmt.subtract(issqn.getLBR_TaxAmt());
-								
-								if (!issqn.isTaxIncluded())
-									lineNetAmt = lineNetAmt.add(issqn.getLBR_TaxAmt());
-								
-								if (tax.isSalesTax() || issqn.isTaxIncluded())
-									m_taxes[t].addIncludedTax(issqn.getLBR_TaxAmt());
-							}
-							
-							break;
-						}
-					}
-				}
-			}
-		}
-		
-		return lineNetAmt;
-	}
-	
-	public DocTax getUpdatedDocTax(DocTax docTax, MInvoiceLine line) {
-		if (line.getM_Product_ID() > 0)
-			docTax.setM_Product_ID(line.getM_Product_ID());
-		if (line.getC_Project_ID() > 0)
-			docTax.setC_Project_ID(line.getC_Project_ID());
-		if (line.getC_Activity_ID() > 0)
-			docTax.setC_Activity_ID(line.getC_Activity_ID());
-		if (line.getC_Campaign_ID() > 0)
-			docTax.setC_Campaign_ID(line.getC_Campaign_ID());
-		if (line.getUser1_ID() > 0)
-			docTax.setUser1_ID(line.getUser1_ID());
-		if (line.getUser2_ID() > 0)
-			docTax.setUser2_ID(line.getUser2_ID());
-		if (line.getA_Asset_ID() > 0)
-			docTax.setA_Asset_ID(line.getA_Asset_ID());
-
-		return docTax;
-	}
 
 	/**
 	 * 	Get Currency Precision
@@ -646,43 +395,43 @@ public class Doc_Invoice extends Doc
 				fact.createLine(null, getAccount(Doc.ACCTTYPE_Charge, as),
 					getC_Currency_ID(), null, amt);
 			//  TaxDue                  CR
-			for (int i = 0; i < m_taxes.length; i++)
+			for (int i = 0; i < m_LBRTaxes.length; i++)
 			{
-				amt = m_taxes[i].getAmount();
+				amt = m_LBRTaxes[i].getAmount();
 				if (amt != null && amt.signum() != 0)
 				{
-					FactLine tl = fact.createLine(null, m_taxes[i].getAccount(DocTax.ACCTTYPE_TaxDue, as),
+					FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxDue, as),
 						getC_Currency_ID(), null, amt);
 					if (tl != null) {
-						tl.setC_Tax_ID(m_taxes[i].getC_Tax_ID());
-						tl.setM_Product_ID(m_taxes[i].getM_Product_ID());
-						tl.setC_Project_ID(m_taxes[i].getC_Project_ID());
-						tl.setC_Activity_ID(m_taxes[i].getC_Activity_ID());
-						tl.setC_Campaign_ID(m_taxes[i].getC_Campaign_ID());
-						tl.setUser1_ID(m_taxes[i].getUser1_ID());
-						tl.setUser2_ID(m_taxes[i].getUser2_ID());
-						tl.setA_Asset_ID(m_taxes[i].getA_Asset_ID());
+						tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
+						tl.setM_Product_ID(m_LBRTaxes[i].getM_Product_ID());
+						tl.setC_Project_ID(m_LBRTaxes[i].getC_Project_ID());
+						tl.setC_Activity_ID(m_LBRTaxes[i].getC_Activity_ID());
+						tl.setC_Campaign_ID(m_LBRTaxes[i].getC_Campaign_ID());
+						tl.setUser1_ID(m_LBRTaxes[i].getUser1_ID());
+						tl.setUser2_ID(m_LBRTaxes[i].getUser2_ID());
+						tl.setA_Asset_ID(m_LBRTaxes[i].getA_Asset_ID());
 					}
 				}
 			}
 			//  LBR: TaxExpense			DR
-			for (int i = 0; i < m_taxes.length; i++)
+			for (int i = 0; i < m_LBRTaxes.length; i++)
 			{
-				if (m_taxes[i].getIncludedTax() != null && m_taxes[i].getIncludedTax().signum() == 1) {
-					amt = m_taxes[i].getAmount();
+				if (m_LBRTaxes[i].getIncludedTax() != null && m_LBRTaxes[i].getIncludedTax().signum() == 1) {
+					amt = m_LBRTaxes[i].getAmount();
 					if (amt != null && amt.signum() != 0)
 					{
-						FactLine tl = fact.createLine(null, m_taxes[i].getAccount(DocTax.ACCTTYPE_TaxExpense, as),
-								getC_Currency_ID(), m_taxes[i].getAmount(), null);
+						FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxExpense, as),
+								getC_Currency_ID(), m_LBRTaxes[i].getAmount(), null);
 						if (tl != null) {
-							tl.setC_Tax_ID(m_taxes[i].getC_Tax_ID());
-							tl.setM_Product_ID(m_taxes[i].getM_Product_ID());
-							tl.setC_Project_ID(m_taxes[i].getC_Project_ID());
-							tl.setC_Activity_ID(m_taxes[i].getC_Activity_ID());
-							tl.setC_Campaign_ID(m_taxes[i].getC_Campaign_ID());
-							tl.setUser1_ID(m_taxes[i].getUser1_ID());
-							tl.setUser2_ID(m_taxes[i].getUser2_ID());
-							tl.setA_Asset_ID(m_taxes[i].getA_Asset_ID());
+							tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
+							tl.setM_Product_ID(m_LBRTaxes[i].getM_Product_ID());
+							tl.setC_Project_ID(m_LBRTaxes[i].getC_Project_ID());
+							tl.setC_Activity_ID(m_LBRTaxes[i].getC_Activity_ID());
+							tl.setC_Campaign_ID(m_LBRTaxes[i].getC_Campaign_ID());
+							tl.setUser1_ID(m_LBRTaxes[i].getUser1_ID());
+							tl.setUser2_ID(m_LBRTaxes[i].getUser2_ID());
+							tl.setA_Asset_ID(m_LBRTaxes[i].getA_Asset_ID());
 						}
 					}
 				}
@@ -757,43 +506,43 @@ public class Doc_Invoice extends Doc
 				fact.createLine(null, getAccount(Doc.ACCTTYPE_Charge, as),
 					getC_Currency_ID(), amt, null);
 			//  TaxDue          DR
-			for (int i = 0; i < m_taxes.length; i++)
+			for (int i = 0; i < m_LBRTaxes.length; i++)
 			{
-				amt = m_taxes[i].getAmount();
+				amt = m_LBRTaxes[i].getAmount();
 				if (amt != null && amt.signum() != 0)
 				{
-					FactLine tl = fact.createLine(null, m_taxes[i].getAccount(DocTax.ACCTTYPE_TaxDue, as),
+					FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxDue, as),
 						getC_Currency_ID(), amt, null);
 					if (tl != null) {
-						tl.setC_Tax_ID(m_taxes[i].getC_Tax_ID());
-						tl.setM_Product_ID(m_taxes[i].getM_Product_ID());
-						tl.setC_Project_ID(m_taxes[i].getC_Project_ID());
-						tl.setC_Activity_ID(m_taxes[i].getC_Activity_ID());
-						tl.setC_Campaign_ID(m_taxes[i].getC_Campaign_ID());
-						tl.setUser1_ID(m_taxes[i].getUser1_ID());
-						tl.setUser2_ID(m_taxes[i].getUser2_ID());
-						tl.setA_Asset_ID(m_taxes[i].getA_Asset_ID());
+						tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
+						tl.setM_Product_ID(m_LBRTaxes[i].getM_Product_ID());
+						tl.setC_Project_ID(m_LBRTaxes[i].getC_Project_ID());
+						tl.setC_Activity_ID(m_LBRTaxes[i].getC_Activity_ID());
+						tl.setC_Campaign_ID(m_LBRTaxes[i].getC_Campaign_ID());
+						tl.setUser1_ID(m_LBRTaxes[i].getUser1_ID());
+						tl.setUser2_ID(m_LBRTaxes[i].getUser2_ID());
+						tl.setA_Asset_ID(m_LBRTaxes[i].getA_Asset_ID());
 					}
 				}
 			}
 			//  LBR: TaxExpense	CR
-			for (int i = 0; i < m_taxes.length; i++)
+			for (int i = 0; i < m_LBRTaxes.length; i++)
 			{
-				if (m_taxes[i].getIncludedTax() != null && m_taxes[i].getIncludedTax().signum() == 1) {
-					amt = m_taxes[i].getAmount();
+				if (m_LBRTaxes[i].getIncludedTax() != null && m_LBRTaxes[i].getIncludedTax().signum() == 1) {
+					amt = m_LBRTaxes[i].getAmount();
 					if (amt != null && amt.signum() != 0)
 					{
-						FactLine tl = fact.createLine(null, m_taxes[i].getAccount(DocTax.ACCTTYPE_TaxExpense, as),
-								getC_Currency_ID(), null, m_taxes[i].getAmount());
+						FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxExpense, as),
+								getC_Currency_ID(), null, m_LBRTaxes[i].getAmount());
 						if (tl != null) {
-							tl.setC_Tax_ID(m_taxes[i].getC_Tax_ID());
-							tl.setM_Product_ID(m_taxes[i].getM_Product_ID());
-							tl.setC_Project_ID(m_taxes[i].getC_Project_ID());
-							tl.setC_Activity_ID(m_taxes[i].getC_Activity_ID());
-							tl.setC_Campaign_ID(m_taxes[i].getC_Campaign_ID());
-							tl.setUser1_ID(m_taxes[i].getUser1_ID());
-							tl.setUser2_ID(m_taxes[i].getUser2_ID());
-							tl.setA_Asset_ID(m_taxes[i].getA_Asset_ID());
+							tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
+							tl.setM_Product_ID(m_LBRTaxes[i].getM_Product_ID());
+							tl.setC_Project_ID(m_LBRTaxes[i].getC_Project_ID());
+							tl.setC_Activity_ID(m_LBRTaxes[i].getC_Activity_ID());
+							tl.setC_Campaign_ID(m_LBRTaxes[i].getC_Campaign_ID());
+							tl.setUser1_ID(m_LBRTaxes[i].getUser1_ID());
+							tl.setUser2_ID(m_LBRTaxes[i].getUser2_ID());
+							tl.setA_Asset_ID(m_LBRTaxes[i].getA_Asset_ID());
 						}
 					}
 				}
@@ -866,39 +615,39 @@ public class Doc_Invoice extends Doc
 			fact.createLine(null, getAccount(Doc.ACCTTYPE_Charge, as),
 				getC_Currency_ID(), getAmount(Doc.AMTTYPE_Charge), null);
 			//  TaxCredit       DR
-			for (int i = 0; i < m_taxes.length; i++)
+			for (int i = 0; i < m_LBRTaxes.length; i++)
 			{
-				if (!m_taxes[i].isSalesTax()) {
-					FactLine tl = fact.createLine(null, m_taxes[i].getAccount(m_taxes[i].getAPTaxType(), as),
-						getC_Currency_ID(), m_taxes[i].getAmount(), null);
+				if (!m_LBRTaxes[i].isSalesTax()) {
+					FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(m_LBRTaxes[i].getAPTaxType(), as),
+						getC_Currency_ID(), m_LBRTaxes[i].getAmount(), null);
 					if (tl != null) {
-						tl.setC_Tax_ID(m_taxes[i].getC_Tax_ID());
-						tl.setM_Product_ID(m_taxes[i].getM_Product_ID());
-						tl.setC_Project_ID(m_taxes[i].getC_Project_ID());
-						tl.setC_Activity_ID(m_taxes[i].getC_Activity_ID());
-						tl.setC_Campaign_ID(m_taxes[i].getC_Campaign_ID());
-						tl.setUser1_ID(m_taxes[i].getUser1_ID());
-						tl.setUser2_ID(m_taxes[i].getUser2_ID());
-						tl.setA_Asset_ID(m_taxes[i].getA_Asset_ID());
+						tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
+						tl.setM_Product_ID(m_LBRTaxes[i].getM_Product_ID());
+						tl.setC_Project_ID(m_LBRTaxes[i].getC_Project_ID());
+						tl.setC_Activity_ID(m_LBRTaxes[i].getC_Activity_ID());
+						tl.setC_Campaign_ID(m_LBRTaxes[i].getC_Campaign_ID());
+						tl.setUser1_ID(m_LBRTaxes[i].getUser1_ID());
+						tl.setUser2_ID(m_LBRTaxes[i].getUser2_ID());
+						tl.setA_Asset_ID(m_LBRTaxes[i].getA_Asset_ID());
 					}
 				}
 			}
 			//  LBR: TaxDue		CR
-			for (int i = 0; i < m_taxes.length; i++)
+			for (int i = 0; i < m_LBRTaxes.length; i++)
 			{
-				if (m_taxes[i].isIncludedTaxDifference()) {
-					if (m_taxes[i].isSalesTax()) {
-						FactLine tl = fact.createLine(null, m_taxes[i].getAccount(DocTax.ACCTTYPE_TaxDue, as),
-								getC_Currency_ID(), null, m_taxes[i].getAmount());
+				if (m_LBRTaxes[i].isIncludedTaxDifference()) {
+					if (m_LBRTaxes[i].isSalesTax()) {
+						FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxDue, as),
+								getC_Currency_ID(), null, m_LBRTaxes[i].getAmount());
 						if (tl != null) {
-							tl.setC_Tax_ID(m_taxes[i].getC_Tax_ID());
-							tl.setM_Product_ID(m_taxes[i].getM_Product_ID());
-							tl.setC_Project_ID(m_taxes[i].getC_Project_ID());
-							tl.setC_Activity_ID(m_taxes[i].getC_Activity_ID());
-							tl.setC_Campaign_ID(m_taxes[i].getC_Campaign_ID());
-							tl.setUser1_ID(m_taxes[i].getUser1_ID());
-							tl.setUser2_ID(m_taxes[i].getUser2_ID());
-							tl.setA_Asset_ID(m_taxes[i].getA_Asset_ID());
+							tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
+							tl.setM_Product_ID(m_LBRTaxes[i].getM_Product_ID());
+							tl.setC_Project_ID(m_LBRTaxes[i].getC_Project_ID());
+							tl.setC_Activity_ID(m_LBRTaxes[i].getC_Activity_ID());
+							tl.setC_Campaign_ID(m_LBRTaxes[i].getC_Campaign_ID());
+							tl.setUser1_ID(m_LBRTaxes[i].getUser1_ID());
+							tl.setUser2_ID(m_LBRTaxes[i].getUser2_ID());
+							tl.setA_Asset_ID(m_LBRTaxes[i].getA_Asset_ID());
 						}
 					}
 				}
@@ -1001,41 +750,41 @@ public class Doc_Invoice extends Doc
 			fact.createLine (null, getAccount(Doc.ACCTTYPE_Charge, as),
 				getC_Currency_ID(), null, getAmount(Doc.AMTTYPE_Charge));
 			//  TaxCredit               CR
-			for (int i = 0; i < m_taxes.length; i++)
+			for (int i = 0; i < m_LBRTaxes.length; i++)
 			{
-				if (!m_taxes[i].isSalesTax()) {
-					FactLine tl = fact.createLine (null, m_taxes[i].getAccount(m_taxes[i].getAPTaxType(), as),
-						getC_Currency_ID(), null, m_taxes[i].getAmount());
+				if (!m_LBRTaxes[i].isSalesTax()) {
+					FactLine tl = fact.createLine (null, m_LBRTaxes[i].getAccount(m_LBRTaxes[i].getAPTaxType(), as),
+						getC_Currency_ID(), null, m_LBRTaxes[i].getAmount());
 					if (tl != null) {
-						tl.setC_Tax_ID(m_taxes[i].getC_Tax_ID());
-						tl.setM_Product_ID(m_taxes[i].getM_Product_ID());
-						tl.setC_Project_ID(m_taxes[i].getC_Project_ID());
-						tl.setC_Activity_ID(m_taxes[i].getC_Activity_ID());
-						tl.setC_Campaign_ID(m_taxes[i].getC_Campaign_ID());
-						tl.setUser1_ID(m_taxes[i].getUser1_ID());
-						tl.setUser2_ID(m_taxes[i].getUser2_ID());
-						tl.setA_Asset_ID(m_taxes[i].getA_Asset_ID());
+						tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
+						tl.setM_Product_ID(m_LBRTaxes[i].getM_Product_ID());
+						tl.setC_Project_ID(m_LBRTaxes[i].getC_Project_ID());
+						tl.setC_Activity_ID(m_LBRTaxes[i].getC_Activity_ID());
+						tl.setC_Campaign_ID(m_LBRTaxes[i].getC_Campaign_ID());
+						tl.setUser1_ID(m_LBRTaxes[i].getUser1_ID());
+						tl.setUser2_ID(m_LBRTaxes[i].getUser2_ID());
+						tl.setA_Asset_ID(m_LBRTaxes[i].getA_Asset_ID());
 					}
 				}
 			}
 			//  LBR: TaxDue			DR
-			for (int i = 0; i < m_taxes.length; i++)
+			for (int i = 0; i < m_LBRTaxes.length; i++)
 			{
-				if (m_taxes[i].isIncludedTaxDifference()) {
-					MTax tax = new MTax(getCtx(), m_taxes[i].getC_Tax_ID(), getTrxName());
+				if (m_LBRTaxes[i].isIncludedTaxDifference()) {
+					MTax tax = new MTax(getCtx(), m_LBRTaxes[i].getC_Tax_ID(), getTrxName());
 					
 					if (tax.isSalesTax()) {
-						FactLine tl = fact.createLine(null, m_taxes[i].getAccount(DocTax.ACCTTYPE_TaxDue, as),
-								getC_Currency_ID(), m_taxes[i].getAmount(), null);
+						FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxDue, as),
+								getC_Currency_ID(), m_LBRTaxes[i].getAmount(), null);
 						if (tl != null) {
-							tl.setC_Tax_ID(m_taxes[i].getC_Tax_ID());
-							tl.setM_Product_ID(m_taxes[i].getM_Product_ID());
-							tl.setC_Project_ID(m_taxes[i].getC_Project_ID());
-							tl.setC_Activity_ID(m_taxes[i].getC_Activity_ID());
-							tl.setC_Campaign_ID(m_taxes[i].getC_Campaign_ID());
-							tl.setUser1_ID(m_taxes[i].getUser1_ID());
-							tl.setUser2_ID(m_taxes[i].getUser2_ID());
-							tl.setA_Asset_ID(m_taxes[i].getA_Asset_ID());
+							tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
+							tl.setM_Product_ID(m_LBRTaxes[i].getM_Product_ID());
+							tl.setC_Project_ID(m_LBRTaxes[i].getC_Project_ID());
+							tl.setC_Activity_ID(m_LBRTaxes[i].getC_Activity_ID());
+							tl.setC_Campaign_ID(m_LBRTaxes[i].getC_Campaign_ID());
+							tl.setUser1_ID(m_LBRTaxes[i].getUser1_ID());
+							tl.setUser2_ID(m_LBRTaxes[i].getUser2_ID());
+							tl.setA_Asset_ID(m_LBRTaxes[i].getA_Asset_ID());
 						}
 					}
 				}
@@ -1550,5 +1299,309 @@ public class Doc_Invoice extends Doc
 		int no = DB.executeUpdate(sql.toString(), getTrxName());
 		if (log.isLoggable(Level.FINE)) log.fine("Updated=" + no);
 	}	//	updateProductPO
+	
+	private BigDecimal adjustIncludedLBRTaxes(MInvoiceLine line, BigDecimal lineNetAmt) {
+		ArrayList<DocTax> list = new ArrayList<DocTax>();
+		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
+		
+		if (details != null) {
+			// ICMS and ICMS-ST
+			MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(details);
+			if (icmsLines.length > 0) {
+				MLBRDocLineICMS icms = icmsLines[0];
+				
+				// ICMS
+				if (icms.getLBR_TaxAmt() != null) {
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME))	{
+							DocTax LBRTaxLine = new DocTax(tax.getC_Tax_ID(), tax.getName(), tax.getRate(),
+								icms.getLBR_TaxBaseAmt(), icms.getLBR_TaxAmt(), tax.isSalesTax());
+							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line);
+							
+							if (isSOTrx()) {
+								if (icms.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(icms.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(icms.getLBR_TaxAmt());
+								} else
+									lineNetAmt = lineNetAmt.add(icms.getLBR_TaxAmt());
+							} else {
+								if (!tax.isSalesTax())
+									lineNetAmt = lineNetAmt.subtract(icms.getLBR_TaxAmt());
+								
+								if (!icms.isTaxIncluded())
+									lineNetAmt = lineNetAmt.add(icms.getLBR_TaxAmt());
+								
+								if (tax.isSalesTax() || icms.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(icms.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(icms.getLBR_TaxAmt());
+								}
+							}
+							
+							list.add(LBRTaxLine);
+							break;
+						}
+					}
+				}
+				
+				// ICMS-ST
+				if (icms.getLBR_ICMSST_TaxAmt() != null) {
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME))	{
+							DocTax LBRTaxLine = new DocTax(tax.getC_Tax_ID(), tax.getName(), tax.getRate(),
+									icms.getLBR_ICMSST_TaxBaseAmt(), icms.getLBR_ICMSST_TaxAmt(), tax.isSalesTax());
+							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line);
+							
+							if (isSOTrx()) {
+								if (icms.isLBR_ICMSST_IsTaxIncluded()) {
+									m_taxes[t].addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
+									LBRTaxLine.addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
+								} else
+									lineNetAmt = lineNetAmt.add(icms.getLBR_ICMSST_TaxAmt());
+							} else {
+								if (!tax.isSalesTax())
+									lineNetAmt = lineNetAmt.subtract(icms.getLBR_ICMSST_TaxAmt());
+								
+								if (!icms.isLBR_ICMSST_IsTaxIncluded())
+									lineNetAmt = lineNetAmt.add(icms.getLBR_ICMSST_TaxAmt());
+								
+								if (tax.isSalesTax() || icms.isLBR_ICMSST_IsTaxIncluded()) {
+									m_taxes[t].addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
+									LBRTaxLine.addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
+								}
+							}
+							
+							list.add(LBRTaxLine);
+							break;
+						}
+					}
+				}
+			}
+			
+			// IPI
+			MLBRDocLineIPI[] ipiLines = MLBRDocLineIPI.getOfDetails(details);
+			if (ipiLines.length > 0) {
+				MLBRDocLineIPI ipi = ipiLines[0];
+				
+				if (ipi.getLBR_TaxAmt() != null) {
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IPI_NAME))	{
+							DocTax LBRTaxLine = new DocTax(tax.getC_Tax_ID(), tax.getName(), tax.getRate(),
+									ipi.getLBR_TaxBaseAmt(), ipi.getLBR_TaxAmt(), tax.isSalesTax());
+							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line);
+							
+							if (isSOTrx()) {
+								if (ipi.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(ipi.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(ipi.getLBR_TaxAmt());
+								} else
+									lineNetAmt = lineNetAmt.add(ipi.getLBR_TaxAmt());
+							} else {
+								if (!tax.isSalesTax())
+									lineNetAmt = lineNetAmt.subtract(ipi.getLBR_TaxAmt());
+								
+								if (!ipi.isTaxIncluded())
+									lineNetAmt = lineNetAmt.add(ipi.getLBR_TaxAmt());
+								
+								if (tax.isSalesTax() || ipi.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(ipi.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(ipi.getLBR_TaxAmt());
+								}
+							}	
+							
+							list.add(LBRTaxLine);
+							break;
+						}
+					}
+				}
+			}
+			
+			// PIS
+			MLBRDocLinePIS[] pisLines = MLBRDocLinePIS.getOfDetails(details);
+			if (pisLines.length > 0) {
+				MLBRDocLinePIS pis = pisLines[0];
+				
+				if (pis.getLBR_TaxAmt() != null) {
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_PIS_NAME))	{
+							DocTax LBRTaxLine = new DocTax(tax.getC_Tax_ID(), tax.getName(), tax.getRate(),
+									pis.getLBR_TaxBaseAmt(), pis.getLBR_TaxAmt(), tax.isSalesTax());
+							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line);
+							
+							if (isSOTrx()) {
+								if (pis.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(pis.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(pis.getLBR_TaxAmt());
+								} else
+									lineNetAmt = lineNetAmt.add(pis.getLBR_TaxAmt());							
+							} else {
+								if (!tax.isSalesTax())
+									lineNetAmt = lineNetAmt.subtract(pis.getLBR_TaxAmt());
+								
+								if (!pis.isTaxIncluded())
+									lineNetAmt = lineNetAmt.add(pis.getLBR_TaxAmt());
+								
+								if (tax.isSalesTax() || pis.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(pis.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(pis.getLBR_TaxAmt());
+								}
+							}
+							
+							list.add(LBRTaxLine);
+							break;
+						}
+					}
+				}
+			}
+			
+			// COFINS
+			MLBRDocLineCOFINS[] cofinsLines = MLBRDocLineCOFINS.getOfDetails(details);
+			if (cofinsLines.length > 0) {
+				MLBRDocLineCOFINS cofins = cofinsLines[0];
+				
+				if (cofins.getLBR_TaxAmt() != null) {
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_COFINS_NAME))	{
+							DocTax LBRTaxLine = new DocTax(tax.getC_Tax_ID(), tax.getName(), tax.getRate(),
+									cofins.getLBR_TaxBaseAmt(), cofins.getLBR_TaxAmt(), tax.isSalesTax());
+							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line);
+							
+							if (isSOTrx()) {
+								if (cofins.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(cofins.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(cofins.getLBR_TaxAmt());
+								} else
+									lineNetAmt = lineNetAmt.add(cofins.getLBR_TaxAmt());							
+							} else {
+								if (!tax.isSalesTax())
+									lineNetAmt = lineNetAmt.subtract(cofins.getLBR_TaxAmt());
+								
+								if (!cofins.isTaxIncluded())
+									lineNetAmt = lineNetAmt.add(cofins.getLBR_TaxAmt());
+								
+								if (tax.isSalesTax() || cofins.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(cofins.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(cofins.getLBR_TaxAmt());
+								}
+							}
+							
+							list.add(LBRTaxLine);
+							break;
+						}
+					}
+				}
+			}
+			
+			// II
+			MLBRDocLineImportTax[] iiLines = MLBRDocLineImportTax.getOfDetails(details);
+			if (iiLines.length > 0) {
+				MLBRDocLineImportTax ii = iiLines[0];
+				
+				if (ii.getLBR_TaxAmt() != null) {
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_II_NAME)) {
+							DocTax LBRTaxLine = new DocTax(tax.getC_Tax_ID(), tax.getName(), tax.getRate(),
+									ii.getLBR_TaxBaseAmt(), ii.getLBR_TaxAmt(), tax.isSalesTax());
+							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line);
+							
+							if (isSOTrx()) {
+								if (ii.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(ii.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(ii.getLBR_TaxAmt());
+								} else
+									lineNetAmt = lineNetAmt.add(ii.getLBR_TaxAmt());
+							} else {
+								if (!tax.isSalesTax())
+									lineNetAmt = lineNetAmt.subtract(ii.getLBR_TaxAmt());
+								
+								if (!ii.isTaxIncluded())
+									lineNetAmt = lineNetAmt.add(ii.getLBR_TaxAmt());
+								
+								if (tax.isSalesTax() || ii.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(ii.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(ii.getLBR_TaxAmt());
+								}
+							}
+							
+							list.add(LBRTaxLine);
+							break;
+						}
+					}
+				}
+			}
+			
+			// ISSQN
+			MLBRDocLineISSQN[] issqnLines = MLBRDocLineISSQN.getOfDetails(details);
+			if (issqnLines.length > 0) {
+				MLBRDocLineISSQN issqn = issqnLines[0];
+				
+				if (issqn.getLBR_TaxAmt() != null) {
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME))	{
+							DocTax LBRTaxLine = new DocTax(tax.getC_Tax_ID(), tax.getName(), tax.getRate(),
+									issqn.getLBR_TaxBaseAmt(), issqn.getLBR_TaxAmt(), tax.isSalesTax());
+							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line);
+							
+							if (isSOTrx()) {
+								if (issqn.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(issqn.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(issqn.getLBR_TaxAmt());
+								} else
+									lineNetAmt = lineNetAmt.add(issqn.getLBR_TaxAmt());							
+							} else {
+								if (!tax.isSalesTax())
+									lineNetAmt = lineNetAmt.subtract(issqn.getLBR_TaxAmt());
+								
+								if (!issqn.isTaxIncluded())
+									lineNetAmt = lineNetAmt.add(issqn.getLBR_TaxAmt());
+								
+								if (tax.isSalesTax() || issqn.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(issqn.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(issqn.getLBR_TaxAmt());
+								}
+							}
+							
+							list.add(LBRTaxLine);
+							break;
+						}
+					}
+				}
+			}
+		}
+		
+		if (m_LBRTaxes != null)
+			list.addAll(Arrays.asList(m_LBRTaxes));	
+		
+		DocTax[] tl = new DocTax[list.size()];
+		list.toArray(tl);
+		m_LBRTaxes = tl;
+		
+		return lineNetAmt;
+	}
+	
+	private DocTax getUpdatedDocTax(DocTax docTax, MInvoiceLine line) {
+		if (line.getM_Product_ID() > 0)
+			docTax.setM_Product_ID(line.getM_Product_ID());
+		if (line.getC_Project_ID() > 0)
+			docTax.setC_Project_ID(line.getC_Project_ID());
+		if (line.getC_Activity_ID() > 0)
+			docTax.setC_Activity_ID(line.getC_Activity_ID());
+		if (line.getC_Campaign_ID() > 0)
+			docTax.setC_Campaign_ID(line.getC_Campaign_ID());
+		if (line.getUser1_ID() > 0)
+			docTax.setUser1_ID(line.getUser1_ID());
+		if (line.getUser2_ID() > 0)
+			docTax.setUser2_ID(line.getUser2_ID());
+		if (line.getA_Asset_ID() > 0)
+			docTax.setA_Asset_ID(line.getA_Asset_ID());
+
+		return docTax;
+	}
 	
 }   //  Doc_Invoice
