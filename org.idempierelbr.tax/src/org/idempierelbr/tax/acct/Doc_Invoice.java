@@ -257,7 +257,7 @@ public class Doc_Invoice extends Doc
 		DocLine[] dls = new DocLine[list.size()];
 		list.toArray(dls);
 
-		//	Included Tax - make sure that no difference
+/*		//	Included Tax - make sure that no difference
 		if (isTaxIncluded())
 		{
 			for (int i = 0; i < m_taxes.length; i++)
@@ -291,7 +291,7 @@ public class Doc_Invoice extends Doc
 				}	//	tax difference
 			}	//	for all taxes
 		}	//	Included Tax difference
-
+*/
 		//	Return Array
 		return dls;
 	}	//	loadLines
@@ -394,9 +394,9 @@ public class Doc_Invoice extends Doc
 			if (amt != null && amt.signum() != 0)
 				fact.createLine(null, getAccount(Doc.ACCTTYPE_Charge, as),
 					getC_Currency_ID(), null, amt);
-			//  TaxDue                  CR
-			for (int i = 0; i < m_LBRTaxes.length; i++)
-			{
+			// LBR Taxes
+			for (int i = 0; i < m_LBRTaxes.length; i++)	{
+				// IMPOSTO A RECOLHER
 				amt = m_LBRTaxes[i].getAmount();
 				if (amt != null && amt.signum() != 0)
 				{
@@ -413,16 +413,14 @@ public class Doc_Invoice extends Doc
 						tl.setA_Asset_ID(m_LBRTaxes[i].getA_Asset_ID());
 					}
 				}
-			}
-			//  LBR: TaxExpense			DR
-			for (int i = 0; i < m_LBRTaxes.length; i++)
-			{
+				
+				// DESPESA
 				if (m_LBRTaxes[i].getIncludedTax() != null && m_LBRTaxes[i].getIncludedTax().signum() == 1) {
 					amt = m_LBRTaxes[i].getAmount();
 					if (amt != null && amt.signum() != 0)
 					{
 						FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxExpense, as),
-								getC_Currency_ID(), m_LBRTaxes[i].getAmount(), null);
+							getC_Currency_ID(), amt, null);
 						if (tl != null) {
 							tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
 							tl.setM_Product_ID(m_LBRTaxes[i].getM_Product_ID());
@@ -435,7 +433,8 @@ public class Doc_Invoice extends Doc
 						}
 					}
 				}
-			} // LBR
+			}
+
 			//  Revenue                 CR
 			for (int i = 0; i < p_lines.length; i++)
 			{
@@ -505,9 +504,9 @@ public class Doc_Invoice extends Doc
 			if (amt != null && amt.signum() != 0)
 				fact.createLine(null, getAccount(Doc.ACCTTYPE_Charge, as),
 					getC_Currency_ID(), amt, null);
-			//  TaxDue          DR
-			for (int i = 0; i < m_LBRTaxes.length; i++)
-			{
+			// LBR Taxes
+			for (int i = 0; i < m_LBRTaxes.length; i++)	{
+				// IMPOSTO A RECOLHER
 				amt = m_LBRTaxes[i].getAmount();
 				if (amt != null && amt.signum() != 0)
 				{
@@ -524,16 +523,14 @@ public class Doc_Invoice extends Doc
 						tl.setA_Asset_ID(m_LBRTaxes[i].getA_Asset_ID());
 					}
 				}
-			}
-			//  LBR: TaxExpense	CR
-			for (int i = 0; i < m_LBRTaxes.length; i++)
-			{
+				
+				// DESPESA
 				if (m_LBRTaxes[i].getIncludedTax() != null && m_LBRTaxes[i].getIncludedTax().signum() == 1) {
 					amt = m_LBRTaxes[i].getAmount();
 					if (amt != null && amt.signum() != 0)
 					{
 						FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxExpense, as),
-								getC_Currency_ID(), null, m_LBRTaxes[i].getAmount());
+							getC_Currency_ID(), null, amt);
 						if (tl != null) {
 							tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
 							tl.setM_Product_ID(m_LBRTaxes[i].getM_Product_ID());
@@ -546,7 +543,7 @@ public class Doc_Invoice extends Doc
 						}
 					}
 				}
-			} // LBR
+			}
 			//  Revenue         CR
 			for (int i = 0; i < p_lines.length; i++)
 			{
@@ -614,31 +611,18 @@ public class Doc_Invoice extends Doc
 			//  Charge          DR
 			fact.createLine(null, getAccount(Doc.ACCTTYPE_Charge, as),
 				getC_Currency_ID(), getAmount(Doc.AMTTYPE_Charge), null);
-			//  TaxCredit       DR
-			for (int i = 0; i < m_LBRTaxes.length; i++)
-			{
-				if (!m_LBRTaxes[i].isSalesTax()) {
-					FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(m_LBRTaxes[i].getAPTaxType(), as),
-						getC_Currency_ID(), m_LBRTaxes[i].getAmount(), null);
-					if (tl != null) {
-						tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
-						tl.setM_Product_ID(m_LBRTaxes[i].getM_Product_ID());
-						tl.setC_Project_ID(m_LBRTaxes[i].getC_Project_ID());
-						tl.setC_Activity_ID(m_LBRTaxes[i].getC_Activity_ID());
-						tl.setC_Campaign_ID(m_LBRTaxes[i].getC_Campaign_ID());
-						tl.setUser1_ID(m_LBRTaxes[i].getUser1_ID());
-						tl.setUser2_ID(m_LBRTaxes[i].getUser2_ID());
-						tl.setA_Asset_ID(m_LBRTaxes[i].getA_Asset_ID());
-					}
-				}
-			}
-			//  LBR: TaxDue		CR
-			for (int i = 0; i < m_LBRTaxes.length; i++)
-			{
-				if (m_LBRTaxes[i].isIncludedTaxDifference()) {
-					if (m_LBRTaxes[i].isSalesTax()) {
-						FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxDue, as),
-								getC_Currency_ID(), null, m_LBRTaxes[i].getAmount());
+			// LBR Taxes
+			for (int i = 0; i < m_LBRTaxes.length; i++)	{
+				boolean recuperavel = !m_LBRTaxes[i].isSalesTax();
+				BigDecimal amt;
+				
+				if (recuperavel) {
+					// IMPOSTO A RECUPERAR
+					amt = m_LBRTaxes[i].getAmount();
+					if (amt != null && amt.signum() != 0)
+					{
+						FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxCredit, as),
+							getC_Currency_ID(), amt, null);
 						if (tl != null) {
 							tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
 							tl.setM_Product_ID(m_LBRTaxes[i].getM_Product_ID());
@@ -651,7 +635,7 @@ public class Doc_Invoice extends Doc
 						}
 					}
 				}
-			} // LBR
+			}
 			//  Expense         DR
 			for (int i = 0; i < p_lines.length; i++)
 			{
@@ -749,33 +733,18 @@ public class Doc_Invoice extends Doc
 			//  Charge                  CR
 			fact.createLine (null, getAccount(Doc.ACCTTYPE_Charge, as),
 				getC_Currency_ID(), null, getAmount(Doc.AMTTYPE_Charge));
-			//  TaxCredit               CR
-			for (int i = 0; i < m_LBRTaxes.length; i++)
-			{
-				if (!m_LBRTaxes[i].isSalesTax()) {
-					FactLine tl = fact.createLine (null, m_LBRTaxes[i].getAccount(m_LBRTaxes[i].getAPTaxType(), as),
-						getC_Currency_ID(), null, m_LBRTaxes[i].getAmount());
-					if (tl != null) {
-						tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
-						tl.setM_Product_ID(m_LBRTaxes[i].getM_Product_ID());
-						tl.setC_Project_ID(m_LBRTaxes[i].getC_Project_ID());
-						tl.setC_Activity_ID(m_LBRTaxes[i].getC_Activity_ID());
-						tl.setC_Campaign_ID(m_LBRTaxes[i].getC_Campaign_ID());
-						tl.setUser1_ID(m_LBRTaxes[i].getUser1_ID());
-						tl.setUser2_ID(m_LBRTaxes[i].getUser2_ID());
-						tl.setA_Asset_ID(m_LBRTaxes[i].getA_Asset_ID());
-					}
-				}
-			}
-			//  LBR: TaxDue			DR
-			for (int i = 0; i < m_LBRTaxes.length; i++)
-			{
-				if (m_LBRTaxes[i].isIncludedTaxDifference()) {
-					MTax tax = new MTax(getCtx(), m_LBRTaxes[i].getC_Tax_ID(), getTrxName());
-					
-					if (tax.isSalesTax()) {
-						FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxDue, as),
-								getC_Currency_ID(), m_LBRTaxes[i].getAmount(), null);
+			// LBR Taxes
+			for (int i = 0; i < m_LBRTaxes.length; i++)	{
+				boolean recuperavel = !m_LBRTaxes[i].isSalesTax();
+				BigDecimal amt;
+				
+				if (recuperavel) {
+					// IMPOSTO A RECUPERAR
+					amt = m_LBRTaxes[i].getAmount();
+					if (amt != null && amt.signum() != 0)
+					{
+						FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxCredit, as),
+							getC_Currency_ID(), null, amt);
 						if (tl != null) {
 							tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
 							tl.setM_Product_ID(m_LBRTaxes[i].getM_Product_ID());
@@ -788,7 +757,7 @@ public class Doc_Invoice extends Doc
 						}
 					}
 				}
-			} // LBR
+			}
 			//  Expense                 CR
 			for (int i = 0; i < p_lines.length; i++)
 			{
@@ -1300,6 +1269,72 @@ public class Doc_Invoice extends Doc
 		if (log.isLoggable(Level.FINE)) log.fine("Updated=" + no);
 	}	//	updateProductPO
 	
+	/**
+	 *  Ajusta os valores dos lançamentos de acordo com os impostos de cada linha do doumento.
+	 *  O método possui as regras-padrão para os impostos recuperáveis e não recuperáveis, bem
+	 *  como os inclúsos e os não inclúsos no valor da linha.
+	 *  
+	 *  Impostos recuperáveis: os impostos recuperáveis, pagos na aquisição de mercadorias são aqueles
+	 *  cujo valor a empresa compradora pode creditar para ser deduzido do valor do imposto da mesma
+	 *  espécie devido sobre a revenda de mercadorias.
+	 *  
+	 *  A implementação é propositalmente repetitiva para facilitar a leitura, o entendimento e a
+	 *  customização em empresas que possuem exceções e regras diferenciadas das regras-padrão.
+	 *  
+	 * <pre> 
+	 * ============================ COMPRA ============================
+	 * 1) Recuperável e incluído no preço do produto
+	 * - Imposto a Recuperar: valor do imposto
+	 * - Custo do Produto: valor da linha menos o valor do imposto
+	 *
+	 *		PIS A RECUPERAR 		10,00		
+	 * 		CUSTO DO PRODUTO 		90,00		
+	 * 		DUPLICATAS A PAGAR 					100,00
+	 *
+	 * 2) Recuperável e não incluído no preço do produto
+	 * - Imposto a Recuperar: valor do imposto
+	 * - Custo do Produto: valor da linha
+	 *
+	 * 		IPI A RECUPERAR 		 10,00
+	 * 		CUSTO DO PRODUTO		100,00
+	 * 		DUPLICATAS A PAGAR 					110,00
+	 *
+	 * 3) Não recuperável e incluído no preço do produto
+	 * - Custo do Produto: valor da linha
+	 *
+	 * 		CUSTO DO PRODUTO 		100,00
+	 * 		DUPLICATAS A PAGAR 					100,00
+	 * 
+	 * 4) Não recuperável e não incluído no preço do produto
+	 * - Custo do Produto: valor da linha mais o valor do imposto
+	 *
+	 * 		CUSTO DO PRODUTO 		110,00
+	 * 		DUPLICATAS A PAGAR 					110,00
+	 *
+	 * ============================ VENDA ============================
+	 * 1) Incluído no preço do produto
+	 * - Imposto a Recolher: valor do imposto
+	 * - Despesa: valor do imposto
+	 * - Receita de Vendas: valor da linha
+	 *
+	 * 		PIS A RECOLHER 						 10,00
+	 * 		DESPESA PIS 			 10,00
+	 * 		RECEITA DE VENDAS 					100,00
+	 * 		DUPLICATAS A RECEBER	100,00	
+	 *
+	 * 2) Não incluído no preço do produto
+	 * - Imposto a Recolher: valor do imposto
+	 * - Receita de Vendas: valor da linha
+	 *
+	 *		IPI A RECOLHER 					  	 10,00
+	 * 		RECEITA DE VENDAS 					100,00
+	 * 		DUPLICATAS A RECEBER 	110,00
+	 * </pre> 
+	 *
+	 *  @param line 		invoice line
+	 *  @param lineNetAmt	line net amount
+	 *  @return BigDecimal
+	 */
 	private BigDecimal adjustIncludedLBRTaxes(MInvoiceLine line, BigDecimal lineNetAmt) {
 		ArrayList<DocTax> list = new ArrayList<DocTax>();
 		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
@@ -1319,22 +1354,39 @@ public class Doc_Invoice extends Doc
 								icms.getLBR_TaxBaseAmt(), icms.getLBR_TaxAmt(), tax.isSalesTax());
 							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line);
 							
-							if (isSOTrx()) {
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && icms.isTaxIncluded()) {
+									lineNetAmt = lineNetAmt.subtract(icms.getLBR_TaxAmt());
+									m_taxes[t].addIncludedTax(icms.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(icms.getLBR_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !icms.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && icms.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(icms.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(icms.getLBR_TaxAmt());
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !icms.isTaxIncluded()) {
+									lineNetAmt = lineNetAmt.add(icms.getLBR_TaxAmt());
+								}
+							// VENDA
+							} else {
+								// Incluído no preço do produto
 								if (icms.isTaxIncluded()) {
 									m_taxes[t].addIncludedTax(icms.getLBR_TaxAmt());
 									LBRTaxLine.addIncludedTax(icms.getLBR_TaxAmt());
-								} else
-									lineNetAmt = lineNetAmt.add(icms.getLBR_TaxAmt());
-							} else {
-								if (!tax.isSalesTax())
-									lineNetAmt = lineNetAmt.subtract(icms.getLBR_TaxAmt());
-								
-								if (!icms.isTaxIncluded())
-									lineNetAmt = lineNetAmt.add(icms.getLBR_TaxAmt());
-								
-								if (tax.isSalesTax() || icms.isTaxIncluded()) {
-									m_taxes[t].addIncludedTax(icms.getLBR_TaxAmt());
-									LBRTaxLine.addIncludedTax(icms.getLBR_TaxAmt());
+								}
+								// Não incluído no preço do produto
+								else if (!icms.isTaxIncluded()) {
+									//
 								}
 							}
 							
@@ -1353,22 +1405,39 @@ public class Doc_Invoice extends Doc
 									icms.getLBR_ICMSST_TaxBaseAmt(), icms.getLBR_ICMSST_TaxAmt(), tax.isSalesTax());
 							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line);
 							
-							if (isSOTrx()) {
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && icms.isLBR_ICMSST_IsTaxIncluded()) {
+									lineNetAmt = lineNetAmt.subtract(icms.getLBR_ICMSST_TaxAmt());
+									m_taxes[t].addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
+									LBRTaxLine.addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !icms.isLBR_ICMSST_IsTaxIncluded()) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && icms.isLBR_ICMSST_IsTaxIncluded()) {
+									m_taxes[t].addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
+									LBRTaxLine.addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !icms.isLBR_ICMSST_IsTaxIncluded()) {
+									lineNetAmt = lineNetAmt.add(icms.getLBR_ICMSST_TaxAmt());
+								}
+							// VENDA
+							} else {
+								// Incluído no preço do produto
 								if (icms.isLBR_ICMSST_IsTaxIncluded()) {
 									m_taxes[t].addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
 									LBRTaxLine.addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
-								} else
-									lineNetAmt = lineNetAmt.add(icms.getLBR_ICMSST_TaxAmt());
-							} else {
-								if (!tax.isSalesTax())
-									lineNetAmt = lineNetAmt.subtract(icms.getLBR_ICMSST_TaxAmt());
-								
-								if (!icms.isLBR_ICMSST_IsTaxIncluded())
-									lineNetAmt = lineNetAmt.add(icms.getLBR_ICMSST_TaxAmt());
-								
-								if (tax.isSalesTax() || icms.isLBR_ICMSST_IsTaxIncluded()) {
-									m_taxes[t].addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
-									LBRTaxLine.addIncludedTax(icms.getLBR_ICMSST_TaxAmt());
+								}
+								// Não incluído no preço do produto
+								else if (!icms.isLBR_ICMSST_IsTaxIncluded()) {
+									//
 								}
 							}
 							
@@ -1392,24 +1461,41 @@ public class Doc_Invoice extends Doc
 									ipi.getLBR_TaxBaseAmt(), ipi.getLBR_TaxAmt(), tax.isSalesTax());
 							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line);
 							
-							if (isSOTrx()) {
-								if (ipi.isTaxIncluded()) {
-									m_taxes[t].addIncludedTax(ipi.getLBR_TaxAmt());
-									LBRTaxLine.addIncludedTax(ipi.getLBR_TaxAmt());
-								} else
-									lineNetAmt = lineNetAmt.add(ipi.getLBR_TaxAmt());
-							} else {
-								if (!tax.isSalesTax())
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && ipi.isTaxIncluded()) {
 									lineNetAmt = lineNetAmt.subtract(ipi.getLBR_TaxAmt());
-								
-								if (!ipi.isTaxIncluded())
-									lineNetAmt = lineNetAmt.add(ipi.getLBR_TaxAmt());
-								
-								if (tax.isSalesTax() || ipi.isTaxIncluded()) {
 									m_taxes[t].addIncludedTax(ipi.getLBR_TaxAmt());
 									LBRTaxLine.addIncludedTax(ipi.getLBR_TaxAmt());
 								}
-							}	
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !ipi.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && ipi.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(ipi.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(ipi.getLBR_TaxAmt());
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !ipi.isTaxIncluded()) {
+									lineNetAmt = lineNetAmt.add(ipi.getLBR_TaxAmt());
+								}
+							// VENDA
+							} else {
+								// Incluído no preço do produto
+								if (ipi.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(ipi.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(ipi.getLBR_TaxAmt());
+								}
+								// Não incluído no preço do produto
+								else if (!ipi.isTaxIncluded()) {
+									//
+								}
+							}
 							
 							list.add(LBRTaxLine);
 							break;
@@ -1431,22 +1517,39 @@ public class Doc_Invoice extends Doc
 									pis.getLBR_TaxBaseAmt(), pis.getLBR_TaxAmt(), tax.isSalesTax());
 							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line);
 							
-							if (isSOTrx()) {
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && pis.isTaxIncluded()) {
+									lineNetAmt = lineNetAmt.subtract(pis.getLBR_TaxAmt());
+									m_taxes[t].addIncludedTax(pis.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(pis.getLBR_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !pis.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && pis.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(pis.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(pis.getLBR_TaxAmt());
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !pis.isTaxIncluded()) {
+									lineNetAmt = lineNetAmt.add(pis.getLBR_TaxAmt());
+								}
+							// VENDA
+							} else {
+								// Incluído no preço do produto
 								if (pis.isTaxIncluded()) {
 									m_taxes[t].addIncludedTax(pis.getLBR_TaxAmt());
 									LBRTaxLine.addIncludedTax(pis.getLBR_TaxAmt());
-								} else
-									lineNetAmt = lineNetAmt.add(pis.getLBR_TaxAmt());							
-							} else {
-								if (!tax.isSalesTax())
-									lineNetAmt = lineNetAmt.subtract(pis.getLBR_TaxAmt());
-								
-								if (!pis.isTaxIncluded())
-									lineNetAmt = lineNetAmt.add(pis.getLBR_TaxAmt());
-								
-								if (tax.isSalesTax() || pis.isTaxIncluded()) {
-									m_taxes[t].addIncludedTax(pis.getLBR_TaxAmt());
-									LBRTaxLine.addIncludedTax(pis.getLBR_TaxAmt());
+								}
+								// Não incluído no preço do produto
+								else if (!pis.isTaxIncluded()) {
+									//
 								}
 							}
 							
@@ -1470,22 +1573,39 @@ public class Doc_Invoice extends Doc
 									cofins.getLBR_TaxBaseAmt(), cofins.getLBR_TaxAmt(), tax.isSalesTax());
 							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line);
 							
-							if (isSOTrx()) {
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && cofins.isTaxIncluded()) {
+									lineNetAmt = lineNetAmt.subtract(cofins.getLBR_TaxAmt());
+									m_taxes[t].addIncludedTax(cofins.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(cofins.getLBR_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !cofins.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && cofins.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(cofins.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(cofins.getLBR_TaxAmt());
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !cofins.isTaxIncluded()) {
+									lineNetAmt = lineNetAmt.add(cofins.getLBR_TaxAmt());
+								}
+							// VENDA
+							} else {
+								// Incluído no preço do produto
 								if (cofins.isTaxIncluded()) {
 									m_taxes[t].addIncludedTax(cofins.getLBR_TaxAmt());
 									LBRTaxLine.addIncludedTax(cofins.getLBR_TaxAmt());
-								} else
-									lineNetAmt = lineNetAmt.add(cofins.getLBR_TaxAmt());							
-							} else {
-								if (!tax.isSalesTax())
-									lineNetAmt = lineNetAmt.subtract(cofins.getLBR_TaxAmt());
-								
-								if (!cofins.isTaxIncluded())
-									lineNetAmt = lineNetAmt.add(cofins.getLBR_TaxAmt());
-								
-								if (tax.isSalesTax() || cofins.isTaxIncluded()) {
-									m_taxes[t].addIncludedTax(cofins.getLBR_TaxAmt());
-									LBRTaxLine.addIncludedTax(cofins.getLBR_TaxAmt());
+								}
+								// Não incluído no preço do produto
+								else if (!cofins.isTaxIncluded()) {
+									//
 								}
 							}
 							
@@ -1509,22 +1629,39 @@ public class Doc_Invoice extends Doc
 									ii.getLBR_TaxBaseAmt(), ii.getLBR_TaxAmt(), tax.isSalesTax());
 							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line);
 							
-							if (isSOTrx()) {
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && ii.isTaxIncluded()) {
+									lineNetAmt = lineNetAmt.subtract(ii.getLBR_TaxAmt());
+									m_taxes[t].addIncludedTax(ii.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(ii.getLBR_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !ii.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && ii.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(ii.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(ii.getLBR_TaxAmt());
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !ii.isTaxIncluded()) {
+									lineNetAmt = lineNetAmt.add(ii.getLBR_TaxAmt());
+								}
+							// VENDA
+							} else {
+								// Incluído no preço do produto
 								if (ii.isTaxIncluded()) {
 									m_taxes[t].addIncludedTax(ii.getLBR_TaxAmt());
 									LBRTaxLine.addIncludedTax(ii.getLBR_TaxAmt());
-								} else
-									lineNetAmt = lineNetAmt.add(ii.getLBR_TaxAmt());
-							} else {
-								if (!tax.isSalesTax())
-									lineNetAmt = lineNetAmt.subtract(ii.getLBR_TaxAmt());
-								
-								if (!ii.isTaxIncluded())
-									lineNetAmt = lineNetAmt.add(ii.getLBR_TaxAmt());
-								
-								if (tax.isSalesTax() || ii.isTaxIncluded()) {
-									m_taxes[t].addIncludedTax(ii.getLBR_TaxAmt());
-									LBRTaxLine.addIncludedTax(ii.getLBR_TaxAmt());
+								}
+								// Não incluído no preço do produto
+								else if (!ii.isTaxIncluded()) {
+									//
 								}
 							}
 							
@@ -1548,22 +1685,39 @@ public class Doc_Invoice extends Doc
 									issqn.getLBR_TaxBaseAmt(), issqn.getLBR_TaxAmt(), tax.isSalesTax());
 							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line);
 							
-							if (isSOTrx()) {
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && issqn.isTaxIncluded()) {
+									lineNetAmt = lineNetAmt.subtract(issqn.getLBR_TaxAmt());
+									m_taxes[t].addIncludedTax(issqn.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(issqn.getLBR_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !issqn.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && issqn.isTaxIncluded()) {
+									m_taxes[t].addIncludedTax(issqn.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(issqn.getLBR_TaxAmt());
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !issqn.isTaxIncluded()) {
+									lineNetAmt = lineNetAmt.add(issqn.getLBR_TaxAmt());
+								}
+							// VENDA
+							} else {
+								// Incluído no preço do produto
 								if (issqn.isTaxIncluded()) {
 									m_taxes[t].addIncludedTax(issqn.getLBR_TaxAmt());
 									LBRTaxLine.addIncludedTax(issqn.getLBR_TaxAmt());
-								} else
-									lineNetAmt = lineNetAmt.add(issqn.getLBR_TaxAmt());							
-							} else {
-								if (!tax.isSalesTax())
-									lineNetAmt = lineNetAmt.subtract(issqn.getLBR_TaxAmt());
-								
-								if (!issqn.isTaxIncluded())
-									lineNetAmt = lineNetAmt.add(issqn.getLBR_TaxAmt());
-								
-								if (tax.isSalesTax() || issqn.isTaxIncluded()) {
-									m_taxes[t].addIncludedTax(issqn.getLBR_TaxAmt());
-									LBRTaxLine.addIncludedTax(issqn.getLBR_TaxAmt());
+								}
+								// Não incluído no preço do produto
+								else if (!issqn.isTaxIncluded()) {
+									//
 								}
 							}
 							
