@@ -22,6 +22,7 @@ import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 
@@ -40,9 +41,11 @@ import org.compiere.model.MMatchPO;
 import org.compiere.model.MOrder;
 import org.compiere.model.MOrderLandedCostAllocation;
 import org.compiere.model.MOrderLine;
+import org.compiere.model.MOrderTax;
 import org.compiere.model.MProduct;
 import org.compiere.model.MTax;
 import org.compiere.model.ProductCost;
+import org.compiere.model.Query;
 import org.compiere.model.X_M_InOut;
 import org.compiere.util.Env;
 import org.compiere.util.Util;
@@ -53,6 +56,7 @@ import org.idempierelbr.tax.model.MLBRDocLineIPI;
 import org.idempierelbr.tax.model.MLBRDocLineISSQN;
 import org.idempierelbr.tax.model.MLBRDocLineImportTax;
 import org.idempierelbr.tax.model.MLBRDocLinePIS;
+import org.idempierelbr.tax.model.MLBRTax;
 
 /**
  *  Post MatchPO Documents.
@@ -178,7 +182,7 @@ public class Doc_MatchPO extends Doc
 		if (poCost == null || poCost.signum() == 0)
 		{
 			poCost = m_oLine.getPriceActual();
-			//	Goodwill: Correct included Tax
+			/*//	Goodwill: Correct included Tax
 	    	int C_Tax_ID = m_oLine.getC_Tax_ID();
 			if (m_oLine.isTaxIncluded() && C_Tax_ID != 0)
 			{
@@ -191,7 +195,7 @@ public class Doc_MatchPO extends Doc
 					poCost = poCost.subtract(costTax);
 				}
 			}	//	correct included Tax
-			
+*/			
 			// LBR
 			poCost = adjustIncludedLBRTaxes(m_oLine, poCost);	
 		}
@@ -398,7 +402,46 @@ public class Doc_MatchPO extends Doc
 		}
 	}   //  createFact
 	
+	/**
+	 *  Ajusta o custo de acordo com os impostos de cada linha do doumento.
+	 *  O método possui as regras-padrão para os impostos recuperáveis e não recuperáveis, bem
+	 *  como os inclúsos e os não inclúsos no valor da linha.
+	 *  
+	 *  Impostos recuperáveis: os impostos recuperáveis, pagos na aquisição de mercadorias são aqueles
+	 *  cujo valor a empresa compradora pode creditar para ser deduzido do valor do imposto da mesma
+	 *  espécie devido sobre a revenda de mercadorias.
+	 *  
+	 *  A implementação é propositalmente repetitiva para facilitar a leitura, o entendimento e a
+	 *  customização em empresas que possuem exceções e regras diferenciadas das regras-padrão.
+	 *  
+	 * <pre> 
+	 * ============================ COMPRA ============================
+	 * 1) Recuperável e incluído no preço do produto
+	 * - Custo: valor da linha menos o valor do imposto
+	 *
+	 * 2) Recuperável e não incluído no preço do produto
+	 * - Custo: valor da linha
+	 *
+	 * 3) Não recuperável e incluído no preço do produto
+	 * - Custo: valor da linha
+	 * 
+	 * 4) Não recuperável e não incluído no preço do produto
+	 * - Custo: valor da linha mais o valor do imposto
+	 * </pre> 
+	 *
+	 *  @param line 		order line
+	 *  @param costs		cost amount
+	 *  @return BigDecimal
+	 */
 	private BigDecimal adjustIncludedLBRTaxes(MOrderLine line, BigDecimal costs) {
+		List<MOrderTax> list = new Query(getCtx(), MOrderTax.Table_Name, "C_Order_ID=?", line.get_TrxName())
+				.setParameters(line.getC_Order_ID())
+				.list();
+		MOrderTax m_taxes[] = list.toArray(new MOrderTax[list.size()]);
+		
+		if (m_taxes == null)
+			return costs;
+		
 		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
 		
 		if (details != null) {
@@ -409,14 +452,62 @@ public class Doc_MatchPO extends Doc
 				
 				// ICMS
 				if (icms.getLBR_TaxAmt() != null) {
-					if (icms.isTaxIncluded())
-						costs = costs.subtract(icms.getLBR_TaxAmt());
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMS_NAME))	{
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && icms.isTaxIncluded()) {
+									costs = costs.subtract(icms.getLBR_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !icms.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && icms.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !icms.isTaxIncluded()) {
+									costs = costs.add(icms.getLBR_TaxAmt());
+								}
+							}
+						}
+					}
 				}
 				
 				// ICMS-ST
 				if (icms.getLBR_ICMSST_TaxAmt() != null) {
-					if (icms.isLBR_ICMSST_IsTaxIncluded())
-						costs = costs.subtract(icms.getLBR_ICMSST_TaxAmt());
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ICMSST_NAME))	{
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && icms.isLBR_ICMSST_IsTaxIncluded()) {
+									costs = costs.subtract(icms.getLBR_ICMSST_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !icms.isLBR_ICMSST_IsTaxIncluded()) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && icms.isLBR_ICMSST_IsTaxIncluded()) {
+									//
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !icms.isLBR_ICMSST_IsTaxIncluded()) {
+									costs = costs.add(icms.getLBR_ICMSST_TaxAmt());
+								}
+							}
+						}
+					}
 				}
 			}
 			
@@ -426,8 +517,32 @@ public class Doc_MatchPO extends Doc
 				MLBRDocLineIPI ipi = ipiLines[0];
 				
 				if (ipi.getLBR_TaxAmt() != null) {
-					if (ipi.isTaxIncluded())
-						costs = costs.subtract(ipi.getLBR_TaxAmt());
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IPI_NAME))	{
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && ipi.isTaxIncluded()) {
+									costs = costs.subtract(ipi.getLBR_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !ipi.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && ipi.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !ipi.isTaxIncluded()) {
+									costs = costs.add(ipi.getLBR_TaxAmt());
+								}
+							}
+						}
+					}
 				}
 			}
 			
@@ -437,8 +552,33 @@ public class Doc_MatchPO extends Doc
 				MLBRDocLinePIS pis = pisLines[0];
 				
 				if (pis.getLBR_TaxAmt() != null) {
-					if (pis.isTaxIncluded())
-						costs = costs.subtract(pis.getLBR_TaxAmt());
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_PIS_NAME))	{
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && pis.isTaxIncluded()) {
+									costs = costs.subtract(pis.getLBR_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !pis.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && pis.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !pis.isTaxIncluded()) {
+									costs = costs.add(pis.getLBR_TaxAmt());
+								}
+
+							}
+						}
+					}
 				}
 			}
 			
@@ -448,8 +588,32 @@ public class Doc_MatchPO extends Doc
 				MLBRDocLineCOFINS cofins = cofinsLines[0];
 				
 				if (cofins.getLBR_TaxAmt() != null) {
-					if (cofins.isTaxIncluded())
-						costs = costs.subtract(cofins.getLBR_TaxAmt());
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_COFINS_NAME))	{
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && cofins.isTaxIncluded()) {
+									costs = costs.subtract(cofins.getLBR_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !cofins.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && cofins.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !cofins.isTaxIncluded()) {
+									costs = costs.add(cofins.getLBR_TaxAmt());
+								}
+							}
+						}
+					}
 				}
 			}
 			
@@ -459,8 +623,32 @@ public class Doc_MatchPO extends Doc
 				MLBRDocLineImportTax ii = iiLines[0];
 				
 				if (ii.getLBR_TaxAmt() != null) {
-					if (ii.isTaxIncluded())
-						costs = costs.subtract(ii.getLBR_TaxAmt());
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_II_NAME)) {
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && ii.isTaxIncluded()) {
+									costs = costs.subtract(ii.getLBR_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !ii.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && ii.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !ii.isTaxIncluded()) {
+									costs = costs.add(ii.getLBR_TaxAmt());
+								}
+							}							
+						}
+					}
 				}
 			}
 			
@@ -470,8 +658,32 @@ public class Doc_MatchPO extends Doc
 				MLBRDocLineISSQN issqn = issqnLines[0];
 				
 				if (issqn.getLBR_TaxAmt() != null) {
-					if (issqn.isTaxIncluded())
-						costs = costs.subtract(issqn.getLBR_TaxAmt());
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME))	{
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && issqn.isTaxIncluded()) {
+									costs = costs.subtract(issqn.getLBR_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !issqn.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && issqn.isTaxIncluded()) {
+									//
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !issqn.isTaxIncluded()) {
+									costs = costs.add(issqn.getLBR_TaxAmt());
+								}
+							}
+						}
+					}
 				}
 			}
 		}
