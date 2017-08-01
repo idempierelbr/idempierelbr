@@ -445,6 +445,21 @@ public class Doc_MatchPO extends Doc
 		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
 		
 		if (details != null) {
+			// Details
+			BigDecimal totalLineCosts = Env.ZERO;
+			
+			if (details.getSurcharges() != null)
+				totalLineCosts = totalLineCosts.add(details.getSurcharges());
+			
+			if (details.getFreightAmt() != null)
+				totalLineCosts = totalLineCosts.add(details.getFreightAmt());
+			
+			if (details.getInsuredAmount() != null)
+				totalLineCosts = totalLineCosts.add(details.getInsuredAmount());
+			
+			if (details.getDiscountAmt() != null)
+				totalLineCosts = totalLineCosts.subtract(details.getDiscountAmt());
+						
 			// ICMS and ICMS-ST
 			MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(details);
 			if (icmsLines.length > 0) {
@@ -461,7 +476,7 @@ public class Doc_MatchPO extends Doc
 								
 								// Recuperável e incluído no preço do produto
 								if (recuperavel && icms.isTaxIncluded()) {
-									costs = costs.subtract(icms.getLBR_TaxAmt());
+									totalLineCosts = totalLineCosts.subtract(icms.getLBR_TaxAmt());
 								}
 								// Recuperável e não incluído no preço do produto
 								else if (recuperavel && !icms.isTaxIncluded()) {
@@ -473,7 +488,7 @@ public class Doc_MatchPO extends Doc
 								}
 								// Não recuperável e não incluído no preço do produto
 								else if (!recuperavel && !icms.isTaxIncluded()) {
-									costs = costs.add(icms.getLBR_TaxAmt());
+									totalLineCosts = totalLineCosts.add(icms.getLBR_TaxAmt());
 								}
 							}
 						}
@@ -491,7 +506,7 @@ public class Doc_MatchPO extends Doc
 								
 								// Recuperável e incluído no preço do produto
 								if (recuperavel && icms.isLBR_ICMSST_IsTaxIncluded()) {
-									costs = costs.subtract(icms.getLBR_ICMSST_TaxAmt());
+									totalLineCosts = totalLineCosts.subtract(icms.getLBR_ICMSST_TaxAmt());
 								}
 								// Recuperável e não incluído no preço do produto
 								else if (recuperavel && !icms.isLBR_ICMSST_IsTaxIncluded()) {
@@ -503,7 +518,7 @@ public class Doc_MatchPO extends Doc
 								}
 								// Não recuperável e não incluído no preço do produto
 								else if (!recuperavel && !icms.isLBR_ICMSST_IsTaxIncluded()) {
-									costs = costs.add(icms.getLBR_ICMSST_TaxAmt());
+									totalLineCosts = totalLineCosts.add(icms.getLBR_ICMSST_TaxAmt());
 								}
 							}
 						}
@@ -526,7 +541,7 @@ public class Doc_MatchPO extends Doc
 								
 								// Recuperável e incluído no preço do produto
 								if (recuperavel && ipi.isTaxIncluded()) {
-									costs = costs.subtract(ipi.getLBR_TaxAmt());
+									totalLineCosts = totalLineCosts.subtract(ipi.getLBR_TaxAmt());
 								}
 								// Recuperável e não incluído no preço do produto
 								else if (recuperavel && !ipi.isTaxIncluded()) {
@@ -538,7 +553,7 @@ public class Doc_MatchPO extends Doc
 								}
 								// Não recuperável e não incluído no preço do produto
 								else if (!recuperavel && !ipi.isTaxIncluded()) {
-									costs = costs.add(ipi.getLBR_TaxAmt());
+									totalLineCosts = totalLineCosts.add(ipi.getLBR_TaxAmt());
 								}
 							}
 						}
@@ -561,7 +576,7 @@ public class Doc_MatchPO extends Doc
 								
 								// Recuperável e incluído no preço do produto
 								if (recuperavel && pis.isTaxIncluded()) {
-									costs = costs.subtract(pis.getLBR_TaxAmt());
+									totalLineCosts = totalLineCosts.subtract(pis.getLBR_TaxAmt());
 								}
 								// Recuperável e não incluído no preço do produto
 								else if (recuperavel && !pis.isTaxIncluded()) {
@@ -573,7 +588,7 @@ public class Doc_MatchPO extends Doc
 								}
 								// Não recuperável e não incluído no preço do produto
 								else if (!recuperavel && !pis.isTaxIncluded()) {
-									costs = costs.add(pis.getLBR_TaxAmt());
+									totalLineCosts = totalLineCosts.add(pis.getLBR_TaxAmt());
 								}
 
 							}
@@ -597,7 +612,7 @@ public class Doc_MatchPO extends Doc
 								
 								// Recuperável e incluído no preço do produto
 								if (recuperavel && cofins.isTaxIncluded()) {
-									costs = costs.subtract(cofins.getLBR_TaxAmt());
+									totalLineCosts = totalLineCosts.subtract(cofins.getLBR_TaxAmt());
 								}
 								// Recuperável e não incluído no preço do produto
 								else if (recuperavel && !cofins.isTaxIncluded()) {
@@ -609,7 +624,7 @@ public class Doc_MatchPO extends Doc
 								}
 								// Não recuperável e não incluído no preço do produto
 								else if (!recuperavel && !cofins.isTaxIncluded()) {
-									costs = costs.add(cofins.getLBR_TaxAmt());
+									totalLineCosts = totalLineCosts.add(cofins.getLBR_TaxAmt());
 								}
 							}
 						}
@@ -632,7 +647,7 @@ public class Doc_MatchPO extends Doc
 								
 								// Recuperável e incluído no preço do produto
 								if (recuperavel && ii.isTaxIncluded()) {
-									costs = costs.subtract(ii.getLBR_TaxAmt());
+									totalLineCosts = totalLineCosts.subtract(ii.getLBR_TaxAmt());
 								}
 								// Recuperável e não incluído no preço do produto
 								else if (recuperavel && !ii.isTaxIncluded()) {
@@ -644,7 +659,7 @@ public class Doc_MatchPO extends Doc
 								}
 								// Não recuperável e não incluído no preço do produto
 								else if (!recuperavel && !ii.isTaxIncluded()) {
-									costs = costs.add(ii.getLBR_TaxAmt());
+									totalLineCosts = totalLineCosts.add(ii.getLBR_TaxAmt());
 								}
 							}							
 						}
@@ -667,7 +682,7 @@ public class Doc_MatchPO extends Doc
 								
 								// Recuperável e incluído no preço do produto
 								if (recuperavel && issqn.isTaxIncluded()) {
-									costs = costs.subtract(issqn.getLBR_TaxAmt());
+									totalLineCosts = totalLineCosts.subtract(issqn.getLBR_TaxAmt());
 								}
 								// Recuperável e não incluído no preço do produto
 								else if (recuperavel && !issqn.isTaxIncluded()) {
@@ -679,13 +694,16 @@ public class Doc_MatchPO extends Doc
 								}
 								// Não recuperável e não incluído no preço do produto
 								else if (!recuperavel && !issqn.isTaxIncluded()) {
-									costs = costs.add(issqn.getLBR_TaxAmt());
+									totalLineCosts = totalLineCosts.add(issqn.getLBR_TaxAmt());
 								}
 							}
 						}
 					}
 				}
 			}
+			
+			if (totalLineCosts.signum() != 0)
+				costs = costs.add(totalLineCosts.divide(line.getQtyOrdered(), RoundingMode.HALF_UP));
 		}
 		
 		return costs;

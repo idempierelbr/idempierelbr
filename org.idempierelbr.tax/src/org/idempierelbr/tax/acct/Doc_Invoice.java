@@ -1340,6 +1340,19 @@ public class Doc_Invoice extends Doc
 		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
 		
 		if (details != null) {
+			// Details
+			if (details.getSurcharges() != null)
+				lineNetAmt = lineNetAmt.add(details.getSurcharges());
+			
+			if (details.getFreightAmt() != null)
+				lineNetAmt = lineNetAmt.add(details.getFreightAmt());
+			
+			if (details.getInsuredAmount() != null)
+				lineNetAmt = lineNetAmt.add(details.getInsuredAmount());
+			
+			if (details.getDiscountAmt() != null)
+				lineNetAmt = lineNetAmt.subtract(details.getDiscountAmt());
+			
 			// ICMS and ICMS-ST
 			MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(details);
 			if (icmsLines.length > 0) {
