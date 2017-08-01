@@ -14,3 +14,4 @@ Import-Package: org.compiere.model,
  org.idempierelbr.openitems.processcnab240,
  org.idempierelbr.openitems.util
 Service-Component: OSGI-INF/BankCollectionFactory.xml
+Bundle-ActivationPolicy: lazy

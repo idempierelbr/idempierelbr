@@ -14,3 +14,4 @@ Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.idempierelbr.openitems.util
 Require-Bundle: org.adempiere.base;bundle-version="2.0.0"
 Service-Component: OSGI-INF/BankCollectionFactory.xml
+Bundle-ActivationPolicy: lazy

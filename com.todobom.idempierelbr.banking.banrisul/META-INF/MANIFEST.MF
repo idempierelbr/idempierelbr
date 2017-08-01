@@ -15,3 +15,4 @@ Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.idempierelbr.openitems.processcnab240,
  org.idempierelbr.openitems.util
 Service-Component: OSGI-INF/BankCollectionFactory.xml
+Bundle-ActivationPolicy: lazy

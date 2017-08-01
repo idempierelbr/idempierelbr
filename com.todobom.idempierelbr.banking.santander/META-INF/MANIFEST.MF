@@ -9,3 +9,4 @@ Require-Bundle: org.idempierelbr.open-items,
  org.idempierelbr.cnab240,
  org.adempiere.base
 Service-Component: OSGI-INF/BankCollectionFactory.xml
+Bundle-ActivationPolicy: lazy
