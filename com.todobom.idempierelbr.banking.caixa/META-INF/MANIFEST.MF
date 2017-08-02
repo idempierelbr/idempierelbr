@@ -9,6 +9,5 @@ Require-Bundle: org.adempiere.base;bundle-version="2.1.0",
  org.idempierelbr.cnab240;bundle-version="1.0.0",
  org.idempierelbr.core;bundle-version="1.0.0",
  org.idempierelbr.open-items;bundle-version="1.0.0"
-Service-Component: OSGI-INF/ ModelFactory.xml,
- OSGI-INF/BankCollectionFactory.xml
+Service-Component: OSGI-INF/BankCollectionFactory.xml
 Bundle-ActivationPolicy: lazy
