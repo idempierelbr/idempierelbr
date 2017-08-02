@@ -142,8 +142,8 @@ public class CNABHeaderArquivoRecord extends CNABBaseRecord {
 		this.codigoRemessa = codigoRemessa;
 	}
 
-	@Field( offset=144 , length=14 , paddingChar = '0' , align = Align.LEFT )
-	@FixedFormatPattern("ddMMyyyyHHmmss")
+	@Field( offset=144 , length=8 , paddingChar = '0' , align = Align.LEFT )
+	@FixedFormatPattern("ddMMyyyy")
 	public Date getDataHoraGeracao() {
 		return dataHoraGeracao;
 	}
