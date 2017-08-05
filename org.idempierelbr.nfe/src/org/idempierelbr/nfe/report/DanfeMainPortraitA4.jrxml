@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version last-->
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-08-02T13:19:27 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ImpressaoDanfeRetratoA4Reportww" pageWidth="595" pageHeight="842" columnWidth="565" leftMargin="15" rightMargin="15" topMargin="15" bottomMargin="15" uuid="f55d8211-51b1-4464-b481-39f9a27a2ced">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
@@ -343,6 +344,9 @@
 	</field>
 	<field name="destinatarioEnderecoNro" class="java.lang.String">
 		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/enderDest/nro]]></fieldDescription>
+	</field>
+	<field name="destinatarioEnderecoCpl" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/enderDest/xCpl]]></fieldDescription>
 	</field>
 	<field name="nProt" class="java.lang.String">
 		<fieldDescription><![CDATA[/nfeProc/protNFe/infProt/nProt]]></fieldDescription>
@@ -851,7 +855,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<textElement textAlignment="Left" markup="html">
 						<font fontName="Liberation Serif" size="10"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{destinatarioEndereco}+", "+$F{destinatarioEnderecoNro}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{destinatarioEndereco}+", "+$F{destinatarioEnderecoNro}+ ($F{destinatarioEnderecoCpl}!=null ? ", " + $F{destinatarioEnderecoCpl}:"")]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement key="textField-32" mode="Transparent" x="2" y="58" width="263" height="12" uuid="4560a540-6251-4cc6-ac47-4f2b43b088aa"/>

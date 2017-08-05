@@ -542,6 +542,14 @@ public class NFeXMLGenerator {
 				enderDest.setXBairro(RemoverAcentos.remover(bpLoc.getAddress3()));
 			else
 				return "@LBR_Recipient@: @LBR_WrongAddress3@";
+			
+			if (bpLoc.getAddress4() != null)
+				enderDest.setXCpl(RemoverAcentos.remover(bpLoc.getAddress4()));
+	
+			if (bpartLoc.getPhone() != null) {
+				TextUtil textUtil = new TextUtil();
+				enderDest.setFone(textUtil.getNumbersOnly(bpartLoc.getPhone()));
+			}
 	
 			Integer bpCityCode = 0;
 			
