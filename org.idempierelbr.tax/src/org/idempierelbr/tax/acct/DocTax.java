@@ -84,6 +84,8 @@ public final class DocTax
 	private int			m_User2_ID = 0;
 	/** Asset			*/
 	private int			m_A_Asset_ID = 0;
+	/** LBR Doc Line Details			*/
+	private int			m_LBR_DocLine_Details_ID = 0;
 	
 	
 	/**	Logger			*/
@@ -315,6 +317,13 @@ public final class DocTax
 	public void setA_Asset_ID(int A_Asset_ID) {
 		this.m_A_Asset_ID = A_Asset_ID;
 	}
-	
+
+	public int getLBR_DocLine_Details_ID() {
+		return m_LBR_DocLine_Details_ID;
+	}
+
+	public void setLBR_DocLine_Details_ID(int LBR_DocLine_Details_ID) {
+		this.m_LBR_DocLine_Details_ID = LBR_DocLine_Details_ID;
+	}	
 	
 }	//	DocTax
