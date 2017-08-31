@@ -1102,8 +1102,8 @@ public class MLBRNotaFiscalLine extends X_LBR_NotaFiscalLine {
 				cofinsST.setvAliqProd(TextUtil.bigdecimalToString(cofinsLines[0].getLBR_COFST_TaxRateInAmt()));
 			}
 			
-			if (cofinsLines[0].getLBR_TaxAmt() == null)
-				throw new AdempiereException(prefixException + "'@LBR_TaxAmt@'");
+			if (cofinsLines[0].getLBR_COFST_TaxAmt() == null)
+				throw new AdempiereException(prefixException + "'@LBR_COFST_TaxAmt@'");
 			cofinsST.setvCOFINS(TextUtil.bigdecimalToString(cofinsLines[0].getLBR_COFST_TaxAmt()));
 
 			return cofinsST;			
