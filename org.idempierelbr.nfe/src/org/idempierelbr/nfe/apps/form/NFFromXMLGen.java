@@ -1158,8 +1158,8 @@ public class NFFromXMLGen
 							icms.setLBR_TaxRateCredit(new BigDecimal(taxRateCredit));
 					}
 					
-					if (eElementICMS.getElementsByTagName("pCredSN").item(0) != null) {
-						String taxAmtCredit = eElementICMS.getElementsByTagName("pCredSN").item(0).getTextContent();
+					if (eElementICMS.getElementsByTagName("vCredICMSSN").item(0) != null) {
+						String taxAmtCredit = eElementICMS.getElementsByTagName("vCredICMSSN").item(0).getTextContent();
 						if (taxAmtCredit != null)
 							icms.setLBR_TaxAmtCredit(new BigDecimal(taxAmtCredit));
 					}
