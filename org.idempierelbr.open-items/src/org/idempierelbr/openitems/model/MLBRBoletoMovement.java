@@ -93,7 +93,7 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 				Payment.setDiscountAmt(getDiscountAmt());
 				
 				// Valor do Pagamento
-				Payment.setPayAmt(getPayAmt().subtract(getWriteOffAmt()).subtract(getDiscountAmt())); 	// Valor Pago
+				Payment.setPayAmt(getPayAmt()); 	// Valor Pago
 				//
 				Payment.set_ValueOfColumn("LBR_Boleto_ID", boleto.get_ID());
 				
