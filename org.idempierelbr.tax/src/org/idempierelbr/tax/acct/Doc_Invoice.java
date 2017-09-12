@@ -1392,6 +1392,10 @@ public class Doc_Invoice extends Doc
 							
 							// COMPRA
 							if (!isSOTrx()) {
+								// Caso possui ICMS-ST, não recupera o ICMS
+								if (icms.getLBR_ICMSST_TaxAmt() != null && icms.getLBR_ICMSST_TaxAmt().signum() != 0)
+									break;
+									
 								boolean recuperavel = !tax.isSalesTax();
 								
 								// Monophase NCM
