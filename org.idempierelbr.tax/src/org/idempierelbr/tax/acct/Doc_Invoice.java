@@ -50,6 +50,7 @@ import org.compiere.model.X_M_Cost;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.compiere.util.Trx;
+import org.idempierelbr.core.util.MLBRAccountUtil;
 import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
 import org.idempierelbr.tax.model.MLBRDocLineDetails;
 import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
@@ -508,11 +509,11 @@ public class Doc_Invoice extends Doc
 					getC_Currency_ID(), amt, null);
 			// LBR Taxes
 			for (int i = 0; i < m_LBRTaxes.length; i++)	{
-				// IMPOSTO A RECOLHER
+				// IMPOSTO A RECUPERAR
 				amt = m_LBRTaxes[i].getAmount();
 				if (amt != null && amt.signum() != 0)
 				{
-					FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxDue, as),
+					FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxCredit, as),
 						getC_Currency_ID(), amt, null);
 					if (tl != null) {
 						tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
@@ -563,8 +564,16 @@ public class Doc_Invoice extends Doc
 								getC_Currency_ID(), null, dAmt);
 					}
 				}
+				
+				// LBR
+				MAccount pRevenueReturnAcct = MLBRAccountUtil.getProductAccount(p_lines[i].getM_Product_ID(), MLBRAccountUtil.ACCTTYPE_LBR_P_RevenueReturn, as);
+				
+				// If LBR account not set, use default from core
+				if (pRevenueReturnAcct == null)
+					pRevenueReturnAcct = p_lines[i].getAccount(ProductCost.ACCTTYPE_P_Revenue, as);
+				
 				fact.createLine (p_lines[i],
-					p_lines[i].getAccount (ProductCost.ACCTTYPE_P_Revenue, as),
+					pRevenueReturnAcct,
 					getC_Currency_ID(), amt, null);
 				if (!p_lines[i].isItem())
 				{
@@ -761,11 +770,11 @@ public class Doc_Invoice extends Doc
 				} //
 				
 				if (recuperavel) {
-					// IMPOSTO A RECUPERAR
+					// IMPOSTO A RECOLHER
 					amt = m_LBRTaxes[i].getAmount();
 					if (amt != null && amt.signum() != 0)
 					{
-						FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxCredit, as),
+						FactLine tl = fact.createLine(null, m_LBRTaxes[i].getAccount(DocTax.ACCTTYPE_TaxDue, as),
 							getC_Currency_ID(), null, amt);
 						if (tl != null) {
 							tl.setC_Tax_ID(m_LBRTaxes[i].getC_Tax_ID());
