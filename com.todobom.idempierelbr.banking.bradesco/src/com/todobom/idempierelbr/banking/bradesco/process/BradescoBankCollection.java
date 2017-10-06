@@ -78,7 +78,7 @@ public class BradescoBankCollection implements IBankCollection {
 	@Override
 	public void postProcessBoleto(MLBRBoleto boleto) {
 		String agencia = TextUtil.pad(OpenItemsUtil.getPartialText( ( (PO) boleto.getC_BankAccount()).get_ValueAsString("LBR_BankAgencyNo") , false ),'0',4,true);
-		String convenio = boleto.getLBR_BankAccount_Convenio().getLBR_ConvenioNo();
+		String conta = TextUtil.pad( ( (PO) boleto.getC_BankAccount()).get_ValueAsString("AccountNo") ,'0',9,true);
 		String carteira = TextUtil.pad(OpenItemsUtil.getPartialText( boleto.getLBR_BankAccount_Carteira().getLBR_CarteiraNo()  ,false )  , '0' , 2 , true );
 		String docNo = TextUtil.pad( boleto.getLBR_NumberInBank(), '0', 11, true);
 
@@ -91,7 +91,7 @@ public class BradescoBankCollection implements IBankCollection {
 		docNo = docNo + dac;
 		boleto.setLBR_NumberInBank(docNo);
 		
-		boleto.setLBR_Fmt_AgencyClient( agencia + "/" + convenio );
+		boleto.setLBR_Fmt_AgencyClient( agencia + "/" + conta );
 		boleto.setLBR_Fmt_Billfold( boleto.getLBR_BankAccount_Carteira().getLBR_CarteiraNo() );
 	}
 
