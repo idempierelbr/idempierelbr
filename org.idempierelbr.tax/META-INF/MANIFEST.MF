@@ -2,11 +2,11 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Tax
 Bundle-SymbolicName: org.idempierelbr.tax
-Bundle-Version: 4.1.0.qualifier
+Bundle-Version: 5.1.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: org.adempiere.base;bundle-version="4.1.0",
- org.idempierelbr.core;bundle-version="4.1.0",
- org.adempiere.ui.zk;bundle-version="4.1.0"
+Require-Bundle: org.adempiere.base;bundle-version="5.1.0",
+ org.idempierelbr.core;bundle-version="5.1.0",
+ org.adempiere.ui.zk;bundle-version="5.1.0"
 Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/DisplayTypeFactory.xml,OSGI-INF/EditorFactory.xml,OSGI-INF/LookupFactory.xml,OSGI-INF/CalloutFactory.xml,OSGI-INF/TaxProviderFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/DocFactory.xml,
  OSGI-INF/ProcessFactory.xml
 Import-Package: org.adempiere.webui.component,

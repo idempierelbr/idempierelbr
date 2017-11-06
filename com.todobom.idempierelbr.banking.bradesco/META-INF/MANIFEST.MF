@@ -2,9 +2,9 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Bradesco
 Bundle-SymbolicName: com.todobom.idempierelbr.banking.bradesco
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 5.1.0.qualifier
 Bundle-Vendor: TODOBOM
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.idempierelbr.cnab240
 Import-Package: org.compiere.model,
  org.compiere.process,
