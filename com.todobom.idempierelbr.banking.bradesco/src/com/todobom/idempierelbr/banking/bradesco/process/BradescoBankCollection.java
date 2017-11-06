@@ -19,7 +19,7 @@ public class BradescoBankCollection implements IBankCollection {
 	@Override
 	public String getCampoLivre(MLBRBoleto boleto) {
 		String agencia = TextUtil.pad(OpenItemsUtil.getPartialText( ( (PO) boleto.getC_BankAccount()).get_ValueAsString("LBR_BankAgencyNo") , false ),'0',4,true);
-		String convenio = TextUtil.pad(OpenItemsUtil.getPartialText( boleto.getLBR_BankAccount_Convenio().getLBR_ConvenioNo() ,false )  , '0' , 7 , true );
+		String conta = TextUtil.pad(OpenItemsUtil.getPartialText( ( (PO) boleto.getC_BankAccount()).get_ValueAsString("AccountNo"), false) , '0' , 7 , true );
 		String docNo = boleto.getLBR_NumberInBank().substring(0, 11);
 		
 		String carteira = TextUtil.pad(OpenItemsUtil.getPartialText( boleto.getLBR_BankAccount_Carteira().getLBR_CarteiraNo()  ,false )  , '0' , 2 , true );
@@ -36,7 +36,7 @@ public class BradescoBankCollection implements IBankCollection {
     	 * 
     	 */
 
- 		String campolivre = agencia + carteira + docNo + convenio + "0" ;
+ 		String campolivre = agencia + carteira + docNo + conta + "0" ;
  		
  		return campolivre;
 	}
