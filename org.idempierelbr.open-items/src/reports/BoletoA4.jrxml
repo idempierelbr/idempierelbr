@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2017-08-02T13:17:23 -->
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-01-02T16:00:55 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BoletoA4" pageWidth="595" pageHeight="842" columnWidth="565" leftMargin="15" rightMargin="15" topMargin="20" bottomMargin="4" uuid="a1f89160-0476-4ec7-bfaa-2804cc61b999">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
@@ -817,12 +817,6 @@ ORDER BY
 					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 			</textField>
-			<componentElement>
-				<reportElement x="108" y="279" width="170" height="12" uuid="1329dd54-0c45-467a-a316-39a3d045959f"/>
-				<jr:POSTNET xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.8" textPosition="none" shortBarHeight="4.3" checksumMode="add" intercharGapWidth="2.7">
-					<jr:codeExpression><![CDATA[$F{lbr_boleto_postal}]]></jr:codeExpression>
-				</jr:POSTNET>
-			</componentElement>
 			<componentElement>
 				<reportElement x="0" y="364" width="309" height="33" uuid="ab86470c-bfa4-4d54-bbd7-dd296da6d0b1"/>
 				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Int2of5" drawText="false" checksumRequired="false" barHeight="80">
