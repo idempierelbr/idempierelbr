@@ -554,11 +554,11 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		// get icms share part by date
 		Calendar cal = new GregorianCalendar ();
 		cal.setTimeInMillis(dateDoc.getTime());
-		if (cal.before (new GregorianCalendar (2017, 01, 01)))
+		if (cal.before (new GregorianCalendar (2017, 0, 1)))
 			partRate = new BigDecimal (40);
-		else if (cal.before (new GregorianCalendar (2018, 01, 01)))
+		else if (cal.before (new GregorianCalendar (2018, 0, 1)))
 			partRate = new BigDecimal (60);
-		else if (cal.before (new GregorianCalendar (2019, 01, 01)))
+		else if (cal.before (new GregorianCalendar (2019, 0, 1)))
 			partRate = new BigDecimal (80);
 		else
 			partRate = new BigDecimal (100);
