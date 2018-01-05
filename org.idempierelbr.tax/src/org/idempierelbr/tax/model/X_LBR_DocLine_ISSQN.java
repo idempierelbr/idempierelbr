@@ -25,14 +25,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for LBR_DocLine_ISSQN
  *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
+ *  @version Release 3.1 - $Id$ */
 public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140526L;
+	private static final long serialVersionUID = 20170110L;
 
     /** Standard Constructor */
     public X_LBR_DocLine_ISSQN (Properties ctx, int LBR_DocLine_ISSQN_ID, String trxName)
@@ -176,6 +176,20 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 		return false;
 	}
 
+	/** Set Código NBS.
+		@param LBR_CodigoNBS Código NBS	  */
+	public void setLBR_CodigoNBS (String LBR_CodigoNBS)
+	{
+		set_Value (COLUMNNAME_LBR_CodigoNBS, LBR_CodigoNBS);
+	}
+
+	/** Get Código NBS.
+		@return Código NBS	  */
+	public String getLBR_CodigoNBS () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_CodigoNBS);
+	}
+
 	/** Set Conditioned Discount Amount.
 		@param LBR_CondDiscountAmt Conditioned Discount Amount	  */
 	public void setLBR_CondDiscountAmt (BigDecimal LBR_CondDiscountAmt)
@@ -261,6 +275,76 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 		return (String)get_Value(COLUMNNAME_LBR_DocLine_ISSQN_UU);
 	}
 
+	/** Set Has WithHold.
+		@param LBR_HasWithHold 
+		Indicates if the Tax has WithHold
+	  */
+	public void setLBR_HasWithHold (boolean LBR_HasWithHold)
+	{
+		set_Value (COLUMNNAME_LBR_HasWithHold, Boolean.valueOf(LBR_HasWithHold));
+	}
+
+	/** Get Has WithHold.
+		@return Indicates if the Tax has WithHold
+	  */
+	public boolean isLBR_HasWithHold () 
+	{
+		Object oo = get_Value(COLUMNNAME_LBR_HasWithHold);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+
+	/** Exigivel = 1 */
+	public static final String LBR_ISS_CHARGEABILITY_Exigivel = "1";
+	/** Nao incidencia = 2 */
+	public static final String LBR_ISS_CHARGEABILITY_NaoIncidencia = "2";
+	/** Isencao = 3 */
+	public static final String LBR_ISS_CHARGEABILITY_Isencao = "3";
+	/** Exportacao = 4 */
+	public static final String LBR_ISS_CHARGEABILITY_Exportacao = "4";
+	/** Imunidade = 5 */
+	public static final String LBR_ISS_CHARGEABILITY_Imunidade = "5";
+	/** Exigibilidade suspensa por decisao judicial = 6 */
+	public static final String LBR_ISS_CHARGEABILITY_ExigibilidadeSuspensaPorDecisaoJudicial = "6";
+	/** Exigibilidade suspensa por processo administrativo = 7 */
+	public static final String LBR_ISS_CHARGEABILITY_ExigibilidadeSuspensaPorProcessoAdministrativo = "7";
+	/** Set ISS Chargeability Indicator.
+		@param LBR_ISS_Chargeability ISS Chargeability Indicator	  */
+	public void setLBR_ISS_Chargeability (String LBR_ISS_Chargeability)
+	{
+
+		set_Value (COLUMNNAME_LBR_ISS_Chargeability, LBR_ISS_Chargeability);
+	}
+
+	/** Get ISS Chargeability Indicator.
+		@return ISS Chargeability Indicator	  */
+	public String getLBR_ISS_Chargeability () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_ISS_Chargeability);
+	}
+
+	/** Set ISS Withholding Amount.
+		@param LBR_ISS_WithholdingAmt ISS Withholding Amount	  */
+	public void setLBR_ISS_WithholdingAmt (BigDecimal LBR_ISS_WithholdingAmt)
+	{
+		set_Value (COLUMNNAME_LBR_ISS_WithholdingAmt, LBR_ISS_WithholdingAmt);
+	}
+
+	/** Get ISS Withholding Amount.
+		@return ISS Withholding Amount	  */
+	public BigDecimal getLBR_ISS_WithholdingAmt () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ISS_WithholdingAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
 	public org.compiere.model.I_C_City getLBR_IncidenceCity() throws RuntimeException
     {
 		return (org.compiere.model.I_C_City)MTable.get(getCtx(), org.compiere.model.I_C_City.Table_Name)
@@ -317,52 +401,6 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 		return ii.intValue();
 	}
 
-	/** Exigivel = 1 */
-	public static final String LBR_ISS_CHARGEABILITY_Exigivel = "1";
-	/** Nao incidencia = 2 */
-	public static final String LBR_ISS_CHARGEABILITY_NaoIncidencia = "2";
-	/** Isencao = 3 */
-	public static final String LBR_ISS_CHARGEABILITY_Isencao = "3";
-	/** Exportacao = 4 */
-	public static final String LBR_ISS_CHARGEABILITY_Exportacao = "4";
-	/** Imunidade = 5 */
-	public static final String LBR_ISS_CHARGEABILITY_Imunidade = "5";
-	/** Exigibilidade suspensa por decisao judicial = 6 */
-	public static final String LBR_ISS_CHARGEABILITY_ExigibilidadeSuspensaPorDecisaoJudicial = "6";
-	/** Exigibilidade suspensa por processo administrativo = 7 */
-	public static final String LBR_ISS_CHARGEABILITY_ExigibilidadeSuspensaPorProcessoAdministrativo = "7";
-	/** Set ISS Chargeability Indicator.
-		@param LBR_ISS_Chargeability ISS Chargeability Indicator	  */
-	public void setLBR_ISS_Chargeability (String LBR_ISS_Chargeability)
-	{
-
-		set_Value (COLUMNNAME_LBR_ISS_Chargeability, LBR_ISS_Chargeability);
-	}
-
-	/** Get ISS Chargeability Indicator.
-		@return ISS Chargeability Indicator	  */
-	public String getLBR_ISS_Chargeability () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_ISS_Chargeability);
-	}
-
-	/** Set ISS Withholding Amount.
-		@param LBR_ISS_WithholdingAmt ISS Withholding Amount	  */
-	public void setLBR_ISS_WithholdingAmt (BigDecimal LBR_ISS_WithholdingAmt)
-	{
-		set_Value (COLUMNNAME_LBR_ISS_WithholdingAmt, LBR_ISS_WithholdingAmt);
-	}
-
-	/** Get ISS Withholding Amount.
-		@return ISS Withholding Amount	  */
-	public BigDecimal getLBR_ISS_WithholdingAmt () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ISS_WithholdingAmt);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
 	/** Set Other Withholdings Amount.
 		@param LBR_OtherWithholdingsAmt Other Withholdings Amount	  */
 	public void setLBR_OtherWithholdingsAmt (BigDecimal LBR_OtherWithholdingsAmt)
@@ -380,6 +418,27 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 		return bd;
 	}
 
+	/** LBR_ResponsavelRetencao AD_Reference_ID=800032 */
+	public static final int LBR_RESPONSAVELRETENCAO_AD_Reference_ID=800032;
+	/** Tomador = 1 */
+	public static final String LBR_RESPONSAVELRETENCAO_Tomador = "1";
+	/** Intermediário = 2 */
+	public static final String LBR_RESPONSAVELRETENCAO_Intermediário = "2";
+	/** Set Responsável pela Retenção.
+		@param LBR_ResponsavelRetencao Responsável pela Retenção	  */
+	public void setLBR_ResponsavelRetencao (String LBR_ResponsavelRetencao)
+	{
+
+		set_Value (COLUMNNAME_LBR_ResponsavelRetencao, LBR_ResponsavelRetencao);
+	}
+
+	/** Get Responsável pela Retenção.
+		@return Responsável pela Retenção	  */
+	public String getLBR_ResponsavelRetencao () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_ResponsavelRetencao);
+	}
+
 	/** Set Service Code.
 		@param LBR_ServiceCode Service Code	  */
 	public void setLBR_ServiceCode (String LBR_ServiceCode)
@@ -392,6 +451,20 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	public String getLBR_ServiceCode () 
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ServiceCode);
+	}
+
+	/** Set Código de Tributação do Município.
+		@param LBR_ServiceCodeOfCity Código de Tributação do Município	  */
+	public void setLBR_ServiceCodeOfCity (String LBR_ServiceCodeOfCity)
+	{
+		set_Value (COLUMNNAME_LBR_ServiceCodeOfCity, LBR_ServiceCodeOfCity);
+	}
+
+	/** Get Código de Tributação do Município.
+		@return Código de Tributação do Município	  */
+	public String getLBR_ServiceCodeOfCity () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_ServiceCodeOfCity);
 	}
 
 	/** Set Service Type.

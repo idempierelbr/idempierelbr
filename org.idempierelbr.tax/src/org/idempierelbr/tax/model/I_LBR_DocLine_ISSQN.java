@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_DocLine_ISSQN
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 3.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_DocLine_ISSQN 
@@ -92,6 +92,21 @@ public interface I_LBR_DocLine_ISSQN
 	  */
 	public int getC_Country_ID();
 
+    /** Column name C_Region_ID */
+    public static final String COLUMNNAME_C_Region_ID = "C_Region_ID";
+
+	/** Set Region.
+	  * Identifies a geographical Region
+	  */
+	public void setC_Region_ID (int C_Region_ID);
+
+	/** Get Region.
+	  * Identifies a geographical Region
+	  */
+	public int getC_Region_ID();
+
+	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException;
+
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
 
@@ -107,21 +122,6 @@ public interface I_LBR_DocLine_ISSQN
 	  * User who created this records
 	  */
 	public int getCreatedBy();
-
-    /** Column name C_Region_ID */
-    public static final String COLUMNNAME_C_Region_ID = "C_Region_ID";
-
-	/** Set Region.
-	  * Identifies a geographical Region
-	  */
-	public void setC_Region_ID (int C_Region_ID);
-
-	/** Get Region.
-	  * Identifies a geographical Region
-	  */
-	public int getC_Region_ID();
-
-	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException;
 
     /** Column name IsActive */
     public static final String COLUMNNAME_IsActive = "IsActive";
@@ -148,6 +148,15 @@ public interface I_LBR_DocLine_ISSQN
 	  * Tax is included in the price 
 	  */
 	public boolean isTaxIncluded();
+
+    /** Column name LBR_CodigoNBS */
+    public static final String COLUMNNAME_LBR_CodigoNBS = "LBR_CodigoNBS";
+
+	/** Set Código NBS	  */
+	public void setLBR_CodigoNBS (String LBR_CodigoNBS);
+
+	/** Get Código NBS	  */
+	public String getLBR_CodigoNBS();
 
     /** Column name LBR_CondDiscountAmt */
     public static final String COLUMNNAME_LBR_CondDiscountAmt = "LBR_CondDiscountAmt";
@@ -199,6 +208,37 @@ public interface I_LBR_DocLine_ISSQN
 	  */
 	public String getLBR_DocLine_ISSQN_UU();
 
+    /** Column name LBR_HasWithHold */
+    public static final String COLUMNNAME_LBR_HasWithHold = "LBR_HasWithHold";
+
+	/** Set Has WithHold.
+	  * Indicates if the Tax has WithHold
+	  */
+	public void setLBR_HasWithHold (boolean LBR_HasWithHold);
+
+	/** Get Has WithHold.
+	  * Indicates if the Tax has WithHold
+	  */
+	public boolean isLBR_HasWithHold();
+
+    /** Column name LBR_ISS_Chargeability */
+    public static final String COLUMNNAME_LBR_ISS_Chargeability = "LBR_ISS_Chargeability";
+
+	/** Set ISS Chargeability Indicator	  */
+	public void setLBR_ISS_Chargeability (String LBR_ISS_Chargeability);
+
+	/** Get ISS Chargeability Indicator	  */
+	public String getLBR_ISS_Chargeability();
+
+    /** Column name LBR_ISS_WithholdingAmt */
+    public static final String COLUMNNAME_LBR_ISS_WithholdingAmt = "LBR_ISS_WithholdingAmt";
+
+	/** Set ISS Withholding Amount	  */
+	public void setLBR_ISS_WithholdingAmt (BigDecimal LBR_ISS_WithholdingAmt);
+
+	/** Get ISS Withholding Amount	  */
+	public BigDecimal getLBR_ISS_WithholdingAmt();
+
     /** Column name LBR_IncidenceCity_ID */
     public static final String COLUMNNAME_LBR_IncidenceCity_ID = "LBR_IncidenceCity_ID";
 
@@ -229,24 +269,6 @@ public interface I_LBR_DocLine_ISSQN
 
 	public org.compiere.model.I_C_Region getLBR_IncidenceRegion() throws RuntimeException;
 
-    /** Column name LBR_ISS_Chargeability */
-    public static final String COLUMNNAME_LBR_ISS_Chargeability = "LBR_ISS_Chargeability";
-
-	/** Set ISS Chargeability Indicator	  */
-	public void setLBR_ISS_Chargeability (String LBR_ISS_Chargeability);
-
-	/** Get ISS Chargeability Indicator	  */
-	public String getLBR_ISS_Chargeability();
-
-    /** Column name LBR_ISS_WithholdingAmt */
-    public static final String COLUMNNAME_LBR_ISS_WithholdingAmt = "LBR_ISS_WithholdingAmt";
-
-	/** Set ISS Withholding Amount	  */
-	public void setLBR_ISS_WithholdingAmt (BigDecimal LBR_ISS_WithholdingAmt);
-
-	/** Get ISS Withholding Amount	  */
-	public BigDecimal getLBR_ISS_WithholdingAmt();
-
     /** Column name LBR_OtherWithholdingsAmt */
     public static final String COLUMNNAME_LBR_OtherWithholdingsAmt = "LBR_OtherWithholdingsAmt";
 
@@ -256,6 +278,15 @@ public interface I_LBR_DocLine_ISSQN
 	/** Get Other Withholdings Amount	  */
 	public BigDecimal getLBR_OtherWithholdingsAmt();
 
+    /** Column name LBR_ResponsavelRetencao */
+    public static final String COLUMNNAME_LBR_ResponsavelRetencao = "LBR_ResponsavelRetencao";
+
+	/** Set Responsável pela Retenção	  */
+	public void setLBR_ResponsavelRetencao (String LBR_ResponsavelRetencao);
+
+	/** Get Responsável pela Retenção	  */
+	public String getLBR_ResponsavelRetencao();
+
     /** Column name LBR_ServiceCode */
     public static final String COLUMNNAME_LBR_ServiceCode = "LBR_ServiceCode";
 
@@ -264,6 +295,15 @@ public interface I_LBR_DocLine_ISSQN
 
 	/** Get Service Code	  */
 	public String getLBR_ServiceCode();
+
+    /** Column name LBR_ServiceCodeOfCity */
+    public static final String COLUMNNAME_LBR_ServiceCodeOfCity = "LBR_ServiceCodeOfCity";
+
+	/** Set Código de Tributação do Município	  */
+	public void setLBR_ServiceCodeOfCity (String LBR_ServiceCodeOfCity);
+
+	/** Get Código de Tributação do Município	  */
+	public String getLBR_ServiceCodeOfCity();
 
     /** Column name LBR_ServiceType */
     public static final String COLUMNNAME_LBR_ServiceType = "LBR_ServiceType";

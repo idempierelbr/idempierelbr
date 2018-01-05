@@ -25,14 +25,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for LBR_DocLine_PIS
  *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
+ *  @version Release 3.1 - $Id$ */
 public class X_LBR_DocLine_PIS extends PO implements I_LBR_DocLine_PIS, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140402L;
+	private static final long serialVersionUID = 20170110L;
 
     /** Standard Constructor */
     public X_LBR_DocLine_PIS (Properties ctx, int LBR_DocLine_PIS_ID, String trxName)
@@ -40,6 +40,8 @@ public class X_LBR_DocLine_PIS extends PO implements I_LBR_DocLine_PIS, I_Persis
       super (ctx, LBR_DocLine_PIS_ID, trxName);
       /** if (LBR_DocLine_PIS_ID == 0)
         {
+			setIsTaxIncluded (false);
+// N
         } */
     }
 
@@ -88,6 +90,30 @@ public class X_LBR_DocLine_PIS extends PO implements I_LBR_DocLine_PIS, I_Persis
 	public String getCalculationType () 
 	{
 		return (String)get_Value(COLUMNNAME_CalculationType);
+	}
+
+	/** Set Price includes Tax.
+		@param IsTaxIncluded 
+		Tax is included in the price 
+	  */
+	public void setIsTaxIncluded (boolean IsTaxIncluded)
+	{
+		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
+	}
+
+	/** Get Price includes Tax.
+		@return Tax is included in the price 
+	  */
+	public boolean isTaxIncluded () 
+	{
+		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
 	}
 
 	public I_LBR_DocLine_Details getLBR_DocLine_Details() throws RuntimeException
@@ -278,6 +304,90 @@ public class X_LBR_DocLine_PIS extends PO implements I_LBR_DocLine_PIS, I_Persis
 	}
 
 	/** 01 - Operacao tributavel (cumulativo/nao cumulativo) = 01 */
+	public static final String LBR_PIS_OWNTAXSTATUS_01_OperacaoTributavelCumulativoNaoCumulativo = "01";
+	/** 02 - Operacao tributavel (aliquota diferenciada) = 02 */
+	public static final String LBR_PIS_OWNTAXSTATUS_02_OperacaoTributavelAliquotaDiferenciada = "02";
+	/** 03 - Operacao tributavel = 03 */
+	public static final String LBR_PIS_OWNTAXSTATUS_03_OperacaoTributavel = "03";
+	/** 04 - Operacao tributavel (aliquota zero) = 04 */
+	public static final String LBR_PIS_OWNTAXSTATUS_04_OperacaoTributavelAliquotaZero = "04";
+	/** 05 - Operacao tributavel (ST) = 05 */
+	public static final String LBR_PIS_OWNTAXSTATUS_05_OperacaoTributavelST = "05";
+	/** 06 - Operacao tributavel (aliquota zero) = 06 */
+	public static final String LBR_PIS_OWNTAXSTATUS_06_OperacaoTributavelAliquotaZero = "06";
+	/** 07 - Operacao isenta da contribuicao = 07 */
+	public static final String LBR_PIS_OWNTAXSTATUS_07_OperacaoIsentaDaContribuicao = "07";
+	/** 08 - Operacao sem incidencia da contribuicao = 08 */
+	public static final String LBR_PIS_OWNTAXSTATUS_08_OperacaoSemIncidenciaDaContribuicao = "08";
+	/** 09 - Operacao com suspensao da contribuicao = 09 */
+	public static final String LBR_PIS_OWNTAXSTATUS_09_OperacaoComSuspensaoDaContribuicao = "09";
+	/** 49 - Outras operacoes de saida = 49 */
+	public static final String LBR_PIS_OWNTAXSTATUS_49_OutrasOperacoesDeSaida = "49";
+	/** 50 - Operacao com direito a credito = 50 */
+	public static final String LBR_PIS_OWNTAXSTATUS_50_OperacaoComDireitoACredito = "50";
+	/** 51 - Operacao com direito a credito = 51 */
+	public static final String LBR_PIS_OWNTAXSTATUS_51_OperacaoComDireitoACredito = "51";
+	/** 52 - Operacao com direito a credito = 52 */
+	public static final String LBR_PIS_OWNTAXSTATUS_52_OperacaoComDireitoACredito = "52";
+	/** 53 - Operacao com direito a credito = 53 */
+	public static final String LBR_PIS_OWNTAXSTATUS_53_OperacaoComDireitoACredito = "53";
+	/** 54 - Operacao com direito a credito = 54 */
+	public static final String LBR_PIS_OWNTAXSTATUS_54_OperacaoComDireitoACredito = "54";
+	/** 55 - Operacao com direito a credito = 55 */
+	public static final String LBR_PIS_OWNTAXSTATUS_55_OperacaoComDireitoACredito = "55";
+	/** 56 - Operacao com direito a credito = 56 */
+	public static final String LBR_PIS_OWNTAXSTATUS_56_OperacaoComDireitoACredito = "56";
+	/** 60 - Credito presumido = 60 */
+	public static final String LBR_PIS_OWNTAXSTATUS_60_CreditoPresumido = "60";
+	/** 61 - Credito presumido = 61 */
+	public static final String LBR_PIS_OWNTAXSTATUS_61_CreditoPresumido = "61";
+	/** 62 - Credito presumido = 62 */
+	public static final String LBR_PIS_OWNTAXSTATUS_62_CreditoPresumido = "62";
+	/** 63 - Credito presumido = 63 */
+	public static final String LBR_PIS_OWNTAXSTATUS_63_CreditoPresumido = "63";
+	/** 64 - Credito presumido = 64 */
+	public static final String LBR_PIS_OWNTAXSTATUS_64_CreditoPresumido = "64";
+	/** 65 - Credito presumido = 65 */
+	public static final String LBR_PIS_OWNTAXSTATUS_65_CreditoPresumido = "65";
+	/** 66 - Credito presumido = 66 */
+	public static final String LBR_PIS_OWNTAXSTATUS_66_CreditoPresumido = "66";
+	/** 67 - Credito presumido = 67 */
+	public static final String LBR_PIS_OWNTAXSTATUS_67_CreditoPresumido = "67";
+	/** 70 - Operacao de aquisicao sem direito a credito = 70 */
+	public static final String LBR_PIS_OWNTAXSTATUS_70_OperacaoDeAquisicaoSemDireitoACredito = "70";
+	/** 71 - Operacao de aquisicao com isencao = 71 */
+	public static final String LBR_PIS_OWNTAXSTATUS_71_OperacaoDeAquisicaoComIsencao = "71";
+	/** 72 - Operacao de aquisicao com suspensao = 72 */
+	public static final String LBR_PIS_OWNTAXSTATUS_72_OperacaoDeAquisicaoComSuspensao = "72";
+	/** 73 - Operacao de aquisicao a aliquota zero = 73 */
+	public static final String LBR_PIS_OWNTAXSTATUS_73_OperacaoDeAquisicaoAAliquotaZero = "73";
+	/** 74 - Operacao de aquisicao sem incidencia da contribuicao = 74 */
+	public static final String LBR_PIS_OWNTAXSTATUS_74_OperacaoDeAquisicaoSemIncidenciaDaContribuicao = "74";
+	/** 75 - Operacao de aquisicao por substituicao tributaria = 75 */
+	public static final String LBR_PIS_OWNTAXSTATUS_75_OperacaoDeAquisicaoPorSubstituicaoTributaria = "75";
+	/** 98 - Outras operacoes de entrada = 98 */
+	public static final String LBR_PIS_OWNTAXSTATUS_98_OutrasOperacoesDeEntrada = "98";
+	/** 99 - Outras operacoes = 99 */
+	public static final String LBR_PIS_OWNTAXSTATUS_99_OutrasOperacoes = "99";
+	/** Set Declarant PIS Tax Status.
+		@param LBR_PIS_OwnTaxStatus 
+		PIS tax status from the point of view of the declarant
+	  */
+	public void setLBR_PIS_OwnTaxStatus (String LBR_PIS_OwnTaxStatus)
+	{
+
+		set_Value (COLUMNNAME_LBR_PIS_OwnTaxStatus, LBR_PIS_OwnTaxStatus);
+	}
+
+	/** Get Declarant PIS Tax Status.
+		@return PIS tax status from the point of view of the declarant
+	  */
+	public String getLBR_PIS_OwnTaxStatus () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_PIS_OwnTaxStatus);
+	}
+
+	/** 01 - Operacao tributavel (cumulativo/nao cumulativo) = 01 */
 	public static final String LBR_PIS_TAXSTATUS_01_OperacaoTributavelCumulativoNaoCumulativo = "01";
 	/** 02 - Operacao tributavel (aliquota diferenciada) = 02 */
 	public static final String LBR_PIS_TAXSTATUS_02_OperacaoTributavelAliquotaDiferenciada = "02";
@@ -459,29 +569,5 @@ public class X_LBR_DocLine_PIS extends PO implements I_LBR_DocLine_PIS, I_Persis
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;
-	}
-	
-	/** Set Price includes Tax.
-	@param IsTaxIncluded 
-	Tax is included in the price 
-	  */
-	public void setIsTaxIncluded (boolean IsTaxIncluded)
-	{
-		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
-	}
-	
-	/** Get Price includes Tax.
-		@return Tax is included in the price 
-	  */
-	public boolean isTaxIncluded () 
-	{
-		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
-		if (oo != null) 
-		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
-			return "Y".equals(oo);
-		}
-		return false;
 	}
 }

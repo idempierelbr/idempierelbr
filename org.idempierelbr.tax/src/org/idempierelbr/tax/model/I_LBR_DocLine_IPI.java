@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_DocLine_IPI
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 3.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_DocLine_IPI 
@@ -102,6 +102,19 @@ public interface I_LBR_DocLine_IPI
 	  */
 	public boolean isActive();
 
+    /** Column name IsTaxIncluded */
+    public static final String COLUMNNAME_IsTaxIncluded = "IsTaxIncluded";
+
+	/** Set Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public void setIsTaxIncluded (boolean IsTaxIncluded);
+
+	/** Get Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public boolean isTaxIncluded();
+
     /** Column name LBR_CNPJ */
     public static final String COLUMNNAME_LBR_CNPJ = "LBR_CNPJ";
 
@@ -155,6 +168,19 @@ public interface I_LBR_DocLine_IPI
 	  * Doc Line IPI
 	  */
 	public String getLBR_DocLine_IPI_UU();
+
+    /** Column name LBR_IPI_OwnTaxStatus */
+    public static final String COLUMNNAME_LBR_IPI_OwnTaxStatus = "LBR_IPI_OwnTaxStatus";
+
+	/** Set Declarant IPI Tax Status.
+	  * IPI tax status from the point of view of the declarant
+	  */
+	public void setLBR_IPI_OwnTaxStatus (String LBR_IPI_OwnTaxStatus);
+
+	/** Get Declarant IPI Tax Status.
+	  * IPI tax status from the point of view of the declarant
+	  */
+	public String getLBR_IPI_OwnTaxStatus();
 
     /** Column name LBR_IPI_RegardingClass */
     public static final String COLUMNNAME_LBR_IPI_RegardingClass = "LBR_IPI_RegardingClass";
@@ -301,17 +327,4 @@ public interface I_LBR_DocLine_IPI
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
-	
-	/** Column name IsTaxIncluded */
-    public static final String COLUMNNAME_IsTaxIncluded = "IsTaxIncluded";
-
-	/** Set Price includes Tax.
-	  * Tax is included in the price 
-	  */
-	public void setIsTaxIncluded (boolean IsTaxIncluded);
-
-	/** Get Price includes Tax.
-	  * Tax is included in the price 
-	  */
-	public boolean isTaxIncluded();
 }

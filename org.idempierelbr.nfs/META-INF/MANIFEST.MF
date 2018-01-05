@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: iDempiereLBR - NFSe
+Bundle-SymbolicName: org.idempierelbr.nfs
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: iDempiereLBR
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: .
+Require-Bundle: org.adempiere.base,
+ org.idempierelbr.core,
+ org.idempierelbr.tax,
+ org.eclipse.osgi.services
+Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/ProcessFactory.xml,OSGI-INF/DocFactory.xml,
+ OSGI-INF/CalloutFactory.xml
+Bundle-ActivationPolicy: lazy
+Export-Package: org.idempierelbr.nfs.factory,
+ org.idempierelbr.nfs.model,
+ org.idempierelbr.nfs.process,
+ org.idempierelbr.nfs.util

@@ -88,6 +88,8 @@ public class ModelFactory implements IModelFactory {
 			return X_LBR_DI_AdditionProd.class;
 		else if (tableName.equals(MLBRCestNCMProd.Table_Name)) // Model MLBRCestNCMProd
 			return MLBRCestNCMProd.class;
+		else if (tableName.equals(MLBRDocLineOTHER.Table_Name)) // Model MLBRDocLineOTHER
+			return MLBRDocLineOTHER.class;
 		else if (tableName.equals(MLBRNCMMono.Table_Name)) // Model MLBRNCMMono
 			return MLBRNCMMono.class;
 		
@@ -168,6 +170,8 @@ public class ModelFactory implements IModelFactory {
 			return new X_LBR_DI_AdditionProd(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRCestNCMProd.Table_Name)) // Model MLBRCestNCMProd
 			return new MLBRCestNCMProd(Env.getCtx(), Record_ID, trxName);
+		else if (tableName.equals(MLBRDocLineOTHER.Table_Name)) // Model MLBRDocLineOTHER
+			return new MLBRDocLineOTHER(Env.getCtx(), Record_ID, trxName);
 		else if (tableName.equals(MLBRNCMMono.Table_Name)) // Model MLBRNCMMono
 			return new MLBRNCMMono(Env.getCtx(), Record_ID, trxName);
 		
@@ -248,6 +252,8 @@ public class ModelFactory implements IModelFactory {
 			return new X_LBR_DI_AdditionProd(Env.getCtx(), rs, trxName);
 		else if (tableName.equals(MLBRCestNCMProd.Table_Name)) // Model MLBRCestNCMProd
 			return new MLBRCestNCMProd(Env.getCtx(), rs, trxName);
+		else if (tableName.equals(MLBRDocLineOTHER.Table_Name)) // Model MLBRDocLineOTHER
+			return new MLBRDocLineOTHER(Env.getCtx(), rs, trxName);		
 		else if (tableName.equals(MLBRNCMMono.Table_Name)) // Model MLBRNCMMono
 			return new MLBRNCMMono(Env.getCtx(), rs, trxName);
 		

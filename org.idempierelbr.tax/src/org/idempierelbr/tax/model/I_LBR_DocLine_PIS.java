@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_DocLine_PIS
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 3.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_DocLine_PIS 
@@ -101,6 +101,19 @@ public interface I_LBR_DocLine_PIS
 	  * The record is active in the system
 	  */
 	public boolean isActive();
+
+    /** Column name IsTaxIncluded */
+    public static final String COLUMNNAME_IsTaxIncluded = "IsTaxIncluded";
+
+	/** Set Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public void setIsTaxIncluded (boolean IsTaxIncluded);
+
+	/** Get Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public boolean isTaxIncluded();
 
     /** Column name LBR_DocLine_Details_ID */
     public static final String COLUMNNAME_LBR_DocLine_Details_ID = "LBR_DocLine_Details_ID";
@@ -217,6 +230,19 @@ public interface I_LBR_DocLine_PIS
 	  */
 	public BigDecimal getLBR_PISST_TotalQty();
 
+    /** Column name LBR_PIS_OwnTaxStatus */
+    public static final String COLUMNNAME_LBR_PIS_OwnTaxStatus = "LBR_PIS_OwnTaxStatus";
+
+	/** Set Declarant PIS Tax Status.
+	  * PIS tax status from the point of view of the declarant
+	  */
+	public void setLBR_PIS_OwnTaxStatus (String LBR_PIS_OwnTaxStatus);
+
+	/** Get Declarant PIS Tax Status.
+	  * PIS tax status from the point of view of the declarant
+	  */
+	public String getLBR_PIS_OwnTaxStatus();
+
     /** Column name LBR_PIS_TaxStatus */
     public static final String COLUMNNAME_LBR_PIS_TaxStatus = "LBR_PIS_TaxStatus";
 
@@ -310,17 +336,4 @@ public interface I_LBR_DocLine_PIS
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
-	
-	/** Column name IsTaxIncluded */
-    public static final String COLUMNNAME_IsTaxIncluded = "IsTaxIncluded";
-
-	/** Set Price includes Tax.
-	  * Tax is included in the price 
-	  */
-	public void setIsTaxIncluded (boolean IsTaxIncluded);
-
-	/** Get Price includes Tax.
-	  * Tax is included in the price 
-	  */
-	public boolean isTaxIncluded();
 }

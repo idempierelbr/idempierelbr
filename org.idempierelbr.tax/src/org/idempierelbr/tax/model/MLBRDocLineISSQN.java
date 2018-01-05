@@ -104,7 +104,7 @@ public class MLBRDocLineISSQN extends X_LBR_DocLine_ISSQN {
 		
 		List<MLBRDocLineISSQN> list = new Query (details.getCtx(), MLBRDocLineISSQN.Table_Name,
 				"LBR_DocLine_Details_ID=?", details.get_TrxName())
-			.setParameters(new Object[]{details.get_ID()})
+			.setParameters(new Object[]{details.getLBR_DocLine_Details_ID()})
 			.list();
 		
 		return list.toArray(new MLBRDocLineISSQN[list.size()]);

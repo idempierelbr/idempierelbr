@@ -25,14 +25,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for LBR_DocLine_IPI
  *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
+ *  @version Release 3.1 - $Id$ */
 public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140401L;
+	private static final long serialVersionUID = 20170110L;
 
     /** Standard Constructor */
     public X_LBR_DocLine_IPI (Properties ctx, int LBR_DocLine_IPI_ID, String trxName)
@@ -40,6 +40,8 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
       super (ctx, LBR_DocLine_IPI_ID, trxName);
       /** if (LBR_DocLine_IPI_ID == 0)
         {
+			setIsTaxIncluded (false);
+// N
         } */
     }
 
@@ -88,6 +90,30 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	public String getCalculationType () 
 	{
 		return (String)get_Value(COLUMNNAME_CalculationType);
+	}
+
+	/** Set Price includes Tax.
+		@param IsTaxIncluded 
+		Tax is included in the price 
+	  */
+	public void setIsTaxIncluded (boolean IsTaxIncluded)
+	{
+		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
+	}
+
+	/** Get Price includes Tax.
+		@return Tax is included in the price 
+	  */
+	public boolean isTaxIncluded () 
+	{
+		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
 	}
 
 	/** Set CNPJ.
@@ -173,6 +199,52 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	public String getLBR_DocLine_IPI_UU () 
 	{
 		return (String)get_Value(COLUMNNAME_LBR_DocLine_IPI_UU);
+	}
+
+	/** 00 - Entrada com recuperacao de credito = 00 */
+	public static final String LBR_IPI_OWNTAXSTATUS_00_EntradaComRecuperacaoDeCredito = "00";
+	/** 01 - Entrada tributada com aliquota zero = 01 */
+	public static final String LBR_IPI_OWNTAXSTATUS_01_EntradaTributadaComAliquotaZero = "01";
+	/** 02 - Entrada isenta = 02 */
+	public static final String LBR_IPI_OWNTAXSTATUS_02_EntradaIsenta = "02";
+	/** 03 - Entrada nao-tributada = 03 */
+	public static final String LBR_IPI_OWNTAXSTATUS_03_EntradaNao_Tributada = "03";
+	/** 04 - Entrada imune = 04 */
+	public static final String LBR_IPI_OWNTAXSTATUS_04_EntradaImune = "04";
+	/** 05 - Entrada com suspensao = 05 */
+	public static final String LBR_IPI_OWNTAXSTATUS_05_EntradaComSuspensao = "05";
+	/** 49 - Outras entradas = 49 */
+	public static final String LBR_IPI_OWNTAXSTATUS_49_OutrasEntradas = "49";
+	/** 50 - Saida tributada = 50 */
+	public static final String LBR_IPI_OWNTAXSTATUS_50_SaidaTributada = "50";
+	/** 51 - Saida tributada com aliquota zero = 51 */
+	public static final String LBR_IPI_OWNTAXSTATUS_51_SaidaTributadaComAliquotaZero = "51";
+	/** 52 - Saida isenta = 52 */
+	public static final String LBR_IPI_OWNTAXSTATUS_52_SaidaIsenta = "52";
+	/** 53 - Saida nao-tributada = 53 */
+	public static final String LBR_IPI_OWNTAXSTATUS_53_SaidaNao_Tributada = "53";
+	/** 54 - Saida imune = 54 */
+	public static final String LBR_IPI_OWNTAXSTATUS_54_SaidaImune = "54";
+	/** 55 - Saida com suspensao = 55 */
+	public static final String LBR_IPI_OWNTAXSTATUS_55_SaidaComSuspensao = "55";
+	/** 99 - Outras saidas = 99 */
+	public static final String LBR_IPI_OWNTAXSTATUS_99_OutrasSaidas = "99";
+	/** Set Declarant IPI Tax Status.
+		@param LBR_IPI_OwnTaxStatus 
+		IPI tax status from the point of view of the declarant
+	  */
+	public void setLBR_IPI_OwnTaxStatus (String LBR_IPI_OwnTaxStatus)
+	{
+
+		set_Value (COLUMNNAME_LBR_IPI_OwnTaxStatus, LBR_IPI_OwnTaxStatus);
+	}
+
+	/** Get Declarant IPI Tax Status.
+		@return IPI tax status from the point of view of the declarant
+	  */
+	public String getLBR_IPI_OwnTaxStatus () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_IPI_OwnTaxStatus);
 	}
 
 	/** Set IPI Tax Regarding Class.
@@ -393,29 +465,5 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;
-	}
-	
-	/** Set Price includes Tax.
-	@param IsTaxIncluded 
-	Tax is included in the price 
-	  */
-	public void setIsTaxIncluded (boolean IsTaxIncluded)
-	{
-		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
-	}
-	
-	/** Get Price includes Tax.
-		@return Tax is included in the price 
-	  */
-	public boolean isTaxIncluded () 
-	{
-		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
-		if (oo != null) 
-		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
-			return "Y".equals(oo);
-		}
-		return false;
 	}
 }

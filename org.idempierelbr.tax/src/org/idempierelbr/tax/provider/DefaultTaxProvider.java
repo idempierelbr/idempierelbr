@@ -31,6 +31,7 @@ import org.idempierelbr.tax.model.MLBRDocLineICMS;
 import org.idempierelbr.tax.model.MLBRDocLineIPI;
 import org.idempierelbr.tax.model.MLBRDocLineISSQN;
 import org.idempierelbr.tax.model.MLBRDocLineImportTax;
+import org.idempierelbr.tax.model.MLBRDocLineOTHER;
 import org.idempierelbr.tax.model.MLBRDocLinePIS;
 import org.idempierelbr.tax.model.MLBRTax;
 
@@ -235,6 +236,24 @@ public class DefaultTaxProvider implements ITaxProvider {
 						
 						if (!issqn.isTaxIncluded())
 							grandTotal = grandTotal.add(issqn.getLBR_TaxAmt());
+					}
+				}
+				
+				// OTHERS
+				MLBRDocLineOTHER[] otherTaxes = MLBRDocLineOTHER.getOfDetails(details);
+				if (otherTaxes.length > 0) {
+					MLBRDocLineOTHER othersTax = otherTaxes[0];
+					
+					if (othersTax.getLBR_IR_TaxBaseAmt() != null) {
+						if (oTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IR_NAME))) {
+							MOrderTax newOTax = oTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IR_NAME));
+							newOTax.setIsTaxIncluded(othersTax.isLBR_IR_IsTaxIncluded());
+							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(othersTax.getLBR_IR_TaxBaseAmt()));
+							newOTax.setTaxAmt(newOTax.getTaxAmt().add(othersTax.getLBR_IR_TaxAmt()));
+						}
+						
+						if (!othersTax.isLBR_IR_IsTaxIncluded())
+							grandTotal = grandTotal.add(othersTax.getLBR_IR_TaxAmt());
 					}
 				}
 			}
@@ -532,6 +551,24 @@ public class DefaultTaxProvider implements ITaxProvider {
 							grandTotal = grandTotal.add(issqn.getLBR_TaxAmt());
 					}
 				}
+				
+				// OTHERS
+				MLBRDocLineOTHER[] otherTaxes = MLBRDocLineOTHER.getOfDetails(details);
+				if (otherTaxes.length > 0) {
+					MLBRDocLineOTHER othersTax = otherTaxes[0];
+					
+					if (othersTax.getLBR_IR_TaxBaseAmt() != null) {
+						if (iTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IR_NAME))) {
+							MInvoiceTax newITax = iTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IR_NAME));
+							newITax.setIsTaxIncluded(othersTax.isLBR_IR_IsTaxIncluded());
+							newITax.setTaxBaseAmt(newITax.getTaxBaseAmt().add(othersTax.getLBR_IR_TaxBaseAmt()));
+							newITax.setTaxAmt(newITax.getTaxAmt().add(othersTax.getLBR_IR_TaxAmt()));
+						}
+						
+						if (!othersTax.isLBR_IR_IsTaxIncluded())
+							grandTotal = grandTotal.add(othersTax.getLBR_IR_TaxAmt());
+					}
+				}
 			}
 		}
 		
@@ -820,6 +857,24 @@ public class DefaultTaxProvider implements ITaxProvider {
 						
 						if (!issqn.isTaxIncluded())
 							grandTotal = grandTotal.add(issqn.getLBR_TaxAmt());
+					}
+				}
+				
+				// OTHERS
+				MLBRDocLineOTHER[] otherTaxes = MLBRDocLineOTHER.getOfDetails(details);
+				if (otherTaxes.length > 0) {
+					MLBRDocLineOTHER othersTax = otherTaxes[0];
+					
+					if (othersTax.getLBR_IR_TaxBaseAmt() != null) {
+						if (rmaTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME))) {
+							MRMATax newOTax = rmaTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME));
+							newOTax.setIsTaxIncluded(othersTax.isLBR_IR_IsTaxIncluded());
+							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(othersTax.getLBR_IR_TaxBaseAmt()));
+							newOTax.setTaxAmt(newOTax.getTaxAmt().add(othersTax.getLBR_IR_TaxAmt()));
+						}
+						
+						if (!othersTax.isLBR_IR_IsTaxIncluded())
+							grandTotal = grandTotal.add(othersTax.getLBR_IR_TaxAmt());
 					}
 				}
 			}

@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_DocLine_COFINS
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 3.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_DocLine_COFINS 
@@ -102,6 +102,19 @@ public interface I_LBR_DocLine_COFINS
 	  */
 	public boolean isActive();
 
+    /** Column name IsTaxIncluded */
+    public static final String COLUMNNAME_IsTaxIncluded = "IsTaxIncluded";
+
+	/** Set Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public void setIsTaxIncluded (boolean IsTaxIncluded);
+
+	/** Get Price includes Tax.
+	  * Tax is included in the price 
+	  */
+	public boolean isTaxIncluded();
+
     /** Column name LBR_COFST_CalcType */
     public static final String COLUMNNAME_LBR_COFST_CalcType = "LBR_COFST_CalcType";
 
@@ -175,6 +188,19 @@ public interface I_LBR_DocLine_COFINS
 	  * COFINS-ST Total Quantity
 	  */
 	public BigDecimal getLBR_COFST_TotalQty();
+
+    /** Column name LBR_COF_OwnTaxStatus */
+    public static final String COLUMNNAME_LBR_COF_OwnTaxStatus = "LBR_COF_OwnTaxStatus";
+
+	/** Set Declarant COFINS Tax Status.
+	  * COFINS tax status from the point of view of the declarant
+	  */
+	public void setLBR_COF_OwnTaxStatus (String LBR_COF_OwnTaxStatus);
+
+	/** Get Declarant COFINS Tax Status.
+	  * COFINS tax status from the point of view of the declarant
+	  */
+	public String getLBR_COF_OwnTaxStatus();
 
     /** Column name LBR_COF_TaxStatus */
     public static final String COLUMNNAME_LBR_COF_TaxStatus = "LBR_COF_TaxStatus";
@@ -310,17 +336,4 @@ public interface I_LBR_DocLine_COFINS
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
-	
-	/** Column name IsTaxIncluded */
-    public static final String COLUMNNAME_IsTaxIncluded = "IsTaxIncluded";
-
-	/** Set Price includes Tax.
-	  * Tax is included in the price 
-	  */
-	public void setIsTaxIncluded (boolean IsTaxIncluded);
-
-	/** Get Price includes Tax.
-	  * Tax is included in the price 
-	  */
-	public boolean isTaxIncluded();
 }

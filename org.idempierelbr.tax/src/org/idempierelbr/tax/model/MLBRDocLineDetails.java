@@ -191,6 +191,12 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		for (PO po : poArray) {
 			po.deleteEx(true);
 		}
+		
+		poArray = MLBRDocLineOTHER.getOfDetails(this);
+
+		for (PO po : poArray) {
+			po.deleteEx(true);
+		}
 	}
 	
 	protected boolean beforeDelete() {
@@ -281,7 +287,11 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				}
 				// ISSQN
 				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_ISSQN_NAME)) {
-					createISSQN(tl);
+					createISSQN(tl, product);
+				}
+				// OTHERS
+				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IR_NAME)) {
+					createOTHER(tl, taxChildW.getLBR_TaxGroup_ID());
 				}
 			}
 		}
@@ -756,20 +766,95 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	/**
 	 * 	Create ISSQN (child of Doc Line Details)
 	 */
-	private void createISSQN(MLBRTaxLine tl) {
+	private void createISSQN(MLBRTaxLine tl, MProduct m_product) {
+
+		// get existing tax
 		MLBRDocLineISSQN[] issqnArray = MLBRDocLineISSQN.getOfDetails(this);
-		MLBRDocLineISSQN issqn = new MLBRDocLineISSQN(getCtx(), 0, get_TrxName());
-		
+		MLBRDocLineISSQN issqn;
+
+		// if exists, replace, else, create
 		if (issqnArray.length > 0)
 			issqn = issqnArray[0];
+		else
+			issqn = new MLBRDocLineISSQN(getCtx(), 0, get_TrxName());
 
+		//
 		issqn.setAD_Org_ID(getAD_Org_ID());
 		issqn.setLBR_DocLine_Details_ID(get_ID());
 		issqn.setIsTaxIncluded(tl.isTaxIncluded());
 		issqn.setLBR_TaxBaseAmt(tl.getLBR_TaxBaseAmt());
+		issqn.setLBR_TaxRate(tl.getLBR_TaxRate());
 		issqn.setLBR_TaxAmt(tl.getLBR_TaxAmt());
+		issqn.setLBR_ISS_WithholdingAmt(Env.ZERO);
+
+		// normal transaction
+		if (issqn.getLBR_TaxAmt().signum() == -1 && issqn.getLBR_TaxBaseAmt().signum() == 1) {
+			issqn.setLBR_HasWithHold(true);
+			issqn.setLBR_ISS_WithholdingAmt(issqn.getLBR_TaxAmt().multiply(Env.ONE.negate()));
+
+			// reverse transaction
+		} else if (issqn.getLBR_TaxAmt().signum() == 1 && issqn.getLBR_TaxBaseAmt().signum() == -1) {
+			issqn.setLBR_HasWithHold(true);
+			issqn.setLBR_ISS_WithholdingAmt(issqn.getLBR_TaxAmt().multiply(Env.ONE.negate()));
+		}
+
+		/*
+		 * Default Value TODO: choose a better plate to put this info (into product,
+		 * bpartner...)
+		 */
+		issqn.setLBR_ResponsavelRetencao(MLBRDocLineISSQN.LBR_RESPONSAVELRETENCAO_Tomador);
+		issqn.setLBR_ISS_Chargeability(MLBRDocLineISSQN.LBR_ISS_CHARGEABILITY_Exigivel);
+		issqn.setLBR_TaxIncentive(MLBRDocLineISSQN.LBR_TAXINCENTIVE_No);
+
+		// default ZERO
+		issqn.setLBR_CondDiscountAmt(Env.ZERO);
+		issqn.setLBR_UncondDiscountAmt(Env.ZERO);
+		issqn.setLBR_OtherWithholdingsAmt(Env.ZERO);
+		issqn.setLBR_TaxBaseDeductionAmt(Env.ZERO);
+
+		//
+		if (m_product != null) {
+			issqn.setLBR_ServiceCode(m_product.get_ValueAsString("LBR_ServiceCode"));
+			issqn.setLBR_ServiceCodeOfCity(m_product.get_ValueAsString("LBR_ServiceCodeOfCity"));
+		}
+
+		//
 		issqn.saveEx();
+
 	}	
+	
+	/**
+	 * Create ISSQN tax
+	 * 
+	 * @param tl
+	 */
+	private void createOTHER(MLBRTaxLine tl, int LBR_TaxGroup_ID) {
+
+		// get existing tax
+		MLBRDocLineOTHER[] otherTaxesArr = MLBRDocLineOTHER.getOfDetails(this);
+		MLBRDocLineOTHER otherTax;
+
+		// if exists, replace, else, create
+		if (otherTaxesArr.length > 0)
+			otherTax = otherTaxesArr[0];
+		else
+			otherTax = new MLBRDocLineOTHER(getCtx(), 0, get_TrxName());
+
+		//
+		otherTax.setAD_Org_ID(getAD_Org_ID());
+		otherTax.setLBR_DocLine_Details_ID(get_ID());
+
+		// IR
+		if (LBR_TaxGroup_ID == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IR_NAME)) {
+			otherTax.setLBR_IR_TaxBaseAmt(tl.getLBR_TaxBaseAmt());
+			otherTax.setLBR_IR_TaxRate(tl.getLBR_TaxRate());
+			otherTax.setLBR_IR_TaxAmt(tl.getLBR_TaxAmt());
+
+		}
+
+		//
+		otherTax.saveEx();
+	}
 
 	/**
 	 * 	Verifica todas as linhas do imposto
@@ -824,6 +909,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		int C_InvoiceLine_ID = getC_InvoiceLine_ID();
 		int M_RMALine_ID = getM_RMALine_ID();
 		int LBR_NotaFiscalLine_ID = getLBR_NotaFiscalLine_ID();
+		int LBR_NFS_ID = get_ValueAsInt("LBR_NFS_ID");
 		
 		// Copy
 		MLBRDocLineDetails.copyValues(detailsFrom, this, getAD_Client_ID(), getAD_Org_ID());
@@ -833,6 +919,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		setC_InvoiceLine_ID(C_InvoiceLine_ID);
 		setM_RMALine_ID(M_RMALine_ID);
 		setLBR_NotaFiscalLine_ID(LBR_NotaFiscalLine_ID);
+		set_ValueOfColumn("LBR_NFS_ID", LBR_NFS_ID < 1 ? null : LBR_NFS_ID);
 		
 		copyTaxTransactionFrom(detailsFrom);
 		m_DetailsFrom = detailsFrom;
@@ -927,6 +1014,38 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			if (importTax.getLBR_TaxAmt() != null) {
 				if (!importTax.isTaxIncluded())
 					lineTaxAmt = lineTaxAmt.add(importTax.getLBR_TaxAmt());
+			}
+		}
+		
+		// ISSQN
+		MLBRDocLineISSQN[] issqnTaxLines = MLBRDocLineISSQN.getOfDetails(this);
+		if (issqnTaxLines.length > 0) {
+			MLBRDocLineISSQN issqnTax = issqnTaxLines[0];
+
+			if (issqnTax.getLBR_TaxAmt() != null) {
+				if (!issqnTax.isTaxIncluded())
+					lineTaxAmt = lineTaxAmt.add(issqnTax.getLBR_TaxAmt());
+			}
+		}
+
+		// Other Taxes
+		MLBRDocLineOTHER[] othetTaxLines = MLBRDocLineOTHER.getOfDetails(this);
+		if (othetTaxLines.length > 0) {
+			MLBRDocLineOTHER otherTax = othetTaxLines[0];
+
+			if (otherTax.getLBR_IR_TaxAmt() != null) {
+				if (!otherTax.isLBR_IR_IsTaxIncluded())
+					lineTaxAmt = lineTaxAmt.add(otherTax.getLBR_IR_TaxAmt());
+			}
+
+			if (otherTax.getLBR_INSS_TaxAmt() != null) {
+				if (!otherTax.isLBR_INSS_IsTaxIncluded())
+					lineTaxAmt = lineTaxAmt.add(otherTax.getLBR_INSS_TaxAmt());
+			}
+
+			if (otherTax.getLBR_CSLL_TaxAmt() != null) {
+				if (!otherTax.isLBR_CSLL_IsTaxIncluded())
+					lineTaxAmt = lineTaxAmt.add(otherTax.getLBR_CSLL_TaxAmt());
 			}
 		}
 		

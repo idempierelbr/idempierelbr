@@ -18,15 +18,14 @@ package org.idempierelbr.tax.model;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-
-import org.compiere.model.I_C_Region;
-import org.compiere.model.MTable;
+import org.compiere.model.*;
 import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_DocLine_ICMS
  *  @author iDempiere (generated) 
  *  @version Release 3.1
  */
+@SuppressWarnings("all")
 public interface I_LBR_DocLine_ICMS 
 {
 

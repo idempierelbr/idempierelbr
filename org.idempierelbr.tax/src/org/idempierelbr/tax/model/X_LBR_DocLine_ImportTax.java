@@ -25,14 +25,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for LBR_DocLine_ImportTax
  *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
+ *  @version Release 3.1 - $Id$ */
 public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportTax, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140402L;
+	private static final long serialVersionUID = 20170110L;
 
     /** Standard Constructor */
     public X_LBR_DocLine_ImportTax (Properties ctx, int LBR_DocLine_ImportTax_ID, String trxName)
@@ -40,6 +40,8 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
       super (ctx, LBR_DocLine_ImportTax_ID, trxName);
       /** if (LBR_DocLine_ImportTax_ID == 0)
         {
+			setIsTaxIncluded (false);
+// N
         } */
     }
 
@@ -86,6 +88,30 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;
+	}
+
+	/** Set Price includes Tax.
+		@param IsTaxIncluded 
+		Tax is included in the price 
+	  */
+	public void setIsTaxIncluded (boolean IsTaxIncluded)
+	{
+		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
+	}
+
+	/** Get Price includes Tax.
+		@return Tax is included in the price 
+	  */
+	public boolean isTaxIncluded () 
+	{
+		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
+		if (oo != null) 
+		{
+			 if (oo instanceof Boolean) 
+				 return ((Boolean)oo).booleanValue(); 
+			return "Y".equals(oo);
+		}
+		return false;
 	}
 
 	public I_LBR_DocLine_Details getLBR_DocLine_Details() throws RuntimeException
@@ -214,29 +240,5 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;
-	}
-	
-	/** Set Price includes Tax.
-	@param IsTaxIncluded 
-	Tax is included in the price 
-	  */
-	public void setIsTaxIncluded (boolean IsTaxIncluded)
-	{
-		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
-	}
-	
-	/** Get Price includes Tax.
-		@return Tax is included in the price 
-	  */
-	public boolean isTaxIncluded () 
-	{
-		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
-		if (oo != null) 
-		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
-			return "Y".equals(oo);
-		}
-		return false;
 	}
 }
