@@ -27,6 +27,7 @@ import org.compiere.model.MRMA;
 import org.compiere.model.MRMALine;
 import org.compiere.model.MRegion;
 import org.compiere.model.MShipper;
+import org.compiere.model.MSysConfig;
 import org.compiere.model.MUOM;
 import org.compiere.model.MUOMConversion;
 import org.compiere.model.PO;
@@ -48,6 +49,7 @@ import org.idempierelbr.nfe.model.MLBRNotaFiscalPay;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalPaySched;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalTransp;
 import org.idempierelbr.tax.model.I_LBR_LegalMessage;
+import org.idempierelbr.tax.model.MLBRDocLineDetails;
 import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
 import org.idempierelbr.tax.model.MLBRTax;
 import org.idempierelbr.tax.model.MLBRTaxLine;
@@ -296,6 +298,16 @@ public class CreateNotaFiscal extends SvrProcess
 		PO[] poLines = getPOLines();
 		
 		for (PO poLine : poLines) {
+			// Check if create ISSQN (Services) lines. Those who also can issue NFS-e, remove services away from NF-e
+			MLBRDocLineDetailsNfe d = MLBRDocLineDetailsNfe.getOfPO(poLine);
+			
+			if (d != null &&
+					d.getLBR_TaxationType() != null &&
+					d.getLBR_TaxationType().equals(MLBRDocLineDetails.LBR_TAXATIONTYPE_ISSQN) &&
+					!MSysConfig.getBooleanValue("LBR_NFe_CreateISSQNLines", true, nf.getAD_Client_ID(), nf.getAD_Org_ID())) {
+				continue;
+			}
+						
 			// Original docs for RMA
 			MRMALine rmaLine = null;
 			MInOutLine rmaInOutLine = null;
