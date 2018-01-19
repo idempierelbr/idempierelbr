@@ -272,15 +272,26 @@ public class AssinaturaDigital {
 		log.fine("Signing: " + ascii);
 		//
 		try {
+			byte[] encoded = signASCIIb(ascii, AD_Org_ID);
+			return new String(new BASE64Encoder().encode(encoded).getBytes(), "UTF-8");
+		} catch (Exception ex) {
+			throw new AdempiereException("Error siging RPS");
+		}
+	} // signASCII
+	
+	public static byte[] signASCIIb(String ascii, int AD_Org_ID) {
+		log.fine("Signing: " + ascii);
+		//
+		try {
 			// Prepare Certificates
 			loadKeys(MOrgInfo.get(Env.getCtx(), AD_Org_ID, null));
 			//
 			Signature dsa = Signature.getInstance("SHA1withRSA");
 			dsa.initSign(getChavePrivada());
-			dsa.update(ascii.getBytes());
-			return new BASE64Encoder().encode(dsa.sign());
+			dsa.update(ascii.getBytes("UTF-8"));
+			return dsa.sign();
 		} catch (Exception ex) {
 			throw new AdempiereException("Error siging RPS");
 		}
-	} // signASCII
+	} // signASCIIb
 } // AssinaturaDigital
