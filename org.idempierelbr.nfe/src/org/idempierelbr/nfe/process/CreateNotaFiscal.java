@@ -299,13 +299,13 @@ public class CreateNotaFiscal extends SvrProcess
 		
 		for (PO poLine : poLines) {
 			// Check if create ISSQN (Services) lines. Those who also can issue NFS-e, remove services away from NF-e
-			MLBRDocLineDetailsNfe d = MLBRDocLineDetailsNfe.getOfPO(poLine);
-			
-			if (d != null &&
-					d.getLBR_TaxationType() != null &&
-					d.getLBR_TaxationType().equals(MLBRDocLineDetails.LBR_TAXATIONTYPE_ISSQN) &&
-					!MSysConfig.getBooleanValue("LBR_NFe_CreateISSQNLines", true, nf.getAD_Client_ID(), nf.getAD_Org_ID())) {
-				continue;
+			if (poLine.get_ValueAsInt("M_Product_ID") > 0) {
+				MProduct p = new MProduct(getCtx(), poLine.get_ValueAsInt("M_Product_ID"), get_TrxName());
+
+				if (p.getProductType().equals(MProduct.PRODUCTTYPE_Service) &&
+						!MSysConfig.getBooleanValue("LBR_NFe_CreateISSQNLines", true, nf.getAD_Client_ID(), nf.getAD_Org_ID())) {
+					continue;
+				}
 			}
 						
 			// Original docs for RMA
