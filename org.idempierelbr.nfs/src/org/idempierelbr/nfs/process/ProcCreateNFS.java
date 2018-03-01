@@ -16,6 +16,7 @@ import org.compiere.model.PO;
 import org.compiere.process.DocAction;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
+import org.compiere.util.Env;
 import org.idempierelbr.nfs.model.MLBRDocLineDetailsNFS;
 import org.idempierelbr.nfs.model.MLBRNFS;
 import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
@@ -182,31 +183,43 @@ public class ProcCreateNFS extends SvrProcess {
 				continue;
 
 			//
-			nfs.setM_Product_ID(poLine.get_ValueAsInt("M_Product_ID"));
-			nfs.setQty((BigDecimal) poLine.get_Value("QtyEntered"));
-			nfs.setPrice((BigDecimal) poLine.get_Value("PriceEntered"));
-			nfs.setDescription(poLine.get_ValueAsString("Description"));
-			nfs.setC_Tax_ID(poLine.get_ValueAsInt("C_Tax_ID"));
-			nfs.setC_UOM_ID(poLine.get_ValueAsInt("C_UOM_ID"));
+			if (nfs.getM_Product_ID() <= 0)
+				nfs.setM_Product_ID(poLine.get_ValueAsInt("M_Product_ID"));
+			
+			nfs.setQty(Env.ONE);
+			
+			BigDecimal subtotal = ((BigDecimal) poLine.get_Value("LineNetAmt"));
+			nfs.setPrice(nfs.getPrice().add(subtotal));
+			
+			if (nfs.getDescription() == null || nfs.getDescription().length() <= 0)
+				nfs.setDescription(poLine.get_ValueAsString("Description"));
+			else
+				nfs.setDescription(nfs.getDescription() + "; " + poLine.get_ValueAsString("Description"));
+
+			if (nfs.getC_Tax_ID() <= 0)
+				nfs.setC_Tax_ID(poLine.get_ValueAsInt("C_Tax_ID"));
+			
+			if (nfs.getC_UOM_ID() <= 0)
+				nfs.setC_UOM_ID(poLine.get_ValueAsInt("C_UOM_ID"));
 
 			// set product description
 			if (nfs.getDescription() == null || nfs.getDescription().isEmpty())
 				nfs.setDescription(nfs.getM_Product().getName());
 
 			//
-			if (poLine instanceof MOrderLine)
+			if (poLine instanceof MOrderLine && nfs.getC_OrderLine_ID() <= 0)
 				nfs.setC_OrderLine_ID(poLine.get_ID());
-			else if (poLine instanceof MInvoiceLine)
+			else if (poLine instanceof MInvoiceLine && nfs.getC_Invoice_ID() <= 0)
 				nfs.setC_InvoiceLine_ID(poLine.get_ID());
 
 			nfs.saveEx(get_TrxName());
 
 			// Generate details and taxes
-			MLBRDocLineDetailsNFS details = MLBRDocLineDetailsNFS
-					.createFromPO(nfs);
+			MLBRDocLineDetailsNFS details = MLBRDocLineDetailsNFS.createFromPO(nfs);
+			details.populateFromPO(nfs);
 
 			// if null, create it
-			if (details != null) {
+			/*if (details != null) {
 
 				// copy from poLine
 				details.copyFrom(MLBRDocLineDetailsNFS.getOfPO(poLine));
@@ -214,7 +227,7 @@ public class ProcCreateNFS extends SvrProcess {
 
 				// create childrens
 				details.copyChildren(MLBRDocLineDetailsTax.getOfPO(poLine));
-			}
+			}*/
 		}
 
 		// validar produto
