@@ -19,7 +19,8 @@ public class ProcessFactory implements IProcessFactory {
 			return new ProcPrintDANFE();
 		else if (className.equals("org.idempierelbr.nfs.process.ProcSendEMail"))
 			return new ProcSendEMail();
-		
+		else if (className.equals("org.idempierelbr.nfs.process.ProcCreateNFS"))
+			return new ProcCreateNFS();		
 
 		else
 			return null;
