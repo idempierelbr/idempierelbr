@@ -154,20 +154,22 @@ public class MLBRDocLineDetailsNFS extends MLBRDocLineDetailsTax implements IDoc
 		super.calculateTaxes(po,  poLine);
 		
 		// 
-		MLBRNFS nfs = (MLBRNFS) po;
-	
-		//
-		if (getLBR_Tax_ID() > 0) {
-			Map<String, BigDecimal> params = new HashMap<String, BigDecimal>();
-			params.put(MLBRTax.SISCOMEX, getLBR_SiscomexAmt());
-			params.put(MLBRTax.INSURANCE, getInsuredAmount());
-			params.put(MLBRTax.FREIGHT, getFreightAmt());
-			params.put(MLBRTax.OTHERCHARGES, getSurcharges());
-			params.put(MLBRTax.QTY, getLBR_QtyTax());
-			params.put(MLBRTax.AMT, getLBR_GrossAmt().subtract(getDiscountAmt() == null ? Env.ZERO : getDiscountAmt()));
+		if (MLBRNFS.Table_Name.equals(po.get_TableName())) {
+			MLBRNFS nfs = (MLBRNFS) po;
 		
-			MLBRTax tax = new MLBRTax (getCtx(), getLBR_Tax_ID(), get_TrxName());
-			tax.calculate (nfs.isTaxIncluded(), nfs.getDateDoc(), params, nfs.getLBR_TransactionType());
+			//
+			if (getLBR_Tax_ID() > 0) {
+				Map<String, BigDecimal> params = new HashMap<String, BigDecimal>();
+				params.put(MLBRTax.SISCOMEX, getLBR_SiscomexAmt());
+				params.put(MLBRTax.INSURANCE, getInsuredAmount());
+				params.put(MLBRTax.FREIGHT, getFreightAmt());
+				params.put(MLBRTax.OTHERCHARGES, getSurcharges());
+				params.put(MLBRTax.QTY, getLBR_QtyTax());
+				params.put(MLBRTax.AMT, getLBR_GrossAmt().subtract(getDiscountAmt() == null ? Env.ZERO : getDiscountAmt()));
+			
+				MLBRTax tax = new MLBRTax (getCtx(), getLBR_Tax_ID(), get_TrxName());
+				tax.calculate (nfs.isTaxIncluded(), nfs.getDateDoc(), params, nfs.getLBR_TransactionType());
+			}
 		}
 		
 		
