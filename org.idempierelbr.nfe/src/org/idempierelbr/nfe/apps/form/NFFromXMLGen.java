@@ -637,7 +637,9 @@ public class NFFromXMLGen
 				if (eElement.getElementsByTagName("dhSaiEnt").item(0) != null)
 					nf.setDateDelivered(getTimestamp(eElement.getElementsByTagName("dhSaiEnt").item(0).getTextContent()));	
 				
-				nf.setPaymentRule(eElement.getElementsByTagName("indPag").item(0).getTextContent());
+				if (eElement.getElementsByTagName("indPag").item(0) != null)
+					nf.setPaymentRule(eElement.getElementsByTagName("indPag").item(0).getTextContent());
+				
 				nf.setLBR_NFeTpEmis(eElement.getElementsByTagName("tpEmis").item(0).getTextContent());
 				nf.setLBR_FinNFe(eElement.getElementsByTagName("finNFe").item(0).getTextContent());
 				nf.setLBR_NFeNatOp(eElement.getElementsByTagName("natOp").item(0).getTextContent());
