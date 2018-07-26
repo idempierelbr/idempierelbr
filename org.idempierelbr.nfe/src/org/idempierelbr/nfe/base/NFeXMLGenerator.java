@@ -42,6 +42,7 @@ import org.idempierelbr.nfe.beans.CobrancaGrupoFatura;
 import org.idempierelbr.nfe.beans.Comb;
 import org.idempierelbr.nfe.beans.DadosNFE;
 import org.idempierelbr.nfe.beans.DeclaracaoDI;
+import org.idempierelbr.nfe.beans.DetPag;
 import org.idempierelbr.nfe.beans.DetalhesProdServBean;
 import org.idempierelbr.nfe.beans.EnderDest;
 import org.idempierelbr.nfe.beans.EnderEmit;
@@ -174,7 +175,6 @@ public class NFeXMLGenerator {
 		 * Indicador da forma de pagamento:
 		 * 0 - pagamento a vista
 		 * 1 - pagamento a prazo
-		 * 2 - outros
 		 */
 		String indPag = nf.getPaymentRule();
 
@@ -273,7 +273,6 @@ public class NFeXMLGenerator {
 		identNFe.setcUF(chaveNFE.getCUF());
 		identNFe.setcNF(chaveNFE.getCNF());
 		identNFe.setNatOp(RemoverAcentos.remover(TextUtil.checkSize(nf.getLBR_NFeNatOp(), 1, 60)));
-		identNFe.setIndPag(indPag);
 		identNFe.setMod(chaveNFE.getMod());
 		identNFe.setSerie(serie);
 		identNFe.setnNF(nf.getDocumentNo());
@@ -661,6 +660,7 @@ public class NFeXMLGenerator {
 			if (bpLoc.getC_Country_ID() == BPartnerUtil.BRASIL && !isNFCe) {
 				destinatario.setIE(null);
 				destinatario.setIndIEDest("9");
+				identNFe.setIndFinal("1");
 			}
 		}
 		
@@ -1062,8 +1062,11 @@ public class NFeXMLGenerator {
 		valoresicms.setvICMSUFRemet(TextUtil.bigdecimalToString(nf.getTotalTaxAmtDifalRemet())); // vICMSUFRemet - Valor Total do DIFAL do remet
 		valoresicms.setvFCPUFDest(TextUtil.bigdecimalToString(nf.getTotalTaxAmtDifalFCP())); // vFCPUFDest - Valor Total do FCP
 		valoresicms.setvICMSDeson(TextUtil.ZERO_STRING); // vICMS - Valor Total do ICMS desonerado. TODO: Refatorar icms desonerado
+		valoresicms.setvFCP(TextUtil.bigdecimalToString(Env.ZERO));
 		valoresicms.setvBCST(TextUtil.ZERO_STRING); // vBCST - BC do ICMS ST
 		valoresicms.setvST(TextUtil.ZERO_STRING); // vST - Valor Total do ICMS ST
+		valoresicms.setvFCPST(TextUtil.bigdecimalToString(Env.ZERO));
+		valoresicms.setvFCPSTRet(TextUtil.bigdecimalToString(Env.ZERO));
 		valoresicms.setvProd(TextUtil.bigdecimalToString(nf.getTotalLines())); // vProd - Valor Total dos produtos e serviços
 		valoresicms.setvFrete(TextUtil.bigdecimalToString(nf.getTotalFreight())); // vFrete - Valor Total do Frete
 		valoresicms.setvSeg(TextUtil.bigdecimalToString(nf.getTotalInsurance())); // vSeg - Valor Total do Seguro
@@ -1071,6 +1074,7 @@ public class NFeXMLGenerator {
 		valoresicms.setvDesc(TextUtil.bigdecimalToString(nf.getDiscount())); // vDesc - Valor Total do Desconto
 		valoresicms.setvII(TextUtil.ZERO_STRING); // vII - Valor Total do II
 		valoresicms.setvIPI(TextUtil.ZERO_STRING); // vIPI - Valor Total do IPI
+		valoresicms.setvIPIDevol(TextUtil.bigdecimalToString(Env.ZERO));
 		valoresicms.setvPIS(TextUtil.ZERO_STRING); // vPIS - Valor do PIS
 		valoresicms.setvCOFINS(TextUtil.ZERO_STRING); // vCOFINS - Valor do COFINS
 		valoresicms.setvNF(TextUtil.bigdecimalToString(nf.getGrandTotal())); // vNF - Valor Total da NF-e
@@ -1363,51 +1367,48 @@ public class NFeXMLGenerator {
 					dados.setCobr(cobr);
 				}
 			}
-
+		}
+		
 		/*
 		 * Formas de pagamento da NF-e
-		 * 
-		 * Obs.: Gerar este bloco apenas para NFC-e
 		 */
-		} else if (isNFCe) {
-
-			// determina regra de pagamento
-			String paymentRule = MInvoice.PAYMENTRULE_Cash;
-			if (nf.getC_Invoice_ID() > 0)
-				paymentRule = nf.getC_Invoice().getPaymentRule();
-			else if (nf.getC_Order_ID() > 0)
-				paymentRule = nf.getC_Order().getPaymentRule();
-
-			// Cria bean para tag de pgto
-			FormasPagamentoNFEBean pgto = new FormasPagamentoNFEBean();
-			pgto.setvPag(TextUtil.bigdecimalToString(nf.getGrandTotal()));
-
-			// Determina qual forma de pagamento
-
-			if (paymentRule.equals(MInvoice.PAYMENTRULE_Cash)
-					|| paymentRule.equals(MInvoice.PAYMENTRULE_MixedPOSPayment)) {
-				pgto.settPag(NFeUtil.NFCe_TPAG_DINHEIRO);
-
-			} else if (paymentRule.equals(MInvoice.PAYMENTRULE_CreditCard)) {
-				pgto.settPag(NFeUtil.NFCe_TPAG_CARTAO_CREDITO);
-
-			} else if (paymentRule.equals(MInvoice.PAYMENTRULE_DirectDeposit)) {
-				pgto.settPag(NFeUtil.NFCe_TPAG_CARTAO_DEBITO);
-
-			} else if (paymentRule.equals(MInvoice.PAYMENTRULE_Check)) {
-				pgto.settPag(NFeUtil.NFCe_TPAG_CHEQUE);
-
-			} else if (paymentRule.equals(MInvoice.PAYMENTRULE_OnCredit)) {
-
-				pgto.settPag(NFeUtil.NFCe_TPAG_CREDITO_LOJA);
-
-			} else {
-				pgto.settPag(NFeUtil.NFCe_TPAG_OUTROS);
-			}
-
-			// Adiciona a tag
-			dados.addPag(pgto);
+		
+		// determina regra de pagamento
+		String paymentRule = MInvoice.PAYMENTRULE_Cash;
+		if (nf.getC_Invoice_ID() > 0)
+			paymentRule = nf.getC_Invoice().getPaymentRule();
+		else if (nf.getC_Order_ID() > 0)
+			paymentRule = nf.getC_Order().getPaymentRule();
+	
+		// Cria bean para tag de pgto
+		FormasPagamentoNFEBean pgto = new FormasPagamentoNFEBean();
+		
+		DetPag detPag = new DetPag();		
+		detPag.setIndPag(indPag);		
+	
+		// Determina qual forma de pagamento	
+		if (paymentRule.equals(MInvoice.PAYMENTRULE_Cash)
+				|| paymentRule.equals(MInvoice.PAYMENTRULE_MixedPOSPayment)) {
+			detPag.settPag(NFeUtil.NFCe_TPAG_DINHEIRO);	
+		} else if (paymentRule.equals(MInvoice.PAYMENTRULE_CreditCard)) {
+			detPag.settPag(NFeUtil.NFCe_TPAG_CARTAO_CREDITO);	
+		} else if (paymentRule.equals(MInvoice.PAYMENTRULE_DirectDeposit)) {
+			detPag.settPag(NFeUtil.NFCe_TPAG_CARTAO_DEBITO);	
+		} else if (paymentRule.equals(MInvoice.PAYMENTRULE_Check)) {
+			detPag.settPag(NFeUtil.NFCe_TPAG_CHEQUE);	
+		} else if (paymentRule.equals(MInvoice.PAYMENTRULE_OnCredit)) {	
+			detPag.settPag(NFeUtil.NFCe_TPAG_CREDITO_LOJA);	
+		} else {
+			detPag.settPag(NFeUtil.NFCe_TPAG_OUTROS);
 		}
+		
+		detPag.setvPag(TextUtil.bigdecimalToString(nf.getGrandTotal()));
+		
+		pgto.setDetPag(detPag);
+	
+		// Adiciona a tag
+		dados.addPag(pgto);
+		//
 		
 		// TODO: Quando preparar DI, corrigir localização/função destas linhas
 		xstream.alias("DI", DeclaracaoDI.class);

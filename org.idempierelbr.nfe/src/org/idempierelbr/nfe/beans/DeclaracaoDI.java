@@ -91,7 +91,7 @@ public class DeclaracaoDI {
 	}
 
 	/**
-	 * suporte NFE 3.10
+	 * suporte NFE 4.00
 	 * @contributor Claudemir Todo Bom <claudemir@todobom.com>
 	 */
 	

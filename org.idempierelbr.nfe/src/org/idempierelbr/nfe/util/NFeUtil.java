@@ -66,26 +66,28 @@ public abstract class NFeUtil
 	private static CLogger log = CLogger.getCLogger(NFeUtil.class);
 
 	/** Versão				*/
-	public static final String VERSAO			= "3.10";
-	public static final String VERSAO_APP		= "3.10";
+	public static final String VERSAO			= "4.00";
+	public static final String VERSAO_APP		= "4.00";
 	public static final String VERSAO_EVENTO	= "1.00";
 	public static final String VERSAO_CCE		= "1.00";
 	public static final String VERSAO_CAN		= "1.00";
 	public static final String VERSAO_QR_CODE 	= "100";
 	
 	/*
-	 * Formas de pagamento para a tag tpag NF-e 3.10
+	 * Formas de pagamento para a tag tpag NF-e 4.00
 	 */
 	public static final String NFCe_TPAG_DINHEIRO 			= "01";
 	public static final String NFCe_TPAG_CHEQUE 			= "02";
 	public static final String NFCe_TPAG_CARTAO_CREDITO		= "03";
 	public static final String NFCe_TPAG_CARTAO_DEBITO		= "04";
 	public static final String NFCe_TPAG_CREDITO_LOJA 		= "05";
-	public static final String NFCe_TPAG_VALE_ALIMENTACAO	= "06";
-	public static final String NFCe_TPAG_VALE_REFEICAO		= "07";
-	public static final String NFCe_TPAG_VALE_PRESENTE		= "08";
-	public static final String NFCe_TPAG_VALE_COMBUSTIVEL	= "09";
-	public static final String NFCe_TPAG_OUTROS				= "10";
+	public static final String NFCe_TPAG_VALE_ALIMENTACAO	= "10";
+	public static final String NFCe_TPAG_VALE_REFEICAO		= "11";
+	public static final String NFCe_TPAG_VALE_PRESENTE		= "12";
+	public static final String NFCe_TPAG_VALE_COMBUSTIVEL	= "13";
+	public static final String NFCe_TPAG_BOLETO_BANCARIO	= "15";
+	public static final String NFCe_TPAG_SEM_PAGAMENTO		= "90";
+	public static final String NFCe_TPAG_OUTROS				= "99";
 	
 	/** XML					*/
 	public static final long XML_SIZE = 500;
@@ -413,7 +415,7 @@ public abstract class NFeUtil
 	}
 	
 	/**
-	 * Converte timestamp para o formato UTC utilizado na NF-e 3.10.
+	 * Converte timestamp para o formato UTC utilizado na NF-e 4.00.
 	 * @param ts
 	 * @return
 	 */

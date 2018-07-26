@@ -25,14 +25,14 @@ import org.compiere.util.Env;
 
 /** Generated Model for LBR_DocLine_ICMS
  *  @author iDempiere (generated) 
- *  @version Release 3.1 - $Id$ */
+ *  @version Release 5.1 - $Id$ */
 public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20170110L;
+	private static final long serialVersionUID = 20180629L;
 
     /** Standard Constructor */
     public X_LBR_DocLine_ICMS (Properties ctx, int LBR_DocLine_ICMS_ID, String trxName)
@@ -192,6 +192,23 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 		return bd;
 	}
 
+	/** Set DIFAL Tax Base Amt of "Fundo de Combate a Pobreza".
+		@param LBR_DIFAL_TaxBaseFCPUFDest DIFAL Tax Base Amt of "Fundo de Combate a Pobreza"	  */
+	public void setLBR_DIFAL_TaxBaseFCPUFDest (BigDecimal LBR_DIFAL_TaxBaseFCPUFDest)
+	{
+		set_Value (COLUMNNAME_LBR_DIFAL_TaxBaseFCPUFDest, LBR_DIFAL_TaxBaseFCPUFDest);
+	}
+
+	/** Get DIFAL Tax Base Amt of "Fundo de Combate a Pobreza".
+		@return DIFAL Tax Base Amt of "Fundo de Combate a Pobreza"	  */
+	public BigDecimal getLBR_DIFAL_TaxBaseFCPUFDest () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_DIFAL_TaxBaseFCPUFDest);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
 	/** Set DIFAL Tax Rate of "Fundo de Combate a Pobreza".
 		@param LBR_DIFAL_TaxRateFCPUFDest DIFAL Tax Rate of "Fundo de Combate a Pobreza"	  */
 	public void setLBR_DIFAL_TaxRateFCPUFDest (BigDecimal LBR_DIFAL_TaxRateFCPUFDest)
@@ -292,6 +309,218 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	public String getLBR_DocLine_ICMS_UU () 
 	{
 		return (String)get_Value(COLUMNNAME_LBR_DocLine_ICMS_UU);
+	}
+
+	/** 00 - Tributada integralmente = 00 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_00_TributadaIntegralmente = "00";
+	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria = 10_1 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_10_TributadaEComCobrancaDoICMSPorSubTributaria = "10_1";
+	/** 20 - Com reducao de base de calculo = 20 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_20_ComReducaoDeBaseDeCalculo = "20";
+	/** 30 - Isenta ou nao-trib. e com cobr. do ICMS por Sub. Tribut = 30 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_30_IsentaOuNao_TribEComCobrDoICMSPorSubTribut = "30";
+	/** 40 - Isenta = 40 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_40_Isenta = "40";
+	/** 41 - Nao-tributada = 41_1 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_41_Nao_Tributada = "41_1";
+	/** 50 - Suspensao = 50 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_50_Suspensao = "50";
+	/** 51 - Diferimento  = 51 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_51_Diferimento = "51";
+	/** 60 - ICMS cobrado anteriormente por substituicao tributaria = 60 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_60_ICMSCobradoAnteriormentePorSubstituicaoTributaria = "60";
+	/** 70 - Com red. de base de calc. e cobr. do ICMS por Sub. Trib = 70 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_70_ComRedDeBaseDeCalcECobrDoICMSPorSubTrib = "70";
+	/** 90 - Outras = 90_2 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_90_Outras = "90_2";
+	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria (com partilha) = 10_2 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_10_TributadaEComCobrancaDoICMSPorSubTributariaComPartilha = "10_2";
+	/** 41 - Nao-tributada (retencao antecipada) = 41_2 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_41_Nao_TributadaRetencaoAntecipada = "41_2";
+	/** 90 - Outras (com partilha) = 90_1 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_90_OutrasComPartilha = "90_1";
+	/** Set Declarant ICMS Tax Status.
+		@param LBR_ICMS_OwnTaxStatus 
+		ICMS tax status from the point of view of the declarant
+	  */
+	public void setLBR_ICMS_OwnTaxStatus (String LBR_ICMS_OwnTaxStatus)
+	{
+
+		set_Value (COLUMNNAME_LBR_ICMS_OwnTaxStatus, LBR_ICMS_OwnTaxStatus);
+	}
+
+	/** Get Declarant ICMS Tax Status.
+		@return ICMS tax status from the point of view of the declarant
+	  */
+	public String getLBR_ICMS_OwnTaxStatus () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_ICMS_OwnTaxStatus);
+	}
+
+	/** Set ICMS Tax Operation Amount.
+		@param LBR_ICMS_TaxAmtOp 
+		Identifies the ICMS Tax Operation Amount
+	  */
+	public void setLBR_ICMS_TaxAmtOp (BigDecimal LBR_ICMS_TaxAmtOp)
+	{
+		set_Value (COLUMNNAME_LBR_ICMS_TaxAmtOp, LBR_ICMS_TaxAmtOp);
+	}
+
+	/** Get ICMS Tax Operation Amount.
+		@return Identifies the ICMS Tax Operation Amount
+	  */
+	public BigDecimal getLBR_ICMS_TaxAmtOp () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMS_TaxAmtOp);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Margem Valor Agregado (%) = 0 */
+	public static final String LBR_ICMS_TAXBASETYPE_MargemValorAgregado = "0";
+	/** Pauta (Valor) = 1 */
+	public static final String LBR_ICMS_TAXBASETYPE_PautaValor = "1";
+	/** Preco Tabelado Max. (Valor) = 2 */
+	public static final String LBR_ICMS_TAXBASETYPE_PrecoTabeladoMaxValor = "2";
+	/** Valor da Operacao = 3 */
+	public static final String LBR_ICMS_TAXBASETYPE_ValorDaOperacao = "3";
+	/** Set ICMS Tax Base Type.
+		@param LBR_ICMS_TaxBaseType 
+		Identifies a ICMS Tax Base Type
+	  */
+	public void setLBR_ICMS_TaxBaseType (String LBR_ICMS_TaxBaseType)
+	{
+
+		set_Value (COLUMNNAME_LBR_ICMS_TaxBaseType, LBR_ICMS_TaxBaseType);
+	}
+
+	/** Get ICMS Tax Base Type.
+		@return Identifies a ICMS Tax Base Type
+	  */
+	public String getLBR_ICMS_TaxBaseType () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_ICMS_TaxBaseType);
+	}
+
+	/** Cab = 1 */
+	public static final String LBR_ICMS_TAXRELIEFTYPE_Cab = "1";
+	/** Agriculture Use = 3 */
+	public static final String LBR_ICMS_TAXRELIEFTYPE_AgricultureUse = "3";
+	/** Rental = 4 */
+	public static final String LBR_ICMS_TAXRELIEFTYPE_Rental = "4";
+	/** Consular = 5 */
+	public static final String LBR_ICMS_TAXRELIEFTYPE_Consular = "5";
+	/** SUVs and Motorcycles = 6 */
+	public static final String LBR_ICMS_TAXRELIEFTYPE_SUVsAndMotorcycles = "6";
+	/** SUFRAMA = 7 */
+	public static final String LBR_ICMS_TAXRELIEFTYPE_SUFRAMA = "7";
+	/** Sale to public institutions = 8 */
+	public static final String LBR_ICMS_TAXRELIEFTYPE_SaleToPublicInstitutions = "8";
+	/** Other = 9 */
+	public static final String LBR_ICMS_TAXRELIEFTYPE_Other = "9";
+	/** Financing agency = 12 */
+	public static final String LBR_ICMS_TAXRELIEFTYPE_FinancingAgency = "12";
+	/** Set ICMS Tax Relief Type.
+		@param LBR_ICMS_TaxReliefType 
+		Identifies the ICMS Tax Relief Type
+	  */
+	public void setLBR_ICMS_TaxReliefType (String LBR_ICMS_TaxReliefType)
+	{
+
+		set_Value (COLUMNNAME_LBR_ICMS_TaxReliefType, LBR_ICMS_TaxReliefType);
+	}
+
+	/** Get ICMS Tax Relief Type.
+		@return Identifies the ICMS Tax Relief Type
+	  */
+	public String getLBR_ICMS_TaxReliefType () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_ICMS_TaxReliefType);
+	}
+
+	/** 101 - Tributada com permissao de credito = 101 */
+	public static final String LBR_ICMS_TAXSTATUSSN_101_TributadaComPermissaoDeCredito = "101";
+	/** 102 - Tributada sem permissao de credito = 102 */
+	public static final String LBR_ICMS_TAXSTATUSSN_102_TributadaSemPermissaoDeCredito = "102";
+	/** 103 - Isencao do ICMS para faixa de receita bruta = 103 */
+	public static final String LBR_ICMS_TAXSTATUSSN_103_IsencaoDoICMSParaFaixaDeReceitaBruta = "103";
+	/** 201 - Tributada com permissao de credito = 201 */
+	public static final String LBR_ICMS_TAXSTATUSSN_201_TributadaComPermissaoDeCredito = "201";
+	/** 202 - Tributada sem permissao de credito = 202 */
+	public static final String LBR_ICMS_TAXSTATUSSN_202_TributadaSemPermissaoDeCredito = "202";
+	/** 203 - Isencao do ICMS para faixa de receita bruta = 203 */
+	public static final String LBR_ICMS_TAXSTATUSSN_203_IsencaoDoICMSParaFaixaDeReceitaBruta = "203";
+	/** 300 - Imune = 300 */
+	public static final String LBR_ICMS_TAXSTATUSSN_300_Imune = "300";
+	/** 400 - Nao Tributada = 400 */
+	public static final String LBR_ICMS_TAXSTATUSSN_400_NaoTributada = "400";
+	/** 500 - ICMS cobrado anteriormente = 500 */
+	public static final String LBR_ICMS_TAXSTATUSSN_500_ICMSCobradoAnteriormente = "500";
+	/** 900 - Outros = 900 */
+	public static final String LBR_ICMS_TAXSTATUSSN_900_Outros = "900";
+	/** Set ICMS Tax Status (Simple).
+		@param LBR_ICMS_TaxStatusSN 
+		Identifies a ICMS Tax Status in a simple taxation
+	  */
+	public void setLBR_ICMS_TaxStatusSN (String LBR_ICMS_TaxStatusSN)
+	{
+
+		set_Value (COLUMNNAME_LBR_ICMS_TaxStatusSN, LBR_ICMS_TaxStatusSN);
+	}
+
+	/** Get ICMS Tax Status (Simple).
+		@return Identifies a ICMS Tax Status in a simple taxation
+	  */
+	public String getLBR_ICMS_TaxStatusSN () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_ICMS_TaxStatusSN);
+	}
+
+	/** 00 - Tributada integralmente = 00 */
+	public static final String LBR_ICMS_TAXSTATUSTN_00_TributadaIntegralmente = "00";
+	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria = 10_1 */
+	public static final String LBR_ICMS_TAXSTATUSTN_10_TributadaEComCobrancaDoICMSPorSubTributaria = "10_1";
+	/** 20 - Com reducao de base de calculo = 20 */
+	public static final String LBR_ICMS_TAXSTATUSTN_20_ComReducaoDeBaseDeCalculo = "20";
+	/** 30 - Isenta ou nao-trib. e com cobr. do ICMS por Sub. Tribut = 30 */
+	public static final String LBR_ICMS_TAXSTATUSTN_30_IsentaOuNao_TribEComCobrDoICMSPorSubTribut = "30";
+	/** 40 - Isenta = 40 */
+	public static final String LBR_ICMS_TAXSTATUSTN_40_Isenta = "40";
+	/** 41 - Nao-tributada = 41_1 */
+	public static final String LBR_ICMS_TAXSTATUSTN_41_Nao_Tributada = "41_1";
+	/** 50 - Suspensao = 50 */
+	public static final String LBR_ICMS_TAXSTATUSTN_50_Suspensao = "50";
+	/** 51 - Diferimento  = 51 */
+	public static final String LBR_ICMS_TAXSTATUSTN_51_Diferimento = "51";
+	/** 60 - ICMS cobrado anteriormente por substituicao tributaria = 60 */
+	public static final String LBR_ICMS_TAXSTATUSTN_60_ICMSCobradoAnteriormentePorSubstituicaoTributaria = "60";
+	/** 70 - Com red. de base de calc. e cobr. do ICMS por Sub. Trib = 70 */
+	public static final String LBR_ICMS_TAXSTATUSTN_70_ComRedDeBaseDeCalcECobrDoICMSPorSubTrib = "70";
+	/** 90 - Outras = 90_2 */
+	public static final String LBR_ICMS_TAXSTATUSTN_90_Outras = "90_2";
+	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria (com partilha) = 10_2 */
+	public static final String LBR_ICMS_TAXSTATUSTN_10_TributadaEComCobrancaDoICMSPorSubTributariaComPartilha = "10_2";
+	/** 41 - Nao-tributada (retencao antecipada) = 41_2 */
+	public static final String LBR_ICMS_TAXSTATUSTN_41_Nao_TributadaRetencaoAntecipada = "41_2";
+	/** 90 - Outras (com partilha) = 90_1 */
+	public static final String LBR_ICMS_TAXSTATUSTN_90_OutrasComPartilha = "90_1";
+	/** Set ICMS Tax Status (Standard Taxation).
+		@param LBR_ICMS_TaxStatusTN 
+		Identifies a ICMS Tax Status in a standard taxation
+	  */
+	public void setLBR_ICMS_TaxStatusTN (String LBR_ICMS_TaxStatusTN)
+	{
+
+		set_Value (COLUMNNAME_LBR_ICMS_TaxStatusTN, LBR_ICMS_TaxStatusTN);
+	}
+
+	/** Get ICMS Tax Status (Standard Taxation).
+		@return Identifies a ICMS Tax Status in a standard taxation
+	  */
+	public String getLBR_ICMS_TaxStatusTN () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_ICMS_TaxStatusTN);
 	}
 
 	/** Default Taxation = TN */
@@ -616,218 +845,6 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
-	}
-
-	/** 00 - Tributada integralmente = 00 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_00_TributadaIntegralmente = "00";
-	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria = 10_1 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_10_TributadaEComCobrancaDoICMSPorSubTributaria = "10_1";
-	/** 20 - Com reducao de base de calculo = 20 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_20_ComReducaoDeBaseDeCalculo = "20";
-	/** 30 - Isenta ou nao-trib. e com cobr. do ICMS por Sub. Tribut = 30 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_30_IsentaOuNao_TribEComCobrDoICMSPorSubTribut = "30";
-	/** 40 - Isenta = 40 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_40_Isenta = "40";
-	/** 41 - Nao-tributada = 41_1 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_41_Nao_Tributada = "41_1";
-	/** 50 - Suspensao = 50 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_50_Suspensao = "50";
-	/** 51 - Diferimento  = 51 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_51_Diferimento = "51";
-	/** 60 - ICMS cobrado anteriormente por substituicao tributaria = 60 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_60_ICMSCobradoAnteriormentePorSubstituicaoTributaria = "60";
-	/** 70 - Com red. de base de calc. e cobr. do ICMS por Sub. Trib = 70 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_70_ComRedDeBaseDeCalcECobrDoICMSPorSubTrib = "70";
-	/** 90 - Outras = 90_2 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_90_Outras = "90_2";
-	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria (com partilha) = 10_2 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_10_TributadaEComCobrancaDoICMSPorSubTributariaComPartilha = "10_2";
-	/** 41 - Nao-tributada (retencao antecipada) = 41_2 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_41_Nao_TributadaRetencaoAntecipada = "41_2";
-	/** 90 - Outras (com partilha) = 90_1 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_90_OutrasComPartilha = "90_1";
-	/** Set Declarant ICMS Tax Status.
-		@param LBR_ICMS_OwnTaxStatus 
-		ICMS tax status from the point of view of the declarant
-	  */
-	public void setLBR_ICMS_OwnTaxStatus (String LBR_ICMS_OwnTaxStatus)
-	{
-
-		set_Value (COLUMNNAME_LBR_ICMS_OwnTaxStatus, LBR_ICMS_OwnTaxStatus);
-	}
-
-	/** Get Declarant ICMS Tax Status.
-		@return ICMS tax status from the point of view of the declarant
-	  */
-	public String getLBR_ICMS_OwnTaxStatus () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_ICMS_OwnTaxStatus);
-	}
-
-	/** Set ICMS Tax Operation Amount.
-		@param LBR_ICMS_TaxAmtOp 
-		Identifies the ICMS Tax Operation Amount
-	  */
-	public void setLBR_ICMS_TaxAmtOp (BigDecimal LBR_ICMS_TaxAmtOp)
-	{
-		set_Value (COLUMNNAME_LBR_ICMS_TaxAmtOp, LBR_ICMS_TaxAmtOp);
-	}
-
-	/** Get ICMS Tax Operation Amount.
-		@return Identifies the ICMS Tax Operation Amount
-	  */
-	public BigDecimal getLBR_ICMS_TaxAmtOp () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMS_TaxAmtOp);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Margem Valor Agregado (%) = 0 */
-	public static final String LBR_ICMS_TAXBASETYPE_MargemValorAgregado = "0";
-	/** Pauta (Valor) = 1 */
-	public static final String LBR_ICMS_TAXBASETYPE_PautaValor = "1";
-	/** Preco Tabelado Max. (Valor) = 2 */
-	public static final String LBR_ICMS_TAXBASETYPE_PrecoTabeladoMaxValor = "2";
-	/** Valor da Operacao = 3 */
-	public static final String LBR_ICMS_TAXBASETYPE_ValorDaOperacao = "3";
-	/** Set ICMS Tax Base Type.
-		@param LBR_ICMS_TaxBaseType 
-		Identifies a ICMS Tax Base Type
-	  */
-	public void setLBR_ICMS_TaxBaseType (String LBR_ICMS_TaxBaseType)
-	{
-
-		set_Value (COLUMNNAME_LBR_ICMS_TaxBaseType, LBR_ICMS_TaxBaseType);
-	}
-
-	/** Get ICMS Tax Base Type.
-		@return Identifies a ICMS Tax Base Type
-	  */
-	public String getLBR_ICMS_TaxBaseType () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_ICMS_TaxBaseType);
-	}
-
-	/** Cab = 1 */
-	public static final String LBR_ICMS_TAXRELIEFTYPE_Cab = "1";
-	/** Agriculture Use = 3 */
-	public static final String LBR_ICMS_TAXRELIEFTYPE_AgricultureUse = "3";
-	/** Rental = 4 */
-	public static final String LBR_ICMS_TAXRELIEFTYPE_Rental = "4";
-	/** Consular = 5 */
-	public static final String LBR_ICMS_TAXRELIEFTYPE_Consular = "5";
-	/** SUVs and Motorcycles = 6 */
-	public static final String LBR_ICMS_TAXRELIEFTYPE_SUVsAndMotorcycles = "6";
-	/** SUFRAMA = 7 */
-	public static final String LBR_ICMS_TAXRELIEFTYPE_SUFRAMA = "7";
-	/** Sale to public institutions = 8 */
-	public static final String LBR_ICMS_TAXRELIEFTYPE_SaleToPublicInstitutions = "8";
-	/** Other = 9 */
-	public static final String LBR_ICMS_TAXRELIEFTYPE_Other = "9";
-	/** Financing agency = 12 */
-	public static final String LBR_ICMS_TAXRELIEFTYPE_FinancingAgency = "12";
-	/** Set ICMS Tax Relief Type.
-		@param LBR_ICMS_TaxReliefType 
-		Identifies the ICMS Tax Relief Type
-	  */
-	public void setLBR_ICMS_TaxReliefType (String LBR_ICMS_TaxReliefType)
-	{
-
-		set_Value (COLUMNNAME_LBR_ICMS_TaxReliefType, LBR_ICMS_TaxReliefType);
-	}
-
-	/** Get ICMS Tax Relief Type.
-		@return Identifies the ICMS Tax Relief Type
-	  */
-	public String getLBR_ICMS_TaxReliefType () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_ICMS_TaxReliefType);
-	}
-
-	/** 101 - Tributada com permissao de credito = 101 */
-	public static final String LBR_ICMS_TAXSTATUSSN_101_TributadaComPermissaoDeCredito = "101";
-	/** 102 - Tributada sem permissao de credito = 102 */
-	public static final String LBR_ICMS_TAXSTATUSSN_102_TributadaSemPermissaoDeCredito = "102";
-	/** 103 - Isencao do ICMS para faixa de receita bruta = 103 */
-	public static final String LBR_ICMS_TAXSTATUSSN_103_IsencaoDoICMSParaFaixaDeReceitaBruta = "103";
-	/** 201 - Tributada com permissao de credito = 201 */
-	public static final String LBR_ICMS_TAXSTATUSSN_201_TributadaComPermissaoDeCredito = "201";
-	/** 202 - Tributada sem permissao de credito = 202 */
-	public static final String LBR_ICMS_TAXSTATUSSN_202_TributadaSemPermissaoDeCredito = "202";
-	/** 203 - Isencao do ICMS para faixa de receita bruta = 203 */
-	public static final String LBR_ICMS_TAXSTATUSSN_203_IsencaoDoICMSParaFaixaDeReceitaBruta = "203";
-	/** 300 - Imune = 300 */
-	public static final String LBR_ICMS_TAXSTATUSSN_300_Imune = "300";
-	/** 400 - Nao Tributada = 400 */
-	public static final String LBR_ICMS_TAXSTATUSSN_400_NaoTributada = "400";
-	/** 500 - ICMS cobrado anteriormente = 500 */
-	public static final String LBR_ICMS_TAXSTATUSSN_500_ICMSCobradoAnteriormente = "500";
-	/** 900 - Outros = 900 */
-	public static final String LBR_ICMS_TAXSTATUSSN_900_Outros = "900";
-	/** Set ICMS Tax Status (Simple).
-		@param LBR_ICMS_TaxStatusSN 
-		Identifies a ICMS Tax Status in a simple taxation
-	  */
-	public void setLBR_ICMS_TaxStatusSN (String LBR_ICMS_TaxStatusSN)
-	{
-
-		set_Value (COLUMNNAME_LBR_ICMS_TaxStatusSN, LBR_ICMS_TaxStatusSN);
-	}
-
-	/** Get ICMS Tax Status (Simple).
-		@return Identifies a ICMS Tax Status in a simple taxation
-	  */
-	public String getLBR_ICMS_TaxStatusSN () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_ICMS_TaxStatusSN);
-	}
-
-	/** 00 - Tributada integralmente = 00 */
-	public static final String LBR_ICMS_TAXSTATUSTN_00_TributadaIntegralmente = "00";
-	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria = 10_1 */
-	public static final String LBR_ICMS_TAXSTATUSTN_10_TributadaEComCobrancaDoICMSPorSubTributaria = "10_1";
-	/** 20 - Com reducao de base de calculo = 20 */
-	public static final String LBR_ICMS_TAXSTATUSTN_20_ComReducaoDeBaseDeCalculo = "20";
-	/** 30 - Isenta ou nao-trib. e com cobr. do ICMS por Sub. Tribut = 30 */
-	public static final String LBR_ICMS_TAXSTATUSTN_30_IsentaOuNao_TribEComCobrDoICMSPorSubTribut = "30";
-	/** 40 - Isenta = 40 */
-	public static final String LBR_ICMS_TAXSTATUSTN_40_Isenta = "40";
-	/** 41 - Nao-tributada = 41_1 */
-	public static final String LBR_ICMS_TAXSTATUSTN_41_Nao_Tributada = "41_1";
-	/** 50 - Suspensao = 50 */
-	public static final String LBR_ICMS_TAXSTATUSTN_50_Suspensao = "50";
-	/** 51 - Diferimento  = 51 */
-	public static final String LBR_ICMS_TAXSTATUSTN_51_Diferimento = "51";
-	/** 60 - ICMS cobrado anteriormente por substituicao tributaria = 60 */
-	public static final String LBR_ICMS_TAXSTATUSTN_60_ICMSCobradoAnteriormentePorSubstituicaoTributaria = "60";
-	/** 70 - Com red. de base de calc. e cobr. do ICMS por Sub. Trib = 70 */
-	public static final String LBR_ICMS_TAXSTATUSTN_70_ComRedDeBaseDeCalcECobrDoICMSPorSubTrib = "70";
-	/** 90 - Outras = 90_2 */
-	public static final String LBR_ICMS_TAXSTATUSTN_90_Outras = "90_2";
-	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria (com partilha) = 10_2 */
-	public static final String LBR_ICMS_TAXSTATUSTN_10_TributadaEComCobrancaDoICMSPorSubTributariaComPartilha = "10_2";
-	/** 41 - Nao-tributada (retencao antecipada) = 41_2 */
-	public static final String LBR_ICMS_TAXSTATUSTN_41_Nao_TributadaRetencaoAntecipada = "41_2";
-	/** 90 - Outras (com partilha) = 90_1 */
-	public static final String LBR_ICMS_TAXSTATUSTN_90_OutrasComPartilha = "90_1";
-	/** Set ICMS Tax Status (Standard Taxation).
-		@param LBR_ICMS_TaxStatusTN 
-		Identifies a ICMS Tax Status in a standard taxation
-	  */
-	public void setLBR_ICMS_TaxStatusTN (String LBR_ICMS_TaxStatusTN)
-	{
-
-		set_Value (COLUMNNAME_LBR_ICMS_TaxStatusTN, LBR_ICMS_TaxStatusTN);
-	}
-
-	/** Get ICMS Tax Status (Standard Taxation).
-		@return Identifies a ICMS Tax Status in a standard taxation
-	  */
-	public String getLBR_ICMS_TaxStatusTN () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_ICMS_TaxStatusTN);
 	}
 
 	/** 0 - Domestic = 0 */

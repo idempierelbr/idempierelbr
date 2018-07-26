@@ -21,14 +21,18 @@ public class ValoresICMS {
 	private String vFCPUFDest;
 	private String vICMSUFDest;
 	private String vICMSUFRemet;
+	private String vFCP;
 	private String vBCST;
 	private String vST;
+	private String vFCPST;
+	private String vFCPSTRet;
 	private String vProd;
 	private String vFrete;
 	private String vSeg;
 	private String vDesc;
 	private String vII;
 	private String vIPI;
+	private String vIPIDevol;
 	private String vPIS;
 	private String vCOFINS;
 	private String vOutro;
@@ -232,5 +236,37 @@ public class ValoresICMS {
 
 	public void setvICMSUFRemet(String vICMSUFRemet) {
 		this.vICMSUFRemet = vICMSUFRemet;
+	}
+	
+	public String getvFCP() {
+		return vFCP;
+	}
+
+	public void setvFCP(String vFCP) {
+		this.vFCP = vFCP;
+	}
+
+	public String getvFCPST() {
+		return vFCPST;
+	}
+
+	public void setvFCPST(String vFCPST) {
+		this.vFCPST = vFCPST;
+	}
+
+	public String getvFCPSTRet() {
+		return vFCPSTRet;
+	}
+
+	public void setvFCPSTRet(String vFCPSTRet) {
+		this.vFCPSTRet = vFCPSTRet;
+	}
+
+	public String getvIPIDevol() {
+		return vIPIDevol;
+	}
+
+	public void setvIPIDevol(String vIPIDevol) {
+		this.vIPIDevol = vIPIDevol;
 	}
 }

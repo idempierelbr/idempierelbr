@@ -23,7 +23,6 @@ public class IdentNFE {
 	private String cUF;
 	private String cNF;
 	private String natOp;
-	private String indPag;
 	private String mod;
 	private String serie;
 	private String nNF;
@@ -69,15 +68,6 @@ public class IdentNFE {
 			natOp = natOp.trim();
 	
 		this.natOp = natOp;
-	}
-	public String getIndPag() {
-		return indPag;
-	}
-	public void setIndPag(String indPag) {
-		if (indPag != null)
-			indPag = indPag.trim();
-	
-		this.indPag = indPag;
 	}
 	public String getMod() {
 		return mod;

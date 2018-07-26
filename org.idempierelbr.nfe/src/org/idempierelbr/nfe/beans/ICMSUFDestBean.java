@@ -3,6 +3,7 @@ package org.idempierelbr.nfe.beans;
 public class ICMSUFDestBean {
 
 	private String vBCUFDest;
+	private String vBCFCPUFDest;
 	private String pFCPUFDest;
 	private String pICMSUFDest;
 	private String pICMSInter;
@@ -73,6 +74,14 @@ public class ICMSUFDestBean {
 
 	public void setvICMSUFRemet(String vICMSUFRemet) {
 		this.vICMSUFRemet = vICMSUFRemet;
+	}
+
+	public String getvBCFCPUFDest() {
+		return vBCFCPUFDest;
+	}
+
+	public void setvBCFCPUFDest(String vBCFCPUFDest) {
+		this.vBCFCPUFDest = vBCFCPUFDest;
 	}
 
 }

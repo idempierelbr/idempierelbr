@@ -26,16 +26,26 @@ public class ICMSGrupoBean
 	private String pRedBC2;
 	private String pICMS;
 	private String vICMS;
+	private String vBCFCP;
+	private String pFCP;
+	private String vFCP;
 	private String modBCST;
 	private String pMVAST;
 	private String pRedBCST;
 	private String vBCST;
 	private String pICMSST;
 	private String vICMSST;
+	private String vBCFCPST;
+	private String pFCPST;
+	private String vFCPST;
 	private String motDesICMS;
 	private String vICMSDeson;
 	private String vBCSTRet;
+	private String pST;
 	private String vICMSSTRet;
+	private String vBCFCPSTRet;
+	private String pFCPSTRet;
+	private String vFCPSTRet;
 	private String vBCSTDest;
 	private String vICMSSTDest;
 	private String pBCOp;
@@ -261,5 +271,65 @@ public class ICMSGrupoBean
 	}
 	public void setvICMSDif(String vICMSDif) {
 		this.vICMSDif = vICMSDif;
+	}
+	public String getvBCFCP() {
+		return vBCFCP;
+	}
+	public void setvBCFCP(String vBCFCP) {
+		this.vBCFCP = vBCFCP;
+	}
+	public String getpFCP() {
+		return pFCP;
+	}
+	public void setpFCP(String pFCP) {
+		this.pFCP = pFCP;
+	}
+	public String getvFCP() {
+		return vFCP;
+	}
+	public void setvFCP(String vFCP) {
+		this.vFCP = vFCP;
+	}
+	public String getvBCFCPST() {
+		return vBCFCPST;
+	}
+	public void setvBCFCPST(String vBCFCPST) {
+		this.vBCFCPST = vBCFCPST;
+	}
+	public String getpFCPST() {
+		return pFCPST;
+	}
+	public void setpFCPST(String pFCPST) {
+		this.pFCPST = pFCPST;
+	}
+	public String getvFCPST() {
+		return vFCPST;
+	}
+	public void setvFCPST(String vFCPST) {
+		this.vFCPST = vFCPST;
+	}
+	public String getpST() {
+		return pST;
+	}
+	public void setpST(String pST) {
+		this.pST = pST;
+	}
+	public String getvBCFCPSTRet() {
+		return vBCFCPSTRet;
+	}
+	public void setvBCFCPSTRet(String vBCFCPSTRet) {
+		this.vBCFCPSTRet = vBCFCPSTRet;
+	}
+	public String getpFCPSTRet() {
+		return pFCPSTRet;
+	}
+	public void setpFCPSTRet(String pFCPSTRet) {
+		this.pFCPSTRet = pFCPSTRet;
+	}
+	public String getvFCPSTRet() {
+		return vFCPSTRet;
+	}
+	public void setvFCPSTRet(String vFCPSTRet) {
+		this.vFCPSTRet = vFCPSTRet;
 	}
 }	//	ICMSGrupoBean

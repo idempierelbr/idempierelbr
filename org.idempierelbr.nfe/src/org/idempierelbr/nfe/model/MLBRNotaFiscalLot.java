@@ -94,7 +94,7 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 		}
 		
 		StringBuilder xmlLot = new StringBuilder();
-		xmlLot.append("<enviNFe xmlns=\"http://www.portalfiscal.inf.br/nfe\" versao=\"3.10\">")
+		xmlLot.append("<enviNFe xmlns=\"http://www.portalfiscal.inf.br/nfe\" versao=\"4.00\">")
 			.append("<idLote>")
 			.append(getDocumentNo())
 			.append("</idLote>")

@@ -185,7 +185,7 @@ public class MLBRNotaFiscalInut extends X_LBR_NotaFiscalInut {
 		xml.alias("infInut", InutilizacaoNFEBean.class);
 		xml.useAttributeFor(InutilizacaoNFEBean.class, "Id");
 		StringBuffer inut = new StringBuffer("");
-		inut.append("<inutNFe xmlns=\"http://www.portalfiscal.inf.br/nfe\" versao=\"3.10\">");
+		inut.append("<inutNFe xmlns=\"http://www.portalfiscal.inf.br/nfe\" versao=\"4.00\">");
 		inut.append(xml.toXML(iNF));
 		inut.append("</inutNFe>");
 		

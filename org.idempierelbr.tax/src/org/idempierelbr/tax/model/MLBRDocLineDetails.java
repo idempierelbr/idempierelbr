@@ -606,6 +606,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		icms.setLBR_DIFAL_TaxAmtICMSUFRemet(taxAmtSenderUF.setScale(2, RoundingMode.HALF_UP));
 		
 		// FCP
+		icms.setLBR_DIFAL_TaxBaseFCPUFDest(taxBaseAmt.setScale(2, RoundingMode.HALF_UP));	
 		icms.setLBR_DIFAL_TaxRateFCPUFDest(fcpTaxRate.setScale(2, RoundingMode.HALF_UP));
 		icms.setLBR_DIFAL_TaxAmtFCPUFDest(fcpTaxAmt.setScale(2, RoundingMode.HALF_UP));		
 	}

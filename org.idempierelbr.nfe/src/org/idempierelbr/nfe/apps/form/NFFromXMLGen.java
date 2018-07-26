@@ -608,7 +608,7 @@ public class NFFromXMLGen
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
 				
-				if (!versionNo.equals("3.10")) {
+				if (!versionNo.equals("4.00")) {
 					nf.setLBR_NFE_DestinationType(getPresumedDestinationType());
 					nf.setLBR_NFeIndFinal("0"); // Não
 					nf.setLBR_NFeIndPres("0"); // Não se Aplica

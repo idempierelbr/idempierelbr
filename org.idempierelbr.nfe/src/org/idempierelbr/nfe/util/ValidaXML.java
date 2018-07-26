@@ -165,35 +165,35 @@ public class ValidaXML
 	}	//	ValidaDoc
 
 	public static String validaEnvXML(String stringXml) {
-		return ValidaDoc(stringXml, "enviNFe_v3.10.xsd");
+		return ValidaDoc(stringXml, "enviNFe_v4.00.xsd");
 	}
 
 	public static String validaXML(String stringXml) {
-		return ValidaDoc(stringXml, "nfe_v3.10.xsd");
+		return ValidaDoc(stringXml, "nfe_v4.00.xsd");
 	}
 
 	public static String validaRetXML(String stringXml) {
-		return ValidaDoc(stringXml, "retEnviNFe_v3.10.xsd");
+		return ValidaDoc(stringXml, "retEnviNFe_v4.00.xsd");
 	}
 
 	public static String validaConsultaProt(String stringXml) {
-		return ValidaDoc(stringXml, "consReciNFe_v3.10.xsd");
+		return ValidaDoc(stringXml, "consReciNFe_v4.00.xsd");
 	}
 
 	public static String validaRetornoConsultaProt(String stringXml) {
-		return ValidaDoc(stringXml, "retConsReciNFe_v3.10.xsd");
+		return ValidaDoc(stringXml, "retConsReciNFe_v4.00.xsd");
 	}
 
 	public static String validaConsultaNFe(String stringXml) {
-		return ValidaDoc(stringXml, "consSitNFe_v3.10.xsd");
+		return ValidaDoc(stringXml, "consSitNFe_v4.00.xsd");
 	}
 
 	public static String validaRetConsultaNFe(String stringXml) {
-		return ValidaDoc(stringXml, "retConsSitNFe_v3.10.xsd");
+		return ValidaDoc(stringXml, "retConsSitNFe_v4.00.xsd");
 	}
 
 	public static String validaRecebimentoNFe(String stringXml) {
-		return ValidaDoc(stringXml, "procNFe_v3.10.xsd");
+		return ValidaDoc(stringXml, "procNFe_v4.00.xsd");
 	}
 	
 	public static String validaPedCancelamentoNFe(String stringXml) {
@@ -205,11 +205,11 @@ public class ValidaXML
 	}	
 	
 	public static String validaPedInutilizacaoNFe(String stringXml) {
-		return ValidaDoc(stringXml, "inutNFe_v3.10.xsd");
+		return ValidaDoc(stringXml, "inutNFe_v4.00.xsd");
 	}
 	
 	public static String validaRetInutilizacaoNFe(String stringXml) {
-		return ValidaDoc(stringXml, "retInutNFe_v3.10.xsd");
+		return ValidaDoc(stringXml, "retInutNFe_v4.00.xsd");
 	}	
 }
 

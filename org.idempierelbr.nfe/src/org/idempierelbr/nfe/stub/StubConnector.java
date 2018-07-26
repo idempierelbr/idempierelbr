@@ -14,6 +14,10 @@ import org.compiere.model.MRegion;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
 import org.idempierelbr.nfe.model.MLBRNFeWebService;
+import org.idempierelbr.nfe.stub.generic.NFeAutorizacao4Stub;
+import org.idempierelbr.nfe.stub.generic.NFeInutilizacao4Stub;
+import org.idempierelbr.nfe.stub.generic.NFeRecepcaoEvento4Stub;
+import org.idempierelbr.nfe.stub.generic.NFeRetAutorizacao4Stub;
 
 public class StubConnector {
 	
@@ -188,26 +192,16 @@ public class StubConnector {
 		String result = null;
 		
 		if (service.equals(MLBRNFeWebService.SERVICE_NFE_INUTILIZACAO)) {
-			// Header
-			org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub.NfeCabecMsg cabecMsg =
-					new org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub.NfeCabecMsg();
-			org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub.NfeCabecMsgE cabecMsgE =
-					new org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub.NfeCabecMsgE();
-			cabecMsg.setCUF(region.get_ValueAsString("LBR_RegionCode"));
-			cabecMsg.setVersaoDados(versionNo);
-			cabecMsgE.setNfeCabecMsg(cabecMsg);
 			try {
 				// Message
-				org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub.NfeDadosMsg dadosMsg =
-						org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub.NfeDadosMsg.Factory.parse(reader);
+				NFeInutilizacao4Stub.NfeDadosMsg dadosMsg = NFeInutilizacao4Stub.NfeDadosMsg.Factory.parse(reader);
 				
 				OMElement ome = addAttribute(dadosMsg.getExtraElement(), "evento", "xmlns", "http://www.portalfiscal.inf.br/nfe");			  
 				dadosMsg.setExtraElement(ome);
 				
 				// Stub
-				org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub stub =
-						new org.idempierelbr.nfe.stub.generic.NfeInutilizacao2Stub(url);
-				result = stub.nfeInutilizacaoNF2(dadosMsg, cabecMsgE).getExtraElement().toString();
+				NFeInutilizacao4Stub stub = new NFeInutilizacao4Stub(url);
+				result = stub.nfeInutilizacaoNF(dadosMsg).getExtraElement().toString();
 			} catch (Exception e) {
 				e.printStackTrace();
 				return null;
@@ -219,76 +213,46 @@ public class StubConnector {
 		} else if (service.equals(MLBRNFeWebService.SERVICE_NFE_CONSULTA_CADASTRO)) {
 	
 		} else if (service.equals(MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO)) {
-			// Header
-			org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub.NfeCabecMsg cabecMsg =
-					new org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub.NfeCabecMsg();
-			org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub.NfeCabecMsgE cabecMsgE =
-					new org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub.NfeCabecMsgE();
-			cabecMsg.setCUF(region.get_ValueAsString("LBR_RegionCode"));
-			cabecMsg.setVersaoDados(versionNo);
-			cabecMsgE.setNfeCabecMsg(cabecMsg);
 			try {
 				// Message
-				org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub.NfeDadosMsg dadosMsg =
-						org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub.NfeDadosMsg.Factory.parse(reader);
+				NFeRecepcaoEvento4Stub.NfeDadosMsg dadosMsg = NFeRecepcaoEvento4Stub.NfeDadosMsg.Factory.parse(reader);
 				
 				OMElement ome = addAttribute(dadosMsg.getExtraElement(), "evento", "xmlns", "http://www.portalfiscal.inf.br/nfe");			  
-				dadosMsg.setExtraElement(ome);
+				dadosMsg.setExtraElement(ome);			
 				
 				// Stub
-				org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub stub =
-						new org.idempierelbr.nfe.stub.generic.RecepcaoEventoStub(url);
-				result = stub.nfeRecepcaoEvento(dadosMsg, cabecMsgE).getExtraElement().toString();
+				NFeRecepcaoEvento4Stub stub = new NFeRecepcaoEvento4Stub(url);
+				result = stub.nfeRecepcaoEvento(dadosMsg).getExtraElement().toString();
 			} catch (Exception e) {
 				e.printStackTrace();
 				return null;
 			}
 		} else if (service.equals(MLBRNFeWebService.SERVICE_NFE_AUTORIZACAO)) {
-			// Header
-			org.idempierelbr.nfe.stub.generic.NfeAutorizacaoStub.NfeCabecMsg cabecMsg =
-					new org.idempierelbr.nfe.stub.generic.NfeAutorizacaoStub.NfeCabecMsg();
-			org.idempierelbr.nfe.stub.generic.NfeAutorizacaoStub.NfeCabecMsgE cabecMsgE =
-					new org.idempierelbr.nfe.stub.generic.NfeAutorizacaoStub.NfeCabecMsgE();
-			cabecMsg.setCUF(region.get_ValueAsString("LBR_RegionCode"));
-			cabecMsg.setVersaoDados(versionNo);
-			cabecMsgE.setNfeCabecMsg(cabecMsg);
 			try {
 				// Message
-				org.idempierelbr.nfe.stub.generic.NfeAutorizacaoStub.NfeDadosMsg dadosMsg =
-						org.idempierelbr.nfe.stub.generic.NfeAutorizacaoStub.NfeDadosMsg.Factory.parse(reader);
+				NFeAutorizacao4Stub.NfeDadosMsg dadosMsg = NFeAutorizacao4Stub.NfeDadosMsg.Factory.parse(reader);
 				
 				OMElement ome = addAttribute(dadosMsg.getExtraElement(), "NFe", "xmlns", "http://www.portalfiscal.inf.br/nfe");			  
 				dadosMsg.setExtraElement(ome);
 
 				// Stub
-				org.idempierelbr.nfe.stub.generic.NfeAutorizacaoStub stub =
-						new org.idempierelbr.nfe.stub.generic.NfeAutorizacaoStub(url);
-				result = stub.nfeAutorizacaoLote(dadosMsg, cabecMsgE).getExtraElement().toString();
+				NFeAutorizacao4Stub stub = new NFeAutorizacao4Stub(url);
+				result = stub.nfeAutorizacaoLote(dadosMsg).getExtraElement().toString();
 			} catch (Exception e) {
 				e.printStackTrace();
 				return null;
 			}
 		} else if (service.equals(MLBRNFeWebService.SERVICE_NFE_RET_AUTORIZACAO)) {
-			// Header
-			org.idempierelbr.nfe.stub.generic.NfeRetAutorizacaoStub.NfeCabecMsg cabecMsg =
-					new org.idempierelbr.nfe.stub.generic.NfeRetAutorizacaoStub.NfeCabecMsg();
-			org.idempierelbr.nfe.stub.generic.NfeRetAutorizacaoStub.NfeCabecMsgE cabecMsgE =
-					new org.idempierelbr.nfe.stub.generic.NfeRetAutorizacaoStub.NfeCabecMsgE();
-			cabecMsg.setCUF(region.get_ValueAsString("LBR_RegionCode"));
-			cabecMsg.setVersaoDados(versionNo);
-			cabecMsgE.setNfeCabecMsg(cabecMsg);
 			try {
 				// Message
-				org.idempierelbr.nfe.stub.generic.NfeRetAutorizacaoStub.NfeDadosMsg dadosMsg =
-						org.idempierelbr.nfe.stub.generic.NfeRetAutorizacaoStub.NfeDadosMsg.Factory.parse(reader);
+				NFeRetAutorizacao4Stub.NfeDadosMsg dadosMsg = NFeRetAutorizacao4Stub.NfeDadosMsg.Factory.parse(reader);
+				
 				// Stub
-				org.idempierelbr.nfe.stub.generic.NfeRetAutorizacaoStub stub =
-						new org.idempierelbr.nfe.stub.generic.NfeRetAutorizacaoStub(url);
-				result = stub.nfeRetAutorizacaoLote(dadosMsg, cabecMsgE).getExtraElement().toString();
+				NFeRetAutorizacao4Stub stub = new NFeRetAutorizacao4Stub(url);
+				result = stub.nfeRetAutorizacaoLote(dadosMsg).getExtraElement().toString();
 			} catch (Exception e) {
 				e.printStackTrace();
 				throw e;
-				//return null;
 			}
 		} else
 			throw new UnsupportedOperationException();
