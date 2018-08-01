@@ -22,18 +22,17 @@ import java.sql.ResultSet;
 import java.util.Properties;
 import org.compiere.model.*;
 import org.compiere.util.Env;
-import org.compiere.util.KeyNamePair;
 
 /** Generated Model for LBR_NotaFiscalLineComb
  *  @author iDempiere (generated) 
- *  @version Release 2.1 - $Id$ */
+ *  @version Release 5.1 - $Id$ */
 public class X_LBR_NotaFiscalLineComb extends PO implements I_LBR_NotaFiscalLineComb, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20150325L;
+	private static final long serialVersionUID = 20180801L;
 
     /** Standard Constructor */
     public X_LBR_NotaFiscalLineComb (Properties ctx, int LBR_NotaFiscalLineComb_ID, String trxName)
@@ -43,8 +42,8 @@ public class X_LBR_NotaFiscalLineComb extends PO implements I_LBR_NotaFiscalLine
         {
 			setC_Region_ID (0);
 			setLBR_CodANP (null);
-			setLBR_NotaFiscalLineComb_ID (0);
 			setLBR_NotaFiscalLine_ID (0);
+			setLBR_NotaFiscalLineComb_ID (0);
         } */
     }
 
@@ -55,7 +54,7 @@ public class X_LBR_NotaFiscalLineComb extends PO implements I_LBR_NotaFiscalLine
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 1 - Org 
       */
     protected int get_AccessLevel()
     {
@@ -104,81 +103,58 @@ public class X_LBR_NotaFiscalLineComb extends PO implements I_LBR_NotaFiscalLine
 		return ii.intValue();
 	}
 
-	/** Set Código de Autorização.
-		@param LBR_CODIF 
-		Código de autorização / registro do CODIF
-	  */
-	public void setLBR_CODIF (String LBR_CODIF)
-	{
-		set_Value (COLUMNNAME_LBR_CODIF, LBR_CODIF);
-	}
-
-	/** Get Código de Autorização.
-		@return Código de autorização / registro do CODIF
-	  */
-	public String getLBR_CODIF () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_CODIF);
-	}
-
-	/** Set Código ANP.
+	/** Set ANP Code.
 		@param LBR_CodANP 
-		Código da Tabela da Agência Nacional do Petróleo para o produto.
+		Product Code issued by the brazilian National Petrol Agency to fuels and lubricants.
 	  */
 	public void setLBR_CodANP (String LBR_CodANP)
 	{
 		set_Value (COLUMNNAME_LBR_CodANP, LBR_CodANP);
 	}
 
-	/** Get Código ANP.
-		@return Código da Tabela da Agência Nacional do Petróleo para o produto.
+	/** Get ANP Code.
+		@return Product Code issued by the brazilian National Petrol Agency to fuels and lubricants.
 	  */
 	public String getLBR_CodANP () 
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CodANP);
 	}
 
-	/** Set Linha de Nota Fiscal - Combustível.
-		@param LBR_NotaFiscalLineComb_ID Linha de Nota Fiscal - Combustível	  */
-	public void setLBR_NotaFiscalLineComb_ID (int LBR_NotaFiscalLineComb_ID)
+	/** Set CODIF Authorisation Code.
+		@param LBR_CODIF 
+		CODIF Authorisation Code
+	  */
+	public void setLBR_CODIF (String LBR_CODIF)
 	{
-		if (LBR_NotaFiscalLineComb_ID < 1) 
-			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalLineComb_ID, null);
-		else 
-			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalLineComb_ID, Integer.valueOf(LBR_NotaFiscalLineComb_ID));
+		set_Value (COLUMNNAME_LBR_CODIF, LBR_CODIF);
 	}
 
-	/** Get Linha de Nota Fiscal - Combustível.
-		@return Linha de Nota Fiscal - Combustível	  */
-	public int getLBR_NotaFiscalLineComb_ID () 
+	/** Get CODIF Authorisation Code.
+		@return CODIF Authorisation Code
+	  */
+	public String getLBR_CODIF () 
 	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NotaFiscalLineComb_ID);
-		if (ii == null)
-			 return 0;
-		return ii.intValue();
+		return (String)get_Value(COLUMNNAME_LBR_CODIF);
 	}
 
-    /** Get Record ID/ColumnName
-        @return ID/ColumnName pair
-      */
-    public KeyNamePair getKeyNamePair() 
+	/** Set Descrição do Produto na ANP.
+		@param LBR_DescANP Descrição do Produto na ANP	  */
+	public void setLBR_DescANP (String LBR_DescANP)
+	{
+		set_Value (COLUMNNAME_LBR_DescANP, LBR_DescANP);
+	}
+
+	/** Get Descrição do Produto na ANP.
+		@return Descrição do Produto na ANP	  */
+	public String getLBR_DescANP () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_DescANP);
+	}
+
+	public I_LBR_NotaFiscalLine getLBR_NotaFiscalLine() throws RuntimeException
     {
-        return new KeyNamePair(get_ID(), String.valueOf(getLBR_NotaFiscalLineComb_ID()));
-    }
-
-	/** Set LBR_NotaFiscalLineComb_UU.
-		@param LBR_NotaFiscalLineComb_UU LBR_NotaFiscalLineComb_UU	  */
-	public void setLBR_NotaFiscalLineComb_UU (String LBR_NotaFiscalLineComb_UU)
-	{
-		set_Value (COLUMNNAME_LBR_NotaFiscalLineComb_UU, LBR_NotaFiscalLineComb_UU);
-	}
-
-	/** Get LBR_NotaFiscalLineComb_UU.
-		@return LBR_NotaFiscalLineComb_UU	  */
-	public String getLBR_NotaFiscalLineComb_UU () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_NotaFiscalLineComb_UU);
-	}
+		return (I_LBR_NotaFiscalLine)MTable.get(getCtx(), I_LBR_NotaFiscalLine.Table_Name)
+			.getPO(getLBR_NotaFiscalLine_ID(), get_TrxName());	}
 
 	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Line.
 		@param LBR_NotaFiscalLine_ID 
@@ -203,17 +179,57 @@ public class X_LBR_NotaFiscalLineComb extends PO implements I_LBR_NotaFiscalLine
 		return ii.intValue();
 	}
 
-	/** Set Percentual Gás Natural.
+	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Line Comb.
+		@param LBR_NotaFiscalLineComb_ID 
+		Brazilian Fiscal Invoice (Nota Fiscal) Line Comb Identifier
+	  */
+	public void setLBR_NotaFiscalLineComb_ID (int LBR_NotaFiscalLineComb_ID)
+	{
+		if (LBR_NotaFiscalLineComb_ID < 1) 
+			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalLineComb_ID, null);
+		else 
+			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalLineComb_ID, Integer.valueOf(LBR_NotaFiscalLineComb_ID));
+	}
+
+	/** Get Brazilian Fiscal Invoice (Nota Fiscal) Line Comb.
+		@return Brazilian Fiscal Invoice (Nota Fiscal) Line Comb Identifier
+	  */
+	public int getLBR_NotaFiscalLineComb_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NotaFiscalLineComb_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Line Comb.
+		@param LBR_NotaFiscalLineComb_UU 
+		Brazilian Fiscal Invoice (Nota Fiscal) Line Comb Identifier
+	  */
+	public void setLBR_NotaFiscalLineComb_UU (String LBR_NotaFiscalLineComb_UU)
+	{
+		set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalLineComb_UU, LBR_NotaFiscalLineComb_UU);
+	}
+
+	/** Get Brazilian Fiscal Invoice (Nota Fiscal) Line Comb.
+		@return Brazilian Fiscal Invoice (Nota Fiscal) Line Comb Identifier
+	  */
+	public String getLBR_NotaFiscalLineComb_UU () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_NotaFiscalLineComb_UU);
+	}
+
+	/** Set Natural Gas Mix Percent.
 		@param LBR_pMixGN 
-		Percentual de Gás Natural para o produto GLP
+		Natural gas mix percent in a LPG product.
 	  */
 	public void setLBR_pMixGN (BigDecimal LBR_pMixGN)
 	{
 		set_Value (COLUMNNAME_LBR_pMixGN, LBR_pMixGN);
 	}
 
-	/** Get Percentual Gás Natural.
-		@return Percentual de Gás Natural para o produto GLP
+	/** Get Natural Gas Mix Percent.
+		@return Natural gas mix percent in a LPG product.
 	  */
 	public BigDecimal getLBR_pMixGN () 
 	{
@@ -223,17 +239,17 @@ public class X_LBR_NotaFiscalLineComb extends PO implements I_LBR_NotaFiscalLine
 		return bd;
 	}
 
-	/** Set Quantidade Combustível Temp. Ambiente.
+	/** Set Amount of fuel at room temperature.
 		@param LBR_qTemp 
-		Quantidade de combustível faturada à temperatura ambiente.
+		Amount of fuel sold at room temperature
 	  */
 	public void setLBR_qTemp (BigDecimal LBR_qTemp)
 	{
 		set_Value (COLUMNNAME_LBR_qTemp, LBR_qTemp);
 	}
 
-	/** Get Quantidade Combustível Temp. Ambiente.
-		@return Quantidade de combustível faturada à temperatura ambiente.
+	/** Get Amount of fuel at room temperature.
+		@return Amount of fuel sold at room temperature
 	  */
 	public BigDecimal getLBR_qTemp () 
 	{

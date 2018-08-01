@@ -6,7 +6,7 @@ package org.idempierelbr.nfe.beans;
  */
 public class Comb {
 	private String cProdANP;
-	private String pMixGN;
+	private String descANP;
 	private String CODIF;
 	private String qTemp;
 	private String UFCons;
@@ -16,12 +16,6 @@ public class Comb {
 	}
 	public void setcProdANP(String cProdANP) {
 		this.cProdANP = cProdANP;
-	}
-	public String getpMixGN() {
-		return pMixGN;
-	}
-	public void setpMixGN(String pMixGN) {
-		this.pMixGN = pMixGN;
 	}
 	public String getCODIF() {
 		return CODIF;
@@ -40,6 +34,12 @@ public class Comb {
 	}
 	public void setUFCons(String uFCons) {
 		UFCons = uFCons;
+	}
+	public String getdescANP() {
+		return descANP;
+	}
+	public void setdescANP(String descANP) {
+		this.descANP = descANP;
 	}
 	
 }

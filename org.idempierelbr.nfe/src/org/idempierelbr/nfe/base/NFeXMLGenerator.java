@@ -921,6 +921,12 @@ public class NFeXMLGenerator {
 			if(mNFLineComb != null && !isNFCe){
 				Comb comb = new Comb();
 				comb.setcProdANP(mNFLineComb.getLBR_CodANP());
+				
+				if (mNFLineComb.getLBR_DescANP() == null || mNFLineComb.getLBR_DescANP().length() < 2)
+					comb.setdescANP(prdt.getName());
+				else
+					comb.setdescANP(mNFLineComb.getLBR_DescANP());
+				
 				comb.setUFCons(mNFLineComb.getC_Region().getName());
 				produtos.setComb(comb);
 			}

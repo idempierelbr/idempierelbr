@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NotaFiscalLineComb
  *  @author iDempiere (generated) 
- *  @version Release 2.1
+ *  @version Release 5.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_NotaFiscalLineComb 
@@ -32,14 +32,14 @@ public interface I_LBR_NotaFiscalLineComb
     /** TableName=LBR_NotaFiscalLineComb */
     public static final String Table_Name = "LBR_NotaFiscalLineComb";
 
-    /** AD_Table_ID=1000070 */
-    public static final int Table_ID = MTable.getTable_ID(Table_Name);
+    /** AD_Table_ID=800008 */
+    public static final int Table_ID = 800008;
 
     KeyNamePair Model = new KeyNamePair(Table_ID, Table_Name);
 
-    /** AccessLevel = 3 - Client - Org 
+    /** AccessLevel = 1 - Org 
      */
-    BigDecimal accessLevel = BigDecimal.valueOf(3);
+    BigDecimal accessLevel = BigDecimal.valueOf(1);
 
     /** Load Meta Data */
 
@@ -108,49 +108,40 @@ public interface I_LBR_NotaFiscalLineComb
 	  */
 	public boolean isActive();
 
-    /** Column name LBR_CODIF */
-    public static final String COLUMNNAME_LBR_CODIF = "LBR_CODIF";
-
-	/** Set Código de Autorização.
-	  * Código de autorização / registro do CODIF
-	  */
-	public void setLBR_CODIF (String LBR_CODIF);
-
-	/** Get Código de Autorização.
-	  * Código de autorização / registro do CODIF
-	  */
-	public String getLBR_CODIF();
-
     /** Column name LBR_CodANP */
     public static final String COLUMNNAME_LBR_CodANP = "LBR_CodANP";
 
-	/** Set Código ANP.
-	  * Código da Tabela da Agência Nacional do Petróleo para o produto.
+	/** Set ANP Code.
+	  * Product Code issued by the brazilian National Petrol Agency to fuels and lubricants.
 	  */
 	public void setLBR_CodANP (String LBR_CodANP);
 
-	/** Get Código ANP.
-	  * Código da Tabela da Agência Nacional do Petróleo para o produto.
+	/** Get ANP Code.
+	  * Product Code issued by the brazilian National Petrol Agency to fuels and lubricants.
 	  */
 	public String getLBR_CodANP();
 
-    /** Column name LBR_NotaFiscalLineComb_ID */
-    public static final String COLUMNNAME_LBR_NotaFiscalLineComb_ID = "LBR_NotaFiscalLineComb_ID";
+    /** Column name LBR_CODIF */
+    public static final String COLUMNNAME_LBR_CODIF = "LBR_CODIF";
 
-	/** Set Linha de Nota Fiscal - Combustível	  */
-	public void setLBR_NotaFiscalLineComb_ID (int LBR_NotaFiscalLineComb_ID);
+	/** Set CODIF Authorisation Code.
+	  * CODIF Authorisation Code
+	  */
+	public void setLBR_CODIF (String LBR_CODIF);
 
-	/** Get Linha de Nota Fiscal - Combustível	  */
-	public int getLBR_NotaFiscalLineComb_ID();
+	/** Get CODIF Authorisation Code.
+	  * CODIF Authorisation Code
+	  */
+	public String getLBR_CODIF();
 
-    /** Column name LBR_NotaFiscalLineComb_UU */
-    public static final String COLUMNNAME_LBR_NotaFiscalLineComb_UU = "LBR_NotaFiscalLineComb_UU";
+    /** Column name LBR_DescANP */
+    public static final String COLUMNNAME_LBR_DescANP = "LBR_DescANP";
 
-	/** Set LBR_NotaFiscalLineComb_UU	  */
-	public void setLBR_NotaFiscalLineComb_UU (String LBR_NotaFiscalLineComb_UU);
+	/** Set Descrição do Produto na ANP	  */
+	public void setLBR_DescANP (String LBR_DescANP);
 
-	/** Get LBR_NotaFiscalLineComb_UU	  */
-	public String getLBR_NotaFiscalLineComb_UU();
+	/** Get Descrição do Produto na ANP	  */
+	public String getLBR_DescANP();
 
     /** Column name LBR_NotaFiscalLine_ID */
     public static final String COLUMNNAME_LBR_NotaFiscalLine_ID = "LBR_NotaFiscalLine_ID";
@@ -165,29 +156,57 @@ public interface I_LBR_NotaFiscalLineComb
 	  */
 	public int getLBR_NotaFiscalLine_ID();
 
+	public I_LBR_NotaFiscalLine getLBR_NotaFiscalLine() throws RuntimeException;
+
+    /** Column name LBR_NotaFiscalLineComb_ID */
+    public static final String COLUMNNAME_LBR_NotaFiscalLineComb_ID = "LBR_NotaFiscalLineComb_ID";
+
+	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Line Comb.
+	  * Brazilian Fiscal Invoice (Nota Fiscal) Line Comb Identifier
+	  */
+	public void setLBR_NotaFiscalLineComb_ID (int LBR_NotaFiscalLineComb_ID);
+
+	/** Get Brazilian Fiscal Invoice (Nota Fiscal) Line Comb.
+	  * Brazilian Fiscal Invoice (Nota Fiscal) Line Comb Identifier
+	  */
+	public int getLBR_NotaFiscalLineComb_ID();
+
+    /** Column name LBR_NotaFiscalLineComb_UU */
+    public static final String COLUMNNAME_LBR_NotaFiscalLineComb_UU = "LBR_NotaFiscalLineComb_UU";
+
+	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Line Comb.
+	  * Brazilian Fiscal Invoice (Nota Fiscal) Line Comb Identifier
+	  */
+	public void setLBR_NotaFiscalLineComb_UU (String LBR_NotaFiscalLineComb_UU);
+
+	/** Get Brazilian Fiscal Invoice (Nota Fiscal) Line Comb.
+	  * Brazilian Fiscal Invoice (Nota Fiscal) Line Comb Identifier
+	  */
+	public String getLBR_NotaFiscalLineComb_UU();
+
     /** Column name LBR_pMixGN */
     public static final String COLUMNNAME_LBR_pMixGN = "LBR_pMixGN";
 
-	/** Set Percentual Gás Natural.
-	  * Percentual de Gás Natural para o produto GLP
+	/** Set Natural Gas Mix Percent.
+	  * Natural gas mix percent in a LPG product.
 	  */
 	public void setLBR_pMixGN (BigDecimal LBR_pMixGN);
 
-	/** Get Percentual Gás Natural.
-	  * Percentual de Gás Natural para o produto GLP
+	/** Get Natural Gas Mix Percent.
+	  * Natural gas mix percent in a LPG product.
 	  */
 	public BigDecimal getLBR_pMixGN();
 
     /** Column name LBR_qTemp */
     public static final String COLUMNNAME_LBR_qTemp = "LBR_qTemp";
 
-	/** Set Quantidade Combustível Temp. Ambiente.
-	  * Quantidade de combustível faturada à temperatura ambiente.
+	/** Set Amount of fuel at room temperature.
+	  * Amount of fuel sold at room temperature
 	  */
 	public void setLBR_qTemp (BigDecimal LBR_qTemp);
 
-	/** Get Quantidade Combustível Temp. Ambiente.
-	  * Quantidade de combustível faturada à temperatura ambiente.
+	/** Get Amount of fuel at room temperature.
+	  * Amount of fuel sold at room temperature
 	  */
 	public BigDecimal getLBR_qTemp();
 

@@ -414,11 +414,18 @@ public class CreateNotaFiscal extends SvrProcess
 				MProduct mProduct = new MProduct(getCtx(), M_Product_ID, get_TrxName());
 				
 				String LBR_CodANP = mProduct.get_ValueAsString("LBR_CodANP");
+				String LBR_DescANP = mProduct.get_ValueAsString("LBR_DescANP");
 				
 				if(!LBR_CodANP.isEmpty()){
 					MLBRNotaFiscalLineComb mComb = new MLBRNotaFiscalLineComb(getCtx(), 0, get_TrxName());
 					mComb.setLBR_NotaFiscalLine_ID(nfLine.get_ID());
 					mComb.setLBR_CodANP(LBR_CodANP);
+					
+					if (LBR_DescANP == null || LBR_DescANP.length() < 2)
+						mComb.setLBR_DescANP(mProduct.getName());
+					else
+						mComb.setLBR_DescANP(LBR_DescANP);
+					
 					mComb.setC_Region_ID(bpRegion.get_ID());
 					mComb.saveEx();
 				}
