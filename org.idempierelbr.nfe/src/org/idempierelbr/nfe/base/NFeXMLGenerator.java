@@ -1393,25 +1393,30 @@ public class NFeXMLGenerator {
 		detPag.setIndPag(indPag);		
 	
 		// Determina qual forma de pagamento	
-		if (paymentRule.equals(MInvoice.PAYMENTRULE_Cash)
-				|| paymentRule.equals(MInvoice.PAYMENTRULE_MixedPOSPayment)) {
-			detPag.settPag(NFeUtil.NFCe_TPAG_DINHEIRO);	
-		} else if (paymentRule.equals(MInvoice.PAYMENTRULE_CreditCard)) {
-			detPag.settPag(NFeUtil.NFCe_TPAG_CARTAO_CREDITO);	
-		} else if (paymentRule.equals(MInvoice.PAYMENTRULE_DirectDeposit)) {
-			detPag.settPag(NFeUtil.NFCe_TPAG_CARTAO_DEBITO);	
-		} else if (paymentRule.equals(MInvoice.PAYMENTRULE_Check)) {
-			detPag.settPag(NFeUtil.NFCe_TPAG_CHEQUE);	
-		} else if (paymentRule.equals(MInvoice.PAYMENTRULE_OnCredit)) {	
-			detPag.settPag(NFeUtil.NFCe_TPAG_CREDITO_LOJA);	
+		if (FinNFE.equals("3") || FinNFE.equals("4")) {
+			detPag.settPag(NFeUtil.NFCe_TPAG_SEM_PAGAMENTO);
+			detPag.setvPag(TextUtil.bigdecimalToString(Env.ZERO));
 		} else {
-			detPag.settPag(NFeUtil.NFCe_TPAG_OUTROS);
+			if (paymentRule.equals(MInvoice.PAYMENTRULE_Cash)
+					|| paymentRule.equals(MInvoice.PAYMENTRULE_MixedPOSPayment)) {
+				detPag.settPag(NFeUtil.NFCe_TPAG_DINHEIRO);	
+			} else if (paymentRule.equals(MInvoice.PAYMENTRULE_CreditCard)) {
+				detPag.settPag(NFeUtil.NFCe_TPAG_CARTAO_CREDITO);	
+			} else if (paymentRule.equals(MInvoice.PAYMENTRULE_DirectDeposit)) {
+				detPag.settPag(NFeUtil.NFCe_TPAG_CARTAO_DEBITO);	
+			} else if (paymentRule.equals(MInvoice.PAYMENTRULE_Check)) {
+				detPag.settPag(NFeUtil.NFCe_TPAG_CHEQUE);	
+			} else if (paymentRule.equals(MInvoice.PAYMENTRULE_OnCredit)) {	
+				detPag.settPag(NFeUtil.NFCe_TPAG_CREDITO_LOJA);	
+			} else {
+				detPag.settPag(NFeUtil.NFCe_TPAG_OUTROS);
+			}
+			
+			detPag.setvPag(TextUtil.bigdecimalToString(nf.getGrandTotal()));
 		}
 		
-		detPag.setvPag(TextUtil.bigdecimalToString(nf.getGrandTotal()));
-		
 		pgto.setDetPag(detPag);
-	
+		
 		// Adiciona a tag
 		dados.addPag(pgto);
 		//
