@@ -418,6 +418,7 @@ public class CreateNotaFiscal extends SvrProcess
 				
 				if(!LBR_CodANP.isEmpty()){
 					MLBRNotaFiscalLineComb mComb = new MLBRNotaFiscalLineComb(getCtx(), 0, get_TrxName());
+					mComb.setAD_Org_ID(nf.getAD_Org_ID());
 					mComb.setLBR_NotaFiscalLine_ID(nfLine.get_ID());
 					mComb.setLBR_CodANP(LBR_CodANP);
 					
