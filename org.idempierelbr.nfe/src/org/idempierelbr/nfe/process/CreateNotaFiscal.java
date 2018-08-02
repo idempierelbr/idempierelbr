@@ -675,8 +675,8 @@ public class CreateNotaFiscal extends SvrProcess
 	 * @return doc type
 	 */
 	private String getPaymentRule() {
-		// Default: OTHER
-		String payRule = "2"; // OTHER
+		// Default: CASH (ON SIGHT)
+		String payRule = "1"; // CASH (ON SIGHT)
 		
 		String poPayRule = "";
 		int poC_PaymentTerm_ID = 0;
