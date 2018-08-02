@@ -52,6 +52,7 @@ public class MLBRNotaFiscalPay extends X_LBR_NotaFiscalPay {
     	MTable table = MTable.get (getCtx(), MLBRNotaFiscalPaySched.Table_Name);
 		Query query =  new Query(getCtx(), table, "LBR_NotaFiscalPay_ID=?", get_TrxName());
 	 		  query.setParameters(new Object[]{get_ID()});
+	 		  query.setOrderBy("DueDate");
 	 	//
 	 	List<MLBRNotaFiscalPaySched> list = query.list();
 	 	return list.toArray(new MLBRNotaFiscalPaySched[list.size()]);
