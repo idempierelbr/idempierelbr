@@ -1346,21 +1346,29 @@ public class NFeXMLGenerator {
 
 					if (pay.getGrandTotal() != null)
 						cobrfat.setvOrig(TextUtil.bigdecimalToString(pay.getGrandTotal()));
+					else
+						cobrfat.setvOrig(TextUtil.bigdecimalToString(Env.ZERO));
 
 					if (pay.getDiscountAmt() != null)
 						cobrfat.setvDesc(TextUtil.bigdecimalToString(pay.getDiscountAmt()));
+					else
+						cobrfat.setvDesc(TextUtil.bigdecimalToString(Env.ZERO));
 
 					if (pay.getNetAmtToInvoice() != null)
 						cobrfat.setvLiq(TextUtil.bigdecimalToString(pay.getNetAmtToInvoice()));
+					else
+						cobrfat.setvLiq(TextUtil.bigdecimalToString(Env.ZERO));
 
 					cobr.setFat(cobrfat);
 
 					// Adiciona as duplicatas da fatura
 					MLBRNotaFiscalPaySched payScheds[] = pay.getPaySchedules();
-
+					
+					int sequencia = 1;
+					
 					for (MLBRNotaFiscalPaySched paySched : payScheds) {
 						cobrdup = new CobrancaGrupoDuplicata();
-						cobrdup.setnDup(paySched.getLBR_Document());
+						cobrdup.setnDup(TextUtil.lPad(sequencia, 3));
 						cobrdup.setdVenc(TextUtil.timeToString(paySched.getDueDate(), "yyyy-MM-dd"));
 
 						if (paySched.getDueAmt() == null)
@@ -1368,6 +1376,7 @@ public class NFeXMLGenerator {
 
 						cobrdup.setvDup(TextUtil.bigdecimalToString(paySched.getDueAmt()));
 						cobr.addDup(cobrdup);
+						sequencia++;
 					}
 
 					dados.setCobr(cobr);
