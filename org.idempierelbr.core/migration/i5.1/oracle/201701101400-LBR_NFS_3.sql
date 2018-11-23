@@ -55,7 +55,7 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,FieldLen
 ;
 
 -- 10/01/2017 11h24min45s BRST
-ALTER TABLE LBR_NFS ADD RDT_MotivoCancelamentoNFS VARCHAR2(2) DEFAULT NULL 
+ALTER TABLE LBR_NFS ADD RDT_MotivoCancelamentoNFS NVARCHAR2(2) DEFAULT NULL 
 ;
 
 -- 10/01/2017 11h26min38s BRST
@@ -115,11 +115,11 @@ UPDATE AD_InfoColumn SET ColumnName='LBR_MensagensRetorno', Name='Mensagens de R
 ;
 
 -- 10/01/2017 11h37min48s BRST
-INSERT INTO AD_Column (AD_Column_ID,Version,Name,Description,AD_Table_ID,ColumnName,FieldLength,IsKey,IsParent,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsEncrypted,AD_Reference_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,AD_Element_ID,IsUpdateable,IsSelectionColumn,EntityType,IsSyncDatabase,IsAlwaysUpdateable,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsAllowCopy,SeqNoSelection,IsToolbarButton,IsSecure) VALUES (801588,0,'Mensagens de Retorno','Mensagens de Retorno (erros)',800035,'LBR_MensagensRetorno',2048,'N','N','N','N','N',0,'N',14,0,0,'Y',TO_DATE('2017-01-10 11:37:48','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2017-01-10 11:37:48','YYYY-MM-DD HH24:MI:SS'),0,800412,'Y','N','U','N','N','N','Y','40128a68-8a28-4dbf-9bba-d50936c4dc97','Y',0,'N','N')
+INSERT INTO AD_Column (AD_Column_ID,Version,Name,Description,AD_Table_ID,ColumnName,FieldLength,IsKey,IsParent,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsEncrypted,AD_Reference_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,AD_Element_ID,IsUpdateable,IsSelectionColumn,EntityType,IsSyncDatabase,IsAlwaysUpdateable,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsAllowCopy,SeqNoSelection,IsToolbarButton,IsSecure) VALUES (801588,0,'Mensagens de Retorno','Mensagens de Retorno (erros)',800035,'LBR_MensagensRetorno',2000,'N','N','N','N','N',0,'N',14,0,0,'Y',TO_DATE('2017-01-10 11:37:48','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2017-01-10 11:37:48','YYYY-MM-DD HH24:MI:SS'),0,800412,'Y','N','U','N','N','N','Y','40128a68-8a28-4dbf-9bba-d50936c4dc97','Y',0,'N','N')
 ;
 
 -- 10/01/2017 11h37min49s BRST
-ALTER TABLE LBR_NFS ADD LBR_MensagensRetorno VARCHAR2(2048) DEFAULT NULL 
+ALTER TABLE LBR_NFS ADD LBR_MensagensRetorno NVARCHAR2(2000) DEFAULT NULL 
 ;
 
 -- 10/01/2017 11h38min15s BRST
@@ -219,7 +219,7 @@ INSERT INTO AD_Field (AD_Field_ID,Name,AD_Tab_ID,AD_Column_ID,IsDisplayed,Displa
 ;
 
 -- 10/01/2017 12h10min54s BRST
-INSERT INTO AD_Field (AD_Field_ID,Name,Description,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan,NumLines) VALUES (801343,'Mensagens de Retorno','Mensagens de Retorno (erros)',800043,801588,'Y',2048,430,'N','N','N','N',0,0,'Y',TO_DATE('2017-01-10 12:10:54','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2017-01-10 12:10:54','YYYY-MM-DD HH24:MI:SS'),0,'N','Y','U','fc5016a6-f72e-4de6-97e8-bfdb68cf7f65','Y',530,5,3)
+INSERT INTO AD_Field (AD_Field_ID,Name,Description,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan,NumLines) VALUES (801343,'Mensagens de Retorno','Mensagens de Retorno (erros)',800043,801588,'Y',2000,430,'N','N','N','N',0,0,'Y',TO_DATE('2017-01-10 12:10:54','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2017-01-10 12:10:54','YYYY-MM-DD HH24:MI:SS'),0,'N','Y','U','fc5016a6-f72e-4de6-97e8-bfdb68cf7f65','Y',530,5,3)
 ;
 
 -- 10/01/2017 12h10min55s BRST
@@ -383,7 +383,7 @@ UPDATE AD_Field SET SeqNo=470, AD_Reference_Value_ID=NULL, AD_Val_Rule_ID=NULL, 
 ;
 
 -- 10/01/2017 14h51min39s BRST
-ALTER TABLE LBR_NFS ADD LBR_MotivoCancelamentoNFS VARCHAR2(2) DEFAULT NULL 
+ALTER TABLE LBR_NFS ADD LBR_MotivoCancelamentoNFS NVARCHAR2(2) DEFAULT NULL 
 ;
 
 -- 10/01/2017 15h0min13s BRST
@@ -395,7 +395,7 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,FieldLen
 ;
 
 -- 10/01/2017 15h0min51s BRST
-ALTER TABLE LBR_DocLine_ISSQN ADD LBR_ServiceCodeOfCity VARCHAR2(60) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_ISSQN ADD LBR_ServiceCodeOfCity NVARCHAR2(60) DEFAULT NULL 
 ;
 
 -- 10/01/2017 15h1min5s BRST
@@ -403,7 +403,7 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,FieldLen
 ;
 
 -- 10/01/2017 15h1min5s BRST
-ALTER TABLE M_Product ADD LBR_ServiceCodeOfCity VARCHAR2(60) DEFAULT NULL 
+ALTER TABLE M_Product ADD LBR_ServiceCodeOfCity NVARCHAR2(60) DEFAULT NULL 
 ;
 
 -- 10/01/2017 15h1min33s BRST
@@ -815,7 +815,7 @@ UPDATE AD_Column SET FKConstraintName='UpdatedBy_LBRDocLineOTHER', FKConstraintT
 ;
 
 -- 10/01/2017 15h18min53s BRST
-CREATE TABLE LBR_DocLine_OTHER (AD_Client_ID NUMBER(10) DEFAULT NULL , AD_Org_ID NUMBER(10) DEFAULT NULL , Created DATE DEFAULT NULL , CreatedBy NUMBER(10) DEFAULT NULL , IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')), LBR_CSLL_TaxBaseAmt NUMBER DEFAULT NULL , LBR_DocLine_OTHER_ID NUMBER(10) NOT NULL, LBR_DocLine_OTHER_UU VARCHAR2(36) DEFAULT NULL , Updated DATE DEFAULT NULL , UpdatedBy NUMBER(10) DEFAULT NULL , CONSTRAINT LBR_DocLine_OTHER_Key PRIMARY KEY (LBR_DocLine_OTHER_ID), CONSTRAINT LBR_DocLine_OTHER_UU_idx UNIQUE (LBR_DocLine_OTHER_UU))
+CREATE TABLE LBR_DocLine_OTHER (AD_Client_ID NUMBER(10) DEFAULT NULL , AD_Org_ID NUMBER(10) DEFAULT NULL , Created DATE DEFAULT NULL , CreatedBy NUMBER(10) DEFAULT NULL , IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')), LBR_CSLL_TaxBaseAmt NUMBER DEFAULT NULL , LBR_DocLine_OTHER_ID NUMBER(10) NOT NULL, LBR_DocLine_OTHER_UU NVARCHAR2(36) DEFAULT NULL , Updated DATE DEFAULT NULL , UpdatedBy NUMBER(10) DEFAULT NULL , CONSTRAINT LBR_DocLine_OTHER_Key PRIMARY KEY (LBR_DocLine_OTHER_ID), CONSTRAINT LBR_DocLine_OTHER_UU_idx UNIQUE (LBR_DocLine_OTHER_UU))
 ;
 
 -- 10/01/2017 15h18min53s BRST
@@ -1418,7 +1418,7 @@ UPDATE AD_Column SET FieldLength=60, AD_Reference_ID=10, FKConstraintType=NULL,U
 ;
 
 -- 10/01/2017 20h8min11s BRST
-ALTER TABLE LBR_NFS MODIFY LBR_NFSeCodVerificacao VARCHAR2(60) DEFAULT NULL 
+ALTER TABLE LBR_NFS MODIFY LBR_NFSeCodVerificacao NVARCHAR2(60) DEFAULT NULL 
 ;
 
 -- 10/01/2017 20h17min17s BRST
@@ -1430,7 +1430,7 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,Help,AD_Table_ID,ColumnName,Def
 ;
 
 -- 10/01/2017 20h17min34s BRST
-ALTER TABLE LBR_NFS ADD LBR_NFSeID VARCHAR2(120) DEFAULT NULL 
+ALTER TABLE LBR_NFS ADD LBR_NFSeID NVARCHAR2(120) DEFAULT NULL 
 ;
 
 
@@ -1667,27 +1667,7 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,FieldLen
 ;
 
 -- 11/01/2017 0h13min57s BRST
-ALTER TABLE LBR_NFSeWS ADD LBR_NFSPrintURL VARCHAR2(512) DEFAULT NULL 
-;
-
--- 11/01/2017 0h14min7s BRST
-INSERT INTO AD_Field (AD_Field_ID,Name,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801376,'URL de Impressão do DANFE',800050,801628,'Y',512,110,'N','N','N','N',0,0,'Y',TO_DATE('2017-01-11 00:14:07','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2017-01-11 00:14:07','YYYY-MM-DD HH24:MI:SS'),0,'N','Y','U','912d6f33-a400-413b-ab0e-084420b1e1a4','Y',70,5)
-;
-
--- 11/01/2017 0h16min39s BRST
-UPDATE AD_Field SET IsDisplayed='Y', SeqNo=80, AD_Reference_Value_ID=NULL, AD_Val_Rule_ID=NULL, XPosition=1, IsToolbarButton=NULL,Updated=TO_TIMESTAMP('2017-01-11 00:16:39','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Field_ID=801376
-;
-
--- 11/01/2017 0h12min22s BRST
-INSERT INTO AD_Element (AD_Element_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,ColumnName,Name,PrintName,EntityType,AD_Element_UU) VALUES (800440,0,0,'Y',TO_DATE('2017-01-11 00:12:22','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2017-01-11 00:12:22','YYYY-MM-DD HH24:MI:SS'),0,'LBR_NFSPrintURL','URL de Impressão do DANFE','URL de Impressão do DANFE','U','4ec4b425-9a03-45a1-808b-03af42477906')
-;
-
--- 11/01/2017 0h13min55s BRST
-INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,FieldLength,IsKey,IsParent,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsEncrypted,AD_Reference_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,AD_Element_ID,IsUpdateable,IsSelectionColumn,EntityType,IsSyncDatabase,IsAlwaysUpdateable,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsAllowCopy,SeqNoSelection,IsToolbarButton,IsSecure) VALUES (801628,0,'URL de Impressão do DANFE',800042,'LBR_NFSPrintURL',512,'N','N','N','N','N',0,'N',10,0,0,'Y',TO_DATE('2017-01-11 00:13:54','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2017-01-11 00:13:54','YYYY-MM-DD HH24:MI:SS'),0,800440,'Y','N','U','N','N','N','Y','f8c8aa4e-ca5d-4e0e-ba2a-e2c4f205e971','Y',0,'N','N')
-;
-
--- 11/01/2017 0h13min57s BRST
-ALTER TABLE LBR_NFSeWS ADD LBR_NFSPrintURL VARCHAR2(512) DEFAULT NULL 
+ALTER TABLE LBR_NFSeWS ADD LBR_NFSPrintURL NVARCHAR2(512) DEFAULT NULL 
 ;
 
 -- 11/01/2017 0h14min7s BRST

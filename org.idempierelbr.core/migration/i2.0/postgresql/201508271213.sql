@@ -101,7 +101,7 @@ INSERT INTO AD_Reference (AD_Reference_ID,Name,EntityType,AD_Reference_UU,IsOrde
 ;
 
 -- 20/08/2015 16h42min27s BRT
-INSERT INTO AD_Ref_List (AD_Ref_List_ID,AD_Reference_ID,AD_Ref_List_UU,Value,CreatedBy,UpdatedBy,Updated,IsActive,EntityType,AD_Client_ID,AD_Org_ID,Created,Name) VALUES (800027,800009,'49ec2dc1-18e2-4861-8ea5-65e7e4f50115','CPI',0,0,TO_TIMESTAMP('2015-08-20 16:42:26','YYYY-MM-DD HH24:MI:SS'),'Y','C',0,0,TO_TIMESTAMP('2015-08-20 16:42:26','YYYY-MM-DD HH24:MI:SS'),'Capital / Interest / Penalty')
+INSERT INTO AD_Ref_List (AD_Ref_List_ID,AD_Reference_ID,AD_Ref_List_UU,Value,CreatedBy,UpdatedBy,Updated,IsActive,EntityType,AD_Client_ID,AD_Org_ID,Created,Name) VALUES (800027,800009,'49ec2dc1-18e2-4861-8ea5-65e7e4f50115','CPI',0,0,TO_TIMESTAMP('2015-08-20 16:42:26','YYYY-MM-DD HH24:MI:SS'),'Y','C',0,0,TO_TIMESTAMP('2015-08-20 16:42:26','YYYY-MM-DD HH24:MI:SS'),'Capital / Penalty / Interest')
 ;
 
 -- 20/08/2015 16h43min9s BRT

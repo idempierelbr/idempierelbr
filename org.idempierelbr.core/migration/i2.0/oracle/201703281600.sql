@@ -14,5 +14,11 @@ UPDATE AD_Process_Para SET DisplayLogic='@C_DocType_ID@=0',Updated=TO_DATE('2017
 UPDATE AD_Process_Para SET DisplayLogic='@C_DocType_ID@=0',Updated=TO_DATE('2017-03-28 16:12:08','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Process_Para_ID=800131
 ;
 
+-- I forgot to set the DICTIONARY_ID_COMMENTS System Configurator
+-- Mar 28, 2017 4:18:24 PM BRT
+UPDATE AD_Process_Para SET DefaultValue='@C_DocType_ID@',Updated=TO_DATE('2017-03-28 16:18:24','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Process_Para_ID=800134
+;
+
+
 SELECT lbr_register_migration_script('201703281600.sql') FROM dual
 ;

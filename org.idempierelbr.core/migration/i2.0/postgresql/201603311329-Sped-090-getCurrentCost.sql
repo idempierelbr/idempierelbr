@@ -49,6 +49,6 @@ END;
 $BODY$
 LANGUAGE "plpgsql";
 
-ALTER FUNCTION getCurrentCost(numeric, numeric, numeric) OWNER TO adempiere;
+-- ALTER FUNCTION getCurrentCost(numeric, numeric, numeric) OWNER TO adempiere;
 
 SELECT lbr_register_migration_script('201603311329-Sped-090-getCurrentCost.sql') FROM dual;

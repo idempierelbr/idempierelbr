@@ -276,7 +276,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 30, 2015 10:10:48 AM BRT
-ALTER TABLE LBR_NotaFiscalInut ADD LBR_NotaFiscalInut_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalInut ADD LBR_NotaFiscalInut_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Jun 30, 2015 10:10:48 AM BRT
@@ -288,7 +288,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 30, 2015 10:12:07 AM BRT
-ALTER TABLE LBR_NotaFiscalInut ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalInut ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 30, 2015 10:13:16 AM BRT
@@ -298,7 +298,7 @@ If the document type of your document has no automatic document sequence defined
 ;
 
 -- Jun 30, 2015 10:13:18 AM BRT
-ALTER TABLE LBR_NotaFiscalInut ADD DocumentNo VARCHAR2(30) NOT NULL
+ALTER TABLE LBR_NotaFiscalInut ADD DocumentNo NVARCHAR2(30) NOT NULL
 ;
 
 -- Jun 30, 2015 1:21:41 PM BRT
@@ -314,7 +314,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 30, 2015 1:23:18 PM BRT
-ALTER TABLE LBR_NotaFiscalInut ADD LBR_LotSendingStatus VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalInut ADD LBR_LotSendingStatus NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- Jun 30, 2015 1:25:18 PM BRT
@@ -330,7 +330,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 30, 2015 1:26:02 PM BRT
-ALTER TABLE LBR_NotaFiscalInut ADD LBR_NFBModel VARCHAR2(2) NOT NULL
+ALTER TABLE LBR_NotaFiscalInut ADD LBR_NFBModel NVARCHAR2(2) NOT NULL
 ;
 
 -- Jun 30, 2015 1:27:40 PM BRT
@@ -338,7 +338,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 30, 2015 1:27:44 PM BRT
-ALTER TABLE LBR_NotaFiscalInut ADD LBR_NFeSerie VARCHAR2(3) NOT NULL
+ALTER TABLE LBR_NotaFiscalInut ADD LBR_NFeSerie NVARCHAR2(3) NOT NULL
 ;
 
 -- Jun 30, 2015 1:32:03 PM BRT
@@ -354,7 +354,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 30, 2015 1:32:52 PM BRT
-ALTER TABLE LBR_NotaFiscalInut ADD LBR_LotSendingProt VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalInut ADD LBR_LotSendingProt NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 30, 2015 1:33:34 PM BRT
@@ -366,7 +366,7 @@ UPDATE AD_Column SET MandatoryLogic=NULL,Updated=TO_DATE('2015-06-30 13:33:44','
 ;
 
 -- Jun 30, 2015 1:33:47 PM BRT
-ALTER TABLE LBR_NotaFiscalInut ADD LBR_Justification VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalInut ADD LBR_Justification NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 30, 2015 1:35:12 PM BRT
@@ -378,7 +378,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 30, 2015 1:35:59 PM BRT
-ALTER TABLE LBR_NotaFiscalInut ADD LBR_Number_Start VARCHAR2(9) NOT NULL
+ALTER TABLE LBR_NotaFiscalInut ADD LBR_Number_Start NVARCHAR2(9) NOT NULL
 ;
 
 -- Jun 30, 2015 1:36:45 PM BRT
@@ -390,7 +390,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 30, 2015 1:37:24 PM BRT
-ALTER TABLE LBR_NotaFiscalInut ADD LBR_Number_End VARCHAR2(9) NOT NULL
+ALTER TABLE LBR_NotaFiscalInut ADD LBR_Number_End NVARCHAR2(9) NOT NULL
 ;
 
 -- Jun 30, 2015 2:10:54 PM BRT

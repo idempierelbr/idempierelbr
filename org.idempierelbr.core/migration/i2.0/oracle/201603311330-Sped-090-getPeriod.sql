@@ -1,11 +1,8 @@
 -- Sped EFD
 -- This script was generated for a postgresql DB. It should be tested in a oracle DB.
-CREATE OR REPLACE FUNCTION getPeriod ( p_AD_Client_ID NUMERIC, p_StartDate DATE ) RETURNS NUMERIC
+CREATE OR REPLACE FUNCTION getPeriod ( p_AD_Client_ID NUMBER, p_StartDate DATE ) RETURN NUMBER
 AS
 
-$BODY$
-
-DECLARE
         v_Period      NUMERIC;
         
 BEGIN
@@ -29,13 +26,8 @@ BEGIN
         
     RETURN v_Period;
     
-END;
-
-
-$BODY$
-  LANGUAGE 'plpgsql';
-
- ALTER FUNCTION getPeriod(numeric, date) OWNER TO adempiere;
+END getPeriod;
+/
  
- SELECT lbr_register_migration_script('201603311330-Sped-090-getPeriod.sql') FROM dual;
+SELECT lbr_register_migration_script('201603311330-Sped-090-getPeriod.sql') FROM dual;
  

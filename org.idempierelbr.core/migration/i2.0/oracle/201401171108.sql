@@ -491,7 +491,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 17, 2014 12:47:36 PM BRST
-ALTER TABLE C_BPartner ADD LBR_TransactionType_Customer VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE C_BPartner ADD LBR_TransactionType_Customer NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- Jan 17, 2014 12:48:15 PM BRST
@@ -503,7 +503,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 17, 2014 12:48:57 PM BRST
-ALTER TABLE C_BPartner ADD LBR_TransactionType_Vendor VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE C_BPartner ADD LBR_TransactionType_Vendor NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- Jan 17, 2014 12:50:53 PM BRST

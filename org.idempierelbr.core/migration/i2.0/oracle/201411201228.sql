@@ -121,7 +121,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 19/11/2014 13h47min59s BRST
-ALTER TABLE LBR_DI ADD LBR_DI_UU VARCHAR2(36) NOT NULL
+ALTER TABLE LBR_DI ADD LBR_DI_UU NVARCHAR2(36) NOT NULL
 ;
 
 -- 19/11/2014 13h47min59s BRST
@@ -133,7 +133,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 19/11/2014 13h48min39s BRST
-ALTER TABLE LBR_DI ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_DI ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- 19/11/2014 13h50min25s BRST
@@ -149,7 +149,7 @@ If the document type of your document has no automatic document sequence defined
 ;
 
 -- 19/11/2014 13h52min5s BRST
-ALTER TABLE LBR_DI ADD LBR_DI_No VARCHAR2(12) NOT NULL
+ALTER TABLE LBR_DI ADD LBR_DI_No NVARCHAR2(12) NOT NULL
 ;
 
 -- 19/11/2014 13h52min39s BRST
@@ -305,7 +305,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 19/11/2014 14h15min45s BRST
-ALTER TABLE LBR_DI ADD LBR_DI_TranspType VARCHAR2(2) NOT NULL
+ALTER TABLE LBR_DI ADD LBR_DI_TranspType NVARCHAR2(2) NOT NULL
 ;
 
 -- 19/11/2014 14h17min48s BRST
@@ -460,7 +460,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 19/11/2014 14h32min19s BRST
-ALTER TABLE LBR_DI_Addition ADD LBR_DI_Addition_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_DI_Addition ADD LBR_DI_Addition_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- 19/11/2014 14h32min19s BRST
@@ -488,7 +488,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 19/11/2014 14h34min40s BRST
-ALTER TABLE LBR_DI_Addition ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_DI_Addition ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- 19/11/2014 14h38min4s BRST
@@ -663,7 +663,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 19/11/2014 14h46min47s BRST
-ALTER TABLE LBR_DI_AdditionProd ADD LBR_DI_AdditionProd_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_DI_AdditionProd ADD LBR_DI_AdditionProd_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- 19/11/2014 14h46min47s BRST
@@ -691,7 +691,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 19/11/2014 14h48min48s BRST
-ALTER TABLE LBR_DI_AdditionProd ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_DI_AdditionProd ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- 19/11/2014 14h50min48s BRST
@@ -735,7 +735,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 19/11/2014 14h53min57s BRST
-ALTER TABLE LBR_DI_AdditionProd ADD LBR_Specification VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_DI_AdditionProd ADD LBR_Specification NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- 19/11/2014 14h54min19s BRST
@@ -1281,7 +1281,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 19/11/2014 16h9min58s BRST
-ALTER TABLE LBR_NotaFiscalDI ADD LBR_NotaFiscalDI_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalDI ADD LBR_NotaFiscalDI_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- 19/11/2014 16h9min58s BRST

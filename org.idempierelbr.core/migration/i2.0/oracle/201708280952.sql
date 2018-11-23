@@ -35,7 +35,7 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,FieldLen
 ;
 
 -- 28/08/2017 8h56min33s BRT
-ALTER TABLE LBR_NCMMono ADD LBR_NCMMono_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_NCMMono ADD LBR_NCMMono_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- 28/08/2017 8h56min34s BRT
@@ -123,7 +123,7 @@ If you leave the search key empty, the system automatically creates a numeric nu
 ;
 
 -- 28/08/2017 8h58min57s BRT
-ALTER TABLE LBR_NCMMono ADD Value VARCHAR2(40) DEFAULT NULL 
+ALTER TABLE LBR_NCMMono ADD Value NVARCHAR2(40) DEFAULT NULL 
 ;
 
 -- 28/08/2017 8h59min27s BRT
@@ -131,7 +131,7 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,Description,Help,AD_Table_ID,Co
 ;
 
 -- 28/08/2017 8h59min30s BRT
-ALTER TABLE LBR_NCMMono ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NCMMono ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- 28/08/2017 9h0min40s BRT

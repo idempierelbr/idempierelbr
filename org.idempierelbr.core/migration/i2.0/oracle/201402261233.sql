@@ -19,7 +19,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Feb 26, 2014 1:00:44 PM BRT
-ALTER TABLE C_Order ADD LBR_TransactionType VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE C_Order ADD LBR_TransactionType NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- Feb 26, 2014 1:01:51 PM BRT
@@ -35,7 +35,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Feb 26, 2014 1:26:33 PM BRT
-ALTER TABLE C_Invoice ADD LBR_TransactionType VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE C_Invoice ADD LBR_TransactionType NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- Feb 26, 2014 1:31:07 PM BRT

@@ -115,7 +115,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 2, 2014 2:02:15 PM BRT
-ALTER TABLE LBR_NFeWebService ADD LBR_NFeWebService_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_NFeWebService ADD LBR_NFeWebService_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Jun 2, 2014 2:02:15 PM BRT
@@ -138,7 +138,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 2, 2014 2:03:23 PM BRT
-ALTER TABLE LBR_NFeWebService ADD Name VARCHAR2(60) NOT NULL
+ALTER TABLE LBR_NFeWebService ADD Name NVARCHAR2(60) NOT NULL
 ;
 
 -- Jun 2, 2014 2:05:06 PM BRT
@@ -146,7 +146,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 2, 2014 2:05:10 PM BRT
-ALTER TABLE LBR_NFeWebService ADD VersionNo VARCHAR2(20) DEFAULT NULL 
+ALTER TABLE LBR_NFeWebService ADD VersionNo NVARCHAR2(20) DEFAULT NULL 
 ;
 
 -- Jun 2, 2014 2:06:28 PM BRT
@@ -178,7 +178,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 2, 2014 2:07:39 PM BRT
-ALTER TABLE LBR_NFeWebService ADD URL VARCHAR2(255) NOT NULL
+ALTER TABLE LBR_NFeWebService ADD URL NVARCHAR2(255) NOT NULL
 ;
 
 -- Jun 2, 2014 2:08:41 PM BRT
@@ -732,7 +732,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 6, 2014 10:20:20 AM BRT
-ALTER TABLE LBR_NotaFiscalLot ADD LBR_NotaFiscal_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalLot ADD LBR_NotaFiscal_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Jun 6, 2014 10:20:57 AM BRT
@@ -742,7 +742,7 @@ If the document type of your document has no automatic document sequence defined
 ;
 
 -- Jun 6, 2014 10:20:59 AM BRT
-ALTER TABLE LBR_NotaFiscalLot ADD DocumentNo VARCHAR2(30) NOT NULL
+ALTER TABLE LBR_NotaFiscalLot ADD DocumentNo NVARCHAR2(30) NOT NULL
 ;
 
 -- Jun 6, 2014 10:21:31 AM BRT
@@ -750,7 +750,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 6, 2014 10:21:33 AM BRT
-ALTER TABLE LBR_NotaFiscalLot ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalLot ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 6, 2014 10:22:39 AM BRT
@@ -798,7 +798,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 6, 2014 10:29:16 AM BRT
-ALTER TABLE LBR_NotaFiscalLot ADD LBR_LotSendingStatus VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalLot ADD LBR_LotSendingStatus NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- Jun 6, 2014 10:30:44 AM BRT
@@ -806,7 +806,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 6, 2014 10:31:14 AM BRT
-ALTER TABLE LBR_NotaFiscalLot ADD LBR_LotSendingRec VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalLot ADD LBR_LotSendingRec NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 6, 2014 10:31:49 AM BRT
@@ -814,7 +814,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 6, 2014 10:31:51 AM BRT
-ALTER TABLE LBR_NotaFiscalLot ADD LBR_LotSendingProt VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalLot ADD LBR_LotSendingProt NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 6, 2014 10:33:04 AM BRT
@@ -846,7 +846,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 6, 2014 10:35:21 AM BRT
-ALTER TABLE LBR_NotaFiscalLot ADD LBR_LotQueryStatus VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalLot ADD LBR_LotQueryStatus NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- Jun 6, 2014 10:35:55 AM BRT
@@ -1334,7 +1334,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 6, 2014 1:18:36 PM BRT
-ALTER TABLE LBR_NotaFiscalLotLine ADD LBR_NotaFiscalLotLine_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalLotLine ADD LBR_NotaFiscalLotLine_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Jun 6, 2014 1:18:36 PM BRT
@@ -1362,7 +1362,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 6, 2014 1:21:21 PM BRT
-ALTER TABLE LBR_NotaFiscalLotLine ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalLotLine ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 6, 2014 1:21:42 PM BRT
@@ -1370,7 +1370,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 6, 2014 1:21:43 PM BRT
-ALTER TABLE LBR_NotaFiscalLotLine ADD LBR_NFeStatus VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalLotLine ADD LBR_NFeStatus NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- Jun 6, 2014 1:22:05 PM BRT
@@ -1378,7 +1378,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 6, 2014 1:22:07 PM BRT
-ALTER TABLE LBR_NotaFiscalLotLine ADD LBR_NFeID VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalLotLine ADD LBR_NFeID NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 6, 2014 1:22:35 PM BRT
@@ -1386,7 +1386,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 6, 2014 1:22:37 PM BRT
-ALTER TABLE LBR_NotaFiscalLotLine ADD LBR_LotSendingProt VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalLotLine ADD LBR_LotSendingProt NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 6, 2014 1:23:03 PM BRT
@@ -1394,7 +1394,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 6, 2014 1:23:04 PM BRT
-ALTER TABLE LBR_NotaFiscalLotLine ADD LBR_DigestValue VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalLotLine ADD LBR_DigestValue NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 6, 2014 1:27:55 PM BRT

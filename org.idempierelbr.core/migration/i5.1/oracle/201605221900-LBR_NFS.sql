@@ -260,9 +260,9 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,Description,Help,AD_Table_ID,Co
 ;
 
 -- 22/05/2016 13h55min10s BRT
-INSERT INTO AD_Element (AD_Element_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,ColumnName,Name,Help,PrintName,EntityType,AD_Element_UU) VALUES (800298,0,0,'Y',TO_DATE('2016-05-22 13:55:09','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 13:55:09','YYYY-MM-DD HH24:MI:SS'),100,'LBR_ResponsavelRetencao','Responsável pela Retenção','Informado somente se IssRetido igual a “1 – Sim” A opção “2 – Intermediário” somente poderá ser selecionada se “CpfCnpjIntermediario” informado.
-1 – Tomador;
-2 – Intermediário.','Responsável pela Retenção','U','dc2b197e-67c7-4abb-af3f-ef47153270b6')
+INSERT INTO AD_Element (AD_Element_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,ColumnName,Name,Help,PrintName,EntityType,AD_Element_UU) VALUES (800298,0,0,'Y',TO_DATE('2016-05-22 13:55:09','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 13:55:09','YYYY-MM-DD HH24:MI:SS'),100,'LBR_ResponsavelRetencao','Responsável pela Retenção','Informado somente se IssRetido igual a “1 – Sim” A opção “2 – Intermediário” somente poderá ser selecionada se “CpfCnpjIntermediario” informado.'||chr(10)||
+'1 – Tomador;'||chr(10)||
+'2 – Intermediário.','Responsável pela Retenção','U','dc2b197e-67c7-4abb-af3f-ef47153270b6')
 ;
 
 -- 22/05/2016 13h55min20s BRT
@@ -282,10 +282,10 @@ INSERT INTO AD_Element (AD_Element_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,Cr
 ;
 
 -- 22/05/2016 13h57min14s BRT
-INSERT INTO AD_Element (AD_Element_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,ColumnName,Name,Help,PrintName,EntityType,AD_Element_UU) VALUES (800302,0,0,'Y',TO_DATE('2016-05-22 13:57:13','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 13:57:13','YYYY-MM-DD HH24:MI:SS'),100,'LBR_RPSTipo','Tipo da RPS','Tipo do RPS
-1 – Recibo Provisorio de Servicos;
-2 – RPS Nota Fiscal Conjugada (Mista); 
-3 – Cupom.','Tipo da RPS','LBR','2794e35c-286e-424f-874e-d995df4f9a73')
+INSERT INTO AD_Element (AD_Element_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,ColumnName,Name,Help,PrintName,EntityType,AD_Element_UU) VALUES (800302,0,0,'Y',TO_DATE('2016-05-22 13:57:13','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 13:57:13','YYYY-MM-DD HH24:MI:SS'),100,'LBR_RPSTipo','Tipo da RPS','Tipo do RPS'||chr(10)||
+'1 – Recibo Provisorio de Servicos;'||chr(10)||
+'2 – RPS Nota Fiscal Conjugada (Mista); '||chr(10)||
+'3 – Cupom.','Tipo da RPS','LBR','2794e35c-286e-424f-874e-d995df4f9a73')
 ;
 
 -- 22/05/2016 13h57min34s BRT
@@ -381,15 +381,15 @@ UPDATE AD_PrintFormatItem SET PrintName='Número da NFS-e Substituída', Name='N
 ;
 
 -- 22/05/2016 14h4min31s BRT
-INSERT INTO AD_Element (AD_Element_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,ColumnName,Name,Help,PrintName,EntityType,AD_Element_UU) VALUES (800310,0,0,'Y',TO_DATE('2016-05-22 14:04:30','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 14:04:30','YYYY-MM-DD HH24:MI:SS'),100,'LBR_RPSStatus','Situação da RPS','Situação do RPS 
-1 – Normal
-2 – Cancelado','Situação da RPS','LBR','c7f60f75-b2cc-4ac4-a30e-1afe56ba6c74')
+INSERT INTO AD_Element (AD_Element_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,ColumnName,Name,Help,PrintName,EntityType,AD_Element_UU) VALUES (800310,0,0,'Y',TO_DATE('2016-05-22 14:04:30','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 14:04:30','YYYY-MM-DD HH24:MI:SS'),100,'LBR_RPSStatus','Situação da RPS','Situação do RPS '||chr(10)||
+'1 – Normal'||chr(10)||
+'2 – Cancelado','Situação da RPS','LBR','c7f60f75-b2cc-4ac4-a30e-1afe56ba6c74')
 ;
 
 -- 22/05/2016 14h5min0s BRT
-INSERT INTO AD_Element (AD_Element_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,ColumnName,Name,Help,PrintName,EntityType,AD_Element_UU) VALUES (800311,0,0,'Y',TO_DATE('2016-05-22 14:05:00','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 14:05:00','YYYY-MM-DD HH24:MI:SS'),100,'LBR_NFSeStatus','Situação da NFS-e','Situação do RPS 
-1 – Normal
-2 – Cancelado','Situação da NFS-e','LBR','29f90c7a-c5b2-4b4e-b2cd-a8f0695cbce3')
+INSERT INTO AD_Element (AD_Element_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,ColumnName,Name,Help,PrintName,EntityType,AD_Element_UU) VALUES (800311,0,0,'Y',TO_DATE('2016-05-22 14:05:00','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 14:05:00','YYYY-MM-DD HH24:MI:SS'),100,'LBR_NFSeStatus','Situação da NFS-e','Situação do RPS '||chr(10)||
+'1 – Normal'||chr(10)||
+'2 – Cancelado','Situação da NFS-e','LBR','29f90c7a-c5b2-4b4e-b2cd-a8f0695cbce3')
 ;
 
 -- 22/05/2016 14h8min10s BRT
@@ -405,15 +405,15 @@ UPDATE AD_Reference SET EntityType='LBR',Updated=TO_DATE('2016-05-22 14:08:29','
 ;
 
 -- 22/05/2016 14h8min53s BRT
-INSERT INTO AD_Column (AD_Column_ID,Version,Name,Help,AD_Table_ID,ColumnName,FieldLength,IsKey,IsParent,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsEncrypted,AD_Reference_ID,AD_Reference_Value_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,AD_Element_ID,IsUpdateable,IsSelectionColumn,EntityType,IsSyncDatabase,IsAlwaysUpdateable,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsAllowCopy,SeqNoSelection,IsToolbarButton,IsSecure) VALUES (801127,0,'Situação da NFS-e','Situação do RPS 
-1 – Normal
-2 – Cancelado',800035,'LBR_NFSeStatus',1,'N','N','Y','N','N',0,'N',17,800030,0,0,'Y',TO_DATE('2016-05-22 14:08:52','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 14:08:52','YYYY-MM-DD HH24:MI:SS'),100,800311,'Y','N','U','N','N','N','Y','00d7a462-b848-4f10-96e3-fdd3dd834d08','Y',0,'N','N')
+INSERT INTO AD_Column (AD_Column_ID,Version,Name,Help,AD_Table_ID,ColumnName,FieldLength,IsKey,IsParent,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsEncrypted,AD_Reference_ID,AD_Reference_Value_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,AD_Element_ID,IsUpdateable,IsSelectionColumn,EntityType,IsSyncDatabase,IsAlwaysUpdateable,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsAllowCopy,SeqNoSelection,IsToolbarButton,IsSecure) VALUES (801127,0,'Situação da NFS-e','Situação do RPS '||chr(10)||
+'1 – Normal'||chr(10)||
+'2 – Cancelado',800035,'LBR_NFSeStatus',1,'N','N','Y','N','N',0,'N',17,800030,0,0,'Y',TO_DATE('2016-05-22 14:08:52','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 14:08:52','YYYY-MM-DD HH24:MI:SS'),100,800311,'Y','N','U','N','N','N','Y','00d7a462-b848-4f10-96e3-fdd3dd834d08','Y',0,'N','N')
 ;
 
 -- 22/05/2016 14h9min21s BRT
-INSERT INTO AD_Column (AD_Column_ID,Version,Name,Help,AD_Table_ID,ColumnName,FieldLength,IsKey,IsParent,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsEncrypted,AD_Reference_ID,AD_Reference_Value_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,AD_Element_ID,IsUpdateable,IsSelectionColumn,EntityType,IsSyncDatabase,IsAlwaysUpdateable,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsAllowCopy,SeqNoSelection,IsToolbarButton,IsSecure) VALUES (801128,0,'Situação da RPS','Situação do RPS 
-1 – Normal
-2 – Cancelado',800035,'LBR_RPSStatus',1,'N','N','N','N','N',0,'N',17,800030,0,0,'Y',TO_DATE('2016-05-22 14:09:21','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 14:09:21','YYYY-MM-DD HH24:MI:SS'),100,800310,'Y','N','U','N','N','N','Y','04b82244-df6d-4c25-bac3-ea18d6fdd8ce','Y',0,'N','N')
+INSERT INTO AD_Column (AD_Column_ID,Version,Name,Help,AD_Table_ID,ColumnName,FieldLength,IsKey,IsParent,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsEncrypted,AD_Reference_ID,AD_Reference_Value_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,AD_Element_ID,IsUpdateable,IsSelectionColumn,EntityType,IsSyncDatabase,IsAlwaysUpdateable,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsAllowCopy,SeqNoSelection,IsToolbarButton,IsSecure) VALUES (801128,0,'Situação da RPS','Situação do RPS '||chr(10)||
+'1 – Normal'||chr(10)||
+'2 – Cancelado',800035,'LBR_RPSStatus',1,'N','N','N','N','N',0,'N',17,800030,0,0,'Y',TO_DATE('2016-05-22 14:09:21','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 14:09:21','YYYY-MM-DD HH24:MI:SS'),100,800310,'Y','N','U','N','N','N','Y','04b82244-df6d-4c25-bac3-ea18d6fdd8ce','Y',0,'N','N')
 ;
 
 -- 22/05/2016 14h9min34s BRT
@@ -465,10 +465,10 @@ INSERT INTO AD_Ref_List (AD_Ref_List_ID,Name,AD_Reference_ID,Value,AD_Client_ID,
 ;
 
 -- 22/05/2016 14h15min6s BRT
-INSERT INTO AD_Column (AD_Column_ID,Version,Name,Help,AD_Table_ID,ColumnName,FieldLength,IsKey,IsParent,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsEncrypted,AD_Reference_ID,AD_Reference_Value_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,AD_Element_ID,IsUpdateable,IsSelectionColumn,EntityType,IsSyncDatabase,IsAlwaysUpdateable,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsAllowCopy,SeqNoSelection,IsToolbarButton,IsSecure) VALUES (801136,0,'Tipo da RPS','Tipo do RPS
-1 – Recibo Provisorio de Servicos;
-2 – RPS Nota Fiscal Conjugada (Mista); 
-3 – Cupom.',800035,'LBR_RPSTipo',1,'N','N','N','N','N',0,'N',17,800031,0,0,'Y',TO_DATE('2016-05-22 14:15:06','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 14:15:06','YYYY-MM-DD HH24:MI:SS'),100,800302,'Y','N','U','N','N','N','Y','195349a4-c829-4e21-a20a-a16466dc3b56','Y',0,'N','N')
+INSERT INTO AD_Column (AD_Column_ID,Version,Name,Help,AD_Table_ID,ColumnName,FieldLength,IsKey,IsParent,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsEncrypted,AD_Reference_ID,AD_Reference_Value_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,AD_Element_ID,IsUpdateable,IsSelectionColumn,EntityType,IsSyncDatabase,IsAlwaysUpdateable,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsAllowCopy,SeqNoSelection,IsToolbarButton,IsSecure) VALUES (801136,0,'Tipo da RPS','Tipo do RPS'||chr(10)||
+'1 – Recibo Provisorio de Servicos;'||chr(10)||
+'2 – RPS Nota Fiscal Conjugada (Mista); '||chr(10)||
+'3 – Cupom.',800035,'LBR_RPSTipo',1,'N','N','N','N','N',0,'N',17,800031,0,0,'Y',TO_DATE('2016-05-22 14:15:06','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 14:15:06','YYYY-MM-DD HH24:MI:SS'),100,800302,'Y','N','U','N','N','N','Y','195349a4-c829-4e21-a20a-a16466dc3b56','Y',0,'N','N')
 ;
 
 -- 22/05/2016 14h15min24s BRT
@@ -483,7 +483,9 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,FieldLen
 INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,FieldLength,IsKey,IsParent,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsEncrypted,AD_Reference_ID,AD_Reference_Value_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,AD_Element_ID,IsUpdateable,IsSelectionColumn,EntityType,IsSyncDatabase,IsAlwaysUpdateable,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsAllowCopy,SeqNoSelection,IsToolbarButton,IsSecure) VALUES (801139,0,'Tipo da RPS Substituída',800035,'LBR_RPSTipoSubstituida',1,'N','N','N','N','N',0,'N',17,800031,0,0,'Y',TO_DATE('2016-05-22 14:15:59','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 14:15:59','YYYY-MM-DD HH24:MI:SS'),100,800299,'Y','N','U','N','N','N','Y','e0495c89-46c6-4a4a-9dd2-1f6dc9531003','Y',0,'N','N')
 ;
 
-UPDATE AD_Column SET EntityType = 'LBR' WHERE AD_Table_ID=800035;-- 22/05/2016 14h18min42s BRT
+UPDATE AD_Column SET EntityType = 'LBR' WHERE AD_Table_ID=800035;
+
+-- 22/05/2016 14h18min42s BRT
 INSERT INTO AD_Element (AD_Element_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,ColumnName,Name,PrintName,EntityType,AD_Element_UU) VALUES (800312,0,0,'Y',TO_DATE('2016-05-22 14:18:41','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 14:18:41','YYYY-MM-DD HH24:MI:SS'),100,'LBR_CodigoNBS','Código NBS','Código NBS','LBR','09ff6400-ce70-4dad-ba58-ec3974906649')
 ;
 
@@ -504,9 +506,9 @@ INSERT INTO AD_Ref_List (AD_Ref_List_ID,Name,AD_Reference_ID,Value,AD_Client_ID,
 ;
 
 -- 22/05/2016 14h20min11s BRT
-INSERT INTO AD_Column (AD_Column_ID,Version,Name,Help,AD_Table_ID,ColumnName,FieldLength,IsKey,IsParent,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsEncrypted,AD_Reference_ID,AD_Reference_Value_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,AD_Element_ID,IsUpdateable,IsSelectionColumn,EntityType,IsSyncDatabase,IsAlwaysUpdateable,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsAllowCopy,SeqNoSelection,IsToolbarButton,IsSecure) VALUES (801141,0,'Responsável pela Retenção','Informado somente se IssRetido igual a “1 – Sim” A opção “2 – Intermediário” somente poderá ser selecionada se “CpfCnpjIntermediario” informado.
-1 – Tomador;
-2 – Intermediário.',1000032,'LBR_ResponsavelRetencao',1,'N','N','N','N','N',0,'N',17,800032,0,0,'Y',TO_DATE('2016-05-22 14:20:10','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 14:20:10','YYYY-MM-DD HH24:MI:SS'),100,800298,'Y','N','U','N','N','N','Y','1b283995-c088-4549-b55c-90cfedd51798','Y',0,'N','N')
+INSERT INTO AD_Column (AD_Column_ID,Version,Name,Help,AD_Table_ID,ColumnName,FieldLength,IsKey,IsParent,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsEncrypted,AD_Reference_ID,AD_Reference_Value_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,AD_Element_ID,IsUpdateable,IsSelectionColumn,EntityType,IsSyncDatabase,IsAlwaysUpdateable,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsAllowCopy,SeqNoSelection,IsToolbarButton,IsSecure) VALUES (801141,0,'Responsável pela Retenção','Informado somente se IssRetido igual a “1 – Sim” A opção “2 – Intermediário” somente poderá ser selecionada se “CpfCnpjIntermediario” informado.'||chr(10)||
+'1 – Tomador;'||chr(10)||
+'2 – Intermediário.',1000032,'LBR_ResponsavelRetencao',1,'N','N','N','N','N',0,'N',17,800032,0,0,'Y',TO_DATE('2016-05-22 14:20:10','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 14:20:10','YYYY-MM-DD HH24:MI:SS'),100,800298,'Y','N','U','N','N','N','Y','1b283995-c088-4549-b55c-90cfedd51798','Y',0,'N','N')
 ;
 
 -- 22/05/2016 14h20min22s BRT
@@ -632,15 +634,15 @@ INSERT INTO AD_Field (AD_Field_ID,Name,Description,Help,AD_Tab_ID,AD_Column_ID,I
 ;
 
 -- 22/05/2016 18h17min58s BRT
-INSERT INTO AD_Field (AD_Field_ID,Name,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801021,'Situação da NFS-e','Situação do RPS 
-1 – Normal
-2 – Cancelado',800043,801127,'Y',1,250,'N','N','N','N',0,0,'Y',TO_DATE('2016-05-22 18:17:57','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 18:17:57','YYYY-MM-DD HH24:MI:SS'),100,'N','Y','LBR','f653125b-3912-4a2b-bf4b-261c28a9747a','Y',240,2)
+INSERT INTO AD_Field (AD_Field_ID,Name,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801021,'Situação da NFS-e','Situação do RPS '||chr(10)||
+'1 – Normal'||chr(10)||
+'2 – Cancelado',800043,801127,'Y',1,250,'N','N','N','N',0,0,'Y',TO_DATE('2016-05-22 18:17:57','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 18:17:57','YYYY-MM-DD HH24:MI:SS'),100,'N','Y','LBR','f653125b-3912-4a2b-bf4b-261c28a9747a','Y',240,2)
 ;
 
 -- 22/05/2016 18h17min58s BRT
-INSERT INTO AD_Field (AD_Field_ID,Name,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801022,'Situação da RPS','Situação do RPS 
-1 – Normal
-2 – Cancelado',800043,801128,'Y',1,260,'N','N','N','N',0,0,'Y',TO_DATE('2016-05-22 18:17:58','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 18:17:58','YYYY-MM-DD HH24:MI:SS'),100,'N','Y','LBR','e353a326-736b-4577-861f-a09b7533b1aa','Y',250,2)
+INSERT INTO AD_Field (AD_Field_ID,Name,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801022,'Situação da RPS','Situação do RPS '||chr(10)||
+'1 – Normal'||chr(10)||
+'2 – Cancelado',800043,801128,'Y',1,260,'N','N','N','N',0,0,'Y',TO_DATE('2016-05-22 18:17:58','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 18:17:58','YYYY-MM-DD HH24:MI:SS'),100,'N','Y','LBR','e353a326-736b-4577-861f-a09b7533b1aa','Y',250,2)
 ;
 
 -- 22/05/2016 18h17min59s BRT
@@ -672,10 +674,10 @@ INSERT INTO AD_Field (AD_Field_ID,Name,AD_Tab_ID,AD_Column_ID,IsDisplayed,Displa
 ;
 
 -- 22/05/2016 18h18min3s BRT
-INSERT INTO AD_Field (AD_Field_ID,Name,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801030,'Tipo da RPS','Tipo do RPS
-1 – Recibo Provisorio de Servicos;
-2 – RPS Nota Fiscal Conjugada (Mista); 
-3 – Cupom.',800043,801136,'Y',1,340,'N','N','N','N',0,0,'Y',TO_DATE('2016-05-22 18:18:03','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 18:18:03','YYYY-MM-DD HH24:MI:SS'),100,'N','Y','LBR','e8ec4663-5e1f-42b6-9c45-9a55694d33d7','Y',330,2)
+INSERT INTO AD_Field (AD_Field_ID,Name,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801030,'Tipo da RPS','Tipo do RPS'||chr(10)||
+'1 – Recibo Provisorio de Servicos;'||chr(10)||
+'2 – RPS Nota Fiscal Conjugada (Mista); '||chr(10)||
+'3 – Cupom.',800043,801136,'Y',1,340,'N','N','N','N',0,0,'Y',TO_DATE('2016-05-22 18:18:03','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 18:18:03','YYYY-MM-DD HH24:MI:SS'),100,'N','Y','LBR','e8ec4663-5e1f-42b6-9c45-9a55694d33d7','Y',330,2)
 ;
 
 -- 22/05/2016 18h18min4s BRT
@@ -942,7 +944,7 @@ UPDATE AD_Column SET FKConstraintName='UpdatedBy_LBRNFS', FKConstraintType='N',U
 ;
 
 -- 22/05/2016 18h38min55s BRT
-CREATE TABLE LBR_NFS (AD_Client_ID NUMBER(10) DEFAULT NULL , AD_Org_ID NUMBER(10) DEFAULT NULL , C_BPartner_ID NUMBER(10) DEFAULT NULL , C_BPartner_Location_ID NUMBER(10) DEFAULT NULL , C_Charge_ID NUMBER(10) DEFAULT NULL , C_DocType_ID NUMBER(10) DEFAULT NULL , C_InvoiceLine_ID NUMBER(10) DEFAULT NULL , C_Invoice_ID NUMBER(10) DEFAULT NULL , C_OrderLine_ID NUMBER(10) DEFAULT NULL , C_Order_ID NUMBER(10) DEFAULT NULL , C_UOM_ID NUMBER(10) DEFAULT NULL , Created DATE DEFAULT NULL , CreatedBy NUMBER(10) DEFAULT NULL , DateDoc DATE NOT NULL, Description VARCHAR2(255) DEFAULT NULL , DocAction CHAR(2) DEFAULT 'CO', DocStatus VARCHAR2(2) DEFAULT 'DR', DocumentNo VARCHAR2(15) DEFAULT NULL , GrandTotal NUMBER DEFAULT NULL , IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')), LBR_IntermediateBPLocation_ID NUMBER(10) NOT NULL, LBR_IntermediateBPartner_ID NUMBER(10) NOT NULL, LBR_NFS_ID NUMBER(10) NOT NULL, LBR_NFS_UU VARCHAR2(36) DEFAULT NULL , LBR_NFSeCodVerificacao NUMBER(10) DEFAULT NULL , LBR_NFSeNumero VARCHAR2(15) DEFAULT NULL , LBR_NFSeStatus CHAR(1) NOT NULL, LBR_NFSeSubstituida VARCHAR2(15) DEFAULT NULL , LBR_NIFTomador VARCHAR2(40) DEFAULT NULL , LBR_RPSNumero VARCHAR2(15) DEFAULT NULL , LBR_RPSNumeroSubstituida VARCHAR2(15) DEFAULT NULL , LBR_RPSSerie VARCHAR2(5) DEFAULT NULL , LBR_RPSSerieSubstituida VARCHAR2(5) DEFAULT NULL , LBR_RPSStatus CHAR(1) DEFAULT NULL , LBR_RPSTipo CHAR(1) DEFAULT NULL , LBR_RPSTipoSubstituida CHAR(1) DEFAULT NULL , M_Product_ID NUMBER(10) DEFAULT NULL , Posted CHAR(1) DEFAULT NULL  CHECK (Posted IN ('Y','N')), Price NUMBER DEFAULT NULL , Processed CHAR(1) DEFAULT NULL  CHECK (Processed IN ('Y','N')), Processing CHAR(1) DEFAULT NULL , Qty NUMBER NOT NULL, TotalLines NUMBER DEFAULT NULL , Updated DATE DEFAULT NULL , UpdatedBy NUMBER(10) DEFAULT NULL , CONSTRAINT LBR_NFS_Key PRIMARY KEY (LBR_NFS_ID), CONSTRAINT LBR_NFS_UU_idx UNIQUE (LBR_NFS_UU))
+CREATE TABLE LBR_NFS (AD_Client_ID NUMBER(10) DEFAULT NULL , AD_Org_ID NUMBER(10) DEFAULT NULL , C_BPartner_ID NUMBER(10) DEFAULT NULL , C_BPartner_Location_ID NUMBER(10) DEFAULT NULL , C_Charge_ID NUMBER(10) DEFAULT NULL , C_DocType_ID NUMBER(10) DEFAULT NULL , C_InvoiceLine_ID NUMBER(10) DEFAULT NULL , C_Invoice_ID NUMBER(10) DEFAULT NULL , C_OrderLine_ID NUMBER(10) DEFAULT NULL , C_Order_ID NUMBER(10) DEFAULT NULL , C_UOM_ID NUMBER(10) DEFAULT NULL , Created DATE DEFAULT NULL , CreatedBy NUMBER(10) DEFAULT NULL , DateDoc DATE NOT NULL, Description NVARCHAR2(255) DEFAULT NULL , DocAction CHAR(2) DEFAULT 'CO', DocStatus NVARCHAR2(2) DEFAULT 'DR', DocumentNo NVARCHAR2(15) DEFAULT NULL , GrandTotal NUMBER DEFAULT NULL , IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')), LBR_IntermediateBPLocation_ID NUMBER(10) NOT NULL, LBR_IntermediateBPartner_ID NUMBER(10) NOT NULL, LBR_NFS_ID NUMBER(10) NOT NULL, LBR_NFS_UU NVARCHAR2(36) DEFAULT NULL , LBR_NFSeCodVerificacao NUMBER(10) DEFAULT NULL , LBR_NFSeNumero NVARCHAR2(15) DEFAULT NULL , LBR_NFSeStatus CHAR(1) NOT NULL, LBR_NFSeSubstituida NVARCHAR2(15) DEFAULT NULL , LBR_NIFTomador NVARCHAR2(40) DEFAULT NULL , LBR_RPSNumero NVARCHAR2(15) DEFAULT NULL , LBR_RPSNumeroSubstituida NVARCHAR2(15) DEFAULT NULL , LBR_RPSSerie NVARCHAR2(5) DEFAULT NULL , LBR_RPSSerieSubstituida NVARCHAR2(5) DEFAULT NULL , LBR_RPSStatus CHAR(1) DEFAULT NULL , LBR_RPSTipo CHAR(1) DEFAULT NULL , LBR_RPSTipoSubstituida CHAR(1) DEFAULT NULL , M_Product_ID NUMBER(10) DEFAULT NULL , Posted CHAR(1) DEFAULT NULL  CHECK (Posted IN ('Y','N')), Price NUMBER DEFAULT NULL , Processed CHAR(1) DEFAULT NULL  CHECK (Processed IN ('Y','N')), Processing CHAR(1) DEFAULT NULL , Qty NUMBER NOT NULL, TotalLines NUMBER DEFAULT NULL , Updated DATE DEFAULT NULL , UpdatedBy NUMBER(10) DEFAULT NULL , CONSTRAINT LBR_NFS_Key PRIMARY KEY (LBR_NFS_ID), CONSTRAINT LBR_NFS_UU_idx UNIQUE (LBR_NFS_UU))
 ;
 
 -- 22/05/2016 18h38min55s BRT
@@ -1625,9 +1627,9 @@ INSERT INTO AD_Field (AD_Field_ID,Name,AD_Tab_ID,AD_Column_ID,IsDisplayed,Displa
 ;
 
 -- 22/05/2016 19h16min56s BRT
-INSERT INTO AD_Field (AD_Field_ID,Name,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801074,'Responsável pela Retenção','Informado somente se IssRetido igual a “1 – Sim” A opção “2 – Intermediário” somente poderá ser selecionada se “CpfCnpjIntermediario” informado.
-1 – Tomador;
-2 – Intermediário.',800045,801141,'Y',1,40,'N','N','N','N',0,0,'Y',TO_DATE('2016-05-22 19:16:55','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 19:16:55','YYYY-MM-DD HH24:MI:SS'),100,'N','Y','U','aa19614b-406f-4cae-ad20-dcfa7d7e687e','Y',30,2)
+INSERT INTO AD_Field (AD_Field_ID,Name,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801074,'Responsável pela Retenção','Informado somente se IssRetido igual a “1 – Sim” A opção “2 – Intermediário” somente poderá ser selecionada se “CpfCnpjIntermediario” informado.'||chr(10)||
+'1 – Tomador;'||chr(10)||
+'2 – Intermediário.',800045,801141,'Y',1,40,'N','N','N','N',0,0,'Y',TO_DATE('2016-05-22 19:16:55','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 19:16:55','YYYY-MM-DD HH24:MI:SS'),100,'N','Y','U','aa19614b-406f-4cae-ad20-dcfa7d7e687e','Y',30,2)
 ;
 
 -- 22/05/2016 19h16min56s BRT
@@ -1950,9 +1952,9 @@ INSERT INTO AD_Field (AD_Field_ID,Name,AD_Tab_ID,AD_Column_ID,IsDisplayed,Displa
 ;
 
 -- 22/05/2016 20h39min39s BRT
-INSERT INTO AD_Field (AD_Field_ID,Name,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801102,'Responsável pela Retenção','Informado somente se IssRetido igual a “1 – Sim” A opção “2 – Intermediário” somente poderá ser selecionada se “CpfCnpjIntermediario” informado.
-1 – Tomador;
-2 – Intermediário.',1000032,801141,'Y',1,160,'N','N','N','N',0,0,'Y',TO_DATE('2016-05-22 20:39:39','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 20:39:39','YYYY-MM-DD HH24:MI:SS'),100,'N','Y','U','5d4b2467-06dc-4ef6-815f-33a725b59a47','Y',230,2)
+INSERT INTO AD_Field (AD_Field_ID,Name,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801102,'Responsável pela Retenção','Informado somente se IssRetido igual a “1 – Sim” A opção “2 – Intermediário” somente poderá ser selecionada se “CpfCnpjIntermediario” informado.'||chr(10)||
+'1 – Tomador;'||chr(10)||
+'2 – Intermediário.',1000032,801141,'Y',1,160,'N','N','N','N',0,0,'Y',TO_DATE('2016-05-22 20:39:39','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 20:39:39','YYYY-MM-DD HH24:MI:SS'),100,'N','Y','U','5d4b2467-06dc-4ef6-815f-33a725b59a47','Y',230,2)
 ;
 
 -- 22/05/2016 20h41min14s BRT
@@ -2100,9 +2102,9 @@ INSERT INTO AD_Field (AD_Field_ID,Name,AD_Tab_ID,AD_Column_ID,IsDisplayed,Displa
 ;
 
 -- 22/05/2016 20h43min3s BRT
-INSERT INTO AD_Field (AD_Field_ID,Name,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801105,'Responsável pela Retenção','Informado somente se IssRetido igual a “1 – Sim” A opção “2 – Intermediário” somente poderá ser selecionada se “CpfCnpjIntermediario” informado.
-1 – Tomador;
-2 – Intermediário.',1000039,801141,'Y',1,180,'N','N','N','N',0,0,'Y',TO_DATE('2016-05-22 20:43:02','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 20:43:02','YYYY-MM-DD HH24:MI:SS'),100,'N','Y','U','c2a89b89-b2b3-4882-a34b-908694475dd6','Y',230,2)
+INSERT INTO AD_Field (AD_Field_ID,Name,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801105,'Responsável pela Retenção','Informado somente se IssRetido igual a “1 – Sim” A opção “2 – Intermediário” somente poderá ser selecionada se “CpfCnpjIntermediario” informado.'||chr(10)||
+'1 – Tomador;'||chr(10)||
+'2 – Intermediário.',1000039,801141,'Y',1,180,'N','N','N','N',0,0,'Y',TO_DATE('2016-05-22 20:43:02','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-05-22 20:43:02','YYYY-MM-DD HH24:MI:SS'),100,'N','Y','U','c2a89b89-b2b3-4882-a34b-908694475dd6','Y',230,2)
 ;
 
 -- 22/05/2016 20h44min3s BRT
@@ -2497,7 +2499,7 @@ UPDATE AD_Column SET FKConstraintName='UpdatedBy_LBRNFSTax', FKConstraintType='N
 ;
 
 -- 22/05/2016 21h23min14s BRT
-CREATE TABLE LBR_NFSTax (AD_Client_ID NUMBER(10) NOT NULL, AD_Org_ID NUMBER(10) NOT NULL, C_TaxProvider_ID NUMBER(10) DEFAULT NULL , C_Tax_ID NUMBER(10) NOT NULL, Created DATE DEFAULT NULL , CreatedBy NUMBER(10) DEFAULT NULL , IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')) NOT NULL, IsTaxIncluded CHAR(1) CHECK (IsTaxIncluded IN ('Y','N')) NOT NULL, LBR_NFSTax_ID NUMBER(10) NOT NULL, LBR_NFSTax_UU VARCHAR2(36) DEFAULT NULL , LBR_NFS_ID NUMBER(10) NOT NULL, Processed CHAR(1) CHECK (Processed IN ('Y','N')) NOT NULL, TaxAmt NUMBER NOT NULL, TaxBaseAmt NUMBER NOT NULL, Updated DATE DEFAULT NULL , UpdatedBy NUMBER(10) DEFAULT NULL , CONSTRAINT LBR_NFSTax_Key PRIMARY KEY (LBR_NFSTax_ID), CONSTRAINT LBR_NFSTax_UU_idx UNIQUE (LBR_NFSTax_UU))
+CREATE TABLE LBR_NFSTax (AD_Client_ID NUMBER(10) NOT NULL, AD_Org_ID NUMBER(10) NOT NULL, C_TaxProvider_ID NUMBER(10) DEFAULT NULL , C_Tax_ID NUMBER(10) NOT NULL, Created DATE DEFAULT NULL , CreatedBy NUMBER(10) DEFAULT NULL , IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')) NOT NULL, IsTaxIncluded CHAR(1) CHECK (IsTaxIncluded IN ('Y','N')) NOT NULL, LBR_NFSTax_ID NUMBER(10) NOT NULL, LBR_NFSTax_UU NVARCHAR2(36) DEFAULT NULL , LBR_NFS_ID NUMBER(10) NOT NULL, Processed CHAR(1) CHECK (Processed IN ('Y','N')) NOT NULL, TaxAmt NUMBER NOT NULL, TaxBaseAmt NUMBER NOT NULL, Updated DATE DEFAULT NULL , UpdatedBy NUMBER(10) DEFAULT NULL , CONSTRAINT LBR_NFSTax_Key PRIMARY KEY (LBR_NFSTax_ID), CONSTRAINT LBR_NFSTax_UU_idx UNIQUE (LBR_NFSTax_UU))
 ;
 
 -- 22/05/2016 21h23min14s BRT
@@ -2628,7 +2630,7 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,Description,AD_Table_ID,ColumnN
 ;
 
 -- 22/05/2016 21h36min4s BRT
-ALTER TABLE LBR_NFS ADD LBR_TransactionType VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE LBR_NFS ADD LBR_TransactionType NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- 22/05/2016 21h36min15s BRT
@@ -2636,7 +2638,7 @@ UPDATE AD_Column SET IsMandatory='Y',Updated=TO_DATE('2016-05-22 21:36:15','YYYY
 ;
 
 -- 22/05/2016 21h36min16s BRT
-ALTER TABLE LBR_NFS MODIFY LBR_TransactionType VARCHAR2(3)
+ALTER TABLE LBR_NFS MODIFY LBR_TransactionType NVARCHAR2(3)
 ;
 
 -- 22/05/2016 21h36min16s BRT
@@ -3716,7 +3718,7 @@ UPDATE AD_Field SET SeqNo=340,Updated=TO_DATE('2016-06-07 22:33:09','YYYY-MM-DD 
 ;
 
 -- 07/06/2016 23h21min23s BRT
-ALTER TABLE LBR_DocLine_ISSQN ADD LBR_CodigoNBS VARCHAR2(9) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_ISSQN ADD LBR_CodigoNBS NVARCHAR2(9) DEFAULT NULL 
 ;
 
 -- 07/06/2016 23h21min51s BRT
@@ -3736,7 +3738,7 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,FieldLen
 ;
 
 -- 08/06/2016 0h15min54s BRT
-ALTER TABLE M_Product ADD LBR_ServiceCode VARCHAR2(20) DEFAULT NULL 
+ALTER TABLE M_Product ADD LBR_ServiceCode NVARCHAR2(20) DEFAULT NULL 
 ;
 
 -- 08/06/2016 0h16min22s BRT
@@ -3832,14 +3834,6 @@ UPDATE AD_Column SET FKConstraintName='CPaymentTerm_LBRNFS', FKConstraintType='N
 ;
 
 -- 10/06/2016 17h45min41s BRT
-ALTER TABLE LBR_NFS ADD C_PaymentTerm_ID NUMBER(10) NOT NULL
-;
-
--- 10/06/2016 17h46min16s BRT
-UPDATE AD_Column SET FKConstraintName='CPaymentTerm_LBRNFS', FKConstraintType='N',Updated=TO_DATE('2016-06-10 17:46:16','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=100 WHERE AD_Column_ID=801173
-;
-
--- 10/06/2016 17h46min16s BRT
 ALTER TABLE LBR_NFS ADD C_PaymentTerm_ID NUMBER(10) NOT NULL
 ;
 
@@ -3960,10 +3954,10 @@ UPDATE AD_Field SET SeqNo=410,Updated=TO_DATE('2016-06-10 17:47:49','YYYY-MM-DD 
 ;
 
 -- 10/06/2016 17h52min20s BRT
-INSERT INTO AD_Column (AD_Column_ID,Version,Name,Help,AD_Table_ID,ColumnName,FieldLength,IsKey,IsParent,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsEncrypted,AD_Reference_ID,AD_Reference_Value_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,AD_Element_ID,IsUpdateable,IsSelectionColumn,EntityType,IsSyncDatabase,IsAlwaysUpdateable,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsAllowCopy,SeqNoSelection,IsToolbarButton,IsSecure,FKConstraintType) VALUES (801174,0,'Tipo da RPS','Tipo do RPS
-1 – Recibo Provisorio de Servicos;
-2 – RPS Nota Fiscal Conjugada (Mista); 
-3 – Cupom.',217,'LBR_RPSTipo',1,'N','N','N','N','N',0,'N',17,800031,0,0,'Y',TO_DATE('2016-06-10 17:52:19','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-06-10 17:52:19','YYYY-MM-DD HH24:MI:SS'),100,800302,'Y','N','U','N','N','N','Y','195883d9-e5f6-4e40-b293-9b229c54f602','Y',0,'N','N','N')
+INSERT INTO AD_Column (AD_Column_ID,Version,Name,Help,AD_Table_ID,ColumnName,FieldLength,IsKey,IsParent,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsEncrypted,AD_Reference_ID,AD_Reference_Value_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,AD_Element_ID,IsUpdateable,IsSelectionColumn,EntityType,IsSyncDatabase,IsAlwaysUpdateable,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsAllowCopy,SeqNoSelection,IsToolbarButton,IsSecure,FKConstraintType) VALUES (801174,0,'Tipo da RPS','Tipo do RPS'||chr(10)||
+'1 – Recibo Provisorio de Servicos;'||chr(10)||
+'2 – RPS Nota Fiscal Conjugada (Mista); '||chr(10)||
+'3 – Cupom.',217,'LBR_RPSTipo',1,'N','N','N','N','N',0,'N',17,800031,0,0,'Y',TO_DATE('2016-06-10 17:52:19','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-06-10 17:52:19','YYYY-MM-DD HH24:MI:SS'),100,800302,'Y','N','U','N','N','N','Y','195883d9-e5f6-4e40-b293-9b229c54f602','Y',0,'N','N','N')
 ;
 
 -- 10/06/2016 17h52min21s BRT
@@ -4415,7 +4409,7 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,FieldLen
 ;
 
 -- 11/06/2016 9h15min13s BRT
-ALTER TABLE LBR_NFS ADD LBR_NFSSerie VARCHAR2(5) DEFAULT NULL 
+ALTER TABLE LBR_NFS ADD LBR_NFSSerie NVARCHAR2(5) DEFAULT NULL 
 ;
 
 -- 11/06/2016 9h15min33s BRT
@@ -4790,6 +4784,18 @@ ALTER TABLE LBR_NFS MODIFY AD_User_ID NUMBER(10) DEFAULT NULL
 ALTER TABLE LBR_NFS MODIFY AD_User_ID NULL
 ;
 
+-- 13/06/2016 22h25min56s BRT
+UPDATE AD_Column SET DefaultValue='Y', ReadOnlyLogic=NULL,Updated=TO_DATE('2016-06-13 22:25:56','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Column_ID=801183
+;
+
+-- 13/06/2016 22h25min57s BRT
+ALTER TABLE LBR_NFS MODIFY IsApproved CHAR(1) DEFAULT 'Y'
+;
+
+-- 13/06/2016 22h25min57s BRT
+UPDATE LBR_NFS SET IsApproved='Y' WHERE IsApproved IS NULL
+;
+
 -- 13/06/2016 23h24min28s BRT
 UPDATE AD_Workflow SET Duration=1, IsValid='Y',Updated=TO_DATE('2016-06-13 23:24:28','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Workflow_ID=800001
 ;
@@ -4827,10 +4833,10 @@ INSERT INTO AD_WF_NodeNext (AD_WF_Node_ID,IsActive,Created,CreatedBy,Updated,Upd
 ;
 
 -- 14/06/2016 19h9min15s BRT
-INSERT INTO AD_Field (AD_Field_ID,Name,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801139,'Tipo da RPS','Tipo do RPS
-1 – Recibo Provisorio de Servicos;
-2 – RPS Nota Fiscal Conjugada (Mista); 
-3 – Cupom.',167,801174,'Y',1,540,'N','N','N','N',0,0,'Y',TO_DATE('2016-06-14 19:09:13','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-06-14 19:09:13','YYYY-MM-DD HH24:MI:SS'),100,'N','Y','U','eb7e4bb4-530b-43e8-ad6e-821fc3660277','Y',490,2)
+INSERT INTO AD_Field (AD_Field_ID,Name,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801139,'Tipo da RPS','Tipo do RPS'||chr(10)||
+'1 – Recibo Provisorio de Servicos;'||chr(10)||
+'2 – RPS Nota Fiscal Conjugada (Mista); '||chr(10)||
+'3 – Cupom.',167,801174,'Y',1,540,'N','N','N','N',0,0,'Y',TO_DATE('2016-06-14 19:09:13','YYYY-MM-DD HH24:MI:SS'),100,TO_DATE('2016-06-14 19:09:13','YYYY-MM-DD HH24:MI:SS'),100,'N','Y','U','eb7e4bb4-530b-43e8-ad6e-821fc3660277','Y',490,2)
 ;
 
 -- 14/06/2016 19h9min16s BRT
@@ -5348,7 +5354,7 @@ UPDATE AD_Column SET FKConstraintName='UpdatedBy_LBRNFSLot', FKConstraintType='N
 ;
 
 -- 16/06/2016 10h22min39s BRT
-CREATE TABLE LBR_NFSLot (AD_Client_ID NUMBER(10) NOT NULL, AD_Org_ID NUMBER(10) NOT NULL, Created DATE DEFAULT SYSDATE, CreatedBy NUMBER(10) DEFAULT NULL , Description VARCHAR2(255) DEFAULT NULL , DocumentNo VARCHAR2(30) NOT NULL, IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')) NOT NULL, LBR_LotQueried CHAR(1) DEFAULT 'N' CHECK (LBR_LotQueried IN ('Y','N')) NOT NULL, LBR_LotQueriedOn DATE DEFAULT NULL , LBR_LotQueryStatus VARCHAR2(3) DEFAULT NULL , LBR_LotSendingProt VARCHAR2(255) DEFAULT NULL , LBR_LotSendingRec VARCHAR2(255) DEFAULT NULL , LBR_LotSendingStatus VARCHAR2(3) DEFAULT NULL , LBR_LotSent CHAR(1) DEFAULT 'N' CHECK (LBR_LotSent IN ('Y','N')) NOT NULL, LBR_LotSentOn DATE DEFAULT NULL , LBR_NFSLot_ID NUMBER(10) DEFAULT NULL , LBR_NFSLot_UU VARCHAR2(36) DEFAULT NULL , LBR_NotaFiscal_UU VARCHAR2(36) DEFAULT NULL , LBR_ProcQueryNFSLot CHAR(1) DEFAULT NULL , LBR_ProcSendNFSLot CHAR(1) DEFAULT NULL , LBR_ProcessingType CHAR(1) NOT NULL, Processed CHAR(1) DEFAULT 'N' CHECK (Processed IN ('Y','N')), Updated DATE DEFAULT SYSDATE, UpdatedBy NUMBER(10) DEFAULT NULL , CONSTRAINT LBR_NFSLot_Key PRIMARY KEY (LBR_NFSLot_ID), CONSTRAINT LBR_NFSLot_UU_idx UNIQUE (LBR_NFSLot_UU))
+CREATE TABLE LBR_NFSLot (AD_Client_ID NUMBER(10) NOT NULL, AD_Org_ID NUMBER(10) NOT NULL, Created DATE DEFAULT SYSDATE, CreatedBy NUMBER(10) DEFAULT NULL , Description NVARCHAR2(255) DEFAULT NULL , DocumentNo NVARCHAR2(30) NOT NULL, IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')) NOT NULL, LBR_LotQueried CHAR(1) DEFAULT 'N' CHECK (LBR_LotQueried IN ('Y','N')) NOT NULL, LBR_LotQueriedOn DATE DEFAULT NULL , LBR_LotQueryStatus NVARCHAR2(3) DEFAULT NULL , LBR_LotSendingProt NVARCHAR2(255) DEFAULT NULL , LBR_LotSendingRec NVARCHAR2(255) DEFAULT NULL , LBR_LotSendingStatus NVARCHAR2(3) DEFAULT NULL , LBR_LotSent CHAR(1) DEFAULT 'N' CHECK (LBR_LotSent IN ('Y','N')) NOT NULL, LBR_LotSentOn DATE DEFAULT NULL , LBR_NFSLot_ID NUMBER(10) DEFAULT NULL , LBR_NFSLot_UU NVARCHAR2(36) DEFAULT NULL , LBR_NotaFiscal_UU NVARCHAR2(36) DEFAULT NULL , LBR_ProcQueryNFSLot CHAR(1) DEFAULT NULL , LBR_ProcSendNFSLot CHAR(1) DEFAULT NULL , LBR_ProcessingType CHAR(1) NOT NULL, Processed CHAR(1) DEFAULT 'N' CHECK (Processed IN ('Y','N')), Updated DATE DEFAULT SYSDATE, UpdatedBy NUMBER(10) DEFAULT NULL , CONSTRAINT LBR_NFSLot_Key PRIMARY KEY (LBR_NFSLot_ID), CONSTRAINT LBR_NFSLot_UU_idx UNIQUE (LBR_NFSLot_UU))
 ;
 
 -- 16/06/2016 10h22min39s BRT
@@ -5591,7 +5597,7 @@ UPDATE AD_Column SET FKConstraintName='UpdatedBy_LBRNFSLotLine', FKConstraintTyp
 ;
 
 -- 16/06/2016 10h38min53s BRT
-CREATE TABLE LBR_NFSLotLine (AD_Client_ID NUMBER(10) DEFAULT NULL , AD_Org_ID NUMBER(10) DEFAULT NULL , Created DATE DEFAULT SYSDATE, CreatedBy NUMBER(10) DEFAULT NULL , Description VARCHAR2(255) DEFAULT NULL , IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')), LBR_NFSLotLine_ID NUMBER(10) DEFAULT NULL , LBR_NFSLotLine_UU VARCHAR2(36) DEFAULT NULL , LBR_NFSLot_ID NUMBER(10) NOT NULL, LBR_NFS_ID NUMBER(10) NOT NULL, LBR_NFSeStatusCode VARCHAR2(3) DEFAULT NULL , LBR_NFSeStatusDescr VARCHAR2(255) DEFAULT NULL , LBR_RPSNumero VARCHAR2(15) DEFAULT NULL , Updated DATE DEFAULT SYSDATE, UpdatedBy NUMBER(10) DEFAULT NULL , CONSTRAINT LBR_NFSLotLine_Key PRIMARY KEY (LBR_NFSLotLine_ID), CONSTRAINT LBR_NFSLotLine_UU_idx UNIQUE (LBR_NFSLotLine_UU))
+CREATE TABLE LBR_NFSLotLine (AD_Client_ID NUMBER(10) DEFAULT NULL , AD_Org_ID NUMBER(10) DEFAULT NULL , Created DATE DEFAULT SYSDATE, CreatedBy NUMBER(10) DEFAULT NULL , Description NVARCHAR2(255) DEFAULT NULL , IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')), LBR_NFSLotLine_ID NUMBER(10) DEFAULT NULL , LBR_NFSLotLine_UU NVARCHAR2(36) DEFAULT NULL , LBR_NFSLot_ID NUMBER(10) NOT NULL, LBR_NFS_ID NUMBER(10) NOT NULL, LBR_NFSeStatusCode NVARCHAR2(3) DEFAULT NULL , LBR_NFSeStatusDescr NVARCHAR2(255) DEFAULT NULL , LBR_RPSNumero NVARCHAR2(15) DEFAULT NULL , Updated DATE DEFAULT SYSDATE, UpdatedBy NUMBER(10) DEFAULT NULL , CONSTRAINT LBR_NFSLotLine_Key PRIMARY KEY (LBR_NFSLotLine_ID), CONSTRAINT LBR_NFSLotLine_UU_idx UNIQUE (LBR_NFSLotLine_UU))
 ;
 
 -- 16/06/2016 10h38min53s BRT
@@ -5816,7 +5822,7 @@ UPDATE AD_Column SET FieldLength=255, AD_Reference_ID=10, AD_Reference_Value_ID=
 ;
 
 -- 16/06/2016 10h46min52s BRT
-ALTER TABLE LBR_NFSLot MODIFY LBR_LotQueryStatus VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NFSLot MODIFY LBR_LotQueryStatus NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- 16/06/2016 10h47min13s BRT
@@ -5824,7 +5830,7 @@ UPDATE AD_Column SET FieldLength=255, AD_Reference_ID=10, AD_Reference_Value_ID=
 ;
 
 -- 16/06/2016 10h47min14s BRT
-ALTER TABLE LBR_NFSLot MODIFY LBR_LotSendingStatus VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NFSLot MODIFY LBR_LotSendingStatus NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- 16/06/2016 10h50min5s BRT
@@ -5899,7 +5905,7 @@ UPDATE AD_Column SET FieldLength=255, AD_Reference_ID=10, AD_Reference_Value_ID=
 ;
 
 -- 16/06/2016 10h51min43s BRT
-ALTER TABLE LBR_NFSLotLine MODIFY LBR_NFSeStatusCode VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NFSLotLine MODIFY LBR_NFSeStatusCode NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- 16/06/2016 10h53min43s BRT
@@ -6321,7 +6327,7 @@ UPDATE AD_Column SET FKConstraintName='UpdatedBy_LBRNFSeWS', FKConstraintType='N
 ;
 
 -- 17/06/2016 10h22min27s BRT
-CREATE TABLE LBR_NFSeWS (AD_Client_ID NUMBER(10) DEFAULT NULL , AD_Org_ID NUMBER(10) DEFAULT NULL , C_Region_ID NUMBER(10) DEFAULT NULL , Created DATE DEFAULT SYSDATE, CreatedBy NUMBER(10) DEFAULT NULL , IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')) NOT NULL, LBR_NFSConfig_ID NUMBER(10) NOT NULL, LBR_NFSeWS_ID NUMBER(10) NOT NULL, LBR_NFSeWS_UU VARCHAR2(36) DEFAULT NULL , LBR_NFeEnv CHAR(1) NOT NULL, Name VARCHAR2(60) NOT NULL, URL VARCHAR2(255) NOT NULL, Updated DATE DEFAULT SYSDATE, UpdatedBy NUMBER(10) DEFAULT NULL , VersionNo VARCHAR2(20) DEFAULT NULL , CONSTRAINT LBR_NFSeWS_Key PRIMARY KEY (LBR_NFSeWS_ID), CONSTRAINT LBR_NFSeWS_UU_idx UNIQUE (LBR_NFSeWS_UU))
+CREATE TABLE LBR_NFSeWS (AD_Client_ID NUMBER(10) DEFAULT NULL , AD_Org_ID NUMBER(10) DEFAULT NULL , C_Region_ID NUMBER(10) DEFAULT NULL , Created DATE DEFAULT SYSDATE, CreatedBy NUMBER(10) DEFAULT NULL , IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')) NOT NULL, LBR_NFSConfig_ID NUMBER(10) NOT NULL, LBR_NFSeWS_ID NUMBER(10) NOT NULL, LBR_NFSeWS_UU NVARCHAR2(36) DEFAULT NULL , LBR_NFeEnv CHAR(1) NOT NULL, Name NVARCHAR2(60) NOT NULL, URL NVARCHAR2(255) NOT NULL, Updated DATE DEFAULT SYSDATE, UpdatedBy NUMBER(10) DEFAULT NULL , VersionNo NVARCHAR2(20) DEFAULT NULL , CONSTRAINT LBR_NFSeWS_Key PRIMARY KEY (LBR_NFSeWS_ID), CONSTRAINT LBR_NFSeWS_UU_idx UNIQUE (LBR_NFSeWS_UU))
 ;
 
 -- 17/06/2016 10h22min27s BRT
@@ -6361,7 +6367,7 @@ UPDATE AD_Column SET FKConstraintName='UpdatedBy_LBRNFSConfig', FKConstraintType
 ;
 
 -- 17/06/2016 10h22min38s BRT
-CREATE TABLE LBR_NFSConfig (AD_Client_ID NUMBER(10) DEFAULT NULL , AD_Org_ID NUMBER(10) NOT NULL, Created DATE DEFAULT NULL , CreatedBy NUMBER(10) DEFAULT NULL , Description VARCHAR2(255) DEFAULT NULL , IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')), LBR_NFSConfig_ID NUMBER(10) NOT NULL, LBR_NFSConfig_UU VARCHAR2(36) DEFAULT NULL , LBR_NFSModel VARCHAR2(3) DEFAULT '01' NOT NULL, LBR_NFSPlayer VARCHAR2(255) DEFAULT NULL , LBR_ProcessingType CHAR(1) DEFAULT 'A' NOT NULL, Updated DATE DEFAULT NULL , UpdatedBy NUMBER(10) DEFAULT NULL , CONSTRAINT LBR_NFSConfig_Key PRIMARY KEY (LBR_NFSConfig_ID), CONSTRAINT LBR_NFSConfig_UU_idx UNIQUE (LBR_NFSConfig_UU))
+CREATE TABLE LBR_NFSConfig (AD_Client_ID NUMBER(10) DEFAULT NULL , AD_Org_ID NUMBER(10) NOT NULL, Created DATE DEFAULT NULL , CreatedBy NUMBER(10) DEFAULT NULL , Description NVARCHAR2(255) DEFAULT NULL , IsActive CHAR(1) DEFAULT 'Y' CHECK (IsActive IN ('Y','N')), LBR_NFSConfig_ID NUMBER(10) NOT NULL, LBR_NFSConfig_UU NVARCHAR2(36) DEFAULT NULL , LBR_NFSModel NVARCHAR2(3) DEFAULT '01' NOT NULL, LBR_NFSPlayer NVARCHAR2(255) DEFAULT NULL , LBR_ProcessingType CHAR(1) DEFAULT 'A' NOT NULL, Updated DATE DEFAULT NULL , UpdatedBy NUMBER(10) DEFAULT NULL , CONSTRAINT LBR_NFSConfig_Key PRIMARY KEY (LBR_NFSConfig_ID), CONSTRAINT LBR_NFSConfig_UU_idx UNIQUE (LBR_NFSConfig_UU))
 ;
 
 -- 17/06/2016 10h22min38s BRT

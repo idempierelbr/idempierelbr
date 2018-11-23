@@ -134,7 +134,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 25, 2014 12:01:18 PM BRT
-ALTER TABLE LBR_NotaFiscalEvent ADD LBR_NotaFiscalEvent_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalEvent ADD LBR_NotaFiscalEvent_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Jun 25, 2014 12:01:18 PM BRT
@@ -148,7 +148,7 @@ If the document type of your document has no automatic document sequence defined
 ;
 
 -- Jun 25, 2014 12:02:59 PM BRT
-ALTER TABLE LBR_NotaFiscalEvent ADD DocumentNo VARCHAR2(30) NOT NULL
+ALTER TABLE LBR_NotaFiscalEvent ADD DocumentNo NVARCHAR2(30) NOT NULL
 ;
 
 -- Jun 25, 2014 12:04:00 PM BRT
@@ -156,7 +156,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 25, 2014 12:04:04 PM BRT
-ALTER TABLE LBR_NotaFiscalEvent ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalEvent ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 25, 2014 12:06:28 PM BRT
@@ -180,7 +180,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 25, 2014 12:07:59 PM BRT
-ALTER TABLE LBR_NotaFiscalEvent ADD LBR_LotSendingStatus VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalEvent ADD LBR_LotSendingStatus NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- Jun 25, 2014 12:08:24 PM BRT
@@ -536,7 +536,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 25, 2014 3:00:10 PM BRT
-ALTER TABLE LBR_NotaFiscalEventLine ADD LBR_NotaFiscalEventLine_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalEventLine ADD LBR_NotaFiscalEventLine_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Jun 25, 2014 3:00:10 PM BRT
@@ -580,7 +580,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 25, 2014 3:03:16 PM BRT
-ALTER TABLE LBR_NotaFiscalEventLine ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalEventLine ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 25, 2014 3:04:06 PM BRT
@@ -588,7 +588,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 25, 2014 3:04:07 PM BRT
-ALTER TABLE LBR_NotaFiscalEventLine ADD LBR_NFeStatus VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalEventLine ADD LBR_NFeStatus NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- Jun 25, 2014 3:04:35 PM BRT
@@ -596,7 +596,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 25, 2014 3:04:36 PM BRT
-ALTER TABLE LBR_NotaFiscalEventLine ADD LBR_NFeID VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalEventLine ADD LBR_NFeID NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 25, 2014 3:05:00 PM BRT
@@ -604,7 +604,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 25, 2014 3:05:01 PM BRT
-ALTER TABLE LBR_NotaFiscalEventLine ADD LBR_LotSendingProt VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalEventLine ADD LBR_LotSendingProt NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 25, 2014 3:07:44 PM BRT
@@ -628,7 +628,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 25, 2014 3:11:21 PM BRT
-ALTER TABLE LBR_NotaFiscalEventLine ADD LBR_NFeEventType VARCHAR2(3) NOT NULL
+ALTER TABLE LBR_NotaFiscalEventLine ADD LBR_NFeEventType NVARCHAR2(3) NOT NULL
 ;
 
 -- Jun 25, 2014 4:15:48 PM BRT
@@ -640,7 +640,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 25, 2014 4:17:09 PM BRT
-ALTER TABLE LBR_NotaFiscalEventLine ADD LBR_CorrectionReason VARCHAR2(1000) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalEventLine ADD LBR_CorrectionReason NVARCHAR2(1000) DEFAULT NULL 
 ;
 
 -- Jun 25, 2014 4:18:09 PM BRT
@@ -652,7 +652,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jun 25, 2014 4:18:34 PM BRT
-ALTER TABLE LBR_NotaFiscalEventLine ADD LBR_Justification VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalEventLine ADD LBR_Justification NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jun 25, 2014 4:22:43 PM BRT

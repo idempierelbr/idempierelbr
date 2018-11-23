@@ -1684,7 +1684,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 27, 2014 1:35:39 PM BRT
-ALTER TABLE C_BankAccount ADD LBR_BankAgencyNo VARCHAR2(20) DEFAULT NULL 
+ALTER TABLE C_BankAccount ADD LBR_BankAgencyNo NVARCHAR2(20) DEFAULT NULL 
 ;
 
 -- Aug 27, 2014 1:36:27 PM BRT
@@ -2608,7 +2608,7 @@ UPDATE AD_Column SET IsMandatory='N',Updated=TO_DATE('2014-09-02 16:02:10','YYYY
 ;
 
 -- 02/09/2014 16h2min15s BRT
-ALTER TABLE LBR_BankAccount_Convenio MODIFY LBR_ConvenioNo VARCHAR2(20) DEFAULT NULL 
+ALTER TABLE LBR_BankAccount_Convenio MODIFY LBR_ConvenioNo NVARCHAR2(20) DEFAULT NULL 
 ;
 
 -- 02/09/2014 16h2min15s BRT

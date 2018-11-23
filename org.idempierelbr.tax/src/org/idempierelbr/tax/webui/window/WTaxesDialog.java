@@ -243,7 +243,8 @@ public final class WTaxesDialog extends Window
 		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_TaxBaseType_ID", 0);
 		
 		// Model
-		int AD_Window_ID = 1000013; // Transaction Tax
+		// Transaction Tax - AD_Window_UU = 06389dc4-c8ab-469f-8dbf-1d080984bd80
+		int AD_Window_ID = DB.getSQLValue(null, "SELECT AD_Window_ID FROM AD_Window WHERE AD_Window_UU='06389dc4-c8ab-469f-8dbf-1d080984bd80'");
 		GridWindowVO wVO = AEnv.getMWindowVO (m_WindowNo, AD_Window_ID, 0);
 		
 		if (wVO == null)

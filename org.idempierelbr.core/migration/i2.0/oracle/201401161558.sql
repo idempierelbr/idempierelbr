@@ -71,7 +71,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 16, 2014 3:05:33 PM BRST
-ALTER TABLE LBR_FiscalGroup_BPartner ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_FiscalGroup_BPartner ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jan 16, 2014 3:05:59 PM BRST
@@ -110,19 +110,19 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 16, 2014 3:09:00 PM BRST
-ALTER TABLE LBR_FiscalGroup_BPartner ADD LBR_FiscalGroup_BPartner_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_FiscalGroup_BPartner ADD LBR_FiscalGroup_BPartner_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Jan 16, 2014 3:09:00 PM BRST
-ALTER TABLE LBR_FiscalGroup_BPartner ADD CONSTRAINT LBR_FiscalGroup_BPartner_UU_uu_idx UNIQUE (LBR_FiscalGroup_BPartner_UU)
-;
+-- ALTER TABLE LBR_FiscalGroup_BPartner ADD CONSTRAINT LBR_FiscalGroup_BPartner_UU_uu_idx UNIQUE (LBR_FiscalGroup_BPartner_UU)
+-- ;
 
 -- Jan 16, 2014 3:09:48 PM BRST
 INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,Help,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,AD_Client_ID,IsEncrypted,IsSecure,AD_Element_ID,AD_Reference_ID,AD_Table_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,1000070,'Y','N','Y',0,'N',60,'Y','N','N','Y','44313c8d-2901-48de-b305-01d642852ef5','Y','Name','Alphanumeric identifier of the entity','The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length.','Name','Y',TO_DATE('2014-01-16 15:09:48','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2014-01-16 15:09:48','YYYY-MM-DD HH24:MI:SS'),0,'N','N',0,'N','N',469,10,1000004,0,'LBR')
 ;
 
 -- Jan 16, 2014 3:09:53 PM BRST
-ALTER TABLE LBR_FiscalGroup_BPartner ADD Name VARCHAR2(60) NOT NULL
+ALTER TABLE LBR_FiscalGroup_BPartner ADD Name NVARCHAR2(60) NOT NULL
 ;
 
 -- Jan 16, 2014 3:10:26 PM BRST

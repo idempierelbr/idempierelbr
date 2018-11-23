@@ -122,7 +122,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 16/01/2014 10h34min26s BRST
-ALTER TABLE LBR_LegalMessage ADD LBR_LegalMessage_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_LegalMessage ADD LBR_LegalMessage_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- 16/01/2014 10h34min46s BRST
@@ -167,7 +167,7 @@ If you leave the search key empty, the system automatically creates a numeric nu
 ;
 
 -- 16/01/2014 10h41min5s BRST
-ALTER TABLE LBR_LegalMessage ADD Value VARCHAR2(255) NOT NULL
+ALTER TABLE LBR_LegalMessage ADD Value NVARCHAR2(255) NOT NULL
 ;
 
 -- 16/01/2014 10h42min35s BRST

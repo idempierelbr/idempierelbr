@@ -131,7 +131,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 20, 2014 3:01:44 PM BRT
-ALTER TABLE LBR_Cob_GO ADD LBR_Cob_GO_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_Cob_GO ADD LBR_Cob_GO_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Aug 20, 2014 3:01:44 PM BRT
@@ -144,7 +144,7 @@ If you leave the search key empty, the system automatically creates a numeric nu
 ;
 
 -- Aug 20, 2014 3:02:02 PM BRT
-ALTER TABLE LBR_Cob_GO ADD Value VARCHAR2(40) DEFAULT NULL 
+ALTER TABLE LBR_Cob_GO ADD Value NVARCHAR2(40) DEFAULT NULL 
 ;
 
 -- Aug 20, 2014 3:02:38 PM BRT
@@ -152,7 +152,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 20, 2014 3:02:40 PM BRT
-ALTER TABLE LBR_Cob_GO ADD Name VARCHAR2(60) NOT NULL
+ALTER TABLE LBR_Cob_GO ADD Name NVARCHAR2(60) NOT NULL
 ;
 
 -- Aug 20, 2014 3:02:55 PM BRT
@@ -160,7 +160,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 20, 2014 3:02:56 PM BRT
-ALTER TABLE LBR_Cob_GO ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_Cob_GO ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Aug 20, 2014 3:04:45 PM BRT
@@ -855,7 +855,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 20, 2014 3:29:22 PM BRT
-ALTER TABLE LBR_Cob_Ocorrencia ADD LBR_Cob_Ocorrencia_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_Cob_Ocorrencia ADD LBR_Cob_Ocorrencia_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Aug 20, 2014 3:29:22 PM BRT
@@ -884,7 +884,7 @@ If you leave the search key empty, the system automatically creates a numeric nu
 ;
 
 -- Aug 20, 2014 3:30:26 PM BRT
-ALTER TABLE LBR_Cob_Ocorrencia ADD Value VARCHAR2(40) DEFAULT NULL 
+ALTER TABLE LBR_Cob_Ocorrencia ADD Value NVARCHAR2(40) DEFAULT NULL 
 ;
 
 -- Aug 20, 2014 3:30:44 PM BRT
@@ -892,7 +892,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 20, 2014 3:30:45 PM BRT
-ALTER TABLE LBR_Cob_Ocorrencia ADD Name VARCHAR2(60) NOT NULL
+ALTER TABLE LBR_Cob_Ocorrencia ADD Name NVARCHAR2(60) NOT NULL
 ;
 
 -- Aug 20, 2014 3:31:00 PM BRT
@@ -900,7 +900,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 20, 2014 3:31:02 PM BRT
-ALTER TABLE LBR_Cob_Ocorrencia ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_Cob_Ocorrencia ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Aug 20, 2014 3:31:17 PM BRT
@@ -1703,7 +1703,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 20, 2014 5:10:52 PM BRT
-ALTER TABLE LBR_Cob_Movimento ADD LBR_Cob_Movimento_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_Cob_Movimento ADD LBR_Cob_Movimento_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Aug 20, 2014 5:10:52 PM BRT
@@ -1716,7 +1716,7 @@ If you leave the search key empty, the system automatically creates a numeric nu
 ;
 
 -- Aug 20, 2014 5:11:33 PM BRT
-ALTER TABLE LBR_Cob_Movimento ADD Value VARCHAR2(40) DEFAULT NULL 
+ALTER TABLE LBR_Cob_Movimento ADD Value NVARCHAR2(40) DEFAULT NULL 
 ;
 
 -- Aug 20, 2014 5:11:47 PM BRT
@@ -1728,7 +1728,7 @@ UPDATE AD_Column SET IsMandatory='Y',Updated=TO_DATE('2014-08-20 17:11:53','YYYY
 ;
 
 -- Aug 20, 2014 5:11:55 PM BRT
-ALTER TABLE LBR_Cob_Movimento ADD Name VARCHAR2(60) NOT NULL
+ALTER TABLE LBR_Cob_Movimento ADD Name NVARCHAR2(60) NOT NULL
 ;
 
 -- Aug 20, 2014 5:12:10 PM BRT
@@ -1736,7 +1736,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 20, 2014 5:12:11 PM BRT
-ALTER TABLE LBR_Cob_Movimento ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_Cob_Movimento ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Aug 20, 2014 5:12:49 PM BRT
@@ -2887,7 +2887,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 21, 2014 4:35:37 PM BRT
-ALTER TABLE LBR_BoletoMovement ADD LBR_BoletoMovement_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_BoletoMovement ADD LBR_BoletoMovement_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Aug 21, 2014 4:35:37 PM BRT
@@ -2923,7 +2923,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 21, 2014 4:36:49 PM BRT
-ALTER TABLE LBR_BoletoMovement ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_BoletoMovement ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Aug 21, 2014 4:36:54 PM BRT
@@ -2931,7 +2931,7 @@ UPDATE AD_Column SET IsAlwaysUpdateable='Y',Updated=TO_DATE('2014-08-21 16:36:54
 ;
 
 -- Aug 21, 2014 4:38:18 PM BRT
-ALTER TABLE LBR_BoletoMovement MODIFY Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_BoletoMovement MODIFY Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Aug 21, 2014 4:39:38 PM BRT
@@ -2971,7 +2971,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 21, 2014 4:49:47 PM BRT
-ALTER TABLE LBR_BoletoMovement ADD LBR_NumberInBank VARCHAR2(20) DEFAULT NULL 
+ALTER TABLE LBR_BoletoMovement ADD LBR_NumberInBank NVARCHAR2(20) DEFAULT NULL 
 ;
 
 -- Aug 21, 2014 4:50:04 PM BRT
@@ -2987,7 +2987,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 21, 2014 4:50:21 PM BRT
-ALTER TABLE LBR_BoletoMovement ADD LBR_NumberInOrg VARCHAR2(15) DEFAULT NULL 
+ALTER TABLE LBR_BoletoMovement ADD LBR_NumberInOrg NVARCHAR2(15) DEFAULT NULL 
 ;
 
 -- Aug 21, 2014 4:50:45 PM BRT
@@ -3027,7 +3027,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 21, 2014 4:58:40 PM BRT
-ALTER TABLE LBR_BoletoMovement ADD LBR_CollectBankAgencyNo VARCHAR2(7) DEFAULT NULL 
+ALTER TABLE LBR_BoletoMovement ADD LBR_CollectBankAgencyNo NVARCHAR2(7) DEFAULT NULL 
 ;
 
 -- Aug 21, 2014 5:00:18 PM BRT
@@ -3043,7 +3043,7 @@ If the document type of your document has no automatic document sequence defined
 ;
 
 -- Aug 21, 2014 5:01:39 PM BRT
-ALTER TABLE LBR_BoletoMovement ADD LBR_DocumentNo VARCHAR2(30) DEFAULT NULL 
+ALTER TABLE LBR_BoletoMovement ADD LBR_DocumentNo NVARCHAR2(30) DEFAULT NULL 
 ;
 
 -- Aug 21, 2014 5:01:58 PM BRT
@@ -3051,7 +3051,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 21, 2014 5:01:59 PM BRT
-ALTER TABLE LBR_BoletoMovement ADD LBR_CNAB240Currency VARCHAR2(2) DEFAULT NULL 
+ALTER TABLE LBR_BoletoMovement ADD LBR_CNAB240Currency NVARCHAR2(2) DEFAULT NULL 
 ;
 
 -- Aug 21, 2014 5:02:15 PM BRT
@@ -3059,7 +3059,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 21, 2014 5:02:17 PM BRT
-ALTER TABLE LBR_BoletoMovement ADD LBR_LoanContractNo VARCHAR2(10) DEFAULT NULL 
+ALTER TABLE LBR_BoletoMovement ADD LBR_LoanContractNo NVARCHAR2(10) DEFAULT NULL 
 ;
 
 -- Aug 21, 2014 5:02:37 PM BRT
@@ -3291,7 +3291,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 22, 2014 10:34:46 AM BRT
-ALTER TABLE LBR_BoletoMovement ADD LBR_NumberInCorrespBank VARCHAR2(20) DEFAULT NULL 
+ALTER TABLE LBR_BoletoMovement ADD LBR_NumberInCorrespBank NVARCHAR2(20) DEFAULT NULL 
 ;
 
 -- Aug 22, 2014 10:35:10 AM BRT
@@ -3299,7 +3299,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 22, 2014 10:35:12 AM BRT
-ALTER TABLE LBR_BoletoMovement ADD LBR_ConvenioNo VARCHAR2(20) DEFAULT NULL 
+ALTER TABLE LBR_BoletoMovement ADD LBR_ConvenioNo NVARCHAR2(20) DEFAULT NULL 
 ;
 
 -- Aug 22, 2014 10:35:33 AM BRT
@@ -3307,7 +3307,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Aug 22, 2014 10:35:34 AM BRT
-ALTER TABLE LBR_BoletoMovement ADD LBR_CollectionType VARCHAR2(2) DEFAULT NULL 
+ALTER TABLE LBR_BoletoMovement ADD LBR_CollectionType NVARCHAR2(2) DEFAULT NULL 
 ;
 
 -- Aug 22, 2014 10:36:02 AM BRT

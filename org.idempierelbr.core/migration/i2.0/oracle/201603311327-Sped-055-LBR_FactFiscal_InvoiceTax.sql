@@ -7,6 +7,6 @@ SELECT it.c_invoice_id,
     it.taxbaseamt
    FROM c_invoicetax it
      JOIN c_tax t ON it.c_tax_id = t.c_tax_id
-  WHERE it.isactive = 'Y'::bpchar AND it.processed = 'Y'::bpchar;
+  WHERE it.isactive = 'Y' AND it.processed = 'Y';
   
 SELECT lbr_register_migration_script('201603311327-Sped-055-LBR_FactFiscal_InvoiceTax.sql') FROM dual;

@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE VIEW c_payment_v AS 
+CREATE OR REPLACE VIEW c_payment_v AS 
 SELECT c_payment.c_payment_id,
     c_payment.ad_client_id,
     c_payment.ad_org_id,

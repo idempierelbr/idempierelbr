@@ -1,4 +1,4 @@
-﻿-- Sped EFD
+-- Sped EFD
 -- 31/03/2016 10h23min20s BRT
 INSERT INTO AD_Menu (AD_Menu_ID,Name,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsSummary,IsSOTrx,IsReadOnly,EntityType,IsCentrallyMaintained,AD_Menu_UU) VALUES (800023,'SPED EFD',0,0,'Y',TO_TIMESTAMP('2016-03-31 10:23:19','YYYY-MM-DD HH24:MI:SS'),0,TO_TIMESTAMP('2016-03-31 10:23:19','YYYY-MM-DD HH24:MI:SS'),0,'Y','N','N','LBR','N','eacf30dc-bb46-403f-9845-b5d09c97ba88')
 ;

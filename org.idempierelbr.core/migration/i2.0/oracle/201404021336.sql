@@ -126,7 +126,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Apr 2, 2014 1:17:21 PM BRT
-ALTER TABLE LBR_DocLine_ImportTax ADD LBR_DocLine_ImportTax_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_ImportTax ADD LBR_DocLine_ImportTax_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Apr 2, 2014 1:17:21 PM BRT

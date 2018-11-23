@@ -295,7 +295,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 5, 2014 12:36:47 PM BRT
-ALTER TABLE LBR_NotaFiscal ADD LBR_NotaFiscal_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscal ADD LBR_NotaFiscal_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- May 5, 2014 12:36:47 PM BRT
@@ -384,7 +384,7 @@ If the document type of your document has no automatic document sequence defined
 ;
 
 -- May 5, 2014 12:42:40 PM BRT
-ALTER TABLE LBR_NotaFiscal ADD DocumentNo VARCHAR2(30) NOT NULL
+ALTER TABLE LBR_NotaFiscal ADD DocumentNo NVARCHAR2(30) NOT NULL
 ;
 
 -- May 5, 2014 12:44:07 PM BRT
@@ -400,7 +400,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 5, 2014 12:45:02 PM BRT
-ALTER TABLE LBR_NotaFiscal ADD DocStatus VARCHAR2(2) DEFAULT 'DR' NOT NULL
+ALTER TABLE LBR_NotaFiscal ADD DocStatus NVARCHAR2(2) DEFAULT 'DR' NOT NULL
 ;
 
 -- May 5, 2014 12:46:20 PM BRT
@@ -516,7 +516,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 5, 2014 3:49:04 PM BRT
-ALTER TABLE LBR_NotaFiscal ADD LBR_NFeStatus VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscal ADD LBR_NFeStatus NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- May 5, 2014 3:50:55 PM BRT
@@ -524,7 +524,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 5, 2014 3:50:59 PM BRT
-ALTER TABLE LBR_NotaFiscal ADD LBR_NFeID VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscal ADD LBR_NFeID NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- May 5, 2014 3:52:36 PM BRT
@@ -532,7 +532,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 5, 2014 3:52:40 PM BRT
-ALTER TABLE LBR_NotaFiscal ADD VersionNo VARCHAR2(20) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscal ADD VersionNo NVARCHAR2(20) DEFAULT NULL 
 ;
 
 -- May 5, 2014 3:55:20 PM BRT
@@ -548,7 +548,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 5, 2014 3:57:08 PM BRT
-ALTER TABLE LBR_NotaFiscal ADD LBR_NFeModel VARCHAR2(5) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscal ADD LBR_NFeModel NVARCHAR2(5) DEFAULT NULL 
 ;
 
 -- May 5, 2014 3:58:26 PM BRT
@@ -556,7 +556,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 5, 2014 3:58:31 PM BRT
-ALTER TABLE LBR_NotaFiscal ADD LBR_NFeSerie VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscal ADD LBR_NFeSerie NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- May 5, 2014 3:59:29 PM BRT
@@ -612,7 +612,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 5, 2014 4:19:28 PM BRT
-ALTER TABLE LBR_NotaFiscal ADD LBR_NFeNatOp VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscal ADD LBR_NFeNatOp NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- May 5, 2014 4:21:26 PM BRT
@@ -672,7 +672,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 5, 2014 4:41:47 PM BRT
-ALTER TABLE LBR_NotaFiscal ADD LBR_ContingencyReason VARCHAR2(256) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscal ADD LBR_ContingencyReason NVARCHAR2(256) DEFAULT NULL 
 ;
 
 -- May 5, 2014 4:42:15 PM BRT
@@ -1321,7 +1321,7 @@ UPDATE AD_Column SET IsAlwaysUpdateable='Y',Updated=TO_DATE('2014-05-06 09:05:43
 ;
 
 -- May 6, 2014 9:05:48 AM BRT
-ALTER TABLE LBR_NotaFiscal ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscal ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- May 6, 2014 9:06:00 AM BRT
@@ -1664,6 +1664,10 @@ UPDATE AD_Field SET IsCentrallyMaintained='N',Updated=TO_DATE('2014-05-06 09:59:
 UPDATE AD_Field SET IsCentrallyMaintained='N',Updated=TO_DATE('2014-05-06 10:10:13','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Field_ID=1001191
 ;
 
+-- May 6, 2014 10:10:13 AM BRT
+UPDATE AD_Field SET IsCentrallyMaintained='N',Updated=TO_DATE('2014-05-06 10:10:13','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Field_ID=1001191
+;
+
 -- May 6, 2014 10:53:39 AM BRT
 INSERT INTO AD_Table (ImportTable,CopyColumnsFromTable,IsSecurityEnabled,AccessLevel,LoadSeq,AD_Window_ID,AD_Table_ID,IsHighVolume,IsView,IsChangeLog,EntityType,ReplicationType,AD_Table_UU,IsCentrallyMaintained,IsDeleteable,TableName,Description,Name,IsActive,AD_Org_ID,CreatedBy,Updated,UpdatedBy,Created,AD_Client_ID,Processing,DatabaseViewDrop) VALUES ('N','N','N','1',0,1000014,1000034,'N','N','Y','LBR','L','8a2bd6d9-cdca-4d8e-a8d5-0cc10cb33288','Y','Y','LBR_NotaFiscalLine','Brazilian Fiscal Invoice (Nota Fiscal) Line','Brazilian Fiscal Invoice (Nota Fiscal) Line','Y',0,0,TO_DATE('2014-05-06 10:53:39','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2014-05-06 10:53:39','YYYY-MM-DD HH24:MI:SS'),0,'N','N')
 ;
@@ -1749,7 +1753,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 6, 2014 10:59:05 AM BRT
-ALTER TABLE LBR_NotaFiscalLine ADD LBR_NotaFiscalLine_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalLine ADD LBR_NotaFiscalLine_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- May 6, 2014 10:59:05 AM BRT
@@ -1836,7 +1840,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 6, 2014 11:04:15 AM BRT
-ALTER TABLE LBR_NotaFiscalLine ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalLine ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- May 6, 2014 11:08:16 AM BRT
@@ -2175,7 +2179,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 8, 2014 9:34:07 AM BRT
-ALTER TABLE LBR_NotaFiscalTax ADD LBR_NotaFiscalTax_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscalTax ADD LBR_NotaFiscalTax_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- May 8, 2014 9:34:07 AM BRT
@@ -3122,7 +3126,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 9, 2014 8:54:53 AM BRT
-ALTER TABLE LBR_NotaFiscal ADD LBR_TransactionType VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE LBR_NotaFiscal ADD LBR_TransactionType NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- May 9, 2014 8:56:02 AM BRT

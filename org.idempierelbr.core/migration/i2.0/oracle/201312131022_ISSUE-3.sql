@@ -45,7 +45,7 @@ UPDATE AD_Field SET AD_FieldGroup_ID=1000000,Updated=TO_DATE('2013-12-13 13:23:4
 ;
 
 -- Dec 13, 2013 1:25:28 PM BRST
-INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,AD_Column_ID,SeqNo,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,EntityType,Description,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,Created,CreatedBy,Updated,IsActive,IsDisplayedGrid,SeqNoGrid,XPosition,IsQuickEntry,AD_Client_ID,ColumnSpan,NumLines,IsAdvancedField,IsDefaultFocus) VALUES ('N',440,5,'N','N',1000002,310,'Y',1000002,'Y','LBR','LBR Internal Release Number','Release No','6e3c9d24-ef38-4fd6-8d99-2ef4df423726','N','Y',0,0,TO_DATE('2013-12-13 13:25:28','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2013-12-13 13:25:28','YYYY-MM-DD HH24:MI:SS'),'Y','Y',80,1,'N',0,2,1,'N','N')
+INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,AD_Column_ID,SeqNo,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,EntityType,Description,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,Created,CreatedBy,Updated,IsActive,IsDisplayedGrid,SeqNoGrid,XPosition,IsQuickEntry,AD_Client_ID,ColumnSpan,NumLines,IsAdvancedField,IsDefaultFocus) VALUES ('N',440,5,'N','N',1000002,310,'Y',1000002,'Y','LBR','Internal Release Number','LBR Release No','6e3c9d24-ef38-4fd6-8d99-2ef4df423726','N','Y',0,0,TO_DATE('2013-12-13 13:25:28','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2013-12-13 13:25:28','YYYY-MM-DD HH24:MI:SS'),'Y','Y',80,1,'N',0,2,1,'N','N')
 ;
 
 -- Dec 13, 2013 1:23:41 PM BRST

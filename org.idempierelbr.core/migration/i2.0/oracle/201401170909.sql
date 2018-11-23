@@ -71,7 +71,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 17, 2014 8:54:47 AM BRST
-ALTER TABLE LBR_BPartnerCategory ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_BPartnerCategory ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jan 17, 2014 8:55:13 AM BRST
@@ -110,7 +110,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 17, 2014 8:58:29 AM BRST
-ALTER TABLE LBR_BPartnerCategory ADD LBR_BPartnerCategory_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_BPartnerCategory ADD LBR_BPartnerCategory_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Jan 17, 2014 8:58:29 AM BRST
@@ -122,7 +122,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 17, 2014 8:59:17 AM BRST
-ALTER TABLE LBR_BPartnerCategory ADD Name VARCHAR2(60) NOT NULL
+ALTER TABLE LBR_BPartnerCategory ADD Name NVARCHAR2(60) NOT NULL
 ;
 
 -- Jan 17, 2014 8:59:40 AM BRST

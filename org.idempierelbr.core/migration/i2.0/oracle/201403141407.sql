@@ -162,7 +162,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 15, 2014 11:41:13 AM BRT
-ALTER TABLE LBR_DocLine_Details ADD LBR_DocLine_Details_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_Details ADD LBR_DocLine_Details_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Mar 15, 2014 11:41:13 AM BRT
@@ -222,7 +222,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 17, 2014 2:40:43 PM BRT
-ALTER TABLE LBR_DocLine_Details ADD ProductValue VARCHAR2(40) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_Details ADD ProductValue NVARCHAR2(40) DEFAULT NULL 
 ;
 
 -- Mar 17, 2014 2:41:15 PM BRT
@@ -230,7 +230,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 17, 2014 2:41:18 PM BRT
-ALTER TABLE LBR_DocLine_Details ADD ProductName VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_Details ADD ProductName NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Mar 17, 2014 2:41:45 PM BRT
@@ -254,7 +254,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 17, 2014 2:43:51 PM BRT
-ALTER TABLE LBR_DocLine_Details ADD LBR_EXTIPI VARCHAR2(6) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_Details ADD LBR_EXTIPI NVARCHAR2(6) DEFAULT NULL 
 ;
 
 -- Mar 17, 2014 2:44:24 PM BRT
@@ -334,7 +334,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 17, 2014 2:55:14 PM BRT
-ALTER TABLE LBR_DocLine_Details ADD LBR_UPCTax VARCHAR2(30) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_Details ADD LBR_UPCTax NVARCHAR2(30) DEFAULT NULL 
 ;
 
 -- Mar 17, 2014 2:55:41 PM BRT
@@ -366,7 +366,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 17, 2014 3:20:04 PM BRT
-ALTER TABLE LBR_DocLine_Details ADD POReference VARCHAR2(20) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_Details ADD POReference NVARCHAR2(20) DEFAULT NULL 
 ;
 
 -- Mar 17, 2014 3:23:36 PM BRT
@@ -406,7 +406,7 @@ UPDATE AD_Column SET FieldLength=3,Updated=TO_DATE('2014-03-17 16:20:21','YYYY-M
 ;
 
 -- Mar 17, 2014 4:20:26 PM BRT
-ALTER TABLE LBR_DocLine_Details ADD LBR_NFeSpecificProduct VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_Details ADD LBR_NFeSpecificProduct NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- Mar 17, 2014 4:28:11 PM BRT
@@ -414,7 +414,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 17, 2014 4:28:15 PM BRT
-ALTER TABLE LBR_DocLine_Details ADD LBR_FCIControlNo VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_Details ADD LBR_FCIControlNo NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Mar 17, 2014 4:39:12 PM BRT
@@ -1041,7 +1041,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 21, 2014 11:12:25 AM BRT
-ALTER TABLE LBR_DocLine_Details ADD Memo VARCHAR2(500) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_Details ADD Memo NVARCHAR2(500) DEFAULT NULL 
 ;
 
 -- Mar 21, 2014 11:15:12 AM BRT
@@ -1245,7 +1245,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 24, 2014 10:45:15 AM BRT
-ALTER TABLE LBR_DocLine_Details ADD LBR_TaxationType VARCHAR2(2) DEFAULT NULL
+ALTER TABLE LBR_DocLine_Details ADD LBR_TaxationType NVARCHAR2(2) DEFAULT NULL
 ;
 
 -- Mar 24, 2014 10:45:44 AM BRT

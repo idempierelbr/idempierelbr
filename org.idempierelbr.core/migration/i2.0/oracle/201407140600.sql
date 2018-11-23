@@ -29,7 +29,7 @@ UPDATE AD_Menu SET Name='Generate Sefaz WS Certificates', Description='Generate 
 ;
 
 -- Jul 14, 2014 9:19:28 AM BRT
-ALTER TABLE LBR_ISSMatrix ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_ISSMatrix ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jul 14, 2014 9:19:45 AM BRT

@@ -1,11 +1,9 @@
 -- Sped EFD
 -- This script was generated for a postgresql DB. It should be tested in a oracle DB.
-CREATE OR REPLACE FUNCTION getCurrentCost (IN p_AD_Client_ID numeric,IN p_M_Product_ID numeric,IN p_C_Period_ID numeric) RETURNS numeric AS
-$BODY$
-DECLARE
+CREATE OR REPLACE FUNCTION getCurrentCost (p_AD_Client_ID IN NUMBER,p_M_Product_ID IN NUMBER,p_C_Period_ID IN NUMBER) RETURN NUMBER AS
 
-    v_CurrentCost      NUMERIC;
-    v_C_Period_ID      NUMERIC;
+    v_CurrentCost      NUMBER;
+    v_C_Period_ID      NUMBER;
     v_StartDate        DATE;
     v_OldDate          DATE;
         
@@ -45,10 +43,7 @@ BEGIN
         
   RETURN v_CurrentCost;
     
-END;
-$BODY$
-LANGUAGE "plpgsql";
-
-ALTER FUNCTION getCurrentCost(numeric, numeric, numeric) OWNER TO adempiere;
+END getCurrentCost;
+/
 
 SELECT lbr_register_migration_script('201603311329-Sped-090-getCurrentCost.sql') FROM dual;

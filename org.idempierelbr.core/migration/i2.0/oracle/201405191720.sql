@@ -161,7 +161,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 21, 2014 10:11:07 AM BRT
-ALTER TABLE C_DocType ADD LBR_NFBModel VARCHAR2(2) DEFAULT NULL 
+ALTER TABLE C_DocType ADD LBR_NFBModel NVARCHAR2(2) DEFAULT NULL 
 ;
 
 -- May 21, 2014 10:12:25 AM BRT
@@ -169,7 +169,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 21, 2014 10:12:27 AM BRT
-ALTER TABLE C_DocType ADD LBR_NFeSerie VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE C_DocType ADD LBR_NFeSerie NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- May 21, 2014 10:13:37 AM BRT
@@ -225,8 +225,8 @@ INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,S
 ;
 
 -- May 21, 2014 10:20:54 AM BRT
-INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,SeqNo,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,EntityType,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,Created,CreatedBy,Updated,IsActive,IsDisplayedGrid,AD_Client_ID,ColumnSpan,AD_Column_ID) VALUES ('N',167,36,'N','N',350,'Y',1001510,'N','D','C_DocType_UU','048b7727-5ed9-463a-9a97-a48e258a134e','N','N',0,0,TO_DATE('2014-05-21 10:20:54','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2014-05-21 10:20:54','YYYY-MM-DD HH24:MI:SS'),'Y','N',0,2,60647)
-;
+--INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,SeqNo,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,EntityType,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,Created,CreatedBy,Updated,IsActive,IsDisplayedGrid,AD_Client_ID,ColumnSpan,AD_Column_ID) VALUES ('N',167,36,'N','N',350,'Y',1001510,'N','D','C_DocType_UU','048b7727-5ed9-463a-9a97-a48e258a134e','N','N',0,0,TO_DATE('2014-05-21 10:20:54','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2014-05-21 10:20:54','YYYY-MM-DD HH24:MI:SS'),'Y','N',0,2,60647)
+--;
 
 -- May 21, 2014 10:20:54 AM BRT
 INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,SeqNo,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,EntityType,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,Created,CreatedBy,Updated,IsActive,XPosition,AD_Client_ID,ColumnSpan,AD_Column_ID) VALUES ('N',167,1,'N','N',360,'Y',1001511,'N','LBR','Is Document Issued by Client/Org?','10de6c60-120c-40d9-8433-caa35ccb5b83','N','Y',0,0,TO_DATE('2014-05-21 10:20:54','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2014-05-21 10:20:54','YYYY-MM-DD HH24:MI:SS'),'Y',2,0,2,1000823)
@@ -313,12 +313,12 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 21, 2014 11:28:02 AM BRT
-ALTER TABLE C_Country ADD LBR_CountryCode VARCHAR2(5) DEFAULT NULL 
+ALTER TABLE C_Country ADD LBR_CountryCode NVARCHAR2(5) DEFAULT NULL 
 ;
 
 -- May 21, 2014 11:29:29 AM BRT
-INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,SeqNo,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,EntityType,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,Created,CreatedBy,Updated,IsActive,IsDisplayedGrid,AD_Client_ID,ColumnSpan,AD_Column_ID) VALUES ('N',135,36,'N','N',290,'Y',1001516,'N','D','C_Country_UU','806967e3-1bdd-4df0-82ca-86c8983ed822','N','N',0,0,TO_DATE('2014-05-21 11:29:29','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2014-05-21 11:29:29','YYYY-MM-DD HH24:MI:SS'),'Y','N',0,2,60639)
-;
+--INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,SeqNo,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,EntityType,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,Created,CreatedBy,Updated,IsActive,IsDisplayedGrid,AD_Client_ID,ColumnSpan,AD_Column_ID) VALUES ('N',135,36,'N','N',290,'Y',1001516,'N','D','C_Country_UU','806967e3-1bdd-4df0-82ca-86c8983ed822','N','N',0,0,TO_DATE('2014-05-21 11:29:29','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2014-05-21 11:29:29','YYYY-MM-DD HH24:MI:SS'),'Y','N',0,2,60639)
+--;
 
 -- May 21, 2014 11:29:29 AM BRT
 INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,SeqNo,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,Help,EntityType,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,Created,CreatedBy,Updated,IsActive,AD_Client_ID,ColumnSpan,NumLines,AD_Column_ID) VALUES ('N',135,5,'N','N',300,'Y',1001517,'N','Country Code used for issue Nota Fiscal. Codes from BCB (Banco Central do Brasil)','LBR','Country Code used for issue Nota Fiscal','672cad78-8455-49fb-a355-6dc1e470fe8b','N','Y',0,0,TO_DATE('2014-05-21 11:29:29','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2014-05-21 11:29:29','YYYY-MM-DD HH24:MI:SS'),'Y',0,2,3,1000828)
@@ -1264,12 +1264,12 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 21, 2014 1:34:46 PM BRT
-ALTER TABLE AD_OrgInfo ADD LBR_CNAE VARCHAR2(10) DEFAULT NULL 
+ALTER TABLE AD_OrgInfo ADD LBR_CNAE NVARCHAR2(10) DEFAULT NULL 
 ;
 
 -- May 21, 2014 1:35:10 PM BRT
-INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,SeqNo,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,EntityType,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,Created,CreatedBy,Updated,IsActive,IsDisplayedGrid,AD_Client_ID,ColumnSpan,AD_Column_ID) VALUES ('N',170,36,'N','N',190,'Y',1001518,'N','D','AD_OrgInfo_UU','f5dd32cf-847f-4474-9304-f3e0d0f0517e','N','N',0,0,TO_DATE('2014-05-21 13:35:10','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2014-05-21 13:35:10','YYYY-MM-DD HH24:MI:SS'),'Y','N',0,2,60441)
-;
+--INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,SeqNo,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,EntityType,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,Created,CreatedBy,Updated,IsActive,IsDisplayedGrid,AD_Client_ID,ColumnSpan,AD_Column_ID) VALUES ('N',170,36,'N','N',190,'Y',1001518,'N','D','AD_OrgInfo_UU','f5dd32cf-847f-4474-9304-f3e0d0f0517e','N','N',0,0,TO_DATE('2014-05-21 13:35:10','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2014-05-21 13:35:10','YYYY-MM-DD HH24:MI:SS'),'Y','N',0,2,60441)
+--;
 
 -- May 21, 2014 1:35:10 PM BRT
 INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,SeqNo,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,EntityType,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,Created,CreatedBy,Updated,IsActive,AD_Client_ID,ColumnSpan,NumLines,AD_Column_ID) VALUES ('N',170,10,'N','N',200,'Y',1001519,'N','LBR','CNAE','11f18dbf-df6a-4e18-b53a-e9f5fcd18289','N','Y',0,0,TO_DATE('2014-05-21 13:35:10','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2014-05-21 13:35:10','YYYY-MM-DD HH24:MI:SS'),'Y',0,2,3,1000829)
@@ -1344,7 +1344,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 22, 2014 10:51:20 AM BRT
-ALTER TABLE LBR_DigitalCertificate ADD LBR_DigitalCertificate_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_DigitalCertificate ADD LBR_DigitalCertificate_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- May 22, 2014 10:51:20 AM BRT
@@ -1415,7 +1415,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 22, 2014 10:54:41 AM BRT
-ALTER TABLE LBR_DigitalCertificate ADD Alias VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_DigitalCertificate ADD Alias NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- May 22, 2014 10:55:05 AM BRT
@@ -1423,7 +1423,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 22, 2014 10:55:06 AM BRT
-ALTER TABLE LBR_DigitalCertificate ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_DigitalCertificate ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- May 22, 2014 10:56:00 AM BRT
@@ -1431,7 +1431,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 22, 2014 10:56:01 AM BRT
-ALTER TABLE LBR_DigitalCertificate ADD Name VARCHAR2(60) NOT NULL
+ALTER TABLE LBR_DigitalCertificate ADD Name NVARCHAR2(60) NOT NULL
 ;
 
 -- May 22, 2014 10:58:15 AM BRT
@@ -1439,7 +1439,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 22, 2014 10:58:17 AM BRT
-ALTER TABLE LBR_DigitalCertificate ADD Password VARCHAR2(60) DEFAULT NULL 
+ALTER TABLE LBR_DigitalCertificate ADD Password NVARCHAR2(60) DEFAULT NULL 
 ;
 
 -- May 22, 2014 10:58:42 AM BRT
@@ -1447,7 +1447,7 @@ UPDATE AD_Column SET FieldLength=1024,Updated=TO_DATE('2014-05-22 10:58:42','YYY
 ;
 
 -- May 22, 2014 10:58:46 AM BRT
-ALTER TABLE LBR_DigitalCertificate MODIFY Password VARCHAR2(1024) DEFAULT NULL 
+ALTER TABLE LBR_DigitalCertificate MODIFY Password NVARCHAR2(1024) DEFAULT NULL 
 ;
 
 -- May 22, 2014 10:59:52 AM BRT
@@ -1503,7 +1503,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 22, 2014 11:05:06 AM BRT
-ALTER TABLE LBR_DigitalCertificate ADD LBR_CertType VARCHAR2(3) DEFAULT NULL 
+ALTER TABLE LBR_DigitalCertificate ADD LBR_CertType NVARCHAR2(3) DEFAULT NULL 
 ;
 
 -- May 22, 2014 11:06:37 AM BRT
@@ -1954,7 +1954,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 26, 2014 1:06:33 PM BRT
-ALTER TABLE LBR_DocLine_ISSQN ADD LBR_ISS_Chargeability VARCHAR2(2) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_ISSQN ADD LBR_ISS_Chargeability NVARCHAR2(2) DEFAULT NULL 
 ;
 
 -- May 26, 2014 1:08:58 PM BRT
@@ -1966,7 +1966,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 26, 2014 1:09:29 PM BRT
-ALTER TABLE LBR_DocLine_ISSQN ADD LBR_ServiceCode VARCHAR2(20) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_ISSQN ADD LBR_ServiceCode NVARCHAR2(20) DEFAULT NULL 
 ;
 
 -- May 26, 2014 1:13:03 PM BRT
@@ -2030,7 +2030,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 26, 2014 1:19:44 PM BRT
-ALTER TABLE LBR_DocLine_ISSQN ADD ProcessName VARCHAR2(30) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_ISSQN ADD ProcessName NVARCHAR2(30) DEFAULT NULL 
 ;
 
 -- May 26, 2014 1:23:00 PM BRT
@@ -3218,12 +3218,12 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- May 30, 2014 3:39:35 PM BRT
-ALTER TABLE C_Region ADD LBR_RegionCode VARCHAR2(2) DEFAULT NULL 
+ALTER TABLE C_Region ADD LBR_RegionCode NVARCHAR2(2) DEFAULT NULL 
 ;
 
 -- May 30, 2014 3:40:29 PM BRT
-INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,EntityType,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,CreatedBy,Updated,IsActive,IsDisplayedGrid,AD_Client_ID,ColumnSpan,AD_Column_ID,Created) VALUES ('N',136,36,'N','N','Y',1001631,'N','D','C_Region_UU','1db1d3c0-63a3-4ed5-aa61-624920014418','N','N',0,0,0,TO_DATE('2014-05-30 15:40:29','YYYY-MM-DD HH24:MI:SS'),'Y','N',0,2,60747,TO_DATE('2014-05-30 15:40:29','YYYY-MM-DD HH24:MI:SS'))
-;
+--INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,EntityType,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,CreatedBy,Updated,IsActive,IsDisplayedGrid,AD_Client_ID,ColumnSpan,AD_Column_ID,Created) VALUES ('N',136,36,'N','N','Y',1001631,'N','D','C_Region_UU','1db1d3c0-63a3-4ed5-aa61-624920014418','N','N',0,0,0,TO_DATE('2014-05-30 15:40:29','YYYY-MM-DD HH24:MI:SS'),'Y','N',0,2,60747,TO_DATE('2014-05-30 15:40:29','YYYY-MM-DD HH24:MI:SS'))
+--;
 
 -- May 30, 2014 3:40:29 PM BRT
 INSERT INTO AD_Field (IsEncrypted,AD_Tab_ID,DisplayLength,IsSameLine,IsHeading,SeqNo,IsCentrallyMaintained,AD_Field_ID,IsReadOnly,Help,EntityType,Name,AD_Field_UU,IsFieldOnly,IsDisplayed,UpdatedBy,AD_Org_ID,CreatedBy,Updated,IsActive,IsDisplayedGrid,SeqNoGrid,AD_Client_ID,ColumnSpan,AD_Column_ID,Created) VALUES ('N',136,2,'N','N',90,'Y',1001632,'N','Region Code used for issue Nota Fiscal.','LBR','Region Code for Nota Fiscal','f12803b2-b3b0-494e-8bfe-2991a9bce69b','N','Y',0,0,0,TO_DATE('2014-05-30 15:40:29','YYYY-MM-DD HH24:MI:SS'),'Y','Y',90,0,2,1000864,TO_DATE('2014-05-30 15:40:29','YYYY-MM-DD HH24:MI:SS'))

@@ -175,7 +175,7 @@ UPDATE AD_Column SET FieldLength=5,Updated=TO_DATE('2014-03-26 13:09:01','YYYY-M
 ;
 
 -- Mar 26, 2014 1:09:04 PM BRT
-ALTER TABLE LBR_TaxConfig_BPartner MODIFY LBR_TaxStatus VARCHAR2(5) DEFAULT NULL 
+ALTER TABLE LBR_TaxConfig_BPartner MODIFY LBR_TaxStatus NVARCHAR2(5) DEFAULT NULL 
 ;
 
 -- Mar 26, 2014 1:09:56 PM BRT
@@ -183,7 +183,7 @@ UPDATE AD_Column SET FieldLength=5,Updated=TO_DATE('2014-03-26 13:09:56','YYYY-M
 ;
 
 -- Mar 26, 2014 1:09:58 PM BRT
-ALTER TABLE LBR_TaxConfig_BPGroup MODIFY LBR_TaxStatus VARCHAR2(5) DEFAULT NULL 
+ALTER TABLE LBR_TaxConfig_BPGroup MODIFY LBR_TaxStatus NVARCHAR2(5) DEFAULT NULL 
 ;
 
 -- Mar 26, 2014 1:10:30 PM BRT
@@ -191,7 +191,7 @@ UPDATE AD_Column SET FieldLength=5,Updated=TO_DATE('2014-03-26 13:10:30','YYYY-M
 ;
 
 -- Mar 26, 2014 1:10:31 PM BRT
-ALTER TABLE LBR_TaxConfig_Region MODIFY LBR_TaxStatus VARCHAR2(5) DEFAULT NULL 
+ALTER TABLE LBR_TaxConfig_Region MODIFY LBR_TaxStatus NVARCHAR2(5) DEFAULT NULL 
 ;
 
 -- Mar 26, 2014 1:11:09 PM BRT
@@ -199,7 +199,7 @@ UPDATE AD_Column SET FieldLength=5,Updated=TO_DATE('2014-03-26 13:11:09','YYYY-M
 ;
 
 -- Mar 26, 2014 1:11:10 PM BRT
-ALTER TABLE LBR_TaxConfig_Product MODIFY LBR_TaxStatus VARCHAR2(5) DEFAULT NULL 
+ALTER TABLE LBR_TaxConfig_Product MODIFY LBR_TaxStatus NVARCHAR2(5) DEFAULT NULL 
 ;
 
 -- Mar 26, 2014 1:11:47 PM BRT
@@ -207,7 +207,7 @@ UPDATE AD_Column SET FieldLength=5,Updated=TO_DATE('2014-03-26 13:11:47','YYYY-M
 ;
 
 -- Mar 26, 2014 1:11:49 PM BRT
-ALTER TABLE LBR_TaxConfig_ProductGroup MODIFY LBR_TaxStatus VARCHAR2(5) DEFAULT NULL 
+ALTER TABLE LBR_TaxConfig_ProductGroup MODIFY LBR_TaxStatus NVARCHAR2(5) DEFAULT NULL 
 ;
 
 -- Mar 26, 2014 1:12:28 PM BRT
@@ -215,7 +215,7 @@ UPDATE AD_Column SET FieldLength=5,Updated=TO_DATE('2014-03-26 13:12:28','YYYY-M
 ;
 
 -- Mar 26, 2014 1:12:29 PM BRT
-ALTER TABLE LBR_TaxDefinition MODIFY LBR_TaxStatus VARCHAR2(5) DEFAULT NULL 
+ALTER TABLE LBR_TaxDefinition MODIFY LBR_TaxStatus NVARCHAR2(5) DEFAULT NULL 
 ;
 
 -- Mar 26, 2014 1:12:59 PM BRT
@@ -223,7 +223,7 @@ UPDATE AD_Column SET FieldLength=5,Updated=TO_DATE('2014-03-26 13:12:59','YYYY-M
 ;
 
 -- Mar 26, 2014 1:13:00 PM BRT
-ALTER TABLE LBR_CFOPLine MODIFY LBR_TaxStatus VARCHAR2(5) DEFAULT NULL 
+ALTER TABLE LBR_CFOPLine MODIFY LBR_TaxStatus NVARCHAR2(5) DEFAULT NULL 
 ;
 
 -- Mar 26, 2014 1:17:54 PM BRT
@@ -296,22 +296,6 @@ INSERT INTO AD_Ref_List (AD_Ref_List_ID,AD_Reference_ID,AD_Ref_List_UU,Value,Cre
 
 -- Mar 26, 2014 1:28:45 PM BRT
 INSERT INTO AD_Ref_List (AD_Ref_List_ID,AD_Reference_ID,AD_Ref_List_UU,Value,Created,CreatedBy,Updated,UpdatedBy,IsActive,EntityType,AD_Client_ID,AD_Org_ID,Name) VALUES (1000070,1000026,'ed5bcf2c-81ac-4b6e-aa4a-5822b3ec31c3','900',TO_DATE('2014-03-26 13:28:45','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2014-03-26 13:28:45','YYYY-MM-DD HH24:MI:SS'),0,'Y','LBR',0,0,'900 - Outros')
-;
-
--- Mar 26, 2014 1:32:04 PM BRT
-INSERT INTO AD_Element (ColumnName,AD_Element_ID,Help,Name,Description,PrintName,AD_Element_UU,Created,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType) VALUES ('LBR_DocLine_ICMS_ID',1000134,'The Doc Line ICMS is a unique identifier for a doc line details','Doc Line ICMS','Doc Line ICMS','Doc Line ICMS','55349dc8-48cb-433b-b62f-fbbee427b397',TO_DATE('2014-03-26 13:32:03','YYYY-MM-DD HH24:MI:SS'),TO_DATE('2014-03-26 13:32:03','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'LBR')
-;
-
--- Mar 26, 2014 1:32:11 PM BRT
-INSERT INTO AD_Element (ColumnName,AD_Element_ID,Help,Name,Description,PrintName,AD_Element_UU,Created,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType) VALUES ('LBR_DocLine_ICMS_UU',1000135,'The Doc Line ICMS is a unique identifier for a doc line details','Doc Line ICMS','Doc Line ICMS','Doc Line ICMS','09d5cf09-f482-4ed5-a15c-50f708fd2273',TO_DATE('2014-03-26 13:32:11','YYYY-MM-DD HH24:MI:SS'),TO_DATE('2014-03-26 13:32:11','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'LBR')
-;
-
--- Mar 26, 2014 1:32:04 PM BRT
-INSERT INTO AD_Element (ColumnName,AD_Element_ID,Help,Name,Description,PrintName,AD_Element_UU,Created,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType) VALUES ('LBR_DocLine_ICMS_ID',1000134,'The Doc Line ICMS is a unique identifier for a doc line details','Doc Line ICMS','Doc Line ICMS','Doc Line ICMS','55349dc8-48cb-433b-b62f-fbbee427b397',TO_TIMESTAMP('2014-03-26 13:32:03','YYYY-MM-DD HH24:MI:SS'),TO_TIMESTAMP('2014-03-26 13:32:03','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'LBR')
-;
-
--- Mar 26, 2014 1:32:11 PM BRT
-INSERT INTO AD_Element (ColumnName,AD_Element_ID,Help,Name,Description,PrintName,AD_Element_UU,Created,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType) VALUES ('LBR_DocLine_ICMS_UU',1000135,'The Doc Line ICMS is a unique identifier for a doc line details','Doc Line ICMS','Doc Line ICMS','Doc Line ICMS','09d5cf09-f482-4ed5-a15c-50f708fd2273',TO_TIMESTAMP('2014-03-26 13:32:11','YYYY-MM-DD HH24:MI:SS'),TO_TIMESTAMP('2014-03-26 13:32:11','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'LBR')
 ;
 
 -- Mar 26, 2014 2:01:42 PM BRT
@@ -490,7 +474,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 27, 2014 10:18:37 AM BRT
-ALTER TABLE LBR_DocLine_ICMS ADD LBR_DocLine_ICMS_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_ICMS ADD LBR_DocLine_ICMS_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Mar 27, 2014 10:18:37 AM BRT
@@ -518,7 +502,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 27, 2014 10:20:45 AM BRT
-ALTER TABLE LBR_DocLine_ICMS ADD LBR_ICMSRegime VARCHAR2(2) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_ICMS ADD LBR_ICMSRegime NVARCHAR2(2) DEFAULT NULL 
 ;
 
 -- Mar 27, 2014 10:21:56 AM BRT
@@ -526,7 +510,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 27, 2014 10:22:00 AM BRT
-ALTER TABLE LBR_DocLine_ICMS ADD LBR_ICMS_TaxStatusTN VARCHAR2(5) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_ICMS ADD LBR_ICMS_TaxStatusTN NVARCHAR2(5) DEFAULT NULL 
 ;
 
 -- Mar 27, 2014 10:22:49 AM BRT
@@ -534,7 +518,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 27, 2014 10:22:53 AM BRT
-ALTER TABLE LBR_DocLine_ICMS ADD LBR_ICMS_TaxStatusSN VARCHAR2(5) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_ICMS ADD LBR_ICMS_TaxStatusSN NVARCHAR2(5) DEFAULT NULL 
 ;
 
 -- Mar 27, 2014 10:23:15 AM BRT
@@ -614,7 +598,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Mar 27, 2014 10:31:40 AM BRT
-ALTER TABLE LBR_DocLine_ICMS ADD LBR_ICMS_TaxReliefType VARCHAR2(2) DEFAULT NULL 
+ALTER TABLE LBR_DocLine_ICMS ADD LBR_ICMS_TaxReliefType NVARCHAR2(2) DEFAULT NULL 
 ;
 
 -- Mar 27, 2014 10:34:09 AM BRT

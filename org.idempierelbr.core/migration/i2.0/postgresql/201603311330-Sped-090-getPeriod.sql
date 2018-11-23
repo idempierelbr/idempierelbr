@@ -35,7 +35,7 @@ END;
 $BODY$
   LANGUAGE 'plpgsql';
 
- ALTER FUNCTION getPeriod(numeric, date) OWNER TO adempiere;
+ -- ALTER FUNCTION getPeriod(numeric, date) OWNER TO adempiere;
  
  SELECT lbr_register_migration_script('201603311330-Sped-090-getPeriod.sql') FROM dual;
  

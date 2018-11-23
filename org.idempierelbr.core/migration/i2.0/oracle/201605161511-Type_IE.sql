@@ -27,7 +27,7 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,DefaultV
 ;
 
 -- 16/05/2016 14h32min39s BRT
-ALTER TABLE C_BPartner ADD LBR_TypeIE VARCHAR2(2) DEFAULT '2' NOT NULL
+ALTER TABLE C_BPartner ADD LBR_TypeIE NVARCHAR2(2) DEFAULT '2' NOT NULL
 ;
 
 -- 16/05/2016 14h33min14s BRT
@@ -67,7 +67,7 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,DefaultV
 ;
 
 -- 16/05/2016 14h50min27s BRT
-ALTER TABLE C_BPartner_Location ADD LBR_TypeIE VARCHAR2(2) DEFAULT '2'
+ALTER TABLE C_BPartner_Location ADD LBR_TypeIE NVARCHAR2(2) DEFAULT '2'
 ;
 
 -- 16/05/2016 15h6min23s BRT
@@ -375,7 +375,7 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,DefaultV
 ;
 
 -- 16/05/2016 15h16min14s BRT
-ALTER TABLE LBR_NotaFiscalDocRef ADD LBR_TypeIE VARCHAR2(2) DEFAULT '2'
+ALTER TABLE LBR_NotaFiscalDocRef ADD LBR_TypeIE NVARCHAR2(2) DEFAULT '2'
 ;
 
 -- 16/05/2016 15h16min47s BRT
@@ -406,11 +406,13 @@ UPDATE AD_Column SET MandatoryLogic='@LBR_TypeIE@=''1''',Updated=TO_DATE('2016-0
 UPDATE C_BPartner SET LBR_TypeIE = '9'; 
 UPDATE C_BPartner SET LBR_TypeIE = '2' WHERE LBR_IsIEExempt = 'Y';
 UPDATE C_BPartner SET LBR_TypeIE = '1' WHERE LBR_IsIEExempt = 'N' AND LBR_IE IS NOT NULL AND LBR_IE != '';
+ALTER TABLE C_BPartner DROP COLUMN LBR_IsIEExempt;
 
 -- update c_bpartner_location
 UPDATE C_BPartner_Location SET LBR_TypeIE = '9'; 
 UPDATE C_BPartner_Location SET LBR_TypeIE = '2' WHERE LBR_IsIEExempt = 'Y';
 UPDATE C_BPartner_Location SET LBR_TypeIE = '1' WHERE LBR_IsIEExempt = 'N' AND LBR_IE IS NOT NULL AND LBR_IE != '';
+ALTER TABLE C_BPartner_Location DROP COLUMN LBR_IsIEExempt;
 
 --
 SELECT lbr_register_migration_script('201605161511-Type_IE.sql') FROM dual;

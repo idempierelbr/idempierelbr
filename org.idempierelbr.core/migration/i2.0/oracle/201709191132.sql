@@ -71,8 +71,8 @@ ALTER TABLE M_Product_Category_Acct ADD LBR_P_RevenueReturn_Acct NUMBER(10) DEFA
 ;
 
 -- 19/09/2017 11h5min3s BRT
-ALTER TABLE M_Product_Category_Acct ADD CONSTRAINT LBRPRevenueReturnAcct_MProduct FOREIGN KEY (LBR_P_RevenueReturn_Acct) REFERENCES c_validcombination(c_validcombination_id) DEFERRABLE INITIALLY DEFERRED
-;
+--ALTER TABLE M_Product_Category_Acct ADD CONSTRAINT LBRPRevenueReturnAcct_MProduct FOREIGN KEY (LBR_P_RevenueReturn_Acct) REFERENCES c_validcombination(c_validcombination_id) DEFERRABLE INITIALLY DEFERRED
+--;
 
 -- 19/09/2017 11h5min33s BRT
 INSERT INTO AD_Field (AD_Field_ID,Name,Description,Help,AD_Tab_ID,AD_Column_ID,IsDisplayed,DisplayLength,SeqNo,IsSameLine,IsHeading,IsFieldOnly,IsEncrypted,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,IsReadOnly,IsCentrallyMaintained,EntityType,AD_Field_UU,IsDisplayedGrid,SeqNoGrid,ColumnSpan) VALUES (801427,'Product Revenue Return (LBR)','Account for Product Revenue Return','The Product Revenue Return Account indicates the account used for recording sales returns for this product.',324,801669,'Y',22,310,'N','N','N','N',0,0,'Y',TO_DATE('2017-09-19 11:05:33','YYYY-MM-DD HH24:MI:SS'),0,TO_DATE('2017-09-19 11:05:33','YYYY-MM-DD HH24:MI:SS'),0,'N','Y','LBR','77527ef3-9677-4faf-add8-627f63d96d14','Y',330,2)

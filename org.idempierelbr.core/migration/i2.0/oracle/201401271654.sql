@@ -87,7 +87,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 27, 2014 4:33:30 PM BRST
-ALTER TABLE LBR_Formula ADD Description VARCHAR2(512) DEFAULT NULL 
+ALTER TABLE LBR_Formula ADD Description NVARCHAR2(512) DEFAULT NULL 
 ;
 
 -- Jan 27, 2014 4:33:53 PM BRST
@@ -110,7 +110,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 27, 2014 4:35:41 PM BRST
-ALTER TABLE LBR_Formula ADD LBR_Formula VARCHAR2(512) NOT NULL
+ALTER TABLE LBR_Formula ADD LBR_Formula NVARCHAR2(512) NOT NULL
 ;
 
 -- Jan 27, 2014 4:36:30 PM BRST
@@ -138,7 +138,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 27, 2014 4:37:33 PM BRST
-ALTER TABLE LBR_Formula ADD LBR_Formula_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_Formula ADD LBR_Formula_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Jan 27, 2014 4:37:34 PM BRST
@@ -150,7 +150,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 27, 2014 4:38:20 PM BRST
-ALTER TABLE LBR_Formula ADD Name VARCHAR2(60) NOT NULL
+ALTER TABLE LBR_Formula ADD Name NVARCHAR2(60) NOT NULL
 ;
 
 -- Jan 27, 2014 4:38:43 PM BRST

@@ -131,7 +131,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 15/12/2014 15h5min41s BRST
-ALTER TABLE LBR_BankAccount_Carteira ADD LBR_CarteiraCode VARCHAR2(20) DEFAULT NULL 
+ALTER TABLE LBR_BankAccount_Carteira ADD LBR_CarteiraCode NVARCHAR2(20) DEFAULT NULL 
 ;
 
 -- 15/12/2014 15h6min1s BRST

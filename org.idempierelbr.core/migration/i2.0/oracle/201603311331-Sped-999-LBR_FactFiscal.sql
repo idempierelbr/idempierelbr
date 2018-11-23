@@ -156,17 +156,17 @@ SELECT nf.ad_client_id,
             nf.datedoc,
             COALESCE(nf.datedelivered, nf.datedoc) ,
             nf.lbr_nfeserie,
-            round(COALESCE(nf.grandtotal, 0::numeric), 2) ,
-            round(COALESCE(nf.totallines, 0::numeric), 2) ,
-            round(COALESCE(nft.chargeamt, 0::numeric), 2) ,
+            round(COALESCE(nf.grandtotal, 0), 2) ,
+            round(COALESCE(nf.totallines, 0), 2) ,
+            round(COALESCE(nft.chargeamt, 0), 2) ,
             nf.lbr_nfemodel,
-            round(COALESCE(nficms.taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(nficms.taxamt, 0::numeric), 2) ,
-            round(COALESCE(nficmsst.taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(nficmsst.taxamt, 0::numeric), 2) ,
-            round(COALESCE(nfcofins.taxamt, 0::numeric), 2) ,
-            round(COALESCE(nfpis.taxamt, 0::numeric), 2) ,
-            round(COALESCE(nfipi.taxamt, 0::numeric), 2) ,
+            round(COALESCE(nficms.taxbaseamt, 0), 2) ,
+            round(COALESCE(nficms.taxamt, 0), 2) ,
+            round(COALESCE(nficmsst.taxbaseamt, 0), 2) ,
+            round(COALESCE(nficmsst.taxamt, 0), 2) ,
+            round(COALESCE(nfcofins.taxamt, 0), 2) ,
+            round(COALESCE(nfpis.taxamt, 0), 2) ,
+            round(COALESCE(nfipi.taxamt, 0), 2) ,
             bpempresa.lbr_cnpj ,
             bpempresa.lbr_ie ,
             orgloc.address1 ,
@@ -219,65 +219,65 @@ SELECT nf.ad_client_id,
             COALESCE( nfluomtrl.name , nfluom.name ),
             produ.upc,
             ncmp.value ,
-            round(COALESCE(nfl.priceactual, 0::numeric), 2) ,
-            round(COALESCE(nfl.qty, 0::numeric), 2) ,
-            round(COALESCE(nfl.linenetamt, 0::numeric), 2) ,
-            round(COALESCE(icms.lbr_taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(icms.lbr_taxbase, 0::numeric), 2) ,
-            round(COALESCE(icms.lbr_taxrate, 0::numeric), 2) ,
-            round(COALESCE(icms.lbr_taxamt, 0::numeric), 2) ,
+            round(COALESCE(nfl.priceactual, 0), 2) ,
+            round(COALESCE(nfl.qty, 0), 2) ,
+            round(COALESCE(nfl.linenetamt, 0), 2) ,
+            round(COALESCE(icms.lbr_taxbaseamt, 0), 2) ,
+            round(COALESCE(icms.lbr_taxbase, 0), 2) ,
+            round(COALESCE(icms.lbr_taxrate, 0), 2) ,
+            round(COALESCE(icms.lbr_taxamt, 0), 2) ,
             CASE WHEN nf.lbr_isdocissuedbyorg='Y' THEN 
-                        COALESCE(produ.lbr_productsource, '0'::bpchar)::text || COALESCE(icms.lbr_taxstatustn, '00'::character varying)::text
+                        COALESCE(produ.lbr_productsource, '0') || COALESCE(icms.lbr_taxstatustn, '00')
                       ELSE
-                        COALESCE(produ.lbr_productsource, '0'::bpchar)::text || COALESCE(icms.LBR_OwnTaxStatus,'00'::character varying)::text
+                        COALESCE(produ.lbr_productsource, '0') || COALESCE(icms.LBR_OwnTaxStatus,'00')
                       END
                        ,
-            round(COALESCE(pis.lbr_taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(pis.lbr_taxbase, 0::numeric), 2) ,
-            round(COALESCE(pis.lbr_taxrate, 0::numeric), 2) ,
-            round(COALESCE(pis.lbr_taxamt, 0::numeric), 2) ,
+            round(COALESCE(pis.lbr_taxbaseamt, 0), 2) ,
+            round(COALESCE(pis.lbr_taxbase, 0), 2) ,
+            round(COALESCE(pis.lbr_taxrate, 0), 2) ,
+            round(COALESCE(pis.lbr_taxamt, 0), 2) ,
             CASE WHEN nf.lbr_isdocissuedbyorg='Y' THEN 
-                        COALESCE(pis.lbr_taxstatustn, '01'::character varying)
+                        COALESCE(pis.lbr_taxstatustn, '01')
                       ELSE
                         pis.lbr_OwnTaxStatus
                       END
                        ,
-            round(COALESCE(cofins.lbr_taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(cofins.lbr_taxbase, 0::numeric), 2) ,
-            round(COALESCE(cofins.lbr_taxrate, 0::numeric), 2) ,
-            round(COALESCE(cofins.lbr_taxamt, 0::numeric), 2) ,
+            round(COALESCE(cofins.lbr_taxbaseamt, 0), 2) ,
+            round(COALESCE(cofins.lbr_taxbase, 0), 2) ,
+            round(COALESCE(cofins.lbr_taxrate, 0), 2) ,
+            round(COALESCE(cofins.lbr_taxamt, 0), 2) ,
             CASE WHEN nf.lbr_isdocissuedbyorg='Y' THEN 
-                        COALESCE(cofins.lbr_taxstatustn, '01'::character varying)
+                        COALESCE(cofins.lbr_taxstatustn, '01')
                       ELSE
                         cofins.LBR_OwnTaxStatus
                       END ,
-            round(COALESCE(icmsst.lbr_taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(icmsst.lbr_taxbase, 0::numeric), 2) ,
-            round(COALESCE(icmsst.lbr_taxrate, 0::numeric), 2) ,
-            round(COALESCE(icmsst.lbr_taxamt, 0::numeric), 2) ,
+            round(COALESCE(icmsst.lbr_taxbaseamt, 0), 2) ,
+            round(COALESCE(icmsst.lbr_taxbase, 0), 2) ,
+            round(COALESCE(icmsst.lbr_taxrate, 0), 2) ,
+            round(COALESCE(icmsst.lbr_taxamt, 0), 2) ,
             CASE WHEN nf.lbr_isdocissuedbyorg='Y' THEN 
-                        COALESCE(produ.lbr_productsource, '0'::bpchar)::text || COALESCE(icmsst.lbr_taxstatustn, '00'::character varying)::text
+                        COALESCE(produ.lbr_productsource, '0') || COALESCE(icmsst.lbr_taxstatustn, '00')
                       ELSE
-                        icmsst.LBR_OwnTaxStatus::text
+                        icmsst.LBR_OwnTaxStatus
                       END  
                          ,
-            round(COALESCE(ipi.lbr_taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(ipi.lbr_taxrate, 0::numeric), 2) ,
-            round(COALESCE(ipi.lbr_taxamt, 0::numeric), 2) ,
+            round(COALESCE(ipi.lbr_taxbaseamt, 0), 2) ,
+            round(COALESCE(ipi.lbr_taxrate, 0), 2) ,
+            round(COALESCE(ipi.lbr_taxamt, 0), 2) ,
             CASE WHEN nf.lbr_isdocissuedbyorg='Y' THEN 
-                        COALESCE(ipi.lbr_taxstatustn, '00'::character varying)
+                        COALESCE(ipi.lbr_taxstatustn, '00')
                       ELSE
                         ipi.LBR_OwnTaxStatus
                       END
                          ,
-            round(COALESCE(ii.lbr_taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(ii.lbr_taxrate, 0::numeric), 2) ,
-            round(COALESCE(ii.lbr_taxamt, 0::numeric), 2) ,
+            round(COALESCE(ii.lbr_taxbaseamt, 0), 2) ,
+            round(COALESCE(ii.lbr_taxrate, 0), 2) ,
+            round(COALESCE(ii.lbr_taxamt, 0), 2) ,
             
             CASE WHEN nf.lbr_isdocissuedbyorg='Y'
                 THEN nf.lbr_nfe_operationtype
                 ELSE
-                    CASE WHEN nf.lbr_nfe_operationtype='1' THEN '0'::bpchar ELSE '1'::bpchar END
+                    CASE WHEN nf.lbr_nfe_operationtype='1' THEN '0' ELSE '1' END
                 END ,
             CASE WHEN nf.lbr_isdocissuedbyorg='Y' THEN cfop.value ELSE owncfop.value END,
 
@@ -331,12 +331,12 @@ FROM lbr_notafiscalline nfl
    LEFT JOIN lbr_cfop cfop ON dld.lbr_cfop_id = cfop.lbr_cfop_id
    LEFT JOIN lbr_cfop owncfop ON dld.lbr_owncfop_id = owncfop.lbr_cfop_id
    LEFT JOIN c_uom uom ON uom.c_uom_id = nfl.c_uom_id
-   LEFT JOIN lbr_factfiscal_nflinetax icms ON nfl.lbr_notafiscalline_id = icms.lbr_notafiscalline_id AND icms.tipimposto = 'ICMSPROD'::text
-   LEFT JOIN lbr_factfiscal_nflinetax pis ON nfl.lbr_notafiscalline_id = pis.lbr_notafiscalline_id AND pis.tipimposto = 'PISPROD'::text
-   LEFT JOIN lbr_factfiscal_nflinetax cofins ON nfl.lbr_notafiscalline_id = cofins.lbr_notafiscalline_id AND cofins.tipimposto = 'COFINSPROD'::text
-   LEFT JOIN lbr_factfiscal_nflinetax icmsst ON nfl.lbr_notafiscalline_id = icmsst.lbr_notafiscalline_id AND icmsst.tipimposto = 'ICMSST'::text
-   LEFT JOIN lbr_factfiscal_nflinetax ipi ON nfl.lbr_notafiscalline_id = ipi.lbr_notafiscalline_id AND ipi.tipimposto = 'IPI'::text
-   LEFT JOIN lbr_factfiscal_nflinetax ii ON nfl.lbr_notafiscalline_id = ii.lbr_notafiscalline_id AND ii.tipimposto = 'II'::text
+   LEFT JOIN lbr_factfiscal_nflinetax icms ON nfl.lbr_notafiscalline_id = icms.lbr_notafiscalline_id AND icms.tipimposto = 'ICMSPROD'
+   LEFT JOIN lbr_factfiscal_nflinetax pis ON nfl.lbr_notafiscalline_id = pis.lbr_notafiscalline_id AND pis.tipimposto = 'PISPROD'
+   LEFT JOIN lbr_factfiscal_nflinetax cofins ON nfl.lbr_notafiscalline_id = cofins.lbr_notafiscalline_id AND cofins.tipimposto = 'COFINSPROD'
+   LEFT JOIN lbr_factfiscal_nflinetax icmsst ON nfl.lbr_notafiscalline_id = icmsst.lbr_notafiscalline_id AND icmsst.tipimposto = 'ICMSST'
+   LEFT JOIN lbr_factfiscal_nflinetax ipi ON nfl.lbr_notafiscalline_id = ipi.lbr_notafiscalline_id AND ipi.tipimposto = 'IPI'
+   LEFT JOIN lbr_factfiscal_nflinetax ii ON nfl.lbr_notafiscalline_id = ii.lbr_notafiscalline_id AND ii.tipimposto = 'II'
    LEFT JOIN lbr_notafiscaltransp nft ON nft.lbr_notafiscal_id = nfl.lbr_notafiscal_id
 
    LEFT JOIN LBR_FactFiscal_NotaFiscalTax nfpis ON nf.lbr_notafiscal_id = nfpis.lbr_notafiscal_id AND nfpis.LBR_Tax_Name = 'PISPROD'
@@ -374,17 +374,17 @@ SELECT i.ad_client_id,
             i.dateinvoiced,
             COALESCE(i.dateacct, i.dateinvoiced) ,
             fd.lbr_nfeserie,
-            round(COALESCE(i.grandtotal, 0::numeric), 2) ,
-            round(COALESCE(i.totallines, 0::numeric), 2) ,
+            round(COALESCE(i.grandtotal, 0), 2) ,
+            round(COALESCE(i.totallines, 0), 2) ,
             0 ,
             fd.lbr_nfemodel,
-            round(COALESCE(nficms.taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(nficms.taxamt, 0::numeric), 2) ,
-            round(COALESCE(nficmsst.taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(nficmsst.taxamt, 0::numeric), 2) ,
-            round(COALESCE(nfcofins.taxamt, 0::numeric), 2) ,
-            round(COALESCE(nfpis.taxamt, 0::numeric), 2) ,
-            round(COALESCE(nfipi.taxamt, 0::numeric), 2) ,
+            round(COALESCE(nficms.taxbaseamt, 0), 2) ,
+            round(COALESCE(nficms.taxamt, 0), 2) ,
+            round(COALESCE(nficmsst.taxbaseamt, 0), 2) ,
+            round(COALESCE(nficmsst.taxamt, 0), 2) ,
+            round(COALESCE(nfcofins.taxamt, 0), 2) ,
+            round(COALESCE(nfpis.taxamt, 0), 2) ,
+            round(COALESCE(nfipi.taxamt, 0), 2) ,
             bpempresa.lbr_cnpj ,
             bpempresa.lbr_ie ,
             orgloc.address1 ,
@@ -429,50 +429,50 @@ SELECT i.ad_client_id,
             COALESCE( nfluomtrl.name , nfluom.name ),
             produ.upc,
             ncmp.value ,
-            round(COALESCE(il.priceactual, 0::numeric), 2) ,
-            round(COALESCE(il.qtyinvoiced, 0::numeric), 2) ,
-            round(COALESCE(il.linenetamt, 0::numeric), 2) ,
-            round(COALESCE(icms.lbr_taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(icms.lbr_taxbase, 0::numeric), 2) ,
-            round(COALESCE(icms.lbr_taxrate, 0::numeric), 2) ,
-            round(COALESCE(icms.lbr_taxamt, 0::numeric), 2) ,
+            round(COALESCE(il.priceactual, 0), 2) ,
+            round(COALESCE(il.qtyinvoiced, 0), 2) ,
+            round(COALESCE(il.linenetamt, 0), 2) ,
+            round(COALESCE(icms.lbr_taxbaseamt, 0), 2) ,
+            round(COALESCE(icms.lbr_taxbase, 0), 2) ,
+            round(COALESCE(icms.lbr_taxrate, 0), 2) ,
+            round(COALESCE(icms.lbr_taxamt, 0), 2) ,
 
-            COALESCE(produ.lbr_productsource, '0'::bpchar)::text || COALESCE(icms.LBR_TaxStatusTN,'00'::character varying)::text
+            COALESCE(produ.lbr_productsource, '0') || COALESCE(icms.LBR_TaxStatusTN,'00')
                        ,
 
-            round(COALESCE(pis.lbr_taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(pis.lbr_taxbase, 0::numeric), 2) ,
-            round(COALESCE(pis.lbr_taxrate, 0::numeric), 2) ,
-            round(COALESCE(pis.lbr_taxamt, 0::numeric), 2) ,
+            round(COALESCE(pis.lbr_taxbaseamt, 0), 2) ,
+            round(COALESCE(pis.lbr_taxbase, 0), 2) ,
+            round(COALESCE(pis.lbr_taxrate, 0), 2) ,
+            round(COALESCE(pis.lbr_taxamt, 0), 2) ,
 
             pis.lbr_TaxStatusTN
                        ,
 
-            round(COALESCE(cofins.lbr_taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(cofins.lbr_taxbase, 0::numeric), 2) ,
-            round(COALESCE(cofins.lbr_taxrate, 0::numeric), 2) ,
-            round(COALESCE(cofins.lbr_taxamt, 0::numeric), 2) ,
+            round(COALESCE(cofins.lbr_taxbaseamt, 0), 2) ,
+            round(COALESCE(cofins.lbr_taxbase, 0), 2) ,
+            round(COALESCE(cofins.lbr_taxrate, 0), 2) ,
+            round(COALESCE(cofins.lbr_taxamt, 0), 2) ,
 
             cofins.LBR_TaxStatusTN
                        ,
-            round(COALESCE(icmsst.lbr_taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(icmsst.lbr_taxbase, 0::numeric), 2) ,
-            round(COALESCE(icmsst.lbr_taxrate, 0::numeric), 2) ,
-            round(COALESCE(icmsst.lbr_taxamt, 0::numeric), 2) ,
+            round(COALESCE(icmsst.lbr_taxbaseamt, 0), 2) ,
+            round(COALESCE(icmsst.lbr_taxbase, 0), 2) ,
+            round(COALESCE(icmsst.lbr_taxrate, 0), 2) ,
+            round(COALESCE(icmsst.lbr_taxamt, 0), 2) ,
 
             icmsst.LBR_TaxStatusTN
                          ,
 
-            round(COALESCE(ipi.lbr_taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(ipi.lbr_taxrate, 0::numeric), 2) ,
-            round(COALESCE(ipi.lbr_taxamt, 0::numeric), 2) ,
+            round(COALESCE(ipi.lbr_taxbaseamt, 0), 2) ,
+            round(COALESCE(ipi.lbr_taxrate, 0), 2) ,
+            round(COALESCE(ipi.lbr_taxamt, 0), 2) ,
 
             ipi.LBR_TaxStatusTN
                          ,
 
-            round(COALESCE(ii.lbr_taxbaseamt, 0::numeric), 2) ,
-            round(COALESCE(ii.lbr_taxrate, 0::numeric), 2) ,
-            round(COALESCE(ii.lbr_taxamt, 0::numeric), 2) ,
+            round(COALESCE(ii.lbr_taxbaseamt, 0), 2) ,
+            round(COALESCE(ii.lbr_taxrate, 0), 2) ,
+            round(COALESCE(ii.lbr_taxamt, 0), 2) ,
             
             '0'
                 ,
@@ -526,12 +526,12 @@ FROM C_InvoiceLine il
    LEFT JOIN c_region bpregion ON bpregion.c_region_id = bploc.c_region_id
    LEFT JOIN lbr_cfop cfop ON dld.lbr_cfop_id = cfop.lbr_cfop_id
    LEFT JOIN c_uom uom ON uom.c_uom_id = il.c_uom_id
-   LEFT JOIN lbr_factfiscal_invoicelinetax icms ON il.C_InvoiceLine_ID = icms.C_InvoiceLine_ID AND icms.tipimposto = 'ICMSPROD'::text
-   LEFT JOIN lbr_factfiscal_invoicelinetax pis ON il.C_InvoiceLine_ID = pis.C_InvoiceLine_ID AND pis.tipimposto = 'PISPROD'::text
-   LEFT JOIN lbr_factfiscal_invoicelinetax cofins ON il.C_InvoiceLine_ID = cofins.C_InvoiceLine_ID AND cofins.tipimposto = 'COFINSPROD'::text
-   LEFT JOIN lbr_factfiscal_invoicelinetax icmsst ON il.C_InvoiceLine_ID = icmsst.C_InvoiceLine_ID AND icmsst.tipimposto = 'ICMSST'::text
-   LEFT JOIN lbr_factfiscal_invoicelinetax ipi ON il.C_InvoiceLine_ID = ipi.C_InvoiceLine_ID AND ipi.tipimposto = 'IPI'::text
-   LEFT JOIN lbr_factfiscal_invoicelinetax ii ON il.C_InvoiceLine_ID = ii.C_InvoiceLine_ID AND ii.tipimposto = 'II'::text
+   LEFT JOIN lbr_factfiscal_invoicelinetax icms ON il.C_InvoiceLine_ID = icms.C_InvoiceLine_ID AND icms.tipimposto = 'ICMSPROD'
+   LEFT JOIN lbr_factfiscal_invoicelinetax pis ON il.C_InvoiceLine_ID = pis.C_InvoiceLine_ID AND pis.tipimposto = 'PISPROD'
+   LEFT JOIN lbr_factfiscal_invoicelinetax cofins ON il.C_InvoiceLine_ID = cofins.C_InvoiceLine_ID AND cofins.tipimposto = 'COFINSPROD'
+   LEFT JOIN lbr_factfiscal_invoicelinetax icmsst ON il.C_InvoiceLine_ID = icmsst.C_InvoiceLine_ID AND icmsst.tipimposto = 'ICMSST'
+   LEFT JOIN lbr_factfiscal_invoicelinetax ipi ON il.C_InvoiceLine_ID = ipi.C_InvoiceLine_ID AND ipi.tipimposto = 'IPI'
+   LEFT JOIN lbr_factfiscal_invoicelinetax ii ON il.C_InvoiceLine_ID = ii.C_InvoiceLine_ID AND ii.tipimposto = 'II'
 
    LEFT JOIN LBR_FactFiscal_InvoiceTax nfpis ON i.C_Invoice_ID = nfpis.C_Invoice_ID AND nfpis.LBR_Tax_Name = 'PISPROD'
    LEFT JOIN LBR_FactFiscal_InvoiceTax nfcofins ON i.C_Invoice_ID = nfcofins.C_Invoice_ID AND nfcofins.LBR_Tax_Name = 'COFINSPROD'
@@ -551,46 +551,46 @@ SELECT bp.ad_client_id,
             bp.updated,
             bp.updatedby,
             bp.isactive,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::numeric ,
-            NULL::numeric ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
             bp.c_bpartner_id,
-            NULL::timestamp without time zone ,
-            NULL::timestamp without time zone ,
-            NULL::character varying ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            '01'::character varying ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::numeric ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            '01' ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
             bp.lbr_cnpj ,
             bp.lbr_ie ,
             bploc.address1 ,
@@ -605,71 +605,71 @@ SELECT bp.ad_client_id,
             bp.lbr_suframa ,
             bpcity.lbr_citycode ,
             bpcountry.lbr_countrycode ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            ''::character varying ,
-            ''::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::character varying ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::text ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::character varying ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::character varying ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::text ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::character varying ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            '' ,
+            '' ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
             
-            NULL::text ,
-            NULL::text ,
-            NULL::character varying ,
+            NULL ,
+            NULL ,
+            NULL ,
 
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
-            NULL::numeric ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
 
-            NULL::text ,
-            NULL::text ,
-            NULL::text ,
+            NULL ,
+            NULL ,
+            NULL ,
             
-            NULL::text ,
-            NULL::text ,
-            NULL::text ,
-            NULL::text ,
-            NULL::numeric ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
+            NULL ,
             
-            NULL::text ,
+            NULL ,
             
-            NULL::text 
+            NULL 
 
             
 FROM c_bpartner bp

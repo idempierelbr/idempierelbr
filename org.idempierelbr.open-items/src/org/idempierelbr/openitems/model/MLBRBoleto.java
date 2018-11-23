@@ -252,7 +252,9 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 		}
 		
 		// Generate movement
-		int LBR_Cob_Movimento_ID = MSysConfig.getIntValue("LBR_BOLETO_MOVIMENTO_ID_ON_COMPLETE", 1000000, getAD_Client_ID(), getAD_Org_ID());
+		// default 74bcfe3a-7a92-4d5e-b829-3622ec16dbff 01 - Entrada de Titulos
+		int defaultLBR_Cob_Movimento_ID = DB.getSQLValue(null, "SELECT LBR_Cob_Movimento_ID FROM LBR_Cob_Movimento WHERE LBR_Cob_Movimento_UU='74bcfe3a-7a92-4d5e-b829-3622ec16dbff'");
+		int LBR_Cob_Movimento_ID = MSysConfig.getIntValue("LBR_BOLETO_MOVIMENTO_ID_ON_COMPLETE", defaultLBR_Cob_Movimento_ID, getAD_Client_ID(), getAD_Org_ID());
 		
 		if (LBR_Cob_Movimento_ID > 0 && getMovements().length == 0) {
 			MLBRBoletoMovement mov = new MLBRBoletoMovement(getCtx(), 0, get_TrxName());

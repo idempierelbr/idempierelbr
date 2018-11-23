@@ -71,7 +71,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 28, 2014 9:08:08 AM BRST
-ALTER TABLE LBR_TaxStatus ADD Description VARCHAR2(255) NOT NULL
+ALTER TABLE LBR_TaxStatus ADD Description NVARCHAR2(255) NOT NULL
 ;
 
 -- Jan 28, 2014 9:08:45 AM BRST
@@ -79,7 +79,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 28, 2014 9:08:50 AM BRST
-ALTER TABLE LBR_TaxStatus ADD PO_Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_TaxStatus ADD PO_Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jan 28, 2014 9:09:29 AM BRST
@@ -87,7 +87,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 28, 2014 9:09:34 AM BRST
-ALTER TABLE LBR_TaxStatus ADD Name VARCHAR2(60) NOT NULL
+ALTER TABLE LBR_TaxStatus ADD Name NVARCHAR2(60) NOT NULL
 ;
 
 -- Jan 28, 2014 9:10:00 AM BRST
@@ -95,7 +95,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 28, 2014 9:10:05 AM BRST
-ALTER TABLE LBR_TaxStatus ADD PO_Name VARCHAR2(60) DEFAULT NULL 
+ALTER TABLE LBR_TaxStatus ADD PO_Name NVARCHAR2(60) DEFAULT NULL 
 ;
 
 -- Jan 28, 2014 9:10:42 AM BRST
@@ -158,7 +158,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 28, 2014 9:20:24 AM BRST
-ALTER TABLE LBR_TaxStatus ADD LBR_TaxStatus_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_TaxStatus ADD LBR_TaxStatus_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Jan 28, 2014 9:20:24 AM BRST
@@ -170,7 +170,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 28, 2014 9:21:28 AM BRST
-ALTER TABLE LBR_TaxStatus ADD Script VARCHAR2(2000) DEFAULT NULL 
+ALTER TABLE LBR_TaxStatus ADD Script NVARCHAR2(2000) DEFAULT NULL 
 ;
 
 -- Jan 28, 2014 9:22:02 AM BRST
@@ -553,7 +553,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 28, 2014 10:27:05 AM BRST
-ALTER TABLE LBR_TaxBaseType ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_TaxBaseType ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jan 28, 2014 10:27:27 AM BRST
@@ -592,7 +592,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 28, 2014 10:29:09 AM BRST
-ALTER TABLE LBR_TaxBaseType ADD LBR_TaxBaseType_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_TaxBaseType ADD LBR_TaxBaseType_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Jan 28, 2014 10:29:09 AM BRST
@@ -620,7 +620,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 28, 2014 10:30:34 AM BRST
-ALTER TABLE LBR_TaxBaseType ADD Name VARCHAR2(60) NOT NULL
+ALTER TABLE LBR_TaxBaseType ADD Name NVARCHAR2(60) NOT NULL
 ;
 
 -- Jan 28, 2014 10:31:18 AM BRST
@@ -628,7 +628,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 28, 2014 10:31:22 AM BRST
-ALTER TABLE LBR_TaxBaseType ADD Script VARCHAR2(2000) DEFAULT NULL 
+ALTER TABLE LBR_TaxBaseType ADD Script NVARCHAR2(2000) DEFAULT NULL 
 ;
 
 -- Jan 28, 2014 10:32:04 AM BRST
@@ -661,7 +661,7 @@ If you leave the search key empty, the system automatically creates a numeric nu
 ;
 
 -- Jan 28, 2014 10:33:08 AM BRST
-ALTER TABLE LBR_TaxBaseType ADD Value VARCHAR2(40) DEFAULT NULL 
+ALTER TABLE LBR_TaxBaseType ADD Value NVARCHAR2(40) DEFAULT NULL 
 ;
 
 -- Jan 28, 2014 10:34:41 AM BRST

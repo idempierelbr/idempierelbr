@@ -18,29 +18,27 @@ AS
   SELECT IMPOSTOS.LBR_NOTAFISCAL_ID,
          IMPOSTOS.LBR_NOTAFISCALLINE_ID,
          ROUND( SUM( CASE
-                       WHEN COALESCE( IMPOSTOS.LBR_TAXRATE, 0::NUMERIC ) < 0::NUMERIC OR COALESCE( IMPOSTOS.LBR_TAXAMT, 0::NUMERIC ) < 0::NUMERIC THEN 0::NUMERIC
-                       ELSE COALESCE( IMPOSTOS.LBR_TAXBASEAMT, 0::NUMERIC )
+                       WHEN COALESCE( IMPOSTOS.LBR_TAXRATE, 0 ) < 0 OR COALESCE( IMPOSTOS.LBR_TAXAMT, 0 ) < 0 THEN 0
+                       ELSE COALESCE( IMPOSTOS.LBR_TAXBASEAMT, 0 )
                      END ), 4 ) AS LBR_TAXBASEAMT,
          ROUND( SUM( CASE
-                       WHEN COALESCE( IMPOSTOS.LBR_TAXRATE, 0::NUMERIC ) < 0::NUMERIC OR COALESCE( IMPOSTOS.LBR_TAXAMT, 0::NUMERIC ) < 0::NUMERIC THEN 0::NUMERIC
-                       ELSE COALESCE( IMPOSTOS.LBR_TAXBASE, 0::NUMERIC )
+                       WHEN COALESCE( IMPOSTOS.LBR_TAXRATE, 0 ) < 0 OR COALESCE( IMPOSTOS.LBR_TAXAMT, 0 ) < 0 THEN 0
+                       ELSE COALESCE( IMPOSTOS.LBR_TAXBASE, 0 )
                      END ), 4 ) AS LBR_TAXBASE,
          ROUND( MAX( CASE
-                       WHEN COALESCE( IMPOSTOS.LBR_TAXRATE, 0::NUMERIC ) < 0::NUMERIC OR COALESCE( IMPOSTOS.LBR_TAXAMT, 0::NUMERIC ) < 0::NUMERIC THEN 0::NUMERIC
-                       ELSE COALESCE( IMPOSTOS.LBR_TAXRATE, 0::NUMERIC )
+                       WHEN COALESCE( IMPOSTOS.LBR_TAXRATE, 0 ) < 0 OR COALESCE( IMPOSTOS.LBR_TAXAMT, 0 ) < 0 THEN 0
+                       ELSE COALESCE( IMPOSTOS.LBR_TAXRATE, 0 )
                      END ), 4 ) AS LBR_TAXRATE,
          ROUND( SUM( CASE
-                       WHEN COALESCE( IMPOSTOS.LBR_TAXRATE, 0::NUMERIC ) < 0::NUMERIC OR COALESCE( IMPOSTOS.LBR_TAXAMT, 0::NUMERIC ) < 0::NUMERIC THEN 0::NUMERIC
-                       ELSE COALESCE( IMPOSTOS.LBR_TAXAMT, 0::NUMERIC )
+                       WHEN COALESCE( IMPOSTOS.LBR_TAXRATE, 0 ) < 0 OR COALESCE( IMPOSTOS.LBR_TAXAMT, 0 ) < 0 THEN 0
+                       ELSE COALESCE( IMPOSTOS.LBR_TAXAMT, 0 )
                      END ), 4 ) AS LBR_TAXAMT,
          CASE
-           WHEN IMPOSTOS.LBR_TAXSTATUSTN::TEXT = ANY ( ARRAY [ '101' ::CHARACTER VARYING::TEXT, '102' ::CHARACTER VARYING::TEXT, '103' ::CHARACTER VARYING::TEXT, '201' ::CHARACTER VARYING::TEXT, '202' ::CHARACTER VARYING::TEXT, '203' ::CHARACTER VARYING::TEXT, '300' ::CHARACTER VARYING::TEXT, '400' ::CHARACTER VARYING::TEXT, '500' ::CHARACTER
-            VARYING::TEXT, '900' ::CHARACTER VARYING::TEXT ] ) THEN '90' ::CHARACTER VARYING
+           WHEN IMPOSTOS.LBR_TAXSTATUSTN IN ( TO_NCHAR('101') , TO_NCHAR('102') , TO_NCHAR('103') , TO_NCHAR('201') , TO_NCHAR('202') , TO_NCHAR('203') , TO_NCHAR('300') , TO_NCHAR('400') , TO_NCHAR('500') , TO_NCHAR('900')  ) THEN TO_NCHAR('90') 
            ELSE IMPOSTOS.LBR_TAXSTATUSTN
          END AS LBR_TAXSTATUSTN,
          IMPOSTOS.TIPIMPOSTO,
          IMPOSTOS.LBR_OwnTaxStatus
-         
   FROM ( ( ( ( ( (
                    SELECT NFL.LBR_NOTAFISCAL_ID,
                           NFL.LBR_NOTAFISCALLINE_ID,
@@ -49,7 +47,7 @@ AS
                           DLICMSST.LBR_TAXRATE,
                           DLICMSST.LBR_TAXAMT,
                           DLICMSST.LBR_ICMS_TAXSTATUSTN AS LBR_TAXSTATUSTN,
-                          'ICMSPROD'                          ::TEXT AS TIPIMPOSTO,
+                          'ICMSPROD'                           AS TIPIMPOSTO,
                           DLICMSST.LBR_ICMS_OwnTaxStatus AS LBR_OwnTaxStatus
                    FROM LBR_NOTAFISCALLINE NFL
                         LEFT JOIN LBR_DOCLINE_DETAILS DLD ON DLD.LBR_NOTAFISCALLINE_ID = NFL.LBR_NOTAFISCALLINE_ID
@@ -62,7 +60,7 @@ AS
                           DLICMSST.LBR_ICMSST_TAXRATE AS LBR_TAXRATE,
                           DLICMSST.LBR_ICMSST_TAXAMT AS LBR_TAXAMT,
                           DLICMSST.LBR_ICMS_TAXSTATUSTN AS LBR_TAXSTATUSTN,
-                          'ICMSST'                          ::TEXT AS TIPIMPOSTO,
+                          'ICMSST'                           AS TIPIMPOSTO,
                           DLICMSST.LBR_ICMS_OwnTaxStatus AS LBR_OwnTaxStatus
                    FROM LBR_NOTAFISCALLINE NFL
                         LEFT JOIN LBR_DOCLINE_DETAILS DLD ON DLD.LBR_NOTAFISCALLINE_ID = NFL.LBR_NOTAFISCALLINE_ID
@@ -72,11 +70,11 @@ AS
                  SELECT NFL.LBR_NOTAFISCAL_ID,
                         NFL.LBR_NOTAFISCALLINE_ID,
                         DLPIS.LBR_TAXBASEAMT,
-                        0::NUMERIC AS LBR_TAXBASE,
+                        0 AS LBR_TAXBASE,
                         DLPIS.LBR_TAXRATE,
                         DLPIS.LBR_TAXAMT,
                         DLPIS.LBR_PIS_TAXSTATUS AS LBR_TAXSTATUSTN,
-                        'PISPROD'                        ::TEXT AS TIPIMPOSTO,
+                        'PISPROD'                         AS TIPIMPOSTO,
                         DLPIS.LBR_PIS_OwnTaxStatus AS LBR_OwnTaxStatus
                  FROM LBR_NOTAFISCALLINE NFL
                       LEFT JOIN LBR_DOCLINE_DETAILS DLD ON DLD.LBR_NOTAFISCALLINE_ID = NFL.LBR_NOTAFISCALLINE_ID
@@ -86,11 +84,11 @@ AS
                SELECT NFL.LBR_NOTAFISCAL_ID,
                       NFL.LBR_NOTAFISCALLINE_ID,
                       DLCOFINS.LBR_TAXBASEAMT,
-                      0::NUMERIC AS LBR_TAXBASE,
+                      0 AS LBR_TAXBASE,
                       DLCOFINS.LBR_TAXRATE,
                       DLCOFINS.LBR_TAXAMT,
                       DLCOFINS.LBR_COF_TAXSTATUS AS LBR_TAXSTATUSTN,
-                      'COFINSPROD'                      ::TEXT AS TIPIMPOSTO,
+                      'COFINSPROD'                       AS TIPIMPOSTO,
                       DLCOFINS.LBR_COF_OwnTaxStatus AS LBR_OwnTaxStatus
                FROM LBR_NOTAFISCALLINE NFL
                     LEFT JOIN LBR_DOCLINE_DETAILS DLD ON DLD.LBR_NOTAFISCALLINE_ID = NFL.LBR_NOTAFISCALLINE_ID
@@ -104,7 +102,7 @@ AS
                     DLIPI.LBR_TAXRATE,
                     DLIPI.LBR_TAXAMT,
                     DLIPI.LBR_IPI_TAXSTATUS AS LBR_TAXSTATUSTN,
-                    'IPI'                    ::TEXT AS TIPIMPOSTO,
+                    'IPI'                     AS TIPIMPOSTO,
                     DLIPI.LBR_IPI_OwnTaxStatus AS LBR_OwnTaxStatus
              FROM LBR_NOTAFISCALLINE NFL
                   LEFT JOIN LBR_DOCLINE_DETAILS DLD ON DLD.LBR_NOTAFISCALLINE_ID = NFL.LBR_NOTAFISCALLINE_ID
@@ -114,11 +112,11 @@ AS
            SELECT NFL.LBR_NOTAFISCAL_ID,
                   NFL.LBR_NOTAFISCALLINE_ID,
                   DLISSQN.LBR_TAXBASEAMT,
-                  0::NUMERIC AS LBR_TAXBASE,
+                  0 AS LBR_TAXBASE,
                   DLISSQN.LBR_TAXRATE,
                   DLISSQN.LBR_TAXAMT,
-                  '00'                  ::TEXT AS LBR_TAXSTATUSTN,
-                  'ISS'                  ::TEXT AS TIPIMPOSTO,
+                  TO_NCHAR('00')                   AS LBR_TAXSTATUSTN,
+                  'ISS'                   AS TIPIMPOSTO,
                   NULL AS LBR_OwnTaxStatus
            FROM LBR_NOTAFISCALLINE NFL
                 LEFT JOIN LBR_DOCLINE_DETAILS DLD ON DLD.LBR_NOTAFISCALLINE_ID = NFL.LBR_NOTAFISCALLINE_ID
@@ -128,11 +126,11 @@ AS
          SELECT NFL.LBR_NOTAFISCAL_ID,
                 NFL.LBR_NOTAFISCALLINE_ID,
                 DLIMP.LBR_TAXBASEAMT,
-                0::NUMERIC AS LBR_TAXBASE,
+                0 AS LBR_TAXBASE,
                 DLIMP.LBR_TAXBASEAMT * DLIMP.LBR_TAXAMT AS LBR_TAXRATE,
                 DLIMP.LBR_TAXAMT,
-                0::TEXT AS LBR_TAXSTATUSTN,
-                'II'                ::TEXT AS TIPIMPOSTO,
+                TO_NCHAR('0') AS LBR_TAXSTATUSTN,
+                'II'                 AS TIPIMPOSTO,
                 NULL AS LBR_OwnTaxStatus
          FROM LBR_NOTAFISCALLINE NFL
               LEFT JOIN LBR_DOCLINE_DETAILS DLD ON DLD.LBR_NOTAFISCALLINE_ID = NFL.LBR_NOTAFISCALLINE_ID
@@ -146,5 +144,5 @@ AS
   ORDER BY IMPOSTOS.LBR_NOTAFISCAL_ID,
            IMPOSTOS.LBR_NOTAFISCALLINE_ID,
            IMPOSTOS.TIPIMPOSTO;
-           
+
 SELECT lbr_register_migration_script('201603311326-Sped-050-LBR_FactFiscal_NFLineTax.sql') FROM dual;

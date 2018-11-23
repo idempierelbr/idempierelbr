@@ -91,7 +91,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 27, 2014 1:25:45 PM BRST
-ALTER TABLE LBR_TaxName ADD Description VARCHAR2(255) DEFAULT NULL 
+ALTER TABLE LBR_TaxName ADD Description NVARCHAR2(255) DEFAULT NULL 
 ;
 
 -- Jan 27, 2014 1:30:40 PM BRST
@@ -146,7 +146,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 27, 2014 1:36:30 PM BRST
-ALTER TABLE LBR_TaxName ADD LBR_TaxName_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_TaxName ADD LBR_TaxName_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Jan 27, 2014 1:36:31 PM BRST
@@ -194,7 +194,7 @@ UPDATE AD_Column SET IsMandatory='Y',Updated=TO_DATE('2014-01-27 13:45:40','YYYY
 ;
 
 -- Jan 27, 2014 1:45:46 PM BRST
-ALTER TABLE LBR_TaxName ADD Name VARCHAR2(60) NOT NULL
+ALTER TABLE LBR_TaxName ADD Name NVARCHAR2(60) NOT NULL
 ;
 
 -- Jan 27, 2014 1:46:00 PM BRST
@@ -242,7 +242,7 @@ INSERT INTO AD_Ref_List (AD_Ref_List_ID,AD_Reference_ID,AD_Ref_List_UU,Value,Cre
 ;
 
 -- Jan 27, 2014 1:54:59 PM BRST
-INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,DefaultValue,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,AD_Client_ID,IsEncrypted,IsSecure,FKConstraintType,AD_Element_ID,AD_Reference_ID,AD_Reference_Value_ID,AD_Table_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,1000116,'Y','N','N',0,'N',1,'N','N','N','Y','9bca16e1-44ee-457f-bc89-bd061beb3ecc','Y','LBR_WithHoldFrequency','Defines the WithHold Frequency','''M''','WithHold Frequency','Y',TO_DATE('2014-01-27 13:54:59','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2014-01-27 13:54:59','YYYY-MM-DD HH24:MI:SS'),0,'N','N',0,'N','N','N',1000038,17,1000008,1000007,0,'LBR')
+INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,DefaultValue,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,AD_Client_ID,IsEncrypted,IsSecure,FKConstraintType,AD_Element_ID,AD_Reference_ID,AD_Reference_Value_ID,AD_Table_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,1000116,'N','N','N',0,'N',1,'N','N','N','Y','9bca16e1-44ee-457f-bc89-bd061beb3ecc','Y','LBR_WithHoldFrequency','Defines the WithHold Frequency','''M''','WithHold Frequency','Y',TO_DATE('2014-01-27 13:54:59','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2014-01-27 13:54:59','YYYY-MM-DD HH24:MI:SS'),0,'N','N',0,'N','N','N',1000038,17,1000008,1000007,0,'LBR')
 ;
 
 -- Jan 27, 2014 1:58:06 PM BRST

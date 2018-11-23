@@ -15,7 +15,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 04/01/2014 10h36min17s BRST
-ALTER TABLE C_BPartner_Location ADD LBR_CNPJ VARCHAR2(14) DEFAULT NULL 
+ALTER TABLE C_BPartner_Location ADD LBR_CNPJ NVARCHAR2(14) DEFAULT NULL 
 ;
 
 -- 04/01/2014 10h36min22s BRST
@@ -27,7 +27,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 04/01/2014 10h38min1s BRST
-ALTER TABLE C_BPartner_Location ADD LBR_CCM VARCHAR2(30) DEFAULT NULL 
+ALTER TABLE C_BPartner_Location ADD LBR_CCM NVARCHAR2(30) DEFAULT NULL 
 ;
 
 -- 04/01/2014 10h38min37s BRST
@@ -51,7 +51,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 04/01/2014 10h40min45s BRST
-ALTER TABLE C_BPartner_Location ADD LBR_IE VARCHAR2(30) DEFAULT NULL 
+ALTER TABLE C_BPartner_Location ADD LBR_IE NVARCHAR2(30) DEFAULT NULL 
 ;
 
 -- 04/01/2014 10h40min52s BRST
@@ -59,7 +59,7 @@ UPDATE AD_Column SET IsMandatory='Y',Updated=TO_DATE('2014-01-04 10:40:52','YYYY
 ;
 
 -- 04/01/2014 10h41min47s BRST
-ALTER TABLE C_BPartner_Location ADD LBR_Suframa VARCHAR2(30) DEFAULT NULL 
+ALTER TABLE C_BPartner_Location ADD LBR_Suframa NVARCHAR2(30) DEFAULT NULL 
 ;
 
 -- 04/01/2014 10h50min8s BRST

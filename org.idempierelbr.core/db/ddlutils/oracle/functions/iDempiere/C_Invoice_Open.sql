@@ -82,14 +82,11 @@ BEGIN
 
 	SELECT POWER(1/10,v_Precision) INTO v_Min FROM DUAL;
 	
-	SELECT lbr_allocationstoinvoiceonly(p_C_Invoice_ID)
-	    INTO v_HasAllocationsToInvoiceOnly;
-	    
-	IF (v_HasAllocationsToInvoiceOnly) THEN
+	IF (lbr_allocationstoinvoiceonly(p_C_Invoice_ID)) THEN
 		--  iDempiere
 	    --	Calculate Allocated Amount
 		FOR a IN Cur_Alloc LOOP
-	        v_Temp := a.Amount + a.DisCountAmt + a.WriteOffAmt - ar.InterestAmt;
+	        v_Temp := a.Amount + a.DisCountAmt + a.WriteOffAmt - a.InterestAmt;
 			v_PaidAmt := v_PaidAmt
 	        -- Allocation
 				+ currencyConvert(v_Temp * v_MultiplierAP,

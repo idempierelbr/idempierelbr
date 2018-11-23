@@ -1,6 +1,11 @@
 SET SQLBLANKLINES ON
 SET DEFINE OFF
 
+-- 20/08/2015 16h8min14s BRT
+-- I forgot to set the DICTIONARY_ID_COMMENTS System Configurator
+INSERT INTO AD_Element (ColumnName,AD_Element_ID,Name,PrintName,AD_Element_UU,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType,Created) VALUES ('LBR_PenaltyAmt',800119,'Penalty Amount','Penalty Amount','fb8ea441-92a2-47e3-921d-600576ee6821',TO_DATE('2015-08-20 16:08:12','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'LBR',TO_DATE('2015-08-20 16:08:12','YYYY-MM-DD HH24:MI:SS'))
+;
+
 
 -- 20/08/2015 16h19min11s BRT
 INSERT INTO AD_Element (ColumnName,AD_Element_ID,Name,PrintName,AD_Element_UU,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType,Created) VALUES ('LBR_PenaltyCharge',800120,'Penalty Charge','Penalty Charge','aad5e090-87cc-4ad1-8a1b-0aeccdd4d097',TO_DATE('2015-08-20 16:19:10','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'LBR',TO_DATE('2015-08-20 16:19:10','YYYY-MM-DD HH24:MI:SS'))
@@ -99,7 +104,7 @@ INSERT INTO AD_Reference (AD_Reference_ID,Name,EntityType,AD_Reference_UU,IsOrde
 ;
 
 -- 20/08/2015 16h42min27s BRT
-INSERT INTO AD_Ref_List (AD_Ref_List_ID,AD_Reference_ID,AD_Ref_List_UU,Value,CreatedBy,UpdatedBy,Updated,IsActive,EntityType,AD_Client_ID,AD_Org_ID,Created,Name) VALUES (800027,800009,'49ec2dc1-18e2-4861-8ea5-65e7e4f50115','CPI',0,0,TO_DATE('2015-08-20 16:42:26','YYYY-MM-DD HH24:MI:SS'),'Y','C',0,0,TO_DATE('2015-08-20 16:42:26','YYYY-MM-DD HH24:MI:SS'),'Capital / Interest / Penalty')
+INSERT INTO AD_Ref_List (AD_Ref_List_ID,AD_Reference_ID,AD_Ref_List_UU,Value,CreatedBy,UpdatedBy,Updated,IsActive,EntityType,AD_Client_ID,AD_Org_ID,Created,Name) VALUES (800027,800009,'49ec2dc1-18e2-4861-8ea5-65e7e4f50115','CPI',0,0,TO_DATE('2015-08-20 16:42:26','YYYY-MM-DD HH24:MI:SS'),'Y','C',0,0,TO_DATE('2015-08-20 16:42:26','YYYY-MM-DD HH24:MI:SS'),'Capital / Penalty / Interest')
 ;
 
 -- 20/08/2015 16h43min9s BRT
@@ -123,7 +128,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- 20/08/2015 16h46min38s BRT
-ALTER TABLE LBR_Collection_Default ADD LBR_PaymentAllocationPriority VARCHAR2(3) DEFAULT 'CIP'
+ALTER TABLE LBR_Collection_Default ADD LBR_PaymentAllocationPriority NVARCHAR2(3) DEFAULT 'CIP' 
 ;
 
 -- 20/08/2015 16h47min2s BRT
@@ -202,7 +207,6 @@ UPDATE AD_Field SET SeqNo=250,Updated=TO_DATE('2015-08-20 16:51:22','YYYY-MM-DD 
 UPDATE AD_Field SET SeqNo=0,Updated=TO_DATE('2015-08-20 16:51:22','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Field_ID=1001760
 ;
 
-
 -- 25/08/2015 14h50min17s BRT
 -- I forgot to set the DICTIONARY_ID_COMMENTS System Configurator
 INSERT INTO AD_Element (ColumnName,AD_Element_ID,Name,PrintName,AD_Element_UU,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType,Created) VALUES ('LBR_BankCollectionCharge_ID',800123,'Bank Collection Charge','Bank Collection Charge','c6648868-5903-42b4-b311-f2bcebf27a4c',TO_DATE('2015-08-25 14:50:14','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'LBR',TO_DATE('2015-08-25 14:50:14','YYYY-MM-DD HH24:MI:SS'))
@@ -226,10 +230,6 @@ UPDATE AD_Process_Para SET ColumnName='LBR_BankCollectionCharge_ID', Name='Bank 
 
 -- 25/08/2015 14h50min55s BRT
 UPDATE AD_InfoColumn SET ColumnName='LBR_BankCollectionCharge_ID', Name='Bank Collection Charge', Description='Charge to allocate bank collection costs', Help='In this field you place the charge that will receive the bank collection costs' WHERE AD_Element_ID=800123 AND IsCentrallyMaintained='Y'
-;
-
--- 25/08/2015 14h50min55s BRT
-UPDATE AD_Field SET Name='Bank Collection Charge', Description='Charge to allocate bank collection costs', Help='In this field you place the charge that will receive the bank collection costs' WHERE AD_Column_ID IN (SELECT AD_Column_ID FROM AD_Column WHERE AD_Element_ID=800123) AND IsCentrallyMaintained='Y'
 ;
 
 -- 25/08/2015 14h56min52s BRT
@@ -296,6 +296,7 @@ INSERT INTO AD_Ref_List (AD_Ref_List_ID,AD_Reference_ID,AD_Ref_List_UU,Value,Cre
 INSERT INTO AD_Ref_List (AD_Ref_List_ID,AD_Reference_ID,AD_Ref_List_UU,Value,CreatedBy,UpdatedBy,Updated,IsActive,EntityType,AD_Client_ID,AD_Org_ID,Created,Name) VALUES (800031,800009,'11f4eccc-d873-4af6-a4e1-4c4f1c03c9e5','PCI',0,0,TO_DATE('2015-08-25 15:00:49','YYYY-MM-DD HH24:MI:SS'),'Y','LBR',0,0,TO_DATE('2015-08-25 15:00:49','YYYY-MM-DD HH24:MI:SS'),'Penalty / Capital / Interest')
 ;
 
+
 -- 26/08/2015 1h41min46s BRT
 INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMandatory,IsTranslated,IsIdentifier,SeqNo,IsParent,FieldLength,IsSelectionColumn,IsKey,IsAutocomplete,IsAllowLogging,AD_Column_UU,IsUpdateable,ColumnName,Description,Help,Name,IsAllowCopy,Updated,CreatedBy,IsActive,Created,UpdatedBy,IsToolbarButton,IsAlwaysUpdateable,IsEncrypted,IsSecure,AD_Element_ID,AD_Reference_ID,AD_Reference_Value_ID,AD_Table_ID,AD_Client_ID,AD_Org_ID,EntityType) VALUES (0,'N',0,800575,'N','N','N',0,'N',10,'N','N','N','Y','4c97f518-a38a-41fe-9ecd-d2f4b810a12a','Y','LBR_BankCollectionCharge_ID','Charge to allocate bank collection costs','In this field you place the charge that will receive the bank collection costs','Bank Collection Charge','Y',TO_DATE('2015-08-26 01:41:45','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2015-08-26 01:41:45','YYYY-MM-DD HH24:MI:SS'),0,'N','N','N','N',800123,18,200,297,0,0,'LBR')
 ;
@@ -316,7 +317,6 @@ ALTER TABLE C_BankAccount ADD CONSTRAINT LBRBankCollectionCharge_CBankA FOREIGN 
 -- I forgot to set the DICTIONARY_ID_COMMENTS System Configurator
 INSERT INTO AD_Element (ColumnName,AD_Element_ID,Help,Name,PrintName,AD_Element_UU,Updated,AD_Org_ID,CreatedBy,UpdatedBy,IsActive,AD_Client_ID,EntityType,Created) VALUES ('LBR_BA_BPartner_ID',800124,'This field defines the Business Partner associated with a Bank Account.','Bank Account Business Partner','Bank Account Business Partner','b9f56524-46bc-4a0c-b69d-b742062669b7',TO_DATE('2015-08-27 11:21:17','YYYY-MM-DD HH24:MI:SS'),0,0,0,'Y',0,'LBR',TO_DATE('2015-08-27 11:21:17','YYYY-MM-DD HH24:MI:SS'))
 ;
-
 
 -- Aug 27, 2015 12:08:55 PM BRT
 -- I forgot to set the DICTIONARY_ID_COMMENTS System Configurator
@@ -378,6 +378,7 @@ UPDATE AD_Field SET DisplayLogic='@LBR_AllowBankCollection@=Y', MandatoryLogic='
 -- Aug 27, 2015 12:12:16 PM BRT
 UPDATE AD_Field SET DisplayLogic='@LBR_AllowBankCollection@=Y', MandatoryLogic='@LBR_AllowBankCollection@=Y',Updated=TO_DATE('2015-08-27 12:12:16','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Field_ID=800134
 ;
+
 
 SELECT lbr_register_migration_script('201508271213.sql') FROM dual
 ;

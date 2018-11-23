@@ -1,4 +1,4 @@
-﻿DROP VIEW rv_payment;
+DROP VIEW rv_payment;
 
 CREATE OR REPLACE VIEW rv_payment AS 
 SELECT c_payment.c_payment_id,

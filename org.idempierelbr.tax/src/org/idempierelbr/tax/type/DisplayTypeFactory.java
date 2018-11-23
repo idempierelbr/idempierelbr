@@ -4,12 +4,13 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 
 import org.adempiere.base.IDisplayTypeFactory;
+import org.compiere.util.DB;
 import org.compiere.util.Language;
 import org.idempierelbr.tax.model.MLBRTax;
 
 public class DisplayTypeFactory implements IDisplayTypeFactory {
-	/** Display Type 1000010	Brazilian Taxes	*/
-	public static final int BRAZILIAN_TAXES     = 1000010;
+	/** Display Type 3c69aac5-12e9-4577-9735-2c8c41e3cab6	Brazilian Taxes	*/
+	public static final int BRAZILIAN_TAXES     = DB.getSQLValue(null, "SELECT AD_Reference_ID FROM AD_Reference WHERE AD_Reference_UU='3c69aac5-12e9-4577-9735-2c8c41e3cab6'");
 
 	@Override
 	public boolean isID(int displayType) {

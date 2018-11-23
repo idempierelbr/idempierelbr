@@ -63,8 +63,8 @@ INSERT INTO AD_IndexColumn (AD_Client_ID,AD_Org_ID,AD_IndexColumn_ID,AD_IndexCol
 ;
 
 -- 19/01/2018 8h53min6s BRST
-CREATE INDEX lbr_docline_details_invoiceline ON LBR_DocLine_Details (C_InvoiceLine_ID)
-;
+-- CREATE INDEX lbr_docline_details_invoiceline ON LBR_DocLine_Details (C_InvoiceLine_ID)
+-- ;
 
 -- 19/01/2018 8h53min27s BRST
 INSERT INTO AD_TableIndex (AD_Client_ID,AD_Org_ID,AD_TableIndex_ID,AD_TableIndex_UU,Created,CreatedBy,EntityType,IsActive,Name,Updated,UpdatedBy,AD_Table_ID,IsCreateConstraint,IsUnique,Processing,TableIndexDrop,IsKey) VALUES (0,0,800078,'ce4cc93d-801d-4756-89ab-b07f0d3593a2',TO_DATE('2018-01-19 08:53:26','YYYY-MM-DD HH24:MI:SS'),0,'LBR','Y','lbr_docline_details_nfline',TO_DATE('2018-01-19 08:53:26','YYYY-MM-DD HH24:MI:SS'),0,1000026,'N','N','N','N','N')
@@ -111,8 +111,8 @@ INSERT INTO AD_IndexColumn (AD_Client_ID,AD_Org_ID,AD_IndexColumn_ID,AD_IndexCol
 ;
 
 -- 19/01/2018 8h57min21s BRST
-CREATE INDEX lbr_bankaccount_carteira_convenio ON LBR_BankAccount_Carteira (LBR_BankAccount_Convenio_ID)
-;
+-- CREATE INDEX lbr_bankaccount_carteira_convenio ON LBR_BankAccount_Carteira (LBR_BankAccount_Convenio_ID)
+-- ;
 
 -- 19/01/2018 8h58min8s BRST
 INSERT INTO AD_TableIndex (AD_Client_ID,AD_Org_ID,AD_TableIndex_ID,AD_TableIndex_UU,Created,CreatedBy,EntityType,IsActive,Name,Updated,UpdatedBy,AD_Table_ID,IsCreateConstraint,IsUnique,Processing,TableIndexDrop,IsKey) VALUES (0,0,800082,'30a7ed2d-f513-4b69-9946-0f1902069106',TO_DATE('2018-01-19 08:58:08','YYYY-MM-DD HH24:MI:SS'),0,'LBR','Y','lbr_bankaccount_convenio_acct',TO_DATE('2018-01-19 08:58:08','YYYY-MM-DD HH24:MI:SS'),0,1000050,'N','N','N','N','N')
@@ -875,8 +875,8 @@ INSERT INTO AD_IndexColumn (AD_Client_ID,AD_Org_ID,AD_IndexColumn_ID,AD_IndexCol
 ;
 
 -- 19/01/2018 10h8min45s BRST
-CREATE INDEX lbr_taxconfig_bpartner_bpartner ON LBR_TaxConfig_BPartner (C_BPartner_ID)
-;
+-- CREATE INDEX lbr_taxconfig_bpartner_bpartner ON LBR_TaxConfig_BPartner (C_BPartner_ID)
+-- ;
 
 -- 19/01/2018 10h9min42s BRST
 INSERT INTO AD_TableIndex (AD_Client_ID,AD_Org_ID,AD_TableIndex_ID,AD_TableIndex_UU,Created,CreatedBy,EntityType,IsActive,Name,Updated,UpdatedBy,AD_Table_ID,IsCreateConstraint,IsUnique,Processing,TableIndexDrop,IsKey) VALUES (0,0,800146,'7e19c9b8-7268-4953-bb7d-942e33da4068',TO_DATE('2018-01-19 10:09:41','YYYY-MM-DD HH24:MI:SS'),0,'LBR','Y','lbr_taxconfig_bpgroup_tax',TO_DATE('2018-01-19 10:09:41','YYYY-MM-DD HH24:MI:SS'),0,1000020,'N','N','N','N','N')

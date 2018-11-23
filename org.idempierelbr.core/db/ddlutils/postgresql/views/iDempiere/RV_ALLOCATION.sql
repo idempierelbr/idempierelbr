@@ -1,4 +1,4 @@
-﻿DROP VIEW rv_allocation;
+DROP VIEW rv_allocation;
 
 CREATE OR REPLACE VIEW rv_allocation AS 
 SELECT h.c_allocationhdr_id,

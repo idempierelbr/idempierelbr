@@ -109,7 +109,7 @@ UPDATE AD_Column SET ColumnName='LBR_BoletoGenerateAndPrint', Name='Generate and
 ;
 
 -- Oct 8, 2014 10:58:36 PM BRT
-UPDATE AD_Process_Para SET ColumnName='LBR_BoletoGenerateAndPrint', Name='Generate and Print Boletos', Description='Generate and Print Boletos', Help='This button print the collection slips for the invoice, it generates the collection documents if needed,  based on the pay schedule of the invoice.', AD_Element_ID=1000392 WHERE UPPER(ColumnName)='LBR_GENERATEANDPRINTBOLETO' AND IsCentrallyMaintained='Y' AND AD_Element_ID IS NULL
+UPDATE AD_Process_Para SET ColumnName='LBR_BoletoGenerateAndPrint', Name='Generate and Print Boletos', Description='Generate and Print Boletos', Help='This button print the collection slips for the invoice, it generates the collection documents if needed,  based on the pay schedule of the invoice.', AD_Element_ID=1000392 WHERE UPPER(ColumnName)='LBR_BOLETOGENERATEANDPRINT' AND IsCentrallyMaintained='Y' AND AD_Element_ID IS NULL
 ;
 
 -- Oct 8, 2014 10:58:36 PM BRT
@@ -133,11 +133,11 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Oct 8, 2014 11:00:44 PM BRT
-ALTER TABLE LBR_Boleto ADD LBR_Fmt_NumberInBank VARCHAR2(30) DEFAULT NULL 
+ALTER TABLE LBR_Boleto ADD LBR_Fmt_NumberInBank NVARCHAR2(30) DEFAULT NULL 
 ;
 
 -- Oct 8, 2014 11:00:55 PM BRT
-ALTER TABLE LBR_Boleto ADD LBR_Fmt_AgencyClient VARCHAR2(30) DEFAULT NULL 
+ALTER TABLE LBR_Boleto ADD LBR_Fmt_AgencyClient NVARCHAR2(30) DEFAULT NULL 
 ;
 
 -- Oct 8, 2014 11:01:28 PM BRT
@@ -145,7 +145,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Oct 8, 2014 11:01:33 PM BRT
-ALTER TABLE LBR_Boleto ADD LBR_Fmt_Billfold VARCHAR2(15) DEFAULT NULL 
+ALTER TABLE LBR_Boleto ADD LBR_Fmt_Billfold NVARCHAR2(15) DEFAULT NULL 
 ;
 
 -- Oct 8, 2014 11:01:53 PM BRT
@@ -157,7 +157,7 @@ UPDATE AD_Column SET FieldLength=20,Updated=TO_DATE('2014-10-08 23:02:05','YYYY-
 ;
 
 -- Oct 8, 2014 11:02:11 PM BRT
-ALTER TABLE LBR_Boleto ADD LBR_Fmt_Doctype VARCHAR2(20) DEFAULT NULL 
+ALTER TABLE LBR_Boleto ADD LBR_Fmt_Doctype NVARCHAR2(20) DEFAULT NULL 
 ;
 
 -- Oct 8, 2014 11:03:09 PM BRT
@@ -165,7 +165,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Oct 8, 2014 11:03:14 PM BRT
-ALTER TABLE LBR_Boleto ADD LBR_BankUse VARCHAR2(15) DEFAULT NULL 
+ALTER TABLE LBR_Boleto ADD LBR_BankUse NVARCHAR2(15) DEFAULT NULL 
 ;
 
 -- Oct 8, 2014 11:03:34 PM BRT
@@ -173,7 +173,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Oct 8, 2014 11:03:40 PM BRT
-ALTER TABLE LBR_Boleto ADD LBR_Barcode VARCHAR2(44) DEFAULT NULL 
+ALTER TABLE LBR_Boleto ADD LBR_Barcode NVARCHAR2(44) DEFAULT NULL 
 ;
 
 -- Oct 8, 2014 11:04:03 PM BRT
@@ -181,7 +181,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Oct 8, 2014 11:04:20 PM BRT
-ALTER TABLE LBR_Boleto ADD LBR_TypeableLine VARCHAR2(54) DEFAULT NULL 
+ALTER TABLE LBR_Boleto ADD LBR_TypeableLine NVARCHAR2(54) DEFAULT NULL 
 ;
 
 -- Oct 8, 2014 11:05:50 PM BRT
@@ -205,7 +205,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Oct 8, 2014 11:06:56 PM BRT
-ALTER TABLE C_Bank ADD LBR_RoutingCheckDigit VARCHAR2(1) DEFAULT NULL 
+ALTER TABLE C_Bank ADD LBR_RoutingCheckDigit NVARCHAR2(1) DEFAULT NULL 
 ;
 
 -- Oct 8, 2014 11:07:27 PM BRT

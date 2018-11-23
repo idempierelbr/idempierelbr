@@ -182,7 +182,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 27, 2014 5:47:15 PM BRST
-ALTER TABLE LBR_TaxFormula ADD LBR_TaxFormula_UU VARCHAR2(36) DEFAULT NULL 
+ALTER TABLE LBR_TaxFormula ADD LBR_TaxFormula_UU NVARCHAR2(36) DEFAULT NULL 
 ;
 
 -- Jan 27, 2014 5:47:15 PM BRST
@@ -214,7 +214,7 @@ INSERT INTO AD_Column (SeqNoSelection,IsSyncDatabase,Version,AD_Column_ID,IsMand
 ;
 
 -- Jan 27, 2014 5:54:46 PM BRST
-ALTER TABLE LBR_TaxFormula ADD LBR_TransactionType VARCHAR2(3) NOT NULL
+ALTER TABLE LBR_TaxFormula ADD LBR_TransactionType NVARCHAR2(3) NOT NULL
 ;
 
 -- Jan 27, 2014 5:55:10 PM BRST
