@@ -204,7 +204,7 @@ public class MLBRDigitalCertificate extends X_LBR_DigitalCertificate
 			certTypeOrg = "PKCS12";
 			File certFileOrg = NFeUtil.getAttachmentEntryFile(dcOrg.getAttachment(true).getEntry(0));
 			//
-			Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
+			Security.addProvider(Security.getProvider("SunJSSE"));
 			System.setProperty("javax.net.ssl.keyStore", certFileOrg.toString());
 		}
 		else if (dcOrg.getLBR_CertType().equals(MLBRDigitalCertificate.LBR_CERTTYPE_JavaKeyStore))

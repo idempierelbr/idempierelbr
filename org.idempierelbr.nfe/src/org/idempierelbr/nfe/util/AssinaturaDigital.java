@@ -25,6 +25,7 @@ import java.security.PublicKey;
 import java.security.Signature;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
 
@@ -57,8 +58,6 @@ import org.idempierelbr.nfe.model.MLBRDigitalCertificate;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
-
-import sun.misc.BASE64Encoder;
 
 /**
  * 	Assina o arquivo XML
@@ -273,7 +272,7 @@ public class AssinaturaDigital {
 		//
 		try {
 			byte[] encoded = signASCIIb(ascii, AD_Org_ID);
-			return new String(new BASE64Encoder().encode(encoded).getBytes(), "UTF-8");
+			return new String(Base64.getEncoder().encodeToString(encoded).getBytes(), "UTF-8");
 		} catch (Exception ex) {
 			throw new AdempiereException("Error siging RPS");
 		}

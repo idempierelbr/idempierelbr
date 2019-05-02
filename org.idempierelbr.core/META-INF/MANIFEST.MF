@@ -4,7 +4,16 @@ Bundle-Name: iDempiereLBR Core
 Bundle-SymbolicName: org.idempierelbr.core
 Bundle-Version: 5.1.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: org.adempiere.base;bundle-version="5.1.0"
+Require-Bundle: org.adempiere.base;bundle-version="5.1.0",
+ zcommon;bundle-version="0.0.0",
+ zel;bundle-version="0.0.0",
+ zhtml;bundle-version="0.0.0",
+ zk;bundle-version="0.0.0",
+ zkbind;bundle-version="0.0.0",
+ zkplus;bundle-version="0.0.0",
+ zul;bundle-version="0.0.0",
+ zweb;bundle-version="0.0.0",
+ zkwebfragment
 Service-Component: OSGI-INF/CalloutFactory.xml,OSGI-INF/ModelFactory.xml,OSGI-INF/EditorFactory.xml,
  OSGI-INF/EventHandler.xml
 Bundle-ClassPath: .,
@@ -20,13 +29,7 @@ Import-Package: org.adempiere.webui,
  org.adempiere.webui.window,
  org.joda.time,
  org.joda.time.format,
- org.osgi.service.event;version="1.3.0",
- org.zkoss.xel.zel,
- org.zkoss.zel,
- org.zkoss.zk.ui,
- org.zkoss.zk.ui.event,
- org.zkoss.zul,
- org.zkoss.zul.impl
+ org.osgi.service.event;version="1.3.0"
 Export-Package: org.idempierelbr.core.model,
  org.idempierelbr.core.util,
  org.idempierelbr.core.wrapper

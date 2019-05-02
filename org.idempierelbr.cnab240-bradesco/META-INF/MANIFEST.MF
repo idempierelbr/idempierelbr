@@ -7,15 +7,11 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.idempierelbr.cnab240-febraban;bundle-version="5.1.0",
  org.adempiere.base;bundle-version="5.1.0",
  org.idempierelbr.open-items;bundle-version="5.1.0",
- org.idempierelbr.core;bundle-version="5.1.0"
+ org.idempierelbr.core;bundle-version="5.1.0",
+ zcommon;bundle-version="8.6.0",
+ zul;bundle-version="8.6.0"
 Service-Component: OSGI-INF/BankCollectionFactory.xml
 Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.idempierelbr.cnab240.annotated,
- org.osgi.service.event,
- org.zkoss.xel.zel,
- org.zkoss.zel,
- org.zkoss.zk.ui,
- org.zkoss.zk.ui.event,
- org.zkoss.zul,
- org.zkoss.zul.impl
+ org.osgi.service.event
 Bundle-ActivationPolicy: lazy

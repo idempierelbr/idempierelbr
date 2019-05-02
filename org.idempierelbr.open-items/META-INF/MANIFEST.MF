@@ -10,7 +10,16 @@ Require-Bundle: org.adempiere.base;bundle-version="5.1.0",
  org.adempiere.report.jasper;bundle-version="5.1.0",
  org.idempierelbr.cnab240;bundle-version="5.1.0",
  org.idempierelbr.nfe;bundle-version="5.1.0",
- net.sf.jasperreports.engine;bundle-version="6.3.1"
+ net.sf.jasperreports.engine;bundle-version="6.3.1",
+ zcommon;bundle-version="0.0.0",
+ zel;bundle-version="0.0.0",
+ zhtml;bundle-version="0.0.0",
+ zk;bundle-version="0.0.0",
+ zkbind;bundle-version="0.0.0",
+ zkplus;bundle-version="0.0.0",
+ zul;bundle-version="0.0.0",
+ zweb;bundle-version="0.0.0",
+ zkwebfragment
 Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/CalloutFactory.xml,OSGI-INF/DocFactory.xml,OSGI-INF/FormFactory.xml,
  OSGI-INF/ProcessFactory.xml
 Import-Package: org.adempiere.webui.apps.form,
@@ -21,13 +30,7 @@ Import-Package: org.adempiere.webui.apps.form,
  org.adempiere.webui.panel,
  org.adempiere.webui.util,
  org.apache.commons.io;version="2.2.0",
- org.osgi.service.event,
- org.zkoss.xel.zel,
- org.zkoss.zel,
- org.zkoss.zk.ui,
- org.zkoss.zk.ui.event,
- org.zkoss.zul,
- org.zkoss.zul.impl
+ org.osgi.service.event
 Bundle-ClassPath: .,
  lib/commons-lang-2.6.jar
 Export-Package: org.idempierelbr.openitems.model,
