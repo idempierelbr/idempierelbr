@@ -2,9 +2,8 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR - NFSe
 Bundle-SymbolicName: org.idempierelbr.nfs
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 6.2.0.qualifier
 Bundle-Vendor: iDempiereLBR
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ClassPath: .
 Require-Bundle: org.adempiere.base,
  org.idempierelbr.core,

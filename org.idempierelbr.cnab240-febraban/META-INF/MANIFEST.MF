@@ -2,8 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Febraban
 Bundle-SymbolicName: org.idempierelbr.cnab240-febraban
-Bundle-Version: 5.1.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Version: 6.2.0.qualifier
 Bundle-ClassPath: lib/commons-lang-2.6.jar,
  .
 Export-Package: org.idempierelbr.cnab240febraban,
@@ -24,10 +23,10 @@ Export-Package: org.idempierelbr.cnab240febraban,
  org.idempierelbr.cnab240febraban.process,
  org.idempierelbr.cnab240febraban.util,
  org.idempierelbr.cnab240febraban.validador
-Require-Bundle: org.adempiere.base;bundle-version="5.1.0",
- org.idempierelbr.core;bundle-version="5.1.0",
- org.idempierelbr.open-items;bundle-version="5.1.0",
- zcommon;bundle-version="8.6.0",
- zul;bundle-version="8.6.0"
+Require-Bundle: org.adempiere.base;bundle-version="6.2.0",
+ org.idempierelbr.core;bundle-version="6.2.0",
+ org.idempierelbr.open-items;bundle-version="6.2.0",
+ zcommon,
+ zul
 Import-Package: org.idempierelbr.cnab240.annotated
 Bundle-ActivationPolicy: lazy

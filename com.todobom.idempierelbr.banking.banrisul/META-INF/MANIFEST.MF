@@ -2,9 +2,8 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Banrisul
 Bundle-SymbolicName: com.todobom.idempierelbr.banking.banrisul
-Bundle-Version: 5.1.0.qualifier
+Bundle-Version: 6.2.0.qualifier
 Bundle-Vendor: TODOBOM
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.compiere.model,
  org.compiere.process,
@@ -16,3 +15,4 @@ Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.idempierelbr.openitems.util
 Service-Component: OSGI-INF/BankCollectionFactory.xml
 Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+    <feature url="features/org.idempierelbr-feature6.2.0.qualifier.jar" id="org.idempierelbr.feature" version="6.2.0.qualifier">
+	    <category name="org.idempierelbr"/>
+    </feature>
+</site>

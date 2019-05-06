@@ -1,0 +1,34 @@
+<!-- build with
+mvn verify -Didempiere.target=org.idempierelbr.p2.targetplatform
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.idempiere</groupId>
+	<version>6.2.0-SNAPSHOT</version>
+	<artifactId>org.idempierelbr</artifactId>
+	<packaging>pom</packaging>
+
+	<modules>
+                <module>com.todobom.idempierelbr.banking.bancodobrasil</module>
+		<module>com.todobom.idempierelbr.banking.banrisul</module>
+		<module>com.todobom.idempierelbr.banking.bradesco</module>
+		<module>com.todobom.idempierelbr.banking.caixa</module>
+		<module>com.todobom.idempierelbr.banking.itau</module>
+		<module>com.todobom.idempierelbr.banking.santander</module>
+		<module>com.todobom.idempierelbr.banking.sicoob</module>
+		<module>org.idempierelbr.cnab240</module>
+		<module>org.idempierelbr.cnab240-bradesco</module>
+		<module>org.idempierelbr.cnab240-febraban</module>
+		<module>org.idempierelbr.core</module>
+		<module>org.idempierelbr.jasperfonts</module>
+		<module>org.idempierelbr.nfe</module>
+		<module>org.idempierelbr.nfs</module>
+		<module>org.idempierelbr.open-items</module>
+		<module>org.idempierelbr.sped</module>
+		<module>org.idempierelbr.tax</module>
+		<module>org.idempierelbr-feature</module>
+		<module>org.idempierelbr.p2.targetplatform</module>
+		<module>org.idempierelbr.p2.site</module>
+	</modules>
+</project>

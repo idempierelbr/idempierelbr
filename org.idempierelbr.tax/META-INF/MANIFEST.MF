@@ -2,19 +2,18 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Tax
 Bundle-SymbolicName: org.idempierelbr.tax
-Bundle-Version: 5.1.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: org.adempiere.base;bundle-version="5.1.0",
- org.idempierelbr.core;bundle-version="5.1.0",
- org.adempiere.ui.zk;bundle-version="5.1.0",
- zcommon;bundle-version="0.0.0",
- zel;bundle-version="0.0.0",
- zhtml;bundle-version="0.0.0",
- zk;bundle-version="0.0.0",
- zkbind;bundle-version="0.0.0",
- zkplus;bundle-version="0.0.0",
- zul;bundle-version="0.0.0",
- zweb;bundle-version="0.0.0",
+Bundle-Version: 6.2.0.qualifier
+Require-Bundle: org.adempiere.base;bundle-version="6.2.0",
+ org.idempierelbr.core;bundle-version="6.2.0",
+ org.adempiere.ui.zk;bundle-version="6.2.0",
+ zcommon,
+ zel,
+ zhtml,
+ zk,
+ zkbind,
+ zkplus,
+ zul,
+ zweb,
  zkwebfragment
 Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/DisplayTypeFactory.xml,OSGI-INF/EditorFactory.xml,OSGI-INF/LookupFactory.xml,OSGI-INF/CalloutFactory.xml,OSGI-INF/TaxProviderFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/DocFactory.xml,
  OSGI-INF/ProcessFactory.xml
@@ -29,3 +28,4 @@ Export-Package: org.idempierelbr.tax.model,
  org.idempierelbr.tax.provider,
  org.idempierelbr.tax.wrapper
 Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
