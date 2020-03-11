@@ -2,10 +2,10 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR NF-e
 Bundle-SymbolicName: org.idempierelbr.nfe
-Bundle-Version: 6.2.0.qualifier
-Require-Bundle: org.adempiere.base;bundle-version="6.2.0",
- org.idempierelbr.core;bundle-version="6.2.0",
- org.idempierelbr.tax;bundle-version="6.2.0",
+Bundle-Version: 7.1.0.qualifier
+Require-Bundle: org.adempiere.base;bundle-version="7.1.0",
+ org.idempierelbr.core;bundle-version="7.1.0",
+ org.idempierelbr.tax;bundle-version="7.1.0",
  net.sf.jasperreports.engine;bundle-version="6.3.1",
  zcommon,
  zel,

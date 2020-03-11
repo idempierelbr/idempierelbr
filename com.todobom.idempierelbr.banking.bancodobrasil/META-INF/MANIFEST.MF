@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Plugin Banco do Brasil
 Bundle-SymbolicName: com.todobom.idempierelbr.banking.bancodobrasil
-Bundle-Version: 6.2.0.qualifier
+Bundle-Version: 7.1.0.qualifier
 Bundle-Vendor: todobom.com
 Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.adempiere.exceptions,

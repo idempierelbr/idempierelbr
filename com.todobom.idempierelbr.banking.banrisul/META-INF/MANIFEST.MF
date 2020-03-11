@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Banrisul
 Bundle-SymbolicName: com.todobom.idempierelbr.banking.banrisul
-Bundle-Version: 6.2.0.qualifier
+Bundle-Version: 7.1.0.qualifier
 Bundle-Vendor: TODOBOM
 Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.compiere.model,
