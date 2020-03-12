@@ -4,8 +4,8 @@
 	<parent>
 		<groupId>org.idempiere</groupId>
 		<artifactId>org.idempiere.parent</artifactId>
-		<version>6.2.0-SNAPSHOT</version>
-		<relativePath>../../iDempiere6.2/org.idempiere.parent/pom.xml</relativePath>
+		<version>7.1.0-SNAPSHOT</version>
+		<relativePath>../../iDempiere7.1/org.idempiere.parent/pom.xml</relativePath>
 	</parent>
 	<artifactId>org.idempierelbr.p2.site</artifactId>
 	<packaging>eclipse-repository</packaging>

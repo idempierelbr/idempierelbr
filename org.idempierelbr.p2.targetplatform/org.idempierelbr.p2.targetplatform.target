@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?><target name="idempiere-6.2" sequenceNumber="91">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?><target name="idempiere-7.1" sequenceNumber="91">
 <locations>
 	<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 		<unit id="org.adempiere.base.feature.feature.group"/>
@@ -28,10 +28,7 @@
 		<unit id="org.idempiere.fitnesse.feature.feature.group"/>
 		<unit id="org.idempiere.hazelcast.service.feature.feature.group"/>
 		<unit id="org.idempiere.zk.feature.feature.group"/>
-		<repository location="file:///var/lib/jenkins/workspace/iDempiere6.2/org.idempiere.p2/target/repository"/>
-	</location>
-	<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-		<repository location="file:///var/lib/jenkins/workspace/iDempiere6.2/org.idempiere.p2/target/repository"/>
+		<repository location="file:///home/idempiere/sources/iDempiere7.1/org.idempiere.p2/target/repository"/>
 	</location>
 </locations>
 <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11"/>

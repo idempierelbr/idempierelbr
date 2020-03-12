@@ -2,13 +2,13 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Open Items
 Bundle-SymbolicName: org.idempierelbr.open-items
-Bundle-Version: 6.2.0.qualifier
-Require-Bundle: org.adempiere.base;bundle-version="6.2.0",
- org.idempierelbr.core;bundle-version="6.2.0",
- org.adempiere.ui;bundle-version="6.2.0",
- org.adempiere.report.jasper;bundle-version="6.2.0",
- org.idempierelbr.cnab240;bundle-version="6.2.0",
- org.idempierelbr.nfe;bundle-version="6.2.0",
+Bundle-Version: 7.1.0.qualifier
+Require-Bundle: org.adempiere.base;bundle-version="7.1.0",
+ org.idempierelbr.core;bundle-version="7.1.0",
+ org.adempiere.ui;bundle-version="7.1.0",
+ org.adempiere.report.jasper;bundle-version="7.1.0",
+ org.idempierelbr.cnab240;bundle-version="7.1.0",
+ org.idempierelbr.nfe;bundle-version="7.1.0",
  net.sf.jasperreports.engine;bundle-version="6.3.1",
  zcommon,
  zel,

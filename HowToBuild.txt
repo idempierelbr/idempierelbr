@@ -39,3 +39,16 @@ mvn \
   -DupdateReleaseInfo=true \
   -Dfile=/tmp/DSGEBrazilUtils.jar \
   -Didempiere.target=org.idempierelbr.p2.targetplatform
+  
+ # Install dom4j.jar copied in /tmp folder
+mvn \
+  deploy:deploy-file \
+  -DgroupId=local.dom4j \
+  -DartifactId=dom4j \
+  -Dversion=2.1.1 \
+  -Durl=file:./local-maven-repo/ \
+  -Dpackaging=jar \
+  -DrepositoryId=local-maven-repo \
+  -DupdateReleaseInfo=true \
+  -Dfile=/tmp/dom4j-2.1.1.jar \
+  -Didempiere.target=org.idempierelbr.p2.targetplatform
