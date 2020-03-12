@@ -20,7 +20,6 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-import org.dom4j.io.aelfred2.SAXDriver;
 
 /**
  * Ferramenta de busca de CEP, veja o método {@link WebServiceCep#searchCep(String)} para
@@ -189,7 +188,6 @@ public final class WebServiceCep {
 			throws DocumentException, MalformedURLException {
 		URL url = new URL(String.format(URL_STRING, cep));
 		SAXReader reader = new SAXReader();
-		reader.setXMLReader(new SAXDriver());
         Document document = reader.read(url);
         return document;
 	}
