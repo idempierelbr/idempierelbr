@@ -33,5 +33,23 @@ Este projeto é uma extensão do [iDempiere Business Suite ERP/CRM/SCM](https://
 
 ![Impostos](https://raw.githubusercontent.com/idempierelbr/idempierelbr/master/org.idempierelbr.core/data/screenshots/taxes.png)
 
+## Instalação
+O projeto LBR precisa fazer referências ao POM e ao repositório P2 do iDempiere. Para isso, é necessário que os paths estejam corretamente configurados. Atualmente, as configurações do LBR consideram a seguinte estrutura de diretórios em linux:
+
+`/home/idempiere/sources/iDempiere7.1`
+
+`/home/idempiere/sources/lbr`
+
+O primeiro diretório é um clone do iDempiere, com todas as dependências resolvidas. Você pode seguir todas as etapas em [https://wiki.idempiere.org/en/Installing_iDempiere](https://wiki.idempiere.org/en/Installing_iDempiere), na seção 2 (Installing iDempiere for Development). Após ter o iDempiere sendo executado corretamente no eclipse, você pode iniciar a instalação do LBR.
+
+O segundo diretório é um clone do LBR, no branch master. Se a sua estrutura de diretórios for diferente do especificado acima, é preciso ajustar os paths nos arquivos pom.xml de todos os projetos, bem como no arquivo org.idempierelbr.p2.targetplatform/org.idempierelbr.p2.targetplatform.target.
+
+Você pode então fazer build do projeto com o comando:
+ 
+`mvn verify -Didempiere.target=org.idempierelbr.p2.targetplatform`
+
+Ao finalizar, você já pode importar os projetos do LBR no eclipse.
+
+
 ## Agradecimentos
 Devemos reconhecer o esforço de todos os colaboradores deste projeto e dos antecessores, especialmente o time ADempiereLBR. Sabemos das longas horas investidas para adaptar este incrível ERP à realidade brasileira. Cabe mencionar que em todas as classes trazidas ao projeto iDempiereLBR, mantivemos a referência dos autores das mesmas.
