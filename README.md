@@ -40,7 +40,11 @@ O projeto LBR precisa fazer referências ao POM e ao repositório P2 do iDempier
 
 `/home/idempiere/sources/lbr`
 
-O primeiro diretório é um clone do iDempiere, no branch iDempiere-7.1, com todas as dependências resolvidas. Você pode seguir todas as etapas em [https://wiki.idempiere.org/en/Installing_iDempiere](https://wiki.idempiere.org/en/Installing_iDempiere), na seção 2 (Installing iDempiere for Development). Após ter o iDempiere sendo executado corretamente no eclipse, você pode iniciar a instalação do LBR.
+O primeiro diretório é um clone do iDempiere, no branch iDempiere-7.1, com todas as dependências resolvidas. Você pode seguir todas as etapas em [https://wiki.idempiere.org/en/Installing_iDempiere](https://wiki.idempiere.org/en/Installing_iDempiere), na seção 2 (Installing iDempiere for Development), com uma pequena observação na etapa [Importing DB Seed Manually](https://wiki.idempiere.org/en/Importing_DB_Seed_Manually): 
+
+Ao invés de utilizar o comando `jar xvf $IDEMPIERE_REPOSITORY/org.adempiere.server-feature/data/seed/Adempiere_pg.jar`, utilize o jar disponibilizado pelo LBR: `jar xvf $LBR_REPOSITORY/org.idempierelbr.core/data/seed/iDempiere_pg.jar`. Este último contém todos os scripts do LBR aplicados ao seed original do iDempiere.
+
+Após ter o iDempiere sendo executado corretamente no eclipse, você pode iniciar a instalação do LBR.
 
 O segundo diretório é um clone do LBR, no branch master. Se a sua estrutura de diretórios for diferente do especificado acima, é preciso ajustar os paths nos arquivos pom.xml de todos os projetos, bem como no arquivo org.idempierelbr.p2.targetplatform/org.idempierelbr.p2.targetplatform.target.
 
