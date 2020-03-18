@@ -1,3 +1,5 @@
+-- Postgres doesn't allow repeated constraint name anymore, so migration scripts may fail when applied in newer versions.
+-- The below queries correct the errors generated in previous scripts.
 -- Nov 9, 2018 11:56:01 AM BRST
 UPDATE AD_Column SET FKConstraintName='LBRLegalMessageLBRTaxConfigBPG',Updated=TO_TIMESTAMP('2018-11-09 11:56:01','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=100 WHERE AD_Column_ID=1000291
 ;
