@@ -71,7 +71,7 @@ public abstract class NFeUtil
 	public static final String VERSAO_EVENTO	= "1.00";
 	public static final String VERSAO_CCE		= "1.00";
 	public static final String VERSAO_CAN		= "1.00";
-	public static final String VERSAO_QR_CODE 	= "100";
+	public static final String VERSAO_QR_CODE 	= "2";
 	
 	/*
 	 * Formas de pagamento para a tag tpag NF-e 4.00
@@ -90,7 +90,10 @@ public abstract class NFeUtil
 	public static final String NFCe_TPAG_OUTROS				= "99";
 	
 	/** XML					*/
-	public static final long XML_SIZE = 500;
+	public static final long XML_SIZE = 500;	
+	
+	private static String P_CSC = "";
+	private static String P_CSC_NAME = "";
 	
 	/** Reference NFeStatus */
 	//public static final int REFERENCE_ID_LBR_NFeStatus = 1000039;
@@ -508,8 +511,10 @@ public abstract class NFeUtil
 		String digest = digestValue;
 		String tokenID = csc.getValue();
 		String token = csc.getName();
-		Timestamp dhEmi = nf.getDateDoc();
-
+		Timestamp dhEmi = nf.getDateDoc();		
+		
+		P_CSC =  csc.getValue();
+		P_CSC_NAME = csc.getName();
 		// generate
 		return generateQRCodeNFCeURL(chNFe, nVersao, tpAmb, cDest, dhEmi, vNF, vICMS, digest, tokenID, token, url);
 	}
@@ -552,7 +557,7 @@ public abstract class NFeUtil
 		//
 		Map<String, String> parametros = new LinkedHashMap<String, String>();
 		parametros.put("chNFe", chNFe);
-		parametros.put("nVersao", nVersao);
+		parametros.put("nVersao","2");
 		parametros.put("tpAmb", tpAmb);
 		if (!TextUtil.toNumeric(cDest).isEmpty())
 			parametros.put("cDest", TextUtil.toNumeric(cDest));
@@ -567,8 +572,15 @@ public abstract class NFeUtil
 		String hashQRCode = TextUtil.byteArrayToHexString(TextUtil.generateSHA1(hashQRCodeStr));
 
 		parametros.put("cIdToken", TextUtil.lPad(tokenID, 6));
-		parametros.put("cHashQRCode", hashQRCode);
-		return url + "?" + NFeUtil.generateQRCodeParamsURL(parametros);
+		parametros.put("cHashQRCode", hashQRCode);		
+		
+		P_CSC = zerosEsquerda(P_CSC);
+		String hash_in =  chNFe + "|2|2|" + P_CSC + P_CSC_NAME ;
+		String hash_out = TextUtil.byteArrayToHexString(TextUtil.generateSHA1(hash_in));			
+		
+		return url + "?p=" + chNFe + "|"+ NFeUtil.VERSAO_QR_CODE+"|" +tpAmb+"|" + P_CSC + "|" + hash_out ;
+
+
 	}
 	
 	
@@ -603,5 +615,10 @@ public abstract class NFeUtil
 		}
 
 		return Boolean.FALSE;
+	}
+
+	// criado para normalizar o csc segundo a regra
+	public static String zerosEsquerda(String str) {		
+		return String.valueOf(Integer.parseInt(str));	
 	}
 }	//	NFeUtil

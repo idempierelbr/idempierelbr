@@ -47,7 +47,8 @@ public class MLBRNFeWebService extends X_LBR_NFeWebService
 	public static final String SERVICE_NFE_AUTORIZACAO 			= "NFeAutorizacao";
 	public static final String SERVICE_NFE_RET_AUTORIZACAO 		= "NFeRetAutorizacao";
 	public static final String SERVICE_NFCE_CONSULTA 			= "NFCeConsulta";
-	public static final String SERVICE_NFCE_CONSULTA_QRCODE		= "NFCeConsultaQRCode";
+	public static final String SERVICE_NFCE_CONSULTA_QRCODE		= "NFCeConsultaQRCode"; // http://www4.fazenda.rj.gov.br/consultaNFCe/QRCode
+	public static final String SERVICE_NFCE_URL_CONSULTA_QRCODE	= "NFCeUrlConsultaQRCode"; // www.fazenda.rj.gov.br/nfce/consulta
 	
 	/** Log				*/
 	private static CLogger log = CLogger.getCLogger(MLBRNFeWebService.class);

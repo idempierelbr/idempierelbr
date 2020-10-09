@@ -19,6 +19,7 @@ public class InfNFeSupl
 {
 	// Informações Adicionais
 	private String qrCode;
+	private String urlChave;
 
 	public String getQrCode() {
 		return qrCode;
@@ -28,5 +29,12 @@ public class InfNFeSupl
 		this.qrCode = qrCode;
 	}
 
+	public String getUrlChave() {
+		return urlChave;
+	}
+
+	public void setUrlChave(String urlChave) {
+		this.urlChave = urlChave;
+	}
 	
 }	//	InfAdiFisco

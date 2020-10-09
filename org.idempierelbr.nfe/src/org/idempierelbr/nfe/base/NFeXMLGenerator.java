@@ -80,6 +80,7 @@ import org.idempierelbr.nfe.beans.TributosInciBean;
 import org.idempierelbr.nfe.beans.Valores;
 import org.idempierelbr.nfe.beans.ValoresICMS;
 import org.idempierelbr.nfe.model.MLBRDocLineDetailsNfe;
+import org.idempierelbr.nfe.model.MLBRNFeWebService;
 import org.idempierelbr.nfe.model.MLBRNotaFiscal;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalDocRef;
 import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
@@ -1601,18 +1602,26 @@ public class NFeXMLGenerator {
 					cDest = dados.getDest().getCNPJ();
 
 				// generate nfe qrcode
-				String urlQrCodeNFCe = NFeUtil.generateQRCodeNFCeURL(nf, digestValue, nfeID, cDest,
-						dados.getTotal().getICMSTot().getvICMS(), tpAmb);
+				String urlQrCodeNFCe = "<![CDATA[" + NFeUtil.generateQRCodeNFCeURL(nf, digestValue, nfeID, cDest,
+						dados.getTotal().getICMSTot().getvICMS(), tpAmb)  + "]]>";	
+				String urlChave = MLBRNFeWebService.getURL(MLBRNFeWebService.SERVICE_NFCE_URL_CONSULTA_QRCODE,
+						MDocType.get(nf.getCtx(), nf.getC_DocType_ID()).get_ValueAsString("LBR_NFeEnv"), NFeUtil.VERSAO_QR_CODE,
+						nf.getC_Region_ID(), nf.getLBR_NFeModel());
 
 				// check sysconfig
-				if (urlQrCodeNFCe != null && !urlQrCodeNFCe.isEmpty()) {
-
+				if (urlQrCodeNFCe != null && !urlQrCodeNFCe.isEmpty() && urlChave != null && !urlChave.isEmpty()) {
 					// set qrcode
 					infSupl.setQrCode(urlQrCodeNFCe);
+					infSupl.setUrlChave(urlChave);
 
 					int idx = nfeXML.indexOf("</infNFe>");
+
+					String infSuplString = xstream.toXML(infSupl).replaceAll("&amp;", "&");
+					infSuplString = infSuplString.replaceAll("&lt;", "<");
+					infSuplString = infSuplString.replaceAll("&gt;", ">");
+					
 					nfeXML = nfeXML.replace(idx, idx + 9,
-							"</infNFe>" + NFeUtil.removeIndent(TextUtil.removeEOL(xstream.toXML(infSupl))));
+							"</infNFe>" + NFeUtil.removeIndent(TextUtil.removeEOL("" + infSuplString + "")));
 				}
 			} catch (Exception e) {
 
