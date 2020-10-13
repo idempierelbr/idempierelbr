@@ -15,6 +15,7 @@ import org.compiere.util.CLogger;
 import org.compiere.util.Env;
 import org.idempierelbr.nfe.model.MLBRNFeWebService;
 import org.idempierelbr.nfe.stub.generic.NFeAutorizacao4Stub;
+import org.idempierelbr.nfe.stub.generic.NFeDistribuicaoDFeStub;
 import org.idempierelbr.nfe.stub.generic.NFeInutilizacao4Stub;
 import org.idempierelbr.nfe.stub.generic.NFeRecepcaoEvento4Stub;
 import org.idempierelbr.nfe.stub.generic.NFeRetAutorizacao4Stub;
@@ -250,6 +251,20 @@ public class StubConnector {
 				// Stub
 				NFeRetAutorizacao4Stub stub = new NFeRetAutorizacao4Stub(url);
 				result = stub.nfeRetAutorizacaoLote(dadosMsg).getExtraElement().toString();
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw e;
+			}
+		} else if (service.equals(MLBRNFeWebService.SERVICE_NFE_DISTRIBUICAO_DFE)) {
+			try {
+				// Message
+				NFeDistribuicaoDFeStub.NfeDadosMsg_type0 dadosMsg = NFeDistribuicaoDFeStub.NfeDadosMsg_type0.Factory.parse(reader);
+				NFeDistribuicaoDFeStub.NfeDistDFeInteresse interesse = new NFeDistribuicaoDFeStub.NfeDistDFeInteresse();
+				interesse.setNfeDadosMsg(dadosMsg);
+				
+				// Stub
+				NFeDistribuicaoDFeStub stub = new NFeDistribuicaoDFeStub(url);
+				result = stub.nfeDistDFeInteresse(interesse).getNfeDistDFeInteresseResult().getExtraElement().toString();
 			} catch (Exception e) {
 				e.printStackTrace();
 				throw e;

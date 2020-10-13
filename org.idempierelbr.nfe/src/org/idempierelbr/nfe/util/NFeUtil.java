@@ -72,6 +72,7 @@ public abstract class NFeUtil
 	public static final String VERSAO_CCE		= "1.00";
 	public static final String VERSAO_CAN		= "1.00";
 	public static final String VERSAO_QR_CODE 	= "2";
+	public static final String VERSAO_DISTRIBUICAO = "1.00";
 	
 	/*
 	 * Formas de pagamento para a tag tpag NF-e 4.00
