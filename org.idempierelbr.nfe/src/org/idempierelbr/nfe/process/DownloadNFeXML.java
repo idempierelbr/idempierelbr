@@ -3,7 +3,7 @@ package org.idempierelbr.nfe.process;
 import java.util.logging.Level;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
-import org.compiere.util.Env;
+import org.compiere.util.DB;
 import org.idempierelbr.nfe.model.MLBRNFeXML;
 
 public class DownloadNFeXML extends SvrProcess
@@ -48,8 +48,14 @@ public class DownloadNFeXML extends SvrProcess
 				(p_LBR_NFeID != null && (p_LBR_LastNSU != null || p_LBR_NSU != null)))
 			throw new Exception("Please enter only one of the optional fields!");			
 		
-		if (p_LBR_LastNSU == null && p_LBR_NSU == null && p_LBR_NFeID == null)
-			p_LBR_LastNSU = "000000000000000";
+		if (p_LBR_LastNSU == null && p_LBR_NSU == null && p_LBR_NFeID == null) {
+			String lastDbNSU = DB.getSQLValueString(get_TrxName(), "SELECT MAX(LBR_NSU) FROM LBR_NFeXML WHERE AD_Org_ID=?", p_AD_Org_ID);
+			
+			if (lastDbNSU == null || lastDbNSU.length() != 15)		
+				p_LBR_LastNSU = "000000000000000";
+			else
+				p_LBR_LastNSU = lastDbNSU;
+		}
 		
 		return MLBRNFeXML.requestWSAndProcess(getCtx(), p_AD_Org_ID, p_LBR_LastNSU, p_LBR_NSU, p_LBR_NFeID, get_TrxName());
 	}
