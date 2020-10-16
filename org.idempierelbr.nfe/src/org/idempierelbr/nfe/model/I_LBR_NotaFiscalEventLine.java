@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NotaFiscalEventLine
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 7.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_NotaFiscalEventLine 
@@ -173,6 +173,17 @@ public interface I_LBR_NotaFiscalEventLine
 	/** Get NFe Status	  */
 	public String getLBR_NFeStatus();
 
+    /** Column name LBR_NFeXML_ID */
+    public static final String COLUMNNAME_LBR_NFeXML_ID = "LBR_NFeXML_ID";
+
+	/** Set NFe XML	  */
+	public void setLBR_NFeXML_ID (int LBR_NFeXML_ID);
+
+	/** Get NFe XML	  */
+	public int getLBR_NFeXML_ID();
+
+	public I_LBR_NFeXML getLBR_NFeXML() throws RuntimeException;
+
     /** Column name LBR_NotaFiscalEvent_ID */
     public static final String COLUMNNAME_LBR_NotaFiscalEvent_ID = "LBR_NotaFiscalEvent_ID";
 
@@ -228,6 +239,15 @@ public interface I_LBR_NotaFiscalEventLine
 	public int getLBR_NotaFiscal_ID();
 
 	public I_LBR_NotaFiscal getLBR_NotaFiscal() throws RuntimeException;
+
+    /** Column name LBR_TipoDeManifestacao */
+    public static final String COLUMNNAME_LBR_TipoDeManifestacao = "LBR_TipoDeManifestacao";
+
+	/** Set Tipo de Manifestacao	  */
+	public void setLBR_TipoDeManifestacao (String LBR_TipoDeManifestacao);
+
+	/** Get Tipo de Manifestacao	  */
+	public String getLBR_TipoDeManifestacao();
 
     /** Column name Updated */
     public static final String COLUMNNAME_Updated = "Updated";

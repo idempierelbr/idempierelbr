@@ -44,6 +44,7 @@ public class MLBRNFeWebService extends X_LBR_NFeWebService
 	public static final String SERVICE_NFE_STATUS_SERVICO 		= "NfeStatusServico";
 	public static final String SERVICE_NFE_CONSULTA_CADASTRO 	= "NfeConsultaCadastro";
 	public static final String SERVICE_NFE_RECEPCAO_EVENTO 		= "RecepcaoEvento";
+	public static final String SERVICE_NFE_RECEPCAO_EVENTO_AN 	= "RecepcaoEventoAN";
 	public static final String SERVICE_NFE_AUTORIZACAO 			= "NFeAutorizacao";
 	public static final String SERVICE_NFE_RET_AUTORIZACAO 		= "NFeRetAutorizacao";
 	public static final String SERVICE_NFCE_CONSULTA 			= "NFCeConsulta";

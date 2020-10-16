@@ -213,7 +213,8 @@ public class StubConnector {
 
 		} else if (service.equals(MLBRNFeWebService.SERVICE_NFE_CONSULTA_CADASTRO)) {
 	
-		} else if (service.equals(MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO)) {
+		} else if (service.equals(MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO) ||
+				service.equals(MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO_AN)) {
 			try {
 				// Message
 				NFeRecepcaoEvento4Stub.NfeDadosMsg dadosMsg = NFeRecepcaoEvento4Stub.NfeDadosMsg.Factory.parse(reader);

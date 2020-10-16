@@ -32,6 +32,7 @@ import org.idempierelbr.core.util.AdempiereLBR;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.nfe.beans.DetEventoCancelamento;
 import org.idempierelbr.nfe.beans.DetEventoCartaDeCorrecao;
+import org.idempierelbr.nfe.beans.DetEventoManifestacaoDest;
 import org.idempierelbr.nfe.beans.EnvEvento;
 import org.idempierelbr.nfe.beans.Evento;
 import org.idempierelbr.nfe.beans.I_DetEvento;
@@ -187,9 +188,25 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 			return "Could not get NFe Model: "+ex.getMessage();
 		}
 		
-		StubConnector connector = new StubConnector(NFeUtil.VERSAO_EVENTO,
-				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO,
+		// Ambiente nacional ou regional
+		boolean isAmbienteNacional = false;
+		
+		for (MLBRNotaFiscalEventLine line : lines) {
+			if (line.getLBR_NFeEventType().equals("MAN"))
+				isAmbienteNacional = true;
+		}
+		
+		StubConnector connector;
+		
+		if (isAmbienteNacional)
+			connector = new StubConnector(NFeUtil.VERSAO_EVENTO,
+				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO_AN,
 				isContingencia(xmlLot), isHomologacao(xmlLot), LBR_NFeModel);
+		else
+			connector = new StubConnector(NFeUtil.VERSAO_EVENTO,
+					orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO,
+					isContingencia(xmlLot), isHomologacao(xmlLot), LBR_NFeModel);
+		
 		String result = connector.sendMessage(xmlLot);
 		
 		if (result == null || result.trim().equals(""))
@@ -266,36 +283,43 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 				line.saveEx();					
 
 				if (line.getLBR_NFeID().equals(chNFe)) {
-					
-					// Find the NF-e object
-					MLBRNotaFiscal nf = new MLBRNotaFiscal(getCtx(), line.getLBR_NotaFiscal_ID(), get_TrxName());
-
-					// Attach distribution file to the referenced NF-e
-					if ( cStat.equals("135") || cStat.equals("136") || cStat.equals("155") ) {
-						MAttachment attachNFe = nf.createAttachment();
-						File attachFile = new File(TextUtil.generateTmpFile(  generateDistributionXMLString ( sent , node )  , chNFe + "_"
-								+ tpEvento + ( nSeqEvento.equals("1") ? "" : "_"+nSeqEvento ) + DISTRIBUICAO_FILE_EXT));
-						attachNFe.addEntry(attachFile);
-						attachNFe.saveEx(get_TrxName());
-					}
-
-					if (line.getLBR_NFeEventType().equals("CAN")) {
-						String cStatNFe = "";
-						if (cStat.equals("135"))
-							cStatNFe = "101"; // 101 - Cancelamento de NF-e homologado
-						else if (cStat.equals("155"))
-							cStatNFe = "151"; // 151 - Cancelamento de NF-e homologado fora de prazo
-						
-						if (cStatNFe.equals("101") || cStatNFe.equals("151")) {
-							
-							if (nf.getLBR_NFeID().equals(chNFe)) {
-								nf.setLBR_LotSendingProt(nProt);
-								nf.setLBR_NFeStatus(cStatNFe);
-								nf.saveEx();
-							} else {
-								log.severe("NF-e " + nf.getDocumentNo() + " has NF-e ID other than NF-e Lot. It won't be updated");
-							}
+					if (line.getLBR_NFeEventType().equals("CAN") || line.getLBR_NFeEventType().equals("CCE")) {
+						// Find the NF-e object
+						MLBRNotaFiscal nf = new MLBRNotaFiscal(getCtx(), line.getLBR_NotaFiscal_ID(), get_TrxName());
+	
+						// Attach distribution file to the referenced NF-e
+						if ( cStat.equals("135") || cStat.equals("136") || cStat.equals("155") ) {
+							MAttachment attachNFe = nf.createAttachment();
+							File attachFile = new File(TextUtil.generateTmpFile(  generateDistributionXMLString ( sent , node )  , chNFe + "_"
+									+ tpEvento + ( nSeqEvento.equals("1") ? "" : "_"+nSeqEvento ) + DISTRIBUICAO_FILE_EXT));
+							attachNFe.addEntry(attachFile);
+							attachNFe.saveEx(get_TrxName());
 						}
+						
+						if (line.getLBR_NFeEventType().equals("CAN")) {
+							String cStatNFe = "";
+							if (cStat.equals("135"))
+								cStatNFe = "101"; // 101 - Cancelamento de NF-e homologado
+							else if (cStat.equals("155"))
+								cStatNFe = "151"; // 151 - Cancelamento de NF-e homologado fora de prazo
+							
+							if (cStatNFe.equals("101") || cStatNFe.equals("151")) {
+								
+								if (nf.getLBR_NFeID().equals(chNFe)) {
+									nf.setLBR_LotSendingProt(nProt);
+									nf.setLBR_NFeStatus(cStatNFe);
+									nf.saveEx();
+								} else {
+									log.severe("NF-e " + nf.getDocumentNo() + " has NF-e ID other than NF-e Lot. It won't be updated");
+								}
+							}
+						} 
+					}					
+					
+					if (line.getLBR_NFeEventType().equals("MAN")) {
+						MLBRNFeXML nfeXML = new MLBRNFeXML(getCtx(), line.getLBR_NFeXML_ID(), get_TrxName());
+						nfeXML.setLBR_UltimaManifestacao(line.getLBR_TipoDeManifestacao());
+						nfeXML.saveEx();
 					}
 				}
 			}
@@ -338,7 +362,9 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 			MLBRNotaFiscal nf = new MLBRNotaFiscal (getCtx(), line.getLBR_NotaFiscal_ID(), get_TrxName());
 			MDocType nfDocType = new MDocType(getCtx(), nf.getC_DocType_ID(), get_TrxName());
 			
-			MOrg org = new MOrg(getCtx(), nf.getAD_Org_ID(), get_TrxName());
+			MLBRNFeXML nfeXML = new MLBRNFeXML(getCtx(), line.getLBR_NFeXML_ID(), get_TrxName());
+			
+			MOrg org = new MOrg(getCtx(), line.getLBR_NotaFiscal_ID() > 0 ? nf.getAD_Org_ID() : nfeXML.getAD_Org_ID(), get_TrxName());
 			MOrgInfo orgInfo = MOrgInfo.get(getCtx(), org.get_ID(), get_TrxName());
 			MLocation orgLoc = new MLocation(getCtx(), orgInfo.getC_Location_ID(), get_TrxName());
 			MRegion orgRegion = new MRegion(getCtx(), orgLoc.getC_Region_ID(), get_TrxName());
@@ -465,6 +491,72 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 					return validation;*/
 		
 				linesXml.append(xml.toString());
+			} else if (line.getLBR_NFeEventType().equals("MAN")) {	
+				// Detalhes
+				DetEventoManifestacaoDest det = new DetEventoManifestacaoDest();
+				det.setVersao(NFeUtil.VERSAO_MAN);
+				
+				if (line.getLBR_TipoDeManifestacao().equals(MLBRNotaFiscalEventLine.LBR_TIPODEMANIFESTACAO_210200_ConfirmacaoDaOperacao))
+					det.setDescEvento(DetEventoManifestacaoDest.DESC_EVENTO_CONFIRMACAO);
+				else if (line.getLBR_TipoDeManifestacao().equals(MLBRNotaFiscalEventLine.LBR_TIPODEMANIFESTACAO_210210_CienciaDaOperacao))
+					det.setDescEvento(DetEventoManifestacaoDest.DESC_EVENTO_CIENCIA);
+				else if (line.getLBR_TipoDeManifestacao().equals(MLBRNotaFiscalEventLine.LBR_TIPODEMANIFESTACAO_210220_DesconhecimentoDaOperacao))
+					det.setDescEvento(DetEventoManifestacaoDest.DESC_EVENTO_DESCONHECIMENTO);
+				else if (line.getLBR_TipoDeManifestacao().equals(MLBRNotaFiscalEventLine.LBR_TIPODEMANIFESTACAO_210240_OperacaoNaoRealizada))
+					det.setDescEvento(DetEventoManifestacaoDest.DESC_EVENTO_NAO_REALIZADA);
+				
+				// Informações
+				InfEvento man = new InfEvento();
+				man.setCOrgao("91");
+				man.setTpAmb("1"); // TODO				
+				man.setCNPJ(TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ")));				
+				man.setChNFe(line.getLBR_NFeID());
+				
+				String DEv 	= TextUtil.timeToString(line.getCreated(), "yyyy-MM-dd");
+				String TEv 	= TextUtil.timeToString(line.getCreated(), "HH:mm:ss");
+				String timezone = AdempiereLBR.getTimezone(nf.getAD_Client_ID(), nf.getAD_Org_ID());
+				man.setDhEvento(DEv + "T" + TEv + timezone);
+
+				man.setNSeqEvento("" + line.getLBR_NFeEventSeqNo());
+				man.setVerEvento(NFeUtil.VERSAO_MAN);
+				man.setDetEvento(det);
+				man.setTpEvento("210210");
+				man.setId();
+				
+				// Dados
+				Evento evento = new Evento();
+				evento.setVersao(NFeUtil.VERSAO_MAN);
+				evento.setInfEvento(man);
+				
+				XStream xstream = new XStream();
+				xstream.aliasSystemAttribute(null, "class");
+				xstream.autodetectAnnotations(true);
+				
+				StringWriter sw = new StringWriter();
+				xstream.marshal(evento, new CompactWriter(sw));
+				StringBuilder xml = new StringBuilder(sw.toString());
+				String xmlResult = xml.toString();
+				String xmlFile = TextUtil.generateTmpFile(xmlResult, man.getId() + INDIVIDUAL_CORRECAO_FILE_EXT);
+				
+				log.fine("Signing NF-e XML");
+				AssinaturaDigital.Assinar(xmlFile, orgInfo, AssinaturaDigital.CARTADECORRECAO_CCE);
+				
+				// Lê o arquivo assinado
+				xstream = new XStream(new DomDriver("UTF-8"));
+				xstream.alias("detEvento", I_DetEvento.class, DetEventoCartaDeCorrecao.class);
+				xstream.processAnnotations(classForAnnotation);
+
+				evento = (Evento) xstream.fromXML(TextUtil.readFile(new File(xmlFile)));
+				
+				// Popula o envio do Evento com o XML assinado
+				envEvento.addEvento(evento);
+				
+				// Validação envio
+				/*String validation = ValidaXML.ValidaDoc(xml.toString(), "Evento_CCe_PL_v1.01/envCCe_v1.00.xsd");
+				if (!validation.equals(""))
+					return validation;*/
+				
+				linesXml.append(xml.toString());
 			}
 		}
 
@@ -540,9 +632,12 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 		}
 
 		for (MLBRNotaFiscalEventLine line : lines) {
-			MLBRNotaFiscal nf = new MLBRNotaFiscal (getCtx(), line.getLBR_NotaFiscal_ID(), get_TrxName());
-			
-			return nf.getLBR_NFeModel();
+			if (line.getLBR_NotaFiscal_ID() > 0) {
+				MLBRNotaFiscal nf = new MLBRNotaFiscal (getCtx(), line.getLBR_NotaFiscal_ID(), get_TrxName());			
+				return nf.getLBR_NFeModel();
+			} else if (line.getLBR_NFeXML_ID() > 0) {
+				return MLBRNotaFiscal.LBR_NFEMODEL_55_NF_E; // TODO
+			}
 		}
 		
 		return null;
