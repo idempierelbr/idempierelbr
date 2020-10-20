@@ -173,7 +173,7 @@ public class MLBRNFeXML extends X_LBR_NFeXML {
         	nfeXml.setLBR_NSU(NSU);
         	nfeXml.setLBR_NFeID(chNFe);
         	nfeXml.setLBR_SchemaName(schemaName);
-	        nfeXml.attachXML(chNFe, xml);
+	        nfeXml.attachXML(chNFe + ".xml", xml);
 	        nfeXml.saveEx();
 		}
 	}
