@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_Tax">
+<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_Tax">
  <row id="104" trl="Y">
   <value column="Name" original="Standard">Padrão</value>
   <value column="Description" original=""/>
@@ -22,7 +22,7 @@
  </row>
  <row id="108" trl="Y">
   <value column="Name" original="GST/PST">GST/PST</value>
-  <value column="Description" original="Canadian Federal &amp; State Tax"><![CDATA[Impostos Estaduais & Federais Canadenses]]></value>
+  <value column="Description" original="Canadian Federal &amp; State Tax" xml:space="preserve"><![CDATA[Impostos Estaduais & Federais Canadenses]]></value>
   <value column="TaxIndicator" original="Tax">Taxa</value>
  </row>
  <row id="109" trl="Y">

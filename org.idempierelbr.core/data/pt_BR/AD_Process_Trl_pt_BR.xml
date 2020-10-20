@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Process">
+<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Process">
  <row id="100" trl="Y">
   <value column="Name" original="Create Periods ">Criar Períodos </value>
   <value column="Description" original="Create 12 standard calendar periods.">Criar 12 períodos de calendário padrão</value>
@@ -243,7 +243,7 @@
  <row id="151" trl="Y">
   <value column="Name" original="Invoice Transactions (Doc)">Transações de Faturas (Data da Fatura)</value>
   <value column="Description" original="Invoice Transactions by Invoice Date">Transações de Faturas por Data da Fatura</value>
-  <value column="Help" original="The report lists the invoice transactiobs by invoice date">O relatório lista as transações de faturas com base na data da fatura informada.</value>
+  <value column="Help" original="The report lists the invoice transactions by invoice date">O relatório lista as transações de faturas com base na data da fatura informada.</value>
  </row>
  <row id="152" trl="Y">
   <value column="Name" original="Invoice Detail &amp; Margin">Detalhes de Faturas (c/ Margem)</value>
@@ -437,12 +437,12 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
  <row id="196" trl="Y">
   <value column="Name" original="Import Products ">Importação de Produtos </value>
   <value column="Description" original="Imports products from a file into the application">Importar produtos a partir de um arquivo para dentro da aplicação</value>
-  <value column="Help" original="Import Products will bring a file of products, in a predefined format into the application.&lt;p&gt;&#10;The Parameters are default values for null import record values, they do not overwrite any data.&lt;p&gt;&#10;If you select an existing price list and you have List, Standard, and Limit Price defined, they are directly created/updated."><![CDATA[A Importação de Produtos irá trazer um arquivo de produtos, em um formato predefinido na aplicação.<p> Os Parâmetros são valores padrão para valores de registros importados nulos, eles não sobreescrevem nenhum dado.<p> Se você selecionar uma Lista de Preço preexistente e você tem Lista, Padrão, e Preço Limite já definidos, eles serão criados/atualizados diretamente.]]></value>
+  <value column="Help" original="Import Products will bring a file of products, in a predefined format into the application.&lt;p&gt;&#10;The Parameters are default values for null import record values, they do not overwrite any data.&lt;p&gt;&#10;If you select an existing price list and you have List, Standard, and Limit Price defined, they are directly created/updated." xml:space="preserve"><![CDATA[A Importação de Produtos irá trazer um arquivo de produtos, em um formato predefinido na aplicação.<p> Os Parâmetros são valores padrão para valores de registros importados nulos, eles não sobreescrevem nenhum dado.<p> Se você selecionar uma Lista de Preço preexistente e você tem Lista, Padrão, e Preço Limite já definidos, eles serão criados/atualizados diretamente.]]></value>
  </row>
  <row id="197" trl="Y">
   <value column="Name" original="Import Accounts">Importar Contas</value>
   <value column="Description" original="Import Natural Accounts">Importar Contas Naturais</value>
-  <value column="Help" original="Import accounts and their hierarchies and optional update the default accounts.  &#10;Updating the Default Accounts changes the natural account segment of the used account, e.g. account 01-240 becomes 01-300).  If you create a new combination, the old account (e.g. 01-240) will remain, otherwise replaced.&#10;If you select this, make sure that you not multiple default accounts using one natural account and HAVE A BACKUP !!&#10;&lt;p&gt;The Parameters are default values for null import record values, they do not overwrite any data."><![CDATA[Importa contas e suas hierarquias e opcionalmente atualiza as contas padrão. Atualizar as Contas Padrão altera o segmento de conta natural da conta utilizada (ex. conta 01-240 se torna 01-300).  Se você criar uma nova combinação, a conta antiga (ex. 01-240) irá permanecer, se não, será substituída. Se você selecionar isto, assegure-se que você não multiplicará as contas padrão usando uma conta natural e TENHA UM BACKUP !! <p>Os Parâmetros são valores padrão para valores de registros importados nulos, eles não sobrescrevem nenhum dado.]]></value>
+  <value column="Help" original="Import accounts and their hierarchies and optional update the default accounts.  &#10;Updating the Default Accounts changes the natural account segment of the used account, e.g. account 01-240 becomes 01-300).  If you create a new combination, the old account (e.g. 01-240) will remain, otherwise replaced.&#10;If you select this, make sure that you not multiple default accounts using one natural account and HAVE A BACKUP !!&#10;&lt;p&gt;The Parameters are default values for null import record values, they do not overwrite any data." xml:space="preserve"><![CDATA[Importa contas e suas hierarquias e opcionalmente atualiza as contas padrão. Atualizar as Contas Padrão altera o segmento de conta natural da conta utilizada (ex. conta 01-240 se torna 01-300).  Se você criar uma nova combinação, a conta antiga (ex. 01-240) irá permanecer, se não, será substituída. Se você selecionar isto, assegure-se que você não multiplicará as contas padrão usando uma conta natural e TENHA UM BACKUP !! <p>Os Parâmetros são valores padrão para valores de registros importados nulos, eles não sobrescrevem nenhum dado.]]></value>
  </row>
  <row id="198" trl="Y">
   <value column="Name" original="Import Report Line Set">Importação do Conjunto de Linhas de Relatório</value>
@@ -457,7 +457,7 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
  <row id="200" trl="Y">
   <value column="Name" original="Print Invoices">Imprimir Faturas</value>
   <value column="Description" original="Print Invoices to paper or send PDF">Imprimir Faturas em papel ou enviar PDF por e-mail</value>
-  <value column="Help" original="(Re)Print Invoices or send them as PDF attachments to the Business Partner Contact with a valid EMail addres.&#10;&lt;br&gt;&#10;Remark: If you only enter a Document No FROM value, all invoices greater or equal that document number are printed; you can alternatively use the % character as a widcard."><![CDATA[Este processo imprime faturas ou as envia como anexo (formato PDF) ao contato do parceiro de negócios com um endereço de e-mail válido.<br><br>Atenção: se você informar apenas o número inicial no campo Número do Documento e deixar o número final em branco, todas as faturas com número >= à informada serão consideradas. Além disso, você pode usar o caractere % como curinga.]]></value>
+  <value column="Help" original="(Re)Print Invoices or send them as PDF attachments to the Business Partner Contact with a valid EMail addres.&#10;&lt;br&gt;&#10;Remark: If you only enter a Document No FROM value, all invoices greater or equal that document number are printed; you can alternatively use the % character as a widcard." xml:space="preserve"><![CDATA[Este processo imprime faturas ou as envia como anexo (formato PDF) ao contato do parceiro de negócios com um endereço de e-mail válido.<br><br>Atenção: se você informar apenas o número inicial no campo Número do Documento e deixar o número final em branco, todas as faturas com número >= à informada serão consideradas. Além disso, você pode usar o caractere % como curinga.]]></value>
  </row>
  <row id="201" trl="Y">
   <value column="Name" original="Deliver Assets">Entrega de Ativos</value>
@@ -502,7 +502,7 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
  <row id="209" trl="Y">
   <value column="Name" original="Send Mail Text">Enviar Texto de Correspondência</value>
   <value column="Description" original="Send EMails to active subscribers of an Interest Area OR a Business Partner Group from a selected User">Enviar e-mails de um usuário selecionado a assinantes ativos de uma Área de Interesse OU a um Grupo de Parceiros de Negócios</value>
-  <value column="Help" original="Select the Interest Area to which subscribers you send the Mail Text from the User selected.  Additionally, you can send mails to the Contacts of a Business Partner Group.&lt;br&gt;&#10;The User to send emails from needs to have valid EMail information. If you don't select a user, the Mail is sent from the Client's Request Mail User."><![CDATA[Selecione as Áreas de interesse dos assinantes aos quais você enviará Texto de Correspondência (e-mail) do Usuário selecionado.  Adicionalmente, você pode enviar correspondências aos contatos de um Grupo de Parceiros de Negócios.<br> O Usuário a partir do qual serão enviados os emails precisa ter uma informação de Email válida. Se você não selecionar um usuário, a correspondência será enviada do Usuário de Email de Solicitação da Empresa.]]></value>
+  <value column="Help" original="Select the Interest Area to which subscribers you send the Mail Text from the User selected.  Additionally, you can send mails to the Contacts of a Business Partner Group.&lt;br&gt;&#10;The User to send emails from needs to have valid EMail information. If you don't select a user, the Mail is sent from the Client's Request Mail User." xml:space="preserve"><![CDATA[Selecione as Áreas de interesse dos assinantes aos quais você enviará Texto de Correspondência (e-mail) do Usuário selecionado.  Adicionalmente, você pode enviar correspondências aos contatos de um Grupo de Parceiros de Negócios.<br> O Usuário a partir do qual serão enviados os emails precisa ter uma informação de Email válida. Se você não selecionar um usuário, a correspondência será enviada do Usuário de Email de Solicitação da Empresa.]]></value>
  </row>
  <row id="210" trl="Y">
   <value column="Name" original="Copy Lines">Copiar Linhas</value>
@@ -548,7 +548,7 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
  <row id="218" trl="Y">
   <value column="Name" original="Project Cycle Report">Relatório de Ciclo de Projeto</value>
   <value column="Description" original="Report Projects based on Project Cycle">Relatórios de Projetos baseados no Ciclo de Projeto</value>
-  <value column="Help" original="The Project Cycle reports on common project phases of a Cycle Step/Phase. All Report information is weighted by the relative weight of the Cycle Step and converted to the currency of the Project Cycle (e.g. for Sales Funnel Reporting).&lt;p&gt;&#10;The Projects must have a Project Type, Phase and Currency defined. The Phase must be assigned to a Cycle Step."><![CDATA[O Ciclo de Projeto reporta sobre fases de projeto comuns de um Passo/Fase de Ciclo. Toda informação de Relatório é ponderada pelo peso relativo do Passo de Ciclo e convertida à moeda do Ciclo de Projeto (ex. para Relatórios de Funil de Vendas).<p> Os Projetos devem ter um Tipo de Projeto, Fase e Moeda definidos. A Fase deve ser atribuída a um Passo de Ciclo.]]></value>
+  <value column="Help" original="The Project Cycle reports on common project phases of a Cycle Step/Phase. All Report information is weighted by the relative weight of the Cycle Step and converted to the currency of the Project Cycle (e.g. for Sales Funnel Reporting).&lt;p&gt;&#10;The Projects must have a Project Type, Phase and Currency defined. The Phase must be assigned to a Cycle Step." xml:space="preserve"><![CDATA[O Ciclo de Projeto reporta sobre fases de projeto comuns de um Passo/Fase de Ciclo. Toda informação de Relatório é ponderada pelo peso relativo do Passo de Ciclo e convertida à moeda do Ciclo de Projeto (ex. para Relatórios de Funil de Vendas).<p> Os Projetos devem ter um Tipo de Projeto, Fase e Moeda definidos. A Fase deve ser atribuída a um Passo de Ciclo.]]></value>
  </row>
  <row id="219" trl="Y">
   <value column="Name" original="Import Inventory">Importar Estoques</value>
@@ -578,7 +578,7 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
  <row id="224" trl="Y">
   <value column="Name" original="Issue to Project">Emitir para o Projeto</value>
   <value column="Description" original="Issue Material to Project from Receipt or manual Inventory Location">Emitir Material para Projeto a partir do Recebimento ou da Localização Manual de Estoque</value>
-  <value column="Help" original="Select a Project and either&#10;&lt;br&gt;- Material Receipt&#10;&lt;br&gt;- Expense Report&#10;&lt;br&lt;- Inventory Location and Project Line not issued yet&#10;&lt;br&gt;- Inventory Location, Product and Quantity&#10;The default Movement Date is today's date."><![CDATA[Selecione um Projeto e ou <br>- Recebimento de Material <br>- Relatório de Despesa <br<- Localização de Estoque e Linha de Projeto não emitida ainda <br>- Localização de Estoque, Produto e Quantidade. A data de Movimentação padrão é a data de hoje.]]></value>
+  <value column="Help" original="Select a Project and either&#10;&lt;br&gt;- Material Receipt&#10;&lt;br&gt;- Expense Report&#10;&lt;br&lt;- Inventory Location and Project Line not issued yet&#10;&lt;br&gt;- Inventory Location, Product and Quantity&#10;The default Movement Date is today's date." xml:space="preserve"><![CDATA[Selecione um Projeto e ou <br>- Recebimento de Material <br>- Relatório de Despesa <br<- Localização de Estoque e Linha de Projeto não emitida ainda <br>- Localização de Estoque, Produto e Quantidade. A data de Movimentação padrão é a data de hoje.]]></value>
  </row>
  <row id="225" trl="Y">
   <value column="Name" original="Generate PO from Project">Gerar Pedido de Compras a partir de Projeto</value>
@@ -649,7 +649,7 @@ Uma vez que o processo é executado, se você precisar alterar linhas, faça iss
  <row id="238" trl="Y">
   <value column="Name" original="Aging">Recuperação (Cobrança)</value>
   <value column="Description" original="Aging Report">Relatório para Recuperação (Cobrança)</value>
-  <value column="Help" original="The aging report allows you to report on Open Items (Invoices). Select the aging buckets, you want to have in your report. If you select a currency, you get only invoices of that currency, otherwise the amounts are converted to your primary accounting currency. If you do not select a Statement Date, the system date is used to calculate the buckets. If you do not list the individual invoices, the Due Date is the earliest due date for the business partner and the Due Days are the average due days of all invoices.&lt;br&gt;&#10;&lt;br&gt;&#10;If you select an Account Date the report will generate the Aging as of that date. The report will exclude documents after the selected date.&lt;br&gt;&#10;&lt;br&gt;&#10;For example: A customer has one invoice for $100 with the Account Date of 03/31/08 and one payment for $100 with the Account Date of 05/01/08. The report will show the following balances based on the Account Date selected: 03/15/08= 0; 04/15/08=100; 05/15/08 = 0.&#10;"><![CDATA[O relatório exibe os itens em aberto, classificados por Dias a Vencer e Dias em Atraso em relação a uma data base (data do extrato). Se a data não for informada, a data do dia será utilizada. Se uma moeda for selecionada, apenas faturas naquela moeda serão apresentadas, caso contrário os valores serão convertidos para a sua moeda contábil primária. Se a opção Listar Faturas (individuais) estiver desmarcada, a Data de Vencimento exibida será o vencimento mais antigo do parceiro de negócios. E o valor da coluna Dias em Atraso será uma média de todas as faturas.<br>
+  <value column="Help" original="The aging report allows you to report on Open Items (Invoices). Select the aging buckets, you want to have in your report. If you select a currency, you get only invoices of that currency.&#13;&#10;If you fill the &quot;Convert Amounts in Currency&quot;, all amounts will be converted in that currency. If you do not select a Statement Date, the system date is used to calculate the buckets. If you do not list the individual invoices, the Due Date is the earliest due date for the business partner and the Due Days are the average due days of all invoices.&lt;br&gt;&#13;&#10;&lt;br&gt;&#13;&#10;If you select an Account Date the report will generate the Aging as of that date. The report will exclude documents after the selected date.&lt;br&gt;&#13;&#10;&lt;br&gt;&#13;&#10;For example: A customer has one invoice for $100 with the Account Date of 03/31/08 and one payment for $100 with the Account Date of 05/01/08. The report will show the following balances based on the Account Date selected: 03/15/08= 0; 04/15/08=100; 05/15/08 = 0.&#13;&#10;" xml:space="preserve"><![CDATA[O relatório exibe os itens em aberto, classificados por Dias a Vencer e Dias em Atraso em relação a uma data base (data do extrato). Se a data não for informada, a data do dia será utilizada. Se uma moeda for selecionada, apenas faturas naquela moeda serão apresentadas, caso contrário os valores serão convertidos para a sua moeda contábil primária. Se a opção Listar Faturas (individuais) estiver desmarcada, a Data de Vencimento exibida será o vencimento mais antigo do parceiro de negócios. E o valor da coluna Dias em Atraso será uma média de todas as faturas.<br>
 <br>
 Se o campo Data Contábil for selecionado, o relatório exibirá as classificações com base na data contábil da fatura. O relatório ignora faturas com datas superiores à informada.<br>
 <br>
@@ -974,7 +974,7 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
  <row id="302" trl="Y">
   <value column="Name" original="Auto Allocation">Alocação Automática</value>
   <value column="Description" original="Automatic allocation of invoices to payments">Alocação Automática de Fatura(s) ao(s) Pagamento(s)</value>
-  <value column="Help" original="Try to allocate invoices to payments for a business partner or group.  You may want to reset existing allocations first.&lt;br&gt;&#10;The allocation is based on (1) payments entered with reference to invoices (2) payment selections (3) business partner balance (4) matching amount of invoice &amp; payment.  Allocation is based on exact amount and includes AP/AR imvoices/payments.&lt;br&gt;&#10;Optionally as (5), you can enable to allocate payments to the oldest invoice. In this case, there might be an unallocated amount remaining."><![CDATA[Este processo tenta alocar automaticamente faturas a pagamentos realizados de/para um parceiro de negócios ou grupo de parceiros. Talvez você queira excluir alocações existentes antes de tentar a alocação automática.<br>A alocação é feita com base em: (1) Pagamentos que fazem referência a uma fatura, (2) Seleções de pagamentos, (3) Saldo do parceiro de negócios, (4) Valores iguais da fatura e do pagamento. A alocação é baseada no valor exato e inclui faturas/pagamentos AR/AP.<br>Opcionalmente você pode alocar os pagamentos para as faturas mais antigas. Neste caso, podem sobrar valores não alocados.]]></value>
+  <value column="Help" original="Try to allocate invoices to payments for a business partner or group.  You may want to reset existing allocations first.&lt;br&gt;&#10;The allocation is based on (1) payments entered with reference to invoices (2) payment selections (3) business partner balance (4) matching amount of invoice &amp; payment.  Allocation is based on exact amount and includes AP/AR imvoices/payments.&lt;br&gt;&#10;Optionally as (5), you can enable to allocate payments to the oldest invoice. In this case, there might be an unallocated amount remaining." xml:space="preserve"><![CDATA[Este processo tenta alocar automaticamente faturas a pagamentos realizados de/para um parceiro de negócios ou grupo de parceiros. Talvez você queira excluir alocações existentes antes de tentar a alocação automática.<br>A alocação é feita com base em: (1) Pagamentos que fazem referência a uma fatura, (2) Seleções de pagamentos, (3) Saldo do parceiro de negócios, (4) Valores iguais da fatura e do pagamento. A alocação é baseada no valor exato e inclui faturas/pagamentos AR/AP.<br>Opcionalmente você pode alocar os pagamentos para as faturas mais antigas. Neste caso, podem sobrar valores não alocados.]]></value>
  </row>
  <row id="303" trl="Y">
   <value column="Name" original="Reset Allocation">Excluir Alocação</value>
@@ -1004,7 +1004,7 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
  <row id="308" trl="Y">
   <value column="Name" original="Reapply Customizations">Reaplicar Personalizações</value>
   <value column="Description" original="If you identified customizations in the Change Log, you can reapply them">Se você identificou personalizações no Registro de Alterações (log), você pode reaplicá-las</value>
-  <value column="Help" original="The migration &quot;resets&quot; the system to the current/original setting.  If selected in the Change Log, you can save the customization and re-apply them.  Please note that you need to check, if your customization has no negative side effect in the new release. &lt;br&gt;&#10;Shut down the Application Server before running this process and set the Trace level (in Preference) higher or equals  WARNING."><![CDATA[A migração "reseta" o sistema para a configuração atual/original.  Se for selecionado no Registro de Alteração (log), você pode salvar a personalização e reaplicá-la.  Please note that you need to check, if your customization has no negative side effect in the new release. <br> Shut down the Application Server before running this process and set the Trace level (in Preference) higher or equals  WARNING.]]></value>
+  <value column="Help" original="The migration &quot;resets&quot; the system to the current/original setting.  If selected in the Change Log, you can save the customization and re-apply them.  Please note that you need to check, if your customization has no negative side effect in the new release. &lt;br&gt;&#10;Shut down the Application Server before running this process and set the Trace level (in Preference) higher or equals  WARNING." xml:space="preserve"><![CDATA[A migração "reseta" o sistema para a configuração atual/original.  Se for selecionado no Registro de Alteração (log), você pode salvar a personalização e reaplicá-la.  Please note that you need to check, if your customization has no negative side effect in the new release. <br> Shut down the Application Server before running this process and set the Trace level (in Preference) higher or equals  WARNING.]]></value>
  </row>
  <row id="309" trl="Y">
   <value column="Name" original="Workflow to Client">Mover Workflow</value>
@@ -1070,7 +1070,7 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
  <row id="321" trl="Y">
   <value column="Name" original="Synchronize Doc Translation">Sincronizar Tradução de Documento</value>
   <value column="Description" original="Synchronize Document Translation">Sincronizar a tradução de documentos</value>
-  <value column="Help" original="This applies to the client defined document translations, e.g. for UoM, Payment Terms, Product Info, etc.&lt;br&gt;&#10;&lt;br&gt;&#10;If the current client has multi-lingual documents enabled, then the main record is copied to the client language (defined in Client window).  BE CAREFUL as this option can potentially damage data you modified, it is recommended to take a backup and plan carefully what you're doing if this is the first time running this process.&lt;br&gt;&#10;&lt;br&gt;&#10;If the current client has not multi-lingual documents enabled, the translations for documents are synchronized with the main record (i.e. it copies the content of the main record to the translation records).  This process is necessary when swiching to a mono-lingual environment as there the terminoligy is maintained not in the translation records."><![CDATA[Se a empresa atual não tiver documentos multi-idiomas habilitados, as traduções de documentos serão sincronizadas com o registro principal (i.e. ele copia o conteúdo do registro principal nos registros de tradução).  Este processo é necessário ao se passar a um ambiente mono-idioma já que a terminologia não é gerenciada nos registros de tradução.<br> Isto se aplica às traduções de documentos definidas pela empresa, por ex. para UDM, Termos de Pagamento, Informações de Produto, etc.]]></value>
+  <value column="Help" original="This applies to the client defined document translations, e.g. for UoM, Payment Terms, Product Info, etc.&lt;br&gt;&#10;&lt;br&gt;&#10;If the current client has multi-lingual documents enabled, then the main record is copied to the client language (defined in Client window).  BE CAREFUL as this option can potentially damage data you modified, it is recommended to take a backup and plan carefully what you're doing if this is the first time running this process.&lt;br&gt;&#10;&lt;br&gt;&#10;If the current client has not multi-lingual documents enabled, the translations for documents are synchronized with the main record (i.e. it copies the content of the main record to the translation records).  This process is necessary when swiching to a mono-lingual environment as there the terminoligy is maintained not in the translation records." xml:space="preserve"><![CDATA[Se a empresa atual não tiver documentos multi-idiomas habilitados, as traduções de documentos serão sincronizadas com o registro principal (i.e. ele copia o conteúdo do registro principal nos registros de tradução).  Este processo é necessário ao se passar a um ambiente mono-idioma já que a terminologia não é gerenciada nos registros de tradução.<br> Isto se aplica às traduções de documentos definidas pela empresa, por ex. para UDM, Termos de Pagamento, Informações de Produto, etc.]]></value>
  </row>
  <row id="322" trl="Y">
   <value column="Name" original="Material Reference">Referência de Material</value>
@@ -1105,7 +1105,7 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
  <row id="328" trl="Y">
   <value column="Name" original="Column Encryption">Encriptar a Coluna</value>
   <value column="Description" original="Test and enable Column Encryption">Testa e habilita a encriptação da coluna</value>
-  <value column="Help" original="To enable storage encryption or remove encryption is dangerous as you may loose data. You need to verify that the column is big enough to hold the encrypted value.  You can provide your own encryption method, but cannot change it once enabled.  &lt;br&gt;&#10;The default implementation supports US ASCII String conversion (not Unicode, Numbers, Dates)&lt;br&gt;&#10;Note that support is restricted to setup and test, but not data recovery."><![CDATA[Habilitar ou remover a encriptação da coluna um processo perigoso que exige atenção pois você pode perder dados. Você precisa certificar-se que a coluna é grande o suficiente para armazenar o valor encriptado. Você pode fornecer seu próprio método de encriptação, mas uma vez habilitado, não é possível alterá-lo. <br> A implementação padrão suporta conversão de seqüências de caracteres US ASCII  (mas não Unicode, Números, Datas). <br> Note que o suporte a encriptação é restrito a ajuste e testes, mas não há suporte para recuperação de dados.]]></value>
+  <value column="Help" original="To enable storage encryption or remove encryption is dangerous as you may loose data. You need to verify that the column is big enough to hold the encrypted value.  You can provide your own encryption method, but cannot change it once enabled.  &lt;br&gt;&#10;The default implementation supports US ASCII String conversion (not Unicode, Numbers, Dates)&lt;br&gt;&#10;Note that support is restricted to setup and test, but not data recovery." xml:space="preserve"><![CDATA[Habilitar ou remover a encriptação da coluna um processo perigoso que exige atenção pois você pode perder dados. Você precisa certificar-se que a coluna é grande o suficiente para armazenar o valor encriptado. Você pode fornecer seu próprio método de encriptação, mas uma vez habilitado, não é possível alterá-lo. <br> A implementação padrão suporta conversão de seqüências de caracteres US ASCII  (mas não Unicode, Números, Datas). <br> Note que o suporte a encriptação é restrito a ajuste e testes, mas não há suporte para recuperação de dados.]]></value>
  </row>
  <row id="329" trl="Y">
   <value column="Name" original="Product Cost">Custos de Produto</value>
@@ -1290,9 +1290,9 @@ PC são criados para todas as linhas das requisições onde o produto tem um for
   <value column="Help" original="This process copies BOM Lines from the Selected BOM to the Current BOM. The BOM being copied to must have any existing BOM Lines">This process copies BOM Lines from the Selected BOM to the Current BOM. The BOM being copied to must have any existing BOM Lines</value>
  </row>
  <row id="53006" trl="N">
-  <value column="Name" original="Multi Level BOM &amp; Formula Detail"><![CDATA[Multi Level BOM & Formula Detail]]></value>
+  <value column="Name" original="Multi Level BOM &amp; Formula Detail" xml:space="preserve"><![CDATA[Multi Level BOM & Formula Detail]]></value>
   <value column="Description" original="Shows in two different panels the parent-component relationship for the product entered in the Product field.">Shows in two different panels the parent-component relationship for the product entered in the Product field.</value>
-  <value column="Help" original="The BOM &amp; Formula Review option menu shows in two different panels the parent-component relationship for the product entered in the Product field.&#10;&#10;You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.&#10;&#10;When you need to consult an implosion, click the implosion check box and enter the component you wish to consult and tick the Implosion check box.&#10;&#10;You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.&#10;&#10;The left panel shows the BOM hierarchies in a tree form. The right panel shows the information connected with the BOM for every product in it."><![CDATA[The BOM & Formula Review option menu shows in two different panels the parent-component relationship for the product entered in the Product field.
+  <value column="Help" original="The BOM &amp; Formula Review option menu shows in two different panels the parent-component relationship for the product entered in the Product field.&#10;&#10;You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.&#10;&#10;When you need to consult an implosion, click the implosion check box and enter the component you wish to consult and tick the Implosion check box.&#10;&#10;You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.&#10;&#10;The left panel shows the BOM hierarchies in a tree form. The right panel shows the information connected with the BOM for every product in it." xml:space="preserve"><![CDATA[The BOM & Formula Review option menu shows in two different panels the parent-component relationship for the product entered in the Product field.
 
 You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.
 
@@ -1388,7 +1388,7 @@ the on-hand inventory at the beginning of a period.
   <value column="Help" original="Before you complete a MO it is necessary to validate the components are available in the warehouse, in order to track the components availability you get a report which shows among other data: the Required Quantity for the MO, the Reserved Quantity, the On Hand Quantity and the Available Quantity.">Before you complete a MO it is necessary to validate the components are available in the warehouse, in order to track the components availability you get a report which shows among other data: the Required Quantity for the MO, the Reserved Quantity, the On Hand Quantity and the Available Quantity.</value>
  </row>
  <row id="53034" trl="N">
-  <value column="Name" original="Print &amp; Release Order"><![CDATA[Print & Release Order]]></value>
+  <value column="Name" original="Print &amp; Release Order" xml:space="preserve"><![CDATA[Print & Release Order]]></value>
   <value column="Description" original="Once the planned orders of manufacture generated by MRP, have been aprobed, has been reached the date of liberation and has been verified that the required components are in existence, the orders are emitted to the plant for its manufacture.">Once the planned orders of manufacture generated by MRP, have been aprobed, has been reached the date of liberation and has been verified that the required components are in existence, the orders are emitted to the plant for its manufacture.</value>
   <value column="Help" original="Once the planned orders of manufacture generated by MRP, have been aprobed, has been reached the date of liberation and has been verified that the required components are in existence, the orders are emitted to the plant for its manufacture. If you wish to print the warehouse and shop floor documentation you must tick the adequate check box:&#10;&#10;If you tick the Print Pick List check box you will get a report with the required components and quantities to help the warehouse clerk to issue the material to the shop floor. The next report is an example of this:&#10;&#10;If you tick the Print Pack List check box you will get a report with the required components and containing the material with a Component Type of Packing and Tools recorded in the BOM Window.&#10;&#10;Another report which is part of the Manufacturing Order Release Package is the Workflow(Routing). &#10;&#10;You can print this report with tick in the Print Workflow check box and it shows to the shop floor personnel the necessary steps for the manufacture of the product. &#10;&#10;This Report contains the place where the product should be made, the standard times, the tools and necessary devices. &#10;&#10;If you wish to print this report tick the check box Print Workflow.">Once the planned orders of manufacture generated by MRP, have been aprobed, has been reached the date of liberation and has been verified that the required components are in existence, the orders are emitted to the plant for its manufacture. If you wish to print the warehouse and shop floor documentation you must tick the adequate check box:
 
@@ -1432,7 +1432,7 @@ If you wish to print this report tick the check box Print Workflow.</value>
  <row id="53046" trl="N">
   <value column="Name" original="Generate Movement">Generate Movement</value>
   <value column="Description" original="Generate and print Movement from open Distribution Orders">Generate and print Movement from open Distribution Orders</value>
-  <value column="Help" original="Movement for open Distribution Orders are created based on the delivery rule of the Distribution Order and the relative order priority.  If a Promise Date is selected only orders up to (including) the date are selected.&lt;br&gt;&#10;If several Distribution Orders of a business partner have the same location, the Distribution orders can be consolidated into one Movement.&lt;br&gt;&#10;You can also include Distibution orders who have outstanding confirmations (e.g. ordered=10 - not confirmed movements=4 - would create a new movement of 6 if available)."><![CDATA[Movement for open Distribution Orders are created based on the delivery rule of the Distribution Order and the relative order priority.  If a Promise Date is selected only orders up to (including) the date are selected.<br>
+  <value column="Help" original="Movement for open Distribution Orders are created based on the delivery rule of the Distribution Order and the relative order priority.  If a Promise Date is selected only orders up to (including) the date are selected.&lt;br&gt;&#10;If several Distribution Orders of a business partner have the same location, the Distribution orders can be consolidated into one Movement.&lt;br&gt;&#10;You can also include Distibution orders who have outstanding confirmations (e.g. ordered=10 - not confirmed movements=4 - would create a new movement of 6 if available)." xml:space="preserve"><![CDATA[Movement for open Distribution Orders are created based on the delivery rule of the Distribution Order and the relative order priority.  If a Promise Date is selected only orders up to (including) the date are selected.<br>
 If several Distribution Orders of a business partner have the same location, the Distribution orders can be consolidated into one Movement.<br>
 You can also include Distibution orders who have outstanding confirmations (e.g. ordered=10 - not confirmed movements=4 - would create a new movement of 6 if available).]]></value>
  </row>
@@ -1476,14 +1476,14 @@ Cost Workflow = Labor Cost Workflow + Overhead Cost Workflow
 </value>
  </row>
  <row id="53060" trl="N">
-  <value column="Name" original="Cost Workflow &amp; Process Details"><![CDATA[Cost Workflow & Process Details]]></value>
+  <value column="Name" original="Cost Workflow &amp; Process Details" xml:space="preserve"><![CDATA[Cost Workflow & Process Details]]></value>
   <value column="Description" original="This report show every cost element to a BOM or Formula ">This report show every cost element to a BOM or Formula </value>
   <value column="Help" original="This report show every cost element to a BOM or Formula ">This report show every cost element to a BOM or Formula </value>
  </row>
  <row id="53062" trl="N">
-  <value column="Name" original="Bill of Material &amp; Formula Cost Roll-UP"><![CDATA[Bill of Material & Formula Cost Roll-UP]]></value>
-  <value column="Description" original="This Process allow integrate Bill of Material &amp; Formula Cost"><![CDATA[This Process allow integrate Bill of Material & Formula Cost]]></value>
-  <value column="Help" original="This Process allow integrate Bill of Material &amp; Formula Cost&#10;&#10;Element Cost = Element Cost this level + Element Cost this low level &#10;&#10;Total BOM Cost = Sum every Element Cost"><![CDATA[This Process allow integrate Bill of Material & Formula Cost
+  <value column="Name" original="Bill of Material &amp; Formula Cost Roll-UP" xml:space="preserve"><![CDATA[Bill of Material & Formula Cost Roll-UP]]></value>
+  <value column="Description" original="This Process allow integrate Bill of Material &amp; Formula Cost" xml:space="preserve"><![CDATA[This Process allow integrate Bill of Material & Formula Cost]]></value>
+  <value column="Help" original="This Process allow integrate Bill of Material &amp; Formula Cost&#10;&#10;Element Cost = Element Cost this level + Element Cost this low level &#10;&#10;Total BOM Cost = Sum every Element Cost" xml:space="preserve"><![CDATA[This Process allow integrate Bill of Material & Formula Cost
 
 Element Cost = Element Cost this level + Element Cost this low level 
 
@@ -1666,13 +1666,13 @@ Total BOM Cost = Sum every Element Cost]]></value>
  </row>
  <row id="53131" trl="N">
   <value column="Name" original="Asset Group Defaults">Asset Group Defaults</value>
-  <value column="Description" original="Lists Asset Group Settings &amp; Defaults"><![CDATA[Lists Asset Group Settings & Defaults]]></value>
+  <value column="Description" original="Lists Asset Group Settings &amp; Defaults" xml:space="preserve"><![CDATA[Lists Asset Group Settings & Defaults]]></value>
   <value column="Help" original=""/>
  </row>
  <row id="53139" trl="N">
   <value column="Name" original="Import Asset ">Import Asset </value>
   <value column="Description" original="Imports Asset from a file into the application">Imports Asset from a file into the application</value>
-  <value column="Help" original="Import Asset will bring a file of Asset in a predefined format into the application.&lt;p&gt;&#10;The Parameters are default values for null import record values they do not overwrite any data."><![CDATA[Import Asset will bring a file of Asset in a predefined format into the application.<p>
+  <value column="Help" original="Import Asset will bring a file of Asset in a predefined format into the application.&lt;p&gt;&#10;The Parameters are default values for null import record values they do not overwrite any data." xml:space="preserve"><![CDATA[Import Asset will bring a file of Asset in a predefined format into the application.<p>
 The Parameters are default values for null import record values they do not overwrite any data.]]></value>
  </row>
  <row id="53144" trl="N">
@@ -1934,6 +1934,11 @@ Consolidate to one Document let the distribution in current Documents with range
   <value column="Description" original="Convert Lead to BP and Opportunity">Convert Lead to BP and Opportunity</value>
   <value column="Help" original="Convert Lead into a Business Partner and (optional) Sales Opportunity">Convert Lead into a Business Partner and (optional) Sales Opportunity</value>
  </row>
+ <row id="53710" trl="N">
+  <value column="Name" original="Revenue Recognition Run">Revenue Recognition Run</value>
+  <value column="Description" original="Generate revenue recognition journal">Generate revenue recognition journal</value>
+  <value column="Help" original="Generate GL journal based on valid revenue recognition run entries">Generate GL journal based on valid revenue recognition run entries</value>
+ </row>
  <row id="200000" trl="N">
   <value column="Name" original="FA_ProjectCreateAsset">FA_ProjectCreateAsset</value>
   <value column="Description" original="This process creates asset from project and automatically close the project">This process creates asset from project and automatically close the project</value>
@@ -2178,6 +2183,110 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original="Create dictionary view components for a table taking another as base">Create dictionary view components for a table taking another as base</value>
   <value column="Help" original=""/>
  </row>
+ <row id="200093" trl="N">
+  <value column="Name" original="Reject Field Suggestion">Reject Field Suggestion</value>
+  <value column="Description" original="Reject suggested name, description and help changes">Reject suggested name, description and help changes</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200094" trl="N">
+  <value column="Name" original="Accept Field Suggestion">Accept Field Suggestion</value>
+  <value column="Description" original="Accept suggested changes for field">Accept suggested changes for field</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200095" trl="N">
+  <value column="Name" original="Compare Field Suggestion">Compare Field Suggestion</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200096" trl="N">
+  <value column="Name" original="Accept Context Help Suggestion">Accept Context Help Suggestion</value>
+  <value column="Description" original="Accept suggested changes for context help">Accept suggested changes for context help</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200097" trl="N">
+  <value column="Name" original="Reject Context Help Suggestion">Reject Context Help Suggestion</value>
+  <value column="Description" original="Reject suggested changes for context help">Reject suggested changes for context help</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200098" trl="N">
+  <value column="Name" original="Compare Context Help Suggestion">Compare Context Help Suggestion</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200099" trl="N">
+  <value column="Name" original="Apply Pack In from Folder">Apply Pack In from Folder</value>
+  <value column="Description" original="Apply all zip files from a folder following the rules and conventions of Automatic Pack In process">Apply all zip files from a folder following the rules and conventions of Automatic Pack In process</value>
+  <value column="Help" original="&lt;p&gt;This process apply all the pack in files found in a folder recursively - ordered by timestamp.&lt;br /&gt;&#10;The filename of the pack in files is important, it must follow the following convention:&lt;br /&gt;&#10;[Timestamp]_[ClientValue][_AdditionalInformation].zip&lt;/p&gt;&#10;&#10;&lt;ul&gt;&#10;&#9;&lt;li&gt;&lt;strong&gt;Timestamp:&lt;/strong&gt; must be in the format yyyymmddHHMM&lt;/li&gt;&#10;&#9;&lt;li&gt;&lt;strong&gt;ClientValue:&lt;/strong&gt; case sensitive and compared against AD_Client.Value to find the tenant where the pack in must be applied&lt;/li&gt;&#10;&#9;&lt;li&gt;&lt;strong&gt;AdditionalInformation:&lt;/strong&gt; Any additional information to identify the zip file&lt;/li&gt;&#10;&lt;/ul&gt;&#10;&#10;&lt;p&gt;NOTE that AD_Client.Value must not contain underscore in order for this process to work.&lt;br /&gt;&#10;There is a special case for ClientValue, if the ClientValue is ALL-CLIENTS then the 2pack is intended to be applied in all active non-system clients.&lt;br /&gt;&#10;If there is a need to apply initially in a seed tenant then the ClientValue must take the form ALL-CLIENTS-Seed.&lt;br /&gt;&#10;For example:&lt;br /&gt;&#10;201803151607_ALL-CLIENTS-GardenWorld_Test123.zip&lt;/p&gt;&#10;" xml:space="preserve"><![CDATA[<p>This process apply all the pack in files found in a folder recursively - ordered by timestamp.<br />
+The filename of the pack in files is important, it must follow the following convention:<br />
+[Timestamp]_[ClientValue][_AdditionalInformation].zip</p>
+
+<ul>
+	<li><strong>Timestamp:</strong> must be in the format yyyymmddHHMM</li>
+	<li><strong>ClientValue:</strong> case sensitive and compared against AD_Client.Value to find the tenant where the pack in must be applied</li>
+	<li><strong>AdditionalInformation:</strong> Any additional information to identify the zip file</li>
+</ul>
+
+<p>NOTE that AD_Client.Value must not contain underscore in order for this process to work.<br />
+There is a special case for ClientValue, if the ClientValue is ALL-CLIENTS then the 2pack is intended to be applied in all active non-system clients.<br />
+If there is a need to apply initially in a seed tenant then the ClientValue must take the form ALL-CLIENTS-Seed.<br />
+For example:<br />
+201803151607_ALL-CLIENTS-GardenWorld_Test123.zip</p>
+]]></value>
+ </row>
+ <row id="200100" trl="N">
+  <value column="Name" original="Create Credit Memo">Create Credit Memo</value>
+  <value column="Description" original="Creates a credit memo based on the invoice.">Creates a credit memo based on the invoice.</value>
+  <value column="Help" original="The invoice should be correct and completed.">The invoice should be correct and completed.</value>
+ </row>
+ <row id="200102" trl="N">
+  <value column="Name" original="Clean Orphan Cascade Records">Clean Orphan Cascade Records</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Some processes accessing directly the database can leave orphan records, this process clean those orphan records deleting them">Some processes accessing directly the database can leave orphan records, this process clean those orphan records deleting them</value>
+ </row>
+ <row id="200107" trl="N">
+  <value column="Name" original="Recreate Storage Reservation">Recreate Storage Reservation</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="The process checks if there are errors in storage reservartion (storageqtyReserved &lt;&gt; orderqtyreserved), if there are, it recreates all the reservation records for the offending products." xml:space="preserve"><![CDATA[The process checks if there are errors in storage reservartion (storageqtyReserved <> orderqtyreserved), if there are, it recreates all the reservation records for the offending products.]]></value>
+ </row>
+ <row id="200110" trl="N">
+  <value column="Name" original="Copy Client">Copy Client</value>
+  <value column="Description" original="Process to copy a client">Process to copy a client</value>
+  <value column="Help" original="This process can be used to copy a client from an external database to the current database, or to duplicate a template client within the current database.">This process can be used to copy a client from an external database to the current database, or to duplicate a template client within the current database.</value>
+ </row>
+ <row id="200111" trl="N">
+  <value column="Name" original="Migrate ID">Migrate ID</value>
+  <value column="Description" original="Process to migrate an ID or a UUID">Process to migrate an ID or a UUID</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200112" trl="N">
+  <value column="Name" original="Activate">Activate</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200113" trl="N">
+  <value column="Name" original="Deactivate">Deactivate</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200114" trl="N">
+  <value column="Name" original="Delete">Delete</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200117" trl="N">
+  <value column="Name" original="Migrate Storage Provider">Migrate Storage Provider</value>
+  <value column="Description" original="Migrate the storage provider for attachments, archives and/or images">Migrate the storage provider for attachments, archives and/or images</value>
+  <value column="Help" original="&lt;p&gt;&lt;span style=&quot;color:#ff0000&quot;&gt;&lt;b&gt;WARNING: This process can be destructive, so please be sure that you have a backup of the database, as well as a backup of your old storage provider.&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;&#10;&#10;&lt;p&gt;The process migrates files between storage providers.&lt;/p&gt;&#10;&#10;&lt;ul&gt;&lt;li&gt;&lt;b&gt;Client:&lt;/b&gt; Optional, you can select a client to migrate, if empty it will try to migrate storage providers from all clients with the Actual Storage Provider selected below.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Actual Storage Provider:&lt;/b&gt; If the client is empty, you define here the storage provider to migrate, if empty it migrates clients with the storage provider not set (this is by default DB).&lt;/li&gt;&lt;li&gt;&lt;b&gt;Storage Provider:&lt;/b&gt; The new storage provider to migrate the files.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Migrate Attachment:&lt;/b&gt; If enabled, it migrates the attachment files to the new storage provider.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Migrate Archive:&lt;/b&gt; If enabled, it migrates the archive files to the new storage provider.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Migrate Image:&lt;/b&gt; If enabled, it migrates the image files to the new storage provider.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Delete old/existing files:&lt;/b&gt; If enabled, after the files are migrated the program tries to free space deleting the files from the previous storage provider.  &lt;span style=&quot;color:#ff0000&quot;&gt;Note that migrating from/to a DB storage provider is a destructive action that cannot be recovered, it implies deleting the old/existing files&lt;/span&gt;.&lt;/li&gt;&lt;/ul&gt;&#10;&#10;&lt;p&gt;Please note that during the migration the whole set of records in the table being migrated (attachment, archive, image) is locked, so operations on these records are not permitted.  Because of this, it is recommended to run this process in a &lt;b&gt;maintenance window&lt;/b&gt; without users logged in the system.&lt;/p&gt;&#10;&#10;&lt;p&gt;In case of failure the attachments / archives / images that succeeded as a whole from a client are still migrated, but not partial records (which would result in data corruption if allowed).&lt;/p&gt;&#10;" xml:space="preserve"><![CDATA[<p><span style="color:#ff0000"><b>WARNING: This process can be destructive, so please be sure that you have a backup of the database, as well as a backup of your old storage provider.</b></span></p>
+
+<p>The process migrates files between storage providers.</p>
+
+<ul><li><b>Client:</b> Optional, you can select a client to migrate, if empty it will try to migrate storage providers from all clients with the Actual Storage Provider selected below.</li><li><b>Actual Storage Provider:</b> If the client is empty, you define here the storage provider to migrate, if empty it migrates clients with the storage provider not set (this is by default DB).</li><li><b>Storage Provider:</b> The new storage provider to migrate the files.</li><li><b>Migrate Attachment:</b> If enabled, it migrates the attachment files to the new storage provider.</li><li><b>Migrate Archive:</b> If enabled, it migrates the archive files to the new storage provider.</li><li><b>Migrate Image:</b> If enabled, it migrates the image files to the new storage provider.</li><li><b>Delete old/existing files:</b> If enabled, after the files are migrated the program tries to free space deleting the files from the previous storage provider.  <span style="color:#ff0000">Note that migrating from/to a DB storage provider is a destructive action that cannot be recovered, it implies deleting the old/existing files</span>.</li></ul>
+
+<p>Please note that during the migration the whole set of records in the table being migrated (attachment, archive, image) is locked, so operations on these records are not permitted.  Because of this, it is recommended to run this process in a <b>maintenance window</b> without users logged in the system.</p>
+
+<p>In case of failure the attachments / archives / images that succeeded as a whole from a client are still migrated, but not partial records (which would result in data corruption if allowed).</p>
+]]></value>
+ </row>
  <row id="800000" trl="Y">
   <value column="Name" original="Distribute Amount to Doc Line Details">Distribuir Valor aos Detalhes</value>
   <value column="Description" original="Distribute a given amount to line details of a document">Distribuir Valor aos Detalhes das Linhas</value>
@@ -2233,10 +2342,60 @@ d. Transaction Date, will become in-service-date for the newly created asset.</v
   <value column="Description" original="Brazilian process to create digital document  of fiscal bookkeeping of pis/cofins tax">Processo brasileiro para criar documento de escrituração fiscal digital do imposto PIS / COFINS</value>
   <value column="Help" original=""/>
  </row>
+ <row id="800017" trl="N">
+  <value column="Name" original="Processar NFS">Processar NFS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800018" trl="N">
+  <value column="Name" original="Gerar Nota Fiscal de Serviço">Gerar Nota Fiscal de Serviço</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Processo para Geração da Nota Fiscal de Serviço irá criar uma NFS baseada neste Documento. Obs.: É obrigatório que um dos itens seja serviço.">Processo para Geração da Nota Fiscal de Serviço irá criar uma NFS baseada neste Documento. Obs.: É obrigatório que um dos itens seja serviço.</value>
+ </row>
+ <row id="800019" trl="N">
+  <value column="Name" original="Enviar Lote">Enviar Lote</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800020" trl="N">
+  <value column="Name" original="Consultar Lote">Consultar Lote</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800042" trl="N">
+  <value column="Name" original="Transmitir NFS-e">Transmitir NFS-e</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Processo que efetua a transmissão da NFS-e/RPS para o WebService do município.">Processo que efetua a transmissão da NFS-e/RPS para o WebService do município.</value>
+ </row>
+ <row id="800043" trl="N">
+  <value column="Name" original="Cancelar NFS-e">Cancelar NFS-e</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Processo que efetua o cancelamento da NFS-e diretamente no WebService da Prefeitura.">Processo que efetua o cancelamento da NFS-e diretamente no WebService da Prefeitura.</value>
+ </row>
+ <row id="800044" trl="N">
+  <value column="Name" original="Imprimir DANFE">Imprimir DANFE</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800045" trl="N">
+  <value column="Name" original="Enviar por e-Mail">Enviar por e-Mail</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row id="800046" trl="Y">
   <value column="Name" original="Generate Boletos Instructions">Gerar Instruções Bancárias</value>
   <value column="Description" original="Generate bank instructions for existing Boletos">Gera instruções bancárias para boletos existentes</value>
   <value column="Help" original="This process allows to generate instructions for existing boletos.">Este processo permite gerar instruções bancárias para boletos exitentes.</value>
+ </row>
+ <row id="800100" trl="Y">
+  <value column="Name" original="Download NF-e XML">Consulta DF-e (XML de NF-e)</value>
+  <value column="Description" original="Download NF-e XML From Sefaz">Efetua a consulta no web service de distribuição de DF-e da Sefaz</value>
+  <value column="Help" original="This process allows you to download NF-e XML from Sefaz web-services."/>
+ </row>
+ <row id="800101" trl="Y">
+  <value column="Name" original="Manifest NF-e XML">Gerar Manifestação Destinatário (NF-e)</value>
+  <value column="Description" original="">Gera eventos de manifestação destinatário na Sefaz</value>
+  <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="e6df0503-5f93-4a2c-abe6-0c425cc138e9">
   <value column="Name" original="Process NotaFiscal">Process NotaFiscal</value>

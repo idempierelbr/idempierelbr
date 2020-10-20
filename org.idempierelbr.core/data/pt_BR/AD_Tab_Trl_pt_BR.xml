@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Tab">
+<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Tab">
  <row id="100" trl="Y">
   <value column="Name" original="Table">Tabela</value>
   <value column="CommitWarning" original=""/>
@@ -112,7 +112,7 @@
   <value column="Name" original="Role">Perfil de Acesso</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Define responsibility roles">Definir perfis de acesso e responsabilidades</value>
-  <value column="Help" original="Define the role and add the client and organizations the role has access to. You can give users access to this role and modify the access of this role to windows, forms, processes and reports as well as tasks. &lt;br&gt;&#10;If the Role User Level is Manual, the assigned acces rights are not automatically updated (e.g. if a role has a restricted number of Windows/Processes it can access). You need to add organizational access unless the role has access to all organizations. The SuperUser and the user creating a new role are assigned to the role automatically.  &lt;br&gt;&#10;If you select an Organization Tree, the user has access to the leaves of  summary organizations.&#10;Note: You cannot change the System Administrator role."><![CDATA[Define perfis de acesso e acrescenta as empresas e organizações a que este perfil tem acesso. Você pode dar acesso de usuários a este perfil e modificar o acesso deste perfil a janelas, formulários, processos e relatórios assim como tarefas. <br> Se o Nível de Usuário de Função estiver em Manual, os direitos de acesso designados não são automaticamente atualizados (ex. se um perfil tiver um número restrito de Janelas/Processos que ele pode acessar). Você precisa adicionar acesso organizacional a menos que o perfil tenha acesso a todas as organizações. O novo perfil é atribuido automaticamente ao SuperUsuário e ao usuário que estiver criando o perfil.  <br> Se você selecionar uma Árvore de Organizacional, o usuário terá acesso às folhas das sub Organizações. Nota: Você não pode alterar o perfil do Administrador do Sistema.]]></value>
+  <value column="Help" original="Define the role and add the client and organizations the role has access to. You can give users access to this role and modify the access of this role to windows, forms, processes and reports as well as tasks. &lt;br&gt;&#10;If the Role User Level is Manual, the assigned acces rights are not automatically updated (e.g. if a role has a restricted number of Windows/Processes it can access). You need to add organizational access unless the role has access to all organizations. The SuperUser and the user creating a new role are assigned to the role automatically.  &lt;br&gt;&#10;If you select an Organization Tree, the user has access to the leaves of  summary organizations.&#10;Note: You cannot change the System Administrator role." xml:space="preserve"><![CDATA[Define perfis de acesso e acrescenta as empresas e organizações a que este perfil tem acesso. Você pode dar acesso de usuários a este perfil e modificar o acesso deste perfil a janelas, formulários, processos e relatórios assim como tarefas. <br> Se o Nível de Usuário de Função estiver em Manual, os direitos de acesso designados não são automaticamente atualizados (ex. se um perfil tiver um número restrito de Janelas/Processos que ele pode acessar). Você precisa adicionar acesso organizacional a menos que o perfil tenha acesso a todas as organizações. O novo perfil é atribuido automaticamente ao SuperUsuário e ao usuário que estiver criando o perfil.  <br> Se você selecionar uma Árvore de Organizacional, o usuário terá acesso às folhas das sub Organizações. Nota: Você não pode alterar o perfil do Administrador do Sistema.]]></value>
  </row>
  <row id="120" trl="Y">
   <value column="Name" original="User Assignment">Usuário</value>
@@ -206,25 +206,25 @@
  </row>
  <row id="135" trl="Y">
   <value column="Name" original="Country">País</value>
-  <value column="CommitWarning" original="Please create a support request (http://www.idempiere.org/support/requests.html), if the country data is not correct.">Por favor crie uma solicitação de suporte (http://www.adempiere.org/support/requests.html), se os dados do paiz não estiver correto.</value>
+  <value column="CommitWarning" original="Please create a support request - https://idempiere.atlassian.net/secure/CreateIssue.jspa - if the country data is not correct.">Por favor crie uma solicitação de suporte (http://www.adempiere.org/support/requests.html), se os dados do paiz não estiver correto.</value>
   <value column="Description" original="Define Country">Definir País</value>
   <value column="Help" original="The Country Tab defines any country in which you do business.  Values entered here are referenced in location records for Business Partners.">A Aba "País" define qualquer país com o qual você negocia.  Valores digitados aqui são referenciados em registros de localização de Parceiros de Negócios.</value>
  </row>
  <row id="136" trl="Y">
   <value column="Name" original="Region">Região (UF)</value>
-  <value column="CommitWarning" original="Please create a support request (http://www.idempiere.org/support/requests.html), if the region info is not correct/incomplete.">Por favor crie uma solicitação de suporte (http://www.adempiere.org/support/requests.html), se as informações de região não estiverem corretas ou forem incompletas.</value>
+  <value column="CommitWarning" original="Please create a support request - https://idempiere.atlassian.net/secure/CreateIssue.jspa - if the region info is not correct/incomplete.">Por favor crie uma solicitação de suporte (http://www.adempiere.org/support/requests.html), se as informações de região não estiverem corretas ou forem incompletas.</value>
   <value column="Description" original="Define Regions">Definir Regiões (UFs)</value>
   <value column="Help" original="The Region Tab  defines a Region within a Country.  This tab is enabled only if the Has Region checkbox is selected for the Country.">A Aba "Região" define uma Região dentro de um País.  Esta Aba é habilitada somente se a caixa de verificação Tem Região for selecionada para o país.</value>
  </row>
  <row id="143" trl="Y">
   <value column="Name" original="Organization">Organização</value>
-  <value column="CommitWarning" original="All not manually maintained Roles will automatically have access to the new Organziation.&#10;You need restart your application server for most changes made here to be effective.">Todos os Papéis (Funções) que não forem administrados manualmente terão acesso automático à nova Organização. Você precisa reiniciar o seu servidor de aplicação (Adempiere) para que a maioria das alterações feitas aqui sejam efetivadas.</value>
+  <value column="CommitWarning" original="All not manually maintained Roles will automatically have access to the new Organization.&#10;You need execute Cache Reset and re-login for most changes made here to be effective.">Todos os Papéis (Funções) que não forem administrados manualmente terão acesso automático à nova Organização. Você precisa reiniciar o seu servidor de aplicação (Adempiere) para que a maioria das alterações feitas aqui sejam efetivadas.</value>
   <value column="Description" original="Define Organizations">Definir Organizações</value>
   <value column="Help" original="The Organization Tab is used to define an Organization.  Each Organization has a Key and Name and optionally a Description.  &#10;When adding a new organization, you must re-login to be able to access the new organization.">A Aba "Organização" é usada para definir uma Organização.  Cada Organização tem uma Chave e um Nome e opcionalmente uma Descrição. Quando acrescentar uma nova organização, você deve re-logar para poder ter acesso à nova organização.</value>
  </row>
  <row id="145" trl="Y">
   <value column="Name" original="Client">Empresa</value>
-  <value column="CommitWarning" original="Create a new client via &quot;Initial Client Setup&quot;. You can only change information here!  You need re-login and restart your application server for most changes made here to be effective.  The change of the Material Policy applies to future transactions.">Crie uma nova Empresa via "Configuração Inicial de Empresas". Você só pode alterar informações aqui!  Você precisa fazer novo login e reiniciar o seu servidor de aplicação (Adempiere) para que a maioria das alterações feitas aqui sejam efetivadas.  A alteração da Política de Materiais se aplica às transações futuras.</value>
+  <value column="CommitWarning" original="Create a new client via &quot;Initial Client Setup&quot;. You can only change information here!  You need execute Cache Reset and re-login for most changes made here to be effective.  The change of the Material Policy applies to future transactions.">Crie uma nova Empresa via "Configuração Inicial de Empresas". Você só pode alterar informações aqui!  Você precisa fazer novo login e reiniciar o seu servidor de aplicação (Adempiere) para que a maioria das alterações feitas aqui sejam efetivadas.  A alteração da Política de Materiais se aplica às transações futuras.</value>
   <value column="Description" original="Client/Tenant Definition">Definição de Empresa/Locatário</value>
   <value column="Help" original="The Client Definition Tab defines a unique client.&#10;Do not create a new client in this window, but use &quot;Initial Client Setup&quot; (System Administrator Role) to set up the required security and access rules. If you create a new client here, you will not be able to view it and also the required client infrastructure would not have been set up.">A Aba "Definição de Empresa" define uma empresa exclusiva. Não crie uma nova empresa nesta janela, mas use "Configuração Inicial de Empresas" (No papel de Administrador de Sistema) para configurar a segurança e as regras de acesso necessárias. Se você criar uma nova empresa aqui, você não poderá vê-la e a também a infra-estrutura essencial da empresa não será configurada.</value>
  </row>
@@ -320,13 +320,13 @@
  </row>
  <row id="169" trl="Y">
   <value column="Name" original="Client Info">Informações da Empresa</value>
-  <value column="CommitWarning" original="You need re-login and restart your application server for most changes made here to be effective.">Você precisa fazer novo login e reiniciar o seu servidor de aplicação (Adempiere) para que a maioria das alterações feitas aqui sejam efetivadas.</value>
+  <value column="CommitWarning" original="You need to execute Cache Reset and re-login for most changes made here to be effective.">Você precisa fazer novo login e reiniciar o seu servidor de aplicação (Adempiere) para que a maioria das alterações feitas aqui sejam efetivadas.</value>
   <value column="Description" original="Client Info">Informações da Empresa</value>
   <value column="Help" original="The Client Info Tab defines the details for each client.  The accounting rules and high level defaults are defined here. The Calendar is used to determine if a period is open or closed.">A Aba "Informações da Empresa" define os detalhes de cada empresa.  As Regras Contábeis e padrões de alto nível são definidos aqui. O Calendário é usado para determinar se um período está aberto ou fechado.</value>
  </row>
  <row id="170" trl="Y">
   <value column="Name" original="Organization Info">Informações da Organização</value>
-  <value column="CommitWarning" original="You need re-login and restart your application server for most changes made here to be effective.&#10;">Você precisa fazer novo login e reiniciar o seu servidor de aplicação (Adempiere) para que a maioria das alterações feitas aqui sejam efetivadas.
+  <value column="CommitWarning" original="You need execute Cache Reset and re-login for most changes made here to be effective.&#10;">Você precisa fazer novo login e reiniciar o seu servidor de aplicação (Adempiere) para que a maioria das alterações feitas aqui sejam efetivadas.
 </value>
   <value column="Description" original="Organization Detail Information">Informações Detalhadas da Organização</value>
   <value column="Help" original="The Organization Info Tab is used to define an Organization's address, DUNS number and Tax Identification number">A Aba "Informações da Organização" é usada para definir o endereço de uma Organização, número DUNS, e número de Identificação de Impostos (CGC)</value>
@@ -353,7 +353,7 @@
   <value column="Name" original="Tax">Alíquota</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Tax definition">Definição de Impostos</value>
-  <value column="Help" original="The Tax Rate Window defines the different taxes used for each tax category.  For example Sales Tax must be defined for each State in which it applies.&lt;br&gt;&#10;If you have multiple taxes create a summary level tax with the approximate total tax rate and the actual tax rates pointing to the summary level tax as their parent. When entering the order or invoice lines the tax is estimated the correct tax is calculated when the document is processed.  The tax is always calculated from the line net amount. If one tax has a the tax basis the line net amount and another tax you need to adjust the percentage to result in the correct amount.&lt;br&gt;&#10;Valid From/To is determined by the parent tax."><![CDATA[A Janela de "Alíquota de Imposto" define as diferentes taxas usadas para cada categoria de impostos.  Por exemplo, Impostos sobre Vendas devem ser definidos para cada estado ao qual eles se aplicam.<br> Se você tiver múltiplos impostos, crie um nível de resumo de impostos com a taxa total aproximada dos impostos e as taxas reais apontando ao nível de resumo de impostos como seu nível superior. Ao inserir as linhas de pedido ou fatura, o imposto é estimado, o imposto correto é calculado quando o documento for processado.  O imposto é sempre calculado a partir da linha de montante líquido. Se um imposto tem o montante líquido mais um outro imposto como base, você precisa ajustar o percentual para resultar no valor correto.<br> A Validação De/Para é determinada pelo imposto superior (pai).]]></value>
+  <value column="Help" original="The Tax Rate Window defines the different taxes used for each tax category.  For example Sales Tax must be defined for each State in which it applies.&lt;br&gt;&#10;If you have multiple taxes create a summary level tax with the approximate total tax rate and the actual tax rates pointing to the summary level tax as their parent. When entering the order or invoice lines the tax is estimated the correct tax is calculated when the document is processed.  The tax is always calculated from the line net amount. If one tax has a the tax basis the line net amount and another tax you need to adjust the percentage to result in the correct amount.&lt;br&gt;&#10;Valid From/To is determined by the parent tax." xml:space="preserve"><![CDATA[A Janela de "Alíquota de Imposto" define as diferentes taxas usadas para cada categoria de impostos.  Por exemplo, Impostos sobre Vendas devem ser definidos para cada estado ao qual eles se aplicam.<br> Se você tiver múltiplos impostos, crie um nível de resumo de impostos com a taxa total aproximada dos impostos e as taxas reais apontando ao nível de resumo de impostos como seu nível superior. Ao inserir as linhas de pedido ou fatura, o imposto é estimado, o imposto correto é calculado quando o documento for processado.  O imposto é sempre calculado a partir da linha de montante líquido. Se um imposto tem o montante líquido mais um outro imposto como base, você precisa ajustar o percentual para resultar no valor correto.<br> A Validação De/Para é determinada pelo imposto superior (pai).]]></value>
  </row>
  <row id="176" trl="Y">
   <value column="Name" original="Tax Category">Categoria de Imposto</value>
@@ -459,13 +459,13 @@
  </row>
  <row id="199" trl="Y">
   <value column="Name" original="Accounting Schema">Esquema Contábil</value>
-  <value column="CommitWarning" original="If you change the currency or costing method, you must reset all accounting transactions.&#10;For changes to become effective, you must re-login and re-start the Application Server. ">Se você alterar a moeda ou método de custeio, você tem que resetar todas as transações contábeis. Para as alterações se tornarem efetivas, você deve re-iniciar o Servidor de Aplicação e se re-logar. </value>
+  <value column="CommitWarning" original="If you change the currency or costing method, you must reset all accounting transactions.&#10;For changes to become effective, you must execute Cache Reset. ">Se você alterar a moeda ou método de custeio, você tem que resetar todas as transações contábeis. Para as alterações se tornarem efetivas, você deve re-iniciar o Servidor de Aplicação e se re-logar. </value>
   <value column="Description" original="Define your Account Schema Structure">Definir sua Estrutura de Esquema Contábil"</value>
   <value column="Help" original="The Accounting Schema Tab defines the controls used for accounting.  You can define multiple accounting schema per client (for parallel accounting).  &#10;Postings are generated for an accounting schema, if the schema is valid and you have defined GL and Default accounts and after completion of the Add / Copy Accounts process.">A Aba "Esquema Contábil" define os controles utilizados na contabilidade.  Você pode definir múltiplos esquemas contábeis por empresa (para contabilidade paralela). Após a finalização dos processos de Adicionar/Copiar Contas, os lançamento nos livros serão gerados para um Esquema Contábil, se o esquema for válido e você tiver definido o RG e Contas padrão.</value>
  </row>
  <row id="200" trl="Y">
   <value column="Name" original="General Ledger">Livro Razão</value>
-  <value column="CommitWarning" original="For changes to become effective, you must re-login and re-start the Application Server.">Para as alterações se tornarem efetivas, você deve re-iniciar o Servidor de Aplicação e se re-logar.</value>
+  <value column="CommitWarning" original="For changes to become effective, you must execute Cache Reset and re-login.">Para as alterações se tornarem efetivas, você deve re-iniciar o Servidor de Aplicação e se re-logar.</value>
   <value column="Description" original="Accounts for GL">Contas para o Livro Razão</value>
   <value column="Help" original="The General Ledger Tab defines error and balance handling to use as well as  the necessary accounts for posting to General Ledger.  ">A Aba "Livro Razão" permite a configuração para lidar com erros e contrapartidas, bem como define as contas necessárias para lançamentos no Livro Razão.</value>
  </row>
@@ -561,7 +561,7 @@
  </row>
  <row id="217" trl="Y">
   <value column="Name" original="Account Schema Dimensions">Elemento de Esquema Contábil</value>
-  <value column="CommitWarning" original="ATTENTION: ANY CHANGES here will effect the structure of your chart of accounts!&#10;Depending what changes you did, you should reset accounting.&#10;For changes to become effective, you must re-login and re-start the Application Server.&#10;Saving/deleting the record starts processes which may take a while.">ATENÇÃO: QUAISQUER ALTERAÇÕES feitas aqui vão afetar a estrutura do seu Plano de Contas! Dependendo das alterações que você fêz, você deveria resetar toda a contabilidade. Para as alterações se tornarem efetivas, você deve re-iniciar o Servidor de Aplicação e se re-logar. Salvar ou Excluir o registro inicia processos que podem demorar um pouco.</value>
+  <value column="CommitWarning" original="ATTENTION: ANY CHANGES here will affect the structure of your chart of accounts!&#10;Depending what changes you did, you should reset accounting.&#10;For changes to become effective, you must and execute Cache Reset and re-login.&#10;Saving/deleting the record starts processes which may take a while.">ATENÇÃO: QUAISQUER ALTERAÇÕES feitas aqui vão afetar a estrutura do seu Plano de Contas! Dependendo das alterações que você fêz, você deveria resetar toda a contabilidade. Para as alterações se tornarem efetivas, você deve re-iniciar o Servidor de Aplicação e se re-logar. Salvar ou Excluir o registro inicia processos que podem demorar um pouco.</value>
   <value column="Description" original="Define the dimensions of your Account Key">Define os elementos de sua Chave de Contas</value>
   <value column="Help" original="The Account Schema Dimensions Tab defines the dimensions that comprise the account key. A name is defined which will display in documents.  Also the order of the dimensions and if they are balanced and mandatory are indicated.">A Aba "Elemento de Esquema Contábil" define os elementos que compreendem a chave de contas. É definido o nome que será mostrado nos documentos.  Também são indicados a ordem dos elementos e se eles são e obrigatórios e entram nos balanços.</value>
  </row>
@@ -1015,7 +1015,7 @@
   <value column="Name" original="Format Field">Campo de Formato</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Maintain Format Fields">Gerenciamento de Campos de Formato</value>
-  <value column="Help" original="Define the individual field based on the table definition.  Please note that you have to make sure that a Constant has the correct  SQL data type (i.e. if it is a 'string', you need to enclose it like 'this').&#10;&lt;p&gt;Product mapping (for details see documentation):&#10;&lt;pre&gt;&#10;H_Item =&gt; Value&#10;H_ItemDesc =&gt; Name / Description&#10;H_ItemDefn =&gt; Help&#10;H_ItemType =&gt; ProductCategory&#10;H_PartnrID =&gt; Value of Business Partner&#10;H_Commodity1 =&gt; Vendor Product No&#10;H_Commodity2 =&gt; SKU&#10;H_ItemClass =&gt; Classification (A,B,C..)&#10;V_OperAmt_T_Cur =&gt; Currency&#10;V_OperAmt_T =&gt; Price &#10;&lt;/pre&gt;"><![CDATA[Define o campo individual baseado na definição de tabela.  Por favor, note que você tem que garantir que uma Constante tenha o tipo de dados SQL correto (i.e. se for uma 'seqüência de caracteres', você precisa colocar entre aspas como 'estas'). <p>Mapeamento de Produto (para detalhes veja a documentação): <pre> H_Item => Valor H_ItemDesc => Nome / Descrição H_ItemDefn => Ajuda H_ItemType => ProductCategory H_PartnrID => Valor do Parceiro de Negócios H_Commodity1 => Núm. Produto do Fornecedor H_Commodity2 => SKU H_ItemClass => Classificação (A,B,C..) V_OperAmt_T_Cur => Moeda V_OperAmt_T => Preço </pre>]]></value>
+  <value column="Help" original="Define the individual field based on the table definition.  Please note that you have to make sure that a Constant has the correct  SQL data type (i.e. if it is a 'string', you need to enclose it like 'this').&#10;&lt;p&gt;Product mapping (for details see documentation):&#10;&lt;pre&gt;&#10;H_Item =&gt; Value&#10;H_ItemDesc =&gt; Name / Description&#10;H_ItemDefn =&gt; Help&#10;H_ItemType =&gt; ProductCategory&#10;H_PartnrID =&gt; Value of Business Partner&#10;H_Commodity1 =&gt; Vendor Product No&#10;H_Commodity2 =&gt; SKU&#10;H_ItemClass =&gt; Classification (A,B,C..)&#10;V_OperAmt_T_Cur =&gt; Currency&#10;V_OperAmt_T =&gt; Price &#10;&lt;/pre&gt;" xml:space="preserve"><![CDATA[Define o campo individual baseado na definição de tabela.  Por favor, note que você tem que garantir que uma Constante tenha o tipo de dados SQL correto (i.e. se for uma 'seqüência de caracteres', você precisa colocar entre aspas como 'estas'). <p>Mapeamento de Produto (para detalhes veja a documentação): <pre> H_Item => Valor H_ItemDesc => Nome / Descrição H_ItemDefn => Ajuda H_ItemType => ProductCategory H_PartnrID => Valor do Parceiro de Negócios H_Commodity1 => Núm. Produto do Fornecedor H_Commodity2 => SKU H_ItemClass => Classificação (A,B,C..) V_OperAmt_T_Cur => Moeda V_OperAmt_T => Preço </pre>]]></value>
  </row>
  <row id="317" trl="Y">
   <value column="Name" original="Bill of Materials">Lista de Materiais</value>
@@ -1088,13 +1088,13 @@ Imprimindo: - Usualmente, somente a informação da LDM é impressa - Para fatur
   <value column="Name" original="Statement Line">Linha de Extrato</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Statement Line">Linha de Extrato</value>
-  <value column="Help" original="The Statement Line Tab defines the individual line items on the Bank Statement.  They can be entered manually or generated from payments entered.&#10;&lt;br&gt;For Posting, the bank account organization is used, if it is not a charge."><![CDATA[A Aba "Linha de Extrato" define a linha de itens individuais no Extrato Bancário.  Eles podem ser digitados manualmente ou gerados a partir dos pagamentos digitados. <br>A Conta Bancária da Organização é utilizada para a contabilização, se não for uma despesa.]]></value>
+  <value column="Help" original="The Statement Line Tab defines the individual line items on the Bank Statement.  They can be entered manually or generated from payments entered.&#10;&lt;br&gt;For Posting, the bank account organization is used, if it is not a charge." xml:space="preserve"><![CDATA[A Aba "Linha de Extrato" define a linha de itens individuais no Extrato Bancário.  Eles podem ser digitados manualmente ou gerados a partir dos pagamentos digitados. <br>A Conta Bancária da Organização é utilizada para a contabilização, se não for uma despesa.]]></value>
  </row>
  <row id="330" trl="Y">
   <value column="Name" original="Payment">Pagamento</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Payment or Receipt">Pagamento ou Recebimento</value>
-  <value column="Help" original="Enter payment or receipt for a Business Partner.  If it is for a single invoice it can be allocated directly to that invoice using this screen. You can also apply over/under payments:&lt;br&gt;&#10;You have an over-payment, if you received more money than due for a single invoice. Instead of writing the difference off (i.e. would be a gain), you can leave the amount unallocated and use it for later invoices or credit memos. Please note that the Amount is the payment amount, so you need to enter the over-payment as a negative amount.&lt;br&gt;&#10;You can also receive a partial payment (under-payment). If you decide not to write off the remaining invoice amount, enter the under-payment as a positive amount.&lt;br&gt;&#10;Note that printed payments are archived in Payment Selection (Prepared Payment).&#10;&lt;br&gt;For Posting, the bank account organization is used, if it is not a charge."><![CDATA[Digitar o pagamento ou recebimento de um parceiro de negócios.  Se ele for para uma única fatura ele pode ser alocado diretamente àquela fatura usando esta tela. Você também pode aplicar sobre/sub pagamentos:<br> Você tem um sobre-pagamento, se você recebeu mais dinheiro que o devido para uma única fatura. Ao invés de dar baixa na diferença (i.e. seria um ganho), você pode deixar o montante não alocado e usá-lo para outras faturas ou avisos de crédito. Por favor note que o Valor é o montante do pagamento, assim, você precisa dar entrada no sobre-pagamento como um valor negativo.<br> Você também pode receber um pagamento parcial (sub-pagamento). Se você decidir não dar baixa no valor remanescente da fatura, digite o sub-pagamento como um valor positivo.<br> Note que pagamentos impressos são arquivados na Seleção de Pagamento (Pagamentos Preparados). <br>A conta bancária da organização será utilizada para a contabilização se não for uma despesa.]]></value>
+  <value column="Help" original="Enter payment or receipt for a Business Partner.  If it is for a single invoice it can be allocated directly to that invoice using this screen. You can also apply over/under payments:&lt;br&gt;&#10;You have an over-payment, if you received more money than due for a single invoice. Instead of writing the difference off (i.e. would be a gain), you can leave the amount unallocated and use it for later invoices or credit memos. Please note that the Amount is the payment amount, so you need to enter the over-payment as a negative amount.&lt;br&gt;&#10;You can also receive a partial payment (under-payment). If you decide not to write off the remaining invoice amount, enter the under-payment as a positive amount.&lt;br&gt;&#10;Note that printed payments are archived in Payment Selection (Prepared Payment).&#10;&lt;br&gt;For Posting, the bank account organization is used, if it is not a charge." xml:space="preserve"><![CDATA[Digitar o pagamento ou recebimento de um parceiro de negócios.  Se ele for para uma única fatura ele pode ser alocado diretamente àquela fatura usando esta tela. Você também pode aplicar sobre/sub pagamentos:<br> Você tem um sobre-pagamento, se você recebeu mais dinheiro que o devido para uma única fatura. Ao invés de dar baixa na diferença (i.e. seria um ganho), você pode deixar o montante não alocado e usá-lo para outras faturas ou avisos de crédito. Por favor note que o Valor é o montante do pagamento, assim, você precisa dar entrada no sobre-pagamento como um valor negativo.<br> Você também pode receber um pagamento parcial (sub-pagamento). Se você decidir não dar baixa no valor remanescente da fatura, digite o sub-pagamento como um valor positivo.<br> Note que pagamentos impressos são arquivados na Seleção de Pagamento (Pagamentos Preparados). <br>A conta bancária da organização será utilizada para a contabilização se não for uma despesa.]]></value>
  </row>
  <row id="331" trl="Y">
   <value column="Name" original="Accounting">Contabilidade</value>
@@ -1202,7 +1202,7 @@ Imprimindo: - Usualmente, somente a informação da LDM é impressa - Para fatur
   <value column="Name" original="Org Access">Acesso a Organização</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Maintain Role Org Access">Gerenciamento de Acesso do Perfil a Organização</value>
-  <value column="Help" original="Add the client and organizations the user has access to. Entries here are ignored, if User Org Access is selected or the role has access to all roles.&lt;br&gt;&#10;Note that access information is cached and requires re-login or reset of cache."><![CDATA[Acrescentar as Empresas e Organizações a que o usuário tem acesso. Estes lançamentos serão ignorados se o "Acesso de Usuários a Organização" for selecionado ou o perfil tiver acesso a todos os papéis.<br> Note que a informação de acesso é memorizada e requer re-login ou reset da memória cache.]]></value>
+  <value column="Help" original="Add the client and organizations the user has access to. Entries here are ignored, if User Org Access is selected or the role has access to all roles.&lt;br&gt;&#10;Note that access information is cached and requires re-login or reset of cache." xml:space="preserve"><![CDATA[Acrescentar as Empresas e Organizações a que o usuário tem acesso. Estes lançamentos serão ignorados se o "Acesso de Usuários a Organização" for selecionado ou o perfil tiver acesso a todos os papéis.<br> Note que a informação de acesso é memorizada e requer re-login ou reset da memória cache.]]></value>
  </row>
  <row id="352" trl="Y">
   <value column="Name" original="Payment Selection">Seleção de Pagamentos</value>
@@ -1293,7 +1293,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Performance Measure Calculation">Cálculo de Medição de Desempenho</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Maintain your Performance Measure Calculation">Gerenciamento de Cálculos de Medidas de Desempenho</value>
-  <value column="Help" original="The Performance Measure Calculation defines how performance measures will be calculated. See examples.&lt;br&gt;&#10;The SELECT definition must contain the SELECT and FROM keywords in upper case, the WHERE definition must contain the WHERE keyword in upper case.  The main table must not have an alias!  The WHERE clause can only contain values of the main table (e.g. when selecting from Header and lines, only header variables can be used in the where clause) and be fully qualified if there is more then one table."><![CDATA[A Aba "Cálculos de Medidas de Desempenho" define como as medidas de desempenho serão calculadas. See examples.<br> The SELECT definition must contain the SELECT and FROM keywords in upper case, the WHERE definition must contain the WHERE keyword in upper case.  The main table must not have an alias!  The WHERE clause can only contain values of the main table (e.g. when selecting from Header and lines, only header variables can be used in the where clause) and be fully qualified if there is more then one table. ]]></value>
+  <value column="Help" original="The Performance Measure Calculation defines how performance measures will be calculated. See examples.&lt;br&gt;&#10;The SELECT definition must contain the SELECT and FROM keywords in upper case, the WHERE definition must contain the WHERE keyword in upper case.  The main table must not have an alias!  The WHERE clause can only contain values of the main table (e.g. when selecting from Header and lines, only header variables can be used in the where clause) and be fully qualified if there is more then one table." xml:space="preserve"><![CDATA[A Aba "Cálculos de Medidas de Desempenho" define como as medidas de desempenho serão calculadas. See examples.<br> The SELECT definition must contain the SELECT and FROM keywords in upper case, the WHERE definition must contain the WHERE keyword in upper case.  The main table must not have an alias!  The WHERE clause can only contain values of the main table (e.g. when selecting from Header and lines, only header variables can be used in the where clause) and be fully qualified if there is more then one table. ]]></value>
  </row>
  <row id="370" trl="Y">
   <value column="Name" original="Achievement">Realização</value>
@@ -1485,7 +1485,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Schema Line">Linha do Esquema</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Trade Discount Price List Lines">Linhas do desconto comercial da Tabela de Preços</value>
-  <value column="Help" original="Pricelists are created based on Product Purchase and Category Discounts.&#10;The parameters listed here allow to copy and calculate pricelists.&lt;BR&gt;&#10;The calculation:&#10;&lt;UL&gt;&#10;&lt;LI&gt;Copy and convert price from referenced price list&#10;&lt;LI&gt;result plus Surcharge Amount&#10;&lt;LI&gt;result minus Discount&#10;&lt;LI&gt;if resulting price is less than the original limit price plus min Margin, use this price (only if Margin is not zero)&#10;&lt;LI&gt;if resulting price is more than the original limit price plus max Margin, use this price (only if Margin us not zero)&#10;&lt;LI&gt;Round resulting price&#10;&lt;/UL&gt;&#10;&lt;B&gt;The Formula&lt;/B&gt; is&lt;BR&gt;&#10;NewPrice = (Convert(BasePrice) + Surcharge) * (100-Discount) / 100;&lt;BR&gt;&#10;if MinMargin &lt;&gt; 0 then NewPrice = Max (NewPrice, Convert(OrigLimitPrice) + MinMargin);&lt;BR&gt;&#10;if MaxMargin &lt;&gt; 0 then NewPrice = Min (NewPrice, Convert(OrigLimitPrice) + MaxMargin);&lt;BR&gt;&#10; &lt;BR&gt;&#10;&lt;B&gt;Example:&lt;/B&gt; (assuming same currency)&lt;BR&gt;&#10;Original Prices:  List=300, Standard=250, Limit=200;&lt;BR&gt;&#10;New List Price: Base=List, Surcharge=0, Discount=0, Round"><![CDATA[Tabelas de Preços são criadas baseadas nas Compras de Produtos e Descontos de Categoria. Os parâmetros listados aqui permitem copiar e calcular tabelas de preços.<BR> O cálculo: <UL> <LI>Copia e converte preços da tabela referenciada <LI>resultado mais Valor de Sobretaxa <LI>resultado menos Desconto <LI>se o preço resultante for menor que o preço limite original mais a Margem Mínima, use este preço (somente se a Margem for não zero) <LI>se o preço resultante for mais que o preço limite original mais a Margem Máxima, use este preço (somente se a Margem for não zero) <LI>Arredonda o preço resultante </UL> <B>A Fórmula</B> é <BR> NewPrice = (Convert(BasePrice) + Surcharge) * (100-Discount) / 100;<BR> if MinMargin <> 0 then NewPrice = Max (NewPrice, Convert(OrigLimitPrice) + MinMargin);<BR> if MaxMargin <> 0 then NewPrice = Min (NewPrice, Convert(OrigLimitPrice) + MaxMargin);<BR> <BR> <B>Exemplo:</B> (assumindo a mesma moeda)<BR> Preços Originais:  Tabela=300, Padrão=250, Limite=200;<BR> Novo Preço de Tabela: Base=tabela, Sobretaxa=0, Desconto=0, Arredondar]]></value>
+  <value column="Help" original="Pricelists are created based on Product Purchase and Category Discounts.&#10;The parameters listed here allow to copy and calculate pricelists.&lt;BR&gt;&#10;The calculation:&#10;&lt;UL&gt;&#10;&lt;LI&gt;Copy and convert price from referenced price list&#10;&lt;LI&gt;result plus Surcharge Amount&#10;&lt;LI&gt;result minus Discount&#10;&lt;LI&gt;if resulting price is less than the original limit price plus min Margin, use this price (only if Margin is not zero)&#10;&lt;LI&gt;if resulting price is more than the original limit price plus max Margin, use this price (only if Margin us not zero)&#10;&lt;LI&gt;Round resulting price&#10;&lt;/UL&gt;&#10;&lt;B&gt;The Formula&lt;/B&gt; is&lt;BR&gt;&#10;NewPrice = (Convert(BasePrice) + Surcharge) * (100-Discount) / 100;&lt;BR&gt;&#10;if MinMargin &lt;&gt; 0 then NewPrice = Max (NewPrice, Convert(OrigLimitPrice) + MinMargin);&lt;BR&gt;&#10;if MaxMargin &lt;&gt; 0 then NewPrice = Min (NewPrice, Convert(OrigLimitPrice) + MaxMargin);&lt;BR&gt;&#10; &lt;BR&gt;&#10;&lt;B&gt;Example:&lt;/B&gt; (assuming same currency)&lt;BR&gt;&#10;Original Prices:  List=300, Standard=250, Limit=200;&lt;BR&gt;&#10;New List Price: Base=List, Surcharge=0, Discount=0, Round" xml:space="preserve"><![CDATA[Tabelas de Preços são criadas baseadas nas Compras de Produtos e Descontos de Categoria. Os parâmetros listados aqui permitem copiar e calcular tabelas de preços.<BR> O cálculo: <UL> <LI>Copia e converte preços da tabela referenciada <LI>resultado mais Valor de Sobretaxa <LI>resultado menos Desconto <LI>se o preço resultante for menor que o preço limite original mais a Margem Mínima, use este preço (somente se a Margem for não zero) <LI>se o preço resultante for mais que o preço limite original mais a Margem Máxima, use este preço (somente se a Margem for não zero) <LI>Arredonda o preço resultante </UL> <B>A Fórmula</B> é <BR> NewPrice = (Convert(BasePrice) + Surcharge) * (100-Discount) / 100;<BR> if MinMargin <> 0 then NewPrice = Max (NewPrice, Convert(OrigLimitPrice) + MinMargin);<BR> if MaxMargin <> 0 then NewPrice = Min (NewPrice, Convert(OrigLimitPrice) + MaxMargin);<BR> <BR> <B>Exemplo:</B> (assumindo a mesma moeda)<BR> Preços Originais:  Tabela=300, Padrão=250, Limite=200;<BR> Novo Preço de Tabela: Base=tabela, Sobretaxa=0, Desconto=0, Arredondar]]></value>
  </row>
  <row id="406" trl="Y">
   <value column="Name" original="Discount Break">Desconto Condicional</value>
@@ -1527,7 +1527,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Expense Report">Relatório de Despesas</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Time and Expense Report">Relatório de Horas e Despesas</value>
-  <value column="Help" original="Enter the time and expenses for the Employee or Contractor (Business Partner). &lt;br&gt;&#10;The price list determines the default costs of the expenses, products or resource to be reimbursed. In that sense, it is a &quot;Purchase Price&quot; list. The Warehouse is used to correct the inventory of items invoiced to customers (i.e. if not invoiced, the inventory is not adjusted).&lt;br&gt;&#10;Please note that the Business Partner &lt;b&gt;must&lt;/b&gt; be an Employee with an Address and Contact!"><![CDATA[Digite tempo e despesas para o Funcionário ou Empreiteiro (Parceiro de Negócios). <br> A lista de preços determina os custos padrão de despesas, produtos ou recursos a serem reembolsados. Nesse sentido, ela é uma lista de "Preço de Compra". O Armazém é usado para corrigir o estoque de itens faturados a clientes (i.e. se não for faturado, o estoque não é ajustado).<br> Por favor note que o Parceiro de Negócios <b>tem que</b> ser um Funcionário com um Endereço e informações de Contato!]]></value>
+  <value column="Help" original="Enter the time and expenses for the Employee or Contractor (Business Partner). &lt;br&gt;&#10;The price list determines the default costs of the expenses, products or resource to be reimbursed. In that sense, it is a &quot;Purchase Price&quot; list. The Warehouse is used to correct the inventory of items invoiced to customers (i.e. if not invoiced, the inventory is not adjusted).&lt;br&gt;&#10;Please note that the Business Partner &lt;b&gt;must&lt;/b&gt; be an Employee with an Address and Contact!" xml:space="preserve"><![CDATA[Digite tempo e despesas para o Funcionário ou Empreiteiro (Parceiro de Negócios). <br> A lista de preços determina os custos padrão de despesas, produtos ou recursos a serem reembolsados. Nesse sentido, ela é uma lista de "Preço de Compra". O Armazém é usado para corrigir o estoque de itens faturados a clientes (i.e. se não for faturado, o estoque não é ajustado).<br> Por favor note que o Parceiro de Negócios <b>tem que</b> ser um Funcionário com um Endereço e informações de Contato!]]></value>
  </row>
  <row id="413" trl="Y">
   <value column="Name" original="Report Line">Linha de Relatório</value>
@@ -1611,7 +1611,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Format Item">Item da Formatação</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Print Format Item">Item da Formatação de Impressão</value>
-  <value column="Help" original="Item in the print format maintaining layout information.  The following additional variables are available when printing:&#10;&lt;p&gt;@*Page@ - the current page number&#10;&lt;br&gt;@*PageCount@ - the total number of pages&#10;&lt;br&gt;@*MultiPageInfo@ - &quot;Page x of y&quot; - only printed if more than one page&#10;&lt;br&gt;@*CopyInfo@ - if it is a copy of the document &quot;Duplicate&quot; is printed&#10;&lt;br&gt;@*ReportName@ - name of the report&#10;&lt;br&gt;@*Header@ - Full Header with user/client/org name and connection&#10;&lt;br&gt;@*CurrentDate@ - the print date&#10;&lt;br&gt;@*CurrentDateTime@ - the print time&#10;&#10;&lt;p&gt;The layoit logic for forms is: &lt;br&gt;&#10;- if not printed: ignore &lt;br&gt;&#10;- set New Line Position &lt;br&gt;&#10;- new page &lt;br&gt;&#10;- new line, if something was printed since last new line&lt;br&gt;&#10;- format item&lt;br&gt;&#10;- print it (if not null/empty selected)&lt;br&gt;&#10;(i.e. supress null does not prevent new line)"><![CDATA[Item na Formatação de Impressão que contém as informações de disposição de impressão (layout).  As seguintes variáveis adicionais estão disponíveis ao imprimir: <p>@*Page@ - número da página atual <br>@*PageCount@ - número total de páginas <br>@*MultiPageInfo@ - "Página x de y" - somente impresso se houver mais de uma página <br>@*CopyInfo@ - Imprime "Duplicado" se for uma cópia de documento <br>@*ReportName@ - nome do relatório <br>@*Header@ - Cabeçalho Completo o nome e a conexão do usuário/empresa/organização <br>@*CurrentDate@ - data de impressão <br>@*CurrentDateTime@ - hora da impressão
+  <value column="Help" original="Item in the print format maintaining layout information.  The following additional variables are available when printing:&#10;&lt;p&gt;@*Page@ - the current page number&#10;&lt;br&gt;@*PageCount@ - the total number of pages&#10;&lt;br&gt;@*MultiPageInfo@ - &quot;Page x of y&quot; - only printed if more than one page&#10;&lt;br&gt;@*CopyInfo@ - if it is a copy of the document &quot;Duplicate&quot; is printed&#10;&lt;br&gt;@*ReportName@ - name of the report&#10;&lt;br&gt;@*Header@ - Full Header with user/client/org name and connection&#10;&lt;br&gt;@*CurrentDate@ - the print date&#10;&lt;br&gt;@*CurrentDateTime@ - the print time&#10;&#10;&lt;p&gt;The layoit logic for forms is: &lt;br&gt;&#10;- if not printed: ignore &lt;br&gt;&#10;- set New Line Position &lt;br&gt;&#10;- new page &lt;br&gt;&#10;- new line, if something was printed since last new line&lt;br&gt;&#10;- format item&lt;br&gt;&#10;- print it (if not null/empty selected)&lt;br&gt;&#10;(i.e. supress null does not prevent new line)" xml:space="preserve"><![CDATA[Item na Formatação de Impressão que contém as informações de disposição de impressão (layout).  As seguintes variáveis adicionais estão disponíveis ao imprimir: <p>@*Page@ - número da página atual <br>@*PageCount@ - número total de páginas <br>@*MultiPageInfo@ - "Página x de y" - somente impresso se houver mais de uma página <br>@*CopyInfo@ - Imprime "Duplicado" se for uma cópia de documento <br>@*ReportName@ - nome do relatório <br>@*Header@ - Cabeçalho Completo o nome e a conexão do usuário/empresa/organização <br>@*CurrentDate@ - data de impressão <br>@*CurrentDateTime@ - hora da impressão
 
 <p>O layout lógico para formulários é: <br> - se não for imprimido: ignore <br> - configure a Nova Posição da Linha <br> - nova página <br> - nova linha, se algo foi impresso desde a ultima nova linha<br> - item da formatação<br> - imprimir (se não for selecionado nulo/vazio)<br> (i.e. suprimir nulo não previne nova linha)]]></value>
  </row>
@@ -1619,7 +1619,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Print Paper">Papel (Impressão)</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Maintain Print Paper">Gerenciamento de Papéis para Impressão</value>
-  <value column="Help" original="Printer Paper Size, Orientation and Margins. &#10;The Validation Code contains the Media Size name. The names of the media sizes correspond to those in the IPP 1.1 RFC 2911 - http://www.ietf.org/rfc/rfc2911.txt  &lt;br&gt;&#10;If the name is not found, the SizeX/Y with the dimension is used. Size and dimension are ignored, if a valid media size name is used."><![CDATA[Tamanho, orientação e margens de papel para impressão. O Código de Validação contém o nome do tamanho da mídia. Os nomes dos tamanhos de mídia podem ser encontrados na referência IPP 1.1 RFC 2911 - http://www.ietf.org/rfc/rfc2911.txt  <br> Se o nome não for encontrado, os campos Tamanho X e Tamanho Y são utilizados. Tamanhos e dimensões são ignorados caso seja utilizado um nome válido do tamanho da mídia.]]></value>
+  <value column="Help" original="Printer Paper Size, Orientation and Margins. &#10;The Validation Code contains the Media Size name. The names of the media sizes correspond to those in the IPP 1.1 RFC 2911 - http://www.ietf.org/rfc/rfc2911.txt  &lt;br&gt;&#10;If the name is not found, the SizeX/Y with the dimension is used. Size and dimension are ignored, if a valid media size name is used." xml:space="preserve"><![CDATA[Tamanho, orientação e margens de papel para impressão. O Código de Validação contém o nome do tamanho da mídia. Os nomes dos tamanhos de mídia podem ser encontrados na referência IPP 1.1 RFC 2911 - http://www.ietf.org/rfc/rfc2911.txt  <br> Se o nome não for encontrado, os campos Tamanho X e Tamanho Y são utilizados. Tamanhos e dimensões são ignorados caso seja utilizado um nome válido do tamanho da mídia.]]></value>
  </row>
  <row id="428" trl="Y">
   <value column="Name" original="Display Order">Ordem de Exposição</value>
@@ -1709,7 +1709,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Import Product">Importar Produto</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Import Products">Importação de Produtos</value>
-  <value column="Help" original="Before importing, iDempiere checks the Unit of Measure (default if not set), the Product Category (default if not set), the Business Partner, the Currency (defaults to accounting currency if not set), the Product Type (only Items and Services), the uniqueness of UPC, Key and uniqueness and existence of the Vendor Product No.&lt;br&gt;&#10;iDempiere tries to map to existing products, if the UPC, the Key and the Vendor Product No matches (in this sequence). If the imported record could be matched, product field values will only be overwritten, if the corresponding  Import field is explicitly defined.  Example: the Product Category will only be overwritten if explicitly set in the Import."><![CDATA[Antes de importar, O Adempiere confere a Unidade de Medida (padrão, se não especificada), A Categoria de Produto (padrão, se não especificada), o Parceiro de Negócios, a Moeda (moeda de contabilidade, se não especificada), o Tipo de Produto (somente Itens e Serviços), a exclusividade da UPC, Chave, exclusividade e existência de Número de Produto do Fornecedor<br> O Adempiere tenta mapear a produtos existentes, se a UPC, a Chave e o Número de Produto do Fornecedor coincidirem (nesta seqüência). Se o registro importado puder ser coincidido, os valores dos campos de produto serão apenas sobreescritos, se o campo de importação correspondente for explicitamente definido.  Exemplo: A Categoria de Produto somente será sobreescrita se explicitamente configurada na importação.]]></value>
+  <value column="Help" original="Before importing, iDempiere checks the Unit of Measure (default if not set), the Product Category (default if not set), the Business Partner, the Currency (defaults to accounting currency if not set), the Product Type (only Items and Services), the uniqueness of UPC, Key and uniqueness and existence of the Vendor Product No.&lt;br&gt;&#10;iDempiere tries to map to existing products, if the UPC, the Key and the Vendor Product No matches (in this sequence). If the imported record could be matched, product field values will only be overwritten, if the corresponding  Import field is explicitly defined.  Example: the Product Category will only be overwritten if explicitly set in the Import." xml:space="preserve"><![CDATA[Antes de importar, O Adempiere confere a Unidade de Medida (padrão, se não especificada), A Categoria de Produto (padrão, se não especificada), o Parceiro de Negócios, a Moeda (moeda de contabilidade, se não especificada), o Tipo de Produto (somente Itens e Serviços), a exclusividade da UPC, Chave, exclusividade e existência de Número de Produto do Fornecedor<br> O Adempiere tenta mapear a produtos existentes, se a UPC, a Chave e o Número de Produto do Fornecedor coincidirem (nesta seqüência). Se o registro importado puder ser coincidido, os valores dos campos de produto serão apenas sobreescritos, se o campo de importação correspondente for explicitamente definido.  Exemplo: A Categoria de Produto somente será sobreescrita se explicitamente configurada na importação.]]></value>
  </row>
  <row id="443" trl="Y">
   <value column="Name" original="Import Account">Importar Conta</value>
@@ -1937,7 +1937,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Inventory">Inventário</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Import Inventory">Importar Estoques</value>
-  <value column="Help" original="Validate and Import Inventory Transactions. The Locator is primarily determined by the Locator Key, then the Warehouse and X,Y,Z fields.&lt;p&gt;&#10;A Physical Inventory is created per Warehouse and Movement Date."><![CDATA[Validar e Importar Transações de Estoque. O Localizador é primariamente determinado pela Chave de Localização, então o Armazém e os Campos X,Y,Z.<p> Um Estoque Físico é criado por Armazém e Data de Movimentação.]]></value>
+  <value column="Help" original="Validate and Import Inventory Transactions. The Locator is primarily determined by the Locator Key, then the Warehouse and X,Y,Z fields.&lt;p&gt;&#10;A Physical Inventory is created per Warehouse and Movement Date." xml:space="preserve"><![CDATA[Validar e Importar Transações de Estoque. O Localizador é primariamente determinado pela Chave de Localização, então o Armazém e os Campos X,Y,Z.<p> Um Estoque Físico é criado por Armazém e Data de Movimentação.]]></value>
  </row>
  <row id="482" trl="Y">
   <value column="Name" original="Table Access">Acesso a Tabela</value>
@@ -2087,7 +2087,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="General Ledger">Razão Geral</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Import General Ledger">Importação do Razão Geral</value>
-  <value column="Help" original="A new Journal Batch is created, if the Batch Document No or accounting schema are different. A new Journal is created, if the Document No, Currency, Document Type, GL Category, Posting Type or Accounting type is different. You can also force the creation of a new Batch or Jornal by selecting the creat new flag.&lt;p&gt;&#10;Please note that there are three Organization Fields: The Document Organization is the owner of the document and set directly or per parameter default. The Organization is part of the accounting key and only required id no Valid Account Comination is specified; If not defined it is derived from the Document Organization. The Transaction Organization is part of the account combination.&lt;br&gt;&#10;The optional balance check applies to the entire import, not for individual batches or journals.&#10;&lt;br&gt;The document numbers will be overwritten if the document type is not set to manual sequences."><![CDATA[Um novo Lote Diário é criado se o Número de Documento de Lote ou o Esquema Contábil for diferente. Será criado um novo Diário, se o Número do Documento, Moeda, Tipo de Documento, Categoria de Razão Geral, Tipo de Lançamento ou o Tipo de Contabilidade for diferente. Você também pode forçar a criação de um novo Lote ou Diário ao selecionar a caixa "criar novo".<p> Por favor note que existem três Campos de Organização: A Organização do Documento é a proprietária do documento e é configurada diretamente ou por parâmetro padrão. A Organização é parte da Chave de Contabilidade e apenas o ID exigido e Combinações de Contas Válidas é especificado; Se não definido, ele é derivado a partir da Organização de Documento. A Organização da Transação é parte da combinação de conta.<br> A verificação de saldo (balanço) opcional se aplica a toda a importação e não para lotes ou diários individuais. <br>Os números dos documentos serão sobrescritos se o tipo de documento não for selecionado para seqüências manuais.]]></value>
+  <value column="Help" original="A new Journal Batch is created, if the Batch Document No or accounting schema are different. A new Journal is created, if the Document No, Currency, Document Type, GL Category, Posting Type or Accounting type is different. You can also force the creation of a new Batch or Jornal by selecting the creat new flag.&lt;p&gt;&#10;Please note that there are three Organization Fields: The Document Organization is the owner of the document and set directly or per parameter default. The Organization is part of the accounting key and only required id no Valid Account Comination is specified; If not defined it is derived from the Document Organization. The Transaction Organization is part of the account combination.&lt;br&gt;&#10;The optional balance check applies to the entire import, not for individual batches or journals.&#10;&lt;br&gt;The document numbers will be overwritten if the document type is not set to manual sequences." xml:space="preserve"><![CDATA[Um novo Lote Diário é criado se o Número de Documento de Lote ou o Esquema Contábil for diferente. Será criado um novo Diário, se o Número do Documento, Moeda, Tipo de Documento, Categoria de Razão Geral, Tipo de Lançamento ou o Tipo de Contabilidade for diferente. Você também pode forçar a criação de um novo Lote ou Diário ao selecionar a caixa "criar novo".<p> Por favor note que existem três Campos de Organização: A Organização do Documento é a proprietária do documento e é configurada diretamente ou por parâmetro padrão. A Organização é parte da Chave de Contabilidade e apenas o ID exigido e Combinações de Contas Válidas é especificado; Se não definido, ele é derivado a partir da Organização de Documento. A Organização da Transação é parte da combinação de conta.<br> A verificação de saldo (balanço) opcional se aplica a toda a importação e não para lotes ou diários individuais. <br>Os números dos documentos serão sobrescritos se o tipo de documento não for selecionado para seqüências manuais.]]></value>
  </row>
  <row id="510" trl="Y">
   <value column="Name" original="Invoice">Fatura</value>
@@ -3210,7 +3210,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Cost Element">Elemento de Custo</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Maintain product cost elements">Gerenciamento de Elementos de Custo de Produto</value>
-  <value column="Help" original="You can maintain multiple Material Costs. Which of the Material Cost Types is used for accounting is determined by the costing method.&lt;br&gt;&#10;Define a Costing Method (for Material Elements) only if you want the cost calculated for that costing method. For accounting, the costing method defined in the Accounting Schema or Product Category Acct is used."><![CDATA[É possível gerenciar múltiplos Custos de Material. O método de formação de custos determina qual Tipo de Custo de Material será utilizado para a contabilidade.<br> Defina um Método de Formação de Custos (para elementos do tipo Material) apenas se você desejar que os custos sejam calculados por esse método de custeio. O Método de Formação de Custos definido no Esquema Contábil ou na Categoria de Produto será utilizado para a contabilidade.]]></value>
+  <value column="Help" original="You can maintain multiple Material Costs. Which of the Material Cost Types is used for accounting is determined by the costing method.&lt;br&gt;&#10;Define a Costing Method (for Material Elements) only if you want the cost calculated for that costing method. For accounting, the costing method defined in the Accounting Schema or Product Category Acct is used." xml:space="preserve"><![CDATA[É possível gerenciar múltiplos Custos de Material. O método de formação de custos determina qual Tipo de Custo de Material será utilizado para a contabilidade.<br> Defina um Método de Formação de Custos (para elementos do tipo Material) apenas se você desejar que os custos sejam calculados por esse método de custeio. O Método de Formação de Custos definido no Esquema Contábil ou na Categoria de Produto será utilizado para a contabilidade.]]></value>
  </row>
  <row id="700" trl="Y">
   <value column="Name" original="Select Product">Produto</value>
@@ -3330,7 +3330,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Update Recipients">Recipientes de Atualizações</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Display Recipients of Request Updates">Mostra os Recipientes das Atualizações de Solicitações</value>
-  <value column="Help" original="List of Recipients of Request Updates (with reason).&lt;br&gt;&#10;Direct: Sales Rep, User and direct subscribers&#10;Indirect: Users with Role, Subscribers of updates for Request Category, Type, Group)"><![CDATA[Lista de Recipientes de Atualizações de Solicitações (com o motivo).<br> Direto: Representante de Vendas, Usuário e assinantes diretos. Indireto: Usuários com Papel (Função), Assinantes de atualizações para Categoria da Solicitação, Tipo, Grupo)]]></value>
+  <value column="Help" original="List of Recipients of Request Updates (with reason).&lt;br&gt;&#10;Direct: Sales Rep, User and direct subscribers&#10;Indirect: Users with Role, Subscribers of updates for Request Category, Type, Group)" xml:space="preserve"><![CDATA[Lista de Recipientes de Atualizações de Solicitações (com o motivo).<br> Direto: Representante de Vendas, Usuário e assinantes diretos. Indireto: Usuários com Papel (Função), Assinantes de atualizações para Categoria da Solicitação, Tipo, Grupo)]]></value>
  </row>
  <row id="721" trl="Y">
   <value column="Name" original="Position">Cargo</value>
@@ -3528,7 +3528,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Allocate">Alocar</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Allocate Payments to Invoices">Alocar Pagamentos a Faturas</value>
-  <value column="Help" original="You can directly allocate payments to invoices with the same currency when creating the Payment. &#10;Note that you can over- or under-allocate the payment.&lt;b&gt;&#10;When processing the payment, the allocation is created.&lt;b&gt;&#10;The Organization is set to the invoice organization"><![CDATA[Você pode alocar diretamente pagamentos a faturas com a mesma moeda ao criar o Pagamento. Note that you can over- or under-allocate the payment.<b> When processing the payment, the allocation is created.<b> The Organization is set to the invoice organization]]></value>
+  <value column="Help" original="You can directly allocate payments to invoices with the same currency when creating the Payment. &#10;Note that you can over- or under-allocate the payment.&lt;b&gt;&#10;When processing the payment, the allocation is created.&lt;b&gt;&#10;The Organization is set to the invoice organization" xml:space="preserve"><![CDATA[Você pode alocar diretamente pagamentos a faturas com a mesma moeda ao criar o Pagamento. Note that you can over- or under-allocate the payment.<b> When processing the payment, the allocation is created.<b> The Organization is set to the invoice organization]]></value>
  </row>
  <row id="756" trl="Y">
   <value column="Name" original="BP Access">Acesso ao Parceiro</value>
@@ -3654,7 +3654,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Client Share">Compartilhamento de Empresa</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Force (not) sharing of client/org entities">Force (not) sharing of client/org entities</value>
-  <value column="Help" original="Business Partner can be either defined on Client level (shared) or on Org level (not shared).  You can define here of Products are always shared (i.e. always created under Organization &quot;*&quot;) or if they are not shared (i.e. you cannot enter them with Organization &quot;*&quot;).&lt;br&gt;&#10;The creation of  &quot;Client and Org&quot; shared records is the default and is ignored."><![CDATA[Business Partner can be either defined on Client level (shared) or on Org level (not shared).  You can define here of Products are always shared (i.e. always created under Organization "*") or if they are not shared (i.e. you cannot enter them with Organization "*").<br> The creation of  "Client and Org" shared records is the default and is ignored.]]></value>
+  <value column="Help" original="Business Partner can be either defined on Client level (shared) or on Org level (not shared).  You can define here of Products are always shared (i.e. always created under Organization &quot;*&quot;) or if they are not shared (i.e. you cannot enter them with Organization &quot;*&quot;).&lt;br&gt;&#10;The creation of  &quot;Client and Org&quot; shared records is the default and is ignored." xml:space="preserve"><![CDATA[Business Partner can be either defined on Client level (shared) or on Org level (not shared).  You can define here of Products are always shared (i.e. always created under Organization "*") or if they are not shared (i.e. you cannot enter them with Organization "*").<br> The creation of  "Client and Org" shared records is the default and is ignored.]]></value>
  </row>
  <row id="777" trl="Y">
   <value column="Name" original="System Issue">Problema</value>
@@ -4253,14 +4253,14 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
  <row id="53028" trl="N">
   <value column="Name" original="Parent Product">Parent Product</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define the Parent Product to this BOM &amp; Formula"><![CDATA[Define the Parent Product to this BOM & Formula]]></value>
-  <value column="Help" original="Define the Parent Product to this BOM &amp; Formula"><![CDATA[Define the Parent Product to this BOM & Formula]]></value>
+  <value column="Description" original="Define the Parent Product to this BOM &amp; Formula" xml:space="preserve"><![CDATA[Define the Parent Product to this BOM & Formula]]></value>
+  <value column="Help" original="Define the Parent Product to this BOM &amp; Formula" xml:space="preserve"><![CDATA[Define the Parent Product to this BOM & Formula]]></value>
  </row>
  <row id="53029" trl="N">
-  <value column="Name" original="Components of the BOM &amp; Formula"><![CDATA[Components of the BOM & Formula]]></value>
+  <value column="Name" original="Components of the BOM &amp; Formula" xml:space="preserve"><![CDATA[Components of the BOM & Formula]]></value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Components of the BOM &amp; Formula"><![CDATA[Components of the BOM & Formula]]></value>
-  <value column="Help" original="The information relative to every component that will be used in the BOM &amp; Formula of the finished product."><![CDATA[The information relative to every component that will be used in the BOM & Formula of the finished product.]]></value>
+  <value column="Description" original="Components of the BOM &amp; Formula" xml:space="preserve"><![CDATA[Components of the BOM & Formula]]></value>
+  <value column="Help" original="The information relative to every component that will be used in the BOM &amp; Formula of the finished product." xml:space="preserve"><![CDATA[The information relative to every component that will be used in the BOM & Formula of the finished product.]]></value>
  </row>
  <row id="53030" trl="N">
   <value column="Name" original="Data Planning">Data Planning</value>
@@ -4328,7 +4328,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Order Parent Product">Order Parent Product</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Order Parent Product used in the Manufacturing Order">Order Parent Product used in the Manufacturing Order</value>
-  <value column="Help" original="The BOM &amp; Formula used in the Manufacturing Order are taken by default from the Product Planning window."><![CDATA[The BOM & Formula used in the Manufacturing Order are taken by default from the Product Planning window.]]></value>
+  <value column="Help" original="The BOM &amp; Formula used in the Manufacturing Order are taken by default from the Product Planning window." xml:space="preserve"><![CDATA[The BOM & Formula used in the Manufacturing Order are taken by default from the Product Planning window.]]></value>
  </row>
  <row id="53041" trl="N">
   <value column="Name" original="Workflow">Workflow</value>
@@ -4544,7 +4544,7 @@ Você pode escolher que somente valores positivos (Valor Convertido - Valor a Su
   <value column="Name" original="Tax Children">Tax Children</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Tax definition">Tax definition</value>
-  <value column="Help" original="The Tax Rate Window defines the different taxes used for each tax category.  For example Sales Tax must be defined for each State in which it applies.&lt;br&gt;&#10;If you have multiple taxes create a summary level tax with the approximate total tax rate and the actual tax rates pointing to the summary level tax as their parent. When entering the order or invoice lines the tax is estimated the correct tax is calculated when the document is processed.  The tax is always calculated from the line net amount. If one tax has a the tax basis the line net amount and another tax you need to adjust the percentage to result in the correct amount.&lt;br&gt;&#10;Valid From/To is determined by the parent tax."><![CDATA[The Tax Rate Window defines the different taxes used for each tax category.  For example Sales Tax must be defined for each State in which it applies.<br>
+  <value column="Help" original="The Tax Rate Window defines the different taxes used for each tax category.  For example Sales Tax must be defined for each State in which it applies.&lt;br&gt;&#10;If you have multiple taxes create a summary level tax with the approximate total tax rate and the actual tax rates pointing to the summary level tax as their parent. When entering the order or invoice lines the tax is estimated the correct tax is calculated when the document is processed.  The tax is always calculated from the line net amount. If one tax has a the tax basis the line net amount and another tax you need to adjust the percentage to result in the correct amount.&lt;br&gt;&#10;Valid From/To is determined by the parent tax." xml:space="preserve"><![CDATA[The Tax Rate Window defines the different taxes used for each tax category.  For example Sales Tax must be defined for each State in which it applies.<br>
 If you have multiple taxes create a summary level tax with the approximate total tax rate and the actual tax rates pointing to the summary level tax as their parent. When entering the order or invoice lines the tax is estimated the correct tax is calculated when the document is processed.  The tax is always calculated from the line net amount. If one tax has a the tax basis the line net amount and another tax you need to adjust the percentage to result in the correct amount.<br>
 Valid From/To is determined by the parent tax.]]></value>
  </row>
@@ -4552,7 +4552,7 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Name" original="Tax Parent">Tax Parent</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Tax definition">Tax definition</value>
-  <value column="Help" original="The Tax Rate Window defines the different taxes used for each tax category.  For example Sales Tax must be defined for each State in which it applies.&lt;br&gt;&#10;If you have multiple taxes create a summary level tax with the approximate total tax rate and the actual tax rates pointing to the summary level tax as their parent. When entering the order or invoice lines the tax is estimated the correct tax is calculated when the document is processed.  The tax is always calculated from the line net amount. If one tax has a the tax basis the line net amount and another tax you need to adjust the percentage to result in the correct amount.&lt;br&gt;&#10;Valid From/To is determined by the parent tax."><![CDATA[The Tax Rate Window defines the different taxes used for each tax category.  For example Sales Tax must be defined for each State in which it applies.<br>
+  <value column="Help" original="The Tax Rate Window defines the different taxes used for each tax category.  For example Sales Tax must be defined for each State in which it applies.&lt;br&gt;&#10;If you have multiple taxes create a summary level tax with the approximate total tax rate and the actual tax rates pointing to the summary level tax as their parent. When entering the order or invoice lines the tax is estimated the correct tax is calculated when the document is processed.  The tax is always calculated from the line net amount. If one tax has a the tax basis the line net amount and another tax you need to adjust the percentage to result in the correct amount.&lt;br&gt;&#10;Valid From/To is determined by the parent tax." xml:space="preserve"><![CDATA[The Tax Rate Window defines the different taxes used for each tax category.  For example Sales Tax must be defined for each State in which it applies.<br>
 If you have multiple taxes create a summary level tax with the approximate total tax rate and the actual tax rates pointing to the summary level tax as their parent. When entering the order or invoice lines the tax is estimated the correct tax is calculated when the document is processed.  The tax is always calculated from the line net amount. If one tax has a the tax basis the line net amount and another tax you need to adjust the percentage to result in the correct amount.<br>
 Valid From/To is determined by the parent tax.]]></value>
  </row>
@@ -5025,9 +5025,9 @@ Valid From/To is determined by the parent tax.]]></value>
   <value column="Help" original="">Esta janela permite a exclusão de registros em tabelas específicas do banco de dados, de acordo com a cláusula WHERE definida. Isso pode ser muito útil para evitar a sobrecarga e o excesso de registros em determinadas tabelas. Os registros excluídos podem ser exportados para um arquivo XML ou armazenados em uma outra tabela de histórico (opcionalmente em outro tablespace). Se você selecionar a exportação para outra tabela, é necessário que exista previamente uma tabela com nome idêntico à original, mas com o prefixo 'HST_'. Por exemplo, se a tabela original for a T_Aging, a tabela de histórico (backup) deve se chamar HST_T_Aging.</value>
  </row>
  <row id="53179" trl="N">
-  <value column="Name" original="BOM &amp; Formula"><![CDATA[BOM & Formula]]></value>
+  <value column="Name" original="BOM &amp; Formula" xml:space="preserve"><![CDATA[BOM & Formula]]></value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="BOM &amp; Formula"><![CDATA[BOM & Formula]]></value>
+  <value column="Description" original="BOM &amp; Formula" xml:space="preserve"><![CDATA[BOM & Formula]]></value>
   <value column="Help" original=""/>
  </row>
  <row id="53180" trl="N">
@@ -5183,7 +5183,7 @@ Valid From/To is determined by the parent tax.]]></value>
  <row id="53216" trl="N">
   <value column="Name" original="Components Translation">Components Translation</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="BOM &amp; Formula Line Translation"><![CDATA[BOM & Formula Line Translation]]></value>
+  <value column="Description" original="BOM &amp; Formula Line Translation" xml:space="preserve"><![CDATA[BOM & Formula Line Translation]]></value>
   <value column="Help" original=""/>
  </row>
  <row id="53217" trl="N">
@@ -5720,6 +5720,12 @@ Printing:
   <value column="Name" original="Opportunities">Oportunidades de Vendas</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Opportunities">Oportunidades de Vendas</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="54010" trl="N">
+  <value column="Name" original="Service">Service</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="200000" trl="Y">
@@ -6400,6 +6406,24 @@ Printing:
   <value column="Description" original="CSS Style Lines">CSS Style Lines</value>
   <value column="Help" original=""/>
  </row>
+ <row id="200215" trl="N">
+  <value column="Name" original="Suggestions">Suggestions</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200216" trl="N">
+  <value column="Name" original="Suggestion">Suggestion</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200220" trl="N">
+  <value column="Name" original="Post-it">Post-it</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row id="200222" trl="N">
   <value column="Name" original="Document Status Indicator">Document Status Indicator</value>
   <value column="CommitWarning" original=""/>
@@ -6410,6 +6434,102 @@ Printing:
   <value column="Name" original="Document Status Translation">Document Status Translation</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200224" trl="N">
+  <value column="Name" original="Attributes">Attributes</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200226" trl="N">
+  <value column="Name" original="Client">Client</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200227" trl="N">
+  <value column="Name" original="User">User</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200228" trl="N">
+  <value column="Name" original="User">User</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200230" trl="N">
+  <value column="Name" original="Approver">Approver</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200231" trl="N">
+  <value column="Name" original="Approver">Approver</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200234" trl="N">
+  <value column="Name" original="Process Customization">Process Customization</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="User defined Process">User defined Process</value>
+  <value column="Help" original="User defined Process">User defined Process</value>
+ </row>
+ <row id="200235" trl="N">
+  <value column="Name" original="User defined Process Parameter">User defined Process Parameter</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="User defined Process Parameter">User defined Process Parameter</value>
+  <value column="Help" original="User defined Process Parameter">User defined Process Parameter</value>
+ </row>
+ <row id="200262" trl="N">
+  <value column="Name" original="User Roles">User Roles</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200263" trl="N">
+  <value column="Name" original="User Roles">User Roles</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200264" trl="N">
+  <value column="Name" original="Role">Role</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200265" trl="N">
+  <value column="Name" original="Role">Role</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200266" trl="N">
+  <value column="Name" original="User Roles">User Roles</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200271" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200272" trl="N">
+  <value column="Name" original="Translation">Translation</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200275" trl="N">
+  <value column="Name" original="User Queries">User Queries</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="View and maintain saved queries">View and maintain saved queries</value>
   <value column="Help" original=""/>
  </row>
  <row id="800000" trl="Y">
@@ -6504,6 +6624,78 @@ Printing:
  </row>
  <row id="800026" trl="N">
   <value column="Name" original="Detalhes Fiscais">Detalhes Fiscais</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800043" trl="N">
+  <value column="Name" original="Nota Fiscal de Serviço">Nota Fiscal de Serviço</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800044" trl="N">
+  <value column="Name" original="Detalhes">Detalhes</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800045" trl="N">
+  <value column="Name" original="ISSQN">ISSQN</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800046" trl="N">
+  <value column="Name" original="Impostos">Impostos</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800047" trl="N">
+  <value column="Name" original="Lote de RPS">Lote de RPS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800048" trl="N">
+  <value column="Name" original="Linhas do Lote">Linhas do Lote</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800049" trl="N">
+  <value column="Name" original="Configuração de NFS-e">Configuração de NFS-e</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800050" trl="N">
+  <value column="Name" original="URLs dos WS">URLs dos WS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800057" trl="N">
+  <value column="Name" original="Outros Impostos">Outros Impostos</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800059" trl="N">
+  <value column="Name" original="Tax">Tax</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800060" trl="N">
+  <value column="Name" original="Monophase NCM">Monophase NCM</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800061" trl="N">
+  <value column="Name" original="XML">XML</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>

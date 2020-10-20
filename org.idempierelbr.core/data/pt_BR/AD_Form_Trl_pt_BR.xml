@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Form">
+<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Form">
  <row id="100" trl="Y">
   <value column="Name" original="Generate Invoices (manual)">Gerar Faturas (Manual)</value>
   <value column="Description" original="Select and generate invoices">Selecionar e gerar faturas</value>
@@ -42,7 +42,7 @@
  </row>
  <row id="108" trl="Y">
   <value column="Name" original="Matching PO-Receipt-Invoice">Conciliar Pedido de Compra-Recebimento-Fatura</value>
-  <value column="Description" original="Match Purchase Orders, Receipts, Vendor Invoices"><![CDATA[Conciliar Pedidos de Compra <-> Recebimentos de Materiais <-> Faturas]]></value>
+  <value column="Description" original="Match Purchase Orders, Receipts, Vendor Invoices" xml:space="preserve"><![CDATA[Conciliar Pedidos de Compra <-> Recebimentos de Materiais <-> Faturas]]></value>
   <value column="Help" original="Make sure that the Receipts and Invoices are processed. If you want to match partial shipment, make sure that &quot;Same Quantity&quot; is not selected.">Para conciliar documentos, é necessários que os mesmos estejam processados. Para conciliar remessas parciais, desmarque a opção Mesma Quantidade.</value>
  </row>
  <row id="109" trl="Y">
@@ -63,7 +63,7 @@
  <row id="112" trl="Y">
   <value column="Name" original="Merge Entities">Fundir Entidades</value>
   <value column="Description" original="Merge From Entity to To Entity - Delete From">Fundir "de Entidade" para "para Entidade" - Apagar "de"</value>
-  <value column="Help" original="&lt;i&gt;Dangerous - Please are aware of what you are doing!&lt;/i&gt;&#10;All instances of the From entity (e.g. Customer A) are changed to the To entity (e.g. Customer B). &#10;The From entity (e.g. Customer A) is deleted. &#10;&lt;p&gt;&lt;b&gt;There is NO undo nor trace !  Please do a backup first&lt;/b&gt; Please be aware that you may be changing history records (e.g. invoices, etc.) ! &lt;/p&gt;&#10;&lt;p&gt;&lt;b&gt;Side effects:&lt;/b&gt; Merging Products are likely to distort product costs; Merging Business Partners may result in incorrect open item balance. Check with support on remedies.&#10;&lt;p&gt;&lt;b&gt;Restrictions:&lt;/b&gt; Accounting and Inventory conflicts are not resolved in this version."><![CDATA[<i>Perigoso - Tenha certeza do que você está fazendo!</i> Todas as instâncias da entidade de origem (ex. Cliente A) são alteradas para a entidade de destino (ex. Cliente B). A entidade de origem (ex. Cliente A) é apagada. <p><b> NÃO é possível desfazer, nem haverá registro de rastreamento !  Por favor, faça um backup antes</b> Por favor, esteja ciente que você pode estar alterando registros históricos (ex. faturas, etc.) ! </p> <p><b>Efeitos colaterais:</b> Fundir Produtos poderá distorcer custos de produtos; Fundir Parceiros de Negócios poderá resultar na abertura incorreta do balanço de um item. Confira com o suporte para remediar. <p><b>Restrições:</b> Conflitos de Contabilidade e Estoque não estão resolvidos nesta versão.
+  <value column="Help" original="&lt;i&gt;Dangerous - Please are aware of what you are doing!&lt;/i&gt;&#10;All instances of the From entity (e.g. Customer A) are changed to the To entity (e.g. Customer B). &#10;The From entity (e.g. Customer A) is deleted. &#10;&lt;p&gt;&lt;b&gt;There is NO undo nor trace !  Please do a backup first&lt;/b&gt; Please be aware that you may be changing history records (e.g. invoices, etc.) ! &lt;/p&gt;&#10;&lt;p&gt;&lt;b&gt;Side effects:&lt;/b&gt; Merging Products are likely to distort product costs; Merging Business Partners may result in incorrect open item balance. Check with support on remedies.&lt;/p&gt;&#10;&lt;p&gt;&lt;b&gt;Restrictions:&lt;/b&gt; Accounting and Inventory conflicts are not resolved in this version.&lt;/p&gt;" xml:space="preserve"><![CDATA[<i>Perigoso - Tenha certeza do que você está fazendo!</i> Todas as instâncias da entidade de origem (ex. Cliente A) são alteradas para a entidade de destino (ex. Cliente B). A entidade de origem (ex. Cliente A) é apagada. <p><b> NÃO é possível desfazer, nem haverá registro de rastreamento !  Por favor, faça um backup antes</b> Por favor, esteja ciente que você pode estar alterando registros históricos (ex. faturas, etc.) ! </p> <p><b>Efeitos colaterais:</b> Fundir Produtos poderá distorcer custos de produtos; Fundir Parceiros de Negócios poderá resultar na abertura incorreta do balanço de um item. Confira com o suporte para remediar. <p><b>Restrições:</b> Conflitos de Contabilidade e Estoque não estão resolvidos nesta versão.
 ]]></value>
  </row>
  <row id="113" trl="Y">
@@ -107,9 +107,9 @@
   <value column="Help" original="Select one or two attributes if a Product Attribute and display/maintain products in a row or table grid.">Selecione um ou dois atributos de um Atributo de Produto e exiba/gerencie os produto em uma linha ou uma grade de tabela.</value>
  </row>
  <row id="53001" trl="N">
-  <value column="Name" original="BOM &amp; Formula Info"><![CDATA[BOM & Formula Info]]></value>
+  <value column="Name" original="BOM &amp; Formula Info" xml:space="preserve"><![CDATA[BOM & Formula Info]]></value>
   <value column="Description" original="Shows in two different panels the parent-component relationship for the product entered in the Product field.">Shows in two different panels the parent-component relationship for the product entered in the Product field.</value>
-  <value column="Help" original="The BOM &amp; Formula Review option menu shows in two different panels the parent-component relationship for the product entered in the Product field.&#10;&#10;You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.&#10;&#10;When you need to consult an implosion, click the implosion check box and enter the component you wish to consult and tick the Implosion check box.&#10;&#10;You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.&#10;&#10;The left panel shows the BOM hierarchies in a tree form. The right panel shows the information connected with the BOM for every product in it"><![CDATA[The BOM & Formula Review option menu shows in two different panels the parent-component relationship for the product entered in the Product field.
+  <value column="Help" original="The BOM &amp; Formula Review option menu shows in two different panels the parent-component relationship for the product entered in the Product field.&#10;&#10;You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.&#10;&#10;When you need to consult an implosion, click the implosion check box and enter the component you wish to consult and tick the Implosion check box.&#10;&#10;You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.&#10;&#10;The left panel shows the BOM hierarchies in a tree form. The right panel shows the information connected with the BOM for every product in it" xml:space="preserve"><![CDATA[The BOM & Formula Review option menu shows in two different panels the parent-component relationship for the product entered in the Product field.
 
 You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.
 
@@ -149,8 +149,8 @@ When you approve a planned order you are telling the system that the manufacturi
   <value column="Help" original="It shows graphically of the required and available time for each manufacturing resource.">It shows graphically of the required and available time for each manufacturing resource.</value>
  </row>
  <row id="53007" trl="N">
-  <value column="Name" original="Order Receipt &amp; Issue"><![CDATA[Order Receipt & Issue]]></value>
-  <value column="Description" original="Order Receipt &amp; Issue"><![CDATA[Order Receipt & Issue]]></value>
+  <value column="Name" original="Order Receipt &amp; Issue" xml:space="preserve"><![CDATA[Order Receipt & Issue]]></value>
+  <value column="Description" original="Order Receipt &amp; Issue" xml:space="preserve"><![CDATA[Order Receipt & Issue]]></value>
   <value column="Help" original="The form shows at the upper side static information around the product and the manufacturing resource where it has to be made, it also shows a summary of the quantities to be controlled in the MO such as the Original and delivered quantities and the Quantity to deliver for the MO up to date.&#10;&#10;If the production process requires production in batch, then the Qty Batchs shows the Number of batches the shop floor needs to do and the Qty Batch Size contains the size of every batch to be produced.&#10;&#10;&#10;If you want to issue the MO components before you receive the finished product you should tick the checkbox Is Delivery, this case is recommended when you have a long to medium lead time and you want to have the inventory quantities as reliable as possible at every moment.&#10;&#10;If you have small lead time and you wish to save clerk time then you must tick Is Backflush checkbox and you will receive the finished product at the same time you issue automatically the components&#10;&#10;The Backflush Group field is used when you want to issue just components belonging to this group. (This characteristic could not be included in the current version).&#10;&#10;At the lower part of the window you can find the list of every MO component, this can be modified according with the real products and quantities given to the shop floor.&#10;&#10;The quantities to be issued are selected with the checkbox at the first column of the list of components. If the actual quantity is different from the standard quantity showed in the column Qty to deliver you should edit this field to enter the right quantity to be issued.&#10;&#10;Finally a message box asks if you want to close the OM document, you should click the ok button if this MO does not have any more transactions and has to be closed.&#10;&#10;">The form shows at the upper side static information around the product and the manufacturing resource where it has to be made, it also shows a summary of the quantities to be controlled in the MO such as the Original and delivered quantities and the Quantity to deliver for the MO up to date.
 
 If the production process requires production in batch, then the Qty Batchs shows the Number of batches the shop floor needs to do and the Qty Batch Size contains the size of every batch to be produced.
@@ -181,9 +181,9 @@ Finally a message box asks if you want to close the OM document, you should clic
   <value column="Help" original=""/>
  </row>
  <row id="53010" trl="N">
-  <value column="Name" original="Generate Shipments &amp; Invoices (manual)"><![CDATA[Generate Shipments & Invoices (manual)]]></value>
-  <value column="Description" original="Select and generate shipments &amp; Invoices"><![CDATA[Select and generate shipments & Invoices]]></value>
-  <value column="Help" original="Generate Shipments &amp; Invoices from Orders.  &#10;Select the orders to generate the shipments &amp; Invoices for."><![CDATA[Generate Shipments & Invoices from Orders.  
+  <value column="Name" original="Generate Shipments &amp; Invoices (manual)" xml:space="preserve"><![CDATA[Generate Shipments & Invoices (manual)]]></value>
+  <value column="Description" original="Select and generate shipments &amp; Invoices" xml:space="preserve"><![CDATA[Select and generate shipments & Invoices]]></value>
+  <value column="Help" original="Generate Shipments &amp; Invoices from Orders.  &#10;Select the orders to generate the shipments &amp; Invoices for." xml:space="preserve"><![CDATA[Generate Shipments & Invoices from Orders.  
 Select the orders to generate the shipments & Invoices for.]]></value>
  </row>
  <row id="53012" trl="N">
@@ -234,6 +234,26 @@ Select the orders to generate the shipments & Invoices for.]]></value>
  <row id="200008" trl="N">
   <value column="Name" original="Captured Process Parameter">Captured Process Parameter</value>
   <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200009" trl="N">
+  <value column="Name" original="Compare Field Suggestion">Compare Field Suggestion</value>
+  <value column="Description" original="Review field changes for label, descriptipn and help">Review field changes for label, descriptipn and help</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200010" trl="N">
+  <value column="Name" original="Compare Context Help Suggestion">Compare Context Help Suggestion</value>
+  <value column="Description" original="Review changes for context help">Review changes for context help</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200011" trl="N">
+  <value column="Name" original="idempiereMonitor">idempiereMonitor</value>
+  <value column="Description" original="Form to configure access to /idempiereMonitor - do not add to menu">Form to configure access to /idempiereMonitor - do not add to menu</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200012" trl="N">
+  <value column="Name" original="Apache Felix Web Console">Apache Felix Web Console</value>
+  <value column="Description" original="Form to configure access to /osgi/system/console - do not add to menu">Form to configure access to /osgi/system/console - do not add to menu</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="31ee0732-43d7-4aef-8204-ac262e8d4d8d">

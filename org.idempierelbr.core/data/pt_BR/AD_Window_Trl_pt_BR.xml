@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Window">
+<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Window">
  <row id="100" trl="Y">
   <value column="Name" original="Table and Column">Tabela e Coluna</value>
   <value column="Description" original="Maintain Tables and Columns">Gerenciamento de Tabelas e Colunas</value>
@@ -112,7 +112,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  <row id="122" trl="Y">
   <value column="Name" original="Country Region and City">País, Região (UF) e Cidade</value>
   <value column="Description" original="Maintain Countries Regions and Cities">Gerenciamento de Países, Regiões (UFs) e Cidades</value>
-  <value column="Help" original="The Countries, Regions and Cities Window defines the different entities that can be used in any address field.  It defines the format of the address as well as associating Regions with Countries and Cities with Regions or Countries. &#10;&lt;p&gt;You would define Countries usually only on System level."><![CDATA[A Janela "País, Região (UF) e Cidade" define as diferentes entidades que podem ser usadas em qualquer campo de endereço.  Ela define o formato do endereço assim como cria o relacionamento entre cidades, UFs e países. <p>Normalmente define-se o país a nível de sistema.]]></value>
+  <value column="Help" original="The Countries, Regions and Cities Window defines the different entities that can be used in any address field.  It defines the format of the address as well as associating Regions with Countries and Cities with Regions or Countries. &#10;&lt;p&gt;You would define Countries usually only on System level." xml:space="preserve"><![CDATA[A Janela "País, Região (UF) e Cidade" define as diferentes entidades que podem ser usadas em qualquer campo de endereço.  Ela define o formato do endereço assim como cria o relacionamento entre cidades, UFs e países. <p>Normalmente define-se o país a nível de sistema.]]></value>
  </row>
  <row id="123" trl="Y">
   <value column="Name" original="Business Partner">Parceiro de Negócios</value>
@@ -176,7 +176,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
   <value column="Help" original="The Tax Category Window is used to enter and maintain Tax Categories.  Each product is associated with a tax category which facilitates reacting changing tax rates.">A Janela "Categoria de Imposto" é usada para digitar e manter as Categorias de Impostos.  Cada Produto é associado a uma Categoria de Imposto o que facilita reagir a variações de Alíquotas de Impostos.</value>
  </row>
  <row id="139" trl="Y">
-  <value column="Name" original="Warehouse &amp; Locators"><![CDATA[Armazém & Localizadores]]></value>
+  <value column="Name" original="Warehouse &amp; Locators" xml:space="preserve"><![CDATA[Armazém & Localizadores]]></value>
   <value column="Description" original="Maintain Warehouses and Locators">Gerenciamento de Armazéns e Localizadores</value>
   <value column="Help" original="The Warehouse and Locators Window defines each Warehouse, any Locators for that Warehouse and the Accounting parameters to be used for inventory in that Warehouse.">A Janela "Armazéns e Localizadores" define cada Armazém, quaisquer Localizadores para esse Armazém e os Parâmetros Contábeis a serem utilizados para inventário nesse Armazém.</value>
  </row>
@@ -208,7 +208,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  <row id="146" trl="Y">
   <value column="Name" original="Price List">Tabela de Preços</value>
   <value column="Description" original="Maintain Product Price Lists">Gerenciamento de Tabelas de Preços</value>
-  <value column="Help" original="The Price List Window allows you to generate product price lists for your Business Partners.  Price lists determine currency and tax treatment.  Price list versions allow to maintain parallel lists for different date ranges.  The most current pricelist version is used based on the document date.&#10;&lt;BR&gt;&#10;All pricelists have three prices: List, Standard and Limit&#10;&lt;BR&gt;&#10;First step is to create a base price list.  You can manually add products and enter the prices or create them automatically.  The base price list is often the purchase price list with list price ('official' retail price), the standard price (your purchase price).  The limit price can be used to check your final purchase costs after discounts, rebates, etc.&#10;&lt;BR&gt; &#10;Pricelists can be calculated and copied.  To speed up the calculation, the parameters are stored an used when creating a new price list version."><![CDATA[A Janela "Tabelas de Preços" permite a você gerar Tabelas de Preços de Produto para seus Parceiros de Negócios. Tabelas de Preços determinam a moeda e o tratamento de impostos. Versões de Tabela de Preços permitem manter tabelas em paralelo para diferentes faixas de datas.  A versão de tabela de preços mais atual é usada com base na data do documento. <BR> Todas as tabelas de preços tem três preços: de tabela, padrão (normal) e limite <BR> O primeiro passo é criar uma tabela de preços base.  Você pode acrescentar produtos manualmente e digitar os preços ou criá-los automaticamente.  A tabela de preços base é freqüentemente a tabela de preços de compra com o "Preço de Tabela" (Preço ao consumidor 'oficial'), e o preço padrão (seu preço de compra).  O Preço Limite pode ser usado para conferir seus custos de compras finais após descontos, bonificações, etc. <BR> Tabelas de Preços podem ser calculadas e copiadas.  Para acelerar os cálculos, os parâmetros são armazenados e usados ao se criar uma nova versão da tabela de preços.]]></value>
+  <value column="Help" original="The Price List Window allows you to generate product price lists for your Business Partners.  Price lists determine currency and tax treatment.  Price list versions allow to maintain parallel lists for different date ranges.  The most current pricelist version is used based on the document date.&#10;&lt;BR&gt;&#10;All pricelists have three prices: List, Standard and Limit&#10;&lt;BR&gt;&#10;First step is to create a base price list.  You can manually add products and enter the prices or create them automatically.  The base price list is often the purchase price list with list price ('official' retail price), the standard price (your purchase price).  The limit price can be used to check your final purchase costs after discounts, rebates, etc.&#10;&lt;BR&gt; &#10;Pricelists can be calculated and copied.  To speed up the calculation, the parameters are stored an used when creating a new price list version." xml:space="preserve"><![CDATA[A Janela "Tabelas de Preços" permite a você gerar Tabelas de Preços de Produto para seus Parceiros de Negócios. Tabelas de Preços determinam a moeda e o tratamento de impostos. Versões de Tabela de Preços permitem manter tabelas em paralelo para diferentes faixas de datas.  A versão de tabela de preços mais atual é usada com base na data do documento. <BR> Todas as tabelas de preços tem três preços: de tabela, padrão (normal) e limite <BR> O primeiro passo é criar uma tabela de preços base.  Você pode acrescentar produtos manualmente e digitar os preços ou criá-los automaticamente.  A tabela de preços base é freqüentemente a tabela de preços de compra com o "Preço de Tabela" (Preço ao consumidor 'oficial'), e o preço padrão (seu preço de compra).  O Preço Limite pode ser usado para conferir seus custos de compras finais após descontos, bonificações, etc. <BR> Tabelas de Preços podem ser calculadas e copiadas.  Para acelerar os cálculos, os parâmetros são armazenados e usados ao se criar uma nova versão da tabela de preços.]]></value>
  </row>
  <row id="147" trl="Y">
   <value column="Name" original="Invoice Schedule">Programação de Faturamento</value>
@@ -428,7 +428,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  <row id="204" trl="Y">
   <value column="Name" original="Mail Template">Modelo de Correspondência</value>
   <value column="Description" original="Maintain Mail Template">Gerenciamento de Modelos de Correspondência</value>
-  <value column="Help" original="Mail templates can contain variables of the user, business partner or a general object.  The priority of parsing is User/Contact, Business Partner and then the underlying business object (like Request, Dunning, Workflow object).&lt;br&gt;&#10;So, @Name@ would resolve into the User name (if user is defined defined), then Business Partner name (if business partner is defined) and then the Name of the business object if it has a Name.&lt;br&gt;&#10;For Multi-Lingual systems, the template is translated based on the Business Partner's language selection."><![CDATA[Modelos de Correspondência podem conter variáveis do usuário, parceiro de negócios ou um objecto genérico.  The priority of parsing is User/Contact, Business Partner and then the underlying business object (like Request, Dunning, Workflow object).<br> So, @Name@ would resolve into the User name (if user is defined defined), then Business Partner name (if business partner is defined) and then the Name of the business object if it has a Name.<br> For Multi-Lingual systems, the template is translated based on the Business Partner's language selection.]]></value>
+  <value column="Help" original="Mail templates can contain variables of the user, business partner or a general object.  The priority of parsing is User/Contact, Business Partner and then the underlying business object (like Request, Dunning, Workflow object).&lt;br&gt;&#10;So, @Name@ would resolve into the User name (if user is defined defined), then Business Partner name (if business partner is defined) and then the Name of the business object if it has a Name.&lt;br&gt;&#10;For Multi-Lingual systems, the template is translated based on the Business Partner's language selection." xml:space="preserve"><![CDATA[Modelos de Correspondência podem conter variáveis do usuário, parceiro de negócios ou um objecto genérico.  The priority of parsing is User/Contact, Business Partner and then the underlying business object (like Request, Dunning, Workflow object).<br> So, @Name@ would resolve into the User name (if user is defined defined), then Business Partner name (if business partner is defined) and then the Name of the business object if it has a Name.<br> For Multi-Lingual systems, the template is translated based on the Business Partner's language selection.]]></value>
  </row>
  <row id="205" trl="Y">
   <value column="Name" original="View Allocation">Visualizar Alocação</value>
@@ -467,7 +467,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  <row id="213" trl="Y">
   <value column="Name" original="Performance Measure Calculation">Cálculo de Medição de Desempenho</value>
   <value column="Description" original="Define how you calculate your performance measures">Definir os cálculos das medidas de desempenho</value>
-  <value column="Help" original="The Performance Measure Calculation defines how performance measures will be calculated. &#10;The sql needs to return a single value.  Please check examples.&lt;br&gt;&#10;The date trestriction is defined in the Goal. &#10;Any restrictions for Organizations, Business Partners, Products, etc. are  as Performance Goal Restrictions."><![CDATA[A Aba "Cálculos de Medidas de Desempenho" define como as medidas de desempenho serão calculadas. The sql needs to return a single value.  Please check examples.<br> The date trestriction is defined in the Goal. Any restrictions for Organizations, Business Partners, Products, etc. are  as Performance Goal Restrictions.]]></value>
+  <value column="Help" original="The Performance Measure Calculation defines how performance measures will be calculated. &#10;The sql needs to return a single value.  Please check examples.&lt;br&gt;&#10;The date trestriction is defined in the Goal. &#10;Any restrictions for Organizations, Business Partners, Products, etc. are  as Performance Goal Restrictions." xml:space="preserve"><![CDATA[A Aba "Cálculos de Medidas de Desempenho" define como as medidas de desempenho serão calculadas. The sql needs to return a single value.  Please check examples.<br> The date trestriction is defined in the Goal. Any restrictions for Organizations, Business Partners, Products, etc. are  as Performance Goal Restrictions.]]></value>
  </row>
  <row id="215" trl="Y">
   <value column="Name" original="Performance Measure">Medição de Desempenho</value>
@@ -507,7 +507,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  <row id="224" trl="Y">
   <value column="Name" original="Print Form">Formulário de Impressão</value>
   <value column="Description" original="Maintain Print Forms (Invoices, Checks, ..) used">Gerenciamento dos Formulários de Impressão (Notas Fiscais, Cheques, ...)</value>
-  <value column="Help" original="Define the documents you use for this Client/Organnization.  Note that the check format is defined in the Bank (Account) Window.&lt;p&gt;&#10;The highest priotity has the Print Format, you define on a Document Type (example specific Export Invoice format). The next level is the set of Print Formats, you defined for the organziation of the document printed. The default is the set of Print Formats defines for all organizations of the Client (Organization=*)."><![CDATA[Define os documentos que você usa para esta Empresa/Organização.  Note que o formato do cheque é definido na Janela "Banco (Conta)".<p> O Formato de Impressão que você define em um Tipo de Documento tem a maior prioridade (ex. Formato específico de Exportação de Fatura). O próximo nível é o conjunto de Formatos de Impressão que você definiu para a organização do documento impresso. O padrão é que o conjunto de Formatos de Impressão seja definido para todas as organizações da Empresa (Organization=*).]]></value>
+  <value column="Help" original="Define the documents you use for this Client/Organnization.  Note that the check format is defined in the Bank (Account) Window.&lt;p&gt;&#10;The highest priotity has the Print Format, you define on a Document Type (example specific Export Invoice format). The next level is the set of Print Formats, you defined for the organziation of the document printed. The default is the set of Print Formats defines for all organizations of the Client (Organization=*)." xml:space="preserve"><![CDATA[Define os documentos que você usa para esta Empresa/Organização.  Note que o formato do cheque é definido na Janela "Banco (Conta)".<p> O Formato de Impressão que você define em um Tipo de Documento tem a maior prioridade (ex. Formato específico de Exportação de Fatura). O próximo nível é o conjunto de Formatos de Impressão que você definiu para a organização do documento impresso. O padrão é que o conjunto de Formatos de Impressão seja definido para todas as organizações da Empresa (Organization=*).]]></value>
  </row>
  <row id="225" trl="Y">
   <value column="Name" original="System Color">Cor no Sistema</value>
@@ -747,7 +747,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  <row id="273" trl="Y">
   <value column="Name" original="Click">Clique (Click)</value>
   <value column="Description" original="Maintain Web Click">Gerenciamento de Cliques da Web</value>
-  <value column="Help" original="Web Clicks allow you to track number of clicks.  Example:&#10;&amp;lt;a href=&quot;http://www.idempiere.org/wstore/click?http://www.idempiere.org target=&quot;_blank&quot;&amp;gt; where&#10;&quot;http://www.idempiere.org/wstore/click&quot; is your side and &quot;http://www.idempiere.de&quot; is the target page.&#10;If you created a web click for http://www.idempiere.de, you will be able to see details and total of web clicks.&#10;"><![CDATA[Os Cliques da Web permitem saber a quantidade de cliques.  Exemplo: & href="http://www.adempiere.com/wstore/click?http://www.adempiere.de" target="_blank"&gt; onde "http://www.adempiere.com/wstore/click" é o seu site e "http://www.adempiere.de" é a página alvo. Se você criar um "web click" para http://www.adempiere.de, você será capaz de ver detalhes e o total de cliques da web.
+  <value column="Help" original="Web Clicks allow you to track number of clicks.  Example:&#10;&amp;lt;a href=&quot;http://www.idempiere.org/wstore/click?http://www.idempiere.org target=&quot;_blank&quot;&amp;gt; where&#10;&quot;http://www.idempiere.org/wstore/click&quot; is your side and &quot;http://www.idempiere.de&quot; is the target page.&#10;If you created a web click for http://www.idempiere.de, you will be able to see details and total of web clicks.&#10;" xml:space="preserve"><![CDATA[Os Cliques da Web permitem saber a quantidade de cliques.  Exemplo: & href="http://www.adempiere.com/wstore/click?http://www.adempiere.de" target="_blank"&gt; onde "http://www.adempiere.com/wstore/click" é o seu site e "http://www.adempiere.de" é a página alvo. Se você criar um "web click" para http://www.adempiere.de, você será capaz de ver detalhes e o total de cliques da web.
 ]]></value>
  </row>
  <row id="274" trl="Y">
@@ -805,7 +805,7 @@ Verifique que a tradução crie os registros de tradução faltantes. Inicie est
  <row id="284" trl="Y">
   <value column="Name" original="Replication">Replicação</value>
   <value column="Description" original="Maintain Data Replication Targets">Gerenciamento de Alvos de Replicação de Dados</value>
-  <value column="Help" original="Data Replication Target Details. Set up your system completely on the central system, before setting up the replication. Define the Replication target here and export the database and import it on the remote system.&lt;p&gt;&#10;Before(!) entering transactions, Start the Replication Run to set up the remote system."><![CDATA[Detalhes de Alvo de Replicação de Dados. Configure seu sistema completamente no sistema central, antes de configurar a replicação. Defina o Alvo de Replicação aqui e exporte o banco de dados para importá-lo no sistema remoto.<p> Antes(!) de introduzir transações, Inicie a Execução de Replicação para configurar o sistema remoto.]]></value>
+  <value column="Help" original="Data Replication Target Details. Set up your system completely on the central system, before setting up the replication. Define the Replication target here and export the database and import it on the remote system.&lt;p&gt;&#10;Before(!) entering transactions, Start the Replication Run to set up the remote system." xml:space="preserve"><![CDATA[Detalhes de Alvo de Replicação de Dados. Configure seu sistema completamente no sistema central, antes de configurar a replicação. Defina o Alvo de Replicação aqui e exporte o banco de dados para importá-lo no sistema remoto.<p> Antes(!) de introduzir transações, Inicie a Execução de Replicação para configurar o sistema remoto.]]></value>
  </row>
  <row id="285" trl="Y">
   <value column="Name" original="Replication Strategy">Estratégia de Replicação</value>
@@ -1392,8 +1392,8 @@ A Specific production facility consisting of one or more people and/or machines 
   <value column="Help" original="Manufacturing Workflows (Routing) is a set of information detailing the method of manufacture of a particular item .It includes the operations to be performed their sequence the various work centers to be involved and the standards for setup and run. In some companies routing also includes information on tooling operator skill levels inspection operationstesting requirements etc.">Manufacturing Workflows (Routing) is a set of information detailing the method of manufacture of a particular item .It includes the operations to be performed their sequence the various work centers to be involved and the standards for setup and run. In some companies routing also includes information on tooling operator skill levels inspection operationstesting requirements etc.</value>
  </row>
  <row id="53006" trl="N">
-  <value column="Name" original="Bill of Materials &amp; Formula "><![CDATA[Bill of Materials & Formula ]]></value>
-  <value column="Description" original="Maintain Product Bill of Materials &amp; Formula "><![CDATA[Maintain Product Bill of Materials & Formula ]]></value>
+  <value column="Name" original="Bill of Materials &amp; Formula " xml:space="preserve"><![CDATA[Bill of Materials & Formula ]]></value>
+  <value column="Description" original="Maintain Product Bill of Materials &amp; Formula " xml:space="preserve"><![CDATA[Maintain Product Bill of Materials & Formula ]]></value>
   <value column="Help" original="It is a list of all the subassemblies, intermediates, parts and raw material that go into a parent assembly showing the quantity of each required to make an assembly. There are a variety of display formats of bill of material, including single level bill of material, indented bill of material, modular (planning), costed bill of material, etc. May also be called &quot;formula&quot;, &quot;recipe&quot;, &quot;ingredients list&quot; in certain industries.&#10;It answers the question, what are the components of the product?">It is a list of all the subassemblies, intermediates, parts and raw material that go into a parent assembly showing the quantity of each required to make an assembly. There are a variety of display formats of bill of material, including single level bill of material, indented bill of material, modular (planning), costed bill of material, etc. May also be called "formula", "recipe", "ingredients list" in certain industries.
 It answers the question, what are the components of the product?</value>
  </row>
@@ -2107,9 +2107,54 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200087" trl="N">
+  <value column="Name" original="Field Suggestions">Field Suggestions</value>
+  <value column="Description" original="Suggestions for field name, description and help.">Suggestions for field name, description and help.</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200088" trl="N">
+  <value column="Name" original="Context Help Suggestion">Context Help Suggestion</value>
+  <value column="Description" original="Review context help suggestion from tenant">Review context help suggestion from tenant</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200089" trl="N">
+  <value column="Name" original="Post-it">Post-it</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row id="200090" trl="N">
   <value column="Name" original="Document Status">Document Status</value>
   <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200092" trl="N">
+  <value column="Name" original="All Clients">All Clients</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200093" trl="N">
+  <value column="Name" original="All Users">All Users</value>
+  <value column="Description" original="Users from All Clients">Users from All Clients</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200095" trl="N">
+  <value column="Name" original="Process Customization">Process Customization</value>
+  <value column="Description" original="Define Process Customization for Role/User">Define Process Customization for Role/User</value>
+  <value column="Help" original="The customization values defined here overwrite/replace the default system definition if defined.">The customization values defined here overwrite/replace the default system definition if defined.</value>
+ </row>
+ <row id="200107" trl="N">
+  <value column="Name" original="All User Roles">All User Roles</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200108" trl="N">
+  <value column="Name" original="All Roles">All Roles</value>
+  <value column="Description" original="Roles from All Clients">Roles from All Clients</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200109" trl="N">
+  <value column="Name" original="User Queries">User Queries</value>
+  <value column="Description" original="View and maintain saved queries">View and maintain saved queries</value>
   <value column="Help" original=""/>
  </row>
  <row id="800000" trl="Y">
@@ -2154,6 +2199,31 @@ MRP - 110	 No exists Dem</value>
  </row>
  <row id="800011" trl="Y">
   <value column="Name" original="Geração SPED-EFD">Gerador Sped EFD</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800014" trl="N">
+  <value column="Name" original="Nota Fiscal de Serviço">Nota Fiscal de Serviço</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800015" trl="N">
+  <value column="Name" original="Lote de RPS">Lote de RPS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800016" trl="N">
+  <value column="Name" original="Configuração de Nota Fiscal de Serviço">Configuração de Nota Fiscal de Serviço</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800020" trl="N">
+  <value column="Name" original="Monophase NCM">Monophase NCM</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800021" trl="Y">
+  <value column="Name" original="NF-e XML">XML de NF-e</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Ref_List">
+<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Ref_List">
  <row id="51" trl="Y">
   <value column="Name" original="Organization">Organização</value>
   <value column="Description" original=""/>
@@ -258,15 +258,15 @@
  </row>
  <row id="157" trl="Y">
   <value column="Name" original="Local">Local</value>
-  <value column="Description" original="Local &lt;-"><![CDATA[Local <-]]></value>
+  <value column="Description" original="Local &lt;-" xml:space="preserve"><![CDATA[Local <-]]></value>
  </row>
  <row id="159" trl="Y">
   <value column="Name" original="Merge">Fusão</value>
-  <value column="Description" original="Merge &lt;--&gt;"><![CDATA[Fundir <-->]]></value>
+  <value column="Description" original="Merge &lt;--&gt;" xml:space="preserve"><![CDATA[Fundir <-->]]></value>
  </row>
  <row id="160" trl="Y">
   <value column="Name" original="Reference">Referência</value>
-  <value column="Description" original="Reference -&gt;"><![CDATA[Referência ->]]></value>
+  <value column="Description" original="Reference -&gt;" xml:space="preserve"><![CDATA[Referência ->]]></value>
  </row>
  <row id="164" trl="Y">
   <value column="Name" original="Drafted">Em Digitação</value>
@@ -341,7 +341,7 @@
   <value column="Description" original="Reopen Document and Reverse automatically generated documents; You need to Complete the transaction after the change. ">Reativa a transação (isso pode estornar documentos gerados automaticamente). Após as alterações, é necessário completá-la</value>
  </row>
  <row id="189" trl="Y">
-  <value column="Name" original="&lt;None&gt;"><![CDATA[<Nenhuma>]]></value>
+  <value column="Name" original="&lt;None&gt;" xml:space="preserve"><![CDATA[<Nenhuma>]]></value>
   <value column="Description" original="No action">Sem ação</value>
  </row>
  <row id="190" trl="Y">
@@ -621,7 +621,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="271" trl="Y">
-  <value column="Name" original="&lt;No Action&gt;"><![CDATA[<Nenhuma Ação>]]></value>
+  <value column="Name" original="&lt;No Action&gt;" xml:space="preserve"><![CDATA[<Nenhuma Ação>]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="272" trl="Y">
@@ -937,15 +937,15 @@
   <value column="Description" original=""/>
  </row>
  <row id="367" trl="Y">
-  <value column="Name" original="&gt;="><![CDATA[>=]]></value>
+  <value column="Name" original="&gt;=" xml:space="preserve"><![CDATA[>=]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="368" trl="Y">
-  <value column="Name" original="&gt;"><![CDATA[>]]></value>
+  <value column="Name" original="&gt;" xml:space="preserve"><![CDATA[>]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="369" trl="Y">
-  <value column="Name" original="&lt;"><![CDATA[<]]></value>
+  <value column="Name" original="&lt;" xml:space="preserve"><![CDATA[<]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="370" trl="Y">
@@ -953,11 +953,11 @@
   <value column="Description" original=""/>
  </row>
  <row id="371" trl="Y">
-  <value column="Name" original="&lt;="><![CDATA[<=]]></value>
+  <value column="Name" original="&lt;=" xml:space="preserve"><![CDATA[<=]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="372" trl="Y">
-  <value column="Name" original="|&lt;x&gt;|"><![CDATA[|<x>|]]></value>
+  <value column="Name" original="|&lt;x&gt;|" xml:space="preserve"><![CDATA[|<x>|]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="373" trl="Y">
@@ -1041,7 +1041,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="393" trl="Y">
-  <value column="Name" original="&gt; 0"><![CDATA[> 0]]></value>
+  <value column="Name" original="&gt; 0" xml:space="preserve"><![CDATA[> 0]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="394" trl="Y">
@@ -1049,7 +1049,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="395" trl="Y">
-  <value column="Name" original="&lt; 0"><![CDATA[< 0]]></value>
+  <value column="Name" original="&lt; 0" xml:space="preserve"><![CDATA[< 0]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="396" trl="Y">
@@ -2965,11 +2965,11 @@
   <value column="Description" original=""/>
  </row>
  <row id="894" trl="Y">
-  <value column="Name" original="Time&amp;Material max Comitted"><![CDATA[Time&Material max Comitted]]></value>
+  <value column="Name" original="Time&amp;Material max Comitted" xml:space="preserve"><![CDATA[Time&Material max Comitted]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="895" trl="Y">
-  <value column="Name" original="Time&amp;Material"><![CDATA[Time&Material]]></value>
+  <value column="Name" original="Time&amp;Material" xml:space="preserve"><![CDATA[Time&Material]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="896" trl="Y">
@@ -3517,7 +3517,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="53271" trl="N">
-  <value column="Name" original="Replace &amp; Expire"><![CDATA[Replace & Expire]]></value>
+  <value column="Name" original="Replace &amp; Expire" xml:space="preserve"><![CDATA[Replace & Expire]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="53272" trl="N">
@@ -4158,7 +4158,7 @@
  </row>
  <row id="53441" trl="N">
   <value column="Name" original="Natural Balance">Natural Balance</value>
-  <value column="Description" original="BY for P &amp; L account, BT for Balance Sheet account"><![CDATA[BY for P & L account, BT for Balance Sheet account]]></value>
+  <value column="Description" original="BY for P &amp; L account, BT for Balance Sheet account" xml:space="preserve"><![CDATA[BY for P & L account, BT for Balance Sheet account]]></value>
  </row>
  <row id="53442" trl="N">
   <value column="Name" original="Material Receipt">Material Receipt</value>
@@ -4225,11 +4225,11 @@
   <value column="Description" original=""/>
  </row>
  <row id="53462" trl="N">
-  <value column="Name" original="&gt;="><![CDATA[>=]]></value>
+  <value column="Name" original="&gt;=" xml:space="preserve"><![CDATA[>=]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="53463" trl="N">
-  <value column="Name" original="&lt;="><![CDATA[<=]]></value>
+  <value column="Name" original="&lt;=" xml:space="preserve"><![CDATA[<=]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="53464" trl="Y">
@@ -4302,7 +4302,7 @@
  </row>
  <row id="53503" trl="N">
   <value column="Name" original="Broadcast">Broadcast</value>
-  <value column="Description" original="Broadcast &lt;&lt;-&gt;&gt;"><![CDATA[Broadcast <<->>]]></value>
+  <value column="Description" original="Broadcast &lt;&lt;-&gt;&gt;" xml:space="preserve"><![CDATA[Broadcast <<->>]]></value>
  </row>
  <row id="53504" trl="Y">
   <value column="Name" original="Model Validator">Validador de Model</value>
@@ -4437,7 +4437,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="53551" trl="Y">
-  <value column="Name" original="Human Resource &amp; Payroll"><![CDATA[RH & Folha de Pagamento]]></value>
+  <value column="Name" original="Human Resource &amp; Payroll" xml:space="preserve"><![CDATA[RH & Folha de Pagamento]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="53552" trl="N">
@@ -5221,19 +5221,19 @@
   <value column="Description" original=""/>
  </row>
  <row id="200114" trl="Y">
-  <value column="Name" original="&gt;"><![CDATA[>]]></value>
+  <value column="Name" original="&gt;" xml:space="preserve"><![CDATA[>]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="200115" trl="Y">
-  <value column="Name" original="&gt;="><![CDATA[>=]]></value>
+  <value column="Name" original="&gt;=" xml:space="preserve"><![CDATA[>=]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="200116" trl="Y">
-  <value column="Name" original="&lt;"><![CDATA[<]]></value>
+  <value column="Name" original="&lt;" xml:space="preserve"><![CDATA[<]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="200117" trl="Y">
-  <value column="Name" original="&lt;="><![CDATA[<=]]></value>
+  <value column="Name" original="&lt;=" xml:space="preserve"><![CDATA[<=]]></value>
   <value column="Description" original=""/>
  </row>
  <row id="200118" trl="Y">
@@ -5388,6 +5388,10 @@
   <value column="Name" original="Employee">Employee</value>
   <value column="Description" original=""/>
  </row>
+ <row id="200168" trl="N">
+  <value column="Name" original="Full Like">Full Like</value>
+  <value column="Description" original=""/>
+ </row>
  <row id="200176" trl="N">
   <value column="Name" original="UPC-A">UPC-A</value>
   <value column="Description" original=""/>
@@ -5412,8 +5416,16 @@
   <value column="Name" original="Process">Process</value>
   <value column="Description" original=""/>
  </row>
+ <row id="200261" trl="N">
+  <value column="Name" original="User Info">User Info</value>
+  <value column="Description" original="Show a info window">Show a info window</value>
+ </row>
  <row id="200278" trl="N">
   <value column="Name" original="Model Cascade">Model Cascade</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200279" trl="N">
+  <value column="Name" original="Date">Date</value>
   <value column="Description" original=""/>
  </row>
  <row id="200281" trl="N">
@@ -5454,6 +5466,134 @@
  </row>
  <row id="200356" trl="N">
   <value column="Name" original="SQL Mandatory">SQL Mandatory</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200361" trl="N">
+  <value column="Name" original="Element">Element</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200362" trl="N">
+  <value column="Name" original="Field">Field</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200374" trl="N">
+  <value column="Name" original="Code 39 with Checksum">Code 39 with Checksum</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200375" trl="N">
+  <value column="Name" original="Code 39 w/o Checksum">Code 39 w/o Checksum</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200376" trl="N">
+  <value column="Name" original="Manual">Manual</value>
+  <value column="Description" original="Manual List">Manual List</value>
+ </row>
+ <row id="200396" trl="N">
+  <value column="Name" original="QR Code">QR Code</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200438" trl="N">
+  <value column="Name" original="Force Background">Force Background</value>
+  <value column="Description" original="It forces the report/process to always run on background. This can be useful for slow reports.">It forces the report/process to always run on background. This can be useful for slow reports.</value>
+ </row>
+ <row id="200439" trl="N">
+  <value column="Name" original="Force Foreground">Force Foreground</value>
+  <value column="Description" original="It forces the report/process to always run on foreground.">It forces the report/process to always run on foreground.</value>
+ </row>
+ <row id="200440" trl="N">
+  <value column="Name" original="Disallow multiple executions">Disallow multiple executions</value>
+  <value column="Description" original="Never allow to execute a process that is already running">Never allow to execute a process that is already running</value>
+ </row>
+ <row id="200441" trl="N">
+  <value column="Name" original="Disallow multiple executions with the same parameters">Disallow multiple executions with the same parameters</value>
+  <value column="Description" original="Allow to execute a process multiple times with different parameters.">Allow to execute a process multiple times with different parameters.</value>
+ </row>
+ <row id="200445" trl="N">
+  <value column="Name" original="Info Window">Info Window</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200448" trl="N">
+  <value column="Name" original="Deferred">Deferred</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200457" trl="N">
+  <value column="Name" original="WebUI">WebUI</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200458" trl="N">
+  <value column="Name" original="WebService">WebService</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200459" trl="N">
+  <value column="Name" original="System Support">System Support</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200460" trl="N">
+  <value column="Name" original="Mobile">Mobile</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200461" trl="N">
+  <value column="Name" original="Swing">Swing</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200462" trl="N">
+  <value column="Name" original="External App 1">External App 1</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200463" trl="N">
+  <value column="Name" original="External App 2">External App 2</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200464" trl="N">
+  <value column="Name" original="External App 3">External App 3</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200465" trl="N">
+  <value column="Name" original="External App 4">External App 4</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200466" trl="N">
+  <value column="Name" original="External App 5">External App 5</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200467" trl="N">
+  <value column="Name" original="Delete">Delete</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200468" trl="N">
+  <value column="Name" original="Deactivate">Deactivate</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200469" trl="N">
+  <value column="Name" original="Activate">Activate</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200470" trl="N">
+  <value column="Name" original="PDF">PDF</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200471" trl="N">
+  <value column="Name" original="HTML">HTML</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200472" trl="N">
+  <value column="Name" original="Excel">Excel</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200473" trl="N">
+  <value column="Name" original="CSV">CSV</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200474" trl="N">
+  <value column="Name" original="Default">Default</value>
+  <value column="Description" original="Use what is defined on the Sysconfig key">Use what is defined on the Sysconfig key</value>
+ </row>
+ <row id="200475" trl="N">
+  <value column="Name" original="Always in Grid View">Always in Grid View</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200476" trl="N">
+  <value column="Name" original="According to threshold">According to threshold</value>
   <value column="Description" original=""/>
  </row>
  <row id="800000" trl="Y">
@@ -5566,6 +5706,10 @@
  </row>
  <row id="800027" trl="Y">
   <value column="Name" original="Capital / Penalty / Interest">Valor / Multa / Juros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800028" trl="N">
+  <value column="Name" original="Capital / Interest / Penalty">Capital / Interest / Penalty</value>
   <value column="Description" original=""/>
  </row>
  <row id="800029" trl="Y">
@@ -5990,6 +6134,98 @@
  </row>
  <row id="800140" trl="N">
   <value column="Name" original="Não Contribuinte">Não Contribuinte</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800147" trl="N">
+  <value column="Name" original="Normal">Normal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800148" trl="N">
+  <value column="Name" original="Recibo Provisorio de Servicos">Recibo Provisorio de Servicos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800149" trl="N">
+  <value column="Name" original="RPS Nota Fiscal Conjugada (Mista)">RPS Nota Fiscal Conjugada (Mista)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800150" trl="N">
+  <value column="Name" original="Cupom">Cupom</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800151" trl="N">
+  <value column="Name" original="Tomador">Tomador</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800152" trl="N">
+  <value column="Name" original="Intermediário">Intermediário</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800153" trl="N">
+  <value column="Name" original="Nota Fiscal de Serviço">Nota Fiscal de Serviço</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800154" trl="N">
+  <value column="Name" original="ABRASF 1.0">ABRASF 1.0</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800155" trl="N">
+  <value column="Name" original="ABRASF 2.0">ABRASF 2.0</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800156" trl="N">
+  <value column="Name" original="NFS-e Paulistana">NFS-e Paulistana</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800197" trl="N">
+  <value column="Name" original="Erro na Emissao">Erro na Emissao</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800198" trl="N">
+  <value column="Name" original="Servico nao prestado">Servico nao prestado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800199" trl="N">
+  <value column="Name" original="Erro de Assinatura">Erro de Assinatura</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800200" trl="N">
+  <value column="Name" original="Duplicidade da Nota">Duplicidade da Nota</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800201" trl="N">
+  <value column="Name" original="Erro de processamento">Erro de processamento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800203" trl="N">
+  <value column="Name" original="Cancelado">Cancelado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800211" trl="N">
+  <value column="Name" original="210200 - Confirmacao da Operacao ">210200 - Confirmacao da Operacao </value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800212" trl="Y">
+  <value column="Name" original="210210 - Ciencia da Operacao">210210 - Ciência da Operação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800213" trl="Y">
+  <value column="Name" original="210220 - Desconhecimento da Operacao">210220 - Desconhecimento da Operação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800214" trl="Y">
+  <value column="Name" original="210240 - Operacao nao Realizada">210240 - Operação não Realizada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800215" trl="Y">
+  <value column="Name" original="None">Nenhuma</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800216" trl="Y">
+  <value column="Name" original="210210 - Ciencia da Operacao">210210 - Ciência da Operação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800217" trl="N">
+  <value column="Name" original="Manifest">Manifest</value>
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="2facadde-7b9b-4619-9161-8f9fe50b2b19">
@@ -7733,7 +7969,7 @@
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="eff23f35-f635-4379-bf16-d11eab76ba29">
-  <value column="Name" original="522 - Rejeição: CFOP de operação estadual e UF emitente &lt;&gt; da UF remetente contribuinte ICMS"><![CDATA[522 - Rejeição: CFOP de operação estadual e UF emitente <> da UF remetente contribuinte ICMS]]></value>
+  <value column="Name" original="522 - Rejeição: CFOP de operação estadual e UF emitente &lt;&gt; da UF remetente contribuinte ICMS" xml:space="preserve"><![CDATA[522 - Rejeição: CFOP de operação estadual e UF emitente <> da UF remetente contribuinte ICMS]]></value>
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="c2bbbacc-7054-4d2c-86c1-3134f6818402">
@@ -7885,7 +8121,7 @@
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="4e6fd16c-0d08-482a-8ea7-66732ec452b9">
-  <value column="Name" original="560 - Rejeição: CNPJ base do emitente &lt;&gt; CNPJ base da primeira NF-e do lote recebido"><![CDATA[560 - Rejeição: CNPJ base do emitente <> CNPJ base da primeira NF-e do lote recebido]]></value>
+  <value column="Name" original="560 - Rejeição: CNPJ base do emitente &lt;&gt; CNPJ base da primeira NF-e do lote recebido" xml:space="preserve"><![CDATA[560 - Rejeição: CNPJ base do emitente <> CNPJ base da primeira NF-e do lote recebido]]></value>
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="2f06f8af-393a-4214-ad7c-775dce600a82">
@@ -7893,7 +8129,7 @@
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="8f7ceb68-a2dc-4ea8-87e1-935a05838bf8">
-  <value column="Name" original="562 - Rejeição: Código Numérico informado da Chave de Acesso &lt;&gt; Código Numérico da NFe"><![CDATA[562 - Rejeição: Código Numérico informado da Chave de Acesso <> Código Numérico da NFe]]></value>
+  <value column="Name" original="562 - Rejeição: Código Numérico informado da Chave de Acesso &lt;&gt; Código Numérico da NFe" xml:space="preserve"><![CDATA[562 - Rejeição: Código Numérico informado da Chave de Acesso <> Código Numérico da NFe]]></value>
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="0f10916f-829d-4ca0-bd36-c392e6426a0e">
@@ -8009,7 +8245,7 @@
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="0d198eb9-263d-497d-805f-1b7db046a8d9">
-  <value column="Name" original="598 - Rejeição: NF-e emitida em ambiente de homologação com razão social &lt;&gt; de NF-e (Emitida homologação - S/vlr fiscal)"><![CDATA[598 - Rejeição: NF-e emitida em ambiente de homologação com razão social <> de NF-e (Emitida homologação - S/vlr fiscal)]]></value>
+  <value column="Name" original="598 - Rejeição: NF-e emitida em ambiente de homologação com razão social &lt;&gt; de NF-e (Emitida homologação - S/vlr fiscal)" xml:space="preserve"><![CDATA[598 - Rejeição: NF-e emitida em ambiente de homologação com razão social <> de NF-e (Emitida homologação - S/vlr fiscal)]]></value>
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="6bd6fc14-9802-4e53-a7ab-8e445116418e">
@@ -8073,11 +8309,11 @@
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="b1380f4c-abc3-4b43-8b9e-2cef8d48fb75">
-  <value column="Name" original="615 - Rejeição: Chave de Acesso inválida (Ano &lt; 05 ou Ano maior que Ano corrente)"><![CDATA[615 - Rejeição: Chave de Acesso inválida (Ano < 05 ou Ano maior que Ano corrente)]]></value>
+  <value column="Name" original="615 - Rejeição: Chave de Acesso inválida (Ano &lt; 05 ou Ano maior que Ano corrente)" xml:space="preserve"><![CDATA[615 - Rejeição: Chave de Acesso inválida (Ano < 05 ou Ano maior que Ano corrente)]]></value>
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="b42c01fd-9400-4de1-ad25-61a987250b82">
-  <value column="Name" original="616 - Rejeição: Chave de Acesso inválida (Mês &lt; 1 ou Mês &gt; 12)"><![CDATA[616 - Rejeição: Chave de Acesso inválida (Mês < 1 ou Mês > 12)]]></value>
+  <value column="Name" original="616 - Rejeição: Chave de Acesso inválida (Mês &lt; 1 ou Mês &gt; 12)" xml:space="preserve"><![CDATA[616 - Rejeição: Chave de Acesso inválida (Mês < 1 ou Mês > 12)]]></value>
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="388b80d0-e1f6-4e40-9ea2-a04bb3b34ad8">
@@ -8377,15 +8613,15 @@
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="c5aedaa5-8c3f-420e-ad85-65f1383bf09b">
-  <value column="Name" original="731 - Rejeição: CFOP de operação com exterior e idDest &lt;&gt; 3"><![CDATA[731 - Rejeição: CFOP de operação com exterior e idDest <> 3]]></value>
+  <value column="Name" original="731 - Rejeição: CFOP de operação com exterior e idDest &lt;&gt; 3" xml:space="preserve"><![CDATA[731 - Rejeição: CFOP de operação com exterior e idDest <> 3]]></value>
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="dc7681d3-2d23-468e-b42a-7706ac364c64">
-  <value column="Name" original="732 - Rejeição: CFOP de operação com interestadual e idDest &lt;&gt; 2"><![CDATA[732 - Rejeição: CFOP de operação com interestadual e idDest <> 2]]></value>
+  <value column="Name" original="732 - Rejeição: CFOP de operação com interestadual e idDest &lt;&gt; 2" xml:space="preserve"><![CDATA[732 - Rejeição: CFOP de operação com interestadual e idDest <> 2]]></value>
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="cf431c59-dd72-43af-8bf6-ae66af67cf10">
-  <value column="Name" original="733 - Rejeição: CFOP de operação interna e idDest &lt;&gt; 1"><![CDATA[733 - Rejeição: CFOP de operação interna e idDest <> 1]]></value>
+  <value column="Name" original="733 - Rejeição: CFOP de operação interna e idDest &lt;&gt; 1" xml:space="preserve"><![CDATA[733 - Rejeição: CFOP de operação interna e idDest <> 1]]></value>
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="b2049e29-101a-44d9-8c8e-8e7178431117">
@@ -9041,11 +9277,11 @@
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="19e3a88c-b345-4785-befc-b34caabee7f3">
-  <value column="Name" original="1 - Remessa (Cliente -&gt; Banco)"><![CDATA[1 - Remessa (Cliente -> Banco)]]></value>
+  <value column="Name" original="1 - Remessa (Cliente -&gt; Banco)" xml:space="preserve"><![CDATA[1 - Remessa (Cliente -> Banco)]]></value>
   <value column="Description" original=""/>
  </row>
  <row trl="N" uuid="3946bcef-d2ee-4837-bfd6-e3cd66129d66">
-  <value column="Name" original="2 - Retorno (Banco -&gt; Cliente)"><![CDATA[2 - Retorno (Banco -> Cliente)]]></value>
+  <value column="Name" original="2 - Retorno (Banco -&gt; Cliente)" xml:space="preserve"><![CDATA[2 - Retorno (Banco -> Cliente)]]></value>
   <value column="Description" original=""/>
  </row>
 </idempiereTrl>

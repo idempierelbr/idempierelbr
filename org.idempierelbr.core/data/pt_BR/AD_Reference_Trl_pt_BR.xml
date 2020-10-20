@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Reference">
+<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Reference">
  <row id="1" trl="Y">
   <value column="Name" original="AD_Reference Data Types">Tipos de Dados AD_Reference</value>
   <value column="Description" original="Data Type selection">Seleção do Tipo de Dados</value>
@@ -602,7 +602,7 @@
  </row>
  <row id="195" trl="Y">
   <value column="Name" original="_Payment Rule">Regra _Payment</value>
-  <value column="Description" original="In &amp; Out Payment Options"><![CDATA[Opções de Entrada & Saída de Pagamento]]></value>
+  <value column="Description" original="In &amp; Out Payment Options" xml:space="preserve"><![CDATA[Opções de Entrada & Saída de Pagamento]]></value>
   <value column="Help" original=""/>
  </row>
  <row id="196" trl="Y">
@@ -2056,12 +2056,12 @@
   <value column="Help" original="For now we only have implicit realtion types, i.e. the record pairs are defined by the rule itself. In future we would like to have explicit type also. An explizit type just defines a template, the actual pairs can be added by a user or by the system itself.">For now we only have implicit realtion types, i.e. the record pairs are defined by the rule itself. In future we would like to have explicit type also. An explizit type just defines a template, the actual pairs can be added by a user or by the system itself.</value>
  </row>
  <row id="53333" trl="N">
-  <value column="Name" original="RelType C_Order (Sales) &lt;= C_Invoice_ID (Customer)"><![CDATA[RelType C_Order (Sales) <= C_Invoice_ID (Customer)]]></value>
+  <value column="Name" original="RelType C_Order (Sales) &lt;= C_Invoice_ID (Customer)" xml:space="preserve"><![CDATA[RelType C_Order (Sales) <= C_Invoice_ID (Customer)]]></value>
   <value column="Description" original="Finds C_Order_IDs for a given C_Invoice_ID">Finds C_Order_IDs for a given C_Invoice_ID</value>
   <value column="Help" original=""/>
  </row>
  <row id="53334" trl="N">
-  <value column="Name" original="RelType C_Invoice (Customer) &lt;= C_Order_ID (Sales)"><![CDATA[RelType C_Invoice (Customer) <= C_Order_ID (Sales)]]></value>
+  <value column="Name" original="RelType C_Invoice (Customer) &lt;= C_Order_ID (Sales)" xml:space="preserve"><![CDATA[RelType C_Invoice (Customer) <= C_Order_ID (Sales)]]></value>
   <value column="Description" original="Finds C_Invoice_IDs for a given C_C_Order_ID">Finds C_Invoice_IDs for a given C_C_Order_ID</value>
   <value column="Help" original=""/>
  </row>
@@ -2076,22 +2076,22 @@
   <value column="Help" original=""/>
  </row>
  <row id="53345" trl="N">
-  <value column="Name" original="RelType M_InOut (Shipment) &lt;= C_Invoice_ID (Customer)"><![CDATA[RelType M_InOut (Shipment) <= C_Invoice_ID (Customer)]]></value>
+  <value column="Name" original="RelType M_InOut (Shipment) &lt;= C_Invoice_ID (Customer)" xml:space="preserve"><![CDATA[RelType M_InOut (Shipment) <= C_Invoice_ID (Customer)]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="53347" trl="N">
-  <value column="Name" original="RelType M_InOut (Shipment) &lt;=  C_Order_ID"><![CDATA[RelType M_InOut (Shipment) <=  C_Order_ID]]></value>
+  <value column="Name" original="RelType M_InOut (Shipment) &lt;=  C_Order_ID" xml:space="preserve"><![CDATA[RelType M_InOut (Shipment) <=  C_Order_ID]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="53348" trl="N">
-  <value column="Name" original="RelType C_Invoice (Customer) &lt;= M_InOut_ID (Shipment)"><![CDATA[RelType C_Invoice (Customer) <= M_InOut_ID (Shipment)]]></value>
+  <value column="Name" original="RelType C_Invoice (Customer) &lt;= M_InOut_ID (Shipment)" xml:space="preserve"><![CDATA[RelType C_Invoice (Customer) <= M_InOut_ID (Shipment)]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="53349" trl="N">
-  <value column="Name" original="RelType C_Order (Sales) &lt;=  M_InOut_ID (Shipment)"><![CDATA[RelType C_Order (Sales) <=  M_InOut_ID (Shipment)]]></value>
+  <value column="Name" original="RelType C_Order (Sales) &lt;=  M_InOut_ID (Shipment)" xml:space="preserve"><![CDATA[RelType C_Order (Sales) <=  M_InOut_ID (Shipment)]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2106,17 +2106,17 @@
   <value column="Help" original=""/>
  </row>
  <row id="53352" trl="N">
-  <value column="Name" original="RelType C_BPartner &lt;= Vendor/Customer Return"><![CDATA[RelType C_BPartner <= Vendor/Customer Return]]></value>
+  <value column="Name" original="RelType C_BPartner &lt;= Vendor/Customer Return" xml:space="preserve"><![CDATA[RelType C_BPartner <= Vendor/Customer Return]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="53353" trl="N">
-  <value column="Name" original="RelType Customer Return &lt;= C_BPartner_ID"><![CDATA[RelType Customer Return <= C_BPartner_ID]]></value>
+  <value column="Name" original="RelType Customer Return &lt;= C_BPartner_ID" xml:space="preserve"><![CDATA[RelType Customer Return <= C_BPartner_ID]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="53354" trl="N">
-  <value column="Name" original="RelType Vendor Return &lt;= C_BPartner_ID"><![CDATA[RelType Vendor Return <= C_BPartner_ID]]></value>
+  <value column="Name" original="RelType Vendor Return &lt;= C_BPartner_ID" xml:space="preserve"><![CDATA[RelType Vendor Return <= C_BPartner_ID]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2565,6 +2565,11 @@
   <value column="Description" original="Dashboard Content">Dashboard Content</value>
   <value column="Help" original=""/>
  </row>
+ <row id="200123" trl="N">
+  <value column="Name" original="FieldSuggestionTargetList">FieldSuggestionTargetList</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row id="200127" trl="N">
   <value column="Name" original="Single Selection Grid">Single Selection Grid</value>
   <value column="Description" original=""/>
@@ -2573,6 +2578,76 @@
  <row id="200128" trl="N">
   <value column="Name" original="Multiple Selection Grid">Multiple Selection Grid</value>
   <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200144" trl="N">
+  <value column="Name" original="AD_Client All Clients">AD_Client All Clients</value>
+  <value column="Description" original="Client selection">Client selection</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200145" trl="N">
+  <value column="Name" original="AD_User Users from all Clients">AD_User Users from all Clients</value>
+  <value column="Description" original="Users from all clients">Users from all clients</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200157" trl="N">
+  <value column="Name" original="AD_Process Execution Type">AD_Process Execution Type</value>
+  <value column="Description" original="Report/Process Execution Type">Report/Process Execution Type</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200158" trl="N">
+  <value column="Name" original="AD_Process Multiple Execution">AD_Process Multiple Execution</value>
+  <value column="Description" original="Multiple execution rule list">Multiple execution rule list</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200161" trl="N">
+  <value column="Name" original="Chosen Multiple Selection List">Chosen Multiple Selection List</value>
+  <value column="Description" original="Chosen multiple selection box for reference list">Chosen multiple selection box for reference list</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200162" trl="N">
+  <value column="Name" original="Chosen Multiple Selection Table">Chosen Multiple Selection Table</value>
+  <value column="Description" original="Chosen multiple selection box for table list">Chosen multiple selection box for table list</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200163" trl="N">
+  <value column="Name" original="Chosen Multiple Selection Search">Chosen Multiple Selection Search</value>
+  <value column="Description" original="Chosen multiple selection box for search">Chosen multiple selection box for search</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200165" trl="N">
+  <value column="Name" original="AD_Table with ID Column">AD_Table with ID Column</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200166" trl="N">
+  <value column="Name" original="AD_Role RoleType">AD_Role RoleType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200167" trl="N">
+  <value column="Name" original="Activate/Deactivate/Delete">Activate/Deactivate/Delete</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200169" trl="N">
+  <value column="Name" original="ReportOutputType">ReportOutputType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200170" trl="N">
+  <value column="Name" original="ViewFindResult">ViewFindResult</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200171" trl="N">
+  <value column="Name" original="RelType C_Invoice -&gt; C_Invoice (CM)" xml:space="preserve"><![CDATA[RelType C_Invoice -> C_Invoice (CM)]]></value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200173" trl="N">
+  <value column="Name" original="Scheduler State">Scheduler State</value>
+  <value column="Description" original="View and change the state of a scheduler">View and change the state of a scheduler</value>
   <value column="Help" original=""/>
  </row>
  <row id="800000" trl="N">
@@ -2697,6 +2772,66 @@
  </row>
  <row id="800026" trl="N">
   <value column="Name" original="LBR_TypeIE">LBR_TypeIE</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800030" trl="N">
+  <value column="Name" original="LBR_NFSeStatus">LBR_NFSeStatus</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800031" trl="N">
+  <value column="Name" original="LBR_RPSTipo">LBR_RPSTipo</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800032" trl="N">
+  <value column="Name" original="LBR_ResponsavelRetencao">LBR_ResponsavelRetencao</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800033" trl="N">
+  <value column="Name" original="LBR_NFS">LBR_NFS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800034" trl="N">
+  <value column="Name" original="LBR_NFSModel">LBR_NFSModel</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800045" trl="N">
+  <value column="Name" original="LBR_MotivoCancelamentoNFS">LBR_MotivoCancelamentoNFS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800046" trl="N">
+  <value column="Name" original="LBR_NFSConfig">LBR_NFSConfig</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800051" trl="N">
+  <value column="Name" original="C_InvoiceLine (LBR)">C_InvoiceLine (LBR)</value>
+  <value column="Description" original="Invoice Line">Invoice Line</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800053" trl="N">
+  <value column="Name" original="LBR_NotaFiscalLine">LBR_NotaFiscalLine</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800054" trl="N">
+  <value column="Name" original="LBR_UltimaManifestacaoType">LBR_UltimaManifestacaoType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800055" trl="N">
+  <value column="Name" original="LBR_UltimaManifestacaoToProc">LBR_UltimaManifestacaoToProc</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800057" trl="N">
+  <value column="Name" original="LBR_NFeXML">LBR_NFeXML</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2991,12 +3126,12 @@
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="744a3c0a-753c-4cc7-adcc-4a8dcf46c286">
-  <value column="Name" original="RelType NF-e &lt;= NF-e Lot"><![CDATA[RelType NF-e <= NF-e Lot]]></value>
+  <value column="Name" original="RelType NF-e &lt;= NF-e Lot" xml:space="preserve"><![CDATA[RelType NF-e <= NF-e Lot]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="d9c4181a-aa24-4b7e-9a0f-2f08df8c09df">
-  <value column="Name" original="RelType NF-e Lot &lt;= NF-e"><![CDATA[RelType NF-e Lot <= NF-e]]></value>
+  <value column="Name" original="RelType NF-e Lot &lt;= NF-e" xml:space="preserve"><![CDATA[RelType NF-e Lot <= NF-e]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -3006,12 +3141,12 @@
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="c78dc60d-462c-48f3-bc49-5489a0e050fd">
-  <value column="Name" original="RelType NF-e &lt;= NF-e Event Lot"><![CDATA[RelType NF-e <= NF-e Event Lot]]></value>
+  <value column="Name" original="RelType NF-e &lt;= NF-e Event Lot" xml:space="preserve"><![CDATA[RelType NF-e <= NF-e Event Lot]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="3f0a3a9e-6365-4d2f-89ba-3e856ac9b043">
-  <value column="Name" original="RelType NF-e Event Lot &lt;= NF-e"><![CDATA[RelType NF-e Event Lot <= NF-e]]></value>
+  <value column="Name" original="RelType NF-e Event Lot &lt;= NF-e" xml:space="preserve"><![CDATA[RelType NF-e Event Lot <= NF-e]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

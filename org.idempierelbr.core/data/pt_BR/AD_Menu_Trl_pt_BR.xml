@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 4.1_2016-10-31 -Smart Suite ERP, CRM and SCM- (c) 1999-2016 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Menu">
+<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Menu">
  <row id="100" trl="Y">
   <value column="Name" original="Invoice Inquiry">Relatórios de Faturas</value>
   <value column="Description" original=""/>
@@ -181,8 +181,8 @@
   <value column="Description" original=""/>
  </row>
  <row id="53022" trl="N">
-  <value column="Name" original="Bill of Material &amp; Formulas"><![CDATA[Bill of Material & Formulas]]></value>
-  <value column="Description" original="Bill of Material &amp; Formulas"><![CDATA[Bill of Material & Formulas]]></value>
+  <value column="Name" original="Bill of Material &amp; Formulas" xml:space="preserve"><![CDATA[Bill of Material & Formulas]]></value>
+  <value column="Description" original="Bill of Material &amp; Formulas" xml:space="preserve"><![CDATA[Bill of Material & Formulas]]></value>
  </row>
  <row id="53029" trl="N">
   <value column="Name" original="Planning Management">Planning Management</value>
@@ -241,8 +241,8 @@
   <value column="Description" original=""/>
  </row>
  <row id="53108" trl="N">
-  <value column="Name" original="Human Resource &amp; Payroll"><![CDATA[Human Resource & Payroll]]></value>
-  <value column="Description" original="Human Resource &amp; Payroll"><![CDATA[Human Resource & Payroll]]></value>
+  <value column="Name" original="Human Resource &amp; Payroll" xml:space="preserve"><![CDATA[Human Resource & Payroll]]></value>
+  <value column="Description" original="Human Resource &amp; Payroll" xml:space="preserve"><![CDATA[Human Resource & Payroll]]></value>
  </row>
  <row id="53109" trl="N">
   <value column="Name" original="Human Resource">Human Resource</value>
@@ -262,7 +262,7 @@
  </row>
  <row id="53139" trl="Y">
   <value column="Name" original="Asset Transactions ">Transações de Ativos</value>
-  <value column="Description" original="Asset Transactions (Addition, Disposal, Split &amp; Transfer)"><![CDATA[Transações de Ativos (Aquisição, Baixa, Divisão & Transferência)]]></value>
+  <value column="Description" original="Asset Transactions (Addition, Disposal, Split &amp; Transfer)" xml:space="preserve"><![CDATA[Transações de Ativos (Aquisição, Baixa, Divisão & Transferência)]]></value>
  </row>
  <row id="53149" trl="Y">
   <value column="Name" original="Depreciation Processing">Processamento de Depreciação</value>
