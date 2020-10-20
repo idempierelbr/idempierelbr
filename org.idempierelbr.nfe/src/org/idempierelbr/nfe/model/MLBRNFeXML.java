@@ -164,12 +164,12 @@ public class MLBRNFeXML extends X_LBR_NFeXML {
 	        if (LBR_NFeXML_ID > 0) {
 	        	nfeXml = new MLBRNFeXML(ctx, LBR_NFeXML_ID, trxName);
 	        	nfeXml.deleteAttachments();
-	        	nfeXml.saveEx();
 	        } else {
 	        	nfeXml = new MLBRNFeXML(ctx, 0, trxName);
 	        	nfeXml.setAD_Org_ID(AD_Org_ID);
 	        }
 
+	        nfeXml.saveEx();
         	nfeXml.setLBR_NSU(NSU);
         	nfeXml.setLBR_NFeID(chNFe);
         	nfeXml.setLBR_SchemaName(schemaName);
