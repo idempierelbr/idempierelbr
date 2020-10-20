@@ -30,7 +30,7 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20201016L;
+	private static final long serialVersionUID = 20201020L;
 
     /** Standard Constructor */
     public X_LBR_NotaFiscalEventLine (Properties ctx, int LBR_NotaFiscalEventLine_ID, String trxName)
@@ -1099,8 +1099,6 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	public static final String LBR_NFESTATUS_793_RejeiçãoInformadoCapítuloDoNCMInexistente = "793";
 	/** 999 - Rejeição: Erro não catalogado = 999 */
 	public static final String LBR_NFESTATUS_999_RejeiçãoErroNãoCatalogado = "999";
-	/** 883 - SEM GTIN = 883 */
-	public static final String LBR_NFESTATUS_883_SEMGTIN = "883";
 	/** Set NFe Status.
 		@param LBR_NFeStatus NFe Status	  */
 	public void setLBR_NFeStatus (String LBR_NFeStatus)
