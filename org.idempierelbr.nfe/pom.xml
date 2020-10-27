@@ -5,7 +5,7 @@
     <groupId>org.idempiere</groupId>
 	<artifactId>org.idempiere.parent</artifactId>
 	<version>7.1.0-SNAPSHOT</version>
-	<relativePath>../../iDempiere7.1/org.idempiere.parent/pom.xml</relativePath>
+	<relativePath>../../idempiere/org.idempiere.parent/pom.xml</relativePath>
   </parent>
   <artifactId>org.idempierelbr.nfe</artifactId>
   <packaging>eclipse-plugin</packaging>
