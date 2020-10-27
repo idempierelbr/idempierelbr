@@ -18,6 +18,7 @@ import org.compiere.model.MOrg;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.MRegion;
 import org.compiere.model.MTable;
+import org.compiere.model.MSysConfig;
 import org.compiere.model.Query;
 import org.idempierelbr.core.util.TextUtil;
 import org.idempierelbr.nfe.base.NFeXMLGenerator;
@@ -133,6 +134,12 @@ public class MLBRNotaFiscalLot extends X_LBR_NotaFiscalLot {
 	 */
 	public String sendLot() throws Exception
 	{
+		String geraAssinatura = MSysConfig.getValue("LBR_TEM_CERTIFICADODIGITAL", getAD_Client_ID(), getAD_Org_ID());
+
+		if (geraAssinatura.equalsIgnoreCase("N")) {
+			return "Empresa Não possui Certificado Digital";
+		}
+		
 		Properties ctx = getCtx();
 
 		log.fine("Sending NF-e Lot: " + getDocumentNo());
