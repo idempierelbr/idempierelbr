@@ -112,6 +112,11 @@ public class NFeXMLGenerator {
 	/** Log				*/
 	private static CLogger log = CLogger.getCLogger(NFeXMLGenerator.class);
 	
+	
+	/** Variaveis UPC / EAN	*/
+	
+	private static final String UPC_EAN = "SEM GTIN";
+	
 	/**
 	 * Gera o corpo da NF
 	 * 
@@ -878,8 +883,16 @@ public class NFeXMLGenerator {
 			// check ean
 			produtos.setcEANTrib("");
 			String productEANTrib = details.getLBR_UPCTax();
-			if (NFeUtil.isValidEAN(productEANTrib))
-				produtos.setcEANTrib(productEANTrib);
+				
+			if(!productEANTrib.contains("GTIN")) {
+				if (NFeUtil.isValidEAN(productEANTrib))
+					produtos.setcEANTrib(productEANTrib);
+			}else {
+					produtos.setcEANTrib(UPC_EAN);
+			}		
+			
+			
+			
 			
 			
 			if (details.getLBR_UOMTax_ID() < 1)
