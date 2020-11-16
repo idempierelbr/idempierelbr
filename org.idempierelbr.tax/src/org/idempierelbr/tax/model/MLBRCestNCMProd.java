@@ -39,26 +39,21 @@ public class MLBRCestNCMProd extends X_LBR_CEST_NCMProd {
 			int LBR_NCM_ID, String trxName) {
 
 		//
-		String where = "AD_Client_ID IN (0, ?) AND (LBR_NCM_ID = ? OR M_Product_ID = ?) ";
+		String where = "IsActive = ? AND AD_Client_ID IN (0, ?) AND (LBR_NCM_ID = ? OR M_Product_ID = ?) ";
 
 		// query
 		Query q = new Query(Env.getCtx(), MLBRCestNCMProd.Table_Name, where,
 				null);
-		q.setParameters(new Object[] { Env.getAD_Client_ID(ctx), LBR_NCM_ID, M_Product_ID });
-		q.setOrderBy(" M_Product_ID DESC ");
+		q.setParameters(new Object[] { true, Env.getAD_Client_ID(ctx), LBR_NCM_ID, M_Product_ID });
+		q.setOrderBy(" AD_Client_ID DESC, M_Product_ID DESC ");
 
 		// list of results
 		List<MLBRCestNCMProd> l = q.list();
 
-		if (l.size() == 0) {
+		if (l.size() <= 0)
 			return null;
-		}
 		
-		if (l.size() == 1 || l.get(0).getM_Product_ID()>0) {
-			return l.get(0);
-		}
-
-		return null;
+		return l.get(0);
 	}
 	
 	/**
