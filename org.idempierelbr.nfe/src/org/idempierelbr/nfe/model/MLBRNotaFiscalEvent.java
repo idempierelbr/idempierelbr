@@ -202,11 +202,20 @@ public class MLBRNotaFiscalEvent extends X_LBR_NotaFiscalEvent {
 			connector = new StubConnector(NFeUtil.VERSAO_EVENTO,
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO_AN,
 				isContingencia(xmlLot), isHomologacao(xmlLot), LBR_NFeModel);
-		else
+		else {
+			String service = null;
+			
+			if (LBR_NFeModel.equals(MLBRNotaFiscal.LBR_NFEMODEL_55_NF_E))
+				service = MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO;
+			else if (LBR_NFeModel.equals(MLBRNotaFiscal.LBR_NFEMODEL_65_NFC_E))
+				service = MLBRNFeWebService.SERVICE_NFCE_RECEPCAO_EVENTO;
+			
+			
 			connector = new StubConnector(NFeUtil.VERSAO_EVENTO,
-					orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO,
+					orgRegion.get_ID(), service,
 					isContingencia(xmlLot), isHomologacao(xmlLot), LBR_NFeModel);
 		
+		}
 		String result = connector.sendMessage(xmlLot);
 		
 		if (result == null || result.trim().equals(""))
