@@ -59,6 +59,7 @@ import org.idempierelbr.nfe.beans.IdentLocalEntrega;
 import org.idempierelbr.nfe.beans.IdentNFE;
 import org.idempierelbr.nfe.beans.InfAdiFisco;
 import org.idempierelbr.nfe.beans.InfECFRefBean;
+import org.idempierelbr.nfe.beans.InfIntermed;
 import org.idempierelbr.nfe.beans.InfNFEProdutorRefBean;
 import org.idempierelbr.nfe.beans.InfNFERefBean;
 import org.idempierelbr.nfe.beans.InfNFeSupl;
@@ -307,6 +308,7 @@ public class NFeXMLGenerator {
 		identNFe.setFinNFe(FinNFE);
 		identNFe.setIndFinal(nf.getLBR_NFeIndFinal());
 		identNFe.setIndPres(nf.getLBR_NFeIndPres());
+		identNFe.setIndIntermed(nf.getLBR_NFeIndIntermed());
 		identNFe.setProcEmi(procEmi);
 		identNFe.setVerProc(verProc);
 		
@@ -1443,6 +1445,19 @@ public class NFeXMLGenerator {
 		// Adiciona a tag
 		dados.addPag(pgto);
 		//
+		
+		// YB. Informações do Intermediador da Transação
+		if (nf.getLBR_BP_Intermed_ID() > 0) {
+			MBPartner intermed = new MBPartner(ctx, nf.getLBR_BP_Intermed_ID(), trxName);
+			String intermedCPNJ = TextUtil.toNumeric(intermed.get_ValueAsString("LBR_CNPJ"));
+			
+			if (intermedCPNJ != null && intermedCPNJ.length() > 0) {
+				InfIntermed infIntermed = new InfIntermed();
+				infIntermed.setCNPJ(intermedCPNJ);
+				infIntermed.setIdCadIntTran(nf.getLBR_IdCadIntTran());
+				dados.setInfIntermed(infIntermed);
+			}
+		}		
 		
 		// TODO: Quando preparar DI, corrigir localização/função destas linhas
 		xstream.alias("DI", DeclaracaoDI.class);

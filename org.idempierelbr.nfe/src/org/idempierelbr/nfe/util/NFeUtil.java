@@ -88,6 +88,10 @@ public abstract class NFeUtil
 	public static final String NFCe_TPAG_VALE_PRESENTE		= "12";
 	public static final String NFCe_TPAG_VALE_COMBUSTIVEL	= "13";
 	public static final String NFCe_TPAG_BOLETO_BANCARIO	= "15";
+	public static final String NFCe_TPAG_DEPOSITO_BANCARIO	= "16";
+	public static final String NFCe_TPAG_PIX				= "17";
+	public static final String NFCe_TPAG_TRANSF_BANCARIA	= "18";
+	public static final String NFCe_TPAG_FIDELIDADE			= "19";
 	public static final String NFCe_TPAG_SEM_PAGAMENTO		= "90";
 	public static final String NFCe_TPAG_OUTROS				= "99";
 	

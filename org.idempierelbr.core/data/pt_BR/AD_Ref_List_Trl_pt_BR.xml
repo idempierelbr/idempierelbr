@@ -6228,6 +6228,22 @@
   <value column="Name" original="Manifest">Manifest</value>
   <value column="Description" original=""/>
  </row>
+ <row id="800218" trl="N">
+  <value column="Name" original="Valor da Operação">Valor da Operação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800219" trl="Y">
+  <value column="Name" original="Without an intermediary">Operação sem intermediador (em site ou plataforma própria)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800220" trl="Y">
+  <value column="Name" original="Third party website ">Operação em site ou plataforma de terceiros (intermediadores/marketplace) </value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800221" trl="Y">
+  <value column="Name" original="Operacao presencial, fora do estabelecimento">Operação presencial, fora do estabelecimento</value>
+  <value column="Description" original=""/>
+ </row>
  <row trl="Y" uuid="2facadde-7b9b-4619-9161-8f9fe50b2b19">
   <value column="Name" original="No specific release">PJ - Pessoa Jurídica</value>
   <value column="Description" original="No specific release"/>

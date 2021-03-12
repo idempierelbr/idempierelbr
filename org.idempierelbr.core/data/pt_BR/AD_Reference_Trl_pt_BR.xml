@@ -2835,6 +2835,11 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="800058" trl="N">
+  <value column="Name" original="LBR_NFE_IndIntermed">LBR_NFE_IndIntermed</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row trl="Y" uuid="050a1289-4030-4328-b311-6a330e1cd8ae">
   <value column="Name" original="LBR_Package_Releases">Tipo de Pessoa</value>
   <value column="Description" original="List of Package Releases (iDempiereLBR)">Usado para Idenficar se o Parceiro é Pessoa Física ou Pessoa Jurídica</value>

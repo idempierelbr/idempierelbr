@@ -38,6 +38,7 @@ public class DadosNFE
 	private Transporte transp;
 	private Cobranca cobr;
 	private List<FormasPagamentoNFEBean> pag = new ArrayList<FormasPagamentoNFEBean>();
+	private InfIntermed infIntermed;
 	private InfAdiFisco infAdic;
 	private InfComex exporta;
 	private InfAssinatura Signature;
@@ -151,5 +152,11 @@ public class DadosNFE
 	}
 	public void setPag(List<FormasPagamentoNFEBean> pag){
 		this.pag = pag;  
+	}
+	public InfIntermed getInfIntermed() {
+		return infIntermed;
+	}
+	public void setInfIntermed(InfIntermed infIntermed) {
+		this.infIntermed = infIntermed;
 	}
 }

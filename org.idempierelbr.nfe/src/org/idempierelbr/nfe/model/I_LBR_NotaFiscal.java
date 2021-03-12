@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NotaFiscal
  *  @author iDempiere (generated) 
- *  @version Release 2.1
+ *  @version Release 7.1
  */
 @SuppressWarnings("all")
 public interface I_LBR_NotaFiscal 
@@ -154,21 +154,6 @@ public interface I_LBR_NotaFiscal
 
 	public org.compiere.model.I_C_Order getC_Order() throws RuntimeException;
 
-    /** Column name C_Region_ID */
-    public static final String COLUMNNAME_C_Region_ID = "C_Region_ID";
-
-	/** Set Region.
-	  * Identifies a geographical Region
-	  */
-	public void setC_Region_ID (int C_Region_ID);
-
-	/** Get Region.
-	  * Identifies a geographical Region
-	  */
-	public int getC_Region_ID();
-
-	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException;
-
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
 
@@ -184,6 +169,21 @@ public interface I_LBR_NotaFiscal
 	  * User who created this records
 	  */
 	public int getCreatedBy();
+
+    /** Column name C_Region_ID */
+    public static final String COLUMNNAME_C_Region_ID = "C_Region_ID";
+
+	/** Set Region.
+	  * Identifies a geographical Region
+	  */
+	public void setC_Region_ID (int C_Region_ID);
+
+	/** Get Region.
+	  * Identifies a geographical Region
+	  */
+	public int getC_Region_ID();
+
+	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException;
 
     /** Column name DateAcct */
     public static final String COLUMNNAME_DateAcct = "DateAcct";
@@ -337,20 +337,16 @@ public interface I_LBR_NotaFiscal
 	/** Get Amount Distribution	  */
 	public String getLBR_AmtDistribution();
 
-    /** Column name LBR_BP_PickupLocation_ID */
-    public static final String COLUMNNAME_LBR_BP_PickupLocation_ID = "LBR_BP_PickupLocation_ID";
+    /** Column name LBR_BP_Intermed_ID */
+    public static final String COLUMNNAME_LBR_BP_Intermed_ID = "LBR_BP_Intermed_ID";
 
-	/** Set Partner Location.
-	  * Identifies the (Pickup) address for this Business Partner
-	  */
-	public void setLBR_BP_PickupLocation_ID (int LBR_BP_PickupLocation_ID);
+	/** Set Intermediary BP	  */
+	public void setLBR_BP_Intermed_ID (int LBR_BP_Intermed_ID);
 
-	/** Get Partner Location.
-	  * Identifies the (Pickup) address for this Business Partner
-	  */
-	public int getLBR_BP_PickupLocation_ID();
+	/** Get Intermediary BP	  */
+	public int getLBR_BP_Intermed_ID();
 
-	public org.compiere.model.I_C_BPartner_Location getLBR_BP_PickupLocation() throws RuntimeException;
+	public org.compiere.model.I_C_BPartner getLBR_BP_Intermed() throws RuntimeException;
 
     /** Column name LBR_BP_Pickup_ID */
     public static final String COLUMNNAME_LBR_BP_Pickup_ID = "LBR_BP_Pickup_ID";
@@ -367,20 +363,20 @@ public interface I_LBR_NotaFiscal
 
 	public org.compiere.model.I_C_BPartner getLBR_BP_Pickup() throws RuntimeException;
 
-    /** Column name LBR_BP_ShipLocation_ID */
-    public static final String COLUMNNAME_LBR_BP_ShipLocation_ID = "LBR_BP_ShipLocation_ID";
+    /** Column name LBR_BP_PickupLocation_ID */
+    public static final String COLUMNNAME_LBR_BP_PickupLocation_ID = "LBR_BP_PickupLocation_ID";
 
 	/** Set Partner Location.
-	  * Identifies the (ship to) address for this Business Partner
+	  * Identifies the (Pickup) address for this Business Partner
 	  */
-	public void setLBR_BP_ShipLocation_ID (int LBR_BP_ShipLocation_ID);
+	public void setLBR_BP_PickupLocation_ID (int LBR_BP_PickupLocation_ID);
 
 	/** Get Partner Location.
-	  * Identifies the (ship to) address for this Business Partner
+	  * Identifies the (Pickup) address for this Business Partner
 	  */
-	public int getLBR_BP_ShipLocation_ID();
+	public int getLBR_BP_PickupLocation_ID();
 
-	public org.compiere.model.I_C_BPartner_Location getLBR_BP_ShipLocation() throws RuntimeException;
+	public org.compiere.model.I_C_BPartner_Location getLBR_BP_PickupLocation() throws RuntimeException;
 
     /** Column name LBR_BP_Ship_ID */
     public static final String COLUMNNAME_LBR_BP_Ship_ID = "LBR_BP_Ship_ID";
@@ -396,6 +392,21 @@ public interface I_LBR_NotaFiscal
 	public int getLBR_BP_Ship_ID();
 
 	public org.compiere.model.I_C_BPartner getLBR_BP_Ship() throws RuntimeException;
+
+    /** Column name LBR_BP_ShipLocation_ID */
+    public static final String COLUMNNAME_LBR_BP_ShipLocation_ID = "LBR_BP_ShipLocation_ID";
+
+	/** Set Partner Location.
+	  * Identifies the (ship to) address for this Business Partner
+	  */
+	public void setLBR_BP_ShipLocation_ID (int LBR_BP_ShipLocation_ID);
+
+	/** Get Partner Location.
+	  * Identifies the (ship to) address for this Business Partner
+	  */
+	public int getLBR_BP_ShipLocation_ID();
+
+	public org.compiere.model.I_C_BPartner_Location getLBR_BP_ShipLocation() throws RuntimeException;
 
     /** Column name LBR_ContingencyDate */
     public static final String COLUMNNAME_LBR_ContingencyDate = "LBR_ContingencyDate";
@@ -450,6 +461,15 @@ public interface I_LBR_NotaFiscal
 	  */
 	public String getLBR_FiscalInfo();
 
+    /** Column name LBR_IdCadIntTran */
+    public static final String COLUMNNAME_LBR_IdCadIntTran = "LBR_IdCadIntTran";
+
+	/** Set Intermediary Username	  */
+	public void setLBR_IdCadIntTran (String LBR_IdCadIntTran);
+
+	/** Get Intermediary Username	  */
+	public String getLBR_IdCadIntTran();
+
     /** Column name LBR_IsDocIssuedByOrg */
     public static final String COLUMNNAME_LBR_IsDocIssuedByOrg = "LBR_IsDocIssuedByOrg";
 
@@ -494,15 +514,6 @@ public interface I_LBR_NotaFiscal
 	/** Get NFe Destination Type	  */
 	public String getLBR_NFE_DestinationType();
 
-    /** Column name LBR_NFE_OperationType */
-    public static final String COLUMNNAME_LBR_NFE_OperationType = "LBR_NFE_OperationType";
-
-	/** Set NFe Operation Type	  */
-	public void setLBR_NFE_OperationType (String LBR_NFE_OperationType);
-
-	/** Get NFe Operation Type	  */
-	public String getLBR_NFE_OperationType();
-
     /** Column name LBR_NFeID */
     public static final String COLUMNNAME_LBR_NFeID = "LBR_NFeID";
 
@@ -520,6 +531,15 @@ public interface I_LBR_NotaFiscal
 
 	/** Get Is End User	  */
 	public String getLBR_NFeIndFinal();
+
+    /** Column name LBR_NFeIndIntermed */
+    public static final String COLUMNNAME_LBR_NFeIndIntermed = "LBR_NFeIndIntermed";
+
+	/** Set Intermediary Indicator	  */
+	public void setLBR_NFeIndIntermed (String LBR_NFeIndIntermed);
+
+	/** Get Intermediary Indicator	  */
+	public String getLBR_NFeIndIntermed();
 
     /** Column name LBR_NFeIndPres */
     public static final String COLUMNNAME_LBR_NFeIndPres = "LBR_NFeIndPres";
@@ -547,6 +567,15 @@ public interface I_LBR_NotaFiscal
 
 	/** Get NFe Nature of Operation	  */
 	public String getLBR_NFeNatOp();
+
+    /** Column name LBR_NFE_OperationType */
+    public static final String COLUMNNAME_LBR_NFE_OperationType = "LBR_NFE_OperationType";
+
+	/** Set NFe Operation Type	  */
+	public void setLBR_NFE_OperationType (String LBR_NFE_OperationType);
+
+	/** Get NFe Operation Type	  */
+	public String getLBR_NFE_OperationType();
 
     /** Column name LBR_NFeSerie */
     public static final String COLUMNNAME_LBR_NFeSerie = "LBR_NFeSerie";
