@@ -38,6 +38,7 @@ public class IdentNFE {
 	private String finNFe;
 	private String indFinal;
 	private String indPres;
+	private String indIntermed;
 	private String procEmi;
 	private String verProc;
 	private List<NFERefBean> NFrefs = null;
@@ -203,6 +204,15 @@ public class IdentNFE {
 			indPres = indPres.trim();
 		
 		this.indPres = indPres;
+	}
+	public String getIndIntermed() {
+		return indIntermed;
+	}
+	public void setIndIntermed(String indIntermed) {
+		if (indIntermed != null)
+			indIntermed = indIntermed.trim();
+		
+		this.indIntermed = indIntermed;
 	}
 	public String getProcEmi() {
 		return procEmi;

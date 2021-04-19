@@ -65705,6 +65705,39 @@ Não Contribuinte</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="800463" trl="Y">
+  <value column="Name" original="Intermediary Indicator">Indicador de Intermediador</value>
+  <value column="PrintName" original="Intermediary Indicator">Indicador de Intermediador</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800464" trl="Y">
+  <value column="Name" original="Intermediary BP">Parceiro Intermediador</value>
+  <value column="PrintName" original="Intermediary BP">Parceiro Intermediador</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800468" trl="Y">
+  <value column="Name" original="Intermediary Username">Identificador Cadastrado no Intermediador</value>
+  <value column="PrintName" original="Intermediary Username">Identificador Cadastrado no Intermediador</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row trl="Y" uuid="2db1c9d3-13bf-4539-baa0-45ccfb09a7a3">
   <value column="Name" original="Cód. Cidade (IBGE)">Cód. Cidade (IBGE)</value>
   <value column="PrintName" original="Cód. Cidade (IBGE)">Cód. Cidade (IBGE)</value>

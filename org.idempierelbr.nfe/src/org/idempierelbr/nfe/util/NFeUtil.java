@@ -88,6 +88,10 @@ public abstract class NFeUtil
 	public static final String NFCe_TPAG_VALE_PRESENTE		= "12";
 	public static final String NFCe_TPAG_VALE_COMBUSTIVEL	= "13";
 	public static final String NFCe_TPAG_BOLETO_BANCARIO	= "15";
+	public static final String NFCe_TPAG_DEPOSITO_BANCARIO	= "16";
+	public static final String NFCe_TPAG_PIX				= "17";
+	public static final String NFCe_TPAG_TRANSF_BANCARIA	= "18";
+	public static final String NFCe_TPAG_FIDELIDADE			= "19";
 	public static final String NFCe_TPAG_SEM_PAGAMENTO		= "90";
 	public static final String NFCe_TPAG_OUTROS				= "99";
 	
@@ -597,25 +601,31 @@ public abstract class NFeUtil
 	 * @return
 	 */
 	public static boolean isValidEAN(String value) {
-
-		if (value != null && !value.isEmpty()
-				&& (value.length() == 8 || value.length() == 12 || value.length() == 13 || value.length() == 14)) {
-			int factor = 3;
-			int sum = 0;
-
-			for (int index = value.length() - 1; index > 0; --index) {
-				int mult = Integer.valueOf(value.substring(index - 1, index));
-				sum = sum + mult * factor;
-				factor = 4 - factor;
+		try {		
+			if(value.contains("GTIN"))
+				return Boolean.TRUE;			
+			
+			if (value != null && !value.isEmpty()
+					&& (value.length() == 8 || value.length() == 12 || value.length() == 13 || value.length() == 14)) {
+				int factor = 3;
+				int sum = 0;
+	
+				for (int index = value.length() - 1; index > 0; --index) {
+					int mult = Integer.valueOf(value.substring(index - 1, index));
+					sum = sum + mult * factor;
+					factor = 4 - factor;
+				}
+	
+				int cc = ((1000 - sum) % 10);
+				int ca = Integer.valueOf(value.substring(value.length() - 1));
+	
+				if (cc == ca)
+					return Boolean.TRUE;
 			}
-
-			int cc = ((1000 - sum) % 10);
-			int ca = Integer.valueOf(value.substring(value.length() - 1));
-
-			if (cc == ca)
-				return Boolean.TRUE;
-		}
-
+		} catch (NumberFormatException nfe) {
+			log.info("Erro formato UCP/EAN");
+	    }		
+		
 		return Boolean.FALSE;
 	}
 

@@ -267,6 +267,9 @@ public class CreateNotaFiscal extends SvrProcess
 		nf.setLBR_NFE_DestinationType(getDestinationType(orgCountry, orgRegion, bpCountry, bpRegion));
 		nf.setLBR_NFeIndFinal(getIndFinal());
 		nf.setLBR_NFeIndPres(getIndPres());
+		nf.setLBR_NFeIndIntermed(getIndIntermed());
+		nf.setLBR_BP_Intermed_ID(getBPIntermed());
+		nf.setLBR_IdCadIntTran(getIdCadIntTran());
 		nf.setC_Region_ID(orgRegion.get_ID());
 		nf.setC_City_ID(orgCity.get_ID());
 		nf.setC_BPartner_ID(bp.get_ID());
@@ -846,6 +849,30 @@ public class CreateNotaFiscal extends SvrProcess
 			return docTypeIndPres;
 		
 		return indPres;
+	}
+	
+	private String getIndIntermed() {
+		String indIntermed = "0";
+		
+		String docTypeIndIntermed = getDocType().get_ValueAsString("LBR_NFeIndIntermed");
+		
+		if (!docTypeIndIntermed.trim().equals(""))
+			return docTypeIndIntermed;
+		
+		return indIntermed;
+	}
+	
+	private int getBPIntermed() {
+		return getDocType().get_ValueAsInt("LBR_BP_Intermed_ID");
+	}
+	
+	private String getIdCadIntTran() {
+		String docTypeIdCadIntTran = getDocType().get_ValueAsString("LBR_IdCadIntTran");
+		
+		if (!docTypeIdCadIntTran.trim().equals(""))
+			return docTypeIdCadIntTran;
+		
+		return null;
 	}
 	
 	private PO[] getPOLines() {

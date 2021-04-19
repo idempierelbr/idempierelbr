@@ -616,6 +616,9 @@ public class NFFromXMLGen
 					nf.setLBR_NFE_DestinationType(eElement.getElementsByTagName("idDest").item(0).getTextContent());
 					nf.setLBR_NFeIndFinal(eElement.getElementsByTagName("indFinal").item(0).getTextContent());
 					nf.setLBR_NFeIndPres(eElement.getElementsByTagName("indPres").item(0).getTextContent());
+					
+					if (eElement.getElementsByTagName("indIntermed") != null && eElement.getElementsByTagName("indIntermed").item(0) != null)
+						nf.setLBR_NFeIndIntermed(eElement.getElementsByTagName("indIntermed").item(0).getTextContent());
 				}
 				
 				nf.setLBR_NFeModel(eElement.getElementsByTagName("mod").item(0).getTextContent());

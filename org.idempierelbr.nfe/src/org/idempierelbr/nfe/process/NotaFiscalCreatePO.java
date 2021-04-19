@@ -187,6 +187,7 @@ public class NotaFiscalCreatePO extends SvrProcess
 		order.setPaymentRule("P");
 		order.setC_PaymentTerm_ID(p_C_PaymentTerm_ID);
 		order.setIsSOTrx(false);
+		order.setDateOrdered(nf.getDateDoc());
 		order.saveEx();
 		
 		return order;

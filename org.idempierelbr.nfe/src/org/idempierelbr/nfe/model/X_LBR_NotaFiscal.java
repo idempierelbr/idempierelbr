@@ -27,14 +27,14 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Model for LBR_NotaFiscal
  *  @author iDempiere (generated) 
- *  @version Release 2.1 - $Id$ */
+ *  @version Release 7.1 - $Id$ */
 public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persistent 
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20150929L;
+	private static final long serialVersionUID = 20210311L;
 
     /** Standard Constructor */
     public X_LBR_NotaFiscal (Properties ctx, int LBR_NotaFiscal_ID, String trxName)
@@ -63,11 +63,11 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 			setLBR_IsDocIssuedByOrg (false);
 // N
 			setLBR_NFE_DestinationType (null);
-			setLBR_NFE_OperationType (null);
-// 1
 			setLBR_NFeIndFinal (null);
 			setLBR_NFeIndPres (null);
 			setLBR_NFeNatOp (null);
+			setLBR_NFE_OperationType (null);
+// 1
 			setLBR_NFeTpEmis (null);
 // 1
 			setLBR_NotaFiscal_ID (0);
@@ -555,29 +555,26 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return (String)get_Value(COLUMNNAME_LBR_AmtDistribution);
 	}
 
-	public org.compiere.model.I_C_BPartner_Location getLBR_BP_PickupLocation() throws RuntimeException
+	public org.compiere.model.I_C_BPartner getLBR_BP_Intermed() throws RuntimeException
     {
-		return (org.compiere.model.I_C_BPartner_Location)MTable.get(getCtx(), org.compiere.model.I_C_BPartner_Location.Table_Name)
-			.getPO(getLBR_BP_PickupLocation_ID(), get_TrxName());	}
+		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_Name)
+			.getPO(getLBR_BP_Intermed_ID(), get_TrxName());	}
 
-	/** Set Partner Location.
-		@param LBR_BP_PickupLocation_ID 
-		Identifies the (Pickup) address for this Business Partner
-	  */
-	public void setLBR_BP_PickupLocation_ID (int LBR_BP_PickupLocation_ID)
+	/** Set Intermediary BP.
+		@param LBR_BP_Intermed_ID Intermediary BP	  */
+	public void setLBR_BP_Intermed_ID (int LBR_BP_Intermed_ID)
 	{
-		if (LBR_BP_PickupLocation_ID < 1) 
-			set_Value (COLUMNNAME_LBR_BP_PickupLocation_ID, null);
+		if (LBR_BP_Intermed_ID < 1) 
+			set_Value (COLUMNNAME_LBR_BP_Intermed_ID, null);
 		else 
-			set_Value (COLUMNNAME_LBR_BP_PickupLocation_ID, Integer.valueOf(LBR_BP_PickupLocation_ID));
+			set_Value (COLUMNNAME_LBR_BP_Intermed_ID, Integer.valueOf(LBR_BP_Intermed_ID));
 	}
 
-	/** Get Partner Location.
-		@return Identifies the (Pickup) address for this Business Partner
-	  */
-	public int getLBR_BP_PickupLocation_ID () 
+	/** Get Intermediary BP.
+		@return Intermediary BP	  */
+	public int getLBR_BP_Intermed_ID () 
 	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BP_PickupLocation_ID);
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BP_Intermed_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
@@ -611,29 +608,29 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return ii.intValue();
 	}
 
-	public org.compiere.model.I_C_BPartner_Location getLBR_BP_ShipLocation() throws RuntimeException
+	public org.compiere.model.I_C_BPartner_Location getLBR_BP_PickupLocation() throws RuntimeException
     {
 		return (org.compiere.model.I_C_BPartner_Location)MTable.get(getCtx(), org.compiere.model.I_C_BPartner_Location.Table_Name)
-			.getPO(getLBR_BP_ShipLocation_ID(), get_TrxName());	}
+			.getPO(getLBR_BP_PickupLocation_ID(), get_TrxName());	}
 
 	/** Set Partner Location.
-		@param LBR_BP_ShipLocation_ID 
-		Identifies the (ship to) address for this Business Partner
+		@param LBR_BP_PickupLocation_ID 
+		Identifies the (Pickup) address for this Business Partner
 	  */
-	public void setLBR_BP_ShipLocation_ID (int LBR_BP_ShipLocation_ID)
+	public void setLBR_BP_PickupLocation_ID (int LBR_BP_PickupLocation_ID)
 	{
-		if (LBR_BP_ShipLocation_ID < 1) 
-			set_Value (COLUMNNAME_LBR_BP_ShipLocation_ID, null);
+		if (LBR_BP_PickupLocation_ID < 1) 
+			set_Value (COLUMNNAME_LBR_BP_PickupLocation_ID, null);
 		else 
-			set_Value (COLUMNNAME_LBR_BP_ShipLocation_ID, Integer.valueOf(LBR_BP_ShipLocation_ID));
+			set_Value (COLUMNNAME_LBR_BP_PickupLocation_ID, Integer.valueOf(LBR_BP_PickupLocation_ID));
 	}
 
 	/** Get Partner Location.
-		@return Identifies the (ship to) address for this Business Partner
+		@return Identifies the (Pickup) address for this Business Partner
 	  */
-	public int getLBR_BP_ShipLocation_ID () 
+	public int getLBR_BP_PickupLocation_ID () 
 	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BP_ShipLocation_ID);
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BP_PickupLocation_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
@@ -662,6 +659,34 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 	public int getLBR_BP_Ship_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BP_Ship_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	public org.compiere.model.I_C_BPartner_Location getLBR_BP_ShipLocation() throws RuntimeException
+    {
+		return (org.compiere.model.I_C_BPartner_Location)MTable.get(getCtx(), org.compiere.model.I_C_BPartner_Location.Table_Name)
+			.getPO(getLBR_BP_ShipLocation_ID(), get_TrxName());	}
+
+	/** Set Partner Location.
+		@param LBR_BP_ShipLocation_ID 
+		Identifies the (ship to) address for this Business Partner
+	  */
+	public void setLBR_BP_ShipLocation_ID (int LBR_BP_ShipLocation_ID)
+	{
+		if (LBR_BP_ShipLocation_ID < 1) 
+			set_Value (COLUMNNAME_LBR_BP_ShipLocation_ID, null);
+		else 
+			set_Value (COLUMNNAME_LBR_BP_ShipLocation_ID, Integer.valueOf(LBR_BP_ShipLocation_ID));
+	}
+
+	/** Get Partner Location.
+		@return Identifies the (ship to) address for this Business Partner
+	  */
+	public int getLBR_BP_ShipLocation_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BP_ShipLocation_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
@@ -752,6 +777,20 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return (String)get_Value(COLUMNNAME_LBR_FiscalInfo);
 	}
 
+	/** Set Intermediary Username.
+		@param LBR_IdCadIntTran Intermediary Username	  */
+	public void setLBR_IdCadIntTran (String LBR_IdCadIntTran)
+	{
+		set_Value (COLUMNNAME_LBR_IdCadIntTran, LBR_IdCadIntTran);
+	}
+
+	/** Get Intermediary Username.
+		@return Intermediary Username	  */
+	public String getLBR_IdCadIntTran () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_IdCadIntTran);
+	}
+
 	/** Set Is Document Issued by Client/Org?.
 		@param LBR_IsDocIssuedByOrg Is Document Issued by Client/Org?	  */
 	public void setLBR_IsDocIssuedByOrg (boolean LBR_IsDocIssuedByOrg)
@@ -828,25 +867,6 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return (String)get_Value(COLUMNNAME_LBR_NFE_DestinationType);
 	}
 
-	/** In = 0 */
-	public static final String LBR_NFE_OPERATIONTYPE_In = "0";
-	/** Out = 1 */
-	public static final String LBR_NFE_OPERATIONTYPE_Out = "1";
-	/** Set NFe Operation Type.
-		@param LBR_NFE_OperationType NFe Operation Type	  */
-	public void setLBR_NFE_OperationType (String LBR_NFE_OperationType)
-	{
-
-		set_Value (COLUMNNAME_LBR_NFE_OperationType, LBR_NFE_OperationType);
-	}
-
-	/** Get NFe Operation Type.
-		@return NFe Operation Type	  */
-	public String getLBR_NFE_OperationType () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_NFE_OperationType);
-	}
-
 	/** Set NFe ID.
 		@param LBR_NFeID NFe ID	  */
 	public void setLBR_NFeID (String LBR_NFeID)
@@ -880,6 +900,29 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return (String)get_Value(COLUMNNAME_LBR_NFeIndFinal);
 	}
 
+	/** LBR_NFeIndIntermed AD_Reference_ID=800058 */
+	public static final int LBR_NFEINDINTERMED_AD_Reference_ID=800058;
+	/** Without an intermediary = 0 */
+	public static final String LBR_NFEINDINTERMED_WithoutAnIntermediary = "0";
+	/** Third party website  = 1 */
+	public static final String LBR_NFEINDINTERMED_ThirdPartyWebsite = "1";
+	/** Set Intermediary Indicator.
+		@param LBR_NFeIndIntermed Intermediary Indicator	  */
+	public void setLBR_NFeIndIntermed (String LBR_NFeIndIntermed)
+	{
+
+		set_Value (COLUMNNAME_LBR_NFeIndIntermed, LBR_NFeIndIntermed);
+	}
+
+	/** Get Intermediary Indicator.
+		@return Intermediary Indicator	  */
+	public String getLBR_NFeIndIntermed () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_NFeIndIntermed);
+	}
+
+	/** Operacao presencial, fora do estabelecimento = 5 */
+	public static final String LBR_NFEINDPRES_OperacaoPresencialForaDoEstabelecimento = "5";
 	/** Nao se aplica = 0 */
 	public static final String LBR_NFEINDPRES_NaoSeAplica = "0";
 	/** Operacao presencial = 1 */
@@ -940,6 +983,25 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return (String)get_Value(COLUMNNAME_LBR_NFeNatOp);
 	}
 
+	/** In = 0 */
+	public static final String LBR_NFE_OPERATIONTYPE_In = "0";
+	/** Out = 1 */
+	public static final String LBR_NFE_OPERATIONTYPE_Out = "1";
+	/** Set NFe Operation Type.
+		@param LBR_NFE_OperationType NFe Operation Type	  */
+	public void setLBR_NFE_OperationType (String LBR_NFE_OperationType)
+	{
+
+		set_Value (COLUMNNAME_LBR_NFE_OperationType, LBR_NFE_OperationType);
+	}
+
+	/** Get NFe Operation Type.
+		@return NFe Operation Type	  */
+	public String getLBR_NFE_OperationType () 
+	{
+		return (String)get_Value(COLUMNNAME_LBR_NFE_OperationType);
+	}
+
 	/** Set NF Serie.
 		@param LBR_NFeSerie NF Serie	  */
 	public void setLBR_NFeSerie (String LBR_NFeSerie)
@@ -962,6 +1024,8 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
         return new KeyNamePair(get_ID(), getLBR_NFeSerie());
     }
 
+	/** 693 - Aliquota de ICMS superior a definida para a operacao interestadual = 693 */
+	public static final String LBR_NFESTATUS_693_AliquotaDeICMSSuperiorADefinidaParaAOperacaoInterestadual = "693";
 	/** 100 - Autorizado o uso da NF-e = 100 */
 	public static final String LBR_NFESTATUS_100_AutorizadoOUsoDaNF_E = "100";
 	/** 101 - Cancelamento de NF-e homologado = 101 */
