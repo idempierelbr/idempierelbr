@@ -1,4 +1,4 @@
-﻿/******************************************************************************
+/******************************************************************************
  * Product: ADempiereLBR - ADempiere Localization Brazil                      *
  * This program is free software; you can redistribute it and/or modify it    *
  * under the terms version 2 of the GNU General Public License as published   *
@@ -76,6 +76,11 @@ public final class WebServiceCep {
 				webServiceCep.setCidade(text);
 			}
 		}, 
+		DEBUG {
+			@Override public void setCep(String text, WebServiceCep webServiceCep) {
+				webServiceCep.setDebug(text);
+			}
+		},
 		BAIRRO {
 			@Override public void setCep(String text, WebServiceCep webServiceCep) {
 				webServiceCep.setBairro(text);
@@ -176,7 +181,8 @@ public final class WebServiceCep {
      */
 	private static final String URL_STRING = 
 		"http://cep.republicavirtual.com.br/web_cep.php?cep=%s&formato=xml";
-
+	
+	
     /**
      * Carrega o Documento xml a partir do CEP enviado.
      * @param cep número do cep.
@@ -279,6 +285,7 @@ public final class WebServiceCep {
 	private String logradouro = null;
 	private String logradouroType = null;
 	private String uf = null;
+	private String debug = null;
 	private Exception exception;
     
 	
@@ -298,6 +305,9 @@ public final class WebServiceCep {
 		this.exception = ex;
 	}
 /* PRIVATE métodos set, usados pela classe Xml para setar o objeto CepWebService */
+	private void setDebug(String debug) {
+		this.debug = debug;
+	}
 	
 	private void setCidade(String cidade) {
 		this.cidade = cidade;
