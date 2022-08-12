@@ -1,15 +1,19 @@
 package com.todobom.idempierelbr.banking.bancodobrasil.annotated;
 
+import java.util.Date;
+
 import org.idempierelbr.cnab240.annotated.CNABHeaderArquivoRecord;
 
 import com.ancientprogramming.fixedformat4j.annotation.Align;
 import com.ancientprogramming.fixedformat4j.annotation.Field;
+import com.ancientprogramming.fixedformat4j.annotation.FixedFormatPattern;
 import com.ancientprogramming.fixedformat4j.annotation.Record;
 
 @Record
 public class BancoDoBrasilCNABHeaderArquivo extends CNABHeaderArquivoRecord {
 
 	private String adendoConvenioBB;
+	private Date dataHoraGeracao;
 	
 	public BancoDoBrasilCNABHeaderArquivo() {
 		super();
@@ -35,4 +39,13 @@ public class BancoDoBrasilCNABHeaderArquivo extends CNABHeaderArquivoRecord {
 		this.adendoConvenioBB = adendoConvenioBB;
 	}
 	
+	@Field( offset=144 , length=14 , paddingChar = '0' , align = Align.LEFT )
+	@FixedFormatPattern("ddMMyyyyHHmmss")
+	public Date getDataHoraGeracao() {
+		return dataHoraGeracao;
+	}
+	
+	public void setDataHoraGeracao(Date dataHoraGeracao) {
+		this.dataHoraGeracao = dataHoraGeracao;
+	}
 }
