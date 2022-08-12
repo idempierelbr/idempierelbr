@@ -36,6 +36,8 @@ public class BoletoGenerateAndPrint extends SvrProcess
 	@Override
 	protected void prepare() 
 	{
+		p_C_Invoice_ID = getRecord_ID();
+		
 		ProcessInfoParameter[] para = getParameter();
 		
 		for (int i = 0; i < para.length; i++)
@@ -44,12 +46,12 @@ public class BoletoGenerateAndPrint extends SvrProcess
 			
 			if (para[i].getParameter() == null)
 				;
+			else if (name.equals("C_Invoice_ID"))
+				p_C_Invoice_ID = para[i].getParameterAsInt();
 			else {
 				log.log(Level.SEVERE, "Unknown Parameter: " + name);
 			}
 		}
-		
-		p_C_Invoice_ID = getRecord_ID();
 	}
 
 	/**
@@ -133,7 +135,7 @@ public class BoletoGenerateAndPrint extends SvrProcess
 	@Override
 	protected String doIt() throws Exception {
 		if (p_C_Invoice_ID <= 0)
-			throw new Exception("No Nota Fiscal defined");
+			throw new Exception("Invoice is mandatory!");
 		
 		MInvoice inv = new MInvoice(getCtx(), p_C_Invoice_ID, get_TrxName());
 		
@@ -183,4 +185,5 @@ public class BoletoGenerateAndPrint extends SvrProcess
 		
 		return "";
 	}
+
 }
