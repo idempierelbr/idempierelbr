@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Santander Banking Integration
 Bundle-SymbolicName: com.todobom.idempierelbr.banking.santander
-Bundle-Version: 7.1.0.qualifier
+Bundle-Version: 10.0.0.qualifier
 Require-Bundle: org.idempierelbr.open-items,
  org.idempierelbr.core,
  org.idempierelbr.cnab240,

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Itau
 Bundle-SymbolicName: com.todobom.idempierelbr.banking.itau
-Bundle-Version: 7.1.0.qualifier
+Bundle-Version: 10.0.0.qualifier
 Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.idempierelbr.cnab240.annotated,
  org.idempierelbr.cnab240.utils,
@@ -11,7 +11,7 @@ Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.idempierelbr.openitems.process,
  org.idempierelbr.openitems.processcnab240,
  org.idempierelbr.openitems.util
-Require-Bundle: org.adempiere.base;bundle-version="7.1.0"
+Require-Bundle: org.adempiere.base
 Service-Component: OSGI-INF/BankCollectionFactory.xml
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .

@@ -2,13 +2,13 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Annotated CNAB240
 Bundle-SymbolicName: org.idempierelbr.cnab240
-Bundle-Version: 7.1.0.qualifier
+Bundle-Version: 10.0.0.qualifier
 Export-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.idempierelbr.cnab240.annotated,
  org.idempierelbr.cnab240.utils
 Bundle-ClassPath: lib/fixedformat4j-1.3.4.jar,
  .,
  lib/commons-lang-2.6.jar
-Import-Package: org.adempiere.exceptions
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.apache.commons.logging;bundle-version="1.1.1"
+Require-Bundle: org.apache.commons.logging
+Import-Package: org.adempiere.exceptions

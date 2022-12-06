@@ -2,11 +2,11 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Bradesco
 Bundle-SymbolicName: org.idempierelbr.cnab240-bradesco
-Bundle-Version: 7.1.0.qualifier
-Require-Bundle: org.idempierelbr.cnab240-febraban;bundle-version="7.1.0",
- org.adempiere.base;bundle-version="7.1.0",
- org.idempierelbr.open-items;bundle-version="7.1.0",
- org.idempierelbr.core;bundle-version="7.1.0",
+Bundle-Version: 10.0.0.qualifier
+Require-Bundle: org.idempierelbr.cnab240-febraban,
+ org.adempiere.base,
+ org.idempierelbr.open-items,
+ org.idempierelbr.core,
  zcommon,
  zul
 Service-Component: OSGI-INF/BankCollectionFactory.xml

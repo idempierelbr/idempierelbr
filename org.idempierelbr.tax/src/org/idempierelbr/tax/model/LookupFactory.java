@@ -2,6 +2,7 @@ package org.idempierelbr.tax.model;
 
 import org.adempiere.base.ILookupFactory;
 import org.compiere.model.GridFieldVO;
+import org.compiere.model.InfoColumnVO;
 import org.compiere.model.Lookup;
 import org.compiere.util.DisplayType;
 import org.idempierelbr.tax.type.DisplayTypeFactory;
@@ -28,6 +29,11 @@ public class LookupFactory implements ILookupFactory {
 		if (gridFieldVO.displayType == DisplayTypeFactory.BRAZILIAN_TAXES)
 				return true;
 		
+		return false;
+	}
+
+	@Override
+	public boolean isLookup(InfoColumnVO infoColumnVO) {
 		return false;
 	}
 
