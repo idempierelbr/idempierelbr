@@ -1,1 +1,1 @@
-mvn clean verify -Didempiere.target=org.idempierelbr.p2.targetplatform $*
+mvn clean verify -Didempiere.target=org.idempierelbr.extensions.p2.targetplatform $*

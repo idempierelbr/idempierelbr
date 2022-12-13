@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: iDempiereLBR - CNAB 240 - Bradesco
+Bundle-SymbolicName: org.idempierelbr.cnab240.bradesco
+Bundle-Version: 10.0.0.qualifier
+Bundle-Vendor: TODOBOM
+Require-Bundle: org.idempierelbr.cnab240
+Import-Package: org.compiere.model,
+ org.compiere.process,
+ org.idempierelbr.core.util,
+ org.idempierelbr.openitems.model,
+ org.idempierelbr.openitems.process,
+ org.idempierelbr.openitems.processcnab240,
+ org.idempierelbr.openitems.util
+Service-Component: OSGI-INF/BankCollectionFactory.xml
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .

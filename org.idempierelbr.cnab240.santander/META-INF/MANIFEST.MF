@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: iDempiereLBR - CNAB 240 - Santander
+Bundle-SymbolicName: org.idempierelbr.cnab240.santander
+Bundle-Version: 10.0.0.qualifier
+Require-Bundle: org.idempierelbr.open-items,
+ org.idempierelbr.core,
+ org.idempierelbr.cnab240,
+ org.adempiere.base
+Service-Component: OSGI-INF/BankCollectionFactory.xml
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .

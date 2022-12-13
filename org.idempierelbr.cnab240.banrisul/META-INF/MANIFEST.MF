@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: iDempiereLBR - CNAB 240 - Banrisul
+Bundle-SymbolicName: org.idempierelbr.cnab240.banrisul
+Bundle-Version: 10.0.0.qualifier
+Bundle-Vendor: TODOBOM
+Import-Package: com.ancientprogramming.fixedformat4j.annotation,
+ org.compiere.model,
+ org.compiere.process,
+ org.idempierelbr.cnab240.annotated,
+ org.idempierelbr.core.util,
+ org.idempierelbr.openitems.model,
+ org.idempierelbr.openitems.process,
+ org.idempierelbr.openitems.processcnab240,
+ org.idempierelbr.openitems.util
+Service-Component: OSGI-INF/BankCollectionFactory.xml
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .

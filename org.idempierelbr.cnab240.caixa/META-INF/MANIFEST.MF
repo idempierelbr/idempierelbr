@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: iDempiereLBR - CNAB 240 - Caixa
+Bundle-SymbolicName: org.idempierelbr.cnab240.caixa
+Bundle-Version: 10.0.0.qualifier
+Bundle-Vendor: TODOBOM
+Require-Bundle: org.adempiere.base,
+ org.idempierelbr.cnab240,
+ org.idempierelbr.core,
+ org.idempierelbr.open-items
+Service-Component: OSGI-INF/BankCollectionFactory.xml
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .

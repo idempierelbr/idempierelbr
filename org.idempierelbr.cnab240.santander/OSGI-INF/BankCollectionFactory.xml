@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.idempierelbr.cnab240.santander.BankCollectionFactory">
+   <implementation class="com.todobom.idempierelbr.banking.santander.process.BankCollectionFactory"/>
+   <property name="service.ranking" type="Integer" value="10"/>
+   <service>
+      <provide interface="org.idempierelbr.openitems.process.IBankCollectionFactory"/>
+   </service>
+</scr:component>

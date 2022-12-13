@@ -1,2 +1,19 @@
 **/target/
-org.idempierelbr.p2.targetplatform/org.idempierelbr.p2.targetplatform.target
+**/bin/
+**/lib/*.jar
+**/seed/*.jar
+/org.adempiere.ui.zk/labelapplet.jar
+/org.adempiere.extend/test.properties
+
+/.metadata/
+
+swingclient.product*.launch
+server.product*.launch
+
+/RemoteSystemsTempFiles/
+External Plug-in Libraries
+.recommenders
+
+/.sonarlint/
+**/org.sonarlint.eclipse.core.prefs
+**/org.eclipse.jdt.core.prefs

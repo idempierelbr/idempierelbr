@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.idempierelbr.extensions.feature"
+      label="idempierelbr.extensions.feature"
+      version="10.0.0.qualifier"
+      provider-name="idempiereLBR">
+
+   <description>
+      Feature localization Brazil
+   </description>
+
+   <copyright>
+      Copyright: idempiereLBR
+   </copyright>
+
+   <license url="">
+      GPLv2
+   </license>
+
+   <plugin
+         id="org.idempierelbr.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.idempierelbr.jasperfonts"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.idempierelbr.nfe"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.idempierelbr.open-items"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.idempierelbr.sped"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.idempierelbr.tax"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="org.idempierelbr.cnab240"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.idempierelbr.cnab240.febraban"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="org.idempierelbr.cnab240.bancodobrasil"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="org.idempierelbr.cnab240.banrisul"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="org.idempierelbr.cnab240.bradesco"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>      
+   
+   <plugin
+         id="org.idempierelbr.cnab240.caixa"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="org.idempierelbr.cnab240.itau"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="org.idempierelbr.cnab240.santander"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="org.idempierelbr.cnab240.sicoob"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

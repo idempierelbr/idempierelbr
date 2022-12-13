@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.todobom.idempierelbr.banking.caixa.BankCollectionFactory">
-   <implementation class="com.todobom.idempierelbr.banking.caixa.process.BankCollectionFactory"/>
-   <service>
-      <provide interface="org.idempierelbr.openitems.process.IBankCollectionFactory"/>
-   </service>
-</scr:component>
