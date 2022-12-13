@@ -67,14 +67,6 @@
          version="0.0.0"
          unpack="false"/>
 
-
-   <plugin
-         id="org.idempierelbr.cnab240-bradesco"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
    <plugin
          id="org.idempierelbr.cnab240-febraban"
          download-size="0"
