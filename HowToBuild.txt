@@ -1,16 +1,6 @@
 ### TO BUILD ON MAVEN ###
 
-mvn verify -Didempiere.target=org.idempierelbr.p2.targetplatform
-
-### TO CONFIGURE IN A DIFFERENT SERVER OR FOLDER ###
-
-# NOTE: Compilation is configured for jenkins server at ci.idempiere.org
-# if needed to compile locally or in a different server setup you need to change relativePath in all pom.xml files
-# and the repository location in target platform file
-
-### TO INSTALL WITH update-prd.sh ###
-
-install product org.idempierelbr.feature.feature.group
+mvn verify
 
 ### TO INSTALL JAR FILES IN LOCAL REPOSITORY ###
 

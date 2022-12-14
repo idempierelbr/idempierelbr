@@ -36,7 +36,7 @@ Este projeto é uma extensão do [iDempiere Business Suite ERP/CRM/SCM](https://
 ## Instalação
 O projeto LBR precisa fazer referências ao POM e ao repositório P2 do iDempiere. Para isso, é necessário que os paths estejam corretamente configurados. Atualmente, as configurações do LBR consideram a seguinte estrutura de diretórios em linux:
 
-`/home/idempiere/sources/iDempiere7.1`
+`/home/idempiere/sources/iDempiere10`
 
 `/home/idempiere/sources/lbr`
 
@@ -50,7 +50,7 @@ O segundo diretório é um clone do LBR, no branch master. Se a sua estrutura de
 
 Você pode então fazer build do projeto com o comando:
  
-`mvn verify -Didempiere.target=org.idempierelbr.p2.targetplatform`
+`mvn verify`
 
 Ao finalizar, você já pode importar os projetos do LBR no eclipse.
 
