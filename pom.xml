@@ -31,7 +31,6 @@
 		<module>org.idempierelbr.cnab240.santander</module>
 		<module>org.idempierelbr.cnab240.sicoob</module>
 		<module>org.idempierelbr.extensions.feature</module>
-		<module>org.idempierelbr.extensions.p2.targetplatform</module>
-		<module>org.idempierelbr.extensions.p2.site</module>
+		<module>org.idempierelbr.extensions.p2</module>
 	</modules>
 </project>
