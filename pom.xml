@@ -1,22 +1,26 @@
-<!-- build with
-mvn verify -Didempiere.target=org.idempierelbr.p2.targetplatform
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.idempiere</groupId>
-	<version>10.0.0-SNAPSHOT</version>
-	<artifactId>org.idempierelbr</artifactId>
-	<packaging>pom</packaging>
+    <artifactId>org.idempierelbr.extensions.main</artifactId>
+    <packaging>pom</packaging>
+    
+    <parent>
+            <groupId>org.idempierelbr</groupId>
+            <artifactId>org.idempierelbr.extensions.parent</artifactId>
+            <version>10.0.0-SNAPSHOT</version>
+            <relativePath>org.idempierelbr.extensions.parent/pom.xml</relativePath>
+    </parent>
 
 	<modules>
 		<module>org.idempierelbr.core</module>
 		<module>org.idempierelbr.jasperfonts</module>
 		<module>org.idempierelbr.nfe</module>
 		<module>org.idempierelbr.nfs</module>
-		<module>org.idempierelbr.open-items</module>
 		<module>org.idempierelbr.sped</module>
 		<module>org.idempierelbr.tax</module>
+		<module>org.idempierelbr.open-items</module>
 		<module>org.idempierelbr.cnab240</module>
 		<module>org.idempierelbr.cnab240.febraban</module>
 		<module>org.idempierelbr.cnab240.bancodobrasil</module>
