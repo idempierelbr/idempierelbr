@@ -24,8 +24,6 @@ import com.ancientprogramming.fixedformat4j.format.data.FixedFormatNumberData;
 import com.ancientprogramming.fixedformat4j.format.data.FixedFormatPatternData;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -49,9 +47,6 @@ import static com.ancientprogramming.fixedformat4j.format.FixedFormatUtil.getFix
  */
 
 public class LBRFixedFormatManager implements FixedFormatManager {
-
-  private static final Log LOG = LogFactory.getLog(LBRFixedFormatManager.class);
-
   /**
    * @inheritDoc
    */
@@ -330,9 +325,6 @@ public class LBRFixedFormatManager implements FixedFormatManager {
     	  }
       }
     }
-    if (LOG.isDebugEnabled()) {
-      LOG.debug("the loaded data[" + loadedData + "]");
-    }
     return loadedData;
   }
 
@@ -367,9 +359,7 @@ public class LBRFixedFormatManager implements FixedFormatManager {
     } else {
       result = formatter.format(valueObject, formatdata);
     }
-    if (LOG.isDebugEnabled()) {
-      LOG.debug(format("exported %s ", result));
-    }
+
     return result;
   }
 
