@@ -61,12 +61,12 @@ public class MLBRTaxDefinition extends X_LBR_TaxDefinition
 	/**
 	 * 		Retorna o grupo mais relevante de imposto
 	 */
-	public static MLBRTaxDefinition[] get (int AD_Org_ID, int C_BPartner_ID, int C_DocType_ID, 
+	public static MLBRTaxDefinition[] get (int AD_Client_ID, int AD_Org_ID, int C_BPartner_ID, int C_DocType_ID, 
 			int C_Region_ID, int To_Region_ID, int LBR_BPartnerCategory_ID, int LBR_FiscalGroup_BPartner_ID,
 			int LBR_FiscalGroup_Product_ID, int LBR_NCM_ID, int LBR_ProductCategory_ID, int M_Product_ID , boolean lbr_IsSubTributaria,
 			boolean isSOTrx, String lbr_TransactionType, Timestamp validFrom)
 	{
-		String where = "IsActive='Y' AND AD_Org_ID IN (0, ?) ";
+		String where = "IsActive='Y' AND AD_Client_ID=? AND AD_Org_ID IN (0, ?) ";
 		//
 		where += "AND (C_BPartner_ID IS NULL OR C_BPartner_ID=?) ";
 		where += "AND (C_DocType_ID IS NULL OR C_DocType_ID=?) ";
@@ -86,7 +86,7 @@ public class MLBRTaxDefinition extends X_LBR_TaxDefinition
 			where += "AND ValidFrom <= " + DB.TO_DATE(validFrom);
 		//
 		List<MLBRTaxDefinition> list = new Query (Env.getCtx(), MLBRTaxDefinition.Table_Name, where, null)
-			.setParameters(new Object[]{AD_Org_ID, C_BPartner_ID, C_DocType_ID, C_Region_ID, To_Region_ID, 
+			.setParameters(new Object[]{AD_Client_ID, AD_Org_ID, C_BPartner_ID, C_DocType_ID, C_Region_ID, To_Region_ID, 
 					LBR_BPartnerCategory_ID, LBR_FiscalGroup_BPartner_ID, LBR_FiscalGroup_Product_ID, LBR_NCM_ID, 
 					LBR_ProductCategory_ID, M_Product_ID, (lbr_IsSubTributaria ? "Y" : "N"), (isSOTrx ? "Y" : "N"), lbr_TransactionType})
 			.setOrderBy("PriorityNo, ValidFrom").list();

@@ -925,7 +925,7 @@ public class MLBRTax extends X_LBR_Tax
 		int orgRegionID = oiLocation.getC_Location_ID() < 1 ? -1 : oiLocation.getC_Region_ID();
 		int bpRegionID = bpLoc != null ? bpLoc.getC_Location().getC_Region_ID() : 0;
 		
-		MLBRTaxDefinition[] taxesDef = MLBRTaxDefinition.get (oi.getAD_Org_ID(), bp.getC_BPartner_ID(), C_DocTypeTarget_ID, 
+		MLBRTaxDefinition[] taxesDef = MLBRTaxDefinition.get (oi.getAD_Client_ID(), oi.getAD_Org_ID(), bp.getC_BPartner_ID(), C_DocTypeTarget_ID, 
 				(isSOTrx ? orgRegionID : bpRegionID),
 				(isSOTrx ? bpRegionID : orgRegionID),
 				(isSOTrx ? bpW.getLBR_CustomerCategory_ID() : bpW.getLBR_VendorCategory_ID()), 
