@@ -104,8 +104,6 @@ public class DefaultTaxProvider implements ITaxProvider {
 				}
 				if (!oTax.delete(true, order.get_TrxName()))
 					return false;
-				if (!oTax.save(order.get_TrxName()))
-					return false;
 			}
 		}
 		
@@ -724,8 +722,6 @@ public class DefaultTaxProvider implements ITaxProvider {
 					rmaTaxList.put(new Integer(cTax.get_ValueAsInt("LBR_TaxGroup_ID")), newOTax);
 				}
 				if (!oTax.delete(true, rma.get_TrxName()))
-					return false;
-				if (!oTax.save(rma.get_TrxName()))
 					return false;
 			}
 		}		
