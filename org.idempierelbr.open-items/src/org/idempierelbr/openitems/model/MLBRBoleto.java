@@ -497,7 +497,7 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 	
 	private int deleteMovements() throws DBException
 	{
-		final String sql = "DELETE LBR_BoletoMovement WHERE LBR_Boleto_ID=?";
+		final String sql = "DELETE FROM LBR_BoletoMovement WHERE LBR_Boleto_ID=?";
 		int no = DB.executeUpdateEx(sql, new Object[]{get_ID()}, get_TrxName());
 		return no;
 	}

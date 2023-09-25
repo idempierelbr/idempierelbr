@@ -616,7 +616,7 @@ public class MLBRNFS extends X_LBR_NFS implements DocAction, DocOptions {
 	public boolean calculateTaxTotal() {
 		log.fine("");
 		// Delete Taxes
-		DB.executeUpdateEx("DELETE LBR_NFSTax WHERE LBR_NFS_ID=" + get_ID(),
+		DB.executeUpdateEx("DELETE FROM LBR_NFSTax WHERE LBR_NFS_ID=" + get_ID(),
 				get_TrxName());
 		m_taxes = null;
 

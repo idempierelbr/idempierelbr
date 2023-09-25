@@ -882,7 +882,7 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	{
 		log.fine("");
 		//	Delete Taxes
-		DB.executeUpdateEx("DELETE LBR_NotaFiscalTax WHERE LBR_NotaFiscal_ID=" + get_ID(), get_TrxName());
+		DB.executeUpdateEx("DELETE FROM LBR_NotaFiscalTax WHERE LBR_NotaFiscal_ID=" + get_ID(), get_TrxName());
 		m_taxes = null;
 		
 		MTaxProvider[] providers = getTaxProviders();
