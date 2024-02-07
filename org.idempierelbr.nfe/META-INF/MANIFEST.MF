@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR NF-e
 Bundle-SymbolicName: org.idempierelbr.nfe
-Bundle-Version: 10.0.0.qualifier
+Bundle-Version: 11.0.0.qualifier
 Require-Bundle: org.adempiere.base,
  org.idempierelbr.core,
  org.idempierelbr.tax,

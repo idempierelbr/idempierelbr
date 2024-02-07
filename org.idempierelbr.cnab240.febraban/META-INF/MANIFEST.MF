@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR - CNAB 240 - Febraban
 Bundle-SymbolicName: org.idempierelbr.cnab240.febraban
-Bundle-Version: 10.0.0.qualifier
+Bundle-Version: 11.0.0.qualifier
 Bundle-ClassPath: lib/commons-lang-2.6.jar,
  .
 Export-Package: org.idempierelbr.cnab240febraban,

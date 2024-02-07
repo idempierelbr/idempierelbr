@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR - CNAB240
 Bundle-SymbolicName: org.idempierelbr.cnab240
-Bundle-Version: 10.0.0.qualifier
+Bundle-Version: 11.0.0.qualifier
 Export-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.idempierelbr.cnab240.annotated,
  org.idempierelbr.cnab240.utils

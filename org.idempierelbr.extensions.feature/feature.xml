@@ -2,7 +2,7 @@
 <feature
       id="org.idempierelbr.extensions.feature"
       label="idempierelbr.extensions.feature"
-      version="10.0.0.qualifier"
+      version="11.0.0.qualifier"
       provider-name="idempiereLBR">
 
    <description>

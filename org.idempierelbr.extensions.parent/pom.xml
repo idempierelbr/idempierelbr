@@ -3,57 +3,23 @@
 
 	<groupId>org.idempierelbr</groupId>
 	<artifactId>org.idempierelbr.extensions.parent</artifactId>
-	<version>10.0.0-SNAPSHOT</version>
+	<version>11.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Maven parent project for LBR iDempiere Extensions</name>
 
 	<properties>
-		<revision>10.0.0-SNAPSHOT</revision>
-		<jdk.version>11</jdk.version>
 		<tycho.version>2.7.5</tycho.version>
 		<tycho.extras.version>${tycho.version}</tycho.extras.version>
-		<maven.dependency.version>3.1.1</maven.dependency.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.dependency.version>2.8</maven.dependency.version>
 		<download.maven.version>1.4.1</download.maven.version>
 		<lifecycle.mapping.version>1.0.0</lifecycle.mapping.version>
-		<maven-clean-plugin.version>2.5</maven-clean-plugin.version> <!-- get from master, update when mave have update-->
-		<!-- default value of properties, use when run without profile -->
-		<skipClean>false</skipClean>
-		<idempiere.core.repository.url>file:///${basedir}/../../iDempiere10/org.idempiere.p2/target/repository</idempiere.core.repository.url>
+		<idempiere.core.repository.url>file:///${basedir}/../../idempiere/org.idempiere.p2/target/repository</idempiere.core.repository.url>
 	</properties>
 
 	<build>
 		<pluginManagement>
 			<plugins>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>flatten-maven-plugin</artifactId>
-					<version>1.1.0</version>
-					<configuration>
-						<updatePomFile>true</updatePomFile>
-						<flattenMode>resolveCiFriendliesOnly</flattenMode>
-					</configuration>
-					<executions>
-						<execution>
-							<id>flatten</id>
-							<phase>process-resources</phase>
-							<goals>
-								<goal>flatten</goal>
-							</goals>
-						</execution>
-						<execution>
-							<id>flatten.clean</id>
-							<phase>clean</phase>
-							<goals>
-								<goal>clean</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-clean-plugin</artifactId>
-					<version>${maven-clean-plugin.version}</version>
-				</plugin>
 				<plugin>
 					<!-- https://www.eclipse.org/m2e/documentation/m2e-execution-not-covered.html -->
 					<groupId>org.eclipse.m2e</groupId>
@@ -78,14 +44,12 @@
 							</pluginExecutions>
 						</lifecycleMappingMetadata>
 					</configuration>
-				</plugin>
+				</plugin>		        	
 				<plugin>
 					<groupId>org.eclipse.tycho</groupId>
 					<artifactId>tycho-compiler-plugin</artifactId>
 					<version>${tycho.version}</version>
 					<configuration>
-						<source>${jdk.version}</source>
-						<target>${jdk.version}</target>
 						<verbose>true</verbose>
 					</configuration>
 				</plugin>
@@ -134,46 +98,9 @@
 					<artifactId>maven-dependency-plugin</artifactId>
 					<version>${maven.dependency.version}</version>
 				</plugin>
-				<plugin>
-					<groupId>org.eclipse.tycho</groupId>
-					<artifactId>tycho-surefire-plugin</artifactId>
-					<version>${tycho.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.eclipse.tycho</groupId>
-					<artifactId>tycho-ds-plugin</artifactId>
-					<version>${tycho.version}</version>
-					<configuration>
-						<skip>true</skip>
-					</configuration>
-				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
-			<plugin>
-				<artifactId>maven-clean-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>auto-clean</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>clean</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<skip>${skipClean}</skip>
-					<filesets>
-						<fileset>
-							<directory>${project.basedir}/lib</directory>
-							<includes>
-								<include>*.jar</include>
-							</includes>
-							<followSymlinks>false</followSymlinks>
-						</fileset>
-					</filesets>
-				</configuration>
-			</plugin>
 			<plugin>
 				<!-- enable the Tycho build extension -->
 				<groupId>org.eclipse.tycho</groupId>
@@ -181,7 +108,7 @@
 				<version>${tycho.version}</version>
 				<extensions>true</extensions>
 			</plugin>
-
+			
 			<!-- enable source bundle generation -->
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
@@ -198,9 +125,8 @@
 			</plugin>
 		</plugins>
 	</build>
-
 	<profiles>
-		<profile>
+	    <profile>
 			<id>build.idempiere.extensions</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
@@ -211,14 +137,14 @@
 					<url>${idempiere.core.repository.url}</url>
 					<layout>p2</layout>
 				</repository>
-				<repository>
-					<id>Central</id>
-					<url>http://central.maven.org/maven2</url>
-				</repository>
-				<repository>
-					<id>zkoss</id>
-					<url>http://mavensync.zkoss.org/maven2</url>
-				</repository>
+			    <repository>
+				    <id>Central</id>
+				    <url>http://central.maven.org/maven2</url>
+			    </repository>
+			    <repository>
+				    <id>zkoss</id>
+				    <url>http://mavensync.zkoss.org/maven2</url>
+			    </repository>
 			</repositories>
 			<build>
 				<plugins>
@@ -227,6 +153,21 @@
 						<artifactId>target-platform-configuration</artifactId>
 						<version>${tycho.version}</version>
 						<configuration>
+							<targetDefinitionIncludeSource>honor</targetDefinitionIncludeSource>
+							<dependency-resolution>
+								<extraRequirements>
+									<requirement>
+										<type>eclipse-plugin</type>
+										<id>org.eclipse.core.runtime</id>
+										<versionRange>0.0.0</versionRange>
+									</requirement>
+									<requirement>
+										<type>eclipse-plugin</type>
+										<id>org.eclipse.equinox.common</id>
+										<versionRange>0.0.0</versionRange>
+									</requirement>
+								</extraRequirements>
+							</dependency-resolution>
 							<environments>
 								<environment>
 									<os>linux</os>
@@ -239,8 +180,8 @@
 									<arch>x86_64</arch>
 								</environment>
 							</environments>
-							<executionEnvironmentDefault>JavaSE-11</executionEnvironmentDefault>
-							<executionEnvironment>JavaSE-11</executionEnvironment>
+							<executionEnvironmentDefault>JavaSE-17</executionEnvironmentDefault>
+							<executionEnvironment>JavaSE-17</executionEnvironment>
 						</configuration>
 					</plugin>
 				</plugins>

@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <bundle id="org.idempierelbr.core" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.core" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.jasperfonts" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.jasperfonts" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.nfe" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.nfe" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.sped" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.sped" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.tax" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.tax" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.open-items" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.open-items" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.febraban" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.febraban" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.bancodobrasil" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.bancodobrasil" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.banrisul" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.banrisul" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.bradesco" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.bradesco" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.caixa" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.caixa" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.itau" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.itau" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.santander" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.santander" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.sicoob" version="10.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.sicoob" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
    <category-def name="org.idempierelbr.extensions" label="idempierelbr extensions"/>
