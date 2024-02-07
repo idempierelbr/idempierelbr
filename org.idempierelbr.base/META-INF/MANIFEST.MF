@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: iDempiereLBR Base
+Bundle-SymbolicName: org.idempierelbr.base
+Bundle-Version: 11.0.0.qualifier
+Require-Bundle: org.adempiere.base
+Service-Component: OSGI-INF/ModelFactory.xml
+Bundle-ClassPath: .
+Import-Package: org.osgi.service.event;version="1.3.0"
+Export-Package: org.idempierelbr.base.model
+Bundle-ActivationPolicy: lazy
