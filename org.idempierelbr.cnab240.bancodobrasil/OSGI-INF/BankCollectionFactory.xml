@@ -3,6 +3,6 @@
    <implementation class="com.todobom.idempierelbr.banking.bancodobrasil.process.BankCollectionFactory"/>
    <property name="service.ranking" type="Integer" value="10"/>
    <service>
-      <provide interface="org.idempierelbr.openitems.process.IBankCollectionFactory"/>
+      <provide interface="org.idempierelbr.base.service.IBankCollectionFactory"/>
    </service>
 </scr:component>

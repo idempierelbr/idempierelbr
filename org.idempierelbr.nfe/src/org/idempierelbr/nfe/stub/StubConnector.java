@@ -13,7 +13,7 @@ import org.apache.axiom.om.OMElement;
 import org.compiere.model.MRegion;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
-import org.idempierelbr.nfe.model.MLBRNFeWebService;
+import org.idempierelbr.base.model.MLBRNFeWebService;
 import org.idempierelbr.nfe.stub.generic.NFeAutorizacao4Stub;
 import org.idempierelbr.nfe.stub.generic.NFeDistribuicaoDFeStub;
 import org.idempierelbr.nfe.stub.generic.NFeInutilizacao4Stub;

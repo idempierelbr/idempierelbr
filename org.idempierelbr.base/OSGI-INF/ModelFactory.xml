@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.idempierelbr.base.ModelFactory">
-   <implementation class="org.idempierelbr.base.model.ModelFactory"/>
-   <service>
-      <provide interface="org.adempiere.base.IModelFactory"/>
-   </service>
-   <property name="service.ranking" type="Integer" value="10"/>
-</scr:component>

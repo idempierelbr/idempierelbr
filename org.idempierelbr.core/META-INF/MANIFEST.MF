@@ -12,9 +12,9 @@ Require-Bundle: org.adempiere.base,
  zkplus,
  zul,
  zweb,
- zkwebfragment
-Service-Component: OSGI-INF/CalloutFactory.xml,OSGI-INF/ModelFactory.xml,OSGI-INF/EditorFactory.xml,
- OSGI-INF/EventHandler.xml
+ zkwebfragment,
+ org.idempierelbr.base;bundle-version="11.0.0"
+Service-Component: OSGI-INF/*.xml
 Bundle-ClassPath: .,
  lib/dom4j.jar
 Import-Package: org.adempiere.webui,
@@ -26,10 +26,7 @@ Import-Package: org.adempiere.webui,
  org.adempiere.webui.theme,
  org.adempiere.webui.util,
  org.adempiere.webui.window,
- org.joda.time,
- org.joda.time.format,
  org.osgi.service.event;version="1.3.0"
 Export-Package: org.idempierelbr.core.model,
- org.idempierelbr.core.util,
- org.idempierelbr.core.wrapper
+ org.idempierelbr.core.util
 Bundle-ActivationPolicy: lazy

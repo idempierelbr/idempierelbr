@@ -17,9 +17,10 @@ Import-Package: org.adempiere.base,
  org.idempierelbr.core.util,
  org.idempierelbr.nfe.model,
  org.idempierelbr.tax.model,
- org.idempierelbr.tax.wrapper,
+ org.idempierelbr.base.wrapper,
  org.osgi.framework;version="1.6.0",
  org.osgi.util.tracker;version="1.5.0"
+Require-Bundle: org.idempierelbr.base;bundle-version="11.0.0"
 Service-Component: OSGI-INF/ProcessFactory.xml,
  OSGI-INF/ModelFactory.xml
 Bundle-ClassPath: lib/xstream-1.4.7.jar,

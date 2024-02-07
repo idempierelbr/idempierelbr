@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.compiere.util.CLogger;
-import org.idempierelbr.core.util.TextUtil;
+import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.sped.annotation.Validate;
 import org.idempierelbr.sped.annotation.XMLFieldProperties;
 import org.idempierelbr.sped.utils.SPEDUtil;

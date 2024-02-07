@@ -10,9 +10,9 @@ import org.compiere.model.MBPartner;
 import org.compiere.model.MCurrency;
 import org.compiere.model.MDocType;
 import org.compiere.util.Env;
-import org.idempierelbr.nfe.model.MLBRNotaFiscal;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
-import org.idempierelbr.tax.wrapper.I_W_C_BPartner;
+import org.idempierelbr.base.model.MLBRNotaFiscal;
+import org.idempierelbr.base.model.MLBRNotaFiscalLine;
+import org.idempierelbr.base.wrapper.I_W_C_BPartner;
 
 public class CalloutNotaFiscal implements IColumnCallout {
 

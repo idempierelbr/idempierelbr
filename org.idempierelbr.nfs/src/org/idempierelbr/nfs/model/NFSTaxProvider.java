@@ -16,14 +16,18 @@ import org.compiere.process.ProcessInfo;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
-import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
-import org.idempierelbr.tax.model.MLBRDocLineICMS;
-import org.idempierelbr.tax.model.MLBRDocLineIPI;
-import org.idempierelbr.tax.model.MLBRDocLineISSQN;
-import org.idempierelbr.tax.model.MLBRDocLineImportTax;
-import org.idempierelbr.tax.model.MLBRDocLineOTHER;
-import org.idempierelbr.tax.model.MLBRDocLinePIS;
-import org.idempierelbr.tax.model.MLBRTax;
+import org.idempierelbr.base.model.MLBRDocLineCOFINS;
+import org.idempierelbr.base.model.MLBRDocLineDetailsNFS;
+import org.idempierelbr.base.model.MLBRDocLineICMS;
+import org.idempierelbr.base.model.MLBRDocLineIPI;
+import org.idempierelbr.base.model.MLBRDocLineISSQN;
+import org.idempierelbr.base.model.MLBRDocLineImportTax;
+import org.idempierelbr.base.model.MLBRDocLineOTHER;
+import org.idempierelbr.base.model.MLBRDocLinePIS;
+import org.idempierelbr.base.model.MLBRNFS;
+import org.idempierelbr.base.model.MLBRNFSTax;
+import org.idempierelbr.base.model.MLBRTax;
+import org.idempierelbr.nfs.util.NFSUtils;
 import org.idempierelbr.tax.provider.TaxProviderFactory;
 
 public class NFSTaxProvider implements ITaxProviderNFS {
@@ -305,7 +309,9 @@ public class NFSTaxProvider implements ITaxProviderNFS {
 					return false;
 			}
 		}
-		return nfs.updateHeaderTax();
+		
+		NFSUtils nfsUtil = new NFSUtils(nfs);
+		return nfsUtil.updateHeaderTax();
 	}
 
 	@Override

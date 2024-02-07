@@ -3,7 +3,7 @@ package org.idempierelbr.core.model;
 import java.util.logging.Level;
 
 import org.compiere.util.CLogger;
-import org.idempierelbr.core.util.TextUtil;
+import org.idempierelbr.base.util.TextUtil;
 
 public class MIE {
 	/**	Logger			*/

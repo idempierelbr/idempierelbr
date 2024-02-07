@@ -1,19 +1,35 @@
 package org.idempierelbr.nfe.model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.adempiere.base.event.AbstractEventHandler;
 import org.adempiere.base.event.IEventTopics;
 import org.adempiere.exceptions.AdempiereException;
+import org.compiere.model.MAttachment;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MInvoiceLine;
 import org.compiere.model.MOrder;
 import org.compiere.model.MOrderLine;
+import org.compiere.model.MProduct;
 import org.compiere.model.MRMALine;
 import org.compiere.model.MTax;
 import org.compiere.model.MTaxProvider;
 import org.compiere.model.PO;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
-import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
+import org.idempierelbr.base.model.MLBRDocLineDetailsNfe;
+import org.idempierelbr.base.model.MLBRDocLineDetailsTax;
+import org.idempierelbr.base.model.MLBRNotaFiscal;
+import org.idempierelbr.base.model.MLBRNotaFiscalLine;
+import org.idempierelbr.base.model.MLBRNotaFiscalPay;
+import org.idempierelbr.base.model.MLBRNotaFiscalTransp;
+import org.idempierelbr.base.model.MLBRTax;
+import org.idempierelbr.base.model.MLBRTaxNfe;
+import org.idempierelbr.base.model.X_LBR_NotaFiscalTrailer;
+import org.idempierelbr.base.model.X_LBR_NotaFiscalTransp;
+import org.idempierelbr.nfe.util.NFeLineUtil;
+import org.idempierelbr.nfe.util.NFeUtil;
 import org.idempierelbr.tax.provider.TaxProviderFactory;
 import org.osgi.service.event.Event;
 
@@ -28,6 +44,8 @@ public class EventHandler extends AbstractEventHandler {
 		registerTableEvent(IEventTopics.PO_AFTER_NEW, MLBRNotaFiscal.Table_Name);
 		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MLBRNotaFiscal.Table_Name);
 		
+		registerTableEvent(IEventTopics.DOC_AFTER_PREPARE, MLBRNotaFiscal.Table_Name);
+		
 		registerTableEvent(IEventTopics.PO_AFTER_NEW, MLBRNotaFiscalLine.Table_Name);
 		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MLBRNotaFiscalLine.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_DELETE, MLBRNotaFiscalLine.Table_Name);
@@ -39,12 +57,52 @@ public class EventHandler extends AbstractEventHandler {
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MLBRNotaFiscalPay.Table_Name);
 		
 		registerTableEvent(IEventTopics.PO_BEFORE_NEW, MInvoice.Table_Name);
+		
+		registerTableEvent(IEventTopics.PO_AFTER_NEW, MLBRDocLineDetailsNfe.Table_Name);
+		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MLBRDocLineDetailsNfe.Table_Name);
 	}
 
 	@Override
 	protected void doHandleEvent(Event event) {
 		PO po = getPO(event);
 		log.info(po + " Type: " + event.getTopic());
+		
+		if (po instanceof MLBRNotaFiscal && (event.getTopic().equals(IEventTopics.DOC_AFTER_PREPARE))) {
+			MLBRNotaFiscal nf = (MLBRNotaFiscal)po;
+			NFeUtil nfeUtil = new NFeUtil(nf);
+			
+			// Calculate Taxes
+			if (!nfeUtil.calculateTaxTotal())
+			{
+				nf.m_processMsg = "Error calculating tax";
+				throw new AdempiereException(nf.m_processMsg);
+			}
+			
+			// Save everything
+			nf.saveEx();
+			
+			if (nf.isLBR_IsDocIssuedByOrg()) {
+				if (nf.isLBR_IsDocIssuedByOrg()) {
+					// Delete any xml attachment
+					MAttachment attachNFe = nf.getAttachment(true);
+					
+					if (attachNFe != null) {
+						for (int i = attachNFe.getEntryCount() - 1; i >= 0; i--) 
+						{
+							if (attachNFe.getEntry(i).getName().endsWith(MLBRNotaFiscal.INDIVIDUAL_FILE_EXT))
+								attachNFe.deleteEntry(i);
+						}
+						
+						attachNFe.saveEx();
+					}
+				}
+				
+				// Generate xml
+				nf.m_processMsg = nfeUtil.generateXML();
+				if (nf.m_processMsg != null)
+					throw new AdempiereException(nf.m_processMsg);
+			}
+		}
 		
 		// Copy DateDoc to DateAcct
 		if (po instanceof MLBRNotaFiscal && (event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)
@@ -134,6 +192,69 @@ public class EventHandler extends AbstractEventHandler {
 					}
 				} else if (event.getTopic().equals(IEventTopics.PO_BEFORE_DELETE)) // Delete
 					deleteLBRDocLineDetails(po);
+			}
+		}
+		
+		// Recalculate Tax
+		if (po instanceof MLBRNotaFiscalLine) {			
+			if (event.getTopic().equals(IEventTopics.PO_AFTER_NEW) ||event.getTopic().equals(IEventTopics.PO_AFTER_CHANGE)) {
+				MLBRNotaFiscalLine nfl = (MLBRNotaFiscalLine)po;
+				
+				MTax tax = new MTax(nfl.getCtx(), nfl.getC_Tax_ID(), nfl.get_TrxName());
+		        MTaxProvider provider = new MTaxProvider(tax.getCtx(), tax.getC_TaxProvider_ID(), tax.get_TrxName());
+				NFTaxProvider calculator = new NFTaxProvider();
+		    	boolean result =  calculator.recalculateTax(provider, nfl, (event.getTopic().equals(IEventTopics.PO_AFTER_NEW) ? true : false));
+		    	
+		    	if (!result)
+		    		throw new AdempiereException("Erro calculando impostos da linha!");
+			}
+		}
+		
+		if (po instanceof MLBRDocLineDetailsNfe) {			
+			if (event.getTopic().equals(IEventTopics.PO_AFTER_NEW) ||event.getTopic().equals(IEventTopics.PO_AFTER_CHANGE)) {
+				boolean newRecord = (event.getTopic().equals(IEventTopics.PO_AFTER_NEW) ? true : false);
+				
+				MLBRDocLineDetailsNfe det = (MLBRDocLineDetailsNfe)po;
+				
+				if (det.getLBR_NotaFiscalLine_ID() > 0) {	
+					boolean shouldContinue = true;
+					
+					if (det.m_DetailsFrom != null) {
+						det.copyChildren(det.m_DetailsFrom);			
+						det.m_DetailsFrom = null;
+						shouldContinue = false;
+					}
+					
+					if (shouldContinue) {
+						// Calculate (or recalculate) taxes
+						if (det.getLBR_Tax_ID() > 0 &&
+								((!newRecord && (det.is_ValueChanged("LBR_Tax_ID") || det.is_ValueChanged("LBR_GrossAmt") || det.is_ValueChanged("DiscountAmt"))) ||
+								(newRecord))
+							) {
+				
+							det.deleteChildren();
+							
+							// Array para somar os impostos de todas as linhas
+							Map<Integer, Object[]> taxes = new HashMap<Integer, Object[]>();
+							MLBRTax tax = new MLBRTax (det.getCtx(), det.getLBR_Tax_ID(), det.get_TrxName());
+							
+							if (det.getLBR_NotaFiscalLine_ID() > 0) {
+								MLBRNotaFiscalLine nfLine = new MLBRNotaFiscalLine(det.getCtx(), det.getLBR_NotaFiscalLine_ID(), det.get_TrxName());
+								MLBRNotaFiscal nf = nfLine.getParent();
+								det.calculateTaxes(nf, nfLine);
+								det.processTax(taxes, tax, nfLine.getC_Tax_ID());
+								det.createChildren(taxes, tax, nfLine.getC_Tax_ID(),
+										(MProduct) nfLine.getM_Product(),
+										nf.getC_BPartner_ID(),
+										nf.getC_BPartner_Location_ID(),
+										nf.getLBR_TransactionType(), nf.getDateDoc());
+								
+								NFeLineUtil lineUtil = new NFeLineUtil(nfLine);
+								lineUtil.updateHeaderTax();
+							}
+						}
+					}
+				}
 			}
 		}
 		

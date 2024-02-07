@@ -9,9 +9,9 @@ import org.compiere.model.MInvoice;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.Msg;
-import org.idempierelbr.openitems.model.MLBRBoleto;
-import org.idempierelbr.openitems.model.MLBRBoletoMovement;
-import org.idempierelbr.openitems.model.MLBRCobMovimento;
+import org.idempierelbr.base.model.MLBRBoleto;
+import org.idempierelbr.base.model.MLBRBoletoMovement;
+import org.idempierelbr.base.model.MLBRCobMovimento;
 
 public class BoletoInstructions extends SvrProcess {
 

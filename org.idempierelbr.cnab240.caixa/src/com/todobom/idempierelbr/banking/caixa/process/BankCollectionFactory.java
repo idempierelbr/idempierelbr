@@ -1,8 +1,8 @@
 
 package com.todobom.idempierelbr.banking.caixa.process;
 
-import org.idempierelbr.openitems.process.IBankCollection;
-import org.idempierelbr.openitems.process.IBankCollectionFactory;
+import org.idempierelbr.base.service.IBankCollection;
+import org.idempierelbr.base.service.IBankCollectionFactory;
 
 /**
  * 

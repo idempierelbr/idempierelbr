@@ -6,8 +6,8 @@ import java.util.logging.Level;
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
+import org.idempierelbr.base.model.MLBRNFSLot;
 import org.idempierelbr.nfs.factory.INFSe;
-import org.idempierelbr.nfs.model.MLBRNFSLot;
 import org.idempierelbr.nfs.util.NFSUtils;
 
 /**

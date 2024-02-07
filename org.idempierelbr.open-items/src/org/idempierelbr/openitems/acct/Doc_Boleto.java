@@ -7,7 +7,7 @@ import org.compiere.acct.Doc;
 import org.compiere.acct.Fact;
 import org.compiere.model.MAcctSchema;
 import org.compiere.util.Env;
-import org.idempierelbr.openitems.model.MLBRBoleto;
+import org.idempierelbr.base.model.MLBRBoleto;
 
 public class Doc_Boleto extends Doc
 {

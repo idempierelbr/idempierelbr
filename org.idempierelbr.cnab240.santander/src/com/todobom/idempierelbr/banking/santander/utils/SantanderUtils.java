@@ -1,6 +1,6 @@
 package com.todobom.idempierelbr.banking.santander.utils;
 
-import org.idempierelbr.openitems.util.OpenItemsUtil;
+import org.idempierelbr.base.util.OpenItemsUtil;
 
 public class SantanderUtils {
 	

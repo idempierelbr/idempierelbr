@@ -12,7 +12,7 @@ import org.compiere.model.MProduct;
 import org.compiere.model.MProductPricing;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
-import org.idempierelbr.nfs.model.MLBRNFS;
+import org.idempierelbr.base.model.MLBRNFS;
 
 /**
  * Callout for LBR_NFS table

@@ -18,6 +18,9 @@ import org.compiere.model.PO;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
+import org.idempierelbr.base.model.MLBRDocLineDetails;
+import org.idempierelbr.base.model.MLBRDocLineDetailsTax;
+import org.idempierelbr.base.model.MLBRTax;
 import org.idempierelbr.tax.provider.TaxProviderFactory;
 import org.osgi.service.event.Event;
 

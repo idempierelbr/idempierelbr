@@ -4,7 +4,8 @@ import java.util.logging.Level;
 
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalEvent;
+import org.idempierelbr.base.model.MLBRNotaFiscalEvent;
+import org.idempierelbr.nfe.util.NFeEventUtil;
 
 public class SendNFeEvent extends SvrProcess
 {
@@ -57,6 +58,7 @@ public class SendNFeEvent extends SvrProcess
 	 */
 	private String send(int LBR_NotaFiscalEvent_ID) throws Exception{
 		MLBRNotaFiscalEvent lot = new MLBRNotaFiscalEvent(getCtx(), LBR_NotaFiscalEvent_ID, get_TrxName());
-		return lot.sendLot();
+		NFeEventUtil eventUtil = new NFeEventUtil(lot);
+		return eventUtil.sendLot();
 	}
 }

@@ -8,16 +8,16 @@ import org.compiere.process.DocAction;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.Msg;
-import org.idempierelbr.nfe.model.MLBRDocLineDetailsNfe;
-import org.idempierelbr.nfe.model.MLBRNotaFiscal;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
-import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
-import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
-import org.idempierelbr.tax.model.MLBRDocLineICMS;
-import org.idempierelbr.tax.model.MLBRDocLineIPI;
-import org.idempierelbr.tax.model.MLBRDocLineISSQN;
-import org.idempierelbr.tax.model.MLBRDocLineImportTax;
-import org.idempierelbr.tax.model.MLBRDocLinePIS;
+import org.idempierelbr.base.model.MLBRDocLineCOFINS;
+import org.idempierelbr.base.model.MLBRDocLineDetailsNfe;
+import org.idempierelbr.base.model.MLBRDocLineDetailsTax;
+import org.idempierelbr.base.model.MLBRDocLineICMS;
+import org.idempierelbr.base.model.MLBRDocLineIPI;
+import org.idempierelbr.base.model.MLBRDocLineISSQN;
+import org.idempierelbr.base.model.MLBRDocLineImportTax;
+import org.idempierelbr.base.model.MLBRDocLinePIS;
+import org.idempierelbr.base.model.MLBRNotaFiscal;
+import org.idempierelbr.base.model.MLBRNotaFiscalLine;
 
 public class NotaFiscalCreatePO extends SvrProcess
 {

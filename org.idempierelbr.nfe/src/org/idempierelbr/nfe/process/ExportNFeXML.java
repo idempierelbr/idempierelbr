@@ -18,7 +18,7 @@ import org.compiere.model.MAttachmentEntry;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.DB;
-import org.idempierelbr.nfe.model.MLBRNotaFiscal;
+import org.idempierelbr.base.model.MLBRNotaFiscal;
 
 public class ExportNFeXML extends SvrProcess
 {

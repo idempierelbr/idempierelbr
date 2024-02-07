@@ -3,7 +3,7 @@ package org.idempierelbr.nfe.beans;
 import java.math.BigDecimal;
 
 import org.compiere.model.I_M_Product;
-import org.idempierelbr.nfe.model.X_LBR_NotaFiscalLine;
+import org.idempierelbr.base.model.X_LBR_NotaFiscalLine;
 
 /**
  * Representa um produto utilizado na lista de produtos da DANFE NFC-e impressa.

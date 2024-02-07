@@ -28,8 +28,8 @@ import org.adempiere.process.ImportProcess;
 import org.compiere.model.MOrg;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
-import org.idempierelbr.core.util.TextUtil;
-import org.idempierelbr.tax.model.MLBRIBPTax;
+import org.idempierelbr.base.model.MLBRIBPTax;
+import org.idempierelbr.base.util.TextUtil;
 import org.zkoss.io.Files;
 
 /**

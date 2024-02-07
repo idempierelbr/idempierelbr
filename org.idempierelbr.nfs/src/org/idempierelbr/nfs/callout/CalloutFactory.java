@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.adempiere.base.IColumnCallout;
 import org.adempiere.base.IColumnCalloutFactory;
-import org.idempierelbr.nfs.model.MLBRNFS;
+import org.idempierelbr.base.model.MLBRNFS;
 
 /**
  * Esta classe é uma implementação da callout factory. Ela fornece uma forma

@@ -23,8 +23,9 @@ import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
-import org.idempierelbr.core.util.AdempiereLBR;
-import org.idempierelbr.core.util.TextUtil;
+import org.idempierelbr.base.util.AdempiereLBR;
+import org.idempierelbr.base.util.TextUtil;
+import org.idempierelbr.base.wrapper.I_W_AD_OrgInfo;
 import org.idempierelbr.sped.icmsipi.bean.BLOCO0;
 import org.idempierelbr.sped.icmsipi.bean.BLOCO1;
 import org.idempierelbr.sped.icmsipi.bean.BLOCO9;
@@ -51,7 +52,6 @@ import org.idempierelbr.sped.model.MLBRFactFiscal;
 import org.idempierelbr.sped.model.MLBRTaxAssessment;
 import org.idempierelbr.sped.model.X_LBR_SPED;
 import org.idempierelbr.sped.model.X_LBR_TaxAssessmentLine;
-import org.idempierelbr.tax.wrapper.I_W_AD_OrgInfo;
 
 
 /**

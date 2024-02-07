@@ -7,7 +7,7 @@ import org.compiere.model.MOrder;
 import org.compiere.model.MRMA;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
-import org.idempierelbr.nfe.model.MLBRNotaFiscal;
+import org.idempierelbr.base.model.MLBRNotaFiscal;
 
 public class LinkNotaFiscal extends SvrProcess
 {

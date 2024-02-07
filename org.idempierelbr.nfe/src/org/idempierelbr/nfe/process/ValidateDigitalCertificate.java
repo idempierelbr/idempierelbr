@@ -4,7 +4,7 @@ import java.util.logging.Level;
 
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
-import org.idempierelbr.nfe.model.MLBRDigitalCertificate;
+import org.idempierelbr.base.model.MLBRDigitalCertificate;
 
 public class ValidateDigitalCertificate extends SvrProcess
 {

@@ -12,8 +12,8 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
-import org.idempierelbr.tax.model.MLBRDocLineICMS;
-import org.idempierelbr.core.util.TextUtil;
+import org.idempierelbr.base.model.MLBRDocLineICMS;
+import org.idempierelbr.base.util.TextUtil;
 
 public class ICMSBean
 {

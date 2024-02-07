@@ -21,10 +21,10 @@ import java.sql.Timestamp;
 
 import org.compiere.model.*;
 import org.compiere.util.KeyNamePair;
-import org.idempierelbr.core.model.I_LBR_NCM;
-import org.idempierelbr.nfe.model.I_LBR_NotaFiscal;
-import org.idempierelbr.nfe.model.I_LBR_NotaFiscalLine;
-import org.idempierelbr.tax.model.I_LBR_CFOP;
+import org.idempierelbr.base.model.I_LBR_CFOP;
+import org.idempierelbr.base.model.I_LBR_NCM;
+import org.idempierelbr.base.model.I_LBR_NotaFiscal;
+import org.idempierelbr.base.model.I_LBR_NotaFiscalLine;
 
 /** Generated Interface for LBR_FactFiscal
  *  @author iDempiere (generated) 

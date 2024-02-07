@@ -11,7 +11,7 @@ import org.compiere.model.MInvoice;
 import org.compiere.model.MOrder;
 import org.compiere.model.MPayment;
 import org.compiere.model.MPaymentAllocate;
-import org.idempierelbr.openitems.model.MLBRBoleto;
+import org.idempierelbr.base.model.MLBRBoleto;
 
 /**
  * Esta classe é uma implementação da callout factory.

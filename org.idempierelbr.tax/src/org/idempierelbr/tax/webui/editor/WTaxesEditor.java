@@ -14,9 +14,9 @@ import org.adempiere.webui.theme.ThemeManager;
 import org.adempiere.webui.window.WFieldRecordInfo;
 import org.compiere.model.GridField;
 import org.compiere.model.GridTab;
-import org.idempierelbr.tax.model.MLBRTax;
+import org.idempierelbr.base.model.MLBRTax;
+import org.idempierelbr.base.model.X_LBR_Tax;
 import org.idempierelbr.tax.model.MLBRTaxesLookup;
-import org.idempierelbr.tax.model.X_LBR_Tax;
 import org.idempierelbr.tax.webui.component.Taxesbox;
 import org.idempierelbr.tax.webui.window.WTaxesDialog;
 

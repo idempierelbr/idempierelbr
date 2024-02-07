@@ -12,8 +12,8 @@ import org.compiere.model.MSysConfig;
 import org.compiere.model.PO;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
-import org.idempierelbr.core.wrapper.I_W_C_BPartner;
-import org.idempierelbr.core.wrapper.I_W_C_BPartner_Location;
+import org.idempierelbr.base.wrapper.I_W_C_BPartner;
+import org.idempierelbr.base.wrapper.I_W_C_BPartner_Location;
 import org.osgi.service.event.Event;
 
 public class EventHandler extends AbstractEventHandler {

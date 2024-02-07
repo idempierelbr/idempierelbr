@@ -39,20 +39,20 @@ import org.compiere.process.SvrProcess;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.compiere.util.Msg;
-import org.idempierelbr.core.util.BPartnerUtil;
-import org.idempierelbr.nfe.model.MLBRDocLineDetailsNfe;
-import org.idempierelbr.nfe.model.MLBRNotaFiscal;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalLineComb;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalPackage;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalPay;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalPaySched;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalTransp;
-import org.idempierelbr.tax.model.I_LBR_LegalMessage;
-import org.idempierelbr.tax.model.MLBRDocLineDetails;
-import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
-import org.idempierelbr.tax.model.MLBRTax;
-import org.idempierelbr.tax.model.MLBRTaxLine;
+import org.idempierelbr.base.model.I_LBR_LegalMessage;
+import org.idempierelbr.base.model.MLBRDocLineDetails;
+import org.idempierelbr.base.model.MLBRDocLineDetailsNfe;
+import org.idempierelbr.base.model.MLBRDocLineDetailsTax;
+import org.idempierelbr.base.model.MLBRNotaFiscal;
+import org.idempierelbr.base.model.MLBRNotaFiscalLine;
+import org.idempierelbr.base.model.MLBRNotaFiscalLineComb;
+import org.idempierelbr.base.model.MLBRNotaFiscalPackage;
+import org.idempierelbr.base.model.MLBRNotaFiscalPay;
+import org.idempierelbr.base.model.MLBRNotaFiscalPaySched;
+import org.idempierelbr.base.model.MLBRNotaFiscalTransp;
+import org.idempierelbr.base.model.MLBRTax;
+import org.idempierelbr.base.model.MLBRTaxLine;
+import org.idempierelbr.base.util.BPartnerUtil;
 
 public class CreateNotaFiscal extends SvrProcess
 {

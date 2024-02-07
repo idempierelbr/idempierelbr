@@ -8,7 +8,8 @@ import org.compiere.process.ProcessCall;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.Trx;
-import org.idempierelbr.openitems.util.OpenItemsUtil;
+import org.idempierelbr.base.service.IBankCollection;
+import org.idempierelbr.base.util.OpenItemsUtil;
 
 /**
  *	Return CNAB

@@ -1,5 +1,6 @@
 package org.idempierelbr.nfs.util;
 
+import java.io.File;
 import java.math.BigInteger;
 import java.util.Calendar;
 import java.util.Date;
@@ -12,12 +13,124 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.adempiere.base.Service;
 import org.adempiere.base.ServiceQuery;
+import org.adempiere.exceptions.AdempiereException;
+import org.compiere.model.MAttachment;
+import org.compiere.model.MTax;
+import org.compiere.model.MTaxProvider;
+import org.compiere.model.X_C_TaxProviderCfg;
 import org.compiere.util.CLogger;
-import org.idempierelbr.core.util.TextUtil;
+import org.compiere.util.DB;
+import org.idempierelbr.base.model.MLBRNFS;
+import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.nfs.factory.INFSe;
 import org.idempierelbr.nfs.factory.INFSeFactory;
+import org.idempierelbr.nfs.model.NFSTaxProvider;
+import org.idempierelbr.tax.provider.TaxProviderFactory;
 
 public class NFSUtils {
+	private MLBRNFS p_NFS;
+	
+	public NFSUtils(MLBRNFS nfs) {
+		if (nfs == null)
+			throw new AdempiereException("MLBRNFS não pode ser null");
+		
+		this.p_NFS = nfs;
+	}
+	
+	public String generateXML() {
+
+		String msg = null;
+
+		try {
+
+			// get nfs config and model
+			String nfsModel = p_NFS.getNFSConfig().getLBR_NFSModel();
+
+			// check nfs model
+			if (nfsModel != null) {
+
+				// get instance
+				INFSe nfsInstance = NFSUtils.getNFSeInstance(nfsModel);
+				if (nfsInstance == null) {
+					throw new AdempiereException(
+							"Plugin não encontrado para para o modelo de NFS-e "
+									+ nfsModel);
+				}
+
+				// process 
+				String xml = nfsInstance.generateXML(p_NFS);
+
+				// delete any xml attachment
+				MAttachment attachNFe = p_NFS.createAttachment();
+
+				// create file
+				File xmlFile = new File(TextUtil.generateTmpFile(xml,
+						p_NFS.getDocumentNo() + "_nfse.xml"));
+
+				// attach nf xml
+				attachNFe.setAD_Org_ID(p_NFS.getAD_Org_ID());
+				attachNFe.addEntry(xmlFile);
+				attachNFe.save(p_NFS.get_TrxName());
+			}
+
+		} catch (Exception ex) {
+			return "Falha ao gerar XML da NFS-e. Erro: " + ex.getMessage();
+		}
+
+		return msg;
+	}
+	
+	/**
+	 * Update Tax & Header
+	 *
+	 * @return true if header updated
+	 */
+	public boolean updateHeaderTax() {
+
+		// Update header only if the document is not processed
+		if (p_NFS.isProcessed() && !p_NFS.is_ValueChanged(MLBRNFS.COLUMNNAME_Processed))
+			return true;
+
+		MTax tax = new MTax(p_NFS.getCtx(), p_NFS.getC_Tax_ID(), p_NFS.get_TrxName());
+		MTaxProvider provider = new MTaxProvider(tax.getCtx(),
+				tax.getC_TaxProvider_ID(), tax.get_TrxName());
+		NFSTaxProvider calculator = new NFSTaxProvider();
+		if (!calculator.updateNFSTax(provider, p_NFS))
+			return false;
+
+		return calculator.updateHeaderTax(provider, p_NFS);
+	} // updateHeaderTax
+	
+	/**
+	 * Calculate Tax and Total
+	 * 
+	 * @return true if tax total calculated
+	 */
+	public boolean calculateTaxTotal() {
+		log.fine("");
+		// Delete Taxes
+		DB.executeUpdateEx("DELETE FROM LBR_NFSTax WHERE LBR_NFS_ID=" + p_NFS.get_ID(),
+				p_NFS.get_TrxName());
+		p_NFS.m_taxes = null;
+
+		MTaxProvider[] providers = p_NFS.getTaxProviders();
+		for (MTaxProvider provider : providers) {
+			if (provider.getC_TaxProviderCfg_ID() > 0) {
+				X_C_TaxProviderCfg cfg = new X_C_TaxProviderCfg(p_NFS.getCtx(),
+						provider.getC_TaxProviderCfg_ID(), p_NFS.get_TrxName());
+
+				if (cfg.getTaxProviderClass() == null
+						|| !cfg.getTaxProviderClass().equals(
+								TaxProviderFactory.DEFAULT_TAX_PROVIDER))
+					continue;
+			}
+
+			NFSTaxProvider calculator = new NFSTaxProvider();
+			if (!calculator.calculateNFSTaxTotal(provider, p_NFS))
+				return false;
+		}
+		return true;
+	} // calculateTaxTotal
 
 	/** Log */
 	private static CLogger log = CLogger.getCLogger(NFSUtils.class);

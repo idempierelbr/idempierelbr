@@ -2,9 +2,9 @@ package com.todobom.idempierelbr.banking.sicoob.annotated;
 
 import java.util.Date;
 
+import org.idempierelbr.base.util.OpenItemsUtil;
+import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.cnab240.annotated.CNABSegmentPRecord;
-import org.idempierelbr.core.util.TextUtil;
-import org.idempierelbr.openitems.util.OpenItemsUtil;
 
 import com.ancientprogramming.fixedformat4j.annotation.Align;
 import com.ancientprogramming.fixedformat4j.annotation.Field;
@@ -43,7 +43,7 @@ public class SicoobCNABSegmentP extends CNABSegmentPRecord {
 		}
 
 		digito = 11 - ((base) - ((int) (base / 11) * 11));
-		// (Se o Resto for igual a 0 ou 1 então o DV é igual a 0)
+		// (Se o Resto for igual a 0 ou 1 entï¿½o o DV ï¿½ igual a 0)
 		if (digito > 9)
 			digito = 0;
 		Res = digito.toString();

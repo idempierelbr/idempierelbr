@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.adempiere.base.IColumnCallout;
 import org.adempiere.base.IColumnCalloutFactory;
-import org.idempierelbr.nfe.model.MLBRNotaFiscal;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
+import org.idempierelbr.base.model.MLBRNotaFiscal;
+import org.idempierelbr.base.model.MLBRNotaFiscalLine;
 
 /**
  * Esta classe é uma implementação da callout factory.

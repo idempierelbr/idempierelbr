@@ -14,9 +14,9 @@ Require-Bundle: org.adempiere.base,
  zkplus,
  zul,
  zweb,
- zkwebfragment
-Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/DisplayTypeFactory.xml,OSGI-INF/EditorFactory.xml,OSGI-INF/LookupFactory.xml,OSGI-INF/CalloutFactory.xml,OSGI-INF/TaxProviderFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/DocFactory.xml,
- OSGI-INF/ProcessFactory.xml
+ zkwebfragment,
+ org.idempierelbr.base
+Service-Component: OSGI-INF/*.xml
 Import-Package: org.adempiere.webui.component,
  org.adempiere.webui.editor,
  org.adempiere.webui.event,
@@ -25,7 +25,6 @@ Import-Package: org.adempiere.webui.component,
  org.adempiere.webui.window,
  org.osgi.service.event;version="1.3.0"
 Export-Package: org.idempierelbr.tax.model,
- org.idempierelbr.tax.provider,
- org.idempierelbr.tax.wrapper
+ org.idempierelbr.tax.provider
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .

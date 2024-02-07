@@ -8,7 +8,8 @@ import org.adempiere.exceptions.AdempiereException;
 import org.adempiere.report.jasper.JRViewerProvider;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
-import org.idempierelbr.nfe.model.MLBRNotaFiscal;
+import org.idempierelbr.base.model.MLBRNotaFiscal;
+import org.idempierelbr.nfe.util.NFeUtil;
 
 public class GenerateDanfe extends SvrProcess
 {
@@ -40,7 +41,8 @@ public class GenerateDanfe extends SvrProcess
 		
 		MLBRNotaFiscal nf = new MLBRNotaFiscal(getCtx(), p_LBR_NotaFiscal_ID, get_TrxName());
 		
-		JasperPrint nfJasperPrint = nf.getJasperPrint();
+		NFeUtil nfeUtil = new NFeUtil(nf);
+		JasperPrint nfJasperPrint = nfeUtil.getJasperPrint();
 		
 		if (nfJasperPrint == null)
 			throw new AdempiereException("Não foi possível gerar a DANFE!");

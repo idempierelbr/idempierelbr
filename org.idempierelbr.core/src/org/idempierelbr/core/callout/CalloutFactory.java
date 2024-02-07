@@ -7,8 +7,8 @@ import org.adempiere.base.IColumnCallout;
 import org.adempiere.base.IColumnCalloutFactory;
 import org.compiere.model.MBPartner;
 import org.compiere.model.MBPartnerLocation;
-import org.idempierelbr.core.wrapper.I_W_C_BPartner;
-import org.idempierelbr.core.wrapper.I_W_C_BPartner_Location;
+import org.idempierelbr.base.wrapper.I_W_C_BPartner;
+import org.idempierelbr.base.wrapper.I_W_C_BPartner_Location;
 
 /**
  * Esta classe é uma implementação da callout factory.

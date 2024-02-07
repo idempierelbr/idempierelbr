@@ -7,7 +7,8 @@ Bundle-Vendor: TODOBOM
 Require-Bundle: org.adempiere.base,
  org.idempierelbr.cnab240,
  org.idempierelbr.core,
- org.idempierelbr.open-items
+ org.idempierelbr.open-items,
+ org.idempierelbr.base;bundle-version="11.0.0"
 Service-Component: OSGI-INF/BankCollectionFactory.xml
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .

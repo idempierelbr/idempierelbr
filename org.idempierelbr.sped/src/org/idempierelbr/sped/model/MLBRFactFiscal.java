@@ -28,7 +28,7 @@ import org.compiere.model.Query;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
-import org.idempierelbr.core.util.TextUtil;
+import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.sped.contrib.bean.RA010;
 import org.idempierelbr.sped.contrib.bean.RA100;
 import org.idempierelbr.sped.contrib.bean.RA170;

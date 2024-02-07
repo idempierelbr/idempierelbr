@@ -5,9 +5,10 @@ import java.util.logging.Level;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.DB;
-import org.idempierelbr.nfe.model.MLBRNFeXML;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalEvent;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalEventLine;
+import org.idempierelbr.base.model.MLBRNFeXML;
+import org.idempierelbr.base.model.MLBRNotaFiscalEvent;
+import org.idempierelbr.base.model.MLBRNotaFiscalEventLine;
+import org.idempierelbr.nfe.util.NFeEventUtil;
 
 public class ManifestNFeXML extends SvrProcess
 {
@@ -108,7 +109,8 @@ public class ManifestNFeXML extends SvrProcess
 			
 			commitEx();
 			
-			event.sendLot();
+			NFeEventUtil eventUtil = new NFeEventUtil(event);
+			eventUtil.sendLot();
 		}
 		
 		return "Ok";

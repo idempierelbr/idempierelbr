@@ -24,7 +24,7 @@ import java.util.Properties;
 
 import org.compiere.model.*;
 import org.compiere.util.Env;
-import org.idempierelbr.tax.model.I_LBR_TaxName;
+import org.idempierelbr.base.model.I_LBR_TaxName;
 
 /** Generated Model for LBR_TaxAssessment
  *  @author iDempiere (generated) 
