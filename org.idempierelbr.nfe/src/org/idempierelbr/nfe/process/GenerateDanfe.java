@@ -6,6 +6,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 import org.adempiere.base.Service;
 import org.adempiere.exceptions.AdempiereException;
 import org.adempiere.report.jasper.JRViewerProvider;
+import org.compiere.model.PrintInfo;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempierelbr.base.model.MLBRNotaFiscal;
@@ -49,7 +50,8 @@ public class GenerateDanfe extends SvrProcess
 		
 		if (!getProcessInfo().isBatch()) {
 			JRViewerProvider viewerLauncher = Service.locator().locate(JRViewerProvider.class).getService();
-			viewerLauncher.openViewer(nfJasperPrint, "DANFE " + nf.getDocumentNo());
+			PrintInfo pi = new PrintInfo(getProcessInfo());
+			viewerLauncher.openViewer(nfJasperPrint, "DANFE " + nf.getDocumentNo(), pi);
 		}
 		
 		return "";

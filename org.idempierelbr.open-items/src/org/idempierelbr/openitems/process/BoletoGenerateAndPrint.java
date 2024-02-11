@@ -18,6 +18,7 @@ import org.compiere.model.MAttachment;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MPInstance;
 import org.compiere.model.MProcess;
+import org.compiere.model.PrintInfo;
 import org.compiere.model.Query;
 import org.compiere.process.ProcessInfo;
 import org.compiere.process.ProcessInfoParameter;
@@ -180,7 +181,8 @@ public class BoletoGenerateAndPrint extends SvrProcess
 		
 		if (!getProcessInfo().isBatch()) {
 			JRViewerProvider viewerLauncher = Service.locator().locate(JRViewerProvider.class).getService();
-			viewerLauncher.openViewer(nfJasperPrint, "Boletos da Fatura " + inv.getDocumentNo());
+			PrintInfo piX = new PrintInfo(getProcessInfo());
+			viewerLauncher.openViewer(nfJasperPrint, "Boletos da Fatura " + inv.getDocumentNo(), piX);
 		}
 		
 		return "";
