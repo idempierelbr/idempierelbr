@@ -12,6 +12,9 @@
    <bundle id="org.idempierelbr.nfe" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
+   <bundle id="org.idempierelbr.nfs" version="11.0.0.qualifier">
+      <category name="org.idempierelbr.extensions"/>
+   </bundle>
    <bundle id="org.idempierelbr.sped" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
