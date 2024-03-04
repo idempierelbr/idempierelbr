@@ -75,7 +75,12 @@ public final class WebServiceCep {
 			@Override public void setCep(String text, WebServiceCep webServiceCep) {
 				webServiceCep.setCidade(text);
 			}
-		}, 
+		},
+		DEBUG {
+			@Override public void setCep(String text, WebServiceCep webServiceCep) {
+				webServiceCep.setDebug(text);
+			}
+		},
 		BAIRRO {
 			@Override public void setCep(String text, WebServiceCep webServiceCep) {
 				webServiceCep.setBairro(text);
@@ -279,6 +284,7 @@ public final class WebServiceCep {
 	private String logradouro = null;
 	private String logradouroType = null;
 	private String uf = null;
+	private String debug = null;
 	private Exception exception;
     
 	
@@ -298,6 +304,9 @@ public final class WebServiceCep {
 		this.exception = ex;
 	}
 /* PRIVATE métodos set, usados pela classe Xml para setar o objeto CepWebService */
+	private void setDebug(String debug) {
+		this.debug = debug;
+	}
 	
 	private void setCidade(String cidade) {
 		this.cidade = cidade;
