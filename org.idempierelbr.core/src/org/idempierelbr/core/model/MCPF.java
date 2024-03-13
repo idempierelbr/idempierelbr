@@ -103,9 +103,9 @@ public class MCPF {
 	public boolean isUniqueOnBP(int AD_Client_ID, int C_BPartner_ID, String trxName) {
 		int iCPF = 0;
 		String sql = "SELECT count(LBR_CPF) " +
-				     "FROM C_BPartner " +
-				     "WHERE LBR_CPF = ? AND AD_Client_ID = ?" +
-				     "AND C_BPartner_ID <> ? AND IsActive = 'Y'";
+				     " FROM C_BPartner " +
+				     " WHERE LBR_CPF = ? AND AD_Client_ID = ?" +
+				     " AND C_BPartner_ID <> ? AND IsActive = 'Y'";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try
