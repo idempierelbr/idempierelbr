@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Base
 Bundle-SymbolicName: org.idempierelbr.base
 Bundle-Version: 11.0.0.qualifier
+Bundle-Activator: org.idempierelbr.base.Activator
 Require-Bundle: org.adempiere.base,
  org.adempiere.plugin.utils,
  org.eclipse.osgi
