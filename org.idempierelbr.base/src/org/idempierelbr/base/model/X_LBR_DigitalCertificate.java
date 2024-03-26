@@ -25,6 +25,7 @@ import org.compiere.model.*;
 /** Generated Model for LBR_DigitalCertificate
  *  @author iDempiere (generated) 
  *  @version Release 2.0 - $Id$ */
+@org.adempiere.base.Model(table="LBR_DigitalCertificate")
 public class X_LBR_DigitalCertificate extends PO implements I_LBR_DigitalCertificate, I_Persistent 
 {
 

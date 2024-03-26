@@ -24,6 +24,7 @@ import org.compiere.model.*;
 /** Generated Model for LBR_NFSeWS
  *  @author iDempiere (generated) 
  *  @version Release 3.1 - $Id$ */
+@org.adempiere.base.Model(table="LBR_NFSeWS")
 public class X_LBR_NFSeWS extends PO implements I_LBR_NFSeWS, I_Persistent 
 {
 
