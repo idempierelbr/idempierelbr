@@ -257,6 +257,15 @@ public class CNABRecords {
 		CNABSegmentBaseRecord record = manager.load( segmentBaseClass, linha);
 		
 		switch (record.getTipoSegmento().charAt(0)) {
+		case 'P':
+			record = manager.load ( segmentPClass , linha);
+			break;
+		case 'Q':
+			record = manager.load ( segmentQClass , linha);
+			break;
+		case 'R':
+			record = manager.load ( segmentRClass , linha);
+			break;
 		case 'T':
 			record = manager.load ( segmentTClass , linha);
 			break;
