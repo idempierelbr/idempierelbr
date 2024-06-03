@@ -22,21 +22,67 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_CSC
- *  @author iDempiere (generated) 
- *  @version Release 2.1 - $Id$ */
-public class X_LBR_CSC extends PO implements I_LBR_CSC, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_CSC")
+public class X_LBR_CSC extends PO implements I_LBR_CSC, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20151001L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_CSC (Properties ctx, int LBR_CSC_ID, String trxName)
     {
       super (ctx, LBR_CSC_ID, trxName);
       /** if (LBR_CSC_ID == 0)
+        {
+			setIsDefault (false);
+// N
+			setLBR_CSC_ID (0);
+			setLBR_NFeEnv (null);
+			setName (null);
+			setValue (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_CSC (Properties ctx, int LBR_CSC_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_CSC_ID, trxName, virtualColumns);
+      /** if (LBR_CSC_ID == 0)
+        {
+			setIsDefault (false);
+// N
+			setLBR_CSC_ID (0);
+			setLBR_NFeEnv (null);
+			setName (null);
+			setValue (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_CSC (Properties ctx, String LBR_CSC_UU, String trxName)
+    {
+      super (ctx, LBR_CSC_UU, trxName);
+      /** if (LBR_CSC_UU == null)
+        {
+			setIsDefault (false);
+// N
+			setLBR_CSC_ID (0);
+			setLBR_NFeEnv (null);
+			setName (null);
+			setValue (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_CSC (Properties ctx, String LBR_CSC_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_CSC_UU, trxName, virtualColumns);
+      /** if (LBR_CSC_UU == null)
         {
 			setIsDefault (false);
 // N
@@ -54,7 +100,7 @@ public class X_LBR_CSC extends PO implements I_LBR_CSC, I_Persistent
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -70,15 +116,14 @@ public class X_LBR_CSC extends PO implements I_LBR_CSC, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_CSC[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_CSC[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -87,15 +132,14 @@ public class X_LBR_CSC extends PO implements I_LBR_CSC, I_Persistent
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set Default.
-		@param IsDefault 
-		Default value
-	  */
+		@param IsDefault Default value
+	*/
 	public void setIsDefault (boolean IsDefault)
 	{
 		set_Value (COLUMNNAME_IsDefault, Boolean.valueOf(IsDefault));
@@ -104,31 +148,32 @@ public class X_LBR_CSC extends PO implements I_LBR_CSC, I_Persistent
 	/** Get Default.
 		@return Default value
 	  */
-	public boolean isDefault () 
+	public boolean isDefault()
 	{
 		Object oo = get_Value(COLUMNNAME_IsDefault);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set Taxpayer Security Code.
-		@param LBR_CSC_ID Taxpayer Security Code	  */
+		@param LBR_CSC_ID Taxpayer Security Code
+	*/
 	public void setLBR_CSC_ID (int LBR_CSC_ID)
 	{
-		if (LBR_CSC_ID < 1) 
+		if (LBR_CSC_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_CSC_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_CSC_ID, Integer.valueOf(LBR_CSC_ID));
 	}
 
 	/** Get Taxpayer Security Code.
 		@return Taxpayer Security Code	  */
-	public int getLBR_CSC_ID () 
+	public int getLBR_CSC_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_CSC_ID);
 		if (ii == null)
@@ -137,7 +182,8 @@ public class X_LBR_CSC extends PO implements I_LBR_CSC, I_Persistent
 	}
 
 	/** Set LBR_CSC_UU.
-		@param LBR_CSC_UU LBR_CSC_UU	  */
+		@param LBR_CSC_UU LBR_CSC_UU
+	*/
 	public void setLBR_CSC_UU (String LBR_CSC_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_CSC_UU, LBR_CSC_UU);
@@ -145,7 +191,7 @@ public class X_LBR_CSC extends PO implements I_LBR_CSC, I_Persistent
 
 	/** Get LBR_CSC_UU.
 		@return LBR_CSC_UU	  */
-	public String getLBR_CSC_UU () 
+	public String getLBR_CSC_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CSC_UU);
 	}
@@ -155,7 +201,8 @@ public class X_LBR_CSC extends PO implements I_LBR_CSC, I_Persistent
 	/** Homologation = 2 */
 	public static final String LBR_NFEENV_Homologation = "2";
 	/** Set Sefaz NF-e Environment.
-		@param LBR_NFeEnv Sefaz NF-e Environment	  */
+		@param LBR_NFeEnv Sefaz NF-e Environment
+	*/
 	public void setLBR_NFeEnv (String LBR_NFeEnv)
 	{
 
@@ -164,15 +211,14 @@ public class X_LBR_CSC extends PO implements I_LBR_CSC, I_Persistent
 
 	/** Get Sefaz NF-e Environment.
 		@return Sefaz NF-e Environment	  */
-	public String getLBR_NFeEnv () 
+	public String getLBR_NFeEnv()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NFeEnv);
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -181,15 +227,14 @@ public class X_LBR_CSC extends PO implements I_LBR_CSC, I_Persistent
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}
 
 	/** Set Search Key.
-		@param Value 
-		Search key for the record in the format required - must be unique
-	  */
+		@param Value Search key for the record in the format required - must be unique
+	*/
 	public void setValue (String Value)
 	{
 		set_Value (COLUMNNAME_Value, Value);
@@ -198,7 +243,7 @@ public class X_LBR_CSC extends PO implements I_LBR_CSC, I_Persistent
 	/** Get Search Key.
 		@return Search key for the record in the format required - must be unique
 	  */
-	public String getValue () 
+	public String getValue()
 	{
 		return (String)get_Value(COLUMNNAME_Value);
 	}

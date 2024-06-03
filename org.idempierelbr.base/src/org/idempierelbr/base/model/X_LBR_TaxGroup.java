@@ -22,21 +22,55 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_TaxGroup
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_TaxGroup extends PO implements I_LBR_TaxGroup, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_TaxGroup")
+public class X_LBR_TaxGroup extends PO implements I_LBR_TaxGroup, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140116L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_TaxGroup (Properties ctx, int LBR_TaxGroup_ID, String trxName)
     {
       super (ctx, LBR_TaxGroup_ID, trxName);
       /** if (LBR_TaxGroup_ID == 0)
+        {
+			setLBR_TaxGroup_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxGroup (Properties ctx, int LBR_TaxGroup_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_TaxGroup_ID, trxName, virtualColumns);
+      /** if (LBR_TaxGroup_ID == 0)
+        {
+			setLBR_TaxGroup_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxGroup (Properties ctx, String LBR_TaxGroup_UU, String trxName)
+    {
+      super (ctx, LBR_TaxGroup_UU, trxName);
+      /** if (LBR_TaxGroup_UU == null)
+        {
+			setLBR_TaxGroup_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxGroup (Properties ctx, String LBR_TaxGroup_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_TaxGroup_UU, trxName, virtualColumns);
+      /** if (LBR_TaxGroup_UU == null)
         {
 			setLBR_TaxGroup_ID (0);
 			setName (null);
@@ -50,7 +84,7 @@ public class X_LBR_TaxGroup extends PO implements I_LBR_TaxGroup, I_Persistent
     }
 
     /** AccessLevel
-      * @return 6 - System - Client 
+      * @return 6 - System - Client
       */
     protected int get_AccessLevel()
     {
@@ -66,15 +100,14 @@ public class X_LBR_TaxGroup extends PO implements I_LBR_TaxGroup, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_TaxGroup[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_TaxGroup[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -83,27 +116,26 @@ public class X_LBR_TaxGroup extends PO implements I_LBR_TaxGroup, I_Persistent
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set Tax Group.
-		@param LBR_TaxGroup_ID 
-		Identifies a NF Tax Group
-	  */
+		@param LBR_TaxGroup_ID Identifies a NF Tax Group
+	*/
 	public void setLBR_TaxGroup_ID (int LBR_TaxGroup_ID)
 	{
-		if (LBR_TaxGroup_ID < 1) 
+		if (LBR_TaxGroup_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxGroup_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxGroup_ID, Integer.valueOf(LBR_TaxGroup_ID));
 	}
 
 	/** Get Tax Group.
 		@return Identifies a NF Tax Group
 	  */
-	public int getLBR_TaxGroup_ID () 
+	public int getLBR_TaxGroup_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_TaxGroup_ID);
 		if (ii == null)
@@ -112,7 +144,8 @@ public class X_LBR_TaxGroup extends PO implements I_LBR_TaxGroup, I_Persistent
 	}
 
 	/** Set LBR_TaxGroup_UU.
-		@param LBR_TaxGroup_UU LBR_TaxGroup_UU	  */
+		@param LBR_TaxGroup_UU LBR_TaxGroup_UU
+	*/
 	public void setLBR_TaxGroup_UU (String LBR_TaxGroup_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_TaxGroup_UU, LBR_TaxGroup_UU);
@@ -120,15 +153,14 @@ public class X_LBR_TaxGroup extends PO implements I_LBR_TaxGroup, I_Persistent
 
 	/** Get LBR_TaxGroup_UU.
 		@return LBR_TaxGroup_UU	  */
-	public String getLBR_TaxGroup_UU () 
+	public String getLBR_TaxGroup_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TaxGroup_UU);
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -137,7 +169,7 @@ public class X_LBR_TaxGroup extends PO implements I_LBR_TaxGroup, I_Persistent
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}

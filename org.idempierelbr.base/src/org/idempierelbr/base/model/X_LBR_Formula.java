@@ -22,21 +22,58 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_Formula
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_Formula extends PO implements I_LBR_Formula, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_Formula")
+public class X_LBR_Formula extends PO implements I_LBR_Formula, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140127L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_Formula (Properties ctx, int LBR_Formula_ID, String trxName)
     {
       super (ctx, LBR_Formula_ID, trxName);
       /** if (LBR_Formula_ID == 0)
+        {
+			setLBR_Formula (null);
+			setLBR_Formula_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Formula (Properties ctx, int LBR_Formula_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_Formula_ID, trxName, virtualColumns);
+      /** if (LBR_Formula_ID == 0)
+        {
+			setLBR_Formula (null);
+			setLBR_Formula_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Formula (Properties ctx, String LBR_Formula_UU, String trxName)
+    {
+      super (ctx, LBR_Formula_UU, trxName);
+      /** if (LBR_Formula_UU == null)
+        {
+			setLBR_Formula (null);
+			setLBR_Formula_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Formula (Properties ctx, String LBR_Formula_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_Formula_UU, trxName, virtualColumns);
+      /** if (LBR_Formula_UU == null)
         {
 			setLBR_Formula (null);
 			setLBR_Formula_ID (0);
@@ -51,7 +88,7 @@ public class X_LBR_Formula extends PO implements I_LBR_Formula, I_Persistent
     }
 
     /** AccessLevel
-      * @return 6 - System - Client 
+      * @return 6 - System - Client
       */
     protected int get_AccessLevel()
     {
@@ -67,15 +104,14 @@ public class X_LBR_Formula extends PO implements I_LBR_Formula, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_Formula[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_Formula[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -84,15 +120,14 @@ public class X_LBR_Formula extends PO implements I_LBR_Formula, I_Persistent
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set Formula.
-		@param LBR_Formula 
-		Defines the Tax Formula
-	  */
+		@param LBR_Formula Defines the Tax Formula
+	*/
 	public void setLBR_Formula (String LBR_Formula)
 	{
 		set_Value (COLUMNNAME_LBR_Formula, LBR_Formula);
@@ -101,24 +136,25 @@ public class X_LBR_Formula extends PO implements I_LBR_Formula, I_Persistent
 	/** Get Formula.
 		@return Defines the Tax Formula
 	  */
-	public String getLBR_Formula () 
+	public String getLBR_Formula()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Formula);
 	}
 
 	/** Set Tax Formula (Brazil).
-		@param LBR_Formula_ID Tax Formula (Brazil)	  */
+		@param LBR_Formula_ID Tax Formula (Brazil)
+	*/
 	public void setLBR_Formula_ID (int LBR_Formula_ID)
 	{
-		if (LBR_Formula_ID < 1) 
+		if (LBR_Formula_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_Formula_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_Formula_ID, Integer.valueOf(LBR_Formula_ID));
 	}
 
 	/** Get Tax Formula (Brazil).
 		@return Tax Formula (Brazil)	  */
-	public int getLBR_Formula_ID () 
+	public int getLBR_Formula_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Formula_ID);
 		if (ii == null)
@@ -127,7 +163,8 @@ public class X_LBR_Formula extends PO implements I_LBR_Formula, I_Persistent
 	}
 
 	/** Set LBR_Formula_UU.
-		@param LBR_Formula_UU LBR_Formula_UU	  */
+		@param LBR_Formula_UU LBR_Formula_UU
+	*/
 	public void setLBR_Formula_UU (String LBR_Formula_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_Formula_UU, LBR_Formula_UU);
@@ -135,15 +172,14 @@ public class X_LBR_Formula extends PO implements I_LBR_Formula, I_Persistent
 
 	/** Get LBR_Formula_UU.
 		@return LBR_Formula_UU	  */
-	public String getLBR_Formula_UU () 
+	public String getLBR_Formula_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Formula_UU);
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -152,7 +188,7 @@ public class X_LBR_Formula extends PO implements I_LBR_Formula, I_Persistent
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}

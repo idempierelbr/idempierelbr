@@ -23,21 +23,67 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_TaxDefinition
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_TaxDefinition")
+public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140205L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_TaxDefinition (Properties ctx, int LBR_TaxDefinition_ID, String trxName)
     {
       super (ctx, LBR_TaxDefinition_ID, trxName);
       /** if (LBR_TaxDefinition_ID == 0)
+        {
+			setIsSOTrx (null);
+// B
+			setLBR_IsSubTributaria (null);
+// B
+			setLBR_TaxDefinition_ID (0);
+			setValidFrom (new Timestamp( System.currentTimeMillis() ));
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxDefinition (Properties ctx, int LBR_TaxDefinition_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_TaxDefinition_ID, trxName, virtualColumns);
+      /** if (LBR_TaxDefinition_ID == 0)
+        {
+			setIsSOTrx (null);
+// B
+			setLBR_IsSubTributaria (null);
+// B
+			setLBR_TaxDefinition_ID (0);
+			setValidFrom (new Timestamp( System.currentTimeMillis() ));
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxDefinition (Properties ctx, String LBR_TaxDefinition_UU, String trxName)
+    {
+      super (ctx, LBR_TaxDefinition_UU, trxName);
+      /** if (LBR_TaxDefinition_UU == null)
+        {
+			setIsSOTrx (null);
+// B
+			setLBR_IsSubTributaria (null);
+// B
+			setLBR_TaxDefinition_ID (0);
+			setValidFrom (new Timestamp( System.currentTimeMillis() ));
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxDefinition (Properties ctx, String LBR_TaxDefinition_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_TaxDefinition_UU, trxName, virtualColumns);
+      /** if (LBR_TaxDefinition_UU == null)
         {
 			setIsSOTrx (null);
 // B
@@ -55,7 +101,7 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -71,32 +117,32 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_TaxDefinition[")
+      StringBuilder sb = new StringBuilder ("X_LBR_TaxDefinition[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	public org.compiere.model.I_C_BPartner getC_BPartner() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_Name)
-			.getPO(getC_BPartner_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_ID)
+			.getPO(getC_BPartner_ID(), get_TrxName());
+	}
 
-	/** Set Business Partner .
-		@param C_BPartner_ID 
-		Identifies a Business Partner
-	  */
+	/** Set Business Partner.
+		@param C_BPartner_ID Identifies a Business Partner
+	*/
 	public void setC_BPartner_ID (int C_BPartner_ID)
 	{
-		if (C_BPartner_ID < 1) 
+		if (C_BPartner_ID < 1)
 			set_Value (COLUMNNAME_C_BPartner_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_C_BPartner_ID, Integer.valueOf(C_BPartner_ID));
 	}
 
-	/** Get Business Partner .
+	/** Get Business Partner.
 		@return Identifies a Business Partner
 	  */
-	public int getC_BPartner_ID () 
+	public int getC_BPartner_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_BPartner_ID);
 		if (ii == null)
@@ -105,26 +151,26 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	}
 
 	public org.compiere.model.I_C_DocType getC_DocType() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_DocType)MTable.get(getCtx(), org.compiere.model.I_C_DocType.Table_Name)
-			.getPO(getC_DocType_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_DocType)MTable.get(getCtx(), org.compiere.model.I_C_DocType.Table_ID)
+			.getPO(getC_DocType_ID(), get_TrxName());
+	}
 
 	/** Set Document Type.
-		@param C_DocType_ID 
-		Document type or rules
-	  */
+		@param C_DocType_ID Document type or rules
+	*/
 	public void setC_DocType_ID (int C_DocType_ID)
 	{
-		if (C_DocType_ID < 0) 
+		if (C_DocType_ID < 0)
 			set_Value (COLUMNNAME_C_DocType_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_C_DocType_ID, Integer.valueOf(C_DocType_ID));
 	}
 
 	/** Get Document Type.
 		@return Document type or rules
 	  */
-	public int getC_DocType_ID () 
+	public int getC_DocType_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_DocType_ID);
 		if (ii == null)
@@ -133,26 +179,26 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	}
 
 	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_Name)
-			.getPO(getC_Region_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_ID)
+			.getPO(getC_Region_ID(), get_TrxName());
+	}
 
 	/** Set Region.
-		@param C_Region_ID 
-		Identifies a geographical Region
-	  */
+		@param C_Region_ID Identifies a geographical Region
+	*/
 	public void setC_Region_ID (int C_Region_ID)
 	{
-		if (C_Region_ID < 1) 
+		if (C_Region_ID < 1)
 			set_Value (COLUMNNAME_C_Region_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_C_Region_ID, Integer.valueOf(C_Region_ID));
 	}
 
 	/** Get Region.
 		@return Identifies a geographical Region
 	  */
-	public int getC_Region_ID () 
+	public int getC_Region_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_Region_ID);
 		if (ii == null)
@@ -161,9 +207,8 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	}
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -172,7 +217,7 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
@@ -184,9 +229,8 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	/** Yes = Y */
 	public static final String ISSOTRX_Yes = "Y";
 	/** Set Sales Transaction.
-		@param IsSOTrx 
-		This is a Sales Transaction
-	  */
+		@param IsSOTrx This is a Sales Transaction
+	*/
 	public void setIsSOTrx (String IsSOTrx)
 	{
 
@@ -196,32 +240,32 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	/** Get Sales Transaction.
 		@return This is a Sales Transaction
 	  */
-	public String getIsSOTrx () 
+	public String getIsSOTrx()
 	{
 		return (String)get_Value(COLUMNNAME_IsSOTrx);
 	}
 
 	public I_LBR_BPartnerCategory getLBR_BPartnerCategory() throws RuntimeException
-    {
-		return (I_LBR_BPartnerCategory)MTable.get(getCtx(), I_LBR_BPartnerCategory.Table_Name)
-			.getPO(getLBR_BPartnerCategory_ID(), get_TrxName());	}
+	{
+		return (I_LBR_BPartnerCategory)MTable.get(getCtx(), I_LBR_BPartnerCategory.Table_ID)
+			.getPO(getLBR_BPartnerCategory_ID(), get_TrxName());
+	}
 
 	/** Set CFOP Business Partner Category.
-		@param LBR_BPartnerCategory_ID 
-		Identifies a CFOP Business Partner Category
-	  */
+		@param LBR_BPartnerCategory_ID Identifies a CFOP Business Partner Category
+	*/
 	public void setLBR_BPartnerCategory_ID (int LBR_BPartnerCategory_ID)
 	{
-		if (LBR_BPartnerCategory_ID < 1) 
+		if (LBR_BPartnerCategory_ID < 1)
 			set_Value (COLUMNNAME_LBR_BPartnerCategory_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_BPartnerCategory_ID, Integer.valueOf(LBR_BPartnerCategory_ID));
 	}
 
 	/** Get CFOP Business Partner Category.
 		@return Identifies a CFOP Business Partner Category
 	  */
-	public int getLBR_BPartnerCategory_ID () 
+	public int getLBR_BPartnerCategory_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BPartnerCategory_ID);
 		if (ii == null)
@@ -230,26 +274,26 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	}
 
 	public I_LBR_CFOP getLBR_CFOP() throws RuntimeException
-    {
-		return (I_LBR_CFOP)MTable.get(getCtx(), I_LBR_CFOP.Table_Name)
-			.getPO(getLBR_CFOP_ID(), get_TrxName());	}
+	{
+		return (I_LBR_CFOP)MTable.get(getCtx(), I_LBR_CFOP.Table_ID)
+			.getPO(getLBR_CFOP_ID(), get_TrxName());
+	}
 
 	/** Set CFOP.
-		@param LBR_CFOP_ID 
-		Indentifies the CFOP
-	  */
+		@param LBR_CFOP_ID Indentifies the CFOP
+	*/
 	public void setLBR_CFOP_ID (int LBR_CFOP_ID)
 	{
-		if (LBR_CFOP_ID < 1) 
+		if (LBR_CFOP_ID < 1)
 			set_Value (COLUMNNAME_LBR_CFOP_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_CFOP_ID, Integer.valueOf(LBR_CFOP_ID));
 	}
 
 	/** Get CFOP.
 		@return Indentifies the CFOP
 	  */
-	public int getLBR_CFOP_ID () 
+	public int getLBR_CFOP_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_CFOP_ID);
 		if (ii == null)
@@ -258,26 +302,26 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	}
 
 	public I_LBR_FiscalGroup_BPartner getLBR_FiscalGroup_BPartner() throws RuntimeException
-    {
-		return (I_LBR_FiscalGroup_BPartner)MTable.get(getCtx(), I_LBR_FiscalGroup_BPartner.Table_Name)
-			.getPO(getLBR_FiscalGroup_BPartner_ID(), get_TrxName());	}
+	{
+		return (I_LBR_FiscalGroup_BPartner)MTable.get(getCtx(), I_LBR_FiscalGroup_BPartner.Table_ID)
+			.getPO(getLBR_FiscalGroup_BPartner_ID(), get_TrxName());
+	}
 
 	/** Set BP Fiscal Group.
-		@param LBR_FiscalGroup_BPartner_ID 
-		Identifies a Business Partner Fiscal Group
-	  */
+		@param LBR_FiscalGroup_BPartner_ID Identifies a Business Partner Fiscal Group
+	*/
 	public void setLBR_FiscalGroup_BPartner_ID (int LBR_FiscalGroup_BPartner_ID)
 	{
-		if (LBR_FiscalGroup_BPartner_ID < 1) 
+		if (LBR_FiscalGroup_BPartner_ID < 1)
 			set_Value (COLUMNNAME_LBR_FiscalGroup_BPartner_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_FiscalGroup_BPartner_ID, Integer.valueOf(LBR_FiscalGroup_BPartner_ID));
 	}
 
 	/** Get BP Fiscal Group.
 		@return Identifies a Business Partner Fiscal Group
 	  */
-	public int getLBR_FiscalGroup_BPartner_ID () 
+	public int getLBR_FiscalGroup_BPartner_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_FiscalGroup_BPartner_ID);
 		if (ii == null)
@@ -286,26 +330,26 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	}
 
 	public I_LBR_FiscalGroup_Product getLBR_FiscalGroup_Product() throws RuntimeException
-    {
-		return (I_LBR_FiscalGroup_Product)MTable.get(getCtx(), I_LBR_FiscalGroup_Product.Table_Name)
-			.getPO(getLBR_FiscalGroup_Product_ID(), get_TrxName());	}
+	{
+		return (I_LBR_FiscalGroup_Product)MTable.get(getCtx(), I_LBR_FiscalGroup_Product.Table_ID)
+			.getPO(getLBR_FiscalGroup_Product_ID(), get_TrxName());
+	}
 
 	/** Set Product Fiscal Group.
-		@param LBR_FiscalGroup_Product_ID 
-		Identifies a Product Fiscal Group
-	  */
+		@param LBR_FiscalGroup_Product_ID Identifies a Product Fiscal Group
+	*/
 	public void setLBR_FiscalGroup_Product_ID (int LBR_FiscalGroup_Product_ID)
 	{
-		if (LBR_FiscalGroup_Product_ID < 1) 
+		if (LBR_FiscalGroup_Product_ID < 1)
 			set_Value (COLUMNNAME_LBR_FiscalGroup_Product_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_FiscalGroup_Product_ID, Integer.valueOf(LBR_FiscalGroup_Product_ID));
 	}
 
 	/** Get Product Fiscal Group.
 		@return Identifies a Product Fiscal Group
 	  */
-	public int getLBR_FiscalGroup_Product_ID () 
+	public int getLBR_FiscalGroup_Product_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_FiscalGroup_Product_ID);
 		if (ii == null)
@@ -320,9 +364,8 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	/** Yes = Y */
 	public static final String LBR_ISSUBTRIBUTARIA_Yes = "Y";
 	/** Set Is Substituicao Tributaria.
-		@param LBR_IsSubTributaria 
-		Defines the Is Substituicao Tributaria Status
-	  */
+		@param LBR_IsSubTributaria Defines the Is Substituicao Tributaria Status
+	*/
 	public void setLBR_IsSubTributaria (String LBR_IsSubTributaria)
 	{
 
@@ -332,32 +375,32 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	/** Get Is Substituicao Tributaria.
 		@return Defines the Is Substituicao Tributaria Status
 	  */
-	public String getLBR_IsSubTributaria () 
+	public String getLBR_IsSubTributaria()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_IsSubTributaria);
 	}
 
 	public I_LBR_LegalMessage getLBR_LegalMessage() throws RuntimeException
-    {
-		return (I_LBR_LegalMessage)MTable.get(getCtx(), I_LBR_LegalMessage.Table_Name)
-			.getPO(getLBR_LegalMessage_ID(), get_TrxName());	}
+	{
+		return (I_LBR_LegalMessage)MTable.get(getCtx(), I_LBR_LegalMessage.Table_ID)
+			.getPO(getLBR_LegalMessage_ID(), get_TrxName());
+	}
 
 	/** Set Legal Message.
-		@param LBR_LegalMessage_ID 
-		Identifies a Legal Message
-	  */
+		@param LBR_LegalMessage_ID Identifies a Legal Message
+	*/
 	public void setLBR_LegalMessage_ID (int LBR_LegalMessage_ID)
 	{
-		if (LBR_LegalMessage_ID < 1) 
+		if (LBR_LegalMessage_ID < 1)
 			set_Value (COLUMNNAME_LBR_LegalMessage_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_LegalMessage_ID, Integer.valueOf(LBR_LegalMessage_ID));
 	}
 
 	/** Get Legal Message.
 		@return Identifies a Legal Message
 	  */
-	public int getLBR_LegalMessage_ID () 
+	public int getLBR_LegalMessage_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_LegalMessage_ID);
 		if (ii == null)
@@ -366,26 +409,26 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	}
 
 	public I_LBR_NCM getLBR_NCM() throws RuntimeException
-    {
-		return (I_LBR_NCM)MTable.get(getCtx(), I_LBR_NCM.Table_Name)
-			.getPO(getLBR_NCM_ID(), get_TrxName());	}
+	{
+		return (I_LBR_NCM)MTable.get(getCtx(), I_LBR_NCM.Table_ID)
+			.getPO(getLBR_NCM_ID(), get_TrxName());
+	}
 
 	/** Set NCM.
-		@param LBR_NCM_ID 
-		NCM stands for Nomenclatura Comum do MERCOSUL
-	  */
+		@param LBR_NCM_ID NCM stands for Nomenclatura Comum do MERCOSUL
+	*/
 	public void setLBR_NCM_ID (int LBR_NCM_ID)
 	{
-		if (LBR_NCM_ID < 1) 
+		if (LBR_NCM_ID < 1)
 			set_Value (COLUMNNAME_LBR_NCM_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_NCM_ID, Integer.valueOf(LBR_NCM_ID));
 	}
 
 	/** Get NCM.
 		@return NCM stands for Nomenclatura Comum do MERCOSUL
 	  */
-	public int getLBR_NCM_ID () 
+	public int getLBR_NCM_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NCM_ID);
 		if (ii == null)
@@ -394,26 +437,26 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	}
 
 	public I_LBR_ProductCategory getLBR_ProductCategory() throws RuntimeException
-    {
-		return (I_LBR_ProductCategory)MTable.get(getCtx(), I_LBR_ProductCategory.Table_Name)
-			.getPO(getLBR_ProductCategory_ID(), get_TrxName());	}
+	{
+		return (I_LBR_ProductCategory)MTable.get(getCtx(), I_LBR_ProductCategory.Table_ID)
+			.getPO(getLBR_ProductCategory_ID(), get_TrxName());
+	}
 
 	/** Set CFOP Product Category.
-		@param LBR_ProductCategory_ID 
-		Identifies a CFOP Product Category
-	  */
+		@param LBR_ProductCategory_ID Identifies a CFOP Product Category
+	*/
 	public void setLBR_ProductCategory_ID (int LBR_ProductCategory_ID)
 	{
-		if (LBR_ProductCategory_ID < 1) 
+		if (LBR_ProductCategory_ID < 1)
 			set_Value (COLUMNNAME_LBR_ProductCategory_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_ProductCategory_ID, Integer.valueOf(LBR_ProductCategory_ID));
 	}
 
 	/** Get CFOP Product Category.
 		@return Identifies a CFOP Product Category
 	  */
-	public int getLBR_ProductCategory_ID () 
+	public int getLBR_ProductCategory_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_ProductCategory_ID);
 		if (ii == null)
@@ -422,21 +465,20 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	}
 
 	/** Set Tax Definition.
-		@param LBR_TaxDefinition_ID 
-		Defines the Tax Definition
-	  */
+		@param LBR_TaxDefinition_ID Defines the Tax Definition
+	*/
 	public void setLBR_TaxDefinition_ID (int LBR_TaxDefinition_ID)
 	{
-		if (LBR_TaxDefinition_ID < 1) 
+		if (LBR_TaxDefinition_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxDefinition_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxDefinition_ID, Integer.valueOf(LBR_TaxDefinition_ID));
 	}
 
 	/** Get Tax Definition.
 		@return Defines the Tax Definition
 	  */
-	public int getLBR_TaxDefinition_ID () 
+	public int getLBR_TaxDefinition_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_TaxDefinition_ID);
 		if (ii == null)
@@ -445,7 +487,8 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	}
 
 	/** Set LBR_TaxDefinition_UU.
-		@param LBR_TaxDefinition_UU LBR_TaxDefinition_UU	  */
+		@param LBR_TaxDefinition_UU LBR_TaxDefinition_UU
+	*/
 	public void setLBR_TaxDefinition_UU (String LBR_TaxDefinition_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_TaxDefinition_UU, LBR_TaxDefinition_UU);
@@ -453,15 +496,59 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 
 	/** Get LBR_TaxDefinition_UU.
 		@return LBR_TaxDefinition_UU	  */
-	public String getLBR_TaxDefinition_UU () 
+	public String getLBR_TaxDefinition_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TaxDefinition_UU);
 	}
 
-	/** Set Transaction Tax.
-		@param LBR_Tax_ID 
-		Identifies a transaction tax (document/line)
+	/** 00 - Tributada integralmente = 00 */
+	public static final String LBR_TAXSTATUS_00_TributadaIntegralmente = "00";
+	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria = 10_1 */
+	public static final String LBR_TAXSTATUS_10_TributadaEComCobrancaDoICMSPorSubTributaria = "10_1";
+	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria (com partilha) = 10_2 */
+	public static final String LBR_TAXSTATUS_10_TributadaEComCobrancaDoICMSPorSubTributariaComPartilha = "10_2";
+	/** 20 - Com reducao de base de calculo = 20 */
+	public static final String LBR_TAXSTATUS_20_ComReducaoDeBaseDeCalculo = "20";
+	/** 30 - Isenta ou nao-trib. e com cobr. do ICMS por Sub. Tribut = 30 */
+	public static final String LBR_TAXSTATUS_30_IsentaOuNao_TribEComCobrDoICMSPorSubTribut = "30";
+	/** 40 - Isenta = 40 */
+	public static final String LBR_TAXSTATUS_40_Isenta = "40";
+	/** 41 - Nao-tributada = 41_1 */
+	public static final String LBR_TAXSTATUS_41_Nao_Tributada = "41_1";
+	/** 41 - Nao-tributada (retencao antecipada) = 41_2 */
+	public static final String LBR_TAXSTATUS_41_Nao_TributadaRetencaoAntecipada = "41_2";
+	/** 50 - Suspensao = 50 */
+	public static final String LBR_TAXSTATUS_50_Suspensao = "50";
+	/** 51 - Diferimento  = 51 */
+	public static final String LBR_TAXSTATUS_51_Diferimento = "51";
+	/** 60 - ICMS cobrado anteriormente por substituicao tributaria = 60 */
+	public static final String LBR_TAXSTATUS_60_ICMSCobradoAnteriormentePorSubstituicaoTributaria = "60";
+	/** 70 - Com red. de base de calc. e cobr. do ICMS por Sub. Trib = 70 */
+	public static final String LBR_TAXSTATUS_70_ComRedDeBaseDeCalcECobrDoICMSPorSubTrib = "70";
+	/** 90 - Outras (com partilha) = 90_1 */
+	public static final String LBR_TAXSTATUS_90_OutrasComPartilha = "90_1";
+	/** 90 - Outras = 90_2 */
+	public static final String LBR_TAXSTATUS_90_Outras = "90_2";
+	/** Set Tax Status.
+		@param LBR_TaxStatus Defines the Tax Status
+	*/
+	public void setLBR_TaxStatus (String LBR_TaxStatus)
+	{
+
+		set_Value (COLUMNNAME_LBR_TaxStatus, LBR_TaxStatus);
+	}
+
+	/** Get Tax Status.
+		@return Defines the Tax Status
 	  */
+	public String getLBR_TaxStatus()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_TaxStatus);
+	}
+
+	/** Set Transaction Tax.
+		@param LBR_Tax_ID Identifies a transaction tax (document/line)
+	*/
 	public void setLBR_Tax_ID (int LBR_Tax_ID)
 	{
 		if (LBR_Tax_ID < 1)
@@ -473,52 +560,12 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	/** Get Transaction Tax.
 		@return Identifies a transaction tax (document/line)
 	  */
-	public int getLBR_Tax_ID () 
+	public int getLBR_Tax_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Tax_ID);
 		if (ii == null)
-			 return 0;
+			return 0;
 		return ii.intValue();
-	}
-
-	/** 00 */
-	public static final String LBR_TAXSTATUS_00 = "00";
-	/** 10 */
-	public static final String LBR_TAXSTATUS_10 = "10";
-	/** 20 */
-	public static final String LBR_TAXSTATUS_20 = "20";
-	/** 30 */
-	public static final String LBR_TAXSTATUS_30 = "30";
-	/** 40 */
-	public static final String LBR_TAXSTATUS_40 = "40";
-	/** 41 */
-	public static final String LBR_TAXSTATUS_41 = "41";
-	/** 50 */
-	public static final String LBR_TAXSTATUS_50 = "50";
-	/** 51 */
-	public static final String LBR_TAXSTATUS_51 = "51";
-	/** 60 */
-	public static final String LBR_TAXSTATUS_60 = "60";
-	/** 70 */
-	public static final String LBR_TAXSTATUS_70 = "70";
-	/** 90 */
-	public static final String LBR_TAXSTATUS_90 = "90";
-	/** Set Tax Status.
-		@param LBR_TaxStatus 
-		Defines the Tax Status
-	  */
-	public void setLBR_TaxStatus (String LBR_TaxStatus)
-	{
-
-		set_Value (COLUMNNAME_LBR_TaxStatus, LBR_TaxStatus);
-	}
-
-	/** Get Tax Status.
-		@return Defines the Tax Status
-	  */
-	public String getLBR_TaxStatus () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_TaxStatus);
 	}
 
 	/** End User = END */
@@ -532,9 +579,8 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	/** Resale = RES */
 	public static final String LBR_TRANSACTIONTYPE_Resale = "RES";
 	/** Set Transaction Type.
-		@param LBR_TransactionType 
-		Identifies a Transaction Type
-	  */
+		@param LBR_TransactionType Identifies a Transaction Type
+	*/
 	public void setLBR_TransactionType (String LBR_TransactionType)
 	{
 
@@ -544,32 +590,32 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	/** Get Transaction Type.
 		@return Identifies a Transaction Type
 	  */
-	public String getLBR_TransactionType () 
+	public String getLBR_TransactionType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TransactionType);
 	}
 
 	public org.compiere.model.I_M_Product getM_Product() throws RuntimeException
-    {
-		return (org.compiere.model.I_M_Product)MTable.get(getCtx(), org.compiere.model.I_M_Product.Table_Name)
-			.getPO(getM_Product_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_M_Product)MTable.get(getCtx(), org.compiere.model.I_M_Product.Table_ID)
+			.getPO(getM_Product_ID(), get_TrxName());
+	}
 
 	/** Set Product.
-		@param M_Product_ID 
-		Product, Service, Item
-	  */
+		@param M_Product_ID Product, Service, Item
+	*/
 	public void setM_Product_ID (int M_Product_ID)
 	{
-		if (M_Product_ID < 1) 
+		if (M_Product_ID < 1)
 			set_Value (COLUMNNAME_M_Product_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_M_Product_ID, Integer.valueOf(M_Product_ID));
 	}
 
 	/** Get Product.
 		@return Product, Service, Item
 	  */
-	public int getM_Product_ID () 
+	public int getM_Product_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_M_Product_ID);
 		if (ii == null)
@@ -578,9 +624,8 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	}
 
 	/** Set Relative Priority.
-		@param PriorityNo 
-		Where inventory should be picked from first
-	  */
+		@param PriorityNo Where inventory should be picked from first
+	*/
 	public void setPriorityNo (int PriorityNo)
 	{
 		set_Value (COLUMNNAME_PriorityNo, Integer.valueOf(PriorityNo));
@@ -589,7 +634,7 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	/** Get Relative Priority.
 		@return Where inventory should be picked from first
 	  */
-	public int getPriorityNo () 
+	public int getPriorityNo()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_PriorityNo);
 		if (ii == null)
@@ -598,26 +643,26 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	}
 
 	public org.compiere.model.I_C_Region getTo_Region() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_Name)
-			.getPO(getTo_Region_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_ID)
+			.getPO(getTo_Region_ID(), get_TrxName());
+	}
 
 	/** Set To.
-		@param To_Region_ID 
-		Receiving Region
-	  */
+		@param To_Region_ID Receiving Region
+	*/
 	public void setTo_Region_ID (int To_Region_ID)
 	{
-		if (To_Region_ID < 1) 
+		if (To_Region_ID < 1)
 			set_Value (COLUMNNAME_To_Region_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_To_Region_ID, Integer.valueOf(To_Region_ID));
 	}
 
 	/** Get To.
 		@return Receiving Region
 	  */
-	public int getTo_Region_ID () 
+	public int getTo_Region_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_To_Region_ID);
 		if (ii == null)
@@ -626,9 +671,8 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	}
 
 	/** Set Valid from.
-		@param ValidFrom 
-		Valid from including this date (first day)
-	  */
+		@param ValidFrom Valid from including this date (first day)
+	*/
 	public void setValidFrom (Timestamp ValidFrom)
 	{
 		set_Value (COLUMNNAME_ValidFrom, ValidFrom);
@@ -637,7 +681,7 @@ public class X_LBR_TaxDefinition extends PO implements I_LBR_TaxDefinition, I_Pe
 	/** Get Valid from.
 		@return Valid from including this date (first day)
 	  */
-	public Timestamp getValidFrom () 
+	public Timestamp getValidFrom()
 	{
 		return (Timestamp)get_Value(COLUMNNAME_ValidFrom);
 	}

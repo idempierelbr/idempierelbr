@@ -22,21 +22,55 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_FiscalGroup_BPartner
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_FiscalGroup_BPartner extends PO implements I_LBR_FiscalGroup_BPartner, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_FiscalGroup_BPartner")
+public class X_LBR_FiscalGroup_BPartner extends PO implements I_LBR_FiscalGroup_BPartner, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140116L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_FiscalGroup_BPartner (Properties ctx, int LBR_FiscalGroup_BPartner_ID, String trxName)
     {
       super (ctx, LBR_FiscalGroup_BPartner_ID, trxName);
       /** if (LBR_FiscalGroup_BPartner_ID == 0)
+        {
+			setLBR_FiscalGroup_BPartner_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_FiscalGroup_BPartner (Properties ctx, int LBR_FiscalGroup_BPartner_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_FiscalGroup_BPartner_ID, trxName, virtualColumns);
+      /** if (LBR_FiscalGroup_BPartner_ID == 0)
+        {
+			setLBR_FiscalGroup_BPartner_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_FiscalGroup_BPartner (Properties ctx, String LBR_FiscalGroup_BPartner_UU, String trxName)
+    {
+      super (ctx, LBR_FiscalGroup_BPartner_UU, trxName);
+      /** if (LBR_FiscalGroup_BPartner_UU == null)
+        {
+			setLBR_FiscalGroup_BPartner_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_FiscalGroup_BPartner (Properties ctx, String LBR_FiscalGroup_BPartner_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_FiscalGroup_BPartner_UU, trxName, virtualColumns);
+      /** if (LBR_FiscalGroup_BPartner_UU == null)
         {
 			setLBR_FiscalGroup_BPartner_ID (0);
 			setName (null);
@@ -50,7 +84,7 @@ public class X_LBR_FiscalGroup_BPartner extends PO implements I_LBR_FiscalGroup_
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -66,15 +100,14 @@ public class X_LBR_FiscalGroup_BPartner extends PO implements I_LBR_FiscalGroup_
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_FiscalGroup_BPartner[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_FiscalGroup_BPartner[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -83,27 +116,26 @@ public class X_LBR_FiscalGroup_BPartner extends PO implements I_LBR_FiscalGroup_
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set BP Fiscal Group.
-		@param LBR_FiscalGroup_BPartner_ID 
-		Identifies a Business Partner Fiscal Group
-	  */
+		@param LBR_FiscalGroup_BPartner_ID Identifies a Business Partner Fiscal Group
+	*/
 	public void setLBR_FiscalGroup_BPartner_ID (int LBR_FiscalGroup_BPartner_ID)
 	{
-		if (LBR_FiscalGroup_BPartner_ID < 1) 
+		if (LBR_FiscalGroup_BPartner_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_FiscalGroup_BPartner_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_FiscalGroup_BPartner_ID, Integer.valueOf(LBR_FiscalGroup_BPartner_ID));
 	}
 
 	/** Get BP Fiscal Group.
 		@return Identifies a Business Partner Fiscal Group
 	  */
-	public int getLBR_FiscalGroup_BPartner_ID () 
+	public int getLBR_FiscalGroup_BPartner_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_FiscalGroup_BPartner_ID);
 		if (ii == null)
@@ -112,7 +144,8 @@ public class X_LBR_FiscalGroup_BPartner extends PO implements I_LBR_FiscalGroup_
 	}
 
 	/** Set LBR_FiscalGroup_BPartner_UU.
-		@param LBR_FiscalGroup_BPartner_UU LBR_FiscalGroup_BPartner_UU	  */
+		@param LBR_FiscalGroup_BPartner_UU LBR_FiscalGroup_BPartner_UU
+	*/
 	public void setLBR_FiscalGroup_BPartner_UU (String LBR_FiscalGroup_BPartner_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_FiscalGroup_BPartner_UU, LBR_FiscalGroup_BPartner_UU);
@@ -120,15 +153,14 @@ public class X_LBR_FiscalGroup_BPartner extends PO implements I_LBR_FiscalGroup_
 
 	/** Get LBR_FiscalGroup_BPartner_UU.
 		@return LBR_FiscalGroup_BPartner_UU	  */
-	public String getLBR_FiscalGroup_BPartner_UU () 
+	public String getLBR_FiscalGroup_BPartner_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_FiscalGroup_BPartner_UU);
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -137,7 +169,7 @@ public class X_LBR_FiscalGroup_BPartner extends PO implements I_LBR_FiscalGroup_
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}

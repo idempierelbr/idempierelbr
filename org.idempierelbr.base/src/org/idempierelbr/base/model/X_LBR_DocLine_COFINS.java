@@ -24,21 +24,55 @@ import org.compiere.model.*;
 import org.compiere.util.Env;
 
 /** Generated Model for LBR_DocLine_COFINS
- *  @author iDempiere (generated) 
- *  @version Release 3.1 - $Id$ */
-public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_DocLine_COFINS")
+public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20170110L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_DocLine_COFINS (Properties ctx, int LBR_DocLine_COFINS_ID, String trxName)
     {
       super (ctx, LBR_DocLine_COFINS_ID, trxName);
       /** if (LBR_DocLine_COFINS_ID == 0)
+        {
+			setIsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_COFINS (Properties ctx, int LBR_DocLine_COFINS_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_DocLine_COFINS_ID, trxName, virtualColumns);
+      /** if (LBR_DocLine_COFINS_ID == 0)
+        {
+			setIsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_COFINS (Properties ctx, String LBR_DocLine_COFINS_UU, String trxName)
+    {
+      super (ctx, LBR_DocLine_COFINS_UU, trxName);
+      /** if (LBR_DocLine_COFINS_UU == null)
+        {
+			setIsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_COFINS (Properties ctx, String LBR_DocLine_COFINS_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_DocLine_COFINS_UU, trxName, virtualColumns);
+      /** if (LBR_DocLine_COFINS_UU == null)
         {
 			setIsTaxIncluded (false);
 // N
@@ -52,7 +86,7 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -68,17 +102,18 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_DocLine_COFINS[")
+      StringBuilder sb = new StringBuilder ("X_LBR_DocLine_COFINS[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
-	/** Percentage = PER */
-	public static final String CALCULATIONTYPE_Percentage = "PER";
 	/** Amount = AMT */
 	public static final String CALCULATIONTYPE_Amount = "AMT";
+	/** Percentage = PER */
+	public static final String CALCULATIONTYPE_Percentage = "PER";
 	/** Set Calculation.
-		@param CalculationType Calculation	  */
+		@param CalculationType Calculation
+	*/
 	public void setCalculationType (String CalculationType)
 	{
 
@@ -87,15 +122,14 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 
 	/** Get Calculation.
 		@return Calculation	  */
-	public String getCalculationType () 
+	public String getCalculationType()
 	{
 		return (String)get_Value(COLUMNNAME_CalculationType);
 	}
 
 	/** Set Price includes Tax.
-		@param IsTaxIncluded 
-		Tax is included in the price 
-	  */
+		@param IsTaxIncluded Tax is included in the price 
+	*/
 	public void setIsTaxIncluded (boolean IsTaxIncluded)
 	{
 		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
@@ -104,24 +138,25 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** Get Price includes Tax.
 		@return Tax is included in the price 
 	  */
-	public boolean isTaxIncluded () 
+	public boolean isTaxIncluded()
 	{
 		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
-	/** Percentage = PER */
-	public static final String LBR_COFST_CALCTYPE_Percentage = "PER";
 	/** Amount = AMT */
 	public static final String LBR_COFST_CALCTYPE_Amount = "AMT";
+	/** Percentage = PER */
+	public static final String LBR_COFST_CALCTYPE_Percentage = "PER";
 	/** Set Calculation.
-		@param LBR_COFST_CalcType Calculation	  */
+		@param LBR_COFST_CalcType Calculation
+	*/
 	public void setLBR_COFST_CalcType (String LBR_COFST_CalcType)
 	{
 
@@ -130,15 +165,14 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 
 	/** Get Calculation.
 		@return Calculation	  */
-	public String getLBR_COFST_CalcType () 
+	public String getLBR_COFST_CalcType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_COFST_CalcType);
 	}
 
 	/** Set COFINS-ST Tax Amount.
-		@param LBR_COFST_TaxAmt 
-		Defines the COFINS-ST Tax Amount
-	  */
+		@param LBR_COFST_TaxAmt Defines the COFINS-ST Tax Amount
+	*/
 	public void setLBR_COFST_TaxAmt (BigDecimal LBR_COFST_TaxAmt)
 	{
 		set_Value (COLUMNNAME_LBR_COFST_TaxAmt, LBR_COFST_TaxAmt);
@@ -147,7 +181,7 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** Get COFINS-ST Tax Amount.
 		@return Defines the COFINS-ST Tax Amount
 	  */
-	public BigDecimal getLBR_COFST_TaxAmt () 
+	public BigDecimal getLBR_COFST_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_COFST_TaxAmt);
 		if (bd == null)
@@ -156,9 +190,8 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	}
 
 	/** Set COFINS-ST Tax Base Amount.
-		@param LBR_COFST_TaxBaseAmt 
-		Defines the COFINS-ST Tax Base Amount
-	  */
+		@param LBR_COFST_TaxBaseAmt Defines the COFINS-ST Tax Base Amount
+	*/
 	public void setLBR_COFST_TaxBaseAmt (BigDecimal LBR_COFST_TaxBaseAmt)
 	{
 		set_Value (COLUMNNAME_LBR_COFST_TaxBaseAmt, LBR_COFST_TaxBaseAmt);
@@ -167,7 +200,7 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** Get COFINS-ST Tax Base Amount.
 		@return Defines the COFINS-ST Tax Base Amount
 	  */
-	public BigDecimal getLBR_COFST_TaxBaseAmt () 
+	public BigDecimal getLBR_COFST_TaxBaseAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_COFST_TaxBaseAmt);
 		if (bd == null)
@@ -176,9 +209,8 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	}
 
 	/** Set COFINS-ST Tax Rate.
-		@param LBR_COFST_TaxRate 
-		Indicates the COFINS-ST Tax Rate
-	  */
+		@param LBR_COFST_TaxRate Indicates the COFINS-ST Tax Rate
+	*/
 	public void setLBR_COFST_TaxRate (BigDecimal LBR_COFST_TaxRate)
 	{
 		set_Value (COLUMNNAME_LBR_COFST_TaxRate, LBR_COFST_TaxRate);
@@ -187,7 +219,7 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** Get COFINS-ST Tax Rate.
 		@return Indicates the COFINS-ST Tax Rate
 	  */
-	public BigDecimal getLBR_COFST_TaxRate () 
+	public BigDecimal getLBR_COFST_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_COFST_TaxRate);
 		if (bd == null)
@@ -196,9 +228,8 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	}
 
 	/** Set COFINS-ST Tax Rate in Amount.
-		@param LBR_COFST_TaxRateInAmt 
-		Indicates the COFINS-ST Tax Rate in Amount
-	  */
+		@param LBR_COFST_TaxRateInAmt Indicates the COFINS-ST Tax Rate in Amount
+	*/
 	public void setLBR_COFST_TaxRateInAmt (BigDecimal LBR_COFST_TaxRateInAmt)
 	{
 		set_Value (COLUMNNAME_LBR_COFST_TaxRateInAmt, LBR_COFST_TaxRateInAmt);
@@ -207,7 +238,7 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** Get COFINS-ST Tax Rate in Amount.
 		@return Indicates the COFINS-ST Tax Rate in Amount
 	  */
-	public BigDecimal getLBR_COFST_TaxRateInAmt () 
+	public BigDecimal getLBR_COFST_TaxRateInAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_COFST_TaxRateInAmt);
 		if (bd == null)
@@ -216,9 +247,8 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	}
 
 	/** Set COFINS-ST Total Quantity.
-		@param LBR_COFST_TotalQty 
-		COFINS-ST Total Quantity
-	  */
+		@param LBR_COFST_TotalQty COFINS-ST Total Quantity
+	*/
 	public void setLBR_COFST_TotalQty (BigDecimal LBR_COFST_TotalQty)
 	{
 		set_Value (COLUMNNAME_LBR_COFST_TotalQty, LBR_COFST_TotalQty);
@@ -227,7 +257,7 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** Get COFINS-ST Total Quantity.
 		@return COFINS-ST Total Quantity
 	  */
-	public BigDecimal getLBR_COFST_TotalQty () 
+	public BigDecimal getLBR_COFST_TotalQty()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_COFST_TotalQty);
 		if (bd == null)
@@ -302,9 +332,8 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** 99 - Outras operacoes = 99 */
 	public static final String LBR_COF_OWNTAXSTATUS_99_OutrasOperacoes = "99";
 	/** Set Declarant COFINS Tax Status.
-		@param LBR_COF_OwnTaxStatus 
-		COFINS tax status from the point of view of the declarant
-	  */
+		@param LBR_COF_OwnTaxStatus COFINS tax status from the point of view of the declarant
+	*/
 	public void setLBR_COF_OwnTaxStatus (String LBR_COF_OwnTaxStatus)
 	{
 
@@ -314,7 +343,7 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** Get Declarant COFINS Tax Status.
 		@return COFINS tax status from the point of view of the declarant
 	  */
-	public String getLBR_COF_OwnTaxStatus () 
+	public String getLBR_COF_OwnTaxStatus()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_COF_OwnTaxStatus);
 	}
@@ -386,9 +415,8 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** 99 - Outras operacoes = 99 */
 	public static final String LBR_COF_TAXSTATUS_99_OutrasOperacoes = "99";
 	/** Set COFINS Tax Status.
-		@param LBR_COF_TaxStatus 
-		Identifies a COFINS Tax Status
-	  */
+		@param LBR_COF_TaxStatus Identifies a COFINS Tax Status
+	*/
 	public void setLBR_COF_TaxStatus (String LBR_COF_TaxStatus)
 	{
 
@@ -398,27 +426,26 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** Get COFINS Tax Status.
 		@return Identifies a COFINS Tax Status
 	  */
-	public String getLBR_COF_TaxStatus () 
+	public String getLBR_COF_TaxStatus()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_COF_TaxStatus);
 	}
 
 	/** Set Doc Line COFINS.
-		@param LBR_DocLine_COFINS_ID 
-		Doc Line COFINS
-	  */
+		@param LBR_DocLine_COFINS_ID Doc Line COFINS
+	*/
 	public void setLBR_DocLine_COFINS_ID (int LBR_DocLine_COFINS_ID)
 	{
-		if (LBR_DocLine_COFINS_ID < 1) 
+		if (LBR_DocLine_COFINS_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_DocLine_COFINS_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_DocLine_COFINS_ID, Integer.valueOf(LBR_DocLine_COFINS_ID));
 	}
 
 	/** Get Doc Line COFINS.
 		@return Doc Line COFINS
 	  */
-	public int getLBR_DocLine_COFINS_ID () 
+	public int getLBR_DocLine_COFINS_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DocLine_COFINS_ID);
 		if (ii == null)
@@ -427,9 +454,8 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	}
 
 	/** Set Doc Line COFINS.
-		@param LBR_DocLine_COFINS_UU 
-		Doc Line COFINS
-	  */
+		@param LBR_DocLine_COFINS_UU Doc Line COFINS
+	*/
 	public void setLBR_DocLine_COFINS_UU (String LBR_DocLine_COFINS_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_DocLine_COFINS_UU, LBR_DocLine_COFINS_UU);
@@ -438,32 +464,32 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** Get Doc Line COFINS.
 		@return Doc Line COFINS
 	  */
-	public String getLBR_DocLine_COFINS_UU () 
+	public String getLBR_DocLine_COFINS_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_DocLine_COFINS_UU);
 	}
 
 	public I_LBR_DocLine_Details getLBR_DocLine_Details() throws RuntimeException
-    {
-		return (I_LBR_DocLine_Details)MTable.get(getCtx(), I_LBR_DocLine_Details.Table_Name)
-			.getPO(getLBR_DocLine_Details_ID(), get_TrxName());	}
+	{
+		return (I_LBR_DocLine_Details)MTable.get(getCtx(), I_LBR_DocLine_Details.Table_ID)
+			.getPO(getLBR_DocLine_Details_ID(), get_TrxName());
+	}
 
 	/** Set Doc Line Details.
-		@param LBR_DocLine_Details_ID 
-		Doc Line Details
-	  */
+		@param LBR_DocLine_Details_ID Doc Line Details
+	*/
 	public void setLBR_DocLine_Details_ID (int LBR_DocLine_Details_ID)
 	{
-		if (LBR_DocLine_Details_ID < 1) 
+		if (LBR_DocLine_Details_ID < 1)
 			set_Value (COLUMNNAME_LBR_DocLine_Details_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_DocLine_Details_ID, Integer.valueOf(LBR_DocLine_Details_ID));
 	}
 
 	/** Get Doc Line Details.
 		@return Doc Line Details
 	  */
-	public int getLBR_DocLine_Details_ID () 
+	public int getLBR_DocLine_Details_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DocLine_Details_ID);
 		if (ii == null)
@@ -472,9 +498,8 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	}
 
 	/** Set Tax Amount.
-		@param LBR_TaxAmt 
-		Defines the Tax Amount
-	  */
+		@param LBR_TaxAmt Defines the Tax Amount
+	*/
 	public void setLBR_TaxAmt (BigDecimal LBR_TaxAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxAmt, LBR_TaxAmt);
@@ -483,7 +508,7 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** Get Tax Amount.
 		@return Defines the Tax Amount
 	  */
-	public BigDecimal getLBR_TaxAmt () 
+	public BigDecimal getLBR_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmt);
 		if (bd == null)
@@ -492,9 +517,8 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	}
 
 	/** Set Tax Base Amount.
-		@param LBR_TaxBaseAmt 
-		Defines the Tax Base Amount
-	  */
+		@param LBR_TaxBaseAmt Defines the Tax Base Amount
+	*/
 	public void setLBR_TaxBaseAmt (BigDecimal LBR_TaxBaseAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxBaseAmt, LBR_TaxBaseAmt);
@@ -503,7 +527,7 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** Get Tax Base Amount.
 		@return Defines the Tax Base Amount
 	  */
-	public BigDecimal getLBR_TaxBaseAmt () 
+	public BigDecimal getLBR_TaxBaseAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
 		if (bd == null)
@@ -512,9 +536,8 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	}
 
 	/** Set Tax Rate.
-		@param LBR_TaxRate 
-		Indicates the Tax Rate
-	  */
+		@param LBR_TaxRate Indicates the Tax Rate
+	*/
 	public void setLBR_TaxRate (BigDecimal LBR_TaxRate)
 	{
 		set_Value (COLUMNNAME_LBR_TaxRate, LBR_TaxRate);
@@ -523,7 +546,7 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** Get Tax Rate.
 		@return Indicates the Tax Rate
 	  */
-	public BigDecimal getLBR_TaxRate () 
+	public BigDecimal getLBR_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRate);
 		if (bd == null)
@@ -532,9 +555,8 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	}
 
 	/** Set Tax Rate in Amount.
-		@param LBR_TaxRateInAmt 
-		Indicates the Tax Rate in Amount
-	  */
+		@param LBR_TaxRateInAmt Indicates the Tax Rate in Amount
+	*/
 	public void setLBR_TaxRateInAmt (BigDecimal LBR_TaxRateInAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxRateInAmt, LBR_TaxRateInAmt);
@@ -543,7 +565,7 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** Get Tax Rate in Amount.
 		@return Indicates the Tax Rate in Amount
 	  */
-	public BigDecimal getLBR_TaxRateInAmt () 
+	public BigDecimal getLBR_TaxRateInAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRateInAmt);
 		if (bd == null)
@@ -552,9 +574,8 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	}
 
 	/** Set Total Quantity.
-		@param TotalQty 
-		Total Quantity
-	  */
+		@param TotalQty Total Quantity
+	*/
 	public void setTotalQty (BigDecimal TotalQty)
 	{
 		set_Value (COLUMNNAME_TotalQty, TotalQty);
@@ -563,7 +584,7 @@ public class X_LBR_DocLine_COFINS extends PO implements I_LBR_DocLine_COFINS, I_
 	/** Get Total Quantity.
 		@return Total Quantity
 	  */
-	public BigDecimal getTotalQty () 
+	public BigDecimal getTotalQty()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_TotalQty);
 		if (bd == null)

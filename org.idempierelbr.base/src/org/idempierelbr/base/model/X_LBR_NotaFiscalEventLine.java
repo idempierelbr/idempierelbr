@@ -22,21 +22,61 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_NotaFiscalEventLine
- *  @author iDempiere (generated) 
- *  @version Release 7.1 - $Id$ */
-public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEventLine, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_NotaFiscalEventLine")
+public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEventLine, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20201020L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_NotaFiscalEventLine (Properties ctx, int LBR_NotaFiscalEventLine_ID, String trxName)
     {
       super (ctx, LBR_NotaFiscalEventLine_ID, trxName);
       /** if (LBR_NotaFiscalEventLine_ID == 0)
+        {
+			setLBR_NFeEventSeqNo (0);
+// 1
+			setLBR_NFeEventType (null);
+			setLBR_NotaFiscalEvent_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NotaFiscalEventLine (Properties ctx, int LBR_NotaFiscalEventLine_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NotaFiscalEventLine_ID, trxName, virtualColumns);
+      /** if (LBR_NotaFiscalEventLine_ID == 0)
+        {
+			setLBR_NFeEventSeqNo (0);
+// 1
+			setLBR_NFeEventType (null);
+			setLBR_NotaFiscalEvent_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NotaFiscalEventLine (Properties ctx, String LBR_NotaFiscalEventLine_UU, String trxName)
+    {
+      super (ctx, LBR_NotaFiscalEventLine_UU, trxName);
+      /** if (LBR_NotaFiscalEventLine_UU == null)
+        {
+			setLBR_NFeEventSeqNo (0);
+// 1
+			setLBR_NFeEventType (null);
+			setLBR_NotaFiscalEvent_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NotaFiscalEventLine (Properties ctx, String LBR_NotaFiscalEventLine_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NotaFiscalEventLine_UU, trxName, virtualColumns);
+      /** if (LBR_NotaFiscalEventLine_UU == null)
         {
 			setLBR_NFeEventSeqNo (0);
 // 1
@@ -52,7 +92,7 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
     }
 
     /** AccessLevel
-      * @return 1 - Org 
+      * @return 1 - Org
       */
     protected int get_AccessLevel()
     {
@@ -68,15 +108,14 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_NotaFiscalEventLine[")
+      StringBuilder sb = new StringBuilder ("X_LBR_NotaFiscalEventLine[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -85,13 +124,14 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set Correction Reason.
-		@param LBR_CorrectionReason Correction Reason	  */
+		@param LBR_CorrectionReason Correction Reason
+	*/
 	public void setLBR_CorrectionReason (String LBR_CorrectionReason)
 	{
 		set_Value (COLUMNNAME_LBR_CorrectionReason, LBR_CorrectionReason);
@@ -99,13 +139,14 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 
 	/** Get Correction Reason.
 		@return Correction Reason	  */
-	public String getLBR_CorrectionReason () 
+	public String getLBR_CorrectionReason()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CorrectionReason);
 	}
 
 	/** Set Justification.
-		@param LBR_Justification Justification	  */
+		@param LBR_Justification Justification
+	*/
 	public void setLBR_Justification (String LBR_Justification)
 	{
 		set_Value (COLUMNNAME_LBR_Justification, LBR_Justification);
@@ -113,15 +154,14 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 
 	/** Get Justification.
 		@return Justification	  */
-	public String getLBR_Justification () 
+	public String getLBR_Justification()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Justification);
 	}
 
 	/** Set NF-e Lot Sending Protocol.
-		@param LBR_LotSendingProt 
-		Indicates the protocol of the sending process to Sefaz
-	  */
+		@param LBR_LotSendingProt Indicates the protocol of the sending process to Sefaz
+	*/
 	public void setLBR_LotSendingProt (String LBR_LotSendingProt)
 	{
 		set_Value (COLUMNNAME_LBR_LotSendingProt, LBR_LotSendingProt);
@@ -130,13 +170,14 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	/** Get NF-e Lot Sending Protocol.
 		@return Indicates the protocol of the sending process to Sefaz
 	  */
-	public String getLBR_LotSendingProt () 
+	public String getLBR_LotSendingProt()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_LotSendingProt);
 	}
 
 	/** Set NF-e Event Sequence Number.
-		@param LBR_NFeEventSeqNo NF-e Event Sequence Number	  */
+		@param LBR_NFeEventSeqNo NF-e Event Sequence Number
+	*/
 	public void setLBR_NFeEventSeqNo (int LBR_NFeEventSeqNo)
 	{
 		set_Value (COLUMNNAME_LBR_NFeEventSeqNo, Integer.valueOf(LBR_NFeEventSeqNo));
@@ -144,7 +185,7 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 
 	/** Get NF-e Event Sequence Number.
 		@return NF-e Event Sequence Number	  */
-	public int getLBR_NFeEventSeqNo () 
+	public int getLBR_NFeEventSeqNo()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NFeEventSeqNo);
 		if (ii == null)
@@ -152,14 +193,15 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 		return ii.intValue();
 	}
 
-	/** Manifest = MAN */
-	public static final String LBR_NFEEVENTTYPE_Manifest = "MAN";
 	/** Cancellation = CAN */
 	public static final String LBR_NFEEVENTTYPE_Cancellation = "CAN";
 	/** Correction = CCE */
 	public static final String LBR_NFEEVENTTYPE_Correction = "CCE";
+	/** Manifest = MAN */
+	public static final String LBR_NFEEVENTTYPE_Manifest = "MAN";
 	/** Set NF-e Event Type.
-		@param LBR_NFeEventType NF-e Event Type	  */
+		@param LBR_NFeEventType NF-e Event Type
+	*/
 	public void setLBR_NFeEventType (String LBR_NFeEventType)
 	{
 
@@ -168,13 +210,14 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 
 	/** Get NF-e Event Type.
 		@return NF-e Event Type	  */
-	public String getLBR_NFeEventType () 
+	public String getLBR_NFeEventType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NFeEventType);
 	}
 
 	/** Set NFe ID.
-		@param LBR_NFeID NFe ID	  */
+		@param LBR_NFeID NFe ID
+	*/
 	public void setLBR_NFeID (String LBR_NFeID)
 	{
 		set_Value (COLUMNNAME_LBR_NFeID, LBR_NFeID);
@@ -182,13 +225,11 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 
 	/** Get NFe ID.
 		@return NFe ID	  */
-	public String getLBR_NFeID () 
+	public String getLBR_NFeID()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NFeID);
 	}
 
-	/** 693 - Aliquota de ICMS superior a definida para a operacao interestadual = 693 */
-	public static final String LBR_NFESTATUS_693_AliquotaDeICMSSuperiorADefinidaParaAOperacaoInterestadual = "693";
 	/** 100 - Autorizado o uso da NF-e = 100 */
 	public static final String LBR_NFESTATUS_100_AutorizadoOUsoDaNF_E = "100";
 	/** 101 - Cancelamento de NF-e homologado = 101 */
@@ -597,7 +638,7 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	public static final String LBR_NFESTATUS_482_RejeiçãoAADaChaveDeAcessoInválida = "482";
 	/** 483 - Rejeição: MM da Chave de acesso inválido = 483 */
 	public static final String LBR_NFESTATUS_483_RejeiçãoMMDaChaveDeAcessoInválido = "483";
-	/** 484 - Rejeição: DPEC com tipo de emissão diferente de '4'(posição 35 da Chave de Acesso) = 484 */
+	/** 484 - Rejeição: DPEC com tipo de emissão diferente de &#039;4&#039;(posição 35 da Chave de Acesso) = 484 */
 	public static final String LBR_NFESTATUS_484_RejeiçãoDPECComTipoDeEmissãoDiferenteDe4Posição35DaChaveDeAcesso = "484";
 	/** 485 - Rejeição: Número DPEC já existe no cadastro de DPEC = 485 */
 	public static final String LBR_NFESTATUS_485_RejeiçãoNúmeroDPECJáExisteNoCadastroDeDPEC = "485";
@@ -635,7 +676,7 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	public static final String LBR_NFESTATUS_507_RejeiçãoCNPJDestinatárioRemetenteÑDeveSerInformEmOperaçãoCExterior = "507";
 	/** 508 - Rejeição: CNPJ com conteúdo nulo só é válido em operação com exterior = 508 */
 	public static final String LBR_NFESTATUS_508_RejeiçãoCNPJComConteúdoNuloSóÉVálidoEmOperaçãoComExterior = "508";
-	/** 509 - Rejeição: Inform. cód.município diferente de '9999999' para operação c/ exterior = 509 */
+	/** 509 - Rejeição: Inform. cód.município diferente de &#039;9999999&#039; para operação c/ exterior = 509 */
 	public static final String LBR_NFESTATUS_509_RejeiçãoInformCódMunicípioDiferenteDe9999999ParaOperaçãoCExterior = "509";
 	/** 510 - Rejeição: Oper.c/ Exterior e Cód.País destinatário é 1058(Brasil) ou ñ informado = 510 */
 	public static final String LBR_NFESTATUS_510_RejeiçãoOperCExteriorECódPaísDestinatárioÉ1058BrasilOuÑInformado = "510";
@@ -661,7 +702,7 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	public static final String LBR_NFESTATUS_520_RejeiçãoCFOPDeOperaçãoComExteriorEUFDestinatárioDifereDeEX = "520";
 	/** 521 - Rejeição: CFOP não é de Operação com Exterior e UF destinatário é EX = 521 */
 	public static final String LBR_NFESTATUS_521_RejeiçãoCFOPNãoÉDeOperaçãoComExteriorEUFDestinatárioÉEX = "521";
-	/** 522 - Rejeição: CFOP de operação estadual e UF emitente <> da UF remetente contribuinte ICMS = 522 */
+	/** 522 - Rejeição: CFOP de operação estadual e UF emitente &lt;&gt; da UF remetente contribuinte ICMS = 522 */
 	public static final String LBR_NFESTATUS_522_RejeiçãoCFOPDeOperaçãoEstadualEUFEmitenteDaUFRemetenteContribuinteICMS = "522";
 	/** 523 - Rejeição: CFOP não é de Operação Estadual e UF emitente igual a UF destinatário = 523 */
 	public static final String LBR_NFESTATUS_523_RejeiçãoCFOPNãoÉDeOperaçãoEstadualEUFEmitenteIgualAUFDestinatário = "523";
@@ -737,11 +778,11 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	public static final String LBR_NFESTATUS_558_RejeiçãoDataDeEntradaEmContingênciaPosteriorADataDeEmissão = "558";
 	/** 559 - Rejeição: UF do Transportador não informada = 559 */
 	public static final String LBR_NFESTATUS_559_RejeiçãoUFDoTransportadorNãoInformada = "559";
-	/** 560 - Rejeição: CNPJ base do emitente <> CNPJ base da primeira NF-e do lote recebido = 560 */
+	/** 560 - Rejeição: CNPJ base do emitente &lt;&gt; CNPJ base da primeira NF-e do lote recebido = 560 */
 	public static final String LBR_NFESTATUS_560_RejeiçãoCNPJBaseDoEmitenteCNPJBaseDaPrimeiraNF_EDoLoteRecebido = "560";
 	/** 561 - Rejeição: Mês de Emissão informado na Chave de Acesso difere do Mês de Emissão d = 561 */
 	public static final String LBR_NFESTATUS_561_RejeiçãoMêsDeEmissãoInformadoNaChaveDeAcessoDifereDoMêsDeEmissãoD = "561";
-	/** 562 - Rejeição: Código Numérico informado da Chave de Acesso <> Código Numérico da NFe = 562 */
+	/** 562 - Rejeição: Código Numérico informado da Chave de Acesso &lt;&gt; Código Numérico da NFe = 562 */
 	public static final String LBR_NFESTATUS_562_RejeiçãoCódigoNuméricoInformadoDaChaveDeAcessoCódigoNuméricoDaNFe = "562";
 	/** 563 - Rejeição: Já existe pedido de Inutilização com a mesma faixa de inutilização = 563 */
 	public static final String LBR_NFESTATUS_563_RejeiçãoJáExistePedidoDeInutilizaçãoComAMesmaFaixaDeInutilização = "563";
@@ -759,7 +800,7 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	public static final String LBR_NFESTATUS_570_RejeiçãoTipoDeEmissão36E7SóÉValidoNasContingêncisSCANSVC = "570";
 	/** 571 - Rejeição: O tpEmis informado diferente de 3 para contingência SCAN = 571 */
 	public static final String LBR_NFESTATUS_571_RejeiçãoOTpEmisInformadoDiferenteDe3ParaContingênciaSCAN = "571";
-	/** 572 - Rejeição: Erro Atributo ID do evento erro concatenação dos campos ('ID' + tpEvento + chNFe + nSeq) = 572 */
+	/** 572 - Rejeição: Erro Atributo ID do evento erro concatenação dos campos (&#039;ID&#039; + tpEvento + chNFe + nSeq) = 572 */
 	public static final String LBR_NFESTATUS_572_RejeiçãoErroAtributoIDDoEventoErroConcatenaçãoDosCamposIDPlusTpEventoPlusChNFePlusNSeq = "572";
 	/** 573 - Rejeição: Duplicidade de Evento = 573 */
 	public static final String LBR_NFESTATUS_573_RejeiçãoDuplicidadeDeEvento = "573";
@@ -799,7 +840,7 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	public static final String LBR_NFESTATUS_596_RejeiçãoRejeiçãoAmbienteDeHomologaçãoIndisponívelParaRecepçãoDeNF_EDaVersão110 = "596";
 	/** 597 - Rejeição: CFOP de Importação e não informado dados de IPI = 597 */
 	public static final String LBR_NFESTATUS_597_RejeiçãoCFOPDeImportaçãoENãoInformadoDadosDeIPI = "597";
-	/** 598 - Rejeição: NF-e emitida em ambiente de homologação com razão social <> de NF-e (Emitida homologação - S/vlr fiscal) = 598 */
+	/** 598 - Rejeição: NF-e emitida em ambiente de homologação com razão social &lt;&gt; de NF-e (Emitida homologação - S/vlr fiscal) = 598 */
 	public static final String LBR_NFESTATUS_598_RejeiçãoNF_EEmitidaEmAmbienteDeHomologaçãoComRazãoSocialDeNF_EEmitidaHomologação_SVlrFiscal = "598";
 	/** 599 - Rejeição: CFOP de Importação e não informado dados de II = 599 */
 	public static final String LBR_NFESTATUS_599_RejeiçãoCFOPDeImportaçãoENãoInformadoDadosDeII = "599";
@@ -831,9 +872,9 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	public static final String LBR_NFESTATUS_613_RejeiçãoChaveDeAcessoDifereDaExistenteEmBD = "613";
 	/** 614 - Rejeição: Chave de Acesso inválida (Código UF inválido) = 614 */
 	public static final String LBR_NFESTATUS_614_RejeiçãoChaveDeAcessoInválidaCódigoUFInválido = "614";
-	/** 615 - Rejeição: Chave de Acesso inválida (Ano < 05 ou Ano maior que Ano corrente) = 615 */
+	/** 615 - Rejeição: Chave de Acesso inválida (Ano &lt; 05 ou Ano maior que Ano corrente) = 615 */
 	public static final String LBR_NFESTATUS_615_RejeiçãoChaveDeAcessoInválidaAnoLe05OuAnoMaiorQueAnoCorrente = "615";
-	/** 616 - Rejeição: Chave de Acesso inválida (Mês < 1 ou Mês > 12) = 616 */
+	/** 616 - Rejeição: Chave de Acesso inválida (Mês &lt; 1 ou Mês &gt; 12) = 616 */
 	public static final String LBR_NFESTATUS_616_RejeiçãoChaveDeAcessoInválidaMês1OuMês12 = "616";
 	/** 617 - Rejeição: Chave de Acesso inválida (CNPJ zerado ou dígito inválido) = 617 */
 	public static final String LBR_NFESTATUS_617_RejeiçãoChaveDeAcessoInválidaCNPJZeradoOuDígitoInválido = "617";
@@ -873,9 +914,9 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	public static final String LBR_NFESTATUS_634_RejeiçãoDestinatárioDaNF_ENãoTemOMesmoCNPJRaizDoSolicitanteDoDownload = "634";
 	/** 635 - Rejeição: NF-e com mesmo número e série já transmitida e aguardando processamento = 635 */
 	public static final String LBR_NFESTATUS_635_RejeiçãoNF_EComMesmoNúmeroESérieJáTransmitidaEAguardandoProcessamento = "635";
-	/** 650 - Rejeição: Evento de 'Ciência da Operação' para NF-e Cancelada ou Denegada = 650 */
+	/** 650 - Rejeição: Evento de &#039;Ciência da Operação&#039; para NF-e Cancelada ou Denegada = 650 */
 	public static final String LBR_NFESTATUS_650_RejeiçãoEventoDeCiênciaDaOperaçãoParaNF_ECanceladaOuDenegada = "650";
-	/** 651 - Rejeição: Evento de 'Desconhecimento da Operação' para NF-e Cancelada ou Denegada = 651 */
+	/** 651 - Rejeição: Evento de &#039;Desconhecimento da Operação&#039; para NF-e Cancelada ou Denegada = 651 */
 	public static final String LBR_NFESTATUS_651_RejeiçãoEventoDeDesconhecimentoDaOperaçãoParaNF_ECanceladaOuDenegada = "651";
 	/** 653 - Rejeição: NF-e Cancelada; arquivo indisponível para download = 653 */
 	public static final String LBR_NFESTATUS_653_RejeiçãoNF_ECanceladaArquivoIndisponívelParaDownload = "653";
@@ -923,6 +964,8 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	public static final String LBR_NFESTATUS_689_RejeiçãoNFReferenciadaDeProdutorComIENãoVinculadaAoCNPJCPFInformadoNREFXxx = "689";
 	/** 690 - Rejeição: Pedido de cancelamento para NF-e com CT-e ou MDF-e = 690 */
 	public static final String LBR_NFESTATUS_690_RejeiçãoPedidoDeCancelamentoParaNF_EComCT_EOuMDF_E = "690";
+	/** 693 - Aliquota de ICMS superior a definida para a operacao interestadual = 693 */
+	public static final String LBR_NFESTATUS_693_AliquotaDeICMSSuperiorADefinidaParaAOperacaoInterestadual = "693";
 	/** 701 - Rejeição: NF-e não pode utilizar verão 3.00 = 701 */
 	public static final String LBR_NFESTATUS_701_RejeiçãoNF_ENãoPodeUtilizarVerão300 = "701";
 	/** 702 - Rejeição: NFC-e não é aceita pela UF do Emitente = 702 */
@@ -983,11 +1026,11 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	public static final String LBR_NFESTATUS_729_RejeiçãoNFC_ESemInformaçãoDaIEDoDestinatário = "729";
 	/** 730 - Rejeição: NFC-e com inscrição SUFRAMA = 730 */
 	public static final String LBR_NFESTATUS_730_RejeiçãoNFC_EComInscriçãoSUFRAMA = "730";
-	/** 731 - Rejeição: CFOP de operação com exterior e idDest <> 3 = 731 */
+	/** 731 - Rejeição: CFOP de operação com exterior e idDest &lt;&gt; 3 = 731 */
 	public static final String LBR_NFESTATUS_731_RejeiçãoCFOPDeOperaçãoComExteriorEIdDest3 = "731";
-	/** 732 - Rejeição: CFOP de operação com interestadual e idDest <> 2 = 732 */
+	/** 732 - Rejeição: CFOP de operação com interestadual e idDest &lt;&gt; 2 = 732 */
 	public static final String LBR_NFESTATUS_732_RejeiçãoCFOPDeOperaçãoComInterestadualEIdDest2 = "732";
-	/** 733 - Rejeição: CFOP de operação interna e idDest <> 1 = 733 */
+	/** 733 - Rejeição: CFOP de operação interna e idDest &lt;&gt; 1 = 733 */
 	public static final String LBR_NFESTATUS_733_RejeiçãoCFOPDeOperaçãoInternaEIdDest1 = "733";
 	/** 734 - Rejeição: NFC-e com unidade de comercialização inválida = 734 */
 	public static final String LBR_NFESTATUS_734_RejeiçãoNFC_EComUnidadeDeComercializaçãoInválida = "734";
@@ -1100,7 +1143,8 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	/** 999 - Rejeição: Erro não catalogado = 999 */
 	public static final String LBR_NFESTATUS_999_RejeiçãoErroNãoCatalogado = "999";
 	/** Set NFe Status.
-		@param LBR_NFeStatus NFe Status	  */
+		@param LBR_NFeStatus NFe Status
+	*/
 	public void setLBR_NFeStatus (String LBR_NFeStatus)
 	{
 
@@ -1109,29 +1153,31 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 
 	/** Get NFe Status.
 		@return NFe Status	  */
-	public String getLBR_NFeStatus () 
+	public String getLBR_NFeStatus()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NFeStatus);
 	}
 
 	public I_LBR_NFeXML getLBR_NFeXML() throws RuntimeException
-    {
-		return (I_LBR_NFeXML)MTable.get(getCtx(), I_LBR_NFeXML.Table_Name)
-			.getPO(getLBR_NFeXML_ID(), get_TrxName());	}
+	{
+		return (I_LBR_NFeXML)MTable.get(getCtx(), I_LBR_NFeXML.Table_ID)
+			.getPO(getLBR_NFeXML_ID(), get_TrxName());
+	}
 
 	/** Set NFe XML.
-		@param LBR_NFeXML_ID NFe XML	  */
+		@param LBR_NFeXML_ID NFe XML
+	*/
 	public void setLBR_NFeXML_ID (int LBR_NFeXML_ID)
 	{
-		if (LBR_NFeXML_ID < 1) 
+		if (LBR_NFeXML_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_NFeXML_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_NFeXML_ID, Integer.valueOf(LBR_NFeXML_ID));
 	}
 
 	/** Get NFe XML.
 		@return NFe XML	  */
-	public int getLBR_NFeXML_ID () 
+	public int getLBR_NFeXML_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NFeXML_ID);
 		if (ii == null)
@@ -1139,50 +1185,21 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 		return ii.intValue();
 	}
 
-	public I_LBR_NotaFiscalEvent getLBR_NotaFiscalEvent() throws RuntimeException
-    {
-		return (I_LBR_NotaFiscalEvent)MTable.get(getCtx(), I_LBR_NotaFiscalEvent.Table_Name)
-			.getPO(getLBR_NotaFiscalEvent_ID(), get_TrxName());	}
-
-	/** Set NF-e Event Lot.
-		@param LBR_NotaFiscalEvent_ID 
-		Identifies a NF-e Event Lot
-	  */
-	public void setLBR_NotaFiscalEvent_ID (int LBR_NotaFiscalEvent_ID)
-	{
-		if (LBR_NotaFiscalEvent_ID < 1) 
-			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalEvent_ID, null);
-		else 
-			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalEvent_ID, Integer.valueOf(LBR_NotaFiscalEvent_ID));
-	}
-
-	/** Get NF-e Event Lot.
-		@return Identifies a NF-e Event Lot
-	  */
-	public int getLBR_NotaFiscalEvent_ID () 
-	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NotaFiscalEvent_ID);
-		if (ii == null)
-			 return 0;
-		return ii.intValue();
-	}
-
 	/** Set NF-e Event Lot Line.
-		@param LBR_NotaFiscalEventLine_ID 
-		Identifies a NF-e Event Lot Line
-	  */
+		@param LBR_NotaFiscalEventLine_ID Identifies a NF-e Event Lot Line
+	*/
 	public void setLBR_NotaFiscalEventLine_ID (int LBR_NotaFiscalEventLine_ID)
 	{
-		if (LBR_NotaFiscalEventLine_ID < 1) 
+		if (LBR_NotaFiscalEventLine_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalEventLine_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalEventLine_ID, Integer.valueOf(LBR_NotaFiscalEventLine_ID));
 	}
 
 	/** Get NF-e Event Lot Line.
 		@return Identifies a NF-e Event Lot Line
 	  */
-	public int getLBR_NotaFiscalEventLine_ID () 
+	public int getLBR_NotaFiscalEventLine_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NotaFiscalEventLine_ID);
 		if (ii == null)
@@ -1191,9 +1208,8 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	}
 
 	/** Set NF-e Event Lot Line.
-		@param LBR_NotaFiscalEventLine_UU 
-		Identifies a NF-e Event Lot Line
-	  */
+		@param LBR_NotaFiscalEventLine_UU Identifies a NF-e Event Lot Line
+	*/
 	public void setLBR_NotaFiscalEventLine_UU (String LBR_NotaFiscalEventLine_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalEventLine_UU, LBR_NotaFiscalEventLine_UU);
@@ -1202,32 +1218,60 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	/** Get NF-e Event Lot Line.
 		@return Identifies a NF-e Event Lot Line
 	  */
-	public String getLBR_NotaFiscalEventLine_UU () 
+	public String getLBR_NotaFiscalEventLine_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NotaFiscalEventLine_UU);
 	}
 
+	public I_LBR_NotaFiscalEvent getLBR_NotaFiscalEvent() throws RuntimeException
+	{
+		return (I_LBR_NotaFiscalEvent)MTable.get(getCtx(), I_LBR_NotaFiscalEvent.Table_ID)
+			.getPO(getLBR_NotaFiscalEvent_ID(), get_TrxName());
+	}
+
+	/** Set NF-e Event Lot.
+		@param LBR_NotaFiscalEvent_ID Identifies a NF-e Event Lot
+	*/
+	public void setLBR_NotaFiscalEvent_ID (int LBR_NotaFiscalEvent_ID)
+	{
+		if (LBR_NotaFiscalEvent_ID < 1)
+			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalEvent_ID, null);
+		else
+			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalEvent_ID, Integer.valueOf(LBR_NotaFiscalEvent_ID));
+	}
+
+	/** Get NF-e Event Lot.
+		@return Identifies a NF-e Event Lot
+	  */
+	public int getLBR_NotaFiscalEvent_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NotaFiscalEvent_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
 	public I_LBR_NotaFiscal getLBR_NotaFiscal() throws RuntimeException
-    {
-		return (I_LBR_NotaFiscal)MTable.get(getCtx(), I_LBR_NotaFiscal.Table_Name)
-			.getPO(getLBR_NotaFiscal_ID(), get_TrxName());	}
+	{
+		return (I_LBR_NotaFiscal)MTable.get(getCtx(), I_LBR_NotaFiscal.Table_ID)
+			.getPO(getLBR_NotaFiscal_ID(), get_TrxName());
+	}
 
 	/** Set Brazilian Fiscal Invoice (Nota Fiscal).
-		@param LBR_NotaFiscal_ID 
-		Brazilian Fiscal Invoice (Nota Fiscal) Identifier
-	  */
+		@param LBR_NotaFiscal_ID Brazilian Fiscal Invoice (Nota Fiscal) Identifier
+	*/
 	public void setLBR_NotaFiscal_ID (int LBR_NotaFiscal_ID)
 	{
-		if (LBR_NotaFiscal_ID < 1) 
+		if (LBR_NotaFiscal_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscal_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscal_ID, Integer.valueOf(LBR_NotaFiscal_ID));
 	}
 
 	/** Get Brazilian Fiscal Invoice (Nota Fiscal).
 		@return Brazilian Fiscal Invoice (Nota Fiscal) Identifier
 	  */
-	public int getLBR_NotaFiscal_ID () 
+	public int getLBR_NotaFiscal_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NotaFiscal_ID);
 		if (ii == null)
@@ -1246,7 +1290,8 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 	/** 210240 - Operacao nao Realizada = 210240 */
 	public static final String LBR_TIPODEMANIFESTACAO_210240_OperacaoNaoRealizada = "210240";
 	/** Set Tipo de Manifestacao.
-		@param LBR_TipoDeManifestacao Tipo de Manifestacao	  */
+		@param LBR_TipoDeManifestacao Tipo de Manifestacao
+	*/
 	public void setLBR_TipoDeManifestacao (String LBR_TipoDeManifestacao)
 	{
 
@@ -1255,7 +1300,7 @@ public class X_LBR_NotaFiscalEventLine extends PO implements I_LBR_NotaFiscalEve
 
 	/** Get Tipo de Manifestacao.
 		@return Tipo de Manifestacao	  */
-	public String getLBR_TipoDeManifestacao () 
+	public String getLBR_TipoDeManifestacao()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TipoDeManifestacao);
 	}

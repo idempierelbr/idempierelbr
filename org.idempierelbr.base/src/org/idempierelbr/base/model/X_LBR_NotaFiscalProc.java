@@ -22,15 +22,16 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_NotaFiscalProc
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_NotaFiscalProc extends PO implements I_LBR_NotaFiscalProc, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_NotaFiscalProc")
+public class X_LBR_NotaFiscalProc extends PO implements I_LBR_NotaFiscalProc, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140515L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_NotaFiscalProc (Properties ctx, int LBR_NotaFiscalProc_ID, String trxName)
@@ -39,8 +40,47 @@ public class X_LBR_NotaFiscalProc extends PO implements I_LBR_NotaFiscalProc, I_
       /** if (LBR_NotaFiscalProc_ID == 0)
         {
 			setLBR_NFeProcOrigin (null);
-			setLBR_NotaFiscal_ID (0);
 			setLBR_NotaFiscalProc_ID (0);
+			setLBR_NotaFiscal_ID (0);
+			setProcessName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NotaFiscalProc (Properties ctx, int LBR_NotaFiscalProc_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NotaFiscalProc_ID, trxName, virtualColumns);
+      /** if (LBR_NotaFiscalProc_ID == 0)
+        {
+			setLBR_NFeProcOrigin (null);
+			setLBR_NotaFiscalProc_ID (0);
+			setLBR_NotaFiscal_ID (0);
+			setProcessName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NotaFiscalProc (Properties ctx, String LBR_NotaFiscalProc_UU, String trxName)
+    {
+      super (ctx, LBR_NotaFiscalProc_UU, trxName);
+      /** if (LBR_NotaFiscalProc_UU == null)
+        {
+			setLBR_NFeProcOrigin (null);
+			setLBR_NotaFiscalProc_ID (0);
+			setLBR_NotaFiscal_ID (0);
+			setProcessName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NotaFiscalProc (Properties ctx, String LBR_NotaFiscalProc_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NotaFiscalProc_UU, trxName, virtualColumns);
+      /** if (LBR_NotaFiscalProc_UU == null)
+        {
+			setLBR_NFeProcOrigin (null);
+			setLBR_NotaFiscalProc_ID (0);
+			setLBR_NotaFiscal_ID (0);
 			setProcessName (null);
         } */
     }
@@ -52,7 +92,7 @@ public class X_LBR_NotaFiscalProc extends PO implements I_LBR_NotaFiscalProc, I_
     }
 
     /** AccessLevel
-      * @return 1 - Org 
+      * @return 1 - Org
       */
     protected int get_AccessLevel()
     {
@@ -68,7 +108,7 @@ public class X_LBR_NotaFiscalProc extends PO implements I_LBR_NotaFiscalProc, I_
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_NotaFiscalProc[")
+      StringBuilder sb = new StringBuilder ("X_LBR_NotaFiscalProc[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
@@ -84,7 +124,8 @@ public class X_LBR_NotaFiscalProc extends PO implements I_LBR_NotaFiscalProc, I_
 	/** Outros = 9 */
 	public static final String LBR_NFEPROCORIGIN_Outros = "9";
 	/** Set NFe Process Origin.
-		@param LBR_NFeProcOrigin NFe Process Origin	  */
+		@param LBR_NFeProcOrigin NFe Process Origin
+	*/
 	public void setLBR_NFeProcOrigin (String LBR_NFeProcOrigin)
 	{
 
@@ -93,52 +134,25 @@ public class X_LBR_NotaFiscalProc extends PO implements I_LBR_NotaFiscalProc, I_
 
 	/** Get NFe Process Origin.
 		@return NFe Process Origin	  */
-	public String getLBR_NFeProcOrigin () 
+	public String getLBR_NFeProcOrigin()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NFeProcOrigin);
 	}
 
-	public I_LBR_NotaFiscal getLBR_NotaFiscal() throws RuntimeException
-    {
-		return (I_LBR_NotaFiscal)MTable.get(getCtx(), I_LBR_NotaFiscal.Table_Name)
-			.getPO(getLBR_NotaFiscal_ID(), get_TrxName());	}
-
-	/** Set Brazilian Fiscal Invoice (Nota Fiscal).
-		@param LBR_NotaFiscal_ID 
-		Brazilian Fiscal Invoice (Nota Fiscal) Identifier
-	  */
-	public void setLBR_NotaFiscal_ID (int LBR_NotaFiscal_ID)
-	{
-		if (LBR_NotaFiscal_ID < 1) 
-			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscal_ID, null);
-		else 
-			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscal_ID, Integer.valueOf(LBR_NotaFiscal_ID));
-	}
-
-	/** Get Brazilian Fiscal Invoice (Nota Fiscal).
-		@return Brazilian Fiscal Invoice (Nota Fiscal) Identifier
-	  */
-	public int getLBR_NotaFiscal_ID () 
-	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NotaFiscal_ID);
-		if (ii == null)
-			 return 0;
-		return ii.intValue();
-	}
-
 	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process.
-		@param LBR_NotaFiscalProc_ID Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process	  */
+		@param LBR_NotaFiscalProc_ID Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process
+	*/
 	public void setLBR_NotaFiscalProc_ID (int LBR_NotaFiscalProc_ID)
 	{
-		if (LBR_NotaFiscalProc_ID < 1) 
+		if (LBR_NotaFiscalProc_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalProc_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalProc_ID, Integer.valueOf(LBR_NotaFiscalProc_ID));
 	}
 
 	/** Get Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process.
 		@return Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process	  */
-	public int getLBR_NotaFiscalProc_ID () 
+	public int getLBR_NotaFiscalProc_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NotaFiscalProc_ID);
 		if (ii == null)
@@ -147,7 +161,8 @@ public class X_LBR_NotaFiscalProc extends PO implements I_LBR_NotaFiscalProc, I_
 	}
 
 	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process.
-		@param LBR_NotaFiscalProc_UU Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process	  */
+		@param LBR_NotaFiscalProc_UU Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process
+	*/
 	public void setLBR_NotaFiscalProc_UU (String LBR_NotaFiscalProc_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalProc_UU, LBR_NotaFiscalProc_UU);
@@ -155,15 +170,42 @@ public class X_LBR_NotaFiscalProc extends PO implements I_LBR_NotaFiscalProc, I_
 
 	/** Get Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process.
 		@return Brazilian Fiscal Invoice (Nota Fiscal) Referenced Process	  */
-	public String getLBR_NotaFiscalProc_UU () 
+	public String getLBR_NotaFiscalProc_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NotaFiscalProc_UU);
 	}
 
-	/** Set Process Name.
-		@param ProcessName 
-		Name of the Process
+	public I_LBR_NotaFiscal getLBR_NotaFiscal() throws RuntimeException
+	{
+		return (I_LBR_NotaFiscal)MTable.get(getCtx(), I_LBR_NotaFiscal.Table_ID)
+			.getPO(getLBR_NotaFiscal_ID(), get_TrxName());
+	}
+
+	/** Set Brazilian Fiscal Invoice (Nota Fiscal).
+		@param LBR_NotaFiscal_ID Brazilian Fiscal Invoice (Nota Fiscal) Identifier
+	*/
+	public void setLBR_NotaFiscal_ID (int LBR_NotaFiscal_ID)
+	{
+		if (LBR_NotaFiscal_ID < 1)
+			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscal_ID, null);
+		else
+			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscal_ID, Integer.valueOf(LBR_NotaFiscal_ID));
+	}
+
+	/** Get Brazilian Fiscal Invoice (Nota Fiscal).
+		@return Brazilian Fiscal Invoice (Nota Fiscal) Identifier
 	  */
+	public int getLBR_NotaFiscal_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NotaFiscal_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	/** Set Process Name.
+		@param ProcessName Name of the Process
+	*/
 	public void setProcessName (String ProcessName)
 	{
 		set_Value (COLUMNNAME_ProcessName, ProcessName);
@@ -172,7 +214,7 @@ public class X_LBR_NotaFiscalProc extends PO implements I_LBR_NotaFiscalProc, I_
 	/** Get Process Name.
 		@return Name of the Process
 	  */
-	public String getProcessName () 
+	public String getProcessName()
 	{
 		return (String)get_Value(COLUMNNAME_ProcessName);
 	}

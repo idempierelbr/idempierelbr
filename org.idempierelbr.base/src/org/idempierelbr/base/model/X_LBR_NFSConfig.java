@@ -22,21 +22,64 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_NFSConfig
- *  @author iDempiere (generated) 
- *  @version Release 3.1 - $Id$ */
-public class X_LBR_NFSConfig extends PO implements I_LBR_NFSConfig, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_NFSConfig")
+public class X_LBR_NFSConfig extends PO implements I_LBR_NFSConfig, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20170111L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_NFSConfig (Properties ctx, int LBR_NFSConfig_ID, String trxName)
     {
       super (ctx, LBR_NFSConfig_ID, trxName);
       /** if (LBR_NFSConfig_ID == 0)
+        {
+			setLBR_NFSConfig_ID (0);
+			setLBR_NFSModel (null);
+// --
+			setLBR_ProcessingType (null);
+// A
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NFSConfig (Properties ctx, int LBR_NFSConfig_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NFSConfig_ID, trxName, virtualColumns);
+      /** if (LBR_NFSConfig_ID == 0)
+        {
+			setLBR_NFSConfig_ID (0);
+			setLBR_NFSModel (null);
+// --
+			setLBR_ProcessingType (null);
+// A
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NFSConfig (Properties ctx, String LBR_NFSConfig_UU, String trxName)
+    {
+      super (ctx, LBR_NFSConfig_UU, trxName);
+      /** if (LBR_NFSConfig_UU == null)
+        {
+			setLBR_NFSConfig_ID (0);
+			setLBR_NFSModel (null);
+// --
+			setLBR_ProcessingType (null);
+// A
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NFSConfig (Properties ctx, String LBR_NFSConfig_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NFSConfig_UU, trxName, virtualColumns);
+      /** if (LBR_NFSConfig_UU == null)
         {
 			setLBR_NFSConfig_ID (0);
 			setLBR_NFSModel (null);
@@ -53,7 +96,7 @@ public class X_LBR_NFSConfig extends PO implements I_LBR_NFSConfig, I_Persistent
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -69,15 +112,14 @@ public class X_LBR_NFSConfig extends PO implements I_LBR_NFSConfig, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_NFSConfig[")
+      StringBuilder sb = new StringBuilder ("X_LBR_NFSConfig[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -86,24 +128,25 @@ public class X_LBR_NFSConfig extends PO implements I_LBR_NFSConfig, I_Persistent
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set Configuração de Nota Fiscal de Serviço.
-		@param LBR_NFSConfig_ID Configuração de Nota Fiscal de Serviço	  */
+		@param LBR_NFSConfig_ID Configuração de Nota Fiscal de Serviço
+	*/
 	public void setLBR_NFSConfig_ID (int LBR_NFSConfig_ID)
 	{
-		if (LBR_NFSConfig_ID < 1) 
+		if (LBR_NFSConfig_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_NFSConfig_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_NFSConfig_ID, Integer.valueOf(LBR_NFSConfig_ID));
 	}
 
 	/** Get Configuração de Nota Fiscal de Serviço.
 		@return Configuração de Nota Fiscal de Serviço	  */
-	public int getLBR_NFSConfig_ID () 
+	public int getLBR_NFSConfig_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NFSConfig_ID);
 		if (ii == null)
@@ -112,7 +155,8 @@ public class X_LBR_NFSConfig extends PO implements I_LBR_NFSConfig, I_Persistent
 	}
 
 	/** Set LBR_NFSConfig_UU.
-		@param LBR_NFSConfig_UU LBR_NFSConfig_UU	  */
+		@param LBR_NFSConfig_UU LBR_NFSConfig_UU
+	*/
 	public void setLBR_NFSConfig_UU (String LBR_NFSConfig_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_NFSConfig_UU, LBR_NFSConfig_UU);
@@ -120,13 +164,14 @@ public class X_LBR_NFSConfig extends PO implements I_LBR_NFSConfig, I_Persistent
 
 	/** Get LBR_NFSConfig_UU.
 		@return LBR_NFSConfig_UU	  */
-	public String getLBR_NFSConfig_UU () 
+	public String getLBR_NFSConfig_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NFSConfig_UU);
 	}
 
 	/** Set Modelo de NFS.
-		@param LBR_NFSModel Modelo de NFS	  */
+		@param LBR_NFSModel Modelo de NFS
+	*/
 	public void setLBR_NFSModel (String LBR_NFSModel)
 	{
 		set_Value (COLUMNNAME_LBR_NFSModel, LBR_NFSModel);
@@ -134,13 +179,14 @@ public class X_LBR_NFSConfig extends PO implements I_LBR_NFSConfig, I_Persistent
 
 	/** Get Modelo de NFS.
 		@return Modelo de NFS	  */
-	public String getLBR_NFSModel () 
+	public String getLBR_NFSModel()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NFSModel);
 	}
 
 	/** Set Fornecedor de NFS-e para Prefeitura.
-		@param LBR_NFSPlayer Fornecedor de NFS-e para Prefeitura	  */
+		@param LBR_NFSPlayer Fornecedor de NFS-e para Prefeitura
+	*/
 	public void setLBR_NFSPlayer (String LBR_NFSPlayer)
 	{
 		set_Value (COLUMNNAME_LBR_NFSPlayer, LBR_NFSPlayer);
@@ -148,17 +194,18 @@ public class X_LBR_NFSConfig extends PO implements I_LBR_NFSConfig, I_Persistent
 
 	/** Get Fornecedor de NFS-e para Prefeitura.
 		@return Fornecedor de NFS-e para Prefeitura	  */
-	public String getLBR_NFSPlayer () 
+	public String getLBR_NFSPlayer()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NFSPlayer);
 	}
 
-	/** Synchronous = S */
-	public static final String LBR_PROCESSINGTYPE_Synchronous = "S";
 	/** Asynchronous = A */
 	public static final String LBR_PROCESSINGTYPE_Asynchronous = "A";
+	/** Synchronous = S */
+	public static final String LBR_PROCESSINGTYPE_Synchronous = "S";
 	/** Set Processing Type.
-		@param LBR_ProcessingType Processing Type	  */
+		@param LBR_ProcessingType Processing Type
+	*/
 	public void setLBR_ProcessingType (String LBR_ProcessingType)
 	{
 
@@ -167,7 +214,7 @@ public class X_LBR_NFSConfig extends PO implements I_LBR_NFSConfig, I_Persistent
 
 	/** Get Processing Type.
 		@return Processing Type	  */
-	public String getLBR_ProcessingType () 
+	public String getLBR_ProcessingType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ProcessingType);
 	}

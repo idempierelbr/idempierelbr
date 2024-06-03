@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NotaFiscalDI
  *  @author iDempiere (generated) 
- *  @version Release 2.1
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_NotaFiscalDI 
@@ -46,8 +46,8 @@ public interface I_LBR_NotaFiscalDI
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_NotaFiscalDI
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -102,21 +102,6 @@ public interface I_LBR_NotaFiscalDI
 	/** Get AFRMM Amount	  */
 	public BigDecimal getLBR_AfrmmAmt();
 
-    /** Column name LBR_DI_Addition_ID */
-    public static final String COLUMNNAME_LBR_DI_Addition_ID = "LBR_DI_Addition_ID";
-
-	/** Set Import Declaration (DI) Addition.
-	  * Identifies an Import Declaration (DI) Addiction
-	  */
-	public void setLBR_DI_Addition_ID (int LBR_DI_Addition_ID);
-
-	/** Get Import Declaration (DI) Addition.
-	  * Identifies an Import Declaration (DI) Addiction
-	  */
-	public int getLBR_DI_Addition_ID();
-
-	public I_LBR_DI_Addition getLBR_DI_Addition() throws RuntimeException;
-
     /** Column name LBR_DI_AdditionProd_ID */
     public static final String COLUMNNAME_LBR_DI_AdditionProd_ID = "LBR_DI_AdditionProd_ID";
 
@@ -131,6 +116,21 @@ public interface I_LBR_NotaFiscalDI
 	public int getLBR_DI_AdditionProd_ID();
 
 	public I_LBR_DI_AdditionProd getLBR_DI_AdditionProd() throws RuntimeException;
+
+    /** Column name LBR_DI_Addition_ID */
+    public static final String COLUMNNAME_LBR_DI_Addition_ID = "LBR_DI_Addition_ID";
+
+	/** Set Import Declaration (DI) Addition.
+	  * Identifies an Import Declaration (DI) Addiction
+	  */
+	public void setLBR_DI_Addition_ID (int LBR_DI_Addition_ID);
+
+	/** Get Import Declaration (DI) Addition.
+	  * Identifies an Import Declaration (DI) Addiction
+	  */
+	public int getLBR_DI_Addition_ID();
+
+	public I_LBR_DI_Addition getLBR_DI_Addition() throws RuntimeException;
 
     /** Column name LBR_NotaFiscalDI_ID */
     public static final String COLUMNNAME_LBR_NotaFiscalDI_ID = "LBR_NotaFiscalDI_ID";

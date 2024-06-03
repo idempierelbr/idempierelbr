@@ -26,15 +26,16 @@ import org.compiere.util.Env;
 import org.compiere.util.KeyNamePair;
 
 /** Generated Model for LBR_Boleto
- *  @author iDempiere (generated) 
- *  @version Release 2.1 - $Id$ */
-public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_Boleto")
+public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20141205L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_Boleto (Properties ctx, int LBR_Boleto_ID, String trxName)
@@ -42,10 +43,130 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
       super (ctx, LBR_Boleto_ID, trxName);
       /** if (LBR_Boleto_ID == 0)
         {
-			setC_BankAccount_ID (0);
-			setC_Bank_ID (0);
 			setC_BPartner_ID (0);
 			setC_BPartner_Location_ID (0);
+			setC_BankAccount_ID (0);
+			setC_Bank_ID (0);
+			setC_DocType_ID (0);
+			setC_Invoice_ID (0);
+			setDateAcct (new Timestamp( System.currentTimeMillis() ));
+// @#Date@
+			setDateDoc (new Timestamp( System.currentTimeMillis() ));
+// @#Date@
+			setDocAction (null);
+// CO
+			setDocStatus (null);
+// DR
+			setDocumentNo (null);
+			setDueDate (new Timestamp( System.currentTimeMillis() ));
+			setGrandTotal (Env.ZERO);
+			setLBR_Accepted (null);
+			setLBR_BankAccount_Carteira_ID (0);
+			setLBR_BankAccount_Convenio_ID (0);
+			setLBR_CNAB240Currency (null);
+			setLBR_CNAB240DocType (null);
+			setLBR_CollectionRegType (null);
+			setLBR_CollectionType (null);
+			setLBR_DistributionType (null);
+			setLBR_IssueType (null);
+			setLBR_NumberInOrg (null);
+			setLBR_PartialPayment (null);
+			setPosted (false);
+// N
+			setProcessed (false);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Boleto (Properties ctx, int LBR_Boleto_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_Boleto_ID, trxName, virtualColumns);
+      /** if (LBR_Boleto_ID == 0)
+        {
+			setC_BPartner_ID (0);
+			setC_BPartner_Location_ID (0);
+			setC_BankAccount_ID (0);
+			setC_Bank_ID (0);
+			setC_DocType_ID (0);
+			setC_Invoice_ID (0);
+			setDateAcct (new Timestamp( System.currentTimeMillis() ));
+// @#Date@
+			setDateDoc (new Timestamp( System.currentTimeMillis() ));
+// @#Date@
+			setDocAction (null);
+// CO
+			setDocStatus (null);
+// DR
+			setDocumentNo (null);
+			setDueDate (new Timestamp( System.currentTimeMillis() ));
+			setGrandTotal (Env.ZERO);
+			setLBR_Accepted (null);
+			setLBR_BankAccount_Carteira_ID (0);
+			setLBR_BankAccount_Convenio_ID (0);
+			setLBR_CNAB240Currency (null);
+			setLBR_CNAB240DocType (null);
+			setLBR_CollectionRegType (null);
+			setLBR_CollectionType (null);
+			setLBR_DistributionType (null);
+			setLBR_IssueType (null);
+			setLBR_NumberInOrg (null);
+			setLBR_PartialPayment (null);
+			setPosted (false);
+// N
+			setProcessed (false);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Boleto (Properties ctx, String LBR_Boleto_UU, String trxName)
+    {
+      super (ctx, LBR_Boleto_UU, trxName);
+      /** if (LBR_Boleto_UU == null)
+        {
+			setC_BPartner_ID (0);
+			setC_BPartner_Location_ID (0);
+			setC_BankAccount_ID (0);
+			setC_Bank_ID (0);
+			setC_DocType_ID (0);
+			setC_Invoice_ID (0);
+			setDateAcct (new Timestamp( System.currentTimeMillis() ));
+// @#Date@
+			setDateDoc (new Timestamp( System.currentTimeMillis() ));
+// @#Date@
+			setDocAction (null);
+// CO
+			setDocStatus (null);
+// DR
+			setDocumentNo (null);
+			setDueDate (new Timestamp( System.currentTimeMillis() ));
+			setGrandTotal (Env.ZERO);
+			setLBR_Accepted (null);
+			setLBR_BankAccount_Carteira_ID (0);
+			setLBR_BankAccount_Convenio_ID (0);
+			setLBR_CNAB240Currency (null);
+			setLBR_CNAB240DocType (null);
+			setLBR_CollectionRegType (null);
+			setLBR_CollectionType (null);
+			setLBR_DistributionType (null);
+			setLBR_IssueType (null);
+			setLBR_NumberInOrg (null);
+			setLBR_PartialPayment (null);
+			setPosted (false);
+// N
+			setProcessed (false);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Boleto (Properties ctx, String LBR_Boleto_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_Boleto_UU, trxName, virtualColumns);
+      /** if (LBR_Boleto_UU == null)
+        {
+			setC_BPartner_ID (0);
+			setC_BPartner_Location_ID (0);
+			setC_BankAccount_ID (0);
+			setC_Bank_ID (0);
 			setC_DocType_ID (0);
 			setC_Invoice_ID (0);
 			setDateAcct (new Timestamp( System.currentTimeMillis() ));
@@ -83,7 +204,7 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
     }
 
     /** AccessLevel
-      * @return 1 - Org 
+      * @return 1 - Org
       */
     protected int get_AccessLevel()
     {
@@ -99,88 +220,32 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_Boleto[")
+      StringBuilder sb = new StringBuilder ("X_LBR_Boleto[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
-	public org.compiere.model.I_C_BankAccount getC_BankAccount() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_BankAccount)MTable.get(getCtx(), org.compiere.model.I_C_BankAccount.Table_Name)
-			.getPO(getC_BankAccount_ID(), get_TrxName());	}
-
-	/** Set Bank Account.
-		@param C_BankAccount_ID 
-		Account at the Bank
-	  */
-	public void setC_BankAccount_ID (int C_BankAccount_ID)
-	{
-		if (C_BankAccount_ID < 1) 
-			set_Value (COLUMNNAME_C_BankAccount_ID, null);
-		else 
-			set_Value (COLUMNNAME_C_BankAccount_ID, Integer.valueOf(C_BankAccount_ID));
-	}
-
-	/** Get Bank Account.
-		@return Account at the Bank
-	  */
-	public int getC_BankAccount_ID () 
-	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_C_BankAccount_ID);
-		if (ii == null)
-			 return 0;
-		return ii.intValue();
-	}
-
-	public org.compiere.model.I_C_Bank getC_Bank() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Bank)MTable.get(getCtx(), org.compiere.model.I_C_Bank.Table_Name)
-			.getPO(getC_Bank_ID(), get_TrxName());	}
-
-	/** Set Bank.
-		@param C_Bank_ID 
-		Bank
-	  */
-	public void setC_Bank_ID (int C_Bank_ID)
-	{
-		if (C_Bank_ID < 1) 
-			set_Value (COLUMNNAME_C_Bank_ID, null);
-		else 
-			set_Value (COLUMNNAME_C_Bank_ID, Integer.valueOf(C_Bank_ID));
-	}
-
-	/** Get Bank.
-		@return Bank
-	  */
-	public int getC_Bank_ID () 
-	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_C_Bank_ID);
-		if (ii == null)
-			 return 0;
-		return ii.intValue();
-	}
-
 	public org.compiere.model.I_C_BPartner getC_BPartner() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_Name)
-			.getPO(getC_BPartner_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_ID)
+			.getPO(getC_BPartner_ID(), get_TrxName());
+	}
 
-	/** Set Business Partner .
-		@param C_BPartner_ID 
-		Identifies a Business Partner
-	  */
+	/** Set Business Partner.
+		@param C_BPartner_ID Identifies a Business Partner
+	*/
 	public void setC_BPartner_ID (int C_BPartner_ID)
 	{
-		if (C_BPartner_ID < 1) 
+		if (C_BPartner_ID < 1)
 			set_Value (COLUMNNAME_C_BPartner_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_C_BPartner_ID, Integer.valueOf(C_BPartner_ID));
 	}
 
-	/** Get Business Partner .
+	/** Get Business Partner.
 		@return Identifies a Business Partner
 	  */
-	public int getC_BPartner_ID () 
+	public int getC_BPartner_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_BPartner_ID);
 		if (ii == null)
@@ -189,26 +254,26 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	}
 
 	public org.compiere.model.I_C_BPartner_Location getC_BPartner_Location() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_BPartner_Location)MTable.get(getCtx(), org.compiere.model.I_C_BPartner_Location.Table_Name)
-			.getPO(getC_BPartner_Location_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_BPartner_Location)MTable.get(getCtx(), org.compiere.model.I_C_BPartner_Location.Table_ID)
+			.getPO(getC_BPartner_Location_ID(), get_TrxName());
+	}
 
 	/** Set Partner Location.
-		@param C_BPartner_Location_ID 
-		Identifies the (ship to) address for this Business Partner
-	  */
+		@param C_BPartner_Location_ID Identifies the (ship to) address for this Business Partner
+	*/
 	public void setC_BPartner_Location_ID (int C_BPartner_Location_ID)
 	{
-		if (C_BPartner_Location_ID < 1) 
+		if (C_BPartner_Location_ID < 1)
 			set_Value (COLUMNNAME_C_BPartner_Location_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_C_BPartner_Location_ID, Integer.valueOf(C_BPartner_Location_ID));
 	}
 
 	/** Get Partner Location.
 		@return Identifies the (ship to) address for this Business Partner
 	  */
-	public int getC_BPartner_Location_ID () 
+	public int getC_BPartner_Location_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_BPartner_Location_ID);
 		if (ii == null)
@@ -216,27 +281,83 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 		return ii.intValue();
 	}
 
+	public org.compiere.model.I_C_BankAccount getC_BankAccount() throws RuntimeException
+	{
+		return (org.compiere.model.I_C_BankAccount)MTable.get(getCtx(), org.compiere.model.I_C_BankAccount.Table_ID)
+			.getPO(getC_BankAccount_ID(), get_TrxName());
+	}
+
+	/** Set Bank Account.
+		@param C_BankAccount_ID Account at the Bank
+	*/
+	public void setC_BankAccount_ID (int C_BankAccount_ID)
+	{
+		if (C_BankAccount_ID < 1)
+			set_Value (COLUMNNAME_C_BankAccount_ID, null);
+		else
+			set_Value (COLUMNNAME_C_BankAccount_ID, Integer.valueOf(C_BankAccount_ID));
+	}
+
+	/** Get Bank Account.
+		@return Account at the Bank
+	  */
+	public int getC_BankAccount_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_C_BankAccount_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	public org.compiere.model.I_C_Bank getC_Bank() throws RuntimeException
+	{
+		return (org.compiere.model.I_C_Bank)MTable.get(getCtx(), org.compiere.model.I_C_Bank.Table_ID)
+			.getPO(getC_Bank_ID(), get_TrxName());
+	}
+
+	/** Set Bank.
+		@param C_Bank_ID Bank
+	*/
+	public void setC_Bank_ID (int C_Bank_ID)
+	{
+		if (C_Bank_ID < 1)
+			set_Value (COLUMNNAME_C_Bank_ID, null);
+		else
+			set_Value (COLUMNNAME_C_Bank_ID, Integer.valueOf(C_Bank_ID));
+	}
+
+	/** Get Bank.
+		@return Bank
+	  */
+	public int getC_Bank_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_C_Bank_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
 	public org.compiere.model.I_C_DocType getC_DocType() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_DocType)MTable.get(getCtx(), org.compiere.model.I_C_DocType.Table_Name)
-			.getPO(getC_DocType_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_DocType)MTable.get(getCtx(), org.compiere.model.I_C_DocType.Table_ID)
+			.getPO(getC_DocType_ID(), get_TrxName());
+	}
 
 	/** Set Document Type.
-		@param C_DocType_ID 
-		Document type or rules
-	  */
+		@param C_DocType_ID Document type or rules
+	*/
 	public void setC_DocType_ID (int C_DocType_ID)
 	{
-		if (C_DocType_ID < 0) 
+		if (C_DocType_ID < 0)
 			set_ValueNoCheck (COLUMNNAME_C_DocType_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_C_DocType_ID, Integer.valueOf(C_DocType_ID));
 	}
 
 	/** Get Document Type.
 		@return Document type or rules
 	  */
-	public int getC_DocType_ID () 
+	public int getC_DocType_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_DocType_ID);
 		if (ii == null)
@@ -244,55 +365,27 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 		return ii.intValue();
 	}
 
-	public org.compiere.model.I_C_Invoice getC_Invoice() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Invoice)MTable.get(getCtx(), org.compiere.model.I_C_Invoice.Table_Name)
-			.getPO(getC_Invoice_ID(), get_TrxName());	}
-
-	/** Set Invoice.
-		@param C_Invoice_ID 
-		Invoice Identifier
-	  */
-	public void setC_Invoice_ID (int C_Invoice_ID)
-	{
-		if (C_Invoice_ID < 1) 
-			set_Value (COLUMNNAME_C_Invoice_ID, null);
-		else 
-			set_Value (COLUMNNAME_C_Invoice_ID, Integer.valueOf(C_Invoice_ID));
-	}
-
-	/** Get Invoice.
-		@return Invoice Identifier
-	  */
-	public int getC_Invoice_ID () 
-	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_C_Invoice_ID);
-		if (ii == null)
-			 return 0;
-		return ii.intValue();
-	}
-
 	public org.compiere.model.I_C_InvoicePaySchedule getC_InvoicePaySchedule() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_InvoicePaySchedule)MTable.get(getCtx(), org.compiere.model.I_C_InvoicePaySchedule.Table_Name)
-			.getPO(getC_InvoicePaySchedule_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_InvoicePaySchedule)MTable.get(getCtx(), org.compiere.model.I_C_InvoicePaySchedule.Table_ID)
+			.getPO(getC_InvoicePaySchedule_ID(), get_TrxName());
+	}
 
 	/** Set Invoice Payment Schedule.
-		@param C_InvoicePaySchedule_ID 
-		Invoice Payment Schedule
-	  */
+		@param C_InvoicePaySchedule_ID Invoice Payment Schedule
+	*/
 	public void setC_InvoicePaySchedule_ID (int C_InvoicePaySchedule_ID)
 	{
-		if (C_InvoicePaySchedule_ID < 1) 
+		if (C_InvoicePaySchedule_ID < 1)
 			set_Value (COLUMNNAME_C_InvoicePaySchedule_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_C_InvoicePaySchedule_ID, Integer.valueOf(C_InvoicePaySchedule_ID));
 	}
 
 	/** Get Invoice Payment Schedule.
 		@return Invoice Payment Schedule
 	  */
-	public int getC_InvoicePaySchedule_ID () 
+	public int getC_InvoicePaySchedule_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_InvoicePaySchedule_ID);
 		if (ii == null)
@@ -300,10 +393,37 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 		return ii.intValue();
 	}
 
-	/** Set Account Date.
-		@param DateAcct 
-		Accounting Date
+	public org.compiere.model.I_C_Invoice getC_Invoice() throws RuntimeException
+	{
+		return (org.compiere.model.I_C_Invoice)MTable.get(getCtx(), org.compiere.model.I_C_Invoice.Table_ID)
+			.getPO(getC_Invoice_ID(), get_TrxName());
+	}
+
+	/** Set Invoice.
+		@param C_Invoice_ID Invoice Identifier
+	*/
+	public void setC_Invoice_ID (int C_Invoice_ID)
+	{
+		if (C_Invoice_ID < 1)
+			set_Value (COLUMNNAME_C_Invoice_ID, null);
+		else
+			set_Value (COLUMNNAME_C_Invoice_ID, Integer.valueOf(C_Invoice_ID));
+	}
+
+	/** Get Invoice.
+		@return Invoice Identifier
 	  */
+	public int getC_Invoice_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_C_Invoice_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	/** Set Account Date.
+		@param DateAcct Accounting Date
+	*/
 	public void setDateAcct (Timestamp DateAcct)
 	{
 		set_Value (COLUMNNAME_DateAcct, DateAcct);
@@ -312,15 +432,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Account Date.
 		@return Accounting Date
 	  */
-	public Timestamp getDateAcct () 
+	public Timestamp getDateAcct()
 	{
 		return (Timestamp)get_Value(COLUMNNAME_DateAcct);
 	}
 
 	/** Set Document Date.
-		@param DateDoc 
-		Date of the Document
-	  */
+		@param DateDoc Date of the Document
+	*/
 	public void setDateDoc (Timestamp DateDoc)
 	{
 		set_Value (COLUMNNAME_DateDoc, DateDoc);
@@ -329,15 +448,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Document Date.
 		@return Date of the Document
 	  */
-	public Timestamp getDateDoc () 
+	public Timestamp getDateDoc()
 	{
 		return (Timestamp)get_Value(COLUMNNAME_DateDoc);
 	}
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -346,45 +464,44 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** DocAction AD_Reference_ID=135 */
 	public static final int DOCACTION_AD_Reference_ID=135;
-	/** Complete = CO */
-	public static final String DOCACTION_Complete = "CO";
+	/** &lt;None&gt; = -- */
+	public static final String DOCACTION_None = "--";
 	/** Approve = AP */
 	public static final String DOCACTION_Approve = "AP";
-	/** Reject = RJ */
-	public static final String DOCACTION_Reject = "RJ";
-	/** Post = PO */
-	public static final String DOCACTION_Post = "PO";
-	/** Void = VO */
-	public static final String DOCACTION_Void = "VO";
 	/** Close = CL */
 	public static final String DOCACTION_Close = "CL";
-	/** Reverse - Correct = RC */
-	public static final String DOCACTION_Reverse_Correct = "RC";
-	/** Reverse - Accrual = RA */
-	public static final String DOCACTION_Reverse_Accrual = "RA";
+	/** Complete = CO */
+	public static final String DOCACTION_Complete = "CO";
 	/** Invalidate = IN */
 	public static final String DOCACTION_Invalidate = "IN";
-	/** Re-activate = RE */
-	public static final String DOCACTION_Re_Activate = "RE";
-	/** <None> = -- */
-	public static final String DOCACTION_None = "--";
+	/** Post = PO */
+	public static final String DOCACTION_Post = "PO";
 	/** Prepare = PR */
 	public static final String DOCACTION_Prepare = "PR";
-	/** Unlock = XL */
-	public static final String DOCACTION_Unlock = "XL";
+	/** Reverse - Accrual = RA */
+	public static final String DOCACTION_Reverse_Accrual = "RA";
+	/** Reverse - Correct = RC */
+	public static final String DOCACTION_Reverse_Correct = "RC";
+	/** Re-activate = RE */
+	public static final String DOCACTION_Re_Activate = "RE";
+	/** Reject = RJ */
+	public static final String DOCACTION_Reject = "RJ";
+	/** Void = VO */
+	public static final String DOCACTION_Void = "VO";
 	/** Wait Complete = WC */
 	public static final String DOCACTION_WaitComplete = "WC";
+	/** Unlock = XL */
+	public static final String DOCACTION_Unlock = "XL";
 	/** Set Document Action.
-		@param DocAction 
-		The targeted status of the document
-	  */
+		@param DocAction The targeted status of the document
+	*/
 	public void setDocAction (String DocAction)
 	{
 
@@ -394,41 +511,40 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Document Action.
 		@return The targeted status of the document
 	  */
-	public String getDocAction () 
+	public String getDocAction()
 	{
 		return (String)get_Value(COLUMNNAME_DocAction);
 	}
 
 	/** DocStatus AD_Reference_ID=131 */
 	public static final int DOCSTATUS_AD_Reference_ID=131;
-	/** Drafted = DR */
-	public static final String DOCSTATUS_Drafted = "DR";
-	/** Completed = CO */
-	public static final String DOCSTATUS_Completed = "CO";
-	/** Approved = AP */
-	public static final String DOCSTATUS_Approved = "AP";
-	/** Not Approved = NA */
-	public static final String DOCSTATUS_NotApproved = "NA";
-	/** Voided = VO */
-	public static final String DOCSTATUS_Voided = "VO";
-	/** Invalid = IN */
-	public static final String DOCSTATUS_Invalid = "IN";
-	/** Reversed = RE */
-	public static final String DOCSTATUS_Reversed = "RE";
-	/** Closed = CL */
-	public static final String DOCSTATUS_Closed = "CL";
 	/** Unknown = ?? */
 	public static final String DOCSTATUS_Unknown = "??";
+	/** Approved = AP */
+	public static final String DOCSTATUS_Approved = "AP";
+	/** Closed = CL */
+	public static final String DOCSTATUS_Closed = "CL";
+	/** Completed = CO */
+	public static final String DOCSTATUS_Completed = "CO";
+	/** Drafted = DR */
+	public static final String DOCSTATUS_Drafted = "DR";
+	/** Invalid = IN */
+	public static final String DOCSTATUS_Invalid = "IN";
 	/** In Progress = IP */
 	public static final String DOCSTATUS_InProgress = "IP";
-	/** Waiting Payment = WP */
-	public static final String DOCSTATUS_WaitingPayment = "WP";
+	/** Not Approved = NA */
+	public static final String DOCSTATUS_NotApproved = "NA";
+	/** Reversed = RE */
+	public static final String DOCSTATUS_Reversed = "RE";
+	/** Voided = VO */
+	public static final String DOCSTATUS_Voided = "VO";
 	/** Waiting Confirmation = WC */
 	public static final String DOCSTATUS_WaitingConfirmation = "WC";
+	/** Waiting Payment = WP */
+	public static final String DOCSTATUS_WaitingPayment = "WP";
 	/** Set Document Status.
-		@param DocStatus 
-		The current status of the document
-	  */
+		@param DocStatus The current status of the document
+	*/
 	public void setDocStatus (String DocStatus)
 	{
 
@@ -438,15 +554,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Document Status.
 		@return The current status of the document
 	  */
-	public String getDocStatus () 
+	public String getDocStatus()
 	{
 		return (String)get_Value(COLUMNNAME_DocStatus);
 	}
 
 	/** Set Document No.
-		@param DocumentNo 
-		Document sequence number of the document
-	  */
+		@param DocumentNo Document sequence number of the document
+	*/
 	public void setDocumentNo (String DocumentNo)
 	{
 		set_ValueNoCheck (COLUMNNAME_DocumentNo, DocumentNo);
@@ -455,15 +570,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Document No.
 		@return Document sequence number of the document
 	  */
-	public String getDocumentNo () 
+	public String getDocumentNo()
 	{
 		return (String)get_Value(COLUMNNAME_DocumentNo);
 	}
 
 	/** Set Due Date.
-		@param DueDate 
-		Date when the payment is due
-	  */
+		@param DueDate Date when the payment is due
+	*/
 	public void setDueDate (Timestamp DueDate)
 	{
 		set_Value (COLUMNNAME_DueDate, DueDate);
@@ -472,7 +586,7 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Due Date.
 		@return Date when the payment is due
 	  */
-	public Timestamp getDueDate () 
+	public Timestamp getDueDate()
 	{
 		return (Timestamp)get_Value(COLUMNNAME_DueDate);
 	}
@@ -480,15 +594,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
     /** Get Record ID/ColumnName
         @return ID/ColumnName pair
       */
-    public KeyNamePair getKeyNamePair() 
+    public KeyNamePair getKeyNamePair()
     {
         return new KeyNamePair(get_ID(), String.valueOf(getDueDate()));
     }
 
 	/** Set Grand Total.
-		@param GrandTotal 
-		Total amount of document
-	  */
+		@param GrandTotal Total amount of document
+	*/
 	public void setGrandTotal (BigDecimal GrandTotal)
 	{
 		set_Value (COLUMNNAME_GrandTotal, GrandTotal);
@@ -497,7 +610,7 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Grand Total.
 		@return Total amount of document
 	  */
-	public BigDecimal getGrandTotal () 
+	public BigDecimal getGrandTotal()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_GrandTotal);
 		if (bd == null)
@@ -506,24 +619,23 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	}
 
 	/** Set Paid.
-		@param IsPaid 
-		The document is paid
-	  */
+		@param IsPaid The document is fully paid
+	*/
 	public void setIsPaid (boolean IsPaid)
 	{
 		set_Value (COLUMNNAME_IsPaid, Boolean.valueOf(IsPaid));
 	}
 
 	/** Get Paid.
-		@return The document is paid
+		@return The document is fully paid
 	  */
-	public boolean isPaid () 
+	public boolean isPaid()
 	{
 		Object oo = get_Value(COLUMNNAME_IsPaid);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
@@ -534,7 +646,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** N - Not Accepted = N */
 	public static final String LBR_ACCEPTED_N_NotAccepted = "N";
 	/** Set Accepted.
-		@param LBR_Accepted Accepted	  */
+		@param LBR_Accepted Accepted
+	*/
 	public void setLBR_Accepted (String LBR_Accepted)
 	{
 
@@ -543,29 +656,31 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Accepted.
 		@return Accepted	  */
-	public String getLBR_Accepted () 
+	public String getLBR_Accepted()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Accepted);
 	}
 
 	public I_LBR_BankAccount_Carteira getLBR_BankAccount_Carteira() throws RuntimeException
-    {
-		return (I_LBR_BankAccount_Carteira)MTable.get(getCtx(), I_LBR_BankAccount_Carteira.Table_Name)
-			.getPO(getLBR_BankAccount_Carteira_ID(), get_TrxName());	}
+	{
+		return (I_LBR_BankAccount_Carteira)MTable.get(getCtx(), I_LBR_BankAccount_Carteira.Table_ID)
+			.getPO(getLBR_BankAccount_Carteira_ID(), get_TrxName());
+	}
 
 	/** Set Bank Account Carteira.
-		@param LBR_BankAccount_Carteira_ID Bank Account Carteira	  */
+		@param LBR_BankAccount_Carteira_ID Bank Account Carteira
+	*/
 	public void setLBR_BankAccount_Carteira_ID (int LBR_BankAccount_Carteira_ID)
 	{
-		if (LBR_BankAccount_Carteira_ID < 1) 
+		if (LBR_BankAccount_Carteira_ID < 1)
 			set_Value (COLUMNNAME_LBR_BankAccount_Carteira_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_BankAccount_Carteira_ID, Integer.valueOf(LBR_BankAccount_Carteira_ID));
 	}
 
 	/** Get Bank Account Carteira.
 		@return Bank Account Carteira	  */
-	public int getLBR_BankAccount_Carteira_ID () 
+	public int getLBR_BankAccount_Carteira_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BankAccount_Carteira_ID);
 		if (ii == null)
@@ -574,23 +689,25 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	}
 
 	public I_LBR_BankAccount_Convenio getLBR_BankAccount_Convenio() throws RuntimeException
-    {
-		return (I_LBR_BankAccount_Convenio)MTable.get(getCtx(), I_LBR_BankAccount_Convenio.Table_Name)
-			.getPO(getLBR_BankAccount_Convenio_ID(), get_TrxName());	}
+	{
+		return (I_LBR_BankAccount_Convenio)MTable.get(getCtx(), I_LBR_BankAccount_Convenio.Table_ID)
+			.getPO(getLBR_BankAccount_Convenio_ID(), get_TrxName());
+	}
 
 	/** Set Bank Account Convênio.
-		@param LBR_BankAccount_Convenio_ID Bank Account Convênio	  */
+		@param LBR_BankAccount_Convenio_ID Bank Account Convênio
+	*/
 	public void setLBR_BankAccount_Convenio_ID (int LBR_BankAccount_Convenio_ID)
 	{
-		if (LBR_BankAccount_Convenio_ID < 1) 
+		if (LBR_BankAccount_Convenio_ID < 1)
 			set_Value (COLUMNNAME_LBR_BankAccount_Convenio_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_BankAccount_Convenio_ID, Integer.valueOf(LBR_BankAccount_Convenio_ID));
 	}
 
 	/** Get Bank Account Convênio.
 		@return Bank Account Convênio	  */
-	public int getLBR_BankAccount_Convenio_ID () 
+	public int getLBR_BankAccount_Convenio_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BankAccount_Convenio_ID);
 		if (ii == null)
@@ -599,9 +716,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	}
 
 	/** Set Bank Use.
-		@param LBR_BankUse 
-		Bank Use
-	  */
+		@param LBR_BankUse Bank Use
+	*/
 	public void setLBR_BankUse (String LBR_BankUse)
 	{
 		set_Value (COLUMNNAME_LBR_BankUse, LBR_BankUse);
@@ -610,15 +726,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Bank Use.
 		@return Bank Use
 	  */
-	public String getLBR_BankUse () 
+	public String getLBR_BankUse()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_BankUse);
 	}
 
 	/** Set Barcode.
-		@param LBR_Barcode 
-		Barcode
-	  */
+		@param LBR_Barcode Barcode
+	*/
 	public void setLBR_Barcode (String LBR_Barcode)
 	{
 		set_Value (COLUMNNAME_LBR_Barcode, LBR_Barcode);
@@ -627,27 +742,42 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Barcode.
 		@return Barcode
 	  */
-	public String getLBR_Barcode () 
+	public String getLBR_Barcode()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Barcode);
 	}
 
-	/** Set Brazilian Bank Collection (Boleto).
-		@param LBR_Boleto_ID 
-		Brazilian Bank Collection (Boleto) Identifier
+	/** Set Generate Boleto Instruction.
+		@param LBR_BoletoGenerateInstruction Generate Boleto Instruction
+	*/
+	public void setLBR_BoletoGenerateInstruction (String LBR_BoletoGenerateInstruction)
+	{
+		set_Value (COLUMNNAME_LBR_BoletoGenerateInstruction, LBR_BoletoGenerateInstruction);
+	}
+
+	/** Get Generate Boleto Instruction.
+		@return Generate Boleto Instruction
 	  */
+	public String getLBR_BoletoGenerateInstruction()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_BoletoGenerateInstruction);
+	}
+
+	/** Set Brazilian Bank Collection (Boleto).
+		@param LBR_Boleto_ID Brazilian Bank Collection (Boleto) Identifier
+	*/
 	public void setLBR_Boleto_ID (int LBR_Boleto_ID)
 	{
-		if (LBR_Boleto_ID < 1) 
+		if (LBR_Boleto_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_Boleto_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_Boleto_ID, Integer.valueOf(LBR_Boleto_ID));
 	}
 
 	/** Get Brazilian Bank Collection (Boleto).
 		@return Brazilian Bank Collection (Boleto) Identifier
 	  */
-	public int getLBR_Boleto_ID () 
+	public int getLBR_Boleto_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Boleto_ID);
 		if (ii == null)
@@ -656,9 +786,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	}
 
 	/** Set Brazilian Bank Collection (Boleto).
-		@param LBR_Boleto_UU 
-		Brazilian Bank Collection (Boleto) Identifier
-	  */
+		@param LBR_Boleto_UU Brazilian Bank Collection (Boleto) Identifier
+	*/
 	public void setLBR_Boleto_UU (String LBR_Boleto_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_Boleto_UU, LBR_Boleto_UU);
@@ -667,34 +796,9 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Brazilian Bank Collection (Boleto).
 		@return Brazilian Bank Collection (Boleto) Identifier
 	  */
-	public String getLBR_Boleto_UU () 
+	public String getLBR_Boleto_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Boleto_UU);
-	}
-
-	/** Simples = 1 */
-	public static final String LBR_CARTEIRATYPE_Simples = "1";
-	/** Vinculada = 2 */
-	public static final String LBR_CARTEIRATYPE_Vinculada = "2";
-	/** Caucionada = 3 */
-	public static final String LBR_CARTEIRATYPE_Caucionada = "3";
-	/** Descontada = 4 */
-	public static final String LBR_CARTEIRATYPE_Descontada = "4";
-	/** Vendor = 5 */
-	public static final String LBR_CARTEIRATYPE_Vendor = "5";
-	/** Set Bank Account Carteira Type.
-		@param LBR_CarteiraType Bank Account Carteira Type	  */
-	public void setLBR_CarteiraType (String LBR_CarteiraType)
-	{
-
-		set_Value (COLUMNNAME_LBR_CarteiraType, LBR_CarteiraType);
-	}
-
-	/** Get Bank Account Carteira Type.
-		@return Bank Account Carteira Type	  */
-	public String getLBR_CarteiraType () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_CarteiraType);
 	}
 
 	/** 01 - Reservado para Uso Futuro = 01 */
@@ -726,7 +830,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** 14 - Euro = 14 */
 	public static final String LBR_CNAB240CURRENCY_14_Euro = "14";
 	/** Set Currency.
-		@param LBR_CNAB240Currency Currency	  */
+		@param LBR_CNAB240Currency Currency
+	*/
 	public void setLBR_CNAB240Currency (String LBR_CNAB240Currency)
 	{
 
@@ -735,7 +840,7 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Currency.
 		@return Currency	  */
-	public String getLBR_CNAB240Currency () 
+	public String getLBR_CNAB240Currency()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CNAB240Currency);
 	}
@@ -745,7 +850,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** 2 - Escritural = 2 */
 	public static final String LBR_CNAB240DOCTYPE_2_Escritural = "2";
 	/** Set Febraban Document Type.
-		@param LBR_CNAB240DocType Febraban Document Type	  */
+		@param LBR_CNAB240DocType Febraban Document Type
+	*/
 	public void setLBR_CNAB240DocType (String LBR_CNAB240DocType)
 	{
 
@@ -754,17 +860,18 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Febraban Document Type.
 		@return Febraban Document Type	  */
-	public String getLBR_CNAB240DocType () 
+	public String getLBR_CNAB240DocType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CNAB240DocType);
 	}
 
-	/** 1 - Remessa (Cliente -> Banco) = 1 */
+	/** 1 - Remessa (Cliente -&gt; Banco) = 1 */
 	public static final String LBR_CNAB240MOVEMENTTYPE_1_RemessaCliente_GtBanco = "1";
-	/** 2 - Retorno (Banco -> Cliente) = 2 */
+	/** 2 - Retorno (Banco -&gt; Cliente) = 2 */
 	public static final String LBR_CNAB240MOVEMENTTYPE_2_RetornoBanco_GtCliente = "2";
 	/** Set Movement Type.
-		@param LBR_CNAB240MovementType Movement Type	  */
+		@param LBR_CNAB240MovementType Movement Type
+	*/
 	public void setLBR_CNAB240MovementType (String LBR_CNAB240MovementType)
 	{
 
@@ -772,25 +879,53 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Movement Type.
 		@return Movement Type	  */
-	public String getLBR_CNAB240MovementType () 
+	public String getLBR_CNAB240MovementType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CNAB240MovementType);
 	}
 
+	/** Simples = 1 */
+	public static final String LBR_CARTEIRATYPE_Simples = "1";
+	/** Vinculada = 2 */
+	public static final String LBR_CARTEIRATYPE_Vinculada = "2";
+	/** Caucionada = 3 */
+	public static final String LBR_CARTEIRATYPE_Caucionada = "3";
+	/** Descontada = 4 */
+	public static final String LBR_CARTEIRATYPE_Descontada = "4";
+	/** Vendor = 5 */
+	public static final String LBR_CARTEIRATYPE_Vendor = "5";
+	/** Set Bank Account Carteira Type.
+		@param LBR_CarteiraType Bank Account Carteira Type
+	*/
+	public void setLBR_CarteiraType (String LBR_CarteiraType)
+	{
+
+		set_Value (COLUMNNAME_LBR_CarteiraType, LBR_CarteiraType);
+	}
+
+	/** Get Bank Account Carteira Type.
+		@return Bank Account Carteira Type	  */
+	public String getLBR_CarteiraType()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_CarteiraType);
+	}
+
 	public I_LBR_Cob_Movimento getLBR_Cob_Movimento() throws RuntimeException
-    {
-		return (I_LBR_Cob_Movimento)MTable.get(getCtx(), I_LBR_Cob_Movimento.Table_Name)
-			.getPO(getLBR_Cob_Movimento_ID(), get_TrxName());	}
+	{
+		return (I_LBR_Cob_Movimento)MTable.get(getCtx(), I_LBR_Cob_Movimento.Table_ID)
+			.getPO(getLBR_Cob_Movimento_ID(), get_TrxName());
+	}
 
 	/** Set Collection Movement.
-		@param LBR_Cob_Movimento_ID Collection Movement	  */
+		@param LBR_Cob_Movimento_ID Collection Movement
+	*/
 	public void setLBR_Cob_Movimento_ID (int LBR_Cob_Movimento_ID)
 	{
 		throw new IllegalArgumentException ("LBR_Cob_Movimento_ID is virtual column");	}
 
 	/** Get Collection Movement.
 		@return Collection Movement	  */
-	public int getLBR_Cob_Movimento_ID () 
+	public int getLBR_Cob_Movimento_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Cob_Movimento_ID);
 		if (ii == null)
@@ -805,9 +940,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** 3 - Com Cadastramento / Recusa Debito Automatico = 3 */
 	public static final String LBR_COLLECTIONREGTYPE_3_ComCadastramentoRecusaDebitoAutomatico = "3";
 	/** Set Registration Type.
-		@param LBR_CollectionRegType 
-		Collection Registration Type
-	  */
+		@param LBR_CollectionRegType Collection Registration Type
+	*/
 	public void setLBR_CollectionRegType (String LBR_CollectionRegType)
 	{
 
@@ -817,7 +951,7 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Registration Type.
 		@return Collection Registration Type
 	  */
-	public String getLBR_CollectionRegType () 
+	public String getLBR_CollectionRegType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CollectionRegType);
 	}
@@ -887,7 +1021,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** 99 - Outros = 99 */
 	public static final String LBR_COLLECTIONTYPE_99_Outros = "99";
 	/** Set Collection Type.
-		@param LBR_CollectionType Collection Type	  */
+		@param LBR_CollectionType Collection Type
+	*/
 	public void setLBR_CollectionType (String LBR_CollectionType)
 	{
 
@@ -896,32 +1031,32 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Collection Type.
 		@return Collection Type	  */
-	public String getLBR_CollectionType () 
+	public String getLBR_CollectionType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CollectionType);
 	}
 
 	public org.compiere.model.I_C_Bank getLBR_CorrespBank() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Bank)MTable.get(getCtx(), org.compiere.model.I_C_Bank.Table_Name)
-			.getPO(getLBR_CorrespBank_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_Bank)MTable.get(getCtx(), org.compiere.model.I_C_Bank.Table_ID)
+			.getPO(getLBR_CorrespBank_ID(), get_TrxName());
+	}
 
 	/** Set Correspondent Bank.
-		@param LBR_CorrespBank_ID 
-		Correspondent Bank
-	  */
+		@param LBR_CorrespBank_ID Correspondent Bank
+	*/
 	public void setLBR_CorrespBank_ID (int LBR_CorrespBank_ID)
 	{
-		if (LBR_CorrespBank_ID < 1) 
+		if (LBR_CorrespBank_ID < 1)
 			set_Value (COLUMNNAME_LBR_CorrespBank_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_CorrespBank_ID, Integer.valueOf(LBR_CorrespBank_ID));
 	}
 
 	/** Get Correspondent Bank.
 		@return Correspondent Bank
 	  */
-	public int getLBR_CorrespBank_ID () 
+	public int getLBR_CorrespBank_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_CorrespBank_ID);
 		if (ii == null)
@@ -936,7 +1071,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** 3 - Emite com Endereco do Cadastro no Banco = 3 */
 	public static final String LBR_DIRECTDEBITNOTICE_3_EmiteComEnderecoDoCadastroNoBanco = "3";
 	/** Set Direct Debit Notice.
-		@param LBR_DirectDebitNotice Direct Debit Notice	  */
+		@param LBR_DirectDebitNotice Direct Debit Notice
+	*/
 	public void setLBR_DirectDebitNotice (String LBR_DirectDebitNotice)
 	{
 
@@ -945,7 +1081,7 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Direct Debit Notice.
 		@return Direct Debit Notice	  */
-	public String getLBR_DirectDebitNotice () 
+	public String getLBR_DirectDebitNotice()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_DirectDebitNotice);
 	}
@@ -959,7 +1095,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** 4 - Banco Envia SMS = 4 */
 	public static final String LBR_DISTRIBUTIONTYPE_4_BancoEnviaSMS = "4";
 	/** Set Distribution Type.
-		@param LBR_DistributionType Distribution Type	  */
+		@param LBR_DistributionType Distribution Type
+	*/
 	public void setLBR_DistributionType (String LBR_DistributionType)
 	{
 
@@ -968,15 +1105,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Distribution Type.
 		@return Distribution Type	  */
-	public String getLBR_DistributionType () 
+	public String getLBR_DistributionType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_DistributionType);
 	}
 
 	/** Set Agency and Client Formatted.
-		@param LBR_Fmt_AgencyClient 
-		Agency and Client Formatted
-	  */
+		@param LBR_Fmt_AgencyClient Agency and Client Formatted
+	*/
 	public void setLBR_Fmt_AgencyClient (String LBR_Fmt_AgencyClient)
 	{
 		set_Value (COLUMNNAME_LBR_Fmt_AgencyClient, LBR_Fmt_AgencyClient);
@@ -985,15 +1121,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Agency and Client Formatted.
 		@return Agency and Client Formatted
 	  */
-	public String getLBR_Fmt_AgencyClient () 
+	public String getLBR_Fmt_AgencyClient()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Fmt_AgencyClient);
 	}
 
 	/** Set Billfold Formatted.
-		@param LBR_Fmt_Billfold 
-		Billfold Formatted
-	  */
+		@param LBR_Fmt_Billfold Billfold Formatted
+	*/
 	public void setLBR_Fmt_Billfold (String LBR_Fmt_Billfold)
 	{
 		set_Value (COLUMNNAME_LBR_Fmt_Billfold, LBR_Fmt_Billfold);
@@ -1002,15 +1137,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Billfold Formatted.
 		@return Billfold Formatted
 	  */
-	public String getLBR_Fmt_Billfold () 
+	public String getLBR_Fmt_Billfold()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Fmt_Billfold);
 	}
 
 	/** Set Document Type Formatted.
-		@param LBR_Fmt_Doctype 
-		Document Type Formatted
-	  */
+		@param LBR_Fmt_Doctype Document Type Formatted
+	*/
 	public void setLBR_Fmt_Doctype (String LBR_Fmt_Doctype)
 	{
 		set_Value (COLUMNNAME_LBR_Fmt_Doctype, LBR_Fmt_Doctype);
@@ -1019,15 +1153,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Document Type Formatted.
 		@return Document Type Formatted
 	  */
-	public String getLBR_Fmt_Doctype () 
+	public String getLBR_Fmt_Doctype()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Fmt_Doctype);
 	}
 
 	/** Set Number In Bank Formatted.
-		@param LBR_Fmt_NumberInBank 
-		Number In Bank Formatted
-	  */
+		@param LBR_Fmt_NumberInBank Number In Bank Formatted
+	*/
 	public void setLBR_Fmt_NumberInBank (String LBR_Fmt_NumberInBank)
 	{
 		set_Value (COLUMNNAME_LBR_Fmt_NumberInBank, LBR_Fmt_NumberInBank);
@@ -1036,32 +1169,32 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Number In Bank Formatted.
 		@return Number In Bank Formatted
 	  */
-	public String getLBR_Fmt_NumberInBank () 
+	public String getLBR_Fmt_NumberInBank()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Fmt_NumberInBank);
 	}
 
 	public org.compiere.model.I_C_BPartner getLBR_Guarantor() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_Name)
-			.getPO(getLBR_Guarantor_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_ID)
+			.getPO(getLBR_Guarantor_ID(), get_TrxName());
+	}
 
 	/** Set Guarantor (Business Partner).
-		@param LBR_Guarantor_ID 
-		Identifies a guarantor (Business Partner)
-	  */
+		@param LBR_Guarantor_ID Identifies a guarantor (Business Partner)
+	*/
 	public void setLBR_Guarantor_ID (int LBR_Guarantor_ID)
 	{
-		if (LBR_Guarantor_ID < 1) 
+		if (LBR_Guarantor_ID < 1)
 			set_Value (COLUMNNAME_LBR_Guarantor_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_Guarantor_ID, Integer.valueOf(LBR_Guarantor_ID));
 	}
 
 	/** Get Guarantor (Business Partner).
 		@return Identifies a guarantor (Business Partner)
 	  */
-	public int getLBR_Guarantor_ID () 
+	public int getLBR_Guarantor_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Guarantor_ID);
 		if (ii == null)
@@ -1070,26 +1203,26 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	}
 
 	public org.compiere.model.I_C_BPartner_Location getLBR_Guarantor_Location() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_BPartner_Location)MTable.get(getCtx(), org.compiere.model.I_C_BPartner_Location.Table_Name)
-			.getPO(getLBR_Guarantor_Location_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_BPartner_Location)MTable.get(getCtx(), org.compiere.model.I_C_BPartner_Location.Table_ID)
+			.getPO(getLBR_Guarantor_Location_ID(), get_TrxName());
+	}
 
 	/** Set Guarantor (Partner) Location.
-		@param LBR_Guarantor_Location_ID 
-		Identifies the address for this guarantor (Business Partner)
-	  */
+		@param LBR_Guarantor_Location_ID Identifies the address for this guarantor (Business Partner)
+	*/
 	public void setLBR_Guarantor_Location_ID (int LBR_Guarantor_Location_ID)
 	{
-		if (LBR_Guarantor_Location_ID < 1) 
+		if (LBR_Guarantor_Location_ID < 1)
 			set_Value (COLUMNNAME_LBR_Guarantor_Location_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_Guarantor_Location_ID, Integer.valueOf(LBR_Guarantor_Location_ID));
 	}
 
 	/** Get Guarantor (Partner) Location.
 		@return Identifies the address for this guarantor (Business Partner)
 	  */
-	public int getLBR_Guarantor_Location_ID () 
+	public int getLBR_Guarantor_Location_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Guarantor_Location_ID);
 		if (ii == null)
@@ -1098,9 +1231,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	}
 
 	/** Set IOF Amount.
-		@param LBR_IOFAmt 
-		Defines the IOF Amount
-	  */
+		@param LBR_IOFAmt Defines the IOF Amount
+	*/
 	public void setLBR_IOFAmt (BigDecimal LBR_IOFAmt)
 	{
 		set_Value (COLUMNNAME_LBR_IOFAmt, LBR_IOFAmt);
@@ -1109,7 +1241,7 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get IOF Amount.
 		@return Defines the IOF Amount
 	  */
-	public BigDecimal getLBR_IOFAmt () 
+	public BigDecimal getLBR_IOFAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IOFAmt);
 		if (bd == null)
@@ -1118,7 +1250,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	}
 
 	/** Set Baixado.
-		@param LBR_IsBaixado Baixado	  */
+		@param LBR_IsBaixado Baixado
+	*/
 	public void setLBR_IsBaixado (boolean LBR_IsBaixado)
 	{
 		set_Value (COLUMNNAME_LBR_IsBaixado, Boolean.valueOf(LBR_IsBaixado));
@@ -1126,22 +1259,21 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Baixado.
 		@return Baixado	  */
-	public boolean isLBR_IsBaixado () 
+	public boolean isLBR_IsBaixado()
 	{
 		Object oo = get_Value(COLUMNNAME_LBR_IsBaixado);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set Protested.
-		@param LBR_IsProtested 
-		The document is protested
-	  */
+		@param LBR_IsProtested The document is protested
+	*/
 	public void setLBR_IsProtested (boolean LBR_IsProtested)
 	{
 		set_Value (COLUMNNAME_LBR_IsProtested, Boolean.valueOf(LBR_IsProtested));
@@ -1150,13 +1282,35 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Protested.
 		@return The document is protested
 	  */
-	public boolean isLBR_IsProtested () 
+	public boolean isLBR_IsProtested()
 	{
 		Object oo = get_Value(COLUMNNAME_LBR_IsProtested);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+
+	/** Set Sustado.
+		@param LBR_IsSustado Sustado
+	*/
+	public void setLBR_IsSustado (boolean LBR_IsSustado)
+	{
+		set_Value (COLUMNNAME_LBR_IsSustado, Boolean.valueOf(LBR_IsSustado));
+	}
+
+	/** Get Sustado.
+		@return Sustado	  */
+	public boolean isLBR_IsSustado()
+	{
+		Object oo = get_Value(COLUMNNAME_LBR_IsSustado);
+		if (oo != null)
+		{
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
@@ -1177,7 +1331,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** 8 - Banco Emitente - Auto-envelopavel = 8 */
 	public static final String LBR_ISSUETYPE_8_BancoEmitente_Auto_Envelopavel = "8";
 	/** Set Issue Type.
-		@param LBR_IssueType Issue Type	  */
+		@param LBR_IssueType Issue Type
+	*/
 	public void setLBR_IssueType (String LBR_IssueType)
 	{
 
@@ -1186,34 +1341,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Issue Type.
 		@return Issue Type	  */
-	public String getLBR_IssueType () 
+	public String getLBR_IssueType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_IssueType);
 	}
 
-	/** Set Sustado.
-		@param LBR_IsSustado Sustado	  */
-	public void setLBR_IsSustado (boolean LBR_IsSustado)
-	{
-		set_Value (COLUMNNAME_LBR_IsSustado, Boolean.valueOf(LBR_IsSustado));
-	}
-
-	/** Get Sustado.
-		@return Sustado	  */
-	public boolean isLBR_IsSustado () 
-	{
-		Object oo = get_Value(COLUMNNAME_LBR_IsSustado);
-		if (oo != null) 
-		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
-			return "Y".equals(oo);
-		}
-		return false;
-	}
-
 	/** Set Loan Contract No..
-		@param LBR_LoanContractNo Loan Contract No.	  */
+		@param LBR_LoanContractNo Loan Contract No.
+	*/
 	public void setLBR_LoanContractNo (String LBR_LoanContractNo)
 	{
 		set_Value (COLUMNNAME_LBR_LoanContractNo, LBR_LoanContractNo);
@@ -1221,13 +1356,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Loan Contract No..
 		@return Loan Contract No.	  */
-	public String getLBR_LoanContractNo () 
+	public String getLBR_LoanContractNo()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_LoanContractNo);
 	}
 
 	/** Set Number in the Bank.
-		@param LBR_NumberInBank Number in the Bank	  */
+		@param LBR_NumberInBank Number in the Bank
+	*/
 	public void setLBR_NumberInBank (String LBR_NumberInBank)
 	{
 		set_Value (COLUMNNAME_LBR_NumberInBank, LBR_NumberInBank);
@@ -1235,13 +1371,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Number in the Bank.
 		@return Number in the Bank	  */
-	public String getLBR_NumberInBank () 
+	public String getLBR_NumberInBank()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NumberInBank);
 	}
 
 	/** Set Number in the Correspondent Bank.
-		@param LBR_NumberInCorrespBank Number in the Correspondent Bank	  */
+		@param LBR_NumberInCorrespBank Number in the Correspondent Bank
+	*/
 	public void setLBR_NumberInCorrespBank (String LBR_NumberInCorrespBank)
 	{
 		set_Value (COLUMNNAME_LBR_NumberInCorrespBank, LBR_NumberInCorrespBank);
@@ -1249,13 +1386,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Number in the Correspondent Bank.
 		@return Number in the Correspondent Bank	  */
-	public String getLBR_NumberInCorrespBank () 
+	public String getLBR_NumberInCorrespBank()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NumberInCorrespBank);
 	}
 
 	/** Set Number in the Org.
-		@param LBR_NumberInOrg Number in the Org	  */
+		@param LBR_NumberInOrg Number in the Org
+	*/
 	public void setLBR_NumberInOrg (String LBR_NumberInOrg)
 	{
 		set_Value (COLUMNNAME_LBR_NumberInOrg, LBR_NumberInOrg);
@@ -1263,7 +1401,7 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Number in the Org.
 		@return Number in the Org	  */
-	public String getLBR_NumberInOrg () 
+	public String getLBR_NumberInOrg()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NumberInOrg);
 	}
@@ -1273,7 +1411,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** 2 - Autoriza Pagamentos Parciais = 2 */
 	public static final String LBR_PARTIALPAYMENT_2_AutorizaPagamentosParciais = "2";
 	/** Set Authorize Partial Payment.
-		@param LBR_PartialPayment Authorize Partial Payment	  */
+		@param LBR_PartialPayment Authorize Partial Payment
+	*/
 	public void setLBR_PartialPayment (String LBR_PartialPayment)
 	{
 
@@ -1282,15 +1421,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Authorize Partial Payment.
 		@return Authorize Partial Payment	  */
-	public String getLBR_PartialPayment () 
+	public String getLBR_PartialPayment()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_PartialPayment);
 	}
 
 	/** Set Typeable Line.
-		@param LBR_TypeableLine 
-		Typeable Line
-	  */
+		@param LBR_TypeableLine Typeable Line
+	*/
 	public void setLBR_TypeableLine (String LBR_TypeableLine)
 	{
 		set_Value (COLUMNNAME_LBR_TypeableLine, LBR_TypeableLine);
@@ -1299,15 +1437,14 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Typeable Line.
 		@return Typeable Line
 	  */
-	public String getLBR_TypeableLine () 
+	public String getLBR_TypeableLine()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TypeableLine);
 	}
 
 	/** Set Posted.
-		@param Posted 
-		Posting status
-	  */
+		@param Posted Posting status
+	*/
 	public void setPosted (boolean Posted)
 	{
 		set_Value (COLUMNNAME_Posted, Boolean.valueOf(Posted));
@@ -1316,22 +1453,21 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Posted.
 		@return Posting status
 	  */
-	public boolean isPosted () 
+	public boolean isPosted()
 	{
 		Object oo = get_Value(COLUMNNAME_Posted);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set Processed.
-		@param Processed 
-		The document has been processed
-	  */
+		@param Processed The document has been processed
+	*/
 	public void setProcessed (boolean Processed)
 	{
 		set_Value (COLUMNNAME_Processed, Boolean.valueOf(Processed));
@@ -1340,22 +1476,21 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Processed.
 		@return The document has been processed
 	  */
-	public boolean isProcessed () 
+	public boolean isProcessed()
 	{
 		Object oo = get_Value(COLUMNNAME_Processed);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set Processed On.
-		@param ProcessedOn 
-		The date+time (expressed in decimal format) when the document has been processed
-	  */
+		@param ProcessedOn The date+time (expressed in decimal format) when the document has been processed
+	*/
 	public void setProcessedOn (BigDecimal ProcessedOn)
 	{
 		set_Value (COLUMNNAME_ProcessedOn, ProcessedOn);
@@ -1364,7 +1499,7 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Processed On.
 		@return The date+time (expressed in decimal format) when the document has been processed
 	  */
-	public BigDecimal getProcessedOn () 
+	public BigDecimal getProcessedOn()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_ProcessedOn);
 		if (bd == null)
@@ -1373,7 +1508,8 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	}
 
 	/** Set Process Now.
-		@param Processing Process Now	  */
+		@param Processing Process Now
+	*/
 	public void setProcessing (boolean Processing)
 	{
 		set_Value (COLUMNNAME_Processing, Boolean.valueOf(Processing));
@@ -1381,22 +1517,21 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 
 	/** Get Process Now.
 		@return Process Now	  */
-	public boolean isProcessing () 
+	public boolean isProcessing()
 	{
 		Object oo = get_Value(COLUMNNAME_Processing);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set Write-off Amount.
-		@param WriteOffAmt 
-		Amount to write-off
-	  */
+		@param WriteOffAmt Amount to write-off
+	*/
 	public void setWriteOffAmt (BigDecimal WriteOffAmt)
 	{
 		set_Value (COLUMNNAME_WriteOffAmt, WriteOffAmt);
@@ -1405,7 +1540,7 @@ public class X_LBR_Boleto extends PO implements I_LBR_Boleto, I_Persistent
 	/** Get Write-off Amount.
 		@return Amount to write-off
 	  */
-	public BigDecimal getWriteOffAmt () 
+	public BigDecimal getWriteOffAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_WriteOffAmt);
 		if (bd == null)

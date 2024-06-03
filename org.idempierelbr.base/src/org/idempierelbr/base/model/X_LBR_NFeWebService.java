@@ -22,15 +22,16 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_NFeWebService
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_NFeWebService")
+public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140602L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_NFeWebService (Properties ctx, int LBR_NFeWebService_ID, String trxName)
@@ -39,6 +40,53 @@ public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Pe
       /** if (LBR_NFeWebService_ID == 0)
         {
 			setLBR_NFeEnv (null);
+			setLBR_NFeModel (null);
+// 55
+			setLBR_NFeWebService_ID (0);
+			setName (null);
+			setURL (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NFeWebService (Properties ctx, int LBR_NFeWebService_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NFeWebService_ID, trxName, virtualColumns);
+      /** if (LBR_NFeWebService_ID == 0)
+        {
+			setLBR_NFeEnv (null);
+			setLBR_NFeModel (null);
+// 55
+			setLBR_NFeWebService_ID (0);
+			setName (null);
+			setURL (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NFeWebService (Properties ctx, String LBR_NFeWebService_UU, String trxName)
+    {
+      super (ctx, LBR_NFeWebService_UU, trxName);
+      /** if (LBR_NFeWebService_UU == null)
+        {
+			setLBR_NFeEnv (null);
+			setLBR_NFeModel (null);
+// 55
+			setLBR_NFeWebService_ID (0);
+			setName (null);
+			setURL (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NFeWebService (Properties ctx, String LBR_NFeWebService_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NFeWebService_UU, trxName, virtualColumns);
+      /** if (LBR_NFeWebService_UU == null)
+        {
+			setLBR_NFeEnv (null);
+			setLBR_NFeModel (null);
+// 55
 			setLBR_NFeWebService_ID (0);
 			setName (null);
 			setURL (null);
@@ -52,7 +100,7 @@ public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Pe
     }
 
     /** AccessLevel
-      * @return 4 - System 
+      * @return 4 - System
       */
     protected int get_AccessLevel()
     {
@@ -68,32 +116,32 @@ public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Pe
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_NFeWebService[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_NFeWebService[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_Name)
-			.getPO(getC_Region_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_ID)
+			.getPO(getC_Region_ID(), get_TrxName());
+	}
 
 	/** Set Region.
-		@param C_Region_ID 
-		Identifies a geographical Region
-	  */
+		@param C_Region_ID Identifies a geographical Region
+	*/
 	public void setC_Region_ID (int C_Region_ID)
 	{
-		if (C_Region_ID < 1) 
+		if (C_Region_ID < 1)
 			set_Value (COLUMNNAME_C_Region_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_C_Region_ID, Integer.valueOf(C_Region_ID));
 	}
 
 	/** Get Region.
 		@return Identifies a geographical Region
 	  */
-	public int getC_Region_ID () 
+	public int getC_Region_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_Region_ID);
 		if (ii == null)
@@ -106,7 +154,8 @@ public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Pe
 	/** Homologation = 2 */
 	public static final String LBR_NFEENV_Homologation = "2";
 	/** Set Sefaz NF-e Environment.
-		@param LBR_NFeEnv Sefaz NF-e Environment	  */
+		@param LBR_NFeEnv Sefaz NF-e Environment
+	*/
 	public void setLBR_NFeEnv (String LBR_NFeEnv)
 	{
 
@@ -115,27 +164,46 @@ public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Pe
 
 	/** Get Sefaz NF-e Environment.
 		@return Sefaz NF-e Environment	  */
-	public String getLBR_NFeEnv () 
+	public String getLBR_NFeEnv()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NFeEnv);
 	}
 
+	/** 55 - NF-e = 55 */
+	public static final String LBR_NFEMODEL_55_NF_E = "55";
+	/** 65 - NFC-e = 65 */
+	public static final String LBR_NFEMODEL_65_NFC_E = "65";
+	/** Set NF Model.
+		@param LBR_NFeModel NF Model
+	*/
+	public void setLBR_NFeModel (String LBR_NFeModel)
+	{
+
+		set_Value (COLUMNNAME_LBR_NFeModel, LBR_NFeModel);
+	}
+
+	/** Get NF Model.
+		@return NF Model	  */
+	public String getLBR_NFeModel()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_NFeModel);
+	}
+
 	/** Set NF-e Web Service.
-		@param LBR_NFeWebService_ID 
-		Web Service used to communicate with Sefaz
-	  */
+		@param LBR_NFeWebService_ID Web Service used to communicate with Sefaz
+	*/
 	public void setLBR_NFeWebService_ID (int LBR_NFeWebService_ID)
 	{
-		if (LBR_NFeWebService_ID < 1) 
+		if (LBR_NFeWebService_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_NFeWebService_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_NFeWebService_ID, Integer.valueOf(LBR_NFeWebService_ID));
 	}
 
 	/** Get NF-e Web Service.
 		@return Web Service used to communicate with Sefaz
 	  */
-	public int getLBR_NFeWebService_ID () 
+	public int getLBR_NFeWebService_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NFeWebService_ID);
 		if (ii == null)
@@ -144,9 +212,8 @@ public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Pe
 	}
 
 	/** Set NF-e Web Service.
-		@param LBR_NFeWebService_UU 
-		Web Service used to communicate with Sefaz
-	  */
+		@param LBR_NFeWebService_UU Web Service used to communicate with Sefaz
+	*/
 	public void setLBR_NFeWebService_UU (String LBR_NFeWebService_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_NFeWebService_UU, LBR_NFeWebService_UU);
@@ -155,15 +222,14 @@ public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Pe
 	/** Get NF-e Web Service.
 		@return Web Service used to communicate with Sefaz
 	  */
-	public String getLBR_NFeWebService_UU () 
+	public String getLBR_NFeWebService_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NFeWebService_UU);
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -172,15 +238,14 @@ public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Pe
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}
 
 	/** Set URL.
-		@param URL 
-		Full URL address - e.g. http://www.idempiere.org
-	  */
+		@param URL Full URL address - e.g. http://www.idempiere.org
+	*/
 	public void setURL (String URL)
 	{
 		set_Value (COLUMNNAME_URL, URL);
@@ -189,15 +254,14 @@ public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Pe
 	/** Get URL.
 		@return Full URL address - e.g. http://www.idempiere.org
 	  */
-	public String getURL () 
+	public String getURL()
 	{
 		return (String)get_Value(COLUMNNAME_URL);
 	}
 
 	/** Set Version No.
-		@param VersionNo 
-		Version Number
-	  */
+		@param VersionNo Version Number
+	*/
 	public void setVersionNo (String VersionNo)
 	{
 		set_Value (COLUMNNAME_VersionNo, VersionNo);
@@ -206,7 +270,7 @@ public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Pe
 	/** Get Version No.
 		@return Version Number
 	  */
-	public String getVersionNo () 
+	public String getVersionNo()
 	{
 		return (String)get_Value(COLUMNNAME_VersionNo);
 	}

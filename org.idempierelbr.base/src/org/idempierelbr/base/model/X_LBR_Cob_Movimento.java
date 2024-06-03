@@ -22,21 +22,55 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_Cob_Movimento
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_Cob_Movimento")
+public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140902L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_Cob_Movimento (Properties ctx, int LBR_Cob_Movimento_ID, String trxName)
     {
       super (ctx, LBR_Cob_Movimento_ID, trxName);
       /** if (LBR_Cob_Movimento_ID == 0)
+        {
+			setLBR_CNAB240MovementType (null);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Cob_Movimento (Properties ctx, int LBR_Cob_Movimento_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_Cob_Movimento_ID, trxName, virtualColumns);
+      /** if (LBR_Cob_Movimento_ID == 0)
+        {
+			setLBR_CNAB240MovementType (null);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Cob_Movimento (Properties ctx, String LBR_Cob_Movimento_UU, String trxName)
+    {
+      super (ctx, LBR_Cob_Movimento_UU, trxName);
+      /** if (LBR_Cob_Movimento_UU == null)
+        {
+			setLBR_CNAB240MovementType (null);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Cob_Movimento (Properties ctx, String LBR_Cob_Movimento_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_Cob_Movimento_UU, trxName, virtualColumns);
+      /** if (LBR_Cob_Movimento_UU == null)
         {
 			setLBR_CNAB240MovementType (null);
 			setName (null);
@@ -50,7 +84,7 @@ public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Pe
     }
 
     /** AccessLevel
-      * @return 6 - System - Client 
+      * @return 6 - System - Client
       */
     protected int get_AccessLevel()
     {
@@ -66,32 +100,32 @@ public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Pe
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_Cob_Movimento[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_Cob_Movimento[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	public org.compiere.model.I_C_Bank getC_Bank() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Bank)MTable.get(getCtx(), org.compiere.model.I_C_Bank.Table_Name)
-			.getPO(getC_Bank_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_Bank)MTable.get(getCtx(), org.compiere.model.I_C_Bank.Table_ID)
+			.getPO(getC_Bank_ID(), get_TrxName());
+	}
 
 	/** Set Bank.
-		@param C_Bank_ID 
-		Bank
-	  */
+		@param C_Bank_ID Bank
+	*/
 	public void setC_Bank_ID (int C_Bank_ID)
 	{
-		if (C_Bank_ID < 1) 
+		if (C_Bank_ID < 1)
 			set_Value (COLUMNNAME_C_Bank_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_C_Bank_ID, Integer.valueOf(C_Bank_ID));
 	}
 
 	/** Get Bank.
 		@return Bank
 	  */
-	public int getC_Bank_ID () 
+	public int getC_Bank_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_Bank_ID);
 		if (ii == null)
@@ -100,9 +134,8 @@ public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Pe
 	}
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -111,17 +144,18 @@ public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Pe
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
-	/** 1 - Remessa (Cliente -> Banco) = 1 */
+	/** 1 - Remessa (Cliente -&gt; Banco) = 1 */
 	public static final String LBR_CNAB240MOVEMENTTYPE_1_RemessaCliente_GtBanco = "1";
-	/** 2 - Retorno (Banco -> Cliente) = 2 */
+	/** 2 - Retorno (Banco -&gt; Cliente) = 2 */
 	public static final String LBR_CNAB240MOVEMENTTYPE_2_RetornoBanco_GtCliente = "2";
 	/** Set Movement Type.
-		@param LBR_CNAB240MovementType Movement Type	  */
+		@param LBR_CNAB240MovementType Movement Type
+	*/
 	public void setLBR_CNAB240MovementType (String LBR_CNAB240MovementType)
 	{
 
@@ -130,29 +164,31 @@ public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Pe
 
 	/** Get Movement Type.
 		@return Movement Type	  */
-	public String getLBR_CNAB240MovementType () 
+	public String getLBR_CNAB240MovementType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CNAB240MovementType);
 	}
 
 	public I_LBR_Cob_GO getLBR_Cob_GO() throws RuntimeException
-    {
-		return (I_LBR_Cob_GO)MTable.get(getCtx(), I_LBR_Cob_GO.Table_Name)
-			.getPO(getLBR_Cob_GO_ID(), get_TrxName());	}
+	{
+		return (I_LBR_Cob_GO)MTable.get(getCtx(), I_LBR_Cob_GO.Table_ID)
+			.getPO(getLBR_Cob_GO_ID(), get_TrxName());
+	}
 
 	/** Set Collection Occurrences Group.
-		@param LBR_Cob_GO_ID Collection Occurrences Group	  */
+		@param LBR_Cob_GO_ID Collection Occurrences Group
+	*/
 	public void setLBR_Cob_GO_ID (int LBR_Cob_GO_ID)
 	{
-		if (LBR_Cob_GO_ID < 1) 
+		if (LBR_Cob_GO_ID < 1)
 			set_Value (COLUMNNAME_LBR_Cob_GO_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_Cob_GO_ID, Integer.valueOf(LBR_Cob_GO_ID));
 	}
 
 	/** Get Collection Occurrences Group.
 		@return Collection Occurrences Group	  */
-	public int getLBR_Cob_GO_ID () 
+	public int getLBR_Cob_GO_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Cob_GO_ID);
 		if (ii == null)
@@ -161,18 +197,19 @@ public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Pe
 	}
 
 	/** Set Collection Movement.
-		@param LBR_Cob_Movimento_ID Collection Movement	  */
+		@param LBR_Cob_Movimento_ID Collection Movement
+	*/
 	public void setLBR_Cob_Movimento_ID (int LBR_Cob_Movimento_ID)
 	{
-		if (LBR_Cob_Movimento_ID < 1) 
+		if (LBR_Cob_Movimento_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_Cob_Movimento_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_Cob_Movimento_ID, Integer.valueOf(LBR_Cob_Movimento_ID));
 	}
 
 	/** Get Collection Movement.
 		@return Collection Movement	  */
-	public int getLBR_Cob_Movimento_ID () 
+	public int getLBR_Cob_Movimento_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Cob_Movimento_ID);
 		if (ii == null)
@@ -181,7 +218,8 @@ public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Pe
 	}
 
 	/** Set Collection Movement.
-		@param LBR_Cob_Movimento_UU Collection Movement	  */
+		@param LBR_Cob_Movimento_UU Collection Movement
+	*/
 	public void setLBR_Cob_Movimento_UU (String LBR_Cob_Movimento_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_Cob_Movimento_UU, LBR_Cob_Movimento_UU);
@@ -189,29 +227,31 @@ public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Pe
 
 	/** Get Collection Movement.
 		@return Collection Movement	  */
-	public String getLBR_Cob_Movimento_UU () 
+	public String getLBR_Cob_Movimento_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Cob_Movimento_UU);
 	}
 
 	public I_LBR_Cob_Movimento getLBR_ParentCob_Movimento() throws RuntimeException
-    {
-		return (I_LBR_Cob_Movimento)MTable.get(getCtx(), I_LBR_Cob_Movimento.Table_Name)
-			.getPO(getLBR_ParentCob_Movimento_ID(), get_TrxName());	}
+	{
+		return (I_LBR_Cob_Movimento)MTable.get(getCtx(), I_LBR_Cob_Movimento.Table_ID)
+			.getPO(getLBR_ParentCob_Movimento_ID(), get_TrxName());
+	}
 
 	/** Set Parent Collection Movement.
-		@param LBR_ParentCob_Movimento_ID Parent Collection Movement	  */
+		@param LBR_ParentCob_Movimento_ID Parent Collection Movement
+	*/
 	public void setLBR_ParentCob_Movimento_ID (int LBR_ParentCob_Movimento_ID)
 	{
-		if (LBR_ParentCob_Movimento_ID < 1) 
+		if (LBR_ParentCob_Movimento_ID < 1)
 			set_Value (COLUMNNAME_LBR_ParentCob_Movimento_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_ParentCob_Movimento_ID, Integer.valueOf(LBR_ParentCob_Movimento_ID));
 	}
 
 	/** Get Parent Collection Movement.
 		@return Parent Collection Movement	  */
-	public int getLBR_ParentCob_Movimento_ID () 
+	public int getLBR_ParentCob_Movimento_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_ParentCob_Movimento_ID);
 		if (ii == null)
@@ -220,9 +260,8 @@ public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Pe
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -231,15 +270,14 @@ public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Pe
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}
 
 	/** Set Search Key.
-		@param Value 
-		Search key for the record in the format required - must be unique
-	  */
+		@param Value Search key for the record in the format required - must be unique
+	*/
 	public void setValue (String Value)
 	{
 		set_Value (COLUMNNAME_Value, Value);
@@ -248,7 +286,7 @@ public class X_LBR_Cob_Movimento extends PO implements I_LBR_Cob_Movimento, I_Pe
 	/** Get Search Key.
 		@return Search key for the record in the format required - must be unique
 	  */
-	public String getValue () 
+	public String getValue()
 	{
 		return (String)get_Value(COLUMNNAME_Value);
 	}

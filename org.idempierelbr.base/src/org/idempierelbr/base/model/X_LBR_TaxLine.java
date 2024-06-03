@@ -24,15 +24,16 @@ import org.compiere.model.*;
 import org.compiere.util.Env;
 
 /** Generated Model for LBR_TaxLine
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_TaxLine")
+public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140128L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_TaxLine (Properties ctx, int LBR_TaxLine_ID, String trxName)
@@ -44,9 +45,57 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 // N
 			setLBR_PostTax (true);
 // Y
-			setLBR_Tax_ID (0);
 			setLBR_TaxLine_ID (0);
 			setLBR_TaxName_ID (0);
+			setLBR_Tax_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxLine (Properties ctx, int LBR_TaxLine_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_TaxLine_ID, trxName, virtualColumns);
+      /** if (LBR_TaxLine_ID == 0)
+        {
+			setIsTaxIncluded (false);
+// N
+			setLBR_PostTax (true);
+// Y
+			setLBR_TaxLine_ID (0);
+			setLBR_TaxName_ID (0);
+			setLBR_Tax_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxLine (Properties ctx, String LBR_TaxLine_UU, String trxName)
+    {
+      super (ctx, LBR_TaxLine_UU, trxName);
+      /** if (LBR_TaxLine_UU == null)
+        {
+			setIsTaxIncluded (false);
+// N
+			setLBR_PostTax (true);
+// Y
+			setLBR_TaxLine_ID (0);
+			setLBR_TaxName_ID (0);
+			setLBR_Tax_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxLine (Properties ctx, String LBR_TaxLine_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_TaxLine_UU, trxName, virtualColumns);
+      /** if (LBR_TaxLine_UU == null)
+        {
+			setIsTaxIncluded (false);
+// N
+			setLBR_PostTax (true);
+// Y
+			setLBR_TaxLine_ID (0);
+			setLBR_TaxName_ID (0);
+			setLBR_Tax_ID (0);
         } */
     }
 
@@ -57,7 +106,7 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -73,15 +122,14 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_TaxLine[")
+      StringBuilder sb = new StringBuilder ("X_LBR_TaxLine[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	/** Set Price includes Tax.
-		@param IsTaxIncluded 
-		Tax is included in the price 
-	  */
+		@param IsTaxIncluded Tax is included in the price 
+	*/
 	public void setIsTaxIncluded (boolean IsTaxIncluded)
 	{
 		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
@@ -90,39 +138,39 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	/** Get Price includes Tax.
 		@return Tax is included in the price 
 	  */
-	public boolean isTaxIncluded () 
+	public boolean isTaxIncluded()
 	{
 		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	public I_LBR_LegalMessage getLBR_LegalMessage() throws RuntimeException
-    {
-		return (I_LBR_LegalMessage)MTable.get(getCtx(), I_LBR_LegalMessage.Table_Name)
-			.getPO(getLBR_LegalMessage_ID(), get_TrxName());	}
+	{
+		return (I_LBR_LegalMessage)MTable.get(getCtx(), I_LBR_LegalMessage.Table_ID)
+			.getPO(getLBR_LegalMessage_ID(), get_TrxName());
+	}
 
 	/** Set Legal Message.
-		@param LBR_LegalMessage_ID 
-		Identifies a Legal Message
-	  */
+		@param LBR_LegalMessage_ID Identifies a Legal Message
+	*/
 	public void setLBR_LegalMessage_ID (int LBR_LegalMessage_ID)
 	{
-		if (LBR_LegalMessage_ID < 1) 
+		if (LBR_LegalMessage_ID < 1)
 			set_Value (COLUMNNAME_LBR_LegalMessage_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_LegalMessage_ID, Integer.valueOf(LBR_LegalMessage_ID));
 	}
 
 	/** Get Legal Message.
 		@return Identifies a Legal Message
 	  */
-	public int getLBR_LegalMessage_ID () 
+	public int getLBR_LegalMessage_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_LegalMessage_ID);
 		if (ii == null)
@@ -131,9 +179,8 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	}
 
 	/** Set Post Tax.
-		@param LBR_PostTax 
-		Indicates if the Tax should be Posted (Account)
-	  */
+		@param LBR_PostTax Indicates if the Tax should be Posted (Account)
+	*/
 	public void setLBR_PostTax (boolean LBR_PostTax)
 	{
 		set_Value (COLUMNNAME_LBR_PostTax, Boolean.valueOf(LBR_PostTax));
@@ -142,22 +189,21 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	/** Get Post Tax.
 		@return Indicates if the Tax should be Posted (Account)
 	  */
-	public boolean isLBR_PostTax () 
+	public boolean isLBR_PostTax()
 	{
 		Object oo = get_Value(COLUMNNAME_LBR_PostTax);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set Tax Amount.
-		@param LBR_TaxAmt 
-		Defines the Tax Amount
-	  */
+		@param LBR_TaxAmt Defines the Tax Amount
+	*/
 	public void setLBR_TaxAmt (BigDecimal LBR_TaxAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxAmt, LBR_TaxAmt);
@@ -166,7 +212,7 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	/** Get Tax Amount.
 		@return Defines the Tax Amount
 	  */
-	public BigDecimal getLBR_TaxAmt () 
+	public BigDecimal getLBR_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmt);
 		if (bd == null)
@@ -175,9 +221,8 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	}
 
 	/** Set Tax Base.
-		@param LBR_TaxBase 
-		Indicates the Tax Base
-	  */
+		@param LBR_TaxBase Indicates the Tax Base
+	*/
 	public void setLBR_TaxBase (BigDecimal LBR_TaxBase)
 	{
 		set_Value (COLUMNNAME_LBR_TaxBase, LBR_TaxBase);
@@ -186,7 +231,7 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	/** Get Tax Base.
 		@return Indicates the Tax Base
 	  */
-	public BigDecimal getLBR_TaxBase () 
+	public BigDecimal getLBR_TaxBase()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBase);
 		if (bd == null)
@@ -195,9 +240,8 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	}
 
 	/** Set Tax Base Amount.
-		@param LBR_TaxBaseAmt 
-		Defines the Tax Base Amount
-	  */
+		@param LBR_TaxBaseAmt Defines the Tax Base Amount
+	*/
 	public void setLBR_TaxBaseAmt (BigDecimal LBR_TaxBaseAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxBaseAmt, LBR_TaxBaseAmt);
@@ -206,7 +250,7 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	/** Get Tax Base Amount.
 		@return Defines the Tax Base Amount
 	  */
-	public BigDecimal getLBR_TaxBaseAmt () 
+	public BigDecimal getLBR_TaxBaseAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
 		if (bd == null)
@@ -215,23 +259,25 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	}
 
 	public I_LBR_TaxBaseType getLBR_TaxBaseType() throws RuntimeException
-    {
-		return (I_LBR_TaxBaseType)MTable.get(getCtx(), I_LBR_TaxBaseType.Table_Name)
-			.getPO(getLBR_TaxBaseType_ID(), get_TrxName());	}
+	{
+		return (I_LBR_TaxBaseType)MTable.get(getCtx(), I_LBR_TaxBaseType.Table_ID)
+			.getPO(getLBR_TaxBaseType_ID(), get_TrxName());
+	}
 
 	/** Set Tax Base Type.
-		@param LBR_TaxBaseType_ID Tax Base Type	  */
+		@param LBR_TaxBaseType_ID Tax Base Type
+	*/
 	public void setLBR_TaxBaseType_ID (int LBR_TaxBaseType_ID)
 	{
-		if (LBR_TaxBaseType_ID < 1) 
+		if (LBR_TaxBaseType_ID < 1)
 			set_Value (COLUMNNAME_LBR_TaxBaseType_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_TaxBaseType_ID, Integer.valueOf(LBR_TaxBaseType_ID));
 	}
 
 	/** Get Tax Base Type.
 		@return Tax Base Type	  */
-	public int getLBR_TaxBaseType_ID () 
+	public int getLBR_TaxBaseType_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_TaxBaseType_ID);
 		if (ii == null)
@@ -239,50 +285,21 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 		return ii.intValue();
 	}
 
-	public I_LBR_Tax getLBR_Tax() throws RuntimeException
-    {
-		return (I_LBR_Tax)MTable.get(getCtx(), I_LBR_Tax.Table_Name)
-			.getPO(getLBR_Tax_ID(), get_TrxName());	}
-
-	/** Set Transaction Tax.
-		@param LBR_Tax_ID 
-		Identifies a transaction tax (document/line)
-	  */
-	public void setLBR_Tax_ID (int LBR_Tax_ID)
-	{
-		if (LBR_Tax_ID < 1) 
-			set_ValueNoCheck (COLUMNNAME_LBR_Tax_ID, null);
-		else 
-			set_ValueNoCheck (COLUMNNAME_LBR_Tax_ID, Integer.valueOf(LBR_Tax_ID));
-	}
-
-	/** Get Transaction Tax.
-		@return Identifies a transaction tax (document/line)
-	  */
-	public int getLBR_Tax_ID () 
-	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Tax_ID);
-		if (ii == null)
-			 return 0;
-		return ii.intValue();
-	}
-
 	/** Set Transaction Tax Line.
-		@param LBR_TaxLine_ID 
-		Tax Line for the Transaction Tax
-	  */
+		@param LBR_TaxLine_ID Tax Line for the Transaction Tax
+	*/
 	public void setLBR_TaxLine_ID (int LBR_TaxLine_ID)
 	{
-		if (LBR_TaxLine_ID < 1) 
+		if (LBR_TaxLine_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxLine_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxLine_ID, Integer.valueOf(LBR_TaxLine_ID));
 	}
 
 	/** Get Transaction Tax Line.
 		@return Tax Line for the Transaction Tax
 	  */
-	public int getLBR_TaxLine_ID () 
+	public int getLBR_TaxLine_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_TaxLine_ID);
 		if (ii == null)
@@ -291,7 +308,8 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	}
 
 	/** Set LBR_TaxLine_UU.
-		@param LBR_TaxLine_UU LBR_TaxLine_UU	  */
+		@param LBR_TaxLine_UU LBR_TaxLine_UU
+	*/
 	public void setLBR_TaxLine_UU (String LBR_TaxLine_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_TaxLine_UU, LBR_TaxLine_UU);
@@ -299,15 +317,14 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 
 	/** Get LBR_TaxLine_UU.
 		@return LBR_TaxLine_UU	  */
-	public String getLBR_TaxLine_UU () 
+	public String getLBR_TaxLine_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TaxLine_UU);
 	}
 
 	/** Set Tax List Amount (Flat Rate).
-		@param LBR_TaxListAmt 
-		Tax List Amount (Flat Rate) stated by law
-	  */
+		@param LBR_TaxListAmt Tax List Amount (Flat Rate) stated by law
+	*/
 	public void setLBR_TaxListAmt (BigDecimal LBR_TaxListAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxListAmt, LBR_TaxListAmt);
@@ -316,7 +333,7 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	/** Get Tax List Amount (Flat Rate).
 		@return Tax List Amount (Flat Rate) stated by law
 	  */
-	public BigDecimal getLBR_TaxListAmt () 
+	public BigDecimal getLBR_TaxListAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxListAmt);
 		if (bd == null)
@@ -325,26 +342,26 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	}
 
 	public I_LBR_TaxName getLBR_TaxName() throws RuntimeException
-    {
-		return (I_LBR_TaxName)MTable.get(getCtx(), I_LBR_TaxName.Table_Name)
-			.getPO(getLBR_TaxName_ID(), get_TrxName());	}
+	{
+		return (I_LBR_TaxName)MTable.get(getCtx(), I_LBR_TaxName.Table_ID)
+			.getPO(getLBR_TaxName_ID(), get_TrxName());
+	}
 
 	/** Set Tax Name.
-		@param LBR_TaxName_ID 
-		Primary key table LBR_TaxName
-	  */
+		@param LBR_TaxName_ID Primary key table LBR_TaxName
+	*/
 	public void setLBR_TaxName_ID (int LBR_TaxName_ID)
 	{
-		if (LBR_TaxName_ID < 1) 
+		if (LBR_TaxName_ID < 1)
 			set_Value (COLUMNNAME_LBR_TaxName_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_TaxName_ID, Integer.valueOf(LBR_TaxName_ID));
 	}
 
 	/** Get Tax Name.
 		@return Primary key table LBR_TaxName
 	  */
-	public int getLBR_TaxName_ID () 
+	public int getLBR_TaxName_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_TaxName_ID);
 		if (ii == null)
@@ -353,9 +370,8 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	}
 
 	/** Set Tax Rate.
-		@param LBR_TaxRate 
-		Indicates the Tax Rate
-	  */
+		@param LBR_TaxRate Indicates the Tax Rate
+	*/
 	public void setLBR_TaxRate (BigDecimal LBR_TaxRate)
 	{
 		set_Value (COLUMNNAME_LBR_TaxRate, LBR_TaxRate);
@@ -364,7 +380,7 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	/** Get Tax Rate.
 		@return Indicates the Tax Rate
 	  */
-	public BigDecimal getLBR_TaxRate () 
+	public BigDecimal getLBR_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRate);
 		if (bd == null)
@@ -373,26 +389,26 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	}
 
 	public I_LBR_TaxStatus getLBR_TaxStatus() throws RuntimeException
-    {
-		return (I_LBR_TaxStatus)MTable.get(getCtx(), I_LBR_TaxStatus.Table_Name)
-			.getPO(getLBR_TaxStatus_ID(), get_TrxName());	}
+	{
+		return (I_LBR_TaxStatus)MTable.get(getCtx(), I_LBR_TaxStatus.Table_ID)
+			.getPO(getLBR_TaxStatus_ID(), get_TrxName());
+	}
 
 	/** Set Tax Status.
-		@param LBR_TaxStatus_ID 
-		Brazilian Tax Status
-	  */
+		@param LBR_TaxStatus_ID Brazilian Tax Status
+	*/
 	public void setLBR_TaxStatus_ID (int LBR_TaxStatus_ID)
 	{
-		if (LBR_TaxStatus_ID < 1) 
+		if (LBR_TaxStatus_ID < 1)
 			set_Value (COLUMNNAME_LBR_TaxStatus_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_TaxStatus_ID, Integer.valueOf(LBR_TaxStatus_ID));
 	}
 
 	/** Get Tax Status.
 		@return Brazilian Tax Status
 	  */
-	public int getLBR_TaxStatus_ID () 
+	public int getLBR_TaxStatus_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_TaxStatus_ID);
 		if (ii == null)
@@ -400,10 +416,37 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 		return ii.intValue();
 	}
 
-	/** Set Quantity.
-		@param Qty 
-		Quantity
+	public I_LBR_Tax getLBR_Tax() throws RuntimeException
+	{
+		return (I_LBR_Tax)MTable.get(getCtx(), I_LBR_Tax.Table_ID)
+			.getPO(getLBR_Tax_ID(), get_TrxName());
+	}
+
+	/** Set Transaction Tax.
+		@param LBR_Tax_ID Identifies a transaction tax (document/line)
+	*/
+	public void setLBR_Tax_ID (int LBR_Tax_ID)
+	{
+		if (LBR_Tax_ID < 1)
+			set_ValueNoCheck (COLUMNNAME_LBR_Tax_ID, null);
+		else
+			set_ValueNoCheck (COLUMNNAME_LBR_Tax_ID, Integer.valueOf(LBR_Tax_ID));
+	}
+
+	/** Get Transaction Tax.
+		@return Identifies a transaction tax (document/line)
 	  */
+	public int getLBR_Tax_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Tax_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	/** Set Quantity.
+		@param Qty Quantity
+	*/
 	public void setQty (BigDecimal Qty)
 	{
 		set_Value (COLUMNNAME_Qty, Qty);
@@ -412,7 +455,7 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	/** Get Quantity.
 		@return Quantity
 	  */
-	public BigDecimal getQty () 
+	public BigDecimal getQty()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_Qty);
 		if (bd == null)

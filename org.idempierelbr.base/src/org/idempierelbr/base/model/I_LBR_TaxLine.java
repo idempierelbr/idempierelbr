@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_TaxLine
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_TaxLine 
@@ -46,8 +46,8 @@ public interface I_LBR_TaxLine
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_TaxLine
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -184,21 +184,6 @@ public interface I_LBR_TaxLine
 
 	public I_LBR_TaxBaseType getLBR_TaxBaseType() throws RuntimeException;
 
-    /** Column name LBR_Tax_ID */
-    public static final String COLUMNNAME_LBR_Tax_ID = "LBR_Tax_ID";
-
-	/** Set Transaction Tax.
-	  * Identifies a transaction tax (document/line)
-	  */
-	public void setLBR_Tax_ID (int LBR_Tax_ID);
-
-	/** Get Transaction Tax.
-	  * Identifies a transaction tax (document/line)
-	  */
-	public int getLBR_Tax_ID();
-
-	public I_LBR_Tax getLBR_Tax() throws RuntimeException;
-
     /** Column name LBR_TaxLine_ID */
     public static final String COLUMNNAME_LBR_TaxLine_ID = "LBR_TaxLine_ID";
 
@@ -276,6 +261,21 @@ public interface I_LBR_TaxLine
 	public int getLBR_TaxStatus_ID();
 
 	public I_LBR_TaxStatus getLBR_TaxStatus() throws RuntimeException;
+
+    /** Column name LBR_Tax_ID */
+    public static final String COLUMNNAME_LBR_Tax_ID = "LBR_Tax_ID";
+
+	/** Set Transaction Tax.
+	  * Identifies a transaction tax (document/line)
+	  */
+	public void setLBR_Tax_ID (int LBR_Tax_ID);
+
+	/** Get Transaction Tax.
+	  * Identifies a transaction tax (document/line)
+	  */
+	public int getLBR_Tax_ID();
+
+	public I_LBR_Tax getLBR_Tax() throws RuntimeException;
 
     /** Column name Qty */
     public static final String COLUMNNAME_Qty = "Qty";

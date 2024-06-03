@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_TaxFormula
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_TaxFormula 
@@ -46,8 +46,8 @@ public interface I_LBR_TaxFormula
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_TaxFormula
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -128,17 +128,6 @@ public interface I_LBR_TaxFormula
 
 	public I_LBR_Formula getLBR_FormulaBase() throws RuntimeException;
 
-    /** Column name LBR_Formula_ID */
-    public static final String COLUMNNAME_LBR_Formula_ID = "LBR_Formula_ID";
-
-	/** Set Tax Formula (Brazil)	  */
-	public void setLBR_Formula_ID (int LBR_Formula_ID);
-
-	/** Get Tax Formula (Brazil)	  */
-	public int getLBR_Formula_ID();
-
-	public I_LBR_Formula getLBR_Formula() throws RuntimeException;
-
     /** Column name LBR_FormulaNet_ID */
     public static final String COLUMNNAME_LBR_FormulaNet_ID = "LBR_FormulaNet_ID";
 
@@ -149,6 +138,17 @@ public interface I_LBR_TaxFormula
 	public int getLBR_FormulaNet_ID();
 
 	public I_LBR_Formula getLBR_FormulaNet() throws RuntimeException;
+
+    /** Column name LBR_Formula_ID */
+    public static final String COLUMNNAME_LBR_Formula_ID = "LBR_Formula_ID";
+
+	/** Set Tax Formula (Brazil)	  */
+	public void setLBR_Formula_ID (int LBR_Formula_ID);
+
+	/** Get Tax Formula (Brazil)	  */
+	public int getLBR_Formula_ID();
+
+	public I_LBR_Formula getLBR_Formula() throws RuntimeException;
 
     /** Column name LBR_TaxFormula_ID */
     public static final String COLUMNNAME_LBR_TaxFormula_ID = "LBR_TaxFormula_ID";

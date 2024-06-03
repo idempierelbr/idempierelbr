@@ -22,21 +22,55 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_NCMMono
- *  @author iDempiere (generated) 
- *  @version Release 4.1 - $Id$ */
-public class X_LBR_NCMMono extends PO implements I_LBR_NCMMono, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_NCMMono")
+public class X_LBR_NCMMono extends PO implements I_LBR_NCMMono, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20170828L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_NCMMono (Properties ctx, int LBR_NCMMono_ID, String trxName)
     {
       super (ctx, LBR_NCMMono_ID, trxName);
       /** if (LBR_NCMMono_ID == 0)
+        {
+			setC_Tax_ID (0);
+// @C_Tax_ID@
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NCMMono (Properties ctx, int LBR_NCMMono_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NCMMono_ID, trxName, virtualColumns);
+      /** if (LBR_NCMMono_ID == 0)
+        {
+			setC_Tax_ID (0);
+// @C_Tax_ID@
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NCMMono (Properties ctx, String LBR_NCMMono_UU, String trxName)
+    {
+      super (ctx, LBR_NCMMono_UU, trxName);
+      /** if (LBR_NCMMono_UU == null)
+        {
+			setC_Tax_ID (0);
+// @C_Tax_ID@
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NCMMono (Properties ctx, String LBR_NCMMono_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NCMMono_UU, trxName, virtualColumns);
+      /** if (LBR_NCMMono_UU == null)
         {
 			setC_Tax_ID (0);
 // @C_Tax_ID@
@@ -50,7 +84,7 @@ public class X_LBR_NCMMono extends PO implements I_LBR_NCMMono, I_Persistent
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -66,32 +100,32 @@ public class X_LBR_NCMMono extends PO implements I_LBR_NCMMono, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_NCMMono[")
+      StringBuilder sb = new StringBuilder ("X_LBR_NCMMono[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	public org.compiere.model.I_C_Tax getC_Tax() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Tax)MTable.get(getCtx(), org.compiere.model.I_C_Tax.Table_Name)
-			.getPO(getC_Tax_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_Tax)MTable.get(getCtx(), org.compiere.model.I_C_Tax.Table_ID)
+			.getPO(getC_Tax_ID(), get_TrxName());
+	}
 
 	/** Set Tax.
-		@param C_Tax_ID 
-		Tax identifier
-	  */
+		@param C_Tax_ID Tax identifier
+	*/
 	public void setC_Tax_ID (int C_Tax_ID)
 	{
-		if (C_Tax_ID < 1) 
+		if (C_Tax_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_C_Tax_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_C_Tax_ID, Integer.valueOf(C_Tax_ID));
 	}
 
 	/** Get Tax.
 		@return Tax identifier
 	  */
-	public int getC_Tax_ID () 
+	public int getC_Tax_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_Tax_ID);
 		if (ii == null)
@@ -100,9 +134,8 @@ public class X_LBR_NCMMono extends PO implements I_LBR_NCMMono, I_Persistent
 	}
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -111,24 +144,25 @@ public class X_LBR_NCMMono extends PO implements I_LBR_NCMMono, I_Persistent
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set Monophase NCM.
-		@param LBR_NCMMono_ID Monophase NCM	  */
+		@param LBR_NCMMono_ID Monophase NCM
+	*/
 	public void setLBR_NCMMono_ID (int LBR_NCMMono_ID)
 	{
-		if (LBR_NCMMono_ID < 1) 
+		if (LBR_NCMMono_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_NCMMono_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_NCMMono_ID, Integer.valueOf(LBR_NCMMono_ID));
 	}
 
 	/** Get Monophase NCM.
 		@return Monophase NCM	  */
-	public int getLBR_NCMMono_ID () 
+	public int getLBR_NCMMono_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NCMMono_ID);
 		if (ii == null)
@@ -137,7 +171,8 @@ public class X_LBR_NCMMono extends PO implements I_LBR_NCMMono, I_Persistent
 	}
 
 	/** Set Monophase NCM.
-		@param LBR_NCMMono_UU Monophase NCM	  */
+		@param LBR_NCMMono_UU Monophase NCM
+	*/
 	public void setLBR_NCMMono_UU (String LBR_NCMMono_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_NCMMono_UU, LBR_NCMMono_UU);
@@ -145,15 +180,14 @@ public class X_LBR_NCMMono extends PO implements I_LBR_NCMMono, I_Persistent
 
 	/** Get Monophase NCM.
 		@return Monophase NCM	  */
-	public String getLBR_NCMMono_UU () 
+	public String getLBR_NCMMono_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NCMMono_UU);
 	}
 
 	/** Set Search Key.
-		@param Value 
-		Search key for the record in the format required - must be unique
-	  */
+		@param Value Search key for the record in the format required - must be unique
+	*/
 	public void setValue (String Value)
 	{
 		set_Value (COLUMNNAME_Value, Value);
@@ -162,7 +196,7 @@ public class X_LBR_NCMMono extends PO implements I_LBR_NCMMono, I_Persistent
 	/** Get Search Key.
 		@return Search key for the record in the format required - must be unique
 	  */
-	public String getValue () 
+	public String getValue()
 	{
 		return (String)get_Value(COLUMNNAME_Value);
 	}

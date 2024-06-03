@@ -24,21 +24,52 @@ import org.compiere.model.*;
 import org.compiere.util.Env;
 
 /** Generated Model for LBR_Collection_Default
- *  @author iDempiere (generated) 
- *  @version Release 2.1 - $Id$ */
-public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Default, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_Collection_Default")
+public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Default, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20150825L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_Collection_Default (Properties ctx, int LBR_Collection_Default_ID, String trxName)
     {
       super (ctx, LBR_Collection_Default_ID, trxName);
       /** if (LBR_Collection_Default_ID == 0)
+        {
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Collection_Default (Properties ctx, int LBR_Collection_Default_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_Collection_Default_ID, trxName, virtualColumns);
+      /** if (LBR_Collection_Default_ID == 0)
+        {
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Collection_Default (Properties ctx, String LBR_Collection_Default_UU, String trxName)
+    {
+      super (ctx, LBR_Collection_Default_UU, trxName);
+      /** if (LBR_Collection_Default_UU == null)
+        {
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Collection_Default (Properties ctx, String LBR_Collection_Default_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_Collection_Default_UU, trxName, virtualColumns);
+      /** if (LBR_Collection_Default_UU == null)
         {
 			setName (null);
         } */
@@ -51,7 +82,7 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -67,15 +98,14 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_Collection_Default[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_Collection_Default[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -84,7 +114,7 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
@@ -94,7 +124,8 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** N - Not Accepted = N */
 	public static final String LBR_ACCEPTED_N_NotAccepted = "N";
 	/** Set Accepted.
-		@param LBR_Accepted Accepted	  */
+		@param LBR_Accepted Accepted
+	*/
 	public void setLBR_Accepted (String LBR_Accepted)
 	{
 
@@ -103,7 +134,7 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Accepted.
 		@return Accepted	  */
-	public String getLBR_Accepted () 
+	public String getLBR_Accepted()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Accepted);
 	}
@@ -113,7 +144,8 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** 2 - Escritural = 2 */
 	public static final String LBR_CNAB240DOCTYPE_2_Escritural = "2";
 	/** Set Febraban Document Type.
-		@param LBR_CNAB240DocType Febraban Document Type	  */
+		@param LBR_CNAB240DocType Febraban Document Type
+	*/
 	public void setLBR_CNAB240DocType (String LBR_CNAB240DocType)
 	{
 
@@ -122,43 +154,9 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Febraban Document Type.
 		@return Febraban Document Type	  */
-	public String getLBR_CNAB240DocType () 
+	public String getLBR_CNAB240DocType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CNAB240DocType);
-	}
-
-	/** Set Bank Collection Defaults.
-		@param LBR_Collection_Default_ID Bank Collection Defaults	  */
-	public void setLBR_Collection_Default_ID (int LBR_Collection_Default_ID)
-	{
-		if (LBR_Collection_Default_ID < 1) 
-			set_ValueNoCheck (COLUMNNAME_LBR_Collection_Default_ID, null);
-		else 
-			set_ValueNoCheck (COLUMNNAME_LBR_Collection_Default_ID, Integer.valueOf(LBR_Collection_Default_ID));
-	}
-
-	/** Get Bank Collection Defaults.
-		@return Bank Collection Defaults	  */
-	public int getLBR_Collection_Default_ID () 
-	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Collection_Default_ID);
-		if (ii == null)
-			 return 0;
-		return ii.intValue();
-	}
-
-	/** Set Bank Collection Defaults.
-		@param LBR_Collection_Default_UU Bank Collection Defaults	  */
-	public void setLBR_Collection_Default_UU (String LBR_Collection_Default_UU)
-	{
-		set_ValueNoCheck (COLUMNNAME_LBR_Collection_Default_UU, LBR_Collection_Default_UU);
-	}
-
-	/** Get Bank Collection Defaults.
-		@return Bank Collection Defaults	  */
-	public String getLBR_Collection_Default_UU () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_Collection_Default_UU);
 	}
 
 	/** 1 - Com Cadastramento (Cobranca Registrada) = 1 */
@@ -168,9 +166,8 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** 3 - Com Cadastramento / Recusa Debito Automatico = 3 */
 	public static final String LBR_COLLECTIONREGTYPE_3_ComCadastramentoRecusaDebitoAutomatico = "3";
 	/** Set Registration Type.
-		@param LBR_CollectionRegType 
-		Collection Registration Type
-	  */
+		@param LBR_CollectionRegType Collection Registration Type
+	*/
 	public void setLBR_CollectionRegType (String LBR_CollectionRegType)
 	{
 
@@ -180,7 +177,7 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** Get Registration Type.
 		@return Collection Registration Type
 	  */
-	public String getLBR_CollectionRegType () 
+	public String getLBR_CollectionRegType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CollectionRegType);
 	}
@@ -190,7 +187,8 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** 2 - Nao Baixar / Nao Devolver = 2 */
 	public static final String LBR_COLLECTIONRETURNCODE_2_NaoBaixarNaoDevolver = "2";
 	/** Set Collection Return Code.
-		@param LBR_CollectionReturnCode Collection Return Code	  */
+		@param LBR_CollectionReturnCode Collection Return Code
+	*/
 	public void setLBR_CollectionReturnCode (String LBR_CollectionReturnCode)
 	{
 
@@ -199,13 +197,14 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Collection Return Code.
 		@return Collection Return Code	  */
-	public String getLBR_CollectionReturnCode () 
+	public String getLBR_CollectionReturnCode()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CollectionReturnCode);
 	}
 
 	/** Set Collection Return Days.
-		@param LBR_CollectionReturnDays Collection Return Days	  */
+		@param LBR_CollectionReturnDays Collection Return Days
+	*/
 	public void setLBR_CollectionReturnDays (int LBR_CollectionReturnDays)
 	{
 		set_Value (COLUMNNAME_LBR_CollectionReturnDays, Integer.valueOf(LBR_CollectionReturnDays));
@@ -213,7 +212,7 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Collection Return Days.
 		@return Collection Return Days	  */
-	public int getLBR_CollectionReturnDays () 
+	public int getLBR_CollectionReturnDays()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_CollectionReturnDays);
 		if (ii == null)
@@ -286,7 +285,8 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** 99 - Outros = 99 */
 	public static final String LBR_COLLECTIONTYPE_99_Outros = "99";
 	/** Set Collection Type.
-		@param LBR_CollectionType Collection Type	  */
+		@param LBR_CollectionType Collection Type
+	*/
 	public void setLBR_CollectionType (String LBR_CollectionType)
 	{
 
@@ -295,9 +295,45 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Collection Type.
 		@return Collection Type	  */
-	public String getLBR_CollectionType () 
+	public String getLBR_CollectionType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CollectionType);
+	}
+
+	/** Set Bank Collection Defaults.
+		@param LBR_Collection_Default_ID Bank Collection Defaults
+	*/
+	public void setLBR_Collection_Default_ID (int LBR_Collection_Default_ID)
+	{
+		if (LBR_Collection_Default_ID < 1)
+			set_ValueNoCheck (COLUMNNAME_LBR_Collection_Default_ID, null);
+		else
+			set_ValueNoCheck (COLUMNNAME_LBR_Collection_Default_ID, Integer.valueOf(LBR_Collection_Default_ID));
+	}
+
+	/** Get Bank Collection Defaults.
+		@return Bank Collection Defaults	  */
+	public int getLBR_Collection_Default_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Collection_Default_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	/** Set Bank Collection Defaults.
+		@param LBR_Collection_Default_UU Bank Collection Defaults
+	*/
+	public void setLBR_Collection_Default_UU (String LBR_Collection_Default_UU)
+	{
+		set_ValueNoCheck (COLUMNNAME_LBR_Collection_Default_UU, LBR_Collection_Default_UU);
+	}
+
+	/** Get Bank Collection Defaults.
+		@return Bank Collection Defaults	  */
+	public String getLBR_Collection_Default_UU()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_Collection_Default_UU);
 	}
 
 	/** 1 - Emite com Endereco do Arquivo Remessa = 1 */
@@ -307,7 +343,8 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** 3 - Emite com Endereco do Cadastro no Banco = 3 */
 	public static final String LBR_DIRECTDEBITNOTICE_3_EmiteComEnderecoDoCadastroNoBanco = "3";
 	/** Set Direct Debit Notice.
-		@param LBR_DirectDebitNotice Direct Debit Notice	  */
+		@param LBR_DirectDebitNotice Direct Debit Notice
+	*/
 	public void setLBR_DirectDebitNotice (String LBR_DirectDebitNotice)
 	{
 
@@ -316,13 +353,14 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Direct Debit Notice.
 		@return Direct Debit Notice	  */
-	public String getLBR_DirectDebitNotice () 
+	public String getLBR_DirectDebitNotice()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_DirectDebitNotice);
 	}
 
 	/** Set Interest Amount/Percentage.
-		@param LBR_InterestAP Interest Amount/Percentage	  */
+		@param LBR_InterestAP Interest Amount/Percentage
+	*/
 	public void setLBR_InterestAP (BigDecimal LBR_InterestAP)
 	{
 		set_Value (COLUMNNAME_LBR_InterestAP, LBR_InterestAP);
@@ -330,7 +368,7 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Interest Amount/Percentage.
 		@return Interest Amount/Percentage	  */
-	public BigDecimal getLBR_InterestAP () 
+	public BigDecimal getLBR_InterestAP()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_InterestAP);
 		if (bd == null)
@@ -339,26 +377,26 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	}
 
 	public org.compiere.model.I_C_Charge getLBR_InterestCharge() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Charge)MTable.get(getCtx(), org.compiere.model.I_C_Charge.Table_Name)
-			.getPO(getLBR_InterestCharge_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_Charge)MTable.get(getCtx(), org.compiere.model.I_C_Charge.Table_ID)
+			.getPO(getLBR_InterestCharge_ID(), get_TrxName());
+	}
 
 	/** Set Interest Charge.
-		@param LBR_InterestCharge_ID 
-		Charge to allocate interests
-	  */
+		@param LBR_InterestCharge_ID Charge to allocate interests
+	*/
 	public void setLBR_InterestCharge_ID (int LBR_InterestCharge_ID)
 	{
-		if (LBR_InterestCharge_ID < 1) 
+		if (LBR_InterestCharge_ID < 1)
 			set_Value (COLUMNNAME_LBR_InterestCharge_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_InterestCharge_ID, Integer.valueOf(LBR_InterestCharge_ID));
 	}
 
 	/** Get Interest Charge.
 		@return Charge to allocate interests
 	  */
-	public int getLBR_InterestCharge_ID () 
+	public int getLBR_InterestCharge_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_InterestCharge_ID);
 		if (ii == null)
@@ -373,7 +411,8 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** 3 - Isento = 3 */
 	public static final String LBR_INTERESTCODE_3_Isento = "3";
 	/** Set Late Payment Interest Code.
-		@param LBR_InterestCode Late Payment Interest Code	  */
+		@param LBR_InterestCode Late Payment Interest Code
+	*/
 	public void setLBR_InterestCode (String LBR_InterestCode)
 	{
 
@@ -382,13 +421,14 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Late Payment Interest Code.
 		@return Late Payment Interest Code	  */
-	public String getLBR_InterestCode () 
+	public String getLBR_InterestCode()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_InterestCode);
 	}
 
 	/** Set Interest Days.
-		@param LBR_InterestDays Interest Days	  */
+		@param LBR_InterestDays Interest Days
+	*/
 	public void setLBR_InterestDays (int LBR_InterestDays)
 	{
 		set_Value (COLUMNNAME_LBR_InterestDays, Integer.valueOf(LBR_InterestDays));
@@ -396,7 +436,7 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Interest Days.
 		@return Interest Days	  */
-	public int getLBR_InterestDays () 
+	public int getLBR_InterestDays()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_InterestDays);
 		if (ii == null)
@@ -405,7 +445,8 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	}
 
 	/** Set Late Payment Penaulty Amount/Percentage.
-		@param LBR_LatePaymentPenaltyAP Late Payment Penaulty Amount/Percentage	  */
+		@param LBR_LatePaymentPenaltyAP Late Payment Penaulty Amount/Percentage
+	*/
 	public void setLBR_LatePaymentPenaltyAP (BigDecimal LBR_LatePaymentPenaltyAP)
 	{
 		set_Value (COLUMNNAME_LBR_LatePaymentPenaltyAP, LBR_LatePaymentPenaltyAP);
@@ -413,7 +454,7 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Late Payment Penaulty Amount/Percentage.
 		@return Late Payment Penaulty Amount/Percentage	  */
-	public BigDecimal getLBR_LatePaymentPenaltyAP () 
+	public BigDecimal getLBR_LatePaymentPenaltyAP()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_LatePaymentPenaltyAP);
 		if (bd == null)
@@ -426,7 +467,8 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** 2 - Percentage = 2 */
 	public static final String LBR_LATEPAYMENTPENALTYCODE_2_Percentage = "2";
 	/** Set Late Payment Penaulty Code.
-		@param LBR_LatePaymentPenaltyCode Late Payment Penaulty Code	  */
+		@param LBR_LatePaymentPenaltyCode Late Payment Penaulty Code
+	*/
 	public void setLBR_LatePaymentPenaltyCode (String LBR_LatePaymentPenaltyCode)
 	{
 
@@ -435,13 +477,14 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Late Payment Penaulty Code.
 		@return Late Payment Penaulty Code	  */
-	public String getLBR_LatePaymentPenaltyCode () 
+	public String getLBR_LatePaymentPenaltyCode()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_LatePaymentPenaltyCode);
 	}
 
 	/** Set Late Payment Penaulty Days.
-		@param LBR_LatePaymentPenaltyDays Late Payment Penaulty Days	  */
+		@param LBR_LatePaymentPenaltyDays Late Payment Penaulty Days
+	*/
 	public void setLBR_LatePaymentPenaltyDays (int LBR_LatePaymentPenaltyDays)
 	{
 		set_Value (COLUMNNAME_LBR_LatePaymentPenaltyDays, Integer.valueOf(LBR_LatePaymentPenaltyDays));
@@ -449,7 +492,7 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Late Payment Penaulty Days.
 		@return Late Payment Penaulty Days	  */
-	public int getLBR_LatePaymentPenaltyDays () 
+	public int getLBR_LatePaymentPenaltyDays()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_LatePaymentPenaltyDays);
 		if (ii == null)
@@ -458,7 +501,8 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	}
 
 	/** Set Message 1.
-		@param LBR_Message1 Message 1	  */
+		@param LBR_Message1 Message 1
+	*/
 	public void setLBR_Message1 (String LBR_Message1)
 	{
 		set_Value (COLUMNNAME_LBR_Message1, LBR_Message1);
@@ -466,13 +510,14 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Message 1.
 		@return Message 1	  */
-	public String getLBR_Message1 () 
+	public String getLBR_Message1()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Message1);
 	}
 
 	/** Set Message 2.
-		@param LBR_Message2 Message 2	  */
+		@param LBR_Message2 Message 2
+	*/
 	public void setLBR_Message2 (String LBR_Message2)
 	{
 		set_Value (COLUMNNAME_LBR_Message2, LBR_Message2);
@@ -480,7 +525,7 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Message 2.
 		@return Message 2	  */
-	public String getLBR_Message2 () 
+	public String getLBR_Message2()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Message2);
 	}
@@ -490,7 +535,8 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** 2 - Autoriza Pagamentos Parciais = 2 */
 	public static final String LBR_PARTIALPAYMENT_2_AutorizaPagamentosParciais = "2";
 	/** Set Authorize Partial Payment.
-		@param LBR_PartialPayment Authorize Partial Payment	  */
+		@param LBR_PartialPayment Authorize Partial Payment
+	*/
 	public void setLBR_PartialPayment (String LBR_PartialPayment)
 	{
 
@@ -499,25 +545,26 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Authorize Partial Payment.
 		@return Authorize Partial Payment	  */
-	public String getLBR_PartialPayment () 
+	public String getLBR_PartialPayment()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_PartialPayment);
 	}
 
 	/** LBR_PaymentAllocationPriority AD_Reference_ID=800009 */
 	public static final int LBR_PAYMENTALLOCATIONPRIORITY_AD_Reference_ID=800009;
-	/** Capital / Penalty / Interest = CPI */
-	public static final String LBR_PAYMENTALLOCATIONPRIORITY_CapitalPenaltyInterest = "CPI";
 	/** Capital / Interest / Penalty = CIP */
 	public static final String LBR_PAYMENTALLOCATIONPRIORITY_CapitalInterestPenalty = "CIP";
-	/** Penalty / Interest / Capital = PIC */
-	public static final String LBR_PAYMENTALLOCATIONPRIORITY_PenaltyInterestCapital = "PIC";
+	/** Capital / Penalty / Interest = CPI */
+	public static final String LBR_PAYMENTALLOCATIONPRIORITY_CapitalPenaltyInterest = "CPI";
 	/** Interest / Capital / Penalty = ICP */
 	public static final String LBR_PAYMENTALLOCATIONPRIORITY_InterestCapitalPenalty = "ICP";
 	/** Penalty / Capital / Interest = PCI */
 	public static final String LBR_PAYMENTALLOCATIONPRIORITY_PenaltyCapitalInterest = "PCI";
+	/** Penalty / Interest / Capital = PIC */
+	public static final String LBR_PAYMENTALLOCATIONPRIORITY_PenaltyInterestCapital = "PIC";
 	/** Set Payment Allocation Priority.
-		@param LBR_PaymentAllocationPriority Payment Allocation Priority	  */
+		@param LBR_PaymentAllocationPriority Payment Allocation Priority
+	*/
 	public void setLBR_PaymentAllocationPriority (String LBR_PaymentAllocationPriority)
 	{
 
@@ -526,32 +573,32 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 
 	/** Get Payment Allocation Priority.
 		@return Payment Allocation Priority	  */
-	public String getLBR_PaymentAllocationPriority () 
+	public String getLBR_PaymentAllocationPriority()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_PaymentAllocationPriority);
 	}
 
 	public org.compiere.model.I_C_Charge getLBR_PenaltyCharge() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Charge)MTable.get(getCtx(), org.compiere.model.I_C_Charge.Table_Name)
-			.getPO(getLBR_PenaltyCharge_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_Charge)MTable.get(getCtx(), org.compiere.model.I_C_Charge.Table_ID)
+			.getPO(getLBR_PenaltyCharge_ID(), get_TrxName());
+	}
 
 	/** Set Penalty Charge.
-		@param LBR_PenaltyCharge_ID 
-		Charge to allocate penalty payments
-	  */
+		@param LBR_PenaltyCharge_ID Charge to allocate penalty payments
+	*/
 	public void setLBR_PenaltyCharge_ID (int LBR_PenaltyCharge_ID)
 	{
-		if (LBR_PenaltyCharge_ID < 1) 
+		if (LBR_PenaltyCharge_ID < 1)
 			set_Value (COLUMNNAME_LBR_PenaltyCharge_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_PenaltyCharge_ID, Integer.valueOf(LBR_PenaltyCharge_ID));
 	}
 
 	/** Get Penalty Charge.
 		@return Charge to allocate penalty payments
 	  */
-	public int getLBR_PenaltyCharge_ID () 
+	public int getLBR_PenaltyCharge_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_PenaltyCharge_ID);
 		if (ii == null)
@@ -574,9 +621,8 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** 9 - Cancelamento Protesto Automatico = 9 */
 	public static final String LBR_PROTESTCODE_9_CancelamentoProtestoAutomatico = "9";
 	/** Set Protest Code.
-		@param LBR_ProtestCode 
-		Protest Code
-	  */
+		@param LBR_ProtestCode Protest Code
+	*/
 	public void setLBR_ProtestCode (String LBR_ProtestCode)
 	{
 
@@ -586,15 +632,14 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** Get Protest Code.
 		@return Protest Code
 	  */
-	public String getLBR_ProtestCode () 
+	public String getLBR_ProtestCode()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ProtestCode);
 	}
 
 	/** Set Protest Days.
-		@param LBR_ProtestDays 
-		Protest Days
-	  */
+		@param LBR_ProtestDays Protest Days
+	*/
 	public void setLBR_ProtestDays (int LBR_ProtestDays)
 	{
 		set_Value (COLUMNNAME_LBR_ProtestDays, Integer.valueOf(LBR_ProtestDays));
@@ -603,7 +648,7 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** Get Protest Days.
 		@return Protest Days
 	  */
-	public int getLBR_ProtestDays () 
+	public int getLBR_ProtestDays()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_ProtestDays);
 		if (ii == null)
@@ -612,9 +657,8 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -623,7 +667,7 @@ public class X_LBR_Collection_Default extends PO implements I_LBR_Collection_Def
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}

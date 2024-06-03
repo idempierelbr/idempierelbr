@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NotaFiscalNote
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_NotaFiscalNote 
@@ -46,8 +46,8 @@ public interface I_LBR_NotaFiscalNote
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_NotaFiscalNote
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -115,21 +115,6 @@ public interface I_LBR_NotaFiscalNote
 	/** Get NFe Note Type	  */
 	public String getLBR_NFeNoteType();
 
-    /** Column name LBR_NotaFiscal_ID */
-    public static final String COLUMNNAME_LBR_NotaFiscal_ID = "LBR_NotaFiscal_ID";
-
-	/** Set Brazilian Fiscal Invoice (Nota Fiscal).
-	  * Brazilian Fiscal Invoice (Nota Fiscal) Identifier
-	  */
-	public void setLBR_NotaFiscal_ID (int LBR_NotaFiscal_ID);
-
-	/** Get Brazilian Fiscal Invoice (Nota Fiscal).
-	  * Brazilian Fiscal Invoice (Nota Fiscal) Identifier
-	  */
-	public int getLBR_NotaFiscal_ID();
-
-	public I_LBR_NotaFiscal getLBR_NotaFiscal() throws RuntimeException;
-
     /** Column name LBR_NotaFiscalNote_ID */
     public static final String COLUMNNAME_LBR_NotaFiscalNote_ID = "LBR_NotaFiscalNote_ID";
 
@@ -147,6 +132,21 @@ public interface I_LBR_NotaFiscalNote
 
 	/** Get Brazilian Fiscal Invoice (Nota Fiscal) Note	  */
 	public String getLBR_NotaFiscalNote_UU();
+
+    /** Column name LBR_NotaFiscal_ID */
+    public static final String COLUMNNAME_LBR_NotaFiscal_ID = "LBR_NotaFiscal_ID";
+
+	/** Set Brazilian Fiscal Invoice (Nota Fiscal).
+	  * Brazilian Fiscal Invoice (Nota Fiscal) Identifier
+	  */
+	public void setLBR_NotaFiscal_ID (int LBR_NotaFiscal_ID);
+
+	/** Get Brazilian Fiscal Invoice (Nota Fiscal).
+	  * Brazilian Fiscal Invoice (Nota Fiscal) Identifier
+	  */
+	public int getLBR_NotaFiscal_ID();
+
+	public I_LBR_NotaFiscal getLBR_NotaFiscal() throws RuntimeException;
 
     /** Column name Note */
     public static final String COLUMNNAME_Note = "Note";

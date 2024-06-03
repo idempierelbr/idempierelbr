@@ -22,21 +22,55 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_ProductCategory
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_ProductCategory extends PO implements I_LBR_ProductCategory, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_ProductCategory")
+public class X_LBR_ProductCategory extends PO implements I_LBR_ProductCategory, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140116L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_ProductCategory (Properties ctx, int LBR_ProductCategory_ID, String trxName)
     {
       super (ctx, LBR_ProductCategory_ID, trxName);
       /** if (LBR_ProductCategory_ID == 0)
+        {
+			setLBR_ProductCategory_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_ProductCategory (Properties ctx, int LBR_ProductCategory_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_ProductCategory_ID, trxName, virtualColumns);
+      /** if (LBR_ProductCategory_ID == 0)
+        {
+			setLBR_ProductCategory_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_ProductCategory (Properties ctx, String LBR_ProductCategory_UU, String trxName)
+    {
+      super (ctx, LBR_ProductCategory_UU, trxName);
+      /** if (LBR_ProductCategory_UU == null)
+        {
+			setLBR_ProductCategory_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_ProductCategory (Properties ctx, String LBR_ProductCategory_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_ProductCategory_UU, trxName, virtualColumns);
+      /** if (LBR_ProductCategory_UU == null)
         {
 			setLBR_ProductCategory_ID (0);
 			setName (null);
@@ -50,7 +84,7 @@ public class X_LBR_ProductCategory extends PO implements I_LBR_ProductCategory, 
     }
 
     /** AccessLevel
-      * @return 6 - System - Client 
+      * @return 6 - System - Client
       */
     protected int get_AccessLevel()
     {
@@ -66,15 +100,14 @@ public class X_LBR_ProductCategory extends PO implements I_LBR_ProductCategory, 
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_ProductCategory[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_ProductCategory[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -83,27 +116,26 @@ public class X_LBR_ProductCategory extends PO implements I_LBR_ProductCategory, 
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set CFOP Product Category.
-		@param LBR_ProductCategory_ID 
-		Identifies a CFOP Product Category
-	  */
+		@param LBR_ProductCategory_ID Identifies a CFOP Product Category
+	*/
 	public void setLBR_ProductCategory_ID (int LBR_ProductCategory_ID)
 	{
-		if (LBR_ProductCategory_ID < 1) 
+		if (LBR_ProductCategory_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_ProductCategory_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_ProductCategory_ID, Integer.valueOf(LBR_ProductCategory_ID));
 	}
 
 	/** Get CFOP Product Category.
 		@return Identifies a CFOP Product Category
 	  */
-	public int getLBR_ProductCategory_ID () 
+	public int getLBR_ProductCategory_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_ProductCategory_ID);
 		if (ii == null)
@@ -112,7 +144,8 @@ public class X_LBR_ProductCategory extends PO implements I_LBR_ProductCategory, 
 	}
 
 	/** Set LBR_ProductCategory_UU.
-		@param LBR_ProductCategory_UU LBR_ProductCategory_UU	  */
+		@param LBR_ProductCategory_UU LBR_ProductCategory_UU
+	*/
 	public void setLBR_ProductCategory_UU (String LBR_ProductCategory_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_ProductCategory_UU, LBR_ProductCategory_UU);
@@ -120,15 +153,14 @@ public class X_LBR_ProductCategory extends PO implements I_LBR_ProductCategory, 
 
 	/** Get LBR_ProductCategory_UU.
 		@return LBR_ProductCategory_UU	  */
-	public String getLBR_ProductCategory_UU () 
+	public String getLBR_ProductCategory_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ProductCategory_UU);
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -137,7 +169,7 @@ public class X_LBR_ProductCategory extends PO implements I_LBR_ProductCategory, 
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}

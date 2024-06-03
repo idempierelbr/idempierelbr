@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_DocLine_ICMS
  *  @author iDempiere (generated) 
- *  @version Release 5.1
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_DocLine_ICMS 
@@ -46,8 +46,8 @@ public interface I_LBR_DocLine_ICMS
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_DocLine_ICMS
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -129,10 +129,14 @@ public interface I_LBR_DocLine_ICMS
     /** Column name LBR_DIFAL_TaxAmtFCPUFDest */
     public static final String COLUMNNAME_LBR_DIFAL_TaxAmtFCPUFDest = "LBR_DIFAL_TaxAmtFCPUFDest";
 
-	/** Set DIFAL Tax Amt of "Fundo de Combate a Pobreza"	  */
+	/** Set DIFAL Tax Amt of &quot;
+Fundo de Combate a Pobreza&quot;
+	  */
 	public void setLBR_DIFAL_TaxAmtFCPUFDest (BigDecimal LBR_DIFAL_TaxAmtFCPUFDest);
 
-	/** Get DIFAL Tax Amt of "Fundo de Combate a Pobreza"	  */
+	/** Get DIFAL Tax Amt of &quot;
+Fundo de Combate a Pobreza&quot;
+	  */
 	public BigDecimal getLBR_DIFAL_TaxAmtFCPUFDest();
 
     /** Column name LBR_DIFAL_TaxAmtICMSUFDest */
@@ -153,22 +157,17 @@ public interface I_LBR_DocLine_ICMS
 	/** Get DIFAL Tax Amt in Sender UF	  */
 	public BigDecimal getLBR_DIFAL_TaxAmtICMSUFRemet();
 
-    /** Column name LBR_DIFAL_TaxBaseFCPUFDest */
-    public static final String COLUMNNAME_LBR_DIFAL_TaxBaseFCPUFDest = "LBR_DIFAL_TaxBaseFCPUFDest";
-
-	/** Set DIFAL Tax Base Amt of "Fundo de Combate a Pobreza"	  */
-	public void setLBR_DIFAL_TaxBaseFCPUFDest (BigDecimal LBR_DIFAL_TaxBaseFCPUFDest);
-
-	/** Get DIFAL Tax Base Amt of "Fundo de Combate a Pobreza"	  */
-	public BigDecimal getLBR_DIFAL_TaxBaseFCPUFDest();
-
     /** Column name LBR_DIFAL_TaxRateFCPUFDest */
     public static final String COLUMNNAME_LBR_DIFAL_TaxRateFCPUFDest = "LBR_DIFAL_TaxRateFCPUFDest";
 
-	/** Set DIFAL Tax Rate of "Fundo de Combate a Pobreza"	  */
+	/** Set DIFAL Tax Rate of &quot;
+Fundo de Combate a Pobreza&quot;
+	  */
 	public void setLBR_DIFAL_TaxRateFCPUFDest (BigDecimal LBR_DIFAL_TaxRateFCPUFDest);
 
-	/** Get DIFAL Tax Rate of "Fundo de Combate a Pobreza"	  */
+	/** Get DIFAL Tax Rate of &quot;
+Fundo de Combate a Pobreza&quot;
+	  */
 	public BigDecimal getLBR_DIFAL_TaxRateFCPUFDest();
 
     /** Column name LBR_DIFAL_TaxRateICMSUFDest */
@@ -220,84 +219,6 @@ public interface I_LBR_DocLine_ICMS
 	  * Doc Line ICMS
 	  */
 	public String getLBR_DocLine_ICMS_UU();
-
-    /** Column name LBR_ICMS_OwnTaxStatus */
-    public static final String COLUMNNAME_LBR_ICMS_OwnTaxStatus = "LBR_ICMS_OwnTaxStatus";
-
-	/** Set Declarant ICMS Tax Status.
-	  * ICMS tax status from the point of view of the declarant
-	  */
-	public void setLBR_ICMS_OwnTaxStatus (String LBR_ICMS_OwnTaxStatus);
-
-	/** Get Declarant ICMS Tax Status.
-	  * ICMS tax status from the point of view of the declarant
-	  */
-	public String getLBR_ICMS_OwnTaxStatus();
-
-    /** Column name LBR_ICMS_TaxAmtOp */
-    public static final String COLUMNNAME_LBR_ICMS_TaxAmtOp = "LBR_ICMS_TaxAmtOp";
-
-	/** Set ICMS Tax Operation Amount.
-	  * Identifies the ICMS Tax Operation Amount
-	  */
-	public void setLBR_ICMS_TaxAmtOp (BigDecimal LBR_ICMS_TaxAmtOp);
-
-	/** Get ICMS Tax Operation Amount.
-	  * Identifies the ICMS Tax Operation Amount
-	  */
-	public BigDecimal getLBR_ICMS_TaxAmtOp();
-
-    /** Column name LBR_ICMS_TaxBaseType */
-    public static final String COLUMNNAME_LBR_ICMS_TaxBaseType = "LBR_ICMS_TaxBaseType";
-
-	/** Set ICMS Tax Base Type.
-	  * Identifies a ICMS Tax Base Type
-	  */
-	public void setLBR_ICMS_TaxBaseType (String LBR_ICMS_TaxBaseType);
-
-	/** Get ICMS Tax Base Type.
-	  * Identifies a ICMS Tax Base Type
-	  */
-	public String getLBR_ICMS_TaxBaseType();
-
-    /** Column name LBR_ICMS_TaxReliefType */
-    public static final String COLUMNNAME_LBR_ICMS_TaxReliefType = "LBR_ICMS_TaxReliefType";
-
-	/** Set ICMS Tax Relief Type.
-	  * Identifies the ICMS Tax Relief Type
-	  */
-	public void setLBR_ICMS_TaxReliefType (String LBR_ICMS_TaxReliefType);
-
-	/** Get ICMS Tax Relief Type.
-	  * Identifies the ICMS Tax Relief Type
-	  */
-	public String getLBR_ICMS_TaxReliefType();
-
-    /** Column name LBR_ICMS_TaxStatusSN */
-    public static final String COLUMNNAME_LBR_ICMS_TaxStatusSN = "LBR_ICMS_TaxStatusSN";
-
-	/** Set ICMS Tax Status (Simple).
-	  * Identifies a ICMS Tax Status in a simple taxation
-	  */
-	public void setLBR_ICMS_TaxStatusSN (String LBR_ICMS_TaxStatusSN);
-
-	/** Get ICMS Tax Status (Simple).
-	  * Identifies a ICMS Tax Status in a simple taxation
-	  */
-	public String getLBR_ICMS_TaxStatusSN();
-
-    /** Column name LBR_ICMS_TaxStatusTN */
-    public static final String COLUMNNAME_LBR_ICMS_TaxStatusTN = "LBR_ICMS_TaxStatusTN";
-
-	/** Set ICMS Tax Status (Standard Taxation).
-	  * Identifies a ICMS Tax Status in a standard taxation
-	  */
-	public void setLBR_ICMS_TaxStatusTN (String LBR_ICMS_TaxStatusTN);
-
-	/** Get ICMS Tax Status (Standard Taxation).
-	  * Identifies a ICMS Tax Status in a standard taxation
-	  */
-	public String getLBR_ICMS_TaxStatusTN();
 
     /** Column name LBR_ICMSRegime */
     public static final String COLUMNNAME_LBR_ICMSRegime = "LBR_ICMSRegime";
@@ -496,6 +417,84 @@ public interface I_LBR_DocLine_ICMS
 
 	public org.compiere.model.I_C_Region getLBR_ICMSST_TaxUFDue() throws RuntimeException;
 
+    /** Column name LBR_ICMS_OwnTaxStatus */
+    public static final String COLUMNNAME_LBR_ICMS_OwnTaxStatus = "LBR_ICMS_OwnTaxStatus";
+
+	/** Set Declarant ICMS Tax Status.
+	  * ICMS tax status from the point of view of the declarant
+	  */
+	public void setLBR_ICMS_OwnTaxStatus (String LBR_ICMS_OwnTaxStatus);
+
+	/** Get Declarant ICMS Tax Status.
+	  * ICMS tax status from the point of view of the declarant
+	  */
+	public String getLBR_ICMS_OwnTaxStatus();
+
+    /** Column name LBR_ICMS_TaxAmtOp */
+    public static final String COLUMNNAME_LBR_ICMS_TaxAmtOp = "LBR_ICMS_TaxAmtOp";
+
+	/** Set ICMS Tax Operation Amount.
+	  * Identifies the ICMS Tax Operation Amount
+	  */
+	public void setLBR_ICMS_TaxAmtOp (BigDecimal LBR_ICMS_TaxAmtOp);
+
+	/** Get ICMS Tax Operation Amount.
+	  * Identifies the ICMS Tax Operation Amount
+	  */
+	public BigDecimal getLBR_ICMS_TaxAmtOp();
+
+    /** Column name LBR_ICMS_TaxBaseType */
+    public static final String COLUMNNAME_LBR_ICMS_TaxBaseType = "LBR_ICMS_TaxBaseType";
+
+	/** Set ICMS Tax Base Type.
+	  * Identifies a ICMS Tax Base Type
+	  */
+	public void setLBR_ICMS_TaxBaseType (String LBR_ICMS_TaxBaseType);
+
+	/** Get ICMS Tax Base Type.
+	  * Identifies a ICMS Tax Base Type
+	  */
+	public String getLBR_ICMS_TaxBaseType();
+
+    /** Column name LBR_ICMS_TaxReliefType */
+    public static final String COLUMNNAME_LBR_ICMS_TaxReliefType = "LBR_ICMS_TaxReliefType";
+
+	/** Set ICMS Tax Relief Type.
+	  * Identifies the ICMS Tax Relief Type
+	  */
+	public void setLBR_ICMS_TaxReliefType (String LBR_ICMS_TaxReliefType);
+
+	/** Get ICMS Tax Relief Type.
+	  * Identifies the ICMS Tax Relief Type
+	  */
+	public String getLBR_ICMS_TaxReliefType();
+
+    /** Column name LBR_ICMS_TaxStatusSN */
+    public static final String COLUMNNAME_LBR_ICMS_TaxStatusSN = "LBR_ICMS_TaxStatusSN";
+
+	/** Set ICMS Tax Status (Simple).
+	  * Identifies a ICMS Tax Status in a simple taxation
+	  */
+	public void setLBR_ICMS_TaxStatusSN (String LBR_ICMS_TaxStatusSN);
+
+	/** Get ICMS Tax Status (Simple).
+	  * Identifies a ICMS Tax Status in a simple taxation
+	  */
+	public String getLBR_ICMS_TaxStatusSN();
+
+    /** Column name LBR_ICMS_TaxStatusTN */
+    public static final String COLUMNNAME_LBR_ICMS_TaxStatusTN = "LBR_ICMS_TaxStatusTN";
+
+	/** Set ICMS Tax Status (Standard Taxation).
+	  * Identifies a ICMS Tax Status in a standard taxation
+	  */
+	public void setLBR_ICMS_TaxStatusTN (String LBR_ICMS_TaxStatusTN);
+
+	/** Get ICMS Tax Status (Standard Taxation).
+	  * Identifies a ICMS Tax Status in a standard taxation
+	  */
+	public String getLBR_ICMS_TaxStatusTN();
+
     /** Column name LBR_ProductSource */
     public static final String COLUMNNAME_LBR_ProductSource = "LBR_ProductSource";
 
@@ -638,19 +637,6 @@ public interface I_LBR_DocLine_ICMS
 	  * Identifies the Tax Relief Amount
 	  */
 	public BigDecimal getLBR_TaxReliefAmt();
-	
-    /** Column name lbr_vICMSSubstituto */
-    public static final String COLUMNNAME_LBR_VICMSSubstituto = "lbr_vICMSSubstituto";
-
-	/** Set Substitute's own ICMS value.
-	  * Identifies the Substitute's own ICMS value
-	  */
-	public void setLBR_VICMSSubstituto (BigDecimal lbr_VICMSSubstituto);
-
-	/** Get Substitute's own ICMS value.
-	  * Identifies the Substitute's own ICMS value
-	  */
-	public BigDecimal getLBR_VICMSSubstituto();
 
     /** Column name Updated */
     public static final String COLUMNNAME_Updated = "Updated";
@@ -667,4 +653,24 @@ public interface I_LBR_DocLine_ICMS
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
+
+    /** Column name lbr_vICMSSubstituto */
+    public static final String COLUMNNAME_lbr_vICMSSubstituto = "lbr_vICMSSubstituto";
+
+	/** Set Substitute&#039;
+s own ICMS value	  */
+	public void setlbr_vICMSSubstituto (BigDecimal lbr_vICMSSubstituto);
+
+	/** Get Substitute&#039;
+s own ICMS value	  */
+	public BigDecimal getlbr_vICMSSubstituto();
+	
+	/** Column name LBR_DIFAL_TaxBaseFCPUFDest */
+	public static final String COLUMNNAME_LBR_DIFAL_TaxBaseFCPUFDest = "LBR_DIFAL_TaxBaseFCPUFDest";
+	
+	/** Set DIFAL Tax Base Amt of "Fundo de Combate a Pobreza"	  */
+	public void setLBR_DIFAL_TaxBaseFCPUFDest (BigDecimal LBR_DIFAL_TaxBaseFCPUFDest);
+	
+	/** Get DIFAL Tax Base Amt of "Fundo de Combate a Pobreza"	  */
+	public BigDecimal getLBR_DIFAL_TaxBaseFCPUFDest();
 }

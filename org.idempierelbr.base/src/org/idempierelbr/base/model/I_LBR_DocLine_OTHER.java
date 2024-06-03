@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_DocLine_OTHER
  *  @author iDempiere (generated) 
- *  @version Release 3.1
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_DocLine_OTHER 
@@ -46,8 +46,8 @@ public interface I_LBR_DocLine_OTHER
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_DocLine_OTHER
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -96,10 +96,10 @@ public interface I_LBR_DocLine_OTHER
     /** Column name LBR_CSLL_IsTaxIncluded */
     public static final String COLUMNNAME_LBR_CSLL_IsTaxIncluded = "LBR_CSLL_IsTaxIncluded";
 
-	/** Set CSLL incluso no preço	  */
+	/** Set CSLL Incluso no Preço	  */
 	public void setLBR_CSLL_IsTaxIncluded (boolean LBR_CSLL_IsTaxIncluded);
 
-	/** Get CSLL incluso no preço	  */
+	/** Get CSLL Incluso no Preço	  */
 	public boolean isLBR_CSLL_IsTaxIncluded();
 
     /** Column name LBR_CSLL_TaxAmt */
@@ -142,6 +142,8 @@ public interface I_LBR_DocLine_OTHER
 	  */
 	public int getLBR_DocLine_Details_ID();
 
+	public I_LBR_DocLine_Details getLBR_DocLine_Details() throws RuntimeException;
+
     /** Column name LBR_DocLine_OTHER_ID */
     public static final String COLUMNNAME_LBR_DocLine_OTHER_ID = "LBR_DocLine_OTHER_ID";
 
@@ -163,10 +165,10 @@ public interface I_LBR_DocLine_OTHER
     /** Column name LBR_INSS_IsTaxIncluded */
     public static final String COLUMNNAME_LBR_INSS_IsTaxIncluded = "LBR_INSS_IsTaxIncluded";
 
-	/** Set INSS incluso no preço	  */
+	/** Set INSS Incluso no Preço	  */
 	public void setLBR_INSS_IsTaxIncluded (boolean LBR_INSS_IsTaxIncluded);
 
-	/** Get INSS incluso no preço	  */
+	/** Get INSS Incluso no Preço	  */
 	public boolean isLBR_INSS_IsTaxIncluded();
 
     /** Column name LBR_INSS_TaxAmt */
@@ -199,10 +201,10 @@ public interface I_LBR_DocLine_OTHER
     /** Column name LBR_IR_IsTaxIncluded */
     public static final String COLUMNNAME_LBR_IR_IsTaxIncluded = "LBR_IR_IsTaxIncluded";
 
-	/** Set IR incluso no preço	  */
+	/** Set IR Incluso no Preço	  */
 	public void setLBR_IR_IsTaxIncluded (boolean LBR_IR_IsTaxIncluded);
 
-	/** Get IR incluso no preço	  */
+	/** Get IR Incluso no Preço	  */
 	public boolean isLBR_IR_IsTaxIncluded();
 
     /** Column name LBR_IR_TaxAmt */

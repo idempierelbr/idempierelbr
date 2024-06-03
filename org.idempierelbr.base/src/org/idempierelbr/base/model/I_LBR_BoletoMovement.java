@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_BoletoMovement
  *  @author iDempiere (generated) 
- *  @version Release 2.1
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_BoletoMovement 
@@ -46,8 +46,8 @@ public interface I_LBR_BoletoMovement
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_BoletoMovement
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -76,6 +76,21 @@ public interface I_LBR_BoletoMovement
 	  * Amount available for allocation for this document
 	  */
 	public BigDecimal getAvailableAmt();
+
+    /** Column name C_BPartner_ID */
+    public static final String COLUMNNAME_C_BPartner_ID = "C_BPartner_ID";
+
+	/** Set Business Partner.
+	  * Identifies a Business Partner
+	  */
+	public void setC_BPartner_ID (int C_BPartner_ID);
+
+	/** Get Business Partner.
+	  * Identifies a Business Partner
+	  */
+	public int getC_BPartner_ID();
+
+	public org.compiere.model.I_C_BPartner getC_BPartner() throws RuntimeException;
 
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
@@ -184,21 +199,6 @@ public interface I_LBR_BoletoMovement
 	  */
 	public boolean isActive();
 
-    /** Column name LBR_Boleto_ID */
-    public static final String COLUMNNAME_LBR_Boleto_ID = "LBR_Boleto_ID";
-
-	/** Set Brazilian Bank Collection (Boleto).
-	  * Brazilian Bank Collection (Boleto) Identifier
-	  */
-	public void setLBR_Boleto_ID (int LBR_Boleto_ID);
-
-	/** Get Brazilian Bank Collection (Boleto).
-	  * Brazilian Bank Collection (Boleto) Identifier
-	  */
-	public int getLBR_Boleto_ID();
-
-	public I_LBR_Boleto getLBR_Boleto() throws RuntimeException;
-
     /** Column name LBR_BoletoMovement_ID */
     public static final String COLUMNNAME_LBR_BoletoMovement_ID = "LBR_BoletoMovement_ID";
 
@@ -217,14 +217,20 @@ public interface I_LBR_BoletoMovement
 	/** Get Boleto Movement	  */
 	public String getLBR_BoletoMovement_UU();
 
-    /** Column name LBR_CarteiraType */
-    public static final String COLUMNNAME_LBR_CarteiraType = "LBR_CarteiraType";
+    /** Column name LBR_Boleto_ID */
+    public static final String COLUMNNAME_LBR_Boleto_ID = "LBR_Boleto_ID";
 
-	/** Set Bank Account Carteira Type	  */
-	public void setLBR_CarteiraType (String LBR_CarteiraType);
+	/** Set Brazilian Bank Collection (Boleto).
+	  * Brazilian Bank Collection (Boleto) Identifier
+	  */
+	public void setLBR_Boleto_ID (int LBR_Boleto_ID);
 
-	/** Get Bank Account Carteira Type	  */
-	public String getLBR_CarteiraType();
+	/** Get Brazilian Bank Collection (Boleto).
+	  * Brazilian Bank Collection (Boleto) Identifier
+	  */
+	public int getLBR_Boleto_ID();
+
+	public I_LBR_Boleto getLBR_Boleto() throws RuntimeException;
 
     /** Column name LBR_CNAB240Currency */
     public static final String COLUMNNAME_LBR_CNAB240Currency = "LBR_CNAB240Currency";
@@ -381,6 +387,15 @@ public interface I_LBR_BoletoMovement
 
 	public I_LBR_CNAB getLBR_CNAB() throws RuntimeException;
 
+    /** Column name LBR_CarteiraType */
+    public static final String COLUMNNAME_LBR_CarteiraType = "LBR_CarteiraType";
+
+	/** Set Bank Account Carteira Type	  */
+	public void setLBR_CarteiraType (String LBR_CarteiraType);
+
+	/** Get Bank Account Carteira Type	  */
+	public String getLBR_CarteiraType();
+
     /** Column name LBR_Cob_Movimento_ID */
     public static final String COLUMNNAME_LBR_Cob_Movimento_ID = "LBR_Cob_Movimento_ID";
 
@@ -532,6 +547,19 @@ public interface I_LBR_BoletoMovement
 	/** Get File Generating Date	  */
 	public Timestamp getLBR_FileGeneratingDate();
 
+    /** Column name LBR_IOFAmt */
+    public static final String COLUMNNAME_LBR_IOFAmt = "LBR_IOFAmt";
+
+	/** Set IOF Amount.
+	  * Defines the IOF Amount
+	  */
+	public void setLBR_IOFAmt (BigDecimal LBR_IOFAmt);
+
+	/** Get IOF Amount.
+	  * Defines the IOF Amount
+	  */
+	public BigDecimal getLBR_IOFAmt();
+
     /** Column name LBR_InterestAP */
     public static final String COLUMNNAME_LBR_InterestAP = "LBR_InterestAP";
 
@@ -558,19 +586,6 @@ public interface I_LBR_BoletoMovement
 
 	/** Get Interest Date	  */
 	public Timestamp getLBR_InterestDate();
-
-    /** Column name LBR_IOFAmt */
-    public static final String COLUMNNAME_LBR_IOFAmt = "LBR_IOFAmt";
-
-	/** Set IOF Amount.
-	  * Defines the IOF Amount
-	  */
-	public void setLBR_IOFAmt (BigDecimal LBR_IOFAmt);
-
-	/** Get IOF Amount.
-	  * Defines the IOF Amount
-	  */
-	public BigDecimal getLBR_IOFAmt();
 
     /** Column name LBR_LatePaymentPenaltyAP */
     public static final String COLUMNNAME_LBR_LatePaymentPenaltyAP = "LBR_LatePaymentPenaltyAP";

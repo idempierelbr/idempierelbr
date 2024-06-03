@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NCM
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_NCM 
@@ -46,8 +46,8 @@ public interface I_LBR_NCM
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_NCM
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -106,6 +106,19 @@ public interface I_LBR_NCM
 	  */
 	public boolean isActive();
 
+    /** Column name LBR_HasSubstitution */
+    public static final String COLUMNNAME_LBR_HasSubstitution = "LBR_HasSubstitution";
+
+	/** Set Has Substitution.
+	  * Defines if the record has Substituion
+	  */
+	public void setLBR_HasSubstitution (boolean LBR_HasSubstitution);
+
+	/** Get Has Substitution.
+	  * Defines if the record has Substituion
+	  */
+	public boolean isLBR_HasSubstitution();
+
     /** Column name LBR_NCM_ID */
     public static final String COLUMNNAME_LBR_NCM_ID = "LBR_NCM_ID";
 
@@ -127,6 +140,19 @@ public interface I_LBR_NCM
 
 	/** Get LBR_NCM_UU	  */
 	public String getLBR_NCM_UU();
+
+    /** Column name LBR_Tax_ID */
+    public static final String COLUMNNAME_LBR_Tax_ID = "LBR_Tax_ID";
+
+	/** Set Transaction Tax.
+	  * Identifies a transaction tax (document/line)
+	  */
+	public void setLBR_Tax_ID (int LBR_Tax_ID);
+
+	/** Get Transaction Tax.
+	  * Identifies a transaction tax (document/line)
+	  */
+	public int getLBR_Tax_ID();
 
     /** Column name Updated */
     public static final String COLUMNNAME_Updated = "Updated";

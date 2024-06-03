@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NFS
  *  @author iDempiere (generated) 
- *  @version Release 5.1
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_NFS 
@@ -46,8 +46,8 @@ public interface I_LBR_NFS
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_NFS
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -82,12 +82,12 @@ public interface I_LBR_NFS
     /** Column name C_BPartner_ID */
     public static final String COLUMNNAME_C_BPartner_ID = "C_BPartner_ID";
 
-	/** Set Business Partner .
+	/** Set Business Partner.
 	  * Identifies a Business Partner
 	  */
 	public void setC_BPartner_ID (int C_BPartner_ID);
 
-	/** Get Business Partner .
+	/** Get Business Partner.
 	  * Identifies a Business Partner
 	  */
 	public int getC_BPartner_ID();
@@ -124,21 +124,6 @@ public interface I_LBR_NFS
 
 	public org.compiere.model.I_C_Charge getC_Charge() throws RuntimeException;
 
-    /** Column name C_DocType_ID */
-    public static final String COLUMNNAME_C_DocType_ID = "C_DocType_ID";
-
-	/** Set Document Type.
-	  * Document type or rules
-	  */
-	public void setC_DocType_ID (int C_DocType_ID);
-
-	/** Get Document Type.
-	  * Document type or rules
-	  */
-	public int getC_DocType_ID();
-
-	public org.compiere.model.I_C_DocType getC_DocType() throws RuntimeException;
-
     /** Column name C_DocTypeTarget_ID */
     public static final String COLUMNNAME_C_DocTypeTarget_ID = "C_DocTypeTarget_ID";
 
@@ -154,20 +139,20 @@ public interface I_LBR_NFS
 
 	public org.compiere.model.I_C_DocType getC_DocTypeTarget() throws RuntimeException;
 
-    /** Column name C_Invoice_ID */
-    public static final String COLUMNNAME_C_Invoice_ID = "C_Invoice_ID";
+    /** Column name C_DocType_ID */
+    public static final String COLUMNNAME_C_DocType_ID = "C_DocType_ID";
 
-	/** Set Invoice.
-	  * Invoice Identifier
+	/** Set Document Type.
+	  * Document type or rules
 	  */
-	public void setC_Invoice_ID (int C_Invoice_ID);
+	public void setC_DocType_ID (int C_DocType_ID);
 
-	/** Get Invoice.
-	  * Invoice Identifier
+	/** Get Document Type.
+	  * Document type or rules
 	  */
-	public int getC_Invoice_ID();
+	public int getC_DocType_ID();
 
-	public org.compiere.model.I_C_Invoice getC_Invoice() throws RuntimeException;
+	public org.compiere.model.I_C_DocType getC_DocType() throws RuntimeException;
 
     /** Column name C_InvoiceLine_ID */
     public static final String COLUMNNAME_C_InvoiceLine_ID = "C_InvoiceLine_ID";
@@ -184,20 +169,20 @@ public interface I_LBR_NFS
 
 	public org.compiere.model.I_C_Invoice getC_InvoiceLine() throws RuntimeException;
 
-    /** Column name C_Order_ID */
-    public static final String COLUMNNAME_C_Order_ID = "C_Order_ID";
+    /** Column name C_Invoice_ID */
+    public static final String COLUMNNAME_C_Invoice_ID = "C_Invoice_ID";
 
-	/** Set Order.
-	  * Order
+	/** Set Invoice.
+	  * Invoice Identifier
 	  */
-	public void setC_Order_ID (int C_Order_ID);
+	public void setC_Invoice_ID (int C_Invoice_ID);
 
-	/** Get Order.
-	  * Order
+	/** Get Invoice.
+	  * Invoice Identifier
 	  */
-	public int getC_Order_ID();
+	public int getC_Invoice_ID();
 
-	public org.compiere.model.I_C_Order getC_Order() throws RuntimeException;
+	public org.compiere.model.I_C_Invoice getC_Invoice() throws RuntimeException;
 
     /** Column name C_OrderLine_ID */
     public static final String COLUMNNAME_C_OrderLine_ID = "C_OrderLine_ID";
@@ -213,6 +198,21 @@ public interface I_LBR_NFS
 	public int getC_OrderLine_ID();
 
 	public org.compiere.model.I_C_OrderLine getC_OrderLine() throws RuntimeException;
+
+    /** Column name C_Order_ID */
+    public static final String COLUMNNAME_C_Order_ID = "C_Order_ID";
+
+	/** Set Order.
+	  * Order
+	  */
+	public void setC_Order_ID (int C_Order_ID);
+
+	/** Get Order.
+	  * Order
+	  */
+	public int getC_Order_ID();
+
+	public org.compiere.model.I_C_Order getC_Order() throws RuntimeException;
 
     /** Column name C_PaymentTerm_ID */
     public static final String COLUMNNAME_C_PaymentTerm_ID = "C_PaymentTerm_ID";
@@ -405,17 +405,6 @@ public interface I_LBR_NFS
 	  */
 	public boolean isTaxIncluded();
 
-    /** Column name LBR_IntermediateBPartner_ID */
-    public static final String COLUMNNAME_LBR_IntermediateBPartner_ID = "LBR_IntermediateBPartner_ID";
-
-	/** Set Parceiro de Negócios Intermediário	  */
-	public void setLBR_IntermediateBPartner_ID (int LBR_IntermediateBPartner_ID);
-
-	/** Get Parceiro de Negócios Intermediário	  */
-	public int getLBR_IntermediateBPartner_ID();
-
-	public org.compiere.model.I_C_BPartner getLBR_IntermediateBPartner() throws RuntimeException;
-
     /** Column name LBR_IntermediateBPLocation_ID */
     public static final String COLUMNNAME_LBR_IntermediateBPLocation_ID = "LBR_IntermediateBPLocation_ID";
 
@@ -426,6 +415,17 @@ public interface I_LBR_NFS
 	public int getLBR_IntermediateBPLocation_ID();
 
 	public org.compiere.model.I_C_BPartner_Location getLBR_IntermediateBPLocation() throws RuntimeException;
+
+    /** Column name LBR_IntermediateBPartner_ID */
+    public static final String COLUMNNAME_LBR_IntermediateBPartner_ID = "LBR_IntermediateBPartner_ID";
+
+	/** Set Parceiro de Negócios Intermediário	  */
+	public void setLBR_IntermediateBPartner_ID (int LBR_IntermediateBPartner_ID);
+
+	/** Get Parceiro de Negócios Intermediário	  */
+	public int getLBR_IntermediateBPartner_ID();
+
+	public org.compiere.model.I_C_BPartner getLBR_IntermediateBPartner() throws RuntimeException;
 
     /** Column name LBR_IsDocIssuedByOrg */
     public static final String COLUMNNAME_LBR_IsDocIssuedByOrg = "LBR_IsDocIssuedByOrg";
@@ -457,6 +457,15 @@ public interface I_LBR_NFS
 
 	/** Get Motivo de Cancelamento	  */
 	public String getLBR_MotivoCancelamentoNFS();
+
+    /** Column name LBR_NFSSerie */
+    public static final String COLUMNNAME_LBR_NFSSerie = "LBR_NFSSerie";
+
+	/** Set Série da NFS	  */
+	public void setLBR_NFSSerie (String LBR_NFSSerie);
+
+	/** Get Série da NFS	  */
+	public String getLBR_NFSSerie();
 
     /** Column name LBR_NFS_ID */
     public static final String COLUMNNAME_LBR_NFS_ID = "LBR_NFS_ID";
@@ -520,15 +529,6 @@ public interface I_LBR_NFS
 
 	/** Get Número da NFS-e Substituída	  */
 	public String getLBR_NFSeSubstituida();
-
-    /** Column name LBR_NFSSerie */
-    public static final String COLUMNNAME_LBR_NFSSerie = "LBR_NFSSerie";
-
-	/** Set Série da NFS	  */
-	public void setLBR_NFSSerie (String LBR_NFSSerie);
-
-	/** Get Série da NFS	  */
-	public String getLBR_NFSSerie();
 
     /** Column name LBR_NIFTomador */
     public static final String COLUMNNAME_LBR_NIFTomador = "LBR_NIFTomador";

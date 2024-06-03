@@ -22,21 +22,55 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_LegalMessage
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_LegalMessage extends PO implements I_LBR_LegalMessage, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_LegalMessage")
+public class X_LBR_LegalMessage extends PO implements I_LBR_LegalMessage, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140116L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_LegalMessage (Properties ctx, int LBR_LegalMessage_ID, String trxName)
     {
       super (ctx, LBR_LegalMessage_ID, trxName);
       /** if (LBR_LegalMessage_ID == 0)
+        {
+			setLBR_LegalMessage_ID (0);
+			setValue (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_LegalMessage (Properties ctx, int LBR_LegalMessage_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_LegalMessage_ID, trxName, virtualColumns);
+      /** if (LBR_LegalMessage_ID == 0)
+        {
+			setLBR_LegalMessage_ID (0);
+			setValue (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_LegalMessage (Properties ctx, String LBR_LegalMessage_UU, String trxName)
+    {
+      super (ctx, LBR_LegalMessage_UU, trxName);
+      /** if (LBR_LegalMessage_UU == null)
+        {
+			setLBR_LegalMessage_ID (0);
+			setValue (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_LegalMessage (Properties ctx, String LBR_LegalMessage_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_LegalMessage_UU, trxName, virtualColumns);
+      /** if (LBR_LegalMessage_UU == null)
         {
 			setLBR_LegalMessage_ID (0);
 			setValue (null);
@@ -50,7 +84,7 @@ public class X_LBR_LegalMessage extends PO implements I_LBR_LegalMessage, I_Pers
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -66,27 +100,26 @@ public class X_LBR_LegalMessage extends PO implements I_LBR_LegalMessage, I_Pers
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_LegalMessage[")
+      StringBuilder sb = new StringBuilder ("X_LBR_LegalMessage[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	/** Set Legal Message.
-		@param LBR_LegalMessage_ID 
-		Identifies a Legal Message
-	  */
+		@param LBR_LegalMessage_ID Identifies a Legal Message
+	*/
 	public void setLBR_LegalMessage_ID (int LBR_LegalMessage_ID)
 	{
-		if (LBR_LegalMessage_ID < 1) 
+		if (LBR_LegalMessage_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_LegalMessage_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_LegalMessage_ID, Integer.valueOf(LBR_LegalMessage_ID));
 	}
 
 	/** Get Legal Message.
 		@return Identifies a Legal Message
 	  */
-	public int getLBR_LegalMessage_ID () 
+	public int getLBR_LegalMessage_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_LegalMessage_ID);
 		if (ii == null)
@@ -95,7 +128,8 @@ public class X_LBR_LegalMessage extends PO implements I_LBR_LegalMessage, I_Pers
 	}
 
 	/** Set LBR_LegalMessage_UU.
-		@param LBR_LegalMessage_UU LBR_LegalMessage_UU	  */
+		@param LBR_LegalMessage_UU LBR_LegalMessage_UU
+	*/
 	public void setLBR_LegalMessage_UU (String LBR_LegalMessage_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_LegalMessage_UU, LBR_LegalMessage_UU);
@@ -103,15 +137,14 @@ public class X_LBR_LegalMessage extends PO implements I_LBR_LegalMessage, I_Pers
 
 	/** Get LBR_LegalMessage_UU.
 		@return LBR_LegalMessage_UU	  */
-	public String getLBR_LegalMessage_UU () 
+	public String getLBR_LegalMessage_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_LegalMessage_UU);
 	}
 
 	/** Set Search Key.
-		@param Value 
-		Search key for the record in the format required - must be unique
-	  */
+		@param Value Search key for the record in the format required - must be unique
+	*/
 	public void setValue (String Value)
 	{
 		set_Value (COLUMNNAME_Value, Value);
@@ -120,7 +153,7 @@ public class X_LBR_LegalMessage extends PO implements I_LBR_LegalMessage, I_Pers
 	/** Get Search Key.
 		@return Search key for the record in the format required - must be unique
 	  */
-	public String getValue () 
+	public String getValue()
 	{
 		return (String)get_Value(COLUMNNAME_Value);
 	}
