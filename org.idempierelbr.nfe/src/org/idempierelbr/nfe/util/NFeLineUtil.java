@@ -262,7 +262,7 @@ public class NFeLineUtil {
 					icmsGrupo.setvICMSSTRet(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAmtWhd()));
 					
 					if (icmsLines[0].getLBR_VICMSSubstituto() == null) 
-						throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmtWhd@'");
+						throw new AdempiereException(prefixException + "'@LBR_VICMSSubstituto@'");
 					icmsGrupo.setvICMSSubstituto(TextUtil.bigdecimalToString(icmsLines[0].getLBR_VICMSSubstituto()));
 				}
 			}
