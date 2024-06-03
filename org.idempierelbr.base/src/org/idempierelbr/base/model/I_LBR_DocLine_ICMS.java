@@ -638,6 +638,19 @@ public interface I_LBR_DocLine_ICMS
 	  * Identifies the Tax Relief Amount
 	  */
 	public BigDecimal getLBR_TaxReliefAmt();
+	
+    /** Column name lbr_vICMSSubstituto */
+    public static final String COLUMNNAME_LBR_VICMSSubstituto = "lbr_vICMSSubstituto";
+
+	/** Set Substitute's own ICMS value.
+	  * Identifies the Substitute's own ICMS value
+	  */
+	public void setLBR_VICMSSubstituto (BigDecimal lbr_VICMSSubstituto);
+
+	/** Get Substitute's own ICMS value.
+	  * Identifies the Substitute's own ICMS value
+	  */
+	public BigDecimal getLBR_VICMSSubstituto();
 
     /** Column name Updated */
     public static final String COLUMNNAME_Updated = "Updated";

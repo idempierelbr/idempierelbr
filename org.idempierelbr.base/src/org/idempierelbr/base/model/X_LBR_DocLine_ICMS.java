@@ -19,8 +19,13 @@ package org.idempierelbr.base.model;
 
 import java.math.BigDecimal;
 import java.sql.ResultSet;
+import java.util.Objects;
 import java.util.Properties;
-import org.compiere.model.*;
+
+import org.compiere.model.I_Persistent;
+import org.compiere.model.MTable;
+import org.compiere.model.PO;
+import org.compiere.model.POInfo;
 import org.compiere.util.Env;
 
 /** Generated Model for LBR_DocLine_ICMS
@@ -1081,5 +1086,17 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;
+	}
+
+	@Override
+	public void setLBR_VICMSSubstituto(BigDecimal lbr_VICMSSubstituto) {
+		set_Value (COLUMNNAME_LBR_VICMSSubstituto, lbr_VICMSSubstituto);
+		
+	}
+
+	@Override
+	public BigDecimal getLBR_VICMSSubstituto() {
+	    BigDecimal bd = (BigDecimal) get_Value(COLUMNNAME_LBR_VICMSSubstituto);
+	    return Objects.requireNonNullElse(bd, Env.ZERO);
 	}
 }
