@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_DI_AdditionProd
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_DI_AdditionProd 
@@ -46,8 +46,8 @@ public interface I_LBR_DI_AdditionProd
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_DI_AdditionProd
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -79,6 +79,21 @@ public interface I_LBR_DI_AdditionProd
 
 	public org.compiere.model.I_C_Currency getC_Currency() throws RuntimeException;
 
+    /** Column name C_UOM_ID */
+    public static final String COLUMNNAME_C_UOM_ID = "C_UOM_ID";
+
+	/** Set UOM.
+	  * Unit of Measure
+	  */
+	public void setC_UOM_ID (int C_UOM_ID);
+
+	/** Get UOM.
+	  * Unit of Measure
+	  */
+	public int getC_UOM_ID();
+
+	public org.compiere.model.I_C_UOM getC_UOM() throws RuntimeException;
+
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
 
@@ -94,21 +109,6 @@ public interface I_LBR_DI_AdditionProd
 	  * User who created this records
 	  */
 	public int getCreatedBy();
-
-    /** Column name C_UOM_ID */
-    public static final String COLUMNNAME_C_UOM_ID = "C_UOM_ID";
-
-	/** Set UOM.
-	  * Unit of Measure
-	  */
-	public void setC_UOM_ID (int C_UOM_ID);
-
-	/** Get UOM.
-	  * Unit of Measure
-	  */
-	public int getC_UOM_ID();
-
-	public org.compiere.model.I_C_UOM getC_UOM() throws RuntimeException;
 
     /** Column name Description */
     public static final String COLUMNNAME_Description = "Description";
@@ -136,21 +136,6 @@ public interface I_LBR_DI_AdditionProd
 	  */
 	public boolean isActive();
 
-    /** Column name LBR_DI_Addition_ID */
-    public static final String COLUMNNAME_LBR_DI_Addition_ID = "LBR_DI_Addition_ID";
-
-	/** Set Import Declaration (DI) Addition.
-	  * Identifies an Import Declaration (DI) Addiction
-	  */
-	public void setLBR_DI_Addition_ID (int LBR_DI_Addition_ID);
-
-	/** Get Import Declaration (DI) Addition.
-	  * Identifies an Import Declaration (DI) Addiction
-	  */
-	public int getLBR_DI_Addition_ID();
-
-	public I_LBR_DI_Addition getLBR_DI_Addition() throws RuntimeException;
-
     /** Column name LBR_DI_AdditionProd_ID */
     public static final String COLUMNNAME_LBR_DI_AdditionProd_ID = "LBR_DI_AdditionProd_ID";
 
@@ -176,6 +161,21 @@ public interface I_LBR_DI_AdditionProd
 	  * Identifies an Import Declaration (DI) Addiction Product
 	  */
 	public String getLBR_DI_AdditionProd_UU();
+
+    /** Column name LBR_DI_Addition_ID */
+    public static final String COLUMNNAME_LBR_DI_Addition_ID = "LBR_DI_Addition_ID";
+
+	/** Set Import Declaration (DI) Addition.
+	  * Identifies an Import Declaration (DI) Addiction
+	  */
+	public void setLBR_DI_Addition_ID (int LBR_DI_Addition_ID);
+
+	/** Get Import Declaration (DI) Addition.
+	  * Identifies an Import Declaration (DI) Addiction
+	  */
+	public int getLBR_DI_Addition_ID();
+
+	public I_LBR_DI_Addition getLBR_DI_Addition() throws RuntimeException;
 
     /** Column name LBR_Specification */
     public static final String COLUMNNAME_LBR_Specification = "LBR_Specification";

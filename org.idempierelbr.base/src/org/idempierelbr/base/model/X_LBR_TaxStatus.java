@@ -23,21 +23,67 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_TaxStatus
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_TaxStatus extends PO implements I_LBR_TaxStatus, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_TaxStatus")
+public class X_LBR_TaxStatus extends PO implements I_LBR_TaxStatus, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140128L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_TaxStatus (Properties ctx, int LBR_TaxStatus_ID, String trxName)
     {
       super (ctx, LBR_TaxStatus_ID, trxName);
       /** if (LBR_TaxStatus_ID == 0)
+        {
+			setDescription (null);
+			setLBR_TaxName_ID (0);
+			setLBR_TaxStatus_ID (0);
+			setName (null);
+			setValidFrom (new Timestamp( System.currentTimeMillis() ));
+// @#Date@
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxStatus (Properties ctx, int LBR_TaxStatus_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_TaxStatus_ID, trxName, virtualColumns);
+      /** if (LBR_TaxStatus_ID == 0)
+        {
+			setDescription (null);
+			setLBR_TaxName_ID (0);
+			setLBR_TaxStatus_ID (0);
+			setName (null);
+			setValidFrom (new Timestamp( System.currentTimeMillis() ));
+// @#Date@
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxStatus (Properties ctx, String LBR_TaxStatus_UU, String trxName)
+    {
+      super (ctx, LBR_TaxStatus_UU, trxName);
+      /** if (LBR_TaxStatus_UU == null)
+        {
+			setDescription (null);
+			setLBR_TaxName_ID (0);
+			setLBR_TaxStatus_ID (0);
+			setName (null);
+			setValidFrom (new Timestamp( System.currentTimeMillis() ));
+// @#Date@
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxStatus (Properties ctx, String LBR_TaxStatus_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_TaxStatus_UU, trxName, virtualColumns);
+      /** if (LBR_TaxStatus_UU == null)
         {
 			setDescription (null);
 			setLBR_TaxName_ID (0);
@@ -55,7 +101,7 @@ public class X_LBR_TaxStatus extends PO implements I_LBR_TaxStatus, I_Persistent
     }
 
     /** AccessLevel
-      * @return 6 - System - Client 
+      * @return 6 - System - Client
       */
     protected int get_AccessLevel()
     {
@@ -71,15 +117,14 @@ public class X_LBR_TaxStatus extends PO implements I_LBR_TaxStatus, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_TaxStatus[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_TaxStatus[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -88,32 +133,32 @@ public class X_LBR_TaxStatus extends PO implements I_LBR_TaxStatus, I_Persistent
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	public I_LBR_TaxName getLBR_TaxName() throws RuntimeException
-    {
-		return (I_LBR_TaxName)MTable.get(getCtx(), I_LBR_TaxName.Table_Name)
-			.getPO(getLBR_TaxName_ID(), get_TrxName());	}
+	{
+		return (I_LBR_TaxName)MTable.get(getCtx(), I_LBR_TaxName.Table_ID)
+			.getPO(getLBR_TaxName_ID(), get_TrxName());
+	}
 
 	/** Set Tax Name.
-		@param LBR_TaxName_ID 
-		Primary key table LBR_TaxName
-	  */
+		@param LBR_TaxName_ID Primary key table LBR_TaxName
+	*/
 	public void setLBR_TaxName_ID (int LBR_TaxName_ID)
 	{
-		if (LBR_TaxName_ID < 1) 
+		if (LBR_TaxName_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxName_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxName_ID, Integer.valueOf(LBR_TaxName_ID));
 	}
 
 	/** Get Tax Name.
 		@return Primary key table LBR_TaxName
 	  */
-	public int getLBR_TaxName_ID () 
+	public int getLBR_TaxName_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_TaxName_ID);
 		if (ii == null)
@@ -122,21 +167,20 @@ public class X_LBR_TaxStatus extends PO implements I_LBR_TaxStatus, I_Persistent
 	}
 
 	/** Set Tax Status.
-		@param LBR_TaxStatus_ID 
-		Brazilian Tax Status
-	  */
+		@param LBR_TaxStatus_ID Brazilian Tax Status
+	*/
 	public void setLBR_TaxStatus_ID (int LBR_TaxStatus_ID)
 	{
-		if (LBR_TaxStatus_ID < 1) 
+		if (LBR_TaxStatus_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxStatus_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxStatus_ID, Integer.valueOf(LBR_TaxStatus_ID));
 	}
 
 	/** Get Tax Status.
 		@return Brazilian Tax Status
 	  */
-	public int getLBR_TaxStatus_ID () 
+	public int getLBR_TaxStatus_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_TaxStatus_ID);
 		if (ii == null)
@@ -145,7 +189,8 @@ public class X_LBR_TaxStatus extends PO implements I_LBR_TaxStatus, I_Persistent
 	}
 
 	/** Set LBR_TaxStatus_UU.
-		@param LBR_TaxStatus_UU LBR_TaxStatus_UU	  */
+		@param LBR_TaxStatus_UU LBR_TaxStatus_UU
+	*/
 	public void setLBR_TaxStatus_UU (String LBR_TaxStatus_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_TaxStatus_UU, LBR_TaxStatus_UU);
@@ -153,15 +198,14 @@ public class X_LBR_TaxStatus extends PO implements I_LBR_TaxStatus, I_Persistent
 
 	/** Get LBR_TaxStatus_UU.
 		@return LBR_TaxStatus_UU	  */
-	public String getLBR_TaxStatus_UU () 
+	public String getLBR_TaxStatus_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TaxStatus_UU);
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -170,15 +214,14 @@ public class X_LBR_TaxStatus extends PO implements I_LBR_TaxStatus, I_Persistent
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}
 
 	/** Set PO Description.
-		@param PO_Description 
-		Description in PO Screens
-	  */
+		@param PO_Description Description in PO Screens
+	*/
 	public void setPO_Description (String PO_Description)
 	{
 		set_Value (COLUMNNAME_PO_Description, PO_Description);
@@ -187,15 +230,14 @@ public class X_LBR_TaxStatus extends PO implements I_LBR_TaxStatus, I_Persistent
 	/** Get PO Description.
 		@return Description in PO Screens
 	  */
-	public String getPO_Description () 
+	public String getPO_Description()
 	{
 		return (String)get_Value(COLUMNNAME_PO_Description);
 	}
 
 	/** Set PO Name.
-		@param PO_Name 
-		Name on PO Screens
-	  */
+		@param PO_Name Name on PO Screens
+	*/
 	public void setPO_Name (String PO_Name)
 	{
 		set_Value (COLUMNNAME_PO_Name, PO_Name);
@@ -204,15 +246,14 @@ public class X_LBR_TaxStatus extends PO implements I_LBR_TaxStatus, I_Persistent
 	/** Get PO Name.
 		@return Name on PO Screens
 	  */
-	public String getPO_Name () 
+	public String getPO_Name()
 	{
 		return (String)get_Value(COLUMNNAME_PO_Name);
 	}
 
 	/** Set Script.
-		@param Script 
-		Dynamic Java Language Script to calculate result
-	  */
+		@param Script Dynamic Java Language Script to calculate result
+	*/
 	public void setScript (String Script)
 	{
 		set_Value (COLUMNNAME_Script, Script);
@@ -221,15 +262,14 @@ public class X_LBR_TaxStatus extends PO implements I_LBR_TaxStatus, I_Persistent
 	/** Get Script.
 		@return Dynamic Java Language Script to calculate result
 	  */
-	public String getScript () 
+	public String getScript()
 	{
 		return (String)get_Value(COLUMNNAME_Script);
 	}
 
 	/** Set Valid from.
-		@param ValidFrom 
-		Valid from including this date (first day)
-	  */
+		@param ValidFrom Valid from including this date (first day)
+	*/
 	public void setValidFrom (Timestamp ValidFrom)
 	{
 		set_Value (COLUMNNAME_ValidFrom, ValidFrom);
@@ -238,15 +278,14 @@ public class X_LBR_TaxStatus extends PO implements I_LBR_TaxStatus, I_Persistent
 	/** Get Valid from.
 		@return Valid from including this date (first day)
 	  */
-	public Timestamp getValidFrom () 
+	public Timestamp getValidFrom()
 	{
 		return (Timestamp)get_Value(COLUMNNAME_ValidFrom);
 	}
 
 	/** Set Valid to.
-		@param ValidTo 
-		Valid to including this date (last day)
-	  */
+		@param ValidTo Valid to including this date (last day)
+	*/
 	public void setValidTo (Timestamp ValidTo)
 	{
 		set_Value (COLUMNNAME_ValidTo, ValidTo);
@@ -255,7 +294,7 @@ public class X_LBR_TaxStatus extends PO implements I_LBR_TaxStatus, I_Persistent
 	/** Get Valid to.
 		@return Valid to including this date (last day)
 	  */
-	public Timestamp getValidTo () 
+	public Timestamp getValidTo()
 	{
 		return (Timestamp)get_Value(COLUMNNAME_ValidTo);
 	}

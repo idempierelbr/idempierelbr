@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_BoletoSD
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_BoletoSD 
@@ -46,10 +46,23 @@ public interface I_LBR_BoletoSD
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
+
+    /** Column name AD_Org_ID */
+    public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
+
+	/** Set Organization.
+	  * Organizational entity within tenant
+	  */
+	public void setAD_Org_ID (int AD_Org_ID);
+
+	/** Get Organization.
+	  * Organizational entity within tenant
+	  */
+	public int getAD_Org_ID();
 
     /** Column name Address1 */
     public static final String COLUMNNAME_Address1 = "Address1";
@@ -103,19 +116,6 @@ public interface I_LBR_BoletoSD
 	  */
 	public String getAddress4();
 
-    /** Column name AD_Org_ID */
-    public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
-
-	/** Set Organization.
-	  * Organizational entity within client
-	  */
-	public void setAD_Org_ID (int AD_Org_ID);
-
-	/** Get Organization.
-	  * Organizational entity within client
-	  */
-	public int getAD_Org_ID();
-
     /** Column name City */
     public static final String COLUMNNAME_City = "City";
 
@@ -158,21 +158,6 @@ public interface I_LBR_BoletoSD
 	  */
 	public boolean isActive();
 
-    /** Column name LBR_Boleto_ID */
-    public static final String COLUMNNAME_LBR_Boleto_ID = "LBR_Boleto_ID";
-
-	/** Set Brazilian Bank Collection (Boleto).
-	  * Brazilian Bank Collection (Boleto) Identifier
-	  */
-	public void setLBR_Boleto_ID (int LBR_Boleto_ID);
-
-	/** Get Brazilian Bank Collection (Boleto).
-	  * Brazilian Bank Collection (Boleto) Identifier
-	  */
-	public int getLBR_Boleto_ID();
-
-	public I_LBR_Boleto getLBR_Boleto() throws RuntimeException;
-
     /** Column name LBR_BoletoSD_ID */
     public static final String COLUMNNAME_LBR_BoletoSD_ID = "LBR_BoletoSD_ID";
 
@@ -198,6 +183,21 @@ public interface I_LBR_BoletoSD
 	  * Boleto Static Data Identifier
 	  */
 	public String getLBR_BoletoSD_UU();
+
+    /** Column name LBR_Boleto_ID */
+    public static final String COLUMNNAME_LBR_Boleto_ID = "LBR_Boleto_ID";
+
+	/** Set Brazilian Bank Collection (Boleto).
+	  * Brazilian Bank Collection (Boleto) Identifier
+	  */
+	public void setLBR_Boleto_ID (int LBR_Boleto_ID);
+
+	/** Get Brazilian Bank Collection (Boleto).
+	  * Brazilian Bank Collection (Boleto) Identifier
+	  */
+	public int getLBR_Boleto_ID();
+
+	public I_LBR_Boleto getLBR_Boleto() throws RuntimeException;
 
     /** Column name LBR_CNABInscEmpNo */
     public static final String COLUMNNAME_LBR_CNABInscEmpNo = "LBR_CNABInscEmpNo";

@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_DocLine_Details
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_DocLine_Details 
@@ -46,8 +46,8 @@ public interface I_LBR_DocLine_Details
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_DocLine_Details
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -266,6 +266,17 @@ public interface I_LBR_DocLine_Details
 
 	public I_LBR_NCM getLBR_NCM() throws RuntimeException;
 
+    /** Column name LBR_NFS_ID */
+    public static final String COLUMNNAME_LBR_NFS_ID = "LBR_NFS_ID";
+
+	/** Set Nota Fiscal de Serviço	  */
+	public void setLBR_NFS_ID (int LBR_NFS_ID);
+
+	/** Get Nota Fiscal de Serviço	  */
+	public int getLBR_NFS_ID();
+
+	public I_LBR_NFS getLBR_NFS() throws RuntimeException;
+
     /** Column name LBR_NFeSpecificProduct */
     public static final String COLUMNNAME_LBR_NFeSpecificProduct = "LBR_NFeSpecificProduct";
 
@@ -278,6 +289,36 @@ public interface I_LBR_DocLine_Details
 	  * Specific Product in a NF-e
 	  */
 	public String getLBR_NFeSpecificProduct();
+
+    /** Column name LBR_NotaFiscalLine_ID */
+    public static final String COLUMNNAME_LBR_NotaFiscalLine_ID = "LBR_NotaFiscalLine_ID";
+
+	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Line.
+	  * Brazilian Fiscal Invoice (Nota Fiscal) Line Identifier
+	  */
+	public void setLBR_NotaFiscalLine_ID (int LBR_NotaFiscalLine_ID);
+
+	/** Get Brazilian Fiscal Invoice (Nota Fiscal) Line.
+	  * Brazilian Fiscal Invoice (Nota Fiscal) Line Identifier
+	  */
+	public int getLBR_NotaFiscalLine_ID();
+
+	public I_LBR_NotaFiscalLine getLBR_NotaFiscalLine() throws RuntimeException;
+
+    /** Column name LBR_OwnCFOP_ID */
+    public static final String COLUMNNAME_LBR_OwnCFOP_ID = "LBR_OwnCFOP_ID";
+
+	/** Set Declarant CFOP Code.
+	  * CFOP code from the point of view of the declarant
+	  */
+	public void setLBR_OwnCFOP_ID (int LBR_OwnCFOP_ID);
+
+	/** Get Declarant CFOP Code.
+	  * CFOP code from the point of view of the declarant
+	  */
+	public int getLBR_OwnCFOP_ID();
+
+	public I_LBR_CFOP getLBR_OwnCFOP() throws RuntimeException;
 
     /** Column name LBR_POReferenceLine */
     public static final String COLUMNNAME_LBR_POReferenceLine = "LBR_POReferenceLine";
@@ -318,6 +359,15 @@ public interface I_LBR_DocLine_Details
 	  */
 	public BigDecimal getLBR_QtyTax();
 
+    /** Column name LBR_SiscomexAmt */
+    public static final String COLUMNNAME_LBR_SiscomexAmt = "LBR_SiscomexAmt";
+
+	/** Set Siscomex Amount	  */
+	public void setLBR_SiscomexAmt (BigDecimal LBR_SiscomexAmt);
+
+	/** Get Siscomex Amount	  */
+	public BigDecimal getLBR_SiscomexAmt();
+
     /** Column name LBR_Tax_ID */
     public static final String COLUMNNAME_LBR_Tax_ID = "LBR_Tax_ID";
 
@@ -330,6 +380,19 @@ public interface I_LBR_DocLine_Details
 	  * Identifies a transaction tax (document/line)
 	  */
 	public int getLBR_Tax_ID();
+
+    /** Column name LBR_TaxationType */
+    public static final String COLUMNNAME_LBR_TaxationType = "LBR_TaxationType";
+
+	/** Set Taxation Type.
+	  * Taxation type used to calculate taxes
+	  */
+	public void setLBR_TaxationType (String LBR_TaxationType);
+
+	/** Get Taxation Type.
+	  * Taxation type used to calculate taxes
+	  */
+	public String getLBR_TaxationType();
 
     /** Column name LBR_UOMTax_ID */
     public static final String COLUMNNAME_LBR_UOMTax_ID = "LBR_UOMTax_ID";
@@ -373,6 +436,19 @@ public interface I_LBR_DocLine_Details
 	public int getM_RMALine_ID();
 
 	public org.compiere.model.I_M_RMALine getM_RMALine() throws RuntimeException;
+
+    /** Column name Memo */
+    public static final String COLUMNNAME_Memo = "Memo";
+
+	/** Set Memo.
+	  * Memo Text
+	  */
+	public void setMemo (String Memo);
+
+	/** Get Memo.
+	  * Memo Text
+	  */
+	public String getMemo();
 
     /** Column name POReference */
     public static final String COLUMNNAME_POReference = "POReference";
@@ -422,6 +498,19 @@ public interface I_LBR_DocLine_Details
 	/** Get Surcharges	  */
 	public BigDecimal getSurcharges();
 
+    /** Column name TaxLineTotal */
+    public static final String COLUMNNAME_TaxLineTotal = "TaxLineTotal";
+
+	/** Set Tax Line Total.
+	  * Tax Line Total Amount
+	  */
+	public void setTaxLineTotal (BigDecimal TaxLineTotal);
+
+	/** Get Tax Line Total.
+	  * Tax Line Total Amount
+	  */
+	public BigDecimal getTaxLineTotal();
+
     /** Column name Updated */
     public static final String COLUMNNAME_Updated = "Updated";
 
@@ -437,52 +526,4 @@ public interface I_LBR_DocLine_Details
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
-	
-	/** Column name TaxLineTotal */
-    public static final String COLUMNNAME_TaxLineTotal = "TaxLineTotal";
-
-	/** Set Tax Line Total.
-	  * Tax Line Total Amount
-	  */
-	public void setTaxLineTotal (BigDecimal TaxLineTotal);
-
-	/** Get Tax Line Total.
-	  * Tax Line Total Amount
-	  */
-	public BigDecimal getTaxLineTotal();
-	
-	/** Column name LBR_TaxationType */
-    public static final String COLUMNNAME_LBR_TaxationType = "LBR_TaxationType";
-
-	/** Set Taxation Type.
-	  * Taxation type used to calculate taxes
-	  */
-	public void setLBR_TaxationType (String LBR_TaxationType);
-
-	/** Get Taxation Type.
-	  * Taxation type used to calculate taxes
-	  */
-	public String getLBR_TaxationType();
-	
-	/** Column name LBR_NotaFiscalLine_ID */
-    public static final String COLUMNNAME_LBR_NotaFiscalLine_ID = "LBR_NotaFiscalLine_ID";
-
-	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Line.
-	  * Brazilian Fiscal Invoice (Nota Fiscal) Line Identifier
-	  */
-	public void setLBR_NotaFiscalLine_ID (int LBR_NotaFiscalLine_ID);
-
-	/** Get Brazilian Fiscal Invoice (Nota Fiscal) Line.
-	  * Brazilian Fiscal Invoice (Nota Fiscal) Line Identifier
-	  */
-	public int getLBR_NotaFiscalLine_ID();
-
-	/** Column name LBR_SiscomexAmt */
-    public static final String COLUMNNAME_LBR_SiscomexAmt = "LBR_SiscomexAmt";
-
-	/** Set Siscomex Amount	  */
-	public void setLBR_SiscomexAmt (BigDecimal LBR_SiscomexAmt);
-
-	/** Get Siscomex Amount	  */
-	public BigDecimal getLBR_SiscomexAmt();
 }

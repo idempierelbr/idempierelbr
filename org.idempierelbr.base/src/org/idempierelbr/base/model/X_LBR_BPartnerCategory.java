@@ -22,21 +22,55 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_BPartnerCategory
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_BPartnerCategory extends PO implements I_LBR_BPartnerCategory, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_BPartnerCategory")
+public class X_LBR_BPartnerCategory extends PO implements I_LBR_BPartnerCategory, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140117L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_BPartnerCategory (Properties ctx, int LBR_BPartnerCategory_ID, String trxName)
     {
       super (ctx, LBR_BPartnerCategory_ID, trxName);
       /** if (LBR_BPartnerCategory_ID == 0)
+        {
+			setLBR_BPartnerCategory_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_BPartnerCategory (Properties ctx, int LBR_BPartnerCategory_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_BPartnerCategory_ID, trxName, virtualColumns);
+      /** if (LBR_BPartnerCategory_ID == 0)
+        {
+			setLBR_BPartnerCategory_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_BPartnerCategory (Properties ctx, String LBR_BPartnerCategory_UU, String trxName)
+    {
+      super (ctx, LBR_BPartnerCategory_UU, trxName);
+      /** if (LBR_BPartnerCategory_UU == null)
+        {
+			setLBR_BPartnerCategory_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_BPartnerCategory (Properties ctx, String LBR_BPartnerCategory_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_BPartnerCategory_UU, trxName, virtualColumns);
+      /** if (LBR_BPartnerCategory_UU == null)
         {
 			setLBR_BPartnerCategory_ID (0);
 			setName (null);
@@ -50,7 +84,7 @@ public class X_LBR_BPartnerCategory extends PO implements I_LBR_BPartnerCategory
     }
 
     /** AccessLevel
-      * @return 6 - System - Client 
+      * @return 6 - System - Client
       */
     protected int get_AccessLevel()
     {
@@ -66,15 +100,14 @@ public class X_LBR_BPartnerCategory extends PO implements I_LBR_BPartnerCategory
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_BPartnerCategory[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_BPartnerCategory[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -83,27 +116,26 @@ public class X_LBR_BPartnerCategory extends PO implements I_LBR_BPartnerCategory
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set CFOP Business Partner Category.
-		@param LBR_BPartnerCategory_ID 
-		Identifies a CFOP Business Partner Category
-	  */
+		@param LBR_BPartnerCategory_ID Identifies a CFOP Business Partner Category
+	*/
 	public void setLBR_BPartnerCategory_ID (int LBR_BPartnerCategory_ID)
 	{
-		if (LBR_BPartnerCategory_ID < 1) 
+		if (LBR_BPartnerCategory_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_BPartnerCategory_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_BPartnerCategory_ID, Integer.valueOf(LBR_BPartnerCategory_ID));
 	}
 
 	/** Get CFOP Business Partner Category.
 		@return Identifies a CFOP Business Partner Category
 	  */
-	public int getLBR_BPartnerCategory_ID () 
+	public int getLBR_BPartnerCategory_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BPartnerCategory_ID);
 		if (ii == null)
@@ -112,7 +144,8 @@ public class X_LBR_BPartnerCategory extends PO implements I_LBR_BPartnerCategory
 	}
 
 	/** Set LBR_BPartnerCategory_UU.
-		@param LBR_BPartnerCategory_UU LBR_BPartnerCategory_UU	  */
+		@param LBR_BPartnerCategory_UU LBR_BPartnerCategory_UU
+	*/
 	public void setLBR_BPartnerCategory_UU (String LBR_BPartnerCategory_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_BPartnerCategory_UU, LBR_BPartnerCategory_UU);
@@ -120,15 +153,14 @@ public class X_LBR_BPartnerCategory extends PO implements I_LBR_BPartnerCategory
 
 	/** Get LBR_BPartnerCategory_UU.
 		@return LBR_BPartnerCategory_UU	  */
-	public String getLBR_BPartnerCategory_UU () 
+	public String getLBR_BPartnerCategory_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_BPartnerCategory_UU);
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -137,7 +169,7 @@ public class X_LBR_BPartnerCategory extends PO implements I_LBR_BPartnerCategory
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}

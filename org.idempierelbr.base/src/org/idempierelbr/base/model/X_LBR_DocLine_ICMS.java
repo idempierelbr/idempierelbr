@@ -24,21 +24,61 @@ import org.compiere.model.*;
 import org.compiere.util.Env;
 
 /** Generated Model for LBR_DocLine_ICMS
- *  @author iDempiere (generated) 
- *  @version Release 5.1 - $Id$ */
-public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_DocLine_ICMS")
+public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20180629L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_DocLine_ICMS (Properties ctx, int LBR_DocLine_ICMS_ID, String trxName)
     {
       super (ctx, LBR_DocLine_ICMS_ID, trxName);
       /** if (LBR_DocLine_ICMS_ID == 0)
+        {
+			setIsTaxIncluded (false);
+// N
+			setLBR_ICMSST_IsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_ICMS (Properties ctx, int LBR_DocLine_ICMS_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_DocLine_ICMS_ID, trxName, virtualColumns);
+      /** if (LBR_DocLine_ICMS_ID == 0)
+        {
+			setIsTaxIncluded (false);
+// N
+			setLBR_ICMSST_IsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_ICMS (Properties ctx, String LBR_DocLine_ICMS_UU, String trxName)
+    {
+      super (ctx, LBR_DocLine_ICMS_UU, trxName);
+      /** if (LBR_DocLine_ICMS_UU == null)
+        {
+			setIsTaxIncluded (false);
+// N
+			setLBR_ICMSST_IsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_ICMS (Properties ctx, String LBR_DocLine_ICMS_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_DocLine_ICMS_UU, trxName, virtualColumns);
+      /** if (LBR_DocLine_ICMS_UU == null)
         {
 			setIsTaxIncluded (false);
 // N
@@ -54,7 +94,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -70,15 +110,14 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_DocLine_ICMS[")
+      StringBuilder sb = new StringBuilder ("X_LBR_DocLine_ICMS[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	/** Set Price includes Tax.
-		@param IsTaxIncluded 
-		Tax is included in the price 
-	  */
+		@param IsTaxIncluded Tax is included in the price 
+	*/
 	public void setIsTaxIncluded (boolean IsTaxIncluded)
 	{
 		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
@@ -87,36 +126,38 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get Price includes Tax.
 		@return Tax is included in the price 
 	  */
-	public boolean isTaxIncluded () 
+	public boolean isTaxIncluded()
 	{
 		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	public I_LBR_CEST getLBR_CEST() throws RuntimeException
-    {
-		return (I_LBR_CEST)MTable.get(getCtx(), I_LBR_CEST.Table_Name)
-			.getPO(getLBR_CEST_ID(), get_TrxName());	}
+	{
+		return (I_LBR_CEST)MTable.get(getCtx(), I_LBR_CEST.Table_ID)
+			.getPO(getLBR_CEST_ID(), get_TrxName());
+	}
 
 	/** Set CEST.
-		@param LBR_CEST_ID CEST	  */
+		@param LBR_CEST_ID CEST
+	*/
 	public void setLBR_CEST_ID (int LBR_CEST_ID)
 	{
-		if (LBR_CEST_ID < 1) 
+		if (LBR_CEST_ID < 1)
 			set_Value (COLUMNNAME_LBR_CEST_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_CEST_ID, Integer.valueOf(LBR_CEST_ID));
 	}
 
 	/** Get CEST.
 		@return CEST	  */
-	public int getLBR_CEST_ID () 
+	public int getLBR_CEST_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_CEST_ID);
 		if (ii == null)
@@ -125,7 +166,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set DIFAL Share Rate (%).
-		@param LBR_DIFAL_RateICMSInterPart DIFAL Share Rate (%)	  */
+		@param LBR_DIFAL_RateICMSInterPart DIFAL Share Rate (%)
+	*/
 	public void setLBR_DIFAL_RateICMSInterPart (BigDecimal LBR_DIFAL_RateICMSInterPart)
 	{
 		set_Value (COLUMNNAME_LBR_DIFAL_RateICMSInterPart, LBR_DIFAL_RateICMSInterPart);
@@ -133,7 +175,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 
 	/** Get DIFAL Share Rate (%).
 		@return DIFAL Share Rate (%)	  */
-	public BigDecimal getLBR_DIFAL_RateICMSInterPart () 
+	public BigDecimal getLBR_DIFAL_RateICMSInterPart()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_DIFAL_RateICMSInterPart);
 		if (bd == null)
@@ -141,16 +183,17 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 		return bd;
 	}
 
-	/** Set DIFAL Tax Amt of "Fundo de Combate a Pobreza".
-		@param LBR_DIFAL_TaxAmtFCPUFDest DIFAL Tax Amt of "Fundo de Combate a Pobreza"	  */
+	/** Set DIFAL Tax Amt of &quot;Fundo de Combate a Pobreza&quot;.
+		@param LBR_DIFAL_TaxAmtFCPUFDest DIFAL Tax Amt of &quot;Fundo de Combate a Pobreza&quot;
+	*/
 	public void setLBR_DIFAL_TaxAmtFCPUFDest (BigDecimal LBR_DIFAL_TaxAmtFCPUFDest)
 	{
 		set_Value (COLUMNNAME_LBR_DIFAL_TaxAmtFCPUFDest, LBR_DIFAL_TaxAmtFCPUFDest);
 	}
 
-	/** Get DIFAL Tax Amt of "Fundo de Combate a Pobreza".
-		@return DIFAL Tax Amt of "Fundo de Combate a Pobreza"	  */
-	public BigDecimal getLBR_DIFAL_TaxAmtFCPUFDest () 
+	/** Get DIFAL Tax Amt of &quot;Fundo de Combate a Pobreza&quot;.
+		@return DIFAL Tax Amt of &quot;Fundo de Combate a Pobreza&quot;	  */
+	public BigDecimal getLBR_DIFAL_TaxAmtFCPUFDest()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_DIFAL_TaxAmtFCPUFDest);
 		if (bd == null)
@@ -159,7 +202,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set DIFAL Tax Amt in Receiver UF.
-		@param LBR_DIFAL_TaxAmtICMSUFDest DIFAL Tax Amt in Receiver UF	  */
+		@param LBR_DIFAL_TaxAmtICMSUFDest DIFAL Tax Amt in Receiver UF
+	*/
 	public void setLBR_DIFAL_TaxAmtICMSUFDest (BigDecimal LBR_DIFAL_TaxAmtICMSUFDest)
 	{
 		set_Value (COLUMNNAME_LBR_DIFAL_TaxAmtICMSUFDest, LBR_DIFAL_TaxAmtICMSUFDest);
@@ -167,7 +211,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 
 	/** Get DIFAL Tax Amt in Receiver UF.
 		@return DIFAL Tax Amt in Receiver UF	  */
-	public BigDecimal getLBR_DIFAL_TaxAmtICMSUFDest () 
+	public BigDecimal getLBR_DIFAL_TaxAmtICMSUFDest()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_DIFAL_TaxAmtICMSUFDest);
 		if (bd == null)
@@ -176,7 +220,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set DIFAL Tax Amt in Sender UF.
-		@param LBR_DIFAL_TaxAmtICMSUFRemet DIFAL Tax Amt in Sender UF	  */
+		@param LBR_DIFAL_TaxAmtICMSUFRemet DIFAL Tax Amt in Sender UF
+	*/
 	public void setLBR_DIFAL_TaxAmtICMSUFRemet (BigDecimal LBR_DIFAL_TaxAmtICMSUFRemet)
 	{
 		set_Value (COLUMNNAME_LBR_DIFAL_TaxAmtICMSUFRemet, LBR_DIFAL_TaxAmtICMSUFRemet);
@@ -184,7 +229,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 
 	/** Get DIFAL Tax Amt in Sender UF.
 		@return DIFAL Tax Amt in Sender UF	  */
-	public BigDecimal getLBR_DIFAL_TaxAmtICMSUFRemet () 
+	public BigDecimal getLBR_DIFAL_TaxAmtICMSUFRemet()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_DIFAL_TaxAmtICMSUFRemet);
 		if (bd == null)
@@ -192,33 +237,17 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 		return bd;
 	}
 
-	/** Set DIFAL Tax Base Amt of "Fundo de Combate a Pobreza".
-		@param LBR_DIFAL_TaxBaseFCPUFDest DIFAL Tax Base Amt of "Fundo de Combate a Pobreza"	  */
-	public void setLBR_DIFAL_TaxBaseFCPUFDest (BigDecimal LBR_DIFAL_TaxBaseFCPUFDest)
-	{
-		set_Value (COLUMNNAME_LBR_DIFAL_TaxBaseFCPUFDest, LBR_DIFAL_TaxBaseFCPUFDest);
-	}
-
-	/** Get DIFAL Tax Base Amt of "Fundo de Combate a Pobreza".
-		@return DIFAL Tax Base Amt of "Fundo de Combate a Pobreza"	  */
-	public BigDecimal getLBR_DIFAL_TaxBaseFCPUFDest () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_DIFAL_TaxBaseFCPUFDest);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Set DIFAL Tax Rate of "Fundo de Combate a Pobreza".
-		@param LBR_DIFAL_TaxRateFCPUFDest DIFAL Tax Rate of "Fundo de Combate a Pobreza"	  */
+	/** Set DIFAL Tax Rate of &quot;Fundo de Combate a Pobreza&quot;.
+		@param LBR_DIFAL_TaxRateFCPUFDest DIFAL Tax Rate of &quot;Fundo de Combate a Pobreza&quot;
+	*/
 	public void setLBR_DIFAL_TaxRateFCPUFDest (BigDecimal LBR_DIFAL_TaxRateFCPUFDest)
 	{
 		set_Value (COLUMNNAME_LBR_DIFAL_TaxRateFCPUFDest, LBR_DIFAL_TaxRateFCPUFDest);
 	}
 
-	/** Get DIFAL Tax Rate of "Fundo de Combate a Pobreza".
-		@return DIFAL Tax Rate of "Fundo de Combate a Pobreza"	  */
-	public BigDecimal getLBR_DIFAL_TaxRateFCPUFDest () 
+	/** Get DIFAL Tax Rate of &quot;Fundo de Combate a Pobreza&quot;.
+		@return DIFAL Tax Rate of &quot;Fundo de Combate a Pobreza&quot;	  */
+	public BigDecimal getLBR_DIFAL_TaxRateFCPUFDest()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_DIFAL_TaxRateFCPUFDest);
 		if (bd == null)
@@ -227,7 +256,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set DIFAL Internal Tax Rate in Receiver UF.
-		@param LBR_DIFAL_TaxRateICMSUFDest DIFAL Internal Tax Rate in Receiver UF	  */
+		@param LBR_DIFAL_TaxRateICMSUFDest DIFAL Internal Tax Rate in Receiver UF
+	*/
 	public void setLBR_DIFAL_TaxRateICMSUFDest (BigDecimal LBR_DIFAL_TaxRateICMSUFDest)
 	{
 		set_Value (COLUMNNAME_LBR_DIFAL_TaxRateICMSUFDest, LBR_DIFAL_TaxRateICMSUFDest);
@@ -235,7 +265,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 
 	/** Get DIFAL Internal Tax Rate in Receiver UF.
 		@return DIFAL Internal Tax Rate in Receiver UF	  */
-	public BigDecimal getLBR_DIFAL_TaxRateICMSUFDest () 
+	public BigDecimal getLBR_DIFAL_TaxRateICMSUFDest()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_DIFAL_TaxRateICMSUFDest);
 		if (bd == null)
@@ -244,26 +274,26 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	public I_LBR_DocLine_Details getLBR_DocLine_Details() throws RuntimeException
-    {
-		return (I_LBR_DocLine_Details)MTable.get(getCtx(), I_LBR_DocLine_Details.Table_Name)
-			.getPO(getLBR_DocLine_Details_ID(), get_TrxName());	}
+	{
+		return (I_LBR_DocLine_Details)MTable.get(getCtx(), I_LBR_DocLine_Details.Table_ID)
+			.getPO(getLBR_DocLine_Details_ID(), get_TrxName());
+	}
 
 	/** Set Doc Line Details.
-		@param LBR_DocLine_Details_ID 
-		Doc Line Details
-	  */
+		@param LBR_DocLine_Details_ID Doc Line Details
+	*/
 	public void setLBR_DocLine_Details_ID (int LBR_DocLine_Details_ID)
 	{
-		if (LBR_DocLine_Details_ID < 1) 
+		if (LBR_DocLine_Details_ID < 1)
 			set_Value (COLUMNNAME_LBR_DocLine_Details_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_DocLine_Details_ID, Integer.valueOf(LBR_DocLine_Details_ID));
 	}
 
 	/** Get Doc Line Details.
 		@return Doc Line Details
 	  */
-	public int getLBR_DocLine_Details_ID () 
+	public int getLBR_DocLine_Details_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DocLine_Details_ID);
 		if (ii == null)
@@ -272,21 +302,20 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set Doc Line ICMS.
-		@param LBR_DocLine_ICMS_ID 
-		Doc Line ICMS
-	  */
+		@param LBR_DocLine_ICMS_ID Doc Line ICMS
+	*/
 	public void setLBR_DocLine_ICMS_ID (int LBR_DocLine_ICMS_ID)
 	{
-		if (LBR_DocLine_ICMS_ID < 1) 
+		if (LBR_DocLine_ICMS_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_DocLine_ICMS_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_DocLine_ICMS_ID, Integer.valueOf(LBR_DocLine_ICMS_ID));
 	}
 
 	/** Get Doc Line ICMS.
 		@return Doc Line ICMS
 	  */
-	public int getLBR_DocLine_ICMS_ID () 
+	public int getLBR_DocLine_ICMS_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DocLine_ICMS_ID);
 		if (ii == null)
@@ -295,9 +324,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set Doc Line ICMS.
-		@param LBR_DocLine_ICMS_UU 
-		Doc Line ICMS
-	  */
+		@param LBR_DocLine_ICMS_UU Doc Line ICMS
+	*/
 	public void setLBR_DocLine_ICMS_UU (String LBR_DocLine_ICMS_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_DocLine_ICMS_UU, LBR_DocLine_ICMS_UU);
@@ -306,15 +334,329 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get Doc Line ICMS.
 		@return Doc Line ICMS
 	  */
-	public String getLBR_DocLine_ICMS_UU () 
+	public String getLBR_DocLine_ICMS_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_DocLine_ICMS_UU);
+	}
+
+	/** Simple Taxation = SN */
+	public static final String LBR_ICMSREGIME_SimpleTaxation = "SN";
+	/** Default Taxation = TN */
+	public static final String LBR_ICMSREGIME_DefaultTaxation = "TN";
+	/** Set ICMS Regime.
+		@param LBR_ICMSRegime Identifies a ICMS Regime for taxes
+	*/
+	public void setLBR_ICMSRegime (String LBR_ICMSRegime)
+	{
+
+		set_Value (COLUMNNAME_LBR_ICMSRegime, LBR_ICMSRegime);
+	}
+
+	/** Get ICMS Regime.
+		@return Identifies a ICMS Regime for taxes
+	  */
+	public String getLBR_ICMSRegime()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_ICMSRegime);
+	}
+
+	/** Set Price includes Tax.
+		@param LBR_ICMSST_IsTaxIncluded Tax is included in the price 
+	*/
+	public void setLBR_ICMSST_IsTaxIncluded (boolean LBR_ICMSST_IsTaxIncluded)
+	{
+		set_Value (COLUMNNAME_LBR_ICMSST_IsTaxIncluded, Boolean.valueOf(LBR_ICMSST_IsTaxIncluded));
+	}
+
+	/** Get Price includes Tax.
+		@return Tax is included in the price 
+	  */
+	public boolean isLBR_ICMSST_IsTaxIncluded()
+	{
+		Object oo = get_Value(COLUMNNAME_LBR_ICMSST_IsTaxIncluded);
+		if (oo != null)
+		{
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+
+	/** Set ICMS-ST Added Amount Margin (%).
+		@param LBR_ICMSST_TaxAdded Identifies the ICMS-ST Added Amount Margin in percentage
+	*/
+	public void setLBR_ICMSST_TaxAdded (BigDecimal LBR_ICMSST_TaxAdded)
+	{
+		set_Value (COLUMNNAME_LBR_ICMSST_TaxAdded, LBR_ICMSST_TaxAdded);
+	}
+
+	/** Get ICMS-ST Added Amount Margin (%).
+		@return Identifies the ICMS-ST Added Amount Margin in percentage
+	  */
+	public BigDecimal getLBR_ICMSST_TaxAdded()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAdded);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set ICMS-ST Tax Amount.
+		@param LBR_ICMSST_TaxAmt Defines the ICMS-ST Tax Amount
+	*/
+	public void setLBR_ICMSST_TaxAmt (BigDecimal LBR_ICMSST_TaxAmt)
+	{
+		set_Value (COLUMNNAME_LBR_ICMSST_TaxAmt, LBR_ICMSST_TaxAmt);
+	}
+
+	/** Get ICMS-ST Tax Amount.
+		@return Defines the ICMS-ST Tax Amount
+	  */
+	public BigDecimal getLBR_ICMSST_TaxAmt()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set ICMS-ST Amount in Receiver UF.
+		@param LBR_ICMSST_TaxAmtUFDes Identifies the ICMS-ST Amount in Receiver UF
+	*/
+	public void setLBR_ICMSST_TaxAmtUFDes (BigDecimal LBR_ICMSST_TaxAmtUFDes)
+	{
+		set_Value (COLUMNNAME_LBR_ICMSST_TaxAmtUFDes, LBR_ICMSST_TaxAmtUFDes);
+	}
+
+	/** Get ICMS-ST Amount in Receiver UF.
+		@return Identifies the ICMS-ST Amount in Receiver UF
+	  */
+	public BigDecimal getLBR_ICMSST_TaxAmtUFDes()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAmtUFDes);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set ICMS-ST Amount withheld in Sender UF.
+		@param LBR_ICMSST_TaxAmtUFSen Identifies the ICMS-ST Amount withheld in Sender UF
+	*/
+	public void setLBR_ICMSST_TaxAmtUFSen (BigDecimal LBR_ICMSST_TaxAmtUFSen)
+	{
+		set_Value (COLUMNNAME_LBR_ICMSST_TaxAmtUFSen, LBR_ICMSST_TaxAmtUFSen);
+	}
+
+	/** Get ICMS-ST Amount withheld in Sender UF.
+		@return Identifies the ICMS-ST Amount withheld in Sender UF
+	  */
+	public BigDecimal getLBR_ICMSST_TaxAmtUFSen()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAmtUFSen);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set ICMS-ST Withheld Amount.
+		@param LBR_ICMSST_TaxAmtWhd Identifies the ICMS-ST Withheld Amount
+	*/
+	public void setLBR_ICMSST_TaxAmtWhd (BigDecimal LBR_ICMSST_TaxAmtWhd)
+	{
+		set_Value (COLUMNNAME_LBR_ICMSST_TaxAmtWhd, LBR_ICMSST_TaxAmtWhd);
+	}
+
+	/** Get ICMS-ST Withheld Amount.
+		@return Identifies the ICMS-ST Withheld Amount
+	  */
+	public BigDecimal getLBR_ICMSST_TaxAmtWhd()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAmtWhd);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set ICMS-ST Base Amount in Receiver UF.
+		@param LBR_ICMSST_TaxBAmtUFDes Identifies the ICMS-ST Base Amount in Receiver UF
+	*/
+	public void setLBR_ICMSST_TaxBAmtUFDes (BigDecimal LBR_ICMSST_TaxBAmtUFDes)
+	{
+		set_Value (COLUMNNAME_LBR_ICMSST_TaxBAmtUFDes, LBR_ICMSST_TaxBAmtUFDes);
+	}
+
+	/** Get ICMS-ST Base Amount in Receiver UF.
+		@return Identifies the ICMS-ST Base Amount in Receiver UF
+	  */
+	public BigDecimal getLBR_ICMSST_TaxBAmtUFDes()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBAmtUFDes);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set ICMS-ST Base Amount withheld in Sender UF.
+		@param LBR_ICMSST_TaxBAmtUFSen Identifies the ICMS-ST Base Amount withheld in Sender UF
+	*/
+	public void setLBR_ICMSST_TaxBAmtUFSen (BigDecimal LBR_ICMSST_TaxBAmtUFSen)
+	{
+		set_Value (COLUMNNAME_LBR_ICMSST_TaxBAmtUFSen, LBR_ICMSST_TaxBAmtUFSen);
+	}
+
+	/** Get ICMS-ST Base Amount withheld in Sender UF.
+		@return Identifies the ICMS-ST Base Amount withheld in Sender UF
+	  */
+	public BigDecimal getLBR_ICMSST_TaxBAmtUFSen()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBAmtUFSen);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set ICMS-ST Withheld Base Amount.
+		@param LBR_ICMSST_TaxBAmtWhd Identifies the ICMS-ST Withheld Base Amount
+	*/
+	public void setLBR_ICMSST_TaxBAmtWhd (BigDecimal LBR_ICMSST_TaxBAmtWhd)
+	{
+		set_Value (COLUMNNAME_LBR_ICMSST_TaxBAmtWhd, LBR_ICMSST_TaxBAmtWhd);
+	}
+
+	/** Get ICMS-ST Withheld Base Amount.
+		@return Identifies the ICMS-ST Withheld Base Amount
+	  */
+	public BigDecimal getLBR_ICMSST_TaxBAmtWhd()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBAmtWhd);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set ICMS-ST Tax Base.
+		@param LBR_ICMSST_TaxBase Indicates the ICMS-ST Tax Base
+	*/
+	public void setLBR_ICMSST_TaxBase (BigDecimal LBR_ICMSST_TaxBase)
+	{
+		set_Value (COLUMNNAME_LBR_ICMSST_TaxBase, LBR_ICMSST_TaxBase);
+	}
+
+	/** Get ICMS-ST Tax Base.
+		@return Indicates the ICMS-ST Tax Base
+	  */
+	public BigDecimal getLBR_ICMSST_TaxBase()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBase);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set ICMS-ST Tax Base Amount.
+		@param LBR_ICMSST_TaxBaseAmt Defines the ICMS-ST Tax Base Amount
+	*/
+	public void setLBR_ICMSST_TaxBaseAmt (BigDecimal LBR_ICMSST_TaxBaseAmt)
+	{
+		set_Value (COLUMNNAME_LBR_ICMSST_TaxBaseAmt, LBR_ICMSST_TaxBaseAmt);
+	}
+
+	/** Get ICMS-ST Tax Base Amount.
+		@return Defines the ICMS-ST Tax Base Amount
+	  */
+	public BigDecimal getLBR_ICMSST_TaxBaseAmt()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBaseAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Preco Tabelado ou Maximo Sugerido = 0 */
+	public static final String LBR_ICMSST_TAXBASETYPE_PrecoTabeladoOuMaximoSugerido = "0";
+	/** Lista Negativa (Valor) = 1 */
+	public static final String LBR_ICMSST_TAXBASETYPE_ListaNegativaValor = "1";
+	/** Lista Positiva (Valor) = 2 */
+	public static final String LBR_ICMSST_TAXBASETYPE_ListaPositivaValor = "2";
+	/** Lista Neutra (Valor) = 3 */
+	public static final String LBR_ICMSST_TAXBASETYPE_ListaNeutraValor = "3";
+	/** Margem Valor Agregado (%) = 4 */
+	public static final String LBR_ICMSST_TAXBASETYPE_MargemValorAgregado = "4";
+	/** Pauta (Valor) = 5 */
+	public static final String LBR_ICMSST_TAXBASETYPE_PautaValor = "5";
+	/** Valor da Operacao = 6 */
+	public static final String LBR_ICMSST_TAXBASETYPE_ValorDaOperacao = "6";
+	/** Set ICMS-ST Tax Base Type.
+		@param LBR_ICMSST_TaxBaseType Identifies a ICMS-ST Tax Base Type
+	*/
+	public void setLBR_ICMSST_TaxBaseType (String LBR_ICMSST_TaxBaseType)
+	{
+
+		set_Value (COLUMNNAME_LBR_ICMSST_TaxBaseType, LBR_ICMSST_TaxBaseType);
+	}
+
+	/** Get ICMS-ST Tax Base Type.
+		@return Identifies a ICMS-ST Tax Base Type
+	  */
+	public String getLBR_ICMSST_TaxBaseType()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_ICMSST_TaxBaseType);
+	}
+
+	/** Set ICMS-ST Tax Rate.
+		@param LBR_ICMSST_TaxRate Indicates the ICMS-ST Tax Rate
+	*/
+	public void setLBR_ICMSST_TaxRate (BigDecimal LBR_ICMSST_TaxRate)
+	{
+		set_Value (COLUMNNAME_LBR_ICMSST_TaxRate, LBR_ICMSST_TaxRate);
+	}
+
+	/** Get ICMS-ST Tax Rate.
+		@return Indicates the ICMS-ST Tax Rate
+	  */
+	public BigDecimal getLBR_ICMSST_TaxRate()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxRate);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	public org.compiere.model.I_C_Region getLBR_ICMSST_TaxUFDue() throws RuntimeException
+	{
+		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_ID)
+			.getPO(getLBR_ICMSST_TaxUFDue_ID(), get_TrxName());
+	}
+
+	/** Set ICMS-ST UF Due.
+		@param LBR_ICMSST_TaxUFDue_ID Identifies the ICMS-ST UF Due
+	*/
+	public void setLBR_ICMSST_TaxUFDue_ID (int LBR_ICMSST_TaxUFDue_ID)
+	{
+		if (LBR_ICMSST_TaxUFDue_ID < 1)
+			set_Value (COLUMNNAME_LBR_ICMSST_TaxUFDue_ID, null);
+		else
+			set_Value (COLUMNNAME_LBR_ICMSST_TaxUFDue_ID, Integer.valueOf(LBR_ICMSST_TaxUFDue_ID));
+	}
+
+	/** Get ICMS-ST UF Due.
+		@return Identifies the ICMS-ST UF Due
+	  */
+	public int getLBR_ICMSST_TaxUFDue_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_ICMSST_TaxUFDue_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
 	}
 
 	/** 00 - Tributada integralmente = 00 */
 	public static final String LBR_ICMS_OWNTAXSTATUS_00_TributadaIntegralmente = "00";
 	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria = 10_1 */
 	public static final String LBR_ICMS_OWNTAXSTATUS_10_TributadaEComCobrancaDoICMSPorSubTributaria = "10_1";
+	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria (com partilha) = 10_2 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_10_TributadaEComCobrancaDoICMSPorSubTributariaComPartilha = "10_2";
 	/** 20 - Com reducao de base de calculo = 20 */
 	public static final String LBR_ICMS_OWNTAXSTATUS_20_ComReducaoDeBaseDeCalculo = "20";
 	/** 30 - Isenta ou nao-trib. e com cobr. do ICMS por Sub. Tribut = 30 */
@@ -323,6 +665,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	public static final String LBR_ICMS_OWNTAXSTATUS_40_Isenta = "40";
 	/** 41 - Nao-tributada = 41_1 */
 	public static final String LBR_ICMS_OWNTAXSTATUS_41_Nao_Tributada = "41_1";
+	/** 41 - Nao-tributada (retencao antecipada) = 41_2 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_41_Nao_TributadaRetencaoAntecipada = "41_2";
 	/** 50 - Suspensao = 50 */
 	public static final String LBR_ICMS_OWNTAXSTATUS_50_Suspensao = "50";
 	/** 51 - Diferimento  = 51 */
@@ -331,18 +675,13 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	public static final String LBR_ICMS_OWNTAXSTATUS_60_ICMSCobradoAnteriormentePorSubstituicaoTributaria = "60";
 	/** 70 - Com red. de base de calc. e cobr. do ICMS por Sub. Trib = 70 */
 	public static final String LBR_ICMS_OWNTAXSTATUS_70_ComRedDeBaseDeCalcECobrDoICMSPorSubTrib = "70";
-	/** 90 - Outras = 90_2 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_90_Outras = "90_2";
-	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria (com partilha) = 10_2 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_10_TributadaEComCobrancaDoICMSPorSubTributariaComPartilha = "10_2";
-	/** 41 - Nao-tributada (retencao antecipada) = 41_2 */
-	public static final String LBR_ICMS_OWNTAXSTATUS_41_Nao_TributadaRetencaoAntecipada = "41_2";
 	/** 90 - Outras (com partilha) = 90_1 */
 	public static final String LBR_ICMS_OWNTAXSTATUS_90_OutrasComPartilha = "90_1";
+	/** 90 - Outras = 90_2 */
+	public static final String LBR_ICMS_OWNTAXSTATUS_90_Outras = "90_2";
 	/** Set Declarant ICMS Tax Status.
-		@param LBR_ICMS_OwnTaxStatus 
-		ICMS tax status from the point of view of the declarant
-	  */
+		@param LBR_ICMS_OwnTaxStatus ICMS tax status from the point of view of the declarant
+	*/
 	public void setLBR_ICMS_OwnTaxStatus (String LBR_ICMS_OwnTaxStatus)
 	{
 
@@ -352,15 +691,14 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get Declarant ICMS Tax Status.
 		@return ICMS tax status from the point of view of the declarant
 	  */
-	public String getLBR_ICMS_OwnTaxStatus () 
+	public String getLBR_ICMS_OwnTaxStatus()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ICMS_OwnTaxStatus);
 	}
 
 	/** Set ICMS Tax Operation Amount.
-		@param LBR_ICMS_TaxAmtOp 
-		Identifies the ICMS Tax Operation Amount
-	  */
+		@param LBR_ICMS_TaxAmtOp Identifies the ICMS Tax Operation Amount
+	*/
 	public void setLBR_ICMS_TaxAmtOp (BigDecimal LBR_ICMS_TaxAmtOp)
 	{
 		set_Value (COLUMNNAME_LBR_ICMS_TaxAmtOp, LBR_ICMS_TaxAmtOp);
@@ -369,7 +707,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get ICMS Tax Operation Amount.
 		@return Identifies the ICMS Tax Operation Amount
 	  */
-	public BigDecimal getLBR_ICMS_TaxAmtOp () 
+	public BigDecimal getLBR_ICMS_TaxAmtOp()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMS_TaxAmtOp);
 		if (bd == null)
@@ -386,9 +724,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Valor da Operacao = 3 */
 	public static final String LBR_ICMS_TAXBASETYPE_ValorDaOperacao = "3";
 	/** Set ICMS Tax Base Type.
-		@param LBR_ICMS_TaxBaseType 
-		Identifies a ICMS Tax Base Type
-	  */
+		@param LBR_ICMS_TaxBaseType Identifies a ICMS Tax Base Type
+	*/
 	public void setLBR_ICMS_TaxBaseType (String LBR_ICMS_TaxBaseType)
 	{
 
@@ -398,13 +735,15 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get ICMS Tax Base Type.
 		@return Identifies a ICMS Tax Base Type
 	  */
-	public String getLBR_ICMS_TaxBaseType () 
+	public String getLBR_ICMS_TaxBaseType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ICMS_TaxBaseType);
 	}
 
 	/** Cab = 1 */
 	public static final String LBR_ICMS_TAXRELIEFTYPE_Cab = "1";
+	/** Financing agency = 12 */
+	public static final String LBR_ICMS_TAXRELIEFTYPE_FinancingAgency = "12";
 	/** Agriculture Use = 3 */
 	public static final String LBR_ICMS_TAXRELIEFTYPE_AgricultureUse = "3";
 	/** Rental = 4 */
@@ -419,12 +758,9 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	public static final String LBR_ICMS_TAXRELIEFTYPE_SaleToPublicInstitutions = "8";
 	/** Other = 9 */
 	public static final String LBR_ICMS_TAXRELIEFTYPE_Other = "9";
-	/** Financing agency = 12 */
-	public static final String LBR_ICMS_TAXRELIEFTYPE_FinancingAgency = "12";
 	/** Set ICMS Tax Relief Type.
-		@param LBR_ICMS_TaxReliefType 
-		Identifies the ICMS Tax Relief Type
-	  */
+		@param LBR_ICMS_TaxReliefType Identifies the ICMS Tax Relief Type
+	*/
 	public void setLBR_ICMS_TaxReliefType (String LBR_ICMS_TaxReliefType)
 	{
 
@@ -434,7 +770,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get ICMS Tax Relief Type.
 		@return Identifies the ICMS Tax Relief Type
 	  */
-	public String getLBR_ICMS_TaxReliefType () 
+	public String getLBR_ICMS_TaxReliefType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ICMS_TaxReliefType);
 	}
@@ -460,9 +796,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** 900 - Outros = 900 */
 	public static final String LBR_ICMS_TAXSTATUSSN_900_Outros = "900";
 	/** Set ICMS Tax Status (Simple).
-		@param LBR_ICMS_TaxStatusSN 
-		Identifies a ICMS Tax Status in a simple taxation
-	  */
+		@param LBR_ICMS_TaxStatusSN Identifies a ICMS Tax Status in a simple taxation
+	*/
 	public void setLBR_ICMS_TaxStatusSN (String LBR_ICMS_TaxStatusSN)
 	{
 
@@ -472,7 +807,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get ICMS Tax Status (Simple).
 		@return Identifies a ICMS Tax Status in a simple taxation
 	  */
-	public String getLBR_ICMS_TaxStatusSN () 
+	public String getLBR_ICMS_TaxStatusSN()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ICMS_TaxStatusSN);
 	}
@@ -481,6 +816,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	public static final String LBR_ICMS_TAXSTATUSTN_00_TributadaIntegralmente = "00";
 	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria = 10_1 */
 	public static final String LBR_ICMS_TAXSTATUSTN_10_TributadaEComCobrancaDoICMSPorSubTributaria = "10_1";
+	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria (com partilha) = 10_2 */
+	public static final String LBR_ICMS_TAXSTATUSTN_10_TributadaEComCobrancaDoICMSPorSubTributariaComPartilha = "10_2";
 	/** 20 - Com reducao de base de calculo = 20 */
 	public static final String LBR_ICMS_TAXSTATUSTN_20_ComReducaoDeBaseDeCalculo = "20";
 	/** 30 - Isenta ou nao-trib. e com cobr. do ICMS por Sub. Tribut = 30 */
@@ -489,6 +826,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	public static final String LBR_ICMS_TAXSTATUSTN_40_Isenta = "40";
 	/** 41 - Nao-tributada = 41_1 */
 	public static final String LBR_ICMS_TAXSTATUSTN_41_Nao_Tributada = "41_1";
+	/** 41 - Nao-tributada (retencao antecipada) = 41_2 */
+	public static final String LBR_ICMS_TAXSTATUSTN_41_Nao_TributadaRetencaoAntecipada = "41_2";
 	/** 50 - Suspensao = 50 */
 	public static final String LBR_ICMS_TAXSTATUSTN_50_Suspensao = "50";
 	/** 51 - Diferimento  = 51 */
@@ -497,18 +836,13 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	public static final String LBR_ICMS_TAXSTATUSTN_60_ICMSCobradoAnteriormentePorSubstituicaoTributaria = "60";
 	/** 70 - Com red. de base de calc. e cobr. do ICMS por Sub. Trib = 70 */
 	public static final String LBR_ICMS_TAXSTATUSTN_70_ComRedDeBaseDeCalcECobrDoICMSPorSubTrib = "70";
-	/** 90 - Outras = 90_2 */
-	public static final String LBR_ICMS_TAXSTATUSTN_90_Outras = "90_2";
-	/** 10 - Tributada e com cobranca do ICMS por Sub. Tributaria (com partilha) = 10_2 */
-	public static final String LBR_ICMS_TAXSTATUSTN_10_TributadaEComCobrancaDoICMSPorSubTributariaComPartilha = "10_2";
-	/** 41 - Nao-tributada (retencao antecipada) = 41_2 */
-	public static final String LBR_ICMS_TAXSTATUSTN_41_Nao_TributadaRetencaoAntecipada = "41_2";
 	/** 90 - Outras (com partilha) = 90_1 */
 	public static final String LBR_ICMS_TAXSTATUSTN_90_OutrasComPartilha = "90_1";
+	/** 90 - Outras = 90_2 */
+	public static final String LBR_ICMS_TAXSTATUSTN_90_Outras = "90_2";
 	/** Set ICMS Tax Status (Standard Taxation).
-		@param LBR_ICMS_TaxStatusTN 
-		Identifies a ICMS Tax Status in a standard taxation
-	  */
+		@param LBR_ICMS_TaxStatusTN Identifies a ICMS Tax Status in a standard taxation
+	*/
 	public void setLBR_ICMS_TaxStatusTN (String LBR_ICMS_TaxStatusTN)
 	{
 
@@ -518,333 +852,9 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get ICMS Tax Status (Standard Taxation).
 		@return Identifies a ICMS Tax Status in a standard taxation
 	  */
-	public String getLBR_ICMS_TaxStatusTN () 
+	public String getLBR_ICMS_TaxStatusTN()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ICMS_TaxStatusTN);
-	}
-
-	/** Default Taxation = TN */
-	public static final String LBR_ICMSREGIME_DefaultTaxation = "TN";
-	/** Simple Taxation = SN */
-	public static final String LBR_ICMSREGIME_SimpleTaxation = "SN";
-	/** Set ICMS Regime.
-		@param LBR_ICMSRegime 
-		Identifies a ICMS Regime for taxes
-	  */
-	public void setLBR_ICMSRegime (String LBR_ICMSRegime)
-	{
-
-		set_Value (COLUMNNAME_LBR_ICMSRegime, LBR_ICMSRegime);
-	}
-
-	/** Get ICMS Regime.
-		@return Identifies a ICMS Regime for taxes
-	  */
-	public String getLBR_ICMSRegime () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_ICMSRegime);
-	}
-
-	/** Set Price includes Tax.
-		@param LBR_ICMSST_IsTaxIncluded 
-		Tax is included in the price 
-	  */
-	public void setLBR_ICMSST_IsTaxIncluded (boolean LBR_ICMSST_IsTaxIncluded)
-	{
-		set_Value (COLUMNNAME_LBR_ICMSST_IsTaxIncluded, Boolean.valueOf(LBR_ICMSST_IsTaxIncluded));
-	}
-
-	/** Get Price includes Tax.
-		@return Tax is included in the price 
-	  */
-	public boolean isLBR_ICMSST_IsTaxIncluded () 
-	{
-		Object oo = get_Value(COLUMNNAME_LBR_ICMSST_IsTaxIncluded);
-		if (oo != null) 
-		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
-			return "Y".equals(oo);
-		}
-		return false;
-	}
-
-	/** Set ICMS-ST Added Amount Margin (%).
-		@param LBR_ICMSST_TaxAdded 
-		Identifies the ICMS-ST Added Amount Margin in percentage
-	  */
-	public void setLBR_ICMSST_TaxAdded (BigDecimal LBR_ICMSST_TaxAdded)
-	{
-		set_Value (COLUMNNAME_LBR_ICMSST_TaxAdded, LBR_ICMSST_TaxAdded);
-	}
-
-	/** Get ICMS-ST Added Amount Margin (%).
-		@return Identifies the ICMS-ST Added Amount Margin in percentage
-	  */
-	public BigDecimal getLBR_ICMSST_TaxAdded () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAdded);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Set ICMS-ST Tax Amount.
-		@param LBR_ICMSST_TaxAmt 
-		Defines the ICMS-ST Tax Amount
-	  */
-	public void setLBR_ICMSST_TaxAmt (BigDecimal LBR_ICMSST_TaxAmt)
-	{
-		set_Value (COLUMNNAME_LBR_ICMSST_TaxAmt, LBR_ICMSST_TaxAmt);
-	}
-
-	/** Get ICMS-ST Tax Amount.
-		@return Defines the ICMS-ST Tax Amount
-	  */
-	public BigDecimal getLBR_ICMSST_TaxAmt () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAmt);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Set ICMS-ST Amount in Receiver UF.
-		@param LBR_ICMSST_TaxAmtUFDes 
-		Identifies the ICMS-ST Amount in Receiver UF
-	  */
-	public void setLBR_ICMSST_TaxAmtUFDes (BigDecimal LBR_ICMSST_TaxAmtUFDes)
-	{
-		set_Value (COLUMNNAME_LBR_ICMSST_TaxAmtUFDes, LBR_ICMSST_TaxAmtUFDes);
-	}
-
-	/** Get ICMS-ST Amount in Receiver UF.
-		@return Identifies the ICMS-ST Amount in Receiver UF
-	  */
-	public BigDecimal getLBR_ICMSST_TaxAmtUFDes () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAmtUFDes);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Set ICMS-ST Amount withheld in Sender UF.
-		@param LBR_ICMSST_TaxAmtUFSen 
-		Identifies the ICMS-ST Amount withheld in Sender UF
-	  */
-	public void setLBR_ICMSST_TaxAmtUFSen (BigDecimal LBR_ICMSST_TaxAmtUFSen)
-	{
-		set_Value (COLUMNNAME_LBR_ICMSST_TaxAmtUFSen, LBR_ICMSST_TaxAmtUFSen);
-	}
-
-	/** Get ICMS-ST Amount withheld in Sender UF.
-		@return Identifies the ICMS-ST Amount withheld in Sender UF
-	  */
-	public BigDecimal getLBR_ICMSST_TaxAmtUFSen () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAmtUFSen);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Set ICMS-ST Withheld Amount.
-		@param LBR_ICMSST_TaxAmtWhd 
-		Identifies the ICMS-ST Withheld Amount
-	  */
-	public void setLBR_ICMSST_TaxAmtWhd (BigDecimal LBR_ICMSST_TaxAmtWhd)
-	{
-		set_Value (COLUMNNAME_LBR_ICMSST_TaxAmtWhd, LBR_ICMSST_TaxAmtWhd);
-	}
-
-	/** Get ICMS-ST Withheld Amount.
-		@return Identifies the ICMS-ST Withheld Amount
-	  */
-	public BigDecimal getLBR_ICMSST_TaxAmtWhd () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxAmtWhd);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Set ICMS-ST Base Amount in Receiver UF.
-		@param LBR_ICMSST_TaxBAmtUFDes 
-		Identifies the ICMS-ST Base Amount in Receiver UF
-	  */
-	public void setLBR_ICMSST_TaxBAmtUFDes (BigDecimal LBR_ICMSST_TaxBAmtUFDes)
-	{
-		set_Value (COLUMNNAME_LBR_ICMSST_TaxBAmtUFDes, LBR_ICMSST_TaxBAmtUFDes);
-	}
-
-	/** Get ICMS-ST Base Amount in Receiver UF.
-		@return Identifies the ICMS-ST Base Amount in Receiver UF
-	  */
-	public BigDecimal getLBR_ICMSST_TaxBAmtUFDes () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBAmtUFDes);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Set ICMS-ST Base Amount withheld in Sender UF.
-		@param LBR_ICMSST_TaxBAmtUFSen 
-		Identifies the ICMS-ST Base Amount withheld in Sender UF
-	  */
-	public void setLBR_ICMSST_TaxBAmtUFSen (BigDecimal LBR_ICMSST_TaxBAmtUFSen)
-	{
-		set_Value (COLUMNNAME_LBR_ICMSST_TaxBAmtUFSen, LBR_ICMSST_TaxBAmtUFSen);
-	}
-
-	/** Get ICMS-ST Base Amount withheld in Sender UF.
-		@return Identifies the ICMS-ST Base Amount withheld in Sender UF
-	  */
-	public BigDecimal getLBR_ICMSST_TaxBAmtUFSen () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBAmtUFSen);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Set ICMS-ST Withheld Base Amount.
-		@param LBR_ICMSST_TaxBAmtWhd 
-		Identifies the ICMS-ST Withheld Base Amount
-	  */
-	public void setLBR_ICMSST_TaxBAmtWhd (BigDecimal LBR_ICMSST_TaxBAmtWhd)
-	{
-		set_Value (COLUMNNAME_LBR_ICMSST_TaxBAmtWhd, LBR_ICMSST_TaxBAmtWhd);
-	}
-
-	/** Get ICMS-ST Withheld Base Amount.
-		@return Identifies the ICMS-ST Withheld Base Amount
-	  */
-	public BigDecimal getLBR_ICMSST_TaxBAmtWhd () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBAmtWhd);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Set ICMS-ST Tax Base.
-		@param LBR_ICMSST_TaxBase 
-		Indicates the ICMS-ST Tax Base
-	  */
-	public void setLBR_ICMSST_TaxBase (BigDecimal LBR_ICMSST_TaxBase)
-	{
-		set_Value (COLUMNNAME_LBR_ICMSST_TaxBase, LBR_ICMSST_TaxBase);
-	}
-
-	/** Get ICMS-ST Tax Base.
-		@return Indicates the ICMS-ST Tax Base
-	  */
-	public BigDecimal getLBR_ICMSST_TaxBase () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBase);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Set ICMS-ST Tax Base Amount.
-		@param LBR_ICMSST_TaxBaseAmt 
-		Defines the ICMS-ST Tax Base Amount
-	  */
-	public void setLBR_ICMSST_TaxBaseAmt (BigDecimal LBR_ICMSST_TaxBaseAmt)
-	{
-		set_Value (COLUMNNAME_LBR_ICMSST_TaxBaseAmt, LBR_ICMSST_TaxBaseAmt);
-	}
-
-	/** Get ICMS-ST Tax Base Amount.
-		@return Defines the ICMS-ST Tax Base Amount
-	  */
-	public BigDecimal getLBR_ICMSST_TaxBaseAmt () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxBaseAmt);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	/** Preco Tabelado ou Maximo Sugerido = 0 */
-	public static final String LBR_ICMSST_TAXBASETYPE_PrecoTabeladoOuMaximoSugerido = "0";
-	/** Lista Negativa (Valor) = 1 */
-	public static final String LBR_ICMSST_TAXBASETYPE_ListaNegativaValor = "1";
-	/** Lista Positiva (Valor) = 2 */
-	public static final String LBR_ICMSST_TAXBASETYPE_ListaPositivaValor = "2";
-	/** Lista Neutra (Valor) = 3 */
-	public static final String LBR_ICMSST_TAXBASETYPE_ListaNeutraValor = "3";
-	/** Margem Valor Agregado (%) = 4 */
-	public static final String LBR_ICMSST_TAXBASETYPE_MargemValorAgregado = "4";
-	/** Pauta (Valor) = 5 */
-	public static final String LBR_ICMSST_TAXBASETYPE_PautaValor = "5";
-	/** Set ICMS-ST Tax Base Type.
-		@param LBR_ICMSST_TaxBaseType 
-		Identifies a ICMS-ST Tax Base Type
-	  */
-	public void setLBR_ICMSST_TaxBaseType (String LBR_ICMSST_TaxBaseType)
-	{
-
-		set_Value (COLUMNNAME_LBR_ICMSST_TaxBaseType, LBR_ICMSST_TaxBaseType);
-	}
-
-	/** Get ICMS-ST Tax Base Type.
-		@return Identifies a ICMS-ST Tax Base Type
-	  */
-	public String getLBR_ICMSST_TaxBaseType () 
-	{
-		return (String)get_Value(COLUMNNAME_LBR_ICMSST_TaxBaseType);
-	}
-
-	/** Set ICMS-ST Tax Rate.
-		@param LBR_ICMSST_TaxRate 
-		Indicates the ICMS-ST Tax Rate
-	  */
-	public void setLBR_ICMSST_TaxRate (BigDecimal LBR_ICMSST_TaxRate)
-	{
-		set_Value (COLUMNNAME_LBR_ICMSST_TaxRate, LBR_ICMSST_TaxRate);
-	}
-
-	/** Get ICMS-ST Tax Rate.
-		@return Indicates the ICMS-ST Tax Rate
-	  */
-	public BigDecimal getLBR_ICMSST_TaxRate () 
-	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ICMSST_TaxRate);
-		if (bd == null)
-			 return Env.ZERO;
-		return bd;
-	}
-
-	public org.compiere.model.I_C_Region getLBR_ICMSST_TaxUFDue() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_Name)
-			.getPO(getLBR_ICMSST_TaxUFDue_ID(), get_TrxName());	}
-
-	/** Set ICMS-ST UF Due.
-		@param LBR_ICMSST_TaxUFDue_ID 
-		Identifies the ICMS-ST UF Due
-	  */
-	public void setLBR_ICMSST_TaxUFDue_ID (int LBR_ICMSST_TaxUFDue_ID)
-	{
-		if (LBR_ICMSST_TaxUFDue_ID < 1) 
-			set_Value (COLUMNNAME_LBR_ICMSST_TaxUFDue_ID, null);
-		else 
-			set_Value (COLUMNNAME_LBR_ICMSST_TaxUFDue_ID, Integer.valueOf(LBR_ICMSST_TaxUFDue_ID));
-	}
-
-	/** Get ICMS-ST UF Due.
-		@return Identifies the ICMS-ST UF Due
-	  */
-	public int getLBR_ICMSST_TaxUFDue_ID () 
-	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_ICMSST_TaxUFDue_ID);
-		if (ii == null)
-			 return 0;
-		return ii.intValue();
 	}
 
 	/** 0 - Domestic = 0 */
@@ -866,9 +876,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** 8 - Domestic with more than 70 percent Imported = 8 */
 	public static final String LBR_PRODUCTSOURCE_8_DomesticWithMoreThan70PercentImported = "8";
 	/** Set Product Source.
-		@param LBR_ProductSource 
-		Identifies a Product Source
-	  */
+		@param LBR_ProductSource Identifies a Product Source
+	*/
 	public void setLBR_ProductSource (String LBR_ProductSource)
 	{
 
@@ -878,15 +887,14 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get Product Source.
 		@return Identifies a Product Source
 	  */
-	public String getLBR_ProductSource () 
+	public String getLBR_ProductSource()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ProductSource);
 	}
 
 	/** Set Tax Amount.
-		@param LBR_TaxAmt 
-		Defines the Tax Amount
-	  */
+		@param LBR_TaxAmt Defines the Tax Amount
+	*/
 	public void setLBR_TaxAmt (BigDecimal LBR_TaxAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxAmt, LBR_TaxAmt);
@@ -895,7 +903,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get Tax Amount.
 		@return Defines the Tax Amount
 	  */
-	public BigDecimal getLBR_TaxAmt () 
+	public BigDecimal getLBR_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmt);
 		if (bd == null)
@@ -904,9 +912,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set Tax Amount Credit.
-		@param LBR_TaxAmtCredit 
-		Identifies the Tax Amount Credit
-	  */
+		@param LBR_TaxAmtCredit Identifies the Tax Amount Credit
+	*/
 	public void setLBR_TaxAmtCredit (BigDecimal LBR_TaxAmtCredit)
 	{
 		set_Value (COLUMNNAME_LBR_TaxAmtCredit, LBR_TaxAmtCredit);
@@ -915,7 +922,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get Tax Amount Credit.
 		@return Identifies the Tax Amount Credit
 	  */
-	public BigDecimal getLBR_TaxAmtCredit () 
+	public BigDecimal getLBR_TaxAmtCredit()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmtCredit);
 		if (bd == null)
@@ -924,9 +931,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set Tax Base.
-		@param LBR_TaxBase 
-		Indicates the Tax Base
-	  */
+		@param LBR_TaxBase Indicates the Tax Base
+	*/
 	public void setLBR_TaxBase (BigDecimal LBR_TaxBase)
 	{
 		set_Value (COLUMNNAME_LBR_TaxBase, LBR_TaxBase);
@@ -935,7 +941,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get Tax Base.
 		@return Indicates the Tax Base
 	  */
-	public BigDecimal getLBR_TaxBase () 
+	public BigDecimal getLBR_TaxBase()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBase);
 		if (bd == null)
@@ -944,9 +950,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set Tax Base Amount.
-		@param LBR_TaxBaseAmt 
-		Defines the Tax Base Amount
-	  */
+		@param LBR_TaxBaseAmt Defines the Tax Base Amount
+	*/
 	public void setLBR_TaxBaseAmt (BigDecimal LBR_TaxBaseAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxBaseAmt, LBR_TaxBaseAmt);
@@ -955,7 +960,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get Tax Base Amount.
 		@return Defines the Tax Base Amount
 	  */
-	public BigDecimal getLBR_TaxBaseAmt () 
+	public BigDecimal getLBR_TaxBaseAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
 		if (bd == null)
@@ -964,9 +969,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set Tax Base Own Operation (%).
-		@param LBR_TaxBaseOwnOperation 
-		Identifies the Tax Base Own Operation in percentage
-	  */
+		@param LBR_TaxBaseOwnOperation Identifies the Tax Base Own Operation in percentage
+	*/
 	public void setLBR_TaxBaseOwnOperation (BigDecimal LBR_TaxBaseOwnOperation)
 	{
 		set_Value (COLUMNNAME_LBR_TaxBaseOwnOperation, LBR_TaxBaseOwnOperation);
@@ -975,7 +979,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get Tax Base Own Operation (%).
 		@return Identifies the Tax Base Own Operation in percentage
 	  */
-	public BigDecimal getLBR_TaxBaseOwnOperation () 
+	public BigDecimal getLBR_TaxBaseOwnOperation()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseOwnOperation);
 		if (bd == null)
@@ -984,9 +988,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set Tax Deferral Amount.
-		@param LBR_TaxDeferralAmt 
-		Identifies the Tax Deferral Amount
-	  */
+		@param LBR_TaxDeferralAmt Identifies the Tax Deferral Amount
+	*/
 	public void setLBR_TaxDeferralAmt (BigDecimal LBR_TaxDeferralAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxDeferralAmt, LBR_TaxDeferralAmt);
@@ -995,7 +998,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get Tax Deferral Amount.
 		@return Identifies the Tax Deferral Amount
 	  */
-	public BigDecimal getLBR_TaxDeferralAmt () 
+	public BigDecimal getLBR_TaxDeferralAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxDeferralAmt);
 		if (bd == null)
@@ -1004,9 +1007,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set Tax Deferral Rate (%).
-		@param LBR_TaxDeferralRate 
-		Identifies the Tax Deferral Rate (%)
-	  */
+		@param LBR_TaxDeferralRate Identifies the Tax Deferral Rate (%)
+	*/
 	public void setLBR_TaxDeferralRate (BigDecimal LBR_TaxDeferralRate)
 	{
 		set_Value (COLUMNNAME_LBR_TaxDeferralRate, LBR_TaxDeferralRate);
@@ -1015,7 +1017,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get Tax Deferral Rate (%).
 		@return Identifies the Tax Deferral Rate (%)
 	  */
-	public BigDecimal getLBR_TaxDeferralRate () 
+	public BigDecimal getLBR_TaxDeferralRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxDeferralRate);
 		if (bd == null)
@@ -1024,9 +1026,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set Tax Rate.
-		@param LBR_TaxRate 
-		Indicates the Tax Rate
-	  */
+		@param LBR_TaxRate Indicates the Tax Rate
+	*/
 	public void setLBR_TaxRate (BigDecimal LBR_TaxRate)
 	{
 		set_Value (COLUMNNAME_LBR_TaxRate, LBR_TaxRate);
@@ -1035,7 +1036,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get Tax Rate.
 		@return Indicates the Tax Rate
 	  */
-	public BigDecimal getLBR_TaxRate () 
+	public BigDecimal getLBR_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRate);
 		if (bd == null)
@@ -1044,9 +1045,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set Tax Rate Credit (%).
-		@param LBR_TaxRateCredit 
-		Identifies the Tax Rate Credit in percentage
-	  */
+		@param LBR_TaxRateCredit Identifies the Tax Rate Credit in percentage
+	*/
 	public void setLBR_TaxRateCredit (BigDecimal LBR_TaxRateCredit)
 	{
 		set_Value (COLUMNNAME_LBR_TaxRateCredit, LBR_TaxRateCredit);
@@ -1055,7 +1055,7 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get Tax Rate Credit (%).
 		@return Identifies the Tax Rate Credit in percentage
 	  */
-	public BigDecimal getLBR_TaxRateCredit () 
+	public BigDecimal getLBR_TaxRateCredit()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRateCredit);
 		if (bd == null)
@@ -1064,9 +1064,8 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set Tax Relief Amount.
-		@param LBR_TaxReliefAmt 
-		Identifies the Tax Relief Amount
-	  */
+		@param LBR_TaxReliefAmt Identifies the Tax Relief Amount
+	*/
 	public void setLBR_TaxReliefAmt (BigDecimal LBR_TaxReliefAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxReliefAmt, LBR_TaxReliefAmt);
@@ -1075,9 +1074,45 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	/** Get Tax Relief Amount.
 		@return Identifies the Tax Relief Amount
 	  */
-	public BigDecimal getLBR_TaxReliefAmt () 
+	public BigDecimal getLBR_TaxReliefAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxReliefAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set Substitute&#039;s own ICMS value.
+		@param lbr_vICMSSubstituto Substitute&#039;s own ICMS value
+	*/
+	public void setlbr_vICMSSubstituto (BigDecimal lbr_vICMSSubstituto)
+	{
+		set_Value (COLUMNNAME_lbr_vICMSSubstituto, lbr_vICMSSubstituto);
+	}
+
+	/** Get Substitute&#039;s own ICMS value.
+		@return Substitute&#039;s own ICMS value	  */
+	public BigDecimal getlbr_vICMSSubstituto()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_lbr_vICMSSubstituto);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+	
+
+	/** Set DIFAL Tax Base Amt of "Fundo de Combate a Pobreza".
+		@param LBR_DIFAL_TaxBaseFCPUFDest DIFAL Tax Base Amt of "Fundo de Combate a Pobreza"	  */
+	public void setLBR_DIFAL_TaxBaseFCPUFDest (BigDecimal LBR_DIFAL_TaxBaseFCPUFDest)
+	{
+		set_Value (COLUMNNAME_LBR_DIFAL_TaxBaseFCPUFDest, LBR_DIFAL_TaxBaseFCPUFDest);
+	}
+
+	/** Get DIFAL Tax Base Amt of "Fundo de Combate a Pobreza".
+		@return DIFAL Tax Base Amt of "Fundo de Combate a Pobreza"	  */
+	public BigDecimal getLBR_DIFAL_TaxBaseFCPUFDest () 
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_DIFAL_TaxBaseFCPUFDest);
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;

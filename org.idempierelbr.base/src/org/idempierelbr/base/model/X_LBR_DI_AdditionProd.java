@@ -25,15 +25,16 @@ import org.compiere.util.Env;
 import org.compiere.util.KeyNamePair;
 
 /** Generated Model for LBR_DI_AdditionProd
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_DI_AdditionProd")
+public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20141120L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_DI_AdditionProd (Properties ctx, int LBR_DI_AdditionProd_ID, String trxName)
@@ -41,8 +42,47 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
       super (ctx, LBR_DI_AdditionProd_ID, trxName);
       /** if (LBR_DI_AdditionProd_ID == 0)
         {
-			setLBR_DI_Addition_ID (0);
 			setLBR_DI_AdditionProd_ID (0);
+			setLBR_DI_Addition_ID (0);
+			setSeqNo (0);
+// @SQL=SELECT COALESCE(MAX(SeqNo),0)+1 AS DefaultValue FROM LBR_DI_AdditionProd WHERE LBR_DI_Addition_ID=@LBR_DI_Addition_ID@
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DI_AdditionProd (Properties ctx, int LBR_DI_AdditionProd_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_DI_AdditionProd_ID, trxName, virtualColumns);
+      /** if (LBR_DI_AdditionProd_ID == 0)
+        {
+			setLBR_DI_AdditionProd_ID (0);
+			setLBR_DI_Addition_ID (0);
+			setSeqNo (0);
+// @SQL=SELECT COALESCE(MAX(SeqNo),0)+1 AS DefaultValue FROM LBR_DI_AdditionProd WHERE LBR_DI_Addition_ID=@LBR_DI_Addition_ID@
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DI_AdditionProd (Properties ctx, String LBR_DI_AdditionProd_UU, String trxName)
+    {
+      super (ctx, LBR_DI_AdditionProd_UU, trxName);
+      /** if (LBR_DI_AdditionProd_UU == null)
+        {
+			setLBR_DI_AdditionProd_ID (0);
+			setLBR_DI_Addition_ID (0);
+			setSeqNo (0);
+// @SQL=SELECT COALESCE(MAX(SeqNo),0)+1 AS DefaultValue FROM LBR_DI_AdditionProd WHERE LBR_DI_Addition_ID=@LBR_DI_Addition_ID@
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DI_AdditionProd (Properties ctx, String LBR_DI_AdditionProd_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_DI_AdditionProd_UU, trxName, virtualColumns);
+      /** if (LBR_DI_AdditionProd_UU == null)
+        {
+			setLBR_DI_AdditionProd_ID (0);
+			setLBR_DI_Addition_ID (0);
 			setSeqNo (0);
 // @SQL=SELECT COALESCE(MAX(SeqNo),0)+1 AS DefaultValue FROM LBR_DI_AdditionProd WHERE LBR_DI_Addition_ID=@LBR_DI_Addition_ID@
         } */
@@ -55,7 +95,7 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
     }
 
     /** AccessLevel
-      * @return 1 - Org 
+      * @return 1 - Org
       */
     protected int get_AccessLevel()
     {
@@ -71,32 +111,32 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_DI_AdditionProd[")
+      StringBuilder sb = new StringBuilder ("X_LBR_DI_AdditionProd[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	public org.compiere.model.I_C_Currency getC_Currency() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Currency)MTable.get(getCtx(), org.compiere.model.I_C_Currency.Table_Name)
-			.getPO(getC_Currency_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_Currency)MTable.get(getCtx(), org.compiere.model.I_C_Currency.Table_ID)
+			.getPO(getC_Currency_ID(), get_TrxName());
+	}
 
 	/** Set Currency.
-		@param C_Currency_ID 
-		The Currency for this record
-	  */
+		@param C_Currency_ID The Currency for this record
+	*/
 	public void setC_Currency_ID (int C_Currency_ID)
 	{
-		if (C_Currency_ID < 1) 
+		if (C_Currency_ID < 1)
 			set_Value (COLUMNNAME_C_Currency_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_C_Currency_ID, Integer.valueOf(C_Currency_ID));
 	}
 
 	/** Get Currency.
 		@return The Currency for this record
 	  */
-	public int getC_Currency_ID () 
+	public int getC_Currency_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_Currency_ID);
 		if (ii == null)
@@ -105,26 +145,26 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
 	}
 
 	public org.compiere.model.I_C_UOM getC_UOM() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_UOM)MTable.get(getCtx(), org.compiere.model.I_C_UOM.Table_Name)
-			.getPO(getC_UOM_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_UOM)MTable.get(getCtx(), org.compiere.model.I_C_UOM.Table_ID)
+			.getPO(getC_UOM_ID(), get_TrxName());
+	}
 
 	/** Set UOM.
-		@param C_UOM_ID 
-		Unit of Measure
-	  */
+		@param C_UOM_ID Unit of Measure
+	*/
 	public void setC_UOM_ID (int C_UOM_ID)
 	{
-		if (C_UOM_ID < 1) 
+		if (C_UOM_ID < 1)
 			set_Value (COLUMNNAME_C_UOM_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_C_UOM_ID, Integer.valueOf(C_UOM_ID));
 	}
 
 	/** Get UOM.
 		@return Unit of Measure
 	  */
-	public int getC_UOM_ID () 
+	public int getC_UOM_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_UOM_ID);
 		if (ii == null)
@@ -133,9 +173,8 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
 	}
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -144,55 +183,26 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
-	public I_LBR_DI_Addition getLBR_DI_Addition() throws RuntimeException
-    {
-		return (I_LBR_DI_Addition)MTable.get(getCtx(), I_LBR_DI_Addition.Table_Name)
-			.getPO(getLBR_DI_Addition_ID(), get_TrxName());	}
-
-	/** Set Import Declaration (DI) Addition.
-		@param LBR_DI_Addition_ID 
-		Identifies an Import Declaration (DI) Addiction
-	  */
-	public void setLBR_DI_Addition_ID (int LBR_DI_Addition_ID)
-	{
-		if (LBR_DI_Addition_ID < 1) 
-			set_ValueNoCheck (COLUMNNAME_LBR_DI_Addition_ID, null);
-		else 
-			set_ValueNoCheck (COLUMNNAME_LBR_DI_Addition_ID, Integer.valueOf(LBR_DI_Addition_ID));
-	}
-
-	/** Get Import Declaration (DI) Addition.
-		@return Identifies an Import Declaration (DI) Addiction
-	  */
-	public int getLBR_DI_Addition_ID () 
-	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DI_Addition_ID);
-		if (ii == null)
-			 return 0;
-		return ii.intValue();
-	}
-
 	/** Set DI Addition Product.
-		@param LBR_DI_AdditionProd_ID 
-		Identifies an Import Declaration (DI) Addiction Product
-	  */
+		@param LBR_DI_AdditionProd_ID Identifies an Import Declaration (DI) Addiction Product
+	*/
 	public void setLBR_DI_AdditionProd_ID (int LBR_DI_AdditionProd_ID)
 	{
-		if (LBR_DI_AdditionProd_ID < 1) 
+		if (LBR_DI_AdditionProd_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_DI_AdditionProd_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_DI_AdditionProd_ID, Integer.valueOf(LBR_DI_AdditionProd_ID));
 	}
 
 	/** Get DI Addition Product.
 		@return Identifies an Import Declaration (DI) Addiction Product
 	  */
-	public int getLBR_DI_AdditionProd_ID () 
+	public int getLBR_DI_AdditionProd_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DI_AdditionProd_ID);
 		if (ii == null)
@@ -201,9 +211,8 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
 	}
 
 	/** Set DI Addition Product.
-		@param LBR_DI_AdditionProd_UU 
-		Identifies an Import Declaration (DI) Addiction Product
-	  */
+		@param LBR_DI_AdditionProd_UU Identifies an Import Declaration (DI) Addiction Product
+	*/
 	public void setLBR_DI_AdditionProd_UU (String LBR_DI_AdditionProd_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_DI_AdditionProd_UU, LBR_DI_AdditionProd_UU);
@@ -212,15 +221,42 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
 	/** Get DI Addition Product.
 		@return Identifies an Import Declaration (DI) Addiction Product
 	  */
-	public String getLBR_DI_AdditionProd_UU () 
+	public String getLBR_DI_AdditionProd_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_DI_AdditionProd_UU);
 	}
 
-	/** Set Specification.
-		@param LBR_Specification 
-		Optional short description of the record
+	public I_LBR_DI_Addition getLBR_DI_Addition() throws RuntimeException
+	{
+		return (I_LBR_DI_Addition)MTable.get(getCtx(), I_LBR_DI_Addition.Table_ID)
+			.getPO(getLBR_DI_Addition_ID(), get_TrxName());
+	}
+
+	/** Set Import Declaration (DI) Addition.
+		@param LBR_DI_Addition_ID Identifies an Import Declaration (DI) Addiction
+	*/
+	public void setLBR_DI_Addition_ID (int LBR_DI_Addition_ID)
+	{
+		if (LBR_DI_Addition_ID < 1)
+			set_ValueNoCheck (COLUMNNAME_LBR_DI_Addition_ID, null);
+		else
+			set_ValueNoCheck (COLUMNNAME_LBR_DI_Addition_ID, Integer.valueOf(LBR_DI_Addition_ID));
+	}
+
+	/** Get Import Declaration (DI) Addition.
+		@return Identifies an Import Declaration (DI) Addiction
 	  */
+	public int getLBR_DI_Addition_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DI_Addition_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	/** Set Specification.
+		@param LBR_Specification Optional short description of the record
+	*/
 	public void setLBR_Specification (String LBR_Specification)
 	{
 		set_Value (COLUMNNAME_LBR_Specification, LBR_Specification);
@@ -229,32 +265,32 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
 	/** Get Specification.
 		@return Optional short description of the record
 	  */
-	public String getLBR_Specification () 
+	public String getLBR_Specification()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Specification);
 	}
 
 	public org.compiere.model.I_M_Product getM_Product() throws RuntimeException
-    {
-		return (org.compiere.model.I_M_Product)MTable.get(getCtx(), org.compiere.model.I_M_Product.Table_Name)
-			.getPO(getM_Product_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_M_Product)MTable.get(getCtx(), org.compiere.model.I_M_Product.Table_ID)
+			.getPO(getM_Product_ID(), get_TrxName());
+	}
 
 	/** Set Product.
-		@param M_Product_ID 
-		Product, Service, Item
-	  */
+		@param M_Product_ID Product, Service, Item
+	*/
 	public void setM_Product_ID (int M_Product_ID)
 	{
-		if (M_Product_ID < 1) 
+		if (M_Product_ID < 1)
 			set_Value (COLUMNNAME_M_Product_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_M_Product_ID, Integer.valueOf(M_Product_ID));
 	}
 
 	/** Get Product.
 		@return Product, Service, Item
 	  */
-	public int getM_Product_ID () 
+	public int getM_Product_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_M_Product_ID);
 		if (ii == null)
@@ -265,15 +301,14 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
     /** Get Record ID/ColumnName
         @return ID/ColumnName pair
       */
-    public KeyNamePair getKeyNamePair() 
+    public KeyNamePair getKeyNamePair()
     {
         return new KeyNamePair(get_ID(), String.valueOf(getM_Product_ID()));
     }
 
 	/** Set Unit Price.
-		@param PriceActual 
-		Actual Price 
-	  */
+		@param PriceActual Actual Price 
+	*/
 	public void setPriceActual (BigDecimal PriceActual)
 	{
 		set_Value (COLUMNNAME_PriceActual, PriceActual);
@@ -282,7 +317,7 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
 	/** Get Unit Price.
 		@return Actual Price 
 	  */
-	public BigDecimal getPriceActual () 
+	public BigDecimal getPriceActual()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_PriceActual);
 		if (bd == null)
@@ -291,9 +326,8 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
 	}
 
 	/** Set Quantity.
-		@param Qty 
-		Quantity
-	  */
+		@param Qty Quantity
+	*/
 	public void setQty (BigDecimal Qty)
 	{
 		set_Value (COLUMNNAME_Qty, Qty);
@@ -302,7 +336,7 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
 	/** Get Quantity.
 		@return Quantity
 	  */
-	public BigDecimal getQty () 
+	public BigDecimal getQty()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_Qty);
 		if (bd == null)
@@ -311,9 +345,8 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
 	}
 
 	/** Set Sequence.
-		@param SeqNo 
-		Method of ordering records; lowest number comes first
-	  */
+		@param SeqNo Method of ordering records; lowest number comes first
+	*/
 	public void setSeqNo (int SeqNo)
 	{
 		set_Value (COLUMNNAME_SeqNo, Integer.valueOf(SeqNo));
@@ -322,7 +355,7 @@ public class X_LBR_DI_AdditionProd extends PO implements I_LBR_DI_AdditionProd, 
 	/** Get Sequence.
 		@return Method of ordering records; lowest number comes first
 	  */
-	public int getSeqNo () 
+	public int getSeqNo()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_SeqNo);
 		if (ii == null)

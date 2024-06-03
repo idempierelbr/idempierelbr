@@ -22,21 +22,52 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_Tax
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_Tax extends PO implements I_LBR_Tax, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_Tax")
+public class X_LBR_Tax extends PO implements I_LBR_Tax, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140128L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_Tax (Properties ctx, int LBR_Tax_ID, String trxName)
     {
       super (ctx, LBR_Tax_ID, trxName);
       /** if (LBR_Tax_ID == 0)
+        {
+			setLBR_Tax_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Tax (Properties ctx, int LBR_Tax_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_Tax_ID, trxName, virtualColumns);
+      /** if (LBR_Tax_ID == 0)
+        {
+			setLBR_Tax_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Tax (Properties ctx, String LBR_Tax_UU, String trxName)
+    {
+      super (ctx, LBR_Tax_UU, trxName);
+      /** if (LBR_Tax_UU == null)
+        {
+			setLBR_Tax_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Tax (Properties ctx, String LBR_Tax_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_Tax_UU, trxName, virtualColumns);
+      /** if (LBR_Tax_UU == null)
         {
 			setLBR_Tax_ID (0);
         } */
@@ -49,7 +80,7 @@ public class X_LBR_Tax extends PO implements I_LBR_Tax, I_Persistent
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -65,15 +96,14 @@ public class X_LBR_Tax extends PO implements I_LBR_Tax, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_Tax[")
+      StringBuilder sb = new StringBuilder ("X_LBR_Tax[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -82,27 +112,26 @@ public class X_LBR_Tax extends PO implements I_LBR_Tax, I_Persistent
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set Transaction Tax.
-		@param LBR_Tax_ID 
-		Identifies a transaction tax (document/line)
-	  */
+		@param LBR_Tax_ID Identifies a transaction tax (document/line)
+	*/
 	public void setLBR_Tax_ID (int LBR_Tax_ID)
 	{
-		if (LBR_Tax_ID < 1) 
+		if (LBR_Tax_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_Tax_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_Tax_ID, Integer.valueOf(LBR_Tax_ID));
 	}
 
 	/** Get Transaction Tax.
 		@return Identifies a transaction tax (document/line)
 	  */
-	public int getLBR_Tax_ID () 
+	public int getLBR_Tax_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Tax_ID);
 		if (ii == null)
@@ -111,7 +140,8 @@ public class X_LBR_Tax extends PO implements I_LBR_Tax, I_Persistent
 	}
 
 	/** Set LBR_Tax_UU.
-		@param LBR_Tax_UU LBR_Tax_UU	  */
+		@param LBR_Tax_UU LBR_Tax_UU
+	*/
 	public void setLBR_Tax_UU (String LBR_Tax_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_Tax_UU, LBR_Tax_UU);
@@ -119,7 +149,7 @@ public class X_LBR_Tax extends PO implements I_LBR_Tax, I_Persistent
 
 	/** Get LBR_Tax_UU.
 		@return LBR_Tax_UU	  */
-	public String getLBR_Tax_UU () 
+	public String getLBR_Tax_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Tax_UU);
 	}

@@ -22,21 +22,70 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_TaxConfiguration
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_TaxConfiguration extends PO implements I_LBR_TaxConfiguration, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_TaxConfiguration")
+public class X_LBR_TaxConfiguration extends PO implements I_LBR_TaxConfiguration, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140203L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_TaxConfiguration (Properties ctx, int LBR_TaxConfiguration_ID, String trxName)
     {
       super (ctx, LBR_TaxConfiguration_ID, trxName);
       /** if (LBR_TaxConfiguration_ID == 0)
+        {
+			setIsSOTrx (true);
+// Y
+			setLBR_FiscalGroup_Product_ID (0);
+			setLBR_IsPOTrx (true);
+// Y
+			setLBR_TaxConfiguration_ID (0);
+			setM_Product_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxConfiguration (Properties ctx, int LBR_TaxConfiguration_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_TaxConfiguration_ID, trxName, virtualColumns);
+      /** if (LBR_TaxConfiguration_ID == 0)
+        {
+			setIsSOTrx (true);
+// Y
+			setLBR_FiscalGroup_Product_ID (0);
+			setLBR_IsPOTrx (true);
+// Y
+			setLBR_TaxConfiguration_ID (0);
+			setM_Product_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxConfiguration (Properties ctx, String LBR_TaxConfiguration_UU, String trxName)
+    {
+      super (ctx, LBR_TaxConfiguration_UU, trxName);
+      /** if (LBR_TaxConfiguration_UU == null)
+        {
+			setIsSOTrx (true);
+// Y
+			setLBR_FiscalGroup_Product_ID (0);
+			setLBR_IsPOTrx (true);
+// Y
+			setLBR_TaxConfiguration_ID (0);
+			setM_Product_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxConfiguration (Properties ctx, String LBR_TaxConfiguration_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_TaxConfiguration_UU, trxName, virtualColumns);
+      /** if (LBR_TaxConfiguration_UU == null)
         {
 			setIsSOTrx (true);
 // Y
@@ -55,7 +104,7 @@ public class X_LBR_TaxConfiguration extends PO implements I_LBR_TaxConfiguration
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -71,15 +120,14 @@ public class X_LBR_TaxConfiguration extends PO implements I_LBR_TaxConfiguration
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_TaxConfiguration[")
+      StringBuilder sb = new StringBuilder ("X_LBR_TaxConfiguration[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	/** Set Sales Transaction.
-		@param IsSOTrx 
-		This is a Sales Transaction
-	  */
+		@param IsSOTrx This is a Sales Transaction
+	*/
 	public void setIsSOTrx (boolean IsSOTrx)
 	{
 		set_Value (COLUMNNAME_IsSOTrx, Boolean.valueOf(IsSOTrx));
@@ -88,13 +136,13 @@ public class X_LBR_TaxConfiguration extends PO implements I_LBR_TaxConfiguration
 	/** Get Sales Transaction.
 		@return This is a Sales Transaction
 	  */
-	public boolean isSOTrx () 
+	public boolean isSOTrx()
 	{
 		Object oo = get_Value(COLUMNNAME_IsSOTrx);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
@@ -105,9 +153,8 @@ public class X_LBR_TaxConfiguration extends PO implements I_LBR_TaxConfiguration
 	/** Product = P */
 	public static final String LBR_EXCEPTIONTYPE_Product = "P";
 	/** Set Tax Exception Type.
-		@param LBR_ExceptionType 
-		Defines the Tax Exception Type
-	  */
+		@param LBR_ExceptionType Defines the Tax Exception Type
+	*/
 	public void setLBR_ExceptionType (String LBR_ExceptionType)
 	{
 
@@ -117,32 +164,32 @@ public class X_LBR_TaxConfiguration extends PO implements I_LBR_TaxConfiguration
 	/** Get Tax Exception Type.
 		@return Defines the Tax Exception Type
 	  */
-	public String getLBR_ExceptionType () 
+	public String getLBR_ExceptionType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ExceptionType);
 	}
 
 	public I_LBR_FiscalGroup_Product getLBR_FiscalGroup_Product() throws RuntimeException
-    {
-		return (I_LBR_FiscalGroup_Product)MTable.get(getCtx(), I_LBR_FiscalGroup_Product.Table_Name)
-			.getPO(getLBR_FiscalGroup_Product_ID(), get_TrxName());	}
+	{
+		return (I_LBR_FiscalGroup_Product)MTable.get(getCtx(), I_LBR_FiscalGroup_Product.Table_ID)
+			.getPO(getLBR_FiscalGroup_Product_ID(), get_TrxName());
+	}
 
 	/** Set Product Fiscal Group.
-		@param LBR_FiscalGroup_Product_ID 
-		Identifies a Product Fiscal Group
-	  */
+		@param LBR_FiscalGroup_Product_ID Identifies a Product Fiscal Group
+	*/
 	public void setLBR_FiscalGroup_Product_ID (int LBR_FiscalGroup_Product_ID)
 	{
-		if (LBR_FiscalGroup_Product_ID < 1) 
+		if (LBR_FiscalGroup_Product_ID < 1)
 			set_Value (COLUMNNAME_LBR_FiscalGroup_Product_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_FiscalGroup_Product_ID, Integer.valueOf(LBR_FiscalGroup_Product_ID));
 	}
 
 	/** Get Product Fiscal Group.
 		@return Identifies a Product Fiscal Group
 	  */
-	public int getLBR_FiscalGroup_Product_ID () 
+	public int getLBR_FiscalGroup_Product_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_FiscalGroup_Product_ID);
 		if (ii == null)
@@ -151,9 +198,8 @@ public class X_LBR_TaxConfiguration extends PO implements I_LBR_TaxConfiguration
 	}
 
 	/** Set Purchase Transaction.
-		@param LBR_IsPOTrx 
-		This is a Purchase Transaction
-	  */
+		@param LBR_IsPOTrx This is a Purchase Transaction
+	*/
 	public void setLBR_IsPOTrx (boolean LBR_IsPOTrx)
 	{
 		set_Value (COLUMNNAME_LBR_IsPOTrx, Boolean.valueOf(LBR_IsPOTrx));
@@ -162,34 +208,33 @@ public class X_LBR_TaxConfiguration extends PO implements I_LBR_TaxConfiguration
 	/** Get Purchase Transaction.
 		@return This is a Purchase Transaction
 	  */
-	public boolean isLBR_IsPOTrx () 
+	public boolean isLBR_IsPOTrx()
 	{
 		Object oo = get_Value(COLUMNNAME_LBR_IsPOTrx);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set Tax Configuration.
-		@param LBR_TaxConfiguration_ID 
-		Tax Configuration Used
-	  */
+		@param LBR_TaxConfiguration_ID Tax Configuration Used
+	*/
 	public void setLBR_TaxConfiguration_ID (int LBR_TaxConfiguration_ID)
 	{
-		if (LBR_TaxConfiguration_ID < 1) 
+		if (LBR_TaxConfiguration_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxConfiguration_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxConfiguration_ID, Integer.valueOf(LBR_TaxConfiguration_ID));
 	}
 
 	/** Get Tax Configuration.
 		@return Tax Configuration Used
 	  */
-	public int getLBR_TaxConfiguration_ID () 
+	public int getLBR_TaxConfiguration_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_TaxConfiguration_ID);
 		if (ii == null)
@@ -198,7 +243,8 @@ public class X_LBR_TaxConfiguration extends PO implements I_LBR_TaxConfiguration
 	}
 
 	/** Set LBR_TaxConfiguration_UU.
-		@param LBR_TaxConfiguration_UU LBR_TaxConfiguration_UU	  */
+		@param LBR_TaxConfiguration_UU LBR_TaxConfiguration_UU
+	*/
 	public void setLBR_TaxConfiguration_UU (String LBR_TaxConfiguration_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_TaxConfiguration_UU, LBR_TaxConfiguration_UU);
@@ -206,32 +252,32 @@ public class X_LBR_TaxConfiguration extends PO implements I_LBR_TaxConfiguration
 
 	/** Get LBR_TaxConfiguration_UU.
 		@return LBR_TaxConfiguration_UU	  */
-	public String getLBR_TaxConfiguration_UU () 
+	public String getLBR_TaxConfiguration_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TaxConfiguration_UU);
 	}
 
 	public org.compiere.model.I_M_Product getM_Product() throws RuntimeException
-    {
-		return (org.compiere.model.I_M_Product)MTable.get(getCtx(), org.compiere.model.I_M_Product.Table_Name)
-			.getPO(getM_Product_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_M_Product)MTable.get(getCtx(), org.compiere.model.I_M_Product.Table_ID)
+			.getPO(getM_Product_ID(), get_TrxName());
+	}
 
 	/** Set Product.
-		@param M_Product_ID 
-		Product, Service, Item
-	  */
+		@param M_Product_ID Product, Service, Item
+	*/
 	public void setM_Product_ID (int M_Product_ID)
 	{
-		if (M_Product_ID < 1) 
+		if (M_Product_ID < 1)
 			set_Value (COLUMNNAME_M_Product_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_M_Product_ID, Integer.valueOf(M_Product_ID));
 	}
 
 	/** Get Product.
 		@return Product, Service, Item
 	  */
-	public int getM_Product_ID () 
+	public int getM_Product_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_M_Product_ID);
 		if (ii == null)

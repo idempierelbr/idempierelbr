@@ -24,21 +24,55 @@ import org.compiere.model.*;
 import org.compiere.util.Env;
 
 /** Generated Model for LBR_DocLine_ISSQN
- *  @author iDempiere (generated) 
- *  @version Release 3.1 - $Id$ */
-public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_DocLine_ISSQN")
+public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20170110L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_DocLine_ISSQN (Properties ctx, int LBR_DocLine_ISSQN_ID, String trxName)
     {
       super (ctx, LBR_DocLine_ISSQN_ID, trxName);
       /** if (LBR_DocLine_ISSQN_ID == 0)
+        {
+			setIsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_ISSQN (Properties ctx, int LBR_DocLine_ISSQN_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_DocLine_ISSQN_ID, trxName, virtualColumns);
+      /** if (LBR_DocLine_ISSQN_ID == 0)
+        {
+			setIsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_ISSQN (Properties ctx, String LBR_DocLine_ISSQN_UU, String trxName)
+    {
+      super (ctx, LBR_DocLine_ISSQN_UU, trxName);
+      /** if (LBR_DocLine_ISSQN_UU == null)
+        {
+			setIsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_ISSQN (Properties ctx, String LBR_DocLine_ISSQN_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_DocLine_ISSQN_UU, trxName, virtualColumns);
+      /** if (LBR_DocLine_ISSQN_UU == null)
         {
 			setIsTaxIncluded (false);
 // N
@@ -52,7 +86,7 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -68,32 +102,32 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_DocLine_ISSQN[")
+      StringBuilder sb = new StringBuilder ("X_LBR_DocLine_ISSQN[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	public org.compiere.model.I_C_City getC_City() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_City)MTable.get(getCtx(), org.compiere.model.I_C_City.Table_Name)
-			.getPO(getC_City_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_City)MTable.get(getCtx(), org.compiere.model.I_C_City.Table_ID)
+			.getPO(getC_City_ID(), get_TrxName());
+	}
 
 	/** Set City.
-		@param C_City_ID 
-		City
-	  */
+		@param C_City_ID City
+	*/
 	public void setC_City_ID (int C_City_ID)
 	{
-		if (C_City_ID < 1) 
+		if (C_City_ID < 1)
 			set_Value (COLUMNNAME_C_City_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_C_City_ID, Integer.valueOf(C_City_ID));
 	}
 
 	/** Get City.
 		@return City
 	  */
-	public int getC_City_ID () 
+	public int getC_City_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_City_ID);
 		if (ii == null)
@@ -102,21 +136,20 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	}
 
 	/** Set Country.
-		@param C_Country_ID 
-		Country 
-	  */
+		@param C_Country_ID Country 
+	*/
 	public void setC_Country_ID (int C_Country_ID)
 	{
-		if (C_Country_ID < 1) 
+		if (C_Country_ID < 1)
 			set_Value (COLUMNNAME_C_Country_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_C_Country_ID, Integer.valueOf(C_Country_ID));
 	}
 
 	/** Get Country.
 		@return Country 
 	  */
-	public int getC_Country_ID () 
+	public int getC_Country_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_Country_ID);
 		if (ii == null)
@@ -125,26 +158,26 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	}
 
 	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_Name)
-			.getPO(getC_Region_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_ID)
+			.getPO(getC_Region_ID(), get_TrxName());
+	}
 
 	/** Set Region.
-		@param C_Region_ID 
-		Identifies a geographical Region
-	  */
+		@param C_Region_ID Identifies a geographical Region
+	*/
 	public void setC_Region_ID (int C_Region_ID)
 	{
-		if (C_Region_ID < 1) 
+		if (C_Region_ID < 1)
 			set_Value (COLUMNNAME_C_Region_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_C_Region_ID, Integer.valueOf(C_Region_ID));
 	}
 
 	/** Get Region.
 		@return Identifies a geographical Region
 	  */
-	public int getC_Region_ID () 
+	public int getC_Region_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_Region_ID);
 		if (ii == null)
@@ -153,9 +186,8 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	}
 
 	/** Set Price includes Tax.
-		@param IsTaxIncluded 
-		Tax is included in the price 
-	  */
+		@param IsTaxIncluded Tax is included in the price 
+	*/
 	public void setIsTaxIncluded (boolean IsTaxIncluded)
 	{
 		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
@@ -164,20 +196,21 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	/** Get Price includes Tax.
 		@return Tax is included in the price 
 	  */
-	public boolean isTaxIncluded () 
+	public boolean isTaxIncluded()
 	{
 		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set Código NBS.
-		@param LBR_CodigoNBS Código NBS	  */
+		@param LBR_CodigoNBS Código NBS
+	*/
 	public void setLBR_CodigoNBS (String LBR_CodigoNBS)
 	{
 		set_Value (COLUMNNAME_LBR_CodigoNBS, LBR_CodigoNBS);
@@ -185,13 +218,14 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 
 	/** Get Código NBS.
 		@return Código NBS	  */
-	public String getLBR_CodigoNBS () 
+	public String getLBR_CodigoNBS()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CodigoNBS);
 	}
 
 	/** Set Conditioned Discount Amount.
-		@param LBR_CondDiscountAmt Conditioned Discount Amount	  */
+		@param LBR_CondDiscountAmt Conditioned Discount Amount
+	*/
 	public void setLBR_CondDiscountAmt (BigDecimal LBR_CondDiscountAmt)
 	{
 		set_Value (COLUMNNAME_LBR_CondDiscountAmt, LBR_CondDiscountAmt);
@@ -199,7 +233,7 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 
 	/** Get Conditioned Discount Amount.
 		@return Conditioned Discount Amount	  */
-	public BigDecimal getLBR_CondDiscountAmt () 
+	public BigDecimal getLBR_CondDiscountAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CondDiscountAmt);
 		if (bd == null)
@@ -208,26 +242,26 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	}
 
 	public I_LBR_DocLine_Details getLBR_DocLine_Details() throws RuntimeException
-    {
-		return (I_LBR_DocLine_Details)MTable.get(getCtx(), I_LBR_DocLine_Details.Table_Name)
-			.getPO(getLBR_DocLine_Details_ID(), get_TrxName());	}
+	{
+		return (I_LBR_DocLine_Details)MTable.get(getCtx(), I_LBR_DocLine_Details.Table_ID)
+			.getPO(getLBR_DocLine_Details_ID(), get_TrxName());
+	}
 
 	/** Set Doc Line Details.
-		@param LBR_DocLine_Details_ID 
-		Doc Line Details
-	  */
+		@param LBR_DocLine_Details_ID Doc Line Details
+	*/
 	public void setLBR_DocLine_Details_ID (int LBR_DocLine_Details_ID)
 	{
-		if (LBR_DocLine_Details_ID < 1) 
+		if (LBR_DocLine_Details_ID < 1)
 			set_Value (COLUMNNAME_LBR_DocLine_Details_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_DocLine_Details_ID, Integer.valueOf(LBR_DocLine_Details_ID));
 	}
 
 	/** Get Doc Line Details.
 		@return Doc Line Details
 	  */
-	public int getLBR_DocLine_Details_ID () 
+	public int getLBR_DocLine_Details_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DocLine_Details_ID);
 		if (ii == null)
@@ -236,21 +270,20 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	}
 
 	/** Set Doc Line ISSQN.
-		@param LBR_DocLine_ISSQN_ID 
-		Doc Line ISSQN
-	  */
+		@param LBR_DocLine_ISSQN_ID Doc Line ISSQN
+	*/
 	public void setLBR_DocLine_ISSQN_ID (int LBR_DocLine_ISSQN_ID)
 	{
-		if (LBR_DocLine_ISSQN_ID < 1) 
+		if (LBR_DocLine_ISSQN_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_DocLine_ISSQN_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_DocLine_ISSQN_ID, Integer.valueOf(LBR_DocLine_ISSQN_ID));
 	}
 
 	/** Get Doc Line ISSQN.
 		@return Doc Line ISSQN
 	  */
-	public int getLBR_DocLine_ISSQN_ID () 
+	public int getLBR_DocLine_ISSQN_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DocLine_ISSQN_ID);
 		if (ii == null)
@@ -259,9 +292,8 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	}
 
 	/** Set Doc Line ISSQN.
-		@param LBR_DocLine_ISSQN_UU 
-		Doc Line ISSQN
-	  */
+		@param LBR_DocLine_ISSQN_UU Doc Line ISSQN
+	*/
 	public void setLBR_DocLine_ISSQN_UU (String LBR_DocLine_ISSQN_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_DocLine_ISSQN_UU, LBR_DocLine_ISSQN_UU);
@@ -270,15 +302,14 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	/** Get Doc Line ISSQN.
 		@return Doc Line ISSQN
 	  */
-	public String getLBR_DocLine_ISSQN_UU () 
+	public String getLBR_DocLine_ISSQN_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_DocLine_ISSQN_UU);
 	}
 
 	/** Set Has WithHold.
-		@param LBR_HasWithHold 
-		Indicates if the Tax has WithHold
-	  */
+		@param LBR_HasWithHold Indicates if the Tax has WithHold
+	*/
 	public void setLBR_HasWithHold (boolean LBR_HasWithHold)
 	{
 		set_Value (COLUMNNAME_LBR_HasWithHold, Boolean.valueOf(LBR_HasWithHold));
@@ -287,13 +318,13 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	/** Get Has WithHold.
 		@return Indicates if the Tax has WithHold
 	  */
-	public boolean isLBR_HasWithHold () 
+	public boolean isLBR_HasWithHold()
 	{
 		Object oo = get_Value(COLUMNNAME_LBR_HasWithHold);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
@@ -314,7 +345,8 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	/** Exigibilidade suspensa por processo administrativo = 7 */
 	public static final String LBR_ISS_CHARGEABILITY_ExigibilidadeSuspensaPorProcessoAdministrativo = "7";
 	/** Set ISS Chargeability Indicator.
-		@param LBR_ISS_Chargeability ISS Chargeability Indicator	  */
+		@param LBR_ISS_Chargeability ISS Chargeability Indicator
+	*/
 	public void setLBR_ISS_Chargeability (String LBR_ISS_Chargeability)
 	{
 
@@ -323,13 +355,14 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 
 	/** Get ISS Chargeability Indicator.
 		@return ISS Chargeability Indicator	  */
-	public String getLBR_ISS_Chargeability () 
+	public String getLBR_ISS_Chargeability()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ISS_Chargeability);
 	}
 
 	/** Set ISS Withholding Amount.
-		@param LBR_ISS_WithholdingAmt ISS Withholding Amount	  */
+		@param LBR_ISS_WithholdingAmt ISS Withholding Amount
+	*/
 	public void setLBR_ISS_WithholdingAmt (BigDecimal LBR_ISS_WithholdingAmt)
 	{
 		set_Value (COLUMNNAME_LBR_ISS_WithholdingAmt, LBR_ISS_WithholdingAmt);
@@ -337,7 +370,7 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 
 	/** Get ISS Withholding Amount.
 		@return ISS Withholding Amount	  */
-	public BigDecimal getLBR_ISS_WithholdingAmt () 
+	public BigDecimal getLBR_ISS_WithholdingAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_ISS_WithholdingAmt);
 		if (bd == null)
@@ -346,26 +379,26 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	}
 
 	public org.compiere.model.I_C_City getLBR_IncidenceCity() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_City)MTable.get(getCtx(), org.compiere.model.I_C_City.Table_Name)
-			.getPO(getLBR_IncidenceCity_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_City)MTable.get(getCtx(), org.compiere.model.I_C_City.Table_ID)
+			.getPO(getLBR_IncidenceCity_ID(), get_TrxName());
+	}
 
 	/** Set Incidence City.
-		@param LBR_IncidenceCity_ID 
-		Incidence City
-	  */
+		@param LBR_IncidenceCity_ID Incidence City
+	*/
 	public void setLBR_IncidenceCity_ID (int LBR_IncidenceCity_ID)
 	{
-		if (LBR_IncidenceCity_ID < 1) 
+		if (LBR_IncidenceCity_ID < 1)
 			set_Value (COLUMNNAME_LBR_IncidenceCity_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_IncidenceCity_ID, Integer.valueOf(LBR_IncidenceCity_ID));
 	}
 
 	/** Get Incidence City.
 		@return Incidence City
 	  */
-	public int getLBR_IncidenceCity_ID () 
+	public int getLBR_IncidenceCity_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_IncidenceCity_ID);
 		if (ii == null)
@@ -374,26 +407,26 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	}
 
 	public org.compiere.model.I_C_Region getLBR_IncidenceRegion() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_Name)
-			.getPO(getLBR_IncidenceRegion_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_ID)
+			.getPO(getLBR_IncidenceRegion_ID(), get_TrxName());
+	}
 
 	/** Set Incidence Region.
-		@param LBR_IncidenceRegion_ID 
-		Identifies a geographical Region
-	  */
+		@param LBR_IncidenceRegion_ID Identifies a geographical Region
+	*/
 	public void setLBR_IncidenceRegion_ID (int LBR_IncidenceRegion_ID)
 	{
-		if (LBR_IncidenceRegion_ID < 1) 
+		if (LBR_IncidenceRegion_ID < 1)
 			set_Value (COLUMNNAME_LBR_IncidenceRegion_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_IncidenceRegion_ID, Integer.valueOf(LBR_IncidenceRegion_ID));
 	}
 
 	/** Get Incidence Region.
 		@return Identifies a geographical Region
 	  */
-	public int getLBR_IncidenceRegion_ID () 
+	public int getLBR_IncidenceRegion_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_IncidenceRegion_ID);
 		if (ii == null)
@@ -402,7 +435,8 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	}
 
 	/** Set Other Withholdings Amount.
-		@param LBR_OtherWithholdingsAmt Other Withholdings Amount	  */
+		@param LBR_OtherWithholdingsAmt Other Withholdings Amount
+	*/
 	public void setLBR_OtherWithholdingsAmt (BigDecimal LBR_OtherWithholdingsAmt)
 	{
 		set_Value (COLUMNNAME_LBR_OtherWithholdingsAmt, LBR_OtherWithholdingsAmt);
@@ -410,7 +444,7 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 
 	/** Get Other Withholdings Amount.
 		@return Other Withholdings Amount	  */
-	public BigDecimal getLBR_OtherWithholdingsAmt () 
+	public BigDecimal getLBR_OtherWithholdingsAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_OtherWithholdingsAmt);
 		if (bd == null)
@@ -425,7 +459,8 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	/** Intermediário = 2 */
 	public static final String LBR_RESPONSAVELRETENCAO_Intermediário = "2";
 	/** Set Responsável pela Retenção.
-		@param LBR_ResponsavelRetencao Responsável pela Retenção	  */
+		@param LBR_ResponsavelRetencao Responsável pela Retenção
+	*/
 	public void setLBR_ResponsavelRetencao (String LBR_ResponsavelRetencao)
 	{
 
@@ -434,13 +469,14 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 
 	/** Get Responsável pela Retenção.
 		@return Responsável pela Retenção	  */
-	public String getLBR_ResponsavelRetencao () 
+	public String getLBR_ResponsavelRetencao()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ResponsavelRetencao);
 	}
 
 	/** Set Service Code.
-		@param LBR_ServiceCode Service Code	  */
+		@param LBR_ServiceCode Service Code
+	*/
 	public void setLBR_ServiceCode (String LBR_ServiceCode)
 	{
 		set_Value (COLUMNNAME_LBR_ServiceCode, LBR_ServiceCode);
@@ -448,13 +484,14 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 
 	/** Get Service Code.
 		@return Service Code	  */
-	public String getLBR_ServiceCode () 
+	public String getLBR_ServiceCode()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ServiceCode);
 	}
 
 	/** Set Código de Tributação do Município.
-		@param LBR_ServiceCodeOfCity Código de Tributação do Município	  */
+		@param LBR_ServiceCodeOfCity Código de Tributação do Município
+	*/
 	public void setLBR_ServiceCodeOfCity (String LBR_ServiceCodeOfCity)
 	{
 		set_Value (COLUMNNAME_LBR_ServiceCodeOfCity, LBR_ServiceCodeOfCity);
@@ -462,13 +499,14 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 
 	/** Get Código de Tributação do Município.
 		@return Código de Tributação do Município	  */
-	public String getLBR_ServiceCodeOfCity () 
+	public String getLBR_ServiceCodeOfCity()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ServiceCodeOfCity);
 	}
 
 	/** Set Service Type.
-		@param LBR_ServiceType Service Type	  */
+		@param LBR_ServiceType Service Type
+	*/
 	public void setLBR_ServiceType (String LBR_ServiceType)
 	{
 		set_Value (COLUMNNAME_LBR_ServiceType, LBR_ServiceType);
@@ -476,15 +514,14 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 
 	/** Get Service Type.
 		@return Service Type	  */
-	public String getLBR_ServiceType () 
+	public String getLBR_ServiceType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ServiceType);
 	}
 
 	/** Set Tax Amount.
-		@param LBR_TaxAmt 
-		Defines the Tax Amount
-	  */
+		@param LBR_TaxAmt Defines the Tax Amount
+	*/
 	public void setLBR_TaxAmt (BigDecimal LBR_TaxAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxAmt, LBR_TaxAmt);
@@ -493,7 +530,7 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	/** Get Tax Amount.
 		@return Defines the Tax Amount
 	  */
-	public BigDecimal getLBR_TaxAmt () 
+	public BigDecimal getLBR_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmt);
 		if (bd == null)
@@ -502,9 +539,8 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	}
 
 	/** Set Tax Base Amount.
-		@param LBR_TaxBaseAmt 
-		Defines the Tax Base Amount
-	  */
+		@param LBR_TaxBaseAmt Defines the Tax Base Amount
+	*/
 	public void setLBR_TaxBaseAmt (BigDecimal LBR_TaxBaseAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxBaseAmt, LBR_TaxBaseAmt);
@@ -513,7 +549,7 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	/** Get Tax Base Amount.
 		@return Defines the Tax Base Amount
 	  */
-	public BigDecimal getLBR_TaxBaseAmt () 
+	public BigDecimal getLBR_TaxBaseAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
 		if (bd == null)
@@ -522,9 +558,8 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	}
 
 	/** Set Tax Base Deduction Amount.
-		@param LBR_TaxBaseDeductionAmt 
-		Defines the Tax Base Deduction Amount
-	  */
+		@param LBR_TaxBaseDeductionAmt Defines the Tax Base Deduction Amount
+	*/
 	public void setLBR_TaxBaseDeductionAmt (BigDecimal LBR_TaxBaseDeductionAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxBaseDeductionAmt, LBR_TaxBaseDeductionAmt);
@@ -533,7 +568,7 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	/** Get Tax Base Deduction Amount.
 		@return Defines the Tax Base Deduction Amount
 	  */
-	public BigDecimal getLBR_TaxBaseDeductionAmt () 
+	public BigDecimal getLBR_TaxBaseDeductionAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseDeductionAmt);
 		if (bd == null)
@@ -546,7 +581,8 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	/** No = 2 */
 	public static final String LBR_TAXINCENTIVE_No = "2";
 	/** Set Tax Incentive Indicator.
-		@param LBR_TaxIncentive Tax Incentive Indicator	  */
+		@param LBR_TaxIncentive Tax Incentive Indicator
+	*/
 	public void setLBR_TaxIncentive (String LBR_TaxIncentive)
 	{
 
@@ -555,15 +591,14 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 
 	/** Get Tax Incentive Indicator.
 		@return Tax Incentive Indicator	  */
-	public String getLBR_TaxIncentive () 
+	public String getLBR_TaxIncentive()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TaxIncentive);
 	}
 
 	/** Set Tax Rate.
-		@param LBR_TaxRate 
-		Indicates the Tax Rate
-	  */
+		@param LBR_TaxRate Indicates the Tax Rate
+	*/
 	public void setLBR_TaxRate (BigDecimal LBR_TaxRate)
 	{
 		set_Value (COLUMNNAME_LBR_TaxRate, LBR_TaxRate);
@@ -572,7 +607,7 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	/** Get Tax Rate.
 		@return Indicates the Tax Rate
 	  */
-	public BigDecimal getLBR_TaxRate () 
+	public BigDecimal getLBR_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRate);
 		if (bd == null)
@@ -581,7 +616,8 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	}
 
 	/** Set Unconditioned Discount Amount.
-		@param LBR_UncondDiscountAmt Unconditioned Discount Amount	  */
+		@param LBR_UncondDiscountAmt Unconditioned Discount Amount
+	*/
 	public void setLBR_UncondDiscountAmt (BigDecimal LBR_UncondDiscountAmt)
 	{
 		set_Value (COLUMNNAME_LBR_UncondDiscountAmt, LBR_UncondDiscountAmt);
@@ -589,7 +625,7 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 
 	/** Get Unconditioned Discount Amount.
 		@return Unconditioned Discount Amount	  */
-	public BigDecimal getLBR_UncondDiscountAmt () 
+	public BigDecimal getLBR_UncondDiscountAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_UncondDiscountAmt);
 		if (bd == null)
@@ -598,9 +634,8 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	}
 
 	/** Set Process Name.
-		@param ProcessName 
-		Name of the Process
-	  */
+		@param ProcessName Name of the Process
+	*/
 	public void setProcessName (String ProcessName)
 	{
 		set_Value (COLUMNNAME_ProcessName, ProcessName);
@@ -609,7 +644,7 @@ public class X_LBR_DocLine_ISSQN extends PO implements I_LBR_DocLine_ISSQN, I_Pe
 	/** Get Process Name.
 		@return Name of the Process
 	  */
-	public String getProcessName () 
+	public String getProcessName()
 	{
 		return (String)get_Value(COLUMNNAME_ProcessName);
 	}

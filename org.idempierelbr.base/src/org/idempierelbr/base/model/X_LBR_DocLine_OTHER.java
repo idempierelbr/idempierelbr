@@ -24,21 +24,52 @@ import org.compiere.model.*;
 import org.compiere.util.Env;
 
 /** Generated Model for LBR_DocLine_OTHER
- *  @author iDempiere (generated) 
- *  @version Release 3.1 - $Id$ */
-public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_DocLine_OTHER")
+public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20170110L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_DocLine_OTHER (Properties ctx, int LBR_DocLine_OTHER_ID, String trxName)
     {
       super (ctx, LBR_DocLine_OTHER_ID, trxName);
       /** if (LBR_DocLine_OTHER_ID == 0)
+        {
+			setLBR_DocLine_OTHER_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_OTHER (Properties ctx, int LBR_DocLine_OTHER_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_DocLine_OTHER_ID, trxName, virtualColumns);
+      /** if (LBR_DocLine_OTHER_ID == 0)
+        {
+			setLBR_DocLine_OTHER_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_OTHER (Properties ctx, String LBR_DocLine_OTHER_UU, String trxName)
+    {
+      super (ctx, LBR_DocLine_OTHER_UU, trxName);
+      /** if (LBR_DocLine_OTHER_UU == null)
+        {
+			setLBR_DocLine_OTHER_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_OTHER (Properties ctx, String LBR_DocLine_OTHER_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_DocLine_OTHER_UU, trxName, virtualColumns);
+      /** if (LBR_DocLine_OTHER_UU == null)
         {
 			setLBR_DocLine_OTHER_ID (0);
         } */
@@ -51,7 +82,7 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -67,34 +98,36 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_DocLine_OTHER[")
+      StringBuilder sb = new StringBuilder ("X_LBR_DocLine_OTHER[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
-	/** Set CSLL incluso no preço.
-		@param LBR_CSLL_IsTaxIncluded CSLL incluso no preço	  */
+	/** Set CSLL Incluso no Preço.
+		@param LBR_CSLL_IsTaxIncluded CSLL Incluso no Preço
+	*/
 	public void setLBR_CSLL_IsTaxIncluded (boolean LBR_CSLL_IsTaxIncluded)
 	{
 		set_Value (COLUMNNAME_LBR_CSLL_IsTaxIncluded, Boolean.valueOf(LBR_CSLL_IsTaxIncluded));
 	}
 
-	/** Get CSLL incluso no preço.
-		@return CSLL incluso no preço	  */
-	public boolean isLBR_CSLL_IsTaxIncluded () 
+	/** Get CSLL Incluso no Preço.
+		@return CSLL Incluso no Preço	  */
+	public boolean isLBR_CSLL_IsTaxIncluded()
 	{
 		Object oo = get_Value(COLUMNNAME_LBR_CSLL_IsTaxIncluded);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set Valor da CSLL.
-		@param LBR_CSLL_TaxAmt Valor da CSLL	  */
+		@param LBR_CSLL_TaxAmt Valor da CSLL
+	*/
 	public void setLBR_CSLL_TaxAmt (BigDecimal LBR_CSLL_TaxAmt)
 	{
 		set_Value (COLUMNNAME_LBR_CSLL_TaxAmt, LBR_CSLL_TaxAmt);
@@ -102,7 +135,7 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 
 	/** Get Valor da CSLL.
 		@return Valor da CSLL	  */
-	public BigDecimal getLBR_CSLL_TaxAmt () 
+	public BigDecimal getLBR_CSLL_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CSLL_TaxAmt);
 		if (bd == null)
@@ -111,7 +144,8 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 	}
 
 	/** Set Base de Cálculo da CSLL.
-		@param LBR_CSLL_TaxBaseAmt Base de Cálculo da CSLL	  */
+		@param LBR_CSLL_TaxBaseAmt Base de Cálculo da CSLL
+	*/
 	public void setLBR_CSLL_TaxBaseAmt (BigDecimal LBR_CSLL_TaxBaseAmt)
 	{
 		set_Value (COLUMNNAME_LBR_CSLL_TaxBaseAmt, LBR_CSLL_TaxBaseAmt);
@@ -119,7 +153,7 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 
 	/** Get Base de Cálculo da CSLL.
 		@return Base de Cálculo da CSLL	  */
-	public BigDecimal getLBR_CSLL_TaxBaseAmt () 
+	public BigDecimal getLBR_CSLL_TaxBaseAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CSLL_TaxBaseAmt);
 		if (bd == null)
@@ -128,7 +162,8 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 	}
 
 	/** Set Alíquota da CSLL.
-		@param LBR_CSLL_TaxRate Alíquota da CSLL	  */
+		@param LBR_CSLL_TaxRate Alíquota da CSLL
+	*/
 	public void setLBR_CSLL_TaxRate (BigDecimal LBR_CSLL_TaxRate)
 	{
 		set_Value (COLUMNNAME_LBR_CSLL_TaxRate, LBR_CSLL_TaxRate);
@@ -136,7 +171,7 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 
 	/** Get Alíquota da CSLL.
 		@return Alíquota da CSLL	  */
-	public BigDecimal getLBR_CSLL_TaxRate () 
+	public BigDecimal getLBR_CSLL_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CSLL_TaxRate);
 		if (bd == null)
@@ -144,22 +179,27 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 		return bd;
 	}
 
+	public I_LBR_DocLine_Details getLBR_DocLine_Details() throws RuntimeException
+	{
+		return (I_LBR_DocLine_Details)MTable.get(getCtx(), I_LBR_DocLine_Details.Table_ID)
+			.getPO(getLBR_DocLine_Details_ID(), get_TrxName());
+	}
+
 	/** Set Doc Line Details.
-		@param LBR_DocLine_Details_ID 
-		Doc Line Details
-	  */
+		@param LBR_DocLine_Details_ID Doc Line Details
+	*/
 	public void setLBR_DocLine_Details_ID (int LBR_DocLine_Details_ID)
 	{
-		if (LBR_DocLine_Details_ID < 1) 
+		if (LBR_DocLine_Details_ID < 1)
 			set_Value (COLUMNNAME_LBR_DocLine_Details_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_DocLine_Details_ID, Integer.valueOf(LBR_DocLine_Details_ID));
 	}
 
 	/** Get Doc Line Details.
 		@return Doc Line Details
 	  */
-	public int getLBR_DocLine_Details_ID () 
+	public int getLBR_DocLine_Details_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DocLine_Details_ID);
 		if (ii == null)
@@ -168,18 +208,19 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 	}
 
 	/** Set Outros Impostos.
-		@param LBR_DocLine_OTHER_ID Outros Impostos	  */
+		@param LBR_DocLine_OTHER_ID Outros Impostos
+	*/
 	public void setLBR_DocLine_OTHER_ID (int LBR_DocLine_OTHER_ID)
 	{
-		if (LBR_DocLine_OTHER_ID < 1) 
+		if (LBR_DocLine_OTHER_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_DocLine_OTHER_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_DocLine_OTHER_ID, Integer.valueOf(LBR_DocLine_OTHER_ID));
 	}
 
 	/** Get Outros Impostos.
 		@return Outros Impostos	  */
-	public int getLBR_DocLine_OTHER_ID () 
+	public int getLBR_DocLine_OTHER_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DocLine_OTHER_ID);
 		if (ii == null)
@@ -188,7 +229,8 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 	}
 
 	/** Set LBR_DocLine_OTHER_UU.
-		@param LBR_DocLine_OTHER_UU LBR_DocLine_OTHER_UU	  */
+		@param LBR_DocLine_OTHER_UU LBR_DocLine_OTHER_UU
+	*/
 	public void setLBR_DocLine_OTHER_UU (String LBR_DocLine_OTHER_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_DocLine_OTHER_UU, LBR_DocLine_OTHER_UU);
@@ -196,34 +238,36 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 
 	/** Get LBR_DocLine_OTHER_UU.
 		@return LBR_DocLine_OTHER_UU	  */
-	public String getLBR_DocLine_OTHER_UU () 
+	public String getLBR_DocLine_OTHER_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_DocLine_OTHER_UU);
 	}
 
-	/** Set INSS incluso no preço.
-		@param LBR_INSS_IsTaxIncluded INSS incluso no preço	  */
+	/** Set INSS Incluso no Preço.
+		@param LBR_INSS_IsTaxIncluded INSS Incluso no Preço
+	*/
 	public void setLBR_INSS_IsTaxIncluded (boolean LBR_INSS_IsTaxIncluded)
 	{
 		set_Value (COLUMNNAME_LBR_INSS_IsTaxIncluded, Boolean.valueOf(LBR_INSS_IsTaxIncluded));
 	}
 
-	/** Get INSS incluso no preço.
-		@return INSS incluso no preço	  */
-	public boolean isLBR_INSS_IsTaxIncluded () 
+	/** Get INSS Incluso no Preço.
+		@return INSS Incluso no Preço	  */
+	public boolean isLBR_INSS_IsTaxIncluded()
 	{
 		Object oo = get_Value(COLUMNNAME_LBR_INSS_IsTaxIncluded);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set Valor do INSS.
-		@param LBR_INSS_TaxAmt Valor do INSS	  */
+		@param LBR_INSS_TaxAmt Valor do INSS
+	*/
 	public void setLBR_INSS_TaxAmt (BigDecimal LBR_INSS_TaxAmt)
 	{
 		set_Value (COLUMNNAME_LBR_INSS_TaxAmt, LBR_INSS_TaxAmt);
@@ -231,7 +275,7 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 
 	/** Get Valor do INSS.
 		@return Valor do INSS	  */
-	public BigDecimal getLBR_INSS_TaxAmt () 
+	public BigDecimal getLBR_INSS_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_INSS_TaxAmt);
 		if (bd == null)
@@ -240,7 +284,8 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 	}
 
 	/** Set Base de Cálculo do INSS.
-		@param LBR_INSS_TaxBaseAmt Base de Cálculo do INSS	  */
+		@param LBR_INSS_TaxBaseAmt Base de Cálculo do INSS
+	*/
 	public void setLBR_INSS_TaxBaseAmt (BigDecimal LBR_INSS_TaxBaseAmt)
 	{
 		set_Value (COLUMNNAME_LBR_INSS_TaxBaseAmt, LBR_INSS_TaxBaseAmt);
@@ -248,7 +293,7 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 
 	/** Get Base de Cálculo do INSS.
 		@return Base de Cálculo do INSS	  */
-	public BigDecimal getLBR_INSS_TaxBaseAmt () 
+	public BigDecimal getLBR_INSS_TaxBaseAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_INSS_TaxBaseAmt);
 		if (bd == null)
@@ -257,7 +302,8 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 	}
 
 	/** Set Alíquota do INSS.
-		@param LBR_INSS_TaxRate Alíquota do INSS	  */
+		@param LBR_INSS_TaxRate Alíquota do INSS
+	*/
 	public void setLBR_INSS_TaxRate (BigDecimal LBR_INSS_TaxRate)
 	{
 		set_Value (COLUMNNAME_LBR_INSS_TaxRate, LBR_INSS_TaxRate);
@@ -265,7 +311,7 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 
 	/** Get Alíquota do INSS.
 		@return Alíquota do INSS	  */
-	public BigDecimal getLBR_INSS_TaxRate () 
+	public BigDecimal getLBR_INSS_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_INSS_TaxRate);
 		if (bd == null)
@@ -273,29 +319,31 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 		return bd;
 	}
 
-	/** Set IR incluso no preço.
-		@param LBR_IR_IsTaxIncluded IR incluso no preço	  */
+	/** Set IR Incluso no Preço.
+		@param LBR_IR_IsTaxIncluded IR Incluso no Preço
+	*/
 	public void setLBR_IR_IsTaxIncluded (boolean LBR_IR_IsTaxIncluded)
 	{
 		set_Value (COLUMNNAME_LBR_IR_IsTaxIncluded, Boolean.valueOf(LBR_IR_IsTaxIncluded));
 	}
 
-	/** Get IR incluso no preço.
-		@return IR incluso no preço	  */
-	public boolean isLBR_IR_IsTaxIncluded () 
+	/** Get IR Incluso no Preço.
+		@return IR Incluso no Preço	  */
+	public boolean isLBR_IR_IsTaxIncluded()
 	{
 		Object oo = get_Value(COLUMNNAME_LBR_IR_IsTaxIncluded);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set Valor do IR.
-		@param LBR_IR_TaxAmt Valor do IR	  */
+		@param LBR_IR_TaxAmt Valor do IR
+	*/
 	public void setLBR_IR_TaxAmt (BigDecimal LBR_IR_TaxAmt)
 	{
 		set_Value (COLUMNNAME_LBR_IR_TaxAmt, LBR_IR_TaxAmt);
@@ -303,7 +351,7 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 
 	/** Get Valor do IR.
 		@return Valor do IR	  */
-	public BigDecimal getLBR_IR_TaxAmt () 
+	public BigDecimal getLBR_IR_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IR_TaxAmt);
 		if (bd == null)
@@ -312,7 +360,8 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 	}
 
 	/** Set Base de Cálculo do IR.
-		@param LBR_IR_TaxBaseAmt Base de Cálculo do IR	  */
+		@param LBR_IR_TaxBaseAmt Base de Cálculo do IR
+	*/
 	public void setLBR_IR_TaxBaseAmt (BigDecimal LBR_IR_TaxBaseAmt)
 	{
 		set_Value (COLUMNNAME_LBR_IR_TaxBaseAmt, LBR_IR_TaxBaseAmt);
@@ -320,7 +369,7 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 
 	/** Get Base de Cálculo do IR.
 		@return Base de Cálculo do IR	  */
-	public BigDecimal getLBR_IR_TaxBaseAmt () 
+	public BigDecimal getLBR_IR_TaxBaseAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IR_TaxBaseAmt);
 		if (bd == null)
@@ -329,7 +378,8 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 	}
 
 	/** Set Alíquota do IR.
-		@param LBR_IR_TaxRate Alíquota do IR	  */
+		@param LBR_IR_TaxRate Alíquota do IR
+	*/
 	public void setLBR_IR_TaxRate (BigDecimal LBR_IR_TaxRate)
 	{
 		set_Value (COLUMNNAME_LBR_IR_TaxRate, LBR_IR_TaxRate);
@@ -337,7 +387,7 @@ public class X_LBR_DocLine_OTHER extends PO implements I_LBR_DocLine_OTHER, I_Pe
 
 	/** Get Alíquota do IR.
 		@return Alíquota do IR	  */
-	public BigDecimal getLBR_IR_TaxRate () 
+	public BigDecimal getLBR_IR_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IR_TaxRate);
 		if (bd == null)

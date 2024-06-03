@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_Boleto
  *  @author iDempiere (generated) 
- *  @version Release 2.1
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_Boleto 
@@ -46,8 +46,8 @@ public interface I_LBR_Boleto
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,14 +55,44 @@ public interface I_LBR_Boleto
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
+
+    /** Column name C_BPartner_ID */
+    public static final String COLUMNNAME_C_BPartner_ID = "C_BPartner_ID";
+
+	/** Set Business Partner.
+	  * Identifies a Business Partner
+	  */
+	public void setC_BPartner_ID (int C_BPartner_ID);
+
+	/** Get Business Partner.
+	  * Identifies a Business Partner
+	  */
+	public int getC_BPartner_ID();
+
+	public org.compiere.model.I_C_BPartner getC_BPartner() throws RuntimeException;
+
+    /** Column name C_BPartner_Location_ID */
+    public static final String COLUMNNAME_C_BPartner_Location_ID = "C_BPartner_Location_ID";
+
+	/** Set Partner Location.
+	  * Identifies the (ship to) address for this Business Partner
+	  */
+	public void setC_BPartner_Location_ID (int C_BPartner_Location_ID);
+
+	/** Get Partner Location.
+	  * Identifies the (ship to) address for this Business Partner
+	  */
+	public int getC_BPartner_Location_ID();
+
+	public org.compiere.model.I_C_BPartner_Location getC_BPartner_Location() throws RuntimeException;
 
     /** Column name C_BankAccount_ID */
     public static final String COLUMNNAME_C_BankAccount_ID = "C_BankAccount_ID";
@@ -94,36 +124,6 @@ public interface I_LBR_Boleto
 
 	public org.compiere.model.I_C_Bank getC_Bank() throws RuntimeException;
 
-    /** Column name C_BPartner_ID */
-    public static final String COLUMNNAME_C_BPartner_ID = "C_BPartner_ID";
-
-	/** Set Business Partner .
-	  * Identifies a Business Partner
-	  */
-	public void setC_BPartner_ID (int C_BPartner_ID);
-
-	/** Get Business Partner .
-	  * Identifies a Business Partner
-	  */
-	public int getC_BPartner_ID();
-
-	public org.compiere.model.I_C_BPartner getC_BPartner() throws RuntimeException;
-
-    /** Column name C_BPartner_Location_ID */
-    public static final String COLUMNNAME_C_BPartner_Location_ID = "C_BPartner_Location_ID";
-
-	/** Set Partner Location.
-	  * Identifies the (ship to) address for this Business Partner
-	  */
-	public void setC_BPartner_Location_ID (int C_BPartner_Location_ID);
-
-	/** Get Partner Location.
-	  * Identifies the (ship to) address for this Business Partner
-	  */
-	public int getC_BPartner_Location_ID();
-
-	public org.compiere.model.I_C_BPartner_Location getC_BPartner_Location() throws RuntimeException;
-
     /** Column name C_DocType_ID */
     public static final String COLUMNNAME_C_DocType_ID = "C_DocType_ID";
 
@@ -139,21 +139,6 @@ public interface I_LBR_Boleto
 
 	public org.compiere.model.I_C_DocType getC_DocType() throws RuntimeException;
 
-    /** Column name C_Invoice_ID */
-    public static final String COLUMNNAME_C_Invoice_ID = "C_Invoice_ID";
-
-	/** Set Invoice.
-	  * Invoice Identifier
-	  */
-	public void setC_Invoice_ID (int C_Invoice_ID);
-
-	/** Get Invoice.
-	  * Invoice Identifier
-	  */
-	public int getC_Invoice_ID();
-
-	public org.compiere.model.I_C_Invoice getC_Invoice() throws RuntimeException;
-
     /** Column name C_InvoicePaySchedule_ID */
     public static final String COLUMNNAME_C_InvoicePaySchedule_ID = "C_InvoicePaySchedule_ID";
 
@@ -168,6 +153,21 @@ public interface I_LBR_Boleto
 	public int getC_InvoicePaySchedule_ID();
 
 	public org.compiere.model.I_C_InvoicePaySchedule getC_InvoicePaySchedule() throws RuntimeException;
+
+    /** Column name C_Invoice_ID */
+    public static final String COLUMNNAME_C_Invoice_ID = "C_Invoice_ID";
+
+	/** Set Invoice.
+	  * Invoice Identifier
+	  */
+	public void setC_Invoice_ID (int C_Invoice_ID);
+
+	/** Get Invoice.
+	  * Invoice Identifier
+	  */
+	public int getC_Invoice_ID();
+
+	public org.compiere.model.I_C_Invoice getC_Invoice() throws RuntimeException;
 
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
@@ -306,12 +306,12 @@ public interface I_LBR_Boleto
     public static final String COLUMNNAME_IsPaid = "IsPaid";
 
 	/** Set Paid.
-	  * The document is paid
+	  * The document is fully paid
 	  */
 	public void setIsPaid (boolean IsPaid);
 
 	/** Get Paid.
-	  * The document is paid
+	  * The document is fully paid
 	  */
 	public boolean isPaid();
 
@@ -372,6 +372,19 @@ public interface I_LBR_Boleto
 	  */
 	public String getLBR_Barcode();
 
+    /** Column name LBR_BoletoGenerateInstruction */
+    public static final String COLUMNNAME_LBR_BoletoGenerateInstruction = "LBR_BoletoGenerateInstruction";
+
+	/** Set Generate Boleto Instruction.
+	  * Generate Boleto Instruction
+	  */
+	public void setLBR_BoletoGenerateInstruction (String LBR_BoletoGenerateInstruction);
+
+	/** Get Generate Boleto Instruction.
+	  * Generate Boleto Instruction
+	  */
+	public String getLBR_BoletoGenerateInstruction();
+
     /** Column name LBR_Boleto_ID */
     public static final String COLUMNNAME_LBR_Boleto_ID = "LBR_Boleto_ID";
 
@@ -397,15 +410,6 @@ public interface I_LBR_Boleto
 	  * Brazilian Bank Collection (Boleto) Identifier
 	  */
 	public String getLBR_Boleto_UU();
-
-    /** Column name LBR_CarteiraType */
-    public static final String COLUMNNAME_LBR_CarteiraType = "LBR_CarteiraType";
-
-	/** Set Bank Account Carteira Type	  */
-	public void setLBR_CarteiraType (String LBR_CarteiraType);
-
-	/** Get Bank Account Carteira Type	  */
-	public String getLBR_CarteiraType();
 
     /** Column name LBR_CNAB240Currency */
     public static final String COLUMNNAME_LBR_CNAB240Currency = "LBR_CNAB240Currency";
@@ -433,6 +437,15 @@ public interface I_LBR_Boleto
 
 	/** Get Movement Type	  */
 	public String getLBR_CNAB240MovementType();
+
+    /** Column name LBR_CarteiraType */
+    public static final String COLUMNNAME_LBR_CarteiraType = "LBR_CarteiraType";
+
+	/** Set Bank Account Carteira Type	  */
+	public void setLBR_CarteiraType (String LBR_CarteiraType);
+
+	/** Get Bank Account Carteira Type	  */
+	public String getLBR_CarteiraType();
 
     /** Column name LBR_Cob_Movimento_ID */
     public static final String COLUMNNAME_LBR_Cob_Movimento_ID = "LBR_Cob_Movimento_ID";
@@ -617,15 +630,6 @@ public interface I_LBR_Boleto
 	  */
 	public boolean isLBR_IsProtested();
 
-    /** Column name LBR_IssueType */
-    public static final String COLUMNNAME_LBR_IssueType = "LBR_IssueType";
-
-	/** Set Issue Type	  */
-	public void setLBR_IssueType (String LBR_IssueType);
-
-	/** Get Issue Type	  */
-	public String getLBR_IssueType();
-
     /** Column name LBR_IsSustado */
     public static final String COLUMNNAME_LBR_IsSustado = "LBR_IsSustado";
 
@@ -634,6 +638,15 @@ public interface I_LBR_Boleto
 
 	/** Get Sustado	  */
 	public boolean isLBR_IsSustado();
+
+    /** Column name LBR_IssueType */
+    public static final String COLUMNNAME_LBR_IssueType = "LBR_IssueType";
+
+	/** Set Issue Type	  */
+	public void setLBR_IssueType (String LBR_IssueType);
+
+	/** Get Issue Type	  */
+	public String getLBR_IssueType();
 
     /** Column name LBR_LoanContractNo */
     public static final String COLUMNNAME_LBR_LoanContractNo = "LBR_LoanContractNo";

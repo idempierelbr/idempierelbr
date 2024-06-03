@@ -22,21 +22,49 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_NFeXML
- *  @author iDempiere (generated) 
- *  @version Release 7.1 - $Id$ */
-public class X_LBR_NFeXML extends PO implements I_LBR_NFeXML, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_NFeXML")
+public class X_LBR_NFeXML extends PO implements I_LBR_NFeXML, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20201013L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_NFeXML (Properties ctx, int LBR_NFeXML_ID, String trxName)
     {
       super (ctx, LBR_NFeXML_ID, trxName);
       /** if (LBR_NFeXML_ID == 0)
+        {
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NFeXML (Properties ctx, int LBR_NFeXML_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NFeXML_ID, trxName, virtualColumns);
+      /** if (LBR_NFeXML_ID == 0)
+        {
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NFeXML (Properties ctx, String LBR_NFeXML_UU, String trxName)
+    {
+      super (ctx, LBR_NFeXML_UU, trxName);
+      /** if (LBR_NFeXML_UU == null)
+        {
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NFeXML (Properties ctx, String LBR_NFeXML_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NFeXML_UU, trxName, virtualColumns);
+      /** if (LBR_NFeXML_UU == null)
         {
         } */
     }
@@ -48,7 +76,7 @@ public class X_LBR_NFeXML extends PO implements I_LBR_NFeXML, I_Persistent
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -64,15 +92,14 @@ public class X_LBR_NFeXML extends PO implements I_LBR_NFeXML, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_NFeXML[")
+      StringBuilder sb = new StringBuilder ("X_LBR_NFeXML[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -81,13 +108,14 @@ public class X_LBR_NFeXML extends PO implements I_LBR_NFeXML, I_Persistent
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set NFe ID.
-		@param LBR_NFeID NFe ID	  */
+		@param LBR_NFeID NFe ID
+	*/
 	public void setLBR_NFeID (String LBR_NFeID)
 	{
 		set_Value (COLUMNNAME_LBR_NFeID, LBR_NFeID);
@@ -95,24 +123,25 @@ public class X_LBR_NFeXML extends PO implements I_LBR_NFeXML, I_Persistent
 
 	/** Get NFe ID.
 		@return NFe ID	  */
-	public String getLBR_NFeID () 
+	public String getLBR_NFeID()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NFeID);
 	}
 
 	/** Set NFe XML.
-		@param LBR_NFeXML_ID NFe XML	  */
+		@param LBR_NFeXML_ID NFe XML
+	*/
 	public void setLBR_NFeXML_ID (int LBR_NFeXML_ID)
 	{
-		if (LBR_NFeXML_ID < 1) 
+		if (LBR_NFeXML_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_NFeXML_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_NFeXML_ID, Integer.valueOf(LBR_NFeXML_ID));
 	}
 
 	/** Get NFe XML.
 		@return NFe XML	  */
-	public int getLBR_NFeXML_ID () 
+	public int getLBR_NFeXML_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NFeXML_ID);
 		if (ii == null)
@@ -121,7 +150,8 @@ public class X_LBR_NFeXML extends PO implements I_LBR_NFeXML, I_Persistent
 	}
 
 	/** Set NFe XML.
-		@param LBR_NFeXML_UU NFe XML	  */
+		@param LBR_NFeXML_UU NFe XML
+	*/
 	public void setLBR_NFeXML_UU (String LBR_NFeXML_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_NFeXML_UU, LBR_NFeXML_UU);
@@ -129,13 +159,14 @@ public class X_LBR_NFeXML extends PO implements I_LBR_NFeXML, I_Persistent
 
 	/** Get NFe XML.
 		@return NFe XML	  */
-	public String getLBR_NFeXML_UU () 
+	public String getLBR_NFeXML_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NFeXML_UU);
 	}
 
 	/** Set NSU.
-		@param LBR_NSU NSU	  */
+		@param LBR_NSU NSU
+	*/
 	public void setLBR_NSU (String LBR_NSU)
 	{
 		set_Value (COLUMNNAME_LBR_NSU, LBR_NSU);
@@ -143,13 +174,14 @@ public class X_LBR_NFeXML extends PO implements I_LBR_NFeXML, I_Persistent
 
 	/** Get NSU.
 		@return NSU	  */
-	public String getLBR_NSU () 
+	public String getLBR_NSU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NSU);
 	}
 
 	/** Set Schema Name.
-		@param LBR_SchemaName Schema Name	  */
+		@param LBR_SchemaName Schema Name
+	*/
 	public void setLBR_SchemaName (String LBR_SchemaName)
 	{
 		set_Value (COLUMNNAME_LBR_SchemaName, LBR_SchemaName);
@@ -157,7 +189,7 @@ public class X_LBR_NFeXML extends PO implements I_LBR_NFeXML, I_Persistent
 
 	/** Get Schema Name.
 		@return Schema Name	  */
-	public String getLBR_SchemaName () 
+	public String getLBR_SchemaName()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_SchemaName);
 	}
@@ -173,7 +205,8 @@ public class X_LBR_NFeXML extends PO implements I_LBR_NFeXML, I_Persistent
 	/** 210240 - Operacao nao Realizada = 210240 */
 	public static final String LBR_ULTIMAMANIFESTACAO_210240_OperacaoNaoRealizada = "210240";
 	/** Set Ultima Manifestacao.
-		@param LBR_UltimaManifestacao Ultima Manifestacao	  */
+		@param LBR_UltimaManifestacao Ultima Manifestacao
+	*/
 	public void setLBR_UltimaManifestacao (String LBR_UltimaManifestacao)
 	{
 
@@ -182,7 +215,7 @@ public class X_LBR_NFeXML extends PO implements I_LBR_NFeXML, I_Persistent
 
 	/** Get Ultima Manifestacao.
 		@return Ultima Manifestacao	  */
-	public String getLBR_UltimaManifestacao () 
+	public String getLBR_UltimaManifestacao()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_UltimaManifestacao);
 	}

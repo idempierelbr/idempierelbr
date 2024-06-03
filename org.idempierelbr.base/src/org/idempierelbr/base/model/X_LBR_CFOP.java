@@ -22,21 +22,55 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_CFOP
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_CFOP extends PO implements I_LBR_CFOP, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_CFOP")
+public class X_LBR_CFOP extends PO implements I_LBR_CFOP, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140205L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_CFOP (Properties ctx, int LBR_CFOP_ID, String trxName)
     {
       super (ctx, LBR_CFOP_ID, trxName);
       /** if (LBR_CFOP_ID == 0)
+        {
+			setLBR_CFOP_ID (0);
+			setValue (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_CFOP (Properties ctx, int LBR_CFOP_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_CFOP_ID, trxName, virtualColumns);
+      /** if (LBR_CFOP_ID == 0)
+        {
+			setLBR_CFOP_ID (0);
+			setValue (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_CFOP (Properties ctx, String LBR_CFOP_UU, String trxName)
+    {
+      super (ctx, LBR_CFOP_UU, trxName);
+      /** if (LBR_CFOP_UU == null)
+        {
+			setLBR_CFOP_ID (0);
+			setValue (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_CFOP (Properties ctx, String LBR_CFOP_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_CFOP_UU, trxName, virtualColumns);
+      /** if (LBR_CFOP_UU == null)
         {
 			setLBR_CFOP_ID (0);
 			setValue (null);
@@ -50,7 +84,7 @@ public class X_LBR_CFOP extends PO implements I_LBR_CFOP, I_Persistent
     }
 
     /** AccessLevel
-      * @return 6 - System - Client 
+      * @return 6 - System - Client
       */
     protected int get_AccessLevel()
     {
@@ -66,15 +100,14 @@ public class X_LBR_CFOP extends PO implements I_LBR_CFOP, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_CFOP[")
+      StringBuilder sb = new StringBuilder ("X_LBR_CFOP[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -83,27 +116,26 @@ public class X_LBR_CFOP extends PO implements I_LBR_CFOP, I_Persistent
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set CFOP.
-		@param LBR_CFOP_ID 
-		Indentifies the CFOP
-	  */
+		@param LBR_CFOP_ID Indentifies the CFOP
+	*/
 	public void setLBR_CFOP_ID (int LBR_CFOP_ID)
 	{
-		if (LBR_CFOP_ID < 1) 
+		if (LBR_CFOP_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_CFOP_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_CFOP_ID, Integer.valueOf(LBR_CFOP_ID));
 	}
 
 	/** Get CFOP.
 		@return Indentifies the CFOP
 	  */
-	public int getLBR_CFOP_ID () 
+	public int getLBR_CFOP_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_CFOP_ID);
 		if (ii == null)
@@ -112,7 +144,8 @@ public class X_LBR_CFOP extends PO implements I_LBR_CFOP, I_Persistent
 	}
 
 	/** Set LBR_CFOP_UU.
-		@param LBR_CFOP_UU LBR_CFOP_UU	  */
+		@param LBR_CFOP_UU LBR_CFOP_UU
+	*/
 	public void setLBR_CFOP_UU (String LBR_CFOP_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_CFOP_UU, LBR_CFOP_UU);
@@ -120,15 +153,14 @@ public class X_LBR_CFOP extends PO implements I_LBR_CFOP, I_Persistent
 
 	/** Get LBR_CFOP_UU.
 		@return LBR_CFOP_UU	  */
-	public String getLBR_CFOP_UU () 
+	public String getLBR_CFOP_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CFOP_UU);
 	}
 
 	/** Set Search Key.
-		@param Value 
-		Search key for the record in the format required - must be unique
-	  */
+		@param Value Search key for the record in the format required - must be unique
+	*/
 	public void setValue (String Value)
 	{
 		set_Value (COLUMNNAME_Value, Value);
@@ -137,7 +169,7 @@ public class X_LBR_CFOP extends PO implements I_LBR_CFOP, I_Persistent
 	/** Get Search Key.
 		@return Search key for the record in the format required - must be unique
 	  */
-	public String getValue () 
+	public String getValue()
 	{
 		return (String)get_Value(COLUMNNAME_Value);
 	}

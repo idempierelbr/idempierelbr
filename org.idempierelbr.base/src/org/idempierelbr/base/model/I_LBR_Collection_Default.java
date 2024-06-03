@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_Collection_Default
  *  @author iDempiere (generated) 
- *  @version Release 2.1
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_Collection_Default 
@@ -46,8 +46,8 @@ public interface I_LBR_Collection_Default
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_Collection_Default
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -124,24 +124,6 @@ public interface I_LBR_Collection_Default
 	/** Get Febraban Document Type	  */
 	public String getLBR_CNAB240DocType();
 
-    /** Column name LBR_Collection_Default_ID */
-    public static final String COLUMNNAME_LBR_Collection_Default_ID = "LBR_Collection_Default_ID";
-
-	/** Set Bank Collection Defaults	  */
-	public void setLBR_Collection_Default_ID (int LBR_Collection_Default_ID);
-
-	/** Get Bank Collection Defaults	  */
-	public int getLBR_Collection_Default_ID();
-
-    /** Column name LBR_Collection_Default_UU */
-    public static final String COLUMNNAME_LBR_Collection_Default_UU = "LBR_Collection_Default_UU";
-
-	/** Set Bank Collection Defaults	  */
-	public void setLBR_Collection_Default_UU (String LBR_Collection_Default_UU);
-
-	/** Get Bank Collection Defaults	  */
-	public String getLBR_Collection_Default_UU();
-
     /** Column name LBR_CollectionRegType */
     public static final String COLUMNNAME_LBR_CollectionRegType = "LBR_CollectionRegType";
 
@@ -181,6 +163,24 @@ public interface I_LBR_Collection_Default
 
 	/** Get Collection Type	  */
 	public String getLBR_CollectionType();
+
+    /** Column name LBR_Collection_Default_ID */
+    public static final String COLUMNNAME_LBR_Collection_Default_ID = "LBR_Collection_Default_ID";
+
+	/** Set Bank Collection Defaults	  */
+	public void setLBR_Collection_Default_ID (int LBR_Collection_Default_ID);
+
+	/** Get Bank Collection Defaults	  */
+	public int getLBR_Collection_Default_ID();
+
+    /** Column name LBR_Collection_Default_UU */
+    public static final String COLUMNNAME_LBR_Collection_Default_UU = "LBR_Collection_Default_UU";
+
+	/** Set Bank Collection Defaults	  */
+	public void setLBR_Collection_Default_UU (String LBR_Collection_Default_UU);
+
+	/** Get Bank Collection Defaults	  */
+	public String getLBR_Collection_Default_UU();
 
     /** Column name LBR_DirectDebitNotice */
     public static final String COLUMNNAME_LBR_DirectDebitNotice = "LBR_DirectDebitNotice";

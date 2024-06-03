@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NotaFiscalLot
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_NotaFiscalLot 
@@ -46,8 +46,8 @@ public interface I_LBR_NotaFiscalLot
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_NotaFiscalLot
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -236,6 +236,19 @@ public interface I_LBR_NotaFiscalLot
 	  */
 	public int getLBR_NotaFiscalLot_ID();
 
+    /** Column name LBR_NotaFiscalLot_UU */
+    public static final String COLUMNNAME_LBR_NotaFiscalLot_UU = "LBR_NotaFiscalLot_UU";
+
+	/** Set NF-e Lot.
+	  * Identifies a NF-e Lot
+	  */
+	public void setLBR_NotaFiscalLot_UU (String LBR_NotaFiscalLot_UU);
+
+	/** Get NF-e Lot.
+	  * Identifies a NF-e Lot
+	  */
+	public String getLBR_NotaFiscalLot_UU();
+
     /** Column name LBR_NotaFiscal_UU */
     public static final String COLUMNNAME_LBR_NotaFiscal_UU = "LBR_NotaFiscal_UU";
 
@@ -248,15 +261,6 @@ public interface I_LBR_NotaFiscalLot
 	  * Brazilian Fiscal Invoice (Nota Fiscal) Identifier
 	  */
 	public String getLBR_NotaFiscal_UU();
-
-    /** Column name LBR_ProcessingType */
-    public static final String COLUMNNAME_LBR_ProcessingType = "LBR_ProcessingType";
-
-	/** Set Processing Type	  */
-	public void setLBR_ProcessingType (String LBR_ProcessingType);
-
-	/** Get Processing Type	  */
-	public String getLBR_ProcessingType();
 
     /** Column name LBR_ProcQueryNFeLot */
     public static final String COLUMNNAME_LBR_ProcQueryNFeLot = "LBR_ProcQueryNFeLot";
@@ -283,6 +287,15 @@ public interface I_LBR_NotaFiscalLot
 	  * Process to send NF-e Lot to Sefaz
 	  */
 	public String getLBR_ProcSendNFeLot();
+
+    /** Column name LBR_ProcessingType */
+    public static final String COLUMNNAME_LBR_ProcessingType = "LBR_ProcessingType";
+
+	/** Set Processing Type	  */
+	public void setLBR_ProcessingType (String LBR_ProcessingType);
+
+	/** Get Processing Type	  */
+	public String getLBR_ProcessingType();
 
     /** Column name Processed */
     public static final String COLUMNNAME_Processed = "Processed";

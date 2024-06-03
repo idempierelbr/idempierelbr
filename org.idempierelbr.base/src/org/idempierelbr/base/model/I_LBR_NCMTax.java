@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NCMTax
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_NCMTax 
@@ -46,8 +46,8 @@ public interface I_LBR_NCMTax
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,14 +55,29 @@ public interface I_LBR_NCMTax
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
+
+    /** Column name C_Region_ID */
+    public static final String COLUMNNAME_C_Region_ID = "C_Region_ID";
+
+	/** Set Region.
+	  * Identifies a geographical Region
+	  */
+	public void setC_Region_ID (int C_Region_ID);
+
+	/** Get Region.
+	  * Identifies a geographical Region
+	  */
+	public int getC_Region_ID();
+
+	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException;
 
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
@@ -79,21 +94,6 @@ public interface I_LBR_NCMTax
 	  * User who created this records
 	  */
 	public int getCreatedBy();
-
-    /** Column name C_Region_ID */
-    public static final String COLUMNNAME_C_Region_ID = "C_Region_ID";
-
-	/** Set Region.
-	  * Identifies a geographical Region
-	  */
-	public void setC_Region_ID (int C_Region_ID);
-
-	/** Get Region.
-	  * Identifies a geographical Region
-	  */
-	public int getC_Region_ID();
-
-	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException;
 
     /** Column name Description */
     public static final String COLUMNNAME_Description = "Description";
@@ -134,21 +134,6 @@ public interface I_LBR_NCMTax
 	  */
 	public boolean isLBR_HasSubstitution();
 
-    /** Column name LBR_NCM_ID */
-    public static final String COLUMNNAME_LBR_NCM_ID = "LBR_NCM_ID";
-
-	/** Set NCM.
-	  * NCM stands for Nomenclatura Comum do MERCOSUL
-	  */
-	public void setLBR_NCM_ID (int LBR_NCM_ID);
-
-	/** Get NCM.
-	  * NCM stands for Nomenclatura Comum do MERCOSUL
-	  */
-	public int getLBR_NCM_ID();
-
-	public I_LBR_NCM getLBR_NCM() throws RuntimeException;
-
     /** Column name LBR_NCMTax_ID */
     public static final String COLUMNNAME_LBR_NCMTax_ID = "LBR_NCMTax_ID";
 
@@ -170,6 +155,21 @@ public interface I_LBR_NCMTax
 
 	/** Get LBR_NCMTax_UU	  */
 	public String getLBR_NCMTax_UU();
+
+    /** Column name LBR_NCM_ID */
+    public static final String COLUMNNAME_LBR_NCM_ID = "LBR_NCM_ID";
+
+	/** Set NCM.
+	  * NCM stands for Nomenclatura Comum do MERCOSUL
+	  */
+	public void setLBR_NCM_ID (int LBR_NCM_ID);
+
+	/** Get NCM.
+	  * NCM stands for Nomenclatura Comum do MERCOSUL
+	  */
+	public int getLBR_NCM_ID();
+
+	public I_LBR_NCM getLBR_NCM() throws RuntimeException;
 
     /** Column name LBR_Tax_ID */
     public static final String COLUMNNAME_LBR_Tax_ID = "LBR_Tax_ID";

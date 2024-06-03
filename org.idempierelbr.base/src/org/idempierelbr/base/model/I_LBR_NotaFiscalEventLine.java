@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NotaFiscalEventLine
  *  @author iDempiere (generated) 
- *  @version Release 7.1
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_NotaFiscalEventLine 
@@ -46,8 +46,8 @@ public interface I_LBR_NotaFiscalEventLine
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_NotaFiscalEventLine
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -184,21 +184,6 @@ public interface I_LBR_NotaFiscalEventLine
 
 	public I_LBR_NFeXML getLBR_NFeXML() throws RuntimeException;
 
-    /** Column name LBR_NotaFiscalEvent_ID */
-    public static final String COLUMNNAME_LBR_NotaFiscalEvent_ID = "LBR_NotaFiscalEvent_ID";
-
-	/** Set NF-e Event Lot.
-	  * Identifies a NF-e Event Lot
-	  */
-	public void setLBR_NotaFiscalEvent_ID (int LBR_NotaFiscalEvent_ID);
-
-	/** Get NF-e Event Lot.
-	  * Identifies a NF-e Event Lot
-	  */
-	public int getLBR_NotaFiscalEvent_ID();
-
-	public I_LBR_NotaFiscalEvent getLBR_NotaFiscalEvent() throws RuntimeException;
-
     /** Column name LBR_NotaFiscalEventLine_ID */
     public static final String COLUMNNAME_LBR_NotaFiscalEventLine_ID = "LBR_NotaFiscalEventLine_ID";
 
@@ -224,6 +209,21 @@ public interface I_LBR_NotaFiscalEventLine
 	  * Identifies a NF-e Event Lot Line
 	  */
 	public String getLBR_NotaFiscalEventLine_UU();
+
+    /** Column name LBR_NotaFiscalEvent_ID */
+    public static final String COLUMNNAME_LBR_NotaFiscalEvent_ID = "LBR_NotaFiscalEvent_ID";
+
+	/** Set NF-e Event Lot.
+	  * Identifies a NF-e Event Lot
+	  */
+	public void setLBR_NotaFiscalEvent_ID (int LBR_NotaFiscalEvent_ID);
+
+	/** Get NF-e Event Lot.
+	  * Identifies a NF-e Event Lot
+	  */
+	public int getLBR_NotaFiscalEvent_ID();
+
+	public I_LBR_NotaFiscalEvent getLBR_NotaFiscalEvent() throws RuntimeException;
 
     /** Column name LBR_NotaFiscal_ID */
     public static final String COLUMNNAME_LBR_NotaFiscal_ID = "LBR_NotaFiscal_ID";

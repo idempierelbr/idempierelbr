@@ -22,21 +22,52 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_Cob_GO
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_Cob_GO extends PO implements I_LBR_Cob_GO, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_Cob_GO")
+public class X_LBR_Cob_GO extends PO implements I_LBR_Cob_GO, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140821L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_Cob_GO (Properties ctx, int LBR_Cob_GO_ID, String trxName)
     {
       super (ctx, LBR_Cob_GO_ID, trxName);
       /** if (LBR_Cob_GO_ID == 0)
+        {
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Cob_GO (Properties ctx, int LBR_Cob_GO_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_Cob_GO_ID, trxName, virtualColumns);
+      /** if (LBR_Cob_GO_ID == 0)
+        {
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Cob_GO (Properties ctx, String LBR_Cob_GO_UU, String trxName)
+    {
+      super (ctx, LBR_Cob_GO_UU, trxName);
+      /** if (LBR_Cob_GO_UU == null)
+        {
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_Cob_GO (Properties ctx, String LBR_Cob_GO_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_Cob_GO_UU, trxName, virtualColumns);
+      /** if (LBR_Cob_GO_UU == null)
         {
 			setName (null);
         } */
@@ -49,7 +80,7 @@ public class X_LBR_Cob_GO extends PO implements I_LBR_Cob_GO, I_Persistent
     }
 
     /** AccessLevel
-      * @return 6 - System - Client 
+      * @return 6 - System - Client
       */
     protected int get_AccessLevel()
     {
@@ -65,15 +96,14 @@ public class X_LBR_Cob_GO extends PO implements I_LBR_Cob_GO, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_Cob_GO[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_Cob_GO[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -82,24 +112,25 @@ public class X_LBR_Cob_GO extends PO implements I_LBR_Cob_GO, I_Persistent
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set Collection Occurrences Group.
-		@param LBR_Cob_GO_ID Collection Occurrences Group	  */
+		@param LBR_Cob_GO_ID Collection Occurrences Group
+	*/
 	public void setLBR_Cob_GO_ID (int LBR_Cob_GO_ID)
 	{
-		if (LBR_Cob_GO_ID < 1) 
+		if (LBR_Cob_GO_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_Cob_GO_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_Cob_GO_ID, Integer.valueOf(LBR_Cob_GO_ID));
 	}
 
 	/** Get Collection Occurrences Group.
 		@return Collection Occurrences Group	  */
-	public int getLBR_Cob_GO_ID () 
+	public int getLBR_Cob_GO_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Cob_GO_ID);
 		if (ii == null)
@@ -108,7 +139,8 @@ public class X_LBR_Cob_GO extends PO implements I_LBR_Cob_GO, I_Persistent
 	}
 
 	/** Set Collection Occurrences Group.
-		@param LBR_Cob_GO_UU Collection Occurrences Group	  */
+		@param LBR_Cob_GO_UU Collection Occurrences Group
+	*/
 	public void setLBR_Cob_GO_UU (String LBR_Cob_GO_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_Cob_GO_UU, LBR_Cob_GO_UU);
@@ -116,15 +148,14 @@ public class X_LBR_Cob_GO extends PO implements I_LBR_Cob_GO, I_Persistent
 
 	/** Get Collection Occurrences Group.
 		@return Collection Occurrences Group	  */
-	public String getLBR_Cob_GO_UU () 
+	public String getLBR_Cob_GO_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_Cob_GO_UU);
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -133,15 +164,14 @@ public class X_LBR_Cob_GO extends PO implements I_LBR_Cob_GO, I_Persistent
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}
 
 	/** Set Search Key.
-		@param Value 
-		Search key for the record in the format required - must be unique
-	  */
+		@param Value Search key for the record in the format required - must be unique
+	*/
 	public void setValue (String Value)
 	{
 		set_Value (COLUMNNAME_Value, Value);
@@ -150,7 +180,7 @@ public class X_LBR_Cob_GO extends PO implements I_LBR_Cob_GO, I_Persistent
 	/** Get Search Key.
 		@return Search key for the record in the format required - must be unique
 	  */
-	public String getValue () 
+	public String getValue()
 	{
 		return (String)get_Value(COLUMNNAME_Value);
 	}

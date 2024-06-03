@@ -23,21 +23,55 @@ import org.compiere.model.*;
 import org.compiere.util.KeyNamePair;
 
 /** Generated Model for LBR_CEST
- *  @author iDempiere (generated) 
- *  @version Release 2.1 - $Id$ */
-public class X_LBR_CEST extends PO implements I_LBR_CEST, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_CEST")
+public class X_LBR_CEST extends PO implements I_LBR_CEST, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20160324L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_CEST (Properties ctx, int LBR_CEST_ID, String trxName)
     {
       super (ctx, LBR_CEST_ID, trxName);
       /** if (LBR_CEST_ID == 0)
+        {
+			setLBR_CEST_ID (0);
+			setValue (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_CEST (Properties ctx, int LBR_CEST_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_CEST_ID, trxName, virtualColumns);
+      /** if (LBR_CEST_ID == 0)
+        {
+			setLBR_CEST_ID (0);
+			setValue (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_CEST (Properties ctx, String LBR_CEST_UU, String trxName)
+    {
+      super (ctx, LBR_CEST_UU, trxName);
+      /** if (LBR_CEST_UU == null)
+        {
+			setLBR_CEST_ID (0);
+			setValue (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_CEST (Properties ctx, String LBR_CEST_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_CEST_UU, trxName, virtualColumns);
+      /** if (LBR_CEST_UU == null)
         {
 			setLBR_CEST_ID (0);
 			setValue (null);
@@ -51,7 +85,7 @@ public class X_LBR_CEST extends PO implements I_LBR_CEST, I_Persistent
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -67,15 +101,14 @@ public class X_LBR_CEST extends PO implements I_LBR_CEST, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_CEST[")
+      StringBuilder sb = new StringBuilder ("X_LBR_CEST[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -84,7 +117,7 @@ public class X_LBR_CEST extends PO implements I_LBR_CEST, I_Persistent
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
@@ -92,24 +125,25 @@ public class X_LBR_CEST extends PO implements I_LBR_CEST, I_Persistent
     /** Get Record ID/ColumnName
         @return ID/ColumnName pair
       */
-    public KeyNamePair getKeyNamePair() 
+    public KeyNamePair getKeyNamePair()
     {
         return new KeyNamePair(get_ID(), String.valueOf(getDescription()));
     }
 
 	/** Set CEST.
-		@param LBR_CEST_ID CEST	  */
+		@param LBR_CEST_ID CEST
+	*/
 	public void setLBR_CEST_ID (int LBR_CEST_ID)
 	{
-		if (LBR_CEST_ID < 1) 
+		if (LBR_CEST_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_CEST_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_CEST_ID, Integer.valueOf(LBR_CEST_ID));
 	}
 
 	/** Get CEST.
 		@return CEST	  */
-	public int getLBR_CEST_ID () 
+	public int getLBR_CEST_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_CEST_ID);
 		if (ii == null)
@@ -118,7 +152,8 @@ public class X_LBR_CEST extends PO implements I_LBR_CEST, I_Persistent
 	}
 
 	/** Set LBR_CEST_UU.
-		@param LBR_CEST_UU LBR_CEST_UU	  */
+		@param LBR_CEST_UU LBR_CEST_UU
+	*/
 	public void setLBR_CEST_UU (String LBR_CEST_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_CEST_UU, LBR_CEST_UU);
@@ -126,15 +161,14 @@ public class X_LBR_CEST extends PO implements I_LBR_CEST, I_Persistent
 
 	/** Get LBR_CEST_UU.
 		@return LBR_CEST_UU	  */
-	public String getLBR_CEST_UU () 
+	public String getLBR_CEST_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CEST_UU);
 	}
 
 	/** Set Search Key.
-		@param Value 
-		Search key for the record in the format required - must be unique
-	  */
+		@param Value Search key for the record in the format required - must be unique
+	*/
 	public void setValue (String Value)
 	{
 		set_Value (COLUMNNAME_Value, Value);
@@ -143,7 +177,7 @@ public class X_LBR_CEST extends PO implements I_LBR_CEST, I_Persistent
 	/** Get Search Key.
 		@return Search key for the record in the format required - must be unique
 	  */
-	public String getValue () 
+	public String getValue()
 	{
 		return (String)get_Value(COLUMNNAME_Value);
 	}

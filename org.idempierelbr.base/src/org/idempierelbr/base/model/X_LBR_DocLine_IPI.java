@@ -24,21 +24,55 @@ import org.compiere.model.*;
 import org.compiere.util.Env;
 
 /** Generated Model for LBR_DocLine_IPI
- *  @author iDempiere (generated) 
- *  @version Release 3.1 - $Id$ */
-public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_DocLine_IPI")
+public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20170110L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_DocLine_IPI (Properties ctx, int LBR_DocLine_IPI_ID, String trxName)
     {
       super (ctx, LBR_DocLine_IPI_ID, trxName);
       /** if (LBR_DocLine_IPI_ID == 0)
+        {
+			setIsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_IPI (Properties ctx, int LBR_DocLine_IPI_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_DocLine_IPI_ID, trxName, virtualColumns);
+      /** if (LBR_DocLine_IPI_ID == 0)
+        {
+			setIsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_IPI (Properties ctx, String LBR_DocLine_IPI_UU, String trxName)
+    {
+      super (ctx, LBR_DocLine_IPI_UU, trxName);
+      /** if (LBR_DocLine_IPI_UU == null)
+        {
+			setIsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_IPI (Properties ctx, String LBR_DocLine_IPI_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_DocLine_IPI_UU, trxName, virtualColumns);
+      /** if (LBR_DocLine_IPI_UU == null)
         {
 			setIsTaxIncluded (false);
 // N
@@ -52,7 +86,7 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -68,17 +102,18 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_DocLine_IPI[")
+      StringBuilder sb = new StringBuilder ("X_LBR_DocLine_IPI[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
-	/** Percentage = PER */
-	public static final String CALCULATIONTYPE_Percentage = "PER";
 	/** Amount = AMT */
 	public static final String CALCULATIONTYPE_Amount = "AMT";
+	/** Percentage = PER */
+	public static final String CALCULATIONTYPE_Percentage = "PER";
 	/** Set Calculation.
-		@param CalculationType Calculation	  */
+		@param CalculationType Calculation
+	*/
 	public void setCalculationType (String CalculationType)
 	{
 
@@ -87,15 +122,14 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 
 	/** Get Calculation.
 		@return Calculation	  */
-	public String getCalculationType () 
+	public String getCalculationType()
 	{
 		return (String)get_Value(COLUMNNAME_CalculationType);
 	}
 
 	/** Set Price includes Tax.
-		@param IsTaxIncluded 
-		Tax is included in the price 
-	  */
+		@param IsTaxIncluded Tax is included in the price 
+	*/
 	public void setIsTaxIncluded (boolean IsTaxIncluded)
 	{
 		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
@@ -104,22 +138,21 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** Get Price includes Tax.
 		@return Tax is included in the price 
 	  */
-	public boolean isTaxIncluded () 
+	public boolean isTaxIncluded()
 	{
 		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set CNPJ.
-		@param LBR_CNPJ 
-		Used to identify Legal Entities in Brazil
-	  */
+		@param LBR_CNPJ Used to identify Legal Entities in Brazil
+	*/
 	public void setLBR_CNPJ (String LBR_CNPJ)
 	{
 		set_Value (COLUMNNAME_LBR_CNPJ, LBR_CNPJ);
@@ -128,32 +161,32 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** Get CNPJ.
 		@return Used to identify Legal Entities in Brazil
 	  */
-	public String getLBR_CNPJ () 
+	public String getLBR_CNPJ()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CNPJ);
 	}
 
 	public I_LBR_DocLine_Details getLBR_DocLine_Details() throws RuntimeException
-    {
-		return (I_LBR_DocLine_Details)MTable.get(getCtx(), I_LBR_DocLine_Details.Table_Name)
-			.getPO(getLBR_DocLine_Details_ID(), get_TrxName());	}
+	{
+		return (I_LBR_DocLine_Details)MTable.get(getCtx(), I_LBR_DocLine_Details.Table_ID)
+			.getPO(getLBR_DocLine_Details_ID(), get_TrxName());
+	}
 
 	/** Set Doc Line Details.
-		@param LBR_DocLine_Details_ID 
-		Doc Line Details
-	  */
+		@param LBR_DocLine_Details_ID Doc Line Details
+	*/
 	public void setLBR_DocLine_Details_ID (int LBR_DocLine_Details_ID)
 	{
-		if (LBR_DocLine_Details_ID < 1) 
+		if (LBR_DocLine_Details_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_DocLine_Details_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_DocLine_Details_ID, Integer.valueOf(LBR_DocLine_Details_ID));
 	}
 
 	/** Get Doc Line Details.
 		@return Doc Line Details
 	  */
-	public int getLBR_DocLine_Details_ID () 
+	public int getLBR_DocLine_Details_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DocLine_Details_ID);
 		if (ii == null)
@@ -162,21 +195,20 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	}
 
 	/** Set Doc Line IPI.
-		@param LBR_DocLine_IPI_ID 
-		Doc Line IPI
-	  */
+		@param LBR_DocLine_IPI_ID Doc Line IPI
+	*/
 	public void setLBR_DocLine_IPI_ID (int LBR_DocLine_IPI_ID)
 	{
-		if (LBR_DocLine_IPI_ID < 1) 
+		if (LBR_DocLine_IPI_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_DocLine_IPI_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_DocLine_IPI_ID, Integer.valueOf(LBR_DocLine_IPI_ID));
 	}
 
 	/** Get Doc Line IPI.
 		@return Doc Line IPI
 	  */
-	public int getLBR_DocLine_IPI_ID () 
+	public int getLBR_DocLine_IPI_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DocLine_IPI_ID);
 		if (ii == null)
@@ -185,9 +217,8 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	}
 
 	/** Set Doc Line IPI.
-		@param LBR_DocLine_IPI_UU 
-		Doc Line IPI
-	  */
+		@param LBR_DocLine_IPI_UU Doc Line IPI
+	*/
 	public void setLBR_DocLine_IPI_UU (String LBR_DocLine_IPI_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_DocLine_IPI_UU, LBR_DocLine_IPI_UU);
@@ -196,7 +227,7 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** Get Doc Line IPI.
 		@return Doc Line IPI
 	  */
-	public String getLBR_DocLine_IPI_UU () 
+	public String getLBR_DocLine_IPI_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_DocLine_IPI_UU);
 	}
@@ -230,9 +261,8 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** 99 - Outras saidas = 99 */
 	public static final String LBR_IPI_OWNTAXSTATUS_99_OutrasSaidas = "99";
 	/** Set Declarant IPI Tax Status.
-		@param LBR_IPI_OwnTaxStatus 
-		IPI tax status from the point of view of the declarant
-	  */
+		@param LBR_IPI_OwnTaxStatus IPI tax status from the point of view of the declarant
+	*/
 	public void setLBR_IPI_OwnTaxStatus (String LBR_IPI_OwnTaxStatus)
 	{
 
@@ -242,15 +272,14 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** Get Declarant IPI Tax Status.
 		@return IPI tax status from the point of view of the declarant
 	  */
-	public String getLBR_IPI_OwnTaxStatus () 
+	public String getLBR_IPI_OwnTaxStatus()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_IPI_OwnTaxStatus);
 	}
 
 	/** Set IPI Tax Regarding Class.
-		@param LBR_IPI_RegardingClass 
-		Identifies the IPI Tax Regarding Class
-	  */
+		@param LBR_IPI_RegardingClass Identifies the IPI Tax Regarding Class
+	*/
 	public void setLBR_IPI_RegardingClass (String LBR_IPI_RegardingClass)
 	{
 		set_Value (COLUMNNAME_LBR_IPI_RegardingClass, LBR_IPI_RegardingClass);
@@ -259,15 +288,14 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** Get IPI Tax Regarding Class.
 		@return Identifies the IPI Tax Regarding Class
 	  */
-	public String getLBR_IPI_RegardingClass () 
+	public String getLBR_IPI_RegardingClass()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_IPI_RegardingClass);
 	}
 
 	/** Set IPI Tax Regarding Code.
-		@param LBR_IPI_RegardingCode 
-		Identifies the IPI Tax Regarding Code
-	  */
+		@param LBR_IPI_RegardingCode Identifies the IPI Tax Regarding Code
+	*/
 	public void setLBR_IPI_RegardingCode (int LBR_IPI_RegardingCode)
 	{
 		set_Value (COLUMNNAME_LBR_IPI_RegardingCode, Integer.valueOf(LBR_IPI_RegardingCode));
@@ -276,7 +304,7 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** Get IPI Tax Regarding Code.
 		@return Identifies the IPI Tax Regarding Code
 	  */
-	public int getLBR_IPI_RegardingCode () 
+	public int getLBR_IPI_RegardingCode()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_IPI_RegardingCode);
 		if (ii == null)
@@ -285,9 +313,8 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	}
 
 	/** Set IPI Tax Seal Code.
-		@param LBR_IPI_SealCode 
-		Identifies the IPI Tax Seal Code
-	  */
+		@param LBR_IPI_SealCode Identifies the IPI Tax Seal Code
+	*/
 	public void setLBR_IPI_SealCode (String LBR_IPI_SealCode)
 	{
 		set_Value (COLUMNNAME_LBR_IPI_SealCode, LBR_IPI_SealCode);
@@ -296,15 +323,14 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** Get IPI Tax Seal Code.
 		@return Identifies the IPI Tax Seal Code
 	  */
-	public String getLBR_IPI_SealCode () 
+	public String getLBR_IPI_SealCode()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_IPI_SealCode);
 	}
 
 	/** Set IPI Tax Seal Qty.
-		@param LBR_IPI_SealQty 
-		Identifies the IPI Tax Seal Qty
-	  */
+		@param LBR_IPI_SealQty Identifies the IPI Tax Seal Qty
+	*/
 	public void setLBR_IPI_SealQty (int LBR_IPI_SealQty)
 	{
 		set_Value (COLUMNNAME_LBR_IPI_SealQty, Integer.valueOf(LBR_IPI_SealQty));
@@ -313,7 +339,7 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** Get IPI Tax Seal Qty.
 		@return Identifies the IPI Tax Seal Qty
 	  */
-	public int getLBR_IPI_SealQty () 
+	public int getLBR_IPI_SealQty()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_IPI_SealQty);
 		if (ii == null)
@@ -350,9 +376,8 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** 99 - Outras saidas = 99 */
 	public static final String LBR_IPI_TAXSTATUS_99_OutrasSaidas = "99";
 	/** Set IPI Tax Status.
-		@param LBR_IPI_TaxStatus 
-		Identifies a IPI Tax Status
-	  */
+		@param LBR_IPI_TaxStatus Identifies a IPI Tax Status
+	*/
 	public void setLBR_IPI_TaxStatus (String LBR_IPI_TaxStatus)
 	{
 
@@ -362,15 +387,14 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** Get IPI Tax Status.
 		@return Identifies a IPI Tax Status
 	  */
-	public String getLBR_IPI_TaxStatus () 
+	public String getLBR_IPI_TaxStatus()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_IPI_TaxStatus);
 	}
 
 	/** Set Tax Amount.
-		@param LBR_TaxAmt 
-		Defines the Tax Amount
-	  */
+		@param LBR_TaxAmt Defines the Tax Amount
+	*/
 	public void setLBR_TaxAmt (BigDecimal LBR_TaxAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxAmt, LBR_TaxAmt);
@@ -379,7 +403,7 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** Get Tax Amount.
 		@return Defines the Tax Amount
 	  */
-	public BigDecimal getLBR_TaxAmt () 
+	public BigDecimal getLBR_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmt);
 		if (bd == null)
@@ -388,9 +412,8 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	}
 
 	/** Set Tax Base Amount.
-		@param LBR_TaxBaseAmt 
-		Defines the Tax Base Amount
-	  */
+		@param LBR_TaxBaseAmt Defines the Tax Base Amount
+	*/
 	public void setLBR_TaxBaseAmt (BigDecimal LBR_TaxBaseAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxBaseAmt, LBR_TaxBaseAmt);
@@ -399,7 +422,7 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** Get Tax Base Amount.
 		@return Defines the Tax Base Amount
 	  */
-	public BigDecimal getLBR_TaxBaseAmt () 
+	public BigDecimal getLBR_TaxBaseAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
 		if (bd == null)
@@ -408,9 +431,8 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	}
 
 	/** Set Tax Rate.
-		@param LBR_TaxRate 
-		Indicates the Tax Rate
-	  */
+		@param LBR_TaxRate Indicates the Tax Rate
+	*/
 	public void setLBR_TaxRate (BigDecimal LBR_TaxRate)
 	{
 		set_Value (COLUMNNAME_LBR_TaxRate, LBR_TaxRate);
@@ -419,7 +441,7 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** Get Tax Rate.
 		@return Indicates the Tax Rate
 	  */
-	public BigDecimal getLBR_TaxRate () 
+	public BigDecimal getLBR_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRate);
 		if (bd == null)
@@ -428,9 +450,8 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	}
 
 	/** Set Unit Price.
-		@param PriceActual 
-		Actual Price 
-	  */
+		@param PriceActual Actual Price 
+	*/
 	public void setPriceActual (BigDecimal PriceActual)
 	{
 		set_Value (COLUMNNAME_PriceActual, PriceActual);
@@ -439,7 +460,7 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** Get Unit Price.
 		@return Actual Price 
 	  */
-	public BigDecimal getPriceActual () 
+	public BigDecimal getPriceActual()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_PriceActual);
 		if (bd == null)
@@ -448,9 +469,8 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	}
 
 	/** Set Total Quantity.
-		@param TotalQty 
-		Total Quantity
-	  */
+		@param TotalQty Total Quantity
+	*/
 	public void setTotalQty (BigDecimal TotalQty)
 	{
 		set_Value (COLUMNNAME_TotalQty, TotalQty);
@@ -459,7 +479,7 @@ public class X_LBR_DocLine_IPI extends PO implements I_LBR_DocLine_IPI, I_Persis
 	/** Get Total Quantity.
 		@return Total Quantity
 	  */
-	public BigDecimal getTotalQty () 
+	public BigDecimal getTotalQty()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_TotalQty);
 		if (bd == null)

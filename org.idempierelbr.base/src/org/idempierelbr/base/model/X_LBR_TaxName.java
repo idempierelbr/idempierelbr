@@ -24,21 +24,73 @@ import org.compiere.model.*;
 import org.compiere.util.Env;
 
 /** Generated Model for LBR_TaxName
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_TaxName extends PO implements I_LBR_TaxName, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_TaxName")
+public class X_LBR_TaxName extends PO implements I_LBR_TaxName, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140127L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_TaxName (Properties ctx, int LBR_TaxName_ID, String trxName)
     {
       super (ctx, LBR_TaxName_ID, trxName);
       /** if (LBR_TaxName_ID == 0)
+        {
+			setLBR_HasWithHold (false);
+// 'N'
+			setLBR_TaxName_ID (0);
+			setLBR_TaxSubstitution_ID (0);
+			setLBR_TaxType (null);
+// 'P'
+			setName (null);
+			setWithHoldThreshold (Env.ZERO);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxName (Properties ctx, int LBR_TaxName_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_TaxName_ID, trxName, virtualColumns);
+      /** if (LBR_TaxName_ID == 0)
+        {
+			setLBR_HasWithHold (false);
+// 'N'
+			setLBR_TaxName_ID (0);
+			setLBR_TaxSubstitution_ID (0);
+			setLBR_TaxType (null);
+// 'P'
+			setName (null);
+			setWithHoldThreshold (Env.ZERO);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxName (Properties ctx, String LBR_TaxName_UU, String trxName)
+    {
+      super (ctx, LBR_TaxName_UU, trxName);
+      /** if (LBR_TaxName_UU == null)
+        {
+			setLBR_HasWithHold (false);
+// 'N'
+			setLBR_TaxName_ID (0);
+			setLBR_TaxSubstitution_ID (0);
+			setLBR_TaxType (null);
+// 'P'
+			setName (null);
+			setWithHoldThreshold (Env.ZERO);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxName (Properties ctx, String LBR_TaxName_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_TaxName_UU, trxName, virtualColumns);
+      /** if (LBR_TaxName_UU == null)
         {
 			setLBR_HasWithHold (false);
 // 'N'
@@ -58,7 +110,7 @@ public class X_LBR_TaxName extends PO implements I_LBR_TaxName, I_Persistent
     }
 
     /** AccessLevel
-      * @return 6 - System - Client 
+      * @return 6 - System - Client
       */
     protected int get_AccessLevel()
     {
@@ -74,15 +126,14 @@ public class X_LBR_TaxName extends PO implements I_LBR_TaxName, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_TaxName[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_TaxName[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -91,15 +142,14 @@ public class X_LBR_TaxName extends PO implements I_LBR_TaxName, I_Persistent
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set Has WithHold.
-		@param LBR_HasWithHold 
-		Indicates if the Tax has WithHold
-	  */
+		@param LBR_HasWithHold Indicates if the Tax has WithHold
+	*/
 	public void setLBR_HasWithHold (boolean LBR_HasWithHold)
 	{
 		set_Value (COLUMNNAME_LBR_HasWithHold, Boolean.valueOf(LBR_HasWithHold));
@@ -108,34 +158,33 @@ public class X_LBR_TaxName extends PO implements I_LBR_TaxName, I_Persistent
 	/** Get Has WithHold.
 		@return Indicates if the Tax has WithHold
 	  */
-	public boolean isLBR_HasWithHold () 
+	public boolean isLBR_HasWithHold()
 	{
 		Object oo = get_Value(COLUMNNAME_LBR_HasWithHold);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set Tax Name.
-		@param LBR_TaxName_ID 
-		Primary key table LBR_TaxName
-	  */
+		@param LBR_TaxName_ID Primary key table LBR_TaxName
+	*/
 	public void setLBR_TaxName_ID (int LBR_TaxName_ID)
 	{
-		if (LBR_TaxName_ID < 1) 
+		if (LBR_TaxName_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxName_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxName_ID, Integer.valueOf(LBR_TaxName_ID));
 	}
 
 	/** Get Tax Name.
 		@return Primary key table LBR_TaxName
 	  */
-	public int getLBR_TaxName_ID () 
+	public int getLBR_TaxName_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_TaxName_ID);
 		if (ii == null)
@@ -144,7 +193,8 @@ public class X_LBR_TaxName extends PO implements I_LBR_TaxName, I_Persistent
 	}
 
 	/** Set LBR_TaxName_UU.
-		@param LBR_TaxName_UU LBR_TaxName_UU	  */
+		@param LBR_TaxName_UU LBR_TaxName_UU
+	*/
 	public void setLBR_TaxName_UU (String LBR_TaxName_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_TaxName_UU, LBR_TaxName_UU);
@@ -152,32 +202,32 @@ public class X_LBR_TaxName extends PO implements I_LBR_TaxName, I_Persistent
 
 	/** Get LBR_TaxName_UU.
 		@return LBR_TaxName_UU	  */
-	public String getLBR_TaxName_UU () 
+	public String getLBR_TaxName_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TaxName_UU);
 	}
 
 	public I_LBR_TaxName getLBR_TaxSubstitution() throws RuntimeException
-    {
-		return (I_LBR_TaxName)MTable.get(getCtx(), I_LBR_TaxName.Table_Name)
-			.getPO(getLBR_TaxSubstitution_ID(), get_TrxName());	}
+	{
+		return (I_LBR_TaxName)MTable.get(getCtx(), I_LBR_TaxName.Table_ID)
+			.getPO(getLBR_TaxSubstitution_ID(), get_TrxName());
+	}
 
 	/** Set Tax Substitution.
-		@param LBR_TaxSubstitution_ID 
-		Defines the Tax Substitution
-	  */
+		@param LBR_TaxSubstitution_ID Defines the Tax Substitution
+	*/
 	public void setLBR_TaxSubstitution_ID (int LBR_TaxSubstitution_ID)
 	{
-		if (LBR_TaxSubstitution_ID < 1) 
+		if (LBR_TaxSubstitution_ID < 1)
 			set_Value (COLUMNNAME_LBR_TaxSubstitution_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_TaxSubstitution_ID, Integer.valueOf(LBR_TaxSubstitution_ID));
 	}
 
 	/** Get Tax Substitution.
 		@return Defines the Tax Substitution
 	  */
-	public int getLBR_TaxSubstitution_ID () 
+	public int getLBR_TaxSubstitution_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_TaxSubstitution_ID);
 		if (ii == null)
@@ -192,9 +242,8 @@ public class X_LBR_TaxName extends PO implements I_LBR_TaxName, I_Persistent
 	/** Substitution = T */
 	public static final String LBR_TAXTYPE_Substitution = "T";
 	/** Set Tax Type.
-		@param LBR_TaxType 
-		Defines the Tax Type
-	  */
+		@param LBR_TaxType Defines the Tax Type
+	*/
 	public void setLBR_TaxType (String LBR_TaxType)
 	{
 
@@ -204,7 +253,7 @@ public class X_LBR_TaxName extends PO implements I_LBR_TaxName, I_Persistent
 	/** Get Tax Type.
 		@return Defines the Tax Type
 	  */
-	public String getLBR_TaxType () 
+	public String getLBR_TaxType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TaxType);
 	}
@@ -212,9 +261,8 @@ public class X_LBR_TaxName extends PO implements I_LBR_TaxName, I_Persistent
 	/** Monthly = M */
 	public static final String LBR_WITHHOLDFREQUENCY_Monthly = "M";
 	/** Set WithHold Frequency.
-		@param LBR_WithHoldFrequency 
-		Defines the WithHold Frequency
-	  */
+		@param LBR_WithHoldFrequency Defines the WithHold Frequency
+	*/
 	public void setLBR_WithHoldFrequency (String LBR_WithHoldFrequency)
 	{
 
@@ -224,15 +272,14 @@ public class X_LBR_TaxName extends PO implements I_LBR_TaxName, I_Persistent
 	/** Get WithHold Frequency.
 		@return Defines the WithHold Frequency
 	  */
-	public String getLBR_WithHoldFrequency () 
+	public String getLBR_WithHoldFrequency()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_WithHoldFrequency);
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -241,15 +288,14 @@ public class X_LBR_TaxName extends PO implements I_LBR_TaxName, I_Persistent
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}
 
 	/** Set WithHold Threshold.
-		@param WithHoldThreshold 
-		Defines the WithHold Threshold
-	  */
+		@param WithHoldThreshold Defines the WithHold Threshold
+	*/
 	public void setWithHoldThreshold (BigDecimal WithHoldThreshold)
 	{
 		set_Value (COLUMNNAME_WithHoldThreshold, WithHoldThreshold);
@@ -258,7 +304,7 @@ public class X_LBR_TaxName extends PO implements I_LBR_TaxName, I_Persistent
 	/** Get WithHold Threshold.
 		@return Defines the WithHold Threshold
 	  */
-	public BigDecimal getWithHoldThreshold () 
+	public BigDecimal getWithHoldThreshold()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_WithHoldThreshold);
 		if (bd == null)

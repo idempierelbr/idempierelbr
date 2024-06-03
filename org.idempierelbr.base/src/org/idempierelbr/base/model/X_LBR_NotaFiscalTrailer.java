@@ -22,21 +22,55 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_NotaFiscalTrailer
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_NotaFiscalTrailer extends PO implements I_LBR_NotaFiscalTrailer, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_NotaFiscalTrailer")
+public class X_LBR_NotaFiscalTrailer extends PO implements I_LBR_NotaFiscalTrailer, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140514L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_NotaFiscalTrailer (Properties ctx, int LBR_NotaFiscalTrailer_ID, String trxName)
     {
       super (ctx, LBR_NotaFiscalTrailer_ID, trxName);
       /** if (LBR_NotaFiscalTrailer_ID == 0)
+        {
+			setLBR_NotaFiscalTrailer_ID (0);
+			setLBR_NotaFiscalTransp_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NotaFiscalTrailer (Properties ctx, int LBR_NotaFiscalTrailer_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NotaFiscalTrailer_ID, trxName, virtualColumns);
+      /** if (LBR_NotaFiscalTrailer_ID == 0)
+        {
+			setLBR_NotaFiscalTrailer_ID (0);
+			setLBR_NotaFiscalTransp_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NotaFiscalTrailer (Properties ctx, String LBR_NotaFiscalTrailer_UU, String trxName)
+    {
+      super (ctx, LBR_NotaFiscalTrailer_UU, trxName);
+      /** if (LBR_NotaFiscalTrailer_UU == null)
+        {
+			setLBR_NotaFiscalTrailer_ID (0);
+			setLBR_NotaFiscalTransp_ID (0);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NotaFiscalTrailer (Properties ctx, String LBR_NotaFiscalTrailer_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NotaFiscalTrailer_UU, trxName, virtualColumns);
+      /** if (LBR_NotaFiscalTrailer_UU == null)
         {
 			setLBR_NotaFiscalTrailer_ID (0);
 			setLBR_NotaFiscalTransp_ID (0);
@@ -50,7 +84,7 @@ public class X_LBR_NotaFiscalTrailer extends PO implements I_LBR_NotaFiscalTrail
     }
 
     /** AccessLevel
-      * @return 1 - Org 
+      * @return 1 - Org
       */
     protected int get_AccessLevel()
     {
@@ -66,13 +100,14 @@ public class X_LBR_NotaFiscalTrailer extends PO implements I_LBR_NotaFiscalTrail
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_NotaFiscalTrailer[")
+      StringBuilder sb = new StringBuilder ("X_LBR_NotaFiscalTrailer[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	/** Set License Plate.
-		@param LBR_LicensePlate License Plate	  */
+		@param LBR_LicensePlate License Plate
+	*/
 	public void setLBR_LicensePlate (String LBR_LicensePlate)
 	{
 		set_Value (COLUMNNAME_LBR_LicensePlate, LBR_LicensePlate);
@@ -80,29 +115,31 @@ public class X_LBR_NotaFiscalTrailer extends PO implements I_LBR_NotaFiscalTrail
 
 	/** Get License Plate.
 		@return License Plate	  */
-	public String getLBR_LicensePlate () 
+	public String getLBR_LicensePlate()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_LicensePlate);
 	}
 
 	public org.compiere.model.I_C_Region getLBR_LicensePlateRegion() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_Name)
-			.getPO(getLBR_LicensePlateRegion_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_ID)
+			.getPO(getLBR_LicensePlateRegion_ID(), get_TrxName());
+	}
 
 	/** Set License Plate Region.
-		@param LBR_LicensePlateRegion_ID License Plate Region	  */
+		@param LBR_LicensePlateRegion_ID License Plate Region
+	*/
 	public void setLBR_LicensePlateRegion_ID (int LBR_LicensePlateRegion_ID)
 	{
-		if (LBR_LicensePlateRegion_ID < 1) 
+		if (LBR_LicensePlateRegion_ID < 1)
 			set_Value (COLUMNNAME_LBR_LicensePlateRegion_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_LicensePlateRegion_ID, Integer.valueOf(LBR_LicensePlateRegion_ID));
 	}
 
 	/** Get License Plate Region.
 		@return License Plate Region	  */
-	public int getLBR_LicensePlateRegion_ID () 
+	public int getLBR_LicensePlateRegion_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_LicensePlateRegion_ID);
 		if (ii == null)
@@ -111,18 +148,19 @@ public class X_LBR_NotaFiscalTrailer extends PO implements I_LBR_NotaFiscalTrail
 	}
 
 	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer.
-		@param LBR_NotaFiscalTrailer_ID Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer	  */
+		@param LBR_NotaFiscalTrailer_ID Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer
+	*/
 	public void setLBR_NotaFiscalTrailer_ID (int LBR_NotaFiscalTrailer_ID)
 	{
-		if (LBR_NotaFiscalTrailer_ID < 1) 
+		if (LBR_NotaFiscalTrailer_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalTrailer_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalTrailer_ID, Integer.valueOf(LBR_NotaFiscalTrailer_ID));
 	}
 
 	/** Get Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer.
 		@return Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer	  */
-	public int getLBR_NotaFiscalTrailer_ID () 
+	public int getLBR_NotaFiscalTrailer_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NotaFiscalTrailer_ID);
 		if (ii == null)
@@ -131,7 +169,8 @@ public class X_LBR_NotaFiscalTrailer extends PO implements I_LBR_NotaFiscalTrail
 	}
 
 	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer.
-		@param LBR_NotaFiscalTrailer_UU Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer	  */
+		@param LBR_NotaFiscalTrailer_UU Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer
+	*/
 	public void setLBR_NotaFiscalTrailer_UU (String LBR_NotaFiscalTrailer_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalTrailer_UU, LBR_NotaFiscalTrailer_UU);
@@ -139,29 +178,31 @@ public class X_LBR_NotaFiscalTrailer extends PO implements I_LBR_NotaFiscalTrail
 
 	/** Get Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer.
 		@return Brazilian Fiscal Invoice (Nota Fiscal) Vehicle/Trailer	  */
-	public String getLBR_NotaFiscalTrailer_UU () 
+	public String getLBR_NotaFiscalTrailer_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NotaFiscalTrailer_UU);
 	}
 
 	public I_LBR_NotaFiscalTransp getLBR_NotaFiscalTransp() throws RuntimeException
-    {
-		return (I_LBR_NotaFiscalTransp)MTable.get(getCtx(), I_LBR_NotaFiscalTransp.Table_Name)
-			.getPO(getLBR_NotaFiscalTransp_ID(), get_TrxName());	}
+	{
+		return (I_LBR_NotaFiscalTransp)MTable.get(getCtx(), I_LBR_NotaFiscalTransp.Table_ID)
+			.getPO(getLBR_NotaFiscalTransp_ID(), get_TrxName());
+	}
 
 	/** Set Brazilian Fiscal Invoice (Nota Fiscal) Transportation.
-		@param LBR_NotaFiscalTransp_ID Brazilian Fiscal Invoice (Nota Fiscal) Transportation	  */
+		@param LBR_NotaFiscalTransp_ID Brazilian Fiscal Invoice (Nota Fiscal) Transportation
+	*/
 	public void setLBR_NotaFiscalTransp_ID (int LBR_NotaFiscalTransp_ID)
 	{
-		if (LBR_NotaFiscalTransp_ID < 1) 
+		if (LBR_NotaFiscalTransp_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalTransp_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_NotaFiscalTransp_ID, Integer.valueOf(LBR_NotaFiscalTransp_ID));
 	}
 
 	/** Get Brazilian Fiscal Invoice (Nota Fiscal) Transportation.
 		@return Brazilian Fiscal Invoice (Nota Fiscal) Transportation	  */
-	public int getLBR_NotaFiscalTransp_ID () 
+	public int getLBR_NotaFiscalTransp_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NotaFiscalTransp_ID);
 		if (ii == null)
@@ -170,7 +211,8 @@ public class X_LBR_NotaFiscalTrailer extends PO implements I_LBR_NotaFiscalTrail
 	}
 
 	/** Set National Registry of Cargo Carriers.
-		@param LBR_RNTC National Registry of Cargo Carriers	  */
+		@param LBR_RNTC National Registry of Cargo Carriers
+	*/
 	public void setLBR_RNTC (String LBR_RNTC)
 	{
 		set_Value (COLUMNNAME_LBR_RNTC, LBR_RNTC);
@@ -178,7 +220,7 @@ public class X_LBR_NotaFiscalTrailer extends PO implements I_LBR_NotaFiscalTrail
 
 	/** Get National Registry of Cargo Carriers.
 		@return National Registry of Cargo Carriers	  */
-	public String getLBR_RNTC () 
+	public String getLBR_RNTC()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_RNTC);
 	}

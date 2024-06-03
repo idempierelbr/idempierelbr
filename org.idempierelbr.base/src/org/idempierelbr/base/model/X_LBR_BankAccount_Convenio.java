@@ -22,21 +22,58 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_BankAccount_Convenio
- *  @author iDempiere (generated) 
- *  @version Release 2.1 - $Id$ */
-public class X_LBR_BankAccount_Convenio extends PO implements I_LBR_BankAccount_Convenio, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_BankAccount_Convenio")
+public class X_LBR_BankAccount_Convenio extends PO implements I_LBR_BankAccount_Convenio, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20141215L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_BankAccount_Convenio (Properties ctx, int LBR_BankAccount_Convenio_ID, String trxName)
     {
       super (ctx, LBR_BankAccount_Convenio_ID, trxName);
       /** if (LBR_BankAccount_Convenio_ID == 0)
+        {
+			setC_BankAccount_ID (0);
+			setIsDefault (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_BankAccount_Convenio (Properties ctx, int LBR_BankAccount_Convenio_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_BankAccount_Convenio_ID, trxName, virtualColumns);
+      /** if (LBR_BankAccount_Convenio_ID == 0)
+        {
+			setC_BankAccount_ID (0);
+			setIsDefault (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_BankAccount_Convenio (Properties ctx, String LBR_BankAccount_Convenio_UU, String trxName)
+    {
+      super (ctx, LBR_BankAccount_Convenio_UU, trxName);
+      /** if (LBR_BankAccount_Convenio_UU == null)
+        {
+			setC_BankAccount_ID (0);
+			setIsDefault (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_BankAccount_Convenio (Properties ctx, String LBR_BankAccount_Convenio_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_BankAccount_Convenio_UU, trxName, virtualColumns);
+      /** if (LBR_BankAccount_Convenio_UU == null)
         {
 			setC_BankAccount_ID (0);
 			setIsDefault (false);
@@ -51,7 +88,7 @@ public class X_LBR_BankAccount_Convenio extends PO implements I_LBR_BankAccount_
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -67,32 +104,32 @@ public class X_LBR_BankAccount_Convenio extends PO implements I_LBR_BankAccount_
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_BankAccount_Convenio[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_BankAccount_Convenio[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	public org.compiere.model.I_C_BankAccount getC_BankAccount() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_BankAccount)MTable.get(getCtx(), org.compiere.model.I_C_BankAccount.Table_Name)
-			.getPO(getC_BankAccount_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_BankAccount)MTable.get(getCtx(), org.compiere.model.I_C_BankAccount.Table_ID)
+			.getPO(getC_BankAccount_ID(), get_TrxName());
+	}
 
 	/** Set Bank Account.
-		@param C_BankAccount_ID 
-		Account at the Bank
-	  */
+		@param C_BankAccount_ID Account at the Bank
+	*/
 	public void setC_BankAccount_ID (int C_BankAccount_ID)
 	{
-		if (C_BankAccount_ID < 1) 
+		if (C_BankAccount_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_C_BankAccount_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_C_BankAccount_ID, Integer.valueOf(C_BankAccount_ID));
 	}
 
 	/** Get Bank Account.
 		@return Account at the Bank
 	  */
-	public int getC_BankAccount_ID () 
+	public int getC_BankAccount_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_BankAccount_ID);
 		if (ii == null)
@@ -101,9 +138,8 @@ public class X_LBR_BankAccount_Convenio extends PO implements I_LBR_BankAccount_
 	}
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -112,15 +148,14 @@ public class X_LBR_BankAccount_Convenio extends PO implements I_LBR_BankAccount_
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set Default.
-		@param IsDefault 
-		Default value
-	  */
+		@param IsDefault Default value
+	*/
 	public void setIsDefault (boolean IsDefault)
 	{
 		set_Value (COLUMNNAME_IsDefault, Boolean.valueOf(IsDefault));
@@ -129,31 +164,32 @@ public class X_LBR_BankAccount_Convenio extends PO implements I_LBR_BankAccount_
 	/** Get Default.
 		@return Default value
 	  */
-	public boolean isDefault () 
+	public boolean isDefault()
 	{
 		Object oo = get_Value(COLUMNNAME_IsDefault);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set Bank Account Convênio.
-		@param LBR_BankAccount_Convenio_ID Bank Account Convênio	  */
+		@param LBR_BankAccount_Convenio_ID Bank Account Convênio
+	*/
 	public void setLBR_BankAccount_Convenio_ID (int LBR_BankAccount_Convenio_ID)
 	{
-		if (LBR_BankAccount_Convenio_ID < 1) 
+		if (LBR_BankAccount_Convenio_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_BankAccount_Convenio_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_BankAccount_Convenio_ID, Integer.valueOf(LBR_BankAccount_Convenio_ID));
 	}
 
 	/** Get Bank Account Convênio.
 		@return Bank Account Convênio	  */
-	public int getLBR_BankAccount_Convenio_ID () 
+	public int getLBR_BankAccount_Convenio_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BankAccount_Convenio_ID);
 		if (ii == null)
@@ -162,7 +198,8 @@ public class X_LBR_BankAccount_Convenio extends PO implements I_LBR_BankAccount_
 	}
 
 	/** Set Bank Account Convênio.
-		@param LBR_BankAccount_Convenio_UU Bank Account Convênio	  */
+		@param LBR_BankAccount_Convenio_UU Bank Account Convênio
+	*/
 	public void setLBR_BankAccount_Convenio_UU (String LBR_BankAccount_Convenio_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_BankAccount_Convenio_UU, LBR_BankAccount_Convenio_UU);
@@ -170,13 +207,14 @@ public class X_LBR_BankAccount_Convenio extends PO implements I_LBR_BankAccount_
 
 	/** Get Bank Account Convênio.
 		@return Bank Account Convênio	  */
-	public String getLBR_BankAccount_Convenio_UU () 
+	public String getLBR_BankAccount_Convenio_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_BankAccount_Convenio_UU);
 	}
 
 	/** Set Convênio No..
-		@param LBR_ConvenioNo Convênio No.	  */
+		@param LBR_ConvenioNo Convênio No.
+	*/
 	public void setLBR_ConvenioNo (String LBR_ConvenioNo)
 	{
 		set_Value (COLUMNNAME_LBR_ConvenioNo, LBR_ConvenioNo);
@@ -184,32 +222,32 @@ public class X_LBR_BankAccount_Convenio extends PO implements I_LBR_BankAccount_
 
 	/** Get Convênio No..
 		@return Convênio No.	  */
-	public String getLBR_ConvenioNo () 
+	public String getLBR_ConvenioNo()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_ConvenioNo);
 	}
 
 	public org.compiere.model.I_AD_Sequence getLBR_SeqCNAB240File() throws RuntimeException
-    {
-		return (org.compiere.model.I_AD_Sequence)MTable.get(getCtx(), org.compiere.model.I_AD_Sequence.Table_Name)
-			.getPO(getLBR_SeqCNAB240File_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_AD_Sequence)MTable.get(getCtx(), org.compiere.model.I_AD_Sequence.Table_ID)
+			.getPO(getLBR_SeqCNAB240File_ID(), get_TrxName());
+	}
 
 	/** Set Sequence for File (CNAB).
-		@param LBR_SeqCNAB240File_ID 
-		Sequence for File (CNAB)
-	  */
+		@param LBR_SeqCNAB240File_ID Sequence for File (CNAB)
+	*/
 	public void setLBR_SeqCNAB240File_ID (int LBR_SeqCNAB240File_ID)
 	{
-		if (LBR_SeqCNAB240File_ID < 1) 
+		if (LBR_SeqCNAB240File_ID < 1)
 			set_Value (COLUMNNAME_LBR_SeqCNAB240File_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_SeqCNAB240File_ID, Integer.valueOf(LBR_SeqCNAB240File_ID));
 	}
 
 	/** Get Sequence for File (CNAB).
 		@return Sequence for File (CNAB)
 	  */
-	public int getLBR_SeqCNAB240File_ID () 
+	public int getLBR_SeqCNAB240File_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_SeqCNAB240File_ID);
 		if (ii == null)
@@ -218,26 +256,26 @@ public class X_LBR_BankAccount_Convenio extends PO implements I_LBR_BankAccount_
 	}
 
 	public org.compiere.model.I_AD_Sequence getLBR_SeqCNAB240Lot() throws RuntimeException
-    {
-		return (org.compiere.model.I_AD_Sequence)MTable.get(getCtx(), org.compiere.model.I_AD_Sequence.Table_Name)
-			.getPO(getLBR_SeqCNAB240Lot_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_AD_Sequence)MTable.get(getCtx(), org.compiere.model.I_AD_Sequence.Table_ID)
+			.getPO(getLBR_SeqCNAB240Lot_ID(), get_TrxName());
+	}
 
 	/** Set Sequence for Lot (CNAB).
-		@param LBR_SeqCNAB240Lot_ID 
-		Sequence for Lot (CNAB)
-	  */
+		@param LBR_SeqCNAB240Lot_ID Sequence for Lot (CNAB)
+	*/
 	public void setLBR_SeqCNAB240Lot_ID (int LBR_SeqCNAB240Lot_ID)
 	{
-		if (LBR_SeqCNAB240Lot_ID < 1) 
+		if (LBR_SeqCNAB240Lot_ID < 1)
 			set_Value (COLUMNNAME_LBR_SeqCNAB240Lot_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_SeqCNAB240Lot_ID, Integer.valueOf(LBR_SeqCNAB240Lot_ID));
 	}
 
 	/** Get Sequence for Lot (CNAB).
 		@return Sequence for Lot (CNAB)
 	  */
-	public int getLBR_SeqCNAB240Lot_ID () 
+	public int getLBR_SeqCNAB240Lot_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_SeqCNAB240Lot_ID);
 		if (ii == null)
@@ -246,9 +284,8 @@ public class X_LBR_BankAccount_Convenio extends PO implements I_LBR_BankAccount_
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -257,7 +294,7 @@ public class X_LBR_BankAccount_Convenio extends PO implements I_LBR_BankAccount_
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}

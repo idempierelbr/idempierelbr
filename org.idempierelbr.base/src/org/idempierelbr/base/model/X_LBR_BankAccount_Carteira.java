@@ -22,15 +22,16 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_BankAccount_Carteira
- *  @author iDempiere (generated) 
- *  @version Release 2.1 - $Id$ */
-public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_Carteira, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_BankAccount_Carteira")
+public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_Carteira, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20141215L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_BankAccount_Carteira (Properties ctx, int LBR_BankAccount_Carteira_ID, String trxName)
@@ -41,7 +42,45 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 			setIsDefault (false);
 // N
 			setLBR_BankAccount_Convenio_ID (0);
-			setLBR_CarteiraCode (null);
+			setLBR_CarteiraNo (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_BankAccount_Carteira (Properties ctx, int LBR_BankAccount_Carteira_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_BankAccount_Carteira_ID, trxName, virtualColumns);
+      /** if (LBR_BankAccount_Carteira_ID == 0)
+        {
+			setIsDefault (false);
+// N
+			setLBR_BankAccount_Convenio_ID (0);
+			setLBR_CarteiraNo (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_BankAccount_Carteira (Properties ctx, String LBR_BankAccount_Carteira_UU, String trxName)
+    {
+      super (ctx, LBR_BankAccount_Carteira_UU, trxName);
+      /** if (LBR_BankAccount_Carteira_UU == null)
+        {
+			setIsDefault (false);
+// N
+			setLBR_BankAccount_Convenio_ID (0);
+			setLBR_CarteiraNo (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_BankAccount_Carteira (Properties ctx, String LBR_BankAccount_Carteira_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_BankAccount_Carteira_UU, trxName, virtualColumns);
+      /** if (LBR_BankAccount_Carteira_UU == null)
+        {
+			setIsDefault (false);
+// N
+			setLBR_BankAccount_Convenio_ID (0);
 			setLBR_CarteiraNo (null);
         } */
     }
@@ -53,7 +92,7 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -69,15 +108,14 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_BankAccount_Carteira[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_BankAccount_Carteira[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -86,15 +124,14 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set Default.
-		@param IsDefault 
-		Default value
-	  */
+		@param IsDefault Default value
+	*/
 	public void setIsDefault (boolean IsDefault)
 	{
 		set_Value (COLUMNNAME_IsDefault, Boolean.valueOf(IsDefault));
@@ -103,31 +140,32 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 	/** Get Default.
 		@return Default value
 	  */
-	public boolean isDefault () 
+	public boolean isDefault()
 	{
 		Object oo = get_Value(COLUMNNAME_IsDefault);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	/** Set Bank Account Carteira.
-		@param LBR_BankAccount_Carteira_ID Bank Account Carteira	  */
+		@param LBR_BankAccount_Carteira_ID Bank Account Carteira
+	*/
 	public void setLBR_BankAccount_Carteira_ID (int LBR_BankAccount_Carteira_ID)
 	{
-		if (LBR_BankAccount_Carteira_ID < 1) 
+		if (LBR_BankAccount_Carteira_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_BankAccount_Carteira_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_BankAccount_Carteira_ID, Integer.valueOf(LBR_BankAccount_Carteira_ID));
 	}
 
 	/** Get Bank Account Carteira.
 		@return Bank Account Carteira	  */
-	public int getLBR_BankAccount_Carteira_ID () 
+	public int getLBR_BankAccount_Carteira_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BankAccount_Carteira_ID);
 		if (ii == null)
@@ -136,7 +174,8 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 	}
 
 	/** Set Bank Account Carteira.
-		@param LBR_BankAccount_Carteira_UU Bank Account Carteira	  */
+		@param LBR_BankAccount_Carteira_UU Bank Account Carteira
+	*/
 	public void setLBR_BankAccount_Carteira_UU (String LBR_BankAccount_Carteira_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_BankAccount_Carteira_UU, LBR_BankAccount_Carteira_UU);
@@ -144,29 +183,31 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 
 	/** Get Bank Account Carteira.
 		@return Bank Account Carteira	  */
-	public String getLBR_BankAccount_Carteira_UU () 
+	public String getLBR_BankAccount_Carteira_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_BankAccount_Carteira_UU);
 	}
 
 	public I_LBR_BankAccount_Convenio getLBR_BankAccount_Convenio() throws RuntimeException
-    {
-		return (I_LBR_BankAccount_Convenio)MTable.get(getCtx(), I_LBR_BankAccount_Convenio.Table_Name)
-			.getPO(getLBR_BankAccount_Convenio_ID(), get_TrxName());	}
+	{
+		return (I_LBR_BankAccount_Convenio)MTable.get(getCtx(), I_LBR_BankAccount_Convenio.Table_ID)
+			.getPO(getLBR_BankAccount_Convenio_ID(), get_TrxName());
+	}
 
 	/** Set Bank Account Convênio.
-		@param LBR_BankAccount_Convenio_ID Bank Account Convênio	  */
+		@param LBR_BankAccount_Convenio_ID Bank Account Convênio
+	*/
 	public void setLBR_BankAccount_Convenio_ID (int LBR_BankAccount_Convenio_ID)
 	{
-		if (LBR_BankAccount_Convenio_ID < 1) 
+		if (LBR_BankAccount_Convenio_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_BankAccount_Convenio_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_BankAccount_Convenio_ID, Integer.valueOf(LBR_BankAccount_Convenio_ID));
 	}
 
 	/** Get Bank Account Convênio.
 		@return Bank Account Convênio	  */
-	public int getLBR_BankAccount_Convenio_ID () 
+	public int getLBR_BankAccount_Convenio_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BankAccount_Convenio_ID);
 		if (ii == null)
@@ -175,7 +216,8 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 	}
 
 	/** Set Carteira Code.
-		@param LBR_CarteiraCode Carteira Code	  */
+		@param LBR_CarteiraCode Carteira Code
+	*/
 	public void setLBR_CarteiraCode (String LBR_CarteiraCode)
 	{
 		set_Value (COLUMNNAME_LBR_CarteiraCode, LBR_CarteiraCode);
@@ -183,13 +225,14 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 
 	/** Get Carteira Code.
 		@return Carteira Code	  */
-	public String getLBR_CarteiraCode () 
+	public String getLBR_CarteiraCode()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CarteiraCode);
 	}
 
 	/** Set Carteira No..
-		@param LBR_CarteiraNo Carteira No.	  */
+		@param LBR_CarteiraNo Carteira No.
+	*/
 	public void setLBR_CarteiraNo (String LBR_CarteiraNo)
 	{
 		set_Value (COLUMNNAME_LBR_CarteiraNo, LBR_CarteiraNo);
@@ -197,7 +240,7 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 
 	/** Get Carteira No..
 		@return Carteira No.	  */
-	public String getLBR_CarteiraNo () 
+	public String getLBR_CarteiraNo()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CarteiraNo);
 	}
@@ -213,7 +256,8 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 	/** Vendor = 5 */
 	public static final String LBR_CARTEIRATYPE_Vendor = "5";
 	/** Set Bank Account Carteira Type.
-		@param LBR_CarteiraType Bank Account Carteira Type	  */
+		@param LBR_CarteiraType Bank Account Carteira Type
+	*/
 	public void setLBR_CarteiraType (String LBR_CarteiraType)
 	{
 
@@ -222,32 +266,32 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 
 	/** Get Bank Account Carteira Type.
 		@return Bank Account Carteira Type	  */
-	public String getLBR_CarteiraType () 
+	public String getLBR_CarteiraType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CarteiraType);
 	}
 
 	public org.compiere.model.I_AD_Sequence getLBR_SeqNumberInBank() throws RuntimeException
-    {
-		return (org.compiere.model.I_AD_Sequence)MTable.get(getCtx(), org.compiere.model.I_AD_Sequence.Table_Name)
-			.getPO(getLBR_SeqNumberInBank_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_AD_Sequence)MTable.get(getCtx(), org.compiere.model.I_AD_Sequence.Table_ID)
+			.getPO(getLBR_SeqNumberInBank_ID(), get_TrxName());
+	}
 
 	/** Set Sequence for Number in Bank.
-		@param LBR_SeqNumberInBank_ID 
-		Sequence for Number in Bank
-	  */
+		@param LBR_SeqNumberInBank_ID Sequence for Number in Bank
+	*/
 	public void setLBR_SeqNumberInBank_ID (int LBR_SeqNumberInBank_ID)
 	{
-		if (LBR_SeqNumberInBank_ID < 1) 
+		if (LBR_SeqNumberInBank_ID < 1)
 			set_Value (COLUMNNAME_LBR_SeqNumberInBank_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_SeqNumberInBank_ID, Integer.valueOf(LBR_SeqNumberInBank_ID));
 	}
 
 	/** Get Sequence for Number in Bank.
 		@return Sequence for Number in Bank
 	  */
-	public int getLBR_SeqNumberInBank_ID () 
+	public int getLBR_SeqNumberInBank_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_SeqNumberInBank_ID);
 		if (ii == null)
@@ -256,9 +300,8 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -267,7 +310,7 @@ public class X_LBR_BankAccount_Carteira extends PO implements I_LBR_BankAccount_
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}

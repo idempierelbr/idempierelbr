@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_DI
  *  @author iDempiere (generated) 
- *  @version Release 2.1
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_DI 
@@ -46,8 +46,8 @@ public interface I_LBR_DI
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_DI
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -79,6 +79,21 @@ public interface I_LBR_DI
 
 	public org.compiere.model.I_C_City getC_City() throws RuntimeException;
 
+    /** Column name C_Region_ID */
+    public static final String COLUMNNAME_C_Region_ID = "C_Region_ID";
+
+	/** Set Region.
+	  * Identifies a geographical Region
+	  */
+	public void setC_Region_ID (int C_Region_ID);
+
+	/** Get Region.
+	  * Identifies a geographical Region
+	  */
+	public int getC_Region_ID();
+
+	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException;
+
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
 
@@ -94,21 +109,6 @@ public interface I_LBR_DI
 	  * User who created this records
 	  */
 	public int getCreatedBy();
-
-    /** Column name C_Region_ID */
-    public static final String COLUMNNAME_C_Region_ID = "C_Region_ID";
-
-	/** Set Region.
-	  * Identifies a geographical Region
-	  */
-	public void setC_Region_ID (int C_Region_ID);
-
-	/** Get Region.
-	  * Identifies a geographical Region
-	  */
-	public int getC_Region_ID();
-
-	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException;
 
     /** Column name DateDoc */
     public static final String COLUMNNAME_DateDoc = "DateDoc";
@@ -158,21 +158,6 @@ public interface I_LBR_DI
 	/** Get AFRMM Amount	  */
 	public BigDecimal getLBR_AfrmmAmt();
 
-    /** Column name LBR_BP_Buyer_ID */
-    public static final String COLUMNNAME_LBR_BP_Buyer_ID = "LBR_BP_Buyer_ID";
-
-	/** Set Business Partner (Buyer).
-	  * Identifies a Business Partner
-	  */
-	public void setLBR_BP_Buyer_ID (int LBR_BP_Buyer_ID);
-
-	/** Get Business Partner (Buyer).
-	  * Identifies a Business Partner
-	  */
-	public int getLBR_BP_Buyer_ID();
-
-	public org.compiere.model.I_C_BPartner getLBR_BP_Buyer() throws RuntimeException;
-
     /** Column name LBR_BP_BuyerLocation_ID */
     public static final String COLUMNNAME_LBR_BP_BuyerLocation_ID = "LBR_BP_BuyerLocation_ID";
 
@@ -187,6 +172,21 @@ public interface I_LBR_DI
 	public int getLBR_BP_BuyerLocation_ID();
 
 	public org.compiere.model.I_C_BPartner_Location getLBR_BP_BuyerLocation() throws RuntimeException;
+
+    /** Column name LBR_BP_Buyer_ID */
+    public static final String COLUMNNAME_LBR_BP_Buyer_ID = "LBR_BP_Buyer_ID";
+
+	/** Set Business Partner (Buyer).
+	  * Identifies a Business Partner
+	  */
+	public void setLBR_BP_Buyer_ID (int LBR_BP_Buyer_ID);
+
+	/** Get Business Partner (Buyer).
+	  * Identifies a Business Partner
+	  */
+	public int getLBR_BP_Buyer_ID();
+
+	public org.compiere.model.I_C_BPartner getLBR_BP_Buyer() throws RuntimeException;
 
     /** Column name LBR_BP_Importer_ID */
     public static final String COLUMNNAME_LBR_BP_Importer_ID = "LBR_BP_Importer_ID";

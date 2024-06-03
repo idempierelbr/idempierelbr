@@ -22,21 +22,58 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_TaxBaseType
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_TaxBaseType extends PO implements I_LBR_TaxBaseType, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_TaxBaseType")
+public class X_LBR_TaxBaseType extends PO implements I_LBR_TaxBaseType, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140128L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_TaxBaseType (Properties ctx, int LBR_TaxBaseType_ID, String trxName)
     {
       super (ctx, LBR_TaxBaseType_ID, trxName);
       /** if (LBR_TaxBaseType_ID == 0)
+        {
+			setLBR_TaxBaseType_ID (0);
+			setLBR_TaxStatus_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxBaseType (Properties ctx, int LBR_TaxBaseType_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_TaxBaseType_ID, trxName, virtualColumns);
+      /** if (LBR_TaxBaseType_ID == 0)
+        {
+			setLBR_TaxBaseType_ID (0);
+			setLBR_TaxStatus_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxBaseType (Properties ctx, String LBR_TaxBaseType_UU, String trxName)
+    {
+      super (ctx, LBR_TaxBaseType_UU, trxName);
+      /** if (LBR_TaxBaseType_UU == null)
+        {
+			setLBR_TaxBaseType_ID (0);
+			setLBR_TaxStatus_ID (0);
+			setName (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_TaxBaseType (Properties ctx, String LBR_TaxBaseType_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_TaxBaseType_UU, trxName, virtualColumns);
+      /** if (LBR_TaxBaseType_UU == null)
         {
 			setLBR_TaxBaseType_ID (0);
 			setLBR_TaxStatus_ID (0);
@@ -51,7 +88,7 @@ public class X_LBR_TaxBaseType extends PO implements I_LBR_TaxBaseType, I_Persis
     }
 
     /** AccessLevel
-      * @return 6 - System - Client 
+      * @return 6 - System - Client
       */
     protected int get_AccessLevel()
     {
@@ -67,15 +104,14 @@ public class X_LBR_TaxBaseType extends PO implements I_LBR_TaxBaseType, I_Persis
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_TaxBaseType[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_TaxBaseType[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -84,24 +120,25 @@ public class X_LBR_TaxBaseType extends PO implements I_LBR_TaxBaseType, I_Persis
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set Tax Base Type.
-		@param LBR_TaxBaseType_ID Tax Base Type	  */
+		@param LBR_TaxBaseType_ID Tax Base Type
+	*/
 	public void setLBR_TaxBaseType_ID (int LBR_TaxBaseType_ID)
 	{
-		if (LBR_TaxBaseType_ID < 1) 
+		if (LBR_TaxBaseType_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxBaseType_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxBaseType_ID, Integer.valueOf(LBR_TaxBaseType_ID));
 	}
 
 	/** Get Tax Base Type.
 		@return Tax Base Type	  */
-	public int getLBR_TaxBaseType_ID () 
+	public int getLBR_TaxBaseType_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_TaxBaseType_ID);
 		if (ii == null)
@@ -110,7 +147,8 @@ public class X_LBR_TaxBaseType extends PO implements I_LBR_TaxBaseType, I_Persis
 	}
 
 	/** Set LBR_TaxBaseType_UU.
-		@param LBR_TaxBaseType_UU LBR_TaxBaseType_UU	  */
+		@param LBR_TaxBaseType_UU LBR_TaxBaseType_UU
+	*/
 	public void setLBR_TaxBaseType_UU (String LBR_TaxBaseType_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_TaxBaseType_UU, LBR_TaxBaseType_UU);
@@ -118,32 +156,32 @@ public class X_LBR_TaxBaseType extends PO implements I_LBR_TaxBaseType, I_Persis
 
 	/** Get LBR_TaxBaseType_UU.
 		@return LBR_TaxBaseType_UU	  */
-	public String getLBR_TaxBaseType_UU () 
+	public String getLBR_TaxBaseType_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_TaxBaseType_UU);
 	}
 
 	public I_LBR_TaxStatus getLBR_TaxStatus() throws RuntimeException
-    {
-		return (I_LBR_TaxStatus)MTable.get(getCtx(), I_LBR_TaxStatus.Table_Name)
-			.getPO(getLBR_TaxStatus_ID(), get_TrxName());	}
+	{
+		return (I_LBR_TaxStatus)MTable.get(getCtx(), I_LBR_TaxStatus.Table_ID)
+			.getPO(getLBR_TaxStatus_ID(), get_TrxName());
+	}
 
 	/** Set Tax Status.
-		@param LBR_TaxStatus_ID 
-		Brazilian Tax Status
-	  */
+		@param LBR_TaxStatus_ID Brazilian Tax Status
+	*/
 	public void setLBR_TaxStatus_ID (int LBR_TaxStatus_ID)
 	{
-		if (LBR_TaxStatus_ID < 1) 
+		if (LBR_TaxStatus_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxStatus_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_TaxStatus_ID, Integer.valueOf(LBR_TaxStatus_ID));
 	}
 
 	/** Get Tax Status.
 		@return Brazilian Tax Status
 	  */
-	public int getLBR_TaxStatus_ID () 
+	public int getLBR_TaxStatus_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_TaxStatus_ID);
 		if (ii == null)
@@ -152,9 +190,8 @@ public class X_LBR_TaxBaseType extends PO implements I_LBR_TaxBaseType, I_Persis
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -163,15 +200,14 @@ public class X_LBR_TaxBaseType extends PO implements I_LBR_TaxBaseType, I_Persis
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}
 
 	/** Set Script.
-		@param Script 
-		Dynamic Java Language Script to calculate result
-	  */
+		@param Script Dynamic Java Language Script to calculate result
+	*/
 	public void setScript (String Script)
 	{
 		set_Value (COLUMNNAME_Script, Script);
@@ -180,15 +216,14 @@ public class X_LBR_TaxBaseType extends PO implements I_LBR_TaxBaseType, I_Persis
 	/** Get Script.
 		@return Dynamic Java Language Script to calculate result
 	  */
-	public String getScript () 
+	public String getScript()
 	{
 		return (String)get_Value(COLUMNNAME_Script);
 	}
 
 	/** Set Search Key.
-		@param Value 
-		Search key for the record in the format required - must be unique
-	  */
+		@param Value Search key for the record in the format required - must be unique
+	*/
 	public void setValue (String Value)
 	{
 		set_Value (COLUMNNAME_Value, Value);
@@ -197,7 +232,7 @@ public class X_LBR_TaxBaseType extends PO implements I_LBR_TaxBaseType, I_Persis
 	/** Get Search Key.
 		@return Search key for the record in the format required - must be unique
 	  */
-	public String getValue () 
+	public String getValue()
 	{
 		return (String)get_Value(COLUMNNAME_Value);
 	}

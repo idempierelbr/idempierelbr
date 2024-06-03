@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NotaFiscalLine
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_NotaFiscalLine 
@@ -46,8 +46,8 @@ public interface I_LBR_NotaFiscalLine
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_NotaFiscalLine
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -79,21 +79,35 @@ public interface I_LBR_NotaFiscalLine
 
 	public org.compiere.model.I_C_Charge getC_Charge() throws RuntimeException;
 
-    /** Column name Created */
-    public static final String COLUMNNAME_Created = "Created";
+    /** Column name C_InvoiceLine_ID */
+    public static final String COLUMNNAME_C_InvoiceLine_ID = "C_InvoiceLine_ID";
 
-	/** Get Created.
-	  * Date this record was created
+	/** Set Invoice Line.
+	  * Invoice Detail Line
 	  */
-	public Timestamp getCreated();
+	public void setC_InvoiceLine_ID (int C_InvoiceLine_ID);
 
-    /** Column name CreatedBy */
-    public static final String COLUMNNAME_CreatedBy = "CreatedBy";
-
-	/** Get Created By.
-	  * User who created this records
+	/** Get Invoice Line.
+	  * Invoice Detail Line
 	  */
-	public int getCreatedBy();
+	public int getC_InvoiceLine_ID();
+
+	public org.compiere.model.I_C_InvoiceLine getC_InvoiceLine() throws RuntimeException;
+
+    /** Column name C_OrderLine_ID */
+    public static final String COLUMNNAME_C_OrderLine_ID = "C_OrderLine_ID";
+
+	/** Set Sales Order Line.
+	  * Sales Order Line
+	  */
+	public void setC_OrderLine_ID (int C_OrderLine_ID);
+
+	/** Get Sales Order Line.
+	  * Sales Order Line
+	  */
+	public int getC_OrderLine_ID();
+
+	public org.compiere.model.I_C_OrderLine getC_OrderLine() throws RuntimeException;
 
     /** Column name C_Tax_ID */
     public static final String COLUMNNAME_C_Tax_ID = "C_Tax_ID";
@@ -109,6 +123,37 @@ public interface I_LBR_NotaFiscalLine
 	public int getC_Tax_ID();
 
 	public org.compiere.model.I_C_Tax getC_Tax() throws RuntimeException;
+
+    /** Column name C_UOM_ID */
+    public static final String COLUMNNAME_C_UOM_ID = "C_UOM_ID";
+
+	/** Set UOM.
+	  * Unit of Measure
+	  */
+	public void setC_UOM_ID (int C_UOM_ID);
+
+	/** Get UOM.
+	  * Unit of Measure
+	  */
+	public int getC_UOM_ID();
+
+	public org.compiere.model.I_C_UOM getC_UOM() throws RuntimeException;
+
+    /** Column name Created */
+    public static final String COLUMNNAME_Created = "Created";
+
+	/** Get Created.
+	  * Date this record was created
+	  */
+	public Timestamp getCreated();
+
+    /** Column name CreatedBy */
+    public static final String COLUMNNAME_CreatedBy = "CreatedBy";
+
+	/** Get Created By.
+	  * User who created this records
+	  */
+	public int getCreatedBy();
 
     /** Column name Description */
     public static final String COLUMNNAME_Description = "Description";
@@ -136,21 +181,6 @@ public interface I_LBR_NotaFiscalLine
 	  */
 	public boolean isActive();
 
-    /** Column name LBR_NotaFiscal_ID */
-    public static final String COLUMNNAME_LBR_NotaFiscal_ID = "LBR_NotaFiscal_ID";
-
-	/** Set Brazilian Fiscal Invoice (Nota Fiscal).
-	  * Brazilian Fiscal Invoice (Nota Fiscal) Identifier
-	  */
-	public void setLBR_NotaFiscal_ID (int LBR_NotaFiscal_ID);
-
-	/** Get Brazilian Fiscal Invoice (Nota Fiscal).
-	  * Brazilian Fiscal Invoice (Nota Fiscal) Identifier
-	  */
-	public int getLBR_NotaFiscal_ID();
-
-	public I_LBR_NotaFiscal getLBR_NotaFiscal() throws RuntimeException;
-
     /** Column name LBR_NotaFiscalLine_ID */
     public static final String COLUMNNAME_LBR_NotaFiscalLine_ID = "LBR_NotaFiscalLine_ID";
 
@@ -176,6 +206,21 @@ public interface I_LBR_NotaFiscalLine
 	  * Brazilian Fiscal Invoice (Nota Fiscal) Line Identifier
 	  */
 	public String getLBR_NotaFiscalLine_UU();
+
+    /** Column name LBR_NotaFiscal_ID */
+    public static final String COLUMNNAME_LBR_NotaFiscal_ID = "LBR_NotaFiscal_ID";
+
+	/** Set Brazilian Fiscal Invoice (Nota Fiscal).
+	  * Brazilian Fiscal Invoice (Nota Fiscal) Identifier
+	  */
+	public void setLBR_NotaFiscal_ID (int LBR_NotaFiscal_ID);
+
+	/** Get Brazilian Fiscal Invoice (Nota Fiscal).
+	  * Brazilian Fiscal Invoice (Nota Fiscal) Identifier
+	  */
+	public int getLBR_NotaFiscal_ID();
+
+	public I_LBR_NotaFiscal getLBR_NotaFiscal() throws RuntimeException;
 
     /** Column name Line */
     public static final String COLUMNNAME_Line = "Line";
@@ -217,6 +262,21 @@ public interface I_LBR_NotaFiscalLine
 	public int getM_Product_ID();
 
 	public org.compiere.model.I_M_Product getM_Product() throws RuntimeException;
+
+    /** Column name M_RMALine_ID */
+    public static final String COLUMNNAME_M_RMALine_ID = "M_RMALine_ID";
+
+	/** Set RMA Line.
+	  * Return Material Authorization Line
+	  */
+	public void setM_RMALine_ID (int M_RMALine_ID);
+
+	/** Get RMA Line.
+	  * Return Material Authorization Line
+	  */
+	public int getM_RMALine_ID();
+
+	public org.compiere.model.I_M_RMALine getM_RMALine() throws RuntimeException;
 
     /** Column name PriceActual */
     public static final String COLUMNNAME_PriceActual = "PriceActual";
@@ -272,62 +332,4 @@ public interface I_LBR_NotaFiscalLine
 	  * User who updated this records
 	  */
 	public int getUpdatedBy();
-	
-	/** Column name C_UOM_ID */
-    public static final String COLUMNNAME_C_UOM_ID = "C_UOM_ID";
-
-	/** Set UOM.
-	  * Unit of Measure
-	  */
-	public void setC_UOM_ID (int C_UOM_ID);
-
-	/** Get UOM.
-	  * Unit of Measure
-	  */
-	public int getC_UOM_ID();
-	
-	/** Column name C_InvoiceLine_ID */
-    public static final String COLUMNNAME_C_InvoiceLine_ID = "C_InvoiceLine_ID";
-
-	/** Set Invoice Line.
-	  * Invoice Detail Line
-	  */
-	public void setC_InvoiceLine_ID (int C_InvoiceLine_ID);
-
-	/** Get Invoice Line.
-	  * Invoice Detail Line
-	  */
-	public int getC_InvoiceLine_ID();
-
-	public org.compiere.model.I_C_InvoiceLine getC_InvoiceLine() throws RuntimeException;
-
-    /** Column name C_OrderLine_ID */
-    public static final String COLUMNNAME_C_OrderLine_ID = "C_OrderLine_ID";
-
-	/** Set Sales Order Line.
-	  * Sales Order Line
-	  */
-	public void setC_OrderLine_ID (int C_OrderLine_ID);
-
-	/** Get Sales Order Line.
-	  * Sales Order Line
-	  */
-	public int getC_OrderLine_ID();
-
-	public org.compiere.model.I_C_OrderLine getC_OrderLine() throws RuntimeException;
-	
-	/** Column name M_RMALine_ID */
-    public static final String COLUMNNAME_M_RMALine_ID = "M_RMALine_ID";
-
-	/** Set RMA Line.
-	  * Return Material Authorization Line
-	  */
-	public void setM_RMALine_ID (int M_RMALine_ID);
-
-	/** Get RMA Line.
-	  * Return Material Authorization Line
-	  */
-	public int getM_RMALine_ID();
-
-	public org.compiere.model.I_M_RMALine getM_RMALine() throws RuntimeException;
 }

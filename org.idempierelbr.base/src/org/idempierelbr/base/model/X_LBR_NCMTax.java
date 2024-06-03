@@ -24,15 +24,16 @@ import org.compiere.model.*;
 import org.compiere.util.KeyNamePair;
 
 /** Generated Model for LBR_NCMTax
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_NCMTax extends PO implements I_LBR_NCMTax, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_NCMTax")
+public class X_LBR_NCMTax extends PO implements I_LBR_NCMTax, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140129L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_NCMTax (Properties ctx, int LBR_NCMTax_ID, String trxName)
@@ -42,8 +43,50 @@ public class X_LBR_NCMTax extends PO implements I_LBR_NCMTax, I_Persistent
         {
 			setLBR_HasSubstitution (false);
 // N
-			setLBR_NCM_ID (0);
 			setLBR_NCMTax_ID (0);
+			setLBR_NCM_ID (0);
+			setValidFrom (new Timestamp( System.currentTimeMillis() ));
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NCMTax (Properties ctx, int LBR_NCMTax_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NCMTax_ID, trxName, virtualColumns);
+      /** if (LBR_NCMTax_ID == 0)
+        {
+			setLBR_HasSubstitution (false);
+// N
+			setLBR_NCMTax_ID (0);
+			setLBR_NCM_ID (0);
+			setValidFrom (new Timestamp( System.currentTimeMillis() ));
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NCMTax (Properties ctx, String LBR_NCMTax_UU, String trxName)
+    {
+      super (ctx, LBR_NCMTax_UU, trxName);
+      /** if (LBR_NCMTax_UU == null)
+        {
+			setLBR_HasSubstitution (false);
+// N
+			setLBR_NCMTax_ID (0);
+			setLBR_NCM_ID (0);
+			setValidFrom (new Timestamp( System.currentTimeMillis() ));
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_NCMTax (Properties ctx, String LBR_NCMTax_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_NCMTax_UU, trxName, virtualColumns);
+      /** if (LBR_NCMTax_UU == null)
+        {
+			setLBR_HasSubstitution (false);
+// N
+			setLBR_NCMTax_ID (0);
+			setLBR_NCM_ID (0);
 			setValidFrom (new Timestamp( System.currentTimeMillis() ));
         } */
     }
@@ -55,7 +98,7 @@ public class X_LBR_NCMTax extends PO implements I_LBR_NCMTax, I_Persistent
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -71,32 +114,32 @@ public class X_LBR_NCMTax extends PO implements I_LBR_NCMTax, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_NCMTax[")
+      StringBuilder sb = new StringBuilder ("X_LBR_NCMTax[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException
-    {
-		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_Name)
-			.getPO(getC_Region_ID(), get_TrxName());	}
+	{
+		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_ID)
+			.getPO(getC_Region_ID(), get_TrxName());
+	}
 
 	/** Set Region.
-		@param C_Region_ID 
-		Identifies a geographical Region
-	  */
+		@param C_Region_ID Identifies a geographical Region
+	*/
 	public void setC_Region_ID (int C_Region_ID)
 	{
-		if (C_Region_ID < 1) 
+		if (C_Region_ID < 1)
 			set_Value (COLUMNNAME_C_Region_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_C_Region_ID, Integer.valueOf(C_Region_ID));
 	}
 
 	/** Get Region.
 		@return Identifies a geographical Region
 	  */
-	public int getC_Region_ID () 
+	public int getC_Region_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_C_Region_ID);
 		if (ii == null)
@@ -105,9 +148,8 @@ public class X_LBR_NCMTax extends PO implements I_LBR_NCMTax, I_Persistent
 	}
 
 	/** Set Description.
-		@param Description 
-		Optional short description of the record
-	  */
+		@param Description Optional short description of the record
+	*/
 	public void setDescription (String Description)
 	{
 		set_Value (COLUMNNAME_Description, Description);
@@ -116,15 +158,14 @@ public class X_LBR_NCMTax extends PO implements I_LBR_NCMTax, I_Persistent
 	/** Get Description.
 		@return Optional short description of the record
 	  */
-	public String getDescription () 
+	public String getDescription()
 	{
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
 	/** Set Has Substitution.
-		@param LBR_HasSubstitution 
-		Defines if the record has Substituion
-	  */
+		@param LBR_HasSubstitution Defines if the record has Substituion
+	*/
 	public void setLBR_HasSubstitution (boolean LBR_HasSubstitution)
 	{
 		set_Value (COLUMNNAME_LBR_HasSubstitution, Boolean.valueOf(LBR_HasSubstitution));
@@ -133,62 +174,33 @@ public class X_LBR_NCMTax extends PO implements I_LBR_NCMTax, I_Persistent
 	/** Get Has Substitution.
 		@return Defines if the record has Substituion
 	  */
-	public boolean isLBR_HasSubstitution () 
+	public boolean isLBR_HasSubstitution()
 	{
 		Object oo = get_Value(COLUMNNAME_LBR_HasSubstitution);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
-	public I_LBR_NCM getLBR_NCM() throws RuntimeException
-    {
-		return (I_LBR_NCM)MTable.get(getCtx(), I_LBR_NCM.Table_Name)
-			.getPO(getLBR_NCM_ID(), get_TrxName());	}
-
-	/** Set NCM.
-		@param LBR_NCM_ID 
-		NCM stands for Nomenclatura Comum do MERCOSUL
-	  */
-	public void setLBR_NCM_ID (int LBR_NCM_ID)
-	{
-		if (LBR_NCM_ID < 1) 
-			set_Value (COLUMNNAME_LBR_NCM_ID, null);
-		else 
-			set_Value (COLUMNNAME_LBR_NCM_ID, Integer.valueOf(LBR_NCM_ID));
-	}
-
-	/** Get NCM.
-		@return NCM stands for Nomenclatura Comum do MERCOSUL
-	  */
-	public int getLBR_NCM_ID () 
-	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NCM_ID);
-		if (ii == null)
-			 return 0;
-		return ii.intValue();
-	}
-
 	/** Set NCM Tax.
-		@param LBR_NCMTax_ID 
-		Defines NCM Tax
-	  */
+		@param LBR_NCMTax_ID Defines NCM Tax
+	*/
 	public void setLBR_NCMTax_ID (int LBR_NCMTax_ID)
 	{
-		if (LBR_NCMTax_ID < 1) 
+		if (LBR_NCMTax_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_NCMTax_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_NCMTax_ID, Integer.valueOf(LBR_NCMTax_ID));
 	}
 
 	/** Get NCM Tax.
 		@return Defines NCM Tax
 	  */
-	public int getLBR_NCMTax_ID () 
+	public int getLBR_NCMTax_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NCMTax_ID);
 		if (ii == null)
@@ -197,7 +209,8 @@ public class X_LBR_NCMTax extends PO implements I_LBR_NCMTax, I_Persistent
 	}
 
 	/** Set LBR_NCMTax_UU.
-		@param LBR_NCMTax_UU LBR_NCMTax_UU	  */
+		@param LBR_NCMTax_UU LBR_NCMTax_UU
+	*/
 	public void setLBR_NCMTax_UU (String LBR_NCMTax_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_NCMTax_UU, LBR_NCMTax_UU);
@@ -205,15 +218,42 @@ public class X_LBR_NCMTax extends PO implements I_LBR_NCMTax, I_Persistent
 
 	/** Get LBR_NCMTax_UU.
 		@return LBR_NCMTax_UU	  */
-	public String getLBR_NCMTax_UU () 
+	public String getLBR_NCMTax_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_NCMTax_UU);
 	}
 
-	/** Set Transaction Tax.
-		@param LBR_Tax_ID 
-		Identifies a transaction tax (document/line)
+	public I_LBR_NCM getLBR_NCM() throws RuntimeException
+	{
+		return (I_LBR_NCM)MTable.get(getCtx(), I_LBR_NCM.Table_ID)
+			.getPO(getLBR_NCM_ID(), get_TrxName());
+	}
+
+	/** Set NCM.
+		@param LBR_NCM_ID NCM stands for Nomenclatura Comum do MERCOSUL
+	*/
+	public void setLBR_NCM_ID (int LBR_NCM_ID)
+	{
+		if (LBR_NCM_ID < 1)
+			set_Value (COLUMNNAME_LBR_NCM_ID, null);
+		else
+			set_Value (COLUMNNAME_LBR_NCM_ID, Integer.valueOf(LBR_NCM_ID));
+	}
+
+	/** Get NCM.
+		@return NCM stands for Nomenclatura Comum do MERCOSUL
 	  */
+	public int getLBR_NCM_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NCM_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	/** Set Transaction Tax.
+		@param LBR_Tax_ID Identifies a transaction tax (document/line)
+	*/
 	public void setLBR_Tax_ID (int LBR_Tax_ID)
 	{
 		if (LBR_Tax_ID < 1)
@@ -225,26 +265,25 @@ public class X_LBR_NCMTax extends PO implements I_LBR_NCMTax, I_Persistent
 	/** Get Transaction Tax.
 		@return Identifies a transaction tax (document/line)
 	  */
-	public int getLBR_Tax_ID () 
+	public int getLBR_Tax_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Tax_ID);
 		if (ii == null)
-			 return 0;
+			return 0;
 		return ii.intValue();
 	}
 
     /** Get Record ID/ColumnName
         @return ID/ColumnName pair
       */
-    public KeyNamePair getKeyNamePair() 
+    public KeyNamePair getKeyNamePair()
     {
         return new KeyNamePair(get_ID(), String.valueOf(getLBR_Tax_ID()));
     }
 
 	/** Set Valid from.
-		@param ValidFrom 
-		Valid from including this date (first day)
-	  */
+		@param ValidFrom Valid from including this date (first day)
+	*/
 	public void setValidFrom (Timestamp ValidFrom)
 	{
 		set_Value (COLUMNNAME_ValidFrom, ValidFrom);
@@ -253,7 +292,7 @@ public class X_LBR_NCMTax extends PO implements I_LBR_NCMTax, I_Persistent
 	/** Get Valid from.
 		@return Valid from including this date (first day)
 	  */
-	public Timestamp getValidFrom () 
+	public Timestamp getValidFrom()
 	{
 		return (Timestamp)get_Value(COLUMNNAME_ValidFrom);
 	}

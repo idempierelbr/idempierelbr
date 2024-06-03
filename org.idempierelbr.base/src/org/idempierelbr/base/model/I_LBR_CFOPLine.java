@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_CFOPLine
  *  @author iDempiere (generated) 
- *  @version Release 2.0
+ *  @version Release 11
  */
 @SuppressWarnings("all")
 public interface I_LBR_CFOPLine 
@@ -46,8 +46,8 @@ public interface I_LBR_CFOPLine
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
-	/** Get Client.
-	  * Client/Tenant for this installation.
+	/** Get Tenant.
+	  * Tenant for this installation.
 	  */
 	public int getAD_Client_ID();
 
@@ -55,12 +55,12 @@ public interface I_LBR_CFOPLine
     public static final String COLUMNNAME_AD_Org_ID = "AD_Org_ID";
 
 	/** Set Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
-	  * Organizational entity within client
+	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
 
@@ -136,21 +136,6 @@ public interface I_LBR_CFOPLine
 
 	public I_LBR_BPartnerCategory getLBR_BPartnerCategory() throws RuntimeException;
 
-    /** Column name LBR_CFOP_ID */
-    public static final String COLUMNNAME_LBR_CFOP_ID = "LBR_CFOP_ID";
-
-	/** Set CFOP.
-	  * Indentifies the CFOP
-	  */
-	public void setLBR_CFOP_ID (int LBR_CFOP_ID);
-
-	/** Get CFOP.
-	  * Indentifies the CFOP
-	  */
-	public int getLBR_CFOP_ID();
-
-	public I_LBR_CFOP getLBR_CFOP() throws RuntimeException;
-
     /** Column name LBR_CFOPLine_ID */
     public static final String COLUMNNAME_LBR_CFOPLine_ID = "LBR_CFOPLine_ID";
 
@@ -172,6 +157,21 @@ public interface I_LBR_CFOPLine
 
 	/** Get LBR_CFOPLine_UU	  */
 	public String getLBR_CFOPLine_UU();
+
+    /** Column name LBR_CFOP_ID */
+    public static final String COLUMNNAME_LBR_CFOP_ID = "LBR_CFOP_ID";
+
+	/** Set CFOP.
+	  * Indentifies the CFOP
+	  */
+	public void setLBR_CFOP_ID (int LBR_CFOP_ID);
+
+	/** Get CFOP.
+	  * Indentifies the CFOP
+	  */
+	public int getLBR_CFOP_ID();
+
+	public I_LBR_CFOP getLBR_CFOP() throws RuntimeException;
 
     /** Column name LBR_DestionationType */
     public static final String COLUMNNAME_LBR_DestionationType = "LBR_DestionationType";
@@ -229,19 +229,6 @@ public interface I_LBR_CFOPLine
 
 	public I_LBR_ProductCategory getLBR_ProductCategory() throws RuntimeException;
 
-    /** Column name LBR_Tax_ID */
-    public static final String COLUMNNAME_LBR_Tax_ID = "LBR_Tax_ID";
-
-	/** Set Transaction Tax.
-	  * Identifies a transaction tax (document/line)
-	  */
-	public void setLBR_Tax_ID (int LBR_Tax_ID);
-
-	/** Get Transaction Tax.
-	  * Identifies a transaction tax (document/line)
-	  */
-	public int getLBR_Tax_ID();
-
     /** Column name LBR_TaxStatus */
     public static final String COLUMNNAME_LBR_TaxStatus = "LBR_TaxStatus";
 
@@ -254,6 +241,19 @@ public interface I_LBR_CFOPLine
 	  * Defines the Tax Status
 	  */
 	public String getLBR_TaxStatus();
+
+    /** Column name LBR_Tax_ID */
+    public static final String COLUMNNAME_LBR_Tax_ID = "LBR_Tax_ID";
+
+	/** Set Transaction Tax.
+	  * Identifies a transaction tax (document/line)
+	  */
+	public void setLBR_Tax_ID (int LBR_Tax_ID);
+
+	/** Get Transaction Tax.
+	  * Identifies a transaction tax (document/line)
+	  */
+	public int getLBR_Tax_ID();
 
     /** Column name LBR_TransactionType */
     public static final String COLUMNNAME_LBR_TransactionType = "LBR_TransactionType";

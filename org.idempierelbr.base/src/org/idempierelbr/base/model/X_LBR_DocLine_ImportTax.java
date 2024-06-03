@@ -24,21 +24,55 @@ import org.compiere.model.*;
 import org.compiere.util.Env;
 
 /** Generated Model for LBR_DocLine_ImportTax
- *  @author iDempiere (generated) 
- *  @version Release 3.1 - $Id$ */
-public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportTax, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_DocLine_ImportTax")
+public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportTax, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20170110L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_DocLine_ImportTax (Properties ctx, int LBR_DocLine_ImportTax_ID, String trxName)
     {
       super (ctx, LBR_DocLine_ImportTax_ID, trxName);
       /** if (LBR_DocLine_ImportTax_ID == 0)
+        {
+			setIsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_ImportTax (Properties ctx, int LBR_DocLine_ImportTax_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_DocLine_ImportTax_ID, trxName, virtualColumns);
+      /** if (LBR_DocLine_ImportTax_ID == 0)
+        {
+			setIsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_ImportTax (Properties ctx, String LBR_DocLine_ImportTax_UU, String trxName)
+    {
+      super (ctx, LBR_DocLine_ImportTax_UU, trxName);
+      /** if (LBR_DocLine_ImportTax_UU == null)
+        {
+			setIsTaxIncluded (false);
+// N
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_DocLine_ImportTax (Properties ctx, String LBR_DocLine_ImportTax_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_DocLine_ImportTax_UU, trxName, virtualColumns);
+      /** if (LBR_DocLine_ImportTax_UU == null)
         {
 			setIsTaxIncluded (false);
 // N
@@ -52,7 +86,7 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org 
+      * @return 3 - Client - Org
       */
     protected int get_AccessLevel()
     {
@@ -68,13 +102,14 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_DocLine_ImportTax[")
+      StringBuilder sb = new StringBuilder ("X_LBR_DocLine_ImportTax[")
         .append(get_ID()).append("]");
       return sb.toString();
     }
 
 	/** Set Customs Value.
-		@param CustomsValue Customs Value	  */
+		@param CustomsValue Customs Value
+	*/
 	public void setCustomsValue (BigDecimal CustomsValue)
 	{
 		set_Value (COLUMNNAME_CustomsValue, CustomsValue);
@@ -82,7 +117,7 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
 
 	/** Get Customs Value.
 		@return Customs Value	  */
-	public BigDecimal getCustomsValue () 
+	public BigDecimal getCustomsValue()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_CustomsValue);
 		if (bd == null)
@@ -91,9 +126,8 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
 	}
 
 	/** Set Price includes Tax.
-		@param IsTaxIncluded 
-		Tax is included in the price 
-	  */
+		@param IsTaxIncluded Tax is included in the price 
+	*/
 	public void setIsTaxIncluded (boolean IsTaxIncluded)
 	{
 		set_Value (COLUMNNAME_IsTaxIncluded, Boolean.valueOf(IsTaxIncluded));
@@ -102,39 +136,39 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
 	/** Get Price includes Tax.
 		@return Tax is included in the price 
 	  */
-	public boolean isTaxIncluded () 
+	public boolean isTaxIncluded()
 	{
 		Object oo = get_Value(COLUMNNAME_IsTaxIncluded);
-		if (oo != null) 
+		if (oo != null)
 		{
-			 if (oo instanceof Boolean) 
-				 return ((Boolean)oo).booleanValue(); 
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
 			return "Y".equals(oo);
 		}
 		return false;
 	}
 
 	public I_LBR_DocLine_Details getLBR_DocLine_Details() throws RuntimeException
-    {
-		return (I_LBR_DocLine_Details)MTable.get(getCtx(), I_LBR_DocLine_Details.Table_Name)
-			.getPO(getLBR_DocLine_Details_ID(), get_TrxName());	}
+	{
+		return (I_LBR_DocLine_Details)MTable.get(getCtx(), I_LBR_DocLine_Details.Table_ID)
+			.getPO(getLBR_DocLine_Details_ID(), get_TrxName());
+	}
 
 	/** Set Doc Line Details.
-		@param LBR_DocLine_Details_ID 
-		Doc Line Details
-	  */
+		@param LBR_DocLine_Details_ID Doc Line Details
+	*/
 	public void setLBR_DocLine_Details_ID (int LBR_DocLine_Details_ID)
 	{
-		if (LBR_DocLine_Details_ID < 1) 
+		if (LBR_DocLine_Details_ID < 1)
 			set_Value (COLUMNNAME_LBR_DocLine_Details_ID, null);
-		else 
+		else
 			set_Value (COLUMNNAME_LBR_DocLine_Details_ID, Integer.valueOf(LBR_DocLine_Details_ID));
 	}
 
 	/** Get Doc Line Details.
 		@return Doc Line Details
 	  */
-	public int getLBR_DocLine_Details_ID () 
+	public int getLBR_DocLine_Details_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DocLine_Details_ID);
 		if (ii == null)
@@ -143,21 +177,20 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
 	}
 
 	/** Set Doc Line Import Tax.
-		@param LBR_DocLine_ImportTax_ID 
-		Doc Line Import Tax
-	  */
+		@param LBR_DocLine_ImportTax_ID Doc Line Import Tax
+	*/
 	public void setLBR_DocLine_ImportTax_ID (int LBR_DocLine_ImportTax_ID)
 	{
-		if (LBR_DocLine_ImportTax_ID < 1) 
+		if (LBR_DocLine_ImportTax_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_DocLine_ImportTax_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_DocLine_ImportTax_ID, Integer.valueOf(LBR_DocLine_ImportTax_ID));
 	}
 
 	/** Get Doc Line Import Tax.
 		@return Doc Line Import Tax
 	  */
-	public int getLBR_DocLine_ImportTax_ID () 
+	public int getLBR_DocLine_ImportTax_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_DocLine_ImportTax_ID);
 		if (ii == null)
@@ -166,9 +199,8 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
 	}
 
 	/** Set Doc Line Import Tax.
-		@param LBR_DocLine_ImportTax_UU 
-		Doc Line Import Tax
-	  */
+		@param LBR_DocLine_ImportTax_UU Doc Line Import Tax
+	*/
 	public void setLBR_DocLine_ImportTax_UU (String LBR_DocLine_ImportTax_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_DocLine_ImportTax_UU, LBR_DocLine_ImportTax_UU);
@@ -177,15 +209,14 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
 	/** Get Doc Line Import Tax.
 		@return Doc Line Import Tax
 	  */
-	public String getLBR_DocLine_ImportTax_UU () 
+	public String getLBR_DocLine_ImportTax_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_DocLine_ImportTax_UU);
 	}
 
 	/** Set IOF Amount.
-		@param LBR_IOFAmt 
-		Defines the IOF Amount
-	  */
+		@param LBR_IOFAmt Defines the IOF Amount
+	*/
 	public void setLBR_IOFAmt (BigDecimal LBR_IOFAmt)
 	{
 		set_Value (COLUMNNAME_LBR_IOFAmt, LBR_IOFAmt);
@@ -194,7 +225,7 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
 	/** Get IOF Amount.
 		@return Defines the IOF Amount
 	  */
-	public BigDecimal getLBR_IOFAmt () 
+	public BigDecimal getLBR_IOFAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IOFAmt);
 		if (bd == null)
@@ -203,9 +234,8 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
 	}
 
 	/** Set Tax Amount.
-		@param LBR_TaxAmt 
-		Defines the Tax Amount
-	  */
+		@param LBR_TaxAmt Defines the Tax Amount
+	*/
 	public void setLBR_TaxAmt (BigDecimal LBR_TaxAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxAmt, LBR_TaxAmt);
@@ -214,7 +244,7 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
 	/** Get Tax Amount.
 		@return Defines the Tax Amount
 	  */
-	public BigDecimal getLBR_TaxAmt () 
+	public BigDecimal getLBR_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmt);
 		if (bd == null)
@@ -223,9 +253,8 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
 	}
 
 	/** Set Tax Base Amount.
-		@param LBR_TaxBaseAmt 
-		Defines the Tax Base Amount
-	  */
+		@param LBR_TaxBaseAmt Defines the Tax Base Amount
+	*/
 	public void setLBR_TaxBaseAmt (BigDecimal LBR_TaxBaseAmt)
 	{
 		set_Value (COLUMNNAME_LBR_TaxBaseAmt, LBR_TaxBaseAmt);
@@ -234,7 +263,7 @@ public class X_LBR_DocLine_ImportTax extends PO implements I_LBR_DocLine_ImportT
 	/** Get Tax Base Amount.
 		@return Defines the Tax Base Amount
 	  */
-	public BigDecimal getLBR_TaxBaseAmt () 
+	public BigDecimal getLBR_TaxBaseAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
 		if (bd == null)

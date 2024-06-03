@@ -55,6 +55,7 @@ public class ICMSGrupoBean
 	private String vCredICMSSN;
 	private String pDif;
 	private String vICMSDif;
+	private String vICMSSubstituto;
 	//
 	public String getOrig()
 	{
@@ -331,5 +332,11 @@ public class ICMSGrupoBean
 	}
 	public void setvFCPSTRet(String vFCPSTRet) {
 		this.vFCPSTRet = vFCPSTRet;
+	}
+	public String getvICMSSubstituto() {
+		return vICMSSubstituto;
+	}
+	public void setvICMSSubstituto(String vICMSSubstituto) {
+		this.vICMSSubstituto = vICMSSubstituto;
 	}
 }	//	ICMSGrupoBean

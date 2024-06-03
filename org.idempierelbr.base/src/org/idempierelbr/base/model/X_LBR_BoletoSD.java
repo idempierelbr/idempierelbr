@@ -22,21 +22,55 @@ import java.util.Properties;
 import org.compiere.model.*;
 
 /** Generated Model for LBR_BoletoSD
- *  @author iDempiere (generated) 
- *  @version Release 2.0 - $Id$ */
-public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent 
+ *  @author iDempiere (generated)
+ *  @version Release 11 - $Id$ */
+@org.adempiere.base.Model(table="LBR_BoletoSD")
+public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20140813L;
+	private static final long serialVersionUID = 20240603L;
 
     /** Standard Constructor */
     public X_LBR_BoletoSD (Properties ctx, int LBR_BoletoSD_ID, String trxName)
     {
       super (ctx, LBR_BoletoSD_ID, trxName);
       /** if (LBR_BoletoSD_ID == 0)
+        {
+			setLBR_Boleto_ID (0);
+			setLBR_StaticDataType (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_BoletoSD (Properties ctx, int LBR_BoletoSD_ID, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_BoletoSD_ID, trxName, virtualColumns);
+      /** if (LBR_BoletoSD_ID == 0)
+        {
+			setLBR_Boleto_ID (0);
+			setLBR_StaticDataType (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_BoletoSD (Properties ctx, String LBR_BoletoSD_UU, String trxName)
+    {
+      super (ctx, LBR_BoletoSD_UU, trxName);
+      /** if (LBR_BoletoSD_UU == null)
+        {
+			setLBR_Boleto_ID (0);
+			setLBR_StaticDataType (null);
+        } */
+    }
+
+    /** Standard Constructor */
+    public X_LBR_BoletoSD (Properties ctx, String LBR_BoletoSD_UU, String trxName, String ... virtualColumns)
+    {
+      super (ctx, LBR_BoletoSD_UU, trxName, virtualColumns);
+      /** if (LBR_BoletoSD_UU == null)
         {
 			setLBR_Boleto_ID (0);
 			setLBR_StaticDataType (null);
@@ -50,7 +84,7 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
     }
 
     /** AccessLevel
-      * @return 1 - Org 
+      * @return 1 - Org
       */
     protected int get_AccessLevel()
     {
@@ -66,15 +100,14 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 
     public String toString()
     {
-      StringBuffer sb = new StringBuffer ("X_LBR_BoletoSD[")
-        .append(get_ID()).append("]");
+      StringBuilder sb = new StringBuilder ("X_LBR_BoletoSD[")
+        .append(get_ID()).append(",Name=").append(getName()).append("]");
       return sb.toString();
     }
 
 	/** Set Address 1.
-		@param Address1 
-		Address line 1 for this location
-	  */
+		@param Address1 Address line 1 for this location
+	*/
 	public void setAddress1 (String Address1)
 	{
 		set_Value (COLUMNNAME_Address1, Address1);
@@ -83,15 +116,14 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 	/** Get Address 1.
 		@return Address line 1 for this location
 	  */
-	public String getAddress1 () 
+	public String getAddress1()
 	{
 		return (String)get_Value(COLUMNNAME_Address1);
 	}
 
 	/** Set Address 2.
-		@param Address2 
-		Address line 2 for this location
-	  */
+		@param Address2 Address line 2 for this location
+	*/
 	public void setAddress2 (String Address2)
 	{
 		set_Value (COLUMNNAME_Address2, Address2);
@@ -100,15 +132,14 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 	/** Get Address 2.
 		@return Address line 2 for this location
 	  */
-	public String getAddress2 () 
+	public String getAddress2()
 	{
 		return (String)get_Value(COLUMNNAME_Address2);
 	}
 
 	/** Set Address 3.
-		@param Address3 
-		Address Line 3 for the location
-	  */
+		@param Address3 Address Line 3 for the location
+	*/
 	public void setAddress3 (String Address3)
 	{
 		set_Value (COLUMNNAME_Address3, Address3);
@@ -117,15 +148,14 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 	/** Get Address 3.
 		@return Address Line 3 for the location
 	  */
-	public String getAddress3 () 
+	public String getAddress3()
 	{
 		return (String)get_Value(COLUMNNAME_Address3);
 	}
 
 	/** Set Address 4.
-		@param Address4 
-		Address Line 4 for the location
-	  */
+		@param Address4 Address Line 4 for the location
+	*/
 	public void setAddress4 (String Address4)
 	{
 		set_Value (COLUMNNAME_Address4, Address4);
@@ -134,15 +164,14 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 	/** Get Address 4.
 		@return Address Line 4 for the location
 	  */
-	public String getAddress4 () 
+	public String getAddress4()
 	{
 		return (String)get_Value(COLUMNNAME_Address4);
 	}
 
 	/** Set City.
-		@param City 
-		Identifies a City
-	  */
+		@param City Identifies a City
+	*/
 	public void setCity (String City)
 	{
 		set_Value (COLUMNNAME_City, City);
@@ -151,55 +180,26 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 	/** Get City.
 		@return Identifies a City
 	  */
-	public String getCity () 
+	public String getCity()
 	{
 		return (String)get_Value(COLUMNNAME_City);
 	}
 
-	public I_LBR_Boleto getLBR_Boleto() throws RuntimeException
-    {
-		return (I_LBR_Boleto)MTable.get(getCtx(), I_LBR_Boleto.Table_Name)
-			.getPO(getLBR_Boleto_ID(), get_TrxName());	}
-
-	/** Set Brazilian Bank Collection (Boleto).
-		@param LBR_Boleto_ID 
-		Brazilian Bank Collection (Boleto) Identifier
-	  */
-	public void setLBR_Boleto_ID (int LBR_Boleto_ID)
-	{
-		if (LBR_Boleto_ID < 1) 
-			set_ValueNoCheck (COLUMNNAME_LBR_Boleto_ID, null);
-		else 
-			set_ValueNoCheck (COLUMNNAME_LBR_Boleto_ID, Integer.valueOf(LBR_Boleto_ID));
-	}
-
-	/** Get Brazilian Bank Collection (Boleto).
-		@return Brazilian Bank Collection (Boleto) Identifier
-	  */
-	public int getLBR_Boleto_ID () 
-	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Boleto_ID);
-		if (ii == null)
-			 return 0;
-		return ii.intValue();
-	}
-
 	/** Set Boleto Static Data.
-		@param LBR_BoletoSD_ID 
-		Boleto Static Data Identifier
-	  */
+		@param LBR_BoletoSD_ID Boleto Static Data Identifier
+	*/
 	public void setLBR_BoletoSD_ID (int LBR_BoletoSD_ID)
 	{
-		if (LBR_BoletoSD_ID < 1) 
+		if (LBR_BoletoSD_ID < 1)
 			set_ValueNoCheck (COLUMNNAME_LBR_BoletoSD_ID, null);
-		else 
+		else
 			set_ValueNoCheck (COLUMNNAME_LBR_BoletoSD_ID, Integer.valueOf(LBR_BoletoSD_ID));
 	}
 
 	/** Get Boleto Static Data.
 		@return Boleto Static Data Identifier
 	  */
-	public int getLBR_BoletoSD_ID () 
+	public int getLBR_BoletoSD_ID()
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_BoletoSD_ID);
 		if (ii == null)
@@ -208,9 +208,8 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 	}
 
 	/** Set Boleto Static Data.
-		@param LBR_BoletoSD_UU 
-		Boleto Static Data Identifier
-	  */
+		@param LBR_BoletoSD_UU Boleto Static Data Identifier
+	*/
 	public void setLBR_BoletoSD_UU (String LBR_BoletoSD_UU)
 	{
 		set_ValueNoCheck (COLUMNNAME_LBR_BoletoSD_UU, LBR_BoletoSD_UU);
@@ -219,13 +218,42 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 	/** Get Boleto Static Data.
 		@return Boleto Static Data Identifier
 	  */
-	public String getLBR_BoletoSD_UU () 
+	public String getLBR_BoletoSD_UU()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_BoletoSD_UU);
 	}
 
+	public I_LBR_Boleto getLBR_Boleto() throws RuntimeException
+	{
+		return (I_LBR_Boleto)MTable.get(getCtx(), I_LBR_Boleto.Table_ID)
+			.getPO(getLBR_Boleto_ID(), get_TrxName());
+	}
+
+	/** Set Brazilian Bank Collection (Boleto).
+		@param LBR_Boleto_ID Brazilian Bank Collection (Boleto) Identifier
+	*/
+	public void setLBR_Boleto_ID (int LBR_Boleto_ID)
+	{
+		if (LBR_Boleto_ID < 1)
+			set_ValueNoCheck (COLUMNNAME_LBR_Boleto_ID, null);
+		else
+			set_ValueNoCheck (COLUMNNAME_LBR_Boleto_ID, Integer.valueOf(LBR_Boleto_ID));
+	}
+
+	/** Get Brazilian Bank Collection (Boleto).
+		@return Brazilian Bank Collection (Boleto) Identifier
+	  */
+	public int getLBR_Boleto_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_Boleto_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
 	/** Set Company Number.
-		@param LBR_CNABInscEmpNo Company Number	  */
+		@param LBR_CNABInscEmpNo Company Number
+	*/
 	public void setLBR_CNABInscEmpNo (String LBR_CNABInscEmpNo)
 	{
 		set_Value (COLUMNNAME_LBR_CNABInscEmpNo, LBR_CNABInscEmpNo);
@@ -233,7 +261,7 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 
 	/** Get Company Number.
 		@return Company Number	  */
-	public String getLBR_CNABInscEmpNo () 
+	public String getLBR_CNABInscEmpNo()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CNABInscEmpNo);
 	}
@@ -249,7 +277,8 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 	/** 9 - Outros = 9 */
 	public static final String LBR_CNABINSCEMPTYPE_9_Outros = "9";
 	/** Set Company Number Type.
-		@param LBR_CNABInscEmpType Company Number Type	  */
+		@param LBR_CNABInscEmpType Company Number Type
+	*/
 	public void setLBR_CNABInscEmpType (String LBR_CNABInscEmpType)
 	{
 
@@ -258,17 +287,18 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 
 	/** Get Company Number Type.
 		@return Company Number Type	  */
-	public String getLBR_CNABInscEmpType () 
+	public String getLBR_CNABInscEmpType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_CNABInscEmpType);
 	}
 
-	/** Pagador (Sacado) = PAG */
-	public static final String LBR_STATICDATATYPE_PagadorSacado = "PAG";
 	/** Sacador / Avalista = AVA */
 	public static final String LBR_STATICDATATYPE_SacadorAvalista = "AVA";
+	/** Pagador (Sacado) = PAG */
+	public static final String LBR_STATICDATATYPE_PagadorSacado = "PAG";
 	/** Set Static Data Type.
-		@param LBR_StaticDataType Static Data Type	  */
+		@param LBR_StaticDataType Static Data Type
+	*/
 	public void setLBR_StaticDataType (String LBR_StaticDataType)
 	{
 
@@ -277,15 +307,14 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 
 	/** Get Static Data Type.
 		@return Static Data Type	  */
-	public String getLBR_StaticDataType () 
+	public String getLBR_StaticDataType()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_StaticDataType);
 	}
 
 	/** Set Name.
-		@param Name 
-		Alphanumeric identifier of the entity
-	  */
+		@param Name Alphanumeric identifier of the entity
+	*/
 	public void setName (String Name)
 	{
 		set_Value (COLUMNNAME_Name, Name);
@@ -294,15 +323,14 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 	/** Get Name.
 		@return Alphanumeric identifier of the entity
 	  */
-	public String getName () 
+	public String getName()
 	{
 		return (String)get_Value(COLUMNNAME_Name);
 	}
 
 	/** Set ZIP.
-		@param Postal 
-		Postal code
-	  */
+		@param Postal Postal code
+	*/
 	public void setPostal (String Postal)
 	{
 		set_Value (COLUMNNAME_Postal, Postal);
@@ -311,15 +339,14 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 	/** Get ZIP.
 		@return Postal code
 	  */
-	public String getPostal () 
+	public String getPostal()
 	{
 		return (String)get_Value(COLUMNNAME_Postal);
 	}
 
 	/** Set Region.
-		@param RegionName 
-		Name of the Region
-	  */
+		@param RegionName Name of the Region
+	*/
 	public void setRegionName (String RegionName)
 	{
 		set_Value (COLUMNNAME_RegionName, RegionName);
@@ -328,7 +355,7 @@ public class X_LBR_BoletoSD extends PO implements I_LBR_BoletoSD, I_Persistent
 	/** Get Region.
 		@return Name of the Region
 	  */
-	public String getRegionName () 
+	public String getRegionName()
 	{
 		return (String)get_Value(COLUMNNAME_RegionName);
 	}
