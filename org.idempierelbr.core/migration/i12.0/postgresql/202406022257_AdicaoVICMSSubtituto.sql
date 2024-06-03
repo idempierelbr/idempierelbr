@@ -1,5 +1,5 @@
 -- 
-SELECT register_migration_script('202406022257_PlaceholderForTicket.sql') FROM dual;
+SELECT register_migration_script('202406022257_AdicaoVICMSSubtituto.sql') FROM dual;
 
 -- 2 de jun. de 2024 22:57:37 BRT
 INSERT INTO AD_Element (AD_Element_ID,AD_Client_ID,AD_Org_ID,IsActive,Created,CreatedBy,Updated,UpdatedBy,ColumnName,Name,PrintName,EntityType,AD_Element_UU) VALUES (800479,0,0,'Y',TO_TIMESTAMP('2024-06-02 22:57:36','YYYY-MM-DD HH24:MI:SS'),10,TO_TIMESTAMP('2024-06-02 22:57:36','YYYY-MM-DD HH24:MI:SS'),10,'lbr_vICMSSubstituto','Substitute''s own ICMS value','Substitute''s own ICMS value','LBR','8ed52683-f17a-4a6a-920f-484e89cf0cf1')

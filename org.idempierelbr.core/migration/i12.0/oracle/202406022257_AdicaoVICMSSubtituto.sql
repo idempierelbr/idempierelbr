@@ -1,5 +1,5 @@
 -- 
-SELECT register_migration_script('202406022257_PlaceholderForTicket.sql') FROM dual;
+SELECT register_migration_script('202406022257_AdicaoVICMSSubtituto.sql') FROM dual;
 
 SET SQLBLANKLINES ON
 SET DEFINE OFF
