@@ -1083,18 +1083,18 @@ public class X_LBR_DocLine_ICMS extends PO implements I_LBR_DocLine_ICMS, I_Pers
 	}
 
 	/** Set Substitute&#039;s own ICMS value.
-		@param lbr_vICMSSubstituto Substitute&#039;s own ICMS value
+		@param LBR_vICMSSubstituto Substitute&#039;s own ICMS value
 	*/
-	public void setlbr_vICMSSubstituto (BigDecimal lbr_vICMSSubstituto)
+	public void setLBR_vICMSSubstituto (BigDecimal LBR_vICMSSubstituto)
 	{
-		set_Value (COLUMNNAME_lbr_vICMSSubstituto, lbr_vICMSSubstituto);
+		set_Value (COLUMNNAME_LBR_vICMSSubstituto, LBR_vICMSSubstituto);
 	}
 
 	/** Get Substitute&#039;s own ICMS value.
 		@return Substitute&#039;s own ICMS value	  */
-	public BigDecimal getlbr_vICMSSubstituto()
+	public BigDecimal getLBR_vICMSSubstituto()
 	{
-		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_lbr_vICMSSubstituto);
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_vICMSSubstituto);
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;

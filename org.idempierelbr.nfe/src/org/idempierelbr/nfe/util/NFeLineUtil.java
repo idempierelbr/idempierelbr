@@ -261,9 +261,9 @@ public class NFeLineUtil {
 						throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmtWhd@'");
 					icmsGrupo.setvICMSSTRet(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAmtWhd()));
 					
-					if (icmsLines[0].getlbr_vICMSSubstituto() == null) 
-						throw new AdempiereException(prefixException + "'@LBR_VICMSSubstituto@'");
-					icmsGrupo.setvICMSSubstituto(TextUtil.bigdecimalToString(icmsLines[0].getlbr_vICMSSubstituto()));
+					if (icmsLines[0].getLBR_vICMSSubstituto() == null) 
+						throw new AdempiereException(prefixException + "'@LBR_vICMSSubstituto@'");
+					icmsGrupo.setvICMSSubstituto(TextUtil.bigdecimalToString(icmsLines[0].getLBR_vICMSSubstituto()));
 				}
 			}
 			// ICMS70
