@@ -654,16 +654,16 @@ Fundo de Combate a Pobreza&quot;
 	  */
 	public int getUpdatedBy();
 
-    /** Column name lbr_vICMSSubstituto */
-    public static final String COLUMNNAME_lbr_vICMSSubstituto = "lbr_vICMSSubstituto";
+    /** Column name LBR_vICMSSubstituto */
+    public static final String COLUMNNAME_LBR_vICMSSubstituto = "LBR_vICMSSubstituto";
 
 	/** Set Substitute&#039;
 s own ICMS value	  */
-	public void setlbr_vICMSSubstituto (BigDecimal lbr_vICMSSubstituto);
+	public void setLBR_vICMSSubstituto (BigDecimal LBR_vICMSSubstituto);
 
 	/** Get Substitute&#039;
 s own ICMS value	  */
-	public BigDecimal getlbr_vICMSSubstituto();
+	public BigDecimal getLBR_vICMSSubstituto();
 	
 	/** Column name LBR_DIFAL_TaxBaseFCPUFDest */
 	public static final String COLUMNNAME_LBR_DIFAL_TaxBaseFCPUFDest = "LBR_DIFAL_TaxBaseFCPUFDest";
