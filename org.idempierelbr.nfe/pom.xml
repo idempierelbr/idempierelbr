@@ -42,8 +42,8 @@
                 <artifactItem>
                   <groupId>com.thoughtworks.xstream</groupId>
                   <artifactId>xstream</artifactId>
-                  <version>1.4.7</version>
-                  <destFileName>xstream-1.4.7.jar</destFileName>
+                  <version>1.4.20</version>
+                  <destFileName>xstream-1.4.20.jar</destFileName>
                 </artifactItem>
                 <artifactItem>
                   <groupId>com.google.zxing</groupId>
