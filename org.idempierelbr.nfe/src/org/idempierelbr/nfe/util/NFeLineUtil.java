@@ -76,137 +76,141 @@ public class NFeLineUtil {
 	public ICMSBean getICMSBean() {
 		MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(MLBRDocLineDetailsNfe.getOfPO(line));
 		
+		
+		
 		if (icmsLines.length > 0) {
 			String prefixException = "@Tab@ @ICMS@, @Field@ @IsMandatory@: ";
 			
 			ICMSBean icms = new ICMSBean();
 			ICMSGrupoBean icmsGrupo = new ICMSGrupoBean();
 			
-			if (icmsLines[0].getLBR_ICMSRegime() == null || icmsLines[0].getLBR_ICMSRegime().trim().equals(""))
+			MLBRDocLineICMS firstMlbrDocLineICMS = icmsLines[0];
+						
+			if (firstMlbrDocLineICMS.getLBR_ICMSRegime() == null || firstMlbrDocLineICMS.getLBR_ICMSRegime().trim().equals(""))
 				throw new AdempiereException(prefixException + "'@LBR_ICMSRegime@'");
 			
-			if (icmsLines[0].getLBR_ProductSource() == null || icmsLines[0].getLBR_ProductSource().trim().equals(""))
+			if (firstMlbrDocLineICMS.getLBR_ProductSource() == null || firstMlbrDocLineICMS.getLBR_ProductSource().trim().equals(""))
 				throw new AdempiereException(prefixException + "'@LBR_ProductSource@'");
-			icmsGrupo.setOrig(icmsLines[0].getLBR_ProductSource());
+			icmsGrupo.setOrig(firstMlbrDocLineICMS.getLBR_ProductSource());
 			
 			String taxStatusDetailed = null;
 			String taxStatusSimple = null;
 			
-			if (icmsLines[0].getLBR_ICMSRegime().equals("TN")) {
-				if (icmsLines[0].getLBR_ICMS_TaxStatusTN() == null || icmsLines[0].getLBR_ICMS_TaxStatusTN().trim().equals(""))
+			if (firstMlbrDocLineICMS.getLBR_ICMSRegime().equals("TN")) {
+				if (firstMlbrDocLineICMS.getLBR_ICMS_TaxStatusTN() == null || firstMlbrDocLineICMS.getLBR_ICMS_TaxStatusTN().trim().equals(""))
 					throw new AdempiereException(prefixException + "'@LBR_ICMS_TaxStatusTN@'");
-				taxStatusDetailed = icmsLines[0].getLBR_ICMS_TaxStatusTN();
+				taxStatusDetailed = firstMlbrDocLineICMS.getLBR_ICMS_TaxStatusTN();
 				taxStatusSimple = MLBRDocLineICMS.getCSTPrefix(taxStatusDetailed);
 				icmsGrupo.setCST(taxStatusSimple);
-			} else if (icmsLines[0].getLBR_ICMSRegime().equals("SN")) {
-				if (icmsLines[0].getLBR_ICMS_TaxStatusSN() == null || icmsLines[0].getLBR_ICMS_TaxStatusSN().trim().equals(""))
+			} else if (firstMlbrDocLineICMS.getLBR_ICMSRegime().equals("SN")) {
+				if (firstMlbrDocLineICMS.getLBR_ICMS_TaxStatusSN() == null || firstMlbrDocLineICMS.getLBR_ICMS_TaxStatusSN().trim().equals(""))
 					throw new AdempiereException(prefixException + "'@LBR_ICMS_TaxStatusSN@'");
-				taxStatusDetailed = icmsLines[0].getLBR_ICMS_TaxStatusSN();	
+				taxStatusDetailed = firstMlbrDocLineICMS.getLBR_ICMS_TaxStatusSN();	
 				taxStatusSimple = MLBRDocLineICMS.getCSTPrefix(taxStatusDetailed);	
 				icmsGrupo.setCSOSN(taxStatusSimple);
 			}
 			
 			// ICMS00
 			if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_00)) {
-				if (icmsLines[0].getLBR_ICMS_TaxBaseType() == null || icmsLines[0].getLBR_ICMS_TaxBaseType().trim().equals(""))
+				if (firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType().trim().equals(""))
 					throw new AdempiereException(prefixException + "'@LBR_ICMS_TaxBaseType@'");
-				icmsGrupo.setModBC(icmsLines[0].getLBR_ICMS_TaxBaseType());
-				if (icmsLines[0].getLBR_TaxBaseAmt() == null)
+				icmsGrupo.setModBC(firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType());
+				if (firstMlbrDocLineICMS.getLBR_TaxBaseAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxBaseAmt@'");
-				icmsGrupo.setvBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBaseAmt()));
-				if (icmsLines[0].getLBR_TaxRate() == null)
+				icmsGrupo.setvBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBaseAmt()));
+				if (firstMlbrDocLineICMS.getLBR_TaxRate() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxRate@'");
-				icmsGrupo.setpICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxRate()));
-				if (icmsLines[0].getLBR_TaxAmt() == null)
+				icmsGrupo.setpICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxRate()));
+				if (firstMlbrDocLineICMS.getLBR_TaxAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxAmt@'");
-				icmsGrupo.setvICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxAmt()));
+				icmsGrupo.setvICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxAmt()));
 			}
 			// ICMS10
 			else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_10_ST)) {
-				if (icmsLines[0].getLBR_ICMS_TaxBaseType() == null || icmsLines[0].getLBR_ICMS_TaxBaseType().trim().equals(""))
+				if (firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType().trim().equals(""))
 					throw new AdempiereException(prefixException + "'@LBR_ICMS_TaxBaseType@'");
-				icmsGrupo.setModBC(icmsLines[0].getLBR_ICMS_TaxBaseType());
-				if (icmsLines[0].getLBR_TaxBaseAmt() == null)
+				icmsGrupo.setModBC(firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType());
+				if (firstMlbrDocLineICMS.getLBR_TaxBaseAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxBaseAmt@'");
-				icmsGrupo.setvBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBaseAmt()));
-				if (icmsLines[0].getLBR_TaxRate() == null)
+				icmsGrupo.setvBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBaseAmt()));
+				if (firstMlbrDocLineICMS.getLBR_TaxRate() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxRate@'");
-				icmsGrupo.setpICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxRate()));
-				if (icmsLines[0].getLBR_TaxAmt() == null)
+				icmsGrupo.setpICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxRate()));
+				if (firstMlbrDocLineICMS.getLBR_TaxAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxAmt@'");
-				icmsGrupo.setvICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxAmt()));
-				if (icmsLines[0].getLBR_ICMSST_TaxBaseType() == null || icmsLines[0].getLBR_ICMSST_TaxBaseType().trim().equals(""))
+				icmsGrupo.setvICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxAmt()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType().trim().equals(""))
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseType@'");
-				icmsGrupo.setModBCST(icmsLines[0].getLBR_ICMSST_TaxBaseType());
-				icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAdded()));
-				icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBase()));
-				if (icmsLines[0].getLBR_ICMSST_TaxBaseAmt() == null)
+				icmsGrupo.setModBCST(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType());
+				icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAdded()));
+				icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBase()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseAmt@'");
-				icmsGrupo.setvBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBaseAmt()));
-				if (icmsLines[0].getLBR_ICMSST_TaxRate() == null)
+				icmsGrupo.setvBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxRate@'");
-				icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxRate()));
-				if (icmsLines[0].getLBR_ICMSST_TaxAmt() == null)
+				icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmt@'");
-				icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAmt()));
+				icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt()));
 			}
 			// ICMS20
 			if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_20)) {
-				if (icmsLines[0].getLBR_ICMS_TaxBaseType() == null || icmsLines[0].getLBR_ICMS_TaxBaseType().trim().equals(""))
+				if (firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType().trim().equals(""))
 					throw new AdempiereException(prefixException + "'@LBR_ICMS_TaxBaseType@'");
-				icmsGrupo.setModBC(icmsLines[0].getLBR_ICMS_TaxBaseType());
-				if (icmsLines[0].getLBR_TaxBase() == null)
+				icmsGrupo.setModBC(firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType());
+				if (firstMlbrDocLineICMS.getLBR_TaxBase() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxBase@'");
-				icmsGrupo.setpRedBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBase()));
-				if (icmsLines[0].getLBR_TaxBaseAmt() == null)
+				icmsGrupo.setpRedBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBase()));
+				if (firstMlbrDocLineICMS.getLBR_TaxBaseAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxBaseAmt@'");
-				icmsGrupo.setvBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBaseAmt()));
-				if (icmsLines[0].getLBR_TaxRate() == null)
+				icmsGrupo.setvBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBaseAmt()));
+				if (firstMlbrDocLineICMS.getLBR_TaxRate() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxRate@'");
-				icmsGrupo.setpICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxRate()));
-				if (icmsLines[0].getLBR_TaxAmt() == null)
+				icmsGrupo.setpICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxRate()));
+				if (firstMlbrDocLineICMS.getLBR_TaxAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxAmt@'");
-				icmsGrupo.setvICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxAmt()));
+				icmsGrupo.setvICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxAmt()));
 				
-				if (icmsLines[0].getLBR_TaxReliefAmt() != null || 
-						(icmsLines[0].getLBR_ICMS_TaxReliefType() != null &&
-						!icmsLines[0].getLBR_ICMS_TaxReliefType().trim().equals(""))) {
+				if (firstMlbrDocLineICMS.getLBR_TaxReliefAmt() != null || 
+						(firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType() != null &&
+						!firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType().trim().equals(""))) {
 
-					if (icmsLines[0].getLBR_TaxReliefAmt() == null)
+					if (firstMlbrDocLineICMS.getLBR_TaxReliefAmt() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxReliefAmt@'");
-					icmsGrupo.setvICMSDeson(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxReliefAmt()));
-					if (icmsLines[0].getLBR_ICMS_TaxReliefType() == null || icmsLines[0].getLBR_ICMS_TaxReliefType().trim().equals("")) 
+					icmsGrupo.setvICMSDeson(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxReliefAmt()));
+					if (firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType() == null || firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType().trim().equals("")) 
 						throw new AdempiereException(prefixException + "'@LBR_ICMS_TaxReliefType@'");
-					icmsGrupo.setMotDesICMS(icmsLines[0].getLBR_ICMS_TaxReliefType());
+					icmsGrupo.setMotDesICMS(firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType());
 				}					
 			}
 			// ICMS30
 			else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_30)) {
-				if (icmsLines[0].getLBR_ICMSST_TaxBaseType() == null || icmsLines[0].getLBR_ICMSST_TaxBaseType().trim().equals(""))
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType().trim().equals(""))
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseType@'");
-				icmsGrupo.setModBCST(icmsLines[0].getLBR_ICMSST_TaxBaseType());
-				icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAdded()));
-				icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBase()));
-				if (icmsLines[0].getLBR_ICMSST_TaxBaseAmt() == null)
+				icmsGrupo.setModBCST(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType());
+				icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAdded()));
+				icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBase()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseAmt@'");
-				icmsGrupo.setvBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBaseAmt()));
-				if (icmsLines[0].getLBR_ICMSST_TaxRate() == null)
+				icmsGrupo.setvBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxRate@'");
-				icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxRate()));
-				if (icmsLines[0].getLBR_ICMSST_TaxAmt() == null)
+				icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmt@'");
-				icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAmt()));
+				icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt()));
 				
-				if (icmsLines[0].getLBR_TaxReliefAmt() != null || 
-						(icmsLines[0].getLBR_ICMS_TaxReliefType() != null &&
-						!icmsLines[0].getLBR_ICMS_TaxReliefType().trim().equals(""))) {
+				if (firstMlbrDocLineICMS.getLBR_TaxReliefAmt() != null || 
+						(firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType() != null &&
+						!firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType().trim().equals(""))) {
 
-					if (icmsLines[0].getLBR_TaxReliefAmt() == null)
+					if (firstMlbrDocLineICMS.getLBR_TaxReliefAmt() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxReliefAmt@'");
-					icmsGrupo.setvICMSDeson(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxReliefAmt()));
-					if (icmsLines[0].getLBR_ICMS_TaxReliefType() == null || icmsLines[0].getLBR_ICMS_TaxReliefType().trim().equals("")) 
+					icmsGrupo.setvICMSDeson(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxReliefAmt()));
+					if (firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType() == null || firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType().trim().equals("")) 
 						throw new AdempiereException(prefixException + "'@LBR_ICMS_TaxReliefType@'");
-					icmsGrupo.setMotDesICMS(icmsLines[0].getLBR_ICMS_TaxReliefType());
+					icmsGrupo.setMotDesICMS(firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType());
 				}
 			}
 			// ICMS40
@@ -215,154 +219,155 @@ public class NFeLineUtil {
 					MLBRDocLineICMS.CST_ICMS_41,
 					MLBRDocLineICMS.CST_ICMS_50)) {
 				
-				if (icmsLines[0].getLBR_TaxReliefAmt() != null || 
-						(icmsLines[0].getLBR_ICMS_TaxReliefType() != null &&
-						!icmsLines[0].getLBR_ICMS_TaxReliefType().trim().equals(""))) {
+				if (firstMlbrDocLineICMS.getLBR_TaxReliefAmt() != null || 
+						(firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType() != null &&
+						!firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType().trim().equals(""))) {
 
-					if (icmsLines[0].getLBR_TaxReliefAmt() == null)
+					if (firstMlbrDocLineICMS.getLBR_TaxReliefAmt() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxReliefAmt@'");
-					icmsGrupo.setvICMSDeson(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxReliefAmt()));
-					if (icmsLines[0].getLBR_ICMS_TaxReliefType() == null || icmsLines[0].getLBR_ICMS_TaxReliefType().trim().equals("")) 
+					icmsGrupo.setvICMSDeson(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxReliefAmt()));
+					if (firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType() == null || firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType().trim().equals("")) 
 						throw new AdempiereException(prefixException + "'@LBR_ICMS_TaxReliefType@'");
-					icmsGrupo.setMotDesICMS(icmsLines[0].getLBR_ICMS_TaxReliefType());
+					icmsGrupo.setMotDesICMS(firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType());
 				}
 			}
 			// ICMS51
 			else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_51)) {
-				icmsGrupo.setModBC(icmsLines[0].getLBR_ICMS_TaxBaseType());
-				icmsGrupo.setpRedBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBase()));
-				icmsGrupo.setvBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBaseAmt()));
-				icmsGrupo.setpICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxRate()));
-				if ( icmsLines[0].getLBR_TaxRate().compareTo(Env.ZERO) != 0 ) {
-					icmsGrupo.setvICMSOp(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMS_TaxAmtOp()));
-					icmsGrupo.setpDif(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxDeferralRate()));
-					icmsGrupo.setvICMSDif(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxDeferralAmt()));
+				icmsGrupo.setModBC(firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType());
+				icmsGrupo.setpRedBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBase()));
+				icmsGrupo.setvBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBaseAmt()));
+				icmsGrupo.setpICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxRate()));
+				if ( firstMlbrDocLineICMS.getLBR_TaxRate().compareTo(Env.ZERO) != 0 ) {
+					icmsGrupo.setvICMSOp(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMS_TaxAmtOp()));
+					icmsGrupo.setpDif(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxDeferralRate()));
+					icmsGrupo.setvICMSDif(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxDeferralAmt()));
 				}
-				icmsGrupo.setvICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxAmt()));
+				icmsGrupo.setvICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxAmt()));
 			}
 			// ICMS60
 			else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_60)) {
-				if (icmsLines[0].getLBR_ICMSST_TaxBAmtWhd() != null &&
-						icmsLines[0].getLBR_ICMSST_TaxBAmtWhd().signum() != 0 && 
-						icmsLines[0].getLBR_ICMSST_TaxAmtWhd() != null &&
-						icmsLines[0].getLBR_ICMSST_TaxAmtWhd().signum() != 0 &&
-						icmsLines[0].getLBR_ICMSST_TaxRate() != null &&
-						icmsLines[0].getLBR_ICMSST_TaxRate().signum() != 0
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBAmtWhd() != null &&
+						firstMlbrDocLineICMS.getLBR_ICMSST_TaxBAmtWhd().signum() != 0 && 
+						firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmtWhd() != null &&
+						firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmtWhd().signum() != 0 &&
+						firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate() != null &&
+						firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate().signum() != 0
 						) {
-					if (icmsLines[0].getLBR_ICMSST_TaxBAmtWhd() == null)
+					if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBAmtWhd() == null)
 						throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBAmtWhd@'");
-					icmsGrupo.setvBCSTRet(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBAmtWhd()));
+					icmsGrupo.setvBCSTRet(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBAmtWhd()));
 					
-					if (icmsLines[0].getLBR_ICMSST_TaxRate() == null)
+					if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate() == null)
 						throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxRate@'");
-					icmsGrupo.setpST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxRate()));
-					
-					if (icmsLines[0].getLBR_ICMSST_TaxAmtWhd() == null) 
-						throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmtWhd@'");
-					icmsGrupo.setvICMSSTRet(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAmtWhd()));
-					
-					if (icmsLines[0].getLBR_vICMSSubstituto() == null) 
+					icmsGrupo.setpST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate()));
+
+					if (firstMlbrDocLineICMS.getLBR_vICMSSubstituto() == null) 
 						throw new AdempiereException(prefixException + "'@LBR_vICMSSubstituto@'");
-					icmsGrupo.setvICMSSubstituto(TextUtil.bigdecimalToString(icmsLines[0].getLBR_vICMSSubstituto()));
+					icmsGrupo.setvICMSSubstituto(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_vICMSSubstituto()));
+					
+					if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmtWhd() == null) 
+						throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmtWhd@'");
+					icmsGrupo.setvICMSSTRet(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmtWhd()));
+					
 				}
 			}
 			// ICMS70
 			else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_70)) {
-				if (icmsLines[0].getLBR_ICMS_TaxBaseType() == null || icmsLines[0].getLBR_ICMS_TaxBaseType().trim().equals(""))
+				if (firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType().trim().equals(""))
 					throw new AdempiereException(prefixException + "'@LBR_ICMS_TaxBaseType@'");
-				icmsGrupo.setModBC(icmsLines[0].getLBR_ICMS_TaxBaseType());
-				if (icmsLines[0].getLBR_TaxBase() == null)
+				icmsGrupo.setModBC(firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType());
+				if (firstMlbrDocLineICMS.getLBR_TaxBase() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxBase@'");
-				icmsGrupo.setpRedBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBase()));
-				if (icmsLines[0].getLBR_TaxBaseAmt() == null)
+				icmsGrupo.setpRedBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBase()));
+				if (firstMlbrDocLineICMS.getLBR_TaxBaseAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxBaseAmt@'");
-				icmsGrupo.setvBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBaseAmt()));
-				if (icmsLines[0].getLBR_TaxRate() == null)
+				icmsGrupo.setvBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBaseAmt()));
+				if (firstMlbrDocLineICMS.getLBR_TaxRate() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxRate@'");
-				icmsGrupo.setpICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxRate()));
-				if (icmsLines[0].getLBR_TaxAmt() == null)
+				icmsGrupo.setpICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxRate()));
+				if (firstMlbrDocLineICMS.getLBR_TaxAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxAmt@'");
-				icmsGrupo.setvICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxAmt()));
-				if (icmsLines[0].getLBR_ICMSST_TaxBaseType() == null || icmsLines[0].getLBR_ICMSST_TaxBaseType().trim().equals(""))
+				icmsGrupo.setvICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxAmt()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType().trim().equals(""))
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseType@'");
-				icmsGrupo.setModBCST(icmsLines[0].getLBR_ICMSST_TaxBaseType());
-				icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAdded()));
-				icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBase()));
-				if (icmsLines[0].getLBR_ICMSST_TaxBaseAmt() == null)
+				icmsGrupo.setModBCST(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType());
+				icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAdded()));
+				icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBase()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseAmt@'");
-				icmsGrupo.setvBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBaseAmt()));
-				if (icmsLines[0].getLBR_ICMSST_TaxRate() == null)
+				icmsGrupo.setvBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxRate@'");
-				icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxRate()));
-				if (icmsLines[0].getLBR_ICMSST_TaxAmt() == null)
+				icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmt@'");
-				icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAmt()));
+				icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt()));
 				
-				if (icmsLines[0].getLBR_TaxReliefAmt() != null || 
-						(icmsLines[0].getLBR_ICMS_TaxReliefType() != null &&
-						!icmsLines[0].getLBR_ICMS_TaxReliefType().trim().equals(""))) {
+				if (firstMlbrDocLineICMS.getLBR_TaxReliefAmt() != null || 
+						(firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType() != null &&
+						!firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType().trim().equals(""))) {
 
-					if (icmsLines[0].getLBR_TaxReliefAmt() == null)
+					if (firstMlbrDocLineICMS.getLBR_TaxReliefAmt() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxReliefAmt@'");
-					icmsGrupo.setvICMSDeson(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxReliefAmt()));
-					if (icmsLines[0].getLBR_ICMS_TaxReliefType() == null || icmsLines[0].getLBR_ICMS_TaxReliefType().trim().equals("")) 
+					icmsGrupo.setvICMSDeson(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxReliefAmt()));
+					if (firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType() == null || firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType().trim().equals("")) 
 						throw new AdempiereException(prefixException + "'@LBR_ICMS_TaxReliefType@'");
-					icmsGrupo.setMotDesICMS(icmsLines[0].getLBR_ICMS_TaxReliefType());
+					icmsGrupo.setMotDesICMS(firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType());
 				}
 			}
 			// ICMS90
 			else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_90)) {
-				if ((icmsLines[0].getLBR_ICMS_TaxBaseType() != null && !icmsLines[0].getLBR_ICMS_TaxBaseType().trim().equals("")) ||
-						icmsLines[0].getLBR_TaxBaseAmt() != null ||
-						icmsLines[0].getLBR_TaxRate() != null ||
-						icmsLines[0].getLBR_TaxAmt() != null) {
+				if ((firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType() != null && !firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType().trim().equals("")) ||
+						firstMlbrDocLineICMS.getLBR_TaxBaseAmt() != null ||
+						firstMlbrDocLineICMS.getLBR_TaxRate() != null ||
+						firstMlbrDocLineICMS.getLBR_TaxAmt() != null) {
 					
-					if (icmsLines[0].getLBR_ICMS_TaxBaseType() == null || icmsLines[0].getLBR_ICMS_TaxBaseType().trim().equals(""))
+					if (firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType().trim().equals(""))
 						throw new AdempiereException(prefixException + "'@LBR_ICMS_TaxBaseType@'");
-					icmsGrupo.setModBC(icmsLines[0].getLBR_ICMS_TaxBaseType());
-					if (icmsLines[0].getLBR_TaxBaseAmt() == null)
+					icmsGrupo.setModBC(firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType());
+					if (firstMlbrDocLineICMS.getLBR_TaxBaseAmt() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxBaseAmt@'");
-					icmsGrupo.setvBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBaseAmt()));
-					icmsGrupo.setpRedBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBase()));
-					if (icmsLines[0].getLBR_TaxRate() == null)
+					icmsGrupo.setvBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBaseAmt()));
+					icmsGrupo.setpRedBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBase()));
+					if (firstMlbrDocLineICMS.getLBR_TaxRate() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxRate@'");
-					icmsGrupo.setpICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxRate()));
-					if (icmsLines[0].getLBR_TaxAmt() == null)
+					icmsGrupo.setpICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxRate()));
+					if (firstMlbrDocLineICMS.getLBR_TaxAmt() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxAmt@'");
-					icmsGrupo.setvICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxAmt()));
+					icmsGrupo.setvICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxAmt()));
 				}
 				
-				if ((icmsLines[0].getLBR_ICMSST_TaxBaseType() != null && !icmsLines[0].getLBR_ICMSST_TaxBaseType().trim().equals("")) ||
-						icmsLines[0].getLBR_ICMSST_TaxBaseAmt() != null ||
-						icmsLines[0].getLBR_ICMSST_TaxRate() != null ||
-						icmsLines[0].getLBR_ICMSST_TaxAmt() != null) {
+				if ((firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType() != null && !firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType().trim().equals("")) ||
+						firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt() != null ||
+						firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate() != null ||
+						firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt() != null) {
 					
-					if (icmsLines[0].getLBR_ICMSST_TaxBaseType() == null || icmsLines[0].getLBR_ICMSST_TaxBaseType().trim().equals(""))
+					if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType().trim().equals(""))
 						throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseType@'");
-					icmsGrupo.setModBCST(icmsLines[0].getLBR_ICMSST_TaxBaseType());
-					icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAdded()));
-					icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBase()));
-					if (icmsLines[0].getLBR_ICMSST_TaxBaseAmt() == null)
+					icmsGrupo.setModBCST(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType());
+					icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAdded()));
+					icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBase()));
+					if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt() == null)
 						throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseAmt@'");
-					icmsGrupo.setvBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBaseAmt()));
-					if (icmsLines[0].getLBR_ICMSST_TaxRate() == null)
+					icmsGrupo.setvBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt()));
+					if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate() == null)
 						throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxRate@'");
-					icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxRate()));
-					if (icmsLines[0].getLBR_ICMSST_TaxAmt() == null)
+					icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate()));
+					if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt() == null)
 						throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmt@'");
-					icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAmt()));
+					icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt()));
 				}
 				
-				if (icmsLines[0].getLBR_TaxReliefAmt() != null || 
-						(icmsLines[0].getLBR_ICMS_TaxReliefType() != null &&
-						!icmsLines[0].getLBR_ICMS_TaxReliefType().trim().equals(""))) {
+				if (firstMlbrDocLineICMS.getLBR_TaxReliefAmt() != null || 
+						(firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType() != null &&
+						!firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType().trim().equals(""))) {
 
-					if (icmsLines[0].getLBR_TaxReliefAmt() == null)
+					if (firstMlbrDocLineICMS.getLBR_TaxReliefAmt() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxReliefAmt@'");
-					icmsGrupo.setvICMSDeson(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxReliefAmt()));
-					if (icmsLines[0].getLBR_ICMS_TaxReliefType() == null || icmsLines[0].getLBR_ICMS_TaxReliefType().trim().equals("")) 
+					icmsGrupo.setvICMSDeson(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxReliefAmt()));
+					if (firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType() == null || firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType().trim().equals("")) 
 						throw new AdempiereException(prefixException + "'@LBR_ICMS_TaxReliefType@'");
-					icmsGrupo.setMotDesICMS(icmsLines[0].getLBR_ICMS_TaxReliefType());
+					icmsGrupo.setMotDesICMS(firstMlbrDocLineICMS.getLBR_ICMS_TaxReliefType());
 				}
 			}
 			// ICMSPart
@@ -370,64 +375,64 @@ public class NFeLineUtil {
 					MLBRDocLineICMS.CST_ICMS_10_PART,
 					MLBRDocLineICMS.CST_ICMS_90_PART)) {
 				
-				if (icmsLines[0].getLBR_ICMS_TaxBaseType() == null || icmsLines[0].getLBR_ICMS_TaxBaseType().trim().equals(""))
+				if (firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType().trim().equals(""))
 					throw new AdempiereException(prefixException + "'@LBR_ICMS_TaxBaseType@'");
-				icmsGrupo.setModBC(icmsLines[0].getLBR_ICMS_TaxBaseType());
-				if (icmsLines[0].getLBR_TaxBaseAmt() == null)
+				icmsGrupo.setModBC(firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType());
+				if (firstMlbrDocLineICMS.getLBR_TaxBaseAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxBaseAmt@'");
-				icmsGrupo.setvBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBaseAmt()));
-				icmsGrupo.setpRedBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBase()));
-				if (icmsLines[0].getLBR_TaxRate() == null)
+				icmsGrupo.setvBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBaseAmt()));
+				icmsGrupo.setpRedBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBase()));
+				if (firstMlbrDocLineICMS.getLBR_TaxRate() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxRate@'");
-				icmsGrupo.setpICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxRate()));
-				if (icmsLines[0].getLBR_TaxAmt() == null)
+				icmsGrupo.setpICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxRate()));
+				if (firstMlbrDocLineICMS.getLBR_TaxAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxAmt@'");
-				icmsGrupo.setvICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxAmt()));
-				if (icmsLines[0].getLBR_ICMSST_TaxBaseType() == null || icmsLines[0].getLBR_ICMSST_TaxBaseType().trim().equals(""))
+				icmsGrupo.setvICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxAmt()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType().trim().equals(""))
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseType@'");
-				icmsGrupo.setModBCST(icmsLines[0].getLBR_ICMSST_TaxBaseType());
-				icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAdded()));
-				icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBase()));
-				if (icmsLines[0].getLBR_ICMSST_TaxBaseAmt() == null)
+				icmsGrupo.setModBCST(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType());
+				icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAdded()));
+				icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBase()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseAmt@'");
-				icmsGrupo.setvBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBaseAmt()));
-				if (icmsLines[0].getLBR_ICMSST_TaxRate() == null)
+				icmsGrupo.setvBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxRate@'");
-				icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxRate()));
-				if (icmsLines[0].getLBR_ICMSST_TaxAmt() == null)
+				icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmt@'");
-				icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAmt()));
-				if (icmsLines[0].getLBR_TaxBaseOwnOperation() == null)
+				icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt()));
+				if (firstMlbrDocLineICMS.getLBR_TaxBaseOwnOperation() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxBaseOwnOperation@'");
-				icmsGrupo.setpBCOp(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBaseOwnOperation()));
-				if (icmsLines[0].getLBR_ICMSST_TaxUFDue_ID() < 1)
+				icmsGrupo.setpBCOp(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBaseOwnOperation()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxUFDue_ID() < 1)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxUFDue_ID@'");
-				MRegion region = new MRegion(line.getCtx(), icmsLines[0].getLBR_ICMSST_TaxUFDue_ID(), line.get_TrxName());
+				MRegion region = new MRegion(line.getCtx(), firstMlbrDocLineICMS.getLBR_ICMSST_TaxUFDue_ID(), line.get_TrxName());
 				icmsGrupo.setUFST(region.getName());
 			}
 			// ICMSST
 			else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CST_ICMS_41_RET)) {
-				if (icmsLines[0].getLBR_ICMSST_TaxBAmtUFSen() == null)
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBAmtUFSen() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBAmtUFSen@'");
-				icmsGrupo.setvBCSTRet(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBAmtUFSen()));
-				if (icmsLines[0].getLBR_ICMSST_TaxAmtUFSen() == null)
+				icmsGrupo.setvBCSTRet(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBAmtUFSen()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmtUFSen() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmtUFSen@'");
-				icmsGrupo.setvICMSSTRet(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAmtUFSen()));
-				if (icmsLines[0].getLBR_ICMSST_TaxBAmtUFDes() == null)
+				icmsGrupo.setvICMSSTRet(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmtUFSen()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBAmtUFDes() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBAmtUFDes@'");
-				icmsGrupo.setvBCSTDest(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBAmtUFDes()));
-				if (icmsLines[0].getLBR_ICMSST_TaxAmtUFDes() == null)
+				icmsGrupo.setvBCSTDest(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBAmtUFDes()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmtUFDes() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmtUFDes@'");
-				icmsGrupo.setvICMSSTDest(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAmtUFDes()));
+				icmsGrupo.setvICMSSTDest(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmtUFDes()));
 			}
 			// ICMSSN101
 			else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CSOSN_101)) {
-				if (icmsLines[0].getLBR_TaxRateCredit() == null)
+				if (firstMlbrDocLineICMS.getLBR_TaxRateCredit() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxRateCredit@'");
-				icmsGrupo.setpCredSN(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxRateCredit()));
-				if (icmsLines[0].getLBR_TaxAmtCredit() == null)
+				icmsGrupo.setpCredSN(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxRateCredit()));
+				if (firstMlbrDocLineICMS.getLBR_TaxAmtCredit() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxAmtCredit@'");
-				icmsGrupo.setvCredICMSSN(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxAmtCredit()));
+				icmsGrupo.setvCredICMSSN(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxAmtCredit()));
 			}
 			// ICMSSN102
 			else if (TextUtil.match(taxStatusDetailed,
@@ -440,106 +445,106 @@ public class NFeLineUtil {
 			}
 			// ICMSSN201
 			else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CSOSN_201)) {				
-				if (icmsLines[0].getLBR_ICMSST_TaxBaseType() == null || icmsLines[0].getLBR_ICMSST_TaxBaseType().trim().equals(""))
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType().trim().equals(""))
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseType@'");
-				icmsGrupo.setModBCST(icmsLines[0].getLBR_ICMSST_TaxBaseType());
-				icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAdded()));
-				icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBase()));
-				if (icmsLines[0].getLBR_ICMSST_TaxBaseAmt() == null)
+				icmsGrupo.setModBCST(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType());
+				icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAdded()));
+				icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBase()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseAmt@'");
-				icmsGrupo.setvBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBaseAmt()));
-				if (icmsLines[0].getLBR_ICMSST_TaxRate() == null)
+				icmsGrupo.setvBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxRate@'");
-				icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxRate()));
-				if (icmsLines[0].getLBR_ICMSST_TaxAmt() == null)
+				icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmt@'");
-				icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAmt()));
-				if (icmsLines[0].getLBR_TaxRateCredit() == null)
+				icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt()));
+				if (firstMlbrDocLineICMS.getLBR_TaxRateCredit() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxRateCredit@'");
-				icmsGrupo.setpCredSN(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxRateCredit()));
-				if (icmsLines[0].getLBR_TaxAmtCredit() == null)
+				icmsGrupo.setpCredSN(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxRateCredit()));
+				if (firstMlbrDocLineICMS.getLBR_TaxAmtCredit() == null)
 					throw new AdempiereException(prefixException + "'@LBR_TaxAmtCredit@'");
-				icmsGrupo.setvCredICMSSN(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxAmtCredit()));
+				icmsGrupo.setvCredICMSSN(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxAmtCredit()));
 			}
 			// ICMSSN202
 			else if (TextUtil.match(taxStatusDetailed,
 					MLBRDocLineICMS.CSOSN_202,
 					MLBRDocLineICMS.CSOSN_203)) {
 				
-				if (icmsLines[0].getLBR_ICMSST_TaxBaseType() == null || icmsLines[0].getLBR_ICMSST_TaxBaseType().trim().equals(""))
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType().trim().equals(""))
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseType@'");
-				icmsGrupo.setModBCST(icmsLines[0].getLBR_ICMSST_TaxBaseType());
-				icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAdded()));
-				icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBase()));
-				if (icmsLines[0].getLBR_ICMSST_TaxBaseAmt() == null)
+				icmsGrupo.setModBCST(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType());
+				icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAdded()));
+				icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBase()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseAmt@'");
-				icmsGrupo.setvBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBaseAmt()));
-				if (icmsLines[0].getLBR_ICMSST_TaxRate() == null)
+				icmsGrupo.setvBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxRate@'");
-				icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxRate()));
-				if (icmsLines[0].getLBR_ICMSST_TaxAmt() == null)
+				icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmt@'");
-				icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAmt()));
+				icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt()));
 			}
 			// ICMSSN500
 			else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CSOSN_500)) {
-				if (icmsLines[0].getLBR_ICMSST_TaxBAmtWhd() == null)
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBAmtWhd() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBAmtWhd@'");
-				icmsGrupo.setvBCSTRet(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBAmtWhd()));
-				if (icmsLines[0].getLBR_ICMSST_TaxAmtWhd() == null)
+				icmsGrupo.setvBCSTRet(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBAmtWhd()));
+				if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmtWhd() == null)
 					throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmtWhd@'");
-				icmsGrupo.setvICMSSTRet(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAmtWhd()));
+				icmsGrupo.setvICMSSTRet(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmtWhd()));
 			}
 			// ICMSSN900
 			else if (TextUtil.match(taxStatusDetailed, MLBRDocLineICMS.CSOSN_900)) {
-				if ((icmsLines[0].getLBR_ICMS_TaxBaseType() != null && !icmsLines[0].getLBR_ICMS_TaxBaseType().trim().equals("")) ||
-						icmsLines[0].getLBR_TaxBaseAmt() != null ||
-						icmsLines[0].getLBR_TaxRate() != null ||
-						icmsLines[0].getLBR_TaxAmt() != null) {
+				if ((firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType() != null && !firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType().trim().equals("")) ||
+						firstMlbrDocLineICMS.getLBR_TaxBaseAmt() != null ||
+						firstMlbrDocLineICMS.getLBR_TaxRate() != null ||
+						firstMlbrDocLineICMS.getLBR_TaxAmt() != null) {
 					
-					if (icmsLines[0].getLBR_ICMS_TaxBaseType() == null || icmsLines[0].getLBR_ICMS_TaxBaseType().trim().equals(""))
+					if (firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType().trim().equals(""))
 						throw new AdempiereException(prefixException + "'@LBR_ICMS_TaxBaseType@'");
-					icmsGrupo.setModBC(icmsLines[0].getLBR_ICMS_TaxBaseType());
-					if (icmsLines[0].getLBR_TaxBaseAmt() == null)
+					icmsGrupo.setModBC(firstMlbrDocLineICMS.getLBR_ICMS_TaxBaseType());
+					if (firstMlbrDocLineICMS.getLBR_TaxBaseAmt() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxBaseAmt@'");
-					icmsGrupo.setvBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBaseAmt()));
-					icmsGrupo.setpRedBC(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxBase()));
-					if (icmsLines[0].getLBR_TaxRate() == null)
+					icmsGrupo.setvBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBaseAmt()));
+					icmsGrupo.setpRedBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBase()));
+					if (firstMlbrDocLineICMS.getLBR_TaxRate() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxRate@'");
-					icmsGrupo.setpICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxRate()));
-					if (icmsLines[0].getLBR_TaxAmt() == null)
+					icmsGrupo.setpICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxRate()));
+					if (firstMlbrDocLineICMS.getLBR_TaxAmt() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxAmt@'");
-					icmsGrupo.setvICMS(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxAmt()));
+					icmsGrupo.setvICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxAmt()));
 				}
 				
-				if ((icmsLines[0].getLBR_ICMSST_TaxBaseType() != null && !icmsLines[0].getLBR_ICMSST_TaxBaseType().trim().equals("")) ||
-						icmsLines[0].getLBR_ICMSST_TaxBaseAmt() != null ||
-						icmsLines[0].getLBR_ICMSST_TaxRate() != null ||
-						icmsLines[0].getLBR_ICMSST_TaxAmt() != null) {
+				if ((firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType() != null && !firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType().trim().equals("")) ||
+						firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt() != null ||
+						firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate() != null ||
+						firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt() != null) {
 					
-					if (icmsLines[0].getLBR_ICMSST_TaxBaseType() == null || icmsLines[0].getLBR_ICMSST_TaxBaseType().trim().equals(""))
+					if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType() == null || firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType().trim().equals(""))
 						throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseType@'");
-					icmsGrupo.setModBCST(icmsLines[0].getLBR_ICMSST_TaxBaseType());
-					icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAdded()));
-					icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBase()));
-					if (icmsLines[0].getLBR_ICMSST_TaxBaseAmt() == null)
+					icmsGrupo.setModBCST(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseType());
+					icmsGrupo.setpMVAST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAdded()));
+					icmsGrupo.setpRedBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBase()));
+					if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt() == null)
 						throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxBaseAmt@'");
-					icmsGrupo.setvBCST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxBaseAmt()));
-					if (icmsLines[0].getLBR_ICMSST_TaxRate() == null)
+					icmsGrupo.setvBCST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxBaseAmt()));
+					if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate() == null)
 						throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxRate@'");
-					icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxRate()));
-					if (icmsLines[0].getLBR_ICMSST_TaxAmt() == null)
+					icmsGrupo.setpICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxRate()));
+					if (firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt() == null)
 						throw new AdempiereException(prefixException + "'@LBR_ICMSST_TaxAmt@'");
-					icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(icmsLines[0].getLBR_ICMSST_TaxAmt()));
+					icmsGrupo.setvICMSST(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_ICMSST_TaxAmt()));
 				}
 				
-				if (icmsLines[0].getLBR_TaxRateCredit() != null || icmsLines[0].getLBR_TaxAmtCredit() != null) {
-					if (icmsLines[0].getLBR_TaxRateCredit() == null)
+				if (firstMlbrDocLineICMS.getLBR_TaxRateCredit() != null || firstMlbrDocLineICMS.getLBR_TaxAmtCredit() != null) {
+					if (firstMlbrDocLineICMS.getLBR_TaxRateCredit() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxRateCredit@'");
-					icmsGrupo.setpCredSN(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxRateCredit()));
-					if (icmsLines[0].getLBR_TaxAmtCredit() == null)
+					icmsGrupo.setpCredSN(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxRateCredit()));
+					if (firstMlbrDocLineICMS.getLBR_TaxAmtCredit() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxAmtCredit@'");
-					icmsGrupo.setvCredICMSSN(TextUtil.bigdecimalToString(icmsLines[0].getLBR_TaxAmtCredit()));
+					icmsGrupo.setvCredICMSSN(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxAmtCredit()));
 				}
 			} 
 			
