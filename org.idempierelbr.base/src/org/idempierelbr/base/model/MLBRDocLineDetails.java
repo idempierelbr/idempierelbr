@@ -422,6 +422,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			
 			icms.setLBR_ICMSST_TaxBAmtWhd(tl.getLBR_TaxBaseAmt());
 			icms.setLBR_ICMSST_TaxAmtWhd(tl.getLBR_TaxAmt());
+			icms.setLBR_ICMSST_TaxRate(tl.getLBR_TaxRate());
 		}
 		
 		if (TextUtil.match (taxStatus,
