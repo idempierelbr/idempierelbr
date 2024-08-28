@@ -11,8 +11,8 @@ Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.idempierelbr.core.util,
  org.idempierelbr.openitems.model,
  org.idempierelbr.openitems.process,
- org.idempierelbr.openitems.processcnab240,
- org.idempierelbr.openitems.util
+ org.idempierelbr.openitems.processcnab240
+Require-Bundle: org.idempierelbr.base;bundle-version="11.0.0"
 Service-Component: OSGI-INF/BankCollectionFactory.xml
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .

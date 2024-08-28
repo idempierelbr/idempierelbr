@@ -24,10 +24,10 @@ import java.util.Properties;
 
 import org.compiere.model.*;
 import org.compiere.util.Env;
-import org.idempierelbr.core.model.I_LBR_NCM;
-import org.idempierelbr.nfe.model.I_LBR_NotaFiscal;
-import org.idempierelbr.nfe.model.I_LBR_NotaFiscalLine;
-import org.idempierelbr.tax.model.I_LBR_CFOP;
+import org.idempierelbr.base.model.I_LBR_CFOP;
+import org.idempierelbr.base.model.I_LBR_NCM;
+import org.idempierelbr.base.model.I_LBR_NotaFiscal;
+import org.idempierelbr.base.model.I_LBR_NotaFiscalLine;
 
 /** Generated Model for LBR_FactFiscal
  *  @author iDempiere (generated) 

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
+    <bundle id="org.idempierelbr.base" version="11.0.0.qualifier">
+      <category name="org.idempierelbr.extensions"/>
+   </bundle>
    <bundle id="org.idempierelbr.core" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
@@ -7,6 +10,9 @@
       <category name="org.idempierelbr.extensions"/>
    </bundle>
    <bundle id="org.idempierelbr.nfe" version="11.0.0.qualifier">
+      <category name="org.idempierelbr.extensions"/>
+   </bundle>
+   <bundle id="org.idempierelbr.nfs" version="11.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
    <bundle id="org.idempierelbr.sped" version="11.0.0.qualifier">

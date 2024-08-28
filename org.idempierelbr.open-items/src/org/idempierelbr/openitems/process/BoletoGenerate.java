@@ -21,10 +21,10 @@ import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
-import org.idempierelbr.openitems.model.MLBRBankAccountCarteira;
-import org.idempierelbr.openitems.model.MLBRBankAccountConvenio;
-import org.idempierelbr.openitems.model.MLBRBoleto;
-import org.idempierelbr.openitems.model.MLBRCollectionDefault;
+import org.idempierelbr.base.model.MLBRBankAccountCarteira;
+import org.idempierelbr.base.model.MLBRBankAccountConvenio;
+import org.idempierelbr.base.model.MLBRBoleto;
+import org.idempierelbr.base.model.MLBRCollectionDefault;
 
 /**
  *	Generate Boletos

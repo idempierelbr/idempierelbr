@@ -17,7 +17,7 @@ import java.sql.Timestamp;
 
 import org.compiere.model.MSysConfig;
 import org.compiere.util.Env;
-import org.idempierelbr.core.util.TextUtil;
+import org.idempierelbr.base.util.TextUtil;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;

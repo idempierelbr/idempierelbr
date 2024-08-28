@@ -7,10 +7,10 @@ import org.adempiere.base.IColumnCallout;
 import org.adempiere.base.IColumnCalloutFactory;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MOrder;
-import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
-import org.idempierelbr.tax.model.MLBRDocLineICMS;
-import org.idempierelbr.tax.model.MLBRDocLineIPI;
-import org.idempierelbr.tax.model.MLBRDocLinePIS;
+import org.idempierelbr.base.model.MLBRDocLineCOFINS;
+import org.idempierelbr.base.model.MLBRDocLineICMS;
+import org.idempierelbr.base.model.MLBRDocLineIPI;
+import org.idempierelbr.base.model.MLBRDocLinePIS;
 
 /**
  * This class implements the callout factory.

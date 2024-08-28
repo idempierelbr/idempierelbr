@@ -5,10 +5,10 @@ import java.util.Properties;
 import org.adempiere.base.IColumnCallout;
 import org.compiere.model.GridField;
 import org.compiere.model.GridTab;
-import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
-import org.idempierelbr.tax.model.MLBRDocLineICMS;
-import org.idempierelbr.tax.model.MLBRDocLineIPI;
-import org.idempierelbr.tax.model.MLBRDocLinePIS;
+import org.idempierelbr.base.model.MLBRDocLineCOFINS;
+import org.idempierelbr.base.model.MLBRDocLineICMS;
+import org.idempierelbr.base.model.MLBRDocLineIPI;
+import org.idempierelbr.base.model.MLBRDocLinePIS;
 
 public class CalloutDocLine implements IColumnCallout {
 

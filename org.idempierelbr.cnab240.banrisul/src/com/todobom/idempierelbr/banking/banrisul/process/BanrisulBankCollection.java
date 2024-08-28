@@ -2,13 +2,13 @@ package com.todobom.idempierelbr.banking.banrisul.process;
 
 import org.compiere.model.PO;
 import org.compiere.process.ProcessCall;
-import org.idempierelbr.core.util.TextUtil;
-import org.idempierelbr.openitems.model.MLBRBoleto;
-import org.idempierelbr.openitems.model.MLBRBoletoMovement;
-import org.idempierelbr.openitems.process.IBankCollection;
+import org.idempierelbr.base.model.MLBRBoleto;
+import org.idempierelbr.base.model.MLBRBoletoMovement;
+import org.idempierelbr.base.service.IBankCollection;
+import org.idempierelbr.base.util.OpenItemsUtil;
+import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.openitems.processcnab240.CNAB240Generate;
 import org.idempierelbr.openitems.processcnab240.CNAB240Return;
-import org.idempierelbr.openitems.util.OpenItemsUtil;
 
 import com.todobom.idempierelbr.banking.banrisul.annotated.BanrisulCNABRecords;
 

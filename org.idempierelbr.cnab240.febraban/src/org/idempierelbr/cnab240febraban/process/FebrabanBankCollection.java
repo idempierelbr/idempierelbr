@@ -2,10 +2,10 @@ package org.idempierelbr.cnab240febraban.process;
 
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.process.ProcessCall;
+import org.idempierelbr.base.model.MLBRBoleto;
+import org.idempierelbr.base.model.MLBRBoletoMovement;
+import org.idempierelbr.base.service.IBankCollection;
 import org.idempierelbr.cnab240.annotated.CNABRecords;
-import org.idempierelbr.openitems.model.MLBRBoleto;
-import org.idempierelbr.openitems.model.MLBRBoletoMovement;
-import org.idempierelbr.openitems.process.IBankCollection;
 import org.idempierelbr.openitems.processcnab240.CNAB240Return;
 
 public class FebrabanBankCollection implements IBankCollection {

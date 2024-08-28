@@ -29,8 +29,11 @@ import org.compiere.model.Query;
 import org.compiere.process.DocAction;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
-import org.idempierelbr.openitems.process.IBankCollection;
-import org.idempierelbr.openitems.process.IBankCollectionFactory;
+import org.idempierelbr.base.model.MLBRBoleto;
+import org.idempierelbr.base.model.MLBRBoletoDetails;
+import org.idempierelbr.base.model.MLBRBoletoMovement;
+import org.idempierelbr.base.service.IBankCollection;
+import org.idempierelbr.base.service.IBankCollectionFactory;
 import org.osgi.service.event.Event;
 
 public class EventHandler extends AbstractEventHandler {

@@ -17,9 +17,9 @@ import org.compiere.process.DocAction;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.Env;
-import org.idempierelbr.nfs.model.MLBRDocLineDetailsNFS;
-import org.idempierelbr.nfs.model.MLBRNFS;
-import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
+import org.idempierelbr.base.model.MLBRDocLineDetailsNFS;
+import org.idempierelbr.base.model.MLBRDocLineDetailsTax;
+import org.idempierelbr.base.model.MLBRNFS;
 
 public class ProcCreateNFS extends SvrProcess {
 	private int p_C_Order_ID = 0;

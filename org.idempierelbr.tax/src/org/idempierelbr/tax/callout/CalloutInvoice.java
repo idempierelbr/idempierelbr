@@ -9,7 +9,7 @@ import org.compiere.model.GridTab;
 import org.compiere.model.MBPartner;
 import org.compiere.model.MInvoice;
 import org.compiere.util.Env;
-import org.idempierelbr.tax.wrapper.I_W_C_BPartner;
+import org.idempierelbr.base.wrapper.I_W_C_BPartner;
 
 public class CalloutInvoice implements IColumnCallout {
 

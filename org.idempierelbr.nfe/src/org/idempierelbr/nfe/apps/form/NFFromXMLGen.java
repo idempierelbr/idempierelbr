@@ -38,24 +38,25 @@ import org.compiere.process.DocAction;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
 import org.compiere.util.Trx;
-import org.idempierelbr.core.util.AdempiereLBR;
-import org.idempierelbr.core.util.TextUtil;
-import org.idempierelbr.core.wrapper.I_W_C_BPartner;
-import org.idempierelbr.nfe.model.MLBRDocLineDetailsNfe;
-import org.idempierelbr.nfe.model.MLBRNotaFiscal;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalLineComb;
-import org.idempierelbr.tax.model.MLBRCFOP;
-import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
-import org.idempierelbr.tax.model.MLBRDocLineICMS;
-import org.idempierelbr.tax.model.MLBRDocLineIPI;
-import org.idempierelbr.tax.model.MLBRDocLineISSQN;
-import org.idempierelbr.tax.model.MLBRDocLineImportTax;
-import org.idempierelbr.tax.model.MLBRDocLinePIS;
-import org.idempierelbr.tax.model.MLBRTax;
-import org.idempierelbr.tax.model.MLBRTaxLine;
-import org.idempierelbr.tax.model.X_LBR_TaxGroup;
-import org.idempierelbr.tax.model.X_LBR_TaxStatus;
+import org.idempierelbr.base.model.MLBRCFOP;
+import org.idempierelbr.base.model.MLBRDocLineCOFINS;
+import org.idempierelbr.base.model.MLBRDocLineDetailsNfe;
+import org.idempierelbr.base.model.MLBRDocLineICMS;
+import org.idempierelbr.base.model.MLBRDocLineIPI;
+import org.idempierelbr.base.model.MLBRDocLineISSQN;
+import org.idempierelbr.base.model.MLBRDocLineImportTax;
+import org.idempierelbr.base.model.MLBRDocLinePIS;
+import org.idempierelbr.base.model.MLBRNotaFiscal;
+import org.idempierelbr.base.model.MLBRNotaFiscalLine;
+import org.idempierelbr.base.model.MLBRNotaFiscalLineComb;
+import org.idempierelbr.base.model.MLBRTax;
+import org.idempierelbr.base.model.MLBRTaxLine;
+import org.idempierelbr.base.model.X_LBR_TaxGroup;
+import org.idempierelbr.base.model.X_LBR_TaxStatus;
+import org.idempierelbr.base.util.AdempiereLBR;
+import org.idempierelbr.base.util.TextUtil;
+import org.idempierelbr.base.wrapper.I_W_C_BPartner;
+import org.idempierelbr.nfe.util.NFeUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -847,7 +848,8 @@ public class NFFromXMLGen
 			
 		}
 		
-		nf.calculateTaxTotal();
+		NFeUtil nfeUtil = new NFeUtil(nf);
+		nfeUtil.calculateTaxTotal();
 		
 		// Process
 		if (errorMsg == null) {

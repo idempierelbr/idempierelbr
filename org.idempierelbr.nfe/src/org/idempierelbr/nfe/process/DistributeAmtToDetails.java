@@ -10,8 +10,8 @@ import org.compiere.model.PO;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.Env;
-import org.idempierelbr.nfe.model.MLBRDocLineDetailsNfe;
-import org.idempierelbr.nfe.model.MLBRNotaFiscal;
+import org.idempierelbr.base.model.MLBRDocLineDetailsNfe;
+import org.idempierelbr.base.model.MLBRNotaFiscal;
 
 public class DistributeAmtToDetails extends SvrProcess
 {

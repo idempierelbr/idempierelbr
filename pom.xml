@@ -14,6 +14,7 @@
     </parent>
 
 	<modules>
+        <module>org.idempierelbr.base</module>
 		<module>org.idempierelbr.core</module>
 		<module>org.idempierelbr.jasperfonts</module>
 		<module>org.idempierelbr.nfe</module>

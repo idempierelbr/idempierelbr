@@ -5,15 +5,15 @@ import java.sql.Timestamp;
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.PO;
 import org.compiere.process.ProcessCall;
-import org.idempierelbr.core.util.TextUtil;
-import org.idempierelbr.openitems.model.MLBRBankAccountCarteira;
-import org.idempierelbr.openitems.model.MLBRBankAccountConvenio;
-import org.idempierelbr.openitems.model.MLBRBoleto;
-import org.idempierelbr.openitems.model.MLBRBoletoMovement;
-import org.idempierelbr.openitems.process.IBankCollection;
+import org.idempierelbr.base.model.MLBRBankAccountCarteira;
+import org.idempierelbr.base.model.MLBRBankAccountConvenio;
+import org.idempierelbr.base.model.MLBRBoleto;
+import org.idempierelbr.base.model.MLBRBoletoMovement;
+import org.idempierelbr.base.service.IBankCollection;
+import org.idempierelbr.base.util.OpenItemsUtil;
+import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.openitems.processcnab240.CNAB240Generate;
 import org.idempierelbr.openitems.processcnab240.CNAB240Return;
-import org.idempierelbr.openitems.util.OpenItemsUtil;
 
 import com.todobom.idempierelbr.banking.sicoob.annotated.SicoobCNABRecords;
 import com.todobom.idempierelbr.banking.sicoob.annotated.SicoobCNABSegmentP;
@@ -42,7 +42,7 @@ public class SicoobBankCollection implements IBankCollection {
 		} 
 		   
 		   digito = 11-((  base )-( (int)(base/11) * 11));
-		   //(Se o Resto for igual a 0 ou 1 então o DV é igual a 0)
+		   //(Se o Resto for igual a 0 ou 1 entï¿½o o DV ï¿½ igual a 0)
 		   if (digito > 9) 
 		      digito = 0;
 		   Res = digito.toString();

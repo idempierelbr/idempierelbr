@@ -1,7 +1,7 @@
 package com.todobom.idempierelbr.banking.itau.process;
 
-import org.idempierelbr.openitems.process.IBankCollection;
-import org.idempierelbr.openitems.process.IBankCollectionFactory;
+import org.idempierelbr.base.service.IBankCollection;
+import org.idempierelbr.base.service.IBankCollectionFactory;
 
 public class BankCollectionFactory implements IBankCollectionFactory {
 

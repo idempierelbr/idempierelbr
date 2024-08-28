@@ -27,11 +27,30 @@ import org.compiere.model.MUOM;
 import org.compiere.model.X_C_City;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
-import org.idempierelbr.core.util.AdempiereLBR;
-import org.idempierelbr.core.util.BPartnerUtil;
-import org.idempierelbr.core.util.RemoverAcentos;
-import org.idempierelbr.core.util.TextUtil;
-import org.idempierelbr.core.wrapper.I_W_C_BPartner;
+import org.idempierelbr.base.model.MLBRCFOP;
+import org.idempierelbr.base.model.MLBRDocLineDetailsNfe;
+import org.idempierelbr.base.model.MLBRDocLineICMS;
+import org.idempierelbr.base.model.MLBRIBPTax;
+import org.idempierelbr.base.model.MLBRNFeWebService;
+import org.idempierelbr.base.model.MLBRNotaFiscal;
+import org.idempierelbr.base.model.MLBRNotaFiscalDocRef;
+import org.idempierelbr.base.model.MLBRNotaFiscalLine;
+import org.idempierelbr.base.model.MLBRNotaFiscalLineComb;
+import org.idempierelbr.base.model.MLBRNotaFiscalPackage;
+import org.idempierelbr.base.model.MLBRNotaFiscalPay;
+import org.idempierelbr.base.model.MLBRNotaFiscalPaySched;
+import org.idempierelbr.base.model.MLBRNotaFiscalTax;
+import org.idempierelbr.base.model.MLBRNotaFiscalTransp;
+import org.idempierelbr.base.model.X_LBR_CEST;
+import org.idempierelbr.base.model.X_LBR_NotaFiscalNote;
+import org.idempierelbr.base.model.X_LBR_NotaFiscalProc;
+import org.idempierelbr.base.model.X_LBR_NotaFiscalTrailer;
+import org.idempierelbr.base.model.X_LBR_TaxGroup;
+import org.idempierelbr.base.util.AdempiereLBR;
+import org.idempierelbr.base.util.BPartnerUtil;
+import org.idempierelbr.base.util.RemoverAcentos;
+import org.idempierelbr.base.util.TextUtil;
+import org.idempierelbr.base.wrapper.I_W_C_BPartner;
 import org.idempierelbr.nfe.beans.AdicoesDI;
 import org.idempierelbr.nfe.beans.COFINSBean;
 import org.idempierelbr.nfe.beans.COFINSSTBean;
@@ -80,30 +99,12 @@ import org.idempierelbr.nfe.beans.TransporteVol;
 import org.idempierelbr.nfe.beans.TributosInciBean;
 import org.idempierelbr.nfe.beans.Valores;
 import org.idempierelbr.nfe.beans.ValoresICMS;
-import org.idempierelbr.nfe.model.MLBRDocLineDetailsNfe;
-import org.idempierelbr.nfe.model.MLBRNFeWebService;
-import org.idempierelbr.nfe.model.MLBRNotaFiscal;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalDocRef;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalLine;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalLineComb;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalPackage;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalPay;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalPaySched;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalTax;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalTransp;
-import org.idempierelbr.nfe.model.X_LBR_NotaFiscalNote;
-import org.idempierelbr.nfe.model.X_LBR_NotaFiscalProc;
-import org.idempierelbr.nfe.model.X_LBR_NotaFiscalTrailer;
 import org.idempierelbr.nfe.util.AssinaturaDigital;
 import org.idempierelbr.nfe.util.BPartnerUtilNfe;
+import org.idempierelbr.nfe.util.NFeLineUtil;
 import org.idempierelbr.nfe.util.NFeUtil;
 import org.idempierelbr.nfe.util.ValidaXML;
-import org.idempierelbr.tax.model.MLBRCFOP;
-import org.idempierelbr.tax.model.MLBRDocLineICMS;
-import org.idempierelbr.tax.model.MLBRIBPTax;
-import org.idempierelbr.tax.model.MLBRNCM;
-import org.idempierelbr.tax.model.X_LBR_CEST;
-import org.idempierelbr.tax.model.X_LBR_TaxGroup;
+import org.idempierelbr.base.model.MLBRNCM;
 
 import com.thoughtworks.xstream.XStream;
 
@@ -947,10 +948,12 @@ public class NFeXMLGenerator {
 				produtos.setComb(comb);
 			}
 			
+			NFeLineUtil lineUtil = new NFeLineUtil(nfLine);
+			
 			// Declaração de Importação
 			if (cfopName.startsWith("3")) {
 				
-				List<DeclaracaoDI> diList = nfLine.getDeclaracaoDI();
+				List<DeclaracaoDI> diList = lineUtil.getDeclaracaoDI();
 
 				if ( diList.size() == 0 )
 					return "Linha: " + nfLine.getLine() + " CFOP Importação. " +
@@ -988,7 +991,7 @@ public class NFeXMLGenerator {
 			// ICMS
 			ICMSBean icms = null;
 			try {
-				icms = nfLine.getICMSBean();
+				icms = lineUtil.getICMSBean();
 			} catch(AdempiereException e) {
 				return e.getMessage();
 			}
@@ -998,7 +1001,7 @@ public class NFeXMLGenerator {
 			// IPI
 			IPIBean ipi = null;
 			try {
-				ipi = nfLine.getIPIBean();
+				ipi = lineUtil.getIPIBean();
 			} catch(AdempiereException e) {
 				return e.getMessage();
 			}
@@ -1008,7 +1011,7 @@ public class NFeXMLGenerator {
 			// Import Tax
 			IIBean ii = null;
 			try {
-				ii = nfLine.getImportTaxBean();
+				ii = lineUtil.getImportTaxBean();
 			} catch (AdempiereException e) {
 				return e.getMessage();
 			}
@@ -1018,7 +1021,7 @@ public class NFeXMLGenerator {
 			// PIS
 			PISBean pis = null;
 			try {
-				pis = nfLine.getPISBean();
+				pis = lineUtil.getPISBean();
 			} catch (AdempiereException e) {
 				return e.getMessage();
 			}
@@ -1028,7 +1031,7 @@ public class NFeXMLGenerator {
 			// PIS ST
 			PISSTBean pisST = null;
 			try {
-				pisST = nfLine.getPISSTBean();
+				pisST = lineUtil.getPISSTBean();
 			} catch (AdempiereException e) {
 				return e.getMessage();
 			}
@@ -1038,7 +1041,7 @@ public class NFeXMLGenerator {
 			// COFINS
 			COFINSBean cofins = null;
 			try {
-				cofins = nfLine.getCOFINSBean();
+				cofins = lineUtil.getCOFINSBean();
 			} catch (AdempiereException e) {
 				return e.getMessage();
 			}
@@ -1048,7 +1051,7 @@ public class NFeXMLGenerator {
 			// COFINS ST
 			COFINSSTBean cofinsST = null;
 			try {
-				cofinsST = nfLine.getCOFINSSTBean();
+				cofinsST = lineUtil.getCOFINSSTBean();
 			} catch (AdempiereException e) {
 				return e.getMessage();
 			}
@@ -1058,7 +1061,7 @@ public class NFeXMLGenerator {
 			// ISSQN
 			ISSQNBean issqn = null;
 			try {
-				issqn = nfLine.getISSQNBean();
+				issqn = lineUtil.getISSQNBean();
 			} catch (AdempiereException e) {
 				return e.getMessage();
 			}
@@ -1068,7 +1071,7 @@ public class NFeXMLGenerator {
 			// ICMS DIFAL
 			ICMSUFDestBean icmsUFDest = null;
 			try {
-				icmsUFDest = nfLine.getICMSDIFAL();
+				icmsUFDest = lineUtil.getICMSDIFAL();
 			} catch(AdempiereException e) {
 				return e.getMessage();
 			}

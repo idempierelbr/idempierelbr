@@ -6,7 +6,8 @@ Bundle-Version: 11.0.0.qualifier
 Require-Bundle: org.idempierelbr.open-items,
  org.idempierelbr.core,
  org.idempierelbr.cnab240,
- org.adempiere.base
+ org.adempiere.base,
+ org.idempierelbr.base;bundle-version="11.0.0"
 Service-Component: OSGI-INF/BankCollectionFactory.xml
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .

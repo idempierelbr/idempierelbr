@@ -16,13 +16,18 @@ import org.compiere.process.ProcessInfo;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
-import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
-import org.idempierelbr.tax.model.MLBRDocLineICMS;
-import org.idempierelbr.tax.model.MLBRDocLineIPI;
-import org.idempierelbr.tax.model.MLBRDocLineISSQN;
-import org.idempierelbr.tax.model.MLBRDocLineImportTax;
-import org.idempierelbr.tax.model.MLBRDocLinePIS;
-import org.idempierelbr.tax.model.MLBRTax;
+import org.idempierelbr.base.model.MLBRDocLineCOFINS;
+import org.idempierelbr.base.model.MLBRDocLineDetailsNfe;
+import org.idempierelbr.base.model.MLBRDocLineICMS;
+import org.idempierelbr.base.model.MLBRDocLineIPI;
+import org.idempierelbr.base.model.MLBRDocLineISSQN;
+import org.idempierelbr.base.model.MLBRDocLineImportTax;
+import org.idempierelbr.base.model.MLBRDocLinePIS;
+import org.idempierelbr.base.model.MLBRNotaFiscal;
+import org.idempierelbr.base.model.MLBRNotaFiscalLine;
+import org.idempierelbr.base.model.MLBRNotaFiscalTax;
+import org.idempierelbr.base.model.MLBRTax;
+import org.idempierelbr.nfe.util.NFeLineUtil;
 import org.idempierelbr.tax.provider.TaxProviderFactory;
 
 public class NFTaxProvider implements ITaxProviderNfe {
@@ -278,7 +283,9 @@ public class NFTaxProvider implements ITaxProviderNfe {
 					return false;
 	    	}
 		}
-		return line.updateHeaderTax();
+		
+		NFeLineUtil lineUtil = new NFeLineUtil(line);
+		return lineUtil.updateHeaderTax();
 	}
 
 	@Override

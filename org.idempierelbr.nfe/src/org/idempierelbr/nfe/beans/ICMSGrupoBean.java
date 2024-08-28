@@ -40,8 +40,13 @@ public class ICMSGrupoBean
 	private String vFCPST;
 	private String motDesICMS;
 	private String vICMSDeson;
+	@XStreamAlias ("vBCSTRet")
 	private String vBCSTRet;
+	@XStreamAlias ("pST")
 	private String pST;
+	@XStreamAlias ("vICMSSubstituto")
+	private String vICMSSubstituto;
+	@XStreamAlias ("vICMSSTRet")
 	private String vICMSSTRet;
 	private String vBCFCPSTRet;
 	private String pFCPSTRet;
@@ -332,4 +337,11 @@ public class ICMSGrupoBean
 	public void setvFCPSTRet(String vFCPSTRet) {
 		this.vFCPSTRet = vFCPSTRet;
 	}
+	public String getvICMSSubstituto() {
+		return vICMSSubstituto;
+	}
+	public void setvICMSSubstituto(String vICMSSubstituto) {
+		this.vICMSSubstituto = vICMSSubstituto;
+	}
+	
 }	//	ICMSGrupoBean

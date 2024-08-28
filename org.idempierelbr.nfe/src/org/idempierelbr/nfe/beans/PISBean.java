@@ -12,8 +12,8 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
-import org.idempierelbr.tax.model.MLBRDocLinePIS;
-import org.idempierelbr.core.util.TextUtil;
+import org.idempierelbr.base.model.MLBRDocLinePIS;
+import org.idempierelbr.base.util.TextUtil;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 

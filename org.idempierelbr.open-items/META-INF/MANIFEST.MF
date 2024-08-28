@@ -18,9 +18,9 @@ Require-Bundle: org.adempiere.base,
  zkplus,
  zul,
  zweb,
- zkwebfragment
-Service-Component: OSGI-INF/ModelFactory.xml,OSGI-INF/EventHandler.xml,OSGI-INF/CalloutFactory.xml,OSGI-INF/DocFactory.xml,OSGI-INF/FormFactory.xml,
- OSGI-INF/ProcessFactory.xml
+ zkwebfragment,
+ org.idempierelbr.base;bundle-version="11.0.0"
+Service-Component: OSGI-INF/*.xml
 Import-Package: org.adempiere.webui.apps.form,
  org.adempiere.webui.component,
  org.adempiere.webui.editor,
@@ -34,6 +34,5 @@ Bundle-ClassPath: .,
  lib/commons-lang-2.6.jar
 Export-Package: org.idempierelbr.openitems.model,
  org.idempierelbr.openitems.process,
- org.idempierelbr.openitems.processcnab240,
- org.idempierelbr.openitems.util
+ org.idempierelbr.openitems.processcnab240
 Bundle-ActivationPolicy: lazy

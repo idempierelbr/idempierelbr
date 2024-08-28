@@ -2,6 +2,6 @@
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.idempierelbr.cnab240.caixa.BankCollectionFactory">
    <implementation class="com.todobom.idempierelbr.banking.caixa.process.BankCollectionFactory"/>
    <service>
-      <provide interface="org.idempierelbr.openitems.process.IBankCollectionFactory"/>
+      <provide interface="org.idempierelbr.base.service.IBankCollectionFactory"/>
    </service>
 </scr:component>

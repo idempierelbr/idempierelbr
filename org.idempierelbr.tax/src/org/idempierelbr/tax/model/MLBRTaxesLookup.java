@@ -21,6 +21,7 @@ import org.compiere.model.Lookup;
 import org.compiere.util.DisplayType;
 import org.compiere.util.KeyNamePair;
 import org.compiere.util.NamePair;
+import org.idempierelbr.base.model.MLBRTax;
 
 /**
  *		Taxes Lookup

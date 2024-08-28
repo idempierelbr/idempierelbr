@@ -21,7 +21,7 @@ import java.sql.Timestamp;
 
 import org.compiere.model.*;
 import org.compiere.util.KeyNamePair;
-import org.idempierelbr.tax.model.I_LBR_TaxName;
+import org.idempierelbr.base.model.I_LBR_TaxName;
 
 /** Generated Interface for LBR_TaxAssessment
  *  @author iDempiere (generated) 

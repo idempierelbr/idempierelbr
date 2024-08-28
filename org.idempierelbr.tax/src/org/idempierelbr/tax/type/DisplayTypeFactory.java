@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import org.adempiere.base.IDisplayTypeFactory;
 import org.compiere.util.DB;
 import org.compiere.util.Language;
-import org.idempierelbr.tax.model.MLBRTax;
+import org.idempierelbr.base.model.MLBRTax;
 
 public class DisplayTypeFactory implements IDisplayTypeFactory {
 	/** Display Type 3c69aac5-12e9-4577-9735-2c8c41e3cab6	Brazilian Taxes	*/

@@ -47,15 +47,15 @@ import org.compiere.model.Query;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.compiere.util.Util;
-import org.idempierelbr.tax.model.MLBRDocLineCOFINS;
-import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
-import org.idempierelbr.tax.model.MLBRDocLineICMS;
-import org.idempierelbr.tax.model.MLBRDocLineIPI;
-import org.idempierelbr.tax.model.MLBRDocLineISSQN;
-import org.idempierelbr.tax.model.MLBRDocLineImportTax;
-import org.idempierelbr.tax.model.MLBRDocLinePIS;
-import org.idempierelbr.tax.model.MLBRNCMMono;
-import org.idempierelbr.tax.model.MLBRTax;
+import org.idempierelbr.base.model.MLBRDocLineCOFINS;
+import org.idempierelbr.base.model.MLBRDocLineDetailsTax;
+import org.idempierelbr.base.model.MLBRDocLineICMS;
+import org.idempierelbr.base.model.MLBRDocLineIPI;
+import org.idempierelbr.base.model.MLBRDocLineISSQN;
+import org.idempierelbr.base.model.MLBRDocLineImportTax;
+import org.idempierelbr.base.model.MLBRDocLinePIS;
+import org.idempierelbr.base.model.MLBRNCMMono;
+import org.idempierelbr.base.model.MLBRTax;
 
 /**
  *  Post Shipment/Receipt Documents.

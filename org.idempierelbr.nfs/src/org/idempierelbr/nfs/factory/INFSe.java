@@ -1,7 +1,7 @@
 package org.idempierelbr.nfs.factory;
 
-import org.idempierelbr.nfs.model.MLBRNFS;
-import org.idempierelbr.nfs.model.MLBRNFSLot;
+import org.idempierelbr.base.model.MLBRNFS;
+import org.idempierelbr.base.model.MLBRNFSLot;
 
 public interface INFSe {
 

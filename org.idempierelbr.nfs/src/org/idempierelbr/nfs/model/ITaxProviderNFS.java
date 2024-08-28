@@ -2,6 +2,7 @@ package org.idempierelbr.nfs.model;
 
 import org.compiere.model.MTaxProvider;
 import org.compiere.process.ProcessInfo;
+import org.idempierelbr.base.model.MLBRNFS;
 
 /**
  * NF Tax provider interface

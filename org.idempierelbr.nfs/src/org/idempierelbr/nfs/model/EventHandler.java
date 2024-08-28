@@ -1,16 +1,26 @@
 package org.idempierelbr.nfs.model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.adempiere.base.event.AbstractEventHandler;
 import org.adempiere.base.event.IEventTopics;
 import org.adempiere.exceptions.AdempiereException;
+import org.compiere.model.MAttachment;
 import org.compiere.model.MInvoiceLine;
 import org.compiere.model.MOrderLine;
+import org.compiere.model.MProduct;
 import org.compiere.model.MTax;
 import org.compiere.model.MTaxProvider;
 import org.compiere.model.PO;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
-import org.idempierelbr.tax.model.MLBRDocLineDetailsTax;
+import org.idempierelbr.base.model.MLBRDocLineDetailsNFS;
+import org.idempierelbr.base.model.MLBRDocLineDetailsTax;
+import org.idempierelbr.base.model.MLBRNFS;
+import org.idempierelbr.base.model.MLBRTax;
+import org.idempierelbr.base.model.MLBRTaxNFS;
+import org.idempierelbr.nfs.util.NFSUtils;
 import org.idempierelbr.tax.provider.TaxProviderFactory;
 import org.osgi.service.event.Event;
 
@@ -25,6 +35,11 @@ public class EventHandler extends AbstractEventHandler {
 		registerTableEvent(IEventTopics.PO_AFTER_NEW, MLBRNFS.Table_Name);
 		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MLBRNFS.Table_Name);
 		registerTableEvent(IEventTopics.PO_BEFORE_DELETE, MLBRNFS.Table_Name);
+		
+		registerTableEvent(IEventTopics.DOC_AFTER_PREPARE, MLBRNFS.Table_Name);
+		
+		registerTableEvent(IEventTopics.PO_AFTER_NEW, MLBRDocLineDetailsNFS.Table_Name);
+		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MLBRDocLineDetailsNFS.Table_Name);
 	}
 
 	@Override
@@ -80,6 +95,107 @@ public class EventHandler extends AbstractEventHandler {
 
 					if (msg != null)
 						addErrorMessage(event, msg);
+				}
+			}
+		}
+		
+		if (po instanceof MLBRNFS) {
+			if (event.getTopic().equals(IEventTopics.PO_AFTER_NEW) ||
+					event.getTopic().equals(IEventTopics.PO_AFTER_CHANGE)) {
+				MLBRNFS nfs = (MLBRNFS)po;
+				
+				MTax tax = new MTax(nfs.getCtx(), nfs.getC_Tax_ID(), nfs.get_TrxName());
+				MTaxProvider provider = new MTaxProvider(tax.getCtx(),
+						tax.getC_TaxProvider_ID(), tax.get_TrxName());
+				NFSTaxProvider calculator = new NFSTaxProvider();
+				boolean result = calculator.recalculateTax(provider, nfs, (event.getTopic().equals(IEventTopics.PO_AFTER_NEW) ? true : false));
+				
+				if (!result)
+					throw new AdempiereException("Erro ao calcular impostos!");
+			}
+		}
+		
+		if (po instanceof MLBRNFS) {
+			if (event.getTopic().equals(IEventTopics.DOC_AFTER_PREPARE)) {
+				MLBRNFS nfs = (MLBRNFS)po;
+				NFSUtils nfsUtils = new NFSUtils(nfs);
+				// Calculate Taxes
+				if (!nfsUtils.calculateTaxTotal()) {
+					nfs.m_processMsg = "Error calculating tax";
+					throw new AdempiereException(nfs.m_processMsg);
+				}
+				
+				// Save everything
+				nfs.saveEx();
+
+				// it's own NF
+				if (nfs.isLBR_IsDocIssuedByOrg()) {
+
+					// has immutable status
+					if (!nfs.hasImmutableStatus()) {
+
+						// delete older attachments
+						MAttachment attachNFe = nfs.getAttachment(true);
+						if (attachNFe != null) {
+							for (int i = attachNFe.getEntryCount() - 1; i >= 0; i--) {
+								if (attachNFe.getEntry(i).getName().endsWith("xml"))
+									attachNFe.deleteEntry(i);
+							}
+							attachNFe.saveEx();
+						}
+					}
+
+					// Generate xml
+					// m_processMsg = generateXML();
+					if (nfs.m_processMsg != null)
+						throw new AdempiereException(nfs.m_processMsg);
+				}
+			}
+		}
+		
+		if (po instanceof MLBRDocLineDetailsNFS) {
+			if (event.getTopic().equals(IEventTopics.PO_AFTER_NEW) ||
+					event.getTopic().equals(IEventTopics.PO_AFTER_CHANGE)) {
+				MLBRDocLineDetailsNFS details = (MLBRDocLineDetailsNFS)po;
+				
+				if (details.get_ValueAsInt("LBR_NFS_ID") > 0) {		
+					boolean shouldContinue = true;
+					
+					if (details.m_DetailsFrom != null) {
+						details.copyChildren(details.m_DetailsFrom);			
+						details.m_DetailsFrom = null;
+						shouldContinue = false;
+					}
+					
+					if (shouldContinue) {
+						boolean newRecord = event.getTopic().equals(IEventTopics.PO_AFTER_NEW) ? true : false;
+						
+						// Calculate (or recalculate) taxes
+						if (details.getLBR_Tax_ID() > 0
+								&& ((!newRecord && (details.is_ValueChanged("LBR_Tax_ID")
+										|| details.is_ValueChanged("LBR_GrossAmt") || details.is_ValueChanged("DiscountAmt"))) || (newRecord))) {
+				
+							details.deleteChildren();
+							
+							// Array para somar os impostos de todas as linhas
+							Map<Integer, Object[]> taxes = new HashMap<Integer, Object[]>();
+							MLBRTax tax = new MLBRTax (details.getCtx(), details.getLBR_Tax_ID(), details.get_TrxName());
+							
+							if (details.get_ValueAsInt("LBR_NFS_ID") > 0) {
+								MLBRNFS m_nfs = new MLBRNFS(details.getCtx(), details.get_ValueAsInt("LBR_NFS_ID"), details.get_TrxName());
+								details.calculateTaxes(m_nfs, m_nfs);
+								details.processTax(taxes, tax, m_nfs.getC_Tax_ID());
+								details.createChildren(taxes, tax, m_nfs.getC_Tax_ID(),
+										(MProduct) m_nfs.getM_Product(),
+										m_nfs.getC_BPartner_ID(),
+										m_nfs.getC_BPartner_Location_ID(),
+										m_nfs.getLBR_TransactionType(), m_nfs.getDateDoc());
+								
+								NFSUtils nfsUtils = new NFSUtils(m_nfs);
+								nfsUtils.updateHeaderTax();
+							}
+						}
+					}
 				}
 			}
 		}

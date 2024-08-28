@@ -7,8 +7,9 @@ import java.util.logging.Level;
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
-import org.idempierelbr.core.util.RemoverAcentos;
-import org.idempierelbr.nfe.model.MLBRNotaFiscalInut;
+import org.idempierelbr.base.model.MLBRNotaFiscalInut;
+import org.idempierelbr.base.util.RemoverAcentos;
+import org.idempierelbr.nfe.util.NFeInutUtil;
 
 /**
  * 	Inutiliza uma NF ou uma Sequência de NF.
@@ -101,7 +102,8 @@ public class InutNotaFiscal extends SvrProcess
 		inut.saveEx();
 		
 		// Send requisition
-		return inut.send();
+		NFeInutUtil inutUtil = new NFeInutUtil(inut); 
+		return inutUtil.send();
 	}
 	
 }

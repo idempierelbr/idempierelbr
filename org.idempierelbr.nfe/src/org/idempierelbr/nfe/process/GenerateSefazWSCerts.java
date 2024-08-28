@@ -52,7 +52,7 @@ import org.adempiere.exceptions.AdempiereException;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.CLogger;
-import org.idempierelbr.nfe.model.MLBRNFeWebService;
+import org.idempierelbr.base.model.MLBRNFeWebService;
 
 /**
  * 	ProcGenerateCert

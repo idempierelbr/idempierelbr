@@ -2,9 +2,9 @@ package org.idempierelbr.openitems.processcnab240;
 
 import org.compiere.model.PO;
 import org.compiere.process.ProcessCall;
-import org.idempierelbr.openitems.model.MLBRBoleto;
-import org.idempierelbr.openitems.model.MLBRBoletoMovement;
-import org.idempierelbr.openitems.process.IBankCollection;
+import org.idempierelbr.base.model.MLBRBoleto;
+import org.idempierelbr.base.model.MLBRBoletoMovement;
+import org.idempierelbr.base.service.IBankCollection;
 
 public class ExampleBankCollection implements IBankCollection {
 

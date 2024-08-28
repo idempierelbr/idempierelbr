@@ -27,10 +27,11 @@ import org.compiere.model.MUser;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
-import org.idempierelbr.core.model.MLBRNCM;
-import org.idempierelbr.core.util.AdempiereLBR;
-import org.idempierelbr.core.util.BPartnerUtil;
-import org.idempierelbr.core.util.TextUtil;
+import org.idempierelbr.base.model.MLBRNCM;
+import org.idempierelbr.base.util.AdempiereLBR;
+import org.idempierelbr.base.util.BPartnerUtil;
+import org.idempierelbr.base.util.TextUtil;
+import org.idempierelbr.base.wrapper.I_W_AD_OrgInfo;
 import org.idempierelbr.sped.icmsipi.bean.R0000;
 import org.idempierelbr.sped.icmsipi.bean.R0001;
 import org.idempierelbr.sped.icmsipi.bean.R0005;
@@ -90,7 +91,6 @@ import org.idempierelbr.sped.model.MLBRFiscalDoc;
 import org.idempierelbr.sped.model.MLBRSPEDOptions;
 import org.idempierelbr.sped.model.MLBRTaxAssessment;
 import org.idempierelbr.sped.model.X_LBR_TaxAssessmentLine;
-import org.idempierelbr.tax.wrapper.I_W_AD_OrgInfo;
 
 
 /**

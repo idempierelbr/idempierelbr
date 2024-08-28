@@ -19,6 +19,16 @@ import org.compiere.process.DocAction;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.Env;
 import org.compiere.util.Msg;
+import org.idempierelbr.base.model.MLBRBankAccountCarteira;
+import org.idempierelbr.base.model.MLBRBankAccountConvenio;
+import org.idempierelbr.base.model.MLBRBoleto;
+import org.idempierelbr.base.model.MLBRBoletoMovement;
+import org.idempierelbr.base.model.MLBRCobGrupoOcorrencia;
+import org.idempierelbr.base.model.MLBRCobMovimento;
+import org.idempierelbr.base.model.MLBRCobOcorrencia;
+import org.idempierelbr.base.service.IBankCollection;
+import org.idempierelbr.base.util.AdempiereLBR;
+import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.cnab240.annotated.CNABBaseRecord;
 import org.idempierelbr.cnab240.annotated.CNABCobrancaHeaderLoteRecord;
 import org.idempierelbr.cnab240.annotated.CNABRecords;
@@ -26,16 +36,6 @@ import org.idempierelbr.cnab240.annotated.CNABSegmentBaseRecord;
 import org.idempierelbr.cnab240.annotated.CNABSegmentGroup;
 import org.idempierelbr.cnab240.annotated.CNABSegmentTRecord;
 import org.idempierelbr.cnab240.annotated.CNABSegmentURecord;
-import org.idempierelbr.core.util.AdempiereLBR;
-import org.idempierelbr.core.util.TextUtil;
-import org.idempierelbr.openitems.model.MLBRBankAccountCarteira;
-import org.idempierelbr.openitems.model.MLBRBankAccountConvenio;
-import org.idempierelbr.openitems.model.MLBRBoleto;
-import org.idempierelbr.openitems.model.MLBRBoletoMovement;
-import org.idempierelbr.openitems.model.MLBRCobGrupoOcorrencia;
-import org.idempierelbr.openitems.model.MLBRCobMovimento;
-import org.idempierelbr.openitems.model.MLBRCobOcorrencia;
-import org.idempierelbr.openitems.process.IBankCollection;
 
 /*
  * Processa registros CNAB
@@ -140,7 +140,7 @@ public class CNABRecordsProcess {
 			mov.setLBR_CNAB_ID(svrP.getCnab().get_ID());
 			
 			// detecta conta bancária
-			mov.detectBankAccount(segT , boleto.getC_Bank().getRoutingNo());
+			mov.detectBankAccount(segT.getAgenciaCedente(), segT.getDvAgenciaCedente(), segT.getContaCedente(), segT.getDvContaCedente(), boleto.getC_Bank().getRoutingNo());
 			
 			MLBRCobMovimento cobMov = getCobMovimento(boleto, segT.getCodigoMovimento() , svrP );
 			

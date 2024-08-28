@@ -8,7 +8,7 @@ import org.compiere.acct.Doc;
 import org.compiere.acct.Fact;
 import org.compiere.model.MAcctSchema;
 import org.compiere.util.Env;
-import org.idempierelbr.nfs.model.MLBRNFS;
+import org.idempierelbr.base.model.MLBRNFS;
 
 public class Doc_NFS extends Doc {
 	/**

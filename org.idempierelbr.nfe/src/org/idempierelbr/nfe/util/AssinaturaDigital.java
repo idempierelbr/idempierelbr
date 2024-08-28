@@ -53,8 +53,8 @@ import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MOrgInfo;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
-import org.idempierelbr.core.util.TextUtil;
-import org.idempierelbr.nfe.model.MLBRDigitalCertificate;
+import org.idempierelbr.base.model.MLBRDigitalCertificate;
+import org.idempierelbr.base.util.TextUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
@@ -74,6 +74,7 @@ public class AssinaturaDigital {
 	public static final String RECEPCAO_MDFE = "6";
 	public static final String RPS = "7";
 	public static final String INF_PREST_SERVICO = "8";
+	public static final String NFS_CABECALHO = "9";
 
 	/** Algoritmos */
 	private static final String C14N_TRANSFORM_METHOD = "http://www.w3.org/TR/2001/REC-xml-c14n-20010315";
@@ -212,6 +213,8 @@ public class AssinaturaDigital {
 			tag = "Rps";
 		else if (docType.equals(INF_PREST_SERVICO))
 			tag = "InfDeclaracaoPrestacaoServico";
+		else if (docType.equals(NFS_CABECALHO))
+			tag = "Cabecalho";
 
 		//
 		Reference r = null;
@@ -219,9 +222,8 @@ public class AssinaturaDigital {
 		/**
 		 * Para RPS não é necessário assinar uma URI especifica
 		 */
-		if (docType.equals(RPS))
+		if (docType.equals(RPS) || docType.equals(NFS_CABECALHO))
 			r = sig.newReference("", sig.newDigestMethod(DigestMethod.SHA1, null), transformList, null, null);
-
 		else {
 			/**
 			 * Encontra a URI ID para assiná-la
@@ -244,8 +246,9 @@ public class AssinaturaDigital {
 		x509Content.add(cert);
 		X509Data xd = kif.newX509Data(x509Content);
 		KeyInfo ki = kif.newKeyInfo(Collections.singletonList(xd));
-
+		
 		DOMSignContext dsc = new DOMSignContext(getChavePrivada(), doc.getDocumentElement());
+		
 		XMLSignature signature = sig.newXMLSignature(si, ki);
 		signature.sign(dsc);
 
@@ -257,7 +260,6 @@ public class AssinaturaDigital {
 		Transformer trans = tf.newTransformer();
 		trans.transform(new DOMSource(doc), new StreamResult(sw));
 
-		//
 		return new StringBuilder(sw.toString());
 	} // assinarDocumento
 

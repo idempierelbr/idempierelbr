@@ -11,11 +11,11 @@ import org.compiere.model.MBank;
 import org.compiere.model.MBankAccount;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
+import org.idempierelbr.base.model.MLBRCNAB;
+import org.idempierelbr.base.service.IBankCollection;
+import org.idempierelbr.base.util.OpenItemsUtil;
 import org.idempierelbr.cnab240.annotated.CNABHeaderArquivoRecord;
 import org.idempierelbr.cnab240.annotated.CNABRecords;
-import org.idempierelbr.openitems.model.MLBRCNAB;
-import org.idempierelbr.openitems.process.IBankCollection;
-import org.idempierelbr.openitems.util.OpenItemsUtil;
 
 
 /**

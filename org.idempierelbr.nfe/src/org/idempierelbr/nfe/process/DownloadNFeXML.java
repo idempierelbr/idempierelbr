@@ -4,7 +4,7 @@ import java.util.logging.Level;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.DB;
-import org.idempierelbr.nfe.model.MLBRNFeXML;
+import org.idempierelbr.nfe.util.NFeUtil;
 
 public class DownloadNFeXML extends SvrProcess
 {
@@ -57,6 +57,6 @@ public class DownloadNFeXML extends SvrProcess
 				p_LBR_LastNSU = lastDbNSU;
 		}
 		
-		return MLBRNFeXML.requestWSAndProcess(getCtx(), p_AD_Org_ID, p_LBR_LastNSU, p_LBR_NSU, p_LBR_NFeID, get_TrxName());
+		return NFeUtil.requestWSAndProcess(getCtx(), p_AD_Org_ID, p_LBR_LastNSU, p_LBR_NSU, p_LBR_NFeID, get_TrxName());
 	}
 }

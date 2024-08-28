@@ -12,7 +12,7 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
-import org.idempierelbr.core.util.RemoverAcentos;
+import org.idempierelbr.base.util.RemoverAcentos;
 
 public class DetalhesProdServBean
 {

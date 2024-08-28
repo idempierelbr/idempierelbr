@@ -11,10 +11,10 @@ import org.compiere.model.MDocType;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MInvoicePaySchedule;
 import org.compiere.util.Env;
-import org.idempierelbr.openitems.model.MLBRBankAccountCarteira;
-import org.idempierelbr.openitems.model.MLBRBankAccountConvenio;
-import org.idempierelbr.openitems.model.MLBRBoleto;
-import org.idempierelbr.openitems.model.MLBRCollectionDefault;
+import org.idempierelbr.base.model.MLBRBankAccountCarteira;
+import org.idempierelbr.base.model.MLBRBankAccountConvenio;
+import org.idempierelbr.base.model.MLBRBoleto;
+import org.idempierelbr.base.model.MLBRCollectionDefault;
 
 public class CalloutBoleto implements IColumnCallout {
 	@Override

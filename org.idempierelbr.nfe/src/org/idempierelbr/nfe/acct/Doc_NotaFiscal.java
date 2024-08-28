@@ -7,7 +7,7 @@ import org.compiere.acct.Doc;
 import org.compiere.acct.Fact;
 import org.compiere.model.MAcctSchema;
 import org.compiere.util.Env;
-import org.idempierelbr.nfe.model.MLBRNotaFiscal;
+import org.idempierelbr.base.model.MLBRNotaFiscal;
 
 
 public class Doc_NotaFiscal extends Doc

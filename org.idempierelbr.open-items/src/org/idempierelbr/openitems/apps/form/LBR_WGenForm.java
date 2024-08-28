@@ -7,7 +7,7 @@ import org.adempiere.webui.event.WTableModelEvent;
 import org.compiere.apps.form.GenForm;
 import org.compiere.minigrid.IDColumn;
 import org.compiere.util.Env;
-import org.idempierelbr.core.util.TextUtil;
+import org.idempierelbr.base.util.TextUtil;
 
 public class LBR_WGenForm extends WGenForm {
 	
