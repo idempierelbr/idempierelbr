@@ -249,9 +249,12 @@ public abstract class BPartnerUtil
 			MTable table = MTable.get(ctx, X_C_City.Table_Name);
 			Query query = new Query(ctx, table, whereClause, trxName);
 			if (location != null){
-				query.setParameters(new Object[] { location.getCity().trim(), Env.getAD_Client_ID(ctx), location.getC_Region_ID() });
+				String cityNameUse = location.getCity() != null ? location.getCity().trim() : "";
+				query.setParameters(new Object[] { cityNameUse, Env.getAD_Client_ID(ctx), location.getC_Region_ID() });
 			}
 			else{
+				if(cityName == null)
+					cityName = "";
 				query.setParameters(new Object[] { cityName, Env.getAD_Client_ID(ctx), C_Region_ID });
 			}
 
