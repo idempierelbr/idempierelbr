@@ -541,7 +541,7 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 		    		
 		    		// Qty
 		    		Label lInternalQty = new Label("Quantidade*");
-		    		WEditor editorInternalQty = new WNumberEditor("qty", true, false, true, 0, null);
+		    		WNumberEditor editorInternalQty = new WNumberEditor("qty", true, false, true, DisplayType.Amount, null);
 		    		((WNumberEditor) editorInternalQty).getComponent().setHflex("1");
 		    		((WNumberEditor) editorInternalQty).getComponent().setAttribute("id", key);
 
@@ -563,7 +563,7 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 		    		// Unit Price
 		    		row = new Row();
 		    		Label lInternalUnitPrice = new Label("Valor Unitário*");
-		    		WEditor editorInternalUnitPrice = new WNumberEditor("unitPrice", true, false, true, 0, null);
+		    		WNumberEditor editorInternalUnitPrice = new WNumberEditor("unitPrice", true, false, true, DisplayType.Amount, null);
 		    		((WNumberEditor) editorInternalUnitPrice).getComponent().setHflex("1");
 		    		((WNumberEditor) editorInternalUnitPrice).getComponent().setAttribute("id", key);
 

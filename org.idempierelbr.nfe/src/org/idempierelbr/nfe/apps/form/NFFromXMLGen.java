@@ -480,12 +480,12 @@ public class NFFromXMLGen
 		String where = "IsActive=?";
 		
 		if (documentNo.length() == 11)
-			where += " AND LBR_CPF=?";
+			where += " AND LBR_CPF=? AND AD_Client_ID=?";
 		else
-			where += " AND LBR_CNPJ=?";
+			where += " AND LBR_CNPJ=? AND AD_Client_ID=?";
 
 		Query query =  new Query(Env.getCtx(), table, where, null);
-		query.setParameters(new Object[]{true, documentNo});
+		query.setParameters(new Object[]{true, documentNo, Env.getAD_Client_ID(Env.getCtx())});
 
 		return query.first();
 	}
@@ -663,15 +663,31 @@ public class NFFromXMLGen
 		
 		try {
 			nf.saveEx();
+			trx.commit();
 		} catch (Exception e) {
-			return "Não foi possível gerar a Nota Fiscal.";
+			throw new AdempiereException(e);
 		}
 		
 		// Attach XML File
-		MAttachment attachNFe = nf.createAttachment();
-		attachNFe.setAD_Org_ID(nf.getAD_Org_ID());
-		attachNFe.addEntry(xmlFile);
-		attachNFe.save(trx.getTrxName());
+		{
+			StringBuilder whereClause = new StringBuilder("SELECT AD_Attachment_ID FROM AD_Attachment WHERE AD_Table_ID=?");
+			List<Object> params = new ArrayList<Object>();
+			params.add(nf.Table_ID);
+			if (nf.get_ID() > 0) {
+				whereClause.append(" AND Record_ID=?");
+				params.add(nf.get_ID());
+			}
+			int AD_Attachment_ID = DB.getSQLValueEx(trxName, whereClause.toString(), params);
+			MAttachment attachNFe = null;
+			if (AD_Attachment_ID > 0)
+				attachNFe = new MAttachment(nf.getCtx(), AD_Attachment_ID, nf.get_TrxName());
+			else {
+				attachNFe = new MAttachment (nf.getCtx(), nf.Table_ID, nf.get_ID(), nf.get_UUID(), null);
+				attachNFe.setAD_Org_ID(nf.getAD_Org_ID());
+				attachNFe.addEntry(xmlFile);
+				attachNFe.save(trx.getTrxName());
+			}
+		}
 		
 		// Should update/create entries in M_ProductPO ?
 		boolean createProductPO = MSysConfig.getBooleanValue("LBR_PRODUCTPO_WHEN_GEN_NF_FROM_XML",
@@ -847,7 +863,8 @@ public class NFFromXMLGen
 			
 		}
 		
-		nf.calculateTaxTotal();
+		NFeUtil nfeUtil = new NFeUtil(nf);
+		nfeUtil.calculateTaxTotal();
 		
 		// Process
 		if (errorMsg == null) {
@@ -1981,3 +1998,4 @@ public class NFFromXMLGen
 	}
 	
 }
+
