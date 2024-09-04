@@ -639,13 +639,13 @@ public class CreateNotaFiscal extends SvrProcess
 		String docBaseType = poDocType.getDocBaseType();
 		
 		// Document Base Types for IN operation
-		if (docBaseType.equals(MDocType.DOCBASETYPE_APInvoice) ||
-				docBaseType.equals(MDocType.DOCBASETYPE_ARCreditMemo) ||
-				(docBaseType.equals(MDocType.DOCBASETYPE_PurchaseOrder) && 
-						!poDocType.getDocSubTypeSO().equals(MDocType.DOCSUBTYPESO_ReturnMaterial))||
-				docBaseType.equals(MDocType.DOCBASETYPE_PurchaseRequisition) ||
-				(docBaseType.equals(MDocType.DOCBASETYPE_SalesOrder) && 
-						poDocType.getDocSubTypeSO().equals(MDocType.DOCSUBTYPESO_ReturnMaterial)))
+		if (MDocType.DOCBASETYPE_APInvoice.equals(docBaseType) ||
+				MDocType.DOCBASETYPE_ARCreditMemo.equals(docBaseType) ||
+				(MDocType.DOCBASETYPE_PurchaseOrder.equals(docBaseType) && 
+						!MDocType.DOCSUBTYPESO_ReturnMaterial.equals(poDocType.getDocSubTypeSO()))||
+				 MDocType.DOCBASETYPE_PurchaseRequisition.equals(docBaseType) ||
+				(MDocType.DOCBASETYPE_SalesOrder.equals(docBaseType) && 
+						 MDocType.DOCSUBTYPESO_ReturnMaterial.equals(poDocType.getDocSubTypeSO())))
 			opType = "0"; // IN		
 		
 		return opType;

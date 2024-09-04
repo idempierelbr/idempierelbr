@@ -847,32 +847,36 @@ public class NFeUtil {
 	 * @return
 	 */
 	public static boolean isValidEAN(String value) {
-		try {		
-			if(value.contains("GTIN"))
-				return Boolean.TRUE;			
-			
-			if (value != null && !value.isEmpty()
-					&& (value.length() == 8 || value.length() == 12 || value.length() == 13 || value.length() == 14)) {
-				int factor = 3;
-				int sum = 0;
-	
-				for (int index = value.length() - 1; index > 0; --index) {
-					int mult = Integer.valueOf(value.substring(index - 1, index));
-					sum = sum + mult * factor;
-					factor = 4 - factor;
-				}
-	
-				int cc = ((1000 - sum) % 10);
-				int ca = Integer.valueOf(value.substring(value.length() - 1));
-	
-				if (cc == ca)
-					return Boolean.TRUE;
-			}
-		} catch (NumberFormatException nfe) {
-			log.info("Erro formato UCP/EAN");
-	    }		
-		
-		return Boolean.FALSE;
+	    if (value == null || value.isEmpty()) {
+	        return Boolean.FALSE;
+	    }
+
+	    try {
+	        if (("GTIN").contains(value)) {
+	            return Boolean.TRUE;
+	        }
+
+	        if (value.length() == 8 || value.length() == 12 || value.length() == 13 || value.length() == 14) {
+	            int factor = 3;
+	            int sum = 0;
+
+	            for (int index = value.length() - 1; index > 0; --index) {
+	                String substring = value.substring(index - 1, index);
+	                int mult = Integer.parseInt(substring); // Using parseInt for simpler syntax
+	                sum += mult * factor;
+	                factor = 4 - factor;
+	            }
+
+	            int cc = (1000 - sum) % 10;
+	            int ca = Integer.parseInt(value.substring(value.length() - 1));
+
+	            return cc == ca ? Boolean.TRUE : Boolean.FALSE;
+	        }
+	    } catch (NumberFormatException nfe) {
+	        log.info("Erro formato UCP/EAN: " + nfe.getMessage());
+	    }
+
+	    return Boolean.FALSE;
 	}
 
 	// criado para normalizar o csc segundo a regra
