@@ -676,7 +676,9 @@ public class NFFromXMLGen
 			params.add(nf.Table_ID);
 			if (nf.get_ID() > 0) {
 				whereClause.append(" AND Record_ID=?");
+				whereClause.append(" AND AD_Client_ID=?");
 				params.add(nf.get_ID());
+				params.add(nf.getAD_Client_ID());
 			}
 			int AD_Attachment_ID = DB.getSQLValueEx(trxName, whereClause.toString(), params);
 			MAttachment attachNFe = null;
