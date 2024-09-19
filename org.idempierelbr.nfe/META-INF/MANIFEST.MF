@@ -17,8 +17,7 @@ Require-Bundle: org.adempiere.base,
  zweb,
  zkwebfragment,
  org.idempierelbr.base
-Service-Component: OSGI-INF/*.xml,
- OSGI-INF/FormFactory.xml
+Service-Component: OSGI-INF/*.xml
 Export-Package: org.idempierelbr.nfe.model,
  org.idempierelbr.nfe.process,
  org.idempierelbr.nfe.util
