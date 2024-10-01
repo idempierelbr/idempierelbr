@@ -1108,6 +1108,10 @@ public class NFeXMLGenerator {
 		
 		for (MLBRNotaFiscalTax nfTax : nfTaxes){
 			MTax tax = new MTax(ctx, nfTax.getC_Tax_ID(), trxName);
+			
+			if (tax.get_ValueAsInt("LBR_TaxGroup_ID") <= 0)
+				continue;
+			
 			X_LBR_TaxGroup taxGroup = new X_LBR_TaxGroup(ctx, tax.get_ValueAsInt("LBR_TaxGroup_ID"), null);
 			
 			if (taxGroup.getName().toUpperCase().equals("ICMSST")) {
