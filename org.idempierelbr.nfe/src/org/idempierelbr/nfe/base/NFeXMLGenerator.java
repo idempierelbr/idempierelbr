@@ -887,7 +887,7 @@ public class NFeXMLGenerator {
 			produtos.setcEANTrib("");
 			String productEANTrib = details.getLBR_UPCTax();
 				
-			if(!productEANTrib.contains("GTIN")) {
+			if(productEANTrib != null && !productEANTrib.contains("GTIN")) {
 				if (NFeUtil.isValidEAN(productEANTrib))
 					produtos.setcEANTrib(productEANTrib);
 			}else {
@@ -1434,7 +1434,7 @@ public class NFeXMLGenerator {
 				detPag.settPag(NFeUtil.NFCe_TPAG_DINHEIRO);	
 			} else if (paymentRule.equals(MInvoice.PAYMENTRULE_CreditCard)) {
 				detPag.settPag(NFeUtil.NFCe_TPAG_CARTAO_CREDITO);	
-			} else if (paymentRule.equals(MInvoice.PAYMENTRULE_DirectDeposit)) {
+			} else if (paymentRule.equals(MInvoice.PAYMENTRULE_DirectDebit) || paymentRule.equals(MInvoice.PAYMENTRULE_DirectDeposit)) {
 				detPag.settPag(NFeUtil.NFCe_TPAG_CARTAO_DEBITO);	
 			} else if (paymentRule.equals(MInvoice.PAYMENTRULE_Check)) {
 				detPag.settPag(NFeUtil.NFCe_TPAG_CHEQUE);	
