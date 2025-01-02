@@ -273,8 +273,7 @@ public class NFeUtil {
 		} 
 		catch(Exception ex) 
 		{
-			ex.printStackTrace();
-			return Msg.getMsg(Env.getCtx(), "LBR_ErrorGeneratingXML") + ". Nota Fiscal " + p_NF.getDocumentNo();
+			throw new AdempiereException(ex);
 		}
 		
 		return msg;
