@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Core
 Bundle-SymbolicName: org.idempierelbr.core
-Bundle-Version: 11.0.0.qualifier
+Bundle-Version: 12.0.0.qualifier
 Require-Bundle: org.adempiere.base,
  zcommon,
  zel,
@@ -13,7 +13,7 @@ Require-Bundle: org.adempiere.base,
  zul,
  zweb,
  zkwebfragment,
- org.idempierelbr.base;bundle-version="11.0.0"
+ org.idempierelbr.base;bundle-version="12.0.0"
 Service-Component: OSGI-INF/*.xml
 Bundle-ClassPath: .
 Import-Package: org.adempiere.webui,

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Sped
 Bundle-SymbolicName: org.idempierelbr.sped
-Bundle-Version: 11.0.0.qualifier
+Bundle-Version: 12.0.0.qualifier
 Bundle-Vendor: claudemir@todobom.com, aomelo@live.com, pblobp@gmail.com
 Import-Package: org.adempiere.base,
  org.adempiere.exceptions,
@@ -20,7 +20,7 @@ Import-Package: org.adempiere.base,
  org.idempierelbr.base.wrapper,
  org.osgi.framework;version="1.6.0",
  org.osgi.util.tracker;version="1.5.0"
-Require-Bundle: org.idempierelbr.base;bundle-version="11.0.0"
+Require-Bundle: org.idempierelbr.base;bundle-version="12.0.0"
 Service-Component: OSGI-INF/ProcessFactory.xml,
  OSGI-INF/ModelFactory.xml
 Bundle-ClassPath: lib/xstream-1.4.7.jar,

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Open Items
 Bundle-SymbolicName: org.idempierelbr.open-items
-Bundle-Version: 11.0.0.qualifier
+Bundle-Version: 12.0.0.qualifier
 Require-Bundle: org.adempiere.base,
  org.idempierelbr.core,
  org.adempiere.ui,
@@ -19,7 +19,7 @@ Require-Bundle: org.adempiere.base,
  zul,
  zweb,
  zkwebfragment,
- org.idempierelbr.base;bundle-version="11.0.0"
+ org.idempierelbr.base;bundle-version="12.0.0"
 Service-Component: OSGI-INF/*.xml
 Import-Package: org.adempiere.webui.apps.form,
  org.adempiere.webui.component,

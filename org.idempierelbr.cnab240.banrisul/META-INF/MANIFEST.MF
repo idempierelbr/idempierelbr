@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR - CNAB 240 - Banrisul
 Bundle-SymbolicName: org.idempierelbr.cnab240.banrisul
-Bundle-Version: 11.0.0.qualifier
+Bundle-Version: 12.0.0.qualifier
 Bundle-Vendor: TODOBOM
 Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.compiere.model,
@@ -12,7 +12,7 @@ Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.idempierelbr.openitems.model,
  org.idempierelbr.openitems.process,
  org.idempierelbr.openitems.processcnab240
-Require-Bundle: org.idempierelbr.base;bundle-version="11.0.0"
+Require-Bundle: org.idempierelbr.base;bundle-version="12.0.0"
 Service-Component: OSGI-INF/BankCollectionFactory.xml
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .

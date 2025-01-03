@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR - CNAB 240 - Itaú
 Bundle-SymbolicName: org.idempierelbr.cnab240.itau
-Bundle-Version: 11.0.0.qualifier
+Bundle-Version: 12.0.0.qualifier
 Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.idempierelbr.cnab240.annotated,
  org.idempierelbr.cnab240.utils,
@@ -11,7 +11,7 @@ Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.idempierelbr.openitems.process,
  org.idempierelbr.openitems.processcnab240
 Require-Bundle: org.adempiere.base,
- org.idempierelbr.base;bundle-version="11.0.0"
+ org.idempierelbr.base;bundle-version="12.0.0"
 Service-Component: OSGI-INF/BankCollectionFactory.xml
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .

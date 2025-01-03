@@ -2,16 +2,16 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR - NFSe
 Bundle-SymbolicName: org.idempierelbr.nfs
-Bundle-Version: 11.0.0.qualifier
+Bundle-Version: 12.0.0.qualifier
 Bundle-Vendor: iDempiereLBR
 Bundle-ClassPath: .
 Require-Bundle: org.adempiere.base,
  org.idempierelbr.core,
  org.idempierelbr.tax,
- org.eclipse.osgi.services,
- org.idempierelbr.base;bundle-version="11.0.0"
+ org.idempierelbr.base;bundle-version="12.0.0"
 Service-Component: OSGI-INF/*.xml
 Bundle-ActivationPolicy: lazy
+Import-Package: org.osgi.service.event;version="1.3.0"
 Export-Package: org.idempierelbr.nfs.factory,
  org.idempierelbr.nfs.model,
  org.idempierelbr.nfs.process,
