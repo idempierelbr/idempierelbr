@@ -12,7 +12,10 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.util;
 
+import org.compiere.model.MSysConfig;
 import org.compiere.util.CLogger;
+import org.compiere.util.Env;
+
 import br.gov.sp.fazenda.dsge.brazilutils.uf.UF;
 import br.gov.sp.fazenda.dsge.brazilutils.uf.ie.InscricaoEstadual;
 
@@ -43,6 +46,11 @@ public abstract class BPartnerUtilNfe
 		{
 			InscricaoEstadual iEstadual = uf.getInscricaoEstadual();
 			iEstadual.setNumber(ie);
+			
+			boolean skipValidation = MSysConfig.getBooleanValue("LBR_SKIP_IE_VALIDATION", false, Env.getAD_Client_ID(Env.getCtx()));
+			if (skipValidation)
+				return iEstadual.getNumber();
+			
 			//
 			if (!iEstadual.isValid()){
 				if (iEstadual.getInvalidCause() != null)
