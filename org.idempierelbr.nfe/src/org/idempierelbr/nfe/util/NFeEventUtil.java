@@ -48,6 +48,7 @@ import org.xml.sax.InputSource;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.CompactWriter;
 import com.thoughtworks.xstream.io.xml.DomDriver;
+import com.thoughtworks.xstream.security.AnyTypePermission;
 
 public class NFeEventUtil {
 	protected transient CLogger	log = CLogger.getCLogger (getClass());
@@ -97,8 +98,7 @@ public class NFeEventUtil {
 			envLot = generateLot(lines);
 			xmlLot = envToString(envLot).trim().replaceFirst("^([\\W]+)<","<");
 		} catch (Exception e) {
-			e.printStackTrace();
-			return "Could not generate xml";
+			throw new AdempiereException(e);
 		}
 		
 		xmlLot = "<nfeDadosMsg>" + xmlLot + "</nfeDadosMsg>";
@@ -293,9 +293,7 @@ public class NFeEventUtil {
 			MLBRNotaFiscal nf = new MLBRNotaFiscal (event.getCtx(), line.getLBR_NotaFiscal_ID(), event.get_TrxName());
 			MDocType nfDocType = new MDocType(event.getCtx(), nf.getC_DocType_ID(), event.get_TrxName());
 			
-			MLBRNFeXML nfeXML = new MLBRNFeXML(event.getCtx(), line.getLBR_NFeXML_ID(), event.get_TrxName());
-			
-			MOrg org = new MOrg(event.getCtx(), line.getLBR_NotaFiscal_ID() > 0 ? nf.getAD_Org_ID() : nfeXML.getAD_Org_ID(), event.get_TrxName());
+			MOrg org = new MOrg(event.getCtx(), line.getLBR_NotaFiscal_ID() > 0 ? nf.getAD_Org_ID() : line.getAD_Org_ID(), event.get_TrxName());
 			MOrgInfo orgInfo = MOrgInfo.get(event.getCtx(), org.get_ID(), event.get_TrxName());
 			MLocation orgLoc = new MLocation(event.getCtx(), orgInfo.getC_Location_ID(), event.get_TrxName());
 			MRegion orgRegion = new MRegion(event.getCtx(), orgLoc.getC_Region_ID(), event.get_TrxName());
@@ -352,6 +350,12 @@ public class NFeEventUtil {
 				xstream = new XStream(new DomDriver("UTF-8"));
 				xstream.alias("detEvento", I_DetEvento.class, DetEventoCartaDeCorrecao.class);
 				xstream.processAnnotations(classForAnnotation);
+				
+				// Configurando permissões de segurança
+				xstream.addPermission(AnyTypePermission.ANY); // Permite todas as classes (cuidado com segurança)
+				xstream.allowTypesByWildcard(new String[] {
+				    "org.idempierelbr.nfe.beans.**" // Permite todas as classes no pacote específico
+				});
 
 				evento = (Evento) xstream.fromXML(TextUtil.readFile(new File(xmlFile)));
 				
@@ -410,6 +414,12 @@ public class NFeEventUtil {
 				xstream = new XStream(new DomDriver("UTF-8"));
 				xstream.alias("detEvento", I_DetEvento.class, DetEventoCancelamento.class);
 				xstream.processAnnotations(classForAnnotation);
+				
+				// Configurando permissões de segurança
+				xstream.addPermission(AnyTypePermission.ANY); // Permite todas as classes (cuidado com segurança)
+				xstream.allowTypesByWildcard(new String[] {
+				    "org.idempierelbr.nfe.beans.**" // Permite todas as classes no pacote específico
+				});
 
 				evento = (Evento) xstream.fromXML(TextUtil.readFile(new File(xmlFile)));
 				
@@ -476,6 +486,12 @@ public class NFeEventUtil {
 				xstream = new XStream(new DomDriver("UTF-8"));
 				xstream.alias("detEvento", I_DetEvento.class, DetEventoCartaDeCorrecao.class);
 				xstream.processAnnotations(classForAnnotation);
+				
+				// Configurando permissões de segurança
+				xstream.addPermission(AnyTypePermission.ANY); // Permite todas as classes (cuidado com segurança)
+				xstream.allowTypesByWildcard(new String[] {
+				    "org.idempierelbr.nfe.beans.**" // Permite todas as classes no pacote específico
+				});
 
 				evento = (Evento) xstream.fromXML(TextUtil.readFile(new File(xmlFile)));
 				

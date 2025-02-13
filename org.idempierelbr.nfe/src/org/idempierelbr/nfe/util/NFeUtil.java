@@ -58,6 +58,7 @@ import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.compiere.util.Msg;
+import org.compiere.util.Trx;
 import org.idempierelbr.base.model.MLBRCSC;
 import org.idempierelbr.base.model.MLBRNFeWebService;
 import org.idempierelbr.base.model.MLBRNFeXML;
@@ -996,6 +997,10 @@ public class NFeUtil {
 	        }
 
 	        nfeXml.saveEx();
+	        
+	        Trx trx = Trx.get(trxName, false);
+	        trx.commit();
+	        
         	nfeXml.setLBR_NSU(NSU);
         	nfeXml.setLBR_NFeID(chNFe);
         	nfeXml.setLBR_SchemaName(schemaName);
