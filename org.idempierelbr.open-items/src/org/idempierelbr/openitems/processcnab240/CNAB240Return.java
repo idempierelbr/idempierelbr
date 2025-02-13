@@ -114,6 +114,7 @@ public class CNAB240Return extends SvrProcess
 		cnab.setLBR_CNAB240MovementType(MLBRCNAB.LBR_CNAB240MOVEMENTTYPE_2_RetornoBanco_GtCliente);
 		cnab.setLBR_CNAB240SeqNo(fileHeader.getSequenciaArquivo());
 		cnab.saveEx();
+		commitEx();
 		
 		MAttachment attachment = cnab.createAttachment();
 		attachment.addEntry(CNABFile);
