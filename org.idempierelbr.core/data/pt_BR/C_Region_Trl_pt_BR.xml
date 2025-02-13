@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_Region">
+<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_Region">
  <row id="102" trl="N">
   <value column="Name" original="CT">CT</value>
  </row>
@@ -1070,5 +1070,131 @@
  </row>
  <row id="50103" trl="N">
   <value column="Name" original="Байконур город">Байконур город</value>
+ </row>
+ <row id="200109" trl="N">
+  <value column="Name" original="ANTIOQUIA">ANTIOQUIA</value>
+ </row>
+ <row id="200110" trl="N">
+  <value column="Name" original="ATLÁNTICO">ATLÁNTICO</value>
+ </row>
+ <row id="200111" trl="N">
+  <value column="Name" original="D.C.">D.C.</value>
+ </row>
+ <row id="200112" trl="N">
+  <value column="Name" original="BOLÍVAR">BOLÍVAR</value>
+ </row>
+ <row id="200113" trl="N">
+  <value column="Name" original="BOYACÁ">BOYACÁ</value>
+ </row>
+ <row id="200114" trl="N">
+  <value column="Name" original="CALDAS">CALDAS</value>
+ </row>
+ <row id="200115" trl="N">
+  <value column="Name" original="CAQUETÁ">CAQUETÁ</value>
+ </row>
+ <row id="200116" trl="N">
+  <value column="Name" original="CAUCA">CAUCA</value>
+ </row>
+ <row id="200117" trl="N">
+  <value column="Name" original="CESAR">CESAR</value>
+ </row>
+ <row id="200118" trl="N">
+  <value column="Name" original="CÓRDOBA">CÓRDOBA</value>
+ </row>
+ <row id="200119" trl="N">
+  <value column="Name" original="CUNDINAMARCA">CUNDINAMARCA</value>
+ </row>
+ <row id="200120" trl="N">
+  <value column="Name" original="CHOCÓ">CHOCÓ</value>
+ </row>
+ <row id="200121" trl="N">
+  <value column="Name" original="HUILA">HUILA</value>
+ </row>
+ <row id="200122" trl="N">
+  <value column="Name" original="LA GUAJIRA">LA GUAJIRA</value>
+ </row>
+ <row id="200123" trl="N">
+  <value column="Name" original="MAGDALENA">MAGDALENA</value>
+ </row>
+ <row id="200124" trl="N">
+  <value column="Name" original="META">META</value>
+ </row>
+ <row id="200125" trl="N">
+  <value column="Name" original="NARIÑO">NARIÑO</value>
+ </row>
+ <row id="200126" trl="N">
+  <value column="Name" original="NORTE DE SANTANDER">NORTE DE SANTANDER</value>
+ </row>
+ <row id="200127" trl="N">
+  <value column="Name" original="QUINDÍO">QUINDÍO</value>
+ </row>
+ <row id="200128" trl="N">
+  <value column="Name" original="RISARALDA">RISARALDA</value>
+ </row>
+ <row id="200129" trl="N">
+  <value column="Name" original="SANTANDER">SANTANDER</value>
+ </row>
+ <row id="200130" trl="N">
+  <value column="Name" original="SUCRE">SUCRE</value>
+ </row>
+ <row id="200131" trl="N">
+  <value column="Name" original="TOLIMA">TOLIMA</value>
+ </row>
+ <row id="200132" trl="N">
+  <value column="Name" original="VALLE">VALLE</value>
+ </row>
+ <row id="200133" trl="N">
+  <value column="Name" original="ARAUCA">ARAUCA</value>
+ </row>
+ <row id="200134" trl="N">
+  <value column="Name" original="CASANARE">CASANARE</value>
+ </row>
+ <row id="200135" trl="N">
+  <value column="Name" original="PUTUMAYO">PUTUMAYO</value>
+ </row>
+ <row id="200136" trl="N">
+  <value column="Name" original="SAN ANDRÉS">SAN ANDRÉS</value>
+ </row>
+ <row id="200137" trl="N">
+  <value column="Name" original="AMAZONAS">AMAZONAS</value>
+ </row>
+ <row id="200138" trl="N">
+  <value column="Name" original="GUAINÍA">GUAINÍA</value>
+ </row>
+ <row id="200139" trl="N">
+  <value column="Name" original="GUAVIARE">GUAVIARE</value>
+ </row>
+ <row id="200140" trl="N">
+  <value column="Name" original="VAUPÉS">VAUPÉS</value>
+ </row>
+ <row id="200141" trl="N">
+  <value column="Name" original="VICHADA">VICHADA</value>
+ </row>
+ <row id="200142" trl="N">
+  <value column="Name" original="Vienna">Vienna</value>
+ </row>
+ <row id="200143" trl="N">
+  <value column="Name" original="Lower Austria">Lower Austria</value>
+ </row>
+ <row id="200144" trl="N">
+  <value column="Name" original="Upper Austria">Upper Austria</value>
+ </row>
+ <row id="200145" trl="N">
+  <value column="Name" original="Styria">Styria</value>
+ </row>
+ <row id="200146" trl="N">
+  <value column="Name" original="Tyrol">Tyrol</value>
+ </row>
+ <row id="200147" trl="N">
+  <value column="Name" original="Carinthia">Carinthia</value>
+ </row>
+ <row id="200148" trl="N">
+  <value column="Name" original="Salzburg">Salzburg</value>
+ </row>
+ <row id="200149" trl="N">
+  <value column="Name" original="Vorarlberg">Vorarlberg</value>
+ </row>
+ <row id="200150" trl="N">
+  <value column="Name" original="Burgenland">Burgenland</value>
  </row>
 </idempiereTrl>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_Currency">
+<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_Currency">
  <row id="100" trl="Y">
   <value column="Description" original="US Dollar">Dolar Americano</value>
   <value column="CurSymbol" original="$">$</value>
@@ -37,7 +37,7 @@
   <value column="CurSymbol" original="Fl">Fl</value>
  </row>
  <row id="110" trl="Y">
-  <value column="Description" original="Portugese Escudo">Escudo Português</value>
+  <value column="Description" original="Portuguese Escudo">Escudo Português</value>
   <value column="CurSymbol" original="Es">Es</value>
  </row>
  <row id="111" trl="Y">
@@ -695,5 +695,9 @@
  <row id="347" trl="Y">
   <value column="Description" original="Serbian Dinar">Serbian Dinar</value>
   <value column="CurSymbol" original="RSD">RSD</value>
+ </row>
+ <row id="200000" trl="N">
+  <value column="Description" original="South Sudanese pound">South Sudanese pound</value>
+  <value column="CurSymbol" original="SS£">SS£</value>
  </row>
 </idempiereTrl>

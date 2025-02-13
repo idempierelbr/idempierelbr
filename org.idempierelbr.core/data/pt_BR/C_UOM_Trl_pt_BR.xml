@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_UOM">
+<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_UOM">
  <row id="100" trl="Y">
   <value column="Name" original="Each">Each</value>
   <value column="Description" original=""/>
@@ -17,7 +17,7 @@
  </row>
  <row id="103" trl="Y">
   <value column="Name" original="Minutes">Minutos</value>
-  <value column="Description" original="(lowest unit for resorce assigments)">(menor unidade para designação de recursos)</value>
+  <value column="Description" original="(lowest unit for resource assignments)">(menor unidade para designação de recursos)</value>
   <value column="UOMSymbol" original="m  ">m  </value>
  </row>
  <row id="104" trl="Y">
@@ -44,30 +44,5 @@
   <value column="Name" original="Year">Ano</value>
   <value column="Description" original=""/>
   <value column="UOMSymbol" original="y  ">a  </value>
- </row>
- <row id="109" trl="Y">
-  <value column="Name" original="6-Pack">1/2 Dúzia</value>
-  <value column="Description" original=""/>
-  <value column="UOMSymbol" original="6Pk">6pç</value>
- </row>
- <row id="50000" trl="N">
-  <value column="Name" original="Mililiter">Mililiter</value>
-  <value column="Description" original=""/>
-  <value column="UOMSymbol" original="ml">ml</value>
- </row>
- <row id="50001" trl="N">
-  <value column="Name" original="kilogram">kilogram</value>
-  <value column="Description" original=""/>
-  <value column="UOMSymbol" original="Kg">Kg</value>
- </row>
- <row id="50002" trl="N">
-  <value column="Name" original="milligram">milligram</value>
-  <value column="Description" original=""/>
-  <value column="UOMSymbol" original="mg">mg</value>
- </row>
- <row id="50003" trl="N">
-  <value column="Name" original="litre">litre</value>
-  <value column="Description" original=""/>
-  <value column="UOMSymbol" original="L">L</value>
  </row>
 </idempiereTrl>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Menu">
+<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Menu">
  <row id="100" trl="Y">
   <value column="Name" original="Invoice Inquiry">Relatórios de Faturas</value>
   <value column="Description" original=""/>
@@ -13,8 +13,8 @@
   <value column="Description" original=""/>
  </row>
  <row id="156" trl="Y">
-  <value column="Name" original="Client Rules">Regras de Empresa</value>
-  <value column="Description" original="Maintain Client Rules">Gerenciamento das Regras de Empresa</value>
+  <value column="Name" original="Tenant Rules">Regras de Empresa</value>
+  <value column="Description" original="Maintain Tenant Rules">Gerenciamento das Regras de Empresa</value>
  </row>
  <row id="157" trl="Y">
   <value column="Name" original="Data">Dados</value>
@@ -49,7 +49,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="166" trl="Y">
-  <value column="Name" original="Quote-to-Invoice">Cotação de Venda à Fatura</value>
+  <value column="Name" original="Quote-to-Invoice (Sales) ">Cotação de Venda à Fatura</value>
   <value column="Description" original=""/>
  </row>
  <row id="167" trl="Y">
@@ -61,11 +61,11 @@
   <value column="Description" original="">Gerenciamento das Regras de Organização</value>
  </row>
  <row id="183" trl="Y">
-  <value column="Name" original="Material Management">Gestão de Materiais</value>
+  <value column="Name" original="Material Management and Pricing">Gestão de Materiais</value>
   <value column="Description" original=""/>
  </row>
  <row id="203" trl="Y">
-  <value column="Name" original="Requisition-to-Invoice">Requisição de Compra à Fatura</value>
+  <value column="Name" original="Requisition-to-Invoice (Purchasing)">Requisição de Compra à Fatura</value>
   <value column="Description" original=""/>
  </row>
  <row id="218" trl="Y">
@@ -73,7 +73,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="236" trl="Y">
-  <value column="Name" original="Open Items">Itens em Aberto</value>
+  <value column="Name" original="Open Items (Financial Movements and Aging)">Itens em Aberto</value>
   <value column="Description" original=""/>
  </row>
  <row id="263" trl="Y">
@@ -89,7 +89,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="278" trl="Y">
-  <value column="Name" original="Performance Analysis">Avaliação de Desempenho</value>
+  <value column="Name" original="Performance Analysis and Accounting">Avaliação de Desempenho</value>
   <value column="Description" original=""/>
  </row>
  <row id="280" trl="Y">
@@ -181,8 +181,8 @@
   <value column="Description" original=""/>
  </row>
  <row id="53022" trl="N">
-  <value column="Name" original="Bill of Material &amp; Formulas" xml:space="preserve"><![CDATA[Bill of Material & Formulas]]></value>
-  <value column="Description" original="Bill of Material &amp; Formulas" xml:space="preserve"><![CDATA[Bill of Material & Formulas]]></value>
+  <value column="Name" original="Bill of Material and Formulas" xml:space="preserve"><![CDATA[Bill of Material & Formulas]]></value>
+  <value column="Description" original="Bill of Material and Formulas" xml:space="preserve"><![CDATA[Bill of Material & Formulas]]></value>
  </row>
  <row id="53029" trl="N">
   <value column="Name" original="Planning Management">Planning Management</value>
@@ -241,8 +241,8 @@
   <value column="Description" original=""/>
  </row>
  <row id="53108" trl="N">
-  <value column="Name" original="Human Resource &amp; Payroll" xml:space="preserve"><![CDATA[Human Resource & Payroll]]></value>
-  <value column="Description" original="Human Resource &amp; Payroll" xml:space="preserve"><![CDATA[Human Resource & Payroll]]></value>
+  <value column="Name" original="Human Resource and Payroll" xml:space="preserve"><![CDATA[Human Resource & Payroll]]></value>
+  <value column="Description" original="Human Resource and Payroll" xml:space="preserve"><![CDATA[Human Resource & Payroll]]></value>
  </row>
  <row id="53109" trl="N">
   <value column="Name" original="Human Resource">Human Resource</value>
@@ -296,8 +296,12 @@
   <value column="Name" original="Sales Management">Gestão de Vendas</value>
   <value column="Description" original=""/>
  </row>
- <row id="200095" trl="N">
-  <value column="Name" original="Import Template">Import Template</value>
+ <row id="200178" trl="N">
+  <value column="Name" original="External Authorization">External Authorization</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200184" trl="N">
+  <value column="Name" original="Multi Factor Authentication">Multi Factor Authentication</value>
   <value column="Description" original=""/>
  </row>
  <row id="800020" trl="N">
@@ -326,6 +330,14 @@
  </row>
  <row trl="Y" uuid="7f120301-866b-498f-a699-932faba2224b">
   <value column="Name" original="Bank Collections">Boletos Bancários</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="b95bf253-500d-4a7f-82b7-e6db95470936">
+  <value column="Name" original="ASAP">ASAP</value>
+  <value column="Description" original=""/>
+ </row>
+ <row trl="N" uuid="f085c85d-ebc6-4f59-b211-02ae4a56588b">
+  <value column="Name" original="BackSync">BackSync</value>
   <value column="Description" original=""/>
  </row>
 </idempiereTrl>

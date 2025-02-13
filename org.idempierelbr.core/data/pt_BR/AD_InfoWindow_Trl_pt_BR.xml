@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_InfoWindow">
+<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_InfoWindow">
  <row id="200000" trl="Y">
   <value column="Name" original="Product Info">Informações de Produtos</value>
   <value column="Description" original=""/>
@@ -40,13 +40,48 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200013" trl="N">
-  <value column="Name" original="Role (All)">Role (All)</value>
+ <row id="200008" trl="Y">
+  <value column="Name" original="Generate Shipments (manual)">Gerar Remessas (Manual)</value>
+  <value column="Description" original="Select and generate shipments">Selecione e gere remessas</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200011" trl="Y">
+  <value column="Name" original="Generate Invoices (manual)">Gerar Faturas (Manual)</value>
+  <value column="Description" original="Select and generate invoices">Selecione e gere faturas</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200013" trl="Y">
+  <value column="Name" original="Role (All)">Perfis de Acesso (Todos)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200014" trl="N">
-  <value column="Name" original="Support Users vs Roles">Support Users vs Roles</value>
+ <row id="200014" trl="Y">
+  <value column="Name" original="Support Users vs Roles">Usuários de Suporte e Perfis</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200019" trl="Y">
+  <value column="Name" original="Period Control Management">Controle de Períodos</value>
+  <value column="Description" original="Management of Calendars, Years and Periods">Manutenção de Calendários, Anos e Períodos</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200020" trl="Y">
+  <value column="Name" original="Payment Into Batch Info">Informações de Lotes de Pagamentos</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200022" trl="Y">
+  <value column="Name" original="Create lines from Shipment/Receipt">Criar Linhas da Remessa/Recebimento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200023" trl="Y">
+  <value column="Name" original="Create lines from RMA">Criar Linhas da ARM</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200024" trl="Y">
+  <value column="Name" original="Create lines from Invoice">Criar Linhas da Fatura</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -57,11 +92,6 @@
  </row>
  <row id="800001" trl="Y">
   <value column="Name" original="DI Info">Informações de DI</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
- </row>
- <row id="800004" trl="N">
-  <value column="Name" original="NF-e XML Info">NF-e XML Info</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

@@ -1,30 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_PrintFormatItem">
- <row id="2147" trl="Y">
-  <value column="Name" original="Rectangle">Rectangle</value>
-  <value column="PrintName" original=""/>
-  <value column="PrintNameSuffix" original=""/>
- </row>
- <row id="2148" trl="Y">
-  <value column="Name" original="Product Image">Product Image</value>
-  <value column="PrintName" original=""/>
-  <value column="PrintNameSuffix" original=""/>
- </row>
- <row id="2325" trl="Y">
-  <value column="Name" original="DocumentNo Barcode">DocumentNo Barcode</value>
-  <value column="PrintName" original=""/>
-  <value column="PrintNameSuffix" original=""/>
- </row>
- <row id="2326" trl="Y">
-  <value column="Name" original="UPC">UPC</value>
-  <value column="PrintName" original=""/>
-  <value column="PrintNameSuffix" original=""/>
- </row>
- <row id="2327" trl="Y">
-  <value column="Name" original="Postal">Postal</value>
-  <value column="PrintName" original=""/>
-  <value column="PrintNameSuffix" original=""/>
- </row>
+<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_PrintFormatItem">
  <row id="50477" trl="N">
   <value column="Name" original="VendorProductNo">VendorProductNo</value>
   <value column="PrintName" original="VendorProductNo">VendorProductNo</value>
@@ -198,6 +173,16 @@
  <row id="200153" trl="N">
   <value column="Name" original="Master BOM">Master BOM</value>
   <value column="PrintName" original="Master BOM">Master BOM</value>
+  <value column="PrintNameSuffix" original=""/>
+ </row>
+ <row id="200408" trl="N">
+  <value column="Name" original="Test Print Format for UUID Based Table">Test Print Format for UUID Based Table</value>
+  <value column="PrintName" original=""/>
+  <value column="PrintNameSuffix" original=""/>
+ </row>
+ <row id="200413" trl="N">
+  <value column="Name" original="Detail">Detail</value>
+  <value column="PrintName" original=""/>
   <value column="PrintNameSuffix" original=""/>
  </row>
 </idempiereTrl>

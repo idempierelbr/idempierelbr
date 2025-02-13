@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_ChartDatasource">
+ <row id="50000" trl="N">
+  <value column="Name" original="Total">Total</value>
+ </row>
+ <row id="50001" trl="N">
+  <value column="Name" original="Opportunity">Opportunity</value>
+ </row>
+ <row id="50002" trl="N">
+  <value column="Name" original="Expected">Expected</value>
+ </row>
+ <row id="50003" trl="N">
+  <value column="Name" original="Current">Current</value>
+ </row>
+ <row id="50004" trl="N">
+  <value column="Name" original="Previous">Previous</value>
+ </row>
+ <row id="50005" trl="N">
+  <value column="Name" original="Number of Requests">Number of Requests</value>
+ </row>
+</idempiereTrl>

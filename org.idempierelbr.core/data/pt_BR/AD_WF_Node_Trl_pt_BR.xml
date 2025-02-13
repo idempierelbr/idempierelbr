@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_WF_Node">
+<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_WF_Node">
  <row id="116" trl="Y">
   <value column="Name" original="Accounting Schema">Esquema Contábil</value>
   <value column="Description" original="Project as Account Segment">Projete como um segmento de contas</value>
@@ -51,8 +51,8 @@
   <value column="Help" original="Translate Name, Description and Help of Workflows and their Nodes.  You only need to translate the List Elements !!">Traduza o Nome, Descrição e Ajuda dos Fluxos de Trabalho e seus Nós.  Você só precisa traduzir a Lista de Elementos !!</value>
  </row>
  <row id="152" trl="Y">
-  <value column="Name" original="Check Client Setup">Conferir a Configuração da Empresa</value>
-  <value column="Description" original="Check Client setup for Requests">Conferir a Configuração da Empresa para Solicitações.</value>
+  <value column="Name" original="Check Tenant Setup">Conferir a Configuração da Empresa</value>
+  <value column="Description" original="Check Tenant setup for Requests">Conferir a Configuração da Empresa para Solicitações.</value>
   <value column="Help" original="You need to have a mail server and an email address from which the requets an notifications are sent.  Optionally, if you define a mail user and password, requests are read from the mail users's folder and imported into the system.">Você precisa ter um servidor de correio eletrônico e um endereço de email a partir do qual os pedidos e notificações são enviados.  Opcionalmente, se você definir um usuário de correio e uma senha, as solicitações serão lidas a partir do diretório desse usuário e importados para o sistema.</value>
  </row>
  <row id="153" trl="Y">
@@ -90,11 +90,6 @@
   <value column="Description" original="Maintain Accounting Schema - For changes to become effective you must re-login">Maintain Accounting Schema - For changes to become effective you must re-login</value>
   <value column="Help" original="The Accounting Schema Window defines an accounting method and the elements that will comprise an account structure. Create and activate elements for detailed accounting for Business Partners, Products, Locations, etc.&#10;Review and change the GL and Default accounts. The actual accounts used in transactions depend on the executing organization; Most of the information is derived from the context.">The Accounting Schema Window defines an accounting method and the elements that will comprise an account structure. Create and activate elements for detailed accounting for Business Partners, Products, Locations, etc.
 Review and change the GL and Default accounts. The actual accounts used in transactions depend on the executing organization; Most of the information is derived from the context.</value>
- </row>
- <row id="180" trl="Y">
-  <value column="Name" original="Verify completed Requisition">Verificar Requisição completada</value>
-  <value column="Description" original="Just a test case for a manual interaction.">Apenas um caso de teste para uma interação manual.</value>
-  <value column="Help" original="Enter and maintain Material Requisitions">Introduzir e gerenciar Requisições de Material</value>
  </row>
  <row id="50000" trl="N">
   <value column="Name" original="Manufacturing Workflow Setup">Manufacturing Workflow Setup</value>
@@ -332,8 +327,8 @@ Review and change the GL and Default accounts. The actual accounts used in trans
   <value column="Help" original=""/>
  </row>
  <row id="50064" trl="N">
-  <value column="Name" original="Import Proccesor">Import Proccesor</value>
-  <value column="Description" original="Import Proccesor">Import Proccesor</value>
+  <value column="Name" original="Import Processor">Import Proccesor</value>
+  <value column="Description" original="Import Processor">Import Proccesor</value>
   <value column="Help" original=""/>
  </row>
  <row id="50065" trl="N">

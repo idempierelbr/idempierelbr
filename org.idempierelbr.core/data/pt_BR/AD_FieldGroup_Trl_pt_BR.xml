@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_FieldGroup">
+<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_FieldGroup">
  <row id="101" trl="Y">
   <value column="Name" original="Status">Estado</value>
  </row>
@@ -209,6 +209,27 @@
  </row>
  <row id="200022" trl="N">
   <value column="Name" original="Placeholders">Placeholders</value>
+ </row>
+ <row id="200024" trl="N">
+  <value column="Name" original="FROM BANK ACCOUNT">FROM BANK ACCOUNT</value>
+ </row>
+ <row id="200025" trl="N">
+  <value column="Name" original="TO BANK ACCOUNT">TO BANK ACCOUNT</value>
+ </row>
+ <row id="200027" trl="N">
+  <value column="Name" original="EMail">EMail</value>
+ </row>
+ <row id="200028" trl="N">
+  <value column="Name" original="TOTP">TOTP</value>
+ </row>
+ <row id="200029" trl="N">
+  <value column="Name" original="Source">Source</value>
+ </row>
+ <row id="200030" trl="N">
+  <value column="Name" original="Printing">Printing</value>
+ </row>
+ <row id="200031" trl="N">
+  <value column="Name" original="( None )">( None )</value>
  </row>
  <row id="800001" trl="Y">
   <value column="Name" original="Assessment Result">Resultado da Apuração</value>

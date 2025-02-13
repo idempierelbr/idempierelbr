@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Workflow">
+<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Workflow">
  <row id="101" trl="Y">
   <value column="Name" original="Project Setup and Use">Configurar Projeto e Uso</value>
   <value column="Description" original="Setup of projects and project reporting">Configuração e relatórios de projetos</value>
@@ -11,9 +11,9 @@
   <value column="Help" original="Define a new language as a system language.">Definir um novo Idioma como Idioma de Sistema.</value>
  </row>
  <row id="104" trl="Y">
-  <value column="Name" original="Initial Client Setup Review">Revisão da Configuração Inicial da Empresa</value>
-  <value column="Description" original="Review of system level setup of a new  Client">Revisão em nível de sistema da configuração de uma nova Empresa</value>
-  <value column="Help" original="This workflow reviews the system setup of a new client as performed by the automatic Initial Client Setup.&#10;You may want to check also the following Workflows:&#10;- Accounting Setup&#10;- Business Partner Setup&#10;- Product Setup&#10;- Price list Setup&#10;- Warehouse Setup&#10;- Tax Setup">Este Workflow revisa a configuração de sistema de uma nova empresa criada pela configuração automática inicial de empresas. Você pode querer conferir também os seguintes Fluxos de Trabalho: - Configuração Contábil - Configuração de Parceiros de Negócios - Configuração de Produto - Configuração de Lista de Preços - Configuração de Armazém - Configuração de Impostos
+  <value column="Name" original="Initial Tenant Setup Review">Revisão da Configuração Inicial da Empresa</value>
+  <value column="Description" original="Review of system level setup of a new  Tenant">Revisão em nível de sistema da configuração de uma nova Empresa</value>
+  <value column="Help" original="This workflow reviews the system setup of a new tenant as performed by the automatic Initial Tenant Setup.&#10;You may want to check also the following Workflows:&#10;- Accounting Setup&#10;- Business Partner Setup&#10;- Product Setup&#10;- Price list Setup&#10;- Warehouse Setup&#10;- Tax Setup">Este Workflow revisa a configuração de sistema de uma nova empresa criada pela configuração automática inicial de empresas. Você pode querer conferir também os seguintes Fluxos de Trabalho: - Configuração Contábil - Configuração de Parceiros de Negócios - Configuração de Produto - Configuração de Lista de Preços - Configuração de Armazém - Configuração de Impostos
 </value>
  </row>
  <row id="105" trl="Y">
@@ -65,7 +65,7 @@ O sistema converte as medidas em porcentagens (baseado nos valores alcançados e
  </row>
  <row id="113" trl="Y">
   <value column="Name" original="Request Setup">Configuração de Solicitações</value>
-  <value column="Description" original="Set up the client to process requests">Configurar a empresa para processar solicitações</value>
+  <value column="Description" original="Set up the tenant to process requests">Configurar a empresa para processar solicitações</value>
   <value column="Help" original=""/>
  </row>
  <row id="114" trl="Y">
@@ -110,7 +110,7 @@ O sistema converte as medidas em porcentagens (baseado nos valores alcançados e
  </row>
  <row id="122" trl="Y">
   <value column="Name" original="Process_JournalBatch">Process_JournalBatch</value>
-  <value column="Description" original="(Standard Process Jornal Batch)">(Processo de Lote Diário Padrão)</value>
+  <value column="Description" original="(Standard Process Journal Batch)">(Processo de Lote Diário Padrão)</value>
   <value column="Help" original=""/>
  </row>
  <row id="123" trl="Y">
@@ -153,11 +153,6 @@ O sistema converte as medidas em porcentagens (baseado nos valores alcançados e
   <value column="Description" original="(Standard Process Bank Statement)">(Processo de Extratos Bancários Padrão)</value>
   <value column="Help" original=""/>
  </row>
- <row id="131" trl="Y">
-  <value column="Name" original="Business Partner Approval">Aprovação de Parceiro de Negócios</value>
-  <value column="Description" original="Example Document based workflow">Exemplo de workflow baseado em documentos</value>
-  <value column="Help" original="When a new Business Partner is created, it is forwarded for review and credit check.">Quando um novo Parceiro de Negócios é criado, ele é encaminhado para revisão e verificação de crédito.</value>
- </row>
  <row id="50000" trl="N">
   <value column="Name" original="Manufacturing Management Setup">Manufacturing Management Setup</value>
   <value column="Description" original="Setup Manufacturing Management">Setup Manufacturing Management</value>
@@ -169,7 +164,7 @@ O sistema converte as medidas em porcentagens (baseado nos valores alcançados e
   <value column="Help" original="This workflow defines the Manufacturing Workflow  Setup">This workflow defines the Manufacturing Workflow  Setup</value>
  </row>
  <row id="50002" trl="N">
-  <value column="Name" original="Bill of Material &amp; Formula Setup" xml:space="preserve"><![CDATA[Bill of Material & Formula Setup]]></value>
+  <value column="Name" original="Bill of Material and Formula Setup" xml:space="preserve"><![CDATA[Bill of Material & Formula Setup]]></value>
   <value column="Description" original="Setup Bill of Material &amp; Formula" xml:space="preserve"><![CDATA[Setup Bill of Material & Formula]]></value>
   <value column="Help" original="This workflow defines the Bill of Material &amp; Formula" xml:space="preserve"><![CDATA[This workflow defines the Bill of Material & Formula]]></value>
  </row>
@@ -185,7 +180,7 @@ Using Planning Management you answer the question: When and How Many products we
  <row id="50004" trl="N">
   <value column="Name" original="Material Requirement Planning Setup">Material Requirement Planning Setup</value>
   <value column="Description" original="MRP is a set of techniques which uses Bills of Material, Inventory Data, and the Master Production Schedule to calculate requirements for materials.">MRP is a set of techniques which uses Bills of Material, Inventory Data, and the Master Production Schedule to calculate requirements for materials.</value>
-  <value column="Help" original="MRP is a set of techniques which uses Bills of Material, Inventory Data, and the Master Production Schedule to calculate requirements for materials. It create planned orders to balance demand ans supply for products and it issues recommendations to receipt material with the right quantities and at the right dates to satisfy the Master Production Schedule in the most efficient way.">MRP is a set of techniques which uses Bills of Material, Inventory Data, and the Master Production Schedule to calculate requirements for materials. It create planned orders to balance demand ans supply for products and it issues recommendations to receipt material with the right quantities and at the right dates to satisfy the Master Production Schedule in the most efficient way.</value>
+  <value column="Help" original="MRP is a set of techniques which uses Bills of Material, Inventory Data, and the Master Production Schedule to calculate requirements for materials. It creates planned orders to balance demand and supply for products and it issues recommendations to receipt material with the right quantities and at the right dates to satisfy the Master Production Schedule in the most efficient way.">MRP is a set of techniques which uses Bills of Material, Inventory Data, and the Master Production Schedule to calculate requirements for materials. It create planned orders to balance demand ans supply for products and it issues recommendations to receipt material with the right quantities and at the right dates to satisfy the Master Production Schedule in the most efficient way.</value>
  </row>
  <row id="50005" trl="N">
   <value column="Name" original="Capacity Requirement Planning Setup">Capacity Requirement Planning Setup</value>
@@ -265,26 +260,6 @@ If you cannot cover the MPS as you had planned, this module gives you informatio
   <value column="Description" original="Setup Human Resource &amp; Payroll" xml:space="preserve"><![CDATA[Setup Human Resource & Payroll]]></value>
   <value column="Help" original=""/>
  </row>
- <row id="50015" trl="N">
-  <value column="Name" original="Patio Chair">Patio Chair</value>
-  <value column="Description" original="Routing for Assembly the Patio Chair">Routing for Assembly the Patio Chair</value>
-  <value column="Help" original=""/>
- </row>
- <row id="50016" trl="N">
-  <value column="Name" original="Lawn Fertilizer">Lawn Fertilizer</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
- </row>
- <row id="50017" trl="N">
-  <value column="Name" original="Fertilizer Packing Process">Fertilizer Packing Process</value>
-  <value column="Description" original="Production Line to Packing the Fertilizer Bag 50 and 70 kg ">Production Line to Packing the Fertilizer Bag 50 and 70 kg </value>
-  <value column="Help" original=""/>
- </row>
- <row id="50018" trl="N">
-  <value column="Name" original="Patio Furniture Set">Patio Furniture Set</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
- </row>
  <row id="50020" trl="N">
   <value column="Name" original="Process_Asset_Adition">Process_Asset_Adition</value>
   <value column="Description" original=""/>
@@ -313,6 +288,21 @@ If you cannot cover the MPS as you had planned, this module gives you informatio
  <row id="200002" trl="N">
   <value column="Name" original="Process_Production">Process_Production</value>
   <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200005" trl="N">
+  <value column="Name" original="Process_BankTransfer">Process_BankTransfer</value>
+  <value column="Description" original="(Standard Process_BankTransfer)">(Standard Process_BankTransfer)</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200007" trl="N">
+  <value column="Name" original="Process_C_ProjectIssue">Process_C_ProjectIssue</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200012" trl="N">
+  <value column="Name" original="Process_DepositBatch">Process_DepositBatch</value>
+  <value column="Description" original="(Standard Process Deposit Batch)">(Standard Process Deposit Batch)</value>
   <value column="Help" original=""/>
  </row>
  <row id="800003" trl="N">

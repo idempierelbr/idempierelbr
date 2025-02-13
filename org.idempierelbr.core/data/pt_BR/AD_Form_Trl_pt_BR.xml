@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Form">
+<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Form">
  <row id="100" trl="Y">
   <value column="Name" original="Generate Invoices (manual)">Gerar Faturas (Manual)</value>
   <value column="Description" original="Select and generate invoices">Selecionar e gerar faturas</value>
@@ -11,9 +11,9 @@
   <value column="Help" original="The Import File Loader parses the content of a flat file and loads it into import tables. Comments start with a '[' and end with a ']' and are ignored; example: [Some Heading].">O Carregador de Arquivo de Importação analisa o conteúdo de um arquivo plano e o carrega nas tabelas de importação. Comentários começam com um '[' e terminam com um ']' e são ignorados; exemplo: [Algum Título].</value>
  </row>
  <row id="102" trl="Y">
-  <value column="Name" original="Initial Client Setup">Configuração Inicial da Empresa</value>
-  <value column="Description" original="Initial new Client/Tenant Setup">Configuração Inicial da Empresa/Locador</value>
-  <value column="Help" original="Set up a new Client/Tenant of the system">Configure uma nova Empresa/Locatário do sistema</value>
+  <value column="Name" original="Initial Tenant Setup Form (deprecated)">Configuração Inicial da Empresa</value>
+  <value column="Description" original="Initial new Tenant Setup">Configuração Inicial da Empresa/Locador</value>
+  <value column="Help" original="Set up a new Tenant of the system">Configure uma nova Empresa/Locatário do sistema</value>
  </row>
  <row id="103" trl="Y">
   <value column="Name" original="Material Transactions">Transações de Materiais</value>
@@ -46,9 +46,9 @@
   <value column="Help" original="Make sure that the Receipts and Invoices are processed. If you want to match partial shipment, make sure that &quot;Same Quantity&quot; is not selected.">Para conciliar documentos, é necessários que os mesmos estejam processados. Para conciliar remessas parciais, desmarque a opção Mesma Quantidade.</value>
  </row>
  <row id="109" trl="Y">
-  <value column="Name" original="Translation Import/Export">Importação / Exportação de Traduções</value>
+  <value column="Name" original="Translation Import/Export Form (deprecated)">Importação / Exportação de Traduções</value>
   <value column="Description" original="Import or Export Language Translation">Importação / Exportação de Traduções de Idiomas</value>
-  <value column="Help" original="Export/Import Translation info to/from xml for translation in external tool. Please note that the Language MUST be an enabled and verified System Langage.">Importação e exportação de traduções (arquivos XML). Isso permite que as traduções sejam realizadas em ferramentas externas, e permite uma melhor facilidade de distribuição de pacotes de traduções. É importante que ele seja um idioma de sistema (janela Idioma).</value>
+  <value column="Help" original="Export/Import Translation info to/from xml for translation in external tool. Please note that the Language MUST be an enabled and verified System Language.">Importação e exportação de traduções (arquivos XML). Isso permite que as traduções sejam realizadas em ferramentas externas, e permite uma melhor facilidade de distribuição de pacotes de traduções. É importante que ele seja um idioma de sistema (janela Idioma).</value>
  </row>
  <row id="110" trl="Y">
   <value column="Name" original="Generate Shipments (manual)">Gerar Remessas (Manual)</value>
@@ -69,7 +69,7 @@
  <row id="113" trl="Y">
   <value column="Name" original="POS">PDV</value>
   <value column="Description" original="Point Of Sales Terminal">Terminal de Ponto de Vendas</value>
-  <value column="Help" original="Enter Transactions via a POS Terminal.  Automatically, scans or credit card swipes are recongized.">Digitar Transações por meio de um Terminal de PDV.  Leituras de cartões de crédito são reconhecidas automaticamente.</value>
+  <value column="Help" original="Enter Transactions via a POS Terminal.  Automatically, scans or credit card swipes are recognized.">Digitar Transações por meio de um Terminal de PDV.  Leituras de cartões de crédito são reconhecidas automaticamente.</value>
  </row>
  <row id="114" trl="Y">
   <value column="Name" original="BOM Drop">Expandir LDM</value>
@@ -89,12 +89,12 @@
  <row id="117" trl="Y">
   <value column="Name" original="Workflow Activities">Atividades de Workflow</value>
   <value column="Description" original="My active workflow activities">Minhas atividades de workflow ativas</value>
-  <value column="Help" original="View active worflow activities">Visualização das atividades de workflow ativas</value>
+  <value column="Help" original="View active workflow activities">Visualização das atividades de workflow ativas</value>
  </row>
  <row id="118" trl="Y">
   <value column="Name" original="Archive Viewer">Visualizador de Arquivos</value>
   <value column="Description" original="View automatically archived Documents">Visualizar automaticamente documentos arquivados</value>
-  <value column="Help" original="Depending on the Client Automatic Archive Level documents and reports are saved and available for view. In the Report Viewer you can manually archive Documents or Reports.  You can only view archives, if you have access to the original document.">Dependendo do "Nível de Arquivamento Automático da Empresa" os documentos e relatórios são salvos e disponibilizados para visualização. No "Visualizador de Relatório" você pode arquivar manualmente documentos ou relatórios.  Você só pode visualizar arquivos, se você tiver acesso ao documento original.</value>
+  <value column="Help" original="Depending on the Tenant Automatic Archive Level documents and reports are saved and available for view. In the Report Viewer you can manually archive Documents or Reports.  You can only view archives, if you have access to the original document.">Dependendo do "Nível de Arquivamento Automático da Empresa" os documentos e relatórios são salvos e disponibilizados para visualização. No "Visualizador de Relatório" você pode arquivar manualmente documentos ou relatórios.  Você só pode visualizar arquivos, se você tiver acesso ao documento original.</value>
  </row>
  <row id="119" trl="Y">
   <value column="Name" original="Performance Indicators">Indicadores de Desempenho</value>
@@ -107,7 +107,7 @@
   <value column="Help" original="Select one or two attributes if a Product Attribute and display/maintain products in a row or table grid.">Selecione um ou dois atributos de um Atributo de Produto e exiba/gerencie os produto em uma linha ou uma grade de tabela.</value>
  </row>
  <row id="53001" trl="N">
-  <value column="Name" original="BOM &amp; Formula Info" xml:space="preserve"><![CDATA[BOM & Formula Info]]></value>
+  <value column="Name" original="BOM and Formula Info" xml:space="preserve"><![CDATA[BOM & Formula Info]]></value>
   <value column="Description" original="Shows in two different panels the parent-component relationship for the product entered in the Product field.">Shows in two different panels the parent-component relationship for the product entered in the Product field.</value>
   <value column="Help" original="The BOM &amp; Formula Review option menu shows in two different panels the parent-component relationship for the product entered in the Product field.&#10;&#10;You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.&#10;&#10;When you need to consult an implosion, click the implosion check box and enter the component you wish to consult and tick the Implosion check box.&#10;&#10;You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.&#10;&#10;The left panel shows the BOM hierarchies in a tree form. The right panel shows the information connected with the BOM for every product in it" xml:space="preserve"><![CDATA[The BOM & Formula Review option menu shows in two different panels the parent-component relationship for the product entered in the Product field.
 
@@ -122,7 +122,7 @@ The left panel shows the BOM hierarchies in a tree form. The right panel shows t
  <row id="53002" trl="N">
   <value column="Name" original="Product Configuration BOM">Product Configuration BOM</value>
   <value column="Description" original="This form let create a product configure with multy level using options and variants">This form let create a product configure with multy level using options and variants</value>
-  <value column="Help" original="A configurable Bill of Material (CBOM) is used by industries that have multiple options and highly configurable products.&#10;&#10;The CBOM is used to dynamically create &quot;end-items&quot; that a company sells. The benefit of using CBOM structure is it reduces the work-effort needed to maintain product structures. The configurable BOM is most frequently driven by &quot;configurator&quot; software, however it can be enabled manually (manual maintenance is infrequent because its unwieldy to manage the number of permutaions and combinations of possible configurations) The development of the CBOM is dependent on having a Modular BOM structure in place (see Modular BOM). The Modular BOM structure provides the assemblies/sub-systems that can be selected to &quot;configure&quot; an end-item.">A configurable Bill of Material (CBOM) is used by industries that have multiple options and highly configurable products.
+  <value column="Help" original="A configurable Bill of Material (CBOM) is used by industries that have multiple options and highly configurable products.&#10;&#10;The CBOM is used to dynamically create &quot;end-items&quot; that a company sells. The benefit of using CBOM structure is it reduces the work-effort needed to maintain product structures. The configurable BOM is most frequently driven by &quot;configurator&quot; software, however it can be enabled manually (manual maintenance is infrequent because its unwieldy to manage the number of permutations and combinations of possible configurations) The development of the CBOM is dependent on having a Modular BOM structure in place (see Modular BOM). The Modular BOM structure provides the assemblies/sub-systems that can be selected to &quot;configure&quot; an end-item.">A configurable Bill of Material (CBOM) is used by industries that have multiple options and highly configurable products.
 
 The CBOM is used to dynamically create "end-items" that a company sells. The benefit of using CBOM structure is it reduces the work-effort needed to maintain product structures. The configurable BOM is most frequently driven by "configurator" software, however it can be enabled manually (manual maintenance is infrequent because its unwieldy to manage the number of permutaions and combinations of possible configurations) The development of the CBOM is dependent on having a Modular BOM structure in place (see Modular BOM). The Modular BOM structure provides the assemblies/sub-systems that can be selected to "configure" an end-item.</value>
  </row>
@@ -149,8 +149,8 @@ When you approve a planned order you are telling the system that the manufacturi
   <value column="Help" original="It shows graphically of the required and available time for each manufacturing resource.">It shows graphically of the required and available time for each manufacturing resource.</value>
  </row>
  <row id="53007" trl="N">
-  <value column="Name" original="Order Receipt &amp; Issue" xml:space="preserve"><![CDATA[Order Receipt & Issue]]></value>
-  <value column="Description" original="Order Receipt &amp; Issue" xml:space="preserve"><![CDATA[Order Receipt & Issue]]></value>
+  <value column="Name" original="Order Receipt and Issue" xml:space="preserve"><![CDATA[Order Receipt & Issue]]></value>
+  <value column="Description" original="Order Receipt and Issue" xml:space="preserve"><![CDATA[Order Receipt & Issue]]></value>
   <value column="Help" original="The form shows at the upper side static information around the product and the manufacturing resource where it has to be made, it also shows a summary of the quantities to be controlled in the MO such as the Original and delivered quantities and the Quantity to deliver for the MO up to date.&#10;&#10;If the production process requires production in batch, then the Qty Batchs shows the Number of batches the shop floor needs to do and the Qty Batch Size contains the size of every batch to be produced.&#10;&#10;&#10;If you want to issue the MO components before you receive the finished product you should tick the checkbox Is Delivery, this case is recommended when you have a long to medium lead time and you want to have the inventory quantities as reliable as possible at every moment.&#10;&#10;If you have small lead time and you wish to save clerk time then you must tick Is Backflush checkbox and you will receive the finished product at the same time you issue automatically the components&#10;&#10;The Backflush Group field is used when you want to issue just components belonging to this group. (This characteristic could not be included in the current version).&#10;&#10;At the lower part of the window you can find the list of every MO component, this can be modified according with the real products and quantities given to the shop floor.&#10;&#10;The quantities to be issued are selected with the checkbox at the first column of the list of components. If the actual quantity is different from the standard quantity showed in the column Qty to deliver you should edit this field to enter the right quantity to be issued.&#10;&#10;Finally a message box asks if you want to close the OM document, you should click the ok button if this MO does not have any more transactions and has to be closed.&#10;&#10;">The form shows at the upper side static information around the product and the manufacturing resource where it has to be made, it also shows a summary of the quantities to be controlled in the MO such as the Original and delivered quantities and the Quantity to deliver for the MO up to date.
 
 If the production process requires production in batch, then the Qty Batchs shows the Number of batches the shop floor needs to do and the Qty Batch Size contains the size of every batch to be produced.
@@ -177,11 +177,11 @@ Finally a message box asks if you want to close the OM document, you should clic
  </row>
  <row id="53009" trl="N">
   <value column="Name" original="Payroll Action Notice">Payroll Action Notice</value>
-  <value column="Description" original="Payroll Action Notice let entry the events that happend with any Employee">Payroll Action Notice let entry the events that happend with any Employee</value>
+  <value column="Description" original="Payroll Action Notice allows to entry the events that happened with any Employee">Payroll Action Notice let entry the events that happend with any Employee</value>
   <value column="Help" original=""/>
  </row>
  <row id="53010" trl="N">
-  <value column="Name" original="Generate Shipments &amp; Invoices (manual)" xml:space="preserve"><![CDATA[Generate Shipments & Invoices (manual)]]></value>
+  <value column="Name" original="Generate Shipments and Invoices (manual)" xml:space="preserve"><![CDATA[Generate Shipments & Invoices (manual)]]></value>
   <value column="Description" original="Select and generate shipments &amp; Invoices" xml:space="preserve"><![CDATA[Select and generate shipments & Invoices]]></value>
   <value column="Help" original="Generate Shipments &amp; Invoices from Orders.  &#10;Select the orders to generate the shipments &amp; Invoices for." xml:space="preserve"><![CDATA[Generate Shipments & Invoices from Orders.  
 Select the orders to generate the shipments & Invoices for.]]></value>
@@ -197,7 +197,7 @@ Select the orders to generate the shipments & Invoices for.]]></value>
   <value column="Help" original="Edit the graphical layout of manufacturing workflows">Edit the graphical layout of manufacturing workflows</value>
  </row>
  <row id="53016" trl="Y">
-  <value column="Name" original="Accounting Fact Reconcilation (manual)">Conciliação de Fatos Contábeis (Manual)</value>
+  <value column="Name" original="Accounting Fact Reconciliation (manual)">Conciliação de Fatos Contábeis (Manual)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -254,6 +254,31 @@ Select the orders to generate the shipments & Invoices for.]]></value>
  <row id="200012" trl="N">
   <value column="Name" original="Apache Felix Web Console">Apache Felix Web Console</value>
   <value column="Description" original="Form to configure access to /osgi/system/console - do not add to menu">Form to configure access to /osgi/system/console - do not add to menu</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200015" trl="N">
+  <value column="Name" original="Plugin Manager">Plugin Manager</value>
+  <value column="Description" original="Plugin Manager">Plugin Manager</value>
+  <value column="Help" original="Plugin Manager">Plugin Manager</value>
+ </row>
+ <row id="200016" trl="N">
+  <value column="Name" original="Add Authorization Mail Account">Add Authorization Mail Account</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200017" trl="N">
+  <value column="Name" original="Register MFA">Register MFA</value>
+  <value column="Description" original="Register a multi-factor authentication mechanism">Register a multi-factor authentication mechanism</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200018" trl="N">
+  <value column="Name" original="SQL Query">SQL Query</value>
+  <value column="Description" original="Process SQL Queries">Process SQL Queries</value>
+  <value column="Help" original="Process SQL Queries">Process SQL Queries</value>
+ </row>
+ <row id="200019" trl="N">
+  <value column="Name" original="Customize Grid View">Customize Grid View</value>
+  <value column="Description" original="Form to customize the grid view of tabs in window customization">Form to customize the grid view of tabs in window customization</value>
   <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="31ee0732-43d7-4aef-8204-ac262e8d4d8d">

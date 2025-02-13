@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Field">
+<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Field">
  <row id="1546" trl="Y">
   <value column="Name" original="Link Column">Coluna de Vínculo</value>
   <value column="Description" original="Link Column for Multi-Parent tables">Coluna de Vínculo para Tabelas com múltiplos Pais</value>
@@ -9,7 +9,7 @@
  <row id="2124" trl="Y">
   <value column="Name" original="Language">Idioma</value>
   <value column="Description" original="Language for this Business Partner if Multi-Language enabled">Idioma para este Parceiro de Negócios se Multi-Idiomas estiver habilitado</value>
-  <value column="Help" original="The Language identifies the language to use for display and formatting documents. It requires, that on Client level, Multi-Lingual documents are selected and that you have created/loaded the language.">O Idioma identifica o idioma a ser utilizado para visualização e formatação de documentos. É necessário que no nível de Empresa estejam selecionados documentos Multi-Idiomas e que você tenha criado e carregado o idioma.</value>
+  <value column="Help" original="The Language identifies the language to use for display and formatting documents. It requires, that on Tenant level, Multi-Lingual documents are selected and that you have created/loaded the language.">O Idioma identifica o idioma a ser utilizado para visualização e formatação de documentos. É necessário que no nível de Empresa estejam selecionados documentos Multi-Idiomas e que você tenha criado e carregado o idioma.</value>
   <value column="Placeholder" original=""/>
  </row>
  <row id="3665" trl="Y">
@@ -74,6 +74,12 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Help" original="The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user.">Qualquer usuário interno válido pode ser selecionado como Representante da Empresa/Organização.</value>
   <value column="Placeholder" original=""/>
  </row>
+ <row id="10089" trl="N">
+  <value column="Name" original="Wait Time">Wait Time</value>
+  <value column="Description" original="Time in minutes to wait (sleep)">Time in minutes to wait (sleep)</value>
+  <value column="Help" original="Time in minutes to be suspended (sleep).  A value of -1 means to wait and execute after the commit of the workflow transaction.">Time in minutes to be suspended (sleep)</value>
+  <value column="Placeholder" original=""/>
+ </row>
  <row id="10097" trl="Y">
   <value column="Name" original="Value">Valor</value>
   <value column="Description" original="Condition Value">Valor da Condição</value>
@@ -92,14 +98,11 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Help" original="If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null.">Se não for sobre-escrito, o valor da combinação de conta original será utilizado. Se selecionado, mas não especificado, o segmento é ajustado para nulo.</value>
   <value column="Placeholder" original=""/>
  </row>
- <row id="11264" trl="N">
-  <value column="Name" original="Column SQL">Column SQL</value>
-  <value column="Description" original="Virtual Column (r/o)">Virtual Column (r/o)</value>
-  <value column="Help" original="You can define virtual columns (not stored in the database). If defined, the Column name is the synonym of the SQL expression defined here. The SQL expression must be valid.&lt;br&gt;&#10;Example: &quot;Updated-Created&quot; would list the age of the entry in days.&lt;br&gt;&#10;It is not recommended to add complex queries in virtual columns as the impact on the database performance can be too expensive.&lt;br&gt;&#10;However, you can use the prefix @SQLFIND= for virtual columns that can be used for queries and reports, they have less impact on the database, but as a field they don't show values.&lt;br&gt;&#10;Additionally, the prefix @SQL= allows to define a virtual UI column, this is calculated on the fly and can use context variables in the query, virtual UI columns are shown in grid just on the current row, they are not searchable, and not shown in reports." xml:space="preserve"><![CDATA[You can define virtual columns (not stored in the database). If defined, the Column name is the synonym of the SQL expression defined here. The SQL expression must be valid.<br>
-Example: "Updated-Created" would list the age of the entry in days.<br>
-It is not recommended to add complex queries in virtual columns as the impact on the database performance can be too expensive.<br>
-However, you can use the prefix @SQLFIND= for virtual columns that can be used for queries and reports, they have less impact on the database, but as a field they don't show values.<br>
-Additionally, the prefix @SQL= allows to define a virtual UI column, this is calculated on the fly and can use context variables in the query, virtual UI columns are shown in grid just on the current row, they are not searchable, and not shown in reports.]]></value>
+ <row id="11264" trl="Y">
+  <value column="Name" original="Column SQL">Coluna Virtual (SQL)</value>
+  <value column="Description" original="Virtual Column (r/o)">Coluna Virtual (SQL)</value>
+  <value column="Help" original="You can define virtual columns (not stored in the database). If defined, the Column name is the synonym of the SQL expression defined here. The SQL expression must be valid.&lt;br&gt;&#10;Example: &quot;Updated-Created&quot; would list the age of the entry in days.&lt;br&gt;&#10;It is not recommended to add complex queries in virtual columns as the impact on the database performance can be too expensive.&lt;br&gt;&#10;However, you can use the prefix @SQLFIND= for virtual columns that can be used for queries and reports, they have less impact on the database, but as a field they don't show values.&lt;br&gt;&#10;Additionally, the prefix @SQL= allows to define a virtual UI column, this is calculated on the fly and can use context variables in the query, virtual UI columns are shown in grid just on the current row, they are not searchable, and not shown in reports." xml:space="preserve"><![CDATA[Você pode definir colunas virtuais (não armazenadas no banco de dados). Se definido, o nome da Coluna é o sinônimo da expressão SQL aqui definida. A expressão SQL tem que ser válida.<br> Exemplo: "Created" iria trazer a idade do registro (em dias).<br>
+Não é recomendado adicionar queries complexas em colunas virtuais, para não impactar negativamente a performance do banco de dados.<br>Entretanto, é possível utilizar o prefixo '@SQLFind=" para limitar seu uso a apenas pesquisas e relatórios.<br>Adicionalmente, o prefixo "@SQL=" permite definir uma coluna virtual de UI, que é calculada on-the-fly, com possibilidade de utilizar variáveis de contexto. Esse tipo de coluna é exibida no grid apenas para a linha selecionada, e não é pesquisável nem é exibida em relatórios.]]></value>
   <value column="Placeholder" original=""/>
  </row>
  <row id="11799" trl="Y">
@@ -124,7 +127,7 @@ will filter orders by active and where the sales representative is the current u
  <row id="12732" trl="Y">
   <value column="Name" original="Language">Idioma</value>
   <value column="Description" original="Language for this Business Partner if Multi-Language enabled">Idioma para este Parceiro de Negócios se Multi-Idiomas estiver habilitado</value>
-  <value column="Help" original="The Language identifies the language to use for display and formatting documents. It requires, that on Client level, Multi-Lingual documents are selected and that you have created/loaded the language.">O Idioma identifica o idioma a ser utilizado para visualização e formatação de documentos. É necessário que no nível de Empresa estejam selecionados documentos Multi-Idiomas e que você tenha criado e carregado o idioma.</value>
+  <value column="Help" original="The Language identifies the language to use for display and formatting documents. It requires, that on Tenant level, Multi-Lingual documents are selected and that you have created/loaded the language.">O Idioma identifica o idioma a ser utilizado para visualização e formatação de documentos. É necessário que no nível de Empresa estejam selecionados documentos Multi-Idiomas e que você tenha criado e carregado o idioma.</value>
   <value column="Placeholder" original=""/>
  </row>
  <row id="13179" trl="Y">
@@ -170,7 +173,7 @@ will filter orders by active and where the sales representative is the current u
   <value column="Placeholder" original=""/>
  </row>
  <row id="50069" trl="Y">
-  <value column="Name" original="Client">Client</value>
+  <value column="Name" original="Tenant">Client</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
@@ -266,7 +269,7 @@ will filter orders by active and where the sales representative is the current u
   <value column="Placeholder" original=""/>
  </row>
  <row id="50092" trl="Y">
-  <value column="Name" original="Client">Empresa</value>
+  <value column="Name" original="Tenant">Empresa</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
@@ -377,8 +380,8 @@ When you enter dates in the fields Valid From - To we give the the period of tim
  </row>
  <row id="53480" trl="N">
   <value column="Name" original="Copy BOM Lines From">Copy BOM Lines From</value>
-  <value column="Description" original="Copy BOM Lines from an exising BOM">Copy BOM Lines from an exising BOM</value>
-  <value column="Help" original="Copy BOM Lines from an exising BOM. The BOM being copied to, must not have any existing BOM Lines.">Copy BOM Lines from an exising BOM. The BOM being copied to, must not have any existing BOM Lines.</value>
+  <value column="Description" original="Copy BOM Lines from an existing BOM">Copy BOM Lines from an exising BOM</value>
+  <value column="Help" original="Copy BOM Lines from an existing BOM. The BOM being copied to, must not have any existing BOM Lines.">Copy BOM Lines from an exising BOM. The BOM being copied to, must not have any existing BOM Lines.</value>
   <value column="Placeholder" original=""/>
  </row>
  <row id="53490" trl="N">
@@ -412,7 +415,7 @@ Warehouse place where you locate and control the products</value>
  <row id="53518" trl="N">
   <value column="Name" original="Workflow">Workflow</value>
   <value column="Description" original="Workflow or combination of tasks">Workflow or combination of tasks</value>
-  <value column="Help" original="The Workflow field identifies a unique Workflow in the system.&#10;&#10;The Workflow you introduce in this window will be considered the default Workflow to produce the product in this Organization-Plant-Warehouse. If you do not fill this field the defaul Workflow for the entity will be the Workflow with the same name as the product.">The Workflow field identifies a unique Workflow in the system.
+  <value column="Help" original="The Workflow field identifies a unique Workflow in the system.&#10;&#10;The Workflow you introduce in this window will be considered the default Workflow to produce the product in this Organization-Plant-Warehouse. If you do not fill this field the default Workflow for the entity will be the Workflow with the same name as the product.">The Workflow field identifies a unique Workflow in the system.
 
 The Workflow you introduce in this window will be considered the default Workflow to produce the product in this Organization-Plant-Warehouse. If you do not fill this field the defaul Workflow for the entity will be the Workflow with the same name as the product.</value>
   <value column="Placeholder" original=""/>
@@ -665,8 +668,8 @@ To Manufacturing Order is the date when the last manufacturing order movement is
  </row>
  <row id="58101" trl="N">
   <value column="Name" original="Copy BOM Lines From">Copy BOM Lines From</value>
-  <value column="Description" original="Copy BOM Lines from an exising BOM">Copy BOM Lines from an exising BOM</value>
-  <value column="Help" original="Copy BOM Lines from an exising BOM. The BOM being copied to, must not have any existing BOM Lines.">Copy BOM Lines from an exising BOM. The BOM being copied to, must not have any existing BOM Lines.</value>
+  <value column="Description" original="Copy BOM Lines from an existing BOM">Copy BOM Lines from an exising BOM</value>
+  <value column="Help" original="Copy BOM Lines from an existing BOM. The BOM being copied to, must not have any existing BOM Lines.">Copy BOM Lines from an exising BOM. The BOM being copied to, must not have any existing BOM Lines.</value>
   <value column="Placeholder" original=""/>
  </row>
  <row id="58114" trl="N">
@@ -746,7 +749,7 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
  <row id="62779" trl="Y">
   <value column="Name" original="Language">Idioma</value>
   <value column="Description" original="Language for this Business Partner if Multi-Language enabled">Idioma para esta entidade</value>
-  <value column="Help" original="The Language identifies the language to use for display and formatting documents. It requires, that on Client level, Multi-Lingual documents are selected and that you have created/loaded the language.">O "Idioma" identifica a língua a ser utilizada para exibição e formatação</value>
+  <value column="Help" original="The Language identifies the language to use for display and formatting documents. It requires, that on Tenant level, Multi-Lingual documents are selected and that you have created/loaded the language.">O "Idioma" identifica a língua a ser utilizada para exibição e formatação</value>
   <value column="Placeholder" original=""/>
  </row>
  <row id="62991" trl="Y">
@@ -912,7 +915,7 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Placeholder" original=""/>
  </row>
  <row id="202252" trl="Y">
-  <value column="Name" original="View Validate">Validar a Visão (View)</value>
+  <value column="Name" original="View Validate">Validar a View</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
@@ -930,7 +933,7 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Placeholder" original=""/>
  </row>
  <row id="203108" trl="Y">
-  <value column="Name" original="ViewID Column">Coluna da Visão (View)</value>
+  <value column="Name" original="ViewID Column">Coluna da View</value>
   <value column="Description" original="Name of unique column in a view. value of this column will save to t_selection table">Nome único da coluna em uma view. O valor desta coluna será salvo na tabela t_selection</value>
   <value column="Help" original="Column to resolve issue in https://idempiere.atlassian.net/browse/IDEMPIERE-1970">Para obter detalhes da utilização deste campo, consulte: https://idempiere.atlassian.net/browse/IDEMPIERE-1970</value>
   <value column="Placeholder" original=""/>
@@ -948,15 +951,21 @@ The Valid From and Valid To dates indicate the valid time period to use the BOM 
   <value column="Placeholder" original=""/>
  </row>
  <row id="205154" trl="N">
-  <value column="Name" original="Client">Client</value>
+  <value column="Name" original="Tenant">Client</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
  </row>
  <row id="205174" trl="N">
-  <value column="Name" original="Client">Client</value>
+  <value column="Name" original="Tenant">Client</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+ </row>
+ <row id="205705" trl="N">
+  <value column="Name" original="To Business Partner ">To Business Partner </value>
+  <value column="Description" original="Identifies a Business Partner">Identifies a Business Partner</value>
+  <value column="Help" original="A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson">A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson</value>
   <value column="Placeholder" original=""/>
  </row>
  <row id="205898" trl="N">
@@ -976,6 +985,55 @@ Do not include the WHERE statement and use Fully qualified SQL statements. F.e:
 @SQL=C_Order.isActive='Y' AND SalesRep_ID=@AD_User_ID@ 
 
 will filter orders by active and where the sales representative is the current user.</value>
+  <value column="Placeholder" original=""/>
+ </row>
+ <row id="206515" trl="Y">
+  <value column="Name" original="Invoice Contact">Usuário de Fatura</value>
+  <value column="Description" original="Business Partner Invoice/Bill Contact">Usuário de Fatura</value>
+  <value column="Help" original="If the Invoice Contact is selected, the contact is used to send notifications about invoices to a customer or a vendor.">Se selecionado, o usuário será utilizado para notificações de faturas.</value>
+  <value column="Placeholder" original=""/>
+ </row>
+ <row id="206516" trl="Y">
+  <value column="Name" original="Ship Contact">Usuário de Remessa/Recebimento</value>
+  <value column="Description" original="Business Partner Shipment Contact">Usuário de Remessa/Recebimento</value>
+  <value column="Help" original="If the Ship Contact is selected, the contact is used for notification.">Se selecionado, o usuário é utilizado para notificações.</value>
+  <value column="Placeholder" original=""/>
+ </row>
+ <row id="206517" trl="N">
+  <value column="Name" original="Ship Contact">Ship Contact</value>
+  <value column="Description" original="Business Partner Shipment Contact">Business Partner Shipment Contact</value>
+  <value column="Help" original="If the Ship Contact is selected, the contact is used for notification.">If the Ship Contact is selected, the contact is used for notification.</value>
+  <value column="Placeholder" original=""/>
+ </row>
+ <row id="206518" trl="N">
+  <value column="Name" original="Invoice Contact">Invoice Contact</value>
+  <value column="Description" original="Business Partner Invoice/Bill Contact">Business Partner Invoice/Bill Contact</value>
+  <value column="Help" original="If the Invoice Contact is selected, the contact is used to send notifications about invoices to a customer or a vendor.">If the Invoice Contact is selected, the contact is used to send notifications about invoices to a customer or a vendor.</value>
+  <value column="Placeholder" original=""/>
+ </row>
+ <row id="207695" trl="N">
+  <value column="Name" original="DB Table Name">DB Table Name</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="You can use % or a comma separated list of table names (case sensitive)&#10;Using '@TableName@' will change to current table when executing the process">You can use % or a comma separated list of table names (case sensitive)
+Using '@TableName@' will change to current table when executing the process</value>
+  <value column="Placeholder" original=""/>
+ </row>
+ <row id="207825" trl="N">
+  <value column="Name" original="Country Group">Country Group</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+ </row>
+ <row id="207826" trl="N">
+  <value column="Name" original="To">To</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+ </row>
+ <row id="208363" trl="N">
+  <value column="Name" original="SQL Filter">SQL Filter</value>
+  <value column="Description" original="SQL Filter">SQL Filter</value>
+  <value column="Help" original="Enter a valid WHERE SQL fully qualified clause.  The WHERE is not needed, the code will be surrounded within parenthesis before applied">Enter a valid WHERE SQL fully qualified clause.  The WHERE is not needed, the code will be surrounded within parenthesis before applied</value>
   <value column="Placeholder" original=""/>
  </row>
  <row id="800067" trl="Y">
@@ -1416,6 +1474,12 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Name" original="Available Amount">Valor Líquido</value>
   <value column="Description" original="Amount available for allocation for this document">Valor líquido a ser creditado</value>
   <value column="Help" original="">Valor efetivo a ser creditado referente ao título, expresso em moeda corrente.</value>
+  <value column="Placeholder" original=""/>
+ </row>
+ <row trl="N" uuid="f03bf729-614c-4a42-ae13-96557c6abdf5">
+  <value column="Name" original="Active/Inactive Token">Active/Inactive Token</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
  </row>
 </idempiereTrl>

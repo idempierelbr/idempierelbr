@@ -1,48 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 7.1_2019-11-22 -Smart Suite ERP, CRM and SCM- (c) 1999-2019 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="PA_DashboardContent">
+<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="PA_DashboardContent">
  <row id="50000" trl="Y">
   <value column="Name" original="Activities">Atividades</value>
   <value column="Description" original="Workflow activities, notices and requests">Atividades de workflow, avisos, solicitações, etc.</value>
+  <value column="Help" original=""/>
   <value column="HTML" original=""/>
  </row>
  <row id="50001" trl="Y">
-  <value column="Name" original="Favourites">Favoritos</value>
-  <value column="Description" original="User favourities">Favoritos</value>
+  <value column="Name" original="Favorites">Favoritos</value>
+  <value column="Description" original="User favorites">Favoritos</value>
+  <value column="Help" original="Set your favorite menu from menu tree panel or drag and drop menu item to favorite dashboard panel. Right click on favorite item to remove. You can organize your favorites by folder."/>
   <value column="HTML" original=""/>
  </row>
  <row id="50002" trl="Y">
   <value column="Name" original="Views">Informações</value>
   <value column="Description" original="Info views">Informações</value>
+  <value column="Help" original=""/>
   <value column="HTML" original=""/>
  </row>
  <row id="50003" trl="Y">
   <value column="Name" original="Performance">Desempenho</value>
   <value column="Description" original="Performance meters">Medidas de desempenho</value>
-  <value column="HTML" original=""/>
- </row>
- <row id="50004" trl="Y">
-  <value column="Name" original="Calendar">Calendário</value>
-  <value column="Description" original="Request Calendar">Request Calendar</value>
+  <value column="Help" original=""/>
   <value column="HTML" original=""/>
  </row>
  <row id="200000" trl="Y">
-  <value column="Name" original="Recent Items">Itens Recentes</value>
-  <value column="Description" original="Recent items">Itens visualizados recentemente</value>
+  <value column="Name" original="Recent Items">Registros Recentes</value>
+  <value column="Description" original="Recent items">Registros Recentes</value>
+  <value column="Help" original="Show your latest opened document. Drag and drop a recent item to trash bin to remove it."/>
   <value column="HTML" original=""/>
  </row>
  <row id="200001" trl="N">
   <value column="Name" original="Menu">Menu</value>
   <value column="Description" original="Menu">Menu</value>
+  <value column="Help" original=""/>
   <value column="HTML" original=""/>
  </row>
  <row id="200002" trl="Y">
-  <value column="Name" original="Running Jobs">Trabalhos em Execução</value>
-  <value column="Description" original="Running Jobs">Trabalhos em Execução</value>
+  <value column="Name" original="Running Jobs">Execuções em Segundo Plano</value>
+  <value column="Description" original="Running Jobs">Execuções em Segundo Plano</value>
+  <value column="Help" original=""/>
   <value column="HTML" original=""/>
  </row>
- <row id="200003" trl="N">
-  <value column="Name" original="Activities">Activities</value>
+ <row id="200003" trl="Y">
+  <value column="Name" original="Activities">Indicadores de Estado</value>
   <value column="Description" original=""/>
+  <value column="Help" original=""/>
   <value column="HTML" original=""/>
+ </row>
+ <row id="200005" trl="N">
+  <value column="Name" original="Donate">Donate</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="HTML" original="&lt;iframe src=&quot;https://www.idempiere.org/short-donate/&quot; style=&quot;border-top-width: 0px;border-bottom-width: 0px;border-right-width: 0px;border-left-width: 0px;width: 100%;height: 450px;&quot;&gt;&lt;/iframe&gt;" xml:space="preserve"><![CDATA[<iframe src="https://www.idempiere.org/short-donate/" style="border-top-width: 0px;border-bottom-width: 0px;border-right-width: 0px;border-left-width: 0px;width: 100%;height: 450px;"></iframe>]]></value>
  </row>
 </idempiereTrl>
