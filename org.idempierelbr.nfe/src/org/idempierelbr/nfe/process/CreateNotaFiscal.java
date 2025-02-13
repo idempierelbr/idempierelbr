@@ -3,6 +3,7 @@ package org.idempierelbr.nfe.process;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.model.MBPartner;
@@ -59,6 +60,8 @@ public class CreateNotaFiscal extends SvrProcess
 	private int 	p_C_Order_ID = 0;
 	private int 	p_C_Invoice_ID = 0;
 	private int 	p_M_RMA_ID = 0;
+	private int 	p_M_InOut_ID = 0;
+	
 	private int 	p_C_DocType_ID = 0;
 	private String	p_docAction = DocAction.ACTION_None;
 	private String 	p_LBR_NFeModel = "55"; // Default = 55 NF-e
@@ -66,6 +69,7 @@ public class CreateNotaFiscal extends SvrProcess
 	private MOrder order;
 	private MInvoice invoice;
 	private MRMA rma;
+	private MInOut m_inout;
 	private PO po;
 	
 	private static String NFE_MODEL_NFE = "55";
@@ -90,6 +94,8 @@ public class CreateNotaFiscal extends SvrProcess
 				p_C_Invoice_ID = para[i].getParameterAsInt();
 			} else if (name.equals("M_RMA_ID")) {
 				p_M_RMA_ID = para[i].getParameterAsInt();
+			} else if (name.equals("M_InOut_ID")) {
+				p_M_InOut_ID = para[i].getParameterAsInt();
 			} else if (name.equals("C_DocType_ID")) {
 				p_C_DocType_ID = para[i].getParameterAsInt();
 			} else if (name.equals("DocAction")) {
@@ -109,12 +115,14 @@ public class CreateNotaFiscal extends SvrProcess
 			p_C_Order_ID = getRecord_ID();
 		else if (getTable_ID() == MInvoice.Table_ID)
 			p_C_Invoice_ID = getRecord_ID();
-		if (getTable_ID() == MRMA.Table_ID)
+		else if (getTable_ID() == MRMA.Table_ID)
 			p_M_RMA_ID = getRecord_ID();
+		else if (getTable_ID() == MInOut.Table_ID)
+			p_M_InOut_ID = getRecord_ID();
 		
 		// Check source document
-		if (p_C_Order_ID <= 0 && p_C_Invoice_ID <= 0 && p_M_RMA_ID <= 0)
-			throw new Exception("No document defined");
+		if (p_C_Order_ID <= 0 && p_C_Invoice_ID <= 0 && p_M_RMA_ID <= 0 && p_M_InOut_ID <= 0)
+			throw new Exception("Nenhum documento válido foi escolhido");
 		
 		// Check model target:
 		if(!p_LBR_NFeModel.equals(NFE_MODEL_NFE) && !p_LBR_NFeModel.equals(NFE_MODEL_NFCe)){
@@ -123,8 +131,8 @@ public class CreateNotaFiscal extends SvrProcess
 		
 		// Order
 		if (p_C_Order_ID > 0) {
-			if (p_C_Invoice_ID > 0 || p_M_RMA_ID > 0)
-				throw new Exception("Please define only one document");
+			if (p_C_Invoice_ID > 0 || p_M_RMA_ID > 0 || p_M_InOut_ID > 0)
+				throw new Exception("Por favor defina somente um documento");
 			
 			order = new MOrder(getCtx(), p_C_Order_ID, get_TrxName());
 			po = order;
@@ -132,8 +140,8 @@ public class CreateNotaFiscal extends SvrProcess
 		
 		// Invoice
 		if (p_C_Invoice_ID > 0) {
-			if (p_C_Order_ID > 0 || p_M_RMA_ID > 0)
-				throw new Exception("Please define only one document");
+			if (p_C_Order_ID > 0 || p_M_RMA_ID > 0 || p_M_InOut_ID > 0)
+				throw new Exception("Por favor defina somente um documento");
 			
 			invoice = new MInvoice(getCtx(), p_C_Invoice_ID, get_TrxName());
 			po = invoice;
@@ -141,11 +149,20 @@ public class CreateNotaFiscal extends SvrProcess
 		
 		// RMA
 		if (p_M_RMA_ID > 0) {
-			if (p_C_Order_ID > 0 || p_C_Invoice_ID > 0)
-				throw new Exception("Please define only one document");
+			if (p_C_Order_ID > 0 || p_C_Invoice_ID > 0 || p_M_InOut_ID > 0)
+				throw new Exception("Por favor defina somente um documento");
 			
 			rma = new MRMA(getCtx(), p_M_RMA_ID, get_TrxName());
 			po = rma;
+		}
+		
+		// InOut
+		if (p_M_InOut_ID > 0) {
+			if (p_C_Order_ID > 0 || p_C_Invoice_ID > 0 || p_M_RMA_ID > 0)
+				throw new Exception("Por favor defina somente um documento");
+			
+			m_inout = new MInOut(getCtx(), p_M_InOut_ID, get_TrxName());
+			po = m_inout;
 		}
 		
 		// Check Doc Status (allows only CO or CL)
@@ -153,8 +170,28 @@ public class CreateNotaFiscal extends SvrProcess
 				!po.get_ValueAsString("DocStatus").equals(DocAction.STATUS_Closed))
 			throw new Exception("The document should be completed or closed");
 		
+		// Original docs for RMA
+		MInOut auxInOut = null;
+		MOrder auxOrder = null;
+		
+		// from RMA
+		if (po instanceof MRMA) {
+			auxInOut = new MInOut(getCtx(), rma.getInOut_ID(), get_TrxName());
+			auxOrder = new MOrder(getCtx(), auxInOut.getC_Order_ID(), get_TrxName());
+			
+			// from inOut
+		} else if (po instanceof MInOut) {
+			auxOrder = new MOrder(getCtx(), m_inout.getC_Order_ID(), get_TrxName());
+			auxInOut = m_inout;
+		}
+		
+		// if from inout, use order doctype
+		if (po instanceof MInOut)
+			poDocType = new MDocType(getCtx(), auxOrder.getC_DocTypeTarget_ID(), get_TrxName());
+		else	
+			poDocType = new MDocType(getCtx(), po.get_ValueAsInt("C_DocType_ID"), get_TrxName());
+		
 		// Source document type
-		poDocType = new MDocType(getCtx(), po.get_ValueAsInt("C_DocType_ID"), get_TrxName());
 		if (poDocType.get_ID() <= 0)
 			poDocType = new MDocType(getCtx(), po.get_ValueAsInt("C_DocTypeTarget_ID"), get_TrxName());
 		
@@ -166,15 +203,6 @@ public class CreateNotaFiscal extends SvrProcess
 				throw new Exception("No document type defined");
 			
 			p_C_DocType_ID = docType.get_ID();
-		}
-		
-		// Original docs for RMA
-		MInOut rmaInOut = null;
-		MOrder rmaOrder = null;
-		
-		if (po instanceof MRMA) {
-			rmaInOut = new MInOut(getCtx(), rma.getInOut_ID(), get_TrxName());
-			rmaOrder = new MOrder(getCtx(), rmaInOut.getC_Order_ID(), get_TrxName());
 		}
 		
 		// Org Location
@@ -200,14 +228,14 @@ public class CreateNotaFiscal extends SvrProcess
 		} else if (po instanceof MRMA) {
 
 			// same bpartner in SO and RMA
-			if (rma.getC_BPartner_ID() == rmaInOut.getC_BPartner_ID()) {
-				if (rmaInOut.getC_Order_ID() > 0) {
-					if (rmaOrder.getBill_Location_ID() > 0)
-						bpartnerLoc = new MBPartnerLocation(getCtx(), rmaOrder.getBill_Location_ID(), get_TrxName());
+			if (rma.getC_BPartner_ID() == auxInOut.getC_BPartner_ID()) {
+				if (auxInOut.getC_Order_ID() > 0) {
+					if (auxOrder.getBill_Location_ID() > 0)
+						bpartnerLoc = new MBPartnerLocation(getCtx(), auxOrder.getBill_Location_ID(), get_TrxName());
 					else
-						bpartnerLoc = new MBPartnerLocation(getCtx(), rmaOrder.getC_BPartner_Location_ID(), get_TrxName());
+						bpartnerLoc = new MBPartnerLocation(getCtx(), auxOrder.getC_BPartner_Location_ID(), get_TrxName());
 				} else {
-					bpartnerLoc = new MBPartnerLocation(getCtx(), rmaInOut.getC_BPartner_Location_ID(), get_TrxName());
+					bpartnerLoc = new MBPartnerLocation(getCtx(), auxInOut.getC_BPartner_Location_ID(), get_TrxName());
 				}
 			} 
 			
@@ -228,8 +256,19 @@ public class CreateNotaFiscal extends SvrProcess
 					if (bpartnerLocs.length > 0) 
 						bpartnerLoc = bpartnerLocs[0];
 					else 
-						throw new Exception("EndereÃ§o do DestinatÃ¡rio Ã© invalido");
+						throw new Exception("Endereço do Destinatário é inválido!");
 				} 
+			}
+		} else if (po instanceof MInOut) {
+
+			// 
+			if (auxInOut.getC_Order_ID() > 0) {
+				if (auxOrder.getBill_Location_ID() > 0)
+					bpartnerLoc = new MBPartnerLocation(getCtx(), auxOrder.getBill_Location_ID(), get_TrxName());
+				else
+					bpartnerLoc = new MBPartnerLocation(getCtx(), auxOrder.getC_BPartner_Location_ID(), get_TrxName());
+			} else {
+				bpartnerLoc = new MBPartnerLocation(getCtx(), auxInOut.getC_BPartner_Location_ID(), get_TrxName());
 			}
 		}		
 		bpLoc = new MLocation(getCtx(), bpartnerLoc.getC_Location_ID(), get_TrxName());
@@ -240,8 +279,8 @@ public class CreateNotaFiscal extends SvrProcess
 		// Transaction type
 		String transactionType;
 		
-		if (po instanceof MRMA)
-			transactionType = rmaOrder.get_ValueAsString("LBR_TransactionType");
+		if (po instanceof MRMA || po instanceof MInOut)
+			transactionType = auxOrder.get_ValueAsString("LBR_TransactionType");
 		else
 			transactionType = po.get_ValueAsString("LBR_TransactionType");
 		
@@ -265,7 +304,7 @@ public class CreateNotaFiscal extends SvrProcess
 		nf.setLBR_FinNFe(getFinNFe());
 		nf.setLBR_NFeNatOp(getNFeNatOp());
 		nf.setLBR_NFE_DestinationType(getDestinationType(orgCountry, orgRegion, bpCountry, bpRegion));
-		nf.setLBR_NFeIndFinal(getIndFinal());
+		nf.setLBR_NFeIndFinal(getIndFinal(transactionType));
 		nf.setLBR_NFeIndPres(getIndPres());
 		nf.setLBR_NFeIndIntermed(getIndIntermed());
 		nf.setLBR_BP_Intermed_ID(getBPIntermed());
@@ -286,8 +325,15 @@ public class CreateNotaFiscal extends SvrProcess
 			nf.setLBR_TaxPayerInfo(invoice.get_ValueAsString("LBR_TaxPayerInfo"));
 			nf.setLBR_UnidentifiedCustomerCPF(invoice.get_ValueAsString("LBR_UnidentifiedCustomerCPF"));
 		} else if (po instanceof MRMA) {
-			nf.setC_Order_ID(rmaOrder.get_ID());
+			nf.setC_Order_ID(auxOrder.get_ID());
 			nf.setM_RMA_ID(rma.get_ID());
+
+			MInvoice m_invoice = getInvoiceOfRMA(getCtx(), rma.get_ID(), get_TrxName());
+			if (m_invoice != null && m_invoice.get_ID() > 0)
+				nf.setC_Invoice_ID(m_invoice.get_ID());			
+		} else if (po instanceof MInOut) {
+			nf.setC_Order_ID(m_inout.getC_Order_ID());
+			nf.set_ValueOfColumn("M_InOut_ID", m_inout.get_ID());
 		}
 		
 		nf.setIsTaxIncluded(true);
@@ -314,12 +360,14 @@ public class CreateNotaFiscal extends SvrProcess
 			// Original docs for RMA
 			MRMALine rmaLine = null;
 			MInOutLine rmaInOutLine = null;
-			MOrderLine rmaOrderLine = null;
+			MOrderLine auxOrderLine = null;
 			
 			if (poLine instanceof MRMALine) {
 				rmaLine = (MRMALine)poLine;
 				rmaInOutLine = new MInOutLine(getCtx(), rmaLine.getM_InOutLine_ID(), get_TrxName());
-				rmaOrderLine = new MOrderLine(getCtx(), rmaInOutLine.getC_OrderLine_ID(), get_TrxName());
+				auxOrderLine = new MOrderLine(getCtx(), rmaInOutLine.getC_OrderLine_ID(), get_TrxName());
+			} else if (poLine instanceof MInOutLine) {
+				auxOrderLine = new MOrderLine(getCtx(), ((MInOutLine) poLine).getC_OrderLine_ID(), get_TrxName());
 			}
 			
 			MLBRNotaFiscalLine nfLine = new MLBRNotaFiscalLine(getCtx(), 0, get_TrxName());
@@ -344,13 +392,26 @@ public class CreateNotaFiscal extends SvrProcess
 			} else if (poLine instanceof MRMALine) {
 				qty = rmaLine.getQty();
 				
-				if (rmaOrderLine.getPriceEntered() != null && rmaOrderLine.getPriceEntered().signum() != 0)
-					priceActual = rmaOrderLine.getPriceEntered();	
+				if (auxOrderLine.getPriceEntered() != null && auxOrderLine.getPriceEntered().signum() != 0)
+					priceActual = auxOrderLine.getPriceEntered();	
 				else 
-					priceActual = rmaOrderLine.getPriceActual();
+					priceActual = auxOrderLine.getPriceActual();
 				
 				nfLine.setC_UOM_ID(rmaLine.getC_UOM_ID());
 				nfLine.setM_RMALine_ID(rmaLine.get_ID());
+				
+				// inout line
+			} else if (poLine instanceof MInOutLine) {
+				qty = (BigDecimal) poLine.get_Value("QtyEntered");
+				
+				if (auxOrderLine.getPriceEntered() != null && auxOrderLine.getPriceEntered().signum() != 0)
+					priceActual = auxOrderLine.getPriceEntered();	
+				else 
+					priceActual = auxOrderLine.getPriceActual();
+				
+				nfLine.setC_UOM_ID(poLine.get_ValueAsInt("C_UOM_ID"));
+				nfLine.set_ValueOfColumn("M_InOutLine_ID", poLine.get_ID());
+				nfLine.setC_OrderLine_ID(auxOrderLine.get_ID());
 			}
 			
 			nfLine.setQty(qty);
@@ -366,13 +427,21 @@ public class CreateNotaFiscal extends SvrProcess
 				if (productWeight != null && productWeight.signum() != 0) {
 					BigDecimal multiplier = MUOMConversion.convertProductFrom(getCtx(),
 							nfLine.getM_Product_ID(), nfLine.getC_UOM_ID(), nfLine.getQty()) ;
-					totalWeight = totalWeight.add(productWeight.multiply(multiplier));
+					
+					if (multiplier == null)
+						totalWeight = totalWeight.add(productWeight);
+					else
+						totalWeight = totalWeight.add(productWeight
+								.multiply(multiplier));
 				}
 			}
 			
 			nfLine.setPriceActual(priceActual);
-			nfLine.setC_Tax_ID(poLine.get_ValueAsInt("C_Tax_ID"));
-
+			if (po instanceof MInOut)
+				nfLine.setC_Tax_ID(auxOrderLine.get_ValueAsInt("C_Tax_ID"));
+			else 
+				nfLine.setC_Tax_ID(poLine.get_ValueAsInt("C_Tax_ID"));
+			
 			int stdPrecision = MCurrency.getStdPrecision(getCtx(), MLBRNotaFiscal.CURRENCY_BRL);
 			
 			if (qty != null && priceActual != null) {
@@ -384,13 +453,48 @@ public class CreateNotaFiscal extends SvrProcess
 			
 			nfLine.saveEx();
 			
-			// Generate details and taxes
+			// Generate details and taxes (from inout, use c_order)
 			MLBRDocLineDetailsNfe details = MLBRDocLineDetailsNfe.createFromPO(nfLine);
 			
 			if (details != null) {
-				details.copyFrom(MLBRDocLineDetailsNfe.getOfPO(poLine));
-				//details.saveEx();
-				details.copyChildren(MLBRDocLineDetailsTax.getOfPO(poLine));
+				
+				// from InOut, use orderLine details
+				if( poLine instanceof MInOutLine) {
+					
+					details.copyFrom(MLBRDocLineDetailsNfe.getOfPO(auxOrderLine));
+					
+					/*
+					 * if has diference between order and nf lines or some line qty, 
+					 * force taxes recalc
+					 */
+					if (auxOrder.getLines().length != m_inout.getLines().length 
+							|| auxOrderLine.getQtyEntered().compareTo(((MInOutLine) poLine).getQtyEntered()) != 0) {
+						
+						// keep current nfline qty
+						BigDecimal tempQty = nfLine.getQty();
+
+						// force update and don't call afterSave event
+						DB.executeUpdate("UPDATE LBR_NotaFiscalLine SET Qty = -999 WHERE LBR_NotaFiscalLine_ID = ? ", nfLine.get_ID(), get_TrxName());
+
+						// reload object to load new qty
+						nfLine = new MLBRNotaFiscalLine(getCtx(), nfLine.get_ID(), get_TrxName());
+
+						// set qty again and save to recalculate tax with qty of
+						// delivery line, not from order
+						nfLine.setQty(tempQty);
+						nfLine.saveEx(get_TrxName());
+						
+					} else {
+						
+						// copy from order
+						details.copyChildren(MLBRDocLineDetailsTax.getOfPO(auxOrderLine));
+					}
+					
+					
+				} else {
+					details.copyFrom(MLBRDocLineDetailsNfe.getOfPO(poLine));
+					details.copyChildren(MLBRDocLineDetailsTax.getOfPO(poLine));
+				}
 			}
 			
 			// Add fiscal information
@@ -451,10 +555,10 @@ public class CreateNotaFiscal extends SvrProcess
 			DeliveryViaRule = invOrder.getDeliveryViaRule();
 			FreightCostRule = invOrder.getFreightCostRule();
 			M_Shipper_ID = invOrder.getM_Shipper_ID();
-		} else if (po instanceof MRMA) {
-			DeliveryViaRule = rmaInOut.getDeliveryViaRule();
-			FreightCostRule = rmaInOut.getFreightCostRule();
-			M_Shipper_ID = rmaInOut.getM_Shipper_ID();
+		} else if (po instanceof MRMA || po instanceof MInOut) {
+			DeliveryViaRule = auxInOut.getDeliveryViaRule();
+			FreightCostRule = auxInOut.getFreightCostRule();
+			M_Shipper_ID = auxInOut.getM_Shipper_ID();
 		}
 		
 		if (DeliveryViaRule == null)
@@ -464,7 +568,8 @@ public class CreateNotaFiscal extends SvrProcess
 			FreightCostRule = "";
 		
 		String NFeModShipping = "";
-		if(DeliveryViaRule.equals("P")) {
+		if(DeliveryViaRule.equals("P")
+				|| DeliveryViaRule.equals("D")) {
 			NFeModShipping = "9";
 		} else {
 			NFeModShipping = "1";
@@ -627,6 +732,43 @@ public class CreateNotaFiscal extends SvrProcess
 		
 		return new BigDecimal(qty);
 	}
+	
+	private BigDecimal getWeightBaseOnShipments() {
+		if (po instanceof MRMA) {
+			MRMA rma = (MRMA)po;
+			MInOut shipment = rma.getShipment();
+			
+			if (shipment.getNoPackages() > 0)
+				return new BigDecimal(shipment.getNoPackages());
+			
+			return Env.ZERO;
+		}
+		
+		MOrder tmpOrder = null;
+		
+		if (po instanceof MOrder)
+			tmpOrder = order;
+		else if (po instanceof MInvoice)
+			tmpOrder = invoice.getOriginalOrder();
+		
+		if (tmpOrder==null) {
+			return Env.ZERO;
+		}
+		
+		List<MInOut> list = new Query (getCtx(), MInOut.Table_Name,
+					"C_Order_ID=? AND DocStatus IN ('DR', 'IP', 'CO')", get_TrxName())
+				.setParameters(new Object[]{tmpOrder.get_ID()})
+				.list();
+		
+		BigDecimal weight = Env.ZERO;
+		
+		for (MInOut inOut : list) {
+			if (inOut.getWeight() != null && inOut.getWeight().signum() == 1)
+				weight = weight.add(inOut.getWeight());
+		}
+		
+		return weight;
+	}
 		
 	/**
 	 * Get operation type (IN/OUT) based on source document type
@@ -639,13 +781,14 @@ public class CreateNotaFiscal extends SvrProcess
 		String docBaseType = poDocType.getDocBaseType();
 		
 		// Document Base Types for IN operation
-		if (MDocType.DOCBASETYPE_APInvoice.equals(docBaseType) ||
-				MDocType.DOCBASETYPE_ARCreditMemo.equals(docBaseType) ||
-				(MDocType.DOCBASETYPE_PurchaseOrder.equals(docBaseType) && 
-						!MDocType.DOCSUBTYPESO_ReturnMaterial.equals(poDocType.getDocSubTypeSO()))||
-				 MDocType.DOCBASETYPE_PurchaseRequisition.equals(docBaseType) ||
-				(MDocType.DOCBASETYPE_SalesOrder.equals(docBaseType) && 
-						 MDocType.DOCSUBTYPESO_ReturnMaterial.equals(poDocType.getDocSubTypeSO())))
+		if (docBaseType.equals(MDocType.DOCBASETYPE_APInvoice) ||
+				docBaseType.equals(MDocType.DOCBASETYPE_ARCreditMemo) ||
+				docBaseType.equals(MDocType.DOCBASETYPE_MaterialReceipt) ||
+				(docBaseType.equals(MDocType.DOCBASETYPE_PurchaseOrder) && (poDocType.getDocSubTypeSO() != null &&
+						!poDocType.getDocSubTypeSO().equals(MDocType.DOCSUBTYPESO_ReturnMaterial)))||
+				docBaseType.equals(MDocType.DOCBASETYPE_PurchaseRequisition) ||
+				(docBaseType.equals(MDocType.DOCBASETYPE_SalesOrder) && 
+						(poDocType.getDocSubTypeSO() != null && poDocType.getDocSubTypeSO().equals(MDocType.DOCSUBTYPESO_ReturnMaterial))))
 			opType = "0"; // IN		
 		
 		return opType;
@@ -689,6 +832,13 @@ public class CreateNotaFiscal extends SvrProcess
 			poC_PaymentTerm_ID = po.get_ValueAsInt("C_PaymentTerm_ID");
 		} else if (po instanceof MRMA) {
 			MOrder origOrder = rma.getOriginalOrder();
+			
+			if (origOrder != null) {
+				poPayRule = origOrder.getPaymentRule();
+				poC_PaymentTerm_ID = origOrder.getC_PaymentTerm_ID();
+			}
+		} else if (po instanceof MInOut) {
+			MOrder origOrder = new MOrder(getCtx(), m_inout.getC_Order_ID(), get_TrxName());
 			
 			if (origOrder != null) {
 				poPayRule = origOrder.getPaymentRule();
@@ -758,14 +908,27 @@ public class CreateNotaFiscal extends SvrProcess
 	public String getNFeNatOp() {
 		// Default: Outra
 		String defaultNatOp = "Outra";
+ 
+		// get record ID
+		int po_ID = po.get_ID();
 		
+		// from rma, order or invoice 
 		String headerTableName = po.get_TableName();
+		
+		// from inout, use order
+		if (po instanceof MInOut) {
+			MOrder originalOrder = new MOrder(getCtx(), ((MInOut) po).getC_Order_ID(), get_TrxName());
+			headerTableName = originalOrder.get_TableName();
+			po_ID = originalOrder.get_ID();
+		} 
+		
 		String headerKeyColumnName = headerTableName + "_ID";
 		String lineTableName = headerTableName + "Line";
 		String lineKeyColumnName = lineTableName + "_ID";
 		String amountColumnName = "LineNetAmt";
 		
-		if (!(po instanceof MOrder) && !(po instanceof MInvoice) && !(po instanceof MRMA)) {
+		
+		if (!(po instanceof MOrder) && !(po instanceof MInvoice) && !(po instanceof MRMA) && !(po instanceof MInOut)) {
 			return "";
 		}
 		
@@ -785,7 +948,7 @@ public class CreateNotaFiscal extends SvrProcess
 		sql.append("				)");
 		sql.append("		)");
 		
-		String description = DB.getSQLValueString(get_TrxName(), sql.toString(), po.get_ID());
+		String description = DB.getSQLValueString(get_TrxName(), sql.toString(), po_ID);
 		
 		if (description == null)
 			return defaultNatOp;
@@ -822,12 +985,19 @@ public class CreateNotaFiscal extends SvrProcess
 	 * 
 	 * @return 0 (no) or 1 (retail sale) 
 	 */
-	private String getIndFinal() {
+	private String getIndFinal(String transactionType) {
 		// Default: NO
 		String indFinal = "0"; // NO
-		
-		String docTypeIndFinal = getDocType().get_ValueAsString("LBR_NFeIndFinal");
-		
+
+		String docTypeIndFinal = getDocType().get_ValueAsString(
+				"LBR_NFeIndFinal");
+
+		// if has a "Consumidor Final" transaction then is
+		// "Transação com Consumidor"
+		if (transactionType != null && transactionType.equals("END"))
+			return "1";
+
+		//
 		if (!docTypeIndFinal.trim().equals(""))
 			return docTypeIndFinal;
 		
@@ -882,8 +1052,32 @@ public class CreateNotaFiscal extends SvrProcess
 			return invoice.getLines();
 		} else if (po instanceof MRMA) {
 			return rma.getLines(false);
+		} else if (po instanceof MInOut) {
+			return m_inout.getLines();
 		}
 		
 		return new PO[0];
+	}
+	
+	
+	/**
+	 * Get invoice of RMA
+	 * 
+	 * @param ctx
+	 * @param M_RMA_ID
+	 * @param trxName
+	 * @return
+	 */
+	private MInvoice getInvoiceOfRMA(Properties ctx, int M_RMA_ID, String trxName) {
+
+		// where
+		String where = "M_RMA_ID = ? AND DocStatus IN ('CO', 'CL') ";
+
+		// query
+		Query q = new Query(Env.getCtx(), MInvoice.Table_Name, where, trxName);
+		q.setParameters(new Object[] { M_RMA_ID });
+
+		//
+		return q.first();
 	}
 }
