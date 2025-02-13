@@ -91,7 +91,7 @@
 2.1.02.001.0011,IPI a Recolher,,Liability,,No,No,,2.1.02.001
 2.1.02.001.0012,ICMS a Recolher,,Liability,,No,No,,2.1.02.001
 2.1.02.001.0013,ICMS-ST a Recolher,,Liability,,No,No,,2.1.02.001
-2.1.02.001.0014,Outros Impostos a Recolher,,Liability,,No,No,,2.1.02.001
+2.1.02.001.0014,Outros Impostos a Recolher,,Liability,,No,No,T_DUE_ACCT,2.1.02.001
 2.1.02.002,Obrigações Trabalhistas,,Liability,,No,Yes,,2.1.02
 2.1.02.002.0001,Salários a Pagar,,Liability,,No,No,,2.1.02.002
 2.1.02.002.0002,Pró-labore a Pagar,,Liability,,No,No,,2.1.02.002
@@ -166,7 +166,7 @@
 3.1.01.001.0001,Receitas de Vendas,,Revenue,,No,No,,3.1.01.001
 3.1.02,Vendas Canceladas,,Revenue,,No,Yes,,3.1
 3.1.02.001,Vendas Canceladas,,Revenue,,No,Yes,,3.1.02
-3.1.02.001.0001,Vendas Canceladas,,Revenue,,No,No,,3.1.02.001
+3.1.02.001.0001,Vendas Canceladas,,Revenue,,No,No,LBR_P_RevenueReturn_Acct,3.1.02.001
 3.1.03,Receitas de Serviços,,Revenue,,No,Yes,,3.1
 3.1.03.001,Receitas Financeiras,,Revenue,,No,Yes,,3.1.03
 3.1.03.001.0001,Juros e Multas / Juros T.Price,,Revenue,,No,No,,3.1.03.001
