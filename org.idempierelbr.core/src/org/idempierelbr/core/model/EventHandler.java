@@ -103,7 +103,7 @@ public class EventHandler extends AbstractEventHandler {
 
 			MCNPJ cnpj = new MCNPJ(CNPJFilial);
 			
-			if (!cnpj.isUniqueOnBP(bpl.getAD_Client_ID(), bpl.get_ID(), bpl.get_TableName(), bpl.get_TrxName()))
+			if (!cnpj.isUniqueOnBP(bpl.getAD_Client_ID(), bpl.getAD_Org_ID(), bpl.get_ID(), bpl.get_TableName(), bpl.get_TrxName()))
 				return "CNPJ Duplicado. Existe outro Parceiro de Negócios com este CNPJ";
 		} else
 			return "CNPJ Inválido. Raiz do CNPJ não corresponde com o informado na aba Parceiro de Negócios";
@@ -138,7 +138,7 @@ public class EventHandler extends AbstractEventHandler {
 				
 				MCPF cpf = new MCPF(bpW.getLBR_CPF());
 
-				if (!cpf.isUniqueOnBP(AD_Client_ID, bp.get_ID(), bp.get_TrxName())){
+				if (!cpf.isUniqueOnBP(AD_Client_ID, bp.getAD_Org_ID(), bp.get_ID(), bp.get_TrxName())){
 					return "CPF Duplicado. Existe outro Parceiro de Negócios com este CPF";
 				}
 
@@ -155,7 +155,7 @@ public class EventHandler extends AbstractEventHandler {
 				
 				MCNPJ cnpj = new MCNPJ(bpW.getLBR_CNPJ());
 				
-				if (!cnpj.isUniqueOnBP(AD_Client_ID, bp.get_ID(), bp.get_TableName(), bp.get_TrxName())){
+				if (!cnpj.isUniqueOnBP(AD_Client_ID, bp.getAD_Org_ID(), bp.get_ID(), bp.get_TableName(), bp.get_TrxName())){
 					return "CNPJ Duplicado. Existe outro Parceiro de Negócios com este CNPJ (ou raiz, caso PN Unificado)";
 				}
 

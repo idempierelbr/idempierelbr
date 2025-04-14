@@ -103,19 +103,26 @@ public class MCNPJ {
 	 *	Verifica se o CNPJ informado é único nos registros de Parceiro de Negócios
 	 *	@return boolean true or false
 	 */
-	public boolean isUniqueOnBP(int AD_Client_ID, int C_BPartner_ID, String TableName, String trxName)
+	public boolean isUniqueOnBP(int AD_Client_ID, int AD_Org_ID, int C_BPartner_ID, String TableName, String trxName)
 	{
 		Boolean isUnifiedBP = MSysConfig.getBooleanValue("LBR_USE_UNIFIED_BP", false, AD_Client_ID);
+		Boolean isUniqueBPPerClient = MSysConfig.getBooleanValue("LBR_UNIQUE_BP_PER_CLIENT", true, AD_Client_ID);
+		
 		int iCNPJ = 0;
 		String sql = "SELECT COUNT(LBR_CNPJ) " +
 				     "FROM " + TableName + " ";
 
 		if(isUnifiedBP && TableName.equals("C_BPartner"))
-			sql += "WHERE SUBSTR(LBR_CNPJ, 1, 8) = ? AND AD_Client_ID = ? ";
+			sql += "WHERE SUBSTR(LBR_CNPJ, 1, 8) = ?";
 		else
-			sql += "WHERE LBR_CNPJ = ? AND AD_Client_ID = ? ";
+			sql += "WHERE LBR_CNPJ = ?";
 
-		sql += "AND " + TableName + "_ID <> ? AND IsActive='Y'";
+		sql += " AND AD_Client_ID = ?";
+		
+		if (!isUniqueBPPerClient)
+			sql += " AND AD_Org_ID = ?";		
+		
+		sql += " AND " + TableName + "_ID <> ? AND IsActive='Y'";
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -129,7 +136,14 @@ public class MCNPJ {
 				pstmt.setString (1, getCNPJ());
 			
 			pstmt.setInt(2, AD_Client_ID);
-			pstmt.setInt(3, C_BPartner_ID);
+			
+			if (!isUniqueBPPerClient) {
+				pstmt.setInt(3, AD_Org_ID);
+				pstmt.setInt(4, C_BPartner_ID);
+			} else {
+				pstmt.setInt(3, C_BPartner_ID);
+			}
+
 			rs = pstmt.executeQuery ();
 			
 			if (rs.next ())
