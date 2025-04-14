@@ -71,8 +71,7 @@ public class BoletoInstructions extends SvrProcess {
 					.append(boleto.getDocumentNo())
 					.append(", ");
 			try {
-				MLBRBoletoMovement newMov = MLBRBoletoMovement.createNewMovement(getCtx(), boleto, movcode, get_TrxName());
-				newMov.saveEx();
+				MLBRBoletoMovement newMov = MLBRBoletoMovement.createNewMovement(getCtx(), boleto, movcode, null, null, get_TrxName());
 				logMsg.append("Movimento")
 					.append(" ")
 					.append(newMov.getLBR_Cob_Movimento().getName());

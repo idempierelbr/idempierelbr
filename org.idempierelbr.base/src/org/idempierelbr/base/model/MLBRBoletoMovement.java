@@ -1,7 +1,9 @@
 package org.idempierelbr.base.model;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.Properties;
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MBank;
@@ -182,6 +184,10 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 		if (C_BankAccount_ID != null)
 			setBankAccount(new MBankAccount(getCtx(), C_BankAccount_ID, get_TrxName()));				
 	}
+	
+	public static MLBRBoletoMovement createNewMovement( Properties ctx, MLBRBoleto boleto, String cobMovCode, String trxName ) {
+		return MLBRBoletoMovement.createNewMovement(ctx, boleto, cobMovCode, null, null, trxName);
+	}
 
 	/**
 	 * 
@@ -193,7 +199,13 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 	 * @param trxName Nome da transação no banco
 	 * @return
 	 */
-	public static MLBRBoletoMovement createNewMovement( Properties ctx, MLBRBoleto boleto, String cobMovCode, String trxName ) {
+	public static MLBRBoletoMovement createNewMovement( Properties ctx, MLBRBoleto boleto, String cobMovCode, BigDecimal writeoffAmt, Timestamp dueDate, String trxName ) {
+		if (boleto.getDocStatus() == null)
+			return null;
+		
+		if (!boleto.getDocStatus().equals(MLBRBoleto.DOCACTION_Complete))
+			return null;
+		
 		// Somente boletos já registrados podem receber instruções
 		if (!boleto.isRegistered())
 			throw new AdempiereException("Somente boletos já registrados no banco podem receber instruções");
@@ -204,6 +216,15 @@ public class MLBRBoletoMovement extends X_LBR_BoletoMovement {
 		newMov.setLBR_CNAB240MovementType(MLBRBoletoMovement.LBR_CNAB240MOVEMENTTYPE_1_RemessaCliente_GtBanco);
 		MLBRCobMovimento cobMov = MLBRCobMovimento.getMovimento(ctx, cobMovCode, MLBRBoletoMovement.LBR_CNAB240MOVEMENTTYPE_1_RemessaCliente_GtBanco, (MBank) boleto.getC_Bank(), trxName);
 		newMov.setLBR_Cob_Movimento_ID(cobMov.get_ID());
+		
+		if (writeoffAmt != null)
+			newMov.setWriteOffAmt(writeoffAmt);
+		
+		if (dueDate != null)
+			newMov.setDueDate(dueDate);
+		
+		newMov.saveEx();
+		
 		return newMov;
 	}
 
