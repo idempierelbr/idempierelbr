@@ -852,7 +852,7 @@ public class NFeUtil {
 	    }
 
 	    try {
-	        if (("GTIN").contains(value)) {
+	        if (value.contains("GTIN")) {
 	            return Boolean.TRUE;
 	        }
 

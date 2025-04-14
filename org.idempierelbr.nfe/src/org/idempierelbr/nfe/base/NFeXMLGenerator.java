@@ -883,20 +883,19 @@ public class NFeXMLGenerator {
 			
 			produtos.setvProd(TextUtil.bigdecimalToString(details.getLBR_GrossAmt()));
 			
-			// check ean
+			// check ean trib
 			produtos.setcEANTrib("");
-			String productEANTrib = details.getLBR_UPCTax();
-				
-			if(productEANTrib != null && !productEANTrib.contains("GTIN")) {
-				if (NFeUtil.isValidEAN(productEANTrib))
-					produtos.setcEANTrib(productEANTrib);
-			}else {
-					produtos.setcEANTrib(UPC_EAN);
-			}		
 			
-			
-			
-			
+			if (produtos.getcEAN() != null && !produtos.getcEAN().isEmpty()) {
+				String productEANTrib = details.getLBR_UPCTax();
+					
+				if(productEANTrib != null && !productEANTrib.contains("GTIN")) {
+					if (NFeUtil.isValidEAN(productEANTrib))
+						produtos.setcEANTrib(productEANTrib);
+				}else {
+						produtos.setcEANTrib(UPC_EAN);
+				}		
+			}			
 			
 			if (details.getLBR_UOMTax_ID() < 1)
 				return "@Line@: " + nfLine.getLine() + prefixLineMandatory + "'@LBR_UOMTax_ID@'";
