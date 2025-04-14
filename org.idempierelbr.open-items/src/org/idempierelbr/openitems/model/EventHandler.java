@@ -260,7 +260,7 @@ public class EventHandler extends AbstractEventHandler {
 			List<MLBRBoleto> boletos = MLBRBoleto.getByInvoice(po.getCtx(), (MInvoice)po, po.get_TrxName());
 
 			for (MLBRBoleto b : boletos) {
-				if (!b.isLBR_IsBaixado() && !b.isPaid()) {
+				if (b.getDocStatus().equals(DocAction.STATUS_Completed) && !b.isLBR_IsBaixado() && !b.isPaid()) {
 					MLBRBoletoMovement newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), b, b.isLBR_IsProtested()?"10":"02", po.get_TrxName());
 					newMov.saveEx();
 				}
