@@ -986,22 +986,14 @@ public class CreateNotaFiscal extends SvrProcess
 	 * @return 0 (no) or 1 (retail sale) 
 	 */
 	private String getIndFinal(String transactionType) {
-		// Default: NO
-		String indFinal = "0"; // NO
-
-		String docTypeIndFinal = getDocType().get_ValueAsString(
-				"LBR_NFeIndFinal");
-
-		// if has a "Consumidor Final" transaction then is
-		// "Transação com Consumidor"
 		if (transactionType != null && transactionType.equals("END"))
-			return "1";
-
-		//
-		if (!docTypeIndFinal.trim().equals(""))
+			return MLBRNotaFiscal.LBR_NFEINDFINAL_EndConsumer;
+		
+		String docTypeIndFinal = getDocType().get_ValueAsString("LBR_NFeIndFinal");
+		if (docTypeIndFinal != null && !docTypeIndFinal.isEmpty())
 			return docTypeIndFinal;
 		
-		return indFinal;
+		return MLBRNotaFiscal.LBR_NFEINDFINAL_No;
 	}
 	
 	/**
