@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 
+import org.compiere.model.MSysConfig;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 
@@ -100,12 +101,19 @@ public class MCPF {
 	 *	Verifica se o CPF informado é único nos registros de Parceiro de Negócios
 	 *	@return boolean true or false
 	 */
-	public boolean isUniqueOnBP(int AD_Client_ID, int C_BPartner_ID, String trxName) {
+	public boolean isUniqueOnBP(int AD_Client_ID, int AD_Org_ID, int C_BPartner_ID, String trxName) {
+		Boolean isUniqueBPPerClient = MSysConfig.getBooleanValue("LBR_UNIQUE_BP_PER_CLIENT", true, AD_Client_ID);
+		
 		int iCPF = 0;
 		String sql = "SELECT count(LBR_CPF) " +
 				     " FROM C_BPartner " +
-				     " WHERE LBR_CPF = ? AND AD_Client_ID = ?" +
-				     " AND C_BPartner_ID <> ? AND IsActive = 'Y'";
+				     " WHERE LBR_CPF = ? AND AD_Client_ID = ?";
+		
+		if (!isUniqueBPPerClient)
+			sql += " AND AD_Org_ID = ?";	
+		
+		sql += " AND C_BPartner_ID <> ? AND IsActive = 'Y'";
+		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try
@@ -113,8 +121,16 @@ public class MCPF {
 			pstmt = DB.prepareStatement (sql, trxName);
 			pstmt.setString (1, getCPF());
 			pstmt.setInt(2, AD_Client_ID);
-			pstmt.setInt(3, C_BPartner_ID);
+			
+			if (!isUniqueBPPerClient) {
+				pstmt.setInt(3, AD_Org_ID);
+				pstmt.setInt(4, C_BPartner_ID);
+			} else {
+				pstmt.setInt(3, C_BPartner_ID);
+			}
+				
 			rs = pstmt.executeQuery ();
+			
 			if (rs.next ())
 			{
 				iCPF = rs.getInt(1);

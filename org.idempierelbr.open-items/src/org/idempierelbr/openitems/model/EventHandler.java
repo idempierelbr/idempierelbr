@@ -127,9 +127,7 @@ public class EventHandler extends AbstractEventHandler {
 						// alteração
 						newMovCode="18";
 					}
-					MLBRBoletoMovement newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), boleto, newMovCode, po.get_TrxName());
-					newMov.setWriteOffAmt(newWriteOffAmt);
-					newMov.saveEx();
+					MLBRBoletoMovement newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), boleto, newMovCode, newWriteOffAmt, null, po.get_TrxName());
 				}
 			}
 			
@@ -260,9 +258,8 @@ public class EventHandler extends AbstractEventHandler {
 			List<MLBRBoleto> boletos = MLBRBoleto.getByInvoice(po.getCtx(), (MInvoice)po, po.get_TrxName());
 
 			for (MLBRBoleto b : boletos) {
-				if (!b.isLBR_IsBaixado() && !b.isPaid()) {
-					MLBRBoletoMovement newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), b, b.isLBR_IsProtested()?"10":"02", po.get_TrxName());
-					newMov.saveEx();
+				if (b.getDocStatus().equals(DocAction.STATUS_Completed) && !b.isLBR_IsBaixado() && !b.isPaid()) {
+					MLBRBoletoMovement newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), b, b.isLBR_IsProtested()?"10":"02", null, null, po.get_TrxName());
 				}
 			}
 		}
@@ -285,19 +282,20 @@ public class EventHandler extends AbstractEventHandler {
 					detailsEntries[0].updateInterest();
 					detailsEntries[0].updateLatePaymentPenalty();
 				}				
-				newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), boleto, "06", po.get_TrxName());
-				newMov.setDueDate(((MInvoicePaySchedule)po).getDueDate());
-				newMov.saveEx();
+				newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), boleto, "06", null, ((MInvoicePaySchedule)po).getDueDate(), po.get_TrxName());
 			}
 			// Data e/ou Valor de desconto
 			if (boleto != null && (    po.is_ValueChanged(MInvoicePaySchedule.COLUMNNAME_DiscountAmt)
 					                || po.is_ValueChanged(MInvoicePaySchedule.COLUMNNAME_DiscountDate))) {
-				newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), boleto, "16", po.get_TrxName());
-				newMov.setLBR_CNABDiscount1Code( MLBRBoletoMovement.LBR_CNABDISCOUNT1CODE_1_ValorFixoAteADataInformada );
-				newMov.setDiscountAmt(((MInvoicePaySchedule)po).getDiscountAmt());
-				newMov.setLBR_CNABDiscount1Date(((MInvoicePaySchedule)po).getDiscountDate());
-				detailsEntries[0].updateDiscounts();
-				newMov.saveEx();
+				newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), boleto, "16", null, null, po.get_TrxName());
+				
+				if (newMov != null) {
+					newMov.setLBR_CNABDiscount1Code( MLBRBoletoMovement.LBR_CNABDISCOUNT1CODE_1_ValorFixoAteADataInformada );
+					newMov.setDiscountAmt(((MInvoicePaySchedule)po).getDiscountAmt());
+					newMov.setLBR_CNABDiscount1Date(((MInvoicePaySchedule)po).getDiscountDate());
+					detailsEntries[0].updateDiscounts();
+					newMov.saveEx();
+				}
 			}
 		}
 		
@@ -333,8 +331,7 @@ public class EventHandler extends AbstractEventHandler {
 			}
 
 			for (MLBRBoleto b : boletos) {
-				MLBRBoletoMovement newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), b, b.isLBR_IsProtested()?"10":"02", po.get_TrxName());
-				newMov.saveEx();
+				MLBRBoletoMovement newMov = MLBRBoletoMovement.createNewMovement(po.getCtx(), b, b.isLBR_IsProtested()?"10":"02", null, null, po.get_TrxName());
 			}
 		}
 		

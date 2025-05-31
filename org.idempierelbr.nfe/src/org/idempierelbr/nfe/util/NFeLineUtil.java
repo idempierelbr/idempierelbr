@@ -79,7 +79,7 @@ public class NFeLineUtil {
 		
 		
 		if (icmsLines.length > 0) {
-			String prefixException = "@Tab@ @ICMS@, @Field@ @IsMandatory@: ";
+			String prefixException = "@Line@ " + line.getLine() +", @Tab@ @ICMS@, @Field@ @IsMandatory@: ";
 			
 			ICMSBean icms = new ICMSBean();
 			ICMSGrupoBean icmsGrupo = new ICMSGrupoBean();
@@ -328,7 +328,6 @@ public class NFeLineUtil {
 					if (firstMlbrDocLineICMS.getLBR_TaxBaseAmt() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxBaseAmt@'");
 					icmsGrupo.setvBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBaseAmt()));
-					icmsGrupo.setpRedBC(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxBase()));
 					if (firstMlbrDocLineICMS.getLBR_TaxRate() == null)
 						throw new AdempiereException(prefixException + "'@LBR_TaxRate@'");
 					icmsGrupo.setpICMS(TextUtil.bigdecimalToString(firstMlbrDocLineICMS.getLBR_TaxRate()));
@@ -563,7 +562,7 @@ public class NFeLineUtil {
 		MLBRDocLineIPI[] ipiLines = MLBRDocLineIPI.getOfDetails(MLBRDocLineDetailsNfe.getOfPO(line));
 		
 		if (ipiLines.length > 0) {
-			String prefixException = "@Tab@ @IPI@, @Field@ @IsMandatory@: ";
+			String prefixException = "@Line@ " + line.getLine() +", @Tab@ @IPI@, @Field@ @IsMandatory@: ";
 			
 			IPIBean ipi = new IPIBean();
 			IPIGrupoBean ipiGrupo = new IPIGrupoBean();
@@ -627,7 +626,7 @@ public class NFeLineUtil {
 		MLBRDocLineImportTax[] iiLines = MLBRDocLineImportTax.getOfDetails(MLBRDocLineDetailsNfe.getOfPO(line));
 		
 		if (iiLines.length > 0) {
-			String prefixException = "@Tab@ @LBR_ImportTax@, @Field@ @IsMandatory@: ";
+			String prefixException = "@Line@ " + line.getLine() +", @Tab@ @LBR_ImportTax@, @Field@ @IsMandatory@: ";
 			
 			IIBean ii = new IIBean();
 			
@@ -658,7 +657,7 @@ public class NFeLineUtil {
 		MLBRDocLinePIS[] pisLines = MLBRDocLinePIS.getOfDetails(MLBRDocLineDetailsNfe.getOfPO(line));
 		
 		if (pisLines.length > 0) {
-			String prefixException = "@Tab@ @PIS@, @Field@ @IsMandatory@: ";
+			String prefixException = "@Line@ " + line.getLine() +", @Tab@ @PIS@, @Field@ @IsMandatory@: ";
 			
 			PISBean pis = new PISBean();
 			PISGrupoBean pisGrupo = new PISGrupoBean();
@@ -774,7 +773,7 @@ public class NFeLineUtil {
 		if (pisLines.length > 0	&&
 				pisLines[0].getLBR_PISST_CalcType() != null && !pisLines[0].getLBR_PISST_CalcType().trim().equals("")) {
 			
-			String prefixException = "@Tab@ @PIS@, @Field@ @IsMandatory@: ";
+			String prefixException = "@Line@ " + line.getLine() +", @Tab@ @PIS@, @Field@ @IsMandatory@: ";
 			
 			PISSTBean pisST = new PISSTBean();
 	
@@ -812,7 +811,7 @@ public class NFeLineUtil {
 		MLBRDocLineCOFINS[] cofinsLines = MLBRDocLineCOFINS.getOfDetails(MLBRDocLineDetailsNfe.getOfPO(line));
 		
 		if (cofinsLines.length > 0) {
-			String prefixException = "@Tab@ @COFINS@, @Field@ @IsMandatory@: ";
+			String prefixException = "@Line@ " + line.getLine() +", @Tab@ @COFINS@, @Field@ @IsMandatory@: ";
 			
 			COFINSBean cofins = new COFINSBean();
 			COFINSGrupoBean cofinsGrupo = new COFINSGrupoBean();
@@ -923,7 +922,7 @@ public class NFeLineUtil {
 		if (cofinsLines.length > 0	&&
 				cofinsLines[0].getLBR_COFST_CalcType() != null && !cofinsLines[0].getLBR_COFST_CalcType().trim().equals("")) {
 			
-			String prefixException = "@Tab@ @COFINS@, @Field@ @IsMandatory@: ";
+			String prefixException = "@Line@ " + line.getLine() +", @Tab@ @COFINS@, @Field@ @IsMandatory@: ";
 			
 			COFINSSTBean cofinsST = new COFINSSTBean();
 	
@@ -961,7 +960,7 @@ public class NFeLineUtil {
 		MLBRDocLineISSQN[] issqnLines = MLBRDocLineISSQN.getOfDetails(MLBRDocLineDetailsNfe.getOfPO(line));
 		
 		if (issqnLines.length > 0) {
-			String prefixException = "@Tab@ @ISSQN@, @Field@ @IsMandatory@: ";
+			String prefixException = "@Line@ " + line.getLine() +", @Tab@ @ISSQN@, @Field@ @IsMandatory@: ";
 			
 			ISSQNBean issqn = new ISSQNBean();
 			
@@ -1053,7 +1052,7 @@ public class NFeLineUtil {
 		if (icmsLines.length > 0) {
 			
 			// 
-			String prefixException = "@Tab@ @ICMS@, @Field@ @IsMandatory@: ";
+			String prefixException = "@Line@ " + line.getLine() +", @Tab@ @ICMS@, @Field@ @IsMandatory@: ";
 			
 			// icms group
 			ICMSUFDestBean icmsGrupo = new ICMSUFDestBean();

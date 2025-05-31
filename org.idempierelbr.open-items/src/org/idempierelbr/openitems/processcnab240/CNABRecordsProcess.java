@@ -56,6 +56,10 @@ import org.idempierelbr.cnab240.annotated.CNABSegmentURecord;
  */
 public class CNABRecordsProcess {
 
+	private static final int FEETYPE_TARIFAS_CUSTAS_OUTRASDESPESAS_OUTRASRECEITAS = 0;
+	private static final int FEETYPE_IOF = 1;
+	private static final int FEETYPE_MULTA_JUROS = 2;
+
 	public static String process(CNABRecords returnRecords , CNAB240Return svrP, IBankCollection bankCollection ) throws IOException {
 		// TODO Auto-generated method stub
 		
@@ -89,7 +93,7 @@ public class CNABRecordsProcess {
 		int AD_Client_ID = 0;
 		int AD_Org_ID = 0;
 		
-		BigDecimal totalFeeAmt = Env.ZERO;
+		BigDecimal totalDeTarifasCustasOutrasDespesasOutrasReceitas = Env.ZERO;
 		
 		// Check entries and updated Boleto
 		for (CNABSegmentGroup sg : sgList) {
@@ -268,7 +272,7 @@ public class CNABRecordsProcess {
 			if (feeAmt.compareTo(Env.ZERO) == 1) {
 				mov.setFeeAmt(feeAmt);
 				// acumula tarifas
-				totalFeeAmt = totalFeeAmt.add(feeAmt);
+				totalDeTarifasCustasOutrasDespesasOutrasReceitas = totalDeTarifasCustasOutrasDespesasOutrasReceitas.add(feeAmt);
 			}
 			
 			// Update Motivo da Ocorrência
@@ -308,6 +312,10 @@ public class CNABRecordsProcess {
 			
 			if (interestAmt.compareTo(Env.ZERO) == 1) {
 				mov.setInterestAmt(interestAmt);
+				createFeePayment(svrP.getCtx(), svrP.getBankAccount(), lote,
+						FEETYPE_MULTA_JUROS,
+						interestAmt,
+						svrP.get_TrxName());
 			}
 			
 			// Update Discount Amt (Valor do Desconto)
@@ -329,6 +337,10 @@ public class CNABRecordsProcess {
 			
 			if (iofAmt.compareTo(Env.ZERO) == 1) {
 				mov.setLBR_IOFAmt(iofAmt);
+				createFeePayment(svrP.getCtx(), svrP.getBankAccount(), lote,
+						FEETYPE_IOF,
+						iofAmt,
+						svrP.get_TrxName());
 			}
 			
 			// Update Available Amt (Valor Líquido)
@@ -398,7 +410,9 @@ public class CNABRecordsProcess {
 							|| mov.getLBR_OtherIncomesAmt().compareTo(Env.ZERO)>0 )
 							) {
 				// acumula tarifas pagas e deduz ressarcimentos e descontos do banco
-				totalFeeAmt = totalFeeAmt.add(otherExpensesAmt).subtract(otherIncomesAmt);
+				totalDeTarifasCustasOutrasDespesasOutrasReceitas = totalDeTarifasCustasOutrasDespesasOutrasReceitas
+						.add(otherExpensesAmt)
+						.subtract(otherIncomesAmt);
 			}
 			
 			// se houver valor pago e for código de pagamento/liquidação
@@ -426,8 +440,11 @@ public class CNABRecordsProcess {
 		}
 		
 		// se houver totalizado tarifas ou ressarcimentos bancários, cria pagamento relacionado
-		if ( totalFeeAmt.compareTo(Env.ZERO)!=0) {
-			createFeePayment( svrP.getCtx() , svrP.getBankAccount() , lote , totalFeeAmt , svrP.get_TrxName() );
+		if (totalDeTarifasCustasOutrasDespesasOutrasReceitas.compareTo(Env.ZERO) != 0) {
+			createFeePayment(svrP.getCtx(), svrP.getBankAccount(), lote,
+					FEETYPE_TARIFAS_CUSTAS_OUTRASDESPESAS_OUTRASRECEITAS,
+					totalDeTarifasCustasOutrasDespesasOutrasReceitas,
+					svrP.get_TrxName());
 		}
 		
 		// Create Notice
@@ -454,14 +471,24 @@ public class CNABRecordsProcess {
 	
 	
 	private static void createFeePayment(Properties ctx, MBankAccount mBankAccount,
-			CNABCobrancaHeaderLoteRecord lote, BigDecimal totalFeeAmt, String trxName) {
+			CNABCobrancaHeaderLoteRecord lote, int feeType, BigDecimal totalFeeAmt, String trxName) {
 
 		int baBPartnerID = mBankAccount.get_ValueAsInt("LBR_BA_BPartner_ID");
-		int chargeID = mBankAccount.get_ValueAsInt("LBR_BankCollectionCharge_ID");
 		
-		if (baBPartnerID == 0 || chargeID == 0) {
+		if (baBPartnerID == 0)
 			return;
-		}
+		
+		int chargeID = 0;
+		
+		if (feeType == FEETYPE_TARIFAS_CUSTAS_OUTRASDESPESAS_OUTRASRECEITAS)
+			chargeID = mBankAccount.get_ValueAsInt("LBR_BankCollectionCharge_ID");
+		else if (feeType == FEETYPE_IOF)
+			chargeID = mBankAccount.get_ValueAsInt("LBR_IOFCharge_ID");
+		else if (feeType == FEETYPE_MULTA_JUROS)
+			chargeID = mBankAccount.get_ValueAsInt("LBR_InterestCharge_ID");
+		
+		if (chargeID == 0)
+			return;
 		
 		Date dataCredito = lote.getDataCredito();
 		Date dataLote = lote.getDataGravacaoLote();
