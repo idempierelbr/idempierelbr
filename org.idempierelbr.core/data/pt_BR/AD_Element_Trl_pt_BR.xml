@@ -65228,6 +65228,50 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="203939" trl="N">
+  <value column="Name" original="Back-Date">Back-Date</value>
+  <value column="PrintName" original="Back-Date">Back-Date</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203945" trl="N">
+  <value column="Name" original="Back-Date Days">Back-Date Days</value>
+  <value column="PrintName" original="Back-Date Days">Back-Date Days</value>
+  <value column="Description" original="Number of days to be able to post a back-date transaction (based on system date)">Number of days to be able to post a back-date transaction (based on system date)</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203946" trl="N">
+  <value column="Name" original="Back-Date Processed On">Back-Date Processed On</value>
+  <value column="PrintName" original="Back-Date Processed On">Back-Date Processed On</value>
+  <value column="Description" original="The date+time (expressed in decimal format) when the document has been processed">The date+time (expressed in decimal format) when the document has been processed</value>
+  <value column="Help" original="The ProcessedOn Date+Time save the exact moment (nanoseconds precision if allowed by the DB) when a document has been processed.">The ProcessedOn Date+Time save the exact moment (nanoseconds precision if allowed by the DB) when a document has been processed.</value>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203956" trl="N">
+  <value column="Name" original="Referenced Cost Detail">Referenced Cost Detail</value>
+  <value column="PrintName" original="Ref Cost Detail">Ref Cost Detail</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row id="203959" trl="N">
   <value column="Name" original="Theme Customization">Theme Customization</value>
   <value column="PrintName" original="Theme Customization">Theme Customization</value>
@@ -65288,6 +65332,116 @@ Strings may be in single quotes (optional)]]></value>
   <value column="PrintName" original="ISO Alpha-3 Code">ISO Alpha-3 Code</value>
   <value column="Description" original="ISO Alpha-3 country code - a three-letter code that represents a country name, which is usually more closely related to the country name">ISO Alpha-3 country code - a three-letter code that represents a country name, which is usually more closely related to the country name</value>
   <value column="Help" original="The official list can be found at https://www.iso.org/obp/ui/#search">The official list can be found at https://www.iso.org/obp/ui/#search</value>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203983" trl="N">
+  <value column="Name" original="Sum Qty Available">Sum Qty Available</value>
+  <value column="PrintName" original="Sum Qty Available">Sum Qty Available</value>
+  <value column="Description" original="Summary of products available in all locators">Summary of products available in all locators</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203984" trl="N">
+  <value column="Name" original="Sum Qty Ordered">Sum Qty Ordered</value>
+  <value column="PrintName" original="Sum Qty Ordered">Sum Qty Ordered</value>
+  <value column="Description" original="Summary of product ordered in all locators">Summary of product ordered in all locators</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203985" trl="N">
+  <value column="Name" original="Sum Qty Reserved">Sum Qty Reserved</value>
+  <value column="PrintName" original="Sum Qty Reserved">Sum Qty Reserved</value>
+  <value column="Description" original="Summary of product reserved in all locators">Summary of product reserved in all locators</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="203988" trl="N">
+  <value column="Name" original="Can Be Reactivated">Can Be Reactivated</value>
+  <value column="PrintName" original="Can Be Reactivated">Can Be Reactivated</value>
+  <value column="Description" original="This document can be reactivated">This document can be reactivated</value>
+  <value column="Help" original="If ticked, this checkbox allow user to reactivate once it has been completed (according to rights given to the role)">If ticked, this checkbox allow user to reactivate once it has been completed (according to rights given to the role)</value>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="204003" trl="N">
+  <value column="Name" original="Fallback Records when FK not found">Fallback Records when FK not found</value>
+  <value column="PrintName" original="Fallback Records when FK not found">Fallback Records when FK not found</value>
+  <value column="Description" original=""/>
+  <value column="Help" original="Accept pairs of table=idOrUuid separated by commas.  When there is more than one missing key, the table can also be set as table.foreignUuid=idOrUuid">Accept pairs of table=idOrUuid separated by commas.  When there is more than one missing key, the table can also be set as table.foreignUuid=idOrUuid</value>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="204004" trl="N">
+  <value column="Name" original="AD_RequiredPlugin_UU">AD_RequiredPlugin_UU</value>
+  <value column="PrintName" original="AD_RequiredPlugin_UU">AD_RequiredPlugin_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="204005" trl="N">
+  <value column="Name" original="Plugin Name">Plugin Name</value>
+  <value column="PrintName" original="Plugin Name">Plugin Name</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="204006" trl="N">
+  <value column="Name" original="Expected State">Expected State</value>
+  <value column="PrintName" original="Expected State">Expected State</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="204007" trl="N">
+  <value column="Name" original="Disable Insufficient Inventory Popup">Disable Insufficient Inventory Popup</value>
+  <value column="PrintName" original="Disable Insufficient Inventory Popup">Disable Insufficient Inventory Popup</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="204012" trl="N">
+  <value column="Name" original="Exclude from Payment Discount">Exclude from Payment Discount</value>
+  <value column="PrintName" original="Exclude from Payment Discount">Exclude from Payment Discount</value>
+  <value column="Description" original="If selected, this charge is excluded from payment discount calculations. Only line amounts will be considered for discount.">If selected, this charge is excluded from payment discount calculations. Only line amounts will be considered for discount.</value>
+  <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -68555,6 +68709,765 @@ Não Contribuinte</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
+ <row id="800453" trl="N">
+  <value column="Name" original="NSU">NSU</value>
+  <value column="PrintName" original="NSU">NSU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800454" trl="N">
+  <value column="Name" original="Last NSU">Last NSU</value>
+  <value column="PrintName" original="Last NSU">Last NSU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800455" trl="N">
+  <value column="Name" original="NFe XML">NFe XML</value>
+  <value column="PrintName" original="NFe XML">NFe XML</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800456" trl="N">
+  <value column="Name" original="NFe XML">NFe XML</value>
+  <value column="PrintName" original="NFe XML">NFe XML</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800457" trl="N">
+  <value column="Name" original="Schema Name">Schema Name</value>
+  <value column="PrintName" original="Schema Name">Schema Name</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800458" trl="N">
+  <value column="Name" original="Ultima Manifestacao">Ultima Manifestacao</value>
+  <value column="PrintName" original="Ultima Manifestacao">Ultima Manifestacao</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800459" trl="N">
+  <value column="Name" original="Nova Manifestacao">Nova Manifestacao</value>
+  <value column="PrintName" original="Nova Manifestacao">Nova Manifestacao</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800462" trl="N">
+  <value column="Name" original="Tipo de Manifestacao">Tipo de Manifestacao</value>
+  <value column="PrintName" original="Tipo de Manifestacao">Tipo de Manifestacao</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800463" trl="N">
+  <value column="Name" original="Intermediary Indicator">Intermediary Indicator</value>
+  <value column="PrintName" original="Intermediary Indicator">Intermediary Indicator</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800464" trl="N">
+  <value column="Name" original="Intermediary BP">Intermediary BP</value>
+  <value column="PrintName" original="Intermediary BP">Intermediary BP</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800468" trl="N">
+  <value column="Name" original="Intermediary Username">Intermediary Username</value>
+  <value column="PrintName" original="Intermediary Username">Intermediary Username</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800482" trl="N">
+  <value column="Name" original="ICMS Substituto">ICMS Substituto</value>
+  <value column="PrintName" original="ICMS Substituto">ICMS Substituto</value>
+  <value column="Description" original="Valor do ICMS proprio do Substituto">Valor do ICMS proprio do Substituto</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800483" trl="N">
+  <value column="Name" original="IOF Charge">IOF Charge</value>
+  <value column="PrintName" original="IOF Charge">IOF Charge</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800484" trl="N">
+  <value column="Name" original="Doc Line IBS / CBS">Doc Line IBS / CBS</value>
+  <value column="PrintName" original="Doc Line IBS / CBS">Doc Line IBS / CBS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800485" trl="N">
+  <value column="Name" original="Doc Line IBS / CBS">Doc Line IBS / CBS</value>
+  <value column="PrintName" original="Doc Line IBS / CBS">Doc Line IBS / CBS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800486" trl="Y">
+  <value column="Name" original="CST IBS / CBS">CST de IBS/CBS</value>
+  <value column="PrintName" original="CST IBS / CBS">CST de IBS/CBS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800487" trl="Y">
+  <value column="Name" original="CST IBS / CBS">CST de IBS/CBS</value>
+  <value column="PrintName" original="CST IBS / CBS">CST de IBS/CBS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800489" trl="Y">
+  <value column="Name" original="IBS/CBS Group Indicator">Indicador de Grupo de IBS/CBS</value>
+  <value column="PrintName" original="IBS/CBS Group Indicator">Indicador de Grupo de IBS/CBS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800490" trl="Y">
+  <value column="Name" original="IBS/CBS Mono Group Indicator">Indicador de Grupo Monofásica Padrão</value>
+  <value column="PrintName" original="IBS/CBS Mono Group Indicator">Indicador de Grupo Monofásica Padrão</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800491" trl="Y">
+  <value column="Name" original="IBS/CBS Red Group Indicator">Indicador de Grupo Reduções</value>
+  <value column="PrintName" original="IBS/CBS Red Group Indicator">Indicador de Grupo Reduções</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800492" trl="Y">
+  <value column="Name" original="IBS/CBS Dif Group Indicator">Indicador de Grupo Diferimento</value>
+  <value column="PrintName" original="IBS/CBS Dif Group Indicator">Indicador de Grupo Diferimento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800493" trl="Y">
+  <value column="Name" original="IBS/CBS TransfCred Group Indicator">Indicador de Grupo Transferência de Crédito</value>
+  <value column="PrintName" original="IBS/CBS TransfCred Group Indicator">Indicador de Grupo Transferência de Crédito</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800494" trl="Y">
+  <value column="Name" original="IBS/CBS NFe Indicator">Indicador de Ocorrência em NFe</value>
+  <value column="PrintName" original="IBS/CBS NFe Indicator">Indicador de Ocorrência em NFe</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800495" trl="Y">
+  <value column="Name" original="IBS/CBS NFCe Indicator">Indicador de Ocorrência em NFCe</value>
+  <value column="PrintName" original="IBS/CBS NFCe Indicator">Indicador de Ocorrência em NFCe</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800496" trl="Y">
+  <value column="Name" original="IBS/CBS CTe Indicator">Indicador de Ocorrência em CTe</value>
+  <value column="PrintName" original="IBS/CBS CTe Indicator">Indicador de Ocorrência em CTe</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800497" trl="Y">
+  <value column="Name" original="IBS/CBS CteOS Indicator">Indicador de Ocorrência em CteOS</value>
+  <value column="PrintName" original="IBS/CBS CteOS Indicator">Indicador de Ocorrência em CteOS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800498" trl="Y">
+  <value column="Name" original="IBS/CBS BPe Indicator">Indicador de Ocorrência em BPe</value>
+  <value column="PrintName" original="IBS/CBS BPe Indicator">Indicador de Ocorrência em BPe</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800499" trl="Y">
+  <value column="Name" original="IBS/CBS BPeTM Indicator">Indicador de Ocorrência em BPeTM</value>
+  <value column="PrintName" original="IBS/CBS BPeTM Indicator">Indicador de Ocorrência em BPeTM</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800500" trl="Y">
+  <value column="Name" original="IBS/CBS NF3e Indicator">Indicador de Ocorrência em NF3e</value>
+  <value column="PrintName" original="IBS/CBS NF3e Indicator">Indicador de Ocorrência em NF3e</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800501" trl="Y">
+  <value column="Name" original="IBS/CBS NFCom Indicator">Indicador de Ocorrência em NFCom</value>
+  <value column="PrintName" original="IBS/CBS NFCom Indicator">Indicador de Ocorrência em NFCom</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800502" trl="Y">
+  <value column="Name" original="IBS/CBS NFSe Indicator">Indicador de Ocorrência em NFSe</value>
+  <value column="PrintName" original="IBS/CBS NFSe Indicator">Indicador de Ocorrência em NFSe</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800503" trl="Y">
+  <value column="Name" original="ClassTrib IBS / CBS">Classificação Tributária de IBS/CBS</value>
+  <value column="PrintName" original="ClassTrib IBS / CBS">Classificação Tributária de IBS/CBS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800504" trl="Y">
+  <value column="Name" original="ClassTrib IBS / CBS">Classificação Tributária de IBS/CBS</value>
+  <value column="PrintName" original="ClassTrib IBS / CBS">Classificação Tributária de IBS/CBS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800505" trl="N">
+  <value column="Name" original="Red. IBS (%)">Red. IBS (%)</value>
+  <value column="PrintName" original="Red. IBS (%)">Red. IBS (%)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800506" trl="N">
+  <value column="Name" original="Red. CBS (%)">Red. CBS (%)</value>
+  <value column="PrintName" original="Red. CBS (%)">Red. CBS (%)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800507" trl="Y">
+  <value column="Name" original="IBS/CBS Red BC Indicator">Indicador de Redução de Base de Cálculo</value>
+  <value column="PrintName" original="IBS/CBS Red BC Indicator">Indicador de Redução de Base de Cálculo</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800508" trl="Y">
+  <value column="Name" original="IBS/CBS TribRegular Group Indicator">Indicador de Grupo Tributação Regular</value>
+  <value column="PrintName" original="IBS/CBS TribRegular Group Indicator">Indicador de Grupo Tributação Regular</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800509" trl="Y">
+  <value column="Name" original="IBS/CBS CredPres Group Indicator">Indicador de Grupo Crédito Presumido</value>
+  <value column="PrintName" original="IBS/CBS CredPres Group Indicator">Indicador de Grupo Crédito Presumido</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800510" trl="Y">
+  <value column="Name" original="IBS/CBS MonoReten Group Indicator">Indicador de Grupo Monofásica Sujeita à Retenção</value>
+  <value column="PrintName" original="IBS/CBS MonoReten Group Indicator">Indicador de Grupo Monofásica Sujeita à Retenção</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800511" trl="Y">
+  <value column="Name" original="IBS/CBS MonoRet Group Indicator">Indicador de Grupo Monofásica Retida Anteriormente</value>
+  <value column="PrintName" original="IBS/CBS MonoRet Group Indicator">Indicador de Grupo Monofásica Retida Anteriormente</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800512" trl="Y">
+  <value column="Name" original="IBS/CBS MonoDig Group Indicator">Indicador de Grupo Diferimento de Monofásica</value>
+  <value column="PrintName" original="IBS/CBS MonoDif Group Indicator">Indicador de Grupo Diferimento de Monofásica</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800513" trl="Y">
+  <value column="Name" original="IBS UF Tax Rate">Alíquota (%)</value>
+  <value column="PrintName" original="IBS UF Tax Rate">Alíquota (%)</value>
+  <value column="Description" original="Indicates the IBS UF Tax Rate">Indica a alíquota (%) do imposto</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800514" trl="Y">
+  <value column="Name" original="IBS Mun. Tax Rate">Alíquota (%)</value>
+  <value column="PrintName" original="IBS Mun. Tax Rate">Alíquota (%)</value>
+  <value column="Description" original="Indicates the IBS Mun. Tax Rate">Indica a alíquota (%) do imposto</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800515" trl="Y">
+  <value column="Name" original="IBS UF Tax Deferral Rate">Diferimento do Imposto (%)</value>
+  <value column="PrintName" original="IBS UF. Tax Deferral Rate">Diferimento do Imposto (%)</value>
+  <value column="Description" original="Indicates the IBS UF Tax Deferral Rate">Identifica o Diferimento do Imposto em porcentagem</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800516" trl="Y">
+  <value column="Name" original="IBS Mun. Tax Deferral Rate">Diferimento do Imposto (%)</value>
+  <value column="PrintName" original="IBS Mun. Tax Deferral Rate">Diferimento do Imposto (%)</value>
+  <value column="Description" original="Indicates the IBS Mun. Tax Deferral Rate">Identifica o Diferimento do Imposto em porcentagem</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800517" trl="Y">
+  <value column="Name" original="IBS UF Tax Deferral Amt">Valor do Imposto Diferido</value>
+  <value column="PrintName" original="IBS UF Tax Deferral Amt">Valor do Imposto Diferido</value>
+  <value column="Description" original="Indicates the IBS UF Tax Deferral Amt">Identifica o Valor do Imposto Diferido</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800518" trl="Y">
+  <value column="Name" original="IBS Mun. Tax Deferral Amt">Valor do Imposto Diferido</value>
+  <value column="PrintName" original="IBS Mun. Tax Deferral Amt">Valor do Imposto Diferido</value>
+  <value column="Description" original="Indicates the IBS Mun. Tax Deferral Amt">Identifica o Valor do Imposto Diferido</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800519" trl="Y">
+  <value column="Name" original="IBS UF Tax Dev. Amt">Valor do Imposto Devolvido</value>
+  <value column="PrintName" original="IBS UF Tax Dev. Amt">Valor do Imposto Devolvido</value>
+  <value column="Description" original="Indicates the IBS UF Tax Dev. Amt">Identifica o Valor do Imposto Devolvido</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800520" trl="Y">
+  <value column="Name" original="IBS Mun. Tax Dev. Amt">Valor do Imposto Devolvido</value>
+  <value column="PrintName" original="IBS Mun. Tax Dev. Amt">Valor do Imposto Devolvido</value>
+  <value column="Description" original="Indicates the IBS Mun. Tax Dev. Amt">Identifica o Valor do Imposto Devolvido</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800521" trl="Y">
+  <value column="Name" original="IBS UF Tax Red. Rate">Redução da Alíquota (%)</value>
+  <value column="PrintName" original="IBS UF Tax Red. Rate">Redução da Alíquota (%)</value>
+  <value column="Description" original="Indicates the IBS UF Tax Red. Rate">Identifica a Redução da Alíquota em porcentagem</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800522" trl="Y">
+  <value column="Name" original="IBS Mun. Tax Red. Rate">Redução da Alíquota (%)</value>
+  <value column="PrintName" original="IBS Mun. Tax Red. Rate">Redução da Alíquota (%)</value>
+  <value column="Description" original="Indicates the IBS Mun. Tax Red. Rate">Identifica a Redução da Alíquota em porcentagem</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800523" trl="Y">
+  <value column="Name" original="IBS UF Tax Red. Efet. Rate">Alíquota Efetiva após Redução (%)</value>
+  <value column="PrintName" original="IBS UF Tax Red. Efet. Rate">Alíquota Efetiva após Redução (%)</value>
+  <value column="Description" original="Indicates the IBS UF Tax Red. Efet. Rate">Identifica a Alíquota Efetiva após Redução em porcentagem</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800524" trl="Y">
+  <value column="Name" original="IBS Mun. Tax Red. Efet. Rate">Alíquota Efetiva após Redução (%)</value>
+  <value column="PrintName" original="IBS Mun. Tax Red. Efet. Rate">Alíquota Efetiva após Redução (%)</value>
+  <value column="Description" original="Indicates the IBS Mun. Tax Red. Efet. Rate">Identifica a Alíquota Efetiva após Redução em porcentagem</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800525" trl="Y">
+  <value column="Name" original="IBS UF Tax Amt">Valor do Imposto</value>
+  <value column="PrintName" original="IBS UF Tax Amt">Valor do Imposto</value>
+  <value column="Description" original="Indicates the IBS UF Tax Amt">Define o Valor do Imposto</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800526" trl="Y">
+  <value column="Name" original="IBS Mun. Tax Amt">Valor do Imposto</value>
+  <value column="PrintName" original="IBS Mun. Tax Amt">Valor do Imposto</value>
+  <value column="Description" original="Indicates the IBS Mun. Tax Amt">Define o Valor do Imposto</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800527" trl="Y">
+  <value column="Name" original="CBS Tax Rate">Alíquota (%)</value>
+  <value column="PrintName" original="CBS Tax Rate">Alíquota (%)</value>
+  <value column="Description" original="Indicates the CBS Tax Rate">Indica a alíquota (%) do imposto</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800528" trl="Y">
+  <value column="Name" original="CBS Tax Deferral Rate">Diferimento do Imposto (%)</value>
+  <value column="PrintName" original="CBS Tax Deferral Rate">Diferimento do Imposto (%)</value>
+  <value column="Description" original="Indicates the CBS Tax Deferral Rate">Identifica o Diferimento do Imposto em porcentagem</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800529" trl="Y">
+  <value column="Name" original="CBS Tax Deferral Amt">Valor do Imposto Diferido</value>
+  <value column="PrintName" original="CBS Tax Deferral Amt">Valor do Imposto Diferido</value>
+  <value column="Description" original="Indicates the CBS Tax Deferral Amt">Identifica o Valor do Imposto Diferido</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800530" trl="Y">
+  <value column="Name" original="CBS Tax Dev. Amt">Valor do Imposto Devolvido</value>
+  <value column="PrintName" original="CBS Tax Dev. Amt">Valor do Imposto Devolvido</value>
+  <value column="Description" original="Indicates the CBS Tax Dev. Amt">Identifica o Valor do Imposto Devolvido</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800531" trl="Y">
+  <value column="Name" original="CBS Tax Red. Rate">Redução da Alíquota (%)</value>
+  <value column="PrintName" original="CBS Tax Red. Rate">Redução da Alíquota (%)</value>
+  <value column="Description" original="Indicates the CBS Tax Red. Rate">Identifica a Redução da Alíquota em porcentagem</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800532" trl="Y">
+  <value column="Name" original="CBS Tax Red. Efet. Rate">Alíquota Efetiva após Redução (%)</value>
+  <value column="PrintName" original="CBS Tax Red. Efet. Rate">Alíquota Efetiva após Redução (%)</value>
+  <value column="Description" original="Indicates the CBS Tax Red. Efet. Rate">Identifica a Alíquota Efetiva após Redução em porcentagem</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800533" trl="Y">
+  <value column="Name" original="CBS Tax Amt">Valor do Imposto</value>
+  <value column="PrintName" original="CBS Tax Amt">Valor do Imposto</value>
+  <value column="Description" original="Indicates the CBS Tax Amt">Define o Valor do Imposto</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800534" trl="N">
+  <value column="Name" original="Doc Line IS">Doc Line IS</value>
+  <value column="PrintName" original="Doc Line IS">Doc Line IS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800535" trl="N">
+  <value column="Name" original="Doc Line IS">Doc Line IS</value>
+  <value column="PrintName" original="Doc Line IS">Doc Line IS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800536" trl="Y">
+  <value column="Name" original="CST IS">CST de IS</value>
+  <value column="PrintName" original="CST IS">CST de IS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800537" trl="Y">
+  <value column="Name" original="CST IS">CST de IS</value>
+  <value column="PrintName" original="CST IS">CST de IS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800538" trl="Y">
+  <value column="Name" original="ClassTrib IS">Classificação Tributária de IS</value>
+  <value column="PrintName" original="ClassTrib IS">Classificação Tributária de IS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800539" trl="Y">
+  <value column="Name" original="ClassTrib IS">Classificação Tributária de IS</value>
+  <value column="PrintName" original="ClassTrib IS">Classificação Tributária de IS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800540" trl="Y">
+  <value column="Name" original="Tax Rate Espec.">Alíquota Específica por UDM Apropriada (%)</value>
+  <value column="PrintName" original="Tax Rate Espec.">Alíquota Específica por UDM Apropriada (%)</value>
+  <value column="Description" original="Indicates the Tax Rate Espec."/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
  <row trl="Y" uuid="2db1c9d3-13bf-4539-baa0-45ccfb09a7a3">
   <value column="Name" original="Cód. Cidade (IBGE)">Cód. Cidade (IBGE)</value>
   <value column="PrintName" original="Cód. Cidade (IBGE)">Cód. Cidade (IBGE)</value>
@@ -69589,11 +70502,11 @@ Não Contribuinte</value>
   <value column="PO_Name" original=""/>
   <value column="PO_PrintName" original=""/>
  </row>
- <row trl="N" uuid="bc2d4dcb-50d3-44c0-8f6c-e6b421d8ea21">
-  <value column="Name" original="Doc Line Details">Doc Line Details</value>
-  <value column="PrintName" original="Doc Line Details">Doc Line Details</value>
-  <value column="Description" original="Doc Line Details">Doc Line Details</value>
-  <value column="Help" original="The Doc Line Details is a unique identifier for a details line in an document (order, invoice, RMA, etc) line.">The Doc Line Details is a unique identifier for a details line in an document (order, invoice, RMA, etc) line.</value>
+ <row trl="Y" uuid="bc2d4dcb-50d3-44c0-8f6c-e6b421d8ea21">
+  <value column="Name" original="Doc Line Details">Detalhes da Linha</value>
+  <value column="PrintName" original="Doc Line Details">Detalhes da Linha</value>
+  <value column="Description" original="Doc Line Details"/>
+  <value column="Help" original="The Doc Line Details is a unique identifier for a details line in an document (order, invoice, RMA, etc) line."/>
   <value column="Placeholder" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -72850,105 +73763,6 @@ Não Contribuinte</value>
   <value column="PrintName" original="Generate and Print Boletos">Gerar e Imprimir Boleto(s)</value>
   <value column="Description" original="Generate and Print Boletos">Gerar e Imprimir boletos de cobrança</value>
   <value column="Help" original="This button print the collection slips for the invoice, it generates the collection documents if needed,  based on the pay schedule of the invoice.">Este processo permite a impressão dos boletos de cobrança para a fatura. Caso necessário os documentos de boleto serão gerados baseando-se na programação de pagamentos da fatura.</value>
-  <value column="Placeholder" original=""/>
-  <value column="PO_Description" original=""/>
-  <value column="PO_Help" original=""/>
-  <value column="PO_Name" original=""/>
-  <value column="PO_PrintName" original=""/>
- </row>
- <row trl="N" uuid="9a82da15-a8cd-42e1-b446-6109a55625c4">
-  <value column="Name" original="BackSync Node">BackSync Node</value>
-  <value column="PrintName" original="BackSync Node">BackSync Node</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
-  <value column="Placeholder" original=""/>
-  <value column="PO_Description" original=""/>
-  <value column="PO_Help" original=""/>
-  <value column="PO_Name" original=""/>
-  <value column="PO_PrintName" original=""/>
- </row>
- <row trl="N" uuid="fc93efa7-6cc6-4742-8941-6b0e1f771ea0">
-  <value column="Name" original="BackSync Node">BackSync Node</value>
-  <value column="PrintName" original="BackSync Node">BackSync Node</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
-  <value column="Placeholder" original=""/>
-  <value column="PO_Description" original=""/>
-  <value column="PO_Help" original=""/>
-  <value column="PO_Name" original=""/>
-  <value column="PO_PrintName" original=""/>
- </row>
- <row trl="N" uuid="ae47053a-a00d-47d2-bc9c-0d72d6249da1">
-  <value column="Name" original="Rest Auth Token">Rest Auth Token</value>
-  <value column="PrintName" original="Rest Auth Token">Rest Auth Token</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
-  <value column="Placeholder" original=""/>
-  <value column="PO_Description" original=""/>
-  <value column="PO_Help" original=""/>
-  <value column="PO_Name" original=""/>
-  <value column="PO_PrintName" original=""/>
- </row>
- <row trl="N" uuid="2927d4b5-d9be-486c-b1e7-6e1be0ef537a">
-  <value column="Name" original="REST_AuthToken_UU">REST_AuthToken_UU</value>
-  <value column="PrintName" original="REST_AuthToken_UU">REST_AuthToken_UU</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
-  <value column="Placeholder" original=""/>
-  <value column="PO_Description" original=""/>
-  <value column="PO_Help" original=""/>
-  <value column="PO_Name" original=""/>
-  <value column="PO_PrintName" original=""/>
- </row>
- <row trl="N" uuid="f674dff6-d0f2-4103-8bae-aeb781b7245d">
-  <value column="Name" original="Token">Token</value>
-  <value column="PrintName" original="Token">Token</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
-  <value column="Placeholder" original=""/>
-  <value column="PO_Description" original=""/>
-  <value column="PO_Help" original=""/>
-  <value column="PO_Name" original=""/>
-  <value column="PO_PrintName" original=""/>
- </row>
- <row trl="N" uuid="73a93026-7f61-49eb-ad13-7cdc0e4148e4">
-  <value column="Name" original="Expires At">Expires At</value>
-  <value column="PrintName" original="Expires At">Expires At</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
-  <value column="Placeholder" original=""/>
-  <value column="PO_Description" original=""/>
-  <value column="PO_Help" original=""/>
-  <value column="PO_Name" original=""/>
-  <value column="PO_PrintName" original=""/>
- </row>
- <row trl="N" uuid="bd5e4ac5-83fa-4009-b613-7a61fc39d774">
-  <value column="Name" original="LBR_SPED_UU">LBR_SPED_UU</value>
-  <value column="PrintName" original="LBR_SPED_UU">LBR_SPED_UU</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
-  <value column="Placeholder" original=""/>
-  <value column="PO_Description" original=""/>
-  <value column="PO_Help" original=""/>
-  <value column="PO_Name" original=""/>
-  <value column="PO_PrintName" original=""/>
- </row>
- <row trl="N" uuid="913304be-014d-47fc-a393-1bad59c5a040">
-  <value column="Name" original="LBR_TaxAssessment_UU">LBR_TaxAssessment_UU</value>
-  <value column="PrintName" original="LBR_TaxAssessment_UU">LBR_TaxAssessment_UU</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
-  <value column="Placeholder" original=""/>
-  <value column="PO_Description" original=""/>
-  <value column="PO_Help" original=""/>
-  <value column="PO_Name" original=""/>
-  <value column="PO_PrintName" original=""/>
- </row>
- <row trl="N" uuid="bd1809f0-7e7c-422e-ba85-f5b2ba76e397">
-  <value column="Name" original="LBR_TaxAssessmentLine_UU">LBR_TaxAssessmentLine_UU</value>
-  <value column="PrintName" original="LBR_TaxAssessmentLine_UU">LBR_TaxAssessmentLine_UU</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>

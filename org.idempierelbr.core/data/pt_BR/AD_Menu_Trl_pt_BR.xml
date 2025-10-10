@@ -332,12 +332,4 @@
   <value column="Name" original="Bank Collections">Boletos Bancários</value>
   <value column="Description" original=""/>
  </row>
- <row trl="N" uuid="b95bf253-500d-4a7f-82b7-e6db95470936">
-  <value column="Name" original="ASAP">ASAP</value>
-  <value column="Description" original=""/>
- </row>
- <row trl="N" uuid="f085c85d-ebc6-4f59-b211-02ae4a56588b">
-  <value column="Name" original="BackSync">BackSync</value>
-  <value column="Description" original=""/>
- </row>
 </idempiereTrl>

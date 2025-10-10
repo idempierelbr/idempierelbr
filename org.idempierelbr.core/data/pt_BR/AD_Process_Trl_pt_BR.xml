@@ -2565,6 +2565,16 @@ Criar Menu: se selecionado, o processo cria um registro no menu para a janela.]]
   <value column="Description" original="Generate bank instructions for existing Boletos">Gera instruções bancárias para boletos existentes</value>
   <value column="Help" original="This process allows to generate instructions for existing boletos.">Este processo permite gerar instruções bancárias para boletos exitentes.</value>
  </row>
+ <row id="800100" trl="N">
+  <value column="Name" original="Download NF-e XML">Download NF-e XML</value>
+  <value column="Description" original="Download NF-e XML From Sefaz">Download NF-e XML From Sefaz</value>
+  <value column="Help" original="This process allows you to download NF-e XML from Sefaz web-services.">This process allows you to download NF-e XML from Sefaz web-services.</value>
+ </row>
+ <row id="800101" trl="N">
+  <value column="Name" original="Manifest NF-e XML">Manifest NF-e XML</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row trl="N" uuid="e6df0503-5f93-4a2c-abe6-0c425cc138e9">
   <value column="Name" original="Process NotaFiscal">Process NotaFiscal</value>
   <value column="Description" original=""/>
@@ -2643,16 +2653,6 @@ Criar Menu: se selecionado, o processo cria um registro no menu para a janela.]]
  <row trl="N" uuid="98cad063-dd95-4b75-9b71-f5942f311723">
   <value column="Name" original="Generate and Print Boletos">Gerar e imprimir boletos de cobrança</value>
   <value column="Description" original="Generate and Print Boletos from Invoice">Gerar e imprimir boletos de cobrança a partir da fatura</value>
-  <value column="Help" original=""/>
- </row>
- <row trl="N" uuid="4244df22-e9aa-4af3-ba75-481a18a1c5d7">
-  <value column="Name" original="Active/Inactive Token">Active/Inactive Token</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
- </row>
- <row trl="N" uuid="f9b6c0b4-503b-42af-be32-849ff6e423f7">
-  <value column="Name" original="Expire Server Secret">Expire Server Secret</value>
-  <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>

@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_CtxHelpMsg"/>
+<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_CtxHelpMsg">
+ <row id="200000" trl="N">
+  <value column="MsgText" original="&lt;p&gt;Welcome to iDempiere!&lt;/p&gt;&#10;&#10;&lt;p&gt;Start exploring your workspace, managing data, and customizing your experience.&lt;/p&gt;&#10;&#10;&lt;p&gt;Need help? Check out our &lt;a href=&quot;https://docs.idempiere.org/docs/getting-started&quot; target=&quot;_blank&quot;&gt;Getting Started Guide&lt;/a&gt;.&lt;/p&gt;&#10;" xml:space="preserve"><![CDATA[<p>Welcome to iDempiere!</p>
+
+<p>Start exploring your workspace, managing data, and customizing your experience.</p>
+
+<p>Need help? Check out our <a href="https://docs.idempiere.org/docs/getting-started" target="_blank">Getting Started Guide</a>.</p>
+]]></value>
+ </row>
+</idempiereTrl>

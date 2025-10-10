@@ -2029,7 +2029,7 @@ MRP - 110	 No exists Dem</value>
  </row>
  <row id="200036" trl="N">
   <value column="Name" original="1099 Box">1099 Box</value>
-  <value column="Description" original="Tabela de teste2"/>
+  <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="200043" trl="Y">
@@ -2287,6 +2287,11 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200155" trl="N">
+  <value column="Name" original="Required Plugin">Required Plugin</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row id="800000" trl="Y">
   <value column="Name" original="Import Declaration (DI)">Declaração de Importação (DI)</value>
   <value column="Description" original=""/>
@@ -2349,6 +2354,21 @@ MRP - 110	 No exists Dem</value>
  </row>
  <row id="800020" trl="N">
   <value column="Name" original="Monophase NCM">Monophase NCM</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800021" trl="N">
+  <value column="Name" original="NF-e XML">NF-e XML</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800022" trl="Y">
+  <value column="Name" original="IBS/CBS CST">CST e Classificação Tributária de IBS/CBS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800023" trl="Y">
+  <value column="Name" original="IS CST">CST e Classificação Tributária de IS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2470,16 +2490,6 @@ MRP - 110	 No exists Dem</value>
  <row trl="Y" uuid="66c3aecb-f0aa-49d7-85d2-856b5bf488a1">
   <value column="Name" original="Collection Movement">Código de Movimento</value>
   <value column="Description" original="Maintain movement codes">Manutenção de Códigos de Movimento</value>
-  <value column="Help" original=""/>
- </row>
- <row trl="N" uuid="023960e7-917c-4ef1-95f3-187dc7ce2f1c">
-  <value column="Name" original="BackSync Node">BackSync Node</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
- </row>
- <row trl="N" uuid="d2a2c394-37e2-46c2-975f-ad87c7bbaab9">
-  <value column="Name" original="Rest Auth Token">Rest Auth Token</value>
-  <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>

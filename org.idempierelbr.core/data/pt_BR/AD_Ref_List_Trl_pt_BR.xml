@@ -5996,6 +5996,34 @@
   <value column="Name" original="Excel (XLS/XLSX)">Excel (XLS/XLSX)</value>
   <value column="Description" original=""/>
  </row>
+ <row id="200717" trl="N">
+  <value column="Name" original="ACTIVE">ACTIVE</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200718" trl="N">
+  <value column="Name" original="INSTALLED">INSTALLED</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200719" trl="N">
+  <value column="Name" original="RESOLVED">RESOLVED</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200720" trl="N">
+  <value column="Name" original="STARTING">STARTING</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200721" trl="N">
+  <value column="Name" original="STOPPING">STOPPING</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200722" trl="N">
+  <value column="Name" original="UNINSTALLED">UNINSTALLED</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200723" trl="N">
+  <value column="Name" original="UNKNOWN">UNKNOWN</value>
+  <value column="Description" original=""/>
+ </row>
  <row id="800000" trl="Y">
   <value column="Name" original="Maritima">Marítima</value>
   <value column="Description" original=""/>
@@ -6598,6 +6626,58 @@
  </row>
  <row id="800203" trl="N">
   <value column="Name" original="Cancelado">Cancelado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800211" trl="N">
+  <value column="Name" original="210200 - Confirmacao da Operacao ">210200 - Confirmacao da Operacao </value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800212" trl="N">
+  <value column="Name" original="210210 - Ciencia da Operacao">210210 - Ciencia da Operacao</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800213" trl="N">
+  <value column="Name" original="210220 - Desconhecimento da Operacao">210220 - Desconhecimento da Operacao</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800214" trl="N">
+  <value column="Name" original="210240 - Operacao nao Realizada">210240 - Operacao nao Realizada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800215" trl="N">
+  <value column="Name" original="None">None</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800216" trl="N">
+  <value column="Name" original="210210 - Ciencia da Operacao">210210 - Ciencia da Operacao</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800217" trl="N">
+  <value column="Name" original="Manifest">Manifest</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800218" trl="N">
+  <value column="Name" original="Valor da Operacao">Valor da Operacao</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800219" trl="N">
+  <value column="Name" original="Without an intermediary">Without an intermediary</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800220" trl="N">
+  <value column="Name" original="Third party website ">Third party website </value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800221" trl="N">
+  <value column="Name" original="Operacao presencial, fora do estabelecimento">Operacao presencial, fora do estabelecimento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800248" trl="Y">
+  <value column="Name" original="0 - Not Allowed">0 - Não Permitido</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800249" trl="Y">
+  <value column="Name" original="1 - Required">1 - Obrigatório</value>
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="2facadde-7b9b-4619-9161-8f9fe50b2b19">

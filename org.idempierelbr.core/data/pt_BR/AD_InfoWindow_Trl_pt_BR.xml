@@ -95,6 +95,11 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="800004" trl="N">
+  <value column="Name" original="NF-e XML Info">NF-e XML Info</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row trl="Y" uuid="a686dbb7-c462-48ef-b949-0f166e9780f0">
   <value column="Name" original="NCM Info">Informações de NCM</value>
   <value column="Description" original=""/>

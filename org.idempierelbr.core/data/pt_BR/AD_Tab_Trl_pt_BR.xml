@@ -6868,6 +6868,12 @@ Printing:
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
+ <row id="200394" trl="N">
+  <value column="Name" original="Required Plugin">Required Plugin</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row id="800000" trl="Y">
   <value column="Name" original="Import Declaration (DI)">Declaração de Importação (DI)</value>
   <value column="CommitWarning" original=""/>
@@ -7029,6 +7035,120 @@ Printing:
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
+ </row>
+ <row id="800061" trl="N">
+  <value column="Name" original="XML">XML</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800062" trl="Y">
+  <value column="Name" original="CST">CST</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800063" trl="Y">
+  <value column="Name" original="ClassTrib">Classificação Tributária</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800064" trl="N">
+  <value column="Name" original="IBS/CBS">IBS/CBS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IBS/CBS">IBS/CBS</value>
+  <value column="Help" original="The IBS/CBS Tab defines amounts for IBS/CBS Tax">The IBS/CBS Tab defines amounts for IBS/CBS Tax</value>
+ </row>
+ <row id="800065" trl="N">
+  <value column="Name" original="IBS/CBS">IBS/CBS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IBS/CBS">IBS/CBS</value>
+  <value column="Help" original="The IBS/CBS Tab defines amounts for IBS/CBS Tax">The IBS/CBS Tab defines amounts for IBS/CBS Tax</value>
+ </row>
+ <row id="800066" trl="N">
+  <value column="Name" original="IBS/CBS">IBS/CBS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IBS/CBS">IBS/CBS</value>
+  <value column="Help" original="The IBS/CBS Tab defines amounts for IBS/CBS Tax">The IBS/CBS Tab defines amounts for IBS/CBS Tax</value>
+ </row>
+ <row id="800067" trl="N">
+  <value column="Name" original="IBS/CBS">IBS/CBS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IBS/CBS">IBS/CBS</value>
+  <value column="Help" original="The IBS/CBS Tab defines amounts for IBS/CBS Tax">The IBS/CBS Tab defines amounts for IBS/CBS Tax</value>
+ </row>
+ <row id="800068" trl="N">
+  <value column="Name" original="IBS/CBS">IBS/CBS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IBS/CBS">IBS/CBS</value>
+  <value column="Help" original="The IBS/CBS Tab defines amounts for IBS/CBS Tax">The IBS/CBS Tab defines amounts for IBS/CBS Tax</value>
+ </row>
+ <row id="800069" trl="N">
+  <value column="Name" original="IBS/CBS">IBS/CBS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IBS/CBS">IBS/CBS</value>
+  <value column="Help" original="The IBS/CBS Tab defines amounts for IBS/CBS Tax">The IBS/CBS Tab defines amounts for IBS/CBS Tax</value>
+ </row>
+ <row id="800070" trl="N">
+  <value column="Name" original="IBS/CBS">IBS/CBS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IBS/CBS">IBS/CBS</value>
+  <value column="Help" original="The IBS/CBS Tab defines amounts for IBS/CBS Tax">The IBS/CBS Tab defines amounts for IBS/CBS Tax</value>
+ </row>
+ <row id="800071" trl="Y">
+  <value column="Name" original="CST">CST</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800072" trl="Y">
+  <value column="Name" original="ClassTrib">Classificação Tributária</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800073" trl="N">
+  <value column="Name" original="IS">IS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IS">IS</value>
+  <value column="Help" original="The IS Tab defines amounts for IS Tax">The IS Tab defines amounts for IS Tax</value>
+ </row>
+ <row id="800074" trl="N">
+  <value column="Name" original="IS">IS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IS">IS</value>
+  <value column="Help" original="The IS Tab defines amounts for IS Tax">The IS Tab defines amounts for IS Tax</value>
+ </row>
+ <row id="800075" trl="N">
+  <value column="Name" original="IS">IS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IS">IS</value>
+  <value column="Help" original="The IS Tab defines amounts for IS Tax">The IS Tab defines amounts for IS Tax</value>
+ </row>
+ <row id="800076" trl="N">
+  <value column="Name" original="IS">IS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IS">IS</value>
+  <value column="Help" original="The IS Tab defines amounts for IS Tax">The IS Tab defines amounts for IS Tax</value>
+ </row>
+ <row id="800077" trl="N">
+  <value column="Name" original="IS">IS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IS">IS</value>
+  <value column="Help" original="The IS Tab defines amounts for IS Tax">The IS Tab defines amounts for IS Tax</value>
+ </row>
+ <row id="800078" trl="N">
+  <value column="Name" original="IS">IS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IS">IS</value>
+  <value column="Help" original="The IS Tab defines amounts for IS Tax">The IS Tab defines amounts for IS Tax</value>
+ </row>
+ <row id="800079" trl="N">
+  <value column="Name" original="IS">IS</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original="IS">IS</value>
+  <value column="Help" original="The IS Tab defines amounts for IS Tax">The IS Tab defines amounts for IS Tax</value>
  </row>
  <row trl="Y" uuid="07721587-32fd-4a79-b306-94c8ed672f52">
   <value column="Name" original="NCM">NCM</value>
@@ -7646,18 +7766,6 @@ Printing:
   <value column="Name" original="Movements">Movimentos</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Boleto Movements">Movimentos do Boleto</value>
-  <value column="Help" original=""/>
- </row>
- <row trl="N" uuid="594c01ce-164d-4e67-9802-9da6f911f84a">
-  <value column="Name" original="Node">Node</value>
-  <value column="CommitWarning" original=""/>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
- </row>
- <row trl="N" uuid="b6dddaf0-d104-45a4-983e-73d67b3d80f3">
-  <value column="Name" original="Rest Auth Token">Rest Auth Token</value>
-  <value column="CommitWarning" original=""/>
-  <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
 </idempiereTrl>

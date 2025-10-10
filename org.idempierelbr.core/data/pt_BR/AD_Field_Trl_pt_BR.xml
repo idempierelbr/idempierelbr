@@ -1476,10 +1476,4 @@ Se o tipo do seu documento não tiver uma seqüência de documentação automát
   <value column="Help" original="">Valor efetivo a ser creditado referente ao título, expresso em moeda corrente.</value>
   <value column="Placeholder" original=""/>
  </row>
- <row trl="N" uuid="f03bf729-614c-4a42-ae13-96557c6abdf5">
-  <value column="Name" original="Active/Inactive Token">Active/Inactive Token</value>
-  <value column="Description" original=""/>
-  <value column="Help" original=""/>
-  <value column="Placeholder" original=""/>
- </row>
 </idempiereTrl>

@@ -123,8 +123,8 @@
  <row id="50005" trl="N">
   <value column="Name" original="Contract">Contract</value>
  </row>
- <row id="50006" trl="N">
-  <value column="Name" original="Options">Options</value>
+ <row id="50006" trl="Y">
+  <value column="Name" original="Options">Opções</value>
  </row>
  <row id="50007" trl="N">
   <value column="Name" original="General Ledger">General Ledger</value>
@@ -269,6 +269,15 @@
  </row>
  <row id="800019" trl="N">
   <value column="Name" original="CSLL">CSLL</value>
+ </row>
+ <row id="800022" trl="N">
+  <value column="Name" original="IBS (UF)">IBS (UF)</value>
+ </row>
+ <row id="800023" trl="N">
+  <value column="Name" original="IBS (City)">IBS (City)</value>
+ </row>
+ <row id="800024" trl="N">
+  <value column="Name" original="CBS">CBS</value>
  </row>
  <row trl="Y" uuid="12c499cb-64e4-44b5-87e2-7b0fae45876c">
   <value column="Name" original="Localização Brasil">Adempiere LBR</value>
