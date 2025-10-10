@@ -922,6 +922,13 @@ this field define where request, error,.. occupy.</value>
   <value column="Placeholder" original=""/>
   <value column="Placeholder2" original=""/>
  </row>
+ <row id="800138" trl="N">
+  <value column="Name" original="NSU">NSU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="Placeholder2" original=""/>
+ </row>
  <row trl="Y" uuid="61fed42b-e8b6-4654-81bd-f6b8f95dd7ef">
   <value column="Name" original="Update Fields based on Attachment">Atualizar os Campos baseado no Anexo</value>
   <value column="Description" original=""/>

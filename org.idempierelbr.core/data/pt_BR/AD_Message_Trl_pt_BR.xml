@@ -8209,8 +8209,24 @@ The view column {0} exists in database but is not defined in dictionary</value>
   <value column="MsgText" original="Total Sales: {0,number,currency}">Total Sales: {0,number,currency}</value>
   <value column="MsgTip" original=""/>
  </row>
+ <row id="200903" trl="N">
+  <value column="MsgText" original="Back-Date transaction not allowed">Back-Date transaction not allowed</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200904" trl="N">
+  <value column="MsgText" original="Insufficient Stock Coverage. A shipment should not be allowed if there is insufficient stock before the shipment’s movement date.">Insufficient Stock Coverage. A shipment should not be allowed if there is insufficient stock before the shipment’s movement date.</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200905" trl="N">
+  <value column="MsgText" original="Account Date cannot be changed">Account Date cannot be changed</value>
+  <value column="MsgTip" original=""/>
+ </row>
  <row id="200908" trl="N">
   <value column="MsgText" original="Login">Login</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200909" trl="N">
+  <value column="MsgText" original="Insufficient Stock Coverage. A reversal of shipment/project issue is required to replenish stock before reversal.">Insufficient Stock Coverage. A reversal of shipment/project issue is required to replenish stock before reversal.</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="200911" trl="Y">
@@ -8243,6 +8259,58 @@ The view column {0} exists in database but is not defined in dictionary</value>
  </row>
  <row id="200921" trl="N">
   <value column="MsgText" original="Could not void deposit batch: deposit batch is used on a bank statement line">Could not void deposit batch: deposit batch is used on a bank statement line</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200926" trl="N">
+  <value column="MsgText" original="Total of Base values is 0 - {0}">Total of Base values is 0 - {0}</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200927" trl="N">
+  <value column="MsgText" original="The background loading of the records has finished.">The background loading of the records has finished.</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200930" trl="N">
+  <value column="MsgText" original="Template/Mode not allowed for this role">Template/Mode not allowed for this role</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200931" trl="N">
+  <value column="MsgText" original="No Active Tab">No Active Tab</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200932" trl="N">
+  <value column="MsgText" original="No CSV importer">No CSV importer</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200933" trl="N">
+  <value column="MsgText" original="Table doesn't match with updated tab">Table doesn't match with updated tab</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200934" trl="N">
+  <value column="MsgText" original="There are payments with no value for Amount Due or Payment Amount, this is usually caused by missing currency exchange rates.">There are payments with no value for Amount Due or Payment Amount, this is usually caused by missing currency exchange rates.</value>
+  <value column="MsgTip" original="Please deselect the payments without amounts or configure the currency rate correctly.">Please deselect the payments without amounts or configure the currency rate correctly.</value>
+ </row>
+ <row id="200935" trl="N">
+  <value column="MsgText" original="Could not reactivate invoice: invoice is allocated">Could not reactivate invoice: invoice is allocated</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200936" trl="N">
+  <value column="MsgText" original="Could not reactivate invoice: invoice is used on a Match Invoice record">Could not reactivate invoice: invoice is used on a Match Invoice record</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200937" trl="N">
+  <value column="MsgText" original="Could not reactivate invoice: invoice is used on a Match PO record">Could not reactivate invoice: invoice is used on a Match PO record</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200941" trl="N">
+  <value column="MsgText" original="{0} cannot be reactivated">{0} cannot be reactivated</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200942" trl="N">
+  <value column="MsgText" original="This plugin does not exist in this server, saving this record is dangerous as potentially the server cannot be started next time">This plugin does not exist in this server, saving this record is dangerous as potentially the server cannot be started next time</value>
+  <value column="MsgTip" original=""/>
+ </row>
+ <row id="200943" trl="N">
+  <value column="MsgText" original="The plugin exists, but is in a different state, saving this record is dangerous as potentially the server cannot be started next time">The plugin exists, but is in a different state, saving this record is dangerous as potentially the server cannot be started next time</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="520010" trl="Y">

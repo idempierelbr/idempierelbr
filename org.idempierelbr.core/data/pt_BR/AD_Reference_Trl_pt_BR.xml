@@ -2930,6 +2930,11 @@
   <value column="Description" original="Web URL of an image">Web URL de uma imagem</value>
   <value column="Help" original=""/>
  </row>
+ <row id="200274" trl="N">
+  <value column="Name" original="PluginExpectedState">PluginExpectedState</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
  <row id="800000" trl="N">
   <value column="Name" original="LBR_DI_TranspType">LBR_DI_TranspType</value>
   <value column="Description" original=""/>
@@ -3097,6 +3102,31 @@
  </row>
  <row id="800053" trl="N">
   <value column="Name" original="LBR_NotaFiscalLine">LBR_NotaFiscalLine</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800054" trl="N">
+  <value column="Name" original="LBR_UltimaManifestacaoType">LBR_UltimaManifestacaoType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800055" trl="N">
+  <value column="Name" original="LBR_UltimaManifestacaoToProc">LBR_UltimaManifestacaoToProc</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800057" trl="N">
+  <value column="Name" original="LBR_NFeXML">LBR_NFeXML</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800058" trl="N">
+  <value column="Name" original="LBR_NFE_IndIntermed">LBR_NFE_IndIntermed</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800060" trl="N">
+  <value column="Name" original="LBR_CSTGroupIndicator">LBR_CSTGroupIndicator</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
