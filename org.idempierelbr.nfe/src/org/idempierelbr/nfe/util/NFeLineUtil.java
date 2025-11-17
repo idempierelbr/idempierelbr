@@ -1,5 +1,6 @@
 package org.idempierelbr.nfe.util;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.adempiere.exceptions.AdempiereException;
@@ -13,8 +14,10 @@ import org.compiere.util.Env;
 import org.idempierelbr.base.model.I_LBR_DI;
 import org.idempierelbr.base.model.MLBRDocLineCOFINS;
 import org.idempierelbr.base.model.MLBRDocLineDetailsNfe;
+import org.idempierelbr.base.model.MLBRDocLineIBSCBS;
 import org.idempierelbr.base.model.MLBRDocLineICMS;
 import org.idempierelbr.base.model.MLBRDocLineIPI;
+import org.idempierelbr.base.model.MLBRDocLineIS;
 import org.idempierelbr.base.model.MLBRDocLineISSQN;
 import org.idempierelbr.base.model.MLBRDocLineImportTax;
 import org.idempierelbr.base.model.MLBRDocLinePIS;
@@ -22,20 +25,29 @@ import org.idempierelbr.base.model.MLBRNotaFiscal;
 import org.idempierelbr.base.model.MLBRNotaFiscalDI;
 import org.idempierelbr.base.model.MLBRNotaFiscalLine;
 import org.idempierelbr.base.util.TextUtil;
+import org.idempierelbr.nfe.beans.CBSGrupoBean;
 import org.idempierelbr.nfe.beans.COFINSBean;
 import org.idempierelbr.nfe.beans.COFINSGrupoBean;
 import org.idempierelbr.nfe.beans.COFINSSTBean;
 import org.idempierelbr.nfe.beans.DeclaracaoDI;
+import org.idempierelbr.nfe.beans.DevTribGrupoBean;
+import org.idempierelbr.nfe.beans.DifGrupoBean;
+import org.idempierelbr.nfe.beans.IBSCBSBean;
+import org.idempierelbr.nfe.beans.IBSCBSGrupoBean;
+import org.idempierelbr.nfe.beans.IBSMunGrupoBean;
+import org.idempierelbr.nfe.beans.IBSUFGrupoBean;
 import org.idempierelbr.nfe.beans.ICMSBean;
 import org.idempierelbr.nfe.beans.ICMSGrupoBean;
 import org.idempierelbr.nfe.beans.ICMSUFDestBean;
 import org.idempierelbr.nfe.beans.IIBean;
 import org.idempierelbr.nfe.beans.IPIBean;
 import org.idempierelbr.nfe.beans.IPIGrupoBean;
+import org.idempierelbr.nfe.beans.ISBean;
 import org.idempierelbr.nfe.beans.ISSQNBean;
 import org.idempierelbr.nfe.beans.PISBean;
 import org.idempierelbr.nfe.beans.PISGrupoBean;
 import org.idempierelbr.nfe.beans.PISSTBean;
+import org.idempierelbr.nfe.beans.RedGrupoBean;
 import org.idempierelbr.nfe.model.NFTaxProvider;
 
 public class NFeLineUtil {
@@ -68,6 +80,224 @@ public class NFeLineUtil {
 
     	return calculator.updateHeaderTax(provider, line);
 	}	//	updateHeaderTax
+	
+	/**
+	 *	Get IBS/CBS Tax bean (used for NF-e xml)
+	 *	@return bean
+	 */
+	public IBSCBSBean getIBSCBSBean() {
+		MLBRDocLineIBSCBS[] ibsCbsLines = MLBRDocLineIBSCBS.getOfDetails(MLBRDocLineDetailsNfe.getOfPO(line));
+		
+		if (ibsCbsLines.length > 0) {
+			String prefixException = "@Line@ " + line.getLine() +", @Tab@ @LBR_IBSCBS@, @Field@ @IsMandatory@: ";
+			
+			IBSCBSBean ibsCbs = new IBSCBSBean();
+			
+			if (ibsCbsLines[0].getLBR_CST_IBSCBS() == null)
+				throw new AdempiereException(prefixException + "'@LBR_CST_IBSCBS_ID@'");			
+			ibsCbs.setCST(ibsCbsLines[0].getLBR_CST_IBSCBS().getValue());
+			
+			if (ibsCbsLines[0].getLBR_ClassTrib_IBSCBS() == null)
+				throw new AdempiereException(prefixException + "'@LBR_ClassTrib_IBSCBS_ID@'");			
+			ibsCbs.setcClassTrib(ibsCbsLines[0].getLBR_ClassTrib_IBSCBS().getValue());
+			
+			// Se não tem Base de Cálculo, retorna apenas informações acima
+			if (ibsCbsLines[0].getLBR_TaxBaseAmt() == null)
+				return ibsCbs;
+			
+			IBSCBSGrupoBean gIBSCBS = new IBSCBSGrupoBean();
+			ibsCbs.setgIBSCBS(gIBSCBS);
+			
+			// Total do IBS
+			BigDecimal totalDoIBS = null;
+			
+			gIBSCBS.setvBC(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_TaxBaseAmt()));
+			
+			// IBS UF
+			if (ibsCbsLines[0].getLBR_IBS_UF_TaxRate() != null) {
+				IBSUFGrupoBean gIBSUF = new IBSUFGrupoBean();
+				gIBSUF.setpIBSUF(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxRate()));
+				
+				// Diferimento
+				if (ibsCbsLines[0].getLBR_IBS_UF_TaxDeferralRate() != null) {
+					DifGrupoBean gDif = new DifGrupoBean();					
+					gDif.setpDif(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxDeferralRate()));
+					
+					if (ibsCbsLines[0].getLBR_IBS_UF_TaxDeferralAmt() != null)
+						gDif.setvDif(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxDeferralAmt()));
+					
+					gIBSUF.setgDif(gDif);
+				}
+				
+				// Devolução
+				if (ibsCbsLines[0].getLBR_IBS_UF_TaxDevAmt() != null) {
+					DevTribGrupoBean gDevTrib = new DevTribGrupoBean();					
+					gDevTrib.setvDevTrib(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxDevAmt()));
+					
+					gIBSUF.setgDevTrib(gDevTrib);
+				}
+				
+				// Redução
+				if (ibsCbsLines[0].getLBR_IBS_UF_TaxRedRate() != null) {
+					RedGrupoBean gRed = new RedGrupoBean();					
+					gRed.setpRedAliq(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxRedRate()));
+					
+					if (ibsCbsLines[0].getLBR_IBS_UF_TaxDeferralAmt() != null)
+						gRed.setpAliqEfet(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxRedEfetRate()));
+					
+					gIBSUF.setgRed(gRed);
+				}
+				
+				if (ibsCbsLines[0].getLBR_IBS_UF_TaxAmt() != null) {
+					gIBSUF.setvIBSUF(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxAmt()));
+					
+					if (totalDoIBS == null) totalDoIBS = Env.ZERO;
+					totalDoIBS = totalDoIBS.add(ibsCbsLines[0].getLBR_IBS_UF_TaxAmt());
+				}
+
+				gIBSCBS.setgIBSUF(gIBSUF);
+			}
+			
+			// IBS Mun.
+			if (ibsCbsLines[0].getLBR_IBS_Mun_TaxRate() != null) {
+				IBSMunGrupoBean gIBSMun = new IBSMunGrupoBean();
+				gIBSMun.setpIBSMun(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxRate()));
+				
+				// Diferimento
+				if (ibsCbsLines[0].getLBR_IBS_Mun_TaxDeferralRate() != null) {
+					DifGrupoBean gDif = new DifGrupoBean();					
+					gDif.setpDif(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxDeferralRate()));
+					
+					if (ibsCbsLines[0].getLBR_IBS_Mun_TaxDeferralAmt() != null)
+						gDif.setvDif(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxDeferralAmt()));
+					
+					gIBSMun.setgDif(gDif);
+				}
+				
+				// Devolução
+				if (ibsCbsLines[0].getLBR_IBS_Mun_TaxDevAmt() != null) {
+					DevTribGrupoBean gDevTrib = new DevTribGrupoBean();					
+					gDevTrib.setvDevTrib(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxDevAmt()));
+					
+					gIBSMun.setgDevTrib(gDevTrib);
+				}
+				
+				// Redução
+				if (ibsCbsLines[0].getLBR_IBS_Mun_TaxRedRate() != null) {
+					RedGrupoBean gRed = new RedGrupoBean();					
+					gRed.setpRedAliq(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxRedRate()));
+					
+					if (ibsCbsLines[0].getLBR_IBS_Mun_TaxDeferralAmt() != null)
+						gRed.setpAliqEfet(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxRedEfetRate()));
+					
+					gIBSMun.setgRed(gRed);
+				}
+				
+				if (ibsCbsLines[0].getLBR_IBS_Mun_TaxAmt() != null) {
+					gIBSMun.setvIBSMun(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxAmt()));
+					
+					if (totalDoIBS == null) totalDoIBS = Env.ZERO;
+					totalDoIBS = totalDoIBS.add(ibsCbsLines[0].getLBR_IBS_Mun_TaxAmt());
+				}
+
+				gIBSCBS.setgIBSMun(gIBSMun);
+			}		
+			
+			// Total do IBS
+			if (totalDoIBS != null)
+				gIBSCBS.setvIBS(TextUtil.bigdecimalToString(totalDoIBS));
+			
+			// CBS
+			if (ibsCbsLines[0].getLBR_CBS_TaxRate() != null) {
+				CBSGrupoBean gCBS = new CBSGrupoBean();
+				gCBS.setpCBS(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxRate()));
+				
+				// Diferimento
+				if (ibsCbsLines[0].getLBR_CBS_TaxDeferralRate() != null) {
+					DifGrupoBean gDif = new DifGrupoBean();					
+					gDif.setpDif(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxDeferralRate()));
+					
+					if (ibsCbsLines[0].getLBR_CBS_TaxDeferralAmt() != null)
+						gDif.setvDif(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxDeferralAmt()));
+					
+					gCBS.setgDif(gDif);
+				}
+				
+				// Devolução
+				if (ibsCbsLines[0].getLBR_CBS_TaxDevAmt() != null) {
+					DevTribGrupoBean gDevTrib = new DevTribGrupoBean();					
+					gDevTrib.setvDevTrib(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxDevAmt()));
+					
+					gCBS.setgDevTrib(gDevTrib);
+				}
+				
+				// Redução
+				if (ibsCbsLines[0].getLBR_CBS_TaxRedRate() != null) {
+					RedGrupoBean gRed = new RedGrupoBean();					
+					gRed.setpRedAliq(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxRedRate()));
+					
+					if (ibsCbsLines[0].getLBR_CBS_TaxDeferralAmt() != null)
+						gRed.setpAliqEfet(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxRedEfetRate()));
+					
+					gCBS.setgRed(gRed);
+				}
+				
+				if (ibsCbsLines[0].getLBR_CBS_TaxAmt() != null) {
+					gCBS.setvCBS(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxAmt()));
+				}
+
+				gIBSCBS.setgCBS(gCBS);
+			}
+			
+			return ibsCbs;			
+		}
+		
+		return null;
+	}
+	
+	/**
+	 *	Get IS Tax bean (used for NF-e xml)
+	 *	@return bean
+	 */
+	public ISBean getISBean() {
+		MLBRDocLineIS[] isLines = MLBRDocLineIS.getOfDetails(MLBRDocLineDetailsNfe.getOfPO(line));
+		
+		if (isLines.length > 0) {
+			String prefixException = "@Line@ " + line.getLine() +", @Tab@ @LBR_IS@, @Field@ @IsMandatory@: ";
+			
+			ISBean is = new ISBean();
+			
+			if (isLines[0].getLBR_CST_IS() == null)
+				throw new AdempiereException(prefixException + "'@LBR_CST_IS_ID@'");			
+			is.setCSTIS(isLines[0].getLBR_CST_IS().getValue());
+			
+			if (isLines[0].getLBR_ClassTrib_IS() == null)
+				throw new AdempiereException(prefixException + "'@LBR_ClassTrib_IS_ID@'");			
+			is.setcClassTribIS(isLines[0].getLBR_ClassTrib_IS().getValue());
+			
+			if (isLines[0].getLBR_TaxBaseAmt() != null)
+				is.setvBCIS(TextUtil.bigdecimalToString(isLines[0].getLBR_TaxBaseAmt()));
+			
+			if (isLines[0].getLBR_TaxRate() != null)
+				is.setpIS(TextUtil.bigdecimalToString(isLines[0].getLBR_TaxRate()));
+			
+			if (isLines[0].getLBR_TaxRateEspec() != null)
+				is.setpISEspec(TextUtil.bigdecimalToString(isLines[0].getLBR_TaxRateEspec()));
+			
+			if (isLines[0].getLBR_UOMTax() != null)
+				is.setuTrib(isLines[0].getLBR_UOMTax().getName());
+			
+			if (isLines[0].getLBR_QtyTax() != null)
+				is.setqTrib(TextUtil.bigdecimalToString(isLines[0].getLBR_QtyTax()));
+			
+			if (isLines[0].getLBR_TaxAmt() != null)
+				is.setvIS(TextUtil.bigdecimalToString(isLines[0].getLBR_TaxAmt()));
+			
+			return is;			
+		}
+		
+		return null;
+	}
 	
 	/**
 	 *	Get ICMS bean (used for NF-e xml)

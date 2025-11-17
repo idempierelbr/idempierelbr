@@ -27,8 +27,10 @@ import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.idempierelbr.base.model.MLBRDocLineCOFINS;
 import org.idempierelbr.base.model.MLBRDocLineDetailsTax;
+import org.idempierelbr.base.model.MLBRDocLineIBSCBS;
 import org.idempierelbr.base.model.MLBRDocLineICMS;
 import org.idempierelbr.base.model.MLBRDocLineIPI;
+import org.idempierelbr.base.model.MLBRDocLineIS;
 import org.idempierelbr.base.model.MLBRDocLineISSQN;
 import org.idempierelbr.base.model.MLBRDocLineImportTax;
 import org.idempierelbr.base.model.MLBRDocLineOTHER;
@@ -115,6 +117,69 @@ public class DefaultTaxProvider implements ITaxProvider {
 			MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
 			
 			if (details != null) {
+				// IBS/CBS
+				MLBRDocLineIBSCBS[] ibscbsLines = MLBRDocLineIBSCBS.getOfDetails(details);
+				if (ibscbsLines.length > 0) {
+					MLBRDocLineIBSCBS ibsCbs = ibscbsLines[0];
+					
+					// IBS (UF)
+					if (ibsCbs.getLBR_IBS_UF_TaxAmt() != null) {
+						if (oTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_UF_NAME))) {
+							MOrderTax newOTax = oTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_UF_NAME));
+							newOTax.setIsTaxIncluded(ibsCbs.isLBR_IBS_UF_IsTaxIncluded());
+							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(ibsCbs.getLBR_TaxBaseAmt()));
+							newOTax.setTaxAmt(newOTax.getTaxAmt().add(ibsCbs.getLBR_IBS_UF_TaxAmt()));
+						}
+						
+						if (!ibsCbs.isLBR_IBS_UF_IsTaxIncluded())
+							grandTotal = grandTotal.add(ibsCbs.getLBR_IBS_UF_TaxAmt());
+					}
+					
+					// IBS (Mun)
+					if (ibsCbs.getLBR_IBS_Mun_TaxAmt() != null) {
+						if (oTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_MUN_NAME))) {
+							MOrderTax newOTax = oTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_MUN_NAME));
+							newOTax.setIsTaxIncluded(ibsCbs.isLBR_IBS_Mun_IsTaxIncluded());
+							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(ibsCbs.getLBR_TaxBaseAmt()));
+							newOTax.setTaxAmt(newOTax.getTaxAmt().add(ibsCbs.getLBR_IBS_Mun_TaxAmt()));
+						}
+						
+						if (!ibsCbs.isLBR_IBS_Mun_IsTaxIncluded())
+							grandTotal = grandTotal.add(ibsCbs.getLBR_IBS_Mun_TaxAmt());
+					}
+					
+					// CBS
+					if (ibsCbs.getLBR_CBS_TaxAmt() != null) {
+						if (oTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_CBS_NAME))) {
+							MOrderTax newOTax = oTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_CBS_NAME));
+							newOTax.setIsTaxIncluded(ibsCbs.isLBR_CBS_IsTaxIncluded());
+							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(ibsCbs.getLBR_TaxBaseAmt()));
+							newOTax.setTaxAmt(newOTax.getTaxAmt().add(ibsCbs.getLBR_CBS_TaxAmt()));
+						}
+						
+						if (!ibsCbs.isLBR_CBS_IsTaxIncluded())
+							grandTotal = grandTotal.add(ibsCbs.getLBR_CBS_TaxAmt());
+					}
+				}
+				
+				// IS
+				MLBRDocLineIS[] isLines = MLBRDocLineIS.getOfDetails(details);
+				if (isLines.length > 0) {
+					MLBRDocLineIS is = isLines[0];
+					
+					if (is.getLBR_TaxAmt() != null) {
+						if (oTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IS_NAME))) {
+							MOrderTax newOTax = oTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IS_NAME));
+							newOTax.setIsTaxIncluded(is.isTaxIncluded());
+							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(is.getLBR_TaxBaseAmt()));
+							newOTax.setTaxAmt(newOTax.getTaxAmt().add(is.getLBR_TaxAmt()));
+						}
+						
+						if (!is.isTaxIncluded())
+							grandTotal = grandTotal.add(is.getLBR_TaxAmt());
+					}
+				}
+				
 				// ICMS and ICMS-ST
 				MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(details);
 				if (icmsLines.length > 0) {
@@ -428,6 +493,69 @@ public class DefaultTaxProvider implements ITaxProvider {
 			MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
 			
 			if (details != null) {
+				// IBS/CBS
+				MLBRDocLineIBSCBS[] ibscbsLines = MLBRDocLineIBSCBS.getOfDetails(details);
+				if (ibscbsLines.length > 0) {
+					MLBRDocLineIBSCBS ibsCbs = ibscbsLines[0];
+					
+					// IBS (UF)
+					if (ibsCbs.getLBR_IBS_UF_TaxAmt() != null) {
+						if (iTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_UF_NAME))) {
+							MInvoiceTax newITax = iTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_UF_NAME));
+							newITax.setIsTaxIncluded(ibsCbs.isLBR_IBS_UF_IsTaxIncluded());
+							newITax.setTaxBaseAmt(newITax.getTaxBaseAmt().add(ibsCbs.getLBR_TaxBaseAmt()));
+							newITax.setTaxAmt(newITax.getTaxAmt().add(ibsCbs.getLBR_IBS_UF_TaxAmt()));
+						}
+						
+						if (!ibsCbs.isLBR_IBS_UF_IsTaxIncluded())
+							grandTotal = grandTotal.add(ibsCbs.getLBR_IBS_UF_TaxAmt());
+					}
+					
+					// IBS (Mun)
+					if (ibsCbs.getLBR_IBS_Mun_TaxAmt() != null) {
+						if (iTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_MUN_NAME))) {
+							MInvoiceTax newITax = iTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_MUN_NAME));
+							newITax.setIsTaxIncluded(ibsCbs.isLBR_IBS_Mun_IsTaxIncluded());
+							newITax.setTaxBaseAmt(newITax.getTaxBaseAmt().add(ibsCbs.getLBR_TaxBaseAmt()));
+							newITax.setTaxAmt(newITax.getTaxAmt().add(ibsCbs.getLBR_IBS_Mun_TaxAmt()));
+						}
+						
+						if (!ibsCbs.isLBR_IBS_Mun_IsTaxIncluded())
+							grandTotal = grandTotal.add(ibsCbs.getLBR_IBS_Mun_TaxAmt());
+					}
+					
+					// CBS
+					if (ibsCbs.getLBR_CBS_TaxAmt() != null) {
+						if (iTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_CBS_NAME))) {
+							MInvoiceTax newITax = iTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_CBS_NAME));
+							newITax.setIsTaxIncluded(ibsCbs.isLBR_CBS_IsTaxIncluded());
+							newITax.setTaxBaseAmt(newITax.getTaxBaseAmt().add(ibsCbs.getLBR_TaxBaseAmt()));
+							newITax.setTaxAmt(newITax.getTaxAmt().add(ibsCbs.getLBR_CBS_TaxAmt()));
+						}
+						
+						if (!ibsCbs.isLBR_CBS_IsTaxIncluded())
+							grandTotal = grandTotal.add(ibsCbs.getLBR_CBS_TaxAmt());
+					}
+				}
+				
+				// IS
+				MLBRDocLineIS[] isLines = MLBRDocLineIS.getOfDetails(details);
+				if (isLines.length > 0) {
+					MLBRDocLineIS is = isLines[0];
+					
+					if (is.getLBR_TaxAmt() != null) {
+						if (iTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IS_NAME))) {
+							MInvoiceTax newITax = iTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IS_NAME));
+							newITax.setIsTaxIncluded(is.isTaxIncluded());
+							newITax.setTaxBaseAmt(newITax.getTaxBaseAmt().add(is.getLBR_TaxBaseAmt()));
+							newITax.setTaxAmt(newITax.getTaxAmt().add(is.getLBR_TaxAmt()));
+						}
+						
+						if (!is.isTaxIncluded())
+							grandTotal = grandTotal.add(is.getLBR_TaxAmt());
+					}
+				}
+				
 				// ICMS and ICMS-ST
 				MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(details);
 				if (icmsLines.length > 0) {
@@ -734,6 +862,69 @@ public class DefaultTaxProvider implements ITaxProvider {
 			MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
 			
 			if (details != null) {
+				// IBS/CBS
+				MLBRDocLineIBSCBS[] ibscbsLines = MLBRDocLineIBSCBS.getOfDetails(details);
+				if (ibscbsLines.length > 0) {
+					MLBRDocLineIBSCBS ibsCbs = ibscbsLines[0];
+					
+					// IBS (UF)
+					if (ibsCbs.getLBR_IBS_UF_TaxAmt() != null) {
+						if (rmaTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_UF_NAME))) {
+							MRMATax newOTax = rmaTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_UF_NAME));
+							newOTax.setIsTaxIncluded(ibsCbs.isLBR_IBS_UF_IsTaxIncluded());
+							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(ibsCbs.getLBR_TaxBaseAmt()));
+							newOTax.setTaxAmt(newOTax.getTaxAmt().add(ibsCbs.getLBR_IBS_UF_TaxAmt()));
+						}
+						
+						if (!ibsCbs.isLBR_IBS_UF_IsTaxIncluded())
+							grandTotal = grandTotal.add(ibsCbs.getLBR_IBS_UF_TaxAmt());
+					}
+					
+					// IBS (Mun)
+					if (ibsCbs.getLBR_IBS_Mun_TaxAmt() != null) {
+						if (rmaTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_MUN_NAME))) {
+							MRMATax newOTax = rmaTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_MUN_NAME));
+							newOTax.setIsTaxIncluded(ibsCbs.isLBR_IBS_Mun_IsTaxIncluded());
+							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(ibsCbs.getLBR_TaxBaseAmt()));
+							newOTax.setTaxAmt(newOTax.getTaxAmt().add(ibsCbs.getLBR_IBS_Mun_TaxAmt()));
+						}
+						
+						if (!ibsCbs.isLBR_IBS_Mun_IsTaxIncluded())
+							grandTotal = grandTotal.add(ibsCbs.getLBR_IBS_Mun_TaxAmt());
+					}
+					
+					// CBS
+					if (ibsCbs.getLBR_CBS_TaxAmt() != null) {
+						if (rmaTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_CBS_NAME))) {
+							MRMATax newOTax = rmaTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_CBS_NAME));
+							newOTax.setIsTaxIncluded(ibsCbs.isLBR_CBS_IsTaxIncluded());
+							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(ibsCbs.getLBR_TaxBaseAmt()));
+							newOTax.setTaxAmt(newOTax.getTaxAmt().add(ibsCbs.getLBR_CBS_TaxAmt()));
+						}
+						
+						if (!ibsCbs.isLBR_CBS_IsTaxIncluded())
+							grandTotal = grandTotal.add(ibsCbs.getLBR_CBS_TaxAmt());
+					}
+				}
+				
+				// IS
+				MLBRDocLineIS[] isLines = MLBRDocLineIS.getOfDetails(details);
+				if (isLines.length > 0) {
+					MLBRDocLineIS is = isLines[0];
+					
+					if (is.getLBR_TaxAmt() != null) {
+						if (rmaTaxList.containsKey(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IS_NAME))) {
+							MRMATax newOTax = rmaTaxList.get(MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IS_NAME));
+							newOTax.setIsTaxIncluded(is.isTaxIncluded());
+							newOTax.setTaxBaseAmt(newOTax.getTaxBaseAmt().add(is.getLBR_TaxBaseAmt()));
+							newOTax.setTaxAmt(newOTax.getTaxAmt().add(is.getLBR_TaxAmt()));
+						}
+						
+						if (!is.isTaxIncluded())
+							grandTotal = grandTotal.add(is.getLBR_TaxAmt());
+					}
+				}
+				
 				// ICMS and ICMS-ST
 				MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(details);
 				if (icmsLines.length > 0) {

@@ -104,6 +104,10 @@ public class MLBRTax extends X_LBR_Tax
 	
 	/**	Tax Group IDs	*/
 	private static Map<String, Integer> taxGroups = null;
+	public static final String TAX_GROUP_IBS_UF_NAME	= "IBSUF";
+	public static final String TAX_GROUP_IBS_MUN_NAME	= "IBSMUN";
+	public static final String TAX_GROUP_CBS_NAME		= "CBS";
+	public static final String TAX_GROUP_IS_NAME	 	= "IS";
 	public static final String TAX_GROUP_ICMS_NAME	 	= "ICMS";
 	public static final String TAX_GROUP_PIS_NAME 		= "PIS";
 	public static final String TAX_GROUP_COFINS_NAME	= "COFINS";

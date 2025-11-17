@@ -66,10 +66,12 @@ import org.idempierelbr.nfe.beans.DetalhesProdServBean;
 import org.idempierelbr.nfe.beans.EnderDest;
 import org.idempierelbr.nfe.beans.EnderEmit;
 import org.idempierelbr.nfe.beans.FormasPagamentoNFEBean;
+import org.idempierelbr.nfe.beans.IBSCBSBean;
 import org.idempierelbr.nfe.beans.ICMSBean;
 import org.idempierelbr.nfe.beans.ICMSUFDestBean;
 import org.idempierelbr.nfe.beans.IIBean;
 import org.idempierelbr.nfe.beans.IPIBean;
+import org.idempierelbr.nfe.beans.ISBean;
 import org.idempierelbr.nfe.beans.ISSQNBean;
 import org.idempierelbr.nfe.beans.IdentDest;
 import org.idempierelbr.nfe.beans.IdentEmit;
@@ -986,6 +988,26 @@ public class NFeXMLGenerator {
 			xstream.alias("det", DetalhesProdServBean.class);
 			xstream.useAttributeFor(DetalhesProdServBean.class, "nItem");
 			xstream.addImplicitCollection(DadosNFE.class, "det");
+			
+			// IBS/CBS
+			IBSCBSBean ibscbs = null;
+			try {
+				ibscbs = lineUtil.getIBSCBSBean();
+			} catch(AdempiereException e) {
+				return e.getMessage();
+			}
+			if (ibscbs != null)
+				impostos.setIBSCBS(ibscbs);
+			
+			// IS
+			ISBean is = null;
+			try {
+				is = lineUtil.getISBean();
+			} catch(AdempiereException e) {
+				return e.getMessage();
+			}
+			if (is != null)
+				impostos.setIS(is);
 
 			// ICMS
 			ICMSBean icms = null;

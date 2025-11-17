@@ -53,8 +53,10 @@ import org.compiere.util.Trx;
 import org.idempierelbr.base.model.MLBRDocLineCOFINS;
 import org.idempierelbr.base.model.MLBRDocLineDetails;
 import org.idempierelbr.base.model.MLBRDocLineDetailsTax;
+import org.idempierelbr.base.model.MLBRDocLineIBSCBS;
 import org.idempierelbr.base.model.MLBRDocLineICMS;
 import org.idempierelbr.base.model.MLBRDocLineIPI;
+import org.idempierelbr.base.model.MLBRDocLineIS;
 import org.idempierelbr.base.model.MLBRDocLineISSQN;
 import org.idempierelbr.base.model.MLBRDocLineImportTax;
 import org.idempierelbr.base.model.MLBRDocLinePIS;
@@ -1383,6 +1385,249 @@ public class Doc_Invoice extends Doc
 			
 			if (details.getDiscountAmt() != null)
 				lineNetAmt = lineNetAmt.subtract(details.getDiscountAmt());
+			
+			// IBS/CBS
+			MLBRDocLineIBSCBS[] ibsCbsLines = MLBRDocLineIBSCBS.getOfDetails(details);
+			if (ibsCbsLines.length > 0) {
+				MLBRDocLineIBSCBS ibsCbs = ibsCbsLines[0];
+				
+				// IBS (UF)
+				if (ibsCbs.getLBR_IBS_UF_TaxAmt() != null) {
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_UF_NAME))	{
+							DocTax LBRTaxLine = new DocTax(tax.getC_Tax_ID(), tax.getName(), tax.getRate(),
+									ibsCbs.getLBR_TaxBaseAmt(), ibsCbs.getLBR_IBS_UF_TaxAmt(), tax.isSalesTax());
+							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line, details);
+							boolean isTaxIncluded = ibsCbs.isLBR_IBS_UF_IsTaxIncluded();
+							
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Monophase NCM
+								if (MLBRNCMMono.isMonophase(tax.get_ID(), details.getLBR_NCM().getValue())) {
+									recuperavel = false;
+									isTaxIncluded = true;
+								}
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && isTaxIncluded) {
+									lineNetAmt = lineNetAmt.subtract(ibsCbs.getLBR_IBS_UF_TaxAmt());
+									m_taxes[t].addIncludedTax(ibsCbs.getLBR_IBS_UF_TaxAmt());
+									LBRTaxLine.addIncludedTax(ibsCbs.getLBR_IBS_UF_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !isTaxIncluded) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && isTaxIncluded) {
+									m_taxes[t].addIncludedTax(ibsCbs.getLBR_IBS_UF_TaxAmt());
+									LBRTaxLine.addIncludedTax(ibsCbs.getLBR_IBS_UF_TaxAmt());
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !isTaxIncluded) {
+									lineNetAmt = lineNetAmt.add(ibsCbs.getLBR_IBS_UF_TaxAmt());
+								}
+							// VENDA
+							} else {
+								// Incluído no preço do produto
+								if (isTaxIncluded) {
+									m_taxes[t].addIncludedTax(ibsCbs.getLBR_IBS_UF_TaxAmt());
+									LBRTaxLine.addIncludedTax(ibsCbs.getLBR_IBS_UF_TaxAmt());
+								}
+								// Não incluído no preço do produto
+								else if (!isTaxIncluded) {
+									//
+								}
+							}
+							
+							list.add(LBRTaxLine);
+							break;
+						}
+					}
+				}
+				
+				// IBS (Mun)
+				if (ibsCbs.getLBR_IBS_Mun_TaxAmt() != null) {
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_MUN_NAME))	{
+							DocTax LBRTaxLine = new DocTax(tax.getC_Tax_ID(), tax.getName(), tax.getRate(),
+									ibsCbs.getLBR_TaxBaseAmt(), ibsCbs.getLBR_IBS_Mun_TaxAmt(), tax.isSalesTax());
+							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line, details);
+							boolean isTaxIncluded = ibsCbs.isLBR_IBS_Mun_IsTaxIncluded();
+							
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Monophase NCM
+								if (MLBRNCMMono.isMonophase(tax.get_ID(), details.getLBR_NCM().getValue())) {
+									recuperavel = false;
+									isTaxIncluded = true;
+								}
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && isTaxIncluded) {
+									lineNetAmt = lineNetAmt.subtract(ibsCbs.getLBR_IBS_Mun_TaxAmt());
+									m_taxes[t].addIncludedTax(ibsCbs.getLBR_IBS_Mun_TaxAmt());
+									LBRTaxLine.addIncludedTax(ibsCbs.getLBR_IBS_Mun_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !isTaxIncluded) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && isTaxIncluded) {
+									m_taxes[t].addIncludedTax(ibsCbs.getLBR_IBS_Mun_TaxAmt());
+									LBRTaxLine.addIncludedTax(ibsCbs.getLBR_IBS_Mun_TaxAmt());
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !isTaxIncluded) {
+									lineNetAmt = lineNetAmt.add(ibsCbs.getLBR_IBS_Mun_TaxAmt());
+								}
+							// VENDA
+							} else {
+								// Incluído no preço do produto
+								if (isTaxIncluded) {
+									m_taxes[t].addIncludedTax(ibsCbs.getLBR_IBS_Mun_TaxAmt());
+									LBRTaxLine.addIncludedTax(ibsCbs.getLBR_IBS_Mun_TaxAmt());
+								}
+								// Não incluído no preço do produto
+								else if (!isTaxIncluded) {
+									//
+								}
+							}
+							
+							list.add(LBRTaxLine);
+							break;
+						}
+					}
+				}
+				
+				// CBS
+				if (ibsCbs.getLBR_CBS_TaxAmt() != null) {
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_CBS_NAME))	{
+							DocTax LBRTaxLine = new DocTax(tax.getC_Tax_ID(), tax.getName(), tax.getRate(),
+									ibsCbs.getLBR_TaxBaseAmt(), ibsCbs.getLBR_CBS_TaxAmt(), tax.isSalesTax());
+							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line, details);
+							boolean isTaxIncluded = ibsCbs.isLBR_CBS_IsTaxIncluded();
+							
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Monophase NCM
+								if (MLBRNCMMono.isMonophase(tax.get_ID(), details.getLBR_NCM().getValue())) {
+									recuperavel = false;
+									isTaxIncluded = true;
+								}
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && isTaxIncluded) {
+									lineNetAmt = lineNetAmt.subtract(ibsCbs.getLBR_CBS_TaxAmt());
+									m_taxes[t].addIncludedTax(ibsCbs.getLBR_CBS_TaxAmt());
+									LBRTaxLine.addIncludedTax(ibsCbs.getLBR_CBS_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !isTaxIncluded) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && isTaxIncluded) {
+									m_taxes[t].addIncludedTax(ibsCbs.getLBR_CBS_TaxAmt());
+									LBRTaxLine.addIncludedTax(ibsCbs.getLBR_CBS_TaxAmt());
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !isTaxIncluded) {
+									lineNetAmt = lineNetAmt.add(ibsCbs.getLBR_CBS_TaxAmt());
+								}
+							// VENDA
+							} else {
+								// Incluído no preço do produto
+								if (isTaxIncluded) {
+									m_taxes[t].addIncludedTax(ibsCbs.getLBR_CBS_TaxAmt());
+									LBRTaxLine.addIncludedTax(ibsCbs.getLBR_CBS_TaxAmt());
+								}
+								// Não incluído no preço do produto
+								else if (!isTaxIncluded) {
+									//
+								}
+							}
+							
+							list.add(LBRTaxLine);
+							break;
+						}
+					}
+				}				
+			}
+			
+			// IS
+			MLBRDocLineIS[] isLines = MLBRDocLineIS.getOfDetails(details);
+			if (isLines.length > 0) {
+				MLBRDocLineIS is = isLines[0];
+				
+				if (is.getLBR_TaxAmt() != null) {
+					for (int t = 0; t < m_taxes.length; t++) {
+						MTax tax = new MTax(getCtx(), m_taxes[t].getC_Tax_ID(), getTrxName());
+						if (tax.get_ValueAsInt("LBR_TaxGroup_ID") == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IS_NAME))	{
+							DocTax LBRTaxLine = new DocTax(tax.getC_Tax_ID(), tax.getName(), tax.getRate(),
+									is.getLBR_TaxBaseAmt(), is.getLBR_TaxAmt(), tax.isSalesTax());
+							LBRTaxLine = getUpdatedDocTax(LBRTaxLine, line, details);
+							boolean isTaxIncluded = is.isTaxIncluded();
+							
+							// COMPRA
+							if (!isSOTrx()) {
+								boolean recuperavel = !tax.isSalesTax();
+								
+								// Monophase NCM
+								if (MLBRNCMMono.isMonophase(tax.get_ID(), details.getLBR_NCM().getValue())) {
+									recuperavel = false;
+									isTaxIncluded = true;
+								}
+								
+								// Recuperável e incluído no preço do produto
+								if (recuperavel && isTaxIncluded) {
+									lineNetAmt = lineNetAmt.subtract(is.getLBR_TaxAmt());
+									m_taxes[t].addIncludedTax(is.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(is.getLBR_TaxAmt());
+								}
+								// Recuperável e não incluído no preço do produto
+								else if (recuperavel && !isTaxIncluded) {
+									//
+								}
+								// Não recuperável e incluído no preço do produto
+								else if (!recuperavel && isTaxIncluded) {
+									m_taxes[t].addIncludedTax(is.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(is.getLBR_TaxAmt());
+								}
+								// Não recuperável e não incluído no preço do produto
+								else if (!recuperavel && !isTaxIncluded) {
+									lineNetAmt = lineNetAmt.add(is.getLBR_TaxAmt());
+								}
+							// VENDA
+							} else {
+								// Incluído no preço do produto
+								if (isTaxIncluded) {
+									m_taxes[t].addIncludedTax(is.getLBR_TaxAmt());
+									LBRTaxLine.addIncludedTax(is.getLBR_TaxAmt());
+								}
+								// Não incluído no preço do produto
+								else if (!isTaxIncluded) {
+									//
+								}
+							}
+							
+							list.add(LBRTaxLine);
+							break;
+						}
+					}
+				}
+			}
 			
 			// ICMS and ICMS-ST
 			MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(details);

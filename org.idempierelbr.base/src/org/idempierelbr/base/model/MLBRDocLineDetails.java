@@ -156,7 +156,19 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	 * 	Delete all children (taxes) of Doc Line Details
 	 */
 	public void deleteChildren() {
-		PO[] poArray = MLBRDocLineICMS.getOfDetails(this);
+		PO[] poArray = MLBRDocLineIBSCBS.getOfDetails(this);
+
+		for (PO po : poArray) {
+			po.deleteEx(true);
+		}
+		
+		poArray = MLBRDocLineIS.getOfDetails(this);
+
+		for (PO po : poArray) {
+			po.deleteEx(true);
+		}
+		
+		poArray = MLBRDocLineICMS.getOfDetails(this);
 
 		for (PO po : poArray) {
 			po.deleteEx(true);
@@ -943,6 +955,8 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	 * 	Copy to this details the children of another details
 	 */
 	public void copyChildren(MLBRDocLineDetails detailsFrom) {
+		MLBRDocLineIBSCBS.copy(detailsFrom, this);
+		MLBRDocLineIS.copy(detailsFrom, this);
 		MLBRDocLineICMS.copy(detailsFrom, this);
 		MLBRDocLineIPI.copy(detailsFrom, this);
 		MLBRDocLinePIS.copy(detailsFrom, this);
@@ -956,6 +970,42 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	 */
 	public BigDecimal getNotIncludedTaxAmt() {
 		BigDecimal lineTaxAmt = Env.ZERO;
+		
+		// IBS/CBS
+		MLBRDocLineIBSCBS[] ibsCbsLines = MLBRDocLineIBSCBS.getOfDetails(this);
+		if (ibsCbsLines.length > 0) {
+			MLBRDocLineIBSCBS ibsCbs = ibsCbsLines[0];
+			
+			// IBS (UF)
+			if (ibsCbs.getLBR_IBS_UF_TaxAmt() != null) {
+				if (!ibsCbs.isLBR_IBS_UF_IsTaxIncluded()) {
+					lineTaxAmt = lineTaxAmt.add(ibsCbs.getLBR_IBS_UF_TaxAmt());
+				}
+			}
+			
+			// IBS (Mun.)
+			if (ibsCbs.getLBR_IBS_Mun_TaxAmt() != null) {
+				if (!ibsCbs.isLBR_IBS_Mun_IsTaxIncluded())
+					lineTaxAmt = lineTaxAmt.add(ibsCbs.getLBR_IBS_Mun_TaxAmt());
+			}
+			
+			// CBS
+			if (ibsCbs.getLBR_CBS_TaxAmt() != null) {
+				if (!ibsCbs.isLBR_CBS_IsTaxIncluded())
+					lineTaxAmt = lineTaxAmt.add(ibsCbs.getLBR_CBS_TaxAmt());
+			}
+		}
+		
+		// IS
+		MLBRDocLineIS[] isLines = MLBRDocLineIS.getOfDetails(this);
+		if (isLines.length > 0) {
+			MLBRDocLineIS is = isLines[0];
+			
+			if (is.getLBR_TaxAmt() != null) {
+				if (!is.isTaxIncluded())
+					lineTaxAmt = lineTaxAmt.add(is.getLBR_TaxAmt());
+			}
+		}
 		
 		// ICMS and ICMS-ST
 		MLBRDocLineICMS[] icmsLines = MLBRDocLineICMS.getOfDetails(this);
