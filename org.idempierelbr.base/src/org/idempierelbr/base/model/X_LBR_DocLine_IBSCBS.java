@@ -172,8 +172,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_CBS_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxAmt);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -191,8 +189,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_CBS_TaxDeferralAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxDeferralAmt);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -210,8 +206,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_CBS_TaxDeferralRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxDeferralRate);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -229,8 +223,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_CBS_TaxDevAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxDevAmt);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -248,8 +240,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_CBS_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxRate);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -267,8 +257,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_CBS_TaxRedEfetRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxRedEfetRate);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -286,8 +274,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_CBS_TaxRedRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxRedRate);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -446,8 +432,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_Mun_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxAmt);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -465,8 +449,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_Mun_TaxDeferralAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxDeferralAmt);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -484,8 +466,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_Mun_TaxDeferralRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxDeferralRate);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -503,8 +483,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_Mun_TaxDevAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxDevAmt);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -522,8 +500,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_Mun_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxRate);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -541,8 +517,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_Mun_TaxRedEfetRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxRedEfetRate);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -560,8 +534,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_Mun_TaxRedRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxRedRate);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -602,8 +574,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_UF_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxAmt);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -621,8 +591,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_UF_TaxDeferralAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxDeferralAmt);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -640,8 +608,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_UF_TaxDeferralRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxDeferralRate);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -659,8 +625,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_UF_TaxDevAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxDevAmt);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -678,8 +642,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_UF_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxRate);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -697,8 +659,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_UF_TaxRedEfetRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxRedEfetRate);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -716,8 +676,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_UF_TaxRedRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxRedRate);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -735,8 +693,6 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_TaxBaseAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 }

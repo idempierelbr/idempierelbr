@@ -274,8 +274,6 @@ public class X_LBR_DocLine_IS extends PO implements I_LBR_DocLine_IS, I_Persiste
 	public BigDecimal getLBR_QtyTax()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_QtyTax);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -293,8 +291,6 @@ public class X_LBR_DocLine_IS extends PO implements I_LBR_DocLine_IS, I_Persiste
 	public BigDecimal getLBR_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmt);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -312,8 +308,6 @@ public class X_LBR_DocLine_IS extends PO implements I_LBR_DocLine_IS, I_Persiste
 	public BigDecimal getLBR_TaxBaseAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -331,8 +325,6 @@ public class X_LBR_DocLine_IS extends PO implements I_LBR_DocLine_IS, I_Persiste
 	public BigDecimal getLBR_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRate);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
@@ -350,8 +342,6 @@ public class X_LBR_DocLine_IS extends PO implements I_LBR_DocLine_IS, I_Persiste
 	public BigDecimal getLBR_TaxRateEspec()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRateEspec);
-		if (bd == null)
-			 return Env.ZERO;
 		return bd;
 	}
 
