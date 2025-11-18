@@ -12,51 +12,41 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
-public class Valores {
-
-		// Valores Totais da NF-E
+public class CBSTot {
+	private String vDif;
+	private String vDevTrib;
+	private String vCBS;
+	private String vCredPres;
+	private String vCredPresCondSus;
 	
-	private ValoresICMS ICMSTot;
-	private ISSQNBean ISSQNot;
-	private ValoresRetTrib retTrib;
-	private ISTot ISTot;
-	private IBSCBSTot IBSCBSTot;
-	private String vNFTot;
-	
-	public ValoresICMS getICMSTot() {
-		return ICMSTot;
+	public String getvDif() {
+		return vDif;
 	}
-	public void setICMSTot(ValoresICMS tot) {
-		ICMSTot = tot;
+	public void setvDif(String vDif) {
+		this.vDif = vDif;
 	}
-	public ISSQNBean getISSQNot() {
-		return ISSQNot;
+	public String getvDevTrib() {
+		return vDevTrib;
 	}
-	public void setISSQNot(ISSQNBean not) {
-		ISSQNot = not;
+	public void setvDevTrib(String vDevTrib) {
+		this.vDevTrib = vDevTrib;
 	}
-	public ValoresRetTrib getRetTrib() {
-		return retTrib;
+	public String getvCBS() {
+		return vCBS;
 	}
-	public void setRetTrib(ValoresRetTrib retTrib) {
-		this.retTrib = retTrib;
+	public void setvCBS(String vCBS) {
+		this.vCBS = vCBS;
 	}
-	public ISTot getISTot() {
-		return ISTot;
+	public String getvCredPres() {
+		return vCredPres;
 	}
-	public void setISTot(ISTot iSTot) {
-		ISTot = iSTot;
+	public void setvCredPres(String vCredPres) {
+		this.vCredPres = vCredPres;
 	}
-	public IBSCBSTot getIBSCBSTot() {
-		return IBSCBSTot;
+	public String getvCredPresCondSus() {
+		return vCredPresCondSus;
 	}
-	public void setIBSCBSTot(IBSCBSTot iBSCBSTot) {
-		IBSCBSTot = iBSCBSTot;
+	public void setvCredPresCondSus(String vCredPresCondSus) {
+		this.vCredPresCondSus = vCredPresCondSus;
 	}
-	public String getvNFTot() {
-		return vNFTot;
-	}
-	public void setvNFTot(String vNFTot) {
-		this.vNFTot = vNFTot;
-	}			
 }

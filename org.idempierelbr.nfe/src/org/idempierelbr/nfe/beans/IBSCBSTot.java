@@ -12,51 +12,27 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
-public class Valores {
-
-		// Valores Totais da NF-E
+public class IBSCBSTot {
+	private String vBCIBSCBS;
+	private IBSTot gIBS;
+	private CBSTot gCBS;
 	
-	private ValoresICMS ICMSTot;
-	private ISSQNBean ISSQNot;
-	private ValoresRetTrib retTrib;
-	private ISTot ISTot;
-	private IBSCBSTot IBSCBSTot;
-	private String vNFTot;
-	
-	public ValoresICMS getICMSTot() {
-		return ICMSTot;
+	public String getvBCIBSCBS() {
+		return vBCIBSCBS;
 	}
-	public void setICMSTot(ValoresICMS tot) {
-		ICMSTot = tot;
+	public void setvBCIBSCBS(String vBCIBSCBS) {
+		this.vBCIBSCBS = vBCIBSCBS;
 	}
-	public ISSQNBean getISSQNot() {
-		return ISSQNot;
+	public IBSTot getgIBS() {
+		return gIBS;
 	}
-	public void setISSQNot(ISSQNBean not) {
-		ISSQNot = not;
+	public void setgIBS(IBSTot gIBS) {
+		this.gIBS = gIBS;
 	}
-	public ValoresRetTrib getRetTrib() {
-		return retTrib;
+	public CBSTot getgCBS() {
+		return gCBS;
 	}
-	public void setRetTrib(ValoresRetTrib retTrib) {
-		this.retTrib = retTrib;
+	public void setgCBS(CBSTot gCBS) {
+		this.gCBS = gCBS;
 	}
-	public ISTot getISTot() {
-		return ISTot;
-	}
-	public void setISTot(ISTot iSTot) {
-		ISTot = iSTot;
-	}
-	public IBSCBSTot getIBSCBSTot() {
-		return IBSCBSTot;
-	}
-	public void setIBSCBSTot(IBSCBSTot iBSCBSTot) {
-		IBSCBSTot = iBSCBSTot;
-	}
-	public String getvNFTot() {
-		return vNFTot;
-	}
-	public void setvNFTot(String vNFTot) {
-		this.vNFTot = vNFTot;
-	}			
 }

@@ -12,51 +12,14 @@
  *****************************************************************************/
 package org.idempierelbr.nfe.beans;
 
-public class Valores {
+public class ISTot {
+	private String vIS;
 
-		// Valores Totais da NF-E
-	
-	private ValoresICMS ICMSTot;
-	private ISSQNBean ISSQNot;
-	private ValoresRetTrib retTrib;
-	private ISTot ISTot;
-	private IBSCBSTot IBSCBSTot;
-	private String vNFTot;
-	
-	public ValoresICMS getICMSTot() {
-		return ICMSTot;
+	public String getvIS() {
+		return vIS;
 	}
-	public void setICMSTot(ValoresICMS tot) {
-		ICMSTot = tot;
+
+	public void setvIS(String vIS) {
+		this.vIS = vIS;
 	}
-	public ISSQNBean getISSQNot() {
-		return ISSQNot;
-	}
-	public void setISSQNot(ISSQNBean not) {
-		ISSQNot = not;
-	}
-	public ValoresRetTrib getRetTrib() {
-		return retTrib;
-	}
-	public void setRetTrib(ValoresRetTrib retTrib) {
-		this.retTrib = retTrib;
-	}
-	public ISTot getISTot() {
-		return ISTot;
-	}
-	public void setISTot(ISTot iSTot) {
-		ISTot = iSTot;
-	}
-	public IBSCBSTot getIBSCBSTot() {
-		return IBSCBSTot;
-	}
-	public void setIBSCBSTot(IBSCBSTot iBSCBSTot) {
-		IBSCBSTot = iBSCBSTot;
-	}
-	public String getvNFTot() {
-		return vNFTot;
-	}
-	public void setvNFTot(String vNFTot) {
-		this.vNFTot = vNFTot;
-	}			
 }

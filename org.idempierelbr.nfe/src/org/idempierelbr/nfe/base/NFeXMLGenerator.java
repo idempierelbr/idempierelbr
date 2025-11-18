@@ -1,6 +1,7 @@
 package org.idempierelbr.nfe.base;
 
 import java.io.File;
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Properties;
@@ -52,6 +53,7 @@ import org.idempierelbr.base.util.RemoverAcentos;
 import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.base.wrapper.I_W_C_BPartner;
 import org.idempierelbr.nfe.beans.AdicoesDI;
+import org.idempierelbr.nfe.beans.CBSTot;
 import org.idempierelbr.nfe.beans.COFINSBean;
 import org.idempierelbr.nfe.beans.COFINSSTBean;
 import org.idempierelbr.nfe.beans.ChaveNFE;
@@ -67,12 +69,17 @@ import org.idempierelbr.nfe.beans.EnderDest;
 import org.idempierelbr.nfe.beans.EnderEmit;
 import org.idempierelbr.nfe.beans.FormasPagamentoNFEBean;
 import org.idempierelbr.nfe.beans.IBSCBSBean;
+import org.idempierelbr.nfe.beans.IBSCBSTot;
+import org.idempierelbr.nfe.beans.IBSMunTot;
+import org.idempierelbr.nfe.beans.IBSTot;
+import org.idempierelbr.nfe.beans.IBSUFTot;
 import org.idempierelbr.nfe.beans.ICMSBean;
 import org.idempierelbr.nfe.beans.ICMSUFDestBean;
 import org.idempierelbr.nfe.beans.IIBean;
 import org.idempierelbr.nfe.beans.IPIBean;
 import org.idempierelbr.nfe.beans.ISBean;
 import org.idempierelbr.nfe.beans.ISSQNBean;
+import org.idempierelbr.nfe.beans.ISTot;
 import org.idempierelbr.nfe.beans.IdentDest;
 import org.idempierelbr.nfe.beans.IdentEmit;
 import org.idempierelbr.nfe.beans.IdentLocRetirada;
@@ -1101,6 +1108,9 @@ public class NFeXMLGenerator {
 		}
 		
 		// Total da NF-e
+		Valores valores = new Valores();
+		
+		// ICMS
 		ValoresICMS valoresicms = new ValoresICMS();
 		valoresicms.setvBC(TextUtil.ZERO_STRING); // vBC - BC do ICMS
 		valoresicms.setvICMS(TextUtil.ZERO_STRING); // vICMS - Valor Total do ICMS
@@ -1162,8 +1172,249 @@ public class NFeXMLGenerator {
 			}
 		}
 
-		Valores valores = new Valores();
 		valores.setICMSTot(valoresicms);
+		
+		// IS
+		ISTot isTot = null;
+		
+		for (MLBRNotaFiscalTax nfTax : nfTaxes){
+			MTax tax = new MTax(ctx, nfTax.getC_Tax_ID(), trxName);
+			
+			if (tax.get_ValueAsInt("LBR_TaxGroup_ID") <= 0)
+				continue;
+			
+			X_LBR_TaxGroup taxGroup = new X_LBR_TaxGroup(ctx, tax.get_ValueAsInt("LBR_TaxGroup_ID"), null);
+			
+			if (taxGroup.getName().toUpperCase().equals("IS")) {
+				isTot = new ISTot();
+				isTot.setvIS(TextUtil.bigdecimalToString(nfTax.getTaxAmt()));
+			}
+		}
+		
+		if (isTot != null)
+			valores.setISTot(isTot);
+		
+		// IBS/CBS
+		BigDecimal vBCIBSCBS = null;
+		BigDecimal ibsUFvDif = null;
+		BigDecimal ibsUFvDevTrib = null;
+		BigDecimal ibsUFvIBSUF = null;
+		
+		BigDecimal ibsMunvDif = null;
+		BigDecimal ibsMunvDevTrib = null;
+		BigDecimal ibsMunvIBSMun = null;
+		
+		BigDecimal vIBS = null;
+		BigDecimal vCredPres = Env.ZERO;
+		BigDecimal vCredPresCondSus = Env.ZERO;
+		
+		BigDecimal cbsvDif = null;
+		BigDecimal cbsvDevTrib = null;
+		BigDecimal cbsvCBS = null;		
+		
+		for (DetalhesProdServBean dpsBean : dados.getContent()) {
+			if (dpsBean == null)
+				continue;
+			
+			if (dpsBean.imposto == null)
+				continue;
+			
+			if (dpsBean.imposto.getIBSCBS() == null)
+				continue;
+			
+			if (dpsBean.imposto.getIBSCBS().getgIBSCBS() == null)
+				continue;
+			
+			if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getvBC() != null) {
+				if (vBCIBSCBS == null)
+					vBCIBSCBS = Env.ZERO;
+				
+				vBCIBSCBS = vBCIBSCBS.add(new BigDecimal(dpsBean.imposto.getIBSCBS().getgIBSCBS().getvBC()));
+			}
+			
+			if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSUF() != null) {
+				if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSUF().getgDif() != null) {
+					if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSUF().getgDif().getvDif() != null) {
+						if (ibsUFvDif == null)
+							ibsUFvDif = Env.ZERO;
+						
+						ibsUFvDif = ibsUFvDif.add(new BigDecimal(dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSUF().getgDif().getvDif()));
+					}
+				}
+				
+				if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSUF().getgDevTrib() != null) {
+					if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSUF().getgDevTrib().getvDevTrib() != null) {
+						if (ibsUFvDevTrib == null)
+							ibsUFvDevTrib = Env.ZERO;
+						
+						ibsUFvDevTrib = ibsUFvDevTrib.add(new BigDecimal(dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSUF().getgDevTrib().getvDevTrib()));
+					}
+				}
+				
+				if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSUF().getvIBSUF() != null) {
+					if (ibsUFvIBSUF == null)
+						ibsUFvIBSUF = Env.ZERO;
+						
+					ibsUFvIBSUF = ibsUFvIBSUF.add(new BigDecimal(dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSUF().getvIBSUF()));
+					
+					if (vIBS == null)
+						vIBS = Env.ZERO;
+					
+					vIBS = vIBS.add(ibsUFvIBSUF);
+				}
+			}
+			
+			if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSMun() != null) {
+				if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSMun().getgDif() != null) {
+					if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSMun().getgDif().getvDif() != null) {
+						if (ibsMunvDif == null)
+							ibsMunvDif = Env.ZERO;
+						
+						ibsMunvDif = ibsMunvDif.add(new BigDecimal(dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSMun().getgDif().getvDif()));
+					}
+				}
+				
+				if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSMun().getgDevTrib() != null) {
+					if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSMun().getgDevTrib().getvDevTrib() != null) {
+						if (ibsMunvDevTrib == null)
+							ibsMunvDevTrib = Env.ZERO;
+						
+						ibsMunvDevTrib = ibsMunvDevTrib.add(new BigDecimal(dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSMun().getgDevTrib().getvDevTrib()));
+					}
+				}
+				
+				if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSMun().getvIBSMun() != null) {
+					if (ibsMunvIBSMun == null)
+						ibsMunvIBSMun = Env.ZERO;
+						
+					ibsMunvIBSMun = ibsMunvIBSMun.add(new BigDecimal(dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSMun().getvIBSMun()));
+					
+					if (vIBS == null)
+						vIBS = Env.ZERO;
+					
+					vIBS = vIBS.add(ibsMunvIBSMun);
+				}
+			}
+			
+			if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgCBS() != null) {
+				if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgCBS().getgDif() != null) {
+					if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgCBS().getgDif().getvDif() != null) {
+						if (cbsvDif == null)
+							cbsvDif = Env.ZERO;
+						
+						cbsvDif = cbsvDif.add(new BigDecimal(dpsBean.imposto.getIBSCBS().getgIBSCBS().getgCBS().getgDif().getvDif()));
+					}
+				}
+				
+				if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgCBS().getgDevTrib() != null) {
+					if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgCBS().getgDevTrib().getvDevTrib() != null) {
+						if (cbsvDevTrib == null)
+							cbsvDevTrib = Env.ZERO;
+						
+						cbsvDevTrib = cbsvDevTrib.add(new BigDecimal(dpsBean.imposto.getIBSCBS().getgIBSCBS().getgCBS().getgDevTrib().getvDevTrib()));
+					}
+				}
+				
+				if (dpsBean.imposto.getIBSCBS().getgIBSCBS().getgCBS().getvCBS() != null) {
+					if (cbsvCBS == null)
+						cbsvCBS = Env.ZERO;
+						
+					cbsvCBS = cbsvCBS.add(new BigDecimal(dpsBean.imposto.getIBSCBS().getgIBSCBS().getgCBS().getvCBS()));
+				}
+			}
+		}
+		
+		IBSUFTot ibsUFTot = null;
+		IBSMunTot ibsMunTot = null;
+		CBSTot cbsTot = null;
+		
+		if (ibsUFvDif != null || ibsUFvDevTrib != null || ibsUFvIBSUF != null) {
+			ibsUFTot = new IBSUFTot();
+			
+			if (ibsUFvDif != null)
+				ibsUFTot.setvDif(TextUtil.bigdecimalToString(ibsUFvDif));
+			else
+				ibsUFTot.setvDif(TextUtil.bigdecimalToString(Env.ZERO));
+			
+			if (ibsUFvDevTrib != null)
+				ibsUFTot.setvDevTrib(TextUtil.bigdecimalToString(ibsUFvDevTrib));
+			else
+				ibsUFTot.setvDevTrib(TextUtil.bigdecimalToString(Env.ZERO));
+			
+			if (ibsUFvIBSUF != null)
+				ibsUFTot.setvIBSUF(TextUtil.bigdecimalToString(ibsUFvIBSUF));
+			else
+				ibsUFTot.setvIBSUF(TextUtil.bigdecimalToString(Env.ZERO));
+		}
+		
+		if (ibsMunvDif != null || ibsMunvDevTrib != null || ibsMunvIBSMun != null) {
+			ibsMunTot = new IBSMunTot();
+			
+			if (ibsMunvDif != null)
+				ibsMunTot.setvDif(TextUtil.bigdecimalToString(ibsMunvDif));
+			else
+				ibsMunTot.setvDif(TextUtil.bigdecimalToString(Env.ZERO));
+			
+			if (ibsMunvDevTrib != null)
+				ibsMunTot.setvDevTrib(TextUtil.bigdecimalToString(ibsMunvDevTrib));
+			else
+				ibsMunTot.setvDevTrib(TextUtil.bigdecimalToString(Env.ZERO));
+			
+			if (ibsMunvIBSMun != null)
+				ibsMunTot.setvIBSMun(TextUtil.bigdecimalToString(ibsMunvIBSMun));
+			else
+				ibsMunTot.setvIBSMun(TextUtil.bigdecimalToString(Env.ZERO));
+		}
+		
+		if (cbsvDif != null || cbsvDevTrib != null || cbsvCBS != null) {
+			cbsTot = new CBSTot();
+			
+			if (cbsvDif != null)
+				cbsTot.setvDif(TextUtil.bigdecimalToString(cbsvDif));
+			else
+				cbsTot.setvDif(TextUtil.bigdecimalToString(Env.ZERO));
+			
+			if (cbsvDevTrib != null)
+				cbsTot.setvDevTrib(TextUtil.bigdecimalToString(cbsvDevTrib));
+			else
+				cbsTot.setvDevTrib(TextUtil.bigdecimalToString(Env.ZERO));
+			
+			if (cbsvCBS != null)
+				cbsTot.setvCBS(TextUtil.bigdecimalToString(cbsvCBS));
+			else
+				cbsTot.setvCBS(TextUtil.bigdecimalToString(Env.ZERO));
+			
+			cbsTot.setvCredPres(TextUtil.bigdecimalToString(vCredPres));
+			cbsTot.setvCredPresCondSus(TextUtil.bigdecimalToString(vCredPresCondSus));
+		}
+		
+		if (ibsUFTot != null || ibsMunTot != null || cbsTot != null) {
+			IBSCBSTot ibsCbsTot = new IBSCBSTot();
+			ibsCbsTot.setvBCIBSCBS(TextUtil.bigdecimalToString(vBCIBSCBS));
+			valores.setIBSCBSTot(ibsCbsTot);
+			
+			if (ibsUFTot != null || ibsMunTot != null) {
+				IBSTot tot = new IBSTot();
+				
+				if (ibsUFTot != null)
+					tot.setgIBSUF(ibsUFTot);
+				
+				if (ibsMunTot != null)
+					tot.setgIBSMun(ibsMunTot);
+				
+				tot.setvIBS(TextUtil.bigdecimalToString(vIBS));
+				tot.setvCredPres(TextUtil.bigdecimalToString(vCredPres));
+				tot.setvCredPresCondSus(TextUtil.bigdecimalToString(vCredPresCondSus));
+				
+				ibsCbsTot.setgIBS(tot);
+			}
+			
+			if (cbsTot != null) {
+				ibsCbsTot.setgCBS(cbsTot);
+			}
+		}
+		//		
+		
 		dados.setTotal(valores);
 	
 		// X. Informações de Transporte da NF-e		
