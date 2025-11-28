@@ -818,8 +818,10 @@ public class MLBRTax extends X_LBR_Tax
 			/**
 			 * 	Region
 			 */
-			X_LBR_TaxConfig_Region tcr = tc.getTC_Region (oi.getAD_Org_ID(), oiLocation.getC_Region_ID(),
-					(bpLoc != null ? bpLoc.getC_Location().getC_Region_ID() : 0), dateAcct);
+			X_LBR_TaxConfig_Region tcr = tc.getTC_Region (oi.getAD_Org_ID(),
+					oiLocation.getC_Region_ID(), (bpLoc != null ? bpLoc.getC_Location().getC_Region_ID() : 0),
+					oiLocation.getC_City_ID(), (bpLoc != null ? bpLoc.getC_Location().getC_City_ID() : 0),
+					dateAcct);
 			
 			if (tcr != null)
 			{
@@ -927,10 +929,12 @@ public class MLBRTax extends X_LBR_Tax
 		//	Tax Definition
 		int orgRegionID = oiLocation.getC_Location_ID() < 1 ? -1 : oiLocation.getC_Region_ID();
 		int bpRegionID = bpLoc != null ? bpLoc.getC_Location().getC_Region_ID() : 0;
+		int orgCityID = oiLocation.getC_Location_ID() < 1 ? -1 : oiLocation.getC_City_ID();
+		int bpCityID = bpLoc != null ? bpLoc.getC_Location().getC_City_ID() : 0;
 		
 		MLBRTaxDefinition[] taxesDef = MLBRTaxDefinition.get (oi.getAD_Client_ID(), oi.getAD_Org_ID(), bp.getC_BPartner_ID(), C_DocTypeTarget_ID, 
-				(isSOTrx ? orgRegionID : bpRegionID),
-				(isSOTrx ? bpRegionID : orgRegionID),
+				(isSOTrx ? orgRegionID : bpRegionID), (isSOTrx ? bpRegionID : orgRegionID),
+				(isSOTrx ? orgCityID : bpCityID), (isSOTrx ? bpCityID : orgCityID),
 				(isSOTrx ? bpW.getLBR_CustomerCategory_ID() : bpW.getLBR_VendorCategory_ID()), 
 				(isSOTrx ? bpW.getLBR_FiscalGroup_Customer_ID() : bpW.getLBR_FiscalGroup_Vendor_ID()), pW.getLBR_FiscalGroup_Product_ID(), 
 				pW.getLBR_NCM_ID(),  pW.getLBR_ProductCategory_ID(), p.getM_Product_ID() , hasSubstitution, isSOTrx, lbr_TransactionType, dateAcct);

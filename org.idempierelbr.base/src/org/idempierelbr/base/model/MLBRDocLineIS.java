@@ -1,5 +1,6 @@
 package org.idempierelbr.base.model;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Properties;
@@ -8,6 +9,7 @@ import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.Query;
 
 public class MLBRDocLineIS extends X_LBR_DocLine_IS {
+	private static final long serialVersionUID = 1L;
 
 	public MLBRDocLineIS(Properties ctx, int LBR_DocLine_IS_ID, String trxName) {
 		super(ctx, LBR_DocLine_IS_ID, trxName);
@@ -32,6 +34,51 @@ public class MLBRDocLineIS extends X_LBR_DocLine_IS {
 	public MLBRDocLineIS(Properties ctx, ResultSet rs, String trxName) {
 		super(ctx, rs, trxName);
 		// TODO Auto-generated constructor stub
+	}
+	
+	/** Get Taxable Quantity.
+		@return Taxable Quantity
+	  */
+	public BigDecimal getLBR_QtyTax()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_QtyTax);
+		return bd;
+	}
+	
+	/** Get Tax Amount.
+		@return Defines the Tax Amount
+	  */
+	public BigDecimal getLBR_TaxAmt()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxAmt);
+		return bd;
+	}
+	
+	/** Get Tax Base Amount.
+		@return Defines the Tax Base Amount
+	  */
+	public BigDecimal getLBR_TaxBaseAmt()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
+		return bd;
+	}
+	
+	/** Get Tax Rate.
+		@return Indicates the Tax Rate
+	  */
+	public BigDecimal getLBR_TaxRate()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRate);
+		return bd;
+	}
+	
+	/** Get Tax Rate Espec..
+		@return Indicates the Tax Rate Espec.
+	  */
+	public BigDecimal getLBR_TaxRateEspec()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRateEspec);
+		return bd;
 	}
 
 	/**

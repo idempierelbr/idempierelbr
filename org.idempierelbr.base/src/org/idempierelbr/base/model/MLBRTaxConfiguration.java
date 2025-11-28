@@ -16,6 +16,8 @@ package org.idempierelbr.base.model;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
@@ -159,20 +161,42 @@ public class MLBRTaxConfiguration extends X_LBR_TaxConfiguration
 	 * 	@param 	Valid From
 	 * 	@return X_LBR_TaxConfig_Region
 	 */
-	public X_LBR_TaxConfig_Region getTC_Region (int AD_Org_ID, int C_Region_ID, int To_Region_ID, Timestamp validFrom)
-	{
-		String where = "IsActive='Y' AND AD_Org_ID IN (0, ?) AND LBR_TaxConfiguration_ID=? AND C_Region_ID=? AND To_Region_ID=? ";
-		//
-		if (validFrom != null)
-			where += "AND (ValidFrom IS NULL OR ValidFrom>=" + DB.TO_DATE(validFrom) + ") ";
-		//
-		X_LBR_TaxConfig_Region tcr = new Query (Env.getCtx(), X_LBR_TaxConfig_Region.Table_Name, where, get_TrxName())
-			.setParameters(new Object[]{AD_Org_ID, getLBR_TaxConfiguration_ID(), C_Region_ID, To_Region_ID})
-			.setOrderBy("AD_Org_ID DESC, ValidFrom DESC")
-			.first();
-		//
-		return tcr;
-	}	//	getTC_Region
+	public X_LBR_TaxConfig_Region getTC_Region(
+	    int AD_Org_ID,
+	    int fromRegion_ID, int toRegion_ID,
+	    int fromCity_ID, int toCity_ID,
+	    Timestamp validFrom
+	) {
+	    String where = "IsActive='Y' AND AD_Org_ID IN (0, ?) AND LBR_TaxConfiguration_ID=? ";
+	    List<Object> params = new ArrayList<>();
+	    params.add(AD_Org_ID);
+	    params.add(getLBR_TaxConfiguration_ID());
+
+	    boolean hasRegion = fromRegion_ID > 0 || toRegion_ID > 0;
+	    boolean hasCity = fromCity_ID > 0 || toCity_ID > 0;
+
+	    if (!hasRegion && hasCity) {
+	        where += "AND C_City_ID=? AND LBR_To_City_ID=? ";
+	        params.add(fromCity_ID);
+	        params.add(toCity_ID);
+	    } else {
+	    	where += "AND C_Region_ID=? AND To_Region_ID=? AND C_City_ID=? AND LBR_To_City_ID=? ";
+	        params.add(fromRegion_ID);
+	        params.add(toRegion_ID);
+	        params.add(fromCity_ID);
+	        params.add(toCity_ID);
+	    }
+
+	    if (validFrom != null)
+	        where += "AND (ValidFrom IS NULL OR ValidFrom>=" + DB.TO_DATE(validFrom) + ") ";
+
+	    X_LBR_TaxConfig_Region tcr = new Query(Env.getCtx(), X_LBR_TaxConfig_Region.Table_Name, where, get_TrxName())
+	        .setParameters(params.toArray())
+	        .setOrderBy("AD_Org_ID DESC, ValidFrom DESC")
+	        .first();
+
+	    return tcr;
+	}
 	
 	/**
 	 * 		Retorna o grupo mais relevante para o grupo de parceiros
