@@ -305,8 +305,91 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IR_NAME)) {
 					createOTHER(tl, taxChildW.getLBR_TaxGroup_ID());
 				}
+				// IBS/CBS
+				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_UF_NAME) ||
+						taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_MUN_NAME) ||
+						taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_CBS_NAME)) {					
+					
+					createIBSCBS(tl);
+				} 
+				// IS
+				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IS_NAME)) {					
+					createIS(tl);
+				} 
 			}
 		}
+	}
+	
+	private void createIBSCBS(MLBRTaxLine tl) {
+		MLBRDocLineIBSCBS[] ibscbsArray = MLBRDocLineIBSCBS.getOfDetails(this);
+		MLBRDocLineIBSCBS ibscbs = null;
+		
+		if (ibscbsArray.length > 0)
+			ibscbs = ibscbsArray[0];
+		else {
+			ibscbs = new MLBRDocLineIBSCBS(getCtx(), 0, get_TrxName());
+			ibscbs.setLBR_DocLine_Details_ID(get_ID());
+		}
+
+		ibscbs.setAD_Org_ID(getAD_Org_ID());
+		ibscbs.setLBR_CST_IBSCBS_ID(tl.get_ValueAsInt("LBR_CST_IBSCBS_ID"));
+		ibscbs.setLBR_ClassTrib_IBSCBS_ID(tl.get_ValueAsInt("LBR_ClassTrib_IBSCBS_ID"));
+		ibscbs.setLBR_TaxBaseAmt(tl.getLBR_TaxBaseAmt());
+		
+		I_LBR_TaxName LBR_TaxName = tl.getLBR_TaxName();
+		
+		if (LBR_TaxName != null && LBR_TaxName.getName().equals(MLBRTax.TAX_GROUP_IBS_UF_NAME)) {
+			ibscbs.setLBR_IBS_UF_TaxRate((BigDecimal)tl.get_Value("LBR_TaxRate"));
+			ibscbs.setLBR_IBS_UF_TaxDeferralRate((BigDecimal)tl.get_Value("LBR_TaxDeferralRate"));
+			ibscbs.setLBR_IBS_UF_TaxDeferralAmt((BigDecimal)tl.get_Value("LBR_TaxDeferralAmt"));
+			ibscbs.setLBR_IBS_UF_TaxDevAmt((BigDecimal)tl.get_Value("LBR_TaxDevAmt"));
+			ibscbs.setLBR_IBS_UF_TaxRedRate((BigDecimal)tl.get_Value("LBR_TaxRedRate"));
+			ibscbs.setLBR_IBS_UF_TaxRedEfetRate((BigDecimal)tl.get_Value("LBR_TaxRedEfetRate"));
+			ibscbs.setLBR_IBS_UF_TaxAmt((BigDecimal)tl.get_Value("LBR_TaxAmt"));
+		} else if (LBR_TaxName != null && LBR_TaxName.getName().equals("IBSMun")) {
+			ibscbs.setLBR_IBS_Mun_TaxRate((BigDecimal)tl.get_Value("LBR_TaxRate"));
+			ibscbs.setLBR_IBS_Mun_TaxDeferralRate((BigDecimal)tl.get_Value("LBR_TaxDeferralRate"));
+			ibscbs.setLBR_IBS_Mun_TaxDeferralAmt((BigDecimal)tl.get_Value("LBR_TaxDeferralAmt"));
+			ibscbs.setLBR_IBS_Mun_TaxDevAmt((BigDecimal)tl.get_Value("LBR_TaxDevAmt"));
+			ibscbs.setLBR_IBS_Mun_TaxRedRate((BigDecimal)tl.get_Value("LBR_TaxRedRate"));
+			ibscbs.setLBR_IBS_Mun_TaxRedEfetRate((BigDecimal)tl.get_Value("LBR_TaxRedEfetRate"));
+			ibscbs.setLBR_IBS_Mun_TaxAmt((BigDecimal)tl.get_Value("LBR_TaxAmt"));
+		}  else if (LBR_TaxName != null && LBR_TaxName.getName().equals(MLBRTax.TAX_GROUP_CBS_NAME)) {
+			ibscbs.setLBR_CBS_TaxRate((BigDecimal)tl.get_Value("LBR_TaxRate"));
+			ibscbs.setLBR_CBS_TaxDeferralRate((BigDecimal)tl.get_Value("LBR_TaxDeferralRate"));
+			ibscbs.setLBR_CBS_TaxDeferralAmt((BigDecimal)tl.get_Value("LBR_TaxDeferralAmt"));
+			ibscbs.setLBR_CBS_TaxDevAmt((BigDecimal)tl.get_Value("LBR_TaxDevAmt"));
+			ibscbs.setLBR_CBS_TaxRedRate((BigDecimal)tl.get_Value("LBR_TaxRedRate"));
+			ibscbs.setLBR_CBS_TaxRedEfetRate((BigDecimal)tl.get_Value("LBR_TaxRedEfetRate"));
+			ibscbs.setLBR_CBS_TaxAmt((BigDecimal)tl.get_Value("LBR_TaxAmt"));
+		}
+		
+		ibscbs.saveEx();
+	}
+
+	/**
+	 * 	Create IS (child of Doc Line Details)
+	 */
+	private void createIS(MLBRTaxLine tl) {
+		MLBRDocLineIS[] isArray = MLBRDocLineIS.getOfDetails(this);
+		MLBRDocLineIS is = null;
+		
+		if (isArray.length > 0)
+			is = isArray[0];
+		else {
+			is = new MLBRDocLineIS(getCtx(), 0, get_TrxName());
+			is.setLBR_DocLine_Details_ID(get_ID());
+		}
+
+		is.setAD_Org_ID(getAD_Org_ID());
+		is.setIsTaxIncluded(tl.isTaxIncluded());
+		is.setLBR_CST_IS_ID(tl.get_ValueAsInt("LBR_CST_IS_ID"));
+		is.setLBR_ClassTrib_IS_ID(tl.get_ValueAsInt("LBR_ClassTrib_IS_ID"));		
+		is.setLBR_TaxBaseAmt(tl.getLBR_TaxBaseAmt());
+		is.setLBR_TaxRate(tl.getLBR_TaxRate());
+		is.setLBR_TaxAmt(tl.getLBR_TaxAmt());
+		
+		is.saveEx();
 	}
 	
 	/**

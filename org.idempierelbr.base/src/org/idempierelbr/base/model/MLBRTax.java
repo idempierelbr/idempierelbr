@@ -258,6 +258,16 @@ public class MLBRTax extends X_LBR_Tax
 				taxAmt = getTaxAmt (taxBase, taxLine.getLBR_TaxRate(), false);
 			}
 			
+			if (taxName != null) {
+				if (taxName.getName().equalsIgnoreCase("IBSUF") || 
+						taxName.getName().equalsIgnoreCase("IBSMun") ||
+						taxName.getName().equalsIgnoreCase("CBS") ||
+						taxName.getName().equalsIgnoreCase("IS")) {
+					taxBase = params.get(AMT).setScale(17, BigDecimal.ROUND_HALF_UP);
+					taxAmt = getTaxAmt (taxBase, taxLine.getLBR_TaxRate(), false);
+				}
+			}
+			
 			//	Encontra o valor previamente calculado para ST
 			if (MLBRTaxName.LBR_TAXTYPE_Substitution.equals(taxName.getLBR_TaxType())
 					&& taxName.getLBR_TaxSubstitution_ID() > 0)
@@ -536,6 +546,23 @@ public class MLBRTax extends X_LBR_Tax
 			newLine.setQty(lines[i].getQty());
 			newLine.setLBR_TaxBaseType_ID(lines[i].getLBR_TaxBaseType_ID());
 			newLine.setLBR_TaxListAmt(lines[i].getLBR_TaxListAmt());
+			
+			if (lines[i].get_ValueAsInt("LBR_CST_IBSCBS_ID") > 0)
+				newLine.set_ValueOfColumn("LBR_CST_IBSCBS_ID", lines[i].get_ValueAsInt("LBR_CST_IBSCBS_ID"));
+			
+			if (lines[i].get_ValueAsInt("LBR_ClassTrib_IBSCBS_ID") > 0)
+				newLine.set_ValueOfColumn("LBR_ClassTrib_IBSCBS_ID", lines[i].get_ValueAsInt("LBR_ClassTrib_IBSCBS_ID"));
+			
+			newLine.set_ValueOfColumn("LBR_TaxDeferralRate", lines[i].get_Value("LBR_TaxDeferralRate"));
+			newLine.set_ValueOfColumn("LBR_TaxRedRate", lines[i].get_Value("LBR_TaxRedRate"));
+			newLine.set_ValueOfColumn("LBR_TaxRedEfetRate", lines[i].get_Value("LBR_TaxRedEfetRate"));
+			
+			if (lines[i].get_ValueAsInt("LBR_CST_IS_ID") > 0)
+				newLine.set_ValueOfColumn("LBR_CST_IS_ID", lines[i].get_ValueAsInt("LBR_CST_IS_ID"));
+			
+			if (lines[i].get_ValueAsInt("LBR_ClassTrib_IS_ID") > 0)
+				newLine.set_ValueOfColumn("LBR_ClassTrib_IS_ID", lines[i].get_ValueAsInt("LBR_ClassTrib_IS_ID"));
+			
 			newLine.saveEx();
 		}
 
