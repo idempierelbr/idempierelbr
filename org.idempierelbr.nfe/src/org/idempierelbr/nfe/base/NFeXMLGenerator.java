@@ -1260,7 +1260,7 @@ public class NFeXMLGenerator {
 					if (vIBS == null)
 						vIBS = Env.ZERO;
 					
-					vIBS = vIBS.add(ibsUFvIBSUF);
+					vIBS = vIBS.add(new BigDecimal(dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSUF().getvIBSUF()));
 				}
 			}
 			
@@ -1292,7 +1292,7 @@ public class NFeXMLGenerator {
 					if (vIBS == null)
 						vIBS = Env.ZERO;
 					
-					vIBS = vIBS.add(ibsMunvIBSMun);
+					vIBS = vIBS.add(new BigDecimal(dpsBean.imposto.getIBSCBS().getgIBSCBS().getgIBSMun().getvIBSMun()));
 				}
 			}
 			

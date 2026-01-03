@@ -346,7 +346,7 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			ibscbs.setLBR_IBS_UF_TaxRedRate((BigDecimal)tl.get_Value("LBR_TaxRedRate"));
 			ibscbs.setLBR_IBS_UF_TaxRedEfetRate((BigDecimal)tl.get_Value("LBR_TaxRedEfetRate"));
 			ibscbs.setLBR_IBS_UF_TaxAmt((BigDecimal)tl.get_Value("LBR_TaxAmt"));
-		} else if (LBR_TaxName != null && LBR_TaxName.getName().equals("IBSMun")) {
+		} else if (LBR_TaxName != null && LBR_TaxName.getName().equals(MLBRTax.TAX_GROUP_IBS_MUN_NAME)) {
 			ibscbs.setLBR_IBS_Mun_TaxRate((BigDecimal)tl.get_Value("LBR_TaxRate"));
 			ibscbs.setLBR_IBS_Mun_TaxDeferralRate((BigDecimal)tl.get_Value("LBR_TaxDeferralRate"));
 			ibscbs.setLBR_IBS_Mun_TaxDeferralAmt((BigDecimal)tl.get_Value("LBR_TaxDeferralAmt"));
