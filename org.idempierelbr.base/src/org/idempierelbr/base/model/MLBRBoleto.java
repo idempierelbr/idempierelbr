@@ -612,17 +612,39 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 		return null;
 	}
 
-	public static MLBRBoleto getByDocumentNo(Properties ctx, String documentNo,	String trxName) {
-		MTable table = MTable.get (ctx, MLBRBoleto.Table_Name);
-		Query query =  new Query(ctx, table, "DocumentNo=?", trxName);
-		query.setParameters(new Object[]{documentNo});
+	public static MLBRBoleto getByDocumentNo(Properties ctx, int AD_Org_ID, String documentNo, String trxName) {
+		MTable table = MTable.get(ctx, MLBRBoleto.Table_Name);
+
+		Query query = new Query(
+			ctx,
+			table,
+			"DocumentNo = ? AND AD_Org_ID IN (0, ?)",
+			trxName
+		);
+
+		query.setParameters(new Object[] { documentNo, AD_Org_ID });
+		query.setOrderBy(
+			"CASE WHEN AD_Org_ID = " + AD_Org_ID + " THEN 0 ELSE 1 END"
+		);
+
 		return query.firstOnly();
 	}
 	
-	public static MLBRBoleto getByNumberInBank(Properties ctx, String numberInBank,	String trxName) {
-		MTable table = MTable.get (ctx, MLBRBoleto.Table_Name);
-		Query query =  new Query(ctx, table, "LBR_NumberInBank=?", trxName);
-		query.setParameters(new Object[]{numberInBank});
+	public static MLBRBoleto getByNumberInBank(Properties ctx, int AD_Org_ID, String numberInBank, String trxName) {
+		MTable table = MTable.get(ctx, MLBRBoleto.Table_Name);
+
+		Query query = new Query(
+			ctx,
+			table,
+			"LBR_NumberInBank = ? AND AD_Org_ID IN (0, ?)",
+			trxName
+		);
+
+		query.setParameters(new Object[] { numberInBank, AD_Org_ID });
+		query.setOrderBy(
+			"CASE WHEN AD_Org_ID = " + AD_Org_ID + " THEN 0 ELSE 1 END"
+		);
+
 		return query.firstOnly();
 	}
 	

@@ -60,7 +60,7 @@ public class CNABRecordsProcess {
 	private static final int FEETYPE_IOF = 1;
 	private static final int FEETYPE_MULTA_JUROS = 2;
 
-	public static String process(CNABRecords returnRecords , CNAB240Return svrP, IBankCollection bankCollection ) throws IOException {
+	public static String process(CNABRecords returnRecords, CNAB240Return svrP, IBankCollection bankCollection, int AD_Org_ID) throws IOException {
 		// TODO Auto-generated method stub
 		
 		List<CNABBaseRecord> records = returnRecords.getListaRegistros();
@@ -91,7 +91,6 @@ public class CNABRecordsProcess {
 		}
 
 		int AD_Client_ID = 0;
-		int AD_Org_ID = 0;
 		
 		BigDecimal totalDeTarifasCustasOutrasDespesasOutrasReceitas = Env.ZERO;
 		
@@ -105,12 +104,12 @@ public class CNABRecordsProcess {
 			String nossoNumero = segT.getNossoNumero();
 			MLBRBoleto boleto = null;
 			if ( docNo != null && !docNo.isEmpty() ) {
-				boleto = MLBRBoleto.getByDocumentNo( svrP.getCtx(), docNo , svrP.get_TrxName());
+				boleto = MLBRBoleto.getByDocumentNo( svrP.getCtx(), AD_Org_ID, docNo , svrP.get_TrxName());
 
 			}
 
 			if ( boleto == null && !nossoNumero.isEmpty()) {
-				boleto = MLBRBoleto.getByNumberInBank(svrP.getCtx(), nossoNumero, svrP.get_TrxName());
+				boleto = MLBRBoleto.getByNumberInBank(svrP.getCtx(), AD_Org_ID, nossoNumero, svrP.get_TrxName());
 			}
 				
 			

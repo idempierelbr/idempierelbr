@@ -2,7 +2,6 @@ package org.idempierelbr.openitems.processcnab240;
 
 import java.io.File;
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.logging.Level;
 
 import org.adempiere.exceptions.AdempiereException;
@@ -23,6 +22,7 @@ import org.idempierelbr.cnab240.annotated.CNABRecords;
  */
 public class CNAB240Return extends SvrProcess
 {
+	private int p_AD_Org_ID;
 	private String p_CNABFile = null;
 	private int p_C_BankAccount_ID;
 	
@@ -53,6 +53,8 @@ public class CNAB240Return extends SvrProcess
 			String name = para[i].getParameterName();
 			if (para[i].getParameter() == null)
 				;
+			else if (name.equals("AD_Org_ID"))
+				p_AD_Org_ID = para[i].getParameterAsInt();
 			else if (name.equals("CNABFile"))
 				p_CNABFile = (String) para[i].getParameter();
 			else if (name.equals("C_BankAccount_ID"))
@@ -107,6 +109,7 @@ public class CNAB240Return extends SvrProcess
 
 		// Create CNAB File record
 		cnab = new MLBRCNAB(getCtx() , 0 , get_TrxName() );
+		cnab.setAD_Org_ID(p_AD_Org_ID);
 		cnab.setC_Bank_ID(m_bank.get_ID());
 		cnab.setC_BankAccount_ID(bankAccount.get_ID());
 		CNABHeaderArquivoRecord fileHeader = records.getFileHeader();
@@ -127,7 +130,7 @@ public class CNAB240Return extends SvrProcess
 			attachment.saveEx();
 
 
-		String result = CNABRecordsProcess.process( records , this , bankCollection );
+		String result = CNABRecordsProcess.process(records, this, bankCollection, p_AD_Org_ID);
 
 		cnab.setDescription(getName() + " (" + m_bank.getName() + ")\n" + getProcessInfo().getSummary());
 		cnab.saveEx();

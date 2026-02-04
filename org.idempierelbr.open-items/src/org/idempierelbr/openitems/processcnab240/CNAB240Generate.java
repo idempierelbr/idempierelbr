@@ -204,7 +204,8 @@ public class CNAB240Generate extends SvrProcess
 		if (cedente.get_ValueAsString("LBR_BPTypeBR").equals("PF")) {
 			tipoInscricao = 1;
 			inscricao = cedente.get_ValueAsString("LBR_CPF");
-		} else if (cedente.get_ValueAsString("LBR_BPTypeBR").equals("PJ")) {
+		} else if (cedente.get_ValueAsString("LBR_BPTypeBR").equals("PJ") ||
+				cedente.get_ValueAsString("LBR_BPTypeBR").equals("ME")) {
 			tipoInscricao = 2;
 			inscricao = cedente.get_ValueAsString("LBR_CNPJ");
 		}
@@ -439,7 +440,8 @@ public class CNAB240Generate extends SvrProcess
 			if (bp.get_ValueAsString("LBR_BPTypeBR").equals("PF")) {
 				segQ.setTipoInscricaoSacado( 1 );
 				segQ.setInscricaoSacado(bp.get_ValueAsString("LBR_CPF"));
-			} else if (bp.get_ValueAsString("LBR_BPTypeBR").equals("PJ")) {
+			} else if (bp.get_ValueAsString("LBR_BPTypeBR").equals("PJ") ||
+					bp.get_ValueAsString("LBR_BPTypeBR").equals("ME")) {
 				segQ.setTipoInscricaoSacado( 2 );
 				segQ.setInscricaoSacado(bp.get_ValueAsString("LBR_CNPJ"));
 			}
@@ -485,7 +487,8 @@ public class CNAB240Generate extends SvrProcess
 			if (bp.get_ValueAsString("LBR_BPTypeBR").equals("PF")) {
 				segQ.setTipoInscricaoSacadorAvalista(1);
 				segQ.setInscricaoSacadorAvalista(bp.get_ValueAsString("LBR_CPF"));
-			} else if (bp.get_ValueAsString("LBR_BPTypeBR").equals("PJ")) {
+			} else if (bp.get_ValueAsString("LBR_BPTypeBR").equals("PJ") ||
+					bp.get_ValueAsString("LBR_BPTypeBR").equals("ME")) {
 				segQ.setTipoInscricaoSacadorAvalista(2);
 				segQ.setInscricaoSacadorAvalista(bp.get_ValueAsString("LBR_CNPJ"));
 			}
