@@ -41,7 +41,7 @@ import org.adempiere.webui.event.ValueChangeEvent;
 import org.adempiere.webui.event.ValueChangeListener;
 import org.adempiere.webui.session.SessionManager;
 import org.adempiere.webui.theme.ThemeManager;
-import org.adempiere.webui.window.FDialog;
+import org.adempiere.webui.window.Dialog;
 import org.compiere.model.GridField;
 import org.compiere.model.GridTab;
 import org.compiere.model.GridWindow;
@@ -811,7 +811,7 @@ public final class WTaxesDialog extends Window
 		
 		// Mandatory
 		if (f_LBR_TaxName_ID == null || f_LBR_TaxName_ID.getValue() == null) {
-			FDialog.error(m_WindowNo, this, "FillMandatory", Msg.getElement(Env.getCtx(), "LBR_TaxName_ID"));
+			Dialog.error(m_WindowNo, "FillMandatory", Msg.getElement(Env.getCtx(), "LBR_TaxName_ID"));
 			return;
 		}
 		
@@ -989,7 +989,7 @@ public final class WTaxesDialog extends Window
 				stmt = null;
 			}
 			if (i == 0)
-				FDialog.error(m_WindowNo, this, "TaxNotUpdated");
+				Dialog.error(m_WindowNo, "TaxNotUpdated");
 			
 			int currentRow = m_mTab.getCurrentRow();
 			m_mTab.query(false);

@@ -501,7 +501,7 @@ public class NFFromXMLGen
 		if (bp == null)
 			return null;
 		
-		int AD_Org_ID = bp.getAD_OrgBP_ID_Int();
+		int AD_Org_ID = bp.getAD_Org_ID();
 		
 		if (AD_Org_ID <= 0)
 			return null;

@@ -34,7 +34,7 @@ import org.adempiere.webui.panel.ADForm;
 import org.adempiere.webui.panel.IFormController;
 import org.adempiere.webui.session.SessionManager;
 import org.adempiere.webui.util.ZKUpdateUtil;
-import org.adempiere.webui.window.FDialog;
+import org.adempiere.webui.window.Dialog;
 import org.compiere.model.GridField;
 import org.compiere.model.MColumn;
 import org.compiere.model.MField;
@@ -99,7 +99,6 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 		try
 		{
 			jbInit();
-			LayoutUtils.sendDeferLayoutEvent(mainLayout, 100);
 		}
 		catch (Exception ex)
 		{
@@ -827,7 +826,7 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 				repaintGrid();
 			} catch (Exception e1) {
 				e1.printStackTrace();
-				FDialog.error(m_WindowNo, form, "", "Não foi possível abrir o arquivo selecionado!"
+				Dialog.error(m_WindowNo, "", "Não foi possível abrir o arquivo selecionado!"
 						+ "\nPor favor verifique se é um arquivo XML de NF-e válido.");
 			}
 			return;
@@ -859,11 +858,11 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 			
 			String errorMsg = cmd_save();
 			if (errorMsg != null && errorMsg.length() > 0) {
-				FDialog.error(m_WindowNo, form, "", errorMsg);
+				Dialog.error(m_WindowNo, "", errorMsg);
 				return;
 			}
 
-			FDialog.info(m_WindowNo, form, "", "Nota Fiscal " + xmlDocumentNo + " gerada com sucesso.");
+			Dialog.info(m_WindowNo, "", "Nota Fiscal " + xmlDocumentNo + " gerada com sucesso.");
 			KeyNamePair pair = new KeyNamePair(1, xmlDocumentNo);
 			visible.addItem(pair);
 				

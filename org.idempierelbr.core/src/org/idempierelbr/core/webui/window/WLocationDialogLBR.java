@@ -45,7 +45,7 @@ import org.adempiere.webui.component.Rows;
 import org.adempiere.webui.component.Textbox;
 import org.adempiere.webui.component.Window;
 import org.adempiere.webui.util.ZKUpdateUtil;
-import org.adempiere.webui.window.FDialog;
+import org.adempiere.webui.window.Dialog;
 import org.adempiere.webui.window.WAutoCompleterCity;
 import org.compiere.model.GridField;
 import org.compiere.model.MAddressValidation;
@@ -681,7 +681,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 			String msg = validate_OK();
 			if (msg != null) {
 				onSaveError = true;
-				FDialog.error(0, this, "FillMandatory", Msg.parseTranslation(Env.getCtx(), msg), new Callback<Integer>() {					
+				Dialog.error(0, "FillMandatory", Msg.parseTranslation(Env.getCtx(), msg), new Callback<Integer>() {					
 					@Override
 					public void onCallback(Integer result) {
 						Events.echoEvent("onSaveError", WLocationDialogLBR.this, null);
@@ -702,7 +702,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 			else
 			{
 				onSaveError = true;
-				FDialog.error(0, this, "CityNotFound", (String)null, new Callback<Integer>() {					
+				Dialog.error(0, "CityNotFound", (String)null, new Callback<Integer>() {					
 					@Override
 					public void onCallback(Integer result) {
 						Events.echoEvent("onSaveError", WLocationDialogLBR.this, null);
@@ -749,7 +749,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 					txtPostal.setText(getFormatedCepZip(cep.getCep(), m_location.getCountry().getC_Country_ID()));
 				} else if (cep.getResulCode() == 0) {
 					onSaveError = true;
-					FDialog.error(0, this, "Error", Msg.parseTranslation(Env.getCtx(),
+					Dialog.error(0, "Error", Msg.parseTranslation(Env.getCtx(),
 							"O CEP/ZIP não foi localizado na base de dados."), new Callback<Integer>() {					
 						@Override
 						public void onCallback(Integer result) {
@@ -760,7 +760,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 					return;
 				} else if (cep.getResulCode() == 14) {
 					onSaveError = true;
-					FDialog.error(0, this, "Error", Msg.parseTranslation(Env.getCtx(),
+					Dialog.error(0, "Error", Msg.parseTranslation(Env.getCtx(),
 							"Não foi possível fazer a busca (possível problema com a internet)."), new Callback<Integer>() {					
 						@Override
 						public void onCallback(Integer result) {
@@ -771,7 +771,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 					return;
 				} else {
 					onSaveError = true;
-					FDialog.error(0, this, "Error", Msg.parseTranslation(Env.getCtx(),
+					Dialog.error(0, "Error", Msg.parseTranslation(Env.getCtx(),
 							"Falha ao localizar o CEP/ZIP."), new Callback<Integer>() {					
 						@Override
 						public void onCallback(Integer result) {
@@ -783,7 +783,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 				}
 			} else {
 				onSaveError = true;
-				FDialog.error(0, this, "Error", Msg.parseTranslation(Env.getCtx(),
+				Dialog.error(0, "Error", Msg.parseTranslation(Env.getCtx(),
 						"Por favor, preencha o CEP/ZIP."), new Callback<Integer>() {					
 					@Override
 					public void onCallback(Integer result) {
@@ -803,7 +803,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 			}
 			catch (Exception e) {
 				message = e.getMessage();
-				FDialog.warn(0, this, "URLnotValid", message);
+				Dialog.warn(0, "URLnotValid", message);
 			}
 		}
 		else if (toRoute.equals(event.getTarget()))
@@ -822,7 +822,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 				}
 				catch (Exception e) {
 					message = e.getMessage();
-					FDialog.warn(0, this, "URLnotValid", message);
+					Dialog.warn(0, "URLnotValid", message);
 				}
 			}
 		}
@@ -844,7 +844,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 			String msg = validate_OK();
 			if (msg != null) {
 				onSaveError = true;
-				FDialog.error(0, this, "FillMandatory", Msg.parseTranslation(Env.getCtx(), msg), new Callback<Integer>() {					
+				Dialog.error(0, "FillMandatory", Msg.parseTranslation(Env.getCtx(), msg), new Callback<Integer>() {					
 					@Override
 					public void onCallback(Integer result) {
 						Events.echoEvent("onSaveError", WLocationDialogLBR.this, null);
@@ -899,7 +899,7 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 				if (!ok)
 				{
 					onSaveError = true;
-					FDialog.error(0, this, "Error", m_location.getErrorMessage(), new Callback<Integer>() {					
+					Dialog.error(0, "Error", m_location.getErrorMessage(), new Callback<Integer>() {					
 						@Override
 						public void onCallback(Integer result) {
 							Events.echoEvent("onSaveError", WLocationDialogLBR.this, null);
