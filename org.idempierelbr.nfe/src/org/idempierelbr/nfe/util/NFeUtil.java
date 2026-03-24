@@ -50,6 +50,7 @@ import org.compiere.model.MImage;
 import org.compiere.model.MLocation;
 import org.compiere.model.MOrg;
 import org.compiere.model.MOrgInfo;
+import org.compiere.model.MProcess;
 import org.compiere.model.MRegion;
 import org.compiere.model.MTax;
 import org.compiere.model.MTaxProvider;
@@ -159,9 +160,21 @@ public class NFeUtil {
 		// get jasper file(s) and parameters
 		Map<String, Object> jasperParameters = new HashMap<String, Object>();
 
-		// get from resources
-		InputStream mainJasperInputStream = getClass().getClassLoader()
-				.getResourceAsStream("org/idempierelbr/nfe/report/" + JASPER_FILENAME);
+		// Try to get jasper from process attachment first
+		InputStream mainJasperInputStream = null;
+		MProcess process = new MProcess(p_NF.getCtx(), MLBRNotaFiscal.GENERATE_DANFE_PROCESS_ID, p_NF.get_TrxName());
+		MAttachment attachProcess = process.createAttachment();
+
+		for (int i = attachProcess.getEntryCount() - 1; i >= 0; i--) {
+			if (attachProcess.getEntry(i).getName().equals(JASPER_FILENAME))
+				mainJasperInputStream = attachProcess.getEntry(i).getInputStream();
+		}
+
+		// If attachment not found, get from resources
+		if (mainJasperInputStream == null) {
+			mainJasperInputStream = getClass().getClassLoader()
+					.getResourceAsStream("org/idempierelbr/nfe/report/" + JASPER_FILENAME);
+		}
 
 		jasperParameters.put("REPORT_LOCALE", new Locale("pt", "BR"));
 
