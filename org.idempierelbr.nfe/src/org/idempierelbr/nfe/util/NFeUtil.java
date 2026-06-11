@@ -39,7 +39,6 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.adempiere.exceptions.AdempiereException;
-import org.apache.commons.codec.binary.Base64;
 import org.compiere.model.I_C_BPartner;
 import org.compiere.model.MAttachment;
 import org.compiere.model.MAttachmentEntry;
@@ -738,7 +737,7 @@ public class NFeUtil {
 	 */
 	public static String getDigestBase64String(byte[] data) throws Exception {
 		MessageDigest messageDisgester = MessageDigest.getInstance("SHA-1");
-		return new String(Base64.encodeBase64(messageDisgester.digest(data)));
+		return java.util.Base64.getEncoder().encodeToString(messageDisgester.digest(data));
 	}
 
 	/**
