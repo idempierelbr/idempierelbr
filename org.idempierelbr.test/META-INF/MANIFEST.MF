@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: iDempiereLBR Test
+Bundle-SymbolicName: org.idempierelbr.test
+Bundle-Version: 12.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.adempiere.base;bundle-version="12.0.0",
+ org.idempiere.test;bundle-version="12.0.0",
+ org.idempierelbr.nfe;bundle-version="12.0.0",
+ org.idempierelbr.base;bundle-version="12.0.0"
+Import-Package: org.assertj.core.api;version="3.22.0",
+ org.junit.jupiter.api;version="5.9.0",
+ org.junit.jupiter.api.extension;version="5.9.0",
+ org.junit.jupiter.params;version="5.9.0",
+ org.junit.jupiter.params.provider;version="5.9.0",
+ org.mockito,
+ org.mockito.junit.jupiter
