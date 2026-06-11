@@ -6,7 +6,6 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.security.MessageDigest;
 
-import org.apache.commons.codec.binary.Base64;
 
 /**
  * @author rlemeill
@@ -58,8 +57,7 @@ public class DigestOfFile
     synchronized public String digestAsBase64(File file) throws Exception
     {
         byte[] digest = digestAsByteArray(file);
-        Base64 encoder = new Base64();
-        String digestAsBase64 = new String(encoder.encode(digest),"ASCII");
+        String digestAsBase64 = java.util.Base64.getEncoder().encodeToString(digest);
         return digestAsBase64;
     }
 
@@ -71,8 +69,7 @@ public class DigestOfFile
     public synchronized String digestAsBase64(byte[] input) throws Exception
     {
     	byte[] digest = digestAsByteArray(input);
-    	Base64 encoder = new Base64();
-    	String digestAsBase64 = new String(encoder.encode(digest),"ASCII");
+    	String digestAsBase64 = java.util.Base64.getEncoder().encodeToString(digest);
         return digestAsBase64;
     }
 
