@@ -39,7 +39,7 @@ import org.idempierelbr.nfe.beans.Evento;
 import org.idempierelbr.nfe.beans.I_DetEvento;
 import org.idempierelbr.nfe.beans.InfEvento;
 import org.idempierelbr.nfe.beans.Signature;
-import org.idempierelbr.nfe.stub.StubConnector;
+import javax.net.ssl.SSLContext;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -84,8 +84,9 @@ public class NFeEventUtil {
 		MRegion  orgRegion = new MRegion(ctx, orgLoc.getC_Region_ID(), event.get_TrxName());
 		
 		//INICIALIZA CERTIFICADO
+		SSLContext sslContext;
 		try {
-			DigitalCertificateUtil.setCertificate(ctx, event.getAD_Org_ID());
+			sslContext = DigitalCertificateUtil.buildSSLContext(ctx, event.getAD_Org_ID());
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "Could not set digital certificate";
@@ -100,8 +101,6 @@ public class NFeEventUtil {
 		} catch (Exception e) {
 			throw new AdempiereException(e);
 		}
-		
-		xmlLot = "<nfeDadosMsg>" + xmlLot + "</nfeDadosMsg>";
 		
 		String LBR_NFeModel = null;
 		try{
@@ -118,27 +117,17 @@ public class NFeEventUtil {
 				isAmbienteNacional = true;
 		}
 		
-		StubConnector connector;
-		
+		String service;
 		if (isAmbienteNacional)
-			connector = new StubConnector(NFeUtil.VERSAO_EVENTO,
-				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO_AN,
-				isContingencia(xmlLot), isHomologacao(xmlLot), LBR_NFeModel);
-		else {
-			String service = null;
-			
-			if (LBR_NFeModel.equals(MLBRNotaFiscal.LBR_NFEMODEL_55_NF_E))
-				service = MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO;
-			else if (LBR_NFeModel.equals(MLBRNotaFiscal.LBR_NFEMODEL_65_NFC_E))
-				service = MLBRNFeWebService.SERVICE_NFCE_RECEPCAO_EVENTO;
-			
-			
-			connector = new StubConnector(NFeUtil.VERSAO_EVENTO,
-					orgRegion.get_ID(), service,
-					isContingencia(xmlLot), isHomologacao(xmlLot), LBR_NFeModel);
-		
-		}
-		String result = connector.sendMessage(xmlLot);
+			service = MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO_AN;
+		else if (LBR_NFeModel.equals(MLBRNotaFiscal.LBR_NFEMODEL_55_NF_E))
+			service = MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO;
+		else
+			service = MLBRNFeWebService.SERVICE_NFCE_RECEPCAO_EVENTO;
+
+		SefazHttpClient client = new SefazHttpClient(sslContext, NFeUtil.VERSAO_EVENTO,
+				orgRegion.get_ID(), service, isHomologacao(xmlLot), LBR_NFeModel);
+		String result = client.send(xmlLot);
 		
 		if (result == null || result.trim().equals(""))
 			return "Could not connect to webservice. Please try again later";
@@ -580,22 +569,6 @@ public class NFeEventUtil {
 	}
 	
 	/**
-	 * 	Does NF-e contained in this Lot has been issued in contingency mode? 
-	 *
-	 * @param xmlLot xml
-	 */
-	private boolean isContingencia(String xmlLot) {
-		int index = xmlLot.indexOf("<tpEmis>");
-		if (index >= 0) {
-			String tpEmis = xmlLot.substring(index+8, index+9);
-			if (!tpEmis.equals("1"))
-				return true;
-		}
-		
-		return false;
-	}
-	
-	/**
 	 * 	Does NF-e contained in this Lot has been issued in test mode? 
 	 *
 	 * @param xmlLot xml
@@ -604,10 +577,10 @@ public class NFeEventUtil {
 		int index = xmlLot.indexOf("<tpAmb>");
 		if (index >= 0) {
 			String tpAmb = xmlLot.substring(index+7, index+8);
-			if (tpAmb.equals("2"))
+			if (tpAmb.equals(NFeUtil.ENV_HOMOLOGACAO))
 				return true;
 		}
-		
+
 		return false;
 	}
 	

@@ -67,7 +67,7 @@ import org.idempierelbr.base.model.MLBRNotaFiscalEvent;
 import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.nfe.base.NFeXMLGenerator;
 import org.idempierelbr.nfe.model.NFTaxProvider;
-import org.idempierelbr.nfe.stub.StubConnector;
+import javax.net.ssl.SSLContext;
 import org.idempierelbr.tax.provider.TaxProviderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -310,6 +310,10 @@ public class NFeUtil {
 	
 	/**	Logger				*/
 	private static CLogger log = CLogger.getCLogger(NFeUtil.class);
+
+	/** Ambiente de transmissão NF-e (tpAmb) */
+	public static final String ENV_PRODUCAO    = "1";
+	public static final String ENV_HOMOLOGACAO = "2";
 
 	/** Versão				*/
 	public static final String VERSAO			= "4.00";
@@ -884,54 +888,53 @@ public class NFeUtil {
 		return String.valueOf(Integer.parseInt(str));	
 	}
 	
-	public static String requestWS(Properties ctx, int AD_Org_ID, String lastNSU,
+	public static String requestWS(Properties ctx, int AD_Org_ID, String tpAmb, String lastNSU,
 			String NSU, String NFeID, String trxName) throws Exception {
 		MOrg org = new MOrg(ctx, AD_Org_ID, trxName);
 		MOrgInfo orgInfo = MOrgInfo.get(ctx, org.get_ID(), trxName);
 		MLocation orgLoc = new MLocation(ctx, orgInfo.getC_Location_ID(), trxName);
 		MRegion orgRegion = new MRegion(ctx, orgLoc.getC_Region_ID(), trxName);
-		
+
 		String LBR_RegionCode = orgRegion.get_ValueAsString("LBR_RegionCode");
-		
+
 		int linked2OrgC_BPartner_ID = org.getLinkedC_BPartner_ID(trxName);
 		MBPartner bpLinked2Org = new MBPartner(ctx, linked2OrgC_BPartner_ID, trxName);
 		String LBR_CNPJ = TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ"));
-		
+
 		StringBuilder xml = new StringBuilder()
-			.append("<nfeDadosMsg>")
 			.append("<distDFeInt versao=\"1.01\" xmlns=\"http://www.portalfiscal.inf.br/nfe\">")
-			.append("<tpAmb>1</tpAmb>")
+			.append("<tpAmb>").append(tpAmb).append("</tpAmb>")
 			.append("<cUFAutor>" + LBR_RegionCode + "</cUFAutor>")
 			.append("<CNPJ>" + LBR_CNPJ + "</CNPJ>");
-		
+
 		if (NSU != null)
 			xml.append("<consNSU><NSU>").append(NSU).append("</NSU></consNSU>");
 		else if (NFeID != null)
 			xml.append("<consChNFe><chNFe>").append(NFeID).append("</chNFe></consChNFe>");
 		else
-			xml.append("<distNSU><ultNSU>").append(lastNSU).append("</ultNSU></distNSU>");		
-		
-		xml.append("</distDFeInt>")
-			.append("</nfeDadosMsg>");
-		
+			xml.append("<distNSU><ultNSU>").append(lastNSU).append("</ultNSU></distNSU>");
+
+		xml.append("</distDFeInt>");
+
 		//INICIALIZA CERTIFICADO
+		SSLContext sslContext;
 		try {
-			DigitalCertificateUtil.setCertificate(ctx, AD_Org_ID);
+			sslContext = DigitalCertificateUtil.buildSSLContext(ctx, AD_Org_ID);
 		} catch (Exception e) {
 			throw new AdempiereException(e);
 		}
-		
-		StubConnector connector = new StubConnector(NFeUtil.VERSAO_DISTRIBUICAO,
+
+		SefazHttpClient client = new SefazHttpClient(sslContext, NFeUtil.VERSAO_DISTRIBUICAO,
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_DISTRIBUICAO_DFE,
-				false, false, MLBRNotaFiscal.LBR_NFEMODEL_55_NF_E);
-		String result = connector.sendMessage(xml.toString());
+				tpAmb.equals(ENV_HOMOLOGACAO), MLBRNotaFiscal.LBR_NFEMODEL_55_NF_E);
+		String result = client.send(xml.toString());
 		
 		return result;
 	}
 	
-	public static String requestWSAndProcess(Properties ctx, int AD_Org_ID, String lastNSU,
-			String NSU, String NFeID, String trxName) throws Exception {
-		String result = NFeUtil.requestWS(ctx, AD_Org_ID, lastNSU, NSU, NFeID, trxName);
+	public static String requestWSAndProcess(Properties ctx, int AD_Org_ID, String tpAmb,
+			String lastNSU, String NSU, String NFeID, String trxName) throws Exception {
+		String result = NFeUtil.requestWS(ctx, AD_Org_ID, tpAmb, lastNSU, NSU, NFeID, trxName);
 		
 		// Parse XML
 		DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
