@@ -28,7 +28,7 @@ class SefazHttpClientIT extends AbstractLBRTestCase {
 	void constructor_throwsIllegalArgumentException_whenSslContextIsNull() {
 		assertThatThrownBy(() -> new SefazHttpClient(
 				null, "1.0", 100,
-				MLBRNFeWebService.SERVICE_NFE_STATUS_SERVICO, false, "55"))
+				MLBRNFeWebService.SERVICE_NFE_STATUS_SERVICO, false, "55", null))
 			.isInstanceOf(IllegalArgumentException.class);
 	}
 
@@ -36,7 +36,7 @@ class SefazHttpClientIT extends AbstractLBRTestCase {
 	void constructor_throwsAdempiereException_whenServiceIsUnknown() throws Exception {
 		SSLContext ctx = SSLContext.getInstance("TLS");
 		ctx.init(null, null, null);
-		assertThatThrownBy(() -> new SefazHttpClient(ctx, "1.0", 100, "InvalidService", false, "55"))
+		assertThatThrownBy(() -> new SefazHttpClient(ctx, "1.0", 100, "InvalidService", false, "55", null))
 			.isInstanceOf(AdempiereException.class)
 			.hasMessageContaining("Unsupported SEFAZ service");
 	}
@@ -61,7 +61,7 @@ class SefazHttpClientIT extends AbstractLBRTestCase {
 		ctx.init(null, null, null);
 		SefazHttpClient client = new SefazHttpClient(
 			ctx, "4.00", DictionaryIDs.C_Region.CT.id,
-			MLBRNFeWebService.SERVICE_NFE_STATUS_SERVICO, true, "55");
+			MLBRNFeWebService.SERVICE_NFE_STATUS_SERVICO, true, "55", null);
 
 		assertThatThrownBy(() -> client.send("<root/>"))
 			.isInstanceOf(AdempiereException.class)

@@ -30,6 +30,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.zip.GZIPInputStream;
 
+import javax.net.ssl.SSLContext;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
@@ -39,6 +40,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.adempiere.exceptions.AdempiereException;
+import org.apache.commons.io.IOUtils;
 import org.compiere.model.I_C_BPartner;
 import org.compiere.model.MAttachment;
 import org.compiere.model.MAttachmentEntry;
@@ -51,13 +53,11 @@ import org.compiere.model.MOrg;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.MProcess;
 import org.compiere.model.MRegion;
-import org.compiere.model.MTax;
 import org.compiere.model.MTaxProvider;
 import org.compiere.model.X_C_TaxProviderCfg;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
-import org.compiere.util.Msg;
 import org.compiere.util.Trx;
 import org.idempierelbr.base.model.MLBRCSC;
 import org.idempierelbr.base.model.MLBRNFeWebService;
@@ -67,15 +67,12 @@ import org.idempierelbr.base.model.MLBRNotaFiscalEvent;
 import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.nfe.base.NFeXMLGenerator;
 import org.idempierelbr.nfe.model.NFTaxProvider;
-import javax.net.ssl.SSLContext;
 import org.idempierelbr.tax.provider.TaxProviderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
-
-import org.apache.commons.io.IOUtils;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
@@ -754,6 +751,21 @@ public class NFeUtil {
 	}
 
 	/**
+	 * Maps {@code tpEmis} from an NF-e XML payload to the contingency autorizador code.
+	 * @return {@code "AN"} for SVC-AN (tpEmis=6), {@code "RS"} for SVC-RS (tpEmis=7),
+	 *         {@code null} for normal emission (tpEmis=1) or absent/unknown value
+	 */
+	public static String autorizadorFromTpEmis(String xml) {
+		if (xml == null) return null;
+		int idx = xml.indexOf("<tpEmis>");
+		if (idx < 0) return null;
+		String tpEmis = xml.substring(idx + 8, idx + 9);
+		if ("6".equals(tpEmis)) return "AN";
+		if ("7".equals(tpEmis)) return "RS";
+		return null;
+	}
+
+	/**
 	 * Generate QRCode
 	 * 
 	 * @param nf
@@ -938,7 +950,7 @@ public class NFeUtil {
 
 		SefazHttpClient client = new SefazHttpClient(sslContext, NFeUtil.VERSAO_DISTRIBUICAO,
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_DISTRIBUICAO_DFE,
-				tpAmb.equals(ENV_HOMOLOGACAO), MLBRNotaFiscal.LBR_NFEMODEL_55_NF_E);
+				tpAmb.equals(ENV_HOMOLOGACAO), MLBRNotaFiscal.LBR_NFEMODEL_55_NF_E, null);
 		String result = client.send(xml.toString());
 		
 		return result;
