@@ -69,6 +69,7 @@ public class SefazHttpClient {
 	private final String                envType;
 	private final MRegion               region;
 	private final String                LBR_NFeModel;
+	private final String                autorizador;
 	private final HttpConnectionFactory connectionFactory;
 
 	/**
@@ -76,9 +77,11 @@ public class SefazHttpClient {
 	 * @param isHomologacao {@code true} maps to SEFAZ environment type "2" (homologação),
 	 *                      {@code false} to "1" (produção)
 	 * @param LBR_NFeModel  NF-e model code used for URL resolution ("55" = NF-e, "65" = NFC-e)
+	 * @param autorizador   {@code "AN"} for SVC-AN, {@code "RS"} for SVC-RS,
+	 *                      {@code null} for the primary state SEFAZ
 	 */
 	public SefazHttpClient(SSLContext sslContext, String versionNo, int C_Region_ID,
-			String service, boolean isHomologacao, String LBR_NFeModel) {
+			String service, boolean isHomologacao, String LBR_NFeModel, String autorizador) {
 
 		if (sslContext == null || versionNo == null || service == null || C_Region_ID <= 0)
 			throw new IllegalArgumentException("sslContext, versionNo, service and C_Region_ID are required");
@@ -92,6 +95,7 @@ public class SefazHttpClient {
 		this.envType           = isHomologacao ? NFeUtil.ENV_HOMOLOGACAO : NFeUtil.ENV_PRODUCAO;
 		this.region            = new MRegion(Env.getCtx(), C_Region_ID, null);
 		this.LBR_NFeModel      = LBR_NFeModel;
+		this.autorizador       = autorizador;
 		this.connectionFactory = DEFAULT_CONNECTION_FACTORY;
 	}
 
@@ -112,6 +116,7 @@ public class SefazHttpClient {
 		this.envType           = envType;
 		this.region            = null;
 		this.LBR_NFeModel      = null;
+		this.autorizador       = null;
 		this.connectionFactory = connectionFactory;
 	}
 
@@ -139,7 +144,7 @@ public class SefazHttpClient {
 			throw new IllegalArgumentException("xmlPayload is not well-formed XML");
 		}
 
-		String url = MLBRNFeWebService.getURL(service, envType, versionNo, region.getC_Region_ID(), LBR_NFeModel);
+		String url = MLBRNFeWebService.getURL(service, envType, versionNo, region.getC_Region_ID(), LBR_NFeModel, autorizador);
 
 		// Log only service and env, never the full URL
 		log.fine("SEFAZ POST — service=" + service + " env=" + envType);

@@ -126,7 +126,7 @@ public class NFeEventUtil {
 			service = MLBRNFeWebService.SERVICE_NFCE_RECEPCAO_EVENTO;
 
 		SefazHttpClient client = new SefazHttpClient(sslContext, NFeUtil.VERSAO_EVENTO,
-				orgRegion.get_ID(), service, isHomologacao(xmlLot), LBR_NFeModel);
+				orgRegion.get_ID(), service, isHomologacao(xmlLot), LBR_NFeModel, null);
 		String result = client.send(xmlLot);
 		
 		if (result == null || result.trim().equals(""))

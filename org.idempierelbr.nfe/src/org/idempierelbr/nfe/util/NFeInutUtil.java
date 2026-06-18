@@ -73,7 +73,7 @@ public class NFeInutUtil {
 
 		SefazHttpClient client = new SefazHttpClient(sslContext, NFeUtil.VERSAO_APP,
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_INUTILIZACAO,
-				inut.getLBR_NFeEnv().equals(NFeUtil.ENV_HOMOLOGACAO), inut.getLBR_NFBModel());
+				inut.getLBR_NFeEnv().equals(NFeUtil.ENV_HOMOLOGACAO), inut.getLBR_NFBModel(), null);
 		String result = client.send(xml);
 		
 		if (result == null || result.trim().equals(""))

@@ -154,7 +154,7 @@ public class NFeLotUtil {
 
 		SefazHttpClient client = new SefazHttpClient(sslContext, NFeUtil.VERSAO_APP,
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_AUTORIZACAO,
-				isHomologacao(xmlLot), LBR_NFeModel);
+				isHomologacao(xmlLot), LBR_NFeModel, NFeUtil.autorizadorFromTpEmis(xmlLot));
 		String result = client.send(xmlLot);
 		
 		if (result == null || result.trim().equals(""))
@@ -296,7 +296,7 @@ public class NFeLotUtil {
 		
 		SefazHttpClient client = new SefazHttpClient(sslContext, NFeUtil.VERSAO_APP,
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_RET_AUTORIZACAO,
-				isHomologacao(xmlLot.toString()), LBR_NFeModel);
+				isHomologacao(xmlLot.toString()), LBR_NFeModel, NFeUtil.autorizadorFromTpEmis(xmlLot.toString()));
 		String result = client.send(xmlLot.toString());
 		
 		if (result == null || result.trim().equals(""))

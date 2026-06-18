@@ -128,23 +128,52 @@ public class MLBRNFeWebService extends X_LBR_NFeWebService
 	}
 	
 	/**
+	 * 		Retorna a URL do WebServices (primary state SEFAZ — autorizador null)
+	 * 	@param name
+	 * 	@param envType
+	 * 	@param versionNo
+	 * 	@param C_Region_ID
+	 * 	@param LBR_NFeModel
+	 * 	@return
+	 */
+	public static String getURL (String name, String envType, String versionNo, int C_Region_ID, String LBR_NFeModel)
+	{
+		return getURL(name, envType, versionNo, C_Region_ID, LBR_NFeModel, null);
+	}	//	getURL
+
+	/**
 	 * 		Retorna a URL do WebServices
 	 * 	@param name
 	 * 	@param envType
 	 * 	@param versionNo
 	 * 	@param C_Region_ID
+	 * 	@param LBR_NFeModel
+	 * 	@param autorizador {@code "AN"} for SVC-AN, {@code "RS"} for SVC-RS, {@code null} for primary state SEFAZ
 	 * 	@return
 	 */
-	public static String getURL (String name, String envType, String versionNo, int C_Region_ID, String LBR_NFeModel)
+	public static String getURL (String name, String envType, String versionNo, int C_Region_ID, String LBR_NFeModel, String autorizador)
 	{
-		MLBRNFeWebService ws = get (name, envType, versionNo, C_Region_ID, LBR_NFeModel);
-		//
+		MLBRNFeWebService ws = get(name, envType, versionNo, C_Region_ID, LBR_NFeModel, autorizador);
 		if (ws == null)
-			throw new AdempiereException ("Webservice not found for region [" + name + ", " 
-					+ Integer.toString(C_Region_ID)  + "] environment [" + envType + "] model ["+LBR_NFeModel+"] version ["+versionNo+"]");
-		//
+			throw new AdempiereException("Webservice not found for region [" + name + ", "
+					+ C_Region_ID + "] environment [" + envType + "] model [" + LBR_NFeModel
+					+ "] version [" + versionNo + "] autorizador [" + autorizador + "]");
 		return ws.getURL();
 	}	//	getURL
+
+	/**
+	 * 		Get (primary state SEFAZ — autorizador null)
+	 * 	@param name
+	 * 	@param envType
+	 * 	@param versionNo
+	 * 	@param C_Region_ID
+	 * 	@param LBR_NFeModel
+	 * 	@return
+	 */
+	public static MLBRNFeWebService get (String name, String envType, String versionNo, int C_Region_ID, String LBR_NFeModel)
+	{
+		return get(name, envType, versionNo, C_Region_ID, LBR_NFeModel, null);
+	}	//	get
 
 	/**
 	 * 		Get
@@ -152,13 +181,22 @@ public class MLBRNFeWebService extends X_LBR_NFeWebService
 	 * 	@param envType
 	 * 	@param versionNo
 	 * 	@param C_Region_ID
+	 * 	@param LBR_NFeModel
+	 * 	@param autorizador {@code "AN"} for SVC-AN, {@code "RS"} for SVC-RS, {@code null} for primary state SEFAZ
 	 * 	@return
 	 */
-	public static MLBRNFeWebService get (String name, String envType, String versionNo, int C_Region_ID, String LBR_NFeModel)
+	public static MLBRNFeWebService get (String name, String envType, String versionNo, int C_Region_ID, String LBR_NFeModel, String autorizador)
 	{
-		String where = "UPPER(Name) LIKE ? AND lbr_NFeEnv=? AND VersionNo=? AND C_Region_ID=? AND LBR_NFeModel=? ";
-		return new Query (Env.getCtx(),MLBRNFeWebService.Table_Name, where, null)
-						.setParameters(new Object[]{name.toUpperCase(), envType, versionNo, C_Region_ID, LBR_NFeModel})
-						.first();
+		if (autorizador == null) {
+			String where = "UPPER(Name) LIKE ? AND lbr_NFeEnv=? AND VersionNo=? AND C_Region_ID=? AND LBR_NFeModel=? AND LBR_Autorizador IS NULL";
+			return new Query(Env.getCtx(), MLBRNFeWebService.Table_Name, where, null)
+							.setParameters(name.toUpperCase(), envType, versionNo, C_Region_ID, LBR_NFeModel)
+							.first();
+		} else {
+			String where = "UPPER(Name) LIKE ? AND lbr_NFeEnv=? AND VersionNo=? AND LBR_NFeModel=? AND LBR_Autorizador=?";
+			return new Query(Env.getCtx(), MLBRNFeWebService.Table_Name, where, null)
+							.setParameters(name.toUpperCase(), envType, versionNo, LBR_NFeModel, autorizador)
+							.first();
+		}
 	}	//	get
 }	//	MNFeWebService
