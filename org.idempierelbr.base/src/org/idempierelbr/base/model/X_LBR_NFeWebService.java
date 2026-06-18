@@ -23,7 +23,7 @@ import org.compiere.model.*;
 
 /** Generated Model for LBR_NFeWebService
  *  @author iDempiere (generated)
- *  @version Release 11 - $Id$ */
+ *  @version Release 12 - $Id$ */
 @org.adempiere.base.Model(table="LBR_NFeWebService")
 public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Persistent
 {
@@ -31,7 +31,7 @@ public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Pe
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20240603L;
+	private static final long serialVersionUID = 20260618L;
 
     /** Standard Constructor */
     public X_LBR_NFeWebService (Properties ctx, int LBR_NFeWebService_ID, String trxName)
@@ -147,6 +147,29 @@ public class X_LBR_NFeWebService extends PO implements I_LBR_NFeWebService, I_Pe
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
+	}
+
+	/** LBR_Autorizador AD_Reference_ID=900155 */
+	public static final int LBR_AUTORIZADOR_AD_Reference_ID=900155;
+	/** SVC-AN (Ambiente Nacional) = AN */
+	public static final String LBR_AUTORIZADOR_SVC_ANAmbienteNacional = "AN";
+	/** SVC-RS (SEFAZ-RS) = RS */
+	public static final String LBR_AUTORIZADOR_SVC_RSSEFAZ_RS = "RS";
+	/** Set LBR_Autorizador.
+		@param LBR_Autorizador Autorizador para contingência: AN=SVC-AN, RS=SVC-RS, null=autorizador primário do contrato
+	*/
+	public void setLBR_Autorizador (String LBR_Autorizador)
+	{
+
+		set_Value (COLUMNNAME_LBR_Autorizador, LBR_Autorizador);
+	}
+
+	/** Get LBR_Autorizador.
+		@return Autorizador para contingência: AN=SVC-AN, RS=SVC-RS, null=autorizador primário do contrato
+	  */
+	public String getLBR_Autorizador()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_Autorizador);
 	}
 
 	/** Production = 1 */
