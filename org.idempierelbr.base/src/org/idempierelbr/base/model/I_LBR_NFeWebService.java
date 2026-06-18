@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NFeWebService
  *  @author iDempiere (generated) 
- *  @version Release 11
+ *  @version Release 12
  */
 @SuppressWarnings("all")
 public interface I_LBR_NFeWebService 
@@ -107,6 +107,19 @@ public interface I_LBR_NFeWebService
 	  * The record is active in the system
 	  */
 	public boolean isActive();
+
+    /** Column name LBR_Autorizador */
+    public static final String COLUMNNAME_LBR_Autorizador = "LBR_Autorizador";
+
+	/** Set LBR_Autorizador.
+	  * Autorizador para contingência: AN=SVC-AN, RS=SVC-RS, null=autorizador primário do contrato
+	  */
+	public void setLBR_Autorizador (String LBR_Autorizador);
+
+	/** Get LBR_Autorizador.
+	  * Autorizador para contingência: AN=SVC-AN, RS=SVC-RS, null=autorizador primário do contrato
+	  */
+	public String getLBR_Autorizador();
 
     /** Column name LBR_NFeEnv */
     public static final String COLUMNNAME_LBR_NFeEnv = "LBR_NFeEnv";
