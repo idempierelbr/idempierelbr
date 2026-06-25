@@ -193,7 +193,8 @@ public class MLBRNFeWebService extends X_LBR_NFeWebService
 							.setParameters(name.toUpperCase(), envType, versionNo, C_Region_ID, LBR_NFeModel)
 							.first();
 		} else {
-			String where = "UPPER(Name) LIKE ? AND lbr_NFeEnv=? AND VersionNo=? AND LBR_NFeModel=? AND LBR_Autorizador=?";
+			// SVC-AN and SVC-RS contingency endpoints are national by definition (C_Region_ID IS NULL).
+			String where = "UPPER(Name) LIKE ? AND lbr_NFeEnv=? AND VersionNo=? AND C_Region_ID IS NULL AND LBR_NFeModel=? AND LBR_Autorizador=?";
 			return new Query(Env.getCtx(), MLBRNFeWebService.Table_Name, where, null)
 							.setParameters(name.toUpperCase(), envType, versionNo, LBR_NFeModel, autorizador)
 							.first();
