@@ -315,7 +315,7 @@ public class NFeEventUtil {
 				InfEvento cce = new InfEvento();
 				cce.setCOrgao(orgRegion.get_ValueAsString("LBR_RegionCode"));
 				cce.setTpAmb(nfDocType.get_ValueAsString("LBR_NFeEnv"));				
-				cce.setCNPJ(TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ")));				
+				cce.setCNPJ(TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ")));				
 				cce.setChNFe(line.getLBR_NFeID());
 				
 				String DEv 	= TextUtil.timeToString(line.getCreated(), "yyyy-MM-dd");
@@ -379,7 +379,7 @@ public class NFeEventUtil {
 				InfEvento cancel = new InfEvento();
 				cancel.setCOrgao(orgRegion.get_ValueAsString("LBR_RegionCode"));
 				cancel.setTpAmb(nfDocType.get_ValueAsString("LBR_NFeEnv"));	
-				cancel.setCNPJ(TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ")));
+				cancel.setCNPJ(TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ")));
 				cancel.setChNFe(line.getLBR_NFeID());
 				
 				String DEv 	= TextUtil.timeToString(line.getCreated(), "yyyy-MM-dd");
@@ -450,7 +450,7 @@ public class NFeEventUtil {
 				InfEvento man = new InfEvento();
 				man.setCOrgao("91");
 				man.setTpAmb("1"); // TODO				
-				man.setCNPJ(TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ")));				
+				man.setCNPJ(TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ")));				
 				man.setChNFe(line.getLBR_NFeID());
 				
 				String DEv 	= TextUtil.timeToString(line.getCreated(), "yyyy-MM-dd");

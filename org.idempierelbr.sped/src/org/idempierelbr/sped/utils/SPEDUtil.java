@@ -760,7 +760,7 @@ public class SPEDUtil
 		reg.setDT_INI(dateFrom);
 		reg.setDT_FIN(dateTo);
 		reg.setNOME( bpLinked2Org.getName() );
-		reg.setCNPJ( TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ")) );
+		reg.setCNPJ( TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ")) );
 		reg.setUF( oi.getC_Location().getC_Region().getName());		
 		//
 		MCity city = new MCity(ctx, oi.getC_Location().getC_City_ID(), trxName);
@@ -883,7 +883,7 @@ public class SPEDUtil
 	
 			//
 			R0140 r0140 = new R0140();
-			r0140.setCNPJ( TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ")) );
+			r0140.setCNPJ( TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ")) );
 			r0140.setCOD_EST(String.valueOf (oi.getAD_Org_ID()));
 			r0140.setCOD_MUN(BPartnerUtil.getCityCode (location));
 			r0140.setIE( TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_IE")) );

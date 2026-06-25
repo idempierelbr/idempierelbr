@@ -286,7 +286,7 @@ public class MLBRFactFiscal extends X_LBR_FactFiscal
 		r0150.setCOD_PAIS( getLBR_CountryCode() );
 		
 		//	FIXME: De acordo com o Tipo de Parceiro CPF/CNPJ
-		if (TextUtil.toNumeric ( getLBR_CNPJ() ).length() == 11)
+		if (TextUtil.removeCNPJMask(getLBR_CNPJ()).length() == 11)
 			r0150.setCPF (getLBR_CNPJ());
 		else
 			r0150.setCNPJ (getLBR_CNPJ());

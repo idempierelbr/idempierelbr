@@ -260,7 +260,7 @@ public class NFeXMLGenerator {
 		Timestamp datedoc = nf.getDateDoc();
 		Timestamp dateSaiEnt = nf.getDateDelivered();
 		String aamm = TextUtil.timeToString(datedoc, "yyMM");
-		String orgCPNJ = TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ"));
+		String orgCPNJ = TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ"));
 		String LBR_UnidentifiedCustomerCPF = TextUtil.formatStringCodes(nf.get_ValueAsString("LBR_UnidentifiedCustomerCPF"));
 
 		ChaveNFE chaveNFE = new ChaveNFE();
@@ -1435,7 +1435,7 @@ public class NFeXMLGenerator {
 				transgrupo.setxNome(RemoverAcentos.remover(transp.getM_Shipper().getName()));
 			} else {
 				if (bpTransp.get_ValueAsString("LBR_BPTypeBR").equals("PJ"))
-					transgrupo.setCNPJ(TextUtil.toNumeric(bpTransp.get_ValueAsString("LBR_CNPJ")));
+					transgrupo.setCNPJ(TextUtil.removeCNPJMask(bpTransp.get_ValueAsString("LBR_CNPJ")));
 				else if (bpTransp.get_ValueAsString("LBR_BPTypeBR").equals("PF"))
 					transgrupo.setCPF(TextUtil.toNumeric(bpTransp.get_ValueAsString("LBR_CPF")));
 				
@@ -1728,7 +1728,7 @@ public class NFeXMLGenerator {
 		// YB. Informações do Intermediador da Transação
 		if (nf.getLBR_BP_Intermed_ID() > 0) {
 			MBPartner intermed = new MBPartner(ctx, nf.getLBR_BP_Intermed_ID(), trxName);
-			String intermedCPNJ = TextUtil.toNumeric(intermed.get_ValueAsString("LBR_CNPJ"));
+			String intermedCPNJ = TextUtil.removeCNPJMask(intermed.get_ValueAsString("LBR_CNPJ"));
 			
 			if (intermedCPNJ != null && intermedCPNJ.length() > 0) {
 				InfIntermed infIntermed = new InfIntermed();

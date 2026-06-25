@@ -555,6 +555,27 @@ public class TextUtil {
 	}	//	toNumeric
 
 	/**
+	 * Remove a máscara de um CNPJ (pontos, barra e hífen),
+	 * preservando os caracteres alfanuméricos do CNPJ alfanumérico.
+	 *
+	 * <BR>Diferente de {@link #toNumeric(String)}, que removeria as letras
+	 * das 12 primeiras posições do CNPJ alfanumérico, este método mantém
+	 * os caracteres de A a Z e os converte para maiúsculas.
+	 *
+	 * <BR>Exemplo: <tt>"12.ABC.345/01DE-35"</tt> resulta em <tt>"12ABC34501DE35"</tt>.
+	 *
+	 * @param 	value Valor Original (com ou sem máscara)
+	 * @return	String sem a máscara, preservando letras e dígitos
+	 */
+	public static String removeCNPJMask(String value)
+	{
+		if (value == null)
+			return "";
+
+		return value.replaceAll( "[./-]", "" ).toUpperCase();
+	}	//	removeCNPJMask
+
+	/**
 	 * 	Verifica se a string está entre os valores minimos e máximo
 	 *
 	 * @param 	value

@@ -151,7 +151,7 @@ public class NFeInutUtil {
 			throw new AdempiereException("Nenhum Parceiro vinculado à Organização");
 		
 		MBPartner bpLinked2Org = new MBPartner(inut.getCtx(), linked2OrgC_BPartner_ID, inut.get_TrxName());
-		iNF.setCNPJ(TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ")));
+		iNF.setCNPJ(TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ")));
 		
 		// UF
 		String regionCode = BPartnerUtil.getRegionCode(new MLocation(inut.getCtx(), orgInfo.getC_Location_ID(), inut.get_TrxName()));

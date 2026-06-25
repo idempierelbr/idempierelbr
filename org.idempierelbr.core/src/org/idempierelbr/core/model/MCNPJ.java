@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import org.compiere.model.MSysConfig;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
+import org.idempierelbr.base.util.TextUtil;
 
 public class MCNPJ {
 	/**	Logger			*/
@@ -30,73 +31,63 @@ public class MCNPJ {
 	 *	@return boolean true or false
 	 */
 	public boolean isValid() {
-		if (getCNPJ() != null && !getCNPJ().equals("")) { 
-			try
-			{
-				int d1,d4,xx,nCount,fator,resto,digito1,digito2;
-			    String Check, s_aux;
-			    String Separadores = "/-.";
-			    d1 = 0;
-			    d4 = 0;
-			    xx = 0;
-		
-			    for (nCount = 0; nCount < getCNPJ().length()-2; nCount++) {
-			      s_aux = getCNPJ().substring (nCount, nCount+1);
-			      if (Separadores.indexOf(s_aux) == -1) {
-			    	  if (xx < 4) {
-			    		  fator = 5 - xx;
-			          }
-			          else {
-			              fator = 13 - xx;
-			          }
-		
-			          d1 = d1 + Integer.valueOf (s_aux).intValue() * fator;
-		
-			          if (xx < 5) {
-			              fator = 6 - xx;
-			          }
-			          else {
-			              fator = 14 - xx;
-			          }
-		
-			          d4 += Integer.valueOf (s_aux).intValue() * fator;
-			          xx++;
-			      }
-			    }
-		
-			    resto = (d1 % 11);
-		
-			    if (resto < 2) {
-			      digito1 = 0;
-			    }
-			    else{
-			      digito1 = 11 - resto;
-			    }
-		
-			    d4 = d4 + 2 * digito1;
-			    resto = (d4 % 11);
-		
-			    if (resto < 2) {
-			      digito2 = 0;
-			    }
-			    else {
-			      digito2 = 11 - resto;
-			    }
-		
-			    Check = String.valueOf(digito1) + String.valueOf(digito2);
-		
-			    if (Check.compareTo(getCNPJ().substring(getCNPJ().length()-2, getCNPJ().length() )) !=0) {
-			      return false;
-			    }
-			    
-			    return true;
-			}
-			catch (Exception e)
-			{
-				return false;
-			}
-		} else 
+		if (getCNPJ() == null || getCNPJ().equals(""))
 			return false;
+
+		try
+		{
+			// Remove a máscara mantendo os caracteres alfanuméricos (CNPJ alfanumérico)
+			String cnpj = TextUtil.removeCNPJMask(getCNPJ());
+
+			if (cnpj.length() != 14)
+				return false;
+
+			// As 12 primeiras posições podem ser alfanuméricas (0-9, A-Z);
+			// os 2 últimos dígitos (DV) são sempre numéricos.
+			if (!cnpj.substring(0, 12).matches("[0-9A-Z]{12}"))
+				return false;
+
+			if (!cnpj.substring(12).matches("[0-9]{2}"))
+				return false;
+
+			int d1 = 0, d4 = 0;
+
+			for (int xx = 0; xx < 12; xx++) {
+				// Cada caractere é convertido pelo código ASCII subtraído de 48
+				// ('0'->0 ... '9'->9, 'A'->17 ... 'Z'->42)
+				int valor = cnpj.charAt(xx) - 48;
+				int fator;
+
+				if (xx < 4)
+					fator = 5 - xx;
+				else
+					fator = 13 - xx;
+
+				d1 += valor * fator;
+
+				if (xx < 5)
+					fator = 6 - xx;
+				else
+					fator = 14 - xx;
+
+				d4 += valor * fator;
+			}
+
+			int resto = (d1 % 11);
+			int digito1 = (resto < 2) ? 0 : 11 - resto;
+
+			d4 = d4 + 2 * digito1;
+			resto = (d4 % 11);
+			int digito2 = (resto < 2) ? 0 : 11 - resto;
+
+			String check = String.valueOf(digito1) + String.valueOf(digito2);
+
+			return check.equals(cnpj.substring(12));
+		}
+		catch (Exception e)
+		{
+			return false;
+		}
 	}
 	
 	/**

@@ -321,7 +321,7 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 					sd.setLBR_CNABInscEmpNo(TextUtil.toNumeric(bp.get_ValueAsString("LBR_CPF")));
 				} else if (bp.get_ValueAsString("LBR_BPTypeBR").equals("PJ")) {
 					sd.setLBR_CNABInscEmpType(MLBRBoletoStaticData.LBR_CNABINSCEMPTYPE_2_CGCCNPJ);
-					sd.setLBR_CNABInscEmpNo(TextUtil.toNumeric(bp.get_ValueAsString("LBR_CNPJ")));
+					sd.setLBR_CNABInscEmpNo(TextUtil.removeCNPJMask(bp.get_ValueAsString("LBR_CNPJ")));
 				} else {
 					sd.setLBR_CNABInscEmpType(MLBRBoletoStaticData.LBR_CNABINSCEMPTYPE_9_Outros);
 					sd.setLBR_CNABInscEmpNo("0");

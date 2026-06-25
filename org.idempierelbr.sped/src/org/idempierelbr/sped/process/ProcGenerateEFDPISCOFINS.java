@@ -304,7 +304,7 @@ public class ProcGenerateEFDPISCOFINS extends SvrProcess {
         String trx = get_TrxName();
         MOrg org = new MOrg(ctx, p_AD_Org_ID, trx);
         MBPartner bpLinked2Org = new MBPartner(ctx, org.getLinkedC_BPartner_ID(trx), trx);
-        p_filename = "EFD_Contrib_" + TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ")) + "_" + TextUtil.timeToString(dateFrom, "MMyyyy") + ".txt";
+        p_filename = "EFD_Contrib_" + TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ")) + "_" + TextUtil.timeToString(dateFrom, "MMyyyy") + ".txt";
         SPEDContrib sped = new SPEDContrib();
         sped.setB0((Bloco0) b0.get(SPEDUtil.TYPE_CONTRIB));
         sped.setBA((BlocoA) bA.get(SPEDUtil.TYPE_CONTRIB));

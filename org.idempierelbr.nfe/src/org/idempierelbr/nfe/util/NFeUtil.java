@@ -908,7 +908,7 @@ public class NFeUtil {
 		
 		int linked2OrgC_BPartner_ID = org.getLinkedC_BPartner_ID(trxName);
 		MBPartner bpLinked2Org = new MBPartner(ctx, linked2OrgC_BPartner_ID, trxName);
-		String LBR_CNPJ = TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ"));
+		String LBR_CNPJ = TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ"));
 		
 		StringBuilder xml = new StringBuilder()
 			.append("<nfeDadosMsg>")
