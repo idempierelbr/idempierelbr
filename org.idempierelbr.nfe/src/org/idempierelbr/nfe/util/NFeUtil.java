@@ -979,14 +979,15 @@ public class NFeUtil {
 	
 	public static void processDocZip(Properties ctx, int AD_Org_ID, Node node, String trxName) throws Exception {
 		if (node.getNodeType() == Node.ELEMENT_NODE) {
-			String NSU = node.getAttributes().item(0).getTextContent();
-			String schemaName = node.getAttributes().item(1).getTextContent();
-			
+			String NSU = node.getAttributes().getNamedItem("NSU").getNodeValue();
+			String schemaName = node.getAttributes().getNamedItem("schema").getNodeValue();
+
 			// decompress
 			byte[] decoded = java.util.Base64.getDecoder().decode(node.getTextContent());
-			ByteArrayInputStream is = new ByteArrayInputStream(decoded);
-			GZIPInputStream gzis = new GZIPInputStream(is);
-			String xml = new String(gzis.readAllBytes(), "UTF-8");
+			String xml;
+			try (GZIPInputStream gzis = new GZIPInputStream(new ByteArrayInputStream(decoded))) {
+				xml = new String(gzis.readAllBytes(), java.nio.charset.StandardCharsets.UTF_8);
+			}
 			
 			// Parse XML
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();

@@ -52,6 +52,12 @@ public class MLBRNFeWebService extends X_LBR_NFeWebService
 	public static final String SERVICE_NFCE_URL_CONSULTA_QRCODE	= "NFCeUrlConsultaQRCode"; // www.fazenda.rj.gov.br/nfce/consulta
 	public static final String SERVICE_NFCE_RECEPCAO_EVENTO 	= "NFCeRecepcaoEvento";
 	public static final String SERVICE_NFE_DISTRIBUICAO_DFE 	= "NFeDistribuicaoDFe";
+
+	/** Services that have a single national URL (no per-state endpoint). */
+	private static boolean isNationalService(String name) {
+		return SERVICE_NFE_DISTRIBUICAO_DFE.equalsIgnoreCase(name)
+			|| SERVICE_NFE_RECEPCAO_EVENTO_AN.equalsIgnoreCase(name);
+	}
 	
 	/** Log				*/
 	private static CLogger log = CLogger.getCLogger(MLBRNFeWebService.class);
@@ -188,6 +194,13 @@ public class MLBRNFeWebService extends X_LBR_NFeWebService
 	public static MLBRNFeWebService get (String name, String envType, String versionNo, int C_Region_ID, String LBR_NFeModel, String autorizador)
 	{
 		if (autorizador == null) {
+			if (isNationalService(name)) {
+				// National services (NFeDistribuicaoDFe, RecepcaoEventoAN) have a single URL for all of Brazil; ignore C_Region_ID.
+				String where = "UPPER(Name) LIKE ? AND lbr_NFeEnv=? AND VersionNo=? AND LBR_NFeModel=? AND LBR_Autorizador IS NULL";
+				return new Query(Env.getCtx(), MLBRNFeWebService.Table_Name, where, null)
+								.setParameters(name.toUpperCase(), envType, versionNo, LBR_NFeModel)
+								.first();
+			}
 			String where = "UPPER(Name) LIKE ? AND lbr_NFeEnv=? AND VersionNo=? AND C_Region_ID=? AND LBR_NFeModel=? AND LBR_Autorizador IS NULL";
 			return new Query(Env.getCtx(), MLBRNFeWebService.Table_Name, where, null)
 							.setParameters(name.toUpperCase(), envType, versionNo, C_Region_ID, LBR_NFeModel)
