@@ -859,7 +859,14 @@ public class NFeXMLGenerator {
 				X_LBR_CEST cest = new X_LBR_CEST(ctx, icmsLines[0].get_ValueAsInt("LBR_CEST_ID"), trxName);
 				produtos.setCEST(TextUtil.toNumeric(cest.getValue()));
 			}
-			
+
+			// cBenef - Código de Benefício Fiscal
+			if (icmsLines.length > 0) {
+				String cBenef = icmsLines[0].get_ValueAsString("LBR_CBenef");
+				if (cBenef != null && !cBenef.trim().isEmpty())
+					produtos.setCBenef(cBenef.trim());
+			}
+
 			MLBRCFOP cfop = new MLBRCFOP(ctx, details.getLBR_CFOP_ID(), trxName);
 			String cfopName = cfop.getValue();
 			

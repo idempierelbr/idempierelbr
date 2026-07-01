@@ -536,8 +536,23 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		if (m_cest != null && m_cest.get_ID() > 0) {
 			icms.set_ValueOfColumn("LBR_CEST_ID", m_cest.getLBR_CEST_ID());
 		}
-		
-		
+
+		/*
+		 * Fill cBenef (Código de Benefício Fiscal)
+		 * Busca o código na Situação Tributária (CST) e permite que o Produto sobrescreva
+		 */
+		String cBenef = null;
+		if (tl.getLBR_TaxStatus_ID() > 0) {
+			X_LBR_TaxStatus ts = new X_LBR_TaxStatus(getCtx(), tl.getLBR_TaxStatus_ID(), get_TrxName());
+			cBenef = ts.get_ValueAsString("LBR_CBenef");
+		}
+		String prodCBenef = product.get_ValueAsString("LBR_CBenef");
+		if (prodCBenef != null && !prodCBenef.trim().isEmpty())
+			cBenef = prodCBenef;
+		if (cBenef != null && !cBenef.trim().isEmpty())
+			icms.set_ValueOfColumn("LBR_CBenef", cBenef.trim());
+
+
 		/* 
 		 * Calculate DIFAL
 		 *  
