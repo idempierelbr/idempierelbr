@@ -968,12 +968,16 @@ public class NFeUtil {
         	maxNSU = NFeUtil.getValue(doc, "maxNSU");
         
         NodeList docZipList = doc.getElementsByTagName("docZip");
-        
+
+        log.info("SEFAZ DistDFe response — cStat=" + cStat + " xMotivo=" + xMotivo
+                + " ultNSU=" + ultNSU + " maxNSU=" + maxNSU
+                + " docZipCount=" + docZipList.getLength());
+
         for (int i=0; i< docZipList.getLength(); i++) {
         	Node node = docZipList.item(i);
         	processDocZip(ctx, AD_Org_ID, node, trxName);
         }
-		
+
 		return cStat + " - " + xMotivo;
 	}
 	
@@ -992,11 +996,13 @@ public class NFeUtil {
 			// Parse XML with XXE-hardened builder (docZip content is untrusted input)
 			DocumentBuilder builder = SefazSoapUtils.newHardenedDocumentBuilder();
 			Document doc = builder.parse(new InputSource(new StringReader(xml)));
-			
+
 			String chNFe = null;
 	        if (doc.getElementsByTagName("chNFe") != null)
 	        	chNFe = NFeUtil.getValue(doc, "chNFe");
-	        
+
+	        log.fine("SEFAZ docZip — NSU=" + NSU + " schema=" + schemaName + " chNFe=" + chNFe);
+
 	        int LBR_NFeXML_ID = DB.getSQLValue(trxName,
 	        	"SELECT LBR_NFeXML_ID FROM LBR_NFeXML WHERE AD_Client_ID=? AND AD_Org_ID=? AND LBR_NSU=? AND IsActive=?", 
 	        	Env.getAD_Client_ID(ctx), AD_Org_ID, NSU, "Y");
