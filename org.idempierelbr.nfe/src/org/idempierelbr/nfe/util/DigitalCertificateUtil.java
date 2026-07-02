@@ -58,6 +58,8 @@ public class DigitalCertificateUtil {
 			throw new Exception("Unable to find private key attachment");
 
 		String orgPassword = dcOrg.getPassword();
+		if (orgPassword == null)
+			throw new Exception("Certificate password is not configured for org certificate " + dcOrg.getName());
 		KeyStore ks = KeyStore.getInstance("PKCS12");
 		try {
 			ks.load(orgStream, orgPassword.toCharArray());
@@ -99,15 +101,18 @@ public class DigitalCertificateUtil {
 		String certTypeOrg = keystoreType(dcOrg.getLBR_CertType());
 		String certTypeWS  = keystoreType(dcWS.getLBR_CertType());
 
+		String orgPassword = dcOrg.getPassword();
+		if (orgPassword == null)
+			throw new Exception("Certificate password is not configured for org certificate " + dcOrg.getName());
 		InputStream orgStream = dcOrg.getAttachment(true).getEntry(0).getInputStream();
 		KeyStore ks = KeyStore.getInstance(certTypeOrg);
 		try {
-			ks.load(orgStream, dcOrg.getPassword().toCharArray());
+			ks.load(orgStream, orgPassword.toCharArray());
 		} catch (IOException e) {
 			throw new Exception("Incorrect certificate password");
 		}
 		KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-		kmf.init(ks, dcOrg.getPassword().toCharArray());
+		kmf.init(ks, orgPassword.toCharArray());
 
 		InputStream wsStream = dcWS.getAttachment(true).getEntry(0).getInputStream();
 		KeyStore trustStore = KeyStore.getInstance(certTypeWS);

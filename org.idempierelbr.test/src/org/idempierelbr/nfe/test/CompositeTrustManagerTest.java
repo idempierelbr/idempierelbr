@@ -3,6 +3,7 @@ package org.idempierelbr.nfe.test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.Mockito.mock;
 
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -19,8 +20,11 @@ import org.junit.jupiter.api.Test;
  */
 class CompositeTrustManagerTest {
 
-	private static final X509TrustManager ACCEPTS = new StubTrustManager(false, "acceptsIssuer");
-	private static final X509TrustManager REJECTS = new StubTrustManager(true, "rejectsIssuer");
+	private static final X509Certificate ISSUER_A = mock(X509Certificate.class);
+	private static final X509Certificate ISSUER_B = mock(X509Certificate.class);
+
+	private static final X509TrustManager ACCEPTS = new StubTrustManager(false, new X509Certificate[]{ ISSUER_A });
+	private static final X509TrustManager REJECTS = new StubTrustManager(true,  new X509Certificate[]{ ISSUER_B });
 
 	@Test
 	void checkServerTrusted_returns_whenFirstDelegateAccepts() {
@@ -46,9 +50,9 @@ class CompositeTrustManagerTest {
 	@Test
 	void getAcceptedIssuers_returnsUnionAcrossDelegates() {
 		CompositeX509TrustManager tm = new CompositeX509TrustManager(Arrays.asList(ACCEPTS, REJECTS));
-		// StubTrustManager returns a marker X509Certificate[] whose length encodes the delegate;
-		// checking non-null and total length is enough to prove union semantics without real certs.
-		assertThat(tm.getAcceptedIssuers()).isNotNull();
+		assertThat(tm.getAcceptedIssuers())
+			.as("union of accepted issuers from each delegate")
+			.containsExactlyInAnyOrder(ISSUER_A, ISSUER_B);
 	}
 
 	// ---------------------------------------------------------------------------------------------
@@ -56,28 +60,26 @@ class CompositeTrustManagerTest {
 	// ---------------------------------------------------------------------------------------------
 	private static final class StubTrustManager implements X509TrustManager {
 		private final boolean rejects;
-		private final String issuerLabel;
+		private final X509Certificate[] acceptedIssuers;
 
-		StubTrustManager(boolean rejects, String issuerLabel) {
+		StubTrustManager(boolean rejects, X509Certificate[] acceptedIssuers) {
 			this.rejects = rejects;
-			this.issuerLabel = issuerLabel;
+			this.acceptedIssuers = acceptedIssuers;
 		}
 
 		@Override
 		public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
-			if (rejects) throw new CertificateException(issuerLabel + " rejected client");
+			if (rejects) throw new CertificateException("stub rejected client");
 		}
 
 		@Override
 		public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
-			if (rejects) throw new CertificateException(issuerLabel + " rejected server");
+			if (rejects) throw new CertificateException("stub rejected server");
 		}
 
 		@Override
 		public X509Certificate[] getAcceptedIssuers() {
-			// Returning an empty array is sufficient for the union-length assertion; real X509Certificate
-			// mocks would require heavy setup and add no signal here.
-			return new X509Certificate[0];
+			return acceptedIssuers;
 		}
 	}
 }
