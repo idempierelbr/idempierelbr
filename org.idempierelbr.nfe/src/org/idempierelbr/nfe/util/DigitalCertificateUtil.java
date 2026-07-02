@@ -6,16 +6,21 @@ import java.net.Socket;
 import java.security.KeyStore;
 import java.security.Principal;
 import java.security.PrivateKey;
+import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Enumeration;
+import java.util.List;
 import java.util.Properties;
 
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509KeyManager;
+import javax.net.ssl.X509TrustManager;
 
 import org.compiere.model.MOrgInfo;
 import org.compiere.util.Env;
@@ -76,7 +81,8 @@ public class DigitalCertificateUtil {
 		tmf.init(trustStore);
 
 		SSLContext ssl = SSLContext.getInstance("TLS");
-		ssl.init(new KeyManager[]{ new HSKeyManager(certificate, privateKey) }, tmf.getTrustManagers(), null);
+		ssl.init(new KeyManager[]{ new HSKeyManager(certificate, privateKey) },
+				withJvmDefaultFallback(tmf.getTrustManagers()), null);
 		return ssl;
 	}
 
@@ -112,7 +118,7 @@ public class DigitalCertificateUtil {
 		tmf.init(trustStore);
 
 		SSLContext ssl = SSLContext.getInstance("TLS");
-		ssl.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
+		ssl.init(kmf.getKeyManagers(), withJvmDefaultFallback(tmf.getTrustManagers()), null);
 		return ssl;
 	}
 
@@ -175,6 +181,78 @@ public class DigitalCertificateUtil {
 		@Override
 		public String[] getServerAliases(String keyType, Principal[] issuers) {
 			return null;
+		}
+	}
+
+	/**
+	 * Wrap {@code custom} with the JVM default trust anchors ({@code cacerts}) in a
+	 * {@link CompositeX509TrustManager}. The custom store is tried first; on rejection,
+	 * the JVM default is consulted. Fixes PKIX failures on SEFAZ endpoints whose chain
+	 * roots outside the bundled ICP store — e.g., SERPRO-run services on the GlobalSign chain.
+	 */
+	static TrustManager[] withJvmDefaultFallback(TrustManager[] custom) throws Exception {
+		TrustManagerFactory defaultTmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+		defaultTmf.init((KeyStore) null); // loads JVM cacerts
+
+		List<X509TrustManager> chain = new ArrayList<>();
+		for (TrustManager tm : custom)
+			if (tm instanceof X509TrustManager) chain.add((X509TrustManager) tm);
+		for (TrustManager tm : defaultTmf.getTrustManagers())
+			if (tm instanceof X509TrustManager) chain.add((X509TrustManager) tm);
+
+		return new TrustManager[]{ new CompositeX509TrustManager(chain) };
+	}
+
+	/**
+	 * Delegates trust checks to a list of {@link X509TrustManager}s. ANY delegate accepting
+	 * the chain passes; only when ALL reject is the last {@link CertificateException} re-thrown.
+	 * {@link #getAcceptedIssuers()} returns the union of accepted issuers across delegates.
+	 */
+	public static final class CompositeX509TrustManager implements X509TrustManager {
+
+		private final List<X509TrustManager> delegates;
+
+		public CompositeX509TrustManager(List<X509TrustManager> delegates) {
+			this.delegates = delegates;
+		}
+
+		@Override
+		public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+			CertificateException last = null;
+			for (X509TrustManager tm : delegates) {
+				try {
+					tm.checkServerTrusted(chain, authType);
+					return;
+				} catch (CertificateException e) {
+					last = e;
+				}
+			}
+			throw last != null ? last : new CertificateException("No trust manager available");
+		}
+
+		@Override
+		public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+			CertificateException last = null;
+			for (X509TrustManager tm : delegates) {
+				try {
+					tm.checkClientTrusted(chain, authType);
+					return;
+				} catch (CertificateException e) {
+					last = e;
+				}
+			}
+			throw last != null ? last : new CertificateException("No trust manager available");
+		}
+
+		@Override
+		public X509Certificate[] getAcceptedIssuers() {
+			List<X509Certificate> all = new ArrayList<>();
+			for (X509TrustManager tm : delegates) {
+				X509Certificate[] issuers = tm.getAcceptedIssuers();
+				if (issuers != null)
+					for (X509Certificate c : issuers) all.add(c);
+			}
+			return all.toArray(new X509Certificate[0]);
 		}
 	}
 }
