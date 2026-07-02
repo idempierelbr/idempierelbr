@@ -960,8 +960,8 @@ public class NFeUtil {
 			String lastNSU, String NSU, String NFeID, String trxName) throws Exception {
 		String result = NFeUtil.requestWS(ctx, AD_Org_ID, tpAmb, lastNSU, NSU, NFeID, trxName);
 		
-		// Parse XML
-		DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+		// Parse XML with XXE-hardened builder (SEFAZ response is untrusted input)
+		DocumentBuilder builder = SefazSoapUtils.newHardenedDocumentBuilder();
 		Document doc = builder.parse(new InputSource(new StringReader(result)));
 
 		String cStat = null;
@@ -1002,8 +1002,8 @@ public class NFeUtil {
 				xml = new String(gzis.readAllBytes(), java.nio.charset.StandardCharsets.UTF_8);
 			}
 			
-			// Parse XML
-			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			// Parse XML with XXE-hardened builder (docZip content is untrusted input)
+			DocumentBuilder builder = SefazSoapUtils.newHardenedDocumentBuilder();
 			Document doc = builder.parse(new InputSource(new StringReader(xml)));
 			
 			String chNFe = null;
