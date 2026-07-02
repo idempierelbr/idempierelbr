@@ -87,7 +87,9 @@ public class SefazSoapUtils {
 					+ "<soap12:Header/>"
 					+ "<soap12:Body>"
 					+ "<" + DIST_DFE_WRAPPER + " xmlns=\"" + wsdlNs + "\">"
+					+ DADOS_MSG_OPEN
 					+ stripDadosMsgWrapper(xmlPayload)
+					+ DADOS_MSG_CLOSE
 					+ "</" + DIST_DFE_WRAPPER + ">"
 					+ "</soap12:Body>"
 					+ "</soap12:Envelope>";
