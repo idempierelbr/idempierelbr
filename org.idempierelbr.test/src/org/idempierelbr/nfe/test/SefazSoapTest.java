@@ -104,8 +104,9 @@ class SefazSoapTest {
 		String envelope = SefazSoapUtils.buildEnvelope(
 			MLBRNFeWebService.SERVICE_NFE_DISTRIBUICAO_DFE, "<payload/>");
 		assertThat(envelope)
-			.contains("nfeDistDFeInteresse")
-			.doesNotContain("<nfeDadosMsg");
+			.contains("<nfeDistDFeInteresse")
+			.contains("<nfeDadosMsg>")
+			.contains("<payload/>");
 	}
 
 	@Test
@@ -120,7 +121,9 @@ class SefazSoapTest {
 		String envelope = SefazSoapUtils.buildEnvelope(
 			MLBRNFeWebService.SERVICE_NFE_DISTRIBUICAO_DFE,
 			"<nfeDadosMsg><payload/></nfeDadosMsg>");
-		assertThat(envelope).doesNotContain("<nfeDadosMsg");
+		assertThat(countOccurrences(envelope, "<nfeDadosMsg"))
+			.as("pre-existing nfeDadosMsg is stripped so exactly one wrapper is emitted inside nfeDistDFeInteresse")
+			.isEqualTo(1);
 	}
 
 	// -------------------------------------------------------------------------
