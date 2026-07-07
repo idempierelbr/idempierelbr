@@ -333,6 +333,98 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 		}
 	}
 
+	@Override
+	protected boolean beforeSave(boolean newRecord) {
+		// Reconsulta o cBenef quando o CST (Situação Tributária) é alterado manualmente
+		// neste registro. O cálculo/recálculo via createICMS já chama updateCBenef(product).
+		if (!newRecord && (is_ValueChanged(COLUMNNAME_LBR_ICMS_TaxStatusTN)
+				|| is_ValueChanged(COLUMNNAME_LBR_ICMS_TaxStatusSN)
+				|| is_ValueChanged(COLUMNNAME_LBR_ICMSRegime))) {
+			updateCBenef();
+		}
+
+		return true;
+	}
+
+	/**
+	 * 	Reconsulta e atualiza o Código de Benefício Fiscal (cBenef), resolvendo o Produto
+	 * 	a partir da linha do documento.
+	 */
+	public void updateCBenef() {
+		updateCBenef(null);
+	}
+
+	/**
+	 * 	Reconsulta e atualiza o Código de Benefício Fiscal (cBenef) conforme o CST
+	 * 	(Situação Tributária) vigente neste registro, permitindo que o Produto sobrescreva.
+	 *	@param product Produto da linha; se null, é resolvido a partir do Doc Line Details
+	 */
+	public void updateCBenef(MProduct product) {
+		MLBRDocLineDetails details = null;
+		if (getLBR_DocLine_Details_ID() > 0)
+			details = new MLBRDocLineDetails(getCtx(), getLBR_DocLine_Details_ID(), get_TrxName());
+
+		if (product == null && details != null)
+			product = details.getProduct();
+
+		// CST vigente conforme o regime (TN = Tributação Normal, SN = Simples Nacional)
+		String cst = LBR_ICMSREGIME_DefaultTaxation.equals(getLBR_ICMSRegime())
+				? getLBR_ICMS_TaxStatusTN() : getLBR_ICMS_TaxStatusSN();
+
+		if (cst == null || cst.trim().isEmpty())
+			cst = getLBR_ICMS_TaxStatusTN();
+		if (cst == null || cst.trim().isEmpty())
+			cst = getLBR_ICMS_TaxStatusSN();
+
+		// Descobre o Tax Name do ICMS a partir da transação de imposto para desambiguar
+		// CSTs que também existem em outros impostos (ex.: IPI).
+		int LBR_TaxName_ID = 0;
+		if (details != null && details.getLBR_Tax_ID() > 0) {
+			MLBRTax tax = new MLBRTax(getCtx(), details.getLBR_Tax_ID(), get_TrxName());
+			for (MLBRTaxLine tl : tax.getLines()) {
+				if (tl.getLBR_TaxName() != null && "ICMSPROD".equals(tl.getLBR_TaxName().getName())
+						&& tl.getLBR_TaxStatus_ID() > 0) {
+					LBR_TaxName_ID = new X_LBR_TaxStatus(getCtx(), tl.getLBR_TaxStatus_ID(),
+							get_TrxName()).getLBR_TaxName_ID();
+					break;
+				}
+			}
+		}
+
+		// Busca o cBenef na Situação Tributária (CST) correspondente
+		String cBenef = null;
+		if (cst != null && !cst.trim().isEmpty()) {
+			String where = "Name=? AND IsActive='Y'";
+			Object[] params;
+			if (LBR_TaxName_ID > 0) {
+				where += " AND LBR_TaxName_ID=?";
+				params = new Object[] { cst.trim(), LBR_TaxName_ID };
+			} else {
+				params = new Object[] { cst.trim() };
+			}
+
+			X_LBR_TaxStatus ts = new Query(getCtx(), X_LBR_TaxStatus.Table_Name, where, get_TrxName())
+					.setParameters(params)
+					.setOrderBy("LBR_TaxName_ID")
+					.first();
+
+			if (ts != null)
+				cBenef = ts.get_ValueAsString("LBR_CBenef");
+		}
+
+		// O Produto pode sobrescrever o cBenef da CST
+		if (product != null) {
+			String prodCBenef = product.get_ValueAsString("LBR_CBenef");
+			if (prodCBenef != null && !prodCBenef.trim().isEmpty())
+				cBenef = prodCBenef;
+		}
+
+		if (cBenef != null && cBenef.trim().isEmpty())
+			cBenef = null;
+
+		set_ValueOfColumn("LBR_CBenef", cBenef == null ? null : cBenef.trim());
+	}
+
 	public static String getCSTPrefix(String taxStatusDetailed) {
 		if (taxStatusDetailed == null || !taxStatusDetailed.contains("_"))
 			return taxStatusDetailed;

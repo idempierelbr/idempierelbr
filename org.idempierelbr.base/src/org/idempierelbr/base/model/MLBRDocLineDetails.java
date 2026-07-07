@@ -12,8 +12,11 @@ import java.util.Properties;
 import org.adempiere.model.POWrapper;
 import org.compiere.model.MBPartner;
 import org.compiere.model.MBPartnerLocation;
+import org.compiere.model.MInvoiceLine;
+import org.compiere.model.MOrderLine;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.MProduct;
+import org.compiere.model.MRMALine;
 import org.compiere.model.MSysConfig;
 import org.compiere.model.MTax;
 import org.compiere.model.PO;
@@ -221,6 +224,26 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	/**
 	 * 	Create all children (taxes) of Doc Line Details
 	 */
+	/**
+	 * 	Obtém o Produto associado a esta linha (via Order Line, Invoice Line ou RMA Line).
+	 *	@return MProduct ou null se não houver produto
+	 */
+	public MProduct getProduct() {
+		int M_Product_ID = 0;
+
+		if (getC_OrderLine_ID() > 0)
+			M_Product_ID = new MOrderLine(getCtx(), getC_OrderLine_ID(), get_TrxName()).getM_Product_ID();
+		else if (getC_InvoiceLine_ID() > 0)
+			M_Product_ID = new MInvoiceLine(getCtx(), getC_InvoiceLine_ID(), get_TrxName()).getM_Product_ID();
+		else if (getM_RMALine_ID() > 0)
+			M_Product_ID = new MRMALine(getCtx(), getM_RMALine_ID(), get_TrxName()).getM_Product_ID();
+
+		if (M_Product_ID > 0)
+			return MProduct.get(getCtx(), M_Product_ID);
+
+		return null;
+	}
+
 	public void createChildren(Map<Integer, Object[]> taxes, MLBRTax tax,
 			int C_Tax_ID, MProduct product, int C_BPartner_ID,
 			int C_BPartnerLocationTo_ID, String LBR_TransactionType,
@@ -539,18 +562,11 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 
 		/*
 		 * Fill cBenef (Código de Benefício Fiscal)
-		 * Busca o código na Situação Tributária (CST) e permite que o Produto sobrescreva
+		 * Reconsulta o código na Situação Tributária (CST) permitindo que o Produto sobrescreva.
+		 * A resolução é centralizada em MLBRDocLineICMS.updateCBenef(), que também é executada
+		 * pelo beforeSave quando o CST é alterado manualmente.
 		 */
-		String cBenef = null;
-		if (tl.getLBR_TaxStatus_ID() > 0) {
-			X_LBR_TaxStatus ts = new X_LBR_TaxStatus(getCtx(), tl.getLBR_TaxStatus_ID(), get_TrxName());
-			cBenef = ts.get_ValueAsString("LBR_CBenef");
-		}
-		String prodCBenef = product.get_ValueAsString("LBR_CBenef");
-		if (prodCBenef != null && !prodCBenef.trim().isEmpty())
-			cBenef = prodCBenef;
-		if (cBenef != null && !cBenef.trim().isEmpty())
-			icms.set_ValueOfColumn("LBR_CBenef", cBenef.trim());
+		icms.updateCBenef(product);
 
 
 		/* 
