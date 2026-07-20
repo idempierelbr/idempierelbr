@@ -200,7 +200,7 @@ public class NFeXMLGenerator {
 		
 		/** Identificação do Ambiente (1 - Produção; 2 - Homologação) */
 		String tpAmb = docType.get_ValueAsString("LBR_NFeEnv");
-		boolean isHomolog = tpAmb.equals("2");
+		boolean isHomolog = tpAmb.equals(NFeUtil.ENV_HOMOLOGACAO);
 
 		/** Formato de impressão do DANFE (1 - Retrato; 2 - Paisagem) */
 		String tpImp = docType.get_ValueAsString("LBR_DANFEFormat");

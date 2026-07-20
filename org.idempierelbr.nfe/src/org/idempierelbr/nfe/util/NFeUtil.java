@@ -30,6 +30,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.zip.GZIPInputStream;
 
+import javax.net.ssl.SSLContext;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
@@ -39,7 +40,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.adempiere.exceptions.AdempiereException;
-import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.io.IOUtils;
 import org.compiere.model.I_C_BPartner;
 import org.compiere.model.MAttachment;
 import org.compiere.model.MAttachmentEntry;
@@ -52,13 +53,11 @@ import org.compiere.model.MOrg;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.MProcess;
 import org.compiere.model.MRegion;
-import org.compiere.model.MTax;
 import org.compiere.model.MTaxProvider;
 import org.compiere.model.X_C_TaxProviderCfg;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
-import org.compiere.util.Msg;
 import org.compiere.util.Trx;
 import org.idempierelbr.base.model.MLBRCSC;
 import org.idempierelbr.base.model.MLBRNFeWebService;
@@ -68,15 +67,12 @@ import org.idempierelbr.base.model.MLBRNotaFiscalEvent;
 import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.nfe.base.NFeXMLGenerator;
 import org.idempierelbr.nfe.model.NFTaxProvider;
-import org.idempierelbr.nfe.stub.StubConnector;
 import org.idempierelbr.tax.provider.TaxProviderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
-
-import org.apache.commons.io.IOUtils;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
@@ -323,6 +319,10 @@ public class NFeUtil {
 	
 	/**	Logger				*/
 	private static CLogger log = CLogger.getCLogger(NFeUtil.class);
+
+	/** Ambiente de transmissão NF-e (tpAmb) */
+	public static final String ENV_PRODUCAO    = "1";
+	public static final String ENV_HOMOLOGACAO = "2";
 
 	/** Versão				*/
 	public static final String VERSAO			= "4.00";
@@ -747,7 +747,22 @@ public class NFeUtil {
 	 */
 	public static String getDigestBase64String(byte[] data) throws Exception {
 		MessageDigest messageDisgester = MessageDigest.getInstance("SHA-1");
-		return new String(Base64.encodeBase64(messageDisgester.digest(data)));
+		return java.util.Base64.getEncoder().encodeToString(messageDisgester.digest(data));
+	}
+
+	/**
+	 * Maps {@code tpEmis} from an NF-e XML payload to the contingency autorizador code.
+	 * @return {@code "AN"} for SVC-AN (tpEmis=6), {@code "RS"} for SVC-RS (tpEmis=7),
+	 *         {@code null} for normal emission (tpEmis=1) or absent/unknown value
+	 */
+	public static String autorizadorFromTpEmis(String xml) {
+		if (xml == null) return null;
+		int idx = xml.indexOf("<tpEmis>");
+		if (idx < 0) return null;
+		String tpEmis = xml.substring(idx + 8, idx + 9);
+		if ("6".equals(tpEmis)) return "AN";
+		if ("7".equals(tpEmis)) return "RS";
+		return null;
 	}
 
 	/**
@@ -897,57 +912,56 @@ public class NFeUtil {
 		return String.valueOf(Integer.parseInt(str));	
 	}
 	
-	public static String requestWS(Properties ctx, int AD_Org_ID, String lastNSU,
+	public static String requestWS(Properties ctx, int AD_Org_ID, String tpAmb, String lastNSU,
 			String NSU, String NFeID, String trxName) throws Exception {
 		MOrg org = new MOrg(ctx, AD_Org_ID, trxName);
 		MOrgInfo orgInfo = MOrgInfo.get(ctx, org.get_ID(), trxName);
 		MLocation orgLoc = new MLocation(ctx, orgInfo.getC_Location_ID(), trxName);
 		MRegion orgRegion = new MRegion(ctx, orgLoc.getC_Region_ID(), trxName);
-		
+
 		String LBR_RegionCode = orgRegion.get_ValueAsString("LBR_RegionCode");
-		
+
 		int linked2OrgC_BPartner_ID = org.getLinkedC_BPartner_ID(trxName);
 		MBPartner bpLinked2Org = new MBPartner(ctx, linked2OrgC_BPartner_ID, trxName);
 		String LBR_CNPJ = TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ"));
-		
+
 		StringBuilder xml = new StringBuilder()
-			.append("<nfeDadosMsg>")
 			.append("<distDFeInt versao=\"1.01\" xmlns=\"http://www.portalfiscal.inf.br/nfe\">")
-			.append("<tpAmb>1</tpAmb>")
+			.append("<tpAmb>").append(tpAmb).append("</tpAmb>")
 			.append("<cUFAutor>" + LBR_RegionCode + "</cUFAutor>")
 			.append("<CNPJ>" + LBR_CNPJ + "</CNPJ>");
-		
+
 		if (NSU != null)
 			xml.append("<consNSU><NSU>").append(NSU).append("</NSU></consNSU>");
 		else if (NFeID != null)
 			xml.append("<consChNFe><chNFe>").append(NFeID).append("</chNFe></consChNFe>");
 		else
-			xml.append("<distNSU><ultNSU>").append(lastNSU).append("</ultNSU></distNSU>");		
-		
-		xml.append("</distDFeInt>")
-			.append("</nfeDadosMsg>");
-		
+			xml.append("<distNSU><ultNSU>").append(lastNSU).append("</ultNSU></distNSU>");
+
+		xml.append("</distDFeInt>");
+
 		//INICIALIZA CERTIFICADO
+		SSLContext sslContext;
 		try {
-			DigitalCertificateUtil.setCertificate(ctx, AD_Org_ID);
+			sslContext = DigitalCertificateUtil.buildSSLContext(ctx, AD_Org_ID);
 		} catch (Exception e) {
 			throw new AdempiereException(e);
 		}
-		
-		StubConnector connector = new StubConnector(NFeUtil.VERSAO_DISTRIBUICAO,
+
+		SefazHttpClient client = new SefazHttpClient(sslContext, NFeUtil.VERSAO_DISTRIBUICAO,
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_DISTRIBUICAO_DFE,
-				false, false, MLBRNotaFiscal.LBR_NFEMODEL_55_NF_E);
-		String result = connector.sendMessage(xml.toString());
+				tpAmb.equals(ENV_HOMOLOGACAO), MLBRNotaFiscal.LBR_NFEMODEL_55_NF_E, null);
+		String result = client.send(xml.toString());
 		
 		return result;
 	}
 	
-	public static String requestWSAndProcess(Properties ctx, int AD_Org_ID, String lastNSU,
-			String NSU, String NFeID, String trxName) throws Exception {
-		String result = NFeUtil.requestWS(ctx, AD_Org_ID, lastNSU, NSU, NFeID, trxName);
+	public static String requestWSAndProcess(Properties ctx, int AD_Org_ID, String tpAmb,
+			String lastNSU, String NSU, String NFeID, String trxName) throws Exception {
+		String result = NFeUtil.requestWS(ctx, AD_Org_ID, tpAmb, lastNSU, NSU, NFeID, trxName);
 		
-		// Parse XML
-		DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+		// Parse XML with XXE-hardened builder (SEFAZ response is untrusted input)
+		DocumentBuilder builder = SefazSoapUtils.newHardenedDocumentBuilder();
 		Document doc = builder.parse(new InputSource(new StringReader(result)));
 
 		String cStat = null;
@@ -967,34 +981,41 @@ public class NFeUtil {
         	maxNSU = NFeUtil.getValue(doc, "maxNSU");
         
         NodeList docZipList = doc.getElementsByTagName("docZip");
-        
+
+        log.info("SEFAZ DistDFe response — cStat=" + cStat + " xMotivo=" + xMotivo
+                + " ultNSU=" + ultNSU + " maxNSU=" + maxNSU
+                + " docZipCount=" + docZipList.getLength());
+
         for (int i=0; i< docZipList.getLength(); i++) {
         	Node node = docZipList.item(i);
         	processDocZip(ctx, AD_Org_ID, node, trxName);
         }
-		
+
 		return cStat + " - " + xMotivo;
 	}
 	
 	public static void processDocZip(Properties ctx, int AD_Org_ID, Node node, String trxName) throws Exception {
 		if (node.getNodeType() == Node.ELEMENT_NODE) {
-			String NSU = node.getAttributes().item(0).getTextContent();
-			String schemaName = node.getAttributes().item(1).getTextContent();
-			
+			String NSU = node.getAttributes().getNamedItem("NSU").getNodeValue();
+			String schemaName = node.getAttributes().getNamedItem("schema").getNodeValue();
+
 			// decompress
 			byte[] decoded = java.util.Base64.getDecoder().decode(node.getTextContent());
-			ByteArrayInputStream is = new ByteArrayInputStream(decoded);
-			GZIPInputStream gzis = new GZIPInputStream(is);
-			String xml = new String(gzis.readAllBytes(), "UTF-8");
+			String xml;
+			try (GZIPInputStream gzis = new GZIPInputStream(new ByteArrayInputStream(decoded))) {
+				xml = new String(gzis.readAllBytes(), java.nio.charset.StandardCharsets.UTF_8);
+			}
 			
-			// Parse XML
-			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			// Parse XML with XXE-hardened builder (docZip content is untrusted input)
+			DocumentBuilder builder = SefazSoapUtils.newHardenedDocumentBuilder();
 			Document doc = builder.parse(new InputSource(new StringReader(xml)));
-			
+
 			String chNFe = null;
 	        if (doc.getElementsByTagName("chNFe") != null)
 	        	chNFe = NFeUtil.getValue(doc, "chNFe");
-	        
+
+	        log.fine("SEFAZ docZip — NSU=" + NSU + " schema=" + schemaName + " chNFe=" + chNFe);
+
 	        int LBR_NFeXML_ID = DB.getSQLValue(trxName,
 	        	"SELECT LBR_NFeXML_ID FROM LBR_NFeXML WHERE AD_Client_ID=? AND AD_Org_ID=? AND LBR_NSU=? AND IsActive=?", 
 	        	Env.getAD_Client_ID(ctx), AD_Org_ID, NSU, "Y");

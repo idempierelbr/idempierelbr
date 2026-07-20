@@ -21,7 +21,7 @@ import org.idempierelbr.base.model.MLBRNotaFiscalInut;
 import org.idempierelbr.base.util.BPartnerUtil;
 import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.nfe.beans.InutilizacaoNFEBean;
-import org.idempierelbr.nfe.stub.StubConnector;
+import javax.net.ssl.SSLContext;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 
@@ -52,8 +52,9 @@ public class NFeInutUtil {
 		MRegion orgRegion = new MRegion(ctx, orgLoc.getC_Region_ID(), inut.get_TrxName());
 		
 		//INICIALIZA CERTIFICADO
+		SSLContext sslContext;
 		try {
-			DigitalCertificateUtil.setCertificate(ctx, inut.getAD_Org_ID());
+			sslContext = DigitalCertificateUtil.buildSSLContext(ctx, inut.getAD_Org_ID());
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new AdempiereException("Could not set digital certificate");
@@ -70,13 +71,10 @@ public class NFeInutUtil {
 			throw new AdempiereException("Could not generate XML");
 		}
 
-		xml = "<nfeDadosMsg>" + xml + "</nfeDadosMsg>";
-		
-		StubConnector connector = new StubConnector(NFeUtil.VERSAO_APP,
+		SefazHttpClient client = new SefazHttpClient(sslContext, NFeUtil.VERSAO_APP,
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_INUTILIZACAO,
-				false, inut.getLBR_NFeEnv().equals("2") ? true : false, inut.getLBR_NFBModel());
-		
-		String result = connector.sendMessage(xml);
+				inut.getLBR_NFeEnv().equals(NFeUtil.ENV_HOMOLOGACAO), inut.getLBR_NFBModel(), null);
+		String result = client.send(xml);
 		
 		if (result == null || result.trim().equals(""))
 			throw new AdempiereException("Could not connect to webservice. Please try again later");
