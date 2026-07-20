@@ -32,6 +32,5 @@
 		<module>org.idempierelbr.cnab240.santander</module>
 		<module>org.idempierelbr.cnab240.sicoob</module>
 		<module>org.idempierelbr.extensions.p2</module>
-		<module>org.idempierelbr.test</module>
 	</modules>
 </project>

@@ -4,11 +4,11 @@ import java.util.logging.Level;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.DB;
-import org.idempierelbr.base.util.SystemEnvUtil;
 import org.idempierelbr.nfe.util.NFeUtil;
 
 public class DownloadNFeXML extends SvrProcess {
 	private int p_AD_Org_ID = 0;
+	private String p_LBR_NFeEnv = null;
 	private String p_LBR_LastNSU = null;
 	private String p_LBR_NSU = null;
 	private String p_LBR_NFeID = null;
@@ -24,6 +24,8 @@ public class DownloadNFeXML extends SvrProcess {
 
 			else if (name.equals("AD_Org_ID"))
 				p_AD_Org_ID = para[i].getParameterAsInt();
+			else if (name.equals("LBR_NFeEnv"))
+				p_LBR_NFeEnv = para[i].getParameterAsString();
 			else if (name.equals("LBR_LastNSU"))
 				p_LBR_LastNSU = para[i].getParameterAsString();
 			else if (name.equals("LBR_NSU"))
@@ -40,6 +42,10 @@ public class DownloadNFeXML extends SvrProcess {
 	protected String doIt() throws Exception {
 		if (p_AD_Org_ID == 0) {
 			throw new Exception("Sem organização definida!");
+		}
+
+		if (p_LBR_NFeEnv == null) {
+			throw new Exception("Ambiente da Sefaz não definido!");
 		}
 
 		if ((p_LBR_LastNSU != null && (p_LBR_NSU != null || p_LBR_NFeID != null)) ||
@@ -61,9 +67,7 @@ public class DownloadNFeXML extends SvrProcess {
 
 		}
 
-		String tpAmb = SystemEnvUtil.isDev() ? NFeUtil.ENV_HOMOLOGACAO : NFeUtil.ENV_PRODUCAO;
-
-		return NFeUtil.requestWSAndProcess(getCtx(), p_AD_Org_ID, tpAmb,
+		return NFeUtil.requestWSAndProcess(getCtx(), p_AD_Org_ID, p_LBR_NFeEnv,
 				p_LBR_LastNSU, p_LBR_NSU, p_LBR_NFeID, get_TrxName());
 	}
 }
