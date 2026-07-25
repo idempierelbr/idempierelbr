@@ -17,8 +17,6 @@ import org.idempierelbr.base.model.MLBRDocLineIBSCBS;
 import org.idempierelbr.base.model.MLBRNotaFiscal;
 import org.idempierelbr.base.model.MLBRNotaFiscalDocRef;
 import org.idempierelbr.base.model.MLBRNotaFiscalLine;
-import org.idempierelbr.base.model.MLBRNotaFiscalPay;
-import org.idempierelbr.base.model.MLBRNotaFiscalPaySched;
 import org.idempierelbr.base.model.MLBRNotaFiscalTransp;
 
 /**
@@ -304,23 +302,6 @@ public class GenerateNFDebitCredit extends SvrProcess {
 		MLBRNotaFiscalTransp transp = nf.getTransp();
 		transp.setLBR_NFeModShipping("9"); // 9 - Sem Ocorrência de Transporte
 		transp.saveEx();
-
-		// ===== Pagamento (à vista, valor total do encargo) =====
-		MLBRNotaFiscalPay pay = new MLBRNotaFiscalPay(ctx, 0, trxName);
-		pay.setAD_Org_ID(nf.getAD_Org_ID());
-		pay.setLBR_NotaFiscal_ID(nf.get_ID());
-		pay.setLBR_Document(nf.getDocumentNo());
-		pay.setGrandTotal(amount);
-		pay.setNetAmtToInvoice(amount);
-		pay.saveEx();
-
-		MLBRNotaFiscalPaySched pSched = new MLBRNotaFiscalPaySched(ctx, 0, trxName);
-		pSched.setAD_Org_ID(nf.getAD_Org_ID());
-		pSched.setLBR_NotaFiscalPay_ID(pay.get_ID());
-		pSched.setLBR_Document(nf.getDocumentNo() + "/1");
-		pSched.setDueDate(new Timestamp(System.currentTimeMillis()));
-		pSched.setDueAmt(amount);
-		pSched.saveEx();
 
 		// ===== Referência à NF original (chave) =====
 		MLBRNotaFiscalDocRef docRef = new MLBRNotaFiscalDocRef(ctx, 0, trxName);
