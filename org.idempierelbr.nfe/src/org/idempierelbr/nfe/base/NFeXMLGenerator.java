@@ -65,6 +65,7 @@ import org.idempierelbr.nfe.beans.DadosNFE;
 import org.idempierelbr.nfe.beans.DeclaracaoDI;
 import org.idempierelbr.nfe.beans.DetPag;
 import org.idempierelbr.nfe.beans.DetalhesProdServBean;
+import org.idempierelbr.nfe.beans.DFeReferenciadoBean;
 import org.idempierelbr.nfe.beans.EnderDest;
 import org.idempierelbr.nfe.beans.EnderEmit;
 import org.idempierelbr.nfe.beans.FormasPagamentoNFEBean;
@@ -234,15 +235,24 @@ public class NFeXMLGenerator {
 		 * 3 - NFe de ajuste
 		 */
 		String FinNFE = nf.getLBR_FinNFe();
-		
-		// Identificação NFE
-		if (FinNFE.equals("2"))
-		{
-			// TODO: refatorar
-			/*xstream.alias("NFref", NFERefenciadaBean.class);
-			nfereferencia.setRefNFe(nf.getlbr_NFRefere().getlbr_NFeID());
-			identNFe.setNFref(nfereferencia);*/
-		}
+
+		/**
+		 * Nota de Débito (finNFe=6) e Nota de Crédito (finNFe=5) da Reforma
+		 * Tributária (NT 2025.002): documentos de ajuste que destacam apenas
+		 * IBS/CBS e referenciam a NF-e original na aba Documento Fiscal Referenciado.
+		 */
+		boolean isDebCredNFe = "5".equals(FinNFE) || "6".equals(FinNFE);
+		// Nível de referência à NF-e original difere por finalidade (confirmado em homologação SEFAZ):
+		//   Nota de Débito (6) -> por item (det/DFeReferenciado); Nota de Crédito (5) -> por nota (ide/NFref, rejeição 254)
+		boolean isDebNFe = "6".equals(FinNFE);
+		String tpNFDebito = nf.getLBR_tpNFDebito();
+		String tpNFCredito = nf.getLBR_tpNFCredito();
+
+		if ("6".equals(FinNFE) && (tpNFDebito == null || tpNFDebito.trim().isEmpty()))
+			return "@LBR_tpNFDebito@ @IsMandatory@";
+
+		if ("5".equals(FinNFE) && (tpNFCredito == null || tpNFCredito.trim().isEmpty()))
+			return "@LBR_tpNFCredito@ @IsMandatory@";
 		
 		/**
 		 * CRT
@@ -316,6 +326,10 @@ public class NFeXMLGenerator {
 		identNFe.setcDV("" + digitochave);
 		identNFe.setTpAmb(tpAmb);
 		identNFe.setFinNFe(FinNFE);
+		if ("6".equals(FinNFE))
+			identNFe.setTpNFDebito(tpNFDebito);
+		else if ("5".equals(FinNFE))
+			identNFe.setTpNFCredito(tpNFCredito);
 		identNFe.setIndFinal(nf.getLBR_NFeIndFinal());
 		identNFe.setIndPres(nf.getLBR_NFeIndPres());
 		identNFe.setIndIntermed(nf.getLBR_NFeIndIntermed());
@@ -323,6 +337,8 @@ public class NFeXMLGenerator {
 		identNFe.setVerProc(verProc);
 		
 		// BA. Documento Fiscal Referenciado
+		// Chave da NF-e referenciada, reutilizada no grupo det/DFeReferenciado das Notas de Débito/Crédito (NT 2025.002)
+		String refDFeChaveAcesso = null;
 		MLBRNotaFiscalDocRef[] docRefs = nf.getDocRefs();
 		
 		if (docRefs.length > 0) {
@@ -343,6 +359,9 @@ public class NFeXMLGenerator {
 						return "@Tab@ @LBR_DocRef@, @Field@ @invalid@: @LBR_NFeID@";
 					
 					nfRef.setRefNFe(docRef.getLBR_NFeID().trim());
+
+					if (refDFeChaveAcesso == null)
+						refDFeChaveAcesso = docRef.getLBR_NFeID().trim();
 				}
 				// Modelo 1/1A
 				else if (docRef.getLBR_NFeDocRefType().equals("2")) {
@@ -456,9 +475,15 @@ public class NFeXMLGenerator {
 					nfRef.setRefECF(refECF);
 				}
 				
-				identNFe.addNFref(nfRef);
+				// A Nota de Débito referencia por item (det/DFeReferenciado) e não usa ide/NFref (senão rejeição 1010).
+				// Nota de Crédito e demais finalidades referenciam por nota (ide/NFref; a de crédito exige, rejeição 254).
+				if (!isDebNFe)
+					identNFe.addNFref(nfRef);
 			}
 		}
+
+		if (isDebCredNFe && refDFeChaveAcesso == null)
+			return "@Tab@ @LBR_DocRef@: informe a NF-e referenciada (chave de acesso, tipo NF-e) para Nota de Débito/Crédito (finNFe 5/6)";
 
 		dados.setIde(identNFe);
 		
@@ -994,10 +1019,18 @@ public class NFeXMLGenerator {
 			TributosInciBean impostos = new TributosInciBean();
 			String desc = RemoverAcentos.remover(TextUtil.removeEOL(details.get_ValueAsString("Memo")));
 			
+			DetalhesProdServBean detBean;
 			if (desc != null && !desc.equals(""))
-				dados.add(new DetalhesProdServBean(produtos, impostos, linhaNF++, desc));
+				detBean = new DetalhesProdServBean(produtos, impostos, linhaNF++, desc);
 			else
-				dados.add(new DetalhesProdServBean(produtos, impostos, linhaNF++));
+				detBean = new DetalhesProdServBean(produtos, impostos, linhaNF++);
+
+			// Nota de Débito (finNFe=6): referencia a NF-e original por item (NT 2025.002, rejeições 1038 e 1048).
+			// nItem aponta para o item de mesma posição na NF-e original (precisa existir na nota referenciada).
+			if (isDebNFe && refDFeChaveAcesso != null)
+				detBean.DFeReferenciado = new DFeReferenciadoBean(refDFeChaveAcesso, String.valueOf(detBean.nItem));
+
+			dados.add(detBean);
 
 			xstream.alias("det", DetalhesProdServBean.class);
 			xstream.useAttributeFor(DetalhesProdServBean.class, "nItem");
@@ -1013,6 +1046,9 @@ public class NFeXMLGenerator {
 			if (ibscbs != null)
 				impostos.setIBSCBS(ibscbs);
 			
+			// Nota de Débito/Crédito (finNFe 5/6): apenas IBS/CBS é permitido (NT 2025.002)
+			if (!isDebCredNFe)
+			{
 			// IS
 			ISBean is = null;
 			try {
@@ -1112,6 +1148,7 @@ public class NFeXMLGenerator {
 			}
 			if (icmsUFDest != null)
 				impostos.setICMSUFDest(icmsUFDest);
+			} // fim tributos não IBS/CBS (Nota de Débito/Crédito)
 		}
 		
 		// Total da NF-e

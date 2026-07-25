@@ -21,6 +21,7 @@ public class DetalhesProdServBean
 	public ProdutosNFEBean prod;
 	public TributosInciBean imposto;
 	public String infAdProd;
+	public DFeReferenciadoBean DFeReferenciado;
 	public int nItem;
 
 	/**

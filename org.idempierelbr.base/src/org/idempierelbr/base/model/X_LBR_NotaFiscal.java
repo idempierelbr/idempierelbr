@@ -27,7 +27,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Model for LBR_NotaFiscal
  *  @author iDempiere (generated)
- *  @version Release 11 - $Id$ */
+ *  @version Release 13 - $Id$ */
 @org.adempiere.base.Model(table="LBR_NotaFiscal")
 public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persistent
 {
@@ -35,7 +35,7 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20240603L;
+	private static final long serialVersionUID = 20260724L;
 
     /** Standard Constructor */
     public X_LBR_NotaFiscal (Properties ctx, int LBR_NotaFiscal_ID, String trxName)
@@ -237,6 +237,7 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
       return sb.toString();
     }
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_BPartner getC_BPartner() throws RuntimeException
 	{
 		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_ID)
@@ -265,6 +266,7 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return ii.intValue();
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_BPartner_Location getC_BPartner_Location() throws RuntimeException
 	{
 		return (org.compiere.model.I_C_BPartner_Location)MTable.get(getCtx(), org.compiere.model.I_C_BPartner_Location.Table_ID)
@@ -293,6 +295,7 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return ii.intValue();
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_City getC_City() throws RuntimeException
 	{
 		return (org.compiere.model.I_C_City)MTable.get(getCtx(), org.compiere.model.I_C_City.Table_ID)
@@ -321,6 +324,7 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return ii.intValue();
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_DocType getC_DocType() throws RuntimeException
 	{
 		return (org.compiere.model.I_C_DocType)MTable.get(getCtx(), org.compiere.model.I_C_DocType.Table_ID)
@@ -349,6 +353,7 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return ii.intValue();
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_Invoice getC_Invoice() throws RuntimeException
 	{
 		return (org.compiere.model.I_C_Invoice)MTable.get(getCtx(), org.compiere.model.I_C_Invoice.Table_ID)
@@ -377,6 +382,7 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return ii.intValue();
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_Order getC_Order() throws RuntimeException
 	{
 		return (org.compiere.model.I_C_Order)MTable.get(getCtx(), org.compiere.model.I_C_Order.Table_ID)
@@ -405,6 +411,7 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return ii.intValue();
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException
 	{
 		return (org.compiere.model.I_C_Region)MTable.get(getCtx(), org.compiere.model.I_C_Region.Table_ID)
@@ -676,6 +683,7 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return (String)get_Value(COLUMNNAME_LBR_AmtDistribution);
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_BPartner getLBR_BP_Intermed() throws RuntimeException
 	{
 		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_ID)
@@ -703,6 +711,7 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return ii.intValue();
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_BPartner_Location getLBR_BP_PickupLocation() throws RuntimeException
 	{
 		return (org.compiere.model.I_C_BPartner_Location)MTable.get(getCtx(), org.compiere.model.I_C_BPartner_Location.Table_ID)
@@ -731,6 +740,7 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return ii.intValue();
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_BPartner getLBR_BP_Pickup() throws RuntimeException
 	{
 		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_ID)
@@ -759,6 +769,7 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return ii.intValue();
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_BPartner_Location getLBR_BP_ShipLocation() throws RuntimeException
 	{
 		return (org.compiere.model.I_C_BPartner_Location)MTable.get(getCtx(), org.compiere.model.I_C_BPartner_Location.Table_ID)
@@ -787,6 +798,7 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return ii.intValue();
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_BPartner getLBR_BP_Ship() throws RuntimeException
 	{
 		return (org.compiere.model.I_C_BPartner)MTable.get(getCtx(), org.compiere.model.I_C_BPartner.Table_ID)
@@ -869,6 +881,10 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 	public static final String LBR_FINNFE_NF_EDeAjuste = "3";
 	/** Devolucao/Retorno = 4 */
 	public static final String LBR_FINNFE_DevolucaoRetorno = "4";
+	/** NF-e Nota de Crédito = 5 */
+	public static final String LBR_FINNFE_NF_ENotaDeCrédito = "5";
+	/** NF-e Nota de Débito = 6 */
+	public static final String LBR_FINNFE_NF_ENotaDeDébito = "6";
 	/** Set NFe Issue Goal.
 		@param LBR_FinNFe NFe Issue Goal
 	*/
@@ -2229,6 +2245,61 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return (String)get_Value(COLUMNNAME_LBR_UnidentifiedCustomerCPF);
 	}
 
+	/** LBR_tpNFCredito AD_Reference_ID=800073 */
+	public static final int LBR_TPNFCREDITO_AD_Reference_ID=800073;
+	/** Multa e juros = 01 */
+	public static final String LBR_TPNFCREDITO_MultaEJuros = "01";
+	/** Crédito presumido de IBS na ZFM = 02 */
+	public static final String LBR_TPNFCREDITO_CréditoPresumidoDeIBSNaZFM = "02";
+	/** Set NFe Credit Type.
+		@param LBR_tpNFCredito NFe Credit Type
+	*/
+	public void setLBR_tpNFCredito (String LBR_tpNFCredito)
+	{
+
+		set_Value (COLUMNNAME_LBR_tpNFCredito, LBR_tpNFCredito);
+	}
+
+	/** Get NFe Credit Type.
+		@return NFe Credit Type	  */
+	public String getLBR_tpNFCredito()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_tpNFCredito);
+	}
+
+	/** LBR_tpNFDebito AD_Reference_ID=800072 */
+	public static final int LBR_TPNFDEBITO_AD_Reference_ID=800072;
+	/** Transferência de créditos para Cooperativas = 01 */
+	public static final String LBR_TPNFDEBITO_TransferênciaDeCréditosParaCooperativas = "01";
+	/** Anulação de crédito por saídas imunes/isentas = 02 */
+	public static final String LBR_TPNFDEBITO_AnulaçãoDeCréditoPorSaídasImunesIsentas = "02";
+	/** Débitos de NF não processadas na apuração = 03 */
+	public static final String LBR_TPNFDEBITO_DébitosDeNFNãoProcessadasNaApuração = "03";
+	/** Multa e juros = 04 */
+	public static final String LBR_TPNFDEBITO_MultaEJuros = "04";
+	/** Transferência de crédito de sucessão = 05 */
+	public static final String LBR_TPNFDEBITO_TransferênciaDeCréditoDeSucessão = "05";
+	/** Pagamento antecipado = 06 */
+	public static final String LBR_TPNFDEBITO_PagamentoAntecipado = "06";
+	/** Perda em estoque = 07 */
+	public static final String LBR_TPNFDEBITO_PerdaEmEstoque = "07";
+	/** Set NFe Debit Type.
+		@param LBR_tpNFDebito NFe Debit Type
+	*/
+	public void setLBR_tpNFDebito (String LBR_tpNFDebito)
+	{
+
+		set_Value (COLUMNNAME_LBR_tpNFDebito, LBR_tpNFDebito);
+	}
+
+	/** Get NFe Debit Type.
+		@return NFe Debit Type	  */
+	public String getLBR_tpNFDebito()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_tpNFDebito);
+	}
+
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_M_RMA getM_RMA() throws RuntimeException
 	{
 		return (org.compiere.model.I_M_RMA)MTable.get(getCtx(), org.compiere.model.I_M_RMA.Table_ID)
