@@ -18,6 +18,8 @@ public class ProcessFactory implements IProcessFactory {
 			return new ValidateDigitalCertificate();
 		else if (className.equals("org.idempierelbr.nfe.process.CreateNotaFiscal"))
 			return new CreateNotaFiscal();
+		else if (className.equals("org.idempierelbr.nfe.process.GenerateNFDebitCredit"))
+			return new GenerateNFDebitCredit();
 		else if (className.equals("org.idempierelbr.nfe.process.LinkNotaFiscal"))
 			return new LinkNotaFiscal();
 		else if (className.equals("org.idempierelbr.nfe.process.UnlinkNotaFiscal"))

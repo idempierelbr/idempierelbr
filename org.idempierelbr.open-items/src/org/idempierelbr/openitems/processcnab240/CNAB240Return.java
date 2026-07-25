@@ -2,14 +2,18 @@ package org.idempierelbr.openitems.processcnab240;
 
 import java.io.File;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MAttachment;
 import org.compiere.model.MBank;
 import org.compiere.model.MBankAccount;
+import org.compiere.model.MSysConfig;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
+import org.compiere.util.Env;
 import org.idempierelbr.base.model.MLBRCNAB;
 import org.idempierelbr.base.service.IBankCollection;
 import org.idempierelbr.base.util.OpenItemsUtil;
@@ -31,6 +35,9 @@ public class CNAB240Return extends SvrProcess
 	private IBankCollection bankCollection;
 	private MBankAccount bankAccount;
 	private MLBRCNAB cnab;
+
+	/** Movimentos de liquidação com juros/multa, candidatos à Nota de Débito automática */
+	private final List<Integer> interestMovementIDs = new ArrayList<Integer>();
 	
 	public CNAB240Return(CNABRecords records , IBankCollection bankCollection ) {
 		super();
@@ -132,12 +139,25 @@ public class CNAB240Return extends SvrProcess
 
 		String result = CNABRecordsProcess.process(records, this, bankCollection, p_AD_Org_ID);
 
+		// Gera automaticamente a Nota de Débito dos juros/multa recebidos.
+		if (!interestMovementIDs.isEmpty()
+				&& CNABDebitNoteGenerator.isEnabled(Env.getAD_Client_ID(getCtx()), p_AD_Org_ID)) {
+			commitEx();
+			CNABDebitNoteGenerator.generate(this, interestMovementIDs);
+		}
+
 		cnab.setDescription(getName() + " (" + m_bank.getName() + ")\n" + getProcessInfo().getSummary());
 		cnab.saveEx();
 
 		return result;
 
 	}	//	doIt
+
+	/** Registra um movimento de liquidação com juros/multa (candidato à Nota de Débito). */
+	public void addInterestMovementID(int LBR_BoletoMovement_ID) {
+		if (LBR_BoletoMovement_ID > 0)
+			interestMovementIDs.add(Integer.valueOf(LBR_BoletoMovement_ID));
+	}
 
 	public MBankAccount getBankAccount() {
 		return bankAccount;

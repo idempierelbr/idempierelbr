@@ -432,8 +432,12 @@ public class CNABRecordsProcess {
 					.append(TextUtil.toNumeric(mov.getPayAmt()))
 					.append(", ")
 					.append(mov.createPayment());
-				
+
 				svrP.addLog(log.toString());
+
+				// Liquidação com juros/multa: candidata à Nota de Débito automática
+				if (mov.getInterestAmt() != null && mov.getInterestAmt().compareTo(Env.ZERO) > 0)
+					svrP.addInterestMovementID(mov.get_ID());
 			}
 		
 		}
