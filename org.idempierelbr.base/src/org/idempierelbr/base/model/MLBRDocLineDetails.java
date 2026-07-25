@@ -214,9 +214,48 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		}
 	}
 	
+	/**
+	 * 	Delete every tax child EXCEPT IBS/CBS. Used by the Reforma Tributária
+	 * 	Débito/Crédito notes (finNFe 5/6), which may only carry IBS/CBS — so no
+	 * 	residual ICMS/PIS/COFINS/IPI/IS/etc. records are left for apuração reports.
+	 */
+	public void deleteNonIBSCBSChildren() {
+		PO[] poArray = MLBRDocLineIS.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+
+		poArray = MLBRDocLineICMS.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+
+		poArray = MLBRDocLineIPI.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+
+		poArray = MLBRDocLinePIS.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+
+		poArray = MLBRDocLineCOFINS.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+
+		poArray = MLBRDocLineImportTax.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+
+		poArray = MLBRDocLineISSQN.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+
+		poArray = MLBRDocLineOTHER.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+	}
+
 	protected boolean beforeDelete() {
 		deleteChildren();
-		return true;		
+		return true;
 	}
 	
 	

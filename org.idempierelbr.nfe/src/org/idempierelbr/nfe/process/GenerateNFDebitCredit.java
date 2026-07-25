@@ -271,6 +271,21 @@ public class GenerateNFDebitCredit extends SvrProcess {
 				details.copyFrom(origDetails);
 
 			details.setLBR_CFOP_ID(cfop.get_ID());
+
+			// O gerador lê o vProd do
+			// item de details.getLBR_GrossAmt() e o vUnTrib de details.getLBR_PriceTax()
+			// (não de LineNetAmt/PriceActual). Sobrescreve com os valores RATEADOS desta
+			// linha e zera frete/seguro/desconto/acréscimos (a nota só carrega o encargo).
+			details.setLBR_GrossAmt(lineAmt[i]);
+			BigDecimal qtyTax = details.getLBR_QtyTax();
+			details.setLBR_PriceTax(qtyTax != null && qtyTax.signum() != 0
+					? lineAmt[i].divide(qtyTax, 10, RoundingMode.HALF_UP) : price);
+			details.setLBR_IsGrossAmtInTotal(true);
+			details.setFreightAmt(Env.ZERO);
+			details.setInsuredAmount(Env.ZERO);
+			details.setDiscountAmt(Env.ZERO);
+			details.setSurcharges(Env.ZERO);
+
 			details.saveEx();
 
 			// IBS/CBS: herda CST/cClassTrib/alíquotas e reaplica sobre a base rateada
@@ -278,6 +293,11 @@ public class GenerateNFDebitCredit extends SvrProcess {
 				MLBRDocLineIBSCBS.copy(origDetails, details);
 				scaleIBSCBS(details, lineAmt[i]);
 			}
+
+			// A infra de cálculo (EventHandler ao salvar o details) copia/cria TODOS os
+			// filhos de imposto. A Nota de Débito/Crédito só pode conter IBS/CBS — remove
+			// ICMS/PIS/COFINS/IPI/IS/... para não deixar resíduo nas tabelas de apuração.
+			details.deleteNonIBSCBSChildren();
 		}
 
 		// ===== Transporte (sem frete) =====
