@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_InfoWindow">
+<!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_InfoWindow">
  <row id="200000" trl="Y">
   <value column="Name" original="Product Info">Informações de Produtos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="200001" trl="Y">
-  <value column="Name" original="Business Partner Info">Informações de Parceiros</value>
+  <value column="Name" original="Business Partner Info">Informações de Parceiro de Negócios</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -42,12 +42,12 @@
  </row>
  <row id="200008" trl="Y">
   <value column="Name" original="Generate Shipments (manual)">Gerar Remessas (Manual)</value>
-  <value column="Description" original="Select and generate shipments">Selecione e gere remessas</value>
+  <value column="Description" original="Select and generate shipments">Seleciona e gera remessas</value>
   <value column="Help" original=""/>
  </row>
  <row id="200011" trl="Y">
   <value column="Name" original="Generate Invoices (manual)">Gerar Faturas (Manual)</value>
-  <value column="Description" original="Select and generate invoices">Selecione e gere faturas</value>
+  <value column="Description" original="Select and generate invoices">Seleciona e gera faturas</value>
   <value column="Help" original=""/>
  </row>
  <row id="200013" trl="Y">
@@ -62,7 +62,7 @@
  </row>
  <row id="200019" trl="Y">
   <value column="Name" original="Period Control Management">Controle de Períodos</value>
-  <value column="Description" original="Management of Calendars, Years and Periods">Manutenção de Calendários, Anos e Períodos</value>
+  <value column="Description" original="Management of Calendars, Years and Periods">Gestão de Calendários, Anos e Períodos</value>
   <value column="Help" original=""/>
  </row>
  <row id="200020" trl="Y">

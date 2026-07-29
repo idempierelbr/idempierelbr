@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="PA_DashboardContent">
+<!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="PA_DashboardContent">
  <row id="50000" trl="Y">
   <value column="Name" original="Activities">Atividades</value>
-  <value column="Description" original="Workflow activities, notices and requests">Atividades de workflow, avisos, solicitações, etc.</value>
+  <value column="Description" original="Workflow activities, notices and requests">Atividades de workflow, avisos e solicitações</value>
   <value column="Help" original=""/>
   <value column="HTML" original=""/>
  </row>
@@ -13,14 +13,20 @@
   <value column="HTML" original=""/>
  </row>
  <row id="50002" trl="Y">
-  <value column="Name" original="Views">Informações</value>
-  <value column="Description" original="Info views">Informações</value>
+  <value column="Name" original="Views">Visões</value>
+  <value column="Description" original="Info views">Visões de informação</value>
   <value column="Help" original=""/>
   <value column="HTML" original=""/>
  </row>
  <row id="50003" trl="Y">
   <value column="Name" original="Performance">Desempenho</value>
-  <value column="Description" original="Performance meters">Medidas de desempenho</value>
+  <value column="Description" original="Performance meters">Medidores de desempenho</value>
+  <value column="Help" original=""/>
+  <value column="HTML" original=""/>
+ </row>
+ <row id="50004" trl="N">
+  <value column="Name" original="Calendar">Calendar</value>
+  <value column="Description" original="Request Calendar">Request Calendar</value>
   <value column="Help" original=""/>
   <value column="HTML" original=""/>
  </row>
@@ -43,7 +49,7 @@
   <value column="HTML" original=""/>
  </row>
  <row id="200003" trl="Y">
-  <value column="Name" original="Activities">Indicadores de Estado</value>
+  <value column="Name" original="Activities">Atividades</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="HTML" original=""/>
@@ -53,5 +59,17 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="HTML" original="&lt;iframe src=&quot;https://www.idempiere.org/short-donate/&quot; style=&quot;border-top-width: 0px;border-bottom-width: 0px;border-right-width: 0px;border-left-width: 0px;width: 100%;height: 450px;&quot;&gt;&lt;/iframe&gt;" xml:space="preserve"><![CDATA[<iframe src="https://www.idempiere.org/short-donate/" style="border-top-width: 0px;border-bottom-width: 0px;border-right-width: 0px;border-left-width: 0px;width: 100%;height: 450px;"></iframe>]]></value>
+ </row>
+ <row id="200018" trl="N">
+  <value column="Name" original="KPI1">KPI1</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="HTML" original=""/>
+ </row>
+ <row id="200019" trl="N">
+  <value column="Name" original="KPI2">KPI2</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="HTML" original=""/>
  </row>
 </idempiereTrl>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_PrintFormat">
+<!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_PrintFormat">
  <row id="100" trl="N">
   <value column="Name" original="Order_Header  ** TEMPLATE **">Order_Header  ** TEMPLATE **</value>
   <value column="Description" original="Standard Order Header">Standard Order Header</value>
@@ -42,6 +42,51 @@
  </row>
  <row id="108" trl="N">
   <value column="Name" original="PaySelection_Remittance  ** TEMPLATE **">PaySelection_Remittance  ** TEMPLATE **</value>
+  <value column="Description" original="Standard Remittance Header">Standard Remittance Header</value>
+  <value column="FileNamePattern" original=""/>
+ </row>
+ <row id="118" trl="N">
+  <value column="Name" original="Order Header">Order Header</value>
+  <value column="Description" original="Standard Order Header">Standard Order Header</value>
+  <value column="FileNamePattern" original=""/>
+ </row>
+ <row id="119" trl="N">
+  <value column="Name" original="Order LineTax">Order LineTax</value>
+  <value column="Description" original="Standard Order Line&amp;Tax" xml:space="preserve"><![CDATA[Standard Order Line&Tax]]></value>
+  <value column="FileNamePattern" original=""/>
+ </row>
+ <row id="120" trl="N">
+  <value column="Name" original="Invoice Header">Invoice Header</value>
+  <value column="Description" original="Standard Invoice Header">Standard Invoice Header</value>
+  <value column="FileNamePattern" original=""/>
+ </row>
+ <row id="121" trl="N">
+  <value column="Name" original="Invoice LineTax">Invoice LineTax</value>
+  <value column="Description" original="Standard Invoice Line&amp;Tax Lines" xml:space="preserve"><![CDATA[Standard Invoice Line&Tax Lines]]></value>
+  <value column="FileNamePattern" original=""/>
+ </row>
+ <row id="122" trl="N">
+  <value column="Name" original="Shipment Header">Shipment Header</value>
+  <value column="Description" original="Standard Shipment Header">Standard Shipment Header</value>
+  <value column="FileNamePattern" original=""/>
+ </row>
+ <row id="123" trl="N">
+  <value column="Name" original="Shipment Line">Shipment Line</value>
+  <value column="Description" original="Standard Shipment Lines">Standard Shipment Lines</value>
+  <value column="FileNamePattern" original=""/>
+ </row>
+ <row id="124" trl="N">
+  <value column="Name" original="Check">Check</value>
+  <value column="Description" original="Standard Check with Remittance Info">Standard Check with Remittance Info</value>
+  <value column="FileNamePattern" original=""/>
+ </row>
+ <row id="125" trl="N">
+  <value column="Name" original="Remittance Lines">Remittance Lines</value>
+  <value column="Description" original="Standard Check/Remittance Lines">Standard Check/Remittance Lines</value>
+  <value column="FileNamePattern" original=""/>
+ </row>
+ <row id="126" trl="N">
+  <value column="Name" original="Remittance">Remittance</value>
   <value column="Description" original="Standard Remittance Header">Standard Remittance Header</value>
   <value column="FileNamePattern" original=""/>
  </row>
@@ -117,6 +162,16 @@
  </row>
  <row id="162" trl="N">
   <value column="Name" original="Message">Message</value>
+  <value column="Description" original=""/>
+  <value column="FileNamePattern" original=""/>
+ </row>
+ <row id="163" trl="N">
+  <value column="Name" original="Report Line">Report Line</value>
+  <value column="Description" original=""/>
+  <value column="FileNamePattern" original=""/>
+ </row>
+ <row id="164" trl="N">
+  <value column="Name" original="Report Source">Report Source</value>
   <value column="Description" original=""/>
   <value column="FileNamePattern" original=""/>
  </row>
@@ -295,6 +350,16 @@
   <value column="Description" original=""/>
   <value column="FileNamePattern" original=""/>
  </row>
+ <row id="50035" trl="N">
+  <value column="Name" original="Multi Level BOM &amp; Formula Detail &amp;Copy Record 1746519845" xml:space="preserve"><![CDATA[Multi Level BOM & Formula Detail &Copy Record 1746519845]]></value>
+  <value column="Description" original="Multi Level BOM &amp; Formula Detail" xml:space="preserve"><![CDATA[Multi Level BOM & Formula Detail]]></value>
+  <value column="FileNamePattern" original=""/>
+ </row>
+ <row id="50036" trl="N">
+  <value column="Name" original="Forecast Report &amp;Copy Record 1630346308" xml:space="preserve"><![CDATA[Forecast Report &Copy Record 1630346308]]></value>
+  <value column="Description" original=""/>
+  <value column="FileNamePattern" original=""/>
+ </row>
  <row id="50037" trl="N">
   <value column="Name" original="Manufacturing_Order_Node ** TEMPLATE **">Manufacturing_Order_Node ** TEMPLATE **</value>
   <value column="Description" original="Manufacturing Order Node">Manufacturing Order Node</value>
@@ -392,6 +457,11 @@
  </row>
  <row id="200017" trl="N">
   <value column="Name" original="TestUU Print Format">TestUU Print Format</value>
+  <value column="Description" original=""/>
+  <value column="FileNamePattern" original=""/>
+ </row>
+ <row id="200018" trl="N">
+  <value column="Name" original="Tab">Tab</value>
   <value column="Description" original=""/>
   <value column="FileNamePattern" original=""/>
  </row>

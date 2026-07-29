@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Menu">
+<!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Menu">
  <row id="100" trl="Y">
   <value column="Name" original="Invoice Inquiry">Relatórios de Faturas</value>
   <value column="Description" original=""/>
  </row>
  <row id="153" trl="Y">
   <value column="Name" original="Application Dictionary">Dicionário de Aplicação</value>
-  <value column="Description" original="Maintain Application Dictionary">Gerenciamento do Dicionário de Aplicação</value>
+  <value column="Description" original="Maintain Application Dictionary">Manutenção do Dicionário de Aplicação</value>
  </row>
  <row id="155" trl="Y">
   <value column="Name" original="General Rules">Regras Gerais</value>
@@ -14,11 +14,11 @@
  </row>
  <row id="156" trl="Y">
   <value column="Name" original="Tenant Rules">Regras de Empresa</value>
-  <value column="Description" original="Maintain Tenant Rules">Gerenciamento das Regras de Empresa</value>
+  <value column="Description" original="Maintain Tenant Rules">Manutenção das Regras da Empresa</value>
  </row>
  <row id="157" trl="Y">
   <value column="Name" original="Data">Dados</value>
-  <value column="Description" original="Maintain Data">Gerenciamento de Dados</value>
+  <value column="Description" original="Maintain Data">Manutenção de Dados</value>
  </row>
  <row id="158" trl="Y">
   <value column="Name" original="Performance Measurement">Medição de Desempenho</value>
@@ -61,7 +61,7 @@
   <value column="Description" original="">Gerenciamento das Regras de Organização</value>
  </row>
  <row id="183" trl="Y">
-  <value column="Name" original="Material Management and Pricing">Gestão de Materiais</value>
+  <value column="Name" original="Material Management and Pricing">Gestão de Materiais e Preços</value>
   <value column="Description" original=""/>
  </row>
  <row id="203" trl="Y">
@@ -78,18 +78,18 @@
  </row>
  <row id="263" trl="Y">
   <value column="Name" original="Partner Relations">Relacionamentos com Parceiros</value>
-  <value column="Description" original="Customer Relations and Partner Management">Gerenciamento de Parceiros de Negócios e Relacionamento com Clientes</value>
+  <value column="Description" original="Customer Relations and Partner Management">Relacionamento com clientes e gestão de parceiros</value>
  </row>
  <row id="271" trl="Y">
   <value column="Name" original="Service">Serviços</value>
-  <value column="Description" original="Service Management">Gerenciamento de Serviços</value>
+  <value column="Description" original="Service Management">Gestão de Serviços</value>
  </row>
  <row id="272" trl="Y">
   <value column="Name" original="Sales and Marketing">Vendas e Marketing</value>
   <value column="Description" original=""/>
  </row>
  <row id="278" trl="Y">
-  <value column="Name" original="Performance Analysis and Accounting">Avaliação de Desempenho</value>
+  <value column="Name" original="Performance Analysis and Accounting">Análise de Desempenho e Contabilidade</value>
   <value column="Description" original=""/>
  </row>
  <row id="280" trl="Y">
@@ -122,7 +122,7 @@
  </row>
  <row id="456" trl="Y">
   <value column="Name" original="Server">Servidor</value>
-  <value column="Description" original="iDempiere Server Maintenance">Manutenção do Servidor Adempiere</value>
+  <value column="Description" original="iDempiere Server Maintenance">Manutenção do Servidor iDempiere</value>
  </row>
  <row id="457" trl="Y">
   <value column="Name" original="Sales Orders">Pedidos de Venda</value>
@@ -142,7 +142,7 @@
  </row>
  <row id="501" trl="Y">
   <value column="Name" original="Workflow">Workflow</value>
-  <value column="Description" original="iDempiere Workflow">Workflow</value>
+  <value column="Description" original="iDempiere Workflow">Workflow do iDempiere</value>
  </row>
  <row id="522" trl="Y">
   <value column="Name" original="Costing">Custeio</value>
@@ -154,7 +154,7 @@
  </row>
  <row id="566" trl="Y">
   <value column="Name" original="Collaboration">Colaboração</value>
-  <value column="Description" original="Collaboration and Content Management">Colaboração e Gerenciamento de Conteúdo</value>
+  <value column="Description" original="Collaboration and Content Management">Colaboração e gestão de conteúdo</value>
  </row>
  <row id="50001" trl="Y">
   <value column="Name" original="Application Packaging">Pacotes de Aplicação</value>
@@ -180,9 +180,9 @@
   <value column="Name" original="Manufacturing Workflow">Manufacturing Workflow</value>
   <value column="Description" original=""/>
  </row>
- <row id="53022" trl="N">
-  <value column="Name" original="Bill of Material and Formulas" xml:space="preserve"><![CDATA[Bill of Material & Formulas]]></value>
-  <value column="Description" original="Bill of Material and Formulas" xml:space="preserve"><![CDATA[Bill of Material & Formulas]]></value>
+ <row id="53022" trl="Y">
+  <value column="Name" original="Bill of Material and Formulas" xml:space="preserve"><![CDATA[Lista de Materiais e Fórmulas]]></value>
+  <value column="Description" original="Bill of Material and Formulas" xml:space="preserve"><![CDATA[Lista de Materiais e Fórmulas]]></value>
  </row>
  <row id="53029" trl="N">
   <value column="Name" original="Planning Management">Planning Management</value>
@@ -240,9 +240,9 @@
   <value column="Name" original="Replication Data">Replicação de Dados</value>
   <value column="Description" original=""/>
  </row>
- <row id="53108" trl="N">
-  <value column="Name" original="Human Resource and Payroll" xml:space="preserve"><![CDATA[Human Resource & Payroll]]></value>
-  <value column="Description" original="Human Resource and Payroll" xml:space="preserve"><![CDATA[Human Resource & Payroll]]></value>
+ <row id="53108" trl="Y">
+  <value column="Name" original="Human Resource and Payroll" xml:space="preserve"><![CDATA[Recursos Humanos e Folha de Pagamento]]></value>
+  <value column="Description" original="Human Resource and Payroll" xml:space="preserve"><![CDATA[Recursos Humanos e Folha de Pagamento]]></value>
  </row>
  <row id="53109" trl="N">
   <value column="Name" original="Human Resource">Human Resource</value>
@@ -254,7 +254,7 @@
  </row>
  <row id="53133" trl="Y">
   <value column="Name" original="Customer Service">Serviço ao Cliente</value>
-  <value column="Description" original="Customer Related Assets">Ativos em Clientes</value>
+  <value column="Description" original="Customer Related Assets">Ativos relacionados a clientes</value>
  </row>
  <row id="53136" trl="N">
   <value column="Name" original="Asset Revaluation">Asset Revaluation</value>
@@ -262,11 +262,11 @@
  </row>
  <row id="53139" trl="Y">
   <value column="Name" original="Asset Transactions ">Transações de Ativos</value>
-  <value column="Description" original="Asset Transactions (Addition, Disposal, Split &amp; Transfer)" xml:space="preserve"><![CDATA[Transações de Ativos (Aquisição, Baixa, Divisão & Transferência)]]></value>
+  <value column="Description" original="Asset Transactions (Addition, Disposal, Split &amp; Transfer)" xml:space="preserve"><![CDATA[Transações de Ativos (Aquisição, Baixa, Divisão e Transferência)]]></value>
  </row>
  <row id="53149" trl="Y">
   <value column="Name" original="Depreciation Processing">Processamento de Depreciação</value>
-  <value column="Description" original="Applications to Process Fixed Assets to the GL">Processar Ativos Imobilizados para o RG</value>
+  <value column="Description" original="Applications to Process Fixed Assets to the GL">Aplicações para contabilizar Ativos Imobilizados no Razão Geral</value>
  </row>
  <row id="53155" trl="N">
   <value column="Name" original="Reporting">Reporting</value>
@@ -274,7 +274,7 @@
  </row>
  <row id="53171" trl="Y">
   <value column="Name" original="Depreciation Setup">Configuração de Depreciação</value>
-  <value column="Description" original="Applications to setup and maintain depreciation">Configurar e manter depreciações</value>
+  <value column="Description" original="Applications to setup and maintain depreciation">Aplicações para configurar e manter a depreciação</value>
  </row>
  <row id="53180" trl="N">
   <value column="Name" original="Forecast Management">Forecast Management</value>

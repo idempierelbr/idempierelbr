@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_FieldGroup">
+<!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_FieldGroup">
  <row id="101" trl="Y">
   <value column="Name" original="Status">Estado</value>
  </row>
@@ -58,7 +58,7 @@
   <value column="Name" original="Request Management">Gerenciamento de Solicitação</value>
  </row>
  <row id="120" trl="Y">
-  <value column="Name" original="Web Store">Loja de Web</value>
+  <value column="Name" original="Web Store">Loja Web</value>
  </row>
  <row id="121" trl="Y">
   <value column="Name" original="Internal">Interno</value>
@@ -166,7 +166,7 @@
   <value column="Name" original="User Locking">Bloqueio de Usuário</value>
  </row>
  <row id="200004" trl="Y">
-  <value column="Name" original="Overwritten From Column">Sobrescrita da Aba Coluna</value>
+  <value column="Name" original="Overwritten From Column">Sobrescrito a Partir da Coluna</value>
  </row>
  <row id="200005" trl="Y">
   <value column="Name" original="Customer Information">Informações de Cliente</value>
@@ -193,10 +193,10 @@
   <value column="Name" original="Warehouse Accounts">Contas de Armazém</value>
  </row>
  <row id="200013" trl="Y">
-  <value column="Name" original="Product Category Accounts">Contas de Categoria de Produtos</value>
+  <value column="Name" original="Product Category Accounts">Contas de Categoria de Produto</value>
  </row>
  <row id="200014" trl="Y">
-  <value column="Name" original="Business Partner Group Accounts">Contas de Parceiro de Negócios</value>
+  <value column="Name" original="Business Partner Group Accounts">Contas de Grupo de Parceiros de Negócios</value>
  </row>
  <row id="200015" trl="Y">
   <value column="Name" original="Technical">Técnico</value>
@@ -205,7 +205,7 @@
   <value column="Name" original="Foreign Key">Foreign Key</value>
  </row>
  <row id="200018" trl="Y">
-  <value column="Name" original="Background Job">Background (Trabalho)</value>
+  <value column="Name" original="Background Job">Trabalho em Segundo Plano</value>
  </row>
  <row id="200022" trl="N">
   <value column="Name" original="Placeholders">Placeholders</value>
@@ -230,6 +230,12 @@
  </row>
  <row id="200031" trl="N">
   <value column="Name" original="( None )">( None )</value>
+ </row>
+ <row id="200032" trl="N">
+  <value column="Name" original="Additional Dimensions">Additional Dimensions</value>
+ </row>
+ <row id="200033" trl="N">
+  <value column="Name" original="Security Checklist">Security Checklist</value>
  </row>
  <row id="800001" trl="Y">
   <value column="Name" original="Assessment Result">Resultado da Apuração</value>

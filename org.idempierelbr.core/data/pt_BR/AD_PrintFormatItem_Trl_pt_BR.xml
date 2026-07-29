@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_PrintFormatItem">
+<!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_PrintFormatItem">
+ <row id="2147" trl="N">
+  <value column="Name" original="Rectangle">Rectangle</value>
+  <value column="PrintName" original=""/>
+  <value column="PrintNameSuffix" original=""/>
+ </row>
+ <row id="2148" trl="N">
+  <value column="Name" original="Product Image">Product Image</value>
+  <value column="PrintName" original=""/>
+  <value column="PrintNameSuffix" original=""/>
+ </row>
+ <row id="2325" trl="N">
+  <value column="Name" original="DocumentNo Barcode">DocumentNo Barcode</value>
+  <value column="PrintName" original=""/>
+  <value column="PrintNameSuffix" original=""/>
+ </row>
+ <row id="2326" trl="N">
+  <value column="Name" original="UPC">UPC</value>
+  <value column="PrintName" original=""/>
+  <value column="PrintNameSuffix" original=""/>
+ </row>
+ <row id="2327" trl="N">
+  <value column="Name" original="Postal">Postal</value>
+  <value column="PrintName" original=""/>
+  <value column="PrintNameSuffix" original=""/>
+ </row>
  <row id="50477" trl="N">
   <value column="Name" original="VendorProductNo">VendorProductNo</value>
   <value column="PrintName" original="VendorProductNo">VendorProductNo</value>
