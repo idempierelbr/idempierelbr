@@ -155,7 +155,7 @@ Revise e ajuste as contas do Livro Razão e as contas padrão. As contas efetiva
  <row id="130" trl="Y">
   <value column="Name" original="Project">Projeto</value>
   <value column="Description" original="Maintain Projects">Gerenciar Projetos</value>
-  <value column="Help" original="The Project Window is used to define the projects which will can be tracked by phases and tasks.">The Project Window is used to define the projects which will can be tracked by phases and tasks.</value>
+  <value column="Help" original="The Project Window is used to define the projects which will can be tracked by phases and tasks.">A janela Projeto permite definir os projetos que serão acompanhados por fases e tarefas.</value>
  </row>
  <row id="131" trl="Y">
   <value column="Name" original="GL Category">Categoria de Livro Razão</value>
@@ -484,7 +484,7 @@ Em sistemas multi-idioma, o modelo é traduzido conforme o idioma escolhido para
  <row id="212" trl="Y">
   <value column="Name" original="Performance Goal">Meta de Desempenho</value>
   <value column="Description" original="Define Performance Goals">Definir Metas de Desempenho</value>
-  <value column="Help" original="The Performance Goal Window allows you to define performance goals or all, a role or a user">The Performance Goal Window allows you to define performance goals or all, a role or a user</value>
+  <value column="Help" original="The Performance Goal Window allows you to define performance goals or all, a role or a user">A janela Meta de Desempenho permite definir metas de desempenho para todos, para um perfil de acesso ou para um usuário</value>
  </row>
  <row id="213" trl="Y">
   <value column="Name" original="Performance Measure Calculation">Cálculo de Medição de Desempenho</value>
@@ -843,8 +843,8 @@ Antes de registrar qualquer transação, execute a replicação para preparar o 
   <value column="Help" original="The Data Replication Strategy determines which tables and how they are replicated. Note that the migration does not synchronize Application Dictionary items.">A estratégia de replicação determina quais tabelas são replicadas e de que forma. A migração não sincroniza itens do Dicionário de Aplicação.</value>
  </row>
  <row id="286" trl="Y">
-  <value column="Name" original="Project (Lines/Issues)">Project (Lines/Issues)</value>
-  <value column="Description" original="Maintain Sales Order and Work Order Details">Maintain Sales Order and Work Order Details</value>
+  <value column="Name" original="Project (Lines/Issues)">Projeto (Linhas/Apropriações)</value>
+  <value column="Description" original="Maintain Sales Order and Work Order Details">Gerenciar Detalhes de Pedido de Venda e Ordem de Serviço</value>
   <value column="Help" original="The Project Window is used to maintain details of Projects Lines and Issues across Phases/Tasks">Permite manter o detalhe das linhas e das apropriações do projeto ao longo das fases e tarefas.</value>
  </row>
  <row id="287" trl="Y">
@@ -1247,54 +1247,54 @@ Sem essa definição, o sistema usa o primeiro tipo de documento compatível —
   <value column="Help" original="Calculation instruction for a ratio">Instrução de cálculo de uma relação.</value>
  </row>
  <row id="367" trl="Y">
-  <value column="Name" original="Issue Recommendation">Issue Recommendation</value>
-  <value column="Description" original="Maintain Issue Recommendation">Maintain Issue Recommendation</value>
+  <value column="Name" original="Issue Recommendation">Recomendação de Problema</value>
+  <value column="Description" original="Maintain Issue Recommendation">Gerenciar Recomendação de Problema</value>
   <value column="Help" original=""/>
  </row>
  <row id="368" trl="Y">
-  <value column="Name" original="Issue Status">Issue Status</value>
-  <value column="Description" original="Maintain Issue Status">Maintain Issue Status</value>
-  <value column="Help" original="Status of an Issue">Status of an Issue</value>
+  <value column="Name" original="Issue Status">Status do Problema</value>
+  <value column="Description" original="Maintain Issue Status">Gerenciar Status do Problema</value>
+  <value column="Help" original="Status of an Issue">Status de um problema</value>
  </row>
  <row id="369" trl="Y">
-  <value column="Name" original="Known Issue">Known Issue</value>
-  <value column="Description" original="Maintain Known Issue">Maintain Known Issue</value>
+  <value column="Name" original="Known Issue">Problema Conhecido</value>
+  <value column="Description" original="Maintain Known Issue">Gerenciar Problema Conhecido</value>
   <value column="Help" original=""/>
  </row>
  <row id="370" trl="Y">
-  <value column="Name" original="Issue Project">Issue Project</value>
-  <value column="Description" original="Maintain Issue Management Project Links">Maintain Issue Management Project Links</value>
-  <value column="Help" original="Maintain Issue Management Project Links - automatically generated.">Maintain Issue Management Project Links - automatically generated.</value>
+  <value column="Name" original="Issue Project">Projeto do Problema</value>
+  <value column="Description" original="Maintain Issue Management Project Links">Gerenciar Vínculos de Projeto da Gestão de Problemas</value>
+  <value column="Help" original="Maintain Issue Management Project Links - automatically generated.">Gerenciar vínculos de projeto da gestão de problemas - gerados automaticamente.</value>
  </row>
  <row id="371" trl="Y">
-  <value column="Name" original="Issue User">Issue User</value>
-  <value column="Description" original="User who reported Issues">User who reported Issues</value>
+  <value column="Name" original="Issue User">Usuário do Problema</value>
+  <value column="Description" original="User who reported Issues">Usuário que relatou os problemas</value>
   <value column="Help" original=""/>
  </row>
  <row id="372" trl="Y">
-  <value column="Name" original="Issue System">Issue System</value>
-  <value column="Description" original="Maintain Systems">Maintain Systems</value>
+  <value column="Name" original="Issue System">Sistema do Problema</value>
+  <value column="Description" original="Maintain Systems">Gerenciar Sistemas</value>
   <value column="Help" original=""/>
  </row>
  <row id="373" trl="Y">
-  <value column="Name" original="Web Project">Web Project</value>
-  <value column="Description" original="Maintain Web Project (Content Management)">Maintain Web Project (Content Management)</value>
-  <value column="Help" original="At the level of the web project you define the project itself, it's domains and media servers. Each project needs to have at least one domain and one media server.">At the level of the web project you define the project itself, it's domains and media servers. Each project needs to have at least one domain and one media server.</value>
+  <value column="Name" original="Web Project">Projeto Web</value>
+  <value column="Description" original="Maintain Web Project (Content Management)">Gerenciar Projeto Web (Gestão de Conteúdo)</value>
+  <value column="Help" original="At the level of the web project you define the project itself, it's domains and media servers. Each project needs to have at least one domain and one media server.">No nível do projeto web define-se o próprio projeto, seus domínios e servidores de mídia. Cada projeto precisa ter ao menos um domínio e um servidor de mídia.</value>
  </row>
  <row id="374" trl="Y">
-  <value column="Name" original="Template">Template</value>
+  <value column="Name" original="Template">Modelo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="375" trl="Y">
-  <value column="Name" original="Web Ad Management">Web Ad Management</value>
-  <value column="Description" original="Content Management Ad Management defines the needed categories and items">Content Management Ad Management defines the needed categories and items</value>
+  <value column="Name" original="Web Ad Management">Gestão de Anúncios Web</value>
+  <value column="Description" original="Content Management Ad Management defines the needed categories and items">A gestão de anúncios do gerenciador de conteúdo define as categorias e os itens necessários</value>
   <value column="Help" original="Ad Management is used to create and manage advertisements in your content management">A gestão de anúncios permite criar e administrar os anúncios do gerenciador de conteúdo.</value>
  </row>
  <row id="376" trl="Y">
-  <value column="Name" original="News Channel">News Channel</value>
-  <value column="Description" original="Define News Channels, write and publish articles">Define News Channels, write and publish articles</value>
-  <value column="Help" original="Define News Channels, write and publish articles">Define News Channels, write and publish articles</value>
+  <value column="Name" original="News Channel">Canal de Notícias</value>
+  <value column="Description" original="Define News Channels, write and publish articles">Definir canais de notícias, escrever e publicar artigos</value>
+  <value column="Help" original="Define News Channels, write and publish articles">Definir canais de notícias, escrever e publicar artigos</value>
  </row>
  <row id="377" trl="Y">
   <value column="Name" original="View Chat">Visualizar Anotação</value>
@@ -1302,9 +1302,9 @@ Sem essa definição, o sistema usa o primeiro tipo de documento compatível —
   <value column="Help" original="View chat / discussion threads">Permite consultar as anotações e os tópicos de discussão.</value>
  </row>
  <row id="379" trl="Y">
-  <value column="Name" original="Media Item">Media Item</value>
-  <value column="Description" original="Maintain Web Media">Maintain Web Media</value>
-  <value column="Help" original="Maintain Content Management Media">Maintain Content Management Media</value>
+  <value column="Name" original="Media Item">Item de Mídia</value>
+  <value column="Description" original="Maintain Web Media">Gerenciar Mídia Web</value>
+  <value column="Help" original="Maintain Content Management Media">Gerenciar a mídia do gerenciador de conteúdo</value>
  </row>
  <row id="380" trl="Y">
   <value column="Name" original="Chat Type">Tipo de Anotação</value>
@@ -1317,13 +1317,13 @@ Sem essa definição, o sistema usa o primeiro tipo de documento compatível —
   <value column="Help" original="The entity type determines the ownership of Application Dictionary entries.  The types &quot;Dictionary&quot; and &quot;iDempiere&quot; should not be used and are maintainted by iDempiere (i.e. all changes are reversed during migration to the current definition).">O tipo de entidade determina a quem pertencem os registros do Dicionário de Aplicação. Os tipos "Dictionary" e "iDempiere" não devem ser usados: são mantidos pelo próprio iDempiere, e qualquer alteração neles é revertida durante a migração para a definição vigente.</value>
  </row>
  <row id="383" trl="Y">
-  <value column="Name" original="Web Access">Web Access</value>
-  <value column="Description" original="Maintain Web Access">Maintain Web Access</value>
-  <value column="Help" original="Define access to collaboration management content.  You can assign the profile to a internal role or for external access to business partner group.">Define access to collaboration management content.  You can assign the profile to a internal role or for external access to business partner group.</value>
+  <value column="Name" original="Web Access">Acesso Web</value>
+  <value column="Description" original="Maintain Web Access">Gerenciar Acesso Web</value>
+  <value column="Help" original="Define access to collaboration management content.  You can assign the profile to a internal role or for external access to business partner group.">Define o acesso ao conteúdo da gestão de colaboração. É possível atribuir o perfil a um perfil de acesso interno ou, para acesso externo, a um grupo de parceiros de negócios.</value>
  </row>
  <row id="384" trl="Y">
-  <value column="Name" original="Web Broadcast Server">Web Broadcast Server</value>
-  <value column="Description" original="Maintain Web Broadcast Server">Maintain Web Broadcast Server</value>
+  <value column="Name" original="Web Broadcast Server">Servidor de Broadcast Web</value>
+  <value column="Description" original="Maintain Web Broadcast Server">Gerenciar Servidor de Broadcast Web</value>
   <value column="Help" original=""/>
  </row>
  <row id="385" trl="Y">
@@ -1332,18 +1332,18 @@ Sem essa definição, o sistema usa o primeiro tipo de documento compatível —
   <value column="Help" original="The Info window is used to search and select records as well as display information relevant to the selection.">A janela de informações é usada para pesquisar e selecionar registros e para exibir as informações relevantes à seleção.</value>
  </row>
  <row id="386" trl="Y">
-  <value column="Name" original="Text Index">Text Index</value>
-  <value column="Description" original="Maintain Text Search Index">Maintain Text Search Index</value>
-  <value column="Help" original="Text search index keyword and excerpt across documents">Text search index keyword and excerpt across documents</value>
+  <value column="Name" original="Text Index">Índice de Texto</value>
+  <value column="Description" original="Maintain Text Search Index">Gerenciar Índice de Busca Textual</value>
+  <value column="Help" original="Text search index keyword and excerpt across documents">Índice de busca textual com palavras-chave e trechos extraídos dos documentos</value>
  </row>
  <row id="387" trl="Y">
-  <value column="Name" original="Text Index Stop">Text Index Stop</value>
-  <value column="Description" original="Maintain keywords not to be indexed">Maintain keywords not to be indexed</value>
+  <value column="Name" original="Text Index Stop">Palavra Ignorada no Índice de Texto</value>
+  <value column="Description" original="Maintain keywords not to be indexed">Gerenciar palavras-chave que não devem ser indexadas</value>
   <value column="Help" original=""/>
  </row>
  <row id="388" trl="Y">
-  <value column="Name" original="Text Search Log">Text Search Log</value>
-  <value column="Description" original="View Text Search Log">View Text Search Log</value>
+  <value column="Name" original="Text Search Log">Registro de Busca Textual</value>
+  <value column="Description" original="View Text Search Log">Visualizar Registro de Busca Textual</value>
   <value column="Help" original=""/>
  </row>
  <row id="389" trl="Y">
@@ -1367,9 +1367,9 @@ Sem essa definição, o sistema usa o primeiro tipo de documento compatível —
   <value column="Help" original=""/>
  </row>
  <row id="50004" trl="Y">
-  <value column="Name" original="Common Package Details">Common Package Details</value>
-  <value column="Description" original="Maintain Common Package Details">Maintain Common Package Details</value>
-  <value column="Help" original="Create and maintain common package element details">Create and maintain common package element details</value>
+  <value column="Name" original="Common Package Details">Detalhe de Pacote Comum</value>
+  <value column="Description" original="Maintain Common Package Details">Gerenciar Detalhes de Pacote Comum</value>
+  <value column="Help" original="Create and maintain common package element details">Criar e gerenciar os detalhes dos elementos de pacote comum</value>
  </row>
  <row id="50005" trl="Y">
   <value column="Name" original="Pack In">PackIn - Importar um Pacote</value>
@@ -1393,17 +1393,17 @@ Sem essa definição, o sistema usa o primeiro tipo de documento compatível —
  </row>
  <row id="52001" trl="Y">
   <value column="Name" original="Web POS Role Menu">Menu de Perfil Web PDV</value>
-  <value column="Description" original="Depending on Which Role, Different set of Menus are generated and made available.">Depending on Which Role, Different set of Menus are generated and made available.</value>
+  <value column="Description" original="Depending on Which Role, Different set of Menus are generated and made available.">Conforme o perfil de acesso, é gerado e disponibilizado um conjunto diferente de menus.</value>
   <value column="Help" original=""/>
  </row>
  <row id="52002" trl="Y">
   <value column="Name" original="Web POS Properties">Configuração Web PDV</value>
-  <value column="Description" original="Stores the message tags to be picked up from AD_MESSAGE ">Stores the message tags to be picked up from AD_MESSAGE </value>
+  <value column="Description" original="Stores the message tags to be picked up from AD_MESSAGE ">Armazena as tags de mensagem a serem obtidas de AD_MESSAGE</value>
   <value column="Help" original=""/>
  </row>
  <row id="52003" trl="Y">
   <value column="Name" original="Web POS BlackListCheque">Cheque em Lista Negra Web PDV</value>
-  <value column="Description" original="Black Listed Cheque">Black Listed Cheque</value>
+  <value column="Description" original="Black Listed Cheque">Cheque em lista negra</value>
   <value column="Help" original=""/>
  </row>
  <row id="53003" trl="Y">
@@ -1411,107 +1411,107 @@ Sem essa definição, o sistema usa o primeiro tipo de documento compatível —
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53004" trl="N">
-  <value column="Name" original="Manufacturing Resource">Manufacturing Resource</value>
-  <value column="Description" original="Manufacturing Resource">Manufacturing Resource</value>
-  <value column="Help" original="A Manufacturing Resource is defined as anything required for production and its unavailability can affect the Production Plan. Manufacturing Resources can be: Plants, Production lines, Work Centers and Work Stations.&#10;&#10;It mainly answers the question: Where is the product made?&#10;&#10;A Specific production facility consisting of one or more people and/or machines which can be considered as one unit for purposes of capacity requiremets planning and detailed scheduling.">A Manufacturing Resource is defined as anything required for production and its unavailability can affect the Production Plan. Manufacturing Resources can be: Plants, Production lines, Work Centers and Work Stations.
+ <row id="53004" trl="Y">
+  <value column="Name" original="Manufacturing Resource">Recurso de Produção</value>
+  <value column="Description" original="Manufacturing Resource">Recurso de Produção</value>
+  <value column="Help" original="A Manufacturing Resource is defined as anything required for production and its unavailability can affect the Production Plan. Manufacturing Resources can be: Plants, Production lines, Work Centers and Work Stations.&#10;&#10;It mainly answers the question: Where is the product made?&#10;&#10;A Specific production facility consisting of one or more people and/or machines which can be considered as one unit for purposes of capacity requiremets planning and detailed scheduling.">Um Recurso de Produção é tudo aquilo que é necessário à produção e cuja indisponibilidade pode afetar o Plano de Produção. Podem ser recursos de produção: fábricas, linhas de produção, centros de trabalho e estações de trabalho.
 
-It mainly answers the question: Where is the product made?
+Responde principalmente à pergunta: onde o produto é fabricado?
 
-A Specific production facility consisting of one or more people and/or machines which can be considered as one unit for purposes of capacity requiremets planning and detailed scheduling.</value>
+É uma instalação produtiva específica, composta por uma ou mais pessoas e/ou máquinas, que pode ser considerada uma unidade única para fins de planejamento das necessidades de capacidade e de programação detalhada.</value>
  </row>
- <row id="53005" trl="N">
-  <value column="Name" original="Manufacturing Workflows">Manufacturing Workflows</value>
-  <value column="Description" original="Maintain Manufacturing Workflows (Routing)">Maintain Manufacturing Workflows (Routing)</value>
-  <value column="Help" original="Manufacturing Workflows (Routing) is a set of information detailing the method of manufacture of a particular item .It includes the operations to be performed their sequence the various work centers to be involved and the standards for setup and run. In some companies routing also includes information on tooling operator skill levels inspection operationstesting requirements etc.">Manufacturing Workflows (Routing) is a set of information detailing the method of manufacture of a particular item .It includes the operations to be performed their sequence the various work centers to be involved and the standards for setup and run. In some companies routing also includes information on tooling operator skill levels inspection operationstesting requirements etc.</value>
+ <row id="53005" trl="Y">
+  <value column="Name" original="Manufacturing Workflows">Workflow de Produção</value>
+  <value column="Description" original="Maintain Manufacturing Workflows (Routing)">Gerenciar Workflow de Produção (Roteiro)</value>
+  <value column="Help" original="Manufacturing Workflows (Routing) is a set of information detailing the method of manufacture of a particular item .It includes the operations to be performed their sequence the various work centers to be involved and the standards for setup and run. In some companies routing also includes information on tooling operator skill levels inspection operationstesting requirements etc.">O Workflow de Produção (roteiro) é o conjunto de informações que detalha o método de fabricação de um item. Inclui as operações a executar, sua sequência, os centros de trabalho envolvidos e os padrões de preparação e de execução. Em algumas empresas o roteiro também traz informações sobre ferramental, nível de qualificação do operador, operações de inspeção, requisitos de teste e outros.</value>
  </row>
  <row id="53006" trl="Y">
   <value column="Name" original="Bill of Materials and Formula" xml:space="preserve"><![CDATA[LDM e Fórmula]]></value>
-  <value column="Description" original="Maintain Product Bill of Materials &amp; Formula" xml:space="preserve"><![CDATA[Maintain Product Bill of Materials & Formula ]]></value>
-  <value column="Help" original="It is a list of all the subassemblies, intermediates, parts and raw material that go into a parent assembly showing the quantity of each required to make an assembly. There are a variety of display formats of bill of material, including single level bill of material, indented bill of material, modular (planning), costed bill of material, etc. May also be called &quot;formula&quot;, &quot;recipe&quot;, &quot;ingredients list&quot; in certain industries.&#10;It answers the question, what are the components of the product?">It is a list of all the subassemblies, intermediates, parts and raw material that go into a parent assembly showing the quantity of each required to make an assembly. There are a variety of display formats of bill of material, including single level bill of material, indented bill of material, modular (planning), costed bill of material, etc. May also be called "formula", "recipe", "ingredients list" in certain industries.
-It answers the question, what are the components of the product?</value>
+  <value column="Description" original="Maintain Product Bill of Materials &amp; Formula" xml:space="preserve"><![CDATA[Gerenciar Lista de Materiais e Fórmula do Produto]]></value>
+  <value column="Help" original="It is a list of all the subassemblies, intermediates, parts and raw material that go into a parent assembly showing the quantity of each required to make an assembly. There are a variety of display formats of bill of material, including single level bill of material, indented bill of material, modular (planning), costed bill of material, etc. May also be called &quot;formula&quot;, &quot;recipe&quot;, &quot;ingredients list&quot; in certain industries.&#10;It answers the question, what are the components of the product?">É a relação de todos os subconjuntos, produtos intermediários, peças e matérias-primas que compõem um conjunto principal, indicando a quantidade de cada um necessária para produzi-lo. Há vários formatos de apresentação da lista de materiais: nível único, escalonada, modular (planejamento), valorizada e outros. Em certos setores também é chamada de "fórmula", "receita" ou "lista de ingredientes".
+Responde à pergunta: quais são os componentes do produto?</value>
  </row>
- <row id="53007" trl="N">
-  <value column="Name" original="Product Planning Data">Product Planning Data</value>
-  <value column="Description" original="Maintain Product Planning Data">Maintain Product Planning Data</value>
-  <value column="Help" original="in the Window Product Planning Data you enter the product information which will serve as a base to execute the algorithms of Material Requirement Planning, along with MPS, open orders and inventories">in the Window Product Planning Data you enter the product information which will serve as a base to execute the algorithms of Material Requirement Planning, along with MPS, open orders and inventories</value>
+ <row id="53007" trl="Y">
+  <value column="Name" original="Product Planning Data">Dados de Planejamento do Produto</value>
+  <value column="Description" original="Maintain Product Planning Data">Gerenciar Dados de Planejamento do Produto</value>
+  <value column="Help" original="in the Window Product Planning Data you enter the product information which will serve as a base to execute the algorithms of Material Requirement Planning, along with MPS, open orders and inventories">Na janela Dados de Planejamento do Produto são informados os dados do produto que servem de base para executar os algoritmos de Planejamento das Necessidades de Materiais, junto com o MPS, os pedidos em aberto e os estoques</value>
  </row>
- <row id="53008" trl="N">
-  <value column="Name" original="MRP Notice">MRP Notice</value>
-  <value column="Description" original="View MRP Notices">View MRP Notices</value>
-  <value column="Help" original="The system creates messages while performing processes. In this window you can view them.&#10;&#10;MRP Notice&#10;It is a group of messages generated for the MRP process. It indicates to the scheduler the actions he needs to do to reach the Master Production Schedule. The action messages are set as notices for the planner when he sign up the Compiere session.&#10;&#10;The possible action messages are:&#10;&#10;MRP Code&#9; Action Message&#10;MRP - 001&#9; Beginning Quantity Less Than Zero.&#10;MRP - 020&#9; Create - A Supply Order should be created to satisfy a negative projected on hand balance.&#10;This message is only generate if Create Plan is No or if a new requirement appears the time fence.&#10;&#10;MRP - 030&#9; De Expedite - Indicates that a scheduled supply order is due before it is needed&#10;and should be delayed, or demand rescheduled to an earlier date.&#10;&#10;MRP - 040&#9; Expedite - Indicates that a scheduled supply order is due after is needed&#10;and should be rescheduled to an earlier date, or demand rescheduled to a later date.&#10;&#10;MRP - 050&#9; Cancel - Indicate that a scheduled supply order is no longer needed and should be deleted.&#10;MRP - 060&#9; Release Due For - Indicate that a schedule order should be released.&#10;MRP - 070&#9; Release Past Due For - Indicate that a supply order was not released when it was due,&#10;and should be either released or expedited now, or the demand rescheduled for a later date.&#10;&#10;MRP - 080&#9; Quantity Less than Minimum - Indicates that a supply order was created for&#10;a quantity less than the minimum quantity set in the product planning&#10;&#10;MRP - 090&#9; Quantity Less than Maximum - Indicates that a supply order was created for a quantity&#10;for a quantity greater than than maximum quantity set in the product planning&#10;&#10;MRP - 100&#9; Past Due Time Fence - Indicates that there is an unsatisfied material requirement inside&#10;the planning time fence for this item. You should either manually schedule and expedite orders to&#10;&#10;fill this demand or delay fulfillment of the requirement that created the demand.&#10;&#10;MRP - 110&#9; No exists Dem">The system creates messages while performing processes. In this window you can view them.
+ <row id="53008" trl="Y">
+  <value column="Name" original="MRP Notice">Aviso do MRP</value>
+  <value column="Description" original="View MRP Notices">Visualizar Avisos do MRP</value>
+  <value column="Help" original="The system creates messages while performing processes. In this window you can view them.&#10;&#10;MRP Notice&#10;It is a group of messages generated for the MRP process. It indicates to the scheduler the actions he needs to do to reach the Master Production Schedule. The action messages are set as notices for the planner when he sign up the Compiere session.&#10;&#10;The possible action messages are:&#10;&#10;MRP Code&#9; Action Message&#10;MRP - 001&#9; Beginning Quantity Less Than Zero.&#10;MRP - 020&#9; Create - A Supply Order should be created to satisfy a negative projected on hand balance.&#10;This message is only generate if Create Plan is No or if a new requirement appears the time fence.&#10;&#10;MRP - 030&#9; De Expedite - Indicates that a scheduled supply order is due before it is needed&#10;and should be delayed, or demand rescheduled to an earlier date.&#10;&#10;MRP - 040&#9; Expedite - Indicates that a scheduled supply order is due after is needed&#10;and should be rescheduled to an earlier date, or demand rescheduled to a later date.&#10;&#10;MRP - 050&#9; Cancel - Indicate that a scheduled supply order is no longer needed and should be deleted.&#10;MRP - 060&#9; Release Due For - Indicate that a schedule order should be released.&#10;MRP - 070&#9; Release Past Due For - Indicate that a supply order was not released when it was due,&#10;and should be either released or expedited now, or the demand rescheduled for a later date.&#10;&#10;MRP - 080&#9; Quantity Less than Minimum - Indicates that a supply order was created for&#10;a quantity less than the minimum quantity set in the product planning&#10;&#10;MRP - 090&#9; Quantity Less than Maximum - Indicates that a supply order was created for a quantity&#10;for a quantity greater than than maximum quantity set in the product planning&#10;&#10;MRP - 100&#9; Past Due Time Fence - Indicates that there is an unsatisfied material requirement inside&#10;the planning time fence for this item. You should either manually schedule and expedite orders to&#10;&#10;fill this demand or delay fulfillment of the requirement that created the demand.&#10;&#10;MRP - 110&#9; No exists Dem">O sistema gera mensagens durante a execução dos processos. Esta janela permite consultá-las.
 
-MRP Notice
-It is a group of messages generated for the MRP process. It indicates to the scheduler the actions he needs to do to reach the Master Production Schedule. The action messages are set as notices for the planner when he sign up the Compiere session.
+Aviso do MRP
+É o conjunto de mensagens geradas pelo processo de MRP. Indica ao programador as ações necessárias ao Plano Mestre de Produção. As mensagens de ação aparecem como avisos ao planejador ao iniciar a sessão.
 
-The possible action messages are:
+As mensagens de ação possíveis são:
 
-MRP Code	 Action Message
-MRP - 001	 Beginning Quantity Less Than Zero.
-MRP - 020	 Create - A Supply Order should be created to satisfy a negative projected on hand balance.
-This message is only generate if Create Plan is No or if a new requirement appears the time fence.
+Código MRP	 Mensagem de Ação
+MRP - 001	 Quantidade inicial menor que zero.
+MRP - 020	 Criar - Deve ser criada uma ordem de suprimento para cobrir um saldo projetado negativo.
+Só é gerada se Criar Plano for Não ou se surgir novo requisito no horizonte de planejamento.
 
-MRP - 030	 De Expedite - Indicates that a scheduled supply order is due before it is needed
-and should be delayed, or demand rescheduled to an earlier date.
+MRP - 030	 Adiar - Indica que uma ordem de suprimento programada vence antes de ser necessária
+e deve ser adiada, ou a demanda reprogramada para uma data anterior.
 
-MRP - 040	 Expedite - Indicates that a scheduled supply order is due after is needed
-and should be rescheduled to an earlier date, or demand rescheduled to a later date.
+MRP - 040	 Antecipar - Indica que uma ordem de suprimento programada vence depois de ser necessária
+e deve ser reprogramada para uma data anterior, ou a demanda reprogramada para uma data posterior.
 
-MRP - 050	 Cancel - Indicate that a scheduled supply order is no longer needed and should be deleted.
-MRP - 060	 Release Due For - Indicate that a schedule order should be released.
-MRP - 070	 Release Past Due For - Indicate that a supply order was not released when it was due,
-and should be either released or expedited now, or the demand rescheduled for a later date.
+MRP - 050	 Cancelar - Indica que uma ordem de suprimento programada não é mais necessária e deve ser excluída.
+MRP - 060	 Liberar - Indica que uma ordem programada deve ser liberada.
+MRP - 070	 Liberar em Atraso - Indica que uma ordem de suprimento não foi liberada no prazo
+e deve ser liberada ou antecipada agora, ou a demanda reprogramada para uma data posterior.
 
-MRP - 080	 Quantity Less than Minimum - Indicates that a supply order was created for
-a quantity less than the minimum quantity set in the product planning
+MRP - 080	 Quantidade Menor que a Mínima - Indica que foi criada uma ordem de suprimento com
+quantidade inferior à quantidade mínima definida no planejamento do produto
 
-MRP - 090	 Quantity Less than Maximum - Indicates that a supply order was created for a quantity
-for a quantity greater than than maximum quantity set in the product planning
+MRP - 090	 Quantidade Maior que a Máxima - Indica que foi criada uma ordem de suprimento com
+quantidade superior à quantidade máxima definida no planejamento do produto
 
-MRP - 100	 Past Due Time Fence - Indicates that there is an unsatisfied material requirement inside
-the planning time fence for this item. You should either manually schedule and expedite orders to
+MRP - 100	 Horizonte de Planejamento Vencido - Indica que há necessidade de material não atendida dentro
+do horizonte de planejamento deste item. É preciso programar e antecipar ordens à mão para
 
-fill this demand or delay fulfillment of the requirement that created the demand.
+atender a essa demanda ou adiar o atendimento do requisito que a originou.
 
-MRP - 110	 No exists Dem</value>
+MRP - 110	 Não existe Dem</value>
  </row>
- <row id="53009" trl="N">
-  <value column="Name" original="Manufacturing Order">Manufacturing Order</value>
-  <value column="Description" original="Maintain Manufacturing Order">Maintain Manufacturing Order</value>
-  <value column="Help" original="Manufacturing Schedule is a document group of documents or schedule identity  conveying authority for the manufacture of specified parts or products in specified quantities.">Manufacturing Schedule is a document group of documents or schedule identity  conveying authority for the manufacture of specified parts or products in specified quantities.</value>
+ <row id="53009" trl="Y">
+  <value column="Name" original="Manufacturing Order">Ordem de Produção</value>
+  <value column="Description" original="Maintain Manufacturing Order">Gerenciar Ordem de Produção</value>
+  <value column="Help" original="Manufacturing Schedule is a document group of documents or schedule identity  conveying authority for the manufacture of specified parts or products in specified quantities.">A Programação de Produção é um documento, conjunto de documentos ou programação que autoriza a fabricação de determinadas peças ou produtos em quantidades definidas.</value>
  </row>
- <row id="53010" trl="N">
-  <value column="Name" original="Spare parts">Spare parts</value>
-  <value column="Description" original="Spare parts">Spare parts</value>
+ <row id="53010" trl="Y">
+  <value column="Name" original="Spare parts">Peça de Reposição</value>
+  <value column="Description" original="Spare parts">Peças de reposição</value>
   <value column="Help" original=""/>
  </row>
- <row id="53011" trl="N">
-  <value column="Name" original="Activity Control Report">Activity Control Report</value>
-  <value column="Description" original="Activity Control">Activity Control</value>
-  <value column="Help" original="This window is reported the real issue the shop floor">This window is reported the real issue the shop floor</value>
+ <row id="53011" trl="Y">
+  <value column="Name" original="Activity Control Report">Relatório de Controle de Atividade</value>
+  <value column="Description" original="Activity Control">Controle de Atividade</value>
+  <value column="Help" original="This window is reported the real issue the shop floor">Nesta janela são registrados os apontamentos reais do chão de fábrica</value>
  </row>
- <row id="53012" trl="N">
-  <value column="Name" original="Distribution Order">Distribution Order</value>
-  <value column="Description" original="Distribution Order allow create Order inter warehouse to supply a demand ">Distribution Order allow create Order inter warehouse to supply a demand </value>
-  <value column="Help" original="Distribution Order allow create Order inter warehouse to supply a demand ">Distribution Order allow create Order inter warehouse to supply a demand </value>
+ <row id="53012" trl="Y">
+  <value column="Name" original="Distribution Order">Ordem de Distribuição</value>
+  <value column="Description" original="Distribution Order allow create Order inter warehouse to supply a demand ">A Ordem de Distribuição permite criar pedidos entre armazéns para atender a uma demanda</value>
+  <value column="Help" original="Distribution Order allow create Order inter warehouse to supply a demand ">A Ordem de Distribuição permite criar pedidos entre armazéns para atender a uma demanda</value>
  </row>
- <row id="53013" trl="N">
-  <value column="Name" original="Quality Specifications">Quality Specifications</value>
-  <value column="Description" original="Maintain Quality Specifications">Maintain Quality Specifications</value>
+ <row id="53013" trl="Y">
+  <value column="Name" original="Quality Specifications">Especificação de Qualidade</value>
+  <value column="Description" original="Maintain Quality Specifications">Gerenciar Especificações de Qualidade</value>
   <value column="Help" original=""/>
  </row>
- <row id="53014" trl="N">
-  <value column="Name" original="Cost Collector">Cost Collector</value>
-  <value column="Description" original="The cost collector is a repository of all the MO transactions.">The cost collector is a repository of all the MO transactions.</value>
-  <value column="Help" original="The cost collector is a repository of all the MO transactions. This real transactions relation allows to compare it with the standard transactions in order to be able to calculate variations by cost element.">The cost collector is a repository of all the MO transactions. This real transactions relation allows to compare it with the standard transactions in order to be able to calculate variations by cost element.</value>
+ <row id="53014" trl="Y">
+  <value column="Name" original="Cost Collector">Coletor de Custos</value>
+  <value column="Description" original="The cost collector is a repository of all the MO transactions.">O coletor de custos é o repositório de todas as transações da ordem de produção.</value>
+  <value column="Help" original="The cost collector is a repository of all the MO transactions. This real transactions relation allows to compare it with the standard transactions in order to be able to calculate variations by cost element.">O coletor de custos é o repositório de todas as transações da ordem de produção. Esse registro das transações reais permite compará-las com as transações padrão para calcular as variações por elemento de custo.</value>
  </row>
  <row id="53015" trl="Y">
   <value column="Name" original="ASP Modules">Módulo SaaS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53016" trl="N">
-  <value column="Name" original="ASP Subscribed Modules">ASP Subscribed Modules</value>
+ <row id="53016" trl="Y">
+  <value column="Name" original="ASP Subscribed Modules">Módulo ASP Assinado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1520,199 +1520,199 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53018" trl="N">
-  <value column="Name" original="Distribution Network">Distribution Network</value>
-  <value column="Description" original="Distribution Network define the supply relationships">Distribution Network define the supply relationships</value>
-  <value column="Help" original="Each realtionship in the network contains a receiving warehouse and a warehouse source and a supply percentage. A relationship is one-way, warehouse to warehouse relationship.">Each realtionship in the network contains a receiving warehouse and a warehouse source and a supply percentage. A relationship is one-way, warehouse to warehouse relationship.</value>
+ <row id="53018" trl="Y">
+  <value column="Name" original="Distribution Network">Rede de Distribuição</value>
+  <value column="Description" original="Distribution Network define the supply relationships">A Rede de Distribuição define as relações de suprimento</value>
+  <value column="Help" original="Each realtionship in the network contains a receiving warehouse and a warehouse source and a supply percentage. A relationship is one-way, warehouse to warehouse relationship.">Cada relação da rede contém um armazém de destino, um armazém de origem e um percentual de fornecimento. A relação é unidirecional, de armazém para armazém.</value>
  </row>
  <row id="53019" trl="Y">
   <value column="Name" original="Migration Scripts">Script de Migração</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53020" trl="N">
-  <value column="Name" original="Tax Group">Tax Group</value>
-  <value column="Description" original="Tax Groups let you group the business partner with a reference tax.">Tax Groups let you group the business partner with a reference tax.</value>
+ <row id="53020" trl="Y">
+  <value column="Name" original="Tax Group">Grupo de Impostos</value>
+  <value column="Description" original="Tax Groups let you group the business partner with a reference tax.">Os Grupos de Impostos permitem agrupar o parceiro de negócios com um imposto de referência.</value>
   <value column="Help" original=""/>
  </row>
  <row id="53021" trl="Y">
-  <value column="Name" original="Tax Definition">Tax Definition</value>
-  <value column="Description" original="Lets you define different tax combinations.">Lets you define different tax combinations.</value>
+  <value column="Name" original="Tax Definition">Definição de Imposto</value>
+  <value column="Description" original="Lets you define different tax combinations.">Permite definir diferentes combinações de impostos.</value>
   <value column="Help" original="You can use the tax definition information to create the logic necessary to get the tax rate to your document">As informações de definição de imposto podem ser usadas para montar a lógica que determina a alíquota aplicada ao documento.</value>
  </row>
- <row id="53022" trl="N">
-  <value column="Name" original="Tax Rate Parent">Tax Rate Parent</value>
-  <value column="Description" original="Maintain Taxes and their Rates">Maintain Taxes and their Rates</value>
-  <value column="Help" original="The Tax Rate Window defines the different taxes used for each tax category.  For example Sales Tax must be defined for each State in which it applies.">The Tax Rate Window defines the different taxes used for each tax category.  For example Sales Tax must be defined for each State in which it applies.</value>
+ <row id="53022" trl="Y">
+  <value column="Name" original="Tax Rate Parent">Alíquota de Imposto Pai</value>
+  <value column="Description" original="Maintain Taxes and their Rates">Gerenciar Impostos e suas Alíquotas</value>
+  <value column="Help" original="The Tax Rate Window defines the different taxes used for each tax category.  For example Sales Tax must be defined for each State in which it applies.">Define as alíquotas aplicadas a cada categoria de imposto. Um imposto sobre vendas, por exemplo, precisa ser definido para cada estado em que incide.</value>
  </row>
- <row id="53023" trl="N">
-  <value column="Name" original="Tax Type">Tax Type</value>
-  <value column="Description" original="Tax Types let you group taxes together.">Tax Types let you group taxes together.</value>
+ <row id="53023" trl="Y">
+  <value column="Name" original="Tax Type">Tipo de Imposto</value>
+  <value column="Description" original="Tax Types let you group taxes together.">Os Tipos de Imposto permitem agrupar impostos.</value>
   <value column="Help" original=""/>
  </row>
- <row id="53024" trl="N">
-  <value column="Name" original="Tax Base">Tax Base</value>
-  <value column="Description" original="Defines tax base for a tax">Defines tax base for a tax</value>
-  <value column="Help" original="The Tax Base can be based on price , cost and quantity">The Tax Base can be based on price , cost and quantity</value>
+ <row id="53024" trl="Y">
+  <value column="Name" original="Tax Base">Base de Cálculo do Imposto</value>
+  <value column="Description" original="Defines tax base for a tax">Define a base de cálculo de um imposto</value>
+  <value column="Help" original="The Tax Base can be based on price , cost and quantity">A base de cálculo pode ter como referência o preço, o custo ou a quantidade</value>
  </row>
- <row id="53025" trl="N">
-  <value column="Name" original="Export Format">Export Format</value>
+ <row id="53025" trl="Y">
+  <value column="Name" original="Export Format">Formato de Exportação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53026" trl="N">
-  <value column="Name" original="Export Processor">Export Processor</value>
+ <row id="53026" trl="Y">
+  <value column="Name" original="Export Processor">Processador de Exportação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53027" trl="N">
-  <value column="Name" original="Export Processor Type">Export Processor Type</value>
+ <row id="53027" trl="Y">
+  <value column="Name" original="Export Processor Type">Tipo de Processador de Exportação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53028" trl="N">
-  <value column="Name" original="Import Processor">Import Processor</value>
+ <row id="53028" trl="Y">
+  <value column="Name" original="Import Processor">Processador de Importação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53029" trl="N">
-  <value column="Name" original="Import Processor Type">Import Processor Type</value>
+ <row id="53029" trl="Y">
+  <value column="Name" original="Import Processor Type">Tipo de Processador de Importação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53032" trl="N">
-  <value column="Name" original="Payroll Contract">Payroll Contract</value>
-  <value column="Description" original="Maintain Payroll Contract">Maintain Payroll Contract</value>
-  <value column="Help" original="The Payroll Contract Window is used to define the laboral condition for the employes in a payroll">The Payroll Contract Window is used to define the laboral condition for the employes in a payroll</value>
+ <row id="53032" trl="Y">
+  <value column="Name" original="Payroll Contract">Contrato de Folha de Pagamento</value>
+  <value column="Description" original="Maintain Payroll Contract">Gerenciar Contrato de Folha de Pagamento</value>
+  <value column="Help" original="The Payroll Contract Window is used to define the laboral condition for the employes in a payroll">A janela Contrato de Folha de Pagamento permite definir as condições de trabalho dos funcionários em uma folha de pagamento</value>
  </row>
- <row id="53033" trl="N">
-  <value column="Name" original="Payroll Employee">Payroll Employee</value>
-  <value column="Description" original="Maintain Payroll Employee">Maintain Payroll Employee</value>
-  <value column="Help" original="The Payroll Employee Window is used to define the Employees into the Organizational">The Payroll Employee Window is used to define the Employees into the Organizational</value>
+ <row id="53033" trl="Y">
+  <value column="Name" original="Payroll Employee">Funcionário da Folha de Pagamento</value>
+  <value column="Description" original="Maintain Payroll Employee">Gerenciar Funcionário da Folha de Pagamento</value>
+  <value column="Help" original="The Payroll Employee Window is used to define the Employees into the Organizational">A janela Funcionário da Folha de Pagamento permite definir os funcionários na estrutura organizacional</value>
  </row>
- <row id="53034" trl="N">
-  <value column="Name" original="Payroll Department">Payroll Department</value>
-  <value column="Description" original="Maintain Payroll Department">Maintain Payroll Department</value>
-  <value column="Help" original="The Payroll Departament Window is used to define the Organizational Structure for company">The Payroll Departament Window is used to define the Organizational Structure for company</value>
+ <row id="53034" trl="Y">
+  <value column="Name" original="Payroll Department">Departamento da Folha de Pagamento</value>
+  <value column="Description" original="Maintain Payroll Department">Gerenciar Departamento da Folha de Pagamento</value>
+  <value column="Help" original="The Payroll Departament Window is used to define the Organizational Structure for company">A janela Departamento da Folha de Pagamento permite definir a estrutura organizacional da empresa</value>
  </row>
- <row id="53035" trl="N">
-  <value column="Name" original="Payroll Job">Payroll Job</value>
-  <value column="Description" original="Maintain Payroll Job">Maintain Payroll Job</value>
-  <value column="Help" original="The Payroll Employee Window is used to define the Jobs into the Organizational Structure for a Company">The Payroll Employee Window is used to define the Jobs into the Organizational Structure for a Company</value>
+ <row id="53035" trl="Y">
+  <value column="Name" original="Payroll Job">Cargo da Folha de Pagamento</value>
+  <value column="Description" original="Maintain Payroll Job">Gerenciar Cargo da Folha de Pagamento</value>
+  <value column="Help" original="The Payroll Employee Window is used to define the Jobs into the Organizational Structure for a Company">A janela Cargo da Folha de Pagamento permite definir os cargos na estrutura organizacional da empresa</value>
  </row>
- <row id="53036" trl="N">
-  <value column="Name" original="Payroll Concept Catalog">Payroll Concept Catalog</value>
-  <value column="Description" original="Maintain Payroll Concept Catalog">Maintain Payroll Concept Catalog</value>
-  <value column="Help" original="The Payroll  Concept Catalog Window is used to define the concepts for a payroll ie ( salaries, wages, bonuses, and deductions.)">The Payroll  Concept Catalog Window is used to define the concepts for a payroll ie ( salaries, wages, bonuses, and deductions.)</value>
+ <row id="53036" trl="Y">
+  <value column="Name" original="Payroll Concept Catalog">Catálogo de Conceitos da Folha de Pagamento</value>
+  <value column="Description" original="Maintain Payroll Concept Catalog">Gerenciar Catálogo de Conceitos da Folha de Pagamento</value>
+  <value column="Help" original="The Payroll  Concept Catalog Window is used to define the concepts for a payroll ie ( salaries, wages, bonuses, and deductions.)">A janela Catálogo de Conceitos da Folha de Pagamento permite definir os conceitos de uma folha de pagamento, como salários, remunerações, bonificações e descontos.</value>
  </row>
- <row id="53037" trl="N">
-  <value column="Name" original="Payroll Process">Payroll Process</value>
-  <value column="Description" original="Payroll Process">Payroll Process</value>
-  <value column="Help" original="The Payroll Processing Window is used to processing a Payroll, you can calculate for a Employee or All Employees">The Payroll Processing Window is used to processing a Payroll, you can calculate for a Employee or All Employees</value>
+ <row id="53037" trl="Y">
+  <value column="Name" original="Payroll Process">Processamento da Folha de Pagamento</value>
+  <value column="Description" original="Payroll Process">Processamento da Folha de Pagamento</value>
+  <value column="Help" original="The Payroll Processing Window is used to processing a Payroll, you can calculate for a Employee or All Employees">A janela Processamento da Folha de Pagamento permite processar uma folha, com cálculo para um funcionário ou para todos os funcionários</value>
  </row>
- <row id="53038" trl="N">
-  <value column="Name" original="Payroll Definition">Payroll Definition</value>
-  <value column="Description" original="In a company, payroll is the sum of all financial records of salaries, wages, bonuses, and deductions.">In a company, payroll is the sum of all financial records of salaries, wages, bonuses, and deductions.</value>
+ <row id="53038" trl="Y">
+  <value column="Name" original="Payroll Definition">Definição da Folha de Pagamento</value>
+  <value column="Description" original="In a company, payroll is the sum of all financial records of salaries, wages, bonuses, and deductions.">Em uma empresa, a folha de pagamento é a soma de todos os registros financeiros de salários, remunerações, bonificações e descontos.</value>
   <value column="Help" original=""/>
  </row>
- <row id="53039" trl="N">
-  <value column="Name" original="Payroll Concept Category">Payroll Concept Category</value>
-  <value column="Description" original="Maintain Payroll Concept Category">Maintain Payroll Concept Category</value>
-  <value column="Help" original="The Payroll Concept Category Window is use to grouping concepts for a type">The Payroll Concept Category Window is use to grouping concepts for a type</value>
+ <row id="53039" trl="Y">
+  <value column="Name" original="Payroll Concept Category">Categoria de Conceito da Folha de Pagamento</value>
+  <value column="Description" original="Maintain Payroll Concept Category">Gerenciar Categoria de Conceito da Folha de Pagamento</value>
+  <value column="Help" original="The Payroll Concept Category Window is use to grouping concepts for a type">A janela Categoria de Conceito da Folha de Pagamento permite agrupar conceitos por tipo</value>
  </row>
- <row id="53040" trl="N">
-  <value column="Name" original="Payroll Table Type">Payroll Table Type</value>
-  <value column="Description" original="Maintain Payroll Table Type">Maintain Payroll Table Type</value>
-  <value column="Help" original="The Payroll Table Type Window is used to define the Table Type">The Payroll Table Type Window is used to define the Table Type</value>
+ <row id="53040" trl="Y">
+  <value column="Name" original="Payroll Table Type">Tipo de Tabela da Folha de Pagamento</value>
+  <value column="Description" original="Maintain Payroll Table Type">Gerenciar Tipo de Tabela da Folha de Pagamento</value>
+  <value column="Help" original="The Payroll Table Type Window is used to define the Table Type">A janela Tipo de Tabela da Folha de Pagamento permite definir o tipo de tabela</value>
  </row>
- <row id="53041" trl="N">
-  <value column="Name" original="Payroll Table">Payroll Table</value>
-  <value column="Description" original="Maintain Payroll Table">Maintain Payroll Table</value>
-  <value column="Help" original="The Payroll Table Window is use to create Payroll Tables with version and range data">The Payroll Table Window is use to create Payroll Tables with version and range data</value>
+ <row id="53041" trl="Y">
+  <value column="Name" original="Payroll Table">Tabela da Folha de Pagamento</value>
+  <value column="Description" original="Maintain Payroll Table">Gerenciar Tabela da Folha de Pagamento</value>
+  <value column="Help" original="The Payroll Table Window is use to create Payroll Tables with version and range data">A janela Tabela da Folha de Pagamento permite criar tabelas de folha de pagamento com versões e faixas de valores</value>
  </row>
- <row id="53042" trl="N">
-  <value column="Name" original="Payroll Movement">Payroll Movement</value>
-  <value column="Description" original="History of Payroll Movement">History of Payroll Movement</value>
-  <value column="Help" original="The Payroll Movement Window is use to show the history the any calculated payroll">The Payroll Movement Window is use to show the history the any calculated payroll</value>
+ <row id="53042" trl="Y">
+  <value column="Name" original="Payroll Movement">Movimento da Folha de Pagamento</value>
+  <value column="Description" original="History of Payroll Movement">Histórico de Movimentos da Folha de Pagamento</value>
+  <value column="Help" original="The Payroll Movement Window is use to show the history the any calculated payroll">A janela Movimento da Folha de Pagamento exibe o histórico de qualquer folha de pagamento calculada</value>
  </row>
- <row id="53044" trl="N">
-  <value column="Name" original="Asset Revaluation Processing">Asset Revaluation Processing</value>
-  <value column="Description" original="Process Revaluation of Assets">Process Revaluation of Assets</value>
-  <value column="Help" original="This window allows you to select and process what assets are revalued">This window allows you to select and process what assets are revalued</value>
+ <row id="53044" trl="Y">
+  <value column="Name" original="Asset Revaluation Processing">Processamento de Reavaliação de Ativo</value>
+  <value column="Description" original="Process Revaluation of Assets">Processar Reavaliação de Ativos</value>
+  <value column="Help" original="This window allows you to select and process what assets are revalued">Esta janela permite selecionar e processar os ativos que serão reavaliados</value>
  </row>
  <row id="53045" trl="Y">
-  <value column="Name" original="Asset Revaluation Index">Asset Revaluation Index</value>
-  <value column="Description" original="Set the Revaluate Assets Index or Factors">Set the Revaluate Assets Index or Factors</value>
+  <value column="Name" original="Asset Revaluation Index">Índice de Reavaliação de Ativo</value>
+  <value column="Description" original="Set the Revaluate Assets Index or Factors">Definir os índices ou fatores de reavaliação de ativos</value>
   <value column="Help" original="The Asset Revaluation Index window allow you to setup the values of indexes or factors to be used in revaluation of assets">Permite configurar os valores dos índices ou fatores utilizados na reavaliação de ativos.</value>
  </row>
- <row id="53046" trl="N">
-  <value column="Name" original="Transfer Asset Entry">Transfer Asset Entry</value>
-  <value column="Description" original="Create Transfer Asset Entry">Create Transfer Asset Entry</value>
-  <value column="Help" original="The Transfer Asset Entry window allows you to create and post asset transfers to the GL">The Transfer Asset Entry window allows you to create and post asset transfers to the GL</value>
+ <row id="53046" trl="Y">
+  <value column="Name" original="Transfer Asset Entry">Lançamento de Transferência de Ativo</value>
+  <value column="Description" original="Create Transfer Asset Entry">Criar Lançamento de Transferência de Ativo</value>
+  <value column="Help" original="The Transfer Asset Entry window allows you to create and post asset transfers to the GL">A janela Lançamento de Transferência de Ativo permite criar e contabilizar no livro razão as transferências de ativos</value>
  </row>
- <row id="53047" trl="N">
-  <value column="Name" original="Disposed Asset Entry">Disposed Asset Entry</value>
-  <value column="Description" original="Create Disposed Asset Entry">Create Disposed Asset Entry</value>
-  <value column="Help" original="The Disposed Asset Entry window allows you to create and post assets that have been disposed to the GL">The Disposed Asset Entry window allows you to create and post assets that have been disposed to the GL</value>
+ <row id="53047" trl="Y">
+  <value column="Name" original="Disposed Asset Entry">Lançamento de Baixa de Ativo</value>
+  <value column="Description" original="Create Disposed Asset Entry">Criar Lançamento de Baixa de Ativo</value>
+  <value column="Help" original="The Disposed Asset Entry window allows you to create and post assets that have been disposed to the GL">A janela Lançamento de Baixa de Ativo permite criar e contabilizar no livro razão os ativos que foram baixados</value>
  </row>
- <row id="53048" trl="N">
-  <value column="Name" original="Asset Split">Asset Split</value>
-  <value column="Description" original="Split Assets Process">Split Assets Process</value>
-  <value column="Help" original="The Asset Split window allows you to process asset splits">The Asset Split window allows you to process asset splits</value>
+ <row id="53048" trl="Y">
+  <value column="Name" original="Asset Split">Divisão de Ativo</value>
+  <value column="Description" original="Split Assets Process">Processo de Divisão de Ativos</value>
+  <value column="Help" original="The Asset Split window allows you to process asset splits">A janela Divisão de Ativo permite processar as divisões de ativos</value>
  </row>
- <row id="53049" trl="N">
-  <value column="Name" original="Asset Disposal2">Asset Disposal2</value>
-  <value column="Description" original="Dispose of Assets">Dispose of Assets</value>
-  <value column="Help" original="The Asset Disposal window allows you to create the necessary GL entries to dispose of an asset">The Asset Disposal window allows you to create the necessary GL entries to dispose of an asset</value>
+ <row id="53049" trl="Y">
+  <value column="Name" original="Asset Disposal2">Baixa de Ativo 2</value>
+  <value column="Description" original="Dispose of Assets">Baixar Ativos</value>
+  <value column="Help" original="The Asset Disposal window allows you to create the necessary GL entries to dispose of an asset">A janela Baixa de Ativo permite criar os lançamentos contábeis necessários para dar baixa em um ativo</value>
  </row>
- <row id="53050" trl="N">
-  <value column="Name" original="Asset Transfers">Asset Transfers</value>
-  <value column="Description" original="Process transfers of assets">Process transfers of assets</value>
-  <value column="Help" original="The Asset Transfer window allows you to transfer assets">The Asset Transfer window allows you to transfer assets</value>
+ <row id="53050" trl="Y">
+  <value column="Name" original="Asset Transfers">Transferência de Ativo</value>
+  <value column="Description" original="Process transfers of assets">Processar transferências de ativos</value>
+  <value column="Help" original="The Asset Transfer window allows you to transfer assets">A janela Transferência de Ativo permite transferir ativos</value>
  </row>
- <row id="53051" trl="N">
-  <value column="Name" original="Split Asset Entry">Split Asset Entry</value>
-  <value column="Description" original="Create Split Asset Entries">Create Split Asset Entries</value>
-  <value column="Help" original="The Split Asset Entry window allows you to create and post assets that have been split to the GL">The Split Asset Entry window allows you to create and post assets that have been split to the GL</value>
+ <row id="53051" trl="Y">
+  <value column="Name" original="Split Asset Entry">Lançamento de Divisão de Ativo</value>
+  <value column="Description" original="Create Split Asset Entries">Criar Lançamentos de Divisão de Ativo</value>
+  <value column="Help" original="The Split Asset Entry window allows you to create and post assets that have been split to the GL">A janela Lançamento de Divisão de Ativo permite criar e contabilizar no livro razão os ativos que foram divididos</value>
  </row>
- <row id="53052" trl="N">
-  <value column="Name" original="Build Depreciation Workfile">Build Depreciation Workfile</value>
-  <value column="Description" original="Build Depreciation Expense File">Build Depreciation Expense File</value>
-  <value column="Help" original="The Deprecaiton Build Workfile window allow you to build current depreciation expense for various posting types including actual budget and tax as defined by the user">The Deprecaiton Build Workfile window allow you to build current depreciation expense for various posting types including actual budget and tax as defined by the user</value>
+ <row id="53052" trl="Y">
+  <value column="Name" original="Build Depreciation Workfile">Gerar Arquivo de Trabalho de Depreciação</value>
+  <value column="Description" original="Build Depreciation Expense File">Gerar Arquivo de Despesa de Depreciação</value>
+  <value column="Help" original="The Deprecaiton Build Workfile window allow you to build current depreciation expense for various posting types including actual budget and tax as defined by the user">A janela Gerar Arquivo de Trabalho de Depreciação permite calcular a despesa de depreciação atual para diversos tipos de contabilização, como real, orçamento e fiscal, conforme definido pelo usuário</value>
  </row>
- <row id="53053" trl="N">
-  <value column="Name" original="Post Depreciation Entry">Post Depreciation Entry</value>
-  <value column="Description" original="Create Depreciation Entry">Create Depreciation Entry</value>
-  <value column="Help" original="The Depreciation Entry window allows you to create and post the depreciation expense entry to the GL">The Depreciation Entry window allows you to create and post the depreciation expense entry to the GL</value>
+ <row id="53053" trl="Y">
+  <value column="Name" original="Post Depreciation Entry">Contabilizar Lançamento de Depreciação</value>
+  <value column="Description" original="Create Depreciation Entry">Criar Lançamento de Depreciação</value>
+  <value column="Help" original="The Depreciation Entry window allows you to create and post the depreciation expense entry to the GL">A janela Lançamento de Depreciação permite criar e contabilizar no livro razão o lançamento da despesa de depreciação</value>
  </row>
- <row id="53054" trl="N">
-  <value column="Name" original="Build Depreciation Forecast">Build Depreciation Forecast</value>
+ <row id="53054" trl="Y">
+  <value column="Name" original="Build Depreciation Forecast">Gerar Previsão de Depreciação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53057" trl="N">
-  <value column="Name" original="Depreciation Period Spread Type">Depreciation Period Spread Type</value>
-  <value column="Description" original="Period Spread Type">Period Spread Type</value>
-  <value column="Help" original="The Period Spread Type window allows you to setup and review depreciation spread by period">The Period Spread Type window allows you to setup and review depreciation spread by period</value>
+ <row id="53057" trl="Y">
+  <value column="Name" original="Depreciation Period Spread Type">Tipo de Distribuição de Depreciação por Período</value>
+  <value column="Description" original="Period Spread Type">Tipo de Distribuição por Período</value>
+  <value column="Help" original="The Period Spread Type window allows you to setup and review depreciation spread by period">A janela Tipo de Distribuição por Período permite configurar e consultar a distribuição da depreciação por período</value>
  </row>
- <row id="53058" trl="N">
-  <value column="Name" original="Depreciation Methods">Depreciation Methods</value>
-  <value column="Description" original="Depreciation Methods">Depreciation Methods</value>
-  <value column="Help" original="The Depreciation method windows allows the user to review the depreciation calculations available in Adempiere">The Depreciation method windows allows the user to review the depreciation calculations available in Adempiere</value>
+ <row id="53058" trl="Y">
+  <value column="Name" original="Depreciation Methods">Método de Depreciação</value>
+  <value column="Description" original="Depreciation Methods">Métodos de Depreciação</value>
+  <value column="Help" original="The Depreciation method windows allows the user to review the depreciation calculations available in Adempiere">A janela Método de Depreciação permite consultar os cálculos de depreciação disponíveis no sistema</value>
  </row>
- <row id="53059" trl="N">
-  <value column="Name" original="Depreciation Tables">Depreciation Tables</value>
-  <value column="Description" original="Allows users to create multiple depreciation schedules">Allows users to create multiple depreciation schedules</value>
+ <row id="53059" trl="Y">
+  <value column="Name" original="Depreciation Tables">Tabela de Depreciação</value>
+  <value column="Description" original="Allows users to create multiple depreciation schedules">Permite criar múltiplas programações de depreciação</value>
   <value column="Help" original=""/>
  </row>
- <row id="53060" trl="N">
-  <value column="Name" original="Depreciation First Year Conventions ">Depreciation First Year Conventions </value>
-  <value column="Description" original="Setup for depreciation Setups">Setup for depreciation Setups</value>
-  <value column="Help" original="Allows user to define what depreciation conventions are available in Adempiere">Allows user to define what depreciation conventions are available in Adempiere</value>
+ <row id="53060" trl="Y">
+  <value column="Name" original="Depreciation First Year Conventions ">Convenção de Depreciação do Primeiro Ano</value>
+  <value column="Description" original="Setup for depreciation Setups">Configuração das definições de depreciação</value>
+  <value column="Help" original="Allows user to define what depreciation conventions are available in Adempiere">Permite definir quais convenções de depreciação estão disponíveis no sistema</value>
  </row>
  <row id="53061" trl="Y">
-  <value column="Name" original="Depreciation Calculation Method">Depreciation Calculation Method</value>
-  <value column="Description" original="Define Calculation Methods used in depreciation expense calculation">Define Calculation Methods used in depreciation expense calculation</value>
+  <value column="Name" original="Depreciation Calculation Method">Método de Cálculo de Depreciação</value>
+  <value column="Description" original="Define Calculation Methods used in depreciation expense calculation">Definir os métodos de cálculo usados no cálculo da despesa de depreciação</value>
   <value column="Help" original="The Depreciation Calculation Method window allows the user to define how adjustments to the fixed asset depreciation expense are handled">Permite definir como são tratados os ajustes na despesa de depreciação do ativo imobilizado.</value>
  </row>
  <row id="53062" trl="Y">
@@ -1725,13 +1725,13 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="">Exclusão (backup opcional) de registros em tabelas do banco de dados</value>
   <value column="Help" original="">Esta janela permite a exclusão de registros em tabelas específicas do banco de dados, de acordo com a cláusula WHERE definida. Isso pode ser muito útil para evitar a sobrecarga e o excesso de registros em determinadas tabelas. Os registros excluídos podem ser exportados para um arquivo XML ou armazenados em uma outra tabela de histórico (opcionalmente em outro tablespace). Se você selecionar a exportação para outra tabela, é necessário que exista previamente uma tabela com nome idêntico à original, mas com o prefixo 'HST_'. Por exemplo, se a tabela original for a T_Aging, a tabela de histórico (backup) deve se chamar HST_T_Aging.</value>
  </row>
- <row id="53064" trl="N">
-  <value column="Name" original="View MRP Records">View MRP Records</value>
+ <row id="53064" trl="Y">
+  <value column="Name" original="View MRP Records">Visualizar Registros do MRP</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53065" trl="N">
-  <value column="Name" original="Web POS Terminal">Web POS Terminal</value>
+ <row id="53065" trl="Y">
+  <value column="Name" original="Web POS Terminal">Terminal PDV Web</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1750,10 +1750,10 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Define transactioncodes for the QuickSearch bar">Definir códigos de transação para a barra de pesquisa rápida</value>
   <value column="Help" original=""/>
  </row>
- <row id="53071" trl="N">
-  <value column="Name" original="Import Price List">Import Price List</value>
-  <value column="Description" original="Import Price Lists">Import Price Lists</value>
-  <value column="Help" original="The Import Price List Window is an interim table which is used when importing external data into the system.  Selecting the 'Process' button will either add or modify the appropriate records.">The Import Price List Window is an interim table which is used when importing external data into the system.  Selecting the 'Process' button will either add or modify the appropriate records.</value>
+ <row id="53071" trl="Y">
+  <value column="Name" original="Import Price List">Importar Tabela de Preços</value>
+  <value column="Description" original="Import Price Lists">Importar Tabelas de Preços</value>
+  <value column="Help" original="The Import Price List Window is an interim table which is used when importing external data into the system.  Selecting the 'Process' button will either add or modify the appropriate records.">A janela Importar Tabela de Preços é uma tabela intermediária usada na importação de dados externos para o sistema. Ao acionar o botão 'Processar', os registros correspondentes são incluídos ou alterados.</value>
  </row>
  <row id="53073" trl="Y">
   <value column="Name" original="Promotion Group">Grupo de Promoção</value>
@@ -1770,21 +1770,20 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Define reporting cube for pre-calculation of summary accounting data.">Definir cubo de relatório para pré-cálculo de resumos de dados contábeis.</value>
   <value column="Help" original="Summary data will be generated for each period of the selected calendar, grouped by the selected dimensions..">Os dados de resumo são gerados para cada período do calendário selecionado, agrupados pelas dimensões escolhidas.</value>
  </row>
- <row id="53085" trl="N">
-  <value column="Name" original="MRP Notice (all)">MRP Notice (all)</value>
-  <value column="Description" original="View all MRP Notices">View all MRP Notices</value>
-  <value column="Help" original="The system creates notices will running MRP process. In this window you can view them.&#10;">The system creates notices will running MRP process. In this window you can view them.
-</value>
+ <row id="53085" trl="Y">
+  <value column="Name" original="MRP Notice (all)">Aviso do MRP (Todos)</value>
+  <value column="Description" original="View all MRP Notices">Visualizar todos os avisos do MRP</value>
+  <value column="Help" original="The system creates notices will running MRP process. In this window you can view them.&#10;">O sistema gera avisos durante a execução do processo de MRP. Nesta janela é possível consultá-los.</value>
  </row>
- <row id="53086" trl="N">
-  <value column="Name" original="My Unprocessed Documents">My Unprocessed Documents</value>
-  <value column="Description" original="My Unprocessed Documents">My Unprocessed Documents</value>
-  <value column="Help" original="View my unprocessed documents">View my unprocessed documents</value>
+ <row id="53086" trl="Y">
+  <value column="Name" original="My Unprocessed Documents">Meus Documentos não Processados</value>
+  <value column="Description" original="My Unprocessed Documents">Meus documentos não processados</value>
+  <value column="Help" original="View my unprocessed documents">Visualizar meus documentos não processados</value>
  </row>
- <row id="53087" trl="N">
-  <value column="Name" original="Unprocessed Documents (All)">Unprocessed Documents (All)</value>
-  <value column="Description" original="Unprocessed Documents (All)">Unprocessed Documents (All)</value>
-  <value column="Help" original="View all unprocessed documents">View all unprocessed documents</value>
+ <row id="53087" trl="Y">
+  <value column="Name" original="Unprocessed Documents (All)">Documentos não Processados (Todos)</value>
+  <value column="Description" original="Unprocessed Documents (All)">Documentos não processados (Todos)</value>
+  <value column="Help" original="View all unprocessed documents">Visualizar todos os documentos não processados</value>
  </row>
  <row id="53097" trl="Y">
   <value column="Name" original="Customer Return">Devolução de Cliente</value>
@@ -1816,73 +1815,73 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53104" trl="N">
-  <value column="Name" original="Withholding">Withholding</value>
-  <value column="Description" original="Define Withholding">Define Withholding</value>
-  <value column="Help" original="The Withholding Window defines withholding information for business partners.">The Withholding Window defines withholding information for business partners.</value>
+ <row id="53104" trl="Y">
+  <value column="Name" original="Withholding">Retenção</value>
+  <value column="Description" original="Define Withholding">Definir Retenção</value>
+  <value column="Help" original="The Withholding Window defines withholding information for business partners.">A janela Retenção define as informações de retenção dos parceiros de negócios.</value>
  </row>
- <row id="53108" trl="N">
-  <value column="Name" original="Import Payroll Movement">Import Payroll Movement</value>
-  <value column="Description" original="Import Payroll Movement">Import Payroll Movement</value>
+ <row id="53108" trl="Y">
+  <value column="Name" original="Import Payroll Movement">Importar Movimento da Folha de Pagamento</value>
+  <value column="Description" original="Import Payroll Movement">Importar Movimento da Folha de Pagamento</value>
   <value column="Help" original=""/>
  </row>
- <row id="53109" trl="N">
-  <value column="Name" original="Import Product Planning">Import Product Planning</value>
+ <row id="53109" trl="Y">
+  <value column="Name" original="Import Product Planning">Importar Planejamento de Produto</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53113" trl="N">
-  <value column="Name" original="Asset Addition">Asset Addition</value>
+ <row id="53113" trl="Y">
+  <value column="Name" original="Asset Addition">Aquisição de Ativo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53114" trl="N">
-  <value column="Name" original="Asset Disposal">Asset Disposal</value>
-  <value column="Description" original="Dispose of Assets">Dispose of Assets</value>
+ <row id="53114" trl="Y">
+  <value column="Name" original="Asset Disposal">Baixa de Ativo</value>
+  <value column="Description" original="Dispose of Assets">Baixar Ativos</value>
   <value column="Help" original=""/>
  </row>
- <row id="53115" trl="N">
-  <value column="Name" original="Asset Change Account">Asset Change Account</value>
+ <row id="53115" trl="Y">
+  <value column="Name" original="Asset Change Account">Alteração de Conta do Ativo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53116" trl="N">
-  <value column="Name" original="Asset Class">Asset Class</value>
+ <row id="53116" trl="Y">
+  <value column="Name" original="Asset Class">Classe de Ativo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53117" trl="N">
-  <value column="Name" original="Asset Funding Mode">Asset Funding Mode</value>
+ <row id="53117" trl="Y">
+  <value column="Name" original="Asset Funding Mode">Modalidade de Financiamento do Ativo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53118" trl="N">
-  <value column="Name" original="Revaluation Asset">Revaluation Asset</value>
+ <row id="53118" trl="Y">
+  <value column="Name" original="Revaluation Asset">Reavaliação de Ativo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53119" trl="N">
-  <value column="Name" original="Asset Type">Asset Type</value>
+ <row id="53119" trl="Y">
+  <value column="Name" original="Asset Type">Tipo de Ativo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53120" trl="N">
-  <value column="Name" original="Imported Fixed Asset">Imported Fixed Asset</value>
+ <row id="53120" trl="Y">
+  <value column="Name" original="Imported Fixed Asset">Ativo Imobilizado Importado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="53121" trl="N">
-  <value column="Name" original="Import Inventory Move">Import Inventory Move</value>
-  <value column="Description" original="This window allow import Inventory Move transaction">This window allow import Inventory Move transaction</value>
+ <row id="53121" trl="Y">
+  <value column="Name" original="Import Inventory Move">Importar Movimento de Estoque</value>
+  <value column="Description" original="This window allow import Inventory Move transaction">Esta janela permite importar transações de movimento de estoque</value>
   <value column="Help" original=""/>
  </row>
- <row id="53124" trl="N">
-  <value column="Name" original="Chart">Chart</value>
-  <value column="Description" original="Chart Definition">Chart Definition</value>
+ <row id="53124" trl="Y">
+  <value column="Name" original="Chart">Gráfico de Dados</value>
+  <value column="Description" original="Chart Definition">Definição de Gráfico</value>
   <value column="Help" original=""/>
  </row>
- <row id="53125" trl="N">
-  <value column="Name" original="Fact Reconciliation">Fact Reconciliation</value>
+ <row id="53125" trl="Y">
+  <value column="Name" original="Fact Reconciliation">Conciliação de Lançamentos Contábeis</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1961,8 +1960,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Enter and change Manual Journal Entries">Inserir e alterar lançamentos manuais no Livro Razão</value>
   <value column="Help" original="The GL Journal Window allows you to enter and modify manual journal entries">Permite inserir e alterar lançamentos manuais no Livro Razão.</value>
  </row>
- <row id="200006" trl="N">
-  <value column="Name" original="Dashboard Preference">Dashboard Preference</value>
+ <row id="200006" trl="Y">
+  <value column="Name" original="Dashboard Preference">Preferência de Dashboard</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -1986,8 +1985,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200015" trl="N">
-  <value column="Name" original="Payment Processor">Payment Processor</value>
+ <row id="200015" trl="Y">
+  <value column="Name" original="Payment Processor">Processador de Pagamento</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2006,13 +2005,13 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200020" trl="N">
-  <value column="Name" original="Setup Wizard Maintenance">Setup Wizard Maintenance</value>
-  <value column="Description" original="Maintenance Setup Wizard window">Maintenance Setup Wizard window</value>
+ <row id="200020" trl="Y">
+  <value column="Name" original="Setup Wizard Maintenance">Manutenção do Assistente de Configuração</value>
+  <value column="Description" original="Maintenance Setup Wizard window">Janela de manutenção do assistente de configuração</value>
   <value column="Help" original=""/>
  </row>
- <row id="200022" trl="N">
-  <value column="Name" original="Storage Provider">Storage Provider</value>
+ <row id="200022" trl="Y">
+  <value column="Name" original="Storage Provider">Provedor de Armazenamento</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2061,8 +2060,8 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original="Maintain Context Helps">Gerenciar Ajudas de Contexto</value>
   <value column="Help" original="The Context Help window defines the context help message text to display in the help pane. It is for Web UI only.">Define o texto de ajuda de contexto exibido no painel de ajuda. Aplica-se apenas à interface web.</value>
  </row>
- <row id="200036" trl="N">
-  <value column="Name" original="1099 Box">1099 Box</value>
+ <row id="200036" trl="Y">
+  <value column="Name" original="1099 Box">Campo 1099</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2081,18 +2080,18 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200046" trl="N">
-  <value column="Name" original="Address Validation Configuration">Address Validation Configuration</value>
+ <row id="200046" trl="Y">
+  <value column="Name" original="Address Validation Configuration">Configuração de Validação de Endereço</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200047" trl="N">
-  <value column="Name" original="Address Validation">Address Validation</value>
+ <row id="200047" trl="Y">
+  <value column="Name" original="Address Validation">Validação de Endereço</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200048" trl="N">
-  <value column="Name" original="Address Transaction">Address Transaction</value>
+ <row id="200048" trl="Y">
+  <value column="Name" original="Address Transaction">Transação de Endereço</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2101,14 +2100,14 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200054" trl="N">
-  <value column="Name" original="Dummy">Dummy</value>
-  <value column="Description" original="This window if for save preference for process parameter panel and info window in case open from menu (stand alone window)">This window if for save preference for process parameter panel and info window in case open from menu (stand alone window)</value>
+ <row id="200054" trl="Y">
+  <value column="Name" original="Dummy">Fictícia</value>
+  <value column="Description" original="This window if for save preference for process parameter panel and info window in case open from menu (stand alone window)">Esta janela serve para salvar preferências do painel de parâmetros de processo e da janela de informações quando abertos pelo menu (janela independente)</value>
   <value column="Help" original=""/>
  </row>
- <row id="200059" trl="N">
-  <value column="Name" original="Recurring Group">Recurring Group</value>
-  <value column="Description" original="Recurring Group">Recurring Group</value>
+ <row id="200059" trl="Y">
+  <value column="Name" original="Recurring Group">Grupo de Recorrência</value>
+  <value column="Description" original="Recurring Group">Grupo de Recorrência</value>
   <value column="Help" original=""/>
  </row>
  <row id="200061" trl="Y">
@@ -2116,18 +2115,18 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200063" trl="N">
-  <value column="Name" original="Import Template">Import Template</value>
+ <row id="200063" trl="Y">
+  <value column="Name" original="Import Template">Modelo de Importação</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200073" trl="N">
-  <value column="Name" original="User Preference">User Preference</value>
-  <value column="Description" original="This window is use to set up the preferences entries for each user.">This window is use to set up the preferences entries for each user.</value>
+ <row id="200073" trl="Y">
+  <value column="Name" original="User Preference">Preferência do Usuário</value>
+  <value column="Description" original="This window is use to set up the preferences entries for each user.">Esta janela permite configurar as preferências de cada usuário.</value>
   <value column="Help" original=""/>
  </row>
- <row id="200074" trl="N">
-  <value column="Name" original="Locator Type">Locator Type</value>
+ <row id="200074" trl="Y">
+  <value column="Name" original="Locator Type">Tipo de Localizador</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2136,22 +2135,22 @@ MRP - 110	 No exists Dem</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200086" trl="N">
-  <value column="Name" original="CSS Style">CSS Style</value>
+ <row id="200086" trl="Y">
+  <value column="Name" original="CSS Style">Estilo CSS</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200087" trl="N">
-  <value column="Name" original="Field Suggestions">Field Suggestions</value>
-  <value column="Description" original="Suggestions for field name, description and help.">Suggestions for field name, description and help.</value>
+ <row id="200087" trl="Y">
+  <value column="Name" original="Field Suggestions">Sugestão de Campo</value>
+  <value column="Description" original="Suggestions for field name, description and help.">Sugestões de nome, descrição e ajuda de campo.</value>
   <value column="Help" original=""/>
  </row>
- <row id="200088" trl="N">
-  <value column="Name" original="Context Help Suggestion">Context Help Suggestion</value>
-  <value column="Description" original="Review context help suggestion from tenant">Review context help suggestion from tenant</value>
+ <row id="200088" trl="Y">
+  <value column="Name" original="Context Help Suggestion">Sugestão de Ajuda de Contexto</value>
+  <value column="Description" original="Review context help suggestion from tenant">Revisar as sugestões de ajuda de contexto enviadas pela empresa</value>
   <value column="Help" original=""/>
  </row>
- <row id="200089" trl="N">
+ <row id="200089" trl="Y">
   <value column="Name" original="Post-it">Post-it</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -2167,185 +2166,185 @@ MRP - 110	 No exists Dem</value>
   <value column="Help" original=""/>
  </row>
  <row id="200093" trl="Y">
-  <value column="Name" original="All Users">All Users</value>
+  <value column="Name" original="All Users">Todos os Usuários</value>
   <value column="Description" original="Users from All Tenants">Usuários de Todas as Empresas</value>
   <value column="Help" original=""/>
  </row>
- <row id="200095" trl="N">
-  <value column="Name" original="Process Customization">Process Customization</value>
-  <value column="Description" original="Define Process Customization for Role/User">Define Process Customization for Role/User</value>
-  <value column="Help" original="The customization values defined here overwrite/replace the default system definition if defined.">The customization values defined here overwrite/replace the default system definition if defined.</value>
+ <row id="200095" trl="Y">
+  <value column="Name" original="Process Customization">Personalização de Processo</value>
+  <value column="Description" original="Define Process Customization for Role/User">Definir Personalização de Processo por Perfil de Acesso/Usuário</value>
+  <value column="Help" original="The customization values defined here overwrite/replace the default system definition if defined.">As personalizações definidas aqui substituem as definições originais do sistema.</value>
  </row>
- <row id="200100" trl="N">
-  <value column="Name" original="Print Header/Footer">Print Header/Footer</value>
-  <value column="Description" original="Maintain Print Header/Footer">Maintain Print Header/Footer</value>
+ <row id="200100" trl="Y">
+  <value column="Name" original="Print Header/Footer">Cabeçalho/Rodapé de Impressão</value>
+  <value column="Description" original="Maintain Print Header/Footer">Gerenciar Cabeçalho/Rodapé de Impressão</value>
   <value column="Help" original=""/>
  </row>
- <row id="200105" trl="N">
-  <value column="Name" original="Bank/Cash Transfer">Bank/Cash Transfer</value>
-  <value column="Description" original="Manage Bank Transfer">Manage Bank Transfer</value>
+ <row id="200105" trl="Y">
+  <value column="Name" original="Bank/Cash Transfer">Transferência Bancária/Caixa</value>
+  <value column="Description" original="Manage Bank Transfer">Gerenciar Transferência Bancária</value>
   <value column="Help" original=""/>
  </row>
- <row id="200107" trl="N">
-  <value column="Name" original="All User Roles">All User Roles</value>
+ <row id="200107" trl="Y">
+  <value column="Name" original="All User Roles">Todos os Perfis de Acesso de Usuário</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row id="200108" trl="Y">
-  <value column="Name" original="All Roles">All Roles</value>
+  <value column="Name" original="All Roles">Todos os Perfis de Acesso</value>
   <value column="Description" original="Roles from All Tenants">Perfis de Acesso de Todas as Empresas</value>
   <value column="Help" original=""/>
  </row>
- <row id="200109" trl="N">
-  <value column="Name" original="User Queries">User Queries</value>
-  <value column="Description" original="View and maintain saved queries">View and maintain saved queries</value>
+ <row id="200109" trl="Y">
+  <value column="Name" original="User Queries">Pesquisa do Usuário</value>
+  <value column="Description" original="View and maintain saved queries">Visualizar e gerenciar as pesquisas salvas</value>
   <value column="Help" original=""/>
  </row>
- <row id="200110" trl="N">
-  <value column="Name" original="Info Window Customization">Info Window Customization</value>
-  <value column="Description" original="Define Info Window Customization for Role/User">Define Info Window Customization for Role/User</value>
-  <value column="Help" original="The customization values defined here overwrite/replace the default system definition if defined.">The customization values defined here overwrite/replace the default system definition if defined.</value>
+ <row id="200110" trl="Y">
+  <value column="Name" original="Info Window Customization">Personalização de Janela de Informações</value>
+  <value column="Description" original="Define Info Window Customization for Role/User">Definir Personalização de Janela de Informações por Perfil de Acesso/Usuário</value>
+  <value column="Help" original="The customization values defined here overwrite/replace the default system definition if defined.">As personalizações definidas aqui substituem as definições originais do sistema.</value>
  </row>
- <row id="200111" trl="N">
-  <value column="Name" original="Menu user favourites">Menu user favourites</value>
+ <row id="200111" trl="Y">
+  <value column="Name" original="Menu user favourites">Favoritos do Menu do Usuário</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200112" trl="N">
-  <value column="Name" original="Authorization Provider">Authorization Provider</value>
+ <row id="200112" trl="Y">
+  <value column="Name" original="Authorization Provider">Provedor de Autorização</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200113" trl="N">
-  <value column="Name" original="Authorization Credential">Authorization Credential</value>
+ <row id="200113" trl="Y">
+  <value column="Name" original="Authorization Credential">Credencial de Autorização</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200114" trl="N">
-  <value column="Name" original="MFA Method">MFA Method</value>
-  <value column="Description" original="Multi-factor Authentication Method">Multi-factor Authentication Method</value>
+ <row id="200114" trl="Y">
+  <value column="Name" original="MFA Method">Método de MFA</value>
+  <value column="Description" original="Multi-factor Authentication Method">Método de Autenticação Multifator</value>
   <value column="Help" original=""/>
  </row>
- <row id="200115" trl="N">
-  <value column="Name" original="MFA Registered Device">MFA Registered Device</value>
+ <row id="200115" trl="Y">
+  <value column="Name" original="MFA Registered Device">Dispositivo Registrado de MFA</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200116" trl="N">
-  <value column="Name" original="MFA Registration">MFA Registration</value>
+ <row id="200116" trl="Y">
+  <value column="Name" original="MFA Registration">Registro de MFA</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200117" trl="N">
-  <value column="Name" original="MFA Rule">MFA Rule</value>
-  <value column="Description" original="Multi-factor Authentication Rule">Multi-factor Authentication Rule</value>
+ <row id="200117" trl="Y">
+  <value column="Name" original="MFA Rule">Regra de MFA</value>
+  <value column="Description" original="Multi-factor Authentication Rule">Regra de Autenticação Multifator</value>
   <value column="Help" original=""/>
  </row>
- <row id="200118" trl="N">
-  <value column="Name" original="SMTP Server">SMTP Server</value>
+ <row id="200118" trl="Y">
+  <value column="Name" original="SMTP Server">Servidor SMTP</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200119" trl="N">
-  <value column="Name" original="Customization of the Wlistbox">Customization of the Wlistbox</value>
+ <row id="200119" trl="Y">
+  <value column="Name" original="Customization of the Wlistbox">Personalização do Wlistbox</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200120" trl="N">
-  <value column="Name" original="Tenant level messages">Tenant level messages</value>
+ <row id="200120" trl="Y">
+  <value column="Name" original="Tenant level messages">Mensagem no Nível da Empresa</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200123" trl="N">
-  <value column="Name" original="Drill Rule">Drill Rule</value>
+ <row id="200123" trl="Y">
+  <value column="Name" original="Drill Rule">Regra de Detalhamento</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200128" trl="N">
-  <value column="Name" original="Label Category">Label Category</value>
+ <row id="200128" trl="Y">
+  <value column="Name" original="Label Category">Categoria de Etiqueta</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200129" trl="N">
-  <value column="Name" original="Label">Label</value>
+ <row id="200129" trl="Y">
+  <value column="Name" original="Label">Etiqueta</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200130" trl="N">
-  <value column="Name" original="Label Assignment">Label Assignment</value>
+ <row id="200130" trl="Y">
+  <value column="Name" original="Label Assignment">Atribuição de Etiqueta</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200132" trl="N">
-  <value column="Name" original="SSO Configuration">SSO Configuration</value>
-  <value column="Description" original="Single sign-on Configuration">Single sign-on Configuration</value>
-  <value column="Help" original="Single sign-on is an authentication scheme that allows a user to log in with a single ID to any of several related, yet independent, software systems.">Single sign-on is an authentication scheme that allows a user to log in with a single ID to any of several related, yet independent, software systems.</value>
+ <row id="200132" trl="Y">
+  <value column="Name" original="SSO Configuration">Configuração de SSO</value>
+  <value column="Description" original="Single sign-on Configuration">Configuração de Single Sign-On</value>
+  <value column="Help" original="Single sign-on is an authentication scheme that allows a user to log in with a single ID to any of several related, yet independent, software systems.">Single sign-on é um esquema de autenticação que permite ao usuário acessar, com um único identificador, vários sistemas de software relacionados, porém independentes.</value>
  </row>
- <row id="200137" trl="N">
-  <value column="Name" original="Verify Migration">Verify Migration</value>
+ <row id="200137" trl="Y">
+  <value column="Name" original="Verify Migration">Verificar Migração</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200138" trl="N">
-  <value column="Name" original="Test UU Based Table">Test UU Based Table</value>
+ <row id="200138" trl="Y">
+  <value column="Name" original="Test UU Based Table">Tabela de Teste Baseada em UU</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200139" trl="N">
-  <value column="Name" original="Test UU Detail">Test UU Detail</value>
+ <row id="200139" trl="Y">
+  <value column="Name" original="Test UU Detail">Detalhe de Teste UU</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200140" trl="N">
-  <value column="Name" original="Document Base Type Group">Document Base Type Group</value>
+ <row id="200140" trl="Y">
+  <value column="Name" original="Document Base Type Group">Grupo de Tipos Base de Documento</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200141" trl="N">
-  <value column="Name" original="Model Generator Template">Model Generator Template</value>
+ <row id="200141" trl="Y">
+  <value column="Name" original="Model Generator Template">Modelo do Gerador de Modelos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200147" trl="N">
-  <value column="Name" original="Private Access">Private Access</value>
+ <row id="200147" trl="Y">
+  <value column="Name" original="Private Access">Acesso Privado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200148" trl="N">
-  <value column="Name" original="Department">Department</value>
+ <row id="200148" trl="Y">
+  <value column="Name" original="Department">Departamento</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200149" trl="N">
-  <value column="Name" original="Cost Center">Cost Center</value>
+ <row id="200149" trl="Y">
+  <value column="Name" original="Cost Center">Centro de Custo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200150" trl="N">
-  <value column="Name" original="Dynamic Validation per Table">Dynamic Validation per Table</value>
+ <row id="200150" trl="Y">
+  <value column="Name" original="Dynamic Validation per Table">Validação Dinâmica por Tabela</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200151" trl="N">
-  <value column="Name" original="Theme Customization">Theme Customization</value>
+ <row id="200151" trl="Y">
+  <value column="Name" original="Theme Customization">Personalização de Tema</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200155" trl="N">
-  <value column="Name" original="Required Plugin">Required Plugin</value>
+ <row id="200155" trl="Y">
+  <value column="Name" original="Required Plugin">Plugin Obrigatório</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200157" trl="N">
-  <value column="Name" original="Table Attribute Instance">Table Attribute Instance</value>
+ <row id="200157" trl="Y">
+  <value column="Name" original="Table Attribute Instance">Instância de Atributo de Tabela</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200158" trl="N">
-  <value column="Name" original="Role Template">Role Template</value>
-  <value column="Description" original="Maintain role templates">Maintain role templates</value>
-  <value column="Help" original="The Role Template Window allows you to define role templates for inclusion by role.  &#10;Note that access information is cached and requires re-login or reset of cache.">The Role Template Window allows you to define role templates for inclusion by role.  
-Note that access information is cached and requires re-login or reset of cache.</value>
+ <row id="200158" trl="Y">
+  <value column="Name" original="Role Template">Modelo de Perfil de Acesso</value>
+  <value column="Description" original="Maintain role templates">Gerenciar modelos de perfil de acesso</value>
+  <value column="Help" original="The Role Template Window allows you to define role templates for inclusion by role.  &#10;Note that access information is cached and requires re-login or reset of cache.">A janela Modelo de Perfil de Acesso permite definir modelos de perfil para serem incluídos por perfil de acesso.  
+As informações de acesso ficam em cache: é preciso entrar novamente no sistema ou limpar o cache.</value>
  </row>
  <row id="800000" trl="Y">
   <value column="Name" original="Import Declaration (DI)">Declaração de Importação (DI)</value>
@@ -2372,8 +2371,8 @@ Note that access information is cached and requires re-login or reset of cache.<
   <value column="Description" original="CEST">CEST</value>
   <value column="Help" original=""/>
  </row>
- <row id="800008" trl="N">
-  <value column="Name" original="CEST relations to NCM and products">CEST relations to NCM and products</value>
+ <row id="800008" trl="Y">
+  <value column="Name" original="CEST relations to NCM and products">Relação de CEST com NCM e Produto</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

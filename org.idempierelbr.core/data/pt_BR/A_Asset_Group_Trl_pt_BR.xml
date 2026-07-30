@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="A_Asset_Group">
- <row id="100" trl="N">
-  <value column="Name" original="Documentation">Documentation</value>
-  <value column="Description" original="Download Documentation">Download Documentation</value>
+ <row id="100" trl="Y">
+  <value column="Name" original="Documentation">Documentação</value>
+  <value column="Description" original="Download Documentation">Documentação para download</value>
   <value column="Help" original=""/>
  </row>
- <row id="50000" trl="N">
-  <value column="Name" original="Buildings">Buildings</value>
-  <value column="Description" original="Buildings">Buildings</value>
-  <value column="Help" original="All Buildings">All Buildings</value>
+ <row id="50000" trl="Y">
+  <value column="Name" original="Buildings">Edificações</value>
+  <value column="Description" original="Buildings">Edificações</value>
+  <value column="Help" original="All Buildings">Todas as edificações</value>
  </row>
- <row id="50001" trl="N">
+ <row id="50001" trl="Y">
   <value column="Name" original="Software">Software</value>
   <value column="Description" original="Software">Software</value>
   <value column="Help" original="Software">Software</value>
  </row>
- <row id="50002" trl="N">
-  <value column="Name" original="Documentation">Documentation</value>
-  <value column="Description" original="Download Documentation">Download Documentation</value>
+ <row id="50002" trl="Y">
+  <value column="Name" original="Documentation">Documentação</value>
+  <value column="Description" original="Download Documentation">Documentação para download</value>
   <value column="Help" original=""/>
  </row>
- <row id="50003" trl="N">
-  <value column="Name" original="Data Processing Equipment">Data Processing Equipment</value>
-  <value column="Description" original="Data Processing Equipment">Data Processing Equipment</value>
-  <value column="Help" original="Group defines Data Processing Equipment">Group defines Data Processing Equipment</value>
+ <row id="50003" trl="Y">
+  <value column="Name" original="Data Processing Equipment">Equipamentos de Processamento de Dados</value>
+  <value column="Description" original="Data Processing Equipment">Equipamentos de Processamento de Dados</value>
+  <value column="Help" original="Group defines Data Processing Equipment">Grupo que reúne os equipamentos de processamento de dados</value>
  </row>
- <row id="50004" trl="N">
-  <value column="Name" original="Furniture">Furniture</value>
-  <value column="Description" original="Furniture">Furniture</value>
-  <value column="Help" original="Office furniture including office and shop">Office furniture including office and shop</value>
+ <row id="50004" trl="Y">
+  <value column="Name" original="Furniture">Móveis</value>
+  <value column="Description" original="Furniture">Móveis</value>
+  <value column="Help" original="Office furniture including office and shop">Mobiliário de escritório e de loja</value>
  </row>
- <row id="50005" trl="N">
-  <value column="Name" original="Fixtures">Fixtures</value>
-  <value column="Description" original="Fixtures">Fixtures</value>
-  <value column="Help" original="Fixtures including tools &amp; dies" xml:space="preserve"><![CDATA[Fixtures including tools & dies]]></value>
+ <row id="50005" trl="Y">
+  <value column="Name" original="Fixtures">Instalações</value>
+  <value column="Description" original="Fixtures">Instalações</value>
+  <value column="Help" original="Fixtures including tools &amp; dies" xml:space="preserve"><![CDATA[Instalações, inclusive ferramentas e matrizes]]></value>
  </row>
- <row id="50006" trl="N">
-  <value column="Name" original="Vehicles">Vehicles</value>
-  <value column="Description" original="Trucks Cars Vans Forklifts">Trucks Cars Vans Forklifts</value>
-  <value column="Help" original="All vehicles">All vehicles</value>
+ <row id="50006" trl="Y">
+  <value column="Name" original="Vehicles">Veículos</value>
+  <value column="Description" original="Trucks Cars Vans Forklifts">Caminhões, carros, vans e empilhadeiras</value>
+  <value column="Help" original="All vehicles">Todos os veículos</value>
  </row>
- <row id="50007" trl="N">
-  <value column="Name" original="Equipment">Equipment</value>
-  <value column="Description" original="Equipment">Equipment</value>
-  <value column="Help" original="Light equipment including  test equipment and computers">Light equipment including  test equipment and computers</value>
+ <row id="50007" trl="Y">
+  <value column="Name" original="Equipment">Equipamentos</value>
+  <value column="Description" original="Equipment">Equipamentos</value>
+  <value column="Help" original="Light equipment including  test equipment and computers">Equipamentos leves, inclusive equipamentos de teste e computadores</value>
  </row>
 </idempiereTrl>

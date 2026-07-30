@@ -97,7 +97,7 @@
   <value column="CurSymbol" original=""/>
  </row>
  <row id="145" trl="Y">
-  <value column="Description" original="Azerbaijanian Manat (new)">Azerbaijanian Manat (new)</value>
+  <value column="Description" original="Azerbaijanian Manat (new)">Manat Azeri (novo)</value>
   <value column="CurSymbol" original=""/>
  </row>
  <row id="146" trl="Y">
@@ -237,7 +237,7 @@
   <value column="CurSymbol" original="Br">Br</value>
  </row>
  <row id="205" trl="Y">
-  <value column="Description" original="Bolivar">Bolivar</value>
+  <value column="Description" original="Bolivar">Bolívar</value>
   <value column="CurSymbol" original="Bs">Bs</value>
  </row>
  <row id="206" trl="Y">
@@ -497,7 +497,7 @@
   <value column="CurSymbol" original="Q">Q</value>
  </row>
  <row id="293" trl="Y">
-  <value column="Description" original="Qatari Rial">Qatari Rial</value>
+  <value column="Description" original="Qatari Rial">Rial Catariano</value>
   <value column="CurSymbol" original="QR">QR</value>
  </row>
  <row id="294" trl="Y">
@@ -525,7 +525,7 @@
   <value column="CurSymbol" original="RM">RM</value>
  </row>
  <row id="302" trl="Y">
-  <value column="Description" original="Rial Omani">Rial Omani</value>
+  <value column="Description" original="Rial Omani">Rial Omanense</value>
   <value column="CurSymbol" original="RO">RO</value>
  </row>
  <row id="303" trl="Y">
@@ -693,35 +693,35 @@
   <value column="CurSymbol" original="L">L</value>
  </row>
  <row id="347" trl="Y">
-  <value column="Description" original="Serbian Dinar">Serbian Dinar</value>
+  <value column="Description" original="Serbian Dinar">Dinar Sérvio</value>
   <value column="CurSymbol" original="RSD">RSD</value>
  </row>
- <row id="200000" trl="N">
-  <value column="Description" original="South Sudanese pound">South Sudanese pound</value>
+ <row id="200000" trl="Y">
+  <value column="Description" original="South Sudanese pound">Libra Sul-Sudanesa</value>
   <value column="CurSymbol" original="SS£">SS£</value>
  </row>
- <row id="200002" trl="N">
-  <value column="Description" original="Chilean Unidad de Fomento">Chilean Unidad de Fomento</value>
+ <row id="200002" trl="Y">
+  <value column="Description" original="Chilean Unidad de Fomento">Unidade de Fomento Chilena</value>
   <value column="CurSymbol" original="UF">UF</value>
  </row>
- <row id="200003" trl="N">
-  <value column="Description" original="Colombian Unidad de Valor Real">Colombian Unidad de Valor Real</value>
+ <row id="200003" trl="Y">
+  <value column="Description" original="Colombian Unidad de Valor Real">Unidade de Valor Real Colombiana</value>
   <value column="CurSymbol" original="UVR">UVR</value>
  </row>
- <row id="200004" trl="N">
-  <value column="Description" original="Mexican Unidad de Inversión">Mexican Unidad de Inversión</value>
+ <row id="200004" trl="Y">
+  <value column="Description" original="Mexican Unidad de Inversión">Unidade de Investimento Mexicana</value>
   <value column="CurSymbol" original="UDI">UDI</value>
  </row>
- <row id="200005" trl="N">
-  <value column="Description" original="Bolivian Mvdol">Bolivian Mvdol</value>
+ <row id="200005" trl="Y">
+  <value column="Description" original="Bolivian Mvdol">Mvdol Boliviano</value>
   <value column="CurSymbol" original="Mvdol">Mvdol</value>
  </row>
- <row id="200006" trl="N">
-  <value column="Description" original="Uruguayan Indexed Unit">Uruguayan Indexed Unit</value>
+ <row id="200006" trl="Y">
+  <value column="Description" original="Uruguayan Indexed Unit">Unidade Indexada Uruguaia</value>
   <value column="CurSymbol" original="UI">UI</value>
  </row>
- <row id="200007" trl="N">
-  <value column="Description" original="Uruguayan Nominal Wage Index Unit">Uruguayan Nominal Wage Index Unit</value>
+ <row id="200007" trl="Y">
+  <value column="Description" original="Uruguayan Nominal Wage Index Unit">Unidade Indexada de Salário Nominal Uruguaia</value>
   <value column="CurSymbol" original="UP">UP</value>
  </row>
 </idempiereTrl>

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="PA_DocumentStatus">
- <row id="200000" trl="N">
-  <value column="Name" original="Sales Orders received today">Sales Orders received today</value>
+ <row id="200000" trl="Y">
+  <value column="Name" original="Sales Orders received today">Pedidos de Venda Recebidos Hoje</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200001" trl="N">
-  <value column="Name" original="Pending Customer Shipments">Pending Customer Shipments</value>
+ <row id="200001" trl="Y">
+  <value column="Name" original="Pending Customer Shipments">Remessas Pendentes para Clientes</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200002" trl="N">
+ <row id="200002" trl="Y">
   <value column="Name" original="Notice">Avisos</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200003" trl="N">
+ <row id="200003" trl="Y">
   <value column="Name" original="Request">Solicitações</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200004" trl="N">
+ <row id="200004" trl="Y">
   <value column="Name" original="Workflow Activities">Atividades de Workflow</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -30,21 +30,21 @@
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200006" trl="N">
-  <value column="Name" original="Passwords are not hashed">Passwords are not hashed</value>
-  <value column="Description" original="Password hashing is not enabled">Password hashing is not enabled</value>
-  <value column="Help" original="Storing passwords in plain text or using reversible encryption is insecure. We recommend running the 'Convert password to hashes' process to implement a one-way hashing algorithm instead.">Storing passwords in plain text or using reversible encryption is insecure. We recommend running the 'Convert password to hashes' process to implement a one-way hashing algorithm instead.</value>
+ <row id="200006" trl="Y">
+  <value column="Name" original="Passwords are not hashed">Senhas sem Hash</value>
+  <value column="Description" original="Password hashing is not enabled">O hash de senhas não está habilitado</value>
+  <value column="Help" original="Storing passwords in plain text or using reversible encryption is insecure. We recommend running the 'Convert password to hashes' process to implement a one-way hashing algorithm instead.">Armazenar senhas em texto puro ou com criptografia reversível é inseguro. Recomenda-se executar o processo 'Criptografar Senhas' para adotar um algoritmo de hash unidirecional.</value>
  </row>
- <row id="200007" trl="N">
-  <value column="Name" original="Default Passwords">Default Passwords</value>
-  <value column="Description" original="Users with default passwords have been found">Users with default passwords have been found</value>
-  <value column="Help" original="To prevent unauthorized access, locate the affected users within the tenant and assign them strong, unique passwords.">To prevent unauthorized access, locate the affected users within the tenant and assign them strong, unique passwords.</value>
+ <row id="200007" trl="Y">
+  <value column="Name" original="Default Passwords">Senhas Padrão</value>
+  <value column="Description" original="Users with default passwords have been found">Foram encontrados usuários com senhas padrão</value>
+  <value column="Help" original="To prevent unauthorized access, locate the affected users within the tenant and assign them strong, unique passwords.">Para impedir acessos não autorizados, localize os usuários afetados na empresa e atribua a eles senhas fortes e exclusivas.</value>
  </row>
- <row id="200008" trl="N">
-  <value column="Name" original="System Status">System Status</value>
-  <value column="Description" original="System Status Evaluation">System Status Evaluation</value>
-  <value column="Help" original="When System Status remains in Evaluation some critical information may be disclosed on the login page.&#10;Consider changing the System Status to 'Implementation' or 'Production' and also setting the SysConfig values for:&#10;APPLICATION_MAIN_VERSION_SHOWN&#10;APPLICATION_DATABASE_VERSION_SHOWN&#10;APPLICATION_IMPLEMENTATION_VENDOR_SHOWN&#10;APPLICATION_JVM_VERSION_SHOWN&#10;APPLICATION_OS_INFO_SHOWN&#10;APPLICATION_HOST_SHOWN">When System Status remains in Evaluation some critical information may be disclosed on the login page.
-Consider changing the System Status to 'Implementation' or 'Production' and also setting the SysConfig values for:
+ <row id="200008" trl="Y">
+  <value column="Name" original="System Status">Status do Sistema</value>
+  <value column="Description" original="System Status Evaluation">Status do sistema em Avaliação</value>
+  <value column="Help" original="When System Status remains in Evaluation some critical information may be disclosed on the login page.&#10;Consider changing the System Status to 'Implementation' or 'Production' and also setting the SysConfig values for:&#10;APPLICATION_MAIN_VERSION_SHOWN&#10;APPLICATION_DATABASE_VERSION_SHOWN&#10;APPLICATION_IMPLEMENTATION_VENDOR_SHOWN&#10;APPLICATION_JVM_VERSION_SHOWN&#10;APPLICATION_OS_INFO_SHOWN&#10;APPLICATION_HOST_SHOWN">Enquanto o status do sistema permanece em Avaliação, informações críticas podem ser expostas na página de login.
+Considere alterar o status do sistema para 'Implementação' ou 'Produção' e também definir os valores de SysConfig para:
 APPLICATION_MAIN_VERSION_SHOWN
 APPLICATION_DATABASE_VERSION_SHOWN
 APPLICATION_IMPLEMENTATION_VENDOR_SHOWN
@@ -52,51 +52,51 @@ APPLICATION_JVM_VERSION_SHOWN
 APPLICATION_OS_INFO_SHOWN
 APPLICATION_HOST_SHOWN</value>
  </row>
- <row id="200009" trl="N">
-  <value column="Name" original="No password policy">No password policy</value>
-  <value column="Description" original="No password policy is configured">No password policy is configured</value>
-  <value column="Help" original="We recommend setting up password rules to ensure that users create strong and secure passwords. Once configured, make sure that the policy is assigned to the System tenant.">We recommend setting up password rules to ensure that users create strong and secure passwords. Once configured, make sure that the policy is assigned to the System tenant.</value>
+ <row id="200009" trl="Y">
+  <value column="Name" original="No password policy">Sem Política de Senha</value>
+  <value column="Description" original="No password policy is configured">Nenhuma política de senha está configurada</value>
+  <value column="Help" original="We recommend setting up password rules to ensure that users create strong and secure passwords. Once configured, make sure that the policy is assigned to the System tenant.">Recomenda-se definir regras de senha para garantir que os usuários criem senhas fortes e seguras. Uma vez configurada, verifique se a política está atribuída à empresa Sistema.</value>
  </row>
- <row id="200010" trl="N">
-  <value column="Name" original="Users without MFA">Users without MFA</value>
-  <value column="Description" original="Users without Multifactor Authentication">Users without Multifactor Authentication</value>
-  <value column="Help" original="There are users without multi-factor authentication configured.  Consider advising these users to enable and configure MFA.">There are users without multi-factor authentication configured.  Consider advising these users to enable and configure MFA.</value>
+ <row id="200010" trl="Y">
+  <value column="Name" original="Users without MFA">Usuários sem MFA</value>
+  <value column="Description" original="Users without Multifactor Authentication">Usuários sem autenticação multifator</value>
+  <value column="Help" original="There are users without multi-factor authentication configured.  Consider advising these users to enable and configure MFA.">Há usuários sem autenticação multifator configurada. Considere orientá-los a habilitar e configurar o MFA.</value>
  </row>
- <row id="200011" trl="N">
-  <value column="Name" original="Default Root Folder Browser">Default Root Folder Browser</value>
-  <value column="Description" original="The SysConfig ZK_ROOT_FOLDER_BROWSER has not been configured">The SysConfig ZK_ROOT_FOLDER_BROWSER has not been configured</value>
-  <value column="Help" original="The System Configurator specifies the base directory for 'Folder' fields and parameters. It currently defaults to IDEMPIERE_HOME. For enhanced security and to prevent unauthorized access to sensitive system files, such as logs or plugin binaries, we recommend setting a more restricted directory.">The System Configurator specifies the base directory for 'Folder' fields and parameters. It currently defaults to IDEMPIERE_HOME. For enhanced security and to prevent unauthorized access to sensitive system files, such as logs or plugin binaries, we recommend setting a more restricted directory.</value>
+ <row id="200011" trl="Y">
+  <value column="Name" original="Default Root Folder Browser">Diretório Raiz Padrão do Navegador de Arquivos</value>
+  <value column="Description" original="The SysConfig ZK_ROOT_FOLDER_BROWSER has not been configured">A chave de SysConfig ZK_ROOT_FOLDER_BROWSER não foi configurada</value>
+  <value column="Help" original="The System Configurator specifies the base directory for 'Folder' fields and parameters. It currently defaults to IDEMPIERE_HOME. For enhanced security and to prevent unauthorized access to sensitive system files, such as logs or plugin binaries, we recommend setting a more restricted directory.">O configurador do sistema define o diretório base dos campos e parâmetros do tipo 'Diretório'. Atualmente o padrão é IDEMPIERE_HOME. Para aumentar a segurança e impedir o acesso não autorizado a arquivos sensíveis do sistema, como logs ou binários de plugins, recomenda-se definir um diretório mais restrito.</value>
  </row>
- <row id="200012" trl="N">
-  <value column="Name" original="Advanced Roles">Advanced Roles</value>
-  <value column="Description" original="Advanced Roles assigned to Users">Advanced Roles assigned to Users</value>
-  <value column="Help" original="Be careful about which advanced roles you assign to which users.  Consider advanced roles as SuperUser; they have access to all security vulnerabilities.  You must also consider the SuperUser role as having access to the operating system user that was used to install iDempiere on the server.  In other words, advanced roles provide access to iDempiere features that can easily be exploited to gain access to SuperUser in the application, the database as a DBA and the operating system as the user running the iDempiere server.">Be careful about which advanced roles you assign to which users.  Consider advanced roles as SuperUser; they have access to all security vulnerabilities.  You must also consider the SuperUser role as having access to the operating system user that was used to install iDempiere on the server.  In other words, advanced roles provide access to iDempiere features that can easily be exploited to gain access to SuperUser in the application, the database as a DBA and the operating system as the user running the iDempiere server.</value>
+ <row id="200012" trl="Y">
+  <value column="Name" original="Advanced Roles">Perfis de Acesso Avançados</value>
+  <value column="Description" original="Advanced Roles assigned to Users">Perfis de acesso avançados atribuídos a usuários</value>
+  <value column="Help" original="Be careful about which advanced roles you assign to which users.  Consider advanced roles as SuperUser; they have access to all security vulnerabilities.  You must also consider the SuperUser role as having access to the operating system user that was used to install iDempiere on the server.  In other words, advanced roles provide access to iDempiere features that can easily be exploited to gain access to SuperUser in the application, the database as a DBA and the operating system as the user running the iDempiere server.">Tenha cuidado com os perfis de acesso avançados que você atribui a cada usuário. Trate os perfis avançados como SuperUser: eles têm acesso a todas as vulnerabilidades de segurança. Considere também que o perfil SuperUser tem acesso ao usuário do sistema operacional utilizado para instalar o iDempiere no servidor. Em outras palavras, os perfis avançados dão acesso a recursos do iDempiere que podem ser facilmente explorados para obter acesso de SuperUser na aplicação, ao banco de dados como DBA e ao sistema operacional como o usuário que executa o servidor iDempiere.</value>
  </row>
- <row id="200013" trl="N">
-  <value column="Name" original="No User Locking">No User Locking</value>
-  <value column="Description" original="User locking is not configured">User locking is not configured</value>
-  <value column="Help" original="Consider configuring a user locking mechanism.">Consider configuring a user locking mechanism.</value>
+ <row id="200013" trl="Y">
+  <value column="Name" original="No User Locking">Sem Bloqueio de Usuário</value>
+  <value column="Description" original="User locking is not configured">O bloqueio de usuários não está configurado</value>
+  <value column="Help" original="Consider configuring a user locking mechanism.">Considere configurar um mecanismo de bloqueio de usuários.</value>
  </row>
- <row id="200014" trl="N">
-  <value column="Name" original="Unencrypted sensitive data">Unencrypted sensitive data</value>
-  <value column="Description" original="Sensitive columns not encrypted">Sensitive columns not encrypted</value>
-  <value column="Help" original="We have detected columns containing sensitive data that lack encryption. Make sure that all fields storing passwords, credit card numbers or other sensitive business data are properly encrypted.">We have detected columns containing sensitive data that lack encryption. Make sure that all fields storing passwords, credit card numbers or other sensitive business data are properly encrypted.</value>
+ <row id="200014" trl="Y">
+  <value column="Name" original="Unencrypted sensitive data">Dados Sensíveis sem Criptografia</value>
+  <value column="Description" original="Sensitive columns not encrypted">Colunas sensíveis não criptografadas</value>
+  <value column="Help" original="We have detected columns containing sensitive data that lack encryption. Make sure that all fields storing passwords, credit card numbers or other sensitive business data are properly encrypted.">Foram detectadas colunas com dados sensíveis sem criptografia. Verifique se todos os campos que armazenam senhas, números de cartão de crédito ou outros dados sensíveis do negócio estão devidamente criptografados.</value>
  </row>
- <row id="200015" trl="N">
-  <value column="Name" original="Legacy Encryption key">Legacy Encryption key</value>
-  <value column="Description" original="Legacy Encryption key detected">Legacy Encryption key detected</value>
-  <value column="Help" original="Legacy key algorithm DES encryption detected – migration to a stronger algorithm is recommended.&#10;&#10;&lt;br&gt;&lt;br&gt;&#10;&lt;b&gt;WARNING!&lt;/b&gt; Before changing the algorithm, please note that if you already have encrypted data in your database, changing the key will render all the encrypted information unreadable. First, decrypt all encrypted columns, then apply the new encryption key and re-encrypt the columns.&#10;&#10;&lt;br&gt;&#10;This can be done simply by adding the file 'idempiere-ks.properties' to your 'IDEMPIERE_HOME' folder with the following content:&#10;&lt;pre&gt;&#10;algorithm=AES&#10;password=mySecurePassword&#10;&lt;/pre&gt;&#10;&#10;You can use AES or another supported algorithm and replace 'mySecurePassword' with a password of your choice.  Please save this password carefully, as if you lose it, you will also lose access to all your encrypted data." xml:space="preserve"><![CDATA[Legacy key algorithm DES encryption detected – migration to a stronger algorithm is recommended.
+ <row id="200015" trl="Y">
+  <value column="Name" original="Legacy Encryption key">Chave de Criptografia Legada</value>
+  <value column="Description" original="Legacy Encryption key detected">Detectada chave de criptografia legada</value>
+  <value column="Help" original="Legacy key algorithm DES encryption detected – migration to a stronger algorithm is recommended.&#10;&#10;&lt;br&gt;&lt;br&gt;&#10;&lt;b&gt;WARNING!&lt;/b&gt; Before changing the algorithm, please note that if you already have encrypted data in your database, changing the key will render all the encrypted information unreadable. First, decrypt all encrypted columns, then apply the new encryption key and re-encrypt the columns.&#10;&#10;&lt;br&gt;&#10;This can be done simply by adding the file 'idempiere-ks.properties' to your 'IDEMPIERE_HOME' folder with the following content:&#10;&lt;pre&gt;&#10;algorithm=AES&#10;password=mySecurePassword&#10;&lt;/pre&gt;&#10;&#10;You can use AES or another supported algorithm and replace 'mySecurePassword' with a password of your choice.  Please save this password carefully, as if you lose it, you will also lose access to all your encrypted data." xml:space="preserve"><![CDATA[Detectada criptografia com o algoritmo de chave legado DES – recomenda-se migrar para um algoritmo mais forte.
 
 <br><br>
-<b>WARNING!</b> Before changing the algorithm, please note that if you already have encrypted data in your database, changing the key will render all the encrypted information unreadable. First, decrypt all encrypted columns, then apply the new encryption key and re-encrypt the columns.
+<b>ATENÇÃO!</b> Antes de alterar o algoritmo, observe que, havendo dados já criptografados no banco de dados, a troca da chave torna ilegível toda a informação criptografada. Descriptografe primeiro todas as colunas criptografadas, depois aplique a nova chave de criptografia e criptografe as colunas novamente.
 
 <br>
-This can be done simply by adding the file 'idempiere-ks.properties' to your 'IDEMPIERE_HOME' folder with the following content:
+Basta acrescentar o arquivo 'idempiere-ks.properties' à pasta 'IDEMPIERE_HOME' com o seguinte conteúdo:
 <pre>
 algorithm=AES
 password=mySecurePassword
 </pre>
 
-You can use AES or another supported algorithm and replace 'mySecurePassword' with a password of your choice.  Please save this password carefully, as if you lose it, you will also lose access to all your encrypted data.]]></value>
+Você pode usar AES ou outro algoritmo suportado e substituir 'mySecurePassword' por uma senha de sua escolha. Guarde essa senha com cuidado: perdê-la significa perder também o acesso a todos os dados criptografados.]]></value>
  </row>
 </idempiereTrl>

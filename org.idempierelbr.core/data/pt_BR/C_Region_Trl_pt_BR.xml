@@ -162,8 +162,8 @@
  <row id="159" trl="N">
   <value column="Name" original="New Brunswick">New Brunswick</value>
  </row>
- <row id="160" trl="N">
-  <value column="Name" original="Newfoundland and Labrador">Newfoundland and Labrador</value>
+ <row id="160" trl="Y">
+  <value column="Name" original="Newfoundland and Labrador">Terra Nova e Labrador</value>
  </row>
  <row id="161" trl="N">
   <value column="Name" original="Nova Scotia">Nova Scotia</value>

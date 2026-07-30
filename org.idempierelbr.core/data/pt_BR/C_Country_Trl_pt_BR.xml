@@ -421,8 +421,8 @@
   <value column="RegionName" original=""/>
  </row>
  <row id="133" trl="Y">
-  <value column="Name" original="Bermuda">Bermuda</value>
-  <value column="Description" original="Bermuda">Bermuda</value>
+  <value column="Name" original="Bermuda">Bermudas</value>
+  <value column="Description" original="Bermuda">Bermudas</value>
   <value column="PlaceholderAddress1" original=""/>
   <value column="PlaceholderAddress2" original=""/>
   <value column="PlaceholderAddress3" original=""/>
@@ -1219,8 +1219,8 @@
   <value column="RegionName" original=""/>
  </row>
  <row id="193" trl="Y">
-  <value column="Name" original="Greenland">Greenland</value>
-  <value column="Description" original="Greenland">Greenland</value>
+  <value column="Name" original="Greenland">Groenlândia</value>
+  <value column="Description" original="Greenland">Groenlândia</value>
   <value column="PlaceholderAddress1" original=""/>
   <value column="PlaceholderAddress2" original=""/>
   <value column="PlaceholderAddress3" original=""/>
@@ -1552,7 +1552,7 @@
   <value column="PlaceholderComments" original=""/>
   <value column="PlaceholderPostal" original=""/>
   <value column="PlaceholderPostal_Add" original=""/>
-  <value column="RegionName" original="Prefecture">Prefecture</value>
+  <value column="RegionName" original="Prefecture">Prefeitura</value>
  </row>
  <row id="217" trl="Y">
   <value column="Name" original="Jordan">Jordânia</value>
@@ -1919,8 +1919,8 @@
   <value column="RegionName" original=""/>
  </row>
  <row id="243" trl="Y">
-  <value column="Name" original="Martinique">Martinique</value>
-  <value column="Description" original="Martinique">Martinique</value>
+  <value column="Name" original="Martinique">Martinica</value>
+  <value column="Description" original="Martinique">Martinica</value>
   <value column="PlaceholderAddress1" original=""/>
   <value column="PlaceholderAddress2" original=""/>
   <value column="PlaceholderAddress3" original=""/>
@@ -3374,9 +3374,9 @@
   <value column="PlaceholderPostal_Add" original=""/>
   <value column="RegionName" original=""/>
  </row>
- <row id="50000" trl="N">
-  <value column="Name" original="Åland Islands">Åland Islands</value>
-  <value column="Description" original="Åland Islands">Åland Islands</value>
+ <row id="50000" trl="Y">
+  <value column="Name" original="Åland Islands">Ilhas Åland</value>
+  <value column="Description" original="Åland Islands">Ilhas Åland</value>
   <value column="PlaceholderAddress1" original=""/>
   <value column="PlaceholderAddress2" original=""/>
   <value column="PlaceholderAddress3" original=""/>
@@ -3386,11 +3386,11 @@
   <value column="PlaceholderComments" original=""/>
   <value column="PlaceholderPostal" original=""/>
   <value column="PlaceholderPostal_Add" original=""/>
-  <value column="RegionName" original="State">State</value>
+  <value column="RegionName" original="State">Estado</value>
  </row>
- <row id="50001" trl="N">
-  <value column="Name" original="Saint Barthélemy">Saint Barthélemy</value>
-  <value column="Description" original="Saint Barthélemy">Saint Barthélemy</value>
+ <row id="50001" trl="Y">
+  <value column="Name" original="Saint Barthélemy">São Bartolomeu</value>
+  <value column="Description" original="Saint Barthélemy">São Bartolomeu</value>
   <value column="PlaceholderAddress1" original=""/>
   <value column="PlaceholderAddress2" original=""/>
   <value column="PlaceholderAddress3" original=""/>
@@ -3400,9 +3400,9 @@
   <value column="PlaceholderComments" original=""/>
   <value column="PlaceholderPostal" original=""/>
   <value column="PlaceholderPostal_Add" original=""/>
-  <value column="RegionName" original="State">State</value>
+  <value column="RegionName" original="State">Estado</value>
  </row>
- <row id="50002" trl="N">
+ <row id="50002" trl="Y">
   <value column="Name" original="Guernsey">Guernsey</value>
   <value column="Description" original="Guernsey"/>
   <value column="PlaceholderAddress1" original=""/>
@@ -3414,11 +3414,11 @@
   <value column="PlaceholderComments" original=""/>
   <value column="PlaceholderPostal" original=""/>
   <value column="PlaceholderPostal_Add" original=""/>
-  <value column="RegionName" original="State">State</value>
+  <value column="RegionName" original="State">Estado</value>
  </row>
- <row id="50003" trl="N">
-  <value column="Name" original="Isle of Man">Isle of Man</value>
-  <value column="Description" original="Isle of Man">Isle of Man</value>
+ <row id="50003" trl="Y">
+  <value column="Name" original="Isle of Man">Ilha de Man</value>
+  <value column="Description" original="Isle of Man">Ilha de Man</value>
   <value column="PlaceholderAddress1" original=""/>
   <value column="PlaceholderAddress2" original=""/>
   <value column="PlaceholderAddress3" original=""/>
@@ -3428,9 +3428,9 @@
   <value column="PlaceholderComments" original=""/>
   <value column="PlaceholderPostal" original=""/>
   <value column="PlaceholderPostal_Add" original=""/>
-  <value column="RegionName" original="State">State</value>
+  <value column="RegionName" original="State">Estado</value>
  </row>
- <row id="50004" trl="N">
+ <row id="50004" trl="Y">
   <value column="Name" original="Jersey">Jersey</value>
   <value column="Description" original="Jersey">Jersey</value>
   <value column="PlaceholderAddress1" original=""/>
@@ -3442,7 +3442,7 @@
   <value column="PlaceholderComments" original=""/>
   <value column="PlaceholderPostal" original=""/>
   <value column="PlaceholderPostal_Add" original=""/>
-  <value column="RegionName" original="State">State</value>
+  <value column="RegionName" original="State">Estado</value>
  </row>
  <row id="50005" trl="Y">
   <value column="Name" original="Saint Martin">São Martinho</value>
@@ -3456,11 +3456,11 @@
   <value column="PlaceholderComments" original=""/>
   <value column="PlaceholderPostal" original=""/>
   <value column="PlaceholderPostal_Add" original=""/>
-  <value column="RegionName" original="State">State</value>
+  <value column="RegionName" original="State">Estado</value>
  </row>
- <row id="200000" trl="N">
+ <row id="200000" trl="Y">
   <value column="Name" original="Sint Maarten">Sint Maarten</value>
-  <value column="Description" original="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</value>
+  <value column="Description" original="Sint Maarten (Dutch part)">Sint Maarten (parte neerlandesa)</value>
   <value column="PlaceholderAddress1" original=""/>
   <value column="PlaceholderAddress2" original=""/>
   <value column="PlaceholderAddress3" original=""/>
@@ -3470,11 +3470,11 @@
   <value column="PlaceholderComments" original=""/>
   <value column="PlaceholderPostal" original=""/>
   <value column="PlaceholderPostal_Add" original=""/>
-  <value column="RegionName" original="State">State</value>
+  <value column="RegionName" original="State">Estado</value>
  </row>
- <row id="200001" trl="N">
-  <value column="Name" original="South Sudan">South Sudan</value>
-  <value column="Description" original="the Republic of South Sudan">the Republic of South Sudan</value>
+ <row id="200001" trl="Y">
+  <value column="Name" original="South Sudan">Sudão do Sul</value>
+  <value column="Description" original="the Republic of South Sudan">República do Sudão do Sul</value>
   <value column="PlaceholderAddress1" original=""/>
   <value column="PlaceholderAddress2" original=""/>
   <value column="PlaceholderAddress3" original=""/>
@@ -3484,11 +3484,11 @@
   <value column="PlaceholderComments" original=""/>
   <value column="PlaceholderPostal" original=""/>
   <value column="PlaceholderPostal_Add" original=""/>
-  <value column="RegionName" original="State">State</value>
+  <value column="RegionName" original="State">Estado</value>
  </row>
- <row id="200002" trl="N">
-  <value column="Name" original="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</value>
-  <value column="Description" original="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</value>
+ <row id="200002" trl="Y">
+  <value column="Name" original="Bonaire, Sint Eustatius and Saba">Bonaire, Santo Eustáquio e Saba</value>
+  <value column="Description" original="Bonaire, Sint Eustatius and Saba">Bonaire, Santo Eustáquio e Saba</value>
   <value column="PlaceholderAddress1" original=""/>
   <value column="PlaceholderAddress2" original=""/>
   <value column="PlaceholderAddress3" original=""/>
@@ -3498,9 +3498,9 @@
   <value column="PlaceholderComments" original=""/>
   <value column="PlaceholderPostal" original=""/>
   <value column="PlaceholderPostal_Add" original=""/>
-  <value column="RegionName" original="State">State</value>
+  <value column="RegionName" original="State">Estado</value>
  </row>
- <row id="200003" trl="N">
+ <row id="200003" trl="Y">
   <value column="Name" original="Curaçao">Curaçao</value>
   <value column="Description" original="Curaçao">Curaçao</value>
   <value column="PlaceholderAddress1" original=""/>
@@ -3512,6 +3512,6 @@
   <value column="PlaceholderComments" original=""/>
   <value column="PlaceholderPostal" original=""/>
   <value column="PlaceholderPostal_Add" original=""/>
-  <value column="RegionName" original="State">State</value>
+  <value column="RegionName" original="State">Estado</value>
  </row>
 </idempiereTrl>

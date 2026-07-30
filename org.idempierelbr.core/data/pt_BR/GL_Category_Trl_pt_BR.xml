@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="GL_Category">
- <row id="0" trl="N">
-  <value column="Name" original="None">None</value>
+ <row id="0" trl="Y">
+  <value column="Name" original="None">Nenhum</value>
   <value column="PrintName" original=""/>
  </row>
- <row id="108" trl="N">
+ <row id="108" trl="Y">
   <value column="Name" original="Manual">Manual</value>
   <value column="PrintName" original=""/>
  </row>
- <row id="109" trl="N">
-  <value column="Name" original="AR Invoice">AR Invoice</value>
+ <row id="109" trl="Y">
+  <value column="Name" original="AR Invoice">Fatura a Receber</value>
   <value column="PrintName" original=""/>
  </row>
- <row id="110" trl="N">
-  <value column="Name" original="AR Receipt">AR Receipt</value>
+ <row id="110" trl="Y">
+  <value column="Name" original="AR Receipt">Recebimento de Valores</value>
   <value column="PrintName" original=""/>
  </row>
- <row id="111" trl="N">
-  <value column="Name" original="Material Management">Material Management</value>
+ <row id="111" trl="Y">
+  <value column="Name" original="Material Management">Gestão de Materiais</value>
   <value column="PrintName" original=""/>
  </row>
- <row id="112" trl="N">
-  <value column="Name" original="AP Invoice">AP Invoice</value>
+ <row id="112" trl="Y">
+  <value column="Name" original="AP Invoice">Fatura a Pagar</value>
   <value column="PrintName" original=""/>
  </row>
- <row id="113" trl="N">
-  <value column="Name" original="AP Payment">AP Payment</value>
+ <row id="113" trl="Y">
+  <value column="Name" original="AP Payment">Pagamento de Valores</value>
   <value column="PrintName" original=""/>
  </row>
- <row id="50000" trl="N">
-  <value column="Name" original="Payroll">Payroll</value>
+ <row id="50000" trl="Y">
+  <value column="Name" original="Payroll">Folha de Pagamento</value>
   <value column="PrintName" original=""/>
  </row>
- <row id="50001" trl="N">
-  <value column="Name" original="Manufacturing">Manufacturing</value>
+ <row id="50001" trl="Y">
+  <value column="Name" original="Manufacturing">Produção</value>
   <value column="PrintName" original=""/>
  </row>
- <row id="50002" trl="N">
-  <value column="Name" original="Distribution">Distribution</value>
+ <row id="50002" trl="Y">
+  <value column="Name" original="Distribution">Distribuição</value>
   <value column="PrintName" original=""/>
  </row>
 </idempiereTrl>

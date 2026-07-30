@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_Charge">
- <row id="100" trl="N">
-  <value column="Name" original="Bank Charge">Bank Charge</value>
+ <row id="100" trl="Y">
+  <value column="Name" original="Bank Charge">Tarifa Bancária</value>
   <value column="Description" original=""/>
  </row>
- <row id="101" trl="N">
-  <value column="Name" original="Commissions Paid">Commissions Paid</value>
+ <row id="101" trl="Y">
+  <value column="Name" original="Commissions Paid">Comissões Pagas</value>
   <value column="Description" original=""/>
  </row>
- <row id="200000" trl="N">
-  <value column="Name" original="Freight Charges">Freight Charges</value>
+ <row id="200000" trl="Y">
+  <value column="Name" original="Freight Charges">Despesas de Frete</value>
   <value column="Description" original=""/>
  </row>
 </idempiereTrl>

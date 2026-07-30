@@ -104,7 +104,7 @@ O sistema converte as medidas em percentuais, com base na meta e no valor alcan�
  </row>
  <row id="115" trl="Y">
   <value column="Name" original="Process_Requisition">Process_Requisition</value>
-  <value column="Description" original="(Standard Process_Requisition)">(Standard Process_Requisition)</value>
+  <value column="Description" original="(Standard Process_Requisition)">(Processo de Requisição Padrão)</value>
   <value column="Help" original=""/>
  </row>
  <row id="116" trl="Y">
@@ -182,135 +182,135 @@ O sistema converte as medidas em percentuais, com base na meta e no valor alcan�
   <value column="Description" original="(Standard Process Bank Statement)">(Processo de Extratos Bancários Padrão)</value>
   <value column="Help" original=""/>
  </row>
- <row id="131" trl="N">
-  <value column="Name" original="Business Partner Approval">Business Partner Approval</value>
-  <value column="Description" original="Example Document based workflow">Example Document based workflow</value>
-  <value column="Help" original="When a new Business Partner is created, it is forwarded for review and credit check.">When a new Business Partner is created, it is forwarded for review and credit check.</value>
+ <row id="131" trl="Y">
+  <value column="Name" original="Business Partner Approval">Aprovação de Parceiro de Negócios</value>
+  <value column="Description" original="Example Document based workflow">Exemplo de workflow baseado em documento</value>
+  <value column="Help" original="When a new Business Partner is created, it is forwarded for review and credit check.">Quando um novo parceiro de negócios é criado, ele é encaminhado para revisão e análise de crédito.</value>
  </row>
- <row id="50000" trl="N">
-  <value column="Name" original="Manufacturing Management Setup">Manufacturing Management Setup</value>
-  <value column="Description" original="Setup Manufacturing Management">Setup Manufacturing Management</value>
-  <value column="Help" original="This workflow defines the Manufacturing Management and the supporting rules.">This workflow defines the Manufacturing Management and the supporting rules.</value>
+ <row id="50000" trl="Y">
+  <value column="Name" original="Manufacturing Management Setup">Configuração da Gestão de Produção</value>
+  <value column="Description" original="Setup Manufacturing Management">Configurar a gestão de produção</value>
+  <value column="Help" original="This workflow defines the Manufacturing Management and the supporting rules.">Este workflow define a gestão de produção e as regras que a sustentam.</value>
  </row>
- <row id="50001" trl="N">
-  <value column="Name" original="Manufacturing Workflow Setup">Manufacturing Workflow Setup</value>
-  <value column="Description" original="Setup Manufacturing Workflow">Setup Manufacturing Workflow</value>
-  <value column="Help" original="This workflow defines the Manufacturing Workflow  Setup">This workflow defines the Manufacturing Workflow  Setup</value>
+ <row id="50001" trl="Y">
+  <value column="Name" original="Manufacturing Workflow Setup">Configuração de Workflow de Produção</value>
+  <value column="Description" original="Setup Manufacturing Workflow">Configurar o workflow de produção</value>
+  <value column="Help" original="This workflow defines the Manufacturing Workflow  Setup">Este workflow define a configuração do workflow de produção</value>
  </row>
  <row id="50002" trl="Y">
   <value column="Name" original="Bill of Material and Formula Setup" xml:space="preserve"><![CDATA[Configuração de Lista de Materiais e Fórmula]]></value>
-  <value column="Description" original="Setup Bill of Material &amp; Formula" xml:space="preserve"><![CDATA[Setup Bill of Material & Formula]]></value>
-  <value column="Help" original="This workflow defines the Bill of Material &amp; Formula" xml:space="preserve"><![CDATA[This workflow defines the Bill of Material & Formula]]></value>
+  <value column="Description" original="Setup Bill of Material &amp; Formula" xml:space="preserve"><![CDATA[Configurar a Lista de Materiais e a Fórmula]]></value>
+  <value column="Help" original="This workflow defines the Bill of Material &amp; Formula" xml:space="preserve"><![CDATA[Este workflow define a Lista de Materiais e a Fórmula]]></value>
  </row>
- <row id="50003" trl="N">
-  <value column="Name" original="Planning Management Setup">Planning Management Setup</value>
-  <value column="Description" original="Setup Planning Management">Setup Planning Management</value>
-  <value column="Help" original="Before the production processes can be done, it is necessary to plan the activities which must be accomplished to assure the products can be gotten at the right time in order not to remain a long time in the warehouse, or at the contrary, to cause delays in shipments because components shortages in the manufacturing order.&#10;&#10;Another subject to take into account are the production cost and the capacity of shipping good quality products.&#10;&#10;Using Planning Management you answer the question: When and How Many products we must get?">Before the production processes can be done, it is necessary to plan the activities which must be accomplished to assure the products can be gotten at the right time in order not to remain a long time in the warehouse, or at the contrary, to cause delays in shipments because components shortages in the manufacturing order.
+ <row id="50003" trl="Y">
+  <value column="Name" original="Planning Management Setup">Configuração da Gestão de Planejamento</value>
+  <value column="Description" original="Setup Planning Management">Configurar a gestão de planejamento</value>
+  <value column="Help" original="Before the production processes can be done, it is necessary to plan the activities which must be accomplished to assure the products can be gotten at the right time in order not to remain a long time in the warehouse, or at the contrary, to cause delays in shipments because components shortages in the manufacturing order.&#10;&#10;Another subject to take into account are the production cost and the capacity of shipping good quality products.&#10;&#10;Using Planning Management you answer the question: When and How Many products we must get?">Antes de executar os processos produtivos, é necessário planejar as atividades a serem realizadas para garantir que os produtos fiquem prontos no momento certo, sem permanecer muito tempo no armazém nem, ao contrário, causar atrasos nas remessas por falta de componentes na ordem de produção.
 
-Another subject to take into account are the production cost and the capacity of shipping good quality products.
+Outro aspecto a considerar é o custo de produção e a capacidade de entregar produtos de boa qualidade.
 
-Using Planning Management you answer the question: When and How Many products we must get?</value>
+Com a gestão de planejamento você responde à pergunta: quando e quantos produtos precisamos obter?</value>
  </row>
  <row id="50004" trl="Y">
-  <value column="Name" original="Material Requirement Planning Setup">Material Requirement Planning Setup</value>
-  <value column="Description" original="MRP is a set of techniques which uses Bills of Material, Inventory Data, and the Master Production Schedule to calculate requirements for materials.">MRP is a set of techniques which uses Bills of Material, Inventory Data, and the Master Production Schedule to calculate requirements for materials.</value>
+  <value column="Name" original="Material Requirement Planning Setup">Configuração do Planejamento de Necessidades de Materiais</value>
+  <value column="Description" original="MRP is a set of techniques which uses Bills of Material, Inventory Data, and the Master Production Schedule to calculate requirements for materials.">O MRP é um conjunto de técnicas que usa as Listas de Materiais, os dados de estoque e o Plano Mestre de Produção para calcular as necessidades de materiais.</value>
   <value column="Help" original="MRP is a set of techniques which uses Bills of Material, Inventory Data, and the Master Production Schedule to calculate requirements for materials. It creates planned orders to balance demand and supply for products and it issues recommendations to receipt material with the right quantities and at the right dates to satisfy the Master Production Schedule in the most efficient way.">O MRP é um conjunto de técnicas que usa as Listas de Materiais, os dados de estoque e o Plano Mestre de Produção para calcular as necessidades de materiais. Ele cria ordens planejadas para equilibrar demanda e suprimento de produtos e emite recomendações de recebimento de material nas quantidades e nas datas certas, de modo a atender ao Plano Mestre de Produção da maneira mais eficiente.</value>
  </row>
- <row id="50005" trl="N">
-  <value column="Name" original="Capacity Requirement Planning Setup">Capacity Requirement Planning Setup</value>
-  <value column="Description" original="The process of Capacity Plan Calculation allows us to know the available time in each manufacturing resource, as well as the required time to satisfy the Master Production Schedule.">The process of Capacity Plan Calculation allows us to know the available time in each manufacturing resource, as well as the required time to satisfy the Master Production Schedule.</value>
-  <value column="Help" original="It is a set of techniques which uses the planned orders by MRP, open manufacturing orders, manufacturing resources and the work-flows to calculate the required time for each resource along with the available time. With this information, we are able to balance the time demand with the available time. Through the knowledge of the required and available capacities it is possible to adjust the Master Production Schedule(MPS) until we arrive at a realistic one.">It is a set of techniques which uses the planned orders by MRP, open manufacturing orders, manufacturing resources and the work-flows to calculate the required time for each resource along with the available time. With this information, we are able to balance the time demand with the available time. Through the knowledge of the required and available capacities it is possible to adjust the Master Production Schedule(MPS) until we arrive at a realistic one.</value>
+ <row id="50005" trl="Y">
+  <value column="Name" original="Capacity Requirement Planning Setup">Configuração do Planejamento de Necessidades de Capacidade</value>
+  <value column="Description" original="The process of Capacity Plan Calculation allows us to know the available time in each manufacturing resource, as well as the required time to satisfy the Master Production Schedule.">O processo de cálculo do plano de capacidade permite conhecer o tempo disponível em cada recurso de produção, bem como o tempo necessário para atender ao Plano Mestre de Produção.</value>
+  <value column="Help" original="It is a set of techniques which uses the planned orders by MRP, open manufacturing orders, manufacturing resources and the work-flows to calculate the required time for each resource along with the available time. With this information, we are able to balance the time demand with the available time. Through the knowledge of the required and available capacities it is possible to adjust the Master Production Schedule(MPS) until we arrive at a realistic one.">É um conjunto de técnicas que usa as ordens planejadas pelo MRP, as ordens de produção em aberto, os recursos de produção e os workflows para calcular o tempo necessário de cada recurso em relação ao tempo disponível. Com essas informações, é possível equilibrar a demanda de tempo com o tempo disponível. Conhecendo as capacidades necessária e disponível, é possível ajustar o Plano Mestre de Produção (MPS) até chegar a um plano realista.</value>
  </row>
- <row id="50006" trl="N">
-  <value column="Name" original="Distribution Resource Planning Setup">Distribution Resource Planning Setup</value>
-  <value column="Description" original="is a method used in business administration for planning orders within a supply chain. DRP enables the user to set certain inventory control parameters (like a safety stock) and calculate the time-phased inventory requirements.">is a method used in business administration for planning orders within a supply chain. DRP enables the user to set certain inventory control parameters (like a safety stock) and calculate the time-phased inventory requirements.</value>
-  <value column="Help" original="is a method used in business administration for planning orders within a supply chain. DRP enables the user to set certain inventory control parameters (like a safety stock) and calculate the time-phased inventory requirements.">is a method used in business administration for planning orders within a supply chain. DRP enables the user to set certain inventory control parameters (like a safety stock) and calculate the time-phased inventory requirements.</value>
+ <row id="50006" trl="Y">
+  <value column="Name" original="Distribution Resource Planning Setup">Configuração do Planejamento de Recursos de Distribuição</value>
+  <value column="Description" original="is a method used in business administration for planning orders within a supply chain. DRP enables the user to set certain inventory control parameters (like a safety stock) and calculate the time-phased inventory requirements.">É um método de administração de empresas para planejar pedidos em uma cadeia de suprimentos. O DRP permite definir parâmetros de controle de estoque (como o estoque de segurança) e calcular as necessidades de estoque distribuídas no tempo.</value>
+  <value column="Help" original="is a method used in business administration for planning orders within a supply chain. DRP enables the user to set certain inventory control parameters (like a safety stock) and calculate the time-phased inventory requirements.">É um método usado na administração de empresas para planejar pedidos dentro de uma cadeia de suprimentos. O DRP permite definir determinados parâmetros de controle de estoque (como o estoque de segurança) e calcular as necessidades de estoque distribuídas no tempo.</value>
  </row>
- <row id="50007" trl="N">
-  <value column="Name" original="Discrete Manufacturing Setup">Discrete Manufacturing Setup</value>
-  <value column="Description" original="Once the production planning process is completed, the production control process let us to check the execution activities in order to be sure we can reach the material plan.">Once the production planning process is completed, the production control process let us to check the execution activities in order to be sure we can reach the material plan.</value>
-  <value column="Help" original="Once the production planning process is completed, the production control process let us to check the execution activities in order to be sure we can reach the material plan.&#10;&#10;Each time you need to release an order you need to be sure the components are complete in the warehouse, this is obtained by tracking the release and due dates for every component, this is easy to get using the shortages reports and from this module.&#10;&#10;This module mainly answer the question:&#10;&#10;What do I need to do to accomplish the&#10;MPS?&#10;&#10;If you cannot cover the MPS as you had planned, this module gives you information needed to decrease the effect on the costs and on the customer service.">Once the production planning process is completed, the production control process let us to check the execution activities in order to be sure we can reach the material plan.
+ <row id="50007" trl="Y">
+  <value column="Name" original="Discrete Manufacturing Setup">Configuração da Produção Discreta</value>
+  <value column="Description" original="Once the production planning process is completed, the production control process let us to check the execution activities in order to be sure we can reach the material plan.">Concluído o processo de planejamento da produção, o processo de controle da produção permite acompanhar as atividades de execução para assegurar o cumprimento do plano de materiais.</value>
+  <value column="Help" original="Once the production planning process is completed, the production control process let us to check the execution activities in order to be sure we can reach the material plan.&#10;&#10;Each time you need to release an order you need to be sure the components are complete in the warehouse, this is obtained by tracking the release and due dates for every component, this is easy to get using the shortages reports and from this module.&#10;&#10;This module mainly answer the question:&#10;&#10;What do I need to do to accomplish the&#10;MPS?&#10;&#10;If you cannot cover the MPS as you had planned, this module gives you information needed to decrease the effect on the costs and on the customer service.">Concluído o processo de planejamento da produção, o processo de controle da produção permite acompanhar as atividades de execução para assegurar o cumprimento do plano de materiais.
 
-Each time you need to release an order you need to be sure the components are complete in the warehouse, this is obtained by tracking the release and due dates for every component, this is easy to get using the shortages reports and from this module.
+Sempre que for necessário liberar uma ordem, é preciso ter certeza de que os componentes estão completos no armazém; isso se obtém acompanhando as datas de liberação e de vencimento de cada componente, o que é simples com os relatórios de faltas e com este módulo.
 
-This module mainly answer the question:
+Este módulo responde principalmente à pergunta:
 
-What do I need to do to accomplish the
+O que preciso fazer para cumprir o
 MPS?
 
-If you cannot cover the MPS as you had planned, this module gives you information needed to decrease the effect on the costs and on the customer service.</value>
+Se não for possível cumprir o MPS conforme o planejado, este módulo fornece as informações necessárias para reduzir o impacto nos custos e no atendimento ao cliente.</value>
  </row>
- <row id="50008" trl="N">
+ <row id="50008" trl="Y">
   <value column="Name" original="Process_Manufacturing_Order">Process_Manufacturing_Order</value>
-  <value column="Description" original="(Standard Process Manufacturing Order)">(Standard Process Manufacturing Order)</value>
+  <value column="Description" original="(Standard Process Manufacturing Order)">(Processo de Ordem de Produção Padrão)</value>
   <value column="Help" original=""/>
  </row>
- <row id="50009" trl="N">
+ <row id="50009" trl="Y">
   <value column="Name" original="Process_CostCollector">Process_CostCollector</value>
-  <value column="Description" original="(Standard Process Manufacturing Cost Collector)">(Standard Process Manufacturing Cost Collector)</value>
+  <value column="Description" original="(Standard Process Manufacturing Cost Collector)">(Processo de Coletor de Custos de Produção Padrão)</value>
   <value column="Help" original=""/>
  </row>
- <row id="50010" trl="N">
-  <value column="Name" original="Distribution Management Setup">Distribution Management Setup</value>
-  <value column="Description" original="Setup Distribution Management">Setup Distribution Management</value>
+ <row id="50010" trl="Y">
+  <value column="Name" original="Distribution Management Setup">Configuração da Gestão de Distribuição</value>
+  <value column="Description" original="Setup Distribution Management">Configurar a gestão de distribuição</value>
   <value column="Help" original=""/>
  </row>
- <row id="50011" trl="N">
+ <row id="50011" trl="Y">
   <value column="Name" original="Process_Distribution_Order">Process_Distribution_Order</value>
-  <value column="Description" original="(Standard Process Distribution Order)">(Standard Process Distribution Order)</value>
+  <value column="Description" original="(Standard Process Distribution Order)">(Processo de Ordem de Distribuição Padrão)</value>
   <value column="Help" original=""/>
  </row>
- <row id="50012" trl="N">
-  <value column="Name" original="Setup Replication">Setup Replication</value>
-  <value column="Description" original="Setup of data replication">Setup of data replication</value>
-  <value column="Help" original="Data Replication allows you to synchronize data of remote instances with a central office.  All actions are initialized from the central office.&lt;p&gt;&#10;&lt;b&gt;Central System:&lt;/b&gt;&lt;br&gt;&#10;- setup system with all organizations, roles, etc.&lt;br&gt;&#10;- run the migration to make sure that it is up-to-date&lt;br&gt;&#10;- export the central system&lt;br&gt;&#10;&lt;p&gt;&#10;&lt;b&gt;Remote System:&lt;/b&gt;&#10;- install the exact version as Central System&lt;br&gt;&#10;- import data from Central System in the remote locations&lt;br&gt;&#10;&lt;p&gt;&#10;&lt;b&gt;Central System:&lt;/b&gt;&#10;- Replication Strategy&lt;br&gt;&#10;- Define Export Format&lt;br&gt;&#10;- Config Export Processor&lt;br&gt;&#10;- Start JMS Server&lt;br&gt;&#10;&lt;p&gt;&#10;** Enter Transactions **&#10;&lt;p&gt;&#10;&lt;b&gt;Remote System:&lt;/b&gt;&lt;br&gt;&#10;- Config Import Processor&lt;br&gt;" xml:space="preserve"><![CDATA[Data Replication allows you to synchronize data of remote instances with a central office.  All actions are initialized from the central office.<p>
-<b>Central System:</b><br>
-- setup system with all organizations, roles, etc.<br>
-- run the migration to make sure that it is up-to-date<br>
-- export the central system<br>
+ <row id="50012" trl="Y">
+  <value column="Name" original="Setup Replication">Configuração de Replicação</value>
+  <value column="Description" original="Setup of data replication">Configurar a replicação de dados</value>
+  <value column="Help" original="Data Replication allows you to synchronize data of remote instances with a central office.  All actions are initialized from the central office.&lt;p&gt;&#10;&lt;b&gt;Central System:&lt;/b&gt;&lt;br&gt;&#10;- setup system with all organizations, roles, etc.&lt;br&gt;&#10;- run the migration to make sure that it is up-to-date&lt;br&gt;&#10;- export the central system&lt;br&gt;&#10;&lt;p&gt;&#10;&lt;b&gt;Remote System:&lt;/b&gt;&#10;- install the exact version as Central System&lt;br&gt;&#10;- import data from Central System in the remote locations&lt;br&gt;&#10;&lt;p&gt;&#10;&lt;b&gt;Central System:&lt;/b&gt;&#10;- Replication Strategy&lt;br&gt;&#10;- Define Export Format&lt;br&gt;&#10;- Config Export Processor&lt;br&gt;&#10;- Start JMS Server&lt;br&gt;&#10;&lt;p&gt;&#10;** Enter Transactions **&#10;&lt;p&gt;&#10;&lt;b&gt;Remote System:&lt;/b&gt;&lt;br&gt;&#10;- Config Import Processor&lt;br&gt;" xml:space="preserve"><![CDATA[A replicação de dados permite sincronizar os dados de instâncias remotas com um escritório central.  Todas as ações são iniciadas a partir do escritório central.<p>
+<b>Sistema Central:</b><br>
+- configure o sistema com todas as organizações, perfis de acesso etc.<br>
+- execute a migração para garantir que ele está atualizado<br>
+- exporte o sistema central<br>
 <p>
-<b>Remote System:</b>
-- install the exact version as Central System<br>
-- import data from Central System in the remote locations<br>
+<b>Sistema Remoto:</b>
+- instale exatamente a mesma versão do sistema central<br>
+- importe os dados do sistema central nos locais remotos<br>
 <p>
-<b>Central System:</b>
-- Replication Strategy<br>
-- Define Export Format<br>
-- Config Export Processor<br>
-- Start JMS Server<br>
+<b>Sistema Central:</b>
+- Estratégia de Replicação<br>
+- Definir o Formato de Exportação<br>
+- Configurar o Processador de Exportação<br>
+- Iniciar o Servidor JMS<br>
 <p>
-** Enter Transactions **
+** Lançar as Transações **
 <p>
-<b>Remote System:</b><br>
-- Config Import Processor<br>]]></value>
+<b>Sistema Remoto:</b><br>
+- Configurar o Processador de Importação<br>]]></value>
  </row>
- <row id="50013" trl="N">
+ <row id="50013" trl="Y">
   <value column="Name" original="Process_Payroll">Process_Payroll</value>
-  <value column="Description" original="(Standard Process Payroll)">(Standard Process Payroll)</value>
+  <value column="Description" original="(Standard Process Payroll)">(Processo de Folha de Pagamento Padrão)</value>
   <value column="Help" original=""/>
  </row>
- <row id="50014" trl="N">
-  <value column="Name" original="Setup Human Resource &amp; Payroll" xml:space="preserve"><![CDATA[Setup Human Resource & Payroll]]></value>
-  <value column="Description" original="Setup Human Resource &amp; Payroll" xml:space="preserve"><![CDATA[Setup Human Resource & Payroll]]></value>
+ <row id="50014" trl="Y">
+  <value column="Name" original="Setup Human Resource &amp; Payroll" xml:space="preserve"><![CDATA[Configuração de Recursos Humanos e Folha de Pagamento]]></value>
+  <value column="Description" original="Setup Human Resource &amp; Payroll" xml:space="preserve"><![CDATA[Configurar Recursos Humanos e Folha de Pagamento]]></value>
   <value column="Help" original=""/>
  </row>
- <row id="50015" trl="N">
-  <value column="Name" original="Patio Chair">Patio Chair</value>
-  <value column="Description" original="Routing for Assembly the Patio Chair">Routing for Assembly the Patio Chair</value>
+ <row id="50015" trl="Y">
+  <value column="Name" original="Patio Chair">Cadeira de Pátio</value>
+  <value column="Description" original="Routing for Assembly the Patio Chair">Roteiro de montagem da cadeira de pátio</value>
   <value column="Help" original=""/>
  </row>
- <row id="50016" trl="N">
-  <value column="Name" original="Lawn Fertilizer">Lawn Fertilizer</value>
+ <row id="50016" trl="Y">
+  <value column="Name" original="Lawn Fertilizer">Fertilizante para Gramado</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="50017" trl="N">
-  <value column="Name" original="Fertilizer Packing Process">Fertilizer Packing Process</value>
-  <value column="Description" original="Production Line to Packing the Fertilizer Bag 50 and 70 kg ">Production Line to Packing the Fertilizer Bag 50 and 70 kg </value>
+ <row id="50017" trl="Y">
+  <value column="Name" original="Fertilizer Packing Process">Processo de Embalagem de Fertilizante</value>
+  <value column="Description" original="Production Line to Packing the Fertilizer Bag 50 and 70 kg ">Linha de produção para embalar o fertilizante em sacos de 50 e 70 kg</value>
   <value column="Help" original=""/>
  </row>
- <row id="50018" trl="N">
-  <value column="Name" original="Patio Furniture Set">Patio Furniture Set</value>
+ <row id="50018" trl="Y">
+  <value column="Name" original="Patio Furniture Set">Conjunto de Móveis de Pátio</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -334,8 +334,8 @@ If you cannot cover the MPS as you had planned, this module gives you informatio
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="50024" trl="N">
-  <value column="Name" original="Process Asset Depreciation Entry">Process Asset Depreciation Entry</value>
+ <row id="50024" trl="Y">
+  <value column="Name" original="Process Asset Depreciation Entry">Processar Lançamento de Depreciação de Ativo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -344,9 +344,9 @@ If you cannot cover the MPS as you had planned, this module gives you informatio
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200005" trl="N">
+ <row id="200005" trl="Y">
   <value column="Name" original="Process_BankTransfer">Process_BankTransfer</value>
-  <value column="Description" original="(Standard Process_BankTransfer)">(Standard Process_BankTransfer)</value>
+  <value column="Description" original="(Standard Process_BankTransfer)">(Processo de Transferência Bancária Padrão)</value>
   <value column="Help" original=""/>
  </row>
  <row id="200007" trl="N">
@@ -354,14 +354,14 @@ If you cannot cover the MPS as you had planned, this module gives you informatio
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="200012" trl="N">
+ <row id="200012" trl="Y">
   <value column="Name" original="Process_DepositBatch">Process_DepositBatch</value>
-  <value column="Description" original="(Standard Process Deposit Batch)">(Standard Process Deposit Batch)</value>
+  <value column="Description" original="(Standard Process Deposit Batch)">(Processo de Lote de Depósito Padrão)</value>
   <value column="Help" original=""/>
  </row>
- <row id="800003" trl="N">
+ <row id="800003" trl="Y">
   <value column="Name" original="Process_NFS">Process_NFS</value>
-  <value column="Description" original="(Standard Process NFS)">(Standard Process NFS)</value>
+  <value column="Description" original="(Standard Process NFS)">(Processo de NFS Padrão)</value>
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="5ad2579d-39ac-4ba2-86a7-27bfedafb7d5">

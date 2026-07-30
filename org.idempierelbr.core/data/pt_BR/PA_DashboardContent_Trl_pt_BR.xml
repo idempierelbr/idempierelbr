@@ -24,9 +24,9 @@
   <value column="Help" original=""/>
   <value column="HTML" original=""/>
  </row>
- <row id="50004" trl="N">
-  <value column="Name" original="Calendar">Calendar</value>
-  <value column="Description" original="Request Calendar">Request Calendar</value>
+ <row id="50004" trl="Y">
+  <value column="Name" original="Calendar">Calendário</value>
+  <value column="Description" original="Request Calendar">Calendário de Solicitações</value>
   <value column="Help" original=""/>
   <value column="HTML" original=""/>
  </row>
@@ -36,7 +36,7 @@
   <value column="Help" original="Show your latest opened document. Drag and drop a recent item to trash bin to remove it."/>
   <value column="HTML" original=""/>
  </row>
- <row id="200001" trl="N">
+ <row id="200001" trl="Y">
   <value column="Name" original="Menu">Menu</value>
   <value column="Description" original="Menu">Menu</value>
   <value column="Help" original=""/>
@@ -54,19 +54,19 @@
   <value column="Help" original=""/>
   <value column="HTML" original=""/>
  </row>
- <row id="200005" trl="N">
-  <value column="Name" original="Donate">Donate</value>
+ <row id="200005" trl="Y">
+  <value column="Name" original="Donate">Doar</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="HTML" original="&lt;iframe src=&quot;https://www.idempiere.org/short-donate/&quot; style=&quot;border-top-width: 0px;border-bottom-width: 0px;border-right-width: 0px;border-left-width: 0px;width: 100%;height: 450px;&quot;&gt;&lt;/iframe&gt;" xml:space="preserve"><![CDATA[<iframe src="https://www.idempiere.org/short-donate/" style="border-top-width: 0px;border-bottom-width: 0px;border-right-width: 0px;border-left-width: 0px;width: 100%;height: 450px;"></iframe>]]></value>
  </row>
- <row id="200018" trl="N">
+ <row id="200018" trl="Y">
   <value column="Name" original="KPI1">KPI1</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="HTML" original=""/>
  </row>
- <row id="200019" trl="N">
+ <row id="200019" trl="Y">
   <value column="Name" original="KPI2">KPI2</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>

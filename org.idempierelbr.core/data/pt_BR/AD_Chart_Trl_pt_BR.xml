@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="AD_Chart">
- <row id="50000" trl="N">
-  <value column="Name" original="My Sales Pipeline">My Sales Pipeline</value>
+ <row id="50000" trl="Y">
+  <value column="Name" original="My Sales Pipeline">Meu Funil de Vendas</value>
   <value column="Description" original=""/>
-  <value column="DomainLabel" original="Sales Stage">Sales Stage</value>
-  <value column="RangeLabel" original="Value">Value</value>
+  <value column="DomainLabel" original="Sales Stage">Fase de Vendas</value>
+  <value column="RangeLabel" original="Value">Valor</value>
  </row>
- <row id="50001" trl="N">
-  <value column="Name" original="My Opportunities by Campaign">My Opportunities by Campaign</value>
+ <row id="50001" trl="Y">
+  <value column="Name" original="My Opportunities by Campaign">Minhas Oportunidades por Campanha</value>
   <value column="Description" original=""/>
-  <value column="DomainLabel" original="Opportunity">Opportunity</value>
-  <value column="RangeLabel" original="Campaign">Campaign</value>
+  <value column="DomainLabel" original="Opportunity">Oportunidade de Vendas</value>
+  <value column="RangeLabel" original="Campaign">Campanha</value>
  </row>
- <row id="50002" trl="N">
-  <value column="Name" original="Sales YTD">Sales YTD</value>
+ <row id="50002" trl="Y">
+  <value column="Name" original="Sales YTD">Vendas Acumuladas no Ano</value>
   <value column="Description" original=""/>
-  <value column="DomainLabel" original="Month">Month</value>
-  <value column="RangeLabel" original="Value">Value</value>
+  <value column="DomainLabel" original="Month">Mês</value>
+  <value column="RangeLabel" original="Value">Valor</value>
  </row>
- <row id="50003" trl="N">
-  <value column="Name" original="My Open Requests">My Open Requests</value>
+ <row id="50003" trl="Y">
+  <value column="Name" original="My Open Requests">Minhas Solicitações Abertas</value>
   <value column="Description" original=""/>
   <value column="DomainLabel" original=""/>
   <value column="RangeLabel" original=""/>
