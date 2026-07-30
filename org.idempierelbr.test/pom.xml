@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.idempierelbr</groupId>
+    <artifactId>org.idempierelbr.extensions.parent</artifactId>
+    <version>13.0.0-SNAPSHOT</version>
+    <relativePath>../org.idempierelbr.extensions.parent/pom.xml</relativePath>
+  </parent>
+  <artifactId>org.idempierelbr.test</artifactId>
+  <packaging>eclipse-test-plugin</packaging>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-surefire-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <providerHint>junit59</providerHint>
+          <systemProperties>
+            <IDEMPIERE_HOME>${env.IDEMPIERE_HOME}</IDEMPIERE_HOME>
+          </systemProperties>
+          <excludes>
+            <!-- E2E tests require SEFAZ homologação credentials — run manually -->
+            <exclude>**/*E2ETest.java</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
