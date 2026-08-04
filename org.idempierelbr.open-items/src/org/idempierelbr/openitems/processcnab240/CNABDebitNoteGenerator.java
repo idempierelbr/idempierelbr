@@ -158,8 +158,11 @@ public class CNABDebitNoteGenerator {
 		if (C_Invoice_ID <= 0)
 			return null;
 
+		// Venda = saída: LBR_NotaFiscal usa LBR_NFE_OperationType ('1'=Out), não IsSOTrx
 		return new Query(ctx, MLBRNotaFiscal.Table_Name,
-				"C_Invoice_ID=? AND IsSOTrx='Y' AND LBR_NFeStatus IN ('100','150')", trxName)
+				"C_Invoice_ID=? AND LBR_NFE_OperationType='"
+						+ MLBRNotaFiscal.LBR_NFE_OPERATIONTYPE_Out
+						+ "' AND LBR_NFeStatus IN ('100','150')", trxName)
 				.setParameters(C_Invoice_ID)
 				.setOrderBy("LBR_NotaFiscal_ID DESC")
 				.first();
