@@ -348,7 +348,11 @@ public class DefaultTaxProvider implements ITaxProvider {
 		
 		order.setTotalLines(totalLines);
 		order.setGrandTotal(grandTotal);
-		return true;	
+
+		// keep pay schedule in sync with the recalculated grand total
+		LBRPayScheduleSync.sync(order);
+
+		return true;
 	}
 
 	@Override
@@ -724,7 +728,11 @@ public class DefaultTaxProvider implements ITaxProvider {
 		
 		invoice.setTotalLines(totalLines);
 		invoice.setGrandTotal(grandTotal);
-		return true;	
+
+		// keep pay schedule in sync with the recalculated grand total
+		LBRPayScheduleSync.sync(invoice);
+
+		return true;
 	}
 
 	@Override
