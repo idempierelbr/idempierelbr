@@ -1145,15 +1145,19 @@ public class DefaultTaxProvider implements ITaxProvider {
 		if (no != 1)
 			s_log.warning("(1) #" + no);
 		
-		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);		
+		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
 
 		if (details != null) {
+			// Reload the RMA so the totals below are built from the lines
+			// currently in the database (the caller may have just deleted one)
+			MRMA rma = new MRMA(line.getCtx(), line.getM_RMA_ID(), line.get_TrxName());
+
 			sql = "UPDATE M_RMA "
 				+ " SET Amt="
 				+ "(SELECT COALESCE(SUM(LineNetAmt),0) FROM M_RMALine WHERE M_RMA.M_RMA_ID=M_RMALine.M_RMA_ID)+"
-				+ details.getNotIncludedTaxAmt()
+				+ getHeaderAmtOverLines(rma)
 				+ " WHERE M_RMA_ID=" + line.getM_RMA_ID();
-			
+
 			no = DB.executeUpdate(sql, line.get_TrxName());
 			if (no != 1)
 				s_log.warning("(2) #" + no);
