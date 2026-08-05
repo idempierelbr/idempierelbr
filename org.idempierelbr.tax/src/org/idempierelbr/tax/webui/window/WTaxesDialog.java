@@ -22,8 +22,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.logging.Level;
 
 import org.adempiere.util.Callback;
@@ -156,6 +158,11 @@ public final class WTaxesDialog extends Window
 	private Map<String, GridField> allFields = new HashMap<>();
 	// Lista de rows dinâmicas (para poder remover/recriar)
 	private List<Row> dynamicRows = new ArrayList<>();
+	// Campos efetivamente renderizados para o imposto selecionado.
+	// Não use getComponent().getParent() para testar visibilidade: renderDynamicFields()
+	// descarta as Rows do grid, mas os editores continuam filhos das Rows órfãs, então
+	// o parent permanece != null e um campo oculto seria gravado assim mesmo.
+	private Set<String> renderedFields = new HashSet<>();
 	// Groupbox para conter os campos dinâmicos
 	private Groupbox dynamicFieldsGroupbox = new Groupbox();
 	private Grid dynamicFieldsLayout = new Grid();
@@ -356,7 +363,18 @@ public final class WTaxesDialog extends Window
 		m_mTab.addDataStatusListener(evt -> {
 			onGridRowChanged();
 		});
-		
+
+		// A carga acima já posicionou o grid na primeira linha, mas aconteceu antes de o
+		// listener existir: o editor do imposto reflete o GridField sozinho, enquanto os
+		// campos de detalhe só são montados por onGridRowChanged(). Sem esta sincronização
+		// inicial o diálogo abre com o imposto preenchido e os detalhes ocultos, até o
+		// usuário trocar de linha no grid.
+		if (m_mTab.getRowCount() > 0) {
+			if (m_mTab.getCurrentRow() < 0)
+				m_mTab.setCurrentRow(0);
+			onGridRowChanged();
+		}
+
 		return true;
 	}
 	
@@ -586,6 +604,7 @@ public final class WTaxesDialog extends Window
 		// Limpar campos dinâmicos anteriores
 		dynamicFieldsRows.getChildren().clear();
 		dynamicRows.clear();
+		renderedFields.clear();
 		
 		if (taxName == null || taxName.trim().isEmpty()) {
 			// Nenhum imposto selecionado, mostrar mensagem
@@ -641,7 +660,8 @@ public final class WTaxesDialog extends Window
 			currentRow.appendChild(editor.getComponent());
 			editor.fillHorizontal();
 			editor.dynamicDisplay();
-			
+			renderedFields.add(fieldName);
+
 			// Incrementar contador de colunas (0, 1, 2, depois volta para 0)
 			columnCount++;
 			if (columnCount >= 3) {
@@ -854,7 +874,7 @@ public final class WTaxesDialog extends Window
 				sql.append("=").append(value);
 			
 			// Atualizar apenas os campos visíveis/disponíveis
-			if (f_LBR_TaxStatus_ID != null && f_LBR_TaxStatus_ID.getComponent().getParent() != null) {
+			if (f_LBR_TaxStatus_ID != null && isFieldVisible("LBR_TaxStatus_ID")) {
 				value = f_LBR_TaxStatus_ID.getValue();
 				sql.append(", LBR_TaxStatus_ID");
 				if (isEmpty(value))
@@ -863,7 +883,7 @@ public final class WTaxesDialog extends Window
 					sql.append("=").append(value);
 			}
 			
-			if (f_LBR_TaxRate != null && f_LBR_TaxRate.getComponent().getParent() != null) {
+			if (f_LBR_TaxRate != null && isFieldVisible("LBR_TaxRate")) {
 				value = f_LBR_TaxRate.getValue();
 				sql.append(", LBR_TaxRate");
 				if (isEmpty(value))
@@ -872,7 +892,7 @@ public final class WTaxesDialog extends Window
 					sql.append("='").append(value).append("'");
 			}
 			
-			if (f_LBR_TaxBase != null && f_LBR_TaxBase.getComponent().getParent() != null) {
+			if (f_LBR_TaxBase != null && isFieldVisible("LBR_TaxBase")) {
 				value = f_LBR_TaxBase.getValue();
 				sql.append(", LBR_TaxBase");
 				if (isEmpty(value))
@@ -881,7 +901,7 @@ public final class WTaxesDialog extends Window
 					sql.append("='").append(value).append("'");
 			}
 			
-			if (f_LBR_LegalMessage_ID != null && f_LBR_LegalMessage_ID.getComponent().getParent() != null) {
+			if (f_LBR_LegalMessage_ID != null && isFieldVisible("LBR_LegalMessage_ID")) {
 				value = f_LBR_LegalMessage_ID.getValue();
 				sql.append(", LBR_LegalMessage_ID");
 				if (isEmpty(value))
@@ -890,7 +910,7 @@ public final class WTaxesDialog extends Window
 					sql.append("=").append(value);
 			}
 			
-			if (f_LBR_TaxBaseType_ID != null && f_LBR_TaxBaseType_ID.getComponent().getParent() != null) {
+			if (f_LBR_TaxBaseType_ID != null && isFieldVisible("LBR_TaxBaseType_ID")) {
 				value = f_LBR_TaxBaseType_ID.getValue();
 				sql.append(", LBR_TaxBaseType_ID");
 				if (isEmpty(value))
@@ -899,7 +919,7 @@ public final class WTaxesDialog extends Window
 					sql.append("=").append(value);
 			}
 			
-			if (f_LBR_PostTax != null && f_LBR_PostTax.getComponent().getParent() != null) {
+			if (f_LBR_PostTax != null && isFieldVisible("LBR_PostTax")) {
 				value = f_LBR_PostTax.getValue();
 				Boolean valueB = (Boolean)value;
 				sql.append(", LBR_PostTax");
@@ -910,7 +930,7 @@ public final class WTaxesDialog extends Window
 			}
 			
 			// IBS/CBS
-			if (f_LBR_CST_IBSCBS_ID != null && f_LBR_CST_IBSCBS_ID.getComponent().getParent() != null) {
+			if (f_LBR_CST_IBSCBS_ID != null && isFieldVisible("LBR_CST_IBSCBS_ID")) {
 				value = f_LBR_CST_IBSCBS_ID.getValue();
 				sql.append(", LBR_CST_IBSCBS_ID");
 				if (isEmpty(value))
@@ -919,7 +939,7 @@ public final class WTaxesDialog extends Window
 					sql.append("=").append(value);
 			}
 			
-			if (f_LBR_ClassTrib_IBSCBS_ID != null && f_LBR_ClassTrib_IBSCBS_ID.getComponent().getParent() != null) {
+			if (f_LBR_ClassTrib_IBSCBS_ID != null && isFieldVisible("LBR_ClassTrib_IBSCBS_ID")) {
 				value = f_LBR_ClassTrib_IBSCBS_ID.getValue();
 				sql.append(", LBR_ClassTrib_IBSCBS_ID");
 				if (isEmpty(value))
@@ -928,7 +948,7 @@ public final class WTaxesDialog extends Window
 					sql.append("=").append(value);
 			}
 			
-			if (f_LBR_TaxDeferralRate != null && f_LBR_TaxDeferralRate.getComponent().getParent() != null) {
+			if (f_LBR_TaxDeferralRate != null && isFieldVisible("LBR_TaxDeferralRate")) {
 				value = f_LBR_TaxDeferralRate.getValue();
 				sql.append(", LBR_TaxDeferralRate");
 				if (isEmpty(value))
@@ -937,7 +957,7 @@ public final class WTaxesDialog extends Window
 					sql.append("='").append(value).append("'");
 			}
 			
-			if (f_LBR_TaxRedRate != null && f_LBR_TaxRedRate.getComponent().getParent() != null) {
+			if (f_LBR_TaxRedRate != null && isFieldVisible("LBR_TaxRedRate")) {
 				value = f_LBR_TaxRedRate.getValue();
 				sql.append(", LBR_TaxRedRate");
 				if (isEmpty(value))
@@ -946,7 +966,7 @@ public final class WTaxesDialog extends Window
 					sql.append("='").append(value).append("'");
 			}
 			
-			if (f_LBR_TaxRedEfetRate != null && f_LBR_TaxRedEfetRate.getComponent().getParent() != null) {
+			if (f_LBR_TaxRedEfetRate != null && isFieldVisible("LBR_TaxRedEfetRate")) {
 				value = f_LBR_TaxRedEfetRate.getValue();
 				sql.append(", LBR_TaxRedEfetRate");
 				if (isEmpty(value))
@@ -956,7 +976,7 @@ public final class WTaxesDialog extends Window
 			}
 			
 			// IS
-			if (f_LBR_CST_IS_ID != null && f_LBR_CST_IS_ID.getComponent().getParent() != null) {
+			if (f_LBR_CST_IS_ID != null && isFieldVisible("LBR_CST_IS_ID")) {
 				value = f_LBR_CST_IS_ID.getValue();
 				sql.append(", LBR_CST_IS_ID");
 				if (isEmpty(value))
@@ -965,7 +985,7 @@ public final class WTaxesDialog extends Window
 					sql.append("=").append(value);
 			}
 			
-			if (f_LBR_ClassTrib_IS_ID != null && f_LBR_ClassTrib_IS_ID.getComponent().getParent() != null) {
+			if (f_LBR_ClassTrib_IS_ID != null && isFieldVisible("LBR_ClassTrib_IS_ID")) {
 				value = f_LBR_ClassTrib_IS_ID.getValue();
 				sql.append(", LBR_ClassTrib_IS_ID");
 				if (isEmpty(value))
@@ -1006,81 +1026,81 @@ public final class WTaxesDialog extends Window
 				line.setLBR_TaxName_ID((Integer)value);
 			
 			// Salvar apenas os campos visíveis/disponíveis
-			if (f_LBR_TaxStatus_ID != null && f_LBR_TaxStatus_ID.getComponent().getParent() != null) {
+			if (f_LBR_TaxStatus_ID != null && isFieldVisible("LBR_TaxStatus_ID")) {
 				value = f_LBR_TaxStatus_ID.getValue();
 				if (!isEmpty(value))
 					line.setLBR_TaxStatus_ID((Integer)value);
 			}
 			
-			if (f_LBR_TaxRate != null && f_LBR_TaxRate.getComponent().getParent() != null) {
+			if (f_LBR_TaxRate != null && isFieldVisible("LBR_TaxRate")) {
 				value = f_LBR_TaxRate.getValue();
 				if (!isEmpty(value))
 					line.setLBR_TaxRate((BigDecimal)value);
 			}
 			
-			if (f_LBR_TaxBase != null && f_LBR_TaxBase.getComponent().getParent() != null) {
+			if (f_LBR_TaxBase != null && isFieldVisible("LBR_TaxBase")) {
 				value = f_LBR_TaxBase.getValue();
 				if (!isEmpty(value))
 					line.setLBR_TaxBase((BigDecimal)value);
 			}
 			
-			if (f_LBR_LegalMessage_ID != null && f_LBR_LegalMessage_ID.getComponent().getParent() != null) {
+			if (f_LBR_LegalMessage_ID != null && isFieldVisible("LBR_LegalMessage_ID")) {
 				value = f_LBR_LegalMessage_ID.getValue();
 				if (!isEmpty(value))
 					line.setLBR_LegalMessage_ID((Integer)value);
 			}
 			
-			if (f_LBR_TaxBaseType_ID != null && f_LBR_TaxBaseType_ID.getComponent().getParent() != null) {
+			if (f_LBR_TaxBaseType_ID != null && isFieldVisible("LBR_TaxBaseType_ID")) {
 				value = f_LBR_TaxBaseType_ID.getValue();
 				if (!isEmpty(value))
 					line.setLBR_TaxBaseType_ID((Integer)value);
 			}
 			
-			if (f_LBR_PostTax != null && f_LBR_PostTax.getComponent().getParent() != null) {
+			if (f_LBR_PostTax != null && isFieldVisible("LBR_PostTax")) {
 				value = f_LBR_PostTax.getValue();
 				if (!isEmpty(value))
 					line.setLBR_PostTax((Boolean)value);
 			}
 			
 			// IBS/CBS
-			if (f_LBR_CST_IBSCBS_ID != null && f_LBR_CST_IBSCBS_ID.getComponent().getParent() != null) {
+			if (f_LBR_CST_IBSCBS_ID != null && isFieldVisible("LBR_CST_IBSCBS_ID")) {
 				value = f_LBR_CST_IBSCBS_ID.getValue();
 				if (!isEmpty(value))
 					line.set_ValueOfColumn("LBR_CST_IBSCBS_ID", (Integer)value);
 			}
 			
-			if (f_LBR_ClassTrib_IBSCBS_ID != null && f_LBR_ClassTrib_IBSCBS_ID.getComponent().getParent() != null) {
+			if (f_LBR_ClassTrib_IBSCBS_ID != null && isFieldVisible("LBR_ClassTrib_IBSCBS_ID")) {
 				value = f_LBR_ClassTrib_IBSCBS_ID.getValue();
 				if (!isEmpty(value))
 					line.set_ValueOfColumn("LBR_ClassTrib_IBSCBS_ID", (Integer)value);
 			}
 			
-			if (f_LBR_TaxDeferralRate != null && f_LBR_TaxDeferralRate.getComponent().getParent() != null) {
+			if (f_LBR_TaxDeferralRate != null && isFieldVisible("LBR_TaxDeferralRate")) {
 				value = f_LBR_TaxDeferralRate.getValue();
 				if (!isEmpty(value))
 					line.set_ValueOfColumn("LBR_TaxDeferralRate", (BigDecimal)value);
 			}
 			
-			if (f_LBR_TaxRedRate != null && f_LBR_TaxRedRate.getComponent().getParent() != null) {
+			if (f_LBR_TaxRedRate != null && isFieldVisible("LBR_TaxRedRate")) {
 				value = f_LBR_TaxRedRate.getValue();
 				if (!isEmpty(value))
 					line.set_ValueOfColumn("LBR_TaxRedRate", (BigDecimal)value);
 			}
 			
-			if (f_LBR_TaxRedEfetRate != null && f_LBR_TaxRedEfetRate.getComponent().getParent() != null) {
+			if (f_LBR_TaxRedEfetRate != null && isFieldVisible("LBR_TaxRedEfetRate")) {
 				value = f_LBR_TaxRedEfetRate.getValue();
 				if (!isEmpty(value))
 					line.set_ValueOfColumn("LBR_TaxRedEfetRate", (BigDecimal)value);
 			}
 			
 			// IS
-			if (f_LBR_CST_IS_ID != null && f_LBR_CST_IS_ID.getComponent().getParent() != null) {
+			if (f_LBR_CST_IS_ID != null && isFieldVisible("LBR_CST_IS_ID")) {
 				value = f_LBR_CST_IS_ID.getValue();
 				if (!isEmpty(value))
 					line.set_ValueOfColumn("LBR_CST_IS_ID", (Integer)value);
 			}
 			
-			if (f_LBR_ClassTrib_IS_ID != null && f_LBR_ClassTrib_IS_ID.getComponent().getParent() != null) {
+			if (f_LBR_ClassTrib_IS_ID != null && isFieldVisible("LBR_ClassTrib_IS_ID")) {
 				value = f_LBR_ClassTrib_IS_ID.getValue();
 				if (!isEmpty(value))
 					line.set_ValueOfColumn("LBR_ClassTrib_IS_ID", (Integer)value);
@@ -1089,13 +1109,23 @@ public final class WTaxesDialog extends Window
 			line.saveEx();
 			
 			m_mTab.query(false);
-			m_mTab.setCurrentRow(m_mTab.getRowCount());
+			// getRowCount() é o índice logo após a última linha: posicionar nele deixa
+			// o grid numa linha inexistente e zera os editores via onGridRowChanged().
+			m_mTab.setCurrentRow(m_mTab.getRowCount() - 1);
 		}
 
 		m_MLBRTax_new.setDescription();
 		m_MLBRTax_new.saveEx();
 	}
 	
+	/**
+	 * 	O campo faz parte do imposto atualmente selecionado?
+	 * 	Só campos renderizados devem ser lidos/gravados.
+	 */
+	private boolean isFieldVisible(String fieldName) {
+		return renderedFields.contains(fieldName);
+	}
+
 	private boolean isEmpty(Object value) {
 		if (value == null)
 			return true;
@@ -1193,54 +1223,55 @@ public final class WTaxesDialog extends Window
 			renderDynamicFields(taxName);
 			
 			// Limpar campos que não são mais relevantes
-			for (WEditor editor : allEditors.values()) {
-				if (editor != f_LBR_TaxName_ID && editor.getComponent().getParent() == null) {
+			for (Map.Entry<String, WEditor> entry : allEditors.entrySet()) {
+				WEditor editor = entry.getValue();
+				if (editor != null && editor != f_LBR_TaxName_ID && !isFieldVisible(entry.getKey())) {
 					editor.setValue(null);
 				}
 			}
 			
 			// Atualizar context de campos relacionados
-			if (f_LBR_TaxStatus_ID != null && f_LBR_TaxStatus_ID.getComponent().getParent() != null) {
+			if (f_LBR_TaxStatus_ID != null && isFieldVisible("LBR_TaxStatus_ID")) {
 				f_LBR_TaxStatus_ID.setValue(null);
 				f_LBR_TaxStatus_ID.dynamicDisplay();
 			}
 			
-			if (f_LBR_TaxBaseType_ID != null && f_LBR_TaxBaseType_ID.getComponent().getParent() != null) {
+			if (f_LBR_TaxBaseType_ID != null && isFieldVisible("LBR_TaxBaseType_ID")) {
 				f_LBR_TaxBaseType_ID.setValue(null);
 				f_LBR_TaxBaseType_ID.dynamicDisplay();
 			}
 			
-			if (f_LBR_CST_IBSCBS_ID != null && f_LBR_CST_IBSCBS_ID.getComponent().getParent() != null) {
+			if (f_LBR_CST_IBSCBS_ID != null && isFieldVisible("LBR_CST_IBSCBS_ID")) {
 				f_LBR_CST_IBSCBS_ID.setValue(null);
 				f_LBR_CST_IBSCBS_ID.dynamicDisplay();
 			}
 			
-			if (f_LBR_ClassTrib_IBSCBS_ID != null && f_LBR_ClassTrib_IBSCBS_ID.getComponent().getParent() != null) {
+			if (f_LBR_ClassTrib_IBSCBS_ID != null && isFieldVisible("LBR_ClassTrib_IBSCBS_ID")) {
 				f_LBR_ClassTrib_IBSCBS_ID.setValue(null);
 				f_LBR_ClassTrib_IBSCBS_ID.dynamicDisplay();
 			}
 			
-			if (f_LBR_CST_IS_ID != null && f_LBR_CST_IS_ID.getComponent().getParent() != null) {
+			if (f_LBR_CST_IS_ID != null && isFieldVisible("LBR_CST_IS_ID")) {
 				f_LBR_CST_IS_ID.setValue(null);
 				f_LBR_CST_IS_ID.dynamicDisplay();
 			}
 			
-			if (f_LBR_ClassTrib_IS_ID != null && f_LBR_ClassTrib_IS_ID.getComponent().getParent() != null) {
+			if (f_LBR_ClassTrib_IS_ID != null && isFieldVisible("LBR_ClassTrib_IS_ID")) {
 				f_LBR_ClassTrib_IS_ID.setValue(null);
 				f_LBR_ClassTrib_IS_ID.dynamicDisplay();
 			}
 		} else if (evt.getPropertyName().equalsIgnoreCase("LBR_TaxStatus_ID")) {
-			if (f_LBR_TaxBaseType_ID != null && f_LBR_TaxBaseType_ID.getComponent().getParent() != null) {
+			if (f_LBR_TaxBaseType_ID != null && isFieldVisible("LBR_TaxBaseType_ID")) {
 				f_LBR_TaxBaseType_ID.setValue(null);
 				f_LBR_TaxBaseType_ID.dynamicDisplay();
 			}
 		} else if (evt.getPropertyName().equalsIgnoreCase("LBR_CST_IBSCBS_ID")) {
-			if (f_LBR_ClassTrib_IBSCBS_ID != null && f_LBR_ClassTrib_IBSCBS_ID.getComponent().getParent() != null) {
+			if (f_LBR_ClassTrib_IBSCBS_ID != null && isFieldVisible("LBR_ClassTrib_IBSCBS_ID")) {
 				f_LBR_ClassTrib_IBSCBS_ID.setValue(null);
 				f_LBR_ClassTrib_IBSCBS_ID.dynamicDisplay();
 			}
 		} else if (evt.getPropertyName().equalsIgnoreCase("LBR_CST_IS_ID")) {
-			if (f_LBR_ClassTrib_IS_ID != null && f_LBR_ClassTrib_IS_ID.getComponent().getParent() != null) {
+			if (f_LBR_ClassTrib_IS_ID != null && isFieldVisible("LBR_ClassTrib_IS_ID")) {
 				f_LBR_ClassTrib_IS_ID.setValue(null);
 				f_LBR_ClassTrib_IS_ID.dynamicDisplay();
 			}
@@ -1297,8 +1328,8 @@ public final class WTaxesDialog extends Window
 			if (fieldName.equals("LBR_TaxName_ID"))
 				continue;
 			
-			// Verificar se o editor está visível (tem parent)
-			if (editor != null && editor.getComponent().getParent() != null) {
+			// Verificar se o editor está visível (foi renderizado para este imposto)
+			if (editor != null && isFieldVisible(fieldName)) {
 				GridField field = allFields.get(fieldName);
 				if (field != null) {
 					Object value = field.getValue();
