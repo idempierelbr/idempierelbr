@@ -1985,27 +1985,23 @@ public class NFeXMLGenerator {
 		}
 		
 		// validate
-		try {
+		log.fine("Validating NF-e XML");
 
-			log.fine("Validating NF-e XML");
+		// validate xml size
+		String retValidacao = NFeUtil.validateSize(nfeXML.toString());
 
-			// validate xml size
-			String retValidacao = NFeUtil.validateSize(nfeXML.toString());
-			if (retValidacao != null && !retValidacao.isEmpty())
-				throw new Exception(retValidacao);
-
-			// validate xml content
+		// validate xml content
+		if (retValidacao == null || retValidacao.isEmpty())
 			retValidacao = ValidaXML.validaXML(nfeXML.toString());
-			if (retValidacao != null && !retValidacao.isEmpty())
-				throw new Exception(retValidacao);
-			
-		} catch (Exception e) {
 
-			// log
-			log.severe("Falha ao validar arquivo XML! Msg: " + e.getMessage());
+		if (retValidacao != null && !retValidacao.isEmpty()) {
 
-			// hrow exception
-			throw new Exception("Falha ao validar arquivo XML! Msg: " + e.getMessage());
+			// keep the rejected content available for diagnosis
+			log.fine("XML recusado na validação: " + nfeXML);
+
+			// throw exception detailing what must be corrected. the prefix stays on
+			// the first line: the window status bar only shows the start of the message
+			throw new AdempiereException("Nota Fiscal " + nf.getDocumentNo() + " - " + retValidacao);
 		}
 
 		// save nfe info

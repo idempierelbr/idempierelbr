@@ -277,11 +277,12 @@ public class NFeUtil {
 					msg = NFeXMLGenerator.geraCorpoNFe(p_NF.getCtx(), p_NF.getLBR_NotaFiscal_ID(), p_NF.get_TrxName());
 			}
 		} 
-		catch(Exception ex) 
+		catch(Exception ex)
 		{
-			throw new AdempiereException(ex);
+			//	Preserva a mensagem original, sem prefixá-la com o nome da classe
+			throw new AdempiereException(ex.getMessage(), ex);
 		}
-		
+
 		return msg;
 	}
 	
