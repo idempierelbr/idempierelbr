@@ -29,6 +29,7 @@ import org.compiere.model.Query;
 import org.compiere.process.DocAction;
 import org.compiere.process.DocOptions;
 import org.compiere.process.DocumentEngine;
+import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.compiere.util.Msg;
@@ -41,6 +42,8 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 	 * 
 	 */
 	private static final long serialVersionUID = -4772056781951057155L;
+	/**	Static Logger				*/
+	private static CLogger	s_log = CLogger.getCLogger(MLBRBoleto.class);
 	/**	Process Message 			*/
 	private String		m_processMsg = null;
 
@@ -583,7 +586,7 @@ public class MLBRBoleto extends X_LBR_Boleto implements DocAction, DocOptions {
 						documentNo = nf.getDocumentNo();
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				s_log.log(Level.SEVERE, "Couldn't get Nota Fiscal of C_Invoice_ID=" + invoice.get_ID(), e);
 			} finally {
 				DB.close(rs, pstmt);
 				rs = null; pstmt = null;

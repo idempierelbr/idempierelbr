@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.sql.Timestamp;
 import java.util.Properties;
+import java.util.logging.Level;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -88,7 +89,7 @@ public class NFeEventUtil {
 		try {
 			sslContext = DigitalCertificateUtil.buildSSLContext(ctx, event.getAD_Org_ID());
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Could not set digital certificate", e);
 			return "Could not set digital certificate";
 		}
 
@@ -144,7 +145,7 @@ public class NFeEventUtil {
 			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         	doc = builder.parse(new InputSource(new StringReader(result)));
 		} catch (Exception e) {
-        	e.printStackTrace();
+			log.log(Level.SEVERE, "Could not parse xml: " + result, e);
 			return "Could not parse xml";
 		}
 
@@ -161,11 +162,11 @@ public class NFeEventUtil {
         if (isImmutableStatus(cStatL)) {
 		    for (int i=0; i< retEvento.getLength(); i++) {
 	        	Node node = retEvento.item(i);
-	        	// Since the batch was processed, any individual line error should not break the process 
+	        	// Since the batch was processed, any individual line error should not break the process
 	        	try {
 	        		updateLine( lines, node , findEvento( envLot , NFeUtil.getValue(node, "chNFe") ) );
 	        	} catch (Exception e) {
-	        		e.printStackTrace();
+	        		log.log(Level.SEVERE, "Could not update NF-e event line, chNFe=" + NFeUtil.getValue(node, "chNFe"), e);
 	        	}
 	        }
 		    
@@ -525,7 +526,7 @@ public class NFeEventUtil {
 			transformer.transform(new DOMSource(returned),
 					new StreamResult(buffer));
 		} catch (TransformerException e) {
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Could not transform returned event node into xml", e);
 			return null;
 		}
 		String str = buffer.toString();

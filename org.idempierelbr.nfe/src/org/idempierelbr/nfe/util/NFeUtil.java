@@ -146,7 +146,7 @@ public class NFeUtil {
 				try {
 					events += IOUtils.toString(entry.getInputStream());
 				} catch (IOException e) {
-					e.printStackTrace();
+					log.log(Level.SEVERE, "Não foi possível ler o XML do evento: " + entry.getName(), e);
 				}
 		}
 
@@ -231,9 +231,8 @@ public class NFeUtil {
 
 			} catch (Exception e) {
 
-				e.printStackTrace();
-				log.severe("Não foi possível gerar o DANFE da NFC-e. Erro: " + e.getMessage());
-				throw new AdempiereException("Não foi possível gerar o QRCode da NFC-e.");
+				log.log(Level.SEVERE, "Não foi possível gerar o DANFE da NFC-e.", e);
+				throw new AdempiereException("Não foi possível gerar o QRCode da NFC-e.", e);
 			}
 		}
 
@@ -245,9 +244,8 @@ public class NFeUtil {
 			jasperReport = (JasperReport) JRLoader.loadObject(mainJasperInputStream);
 			dataSource = new JRXmlDataSource(xmlInputStream, jasperReport.getQuery().getText());
 		} catch (JRException e1) {
-			e1.printStackTrace();
-			log.severe("Não foi possível carregar o arquivo da DANFE para está Nota Fiscal. Erro: " + e1.getMessage());
-			throw new AdempiereException("Não foi possível carregar o arquivo da DANFE para está Nota Fiscal");
+			log.log(Level.SEVERE, "Não foi possível carregar o arquivo da DANFE para está Nota Fiscal.", e1);
+			throw new AdempiereException("Não foi possível carregar o arquivo da DANFE para está Nota Fiscal", e1);
 		}
 
 		// Generate JasperPrint
@@ -256,10 +254,8 @@ public class NFeUtil {
 		try {
 			jasperPrint = JasperFillManager.fillReport(jasperReport, jasperParameters, dataSource);
 		} catch (Exception e) {
-			e.printStackTrace();
-			log.warning("Falha ao gerar impressão do DANFE para a Nota Fiscal " + p_NF.getDocumentNo() + ". Erro: "
-					+ e.getMessage());
-			throw new AdempiereException("Falha ao gerar impressão do DANFE para a Nota Fiscal " + p_NF.getDocumentNo());
+			log.log(Level.WARNING, "Falha ao gerar impressão do DANFE para a Nota Fiscal " + p_NF.getDocumentNo(), e);
+			throw new AdempiereException("Falha ao gerar impressão do DANFE para a Nota Fiscal " + p_NF.getDocumentNo(), e);
 		}
 
 		return jasperPrint;

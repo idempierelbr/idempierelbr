@@ -114,26 +114,5 @@ public class MLBRFormula extends X_LBR_Formula
 		//
 		return "Formula [" + getName() + " - " + getLBR_Formula() + "]";
 	}	//	toString
-	
-	public static void main (String[] args)
-	{
-		Interpreter bsh = new Interpreter ();
-		try
-		{
-//			bsh.set("a", 5);
-			bsh.set("b", 2);
-			System.out.println("x="+bsh.eval("a=b+5;(a*2)+b;"));
-			System.out.println("x="+bsh.get("x"));
-			
-		}
-		catch (EvalError e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
-	
-	
-	
+
 }	//	MLBRFormula

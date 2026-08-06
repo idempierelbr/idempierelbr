@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Properties;
+import java.util.logging.Level;
 
 import org.compiere.model.MInvoice;
 import org.compiere.model.MInvoiceLine;
@@ -134,8 +135,7 @@ public class MLBRIBPTax extends X_LBR_IBPTax {
 				return new MLBRIBPTax(ctx, rs, trxName);
 
 		} catch (SQLException e) {
-			log.severe("Couldn't get IBPTax of LBR_NCM_ID=" + LBR_NCM_ID);
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Couldn't get IBPTax of LBR_NCM_ID=" + LBR_NCM_ID, e);
 		} finally {
 			DB.close(rs, pstmt);
 			rs = null;
@@ -293,11 +293,8 @@ public class MLBRIBPTax extends X_LBR_IBPTax {
 			return message;
 		} catch (SQLException e) {
 
-			// 
-			log.severe("Não foi possível gerar descrição de impostos aproximados. Erro: " + e.getMessage());
-			
-			// 
-			e.printStackTrace();
+			//
+			log.log(Level.SEVERE, "Não foi possível gerar descrição de impostos aproximados.", e);
 
 		} finally {
 			DB.close(rs, pstmt);
@@ -421,9 +418,7 @@ public class MLBRIBPTax extends X_LBR_IBPTax {
 		} catch (SQLException e) {
 
 			// log
-			log.severe("Não foi possível gerar o valor de impostos aproximados para a linha. Erro: " + e.getMessage());
-
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Não foi possível gerar o valor de impostos aproximados para a linha.", e);
 
 		} finally {
 

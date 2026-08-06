@@ -56,8 +56,7 @@ public class NFeInutUtil {
 		try {
 			sslContext = DigitalCertificateUtil.buildSSLContext(ctx, inut.getAD_Org_ID());
 		} catch (Exception e) {
-			e.printStackTrace();
-			throw new AdempiereException("Could not set digital certificate");
+			throw new AdempiereException("Could not set digital certificate", e);
 		}
 
 		File xmlFile;
@@ -67,8 +66,7 @@ public class NFeInutUtil {
 			xmlFile = generateXML();
 			xml = NFeUtil.XMLtoString(xmlFile).replaceAll("[\r\n]+", "");
 		} catch (Exception e) {
-			e.printStackTrace();
-			throw new AdempiereException("Could not generate XML");
+			throw new AdempiereException("Could not generate XML", e);
 		}
 
 		SefazHttpClient client = new SefazHttpClient(sslContext, NFeUtil.VERSAO_APP,
@@ -94,8 +92,7 @@ public class NFeInutUtil {
 			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         	doc = builder.parse(new InputSource(new StringReader(result)));
 		} catch (Exception e) {
-        	e.printStackTrace();
-        	throw new AdempiereException("Could not parse xml");
+			throw new AdempiereException("Could not parse xml: " + result, e);
 		}
 
         String cStat = doc.getElementsByTagName("cStat").item(0).getTextContent();

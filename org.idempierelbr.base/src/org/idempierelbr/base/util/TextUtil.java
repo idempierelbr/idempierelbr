@@ -29,6 +29,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.logging.Level;
 
+import org.adempiere.exceptions.AdempiereException;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
 
@@ -125,24 +126,18 @@ public class TextUtil {
 		ArrayList<String> list = new ArrayList<String> ();
 
 		FileInputStream stream = new FileInputStream(FileName);
-		InputStreamReader streamReader = new InputStreamReader(stream);
-		BufferedReader reader = new BufferedReader(streamReader);
 
 		// Neste while lemos o arquivo linha a linha
 		String line = null;
-		try {
+		try (InputStreamReader streamReader = new InputStreamReader(stream);
+				BufferedReader reader = new BufferedReader(streamReader)) {
 			while( (line=reader.readLine() ) != null ) {
 				list.add(line);
 			}
-			reader.close();
-			streamReader.close();
-			stream.close();
 		}
 		catch (IOException e) {
-			e.printStackTrace();
-		}
-		finally{
-			reader = null; streamReader = null; stream = null;
+			//	Não retornar um arquivo lido parcialmente
+			throw new AdempiereException("Erro ao ler arquivo: " + FileName, e);
 		}
 
 		String[] lines = new String[list.size ()];

@@ -82,31 +82,6 @@ public class DigestOfFile
     private byte[] buffer = new byte[4096];
 
     /**
-     * @author rlemeill
-     * @param args file
-     */
-    public static void main(String[] args)
-    {
-        try
-        {
-            DigestOfFile md5DigestAgent = new DigestOfFile("MD5");
-
-            for (int argIndex = 0; argIndex < args.length; argIndex++)
-            {
-                {
-                    String base64Digest = md5DigestAgent.digestAsBase64(new File(args[argIndex]));
-                    System.out.println("Base64 MD5 of " + args[argIndex] + " = [" + base64Digest + "]");
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace(System.out);
-        }
-    }
-
-
-    /**
      * @param file1 first file to compare
      * @param file2 second file to compare
      * @return true if files are identic false otherwise

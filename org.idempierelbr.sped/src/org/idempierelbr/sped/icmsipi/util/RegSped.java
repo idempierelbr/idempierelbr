@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.adempiere.exceptions.AdempiereException;
 import org.compiere.util.CLogger;
 import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.sped.annotation.Validate;
@@ -350,12 +351,8 @@ public abstract class RegSped implements Comparable<Object>
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
-			
-			log.severe("Falha no método toString() na Classe RegSped. Erro: " + 
-					e.getMessage() + "/ linha: " + e.getStackTrace()[0].getLineNumber());
-			
-			return "";
+			//	Não gerar um registro vazio no arquivo SPED
+			throw new AdempiereException("Falha ao gerar o registro " + getReg() + " do SPED.", e);
 		}
 	}	//	toString
 }	//	RegSped

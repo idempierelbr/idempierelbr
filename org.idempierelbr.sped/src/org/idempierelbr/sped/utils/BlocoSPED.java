@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.adempiere.exceptions.AdempiereException;
 import org.idempierelbr.sped.annotation.XMLFieldProperties;
 import org.idempierelbr.sped.icmsipi.bean.I_RX001;
 import org.idempierelbr.sped.icmsipi.bean.I_RX990;
@@ -162,9 +163,8 @@ public abstract class BlocoSPED
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
-			
-			return "";
+			//	Não gerar um bloco vazio no arquivo SPED
+			throw new AdempiereException("Falha ao gerar o bloco " + getBlockCode() + " do SPED.", e);
 		}
 	}	//	toString
 }	//	BlocoSPED

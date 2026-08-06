@@ -15,6 +15,7 @@ package org.idempierelbr.sped.annotation;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.logging.Level;
 
 import org.compiere.util.CLogger;
 
@@ -103,7 +104,7 @@ public class Validate
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Erro ao processar a validação.", e);
 			return "Erro ao processar a validação.\n" + error.toString() + "\n" + e.getLocalizedMessage();
 		}
 		//

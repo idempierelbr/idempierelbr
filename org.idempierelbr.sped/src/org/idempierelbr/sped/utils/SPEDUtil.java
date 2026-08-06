@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+import java.util.logging.Level;
 
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MBPartner;
@@ -33,6 +34,7 @@ import org.compiere.model.MLocation;
 import org.compiere.model.MOrg;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.MUser;
+import org.compiere.util.CLogger;
 import org.compiere.util.Env;
 import org.idempierelbr.base.util.AdempiereLBR;
 import org.idempierelbr.base.util.BPartnerUtil;
@@ -89,6 +91,9 @@ import org.idempierelbr.sped.model.X_LBR_TaxAssessmentLine;
  */
 public class SPEDUtil
 {
+	/**	Logger				*/
+	private static CLogger log 						= CLogger.getCLogger (SPEDUtil.class);
+
 	/** String PIPE			*/
 	public static final String PIPE 				= "|";
 	
@@ -659,7 +664,7 @@ public class SPEDUtil
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Falha ao contar os registros do SPED", e);
 		}
 		//
 		if (instance instanceof RegSped)
@@ -707,9 +712,8 @@ public class SPEDUtil
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
+			throw new AdempiereException("Registro do SPED não encontrado: " + regName, e);
 		}
-		return null;
 	}	//	getReg
 	
 	/**

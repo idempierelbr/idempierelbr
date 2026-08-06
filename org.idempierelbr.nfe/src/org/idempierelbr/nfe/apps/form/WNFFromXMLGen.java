@@ -721,7 +721,7 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 					DisplayType.List, Env.getLanguage(Env.getCtx()), "DocAction", 135,
 					false, "AD_Ref_List.Value IN ('CO','PR','--')");
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Não foi possível carregar a lista de ações do documento", e);
 		}
 		editorDocAction = new WTableDirEditor("DocAction", true, false, true, lookup);
 		editorDocAction.setMandatory(true);
@@ -825,7 +825,7 @@ public class WNFFromXMLGen extends NFFromXMLGen implements IFormController, Even
 				processUploadMedia(ue.getMedia());
 				repaintGrid();
 			} catch (Exception e1) {
-				e1.printStackTrace();
+				log.log(Level.SEVERE, "Não foi possível abrir o arquivo XML selecionado", e1);
 				Dialog.error(m_WindowNo, "", "Não foi possível abrir o arquivo selecionado!"
 						+ "\nPor favor verifique se é um arquivo XML de NF-e válido.");
 			}

@@ -127,7 +127,7 @@ public class NFeLotUtil {
 		try {
 			sslContext = DigitalCertificateUtil.buildSSLContext(ctx, lot.getAD_Org_ID());
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Could not set digital certificate", e);
 			return "Could not set digital certificate";
 		}
 
@@ -136,7 +136,7 @@ public class NFeLotUtil {
 		try {
 			xmlLot = generateLot();
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Could not generate NF-e lot xml", e);
 			return "Could not generate xml";
 		}
 
@@ -177,7 +177,7 @@ public class NFeLotUtil {
 			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         	doc = builder.parse(new InputSource(new StringReader(result)));
 		} catch (Exception e) {
-        	e.printStackTrace();
+			log.log(Level.SEVERE, "Could not parse xml: " + result, e);
 			return "Could not parse xml";
 		}
 
@@ -256,7 +256,7 @@ public class NFeLotUtil {
 		try {
 			sslContext = DigitalCertificateUtil.buildSSLContext(ctx, lot.getAD_Org_ID());
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Could not set digital certificate", e);
 			return "Could not set digital certificate";
 		}
 
@@ -314,7 +314,7 @@ public class NFeLotUtil {
 			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 		    doc = builder.parse(new InputSource(new StringReader(result)));
 		} catch (Exception e) {
-	    	e.printStackTrace();
+			log.log(Level.SEVERE, "Could not parse xml: " + result, e);
 			return "Could not parse xml";
 		}
 	    //
@@ -381,8 +381,7 @@ public class NFeLotUtil {
 						try {
 							file = NFeUtil.generateDistribution(nf, node);
 						} catch (Exception e) {
-							e.printStackTrace();
-							log.severe("Could not generate distribution xml for NF-e " + nf.getDocumentNo());
+							log.log(Level.SEVERE, "Could not generate distribution xml for NF-e " + nf.getDocumentNo(), e);
 						}
 						
 						if (file != null) {

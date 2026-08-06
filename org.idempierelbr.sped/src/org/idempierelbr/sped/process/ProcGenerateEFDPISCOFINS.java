@@ -179,10 +179,8 @@ public class ProcGenerateEFDPISCOFINS extends SvrProcess {
             // Erro já tratado no gerador
             throw e;
         } catch (Exception e) {
-            e.printStackTrace();
-
             // Erro genérico
-            throw new AdempiereException("Unkown Error: " + e.getLocalizedMessage());
+            throw new AdempiereException("Unkown Error: " + e.getLocalizedMessage(), e);
         }
 
         /*
