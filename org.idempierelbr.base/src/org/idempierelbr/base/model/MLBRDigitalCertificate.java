@@ -23,6 +23,7 @@ import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.Enumeration;
 import java.util.Properties;
+import java.util.logging.Level;
 
 import org.compiere.model.MAttachment;
 import org.compiere.model.Query;
@@ -157,8 +158,7 @@ public class MLBRDigitalCertificate extends X_LBR_DigitalCertificate
 				log.info("Digital certificate has expired in " + TextUtil.timeToString(certificate.getNotAfter(), "dd/MM/yyyy"));
 		} catch (Exception e)	{
 			returnMsg = "Could not validate the digital certificate attached.";
-			log.info(returnMsg);
-			e.printStackTrace();
+			log.log(Level.SEVERE, returnMsg, e);
 			return returnMsg;
 		}
 		
@@ -218,11 +218,13 @@ public class MLBRDigitalCertificate extends X_LBR_DigitalCertificate
 		}
 		catch (FileNotFoundException e)
 		{
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Could not create SmartCard configuration file: " + cfgFile, e);
+			return null;
 		}
 		catch (IOException e)
 		{
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Could not write SmartCard configuration file: " + cfgFile, e);
+			return null;
 		}
 		return cfgFile;
 	}	//	getConfigurationFile

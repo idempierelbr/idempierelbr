@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="M_PriceList_Version"/>
+<!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="M_PriceList_Version">
+ <row id="101" trl="Y">
+  <value column="Name" original="Standard 2001">Padrão 2001</value>
+ </row>
+ <row id="102" trl="Y">
+  <value column="Name" original="Purchase 2001">Compra 2001</value>
+ </row>
+ <row id="103" trl="Y">
+  <value column="Name" original="Purchase 2003">Compra 2003</value>
+ </row>
+ <row id="104" trl="Y">
+  <value column="Name" original="Standard 2003">Padrão 2003</value>
+ </row>
+ <row id="105" trl="Y">
+  <value column="Name" original="Export 2003">Exportação 2003</value>
+ </row>
+ <row id="200000" trl="Y">
+  <value column="Name" original="Import 2003">Importação 2003</value>
+ </row>
+</idempiereTrl>

@@ -2,6 +2,7 @@ package org.idempierelbr.nfs.model;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
 
 import org.adempiere.base.event.AbstractEventHandler;
 import org.adempiere.base.event.IEventTopics;
@@ -214,9 +215,8 @@ public class EventHandler extends AbstractEventHandler {
 			try {
 				details.deleteEx(true);
 			} catch (AdempiereException e) {
-				e.printStackTrace();
-				log.warning(MLBRDocLineDetailsNFS.Table_Name + " for " + po
-						+ " was not deleted.");
+				log.log(Level.WARNING, MLBRDocLineDetailsNFS.Table_Name + " for " + po
+						+ " was not deleted.", e);
 
 				details.setC_OrderLine_ID(0);
 				details.setC_InvoiceLine_ID(0);

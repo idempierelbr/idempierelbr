@@ -1,2 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="PP_Product_BOM"/>
+<!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="PP_Product_BOM">
+ <row id="145" trl="Y">
+  <value column="Name" original="Patio Furniture Set">Conjunto de Móveis de Pátio</value>
+  <value column="Description" original="1 table, 4 Chairs and 1 Sun Screen">1 mesa, 4 cadeiras e 1 toldo</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="50000" trl="Y">
+  <value column="Name" original="Patio Chair">Cadeira de Pátio</value>
+  <value column="Description" original="Nice Chair for outdoors">Cadeira bonita para ambientes externos</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="50001" trl="Y">
+  <value column="Name" original="Assembly Back Leg">Conjunto Perna Traseira</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="50003" trl="Y">
+  <value column="Name" original="Assembly Front Leg">Conjunto Perna Dianteira</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="50004" trl="Y">
+  <value column="Name" original="Fertilizer #50">Fertilizante #50</value>
+  <value column="Description" original="50 # Bag of Lawn Fertilizer">Saco de fertilizante para gramado #50</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="50005" trl="Y">
+  <value column="Name" original="Fertilizer #70">Fertilizante #70</value>
+  <value column="Description" original="70 # Bag of Lawn Fertilizer">Saco de fertilizante para gramado #70</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="50006" trl="Y">
+  <value column="Name" original="Lawn Fertilizer">Fertilizante para Gramado</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+</idempiereTrl>

@@ -36,6 +36,8 @@ public class IdentNFE {
 	private String cDV;
 	private String tpAmb;
 	private String finNFe;
+	private String tpNFDebito;
+	private String tpNFCredito;
 	private String indFinal;
 	private String indPres;
 	private String indIntermed;
@@ -184,8 +186,26 @@ public class IdentNFE {
 	public void setFinNFe(String finNFe) {
 		if (finNFe != null)
 			finNFe = finNFe.trim();
-	
+
 		this.finNFe = finNFe;
+	}
+	public String getTpNFDebito() {
+		return tpNFDebito;
+	}
+	public void setTpNFDebito(String tpNFDebito) {
+		if (tpNFDebito != null)
+			tpNFDebito = tpNFDebito.trim();
+
+		this.tpNFDebito = tpNFDebito;
+	}
+	public String getTpNFCredito() {
+		return tpNFCredito;
+	}
+	public void setTpNFCredito(String tpNFCredito) {
+		if (tpNFCredito != null)
+			tpNFCredito = tpNFCredito.trim();
+
+		this.tpNFCredito = tpNFCredito;
 	}
 	public String getIndFinal() {
 		return indFinal;

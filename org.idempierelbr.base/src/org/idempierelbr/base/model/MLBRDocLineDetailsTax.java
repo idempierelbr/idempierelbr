@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+import java.util.logging.Level;
 
 import org.adempiere.model.POWrapper;
 import org.compiere.model.MInvoice;
@@ -98,8 +99,7 @@ public class MLBRDocLineDetailsTax extends MLBRDocLineDetails implements IDocLin
 		}
 		catch (SQLException e)
 		{
-			log.severe("Couldn't get LBR_DocLine_Details of PO " + po);
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Couldn't get LBR_DocLine_Details of PO " + po, e);
 		}
 		finally
 		{

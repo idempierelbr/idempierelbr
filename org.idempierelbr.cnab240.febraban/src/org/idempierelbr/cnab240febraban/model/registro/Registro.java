@@ -2,6 +2,8 @@ package org.idempierelbr.cnab240febraban.model.registro;
 
 import java.util.List;
 
+import org.adempiere.exceptions.AdempiereException;
+
 /**
  * Classe abstrata que é utilizada para qualquer tipo de registro criado. Ex.: HeaderArquivoBanco, HeaderLote, RegistroInicial, RegistroFinal, etc
  * @author Richard Mendes Madureira
@@ -21,12 +23,9 @@ public abstract class Registro {
 	 */
 	public void verificaTamanhoRegistro(StringBuilder sb) {
 		if (sb.length() != TAMANHO_REGISTRO) {
-			System.err.println("ATENÇÃO: O REGISTRO DE TRAILER DEVERIA POSSUIR " + TAMANHO_REGISTRO + " BYTES, PORÉM POSSUI " + sb.length());
-			try {
-				throw new Exception();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			//	Um registro fora do tamanho invalida o arquivo CNAB inteiro
+			throw new AdempiereException("O registro " + getClass().getSimpleName() + " deveria possuir "
+					+ TAMANHO_REGISTRO + " bytes, porém possui " + sb.length());
 		}
 	}
 

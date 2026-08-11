@@ -22,7 +22,7 @@ import org.idempierelbr.base.model.MLBRNotaFiscal;
 import org.idempierelbr.base.model.MLBRNotaFiscalLot;
 import org.idempierelbr.base.model.MLBRNotaFiscalLotLine;
 import org.idempierelbr.base.util.TextUtil;
-import org.idempierelbr.nfe.stub.StubConnector;
+import javax.net.ssl.SSLContext;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -123,10 +123,11 @@ public class NFeLotUtil {
 		MRegion  orgRegion = new MRegion(ctx, orgLoc.getC_Region_ID(), lot.get_TrxName());
 		
 		//INICIALIZA CERTIFICADO
+		SSLContext sslContext;
 		try {
-			DigitalCertificateUtil.setCertificate(ctx, lot.getAD_Org_ID());
+			sslContext = DigitalCertificateUtil.buildSSLContext(ctx, lot.getAD_Org_ID());
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Could not set digital certificate", e);
 			return "Could not set digital certificate";
 		}
 
@@ -135,7 +136,7 @@ public class NFeLotUtil {
 		try {
 			xmlLot = generateLot();
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Could not generate NF-e lot xml", e);
 			return "Could not generate xml";
 		}
 
@@ -144,19 +145,17 @@ public class NFeLotUtil {
 		if (!validation.equals(""))
 			return validation;*/
 		
-		xmlLot = "<nfeDadosMsg>" + xmlLot + "</nfeDadosMsg>";
-		
 		String LBR_NFeModel = null;
 		try{
 			LBR_NFeModel = lot.getNFeModel();
 		} catch(Exception ex){
 			return "Could not get NFe Model: "+ex.getMessage();
 		}
-		
-		StubConnector connector = new StubConnector(NFeUtil.VERSAO_APP,
+
+		SefazHttpClient client = new SefazHttpClient(sslContext, NFeUtil.VERSAO_APP,
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_AUTORIZACAO,
-				isContingencia(xmlLot), isHomologacao(xmlLot), LBR_NFeModel);
-		String result = connector.sendMessage(xmlLot);
+				isHomologacao(xmlLot), LBR_NFeModel, NFeUtil.autorizadorFromTpEmis(xmlLot));
+		String result = client.send(xmlLot);
 		
 		if (result == null || result.trim().equals(""))
 			return "Could not connect to webservice. Please try again later";
@@ -178,7 +177,7 @@ public class NFeLotUtil {
 			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         	doc = builder.parse(new InputSource(new StringReader(result)));
 		} catch (Exception e) {
-        	e.printStackTrace();
+			log.log(Level.SEVERE, "Could not parse xml: " + result, e);
 			return "Could not parse xml";
 		}
 
@@ -253,10 +252,11 @@ public class NFeLotUtil {
 		MRegion  orgRegion = new MRegion(ctx, orgLoc.getC_Region_ID(), lot.get_TrxName());
 		
 		//INICIALIZA CERTIFICADO
+		SSLContext sslContext;
 		try {
-			DigitalCertificateUtil.setCertificate(ctx, lot.getAD_Org_ID());
+			sslContext = DigitalCertificateUtil.buildSSLContext(ctx, lot.getAD_Org_ID());
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Could not set digital certificate", e);
 			return "Could not set digital certificate";
 		}
 
@@ -266,7 +266,7 @@ public class NFeLotUtil {
 		xmlLot.append("\">");
 		xmlLot.append("<tpAmb>");
 		
-		String tpAmb = "1";
+		String tpAmb = NFeUtil.ENV_PRODUCAO;
 		
 		MLBRNotaFiscalLotLine[] linesNF = lot.getLines();
 		if (linesNF.length > 0) {
@@ -294,10 +294,10 @@ public class NFeLotUtil {
 			return "Could not get NFe Model: "+ex.getMessage();
 		}
 		
-		StubConnector connector = new StubConnector(NFeUtil.VERSAO_APP,
+		SefazHttpClient client = new SefazHttpClient(sslContext, NFeUtil.VERSAO_APP,
 				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_RET_AUTORIZACAO,
-				isContingencia(xmlLot.toString()), isHomologacao(xmlLot.toString()), LBR_NFeModel);
-		String result = connector.sendMessage("<nfeDadosMsg>" + xmlLot.toString() + "</nfeDadosMsg>");
+				isHomologacao(xmlLot.toString()), LBR_NFeModel, NFeUtil.autorizadorFromTpEmis(xmlLot.toString()));
+		String result = client.send(xmlLot.toString());
 		
 		if (result == null || result.trim().equals(""))
 			return "Could not connect to webservice. Please try again later";
@@ -314,7 +314,7 @@ public class NFeLotUtil {
 			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 		    doc = builder.parse(new InputSource(new StringReader(result)));
 		} catch (Exception e) {
-	    	e.printStackTrace();
+			log.log(Level.SEVERE, "Could not parse xml: " + result, e);
 			return "Could not parse xml";
 		}
 	    //
@@ -381,8 +381,7 @@ public class NFeLotUtil {
 						try {
 							file = NFeUtil.generateDistribution(nf, node);
 						} catch (Exception e) {
-							e.printStackTrace();
-							log.severe("Could not generate distribution xml for NF-e " + nf.getDocumentNo());
+							log.log(Level.SEVERE, "Could not generate distribution xml for NF-e " + nf.getDocumentNo(), e);
 						}
 						
 						if (file != null) {
@@ -422,22 +421,6 @@ public class NFeLotUtil {
 	}
 	
 	/**
-	 * 	Does NF-e contained in this Lot has been issued in contingency mode? 
-	 *
-	 * @param xmlLot xml
-	 */
-	private boolean isContingencia(String xmlLot) {
-		int index = xmlLot.indexOf("<tpEmis>");
-		if (index >= 0) {
-			String tpEmis = xmlLot.substring(index+8, index+9);
-			if (!tpEmis.equals("1"))
-				return true;
-		}
-		
-		return false;
-	}
-	
-	/**
 	 * 	Does NF-e contained in this Lot has been issued in test mode? 
 	 *
 	 * @param xmlLot xml
@@ -446,7 +429,7 @@ public class NFeLotUtil {
 		int index = xmlLot.indexOf("<tpAmb>");
 		if (index >= 0) {
 			String tpAmb = xmlLot.substring(index+7, index+8);
-			if (tpAmb.equals("2"))
+			if (tpAmb.equals(NFeUtil.ENV_HOMOLOGACAO))
 				return true;
 		}
 		

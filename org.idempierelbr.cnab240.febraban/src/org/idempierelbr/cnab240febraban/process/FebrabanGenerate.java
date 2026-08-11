@@ -237,11 +237,11 @@ public class FebrabanGenerate extends SvrProcess
 
 			// Monta o Lote
 			Lote<HeaderTitulosEmCobranca, RegistroDeDetalhe, TrailerLoteTitulosEmCobranca> lote = null;
-			
+
 			try {
 				lote = new Lote<HeaderTitulosEmCobranca, RegistroDeDetalhe, TrailerLoteTitulosEmCobranca>();
 			} catch (Exception e) {
-				e.printStackTrace();
+				throw new AdempiereException("Não foi possível criar o lote do arquivo CNAB", e);
 			}
 			
 			lote.setHeader(headerLote);

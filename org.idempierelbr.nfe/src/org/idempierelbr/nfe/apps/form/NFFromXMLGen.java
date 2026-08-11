@@ -850,9 +850,7 @@ public class NFFromXMLGen
 						
 					}
 				} catch (Exception e) {
-					log.severe("Falha ao criar registros de impostos na LBR_TaxLine a partir do XML. Erro: "
-							+ e.getMessage());
-					e.printStackTrace();
+					log.log(Level.SEVERE, "Falha ao criar registros de impostos na LBR_TaxLine a partir do XML.", e);
 				}
 			}
 			
@@ -888,7 +886,7 @@ public class NFFromXMLGen
 					// save nf after processed
 					nf.save(trx.getTrxName());					
 				} catch (Exception e) {
-					e.printStackTrace();
+					log.log(Level.SEVERE, msg, e);
 					return msg;
 				}
 			}
@@ -975,7 +973,7 @@ public class NFFromXMLGen
 		try {
 			parsedDate = dateFormat.parse(date.substring(0, 10));
 		} catch (ParseException e) {
-			e.printStackTrace();
+			throw new AdempiereException("Data inválida no XML: " + date, e);
 		}
 	    return new java.sql.Timestamp(parsedDate.getTime());
 	}

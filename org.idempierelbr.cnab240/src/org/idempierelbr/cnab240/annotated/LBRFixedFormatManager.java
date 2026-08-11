@@ -156,15 +156,8 @@ public class LBRFixedFormatManager implements FixedFormatManager {
 	  
 	  	try {
 			foundData.put(methodName, method.invoke(instance));
-		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
+			throw new FixedFormatException(format("could not invoke method %s.%s()", fixedFormatRecordClass.getName(), methodName), e);
 		}
 	  
 	    methodClass.put(methodName, method.getReturnType());

@@ -1,2 +1,278 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="M_Product"/>
+<!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="M_Product">
+ <row id="122" trl="Y">
+  <value column="Name" original="Standard">Padrão</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="123" trl="Y">
+  <value column="Name" original="Oak Tree">Carvalho</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original="Oak Trees may grow quite a bit.">Carvalhos podem crescer bastante.</value>
+ </row>
+ <row id="124" trl="Y">
+  <value column="Name" original="Elm Tree">Olmo</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="125" trl="Y">
+  <value column="Name" original="Grass Seed Container">Recipiente de Sementes de Grama</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="126" trl="Y">
+  <value column="Name" original="Planting Service">Serviço de Plantio</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="127" trl="Y">
+  <value column="Name" original="Rose Bush">Roseira</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="128" trl="Y">
+  <value column="Name" original="Azalea Bush">Azaleia</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="129" trl="Y">
+  <value column="Name" original="Holly Bush">Azevinho</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="130" trl="Y">
+  <value column="Name" original="Plum Tree">Ameixeira</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="131" trl="Y">
+  <value column="Name" original="Travel cost">Custo de Viagem</value>
+  <value column="Description" original="Travel related costs">Custos relacionados a viagens</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="132" trl="Y">
+  <value column="Name" original="Mary Consultant">Consultora Mary</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="133" trl="Y">
+  <value column="Name" original="Patio Chair">Cadeira de Pátio</value>
+  <value column="Description" original="Nice Chair for outdoors">Cadeira bonita para ambientes externos</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="134" trl="Y">
+  <value column="Name" original="Patio Table">Mesa de Pátio</value>
+  <value column="Description" original="Nice Table for outdoors">Mesa bonita para ambientes externos</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="135" trl="Y">
+  <value column="Name" original="Patio Sun Screen">Toldo de Pátio</value>
+  <value column="Description" original="Protect from UV">Proteção contra raios UV</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="136" trl="Y">
+  <value column="Name" original="Fertilizer #50">Fertilizante #50</value>
+  <value column="Description" original="50 # Bag of Lawn Fertilizer">Saco de fertilizante para gramado #50</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="137" trl="Y">
+  <value column="Name" original="Mulch 10#">Cobertura Vegetal 10#</value>
+  <value column="Description" original="10# Bag of Mulch">Saco de cobertura vegetal 10#</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="138" trl="Y">
+  <value column="Name" original="Hoe 4 ft">Enxada 4 pés</value>
+  <value column="Description" original="4 Foot Metal Hoe">Enxada de metal de 4 pés</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="139" trl="Y">
+  <value column="Name" original="Rake Bamboo">Ancinho de Bambu</value>
+  <value column="Description" original="4 Foot Bamboo Rake">Ancinho de bambu de 4 pés</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="140" trl="Y">
+  <value column="Name" original="Rake Metal">Ancinho de Metal</value>
+  <value column="Description" original="4 Foot Metal Rake">Ancinho de metal de 4 pés</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="141" trl="Y">
+  <value column="Name" original="Weeder">Arrancador de Ervas Daninhas</value>
+  <value column="Description" original="Hand Weeder">Arrancador manual de ervas daninhas</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="142" trl="Y">
+  <value column="Name" original="Transplanter">Transplantador</value>
+  <value column="Description" original="Hand Transplanter">Transplantador manual</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="143" trl="Y">
+  <value column="Name" original="Grass Seeder">Semeadora de Grama</value>
+  <value column="Description" original="Manual Grass Seeder">Semeadora manual de grama</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="144" trl="Y">
+  <value column="Name" original="Lawn Tiller">Cultivador de Gramado</value>
+  <value column="Description" original="Manual Lawn Tiller">Cultivador manual de gramado</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="145" trl="Y">
+  <value column="Name" original="Patio Furniture Set">Conjunto de Móveis de Pátio</value>
+  <value column="Description" original="1 table, 4 Chairs and 1 Sun Screen">1 mesa, 4 cadeiras e 1 toldo</value>
+  <value column="DocumentNote" original="&#9;">	</value>
+ </row>
+ <row id="146" trl="Y">
+  <value column="Name" original="How To Plant">Como Plantar</value>
+  <value column="Description" original="Information on how to best to plant your future.">Informações sobre a melhor forma de plantar o seu futuro.</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="147" trl="Y">
+  <value column="Name" original="TShirt - Red Large">Camiseta - Vermelha Grande</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="148" trl="Y">
+  <value column="Name" original="TShirt - Green Large">Camiseta - Verde Grande</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50000" trl="Y">
+  <value column="Name" original="Assembly Back Leg">Conjunto Perna Traseira</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50001" trl="Y">
+  <value column="Name" original="Assembly Front Leg">Conjunto Perna Dianteira</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50002" trl="Y">
+  <value column="Name" original="#6-32 x 3/8 Socket Head Cap Screw">Parafuso Allen #6-32 x 3/8</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50003" trl="Y">
+  <value column="Name" original="Ultra Glue">Cola Ultra</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50004" trl="Y">
+  <value column="Name" original="Seat">Assento</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50005" trl="Y">
+  <value column="Name" original="Back Support">Encosto</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50007" trl="Y">
+  <value column="Name" original="Fertilizer #70">Fertilizante #70</value>
+  <value column="Description" original="70 # Bag of Lawn Fertilizer">Saco de fertilizante para gramado #70</value>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50008" trl="Y">
+  <value column="Name" original="Lawn Fertilizer">Fertilizante para Gramado</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50009" trl="Y">
+  <value column="Name" original="Nitrogen">Nitrogênio</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50010" trl="Y">
+  <value column="Name" original="Phosphorus">Fósforo</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50012" trl="Y">
+  <value column="Name" original="Potassium">Potássio</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50013" trl="Y">
+  <value column="Name" original="Bag 50 Kg">Saco 50 Kg</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50014" trl="Y">
+  <value column="Name" original="Bag 70 Kg">Saco 70 Kg</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50015" trl="Y">
+  <value column="Name" original="Front Leg">Perna Dianteira</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50016" trl="Y">
+  <value column="Name" original="Back Leg">Perna Traseira</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50017" trl="Y">
+  <value column="Name" original="Water">Água</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50018" trl="Y">
+  <value column="Name" original="Fertilizer Plant">Fábrica de Fertilizantes</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50019" trl="Y">
+  <value column="Name" original="Assembly Area">Área de Montagem</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50020" trl="Y">
+  <value column="Name" original="Paint Area">Área de Pintura</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50021" trl="Y">
+  <value column="Name" original="Chrome Subcontract Area">Área de Cromagem Terceirizada</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50022" trl="Y">
+  <value column="Name" original="Inspection Area">Área de Inspeção</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50023" trl="Y">
+  <value column="Name" original="Furniture Plant">Fábrica de Móveis</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50024" trl="Y">
+  <value column="Name" original="Packing Production Line">Linha de Produção de Embalagem</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50025" trl="Y">
+  <value column="Name" original="Mixed Area">Área de Mistura</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50026" trl="Y">
+  <value column="Name" original="Dry Area">Área de Secagem</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="50027" trl="Y">
+  <value column="Name" original="Fertilizer Inspection Area">Área de Inspeção de Fertilizantes</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="200001" trl="Y">
+  <value column="Name" original="Asset Vehicle">Veículo (Ativo)</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+ <row id="200002" trl="Y">
+  <value column="Name" original="Computers">Computadores</value>
+  <value column="Description" original=""/>
+  <value column="DocumentNote" original=""/>
+ </row>
+</idempiereTrl>

@@ -1,6 +1,8 @@
 package org.idempierelbr.tax.model;
 
 import java.math.BigDecimal;
+import java.util.logging.Level;
+
 import org.adempiere.base.event.AbstractEventHandler;
 import org.adempiere.base.event.IEventTopics;
 import org.adempiere.exceptions.AdempiereException;
@@ -141,8 +143,7 @@ public class EventHandler extends AbstractEventHandler {
 			try {
 				details.deleteEx(true);
 			} catch (AdempiereException e) {
-				e.printStackTrace();
-				log.warning(MLBRDocLineDetails.Table_Name + " for " + po + " was not deleted.");
+				log.log(Level.WARNING, MLBRDocLineDetails.Table_Name + " for " + po + " was not deleted.", e);
 				
 				details.setC_OrderLine_ID(0);
 				details.setC_InvoiceLine_ID(0);

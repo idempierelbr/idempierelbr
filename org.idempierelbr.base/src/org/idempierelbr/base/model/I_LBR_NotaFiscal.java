@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_NotaFiscal
  *  @author iDempiere (generated) 
- *  @version Release 11
+ *  @version Release 13
  */
 @SuppressWarnings("all")
 public interface I_LBR_NotaFiscal 
@@ -77,6 +77,7 @@ public interface I_LBR_NotaFiscal
 	  */
 	public int getC_BPartner_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_BPartner getC_BPartner() throws RuntimeException;
 
     /** Column name C_BPartner_Location_ID */
@@ -92,6 +93,7 @@ public interface I_LBR_NotaFiscal
 	  */
 	public int getC_BPartner_Location_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_BPartner_Location getC_BPartner_Location() throws RuntimeException;
 
     /** Column name C_City_ID */
@@ -107,6 +109,7 @@ public interface I_LBR_NotaFiscal
 	  */
 	public int getC_City_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_City getC_City() throws RuntimeException;
 
     /** Column name C_DocType_ID */
@@ -122,6 +125,7 @@ public interface I_LBR_NotaFiscal
 	  */
 	public int getC_DocType_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_DocType getC_DocType() throws RuntimeException;
 
     /** Column name C_Invoice_ID */
@@ -137,6 +141,7 @@ public interface I_LBR_NotaFiscal
 	  */
 	public int getC_Invoice_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_Invoice getC_Invoice() throws RuntimeException;
 
     /** Column name C_Order_ID */
@@ -152,6 +157,7 @@ public interface I_LBR_NotaFiscal
 	  */
 	public int getC_Order_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_Order getC_Order() throws RuntimeException;
 
     /** Column name C_Region_ID */
@@ -167,6 +173,7 @@ public interface I_LBR_NotaFiscal
 	  */
 	public int getC_Region_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_Region getC_Region() throws RuntimeException;
 
     /** Column name Created */
@@ -346,6 +353,7 @@ public interface I_LBR_NotaFiscal
 	/** Get Intermediary BP	  */
 	public int getLBR_BP_Intermed_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_BPartner getLBR_BP_Intermed() throws RuntimeException;
 
     /** Column name LBR_BP_PickupLocation_ID */
@@ -361,6 +369,7 @@ public interface I_LBR_NotaFiscal
 	  */
 	public int getLBR_BP_PickupLocation_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_BPartner_Location getLBR_BP_PickupLocation() throws RuntimeException;
 
     /** Column name LBR_BP_Pickup_ID */
@@ -376,6 +385,7 @@ public interface I_LBR_NotaFiscal
 	  */
 	public int getLBR_BP_Pickup_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_BPartner getLBR_BP_Pickup() throws RuntimeException;
 
     /** Column name LBR_BP_ShipLocation_ID */
@@ -391,6 +401,7 @@ public interface I_LBR_NotaFiscal
 	  */
 	public int getLBR_BP_ShipLocation_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_BPartner_Location getLBR_BP_ShipLocation() throws RuntimeException;
 
     /** Column name LBR_BP_Ship_ID */
@@ -406,6 +417,7 @@ public interface I_LBR_NotaFiscal
 	  */
 	public int getLBR_BP_Ship_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_C_BPartner getLBR_BP_Ship() throws RuntimeException;
 
     /** Column name LBR_ContingencyDate */
@@ -680,6 +692,24 @@ s CPF Number	  */
 s CPF Number	  */
 	public String getLBR_UnidentifiedCustomerCPF();
 
+    /** Column name LBR_tpNFCredito */
+    public static final String COLUMNNAME_LBR_tpNFCredito = "LBR_tpNFCredito";
+
+	/** Set NFe Credit Type	  */
+	public void setLBR_tpNFCredito (String LBR_tpNFCredito);
+
+	/** Get NFe Credit Type	  */
+	public String getLBR_tpNFCredito();
+
+    /** Column name LBR_tpNFDebito */
+    public static final String COLUMNNAME_LBR_tpNFDebito = "LBR_tpNFDebito";
+
+	/** Set NFe Debit Type	  */
+	public void setLBR_tpNFDebito (String LBR_tpNFDebito);
+
+	/** Get NFe Debit Type	  */
+	public String getLBR_tpNFDebito();
+
     /** Column name M_RMA_ID */
     public static final String COLUMNNAME_M_RMA_ID = "M_RMA_ID";
 
@@ -693,6 +723,7 @@ s CPF Number	  */
 	  */
 	public int getM_RMA_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public org.compiere.model.I_M_RMA getM_RMA() throws RuntimeException;
 
     /** Column name PaymentRule */

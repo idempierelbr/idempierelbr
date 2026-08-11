@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="TestUU">
+<!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="TestUU">
  <row trl="N" uuid="4e148b89-bdd9-48a6-8a8a-7609092f965c">
   <value column="Name" original="Test Record in System">Test Record in System</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
+ </row>
+ <row trl="N" uuid="8858ecc2-cf1d-405f-987f-793536037e76">
+  <value column="Name" original="Test Record in GardenWorld">Test Record in GardenWorld</value>
+  <value column="Description" original="Lorem ipsum dolor sit amet">Lorem ipsum dolor sit amet</value>
+  <value column="Help" original="consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut">consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</value>
  </row>
 </idempiereTrl>

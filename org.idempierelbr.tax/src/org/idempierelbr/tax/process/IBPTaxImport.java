@@ -127,10 +127,8 @@ public class IBPTaxImport extends SvrProcess implements ImportProcess {
 				m_ibptax.save(get_TrxName());
 			}
 		} catch (Exception ex) {
-			ex.printStackTrace();
-			
 			// logar erro
-			log.severe("Falha ao importar dados do IBPT. Erro: " + ex.getMessage());
+			log.log(Level.SEVERE, "Falha ao importar dados do IBPT.", ex);
 			
 			//
 			throw new Exception("Erro: " + ex.getMessage());

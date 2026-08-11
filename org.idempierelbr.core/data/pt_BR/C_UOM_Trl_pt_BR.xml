@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_UOM">
+<!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_UOM">
  <row id="100" trl="Y">
-  <value column="Name" original="Each">Each</value>
+  <value column="Name" original="Each">Unidade</value>
   <value column="Description" original=""/>
   <value column="UOMSymbol" original="Ea ">Ea </value>
  </row>
@@ -44,5 +44,35 @@
   <value column="Name" original="Year">Ano</value>
   <value column="Description" original=""/>
   <value column="UOMSymbol" original="y  ">a  </value>
+ </row>
+ <row id="109" trl="Y">
+  <value column="Name" original="6-Pack">Pacote com 6</value>
+  <value column="Description" original=""/>
+  <value column="UOMSymbol" original="6Pk">6Pk</value>
+ </row>
+ <row id="50000" trl="Y">
+  <value column="Name" original="Mililiter">Mililitro</value>
+  <value column="Description" original=""/>
+  <value column="UOMSymbol" original="ml">ml</value>
+ </row>
+ <row id="50001" trl="Y">
+  <value column="Name" original="kilogram">Quilograma</value>
+  <value column="Description" original=""/>
+  <value column="UOMSymbol" original="Kg">Kg</value>
+ </row>
+ <row id="50002" trl="Y">
+  <value column="Name" original="milligram">Miligrama</value>
+  <value column="Description" original=""/>
+  <value column="UOMSymbol" original="mg">mg</value>
+ </row>
+ <row id="50003" trl="Y">
+  <value column="Name" original="litre">Litro</value>
+  <value column="Description" original=""/>
+  <value column="UOMSymbol" original="L">L</value>
+ </row>
+ <row id="200001" trl="Y">
+  <value column="Name" original="Centimeter">Centímetro</value>
+  <value column="Description" original=""/>
+  <value column="UOMSymbol" original="cm">cm</value>
  </row>
 </idempiereTrl>

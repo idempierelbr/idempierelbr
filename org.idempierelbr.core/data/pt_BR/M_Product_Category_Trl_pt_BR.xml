@@ -1,2 +1,59 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="M_Product_Category"/>
+<!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="M_Product_Category">
+ <row id="105" trl="Y">
+  <value column="Name" original="Standard">Padrão</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="106" trl="Y">
+  <value column="Name" original="Trees">Árvores</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="107" trl="Y">
+  <value column="Name" original="Bushes">Arbustos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="108" trl="Y">
+  <value column="Name" original="Tools">Ferramentas</value>
+  <value column="Description" original="Garden Tools">Ferramentas de Jardim</value>
+ </row>
+ <row id="109" trl="Y">
+  <value column="Name" original="Chemicals">Produtos Químicos</value>
+  <value column="Description" original="Lawn Chemicals">Produtos Químicos para Gramado</value>
+ </row>
+ <row id="110" trl="Y">
+  <value column="Name" original="Patio ">Pátio</value>
+  <value column="Description" original="Patio and Lawn Furniture">Móveis de Pátio e Jardim</value>
+ </row>
+ <row id="111" trl="Y">
+  <value column="Name" original="Documentation">Documentação</value>
+  <value column="Description" original="Documentation Download">Download de Documentação</value>
+ </row>
+ <row id="112" trl="Y">
+  <value column="Name" original="Training">Treinamento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="50000" trl="Y">
+  <value column="Name" original="Assembly">Montagem</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="50001" trl="Y">
+  <value column="Name" original="Raw Material">Matéria-Prima</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="50002" trl="Y">
+  <value column="Name" original="Packing">Embalagem</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="50003" trl="Y">
+  <value column="Name" original="Resources">Recursos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200000" trl="Y">
+  <value column="Name" original="Vehicles">Veículos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200001" trl="Y">
+  <value column="Name" original="Computers">Computadores</value>
+  <value column="Description" original=""/>
+ </row>
+</idempiereTrl>

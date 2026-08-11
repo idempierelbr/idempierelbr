@@ -470,13 +470,13 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 					lotLine.setLBR_NotaFiscal_ID(this.get_ID());
 					lotLine.saveEx();
 				} catch (Exception e) {
-					e.printStackTrace();
 					m_processMsg = "Couldn't create NF-e Lot";
-					
-					if (lotLine.get_ID() > 0)
+					log.log(Level.SEVERE, m_processMsg, e);
+
+					if (lotLine != null && lotLine.get_ID() > 0)
 						lotLine.delete(true);
-					
-					if (lot.get_ID() > 0)
+
+					if (lot != null && lot.get_ID() > 0)
 						lot.delete(true);
 				}
 			}

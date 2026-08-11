@@ -6,7 +6,6 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.security.MessageDigest;
 
-import org.apache.commons.codec.binary.Base64;
 
 /**
  * @author rlemeill
@@ -58,8 +57,7 @@ public class DigestOfFile
     synchronized public String digestAsBase64(File file) throws Exception
     {
         byte[] digest = digestAsByteArray(file);
-        Base64 encoder = new Base64();
-        String digestAsBase64 = new String(encoder.encode(digest),"ASCII");
+        String digestAsBase64 = java.util.Base64.getEncoder().encodeToString(digest);
         return digestAsBase64;
     }
 
@@ -71,8 +69,7 @@ public class DigestOfFile
     public synchronized String digestAsBase64(byte[] input) throws Exception
     {
     	byte[] digest = digestAsByteArray(input);
-    	Base64 encoder = new Base64();
-    	String digestAsBase64 = new String(encoder.encode(digest),"ASCII");
+    	String digestAsBase64 = java.util.Base64.getEncoder().encodeToString(digest);
         return digestAsBase64;
     }
 
@@ -83,31 +80,6 @@ public class DigestOfFile
     private MessageDigest digestAgent;
     //private Base64 base64Encoder = new Base64();
     private byte[] buffer = new byte[4096];
-
-    /**
-     * @author rlemeill
-     * @param args file
-     */
-    public static void main(String[] args)
-    {
-        try
-        {
-            DigestOfFile md5DigestAgent = new DigestOfFile("MD5");
-
-            for (int argIndex = 0; argIndex < args.length; argIndex++)
-            {
-                {
-                    String base64Digest = md5DigestAgent.digestAsBase64(new File(args[argIndex]));
-                    System.out.println("Base64 MD5 of " + args[argIndex] + " = [" + base64Digest + "]");
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace(System.out);
-        }
-    }
-
 
     /**
      * @param file1 first file to compare

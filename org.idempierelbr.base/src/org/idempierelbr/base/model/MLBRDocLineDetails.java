@@ -12,8 +12,11 @@ import java.util.Properties;
 import org.adempiere.model.POWrapper;
 import org.compiere.model.MBPartner;
 import org.compiere.model.MBPartnerLocation;
+import org.compiere.model.MInvoiceLine;
+import org.compiere.model.MOrderLine;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.MProduct;
+import org.compiere.model.MRMALine;
 import org.compiere.model.MSysConfig;
 import org.compiere.model.MTax;
 import org.compiere.model.PO;
@@ -211,9 +214,48 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		}
 	}
 	
+	/**
+	 * 	Delete every tax child EXCEPT IBS/CBS. Used by the Reforma Tributária
+	 * 	Débito/Crédito notes (finNFe 5/6), which may only carry IBS/CBS — so no
+	 * 	residual ICMS/PIS/COFINS/IPI/IS/etc. records are left for apuração reports.
+	 */
+	public void deleteNonIBSCBSChildren() {
+		PO[] poArray = MLBRDocLineIS.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+
+		poArray = MLBRDocLineICMS.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+
+		poArray = MLBRDocLineIPI.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+
+		poArray = MLBRDocLinePIS.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+
+		poArray = MLBRDocLineCOFINS.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+
+		poArray = MLBRDocLineImportTax.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+
+		poArray = MLBRDocLineISSQN.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+
+		poArray = MLBRDocLineOTHER.getOfDetails(this);
+		for (PO po : poArray)
+			po.deleteEx(true);
+	}
+
 	protected boolean beforeDelete() {
 		deleteChildren();
-		return true;		
+		return true;
 	}
 	
 	
@@ -221,6 +263,26 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	/**
 	 * 	Create all children (taxes) of Doc Line Details
 	 */
+	/**
+	 * 	Obtém o Produto associado a esta linha (via Order Line, Invoice Line ou RMA Line).
+	 *	@return MProduct ou null se não houver produto
+	 */
+	public MProduct getProduct() {
+		int M_Product_ID = 0;
+
+		if (getC_OrderLine_ID() > 0)
+			M_Product_ID = new MOrderLine(getCtx(), getC_OrderLine_ID(), get_TrxName()).getM_Product_ID();
+		else if (getC_InvoiceLine_ID() > 0)
+			M_Product_ID = new MInvoiceLine(getCtx(), getC_InvoiceLine_ID(), get_TrxName()).getM_Product_ID();
+		else if (getM_RMALine_ID() > 0)
+			M_Product_ID = new MRMALine(getCtx(), getM_RMALine_ID(), get_TrxName()).getM_Product_ID();
+
+		if (M_Product_ID > 0)
+			return MProduct.get(getCtx(), M_Product_ID);
+
+		return null;
+	}
+
 	public void createChildren(Map<Integer, Object[]> taxes, MLBRTax tax,
 			int C_Tax_ID, MProduct product, int C_BPartner_ID,
 			int C_BPartnerLocationTo_ID, String LBR_TransactionType,
@@ -536,8 +598,16 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		if (m_cest != null && m_cest.get_ID() > 0) {
 			icms.set_ValueOfColumn("LBR_CEST_ID", m_cest.getLBR_CEST_ID());
 		}
-		
-		
+
+		/*
+		 * Fill cBenef (Código de Benefício Fiscal)
+		 * Reconsulta o código na Situação Tributária (CST) permitindo que o Produto sobrescreva.
+		 * A resolução é centralizada em MLBRDocLineICMS.updateCBenef(), que também é executada
+		 * pelo beforeSave quando o CST é alterado manualmente.
+		 */
+		icms.updateCBenef(product);
+
+
 		/* 
 		 * Calculate DIFAL
 		 *  

@@ -543,7 +543,7 @@ public class EFDUtil {
 		reg.setDT_INI(dateFrom);
 		reg.setDT_FIN(dateTo);
 		reg.setNOME( bpLinked2Org.getName() );
-		reg.setCNPJ( TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ")) );
+		reg.setCNPJ( TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ")) );
 		reg.setCPF(null);
 		reg.setUF(oi.getC_Location().getC_Region().getName());
 		reg.setIE( TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_IE")) );
@@ -683,7 +683,7 @@ public class EFDUtil {
 		reg.setCOD_PAIS(String.valueOf(factFiscal.getLBR_CountryCode()));
 		
 		// CPF/CNPJ
-		if(TextUtil.toNumeric(factFiscal.getLBR_CNPJ()).length() == 11)
+		if(TextUtil.removeCNPJMask(factFiscal.getLBR_CNPJ()).length() == 11)
 			reg.setCPF(factFiscal.getLBR_CNPJ());
 		else
 			reg.setCNPJ(factFiscal.getLBR_CNPJ());

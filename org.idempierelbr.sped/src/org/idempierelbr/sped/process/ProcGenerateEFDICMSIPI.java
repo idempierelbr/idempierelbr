@@ -170,7 +170,7 @@ public class ProcGenerateEFDICMSIPI extends SvrProcess
 		MOrg org = new MOrg( ctx, p_AD_Org_ID, trxName );
 		MBPartner bpLinked2Org = new MBPartner( ctx , org.getLinkedC_BPartner_ID(trxName) , trxName );
 
-		fileName = "EFD_" + TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ")) + "_" + TextUtil.timeToString(dateFrom, "MMyyyy") + ".txt";
+		fileName = "EFD_" + TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ")) + "_" + TextUtil.timeToString(dateFrom, "MMyyyy") + ".txt";
 		
 		/*
 		 * Gerar Arquivo no disco

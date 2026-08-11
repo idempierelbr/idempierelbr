@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_Region">
+<!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_Region">
  <row id="102" trl="N">
   <value column="Name" original="CT">CT</value>
  </row>
@@ -162,8 +162,8 @@
  <row id="159" trl="N">
   <value column="Name" original="New Brunswick">New Brunswick</value>
  </row>
- <row id="160" trl="N">
-  <value column="Name" original="Newfoundland and Labrador">Newfoundland and Labrador</value>
+ <row id="160" trl="Y">
+  <value column="Name" original="Newfoundland and Labrador">Terra Nova e Labrador</value>
  </row>
  <row id="161" trl="N">
   <value column="Name" original="Nova Scotia">Nova Scotia</value>

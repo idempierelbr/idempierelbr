@@ -2,7 +2,6 @@ package org.idempierelbr.cnab240.annotated;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -148,15 +147,9 @@ public class CNABRecords {
 	
 	public void loadRecords( File arqCNAB ) throws IOException {
 		
-		FileReader arq;
-		try {
-			arq = new FileReader(arqCNAB);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return;
-		}
-		
+		//	FileNotFoundException é propagada ao chamador (subclasse de IOException)
+		FileReader arq = new FileReader(arqCNAB);
+
 		BufferedReader lerArq = new BufferedReader(arq);
 		
 		listaRegistros.clear();

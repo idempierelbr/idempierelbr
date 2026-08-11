@@ -3,6 +3,7 @@ package org.idempierelbr.openitems.callout;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.logging.Level;
 
 import org.adempiere.base.IColumnCallout;
 import org.apache.commons.io.IOUtils;
@@ -11,8 +12,12 @@ import org.compiere.model.GridTab;
 import org.compiere.model.MBank;
 import org.compiere.model.MBankAccount;
 import org.compiere.model.MImage;
+import org.compiere.util.CLogger;
 
 public class CalloutBank implements IColumnCallout {
+	/**	Logger			*/
+	private static CLogger log = CLogger.getCLogger(CalloutBank.class);
+
 	@Override
 	public String start(Properties ctx, int WindowNo, GridTab mTab,
 			GridField mField, Object value, Object oldValue) {
@@ -63,8 +68,7 @@ public class CalloutBank implements IColumnCallout {
 			imageRecord.setBinaryData(IOUtils.toByteArray(imageInputStream));
 			imageRecord.setName("imagem carregada automaticamente banco " + value );
 		} catch (IOException e) {
-			e.printStackTrace();
-			imageRecord.dump();
+			log.log(Level.SEVERE, "Não foi possível carregar a imagem do banco " + value, e);
 			return null;
 		}
 		

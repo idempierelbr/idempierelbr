@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import org.adempiere.exceptions.AdempiereException;
 import org.adempiere.model.POWrapper;
 import org.compiere.model.I_C_Location;
 import org.compiere.model.MBPartner;
@@ -415,9 +416,10 @@ public class MLBRTax extends X_LBR_Tax
 		}
 		catch (EvalError e)
 		{
-			e.printStackTrace();
+			//	Não retornar imposto ZERO silenciosamente quando a fórmula falha
+			throw new AdempiereException("Não foi possível avaliar a fórmula de imposto: " + formula, e);
 		}
-		
+
 		return result;
 	}	//	evalFormula
 	

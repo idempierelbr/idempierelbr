@@ -176,11 +176,12 @@ public class MLBRTaxConfiguration extends X_LBR_TaxConfiguration
 	    boolean hasCity = fromCity_ID > 0 || toCity_ID > 0;
 
 	    if (!hasRegion && hasCity) {
-	        where += "AND C_City_ID=? AND LBR_To_City_ID=? ";
+	        where += "AND (C_City_ID IS NULL OR C_City_ID=?) AND (LBR_To_City_ID IS NULL OR LBR_To_City_ID=?) ";
 	        params.add(fromCity_ID);
 	        params.add(toCity_ID);
 	    } else {
-	    	where += "AND C_Region_ID=? AND To_Region_ID=? AND C_City_ID=? AND LBR_To_City_ID=? ";
+	    	where += "AND C_Region_ID=? AND To_Region_ID=? "
+	    			+ "AND (C_City_ID IS NULL OR C_City_ID=?) AND (LBR_To_City_ID IS NULL OR LBR_To_City_ID=?) ";
 	        params.add(fromRegion_ID);
 	        params.add(toRegion_ID);
 	        params.add(fromCity_ID);
@@ -192,7 +193,7 @@ public class MLBRTaxConfiguration extends X_LBR_TaxConfiguration
 
 	    X_LBR_TaxConfig_Region tcr = new Query(Env.getCtx(), X_LBR_TaxConfig_Region.Table_Name, where, get_TrxName())
 	        .setParameters(params.toArray())
-	        .setOrderBy("AD_Org_ID DESC, ValidFrom DESC")
+	        .setOrderBy("AD_Org_ID DESC, C_City_ID DESC NULLS LAST, ValidFrom DESC")
 	        .first();
 
 	    return tcr;

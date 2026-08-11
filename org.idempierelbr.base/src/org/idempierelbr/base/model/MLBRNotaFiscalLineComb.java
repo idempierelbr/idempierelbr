@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.logging.Level;
 
 import org.compiere.model.PO;
 import org.compiere.util.CLogger;
@@ -45,8 +46,7 @@ public class MLBRNotaFiscalLineComb extends X_LBR_NotaFiscalLineComb {
 		}
 		catch (SQLException e)
 		{
-			log.severe("Couldn't get LBR_NotaFiscalLineComb of PO " + po);
-			e.printStackTrace();
+			log.log(Level.SEVERE, "Couldn't get LBR_NotaFiscalLineComb of PO " + po, e);
 		}
 		finally
 		{

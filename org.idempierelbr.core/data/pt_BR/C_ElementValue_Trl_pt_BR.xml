@@ -1,2 +1,1519 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--iDempiere(r) Release 12_2024-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2025 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_ElementValue"/>
+<!--iDempiere(r) Release 13_2026-03-09 -Smart Suite ERP, CRM and SCM- (c) 1999-2026 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//iDempiere//DTD iDempiere Translation 1.0//EN" "https://raw.githubusercontent.com/idempiere/idempiere/refs/heads/master/utils_dev/trl/idempiereTrl.dtd">--><idempiereTrl language="pt_BR" table="C_ElementValue">
+ <row id="419" trl="Y">
+  <value column="Name" original="Tree Farm Payable">Contas a Pagar - Viveiro de Árvores</value>
+  <value column="Description" original="Tree Farm Payable">Contas a Pagar - Viveiro de Árvores</value>
+ </row>
+ <row id="421" trl="Y">
+  <value column="Name" original="Sideline Revenue">Receita de Atividades Acessórias</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="422" trl="Y">
+  <value column="Name" original="Royalties Revenue">Receita de Royalties</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="423" trl="Y">
+  <value column="Name" original="Unearned revenue">Receita Diferida</value>
+  <value column="Description" original="We have invoiced, but not delivered yet">Faturamos, mas ainda não entregamos</value>
+ </row>
+ <row id="424" trl="Y">
+  <value column="Name" original="Not invoiced revenue">Receita a Faturar</value>
+  <value column="Description" original="We delivered but have not invoiced yet">Entregamos, mas ainda não faturamos</value>
+ </row>
+ <row id="425" trl="Y">
+  <value column="Name" original="Other Revenue">Outras Receitas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="426" trl="Y">
+  <value column="Name" original="Trade Discounts">Descontos Comerciais Concedidos</value>
+  <value column="Description" original="Granted Trade discounts (corrects Product Revenue)">Descontos comerciais concedidos (retificadora da receita de produtos)</value>
+ </row>
+ <row id="427" trl="Y">
+  <value column="Name" original="Payment discount revenue">Descontos Financeiros Concedidos</value>
+  <value column="Description" original="Granted early payment discount to customers">Desconto por pagamento antecipado concedido a clientes</value>
+ </row>
+ <row id="428" trl="Y">
+  <value column="Name" original="Promotion Discounts">Descontos Promocionais</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="429" trl="Y">
+  <value column="Name" original="Cost of Goods Sold">Custo das Mercadorias Vendidas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="430" trl="Y">
+  <value column="Name" original="Product CoGs">Custo dos Produtos Vendidos</value>
+  <value column="Description" original="Cost of Goods Sold">Custo das mercadorias vendidas</value>
+ </row>
+ <row id="431" trl="Y">
+  <value column="Name" original="Product Expense">Despesa de Produto</value>
+  <value column="Description" original="Default Product or Service costs (I.e. not on inventory)">Custo padrão de produtos ou serviços não controlados em estoque</value>
+ </row>
+ <row id="432" trl="Y">
+  <value column="Name" original="Services Purchases">Compras de Serviços</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="433" trl="Y">
+  <value column="Name" original="Sideline Purchases">Compras de Atividades Acessórias</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="434" trl="Y">
+  <value column="Name" original="Freight in">Frete sobre Compras</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="435" trl="Y">
+  <value column="Name" original="Returns">Devoluções</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="436" trl="Y">
+  <value column="Name" original="Returns Expense">Despesa com Devoluções</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="437" trl="Y">
+  <value column="Name" original="Returns to Vendors">Devoluções a Fornecedores</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="438" trl="Y">
+  <value column="Name" original="Inventory CoGs">Custo das Mercadorias Vendidas - Estoque</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="439" trl="Y">
+  <value column="Name" original="Inventory Shrinkage">Perdas de Estoque</value>
+  <value column="Description" original="Physical Inventory Gain/Loss">Ganhos e perdas do inventário físico</value>
+ </row>
+ <row id="440" trl="Y">
+  <value column="Name" original="Inventory Write Down Below Cost">Redução de Estoque Abaixo do Custo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="441" trl="Y">
+  <value column="Name" original="Inventory Adjustment">Ajuste de Estoque</value>
+  <value column="Description" original="Inventory Actual Accounting Value Adjustment">Ajuste do valor contábil efetivo do estoque</value>
+ </row>
+ <row id="442" trl="Y">
+  <value column="Name" original="Inventory Revaluation">Reavaliação de Estoque</value>
+  <value column="Description" original="Difference to (lower cost) or market">Diferença entre o custo (o menor) e o valor de mercado</value>
+ </row>
+ <row id="443" trl="Y">
+  <value column="Name" original="CoGS Variances">Variações do Custo das Mercadorias Vendidas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="444" trl="Y">
+  <value column="Name" original="Invoice price variance">Variação do Preço de Fatura</value>
+  <value column="Description" original="Difference between product cost and invoice price (IPV)">Diferença entre o custo do produto e o preço da fatura (IPV)</value>
+ </row>
+ <row id="445" trl="Y">
+  <value column="Name" original="Purchase price variance">Variação do Preço de Compra</value>
+  <value column="Description" original="Difference between purchase price and standard costs (PPV)">Diferença entre o preço de compra e o custo padrão (PPV)</value>
+ </row>
+ <row id="446" trl="Y">
+  <value column="Name" original="CoGs/Sales Discounts">Descontos sobre Custos e Vendas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="447" trl="Y">
+  <value column="Name" original="Trade discounts received">Descontos Comerciais Obtidos</value>
+  <value column="Description" original="Received Trade Discounts (corrects Product expense)">Descontos comerciais obtidos (retificadora da despesa de produtos)</value>
+ </row>
+ <row id="448" trl="Y">
+  <value column="Name" original="Payment discount revenue">Descontos Financeiros Obtidos</value>
+  <value column="Description" original="Granted early payment discount from vendors">Desconto por pagamento antecipado obtido de fornecedores</value>
+ </row>
+ <row id="449" trl="Y">
+  <value column="Name" original="Expenses">Despesas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="450" trl="Y">
+  <value column="Name" original="Payroll Expenses">Despesas com Pessoal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="451" trl="Y">
+  <value column="Name" original="Salaries">Salários</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="452" trl="Y">
+  <value column="Name" original="Vacation Pay">Férias</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="453" trl="Y">
+  <value column="Name" original="Vacation Pay Owners">Férias - Sócios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="454" trl="Y">
+  <value column="Name" original="Sick Pay Owners">Licença Médica - Sócios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="455" trl="Y">
+  <value column="Name" original="Retirement (Pension, Profit Sharing, 401k)">Previdência (Aposentadoria, Participação nos Lucros, 401k)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="456" trl="Y">
+  <value column="Name" original="FICA Tax Owners">Imposto FICA - Sócios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="457" trl="Y">
+  <value column="Name" original="Federal/State Unemployment">Seguro-Desemprego Federal/Estadual</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="458" trl="Y">
+  <value column="Name" original="Federal/State Unemployment Owners">Seguro-Desemprego Federal/Estadual - Sócios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="459" trl="Y">
+  <value column="Name" original="Health Insurance Premium Owners">Prêmio de Plano de Saúde - Sócios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="460" trl="Y">
+  <value column="Name" original="Health Insurance Employee Contribution">Plano de Saúde - Contribuição do Funcionário</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="461" trl="Y">
+  <value column="Name" original="Health Insurance Cobra Payments">Plano de Saúde - Pagamentos COBRA</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="462" trl="Y">
+  <value column="Name" original="Workers Compensation Insurance">Seguro de Acidentes de Trabalho</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="463" trl="Y">
+  <value column="Name" original="Disability Insurance Premium">Prêmio de Seguro por Invalidez</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="464" trl="Y">
+  <value column="Name" original="Disability Insurance Premium Owners">Prêmio de Seguro por Invalidez - Sócios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="465" trl="Y">
+  <value column="Name" original="Disability Insurance Employee Contribution">Seguro por Invalidez - Contribuição do Funcionário</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="466" trl="Y">
+  <value column="Name" original="Life Insurance Premium">Prêmio de Seguro de Vida</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="467" trl="Y">
+  <value column="Name" original="Life Insurance Premium Owners">Prêmio de Seguro de Vida - Sócios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="468" trl="Y">
+  <value column="Name" original="Life Insurance Employee Contribution">Seguro de Vida - Contribuição do Funcionário</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="469" trl="Y">
+  <value column="Name" original="Other Benefit Expense">Despesa com Outros Benefícios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="470" trl="Y">
+  <value column="Name" original="Staff Gifts &amp; Perks" xml:space="preserve"><![CDATA[Brindes e Benefícios aos Funcionários]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="471" trl="Y">
+  <value column="Name" original="Staff Picnic (100% Deductible)">Confraternização de Funcionários (100% Dedutível)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="472" trl="Y">
+  <value column="Name" original="Payroll Processing Expense">Despesa com Processamento da Folha de Pagamento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="473" trl="Y">
+  <value column="Name" original="Occupancy Cost">Custo de Ocupação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="474" trl="Y">
+  <value column="Name" original="Rent Expense">Despesa com Aluguel</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="475" trl="Y">
+  <value column="Name" original="Utilities">Água, Energia e Gás</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="476" trl="Y">
+  <value column="Name" original="Other Occupancy Costs">Outros Custos de Ocupação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="477" trl="Y">
+  <value column="Name" original="Advertising">Publicidade</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="478" trl="Y">
+  <value column="Name" original="Media Advertising">Publicidade em Mídia</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="479" trl="Y">
+  <value column="Name" original="Catalog, Newsletter">Catálogo, Boletim Informativo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="480" trl="Y">
+  <value column="Name" original="Events">Eventos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="481" trl="Y">
+  <value column="Name" original="Web Hosting">Hospedagem Web</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="482" trl="Y">
+  <value column="Name" original="Other Advertising &amp; Promotion" xml:space="preserve"><![CDATA[Outras Despesas de Publicidade e Promoção]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="483" trl="Y">
+  <value column="Name" original="Vendor Advertising Allowances">Verbas de Publicidade de Fornecedores</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="484" trl="Y">
+  <value column="Name" original="Telephone">Telefone</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="485" trl="Y">
+  <value column="Name" original="Mobile Telephone">Telefonia Móvel</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="486" trl="Y">
+  <value column="Name" original="Network Charges">Serviços de Rede</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="487" trl="Y">
+  <value column="Name" original="Legal Fees">Honorários Advocatícios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="488" trl="Y">
+  <value column="Name" original="Accounting Fees">Honorários Contábeis</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="489" trl="Y">
+  <value column="Name" original="Inventory Verification Fees">Honorários de Verificação de Estoque</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="490" trl="Y">
+  <value column="Name" original="Stationary &amp; Supplies" xml:space="preserve"><![CDATA[Papelaria e Suprimentos]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="491" trl="Y">
+  <value column="Name" original="Stationary &amp; Supplies - Office Use" xml:space="preserve"><![CDATA[Papelaria e Suprimentos - Uso em Escritório]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="492" trl="Y">
+  <value column="Name" original="Janitorial Supplies">Material de Limpeza</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="493" trl="Y">
+  <value column="Name" original="Data Processing Supplies">Suprimentos de Informática</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="494" trl="Y">
+  <value column="Name" original="Data Processing Rental">Aluguel de Equipamentos de Informática</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="495" trl="Y">
+  <value column="Name" original="Outside Computer Services">Serviços de Informática Terceirizados</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="496" trl="Y">
+  <value column="Name" original="Depreciation Expense">Despesa de Depreciação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="497" trl="Y">
+  <value column="Name" original="Building Depreciation">Depreciação de Edifícios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="498" trl="Y">
+  <value column="Name" original="Leasehold Improvement Depreciation">Depreciação de Benfeitorias em Imóveis de Terceiros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="499" trl="Y">
+  <value column="Name" original="Furniture Depreciation">Depreciação de Móveis</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="500" trl="Y">
+  <value column="Name" original="Fixtures Depreciation">Depreciação de Instalações</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="501" trl="Y">
+  <value column="Name" original="Equipment Depreciation">Depreciação de Equipamentos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="502" trl="Y">
+  <value column="Name" original="Data Processing Equipment Depreciation">Depreciação de Equipamentos de Informática</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="503" trl="Y">
+  <value column="Name" original="Software Depreciation">Depreciação de Software</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="504" trl="Y">
+  <value column="Name" original="Business Travel">Viagens a Negócios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="505" trl="Y">
+  <value column="Name" original="Business Travel - Auto Reimbursement">Viagens a Negócios - Reembolso de Veículo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="506" trl="Y">
+  <value column="Name" original="Assets">Ativo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="507" trl="Y">
+  <value column="Name" original="Cash">Disponibilidades</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="508" trl="Y">
+  <value column="Name" original="Checking Account">Conta Corrente</value>
+  <value column="Description" original="Bank Asset">Banco (Ativo)</value>
+ </row>
+ <row id="509" trl="Y">
+  <value column="Name" original="Checking In-Transfer">Conta Corrente - Transferências em Trânsito</value>
+  <value column="Description" original="Bank transactions in transit">Transações bancárias em trânsito</value>
+ </row>
+ <row id="510" trl="Y">
+  <value column="Name" original="Checking Unidentified Receipts">Conta Corrente - Recebimentos não Identificados</value>
+  <value column="Description" original="Receipts from unidentified customer">Recebimentos de clientes não identificados</value>
+ </row>
+ <row id="511" trl="Y">
+  <value column="Name" original="Checking Unallocated Receipts">Conta Corrente - Recebimentos não Alocados</value>
+  <value column="Description" original="Received, unallocated payments">Pagamentos recebidos e não alocados</value>
+ </row>
+ <row id="512" trl="Y">
+  <value column="Name" original="Checking Account 2">Conta Corrente 2</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="513" trl="Y">
+  <value column="Name" original="Savings Account">Conta Poupança</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="514" trl="Y">
+  <value column="Name" original="Cash in Registers">Numerário em Caixas Registradoras</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="515" trl="Y">
+  <value column="Name" original="Petty Cash">Fundo Fixo de Caixa</value>
+  <value column="Description" original="Cash Book Asset">Disponibilidade Monetária</value>
+ </row>
+ <row id="516" trl="Y">
+  <value column="Name" original="Petty Cash In-Transfer">Fundo Fixo de Caixa - Transferências</value>
+  <value column="Description" original="Cash Book Transfer">Transferência de Livro Caixa</value>
+ </row>
+ <row id="517" trl="Y">
+  <value column="Name" original="Accounts Receivable">Contas a Receber</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="518" trl="Y">
+  <value column="Name" original="Accounts Receivable - Trade">Contas a Receber - Clientes</value>
+  <value column="Description" original="Accounts Receivables">Contas a receber</value>
+ </row>
+ <row id="519" trl="Y">
+  <value column="Name" original="A/R Non Sufficient Funds Returned Checks">Contas a Receber - Cheques Devolvidos por Insuficiência de Fundos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="520" trl="Y">
+  <value column="Name" original="A/R Trade Allowance for Bad Debit">Contas a Receber - Provisão para Devedores Duvidosos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="521" trl="Y">
+  <value column="Name" original="Not invoiced receivables">Valores a Receber não Faturados</value>
+  <value column="Description" original="We delivered but have not invoiced yet">Entregamos, mas ainda não faturamos</value>
+ </row>
+ <row id="522" trl="Y">
+  <value column="Name" original="Credit Card in Transit">Cartão de Crédito em Trânsito</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="523" trl="Y">
+  <value column="Name" original="In Transit A/R Amex">Contas a Receber em Trânsito - Amex</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="524" trl="Y">
+  <value column="Name" original="In Transit A/R Master Card">Contas a Receber em Trânsito - Master Card</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="525" trl="Y">
+  <value column="Name" original="In Transit A/R Visa">Contas a Receber em Trânsito - Visa</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="526" trl="Y">
+  <value column="Name" original="A/R Credit Cards Allowance for Bad Debit">Contas a Receber Cartões - Provisão para Devedores Duvidosos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="527" trl="Y">
+  <value column="Name" original="Vendor Allowances Receivable">Verbas de Fornecedores a Receber</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="528" trl="Y">
+  <value column="Name" original="Loans Receivable">Empréstimos a Receber</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="529" trl="Y">
+  <value column="Name" original="Loans Receivable Employees">Empréstimos a Receber - Funcionários</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="530" trl="Y">
+  <value column="Name" original="Loans Receivable Others">Empréstimos a Receber - Outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="531" trl="Y">
+  <value column="Name" original="Prepayments">Adiantamentos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="532" trl="Y">
+  <value column="Name" original="Vendor prepayment">Adiantamento a Fornecedores</value>
+  <value column="Description" original="Prepayments for future expense">Adiantamentos para despesas futuras</value>
+ </row>
+ <row id="533" trl="Y">
+  <value column="Name" original="Employee Expense Prepayment">Adiantamento de Despesas a Funcionários</value>
+  <value column="Description" original="Expense advances">Adiantamentos de despesas</value>
+ </row>
+ <row id="534" trl="Y">
+  <value column="Name" original="Tax credit A/R">Impostos a Recuperar</value>
+  <value column="Description" original="Tax to be reimbursed - before tax declaration">Imposto a ser restituído - antes da declaração de impostos</value>
+ </row>
+ <row id="535" trl="Y">
+  <value column="Name" original="Tax receivables">Impostos a Receber</value>
+  <value column="Description" original="Tax to receive based on tax declaration">Imposto a receber com base na declaração de impostos</value>
+ </row>
+ <row id="536" trl="Y">
+  <value column="Name" original="A/R Miscellaneous">Contas a Receber - Diversos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="537" trl="Y">
+  <value column="Name" original="Investments">Investimentos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="538" trl="Y">
+  <value column="Name" original="US Government Obligations">Títulos Públicos dos EUA</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="539" trl="Y">
+  <value column="Name" original="Tax-Exempt Securities">Títulos Isentos de Impostos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="540" trl="Y">
+  <value column="Name" original="Other Investments">Outros Investimentos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="541" trl="Y">
+  <value column="Name" original="Inventory">Estoques</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="542" trl="Y">
+  <value column="Name" original="Prepaid Expenses, Deposits &amp; Other Current Assets" xml:space="preserve"><![CDATA[Despesas Antecipadas, Depósitos e Outros Ativos Circulantes]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="543" trl="Y">
+  <value column="Name" original="Prepaid Expenses">Despesas Antecipadas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="544" trl="Y">
+  <value column="Name" original="Prepaid Insurance">Seguros Antecipados</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="545" trl="Y">
+  <value column="Name" original="Prepaid Rent">Aluguéis Antecipados</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="546" trl="Y">
+  <value column="Name" original="Prepaid Interest">Juros Antecipados</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="547" trl="Y">
+  <value column="Name" original="Prepaid Others">Outras Despesas Antecipadas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="548" trl="Y">
+  <value column="Name" original="Deposits">Depósitos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="549" trl="Y">
+  <value column="Name" original="Deposit Rent">Depósito - Aluguel</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="550" trl="Y">
+  <value column="Name" original="Deposit Utilities">Depósito - Água, Energia e Gás</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="551" trl="Y">
+  <value column="Name" original="Deposit Others">Depósito - Outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="552" trl="Y">
+  <value column="Name" original="Other Current Assets">Outros Ativos Circulantes</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="553" trl="Y">
+  <value column="Name" original="Other Current Assets">Outros Ativos Circulantes</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="554" trl="Y">
+  <value column="Name" original="Land and Building">Terrenos e Edifícios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="555" trl="Y">
+  <value column="Name" original="Land">Terrenos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="556" trl="Y">
+  <value column="Name" original="Building">Edifícios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="557" trl="Y">
+  <value column="Name" original="Land Improvements">Benfeitorias em Terrenos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="558" trl="Y">
+  <value column="Name" original="Building Improvements">Benfeitorias em Edifícios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="559" trl="Y">
+  <value column="Name" original="Leasehold Improvements">Benfeitorias em Imóveis de Terceiros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="560" trl="Y">
+  <value column="Name" original="Furniture, Fixtures &amp; Equipment" xml:space="preserve"><![CDATA[Móveis, Instalações e Equipamentos]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="561" trl="Y">
+  <value column="Name" original="Furniture">Móveis</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="562" trl="Y">
+  <value column="Name" original="Fixtures">Instalações</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="563" trl="Y">
+  <value column="Name" original="Equipment">Equipamentos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="564" trl="Y">
+  <value column="Name" original="Vehicles">Veículos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="565" trl="Y">
+  <value column="Name" original="Data Processing Equipment">Equipamentos de Informática</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="566" trl="Y">
+  <value column="Name" original="Software">Software</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="567" trl="Y">
+  <value column="Name" original="Project asset">Ativo de Projeto</value>
+  <value column="Description" original="Created Asset">Ativo criado</value>
+ </row>
+ <row id="568" trl="Y">
+  <value column="Name" original="Project WIP">Projeto em Andamento</value>
+  <value column="Description" original="Asset Work in Progress">Ativo em andamento</value>
+ </row>
+ <row id="569" trl="Y">
+  <value column="Name" original="Building Accumulated Depreciation">Depreciação Acumulada de Edifícios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="570" trl="Y">
+  <value column="Name" original="Land Improvement Accumulated Depreciation">Depreciação Acumulada de Benfeitorias em Terrenos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="571" trl="Y">
+  <value column="Name" original="Building Improvement Accumulated Depreciation">Depreciação Acumulada de Benfeitorias em Edifícios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="572" trl="Y">
+  <value column="Name" original="Furniture Accumulated Depreciation">Depreciação Acumulada de Móveis</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="573" trl="Y">
+  <value column="Name" original="Fixtures Accumulated Depreciation">Depreciação Acumulada de Instalações</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="574" trl="Y">
+  <value column="Name" original="Equipment Accumulated Depreciation">Depreciação Acumulada de Equipamentos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="575" trl="Y">
+  <value column="Name" original="Vehicles Accumulated Depreciation">Depreciação Acumulada de Veículos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="576" trl="Y">
+  <value column="Name" original="Data Processing Equipment Accumulated Depreciation">Depreciação Acumulada de Equipamentos de Informática</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="577" trl="Y">
+  <value column="Name" original="Other Assets">Outros Ativos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="578" trl="Y">
+  <value column="Name" original="Intangible Assets">Ativos Intangíveis</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="579" trl="Y">
+  <value column="Name" original="Amortizable Assets">Ativos Amortizáveis</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="580" trl="Y">
+  <value column="Name" original="Customer Lists">Carteira de Clientes</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="581" trl="Y">
+  <value column="Name" original="Other Intangible Assets">Outros Ativos Intangíveis</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="582" trl="Y">
+  <value column="Name" original="Accumulated Amortization">Amortização Acumulada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="583" trl="Y">
+  <value column="Name" original="Other Assets">Outros Ativos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="584" trl="Y">
+  <value column="Name" original="Liabilities">Passivo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="585" trl="Y">
+  <value column="Name" original="Accounts Payables">Contas a Pagar</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="586" trl="Y">
+  <value column="Name" original="Accounts Payables Trade">Contas a Pagar - Fornecedores</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="587" trl="Y">
+  <value column="Name" original="Not invoiced receipts">Recebimentos não Faturados</value>
+  <value column="Description" original="Received products/services from vendors, but not invoiced">Produtos ou serviços recebidos de fornecedores e ainda não faturados</value>
+ </row>
+ <row id="588" trl="Y">
+  <value column="Name" original="Accounts Payable Services">Contas a Pagar - Serviços</value>
+  <value column="Description" original="Accounts Payables for non-product revenue">Contas a pagar não relacionadas a produtos</value>
+ </row>
+ <row id="589" trl="Y">
+  <value column="Name" original="Payment selection">Seleção de Pagamento</value>
+  <value column="Description" original="Selected A/P invoices for payment">Faturas a pagar selecionadas para pagamento</value>
+ </row>
+ <row id="590" trl="Y">
+  <value column="Name" original="Customer Payables">Obrigações com Clientes</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="591" trl="Y">
+  <value column="Name" original="Merchandise Credits Unredeemed">Créditos em Mercadorias não Resgatados</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="592" trl="Y">
+  <value column="Name" original="Gift Certificated Unredeemed">Vales-Presente não Resgatados</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="593" trl="Y">
+  <value column="Name" original="Special Order Deposits">Adiantamentos de Pedidos Especiais</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="594" trl="Y">
+  <value column="Name" original="Mail Order Deposits">Adiantamentos de Pedidos por Correio</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="595" trl="Y">
+  <value column="Name" original="Tax Payables">Impostos a Pagar</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="596" trl="Y">
+  <value column="Name" original="Tax due">Impostos Devidos</value>
+  <value column="Description" original="Tax to be paid - before tax declaration">Imposto a pagar - antes da declaração de impostos</value>
+ </row>
+ <row id="597" trl="Y">
+  <value column="Name" original="Tax liability">Obrigação Tributária</value>
+  <value column="Description" original="Tax to be paid based on tax declaration">Imposto a pagar com base na declaração de impostos</value>
+ </row>
+ <row id="598" trl="Y">
+  <value column="Name" original="Withholding (Tax)">Retenção (Imposto)</value>
+  <value column="Description" original="Withholding for 1099 or Quality Guarantee">Retenção para 1099 ou garantia de qualidade</value>
+ </row>
+ <row id="599" trl="Y">
+  <value column="Name" original="Withholding (Other)">Retenção (Outros)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="600" trl="Y">
+  <value column="Name" original="Intercompany Due To">Contas a Pagar entre Empresas</value>
+  <value column="Description" original="Default Payables account for intercompany trx">Conta padrão de contas a pagar para transações entre empresas</value>
+ </row>
+ <row id="601" trl="Y">
+  <value column="Name" original="Accrued Expenses">Despesas a Pagar</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="602" trl="Y">
+  <value column="Name" original="Accrued Payroll">Folha de Pagamento a Pagar</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="603" trl="Y">
+  <value column="Name" original="Payroll Withholdings">Retenções sobre a Folha de Pagamento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="604" trl="Y">
+  <value column="Name" original="Federal Tax Withholding">Retenção de Imposto Federal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="605" trl="Y">
+  <value column="Name" original="FICA Withholding">Retenção FICA</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="606" trl="Y">
+  <value column="Name" original="Medicare Withholding">Retenção Medicare</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="607" trl="Y">
+  <value column="Name" original="State Tax Withholding">Retenção de Imposto Estadual</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="608" trl="Y">
+  <value column="Name" original="Local Tax Withholding">Retenção de Imposto Municipal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="609" trl="Y">
+  <value column="Name" original="401k &amp; Pension Withholding" xml:space="preserve"><![CDATA[Retenção de 401k e Previdência]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="610" trl="Y">
+  <value column="Name" original="Garnishment Withholding">Retenção Judicial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="611" trl="Y">
+  <value column="Name" original="Miscellaneous Withholding">Retenções Diversas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="612" trl="Y">
+  <value column="Name" original="Accrued Payroll Taxes">Encargos sobre Folha a Pagar</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="613" trl="Y">
+  <value column="Name" original="Federal Unemployment Employers Contribution">Contribuição do Empregador ao Seguro-Desemprego Federal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="614" trl="Y">
+  <value column="Name" original="State Unemployment Employers Contribution">Contribuição do Empregador ao Seguro-Desemprego Estadual</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="615" trl="Y">
+  <value column="Name" original="Sales Tax Collected">Imposto sobre Vendas a Recolher</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="616" trl="Y">
+  <value column="Name" original="Accrued Retirement Plan Expense">Despesa de Plano de Previdência a Pagar</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="617" trl="Y">
+  <value column="Name" original="Accrued Expenses Others">Outras Despesas a Pagar</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="618" trl="Y">
+  <value column="Name" original="Short Term Obligation">Obrigações de Curto Prazo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="619" trl="Y">
+  <value column="Name" original="Current Portion of Long Term Debt">Parcela Circulante da Dívida de Longo Prazo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="620" trl="Y">
+  <value column="Name" original="Long Term Liabilities">Passivo Não Circulante</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="621" trl="Y">
+  <value column="Name" original="Mortgage">Financiamento Imobiliário</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="622" trl="Y">
+  <value column="Name" original="Loan from Owner/Stockholder">Empréstimo de Sócios/Acionistas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="623" trl="Y">
+  <value column="Name" original="Other Long Term Obligation">Outras Obrigações de Longo Prazo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="624" trl="Y">
+  <value column="Name" original="Owner's Equity/Net Worth">Patrimônio Líquido</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="625" trl="Y">
+  <value column="Name" original="Capital">Capital</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="626" trl="Y">
+  <value column="Name" original="Capital/Common Stock">Capital Social / Ações Ordinárias</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="627" trl="Y">
+  <value column="Name" original="Capital in excess of Par on Common Stock">Ágio na Emissão de Ações Ordinárias</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="628" trl="Y">
+  <value column="Name" original="Capital in excess of Par on Preferred Stock">Ágio na Emissão de Ações Preferenciais</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="629" trl="Y">
+  <value column="Name" original="Earnings">Resultados</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="630" trl="Y">
+  <value column="Name" original="Drawings">Retiradas de Sócios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="631" trl="Y">
+  <value column="Name" original="Retained Earnings">Lucros Acumulados</value>
+  <value column="Description" original="Year end processing to balance account (Income Summary)">Processamento de fim de exercício para equilibrar a conta (apuração do resultado)</value>
+ </row>
+ <row id="632" trl="Y">
+  <value column="Name" original="Sales">Vendas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="633" trl="Y">
+  <value column="Name" original="Services Revenue">Receita de Serviços</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="634" trl="Y">
+  <value column="Name" original="Direct Labor">Mão de Obra Direta</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="635" trl="Y">
+  <value column="Name" original="Purchase price variance Offset">Contrapartida da Variação do Preço de Compra</value>
+  <value column="Description" original="Offset Account for Purchase price variance (PPV)">Conta de contrapartida da variação do preço de compra (PPV)</value>
+ </row>
+ <row id="636" trl="Y">
+  <value column="Name" original="Wages Owners">Ordenados - Sócios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="637" trl="Y">
+  <value column="Name" original="Sick Pay">Licença Médica</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="638" trl="Y">
+  <value column="Name" original="FICA Tax">Imposto FICA</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="639" trl="Y">
+  <value column="Name" original="Health Insurance Premium">Prêmio de Plano de Saúde</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="640" trl="Y">
+  <value column="Name" original="Joint Advertising">Publicidade Cooperada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="641" trl="Y">
+  <value column="Name" original="Telephone and Communications">Telefone e Comunicações</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="642" trl="Y">
+  <value column="Name" original="Professional Services">Serviços Profissionais</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="643" trl="Y">
+  <value column="Name" original="Other Consulting Fees">Outros Honorários de Consultoria</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="644" trl="Y">
+  <value column="Name" original="Data Processing">Informática</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="645" trl="Y">
+  <value column="Name" original="Data Processing Other Expense">Outras Despesas de Informática</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="646" trl="Y">
+  <value column="Name" original="Building Improvement Depreciation">Depreciação de Benfeitorias em Edifícios</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="647" trl="Y">
+  <value column="Name" original="Vehicles Depreciation">Depreciação de Veículos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="648" trl="Y">
+  <value column="Name" original="Business Travel - Plane/Train/Taxi">Viagens a Negócios - Avião/Trem/Táxi</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="649" trl="Y">
+  <value column="Name" original="Business Travel - Hotel">Viagens a Negócios - Hotel</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="650" trl="Y">
+  <value column="Name" original="Business Meals &amp; Entertainment (50%)" xml:space="preserve"><![CDATA[Refeições e Entretenimento de Negócios (50%)]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="651" trl="Y">
+  <value column="Name" original="Staff Meeting Food (100%)">Alimentação em Reuniões de Equipe (100%)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="652" trl="Y">
+  <value column="Name" original="Employee expense">Despesa com Funcionários</value>
+  <value column="Description" original="Default employee expenses">Despesas padrão com funcionários</value>
+ </row>
+ <row id="653" trl="Y">
+  <value column="Name" original="Business Travel Other Expense">Viagens a Negócios - Outras Despesas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="654" trl="Y">
+  <value column="Name" original="Insurance">Seguro</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="655" trl="Y">
+  <value column="Name" original="Business Insurance">Seguro Empresarial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="656" trl="Y">
+  <value column="Name" original="Real Estate Insurance">Seguro de Imóveis</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="657" trl="Y">
+  <value column="Name" original="Vehicle Insurance">Seguro de Veículos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="658" trl="Y">
+  <value column="Name" original="Other Insurance">Outros Seguros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="659" trl="Y">
+  <value column="Name" original="Payment Processor Costs">Custos com Processadores de Pagamento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="660" trl="Y">
+  <value column="Name" original="Credit Card Service Charges">Taxas de Cartão de Crédito</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="661" trl="Y">
+  <value column="Name" original="Bank Service Charges">Tarifas Bancárias</value>
+  <value column="Description" original="Bank expenses">Despesas bancárias</value>
+ </row>
+ <row id="662" trl="Y">
+  <value column="Name" original="Other Payment Service Charges">Outras Taxas de Serviços de Pagamento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="663" trl="Y">
+  <value column="Name" original="Dues &amp; Subscription" xml:space="preserve"><![CDATA[Contribuições e Assinaturas]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="664" trl="Y">
+  <value column="Name" original="Association Membership Fees">Contribuições Associativas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="665" trl="Y">
+  <value column="Name" original="Subscription Fees">Assinaturas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="666" trl="Y">
+  <value column="Name" original="Office Expense">Despesas de Escritório</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="667" trl="Y">
+  <value column="Name" original="Office Expense">Despesas de Escritório</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="668" trl="Y">
+  <value column="Name" original="Posting &amp; Shipping" xml:space="preserve"><![CDATA[Postagem e Frete]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="669" trl="Y">
+  <value column="Name" original="Postage Expense">Despesa com Postagem</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="670" trl="Y">
+  <value column="Name" original="Customer Postage Fees Received">Taxas de Postagem Recebidas de Clientes</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="671" trl="Y">
+  <value column="Name" original="Shipping Expenses">Despesas com Frete</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="672" trl="Y">
+  <value column="Name" original="Taxes and Licenses">Impostos e Licenças</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="673" trl="Y">
+  <value column="Name" original="Inventory &amp; Use Taxes" xml:space="preserve"><![CDATA[Impostos sobre Estoque e Consumo]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="674" trl="Y">
+  <value column="Name" original="Real Estate Taxes">Impostos sobre Imóveis</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="675" trl="Y">
+  <value column="Name" original="Business Licenses &amp; Fees" xml:space="preserve"><![CDATA[Licenças e Taxas Empresariais]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="676" trl="Y">
+  <value column="Name" original="Education">Educação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="677" trl="Y">
+  <value column="Name" original="Education Travel">Educação - Viagens</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="678" trl="Y">
+  <value column="Name" original="Education Meals &amp; Entertainment (50%)" xml:space="preserve"><![CDATA[Educação - Refeições e Entretenimento (50%)]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="679" trl="Y">
+  <value column="Name" original="Education Other">Educação - Outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="680" trl="Y">
+  <value column="Name" original="Office Equipment Rent">Aluguel de Equipamentos de Escritório</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="681" trl="Y">
+  <value column="Name" original="Store Equipment Rent">Aluguel de Equipamentos da Loja</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="682" trl="Y">
+  <value column="Name" original="Repairs &amp; Maintenance" xml:space="preserve"><![CDATA[Reparos e Manutenção]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="683" trl="Y">
+  <value column="Name" original="Building Repairs &amp; Maintenance" xml:space="preserve"><![CDATA[Reparos e Manutenção de Edifícios]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="684" trl="Y">
+  <value column="Name" original="Furniture, Equipment Repairs &amp; Maintenance" xml:space="preserve"><![CDATA[Reparos e Manutenção de Móveis e Equipamentos]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="685" trl="Y">
+  <value column="Name" original="Software Maintenance">Manutenção de Software</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="686" trl="Y">
+  <value column="Name" original="Vehicle Repairs &amp; Maintenance" xml:space="preserve"><![CDATA[Reparos e Manutenção de Veículos]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="687" trl="Y">
+  <value column="Name" original="Repairs &amp; Maintenance Other" xml:space="preserve"><![CDATA[Reparos e Manutenção - Outros]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="688" trl="Y">
+  <value column="Name" original="Other Operating Expenses">Outras Despesas Operacionais</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="689" trl="Y">
+  <value column="Name" original="Collection Expense">Despesa com Cobrança</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="690" trl="Y">
+  <value column="Name" original="Petty Cash Over/Short">Sobras e Faltas de Caixa</value>
+  <value column="Description" original="Petty Cash Differences">Diferenças do fundo fixo de caixa</value>
+ </row>
+ <row id="691" trl="Y">
+  <value column="Name" original="Recruitment Costs">Custos de Recrutamento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="692" trl="Y">
+  <value column="Name" original="Vehicle Expense">Despesa com Veículos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="693" trl="Y">
+  <value column="Name" original="Amortization Expense">Despesa de Amortização</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="694" trl="Y">
+  <value column="Name" original="Franchise Fee / Royalty Fees">Taxa de Franquia / Royalties</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="695" trl="Y">
+  <value column="Name" original="Miscellaneous Expense">Despesas Diversas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="696" trl="Y">
+  <value column="Name" original="Default/Suspense Accounts">Contas Padrão e Transitórias</value>
+  <value column="Description" original="Temporary accounts - balance should be zero">Contas temporárias - o saldo deve ser zero</value>
+ </row>
+ <row id="697" trl="Y">
+  <value column="Name" original="Default account">Conta Padrão</value>
+  <value column="Description" original="Default Account (if no other account is defined) V1.1">Conta padrão (usada quando nenhuma outra conta é definida) V1.1</value>
+ </row>
+ <row id="698" trl="Y">
+  <value column="Name" original="Suspense balancing">Transitória de Balanceamento</value>
+  <value column="Description" original="Difference to make journal balance in source currency - needs to be solved">Diferença para equilibrar o lançamento na moeda de origem - precisa ser resolvida</value>
+ </row>
+ <row id="699" trl="Y">
+  <value column="Name" original="Suspense error">Transitória de Erro</value>
+  <value column="Description" original="Import did not find account - needs to be solved">A importação não encontrou a conta - precisa ser resolvida</value>
+ </row>
+ <row id="700" trl="Y">
+  <value column="Name" original="Cash book expense">Despesa do Livro Caixa</value>
+  <value column="Description" original="Default other expense for petty cash transactions">Outras despesas padrão das transações do fundo fixo de caixa</value>
+ </row>
+ <row id="701" trl="Y">
+  <value column="Name" original="Cash book receipts">Recebimentos do Livro Caixa</value>
+  <value column="Description" original="Default other revenue for petty cash transactions">Outras receitas padrão das transações do fundo fixo de caixa</value>
+ </row>
+ <row id="702" trl="Y">
+  <value column="Name" original="Charge expense">Despesa de Referência Contábil</value>
+  <value column="Description" original="Default other expense">Outras despesas padrão</value>
+ </row>
+ <row id="703" trl="Y">
+  <value column="Name" original="Charge revenue">Receita de Referência Contábil</value>
+  <value column="Description" original="Default other revenue">Outras receitas padrão</value>
+ </row>
+ <row id="704" trl="Y">
+  <value column="Name" original="Other Income">Outras Receitas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="705" trl="Y">
+  <value column="Name" original="Interest Income">Receita de Juros</value>
+  <value column="Description" original="Bank interest revenue">Receita de juros bancários</value>
+ </row>
+ <row id="706" trl="Y">
+  <value column="Name" original="Dividend Income">Receita de Dividendos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="707" trl="Y">
+  <value column="Name" original="Rental Income">Receita de Aluguéis</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="708" trl="Y">
+  <value column="Name" original="Sales Tax Commission">Comissão sobre Imposto de Vendas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="709" trl="Y">
+  <value column="Name" original="Currency Gain">Ganho Cambial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="710" trl="Y">
+  <value column="Name" original="Bank revaluation gain">Ganho de Reavaliação Bancária</value>
+  <value column="Description" original="Foreign currency bank account gain">Ganho em conta bancária em moeda estrangeira</value>
+ </row>
+ <row id="711" trl="Y">
+  <value column="Name" original="Bank settlement gain">Ganho na Liquidação Bancária</value>
+  <value column="Description" original="Difference between payment and bank account currency">Diferença entre a moeda do pagamento e a da conta bancária</value>
+ </row>
+ <row id="712" trl="Y">
+  <value column="Name" original="Unrealized gain">Ganho não Realizado</value>
+  <value column="Description" original="Difference between foreign currency receivables/payables and current rate">Diferença entre valores a receber ou a pagar em moeda estrangeira e a taxa atual</value>
+ </row>
+ <row id="713" trl="Y">
+  <value column="Name" original="Capital Gains Income">Receita de Ganho de Capital</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="714" trl="Y">
+  <value column="Name" original="Fixed Asset Sale Gain">Ganho na Venda de Imobilizado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="715" trl="Y">
+  <value column="Name" original="Other Income">Outras Receitas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="716" trl="Y">
+  <value column="Name" original="Other Expense">Outras Despesas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="717" trl="Y">
+  <value column="Name" original="Interest Expense">Despesa de Juros</value>
+  <value column="Description" original="Bank interest expense">Despesa de juros bancários</value>
+ </row>
+ <row id="718" trl="Y">
+  <value column="Name" original="Mortgage Interest Expense">Despesa de Juros de Financiamento Imobiliário</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="719" trl="Y">
+  <value column="Name" original="Charitable Contributions">Doações e Contribuições</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="720" trl="Y">
+  <value column="Name" original="Currency Loss">Perda Cambial</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="721" trl="Y">
+  <value column="Name" original="Bank revaluation loss">Perda de Reavaliação Bancária</value>
+  <value column="Description" original="Foreign currency bank account loss">Perda em conta bancária em moeda estrangeira</value>
+ </row>
+ <row id="722" trl="Y">
+  <value column="Name" original="Unrealized loss">Perda não Realizada</value>
+  <value column="Description" original="Difference between foreign currency receivables/payables and current rate">Diferença entre valores a receber ou a pagar em moeda estrangeira e a taxa atual</value>
+ </row>
+ <row id="723" trl="Y">
+  <value column="Name" original="Realized loss">Perda Realizada</value>
+  <value column="Description" original="Difference between invoice and payment currency">Diferença entre a moeda da fatura e a do pagamento</value>
+ </row>
+ <row id="724" trl="Y">
+  <value column="Name" original="Currency balancing">Balanceamento Cambial</value>
+  <value column="Description" original="Rounding difference to make journal balance in accounting currency">Diferença de arredondamento para equilibrar o lançamento na moeda contábil</value>
+ </row>
+ <row id="725" trl="Y">
+  <value column="Name" original="Capital Gains Loss">Perda de Capital</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="726" trl="Y">
+  <value column="Name" original="Fixed Asset Sale Loss">Perda na Venda de Imobilizado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="727" trl="Y">
+  <value column="Name" original="Other Expense">Outras Despesas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="728" trl="Y">
+  <value column="Name" original="Income Tax &amp; Summary" xml:space="preserve"><![CDATA[Imposto de Renda e Apuração do Resultado]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="729" trl="Y">
+  <value column="Name" original="State Income Tax">Imposto de Renda Estadual</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="730" trl="Y">
+  <value column="Name" original="Local Income Tax">Imposto de Renda Municipal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="731" trl="Y">
+  <value column="Name" original="Costing">Custeio</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="732" trl="Y">
+  <value column="Name" original="Profit Center Costing Distribution">Distribuição de Custeio por Centro de Lucro</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="733" trl="Y">
+  <value column="Name" original="Project Costing Distribution">Distribuição de Custeio por Projeto</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="734" trl="Y">
+  <value column="Name" original="Commitment Accounting">Contabilidade de Comprometimento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="735" trl="Y">
+  <value column="Name" original="PO Encumbrance">Reserva de Pedido de Compra</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="736" trl="Y">
+  <value column="Name" original="PO Commitment">Comprometimento de Pedido de Compra</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="737" trl="Y">
+  <value column="Name" original="SO Future Revenue">Receita Futura de Pedido de Venda</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="738" trl="Y">
+  <value column="Name" original="In Transit A/R ATM Cards">Contas a Receber em Trânsito - Cartões de Débito</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="739" trl="Y">
+  <value column="Name" original="Loans Receivable Owners/Shareholders">Empréstimos a Receber - Sócios/Acionistas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="740" trl="Y">
+  <value column="Name" original="Tax receivables">Impostos a Receber</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="741" trl="Y">
+  <value column="Name" original="Intercompany Due From">Contas a Receber entre Empresas</value>
+  <value column="Description" original="Default Receivables account for intercompany trx">Conta padrão de contas a receber para transações entre empresas</value>
+ </row>
+ <row id="742" trl="Y">
+  <value column="Name" original="Product asset">Ativo de Produto</value>
+  <value column="Description" original="Product Inventory Account">Conta de estoque do produto</value>
+ </row>
+ <row id="743" trl="Y">
+  <value column="Name" original="Project Assets">Ativos de Projeto</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="744" trl="Y">
+  <value column="Name" original="Accumulated Depreciation">Depreciação Acumulada</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="745" trl="Y">
+  <value column="Name" original="Leasehold Improvement Accumulated Depreciation">Depreciação Acumulada de Benfeitorias em Imóveis de Terceiros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="746" trl="Y">
+  <value column="Name" original="Software Accumulated Depreciation">Depreciação Acumulada de Software</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="747" trl="Y">
+  <value column="Name" original="Goodwill">Ágio por Rentabilidade Futura</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="748" trl="Y">
+  <value column="Name" original="Cash Surrender Value of Life Insurance">Valor de Resgate de Seguro de Vida</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="749" trl="Y">
+  <value column="Name" original="Accounts Payable Trade">Contas a Pagar - Fornecedores</value>
+  <value column="Description" original="Accounts Payables">Contas a pagar</value>
+ </row>
+ <row id="750" trl="Y">
+  <value column="Name" original="Customer Prepayments">Adiantamentos de Clientes</value>
+  <value column="Description" original="Prepayments for future revenue">Adiantamentos para receitas futuras</value>
+ </row>
+ <row id="751" trl="Y">
+  <value column="Name" original="FICA Employers Contribution">Contribuição do Empregador ao FICA</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="752" trl="Y">
+  <value column="Name" original="Accrued Use Tax">Imposto sobre Consumo a Pagar</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="753" trl="Y">
+  <value column="Name" original="Current Note Payables">Notas Promissórias a Pagar - Circulante</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="754" trl="Y">
+  <value column="Name" original="Long Term Obligation">Obrigações de Longo Prazo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="755" trl="Y">
+  <value column="Name" original="Current Portion of Long Term Debt">Parcela Circulante da Dívida de Longo Prazo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="756" trl="Y">
+  <value column="Name" original="Preferred Stock">Ações Preferenciais</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="757" trl="Y">
+  <value column="Name" original="Dividends">Dividendos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="758" trl="Y">
+  <value column="Name" original="Trade Revenue">Receita de Vendas</value>
+  <value column="Description" original="Default Product or Service revenue">Receita padrão de produtos ou serviços</value>
+ </row>
+ <row id="759" trl="Y">
+  <value column="Name" original="Customer Package Expense">Despesa com Embalagem para Clientes</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="760" trl="Y">
+  <value column="Name" original="Tax expense">Despesa com Impostos</value>
+  <value column="Description" original="Sales Tax paid to Vendors">Imposto sobre vendas pago a fornecedores</value>
+ </row>
+ <row id="761" trl="Y">
+  <value column="Name" original="Education Course Fees">Educação - Taxas de Cursos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="762" trl="Y">
+  <value column="Name" original="Equipment Rent">Aluguel de Equipamentos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="763" trl="Y">
+  <value column="Name" original="Equipment Rent Other">Aluguel de Equipamentos - Outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="764" trl="Y">
+  <value column="Name" original="Data Processing Repairs &amp; Maintenance" xml:space="preserve"><![CDATA[Reparos e Manutenção de Informática]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="765" trl="Y">
+  <value column="Name" original="Bad Debts Write-off">Baixa de Créditos Incobráveis</value>
+  <value column="Description" original="Receivables write-off - bad debt">Baixa de contas a receber - créditos incobráveis</value>
+ </row>
+ <row id="766" trl="Y">
+  <value column="Name" original="Penalties">Multas</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="767" trl="Y">
+  <value column="Name" original="Realized gain">Ganho Realizado</value>
+  <value column="Description" original="Difference between invoice and payment currency">Diferença entre a moeda da fatura e a do pagamento</value>
+ </row>
+ <row id="768" trl="Y">
+  <value column="Name" original="Uninsured Casualty Loss">Perdas por Sinistro não Segurado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="769" trl="Y">
+  <value column="Name" original="Bank settlement loss">Perda na Liquidação Bancária</value>
+  <value column="Description" original="Difference between payment and bank account currency">Diferença entre a moeda do pagamento e a da conta bancária</value>
+ </row>
+ <row id="770" trl="Y">
+  <value column="Name" original="Federal Income Tax">Imposto de Renda Federal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="771" trl="Y">
+  <value column="Name" original="Income Summary">Apuração do Resultado do Exercício</value>
+  <value column="Description" original="Year end processing to balance account (Retained Earnings)">Processamento de fim de exercício para equilibrar a conta (lucros acumulados)</value>
+ </row>
+ <row id="772" trl="Y">
+  <value column="Name" original="Wages">Ordenados</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="773" trl="Y">
+  <value column="Name" original="Land Improvement Depreciation">Depreciação de Benfeitorias em Terrenos</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="774" trl="Y">
+  <value column="Name" original="Accounts Receivable - Trade">Contas a Receber - Clientes</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="775" trl="Y">
+  <value column="Name" original="Licenses &amp; Fees - Other" xml:space="preserve"><![CDATA[Licenças e Taxas - Outros]]></value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="776" trl="Y">
+  <value column="Name" original="General Trade Inventory">Estoque Geral de Mercadorias</value>
+  <value column="Description" original="Inventory Account">Conta de estoque</value>
+ </row>
+ <row id="777" trl="Y">
+  <value column="Name" original="Medicare Employers Contribution">Contribuição do Empregador ao Medicare</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="778" trl="Y">
+  <value column="Name" original="Commissions Paid">Comissões Pagas</value>
+  <value column="Description" original="Commissions Paid">Comissões Pagas</value>
+ </row>
+ <row id="780" trl="Y">
+  <value column="Name" original="Inventory Clearing">Transitória de Estoque</value>
+  <value column="Description" original="Default Product costs (I.e. on inventory)">Custo padrão de produtos controlados em estoque</value>
+ </row>
+ <row id="781" trl="Y">
+  <value column="Name" original="Cost Adjustments">Ajustes de Custo</value>
+  <value column="Description" original="Product Cost Adjustments">Ajustes de custo de produtos</value>
+ </row>
+ <row id="782" trl="Y">
+  <value column="Name" original="Accounts Receivable Services - Trade">Contas a Receber - Serviços</value>
+  <value column="Description" original="Accounts Receivables for Services">Contas a receber de serviços</value>
+ </row>
+ <row id="783" trl="Y">
+  <value column="Name" original="7-Expenses">7-Despesas</value>
+  <value column="Description" original="7-Expenses">7-Despesas</value>
+ </row>
+ <row id="50000" trl="Y">
+  <value column="Name" original="SO Commitment">Comprometimento de Pedido de Venda</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="50001" trl="Y">
+  <value column="Name" original="Using Variance">Variação de Uso</value>
+  <value column="Description" original="Account for Using Variance">Conta de variação de uso</value>
+ </row>
+ <row id="50002" trl="Y">
+  <value column="Name" original="Method Change Variance">Variação por Mudança de Método</value>
+  <value column="Description" original="Account for Method Change Variance">Conta de variação por mudança de método</value>
+ </row>
+ <row id="50003" trl="Y">
+  <value column="Name" original="Rate Variance">Variação de Taxa</value>
+  <value column="Description" original="Account for Rate Variance">Conta de variação de taxa</value>
+ </row>
+ <row id="50004" trl="Y">
+  <value column="Name" original="Mix Variance">Variação de Mix</value>
+  <value column="Description" original="Account for Rate Variance">Conta de variação de mix</value>
+ </row>
+ <row id="50005" trl="Y">
+  <value column="Name" original="Work In Process">Produtos em Elaboração</value>
+  <value column="Description" original="Work In Process Account">Conta de produtos em elaboração</value>
+ </row>
+ <row id="50006" trl="Y">
+  <value column="Name" original="Floor Stock">Estoque de Chão de Fábrica</value>
+  <value column="Description" original="Floor Stock Account">Conta de estoque de chão de fábrica</value>
+ </row>
+ <row id="50007" trl="Y">
+  <value column="Name" original="Labor (Absorbed)">Mão de Obra (Absorvida)</value>
+  <value column="Description" original="Labor Absorbed account">Conta de mão de obra absorvida</value>
+ </row>
+ <row id="50008" trl="Y">
+  <value column="Name" original="Expense (Absorbed)">Despesa (Absorvida)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="50009" trl="Y">
+  <value column="Name" original="Burden (Absorbed)">Encargos Indiretos (Absorvidos)</value>
+  <value column="Description" original="Burden Absorbed account">Conta de encargos indiretos absorvidos</value>
+ </row>
+ <row id="50010" trl="Y">
+  <value column="Name" original="Cost Of Production">Custo de Produção</value>
+  <value column="Description" original="Cost Of Production Account">Conta de custo de produção</value>
+ </row>
+ <row id="50011" trl="Y">
+  <value column="Name" original="Outside Processing (Subcontract)">Industrialização por Terceiros</value>
+  <value column="Description" original="Outside Processing Account">Conta de industrialização por terceiros</value>
+ </row>
+ <row id="50014" trl="Y">
+  <value column="Name" original="Overhead (Applied)">Custos Indiretos (Aplicados)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="50016" trl="Y">
+  <value column="Name" original="Scrap">Sucata</value>
+  <value column="Description" original="Scrap Account">Conta de sucata</value>
+ </row>
+ <row id="50017" trl="Y">
+  <value column="Name" original="Average Cost Variance">Variação de Custo Médio</value>
+  <value column="Description" original="Account for Average Cost Variance">Conta de variação de custo médio</value>
+ </row>
+ <row id="200000" trl="Y">
+  <value column="Name" original="Landed Cost Clearing">Transitória de Custo de Entrada</value>
+  <value column="Description" original="Account for Landed Cost Clearing">Conta transitória de custo de entrada</value>
+ </row>
+</idempiereTrl>

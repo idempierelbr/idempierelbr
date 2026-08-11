@@ -65,6 +65,7 @@ import org.idempierelbr.nfe.beans.DadosNFE;
 import org.idempierelbr.nfe.beans.DeclaracaoDI;
 import org.idempierelbr.nfe.beans.DetPag;
 import org.idempierelbr.nfe.beans.DetalhesProdServBean;
+import org.idempierelbr.nfe.beans.DFeReferenciadoBean;
 import org.idempierelbr.nfe.beans.EnderDest;
 import org.idempierelbr.nfe.beans.EnderEmit;
 import org.idempierelbr.nfe.beans.FormasPagamentoNFEBean;
@@ -200,7 +201,7 @@ public class NFeXMLGenerator {
 		
 		/** Identificação do Ambiente (1 - Produção; 2 - Homologação) */
 		String tpAmb = docType.get_ValueAsString("LBR_NFeEnv");
-		boolean isHomolog = tpAmb.equals("2");
+		boolean isHomolog = tpAmb.equals(NFeUtil.ENV_HOMOLOGACAO);
 
 		/** Formato de impressão do DANFE (1 - Retrato; 2 - Paisagem) */
 		String tpImp = docType.get_ValueAsString("LBR_DANFEFormat");
@@ -234,15 +235,24 @@ public class NFeXMLGenerator {
 		 * 3 - NFe de ajuste
 		 */
 		String FinNFE = nf.getLBR_FinNFe();
-		
-		// Identificação NFE
-		if (FinNFE.equals("2"))
-		{
-			// TODO: refatorar
-			/*xstream.alias("NFref", NFERefenciadaBean.class);
-			nfereferencia.setRefNFe(nf.getlbr_NFRefere().getlbr_NFeID());
-			identNFe.setNFref(nfereferencia);*/
-		}
+
+		/**
+		 * Nota de Débito (finNFe=6) e Nota de Crédito (finNFe=5) da Reforma
+		 * Tributária (NT 2025.002): documentos de ajuste que destacam apenas
+		 * IBS/CBS e referenciam a NF-e original na aba Documento Fiscal Referenciado.
+		 */
+		boolean isDebCredNFe = "5".equals(FinNFE) || "6".equals(FinNFE);
+		// Nível de referência à NF-e original difere por finalidade (confirmado em homologação SEFAZ):
+		//   Nota de Débito (6) -> por item (det/DFeReferenciado); Nota de Crédito (5) -> por nota (ide/NFref, rejeição 254)
+		boolean isDebNFe = "6".equals(FinNFE);
+		String tpNFDebito = nf.getLBR_tpNFDebito();
+		String tpNFCredito = nf.getLBR_tpNFCredito();
+
+		if ("6".equals(FinNFE) && (tpNFDebito == null || tpNFDebito.trim().isEmpty()))
+			return "@LBR_tpNFDebito@ @IsMandatory@";
+
+		if ("5".equals(FinNFE) && (tpNFCredito == null || tpNFCredito.trim().isEmpty()))
+			return "@LBR_tpNFCredito@ @IsMandatory@";
 		
 		/**
 		 * CRT
@@ -260,7 +270,7 @@ public class NFeXMLGenerator {
 		Timestamp datedoc = nf.getDateDoc();
 		Timestamp dateSaiEnt = nf.getDateDelivered();
 		String aamm = TextUtil.timeToString(datedoc, "yyMM");
-		String orgCPNJ = TextUtil.toNumeric(bpLinked2Org.get_ValueAsString("LBR_CNPJ"));
+		String orgCPNJ = TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ"));
 		String LBR_UnidentifiedCustomerCPF = TextUtil.formatStringCodes(nf.get_ValueAsString("LBR_UnidentifiedCustomerCPF"));
 
 		ChaveNFE chaveNFE = new ChaveNFE();
@@ -316,6 +326,10 @@ public class NFeXMLGenerator {
 		identNFe.setcDV("" + digitochave);
 		identNFe.setTpAmb(tpAmb);
 		identNFe.setFinNFe(FinNFE);
+		if ("6".equals(FinNFE))
+			identNFe.setTpNFDebito(tpNFDebito);
+		else if ("5".equals(FinNFE))
+			identNFe.setTpNFCredito(tpNFCredito);
 		identNFe.setIndFinal(nf.getLBR_NFeIndFinal());
 		identNFe.setIndPres(nf.getLBR_NFeIndPres());
 		identNFe.setIndIntermed(nf.getLBR_NFeIndIntermed());
@@ -323,6 +337,8 @@ public class NFeXMLGenerator {
 		identNFe.setVerProc(verProc);
 		
 		// BA. Documento Fiscal Referenciado
+		// Chave da NF-e referenciada, reutilizada no grupo det/DFeReferenciado das Notas de Débito/Crédito (NT 2025.002)
+		String refDFeChaveAcesso = null;
 		MLBRNotaFiscalDocRef[] docRefs = nf.getDocRefs();
 		
 		if (docRefs.length > 0) {
@@ -343,6 +359,9 @@ public class NFeXMLGenerator {
 						return "@Tab@ @LBR_DocRef@, @Field@ @invalid@: @LBR_NFeID@";
 					
 					nfRef.setRefNFe(docRef.getLBR_NFeID().trim());
+
+					if (refDFeChaveAcesso == null)
+						refDFeChaveAcesso = docRef.getLBR_NFeID().trim();
 				}
 				// Modelo 1/1A
 				else if (docRef.getLBR_NFeDocRefType().equals("2")) {
@@ -456,9 +475,15 @@ public class NFeXMLGenerator {
 					nfRef.setRefECF(refECF);
 				}
 				
-				identNFe.addNFref(nfRef);
+				// A Nota de Débito referencia por item (det/DFeReferenciado) e não usa ide/NFref (senão rejeição 1010).
+				// Nota de Crédito e demais finalidades referenciam por nota (ide/NFref; a de crédito exige, rejeição 254).
+				if (!isDebNFe)
+					identNFe.addNFref(nfRef);
 			}
 		}
+
+		if (isDebCredNFe && refDFeChaveAcesso == null)
+			return "@Tab@ @LBR_DocRef@: informe a NF-e referenciada (chave de acesso, tipo NF-e) para Nota de Débito/Crédito (finNFe 5/6)";
 
 		dados.setIde(identNFe);
 		
@@ -859,7 +884,14 @@ public class NFeXMLGenerator {
 				X_LBR_CEST cest = new X_LBR_CEST(ctx, icmsLines[0].get_ValueAsInt("LBR_CEST_ID"), trxName);
 				produtos.setCEST(TextUtil.toNumeric(cest.getValue()));
 			}
-			
+
+			// cBenef - Código de Benefício Fiscal
+			if (icmsLines.length > 0) {
+				String cBenef = icmsLines[0].get_ValueAsString("LBR_CBenef");
+				if (cBenef != null && !cBenef.trim().isEmpty())
+					produtos.setCBenef(cBenef.trim());
+			}
+
 			MLBRCFOP cfop = new MLBRCFOP(ctx, details.getLBR_CFOP_ID(), trxName);
 			String cfopName = cfop.getValue();
 			
@@ -987,10 +1019,18 @@ public class NFeXMLGenerator {
 			TributosInciBean impostos = new TributosInciBean();
 			String desc = RemoverAcentos.remover(TextUtil.removeEOL(details.get_ValueAsString("Memo")));
 			
+			DetalhesProdServBean detBean;
 			if (desc != null && !desc.equals(""))
-				dados.add(new DetalhesProdServBean(produtos, impostos, linhaNF++, desc));
+				detBean = new DetalhesProdServBean(produtos, impostos, linhaNF++, desc);
 			else
-				dados.add(new DetalhesProdServBean(produtos, impostos, linhaNF++));
+				detBean = new DetalhesProdServBean(produtos, impostos, linhaNF++);
+
+			// Nota de Débito (finNFe=6): referencia a NF-e original por item (NT 2025.002, rejeições 1038 e 1048).
+			// nItem aponta para o item de mesma posição na NF-e original (precisa existir na nota referenciada).
+			if (isDebNFe && refDFeChaveAcesso != null)
+				detBean.DFeReferenciado = new DFeReferenciadoBean(refDFeChaveAcesso, String.valueOf(detBean.nItem));
+
+			dados.add(detBean);
 
 			xstream.alias("det", DetalhesProdServBean.class);
 			xstream.useAttributeFor(DetalhesProdServBean.class, "nItem");
@@ -1006,6 +1046,9 @@ public class NFeXMLGenerator {
 			if (ibscbs != null)
 				impostos.setIBSCBS(ibscbs);
 			
+			// Nota de Débito/Crédito (finNFe 5/6): apenas IBS/CBS é permitido (NT 2025.002)
+			if (!isDebCredNFe)
+			{
 			// IS
 			ISBean is = null;
 			try {
@@ -1105,6 +1148,7 @@ public class NFeXMLGenerator {
 			}
 			if (icmsUFDest != null)
 				impostos.setICMSUFDest(icmsUFDest);
+			} // fim tributos não IBS/CBS (Nota de Débito/Crédito)
 		}
 		
 		// Total da NF-e
@@ -1435,7 +1479,7 @@ public class NFeXMLGenerator {
 				transgrupo.setxNome(RemoverAcentos.remover(transp.getM_Shipper().getName()));
 			} else {
 				if (bpTransp.get_ValueAsString("LBR_BPTypeBR").equals("PJ"))
-					transgrupo.setCNPJ(TextUtil.toNumeric(bpTransp.get_ValueAsString("LBR_CNPJ")));
+					transgrupo.setCNPJ(TextUtil.removeCNPJMask(bpTransp.get_ValueAsString("LBR_CNPJ")));
 				else if (bpTransp.get_ValueAsString("LBR_BPTypeBR").equals("PF"))
 					transgrupo.setCPF(TextUtil.toNumeric(bpTransp.get_ValueAsString("LBR_CPF")));
 				
@@ -1728,7 +1772,7 @@ public class NFeXMLGenerator {
 		// YB. Informações do Intermediador da Transação
 		if (nf.getLBR_BP_Intermed_ID() > 0) {
 			MBPartner intermed = new MBPartner(ctx, nf.getLBR_BP_Intermed_ID(), trxName);
-			String intermedCPNJ = TextUtil.toNumeric(intermed.get_ValueAsString("LBR_CNPJ"));
+			String intermedCPNJ = TextUtil.removeCNPJMask(intermed.get_ValueAsString("LBR_CNPJ"));
 			
 			if (intermedCPNJ != null && intermedCPNJ.length() > 0) {
 				InfIntermed infIntermed = new InfIntermed();
@@ -1941,27 +1985,23 @@ public class NFeXMLGenerator {
 		}
 		
 		// validate
-		try {
+		log.fine("Validating NF-e XML");
 
-			log.fine("Validating NF-e XML");
+		// validate xml size
+		String retValidacao = NFeUtil.validateSize(nfeXML.toString());
 
-			// validate xml size
-			String retValidacao = NFeUtil.validateSize(nfeXML.toString());
-			if (retValidacao != null && !retValidacao.isEmpty())
-				throw new Exception(retValidacao);
-
-			// validate xml content
+		// validate xml content
+		if (retValidacao == null || retValidacao.isEmpty())
 			retValidacao = ValidaXML.validaXML(nfeXML.toString());
-			if (retValidacao != null && !retValidacao.isEmpty())
-				throw new Exception(retValidacao);
-			
-		} catch (Exception e) {
 
-			// log
-			log.severe("Falha ao validar arquivo XML! Msg: " + e.getMessage());
+		if (retValidacao != null && !retValidacao.isEmpty()) {
 
-			// hrow exception
-			throw new Exception("Falha ao validar arquivo XML! Msg: " + e.getMessage());
+			// keep the rejected content available for diagnosis
+			log.fine("XML recusado na validação: " + nfeXML);
+
+			// throw exception detailing what must be corrected. the prefix stays on
+			// the first line: the window status bar only shows the start of the message
+			throw new AdempiereException("Nota Fiscal " + nf.getDocumentNo() + " - " + retValidacao);
 		}
 
 		// save nfe info

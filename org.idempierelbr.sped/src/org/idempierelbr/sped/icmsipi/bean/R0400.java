@@ -16,6 +16,7 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import org.adempiere.exceptions.AdempiereException;
 import org.idempierelbr.sped.annotation.XMLFieldProperties;
 import org.idempierelbr.sped.icmsipi.util.RegSped;
 
@@ -68,8 +69,8 @@ public class R0400 extends RegSped {
 			String codNat = bigInt.toString(16).substring(0, 10);
 			this.setCOD_NAT(codNat);
 		} catch (NoSuchAlgorithmException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//	Sem o código gerado o registro 0400 fica inconsistente
+			throw new AdempiereException("Não foi possível gerar o código da natureza da operação: " + dESCR_NAT, e);
 		}
 		DESCR_NAT = dESCR_NAT;
 	}

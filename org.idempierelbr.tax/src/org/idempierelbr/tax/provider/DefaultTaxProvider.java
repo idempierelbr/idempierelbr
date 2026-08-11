@@ -348,7 +348,11 @@ public class DefaultTaxProvider implements ITaxProvider {
 		
 		order.setTotalLines(totalLines);
 		order.setGrandTotal(grandTotal);
-		return true;	
+
+		// keep pay schedule in sync with the recalculated grand total
+		LBRPayScheduleSync.sync(order);
+
+		return true;
 	}
 
 	@Override
@@ -385,7 +389,7 @@ public class DefaultTaxProvider implements ITaxProvider {
 		if (no != 1)
 			s_log.warning("(1) #" + no);
 
-		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);		
+		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
 
 		if (details == null) {
 			if (line.isTaxIncluded())
@@ -398,9 +402,13 @@ public class DefaultTaxProvider implements ITaxProvider {
 						+ "(SELECT COALESCE(SUM(TaxAmt),0) FROM C_OrderTax it WHERE i.C_Order_ID=it.C_Order_ID) "
 						+ "WHERE C_Order_ID=" + line.getC_Order_ID();
 		} else {
+			// Reload the order so the totals below are built from the lines
+			// currently in the database (the caller may have just deleted one)
+			MOrder order = new MOrder(line.getCtx(), line.getC_Order_ID(), line.get_TrxName());
+
 			sql = "UPDATE C_Order i "
 					+ " SET GrandTotal=TotalLines+"
-						+ details.getNotIncludedTaxAmt()
+						+ getHeaderAmtOverLines(order)
 						+ " WHERE C_Order_ID=" + line.getC_Order_ID();
 		}
 		
@@ -724,7 +732,11 @@ public class DefaultTaxProvider implements ITaxProvider {
 		
 		invoice.setTotalLines(totalLines);
 		invoice.setGrandTotal(grandTotal);
-		return true;	
+
+		// keep pay schedule in sync with the recalculated grand total
+		LBRPayScheduleSync.sync(invoice);
+
+		return true;
 	}
 
 	@Override
@@ -762,7 +774,7 @@ public class DefaultTaxProvider implements ITaxProvider {
 			s_log.warning("(1) #" + no);
 
 		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
-		
+
 		if (details == null) {
 			if (line.isTaxIncluded())
 				sql = "UPDATE C_Invoice i "
@@ -774,9 +786,13 @@ public class DefaultTaxProvider implements ITaxProvider {
 						+ "(SELECT COALESCE(SUM(TaxAmt),0) FROM C_InvoiceTax it WHERE i.C_Invoice_ID=it.C_Invoice_ID) "
 						+ "WHERE C_Invoice_ID=" + line.getC_Invoice_ID();
 		} else {
+			// Reload the invoice so the totals below are built from the lines
+			// currently in the database (the caller may have just deleted one)
+			MInvoice invoice = new MInvoice(line.getCtx(), line.getC_Invoice_ID(), line.get_TrxName());
+
 			sql = "UPDATE C_Invoice i "
 					+ " SET GrandTotal=TotalLines+"
-						+ details.getNotIncludedTaxAmt()
+						+ getHeaderAmtOverLines(invoice)
 						+ " WHERE C_Invoice_ID=" + line.getC_Invoice_ID();
 		}
 		
@@ -1129,15 +1145,19 @@ public class DefaultTaxProvider implements ITaxProvider {
 		if (no != 1)
 			s_log.warning("(1) #" + no);
 		
-		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);		
+		MLBRDocLineDetailsTax details = MLBRDocLineDetailsTax.getOfPO(line);
 
 		if (details != null) {
+			// Reload the RMA so the totals below are built from the lines
+			// currently in the database (the caller may have just deleted one)
+			MRMA rma = new MRMA(line.getCtx(), line.getM_RMA_ID(), line.get_TrxName());
+
 			sql = "UPDATE M_RMA "
 				+ " SET Amt="
 				+ "(SELECT COALESCE(SUM(LineNetAmt),0) FROM M_RMALine WHERE M_RMA.M_RMA_ID=M_RMALine.M_RMA_ID)+"
-				+ details.getNotIncludedTaxAmt()
+				+ getHeaderAmtOverLines(rma)
 				+ " WHERE M_RMA_ID=" + line.getM_RMA_ID();
-			
+
 			no = DB.executeUpdate(sql, line.get_TrxName());
 			if (no != 1)
 				s_log.warning("(2) #" + no);
@@ -1219,7 +1239,42 @@ public class DefaultTaxProvider implements ITaxProvider {
 		return null;
 	}
 	
-	private BigDecimal getTotalSurcharges(PO po) {		
+	/**
+	 * 	Amount the header carries on top of TotalLines: taxes not included in the
+	 * 	price plus freight, insurance and surcharges, minus discount. Mirrors what
+	 * 	calculate*TaxTotal() adds to the grand total, so that saving or deleting a
+	 * 	single line does not drop those amounts from the header.
+	 * 	@param po document (order, invoice or RMA)
+	 *	@return amount to add to TotalLines
+	 */
+	private BigDecimal getHeaderAmtOverLines(PO po) {
+		return getTotalNotIncludedTaxAmt(po)
+				.add(getTotalSurcharges(po))
+				.add(getTotalFreight(po))
+				.add(getTotalInsurance(po))
+				.subtract(getTotalDiscount(po));
+	}
+
+	private BigDecimal getTotalNotIncludedTaxAmt(PO po) {
+		BigDecimal totalTaxAmt = new BigDecimal( 0 );
+		PO lines[] = getLines(po);
+
+		if (lines == null)
+			return totalTaxAmt;
+
+		for (PO poLine : lines) {
+			MLBRDocLineDetailsTax detail = MLBRDocLineDetailsTax.getOfPO(poLine);
+
+			if (detail != null) {
+				BigDecimal taxAmt = detail.getNotIncludedTaxAmt();
+				totalTaxAmt = totalTaxAmt.add( taxAmt != null ? taxAmt : Env.ZERO );
+			}
+		}
+
+		return totalTaxAmt;
+	}
+
+	private BigDecimal getTotalSurcharges(PO po) {
 		BigDecimal totalSurcharges = new BigDecimal( 0 );
 		PO lines[] = getLines(po);
 		
