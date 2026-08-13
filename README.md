@@ -55,5 +55,20 @@ Você pode então fazer build do projeto com o comando:
 Ao finalizar, você já pode importar os projetos do LBR no eclipse.
 
 
+## Executando os testes de integração
+
+Os testes de integração do LBR (arquivos `*IT.java` em `org.idempierelbr.test`) são executados como **JUnit Plug-in Test** no Eclipse. O projeto inclui um arquivo `.launch` pré-configurado que já contém todas as configurações necessárias — incluindo os bundles OSGi (`org.eclipse.equinox.event`, `org.apache.felix.scr`) sem os quais o `Adempiere.startup` trava indefinidamente aguardando o `EventManager`.
+
+Para executar:
+
+1. Importe os projetos LBR no Eclipse (após seguir a instalação acima).
+2. Abra o arquivo `org.idempierelbr.test/org.idempierelbr.test.launch` no navegador de projetos.
+3. Clique com o botão direito → **Run As → org.idempierelbr.test**.
+
+O arquivo `.launch` usa `${project_loc:org.adempiere.base}/..` para resolver o `IDEMPIERE_HOME` a partir do workspace, então funciona em qualquer máquina desde que o `org.adempiere.base` esteja importado.
+
+Ao criar novos arquivos `.launch` de teste, mantenha `automaticAdd=true` e `automaticIncludeRequirements=true` para que o Eclipse resolva automaticamente as dependências OSGi.
+
+
 ## Agradecimentos
 Devemos reconhecer o esforço de todos os colaboradores deste projeto e dos antecessores, especialmente o time ADempiereLBR. Sabemos das longas horas investidas para adaptar este incrível ERP à realidade brasileira. Cabe mencionar que em todas as classes trazidas ao projeto iDempiereLBR, mantivemos a referência dos autores das mesmas.
