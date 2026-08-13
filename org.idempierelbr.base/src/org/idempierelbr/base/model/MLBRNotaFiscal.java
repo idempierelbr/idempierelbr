@@ -20,6 +20,7 @@ import java.io.InputStream;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
@@ -200,6 +201,54 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 			return null;
 		}
 	}	//	get
+
+	/**
+	 * 	Notas de Débito de Pagamento Antecipado (finNFe=6, tpNFDebito=06) autorizadas
+	 * 	que já recolheram IBS/CBS do pedido ou da fatura informados.
+	 *
+	 * 	<p>A NF-e do fornecimento precisa referenciá-las no grupo BB/gPagAntecipado
+	 * 	(NT 2025.002) para abater o imposto antecipado; sem isso, o IBS/CBS é cobrado
+	 * 	duas vezes (LC 214/2025, art. 10, § 4º).
+	 *
+	 * @param C_Order_ID pedido, ou 0
+	 * @param C_Invoice_ID fatura, ou 0
+	 * @return as notas de antecipação, na ordem de emissão
+	 */
+	public static MLBRNotaFiscal[] getAdvancePaymentNotes (Properties ctx, int C_Order_ID,
+			int C_Invoice_ID, String trxName)
+	{
+		if (C_Order_ID <= 0 && C_Invoice_ID <= 0)
+			return new MLBRNotaFiscal[0];
+
+		StringBuilder where = new StringBuilder("LBR_FinNFe=? AND LBR_tpNFDebito=? ")
+				.append("AND LBR_NFeStatus IN ('100','150') AND LBR_NFeID IS NOT NULL AND (");
+
+		ArrayList<Object> params = new ArrayList<Object>();
+		params.add(NFeDebitCreditType.FINNFE_DEBIT);
+		params.add(NFeDebitCreditType.DEBIT_ADVANCE_PAYMENT.getCode());
+
+		if (C_Order_ID > 0) {
+			where.append("C_Order_ID=?");
+			params.add(Integer.valueOf(C_Order_ID));
+		}
+
+		if (C_Invoice_ID > 0) {
+			if (C_Order_ID > 0)
+				where.append(" OR ");
+
+			where.append("C_Invoice_ID=?");
+			params.add(Integer.valueOf(C_Invoice_ID));
+		}
+
+		where.append(")");
+
+		List<MLBRNotaFiscal> list = new Query(ctx, Table_Name, where.toString(), trxName)
+				.setParameters(params)
+				.setOrderBy("DateDoc, LBR_NotaFiscal_ID")
+				.list();
+
+		return list.toArray(new MLBRNotaFiscal[list.size()]);
+	}	//	getAdvancePaymentNotes
 
 	/**
 	 * 	Verifica se existe NF registrada com este número para Cliente/Fornecedor

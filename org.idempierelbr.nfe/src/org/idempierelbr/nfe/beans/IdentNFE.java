@@ -38,6 +38,7 @@ public class IdentNFE {
 	private String finNFe;
 	private String tpNFDebito;
 	private String tpNFCredito;
+	private PagAntecipadoBean gPagAntecipado;
 	private String indFinal;
 	private String indPres;
 	private String indIntermed;
@@ -206,6 +207,12 @@ public class IdentNFE {
 			tpNFCredito = tpNFCredito.trim();
 
 		this.tpNFCredito = tpNFCredito;
+	}
+	public PagAntecipadoBean getGPagAntecipado() {
+		return gPagAntecipado;
+	}
+	public void setGPagAntecipado(PagAntecipadoBean gPagAntecipado) {
+		this.gPagAntecipado = gPagAntecipado;
 	}
 	public String getIndFinal() {
 		return indFinal;

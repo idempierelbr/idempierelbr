@@ -18,7 +18,8 @@ Require-Bundle: org.adempiere.base,
  zkwebfragment,
  org.idempierelbr.base
 Service-Component: OSGI-INF/*.xml
-Export-Package: org.idempierelbr.nfe.model,
+Export-Package: org.idempierelbr.nfe.beans,
+ org.idempierelbr.nfe.model,
  org.idempierelbr.nfe.process,
  org.idempierelbr.nfe.util
 Import-Package: com.google.zxing,

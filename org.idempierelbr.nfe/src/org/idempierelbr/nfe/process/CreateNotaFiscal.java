@@ -45,6 +45,7 @@ import org.idempierelbr.base.model.MLBRDocLineDetails;
 import org.idempierelbr.base.model.MLBRDocLineDetailsNfe;
 import org.idempierelbr.base.model.MLBRDocLineDetailsTax;
 import org.idempierelbr.base.model.MLBRNotaFiscal;
+import org.idempierelbr.base.model.MLBRNotaFiscalDocRef;
 import org.idempierelbr.base.model.MLBRNotaFiscalLine;
 import org.idempierelbr.base.model.MLBRNotaFiscalLineComb;
 import org.idempierelbr.base.model.MLBRNotaFiscalPackage;
@@ -665,6 +666,9 @@ public class CreateNotaFiscal extends SvrProcess
 			}
 		}
 		
+		// Notas de antecipação a abater (NT 2025.002, grupo BB/gPagAntecipado)
+		addAdvancePaymentRefs(nf);
+
 		// Process it
 		if (!DocAction.ACTION_None.equals(p_docAction))	{
 			if (!nf.processIt(p_docAction)) {
@@ -681,6 +685,34 @@ public class CreateNotaFiscal extends SvrProcess
 		return "Ok";
 	}
 	
+	/**
+	 * Referencia as Notas de Débito de Pagamento Antecipado (tpNFDebito=06) já
+	 * emitidas para o pedido ou a fatura de origem.
+	 *
+	 * <p>O IBS/CBS dessas notas foi recolhido na antecipação; sem a referência no
+	 * grupo BB/gPagAntecipado, a NF-e do fornecimento tributaria o mesmo valor uma
+	 * segunda vez (NT 2025.002; LC 214/2025, art. 10, § 4º).
+	 */
+	private void addAdvancePaymentRefs(MLBRNotaFiscal nf) {
+		// Só a NF-e (modelo 55) abate antecipação — NFC-e é rejeitada (1146)
+		if (!MLBRNotaFiscal.MODEL_NFE.equals(nf.getLBR_NFeModel()))
+			return;
+
+		MLBRNotaFiscal[] advanceNotes = MLBRNotaFiscal.getAdvancePaymentNotes(getCtx(),
+				nf.getC_Order_ID(), nf.getC_Invoice_ID(), get_TrxName());
+
+		for (MLBRNotaFiscal advanceNote : advanceNotes) {
+			MLBRNotaFiscalDocRef docRef = new MLBRNotaFiscalDocRef(getCtx(), 0, get_TrxName());
+			docRef.setAD_Org_ID(nf.getAD_Org_ID());
+			docRef.setLBR_NotaFiscal_ID(nf.get_ID());
+			docRef.setLBR_NFeDocRefType(MLBRNotaFiscalDocRef.LBR_NFEDOCREFTYPE_NFeDePagamentoAntecipado);
+			docRef.setLBR_NFeID(advanceNote.getLBR_NFeID());
+			docRef.saveEx();
+
+			addLog("Pagamento antecipado abatido: " + advanceNote.getDocumentNo());
+		}
+	}
+
 	private void appendLegalMessage(MLBRNotaFiscal nf, I_LBR_LegalMessage legalMessage) {
 		String legalMessageValue = legalMessage.getValue();
 		

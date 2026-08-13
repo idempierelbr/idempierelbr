@@ -3,6 +3,7 @@ package org.idempierelbr.nfe.base;
 import java.io.File;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Properties;
 import java.util.Random;
@@ -42,6 +43,7 @@ import org.idempierelbr.base.model.MLBRNotaFiscalPay;
 import org.idempierelbr.base.model.MLBRNotaFiscalPaySched;
 import org.idempierelbr.base.model.MLBRNotaFiscalTax;
 import org.idempierelbr.base.model.MLBRNotaFiscalTransp;
+import org.idempierelbr.base.model.NFeDebitCreditType;
 import org.idempierelbr.base.model.X_LBR_CEST;
 import org.idempierelbr.base.model.X_LBR_NotaFiscalNote;
 import org.idempierelbr.base.model.X_LBR_NotaFiscalProc;
@@ -96,6 +98,7 @@ import org.idempierelbr.nfe.beans.NFERefBean;
 import org.idempierelbr.nfe.beans.ObsContribGrupo;
 import org.idempierelbr.nfe.beans.ObsFiscoGrupo;
 import org.idempierelbr.nfe.beans.PISBean;
+import org.idempierelbr.nfe.beans.PagAntecipadoBean;
 import org.idempierelbr.nfe.beans.PISSTBean;
 import org.idempierelbr.nfe.beans.ProcessoRefGrupo;
 import org.idempierelbr.nfe.beans.ProdutosNFEBean;
@@ -239,21 +242,41 @@ public class NFeXMLGenerator {
 		/**
 		 * Nota de Débito (finNFe=6) e Nota de Crédito (finNFe=5) da Reforma
 		 * Tributária (NT 2025.002): documentos de ajuste que destacam apenas
-		 * IBS/CBS e referenciam a NF-e original na aba Documento Fiscal Referenciado.
+		 * IBS/CBS. As regras de referenciamento, direção e tributação NÃO são
+		 * uniformes — variam por tpNFDebito/tpNFCredito (ver NFeDebitCreditType).
 		 */
-		boolean isDebCredNFe = "5".equals(FinNFE) || "6".equals(FinNFE);
-		// Nível de referência à NF-e original difere por finalidade (confirmado em homologação SEFAZ):
-		//   Nota de Débito (6) -> por item (det/DFeReferenciado); Nota de Crédito (5) -> por nota (ide/NFref, rejeição 254)
-		boolean isDebNFe = "6".equals(FinNFE);
+		boolean isDebCredNFe = NFeDebitCreditType.isDebitCredit(FinNFE);
+		boolean isDebNFe = NFeDebitCreditType.FINNFE_DEBIT.equals(FinNFE);
 		String tpNFDebito = nf.getLBR_tpNFDebito();
 		String tpNFCredito = nf.getLBR_tpNFCredito();
 
-		if ("6".equals(FinNFE) && (tpNFDebito == null || tpNFDebito.trim().isEmpty()))
+		if (isDebNFe && (tpNFDebito == null || tpNFDebito.trim().isEmpty()))
 			return "@LBR_tpNFDebito@ @IsMandatory@";
 
-		if ("5".equals(FinNFE) && (tpNFCredito == null || tpNFCredito.trim().isEmpty()))
+		if (NFeDebitCreditType.FINNFE_CREDIT.equals(FinNFE) && (tpNFCredito == null || tpNFCredito.trim().isEmpty()))
 			return "@LBR_tpNFCredito@ @IsMandatory@";
-		
+
+		// Regras da NT aplicáveis a este tipo de nota de débito/crédito
+		NFeDebitCreditType dcType = null;
+
+		if (isDebCredNFe) {
+			dcType = NFeDebitCreditType.get(FinNFE, isDebNFe ? tpNFDebito : tpNFCredito);
+
+			if (dcType == null)
+				return "@Tab@ @LBR_NotaFiscal_ID@: tipo de nota de "
+						+ (isDebNFe ? "débito" : "crédito") + " não previsto na NT 2025.002";
+
+			// Vigência do tipo (ex.: crédito 02-ZFM só a partir de 2029, rejeição 1145)
+			if (dcType.getValidFromYear() > 0 && nf.getDateDoc() != null) {
+				Calendar dateDocCal = Calendar.getInstance();
+				dateDocCal.setTime(nf.getDateDoc());
+
+				if (dateDocCal.get(Calendar.YEAR) < dcType.getValidFromYear())
+					return "@Tab@ @LBR_NotaFiscal_ID@: o tipo '" + dcType
+							+ "' só pode ser emitido a partir de " + dcType.getValidFromYear();
+			}
+		}
+
 		/**
 		 * CRT
 		 * 1 - Simples Nacional (SN)
@@ -340,16 +363,38 @@ public class NFeXMLGenerator {
 		// Chave da NF-e referenciada, reutilizada no grupo det/DFeReferenciado das Notas de Débito/Crédito (NT 2025.002)
 		String refDFeChaveAcesso = null;
 		MLBRNotaFiscalDocRef[] docRefs = nf.getDocRefs();
-		
+
+		// BB. Notas de antecipação de pagamento (NT 2025.002)
+		PagAntecipadoBean pagAntecipado = new PagAntecipadoBean();
+
 		if (docRefs.length > 0) {
 			String prefixException = "@Tab@ @LBR_DocRef@, @Field@ @IsMandatory@: ";
-		
+
 			for (MLBRNotaFiscalDocRef docRef : docRefs) {
 				xstream.addImplicitCollection(IdentNFE.class, "NFrefs");
 				xstream.alias("NFref", NFERefBean.class);
-				
+
+				// NF-e de Pagamento Antecipado: a chave vai para o grupo BB/gPagAntecipado,
+				// para abater o IBS/CBS já recolhido na antecipação — não é NFref.
+				if (MLBRNotaFiscalDocRef.LBR_NFEDOCREFTYPE_NFeDePagamentoAntecipado
+						.equals(docRef.getLBR_NFeDocRefType())) {
+
+					String advanceKey = docRef.getLBR_NFeID();
+
+					if (advanceKey == null || advanceKey.trim().length() != 44)
+						return "@Tab@ @LBR_DocRef@, @Field@ @invalid@: @LBR_NFeID@ (pagamento antecipado)";
+
+					String advanceError = validateAdvancePaymentRef(ctx, modNF, advanceKey.trim(), trxName);
+
+					if (advanceError != null)
+						return advanceError;
+
+					pagAntecipado.addRefNFe(advanceKey);
+					continue;
+				}
+
 				NFERefBean nfRef = new NFERefBean();
-				
+
 				// NF-e
 				if (docRef.getLBR_NFeDocRefType().equals("0")) {
 					if (docRef.getLBR_NFeID() == null)
@@ -475,15 +520,40 @@ public class NFeXMLGenerator {
 					nfRef.setRefECF(refECF);
 				}
 				
-				// A Nota de Débito referencia por item (det/DFeReferenciado) e não usa ide/NFref (senão rejeição 1010).
-				// Nota de Crédito e demais finalidades referenciam por nota (ide/NFref; a de crédito exige, rejeição 254).
-				if (!isDebNFe)
+				// Um mesmo documento não pode ser referenciado nos dois níveis (rejeição 1010):
+				// os tipos que referenciam por item usam det/DFeReferenciado; os demais, ide/NFref.
+				if (dcType == null || !dcType.isItemLevelReference())
 					identNFe.addNFref(nfRef);
 			}
 		}
 
-		if (isDebCredNFe && refDFeChaveAcesso == null)
-			return "@Tab@ @LBR_DocRef@: informe a NF-e referenciada (chave de acesso, tipo NF-e) para Nota de Débito/Crédito (finNFe 5/6)";
+		// BB. Grupo de notas de antecipação de pagamento (abate o IBS/CBS já recolhido)
+		if (!pagAntecipado.isEmpty()) {
+			xstream.alias("gPagAntecipado", PagAntecipadoBean.class);
+			xstream.addImplicitCollection(PagAntecipadoBean.class, "refNFe", "refNFe", String.class);
+			identNFe.setGPagAntecipado(pagAntecipado);
+		}
+
+		// A NT exige referência à NF-e original apenas em alguns tipos — em outros ela é
+		// proibida, e nos demais é opcional. Ver NFeDebitCreditType.
+		if (dcType != null) {
+			if (dcType.isReferenceRequired() && refDFeChaveAcesso == null)
+				return "@Tab@ @LBR_DocRef@: o tipo '" + dcType
+						+ "' exige a NF-e referenciada (chave de acesso, tipo NF-e)";
+
+			if (dcType.isReferenceForbidden() && docRefs.length > 0)
+				return "@Tab@ @LBR_DocRef@: o tipo '" + dcType + "' não pode ter documento referenciado";
+
+			// Modelo referenciável (rejeição 1003): a nota de crédito só referencia NF-e
+			// modelo 55, exceto o tipo 03-Retorno, que também aceita NFC-e modelo 65.
+			if (refDFeChaveAcesso != null) {
+				String refModel = NFeDebitCreditType.getModelOfKey(refDFeChaveAcesso);
+
+				if (!dcType.isRefModelAllowed(refModel))
+					return "@Tab@ @LBR_DocRef@: o tipo '" + dcType + "' só pode referenciar documento modelo "
+							+ dcType.getAllowedRefModelsAsString() + " (informado: " + refModel + ")";
+			}
+		}
 
 		dados.setIde(identNFe);
 		
@@ -1025,10 +1095,17 @@ public class NFeXMLGenerator {
 			else
 				detBean = new DetalhesProdServBean(produtos, impostos, linhaNF++);
 
-			// Nota de Débito (finNFe=6): referencia a NF-e original por item (NT 2025.002, rejeições 1038 e 1048).
-			// nItem aponta para o item de mesma posição na NF-e original (precisa existir na nota referenciada).
-			if (isDebNFe && refDFeChaveAcesso != null)
-				detBean.DFeReferenciado = new DFeReferenciadoBean(refDFeChaveAcesso, String.valueOf(detBean.nItem));
+			// Referenciamento por item (det/DFeReferenciado), exigido apenas nos tipos de nota
+			// de débito 03 e 04 (NT 2025.002, rejeição 1038). O nItem é obrigatório no tipo
+			// 04-Multa e Juros (rejeição 1048) e proibido no 03-Débitos de notas fiscais não
+			// processadas na apuração (rejeição 1039).
+			if (dcType != null && dcType.isItemLevelReference() && refDFeChaveAcesso != null) {
+				// nItem aponta para o item de mesma posição na NF-e original (precisa existir nela)
+				String refNItem = dcType.getNItemRule() == NFeDebitCreditType.NItemRule.REQUIRED
+						? String.valueOf(detBean.nItem) : null;
+
+				detBean.DFeReferenciado = new DFeReferenciadoBean(refDFeChaveAcesso, refNItem);
+			}
 
 			dados.add(detBean);
 
@@ -1046,8 +1123,9 @@ public class NFeXMLGenerator {
 			if (ibscbs != null)
 				impostos.setIBSCBS(ibscbs);
 			
-			// Nota de Débito/Crédito (finNFe 5/6): apenas IBS/CBS é permitido (NT 2025.002)
-			if (!isDebCredNFe)
+			// Nota de Débito/Crédito (finNFe 5/6): apenas IBS/CBS é permitido (B25-80, rejeição
+			// 1001). Exceção: o crédito do tipo 03-Retorno mantém os tributos do regime antigo.
+			if (dcType == null || dcType.isLegacyTaxesAllowed())
 			{
 			// IS
 			ISBean is = null;
@@ -2019,8 +2097,41 @@ public class NFeXMLGenerator {
 		attachNFe.setAD_Org_ID(nf.getAD_Org_ID());
 		attachNFe.addEntry(xmlFile);
 		attachNFe.save(trxName);
-		
+
 		//
+		return null;
+	}
+
+	/**
+	 * Valida uma chave referenciada no grupo BB/gPagAntecipado (NT 2025.002).
+	 *
+	 * <p>A conferência de que a nota referenciada é mesmo do tipo 06 (rejeição 1143)
+	 * só é possível quando ela está nesta base — antecipa localmente uma rejeição que
+	 * a própria NT marca como implementação futura na SEFAZ.
+	 *
+	 * @return a mensagem de erro, ou null quando a referência é válida
+	 */
+	private static String validateAdvancePaymentRef(Properties ctx, String modNF, String chaveAcesso,
+			String trxName) {
+
+		// Rejeição 1146: NFC-e não pode abater antecipação
+		if (MLBRNotaFiscal.MODEL_NFCE.equals(modNF))
+			return "@Tab@ @LBR_DocRef@: NFC-e (modelo 65) não pode referenciar NF-e de pagamento antecipado";
+
+		MLBRNotaFiscal advanceNF = MLBRNotaFiscal.getNFe(chaveAcesso, trxName);
+
+		// Nota emitida por terceiro ou por outra base: nada a conferir aqui
+		if (advanceNF == null || advanceNF.get_ID() <= 0)
+			return null;
+
+		// Rejeição 1143: a referenciada precisa ser nota de débito do tipo 06
+		NFeDebitCreditType advanceType = NFeDebitCreditType.get(advanceNF.getLBR_FinNFe(),
+				advanceNF.getLBR_tpNFDebito());
+
+		if (advanceType != NFeDebitCreditType.DEBIT_ADVANCE_PAYMENT)
+			return "@Tab@ @LBR_DocRef@: a NF-e " + advanceNF.getDocumentNo()
+					+ " não é uma Nota de Débito do tipo 06-Pagamento antecipado";
+
 		return null;
 	}
 }
