@@ -290,10 +290,15 @@ public class GenerateNFDebitCredit extends SvrProcess {
 					+ "organização. O documento de origem não é emitido por você (ex.: compra de fornecedor) — "
 					+ "informe o Tipo de Documento (C_DocType_ID) da sua NF-e.");
 
-		// A NT não fixa CFOP para as notas de débito/crédito — quem define é a empresa,
-		// amarrando o CFOP ao Tipo de Documento pelo caminho fiscal padrão do LBR
-		// (LBR_CFOPLine / LBR_TaxDefinition). Quando não há nada configurado, cai no
-		// x.949 (outra saída/entrada não especificada), que era o valor fixo anterior.
+		// O CFOP não vem do código: quem define é a empresa, amarrando o CFOP ao Tipo de
+		// Documento pelo caminho fiscal padrão do LBR (LBR_CFOPLine / LBR_TaxDefinition).
+		// Sem nada configurado, cai no x.949 (outra saída/entrada não especificada).
+		//
+		// A NT 2025.002 não prescreve CFOP, mas o Ajuste SINIEF 49/2025 prescreve para
+		// alguns tipos — configure-os no LBR_TaxDefinition do Tipo de Documento:
+		//   06-Pagamento antecipado -> 5.922 / 6.922 (sem destaque de ICMS)
+		//   07-Perda em estoque     -> 5.927
+		// Os demais tipos (04-Multa e juros à frente) não têm CFOP próprio no Ajuste.
 		//
 		// A pesquisa só vale se o DocType for DEDICADO a notas de débito/crédito: quando
 		// ele é herdado da NF original (venda/compra), a configuração encontrada seria a
