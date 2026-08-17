@@ -354,9 +354,6 @@ public class NFeUtil {
 	/** XML					*/
 	public static final long XML_SIZE = 500;	
 	
-	private static String P_CSC = "";
-	private static String P_CSC_NAME = "";
-	
 	/** Reference NFeStatus */
 	//public static final int REFERENCE_ID_LBR_NFeStatus = 1000039;
 	
@@ -788,10 +785,8 @@ public class NFeUtil {
 		String digest = digestValue;
 		String tokenID = csc.getValue();
 		String token = csc.getName();
-		Timestamp dhEmi = nf.getDateDoc();		
-		
-		P_CSC =  csc.getValue();
-		P_CSC_NAME = csc.getName();
+		Timestamp dhEmi = nf.getDateDoc();
+
 		// generate
 		return generateQRCodeNFCeURL(chNFe, nVersao, tpAmb, cDest, dhEmi, vNF, vICMS, digest, tokenID, token, url);
 	}
@@ -851,11 +846,11 @@ public class NFeUtil {
 		parametros.put("cIdToken", TextUtil.lPad(tokenID, 6));
 		parametros.put("cHashQRCode", hashQRCode);		
 		
-		P_CSC = zerosEsquerda(P_CSC);
-		String hash_in =  chNFe + "|" + NFeUtil.VERSAO_QR_CODE + "|" + tpAmb + "|" + P_CSC + P_CSC_NAME ;
-		String hash_out = TextUtil.byteArrayToHexString(TextUtil.generateSHA1(hash_in));			
-		
-		return url + "?p=" + chNFe + "|"+ NFeUtil.VERSAO_QR_CODE+"|" +tpAmb+"|" + P_CSC + "|" + hash_out ;
+		String cIdToken = zerosEsquerda(tokenID);
+		String hash_in =  chNFe + "|" + NFeUtil.VERSAO_QR_CODE + "|" + tpAmb + "|" + cIdToken + token ;
+		String hash_out = TextUtil.byteArrayToHexString(TextUtil.generateSHA1(hash_in));
+
+		return url + "?p=" + chNFe + "|"+ NFeUtil.VERSAO_QR_CODE+"|" +tpAmb+"|" + cIdToken + "|" + hash_out ;
 
 
 	}
