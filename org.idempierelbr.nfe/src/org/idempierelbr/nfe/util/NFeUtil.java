@@ -852,7 +852,7 @@ public class NFeUtil {
 		parametros.put("cHashQRCode", hashQRCode);		
 		
 		P_CSC = zerosEsquerda(P_CSC);
-		String hash_in =  chNFe + "|2|2|" + P_CSC + P_CSC_NAME ;
+		String hash_in =  chNFe + "|" + NFeUtil.VERSAO_QR_CODE + "|" + tpAmb + "|" + P_CSC + P_CSC_NAME ;
 		String hash_out = TextUtil.byteArrayToHexString(TextUtil.generateSHA1(hash_in));			
 		
 		return url + "?p=" + chNFe + "|"+ NFeUtil.VERSAO_QR_CODE+"|" +tpAmb+"|" + P_CSC + "|" + hash_out ;
