@@ -928,8 +928,9 @@ public class NFeXMLGenerator {
 			MProduct prdt = new MProduct(ctx, nfLine.getM_Product_ID(), null);
 			produtos.setcProd(RemoverAcentos.remover(details.getProductValue()));
 			
-			// check digit calculator
-			produtos.setcEAN("");
+			// check digit calculator. sem GTIN válido, o campo vai com o literal
+			// "SEM GTIN"; em branco a SEFAZ rejeita com 883
+			produtos.setcEAN(UPC_EAN);
 			String productEAN = prdt.getUPC();
 			if (NFeUtil.isValidEAN(productEAN))
 				produtos.setcEAN(productEAN);
@@ -994,19 +995,13 @@ public class NFeXMLGenerator {
 			
 			produtos.setvProd(TextUtil.bigdecimalToString(details.getLBR_GrossAmt()));
 			
-			// check ean trib
-			produtos.setcEANTrib("");
-			
-			if (produtos.getcEAN() != null && !produtos.getcEAN().isEmpty()) {
-				String productEANTrib = details.getLBR_UPCTax();
-					
-				if(productEANTrib != null && !productEANTrib.contains("GTIN")) {
-					if (NFeUtil.isValidEAN(productEANTrib))
-						produtos.setcEANTrib(productEANTrib);
-				}else {
-						produtos.setcEANTrib(UPC_EAN);
-				}		
-			}			
+			// check ean trib. mesma regra do cEAN: em branco a SEFAZ rejeita com 888
+			produtos.setcEANTrib(UPC_EAN);
+
+			String productEANTrib = details.getLBR_UPCTax();
+			if (productEANTrib != null && !productEANTrib.contains("GTIN")
+					&& NFeUtil.isValidEAN(productEANTrib))
+				produtos.setcEANTrib(productEANTrib);
 			
 			if (details.getLBR_UOMTax_ID() < 1)
 				return "@Line@: " + nfLine.getLine() + prefixLineMandatory + "'@LBR_UOMTax_ID@'";
