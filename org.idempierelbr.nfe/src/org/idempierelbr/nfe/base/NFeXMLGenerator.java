@@ -959,8 +959,16 @@ public class NFeXMLGenerator {
 			// cBenef - Código de Benefício Fiscal
 			if (icmsLines.length > 0) {
 				String cBenef = icmsLines[0].get_ValueAsString("LBR_CBenef");
-				if (cBenef != null && !cBenef.trim().isEmpty())
-					produtos.setCBenef(cBenef.trim());
+				if (cBenef != null && !cBenef.trim().isEmpty()) {
+					// A SEFAZ rejeita a NF-e (928) quando o cBenef é informado para um CST
+					// que não comporta benefício fiscal.
+					if (icmsLines[0].isCBenefApplicable())
+						produtos.setCBenef(cBenef.trim());
+					else
+						log.warning("Nota Fiscal " + nf.getDocumentNo() + ", linha " + nfLine.getLine()
+								+ ": cBenef " + cBenef.trim() + " ignorado, o CST "
+								+ icmsLines[0].getCurrentTaxStatus() + " não comporta benefício fiscal");
+				}
 			}
 
 			MLBRCFOP cfop = new MLBRCFOP(ctx, details.getLBR_CFOP_ID(), trxName);
