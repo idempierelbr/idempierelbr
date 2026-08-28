@@ -35,7 +35,7 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20260724L;
+	private static final long serialVersionUID = 20260827L;
 
     /** Standard Constructor */
     public X_LBR_NotaFiscal (Properties ctx, int LBR_NotaFiscal_ID, String trxName)
@@ -2133,6 +2133,34 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 		return (String)get_Value(COLUMNNAME_LBR_NFeTpEmis);
 	}
 
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_NFeXML getLBR_NFeXML() throws RuntimeException
+	{
+		return (I_LBR_NFeXML)MTable.get(getCtx(), I_LBR_NFeXML.Table_ID)
+			.getPO(getLBR_NFeXML_ID(), get_TrxName());
+	}
+
+	/** Set NFe XML.
+		@param LBR_NFeXML_ID NFe XML
+	*/
+	public void setLBR_NFeXML_ID (int LBR_NFeXML_ID)
+	{
+		if (LBR_NFeXML_ID < 1)
+			set_Value (COLUMNNAME_LBR_NFeXML_ID, null);
+		else
+			set_Value (COLUMNNAME_LBR_NFeXML_ID, Integer.valueOf(LBR_NFeXML_ID));
+	}
+
+	/** Get NFe XML.
+		@return NFe XML	  */
+	public int getLBR_NFeXML_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_NFeXML_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
 	/** Set Brazilian Fiscal Invoice (Nota Fiscal).
 		@param LBR_NotaFiscal_ID Brazilian Fiscal Invoice (Nota Fiscal) Identifier
 	*/
@@ -2251,6 +2279,14 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 	public static final String LBR_TPNFCREDITO_MultaEJuros = "01";
 	/** Crédito presumido de IBS na ZFM = 02 */
 	public static final String LBR_TPNFCREDITO_CréditoPresumidoDeIBSNaZFM = "02";
+	/** Retorno por recusa total na entrega ou por não localização do destinatário = 03 */
+	public static final String LBR_TPNFCREDITO_RetornoPorRecusaTotalNaEntregaOuPorNãoLocalizaçãoDoDestinatário = "03";
+	/** Redução de valores = 04 */
+	public static final String LBR_TPNFCREDITO_ReduçãoDeValores = "04";
+	/** Transferência de crédito na sucessão = 05 */
+	public static final String LBR_TPNFCREDITO_TransferênciaDeCréditoNaSucessão = "05";
+	/** Retorno por recusa parcial na entrega = 06 */
+	public static final String LBR_TPNFCREDITO_RetornoPorRecusaParcialNaEntrega = "06";
 	/** Set NFe Credit Type.
 		@param LBR_tpNFCredito NFe Credit Type
 	*/
@@ -2283,6 +2319,8 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 	public static final String LBR_TPNFDEBITO_PagamentoAntecipado = "06";
 	/** Perda em estoque = 07 */
 	public static final String LBR_TPNFDEBITO_PerdaEmEstoque = "07";
+	/** Desenquadramento do SN = 08 */
+	public static final String LBR_TPNFDEBITO_DesenquadramentoDoSN = "08";
 	/** Set NFe Debit Type.
 		@param LBR_tpNFDebito NFe Debit Type
 	*/
@@ -2297,6 +2335,24 @@ public class X_LBR_NotaFiscal extends PO implements I_LBR_NotaFiscal, I_Persiste
 	public String getLBR_tpNFDebito()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_tpNFDebito);
+	}
+
+	/** Set Valor do Troco.
+		@param LBR_vTroco Valor do Troco
+	*/
+	public void setLBR_vTroco (BigDecimal LBR_vTroco)
+	{
+		set_Value (COLUMNNAME_LBR_vTroco, LBR_vTroco);
+	}
+
+	/** Get Valor do Troco.
+		@return Valor do Troco	  */
+	public BigDecimal getLBR_vTroco()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_vTroco);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
 	}
 
 	@Deprecated(since="13") // use better methods with cache

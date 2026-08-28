@@ -1,11 +1,24 @@
 package org.idempierelbr.nfe.process;
 
 import java.util.logging.Level;
+
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
-import org.compiere.util.DB;
-import org.idempierelbr.nfe.util.NFeUtil;
+import org.idempierelbr.nfe.util.NFeDistDFeUtil;
 
+/**
+ * Baixa os documentos fiscais eletrônicos emitidos contra o CNPJ da
+ * organização, pela Distribuição de DF-e da SEFAZ.
+ *
+ * <p>Sem nenhum dos campos opcionais, lê a fila a partir do ponto de leitura
+ * gravado em {@code LBR_DFeControl} e pagina até o fim — que é o modo de uso
+ * normal, inclusive por agendador. Os três opcionais são exclusivos entre si e
+ * servem a situações pontuais: reposicionar a leitura ({@code LBR_LastNSU}),
+ * recuperar um documento perdido ({@code LBR_NSU}) ou buscar uma nota
+ * conhecida ({@code LBR_NFeID}).
+ *
+ * @author Alan Lescano
+ */
 public class DownloadNFeXML extends SvrProcess {
 	private int p_AD_Org_ID = 0;
 	private String p_LBR_NFeEnv = null;
@@ -40,13 +53,11 @@ public class DownloadNFeXML extends SvrProcess {
 
 	@Override
 	protected String doIt() throws Exception {
-		if (p_AD_Org_ID == 0) {
+		if (p_AD_Org_ID == 0)
 			throw new Exception("Sem organização definida!");
-		}
 
-		if (p_LBR_NFeEnv == null) {
+		if (p_LBR_NFeEnv == null)
 			throw new Exception("Ambiente da Sefaz não definido!");
-		}
 
 		if ((p_LBR_LastNSU != null && (p_LBR_NSU != null || p_LBR_NFeID != null)) ||
 			(p_LBR_NSU != null && (p_LBR_LastNSU != null || p_LBR_NFeID != null)) ||
@@ -54,20 +65,14 @@ public class DownloadNFeXML extends SvrProcess {
 				throw new Exception("Introduza apenas um dos campos opcionais!");
 		}
 
+		NFeDistDFeUtil distDFe = new NFeDistDFeUtil(getCtx(), p_AD_Org_ID, p_LBR_NFeEnv, get_TrxName());
 
-		if (p_LBR_LastNSU == null && p_LBR_NSU == null && p_LBR_NFeID == null) {
-			String lastDbNSU = DB.getSQLValueString(get_TrxName(), "SELECT MAX(LBR_NSU) FROM LBR_NFeXML WHERE AD_Org_ID=?", p_AD_Org_ID);
+		if (p_LBR_NSU != null)
+			return distDFe.downloadByNSU(p_LBR_NSU);
 
-			if (lastDbNSU == null || lastDbNSU.length() != 15) {
-				p_LBR_LastNSU = "000000000000000";
-			}
-			else {
-				p_LBR_LastNSU = lastDbNSU;
-			}
+		if (p_LBR_NFeID != null)
+			return distDFe.downloadByNFeID(p_LBR_NFeID);
 
-		}
-
-		return NFeUtil.requestWSAndProcess(getCtx(), p_AD_Org_ID, p_LBR_NFeEnv,
-				p_LBR_LastNSU, p_LBR_NSU, p_LBR_NFeID, get_TrxName());
+		return distDFe.download(p_LBR_LastNSU);
 	}
 }
