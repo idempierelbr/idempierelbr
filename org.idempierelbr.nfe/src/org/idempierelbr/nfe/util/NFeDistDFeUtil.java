@@ -15,7 +15,9 @@ package org.idempierelbr.nfe.util;
 import java.io.ByteArrayInputStream;
 import java.io.StringReader;
 import java.sql.Savepoint;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.zip.GZIPInputStream;
@@ -109,6 +111,9 @@ public class NFeDistDFeUtil {
 	/** NSU do último documento efetivamente tratado nesta execução */
 	private String lastProcessedNSU = null;
 
+	/** Ocorrências desta execução, para o processo mostrar a quem executou */
+	private final List<String> messages = new ArrayList<String>();
+
 	private int created = 0;
 	private int updated = 0;
 	private int skipped = 0;
@@ -184,9 +189,18 @@ public class NFeDistDFeUtil {
 	 * @return resumo do que foi recebido
 	 */
 	public String download(String fromNSU) throws Exception {
-		if (control.isBlocked())
-			return "Distribuição bloqueada por mais " + control.getBlockedMinutes()
-				+ " min para evitar consumo indevido (cStat 656). Último NSU: " + control.getLastNSU();
+		if (control.isBlocked()) {
+			// espera local: a SEFAZ bloqueia o CNPJ por 1 hora (cStat 656) de
+			// quem consulta a distribuição depois de a fila ter acabado
+			messages.add("Em espera porque " + control.getBlockReason() + ".");
+			messages.add("Para buscar um documento específico agora, informe a chave de acesso"
+					+ " ou o NSU — a consulta pontual não depende desta espera.");
+
+			return "Nova consulta à SEFAZ liberada às "
+				+ TextUtil.timeToString(control.getLBR_BlockedUntil(), "HH:mm")
+				+ " (em " + control.getBlockedMinutes() + " min): " + control.getBlockReason()
+				+ ". Último NSU: " + control.getLastNSU();
+		}
 
 		String lastNSU = fromNSU != null && fromNSU.trim().length() == 15
 				? fromNSU.trim() : control.getLastNSU();
@@ -266,11 +280,15 @@ public class NFeDistDFeUtil {
 		String summary = buildSummary(cStat, xMotivo, control.getLastNSU(), maxNSU, pages,
 				backlog && pages >= maxPages);
 
-		if (failedNSU != null)
-			summary += ". A leitura parou no NSU " + failedNSU + ", que não pôde ser gravado —"
-					+ " corrija o que o log aponta e execute novamente."
-					+ " Se o documento for irrecuperável, informe " + failedNSU
-					+ " em 'Último NSU' para seguir a partir dele";
+		if (failedNSU != null) {
+			summary += ". A leitura parou no NSU " + failedNSU + " (veja o motivo abaixo)."
+					+ " Corrija e execute de novo: o documento continua na fila."
+					+ " Para pular este documento de propósito, informe " + failedNSU
+					+ " em 'Último NSU'";
+
+			messages.add("O documento que falhou continua na fila — nada foi perdido."
+					+ " Assim que a causa for corrigida, execute o processo novamente.");
+		}
 
 		return summary;
 	}
@@ -399,8 +417,9 @@ public class NFeDistDFeUtil {
 					trx.rollback(savepoint);
 
 				failed++;
-				log.log(Level.SEVERE, "DF-e do NSU " + NSU + " não pôde ser gravado: "
-						+ e.getMessage(), e);
+				log.log(Level.SEVERE, "DF-e do NSU " + NSU + " não pôde ser gravado", e);
+				messages.add("NSU " + NSU + " (" + schema(node) + ") não pôde ser gravado: "
+						+ getReason(e));
 
 				return NSU;
 			}
@@ -919,6 +938,38 @@ public class NFeDistDFeUtil {
 			return second.trim();
 
 		return null;
+	}
+
+	/**
+	 * Ocorrências desta execução, na ordem em que aconteceram, para o processo
+	 * mostrar a quem executou — quem opera o dia a dia não lê log de servidor.
+	 */
+	public List<String> getMessages() {
+		return messages;
+	}
+
+	private static String schema(Node node) {
+		String schema = getAttribute(node, "schema");
+
+		return schema == null ? "documento" : schema;
+	}
+
+	/**
+	 * Motivo da falha em uma linha. A causa útil costuma estar na exceção mais
+	 * funda — a de cima só diz que a gravação falhou.
+	 */
+	private static String getReason(Throwable e) {
+		Throwable cause = e;
+
+		while (cause.getCause() != null && cause.getCause() != cause)
+			cause = cause.getCause();
+
+		String reason = cause.getLocalizedMessage();
+
+		if (reason == null || reason.trim().isEmpty())
+			reason = cause.getClass().getSimpleName();
+
+		return reason.length() > 500 ? reason.substring(0, 500) : reason;
 	}
 
 	private static String getAttribute(Node node, String name) {

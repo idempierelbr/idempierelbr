@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import java.time.temporal.ChronoUnit;
 import java.util.Properties;
 
+import org.compiere.model.MSysConfig;
 import org.compiere.model.Query;
 
 /**
@@ -31,11 +32,25 @@ public class MLBRDFeControl extends X_LBR_DFeControl {
 	/** Duração do bloqueio imposto pela SEFAZ após 137 ou fim da fila, em minutos */
 	public static final int BLOCK_MINUTES = 60;
 
+	/**
+	 * Encurta a espera entre consultas à distribuição. Só mexa nisto sabendo do
+	 * risco: consultar antes da hora é o que faz a SEFAZ bloquear o CNPJ por
+	 * consumo indevido (cStat 656).
+	 */
+	public static final String SYSCONFIG_BLOCK_MINUTES = "LBR_DFE_BLOCK_MINUTES";
+
 	/** Limite de consultas por NSU específico ou por chave de acesso, por hora */
 	public static final int MAX_QUERIES_PER_HOUR = 20;
 
 	/** NSU inicial, quando ainda não há ponto de leitura */
 	public static final String FIRST_NSU = "000000000000000";
+
+	/** Documento(s) localizado(s): a espera veio do fim da fila */
+	private static final String CSTAT_DOCUMENTOS_LOCALIZADOS = "138";
+	/** Nenhum documento localizado para o destinatário */
+	private static final String CSTAT_NENHUM_DOCUMENTO = "137";
+	/** Consumo indevido: quem bloqueou foi a SEFAZ, não nós */
+	private static final String CSTAT_CONSUMO_INDEVIDO = "656";
 
 	public MLBRDFeControl(Properties ctx, int LBR_DFeControl_ID, String trxName) {
 		super(ctx, LBR_DFeControl_ID, trxName);
@@ -116,7 +131,33 @@ public class MLBRDFeControl extends X_LBR_DFeControl {
 	 * de qualquer forma — a diferença é que aqui a chamada nem chega a sair.
 	 */
 	public void block() {
-		setLBR_BlockedUntil(Timestamp.valueOf(now().toLocalDateTime().plusMinutes(BLOCK_MINUTES)));
+		int minutes = MSysConfig.getIntValue(SYSCONFIG_BLOCK_MINUTES, BLOCK_MINUTES,
+				getAD_Client_ID(), getAD_Org_ID());
+
+		if (minutes < 1)
+			minutes = BLOCK_MINUTES;
+
+		setLBR_BlockedUntil(Timestamp.valueOf(now().toLocalDateTime().plusMinutes(minutes)));
+	}
+
+	/**
+	 * Por que a distribuição está em espera, em português de usuário. O motivo
+	 * sai do último retorno da SEFAZ: quase sempre é a fila ter acabado, o que
+	 * é o funcionamento normal, e não um erro.
+	 */
+	public String getBlockReason() {
+		String cStat = getLBR_LastcStat();
+
+		if (CSTAT_CONSUMO_INDEVIDO.equals(cStat))
+			return "a SEFAZ recusou a última consulta por consumo indevido (656)";
+
+		if (CSTAT_NENHUM_DOCUMENTO.equals(cStat))
+			return "a última consulta não encontrou documento novo (137)";
+
+		if (CSTAT_DOCUMENTOS_LOCALIZADOS.equals(cStat))
+			return "a SEFAZ já entregou todos os documentos disponíveis";
+
+		return "a última consulta encerrou a fila";
 	}
 
 	/**

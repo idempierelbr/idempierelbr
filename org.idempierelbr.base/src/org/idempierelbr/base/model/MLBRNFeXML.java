@@ -26,21 +26,44 @@ public class MLBRNFeXML extends X_LBR_NFeXML {
 	}
 
 	public void deleteAttachments() {
-		MAttachment attachNFe = getAttachment(true);
+		MAttachment attachNFe = getXMLAttachment();
 
-		if (attachNFe != null) {
-			for (int i = attachNFe.getEntryCount() - 1; i >= 0; i--)
-				attachNFe.deleteEntry(i);
+		if (attachNFe == null)
+			return;
 
-			attachNFe.saveEx();
-		}
+		for (int i = attachNFe.getEntryCount() - 1; i >= 0; i--)
+			attachNFe.deleteEntry(i);
+
+		attachNFe.saveEx();
 	}
 
 	public void attachXML(String name, String xml) {
-		MAttachment attachment = createAttachment();
-		MAttachmentEntry entry = new MAttachmentEntry(name, xml.getBytes());
-		attachment.addEntry(entry);
+		MAttachment attachment = getXMLAttachment();
+
+		if (attachment == null)
+			attachment = new MAttachment(getCtx(), Table_ID, get_ID(), get_UUID(), get_TrxName());
+
+		attachment.addEntry(new MAttachmentEntry(name, xml.getBytes()));
 		attachment.saveEx();
+	}
+
+	/**
+	 * Anexo do documento, na transação deste registro.
+	 *
+	 * <p>{@link org.compiere.model.PO#createAttachment()} e
+	 * {@link org.compiere.model.PO#getAttachment(boolean)} montam o anexo com
+	 * transação nula. Isso não serve aqui: o DF-e é gravado e anexado dentro da
+	 * mesma transação, e um anexo fora dela não enxerga o registro recém-inserido
+	 * — a validação de tenant do iDempiere recusa com "Foreign ID N not found in
+	 * LBR_NFeXML".
+	 *
+	 * @return o anexo existente, ou nulo se o documento ainda não tem nenhum
+	 */
+	private MAttachment getXMLAttachment() {
+		if (get_ID() <= 0)
+			return null;
+
+		return MAttachment.get(getCtx(), Table_ID, get_ID(), get_UUID(), get_TrxName());
 	}
 
 	/**

@@ -439,7 +439,17 @@ public class NFeImportService {
 		String name = MLBRNotaFiscal.IMPORTED_FILE_PREFIX
 				+ (nfe.chNFe != null ? nfe.chNFe : nfe.nNF) + ".xml";
 
-		MAttachment attachment = nf.createAttachment();
+		// o anexo precisa da mesma transação da nota: PO.createAttachment() o
+		// monta com transação nula, e aí a validação de tenant não enxerga a
+		// nota recém-inserida ("Foreign ID N not found in LBR_NotaFiscal")
+		MAttachment attachment = MAttachment.get(ctx, MLBRNotaFiscal.Table_ID,
+				nf.get_ID(), nf.get_UUID(), trxName);
+
+		if (attachment == null)
+			attachment = new MAttachment(ctx, MLBRNotaFiscal.Table_ID, nf.get_ID(),
+					nf.get_UUID(), trxName);
+
+		attachment.setAD_Org_ID(nf.getAD_Org_ID());
 		attachment.addEntry(new MAttachmentEntry(name, nfe.xml.getBytes()));
 		attachment.saveEx();
 	}

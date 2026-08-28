@@ -67,12 +67,19 @@ public class DownloadNFeXML extends SvrProcess {
 
 		NFeDistDFeUtil distDFe = new NFeDistDFeUtil(getCtx(), p_AD_Org_ID, p_LBR_NFeEnv, get_TrxName());
 
-		if (p_LBR_NSU != null)
-			return distDFe.downloadByNSU(p_LBR_NSU);
+		try {
+			if (p_LBR_NSU != null)
+				return distDFe.downloadByNSU(p_LBR_NSU);
 
-		if (p_LBR_NFeID != null)
-			return distDFe.downloadByNFeID(p_LBR_NFeID);
+			if (p_LBR_NFeID != null)
+				return distDFe.downloadByNFeID(p_LBR_NFeID);
 
-		return distDFe.download(p_LBR_LastNSU);
+			return distDFe.download(p_LBR_LastNSU);
+		} finally {
+			// o que aconteceu com cada documento tem de chegar a quem executou:
+			// quem trabalha com a fila no dia a dia não lê log de servidor
+			for (String message : distDFe.getMessages())
+				addLog(message);
+		}
 	}
 }

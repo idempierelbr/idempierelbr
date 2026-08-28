@@ -23,6 +23,7 @@ import java.util.logging.Level;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import org.adempiere.exceptions.AdempiereException;
 import org.adempiere.webui.AdempiereWebUI;
 import org.adempiere.webui.LayoutUtils;
 import org.adempiere.webui.component.Button;
@@ -81,6 +82,7 @@ import org.zkoss.zk.ui.event.UploadEvent;
 import org.zkoss.zul.Borderlayout;
 import org.zkoss.zul.Center;
 import org.zkoss.zul.Columns;
+import org.zkoss.zul.Div;
 import org.zkoss.zul.Listcell;
 import org.zkoss.zul.Hlayout;
 import org.zkoss.zul.North;
@@ -164,7 +166,10 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 			readService = new NFeImportService(Env.getCtx(), null);
 			jbInit();
 		} catch (Exception e) {
+			// engolir a falha aqui abriria uma aba vazia, sem explicação nenhuma
 			log.log(Level.SEVERE, "WNFeImportDFe.initForm", e);
+			throw new AdempiereException("Não foi possível abrir a tela de importação: "
+					+ e.getLocalizedMessage(), e);
 		}
 	}
 
@@ -182,16 +187,16 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	// -------------------------------------------------------------------------
 
 	private void jbInit() throws Exception {
-		form.setSizable(true);
-		form.setClosable(true);
-		form.setMaximizable(true);
-		form.setWidth("95%");
-		form.setHeight("95%");
-		form.appendChild(mainLayout);
+		// a tela ocupa a aba inteira, e o usuário continua livre para navegar
+		Div container = new Div();
+		container.setStyle("height: 100%; width: 100%; overflow: auto;");
+		container.appendChild(mainLayout);
+		form.appendChild(container);
 
 		LayoutUtils.addSclass("tab-editor-form-content", mainLayout);
 		ZKUpdateUtil.setWidth(mainLayout, "100%");
 		ZKUpdateUtil.setHeight(mainLayout, "100%");
+		mainLayout.setStyle("min-height: 600px");
 
 		North north = new North();
 		north.setSplittable(false);
@@ -828,7 +833,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	 */
 	private void doImport() {
 		if (batch.isEmpty()) {
-			form.detach();
+			dispose();
 			return;
 		}
 
@@ -938,7 +943,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		else if (ConfirmPanel.A_OK.equals(id))
 			doImport();
 		else if (ConfirmPanel.A_CANCEL.equals(id))
-			form.detach();
+			dispose();
 	}
 
 	@Override
