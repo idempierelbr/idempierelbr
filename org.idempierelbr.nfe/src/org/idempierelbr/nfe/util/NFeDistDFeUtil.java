@@ -14,8 +14,10 @@ package org.idempierelbr.nfe.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.StringReader;
+import java.sql.Savepoint;
 import java.util.Base64;
 import java.util.Properties;
+import java.util.logging.Level;
 import java.util.zip.GZIPInputStream;
 
 import javax.net.ssl.SSLContext;
@@ -32,6 +34,7 @@ import org.compiere.model.Query;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
+import org.compiere.util.Trx;
 import org.idempierelbr.base.model.MLBRDFeControl;
 import org.idempierelbr.base.model.MLBRNFeWebService;
 import org.idempierelbr.base.model.MLBRNFeXML;
@@ -103,9 +106,13 @@ public class NFeDistDFeUtil {
 	private final MRegion orgRegion;
 	private final String orgCNPJ;
 
+	/** NSU do último documento efetivamente tratado nesta execução */
+	private String lastProcessedNSU = null;
+
 	private int created = 0;
 	private int updated = 0;
 	private int skipped = 0;
+	private int failed = 0;
 	private int eventsCreated = 0;
 
 	/**
@@ -192,6 +199,7 @@ public class NFeDistDFeUtil {
 		String maxNSU = null;
 		int pages = 0;
 		boolean backlog = false;
+		String failedNSU = null;
 
 		while (pages < maxPages) {
 			pages++;
@@ -222,7 +230,16 @@ public class NFeDistDFeUtil {
 				break;
 			}
 
-			process(response.getElementsByTagName("docZip"));
+			failedNSU = process(response.getElementsByTagName("docZip"));
+
+			if (failedNSU != null) {
+				// o ponto de leitura para no último documento que entrou: o
+				// que falhou volta na próxima execução, em vez de se perder
+				if (isValidNSU(lastProcessedNSU))
+					control.setLBR_LastNSU(lastProcessedNSU);
+
+				break;
+			}
 
 			if (isValidNSU(ultNSU)) {
 				control.setLBR_LastNSU(ultNSU);
@@ -246,8 +263,16 @@ public class NFeDistDFeUtil {
 
 		control.saveEx();
 
-		return buildSummary(cStat, xMotivo, control.getLastNSU(), maxNSU, pages,
+		String summary = buildSummary(cStat, xMotivo, control.getLastNSU(), maxNSU, pages,
 				backlog && pages >= maxPages);
+
+		if (failedNSU != null)
+			summary += ". A leitura parou no NSU " + failedNSU + ", que não pôde ser gravado —"
+					+ " corrija o que o log aponta e execute novamente."
+					+ " Se o documento for irrecuperável, informe " + failedNSU
+					+ " em 'Último NSU' para seguir a partir dele";
+
+		return summary;
 	}
 
 	/**
@@ -342,9 +367,46 @@ public class NFeDistDFeUtil {
 		return builder.parse(new InputSource(new StringReader(result)));
 	}
 
-	private void process(NodeList docZipList) throws Exception {
-		for (int i = 0; i < docZipList.getLength(); i++)
-			processDocZip(docZipList.item(i));
+	/**
+	 * Materializa os documentos da resposta, na ordem em que vieram, e para no
+	 * primeiro que não puder ser gravado.
+	 *
+	 * <p>Parar é o que protege o documento: a distribuição só entrega cada NSU
+	 * uma vez, então avançar o ponto de leitura por cima de uma falha perderia
+	 * aquele documento em definitivo. O que já entrou fica — cada documento é
+	 * gravado sob savepoint próprio —, e o ponto de leitura avança até o último
+	 * que entrou, nem um NSU além.
+	 *
+	 * @return NSU do documento que falhou, ou nulo se todos foram tratados
+	 */
+	private String process(NodeList docZipList) throws Exception {
+		Trx trx = trxName == null ? null : Trx.get(trxName, false);
+
+		for (int i = 0; i < docZipList.getLength(); i++) {
+			Node node = docZipList.item(i);
+			String NSU = getAttribute(node, "NSU");
+			Savepoint savepoint = trx == null ? null : trx.setSavepoint(null);
+
+			try {
+				processDocZip(node);
+
+				if (savepoint != null)
+					trx.releaseSavepoint(savepoint);
+
+				lastProcessedNSU = NSU;
+			} catch (Exception e) {
+				if (savepoint != null)
+					trx.rollback(savepoint);
+
+				failed++;
+				log.log(Level.SEVERE, "DF-e do NSU " + NSU + " não pôde ser gravado: "
+						+ e.getMessage(), e);
+
+				return NSU;
+			}
+		}
+
+		return null;
 	}
 
 	/**
@@ -575,7 +637,7 @@ public class NFeDistDFeUtil {
 		if (nProt != null && !nProt.isEmpty())
 			event.setLBR_EventProt(nProt);
 
-		MLBRNotaFiscal nf = MLBRNotaFiscal.getNFe(dfe.getLBR_NFeID(), trxName);
+		MLBRNotaFiscal nf = findNotaFiscal(dfe.getLBR_NFeID());
 
 		if (nf != null)
 			event.setLBR_NotaFiscal_ID(nf.getLBR_NotaFiscal_ID());
@@ -586,6 +648,22 @@ public class NFeDistDFeUtil {
 			eventsCreated++;
 
 		applyManifestacao(event);
+	}
+
+	/**
+	 * Nota já existente para a chave. Não usa
+	 * {@link MLBRNotaFiscal#getNFe(String, String)} porque aquele registra
+	 * aviso quando não encontra — e aqui não encontrar é o caso normal: quase
+	 * todo DF-e baixado ainda não virou nota.
+	 */
+	private MLBRNotaFiscal findNotaFiscal(String chNFe) {
+		if (chNFe == null)
+			return null;
+
+		return new Query(ctx, MLBRNotaFiscal.Table_Name, "LBR_NFeID=?", trxName)
+			.setParameters(chNFe)
+			.setClient_ID()
+			.first();
 	}
 
 	/**
@@ -650,7 +728,7 @@ public class NFeDistDFeUtil {
 		}
 
 		// a nota pode ter entrado por upload antes de o DF-e ser baixado
-		MLBRNotaFiscal nf = MLBRNotaFiscal.getNFe(dfe.getLBR_NFeID(), trxName);
+		MLBRNotaFiscal nf = findNotaFiscal(dfe.getLBR_NFeID());
 
 		if (nf != null) {
 			dfe.setLBR_NotaFiscal_ID(nf.getLBR_NotaFiscal_ID());
@@ -698,6 +776,9 @@ public class NFeDistDFeUtil {
 		msg.append(created).append(" novo(s), ")
 			.append(updated).append(" atualizado(s), ")
 			.append(skipped).append(" ignorado(s)");
+
+		if (failed > 0)
+			msg.append(", ").append(failed).append(" com erro (ver log)");
 
 		if (eventsCreated > 0)
 			msg.append(", ").append(eventsCreated).append(" evento(s)");

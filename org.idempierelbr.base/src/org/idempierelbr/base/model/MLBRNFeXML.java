@@ -99,7 +99,12 @@ public class MLBRNFeXML extends X_LBR_NFeXML {
 		key = key.trim();
 
 		// cUF(2) AAMM(4) CNPJ(14) mod(2) serie(3) nNF(9) tpEmis(1) cNF(8) cDV(1)
-		setLBR_NFeModel(key.substring(20, 22));
+		String model = key.substring(20, 22);
+
+		// a coluna usa a lista de modelos de NF-e; CT-e e demais documentos
+		// ficam identificados por LBR_DFeType e pela própria chave de acesso
+		if (MLBRNotaFiscal.MODEL_NFE.equals(model) || MLBRNotaFiscal.MODEL_NFCE.equals(model))
+			setLBR_NFeModel(model);
 		setLBR_NFeSerie(stripLeadingZeros(key.substring(22, 25)));
 		setDocumentNo(stripLeadingZeros(key.substring(25, 34)));
 	}
