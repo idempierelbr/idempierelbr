@@ -5,6 +5,8 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.model.MDocType;
+import org.compiere.util.DB;
+import org.compiere.util.Env;
 import org.compiere.util.Msg;
 
 public class MLBRNotaFiscalEventLine extends X_LBR_NotaFiscalEventLine {
@@ -37,6 +39,40 @@ public class MLBRNotaFiscalEventLine extends X_LBR_NotaFiscalEventLine {
 		return m_parent;
 	}	//	getParent
 	
+	/**
+	 * 	Próxima sequência para uma manifestação do destinatário.
+	 * 
+	 * 	<p>O nSeqEvento é contado por chave de acesso e tipo de evento: a
+	 * 	primeira manifestação de um tipo é 1, e só uma retificação do mesmo tipo
+	 * 	sobre a mesma nota avança o número. Contam tanto as manifestações que
+	 * 	enviamos quanto as que chegaram pela Distribuição de DF-e — uma
+	 * 	manifestação dada pelo portal da SEFAZ volta por lá.
+	 * 
+	 * 	@param LBR_NFeID chave de acesso
+	 * 	@param tipoManifestacao tpEvento da manifestação
+	 * 	@return a sequência a usar, sempre >= 1
+	 */
+	public static int getNextManifestSeqNo(Properties ctx, String LBR_NFeID,
+			String tipoManifestacao, String trxName) {
+
+		if (LBR_NFeID == null || tipoManifestacao == null)
+			return 1;
+
+		int AD_Client_ID = Env.getAD_Client_ID(ctx);
+
+		int sent = DB.getSQLValueEx(trxName,
+				"SELECT COALESCE(MAX(LBR_NFeEventSeqNo),0) FROM LBR_NotaFiscalEventLine"
+				+ " WHERE AD_Client_ID=? AND LBR_NFeID=? AND LBR_TipoDeManifestacao=?",
+				AD_Client_ID, LBR_NFeID, tipoManifestacao);
+
+		int received = DB.getSQLValueEx(trxName,
+				"SELECT COALESCE(MAX(LBR_EventSeqNo),0) FROM LBR_NotaFiscalEventRec"
+				+ " WHERE AD_Client_ID=? AND LBR_NFeID=? AND LBR_EventCode=?",
+				AD_Client_ID, LBR_NFeID, tipoManifestacao);
+
+		return Math.max(Math.max(sent, received), 0) + 1;
+	}
+
 	protected boolean beforeSave(boolean newRecord) {
 		if (!newRecord)
 			return true;

@@ -18,7 +18,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.StringReader;
 import java.io.StringWriter;
 import java.security.MessageDigest;
 import java.sql.Timestamp;
@@ -28,10 +27,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 import java.util.logging.Level;
-import java.util.zip.GZIPInputStream;
 
-import javax.net.ssl.SSLContext;
-import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -44,24 +40,17 @@ import org.apache.commons.io.IOUtils;
 import org.compiere.model.I_C_BPartner;
 import org.compiere.model.MAttachment;
 import org.compiere.model.MAttachmentEntry;
-import org.compiere.model.MBPartner;
 import org.compiere.model.MClientInfo;
 import org.compiere.model.MDocType;
 import org.compiere.model.MImage;
-import org.compiere.model.MLocation;
-import org.compiere.model.MOrg;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.MProcess;
-import org.compiere.model.MRegion;
 import org.compiere.model.MTaxProvider;
 import org.compiere.model.X_C_TaxProviderCfg;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
-import org.compiere.util.Env;
-import org.compiere.util.Trx;
 import org.idempierelbr.base.model.MLBRCSC;
 import org.idempierelbr.base.model.MLBRNFeWebService;
-import org.idempierelbr.base.model.MLBRNFeXML;
 import org.idempierelbr.base.model.MLBRNotaFiscal;
 import org.idempierelbr.base.model.MLBRNotaFiscalEvent;
 import org.idempierelbr.base.util.TextUtil;
@@ -72,7 +61,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
@@ -904,134 +892,4 @@ public class NFeUtil {
 		return String.valueOf(Integer.parseInt(str));	
 	}
 	
-	public static String requestWS(Properties ctx, int AD_Org_ID, String tpAmb, String lastNSU,
-			String NSU, String NFeID, String trxName) throws Exception {
-		MOrg org = new MOrg(ctx, AD_Org_ID, trxName);
-		MOrgInfo orgInfo = MOrgInfo.get(ctx, org.get_ID(), trxName);
-		MLocation orgLoc = new MLocation(ctx, orgInfo.getC_Location_ID(), trxName);
-		MRegion orgRegion = new MRegion(ctx, orgLoc.getC_Region_ID(), trxName);
-
-		String LBR_RegionCode = orgRegion.get_ValueAsString("LBR_RegionCode");
-
-		int linked2OrgC_BPartner_ID = org.getLinkedC_BPartner_ID(trxName);
-		MBPartner bpLinked2Org = new MBPartner(ctx, linked2OrgC_BPartner_ID, trxName);
-		String LBR_CNPJ = TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ"));
-
-		StringBuilder xml = new StringBuilder()
-			.append("<distDFeInt versao=\"1.01\" xmlns=\"http://www.portalfiscal.inf.br/nfe\">")
-			.append("<tpAmb>").append(tpAmb).append("</tpAmb>")
-			.append("<cUFAutor>" + LBR_RegionCode + "</cUFAutor>")
-			.append("<CNPJ>" + LBR_CNPJ + "</CNPJ>");
-
-		if (NSU != null)
-			xml.append("<consNSU><NSU>").append(NSU).append("</NSU></consNSU>");
-		else if (NFeID != null)
-			xml.append("<consChNFe><chNFe>").append(NFeID).append("</chNFe></consChNFe>");
-		else
-			xml.append("<distNSU><ultNSU>").append(lastNSU).append("</ultNSU></distNSU>");
-
-		xml.append("</distDFeInt>");
-
-		//INICIALIZA CERTIFICADO
-		SSLContext sslContext;
-		try {
-			sslContext = DigitalCertificateUtil.buildSSLContext(ctx, AD_Org_ID);
-		} catch (Exception e) {
-			throw new AdempiereException(e);
-		}
-
-		SefazHttpClient client = new SefazHttpClient(sslContext, NFeUtil.VERSAO_DISTRIBUICAO,
-				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_DISTRIBUICAO_DFE,
-				tpAmb.equals(ENV_HOMOLOGACAO), MLBRNotaFiscal.LBR_NFEMODEL_55_NF_E, null);
-		String result = client.send(xml.toString());
-		
-		return result;
-	}
-	
-	public static String requestWSAndProcess(Properties ctx, int AD_Org_ID, String tpAmb,
-			String lastNSU, String NSU, String NFeID, String trxName) throws Exception {
-		String result = NFeUtil.requestWS(ctx, AD_Org_ID, tpAmb, lastNSU, NSU, NFeID, trxName);
-		
-		// Parse XML with XXE-hardened builder (SEFAZ response is untrusted input)
-		DocumentBuilder builder = SefazSoapUtils.newHardenedDocumentBuilder();
-		Document doc = builder.parse(new InputSource(new StringReader(result)));
-
-		String cStat = null;
-        if (doc.getElementsByTagName("cStat") != null)
-        	cStat = NFeUtil.getValue(doc, "cStat");
-        
-        String xMotivo = null;
-        if (doc.getElementsByTagName("xMotivo") != null)
-        	xMotivo = NFeUtil.getValue(doc, "xMotivo");
-        
-        String ultNSU = null;
-        if (doc.getElementsByTagName("ultNSU") != null)
-        	ultNSU = NFeUtil.getValue(doc, "ultNSU");
-        
-        String maxNSU = null;
-        if (doc.getElementsByTagName("maxNSU") != null)
-        	maxNSU = NFeUtil.getValue(doc, "maxNSU");
-        
-        NodeList docZipList = doc.getElementsByTagName("docZip");
-
-        log.info("SEFAZ DistDFe response — cStat=" + cStat + " xMotivo=" + xMotivo
-                + " ultNSU=" + ultNSU + " maxNSU=" + maxNSU
-                + " docZipCount=" + docZipList.getLength());
-
-        for (int i=0; i< docZipList.getLength(); i++) {
-        	Node node = docZipList.item(i);
-        	processDocZip(ctx, AD_Org_ID, node, trxName);
-        }
-
-		return cStat + " - " + xMotivo;
-	}
-	
-	public static void processDocZip(Properties ctx, int AD_Org_ID, Node node, String trxName) throws Exception {
-		if (node.getNodeType() == Node.ELEMENT_NODE) {
-			String NSU = node.getAttributes().getNamedItem("NSU").getNodeValue();
-			String schemaName = node.getAttributes().getNamedItem("schema").getNodeValue();
-
-			// decompress
-			byte[] decoded = java.util.Base64.getDecoder().decode(node.getTextContent());
-			String xml;
-			try (GZIPInputStream gzis = new GZIPInputStream(new ByteArrayInputStream(decoded))) {
-				xml = new String(gzis.readAllBytes(), java.nio.charset.StandardCharsets.UTF_8);
-			}
-			
-			// Parse XML with XXE-hardened builder (docZip content is untrusted input)
-			DocumentBuilder builder = SefazSoapUtils.newHardenedDocumentBuilder();
-			Document doc = builder.parse(new InputSource(new StringReader(xml)));
-
-			String chNFe = null;
-	        if (doc.getElementsByTagName("chNFe") != null)
-	        	chNFe = NFeUtil.getValue(doc, "chNFe");
-
-	        log.fine("SEFAZ docZip — NSU=" + NSU + " schema=" + schemaName + " chNFe=" + chNFe);
-
-	        int LBR_NFeXML_ID = DB.getSQLValue(trxName,
-	        	"SELECT LBR_NFeXML_ID FROM LBR_NFeXML WHERE AD_Client_ID=? AND AD_Org_ID=? AND LBR_NSU=? AND IsActive=?", 
-	        	Env.getAD_Client_ID(ctx), AD_Org_ID, NSU, "Y");
-	        
-	        MLBRNFeXML nfeXml;
-	        
-	        if (LBR_NFeXML_ID > 0) {
-	        	nfeXml = new MLBRNFeXML(ctx, LBR_NFeXML_ID, trxName);
-	        	nfeXml.deleteAttachments();
-	        } else {
-	        	nfeXml = new MLBRNFeXML(ctx, 0, trxName);
-	        	nfeXml.setAD_Org_ID(AD_Org_ID);
-	        }
-
-	        nfeXml.saveEx();
-	        
-	        Trx trx = Trx.get(trxName, false);
-	        trx.commit();
-	        
-        	nfeXml.setLBR_NSU(NSU);
-        	nfeXml.setLBR_NFeID(chNFe);
-        	nfeXml.setLBR_SchemaName(schemaName);
-	        nfeXml.attachXML(chNFe + ".xml", xml);
-	        nfeXml.saveEx();
-		}
-	}
 }	//	NFeUtil

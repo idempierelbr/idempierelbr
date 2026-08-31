@@ -604,7 +604,11 @@ public class NFeEventUtil {
 				MLBRNotaFiscal nf = new MLBRNotaFiscal (event.getCtx(), line.getLBR_NotaFiscal_ID(), event.get_TrxName());			
 				return nf.getLBR_NFeModel();
 			} else if (line.getLBR_NFeXML_ID() > 0) {
-				return MLBRNotaFiscal.LBR_NFEMODEL_55_NF_E; // TODO
+				MLBRNFeXML nfeXML = new MLBRNFeXML(event.getCtx(), line.getLBR_NFeXML_ID(), event.get_TrxName());
+				String model = nfeXML.getLBR_NFeModel();
+
+				// documentos baixados antes de a coluna existir não têm modelo
+				return model != null && !model.isEmpty() ? model : MLBRNotaFiscal.MODEL_NFE;
 			}
 		}
 		

@@ -19,6 +19,7 @@ Require-Bundle: org.adempiere.base,
  org.idempierelbr.base
 Service-Component: OSGI-INF/*.xml
 Export-Package: org.idempierelbr.nfe.beans,
+ org.idempierelbr.nfe.imports,
  org.idempierelbr.nfe.model,
  org.idempierelbr.nfe.process,
  org.idempierelbr.nfe.util
