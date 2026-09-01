@@ -11,6 +11,8 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -149,11 +151,15 @@ class SefazPostTest {
 	}
 
 	// -------------------------------------------------------------------------
-	// IOException propagation
+	// Transport failures
 	// -------------------------------------------------------------------------
 
+	/**
+	 * A falha de rede chega ao usuário explicada, e não como "Connection reset";
+	 * a exceção original continua como causa, para o log.
+	 */
 	@Test
-	void post_propagatesIOException_whenReadFails() throws Exception {
+	void post_explainsFailure_whenReadFails() throws Exception {
 		HttpsURLConnection conn = mock(HttpsURLConnection.class);
 		when(conn.getOutputStream()).thenReturn(new ByteArrayOutputStream());
 		when(conn.getResponseCode()).thenReturn(200);
@@ -162,9 +168,36 @@ class SefazPostTest {
 		});
 
 		assertThatThrownBy(() -> clientWith(conn).post(ENDPOINT, SOAP_ACTION, ENVELOPE))
-			.isInstanceOf(IOException.class)
-			.hasMessageContaining("network error");
+			.isInstanceOf(AdempiereException.class)
+			.hasMessageContaining("Não foi possível concluir a comunicação com a SEFAZ")
+			.hasRootCauseInstanceOf(IOException.class);
 		verify(conn).disconnect();
+	}
+
+	@Test
+	void post_explainsConnectionReset_whenServerDropsConnection() throws Exception {
+		SefazHttpClient client = new SefazHttpClient(dummySslContext(),
+			MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO_AN, NFeUtil.ENV_PRODUCAO,
+			url -> { throw new SocketException("Connection reset"); });
+
+		assertThatThrownBy(() -> client.post(ENDPOINT, SOAP_ACTION, ENVELOPE))
+			.isInstanceOf(AdempiereException.class)
+			.hasMessageContaining("envio de evento ao Ambiente Nacional")
+			.hasMessageContaining("fake.sefaz.gov.br encerrou a conexão")
+			.hasCauseInstanceOf(SocketException.class);
+	}
+
+	@Test
+	void post_explainsUnknownHost_whenNameResolutionFails() throws Exception {
+		SefazHttpClient client = new SefazHttpClient(dummySslContext(),
+			MLBRNFeWebService.SERVICE_NFE_DISTRIBUICAO_DFE, NFeUtil.ENV_PRODUCAO,
+			url -> { throw new UnknownHostException("fake.sefaz.gov.br"); });
+
+		assertThatThrownBy(() -> client.post(ENDPOINT, SOAP_ACTION, ENVELOPE))
+			.isInstanceOf(AdempiereException.class)
+			.hasMessageContaining("distribuição de DF-e")
+			.hasMessageContaining("não foi encontrado")
+			.hasMessageContaining("DNS");
 	}
 
 	// -------------------------------------------------------------------------

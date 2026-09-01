@@ -5,18 +5,27 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.ConnectException;
 import java.net.InetAddress;
+import java.net.NoRouteToHostException;
 import java.net.Socket;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.net.URI;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Level;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLException;
+import javax.net.ssl.SSLHandshakeException;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
@@ -48,16 +57,34 @@ public class SefazHttpClient {
 	private static final int MAX_RESPONSE_BYTES = 10 * 1024 * 1024; // 10 MB
 
 	private static final String[] REQUIRED_TLS_PROTOCOLS = { "TLSv1.2", "TLSv1.3" };
+	/**
+	 * Suites accepted when talking to SEFAZ. All of them keep forward secrecy and a SHA-2
+	 * MAC; static-RSA key exchange, SHA-1 and 3DES/RC4 stay out.
+	 * <p>
+	 * The list cannot be narrowed to AES-GCM only: several SEFAZ front ends refuse — by
+	 * TCP reset, not by handshake alert — a ClientHello that offers nothing else.
+	 * The Ambiente Nacional ({@code www.nfe.fazenda.gov.br}, {@code hom.nfe.fazenda.gov.br}),
+	 * which receives the manifestação do destinatário, and SEFAZ-BA only do ECDHE with
+	 * AES-CBC; SEFAZ-GO only does DHE with AES-GCM.
+	 */
 	private static final String[] REQUIRED_CIPHER_SUITES = {
 		// TLS 1.3 — fixed suites per RFC 8446
 		"TLS_AES_128_GCM_SHA256",
 		"TLS_AES_256_GCM_SHA384",
 		"TLS_CHACHA20_POLY1305_SHA256",
-		// TLS 1.2 — ECDHE + AES-GCM only
+		// TLS 1.2 — ECDHE + AES-GCM
 		"TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
 		"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
 		"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
 		"TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+		// TLS 1.2 — ECDHE + AES-CBC, required by the Ambiente Nacional and SEFAZ-BA
+		"TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+		"TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+		"TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+		"TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+		// TLS 1.2 — DHE + AES-GCM, required by SEFAZ-GO
+		"TLS_DHE_RSA_WITH_AES_128_GCM_SHA256",
+		"TLS_DHE_RSA_WITH_AES_256_GCM_SHA384",
 	};
 
 	private static final HttpConnectionFactory DEFAULT_CONNECTION_FACTORY =
@@ -159,6 +186,17 @@ public class SefazHttpClient {
 
 		byte[] body = envelope.getBytes(StandardCharsets.UTF_8);
 
+		try {
+			return exchange(endpoint, soapAction, body);
+		} catch (IOException e) {
+			// "Connection reset" no meio de um processo não diz nada a quem o executou
+			log.log(Level.WARNING, "SEFAZ transport failure — service=" + service
+					+ " env=" + envType, e);
+			throw new AdempiereException(describeTransportFailure(endpoint, e), e);
+		}
+	}
+
+	private String exchange(String endpoint, String soapAction, byte[] body) throws Exception {
 		HttpsURLConnection conn = connectionFactory.open(endpoint);
 		// Restrict to TLS 1.2/1.3 and modern cipher suites
 		conn.setSSLSocketFactory(new TlsSocketFactory(sslContext.getSocketFactory()));
@@ -199,6 +237,75 @@ public class SefazHttpClient {
 			return SefazSoapUtils.extractSoapBodyContent(new String(responseBytes, StandardCharsets.UTF_8));
 		} finally {
 			conn.disconnect();
+		}
+	}
+
+	/**
+	 * Explica a falha de comunicação em português, para quem executou o processo: o
+	 * motivo provável e o que fazer a respeito. A exceção original vai como causa e
+	 * continua inteira no log, para o time técnico.
+	 */
+	private String describeTransportFailure(String endpoint, IOException e) {
+		String host = getHost(endpoint);
+		String reason;
+		String hint;
+
+		if (e instanceof UnknownHostException) {
+			reason = "o endereço " + host + " não foi encontrado";
+			hint = "Verifique o acesso à internet, o DNS e o proxy do servidor de aplicação";
+		}
+		else if (e instanceof SocketTimeoutException) {
+			reason = "a SEFAZ não respondeu dentro do tempo limite";
+			hint = "O serviço costuma estar sobrecarregado quando isso acontece — tente novamente em alguns minutos";
+		}
+		else if (e instanceof ConnectException || e instanceof NoRouteToHostException) {
+			reason = "não foi possível abrir conexão com " + host;
+			hint = "Verifique o acesso à internet e se o firewall ou o proxy liberam a saída para a SEFAZ";
+		}
+		else if (e instanceof SSLHandshakeException) {
+			reason = host + " recusou a conexão segura";
+			hint = "Verifique o certificado digital da organização, a data e a hora do servidor";
+		}
+		else if (e instanceof SSLException || e instanceof SocketException) {
+			reason = host + " encerrou a conexão";
+			hint = "Costuma ser instabilidade do serviço ou bloqueio de firewall/proxy — tente novamente em alguns minutos";
+		}
+		else {
+			reason = "a comunicação falhou (" + e.getClass().getSimpleName() + ")";
+			hint = "Tente novamente; se persistir, o detalhe técnico está no log do servidor";
+		}
+
+		return "Não foi possível concluir a comunicação com a SEFAZ (" + getServiceLabel()
+				+ ", ambiente " + (NFeUtil.ENV_HOMOLOGACAO.equals(envType) ? "homologação" : "produção")
+				+ "): " + reason + ". " + hint + ".";
+	}
+
+	/** Nome do serviço como o usuário o conhece, e não como ele é chamado no cadastro */
+	private String getServiceLabel() {
+		switch (service) {
+			case MLBRNFeWebService.SERVICE_NFE_AUTORIZACAO:        return "autorização de NF-e";
+			case MLBRNFeWebService.SERVICE_NFE_RET_AUTORIZACAO:    return "retorno da autorização de NF-e";
+			case MLBRNFeWebService.SERVICE_NFE_CONSULTA_PROTOCOLO: return "consulta de NF-e";
+			case MLBRNFeWebService.SERVICE_NFE_STATUS_SERVICO:     return "status do serviço";
+			case MLBRNFeWebService.SERVICE_NFE_CONSULTA_CADASTRO:  return "consulta de cadastro";
+			case MLBRNFeWebService.SERVICE_NFE_INUTILIZACAO:       return "inutilização de numeração";
+			case MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO:    return "envio de evento de NF-e";
+			case MLBRNFeWebService.SERVICE_NFE_RECEPCAO_EVENTO_AN: return "envio de evento ao Ambiente Nacional";
+			case MLBRNFeWebService.SERVICE_NFCE_RECEPCAO_EVENTO:   return "envio de evento de NFC-e";
+			case MLBRNFeWebService.SERVICE_NFCE_CONSULTA:          return "consulta de NFC-e";
+			case MLBRNFeWebService.SERVICE_NFE_DISTRIBUICAO_DFE:   return "distribuição de DF-e";
+			default:                                               return "serviço " + service;
+		}
+	}
+
+	/** Só o host, que é o que ajuda o usuário — a URL inteira não vai para a tela */
+	private static String getHost(String endpoint) {
+		try {
+			String host = URI.create(endpoint).getHost();
+
+			return host == null ? "o servidor da SEFAZ" : host;
+		} catch (Exception e) {
+			return "o servidor da SEFAZ";
 		}
 	}
 
