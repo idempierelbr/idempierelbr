@@ -84,6 +84,7 @@ import org.zkoss.zul.Center;
 import org.zkoss.zul.Columns;
 import org.zkoss.zul.Div;
 import org.zkoss.zul.Listcell;
+import org.zkoss.zul.Listitem;
 import org.zkoss.zul.Hlayout;
 import org.zkoss.zul.North;
 import org.zkoss.zul.South;
@@ -247,10 +248,17 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		upload.addEventListener(Events.ON_UPLOAD, this);
 		bar.appendChild(upload);
 
-		Button remove = new Button("Remover documento");
+		Button remove = new Button("Remover selecionados");
 		remove.setId("Remove");
 		remove.addActionListener(this);
 		bar.appendChild(remove);
+
+		// tirar 39 documentos para importar 1 é o caso urgente, e é o inverso
+		// do que a remoção resolve bem
+		Button keepOnly = new Button("Manter só os selecionados");
+		keepOnly.setId("KeepOnly");
+		keepOnly.addActionListener(this);
+		bar.appendChild(keepOnly);
 
 		return bar;
 	}
@@ -363,6 +371,10 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	private Listbox createDocumentList() {
 		documentList = new Listbox();
 		documentList.setVflex(true);
+		// o lote chega com dezenas de documentos: trabalhar com eles um a um
+		// não se sustenta
+		documentList.setCheckmark(true);
+		documentList.setMultiple(true);
 		ZKUpdateUtil.setWidth(documentList, "100%");
 
 		ListHead head = new ListHead();
@@ -891,16 +903,47 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 			Dialog.info(getWindowNo(), "", message.toString());
 	}
 
-	private void removeSelectedDocument() {
-		int index = documentList.getSelectedIndex();
+	/**
+	 * Tira documentos do lote — os marcados, ou todo o resto quando
+	 * {@code keepSelected}. Nada é excluído: o que sai da lista continua no
+	 * monitor, pronto para ser trazido de novo depois.
+	 */
+	private void removeDocuments(boolean keepSelected) {
+		List<NFeImportDocument> selected = getSelectedDocuments();
 
-		if (index < 0 || index >= batch.size()) {
-			Dialog.warn(getWindowNo(), "", "Selecione um documento para remover da lista");
+		if (selected.isEmpty()) {
+			Dialog.warn(getWindowNo(), "", "Marque na lista os documentos que você quer "
+					+ (keepSelected ? "manter" : "remover"));
 			return;
 		}
 
-		batch.remove(index);
+		int before = batch.size();
+
+		if (keepSelected)
+			batch.retainAll(selected);
+		else
+			batch.removeAll(selected);
+
 		refresh();
+
+		int removed = before - batch.size();
+
+		if (removed > 0)
+			Dialog.info(getWindowNo(), "", removed + " documento(s) fora da lista."
+					+ " Eles continuam no monitor e podem ser importados depois");
+	}
+
+	private List<NFeImportDocument> getSelectedDocuments() {
+		List<NFeImportDocument> selected = new ArrayList<NFeImportDocument>();
+
+		for (Listitem item : documentList.getSelectedItems()) {
+			Object value = item.getValue();
+
+			if (value instanceof NFeImportDocument)
+				selected.add((NFeImportDocument) value);
+		}
+
+		return selected;
 	}
 
 	// -------------------------------------------------------------------------
@@ -935,7 +978,9 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		if ("LoadDFe".equals(id))
 			loadFromDFe();
 		else if ("Remove".equals(id))
-			removeSelectedDocument();
+			removeDocuments(false);
+		else if ("KeepOnly".equals(id))
+			removeDocuments(true);
 		else if ("Apply".equals(id))
 			applyResolution(false);
 		else if ("ApplyBatch".equals(id))
