@@ -25,6 +25,7 @@ import java.util.zip.ZipInputStream;
 
 import org.adempiere.exceptions.AdempiereException;
 import org.adempiere.webui.AdempiereWebUI;
+import org.adempiere.webui.ClientInfo;
 import org.adempiere.webui.LayoutUtils;
 import org.adempiere.webui.component.Button;
 import org.adempiere.webui.component.Column;
@@ -82,7 +83,6 @@ import org.zkoss.zk.ui.event.UploadEvent;
 import org.zkoss.zul.Borderlayout;
 import org.zkoss.zul.Center;
 import org.zkoss.zul.Columns;
-import org.zkoss.zul.Div;
 import org.zkoss.zul.Listcell;
 import org.zkoss.zul.Listitem;
 import org.zkoss.zul.Hlayout;
@@ -188,16 +188,18 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	// -------------------------------------------------------------------------
 
 	private void jbInit() throws Exception {
-		// a tela ocupa a aba inteira, e o usuário continua livre para navegar
-		Div container = new Div();
-		container.setStyle("height: 100%; width: 100%; overflow: auto;");
-		container.appendChild(mainLayout);
-		form.appendChild(container);
+		// a barra de origem e a de ações ficam presas no topo e no rodapé, e é o
+		// miolo que estica ou encolhe com a altura da tela. O caminho anterior
+		// era rolar o form inteiro dentro de uma div, com altura mínima fixa —
+		// numa tela baixa o botão Importar nascia abaixo da dobra
+		ZKUpdateUtil.setWidth(form, "100%");
+		ZKUpdateUtil.setHeight(form, "100%");
+		form.setStyle("position: relative; padding: 0; margin: 0");
+		form.appendChild(mainLayout);
 
 		LayoutUtils.addSclass("tab-editor-form-content", mainLayout);
 		ZKUpdateUtil.setWidth(mainLayout, "100%");
 		ZKUpdateUtil.setHeight(mainLayout, "100%");
-		mainLayout.setStyle("min-height: 600px");
 
 		North north = new North();
 		north.setSplittable(false);
@@ -208,7 +210,11 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		west.setSplittable(true);
 		west.setCollapsible(true);
 		west.setTitle("Dados do lote");
+		west.setAutoscroll(true);
 		ZKUpdateUtil.setWidth(west, "320px");
+		// em tela estreita, 320px de opções não deixam nada para a lista: o
+		// painel começa recolhido e o usuário abre quando for preencher o lote
+		west.setOpen(!ClientInfo.maxWidth(ClientInfo.MEDIUM_WIDTH - 1));
 		mainLayout.appendChild(west);
 		west.appendChild(createOptionsGrid());
 
@@ -394,12 +400,20 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	private Vlayout createPendingPanel() throws Exception {
 		Vlayout layout = new Vlayout();
 		ZKUpdateUtil.setHeight(layout, "100%");
+		// rede de segurança: em tela baixa, o painel inteiro rola em vez de
+		// esconder o que não coube
+		layout.setStyle("overflow: auto;");
 
 		pendingLabel = new Label("Nenhuma pendência");
 		layout.appendChild(pendingLabel);
 
 		pendingList = new Listbox();
-		ZKUpdateUtil.setHeight(pendingList, "45%");
+		// altura em porcentagem só resolve quando o pai tem altura definida, o
+		// que não é o caso dentro da aba: a lista crescia com o conteúdo, era
+		// cortada pelo painel e ficava sem barra de rolagem. Com vflex as duas
+		// listas dividem o espaço que sobra e cada uma rola por dentro.
+		ZKUpdateUtil.setVflex(pendingList, "2");
+		pendingList.setStyle("min-height: 150px;");
 		ZKUpdateUtil.setWidth(pendingList, "100%");
 		pendingList.addEventListener(Events.ON_SELECT, this);
 
@@ -422,7 +436,8 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		layout.appendChild(suggestionTitle);
 
 		suggestionList = new Listbox();
-		ZKUpdateUtil.setHeight(suggestionList, "25%");
+		ZKUpdateUtil.setVflex(suggestionList, "1");
+		suggestionList.setStyle("min-height: 120px;");
 		ZKUpdateUtil.setWidth(suggestionList, "100%");
 		suggestionList.addEventListener(Events.ON_SELECT, this);
 
@@ -862,6 +877,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		}
 
 		List<NFeImportDocument> imported = new ArrayList<NFeImportDocument>();
+		StringBuilder blocked = new StringBuilder();
 		StringBuilder errors = new StringBuilder();
 		int skipped = 0;
 
@@ -871,9 +887,14 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 
 			try {
 				NFeImportService service = new NFeImportService(Env.getCtx(), trxName);
+				String blocker = service.validate(nfe, options);
 
-				if (service.validate(nfe, options) != null) {
+				if (blocker != null) {
+					// engolir o motivo aqui deixa o usuário sem saída: a nota
+					// não entra e ninguém diz o que falta
 					skipped++;
+					blocked.append("\n").append(nfe.getLabel()).append(": ").append(blocker);
+					log.warning("Nota Fiscal não importada: " + nfe.getLabel() + " - " + blocker);
 					continue;
 				}
 
@@ -897,12 +918,12 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		StringBuilder message = new StringBuilder(imported.size() + " nota(s) importada(s)");
 
 		if (skipped > 0)
-			message.append(", ").append(skipped).append(" ainda com pendência");
+			message.append(", ").append(skipped).append(" não importada(s):").append(blocked);
 
 		if (errors.length() > 0)
 			message.append("\n\nFalhas:").append(errors);
 
-		if (errors.length() > 0)
+		if (errors.length() > 0 || skipped > 0)
 			Dialog.error(getWindowNo(), "", message.toString());
 		else
 			Dialog.info(getWindowNo(), "", message.toString());
