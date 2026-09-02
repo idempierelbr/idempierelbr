@@ -37,6 +37,7 @@ import org.adempiere.webui.component.ListHead;
 import org.adempiere.webui.component.ListHeader;
 import org.adempiere.webui.component.ListItem;
 import org.adempiere.webui.component.Listbox;
+import org.adempiere.webui.component.ListboxFactory;
 import org.adempiere.webui.component.Row;
 import org.adempiere.webui.component.Rows;
 import org.adempiere.webui.editor.WDateEditor;
@@ -56,13 +57,16 @@ import org.compiere.model.MAttachmentEntry;
 import org.compiere.model.MColumn;
 import org.compiere.model.MLookup;
 import org.compiere.model.MLookupFactory;
+import org.compiere.model.MOrg;
 import org.compiere.model.MProduct;
+import org.compiere.model.MRole;
 import org.compiere.model.MSysConfig;
 import org.compiere.model.Query;
 import org.compiere.process.DocAction;
 import org.compiere.util.CLogger;
 import org.compiere.util.DisplayType;
 import org.compiere.util.Env;
+import org.compiere.util.KeyNamePair;
 import org.compiere.util.Msg;
 import org.compiere.util.Trx;
 import org.idempierelbr.base.model.MLBRNFeXML;
@@ -126,6 +130,9 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	/** Coluna de referência do DocAction, para reaproveitar a lista do core */
 	private static final int COLUMN_DOCACTION_ID = 4324;
 
+	/** Chave do item "*" do seletor: trazer o DF-e de todas as organizações */
+	private static final int ORG_ALL = -1;
+
 	private final WNFeImportDFeForm form;
 	private final Borderlayout mainLayout = new Borderlayout();
 	private final ConfirmPanel confirmPanel = new ConfirmPanel(true);
@@ -140,6 +147,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 
 	private final NFeImportOptions options = new NFeImportOptions();
 
+	private Listbox orgPicker;
 	private Listbox documentList;
 	private Listbox pendingList;
 	private Listbox suggestionList;
@@ -242,6 +250,13 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	private Hlayout createSourceBar() {
 		Hlayout bar = new Hlayout();
 		bar.setStyle("padding: 6px;");
+		bar.setValign("middle");
+
+		// o monitor guarda o DF-e do tenant inteiro, mas quem concilia responde
+		// por uma organização só: trazer tudo obriga a separar na mão o que nem
+		// deveria ter aparecido na tela
+		bar.appendChild(new Label(Msg.translate(Env.getCtx(), "AD_Org_ID")));
+		bar.appendChild(createOrgPicker());
 
 		Button loadDFe = new Button("Buscar DF-e prontos");
 		loadDFe.setId("LoadDFe");
@@ -529,6 +544,52 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	// -------------------------------------------------------------------------
 
 	/**
+	 * As organizações que o papel do usuário enxerga, com "*" no topo para
+	 * quem cuida de mais de uma. A organização do login entra pré-selecionada,
+	 * porque é dela que o usuário costuma cuidar.
+	 */
+	private Listbox createOrgPicker() {
+		orgPicker = ListboxFactory.newDropdownListbox();
+		orgPicker.addItem(new KeyNamePair(ORG_ALL, "*"));
+
+		MRole role = MRole.getDefault();
+
+		// a organização 0 fica de fora: DF-e recebido é sempre de uma
+		// organização concreta, a que tem o CNPJ do destinatário
+		List<MOrg> orgs = new Query(Env.getCtx(), MOrg.Table_Name, "AD_Org_ID>0", null)
+			.setClient_ID()
+			.setOnlyActiveRecords(true)
+			.setOrderBy("Name")
+			.list();
+
+		for (MOrg org : orgs) {
+			if (role == null || role.isOrgAccess(org.getAD_Org_ID(), false))
+				orgPicker.addItem(new KeyNamePair(org.getAD_Org_ID(), org.getName()));
+		}
+
+		int AD_Org_ID = Env.getAD_Org_ID(Env.getCtx());
+
+		if (AD_Org_ID > 0)
+			orgPicker.setSelectedKeyNamePair(new KeyNamePair(AD_Org_ID, ""));
+
+		if (orgPicker.getSelectedIndex() < 0)
+			orgPicker.setSelectedIndex(0);
+
+		return orgPicker;
+	}
+
+	/** @return a organização escolhida, ou {@link #ORG_ALL} para todas */
+	private int getSelectedOrgId() {
+		if (orgPicker == null)
+			return ORG_ALL;
+
+		ListItem item = orgPicker.getSelectedItem();
+		Object value = item == null ? null : item.getValue();
+
+		return value instanceof Integer ? (Integer) value : ORG_ALL;
+	}
+
+	/**
 	 * Traz do monitor os DF-e prontos para importar — os que já têm o XML
 	 * completo e ainda não viraram nota.
 	 */
@@ -536,10 +597,24 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		int limit = MSysConfig.getIntValue(SYSCONFIG_MAX_DOCUMENTS, DEFAULT_MAX_DOCUMENTS,
 				Env.getAD_Client_ID(Env.getCtx()));
 
-		List<MLBRNFeXML> documents = new Query(Env.getCtx(), MLBRNFeXML.Table_Name,
-				"LBR_DFeStatus=? AND LBR_IsXMLComplete=? AND LBR_NotaFiscal_ID IS NULL", null)
-			.setParameters(MLBRNFeXML.LBR_DFESTATUS_ProntoParaImportar, "Y")
+		int AD_Org_ID = getSelectedOrgId();
+
+		StringBuilder where = new StringBuilder(
+				"LBR_DFeStatus=? AND LBR_IsXMLComplete=? AND LBR_NotaFiscal_ID IS NULL");
+		List<Object> parameters = new ArrayList<Object>();
+		parameters.add(MLBRNFeXML.LBR_DFESTATUS_ProntoParaImportar);
+		parameters.add("Y");
+
+		if (AD_Org_ID != ORG_ALL) {
+			where.append(" AND AD_Org_ID=?");
+			parameters.add(AD_Org_ID);
+		}
+
+		List<MLBRNFeXML> documents = new Query(Env.getCtx(), MLBRNFeXML.Table_Name, where.toString(), null)
+			.setParameters(parameters)
 			.setClient_ID()
+			// mesmo em "*", quem diz o que é "todas" é o acesso do papel
+			.setApplyAccessFilter(true)
 			.setOnlyActiveRecords(true)
 			.setOrderBy("DateDoc, LBR_NSU")
 			.list();
@@ -569,7 +644,11 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 
 		refresh();
 
-		String message = loaded + " documento(s) carregado(s) do monitor";
+		String scope = AD_Org_ID == ORG_ALL
+				? "todas as organizações"
+				: MOrg.get(Env.getCtx(), AD_Org_ID).getName();
+
+		String message = loaded + " documento(s) carregado(s) do monitor — " + scope;
 
 		if (failed > 0)
 			message += ", " + failed + " sem XML legível";
