@@ -344,7 +344,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		rows.appendChild(row);
 	}
 
-	private Tabbox createTabs() {
+	private Tabbox createTabs() throws Exception {
 		Tabbox tabbox = new Tabbox();
 		ZKUpdateUtil.setWidth(tabbox, "100%");
 		ZKUpdateUtil.setHeight(tabbox, "100%");
@@ -391,7 +391,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		return documentList;
 	}
 
-	private Vlayout createPendingPanel() {
+	private Vlayout createPendingPanel() throws Exception {
 		Vlayout layout = new Vlayout();
 		ZKUpdateUtil.setHeight(layout, "100%");
 
@@ -441,7 +441,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	 * Onde a pendência selecionada é resolvida. Um editor por vez, não um por
 	 * linha: a fila pode ter centenas de itens.
 	 */
-	private Grid createResolutionGrid() {
+	private Grid createResolutionGrid() throws Exception {
 		Grid grid = GridFactory.newGridLayout();
 
 		Columns columns = new Columns();
@@ -465,13 +465,18 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		editorProduct = new WSearchEditor("M_Product_ID", false, false, true, lookupProduct);
 		editorProduct.addValueChangeListener(this);
 
+		// encargo e unidade não podem herdar o lookup de C_InvoiceLine: as regras
+		// de validação daquelas colunas dependem do contexto da janela
+		// (@C_DocTypeTarget_ID@ no encargo, @M_Product_ID@ na unidade), que num
+		// form não existe. O MLookup não consegue resolver a regra, limpa a lista
+		// e o campo aparece em branco, sem nenhuma opção para escolher.
 		MLookup lookupCharge = MLookupFactory.get(Env.getCtx(), getWindowNo(), 0,
-				MColumn.getColumn_ID(TABLE_INVOICELINE, "C_Charge_ID"), DisplayType.TableDir);
+				DisplayType.TableDir, Env.getLanguage(Env.getCtx()), "C_Charge_ID", 0, false, null);
 		editorCharge = new WTableDirEditor("C_Charge_ID", false, false, true, lookupCharge);
 		editorCharge.addValueChangeListener(this);
 
 		MLookup lookupUOM = MLookupFactory.get(Env.getCtx(), getWindowNo(), 0,
-				MColumn.getColumn_ID(TABLE_INVOICELINE, "C_UOM_ID"), DisplayType.TableDir);
+				DisplayType.TableDir, Env.getLanguage(Env.getCtx()), "C_UOM_ID", 0, false, null);
 		editorUOM = new WTableDirEditor("C_UOM_ID", false, false, true, lookupUOM);
 		editorUOM.addValueChangeListener(this);
 
@@ -995,7 +1000,18 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	public void valueChange(ValueChangeEvent e) {
 		String property = e.getPropertyName();
 
-		if ("C_DocType_ID".equals(property)) {
+		if ("M_Product_ID".equals(property)) {
+			// a unidade quase sempre é a do cadastro do produto; deixá-la em
+			// branco obriga o usuário a informar o que o sistema já sabe
+			Integer M_Product_ID = e.getNewValue() == null ? null : (Integer) e.getNewValue();
+
+			if (M_Product_ID != null && M_Product_ID > 0) {
+				MProduct product = MProduct.get(Env.getCtx(), M_Product_ID);
+
+				if (product != null && product.getC_UOM_ID() > 0)
+					editorUOM.setValue(product.getC_UOM_ID());
+			}
+		} else if ("C_DocType_ID".equals(property)) {
 			options.C_DocType_ID = e.getNewValue() == null ? 0 : (Integer) e.getNewValue();
 		} else if ("LBR_TransactionType".equals(property)) {
 			options.LBR_TransactionType = (String) e.getNewValue();
