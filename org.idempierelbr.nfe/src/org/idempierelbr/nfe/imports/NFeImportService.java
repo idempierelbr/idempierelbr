@@ -191,13 +191,34 @@ public class NFeImportService {
 	 * A organização é encontrada pelo parceiro que a representa — é assim que o
 	 * iDempiere liga o CNPJ do destinatário a uma organização nossa.
 	 */
+	/**
+	 * Organização dona do documento, pelo CNPJ/CPF do destinatário.
+	 *
+	 * <p>O que liga uma organização ao seu parceiro de negócio é o
+	 * {@code AD_OrgBP_ID} — a "Organização Vinculada" do cadastro do parceiro,
+	 * a mesma chave que {@link MOrg#getLinkedC_BPartner_ID} usa do outro lado.
+	 * O {@code AD_Org_ID} desse parceiro costuma ser 0, porque o cadastro da
+	 * própria empresa fica no nível do tenant: olhar para ele não encontra
+	 * organização nenhuma.
+	 */
 	private MOrg getOrgByTaxID(String taxID) {
-		MBPartner bp = getBPartnerByTaxID(taxID);
-
-		if (bp == null || bp.getAD_Org_ID() <= 0)
+		if (taxID == null || taxID.trim().isEmpty())
 			return null;
 
-		return new MOrg(ctx, bp.getAD_Org_ID(), trxName);
+		String where = (taxID.trim().length() == 11 ? "LBR_CPF=?" : "LBR_CNPJ=?")
+				+ " AND AD_OrgBP_ID>0";
+
+		MBPartner bp = new Query(ctx, MBPartner.Table_Name, where, trxName)
+			.setParameters(taxID.trim())
+			.setClient_ID()
+			.setOnlyActiveRecords(true)
+			.setOrderBy("AD_OrgBP_ID")
+			.first();
+
+		if (bp == null)
+			return null;
+
+		return new MOrg(ctx, bp.getAD_OrgBP_ID(), trxName);
 	}
 
 	// -------------------------------------------------------------------------
