@@ -741,10 +741,12 @@ public class NFeImportService {
 		if (value == null || value.trim().isEmpty())
 			throw new AdempiereException("Item " + nItem + ": " + label + " não informado no XML");
 
-		int id = new Query(ctx, tableName, "Value=?", trxName)
-			.setParameters(value.trim())
-			.setClient_ID()
+		//	Tabelas de domínio fiscal vêm carregadas no System (AD_Client_ID=0);
+		//	o tenant só aparece quando cadastra o próprio código, e aí prevalece
+		int id = new Query(ctx, tableName, "Value=? AND AD_Client_ID IN (0,?)", trxName)
+			.setParameters(value.trim(), Env.getAD_Client_ID(ctx))
 			.setOnlyActiveRecords(true)
+			.setOrderBy("AD_Client_ID DESC")
 			.firstId();
 
 		if (id <= 0)
@@ -759,10 +761,11 @@ public class NFeImportService {
 		if (uTrib == null || uTrib.trim().isEmpty())
 			return 0;
 
-		return new Query(ctx, MUOM.Table_Name, "UPPER(X12DE355)=? OR UPPER(Name)=?", trxName)
-			.setParameters(uTrib.trim().toUpperCase(), uTrib.trim().toUpperCase())
-			.setClient_ID()
+		return new Query(ctx, MUOM.Table_Name,
+				"(UPPER(X12DE355)=? OR UPPER(Name)=?) AND AD_Client_ID IN (0,?)", trxName)
+			.setParameters(uTrib.trim().toUpperCase(), uTrib.trim().toUpperCase(), Env.getAD_Client_ID(ctx))
 			.setOnlyActiveRecords(true)
+			.setOrderBy("AD_Client_ID DESC")
 			.firstId();
 	}
 
