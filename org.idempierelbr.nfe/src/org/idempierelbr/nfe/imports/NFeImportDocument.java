@@ -40,8 +40,14 @@ public class NFeImportDocument {
 	/** Documento XML completo — os impostos são lidos dele */
 	public Document doc;
 
-	/** XML como veio, para virar anexo da nota */
-	public String xml;
+	/**
+	 * XML como veio, byte a byte, para virar anexo da nota.
+	 *
+	 * <p>Bytes, e não String: o encoding do documento é o que a declaração dele
+	 * diz. Decodificar para String obrigaria a escolher um charset aqui, e a
+	 * escolha erraria em toda instância cujo XML não viesse nesse charset.
+	 */
+	public byte[] xml;
 
 	/** De onde este documento veio: {@link #SOURCE_FILE} ou {@link #SOURCE_DFE} */
 	public String source = SOURCE_FILE;

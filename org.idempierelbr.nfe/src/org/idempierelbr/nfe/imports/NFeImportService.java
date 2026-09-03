@@ -471,7 +471,9 @@ public class NFeImportService {
 					nf.get_UUID(), trxName);
 
 		attachment.setAD_Org_ID(nf.getAD_Org_ID());
-		attachment.addEntry(new MAttachmentEntry(name, nfe.xml.getBytes()));
+		// os bytes vão para o anexo como chegaram da SEFAZ: sem decodificar e
+		// recodificar, o anexo da nota é cópia exata do documento original
+		attachment.addEntry(new MAttachmentEntry(name, nfe.xml));
 		attachment.saveEx();
 	}
 

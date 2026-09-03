@@ -629,7 +629,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 			if (isLoaded(dfe.getLBR_NFeID()))
 				continue;
 
-			String xml = readAttachment(dfe);
+			byte[] xml = readAttachment(dfe);
 
 			if (xml == null) {
 				failed++;
@@ -679,7 +679,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 					if (entry.isDirectory() || !entry.getName().toLowerCase().endsWith(".xml"))
 						continue;
 
-					String xml = new String(zip.readAllBytes(), StandardCharsets.UTF_8);
+					byte[] xml = zip.readAllBytes();
 
 					if (addDocument(xml, entry.getName(), NFeImportDocument.SOURCE_FILE, 0))
 						loaded++;
@@ -688,7 +688,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 				}
 			}
 		} else {
-			String xml = new String(getStream(media).readAllBytes(), StandardCharsets.UTF_8);
+			byte[] xml = getStream(media).readAllBytes();
 
 			if (addDocument(xml, media.getName(), NFeImportDocument.SOURCE_FILE, 0))
 				loaded++;
@@ -707,10 +707,14 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		if (media.isBinary())
 			return media.getStreamData();
 
+		// o upload do iDempiere é configurado como "native", então o arquivo
+		// chega binário e o caminho acima é o que roda. Aqui o ZK já decodificou
+		// o conteúdo e o charset original se perdeu: UTF-8 é o melhor palpite
+		// que resta
 		return new ByteArrayInputStream(media.getStringData().getBytes(StandardCharsets.UTF_8));
 	}
 
-	private String readAttachment(MLBRNFeXML dfe) {
+	private byte[] readAttachment(MLBRNFeXML dfe) {
 		MAttachment attachment = dfe.getAttachment(true);
 
 		if (attachment == null || attachment.getEntryCount() == 0)
@@ -718,7 +722,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 
 		MAttachmentEntry entry = attachment.getEntry(0);
 
-		return entry == null ? null : new String(entry.getData(), StandardCharsets.UTF_8);
+		return entry == null ? null : entry.getData();
 	}
 
 	/**
@@ -727,10 +731,13 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	 *
 	 * @return true se o documento entrou no lote
 	 */
-	private boolean addDocument(String xml, String fileName, String source, int LBR_NFeXML_ID) {
+	private boolean addDocument(byte[] xml, String fileName, String source, int LBR_NFeXML_ID) {
 		try {
+			// os bytes vão crus para o parser: é a declaração do próprio
+			// documento (ou o BOM, ou o UTF-8 que o padrão XML manda assumir na
+			// falta dos dois) que diz em que charset ele está
 			Document doc = SefazSoapUtils.newHardenedDocumentBuilder()
-				.parse(new ByteArrayInputStream(xml.getBytes(StandardCharsets.UTF_8)));
+				.parse(new ByteArrayInputStream(xml));
 
 			NFeImportDocument nfe = NFeXMLParser.parse(doc);
 
