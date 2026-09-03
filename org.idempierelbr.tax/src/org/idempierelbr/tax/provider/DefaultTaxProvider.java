@@ -1174,6 +1174,16 @@ public class DefaultTaxProvider implements ITaxProvider {
 		s_log.log(Level.SEVERE, "DefaultTaxProvider: validateConnection(MTaxProvider provider, ProcessInfo pi)");
 		return null;
 	}
+
+	/**
+	 * LBR delegates the whole tax calculation and computes tax-included summary taxes from its own
+	 * detail tables, so it handles this case correctly (see IDEMPIERE-6749 / IDEMPIERE-7069).
+	 */
+	@Override
+	public boolean isTaxIncludedSummarySupported()
+	{
+		return true;
+	}
 	
 	/**
 	 * Recalculate invoice tax
