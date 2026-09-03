@@ -145,7 +145,8 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	/** Produtos sugeridos para a pendência em foco */
 	private final List<MProduct> suggestions = new ArrayList<MProduct>();
 
-	private final NFeImportOptions options = new NFeImportOptions();
+	/** Opções do lote; uma subclasse pode trocar por uma especialização no seu construtor */
+	protected NFeImportOptions options = new NFeImportOptions();
 
 	private Listbox orgPicker;
 	private Listbox documentList;
@@ -172,7 +173,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 
 	public void initForm() {
 		try {
-			readService = new NFeImportService(Env.getCtx(), null);
+			readService = newService(null);
 			jbInit();
 		} catch (Exception e) {
 			// engolir a falha aqui abriria uma aba vazia, sem explicação nenhuma
@@ -189,6 +190,11 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 
 	private int getWindowNo() {
 		return form.getWindowNo();
+	}
+
+	/** Fábrica do serviço de importação, para uma subclasse devolver a sua especialização */
+	protected NFeImportService newService(String trxName) {
+		return new NFeImportService(Env.getCtx(), trxName);
 	}
 
 	// -------------------------------------------------------------------------
@@ -288,7 +294,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	 * O que vale para o lote inteiro. Cada nota pode ser importada com outro
 	 * tipo de documento, mas o normal é o lote inteiro compartilhar a decisão.
 	 */
-	private Grid createOptionsGrid() {
+	protected Grid createOptionsGrid() {
 		Grid grid = GridFactory.newGridLayout();
 
 		Columns columns = new Columns();
@@ -351,7 +357,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		return grid;
 	}
 
-	private void appendRow(Rows rows, String label, WEditor editor, boolean mandatory) {
+	protected void appendRow(Rows rows, String label, WEditor editor, boolean mandatory) {
 		Row row = new Row();
 		Label text = new Label(label);
 
@@ -972,7 +978,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 			Trx trx = Trx.get(trxName, true);
 
 			try {
-				NFeImportService service = new NFeImportService(Env.getCtx(), trxName);
+				NFeImportService service = newService(trxName);
 				String blocker = service.validate(nfe, options);
 
 				if (blocker != null) {

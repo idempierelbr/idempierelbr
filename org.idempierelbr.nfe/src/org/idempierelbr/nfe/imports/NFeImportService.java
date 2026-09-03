@@ -326,6 +326,8 @@ public class NFeImportService {
 
 			reconcileDFe(nf, nfe);
 
+			afterImport(nf, nfe, options);
+
 			if (!DocAction.ACTION_None.equals(options.docAction))
 				process(nf, options.docAction);
 
@@ -333,6 +335,10 @@ public class NFeImportService {
 		} finally {
 			current = null;
 		}
+	}
+
+	/** Gancho com a nota já conciliada e ainda em rascunho, na transação do chamador */
+	protected void afterImport(MLBRNotaFiscal nf, NFeImportDocument nfe, NFeImportOptions options) {
 	}
 
 	/**
