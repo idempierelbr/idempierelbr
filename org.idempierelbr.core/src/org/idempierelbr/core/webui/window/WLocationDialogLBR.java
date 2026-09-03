@@ -744,10 +744,10 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 						}
 					txtCity.refreshData(cep.getCidade());
 					txtCity.setRawValue(cep.getCidade());
-					txtAddress1.setText(cep.getLogradouroType() + " " + cep.getLogradouro());
+					txtAddress1.setText(cep.getLogradouroFull());
 					txtAddress3.setText(cep.getBairro());
 					txtPostal.setText(getFormatedCepZip(cep.getCep(), m_location.getCountry().getC_Country_ID()));
-				} else if (cep.getResulCode() == 0) {
+				} else if (cep.getResulCode() == WebServiceCep.RESULT_NOT_FOUND) {
 					onSaveError = true;
 					Dialog.error(0, "Error", Msg.parseTranslation(Env.getCtx(),
 							"O CEP/ZIP não foi localizado na base de dados."), new Callback<Integer>() {					
@@ -758,21 +758,13 @@ public class WLocationDialogLBR extends Window implements EventListener<Event>
 					});
 					inOKAction = false;
 					return;
-				} else if (cep.getResulCode() == 14) {
-					onSaveError = true;
-					Dialog.error(0, "Error", Msg.parseTranslation(Env.getCtx(),
-							"Não foi possível fazer a busca (possível problema com a internet)."), new Callback<Integer>() {					
-						@Override
-						public void onCallback(Integer result) {
-							Events.echoEvent("onSaveError", WLocationDialogLBR.this, null);
-						}
-					});
-					inOKAction = false;
-					return;
 				} else {
+					//	a causa concreta vem no resultText e a exceção original vai para o log
+					log.log(Level.WARNING, "Falha ao consultar o CEP/ZIP: " + cep.getResultText(),
+							cep.getException());
 					onSaveError = true;
 					Dialog.error(0, "Error", Msg.parseTranslation(Env.getCtx(),
-							"Falha ao localizar o CEP/ZIP."), new Callback<Integer>() {					
+							"Não foi possível consultar o CEP/ZIP. " + cep.getResultText()), new Callback<Integer>() {					
 						@Override
 						public void onCallback(Integer result) {
 							Events.echoEvent("onSaveError", WLocationDialogLBR.this, null);
