@@ -134,8 +134,8 @@ O perfil de Administrador do Sistema não pode ser alterado.]]></value>
   <value column="Name" original="Node">Nó</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Define workflow nodes">Definir nós de workflow</value>
-  <value column="Help" original="The Node Tab defines each Node, Activity or step in this Workflow.&lt;br&gt;&#10;The action (activity) type determines the execution: &quot;Route&quot; may be used in routing control conditions.  &quot;None&quot; identifies manual execution.">Define cada nó, atividade ou etapa do workflow.&lt;br&gt;
-O tipo de ação determina a execução: "Rota" serve para condições de controle de roteamento e "Nenhum" indica execução manual.</value>
+  <value column="Help" original="The Node Tab defines each Node, Activity or step in this Workflow.&lt;br&gt;&#10;The action (activity) type determines the execution: &quot;Route&quot; may be used in routing control conditions.  &quot;None&quot; identifies manual execution." xml:space="preserve"><![CDATA[Define cada nó, atividade ou etapa do workflow.<br>
+O tipo de ação determina a execução: "Rota" serve para condições de controle de roteamento e "Nenhum" indica execução manual.]]></value>
  </row>
  <row id="123" trl="Y">
   <value column="Name" original="Node Translation">Tradução de Nó</value>
@@ -1760,8 +1760,8 @@ Se o nome não for encontrado, valem os campos Tamanho X e Tamanho Y. Havendo um
   <value column="Name" original="Print Table Format">Formato de Tabela (Impressão)</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Define Report Table Format">Definir formato de tabela de relatório</value>
-  <value column="Help" original="The Print Table Format lets you define how table header, etc. is printed. If you leave the entries empty, the default colors and fonts are used:&lt;br&gt;&#10;Fonts are based on the Font used in the Report; Page Header and Table Header will be bold, the Function Font is Bold-Italic, the Footer Font is two points smaller, the Parameter Font is Italic.">Define como o cabeçalho da tabela e os demais elementos são impressos. Deixando os campos em branco, valem as cores e fontes padrão:&lt;br&gt;
-as fontes derivam da fonte usada no relatório; o cabeçalho da página e o cabeçalho da tabela saem em negrito, a fonte de função em negrito itálico, a fonte do rodapé dois pontos menor e a fonte dos parâmetros em itálico.</value>
+  <value column="Help" original="The Print Table Format lets you define how table header, etc. is printed. If you leave the entries empty, the default colors and fonts are used:&lt;br&gt;&#10;Fonts are based on the Font used in the Report; Page Header and Table Header will be bold, the Function Font is Bold-Italic, the Footer Font is two points smaller, the Parameter Font is Italic." xml:space="preserve"><![CDATA[Define como o cabeçalho da tabela e os demais elementos são impressos. Deixando os campos em branco, valem as cores e fontes padrão:<br>
+as fontes derivam da fonte usada no relatório; o cabeçalho da página e o cabeçalho da tabela saem em negrito, a fonte de função em negrito itálico, a fonte do rodapé dois pontos menor e a fonte dos parâmetros em itálico.]]></value>
  </row>
  <row id="436" trl="Y">
   <value column="Name" original="Prepared Payment">Pagamento Preparado</value>
@@ -2041,34 +2041,34 @@ Sendo o conjunto de atributos obrigatório, é preciso selecionar ou criar uma i
   <value column="Name" original="Table Access">Acesso a Tabela</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Maintain Table Access">Gerenciar acesso a tabela</value>
-  <value column="Help" original="If listed here, the Role can(not) access all data of this table, even if the role has access to the functionality.&#10;&lt;br&gt;If you Include Access to a table and select Read Only, you can only read data (otherwise full access).&#10;&lt;br&gt;If you Exclude Access to a table and select Read Only, you can only read data (otherwise no access).&#10;&lt;br&gt;Please note that table access rules here are in addition to the Data Access Levels defined for a Table and the User Level defined for a Role. These rules are evaluated first and you only need to define the exceptions to these rules here.&#10;&lt;p&gt;&#10;Note that access information is cached and requires re-login or reset of cache. Be aware that if you use Include rules, then you need to include also several supporting entities. As an alternative, grant access only to functionality required.">Quando listada aqui, a tabela passa a ter seu acesso concedido ou negado ao perfil, mesmo que ele tenha acesso à funcionalidade.
-&lt;br&gt;Incluindo o acesso a uma tabela e marcando Somente Leitura, o perfil apenas lê os dados; sem essa marcação, tem acesso total.
-&lt;br&gt;Excluindo o acesso a uma tabela e marcando Somente Leitura, o perfil apenas lê os dados; sem essa marcação, não tem acesso algum.
-&lt;br&gt;Estas regras complementam os níveis de acesso a dados definidos na tabela e o nível de usuário definido no perfil, que são avaliados antes. Basta cadastrar aqui as exceções a essas regras.
-&lt;p&gt;
-As informações de acesso ficam em cache: as alterações só valem após novo login ou limpeza do cache. Ao usar regras de inclusão, lembre-se de incluir também as entidades de apoio necessárias; como alternativa, conceda acesso apenas às funcionalidades exigidas.</value>
+  <value column="Help" original="If listed here, the Role can(not) access all data of this table, even if the role has access to the functionality.&#10;&lt;br&gt;If you Include Access to a table and select Read Only, you can only read data (otherwise full access).&#10;&lt;br&gt;If you Exclude Access to a table and select Read Only, you can only read data (otherwise no access).&#10;&lt;br&gt;Please note that table access rules here are in addition to the Data Access Levels defined for a Table and the User Level defined for a Role. These rules are evaluated first and you only need to define the exceptions to these rules here.&#10;&lt;p&gt;&#10;Note that access information is cached and requires re-login or reset of cache. Be aware that if you use Include rules, then you need to include also several supporting entities. As an alternative, grant access only to functionality required." xml:space="preserve"><![CDATA[Quando listada aqui, a tabela passa a ter seu acesso concedido ou negado ao perfil, mesmo que ele tenha acesso à funcionalidade.
+<br>Incluindo o acesso a uma tabela e marcando Somente Leitura, o perfil apenas lê os dados; sem essa marcação, tem acesso total.
+<br>Excluindo o acesso a uma tabela e marcando Somente Leitura, o perfil apenas lê os dados; sem essa marcação, não tem acesso algum.
+<br>Estas regras complementam os níveis de acesso a dados definidos na tabela e o nível de usuário definido no perfil, que são avaliados antes. Basta cadastrar aqui as exceções a essas regras.
+<p>
+As informações de acesso ficam em cache: as alterações só valem após novo login ou limpeza do cache. Ao usar regras de inclusão, lembre-se de incluir também as entidades de apoio necessárias; como alternativa, conceda acesso apenas às funcionalidades exigidas.]]></value>
  </row>
  <row id="483" trl="Y">
   <value column="Name" original="Record Access">Acesso a Registro</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Maintain Record Access">Gerenciar acesso a registro</value>
-  <value column="Help" original="You create Record Access records by enabling &quot;Personal Lock&quot; for the administrative role and Ctl-Lock (holding the Ctrl key while clicking on the Lock button).&#10;&lt;p&gt;&#10;If listed here, the Role can(not) access the data records of this table, even if the role has access to the functionality.&#10;&lt;br&gt;If you Include Access to a record and select Read Only, you can only read data (otherwise full access).&#10;&lt;br&gt;If you Exclude Access to a recorf and select Read Only, you can only read data (otherwise no access).&#10;Note that access information is cached and requires re-login or reset of cache.">Os registros de acesso são criados habilitando a opção Pode Definir Registros Privados no perfil administrativo e clicando no botão de bloqueio com a tecla Ctrl pressionada.
-&lt;p&gt;
+  <value column="Help" original="You create Record Access records by enabling &quot;Personal Lock&quot; for the administrative role and Ctl-Lock (holding the Ctrl key while clicking on the Lock button).&#10;&lt;p&gt;&#10;If listed here, the Role can(not) access the data records of this table, even if the role has access to the functionality.&#10;&lt;br&gt;If you Include Access to a record and select Read Only, you can only read data (otherwise full access).&#10;&lt;br&gt;If you Exclude Access to a recorf and select Read Only, you can only read data (otherwise no access).&#10;Note that access information is cached and requires re-login or reset of cache." xml:space="preserve"><![CDATA[Os registros de acesso são criados habilitando a opção Pode Definir Registros Privados no perfil administrativo e clicando no botão de bloqueio com a tecla Ctrl pressionada.
+<p>
 Quando listado aqui, o registro passa a ter seu acesso concedido ou negado ao perfil, mesmo que ele tenha acesso à funcionalidade.
-&lt;br&gt;Incluindo o acesso a um registro e marcando Somente Leitura, o perfil apenas lê os dados; sem essa marcação, tem acesso total.
-&lt;br&gt;Excluindo o acesso a um registro e marcando Somente Leitura, o perfil apenas lê os dados; sem essa marcação, não tem acesso algum.
+<br>Incluindo o acesso a um registro e marcando Somente Leitura, o perfil apenas lê os dados; sem essa marcação, tem acesso total.
+<br>Excluindo o acesso a um registro e marcando Somente Leitura, o perfil apenas lê os dados; sem essa marcação, não tem acesso algum.
 
-As informações de acesso ficam em cache: as alterações só valem após novo login ou limpeza do cache.</value>
+As informações de acesso ficam em cache: as alterações só valem após novo login ou limpeza do cache.]]></value>
  </row>
  <row id="484" trl="Y">
   <value column="Name" original="Column Access">Acesso a Coluna</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Maintain Column Access">Gerenciar acesso a coluna</value>
-  <value column="Help" original="If listed here, the Role can(not) access the column of this table, even if the role has access to the functionality.&#10;&lt;br&gt;If you Include Access to a column and select Read Only, you can only read data (otherwise full access).&#10;&lt;br&gt;If you Exclude Access to a column and select Read Only, you can only read data (otherwise no access).&#10;Note that access information is cached and requires re-login or reset of cache.">Quando listada aqui, a coluna passa a ter seu acesso concedido ou negado ao perfil, mesmo que ele tenha acesso à funcionalidade.
-&lt;br&gt;Incluindo o acesso a uma coluna e marcando Somente Leitura, o perfil apenas lê os dados; sem essa marcação, tem acesso total.
-&lt;br&gt;Excluindo o acesso a uma coluna e marcando Somente Leitura, o perfil apenas lê os dados; sem essa marcação, não tem acesso algum.
+  <value column="Help" original="If listed here, the Role can(not) access the column of this table, even if the role has access to the functionality.&#10;&lt;br&gt;If you Include Access to a column and select Read Only, you can only read data (otherwise full access).&#10;&lt;br&gt;If you Exclude Access to a column and select Read Only, you can only read data (otherwise no access).&#10;Note that access information is cached and requires re-login or reset of cache." xml:space="preserve"><![CDATA[Quando listada aqui, a coluna passa a ter seu acesso concedido ou negado ao perfil, mesmo que ele tenha acesso à funcionalidade.
+<br>Incluindo o acesso a uma coluna e marcando Somente Leitura, o perfil apenas lê os dados; sem essa marcação, tem acesso total.
+<br>Excluindo o acesso a uma coluna e marcando Somente Leitura, o perfil apenas lê os dados; sem essa marcação, não tem acesso algum.
 
-As informações de acesso ficam em cache: as alterações só valem após novo login ou limpeza do cache.</value>
+As informações de acesso ficam em cache: as alterações só valem após novo login ou limpeza do cache.]]></value>
  </row>
  <row id="485" trl="Y">
   <value column="Name" original="Role">Perfil de Acesso</value>
@@ -3311,15 +3311,15 @@ O número do documento pode ser sobrescrito, conforme o controle de numeração 
   <value column="Name" original="Org Access">Acesso a Organização</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Maintain User Org Access">Gerenciar acesso do usuário à organização</value>
-  <value column="Help" original="Add the tenant and organizations the user has access to. Entries here are ignored, if in the Role, User Org Access is not selected or the role has access to all roles.&lt;br&gt;&#10;Note that access information is cached and requires re-login or reset of cache.">Acrescenta a empresa e as organizações a que o usuário tem acesso. Estes registros são ignorados quando a opção Acesso do Usuário à Organização não está marcada no perfil ou quando o perfil já acessa todas as organizações.&lt;br&gt;
-As informações de acesso ficam em cache: as alterações só valem após novo login ou limpeza do cache.</value>
+  <value column="Help" original="Add the tenant and organizations the user has access to. Entries here are ignored, if in the Role, User Org Access is not selected or the role has access to all roles.&lt;br&gt;&#10;Note that access information is cached and requires re-login or reset of cache." xml:space="preserve"><![CDATA[Acrescenta a empresa e as organizações a que o usuário tem acesso. Estes registros são ignorados quando a opção Acesso do Usuário à Organização não está marcada no perfil ou quando o perfil já acessa todas as organizações.<br>
+As informações de acesso ficam em cache: as alterações só valem após novo login ou limpeza do cache.]]></value>
  </row>
  <row id="697" trl="Y">
   <value column="Name" original="Landed Costs">Custo de Entrada</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Landed cost to be allocated to material receipts">Custo de entrada a ser alocado aos recebimentos de material</value>
-  <value column="Help" original="Landed costs allow you to allocate costs to previously received material receipts. Examples are freight, excise tax, insurance, etc.&lt;br&gt;&#10;Select either a Receipt, Receipt Line or a specific Product to allocate the costs to.">O custo de entrada permite alocar custos a recebimentos de material já registrados, como frete, tributos aduaneiros e seguro.&lt;br&gt;
-Selecione o recebimento, a linha do recebimento ou um produto específico ao qual o custo será alocado.</value>
+  <value column="Help" original="Landed costs allow you to allocate costs to previously received material receipts. Examples are freight, excise tax, insurance, etc.&lt;br&gt;&#10;Select either a Receipt, Receipt Line or a specific Product to allocate the costs to." xml:space="preserve"><![CDATA[O custo de entrada permite alocar custos a recebimentos de material já registrados, como frete, tributos aduaneiros e seguro.<br>
+Selecione o recebimento, a linha do recebimento ou um produto específico ao qual o custo será alocado.]]></value>
  </row>
  <row id="698" trl="Y">
   <value column="Name" original="Landed Cost Allocation">Alocação de Custo de Entrada</value>
@@ -4390,14 +4390,14 @@ Sendo o perfil de exclusão, que é o padrão, os designados veem todo o conteú
  <row id="53028" trl="Y">
   <value column="Name" original="Parent Product">Produto-Pai</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Define the Parent Product to this BOM &amp; Formula" xml:space="preserve"><![CDATA[Define o produto-pai desta LDM e fórmula]]></value>
-  <value column="Help" original="Define the Parent Product to this BOM &amp; Formula" xml:space="preserve"><![CDATA[Define o produto-pai desta LDM e fórmula.]]></value>
+  <value column="Description" original="Define the Parent Product to this BOM &amp; Formula">Define o produto-pai desta LDM e fórmula</value>
+  <value column="Help" original="Define the Parent Product to this BOM &amp; Formula">Define o produto-pai desta LDM e fórmula.</value>
  </row>
  <row id="53029" trl="Y">
-  <value column="Name" original="Components of the BOM &amp; Formula" xml:space="preserve"><![CDATA[Componente da LDM e Fórmula]]></value>
+  <value column="Name" original="Components of the BOM &amp; Formula">Componente da LDM e Fórmula</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="Components of the BOM &amp; Formula" xml:space="preserve"><![CDATA[Componentes da LDM e fórmula]]></value>
-  <value column="Help" original="The information relative to every component that will be used in the BOM &amp; Formula of the finished product." xml:space="preserve"><![CDATA[Informações de cada componente que será usado na LDM e fórmula do produto acabado.]]></value>
+  <value column="Description" original="Components of the BOM &amp; Formula">Componentes da LDM e fórmula</value>
+  <value column="Help" original="The information relative to every component that will be used in the BOM &amp; Formula of the finished product.">Informações de cada componente que será usado na LDM e fórmula do produto acabado.</value>
  </row>
  <row id="53030" trl="Y">
   <value column="Name" original="Data Planning">Dados de Planejamento</value>
@@ -4463,7 +4463,7 @@ Sendo o perfil de exclusão, que é o padrão, os designados veem todo o conteú
   <value column="Name" original="Order Parent Product">Produto-Pai da Ordem</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="Order Parent Product used in the Manufacturing Order">Produto-pai usado na ordem de produção</value>
-  <value column="Help" original="The BOM &amp; Formula used in the Manufacturing Order are taken by default from the Product Planning window." xml:space="preserve"><![CDATA[A LDM e fórmula usadas na ordem de produção são obtidas, por padrão, da janela de planejamento de produto.]]></value>
+  <value column="Help" original="The BOM &amp; Formula used in the Manufacturing Order are taken by default from the Product Planning window.">A LDM e fórmula usadas na ordem de produção são obtidas, por padrão, da janela de planejamento de produto.</value>
  </row>
  <row id="53041" trl="Y">
   <value column="Name" original="Workflow">Workflow</value>
@@ -5160,9 +5160,9 @@ A vigência é determinada pelo imposto pai.]]></value>
   <value column="Help" original="">Esta janela permite a exclusão de registros em tabelas específicas do banco de dados, de acordo com a cláusula WHERE definida. Isso pode ser muito útil para evitar a sobrecarga e o excesso de registros em determinadas tabelas. Os registros excluídos podem ser exportados para um arquivo XML ou armazenados em uma outra tabela de histórico (opcionalmente em outro tablespace). Se você selecionar a exportação para outra tabela, é necessário que exista previamente uma tabela com nome idêntico à original, mas com o prefixo 'HST_'. Por exemplo, se a tabela original for a T_Aging, a tabela de histórico (backup) deve se chamar HST_T_Aging.</value>
  </row>
  <row id="53179" trl="Y">
-  <value column="Name" original="BOM &amp; Formula" xml:space="preserve"><![CDATA[LDM e Fórmula]]></value>
+  <value column="Name" original="BOM &amp; Formula">LDM e Fórmula</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="BOM &amp; Formula" xml:space="preserve"><![CDATA[LDM e fórmula]]></value>
+  <value column="Description" original="BOM &amp; Formula">LDM e fórmula</value>
   <value column="Help" original=""/>
  </row>
  <row id="53180" trl="Y">
@@ -5318,7 +5318,7 @@ A vigência é determinada pelo imposto pai.]]></value>
  <row id="53216" trl="Y">
   <value column="Name" original="Components Translation">Tradução do Componente</value>
   <value column="CommitWarning" original=""/>
-  <value column="Description" original="BOM &amp; Formula Line Translation" xml:space="preserve"><![CDATA[Tradução da linha da LDM e fórmula]]></value>
+  <value column="Description" original="BOM &amp; Formula Line Translation">Tradução da linha da LDM e fórmula</value>
   <value column="Help" original=""/>
  </row>
  <row id="53217" trl="Y">
@@ -7265,8 +7265,8 @@ O perfil de Administrador do Sistema não pode ser alterado.]]></value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="800061" trl="N">
-  <value column="Name" original="XML">XML</value>
+ <row id="800061" trl="Y">
+  <value column="Name" original="Monitor de DF-e (Todos)">Monitor de DF-e (Todos)</value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
@@ -7378,6 +7378,42 @@ O perfil de Administrador do Sistema não pode ser alterado.]]></value>
   <value column="CommitWarning" original=""/>
   <value column="Description" original="IS">IS</value>
   <value column="Help" original="The IS Tab defines amounts for IS Tax">Define os valores do tributo IS.</value>
+ </row>
+ <row id="800095" trl="N">
+  <value column="Name" original="Detalhes de Pagamento">Detalhes de Pagamento</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800096" trl="N">
+  <value column="Name" original="Eventos de DF-e Recebidos">Eventos de DF-e Recebidos</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800097" trl="N">
+  <value column="Name" original="Eventos de DF-e Recebidos">Eventos de DF-e Recebidos</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800098" trl="N">
+  <value column="Name" original="Controle de DF-e">Controle de DF-e</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800099" trl="Y">
+  <value column="Name" original="Monitor de DF-e (Ciência Pendente)">Monitor de DF-e (Ciência Pendente)</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800100" trl="Y">
+  <value column="Name" original="Monitor de DF-e (NF-e Completas)">Monitor de DF-e (NF-e Completas)</value>
+  <value column="CommitWarning" original=""/>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
  </row>
  <row trl="Y" uuid="07721587-32fd-4a79-b306-94c8ed672f52">
   <value column="Name" original="NCM">NCM</value>

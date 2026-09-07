@@ -7,7 +7,7 @@
  </row>
  <row id="101" trl="Y">
   <value column="Name" original="Order_LineTax  ** TEMPLATE **">Order_LineTax  ** TEMPLATE **</value>
-  <value column="Description" original="Standard Order Line&amp;Tax" xml:space="preserve"><![CDATA[Linha e imposto padrão de pedido]]></value>
+  <value column="Description" original="Standard Order Line&amp;Tax">Linha e imposto padrão de pedido</value>
   <value column="FileNamePattern" original=""/>
  </row>
  <row id="102" trl="Y">
@@ -17,7 +17,7 @@
  </row>
  <row id="103" trl="Y">
   <value column="Name" original="Invoice_LineTax  ** TEMPLATE **">Invoice_LineTax  ** TEMPLATE **</value>
-  <value column="Description" original="Standard Invoice Line&amp;Tax Lines" xml:space="preserve"><![CDATA[Linha e imposto padrão de fatura]]></value>
+  <value column="Description" original="Standard Invoice Line&amp;Tax Lines">Linha e imposto padrão de fatura</value>
   <value column="FileNamePattern" original=""/>
  </row>
  <row id="104" trl="Y">
@@ -52,7 +52,7 @@
  </row>
  <row id="119" trl="Y">
   <value column="Name" original="Order LineTax">Linha e Imposto do Pedido</value>
-  <value column="Description" original="Standard Order Line&amp;Tax" xml:space="preserve"><![CDATA[Linha e imposto padrão de pedido]]></value>
+  <value column="Description" original="Standard Order Line&amp;Tax">Linha e imposto padrão de pedido</value>
   <value column="FileNamePattern" original=""/>
  </row>
  <row id="120" trl="Y">
@@ -62,7 +62,7 @@
  </row>
  <row id="121" trl="Y">
   <value column="Name" original="Invoice LineTax">Linha e Imposto da Fatura</value>
-  <value column="Description" original="Standard Invoice Line&amp;Tax Lines" xml:space="preserve"><![CDATA[Linha e imposto padrão de fatura]]></value>
+  <value column="Description" original="Standard Invoice Line&amp;Tax Lines">Linha e imposto padrão de fatura</value>
   <value column="FileNamePattern" original=""/>
  </row>
  <row id="122" trl="Y">
@@ -246,8 +246,8 @@
   <value column="FileNamePattern" original=""/>
  </row>
  <row id="50013" trl="Y">
-  <value column="Name" original="Multi Level BOM &amp; Formula Detail" xml:space="preserve"><![CDATA[Detalhe de LDM e Fórmula Multinível]]></value>
-  <value column="Description" original="Multi Level BOM &amp; Formula Detail" xml:space="preserve"><![CDATA[Detalhe de LDM e Fórmula Multinível]]></value>
+  <value column="Name" original="Multi Level BOM &amp; Formula Detail">Detalhe de LDM e Fórmula Multinível</value>
+  <value column="Description" original="Multi Level BOM &amp; Formula Detail">Detalhe de LDM e Fórmula Multinível</value>
   <value column="FileNamePattern" original=""/>
  </row>
  <row id="50014" trl="Y">
@@ -352,7 +352,7 @@
  </row>
  <row id="50035" trl="Y">
   <value column="Name" original="Multi Level BOM &amp; Formula Detail &amp;Copy Record 1746519845" xml:space="preserve"><![CDATA[Detalhe LDM e Fórmula Multinível &Copiar Registro 1746519845]]></value>
-  <value column="Description" original="Multi Level BOM &amp; Formula Detail" xml:space="preserve"><![CDATA[Detalhe de LDM e Fórmula Multinível]]></value>
+  <value column="Description" original="Multi Level BOM &amp; Formula Detail">Detalhe de LDM e Fórmula Multinível</value>
   <value column="FileNamePattern" original=""/>
  </row>
  <row id="50036" trl="Y">

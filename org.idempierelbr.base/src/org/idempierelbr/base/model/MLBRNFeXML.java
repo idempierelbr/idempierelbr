@@ -48,6 +48,23 @@ public class MLBRNFeXML extends X_LBR_NFeXML {
 	}
 
 	/**
+	 * Conteúdo do XML guardado no anexo deste documento.
+	 *
+	 * @return os bytes do XML como vieram da Sefaz, ou nulo se o documento
+	 *         ainda não tem anexo
+	 */
+	public byte[] getXML() {
+		MAttachment attachment = getXMLAttachment();
+
+		if (attachment == null || attachment.getEntryCount() == 0)
+			return null;
+
+		MAttachmentEntry entry = attachment.getEntry(0);
+
+		return entry == null ? null : entry.getData();
+	}
+
+	/**
 	 * Anexo do documento, na transação deste registro.
 	 *
 	 * <p>{@link org.compiere.model.PO#createAttachment()} e

@@ -108,13 +108,13 @@ Revise e ajuste as contas do Livro Razão e as contas padrão. As contas efetiva
   <value column="Help" original=""/>
  </row>
  <row id="50002" trl="Y">
-  <value column="Name" original="Bill of Material &amp; Formula Setup" xml:space="preserve"><![CDATA[Configuração de Lista de Materiais e Fórmula]]></value>
+  <value column="Name" original="Bill of Material &amp; Formula Setup">Configuração de Lista de Materiais e Fórmula</value>
   <value column="Description" original="Setup Manufacturing Management">Configurar a gestão de produção</value>
   <value column="Help" original=""/>
  </row>
  <row id="50003" trl="Y">
-  <value column="Name" original="Warehouse &amp; Locators" xml:space="preserve"><![CDATA[Armazém e Localizador]]></value>
-  <value column="Description" original="Warehouse &amp; Locators" xml:space="preserve"><![CDATA[Armazém e Localizador]]></value>
+  <value column="Name" original="Warehouse &amp; Locators">Armazém e Localizador</value>
+  <value column="Description" original="Warehouse &amp; Locators">Armazém e Localizador</value>
   <value column="Help" original=""/>
  </row>
  <row id="50004" trl="Y">
@@ -258,18 +258,18 @@ Revise e ajuste as contas do Livro Razão e as contas padrão. As contas efetiva
   <value column="Help" original=""/>
  </row>
  <row id="50049" trl="Y">
-  <value column="Name" original="Multi Level BOM &amp; Formula Detail" xml:space="preserve"><![CDATA[Detalhe de LDM e Fórmula Multinível]]></value>
+  <value column="Name" original="Multi Level BOM &amp; Formula Detail">Detalhe de LDM e Fórmula Multinível</value>
   <value column="Description" original="Shows in two different panels the parent-component relationship for the product entered in the Product field.">Mostra em dois painéis distintos a relação entre o produto-pai e seus componentes para o produto informado no campo Produto.</value>
   <value column="Help" original=""/>
  </row>
  <row id="50050" trl="Y">
-  <value column="Name" original="BOM &amp; Formula Info" xml:space="preserve"><![CDATA[Informações de LDM e Fórmula]]></value>
+  <value column="Name" original="BOM &amp; Formula Info">Informações de LDM e Fórmula</value>
   <value column="Description" original="Shows in two different panels the parent-component relationship for the product entered in the Product field.">Mostra em dois painéis distintos a relação entre o produto-pai e seus componentes para o produto informado no campo Produto.</value>
   <value column="Help" original=""/>
  </row>
  <row id="50051" trl="Y">
-  <value column="Name" original="Bill of Materials &amp; Formula" xml:space="preserve"><![CDATA[Lista de Materiais e Fórmula]]></value>
-  <value column="Description" original="Maintain Product Bill of Materials &amp; Formula " xml:space="preserve"><![CDATA[Gerenciar Lista de Materiais e Fórmula do Produto]]></value>
+  <value column="Name" original="Bill of Materials &amp; Formula">Lista de Materiais e Fórmula</value>
+  <value column="Description" original="Maintain Product Bill of Materials &amp; Formula ">Gerenciar Lista de Materiais e Fórmula do Produto</value>
   <value column="Help" original=""/>
  </row>
  <row id="50052" trl="Y">
@@ -298,13 +298,13 @@ Revise e ajuste as contas do Livro Razão e as contas padrão. As contas efetiva
   <value column="Help" original=""/>
  </row>
  <row id="50057" trl="Y">
-  <value column="Name" original="Print &amp; Release Order" xml:space="preserve"><![CDATA[Imprimir e Liberar Ordem]]></value>
-  <value column="Description" original="Print &amp; Release Order" xml:space="preserve"><![CDATA[Imprimir e Liberar Ordem]]></value>
+  <value column="Name" original="Print &amp; Release Order">Imprimir e Liberar Ordem</value>
+  <value column="Description" original="Print &amp; Release Order">Imprimir e Liberar Ordem</value>
   <value column="Help" original=""/>
  </row>
  <row id="50058" trl="Y">
-  <value column="Name" original="Order Receipt &amp; Issue" xml:space="preserve"><![CDATA[Recebimento e Baixa da Ordem]]></value>
-  <value column="Description" original="Order Receipt &amp; Issue" xml:space="preserve"><![CDATA[Recebimento e Baixa da Ordem]]></value>
+  <value column="Name" original="Order Receipt &amp; Issue">Recebimento e Baixa da Ordem</value>
+  <value column="Description" original="Order Receipt &amp; Issue">Recebimento e Baixa da Ordem</value>
   <value column="Help" original=""/>
  </row>
  <row id="50059" trl="Y">

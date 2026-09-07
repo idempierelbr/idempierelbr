@@ -188,7 +188,7 @@ Revise e ajuste as contas do Livro Razão e as contas padrão. As contas efetiva
   <value column="Help" original="The Tax Category Window is used to enter and maintain Tax Categories.  Each product is associated with a tax category which facilitates reacting changing tax rates.">Permite inserir e manter as categorias de imposto. Cada produto é associado a uma categoria, o que facilita a adaptação a mudanças de alíquota.</value>
  </row>
  <row id="139" trl="Y">
-  <value column="Name" original="Warehouse and Locators" xml:space="preserve"><![CDATA[Armazém e Localizador]]></value>
+  <value column="Name" original="Warehouse and Locators">Armazém e Localizador</value>
   <value column="Description" original="Maintain Warehouses and Locators">Gerenciar Armazéns e Localizadores</value>
   <value column="Help" original="The Warehouse and Locators Window defines each Warehouse, any Locators for that Warehouse and the Accounting parameters to be used for inventory in that Warehouse.">Define cada armazém, seus localizadores e os parâmetros contábeis usados para o estoque nele mantido.</value>
  </row>
@@ -1426,8 +1426,8 @@ Responde principalmente à pergunta: onde o produto é fabricado?
   <value column="Help" original="Manufacturing Workflows (Routing) is a set of information detailing the method of manufacture of a particular item .It includes the operations to be performed their sequence the various work centers to be involved and the standards for setup and run. In some companies routing also includes information on tooling operator skill levels inspection operationstesting requirements etc.">O Workflow de Produção (roteiro) é o conjunto de informações que detalha o método de fabricação de um item. Inclui as operações a executar, sua sequência, os centros de trabalho envolvidos e os padrões de preparação e de execução. Em algumas empresas o roteiro também traz informações sobre ferramental, nível de qualificação do operador, operações de inspeção, requisitos de teste e outros.</value>
  </row>
  <row id="53006" trl="Y">
-  <value column="Name" original="Bill of Materials and Formula" xml:space="preserve"><![CDATA[LDM e Fórmula]]></value>
-  <value column="Description" original="Maintain Product Bill of Materials &amp; Formula" xml:space="preserve"><![CDATA[Gerenciar Lista de Materiais e Fórmula do Produto]]></value>
+  <value column="Name" original="Bill of Materials and Formula">LDM e Fórmula</value>
+  <value column="Description" original="Maintain Product Bill of Materials &amp; Formula">Gerenciar Lista de Materiais e Fórmula do Produto</value>
   <value column="Help" original="It is a list of all the subassemblies, intermediates, parts and raw material that go into a parent assembly showing the quantity of each required to make an assembly. There are a variety of display formats of bill of material, including single level bill of material, indented bill of material, modular (planning), costed bill of material, etc. May also be called &quot;formula&quot;, &quot;recipe&quot;, &quot;ingredients list&quot; in certain industries.&#10;It answers the question, what are the components of the product?">É a relação de todos os subconjuntos, produtos intermediários, peças e matérias-primas que compõem um conjunto principal, indicando a quantidade de cada um necessária para produzi-lo. Há vários formatos de apresentação da lista de materiais: nível único, escalonada, modular (planejamento), valorizada e outros. Em certos setores também é chamada de "fórmula", "receita" ou "lista de ingredientes".
 Responde à pergunta: quais são os componentes do produto?</value>
  </row>
@@ -2411,8 +2411,8 @@ As informações de acesso ficam em cache: é preciso entrar novamente no sistem
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
- <row id="800021" trl="N">
-  <value column="Name" original="NF-e XML">NF-e XML</value>
+ <row id="800021" trl="Y">
+  <value column="Name" original="Monitor de DF-e (Todos)">Monitor de DF-e (Todos)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
@@ -2423,6 +2423,26 @@ As informações de acesso ficam em cache: é preciso entrar novamente no sistem
  </row>
  <row id="800023" trl="Y">
   <value column="Name" original="IS CST">CST e Classificação Tributária de IS</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800034" trl="N">
+  <value column="Name" original="Eventos de DF-e Recebidos">Eventos de DF-e Recebidos</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800035" trl="N">
+  <value column="Name" original="Controle de DF-e">Controle de DF-e</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800036" trl="Y">
+  <value column="Name" original="Monitor de DF-e (Ciência Pendente)">Monitor de DF-e (Ciência Pendente)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800037" trl="Y">
+  <value column="Name" original="Monitor de DF-e (NF-e Completas)">Monitor de DF-e (NF-e Completas)</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>

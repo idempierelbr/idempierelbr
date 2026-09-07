@@ -725,11 +725,25 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 	 *	@return AD_Process_ID
 	 */
 	public Integer getGenerateDanfeProcessID() {
+		return getGenerateDanfeProcessID(get_TrxName());
+	}
+	
+	/**
+	 * 	Get GenerateDanfe AD_Process_ID, based on class name and entity type.
+	 * 
+	 * 	<p>O anexo com o jasper customizado fica nesse processo. Quem imprime a
+	 * 	DANFE a partir do XML, sem nota, precisa chegar nele do mesmo jeito, ou
+	 * 	imprimiria com um leiaute diferente do da janela de Nota Fiscal.
+	 * 
+	 *	@param trxName transaction
+	 *	@return AD_Process_ID
+	 */
+	public static Integer getGenerateDanfeProcessID(String trxName) {
 		StringBuilder sql = new StringBuilder();
 		sql.append("SELECT AD_Process_ID FROM AD_Process ");
 		sql.append("WHERE Classname = ? AND EntityType=?");
 
-		Integer AD_Process_ID = DB.getSQLValue (get_TrxName(), sql.toString(),
+		Integer AD_Process_ID = DB.getSQLValue (trxName, sql.toString(),
 				new Object[]{"org.idempierelbr.nfe.process.GenerateDanfe", "LBR"});
 		
 		return AD_Process_ID;

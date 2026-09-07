@@ -90,9 +90,9 @@ Linhas com sequência maior sobrescrevem os preços já existentes. A sequência
  <row id="118" trl="Y">
   <value column="Name" original="Generate Shipments">Gerar Remessas</value>
   <value column="Description" original="Generate and print Shipments from open Orders">Gerar e imprimir remessas a partir dos pedidos em aberto</value>
-  <value column="Help" original="Shipments for open Orders are created based on the delivery rule of the Order and the relative order priority.  If a Promise Date is selected only orders up to (including) the date are selected.&lt;br&gt;&#10;If several Orders of a business partner have the same location, the orders can be consolidated into one Shipment.&lt;br&gt;&#10;You can also include orders who have outstanding confirmations (e.g. ordered=10 - not confirmed shipments=4 - would create a new shipment of 6 if available).">As remessas dos pedidos em aberto são geradas conforme a regra de entrega do pedido e sua prioridade. Informada uma data prometida, apenas os pedidos até essa data, inclusive, são considerados.&lt;br&gt;
-Se vários pedidos de um parceiro de negócios tiverem o mesmo endereço, podem ser consolidados em uma única remessa.&lt;br&gt;
-Também é possível incluir pedidos com confirmações pendentes: pedido de 10, com 4 em remessas não confirmadas, gera uma nova remessa de 6, se houver disponibilidade.</value>
+  <value column="Help" original="Shipments for open Orders are created based on the delivery rule of the Order and the relative order priority.  If a Promise Date is selected only orders up to (including) the date are selected.&lt;br&gt;&#10;If several Orders of a business partner have the same location, the orders can be consolidated into one Shipment.&lt;br&gt;&#10;You can also include orders who have outstanding confirmations (e.g. ordered=10 - not confirmed shipments=4 - would create a new shipment of 6 if available)." xml:space="preserve"><![CDATA[As remessas dos pedidos em aberto são geradas conforme a regra de entrega do pedido e sua prioridade. Informada uma data prometida, apenas os pedidos até essa data, inclusive, são considerados.<br>
+Se vários pedidos de um parceiro de negócios tiverem o mesmo endereço, podem ser consolidados em uma única remessa.<br>
+Também é possível incluir pedidos com confirmações pendentes: pedido de 10, com 4 em remessas não confirmadas, gera uma nova remessa de 6, se houver disponibilidade.]]></value>
  </row>
  <row id="119" trl="Y">
   <value column="Name" original="Generate Invoices">Gerar Faturas</value>
@@ -127,8 +127,8 @@ Também é possível incluir pedidos com confirmações pendentes: pedido de 10,
  <row id="125" trl="Y">
   <value column="Name" original="Replenish Report (deprecated)">Relatório de Reabastecimento</value>
   <value column="Description" original="Inventory Replenish Report">Relatório de reabastecimento de estoque</value>
-  <value column="Help" original="Report lists products to be replenished. Note that a product can have only one current vendor. If there are more then vendor per product, both records are reset.  You need to select a current vendor manually.&lt;br&gt;&#10;Movements are only created, if a sourcing warehouse is defined for the warehouse to be replenished.">Lista os produtos a reabastecer. Cada produto pode ter apenas um fornecedor atual; havendo mais de um, ambos os registros são desmarcados e é preciso indicar manualmente o fornecedor atual.&lt;br&gt;
-As movimentações só são criadas se houver um armazém de origem definido para o armazém a reabastecer.</value>
+  <value column="Help" original="Report lists products to be replenished. Note that a product can have only one current vendor. If there are more then vendor per product, both records are reset.  You need to select a current vendor manually.&lt;br&gt;&#10;Movements are only created, if a sourcing warehouse is defined for the warehouse to be replenished." xml:space="preserve"><![CDATA[Lista os produtos a reabastecer. Cada produto pode ter apenas um fornecedor atual; havendo mais de um, ambos os registros são desmarcados e é preciso indicar manualmente o fornecedor atual.<br>
+As movimentações só são criadas se houver um armazém de origem definido para o armazém a reabastecer.]]></value>
  </row>
  <row id="126" trl="Y">
   <value column="Name" original="Order Drilldown">Desdobramento de Pedidos</value>
@@ -654,8 +654,8 @@ A data de movimentação padrão é a data de hoje.]]></value>
  <row id="233" trl="Y">
   <value column="Name" original="Verify Document Types">Verificar Tipos de Documento</value>
   <value column="Description" original="Verify Document Types and Period Controls">Verificar os tipos de documento e os controles de período</value>
-  <value column="Help" original="Makes sure that there is a DocumentType for all Document Base Types&lt;br&gt;&#10;Creates missing Period Controls for Document Type (You may have to open them)">Garante que exista um tipo de documento para cada tipo de documento base.&lt;br&gt;
-Cria também os controles de período faltantes para o tipo de documento, que podem precisar ser abertos manualmente.</value>
+  <value column="Help" original="Makes sure that there is a DocumentType for all Document Base Types&lt;br&gt;&#10;Creates missing Period Controls for Document Type (You may have to open them)" xml:space="preserve"><![CDATA[Garante que exista um tipo de documento para cada tipo de documento base.<br>
+Cria também os controles de período faltantes para o tipo de documento, que podem precisar ser abertos manualmente.]]></value>
  </row>
  <row id="234" trl="Y">
   <value column="Name" original="Project Margin (Work Order)">Margem de Projeto (Ordem de Trabalho)</value>
@@ -721,14 +721,14 @@ Exemplo: considere uma fatura (cliente) no valor de 100,00 com data contábil de
  <row id="245" trl="Y">
   <value column="Name" original="Product Organization">Organização do Produto</value>
   <value column="Description" original="Set and verify Organization ownership of Products">Definir e verificar a organização proprietária dos produtos</value>
-  <value column="Help" original="The process allows you to change or verify the organization ownership of Products and its dependent entities (BOM, Substitute, Replenish, Purchasing, Business Partner Info, Costing). &lt;br&gt;&#10;Select either a Product Category ar a specific Product.">Permite alterar ou verificar a organização proprietária dos produtos e de suas entidades dependentes: LDM, substitutos, reabastecimento, compras, informações do parceiro de negócios e custos.&lt;br&gt;
-Selecione uma categoria de produto ou um produto específico.</value>
+  <value column="Help" original="The process allows you to change or verify the organization ownership of Products and its dependent entities (BOM, Substitute, Replenish, Purchasing, Business Partner Info, Costing). &lt;br&gt;&#10;Select either a Product Category ar a specific Product." xml:space="preserve"><![CDATA[Permite alterar ou verificar a organização proprietária dos produtos e de suas entidades dependentes: LDM, substitutos, reabastecimento, compras, informações do parceiro de negócios e custos.<br>
+Selecione uma categoria de produto ou um produto específico.]]></value>
  </row>
  <row id="246" trl="Y">
   <value column="Name" original="Business Partner Organization">Organização do Parceiro de Negócios</value>
   <value column="Description" original="Set and verify Organization ownership of Business Partners">Definir e verificar a organização proprietária dos parceiros de negócios</value>
-  <value column="Help" original="The process allows you to change or verify the organization ownership of Business Partners and its dependent entities (Location, Contact/User, Bank Account, Withholding). &lt;br&gt;&#10;Select either a Business Partner Group ar a specific Business Partner">Permite alterar ou verificar a organização proprietária dos parceiros de negócios e de suas entidades dependentes: endereço, contato ou usuário, conta bancária e retenção.&lt;br&gt;
-Selecione um grupo de parceiros de negócios ou um parceiro específico.</value>
+  <value column="Help" original="The process allows you to change or verify the organization ownership of Business Partners and its dependent entities (Location, Contact/User, Bank Account, Withholding). &lt;br&gt;&#10;Select either a Business Partner Group ar a specific Business Partner" xml:space="preserve"><![CDATA[Permite alterar ou verificar a organização proprietária dos parceiros de negócios e de suas entidades dependentes: endereço, contato ou usuário, conta bancária e retenção.<br>
+Selecione um grupo de parceiros de negócios ou um parceiro específico.]]></value>
  </row>
  <row id="247" trl="Y">
   <value column="Name" original="Load Bank Statement">Carregar Extrato Bancário</value>
@@ -1145,11 +1145,11 @@ Se a empresa não tiver documentos multi-idioma habilitados, as traduções dos 
  <row id="326" trl="Y">
   <value column="Name" original="Invoice Not Realized Gain/Loss">Ganhos/Perdas Não Realizados (Faturas)</value>
   <value column="Description" original="Invoice Not Realized Gain &amp; Loss Report">Relatório de ganhos e perdas não realizados das faturas</value>
-  <value column="Help" original="The Report lists not fully paid invoices with open amount, the GL amounts and the revalued amounts.  If an invoice is partially paid, the percentage of the open amount is used to calculate the revaluation amount.&lt;br&gt;&#10;If you select a currency, only invoices of that currency are included; if you select Include All Currencies, all invoices are included and you can use the report to reconcile your AP/AR accounts.&lt;br&gt;&#10;If you select a GL Document Type, a GL Journal is created. &#10;Note that the report only includes posted invoices.">Lista as faturas não quitadas integralmente com o valor em aberto, os valores no Livro Razão e os valores reavaliados. Havendo pagamento parcial, o percentual do valor em aberto é usado no cálculo da reavaliação.&lt;br&gt;
-Selecionada uma moeda, apenas as faturas nela expressas entram no relatório; marcando Incluir Todas as Moedas, todas as faturas entram, e o relatório pode ser usado para conciliar as contas a pagar e a receber.&lt;br&gt;
+  <value column="Help" original="The Report lists not fully paid invoices with open amount, the GL amounts and the revalued amounts.  If an invoice is partially paid, the percentage of the open amount is used to calculate the revaluation amount.&lt;br&gt;&#10;If you select a currency, only invoices of that currency are included; if you select Include All Currencies, all invoices are included and you can use the report to reconcile your AP/AR accounts.&lt;br&gt;&#10;If you select a GL Document Type, a GL Journal is created. &#10;Note that the report only includes posted invoices." xml:space="preserve"><![CDATA[Lista as faturas não quitadas integralmente com o valor em aberto, os valores no Livro Razão e os valores reavaliados. Havendo pagamento parcial, o percentual do valor em aberto é usado no cálculo da reavaliação.<br>
+Selecionada uma moeda, apenas as faturas nela expressas entram no relatório; marcando Incluir Todas as Moedas, todas as faturas entram, e o relatório pode ser usado para conciliar as contas a pagar e a receber.<br>
 Selecionado um tipo de documento contábil, é gerado um lançamento no Livro Razão.
 
-O relatório considera apenas faturas já contabilizadas.</value>
+O relatório considera apenas faturas já contabilizadas.]]></value>
  </row>
  <row id="327" trl="Y">
   <value column="Name" original="Test EMail">Testar E-mail</value>
@@ -1346,9 +1346,9 @@ Os pedidos são criados para as linhas cujo produto tenha fornecedor definido e 
   <value column="Help" original="This process copies BOM Lines from the Selected BOM to the Current BOM. The BOM being copied to must have any existing BOM Lines">Este processo copia as linhas de LDM da LDM selecionada para a LDM atual. A LDM de destino não pode ter linhas de LDM já existentes.</value>
  </row>
  <row id="53006" trl="Y">
-  <value column="Name" original="Multi Level BOM and Formula Detail" xml:space="preserve"><![CDATA[Detalhes de LDM e Fórmula Multinível]]></value>
+  <value column="Name" original="Multi Level BOM and Formula Detail">Detalhes de LDM e Fórmula Multinível</value>
   <value column="Description" original="Shows in two different panels the parent-component relationship for the product entered in the Product field.">Exibe em dois painéis distintos a relação entre o produto-pai e seus componentes para o produto informado no campo Produto.</value>
-  <value column="Help" original="The BOM &amp; Formula Review option menu shows in two different panels the parent-component relationship for the product entered in the Product field.&#10;&#10;You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.&#10;&#10;When you need to consult an implosion, click the implosion check box and enter the component you wish to consult and tick the Implosion check box.&#10;&#10;You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.&#10;&#10;The left panel shows the BOM hierarchies in a tree form. The right panel shows the information connected with the BOM for every product in it." xml:space="preserve"><![CDATA[A opção Detalhes de LDM e Fórmula exibe em dois painéis distintos a relação entre o produto-pai e seus componentes para o produto informado no campo Produto.
+  <value column="Help" original="The BOM &amp; Formula Review option menu shows in two different panels the parent-component relationship for the product entered in the Product field.&#10;&#10;You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.&#10;&#10;When you need to consult an implosion, click the implosion check box and enter the component you wish to consult and tick the Implosion check box.&#10;&#10;You need to introduce the parent product you want to see its components then click the OK button, next drag the left margin of the panel to the right and you will have the two panels.&#10;&#10;The left panel shows the BOM hierarchies in a tree form. The right panel shows the information connected with the BOM for every product in it.">A opção Detalhes de LDM e Fórmula exibe em dois painéis distintos a relação entre o produto-pai e seus componentes para o produto informado no campo Produto.
 
 Informe o produto-pai cujos componentes deseja consultar e clique em OK; em seguida, arraste a margem esquerda do painel para a direita para exibir os dois painéis.
 
@@ -1356,7 +1356,7 @@ Para consultar uma implosão, marque a caixa Implosão e informe o componente qu
 
 Informe o produto-pai cujos componentes deseja consultar e clique em OK; em seguida, arraste a margem esquerda do painel para a direita para exibir os dois painéis.
 
-O painel da esquerda apresenta as hierarquias de LDM em forma de árvore. O painel da direita apresenta as informações da LDM de cada produto.]]></value>
+O painel da esquerda apresenta as hierarquias de LDM em forma de árvore. O painel da direita apresenta as informações da LDM de cada produto.</value>
  </row>
  <row id="53008" trl="Y">
   <value column="Name" original="Multiple Components Change">Mutiple Components Change</value>
@@ -1443,7 +1443,7 @@ o estoque disponível no início de um período.</value>
   <value column="Help" original="Before you complete a MO it is necessary to validate the components are available in the warehouse, in order to track the components availability you get a report which shows among other data: the Required Quantity for the MO, the Reserved Quantity, the On Hand Quantity and the Available Quantity.">Antes de completar uma ordem de produção, é preciso validar se os componentes estão disponíveis no armazém. Para acompanhar essa disponibilidade, o relatório apresenta, entre outros dados, a quantidade necessária para a ordem, a quantidade reservada, a quantidade em estoque e a quantidade disponível.</value>
  </row>
  <row id="53034" trl="Y">
-  <value column="Name" original="Print and Release Order" xml:space="preserve"><![CDATA[Imprimir e Liberar Pedido]]></value>
+  <value column="Name" original="Print and Release Order">Imprimir e Liberar Pedido</value>
   <value column="Description" original="Once the planned orders of manufacture generated by MRP, have been aprobed, has been reached the date of liberation and has been verified that the required components are in existence, the orders are emitted to the plant for its manufacture.">Depois que as ordens de produção planejadas geradas pelo MRP são aprovadas, a data de liberação é atingida e a existência dos componentes necessários é confirmada, as ordens são emitidas à fábrica para produção.</value>
   <value column="Help" original="Once the planned orders of manufacture generated by MRP, have been aprobed, has been reached the date of liberation and has been verified that the required components are in existence, the orders are emitted to the plant for its manufacture. If you wish to print the warehouse and shop floor documentation you must tick the adequate check box:&#10;&#10;If you tick the Print Pick List check box you will get a report with the required components and quantities to help the warehouse clerk to issue the material to the shop floor. The next report is an example of this:&#10;&#10;If you tick the Print Pack List check box you will get a report with the required components and containing the material with a Component Type of Packing and Tools recorded in the BOM Window.&#10;&#10;Another report which is part of the Manufacturing Order Release Package is the Workflow(Routing). &#10;&#10;You can print this report with tick in the Print Workflow check box and it shows to the shop floor personnel the necessary steps for the manufacture of the product. &#10;&#10;This Report contains the place where the product should be made, the standard times, the tools and necessary devices. &#10;&#10;If you wish to print this report tick the check box Print Workflow.">Depois que as ordens de produção planejadas geradas pelo MRP são aprovadas, a data de liberação é atingida e a existência dos componentes necessários é confirmada, as ordens são emitidas à fábrica para produção. Para imprimir a documentação do armazém e do chão de fábrica, marque as caixas de seleção adequadas:
 
@@ -1530,18 +1530,18 @@ Custo Indireto do Workflow = Soma dos Custos Indiretos de todas as Operações
 Custo do Workflow = Custo de Mão de Obra do Workflow + Custo Indireto do Workflow</value>
  </row>
  <row id="53060" trl="Y">
-  <value column="Name" original="Cost Workflow and Process Details" xml:space="preserve"><![CDATA[Detalhes de Custo de Workflow e Processo]]></value>
+  <value column="Name" original="Cost Workflow and Process Details">Detalhes de Custo de Workflow e Processo</value>
   <value column="Description" original="This report show every cost element to a BOM or Formula ">Este relatório apresenta todos os elementos de custo de uma LDM ou fórmula</value>
   <value column="Help" original="This report show every cost element to a BOM or Formula ">Este relatório apresenta todos os elementos de custo de uma LDM ou fórmula</value>
  </row>
  <row id="53062" trl="Y">
-  <value column="Name" original="Bill of Material and Formula Cost Roll-Up" xml:space="preserve"><![CDATA[Acumular Custos de LDM e Fórmula]]></value>
-  <value column="Description" original="This Process allow integrate Bill of Material &amp; Formula Cost" xml:space="preserve"><![CDATA[Este processo permite integrar os custos da lista de materiais e da fórmula]]></value>
-  <value column="Help" original="This Process allow integrate Bill of Material &amp; Formula Cost&#10;&#10;Element Cost = Element Cost this level + Element Cost this low level &#10;&#10;Total BOM Cost = Sum every Element Cost" xml:space="preserve"><![CDATA[Este processo permite integrar os custos da lista de materiais e da fórmula
+  <value column="Name" original="Bill of Material and Formula Cost Roll-Up">Acumular Custos de LDM e Fórmula</value>
+  <value column="Description" original="This Process allow integrate Bill of Material &amp; Formula Cost">Este processo permite integrar os custos da lista de materiais e da fórmula</value>
+  <value column="Help" original="This Process allow integrate Bill of Material &amp; Formula Cost&#10;&#10;Element Cost = Element Cost this level + Element Cost this low level &#10;&#10;Total BOM Cost = Sum every Element Cost">Este processo permite integrar os custos da lista de materiais e da fórmula
 
 Custo do Elemento = Custo do Elemento neste nível + Custo do Elemento no nível inferior
 
-Custo Total da LDM = Soma de todos os Custos de Elemento]]></value>
+Custo Total da LDM = Soma de todos os Custos de Elemento</value>
  </row>
  <row id="53063" trl="Y">
   <value column="Name" original="Create Report (Jasper)">Gerar Relatório (Jasper)</value>
@@ -1720,7 +1720,7 @@ Custo Total da LDM = Soma de todos os Custos de Elemento]]></value>
  </row>
  <row id="53131" trl="Y">
   <value column="Name" original="Asset Group Defaults">Padrões de Grupo de Ativo</value>
-  <value column="Description" original="Lists Asset Group Settings &amp; Defaults" xml:space="preserve"><![CDATA[Lista as configurações e os padrões dos grupos de ativo]]></value>
+  <value column="Description" original="Lists Asset Group Settings &amp; Defaults">Lista as configurações e os padrões dos grupos de ativo</value>
   <value column="Help" original=""/>
  </row>
  <row id="53139" trl="Y">
@@ -1985,8 +1985,8 @@ Se a coluna de senha já estiver criptografada, o hash também será criptografa
  <row id="53267" trl="Y">
   <value column="Name" original="Replenish Report">Relatório de Reabastecimento (com Produção)</value>
   <value column="Description" original="Inventory Replenish Report">Relatório de reabastecimento de estoque</value>
-  <value column="Help" original="Report lists products to be replenished. Note that a product can have only one current vendor. If there are more then vendor per product, both records are reset.  You need to select a current vendor manually.&lt;br&gt;&#13;&#10;Movements are only created, if a sourcing warehouse is defined for the warehouse to be replenished.">Lista os produtos a reabastecer. Cada produto pode ter apenas um fornecedor atual; havendo mais de um, ambos os registros são desmarcados e é preciso indicar manualmente o fornecedor atual.&lt;br&gt;
-As movimentações só são criadas se houver um armazém de origem definido para o armazém a reabastecer.</value>
+  <value column="Help" original="Report lists products to be replenished. Note that a product can have only one current vendor. If there are more then vendor per product, both records are reset.  You need to select a current vendor manually.&lt;br&gt;&#13;&#10;Movements are only created, if a sourcing warehouse is defined for the warehouse to be replenished." xml:space="preserve"><![CDATA[Lista os produtos a reabastecer. Cada produto pode ter apenas um fornecedor atual; havendo mais de um, ambos os registros são desmarcados e é preciso indicar manualmente o fornecedor atual.<br>
+As movimentações só são criadas se houver um armazém de origem definido para o armazém a reabastecer.]]></value>
  </row>
  <row id="53276" trl="Y">
   <value column="Name" original="Convert Lead">Converter Lead</value>
@@ -2160,11 +2160,11 @@ d. Data da Transação: passa a ser a data de entrada em serviço do ativo criad
  <row id="200040" trl="Y">
   <value column="Name" original="Change Base Language">Alterar Idioma Base</value>
   <value column="Description" original="Change Base Language">Alterar o idioma base</value>
-  <value column="Help" original="In order to enable en_US as a translation you can enable any other language as base language.&lt;br&gt;&#10;If you don't want to have a base language choose a language that won't be used for login.&lt;br&gt;&#10;If all languages are going to be used as login, create an xx_XX language not login and use it as base.&lt;br&gt;&#10;Please note that base language cannot be a system language.&lt;br&gt;&#10;After running this process you must close all sessions and login again.&lt;br&gt;">Para habilitar o en_US como tradução, defina qualquer outro idioma como idioma base.&lt;br&gt;
-Se não quiser ter um idioma base, escolha um idioma que não será usado para login.&lt;br&gt;
-Se todos os idiomas forem usados para login, crie um idioma xx_XX que não sirva a login e use-o como base.&lt;br&gt;
-O idioma base não pode ser um idioma de sistema.&lt;br&gt;
-Após executar este processo, encerre todas as sessões e faça login novamente.&lt;br&gt;</value>
+  <value column="Help" original="In order to enable en_US as a translation you can enable any other language as base language.&lt;br&gt;&#10;If you don't want to have a base language choose a language that won't be used for login.&lt;br&gt;&#10;If all languages are going to be used as login, create an xx_XX language not login and use it as base.&lt;br&gt;&#10;Please note that base language cannot be a system language.&lt;br&gt;&#10;After running this process you must close all sessions and login again.&lt;br&gt;" xml:space="preserve"><![CDATA[Para habilitar o en_US como tradução, defina qualquer outro idioma como idioma base.<br>
+Se não quiser ter um idioma base, escolha um idioma que não será usado para login.<br>
+Se todos os idiomas forem usados para login, crie um idioma xx_XX que não sirva a login e use-o como base.<br>
+O idioma base não pode ser um idioma de sistema.<br>
+Após executar este processo, encerre todas as sessões e faça login novamente.<br>]]></value>
  </row>
  <row id="200055" trl="Y">
   <value column="Name" original="Index Validate">Validar Índice</value>
@@ -2625,9 +2625,9 @@ Criar Menu: marcada, cria o registro de menu da nova janela.]]></value>
   <value column="Help" original="This process allows to generate instructions for existing boletos.">Gera instruções bancárias para os boletos existentes.</value>
  </row>
  <row id="800100" trl="Y">
-  <value column="Name" original="Download NF-e XML">Download NF-e XML</value>
-  <value column="Description" original="Download NF-e XML From Sefaz">Baixar XML da NF-e da SEFAZ</value>
-  <value column="Help" original="This process allows you to download NF-e XML from Sefaz web-services.">Permite baixar o XML da NF-e dos web services da SEFAZ.</value>
+  <value column="Name" original="Download NF-e XML">Download XML de DF-e da SEFAZ</value>
+  <value column="Description" original="Download NF-e XML From Sefaz">Download XML de DF-e da SEFAZ</value>
+  <value column="Help" original="This process allows you to download NF-e XML from Sefaz web-services.">Permite baixar o XML de DF-e dos web services da SEFAZ.</value>
  </row>
  <row id="800101" trl="N">
   <value column="Name" original="Manifest NF-e XML">Manifest NF-e XML</value>
@@ -2637,6 +2637,16 @@ Criar Menu: marcada, cria o registro de menu da nova janela.]]></value>
  <row id="800105" trl="N">
   <value column="Name" original="Generate Debit/Credit NF-e">Generate Debit/Credit NF-e</value>
   <value column="Description" original="Generate Debit/Credit NF-e">Generate Debit/Credit NF-e</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800106" trl="N">
+  <value column="Name" original="Gerar DANFE">Gerar DANFE</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800107" trl="N">
+  <value column="Name" original="Gerar Fatura">Gerar Fatura</value>
+  <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
  <row trl="N" uuid="e6df0503-5f93-4a2c-abe6-0c425cc138e9">

@@ -32,6 +32,10 @@ public class MLBRNotaFiscalEventRec extends X_LBR_NotaFiscalEventRec {
 	public static final String EVENT_DESCONHECIMENTO = "210220";
 	/** Operação não Realizada */
 	public static final String EVENT_NAO_REALIZADA = "210240";
+	/** Cancelamento */
+	public static final String EVENT_CANCELAMENTO = "110111";
+	/** Cancelamento por Substituição */
+	public static final String EVENT_CANCELAMENTO_SUBST = "110112";
 
 	public MLBRNotaFiscalEventRec(Properties ctx, int LBR_NotaFiscalEventRec_ID, String trxName) {
 		super(ctx, LBR_NotaFiscalEventRec_ID, trxName);
@@ -39,6 +43,25 @@ public class MLBRNotaFiscalEventRec extends X_LBR_NotaFiscalEventRec {
 
 	public MLBRNotaFiscalEventRec(Properties ctx, ResultSet rs, String trxName) {
 		super(ctx, rs, trxName);
+	}
+
+	/**
+	 * Cancelamento registrado para a chave de acesso.
+	 *
+	 * <p>O protocolo da NF-e continua dizendo "autorizada" depois de cancelada
+	 * — quem cancela é um evento posterior, e é aqui que ele fica.
+	 *
+	 * @return true se o emitente cancelou o documento
+	 */
+	public static boolean isCanceled(Properties ctx, String LBR_NFeID, String trxName) {
+		if (LBR_NFeID == null)
+			return false;
+
+		return new Query(ctx, Table_Name, "LBR_NFeID=? AND LBR_EventCode IN (?,?)", trxName)
+			.setParameters(LBR_NFeID, EVENT_CANCELAMENTO, EVENT_CANCELAMENTO_SUBST)
+			.setClient_ID()
+			.setOnlyActiveRecords(true)
+			.match();
 	}
 
 	/**

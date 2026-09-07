@@ -198,9 +198,9 @@ O sistema converte as medidas em percentuais, com base na meta e no valor alcan�
   <value column="Help" original="This workflow defines the Manufacturing Workflow  Setup">Este workflow define a configuração do workflow de produção</value>
  </row>
  <row id="50002" trl="Y">
-  <value column="Name" original="Bill of Material and Formula Setup" xml:space="preserve"><![CDATA[Configuração de Lista de Materiais e Fórmula]]></value>
-  <value column="Description" original="Setup Bill of Material &amp; Formula" xml:space="preserve"><![CDATA[Configurar a Lista de Materiais e a Fórmula]]></value>
-  <value column="Help" original="This workflow defines the Bill of Material &amp; Formula" xml:space="preserve"><![CDATA[Este workflow define a Lista de Materiais e a Fórmula]]></value>
+  <value column="Name" original="Bill of Material and Formula Setup">Configuração de Lista de Materiais e Fórmula</value>
+  <value column="Description" original="Setup Bill of Material &amp; Formula">Configurar a Lista de Materiais e a Fórmula</value>
+  <value column="Help" original="This workflow defines the Bill of Material &amp; Formula">Este workflow define a Lista de Materiais e a Fórmula</value>
  </row>
  <row id="50003" trl="Y">
   <value column="Name" original="Planning Management Setup">Configuração da Gestão de Planejamento</value>
@@ -290,8 +290,8 @@ Se não for possível cumprir o MPS conforme o planejado, este módulo fornece a
   <value column="Help" original=""/>
  </row>
  <row id="50014" trl="Y">
-  <value column="Name" original="Setup Human Resource &amp; Payroll" xml:space="preserve"><![CDATA[Configuração de Recursos Humanos e Folha de Pagamento]]></value>
-  <value column="Description" original="Setup Human Resource &amp; Payroll" xml:space="preserve"><![CDATA[Configurar Recursos Humanos e Folha de Pagamento]]></value>
+  <value column="Name" original="Setup Human Resource &amp; Payroll">Configuração de Recursos Humanos e Folha de Pagamento</value>
+  <value column="Description" original="Setup Human Resource &amp; Payroll">Configurar Recursos Humanos e Folha de Pagamento</value>
   <value column="Help" original=""/>
  </row>
  <row id="50015" trl="Y">

@@ -1108,7 +1108,7 @@ Problema: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="377" trl="Y">
-  <value column="MsgText" original="{0,choice,0#No Lines|1#1 Line|1&lt;{0} Lines} - {1,number,#,##0.00} - Total: {2,number,#,##0.00} {3} = {4,number,#,##0.00}">{0,choice,0#Nenhuma linha|1#1 linha|1&lt;{0} linhas} - {1,number,#,##0.00} - Total: {2,number,#,##0.00} {3} = {4,number,#,##0.00}</value>
+  <value column="MsgText" original="{0,choice,0#No Lines|1#1 Line|1&lt;{0} Lines} - {1,number,#,##0.00} - Total: {2,number,#,##0.00} {3} = {4,number,#,##0.00}" xml:space="preserve"><![CDATA[{0,choice,0#Nenhuma linha|1#1 linha|1<{0} linhas} - {1,number,#,##0.00} - Total: {2,number,#,##0.00} {3} = {4,number,#,##0.00}]]></value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="378" trl="Y">
@@ -1689,7 +1689,7 @@ Detalhes: </value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="521" trl="Y">
-  <value column="MsgText" original="Select Record &amp; Return" xml:space="preserve"><![CDATA[Selecionar registro e retornar]]></value>
+  <value column="MsgText" original="Select Record &amp; Return">Selecionar registro e retornar</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="522" trl="Y">
@@ -3006,7 +3006,7 @@ Deseja realmente continuar?</value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="858" trl="Y">
-  <value column="MsgText" original="Workflow &amp;Activities">&amp;Atividades de Workflow</value>
+  <value column="MsgText" original="Workflow &amp;Activities" xml:space="preserve"><![CDATA[&Atividades de Workflow]]></value>
   <value column="MsgTip" original=""/>
  </row>
  <row id="859" trl="Y">

@@ -2969,7 +2969,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="895" trl="Y">
-  <value column="Name" original="Time&amp;Material" xml:space="preserve"><![CDATA[Tempo e Material]]></value>
+  <value column="Name" original="Time&amp;Material">Tempo e Material</value>
   <value column="Description" original=""/>
  </row>
  <row id="896" trl="Y">
@@ -3517,7 +3517,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="53271" trl="Y">
-  <value column="Name" original="Replace &amp; Expire" xml:space="preserve"><![CDATA[Substituir e Expirar]]></value>
+  <value column="Name" original="Replace &amp; Expire">Substituir e Expirar</value>
   <value column="Description" original=""/>
  </row>
  <row id="53272" trl="Y">
@@ -4158,7 +4158,7 @@
  </row>
  <row id="53441" trl="Y">
   <value column="Name" original="Natural Balance">Saldo Natural</value>
-  <value column="Description" original="BY for P &amp; L account, BT for Balance Sheet account" xml:space="preserve"><![CDATA[BY para contas de resultado, BT para contas do balanço patrimonial]]></value>
+  <value column="Description" original="BY for P &amp; L account, BT for Balance Sheet account">BY para contas de resultado, BT para contas do balanço patrimonial</value>
  </row>
  <row id="53442" trl="Y">
   <value column="Name" original="Material Receipt">Recebimento de Material</value>
@@ -6109,7 +6109,7 @@
   <value column="Description" original=""/>
  </row>
  <row id="200751" trl="Y">
-  <value column="Name" original="P&amp;L" xml:space="preserve"><![CDATA[Demonstração do Resultado]]></value>
+  <value column="Name" original="P&amp;L">Demonstração do Resultado</value>
   <value column="Description" original=""/>
  </row>
  <row id="200752" trl="Y">
@@ -6830,6 +6830,274 @@
  </row>
  <row id="800297" trl="N">
   <value column="Name" original="Nota de Crédito">Nota de Crédito</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800298" trl="N">
+  <value column="Name" original="Desenquadramento do SN">Desenquadramento do SN</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800299" trl="N">
+  <value column="Name" original="Retorno por recusa total na entrega ou por não localização do destinatário">Retorno por recusa total na entrega ou por não localização do destinatário</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800300" trl="N">
+  <value column="Name" original="Redução de valores">Redução de valores</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800301" trl="N">
+  <value column="Name" original="Transferência de crédito na sucessão">Transferência de crédito na sucessão</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800302" trl="N">
+  <value column="Name" original="Retorno por recusa parcial na entrega">Retorno por recusa parcial na entrega</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800303" trl="N">
+  <value column="Name" original="NF-e de Pagamento Antecipado">NF-e de Pagamento Antecipado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800304" trl="N">
+  <value column="Name" original="NF-e">NF-e</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800305" trl="N">
+  <value column="Name" original="Evento">Evento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800306" trl="N">
+  <value column="Name" original="Conhecimento de Transporte">Conhecimento de Transporte</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800307" trl="N">
+  <value column="Name" original="Novo">Novo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800308" trl="N">
+  <value column="Name" original="Aguardando XML completo">Aguardando XML completo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800309" trl="N">
+  <value column="Name" original="Pronto para importar">Pronto para importar</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800310" trl="N">
+  <value column="Name" original="Importado">Importado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800311" trl="N">
+  <value column="Name" original="Ignorado">Ignorado</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800312" trl="N">
+  <value column="Name" original="Dinheiro">Dinheiro</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800313" trl="N">
+  <value column="Name" original="Cheque">Cheque</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800314" trl="N">
+  <value column="Name" original="Cartão de Crédito">Cartão de Crédito</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800315" trl="N">
+  <value column="Name" original="Cartão de Débito">Cartão de Débito</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800316" trl="N">
+  <value column="Name" original="Cartão da Loja (Private Label), Crediário Digital, Outros Crediários">Cartão da Loja (Private Label), Crediário Digital, Outros Crediários</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800317" trl="N">
+  <value column="Name" original="Vale Alimentação">Vale Alimentação</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800318" trl="N">
+  <value column="Name" original="Vale Refeição">Vale Refeição</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800319" trl="N">
+  <value column="Name" original="Vale Presente">Vale Presente</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800320" trl="N">
+  <value column="Name" original="Vale Combustível">Vale Combustível</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800321" trl="N">
+  <value column="Name" original="Duplicata Mercantil">Duplicata Mercantil</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800322" trl="N">
+  <value column="Name" original="Boleto Bancário">Boleto Bancário</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800323" trl="N">
+  <value column="Name" original="Depósito Bancário">Depósito Bancário</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800324" trl="N">
+  <value column="Name" original="Pagamento Instantâneo (PIX) — Dinâmico">Pagamento Instantâneo (PIX) — Dinâmico</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800325" trl="N">
+  <value column="Name" original="Transferência bancária, Carteira Digital">Transferência bancária, Carteira Digital</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800326" trl="N">
+  <value column="Name" original="Programa de fidelidade, Cashback, Crédito Virtual">Programa de fidelidade, Cashback, Crédito Virtual</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800327" trl="N">
+  <value column="Name" original="Pagamento Instantâneo (PIX) — Estático">Pagamento Instantâneo (PIX) — Estático</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800328" trl="N">
+  <value column="Name" original="Crédito em Loja">Crédito em Loja</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800329" trl="N">
+  <value column="Name" original="Pagamento Eletrônico não Informado. Falha de hardware do sistema emissor">Pagamento Eletrônico não Informado. Falha de hardware do sistema emissor</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800330" trl="N">
+  <value column="Name" original="Pagamento Instantâneo (PIX) — Automático">Pagamento Instantâneo (PIX) — Automático</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800331" trl="N">
+  <value column="Name" original="TEF — &quot;Book Transfer&quot;">TEF — "Book Transfer"</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800332" trl="N">
+  <value column="Name" original="Sem Pagamento">Sem Pagamento</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800333" trl="N">
+  <value column="Name" original="Pagamento Posterior">Pagamento Posterior</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800334" trl="N">
+  <value column="Name" original="Outros">Outros</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800335" trl="N">
+  <value column="Name" original="Pagamento integrado com o sistema de automação da empresa">Pagamento integrado com o sistema de automação da empresa</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800336" trl="N">
+  <value column="Name" original="Pagamento não integrado com o sistema de automação da empresa (ex.: POS simples)">Pagamento não integrado com o sistema de automação da empresa (ex.: POS simples)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800337" trl="N">
+  <value column="Name" original="LBR_NFE_TBand">LBR_NFE_TBand</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800338" trl="N">
+  <value column="Name" original="Mastercard">Mastercard</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800339" trl="N">
+  <value column="Name" original="American Express">American Express</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800340" trl="N">
+  <value column="Name" original="Sorocred">Sorocred</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800341" trl="N">
+  <value column="Name" original="Diners Club">Diners Club</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800342" trl="N">
+  <value column="Name" original="Elo">Elo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800343" trl="N">
+  <value column="Name" original="Hipercard">Hipercard</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800344" trl="N">
+  <value column="Name" original="Aura">Aura</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800345" trl="N">
+  <value column="Name" original="Cabal">Cabal</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800346" trl="N">
+  <value column="Name" original="Alelo">Alelo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800347" trl="N">
+  <value column="Name" original="Banes Card">Banes Card</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800348" trl="N">
+  <value column="Name" original="CalCard">CalCard</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800349" trl="N">
+  <value column="Name" original="Credz">Credz</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800350" trl="N">
+  <value column="Name" original="Discover">Discover</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800351" trl="N">
+  <value column="Name" original="GoodCard">GoodCard</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800352" trl="N">
+  <value column="Name" original="GreenCard">GreenCard</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800353" trl="N">
+  <value column="Name" original="Hiper">Hiper</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800354" trl="N">
+  <value column="Name" original="JCB">JCB</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800355" trl="N">
+  <value column="Name" original="Mais">Mais</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800356" trl="N">
+  <value column="Name" original="MaxVan">MaxVan</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800357" trl="N">
+  <value column="Name" original="Policard">Policard</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800358" trl="N">
+  <value column="Name" original="RedeCompras">RedeCompras</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800359" trl="N">
+  <value column="Name" original="Sodexo">Sodexo</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800360" trl="N">
+  <value column="Name" original="ValeCard">ValeCard</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800361" trl="N">
+  <value column="Name" original="Verocheque">Verocheque</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800362" trl="N">
+  <value column="Name" original="VR">VR</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800363" trl="N">
+  <value column="Name" original="Ticket">Ticket</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="800364" trl="N">
+  <value column="Name" original="Outros">Outros</value>
   <value column="Description" original=""/>
  </row>
  <row trl="Y" uuid="2facadde-7b9b-4619-9161-8f9fe50b2b19">

@@ -602,7 +602,7 @@
  </row>
  <row id="195" trl="Y">
   <value column="Name" original="_Payment Rule">Regra _Payment</value>
-  <value column="Description" original="In &amp; Out Payment Options" xml:space="preserve"><![CDATA[Opções de pagamento de entrada e saída]]></value>
+  <value column="Description" original="In &amp; Out Payment Options">Opções de pagamento de entrada e saída</value>
   <value column="Help" original=""/>
  </row>
  <row id="196" trl="Y">
@@ -3167,6 +3167,31 @@
  </row>
  <row id="800074" trl="N">
   <value column="Name" original="LBR_NFDCType">LBR_NFDCType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800075" trl="N">
+  <value column="Name" original="LBR_DFeType">LBR_DFeType</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800076" trl="N">
+  <value column="Name" original="LBR_DFeStatus">LBR_DFeStatus</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800078" trl="N">
+  <value column="Name" original="LBR_NFE_TPag">LBR_NFE_TPag</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800079" trl="N">
+  <value column="Name" original="LBR_NFE_TpIntegra">LBR_NFE_TpIntegra</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="800080" trl="N">
+  <value column="Name" original="LBR_NFE_TBand">LBR_NFE_TBand</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
  </row>
