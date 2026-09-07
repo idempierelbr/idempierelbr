@@ -310,3 +310,27 @@ INSERT INTO AD_ToolBarButton (AD_Client_ID,AD_Org_ID,Created,CreatedBy,Component
 INSERT INTO AD_ToolBarButton (AD_Client_ID,AD_Org_ID,Created,CreatedBy,ComponentName,IsActive,AD_ToolBarButton_ID,Name,Updated,UpdatedBy,IsCustomization,AD_ToolBarButton_UU,"action",AD_Tab_ID,AD_Process_ID,SeqNo,EntityType) VALUES (0,0,TO_TIMESTAMP('2026-09-07 10:51:41','YYYY-MM-DD HH24:MI:SS'),10,'Gerar Fatura','Y',800010,'Gerar Fatura',TO_TIMESTAMP('2026-09-07 10:51:41','YYYY-MM-DD HH24:MI:SS'),10,'N','01a07c23-954f-7195-957e-04bf33af1c4f','W',800100,800107,20,'LBR')
 ;
 
+-- 7 de set. de 2026 11:07:15 BRT
+UPDATE AD_Menu SET IsSOTrx='N',Updated=TO_TIMESTAMP('2026-09-07 11:07:15','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=10 WHERE AD_Menu_ID=800074
+;
+
+-- 7 de set. de 2026 11:15:51 BRT
+UPDATE AD_Process_Para SET IsCentrallyMaintained='Y',Updated=TO_TIMESTAMP('2026-09-07 11:15:51','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=10 WHERE AD_Process_Para_ID=800156
+;
+
+-- 7 de set. de 2026 11:15:57 BRT
+UPDATE AD_Process_Para SET IsCentrallyMaintained='Y',Updated=TO_TIMESTAMP('2026-09-07 11:15:57','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=10 WHERE AD_Process_Para_ID=800157
+;
+
+-- 7 de set. de 2026 11:16:07 BRT
+UPDATE AD_Process_Para SET IsCentrallyMaintained='Y',Updated=TO_TIMESTAMP('2026-09-07 11:16:07','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=10 WHERE AD_Process_Para_ID=800160
+;
+
+-- 7 de set. de 2026 11:16:11 BRT
+UPDATE AD_Process_Para SET IsCentrallyMaintained='Y',Updated=TO_TIMESTAMP('2026-09-07 11:16:11','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=10 WHERE AD_Process_Para_ID=800161
+;
+
+-- 7 de set. de 2026 11:16:17 BRT
+UPDATE AD_Process_Para SET IsCentrallyMaintained='Y',Updated=TO_TIMESTAMP('2026-09-07 11:16:17','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=10 WHERE AD_Process_Para_ID=800162
+;
+
