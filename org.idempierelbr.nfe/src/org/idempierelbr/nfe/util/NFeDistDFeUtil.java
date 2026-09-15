@@ -189,6 +189,10 @@ public class NFeDistDFeUtil {
 	 * @return resumo do que foi recebido
 	 */
 	public String download(String fromNSU) throws Exception {
+		// validado antes da espera: um NSU mal digitado não pode ser trocado
+		// em silêncio pelo ponto de leitura gravado
+		String startNSU = isValidNSU(fromNSU) ? normalizeNSU(fromNSU) : null;
+
 		if (control.isBlocked()) {
 			// espera local: a SEFAZ bloqueia o CNPJ por 1 hora (cStat 656) de
 			// quem consulta a distribuição depois de a fila ter acabado
@@ -202,8 +206,7 @@ public class NFeDistDFeUtil {
 				+ ". Último NSU: " + control.getLastNSU();
 		}
 
-		String lastNSU = fromNSU != null && fromNSU.trim().length() == 15
-				? fromNSU.trim() : control.getLastNSU();
+		String lastNSU = startNSU != null ? startNSU : control.getLastNSU();
 
 		int maxPages = Math.max(1, MSysConfig.getIntValue(SYSCONFIG_MAX_PAGES, DEFAULT_MAX_PAGES,
 				Env.getAD_Client_ID(ctx), AD_Org_ID));
@@ -303,7 +306,7 @@ public class NFeDistDFeUtil {
 		if (NSU == null || NSU.trim().isEmpty())
 			throw new AdempiereException("NSU não informado!");
 
-		return downloadSingle(NSU.trim(), null);
+		return downloadSingle(normalizeNSU(NSU), null);
 	}
 
 	/**
@@ -827,6 +830,23 @@ public class NFeDistDFeUtil {
 			return true;
 
 		return ultNSU.compareTo(maxNSU) >= 0;
+	}
+
+	/**
+	 * Completa o NSU com zeros à esquerda. O schema da distribuição (TNSU)
+	 * exige exatamente 15 dígitos e recusa "34000" com 215 - Falha no esquema.
+	 *
+	 * @param NSU NSU como foi digitado
+	 * @return NSU com 15 dígitos
+	 */
+	public static String normalizeNSU(String NSU) {
+		String digits = NSU == null ? "" : NSU.trim();
+
+		if (!digits.matches("[0-9]{1,15}"))
+			throw new AdempiereException("NSU inválido: " + NSU
+					+ ". Informe apenas números, com até 15 dígitos");
+
+		return String.format("%015d", Long.parseLong(digits));
 	}
 
 	private static boolean isValidNSU(String NSU) {

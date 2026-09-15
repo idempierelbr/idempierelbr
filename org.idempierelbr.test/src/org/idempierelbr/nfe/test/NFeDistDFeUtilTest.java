@@ -1,10 +1,12 @@
 package org.idempierelbr.nfe.test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 
+import org.adempiere.exceptions.AdempiereException;
 import org.idempierelbr.nfe.util.NFeDistDFeUtil;
 import org.idempierelbr.nfe.util.SefazSoapUtils;
 import org.junit.jupiter.api.Test;
@@ -117,6 +119,37 @@ class NFeDistDFeUtilTest {
 	@Test
 	void getNFeID_returnsNull_whenDocumentHasNoKey() throws Exception {
 		assertThat(NFeDistDFeUtil.getNFeID(parse("<resNFe " + NS + "><vNF>1.00</vNF></resNFe>"))).isNull();
+	}
+
+	// -------------------------------------------------------------------------
+	// normalizeNSU
+	// -------------------------------------------------------------------------
+
+	@Test
+	void normalizeNSU_padsWithZeros_whenShorterThan15Digits() {
+		assertThat(NFeDistDFeUtil.normalizeNSU("34000")).isEqualTo("000000000034000");
+	}
+
+	@Test
+	void normalizeNSU_keepsNSU_whenAlready15Digits() {
+		assertThat(NFeDistDFeUtil.normalizeNSU("000000000035161")).isEqualTo("000000000035161");
+	}
+
+	@Test
+	void normalizeNSU_trimsSpaces() {
+		assertThat(NFeDistDFeUtil.normalizeNSU(" 34000 ")).isEqualTo("000000000034000");
+	}
+
+	@Test
+	void normalizeNSU_rejects_whenNotNumeric() {
+		assertThatThrownBy(() -> NFeDistDFeUtil.normalizeNSU("34.000"))
+			.isInstanceOf(AdempiereException.class);
+	}
+
+	@Test
+	void normalizeNSU_rejects_whenLongerThan15Digits() {
+		assertThatThrownBy(() -> NFeDistDFeUtil.normalizeNSU("1234567890123456"))
+			.isInstanceOf(AdempiereException.class);
 	}
 
 	/**
