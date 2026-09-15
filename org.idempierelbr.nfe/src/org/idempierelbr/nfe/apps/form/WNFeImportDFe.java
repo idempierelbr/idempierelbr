@@ -27,6 +27,7 @@ import org.adempiere.exceptions.AdempiereException;
 import org.adempiere.webui.AdempiereWebUI;
 import org.adempiere.webui.ClientInfo;
 import org.adempiere.webui.LayoutUtils;
+import org.adempiere.webui.apps.AEnv;
 import org.adempiere.webui.component.Button;
 import org.adempiere.webui.component.Column;
 import org.adempiere.webui.component.ConfirmPanel;
@@ -72,6 +73,7 @@ import org.compiere.util.Trx;
 import org.idempierelbr.base.model.MLBRNFeXML;
 import org.idempierelbr.base.model.MLBRNotaFiscal;
 import org.idempierelbr.base.util.TextUtil;
+import org.idempierelbr.nfe.imports.DFeSearchFilter;
 import org.idempierelbr.nfe.imports.NFeImportDocument;
 import org.idempierelbr.nfe.imports.NFeImportItem;
 import org.idempierelbr.nfe.imports.NFeImportOptions;
@@ -165,6 +167,11 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 
 	/** Documentos que passaram na validação no último refresh */
 	private int readyCount = 0;
+
+	/** Critérios da última busca no monitor, para o diálogo reabrir como o usuário deixou */
+	private DFeSearchFilter lastSearch = new DFeSearchFilter();
+	/** Aviso de que a última busca parou no teto do lote; nulo se trouxe tudo */
+	private String searchNotice;
 
 	public WNFeImportDFe() {
 		form = new WNFeImportDFeForm(this);
@@ -596,13 +603,23 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	}
 
 	/**
+	 * Pede os critérios da busca, já preenchidos com os da última vez.
+	 */
+	private void openSearch() {
+		AEnv.showCenterScreen(new WNFeImportDFeSearch(lastSearch, filter -> {
+			lastSearch = filter;
+			loadFromDFe(filter);
+		}));
+	}
+
+	/**
 	 * Traz do monitor os DF-e prontos para importar — os que já têm o XML
 	 * completo e ainda não viraram nota.
+	 *
+	 * <p>Sem filtro, vêm os mais antigos até o teto do lote. Com filtro, vem tudo
+	 * o que se encaixa: o usuário já disse o que quer ver.
 	 */
-	private void loadFromDFe() {
-		int limit = MSysConfig.getIntValue(SYSCONFIG_MAX_DOCUMENTS, DEFAULT_MAX_DOCUMENTS,
-				Env.getAD_Client_ID(Env.getCtx()));
-
+	private void loadFromDFe(DFeSearchFilter filter) {
 		int AD_Org_ID = getSelectedOrgId();
 
 		StringBuilder where = new StringBuilder(
@@ -616,21 +633,39 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 			parameters.add(AD_Org_ID);
 		}
 
-		List<MLBRNFeXML> documents = new Query(Env.getCtx(), MLBRNFeXML.Table_Name, where.toString(), null)
+		filter.appendWhere(where, parameters);
+
+		Query query = new Query(Env.getCtx(), MLBRNFeXML.Table_Name, where.toString(), null)
 			.setParameters(parameters)
 			.setClient_ID()
 			// mesmo em "*", quem diz o que é "todas" é o acesso do papel
 			.setApplyAccessFilter(true)
 			.setOnlyActiveRecords(true)
-			.setOrderBy("DateDoc, LBR_NSU")
-			.list();
+			.setOrderBy("DateDoc, LBR_NSU");
+
+		int limit = Integer.MAX_VALUE;
+		int pageSize = 0;
+
+		if (filter.isEmpty()) {
+			limit = Math.max(1, MSysConfig.getIntValue(SYSCONFIG_MAX_DOCUMENTS, DEFAULT_MAX_DOCUMENTS,
+					Env.getAD_Client_ID(Env.getCtx())));
+			// o que já está na lista volta na consulta e é pulado; a página tem
+			// folga para isso, e assim o teto conta só documento novo
+			pageSize = limit + batch.size();
+			query.setPageSize(pageSize);
+		}
+
+		List<MLBRNFeXML> documents = query.list();
 
 		int loaded = 0;
 		int failed = 0;
+		boolean truncated = false;
 
 		for (MLBRNFeXML dfe : documents) {
-			if (loaded >= limit)
+			if (loaded >= limit) {
+				truncated = true;
 				break;
+			}
 
 			if (isLoaded(dfe.getLBR_NFeID()))
 				continue;
@@ -648,19 +683,27 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 				failed++;
 		}
 
+		// página cheia: a consulta parou no tamanho dela, e pode haver mais além
+		if (pageSize > 0 && documents.size() >= pageSize)
+			truncated = true;
+
+		searchNotice = truncated
+				? "Limite de " + limit + " DF-e por busca atingido: pode haver mais prontos no monitor."
+						+ " Busque com filtro para trazer todos"
+				: null;
+
 		refresh();
 
 		String scope = AD_Org_ID == ORG_ALL
 				? "todas as organizações"
 				: MOrg.get(Env.getCtx(), AD_Org_ID).getName();
 
-		String message = loaded + " documento(s) carregado(s) do monitor — " + scope;
+		String criteria = filter.describe();
+		String message = loaded + " documento(s) carregado(s) do monitor — " + scope
+				+ (criteria.isEmpty() ? "" : ", " + criteria);
 
 		if (failed > 0)
 			message += ", " + failed + " sem XML legível";
-
-		if (documents.size() > limit)
-			message += ". Há mais documentos prontos — importe estes primeiro";
 
 		Dialog.info(getWindowNo(), "", message);
 	}
@@ -845,8 +888,12 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 	}
 
 	private void refreshStatus() {
-		statusLabel.setValue(batch.size() + " documento(s) carregado(s), " + readyCount
-				+ " pronto(s) para importar, " + pending.size() + " pendência(s) de produto");
+		String status = batch.size() + " documento(s) carregado(s), " + readyCount
+				+ " pronto(s) para importar, " + pending.size() + " pendência(s) de produto";
+
+		// o aviso do teto fica até a próxima busca: continua valendo enquanto o
+		// usuário concilia e importa o que veio
+		statusLabel.setValue(searchNotice == null ? status : status + ". " + searchNotice);
 	}
 
 	private void clearItems(Listbox listbox) {
@@ -1094,7 +1141,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		}
 
 		if ("LoadDFe".equals(id))
-			loadFromDFe();
+			openSearch();
 		else if ("Remove".equals(id))
 			removeDocuments(false);
 		else if ("KeepOnly".equals(id))
