@@ -22,6 +22,9 @@ Este projeto é uma extensão do [iDempiere Business Suite ERP/CRM/SCM](https://
 -   Boleto (emissão empresa e emissão banco) e CNAB 240 (arquivo remessa e retorno);
 -   Sped EFD.
 
+## Configuração
+-   [Configurações de sistema (SysConfig) do LBR](docs/sysconfig.md) — o que cada uma faz, valores aceitos e padrões.
+
 ## Screenshots
 ![Menu](https://raw.githubusercontent.com/idempierelbr/idempierelbr/master/org.idempierelbr.core/data/screenshots/menu.png)
 
