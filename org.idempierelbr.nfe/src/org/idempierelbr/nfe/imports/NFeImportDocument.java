@@ -117,6 +117,14 @@ public class NFeImportDocument {
 	public Integer C_BPartner_ID;
 	public Integer C_BPartner_Location_ID;
 
+	/**
+	 * Nota emitida por uma organização do próprio tenant — devolução, retorno,
+	 * transferência entre filiais. Muda o de-para de produto: o {@code cProd}
+	 * saiu do nosso próprio {@code M_Product.Value}, e o emitente não é
+	 * fornecedor de coisa nenhuma.
+	 */
+	public boolean isSelfIssued;
+
 	public List<NFeImportItem> items = new ArrayList<NFeImportItem>();
 	public List<DocRef> docRefs = new ArrayList<DocRef>();
 	public List<Payment> payments = new ArrayList<Payment>();

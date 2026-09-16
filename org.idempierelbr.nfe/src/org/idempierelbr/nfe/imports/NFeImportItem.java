@@ -34,14 +34,16 @@ public class NFeImportItem {
 
 	/** Item não identificado por nenhum nível da cascata */
 	public static final int MATCH_NONE = 0;
+	/** M_Product.Value = cProd, em nota emitida por organização nossa */
+	public static final int MATCH_SELF_PRODUCT_VALUE = 1;
 	/** M_Product_PO.VendorProductNo = cProd, para o emitente */
-	public static final int MATCH_VENDOR_PRODUCT_NO = 1;
+	public static final int MATCH_VENDOR_PRODUCT_NO = 2;
 	/** M_Product_PO.UPC = cEAN, para o emitente */
-	public static final int MATCH_VENDOR_UPC = 2;
+	public static final int MATCH_VENDOR_UPC = 3;
 	/** M_Product.UPC = cEAN, com GTIN válido */
-	public static final int MATCH_PRODUCT_UPC = 3;
+	public static final int MATCH_PRODUCT_UPC = 4;
 	/** M_Product.Value = cProd e NCM igual — desligado por padrão */
-	public static final int MATCH_PRODUCT_VALUE = 4;
+	public static final int MATCH_PRODUCT_VALUE = 5;
 	/** Resolvido à mão na tela de conciliação */
 	public static final int MATCH_MANUAL = 9;
 
@@ -80,7 +82,11 @@ public class NFeImportItem {
 	public Integer C_Charge_ID;
 	public Integer C_UOM_ID;
 
-	/** Nível da cascata que resolveu o item — ver as constantes MATCH_* */
+	/**
+	 * Nível da cascata que resolveu o item — ver as constantes MATCH_*, cujo
+	 * valor é a ordem em que {@link NFeProductMatcher} os tenta. Só vale em
+	 * memória: nada disso vai para o banco.
+	 */
 	public int matchLevel = MATCH_NONE;
 
 	/** Vínculo do fornecedor, existente ou a criar */
@@ -99,6 +105,8 @@ public class NFeImportItem {
 	/** @return descrição do nível que resolveu o item, para a tela e o log */
 	public String getMatchDescription() {
 		switch (matchLevel) {
+			case MATCH_SELF_PRODUCT_VALUE:
+				return "Código da nota própria";
 			case MATCH_VENDOR_PRODUCT_NO:
 				return "Código do fornecedor";
 			case MATCH_VENDOR_UPC:

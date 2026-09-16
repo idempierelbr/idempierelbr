@@ -139,6 +139,10 @@ public class NFeImportService {
 	 * é o emitente. Não achar o parceiro é normal na primeira nota de um
 	 * fornecedor novo; não achar a organização impede a importação, porque a
 	 * nota não é nossa.
+	 *
+	 * <p>O emitente também é procurado entre as organizações, não só entre os
+	 * parceiros: quando ele é uma delas a nota saiu daqui — devolução, retorno,
+	 * transferência — e o de-para de produto ganha um caminho direto.
 	 */
 	public void resolveParties(NFeImportDocument nfe) {
 		MOrg org = getOrgByTaxID(nfe.destCPF != null ? nfe.destCPF : nfe.destCNPJ);
@@ -146,7 +150,10 @@ public class NFeImportService {
 		if (org != null)
 			nfe.AD_Org_ID = org.get_ID();
 
-		MBPartner bp = getBPartnerByTaxID(nfe.emitCPF != null ? nfe.emitCPF : nfe.emitCNPJ);
+		String emitTaxID = nfe.emitCPF != null ? nfe.emitCPF : nfe.emitCNPJ;
+		nfe.isSelfIssued = getOrgByTaxID(emitTaxID) != null;
+
+		MBPartner bp = getBPartnerByTaxID(emitTaxID);
 
 		if (bp == null)
 			return;
@@ -493,7 +500,11 @@ public class NFeImportService {
 
 		if (item.M_Product_ID != null) {
 			line.setM_Product_ID(item.M_Product_ID);
-			matcher.saveVendorLink(item, nf.getC_BPartner_ID(), nf.getAD_Org_ID());
+
+			// em nota própria o emitente somos nós: gravar o vínculo cadastraria
+			// a empresa como fornecedora dos próprios produtos
+			if (current == null || !current.isSelfIssued)
+				matcher.saveVendorLink(item, nf.getC_BPartner_ID(), nf.getAD_Org_ID());
 		}
 
 		if (item.C_Charge_ID != null)
