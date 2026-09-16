@@ -424,9 +424,9 @@ O armazém é o local onde os produtos são localizados e controlados.</value>
   <value column="Placeholder" original=""/>
  </row>
  <row id="53517" trl="Y">
-  <value column="Name" original="BOM &amp; Formula" xml:space="preserve"><![CDATA[LDM e Fórmula]]></value>
+  <value column="Name" original="BOM &amp; Formula">LDM e Fórmula</value>
   <value column="Description" original=""/>
-  <value column="Help" original="The name BOM/Formula that you introduce in this window will be considered the default BOM to produce the product in this Organization-Plant-Warehouse. If you do not fill this field the default BOM &amp; Formula for the entity will be the BOM/Formula which has the same name as the product." xml:space="preserve"><![CDATA[A LDM/Fórmula informada nesta janela é considerada a LDM padrão para produzir o produto nesta combinação Organização-Fábrica-Armazém. Se o campo não for preenchido, a LDM e Fórmula padrão da entidade será a LDM/Fórmula que tiver o mesmo nome do produto.]]></value>
+  <value column="Help" original="The name BOM/Formula that you introduce in this window will be considered the default BOM to produce the product in this Organization-Plant-Warehouse. If you do not fill this field the default BOM &amp; Formula for the entity will be the BOM/Formula which has the same name as the product.">A LDM/Fórmula informada nesta janela é considerada a LDM padrão para produzir o produto nesta combinação Organização-Fábrica-Armazém. Se o campo não for preenchido, a LDM e Fórmula padrão da entidade será a LDM/Fórmula que tiver o mesmo nome do produto.</value>
   <value column="Placeholder" original=""/>
  </row>
  <row id="53518" trl="Y">

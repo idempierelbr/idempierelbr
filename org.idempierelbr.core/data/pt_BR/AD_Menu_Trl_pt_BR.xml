@@ -181,8 +181,8 @@
   <value column="Description" original=""/>
  </row>
  <row id="53022" trl="Y">
-  <value column="Name" original="Bill of Material and Formulas" xml:space="preserve"><![CDATA[Lista de Materiais e Fórmulas]]></value>
-  <value column="Description" original="Bill of Material and Formulas" xml:space="preserve"><![CDATA[Lista de Materiais e Fórmulas]]></value>
+  <value column="Name" original="Bill of Material and Formulas">Lista de Materiais e Fórmulas</value>
+  <value column="Description" original="Bill of Material and Formulas">Lista de Materiais e Fórmulas</value>
  </row>
  <row id="53029" trl="Y">
   <value column="Name" original="Planning Management">Gestão do Planejamento</value>
@@ -241,8 +241,8 @@
   <value column="Description" original=""/>
  </row>
  <row id="53108" trl="Y">
-  <value column="Name" original="Human Resource and Payroll" xml:space="preserve"><![CDATA[Recursos Humanos e Folha de Pagamento]]></value>
-  <value column="Description" original="Human Resource and Payroll" xml:space="preserve"><![CDATA[Recursos Humanos e Folha de Pagamento]]></value>
+  <value column="Name" original="Human Resource and Payroll">Recursos Humanos e Folha de Pagamento</value>
+  <value column="Description" original="Human Resource and Payroll">Recursos Humanos e Folha de Pagamento</value>
  </row>
  <row id="53109" trl="Y">
   <value column="Name" original="Human Resource">Recursos Humanos</value>
@@ -262,7 +262,7 @@
  </row>
  <row id="53139" trl="Y">
   <value column="Name" original="Asset Transactions ">Transações de Ativos</value>
-  <value column="Description" original="Asset Transactions (Addition, Disposal, Split &amp; Transfer)" xml:space="preserve"><![CDATA[Transações de Ativos (Aquisição, Baixa, Divisão e Transferência)]]></value>
+  <value column="Description" original="Asset Transactions (Addition, Disposal, Split &amp; Transfer)">Transações de Ativos (Aquisição, Baixa, Divisão e Transferência)</value>
  </row>
  <row id="53149" trl="Y">
   <value column="Name" original="Depreciation Processing">Processamento de Depreciação</value>

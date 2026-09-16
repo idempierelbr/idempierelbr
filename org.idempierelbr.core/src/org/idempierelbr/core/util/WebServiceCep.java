@@ -12,10 +12,17 @@
  *****************************************************************************/
 package org.idempierelbr.core.util;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.logging.Level;
+
+import org.compiere.util.CLogger;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -59,6 +66,13 @@ import org.dom4j.io.SAXReader;
  * <BR>Cidade: Indaiatuba/SP
  * <BR></tt>
  * <BR>Ultima revisão: 09/01/2009
+ * <BR>
+ * <BR>A consulta é feita no <a href="https://viacep.com.br" target="_blank">ViaCEP</a>,
+ * em HTTPS e no formato XML. O provedor anterior (republicavirtual.com.br) responde
+ * HTTP 403 bloqueando o IP de origem em uso automatizado.
+ * <BR>O ViaCEP devolve o logradouro já completo (ex.: <tt>"Avenida Paulista"</tt>),
+ * sem o tipo em campo separado, portanto {@link WebServiceCep#getLogradouroType()}
+ * retorna vazio e {@link WebServiceCep#getLogradouroFull()} deve ser preferido.
  * @author Tomaz Lavieri
  */
 public final class WebServiceCep {
@@ -71,14 +85,9 @@ public final class WebServiceCep {
 	 * @author Tomaz Lavieri
 	 */
 	private enum Xml {
-		CIDADE {
+		LOCALIDADE {
 			@Override public void setCep(String text, WebServiceCep webServiceCep) {
 				webServiceCep.setCidade(text);
-			}
-		},
-		DEBUG {
-			@Override public void setCep(String text, WebServiceCep webServiceCep) {
-				webServiceCep.setDebug(text);
 			}
 		},
 		BAIRRO {
@@ -86,29 +95,22 @@ public final class WebServiceCep {
 				webServiceCep.setBairro(text);
 			}
 		},
-		TIPO_LOGRADOURO {
-			@Override public void setCep(String text, WebServiceCep webServiceCep) {
-				webServiceCep.setLogradouroType(text);
-			}
-		},
 		LOGRADOURO {
 			@Override public void setCep(String text, WebServiceCep webServiceCep) {
 				webServiceCep.setLogradouro(text);
 			}
 		},
-		RESULTADO {
-			@Override public void setCep(String text, WebServiceCep webServiceCep) {
-				webServiceCep.setResulCode(Integer.parseInt(text));
-			}
-		},
-		RESULTADO_TXT {
-			@Override public void setCep(String text, WebServiceCep webServiceCep) {
-				webServiceCep.setResultText(text);
-			}
-		},
 		UF {
 			@Override public void setCep(String text, WebServiceCep webServiceCep) {
 				webServiceCep.setUf(text);
+			}
+		},
+		ERRO {
+			@Override public void setCep(String text, WebServiceCep webServiceCep) {
+				if ("true".equalsIgnoreCase(text)) {
+					webServiceCep.setResulCode(RESULT_NOT_FOUND);
+					webServiceCep.setResultText("CEP não encontrado na base dos Correios.");
+				}
 			}
 		}
 		;
@@ -175,61 +177,103 @@ public final class WebServiceCep {
 		}
 	}
 /* Métodos e variaveis estaticas, responsáveis pela busca do CEP */
+	private static CLogger log = CLogger.getCLogger(WebServiceCep.class);
+
+	/** CEP localizado. */
+	public static final int RESULT_FOUND = 1;
+	/** CEP não localizado na base dos Correios. */
+	public static final int RESULT_NOT_FOUND = 0;
+	/** Busca ainda não realizada. */
+	public static final int RESULT_UNDEFINED = -1;
+	/** Falha de comunicação com o serviço de CEP. */
+	public static final int RESULT_CONNECTION_ERROR = -14;
+	/** A resposta do serviço não é um XML válido. */
+	public static final int RESULT_INVALID_RESPONSE = -15;
+	/** Erro na formação da url. */
+	public static final int RESULT_MALFORMED_URL = -16;
+	/** Erro inesperado. */
+	public static final int RESULT_UNEXPECTED_ERROR = -17;
+	/** O serviço de CEP recusou a consulta (erro HTTP). */
+	public static final int RESULT_SERVICE_ERROR = -18;
+
     /**
      * Mascara para a string url de conexão, onde <tt>"%s"</tt> é substituido pelo valor
-     * do cep. 
+     * do cep.
      */
-	private static final String URL_STRING = 
-		"http://cep.republicavirtual.com.br/web_cep.php?cep=%s&formato=xml";
+	private static final String URL_STRING = "https://viacep.com.br/ws/%s/xml/";
+
+	/** Tempo máximo, em milisegundos, para estabelecer a conexão. */
+	private static final int CONNECT_TIMEOUT = 10000;
+	/** Tempo máximo, em milisegundos, de espera pela resposta. */
+	private static final int READ_TIMEOUT = 15000;
+
+	/**
+	 * Sinaliza que o serviço de CEP respondeu, mas recusou a consulta.
+	 */
+	private static final class CepServiceException extends Exception {
+		private static final long serialVersionUID = 1L;
+		private final int status;
+
+		public CepServiceException(int status, String message) {
+			super("HTTP " + status + (message == null ? "" : " " + message));
+			this.status = status;
+		}
+		public int getStatus() {
+			return status;
+		}
+	}
+
+	/**
+	 * Cria um {@link SAXReader} sem resolução de DTD ou de entidades externas.
+	 * @return {@link SAXReader} pronto para ler a resposta do serviço.
+	 */
+	private static SAXReader newSAXReader() {
+		SAXReader reader = new SAXReader();
+		try {
+			reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+			reader.setFeature("http://xml.org/sax/features/external-general-entities", false);
+			reader.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+		} catch (Exception e) {
+			log.log(Level.WARNING, "Não foi possível restringir o parser XML", e);
+		}
+		return reader;
+	}
 
     /**
      * Carrega o Documento xml a partir do CEP enviado.
      * @param cep número do cep.
-     * @return {@link Document} xml WebService do site Republic Virtual
+     * @return {@link Document} xml devolvido pelo ViaCEP, ou <tt>null</tt> caso o cep
+     * 		   não exista na base.
      * @throws DocumentException Quando há problema na formação do documento XML.
-     * @throws MalformedURLException Quando a há problema no link url.
+     * @throws CepServiceException Quando o serviço recusa a consulta.
+     * @throws IOException Quando há falha de comunicação.
      */
-	private static Document getDocument(String cep) 
-			throws DocumentException, MalformedURLException {
+	private static Document getDocument(String cep)
+			throws DocumentException, CepServiceException, IOException {
 		URL url = new URL(String.format(URL_STRING, cep));
-		SAXReader reader = new SAXReader();
-        Document document = reader.read(url);
-        return document;
+		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		try {
+			conn.setRequestMethod("GET");
+			conn.setConnectTimeout(CONNECT_TIMEOUT);
+			conn.setReadTimeout(READ_TIMEOUT);
+			conn.setRequestProperty("Accept", "application/xml");
+			conn.setRequestProperty("User-Agent", "iDempiereLBR");
+			int status = conn.getResponseCode();
+			if (status == HttpURLConnection.HTTP_NOT_FOUND)
+				return null;
+			if (status != HttpURLConnection.HTTP_OK)
+				throw new CepServiceException(status, conn.getResponseMessage());
+			try (InputStream is = conn.getInputStream()) {
+				return newSAXReader().read(is);
+			}
+		} finally {
+			conn.disconnect();
+		}
 	}
 	/**
-	 * Retorna o elemento principal (root) da arvore XML.
-     * @param cep número do cep.
-	 * @return {@link Element} principal (root) da arvore XML.
-     * @throws DocumentException Quando há problema na formação do documento XML.
-     * @throws MalformedURLException Quando a há problema no link url.
-	 */
-	private static Element getRootElement(String cep) 
-			throws DocumentException, MalformedURLException {
-		return getDocument(cep).getRootElement();
-	}
-	/**
-	 * Encapsula os elementos XML dentro de um objeto
-	 * <tt>{@link Iterable}<{@link Element}></tt> podendo ser recuperados um a um dentro
-	 * de um for
-	 * <BR>
-	 * <BR>Por exemplo:
-	 * <BR><tt>for (Element e : getElements(cep)) {
-	 * <BR>//...
-	 * <BR>}
-     * @param cep número do cep.
-	 * @return
-     * @throws DocumentException Quando há problema na formação do documento XML.
-     * @throws MalformedURLException Quando a há problema no link url.
-	 */
-	private static IterableElement getElements(String cep) 
-			throws DocumentException, MalformedURLException {
-		return new IterableElement(getRootElement(cep).elementIterator());
-	}
-	/**
-	 * Faz uma busca a partir do cep enviado, no site 
-	 * <a href="http://www.republicavirtual.com.br" 
-	 * target="_blank">republicavirtual.com.br</a>, retornando o resultado em um objeto
-	 * {@link WebServiceCep}.
+	 * Faz uma busca a partir do cep enviado, no site
+	 * <a href="https://viacep.com.br" target="_blank">viacep.com.br</a>, retornando o
+	 * resultado em um objeto {@link WebServiceCep}.
 	 * <BR>
 	 * <BR>Não se faz necessário formatações, a string pode ser enviada em qualquer
 	 * formatação, pois só serão consideradas os primeiros 8 numeros da string.
@@ -238,7 +282,7 @@ public final class WebServiceCep {
 	 * <tt>"14568910"</tt>.
 	 * <BR>Uma <tt>{@link String} "1%4#5?55%16a8&910"</tt> é automaticamente passada para
 	 * <tt>"14555168"</tt>, só levando em conta os primeiros 8 números.
-	 * @param	cep Número do cep a ser carregado. Só serão considerados os primeiros 8 
+	 * @param	cep Número do cep a ser carregado. Só serão considerados os primeiros 8
 	 * 			números da {@link String} enviada. Todos os caracters não numéricos serão
 	 * 			removidos, e a string serão truncada caso seja maior que 8 caracters.
 	 * @return {@link WebServiceCep} contendo as informações da pesquisa.
@@ -248,29 +292,65 @@ public final class WebServiceCep {
 		if (cep.length() > 8)
 			cep = cep.substring(0, 8);
 		WebServiceCep loadCep = new WebServiceCep(cep);
+		//	O ViaCEP devolve o logradouro completo, sem o tipo em campo separado
+		loadCep.setLogradouroType("");
+		if (cep.length() < 8) {
+			loadCep.setResulCode(RESULT_NOT_FOUND);
+			loadCep.setResultText("CEP incompleto, informe os 8 dígitos.");
+			return loadCep;
+		}
 		try {
-			XmlEnums enums = new XmlEnums();
-			for (Element e : getElements(cep))
-				enums.getXml(e.getQualifiedName()).setCep(e.getText(), loadCep);
-		} catch (DocumentException ex) {
-			if (ex.getNestedException() != null && ex.getNestedException() 
-					instanceof java.net.UnknownHostException) {
-				loadCep.setResultText("Site não encontrado.");
-				loadCep.setResulCode(-14);
-			} else {
-				loadCep.setResultText("Não foi possivel ler o documento xml.");
-				loadCep.setResulCode(-15);
+			Document document = getDocument(cep);
+			if (document == null) {
+				loadCep.setResulCode(RESULT_NOT_FOUND);
+				loadCep.setResultText("CEP não encontrado na base dos Correios.");
+				return loadCep;
 			}
+			XmlEnums enums = new XmlEnums();
+			for (Element e : new IterableElement(document.getRootElement().elementIterator())) {
+				Xml xml = enums.getXml(e.getQualifiedName());
+				if (xml != null)	//	ignora os elementos que não são utilizados
+					xml.setCep(e.getText(), loadCep);
+			}
+			if (loadCep.getResulCode() == RESULT_UNDEFINED) {
+				if (loadCep.getUf() != null && loadCep.getUf().length() > 0) {
+					loadCep.setResulCode(RESULT_FOUND);
+					loadCep.setResultText("sucesso");
+				} else {
+					loadCep.setResulCode(RESULT_NOT_FOUND);
+					loadCep.setResultText("CEP não encontrado na base dos Correios.");
+				}
+			}
+		} catch (CepServiceException ex) {
 			loadCep.setExceptio(ex);
+			loadCep.setResulCode(RESULT_SERVICE_ERROR);
+			loadCep.setResultText("O serviço de CEP recusou a consulta (HTTP "
+					+ ex.getStatus() + ").");
 		} catch (MalformedURLException ex) {
 			loadCep.setExceptio(ex);
+			loadCep.setResulCode(RESULT_MALFORMED_URL);
 			loadCep.setResultText("Erro na formação da url.");
-			loadCep.setResulCode(-16);
+		} catch (UnknownHostException ex) {
+			loadCep.setExceptio(ex);
+			loadCep.setResulCode(RESULT_CONNECTION_ERROR);
+			loadCep.setResultText("Não foi possível resolver o endereço do serviço de CEP.");
+		} catch (DocumentException ex) {
+			loadCep.setExceptio(ex);
+			loadCep.setResulCode(RESULT_INVALID_RESPONSE);
+			loadCep.setResultText("A resposta do serviço de CEP não é um XML válido.");
+		} catch (IOException ex) {
+			loadCep.setExceptio(ex);
+			loadCep.setResulCode(RESULT_CONNECTION_ERROR);
+			loadCep.setResultText("Falha de comunicação com o serviço de CEP.");
 		} catch (Exception ex) {
 			loadCep.setExceptio(ex);
+			loadCep.setResulCode(RESULT_UNEXPECTED_ERROR);
 			loadCep.setResultText("Erro inesperado.");
-			loadCep.setResulCode(-17);
 		}
+		if (loadCep.getResulCode() < RESULT_NOT_FOUND)
+			log.log(Level.WARNING, "Falha ao consultar o CEP " + cep + " em "
+					+ String.format(URL_STRING, cep) + ": " + loadCep.getResultText(),
+					loadCep.getException());
 		return loadCep;
 	}
 	
@@ -284,7 +364,6 @@ public final class WebServiceCep {
 	private String logradouro = null;
 	private String logradouroType = null;
 	private String uf = null;
-	private String debug = null;
 	private Exception exception;
     
 	
@@ -304,10 +383,6 @@ public final class WebServiceCep {
 		this.exception = ex;
 	}
 /* PRIVATE métodos set, usados pela classe Xml para setar o objeto CepWebService */
-	private void setDebug(String debug) {
-		this.debug = debug;
-	}
-	
 	private void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
@@ -340,14 +415,14 @@ public final class WebServiceCep {
 	/**
 	 * Informa o código do resultado da pesquisa.
 	 * <BR>Códigos conhecidos:
-	 * <BR><tt>-1</tt> : busca não realizada
-	 * <BR><tt>0</tt> : cep não encontrado
-	 * <BR><tt>1</tt> : cep encontrado
-	 * <BR><tt>-14</tt> : Site não encontrado (pode ser por problemas na internet).
-	 * <BR><tt>-15</tt> : Não foi possivel ler o documento xml
-	 * <BR><tt>-16</tt> : Erro na formação da url
-	 * <BR><tt>-17</tt> : Erro inesperado
-	 * 
+	 * <BR><tt>-1</tt> : busca não realizada ({@link #RESULT_UNDEFINED})
+	 * <BR><tt>0</tt> : cep não encontrado ({@link #RESULT_NOT_FOUND})
+	 * <BR><tt>1</tt> : cep encontrado ({@link #RESULT_FOUND})
+	 * <BR><tt>-14</tt> : Falha de comunicação ({@link #RESULT_CONNECTION_ERROR})
+	 * <BR><tt>-15</tt> : Resposta não é um xml válido ({@link #RESULT_INVALID_RESPONSE})
+	 * <BR><tt>-16</tt> : Erro na formação da url ({@link #RESULT_MALFORMED_URL})
+	 * <BR><tt>-17</tt> : Erro inesperado ({@link #RESULT_UNEXPECTED_ERROR})
+	 * <BR><tt>-18</tt> : Serviço recusou a consulta ({@link #RESULT_SERVICE_ERROR})
 	 * 
 	 * @return <tt>int</tt> Código do resultado.
 	 */
@@ -368,7 +443,7 @@ public final class WebServiceCep {
 	 * 			cadastrado.
 	 */
 	public boolean wasSuccessful() {
-		return ( ((resulCode == 1)||(resulCode == 2)) && exception == null );
+		return ( ((resulCode == RESULT_FOUND)||(resulCode == 2)) && exception == null );
 	}
 	/**
 	 * Informa se não existe o cep cadastrado.
@@ -376,7 +451,7 @@ public final class WebServiceCep {
 	 * 			<BR><tt>false</tt> - Caso haja falhas, ou caso o cep esteja cadastrado.
 	 */
 	public boolean isCepNotFound() {
-		return (resulCode == 0);
+		return (resulCode == RESULT_NOT_FOUND);
 	}
 	/**
 	 * Informa se houve falhas na busca do cep
@@ -427,8 +502,11 @@ public final class WebServiceCep {
 	 * @return {@link String} contendo o tipo de Logradouro + nome do Logradouro.
 	 */
 	public String getLogradouroFull() {
-		return (logradouro == null || logradouroType ==null) ? null : 
-			logradouroType + " " + logradouro; 
+		if (logradouro == null)
+			return null;
+		if (logradouroType == null || logradouroType.trim().length() == 0)
+			return logradouro;
+		return logradouroType + " " + logradouro;
 	}
 	/**
 	 * Informa o tipo do logradouro.

@@ -22,7 +22,7 @@
  </row>
  <row id="105" trl="Y">
   <value column="Name" original="15">15</value>
-  <value column="Description" original="Prepaid Expenses, Deposits &amp; Other Current Assets" xml:space="preserve"><![CDATA[Despesas Antecipadas, Depósitos e Outros Ativos Circulantes]]></value>
+  <value column="Description" original="Prepaid Expenses, Deposits &amp; Other Current Assets">Despesas Antecipadas, Depósitos e Outros Ativos Circulantes</value>
  </row>
  <row id="106" trl="Y">
   <value column="Name" original="15_">15_</value>
@@ -34,7 +34,7 @@
  </row>
  <row id="108" trl="Y">
   <value column="Name" original="17">17</value>
-  <value column="Description" original="Furniture, Fixtures &amp; Equipment" xml:space="preserve"><![CDATA[Móveis, Utensílios e Equipamentos]]></value>
+  <value column="Description" original="Furniture, Fixtures &amp; Equipment">Móveis, Utensílios e Equipamentos</value>
  </row>
  <row id="109" trl="Y">
   <value column="Name" original="18">18</value>
@@ -78,7 +78,7 @@
  </row>
  <row id="119" trl="Y">
   <value column="Name" original="32">32</value>
-  <value column="Description" original="Current Profit &amp; Loss" xml:space="preserve"><![CDATA[Resultado do Exercício]]></value>
+  <value column="Description" original="Current Profit &amp; Loss">Resultado do Exercício</value>
  </row>
  <row id="120" trl="Y">
   <value column="Name" original="33">33</value>
@@ -134,7 +134,7 @@
  </row>
  <row id="133" trl="Y">
   <value column="Name" original="62">62</value>
-  <value column="Description" original="Advertising &amp; Promotion" xml:space="preserve"><![CDATA[Publicidade e Promoção]]></value>
+  <value column="Description" original="Advertising &amp; Promotion">Publicidade e Promoção</value>
  </row>
  <row id="134" trl="Y">
   <value column="Name" original="63">63</value>
@@ -146,7 +146,7 @@
  </row>
  <row id="136" trl="Y">
   <value column="Name" original="65">65</value>
-  <value column="Description" original="Stationary &amp; Supplies" xml:space="preserve"><![CDATA[Papelaria e Suprimentos]]></value>
+  <value column="Description" original="Stationary &amp; Supplies">Papelaria e Suprimentos</value>
  </row>
  <row id="137" trl="Y">
   <value column="Name" original="66">66</value>
@@ -158,7 +158,7 @@
  </row>
  <row id="139" trl="Y">
   <value column="Name" original="68">68</value>
-  <value column="Description" original="Travel &amp; Entertainment" xml:space="preserve"><![CDATA[Viagens e Representação]]></value>
+  <value column="Description" original="Travel &amp; Entertainment">Viagens e Representação</value>
  </row>
  <row id="140" trl="Y">
   <value column="Name" original="69">69</value>
@@ -170,7 +170,7 @@
  </row>
  <row id="142" trl="Y">
   <value column="Name" original="71">71</value>
-  <value column="Description" original="Dues &amp; Subscriptions" xml:space="preserve"><![CDATA[Contribuições e Assinaturas]]></value>
+  <value column="Description" original="Dues &amp; Subscriptions">Contribuições e Assinaturas</value>
  </row>
  <row id="143" trl="Y">
   <value column="Name" original="72">72</value>
@@ -178,7 +178,7 @@
  </row>
  <row id="144" trl="Y">
   <value column="Name" original="73">73</value>
-  <value column="Description" original="Postage &amp; Shipping" xml:space="preserve"><![CDATA[Correios e Fretes]]></value>
+  <value column="Description" original="Postage &amp; Shipping">Correios e Fretes</value>
  </row>
  <row id="145" trl="Y">
   <value column="Name" original="74">74</value>
@@ -194,7 +194,7 @@
  </row>
  <row id="148" trl="Y">
   <value column="Name" original="77">77</value>
-  <value column="Description" original="Repairs &amp; Maintenance" xml:space="preserve"><![CDATA[Reparos e Manutenção]]></value>
+  <value column="Description" original="Repairs &amp; Maintenance">Reparos e Manutenção</value>
  </row>
  <row id="149" trl="Y">
   <value column="Name" original="78">78</value>
@@ -234,7 +234,7 @@
  </row>
  <row id="158" trl="Y">
   <value column="Name" original="89">89</value>
-  <value column="Description" original="Income Tax &amp; Summary" xml:space="preserve"><![CDATA[Imposto de Renda e Resumo]]></value>
+  <value column="Description" original="Income Tax &amp; Summary">Imposto de Renda e Resumo</value>
  </row>
  <row id="159" trl="Y">
   <value column="Name" original="89_">89_</value>
@@ -278,7 +278,7 @@
  </row>
  <row id="195" trl="Y">
   <value column="Name" original="89">89</value>
-  <value column="Description" original="Income Tax &amp; Summary" xml:space="preserve"><![CDATA[Imposto de Renda e Resumo]]></value>
+  <value column="Description" original="Income Tax &amp; Summary">Imposto de Renda e Resumo</value>
  </row>
  <row id="196" trl="Y">
   <value column="Name" original="Net Income">Lucro Líquido</value>

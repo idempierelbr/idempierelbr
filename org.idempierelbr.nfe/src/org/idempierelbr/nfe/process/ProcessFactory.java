@@ -38,6 +38,10 @@ public class ProcessFactory implements IProcessFactory {
 			return new DownloadNFeXML();
 		else if (className.equals("org.idempierelbr.nfe.process.ManifestNFeXML"))
 			return new ManifestNFeXML();
+		else if (className.equals("org.idempierelbr.nfe.process.GenerateDanfeFromDFe"))
+			return new GenerateDanfeFromDFe();
+		else if (className.equals("org.idempierelbr.nfe.process.GenerateInvoiceFromDFe"))
+			return new GenerateInvoiceFromDFe();
 		else
 			return null;
 	}

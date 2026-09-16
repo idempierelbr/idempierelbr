@@ -616,6 +616,18 @@ public interface I_LBR_NotaFiscal
 	/** Get NFe Issue Type	  */
 	public String getLBR_NFeTpEmis();
 
+    /** Column name LBR_NFeXML_ID */
+    public static final String COLUMNNAME_LBR_NFeXML_ID = "LBR_NFeXML_ID";
+
+	/** Set NFe XML	  */
+	public void setLBR_NFeXML_ID (int LBR_NFeXML_ID);
+
+	/** Get NFe XML	  */
+	public int getLBR_NFeXML_ID();
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_NFeXML getLBR_NFeXML() throws RuntimeException;
+
     /** Column name LBR_NotaFiscal_ID */
     public static final String COLUMNNAME_LBR_NotaFiscal_ID = "LBR_NotaFiscal_ID";
 
@@ -709,6 +721,15 @@ s CPF Number	  */
 
 	/** Get NFe Debit Type	  */
 	public String getLBR_tpNFDebito();
+
+    /** Column name LBR_vTroco */
+    public static final String COLUMNNAME_LBR_vTroco = "LBR_vTroco";
+
+	/** Set Valor do Troco	  */
+	public void setLBR_vTroco (BigDecimal LBR_vTroco);
+
+	/** Get Valor do Troco	  */
+	public BigDecimal getLBR_vTroco();
 
     /** Column name M_RMA_ID */
     public static final String COLUMNNAME_M_RMA_ID = "M_RMA_ID";

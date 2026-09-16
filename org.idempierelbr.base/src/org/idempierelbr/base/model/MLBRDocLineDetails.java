@@ -261,10 +261,8 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	
 	
 	/**
-	 * 	Create all children (taxes) of Doc Line Details
-	 */
-	/**
-	 * 	Obtém o Produto associado a esta linha (via Order Line, Invoice Line ou RMA Line).
+	 * 	Obtém o Produto associado a esta linha (via Order Line, Invoice Line, RMA Line
+	 * 	ou linha da Nota Fiscal).
 	 *	@return MProduct ou null se não houver produto
 	 */
 	public MProduct getProduct() {
@@ -276,6 +274,8 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			M_Product_ID = new MInvoiceLine(getCtx(), getC_InvoiceLine_ID(), get_TrxName()).getM_Product_ID();
 		else if (getM_RMALine_ID() > 0)
 			M_Product_ID = new MRMALine(getCtx(), getM_RMALine_ID(), get_TrxName()).getM_Product_ID();
+		else if (getLBR_NotaFiscalLine_ID() > 0)
+			M_Product_ID = new MLBRNotaFiscalLine(getCtx(), getLBR_NotaFiscalLine_ID(), get_TrxName()).getM_Product_ID();
 
 		if (M_Product_ID > 0)
 			return MProduct.get(getCtx(), M_Product_ID);
@@ -283,6 +283,9 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		return null;
 	}
 
+	/**
+	 * 	Create all children (taxes) of Doc Line Details
+	 */
 	public void createChildren(Map<Integer, Object[]> taxes, MLBRTax tax,
 			int C_Tax_ID, MProduct product, int C_BPartner_ID,
 			int C_BPartnerLocationTo_ID, String LBR_TransactionType,

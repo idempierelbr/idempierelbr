@@ -1269,10 +1269,11 @@ public class NFeLineUtil {
 	 */
 	public ICMSUFDestBean getICMSDIFAL() {
 		
-		// nfe, emitido pela org, saida, consumidor final e interstadual
+		// nfe, emitido pela org, saida (ou entrada de devolucao/retorno), consumidor final e interstadual
 		if (!line.getParent().getLBR_NFeModel().equals(MLBRNotaFiscal.LBR_NFEMODEL_55_NF_E)
 				|| !line.getParent().isLBR_IsDocIssuedByOrg()
-				|| !line.getParent().getLBR_NFE_OperationType().equals(MLBRNotaFiscal.LBR_NFE_OPERATIONTYPE_Out)
+				|| !(line.getParent().getLBR_NFE_OperationType().equals(MLBRNotaFiscal.LBR_NFE_OPERATIONTYPE_Out)
+						|| line.getParent().getLBR_FinNFe().equals(MLBRNotaFiscal.LBR_FINNFE_DevolucaoRetorno))
 				|| !line.getParent().getLBR_NFeIndFinal().equals(MLBRNotaFiscal.LBR_NFEINDFINAL_EndConsumer)
 				|| !line.getParent().getLBR_NFE_DestinationType().equals(MLBRNotaFiscal.LBR_NFE_DESTINATIONTYPE_OperacaoInterestadual))
 			return null;

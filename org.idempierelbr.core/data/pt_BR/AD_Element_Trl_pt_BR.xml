@@ -15248,9 +15248,9 @@ Sem nome informado, usa-se a impressora padrão, definida no login e alterável 
   <value column="Name" original="ID Range Start">Início da Faixa de ID</value>
   <value column="PrintName" original="ID Start">Início de ID</value>
   <value column="Description" original="Start of the ID Range used">Este é o ID Inicial se for utilizada uma faixa de ID (identificação)</value>
-  <value column="Help" original="The ID Range allows to restrict the range of the internally used IDs. The standard rages are 0-899,999 for the Application Dictionary 900,000-999,999 for Application Dictionary customizations/extensions and &gt; 1,000,000 for tenant data. The standard system limit is 9,999,999,999 but can easily be extended.  The ID range is on a per table basis.&#10;Please note that the ID range is NOT enforced." xml:space="preserve"><![CDATA[A faixa de ID permite restringir o intervalo dos identificadores usados internamente. As faixas padrão são 0 a 899.999 para o Dicionário de Aplicação, 900.000 a 999.999 para personalizações e extensões do dicionário, e acima de 1.000.000 para dados da empresa. O limite padrão do sistema é 9.999.999.999, facilmente ampliável. A faixa é definida por tabela.
+  <value column="Help" original="The ID Range allows to restrict the range of the internally used IDs. The standard rages are 0-899,999 for the Application Dictionary 900,000-999,999 for Application Dictionary customizations/extensions and &gt; 1,000,000 for tenant data. The standard system limit is 9,999,999,999 but can easily be extended.  The ID range is on a per table basis.&#10;Please note that the ID range is NOT enforced.">A faixa de ID permite restringir o intervalo dos identificadores usados internamente. As faixas padrão são 0 a 899.999 para o Dicionário de Aplicação, 900.000 a 999.999 para personalizações e extensões do dicionário, e acima de 1.000.000 para dados da empresa. O limite padrão do sistema é 9.999.999.999, facilmente ampliável. A faixa é definida por tabela.
 
-A faixa de ID NÃO é imposta pelo sistema.]]></value>
+A faixa de ID NÃO é imposta pelo sistema.</value>
   <value column="Placeholder" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -16113,7 +16113,7 @@ Para habilitá-la, aponte o parâmetro COMPIERE_SECURE dos scripts de inicializa
   <value column="Name" original="Min Shelf Life %">Shelf Life Mínimo (%)</value>
   <value column="PrintName" original="Min Shelf Life %">Shelf Life Mínimo em Porcentagem</value>
   <value column="Description" original="Minimum Shelf Life in percent based on Product Instance Guarantee Date">Vida de prateleira mínima, em percentual, com base na data de validade da instância do produto</value>
-  <value column="Help" original="Minimum Shelf Life of products with Guarantee Date instance. If &gt; 0 you cannot select products with a shelf life ((Guarantee Date-Today) / Guarantee Days) less than the minimum shelf life, unless you select &quot;Show All&quot;" xml:space="preserve"><![CDATA[Vida de prateleira mínima dos produtos com data de garantia na instância. Sendo maior que 0, não é possível selecionar produtos com vida de prateleira — (Data de Garantia - Hoje) / Dias de Garantia — inferior ao mínimo, a menos que se marque Exibir Todos.]]></value>
+  <value column="Help" original="Minimum Shelf Life of products with Guarantee Date instance. If &gt; 0 you cannot select products with a shelf life ((Guarantee Date-Today) / Guarantee Days) less than the minimum shelf life, unless you select &quot;Show All&quot;">Vida de prateleira mínima dos produtos com data de garantia na instância. Sendo maior que 0, não é possível selecionar produtos com vida de prateleira — (Data de Garantia - Hoje) / Dias de Garantia — inferior ao mínimo, a menos que se marque Exibir Todos.</value>
   <value column="Placeholder" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -16377,7 +16377,7 @@ Para habilitá-la, aponte o parâmetro COMPIERE_SECURE dos scripts de inicializa
   <value column="Name" original="Min Shelf Life Days">Shelf Life Mínimo (em Dias)</value>
   <value column="PrintName" original="Min Shelf Life Days">Shelf Life Mínimo em Dias</value>
   <value column="Description" original="Minimum Shelf Life in days based on Product Instance Guarantee Date">Shelf Life mínimo em dias baseado na Data de Validade da Instância do Produto</value>
-  <value column="Help" original="Minimum Shelf Life of products with Guarantee Date instance. If &gt; 0 you cannot select products with a shelf life less than the minimum shelf life, unless you select &quot;Show All&quot;" xml:space="preserve"><![CDATA[Vida de prateleira mínima dos produtos com data de garantia na instância. Sendo maior que 0, não é possível selecionar produtos com vida de prateleira inferior ao mínimo, a menos que se marque Exibir Todos.]]></value>
+  <value column="Help" original="Minimum Shelf Life of products with Guarantee Date instance. If &gt; 0 you cannot select products with a shelf life less than the minimum shelf life, unless you select &quot;Show All&quot;">Vida de prateleira mínima dos produtos com data de garantia na instância. Sendo maior que 0, não é possível selecionar produtos com vida de prateleira inferior ao mínimo, a menos que se marque Exibir Todos.</value>
   <value column="Placeholder" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -22861,8 +22861,8 @@ O item é sempre incluído, porém, quando a regra de entrega do pedido é Forç
   <value column="Name" original="Price Match Tolerance">Tolerância (%) na Diferença de Preço na Conciliação</value>
   <value column="PrintName" original="Price Match Tolerance">Tolerância (%) na Diferença de Preço na Conciliação</value>
   <value column="Description" original="PO-Invoice Match Price Tolerance in percent of the purchase price">Tolerância na Diferença de Preço na Conciliação em Porcentagem</value>
-  <value column="Help" original="Tolerance in Percent of matching the purchase order price to the invoice price.  The difference is posted as Invoice Price Tolerance for Standard Costing.  If defined, the PO-Invoice match must be explicitly approved, if the matching difference is greater then the tolerance.&lt;br&gt;&#10;Example: if the purchase price is $100 and the tolerance is 1 (percent), the invoice price must be between $99 and 101 to be automatically approved.">Tolerância percentual na conciliação entre o preço do pedido de compra e o da fatura. A diferença é lançada como tolerância de preço de fatura no custeio padrão. Uma vez definida, a conciliação precisa de aprovação explícita quando a diferença supera a tolerância.&lt;br&gt;
-Exemplo: com preço de compra de 100 e tolerância de 1%, o preço da fatura precisa ficar entre 99 e 101 para ser aprovado automaticamente.</value>
+  <value column="Help" original="Tolerance in Percent of matching the purchase order price to the invoice price.  The difference is posted as Invoice Price Tolerance for Standard Costing.  If defined, the PO-Invoice match must be explicitly approved, if the matching difference is greater then the tolerance.&lt;br&gt;&#10;Example: if the purchase price is $100 and the tolerance is 1 (percent), the invoice price must be between $99 and 101 to be automatically approved." xml:space="preserve"><![CDATA[Tolerância percentual na conciliação entre o preço do pedido de compra e o da fatura. A diferença é lançada como tolerância de preço de fatura no custeio padrão. Uma vez definida, a conciliação precisa de aprovação explícita quando a diferença supera a tolerância.<br>
+Exemplo: com preço de compra de 100 e tolerância de 1%, o preço da fatura precisa ficar entre 99 e 101 para ser aprovado automaticamente.]]></value>
   <value column="Placeholder" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -24914,7 +24914,7 @@ O ID tem relação de um para um com o ID do contêiner</value>
  <row id="3083" trl="Y">
   <value column="Name" original="Acct Open Dr">Débito Contábil em Aberto</value>
   <value column="PrintName" original="Acct Open Dr">Débito Contábil em Aberto</value>
-  <value column="Description" original="Open Debit in document currency &amp; rate" xml:space="preserve"><![CDATA[Débito em aberto na moeda e na taxa do documento]]></value>
+  <value column="Description" original="Open Debit in document currency &amp; rate">Débito em aberto na moeda e na taxa do documento</value>
   <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
   <value column="PO_Description" original=""/>
@@ -24925,7 +24925,7 @@ O ID tem relação de um para um com o ID do contêiner</value>
  <row id="3084" trl="Y">
   <value column="Name" original="Acct Open Cr">Crédito Contábil em Aberto</value>
   <value column="PrintName" original="Acct Open Cr">Crédito Contábil em Aberto</value>
-  <value column="Description" original="Open Credit in document currency &amp; rate" xml:space="preserve"><![CDATA[Crédito em aberto na moeda e na taxa do documento]]></value>
+  <value column="Description" original="Open Credit in document currency &amp; rate">Crédito em aberto na moeda e na taxa do documento</value>
   <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
   <value column="PO_Description" original=""/>
@@ -24936,7 +24936,7 @@ O ID tem relação de um para um com o ID do contêiner</value>
  <row id="3085" trl="Y">
   <value column="Name" original="Acct Open Balance">Saldo Contábil em Aberto</value>
   <value column="PrintName" original="Acct Open Balance">Saldo Contábil em Aberto</value>
-  <value column="Description" original="Open Balance in document currency &amp; rate" xml:space="preserve"><![CDATA[Saldo em aberto na moeda e na taxa do documento]]></value>
+  <value column="Description" original="Open Balance in document currency &amp; rate">Saldo em aberto na moeda e na taxa do documento</value>
   <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
   <value column="PO_Description" original=""/>
@@ -26851,9 +26851,9 @@ O — configurável pela organização</value>
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53245" trl="Y">
-  <value column="Name" original="BOM &amp; Formula" xml:space="preserve"><![CDATA[LDM e Fórmula]]></value>
-  <value column="PrintName" original="BOM &amp; Formula" xml:space="preserve"><![CDATA[LDM e Fórmula]]></value>
-  <value column="Description" original="BOM &amp; Formula" xml:space="preserve"><![CDATA[LDM e Fórmula]]></value>
+  <value column="Name" original="BOM &amp; Formula">LDM e Fórmula</value>
+  <value column="PrintName" original="BOM &amp; Formula">LDM e Fórmula</value>
+  <value column="Description" original="BOM &amp; Formula">LDM e Fórmula</value>
   <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
   <value column="PO_Description" original=""/>
@@ -27644,8 +27644,8 @@ A soma do custo atual com o custo atual de nível inferior é o custo total do p
   <value column="PO_PrintName" original=""/>
  </row>
  <row id="53317" trl="Y">
-  <value column="Name" original="Temporal MRP &amp; CRP" xml:space="preserve"><![CDATA[MRP e CRP Temporário]]></value>
-  <value column="PrintName" original="Temporal MRP &amp; CRP" xml:space="preserve"><![CDATA[MRP e CRP Temporário]]></value>
+  <value column="Name" original="Temporal MRP &amp; CRP">MRP e CRP Temporário</value>
+  <value column="PrintName" original="Temporal MRP &amp; CRP">MRP e CRP Temporário</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
@@ -31154,12 +31154,12 @@ A variação é gerada quando as taxas padrão são alteradas.</value>
   <value column="Name" original="Floor Stock">Estoque de Chão de Fábrica</value>
   <value column="PrintName" original="Account for Floor Stock">Conta de Estoque de Chão de Fábrica</value>
   <value column="Description" original="The Floor Stock account is the account used Manufacturing Order">A conta de Estoque de Chão de Fábrica é a conta utilizada na ordem de produção</value>
-  <value column="Help" original="The Floor Stock is used for accounting the component with Issue method  is set Floor stock  into Bill of Material &amp; Formula Window.&#10;&#10;The components with Issue Method  defined as Floor stock is acounting next way:&#10;&#10;Debit Floor Stock Account&#10;Credit Work in Process Account " xml:space="preserve"><![CDATA[O Estoque de Chão de Fábrica é usado para contabilizar o componente cujo método de baixa está definido como Estoque de Chão de Fábrica na janela Lista de Materiais e Fórmula.
+  <value column="Help" original="The Floor Stock is used for accounting the component with Issue method  is set Floor stock  into Bill of Material &amp; Formula Window.&#10;&#10;The components with Issue Method  defined as Floor stock is acounting next way:&#10;&#10;Debit Floor Stock Account&#10;Credit Work in Process Account ">O Estoque de Chão de Fábrica é usado para contabilizar o componente cujo método de baixa está definido como Estoque de Chão de Fábrica na janela Lista de Materiais e Fórmula.
 
 Os componentes com método de baixa definido como Estoque de Chão de Fábrica são contabilizados da seguinte forma:
 
 Débito na conta Estoque de Chão de Fábrica
-Crédito na conta Produção em Andamento]]></value>
+Crédito na conta Produção em Andamento</value>
   <value column="Placeholder" original=""/>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -60415,15 +60415,15 @@ necessidades de caixa para curto prazo.</value>
   <value column="Name" original="Title Logic">Lógica de Título</value>
   <value column="PrintName" original="Title Logic">Lógica de Título</value>
   <value column="Description" original="The result determines the title to be displayed for this window">O resultado determina o título exibido para esta janela</value>
-  <value column="Help" original="The result determines the title to be displayed for this Window, used also as the label for Recent Items.&#10;Format is just one or several context variables surrounded by @, examples:&#10;&lt;ul&gt;&#10;&lt;li&gt; @TaxID@&lt;/li&gt;&#10;&lt;li&gt; @DocumentNo@&lt;/li&gt;&#10;&lt;li&gt; @Value@ @Name@&lt;/li&gt;&#10;&lt;/ul&gt;&#10;if this field is left empty a default title/label is created using the DocumentNo, Value and Name fields if they exist.">O resultado determina o título exibido para esta janela, usado também como rótulo nos Itens Recentes.
+  <value column="Help" original="The result determines the title to be displayed for this Window, used also as the label for Recent Items.&#10;Format is just one or several context variables surrounded by @, examples:&#10;&lt;ul&gt;&#10;&lt;li&gt; @TaxID@&lt;/li&gt;&#10;&lt;li&gt; @DocumentNo@&lt;/li&gt;&#10;&lt;li&gt; @Value@ @Name@&lt;/li&gt;&#10;&lt;/ul&gt;&#10;if this field is left empty a default title/label is created using the DocumentNo, Value and Name fields if they exist." xml:space="preserve"><![CDATA[O resultado determina o título exibido para esta janela, usado também como rótulo nos Itens Recentes.
 
 O formato admite uma ou mais variáveis de contexto entre @, por exemplo:
-&lt;ul&gt;
-&lt;li&gt;@TaxID@&lt;/li&gt;
-&lt;li&gt;@DocumentNo@&lt;/li&gt;
-&lt;li&gt;@Value@ @Name@&lt;/li&gt;
-&lt;/ul&gt;
-Em branco, o título padrão é montado com os campos DocumentNo, Value e Name, quando existirem.</value>
+<ul>
+<li>@TaxID@</li>
+<li>@DocumentNo@</li>
+<li>@Value@ @Name@</li>
+</ul>
+Em branco, o título padrão é montado com os campos DocumentNo, Value e Name, quando existirem.]]></value>
   <value column="Placeholder" original="">Expressão Lógica</value>
   <value column="PO_Description" original=""/>
   <value column="PO_Help" original=""/>
@@ -66159,7 +66159,7 @@ Os textos podem ser delimitados por aspas simples, opcionalmente]]></value>
  <row id="204032" trl="Y">
   <value column="Name" original="Statement Type">Tipo de Demonstrativo</value>
   <value column="PrintName" original="Statement Type">Tipo de Demonstrativo</value>
-  <value column="Description" original="Statement Type can be Balance or P&amp;L" xml:space="preserve"><![CDATA[O tipo de demonstrativo pode ser Balanço ou DRE]]></value>
+  <value column="Description" original="Statement Type can be Balance or P&amp;L">O tipo de demonstrativo pode ser Balanço ou DRE</value>
   <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
   <value column="PO_Description" original=""/>
@@ -70333,6 +70333,369 @@ Não Contribuinte</value>
  <row id="800629" trl="N">
   <value column="Name" original="Tipo de Nota">Tipo de Nota</value>
   <value column="PrintName" original="Tipo de Nota">Tipo de Nota</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800630" trl="N">
+  <value column="Name" original="Tipo de DF-e">Tipo de DF-e</value>
+  <value column="PrintName" original="Tipo de DF-e">Tipo de DF-e</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800631" trl="N">
+  <value column="Name" original="Situação do DF-e">Situação do DF-e</value>
+  <value column="PrintName" original="Situação do DF-e">Situação do DF-e</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800632" trl="N">
+  <value column="Name" original="XML Completo">XML Completo</value>
+  <value column="PrintName" original="XML Completo">XML Completo</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800633" trl="N">
+  <value column="Name" original="CNPJ do Emitente">CNPJ do Emitente</value>
+  <value column="PrintName" original="CNPJ do Emitente">CNPJ do Emitente</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800634" trl="N">
+  <value column="Name" original="Razão Social do Emitente">Razão Social do Emitente</value>
+  <value column="PrintName" original="Razão Social do Emitente">Razão Social do Emitente</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800635" trl="N">
+  <value column="Name" original="Controle de DF-e">Controle de DF-e</value>
+  <value column="PrintName" original="Controle de DF-e">Controle de DF-e</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800636" trl="N">
+  <value column="Name" original="LBR_DFeControl_UU">LBR_DFeControl_UU</value>
+  <value column="PrintName" original="LBR_DFeControl_UU">LBR_DFeControl_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800637" trl="N">
+  <value column="Name" original="Último NSU Conhecido">Último NSU Conhecido</value>
+  <value column="PrintName" original="Último NSU Conhecido">Último NSU Conhecido</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800638" trl="N">
+  <value column="Name" original="Último Request">Último Request</value>
+  <value column="PrintName" original="Último Request">Último Request</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800639" trl="N">
+  <value column="Name" original="Último Response">Último Response</value>
+  <value column="PrintName" original="Último Response">Último Response</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800640" trl="N">
+  <value column="Name" original="Fim do Bloqueio">Fim do Bloqueio</value>
+  <value column="PrintName" original="Fim do Bloqueio">Fim do Bloqueio</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800641" trl="N">
+  <value column="Name" original="Qtd. de Consultas (na Hora Corrente)">Qtd. de Consultas (na Hora Corrente)</value>
+  <value column="PrintName" original="Qtd. de Consultas (na Hora Corrente)">Qtd. de Consultas (na Hora Corrente)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800642" trl="N">
+  <value column="Name" original="Detalhes de Pagamento de Nota Fiscal">Detalhes de Pagamento de Nota Fiscal</value>
+  <value column="PrintName" original="Detalhes de Pagamento de Nota Fiscal">Detalhes de Pagamento de Nota Fiscal</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800643" trl="N">
+  <value column="Name" original="LBR_NotaFiscalDetPag_UU">LBR_NotaFiscalDetPag_UU</value>
+  <value column="PrintName" original="LBR_NotaFiscalDetPag_UU">LBR_NotaFiscalDetPag_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800644" trl="N">
+  <value column="Name" original="Forma de Pagamento">Forma de Pagamento</value>
+  <value column="PrintName" original="Forma de Pagamento">Forma de Pagamento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800645" trl="N">
+  <value column="Name" original="Tipo de Pagamento">Tipo de Pagamento</value>
+  <value column="PrintName" original="Tipo de Pagamento">Tipo de Pagamento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800646" trl="N">
+  <value column="Name" original="Descrição do Meio de Pagamento">Descrição do Meio de Pagamento</value>
+  <value column="PrintName" original="Descrição do Meio de Pagamento">Descrição do Meio de Pagamento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800647" trl="N">
+  <value column="Name" original="Data do Pagamento">Data do Pagamento</value>
+  <value column="PrintName" original="Data do Pagamento">Data do Pagamento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800648" trl="N">
+  <value column="Name" original="CNPJ do Estabelecimento">CNPJ do Estabelecimento</value>
+  <value column="PrintName" original="CNPJ do Estabelecimento">CNPJ do Estabelecimento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800649" trl="N">
+  <value column="Name" original="Tipo de Integração">Tipo de Integração</value>
+  <value column="PrintName" original="Tipo de Integração">Tipo de Integração</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800650" trl="N">
+  <value column="Name" original="CNPJ da Credenciadora">CNPJ da Credenciadora</value>
+  <value column="PrintName" original="CNPJ da Credenciadora">CNPJ da Credenciadora</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800651" trl="N">
+  <value column="Name" original="Bandeira">Bandeira</value>
+  <value column="PrintName" original="Bandeira">Bandeira</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800652" trl="N">
+  <value column="Name" original="Código de Autorização">Código de Autorização</value>
+  <value column="PrintName" original="Código de Autorização">Código de Autorização</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800653" trl="N">
+  <value column="Name" original="CNPJ do Recebedor">CNPJ do Recebedor</value>
+  <value column="PrintName" original="CNPJ do Recebedor">CNPJ do Recebedor</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800654" trl="N">
+  <value column="Name" original="ID do Terminal de Pagamento">ID do Terminal de Pagamento</value>
+  <value column="PrintName" original="ID do Terminal de Pagamento">ID do Terminal de Pagamento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800655" trl="N">
+  <value column="Name" original="Valor do Troco">Valor do Troco</value>
+  <value column="PrintName" original="Valor do Troco">Valor do Troco</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800656" trl="N">
+  <value column="Name" original="Eventos de DF-e Recebidos">Eventos de DF-e Recebidos</value>
+  <value column="PrintName" original="Eventos de DF-e Recebidos">Eventos de DF-e Recebidos</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800657" trl="N">
+  <value column="Name" original="LBR_NotaFiscalEventRec_UU">LBR_NotaFiscalEventRec_UU</value>
+  <value column="PrintName" original="LBR_NotaFiscalEventRec_UU">LBR_NotaFiscalEventRec_UU</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800658" trl="N">
+  <value column="Name" original="Cód. do Evento">Cód. do Evento</value>
+  <value column="PrintName" original="Cód. do Evento">Cód. do Evento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800659" trl="N">
+  <value column="Name" original="Seq. do Evento">Seq. do Evento</value>
+  <value column="PrintName" original="Seq. do Evento">Seq. do Evento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800660" trl="N">
+  <value column="Name" original="Data do Evento">Data do Evento</value>
+  <value column="PrintName" original="Data do Evento">Data do Evento</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800661" trl="N">
+  <value column="Name" original="CNPJ/CPF do Autor">CNPJ/CPF do Autor</value>
+  <value column="PrintName" original="CNPJ/CPF do Autor">CNPJ/CPF do Autor</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="PO_Description" original=""/>
+  <value column="PO_Help" original=""/>
+  <value column="PO_Name" original=""/>
+  <value column="PO_PrintName" original=""/>
+ </row>
+ <row id="800662" trl="N">
+  <value column="Name" original="Protocolo">Protocolo</value>
+  <value column="PrintName" original="Protocolo">Protocolo</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="Placeholder" original=""/>

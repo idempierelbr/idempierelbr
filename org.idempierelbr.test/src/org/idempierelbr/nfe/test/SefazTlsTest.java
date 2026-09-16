@@ -55,13 +55,37 @@ class SefazTlsTest {
 			"TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
 			"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
 			"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
-			"TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
+			"TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+			"TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+			"TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+			"TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+			"TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+			"TLS_DHE_RSA_WITH_AES_128_GCM_SHA256",
+			"TLS_DHE_RSA_WITH_AES_256_GCM_SHA384"
 		));
 		try (SSLSocket socket = (SSLSocket) factory.createSocket()) {
 			for (String suite : socket.getEnabledCipherSuites())
 				assertThat(allowlist)
 					.as("cipher suite not in allowlist: %s", suite)
 					.contains(suite);
+		}
+	}
+
+	/**
+	 * Guards the suites that some SEFAZ front ends accept and nothing else: the Ambiente
+	 * Nacional (manifestação do destinatário) and SEFAZ-BA only do ECDHE with AES-CBC,
+	 * SEFAZ-GO only does DHE with AES-GCM. Dropping them resets the connection instead of
+	 * failing the handshake, which is a lot harder to diagnose.
+	 */
+	@Test
+	void createSocket_keepsSuitesRequiredBySefazEndpoints_whenSocketCreated() throws Exception {
+		try (SSLSocket socket = (SSLSocket) factory.createSocket()) {
+			assertThat(socket.getEnabledCipherSuites())
+				.contains(
+					"TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+					"TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+					"TLS_DHE_RSA_WITH_AES_128_GCM_SHA256"
+				);
 		}
 	}
 

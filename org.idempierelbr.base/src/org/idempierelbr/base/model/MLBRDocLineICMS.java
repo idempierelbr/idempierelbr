@@ -16,6 +16,7 @@ import org.compiere.model.MRegion;
 import org.compiere.model.Query;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
+import org.idempierelbr.base.util.TextUtil;
 
 public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 
@@ -42,6 +43,9 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 	public static final String CST_ICMS_DIFAL	= "ICMSUFDest";
 	//public static final String CST_ICMS_Part	= "Part";
 	//public static final String CST_ICMS_ST		= "ST";
+	
+	/** Nome do Imposto (LBR_TaxName) do ICMS sobre produtos */
+	public static final String TAXNAME_ICMSPROD	= "ICMSPROD";
 	
 	/**	CST - ICMS Simples Nacional */
 	public static final String CSOSN_101	= "101";
@@ -325,6 +329,10 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 		MLBRDocLineICMS.copyValues(icmsFrom, icmsTo, detailsTo.getAD_Client_ID(), detailsTo.getAD_Org_ID());
 		icmsTo.setLBR_DocLine_Details_ID(detailsTo.get_ID());
 		
+		// O cBenef é reconsultado no documento de destino, pois o valor copiado pode ter sido
+		// gravado sob um cadastro de CST que já não vale mais.
+		icmsTo.updateCBenef(detailsTo.getProduct());
+		
 		try {
 			icmsTo.saveEx();
 			return true;
@@ -360,47 +368,26 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 	 *	@param product Produto da linha; se null, é resolvido a partir do Doc Line Details
 	 */
 	public void updateCBenef(MProduct product) {
-		MLBRDocLineDetails details = null;
-		if (getLBR_DocLine_Details_ID() > 0)
-			details = new MLBRDocLineDetails(getCtx(), getLBR_DocLine_Details_ID(), get_TrxName());
+		if (product == null && getLBR_DocLine_Details_ID() > 0)
+			product = new MLBRDocLineDetails(getCtx(), getLBR_DocLine_Details_ID(),
+					get_TrxName()).getProduct();
 
-		if (product == null && details != null)
-			product = details.getProduct();
+		String cst = getCurrentTaxStatus();
 
-		// CST vigente conforme o regime (TN = Tributação Normal, SN = Simples Nacional)
-		String cst = LBR_ICMSREGIME_DefaultTaxation.equals(getLBR_ICMSRegime())
-				? getLBR_ICMS_TaxStatusTN() : getLBR_ICMS_TaxStatusSN();
-
-		if (cst == null || cst.trim().isEmpty())
-			cst = getLBR_ICMS_TaxStatusTN();
-		if (cst == null || cst.trim().isEmpty())
-			cst = getLBR_ICMS_TaxStatusSN();
-
-		// Descobre o Tax Name do ICMS a partir da transação de imposto para desambiguar
-		// CSTs que também existem em outros impostos (ex.: IPI).
-		int LBR_TaxName_ID = 0;
-		if (details != null && details.getLBR_Tax_ID() > 0) {
-			MLBRTax tax = new MLBRTax(getCtx(), details.getLBR_Tax_ID(), get_TrxName());
-			for (MLBRTaxLine tl : tax.getLines()) {
-				if (tl.getLBR_TaxName() != null && "ICMSPROD".equals(tl.getLBR_TaxName().getName())
-						&& tl.getLBR_TaxStatus_ID() > 0) {
-					LBR_TaxName_ID = new X_LBR_TaxStatus(getCtx(), tl.getLBR_TaxStatus_ID(),
-							get_TrxName()).getLBR_TaxName_ID();
-					break;
-				}
-			}
-		}
-
-		// Busca o cBenef na Situação Tributária (CST) correspondente
+		// Busca o cBenef na Situação Tributária (CST) do ICMS
 		String cBenef = null;
-		if (cst != null && !cst.trim().isEmpty()) {
+		if (cst != null) {
+			// Filtra pelo Tax Name para desambiguar CSTs que também existem em outros
+			// impostos (ex.: o CST 60 existe no ICMS, no PIS e no COFINS).
 			String where = "Name=? AND IsActive='Y'";
 			Object[] params;
+			int LBR_TaxName_ID = getICMSProdTaxName_ID();
+
 			if (LBR_TaxName_ID > 0) {
 				where += " AND LBR_TaxName_ID=?";
-				params = new Object[] { cst.trim(), LBR_TaxName_ID };
+				params = new Object[] { cst, LBR_TaxName_ID };
 			} else {
-				params = new Object[] { cst.trim() };
+				params = new Object[] { cst };
 			}
 
 			X_LBR_TaxStatus ts = new Query(getCtx(), X_LBR_TaxStatus.Table_Name, where, get_TrxName())
@@ -423,6 +410,63 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 			cBenef = null;
 
 		set_ValueOfColumn("LBR_CBenef", cBenef == null ? null : cBenef.trim());
+	}
+
+	/**
+	 * 	Obtém o CST (Situação Tributária) vigente neste registro, conforme o regime
+	 * 	(TN = Tributação Normal, SN = Simples Nacional).
+	 *	@return CST detalhado (ex.: 41_1) ou null se não houver
+	 */
+	public String getCurrentTaxStatus() {
+		String cst = LBR_ICMSREGIME_DefaultTaxation.equals(getLBR_ICMSRegime())
+				? getLBR_ICMS_TaxStatusTN() : getLBR_ICMS_TaxStatusSN();
+
+		if (cst == null || cst.trim().isEmpty())
+			cst = getLBR_ICMS_TaxStatusTN();
+		if (cst == null || cst.trim().isEmpty())
+			cst = getLBR_ICMS_TaxStatusSN();
+
+		if (cst == null || cst.trim().isEmpty())
+			return null;
+
+		return cst.trim();
+	}
+
+	/**
+	 * 	Verifica se o CST (Situação Tributária) vigente neste registro admite Código de
+	 * 	Benefício Fiscal.
+	 *	@return true se o cBenef pode ser enviado na NF-e
+	 */
+	public boolean isCBenefApplicable() {
+		return isCBenefApplicable(getCurrentTaxStatus());
+	}
+
+	/**
+	 * 	Verifica se um CST (Situação Tributária) admite Código de Benefício Fiscal.
+	 * 	Os CSTs de tributação integral (00 e 10) e de ICMS já recolhido por substituição
+	 * 	tributária (60 e CSOSN 500) não comportam benefício, e a SEFAZ recusa a NF-e com a
+	 * 	Rejeição 928 quando o cBenef é informado nesses casos.
+	 *	@param taxStatus CST detalhado (ex.: 41_1)
+	 *	@return true se o cBenef pode ser enviado na NF-e
+	 */
+	public static boolean isCBenefApplicable(String taxStatus) {
+		return TextUtil.match(taxStatus,
+				CST_ICMS_20, CST_ICMS_30, CST_ICMS_40, CST_ICMS_41, CST_ICMS_41_RET,
+				CST_ICMS_50, CST_ICMS_51, CST_ICMS_70, CST_ICMS_90_PART, CST_ICMS_90,
+				CSOSN_101, CSOSN_102, CSOSN_103, CSOSN_201, CSOSN_202, CSOSN_203,
+				CSOSN_300, CSOSN_400, CSOSN_900);
+	}
+
+	/**
+	 * 	Obtém o Nome do Imposto (LBR_TaxName) do ICMS sobre produtos
+	 *	@return LBR_TaxName_ID ou -1 se não estiver cadastrado
+	 */
+	private int getICMSProdTaxName_ID() {
+		return new Query(getCtx(), I_LBR_TaxName.Table_Name, "Name=?", get_TrxName())
+				.setParameters(TAXNAME_ICMSPROD)
+				.setOnlyActiveRecords(true)
+				.setOrderBy("LBR_TaxName_ID")
+				.firstId();
 	}
 
 	public static String getCSTPrefix(String taxStatusDetailed) {

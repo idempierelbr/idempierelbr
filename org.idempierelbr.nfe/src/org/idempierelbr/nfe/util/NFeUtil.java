@@ -18,7 +18,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.StringReader;
 import java.io.StringWriter;
 import java.security.MessageDigest;
 import java.sql.Timestamp;
@@ -28,10 +27,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 import java.util.logging.Level;
-import java.util.zip.GZIPInputStream;
 
-import javax.net.ssl.SSLContext;
-import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -44,24 +40,17 @@ import org.apache.commons.io.IOUtils;
 import org.compiere.model.I_C_BPartner;
 import org.compiere.model.MAttachment;
 import org.compiere.model.MAttachmentEntry;
-import org.compiere.model.MBPartner;
 import org.compiere.model.MClientInfo;
 import org.compiere.model.MDocType;
 import org.compiere.model.MImage;
-import org.compiere.model.MLocation;
-import org.compiere.model.MOrg;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.MProcess;
-import org.compiere.model.MRegion;
 import org.compiere.model.MTaxProvider;
 import org.compiere.model.X_C_TaxProviderCfg;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
-import org.compiere.util.Env;
-import org.compiere.util.Trx;
 import org.idempierelbr.base.model.MLBRCSC;
 import org.idempierelbr.base.model.MLBRNFeWebService;
-import org.idempierelbr.base.model.MLBRNFeXML;
 import org.idempierelbr.base.model.MLBRNotaFiscal;
 import org.idempierelbr.base.model.MLBRNotaFiscalEvent;
 import org.idempierelbr.base.util.TextUtil;
@@ -72,7 +61,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
@@ -114,25 +102,10 @@ public class NFeUtil {
 		//
 		boolean isNFCe = p_NF.getLBR_NFeModel().equals(MLBRNotaFiscal.MODEL_NFCE);
 
-		// Check process
-		if (MLBRNotaFiscal.GENERATE_DANFE_PROCESS_ID == null) {
-			MLBRNotaFiscal.GENERATE_DANFE_PROCESS_ID = p_NF.getGenerateDanfeProcessID();
-		}
-
-		if (MLBRNotaFiscal.GENERATE_DANFE_PROCESS_ID == null || MLBRNotaFiscal.GENERATE_DANFE_PROCESS_ID <= 0)
-			return null;
-
 		// Get distribution xml for NF and Events
 		InputStream xmlInputStream = null;
 		MAttachment attachNFe = p_NF.createAttachment();
 		String events = "";
-		
-		// jasper NF-e
-		String JASPER_FILENAME = "DanfeMainPortraitA4.jasper";
-		
-		// jasper NFC-e
-		if (isNFCe)
-			JASPER_FILENAME = "DanfeNFCe.jasper";
 
 		for (int i = 0; i < attachNFe.getEntryCount(); i++) {
 			MAttachmentEntry entry = attachNFe.getEntry(i);
@@ -153,35 +126,6 @@ public class NFeUtil {
 		if (xmlInputStream == null)
 			return null;
 
-		// get jasper file(s) and parameters
-		Map<String, Object> jasperParameters = new HashMap<String, Object>();
-
-		// Try to get jasper from process attachment first
-		InputStream mainJasperInputStream = null;
-		MProcess process = new MProcess(p_NF.getCtx(), MLBRNotaFiscal.GENERATE_DANFE_PROCESS_ID, p_NF.get_TrxName());
-		MAttachment attachProcess = process.createAttachment();
-
-		for (int i = attachProcess.getEntryCount() - 1; i >= 0; i--) {
-			if (attachProcess.getEntry(i).getName().equals(JASPER_FILENAME))
-				mainJasperInputStream = attachProcess.getEntry(i).getInputStream();
-		}
-
-		// If attachment not found, get from resources
-		if (mainJasperInputStream == null) {
-			mainJasperInputStream = getClass().getClassLoader()
-					.getResourceAsStream("org/idempierelbr/nfe/report/" + JASPER_FILENAME);
-		}
-
-		jasperParameters.put("REPORT_LOCALE", new Locale("pt", "BR"));
-
-		// only for nfe
-		if (!isNFCe)
-			jasperParameters.put("DanfeMainPortraitA4", mainJasperInputStream);
-
-		// check DANFE
-		if (mainJasperInputStream == null)
-			throw new AdempiereException("Arquivo da DANFE não foi encontrado!");
-
 		// Add org logo to parameters
 		int logoID = 0;
 		if (p_NF.isLBR_IsDocIssuedByOrg()) {
@@ -191,19 +135,7 @@ public class NFeUtil {
 			logoID = p_NF.getC_BPartner().getLogo_ID();
 		}
 
-		if (logoID > 0) {
-			MImage mImage = MImage.get(p_NF.getCtx(), logoID);
-			if (mImage != null && mImage.getBinaryData() != null) {
-				InputStream is = new ByteArrayInputStream(mImage.getBinaryData());
-				jasperParameters.put("logotipo", is);
-			}
-		}
-
-		// events of nfe
-		if (!isNFCe && !events.equals("")) {
-			jasperParameters.put("Eventos_Datasource",
-					IOUtils.toInputStream("<LBREventList>" + events + "</LBREventList>"));
-		}
+		Map<String, Object> extraParameters = new HashMap<String, Object>();
 
 		// generate NFCe QRCode inputstream
 		if (isNFCe) {
@@ -222,11 +154,8 @@ public class NFeUtil {
 					throw new AdempiereException("Link de Consulta da NFC-e é inválido!");
 				
 				//
-				ByteArrayOutputStream out = new ByteArrayOutputStream();
-				MatrixToImageWriter.writeToStream(
-						new QRCodeWriter().encode(p_NF.getLBR_NFCeQRCodeURL(), BarcodeFormat.QR_CODE, 300, 300), "PNG", out);
-				jasperParameters.put("qrcode", new ByteArrayInputStream(((ByteArrayOutputStream) out).toByteArray()));
-				jasperParameters.put("urlconsulta", queryWS.getURL());
+				extraParameters.put("qrcode", createQRCodeImage(p_NF.getLBR_NFCeQRCodeURL()));
+				extraParameters.put("urlconsulta", queryWS.getURL());
 				
 
 			} catch (Exception e) {
@@ -234,6 +163,106 @@ public class NFeUtil {
 				log.log(Level.SEVERE, "Não foi possível gerar o DANFE da NFC-e.", e);
 				throw new AdempiereException("Não foi possível gerar o QRCode da NFC-e.", e);
 			}
+		}
+
+		return createDanfe(p_NF.getCtx(), xmlInputStream, events, logoID, isNFCe,
+				extraParameters, p_NF.get_TrxName());
+	}
+
+	/**
+	 * Imagem do QR Code da NFC-e, no formato que o relatório espera.
+	 *
+	 * @param qrCodeText o texto do QR Code — na NFC-e é a URL inteira, com o
+	 *        hash, do jeito que ela vai no XML autorizado ({@code infNFeSupl})
+	 * @return o PNG pronto para o jasper
+	 */
+	public static InputStream createQRCodeImage(String qrCodeText) throws Exception {
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		MatrixToImageWriter.writeToStream(
+				new QRCodeWriter().encode(qrCodeText, BarcodeFormat.QR_CODE, 300, 300), "PNG", out);
+
+		return new ByteArrayInputStream(out.toByteArray());
+	}
+
+	/**
+	 * Monta a DANFE a partir do XML de distribuição.
+	 *
+	 * <p>A impressão sempre foi feita sobre o XML — a {@code LBR_NotaFiscal}
+	 * entra só para achar o anexo, o logotipo e os eventos. Separando as duas
+	 * coisas, um XML de terceiro guardado na {@code LBR_NFeXML} imprime pelo
+	 * mesmo caminho, com o mesmo leiaute, sem precisar virar nota.
+	 *
+	 * @param ctx contexto
+	 * @param xmlInputStream XML de distribuição ({@code nfeProc})
+	 * @param events XMLs de evento concatenados, ou vazio
+	 * @param logoID {@code AD_Image_ID} do logotipo, ou 0
+	 * @param isNFCe true para o leiaute da NFC-e
+	 * @param extraParameters parâmetros adicionais do jasper ({@code qrcode} e
+	 *        {@code urlconsulta}, na NFC-e), ou nulo
+	 * @param trxName transação
+	 * @return a impressão pronta, ou nulo se não há XML ou processo da DANFE
+	 */
+	public static JasperPrint createDanfe(Properties ctx, InputStream xmlInputStream, String events,
+			int logoID, boolean isNFCe, Map<String, Object> extraParameters, String trxName) {
+
+		if (xmlInputStream == null)
+			return null;
+
+		// Check process
+		if (MLBRNotaFiscal.GENERATE_DANFE_PROCESS_ID == null) {
+			MLBRNotaFiscal.GENERATE_DANFE_PROCESS_ID = MLBRNotaFiscal.getGenerateDanfeProcessID(trxName);
+		}
+
+		if (MLBRNotaFiscal.GENERATE_DANFE_PROCESS_ID == null || MLBRNotaFiscal.GENERATE_DANFE_PROCESS_ID <= 0)
+			return null;
+
+		// jasper NF-e / NFC-e
+		String JASPER_FILENAME = isNFCe ? "DanfeNFCe.jasper" : "DanfeMainPortraitA4.jasper";
+
+		// get jasper file(s) and parameters
+		Map<String, Object> jasperParameters = new HashMap<String, Object>();
+
+		if (extraParameters != null)
+			jasperParameters.putAll(extraParameters);
+
+		// Try to get jasper from process attachment first
+		InputStream mainJasperInputStream = null;
+		MProcess process = new MProcess(ctx, MLBRNotaFiscal.GENERATE_DANFE_PROCESS_ID, trxName);
+		MAttachment attachProcess = process.createAttachment();
+
+		for (int i = attachProcess.getEntryCount() - 1; i >= 0; i--) {
+			if (attachProcess.getEntry(i).getName().equals(JASPER_FILENAME))
+				mainJasperInputStream = attachProcess.getEntry(i).getInputStream();
+		}
+
+		// If attachment not found, get from resources
+		if (mainJasperInputStream == null) {
+			mainJasperInputStream = NFeUtil.class.getClassLoader()
+					.getResourceAsStream("org/idempierelbr/nfe/report/" + JASPER_FILENAME);
+		}
+
+		jasperParameters.put("REPORT_LOCALE", new Locale("pt", "BR"));
+
+		// only for nfe
+		if (!isNFCe)
+			jasperParameters.put("DanfeMainPortraitA4", mainJasperInputStream);
+
+		// check DANFE
+		if (mainJasperInputStream == null)
+			throw new AdempiereException("Arquivo da DANFE não foi encontrado!");
+
+		if (logoID > 0) {
+			MImage mImage = MImage.get(ctx, logoID);
+			if (mImage != null && mImage.getBinaryData() != null) {
+				InputStream is = new ByteArrayInputStream(mImage.getBinaryData());
+				jasperParameters.put("logotipo", is);
+			}
+		}
+
+		// events of nfe
+		if (!isNFCe && events != null && !events.equals("")) {
+			jasperParameters.put("Eventos_Datasource",
+					IOUtils.toInputStream("<LBREventList>" + events + "</LBREventList>"));
 		}
 
 		// Load report file and datasource
@@ -244,8 +273,8 @@ public class NFeUtil {
 			jasperReport = (JasperReport) JRLoader.loadObject(mainJasperInputStream);
 			dataSource = new JRXmlDataSource(xmlInputStream, jasperReport.getQuery().getText());
 		} catch (JRException e1) {
-			log.log(Level.SEVERE, "Não foi possível carregar o arquivo da DANFE para está Nota Fiscal.", e1);
-			throw new AdempiereException("Não foi possível carregar o arquivo da DANFE para está Nota Fiscal", e1);
+			log.log(Level.SEVERE, "Não foi possível carregar o arquivo da DANFE.", e1);
+			throw new AdempiereException("Não foi possível carregar o arquivo da DANFE", e1);
 		}
 
 		// Generate JasperPrint
@@ -254,8 +283,8 @@ public class NFeUtil {
 		try {
 			jasperPrint = JasperFillManager.fillReport(jasperReport, jasperParameters, dataSource);
 		} catch (Exception e) {
-			log.log(Level.WARNING, "Falha ao gerar impressão do DANFE para a Nota Fiscal " + p_NF.getDocumentNo(), e);
-			throw new AdempiereException("Falha ao gerar impressão do DANFE para a Nota Fiscal " + p_NF.getDocumentNo(), e);
+			log.log(Level.WARNING, "Falha ao gerar impressão do DANFE", e);
+			throw new AdempiereException("Falha ao gerar impressão do DANFE", e);
 		}
 
 		return jasperPrint;
@@ -353,9 +382,6 @@ public class NFeUtil {
 	
 	/** XML					*/
 	public static final long XML_SIZE = 500;	
-	
-	private static String P_CSC = "";
-	private static String P_CSC_NAME = "";
 	
 	/** Reference NFeStatus */
 	//public static final int REFERENCE_ID_LBR_NFeStatus = 1000039;
@@ -788,10 +814,8 @@ public class NFeUtil {
 		String digest = digestValue;
 		String tokenID = csc.getValue();
 		String token = csc.getName();
-		Timestamp dhEmi = nf.getDateDoc();		
-		
-		P_CSC =  csc.getValue();
-		P_CSC_NAME = csc.getName();
+		Timestamp dhEmi = nf.getDateDoc();
+
 		// generate
 		return generateQRCodeNFCeURL(chNFe, nVersao, tpAmb, cDest, dhEmi, vNF, vICMS, digest, tokenID, token, url);
 	}
@@ -851,11 +875,11 @@ public class NFeUtil {
 		parametros.put("cIdToken", TextUtil.lPad(tokenID, 6));
 		parametros.put("cHashQRCode", hashQRCode);		
 		
-		P_CSC = zerosEsquerda(P_CSC);
-		String hash_in =  chNFe + "|2|2|" + P_CSC + P_CSC_NAME ;
-		String hash_out = TextUtil.byteArrayToHexString(TextUtil.generateSHA1(hash_in));			
-		
-		return url + "?p=" + chNFe + "|"+ NFeUtil.VERSAO_QR_CODE+"|" +tpAmb+"|" + P_CSC + "|" + hash_out ;
+		String cIdToken = zerosEsquerda(tokenID);
+		String hash_in =  chNFe + "|" + NFeUtil.VERSAO_QR_CODE + "|" + tpAmb + "|" + cIdToken + token ;
+		String hash_out = TextUtil.byteArrayToHexString(TextUtil.generateSHA1(hash_in));
+
+		return url + "?p=" + chNFe + "|"+ NFeUtil.VERSAO_QR_CODE+"|" +tpAmb+"|" + cIdToken + "|" + hash_out ;
 
 
 	}
@@ -909,134 +933,4 @@ public class NFeUtil {
 		return String.valueOf(Integer.parseInt(str));	
 	}
 	
-	public static String requestWS(Properties ctx, int AD_Org_ID, String tpAmb, String lastNSU,
-			String NSU, String NFeID, String trxName) throws Exception {
-		MOrg org = new MOrg(ctx, AD_Org_ID, trxName);
-		MOrgInfo orgInfo = MOrgInfo.get(ctx, org.get_ID(), trxName);
-		MLocation orgLoc = new MLocation(ctx, orgInfo.getC_Location_ID(), trxName);
-		MRegion orgRegion = new MRegion(ctx, orgLoc.getC_Region_ID(), trxName);
-
-		String LBR_RegionCode = orgRegion.get_ValueAsString("LBR_RegionCode");
-
-		int linked2OrgC_BPartner_ID = org.getLinkedC_BPartner_ID(trxName);
-		MBPartner bpLinked2Org = new MBPartner(ctx, linked2OrgC_BPartner_ID, trxName);
-		String LBR_CNPJ = TextUtil.removeCNPJMask(bpLinked2Org.get_ValueAsString("LBR_CNPJ"));
-
-		StringBuilder xml = new StringBuilder()
-			.append("<distDFeInt versao=\"1.01\" xmlns=\"http://www.portalfiscal.inf.br/nfe\">")
-			.append("<tpAmb>").append(tpAmb).append("</tpAmb>")
-			.append("<cUFAutor>" + LBR_RegionCode + "</cUFAutor>")
-			.append("<CNPJ>" + LBR_CNPJ + "</CNPJ>");
-
-		if (NSU != null)
-			xml.append("<consNSU><NSU>").append(NSU).append("</NSU></consNSU>");
-		else if (NFeID != null)
-			xml.append("<consChNFe><chNFe>").append(NFeID).append("</chNFe></consChNFe>");
-		else
-			xml.append("<distNSU><ultNSU>").append(lastNSU).append("</ultNSU></distNSU>");
-
-		xml.append("</distDFeInt>");
-
-		//INICIALIZA CERTIFICADO
-		SSLContext sslContext;
-		try {
-			sslContext = DigitalCertificateUtil.buildSSLContext(ctx, AD_Org_ID);
-		} catch (Exception e) {
-			throw new AdempiereException(e);
-		}
-
-		SefazHttpClient client = new SefazHttpClient(sslContext, NFeUtil.VERSAO_DISTRIBUICAO,
-				orgRegion.get_ID(), MLBRNFeWebService.SERVICE_NFE_DISTRIBUICAO_DFE,
-				tpAmb.equals(ENV_HOMOLOGACAO), MLBRNotaFiscal.LBR_NFEMODEL_55_NF_E, null);
-		String result = client.send(xml.toString());
-		
-		return result;
-	}
-	
-	public static String requestWSAndProcess(Properties ctx, int AD_Org_ID, String tpAmb,
-			String lastNSU, String NSU, String NFeID, String trxName) throws Exception {
-		String result = NFeUtil.requestWS(ctx, AD_Org_ID, tpAmb, lastNSU, NSU, NFeID, trxName);
-		
-		// Parse XML with XXE-hardened builder (SEFAZ response is untrusted input)
-		DocumentBuilder builder = SefazSoapUtils.newHardenedDocumentBuilder();
-		Document doc = builder.parse(new InputSource(new StringReader(result)));
-
-		String cStat = null;
-        if (doc.getElementsByTagName("cStat") != null)
-        	cStat = NFeUtil.getValue(doc, "cStat");
-        
-        String xMotivo = null;
-        if (doc.getElementsByTagName("xMotivo") != null)
-        	xMotivo = NFeUtil.getValue(doc, "xMotivo");
-        
-        String ultNSU = null;
-        if (doc.getElementsByTagName("ultNSU") != null)
-        	ultNSU = NFeUtil.getValue(doc, "ultNSU");
-        
-        String maxNSU = null;
-        if (doc.getElementsByTagName("maxNSU") != null)
-        	maxNSU = NFeUtil.getValue(doc, "maxNSU");
-        
-        NodeList docZipList = doc.getElementsByTagName("docZip");
-
-        log.info("SEFAZ DistDFe response — cStat=" + cStat + " xMotivo=" + xMotivo
-                + " ultNSU=" + ultNSU + " maxNSU=" + maxNSU
-                + " docZipCount=" + docZipList.getLength());
-
-        for (int i=0; i< docZipList.getLength(); i++) {
-        	Node node = docZipList.item(i);
-        	processDocZip(ctx, AD_Org_ID, node, trxName);
-        }
-
-		return cStat + " - " + xMotivo;
-	}
-	
-	public static void processDocZip(Properties ctx, int AD_Org_ID, Node node, String trxName) throws Exception {
-		if (node.getNodeType() == Node.ELEMENT_NODE) {
-			String NSU = node.getAttributes().getNamedItem("NSU").getNodeValue();
-			String schemaName = node.getAttributes().getNamedItem("schema").getNodeValue();
-
-			// decompress
-			byte[] decoded = java.util.Base64.getDecoder().decode(node.getTextContent());
-			String xml;
-			try (GZIPInputStream gzis = new GZIPInputStream(new ByteArrayInputStream(decoded))) {
-				xml = new String(gzis.readAllBytes(), java.nio.charset.StandardCharsets.UTF_8);
-			}
-			
-			// Parse XML with XXE-hardened builder (docZip content is untrusted input)
-			DocumentBuilder builder = SefazSoapUtils.newHardenedDocumentBuilder();
-			Document doc = builder.parse(new InputSource(new StringReader(xml)));
-
-			String chNFe = null;
-	        if (doc.getElementsByTagName("chNFe") != null)
-	        	chNFe = NFeUtil.getValue(doc, "chNFe");
-
-	        log.fine("SEFAZ docZip — NSU=" + NSU + " schema=" + schemaName + " chNFe=" + chNFe);
-
-	        int LBR_NFeXML_ID = DB.getSQLValue(trxName,
-	        	"SELECT LBR_NFeXML_ID FROM LBR_NFeXML WHERE AD_Client_ID=? AND AD_Org_ID=? AND LBR_NSU=? AND IsActive=?", 
-	        	Env.getAD_Client_ID(ctx), AD_Org_ID, NSU, "Y");
-	        
-	        MLBRNFeXML nfeXml;
-	        
-	        if (LBR_NFeXML_ID > 0) {
-	        	nfeXml = new MLBRNFeXML(ctx, LBR_NFeXML_ID, trxName);
-	        	nfeXml.deleteAttachments();
-	        } else {
-	        	nfeXml = new MLBRNFeXML(ctx, 0, trxName);
-	        	nfeXml.setAD_Org_ID(AD_Org_ID);
-	        }
-
-	        nfeXml.saveEx();
-	        
-	        Trx trx = Trx.get(trxName, false);
-	        trx.commit();
-	        
-        	nfeXml.setLBR_NSU(NSU);
-        	nfeXml.setLBR_NFeID(chNFe);
-        	nfeXml.setLBR_SchemaName(schemaName);
-	        nfeXml.attachXML(chNFe + ".xml", xml);
-	        nfeXml.saveEx();
-		}
-	}
 }	//	NFeUtil

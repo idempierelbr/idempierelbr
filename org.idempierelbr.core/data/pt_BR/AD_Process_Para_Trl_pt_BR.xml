@@ -285,7 +285,7 @@ envia os e-mails que não puderam ser processados para a pasta vietnam, dentro d
   <value column="Placeholder2" original=""/>
  </row>
  <row id="53066" trl="Y">
-  <value column="Name" original="Is Print Pack &amp; Tools List" xml:space="preserve"><![CDATA[Imprimir Lista de Embalagem e Ferramentas]]></value>
+  <value column="Name" original="Is Print Pack &amp; Tools List">Imprimir Lista de Embalagem e Ferramentas</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
@@ -936,15 +936,36 @@ Este campo define onde ficam as pastas de solicitação, de erro e as demais.</v
   <value column="Placeholder" original=""/>
   <value column="Placeholder2" original=""/>
  </row>
- <row id="800151" trl="N">
-  <value column="Name" original="DocAction">DocAction</value>
+ <row id="800156" trl="N">
+  <value column="Name" original="C_PaymentTerm_ID">C_PaymentTerm_ID</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="Placeholder" original=""/>
   <value column="Placeholder2" original=""/>
  </row>
- <row id="800152" trl="N">
-  <value column="Name" original="C_DocType_ID">C_DocType_ID</value>
+ <row id="800157" trl="N">
+  <value column="Name" original="SalesRep_ID">SalesRep_ID</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="Placeholder2" original=""/>
+ </row>
+ <row id="800160" trl="N">
+  <value column="Name" original="C_Project_ID">C_Project_ID</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="Placeholder2" original=""/>
+ </row>
+ <row id="800161" trl="N">
+  <value column="Name" original="Description">Description</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="Placeholder2" original=""/>
+ </row>
+ <row id="800162" trl="N">
+  <value column="Name" original="DocAction">DocAction</value>
   <value column="Description" original=""/>
   <value column="Help" original=""/>
   <value column="Placeholder" original=""/>

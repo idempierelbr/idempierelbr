@@ -14,6 +14,7 @@ import org.idempierelbr.base.model.MLBRBoletoMovement;
 import org.idempierelbr.base.model.MLBRNotaFiscal;
 import org.idempierelbr.base.model.MLBRNotaFiscalLot;
 import org.idempierelbr.base.model.MLBRNotaFiscalLotLine;
+import org.idempierelbr.base.model.NFeDebitCreditType;
 import org.idempierelbr.nfe.process.GenerateNFDebitCredit;
 import org.idempierelbr.nfe.util.NFeLotUtil;
 
@@ -41,6 +42,13 @@ public class CNABDebitNoteGenerator {
 
 	/** SysConfig que habilita a geração automática da Nota de Débito no retorno CNAB */
 	public static final String SYSCONFIG_ENABLED = "LBR_CNAB_AUTO_DEBIT_NOTE";
+
+	/**
+	 * SysConfig com o Tipo de Documento da Nota de Débito gerada. Em branco, a nota
+	 * herda o Tipo de Documento da NF-e de venda — ou seja, sai na série da venda e
+	 * sem a configuração fiscal (CFOP) própria de nota de débito.
+	 */
+	public static final String SYSCONFIG_DOCTYPE = "LBR_CNAB_DEBIT_NOTE_DOCTYPE_ID";
 
 	/** Coluna de vínculo/dedup no movimento (aplicada no Dicionário de Aplicação) */
 	private static final String COLUMN_LBR_NotaFiscal_ID = "LBR_NotaFiscal_ID";
@@ -94,10 +102,14 @@ public class CNABDebitNoteGenerator {
 					continue;
 				}
 
-				// Gerador agnóstico: réplica proporcional em rascunho.
-				// DocType herdado da original (juros de boleto sempre referenciam venda nossa).
-				MLBRNotaFiscal nf = GenerateNFDebitCredit.build(ctx, orig, true,
-						GenerateNFDebitCredit.DEFAULT_TPNFDEBITO, amount, 0, trxName);
+				// Gerador agnóstico: réplica proporcional em rascunho. O Tipo de Documento
+				// da nota vem do SysConfig; em branco, herda o da NF de venda original
+				// (juros de boleto sempre referenciam venda nossa).
+				int C_DocType_ID = MSysConfig.getIntValue(SYSCONFIG_DOCTYPE, 0,
+						orig.getAD_Client_ID(), orig.getAD_Org_ID());
+
+				MLBRNotaFiscal nf = GenerateNFDebitCredit.build(ctx, orig,
+						NFeDebitCreditType.DEBIT_INTEREST, amount, C_DocType_ID, trxName);
 
 				if (!nf.processIt(DocAction.ACTION_Complete))
 					throw new AdempiereException("Falha ao completar a NF: " + nf.getProcessMsg());
