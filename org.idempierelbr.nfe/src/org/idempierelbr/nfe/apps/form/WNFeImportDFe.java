@@ -14,11 +14,16 @@ package org.idempierelbr.nfe.apps.form;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.sql.Timestamp;
+import java.text.Collator;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -81,6 +86,7 @@ import org.idempierelbr.nfe.imports.NFeImportService;
 import org.idempierelbr.nfe.imports.NFeProductMatcher;
 import org.idempierelbr.nfe.imports.NFeXMLParser;
 import org.idempierelbr.nfe.util.SefazSoapUtils;
+import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.HtmlBasedComponent;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
@@ -90,6 +96,7 @@ import org.zkoss.zul.Borderlayout;
 import org.zkoss.zul.Center;
 import org.zkoss.zul.Columns;
 import org.zkoss.zul.Listcell;
+import org.zkoss.zul.Listheader;
 import org.zkoss.zul.Listitem;
 import org.zkoss.zul.Hlayout;
 import org.zkoss.zul.North;
@@ -141,9 +148,10 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 
 	/** Documentos carregados, à espera de importação */
 	private final List<NFeImportDocument> batch = new ArrayList<NFeImportDocument>();
-	/** Pendências mostradas na fila, na mesma ordem da lista */
+	/** Pendências mostradas na fila */
 	private final List<NFeImportItem> pending = new ArrayList<NFeImportItem>();
-	private final List<NFeImportDocument> pendingOwner = new ArrayList<NFeImportDocument>();
+	/** Nota de cada pendência; a fila é ordenável, então a posição na lista não serve de chave */
+	private final Map<NFeImportItem, NFeImportDocument> pendingOwner = new HashMap<NFeImportItem, NFeImportDocument>();
 	/** Produtos sugeridos para a pendência em foco */
 	private final List<MProduct> suggestions = new ArrayList<MProduct>();
 
@@ -413,13 +421,13 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 
 		ListHead head = new ListHead();
 		head.setSizable(true);
-		head.appendChild(new ListHeader("Documento"));
-		head.appendChild(new ListHeader("Emitente"));
-		head.appendChild(new ListHeader("Emissão"));
-		head.appendChild(new ListHeader("Valor"));
-		head.appendChild(new ListHeader("Itens"));
-		head.appendChild(new ListHeader("Pendentes"));
-		head.appendChild(new ListHeader("Situação"));
+		appendSortableHeader(head, "Documento");
+		appendSortableHeader(head, "Emitente");
+		appendSortableHeader(head, "Emissão");
+		appendSortableHeader(head, "Valor");
+		appendSortableHeader(head, "Itens");
+		appendSortableHeader(head, "Pendentes");
+		appendSortableHeader(head, "Situação");
 		documentList.appendChild(head);
 
 		return documentList;
@@ -447,14 +455,14 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 
 		ListHead head = new ListHead();
 		head.setSizable(true);
-		head.appendChild(new ListHeader("Documento"));
-		head.appendChild(new ListHeader("Item"));
-		head.appendChild(new ListHeader("Código"));
-		head.appendChild(new ListHeader("Descrição"));
-		head.appendChild(new ListHeader("GTIN"));
-		head.appendChild(new ListHeader("NCM"));
-		head.appendChild(new ListHeader("UDM"));
-		head.appendChild(new ListHeader("Qtde"));
+		appendSortableHeader(head, "Documento");
+		appendSortableHeader(head, "Item");
+		appendSortableHeader(head, "Código");
+		appendSortableHeader(head, "Descrição");
+		appendSortableHeader(head, "GTIN");
+		appendSortableHeader(head, "NCM");
+		appendSortableHeader(head, "UDM");
+		appendSortableHeader(head, "Qtde");
 		pendingList.appendChild(head);
 
 		layout.appendChild(pendingList);
@@ -845,17 +853,22 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 			if (status == null)
 				readyCount++;
 
+			int items = nfe.items.size();
+			int pendingItems = nfe.getPendingItems().size();
+
 			ListItem item = new ListItem();
-			item.appendChild(new Listcell(documentNo(nfe)));
-			item.appendChild(new Listcell(nfe.emitName));
-			item.appendChild(new Listcell(format(nfe.dhEmi)));
-			item.appendChild(new Listcell(format(nfe.vNF)));
-			item.appendChild(new Listcell(String.valueOf(nfe.items.size())));
-			item.appendChild(new Listcell(String.valueOf(nfe.getPendingItems().size())));
-			item.appendChild(new Listcell(status == null ? "Pronta" : status));
+			item.appendChild(cell(documentNo(nfe), documentKey(nfe)));
+			item.appendChild(cell(nfe.emitName));
+			item.appendChild(cell(format(nfe.dhEmi), nfe.dhEmi));
+			item.appendChild(cell(format(nfe.vNF), nfe.vNF));
+			item.appendChild(cell(String.valueOf(items), items));
+			item.appendChild(cell(String.valueOf(pendingItems), pendingItems));
+			item.appendChild(cell(status == null ? "Pronta" : status));
 			item.setValue(nfe);
 			documentList.appendChild(item);
 		}
+
+		resort(documentList);
 	}
 
 	private void refreshPending() {
@@ -866,21 +879,23 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		for (NFeImportDocument nfe : batch) {
 			for (NFeImportItem item : nfe.getPendingItems()) {
 				pending.add(item);
-				pendingOwner.add(nfe);
+				pendingOwner.put(item, nfe);
 
 				ListItem listItem = new ListItem();
-				listItem.appendChild(new Listcell(documentNo(nfe)));
-				listItem.appendChild(new Listcell(String.valueOf(item.nItem)));
-				listItem.appendChild(new Listcell(item.cProd));
-				listItem.appendChild(new Listcell(item.xProd));
-				listItem.appendChild(new Listcell(item.cEAN));
-				listItem.appendChild(new Listcell(item.NCM));
-				listItem.appendChild(new Listcell(item.uCom));
-				listItem.appendChild(new Listcell(format(item.qCom)));
+				listItem.appendChild(cell(documentNo(nfe), documentKey(nfe)));
+				listItem.appendChild(cell(String.valueOf(item.nItem), item.nItem));
+				listItem.appendChild(cell(item.cProd));
+				listItem.appendChild(cell(item.xProd));
+				listItem.appendChild(cell(item.cEAN));
+				listItem.appendChild(cell(item.NCM));
+				listItem.appendChild(cell(item.uCom));
+				listItem.appendChild(cell(format(item.qCom), item.qCom));
 				listItem.setValue(item);
 				pendingList.appendChild(listItem);
 			}
 		}
+
+		resort(pendingList);
 
 		pendingLabel.setValue(pending.isEmpty()
 				? "Nenhuma pendência — todos os itens foram identificados"
@@ -900,14 +915,104 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		listbox.getItems().clear();
 	}
 
+	/**
+	 * Refaz a ordenação que o usuário escolheu. A lista é remontada a cada
+	 * mudança no lote: sem isso, os itens voltam na ordem de carga com a seta
+	 * do cabeçalho ainda apontando a ordem anterior.
+	 */
+	private static void resort(Listbox listbox) {
+		for (Component child : listbox.getListhead().getChildren()) {
+			Listheader header = (Listheader) child;
+			String direction = header.getSortDirection();
+
+			if (!"natural".equals(direction)) {
+				header.sort("ascending".equals(direction), true);
+				return;
+			}
+		}
+	}
+
+	/** Cabeçalho que ordena pela chave das células da sua coluna */
+	private static void appendSortableHeader(ListHead head, String label) {
+		int column = head.getChildren().size();
+
+		ListHeader header = new ListHeader(label);
+		header.setSortAscending(new CellComparator(column, true));
+		header.setSortDescending(new CellComparator(column, false));
+		head.appendChild(header);
+	}
+
+	/** Célula de texto, que ordena pelo próprio texto */
+	private static Listcell cell(String text) {
+		return cell(text, text == null || text.isBlank() ? null : text);
+	}
+
+	/** Célula com o texto que o usuário lê e a chave pela qual a coluna ordena */
+	private static Listcell cell(String text, Comparable<?> key) {
+		Listcell cell = new Listcell(text);
+		cell.setValue(key);
+
+		return cell;
+	}
+
+	/**
+	 * Ordena pela chave guardada na célula, e não pelo rótulo: pelo rótulo, a
+	 * data em dd/MM/yyyy sairia ordenada pelo dia e o "10" viria antes do "9".
+	 */
+	private static class CellComparator implements Comparator<Listitem>, Serializable {
+
+		private static final long serialVersionUID = 1L;
+
+		private final int column;
+		private final boolean ascending;
+		private transient Collator collator;
+
+		CellComparator(int column, boolean ascending) {
+			this.column = column;
+			this.ascending = ascending;
+		}
+
+		@Override
+		@SuppressWarnings("unchecked")
+		public int compare(Listitem a, Listitem b) {
+			Object x = key(a);
+			Object y = key(b);
+
+			// célula vazia fica no fim nos dois sentidos: é a que menos se procura
+			if (x == null || y == null)
+				return x == y ? 0 : x == null ? 1 : -1;
+
+			int result = x instanceof String && y instanceof String
+					? getCollator().compare(x, y)
+					: ((Comparable<Object>) x).compareTo(y);
+
+			return ascending ? result : -result;
+		}
+
+		private Object key(Listitem item) {
+			return ((Listcell) item.getChildren().get(column)).getValue();
+		}
+
+		/** Sem distinguir maiúscula de minúscula, e com "É" junto do "E" */
+		private Collator getCollator() {
+			if (collator == null) {
+				collator = Collator.getInstance(Env.getLanguage(Env.getCtx()).getLocale());
+				collator.setStrength(Collator.SECONDARY);
+			}
+
+			return collator;
+		}
+	}
+
 	// -------------------------------------------------------------------------
 	// Conciliação
 	// -------------------------------------------------------------------------
 
 	private NFeImportItem getSelectedPending() {
-		int index = pendingList.getSelectedIndex();
+		ListItem selected = pendingList.getSelectedItem();
+		Object value = selected == null ? null : selected.getValue();
 
-		return index < 0 || index >= pending.size() ? null : pending.get(index);
+		return value instanceof NFeImportItem ? (NFeImportItem) value : null;
 	}
 
 	private void onSelectPending() {
@@ -984,7 +1089,7 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 		int applied = 0;
 
 		if (toBatch) {
-			NFeImportDocument owner = pendingOwner.get(pendingList.getSelectedIndex());
+			NFeImportDocument owner = pendingOwner.get(item);
 			applied = NFeProductMatcher.applyToBatch(batch, item, owner.C_BPartner_ID);
 		}
 
@@ -1194,6 +1299,26 @@ public class WNFeImportDFe implements IFormController, EventListener<Event>, Val
 			return nfe.fileName;
 
 		return nfe.serie == null ? nfe.nNF : nfe.nNF + "/" + nfe.serie;
+	}
+
+	/**
+	 * Número e série com zeros à esquerda, nos tamanhos máximos do leiaute
+	 * (9 e 3), para a ordem do texto ser a ordem numérica
+	 */
+	private static String documentKey(NFeImportDocument nfe) {
+		if (nfe.nNF == null)
+			return nfe.fileName;
+
+		return leftPad(nfe.nNF, 9) + "/" + leftPad(nfe.serie == null ? "" : nfe.serie, 3);
+	}
+
+	private static String leftPad(String value, int size) {
+		StringBuilder padded = new StringBuilder(value.trim());
+
+		while (padded.length() < size)
+			padded.insert(0, '0');
+
+		return padded.toString();
 	}
 
 	private static String format(Timestamp value) {
