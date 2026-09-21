@@ -497,6 +497,7 @@
         <setEntry value="org.idempierelbr.cnab240@4:true"/>
         <setEntry value="org.idempierelbr.core@4:true"/>
         <setEntry value="org.idempierelbr.jasperfonts@default:false"/>
+        <setEntry value="org.idempierelbr.mdfe@4:true"/>
         <setEntry value="org.idempierelbr.nfe@4:true"/>
         <setEntry value="org.idempierelbr.nfs@4:true"/>
         <setEntry value="org.idempierelbr.open-items@4:true"/>
