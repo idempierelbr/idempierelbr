@@ -59,7 +59,7 @@ public class MDFeXMLGenerator
 	public static final String NAMESPACE = "http://www.portalfiscal.inf.br/mdfe";
 
 	/** Identificacao do software emissor, campo ide/verProc. */
-	public static final String VER_PROC = "Kraft-MDFe-1.0";
+	public static final String VER_PROC = "LBR-MDFe-1.0";
 
 	/** Tolerancia da regra F58 na soma dos componentes do frete: um centavo. */
 	private static final BigDecimal TOLERANCIA_CENTAVO = new BigDecimal("0.01");

@@ -373,11 +373,6 @@ if (chave == null || chave.replaceAll("[^0-9A-Za-z]", "").length() != 44)
 		if (!texto.isEmpty())
 		{
 			// A coluna de origem sai do mesmo metodo que a monta no SELECT.
-			// Estava fixa como "d.LBR_DocumentNo", e nenhum dos dois
-			// formularios tinha essa coluna: no do LBR a juncao e vazia e o
-			// alias d nem existe, entao qualquer filtro digitado estourava com
-			// "missing FROM-clause entry for table d"; no da Kraft o alias
-			// existe mas a coluna se chama KR_DocumentNo.
 			sql.append(" AND (UPPER(m.DocumentNo) LIKE ?")
 			   .append(" OR m.LBR_MDFeChave LIKE ?")
 			   .append(" OR UPPER(m.LBR_Placa) LIKE ?")
@@ -620,10 +615,7 @@ if (chave == null || chave.replaceAll("[^0-9A-Za-z]", "").length() != 44)
 	/**
 	 * Acrescenta um municipio de carregamento.
 	 *
-	 * <p>O grupo e obrigatorio: o gerador recusa o manifesto sem nenhum. Ate o
-	 * desacoplamento quem criava essa linha era a ponte com a Entrega da Kraft,
-	 * que sabia de onde a carga saiu. O MDF-e do LBR nao sabe - entao quem
-	 * informa e o operador, como ja acontece com o percurso.
+	 * <p>O grupo e obrigatorio: o gerador recusa o manifesto sem nenhum.
 	 */
 	public X_LBR_MDFeMunCarrega adicionarCarregamento(int C_City_ID)
 	{
