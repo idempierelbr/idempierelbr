@@ -19,6 +19,7 @@
 		<module>org.idempierelbr.jasperfonts</module>
 		<module>org.idempierelbr.nfe</module>
 		<module>org.idempierelbr.mdfe</module>
+		<module>org.idempierelbr.rtc</module>
 		<module>org.idempierelbr.nfs</module>
 		<module>org.idempierelbr.sped</module>
 		<module>org.idempierelbr.tax</module>

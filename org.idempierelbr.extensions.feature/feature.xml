@@ -54,6 +54,13 @@
          unpack="false"/>
 
    <plugin
+         id="org.idempierelbr.rtc"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
          id="org.idempierelbr.sped"
          download-size="0"
          install-size="0"

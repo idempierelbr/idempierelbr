@@ -1,0 +1,48 @@
+{
+  "tiqueteSolicitacao": "<tiqueteSolicitacao>",
+  "ni": "12345678",
+  "niConsumidor": "12345678",
+  "geradoEm": "2026-08-27T14:48:05Z",
+  "apuracao": [
+    {
+      "dataArrecadacao": "2026-08-27T14:48:05.745Z",
+      "pagamentos": [
+        {
+          "numeroDARF": "07202608270002",
+          "tipo": 1,
+          "niAdquirente": "",
+          "composicao": [
+            {
+              "sequencial": 1,
+              "pa": "08/2026",
+              "vencimento": "2026-08-25T00:00:00-03:00",
+              "ni_contribuinte": "12345678000195",
+              "chaveDFE": "35260812345678000190550010000001231000001234",
+              "principal": 10,
+              "multa": 0,
+              "juros": 0,
+              "total": 10
+            },
+            {
+              "sequencial": 2,
+              "pa": "07/2026",
+              "vencimento": "2026-07-25T00:00:00-03:00",
+              "ni_contribuinte": "12345678000195",
+              "chaveDFE": "35260712345678000190550010000000991000000999",
+              "principal": 5,
+              "multa": 0.1,
+              "juros": 0.05,
+              "total": 5.15
+            }
+          ]
+        },
+        {
+          "numeroDARF": "",
+          "tipo": 0,
+          "niAdquirente": "",
+          "composicao": []
+        }
+      ]
+    }
+  ]
+}
