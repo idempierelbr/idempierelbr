@@ -9,7 +9,8 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.adempiere.base;bundle-version="13.0.0",
  org.idempiere.test;bundle-version="13.0.0",
  org.idempierelbr.nfe;bundle-version="13.0.0",
- org.idempierelbr.base;bundle-version="13.0.0"
+ org.idempierelbr.base;bundle-version="13.0.0",
+ org.idempierelbr.rtc;bundle-version="13.0.0"
 Import-Package: org.assertj.core.api;version="3.22.0",
  org.junit.jupiter.api;version="5.9.0",
  org.junit.jupiter.api.extension;version="5.9.0",

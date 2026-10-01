@@ -76,6 +76,16 @@ public class AssinaturaDigital {
 	public static final String INF_PREST_SERVICO = "8";
 	public static final String NFS_CABECALHO = "9";
 
+	/**
+	 * Evento de MDF-e (cancelamento, encerramento, inclusao de condutor...).
+	 * <p>
+	 * Assina a tag {@code infEvento}, como a CC-e da NF-e. Existe como constante
+	 * propria porque reusar {@link #CARTADECORRECAO_CCE} funcionaria pelo efeito
+	 * mas mentiria no nome: quem lesse a chamada acharia que ha uma carta de
+	 * correcao no meio de um MDF-e.
+	 */
+	public static final String EVENTO_MDFE = "10";
+
 	/** Algoritmos */
 	private static final String C14N_TRANSFORM_METHOD = "http://www.w3.org/TR/2001/REC-xml-c14n-20010315";
 
@@ -89,6 +99,23 @@ public class AssinaturaDigital {
 	private static char[] senha = "".toCharArray();
 	private static InputStream jksData = null;
 
+	/**
+	 * Serializa a assinatura inteira.
+	 * <p>
+	 * Certificado, alias, senha e o stream do keystore vivem em campos
+	 * estaticos, e loadKeys sobrescreve todos eles a cada chamada. Duas
+	 * assinaturas ao mesmo tempo - dois usuarios emitindo, ou um MDF-e e uma
+	 * NF-e - se atropelam: uma troca o jksData enquanto a outra ainda o esta
+	 * lendo, e o KeyStore recebe bytes de um stream ja parcialmente consumido.
+	 * O sintoma e sempre um erro de parsing DER, do tipo "DerInputStream
+	 * .getLength(): lengthTag=30, too big", que nao tem relacao aparente com
+	 * concorrencia e manda quem investiga procurar defeito no certificado.
+	 * <p>
+	 * Assinar e rapido e nao e caminho de alta frequencia: serializar custa
+	 * pouco perto de tornar o estado compartilhado seguro campo a campo.
+	 */
+	private static final Object TRAVA_ASSINATURA = new Object();
+
 	/** Logger */
 	private static CLogger log = CLogger.getCLogger(AssinaturaDigital.class);
 
@@ -101,7 +128,7 @@ public class AssinaturaDigital {
 	 * @throws Exception
 	 */
 	public static void Assinar(String xmlPath, MOrgInfo oi, String docType) throws Exception {
-		// Lê o arquivo e assina
+		// Lê o arquivo e assina (Assinar(StringBuilder...) ja serializa)
 		StringBuilder xml = Assinar(new StringBuilder(TextUtil.readFile(new File(xmlPath))), oi, docType);
 
 		// Grava o arquivo
@@ -117,8 +144,13 @@ public class AssinaturaDigital {
 	 * @throws Exception
 	 */
 	public static StringBuilder Assinar(StringBuilder xml, MOrgInfo oi, String docType) throws Exception {
-		AssinaturaDigital.loadKeys(oi);
-		return AssinaturaDigital.assinarDocumento(xml, docType);
+		// loadKeys e assinarDocumento tem que ser um bloco so: separadas, outra
+		// thread carrega outro certificado entre as duas e o documento sai
+		// assinado com a chave errada - ou nem sai.
+		synchronized (TRAVA_ASSINATURA) {
+			AssinaturaDigital.loadKeys(oi);
+			return AssinaturaDigital.assinarDocumento(xml, docType);
+		}
 	} // Assinar
 
 	private static PrivateKey getChavePrivada() throws Exception {
@@ -141,9 +173,14 @@ public class AssinaturaDigital {
 			cfgFile = dc.getConfigurationFile();
 		} else if (dc.getLBR_CertType().equals(MLBRDigitalCertificate.LBR_CERTTYPE_PKCS12)) {
 			certType = "PKCS12";
+			// isToken so era ligado, nunca desligado: depois de um certificado
+			// em token, todo PKCS12 seguinte continuava marcado como token.
+			isToken = false;
 			jksData = new FileInputStream(NFeUtil.getAttachmentEntryFile((dc.getAttachment().getEntry(0))));
-		} else if (dc.getLBR_CertType().equals(MLBRDigitalCertificate.LBR_CERTTYPE_JavaKeyStore))
+		} else if (dc.getLBR_CertType().equals(MLBRDigitalCertificate.LBR_CERTTYPE_JavaKeyStore)) {
 			certType = "JKS";
+			isToken = false;
+		}
 		else
 			throw new Exception("Unknow Certificate Type or Not implemented yet");
 
@@ -203,7 +240,7 @@ public class AssinaturaDigital {
 			tag = "infCanc";
 		else if (docType.equals(INUTILIZACAO_NFE))
 			tag = "infInut";
-		else if (docType.equals(CARTADECORRECAO_CCE))
+		else if (docType.equals(CARTADECORRECAO_CCE) || docType.equals(EVENTO_MDFE))
 			tag = "infEvento";
 		else if (docType.equals(LOTE_RPS))
 			tag = "LoteRps";
@@ -295,4 +332,4 @@ public class AssinaturaDigital {
 			throw new AdempiereException("Error siging RPS");
 		}
 	} // signASCIIb
-} // AssinaturaDigital
+} // AssinaturaDigital

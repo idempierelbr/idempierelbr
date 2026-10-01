@@ -134,18 +134,22 @@ public class DistributeAmtToDetails extends SvrProcess
 				}
 			}
 			
+			if (units.signum() == 0)
+				throw new Exception("Cannot distribute: the lines add up to zero");
+
+			// Even split: the unit amount is the line amount
 			unitAmt = p_Amount.divide(units, 2, BigDecimal.ROUND_HALF_UP);
 			BigDecimal remainder = p_Amount;
-			
+
 			// Define line amount based on distribution type
 			for (int i = 0; i < poLines.length; i++) {
 				if (p_DistributionType.equals("1")) // Number of lines
 					poLinesAmt[i] = unitAmt;
 				else if (p_DistributionType.equals("2")) // Qty (line)
-					poLinesAmt[i] = unitAmt.multiply((BigDecimal)poLines[i].get_Value(qtyFieldName));
+					poLinesAmt[i] = share(p_Amount, (BigDecimal)poLines[i].get_Value(qtyFieldName), units);
 				else if (p_DistributionType.equals("3")) // Amt (line)
-					poLinesAmt[i] = unitAmt.multiply((BigDecimal)poLines[i].get_Value(amtFieldName));
-				
+					poLinesAmt[i] = share(p_Amount, (BigDecimal)poLines[i].get_Value(amtFieldName), units);
+
 				remainder = remainder.subtract(poLinesAmt[i]);
 			}
 			
@@ -188,5 +192,27 @@ public class DistributeAmtToDetails extends SvrProcess
 	
 		return "Ok";
 	}
-	
+
+	/**
+	 * 	Share of an amount that is proportional to a line's weight.
+	 *
+	 * 	Multiplies before dividing, so the result keeps full precision. Rounding the
+	 * 	per-unit factor first would lose it: distributing R$ 800,00 of freight over
+	 * 	R$ 4.142,00 of lines gives a factor of 0,193143, and truncating that to 0,19
+	 * 	leaves R$ 13,02 undistributed - which then lands entirely on the first line.
+	 * 	The amount matters because freight and surcharges compose the ICMS and ICMS-ST
+	 * 	tax bases of each item.
+	 *
+	 * 	@param amount total being distributed
+	 * 	@param weight this line's weight (quantity or amount)
+	 * 	@param totalWeight sum of the weights of all lines, never zero
+	 * 	@return this line's share, rounded to 2 decimals
+	 */
+	private BigDecimal share(BigDecimal amount, BigDecimal weight, BigDecimal totalWeight) {
+		if (weight == null || weight.signum() == 0)
+			return Env.ZERO;
+
+		return amount.multiply(weight).divide(totalWeight, 2, BigDecimal.ROUND_HALF_UP);
+	}
+
 }

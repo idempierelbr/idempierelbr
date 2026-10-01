@@ -1,0 +1,51 @@
+{
+  "tiqueteSolicitacao": "692b7b25-44cb-4415-8625-2b9522dd7933.B5E08D55",
+  "ni": "00409834",
+  "niConsumidor": "20182807000131",
+  "geradoEm": "2026-08-19T21:08:32Z",
+  "campoNovoQueOLBRNaoConhece": { "qualquer": 1 },
+  "apuracao": [
+    {
+      "pa": "06/2026",
+      "debitos": [
+        {
+          "origem": 0,
+          "documento": 55,
+          "chave": "36662749229766700825725366193706115810782882",
+          "emissao": "2026-06-03T04:53:58Z",
+          "registro": "2026-08-13T21:19:16.190202Z",
+          "atualizacao": "2026-08-13T21:19:16.190202Z",
+          "cbs": {
+            "apurado": 80,
+            "excedente": 0,
+            "inexigivel": 0,
+            "suspenso": 0,
+            "extinto": 0,
+            "saldoDevedor": 80
+          }
+        }
+      ]
+    },
+    {
+      "pa": "08/2026",
+      "debitos": [
+        {
+          "origem": 0,
+          "documento": 55,
+          "chave": "36662749229766700825725366193706115810782882",
+          "emissao": "2026-08-13T04:53:56Z",
+          "registro": "2026-08-14T12:40:16.763258Z",
+          "atualizacao": "2026-08-14T12:40:16.763258Z",
+          "cbs": {
+            "apurado": 40.15,
+            "excedente": 0,
+            "inexigivel": 0,
+            "suspenso": 0,
+            "extinto": 0.15,
+            "saldoDevedor": 40
+          }
+        }
+      ]
+    }
+  ]
+}

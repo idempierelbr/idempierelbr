@@ -34,6 +34,7 @@ import org.compiere.model.MRegion;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
 import org.idempierelbr.base.model.MLBRNFeWebService;
+import org.xml.sax.SAXException;
 
 /**
  * SOAP 1.2 / HTTPS transport client for SEFAZ NF-e 4.0 web services.
@@ -55,6 +56,7 @@ public class SefazHttpClient {
 	private static final int READ_TIMEOUT_MS    = 60_000;
 	private static final int READ_BUFFER_SIZE   = 4_096;
 	private static final int MAX_RESPONSE_BYTES = 10 * 1024 * 1024; // 10 MB
+	private static final int EXCERPT_MAX_CHARS  = 200;
 
 	private static final String[] REQUIRED_TLS_PROTOCOLS = { "TLSv1.2", "TLSv1.3" };
 	/**
@@ -127,6 +129,38 @@ public class SefazHttpClient {
 	}
 
 	/**
+	 * Transport-only client: the caller builds its own SOAP envelope and calls
+	 * {@link #post} directly.
+	 * <p>
+	 * Everything above the transport layer in this class is NF-e specific — the
+	 * service allowlist, the WSDL namespaces, the {@code <nfeDadosMsg>} wrapper.
+	 * Other DF-e documents differ there and only there: MDF-e wraps its payload
+	 * in {@code <mdfeDadosMsg>} and has its own service names. What they do share
+	 * is this transport — mutual TLS, the TLS 1.2/1.3 and cipher allowlist, the
+	 * timeouts, the response size cap and the SOAP Fault handling — and none of
+	 * that is worth reimplementing per document type.
+	 * <p>
+	 * {@link #send} is not available on an instance created this way.
+	 */
+	public static SefazHttpClient forTransport(SSLContext sslContext) {
+		return new SefazHttpClient(sslContext);
+	}
+
+	private SefazHttpClient(SSLContext sslContext) {
+		if (sslContext == null)
+			throw new IllegalArgumentException("sslContext is required");
+
+		this.sslContext        = sslContext;
+		this.versionNo         = null;
+		this.service           = null;
+		this.envType           = null;
+		this.region            = null;
+		this.LBR_NFeModel      = null;
+		this.autorizador       = null;
+		this.connectionFactory = DEFAULT_CONNECTION_FACTORY;
+	}
+
+	/**
 	 * For testing only — skips the {@link MRegion} database lookup.
 	 * Only {@code sslContext} and {@code connectionFactory} are used by {@link #post};
 	 * the remaining fields are irrelevant for transport-layer tests.
@@ -161,6 +195,10 @@ public class SefazHttpClient {
 	 *                                  {@link MLBRNFeWebService#getURL}), or if the server returns a SOAP Fault
 	 */
 	public String send(String xmlPayload) throws Exception {
+		if (service == null)
+			throw new AdempiereException(
+					"This client was created for transport only - build the envelope and call post()");
+
 		if (xmlPayload == null || xmlPayload.isBlank())
 			throw new IllegalArgumentException("xmlPayload must not be null or blank");
 
@@ -234,7 +272,33 @@ public class SefazHttpClient {
 				responseBytes = buf.toByteArray();
 			}
 
-			return SefazSoapUtils.extractSoapBodyContent(new String(responseBytes, StandardCharsets.UTF_8));
+			String responseText = new String(responseBytes, StandardCharsets.UTF_8);
+
+			try {
+				return SefazSoapUtils.extractSoapBodyContent(responseText);
+			} catch (SAXException e) {
+				// A non-2xx status alone decides nothing: a SOAP 1.2 Fault arrives as
+				// HTTP 500 with a perfectly valid envelope, and that path must keep
+				// reporting the fault reason. What decides is whether the body parsed
+				// as XML at all. When it did not, what came back was a gateway error
+				// page, and the parser message the caller sees ("DOCTYPE is disallowed
+				// when the feature ... is set to true") names the wrong problem.
+				//
+				// Only SAXException is enriched. "no SOAP Body" and SOAP Fault are
+				// AdempiereException and pass through untouched - excerpting those
+				// would put fiscal data from a well-formed response into the message.
+				// 404/403 nao e indisponibilidade: o host respondeu, so nao serve este
+				// caminho. Dizer "gateway error page" manda o operador procurar
+				// problema de rede quando o defeito e o endereco cadastrado.
+				String causa = (status == 404 || status == 403)
+						? "this address is not served by SEFAZ - the URL registered for this"
+								+ " service is wrong, not the network"
+						: "this is a gateway or portal error page, not a SEFAZ response";
+
+				throw new AdempiereException("SEFAZ returned HTTP " + status + " for "
+						+ endpoint + " and the body is not XML - " + causa
+						+ ": " + excerpt(responseText), e);
+			}
 		} finally {
 			conn.disconnect();
 		}
@@ -275,9 +339,14 @@ public class SefazHttpClient {
 			hint = "Tente novamente; se persistir, o detalhe técnico está no log do servidor";
 		}
 
-		return "Não foi possível concluir a comunicação com a SEFAZ (" + getServiceLabel()
-				+ ", ambiente " + (NFeUtil.ENV_HOMOLOGACAO.equals(envType) ? "homologação" : "produção")
-				+ "): " + reason + ". " + hint + ".";
+		// forTransport() nao tem serviço nem ambiente: quem chama por ali monta o
+		// próprio endpoint. Sem serviço não há rótulo nem ambiente a informar.
+		String contexto = (service == null) ? ""
+				: " (" + getServiceLabel() + ", ambiente "
+						+ (NFeUtil.ENV_HOMOLOGACAO.equals(envType) ? "homologação" : "produção") + ")";
+
+		return "Não foi possível concluir a comunicação com a SEFAZ" + contexto
+				+ ": " + reason + ". " + hint + ".";
 	}
 
 	/** Nome do serviço como o usuário o conhece, e não como ele é chamado no cadastro */
@@ -307,6 +376,20 @@ public class SefazHttpClient {
 		} catch (Exception e) {
 			return "o servidor da SEFAZ";
 		}
+	}
+
+	/**
+	 * First line of a non-XML response body, capped and collapsed to one line, so the
+	 * operator sees what actually came back (an HTTP 502 page, a proxy login form)
+	 * instead of a parser message about DOCTYPE.
+	 */
+	private static String excerpt(String body) {
+		if (body == null || body.trim().isEmpty())
+			return "(empty body)";
+
+		String flat = body.trim().replaceAll("\\s+", " ");
+		return flat.length() <= EXCERPT_MAX_CHARS ? flat
+				: flat.substring(0, EXCERPT_MAX_CHARS) + "...";
 	}
 
 	/**

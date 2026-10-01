@@ -1,0 +1,52 @@
+{
+  "tiqueteSolicitacao": "48d88a3c-eff9-4489-8e3a-cde8d878d3f7.1E0CE7A4",
+  "ni": "12345678",
+  "niConsumidor": "12345678",
+  "geradoEm": "2026-08-26T16:00:00Z",
+  "apuracao": [
+    {
+      "pa": "08/2026",
+      "creditos": [
+        {
+          "origem": 1,
+          "documento": 55,
+          "chave": "35260812345678000190550010000001231000001234",
+          "emissao": "2026-08-01T00:00:00Z",
+          "registro": "2026-08-01T00:00:00Z",
+          "atualizacao": "2026-08-02T10:00:00Z",
+          "cbs": {
+            "apurado": 15,
+            "excedentes": 1.5,
+            "apropriacao": {
+              "inapropriavel": 0.5,
+              "suspenso": 0,
+              "prescrito": 0,
+              "aApropriar": 2,
+              "apropriado": 12.5,
+              "utilizacao": {
+                "inutilizavel": 0,
+                "utilizado": 10,
+                "restabelecido": 0,
+                "naoUtilizado": {
+                  "saldoCredor": 2.5,
+                  "pedidoRessarcimento": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "origem": 1,
+          "documento": 57,
+          "chave": "35260812345678000190570010000004561000004567",
+          "emissao": "2026-08-05T00:00:00-03:00",
+          "registro": "2026-08-05T00:00:00-03:00",
+          "atualizacao": "2026-08-05T00:00:00-03:00",
+          "cbs": {
+            "apurado": 3
+          }
+        }
+      ]
+    }
+  ]
+}

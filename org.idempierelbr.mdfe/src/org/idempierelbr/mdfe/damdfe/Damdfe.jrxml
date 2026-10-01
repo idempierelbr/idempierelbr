@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  DAMDFE - Documento Auxiliar do Manifesto Eletronico de Documentos Fiscais.
+  Modal rodoviario, emissao normal, conforme MOC Anexo II v3.00b.
+
+  Sem consulta SQL: os dados chegam prontos de DAMDFEDados, para o papel nunca
+  divergir do XML que foi autorizado.
+-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Damdfe" pageWidth="595" pageHeight="842" columnWidth="555"
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
+              whenNoDataType="AllSectionsNoDetail" isIgnorePagination="false">
+
+	<subDataset name="veiculos">
+		<field name="placa" class="java.lang.String"/>
+		<field name="rntrc" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="condutores">
+		<field name="cpf" class="java.lang.String"/>
+		<field name="nome" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="valepedagio">
+		<field name="responsavel" class="java.lang.String"/>
+		<field name="fornecedor" class="java.lang.String"/>
+		<field name="comprovante" class="java.lang.String"/>
+	</subDataset>
+
+	<parameter name="emit_nome" class="java.lang.String"/>
+	<parameter name="emit_endereco" class="java.lang.String"/>
+	<parameter name="emit_municipio" class="java.lang.String"/>
+	<parameter name="emit_cep" class="java.lang.String"/>
+	<parameter name="emit_cnpj" class="java.lang.String"/>
+	<parameter name="emit_ie" class="java.lang.String"/>
+	<parameter name="emit_rntrc" class="java.lang.String"/>
+	<parameter name="logotipo" class="java.io.InputStream" isForPrompting="false"/>
+	<parameter name="modelo" class="java.lang.String"/>
+	<parameter name="serie" class="java.lang.String"/>
+	<parameter name="numero" class="java.lang.String"/>
+	<parameter name="data_emissao" class="java.lang.String"/>
+	<parameter name="uf_ini" class="java.lang.String"/>
+	<parameter name="uf_fim" class="java.lang.String"/>
+	<parameter name="qtd_cte" class="java.lang.Integer"/>
+	<parameter name="qtd_nfe" class="java.lang.Integer"/>
+	<parameter name="peso_total" class="java.math.BigDecimal"/>
+	<parameter name="chave" class="java.lang.String"/>
+	<parameter name="url_consulta" class="java.lang.String"/>
+	<parameter name="protocolo" class="java.lang.String"/>
+	<parameter name="aviso" class="java.lang.String"/>
+	<parameter name="observacoes" class="java.lang.String"/>
+	<parameter name="barcode" class="java.awt.Image"/>
+	<parameter name="qrcode" class="java.awt.Image"/>
+	<parameter name="ds_veiculos" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="ds_condutores" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="ds_valepedagio" class="net.sf.jasperreports.engine.JRDataSource"/>
+
+	<title>
+		<band height="742" splitType="Stretch">
+
+			<!-- cabecalho: emitente e QR Code -->
+			<image scaleImage="RetainShape" hAlign="Center" vAlign="Middle" isUsingCache="false" onErrorType="Blank">
+				<reportElement x="0" y="0" width="70" height="55"/>
+				<box><pen lineWidth="0.5"/></box>
+				<imageExpression><![CDATA[$P{logotipo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="78" y="0" width="330" height="14"/>
+				<textElement><font size="10" isBold="true"/></textElement>
+				<textFieldExpression><![CDATA[$P{emit_nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="14" width="330" height="11"/>
+				<textElement><font size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{emit_endereco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="25" width="330" height="11"/>
+				<textElement><font size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{emit_municipio} + "    CEP " + $P{emit_cep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="36" width="330" height="11"/>
+				<textElement><font size="7" isBold="true"/></textElement>
+				<textFieldExpression><![CDATA["CNPJ: " + $P{emit_cnpj} + "    IE: " + ($P{emit_ie} == null ? "" : $P{emit_ie}) + ($P{emit_rntrc} == null || $P{emit_rntrc}.isEmpty() ? "" : "    RNTRC: " + $P{emit_rntrc})]]></textFieldExpression>
+			</textField>
+			<image scaleImage="RetainShape" hAlign="Right" isUsingCache="false">
+				<reportElement x="460" y="0" width="95" height="95"/>
+				<imageExpression><![CDATA[$P{qrcode}]]></imageExpression>
+			</image>
+
+			<textField>
+				<reportElement x="0" y="58" width="450" height="13"/>
+				<textElement><font size="8"/></textElement>
+				<textFieldExpression><![CDATA["DAMDFE - Documento Auxiliar de Manifesto Eletronico de Documentos Fiscais"]]></textFieldExpression>
+			</textField>
+
+			<!-- faixa de identificacao -->
+			<staticText><reportElement x="0" y="76" width="45" height="9"/><textElement><font size="6"/></textElement><text><![CDATA[Modelo]]></text></staticText>
+			<textField><reportElement x="0" y="85" width="45" height="13"/><textElement><font size="9" isBold="true"/></textElement><textFieldExpression><![CDATA[$P{modelo}]]></textFieldExpression></textField>
+			<staticText><reportElement x="47" y="76" width="45" height="9"/><textElement><font size="6"/></textElement><text><![CDATA[Serie]]></text></staticText>
+			<textField><reportElement x="47" y="85" width="45" height="13"/><textElement><font size="9" isBold="true"/></textElement><textFieldExpression><![CDATA[$P{serie}]]></textFieldExpression></textField>
+			<staticText><reportElement x="94" y="76" width="55" height="9"/><textElement><font size="6"/></textElement><text><![CDATA[Numero]]></text></staticText>
+			<textField><reportElement x="94" y="85" width="55" height="13"/><textElement><font size="9" isBold="true"/></textElement><textFieldExpression><![CDATA[$P{numero}]]></textFieldExpression></textField>
+			<staticText><reportElement x="151" y="76" width="30" height="9"/><textElement><font size="6"/></textElement><text><![CDATA[FL]]></text></staticText>
+			<textField><reportElement x="151" y="85" width="14" height="13"/><textElement textAlignment="Right"><font size="9" isBold="true"/></textElement><textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression></textField>
+			<textField evaluationTime="Report"><reportElement x="165" y="85" width="16" height="13"/><textElement><font size="9" isBold="true"/></textElement><textFieldExpression><![CDATA["/" + $V{PAGE_NUMBER}]]></textFieldExpression></textField>
+			<staticText><reportElement x="183" y="76" width="130" height="9"/><textElement><font size="6"/></textElement><text><![CDATA[Data e hora de Emissao]]></text></staticText>
+			<textField><reportElement x="183" y="85" width="130" height="13"/><textElement><font size="9" isBold="true"/></textElement><textFieldExpression><![CDATA[$P{data_emissao}]]></textFieldExpression></textField>
+			<staticText><reportElement x="315" y="76" width="60" height="9"/><textElement><font size="6"/></textElement><text><![CDATA[UF Carreg.]]></text></staticText>
+			<textField><reportElement x="315" y="85" width="60" height="13"/><textElement><font size="9" isBold="true"/></textElement><textFieldExpression><![CDATA[$P{uf_ini}]]></textFieldExpression></textField>
+			<staticText><reportElement x="377" y="76" width="70" height="9"/><textElement><font size="6"/></textElement><text><![CDATA[UF Descarreg.]]></text></staticText>
+			<textField><reportElement x="377" y="85" width="70" height="13"/><textElement><font size="9" isBold="true"/></textElement><textFieldExpression><![CDATA[$P{uf_fim}]]></textFieldExpression></textField>
+			<line><reportElement x="0" y="101" width="555" height="1"/></line>
+
+			<!-- esquerda: modal e quantidades / direita: controle do fisco -->
+			<staticText><reportElement x="0" y="106" width="260" height="18"/><textElement><font size="11" isBold="true"/></textElement><text><![CDATA[Modelo Rodoviario de Carga]]></text></staticText>
+			<staticText><reportElement x="285" y="108" width="270" height="10"/><textElement><font size="6"/></textElement><text><![CDATA[CONTROLE DO FISCO]]></text></staticText>
+
+			<staticText><reportElement x="0" y="130" width="70" height="9"/><textElement><font size="6"/></textElement><text><![CDATA[Qtd. CTe]]></text></staticText>
+			<textField><reportElement x="0" y="139" width="70" height="13"/><textElement><font size="9" isBold="true"/></textElement><textFieldExpression><![CDATA[String.valueOf($P{qtd_cte})]]></textFieldExpression></textField>
+			<staticText><reportElement x="75" y="130" width="70" height="9"/><textElement><font size="6"/></textElement><text><![CDATA[Qtd. NFe]]></text></staticText>
+			<textField><reportElement x="75" y="139" width="70" height="13"/><textElement><font size="9" isBold="true"/></textElement><textFieldExpression><![CDATA[String.valueOf($P{qtd_nfe})]]></textFieldExpression></textField>
+			<staticText><reportElement x="150" y="130" width="100" height="9"/><textElement><font size="6"/></textElement><text><![CDATA[Peso total (Kg)]]></text></staticText>
+			<textField pattern="#,##0.00"><reportElement x="150" y="139" width="100" height="13"/><textElement><font size="9" isBold="true"/></textElement><textFieldExpression><![CDATA[$P{peso_total}]]></textFieldExpression></textField>
+
+			<image scaleImage="FillFrame" isUsingCache="false">
+				<reportElement x="285" y="120" width="270" height="55"/>
+				<imageExpression><![CDATA[$P{barcode}]]></imageExpression>
+			</image>
+
+			<!-- protocolo e chave -->
+			<staticText><reportElement x="0" y="185" width="260" height="10"/><textElement><font size="7" isBold="true"/></textElement><text><![CDATA[Protocolo de autorizacao]]></text></staticText>
+			<textField><reportElement x="0" y="196" width="260" height="12"/><textElement><font size="8"/></textElement><textFieldExpression><![CDATA[$P{protocolo}]]></textFieldExpression></textField>
+			<staticText><reportElement x="285" y="185" width="270" height="10"/><textElement><font size="7" isBold="true"/></textElement><text><![CDATA[Chave de Acesso]]></text></staticText>
+			<textField><reportElement x="285" y="196" width="270" height="12"/><textElement><font size="8"/></textElement><textFieldExpression><![CDATA[$P{chave}]]></textFieldExpression></textField>
+			<textField><reportElement x="285" y="209" width="270" height="12"/><textElement><font size="6"/></textElement><textFieldExpression><![CDATA["Consulte em " + $P{url_consulta}]]></textFieldExpression></textField>
+
+			<!-- aviso de homologacao: caixa alta e centralizado, como manda o manual -->
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="225" width="555" height="16">
+					<printWhenExpression><![CDATA[$P{aviso} != null && !$P{aviso}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center"><font size="11" isBold="true"/></textElement>
+				<textFieldExpression><![CDATA[$P{aviso}]]></textFieldExpression>
+			</textField>
+
+			<!-- veiculos e condutores -->
+			<staticText><reportElement x="0" y="250" width="260" height="14"/><textElement><font size="10" isBold="true"/></textElement><text><![CDATA[Veiculo]]></text></staticText>
+			<staticText><reportElement x="0" y="266" width="80" height="10"/><textElement><font size="6"/></textElement><text><![CDATA[Placa]]></text></staticText>
+			<staticText><reportElement x="85" y="266" width="120" height="10"/><textElement><font size="6"/></textElement><text><![CDATA[RNTRC]]></text></staticText>
+			<componentElement>
+				<reportElement x="0" y="278" width="260" height="60"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components"
+				         xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd"
+				         printOrder="Vertical">
+					<datasetRun subDataset="veiculos">
+						<dataSourceExpression><![CDATA[$P{ds_veiculos}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="14" width="260">
+						<textField><reportElement x="0" y="0" width="80" height="12"/><textElement><font size="8" isBold="true"/></textElement><textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression></textField>
+						<textField><reportElement x="85" y="0" width="120" height="12"/><textElement><font size="8" isBold="true"/></textElement><textFieldExpression><![CDATA[$F{rntrc}]]></textFieldExpression></textField>
+						<line><reportElement x="0" y="13" width="260" height="1"/><graphicElement><pen lineWidth="0.3" lineStyle="Dashed"/></graphicElement></line>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+
+			<staticText><reportElement x="285" y="250" width="270" height="14"/><textElement><font size="10" isBold="true"/></textElement><text><![CDATA[Condutor]]></text></staticText>
+			<staticText><reportElement x="285" y="266" width="90" height="10"/><textElement><font size="6"/></textElement><text><![CDATA[CPF]]></text></staticText>
+			<staticText><reportElement x="380" y="266" width="175" height="10"/><textElement><font size="6"/></textElement><text><![CDATA[Nome]]></text></staticText>
+			<componentElement>
+				<reportElement x="285" y="278" width="270" height="120"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components"
+				         xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd"
+				         printOrder="Vertical">
+					<datasetRun subDataset="condutores">
+						<dataSourceExpression><![CDATA[$P{ds_condutores}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="14" width="270">
+						<textField><reportElement x="0" y="0" width="90" height="12"/><textElement><font size="8" isBold="true"/></textElement><textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression></textField>
+						<textField><reportElement x="95" y="0" width="175" height="12"/><textElement><font size="8" isBold="true"/></textElement><textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression></textField>
+						<line><reportElement x="0" y="13" width="270" height="1"/><graphicElement><pen lineWidth="0.3" lineStyle="Dashed"/></graphicElement></line>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+
+			<!-- vale pedagio -->
+			<staticText><reportElement x="0" y="350" width="260" height="14"/><textElement><font size="10" isBold="true"/></textElement><text><![CDATA[Vale Pedagio]]></text></staticText>
+			<staticText><reportElement x="0" y="366" width="90" height="10"/><textElement><font size="6"/></textElement><text><![CDATA[Responsavel CNPJ]]></text></staticText>
+			<staticText><reportElement x="95" y="366" width="90" height="10"/><textElement><font size="6"/></textElement><text><![CDATA[Fornecedor CNPJ]]></text></staticText>
+			<staticText><reportElement x="190" y="366" width="90" height="10"/><textElement><font size="6"/></textElement><text><![CDATA[N Comprovante]]></text></staticText>
+			<componentElement>
+				<reportElement x="0" y="378" width="280" height="60"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components"
+				         xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd"
+				         printOrder="Vertical">
+					<datasetRun subDataset="valepedagio">
+						<dataSourceExpression><![CDATA[$P{ds_valepedagio}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="13" width="280">
+						<textField><reportElement x="0" y="0" width="90" height="11"/><textElement><font size="7"/></textElement><textFieldExpression><![CDATA[$F{responsavel}]]></textFieldExpression></textField>
+						<textField><reportElement x="95" y="0" width="90" height="11"/><textElement><font size="7"/></textElement><textFieldExpression><![CDATA[$F{fornecedor}]]></textFieldExpression></textField>
+						<textField><reportElement x="190" y="0" width="90" height="11"/><textElement><font size="7"/></textElement><textFieldExpression><![CDATA[$F{comprovante}]]></textFieldExpression></textField>
+						<line><reportElement x="0" y="12" width="280" height="1"/><graphicElement><pen lineWidth="0.3" lineStyle="Dashed"/></graphicElement></line>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+
+			<!-- observacoes -->
+			<staticText><reportElement x="0" y="450" width="555" height="12"/><textElement><font size="8" isBold="true"/></textElement><text><![CDATA[Observacoes]]></text></staticText>
+			<line><reportElement x="0" y="463" width="555" height="1"/></line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="466" width="555" height="40"/>
+				<textElement><font size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{observacoes}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+
+</jasperReport>
