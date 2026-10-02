@@ -1636,7 +1636,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 			</band>
 			<band height="27">
 				<staticText>
-					<reportElement key="staticText-61" x="0" y="14" width="34" height="13" uuid="0eff3663-4c6f-46c8-8803-c23f42960472"/>
+					<reportElement key="staticText-61" x="0" y="14" width="44" height="13" uuid="0eff3663-4c6f-46c8-8803-c23f42960472"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1654,7 +1654,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-68" x="286" y="14" width="29" height="13" uuid="d6b2914a-48be-41dd-b93a-52cfbf64e066"/>
+					<reportElement key="staticText-68" x="305" y="14" width="29" height="13" uuid="d6b2914a-48be-41dd-b93a-52cfbf64e066"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1698,7 +1698,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-65" x="223" y="14" width="19" height="13" uuid="2dce242e-dbf7-452a-b55a-10ed4de751b1"/>
+					<reportElement key="staticText-65" x="239" y="14" width="15" height="13" uuid="2dce242e-dbf7-452a-b55a-10ed4de751b1"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1711,12 +1711,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[CFOP]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="379" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="f4fe64cd-a1ee-493c-88a8-8b32a3c36e64">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="389" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="f4fe64cd-a1ee-493c-88a8-8b32a3c36e64">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-78" x="379" y="14" width="70" height="6" uuid="50c6132e-9e1a-4b69-b2b3-c77def4c381a"/>
+					<reportElement key="staticText-78" x="389" y="14" width="60" height="6" uuid="50c6132e-9e1a-4b69-b2b3-c77def4c381a"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1734,7 +1734,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					</reportElement>
 				</line>
 				<line>
-					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="34" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="f5349aff-17cb-4ed1-96fb-7c850caf070c">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="44" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="f5349aff-17cb-4ed1-96fb-7c850caf070c">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
@@ -1757,7 +1757,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					</reportElement>
 				</rectangle>
 				<staticText>
-					<reportElement key="staticText-71" x="414" y="20" width="35" height="7" uuid="cb203e44-1ead-42ff-843b-7bf13fb330b3"/>
+					<reportElement key="staticText-71" x="419" y="20" width="30" height="7" uuid="cb203e44-1ead-42ff-843b-7bf13fb330b3"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1783,12 +1783,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[ ICMS ST]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="207" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="a898428a-a422-46be-b035-572275bc8b19">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="224" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="a898428a-a422-46be-b035-572275bc8b19">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-64" x="208" y="14" width="14" height="13" uuid="285fcd97-6d4d-4c6d-899a-2a3989b07ed4"/>
+					<reportElement key="staticText-64" x="225" y="14" width="13" height="13" uuid="285fcd97-6d4d-4c6d-899a-2a3989b07ed4"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1814,7 +1814,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[ IPI]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-70" x="379" y="20" width="35" height="7" uuid="b42dbe47-2fad-4df1-a7d8-36baab5d1e50"/>
+					<reportElement key="staticText-70" x="389" y="20" width="30" height="7" uuid="b42dbe47-2fad-4df1-a7d8-36baab5d1e50"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1827,22 +1827,22 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[ ICMS]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="179" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="e2197999-33ed-4b1e-9eb8-e585b9593ca8">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="199" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="e2197999-33ed-4b1e-9eb8-e585b9593ca8">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<line>
-					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="315" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="c3436510-3c6d-4ce9-b611-74944ce5fbba">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="334" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="c3436510-3c6d-4ce9-b611-74944ce5fbba">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<line>
-					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="222" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="e9bc1110-b829-40f3-b17e-f0712dcd7475">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="238" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="e9bc1110-b829-40f3-b17e-f0712dcd7475">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-66" x="243" y="14" width="14" height="13" uuid="6a58e1a6-13cc-409b-923c-c30461c432de"/>
+					<reportElement key="staticText-66" x="255" y="14" width="17" height="13" uuid="6a58e1a6-13cc-409b-923c-c30461c432de"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1855,12 +1855,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[Un]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-40" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="380" y="20" width="185" height="1" isPrintWhenDetailOverflows="true" uuid="47cf31b8-0302-4b5a-b625-0ca9c22dd3b2">
+					<reportElement key="line-40" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="390" y="20" width="175" height="1" isPrintWhenDetailOverflows="true" uuid="47cf31b8-0302-4b5a-b625-0ca9c22dd3b2">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-69" x="344" y="14" width="35" height="13" uuid="79cbeabb-1c5a-4dec-b876-1f9a14695b78"/>
+					<reportElement key="staticText-69" x="359" y="14" width="30" height="13" uuid="79cbeabb-1c5a-4dec-b876-1f9a14695b78"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1873,12 +1873,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[Valor Total]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="344" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="cd9c4b0b-8207-4a75-99f4-314e615edf60">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="359" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="cd9c4b0b-8207-4a75-99f4-314e615edf60">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<line>
-					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="257" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="3be5080d-cb69-4276-ad27-f962bee956df">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="272" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="3be5080d-cb69-4276-ad27-f962bee956df">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
@@ -1888,7 +1888,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-62" x="35" y="14" width="144" height="13" uuid="25589c42-61fa-4fc6-bb18-19e4350d01c7"/>
+					<reportElement key="staticText-62" x="45" y="14" width="154" height="13" uuid="25589c42-61fa-4fc6-bb18-19e4350d01c7"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1901,7 +1901,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[Descrição dos Produtos e Serviços]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-80" x="316" y="14" width="28" height="13" uuid="aa1f882c-0cb6-4d71-8fad-06998ff9d094"/>
+					<reportElement key="staticText-80" x="335" y="14" width="24" height="13" uuid="aa1f882c-0cb6-4d71-8fad-06998ff9d094"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1914,12 +1914,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[V. Desc.]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="242" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="6c4850d3-63fb-4776-a658-ae3d4ad32beb">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="254" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="6c4850d3-63fb-4776-a658-ae3d4ad32beb">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-63" x="180" y="14" width="27" height="13" uuid="82601489-bb8d-4784-9785-d8b80112fac9"/>
+					<reportElement key="staticText-63" x="200" y="14" width="24" height="13" uuid="82601489-bb8d-4784-9785-d8b80112fac9"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1932,7 +1932,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[NCM/SH]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="285" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="da418c33-2a8f-41ea-bc42-67639a90b3a8">
+					<reportElement key="line-35" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="304" y="14" width="1" height="13" isPrintWhenDetailOverflows="true" uuid="da418c33-2a8f-41ea-bc42-67639a90b3a8">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
@@ -1955,12 +1955,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 					<text><![CDATA[ IPI]]></text>
 				</staticText>
 				<line>
-					<reportElement key="line-34" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="414" y="20" width="1" height="7" isPrintWhenDetailOverflows="true" uuid="369dd9bc-94cf-4a27-89e2-d161d55626e0">
+					<reportElement key="line-34" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="419" y="20" width="1" height="7" isPrintWhenDetailOverflows="true" uuid="369dd9bc-94cf-4a27-89e2-d161d55626e0">
 						<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement key="staticText-67" x="258" y="14" width="27" height="13" uuid="452901f8-43c9-4252-97cd-0a96edca93bc"/>
+					<reportElement key="staticText-67" x="273" y="14" width="31" height="13" uuid="452901f8-43c9-4252-97cd-0a96edca93bc"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -2016,35 +2016,35 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 								<textFieldExpression><![CDATA[new Double($F{aliquotaIpi})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-								<reportElement key="textField-11" mode="Transparent" x="243" y="1" width="14" height="9" uuid="e5a01fd5-7d04-4f0e-9d6f-533759fd17fc"/>
+								<reportElement key="textField-11" mode="Transparent" x="255" y="1" width="17" height="9" uuid="e5a01fd5-7d04-4f0e-9d6f-533759fd17fc"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Liberation Serif" size="5"/>
+									<font fontName="Liberation Serif" size="6.5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[( $F{unidadeComercial}.equals($F{unidadeTributaria}) ? $F{unidadeComercial} : $F{unidadeComercial} + "\n" + $F{unidadeTributaria} )]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement key="textField-10" mode="Transparent" x="257" y="1" width="28" height="9" uuid="2899125f-9cc4-42c1-8737-890b6cbb69bc"/>
+								<reportElement key="textField-10" mode="Transparent" x="272" y="1" width="31" height="9" uuid="2899125f-9cc4-42c1-8737-890b6cbb69bc"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
-									<font fontName="Liberation Serif" size="5"/>
+									<font fontName="Liberation Serif" size="6.5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{unidadeComercial}.equals($F{unidadeTributaria}) ? (new DecimalFormat("#,##0.##")).format(new Double($F{quantidadeComercial})) : (new DecimalFormat("#,##0.##")).format(new Double($F{quantidadeComercial})) + "\n" + (new DecimalFormat("#,##0.###")).format(new Double($F{quantidadeTributaria}))]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-								<reportElement key="textField-9" mode="Transparent" x="286" y="1" width="29" height="9" uuid="dc63ac57-63ff-4db1-9248-457ac17f99e8"/>
+								<reportElement key="textField-9" mode="Transparent" x="305" y="1" width="29" height="9" uuid="dc63ac57-63ff-4db1-9248-457ac17f99e8"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{unidadeComercial}.toString().equals($F{unidadeTributaria}.toString()) ? (new DecimalFormat("#,##0.00##")).format(new Double($F{valorUnitarioComercial})) : (new DecimalFormat("#,##0.00##")).format(new Double($F{valorUnitarioComercial})) + "\n" + (new DecimalFormat("#,##0.00##")).format(new Double($F{valorUnitarioTributario}))]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-								<reportElement key="textField-8" mode="Transparent" x="344" y="1" width="35" height="9" uuid="99806137-af35-403e-a9f4-f44f1b6add14"/>
+								<reportElement key="textField-8" mode="Transparent" x="359" y="1" width="30" height="9" uuid="99806137-af35-403e-a9f4-f44f1b6add14"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[new Double($F{valorTotal})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement key="textField-14" mode="Transparent" x="180" y="1" width="27" height="9" uuid="0fd012aa-3832-4239-8881-7fafe6313345"/>
+								<reportElement key="textField-14" mode="Transparent" x="200" y="1" width="24" height="9" uuid="0fd012aa-3832-4239-8881-7fafe6313345"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
@@ -2058,14 +2058,14 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 								<textFieldExpression><![CDATA[new Double($F{lvalorIcms})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-								<reportElement key="textField-1" mode="Transparent" x="2" y="0" width="32" height="9" uuid="f5a773cc-12c8-4d9f-a0bb-65d8ce0114e0"/>
+								<reportElement key="textField-1" mode="Transparent" x="1" y="1" width="43" height="9" uuid="f5a773cc-12c8-4d9f-a0bb-65d8ce0114e0"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Liberation Serif" size="5"/>
+									<font fontName="Liberation Serif" size="6.5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-								<reportElement key="textField-15" mode="Transparent" x="414" y="1" width="35" height="9" uuid="ed9e2bd7-c099-41d6-99f2-71627f38e4ed"/>
+								<reportElement key="textField-15" mode="Transparent" x="419" y="1" width="30" height="9" uuid="ed9e2bd7-c099-41d6-99f2-71627f38e4ed"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
@@ -2079,7 +2079,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 								<textFieldExpression><![CDATA[new Double($F{valorICMSST})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-								<reportElement key="textField-17" mode="Transparent" x="317" y="1" width="27" height="9" uuid="4d408849-e34a-4a82-a447-dfdf218cda9f"/>
+								<reportElement key="textField-17" mode="Transparent" x="336" y="1" width="23" height="9" uuid="4d408849-e34a-4a82-a447-dfdf218cda9f"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
@@ -2093,7 +2093,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 								<textFieldExpression><![CDATA[new Double($F{aliquotaIcms})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
-								<reportElement key="textField-7" mode="Transparent" x="379" y="1" width="35" height="9" uuid="cb62c351-cf02-471a-a809-e30aa3e747ef"/>
+								<reportElement key="textField-7" mode="Transparent" x="389" y="1" width="30" height="9" uuid="cb62c351-cf02-471a-a809-e30aa3e747ef"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
@@ -2107,16 +2107,16 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 								<textFieldExpression><![CDATA[new Double($F{lvalorIpi})]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement key="textField-2" mode="Transparent" x="35" y="0" width="144" height="9" uuid="e75cb15e-1c5e-4b2b-943b-d054127aa9fb"/>
+								<reportElement key="textField-2" mode="Transparent" x="45" y="1" width="154" height="9" uuid="e75cb15e-1c5e-4b2b-943b-d054127aa9fb"/>
 								<textElement verticalAlignment="Middle" markup="html">
-									<font fontName="Liberation Serif" size="5"/>
+									<font fontName="Liberation Serif" size="6.5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{descricao}
  +
 ( $F{informacoesAdicionais}!=null ? "\n"+$F{informacoesAdicionais} : "" )]]></textFieldExpression>
 							</textField>
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement key="textField-12" mode="Transparent" x="222" y="1" width="20" height="9" uuid="19f5a4a8-1efb-420a-8ce6-18c120b8a180"/>
+								<reportElement key="textField-12" mode="Transparent" x="238" y="1" width="16" height="9" uuid="19f5a4a8-1efb-420a-8ce6-18c120b8a180"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
@@ -2128,7 +2128,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="315" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="61c4751c-0db2-452a-b575-6535fbd7e149">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="334" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="61c4751c-0db2-452a-b575-6535fbd7e149">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
@@ -2143,27 +2143,27 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="34" y="1" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="7762d831-a3aa-48ff-a0e0-47932593c472">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="44" y="1" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="7762d831-a3aa-48ff-a0e0-47932593c472">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="179" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="382f0f0b-94fc-46c1-9441-9b2ae46b7a19">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="199" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="382f0f0b-94fc-46c1-9441-9b2ae46b7a19">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="344" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="7a476285-acaa-4c52-984c-882928d0f3a2">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="359" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="7a476285-acaa-4c52-984c-882928d0f3a2">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="379" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="adf980d5-3eb1-4452-a77f-447046d14b7e">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="389" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="adf980d5-3eb1-4452-a77f-447046d14b7e">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="257" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="215c87db-2373-456a-8ac1-9b045fbd1445">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="272" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="215c87db-2373-456a-8ac1-9b045fbd1445">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
@@ -2173,7 +2173,7 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="242" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="b32962b0-4a7a-43ca-8c21-713617b25bbf">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="254" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="b32962b0-4a7a-43ca-8c21-713617b25bbf">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
@@ -2188,17 +2188,17 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="285" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="622eae3a-d0a0-4a1e-a174-5e06f5713e5e">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="304" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="622eae3a-d0a0-4a1e-a174-5e06f5713e5e">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="222" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="8d831e6c-9ba2-46ad-a3b1-67391ee0779c">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="238" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="8d831e6c-9ba2-46ad-a3b1-67391ee0779c">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="414" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="0fc07311-fe47-4f44-9b16-9e4d890354ae">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="419" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="0fc07311-fe47-4f44-9b16-9e4d890354ae">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
@@ -2208,12 +2208,12 @@ $F{dataSaidaEntrada}.substring(0,4)]]></textFieldExpression>
 								</reportElement>
 							</line>
 							<line>
-								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="207" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="fc216807-da82-44d5-9315-22d183decd88">
+								<reportElement key="line-33" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="224" y="0" width="1" height="10" isPrintWhenDetailOverflows="true" uuid="fc216807-da82-44d5-9315-22d183decd88">
 									<printWhenExpression><![CDATA[Boolean.valueOf(!$P{PreImpresso}.booleanValue())]]></printWhenExpression>
 								</reportElement>
 							</line>
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement key="textField-13" mode="Transparent" x="208" y="1" width="15" height="9" uuid="175f93d1-6e4a-4ae1-841e-39fe71da876d"/>
+								<reportElement key="textField-13" mode="Transparent" x="225" y="1" width="14" height="9" uuid="175f93d1-6e4a-4ae1-841e-39fe71da876d"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Liberation Serif" size="5"/>
 								</textElement>
