@@ -85,6 +85,12 @@ public class AssinaturaDigital {
 	 * correcao no meio de um MDF-e.
 	 */
 	public static final String EVENTO_MDFE = "10";
+	
+	/** DPS - NFS-e Nacional */
+	public static final String DPS = "11";
+
+	/** Evento da NFS-e Nacional */
+	public static final String EVENTO_NFSE = "12";
 
 	/** Algoritmos */
 	private static final String C14N_TRANSFORM_METHOD = "http://www.w3.org/TR/2001/REC-xml-c14n-20010315";
@@ -240,7 +246,7 @@ public class AssinaturaDigital {
 			tag = "infCanc";
 		else if (docType.equals(INUTILIZACAO_NFE))
 			tag = "infInut";
-		else if (docType.equals(CARTADECORRECAO_CCE) || docType.equals(EVENTO_MDFE))
+		else if (docType.equals(CARTADECORRECAO_CCE) || docType.equals(EVENTO_MDFE) || docType.equals(EVENTO_NFSE))
 			tag = "infEvento";
 		else if (docType.equals(LOTE_RPS))
 			tag = "LoteRps";
@@ -252,7 +258,10 @@ public class AssinaturaDigital {
 			tag = "InfDeclaracaoPrestacaoServico";
 		else if (docType.equals(NFS_CABECALHO))
 			tag = "Cabecalho";
-
+		else if (docType.equals(DPS))
+		    tag = "infDPS";
+		
+		
 		//
 		Reference r = null;
 
