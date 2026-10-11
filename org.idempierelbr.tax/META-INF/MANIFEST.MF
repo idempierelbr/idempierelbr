@@ -27,4 +27,5 @@ Import-Package: org.adempiere.webui.component,
 Export-Package: org.idempierelbr.tax.model,
  org.idempierelbr.tax.provider
 Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ClassPath: .

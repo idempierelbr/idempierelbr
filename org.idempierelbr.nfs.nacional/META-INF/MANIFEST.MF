@@ -13,6 +13,7 @@ Require-Bundle: org.adempiere.base,
  org.idempierelbr.nfe
 Service-Component: OSGI-INF/*.xml
 Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Import-Package: org.osgi.service.event;version="1.3.0",
  com.google.zxing,
  com.google.zxing.common,
