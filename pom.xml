@@ -21,6 +21,7 @@
 		<module>org.idempierelbr.mdfe</module>
 		<module>org.idempierelbr.rtc</module>
 		<module>org.idempierelbr.nfs</module>
+		<module>org.idempierelbr.nfs.nacional</module>
 		<module>org.idempierelbr.sped</module>
 		<module>org.idempierelbr.tax</module>
 		<module>org.idempierelbr.open-items</module>
