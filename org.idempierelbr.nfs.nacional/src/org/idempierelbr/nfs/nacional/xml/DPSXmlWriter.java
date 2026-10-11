@@ -1,5 +1,8 @@
 package org.idempierelbr.nfs.nacional.xml;
 
+import static org.idempierelbr.nfs.nacional.xml.XmlText.el;
+import static org.idempierelbr.nfs.nacional.xml.XmlText.leftPad;
+
 /**
  * Serializa um {@link DPSData} em XML respeitando a ORDEM dos elementos
  * definida em tiposComplexos_v1.01.xsd (TCDPS, TCInfDPS, TCInfoPrestador,
@@ -130,22 +133,5 @@ public class DPSXmlWriter {
 			String serie, String nDPS) {
 		return "DPS" + leftPad(cLocEmi, 7) + tipoInscricao + leftPad(inscricaoFederal, 14)
 				+ leftPad(serie, 5) + leftPad(nDPS, 15);
-	}
-
-	private static String leftPad(String s, int size) {
-		StringBuilder sb = new StringBuilder();
-		for (int i = s.length(); i < size; i++)
-			sb.append('0');
-		return sb.append(s).toString();
-	}
-
-	private static void el(StringBuilder x, String name, String value) {
-		if (value == null || value.isEmpty())
-			return;
-		x.append('<').append(name).append('>').append(escape(value)).append("</").append(name).append('>');
-	}
-
-	private static String escape(String s) {
-		return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
 	}
 }

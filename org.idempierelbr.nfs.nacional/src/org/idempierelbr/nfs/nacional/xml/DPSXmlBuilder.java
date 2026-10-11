@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MBPartner;
@@ -14,6 +15,7 @@ import org.compiere.model.MLocation;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.MProduct;
 import org.compiere.model.MSysConfig;
+import org.compiere.model.PO;
 import org.idempierelbr.base.model.MLBRDocLineDetailsNFS;
 import org.idempierelbr.base.model.MLBRDocLineISSQN;
 import org.idempierelbr.base.model.MLBRNFS;
@@ -29,8 +31,15 @@ import org.idempierelbr.base.model.X_LBR_DocLine_ISSQN;
  *    Address4 = complemento; municipio via C_City.LBR_CityCode (IBGE)
  *  - CNPJ/CPF: colunas LBR_CNPJ / LBR_CPF do C_BPartner
  *  - Inscricao municipal: LBR_CCM do C_BPartner
- *  - Regime: MSysConfig LBR_ICMS_REGIME (SN = Simples, TN = normal)
- *  - Ambiente: coluna LBR_NFeEnv do C_DocType (1 = producao, 2 = homologacao)
+ *  - Regime: MSysConfig LBR_ICMS_REGIME (SN = Simples, TN = normal), com
+ *    ajustes especificos do padrao nacional (todos opcionais, por org):
+ *      LBR_NFSE_NAC_OPSIMPNAC   1 nao optante, 2 MEI, 3 ME/EPP (sobrepoe o LBR_ICMS_REGIME)
+ *      LBR_NFSE_NAC_REGAPTRIBSN 1, 2 ou 3 (so' para ME/EPP; padrao 1)
+ *      LBR_NFSE_NAC_REGESPTRIB  0 a 6 (regime especial de tributacao; padrao 0)
+ *  - Ambiente: coluna LBR_NFeEnv do tipo de documento (1 = producao, 2 = homologacao)
+ *  - Substituicao: colunas opcionais do LBR_NFS, lidas so' se existirem:
+ *      LBR_NFSeSubstMotivo        codigo da justificativa (01-05, 99; padrao 99)
+ *      LBR_NFSeSubstJustificativa texto (na falta, usa LBR_MotivoCancelamentoNFS)
  *  - Servico/ISSQN: MLBRDocLineISSQN da linha (LBR_DocLine_Details)
  */
 public class DPSXmlBuilder {
@@ -53,11 +62,7 @@ public class DPSXmlBuilder {
 		DPSData d = new DPSData();
 
 		// ---- ambiente ----
-		MDocType docType = MDocType.get(nfs.getCtx(), nfs.getC_DocType_ID());
-		String env = docType.get_ValueAsString("LBR_NFeEnv");
-		if (!"1".equals(env) && !"2".equals(env))
-			throw new AdempiereException("Ambiente (LBR_NFeEnv) do tipo de documento deve ser 1 (producao) ou 2 (homologacao)");
-		d.tpAmb = env;
+		d.tpAmb = getAmbiente(nfs);
 
 		// ---- identificacao ----
 		// Data/hora recuada 1 minuto para evitar rejeicao por relogio local adiantado
@@ -77,7 +82,7 @@ public class DPSXmlBuilder {
 		d.cLocEmi = cityCode(new MLocation(nfs.getCtx(), orgInfo.getC_Location_ID(), nfs.get_TrxName()),
 				"Prestador");
 
-		MBPartner prestador = nfs.getPrestador();
+		MBPartner prestador = getPrestador(nfs);
 		String cnpj = digits(prestador.get_ValueAsString("LBR_CNPJ"));
 		String cpf = digits(prestador.get_ValueAsString("LBR_CPF"));
 		String inscricaoPrestador;
@@ -100,30 +105,35 @@ public class DPSXmlBuilder {
 		// Nao enviamos xNome/end/fone/email do prestador: sao opcionais no schema
 		// e, quando o prestador emite, o ADN os obtem do cadastro nacional.
 
-		String regime = MSysConfig.getValue("LBR_ICMS_REGIME", "TN", nfs.getAD_Client_ID(), nfs.getAD_Org_ID());
-		if ("SN".equals(regime)) {
-			d.opSimpNac = "3";   // ME/EPP (LBR nao distingue MEI)
-			d.regApTribSN = "1"; // tributos federais e municipal apurados pelo SN
-		} else
-			d.opSimpNac = "1";   // nao optante
-		d.regEspTrib = "0";      // nenhum
+		fillRegime(d);
 
 		d.id = DPSXmlWriter.buildId(d.cLocEmi, tipoInscricao, inscricaoPrestador, d.serie, d.nDPS);
 
 		// ---- substituicao (se a nota indicar qual NFS-e esta substituindo) ----
 		String chSubstda = digits(nfs.getLBR_NFSeSubstituida());
+		if (!chSubstda.isEmpty() && chSubstda.length() != 50)
+			throw new AdempiereException("Chave da NFS-e substituida (LBR_NFSeSubstituida) deve ter 50 digitos");
 		if (chSubstda.length() == 50) {
 			d.chSubstda = chSubstda;
-			// TODO: nao existe hoje um campo proprio no LBR_NFS para escolher o
-			// codigo de justificativa (01 a 05, ou 99). Ate' existir, fica fixo
-			// em "99 - Outros" e o texto obrigatorio (>=15 caracteres) reaproveita
-			// LBR_MotivoCancelamentoNFS, que e' o campo de texto livre mais
-			// proximo disso hoje no cadastro.
-			d.substCMotivo = "99";
-			String motivo = nfs.getLBR_MotivoCancelamentoNFS();
+
+			// Codigo da justificativa: coluna opcional; sem ela, "99 - Outros"
+			String cMotivo = digits(optionalColumn(nfs, "LBR_NFSeSubstMotivo"));
+			if (cMotivo.isEmpty())
+				cMotivo = "99";
+			else if (cMotivo.length() == 1)
+				cMotivo = "0" + cMotivo;
+			if (!cMotivo.matches("0[1-5]|99"))
+				throw new AdempiereException("Codigo da justificativa de substituicao (LBR_NFSeSubstMotivo) deve ser 01 a 05 ou 99");
+			d.substCMotivo = cMotivo;
+
+			// Texto: coluna opcional; sem ela, reaproveita LBR_MotivoCancelamentoNFS
+			String motivo = optionalColumn(nfs, "LBR_NFSeSubstJustificativa");
+			if (motivo == null || motivo.trim().isEmpty())
+				motivo = nfs.getLBR_MotivoCancelamentoNFS();
 			if (motivo == null || motivo.trim().length() < 15)
 				throw new AdempiereException(
-						"Substituicao de NFS-e: informe uma justificativa com pelo menos 15 caracteres (hoje reaproveitando LBR_MotivoCancelamentoNFS)");
+						"Substituicao de NFS-e: informe uma justificativa com pelo menos 15 caracteres (LBR_NFSeSubstJustificativa ou LBR_MotivoCancelamentoNFS)");
+			motivo = motivo.trim();
 			d.substXMotivo = motivo.length() > 255 ? motivo.substring(0, 255) : motivo;
 		}
 
@@ -179,7 +189,22 @@ public class DPSXmlBuilder {
 		MLBRDocLineISSQN[] issqns = MLBRDocLineISSQN.getOfDetails(details);
 		if (issqns.length == 0)
 			throw new AdempiereException("NFS sem ISSQN calculado (LBR_DocLine_ISSQN)");
+		// O DPS descreve um unico servico (um cTribNac, uma aliquota). Varias
+		// linhas de ISSQN so' sao aceitas se forem a mesma tributacao.
 		MLBRDocLineISSQN issqn = issqns[0];
+		for (int i = 1; i < issqns.length; i++) {
+			MLBRDocLineISSQN o = issqns[i];
+			if (!Objects.equals(o.getLBR_ServiceCode(), issqn.getLBR_ServiceCode())
+					|| !Objects.equals(o.getLBR_ServiceType(), issqn.getLBR_ServiceType())
+					|| !Objects.equals(o.getLBR_ISS_Chargeability(), issqn.getLBR_ISS_Chargeability())
+					|| o.isLBR_HasWithHold() != issqn.isLBR_HasWithHold()
+					|| !Objects.equals(o.getLBR_ResponsavelRetencao(), issqn.getLBR_ResponsavelRetencao())
+					|| o.getLBR_IncidenceCity_ID() != issqn.getLBR_IncidenceCity_ID()
+					|| compare(o.getLBR_TaxRate(), issqn.getLBR_TaxRate()) != 0)
+				throw new AdempiereException("O DPS do padrao nacional comporta um unico servico, mas as linhas de ISSQN "
+						+ "desta NFS tem tributacoes diferentes (codigo de servico, exigibilidade, retencao, municipio de "
+						+ "incidencia ou aliquota). Emita uma NFS-e para cada servico.");
+		}
 
 		// -- local da prestacao: municipio de incidencia, ou o do prestador
 		d.cLocPrestacao = d.cLocEmi;
@@ -220,10 +245,18 @@ public class DPSXmlBuilder {
 		if (gross == null || gross.signum() <= 0)
 			throw new AdempiereException("Valor do servico deve ser maior que zero");
 		d.vServ = money(gross);
-		if (issqn.getLBR_UncondDiscountAmt() != null && issqn.getLBR_UncondDiscountAmt().signum() > 0)
-			d.vDescIncond = money(issqn.getLBR_UncondDiscountAmt());
-		if (issqn.getLBR_CondDiscountAmt() != null && issqn.getLBR_CondDiscountAmt().signum() > 0)
-			d.vDescCond = money(issqn.getLBR_CondDiscountAmt());
+		BigDecimal descIncond = BigDecimal.ZERO;
+		BigDecimal descCond = BigDecimal.ZERO;
+		for (MLBRDocLineISSQN i : issqns) {
+			if (i.getLBR_UncondDiscountAmt() != null)
+				descIncond = descIncond.add(i.getLBR_UncondDiscountAmt());
+			if (i.getLBR_CondDiscountAmt() != null)
+				descCond = descCond.add(i.getLBR_CondDiscountAmt());
+		}
+		if (descIncond.signum() > 0)
+			d.vDescIncond = money(descIncond);
+		if (descCond.signum() > 0)
+			d.vDescCond = money(descCond);
 
 		// -- tributacao do ISSQN
 		String charge = issqn.getLBR_ISS_Chargeability();
@@ -247,8 +280,8 @@ public class DPSXmlBuilder {
 		else
 			throw new AdempiereException("ISS retido: informe o responsavel pela retencao (LBR_ResponsavelRetencao)");
 
-		// -- aliquota (nao informada quando o ISSQN e' apurado dentro do Simples Nacional)
-		boolean issNoSimples = "3".equals(d.opSimpNac) && "1".equals(d.regApTribSN);
+		// -- aliquota (nao informada quando o ISSQN e' apurado dentro do Simples Nacional / MEI)
+		boolean issNoSimples = "2".equals(d.opSimpNac) || ("3".equals(d.opSimpNac) && "1".equals(d.regApTribSN));
 		if ("1".equals(d.tribISSQN) && !issNoSimples) {
 			BigDecimal rate = issqn.getLBR_TaxRate();
 			if (rate == null || rate.signum() <= 0 || rate.compareTo(BigDecimal.TEN) >= 0)
@@ -257,7 +290,72 @@ public class DPSXmlBuilder {
 		}
 	}
 
+	/** Regime de tributacao do prestador (regTrib) */
+	private void fillRegime(DPSData d) {
+
+		int client = nfs.getAD_Client_ID();
+		int org = nfs.getAD_Org_ID();
+
+		String opSimpNac = MSysConfig.getValue("LBR_NFSE_NAC_OPSIMPNAC", "", client, org).trim();
+		if (opSimpNac.isEmpty()) {
+			String regime = MSysConfig.getValue("LBR_ICMS_REGIME", "TN", client, org);
+			opSimpNac = "SN".equals(regime) ? "3" : "1"; // ME/EPP ou nao optante
+		}
+		if (!opSimpNac.matches("[123]"))
+			throw new AdempiereException("LBR_NFSE_NAC_OPSIMPNAC deve ser 1 (nao optante), 2 (MEI) ou 3 (ME/EPP)");
+		d.opSimpNac = opSimpNac;
+
+		if ("3".equals(opSimpNac)) {
+			String regAp = MSysConfig.getValue("LBR_NFSE_NAC_REGAPTRIBSN", "1", client, org).trim();
+			if (!regAp.matches("[123]"))
+				throw new AdempiereException("LBR_NFSE_NAC_REGAPTRIBSN deve ser 1, 2 ou 3");
+			d.regApTribSN = regAp;
+		}
+
+		String regEsp = MSysConfig.getValue("LBR_NFSE_NAC_REGESPTRIB", "0", client, org).trim();
+		if (!regEsp.matches("[0-6]"))
+			throw new AdempiereException("LBR_NFSE_NAC_REGESPTRIB deve ser de 0 a 6");
+		d.regEspTrib = regEsp;
+	}
+
 	// ------------------------------------------------------------------
+
+	/**
+	 * Ambiente (1 = producao, 2 = homologacao), da coluna LBR_NFeEnv do tipo
+	 * de documento - o mesmo campo usado pelo NF-e. Usa o tipo de documento
+	 * alvo (o mesmo de {@link MLBRNFS#getNFSConfig()}), pois o C_DocType_ID
+	 * pode ainda nao estar preenchido num documento em rascunho.
+	 */
+	public static String getAmbiente(MLBRNFS nfs) {
+		int docTypeId = nfs.getC_DocTypeTarget_ID() > 0 ? nfs.getC_DocTypeTarget_ID() : nfs.getC_DocType_ID();
+		if (docTypeId <= 0)
+			throw new AdempiereException("NFS sem tipo de documento definido");
+		String env = MDocType.get(nfs.getCtx(), docTypeId).get_ValueAsString("LBR_NFeEnv");
+		if (!"1".equals(env) && !"2".equals(env))
+			throw new AdempiereException("Ambiente (LBR_NFeEnv) do tipo de documento deve ser 1 (producao) ou 2 (homologacao)");
+		return env;
+	}
+
+	/** Parceiro vinculado a organizacao (prestador), com mensagem clara se faltar */
+	public static MBPartner getPrestador(MLBRNFS nfs) {
+		MBPartner prestador = nfs.getPrestador();
+		if (prestador == null)
+			throw new AdempiereException("Organizacao sem parceiro de negocio vinculado (prestador). "
+					+ "Vincule um parceiro a organizacao para emitir a NFS-e.");
+		return prestador;
+	}
+
+	/** Valor de uma coluna que pode nao existir na tabela (null se nao existir) */
+	public static String optionalColumn(PO po, String columnName) {
+		if (po.get_ColumnIndex(columnName) < 0)
+			return null;
+		Object v = po.get_Value(columnName);
+		return v == null ? null : v.toString();
+	}
+
+	private static int compare(BigDecimal a, BigDecimal b) {
+		return (a == null ? BigDecimal.ZERO : a).compareTo(b == null ? BigDecimal.ZERO : b);
+	}
 
 	private String cityCode(MLocation loc, String quem) {
 		if (loc.getC_City_ID() <= 0)
@@ -279,7 +377,7 @@ public class DPSXmlBuilder {
 		return v.setScale(2, RoundingMode.HALF_UP).toPlainString();
 	}
 
-	private static String digits(String s) {
+	public static String digits(String s) {
 		return s == null ? "" : s.replaceAll("[^0-9]", "");
 	}
 

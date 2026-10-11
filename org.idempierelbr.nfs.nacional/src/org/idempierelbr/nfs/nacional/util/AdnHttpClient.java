@@ -5,6 +5,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Properties;
@@ -85,40 +86,62 @@ public class AdnHttpClient {
 
 	/**
 	 * POST /nfse/{chaveAcesso}/eventos: registra um evento (cancelamento etc.)
-	 * ja assinado (XML).
+	 * a partir do pedido de registro (pedRegEvento) com o infPedReg assinado.
+	 * O retorno traz o evento registrado em eventoXmlGZipB64.
 	 *
-	 * TODO: o nome do campo JSON para o evento ("eventoXmlGZipB64") segue por
-	 * analogia o mesmo padrao do envio do DPS (dpsXmlGZipB64), mas nao foi
-	 * confirmado numa fonte primaria (Swagger) nesta conversa. Confirmar
-	 * antes de usar em homologacao.
+	 * TODO: conferir no Swagger de homologacao o nome do campo de envio
+	 * (pedidoRegistroEventoXmlGZipB64, o mesmo usado por bibliotecas abertas
+	 * do padrao nacional) e o de retorno.
 	 */
-	public Response postEvento(String baseUrl, String chaveAcesso, String eventoXmlAssinado) throws Exception {
-		String json = "{\"eventoXmlGZipB64\":\"" + gzipBase64(eventoXmlAssinado) + "\"}";
+	public Response postEvento(String baseUrl, String chaveAcesso, String pedRegEventoXmlAssinado) throws Exception {
+		String json = "{\"pedidoRegistroEventoXmlGZipB64\":\"" + gzipBase64(pedRegEventoXmlAssinado) + "\"}";
 		return request(join(baseUrl, "nfse/" + chaveAcesso + "/eventos"), "POST", json);
+	}
+
+	/**
+	 * GET /nfse/{chaveAcesso}/eventos/{tipoEvento}/{nSeqEvento}: consulta um
+	 * evento registrado (HTTP 404 quando nao existe).
+	 *
+	 * TODO: conferir o formato da rota no Swagger de homologacao.
+	 */
+	public Response getEvento(String baseUrl, String chaveAcesso, String tipoEvento, int nSeqEvento)
+			throws Exception {
+		return request(join(baseUrl, "nfse/" + chaveAcesso + "/eventos/" + tipoEvento + "/" + nSeqEvento), "GET",
+				null);
 	}
 
 	// ------------------------------------------------------------------
 
+	/**
+	 * Executa a requisicao. Falhas de comunicacao (conexao recusada, timeout
+	 * etc.) saem como {@link IOException}, para o chamador poder distingui-las
+	 * de uma resposta de erro da API.
+	 */
 	private Response request(String endpoint, String method, String body) throws Exception {
 
-		HttpsURLConnection conn = (HttpsURLConnection) new java.net.URL(endpoint).openConnection();
-		conn.setSSLSocketFactory(SefazHttpClient.createTlsSocketFactory(sslContext));
-		conn.setRequestMethod(method);
-		conn.setConnectTimeout(30000);
-		conn.setReadTimeout(60000);
-		conn.setRequestProperty("Accept", "application/json");
-		conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+		HttpsURLConnection conn = (HttpsURLConnection) URI.create(endpoint).toURL().openConnection();
+		try {
+			conn.setSSLSocketFactory(SefazHttpClient.createTlsSocketFactory(sslContext));
+			conn.setRequestMethod(method);
+			conn.setConnectTimeout(30000);
+			conn.setReadTimeout(60000);
+			conn.setRequestProperty("Accept", "application/json");
+			conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
 
-		if (body != null) {
-			conn.setDoOutput(true);
-			try (OutputStream os = conn.getOutputStream()) {
-				os.write(body.getBytes(StandardCharsets.UTF_8));
+			if (body != null) {
+				conn.setDoOutput(true);
+				try (OutputStream os = conn.getOutputStream()) {
+					os.write(body.getBytes(StandardCharsets.UTF_8));
+				}
 			}
-		}
 
-		int status = conn.getResponseCode();
-		InputStream is = status >= 400 ? conn.getErrorStream() : conn.getInputStream();
-		return new Response(status, readAll(is));
+			int status = conn.getResponseCode();
+			try (InputStream is = status >= 400 ? conn.getErrorStream() : conn.getInputStream()) {
+				return new Response(status, readAll(is));
+			}
+		} finally {
+			conn.disconnect();
+		}
 	}
 
 	private static String join(String base, String path) {

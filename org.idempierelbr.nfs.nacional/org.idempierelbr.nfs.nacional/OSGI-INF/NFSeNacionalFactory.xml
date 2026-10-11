@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.idempierelbr.nfs.nacional.NFSeNacionalFactory">
-   <implementation class="org.idempierelbr.nfs.nacional.factory.NFSeNacionalFactory"/>
-   <service>
-      <provide interface="org.idempierelbr.nfs.factory.INFSeFactory"/>
-   </service>
-</scr:component>
