@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR - NFS-e Padrao Nacional (ADN)
 Bundle-SymbolicName: org.idempierelbr.nfs.nacional
-Bundle-Version: 13.0.0.qualifier
+Bundle-Version: 14.0.0.qualifier
 Bundle-Vendor: iDempiereLBR
 Bundle-ClassPath: .
 Require-Bundle: org.adempiere.base,

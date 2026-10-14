@@ -2,10 +2,11 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR - NFSe
 Bundle-SymbolicName: org.idempierelbr.nfs
-Bundle-Version: 13.0.0.qualifier
+Bundle-Version: 14.0.0.qualifier
 Bundle-Vendor: iDempiereLBR
 Bundle-ClassPath: .
 Require-Bundle: org.adempiere.base,
+ org.idempiere.acct;bundle-version="14.0.0",
  org.idempierelbr.core,
  org.idempierelbr.tax,
  org.idempierelbr.base
