@@ -6,7 +6,7 @@ Bundle-Version: 14.0.0.qualifier
 Require-Bundle: org.adempiere.base,
  org.idempiere.acct;bundle-version="14.0.0",
  org.idempierelbr.core,
- org.adempiere.ui.zk;bundle-version="[13.0.0,14.0.0)",
+ org.adempiere.ui.zk;bundle-version="14.0.0",
  zcommon,
  zel,
  zhtml,
