@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import org.compiere.acct.Doc;
-import org.compiere.acct.Fact;
+import org.idempiere.acct.doc.Doc;
+import org.idempiere.acct.doc.Fact;
 import org.compiere.model.MAcctSchema;
 import org.compiere.util.Env;
 import org.idempierelbr.base.model.MLBRNFS;

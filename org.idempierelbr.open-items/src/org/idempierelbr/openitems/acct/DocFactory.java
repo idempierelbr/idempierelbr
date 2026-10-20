@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.util.logging.Level;
 
 import org.adempiere.base.IDocFactory;
-import org.compiere.acct.Doc;
+import org.idempiere.acct.doc.Doc;
 import org.compiere.model.MAcctSchema;
 import org.compiere.model.MTable;
 import org.compiere.util.CLogger;

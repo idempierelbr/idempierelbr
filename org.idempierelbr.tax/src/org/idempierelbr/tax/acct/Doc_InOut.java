@@ -23,11 +23,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
-import org.compiere.acct.Doc;
-import org.compiere.acct.DocLine;
-import org.compiere.acct.Doc_Order;
-import org.compiere.acct.Fact;
-import org.compiere.acct.FactLine;
+import org.idempiere.acct.doc.Doc;
+import org.idempiere.acct.doc.DocLine;
+import org.idempiere.acct.doc.Doc_Order;
+import org.idempiere.acct.doc.Fact;
+import org.idempiere.acct.doc.FactLine;
 import org.compiere.model.I_M_InOutLine;
 import org.compiere.model.I_M_RMALine;
 import org.compiere.model.MConversionRate;

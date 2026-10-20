@@ -1,60 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-    <bundle id="org.idempierelbr.base" version="13.0.0.qualifier">
+    <bundle id="org.idempierelbr.base" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.core" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.core" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.jasperfonts" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.jasperfonts" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.nfe" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.nfe" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.mdfe" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.mdfe" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.rtc" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.rtc" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.nfs" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.nfs" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.sped" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.nfs.nacional" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.tax" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.sped" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.open-items" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.tax" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.open-items" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.febraban" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.bancodobrasil" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.febraban" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.banrisul" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.bancodobrasil" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.bradesco" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.banrisul" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.caixa" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.bradesco" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.itau" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.caixa" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.santander" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.itau" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
-   <bundle id="org.idempierelbr.cnab240.sicoob" version="13.0.0.qualifier">
+   <bundle id="org.idempierelbr.cnab240.santander" version="14.0.0.qualifier">
+      <category name="org.idempierelbr.extensions"/>
+   </bundle>
+   <bundle id="org.idempierelbr.cnab240.sicoob" version="14.0.0.qualifier">
       <category name="org.idempierelbr.extensions"/>
    </bundle>
    <category-def name="org.idempierelbr.extensions" label="idempierelbr extensions"/>

@@ -4,13 +4,30 @@
   <parent>
     <groupId>org.idempierelbr</groupId>
     <artifactId>org.idempierelbr.extensions.parent</artifactId>
-    <version>13.0.0-SNAPSHOT</version>
+    <version>14.0.0-SNAPSHOT</version>
     <relativePath>../org.idempierelbr.extensions.parent/pom.xml</relativePath>
   </parent>
   <artifactId>org.idempierelbr.test</artifactId>
   <packaging>eclipse-test-plugin</packaging>
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <dependency-resolution>
+            <extraRequirements combine.children="append">
+              <!-- poi-ooxml imports xmlbeans optionally; BaseActivator needs it at runtime -->
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>wrapped.org.apache.xmlbeans.xmlbeans</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+            </extraRequirements>
+          </dependency-resolution>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-surefire-plugin</artifactId>

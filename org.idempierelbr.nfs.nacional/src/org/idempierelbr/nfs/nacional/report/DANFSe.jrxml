@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="DANFSe" pageWidth="595" pageHeight="842" columnWidth="595"
+              leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0"
+              uuid="a1b2c3d4-0001-0001-0001-000000000001">
+	<property name="ireport.encoding" value="UTF-8"/>
+	<!-- DejaVu Sans: fonte padrao do Jasper (jasperreports-fonts); se faltar no servidor, usa a fonte padrao em vez de falhar -->
+	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
+	<parameter name="qrcode" class="java.io.InputStream"/>
+	<parameter name="watermark" class="java.io.InputStream"/>
+	<parameter name="tpAmb" class="java.lang.String"/>
+	<parameter name="f1" class="java.lang.String"/>
+	<parameter name="f2" class="java.lang.String"/>
+	<parameter name="f3" class="java.lang.String"/>
+	<parameter name="f4" class="java.lang.String"/>
+	<parameter name="f5" class="java.lang.String"/>
+	<parameter name="f6" class="java.lang.String"/>
+	<parameter name="f7" class="java.lang.String"/>
+	<parameter name="f8" class="java.lang.String"/>
+	<parameter name="f9" class="java.lang.String"/>
+	<parameter name="f10" class="java.lang.String"/>
+	<parameter name="f11" class="java.lang.String"/>
+	<parameter name="f12" class="java.lang.String"/>
+	<parameter name="f13" class="java.lang.String"/>
+	<parameter name="f14" class="java.lang.String"/>
+	<parameter name="f15" class="java.lang.String"/>
+	<parameter name="f16" class="java.lang.String"/>
+	<parameter name="f17" class="java.lang.String"/>
+	<parameter name="f18" class="java.lang.String"/>
+	<parameter name="f19" class="java.lang.String"/>
+	<parameter name="f20" class="java.lang.String"/>
+	<parameter name="f21" class="java.lang.String"/>
+	<parameter name="f22" class="java.lang.String"/>
+	<parameter name="f23" class="java.lang.String"/>
+	<parameter name="f24" class="java.lang.String"/>
+	<parameter name="f25" class="java.lang.String"/>
+	<parameter name="f26" class="java.lang.String"/>
+	<parameter name="f27" class="java.lang.String"/>
+	<parameter name="f28" class="java.lang.String"/>
+	<parameter name="f29" class="java.lang.String"/>
+	<parameter name="f30" class="java.lang.String"/>
+	<parameter name="f31" class="java.lang.String"/>
+	<parameter name="f32" class="java.lang.String"/>
+	<parameter name="f33" class="java.lang.String"/>
+	<parameter name="f34" class="java.lang.String"/>
+	<parameter name="f35" class="java.lang.String"/>
+	<parameter name="f36" class="java.lang.String"/>
+	<parameter name="f37" class="java.lang.String"/>
+	<parameter name="f38" class="java.lang.String"/>
+	<parameter name="f39" class="java.lang.String"/>
+	<parameter name="f40" class="java.lang.String"/>
+	<parameter name="f41" class="java.lang.String"/>
+	<parameter name="f42" class="java.lang.String"/>
+	<parameter name="f43" class="java.lang.String"/>
+	<parameter name="f44" class="java.lang.String"/>
+	<parameter name="f45" class="java.lang.String"/>
+	<parameter name="f46" class="java.lang.String"/>
+	<parameter name="f47" class="java.lang.String"/>
+	<parameter name="f50" class="java.lang.String"/>
+	<title>
+		<band height="842" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="595" height="842" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[$P{watermark} != null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{watermark}]]></imageExpression>
+			</image>
+
+			<staticText>
+				<reportElement x="153" y="9" width="289" height="33" backcolor="#E6E6E6" mode="Opaque"/>
+				<textElement><font fontName="DejaVu Sans" size="9" isBold="true"/></textElement>
+				<text><![CDATA[DANFSe v2.0 - Documento Auxiliar da NFS-e]]></text>
+			</staticText>
+
+			<textField>
+				<reportElement x="443" y="27" width="144" height="14"/>
+				<textElement textAlignment="Right"><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<textFieldExpression><![CDATA[$P{tpAmb} != null && $P{tpAmb}.equals("2") ? "NFS-e SEM VALIDADE JURIDICA (HOMOLOGACAO)" : ""]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="42" width="578" height="6" backcolor="#E6E6E6" mode="Opaque"/>
+				<textElement><font fontName="DejaVu Sans" size="5" isBold="true"/></textElement>
+				<text><![CDATA[DADOS DA NFS-e]]></text>
+			</staticText>
+
+			<staticText>
+				<reportElement x="9" y="48" width="434" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[CHAVE DE ACESSO DA NFS-E]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="9" y="56" width="434" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f1} == null || $P{f1}.equals("") ? "-" : $P{f1}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="64" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[NUMERO DA NFS-e]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="9" y="72" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f2} == null || $P{f2}.equals("") ? "-" : $P{f2}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="153" y="64" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[COMPETENCIA DA NFS-e]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="153" y="72" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f3} == null || $P{f3}.equals("") ? "-" : $P{f3}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="298" y="64" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[DATA E HORA DA EMISSAO DA NFS-E]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="72" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f4} == null || $P{f4}.equals("") ? "-" : $P{f4}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="84" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[NUMERO DA DPS]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="9" y="92" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f5} == null || $P{f5}.equals("") ? "-" : $P{f5}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="153" y="84" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[SERIE DA DPS]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="153" y="92" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f6} == null || $P{f6}.equals("") ? "-" : $P{f6}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="298" y="84" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[DATA E HORA DA EMISSAO DA DPS]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="92" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f7} == null || $P{f7}.equals("") ? "-" : $P{f7}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="103" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[EMITENTE DA NFS-E]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="9" y="111" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f8} == null || $P{f8}.equals("") ? "-" : $P{f8}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="153" y="103" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[SITUACAO DA NFS-E]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="153" y="111" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f9} == null || $P{f9}.equals("") ? "-" : $P{f9}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="298" y="103" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[FINALIDADE]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="111" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f10} == null || $P{f10}.equals("") ? "-" : $P{f10}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="123" width="578" height="6" backcolor="#E6E6E6" mode="Opaque"/>
+				<textElement><font fontName="DejaVu Sans" size="5" isBold="true"/></textElement>
+				<text><![CDATA[PRESTADOR / FORNECEDOR]]></text>
+			</staticText>
+
+			<staticText>
+				<reportElement x="153" y="123" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[CNPJ / CPF / NIF]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="153" y="131" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f11} == null || $P{f11}.equals("") ? "-" : $P{f11}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="298" y="123" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[INDICADOR MUNICIPAL]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="131" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f12} == null || $P{f12}.equals("") ? "-" : $P{f12}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="443" y="123" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[TELEFONE]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="443" y="131" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f13} == null || $P{f13}.equals("") ? "-" : $P{f13}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="141" width="289" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[NOME / NOME EMPRESARIAL]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="9" y="149" width="289" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f14} == null || $P{f14}.equals("") ? "-" : $P{f14}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="298" y="141" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[MUNICIPIO / SIGLA UF]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="149" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f15} == null || $P{f15}.equals("") ? "-" : $P{f15}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="443" y="141" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[CODIGO IBGE / CEP]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="443" y="149" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f16} == null || $P{f16}.equals("") ? "-" : $P{f16}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="159" width="289" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[ENDERECO]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="9" y="167" width="289" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f17} == null || $P{f17}.equals("") ? "-" : $P{f17}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="298" y="159" width="289" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="167" width="289" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f18} == null || $P{f18}.equals("") ? "-" : $P{f18}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="178" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[SIMPLES NACIONAL NA COMPETENCIA]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="9" y="186" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f19} == null || $P{f19}.equals("") ? "-" : $P{f19}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="298" y="178" width="289" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[REGIME DE APURACAO PELO SN]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="186" width="289" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f20} == null || $P{f20}.equals("") ? "-" : $P{f20}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="196" width="578" height="6" backcolor="#E6E6E6" mode="Opaque"/>
+				<textElement><font fontName="DejaVu Sans" size="5" isBold="true"/></textElement>
+				<text><![CDATA[TOMADOR / ADQUIRENTE]]></text>
+			</staticText>
+
+			<staticText>
+				<reportElement x="153" y="196" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[CNPJ / CPF / NIF]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="153" y="204" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f21} == null || $P{f21}.equals("") ? "-" : $P{f21}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="298" y="196" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[INDICADOR MUNICIPAL]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="204" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f22} == null || $P{f22}.equals("") ? "-" : $P{f22}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="443" y="196" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[TELEFONE]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="443" y="204" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f23} == null || $P{f23}.equals("") ? "-" : $P{f23}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="214" width="289" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[NOME / NOME EMPRESARIAL]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="9" y="222" width="289" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f24} == null || $P{f24}.equals("") ? "-" : $P{f24}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="298" y="214" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[MUNICIPIO / SIGLA UF]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="222" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f25} == null || $P{f25}.equals("") ? "-" : $P{f25}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="443" y="214" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[CODIGO IBGE / CEP]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="443" y="222" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f26} == null || $P{f26}.equals("") ? "-" : $P{f26}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="233" width="289" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[ENDERECO]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="9" y="241" width="289" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f27} == null || $P{f27}.equals("") ? "-" : $P{f27}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="298" y="233" width="289" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[E-MAIL]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="241" width="289" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f28} == null || $P{f28}.equals("") ? "-" : $P{f28}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="361" width="578" height="6" backcolor="#E6E6E6" mode="Opaque"/>
+				<textElement><font fontName="DejaVu Sans" size="5" isBold="true"/></textElement>
+				<text><![CDATA[SERVICO PRESTADO]]></text>
+			</staticText>
+
+			<staticText>
+				<reportElement x="153" y="361" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[CODIGO DE TRIBUTACAO NACIONAL / MUNICIPAL]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="153" y="369" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f29} == null || $P{f29}.equals("") ? "-" : $P{f29}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="298" y="361" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[CODIGO DA NBS]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="369" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f30} == null || $P{f30}.equals("") ? "-" : $P{f30}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="443" y="361" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[LOCAL DA PRESTACAO]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="443" y="369" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f31} == null || $P{f31}.equals("") ? "-" : $P{f31}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="391" width="578" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[DESCRICAO DO SERVICO]]></text>
+			</staticText>
+
+			<textField textAdjust="StretchHeight">
+				<reportElement x="9" y="399" width="578" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f32} == null || $P{f32}.equals("") ? "-" : $P{f32}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="409" width="578" height="6" backcolor="#E6E6E6" mode="Opaque"/>
+				<textElement><font fontName="DejaVu Sans" size="5" isBold="true"/></textElement>
+				<text><![CDATA[TRIBUTACAO MUNICIPAL (ISSQN)]]></text>
+			</staticText>
+
+			<staticText>
+				<reportElement x="9" y="416" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[TIPO DE TRIBUTACAO DO ISSQN]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="9" y="424" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f33} == null || $P{f33}.equals("") ? "-" : $P{f33}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="153" y="416" width="289" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[MUNICIPIO/UF/PAIS DA INCIDENCIA DO ISSQN]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="153" y="424" width="289" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f34} == null || $P{f34}.equals("") ? "-" : $P{f34}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="464" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[BC ISSQN]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="9" y="472" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f35} == null || $P{f35}.equals("") ? "-" : $P{f35}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="153" y="464" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[ALIQUOTA APLICADA]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="153" y="472" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f36} == null || $P{f36}.equals("") ? "-" : $P{f36}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="298" y="464" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[RETENCAO DO ISSQN]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="472" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f37} == null || $P{f37}.equals("") ? "-" : $P{f37}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="443" y="464" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[ISSQN APURADO]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="443" y="472" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f38} == null || $P{f38}.equals("") ? "-" : $P{f38}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="483" width="578" height="6" backcolor="#E6E6E6" mode="Opaque"/>
+				<textElement><font fontName="DejaVu Sans" size="5" isBold="true"/></textElement>
+				<text><![CDATA[TRIBUTACAO FEDERAL (EXCETO CBS)]]></text>
+			</staticText>
+
+			<staticText>
+				<reportElement x="153" y="483" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[IRRF]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="153" y="491" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f39} == null || $P{f39}.equals("") ? "-" : $P{f39}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="298" y="483" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[CONTRIB. PREVIDENCIARIA - RETIDA]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="491" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f40} == null || $P{f40}.equals("") ? "-" : $P{f40}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="443" y="483" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[CONTRIB. SOCIAIS - RETIDAS]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="443" y="491" width="144" height="10"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f41} == null || $P{f41}.equals("") ? "-" : $P{f41}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="593" width="578" height="6" backcolor="#E6E6E6" mode="Opaque"/>
+				<textElement><font fontName="DejaVu Sans" size="5" isBold="true"/></textElement>
+				<text><![CDATA[VALOR TOTAL DA NFS-E]]></text>
+			</staticText>
+
+			<staticText>
+				<reportElement x="153" y="593" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[VALOR DA OPERACAO / SERVICO]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="153" y="601" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f42} == null || $P{f42}.equals("") ? "-" : $P{f42}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="298" y="593" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[DESCONTO INCONDICIONADO]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="601" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f43} == null || $P{f43}.equals("") ? "-" : $P{f43}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="443" y="593" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[DESCONTO CONDICIONADO]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="443" y="601" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f44} == null || $P{f44}.equals("") ? "-" : $P{f44}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="612" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[TOTAL DAS RETENCOES (ISSQN/FEDERAIS)]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="9" y="620" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f45} == null || $P{f45}.equals("") ? "-" : $P{f45}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="153" y="612" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[VALOR LIQUIDO DA NFS-e]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="153" y="620" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f46} == null || $P{f46}.equals("") ? "-" : $P{f46}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="631" width="578" height="6" backcolor="#E6E6E6" mode="Opaque"/>
+				<textElement><font fontName="DejaVu Sans" size="5" isBold="true"/></textElement>
+				<text><![CDATA[INFORMACOES COMPLEMENTARES]]></text>
+			</staticText>
+
+			<staticText>
+				<reportElement x="9" y="637" width="578" height="23"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[INFORMACOES COMPLEMENTARES]]></text>
+			</staticText>
+
+			<textField textAdjust="StretchHeight">
+				<reportElement x="9" y="660" width="578" height="62"/>
+				<textElement><font fontName="DejaVu Sans" size="6"/></textElement>
+				<textFieldExpression><![CDATA[$P{f47} == null || $P{f47}.equals("") ? "-" : $P{f47}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="9" y="788" width="578" height="9" backcolor="#E6E6E6" mode="Opaque"/>
+				<textElement><font fontName="DejaVu Sans" size="7" isBold="true"/></textElement>
+				<text><![CDATA[CANHOTO (RECEBEMOS DE ... OS SERVICOS CONSTANTES DESTA NFS-e)]]></text>
+			</staticText>
+
+			<staticText>
+				<reportElement x="9" y="797" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[DATA CIENTIFICACAO]]></text>
+			</staticText>
+
+			<staticText>
+				<reportElement x="9" y="805" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+
+			<staticText>
+				<reportElement x="153" y="797" width="144" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[IDENTIFICACAO E ASSINATURA]]></text>
+			</staticText>
+
+			<staticText>
+				<reportElement x="153" y="805" width="144" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+
+			<staticText>
+				<reportElement x="298" y="797" width="289" height="8"/>
+				<textElement><font fontName="DejaVu Sans" size="6" isBold="true"/></textElement>
+				<text><![CDATA[Nº NFS-E / CHAVE NFS-E]]></text>
+			</staticText>
+
+			<textField textAdjust="ScaleFont">
+				<reportElement x="298" y="805" width="289" height="11"/>
+				<textElement><font fontName="DejaVu Sans" size="7"/></textElement>
+				<textFieldExpression><![CDATA[$P{f50} == null || $P{f50}.equals("") ? "-" : $P{f50}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="481" y="47" width="43" height="43"/>
+				<imageExpression><![CDATA[$P{qrcode}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="481" y="95" width="105" height="30"/>
+				<textElement textAlignment="Center"><font fontName="DejaVu Sans" size="5"/></textElement>
+				<text><![CDATA[A autenticidade desta NFS-e pode ser verificada pela leitura deste codigo QR ou pela consulta da chave de acesso no portal nacional da NFS-e]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

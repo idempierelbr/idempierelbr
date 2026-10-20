@@ -4,9 +4,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 
-import org.adempiere.base.DefaultDocumentFactory;
+import org.idempiere.acct.doc.DefaultDocumentFactory;
 import org.adempiere.base.IDocFactory;
-import org.compiere.acct.Doc;
+import org.idempiere.acct.doc.Doc;
 import org.compiere.model.MAcctSchema;
 import org.compiere.model.MInOut;
 import org.compiere.model.MInvoice;

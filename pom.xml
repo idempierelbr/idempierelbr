@@ -9,7 +9,7 @@
     <parent>
             <groupId>org.idempierelbr</groupId>
             <artifactId>org.idempierelbr.extensions.parent</artifactId>
-            <version>13.0.0-SNAPSHOT</version>
+            <version>14.0.0-SNAPSHOT</version>
             <relativePath>org.idempierelbr.extensions.parent/pom.xml</relativePath>
     </parent>
 
@@ -21,6 +21,7 @@
 		<module>org.idempierelbr.mdfe</module>
 		<module>org.idempierelbr.rtc</module>
 		<module>org.idempierelbr.nfs</module>
+		<module>org.idempierelbr.nfs.nacional</module>
 		<module>org.idempierelbr.sped</module>
 		<module>org.idempierelbr.tax</module>
 		<module>org.idempierelbr.open-items</module>

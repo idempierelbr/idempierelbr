@@ -1,8 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Base
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-SymbolicName: org.idempierelbr.base
-Bundle-Version: 13.0.0.qualifier
+Bundle-Version: 14.0.0.qualifier
 Bundle-Activator: org.idempierelbr.base.Activator
 Require-Bundle: org.adempiere.base,
  org.adempiere.plugin.utils,

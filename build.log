@@ -1,0 +1,1579 @@
+[INFO] Scanning for projects...
+[INFO] Tycho Version:  4.0.8 (d07e53b9e5b0b4c40ee529fb831732f631e4e3ef)
+[INFO] Tycho Mode:     project
+[INFO] Tycho Builder:  maven
+[INFO] Build Threads:  1
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] org.idempierelbr.base                                   [eclipse-plugin]
+[INFO] org.idempierelbr.core                                   [eclipse-plugin]
+[INFO] org.idempierelbr.jasperfonts                            [eclipse-plugin]
+[INFO] org.idempierelbr.tax                                    [eclipse-plugin]
+[INFO] org.idempierelbr.nfe                                    [eclipse-plugin]
+[INFO] org.idempierelbr.nfs                                    [eclipse-plugin]
+[INFO] org.idempierelbr.sped                                   [eclipse-plugin]
+[INFO] org.idempierelbr.cnab240                                [eclipse-plugin]
+[INFO] org.idempierelbr.open-items                             [eclipse-plugin]
+[INFO] org.idempierelbr.cnab240.febraban                       [eclipse-plugin]
+[INFO] org.idempierelbr.cnab240.bancodobrasil                  [eclipse-plugin]
+[INFO] org.idempierelbr.cnab240.banrisul                       [eclipse-plugin]
+[INFO] org.idempierelbr.cnab240.bradesco                       [eclipse-plugin]
+[INFO] org.idempierelbr.cnab240.caixa                          [eclipse-plugin]
+[INFO] org.idempierelbr.cnab240.itau                           [eclipse-plugin]
+[INFO] org.idempierelbr.cnab240.santander                      [eclipse-plugin]
+[INFO] org.idempierelbr.cnab240.sicoob                         [eclipse-plugin]
+[INFO] org.idempierelbr.extensions.p2                      [eclipse-repository]
+[INFO] org.idempierelbr.test                              [eclipse-test-plugin]
+[INFO] org.idempierelbr                                                   [pom]
+[INFO] 
+[INFO] ---------------< org.idempierelbr:org.idempierelbr.base >---------------
+[INFO] Building org.idempierelbr.base 13.0.0-SNAPSHOT                    [1/20]
+[INFO]   from org.idempierelbr.base/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.base/../../idempiere//org.idempiere.p2/target/repository
+[INFO] ### Using TychoRepositoryTransport for remote P2 access ###
+[INFO]     Cache location:         /home/andre/.m2/repository/.cache/tycho
+[INFO]     Transport mode:         online
+[INFO]     Http Transport type:    Java11Client
+[INFO]     Update mode:            cache first
+[INFO]     Minimum cache duration: 60 minutes
+[INFO]       (you can configure this with -Dtycho.p2.transport.min-cache-minutes=<desired minimum cache duration>)
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.base ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.base/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.base ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.base ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.base ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.base ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.base ---
+[INFO] Resolving class path of org.idempierelbr.base
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.base ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.base/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.base ---
+[WARNING] Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 274 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.base/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.base ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.base ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.base ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.base/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.base ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.base ---
+[INFO] 63 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.base ---
+[WARNING] Bundle-Vendor header not found in /home/andre/sources/release-11/idempierelbr/org.idempierelbr.base/META-INF/MANIFEST.MF, fallback to 'unknown' for source bundle
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.base/target/org.idempierelbr.base-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.base ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.base/target/org.idempierelbr.base-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.base ---
+[INFO] 
+[INFO] ---------------< org.idempierelbr:org.idempierelbr.core >---------------
+[INFO] Building org.idempierelbr.core 13.0.0-SNAPSHOT                    [2/20]
+[INFO]   from org.idempierelbr.core/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.core/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.core ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.core/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.core ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.core ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.core ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.core ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.core ---
+[INFO] Resolving class path of org.idempierelbr.core
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.core ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.core/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.core ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 10 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.core/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.core ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.core ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.core ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.core/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.core ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.core ---
+[INFO] 101 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.core ---
+[WARNING] Bundle-Vendor header not found in /home/andre/sources/release-11/idempierelbr/org.idempierelbr.core/META-INF/MANIFEST.MF, fallback to 'unknown' for source bundle
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.core/target/org.idempierelbr.core-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.core ---
+[WARNING] Checking Service-Component header that contains wildcards is currently not supported
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.core/target/org.idempierelbr.core-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.core ---
+[INFO] 
+[INFO] -----------< org.idempierelbr:org.idempierelbr.jasperfonts >------------
+[INFO] Building org.idempierelbr.jasperfonts 13.0.0-SNAPSHOT             [3/20]
+[INFO]   from org.idempierelbr.jasperfonts/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.jasperfonts/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.jasperfonts ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.jasperfonts/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.jasperfonts ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.jasperfonts ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.jasperfonts ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.jasperfonts ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.jasperfonts ---
+[INFO] Resolving class path of org.idempierelbr.jasperfonts
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.jasperfonts ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.jasperfonts/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.jasperfonts ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.jasperfonts ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.jasperfonts ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.jasperfonts ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.jasperfonts/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.jasperfonts ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.jasperfonts ---
+[INFO] 8 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.jasperfonts ---
+[WARNING] Bundle-Vendor header not found in /home/andre/sources/release-11/idempierelbr/org.idempierelbr.jasperfonts/META-INF/MANIFEST.MF, fallback to 'unknown' for source bundle
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.jasperfonts/target/org.idempierelbr.jasperfonts-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.jasperfonts ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.jasperfonts/target/org.idempierelbr.jasperfonts-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.jasperfonts ---
+[INFO] 
+[INFO] ---------------< org.idempierelbr:org.idempierelbr.tax >----------------
+[INFO] Building org.idempierelbr.tax 13.0.0-SNAPSHOT                     [4/20]
+[INFO]   from org.idempierelbr.tax/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.tax/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.tax ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.tax/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.tax ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.tax ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.tax ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.tax ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.tax ---
+[INFO] Resolving class path of org.idempierelbr.tax
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.tax ---
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.tax ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 22 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.tax/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.tax ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.tax ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.tax ---
+[INFO] Copying 0 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.tax ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.tax ---
+[INFO] 101 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.tax ---
+[WARNING] Bundle-Vendor header not found in /home/andre/sources/release-11/idempierelbr/org.idempierelbr.tax/META-INF/MANIFEST.MF, fallback to 'unknown' for source bundle
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.tax/target/org.idempierelbr.tax-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.tax ---
+[WARNING] Checking Service-Component header that contains wildcards is currently not supported
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.tax/target/org.idempierelbr.tax-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.tax ---
+[INFO] 
+[INFO] ---------------< org.idempierelbr:org.idempierelbr.nfe >----------------
+[INFO] Building org.idempierelbr.nfe 13.0.0-SNAPSHOT                     [5/20]
+[INFO]   from org.idempierelbr.nfe/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfe/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.nfe ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfe/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.nfe ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.nfe ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.nfe ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.nfe ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.nfe ---
+[INFO] Resolving class path of org.idempierelbr.nfe
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.nfe ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfe/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.nfe ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 146 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfe/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.nfe ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.nfe ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.nfe ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfe/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.nfe ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.nfe ---
+[INFO] 109 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.nfe ---
+[WARNING] Bundle-Vendor header not found in /home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfe/META-INF/MANIFEST.MF, fallback to 'unknown' for source bundle
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfe/target/org.idempierelbr.nfe-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.nfe ---
+[WARNING] Checking Service-Component header that contains wildcards is currently not supported
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfe/target/org.idempierelbr.nfe-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.nfe ---
+[INFO] 
+[INFO] ---------------< org.idempierelbr:org.idempierelbr.nfs >----------------
+[INFO] Building org.idempierelbr.nfs 13.0.0-SNAPSHOT                     [6/20]
+[INFO]   from org.idempierelbr.nfs/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfs/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.nfs ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfs/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.nfs ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.nfs ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.nfs ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.nfs ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.nfs ---
+[INFO] Resolving class path of org.idempierelbr.nfs
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.nfs ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfs/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.nfs ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 18 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfs/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.nfs ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.nfs ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.nfs ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfs/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.nfs ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.nfs ---
+[INFO] 101 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.nfs ---
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfs/target/org.idempierelbr.nfs-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.nfs ---
+[WARNING] Checking Service-Component header that contains wildcards is currently not supported
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.nfs/target/org.idempierelbr.nfs-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.nfs ---
+[INFO] 
+[INFO] ---------------< org.idempierelbr:org.idempierelbr.sped >---------------
+[INFO] Building org.idempierelbr.sped 13.0.0-SNAPSHOT                    [7/20]
+[INFO]   from org.idempierelbr.sped/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.sped/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.sped ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.sped/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.sped ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.sped ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.sped ---
+[INFO] 
+[INFO] --- dependency:3.1.1:copy (default) @ org.idempierelbr.sped ---
+[INFO] Configured Artifact: com.thoughtworks.xstream:xstream:1.4.7:jar
+[INFO] Copying xstream-1.4.7.jar to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.sped/lib/xstream-1.4.7.jar
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.sped ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.sped ---
+[INFO] Resolving class path of org.idempierelbr.sped
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.sped ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.sped/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.sped ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 200 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.sped/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.sped ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.sped ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.sped ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.sped/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.sped ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.sped ---
+[INFO] 111 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.sped ---
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.sped/target/org.idempierelbr.sped-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.sped ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.sped/target/org.idempierelbr.sped-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.sped ---
+[INFO] 
+[INFO] -------------< org.idempierelbr:org.idempierelbr.cnab240 >--------------
+[INFO] Building org.idempierelbr.cnab240 13.0.0-SNAPSHOT                 [8/20]
+[INFO]   from org.idempierelbr.cnab240/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.cnab240 ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.cnab240 ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.cnab240 ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.cnab240 ---
+[INFO] 
+[INFO] --- dependency:3.1.1:copy (default) @ org.idempierelbr.cnab240 ---
+[INFO] Configured Artifact: local.fixedformat4j:fixedformat4j:1.3.4:jar
+[INFO] Copying fixedformat4j-1.3.4.jar to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240/lib/fixedformat4j-1.3.4.jar
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.cnab240 ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.cnab240 ---
+[INFO] Resolving class path of org.idempierelbr.cnab240
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.cnab240 ---
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.cnab240 ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+Downloading from local-maven-repo: file:///home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240/../local-maven-repo/org/osgi/org.osgi.annotation.bundle/maven-metadata.xml
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+Downloading from local-maven-repo: file:///home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240/../local-maven-repo/org/osgi/org.osgi.service.component.annotations/maven-metadata.xml
+[INFO] Compiling 19 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.cnab240 ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.cnab240 ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.cnab240 ---
+[INFO] Copying 0 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.cnab240 ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.cnab240 ---
+[INFO] 63 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.cnab240 ---
+[WARNING] Bundle-Vendor header not found in /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240/META-INF/MANIFEST.MF, fallback to 'unknown' for source bundle
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240/target/org.idempierelbr.cnab240-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.cnab240 ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240/target/org.idempierelbr.cnab240-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.cnab240 ---
+[INFO] 
+[INFO] ------------< org.idempierelbr:org.idempierelbr.open-items >------------
+[INFO] Building org.idempierelbr.open-items 13.0.0-SNAPSHOT              [9/20]
+[INFO]   from org.idempierelbr.open-items/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.open-items/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.open-items ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.open-items/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.open-items ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.open-items ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.open-items ---
+[INFO] 
+[INFO] --- dependency:3.1.1:copy (default) @ org.idempierelbr.open-items ---
+[INFO] Configured Artifact: commons-lang:commons-lang:2.6:jar
+[INFO] Copying commons-lang-2.6.jar to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.open-items/lib/commons-lang-2.6.jar
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.open-items ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.open-items ---
+[INFO] Resolving class path of org.idempierelbr.open-items
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.open-items ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.open-items/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.open-items ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 25 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.open-items/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.open-items ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.open-items ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.open-items ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.open-items/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.open-items ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.open-items ---
+[INFO] 113 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.open-items ---
+[WARNING] Bundle-Vendor header not found in /home/andre/sources/release-11/idempierelbr/org.idempierelbr.open-items/META-INF/MANIFEST.MF, fallback to 'unknown' for source bundle
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.open-items/target/org.idempierelbr.open-items-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.open-items ---
+[WARNING] Checking Service-Component header that contains wildcards is currently not supported
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.open-items/target/org.idempierelbr.open-items-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.open-items ---
+[INFO] 
+[INFO] ---------< org.idempierelbr:org.idempierelbr.cnab240.febraban >---------
+[INFO] Building org.idempierelbr.cnab240.febraban 13.0.0-SNAPSHOT       [10/20]
+[INFO]   from org.idempierelbr.cnab240.febraban/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.febraban/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.cnab240.febraban ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.febraban/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.cnab240.febraban ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.cnab240.febraban ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.cnab240.febraban ---
+[INFO] 
+[INFO] --- dependency:3.1.1:copy (default) @ org.idempierelbr.cnab240.febraban ---
+[INFO] Configured Artifact: commons-lang:commons-lang:2.6:jar
+[INFO] Copying commons-lang-2.6.jar to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.febraban/lib/commons-lang-2.6.jar
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.cnab240.febraban ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.cnab240.febraban ---
+[INFO] Resolving class path of org.idempierelbr.cnab240.febraban
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.cnab240.febraban ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.febraban/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.cnab240.febraban ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 244 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.febraban/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.cnab240.febraban ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.cnab240.febraban ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.cnab240.febraban ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.febraban/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.cnab240.febraban ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.cnab240.febraban ---
+[INFO] 115 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.cnab240.febraban ---
+[WARNING] Bundle-Vendor header not found in /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.febraban/META-INF/MANIFEST.MF, fallback to 'unknown' for source bundle
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.febraban/target/org.idempierelbr.cnab240.febraban-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.cnab240.febraban ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.febraban/target/org.idempierelbr.cnab240.febraban-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.cnab240.febraban ---
+[INFO] 
+[INFO] ------< org.idempierelbr:org.idempierelbr.cnab240.bancodobrasil >-------
+[INFO] Building org.idempierelbr.cnab240.bancodobrasil 13.0.0-SNAPSHOT  [11/20]
+[INFO]   from org.idempierelbr.cnab240.bancodobrasil/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.bancodobrasil/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.cnab240.bancodobrasil ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.bancodobrasil/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.cnab240.bancodobrasil ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.cnab240.bancodobrasil ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.cnab240.bancodobrasil ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.cnab240.bancodobrasil ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.cnab240.bancodobrasil ---
+[INFO] Resolving class path of org.idempierelbr.cnab240.bancodobrasil
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.cnab240.bancodobrasil ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.bancodobrasil/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.cnab240.bancodobrasil ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 6 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.bancodobrasil/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.cnab240.bancodobrasil ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.cnab240.bancodobrasil ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.cnab240.bancodobrasil ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.bancodobrasil/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.cnab240.bancodobrasil ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.cnab240.bancodobrasil ---
+[INFO] 113 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.cnab240.bancodobrasil ---
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.bancodobrasil/target/org.idempierelbr.cnab240.bancodobrasil-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.cnab240.bancodobrasil ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.bancodobrasil/target/org.idempierelbr.cnab240.bancodobrasil-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.cnab240.bancodobrasil ---
+[INFO] 
+[INFO] ---------< org.idempierelbr:org.idempierelbr.cnab240.banrisul >---------
+[INFO] Building org.idempierelbr.cnab240.banrisul 13.0.0-SNAPSHOT       [12/20]
+[INFO]   from org.idempierelbr.cnab240.banrisul/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.banrisul/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.cnab240.banrisul ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.banrisul/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.cnab240.banrisul ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.cnab240.banrisul ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.cnab240.banrisul ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.cnab240.banrisul ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.cnab240.banrisul ---
+[INFO] Resolving class path of org.idempierelbr.cnab240.banrisul
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.cnab240.banrisul ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.banrisul/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.cnab240.banrisul ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 9 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.banrisul/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.cnab240.banrisul ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.cnab240.banrisul ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.cnab240.banrisul ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.banrisul/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.cnab240.banrisul ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.cnab240.banrisul ---
+[INFO] 113 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.cnab240.banrisul ---
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.banrisul/target/org.idempierelbr.cnab240.banrisul-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.cnab240.banrisul ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.banrisul/target/org.idempierelbr.cnab240.banrisul-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.cnab240.banrisul ---
+[INFO] 
+[INFO] ---------< org.idempierelbr:org.idempierelbr.cnab240.bradesco >---------
+[INFO] Building org.idempierelbr.cnab240.bradesco 13.0.0-SNAPSHOT       [13/20]
+[INFO]   from org.idempierelbr.cnab240.bradesco/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.bradesco/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.cnab240.bradesco ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.bradesco/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.cnab240.bradesco ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.cnab240.bradesco ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.cnab240.bradesco ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.cnab240.bradesco ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.cnab240.bradesco ---
+[INFO] Resolving class path of org.idempierelbr.cnab240.bradesco
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.cnab240.bradesco ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.bradesco/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.cnab240.bradesco ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 7 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.bradesco/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.cnab240.bradesco ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.cnab240.bradesco ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.cnab240.bradesco ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.bradesco/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.cnab240.bradesco ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.cnab240.bradesco ---
+[INFO] 113 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.cnab240.bradesco ---
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.bradesco/target/org.idempierelbr.cnab240.bradesco-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.cnab240.bradesco ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.bradesco/target/org.idempierelbr.cnab240.bradesco-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.cnab240.bradesco ---
+[INFO] 
+[INFO] ----------< org.idempierelbr:org.idempierelbr.cnab240.caixa >-----------
+[INFO] Building org.idempierelbr.cnab240.caixa 13.0.0-SNAPSHOT          [14/20]
+[INFO]   from org.idempierelbr.cnab240.caixa/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.caixa/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.cnab240.caixa ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.caixa/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.cnab240.caixa ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.cnab240.caixa ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.cnab240.caixa ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.cnab240.caixa ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.cnab240.caixa ---
+[INFO] Resolving class path of org.idempierelbr.cnab240.caixa
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.cnab240.caixa ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.caixa/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.cnab240.caixa ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 11 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.caixa/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.cnab240.caixa ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.cnab240.caixa ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.cnab240.caixa ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.caixa/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.cnab240.caixa ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.cnab240.caixa ---
+[INFO] 113 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.cnab240.caixa ---
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.caixa/target/org.idempierelbr.cnab240.caixa-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.cnab240.caixa ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.caixa/target/org.idempierelbr.cnab240.caixa-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.cnab240.caixa ---
+[INFO] 
+[INFO] -----------< org.idempierelbr:org.idempierelbr.cnab240.itau >-----------
+[INFO] Building org.idempierelbr.cnab240.itau 13.0.0-SNAPSHOT           [15/20]
+[INFO]   from org.idempierelbr.cnab240.itau/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.itau/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.cnab240.itau ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.itau/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.cnab240.itau ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.cnab240.itau ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.cnab240.itau ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.cnab240.itau ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.cnab240.itau ---
+[INFO] Resolving class path of org.idempierelbr.cnab240.itau
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.cnab240.itau ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.itau/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.cnab240.itau ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 10 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.itau/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.cnab240.itau ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.cnab240.itau ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.cnab240.itau ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.itau/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.cnab240.itau ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.cnab240.itau ---
+[INFO] 113 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.cnab240.itau ---
+[WARNING] Bundle-Vendor header not found in /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.itau/META-INF/MANIFEST.MF, fallback to 'unknown' for source bundle
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.itau/target/org.idempierelbr.cnab240.itau-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.cnab240.itau ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.itau/target/org.idempierelbr.cnab240.itau-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.cnab240.itau ---
+[INFO] 
+[INFO] --------< org.idempierelbr:org.idempierelbr.cnab240.santander >---------
+[INFO] Building org.idempierelbr.cnab240.santander 13.0.0-SNAPSHOT      [16/20]
+[INFO]   from org.idempierelbr.cnab240.santander/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.santander/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.cnab240.santander ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.santander/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.cnab240.santander ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.cnab240.santander ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.cnab240.santander ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.cnab240.santander ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.cnab240.santander ---
+[INFO] Resolving class path of org.idempierelbr.cnab240.santander
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.cnab240.santander ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.santander/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.cnab240.santander ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 13 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.santander/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.cnab240.santander ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.cnab240.santander ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.cnab240.santander ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.santander/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.cnab240.santander ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.cnab240.santander ---
+[INFO] 113 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.cnab240.santander ---
+[WARNING] Bundle-Vendor header not found in /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.santander/META-INF/MANIFEST.MF, fallback to 'unknown' for source bundle
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.santander/target/org.idempierelbr.cnab240.santander-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.cnab240.santander ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.santander/target/org.idempierelbr.cnab240.santander-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.cnab240.santander ---
+[INFO] 
+[INFO] ----------< org.idempierelbr:org.idempierelbr.cnab240.sicoob >----------
+[INFO] Building org.idempierelbr.cnab240.sicoob 13.0.0-SNAPSHOT         [17/20]
+[INFO]   from org.idempierelbr.cnab240.sicoob/pom.xml
+[INFO] ---------------------------[ eclipse-plugin ]---------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.sicoob/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.cnab240.sicoob ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.sicoob/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.cnab240.sicoob ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.cnab240.sicoob ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.cnab240.sicoob ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.cnab240.sicoob ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.cnab240.sicoob ---
+[INFO] Resolving class path of org.idempierelbr.cnab240.sicoob
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.cnab240.sicoob ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.sicoob/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.cnab240.sicoob ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 8 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.sicoob/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-bnd:4.0.8:process (default-process) @ org.idempierelbr.cnab240.sicoob ---
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.cnab240.sicoob ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.cnab240.sicoob ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.sicoob/src/test/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:testCompile (default-testCompile) @ org.idempierelbr.cnab240.sicoob ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.cnab240.sicoob ---
+[INFO] 113 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.cnab240.sicoob ---
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.sicoob/target/org.idempierelbr.cnab240.sicoob-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.cnab240.sicoob ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.cnab240.sicoob/target/org.idempierelbr.cnab240.sicoob-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.cnab240.sicoob ---
+[INFO] 
+[INFO] ----------< org.idempierelbr:org.idempierelbr.extensions.p2 >-----------
+[INFO] Building org.idempierelbr.extensions.p2 13.0.0-SNAPSHOT          [18/20]
+[INFO]   from org.idempierelbr.extensions.p2/pom.xml
+[INFO] -------------------------[ eclipse-repository ]-------------------------
+[INFO] Resolving dependencies of MavenProject: org.idempierelbr:org.idempierelbr.extensions.p2:13.0.0-SNAPSHOT @ /home/andre/sources/release-11/idempierelbr/org.idempierelbr.extensions.p2/pom.xml
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.extensions.p2/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.extensions.p2 ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.extensions.p2/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier-aggregator (default-build-qualifier-aggregator) @ org.idempierelbr.extensions.p2 ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean-1) @ org.idempierelbr.extensions.p2 ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.extensions.p2 ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.extensions.p2 ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.extensions.p2/src/main/resources
+[INFO] 
+[INFO] --- tycho-p2-publisher:4.0.8:publish-osgi-ee (default-publish-osgi-ee) @ org.idempierelbr.extensions.p2 ---
+[INFO] Published profile IUs: [a.jre.javase 17.0.0]
+[INFO] 
+[INFO] --- tycho-p2-publisher:4.0.8:publish-products (default-publish-products) @ org.idempierelbr.extensions.p2 ---
+[INFO] 
+[INFO] --- tycho-p2-publisher:4.0.8:publish-categories (default-publish-categories) @ org.idempierelbr.extensions.p2 ---
+[INFO] 
+[INFO] --- tycho-p2-publisher:4.0.8:attach-artifacts (default-attach-artifacts) @ org.idempierelbr.extensions.p2 ---
+[INFO] 
+[INFO] --- tycho-p2-repository:4.0.8:assemble-repository (default-assemble-repository) @ org.idempierelbr.extensions.p2 ---
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.extensions.p2 ---
+[INFO] 
+[INFO] --- tycho-p2-repository:4.0.8:archive-repository (default-archive-repository) @ org.idempierelbr.extensions.p2 ---
+[INFO] Building zip: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.extensions.p2/target/org.idempierelbr.extensions.p2-13.0.0-SNAPSHOT.zip
+[INFO] 
+[INFO] --- tycho-p2-repository:4.0.8:assemble-repository (build-site-p2) @ org.idempierelbr.extensions.p2 ---
+[INFO] 
+[INFO] ---------------< org.idempierelbr:org.idempierelbr.test >---------------
+[INFO] Building org.idempierelbr.test 13.0.0-SNAPSHOT                   [19/20]
+[INFO]   from org.idempierelbr.test/pom.xml
+[INFO] ------------------------[ eclipse-test-plugin ]-------------------------
+[INFO] Adding repository file:////home/andre/sources/release-11/idempierelbr/org.idempierelbr.test/../../idempiere//org.idempiere.p2/target/repository
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr.test ---
+[INFO] Deleting /home/andre/sources/release-11/idempierelbr/org.idempierelbr.test/target
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:build-qualifier (default-build-qualifier) @ org.idempierelbr.test ---
+[INFO] The project's OSGi version is 13.0.0.202610061705
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-id (default-validate-id) @ org.idempierelbr.test ---
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:validate-version (default-validate-version) @ org.idempierelbr.test ---
+[INFO] 
+[INFO] --- target-platform-configuration:4.0.8:target-platform (default-target-platform) @ org.idempierelbr.test ---
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:validate-classpath (default-validate-classpath) @ org.idempierelbr.test ---
+[INFO] Resolving class path of org.idempierelbr.test
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ org.idempierelbr.test ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.test/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler:4.0.8:compile (default-compile) @ org.idempierelbr.test ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Compiling 15 source files to /home/andre/sources/release-11/idempierelbr/org.idempierelbr.test/target/classes using Eclipse Compiler for Java(TM) 3.37.0.v20240215-1558
+[INFO] 
+[INFO] --- tycho-ds:4.0.8:declarative-services (default-declarative-services) @ org.idempierelbr.test ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ org.idempierelbr.test ---
+[INFO] skip non existing resourceDirectory /home/andre/sources/release-11/idempierelbr/org.idempierelbr.test/src/test/resources
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:update-consumer-pom (default-update-consumer-pom) @ org.idempierelbr.test ---
+[INFO] 138 system scoped dependencies were not mapped to maven artifacts
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr.test ---
+[WARNING] Bundle-Vendor header not found in /home/andre/sources/release-11/idempierelbr/org.idempierelbr.test/META-INF/MANIFEST.MF, fallback to 'unknown' for source bundle
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.test/target/org.idempierelbr.test-13.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- tycho-packaging:4.0.8:package-plugin (default-package-plugin) @ org.idempierelbr.test ---
+[WARNING] org.osgi:org.osgi.annotation.bundle/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.annotation.bundle/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[WARNING] org.osgi:org.osgi.service.component.annotations/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata org.osgi:org.osgi.service.component.annotations/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [Central (http://central.maven.org/maven2, default, releases+snapshots), zkoss (http://mavensync.zkoss.org/maven2, default, releases+snapshots)]
+[INFO] Building jar: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.test/target/org.idempierelbr.test-13.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2:4.0.8:p2-metadata-default (default-p2-metadata-default) @ org.idempierelbr.test ---
+[INFO] 
+[INFO] --- tycho-surefire:4.0.8:test (default-test) @ org.idempierelbr.test ---
+[INFO] Executing test runtime with timeout (seconds): 0, logs, if any, will be placed at: /home/andre/sources/release-11/idempierelbr/org.idempierelbr.test/target/work/data/.metadata/.log
+[INFO] Command line:
+	[/usr/lib/jvm/java-17-openjdk-amd64/bin/java, -Dosgi.noShutdown=false, -Dosgi.os=linux, -Dosgi.ws=gtk, -Dosgi.arch=x86_64, -Dosgi.clean=true, -DIDEMPIERE_HOME=null, -jar, /home/andre/.m2/repository/p2/osgi/bundle/org.eclipse.equinox.launcher/1.6.500.v20230717-2134/org.eclipse.equinox.launcher-1.6.500.v20230717-2134.jar, -data, /home/andre/sources/release-11/idempierelbr/org.idempierelbr.test/target/work/data, -install, /home/andre/sources/release-11/idempierelbr/org.idempierelbr.test/target/work, -configuration, /home/andre/sources/release-11/idempierelbr/org.idempierelbr.test/target/work/configuration, -application, org.eclipse.tycho.surefire.osgibooter.headlesstest, -testproperties, /home/andre/sources/release-11/idempierelbr/org.idempierelbr.test/target/surefire.properties]
+out. 06, 2026 2:07:14 PM org.compiere.util.Language getLanguage
+INFORMAÇÕES: Adding Language=pt, Country=BR, Locale=pt_BR
+2026-10-06T17:07:14.889128564Z Start Level: Equinox Container: 2bc252d9-4245-4a80-ac9c-7e84da965fb0 ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+out. 06, 2026 2:07:15 PM org.adempiere.base.AnnotationBasedColumnCalloutFactory lambda$0
+INFORMAÇÕES: AnnotationBasedColumnCalloutFactoryImpl loaded 10 classes in 0.44s
+out. 06, 2026 2:07:15 PM org.adempiere.base.AnnotationBasedColumnCalloutFactory lambda$0
+INFORMAÇÕES: DefaultAnnotationBasedColumnCalloutFactory loaded 2 classes in 0.415s
+out. 06, 2026 2:07:15 PM org.adempiere.base.AnnotationBasedProcessFactory lambda$0
+INFORMAÇÕES: ProcessFactoryImpl loaded 7 classes in 0.208s
+out. 06, 2026 2:07:15 PM org.adempiere.base.AnnotationBasedProcessFactory lambda$0
+INFORMAÇÕES: DefaultAnnotationBasedProcessFactory loaded 78 classes in 0.552s
+out. 06, 2026 2:07:15 PM org.adempiere.base.AnnotationBasedModelFactory lambda$0
+INFORMAÇÕES: WS_ModelFactory loaded 7 classes in 0.132s
+out. 06, 2026 2:07:16 PM org.adempiere.webui.factory.AnnotationBasedFormFactory lambda$0
+INFORMAÇÕES: DefaultAnnotationBasedFormFactory loaded 59 classes in 0.694s
+out. 06, 2026 2:07:16 PM org.adempiere.base.AnnotationBasedProcessFactory lambda$0
+INFORMAÇÕES: BaseProcessFactoryImpl loaded 195 classes in 0.069s
+out. 06, 2026 2:07:16 PM org.idempiere.model.RequiredPluginValidator frameworkEvent
+INFORMAÇÕES: DS Listener - Received OSGi Framework Event: STARTLEVEL_CHANGED from Bundle: org.eclipse.osgi
+out. 06, 2026 2:07:17 PM org.adempiere.base.AnnotationBasedModelFactory lambda$0
+INFORMAÇÕES: AnnotationBasedModelFactory loaded 755 classes in 2.524s
+Running org.idempierelbr.base.test.NFeDebitCreditTypeTest
+out. 06, 2026 2:07:18 PM org.adempiere.plugin.utils.AbstractActivator start
+INFORMAÇÕES: org.idempierelbr.base 13.0.0 starting...
+out. 06, 2026 2:07:18 PM org.adempiere.plugin.utils.AbstractActivator start
+INFORMAÇÕES: org.idempierelbr.base 13.0.0 ready.
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.508 s -- in org.idempierelbr.base.test.NFeDebitCreditTypeTest
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.getModelOfKey_returnsNull_whenKeyIsNull -- Time elapsed: 0.306 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.debitIsAlwaysOutgoingAndCreditAlwaysIncoming -- Time elapsed: 0.003 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.zfmPresumedCreditForbidsReference -- Time elapsed: 0.004 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.unprocessedNFDebitForbidsNItem -- Time elapsed: 0.005 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.otherTypesHaveNoStartYearRestriction -- Time elapsed: 0.004 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.advancePaymentDoesNotReferenceAnyDocument -- Time elapsed: 0.002 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.zfmPresumedCreditIsValidOnlyFrom2029 -- Time elapsed: 0.002 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.referenceIsNotRequired_forOriginatingDebitTypes(String)[1] -- Time elapsed: 0.017 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.referenceIsNotRequired_forOriginatingDebitTypes(String)[2] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.referenceIsNotRequired_forOriginatingDebitTypes(String)[3] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.referenceIsNotRequired_forOriginatingDebitTypes(String)[4] -- Time elapsed: 0.002 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.referenceIsNotRequired_forOriginatingDebitTypes(String)[5] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.referenceIsNotRequired_forOriginatingDebitTypes(String)[6] -- Time elapsed: 0.002 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.creditReferencesModel55Only_exceptReturnWhichAlsoAcceptsNFCe -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.theNTDefinesEightDebitAndFiveCreditTypes -- Time elapsed: 0.002 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.getOfDocType_returnsNull_whenThereIsNoDocType -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.isDebitCredit_recognizesOnlyFinalities5And6 -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.creditNeverReferencesAtItemLevel -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.getModelOfKey_returnsNull_whenKeyIsNotAValidAccessKey(String)[1] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.getModelOfKey_returnsNull_whenKeyIsNotAValidAccessKey(String)[2] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.getModelOfKey_returnsNull_whenKeyIsNotAValidAccessKey(String)[3] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.getModelOfKey_extractsPositions21And22 -- Time elapsed: 0.002 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.interestDebitRequiresNItem -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.referenceIsRequired_forTypesTheNTDemands(String, String)[1] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.referenceIsRequired_forTypesTheNTDemands(String, String)[2] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.referenceIsRequired_forTypesTheNTDemands(String, String)[3] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.referenceIsRequired_forTypesTheNTDemands(String, String)[4] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.referenceIsRequired_forTypesTheNTDemands(String, String)[5] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.onlyReturnCreditAllowsLegacyTaxes -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.get_returnsNull_forCombinationsOutsideTheNT -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.debitHasNoRefModelRestriction -- Time elapsed: 0 s
+org.idempierelbr.base.test.NFeDebitCreditTypeTest.get_toleratesSurroundingWhitespace -- Time elapsed: 0 s
+Running org.idempierelbr.base.test.CBenefTaxStatusTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s -- in org.idempierelbr.base.test.CBenefTaxStatusTest
+org.idempierelbr.base.test.CBenefTaxStatusTest.fullyTaxedAndWithheldTaxStatusRejectCBenef(String)[1] -- Time elapsed: 0.023 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.fullyTaxedAndWithheldTaxStatusRejectCBenef(String)[2] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.fullyTaxedAndWithheldTaxStatusRejectCBenef(String)[3] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.fullyTaxedAndWithheldTaxStatusRejectCBenef(String)[4] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.missingTaxStatusRejectsCBenef -- Time elapsed: 0 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.desoneratedTaxStatusAcceptCBenef(String)[1] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.desoneratedTaxStatusAcceptCBenef(String)[2] -- Time elapsed: 0 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.desoneratedTaxStatusAcceptCBenef(String)[3] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.desoneratedTaxStatusAcceptCBenef(String)[4] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.desoneratedTaxStatusAcceptCBenef(String)[5] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.desoneratedTaxStatusAcceptCBenef(String)[6] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.desoneratedTaxStatusAcceptCBenef(String)[7] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.desoneratedTaxStatusAcceptCBenef(String)[8] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.desoneratedTaxStatusAcceptCBenef(String)[9] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.desoneratedTaxStatusAcceptCBenef(String)[10] -- Time elapsed: 0.001 s
+org.idempierelbr.base.test.CBenefTaxStatusTest.simplesNacionalRejectsCBenefOnlyWhenTaxWasWithheld -- Time elapsed: 0.001 s
+Running org.idempierelbr.nfe.test.SefazTlsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.226 s -- in org.idempierelbr.nfe.test.SefazTlsTest
+org.idempierelbr.nfe.test.SefazTlsTest.createSocket_enablesOnlyTls12AndTls13_whenSocketCreated -- Time elapsed: 0.210 s
+org.idempierelbr.nfe.test.SefazTlsTest.createSocket_excludesLegacyProtocols_whenSocketCreated -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.SefazTlsTest.createSocket_restrictsToApprovedCipherSuites_whenSocketCreated -- Time elapsed: 0.005 s
+org.idempierelbr.nfe.test.SefazTlsTest.createSocket_excludesWeakCipherSuites_whenSocketCreated -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.SefazTlsTest.createSocket_keepsSuitesRequiredBySefazEndpoints_whenSocketCreated -- Time elapsed: 0.001 s
+Running org.idempierelbr.nfe.test.NFeUtilTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in org.idempierelbr.nfe.test.NFeUtilTest
+org.idempierelbr.nfe.test.NFeUtilTest.autorizadorFromTpEmis_returnsRS_whenTpEmisIs7 -- Time elapsed: 0.009 s
+org.idempierelbr.nfe.test.NFeUtilTest.autorizadorFromTpEmis_returnsNull_whenInputIsNull -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeUtilTest.autorizadorFromTpEmis_returnsNull_whenTpEmisTagAbsent -- Time elapsed: 0.002 s
+org.idempierelbr.nfe.test.NFeUtilTest.autorizadorFromTpEmis_returnsAN_whenTpEmisIs6 -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeUtilTest.autorizadorFromTpEmis_returnsNull_whenTpEmisIsUnknownValue -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeUtilTest.autorizadorFromTpEmis_returnsNull_whenTpEmisIs1 -- Time elapsed: 0 s
+Running org.idempierelbr.nfe.test.SefazPostTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+out. 06, 2026 2:07:19 PM org.idempierelbr.nfe.util.SefazHttpClient post
+ADVERTÊNCIA: SEFAZ transport failure — service=NFeDistribuicaoDFe env=1
+java.net.UnknownHostException: fake.sefaz.gov.br
+	at org.idempierelbr.nfe.test.SefazPostTest.lambda$9(SefazPostTest.java:194)
+	at org.idempierelbr.nfe.util.SefazHttpClient.exchange(SefazHttpClient.java:200)
+	at org.idempierelbr.nfe.util.SefazHttpClient.post(SefazHttpClient.java:190)
+	at org.idempierelbr.nfe.test.SefazPostTest.lambda$10(SefazPostTest.java:196)
+	at org.assertj.core.api.ThrowableAssert.catchThrowable(ThrowableAssert.java:63)
+	at org.assertj.core.api.AssertionsForClassTypes.catchThrowable(AssertionsForClassTypes.java:878)
+	at org.assertj.core.api.Assertions.catchThrowable(Assertions.java:1337)
+	at org.assertj.core.api.Assertions.assertThatThrownBy(Assertions.java:1181)
+	at org.idempierelbr.nfe.test.SefazPostTest.post_explainsUnknownHost_whenNameResolutionFails(SefazPostTest.java:196)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:137)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:148)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:88)
+	at org.eclipse.tycho.surefire.osgibooter.OsgiSurefireBooter.run(OsgiSurefireBooter.java:140)
+	at org.eclipse.tycho.surefire.osgibooter.HeadlessTestApplication.start(HeadlessTestApplication.java:29)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1432)
+
+out. 06, 2026 2:07:20 PM org.idempierelbr.nfe.util.SefazHttpClient post
+ADVERTÊNCIA: SEFAZ transport failure — service=NfeStatusServico env=1
+java.io.IOException: network error
+	at org.idempierelbr.nfe.test.SefazPostTest$1.read(SefazPostTest.java:167)
+	at java.base/java.io.InputStream.read(InputStream.java:284)
+	at java.base/java.io.InputStream.read(InputStream.java:218)
+	at org.idempierelbr.nfe.util.SefazHttpClient.exchange(SefazHttpClient.java:228)
+	at org.idempierelbr.nfe.util.SefazHttpClient.post(SefazHttpClient.java:190)
+	at org.idempierelbr.nfe.test.SefazPostTest.lambda$6(SefazPostTest.java:170)
+	at org.assertj.core.api.ThrowableAssert.catchThrowable(ThrowableAssert.java:63)
+	at org.assertj.core.api.AssertionsForClassTypes.catchThrowable(AssertionsForClassTypes.java:878)
+	at org.assertj.core.api.Assertions.catchThrowable(Assertions.java:1337)
+	at org.assertj.core.api.Assertions.assertThatThrownBy(Assertions.java:1181)
+	at org.idempierelbr.nfe.test.SefazPostTest.post_explainsFailure_whenReadFails(SefazPostTest.java:170)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:137)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:148)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:88)
+	at org.eclipse.tycho.surefire.osgibooter.OsgiSurefireBooter.run(OsgiSurefireBooter.java:140)
+	at org.eclipse.tycho.surefire.osgibooter.HeadlessTestApplication.start(HeadlessTestApplication.java:29)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1432)
+
+out. 06, 2026 2:07:20 PM org.idempierelbr.nfe.util.SefazHttpClient post
+ADVERTÊNCIA: SEFAZ transport failure — service=RecepcaoEventoAN env=1
+java.net.SocketException: Connection reset
+	at org.idempierelbr.nfe.test.SefazPostTest.lambda$7(SefazPostTest.java:181)
+	at org.idempierelbr.nfe.util.SefazHttpClient.exchange(SefazHttpClient.java:200)
+	at org.idempierelbr.nfe.util.SefazHttpClient.post(SefazHttpClient.java:190)
+	at org.idempierelbr.nfe.test.SefazPostTest.lambda$8(SefazPostTest.java:183)
+	at org.assertj.core.api.ThrowableAssert.catchThrowable(ThrowableAssert.java:63)
+	at org.assertj.core.api.AssertionsForClassTypes.catchThrowable(AssertionsForClassTypes.java:878)
+	at org.assertj.core.api.Assertions.catchThrowable(Assertions.java:1337)
+	at org.assertj.core.api.Assertions.assertThatThrownBy(Assertions.java:1181)
+	at org.idempierelbr.nfe.test.SefazPostTest.post_explainsConnectionReset_whenServerDropsConnection(SefazPostTest.java:183)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:137)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:148)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:88)
+	at org.eclipse.tycho.surefire.osgibooter.OsgiSurefireBooter.run(OsgiSurefireBooter.java:140)
+	at org.eclipse.tycho.surefire.osgibooter.HeadlessTestApplication.start(HeadlessTestApplication.java:29)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1432)
+
+[Fatal Error] :1:10: As estruturas do documento XML devem começar e terminar com a mesma entidade.
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.249 s -- in org.idempierelbr.nfe.test.SefazPostTest
+org.idempierelbr.nfe.test.SefazPostTest.post_explainsUnknownHost_whenNameResolutionFails -- Time elapsed: 0.932 s
+org.idempierelbr.nfe.test.SefazPostTest.send_throwsIllegalArgumentException_whenPayloadIsNull -- Time elapsed: 0.003 s
+org.idempierelbr.nfe.test.SefazPostTest.post_throwsAdempiereException_whenResponseIs500WithSoapFault -- Time elapsed: 0.780 s
+org.idempierelbr.nfe.test.SefazPostTest.post_throwsAdempiereException_whenResponseIs500WithNullErrorStream -- Time elapsed: 0.024 s
+org.idempierelbr.nfe.test.SefazPostTest.post_explainsFailure_whenReadFails -- Time elapsed: 0.036 s
+org.idempierelbr.nfe.test.SefazPostTest.post_explainsConnectionReset_whenServerDropsConnection -- Time elapsed: 0.016 s
+org.idempierelbr.nfe.test.SefazPostTest.post_throwsAdempiereException_whenEndpointIsHttp -- Time elapsed: 0.008 s
+org.idempierelbr.nfe.test.SefazPostTest.send_throwsIllegalArgumentException_whenPayloadIsBlank -- Time elapsed: 0.014 s
+org.idempierelbr.nfe.test.SefazPostTest.post_returnsInnerXml_whenResponseIs200 -- Time elapsed: 0.163 s
+org.idempierelbr.nfe.test.SefazPostTest.post_throwsAdempiereException_whenResponseExceedsMaxBytes -- Time elapsed: 0.191 s
+org.idempierelbr.nfe.test.SefazPostTest.send_throwsIllegalArgumentException_whenPayloadIsNotWellFormedXml -- Time elapsed: 0.054 s
+Running org.idempierelbr.nfe.test.NFeXMLParserTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.227 s -- in org.idempierelbr.nfe.test.NFeXMLParserTest
+org.idempierelbr.nfe.test.NFeXMLParserTest.parse_readsParties -- Time elapsed: 0.003 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.parse_readsReferencedNFe -- Time elapsed: 0.005 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.parse_readsTotalsAndProtocol -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.parse_readsBilling -- Time elapsed: 0.030 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.selectiveTax_isReadFromItem -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.selectiveTax_isAbsentOnFirstItem -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.ibsCbsGroups_areReadPerBlock -- Time elapsed: 0.004 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.parse_readsItems -- Time elapsed: 0.004 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.parse_startsWithoutProductMatch -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.parse_readsHeader -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.parse_readsPayments -- Time elapsed: 0.005 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.parse_readsReferencedPaperInvoice -- Time elapsed: 0 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.parse_readsChangeAndPaymentRule -- Time elapsed: 0 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.parse_readsAdvancePaymentReference -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.parse_readsAdditionalInfo -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeXMLParserTest.parse_readsFuelGroup -- Time elapsed: 0.001 s
+Running org.idempierelbr.nfe.test.CompositeTrustManagerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.241 s -- in org.idempierelbr.nfe.test.CompositeTrustManagerTest
+org.idempierelbr.nfe.test.CompositeTrustManagerTest.checkServerTrusted_returns_whenFirstDelegateAccepts -- Time elapsed: 0.002 s
+org.idempierelbr.nfe.test.CompositeTrustManagerTest.checkServerTrusted_returns_whenFallbackDelegateAccepts -- Time elapsed: 0.003 s
+org.idempierelbr.nfe.test.CompositeTrustManagerTest.checkServerTrusted_throwsLastException_whenAllDelegatesReject -- Time elapsed: 0.003 s
+org.idempierelbr.nfe.test.CompositeTrustManagerTest.getAcceptedIssuers_returnsUnionAcrossDelegates -- Time elapsed: 0.003 s
+Running org.idempierelbr.nfe.test.SefazSoapTest
+[Fatal Error] :1:31: DOCTYPE fica desativado quando o recurso "http://apache.org/xml/features/disallow-doctype-decl" é definido como verdadeiro.
+[Fatal Error] :1:12: As estruturas do documento XML devem começar e terminar com a mesma entidade.
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.172 s -- in org.idempierelbr.nfe.test.SefazSoapTest
+org.idempierelbr.nfe.test.SefazSoapTest.stripDadosMsgWrapper_returnsEmpty_whenWhitespaceOnly -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.SefazSoapTest.newHardenedDocumentBuilder_rejectsDoctype_whenDoctypePresent -- Time elapsed: 0.008 s
+org.idempierelbr.nfe.test.SefazSoapTest.stripDadosMsgWrapper_returnsInnerContent_whenAlreadyWrapped -- Time elapsed: 0 s
+org.idempierelbr.nfe.test.SefazSoapTest.buildEnvelope_containsSoapNamespace_whenStandardService -- Time elapsed: 0.046 s
+org.idempierelbr.nfe.test.SefazSoapTest.buildEnvelope_stripsPreExistingWrapper_whenDfeService -- Time elapsed: 0.003 s
+org.idempierelbr.nfe.test.SefazSoapTest.stripDadosMsgWrapper_returnsTrimmed_whenNotWrapped -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.SefazSoapTest.buildEnvelope_containsCorrectWsdlNamespace_whenStandardService -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.SefazSoapTest.extractSoapBodyContent_throwsAdempiereException_whenEmptyBody -- Time elapsed: 0.010 s
+org.idempierelbr.nfe.test.SefazSoapTest.buildEnvelope_stripsPreExistingWrapper_whenStandardService -- Time elapsed: 0.003 s
+org.idempierelbr.nfe.test.SefazSoapTest.buildEnvelope_producesParseableXml_whenStandardService -- Time elapsed: 0.008 s
+org.idempierelbr.nfe.test.SefazSoapTest.stripDadosMsgWrapper_returnsTrimmedAsIs_whenOnlyOpenTag -- Time elapsed: 0 s
+org.idempierelbr.nfe.test.SefazSoapTest.extractSoapBodyContent_throwsWithFaultCodeValue_whenSoapFaultHasNoText -- Time elapsed: 0.003 s
+org.idempierelbr.nfe.test.SefazSoapTest.extractSoapBodyContent_returnsServiceElement_whenSingleLevelBody -- Time elapsed: 0.010 s
+org.idempierelbr.nfe.test.SefazSoapTest.extractSoapBodyContent_throwsException_whenMalformedXml -- Time elapsed: 0.010 s
+org.idempierelbr.nfe.test.SefazSoapTest.buildEnvelope_usesCorrectNamespace_whenDfeService -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.SefazSoapTest.extractSoapBodyContent_throwsWithFaultTextReason_whenSoapFault -- Time elapsed: 0.006 s
+org.idempierelbr.nfe.test.SefazSoapTest.buildEnvelope_usesDistribuicaoWrapper_whenDfeService -- Time elapsed: 0.004 s
+org.idempierelbr.nfe.test.SefazSoapTest.newHardenedDocumentBuilder_parsesSuccessfully_whenValidXml -- Time elapsed: 0.003 s
+org.idempierelbr.nfe.test.SefazSoapTest.extractSoapBodyContent_throwsAdempiereException_whenNoBody -- Time elapsed: 0.007 s
+org.idempierelbr.nfe.test.SefazSoapTest.buildEnvelope_usesNfeDadosMsgWrapper_whenStandardService -- Time elapsed: 0.004 s
+org.idempierelbr.nfe.test.SefazSoapTest.extractSoapBodyContent_returnsInnerElement_whenTwoLevelBody -- Time elapsed: 0.006 s
+Running org.idempierelbr.nfe.test.DFeSearchFilterTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s -- in org.idempierelbr.nfe.test.DFeSearchFilterTest
+org.idempierelbr.nfe.test.DFeSearchFilterTest.appendWhere_dateToIncludesTheWholeLastDay -- Time elapsed: 0.028 s
+org.idempierelbr.nfe.test.DFeSearchFilterTest.describe_readsLikeTheUserTyped -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.DFeSearchFilterTest.appendWhere_emitterWithLettersSearchesName -- Time elapsed: 0.004 s
+org.idempierelbr.nfe.test.DFeSearchFilterTest.isEmpty_trueWithoutCriteriaOrWithBlankEmitter -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.DFeSearchFilterTest.appendWhere_nameWithDigitsIsStillName -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.DFeSearchFilterTest.validate_rejectsStartAfterEndButAcceptsSameDay -- Time elapsed: 0.004 s
+org.idempierelbr.nfe.test.DFeSearchFilterTest.appendWhere_maskedCnpjRootSearchesDocumentPrefix -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.DFeSearchFilterTest.appendWhere_addsNothingWhenEmpty -- Time elapsed: 0.001 s
+Running org.idempierelbr.nfe.test.IdentNFEOrderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in org.idempierelbr.nfe.test.IdentNFEOrderTest
+org.idempierelbr.nfe.test.IdentNFEOrderTest.debitAndCreditSubtypesComeRightAfterFinNFe -- Time elapsed: 0.002 s
+org.idempierelbr.nfe.test.IdentNFEOrderTest.gPagAntecipado_isDeclaredBetweenTpNFCreditoAndIndFinal -- Time elapsed: 0.008 s
+org.idempierelbr.nfe.test.IdentNFEOrderTest.advanceGroupStartsEmptyAndRejectsBlankKeys -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.IdentNFEOrderTest.identificationFieldsKeepTheLayoutOrder -- Time elapsed: 0 s
+org.idempierelbr.nfe.test.IdentNFEOrderTest.advanceGroupAcceptsOneKeyPerAdvanceNote -- Time elapsed: 0 s
+Running org.idempierelbr.nfe.test.NFeDistDFeUtilTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 s -- in org.idempierelbr.nfe.test.NFeDistDFeUtilTest
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.isCompleteSchema_isTrue_forProcSchemas -- Time elapsed: 0.006 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.normalizeNSU_trimsSpaces -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.normalizeNSU_keepsNSU_whenAlready15Digits -- Time elapsed: 0 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.normalizeNSU_padsWithZeros_whenShorterThan15Digits -- Time elapsed: 0 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.getDFeType_returnsNFE_whenSchemaIsProcNFe -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.normalizeNSU_rejects_whenNotNumeric -- Time elapsed: 0.004 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.getDFeType_returnsNFE_whenSchemaIsResNFe -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.getDFeType_returnsCTE_whenSchemaIsProcCTe -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.getDFeType_returnsEVT_whenSchemaIsResEvento -- Time elapsed: 0.004 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.getDFeType_returnsEVT_whenSchemaIsProcEventoNFe -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.getDFeType_returnsNFE_whenSchemaIsNull -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.getNFeID_fallsBackToInfNFeId_whenProtocolHasNoKey -- Time elapsed: 0.006 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.getNFeID_returnsNull_whenDocumentHasNoKey -- Time elapsed: 0.003 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.normalizeNSU_rejects_whenLongerThan15Digits -- Time elapsed: 0.001 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.isCompleteSchema_isFalse_forResSchemas -- Time elapsed: 0 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.getNFeID_readsKey_fromEvento -- Time elapsed: 0.003 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.getNFeID_readsKey_fromProtocol -- Time elapsed: 0.003 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.getNFeID_readsKey_fromResNFe -- Time elapsed: 0.002 s
+org.idempierelbr.nfe.test.NFeDistDFeUtilTest.isCompleteSchema_isFalse_whenSchemaIsNull -- Time elapsed: 0 s
+
+Results:
+
+Tests run: 143, Failures: 0, Errors: 0, Skipped: 0
+
+out. 06, 2026 2:07:22 PM org.adempiere.plugin.utils.AbstractActivator stop
+INFORMAÇÕES: org.idempierelbr.base 13.0.0.202610061705 stopped.
+[INFO] All tests passed
+[INFO] 
+[INFO] -----------------< org.idempierelbr:org.idempierelbr >------------------
+[INFO] Building org.idempierelbr 13.0.0-SNAPSHOT                        [20/20]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ org.idempierelbr ---
+[INFO] 
+[INFO] --- tycho-source:4.0.8:plugin-source (plugin-source) @ org.idempierelbr ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for org.idempierelbr 13.0.0-SNAPSHOT:
+[INFO] 
+[INFO] org.idempierelbr.base .............................. SUCCESS [ 12.164 s]
+[INFO] org.idempierelbr.core .............................. SUCCESS [  2.673 s]
+[INFO] org.idempierelbr.jasperfonts ....................... SUCCESS [  1.254 s]
+[INFO] org.idempierelbr.tax ............................... SUCCESS [  2.592 s]
+[INFO] org.idempierelbr.nfe ............................... SUCCESS [  5.728 s]
+[INFO] org.idempierelbr.nfs ............................... SUCCESS [  1.927 s]
+[INFO] org.idempierelbr.sped .............................. SUCCESS [  5.571 s]
+[INFO] org.idempierelbr.cnab240 ........................... SUCCESS [  1.366 s]
+[INFO] org.idempierelbr.open-items ........................ SUCCESS [  2.049 s]
+[INFO] org.idempierelbr.cnab240.febraban .................. SUCCESS [  2.321 s]
+[INFO] org.idempierelbr.cnab240.bancodobrasil ............. SUCCESS [  1.217 s]
+[INFO] org.idempierelbr.cnab240.banrisul .................. SUCCESS [  1.303 s]
+[INFO] org.idempierelbr.cnab240.bradesco .................. SUCCESS [  1.224 s]
+[INFO] org.idempierelbr.cnab240.caixa ..................... SUCCESS [  1.312 s]
+[INFO] org.idempierelbr.cnab240.itau ...................... SUCCESS [  1.348 s]
+[INFO] org.idempierelbr.cnab240.santander ................. SUCCESS [  1.419 s]
+[INFO] org.idempierelbr.cnab240.sicoob .................... SUCCESS [  1.130 s]
+[INFO] org.idempierelbr.extensions.p2 ..................... SUCCESS [ 16.851 s]
+[INFO] org.idempierelbr.test .............................. SUCCESS [ 19.105 s]
+[INFO] org.idempierelbr ................................... SUCCESS [  0.006 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:32 min
+[INFO] Finished at: 2026-10-06T14:07:23-03:00
+[INFO] ------------------------------------------------------------------------

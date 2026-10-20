@@ -26,9 +26,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 
-import org.compiere.acct.Doc;
-import org.compiere.acct.Fact;
-import org.compiere.acct.FactLine;
+import org.idempiere.acct.doc.Doc;
+import org.idempiere.acct.doc.Fact;
+import org.idempiere.acct.doc.FactLine;
 import org.compiere.model.MAccount;
 import org.compiere.model.MAcctSchema;
 import org.compiere.model.MAcctSchemaElement;
