@@ -5,12 +5,15 @@ import java.math.MathContext;
 import java.math.RoundingMode;
 import java.util.logging.Level;
 
+import org.compiere.model.Query;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
+import org.compiere.util.AdempiereUserError;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
 import org.idempierelbr.base.model.MLBRTaxName;
 import org.idempierelbr.sped.model.MLBRFactFiscal;
+import org.idempierelbr.sped.model.MLBRSPEDOptions;
 import org.idempierelbr.sped.model.X_LBR_TaxAssessment;
 
 
@@ -59,6 +62,15 @@ public class ProcTaxAssessment extends SvrProcess
 		
 		// carregar apuração
 		X_LBR_TaxAssessment m_taxassesment = new X_LBR_TaxAssessment(getCtx(), Record_ID, get_TrxName());
+		
+		// a atividade (LBR_SPED_Activity) dos fatos fiscais vem das Opções do SPED da organização;
+		// sem elas a regra de crédito abaixo não tem como ser decidida
+		boolean hasSPEDOptions = new Query(getCtx(), MLBRSPEDOptions.Table_Name, "AD_Org_ID=?", get_TrxName())
+				.setParameters(m_taxassesment.getAD_Org_ID())
+				.setOnlyActiveRecords(true)
+				.match();
+		if (!hasSPEDOptions)
+			throw new AdempiereUserError("Cadastre as Opções do SPED da organização antes de apurar os impostos");
 		
 		
 		// Fatos Fiscais
@@ -110,8 +122,8 @@ public class ProcTaxAssessment extends SvrProcess
 			 * 
 			 * Obs.: Ver regra no RC100
 			 */
-			if ((!m_factfiscal.getLBR_SPED_Activity().equals(MLBRFactFiscal.LBR_SPED_ACTIVITY_IndustryOrEquivalent)
-					&& m_factfiscal.getLBR_NFE_OperationType().equals(MLBRFactFiscal.LBR_NFE_OPERATIONTYPE_In)))
+			if ((!MLBRFactFiscal.LBR_SPED_ACTIVITY_IndustryOrEquivalent.equals(m_factfiscal.getLBR_SPED_Activity())
+					&& MLBRFactFiscal.LBR_NFE_OPERATIONTYPE_In.equals(m_factfiscal.getLBR_NFE_OperationType())))
 			{
 
 				// se não tiver ST na linha, se creditar do ICMS
@@ -125,7 +137,7 @@ public class ProcTaxAssessment extends SvrProcess
 			
 			
 			// débitos
-			if(m_factfiscal.getLBR_NFE_OperationType().equals("1"))
+			if(MLBRFactFiscal.LBR_NFE_OPERATIONTYPE_Out.equals(m_factfiscal.getLBR_NFE_OperationType()))
 			{
 				ICMSAmtDebit = ICMSAmtDebit.add(m_factfiscal.getLBR_ICMS_TaxAmt(), mc);
 				IPIAmtDebit = IPIAmtDebit.add(m_factfiscal.getLBR_IPI_TaxAmt(), mc);
@@ -198,7 +210,7 @@ public class ProcTaxAssessment extends SvrProcess
 		}
 		
 		// 
-		m_taxassesment.save();
+		m_taxassesment.saveEx();
 		
 		
 		//
