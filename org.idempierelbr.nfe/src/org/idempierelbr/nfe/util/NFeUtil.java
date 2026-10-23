@@ -620,8 +620,21 @@ public class NFeUtil {
 		else if (nf.isStatusCancelado())
 			fileExt = MLBRNotaFiscalEvent.INDIVIDUAL_CANCELAMENTO_FILE_EXT;
 
-		File xml = getAttachmentEntryFile(nf.getAttachment().getEntry(0));
-		if (xml == null || xml.getName().endsWith(fileExt)) // Já está no padrão de distribuição
+		// Busca pela chave atual: ao reativar a NF, o anexo pode manter a entrada do XML anterior
+		File xml = null;
+		MAttachment attachNFe = nf.getAttachment();
+		String xmlName = nf.getLBR_NFeID() + MLBRNotaFiscal.INDIVIDUAL_FILE_EXT;
+
+		if (attachNFe != null) {
+			for (MAttachmentEntry entry : attachNFe.getEntries()) {
+				if (entry.getName().equals(xmlName)) {
+					xml = getAttachmentEntryFile(entry);
+					break;
+				}
+			}
+		}
+
+		if (xml == null) // Sem XML individual ou já está no padrão de distribuição
 			return attach;
 
 		StringBuilder newXmlContent = new StringBuilder();
