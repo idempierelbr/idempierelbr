@@ -972,8 +972,25 @@ public class MLBRFactFiscal extends X_LBR_FactFiscal
 	public boolean isCancelled() {
 		// FIXME: verificar também a situação da NFe
 		boolean isCancelled = ! ( getDocStatus().equals("CO") || getDocStatus().equals("CL") );
-		
+
 		return isCancelled;
+	}
+
+	/**
+	 * NF-e sem autorização de uso: o documento pode estar concluído no sistema e a
+	 * NF-e ter sido cancelada (101), denegada ou rejeitada na SEFAZ.
+	 * <p>
+	 * Com a situação preenchida, só 100 (autorizada) e 150 (autorizada fora de
+	 * prazo) valem. Sem situação, só a NF-e/NFC-e emitida pela própria organização
+	 * é tida como não autorizada (nunca foi transmitida); documento de terceiro
+	 * lançado sem protocolo continua valendo.
+	 */
+	public boolean isNFeNotAuthorized() {
+		String status = getLBR_NFeStatus();
+		if (status != null && !status.trim().isEmpty())
+			return !("100".equals(status.trim()) || "150".equals(status.trim()));
+
+		return isLBR_IsDocIssuedByOrg() && ("55".equals(getLBR_NFeModel()) || "65".equals(getLBR_NFeModel()));
 	}
 
 	public boolean isService() {

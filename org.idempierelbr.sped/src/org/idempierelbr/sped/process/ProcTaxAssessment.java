@@ -110,9 +110,9 @@ public class ProcTaxAssessment extends SvrProcess
 				continue;
 			
 			/*
-			 * NF cancelada
+			 * NF cancelada, ou NF-e sem autorização de uso na SEFAZ
 			 */
-			if(m_factfiscal.isCancelled())
+			if(m_factfiscal.isCancelled() || m_factfiscal.isNFeNotAuthorized())
 				continue;
 			
 			
