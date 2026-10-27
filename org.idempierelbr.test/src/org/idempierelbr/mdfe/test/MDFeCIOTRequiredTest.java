@@ -13,13 +13,22 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.withSettings;
 
+import java.io.ByteArrayInputStream;
 import java.math.BigDecimal;
+import java.nio.charset.StandardCharsets;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Random;
 import java.util.function.Supplier;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MBPartner;
@@ -71,6 +80,11 @@ class MDFeCIOTRequiredTest {
 	private static final String ISSUER_CNPJ = "12345678000199";
 	private static final String CIOT = "123456789012";
 	private static final String REJECTION_684 = "rejeicao 684";
+
+	private static final Pattern CIOT_ELEMENT = Pattern.compile("<CIOT>(.*?)</CIOT>");
+	/** XSD types TCnpjOpc (alphanumeric CNPJ) and TCpf. */
+	private static final Pattern CNPJ_TYPE = Pattern.compile("[A-Z0-9]{12}[0-9]{2}");
+	private static final Pattern CPF_TYPE = Pattern.compile("[0-9]{11}");
 
 	/** What each child table answers, read by read; tables not listed have no rows. */
 	private final Map<String, Supplier<List<?>>> children = new HashMap<>();
@@ -331,7 +345,283 @@ class MDFeCIOTRequiredTest {
 				.noneMatch(error -> error.contains("infPag"));
 	}
 
+	/** A CNPJ field holding only separators or symbols hides the valid CPF next to it. */
+	@Test
+	@Disabled("Defect (predates the CIOT check): escreverCpfOuCnpj takes the CNPJ branch for any non-blank CNPJ,"
+			+ " writes nothing, and never tries the CPF")
+	void finding_junkCnpjDoesNotHideAValidCpf() {
+		serviceProvider();
+		X_LBR_MDFeCIOT row = ciot(CIOT, "./-");
+		when(row.getLBR_CPF()).thenReturn("12345678909");
+		ciots(row);
+
+		assertThat(generate()).contains("<CPF>12345678909</CPF>");
+	}
+
+	/** String.toUpperCase() follows the JVM default locale; in Turkish, 'i' becomes a dotted capital I. */
+	@Test
+	@Disabled("Defect (predates the CIOT check): soLetrasEDigitos upper-cases with the default locale")
+	void finding_alphanumericCnpjSurvivesTurkishLocale() {
+		Locale saved = Locale.getDefault();
+		try {
+			Locale.setDefault(Locale.forLanguageTag("tr-TR"));
+			serviceProvider();
+			ciots(ciot(CIOT, "12abcdefghi135"));
+
+			assertThat(generate()).contains("<CNPJ>12ABCDEFGHI135</CNPJ>");
+		} finally {
+			Locale.setDefault(saved);
+		}
+	}
+
+	// ------------------------------------------- every combination of inputs
+
+	/**
+	 * Every combination of tpEmit, tpTransp, modal, truck owner and CIOT rows,
+	 * judged by the rule as the NT writes it, not by the code: 684 exactly when
+	 * the modal is road (1), the operation is for hire (tpEmit 1 or 3, or 2
+	 * with tpTransp) and no active row has an ASCII digit. tpTransp on an own
+	 * truck stops at 745 first. A well-formed manifest the rule does not block
+	 * must generate.
+	 */
+	@Test
+	void decision684_followsTheRuleOnEveryCombination() {
+		String[] tpEmits = { null, "", "1", "2", "3", "9" };
+		String[] tpTransps = { null, " ", "1", "2", "3" };
+		String[] modals = { null, "1", "2", "3", "4" };
+		List<X_LBR_MDFeCIOT> elevenDigits = List.of(ciot("12345678901", ISSUER_CNPJ));
+		List<List<X_LBR_MDFeCIOT>> rowSets = List.of(
+				List.of(),
+				List.of(ciot(null, ISSUER_CNPJ)),
+				List.of(ciot("   ", ISSUER_CNPJ)),
+				List.of(ciot("ABCD-EFGH", ISSUER_CNPJ)),
+				List.of(ciot("１２３４５６７８９０１２", ISSUER_CNPJ)),
+				List.of(ciot(CIOT, ISSUER_CNPJ)),
+				List.of(ciot("1234.5678-9012", ISSUER_CNPJ)),
+				List.of(ciot(null, ISSUER_CNPJ), ciot(CIOT, ISSUER_CNPJ)),
+				elevenDigits);
+
+		// One stub per getter, answered from the current case: re-stubbing on
+		// every case makes each Mockito lookup scan all earlier stubs.
+		Object[] current = new Object[5];
+		when(mdfe.getLBR_tpEmit()).thenAnswer(invocation -> current[0]);
+		when(mdfe.getLBR_tpTransp()).thenAnswer(invocation -> current[1]);
+		when(mdfe.getLBR_Modal()).thenAnswer(invocation -> current[2]);
+		when(mdfe.isLBR_IsOwnerNotEmitter()).thenAnswer(invocation -> current[3]);
+		children.put(X_LBR_MDFeCIOT.Table_Name, () -> (List<?>) current[4]);
+		thirdPartyOwner();
+
+		List<String> violations = new ArrayList<>();
+		for (String tpEmit : tpEmits)
+			for (String tpTransp : tpTransps)
+				for (String modal : modals)
+					for (boolean thirdParty : new boolean[] { false, true })
+						for (List<X_LBR_MDFeCIOT> rows : rowSets) {
+							current[0] = tpEmit;
+							current[1] = tpTransp;
+							current[2] = modal;
+							current[3] = thirdParty;
+							current[4] = rows;
+							String message = messageOf(failure());
+							String label = String.format("tpEmit=%s tpTransp=%s modal=%s thirdParty=%s rows#%d",
+									show(tpEmit), show(tpTransp), show(modal), thirdParty, rowSets.indexOf(rows));
+
+							boolean hasTransp = tpTransp != null && !tpTransp.isBlank();
+							if (hasTransp && !thirdParty) {
+								if (message == null || !message.contains("rejeicao 745"))
+									violations.add(label + ": expected 745, got " + message);
+								continue;
+							}
+
+							boolean forHire = "1".equals(tpEmit) || "3".equals(tpEmit) || ("2".equals(tpEmit) && hasTransp);
+							boolean informed = rows.stream()
+									.anyMatch(row -> !HostileInput.asciiDigits(row.getLBR_CIOT()).isEmpty());
+							boolean expect684 = "1".equals(modal) && forHire && !informed;
+							if (expect684 != (message != null && message.contains(REJECTION_684)))
+								violations.add(label + ": expected 684=" + expect684 + ", got " + message);
+
+							boolean wellFormed = Arrays.asList("1", "2", "3").contains(tpEmit) && "1".equals(modal)
+									&& rows != elevenDigits;
+							if (!expect684 && wellFormed && message != null)
+								violations.add(label + ": refused a valid manifest: " + message);
+						}
+
+		assertThat(violations).isEmpty();
+	}
+
+	// ------------------------------------------------- seeded hostile input
+
+	/**
+	 * Hostile numbers: the XML never carries a CIOT that is not twelve ASCII
+	 * digits, a value with twelve of them always generates, and a value with
+	 * none is blocked by 684.
+	 */
+	@Test
+	void fuzz_numberNeverReachesTheXmlMalformed() {
+		serviceProvider();
+		Random random = new Random(HostileInput.SEED);
+		List<String> violations = new ArrayList<>();
+
+		for (int i = 0; i < HostileInput.CASES; i++) {
+			String number = HostileInput.number(random);
+			ciots(ciot(number, ISSUER_CNPJ));
+			int digits = HostileInput.asciiDigits(number).length();
+			String label = "#" + i + " [" + HostileInput.escape(number) + "]";
+
+			String[] xml = new String[1];
+			Throwable failure = catchThrowable(() -> xml[0] = generate());
+
+			if (failure == null) {
+				checkWellFormed(xml[0], label, violations);
+				Matcher written = CIOT_ELEMENT.matcher(xml[0]);
+				while (written.find())
+					if (!written.group(1).matches("[0-9]{12}"))
+						violations.add(label + ": wrote <CIOT>" + HostileInput.escape(written.group(1)));
+				if (digits != 12)
+					violations.add(label + ": accepted " + digits + " digits");
+			} else if (digits == 12) {
+				violations.add(label + ": refused: " + failure.getMessage());
+			} else if (digits == 0 && !messageOf(failure).contains(REJECTION_684)) {
+				violations.add(label + ": expected 684, got " + failure.getMessage());
+			}
+		}
+
+		assertThat(violations).isEmpty();
+	}
+
+	/**
+	 * Hostile CNPJ/CPF of the responsible, with a valid number. The CNPJ is
+	 * written when it has a letter or a digit, otherwise the CPF; the manifest
+	 * generates exactly when that document fits its XSD type. A CNPJ of junk
+	 * only is {@link #finding_junkCnpjDoesNotHideAValidCpf()}.
+	 */
+	@Test
+	void fuzz_responsibleDocument() {
+		serviceProvider();
+		Random random = new Random(HostileInput.SEED + 1);
+		List<String> violations = new ArrayList<>();
+
+		for (int i = 0; i < HostileInput.CASES; i++) {
+			String cnpj = HostileInput.cnpj(random);
+			String cpf = HostileInput.cpf(random);
+			String cnpjWritten = lettersAndDigits(cnpj);
+			if (cnpj != null && !cnpj.trim().isEmpty() && cnpjWritten.isEmpty())
+				continue;
+
+			X_LBR_MDFeCIOT row = ciot(CIOT, cnpj);
+			when(row.getLBR_CPF()).thenReturn(cpf);
+			ciots(row);
+			boolean valid = cnpjWritten.isEmpty() ? CPF_TYPE.matcher(HostileInput.asciiDigits(cpf)).matches()
+					: CNPJ_TYPE.matcher(cnpjWritten).matches();
+			String label = "#" + i + " CNPJ=[" + HostileInput.escape(cnpj) + "] CPF=[" + HostileInput.escape(cpf) + "]";
+
+			String[] xml = new String[1];
+			Throwable failure = catchThrowable(() -> xml[0] = generate());
+
+			if (failure == null) {
+				checkWellFormed(xml[0], label, violations);
+				if (!valid)
+					violations.add(label + ": accepted");
+			} else if (valid) {
+				violations.add(label + ": refused: " + failure.getMessage());
+			}
+		}
+
+		assertThat(violations).isEmpty();
+	}
+
+	/**
+	 * Random sets of 0 to 6 rows. 684 when no row has a digit; otherwise the
+	 * manifest generates exactly when every row fits the XSD - number empty or
+	 * twelve digits, valid CNPJ - with one infCIOT per row. The schema accepts
+	 * infCIOT without CIOT.
+	 */
+	@Test
+	void fuzz_rowSets() {
+		serviceProvider();
+		Random random = new Random(HostileInput.SEED + 2);
+		List<String> violations = new ArrayList<>();
+
+		for (int i = 0; i < HostileInput.CASES; i++) {
+			int size = random.nextInt(7);
+			List<X_LBR_MDFeCIOT> rows = new ArrayList<>();
+			boolean anyDigit = false;
+			boolean allFit = true;
+			StringBuilder label = new StringBuilder("#" + i);
+
+			for (int r = 0; r < size; r++) {
+				String number = random.nextInt(3) == 0 ? CIOT : HostileInput.number(random);
+				String cnpj = random.nextInt(3) == 0 ? ISSUER_CNPJ : HostileInput.cnpj(random);
+				rows.add(ciot(number, cnpj));
+				label.append(" [").append(HostileInput.escape(number)).append(" / ")
+						.append(HostileInput.escape(cnpj)).append(']');
+
+				int digits = HostileInput.asciiDigits(number).length();
+				anyDigit |= digits > 0;
+				allFit &= (digits == 0 || digits == 12) && CNPJ_TYPE.matcher(lettersAndDigits(cnpj)).matches();
+			}
+			children.put(X_LBR_MDFeCIOT.Table_Name, () -> rows);
+
+			String[] xml = new String[1];
+			Throwable failure = catchThrowable(() -> xml[0] = generate());
+
+			if (failure == null) {
+				checkWellFormed(xml[0], label.toString(), violations);
+				if (!anyDigit || !allFit)
+					violations.add(label + ": accepted");
+				int groups = xml[0].split("<infCIOT>", -1).length - 1;
+				if (groups != size)
+					violations.add(label + ": " + groups + " infCIOT groups for " + size + " rows");
+			} else if (!anyDigit && !messageOf(failure).contains(REJECTION_684)) {
+				violations.add(label + ": expected 684, got " + failure.getMessage());
+			} else if (anyDigit && allFit) {
+				violations.add(label + ": refused: " + failure.getMessage());
+			}
+		}
+
+		assertThat(violations).isEmpty();
+	}
+
+	/** The form caps CIOT rows at 10, the window does not; the XSD is unbounded. */
+	@ParameterizedTest(name = "{0} rows")
+	@ValueSource(ints = { 1, 11, 1000 })
+	void writesEveryRow(int count) {
+		serviceProvider();
+		List<X_LBR_MDFeCIOT> rows = new ArrayList<>();
+		for (int i = 1; i <= count; i++)
+			rows.add(ciot(String.format("%012d", i), ISSUER_CNPJ));
+		children.put(X_LBR_MDFeCIOT.Table_Name, () -> rows);
+
+		String xml = generate();
+
+		assertThat(xml.split("<infCIOT>", -1).length - 1).isEqualTo(count);
+		assertThat(xml).contains("<CIOT>" + String.format("%012d", count) + "</CIOT>");
+	}
+
 	// ----------------------------------------------------------------- helpers
+
+	private static String messageOf(Throwable failure) {
+		return failure == null ? null : String.valueOf(failure.getMessage());
+	}
+
+	/** What escreverCpfOuCnpj writes for a CNPJ. */
+	private static String lettersAndDigits(String cnpj) {
+		return cnpj == null ? "" : cnpj.replaceAll("[^A-Za-z0-9]", "").toUpperCase(Locale.ROOT);
+	}
+
+	private static String show(String value) {
+		return value == null ? "null" : "[" + HostileInput.escape(value) + "]";
+	}
+
+	private static void checkWellFormed(String xml, String label, List<String> violations) {
+		try {
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			factory.setNamespaceAware(true);
+			factory.newDocumentBuilder().parse(new ByteArrayInputStream(xml.getBytes(StandardCharsets.UTF_8)));
+		} catch (Exception e) {
+			violations.add(label + ": XML not well-formed: " + e.getMessage());
+		}
+	}
 
 	private String generate() {
 		return new MDFeXMLGenerator(mdfe).gerar();
@@ -349,6 +639,11 @@ class MDFeCIOTRequiredTest {
 	private void ownCargoByHiredCarrier(String tpTransp) {
 		when(mdfe.getLBR_tpTransp()).thenReturn(tpTransp);
 		when(mdfe.isLBR_IsOwnerNotEmitter()).thenReturn(true);
+		thirdPartyOwner();
+	}
+
+	/** Owner of a truck that belongs to someone else; written only when isLBR_IsOwnerNotEmitter. */
+	private void thirdPartyOwner() {
 		when(mdfe.getLBR_PropCNPJ()).thenReturn("98765432000155");
 		when(mdfe.getLBR_PropRNTRC()).thenReturn("87654321");
 		when(mdfe.getLBR_PropName()).thenReturn("TRANSPORTES TERCEIRO LTDA");
