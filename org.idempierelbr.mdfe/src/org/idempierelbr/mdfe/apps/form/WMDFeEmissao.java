@@ -418,8 +418,9 @@ public class WMDFeEmissao extends MDFeEmissao
 						MDFeCampo.digitos("LBR_CPF", "CPF", 11)),
 				idDoMDFe, orgDoMDFe).comMaximo(10);
 
+		// 12 digitos: tipo TCIOT do schema do modal rodoviario.
 		secaoCIOT = new WMDFeSecaoFilhos(m_WindowNo, "CIOT", "LBR_MDFeCIOT",
-				List.of(MDFeCampo.digitosReq("LBR_CIOT", "Numero do CIOT"),
+				List.of(MDFeCampo.digitosReq("LBR_CIOT", "Numero do CIOT", 12),
 						MDFeCampo.documento("CNPJ/CPF do responsavel", "LBR_CNPJ", "LBR_CPF", true)),
 				idDoMDFe, orgDoMDFe).comMaximo(10);
 

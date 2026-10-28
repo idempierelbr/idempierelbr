@@ -107,6 +107,12 @@ public class MDFeCampo
 		return new MDFeCampo(coluna, rotulo, Tipo.DIGITOS, null, null, true);
 	}
 
+	/** Digitos obrigatorios, com tamanho fixo. */
+	public static MDFeCampo digitosReq(String coluna, String rotulo, int tamanhoExato)
+	{
+		return new MDFeCampo(coluna, rotulo, Tipo.DIGITOS, null, null, true, tamanhoExato);
+	}
+
 	public static MDFeCampo inteiro(String coluna, String rotulo)
 	{
 		return new MDFeCampo(coluna, rotulo, Tipo.INTEIRO, null, null, false);

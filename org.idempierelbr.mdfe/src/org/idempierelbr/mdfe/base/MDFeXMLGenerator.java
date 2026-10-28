@@ -145,8 +145,15 @@ public class MDFeXMLGenerator
 		MDFeXsdValidator.validarEx(xmlAssinado, MDFeXsdValidator.XSD_MDFE);
 	}
 
-	/** Regra F54 do MOC: quem precisa declarar o produto predominante. */
-	private boolean exigeProdutoPredominante()
+	/**
+	 * Operacao com servico de transporte remunerado: prestador de servico de
+	 * transporte, emitente de CT-e globalizado, ou transportador de carga
+	 * propria que informa o tipo do transportador contratado.
+	 *
+	 * <p>E o publico de duas regras: a F54 do MOC (produto predominante,
+	 * rejeicao 725) e a da NT 2026.001 (CIOT, rejeicao 684).
+	 */
+	private boolean isTransporteRemunerado()
 	{
 		String tpEmit = mdfe.getLBR_tpEmit();
 
@@ -154,6 +161,21 @@ public class MDFeXMLGenerator
 				|| X_LBR_MDFe.LBR_TPEMIT_PrestadorQueEmitiraCT_EGlobalizado.equals(tpEmit)
 				|| (X_LBR_MDFe.LBR_TPEMIT_TransportadorDeCargaPropria.equals(tpEmit)
 						&& !isVazio(mdfe.getLBR_tpTransp()));
+	}
+
+	/**
+	 * {@code true} se ao menos uma linha de CIOT tem numero.
+	 *
+	 * <p>Linha sem numero nao conta: o schema aceita infCIOT sem a tag CIOT,
+	 * mas um grupo assim nao informa CIOT nenhum.
+	 */
+	private boolean temCIOT()
+	{
+		for (X_LBR_MDFeCIOT ciot : this.<X_LBR_MDFeCIOT>filhos(X_LBR_MDFeCIOT.Table_Name))
+			if (!isVazio(MDFeUtil.soDigitos(ciot.getLBR_CIOT())))
+				return true;
+
+		return false;
 	}
 
 	/**
@@ -208,10 +230,20 @@ public class MDFeXMLGenerator
 		// Rejeicao 725. O produto predominante deixa de ser facultativo para
 		// prestador de servico, para quem emite CT-e globalizado, e para o
 		// transportador proprio que informa o tipo de transportador.
-		if (isVazio(mdfe.getLBR_ProdPred()) && exigeProdutoPredominante())
+		if (isVazio(mdfe.getLBR_ProdPred()) && isTransporteRemunerado())
 			throw new AdempiereException(
 					"Informe o produto predominante e o tipo de carga (rejeicao 725):"
 					+ " sao obrigatorios para prestador de servico de transporte, para"
+					+ " emitente de CT-e globalizado, e para transportador proprio que"
+					+ " informa o tipo de transportador.");
+
+		// Rejeicao 684 (NT 2026.001). No modal rodoviario, o mesmo publico da
+		// regra acima passa a ter de informar o CIOT.
+		if (X_LBR_MDFe.LBR_MODAL_Rodoviario.equals(mdfe.getLBR_Modal())
+				&& isTransporteRemunerado() && !temCIOT())
+			throw new AdempiereException(
+					"Informe o CIOT na aba ANTT (rejeicao 684): obrigatorio no modal"
+					+ " rodoviario para prestador de servico de transporte, para"
 					+ " emitente de CT-e globalizado, e para transportador proprio que"
 					+ " informa o tipo de transportador.");
 
