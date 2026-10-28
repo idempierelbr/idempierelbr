@@ -1981,6 +1981,17 @@ public class NFeXMLGenerator {
 
 		// get nfe ID
 		String nfeID = dados.getId().substring(3);
+
+		// ZD. Informações do Responsável Técnico
+		dados.setInfRespTec(NFeUtil.createInfRespTec(
+				MSysConfig.getValue("LBR_RESPTEC_CNPJ", "", nf.getAD_Client_ID(), nf.getAD_Org_ID()),
+				MSysConfig.getValue("LBR_RESPTEC_CONTACT", "", nf.getAD_Client_ID(), nf.getAD_Org_ID()),
+				MSysConfig.getValue("LBR_RESPTEC_EMAIL", "", nf.getAD_Client_ID(), nf.getAD_Org_ID()),
+				MSysConfig.getValue("LBR_RESPTEC_PHONE", "", nf.getAD_Client_ID(), nf.getAD_Org_ID()),
+				MSysConfig.getValue("LBR_RESPTEC_IDCSRT", "", nf.getAD_Client_ID(), nf.getAD_Org_ID()),
+				MSysConfig.getValue("LBR_RESPTEC_CSRT", "", nf.getAD_Client_ID(), nf.getAD_Org_ID()),
+				nfeID));
+
 		StringBuilder nfeXML = new StringBuilder(NFeUtil.removeIndent(
 				NFeUtil.geraCabecNFe() + TextUtil.removeEOL(xstream.toXML(dados)) + NFeUtil.geraRodapNFe()));
 

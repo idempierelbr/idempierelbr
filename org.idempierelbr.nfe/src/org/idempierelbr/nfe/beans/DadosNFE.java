@@ -41,6 +41,7 @@ public class DadosNFE
 	private InfIntermed infIntermed;
 	private InfAdiFisco infAdic;
 	private InfComex exporta;
+	private InfRespTec infRespTec;
 	private InfAssinatura Signature;
 
 	
@@ -143,6 +144,12 @@ public class DadosNFE
 	}
 	public void setExporta(InfComex exporta) {
 		this.exporta = exporta;
+	}
+	public InfRespTec getInfRespTec() {
+		return infRespTec;
+	}
+	public void setInfRespTec(InfRespTec infRespTec) {
+		this.infRespTec = infRespTec;
 	}
 	public void addPag(FormasPagamentoNFEBean pagamento){
 		this.pag.add(pagamento);

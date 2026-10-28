@@ -19,6 +19,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.sql.Timestamp;
 import java.util.HashMap;
@@ -55,6 +56,7 @@ import org.idempierelbr.base.model.MLBRNotaFiscal;
 import org.idempierelbr.base.model.MLBRNotaFiscalEvent;
 import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.nfe.base.NFeXMLGenerator;
+import org.idempierelbr.nfe.beans.InfRespTec;
 import org.idempierelbr.nfe.model.NFTaxProvider;
 import org.idempierelbr.tax.provider.TaxProviderFactory;
 import org.w3c.dom.Document;
@@ -620,8 +622,21 @@ public class NFeUtil {
 		else if (nf.isStatusCancelado())
 			fileExt = MLBRNotaFiscalEvent.INDIVIDUAL_CANCELAMENTO_FILE_EXT;
 
-		File xml = getAttachmentEntryFile(nf.getAttachment().getEntry(0));
-		if (xml == null || xml.getName().endsWith(fileExt)) // Já está no padrão de distribuição
+		// Busca pela chave atual: ao reativar a NF, o anexo pode manter a entrada do XML anterior
+		File xml = null;
+		MAttachment attachNFe = nf.getAttachment();
+		String xmlName = nf.getLBR_NFeID() + MLBRNotaFiscal.INDIVIDUAL_FILE_EXT;
+
+		if (attachNFe != null) {
+			for (MAttachmentEntry entry : attachNFe.getEntries()) {
+				if (entry.getName().equals(xmlName)) {
+					xml = getAttachmentEntryFile(entry);
+					break;
+				}
+			}
+		}
+
+		if (xml == null) // Sem XML individual ou já está no padrão de distribuição
 			return attach;
 
 		StringBuilder newXmlContent = new StringBuilder();
@@ -771,6 +786,53 @@ public class NFeUtil {
 	public static String getDigestBase64String(byte[] data) throws Exception {
 		MessageDigest messageDisgester = MessageDigest.getInstance("SHA-1");
 		return java.util.Base64.getEncoder().encodeToString(messageDisgester.digest(data));
+	}
+
+	/**
+	 * Monta o grupo ZD (Responsável Técnico, NT 2018.005) a partir das SysConfig LBR_RESPTEC_*.
+	 * O CSRT é opcional; quando informado, o hashCSRT é o SHA-1 em Base64 de CSRT + chave de acesso.
+	 *
+	 * @param chNFe chave de acesso da NF-e (44 posições)
+	 * @return grupo preenchido, ou null quando LBR_RESPTEC_CNPJ não está configurada
+	 * @throws AdempiereException configuração incompleta ou fora do leiaute
+	 */
+	public static InfRespTec createInfRespTec(String cnpj, String contact, String email, String phone,
+			String idCSRT, String csrt, String chNFe) throws Exception {
+		cnpj = TextUtil.removeCNPJMask(cnpj).trim();
+		if (cnpj.isEmpty())
+			return null;
+
+		contact = contact == null ? "" : contact.trim();
+		email = email == null ? "" : email.trim();
+		phone = TextUtil.toNumeric(phone);
+		idCSRT = idCSRT == null ? "" : idCSRT.trim();
+		csrt = csrt == null ? "" : csrt.trim();
+
+		if (cnpj.length() != 14)
+			throw new AdempiereException("LBR_RESPTEC_CNPJ deve ter 14 posições");
+		if (contact.length() < 2 || contact.length() > 60)
+			throw new AdempiereException("LBR_RESPTEC_CONTACT deve ter de 2 a 60 caracteres");
+		if (email.length() < 6 || email.length() > 60)
+			throw new AdempiereException("LBR_RESPTEC_EMAIL deve ter de 6 a 60 caracteres");
+		if (phone.length() < 6 || phone.length() > 14)
+			throw new AdempiereException("LBR_RESPTEC_PHONE deve ter de 6 a 14 dígitos");
+		if (idCSRT.isEmpty() != csrt.isEmpty())
+			throw new AdempiereException("LBR_RESPTEC_IDCSRT e LBR_RESPTEC_CSRT devem ser informadas juntas");
+		if (!idCSRT.isEmpty() && !idCSRT.matches("[0-9]{2}"))
+			throw new AdempiereException("LBR_RESPTEC_IDCSRT deve ter 2 dígitos (ex.: 01)");
+
+		InfRespTec infRespTec = new InfRespTec();
+		infRespTec.setCNPJ(cnpj);
+		infRespTec.setxContato(contact);
+		infRespTec.setEmail(email);
+		infRespTec.setFone(phone);
+
+		if (!csrt.isEmpty()) {
+			infRespTec.setIdCSRT(idCSRT);
+			infRespTec.setHashCSRT(getDigestBase64String((csrt + chNFe).getBytes(StandardCharsets.UTF_8)));
+		}
+
+		return infRespTec;
 	}
 
 	/**

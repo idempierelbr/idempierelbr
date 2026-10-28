@@ -26,6 +26,33 @@
           </excludes>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <dependency-resolution>
+            <!-- Database provider and event admin for the *IT tests: AbstractTestCase calls Adempiere.startup -->
+            <extraRequirements combine.children="append">
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>org.eclipse.equinox.event</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>org.adempiere.install</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>org.compiere.db.postgresql.provider</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+            </extraRequirements>
+          </dependency-resolution>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>

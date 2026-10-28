@@ -62,6 +62,23 @@ Alterações em `AD_SysConfig` são lidas em cache; reinicie o servidor ou use *
 
 **`LBR_NFe_CreateISSQNLines`** — Com `N`, produtos do tipo *Serviço* são ignorados ao gerar a Nota Fiscal a partir do documento de origem (Pedido, Fatura, Remessa ou RMA). Indicado para quem emite os serviços separadamente em NFS-e.
 
+## NF-e — Responsável Técnico
+
+Grupo ZD (`infRespTec`) da NF-e e da NFC-e, definido na NT 2018.005: identifica a empresa responsável pelo sistema emissor. A obrigatoriedade é de cada UF; a SEFAZ-MS, por exemplo, rejeita a nota sem o grupo com **cStat 972** (*"Obrigatoria as informacoes do responsavel tecnico"*). Nenhuma vem no seed: sem `LBR_RESPTEC_CNPJ`, o grupo não é gerado.
+
+| SysConfig | Valores | Padrão | Nível | Para que serve |
+|---|---|---|---|---|
+| `LBR_RESPTEC_CNPJ` | CNPJ (com ou sem máscara) | *(vazio)* | Organização | CNPJ do responsável técnico; liga a geração do grupo |
+| `LBR_RESPTEC_CONTACT` | Texto (2 a 60 caracteres) | *(vazio)* | Organização | Nome da pessoa de contato (`xContato`) |
+| `LBR_RESPTEC_EMAIL` | Texto (6 a 60 caracteres) | *(vazio)* | Organização | E-mail de contato |
+| `LBR_RESPTEC_PHONE` | Telefone (6 a 14 dígitos) | *(vazio)* | Organização | Telefone de contato, com DDD |
+| `LBR_RESPTEC_IDCSRT` | 2 dígitos (`01`, `02`…) | *(vazio)* | Organização | Identificador do CSRT fornecido pela SEFAZ |
+| `LBR_RESPTEC_CSRT` | Texto | *(vazio)* | Organização | Código de Segurança do Responsável Técnico (CSRT) |
+
+**`LBR_RESPTEC_CNPJ`** — Com o CNPJ preenchido, contato, e-mail e telefone passam a ser obrigatórios: se algum faltar ou estiver fora do tamanho do leiaute, a geração do XML falha com a SysConfig a corrigir na mensagem. Máscaras do CNPJ e do telefone são removidas automaticamente.
+
+**`LBR_RESPTEC_IDCSRT` / `LBR_RESPTEC_CSRT`** — Opcionais, mas devem ser informadas juntas. Só são necessárias nas UFs que exigem o CSRT; nesse caso o LBR envia o `idCSRT` e o `hashCSRT` (SHA-1 em Base64 do CSRT concatenado com a chave de acesso). Como o CSRT é emitido por UF, configure-o por Organização quando houver filiais em UFs diferentes.
+
 ## NF-e — importação de XML e DF-e
 
 | SysConfig | Valores | Padrão | Nível | Para que serve |

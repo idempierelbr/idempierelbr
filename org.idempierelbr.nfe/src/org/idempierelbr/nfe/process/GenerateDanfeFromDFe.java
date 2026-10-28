@@ -17,6 +17,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,6 +30,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 import org.adempiere.base.Service;
 import org.adempiere.exceptions.AdempiereException;
 import org.adempiere.report.jasper.JRViewerProvider;
+import org.adempiere.report.jasper.JRViewerProviderList;
 import org.compiere.model.MBPartner;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.PrintInfo;
@@ -54,11 +56,12 @@ import org.w3c.dom.Document;
  * <p>O leiaute é o mesmo da janela de Nota Fiscal, inclusive o jasper anexado
  * ao processo da DANFE, se houver.
  *
+ * <p>Com vários documentos selecionados na grade, as DANFEs saem num PDF só,
+ * na ordem em que foram marcados.
+ *
  * @author Alan Lescano
  */
 public class GenerateDanfeFromDFe extends SvrProcess {
-
-	private int p_LBR_NFeXML_ID = 0;
 
 	@Override
 	protected void prepare() {
@@ -73,29 +76,112 @@ public class GenerateDanfeFromDFe extends SvrProcess {
 				log.log(Level.SEVERE, "Unknown Parameter: " + name);
 			}
 		}
-
-		p_LBR_NFeXML_ID = getRecord_ID();
 	}
 
 	@Override
 	protected String doIt() throws Exception {
-		if (p_LBR_NFeXML_ID <= 0)
+		List<Integer> ids = getSelectedIDs();
+
+		if (ids.isEmpty())
 			throw new AdempiereException("Documento inválido!");
 
-		MLBRNFeXML dfe = new MLBRNFeXML(getCtx(), p_LBR_NFeXML_ID, get_TrxName());
+		List<JasperPrint> prints = new ArrayList<JasperPrint>();
+		String documentNo = null;
 
+		for (int LBR_NFeXML_ID : ids) {
+			MLBRNFeXML dfe = new MLBRNFeXML(getCtx(), LBR_NFeXML_ID, get_TrxName());
+			byte[] xml = dfe.getXML();
+
+			String error = validate(dfe, xml);
+
+			if (error != null) {
+				// sozinho, o documento devolve o próprio motivo; num lote, o que
+				// não imprime fica no log e não impede os demais
+				if (ids.size() == 1)
+					throw new AdempiereException(error);
+
+				addLog(dfe.getDocumentNo() + ": " + error);
+				continue;
+			}
+
+			JasperPrint jasperPrint;
+
+			try {
+				jasperPrint = createDanfe(dfe, xml);
+			} catch (Exception e) {
+				if (ids.size() == 1)
+					throw e;
+
+				// num lote, a falha precisa dizer de qual documento veio
+				throw new AdempiereException(dfe.getDocumentNo() + ": " + e.getLocalizedMessage(), e);
+			}
+
+			markAsPrinted(dfe);
+
+			prints.add(jasperPrint);
+			documentNo = dfe.getDocumentNo();
+		}
+
+		if (prints.isEmpty())
+			throw new AdempiereException("Nenhum dos documentos selecionados pode ser impresso.");
+
+		if (!getProcessInfo().isBatch()) {
+			PrintInfo pi = new PrintInfo(getProcessInfo());
+
+			if (prints.size() == 1) {
+				JRViewerProvider viewerLauncher = Service.locator().locate(JRViewerProvider.class).getService();
+				viewerLauncher.openViewer(prints.get(0), "DANFE " + documentNo, pi);
+			}
+			else {
+				// uma DANFE atrás da outra, num PDF só
+				JRViewerProviderList viewerLauncher = Service.locator().locate(JRViewerProviderList.class).getService();
+				viewerLauncher.openViewer(prints, "DANFE " + prints.size() + " documentos", pi);
+			}
+		}
+
+		if (ids.size() == 1)
+			return "";
+
+		return prints.size() + " DANFE(s) gerada(s), " + (ids.size() - prints.size()) + " recusada(s)";
+	}
+
+	/**
+	 * Documentos escolhidos na grade — ou o único documento da aba, quando o
+	 * processo é acionado sem seleção múltipla.
+	 */
+	private List<Integer> getSelectedIDs() {
+		List<Integer> ids = getRecord_IDs();
+
+		if (ids != null && !ids.isEmpty())
+			return ids;
+
+		ids = new ArrayList<Integer>();
+
+		if (getRecord_ID() > 0)
+			ids.add(getRecord_ID());
+
+		return ids;
+	}
+
+	/**
+	 * @return o motivo pelo qual o documento não imprime, ou nulo se a DANFE
+	 *         pode ser gerada
+	 */
+	private String validate(MLBRNFeXML dfe, byte[] xml) {
 		if (!MLBRNFeXML.LBR_DFETYPE_NF_E.equals(dfe.getLBR_DFeType()))
-			throw new AdempiereException("A DANFE só pode ser impressa a partir de uma NF-e.");
+			return "A DANFE só pode ser impressa a partir de uma NF-e.";
 
 		if (!dfe.isLBR_IsXMLComplete())
-			throw new AdempiereException("Este documento é apenas o resumo da NF-e. "
-					+ "Manifeste a Ciência da Operação e baixe o XML completo para imprimir a DANFE.");
-
-		byte[] xml = dfe.getXML();
+			return "Este documento é apenas o resumo da NF-e. "
+					+ "Manifeste a Ciência da Operação e baixe o XML completo para imprimir a DANFE.";
 
 		if (xml == null)
-			throw new AdempiereException("Documento sem o XML anexado!");
+			return "Documento sem o XML anexado!";
 
+		return null;
+	}
+
+	private JasperPrint createDanfe(MLBRNFeXML dfe, byte[] xml) throws Exception {
 		boolean isNFCe = MLBRNotaFiscal.MODEL_NFCE.equals(dfe.getLBR_NFeModel());
 
 		JasperPrint jasperPrint = NFeUtil.createDanfe(getCtx(), new ByteArrayInputStream(xml),
@@ -105,15 +191,7 @@ public class GenerateDanfeFromDFe extends SvrProcess {
 		if (jasperPrint == null)
 			throw new AdempiereException("Não foi possível gerar a DANFE!");
 
-		markAsPrinted(dfe);
-
-		if (!getProcessInfo().isBatch()) {
-			JRViewerProvider viewerLauncher = Service.locator().locate(JRViewerProvider.class).getService();
-			PrintInfo pi = new PrintInfo(getProcessInfo());
-			viewerLauncher.openViewer(jasperPrint, "DANFE " + dfe.getDocumentNo(), pi);
-		}
-
-		return "";
+		return jasperPrint;
 	}
 
 	/**
