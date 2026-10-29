@@ -765,7 +765,10 @@ public class NFeXMLGenerator {
 		 * Preenche tags necessárias para homologação com dados fixos.
 		 */
 		if (isHomolog){
-			if (uf != null){
+			// Algumas SEFAZ (ex.: MS) validam o CNPJ do destinatário na Receita também em homologação
+			// e rejeitam o CNPJ padrão (181). Com LBR_NFE_HOMOLOG_REAL_DEST=Y, mantém o CPF/CNPJ real
+			boolean realDest = MSysConfig.getBooleanValue("LBR_NFE_HOMOLOG_REAL_DEST", false, nf.getAD_Client_ID(), nf.getAD_Org_ID());
+			if (uf != null && !realDest){
 				destinatario.setCPF(null);
 				destinatario.setCNPJ("99999999000191");
 			}

@@ -51,6 +51,7 @@ Alterações em `AD_SysConfig` são lidas em cache; reinicie o servidor ou use *
 | `LBR_TIMEZONE` | Texto `±HH:mm` | `-03:00` | Organização | Fuso horário gravado nas datas/horas do XML |
 | `LBR_DAYLIGHT_SAVING` | Y/N | `N` | Organização | Ajuste de horário de verão sobre o fuso configurado |
 | `LBR_NFe_CreateISSQNLines` | Y/N | `Y` | Organização | Inclui (ou não) produtos do tipo Serviço na Nota Fiscal gerada |
+| `LBR_NFE_HOMOLOG_REAL_DEST` | Y/N | `N` | Organização | Mantém o CPF/CNPJ real do destinatário no ambiente de homologação |
 
 **`LBR_SEFAZ_LOT_ON_COMPLETE`** — Vale apenas para documentos emitidos pela própria empresa. Com `N`, completar a Nota Fiscal não cria lote algum: o envio à SEFAZ precisa ser feito criando o Lote de NF-e manualmente.
 
@@ -61,6 +62,8 @@ Alterações em `AD_SysConfig` são lidas em cache; reinicie o servidor ou use *
 **`LBR_DAYLIGHT_SAVING`** — Com `Y`, subtrai uma hora do fuso configurado. Mantido para os períodos em que houve horário de verão no Brasil.
 
 **`LBR_NFe_CreateISSQNLines`** — Com `N`, produtos do tipo *Serviço* são ignorados ao gerar a Nota Fiscal a partir do documento de origem (Pedido, Fatura, Remessa ou RMA). Indicado para quem emite os serviços separadamente em NFS-e.
+
+**`LBR_NFE_HOMOLOG_REAL_DEST`** — Só tem efeito no ambiente de homologação. Com `N` (padrão), o destinatário vai no XML com o CNPJ fixo `99999999000191`. Com `Y`, vai com o CPF/CNPJ real do cadastro. Use `Y` nas UFs que validam o CNPJ do destinatário na Receita Federal também em homologação, como a SEFAZ-MS, que rejeita o CNPJ fixo com **cStat 181** (*"CNPJ do destinatário não cadastrado na Receita Federal"*). Nos dois casos, o nome do destinatário continua sendo trocado por *"NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL"* e a IE não é enviada.
 
 ## NF-e — Responsável Técnico
 
