@@ -27,9 +27,12 @@ As APIs são assíncronas:
 
 1. **Abertura** — o LBR pede o arquivo de um serviço (débitos, créditos, pagamentos ou recolhimentos) para o CNPJ base, informando o endereço do webhook. A Receita confere o endereço com um `HEAD` e, se ele não responder, cancela o pedido. Em caso de sucesso, devolve um tíquete.
 2. **Processamento** — leva de minutos a até 4 horas.
-3. **Aviso** — ao concluir, a Receita chama o webhook com a URL de download (válida por 48 horas) ou com o erro.
-4. **Consulta de situação** — o LBR também pergunta a situação pelo tíquete. É o que garante o download mesmo que o aviso nunca chegue; o webhook só encurta a espera.
-5. **Download e importação** — o arquivo é anexado à solicitação tal como veio, a URL é descartada, e só então os documentos são gravados.
+3. **Aviso** — ao concluir, a Receita chama o webhook informando a situação ou o erro. O aviso não traz o arquivo nem o link: a solicitação só fica como **Concluída**, e nada é importado nesse momento.
+4. **Consulta de situação** — o processo **Consultar e Importar Solicitação** pergunta a situação pelo tíquete. É o que garante o download mesmo que o aviso nunca chegue; o webhook só encurta a espera.
+5. **Link de download** — com a solicitação concluída, o mesmo processo pede à Receita o link temporário do arquivo, disponível por 48 horas.
+6. **Download e importação** — o arquivo é anexado à solicitação tal como veio, a URL é descartada, e só então os documentos são gravados.
+
+Sem o processo rodando, à mão ou por agendador, nada é importado, mesmo com o aviso recebido.
 
 Limites da Receita que o LBR respeita:
 

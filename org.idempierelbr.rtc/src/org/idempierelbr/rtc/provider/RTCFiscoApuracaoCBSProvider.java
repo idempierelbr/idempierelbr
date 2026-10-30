@@ -17,11 +17,12 @@ import com.google.gson.JsonObject;
 
 /**
  * APIs assíncronas de apuração da CBS da Receita Federal, versão 2
- * (documentação de 03/09/2026, revisada em 17/09/2026).
+ * (documentação de 03/09/2026, revisada em 14/10/2026).
  *
  * <pre>
  * Abertura  POST {base}/{servico}/{cnpj8}     { "urlRetorno": ... } → 201 { tiqueteSolicitacao, tEASegundos }
- * Situação  GET  {base}/situacao/{tiquete}   → { estado, urlAssinada, urlAssinadaExpiraEm, codigoErro, mensagemErro }
+ * Situação  GET  {base}/situacao/{tiquete}   → { situacao, codigoErro, mensagemErro }
+ * Link      GET  {base}/download/{tiquete}   → { urlAssinada, urlAssinadaExpiraEm }
  * </pre>
  *
  * @author Alan Lescano
@@ -67,7 +68,56 @@ public class RTCFiscoApuracaoCBSProvider implements IRTCFiscoApuracaoProvider {
 
 	@Override
 	public RTCFiscoStatus getStatus(MLBRRTCFiscoConfig config, String ticket) {
-		String url = config.getAPIBaseURL() + "/situacao/"
+		RTCHttpResponse response = getByTicket(config, "situacao", ticket);
+
+		JsonObject json = RTCJson.parseObject(response.getBodyAsString());
+		String rawState = json == null ? null : RTCJson.getString(json, "situacao");
+
+		// a Receita devolve situacao=ERRO também com HTTP 4xx/5xx: se a situação
+		// veio, é ela que vale
+		if (rawState == null) {
+			if (!response.isSuccess())
+				throw RTCApiException.of("consulta da situação do tíquete " + ticket, response);
+
+			throw new AdempiereException("A Receita Federal respondeu à consulta da situação do tíquete " + ticket
+					+ " sem informar a situação.");
+		}
+
+		return new RTCFiscoStatus(RTCFiscoStatus.State.of(rawState), rawState,
+				RTCJson.getString(json, "codigoErro"),
+				RTCJson.getString(json, "mensagemErro"));
+	}
+
+	@Override
+	public RTCFiscoDownloadLink getDownloadLink(MLBRRTCFiscoConfig config, String ticket) {
+		RTCHttpResponse response = getByTicket(config, "download", ticket);
+
+		// ARQUIVO_INDISPONIVEL: inexistente, ainda não concluído ou já baixado
+		if (response.getStatus() == 404)
+			return null;
+
+		String operation = "consulta do link de download do tíquete " + ticket;
+
+		if (!response.isSuccess())
+			throw RTCApiException.of(operation, response);
+
+		JsonObject json = RTCJson.parseObject(response.getBodyAsString());
+		String signedURL = json == null ? null : RTCJson.getString(json, "urlAssinada");
+
+		if (signedURL == null)
+			throw new AdempiereException("A Receita Federal respondeu à " + operation + " sem informar o link.");
+
+		return new RTCFiscoDownloadLink(signedURL,
+				RTCUtil.parseDateTimeOrNull(RTCJson.getString(json, "urlAssinadaExpiraEm")));
+	}
+
+	@Override
+	public byte[] download(MLBRRTCFiscoConfig config, String signedURL, long maxBytes) {
+		return http.download(signedURL, maxBytes);
+	}
+
+	private RTCHttpResponse getByTicket(MLBRRTCFiscoConfig config, String resource, String ticket) {
+		String url = config.getAPIBaseURL() + "/" + resource + "/"
 				+ URLEncoder.encode(ticket, StandardCharsets.UTF_8).replace("+", "%20");
 
 		RTCHttpResponse response = http.getJson(url, token(config));
@@ -77,29 +127,7 @@ public class RTCFiscoApuracaoCBSProvider implements IRTCFiscoApuracaoProvider {
 			response = http.getJson(url, token(config));
 		}
 
-		JsonObject json = RTCJson.parseObject(response.getBodyAsString());
-		String rawState = json == null ? null : RTCJson.getString(json, "estado");
-
-		// a Receita devolve estado=ERRO também com HTTP 4xx/5xx: se o estado
-		// veio, é ele que vale
-		if (rawState == null) {
-			if (!response.isSuccess())
-				throw RTCApiException.of("consulta da situação do tíquete " + ticket, response);
-
-			throw new AdempiereException("A Receita Federal respondeu à consulta da situação do tíquete " + ticket
-					+ " sem informar o estado.");
-		}
-
-		return new RTCFiscoStatus(RTCFiscoStatus.State.of(rawState), rawState,
-				RTCJson.getString(json, "urlAssinada"),
-				RTCUtil.parseDateTimeOrNull(RTCJson.getString(json, "urlAssinadaExpiraEm")),
-				RTCJson.getString(json, "codigoErro"),
-				RTCJson.getString(json, "mensagemErro"));
-	}
-
-	@Override
-	public byte[] download(MLBRRTCFiscoConfig config, String signedURL, long maxBytes) {
-		return http.download(signedURL, maxBytes);
+		return response;
 	}
 
 	private String token(MLBRRTCFiscoConfig config) {

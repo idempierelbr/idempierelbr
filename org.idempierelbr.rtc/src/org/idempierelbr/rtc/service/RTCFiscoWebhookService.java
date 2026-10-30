@@ -9,6 +9,7 @@ import org.compiere.util.Trx;
 import org.idempierelbr.base.model.MLBRRTCFiscoConfig;
 import org.idempierelbr.base.model.MLBRRTCFiscoRequest;
 import org.idempierelbr.rtc.json.RTCJson;
+import org.idempierelbr.rtc.provider.RTCFiscoStatus;
 import org.idempierelbr.rtc.util.RTCUtil;
 
 import com.google.gson.JsonObject;
@@ -23,9 +24,10 @@ import com.google.gson.JsonObject;
  * status faz a Receita reenviar. Nada da URL assinada vai para o log; só o
  * tíquete, o horário e o resultado.
  *
- * <p>O webhook apenas encurta a espera. Se ele falhar ou nunca chegar, a
- * consulta de situação feita por {@link RTCFiscoPollService} obtém a mesma
- * URL.
+ * <p>O aviso não traz a URL de download, só diz que a solicitação terminou:
+ * quem pede o link, baixa e importa é o {@link RTCFiscoPollService}. O webhook
+ * apenas encurta a espera; se ele falhar ou nunca chegar, a consulta de situação
+ * chega ao mesmo resultado.
  *
  * @author Alan Lescano
  */
@@ -81,7 +83,7 @@ public class RTCFiscoWebhookService {
 		}
 
 		String ticket = RTCJson.getString(json, "tiqueteSolicitacao");
-		String signedURL = RTCJson.getString(json, "urlAssinada");
+		RTCFiscoStatus.State state = RTCFiscoStatus.State.of(RTCJson.getString(json, "situacao"));
 		String errorCode = RTCJson.getString(json, "codigoErro");
 		String errorMessage = RTCJson.getString(json, "mensagemErro");
 
@@ -98,8 +100,11 @@ public class RTCFiscoWebhookService {
 			return HTTP_BAD_REQUEST;
 		}
 
-		if (signedURL == null && errorCode == null && errorMessage == null) {
-			log.warning("Webhook RTC: aviso do tíquete " + ticket + " sem URL e sem erro");
+		boolean failed = errorCode != null || errorMessage != null
+				|| state == RTCFiscoStatus.State.ERRO || state == RTCFiscoStatus.State.EXPIRADA;
+
+		if (state != RTCFiscoStatus.State.CONCLUIDA && !failed) {
+			log.warning("Webhook RTC: aviso do tíquete " + ticket + " sem conclusão e sem erro");
 			return HTTP_BAD_REQUEST;
 		}
 
@@ -127,11 +132,11 @@ public class RTCFiscoWebhookService {
 				return HTTP_OK;
 			}
 
-			if (signedURL != null) {
-				request.setDone(signedURL, RTCUtil.parseDateTimeOrNull(RTCJson.getString(json, "urlAssinadaExpiraEm")));
-			} else {
+			if (failed) {
 				request.setError(errorCode, errorMessage == null
 						? "A Receita encerrou a solicitação com erro, sem informar o motivo." : errorMessage);
+			} else {
+				request.setDone(null, null);
 			}
 
 			request.saveEx();
@@ -167,7 +172,7 @@ public class RTCFiscoWebhookService {
 		return found;
 	}
 
-	/** Ainda sem URL de download e sem arquivo baixado */
+	/** Ainda sem aviso de conclusão */
 	private static boolean isWaitingForURL(MLBRRTCFiscoRequest request) {
 		return !MLBRRTCFiscoRequest.LBR_RTCFISCOREQSTATUS_Concluída.equals(request.getLBR_RTCFiscoReqStatus());
 	}

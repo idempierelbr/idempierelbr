@@ -16,6 +16,7 @@ import org.idempierelbr.rtc.client.RTCHttpClient;
 import org.idempierelbr.rtc.provider.IRTCFiscoApuracaoProvider;
 import org.idempierelbr.rtc.provider.RTCFiscoApuracaoCBSProvider;
 import org.idempierelbr.rtc.provider.RTCFiscoApuracaoProviderFactory;
+import org.idempierelbr.rtc.provider.RTCFiscoDownloadLink;
 import org.idempierelbr.rtc.provider.RTCFiscoStatus;
 
 /**
@@ -24,11 +25,12 @@ import org.idempierelbr.rtc.provider.RTCFiscoStatus;
  * <p>Para cada solicitação, em transação própria:
  * <ol>
  * <li>arquivo já anexado e ainda não importado → importa;
- * <li>URL assinada válida (posta pelo webhook ou por uma consulta anterior)
- *     → baixa, anexa, descarta a URL e confirma; depois importa;
- * <li>URL assinada vencida sem download → {@code EXPIRED};
- * <li>sem URL → consulta a situação na Receita. É o caminho que funciona
- *     mesmo quando o webhook nunca chega; o webhook só encurta a espera.
+ * <li>URL assinada válida (de uma execução anterior) → baixa, anexa, descarta
+ *     a URL e confirma; depois importa;
+ * <li>sem URL válida → consulta a situação na Receita e, se concluída, pede o
+ *     link de download. É o caminho que funciona mesmo quando o webhook nunca
+ *     chega; o webhook só encurta a espera;
+ * <li>arquivo indisponível depois do prazo de download → {@code EXPIRED}.
  * </ol>
  *
  * <p>O arquivo é anexado e confirmado <b>antes</b> da importação: se ela
@@ -45,6 +47,9 @@ public class RTCFiscoPollService {
 
 	/** Folga sobre o tempo máximo antes de dar a solicitação por perdida, em minutos */
 	private static final int PROCESSING_MARGIN_MINUTES = 30;
+
+	/** Prazo de download depois do aviso de pronto, em horas */
+	private static final int DOWNLOAD_HOURS = 48;
 
 	/** Código gravado quando é o LBR, e não a Receita, que encerra a solicitação */
 	private static final String ERROR_CODE_TIMEOUT = "LBR-TIMEOUT";
@@ -101,8 +106,8 @@ public class RTCFiscoPollService {
 				return;
 			}
 
-			// 4. ainda sem URL: pergunta à Receita
-			if (request.getLBR_SignedURL() == null || request.getLBR_SignedURL().trim().isEmpty()) {
+			// 3. sem URL válida: pergunta à Receita
+			if (!request.hasValidSignedURL()) {
 				if (!force && !isTimeToPoll(request)) {
 					waiting++;
 					return;
@@ -113,16 +118,11 @@ public class RTCFiscoPollService {
 					trx.commit(true);
 					return;
 				}
-			}
 
-			// 3. a URL venceu antes do download
-			if (!request.hasValidSignedURL()) {
-				request.setExpired();
+				// confirma antes de baixar: se o download falhar, a Receita pode
+				// não entregar o link de novo
 				request.saveEx();
 				trx.commit(true);
-				failed++;
-				messages.add(description + ": " + request.getLBR_ErrorMsg());
-				return;
 			}
 
 			// 2. baixa e anexa, e só então importa
@@ -147,7 +147,8 @@ public class RTCFiscoPollService {
 	}
 
 	/**
-	 * Consulta a situação e aplica o resultado na solicitação (sem gravar).
+	 * Consulta a situação e, se concluída, o link de download, e aplica o
+	 * resultado na solicitação (sem gravar).
 	 *
 	 * @return true se a URL de download está disponível
 	 */
@@ -165,17 +166,29 @@ public class RTCFiscoPollService {
 
 		switch (status.getState()) {
 			case CONCLUIDA:
-				if (status.getSignedURL() == null) {
-					waiting++;
-					messages.add(description + ": a Receita deu a solicitação por concluída, mas sem a URL de "
-							+ "download; nova consulta na próxima execução.");
-					return false;
+				RTCFiscoDownloadLink link = provider.getDownloadLink(config, request.getLBR_Ticket());
+
+				if (link != null) {
+					request.setDone(link.getSignedURL(), link.getExpiresAt());
+					return true;
 				}
 
-				request.setDone(status.getSignedURL(), status.getSignedURLExpiresAt());
-				return true;
+				if (isDownloadOver(request.getLBR_DateRequested(), new Timestamp(System.currentTimeMillis()))) {
+					request.setExpired();
+					failed++;
+					messages.add(description + ": " + request.getLBR_ErrorMsg());
+				} else {
+					request.setDone(null, null);
+					waiting++;
+					messages.add(description + ": a Receita deu a solicitação por concluída, mas o arquivo está "
+							+ "indisponível; nova consulta na próxima execução.");
+				}
+
+				request.markPolled();
+				return false;
 
 			case ERRO:
+			case EXPIRADA:
 				request.setError(status.getErrorCode(), status.getErrorMessage() == null
 						? "A Receita encerrou a solicitação com erro, sem informar o motivo." : status.getErrorMessage());
 				failed++;
@@ -232,6 +245,11 @@ public class RTCFiscoPollService {
 	private boolean isTimeToPoll(MLBRRTCFiscoRequest request) {
 		long now = System.currentTimeMillis();
 
+		// o webhook avisou que terminou: não há o que esperar
+		if (MLBRRTCFiscoRequest.LBR_RTCFISCOREQSTATUS_Concluída.equals(request.getLBR_RTCFiscoReqStatus())
+				&& request.getLBR_SignedURL() == null)
+			return true;
+
 		if (request.getLBR_DateRequested() != null && request.getLBR_TEASeconds() > 0
 				&& now < request.getLBR_DateRequested().getTime() + request.getLBR_TEASeconds() * 1000L)
 			return false;
@@ -256,6 +274,20 @@ public class RTCFiscoPollService {
 		long minutes = TimeUnit.MILLISECONDS.toMinutes(now.getTime() - dateRequested.getTime());
 
 		return minutes > MAX_PROCESSING_MINUTES + PROCESSING_MARGIN_MINUTES;
+	}
+
+	/**
+	 * Já passou o prazo de download? A Receita não informa quando a solicitação
+	 * ficou pronta, então conta da abertura, somando o maior tempo de
+	 * processamento — o lado seguro, para não abandonar um arquivo ainda válido.
+	 */
+	public static boolean isDownloadOver(Timestamp dateRequested, Timestamp now) {
+		if (dateRequested == null)
+			return false;
+
+		long minutes = TimeUnit.MILLISECONDS.toMinutes(now.getTime() - dateRequested.getTime());
+
+		return minutes > MAX_PROCESSING_MINUTES + PROCESSING_MARGIN_MINUTES + TimeUnit.HOURS.toMinutes(DOWNLOAD_HOURS);
 	}
 
 	private static String getFileName(MLBRRTCFiscoRequest request) {

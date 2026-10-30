@@ -8,6 +8,7 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
 import org.adempiere.exceptions.AdempiereException;
+import org.idempierelbr.rtc.provider.RTCFiscoStatus;
 import org.idempierelbr.rtc.service.RTCFiscoImportService;
 import org.idempierelbr.rtc.service.RTCFiscoPollService;
 import org.idempierelbr.rtc.service.RTCFiscoRequestService;
@@ -17,8 +18,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 /**
  * Regras de decisão da integração com a apuração do fisco que não dependem de
- * banco: sobrescrita na reimportação, janela incremental, prazo de
- * processamento e serviços liberados.
+ * banco: sobrescrita na reimportação, janela incremental, prazos de
+ * processamento e de download, situações da Receita e serviços liberados.
  */
 class RTCFiscoRulesTest {
 
@@ -88,6 +89,27 @@ class RTCFiscoRulesTest {
 	void pastFourHoursAndMarginIsOverdue() {
 		assertThat(RTCFiscoPollService.isOverdue(minusMinutes(271), NOW)).isTrue();
 		assertThat(RTCFiscoPollService.isOverdue(null, NOW)).isFalse();
+	}
+
+	@Test
+	void downloadWindowCountsFromOpeningPlusProcessing() {
+		assertThat(RTCFiscoPollService.isDownloadOver(minusMinutes(270 + 48 * 60), NOW)).isFalse();
+		assertThat(RTCFiscoPollService.isDownloadOver(minusMinutes(271 + 48 * 60), NOW)).isTrue();
+		assertThat(RTCFiscoPollService.isDownloadOver(null, NOW)).isFalse();
+	}
+
+	// ===== Situação da solicitação =====
+
+	@ParameterizedTest
+	@ValueSource(strings = { "PENDENTE", "EM_PROCESSAMENTO", "CONCLUIDA", "ERRO", "EXPIRADA", " concluida " })
+	void documentedSituationsAreKnown(String situation) {
+		assertThat(RTCFiscoStatus.State.of(situation)).isNotNull();
+	}
+
+	@Test
+	void unknownSituationIsNull() {
+		assertThat(RTCFiscoStatus.State.of("CANCELADA")).isNull();
+		assertThat(RTCFiscoStatus.State.of(null)).isNull();
 	}
 
 	// ===== Serviços liberados =====
