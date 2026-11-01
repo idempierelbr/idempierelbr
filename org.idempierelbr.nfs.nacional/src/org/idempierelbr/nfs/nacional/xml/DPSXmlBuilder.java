@@ -67,7 +67,7 @@ public class DPSXmlBuilder {
 		// ---- identificacao ----
 		// Data/hora recuada 1 minuto para evitar rejeicao por relogio local adiantado
 		d.dhEmi = OffsetDateTime.now().withNano(0).minusMinutes(1).format(DH_EMI);
-		d.verAplic = "idempierelbr-nfs-nac-1.0";
+		d.verAplic = "idempierelbr-1.0";
 		d.serie = digits(nfs.getLBR_RPSSerie());
 		if (d.serie.isEmpty() || d.serie.length() > 5)
 			throw new AdempiereException("Serie do DPS (LBR_RPSSerie) deve ter de 1 a 5 digitos");
@@ -76,6 +76,9 @@ public class DPSXmlBuilder {
 			throw new AdempiereException("Numero do DPS (LBR_RPSNumero) invalido: deve ser numerico, sem zeros a esquerda, ate 15 digitos");
 		d.dCompet = nfs.getDateDoc().toLocalDateTime().toLocalDate().toString();
 		d.tpEmit = "1"; // emitido pelo prestador
+		// A producao restrita ja exige NT 009; producao adota o leiaute em 01/12/2026.
+		if ("2".equals(d.tpAmb))
+			d.finNFSe = "0"; // NFS-e regular
 
 		// ---- prestador ----
 		MOrgInfo orgInfo = MOrgInfo.get(nfs.getCtx(), nfs.getAD_Org_ID(), nfs.get_TrxName());

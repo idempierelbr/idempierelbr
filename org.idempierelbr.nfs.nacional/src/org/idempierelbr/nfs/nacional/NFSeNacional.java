@@ -58,7 +58,7 @@ public class NFSeNacional implements INFSe {
 
 	private static final CLogger log = CLogger.getCLogger(NFSeNacional.class);
 
-	private static final String VER_APLIC = "idempierelbr-nfs-nac-1.0";
+	private static final String VER_APLIC = "idempierelbr-1.0";
 
 	@Override
 	public String generateXML(MLBRNFS m_nfs) throws Exception {

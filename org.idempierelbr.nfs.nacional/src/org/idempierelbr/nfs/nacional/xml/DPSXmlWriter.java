@@ -30,6 +30,7 @@ public class DPSXmlWriter {
 		el(x, "nDPS", d.nDPS);
 		el(x, "dCompet", d.dCompet);
 		el(x, "tpEmit", d.tpEmit);
+		el(x, "finNFSe", d.finNFSe);
 		el(x, "cLocEmi", d.cLocEmi);
 
 		// subst (TCSubstituicao) - so' quando ha' uma NFS-e sendo substituida.

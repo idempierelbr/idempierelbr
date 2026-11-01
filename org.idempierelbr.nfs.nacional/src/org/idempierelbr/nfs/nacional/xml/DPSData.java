@@ -21,6 +21,7 @@ public class DPSData {
 	public String nDPS;       // [1-9][0-9]{0,14}
 	public String dCompet;    // AAAA-MM-DD
 	public String tpEmit;     // 1 - Prestador; 2 - Tomador; 3 - Intermediario
+	public String finNFSe;    // NT 009: 0 regular; 1 credito; 2 debito (homologacao)
 	public String cLocEmi;    // IBGE (7 digitos)
 
 	// --- subst (TCSubstituicao, opcional - grupo vem logo antes de "prest") ---
