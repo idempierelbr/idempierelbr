@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><evento xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01"><infEvento Id="EVT12345678901234567890123456789012345678901234567890101101001"><verAplic>idempierelbr-1.0</verAplic><ambGer>2</ambGer><nSeqEvento>001</nSeqEvento><dhProc>2026-09-28T09:30:00-03:00</dhProc><nDFSe>1</nDFSe><pedRegEvento versao="1.01"><infPedReg Id="PRE12345678901234567890123456789012345678901234567890101101"><tpAmb>2</tpAmb><verAplic>idempierelbr-1.0</verAplic><dhEvento>2026-09-28T09:30:00-03:00</dhEvento><CNPJAutor>12345678000195</CNPJAutor><chNFSe>12345678901234567890123456789012345678901234567890</chNFSe><e101101><xDesc>Cancelamento de NFS-e</xDesc><cMotivo>1</cMotivo><xMotivo>Erro na emissao do documento fiscal</xMotivo></e101101></infPedReg></pedRegEvento></infEvento><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#EVT12345678901234567890123456789012345678901234567890101101001"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>NAf3mL9W0fj44Gkzbge4kmcIXZE=</DigestValue></Reference></SignedInfo><SignatureValue>igQRFM3G98rOVRCJ/rzS3FrPM72wtSppOwZSHtj2cFD8ng9+BwrMSzWuJk2cxfPOsJSFBV4ZNEbk&#13;
+Ly4dmhR3K6WcskoncxKzRI4SJ+8L63pqwuQ45+hQ2To2JpUVs0CmMZH3oKPyiABtEX/pmFojJhdy&#13;
+RGHuY/ohxO9NKPmvwcFmJ8WYaWbbwVlwNdqKpbGKZjt6EbROQ9f7WSbKEAh4cZ+NIwB4HSutyzym&#13;
+Wj+/NgGCtID5d+/MLp8dvdv0AbBmP3pI5vfcWKImQB8PG1UYQ9YtP9btxCyNOn+0cyzagirP8Myy&#13;
+R5rk9CH+9jlwoXC/54xeZMEjuxfXj+KyPFqSKg==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIICwzCCAaugAwIBAgIIDcl6vaUumcwwDQYJKoZIhvcNAQEMBQAwEDEOMAwGA1UEAxMFdGVzdGUw&#13;
+HhcNMjYwOTI4MDk0NDA1WhcNMjYxMDI4MDk0NDA1WjAQMQ4wDAYDVQQDEwV0ZXN0ZTCCASIwDQYJ&#13;
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBAJZxUV9bS1yTWy0mRw8q37TnaWpixr2VbsUqhHbCoBVI&#13;
+o5gTD8JQnnwEoWsOXhLedug47LttfkBEUWMdl7f9cyGMZtZLZoGBWEn13K94auH6hsFV79/GyImB&#13;
+Uk8MD+MGYe1tAGbHWLTroTJ4c/bTPJ9Km+pbxN0fWxokgYAnNq5C1AqykVGOCxXL/0NRVE6ZvYVw&#13;
+3esWH4ZXOnl+st5S4hi1LCge9sfpaQn3yyGOTe3XP+EWLSFtWAFyy4hhmFIhSf8T7tzQp86gJm3w&#13;
+aantRLmHsmfr35VI3rARaINWuHC1WlMu9cnRx0J1qiO6M44/z7XeWXR8E9+U7QlE88mBiPsCAwEA&#13;
+AaMhMB8wHQYDVR0OBBYEFAGyXY4vIvQpfExl7H1j3Hyp9cRgMA0GCSqGSIb3DQEBDAUAA4IBAQAC&#13;
+ZN6l/J+nKAwJ/J7329IyMui6IXpCVByTBiay7+lsn1KOFyyLYLWgj5otJuU9y7yC+HwzZy1xTIx3&#13;
+ID0jlyyPMJ+ffFZ7nnJM7nn2RtihldMnSUDs2tCU3+hIMLg77tM6W29C+dFLPoXImME9aC0YsbFS&#13;
+UdGOL37A9JYCE3LIVE4rxwGerP1sxJkbRl/9WFDIrXlO52RLTQHDmJDJP4U9I+OfymhifYU7tm/x&#13;
+mQvbQzilKHh6q3OUWEx+2xdbkOcQxKApJeOubmRo1rJcwQCG6HD7GvB9gUAkfhLXpD+/GhIiunB6&#13;
+srh+4T+yYIZNcMiCECZ/srWQVMnSFp9cfBcL</X509Certificate></X509Data></KeyInfo></Signature></evento>
