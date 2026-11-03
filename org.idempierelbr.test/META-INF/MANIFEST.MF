@@ -14,7 +14,8 @@ Require-Bundle: org.adempiere.base;bundle-version="13.0.0",
  org.idempierelbr.sped;bundle-version="13.0.0",
  org.idempierelbr.mdfe;bundle-version="13.0.0",
  zk,
- zul
+ zul,
+ zcommon
 Import-Package: org.adempiere.webui.component,
  org.assertj.core.api;version="3.22.0",
  org.junit.jupiter.api;version="5.9.0",
