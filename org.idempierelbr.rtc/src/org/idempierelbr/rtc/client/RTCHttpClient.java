@@ -27,9 +27,11 @@ import org.idempierelbr.rtc.util.RTCUtil;
  * Cliente HTTP das APIs da Receita Federal, sobre o {@code java.net.http} do
  * Java — sem certificado digital: a autenticação é OAuth 2.0.
  *
- * <p>Só as chamadas idempotentes (GET) são repetidas quando a Receita responde
- * 429 ou 5xx. O POST de abertura nunca é repetido aqui: cada tentativa pode
- * consumir uma das 4 chamadas do dia.
+ * <p>Só as chamadas idempotentes (GET) são repetidas, e só em 5xx ou falha de
+ * transporte. O 429 só é repetido quando a própria Receita pede uma espera
+ * curta no {@code Retry-After}: a janela do limite não é documentada, e
+ * repetir às cegas só gasta mais chamadas dele. O POST de abertura nunca é
+ * repetido aqui: cada tentativa pode consumir uma das 4 chamadas do dia.
  *
  * <p>Nada que venha de uma URL assinada vai para o log além do host.
  *
@@ -43,6 +45,9 @@ public class RTCHttpClient {
 
 	/** Esperas entre tentativas de uma chamada idempotente, em segundos */
 	private static final int[] RETRY_DELAYS_SECONDS = { 2, 5 };
+
+	/** Maior espera do {@code Retry-After} de um 429 que ainda vale aguardar e repetir, em segundos */
+	private static final int MAX_RETRY_AFTER_SECONDS = 10;
 
 	private final HttpClient client;
 	private final Duration timeout;
@@ -135,25 +140,48 @@ public class RTCHttpClient {
 				continue;
 			}
 
-			boolean retryable = response.getStatus() == 429 || response.getStatus() >= 500;
+			Integer delay = getRetryDelaySeconds(response.getStatus(), response.getRetryAfterSeconds(), attempt);
 
-			if (!retryable || attempt >= RETRY_DELAYS_SECONDS.length)
+			if (delay == null)
 				return response;
 
 			if (log.isLoggable(Level.INFO))
 				log.info("Receita respondeu HTTP " + response.getStatus() + " em " + RTCUtil.hostOf(url)
-						+ "; nova tentativa em " + RETRY_DELAYS_SECONDS[attempt] + "s");
+						+ "; nova tentativa em " + delay + "s");
 
-			sleep(RETRY_DELAYS_SECONDS[attempt]);
+			sleep(delay);
 		}
+	}
+
+	/**
+	 * Quanto esperar antes de repetir uma chamada idempotente.
+	 *
+	 * @param attempt tentativas já feitas, a partir de 0
+	 * @return a espera em segundos, ou nulo se não vale repetir
+	 */
+	public static Integer getRetryDelaySeconds(int status, Integer retryAfterSeconds, int attempt) {
+		if (attempt >= RETRY_DELAYS_SECONDS.length)
+			return null;
+
+		if (status >= 500)
+			return RETRY_DELAYS_SECONDS[attempt];
+
+		// 429: a janela do limite é desconhecida, e cada repetição pode contar
+		// nele; só vale repetir se a própria Receita pedir uma espera curta
+		if (status == 429 && retryAfterSeconds != null && retryAfterSeconds <= MAX_RETRY_AFTER_SECONDS)
+			return Math.max(1, retryAfterSeconds);
+
+		return null;
 	}
 
 	private RTCHttpResponse send(HttpRequest request, String url, long maxBytes) {
 		try {
 			HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
 
+			Integer retryAfter = RTCHttpResponse.parseRetryAfter(response.headers().firstValue("Retry-After").orElse(null));
+
 			try (InputStream in = response.body()) {
-				return new RTCHttpResponse(response.statusCode(), readLimited(in, maxBytes, url));
+				return new RTCHttpResponse(response.statusCode(), readLimited(in, maxBytes, url), retryAfter);
 			}
 		} catch (InterruptedException e) {
 			Thread.currentThread().interrupt();

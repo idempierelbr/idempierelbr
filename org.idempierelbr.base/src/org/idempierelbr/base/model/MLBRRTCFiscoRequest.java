@@ -19,8 +19,9 @@ import org.compiere.util.Env;
  *
  * <p>O ciclo é {@code SENT → PENDING → PROCESSING → DONE → IMPORTED}, podendo
  * terminar em {@code ERROR} (a Receita recusou ou estourou o prazo) ou em
- * {@code EXPIRED} (a URL assinada venceu antes do download). O JSON baixado
- * fica anexado ao registro, tal como veio.
+ * {@code EXPIRED} (a URL assinada venceu antes do download, ou a Receita não
+ * encontra mais o tíquete). O JSON baixado fica anexado ao registro, tal como
+ * veio.
  *
  * <p>A {@code LBR_SignedURL} é um segredo temporário: autoriza o download por
  * 48 horas. Não vai para log e é apagada assim que o arquivo é baixado.
@@ -180,9 +181,31 @@ public class MLBRRTCFiscoRequest extends X_LBR_RTCFiscoRequest {
 
 	/** Encerra a solicitação em erro, com o motivo que a Receita ou o LBR deu. */
 	public void setError(String errorCode, String errorMsg) {
-		setLBR_ErrorCode(truncate(errorCode, 20));
-		setLBR_ErrorMsg(truncate(errorMsg, 2000));
+		setLBR_ErrorCode(truncate(errorCode, COLUMNNAME_LBR_ErrorCode));
+		setLBR_ErrorMsg(truncate(errorMsg, COLUMNNAME_LBR_ErrorMsg));
 		setLBR_RTCFiscoReqStatus(LBR_RTCFISCOREQSTATUS_Erro);
+		clearSignedURL();
+		setProcessed(true);
+	}
+
+	/**
+	 * A Receita não encontra mais o tíquete. Na prática ele deixa de existir
+	 * em menos de um dia depois de concluído — antes das 48 horas que a
+	 * documentação dá para o download — e não há como recuperá-lo.
+	 *
+	 * @param errorCode o código que a Receita devolveu
+	 * @param errorMsg a mensagem que a Receita devolveu, ou nulo
+	 */
+	public void setNotFound(String errorCode, String errorMsg) {
+		String reason = errorCode == null ? "HTTP 404"
+				: "HTTP 404, " + errorCode + (errorMsg == null ? "" : ": " + errorMsg);
+
+		setLBR_ErrorCode(truncate(errorCode, COLUMNNAME_LBR_ErrorCode));
+		setLBR_ErrorMsg(truncate("A Receita não encontra mais a solicitação (" + reason + "). O tíquete deixa "
+				+ "de existir algum tempo depois de concluído, às vezes antes das 48 horas da documentação, e não "
+				+ "há como recuperá-lo. É preciso abrir uma nova solicitação e consultá-la logo em seguida.",
+				COLUMNNAME_LBR_ErrorMsg));
+		setLBR_RTCFiscoReqStatus(LBR_RTCFISCOREQSTATUS_Expirada);
 		clearSignedURL();
 		setProcessed(true);
 	}
@@ -268,6 +291,13 @@ public class MLBRRTCFiscoRequest extends X_LBR_RTCFiscoRequest {
 			setLBR_DateRequested(new Timestamp(System.currentTimeMillis()));
 
 		return true;
+	}
+
+	/** Corta o texto no tamanho da coluna no dicionário, para acompanhar quando ele mudar */
+	private String truncate(String value, String columnName) {
+		int length = p_info.getFieldLength(columnName);
+
+		return length > 0 ? truncate(value, length) : value;
 	}
 
 	private static String truncate(String value, int length) {

@@ -68,14 +68,30 @@ public class RTCFiscoApuracaoCBSProvider implements IRTCFiscoApuracaoProvider {
 
 	@Override
 	public RTCFiscoStatus getStatus(MLBRRTCFiscoConfig config, String ticket) {
-		RTCHttpResponse response = getByTicket(config, "situacao", ticket);
+		return parseStatus(ticket, getByTicket(config, "situacao", ticket));
+	}
 
+	/**
+	 * Interpreta a resposta da consulta da situação.
+	 *
+	 * @throws RTCApiException se a Receita recusou a consulta sem informar a
+	 *         situação — a solicitação continua em aberto
+	 */
+	public static RTCFiscoStatus parseStatus(String ticket, RTCHttpResponse response) {
 		JsonObject json = RTCJson.parseObject(response.getBodyAsString());
 		String rawState = json == null ? null : RTCJson.getString(json, "situacao");
 
 		// a Receita devolve situacao=ERRO também com HTTP 4xx/5xx: se a situação
 		// veio, é ela que vale
 		if (rawState == null) {
+			String errorCode = json == null ? null : RTCJson.getString(json, "codigoErro");
+
+			// tíquete que deixou de existir (SOLICITACAO_NAO_ENCONTRADA). Só com
+			// o codigoErro: o 404 do gateway sem ele ("no Route matched") é
+			// endereço errado na configuração, e não tíquete perdido
+			if (response.getStatus() == 404 && errorCode != null)
+				return RTCFiscoStatus.notFound(errorCode, RTCJson.getString(json, "mensagemErro"));
+
 			if (!response.isSuccess())
 				throw RTCApiException.of("consulta da situação do tíquete " + ticket, response);
 

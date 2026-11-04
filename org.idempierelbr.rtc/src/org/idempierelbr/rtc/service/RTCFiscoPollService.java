@@ -2,8 +2,10 @@ package org.idempierelbr.rtc.service;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -12,6 +14,7 @@ import org.compiere.util.Env;
 import org.compiere.util.Trx;
 import org.idempierelbr.base.model.MLBRRTCFiscoConfig;
 import org.idempierelbr.base.model.MLBRRTCFiscoRequest;
+import org.idempierelbr.rtc.client.RTCApiException;
 import org.idempierelbr.rtc.client.RTCHttpClient;
 import org.idempierelbr.rtc.provider.IRTCFiscoApuracaoProvider;
 import org.idempierelbr.rtc.provider.RTCFiscoApuracaoCBSProvider;
@@ -30,8 +33,13 @@ import org.idempierelbr.rtc.provider.RTCFiscoStatus;
  * <li>sem URL válida → consulta a situação na Receita e, se concluída, pede o
  *     link de download. É o caminho que funciona mesmo quando o webhook nunca
  *     chega; o webhook só encurta a espera;
- * <li>arquivo indisponível depois do prazo de download → {@code EXPIRED}.
+ * <li>arquivo indisponível depois do prazo de download, ou tíquete que a
+ *     Receita não encontra mais → {@code EXPIRED}.
  * </ol>
+ *
+ * <p>Um 429 (excesso de chamadas) não encerra a solicitação: ela fica em
+ * aberto, e as demais da mesma configuração não são consultadas nesta
+ * execução — a credencial é a mesma, e cada tentativa contaria no limite.
  *
  * <p>O arquivo é anexado e confirmado <b>antes</b> da importação: se ela
  * falhar, o dado bruto não se perde e a próxima execução importa do anexo, sem
@@ -51,6 +59,13 @@ public class RTCFiscoPollService {
 	/** Prazo de download depois do aviso de pronto, em horas */
 	private static final int DOWNLOAD_HOURS = 48;
 
+	/**
+	 * Tolerância depois da abertura antes de dar por perdido um tíquete que a
+	 * Receita não encontra, em minutos — para o caso de ela ainda não o ter
+	 * registrado.
+	 */
+	private static final int NOT_FOUND_GRACE_MINUTES = 10;
+
 	/** Código gravado quando é o LBR, e não a Receita, que encerra a solicitação */
 	private static final String ERROR_CODE_TIMEOUT = "LBR-TIMEOUT";
 
@@ -58,6 +73,9 @@ public class RTCFiscoPollService {
 	private final RTCHttpClient http;
 
 	private final List<String> messages = new ArrayList<String>();
+
+	/** Configurações que receberam 429 nesta execução: não são consultadas de novo */
+	private final Set<Integer> rateLimitedConfigs = new HashSet<Integer>();
 
 	private int imported = 0;
 	private int waiting = 0;
@@ -79,10 +97,12 @@ public class RTCFiscoPollService {
 		Trx trx = Trx.get(Trx.createTrxName("RTCFiscoPoll"), true);
 		String trxName = trx.getTrxName();
 		String description = "Solicitação " + LBR_RTCFiscoRequest_ID;
+		int configID = 0;
 
 		try {
 			MLBRRTCFiscoRequest request = new MLBRRTCFiscoRequest(ctx, LBR_RTCFiscoRequest_ID, trxName);
 			MLBRRTCFiscoConfig config = new MLBRRTCFiscoConfig(ctx, request.getLBR_RTCFiscoConfig_ID(), trxName);
+			configID = config.getLBR_RTCFiscoConfig_ID();
 			description = describe(config, request);
 
 			if (MLBRRTCFiscoRequest.LBR_RTCFISCOREQSTATUS_Importada.equals(request.getLBR_RTCFiscoReqStatus())
@@ -113,6 +133,13 @@ public class RTCFiscoPollService {
 					return;
 				}
 
+				if (rateLimitedConfigs.contains(configID)) {
+					waiting++;
+					messages.add(description + ": não consultada nesta execução, porque a Receita acabou de "
+							+ "recusar outra consulta desta credencial por excesso de chamadas (HTTP 429).");
+					return;
+				}
+
 				if (!poll(provider, config, request, description)) {
 					request.saveEx();
 					trx.commit(true);
@@ -138,6 +165,20 @@ public class RTCFiscoPollService {
 			importAttached(config, request, trx, description);
 		} catch (Exception e) {
 			trx.rollback();
+
+			RTCApiException rateLimit = RTCApiException.findRateLimit(e);
+
+			if (rateLimit != null) {
+				// a solicitação não falhou: só não deu para perguntar agora
+				rateLimitedConfigs.add(configID);
+				waiting++;
+				log.warning(description + ": " + rateLimit.getLocalizedMessage());
+				messages.add(description + ": " + rateLimit.getLocalizedMessage() + ". A solicitação continua "
+						+ "em aberto: consulte de novo mais tarde, sem repetir em seguida — cada tentativa conta "
+						+ "no limite.");
+				return;
+			}
+
 			failed++;
 			log.log(Level.SEVERE, description + " não pôde ser processada", e);
 			messages.add(description + ": " + RTCFiscoImportService.getReason(e));
@@ -155,6 +196,21 @@ public class RTCFiscoPollService {
 	private boolean poll(IRTCFiscoApuracaoProvider provider, MLBRRTCFiscoConfig config,
 			MLBRRTCFiscoRequest request, String description) {
 		RTCFiscoStatus status = provider.getStatus(config, request.getLBR_Ticket());
+
+		if (status.isNotFound()) {
+			if (isNotFoundFinal(request.getLBR_DateRequested(), new Timestamp(System.currentTimeMillis()))) {
+				request.setNotFound(status.getErrorCode(), status.getErrorMessage());
+				failed++;
+				messages.add(description + ": " + request.getLBR_ErrorMsg());
+			} else {
+				waiting++;
+				messages.add(description + ": a Receita ainda não encontra a solicitação recém-aberta ("
+						+ status.getErrorCode() + "); nova consulta na próxima execução.");
+				request.markPolled();
+			}
+
+			return false;
+		}
 
 		if (status.getState() == null) {
 			waiting++;
@@ -274,6 +330,19 @@ public class RTCFiscoPollService {
 		long minutes = TimeUnit.MILLISECONDS.toMinutes(now.getTime() - dateRequested.getTime());
 
 		return minutes > MAX_PROCESSING_MINUTES + PROCESSING_MARGIN_MINUTES;
+	}
+
+	/**
+	 * O tíquete que a Receita não encontra está perdido em definitivo? Logo
+	 * depois da abertura, ainda pode ser atraso no registro dela.
+	 */
+	public static boolean isNotFoundFinal(Timestamp dateRequested, Timestamp now) {
+		if (dateRequested == null)
+			return true;
+
+		long minutes = TimeUnit.MILLISECONDS.toMinutes(now.getTime() - dateRequested.getTime());
+
+		return minutes >= NOT_FOUND_GRACE_MINUTES;
 	}
 
 	/**

@@ -4,6 +4,9 @@ package org.idempierelbr.rtc.provider;
  * Situação de uma solicitação na Receita, como o endpoint de situação a
  * devolve. A URL de download não vem aqui: ver {@link RTCFiscoDownloadLink}.
  *
+ * <p>Um tíquete que a Receita não conhece mais não tem situação: é
+ * {@link #isNotFound()}, com o código e a mensagem que vieram.
+ *
  * @author Alan Lescano
  */
 public final class RTCFiscoStatus {
@@ -32,15 +35,35 @@ public final class RTCFiscoStatus {
 	private final String rawState;
 	private final String errorCode;
 	private final String errorMessage;
+	private final boolean notFound;
 
 	public RTCFiscoStatus(State state, String rawState, String errorCode, String errorMessage) {
+		this(state, rawState, errorCode, errorMessage, false);
+	}
+
+	private RTCFiscoStatus(State state, String rawState, String errorCode, String errorMessage, boolean notFound) {
 		this.state = state;
 		this.rawState = rawState;
 		this.errorCode = errorCode;
 		this.errorMessage = errorMessage;
+		this.notFound = notFound;
 	}
 
-	/** Estado conhecido, ou nulo — nesse caso ver {@link #getRawState()} */
+	/**
+	 * Tíquete que a Receita não encontra — {@code SOLICITACAO_NAO_ENCONTRADA},
+	 * que não consta da documentação, mas é o que ela devolve depois que o
+	 * tíquete deixa de existir.
+	 */
+	public static RTCFiscoStatus notFound(String errorCode, String errorMessage) {
+		return new RTCFiscoStatus(null, null, errorCode, errorMessage, true);
+	}
+
+	/** A Receita não encontra mais o tíquete? Nesse caso não há estado. */
+	public boolean isNotFound() {
+		return notFound;
+	}
+
+	/** Estado conhecido, ou nulo — nesse caso ver {@link #getRawState()} e {@link #isNotFound()} */
 	public State getState() {
 		return state;
 	}

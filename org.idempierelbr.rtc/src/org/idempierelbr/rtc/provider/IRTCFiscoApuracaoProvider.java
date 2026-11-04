@@ -24,7 +24,8 @@ public interface IRTCFiscoApuracaoProvider {
 
 	/**
 	 * Situação da solicitação — o caminho confiável para saber que ela terminou
-	 * quando o webhook não chega.
+	 * quando o webhook não chega. Um tíquete que a Receita não conhece mais
+	 * volta como {@link RTCFiscoStatus#isNotFound()}.
 	 */
 	RTCFiscoStatus getStatus(MLBRRTCFiscoConfig config, String ticket);
 

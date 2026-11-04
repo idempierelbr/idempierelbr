@@ -98,6 +98,18 @@ class RTCFiscoRulesTest {
 		assertThat(RTCFiscoPollService.isDownloadOver(null, NOW)).isFalse();
 	}
 
+	@Test
+	void ticketNotFoundRightAfterOpeningGetsTime() {
+		assertThat(RTCFiscoPollService.isNotFoundFinal(minusMinutes(9), NOW)).isFalse();
+	}
+
+	@Test
+	void ticketNotFoundLaterIsLost() {
+		assertThat(RTCFiscoPollService.isNotFoundFinal(minusMinutes(10), NOW)).isTrue();
+		assertThat(RTCFiscoPollService.isNotFoundFinal(minusMinutes(23 * 60), NOW)).isTrue();
+		assertThat(RTCFiscoPollService.isNotFoundFinal(null, NOW)).isTrue();
+	}
+
 	// ===== Situação da solicitação =====
 
 	@ParameterizedTest

@@ -34,6 +34,10 @@ As APIs são assíncronas:
 
 Sem o processo rodando, à mão ou por agendador, nada é importado, mesmo com o aviso recebido.
 
+**Consulte logo depois de abrir.** A documentação dá 48 horas para o download, mas na prática o tíquete tem deixado de existir em menos de um dia: a consulta passa a devolver `404 SOLICITACAO_NAO_ENCONTRADA`, código que nem consta da documentação. Não há como recuperar o arquivo. O processo encerra a solicitação como **Expirada**, e é preciso abrir outra. Nos primeiros 10 minutos depois da abertura, o 404 é tratado como atraso da Receita, e a solicitação continua em aberto.
+
+**Excesso de chamadas (HTTP 429).** A consulta de situação também tem limite, não documentado. Com um 429, a solicitação continua em aberto, as demais da mesma configuração não são consultadas naquela execução, e o processo não repete a chamada sozinho, a menos que a Receita peça uma espera de até 10 segundos. Quando ela informa a espera, a mensagem diz quanto. Repetir em seguida só gasta mais chamadas.
+
 Limites da Receita que o LBR respeita:
 
 - **4 aberturas por dia** por serviço. O LBR conta as do dia e recusa a quinta.

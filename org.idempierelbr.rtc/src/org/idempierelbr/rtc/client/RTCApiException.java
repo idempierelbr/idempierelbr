@@ -18,12 +18,19 @@ public class RTCApiException extends AdempiereException {
 	private final int httpStatus;
 	private final String errorCode;
 	private final String errorMessage;
+	private final Integer retryAfterSeconds;
 
 	public RTCApiException(String message, int httpStatus, String errorCode, String errorMessage) {
+		this(message, httpStatus, errorCode, errorMessage, null);
+	}
+
+	public RTCApiException(String message, int httpStatus, String errorCode, String errorMessage,
+			Integer retryAfterSeconds) {
 		super(message);
 		this.httpStatus = httpStatus;
 		this.errorCode = errorCode;
 		this.errorMessage = errorMessage;
+		this.retryAfterSeconds = retryAfterSeconds;
 	}
 
 	/**
@@ -56,7 +63,12 @@ public class RTCApiException extends AdempiereException {
 		else
 			message.append(": ").append(describeStatus(response.getStatus()));
 
-		return new RTCApiException(message.toString(), response.getStatus(), errorCode, errorMessage);
+		if (response.getStatus() == 429 && response.getRetryAfterSeconds() != null)
+			message.append(" (a Receita pede para esperar ").append(describeWait(response.getRetryAfterSeconds()))
+				.append(")");
+
+		return new RTCApiException(message.toString(), response.getStatus(), errorCode, errorMessage,
+				response.getRetryAfterSeconds());
 	}
 
 	public int getHttpStatus() {
@@ -69,6 +81,42 @@ public class RTCApiException extends AdempiereException {
 
 	public String getErrorMessage() {
 		return errorMessage;
+	}
+
+	/** Espera pedida pela Receita no {@code Retry-After}, em segundos, ou nulo */
+	public Integer getRetryAfterSeconds() {
+		return retryAfterSeconds;
+	}
+
+	/** A Receita recusou por excesso de chamadas (HTTP 429)? */
+	public boolean isRateLimited() {
+		return httpStatus == 429;
+	}
+
+	/**
+	 * A recusa por excesso de chamadas na cadeia de causas, se houver.
+	 *
+	 * @return a exceção do 429, ou nulo
+	 */
+	public static RTCApiException findRateLimit(Throwable e) {
+		for (Throwable cause = e; cause != null; cause = cause.getCause() == cause ? null : cause.getCause())
+			if (cause instanceof RTCApiException && ((RTCApiException) cause).isRateLimited())
+				return (RTCApiException) cause;
+
+		return null;
+	}
+
+	/** Espera em segundos como quem opera lê: "30 s", "5 min", "2 h" */
+	static String describeWait(int seconds) {
+		if (seconds < 120)
+			return seconds + " s";
+
+		int minutes = (seconds + 59) / 60;
+
+		if (minutes < 120)
+			return minutes + " min";
+
+		return ((minutes + 59) / 60) + " h";
 	}
 
 	/** O que o status costuma significar, quando a Receita não explica */
