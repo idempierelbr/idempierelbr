@@ -1007,11 +1007,17 @@ public class NFeXMLGenerator {
 			
 			produtos.setvProd(TextUtil.bigdecimalToString(details.getLBR_GrossAmt()));
 			
-			// check ean trib. mesma regra do cEAN: em branco a SEFAZ rejeita com 888
+			// GTIN da unidade tributável, com a mesma regra do cEAN: em branco a SEFAZ
+			// rejeita com 888. Na mesma unidade da comercial, vai o próprio cEAN. O
+			// LBR_UPCTax é o UPC copiado quando a linha do pedido foi criada e fica
+			// desatualizado quando o EAN do produto muda depois; o par "GTIN" e
+			// "SEM GTIN" a SEFAZ rejeita com 885 ou 886
 			produtos.setcEANTrib(UPC_EAN);
 
 			String productEANTrib = details.getLBR_UPCTax();
-			if (productEANTrib != null && !productEANTrib.contains("GTIN")
+			if (details.getLBR_UOMTax_ID() == nfLine.getC_UOM_ID())
+				produtos.setcEANTrib(produtos.getcEAN());
+			else if (productEANTrib != null && !productEANTrib.contains("GTIN")
 					&& NFeUtil.isValidEAN(productEANTrib))
 				produtos.setcEANTrib(productEANTrib);
 			
