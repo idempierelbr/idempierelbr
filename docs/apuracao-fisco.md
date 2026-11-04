@@ -28,15 +28,17 @@ As APIs são assíncronas:
 1. **Abertura** — o LBR pede o arquivo de um serviço (débitos, créditos, pagamentos ou recolhimentos) para o CNPJ base, informando o endereço do webhook. A Receita confere o endereço com um `HEAD` e, se ele não responder, cancela o pedido. Em caso de sucesso, devolve um tíquete.
 2. **Processamento** — leva de minutos a até 4 horas.
 3. **Aviso** — ao concluir, a Receita chama o webhook informando a situação ou o erro. O aviso não traz o arquivo nem o link: a solicitação só fica como **Concluída**, e nada é importado nesse momento.
-4. **Consulta de situação** — o processo **Consultar e Importar Solicitação** pergunta a situação pelo tíquete. É o que garante o download mesmo que o aviso nunca chegue; o webhook só encurta a espera.
-5. **Link de download** — com a solicitação concluída, o mesmo processo pede à Receita o link temporário do arquivo, disponível por 48 horas.
+4. **Link de download** — o LBR pede à Receita, pelo tíquete, o link temporário do arquivo, disponível por 48 horas. Com a solicitação concluída, o link vem direto; é o que garante a importação mesmo que o aviso nunca chegue, e o webhook só encurta a espera.
+5. **Consulta de situação** — só quando o arquivo ainda está indisponível: diz se a solicitação está em processamento, terminou em erro ou expirou. Vem depois do link porque a cota dessa rota é a menor (ver abaixo).
 6. **Download e importação** — o arquivo é anexado à solicitação tal como veio, a URL é descartada, e só então os documentos são gravados.
 
-Sem o processo rodando, à mão ou por agendador, nada é importado, mesmo com o aviso recebido.
+Os passos 4 a 6 são do processo **Consultar e Importar Solicitação**, e a própria abertura já os faz: se a Receita estimar o processamento em até 30 segundos (`LBR_RTC_FISCO_OPEN_WAIT_SECONDS`), o processo **Abrir Solicitação ao Fisco** espera esse tempo e baixa e importa em seguida. Na prática ela estima 1 segundo, e um clique basta. O que demorar mais fica para o **Consultar e Importar Solicitação**, à mão ou por agendador; sem ele rodando, nada mais é importado, mesmo com o aviso recebido.
 
-**Consulte logo depois de abrir.** A documentação dá 48 horas para o download, mas na prática o tíquete tem deixado de existir em menos de um dia: a consulta passa a devolver `404 SOLICITACAO_NAO_ENCONTRADA`, código que nem consta da documentação. Não há como recuperar o arquivo. O processo encerra a solicitação como **Expirada**, e é preciso abrir outra. Nos primeiros 10 minutos depois da abertura, o 404 é tratado como atraso da Receita, e a solicitação continua em aberto.
+**Não deixe para consultar depois.** A documentação dá 48 horas para o download, mas na prática o tíquete tem deixado de existir em menos de um dia: a consulta passa a devolver `404 SOLICITACAO_NAO_ENCONTRADA`, código que nem consta da documentação. Não há como recuperar o arquivo. O processo encerra a solicitação como **Expirada**, e é preciso abrir outra. Nos primeiros 10 minutos depois da abertura, o 404 é tratado como atraso da Receita, e a solicitação continua em aberto.
 
-**Excesso de chamadas (HTTP 429).** A consulta de situação também tem limite, não documentado. Com um 429, a solicitação continua em aberto, as demais da mesma configuração não são consultadas naquela execução, e o processo não repete a chamada sozinho, a menos que a Receita peça uma espera de até 10 segundos. Quando ela informa a espera, a mensagem diz quanto. Repetir em seguida só gasta mais chamadas.
+**Cotas e excesso de chamadas (HTTP 429).** Cada rota da API tem uma cota diária que a Receita não documenta, mas informa nos cabeçalhos de cada resposta (`RateLimit-*`). Em novembro de 2026: 4 aberturas por serviço, 8 pedidos de link de download e cerca de 4 consultas de situação por dia. As cotas renovam à meia-noite UTC, **21:00 em Brasília**. O log do processo mostra quanto sobrou em cada rota chamada ("download: restam 6 de 8 (renova às 21:00)").
+
+Com um 429, a solicitação continua em aberto, as demais da mesma configuração não são consultadas naquela execução, e o processo não repete a chamada sozinho, a menos que a Receita peça uma espera de até 10 segundos. A mensagem diz a hora em que a Receita volta a aceitar chamadas; tentar antes não adianta. O pedido de token também pode ser recusado com 429 por algum tempo, sem informar a espera: o LBR reaproveita o token por quase uma hora, então isso só costuma acontecer logo depois de reiniciar o servidor.
 
 Limites da Receita que o LBR respeita:
 
@@ -94,8 +96,8 @@ Restrinja a janela por perfil (role), como a do certificado digital: o *Client S
 
 | Processo | Onde | O que faz |
 |---|---|---|
-| Abrir Solicitação ao Fisco | Botão na configuração, ou agendador | Abre os quatro serviços de uma configuração (ou de todas as ativas, sem parâmetro). Cada serviço tem o seu próprio limite de 4 por dia |
-| Consultar e Importar Solicitação | Botão na solicitação, ou agendador | Consulta, baixa e importa as solicitações em andamento. Sobre uma solicitação específica, ignora o intervalo mínimo; se ela já foi importada, reimporta o arquivo anexado |
+| Abrir Solicitação ao Fisco | Botão na configuração, ou agendador | Abre os quatro serviços de uma configuração (ou de todas as ativas, sem parâmetro), ou só o serviço informado. Cada serviço tem o seu próprio limite de 4 por dia. Se a Receita estimar até 30 s, já baixa e importa |
+| Consultar e Importar Solicitação | Botão na solicitação, ou agendador | Baixa e importa as solicitações em andamento, consultando a situação só das que ainda não têm arquivo. Sobre uma solicitação específica, ignora o intervalo mínimo; se ela já foi importada, reimporta o arquivo anexado |
 | Importar Arquivo de Apuração | Botão na apuração | Importa um JSON salvo localmente, sem rede |
 
 O resultado de cada solicitação aparece no log do processo. A importação é idempotente: reimportar o mesmo arquivo não duplica nada. Um documento de débito ou crédito só é sobrescrito quando a data de atualização do arquivo é mais recente que a gravada. Um pagamento, que não traz essa data, fica com o que veio no último arquivo importado.
@@ -107,7 +109,7 @@ O resultado de cada solicitação aparece no log do processo. A importação é 
 | Abrir Solicitação ao Fisco | 1 vez por dia |
 | Consultar e Importar Solicitação | a cada 15 minutos |
 
-Ative-os só depois de um teste manual bem-sucedido: sem configuração válida, a abertura diária consome chamadas do limite com erro.
+Ative-os só depois de um teste manual bem-sucedido: sem configuração válida, a abertura diária consome chamadas do limite com erro. Como a abertura já importa, o segundo agendador só trabalha quando a Receita demora; a cada execução ele gasta uma chamada de download (e, se o arquivo não estiver pronto, uma de situação) por solicitação em andamento.
 
 ## Teste do webhook
 

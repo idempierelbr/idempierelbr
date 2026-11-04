@@ -9,11 +9,13 @@ import java.net.URI;
 import java.net.UnknownHostException;
 import java.net.http.HttpClient;
 import java.net.http.HttpConnectTimeoutException;
+import java.net.http.HttpHeaders;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpTimeoutException;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
+import java.time.Instant;
 import java.util.logging.Level;
 
 import javax.net.ssl.SSLException;
@@ -87,7 +89,7 @@ public class RTCHttpClient {
 		return send(request, url, MAX_JSON_BYTES);
 	}
 
-	/** GET de JSON com token Bearer, repetido em 429 e 5xx. */
+	/** GET de JSON com token Bearer, repetido em 5xx e no 429 com espera curta. */
 	public RTCHttpResponse getJson(String url, String bearerToken) {
 		HttpRequest request = newRequest(url)
 			.header("Authorization", "Bearer " + bearerToken)
@@ -177,11 +179,17 @@ public class RTCHttpClient {
 	private RTCHttpResponse send(HttpRequest request, String url, long maxBytes) {
 		try {
 			HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
+			Instant receivedAt = Instant.now();
+			HttpHeaders headers = response.headers();
 
-			Integer retryAfter = RTCHttpResponse.parseRetryAfter(response.headers().firstValue("Retry-After").orElse(null));
+			Integer retryAfter = RTCHttpResponse.parseRetryAfter(headers.firstValue("Retry-After").orElse(null));
+			RTCQuota quota = RTCQuota.parse(headers.firstValue("RateLimit-Limit").orElse(null),
+					headers.firstValue("RateLimit-Remaining").orElse(null),
+					headers.firstValue("RateLimit-Reset").orElse(null), receivedAt);
 
 			try (InputStream in = response.body()) {
-				return new RTCHttpResponse(response.statusCode(), readLimited(in, maxBytes, url), retryAfter);
+				return new RTCHttpResponse(response.statusCode(), readLimited(in, maxBytes, url), retryAfter, quota,
+						receivedAt);
 			}
 		} catch (InterruptedException e) {
 			Thread.currentThread().interrupt();

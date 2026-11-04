@@ -1,5 +1,7 @@
 package org.idempierelbr.rtc.provider;
 
+import org.idempierelbr.rtc.client.RTCQuota;
+
 /**
  * Situação de uma solicitação na Receita, como o endpoint de situação a
  * devolve. A URL de download não vem aqui: ver {@link RTCFiscoDownloadLink}.
@@ -36,17 +38,24 @@ public final class RTCFiscoStatus {
 	private final String errorCode;
 	private final String errorMessage;
 	private final boolean notFound;
+	private final RTCQuota quota;
 
 	public RTCFiscoStatus(State state, String rawState, String errorCode, String errorMessage) {
-		this(state, rawState, errorCode, errorMessage, false);
+		this(state, rawState, errorCode, errorMessage, null);
 	}
 
-	private RTCFiscoStatus(State state, String rawState, String errorCode, String errorMessage, boolean notFound) {
+	public RTCFiscoStatus(State state, String rawState, String errorCode, String errorMessage, RTCQuota quota) {
+		this(state, rawState, errorCode, errorMessage, false, quota);
+	}
+
+	private RTCFiscoStatus(State state, String rawState, String errorCode, String errorMessage, boolean notFound,
+			RTCQuota quota) {
 		this.state = state;
 		this.rawState = rawState;
 		this.errorCode = errorCode;
 		this.errorMessage = errorMessage;
 		this.notFound = notFound;
+		this.quota = quota;
 	}
 
 	/**
@@ -55,7 +64,11 @@ public final class RTCFiscoStatus {
 	 * tíquete deixa de existir.
 	 */
 	public static RTCFiscoStatus notFound(String errorCode, String errorMessage) {
-		return new RTCFiscoStatus(null, null, errorCode, errorMessage, true);
+		return notFound(errorCode, errorMessage, null);
+	}
+
+	public static RTCFiscoStatus notFound(String errorCode, String errorMessage, RTCQuota quota) {
+		return new RTCFiscoStatus(null, null, errorCode, errorMessage, true, quota);
 	}
 
 	/** A Receita não encontra mais o tíquete? Nesse caso não há estado. */
@@ -79,5 +92,10 @@ public final class RTCFiscoStatus {
 
 	public String getErrorMessage() {
 		return errorMessage;
+	}
+
+	/** Cota da rota de situação depois desta consulta, ou nulo */
+	public RTCQuota getQuota() {
+		return quota;
 	}
 }

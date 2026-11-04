@@ -134,25 +134,28 @@ Grupo ZD (`infRespTec`) da NF-e e da NFC-e, definido na NT 2018.005: identifica 
 
 ## Apuração de IBS/CBS (Fisco)
 
-Parâmetros da integração com as APIs de apuração da CBS da Receita Federal (bundle `org.idempierelbr.rtc`). Nenhum vem no seed: sem registro, vale o padrão. Valor zero ou negativo também volta ao padrão.
+Parâmetros da integração com as APIs de apuração da CBS da Receita Federal (bundle `org.idempierelbr.rtc`). Nenhum vem no seed: sem registro, vale o padrão. Valor zero ou negativo também volta ao padrão, exceto no `LBR_RTC_FISCO_OPEN_WAIT_SECONDS`, em que zero desliga.
 
 | SysConfig | Valores | Padrão | Nível | Para que serve |
 |---|---|---|---|---|
 | `LBR_RTC_FISCO_MAX_OPEN_PER_DAY` | Inteiro (≥ 1) | `4` | Cliente | Teto de solicitações abertas por dia, por configuração e serviço |
-| `LBR_RTC_FISCO_POLL_MINUTES` | Inteiro (minutos) | `15` | Cliente | Intervalo mínimo entre consultas de situação de uma mesma solicitação |
+| `LBR_RTC_FISCO_POLL_MINUTES` | Inteiro (minutos) | `15` | Cliente | Intervalo mínimo entre consultas de uma mesma solicitação à Receita |
 | `LBR_RTC_FISCO_HTTP_TIMEOUT_SECONDS` | Inteiro (segundos) | `60` | Cliente | Tempo limite de conexão e de resposta das chamadas à Receita |
 | `LBR_RTC_FISCO_DOWNLOAD_MAX_MB` | Inteiro (MB) | `50` | Cliente | Tamanho máximo do arquivo baixado da URL assinada |
 | `LBR_RTC_FISCO_WINDOW_WARN_DAYS` | Inteiro (dias) | `6` | Cliente | Dias sem importação a partir dos quais a abertura avisa sobre a janela incremental |
+| `LBR_RTC_FISCO_OPEN_WAIT_SECONDS` | Inteiro (segundos, ≥ 0) | `30` | Cliente | Maior estimativa da Receita que a abertura espera para já baixar e importar; `0` desliga |
 
 **`LBR_RTC_FISCO_MAX_OPEN_PER_DAY`** — A Receita aceita 4 aberturas por dia no endpoint de cada serviço. O LBR conta as solicitações do dia (horário de Brasília) para a mesma configuração e o mesmo serviço — inclusive as recusadas, porque não há como saber quais a Receita descontou — e recusa abrir além do teto. Só faz sentido **diminuir**: aumentar não aumenta o limite da Receita.
 
-**`LBR_RTC_FISCO_POLL_MINUTES`** — O processo *Consultar e Importar Solicitação* não pergunta a situação de uma solicitação antes de passar esse intervalo desde a consulta anterior (com um minuto de tolerância, para o agendador que roda no mesmo intervalo não pular uma volta). A primeira consulta espera só o tempo estimado pela própria Receita (`tEASegundos`). Rodando o processo à mão sobre uma solicitação específica, o intervalo é ignorado.
+**`LBR_RTC_FISCO_POLL_MINUTES`** — O processo *Consultar e Importar Solicitação* não volta a perguntar por uma solicitação (o link de download e, sem arquivo, a situação) antes de passar esse intervalo desde a consulta anterior (com um minuto de tolerância, para o agendador que roda no mesmo intervalo não pular uma volta). A primeira consulta espera só o tempo estimado pela própria Receita (`tEASegundos`). Rodando o processo à mão sobre uma solicitação específica, o intervalo é ignorado.
 
 **`LBR_RTC_FISCO_HTTP_TIMEOUT_SECONDS`** — Vale para o token, a abertura, a consulta de situação e o download.
 
 **`LBR_RTC_FISCO_DOWNLOAD_MAX_MB`** — Protege o servidor de um arquivo anormalmente grande. Se um arquivo legítimo for recusado, a mensagem do processo diz para aumentar este valor; a URL assinada continua valendo por 48 horas.
 
 **`LBR_RTC_FISCO_WINDOW_WARN_DAYS`** — A Receita devolve só o que mudou desde a consulta anterior, limitado aos últimos 8 dias; passar disso perde as alterações mais antigas em definitivo. A abertura avisa quando a última importação do serviço tem esse número de dias ou mais, e avisa com mais ênfase a partir de 8.
+
+**`LBR_RTC_FISCO_OPEN_WAIT_SECONDS`** — Depois de abrir, o processo *Abrir Solicitação ao Fisco* espera a estimativa da Receita (`tEASegundos`, mais 2 segundos de folga; 5 segundos quando ela não informa) e já baixa e importa, como o *Consultar e Importar Solicitação* faria. Se a estimativa passar deste valor, a solicitação fica para a consulta posterior. Com `0`, a abertura só abre. A Receita tem estimado 1 segundo, e o tíquete deixa de existir em menos de um dia: deixar para depois é o que costuma perder o arquivo.
 
 ## SysConfig do core usadas pelo LBR
 

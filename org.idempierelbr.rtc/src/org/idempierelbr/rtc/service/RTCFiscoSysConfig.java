@@ -13,7 +13,7 @@ public final class RTCFiscoSysConfig {
 
 	/** Teto de aberturas por dia, por configuração e serviço (limite da Receita: 4) */
 	public static final String MAX_OPEN_PER_DAY = "LBR_RTC_FISCO_MAX_OPEN_PER_DAY";
-	/** Intervalo mínimo entre consultas de situação de uma mesma solicitação, em minutos */
+	/** Intervalo mínimo entre consultas de uma mesma solicitação à Receita, em minutos */
 	public static final String POLL_MINUTES = "LBR_RTC_FISCO_POLL_MINUTES";
 	/** Tempo limite de conexão e de resposta das chamadas HTTP, em segundos */
 	public static final String HTTP_TIMEOUT_SECONDS = "LBR_RTC_FISCO_HTTP_TIMEOUT_SECONDS";
@@ -21,12 +21,18 @@ public final class RTCFiscoSysConfig {
 	public static final String DOWNLOAD_MAX_MB = "LBR_RTC_FISCO_DOWNLOAD_MAX_MB";
 	/** Dias sem importação que disparam o aviso — a janela incremental da Receita é de 8 */
 	public static final String WINDOW_WARN_DAYS = "LBR_RTC_FISCO_WINDOW_WARN_DAYS";
+	/**
+	 * Maior estimativa da Receita, em segundos, que a abertura espera para já
+	 * baixar e importar no mesmo processo; zero desliga
+	 */
+	public static final String OPEN_WAIT_SECONDS = "LBR_RTC_FISCO_OPEN_WAIT_SECONDS";
 
 	public static final int DEFAULT_MAX_OPEN_PER_DAY = 4;
 	public static final int DEFAULT_POLL_MINUTES = 15;
 	public static final int DEFAULT_HTTP_TIMEOUT_SECONDS = 60;
 	public static final int DEFAULT_DOWNLOAD_MAX_MB = 50;
 	public static final int DEFAULT_WINDOW_WARN_DAYS = 6;
+	public static final int DEFAULT_OPEN_WAIT_SECONDS = 30;
 
 	private RTCFiscoSysConfig() {
 	}
@@ -49,6 +55,13 @@ public final class RTCFiscoSysConfig {
 
 	public static int getWindowWarnDays(int AD_Client_ID) {
 		return positive(WINDOW_WARN_DAYS, DEFAULT_WINDOW_WARN_DAYS, AD_Client_ID);
+	}
+
+	/** Zero desliga a importação logo depois da abertura */
+	public static int getOpenWaitSeconds(int AD_Client_ID) {
+		int value = MSysConfig.getIntValue(OPEN_WAIT_SECONDS, DEFAULT_OPEN_WAIT_SECONDS, AD_Client_ID);
+
+		return value < 0 ? DEFAULT_OPEN_WAIT_SECONDS : value;
 	}
 
 	/** Valor configurado, ou o padrão quando ausente, zero ou negativo */

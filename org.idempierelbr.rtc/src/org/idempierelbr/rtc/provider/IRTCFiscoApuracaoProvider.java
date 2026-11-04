@@ -23,16 +23,18 @@ public interface IRTCFiscoApuracaoProvider {
 	RTCFiscoOpenResult open(MLBRRTCFiscoConfig config, String service, String callbackURL);
 
 	/**
-	 * Situação da solicitação — o caminho confiável para saber que ela terminou
-	 * quando o webhook não chega. Um tíquete que a Receita não conhece mais
-	 * volta como {@link RTCFiscoStatus#isNotFound()}.
+	 * Situação da solicitação — para saber por que o arquivo ainda não está
+	 * disponível (em processamento, erro, expirada). Um tíquete que a Receita
+	 * não conhece mais volta como {@link RTCFiscoStatus#isNotFound()}.
 	 */
 	RTCFiscoStatus getStatus(MLBRRTCFiscoConfig config, String ticket);
 
 	/**
-	 * Link temporário do arquivo de uma solicitação concluída.
+	 * Link temporário do arquivo. Pode ser pedido sem consultar a situação
+	 * antes: com a solicitação concluída, o link vem; sem ela, a Receita diz
+	 * que o arquivo está indisponível.
 	 *
-	 * @return o link, ou nulo se a Receita disser que o arquivo está indisponível
+	 * @return o link, ou {@link RTCFiscoDownloadLink#isAvailable() indisponível}
 	 */
 	RTCFiscoDownloadLink getDownloadLink(MLBRRTCFiscoConfig config, String ticket);
 

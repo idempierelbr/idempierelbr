@@ -1,6 +1,8 @@
 package org.idempierelbr.rtc.service;
 
 import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -16,6 +18,7 @@ import org.idempierelbr.base.model.MLBRRTCFiscoConfig;
 import org.idempierelbr.base.model.MLBRRTCFiscoRequest;
 import org.idempierelbr.rtc.client.RTCApiException;
 import org.idempierelbr.rtc.client.RTCHttpClient;
+import org.idempierelbr.rtc.client.RTCQuota;
 import org.idempierelbr.rtc.provider.IRTCFiscoApuracaoProvider;
 import org.idempierelbr.rtc.provider.RTCFiscoApuracaoCBSProvider;
 import org.idempierelbr.rtc.provider.RTCFiscoApuracaoProviderFactory;
@@ -30,16 +33,23 @@ import org.idempierelbr.rtc.provider.RTCFiscoStatus;
  * <li>arquivo já anexado e ainda não importado → importa;
  * <li>URL assinada válida (de uma execução anterior) → baixa, anexa, descarta
  *     a URL e confirma; depois importa;
- * <li>sem URL válida → consulta a situação na Receita e, se concluída, pede o
- *     link de download. É o caminho que funciona mesmo quando o webhook nunca
- *     chega; o webhook só encurta a espera;
+ * <li>sem URL válida → pede o link de download e, só se o arquivo estiver
+ *     indisponível, consulta a situação para saber por quê. É o caminho que
+ *     funciona mesmo quando o webhook nunca chega; o webhook só encurta a
+ *     espera;
  * <li>arquivo indisponível depois do prazo de download, ou tíquete que a
  *     Receita não encontra mais → {@code EXPIRED}.
  * </ol>
  *
+ * <p>O link vem antes da situação porque a rota de download tem cota maior
+ * que a de situação (8 contra cerca de 4 por dia, em 04/11/2026), e porque,
+ * concluída a solicitação — em segundos, quase sempre —, uma chamada resolve
+ * o que levaria duas. A cota que sobra em cada rota aparece no log do
+ * processo.
+ *
  * <p>Um 429 (excesso de chamadas) não encerra a solicitação: ela fica em
  * aberto, e as demais da mesma configuração não são consultadas nesta
- * execução — a credencial é a mesma, e cada tentativa contaria no limite.
+ * execução — a credencial é a mesma, e a recusa se repetiria.
  *
  * <p>O arquivo é anexado e confirmado <b>antes</b> da importação: se ela
  * falhar, o dado bruto não se perde e a próxima execução importa do anexo, sem
@@ -98,6 +108,7 @@ public class RTCFiscoPollService {
 		String trxName = trx.getTrxName();
 		String description = "Solicitação " + LBR_RTCFiscoRequest_ID;
 		int configID = 0;
+		List<String> quotas = new ArrayList<String>();
 
 		try {
 			MLBRRTCFiscoRequest request = new MLBRRTCFiscoRequest(ctx, LBR_RTCFiscoRequest_ID, trxName);
@@ -140,7 +151,7 @@ public class RTCFiscoPollService {
 					return;
 				}
 
-				if (!poll(provider, config, request, description)) {
+				if (!poll(provider, config, request, description, quotas)) {
 					request.saveEx();
 					trx.commit(true);
 					return;
@@ -174,8 +185,8 @@ public class RTCFiscoPollService {
 				waiting++;
 				log.warning(description + ": " + rateLimit.getLocalizedMessage());
 				messages.add(description + ": " + rateLimit.getLocalizedMessage() + ". A solicitação continua "
-						+ "em aberto: consulte de novo mais tarde, sem repetir em seguida — cada tentativa conta "
-						+ "no limite.");
+						+ "em aberto: " + (rateLimit.getRetryAt() != null ? "consulte de novo depois desse horário."
+								: "consulte de novo mais tarde, sem repetir em seguida."));
 				return;
 			}
 
@@ -184,18 +195,32 @@ public class RTCFiscoPollService {
 			messages.add(description + ": " + RTCFiscoImportService.getReason(e));
 		} finally {
 			trx.close();
+
+			if (!quotas.isEmpty())
+				messages.add(description + ": cota da Receita — " + String.join("; ", quotas) + ".");
 		}
 	}
 
 	/**
-	 * Consulta a situação e, se concluída, o link de download, e aplica o
-	 * resultado na solicitação (sem gravar).
+	 * Pede o link de download e, se o arquivo estiver indisponível, consulta a
+	 * situação para saber por quê. Aplica o resultado na solicitação (sem
+	 * gravar).
 	 *
+	 * @param quotas recebe a cota que sobrou em cada rota chamada
 	 * @return true se a URL de download está disponível
 	 */
 	private boolean poll(IRTCFiscoApuracaoProvider provider, MLBRRTCFiscoConfig config,
-			MLBRRTCFiscoRequest request, String description) {
+			MLBRRTCFiscoRequest request, String description, List<String> quotas) {
+		RTCFiscoDownloadLink link = provider.getDownloadLink(config, request.getLBR_Ticket());
+		addQuota(quotas, "download", link.getQuota());
+
+		if (link.isAvailable()) {
+			request.setDone(link.getSignedURL(), link.getExpiresAt());
+			return true;
+		}
+
 		RTCFiscoStatus status = provider.getStatus(config, request.getLBR_Ticket());
+		addQuota(quotas, "situação", status.getQuota());
 
 		if (status.isNotFound()) {
 			if (isNotFoundFinal(request.getLBR_DateRequested(), new Timestamp(System.currentTimeMillis()))) {
@@ -222,13 +247,7 @@ public class RTCFiscoPollService {
 
 		switch (status.getState()) {
 			case CONCLUIDA:
-				RTCFiscoDownloadLink link = provider.getDownloadLink(config, request.getLBR_Ticket());
-
-				if (link != null) {
-					request.setDone(link.getSignedURL(), link.getExpiresAt());
-					return true;
-				}
-
+				// concluída, mas o link pedido logo acima veio indisponível
 				if (isDownloadOver(request.getLBR_DateRequested(), new Timestamp(System.currentTimeMillis()))) {
 					request.setExpired();
 					failed++;
@@ -236,7 +255,7 @@ public class RTCFiscoPollService {
 				} else {
 					request.setDone(null, null);
 					waiting++;
-					messages.add(description + ": a Receita deu a solicitação por concluída, mas o arquivo está "
+					messages.add(description + ": a Receita deu a solicitação por concluída, mas o arquivo ainda está "
 							+ "indisponível; nova consulta na próxima execução.");
 				}
 
@@ -266,12 +285,19 @@ public class RTCFiscoPollService {
 					messages.add(description + ": " + request.getLBR_ErrorMsg());
 				} else {
 					waiting++;
+					messages.add(description + ": a Receita ainda está processando a solicitação (" + status.getRawState()
+							+ "); nova consulta na próxima execução.");
 				}
 
 				// marca a consulta, para o intervalo mínimo contar a partir dela
 				request.markPolled();
 				return false;
 		}
+	}
+
+	private static void addQuota(List<String> quotas, String route, RTCQuota quota) {
+		if (quota != null)
+			quotas.add(route + ": " + quota.describe(Instant.now(), ZoneId.systemDefault()));
 	}
 
 	private void importAttached(MLBRRTCFiscoConfig config, MLBRRTCFiscoRequest request, Trx trx, String description)

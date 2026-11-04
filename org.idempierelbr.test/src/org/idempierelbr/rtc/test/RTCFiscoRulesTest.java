@@ -19,7 +19,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 /**
  * Regras de decisão da integração com a apuração do fisco que não dependem de
  * banco: sobrescrita na reimportação, janela incremental, prazos de
- * processamento e de download, situações da Receita e serviços liberados.
+ * processamento e de download, espera depois da abertura, situações da
+ * Receita e serviços liberados.
  */
 class RTCFiscoRulesTest {
 
@@ -108,6 +109,35 @@ class RTCFiscoRulesTest {
 		assertThat(RTCFiscoPollService.isNotFoundFinal(minusMinutes(10), NOW)).isTrue();
 		assertThat(RTCFiscoPollService.isNotFoundFinal(minusMinutes(23 * 60), NOW)).isTrue();
 		assertThat(RTCFiscoPollService.isNotFoundFinal(null, NOW)).isTrue();
+	}
+
+	// ===== Importação logo depois da abertura =====
+
+	@Test
+	void shortEstimateIsWaitedWithMargin() {
+		assertThat(RTCFiscoRequestService.getImportWaitSeconds(1, 30)).isEqualTo(3);
+		assertThat(RTCFiscoRequestService.getImportWaitSeconds(29, 30)).isEqualTo(30);
+		assertThat(RTCFiscoRequestService.getImportWaitSeconds(30, 30)).isEqualTo(30);
+	}
+
+	@Test
+	void unknownEstimateWaitsAFewSeconds() {
+		// a Receita já mandou tEASegundos = -1
+		assertThat(RTCFiscoRequestService.getImportWaitSeconds(-1, 30)).isEqualTo(5);
+		assertThat(RTCFiscoRequestService.getImportWaitSeconds(0, 30)).isEqualTo(5);
+		assertThat(RTCFiscoRequestService.getImportWaitSeconds(-1, 3)).isEqualTo(3);
+	}
+
+	@Test
+	void longEstimateIsLeftForLater() {
+		assertThat(RTCFiscoRequestService.getImportWaitSeconds(31, 30)).isNull();
+		assertThat(RTCFiscoRequestService.getImportWaitSeconds(3600, 30)).isNull();
+	}
+
+	@Test
+	void zeroTurnsTheImportAfterOpeningOff() {
+		assertThat(RTCFiscoRequestService.getImportWaitSeconds(1, 0)).isNull();
+		assertThat(RTCFiscoRequestService.getImportWaitSeconds(-1, 0)).isNull();
 	}
 
 	// ===== Situação da solicitação =====

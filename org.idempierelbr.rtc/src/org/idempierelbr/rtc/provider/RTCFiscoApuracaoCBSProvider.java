@@ -2,13 +2,17 @@ package org.idempierelbr.rtc.provider;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.time.ZoneId;
+import java.util.logging.Level;
 
 import org.adempiere.exceptions.AdempiereException;
+import org.compiere.util.CLogger;
 import org.idempierelbr.base.model.MLBRRTCFiscoConfig;
 import org.idempierelbr.base.model.MLBRRTCFiscoRequest;
 import org.idempierelbr.rtc.client.RTCApiException;
 import org.idempierelbr.rtc.client.RTCHttpClient;
 import org.idempierelbr.rtc.client.RTCHttpResponse;
+import org.idempierelbr.rtc.client.RTCQuota;
 import org.idempierelbr.rtc.client.ReceitaIntegraTokenService;
 import org.idempierelbr.rtc.json.RTCJson;
 import org.idempierelbr.rtc.util.RTCUtil;
@@ -25,9 +29,13 @@ import com.google.gson.JsonObject;
  * Link      GET  {base}/download/{tiquete}   → { urlAssinada, urlAssinadaExpiraEm }
  * </pre>
  *
+ * <p>Cada rota tem a sua cota diária, não documentada, que o gateway informa
+ * nos cabeçalhos {@code RateLimit-*}; ela vai para o log a cada chamada.
+ *
  * @author Alan Lescano
  */
 public class RTCFiscoApuracaoCBSProvider implements IRTCFiscoApuracaoProvider {
+	private static final CLogger log = CLogger.getCLogger(RTCFiscoApuracaoCBSProvider.class);
 
 	private final RTCHttpClient http;
 
@@ -53,6 +61,8 @@ public class RTCFiscoApuracaoCBSProvider implements IRTCFiscoApuracaoProvider {
 
 		String operation = "abertura da solicitação de " + getServiceLabel(service);
 
+		logQuota(operation + " do CNPJ base " + config.getLBR_CNPJBase(), response);
+
 		if (!response.isSuccess())
 			throw RTCApiException.of(operation, response);
 
@@ -63,7 +73,8 @@ public class RTCFiscoApuracaoCBSProvider implements IRTCFiscoApuracaoProvider {
 			throw new AdempiereException("A Receita Federal aceitou a " + operation
 					+ " (HTTP " + response.getStatus() + "), mas não devolveu o tíquete.");
 
-		return new RTCFiscoOpenResult(ticket, RTCUtil.parseSeconds(RTCJson.getString(json, "tEASegundos")));
+		return new RTCFiscoOpenResult(ticket, RTCUtil.parseSeconds(RTCJson.getString(json, "tEASegundos")),
+				response.getQuota());
 	}
 
 	@Override
@@ -90,7 +101,7 @@ public class RTCFiscoApuracaoCBSProvider implements IRTCFiscoApuracaoProvider {
 			// o codigoErro: o 404 do gateway sem ele ("no Route matched") é
 			// endereço errado na configuração, e não tíquete perdido
 			if (response.getStatus() == 404 && errorCode != null)
-				return RTCFiscoStatus.notFound(errorCode, RTCJson.getString(json, "mensagemErro"));
+				return RTCFiscoStatus.notFound(errorCode, RTCJson.getString(json, "mensagemErro"), response.getQuota());
 
 			if (!response.isSuccess())
 				throw RTCApiException.of("consulta da situação do tíquete " + ticket, response);
@@ -101,16 +112,25 @@ public class RTCFiscoApuracaoCBSProvider implements IRTCFiscoApuracaoProvider {
 
 		return new RTCFiscoStatus(RTCFiscoStatus.State.of(rawState), rawState,
 				RTCJson.getString(json, "codigoErro"),
-				RTCJson.getString(json, "mensagemErro"));
+				RTCJson.getString(json, "mensagemErro"),
+				response.getQuota());
 	}
 
 	@Override
 	public RTCFiscoDownloadLink getDownloadLink(MLBRRTCFiscoConfig config, String ticket) {
-		RTCHttpResponse response = getByTicket(config, "download", ticket);
+		return parseDownloadLink(ticket, getByTicket(config, "download", ticket));
+	}
 
-		// ARQUIVO_INDISPONIVEL: inexistente, ainda não concluído ou já baixado
+	/**
+	 * Interpreta a resposta do pedido de link.
+	 *
+	 * @return o link; indisponível no 404 ({@code ARQUIVO_INDISPONIVEL}:
+	 *         inexistente, ainda não concluído ou já baixado)
+	 * @throws RTCApiException se a Receita recusou o pedido por outro motivo
+	 */
+	public static RTCFiscoDownloadLink parseDownloadLink(String ticket, RTCHttpResponse response) {
 		if (response.getStatus() == 404)
-			return null;
+			return RTCFiscoDownloadLink.unavailable(response.getQuota());
 
 		String operation = "consulta do link de download do tíquete " + ticket;
 
@@ -124,7 +144,7 @@ public class RTCFiscoApuracaoCBSProvider implements IRTCFiscoApuracaoProvider {
 			throw new AdempiereException("A Receita Federal respondeu à " + operation + " sem informar o link.");
 
 		return new RTCFiscoDownloadLink(signedURL,
-				RTCUtil.parseDateTimeOrNull(RTCJson.getString(json, "urlAssinadaExpiraEm")));
+				RTCUtil.parseDateTimeOrNull(RTCJson.getString(json, "urlAssinadaExpiraEm")), response.getQuota());
 	}
 
 	@Override
@@ -143,7 +163,26 @@ public class RTCFiscoApuracaoCBSProvider implements IRTCFiscoApuracaoProvider {
 			response = http.getJson(url, token(config));
 		}
 
+		logQuota(resource + " do tíquete " + ticket, response);
+
 		return response;
+	}
+
+	/**
+	 * Registra a cota que sobrou na rota. É o único jeito de conhecer os
+	 * limites, que a Receita não documenta; a cota esgotada vai como aviso.
+	 */
+	private static void logQuota(String operation, RTCHttpResponse response) {
+		RTCQuota quota = response.getQuota();
+
+		if (quota == null)
+			return;
+
+		Level level = quota.getRemaining() == 0 ? Level.WARNING : Level.INFO;
+
+		if (log.isLoggable(level))
+			log.log(level, "Receita, " + operation + ": HTTP " + response.getStatus() + "; cota "
+					+ quota.describe(response.getReceivedAt(), ZoneId.systemDefault()));
 	}
 
 	private String token(MLBRRTCFiscoConfig config) {

@@ -14,6 +14,7 @@ import org.idempierelbr.base.model.MLBRRTCFiscoConfig;
 import org.idempierelbr.base.model.MLBRRTCFiscoRequest;
 import org.idempierelbr.rtc.client.RTCApiException;
 import org.idempierelbr.rtc.client.RTCHttpClient;
+import org.idempierelbr.rtc.client.RTCQuota;
 import org.idempierelbr.rtc.provider.IRTCFiscoApuracaoProvider;
 import org.idempierelbr.rtc.provider.RTCFiscoApuracaoCBSProvider;
 import org.idempierelbr.rtc.provider.RTCFiscoApuracaoProviderFactory;
@@ -36,8 +37,17 @@ public class RTCFiscoRequestService {
 	/** Janela máxima da consulta incremental da Receita, em dias */
 	public static final int INCREMENTAL_WINDOW_DAYS = 8;
 
+	/** Espera quando a Receita não estima o tempo de processamento, em segundos */
+	private static final int UNKNOWN_ESTIMATE_WAIT_SECONDS = 5;
+
+	/** Folga sobre a estimativa da Receita antes de pedir o arquivo, em segundos */
+	private static final int ESTIMATE_MARGIN_SECONDS = 2;
+
 	private final Properties ctx;
 	private final RTCHttpClient http;
+
+	/** Cota da rota de abertura informada pela Receita na última abertura aceita */
+	private RTCQuota lastOpenQuota;
 
 	public RTCFiscoRequestService(Properties ctx) {
 		this.ctx = ctx;
@@ -90,10 +100,41 @@ public class RTCFiscoRequestService {
 			throw e;
 		}
 
+		lastOpenQuota = result.getQuota();
+
 		return update(requestID, request -> {
 			request.setLBR_Ticket(result.getTicket());
 			request.setLBR_TEASeconds(result.getEstimatedSeconds());
 		});
+	}
+
+	/** Cota de aberturas que sobrou depois da última abertura aceita, ou nulo */
+	public RTCQuota getLastOpenQuota() {
+		return lastOpenQuota;
+	}
+
+	/**
+	 * Quanto esperar depois da abertura para já pedir o arquivo, no mesmo
+	 * processo. Quase sempre a Receita estima 1 segundo; esperar o processo
+	 * terminar e consultar depois é o que deixa o tíquete sumir antes.
+	 *
+	 * @param estimatedSeconds estimativa da Receita; zero ou negativo quando
+	 *        ela não informa
+	 * @param maxWaitSeconds maior espera aceita; zero desliga
+	 * @return a espera em segundos, ou nulo se a estimativa passa do máximo e
+	 *         a solicitação fica para a consulta posterior
+	 */
+	public static Integer getImportWaitSeconds(int estimatedSeconds, int maxWaitSeconds) {
+		if (maxWaitSeconds <= 0)
+			return null;
+
+		if (estimatedSeconds <= 0)
+			return Math.min(UNKNOWN_ESTIMATE_WAIT_SECONDS, maxWaitSeconds);
+
+		if (estimatedSeconds > maxWaitSeconds)
+			return null;
+
+		return Math.min(estimatedSeconds + ESTIMATE_MARGIN_SECONDS, maxWaitSeconds);
 	}
 
 	/**
