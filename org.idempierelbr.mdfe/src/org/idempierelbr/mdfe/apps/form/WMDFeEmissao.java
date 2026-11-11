@@ -1699,6 +1699,14 @@ public class WMDFeEmissao extends MDFeEmissao
 			numeroField.setValue("");
 			retornoField.setValue("");
 			avisosLabel.setValue("");
+			// O formulario abre sem MDF-e: a tela ja mostra o que o Novo traz.
+			MLBRMDFe padrao = emBranco();
+			serieField.setValue(padrao.getLBR_Serie());
+			dataEmissaoEditor.setValue(padrao.getDateDoc());
+			selecionar(tpAmbCombo, padrao.getLBR_tpAmb());
+			selecionar(tpEmitCombo, padrao.getLBR_tpEmit());
+			selecionar(modalCombo, padrao.getLBR_Modal());
+			selecionar(cUnidCombo, padrao.getLBR_cUnid());
 			limparGrades();
 			return;
 		}
