@@ -944,7 +944,9 @@ public class MDFeXMLGenerator
 
 		w.el("vCarga", mdfe.getLBR_ValueCargo(), 2);
 		w.elReq("cUnid", mdfe.getLBR_cUnid(), "tot/cUnid");
-		w.el("qCarga", mdfe.getLBR_QtyCargo(), 4);
+		// Vazio o schema so reclama depois de assinar, e zero ("0.0000") ele
+		// aceita: o manifesto chegava a SEFAZ sem peso.
+		w.elReq("qCarga", mdfe.getLBR_QtyCargo(), 4, "Peso bruto, tot/qCarga");
 		w.close();
 	}
 
