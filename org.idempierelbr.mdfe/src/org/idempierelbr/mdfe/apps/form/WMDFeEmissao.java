@@ -73,6 +73,7 @@ import org.zkoss.zul.Div;
 import org.zkoss.zul.North;
 import org.zkoss.zul.Separator;
 import org.zkoss.zul.South;
+import org.zkoss.zul.Style;
 import org.zkoss.zul.Tab;
 import org.zkoss.zul.Tabbox;
 import org.zkoss.zul.Tabpanel;
@@ -640,8 +641,18 @@ public class WMDFeEmissao extends MDFeEmissao
 		// desce para a linha de baixo em vez de esconder, e nenhum botao some
 		// por mais estreita que fique a janela.
 		Div barra = new Div();
+		barra.setSclass("lbr-mdfe-barra");
 		barra.setStyle("display: flex; flex-wrap: wrap; gap: 6px 18px;"
 				+ " align-items: flex-start; width: 100%; padding: 2px 0;");
+
+		// O Borderlayout mede a altura do cabecalho uma vez, quando a tela
+		// aparece. Na primeira abertura os icones ainda nao chegaram, os botoes
+		// sao medidos mais estreitos e a barra cabe numa linha so; quando os
+		// icones carregam ela quebra em duas e empurra Ambiente e UF para fora
+		// do cabecalho. Com o lugar do icone reservado a medida nao muda.
+		Style icones = new Style();
+		icones.setContent(".lbr-mdfe-barra img { width: 16px; height: 16px; }");
+		form.appendChild(icones);
 
 		// Agrupados pelo que fazem, e nessa ordem porque e a ordem em que sao
 		// usados: monta o documento, manda para a SEFAZ, pergunta, imprime.
