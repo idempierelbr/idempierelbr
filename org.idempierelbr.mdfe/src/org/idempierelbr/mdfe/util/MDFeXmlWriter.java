@@ -144,14 +144,21 @@ public class MDFeXmlWriter
 	 *
 	 * <p>Nulo e zero sao tratados igual: um valor obrigatorio zerado quase
 	 * sempre e campo que ninguem preencheu, e chega na SEFAZ como rejeicao em
-	 * vez de mensagem com o nome do campo.
+	 * vez de mensagem com o nome do campo. Zero e conferido ja arredondado para
+	 * as casas do XML, porque e assim que o valor sai. Negativo tambem para
+	 * aqui: os tipos decimais do schema nao tem sinal, e o erro so viria na
+	 * validacao, depois de assinar.
 	 *
 	 * @param ondeFalhou caminho do campo no schema, para a mensagem de erro
 	 */
 	public MDFeXmlWriter elReq(String nome, BigDecimal valor, int casas, String ondeFalhou)
 	{
-		if (valor == null || valor.signum() == 0)
+		if (valor == null || valor.setScale(casas, RoundingMode.HALF_UP).signum() == 0)
 			throw new AdempiereException("Campo obrigatorio do MDF-e nao preenchido: "
+					+ nome + " (" + ondeFalhou + ")");
+
+		if (valor.signum() < 0)
+			throw new AdempiereException("Campo do MDF-e nao pode ser negativo: "
 					+ nome + " (" + ondeFalhou + ")");
 
 		return el(nome, valor, casas);

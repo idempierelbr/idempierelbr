@@ -28,7 +28,6 @@ import org.idempierelbr.base.util.BPartnerUtil;
 import org.idempierelbr.mdfe.damdfe.DAMDFEImpressao;
 import org.idempierelbr.mdfe.util.MDFeUtil;
 
-import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperPrint;
 
 /**
@@ -873,7 +872,7 @@ public class MLBRMDFe extends X_LBR_MDFe implements DocAction, DocOptions
 			if (print == null)
 				return null;
 
-			JasperExportManager.exportReportToPdfFile(print, file.getAbsolutePath());
+			DAMDFEImpressao.exportarPdf(print, file.getAbsolutePath());
 
 			return file;
 		}

@@ -71,17 +71,32 @@ public class MDFeEmissao
 	{
 		avisos.clear();
 
-		mdfe = new MLBRMDFe(getCtx(), 0, trxName);
-		mdfe.setAD_Org_ID(Env.getAD_Org_ID(getCtx()));
-		mdfe.setLBR_MDFeStatus(X_LBR_MDFe.LBR_MDFESTATUS_EmDigitacao);
-		mdfe.setLBR_Modal(X_LBR_MDFe.LBR_MODAL_Rodoviario);
-		mdfe.setLBR_tpEmis(X_LBR_MDFe.LBR_TPEMIS_Normal);
-		mdfe.setLBR_procEmi(X_LBR_MDFe.LBR_PROCEMI_AplicativoDoContribuinte);
-		mdfe.setLBR_tpEmit(X_LBR_MDFe.LBR_TPEMIT_TransportadorDeCargaPropria);
-		mdfe.setLBR_cUnid(X_LBR_MDFe.LBR_CUNID_KG);
-		mdfe.setLBR_Serie("1");
+		mdfe = emBranco();
 
 		return mdfe;
+	}
+
+	/**
+	 * Manifesto nao gravado com o que a janela Manifesto Eletronico sugere num
+	 * registro novo, menos o Ambiente, que aqui e sempre Producao. A tela usa
+	 * para mostrar esses valores tambem antes do Novo.
+	 */
+	protected MLBRMDFe emBranco()
+	{
+		MLBRMDFe m = new MLBRMDFe(getCtx(), 0, trxName);
+		m.setAD_Org_ID(Env.getAD_Org_ID(getCtx()));
+		m.setDateDoc(new Timestamp(System.currentTimeMillis()));
+		m.setLBR_MDFeStatus(X_LBR_MDFe.LBR_MDFESTATUS_EmDigitacao);
+		// Sem isto o Ambiente vinha vazio e o beforeSave gravava Homologacao.
+		m.setLBR_tpAmb(X_LBR_MDFe.LBR_TPAMB_Producao);
+		m.setLBR_Modal(X_LBR_MDFe.LBR_MODAL_Rodoviario);
+		m.setLBR_tpEmis(X_LBR_MDFe.LBR_TPEMIS_Normal);
+		m.setLBR_procEmi(X_LBR_MDFe.LBR_PROCEMI_AplicativoDoContribuinte);
+		m.setLBR_tpEmit(X_LBR_MDFe.LBR_TPEMIT_TransportadorDeCargaPropria);
+		m.setLBR_cUnid(X_LBR_MDFe.LBR_CUNID_KG);
+		m.setLBR_Serie("1");
+
+		return m;
 	}
 
 	/** Abre um manifesto ja gravado. */

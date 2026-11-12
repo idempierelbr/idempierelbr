@@ -8,7 +8,6 @@ import org.adempiere.exceptions.AdempiereException;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
-import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
@@ -53,25 +52,37 @@ public class QrCodeImagem
 
 		try
 		{
-			matriz = new QRCodeWriter().encode(texto, BarcodeFormat.QR_CODE, util, util, dicas);
+			// Tamanho zero devolve um pixel por modulo. Pedir o tamanho util
+			// deixava o zxing arredondar o modulo para pixels inteiros e
+			// centralizar a sobra: o simbolo ocupava bem menos que o util.
+			matriz = new QRCodeWriter().encode(texto, BarcodeFormat.QR_CODE, 0, 0, dicas);
 		}
 		catch (Exception e)
 		{
 			throw new AdempiereException("Falha ao gerar o QR Code do DAMDFE: " + e.getMessage(), e);
 		}
 
-		BufferedImage desenho = MatrixToImageWriter.toBufferedImage(matriz);
 		BufferedImage img = new BufferedImage(lado, lado, BufferedImage.TYPE_INT_RGB);
-
 		java.awt.Graphics2D g = img.createGraphics();
 
 		try
 		{
 			g.setColor(java.awt.Color.WHITE);
 			g.fillRect(0, 0, lado, lado);
+			g.setColor(java.awt.Color.BLACK);
 
-			int deslocamento = (lado - desenho.getWidth()) / 2;
-			g.drawImage(desenho, deslocamento, (lado - desenho.getHeight()) / 2, null);
+			// Cada modulo vai de borda arredondada a borda arredondada: o
+			// simbolo enche o util exato, sem frestas entre modulos.
+			int n = matriz.getWidth();
+
+			for (int y = 0; y < n; y++)
+				for (int x = 0; x < n; x++)
+					if (matriz.get(x, y))
+					{
+						int x0 = margem + x * util / n;
+						int y0 = margem + y * util / n;
+						g.fillRect(x0, y0, margem + (x + 1) * util / n - x0, margem + (y + 1) * util / n - y0);
+					}
 		}
 		finally
 		{

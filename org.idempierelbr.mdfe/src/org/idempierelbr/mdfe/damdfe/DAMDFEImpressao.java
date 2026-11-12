@@ -2,7 +2,6 @@ package org.idempierelbr.mdfe.damdfe;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.util.List;
 import java.util.Map;
 
 import org.adempiere.exceptions.AdempiereException;
@@ -10,9 +9,11 @@ import org.compiere.model.MImage;
 import org.compiere.model.MOrgInfo;
 import org.idempierelbr.mdfe.model.MLBRMDFe;
 
-import net.sf.jasperreports.engine.JREmptyDataSource;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRMapCollectionDataSource;
 
 /**
@@ -41,22 +42,23 @@ public class DAMDFEImpressao
 		DAMDFEDados dados = new DAMDFEDados(mdfe);
 		Map<String, Object> parametros = dados.getParametros();
 
-		parametros.put("ds_veiculos", fonte(dados.getVeiculos()));
-		parametros.put("ds_condutores", fonte(dados.getCondutores()));
-		parametros.put("ds_valepedagio", fonte(dados.getValePedagio()));
-
 		InputStream logo = logotipo(mdfe);
 
 		if (logo != null)
 			parametros.put("logotipo", logo);
+
+		ClassLoader anterior = Thread.currentThread().getContextClassLoader();
 
 		try (InputStream jasper = DAMDFEImpressao.class.getClassLoader().getResourceAsStream(JASPER))
 		{
 			if (jasper == null)
 				throw new AdempiereException("Leiaute do DAMDFE nao encontrado no bundle: " + JASPER);
 
-			// Uma linha vazia: o relatorio nao tem detalhe, tudo esta no title.
-			return JasperFillManager.fillReport(jasper, parametros, new JREmptyDataSource(1));
+			usarClassLoaderDoJasper();
+
+			// O detalhe e a relacao de documentos: e ela que cresce e quebra folha.
+			return JasperFillManager.fillReport(jasper, parametros,
+					new JRMapCollectionDataSource(dados.getDocumentos()));
 		}
 		catch (AdempiereException e)
 		{
@@ -67,11 +69,38 @@ public class DAMDFEImpressao
 			throw new AdempiereException("Falha ao gerar o DAMDFE do MDF-e "
 					+ mdfe.getDocumentNo(), e);
 		}
+		finally
+		{
+			Thread.currentThread().setContextClassLoader(anterior);
+		}
 	}
 
-	private static JRMapCollectionDataSource fonte(List<Map<String, ?>> linhas)
+	/** Grava o DAMDFE em PDF, com as mesmas fontes que o preenchimento usou. */
+	public static void exportarPdf(JasperPrint impressao, String arquivo) throws JRException
 	{
-		return new JRMapCollectionDataSource(linhas);
+		ClassLoader anterior = Thread.currentThread().getContextClassLoader();
+
+		try
+		{
+			usarClassLoaderDoJasper();
+			JasperExportManager.exportReportToPdfFile(impressao, arquivo);
+		}
+		finally
+		{
+			Thread.currentThread().setContextClassLoader(anterior);
+		}
+	}
+
+	/**
+	 * Times New Roman vem do fragmento org.idempierelbr.jasperfonts, pendurado
+	 * no bundle do Jasper, e o Jasper procura extensoes de fonte pelo class
+	 * loader da thread. Numa thread do ZK esse loader nao enxerga o fragmento e
+	 * o preenchimento falha com "Font Times New Roman is not available". E a
+	 * mesma troca que o ReportStarter e o ZkJRViewer do iDempiere fazem.
+	 */
+	private static void usarClassLoaderDoJasper()
+	{
+		Thread.currentThread().setContextClassLoader(JasperReport.class.getClassLoader());
 	}
 
 	/** Logotipo da organizacao emitente; ausente nao impede a impressao. */
