@@ -125,8 +125,8 @@ limpo, relate.
 
 1. Se a PR traz scripts, aplique com o SyncDB num banco descartável (ver
    `lbr-instalacao-build` §3). **Isso altera o banco: avise antes.**
-2. `mvn clean verify`. Use `clean` ao trocar de PR: sobras em `target/`
-   escondem erros.
+2. `mvn clean verify -Ptestes`. Use `clean` ao trocar de PR: sobras em
+   `target/` escondem erros. Sem `-Ptestes` os testes não rodam.
 3. Pare se o build ou algum teste falhar. Diga se o teste também falha na
    `release-13`.
 

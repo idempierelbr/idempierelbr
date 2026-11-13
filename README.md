@@ -442,7 +442,8 @@ Os testes ficam em `org.idempierelbr.test`:
 
 - **Testes unitários** (`*Test.java`) — lógica pura, sem banco: parser de XML,
   regras da NT 2025.002, ordem de elementos do XML, filtros de DF-e, utilitários
-  de NF-e. Rodam no `mvn verify` (Tycho, JUnit 5).
+  de NF-e. Rodam com `mvn verify -Ptestes` (Tycho, JUnit 5). O `mvn verify`
+  sozinho só compila o bundle de testes.
 - **Testes de integração** (`*IT.java`) — precisam do `Adempiere.startup` e de
   banco/rede: certificado digital, web services da SEFAZ. Rodam como
   **JUnit Plug-in Test** no Eclipse.
@@ -468,7 +469,7 @@ provedores de NFS-e, testes.
 - Mudanças de dicionário (tabelas, colunas, janelas, processos) são feitas pelo
   **Application Dictionary** e precisam vir descritas na PR, para que possam ser
   reproduzidas. É necessário também utilizar o servidor de ID centralizado.
-- Rode `mvn verify` antes de abrir a PR.
+- Rode `mvn verify -Ptestes` antes de abrir a PR.
 
 Problemas e dúvidas: [issues](https://github.com/idempierelbr/idempierelbr/issues).
 

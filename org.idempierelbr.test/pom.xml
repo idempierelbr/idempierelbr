@@ -9,6 +9,24 @@
   </parent>
   <artifactId>org.idempierelbr.test</artifactId>
   <packaging>eclipse-test-plugin</packaging>
+  <properties>
+    <!-- O mvn verify só compila os testes. Para rodar: mvn verify -Ptestes (ou -Dtest=...) -->
+    <skipTests>true</skipTests>
+  </properties>
+  <profiles>
+    <profile>
+      <id>testes</id>
+      <activation>
+        <!-- -Dtest=Classe já liga o profile -->
+        <property>
+          <name>test</name>
+        </property>
+      </activation>
+      <properties>
+        <skipTests>false</skipTests>
+      </properties>
+    </profile>
+  </profiles>
   <build>
     <plugins>
       <plugin>
