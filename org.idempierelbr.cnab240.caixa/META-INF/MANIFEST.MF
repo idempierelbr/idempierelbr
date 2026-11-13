@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR - CNAB 240 - Caixa
 Bundle-SymbolicName: org.idempierelbr.cnab240.caixa
 Bundle-Version: 13.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Vendor: TODOBOM
 Require-Bundle: org.adempiere.base,
  org.idempierelbr.cnab240,
