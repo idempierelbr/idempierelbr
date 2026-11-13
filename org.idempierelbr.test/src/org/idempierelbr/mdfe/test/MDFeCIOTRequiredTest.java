@@ -35,6 +35,7 @@ import org.compiere.model.MBPartner;
 import org.compiere.model.MLocation;
 import org.compiere.model.MRegion;
 import org.compiere.model.MSysConfig;
+import org.compiere.model.MTable;
 import org.compiere.model.Query;
 import org.compiere.model.X_C_City;
 import org.idempierelbr.base.util.AdempiereLBR;
@@ -93,6 +94,7 @@ class MDFeCIOTRequiredTest {
 	private final Map<String, List<Query>> queries = new HashMap<>();
 
 	private MockedStatic<MSysConfig> sysConfig;
+	private MockedStatic<MTable> table;
 	private MockedStatic<AdempiereLBR> adempiereLBR;
 	private MockedStatic<BPartnerUtil> bpartnerUtil;
 	private MockedConstruction<Query> queryConstruction;
@@ -104,6 +106,10 @@ class MDFeCIOTRequiredTest {
 	void setUp() {
 		// MLocation reads AD_SysConfig in its static initializer.
 		sysConfig = mockStatic(MSysConfig.class);
+
+		// As interfaces I_LBR_MDFe* leem o AD_Table_ID do banco no inicializador
+		// estático (MTable.getTable_ID), disparado quando o Mockito cria os mocks.
+		table = mockStatic(MTable.class);
 
 		adempiereLBR = mockStatic(AdempiereLBR.class);
 		adempiereLBR.when(() -> AdempiereLBR.getTimezone(anyInt(), anyInt())).thenReturn("-03:00");
@@ -135,6 +141,7 @@ class MDFeCIOTRequiredTest {
 		queryConstruction.close();
 		bpartnerUtil.close();
 		adempiereLBR.close();
+		table.close();
 		sysConfig.close();
 	}
 

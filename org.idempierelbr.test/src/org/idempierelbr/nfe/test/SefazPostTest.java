@@ -14,14 +14,18 @@ import java.io.InputStream;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
+import java.util.logging.Level;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 
 import org.adempiere.exceptions.AdempiereException;
+import org.compiere.util.CLogger;
 import org.idempierelbr.base.model.MLBRNFeWebService;
 import org.idempierelbr.nfe.util.NFeUtil;
 import org.idempierelbr.nfe.util.SefazHttpClient;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -38,6 +42,24 @@ class SefazPostTest {
 	private static final String ENVELOPE    =
 		"<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">"
 		+ "<soap12:Body><payload/></soap12:Body></soap12:Envelope>";
+
+	/**
+	 * As falhas de transporte simuladas aqui fazem o cliente logar WARNING com o
+	 * stack trace, o que poluía a saída do build sem indicar problema.
+	 */
+	private static final CLogger CLIENT_LOG = CLogger.getCLogger(SefazHttpClient.class);
+	private static Level clientLogLevel;
+
+	@BeforeAll
+	static void silenceExpectedTransportWarnings() {
+		clientLogLevel = CLIENT_LOG.getLevel();
+		CLIENT_LOG.setLevel(Level.SEVERE);
+	}
+
+	@AfterAll
+	static void restoreClientLogLevel() {
+		CLIENT_LOG.setLevel(clientLogLevel);
+	}
 
 	private static SSLContext dummySslContext() throws Exception {
 		SSLContext ctx = SSLContext.getInstance("TLS");
