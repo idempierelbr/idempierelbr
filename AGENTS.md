@@ -18,10 +18,12 @@ README discordarem, vale o README. Avise o desenvolvedor da divergência.
 2. **Commits em Conventional Commits, em pt-BR, com o módulo como escopo**:
    `fix(nfe): …`, `feat(mdfe): …`. Um assunto por commit. Refatoração vai em
    commit separado da correção.
-3. **Não escreva scripts de migração nem IDs do dicionário.** Registros novos de
-   `AD_*` saem da interface do iDempiere, com o servidor de ID do LBR e
-   *Registrar Script de Migração* ligado. É o iDempiere que gera o par
-   PostgreSQL + Oracle. Não invente `*_ID` nem `*_UU`. Ver
+3. **Nunca escreva SQL de migração à mão nem invente IDs do dicionário.**
+   Registros novos de `AD_*` são gravados pelo próprio iDempiere, com o servidor
+   de ID do LBR e o log de migração ligado, e é ele que gera o par PostgreSQL +
+   Oracle. O agente pode gerar pela **API REST**, quando o plugin REST com
+   geração de script estiver instalado no servidor local. Sem ele, o
+   desenvolvedor gera pela interface. Não invente `*_ID` nem `*_UU`. Ver
    `lbr-dicionario-migracoes`.
 4. **Não altere o core do iDempiere a partir do LBR.** O LBR estende o core
    pelos pontos de extensão. Se a mudança só cabe no core, ela é uma
@@ -36,8 +38,9 @@ README discordarem, vale o README. Avise o desenvolvedor da divergência.
 7. **SEFAZ e Receita só em homologação** (`tpAmb=2`). Não transmita nada em
    produção sem o desenvolvedor pedir.
 8. **Credenciais nunca aparecem na saída.** Não imprima `idempiere.properties`,
-   `idempiereEnv.properties` nem o `Value` das SysConfig `*_PASSWORD` (inclusive
-   `PROJECT_ID_PASSWORD`). Ao consultar `AD_SysConfig`, filtre essas chaves.
+   `idempiereEnv.properties`, senha ou token da API REST, nem o `Value` das
+   SysConfig `*_PASSWORD` (inclusive `PROJECT_ID_PASSWORD`). Ao consultar
+   `AD_SysConfig`, filtre essas chaves.
 9. **Teste honesto.** Nunca diga que algo passou sem ter rodado. Diga o que foi e
    o que não foi verificado.
 10. **Diffs mínimos e focados**, sem reformatação nem limpeza fora do escopo.
@@ -85,6 +88,7 @@ LBR.** Os conflitos conhecidos:
 | Branch a partir da `master` | Branch a partir da `release-NN` em desenvolvimento |
 | Inglês obrigatório e cabeçalho GPLv2 em arquivo novo | pt-BR; siga o cabeçalho (ou a falta dele) do bundle |
 | Scripts em `migration/` do core, IDs do servidor oficial, EntityType `D` | Scripts em `org.idempierelbr.core/migration/`, servidor de ID do LBR, EntityType `LBR` |
+| O agente não gera scripts: só especifica e revisa | O agente pode gerar pela API REST, com o plugin REST instalado (ver `lbr-dicionario-migracoes` §3.2) |
 | Testes em `org.idempiere.test`, todos contra GardenWorld | Testes em `org.idempierelbr.test`; só os `*IT` usam banco (GardenWorld, via `AbstractLBRTestCase`). Ver `lbr-testes` |
 
 ## Orientação no repositório
