@@ -17,3 +17,6 @@ External Plug-in Libraries
 /.sonarlint/
 **/org.sonarlint.eclipse.core.prefs
 **/org.eclipse.jdt.core.prefs
+
+# Claude Code: configuração local de cada desenvolvedor
+.claude/settings.local.json
