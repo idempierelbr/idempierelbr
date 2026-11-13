@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR - CNAB 240 - Itaú
 Bundle-SymbolicName: org.idempierelbr.cnab240.itau
 Bundle-Version: 13.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.idempierelbr.cnab240.annotated,
  org.idempierelbr.cnab240.utils,

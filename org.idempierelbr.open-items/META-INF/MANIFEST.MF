@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Open Items
 Bundle-SymbolicName: org.idempierelbr.open-items
 Bundle-Version: 13.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: org.adempiere.base,
  org.idempierelbr.core,
  org.adempiere.ui,

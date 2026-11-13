@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR - Apuração do Fisco (RTC)
 Bundle-SymbolicName: org.idempierelbr.rtc
 Bundle-Version: 13.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Vendor: iDempiereLBR
 Bundle-ClassPath: .
 Require-Bundle: org.adempiere.base,

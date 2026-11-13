@@ -20,6 +20,9 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.ErrorHandler;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 /**
  * Pure SOAP 1.2 / XML utilities for SEFAZ NF-e 4.0 web services.
@@ -35,6 +38,17 @@ public class SefazSoapUtils {
 	private static final String DADOS_MSG_OPEN   = "<nfeDadosMsg>";
 	private static final String DADOS_MSG_CLOSE  = "</nfeDadosMsg>";
 	private static final String DIST_DFE_WRAPPER = "nfeDistDFeInteresse";
+
+	/**
+	 * O mesmo comportamento do handler padrão do parser (erro fatal interrompe o parse,
+	 * aviso e erro recuperável seguem), mas sem escrever "[Fatal Error] ..." no stderr:
+	 * a mensagem já vai na exceção, e quem chama decide o que mostrar ou logar.
+	 */
+	private static final ErrorHandler QUIET_ERROR_HANDLER = new ErrorHandler() {
+		@Override public void warning(SAXParseException e) { }
+		@Override public void error(SAXParseException e) { }
+		@Override public void fatalError(SAXParseException e) throws SAXException { throw e; }
+	};
 
 	private record ServiceConfig(String wsdlName, String operationName) {
 		String soapAction()    { return NFE_WSDL_BASE + wsdlName + "/" + operationName; }
@@ -168,7 +182,9 @@ public class SefazSoapUtils {
 		dbf.setExpandEntityReferences(false);
 		dbf.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
 		dbf.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
-		return dbf.newDocumentBuilder();
+		DocumentBuilder db = dbf.newDocumentBuilder();
+		db.setErrorHandler(QUIET_ERROR_HANDLER);
+		return db;
 	}
 
 	/**

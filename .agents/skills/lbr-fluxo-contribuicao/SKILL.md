@@ -74,7 +74,7 @@ test(mdfe): testes adversariais do CIOT, do formulário e da janela
 
 Rode o checklist de `lbr-revisao-pr` sobre o próprio diff. No mínimo:
 
-- `mvn verify` passa (ver `lbr-instalacao-build`).
+- `mvn verify -Ptestes` passa (ver `lbr-instalacao-build`).
 - Testes existentes passam. Lógica nova ou correção tem teste quando dá (ver
   `lbr-testes`).
 - Se houver dicionário: par PostgreSQL + Oracle presente e revisado (ver

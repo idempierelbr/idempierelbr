@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR Sped
 Bundle-SymbolicName: org.idempierelbr.sped
 Bundle-Version: 13.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Vendor: claudemir@todobom.com, aomelo@live.com, pblobp@gmail.com
 Import-Package: org.adempiere.base,
  org.adempiere.exceptions,

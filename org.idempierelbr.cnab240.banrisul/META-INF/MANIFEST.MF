@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR - CNAB 240 - Banrisul
 Bundle-SymbolicName: org.idempierelbr.cnab240.banrisul
 Bundle-Version: 13.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Vendor: TODOBOM
 Import-Package: com.ancientprogramming.fixedformat4j.annotation,
  org.compiere.model,

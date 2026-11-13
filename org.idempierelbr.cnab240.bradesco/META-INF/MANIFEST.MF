@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: iDempiereLBR - CNAB 240 - Bradesco
 Bundle-SymbolicName: org.idempierelbr.cnab240.bradesco
 Bundle-Version: 13.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Vendor: TODOBOM
 Require-Bundle: org.idempierelbr.cnab240,
  org.idempierelbr.base

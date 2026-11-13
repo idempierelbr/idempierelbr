@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -13,6 +15,7 @@ import org.adempiere.exceptions.AdempiereException;
 import org.idempierelbr.base.model.MLBRNFeWebService;
 import org.idempierelbr.nfe.util.SefazSoapUtils;
 import org.junit.jupiter.api.Test;
+import org.xml.sax.SAXParseException;
 
 /**
  * Pure logic tests for {@link SefazSoapUtils}.
@@ -235,6 +238,23 @@ class SefazSoapTest {
 		DocumentBuilder db = SefazSoapUtils.newHardenedDocumentBuilder();
 		assertThatCode(() -> db.parse(new ByteArrayInputStream("<root><child/></root>".getBytes())))
 			.doesNotThrowAnyException();
+	}
+
+	@Test
+	void newHardenedDocumentBuilder_throwsWithoutWritingToStderr_whenMalformedXml() throws Exception {
+		ByteArrayOutputStream stderr = new ByteArrayOutputStream();
+		PrintStream original = System.err;
+		System.setErr(new PrintStream(stderr, true, StandardCharsets.UTF_8));
+		try {
+			DocumentBuilder db = SefazSoapUtils.newHardenedDocumentBuilder();
+			assertThatThrownBy(() -> db.parse(new ByteArrayInputStream("<not-closed".getBytes(StandardCharsets.UTF_8))))
+				.isInstanceOf(SAXParseException.class);
+		} finally {
+			System.setErr(original);
+		}
+		assertThat(stderr.toString(StandardCharsets.UTF_8))
+			.as("o erro vai na exceção; o parser não escreve \"[Fatal Error] ...\" no stderr do servidor")
+			.isEmpty();
 	}
 
 	// -------------------------------------------------------------------------

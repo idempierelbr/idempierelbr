@@ -1,6 +1,6 @@
 ---
 name: lbr-testes
-description: Escrever e rodar testes do iDempiereLBR no bundle org.idempierelbr.test (JUnit 5 + Tycho) — *Test.java sem banco no mvn verify, *IT.java com Adempiere.startup no Eclipse, *E2ETest.java contra a SEFAZ em homologação. Use ao acrescentar teste para correção ou funcionalidade, escolher o tipo de teste, ou rodar um teste ou a suíte.
+description: Escrever e rodar testes do iDempiereLBR no bundle org.idempierelbr.test (JUnit 5 + Tycho) — *Test.java sem banco no mvn verify -Ptestes, *IT.java com Adempiere.startup no Eclipse, *E2ETest.java contra a SEFAZ em homologação. Use ao acrescentar teste para correção ou funcionalidade, escolher o tipo de teste, ou rodar um teste ou a suíte.
 ---
 
 # Testes do LBR
@@ -17,9 +17,9 @@ Os testes ficam em `org.idempierelbr.test/src/org/idempierelbr/<área>/test/`
 
 | Sufixo | O que testa | Precisa de | Onde roda |
 |---|---|---|---|
-| `*Test.java` | Lógica pura: parser de XML, regras de NT, ordem de elementos, filtros, utilitários | nada | `mvn verify` (Tycho surefire, JUnit 5) |
+| `*Test.java` | Lógica pura: parser de XML, regras de NT, ordem de elementos, filtros, utilitários | nada | `mvn verify -Ptestes` (Tycho surefire, JUnit 5) |
 | `*IT.java` | Integração: modelo, janela, processo, certificado | `Adempiere.startup`, banco configurado | Eclipse, launch `org.idempierelbr.test/org.idempierelbr.test.launch` |
-| `*E2ETest.java` | Ponta a ponta contra a SEFAZ | credenciais e certificado de **homologação** | manual; excluído do `mvn verify` no `pom.xml` do bundle |
+| `*E2ETest.java` | Ponta a ponta contra a SEFAZ | credenciais e certificado de **homologação** | manual; excluído do surefire no `pom.xml` do bundle |
 
 Prefira `*Test.java`: separe a regra fiscal da persistência para conseguir
 testá-la sem banco. Use `*IT.java` só quando o comportamento depende de fato do
@@ -68,13 +68,15 @@ dicionário, de um PO ou de um processo.
 
 ```bash
 # compila tudo e roda todos os *Test.java
-mvn verify
+mvn verify -Ptestes
 
-# uma classe ou um método (Tycho surefire aceita -Dtest)
+# uma classe ou um método (-Dtest já liga o profile testes)
 mvn verify -Dtest=NFeXMLParserTest
 mvn verify -Dtest='NFeXMLParserTest#<metodo>'
 ```
 
+- `mvn verify` sem `-Ptestes` compila o bundle de testes, mas não roda nenhum
+  teste (`skipTests` no `pom.xml` do bundle).
 - Resultados em `org.idempierelbr.test/target/surefire-reports/`.
 - `*IT.java`: no Eclipse, abra `org.idempierelbr.test/org.idempierelbr.test.launch`
   → *Run As*. O launch resolve o `IDEMPIERE_HOME` por

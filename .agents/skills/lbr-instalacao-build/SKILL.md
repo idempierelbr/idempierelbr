@@ -26,7 +26,7 @@ branch do LBR, ao lado deste repositório (ver `lbr-arquitetura` §2).
 
 ```bash
 cd ../idempiere   && mvn verify    # gera o p2 do core: o LBR compila contra ele
-cd ../idempierelbr && mvn verify   # compila o LBR e roda os *Test.java
+cd ../idempierelbr && mvn verify   # compila o LBR (testes só com -Ptestes)
 ```
 
 - Não há `mvnw` no LBR: use o `mvn` do sistema.
@@ -138,7 +138,7 @@ terminar.
 
 1. `mvn verify` passa.
 2. O SyncDB aplica os scripts da mudança sem erro (se houver scripts).
-3. Os testes relevantes passam (`lbr-testes`).
+3. Os testes passam: `mvn verify -Ptestes` (ver `lbr-testes`).
 4. Para mudança de tela ou comportamento, o cenário é testado no servidor
    rodando, inclusive um caminho fora do caminho feliz. Comunicação com SEFAZ
    só em homologação.
