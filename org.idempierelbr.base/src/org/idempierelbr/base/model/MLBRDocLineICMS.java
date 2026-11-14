@@ -10,12 +10,14 @@ import java.util.Properties;
 
 import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.I_C_BPartner_Location;
+import org.compiere.model.MLocation;
 import org.compiere.model.MOrgInfo;
 import org.compiere.model.MProduct;
 import org.compiere.model.MRegion;
 import org.compiere.model.Query;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
+import org.compiere.util.Util;
 import org.idempierelbr.base.util.TextUtil;
 
 public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
@@ -331,7 +333,7 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 		
 		// O cBenef é reconsultado no documento de destino, pois o valor copiado pode ter sido
 		// gravado sob um cadastro de CST que já não vale mais.
-		icmsTo.updateCBenef(detailsTo.getProduct());
+		icmsTo.updateCBenef(detailsTo, detailsTo.getProduct(), null);
 		
 		try {
 			icmsTo.saveEx();
@@ -344,7 +346,7 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 	@Override
 	protected boolean beforeSave(boolean newRecord) {
 		// Reconsulta o cBenef quando o CST (Situação Tributária) é alterado manualmente
-		// neste registro. O cálculo/recálculo via createICMS já chama updateCBenef(product).
+		// neste registro. O cálculo/recálculo via createICMS já chama updateCBenef.
 		if (!newRecord && (is_ValueChanged(COLUMNNAME_LBR_ICMS_TaxStatusTN)
 				|| is_ValueChanged(COLUMNNAME_LBR_ICMS_TaxStatusSN)
 				|| is_ValueChanged(COLUMNNAME_LBR_ICMSRegime))) {
@@ -359,22 +361,116 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 	 * 	a partir da linha do documento.
 	 */
 	public void updateCBenef() {
-		updateCBenef(null);
+		updateCBenef(null, null, null);
+	}
+
+	/**
+	 * 	Reconsulta e atualiza o Código de Benefício Fiscal (cBenef).
+	 *	@param product Produto da linha; se null, é resolvido a partir do Doc Line Details
+	 *	@see #updateCBenef(MLBRDocLineDetails, MProduct, Timestamp)
+	 */
+	public void updateCBenef(MProduct product) {
+		updateCBenef(null, product, null);
 	}
 
 	/**
 	 * 	Reconsulta e atualiza o Código de Benefício Fiscal (cBenef) conforme o CST
-	 * 	(Situação Tributária) vigente neste registro, permitindo que o Produto sobrescreva.
+	 * 	(Situação Tributária) vigente neste registro. O primeiro código encontrado vale:
+	 * 	<ol>
+	 * 	<li>regra por UF do emitente para o produto e o CST (janela Código de Benefício
+	 * 	Fiscal por UF);</li>
+	 * 	<li>regra por UF para o NCM e o CST;</li>
+	 * 	<li>regra por UF só para o CST;</li>
+	 * 	<li>código no Produto;</li>
+	 * 	<li>código na Situação Tributária (CST).</li>
+	 * 	</ol>
+	 * 	Uma regra por UF marcada como Não Informar cBenef encerra a busca sem código. Sem
+	 * 	regra para a UF, valem o Produto e o CST, como antes da regra por UF existir.
+	 *	@param details Doc Line Details da linha; se null, é lido pelo LBR_DocLine_Details_ID
 	 *	@param product Produto da linha; se null, é resolvido a partir do Doc Line Details
+	 *	@param dateDoc data do documento, para a vigência da regra; se null, é resolvida a
+	 *	partir do Doc Line Details
 	 */
-	public void updateCBenef(MProduct product) {
-		if (product == null && getLBR_DocLine_Details_ID() > 0)
-			product = new MLBRDocLineDetails(getCtx(), getLBR_DocLine_Details_ID(),
-					get_TrxName()).getProduct();
+	public void updateCBenef(MLBRDocLineDetails details, MProduct product, Timestamp dateDoc) {
+		if (details == null && getLBR_DocLine_Details_ID() > 0)
+			details = new MLBRDocLineDetails(getCtx(), getLBR_DocLine_Details_ID(), get_TrxName());
+		if (product == null && details != null)
+			product = details.getProduct();
+		if (dateDoc == null && details != null)
+			dateDoc = details.getDocumentDate();
 
 		String cst = getCurrentTaxStatus();
 
-		// Busca o cBenef na Situação Tributária (CST) do ICMS
+		// 1 a 3: regra por UF do emitente
+		MLBRCBenefRule rule = null;
+		if (cst != null) {
+			int LBR_NCM_ID = details != null ? details.getLBR_NCM_ID() : 0;
+			if (LBR_NCM_ID <= 0 && product != null)
+				LBR_NCM_ID = product.get_ValueAsInt("LBR_NCM_ID");
+
+			rule = MLBRCBenefRule.get(getCtx(), getAD_Client_ID(), getAD_Org_ID(), getEmitterRegion_ID(),
+					cst, product != null ? product.getM_Product_ID() : 0, LBR_NCM_ID, dateDoc, get_TrxName());
+		}
+
+		String cBenef;
+		if (rule != null) {
+			cBenef = chooseCBenef(true, rule.isLBR_IsOmitCBenef() ? null : rule.getLBR_CBenef(), null, null);
+		} else {
+			// 4 e 5: Produto e Situação Tributária (CST)
+			String productCBenef = product != null ? product.get_ValueAsString("LBR_CBenef") : null;
+			String taxStatusCBenef = Util.isEmpty(productCBenef, true) ? getTaxStatusCBenef(cst) : null;
+			cBenef = chooseCBenef(false, null, productCBenef, taxStatusCBenef);
+		}
+
+		set_ValueOfColumn("LBR_CBenef", cBenef);
+	}
+
+	/**
+	 * 	Aplica a ordem de busca do cBenef: a regra por UF, quando existe, decide sozinha
+	 * 	(inclusive quando manda não informar); sem regra, o Produto sobrescreve o CST.
+	 *	@param ruleFound há regra por UF vigente para o item
+	 *	@param ruleCBenef código da regra por UF; null quando a regra manda não informar
+	 *	@param productCBenef código no Produto
+	 *	@param taxStatusCBenef código na Situação Tributária (CST)
+	 *	@return cBenef sem espaços nas pontas, ou null
+	 */
+	public static String chooseCBenef(boolean ruleFound, String ruleCBenef, String productCBenef,
+			String taxStatusCBenef) {
+		String cBenef;
+		if (ruleFound)
+			cBenef = ruleCBenef;
+		else if (productCBenef != null && !productCBenef.trim().isEmpty())
+			cBenef = productCBenef;
+		else
+			cBenef = taxStatusCBenef;
+
+		if (cBenef == null || cBenef.trim().isEmpty())
+			return null;
+
+		return cBenef.trim();
+	}
+
+	/**
+	 * 	UF do emitente: a do endereço da organização deste registro.
+	 *	@return C_Region_ID ou 0 se a organização não tiver endereço com UF
+	 */
+	private int getEmitterRegion_ID() {
+		if (getAD_Org_ID() <= 0)
+			return 0;
+
+		MOrgInfo orgInfo = MOrgInfo.get(getCtx(), getAD_Org_ID(), get_TrxName());
+		if (orgInfo == null || orgInfo.getC_Location_ID() <= 0)
+			return 0;
+
+		return MLocation.get(getCtx(), orgInfo.getC_Location_ID(), get_TrxName()).getC_Region_ID();
+	}
+
+	/**
+	 * 	Busca o cBenef cadastrado na Situação Tributária (CST) do ICMS.
+	 *	@param cst CST detalhado (ex.: 41_1)
+	 *	@return código ou null
+	 */
+	private String getTaxStatusCBenef(String cst) {
 		String cBenef = null;
 		if (cst != null) {
 			// Filtra pelo Tax Name para desambiguar CSTs que também existem em outros
@@ -399,17 +495,7 @@ public class MLBRDocLineICMS extends X_LBR_DocLine_ICMS {
 				cBenef = ts.get_ValueAsString("LBR_CBenef");
 		}
 
-		// O Produto pode sobrescrever o cBenef da CST
-		if (product != null) {
-			String prodCBenef = product.get_ValueAsString("LBR_CBenef");
-			if (prodCBenef != null && !prodCBenef.trim().isEmpty())
-				cBenef = prodCBenef;
-		}
-
-		if (cBenef != null && cBenef.trim().isEmpty())
-			cBenef = null;
-
-		set_ValueOfColumn("LBR_CBenef", cBenef == null ? null : cBenef.trim());
+		return cBenef;
 	}
 
 	/**

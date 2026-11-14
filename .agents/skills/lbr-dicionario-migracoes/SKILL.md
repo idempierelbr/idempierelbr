@@ -120,9 +120,26 @@ selecione o `Value` de `PROJECT_ID_PASSWORD`.
   remoto ou fora do modo de desenvolvimento, os arquivos ficam no diretório
   temporário da máquina do servidor: use o caminho da interface.
 - **Servidor de ID configurado** (§3.1).
-- **Credenciais de administrador na empresa System.** Peça ao desenvolvedor que
-  as forneça por variável de ambiente ou um token já emitido. Nunca as imprima,
-  grave em arquivo ou ponha em commit.
+- **Credenciais de administrador na empresa System**, de um usuário do seed: o
+  plugin só liga o log de migração para usuário com ID até 102 em empresa com ID
+  até 20. No seed do LBR, use o **SuperUser**, porque o usuário `System` (ID 0)
+  está inativo. Peça ao desenvolvedor que as forneça por variável de ambiente ou
+  um token já emitido. Nunca as imprima, grave em arquivo ou ponha em commit.
+- **Papel System Administrator aceito pelo login REST.** O login do plugin só
+  aceita papel com `RoleType` vazio ou `WS`, e o core grava `SS` no System
+  Administrator (`AD_Role_ID=0`). Com `SS`, o pedido de token para a empresa
+  System falha com `Invalid clientId`. Confira:
+  ```sql
+  SELECT RoleType FROM AD_Role WHERE AD_Role_ID=0;
+  ```
+  Se vier `SS`, peça ao desenvolvedor autorização para esvaziar o campo **só no
+  banco de desenvolvimento e só durante a geração**. Faça a troca direto no
+  banco (`psql`), fora do REST, para que ela não entre no script. No fim,
+  devolva `SS`, mesmo se a geração falhar:
+  ```sql
+  UPDATE AD_Role SET RoleType=NULL WHERE AD_Role_ID=0;   -- antes de gerar
+  UPDATE AD_Role SET RoleType='SS' WHERE AD_Role_ID=0;   -- no fim
+  ```
 
 Se faltar qualquer item, não improvise: use o caminho da interface (§3.3).
 
@@ -145,9 +162,9 @@ Se faltar qualquer item, não improvise: use o caminho da interface (§3.3).
 3. **Uma requisição de teste primeiro.** Crie o primeiro registro e confira se
    o arquivo apareceu em **`postgresql/` e `oracle/`** (§3.4) com o ID literal
    na faixa 800000–809999, sem `nextidfunc`. **Se o arquivo não apareceu, pare.**
-   O plugin ignora os cabeçalhos sem erro quando o usuário não é administrador
-   da empresa System ou quando a versão não tem o recurso: o registro foi criado
-   sem script. Avise o desenvolvedor, informe o que foi criado e não continue.
+   O plugin ignora os cabeçalhos sem erro quando o usuário ou a empresa não são
+   do seed (usuário com ID acima de 102 ou empresa acima de 20) ou quando a
+   versão não tem o recurso: o registro foi criado sem script. Avise o desenvolvedor, informe o que foi criado e não continue.
 4. **Registros**: `POST /api/v1/models/{tabela}` para criar e
    `PUT /api/v1/models/{tabela}/{id}` para alterar (por exemplo, `ad_element`,
    `ad_column`, `ad_ref_list`, `ad_field`), sempre com `EntityType` `LBR`.
@@ -171,6 +188,8 @@ Se faltar qualquer item, não improvise: use o caminho da interface (§3.3).
    como seguir.
 7. **Um comentário por script.** O nome do arquivo só tem o timestamp até o
    minuto: dois comentários diferentes no mesmo minuto caem no mesmo arquivo.
+8. **No fim**, devolva o `RoleType` `SS` ao System Administrator, se ele foi
+   trocado, e descarte o token.
 
 ### 3.3. Pela interface (desenvolvedor)
 
