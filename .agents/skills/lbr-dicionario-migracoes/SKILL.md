@@ -71,6 +71,27 @@ onde o campo aparece e a lógica de exibição. Siga as convenções: prefixo
 `LBR`. Quando a lista vier de uma tabela de domínio da NT ou do Informe Técnico,
 cite a fonte e diga o que não foi possível confirmar.
 
+### Coluna obrigatória em tabela que já existe
+
+O script também roda em bancos em uso, com a tabela cheia, mesmo que no seu
+banco ela esteja vazia. Sem pedido explícito do desenvolvedor:
+
+- **Coluna nova obrigatória em tabela existente, só com valor padrão
+  literal** (`N`, `0`, `01`). O *Sincronizar Coluna* põe o padrão no DDL
+  (`ADD COLUMN … DEFAULT … NOT NULL`) e o banco preenche os registros antigos.
+  Sem padrão, o `NOT NULL` falha em qualquer tabela com dados.
+- Padrão com variável ou SQL (`@#Date@`, `@AD_Org_ID@`, `@SQL=…`) e `-1` em
+  coluna de ID **não entram no DDL**: para o banco, é como não ter padrão.
+- Sem um padrão literal que sirva para os registros antigos, crie a coluna
+  **opcional**. Se a tela precisar exigir o valor, use `IsMandatory` ou
+  `MandatoryLogic` no campo (`AD_Field`). Isso vale só na interface, não em
+  importação, REST ou processo: fora dela, valide no modelo.
+- **Não torne obrigatória uma coluna que já existe** sem combinar com o
+  desenvolvedor. No PostgreSQL, o script gerado aplica o `NOT NULL` (pela
+  `t_alter_column`) antes do `UPDATE` que preenche os vazios com o padrão, e
+  falha se houver registro vazio.
+- Tabela nova, criada no mesmo script, não tem esse problema.
+
 ## Passo 3: gerar
 
 ### 3.1. Servidor de ID do LBR (uma vez por banco, nos dois caminhos)
@@ -115,7 +136,11 @@ selecione o `Value` de `PROJECT_ID_PASSWORD`.
   29/10/2026).
 - **Servidor local, em modo de desenvolvimento**, apontando para um **banco de
   desenvolvimento** criado do seed. Nunca o banco de um cliente: a mudança vai
-  direto para o dicionário do banco do servidor.
+  direto para o dicionário do banco do servidor. **Confirme isso antes de
+  qualquer login ou troca no banco**: a URL do REST é `localhost` e nada indica
+  banco de cliente (nome do banco, empresas além de System e GardenWorld). Na
+  dúvida, pergunte ao desenvolvedor. É essa confirmação que dispensa pedir
+  autorização nos itens de credenciais e de papel abaixo.
 - **Acesso à pasta onde o servidor grava os scripts** (§3.4). Com servidor
   remoto ou fora do modo de desenvolvimento, os arquivos ficam no diretório
   temporário da máquina do servidor: use o caminho da interface.
@@ -123,8 +148,14 @@ selecione o `Value` de `PROJECT_ID_PASSWORD`.
 - **Credenciais de administrador na empresa System**, de um usuário do seed: o
   plugin só liga o log de migração para usuário com ID até 102 em empresa com ID
   até 20. No seed do LBR, use o **SuperUser**, porque o usuário `System` (ID 0)
-  está inativo. Peça ao desenvolvedor que as forneça por variável de ambiente ou
-  um token já emitido. Nunca as imprima, grave em arquivo ou ponha em commit.
+  está inativo. Tente primeiro a senha padrão pública do seed (`SuperUser` /
+  `System`), **uma vez só** e depois de acertar o papel (próximo item): com
+  `RoleType` `SS`, o login falha com `Invalid clientId` mesmo com a senha certa.
+  Se a senha for recusada, peça as credenciais ao desenvolvedor, por variável de
+  ambiente ou um token já emitido, sem testar outras combinações. Nunca imprima
+  o token nem as credenciais fornecidas pelo desenvolvedor, e não as ponha em
+  commit. Se precisar de arquivo para o corpo da requisição, use um temporário e
+  apague no fim.
 - **Papel System Administrator aceito pelo login REST.** O login do plugin só
   aceita papel com `RoleType` vazio ou `WS`, e o core grava `SS` no System
   Administrator (`AD_Role_ID=0`). Com `SS`, o pedido de token para a empresa
@@ -132,10 +163,10 @@ selecione o `Value` de `PROJECT_ID_PASSWORD`.
   ```sql
   SELECT RoleType FROM AD_Role WHERE AD_Role_ID=0;
   ```
-  Se vier `SS`, peça ao desenvolvedor autorização para esvaziar o campo **só no
-  banco de desenvolvimento e só durante a geração**. Faça a troca direto no
-  banco (`psql`), fora do REST, para que ela não entre no script. No fim,
-  devolva `SS`, mesmo se a geração falhar:
+  Se vier `SS`, esvazie o campo **só no banco de desenvolvimento e só enquanto
+  usar o REST**. Não precisa pedir autorização: o efeito fica no banco local.
+  Faça a troca direto no banco (`psql`), fora do REST, para que ela não entre no
+  script. No fim, devolva `SS`, mesmo se a geração falhar:
   ```sql
   UPDATE AD_Role SET RoleType=NULL WHERE AD_Role_ID=0;   -- antes de gerar
   UPDATE AD_Role SET RoleType='SS' WHERE AD_Role_ID=0;   -- no fim
@@ -189,7 +220,8 @@ Se faltar qualquer item, não improvise: use o caminho da interface (§3.3).
 7. **Um comentário por script.** O nome do arquivo só tem o timestamp até o
    minuto: dois comentários diferentes no mesmo minuto caem no mesmo arquivo.
 8. **No fim**, devolva o `RoleType` `SS` ao System Administrator, se ele foi
-   trocado, e descarte o token.
+   trocado, e descarte o token. No relatório final, diga que trocou e devolveu,
+   ou que ficou `NULL`, se não conseguiu devolver.
 
 ### 3.3. Pela interface (desenvolvedor)
 
@@ -256,6 +288,10 @@ Revise sempre, inclusive o que você mesmo gerou:
   ```
 - `EntityType='LBR'` nos registros de dicionário. `AD_Client_ID=0`, salvo
   intenção explícita.
+- **Coluna obrigatória em tabela existente** (Passo 2): todo `ADD COLUMN …
+  NOT NULL` em tabela que não foi criada no próprio script tem `DEFAULT`
+  literal, e nenhuma coluna existente passa a `NOT NULL` sem acordo com o
+  desenvolvedor.
 - **Comandos que falharam também são registrados.** Procure duplicatas,
   tentativa e erro, mudanças desfeitas no mesmo script e registros alheios à
   tarefa. Mostre ao desenvolvedor e remova só com a aprovação dele.
