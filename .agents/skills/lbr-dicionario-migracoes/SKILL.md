@@ -71,6 +71,27 @@ onde o campo aparece e a lógica de exibição. Siga as convenções: prefixo
 `LBR`. Quando a lista vier de uma tabela de domínio da NT ou do Informe Técnico,
 cite a fonte e diga o que não foi possível confirmar.
 
+### Coluna obrigatória em tabela que já existe
+
+O script também roda em bancos em uso, com a tabela cheia, mesmo que no seu
+banco ela esteja vazia. Sem pedido explícito do desenvolvedor:
+
+- **Coluna nova obrigatória em tabela existente, só com valor padrão
+  literal** (`N`, `0`, `01`). O *Sincronizar Coluna* põe o padrão no DDL
+  (`ADD COLUMN … DEFAULT … NOT NULL`) e o banco preenche os registros antigos.
+  Sem padrão, o `NOT NULL` falha em qualquer tabela com dados.
+- Padrão com variável ou SQL (`@#Date@`, `@AD_Org_ID@`, `@SQL=…`) e `-1` em
+  coluna de ID **não entram no DDL**: para o banco, é como não ter padrão.
+- Sem um padrão literal que sirva para os registros antigos, crie a coluna
+  **opcional**. Se a tela precisar exigir o valor, use `IsMandatory` ou
+  `MandatoryLogic` no campo (`AD_Field`). Isso vale só na interface, não em
+  importação, REST ou processo: fora dela, valide no modelo.
+- **Não torne obrigatória uma coluna que já existe** sem combinar com o
+  desenvolvedor. No PostgreSQL, o script gerado aplica o `NOT NULL` (pela
+  `t_alter_column`) antes do `UPDATE` que preenche os vazios com o padrão, e
+  falha se houver registro vazio.
+- Tabela nova, criada no mesmo script, não tem esse problema.
+
 ## Passo 3: gerar
 
 ### 3.1. Servidor de ID do LBR (uma vez por banco, nos dois caminhos)
@@ -267,6 +288,10 @@ Revise sempre, inclusive o que você mesmo gerou:
   ```
 - `EntityType='LBR'` nos registros de dicionário. `AD_Client_ID=0`, salvo
   intenção explícita.
+- **Coluna obrigatória em tabela existente** (Passo 2): todo `ADD COLUMN …
+  NOT NULL` em tabela que não foi criada no próprio script tem `DEFAULT`
+  literal, e nenhuma coluna existente passa a `NOT NULL` sem acordo com o
+  desenvolvedor.
 - **Comandos que falharam também são registrados.** Procure duplicatas,
   tentativa e erro, mudanças desfeitas no mesmo script e registros alheios à
   tarefa. Mostre ao desenvolvedor e remova só com a aprovação dele.

@@ -56,6 +56,10 @@ git diff release-13...HEAD
   Um ID que aparece em script já existente pode ser só referência (FK, UPDATE).
   Confira se é `INSERT` do mesmo registro.
 - [ ] `EntityType='LBR'`, `AD_Client_ID=0` no dicionário.
+- [ ] Coluna obrigatória em tabela existente: `ADD COLUMN … NOT NULL` só com
+  `DEFAULT` literal, salvo se a tabela for criada no próprio script. Coluna
+  existente que passa a `NOT NULL` quebra o script em banco com registros
+  vazios: pergunte como os dados antigos são tratados.
 - [ ] Sem comandos que falharam, tentativa e erro ou registros alheios à tarefa.
 - [ ] Classes `X_*`/`I_*` regeneradas junto com a mudança de colunas, sem
   edição à mão.
