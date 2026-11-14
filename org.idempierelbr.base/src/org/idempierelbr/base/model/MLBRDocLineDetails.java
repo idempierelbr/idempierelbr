@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.adempiere.model.POWrapper;
+import org.compiere.model.I_M_InOut;
 import org.compiere.model.MBPartner;
 import org.compiere.model.MBPartnerLocation;
 import org.compiere.model.MInvoiceLine;
@@ -279,6 +280,26 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 
 		if (M_Product_ID > 0)
 			return MProduct.get(getCtx(), M_Product_ID);
+
+		return null;
+	}
+
+	/**
+	 * 	Obtém a data do documento destes detalhes (pedido, fatura, autorização de devolução
+	 * 	ou Nota Fiscal), a mesma usada no cálculo dos impostos.
+	 *	@return data do documento ou null se não houver documento
+	 */
+	public Timestamp getDocumentDate() {
+		if (getC_OrderLine_ID() > 0)
+			return new MOrderLine(getCtx(), getC_OrderLine_ID(), get_TrxName()).getParent().getDateOrdered();
+		else if (getC_InvoiceLine_ID() > 0)
+			return new MInvoiceLine(getCtx(), getC_InvoiceLine_ID(), get_TrxName()).getParent().getDateInvoiced();
+		else if (getM_RMALine_ID() > 0) {
+			I_M_InOut inOut = new MRMALine(getCtx(), getM_RMALine_ID(), get_TrxName()).getParent().getInOut();
+			return inOut != null ? inOut.getMovementDate() : null;
+		}
+		else if (getLBR_NotaFiscalLine_ID() > 0)
+			return new MLBRNotaFiscalLine(getCtx(), getLBR_NotaFiscalLine_ID(), get_TrxName()).getParent().getDateDoc();
 
 		return null;
 	}
@@ -604,11 +625,11 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 
 		/*
 		 * Fill cBenef (Código de Benefício Fiscal)
-		 * Reconsulta o código na Situação Tributária (CST) permitindo que o Produto sobrescreva.
-		 * A resolução é centralizada em MLBRDocLineICMS.updateCBenef(), que também é executada
-		 * pelo beforeSave quando o CST é alterado manualmente.
+		 * Reconsulta o código pela regra por UF do emitente, pelo Produto e pela Situação
+		 * Tributária (CST). A resolução é centralizada em MLBRDocLineICMS.updateCBenef(), que
+		 * também é executada pelo beforeSave quando o CST é alterado manualmente.
 		 */
-		icms.updateCBenef(product);
+		icms.updateCBenef(this, product, dateDoc);
 
 
 		/* 
