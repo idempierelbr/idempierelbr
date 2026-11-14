@@ -89,6 +89,7 @@
         <setEntry value="com.fasterxml.jackson.core.jackson-core@default:default"/>
         <setEntry value="com.fasterxml.jackson.core.jackson-databind@default:default"/>
         <setEntry value="com.fasterxml.jackson.dataformat.jackson-dataformat-xml@default:default"/>
+        <setEntry value="com.fasterxml.jackson.dataformat.jackson-dataformat-yaml@default:default"/>
         <setEntry value="com.fasterxml.jackson.datatype.jackson-datatype-guava@default:default"/>
         <setEntry value="com.fasterxml.jackson.datatype.jackson-datatype-joda@default:default"/>
         <setEntry value="com.fasterxml.jackson.datatype.jackson-datatype-json-org@default:default"/>
@@ -140,14 +141,13 @@
         <setEntry value="jakarta.xml.bind-api@default:default"/>
         <setEntry value="jakarta.xml.soap-api@default:default"/>
         <setEntry value="jakarta.xml.ws-api@default:default"/>
-        <setEntry value="javassist@default:default"/>
+        <setEntry value="javassist*3.30.2.GA@default:default"/>
         <setEntry value="javax.enterprise.cdi-api@default:default"/>
         <setEntry value="javax.interceptor-api@default:default"/>
         <setEntry value="javax.security.auth.message-api@default:default"/>
         <setEntry value="javax.servlet.jsp.jstl-api@default:default"/>
         <setEntry value="javax.validation.api@default:default"/>
         <setEntry value="javax.websocket-api@default:default"/>
-        <setEntry value="javax.xml@default:default"/>
         <setEntry value="jaxen@default:default"/>
         <setEntry value="joda-time@default:default"/>
         <setEntry value="json@default:default"/>
@@ -397,6 +397,7 @@
         <setEntry value="org.w3c.dom.events@default:default"/>
         <setEntry value="org.w3c.dom.smil@default:default"/>
         <setEntry value="org.w3c.dom.svg@default:default"/>
+        <setEntry value="org.yaml.snakeyaml@default:default"/>
         <setEntry value="org.zkoss.zsoup@default:default"/>
         <setEntry value="slf4j.api*2.0.17@3:true"/>
         <setEntry value="slf4j.jdk14@3:true"/>
@@ -450,6 +451,7 @@
         <setEntry value="zweb@default:default"/>
     </setAttribute>
     <setAttribute key="selected_workspace_bundles">
+        <setEntry value="com.trekglobal.idempiere.rest.api@4:true"/>
         <setEntry value="org.adempiere.base.callout@default:default"/>
         <setEntry value="org.adempiere.base.process@default:default"/>
         <setEntry value="org.adempiere.base@default:default"/>
@@ -501,6 +503,7 @@
         <setEntry value="org.idempierelbr.nfe@4:true"/>
         <setEntry value="org.idempierelbr.nfs@4:true"/>
         <setEntry value="org.idempierelbr.open-items@4:true"/>
+        <setEntry value="org.idempierelbr.rtc@4:true"/>
         <setEntry value="org.idempierelbr.sped@4:true"/>
         <setEntry value="org.idempierelbr.tax@4:true"/>
     </setAttribute>
