@@ -204,6 +204,12 @@ O LBR acompanha a **NT 2025.002** (grupos IBS/CBS/IS no layout da NF-e):
 - **Tributos por item** — IBS (UF e município), CBS e IS, com CST e Classificação
   Tributária próprias (**CST e Classificação Tributária de IBS/CBS** e
   **… de IS**), incluindo os grupos de totalização do XML.
+- **Cálculo do IBS/CBS igual ao da Calculadora RTC da Receita** — base unificada
+  (sem ICMS, DIFAL, PIS e COFINS, com a vigência de cada um), alíquota, redução e
+  diferimento das tabelas oficiais carregadas por migração e arredondamento da
+  Receita. Na Definição de Impostos informam-se só a CST e a cClassTrib; alíquota
+  própria de UF, município ou cClassTrib vai na janela **Alíquota de IBS/CBS**. O
+  NCM é conferido contra a lista de NCM aplicáveis à cClassTrib.
 - **NF-e de Débito e de Crédito** (`finNFe` 5 e 6) — os 13 tipos da NT, com as
   regras de referência, direção e tributos admitidos de cada um; o processo
   **Generate Debit/Credit NF-e** monta a nota como réplica proporcional do
