@@ -45,7 +45,10 @@ git diff release-13...HEAD
 - [ ] Nome `yyyyMMddHHmm_DescricaoCurta.sql`, timestamp maior que o do script
   mais novo da pasta na branch de destino.
 - [ ] `register_migration_script('…')` com o nome do próprio arquivo, nos dois.
-- [ ] IDs literais na faixa **800000–809999**, sem `nextidfunc`.
+- [ ] Registros de dicionário (tabelas com `EntityType`) com IDs literais na
+  faixa **800000–809999**, sem `nextidfunc`. Em tabela de dados sem
+  `EntityType`, `nextidfunc` é o esperado, com as FKs para esses registros pelo
+  `_UU` (ver `lbr-dicionario-migracoes`, Passo 4).
 - [ ] Sem colisão de ID ou `_UU` com a branch de destino:
   ```bash
   git fetch origin release-13     # num fork, use o remote do idempierelbr (upstream)
