@@ -137,13 +137,14 @@ public class NFeLineUtil {
 					gIBSUF.setgDevTrib(gDevTrib);
 				}
 				
-				// Redução
+				// Redução (pRedAliq e pAliqEfet são obrigatórios no grupo gRed)
 				if (ibsCbsLines[0].getLBR_IBS_UF_TaxRedRate() != null) {
+					if (ibsCbsLines[0].getLBR_IBS_UF_TaxRedEfetRate() == null)
+						throw new AdempiereException(prefixException + "'@LBR_IBS_UF_TaxRedEfetRate@'");
+
 					RedGrupoBean gRed = new RedGrupoBean();					
 					gRed.setpRedAliq(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxRedRate()));
-					
-					if (ibsCbsLines[0].getLBR_IBS_UF_TaxDeferralAmt() != null)
-						gRed.setpAliqEfet(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxRedEfetRate()));
+					gRed.setpAliqEfet(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxRedEfetRate()));
 					
 					gIBSUF.setgRed(gRed);
 				}
@@ -182,13 +183,14 @@ public class NFeLineUtil {
 					gIBSMun.setgDevTrib(gDevTrib);
 				}
 				
-				// Redução
+				// Redução (pRedAliq e pAliqEfet são obrigatórios no grupo gRed)
 				if (ibsCbsLines[0].getLBR_IBS_Mun_TaxRedRate() != null) {
+					if (ibsCbsLines[0].getLBR_IBS_Mun_TaxRedEfetRate() == null)
+						throw new AdempiereException(prefixException + "'@LBR_IBS_Mun_TaxRedEfetRate@'");
+
 					RedGrupoBean gRed = new RedGrupoBean();					
 					gRed.setpRedAliq(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxRedRate()));
-					
-					if (ibsCbsLines[0].getLBR_IBS_Mun_TaxDeferralAmt() != null)
-						gRed.setpAliqEfet(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxRedEfetRate()));
+					gRed.setpAliqEfet(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxRedEfetRate()));
 					
 					gIBSMun.setgRed(gRed);
 				}
@@ -231,13 +233,14 @@ public class NFeLineUtil {
 					gCBS.setgDevTrib(gDevTrib);
 				}
 				
-				// Redução
+				// Redução (pRedAliq e pAliqEfet são obrigatórios no grupo gRed)
 				if (ibsCbsLines[0].getLBR_CBS_TaxRedRate() != null) {
+					if (ibsCbsLines[0].getLBR_CBS_TaxRedEfetRate() == null)
+						throw new AdempiereException(prefixException + "'@LBR_CBS_TaxRedEfetRate@'");
+
 					RedGrupoBean gRed = new RedGrupoBean();					
 					gRed.setpRedAliq(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxRedRate()));
-					
-					if (ibsCbsLines[0].getLBR_CBS_TaxDeferralAmt() != null)
-						gRed.setpAliqEfet(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxRedEfetRate()));
+					gRed.setpAliqEfet(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxRedEfetRate()));
 					
 					gCBS.setgRed(gRed);
 				}
