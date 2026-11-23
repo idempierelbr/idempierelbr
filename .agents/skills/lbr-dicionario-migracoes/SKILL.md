@@ -202,6 +202,12 @@ Se faltar qualquer item, não improvise: use o caminho da interface (§3.3).
    **Callouts da interface não rodam pelo REST**: informe explicitamente os
    campos que a janela preencheria (nome, nome de impressão, referência,
    tamanho, elemento etc.). Compare com um registro parecido já existente.
+   **Coluna omitida recebe o padrão da janela** (`GridField.getDefault`: lógica
+   padrão, preferências e contexto da sessão; 0 para número). Isso já pôs valor
+   indevido em FK opcional (`AD_Menu.AD_InfoWindow_ID`, `C_Region_ID` vindo do
+   contexto), e o REST não esvazia FK depois: `null` dá erro e texto vazio é
+   ignorado. Confira os registros criados antes de seguir. Para esvaziar, peça
+   ao desenvolvedor que o faça pela interface, com o log de migração ligado.
 5. **Processos**: `POST /api/v1/processes/{slug}` com `"record-id"` e
    `"table-id"` no corpo. O slug é o `Value` do processo em minúsculas, com
    espaço e pontuação trocados por `-` (`_` e `-` ficam). Os processos rodam
@@ -219,6 +225,11 @@ Se faltar qualquer item, não improvise: use o caminho da interface (§3.3).
    como seguir.
 7. **Um comentário por script.** O nome do arquivo só tem o timestamp até o
    minuto: dois comentários diferentes no mesmo minuto caem no mesmo arquivo.
+   **Uma sessão por script.** O plugin escolhe o arquivo pela sessão de login
+   mais o comentário: um token novo abre outro arquivo, mesmo com o mesmo
+   comentário. Faça login uma vez e reutilize o token em todas as requisições
+   do script. Se a sessão cair no meio, junte os arquivos na ordem, sem alterar
+   comandos, e mantenha um só `register_migration_script`.
 8. **No fim**, devolva o `RoleType` `SS` ao System Administrator, se ele foi
    trocado, e descarte o token. No relatório final, diga que trocou e devolveu,
    ou que ficou `NULL`, se não conseguiu devolver.
@@ -280,8 +291,16 @@ Revise sempre, inclusive o que você mesmo gerou:
   Com o nome errado aqui, o SyncDB reaplica o script.
 - O arquivo Oracle tem `SET SQLBLANKLINES ON` e `SET DEFINE OFF` depois do
   cabeçalho.
-- **IDs literais na faixa 800000–809999.** `nextidfunc(...)` no script indica
-  que o servidor de ID não estava em uso: gere de novo.
+- **IDs literais na faixa 800000–809999 nos registros de dicionário.**
+  `nextidfunc(...)` num registro de tabela com coluna `EntityType` (as `AD_*`)
+  indica que o servidor de ID não estava em uso: gere de novo.
+- **Tabela de dados sem `EntityType`** (por exemplo `LBR_ClassTrib_IBSCBS`,
+  `LBR_TaxGroup`) nunca usa o servidor de ID: o core só o consulta para tabelas
+  com `EntityType` (`MSequence.getNextID`). Nelas, `nextidfunc(...)` é o
+  esperado. O script continua portável: cada banco gera o ID ao aplicar, e as
+  referências a esses registros saem como subconsulta pelo `_UU`
+  (`(SELECT X_ID FROM X WHERE X_UU='…')`). Confira que nenhuma FK para um
+  registro desses saiu como ID literal.
 - **Sem colisão** de ID ou `_UU` com scripts que já estão na branch:
   ```bash
   grep -rn "<ID>" org.idempierelbr.core/migration/

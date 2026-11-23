@@ -26,7 +26,7 @@ import org.compiere.util.Env;
 
 /** Generated Model for LBR_ClassTrib_IBSCBS
  *  @author iDempiere (generated)
- *  @version Release 12 - $Id$ */
+ *  @version Release 13 - $Id$ */
 @org.adempiere.base.Model(table="LBR_ClassTrib_IBSCBS")
 public class X_LBR_ClassTrib_IBSCBS extends PO implements I_LBR_ClassTrib_IBSCBS, I_Persistent
 {
@@ -34,7 +34,7 @@ public class X_LBR_ClassTrib_IBSCBS extends PO implements I_LBR_ClassTrib_IBSCBS
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20251010L;
+	private static final long serialVersionUID = 20261123L;
 
     /** Standard Constructor */
     public X_LBR_ClassTrib_IBSCBS (Properties ctx, int LBR_ClassTrib_IBSCBS_ID, String trxName)
@@ -43,6 +43,16 @@ public class X_LBR_ClassTrib_IBSCBS extends PO implements I_LBR_ClassTrib_IBSCBS
       /** if (LBR_ClassTrib_IBSCBS_ID == 0)
         {
 			setLBR_CST_IBSCBS_ID (0);
+			setLBR_IsBuyerCBSCredit (false);
+// N
+			setLBR_IsBuyerIBSCredit (false);
+// N
+			setLBR_IsBuyerPresCredit (false);
+// N
+			setLBR_IsSupplierPresCredit (false);
+// N
+			setLBR_IsZeroRate (false);
+// N
 			setName (null);
 			setValue (null);
         } */
@@ -55,6 +65,16 @@ public class X_LBR_ClassTrib_IBSCBS extends PO implements I_LBR_ClassTrib_IBSCBS
       /** if (LBR_ClassTrib_IBSCBS_ID == 0)
         {
 			setLBR_CST_IBSCBS_ID (0);
+			setLBR_IsBuyerCBSCredit (false);
+// N
+			setLBR_IsBuyerIBSCredit (false);
+// N
+			setLBR_IsBuyerPresCredit (false);
+// N
+			setLBR_IsSupplierPresCredit (false);
+// N
+			setLBR_IsZeroRate (false);
+// N
 			setName (null);
 			setValue (null);
         } */
@@ -67,6 +87,16 @@ public class X_LBR_ClassTrib_IBSCBS extends PO implements I_LBR_ClassTrib_IBSCBS
       /** if (LBR_ClassTrib_IBSCBS_UU == null)
         {
 			setLBR_CST_IBSCBS_ID (0);
+			setLBR_IsBuyerCBSCredit (false);
+// N
+			setLBR_IsBuyerIBSCredit (false);
+// N
+			setLBR_IsBuyerPresCredit (false);
+// N
+			setLBR_IsSupplierPresCredit (false);
+// N
+			setLBR_IsZeroRate (false);
+// N
 			setName (null);
 			setValue (null);
         } */
@@ -79,6 +109,16 @@ public class X_LBR_ClassTrib_IBSCBS extends PO implements I_LBR_ClassTrib_IBSCBS
       /** if (LBR_ClassTrib_IBSCBS_UU == null)
         {
 			setLBR_CST_IBSCBS_ID (0);
+			setLBR_IsBuyerCBSCredit (false);
+// N
+			setLBR_IsBuyerIBSCredit (false);
+// N
+			setLBR_IsBuyerPresCredit (false);
+// N
+			setLBR_IsSupplierPresCredit (false);
+// N
+			setLBR_IsZeroRate (false);
+// N
 			setName (null);
 			setValue (null);
         } */
@@ -91,7 +131,7 @@ public class X_LBR_ClassTrib_IBSCBS extends PO implements I_LBR_ClassTrib_IBSCBS
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org
+      * @return 6 - System - Client
       */
     protected int get_AccessLevel()
     {
@@ -160,6 +200,7 @@ public class X_LBR_ClassTrib_IBSCBS extends PO implements I_LBR_ClassTrib_IBSCBS
 		return (String)get_Value(COLUMNNAME_Description);
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_CST_IBSCBS getLBR_CST_IBSCBS() throws RuntimeException
 	{
 		return (I_LBR_CST_IBSCBS)MTable.get(getCtx(), I_LBR_CST_IBSCBS.Table_ID)
@@ -223,6 +264,122 @@ public class X_LBR_ClassTrib_IBSCBS extends PO implements I_LBR_ClassTrib_IBSCBS
 		return (String)get_Value(COLUMNNAME_LBR_ClassTrib_IBSCBS_UU);
 	}
 
+	/** LBR_IBSCBSIndNFCe AD_Reference_ID=319 */
+	public static final int LBR_IBSCBSINDNFCE_AD_Reference_ID=319;
+	/** No = N */
+	public static final String LBR_IBSCBSINDNFCE_No = "N";
+	/** Yes = Y */
+	public static final String LBR_IBSCBSINDNFCE_Yes = "Y";
+	/** Set IBS/CBS NFCe Indicator.
+		@param LBR_IBSCBSIndNFCe IBS/CBS NFCe Indicator
+	*/
+	public void setLBR_IBSCBSIndNFCe (String LBR_IBSCBSIndNFCe)
+	{
+
+		set_Value (COLUMNNAME_LBR_IBSCBSIndNFCe, LBR_IBSCBSIndNFCe);
+	}
+
+	/** Get IBS/CBS NFCe Indicator.
+		@return IBS/CBS NFCe Indicator	  */
+	public String getLBR_IBSCBSIndNFCe()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_IBSCBSIndNFCe);
+	}
+
+	/** LBR_IBSCBSIndNFe AD_Reference_ID=319 */
+	public static final int LBR_IBSCBSINDNFE_AD_Reference_ID=319;
+	/** No = N */
+	public static final String LBR_IBSCBSINDNFE_No = "N";
+	/** Yes = Y */
+	public static final String LBR_IBSCBSINDNFE_Yes = "Y";
+	/** Set IBS/CBS NFe Indicator.
+		@param LBR_IBSCBSIndNFe IBS/CBS NFe Indicator
+	*/
+	public void setLBR_IBSCBSIndNFe (String LBR_IBSCBSIndNFe)
+	{
+
+		set_Value (COLUMNNAME_LBR_IBSCBSIndNFe, LBR_IBSCBSIndNFe);
+	}
+
+	/** Get IBS/CBS NFe Indicator.
+		@return IBS/CBS NFe Indicator	  */
+	public String getLBR_IBSCBSIndNFe()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_IBSCBSIndNFe);
+	}
+
+	/** LBR_IBSCBSNomenclature AD_Reference_ID=800130 */
+	public static final int LBR_IBSCBSNOMENCLATURE_AD_Reference_ID=800130;
+	/** NBS ou NCM = A */
+	public static final String LBR_IBSCBSNOMENCLATURE_NBSOuNCM = "A";
+	/** NCM = C */
+	public static final String LBR_IBSCBSNOMENCLATURE_NCM = "C";
+	/** Não possui = N */
+	public static final String LBR_IBSCBSNOMENCLATURE_NãoPossui = "N";
+	/** NBS = S */
+	public static final String LBR_IBSCBSNOMENCLATURE_NBS = "S";
+	/** Set Nomenclatura Exigida.
+		@param LBR_IBSCBSNomenclature Nomenclatura exigida pela classificação tributária: NCM, NBS, qualquer das duas ou nenhuma.
+	*/
+	public void setLBR_IBSCBSNomenclature (String LBR_IBSCBSNomenclature)
+	{
+
+		set_Value (COLUMNNAME_LBR_IBSCBSNomenclature, LBR_IBSCBSNomenclature);
+	}
+
+	/** Get Nomenclatura Exigida.
+		@return Nomenclatura exigida pela classificação tributária: NCM, NBS, qualquer das duas ou nenhuma.
+	  */
+	public String getLBR_IBSCBSNomenclature()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_IBSCBSNomenclature);
+	}
+
+	/** LBR_IBSCBSRateType AD_Reference_ID=800129 */
+	public static final int LBR_IBSCBSRATETYPE_AD_Reference_ID=800129;
+	/** Fixa = F */
+	public static final String LBR_IBSCBSRATETYPE_Fixa = "F";
+	/** Uniforme nacional (referência) = N */
+	public static final String LBR_IBSCBSRATETYPE_UniformeNacionalReferência = "N";
+	/** Padrão = P */
+	public static final String LBR_IBSCBSRATETYPE_Padrão = "P";
+	/** Uniforme setorial = S */
+	public static final String LBR_IBSCBSRATETYPE_UniformeSetorial = "S";
+	/** Sem alíquota = X */
+	public static final String LBR_IBSCBSRATETYPE_SemAlíquota = "X";
+	/** Set Tipo de Alíquota do IBS/CBS.
+		@param LBR_IBSCBSRateType Tipo de alíquota da classificação tributária: padrão, fixa, uniforme nacional, uniforme setorial ou sem alíquota.
+	*/
+	public void setLBR_IBSCBSRateType (String LBR_IBSCBSRateType)
+	{
+
+		set_Value (COLUMNNAME_LBR_IBSCBSRateType, LBR_IBSCBSRateType);
+	}
+
+	/** Get Tipo de Alíquota do IBS/CBS.
+		@return Tipo de alíquota da classificação tributária: padrão, fixa, uniforme nacional, uniforme setorial ou sem alíquota.
+	  */
+	public String getLBR_IBSCBSRateType()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_IBSCBSRateType);
+	}
+
+	/** Set Tratamento Tributário.
+		@param LBR_IBSCBSTreatment Tratamento tributário do IBS/CBS associado à classificação tributária, conforme a Calculadora de Tributos da Receita Federal.
+	*/
+	public void setLBR_IBSCBSTreatment (String LBR_IBSCBSTreatment)
+	{
+		set_Value (COLUMNNAME_LBR_IBSCBSTreatment, LBR_IBSCBSTreatment);
+	}
+
+	/** Get Tratamento Tributário.
+		@return Tratamento tributário do IBS/CBS associado à classificação tributária, conforme a Calculadora de Tributos da Receita Federal.
+	  */
+	public String getLBR_IBSCBSTreatment()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_IBSCBSTreatment);
+	}
+
 	/** LBR_IndIBSCBSRedBC AD_Reference_ID=319 */
 	public static final int LBR_INDIBSCBSREDBC_AD_Reference_ID=319;
 	/** No = N */
@@ -243,6 +400,29 @@ public class X_LBR_ClassTrib_IBSCBS extends PO implements I_LBR_ClassTrib_IBSCBS
 	public String getLBR_IndIBSCBSRedBC()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_IndIBSCBSRedBC);
+	}
+
+	/** LBR_IndgEstornoCred AD_Reference_ID=800060 */
+	public static final int LBR_INDGESTORNOCRED_AD_Reference_ID=800060;
+	/** 0 - Not Allowed = 0 */
+	public static final String LBR_INDGESTORNOCRED_0_NotAllowed = "0";
+	/** 1 - Required = 1 */
+	public static final String LBR_INDGESTORNOCRED_1_Required = "1";
+	/** Set Indicador de Grupo Estorno de Crédito.
+		@param LBR_IndgEstornoCred Indica se o grupo gEstornoCred é exigido ou vedado nesta classificação tributária.
+	*/
+	public void setLBR_IndgEstornoCred (String LBR_IndgEstornoCred)
+	{
+
+		set_Value (COLUMNNAME_LBR_IndgEstornoCred, LBR_IndgEstornoCred);
+	}
+
+	/** Get Indicador de Grupo Estorno de Crédito.
+		@return Indica se o grupo gEstornoCred é exigido ou vedado nesta classificação tributária.
+	  */
+	public String getLBR_IndgEstornoCred()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_IndgEstornoCred);
 	}
 
 	/** LBR_IndgIBSCBSCredPres AD_Reference_ID=800060 */
@@ -295,8 +475,8 @@ public class X_LBR_ClassTrib_IBSCBS extends PO implements I_LBR_ClassTrib_IBSCBS
 	public static final String LBR_INDGIBSCBSMONODIF_0_NotAllowed = "0";
 	/** 1 - Required = 1 */
 	public static final String LBR_INDGIBSCBSMONODIF_1_Required = "1";
-	/** Set IBS/CBS MonoDig Group Indicator.
-		@param LBR_IndgIBSCBSMonoDif IBS/CBS MonoDig Group Indicator
+	/** Set IBS/CBS MonoDif Group Indicator.
+		@param LBR_IndgIBSCBSMonoDif IBS/CBS MonoDif Group Indicator
 	*/
 	public void setLBR_IndgIBSCBSMonoDif (String LBR_IndgIBSCBSMonoDif)
 	{
@@ -304,8 +484,8 @@ public class X_LBR_ClassTrib_IBSCBS extends PO implements I_LBR_ClassTrib_IBSCBS
 		set_Value (COLUMNNAME_LBR_IndgIBSCBSMonoDif, LBR_IndgIBSCBSMonoDif);
 	}
 
-	/** Get IBS/CBS MonoDig Group Indicator.
-		@return IBS/CBS MonoDig Group Indicator	  */
+	/** Get IBS/CBS MonoDif Group Indicator.
+		@return IBS/CBS MonoDif Group Indicator	  */
 	public String getLBR_IndgIBSCBSMonoDif()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_IndgIBSCBSMonoDif);
@@ -377,6 +557,121 @@ public class X_LBR_ClassTrib_IBSCBS extends PO implements I_LBR_ClassTrib_IBSCBS
 		return (String)get_Value(COLUMNNAME_LBR_IndgIBSCBSTribRegular);
 	}
 
+	/** Set Crédito de CBS do Adquirente.
+		@param LBR_IsBuyerCBSCredit Indica que o adquirente pode apropriar crédito da CBS nesta classificação tributária.
+	*/
+	public void setLBR_IsBuyerCBSCredit (boolean LBR_IsBuyerCBSCredit)
+	{
+		set_Value (COLUMNNAME_LBR_IsBuyerCBSCredit, Boolean.valueOf(LBR_IsBuyerCBSCredit));
+	}
+
+	/** Get Crédito de CBS do Adquirente.
+		@return Indica que o adquirente pode apropriar crédito da CBS nesta classificação tributária.
+	  */
+	public boolean isLBR_IsBuyerCBSCredit()
+	{
+		Object oo = get_Value(COLUMNNAME_LBR_IsBuyerCBSCredit);
+		if (oo != null)
+		{
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+
+	/** Set Crédito de IBS do Adquirente.
+		@param LBR_IsBuyerIBSCredit Indica que o adquirente pode apropriar crédito do IBS nesta classificação tributária.
+	*/
+	public void setLBR_IsBuyerIBSCredit (boolean LBR_IsBuyerIBSCredit)
+	{
+		set_Value (COLUMNNAME_LBR_IsBuyerIBSCredit, Boolean.valueOf(LBR_IsBuyerIBSCredit));
+	}
+
+	/** Get Crédito de IBS do Adquirente.
+		@return Indica que o adquirente pode apropriar crédito do IBS nesta classificação tributária.
+	  */
+	public boolean isLBR_IsBuyerIBSCredit()
+	{
+		Object oo = get_Value(COLUMNNAME_LBR_IsBuyerIBSCredit);
+		if (oo != null)
+		{
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+
+	/** Set Crédito Presumido do Adquirente.
+		@param LBR_IsBuyerPresCredit Indica que a classificação tributária dá crédito presumido ao adquirente.
+	*/
+	public void setLBR_IsBuyerPresCredit (boolean LBR_IsBuyerPresCredit)
+	{
+		set_Value (COLUMNNAME_LBR_IsBuyerPresCredit, Boolean.valueOf(LBR_IsBuyerPresCredit));
+	}
+
+	/** Get Crédito Presumido do Adquirente.
+		@return Indica que a classificação tributária dá crédito presumido ao adquirente.
+	  */
+	public boolean isLBR_IsBuyerPresCredit()
+	{
+		Object oo = get_Value(COLUMNNAME_LBR_IsBuyerPresCredit);
+		if (oo != null)
+		{
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+
+	/** Set Crédito Presumido do Fornecedor.
+		@param LBR_IsSupplierPresCredit Indica que a classificação tributária dá crédito presumido ao fornecedor.
+	*/
+	public void setLBR_IsSupplierPresCredit (boolean LBR_IsSupplierPresCredit)
+	{
+		set_Value (COLUMNNAME_LBR_IsSupplierPresCredit, Boolean.valueOf(LBR_IsSupplierPresCredit));
+	}
+
+	/** Get Crédito Presumido do Fornecedor.
+		@return Indica que a classificação tributária dá crédito presumido ao fornecedor.
+	  */
+	public boolean isLBR_IsSupplierPresCredit()
+	{
+		Object oo = get_Value(COLUMNNAME_LBR_IsSupplierPresCredit);
+		if (oo != null)
+		{
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+
+	/** Set Alíquota Zero.
+		@param LBR_IsZeroRate Indica que a alíquota do IBS/CBS aplicada nesta classificação é zero (suspensão, exclusão de base, documento específico e outros).
+	*/
+	public void setLBR_IsZeroRate (boolean LBR_IsZeroRate)
+	{
+		set_Value (COLUMNNAME_LBR_IsZeroRate, Boolean.valueOf(LBR_IsZeroRate));
+	}
+
+	/** Get Alíquota Zero.
+		@return Indica que a alíquota do IBS/CBS aplicada nesta classificação é zero (suspensão, exclusão de base, documento específico e outros).
+	  */
+	public boolean isLBR_IsZeroRate()
+	{
+		Object oo = get_Value(COLUMNNAME_LBR_IsZeroRate);
+		if (oo != null)
+		{
+			 if (oo instanceof Boolean)
+				 return ((Boolean)oo).booleanValue();
+			return "Y".equals(oo);
+		}
+		return false;
+	}
+
 	/** Set Red. CBS (%).
 		@param LBR_PRedCBS Red. CBS (%)
 	*/
@@ -408,6 +703,67 @@ public class X_LBR_ClassTrib_IBSCBS extends PO implements I_LBR_ClassTrib_IBSCBS
 	public BigDecimal getLBR_PRedIBS()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_PRedIBS);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** LBR_PriorOpCredit AD_Reference_ID=800131 */
+	public static final int LBR_PRIOROPCREDIT_AD_Reference_ID=800131;
+	/** Anulação = A */
+	public static final String LBR_PRIOROPCREDIT_Anulação = "A";
+	/** Manutenção = M */
+	public static final String LBR_PRIOROPCREDIT_Manutenção = "M";
+	/** Set Crédito da Operação Antecedente.
+		@param LBR_PriorOpCredit Tratamento do crédito da operação antecedente: manutenção ou anulação.
+	*/
+	public void setLBR_PriorOpCredit (String LBR_PriorOpCredit)
+	{
+
+		set_Value (COLUMNNAME_LBR_PriorOpCredit, LBR_PriorOpCredit);
+	}
+
+	/** Get Crédito da Operação Antecedente.
+		@return Tratamento do crédito da operação antecedente: manutenção ou anulação.
+	  */
+	public String getLBR_PriorOpCredit()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_PriorOpCredit);
+	}
+
+	/** Set Tax Base.
+		@param LBR_TaxBase Indicates the Tax Base
+	*/
+	public void setLBR_TaxBase (BigDecimal LBR_TaxBase)
+	{
+		set_Value (COLUMNNAME_LBR_TaxBase, LBR_TaxBase);
+	}
+
+	/** Get Tax Base.
+		@return Indicates the Tax Base
+	  */
+	public BigDecimal getLBR_TaxBase()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBase);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set Tax Deferral Rate (%).
+		@param LBR_TaxDeferralRate Identifies the Tax Deferral Rate (%)
+	*/
+	public void setLBR_TaxDeferralRate (BigDecimal LBR_TaxDeferralRate)
+	{
+		set_Value (COLUMNNAME_LBR_TaxDeferralRate, LBR_TaxDeferralRate);
+	}
+
+	/** Get Tax Deferral Rate (%).
+		@return Identifies the Tax Deferral Rate (%)
+	  */
+	public BigDecimal getLBR_TaxDeferralRate()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxDeferralRate);
 		if (bd == null)
 			 return Env.ZERO;
 		return bd;

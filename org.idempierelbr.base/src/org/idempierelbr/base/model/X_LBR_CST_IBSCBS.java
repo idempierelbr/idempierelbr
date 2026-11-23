@@ -23,7 +23,7 @@ import org.compiere.model.*;
 
 /** Generated Model for LBR_CST_IBSCBS
  *  @author iDempiere (generated)
- *  @version Release 12 - $Id$ */
+ *  @version Release 13 - $Id$ */
 @org.adempiere.base.Model(table="LBR_CST_IBSCBS")
 public class X_LBR_CST_IBSCBS extends PO implements I_LBR_CST_IBSCBS, I_Persistent
 {
@@ -31,7 +31,7 @@ public class X_LBR_CST_IBSCBS extends PO implements I_LBR_CST_IBSCBS, I_Persiste
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20251010L;
+	private static final long serialVersionUID = 20261123L;
 
     /** Standard Constructor */
     public X_LBR_CST_IBSCBS (Properties ctx, int LBR_CST_IBSCBS_ID, String trxName)
@@ -84,7 +84,7 @@ public class X_LBR_CST_IBSCBS extends PO implements I_LBR_CST_IBSCBS, I_Persiste
     }
 
     /** AccessLevel
-      * @return 3 - Client - Org
+      * @return 6 - System - Client
       */
     protected int get_AccessLevel()
     {
@@ -353,6 +353,52 @@ public class X_LBR_CST_IBSCBS extends PO implements I_LBR_CST_IBSCBS, I_Persiste
 	public String getLBR_IBSCBSIndNFe()
 	{
 		return (String)get_Value(COLUMNNAME_LBR_IBSCBSIndNFe);
+	}
+
+	/** LBR_IndgAjusteCompet AD_Reference_ID=800060 */
+	public static final int LBR_INDGAJUSTECOMPET_AD_Reference_ID=800060;
+	/** 0 - Not Allowed = 0 */
+	public static final String LBR_INDGAJUSTECOMPET_0_NotAllowed = "0";
+	/** 1 - Required = 1 */
+	public static final String LBR_INDGAJUSTECOMPET_1_Required = "1";
+	/** Set Indicador de Grupo Ajuste de Competência.
+		@param LBR_IndgAjusteCompet Indica se o grupo gAjusteCompet é exigido ou vedado nesta CST.
+	*/
+	public void setLBR_IndgAjusteCompet (String LBR_IndgAjusteCompet)
+	{
+
+		set_Value (COLUMNNAME_LBR_IndgAjusteCompet, LBR_IndgAjusteCompet);
+	}
+
+	/** Get Indicador de Grupo Ajuste de Competência.
+		@return Indica se o grupo gAjusteCompet é exigido ou vedado nesta CST.
+	  */
+	public String getLBR_IndgAjusteCompet()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_IndgAjusteCompet);
+	}
+
+	/** LBR_IndgCredPresIBSZFM AD_Reference_ID=800060 */
+	public static final int LBR_INDGCREDPRESIBSZFM_AD_Reference_ID=800060;
+	/** 0 - Not Allowed = 0 */
+	public static final String LBR_INDGCREDPRESIBSZFM_0_NotAllowed = "0";
+	/** 1 - Required = 1 */
+	public static final String LBR_INDGCREDPRESIBSZFM_1_Required = "1";
+	/** Set Indicador de Grupo Crédito Presumido IBS ZFM.
+		@param LBR_IndgCredPresIBSZFM Indica se o grupo gCredPresIBSZFM é exigido ou vedado nesta CST.
+	*/
+	public void setLBR_IndgCredPresIBSZFM (String LBR_IndgCredPresIBSZFM)
+	{
+
+		set_Value (COLUMNNAME_LBR_IndgCredPresIBSZFM, LBR_IndgCredPresIBSZFM);
+	}
+
+	/** Get Indicador de Grupo Crédito Presumido IBS ZFM.
+		@return Indica se o grupo gCredPresIBSZFM é exigido ou vedado nesta CST.
+	  */
+	public String getLBR_IndgCredPresIBSZFM()
+	{
+		return (String)get_Value(COLUMNNAME_LBR_IndgCredPresIBSZFM);
 	}
 
 	/** LBR_IndgIBSCBS AD_Reference_ID=800060 */

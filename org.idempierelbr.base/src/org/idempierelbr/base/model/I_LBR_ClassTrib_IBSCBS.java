@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_ClassTrib_IBSCBS
  *  @author iDempiere (generated) 
- *  @version Release 12
+ *  @version Release 13
  */
 @SuppressWarnings("all")
 public interface I_LBR_ClassTrib_IBSCBS 
@@ -37,9 +37,9 @@ public interface I_LBR_ClassTrib_IBSCBS
 
     KeyNamePair Model = new KeyNamePair(Table_ID, Table_Name);
 
-    /** AccessLevel = 3 - Client - Org 
+    /** AccessLevel = 6 - System - Client 
      */
-    BigDecimal accessLevel = BigDecimal.valueOf(3);
+    BigDecimal accessLevel = BigDecimal.valueOf(6);
 
     /** Load Meta Data */
 
@@ -141,6 +141,7 @@ public interface I_LBR_ClassTrib_IBSCBS
 	/** Get CST IBS / CBS	  */
 	public int getLBR_CST_IBSCBS_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_CST_IBSCBS getLBR_CST_IBSCBS() throws RuntimeException;
 
     /** Column name LBR_ClassTrib_IBSCBS_ID */
@@ -161,6 +162,63 @@ public interface I_LBR_ClassTrib_IBSCBS
 	/** Get ClassTrib IBS / CBS	  */
 	public String getLBR_ClassTrib_IBSCBS_UU();
 
+    /** Column name LBR_IBSCBSIndNFCe */
+    public static final String COLUMNNAME_LBR_IBSCBSIndNFCe = "LBR_IBSCBSIndNFCe";
+
+	/** Set IBS/CBS NFCe Indicator	  */
+	public void setLBR_IBSCBSIndNFCe (String LBR_IBSCBSIndNFCe);
+
+	/** Get IBS/CBS NFCe Indicator	  */
+	public String getLBR_IBSCBSIndNFCe();
+
+    /** Column name LBR_IBSCBSIndNFe */
+    public static final String COLUMNNAME_LBR_IBSCBSIndNFe = "LBR_IBSCBSIndNFe";
+
+	/** Set IBS/CBS NFe Indicator	  */
+	public void setLBR_IBSCBSIndNFe (String LBR_IBSCBSIndNFe);
+
+	/** Get IBS/CBS NFe Indicator	  */
+	public String getLBR_IBSCBSIndNFe();
+
+    /** Column name LBR_IBSCBSNomenclature */
+    public static final String COLUMNNAME_LBR_IBSCBSNomenclature = "LBR_IBSCBSNomenclature";
+
+	/** Set Nomenclatura Exigida.
+	  * Nomenclatura exigida pela classificação tributária: NCM, NBS, qualquer das duas ou nenhuma.
+	  */
+	public void setLBR_IBSCBSNomenclature (String LBR_IBSCBSNomenclature);
+
+	/** Get Nomenclatura Exigida.
+	  * Nomenclatura exigida pela classificação tributária: NCM, NBS, qualquer das duas ou nenhuma.
+	  */
+	public String getLBR_IBSCBSNomenclature();
+
+    /** Column name LBR_IBSCBSRateType */
+    public static final String COLUMNNAME_LBR_IBSCBSRateType = "LBR_IBSCBSRateType";
+
+	/** Set Tipo de Alíquota do IBS/CBS.
+	  * Tipo de alíquota da classificação tributária: padrão, fixa, uniforme nacional, uniforme setorial ou sem alíquota.
+	  */
+	public void setLBR_IBSCBSRateType (String LBR_IBSCBSRateType);
+
+	/** Get Tipo de Alíquota do IBS/CBS.
+	  * Tipo de alíquota da classificação tributária: padrão, fixa, uniforme nacional, uniforme setorial ou sem alíquota.
+	  */
+	public String getLBR_IBSCBSRateType();
+
+    /** Column name LBR_IBSCBSTreatment */
+    public static final String COLUMNNAME_LBR_IBSCBSTreatment = "LBR_IBSCBSTreatment";
+
+	/** Set Tratamento Tributário.
+	  * Tratamento tributário do IBS/CBS associado à classificação tributária, conforme a Calculadora de Tributos da Receita Federal.
+	  */
+	public void setLBR_IBSCBSTreatment (String LBR_IBSCBSTreatment);
+
+	/** Get Tratamento Tributário.
+	  * Tratamento tributário do IBS/CBS associado à classificação tributária, conforme a Calculadora de Tributos da Receita Federal.
+	  */
+	public String getLBR_IBSCBSTreatment();
+
     /** Column name LBR_IndIBSCBSRedBC */
     public static final String COLUMNNAME_LBR_IndIBSCBSRedBC = "LBR_IndIBSCBSRedBC";
 
@@ -169,6 +227,19 @@ public interface I_LBR_ClassTrib_IBSCBS
 
 	/** Get IBS/CBS Red BC Indicator	  */
 	public String getLBR_IndIBSCBSRedBC();
+
+    /** Column name LBR_IndgEstornoCred */
+    public static final String COLUMNNAME_LBR_IndgEstornoCred = "LBR_IndgEstornoCred";
+
+	/** Set Indicador de Grupo Estorno de Crédito.
+	  * Indica se o grupo gEstornoCred é exigido ou vedado nesta classificação tributária.
+	  */
+	public void setLBR_IndgEstornoCred (String LBR_IndgEstornoCred);
+
+	/** Get Indicador de Grupo Estorno de Crédito.
+	  * Indica se o grupo gEstornoCred é exigido ou vedado nesta classificação tributária.
+	  */
+	public String getLBR_IndgEstornoCred();
 
     /** Column name LBR_IndgIBSCBSCredPres */
     public static final String COLUMNNAME_LBR_IndgIBSCBSCredPres = "LBR_IndgIBSCBSCredPres";
@@ -191,10 +262,10 @@ public interface I_LBR_ClassTrib_IBSCBS
     /** Column name LBR_IndgIBSCBSMonoDif */
     public static final String COLUMNNAME_LBR_IndgIBSCBSMonoDif = "LBR_IndgIBSCBSMonoDif";
 
-	/** Set IBS/CBS MonoDig Group Indicator	  */
+	/** Set IBS/CBS MonoDif Group Indicator	  */
 	public void setLBR_IndgIBSCBSMonoDif (String LBR_IndgIBSCBSMonoDif);
 
-	/** Get IBS/CBS MonoDig Group Indicator	  */
+	/** Get IBS/CBS MonoDif Group Indicator	  */
 	public String getLBR_IndgIBSCBSMonoDif();
 
     /** Column name LBR_IndgIBSCBSMonoRet */
@@ -224,6 +295,71 @@ public interface I_LBR_ClassTrib_IBSCBS
 	/** Get IBS/CBS TribRegular Group Indicator	  */
 	public String getLBR_IndgIBSCBSTribRegular();
 
+    /** Column name LBR_IsBuyerCBSCredit */
+    public static final String COLUMNNAME_LBR_IsBuyerCBSCredit = "LBR_IsBuyerCBSCredit";
+
+	/** Set Crédito de CBS do Adquirente.
+	  * Indica que o adquirente pode apropriar crédito da CBS nesta classificação tributária.
+	  */
+	public void setLBR_IsBuyerCBSCredit (boolean LBR_IsBuyerCBSCredit);
+
+	/** Get Crédito de CBS do Adquirente.
+	  * Indica que o adquirente pode apropriar crédito da CBS nesta classificação tributária.
+	  */
+	public boolean isLBR_IsBuyerCBSCredit();
+
+    /** Column name LBR_IsBuyerIBSCredit */
+    public static final String COLUMNNAME_LBR_IsBuyerIBSCredit = "LBR_IsBuyerIBSCredit";
+
+	/** Set Crédito de IBS do Adquirente.
+	  * Indica que o adquirente pode apropriar crédito do IBS nesta classificação tributária.
+	  */
+	public void setLBR_IsBuyerIBSCredit (boolean LBR_IsBuyerIBSCredit);
+
+	/** Get Crédito de IBS do Adquirente.
+	  * Indica que o adquirente pode apropriar crédito do IBS nesta classificação tributária.
+	  */
+	public boolean isLBR_IsBuyerIBSCredit();
+
+    /** Column name LBR_IsBuyerPresCredit */
+    public static final String COLUMNNAME_LBR_IsBuyerPresCredit = "LBR_IsBuyerPresCredit";
+
+	/** Set Crédito Presumido do Adquirente.
+	  * Indica que a classificação tributária dá crédito presumido ao adquirente.
+	  */
+	public void setLBR_IsBuyerPresCredit (boolean LBR_IsBuyerPresCredit);
+
+	/** Get Crédito Presumido do Adquirente.
+	  * Indica que a classificação tributária dá crédito presumido ao adquirente.
+	  */
+	public boolean isLBR_IsBuyerPresCredit();
+
+    /** Column name LBR_IsSupplierPresCredit */
+    public static final String COLUMNNAME_LBR_IsSupplierPresCredit = "LBR_IsSupplierPresCredit";
+
+	/** Set Crédito Presumido do Fornecedor.
+	  * Indica que a classificação tributária dá crédito presumido ao fornecedor.
+	  */
+	public void setLBR_IsSupplierPresCredit (boolean LBR_IsSupplierPresCredit);
+
+	/** Get Crédito Presumido do Fornecedor.
+	  * Indica que a classificação tributária dá crédito presumido ao fornecedor.
+	  */
+	public boolean isLBR_IsSupplierPresCredit();
+
+    /** Column name LBR_IsZeroRate */
+    public static final String COLUMNNAME_LBR_IsZeroRate = "LBR_IsZeroRate";
+
+	/** Set Alíquota Zero.
+	  * Indica que a alíquota do IBS/CBS aplicada nesta classificação é zero (suspensão, exclusão de base, documento específico e outros).
+	  */
+	public void setLBR_IsZeroRate (boolean LBR_IsZeroRate);
+
+	/** Get Alíquota Zero.
+	  * Indica que a alíquota do IBS/CBS aplicada nesta classificação é zero (suspensão, exclusão de base, documento específico e outros).
+	  */
+	public boolean isLBR_IsZeroRate();
+
     /** Column name LBR_PRedCBS */
     public static final String COLUMNNAME_LBR_PRedCBS = "LBR_PRedCBS";
 
@@ -241,6 +377,45 @@ public interface I_LBR_ClassTrib_IBSCBS
 
 	/** Get Red. IBS (%)	  */
 	public BigDecimal getLBR_PRedIBS();
+
+    /** Column name LBR_PriorOpCredit */
+    public static final String COLUMNNAME_LBR_PriorOpCredit = "LBR_PriorOpCredit";
+
+	/** Set Crédito da Operação Antecedente.
+	  * Tratamento do crédito da operação antecedente: manutenção ou anulação.
+	  */
+	public void setLBR_PriorOpCredit (String LBR_PriorOpCredit);
+
+	/** Get Crédito da Operação Antecedente.
+	  * Tratamento do crédito da operação antecedente: manutenção ou anulação.
+	  */
+	public String getLBR_PriorOpCredit();
+
+    /** Column name LBR_TaxBase */
+    public static final String COLUMNNAME_LBR_TaxBase = "LBR_TaxBase";
+
+	/** Set Tax Base.
+	  * Indicates the Tax Base
+	  */
+	public void setLBR_TaxBase (BigDecimal LBR_TaxBase);
+
+	/** Get Tax Base.
+	  * Indicates the Tax Base
+	  */
+	public BigDecimal getLBR_TaxBase();
+
+    /** Column name LBR_TaxDeferralRate */
+    public static final String COLUMNNAME_LBR_TaxDeferralRate = "LBR_TaxDeferralRate";
+
+	/** Set Tax Deferral Rate (%).
+	  * Identifies the Tax Deferral Rate (%)
+	  */
+	public void setLBR_TaxDeferralRate (BigDecimal LBR_TaxDeferralRate);
+
+	/** Get Tax Deferral Rate (%).
+	  * Identifies the Tax Deferral Rate (%)
+	  */
+	public BigDecimal getLBR_TaxDeferralRate();
 
     /** Column name Name */
     public static final String COLUMNNAME_Name = "Name";
