@@ -116,7 +116,6 @@ public class MLBRDocLineDetailsNfe extends MLBRDocLineDetailsTax implements IDoc
 				setProductName(product.getName());
 				setLBR_NCM_ID(pW.getLBR_NCM_ID());
 				setLBR_UPCTax(product.getUPC());
-				setLBR_UOMTax_ID(product.get_ValueAsInt("C_UOM_ID"));
 				
 				if (product.getProductType().equals(MProduct.PRODUCTTYPE_Service))
 					setLBR_TaxationType(MLBRDocLineDetailsNfe.LBR_TAXATIONTYPE_ISSQN);
@@ -130,7 +129,10 @@ public class MLBRDocLineDetailsNfe extends MLBRDocLineDetailsTax implements IDoc
 				setLBR_TaxationType(null);
 			}
 			
+			// Unidade tributável na mesma unidade da quantidade e do preço copiados da
+			// linha, como no pedido e na fatura
 			setLBR_QtyTax((BigDecimal)po.get_Value("Qty"));
+			setLBR_UOMTax_ID(po.get_ValueAsInt("C_UOM_ID"));
 			setLBR_PriceTax((BigDecimal)po.get_Value("PriceActual"));
 				
 			// Calculate gross amount
