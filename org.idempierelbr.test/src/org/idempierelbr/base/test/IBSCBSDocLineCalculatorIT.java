@@ -194,6 +194,20 @@ class IBSCBSDocLineCalculatorIT extends AbstractLBRTestCase {
 		assertThat(calc.validate(0, 0)).anySatisfy(m -> assertThat(m).contains("Informe a CST e a cClassTrib"));
 	}
 
+	// ------------------------------------------------------------ antes de 2026
+
+	@Test
+	void documentBefore2026HasNoIBSCBS() {
+		// Ex.: devolução (RMA) de uma remessa de 2025, calculada na data da remessa original
+		MLBRDocLineDetails details = details("200", null, null, "1");
+		IBSCBSDocLineCalculator calc = new IBSCBSDocLineCalculator(details, null, TimeUtil.getDay(2025, 6, 15));
+
+		assertThat(calc.calculate(taxLine("000", "000001"), cbs, new BigDecimal("200")))
+				.as("sem IBS/CBS antes de 2026, e sem erro de cClassTrib fora de vigência")
+				.isNull();
+		assertThat(calc.validate(cst("000"), classTrib("200034"))).as("sem validações antes de 2026").isEmpty();
+	}
+
 	// ------------------------------------------------------------ apoio
 
 	private IBSCBSDocLineCalculator calc(MLBRDocLineDetails details) {

@@ -58,6 +58,9 @@ public class IBSCBSDocLineCalculator {
 	/** Indicador de NFC-e presencial (LBR_NFeIndPres) */
 	private static final String INDPRES_PRESENCIAL = "1";
 
+	/** Início do IBS/CBS */
+	private static final Timestamp IBSCBS_START = TimeUtil.getDay(2026, 1, 1);
+
 	private final MLBRDocLineDetails details;
 	private final MProduct product;
 	private final Timestamp dateDoc;
@@ -184,10 +187,14 @@ public class IBSCBSDocLineCalculator {
 	 * @param LBR_TaxGroup_ID grupo do tributo (CBS, IBSUF ou IBSMun)
 	 * @param base base unificada, de {@link #getBase()}
 	 * @return resultado; null quando a CST não tem o grupo de IBS/CBS (ex.: imunidade)
+	 * 	ou o documento é anterior a 2026
 	 * @throws AdempiereException quando falta dado para o cálculo (alíquota, redução,
 	 * 	vigência) ou a classificação não é suportada
 	 */
 	public IBSCBSCalculator.Resultado calculate(MLBRTaxLine tl, int LBR_TaxGroup_ID, BigDecimal base) {
+		if (isBeforeIBSCBS())
+			return null;
+
 		X_LBR_CST_IBSCBS cst = getCST(tl);
 		X_LBR_ClassTrib_IBSCBS classTrib = getClassTrib(tl);
 		String tributo = getTaxGroupName(LBR_TaxGroup_ID);
@@ -276,6 +283,9 @@ public class IBSCBSDocLineCalculator {
 	 */
 	public List<String> validate(int LBR_CST_IBSCBS_ID, int LBR_ClassTrib_IBSCBS_ID) {
 		List<String> msgs = new ArrayList<>();
+
+		if (isBeforeIBSCBS())
+			return msgs;
 
 		if (LBR_CST_IBSCBS_ID <= 0 || LBR_ClassTrib_IBSCBS_ID <= 0) {
 			msgs.add("Informe a CST e a cClassTrib de IBS/CBS na Definição de Impostos. Sem a cClassTrib, o "
@@ -447,6 +457,15 @@ public class IBSCBSDocLineCalculator {
 	private X_LBR_ClassTrib_IBSCBS getClassTrib(MLBRTaxLine tl) {
 		int id = tl.get_ValueAsInt(I_LBR_DocLine_IBSCBS.COLUMNNAME_LBR_ClassTrib_IBSCBS_ID);
 		return id > 0 ? new X_LBR_ClassTrib_IBSCBS(ctx, id, trxName) : null;
+	}
+
+	/**
+	 * O IBS/CBS começa em 2026 (EC 132/2023, ADCT, art. 125). Documento com data
+	 * anterior não tem IBS/CBS: é o caso da devolução de uma remessa de 2025, que a
+	 * autorização de devolução calcula na data da remessa original.
+	 */
+	private boolean isBeforeIBSCBS() {
+		return dateDoc == null || TimeUtil.getDay(dateDoc).before(IBSCBS_START);
 	}
 
 	private static boolean isValid(X_LBR_ClassTrib_IBSCBS classTrib, Timestamp date) {
