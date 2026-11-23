@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_CST_IBSCBS
  *  @author iDempiere (generated) 
- *  @version Release 12
+ *  @version Release 13
  */
 @SuppressWarnings("all")
 public interface I_LBR_CST_IBSCBS 
@@ -37,9 +37,9 @@ public interface I_LBR_CST_IBSCBS
 
     KeyNamePair Model = new KeyNamePair(Table_ID, Table_Name);
 
-    /** AccessLevel = 3 - Client - Org 
+    /** AccessLevel = 6 - System - Client 
      */
-    BigDecimal accessLevel = BigDecimal.valueOf(3);
+    BigDecimal accessLevel = BigDecimal.valueOf(6);
 
     /** Load Meta Data */
 
@@ -204,6 +204,32 @@ public interface I_LBR_CST_IBSCBS
 
 	/** Get IBS/CBS NFe Indicator	  */
 	public String getLBR_IBSCBSIndNFe();
+
+    /** Column name LBR_IndgAjusteCompet */
+    public static final String COLUMNNAME_LBR_IndgAjusteCompet = "LBR_IndgAjusteCompet";
+
+	/** Set Indicador de Grupo Ajuste de Competência.
+	  * Indica se o grupo gAjusteCompet é exigido ou vedado nesta CST.
+	  */
+	public void setLBR_IndgAjusteCompet (String LBR_IndgAjusteCompet);
+
+	/** Get Indicador de Grupo Ajuste de Competência.
+	  * Indica se o grupo gAjusteCompet é exigido ou vedado nesta CST.
+	  */
+	public String getLBR_IndgAjusteCompet();
+
+    /** Column name LBR_IndgCredPresIBSZFM */
+    public static final String COLUMNNAME_LBR_IndgCredPresIBSZFM = "LBR_IndgCredPresIBSZFM";
+
+	/** Set Indicador de Grupo Crédito Presumido IBS ZFM.
+	  * Indica se o grupo gCredPresIBSZFM é exigido ou vedado nesta CST.
+	  */
+	public void setLBR_IndgCredPresIBSZFM (String LBR_IndgCredPresIBSZFM);
+
+	/** Get Indicador de Grupo Crédito Presumido IBS ZFM.
+	  * Indica se o grupo gCredPresIBSZFM é exigido ou vedado nesta CST.
+	  */
+	public String getLBR_IndgCredPresIBSZFM();
 
     /** Column name LBR_IndgIBSCBS */
     public static final String COLUMNNAME_LBR_IndgIBSCBS = "LBR_IndgIBSCBS";
