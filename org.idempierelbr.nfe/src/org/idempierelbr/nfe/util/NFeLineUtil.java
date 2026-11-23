@@ -11,6 +11,7 @@ import org.compiere.model.MTax;
 import org.compiere.model.MTaxProvider;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
+import org.idempierelbr.base.ibscbs.ArredondamentoUtils;
 import org.idempierelbr.base.model.I_LBR_DI;
 import org.idempierelbr.base.model.MLBRDocLineCOFINS;
 import org.idempierelbr.base.model.MLBRDocLineDetailsNfe;
@@ -116,12 +117,12 @@ public class NFeLineUtil {
 			// IBS UF
 			if (ibsCbsLines[0].getLBR_IBS_UF_TaxRate() != null) {
 				IBSUFGrupoBean gIBSUF = new IBSUFGrupoBean();
-				gIBSUF.setpIBSUF(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxRate()));
+				gIBSUF.setpIBSUF(aliquota(ibsCbsLines[0].getLBR_IBS_UF_TaxRate()));
 				
 				// Diferimento
 				if (ibsCbsLines[0].getLBR_IBS_UF_TaxDeferralRate() != null) {
 					DifGrupoBean gDif = new DifGrupoBean();					
-					gDif.setpDif(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxDeferralRate()));
+					gDif.setpDif(aliquota(ibsCbsLines[0].getLBR_IBS_UF_TaxDeferralRate()));
 					
 					if (ibsCbsLines[0].getLBR_IBS_UF_TaxDeferralAmt() != null)
 						gDif.setvDif(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxDeferralAmt()));
@@ -143,8 +144,8 @@ public class NFeLineUtil {
 						throw new AdempiereException(prefixException + "'@LBR_IBS_UF_TaxRedEfetRate@'");
 
 					RedGrupoBean gRed = new RedGrupoBean();					
-					gRed.setpRedAliq(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxRedRate()));
-					gRed.setpAliqEfet(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_UF_TaxRedEfetRate()));
+					gRed.setpRedAliq(aliquota(ibsCbsLines[0].getLBR_IBS_UF_TaxRedRate()));
+					gRed.setpAliqEfet(aliquota(ibsCbsLines[0].getLBR_IBS_UF_TaxRedEfetRate()));
 					
 					gIBSUF.setgRed(gRed);
 				}
@@ -162,12 +163,12 @@ public class NFeLineUtil {
 			// IBS Mun.
 			if (ibsCbsLines[0].getLBR_IBS_Mun_TaxRate() != null) {
 				IBSMunGrupoBean gIBSMun = new IBSMunGrupoBean();
-				gIBSMun.setpIBSMun(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxRate()));
+				gIBSMun.setpIBSMun(aliquota(ibsCbsLines[0].getLBR_IBS_Mun_TaxRate()));
 				
 				// Diferimento
 				if (ibsCbsLines[0].getLBR_IBS_Mun_TaxDeferralRate() != null) {
 					DifGrupoBean gDif = new DifGrupoBean();					
-					gDif.setpDif(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxDeferralRate()));
+					gDif.setpDif(aliquota(ibsCbsLines[0].getLBR_IBS_Mun_TaxDeferralRate()));
 					
 					if (ibsCbsLines[0].getLBR_IBS_Mun_TaxDeferralAmt() != null)
 						gDif.setvDif(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxDeferralAmt()));
@@ -189,8 +190,8 @@ public class NFeLineUtil {
 						throw new AdempiereException(prefixException + "'@LBR_IBS_Mun_TaxRedEfetRate@'");
 
 					RedGrupoBean gRed = new RedGrupoBean();					
-					gRed.setpRedAliq(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxRedRate()));
-					gRed.setpAliqEfet(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_IBS_Mun_TaxRedEfetRate()));
+					gRed.setpRedAliq(aliquota(ibsCbsLines[0].getLBR_IBS_Mun_TaxRedRate()));
+					gRed.setpAliqEfet(aliquota(ibsCbsLines[0].getLBR_IBS_Mun_TaxRedEfetRate()));
 					
 					gIBSMun.setgRed(gRed);
 				}
@@ -212,12 +213,12 @@ public class NFeLineUtil {
 			// CBS
 			if (ibsCbsLines[0].getLBR_CBS_TaxRate() != null) {
 				CBSGrupoBean gCBS = new CBSGrupoBean();
-				gCBS.setpCBS(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxRate()));
+				gCBS.setpCBS(aliquota(ibsCbsLines[0].getLBR_CBS_TaxRate()));
 				
 				// Diferimento
 				if (ibsCbsLines[0].getLBR_CBS_TaxDeferralRate() != null) {
 					DifGrupoBean gDif = new DifGrupoBean();					
-					gDif.setpDif(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxDeferralRate()));
+					gDif.setpDif(aliquota(ibsCbsLines[0].getLBR_CBS_TaxDeferralRate()));
 					
 					if (ibsCbsLines[0].getLBR_CBS_TaxDeferralAmt() != null)
 						gDif.setvDif(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxDeferralAmt()));
@@ -239,8 +240,8 @@ public class NFeLineUtil {
 						throw new AdempiereException(prefixException + "'@LBR_CBS_TaxRedEfetRate@'");
 
 					RedGrupoBean gRed = new RedGrupoBean();					
-					gRed.setpRedAliq(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxRedRate()));
-					gRed.setpAliqEfet(TextUtil.bigdecimalToString(ibsCbsLines[0].getLBR_CBS_TaxRedEfetRate()));
+					gRed.setpRedAliq(aliquota(ibsCbsLines[0].getLBR_CBS_TaxRedRate()));
+					gRed.setpAliqEfet(aliquota(ibsCbsLines[0].getLBR_CBS_TaxRedEfetRate()));
 					
 					gCBS.setgRed(gRed);
 				}
@@ -256,6 +257,16 @@ public class NFeLineUtil {
 		}
 		
 		return null;
+	}
+
+	/**
+	 * 	Alíquota ou percentual de IBS/CBS no XML (TDec_0302_04): de 2 a 4 casas, como a
+	 * 	Calculadora RTC publica. Com 2 casas fixas, uma alíquota como 8,8123 % perderia precisão.
+	 */
+	private static String aliquota(BigDecimal value) {
+		if (value == null)
+			return TextUtil.ZERO_STRING;
+		return ArredondamentoUtils.formatarAliquota(value);
 	}
 	
 	/**
