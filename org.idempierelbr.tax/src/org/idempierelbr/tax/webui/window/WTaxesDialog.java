@@ -569,14 +569,11 @@ public final class WTaxesDialog extends Window
 		if (taxName == null || taxName.trim().isEmpty())
 			return fields;
 		
-		// Grupo IBS/CBS
-		if (taxName.contains("IBS") || taxName.contains("CBS")) {
+		// Grupo IBS/CBS: só CST e cClassTrib. Alíquota, redução e diferimento vêm das tabelas
+		// oficiais (IBSCBSDocLineCalculator); o que fosse digitado aqui seria ignorado no cálculo.
+		if (isIBSCBS(taxName)) {
 			fields.add("LBR_CST_IBSCBS_ID");
 			fields.add("LBR_ClassTrib_IBSCBS_ID");
-			fields.add("LBR_TaxRate");
-			fields.add("LBR_TaxDeferralRate");
-			fields.add("LBR_TaxRedRate");
-			fields.add("LBR_TaxRedEfetRate");			
 		}
 		// Grupo IS
 		else if (taxName.equals("IS")) {
@@ -595,6 +592,13 @@ public final class WTaxesDialog extends Window
 		}
 		
 		return fields;
+	}
+	
+	/**
+	 * Imposto do grupo IBS/CBS (IBSUF, IBSMun ou CBS)?
+	 */
+	private static boolean isIBSCBS(String taxName) {
+		return taxName != null && (taxName.contains("IBS") || taxName.contains("CBS"));
 	}
 	
 	/**
@@ -675,6 +679,22 @@ public final class WTaxesDialog extends Window
 			for (int i = 0; i < cellsToAdd; i++) {
 				currentRow.appendChild(new Cell());
 			}
+		}
+		
+		// IBS/CBS: explica de onde vêm alíquota, redução e diferimento
+		if (isIBSCBS(taxName)) {
+			Label info = new Label("Alíquota, redução e diferimento do IBS/CBS vêm das tabelas oficiais, pela "
+					+ "cClassTrib e pelo local da operação. Para uma alíquota própria de UF, município ou "
+					+ "cClassTrib, use a janela Alíquota de IBS/CBS.");
+			info.setStyle("color: #666;");
+			Cell cell = new Cell();
+			cell.setColspan(6);
+			cell.appendChild(info);
+			Row infoRow = new Row();
+			infoRow.setStyle("background-color: transparent; border: none !important;");
+			infoRow.appendChild(cell);
+			dynamicFieldsRows.appendChild(infoRow);
+			dynamicRows.add(infoRow);
 		}
 	}
 	

@@ -259,6 +259,8 @@ public class MLBRTax extends X_LBR_Tax
 				taxAmt = getTaxAmt (taxBase, taxLine.getLBR_TaxRate(), false);
 			}
 			
+			//	Cálculo simplificado do IBS/CBS/IS. Em pedido, fatura, autorização de devolução e Nota
+			//	Fiscal, o IBS/CBS é recalculado pelo IBSCBSDocLineCalculator, com a base unificada.
 			if (taxName != null) {
 				if (taxName.getName().equalsIgnoreCase("IBSUF") || 
 						taxName.getName().equalsIgnoreCase("IBSMun") ||
