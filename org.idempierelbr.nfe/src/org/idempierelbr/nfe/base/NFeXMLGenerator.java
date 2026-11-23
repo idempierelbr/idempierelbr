@@ -989,8 +989,10 @@ public class NFeXMLGenerator {
 			if (nfLine.getC_UOM_ID() < 1)
 				return "@Line@: " + nfLine.getLine() + prefixLineMandatory + "'@C_UOM_ID@'";
 			
+			// Símbolo da unidade traduzido para pt_BR, como no SPED (registro 0190): o
+			// UOMSymbol base é o do iDempiere, em inglês ("Ea" para Each)
 			MUOM uomC = new MUOM(ctx, nfLine.getC_UOM_ID(), trxName);
-			produtos.setuCom(RemoverAcentos.remover(uomC.getUOMSymbol()));
+			produtos.setuCom(RemoverAcentos.remover(AdempiereLBR.getUOM_trl(uomC)));
 			
 			if (nfLine.getQty() == null)
 				return "@Line@: " + nfLine.getLine() + prefixLineMandatory + "'@Qty@'";
@@ -1025,7 +1027,7 @@ public class NFeXMLGenerator {
 				return "@Line@: " + nfLine.getLine() + prefixLineMandatory + "'@LBR_UOMTax_ID@'";
 			
 			MUOM uomT = new MUOM(ctx, details.getLBR_UOMTax_ID(), trxName);			
-			produtos.setuTrib(RemoverAcentos.remover(uomT.getUOMSymbol()));
+			produtos.setuTrib(RemoverAcentos.remover(AdempiereLBR.getUOM_trl(uomT)));
 			
 			if (details.getLBR_QtyTax() == null)
 				return "@Line@: " + nfLine.getLine() + prefixLineMandatory + "'@LBR_QtyTax@'";

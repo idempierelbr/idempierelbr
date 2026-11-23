@@ -466,6 +466,7 @@ public class EventHandler extends AbstractEventHandler {
 					po.is_ValueChanged("M_Product_ID") ||
 					po.is_ValueChanged ("C_Tax_ID") ||
 					po.is_ValueChanged("Qty") ||
+					po.is_ValueChanged("C_UOM_ID") ||
 					po.is_ValueChanged ("PriceActual"))
 				return true;
 		}
