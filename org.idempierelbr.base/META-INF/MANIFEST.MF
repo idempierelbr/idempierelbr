@@ -12,7 +12,8 @@ Bundle-ClassPath: .
 Import-Package: org.osgi.service.event;version="1.3.0",
  org.joda.time,
  org.joda.time.format
-Export-Package: org.idempierelbr.base.model,
+Export-Package: org.idempierelbr.base.ibscbs,
+ org.idempierelbr.base.model,
  org.idempierelbr.base.service,
  org.idempierelbr.base.util,
  org.idempierelbr.base.wrapper

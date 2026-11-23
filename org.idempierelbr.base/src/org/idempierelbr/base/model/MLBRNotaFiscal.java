@@ -455,6 +455,17 @@ public class MLBRNotaFiscal extends X_LBR_NotaFiscal implements DocAction, DocOp
 			return DocAction.STATUS_Invalid;
 		}
 		
+		// IBS/CBS: CST x cClassTrib, cClassTrib x modelo e NCM aplicável (aviso no pedido e na fatura, erro aqui)
+		if (isLBR_IsDocIssuedByOrg())
+		{
+			List<String> ibscbsErrors = IBSCBSDocLineCalculator.validate(this);
+			if (!ibscbsErrors.isEmpty())
+			{
+				m_processMsg = "IBS/CBS: " + String.join(" ", ibscbsErrors);
+				return DocAction.STATUS_Invalid;
+			}
+		}
+		
 		m_processMsg = ModelValidationEngine.get().fireDocValidate(this, ModelValidator.TIMING_AFTER_PREPARE);
 		if (m_processMsg != null)
 			return DocAction.STATUS_Invalid;

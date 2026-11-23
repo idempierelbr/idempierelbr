@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
@@ -23,6 +25,7 @@ import org.compiere.model.MTax;
 import org.compiere.model.PO;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
+import org.idempierelbr.base.ibscbs.IBSCBSCalculator;
 import org.idempierelbr.base.util.TextUtil;
 import org.idempierelbr.base.wrapper.I_W_C_BPartner;
 import org.idempierelbr.base.wrapper.I_W_C_Tax;
@@ -312,6 +315,10 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			int C_BPartnerLocationTo_ID, String LBR_TransactionType,
 			Timestamp dateDoc) {
 		
+		// IBS/CBS calculado pelo motor depois dos demais impostos, pois a base desconta ICMS, PIS, COFINS...
+		boolean ibscbsEngine = IBSCBSDocLineCalculator.isApplicable(this);
+		Map<MLBRTaxLine, Integer> ibscbsLines = new LinkedHashMap<MLBRTaxLine, Integer>();
+		
 		for (MLBRTaxLine tl : tax.getLines()) {
 			//if (tl.getLBR_TaxAmt() == null || tl.getLBR_TaxAmt().compareTo(Env.ZERO) == 0 || !tl.isLBR_PostTax())
 			if (!tl.isLBR_PostTax())
@@ -396,7 +403,10 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 						taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_MUN_NAME) ||
 						taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_CBS_NAME)) {					
 					
-					createIBSCBS(tl);
+					if (ibscbsEngine)
+						ibscbsLines.put(tl, taxChildW.getLBR_TaxGroup_ID());
+					else
+						createIBSCBS(tl);
 				} 
 				// IS
 				else if (taxChildW.getLBR_TaxGroup_ID() == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IS_NAME)) {					
@@ -404,8 +414,111 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 				} 
 			}
 		}
+
+		if (!ibscbsLines.isEmpty())
+			calculateIBSCBS(ibscbsLines, product, dateDoc);
 	}
 	
+	/**
+	 * 	Calcula o IBS/CBS da linha com o motor nativo (IBSCBSCalculator), grava o resultado
+	 * 	nas linhas de imposto do documento e cria o filho de IBS/CBS.
+	 *
+	 * 	@param ibscbsLines linhas de imposto de CBS, IBS da UF e IBS do município, com o grupo
+	 * 	@param product produto da linha
+	 * 	@param dateDoc data do fato gerador
+	 */
+	private void calculateIBSCBS(Map<MLBRTaxLine, Integer> ibscbsLines, MProduct product, Timestamp dateDoc) {
+		IBSCBSDocLineCalculator calc = new IBSCBSDocLineCalculator(this, product, dateDoc);
+		BigDecimal base = calc.getBase();
+		BigDecimal sign = BigDecimal.valueOf(calc.getSign());
+
+		for (Map.Entry<MLBRTaxLine, Integer> entry : ibscbsLines.entrySet()) {
+			MLBRTaxLine tl = entry.getKey();
+			IBSCBSCalculator.Resultado r = calc.calculate(tl, entry.getValue(), base);
+
+			// A linha de imposto guarda a CST e a cClassTrib; alíquota, reduções e valores vêm do motor
+			tl.setLBR_TaxRate(r != null ? r.getAliquota() : Env.ZERO);
+			tl.set_ValueOfColumn("LBR_TaxRedRate", r != null ? r.getPercentualReducao() : null);
+			tl.set_ValueOfColumn("LBR_TaxRedEfetRate", r != null ? r.getAliquotaEfetiva() : null);
+			tl.set_ValueOfColumn("LBR_TaxDeferralRate", r != null ? r.getPercentualDiferimento() : null);
+			tl.setLBR_TaxBaseAmt(r != null ? r.getBaseCalculo().multiply(sign) : Env.ZERO);
+			tl.setLBR_TaxAmt(r != null ? r.getValorDevido().multiply(sign) : Env.ZERO);
+			tl.saveEx();
+
+			createIBSCBS(tl, entry.getValue(), r, sign);
+		}
+
+		// Validações que não impedem o cálculo: aviso aqui, erro ao preparar ou completar a Nota Fiscal
+		MLBRTaxLine first = ibscbsLines.keySet().iterator().next();
+		List<String> warnings = calc.validate(first.get_ValueAsInt(I_LBR_DocLine_IBSCBS.COLUMNNAME_LBR_CST_IBSCBS_ID),
+				first.get_ValueAsInt(I_LBR_DocLine_IBSCBS.COLUMNNAME_LBR_ClassTrib_IBSCBS_ID));
+		if (!warnings.isEmpty())
+			log.saveWarning("Warning", "IBS/CBS: " + String.join(" ", warnings));
+	}
+
+	/**
+	 * 	Grava no filho de IBS/CBS o resultado do motor para um tributo.
+	 * 	Sem resultado (CST sem o grupo de IBS/CBS), só a CST e a cClassTrib vão para o XML.
+	 */
+	private void createIBSCBS(MLBRTaxLine tl, int LBR_TaxGroup_ID, IBSCBSCalculator.Resultado r, BigDecimal sign) {
+		MLBRDocLineIBSCBS[] ibscbsArray = MLBRDocLineIBSCBS.getOfDetails(this);
+		MLBRDocLineIBSCBS ibscbs = null;
+
+		if (ibscbsArray.length > 0)
+			ibscbs = ibscbsArray[0];
+		else {
+			ibscbs = new MLBRDocLineIBSCBS(getCtx(), 0, get_TrxName());
+			ibscbs.setLBR_DocLine_Details_ID(get_ID());
+		}
+
+		ibscbs.setAD_Org_ID(getAD_Org_ID());
+		ibscbs.setLBR_CST_IBSCBS_ID(tl.get_ValueAsInt(I_LBR_DocLine_IBSCBS.COLUMNNAME_LBR_CST_IBSCBS_ID));
+		ibscbs.setLBR_ClassTrib_IBSCBS_ID(tl.get_ValueAsInt(I_LBR_DocLine_IBSCBS.COLUMNNAME_LBR_ClassTrib_IBSCBS_ID));
+		ibscbs.setLBR_TaxBaseAmt(r != null ? r.getBaseCalculo().multiply(sign) : null);
+
+		BigDecimal rate = r != null ? r.getAliquota() : null;
+		BigDecimal deferralRate = r != null ? r.getPercentualDiferimento() : null;
+		BigDecimal deferralAmt = r != null && r.getValorDiferimento() != null ? r.getValorDiferimento().multiply(sign) : null;
+		BigDecimal amt = r != null ? r.getValorDevido().multiply(sign) : null;
+
+		// gRed só nas CSTs que o exigem; pRedAliq e pAliqEfet vão juntos
+		BigDecimal redRate = null;
+		BigDecimal redEfetRate = null;
+		X_LBR_CST_IBSCBS cst = new X_LBR_CST_IBSCBS(getCtx(), ibscbs.getLBR_CST_IBSCBS_ID(), get_TrxName());
+		if (r != null && X_LBR_CST_IBSCBS.LBR_INDGIBSCBSRED_1_Required.equals(cst.getLBR_IndgIBSCBSRed())) {
+			redRate = r.getPercentualReducao();
+			redEfetRate = r.getAliquotaEfetiva();
+		}
+
+		if (LBR_TaxGroup_ID == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_UF_NAME)) {
+			ibscbs.setLBR_IBS_UF_TaxRate(rate);
+			ibscbs.setLBR_IBS_UF_TaxDeferralRate(deferralRate);
+			ibscbs.setLBR_IBS_UF_TaxDeferralAmt(deferralAmt);
+			ibscbs.setLBR_IBS_UF_TaxDevAmt(null);
+			ibscbs.setLBR_IBS_UF_TaxRedRate(redRate);
+			ibscbs.setLBR_IBS_UF_TaxRedEfetRate(redEfetRate);
+			ibscbs.setLBR_IBS_UF_TaxAmt(amt);
+		} else if (LBR_TaxGroup_ID == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_MUN_NAME)) {
+			ibscbs.setLBR_IBS_Mun_TaxRate(rate);
+			ibscbs.setLBR_IBS_Mun_TaxDeferralRate(deferralRate);
+			ibscbs.setLBR_IBS_Mun_TaxDeferralAmt(deferralAmt);
+			ibscbs.setLBR_IBS_Mun_TaxDevAmt(null);
+			ibscbs.setLBR_IBS_Mun_TaxRedRate(redRate);
+			ibscbs.setLBR_IBS_Mun_TaxRedEfetRate(redEfetRate);
+			ibscbs.setLBR_IBS_Mun_TaxAmt(amt);
+		} else if (LBR_TaxGroup_ID == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_CBS_NAME)) {
+			ibscbs.setLBR_CBS_TaxRate(rate);
+			ibscbs.setLBR_CBS_TaxDeferralRate(deferralRate);
+			ibscbs.setLBR_CBS_TaxDeferralAmt(deferralAmt);
+			ibscbs.setLBR_CBS_TaxDevAmt(null);
+			ibscbs.setLBR_CBS_TaxRedRate(redRate);
+			ibscbs.setLBR_CBS_TaxRedEfetRate(redEfetRate);
+			ibscbs.setLBR_CBS_TaxAmt(amt);
+		}
+
+		ibscbs.saveEx();
+	}
+
 	private void createIBSCBS(MLBRTaxLine tl) {
 		MLBRDocLineIBSCBS[] ibscbsArray = MLBRDocLineIBSCBS.getOfDetails(this);
 		MLBRDocLineIBSCBS ibscbs = null;
