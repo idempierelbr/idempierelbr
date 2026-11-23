@@ -3,7 +3,7 @@
  <row id="100" trl="Y">
   <value column="Name" original="Each">Unidade</value>
   <value column="Description" original=""/>
-  <value column="UOMSymbol" original="Ea ">Ea </value>
+  <value column="UOMSymbol" original="Ea ">UN</value>
  </row>
  <row id="101" trl="Y">
   <value column="Name" original="Hour">Hora</value>
