@@ -66,10 +66,20 @@ public final class IBSCBSCalculator {
 		private final BigDecimal percentualDiferimento;
 		private final BigDecimal valorDiferimento;
 		private final BigDecimal valorDevido;
+		private final BigDecimal aliquotaEfetivaRegular;
+		private final BigDecimal valorRegular;
 
 		Resultado(BigDecimal baseCalculo, BigDecimal aliquota, BigDecimal percentualReducao,
 				BigDecimal aliquotaEfetiva, BigDecimal valorCalculado, BigDecimal percentualDiferimento,
 				BigDecimal valorDiferimento, BigDecimal valorDevido) {
+			this(baseCalculo, aliquota, percentualReducao, aliquotaEfetiva, valorCalculado, percentualDiferimento,
+					valorDiferimento, valorDevido, null, null);
+		}
+
+		Resultado(BigDecimal baseCalculo, BigDecimal aliquota, BigDecimal percentualReducao,
+				BigDecimal aliquotaEfetiva, BigDecimal valorCalculado, BigDecimal percentualDiferimento,
+				BigDecimal valorDiferimento, BigDecimal valorDevido, BigDecimal aliquotaEfetivaRegular,
+				BigDecimal valorRegular) {
 			this.baseCalculo = baseCalculo;
 			this.aliquota = aliquota;
 			this.percentualReducao = percentualReducao;
@@ -78,6 +88,8 @@ public final class IBSCBSCalculator {
 			this.percentualDiferimento = percentualDiferimento;
 			this.valorDiferimento = valorDiferimento;
 			this.valorDevido = valorDevido;
+			this.aliquotaEfetivaRegular = aliquotaEfetivaRegular;
+			this.valorRegular = valorRegular;
 		}
 
 		/** vBC: base de cálculo publicada (2 casas) */
@@ -118,6 +130,27 @@ public final class IBSCBSCalculator {
 		/** vCBS, vIBSUF ou vIBSMun: valor devido, já sem o diferimento (2 casas) */
 		public BigDecimal getValorDevido() {
 			return valorDevido;
+		}
+
+		/**
+		 * pAliqEfetRegCBS, pAliqEfetRegIBSUF ou pAliqEfetRegIBSMun do grupo gTribRegular (4 casas);
+		 * nulo quando não há tributação regular
+		 */
+		public BigDecimal getAliquotaEfetivaRegular() {
+			return aliquotaEfetivaRegular;
+		}
+
+		/**
+		 * vTribRegCBS, vTribRegIBSUF ou vTribRegIBSMun do grupo gTribRegular (2 casas);
+		 * nulo quando não há tributação regular
+		 */
+		public BigDecimal getValorRegular() {
+			return valorRegular;
+		}
+
+		/** O grupo gTribRegular tem valores (a classificação regular foi informada) */
+		public boolean hasTributacaoRegular() {
+			return aliquotaEfetivaRegular != null;
 		}
 	}
 
@@ -162,6 +195,41 @@ public final class IBSCBSCalculator {
 
 		return new Resultado(base, aliquota, e.percentualReducao, aliquotaEfetiva, calculado,
 				percentualDiferimento, valorDiferimento, devido);
+	}
+
+	/**
+	 * 	Calcula um tributo cuja cClassTrib exige a tributação regular (grupo gTribRegular,
+	 * 	NT 2025.002-RTC UB68), como a suspensão (CST 550). Igual à calculadora
+	 * 	({@code CalculoCbsIbsService.obterGrupoDesoneracao}):
+	 * 	<ul>
+	 * 	<li>o grupo principal sai com alíquota e valor zero, sem redução nem diferimento
+	 * 		(UB56-10/UB56-20, exceção 1: pCBS igual a zero);</li>
+	 * 	<li>a base é a da classificação regular;</li>
+	 * 	<li>a alíquota efetiva regular é a alíquota da classificação regular com a redução dela,
+	 * 		arredondada uma vez a 4 casas, e o valor regular é arred2(vBC × alíquota efetiva ÷ 100)
+	 * 		(UB72-10, UB72b-10, UB72d-10).</li>
+	 * 	</ul>
+	 *
+	 * 	@param baseCalculo base unificada do item, usada quando não há classificação regular
+	 * 	@param regular alíquota, redução e redução da base da cClassTrib regular (o diferimento é
+	 * 		ignorado); nula quando a classificação regular não foi informada: só o grupo principal,
+	 * 		zerado, sem valores regulares
+	 * 	@return resultado do grupo principal, com os valores regulares
+	 */
+	public static Resultado calcularComTributacaoRegular(BigDecimal baseCalculo, Entrada regular) {
+		BigDecimal zero = arredondarValorFiscal(BigDecimal.ZERO);
+
+		if (regular == null) {
+			BigDecimal base = arredondarValorFiscal(zeroSeNulo(baseCalculo));
+			if (base.signum() < 0)
+				base = zero;
+			return new Resultado(base, BigDecimal.ZERO, null, null, zero, null, null, zero);
+		}
+
+		Resultado r = calcular(new Entrada(regular.baseCalculo, regular.aliquota, regular.percentualReducao,
+				regular.percentualReducaoBase, null));
+		return new Resultado(r.getBaseCalculo(), BigDecimal.ZERO, null, null, zero, null, null, zero,
+				r.getAliquotaEfetiva(), r.getValorCalculado());
 	}
 
 	private static BigDecimal zeroSeNulo(BigDecimal valor) {

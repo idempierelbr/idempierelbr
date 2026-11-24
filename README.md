@@ -211,6 +211,10 @@ schemas do pacote de liberação **PL_010h v1.03** do Portal da NF-e:
   Receita. Na Definição de Impostos informam-se só a CST e a cClassTrib; alíquota
   própria de UF, município ou cClassTrib vai na janela **Alíquota de IBS/CBS**. O
   NCM é conferido contra a lista de NCM aplicáveis à cClassTrib.
+- **Tributação regular** (grupo `gTribRegular`) — na suspensão (CST 550) e nas
+  operações originadas fora da ZFM/ALC (200022 e 200024), o IBS/CBS sai zerado e
+  o XML informa como a operação seria tributada sem a condição, a partir da CST e
+  da cClassTrib regulares informadas na Definição de Impostos.
 - **NF-e de Débito e de Crédito** (`finNFe` 5 e 6) — os 13 tipos da NT, com as
   regras de referência, direção e tributos admitidos de cada um; o processo
   **Generate Debit/Credit NF-e** monta a nota como réplica proporcional do

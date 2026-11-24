@@ -211,6 +211,61 @@ class IBSCBSDocLineCalculatorIT extends AbstractLBRTestCase {
 				.anySatisfy(m -> assertThat(m).contains("gEstornoCred"));
 	}
 
+	// ------------------------------------------------------------ tributação regular (gTribRegular)
+
+	@Test
+	void suspensionZeroesTheMainGroupAndCalculatesTheRegularTaxation() {
+		// Calculadora Teste_000001_3 e Teste_200032_3: 550001 com a regular 000001 ou 200032, base 200
+		MLBRDocLineDetails details = details("200", null, null, "1");
+		IBSCBSDocLineCalculator calc = calc(details);
+
+		IBSCBSCalculator.Resultado r = calc.calculate(regular(taxLine("550", "550001"), "000", "000001"), cbs,
+				new BigDecimal("200"));
+		assertThat(r.getAliquota()).as("pCBS zero (UB56-10, exceção 1)").isEqualByComparingTo("0");
+		assertThat(r.getValorDevido()).isEqualByComparingTo("0.00");
+		assertThat(r.getPercentualReducao()).as("sem gRed no grupo principal").isNull();
+		assertThat(r.getAliquotaEfetivaRegular()).isEqualByComparingTo("0.90");
+		assertThat(r.getValorRegular()).isEqualByComparingTo("1.80");
+
+		r = calc.calculate(regular(taxLine("550", "550001"), "200", "200032"), ibsUF, new BigDecimal("200"));
+		assertThat(r.getValorDevido()).isEqualByComparingTo("0.00");
+		assertThat(r.getAliquotaEfetivaRegular()).as("0,1 % com redução de 60 %").isEqualByComparingTo("0.04");
+		assertThat(r.getValorRegular()).isEqualByComparingTo("0.08");
+	}
+
+	@Test
+	void suspensionWithoutRegularClassificationIsZeroAndReported() {
+		MLBRDocLineDetails details = details("200", null, null, "1");
+		IBSCBSDocLineCalculator calc = calc(details);
+
+		IBSCBSCalculator.Resultado r = calc.calculate(taxLine("550", "550001"), cbs, new BigDecimal("200"));
+		assertThat(r.getValorDevido()).as("mesmo sem a regular, o grupo principal sai zerado").isEqualByComparingTo("0.00");
+		assertThat(r.hasTributacaoRegular()).isFalse();
+
+		assertThat(calc.validate(cst("550"), classTrib("550001")))
+				.as("UB68-10, rejeição 1065")
+				.anySatisfy(m -> assertThat(m).contains("gTribRegular"));
+		assertThat(calc.validate(cst("550"), classTrib("550001"), cst("000"), classTrib("000001")))
+				.noneSatisfy(m -> assertThat(m).contains("regular"));
+		assertThat(calc.validate(cst("550"), classTrib("550001"), cst("550"), classTrib("550002")))
+				.as("a regular não pode ser outra suspensão")
+				.anySatisfy(m -> assertThat(m).contains("também exige"));
+		assertThat(calc.validate(cst("550"), classTrib("550001"), cst("200"), classTrib("000001")))
+				.anySatisfy(m -> assertThat(m).contains("não pertence à CST regular"));
+	}
+
+	@Test
+	void regularTaxationIndicatorMatchesTheReceitaTable() {
+		// Base da Receita (V0073): 31 cClassTrib exigem o grupo; 550021–550029 vieram sem o indicador
+		for (String value : new String[] { "200022", "200024", "550001", "550020", "550021", "550029" })
+			assertThat(IBSCBSDocLineCalculator.requiresRegularTaxation(
+					new X_LBR_ClassTrib_IBSCBS(Env.getCtx(), classTrib(value), getTrxName())))
+					.as(value).isTrue();
+		assertThat(IBSCBSDocLineCalculator.requiresRegularTaxation(
+				new X_LBR_ClassTrib_IBSCBS(Env.getCtx(), classTrib("000001"), getTrxName())))
+				.isFalse();
+	}
+
 	// ------------------------------------------------------------ antes de 2026
 
 	@Test
@@ -284,6 +339,13 @@ class IBSCBSDocLineCalculatorIT extends AbstractLBRTestCase {
 			tl.set_ValueOfColumn(I_LBR_DocLine_IBSCBS.COLUMNNAME_LBR_CST_IBSCBS_ID, cst(cst));
 		if (classTrib != null)
 			tl.set_ValueOfColumn(I_LBR_DocLine_IBSCBS.COLUMNNAME_LBR_ClassTrib_IBSCBS_ID, classTrib(classTrib));
+		return tl;
+	}
+
+	/** Acrescenta à linha a CST e a cClassTrib regulares (gTribRegular) */
+	private MLBRTaxLine regular(MLBRTaxLine tl, String cst, String classTrib) {
+		tl.setLBR_CSTReg_IBSCBS_ID(cst(cst));
+		tl.setLBR_ClassTribReg_IBSCBS_ID(classTrib(classTrib));
 		return tl;
 	}
 

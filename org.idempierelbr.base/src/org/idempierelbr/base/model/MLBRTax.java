@@ -556,7 +556,11 @@ public class MLBRTax extends X_LBR_Tax
 			
 			if (lines[i].get_ValueAsInt("LBR_ClassTrib_IBSCBS_ID") > 0)
 				newLine.set_ValueOfColumn("LBR_ClassTrib_IBSCBS_ID", lines[i].get_ValueAsInt("LBR_ClassTrib_IBSCBS_ID"));
-			
+
+			// Tributação regular (gTribRegular)
+			newLine.setLBR_CSTReg_IBSCBS_ID(lines[i].getLBR_CSTReg_IBSCBS_ID());
+			newLine.setLBR_ClassTribReg_IBSCBS_ID(lines[i].getLBR_ClassTribReg_IBSCBS_ID());
+
 			newLine.set_ValueOfColumn("LBR_TaxDeferralRate", lines[i].get_Value("LBR_TaxDeferralRate"));
 			newLine.set_ValueOfColumn("LBR_TaxRedRate", lines[i].get_Value("LBR_TaxRedRate"));
 			newLine.set_ValueOfColumn("LBR_TaxRedEfetRate", lines[i].get_Value("LBR_TaxRedEfetRate"));
