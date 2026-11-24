@@ -149,6 +149,9 @@ public final class WTaxesDialog extends Window
 	private WEditor f_LBR_CST_IBSCBS_ID, f_LBR_ClassTrib_IBSCBS_ID, f_LBR_TaxDeferralRate,
 		f_LBR_TaxRedRate, f_LBR_TaxRedEfetRate;
 	
+	//  Editors for Query - Grupo IBS/CBS, tributação regular (gTribRegular)
+	private WEditor f_LBR_CSTReg_IBSCBS_ID, f_LBR_ClassTribReg_IBSCBS_ID;
+	
 	//  Editors for Query - Grupo IS
 	private WEditor f_LBR_CST_IS_ID, f_LBR_ClassTrib_IS_ID;
 	
@@ -272,6 +275,8 @@ public final class WTaxesDialog extends Window
 		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_TaxBaseType_ID", 0);
 		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_CST_IBSCBS_ID", 0);
 		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_ClassTrib_IBSCBS_ID", 0);
+		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_CSTReg_IBSCBS_ID", 0);
+		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_ClassTribReg_IBSCBS_ID", 0);
 		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_CST_IS_ID", 0);
 		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_ClassTrib_IS_ID", 0);
 		
@@ -445,6 +450,22 @@ public final class WTaxesDialog extends Window
 			allFields.put("LBR_ClassTrib_IBSCBS_ID", field);
 		}
 		
+		field = m_mTab.getField("LBR_CSTReg_IBSCBS_ID");
+		if (field != null) {
+			f_LBR_CSTReg_IBSCBS_ID = WebEditorFactory.getEditor(field, false);
+			f_LBR_CSTReg_IBSCBS_ID.addValueChangeListener(this);
+			allEditors.put("LBR_CSTReg_IBSCBS_ID", f_LBR_CSTReg_IBSCBS_ID);
+			allFields.put("LBR_CSTReg_IBSCBS_ID", field);
+		}
+		
+		field = m_mTab.getField("LBR_ClassTribReg_IBSCBS_ID");
+		if (field != null) {
+			f_LBR_ClassTribReg_IBSCBS_ID = WebEditorFactory.getEditor(field, false);
+			f_LBR_ClassTribReg_IBSCBS_ID.addValueChangeListener(this);
+			allEditors.put("LBR_ClassTribReg_IBSCBS_ID", f_LBR_ClassTribReg_IBSCBS_ID);
+			allFields.put("LBR_ClassTribReg_IBSCBS_ID", field);
+		}
+		
 		field = m_mTab.getField("LBR_TaxDeferralRate");
 		if (field != null) {
 			f_LBR_TaxDeferralRate = WebEditorFactory.getEditor(field, false);
@@ -574,6 +595,9 @@ public final class WTaxesDialog extends Window
 		if (isIBSCBS(taxName)) {
 			fields.add("LBR_CST_IBSCBS_ID");
 			fields.add("LBR_ClassTrib_IBSCBS_ID");
+			// Tributação regular (gTribRegular): exigida pela cClassTrib, como na suspensão (CST 550)
+			fields.add("LBR_CSTReg_IBSCBS_ID");
+			fields.add("LBR_ClassTribReg_IBSCBS_ID");
 		}
 		// Grupo IS
 		else if (taxName.equals("IS")) {
@@ -685,7 +709,9 @@ public final class WTaxesDialog extends Window
 		if (isIBSCBS(taxName)) {
 			Label info = new Label("Alíquota, redução e diferimento do IBS/CBS vêm das tabelas oficiais, pela "
 					+ "cClassTrib e pelo local da operação. Para uma alíquota própria de UF, município ou "
-					+ "cClassTrib, use a janela Alíquota de IBS/CBS.");
+					+ "cClassTrib, use a janela Alíquota de IBS/CBS. Quando a cClassTrib exige a tributação regular "
+					+ "(ex.: suspensão, CST 550), informe também a CST e a cClassTrib regulares, isto é, como a "
+					+ "operação seria tributada sem a condição.");
 			info.setStyle("color: #666;");
 			Cell cell = new Cell();
 			cell.setColspan(6);
@@ -968,6 +994,24 @@ public final class WTaxesDialog extends Window
 					sql.append("=").append(value);
 			}
 			
+			if (f_LBR_CSTReg_IBSCBS_ID != null && isFieldVisible("LBR_CSTReg_IBSCBS_ID")) {
+				value = f_LBR_CSTReg_IBSCBS_ID.getValue();
+				sql.append(", LBR_CSTReg_IBSCBS_ID");
+				if (isEmpty(value))
+					sql.append("=NULL");
+				else
+					sql.append("=").append(value);
+			}
+			
+			if (f_LBR_ClassTribReg_IBSCBS_ID != null && isFieldVisible("LBR_ClassTribReg_IBSCBS_ID")) {
+				value = f_LBR_ClassTribReg_IBSCBS_ID.getValue();
+				sql.append(", LBR_ClassTribReg_IBSCBS_ID");
+				if (isEmpty(value))
+					sql.append("=NULL");
+				else
+					sql.append("=").append(value);
+			}
+			
 			if (f_LBR_TaxDeferralRate != null && isFieldVisible("LBR_TaxDeferralRate")) {
 				value = f_LBR_TaxDeferralRate.getValue();
 				sql.append(", LBR_TaxDeferralRate");
@@ -1095,6 +1139,18 @@ public final class WTaxesDialog extends Window
 					line.set_ValueOfColumn("LBR_ClassTrib_IBSCBS_ID", (Integer)value);
 			}
 			
+			if (f_LBR_CSTReg_IBSCBS_ID != null && isFieldVisible("LBR_CSTReg_IBSCBS_ID")) {
+				value = f_LBR_CSTReg_IBSCBS_ID.getValue();
+				if (!isEmpty(value))
+					line.setLBR_CSTReg_IBSCBS_ID((Integer)value);
+			}
+			
+			if (f_LBR_ClassTribReg_IBSCBS_ID != null && isFieldVisible("LBR_ClassTribReg_IBSCBS_ID")) {
+				value = f_LBR_ClassTribReg_IBSCBS_ID.getValue();
+				if (!isEmpty(value))
+					line.setLBR_ClassTribReg_IBSCBS_ID((Integer)value);
+			}
+			
 			if (f_LBR_TaxDeferralRate != null && isFieldVisible("LBR_TaxDeferralRate")) {
 				value = f_LBR_TaxDeferralRate.getValue();
 				if (!isEmpty(value))
@@ -1176,6 +1232,8 @@ public final class WTaxesDialog extends Window
 		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_TaxBasetype_ID", 0);
 		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_CST_IBSCBS_ID", 0);
 		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_ClassTrib_IBSCBS_ID", 0);
+		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_CSTReg_IBSCBS_ID", 0);
+		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_ClassTribReg_IBSCBS_ID", 0);
 		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_CST_IS_ID", 0);
 		Env.setContext(Env.getCtx(), m_WindowNo, "LBR_ClassTrib_IS_ID", 0);
 		
@@ -1271,6 +1329,16 @@ public final class WTaxesDialog extends Window
 				f_LBR_ClassTrib_IBSCBS_ID.dynamicDisplay();
 			}
 			
+			if (f_LBR_CSTReg_IBSCBS_ID != null && isFieldVisible("LBR_CSTReg_IBSCBS_ID")) {
+				f_LBR_CSTReg_IBSCBS_ID.setValue(null);
+				f_LBR_CSTReg_IBSCBS_ID.dynamicDisplay();
+			}
+			
+			if (f_LBR_ClassTribReg_IBSCBS_ID != null && isFieldVisible("LBR_ClassTribReg_IBSCBS_ID")) {
+				f_LBR_ClassTribReg_IBSCBS_ID.setValue(null);
+				f_LBR_ClassTribReg_IBSCBS_ID.dynamicDisplay();
+			}
+			
 			if (f_LBR_CST_IS_ID != null && isFieldVisible("LBR_CST_IS_ID")) {
 				f_LBR_CST_IS_ID.setValue(null);
 				f_LBR_CST_IS_ID.dynamicDisplay();
@@ -1289,6 +1357,11 @@ public final class WTaxesDialog extends Window
 			if (f_LBR_ClassTrib_IBSCBS_ID != null && isFieldVisible("LBR_ClassTrib_IBSCBS_ID")) {
 				f_LBR_ClassTrib_IBSCBS_ID.setValue(null);
 				f_LBR_ClassTrib_IBSCBS_ID.dynamicDisplay();
+			}
+		} else if (evt.getPropertyName().equalsIgnoreCase("LBR_CSTReg_IBSCBS_ID")) {
+			if (f_LBR_ClassTribReg_IBSCBS_ID != null && isFieldVisible("LBR_ClassTribReg_IBSCBS_ID")) {
+				f_LBR_ClassTribReg_IBSCBS_ID.setValue(null);
+				f_LBR_ClassTribReg_IBSCBS_ID.dynamicDisplay();
 			}
 		} else if (evt.getPropertyName().equalsIgnoreCase("LBR_CST_IS_ID")) {
 			if (f_LBR_ClassTrib_IS_ID != null && isFieldVisible("LBR_ClassTrib_IS_ID")) {
