@@ -699,6 +699,21 @@ public class NFeImportService {
 				line.setLBR_CBS_TaxRedEfetRate(childAmt(gCBS, "gRed", "pAliqEfet"));
 				line.setLBR_CBS_TaxAmt(childAmt(gCBS, "vCBS"));
 			}
+
+			// Tributação regular (gTribRegular, UB68): como a operação seria tributada sem a condição
+			Element gTribRegular = child(gIBSCBS, "gTribRegular");
+
+			if (gTribRegular != null) {
+				line.setLBR_CSTReg_IBSCBS_ID(getCST_IBSCBS_ID(childValue(gTribRegular, "CSTReg"), item.nItem));
+				line.setLBR_ClassTribReg_IBSCBS_ID(getClassTrib_IBSCBS_ID(childValue(gTribRegular, "cClassTribReg"),
+						item.nItem));
+				line.setLBR_IBS_UF_TaxRegEfetRate(childAmt(gTribRegular, "pAliqEfetRegIBSUF"));
+				line.setLBR_IBS_UF_TaxRegAmt(childAmt(gTribRegular, "vTribRegIBSUF"));
+				line.setLBR_IBS_Mun_TaxRegEfetRate(childAmt(gTribRegular, "pAliqEfetRegIBSMun"));
+				line.setLBR_IBS_Mun_TaxRegAmt(childAmt(gTribRegular, "vTribRegIBSMun"));
+				line.setLBR_CBS_TaxRegEfetRate(childAmt(gTribRegular, "pAliqEfetRegCBS"));
+				line.setLBR_CBS_TaxRegAmt(childAmt(gTribRegular, "vTribRegCBS"));
+			}
 		}
 
 		line.saveEx();

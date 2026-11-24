@@ -12,6 +12,7 @@ import org.compiere.model.MTaxProvider;
 import org.compiere.util.CLogger;
 import org.compiere.util.Env;
 import org.idempierelbr.base.ibscbs.ArredondamentoUtils;
+import org.idempierelbr.base.model.IBSCBSDocLineCalculator;
 import org.idempierelbr.base.model.I_LBR_DI;
 import org.idempierelbr.base.model.MLBRDocLineCOFINS;
 import org.idempierelbr.base.model.MLBRDocLineDetailsNfe;
@@ -49,6 +50,7 @@ import org.idempierelbr.nfe.beans.PISBean;
 import org.idempierelbr.nfe.beans.PISGrupoBean;
 import org.idempierelbr.nfe.beans.PISSTBean;
 import org.idempierelbr.nfe.beans.RedGrupoBean;
+import org.idempierelbr.nfe.beans.TribRegularGrupoBean;
 import org.idempierelbr.nfe.model.NFTaxProvider;
 
 public class NFeLineUtil {
@@ -252,11 +254,43 @@ public class NFeLineUtil {
 
 				gIBSCBS.setgCBS(gCBS);
 			}
-			
-			return ibsCbs;			
+
+			// Tributação regular (gTribRegular, UB68): obrigatória quando a cClassTrib a exige, como a
+			// suspensão (CST 550); sem ela, rejeição 1065 (UB68-10)
+			if (IBSCBSDocLineCalculator.requiresRegularTaxation(ibsCbsLines[0].getLBR_ClassTrib_IBSCBS()))
+				gIBSCBS.setgTribRegular(getTribRegularBean(ibsCbsLines[0], prefixException));
+
+			return ibsCbs;
 		}
-		
+
 		return null;
+	}
+
+	/**
+	 * 	Grupo gTribRegular a partir da classificação e dos valores regulares da linha
+	 */
+	private static TribRegularGrupoBean getTribRegularBean(MLBRDocLineIBSCBS line, String prefixException) {
+		if (line.getLBR_CSTReg_IBSCBS_ID() <= 0)
+			throw new AdempiereException(prefixException + "'@LBR_CSTReg_IBSCBS_ID@'");
+		if (line.getLBR_ClassTribReg_IBSCBS_ID() <= 0)
+			throw new AdempiereException(prefixException + "'@LBR_ClassTribReg_IBSCBS_ID@'");
+
+		TribRegularGrupoBean g = new TribRegularGrupoBean();
+		g.setCSTReg(line.getLBR_CSTReg_IBSCBS().getValue());
+		g.setcClassTribReg(line.getLBR_ClassTribReg_IBSCBS().getValue());
+		g.setpAliqEfetRegIBSUF(aliquota(required(line.getLBR_IBS_UF_TaxRegEfetRate(), "LBR_IBS_UF_TaxRegEfetRate", prefixException)));
+		g.setvTribRegIBSUF(TextUtil.bigdecimalToString(required(line.getLBR_IBS_UF_TaxRegAmt(), "LBR_IBS_UF_TaxRegAmt", prefixException)));
+		g.setpAliqEfetRegIBSMun(aliquota(required(line.getLBR_IBS_Mun_TaxRegEfetRate(), "LBR_IBS_Mun_TaxRegEfetRate", prefixException)));
+		g.setvTribRegIBSMun(TextUtil.bigdecimalToString(required(line.getLBR_IBS_Mun_TaxRegAmt(), "LBR_IBS_Mun_TaxRegAmt", prefixException)));
+		g.setpAliqEfetRegCBS(aliquota(required(line.getLBR_CBS_TaxRegEfetRate(), "LBR_CBS_TaxRegEfetRate", prefixException)));
+		g.setvTribRegCBS(TextUtil.bigdecimalToString(required(line.getLBR_CBS_TaxRegAmt(), "LBR_CBS_TaxRegAmt", prefixException)));
+		return g;
+	}
+
+	private static BigDecimal required(BigDecimal value, String columnName, String prefixException) {
+		if (value == null)
+			throw new AdempiereException(prefixException + "'@" + columnName + "@'");
+		return value;
 	}
 
 	/**

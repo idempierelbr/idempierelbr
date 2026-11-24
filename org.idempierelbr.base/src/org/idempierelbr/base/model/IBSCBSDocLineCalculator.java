@@ -215,24 +215,55 @@ public class IBSCBSDocLineCalculator {
 		if (cst != null && X_LBR_CST_IBSCBS.LBR_INDGIBSCBS_0_NotAllowed.equals(cst.getLBR_IndgIBSCBS()))
 			return null;
 
-		BigDecimal rate = getRate(classTrib, LBR_TaxGroup_ID, tributo);
+		// Suspensão e afins (gTribRegular): o grupo principal sai zerado e a tributação regular é
+		// calculada com a cClassTrib regular. Sem ela, só o grupo principal; validate() avisa.
+		if (requiresRegularTaxation(classTrib)) {
+			X_LBR_ClassTrib_IBSCBS regular = getClassTribRegular(tl);
+			if (regular == null || requiresRegularTaxation(regular))
+				return IBSCBSCalculator.calcularComTributacaoRegular(base, null);
 
-		BigDecimal reduction = BigDecimal.ZERO;
-		if (classTrib != null) {
-			MLBRClassTribRed red = MLBRClassTribRed.get(ctx, classTrib.getLBR_ClassTrib_IBSCBS_ID(),
-					LBR_TaxGroup_ID, dateDoc, trxName);
-			if (red == null)
-				throw new AdempiereException("Não há redução de " + tributo + " vigente em " + format(dateDoc)
-						+ " para a cClassTrib " + classTrib.getValue() + ". Aplique as migrações do LBR, que "
-						+ "trazem as tabelas oficiais da Receita.");
-			reduction = red.getLBR_TaxRedRate();
+			if (!isValid(regular, dateDoc))
+				throw new AdempiereException("A cClassTrib regular " + regular.getValue() + " não está vigente em "
+						+ format(dateDoc) + ". Troque a cClassTrib regular da linha de " + tributo
+						+ " na Definição de Impostos.");
+
+			return IBSCBSCalculator.calcularComTributacaoRegular(base, new IBSCBSCalculator.Entrada(base,
+					getRate(regular, LBR_TaxGroup_ID, tributo), getReduction(regular, LBR_TaxGroup_ID, tributo),
+					regular.getLBR_TaxBase(), null));
 		}
 
+		BigDecimal rate = getRate(classTrib, LBR_TaxGroup_ID, tributo);
+		BigDecimal reduction = getReduction(classTrib, LBR_TaxGroup_ID, tributo);
 		BigDecimal baseReduction = classTrib != null ? classTrib.getLBR_TaxBase() : null;
 		BigDecimal deferral = classTrib != null ? classTrib.getLBR_TaxDeferralRate() : null;
 
 		return IBSCBSCalculator.calcular(new IBSCBSCalculator.Entrada(base, rate, reduction, baseReduction,
 				deferral));
+	}
+
+	/**
+	 * Redução da alíquota (%) do tributo na cClassTrib, pela vigência. Sem cClassTrib, zero.
+	 */
+	private BigDecimal getReduction(X_LBR_ClassTrib_IBSCBS classTrib, int LBR_TaxGroup_ID, String tributo) {
+		if (classTrib == null)
+			return BigDecimal.ZERO;
+
+		MLBRClassTribRed red = MLBRClassTribRed.get(ctx, classTrib.getLBR_ClassTrib_IBSCBS_ID(),
+				LBR_TaxGroup_ID, dateDoc, trxName);
+		if (red == null)
+			throw new AdempiereException("Não há redução de " + tributo + " vigente em " + format(dateDoc)
+					+ " para a cClassTrib " + classTrib.getValue() + ". Aplique as migrações do LBR, que "
+					+ "trazem as tabelas oficiais da Receita.");
+		return red.getLBR_TaxRedRate();
+	}
+
+	/**
+	 * A cClassTrib exige o grupo de tributação regular (ind_gTribRegular = 1), como a suspensão
+	 * (CST 550) e as operações originadas fora da ZFM/ALC (200022 e 200024).
+	 */
+	public static boolean requiresRegularTaxation(I_LBR_ClassTrib_IBSCBS classTrib) {
+		return classTrib != null
+				&& X_LBR_ClassTrib_IBSCBS.LBR_INDGIBSCBSTRIBREGULAR_1_Required.equals(classTrib.getLBR_IndgIBSCBSTribRegular());
 	}
 
 	/**
@@ -306,6 +337,21 @@ public class IBSCBSDocLineCalculator {
 	 * @return mensagens; vazia se não houver problema
 	 */
 	public List<String> validate(int LBR_CST_IBSCBS_ID, int LBR_ClassTrib_IBSCBS_ID) {
+		return validate(LBR_CST_IBSCBS_ID, LBR_ClassTrib_IBSCBS_ID, 0, 0);
+	}
+
+	/**
+	 * Validações que não impedem o cálculo: viram aviso no pedido e na fatura e erro ao
+	 * preparar ou completar a Nota Fiscal.
+	 *
+	 * @param LBR_CST_IBSCBS_ID CST da linha
+	 * @param LBR_ClassTrib_IBSCBS_ID cClassTrib da linha
+	 * @param LBR_CSTReg_IBSCBS_ID CST da tributação regular (gTribRegular)
+	 * @param LBR_ClassTribReg_IBSCBS_ID cClassTrib da tributação regular (gTribRegular)
+	 * @return mensagens; vazia se não houver problema
+	 */
+	public List<String> validate(int LBR_CST_IBSCBS_ID, int LBR_ClassTrib_IBSCBS_ID, int LBR_CSTReg_IBSCBS_ID,
+			int LBR_ClassTribReg_IBSCBS_ID) {
 		List<String> msgs = new ArrayList<>();
 
 		if (isBeforeIBSCBS())
@@ -328,6 +374,23 @@ public class IBSCBSDocLineCalculator {
 		if (group != null)
 			msgs.add("A CST " + cst.getValue() + " com a cClassTrib " + code + " exige no XML o grupo " + group
 					+ ", que o LBR ainda não gera; a SEFAZ rejeitaria a nota. Revise a CST e a cClassTrib.");
+
+		// Tributação regular (gTribRegular, UB68-10, rejeição 1065)
+		if (requiresRegularTaxation(classTrib)) {
+			if (LBR_CSTReg_IBSCBS_ID <= 0 || LBR_ClassTribReg_IBSCBS_ID <= 0)
+				msgs.add("A cClassTrib " + code + " exige o grupo de tributação regular (gTribRegular). Informe a CST e "
+						+ "a cClassTrib regulares, isto é, como a operação seria tributada sem a condição (ex.: a "
+						+ "suspensão), na Definição de Impostos.");
+			else {
+				X_LBR_ClassTrib_IBSCBS regular = new X_LBR_ClassTrib_IBSCBS(ctx, LBR_ClassTribReg_IBSCBS_ID, trxName);
+				if (regular.getLBR_CST_IBSCBS_ID() > 0 && regular.getLBR_CST_IBSCBS_ID() != LBR_CSTReg_IBSCBS_ID)
+					msgs.add("A cClassTrib regular " + regular.getValue() + " não pertence à CST regular "
+							+ new X_LBR_CST_IBSCBS(ctx, LBR_CSTReg_IBSCBS_ID, trxName).getValue() + ".");
+				if (requiresRegularTaxation(regular))
+					msgs.add("A cClassTrib regular " + regular.getValue() + " também exige tributação regular. Informe "
+							+ "como a operação seria tributada sem a condição (ex.: CST 000, cClassTrib 000001).");
+			}
+		}
 
 		// Vínculo da cClassTrib com o modelo do documento (só na Nota Fiscal, onde o modelo é conhecido)
 		if (nf != null) {
@@ -367,7 +430,8 @@ public class IBSCBSDocLineCalculator {
 			IBSCBSDocLineCalculator calc = new IBSCBSDocLineCalculator(details,
 					line.getM_Product_ID() > 0 ? MProduct.get(nf.getCtx(), line.getM_Product_ID()) : null,
 					nf.getDateDoc());
-			for (String msg : calc.validate(ibscbs[0].getLBR_CST_IBSCBS_ID(), ibscbs[0].getLBR_ClassTrib_IBSCBS_ID()))
+			for (String msg : calc.validate(ibscbs[0].getLBR_CST_IBSCBS_ID(), ibscbs[0].getLBR_ClassTrib_IBSCBS_ID(),
+					ibscbs[0].getLBR_CSTReg_IBSCBS_ID(), ibscbs[0].getLBR_ClassTribReg_IBSCBS_ID()))
 				msgs.add("Linha " + line.getLine() + ": " + msg);
 		}
 		return msgs;
@@ -484,6 +548,11 @@ public class IBSCBSDocLineCalculator {
 
 	private X_LBR_ClassTrib_IBSCBS getClassTrib(MLBRTaxLine tl) {
 		int id = tl.get_ValueAsInt(I_LBR_DocLine_IBSCBS.COLUMNNAME_LBR_ClassTrib_IBSCBS_ID);
+		return id > 0 ? new X_LBR_ClassTrib_IBSCBS(ctx, id, trxName) : null;
+	}
+
+	private X_LBR_ClassTrib_IBSCBS getClassTribRegular(MLBRTaxLine tl) {
+		int id = tl.getLBR_ClassTribReg_IBSCBS_ID();
 		return id > 0 ? new X_LBR_ClassTrib_IBSCBS(ctx, id, trxName) : null;
 	}
 

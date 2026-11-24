@@ -25,7 +25,7 @@ import org.compiere.util.Env;
 
 /** Generated Model for LBR_TaxLine
  *  @author iDempiere (generated)
- *  @version Release 11 - $Id$ */
+ *  @version Release 13 - $Id$ */
 @org.adempiere.base.Model(table="LBR_TaxLine")
 public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 {
@@ -33,7 +33,7 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20240603L;
+	private static final long serialVersionUID = 20261124L;
 
     /** Standard Constructor */
     public X_LBR_TaxLine (Properties ctx, int LBR_TaxLine_ID, String trxName)
@@ -150,6 +150,177 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 		return false;
 	}
 
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_CST_IBSCBS getLBR_CSTReg_IBSCBS() throws RuntimeException
+	{
+		return (I_LBR_CST_IBSCBS)MTable.get(getCtx(), I_LBR_CST_IBSCBS.Table_ID)
+			.getPO(getLBR_CSTReg_IBSCBS_ID(), get_TrxName());
+	}
+
+	/** Set CST Regular de IBS/CBS.
+		@param LBR_CSTReg_IBSCBS_ID CST da tributação regular (grupo gTribRegular): como a operação seria tributada sem a condição suspensiva ou resolutória. NT 2025.002-RTC, UB69.
+	*/
+	public void setLBR_CSTReg_IBSCBS_ID (int LBR_CSTReg_IBSCBS_ID)
+	{
+		if (LBR_CSTReg_IBSCBS_ID < 1)
+			set_Value (COLUMNNAME_LBR_CSTReg_IBSCBS_ID, null);
+		else
+			set_Value (COLUMNNAME_LBR_CSTReg_IBSCBS_ID, Integer.valueOf(LBR_CSTReg_IBSCBS_ID));
+	}
+
+	/** Get CST Regular de IBS/CBS.
+		@return CST da tributação regular (grupo gTribRegular): como a operação seria tributada sem a condição suspensiva ou resolutória. NT 2025.002-RTC, UB69.
+	  */
+	public int getLBR_CSTReg_IBSCBS_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_CSTReg_IBSCBS_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_CST_IBSCBS getLBR_CST_IBSCBS() throws RuntimeException
+	{
+		return (I_LBR_CST_IBSCBS)MTable.get(getCtx(), I_LBR_CST_IBSCBS.Table_ID)
+			.getPO(getLBR_CST_IBSCBS_ID(), get_TrxName());
+	}
+
+	/** Set CST IBS / CBS.
+		@param LBR_CST_IBSCBS_ID CST IBS / CBS
+	*/
+	public void setLBR_CST_IBSCBS_ID (int LBR_CST_IBSCBS_ID)
+	{
+		if (LBR_CST_IBSCBS_ID < 1)
+			set_Value (COLUMNNAME_LBR_CST_IBSCBS_ID, null);
+		else
+			set_Value (COLUMNNAME_LBR_CST_IBSCBS_ID, Integer.valueOf(LBR_CST_IBSCBS_ID));
+	}
+
+	/** Get CST IBS / CBS.
+		@return CST IBS / CBS	  */
+	public int getLBR_CST_IBSCBS_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_CST_IBSCBS_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_CST_IS getLBR_CST_IS() throws RuntimeException
+	{
+		return (I_LBR_CST_IS)MTable.get(getCtx(), I_LBR_CST_IS.Table_ID)
+			.getPO(getLBR_CST_IS_ID(), get_TrxName());
+	}
+
+	/** Set CST IS.
+		@param LBR_CST_IS_ID CST IS
+	*/
+	public void setLBR_CST_IS_ID (int LBR_CST_IS_ID)
+	{
+		if (LBR_CST_IS_ID < 1)
+			set_Value (COLUMNNAME_LBR_CST_IS_ID, null);
+		else
+			set_Value (COLUMNNAME_LBR_CST_IS_ID, Integer.valueOf(LBR_CST_IS_ID));
+	}
+
+	/** Get CST IS.
+		@return CST IS	  */
+	public int getLBR_CST_IS_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_CST_IS_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_ClassTrib_IBSCBS getLBR_ClassTribReg_IBSCBS() throws RuntimeException
+	{
+		return (I_LBR_ClassTrib_IBSCBS)MTable.get(getCtx(), I_LBR_ClassTrib_IBSCBS.Table_ID)
+			.getPO(getLBR_ClassTribReg_IBSCBS_ID(), get_TrxName());
+	}
+
+	/** Set Classificação Tributária Regular de IBS/CBS.
+		@param LBR_ClassTribReg_IBSCBS_ID cClassTrib da tributação regular (grupo gTribRegular). NT 2025.002-RTC, UB70.
+	*/
+	public void setLBR_ClassTribReg_IBSCBS_ID (int LBR_ClassTribReg_IBSCBS_ID)
+	{
+		if (LBR_ClassTribReg_IBSCBS_ID < 1)
+			set_Value (COLUMNNAME_LBR_ClassTribReg_IBSCBS_ID, null);
+		else
+			set_Value (COLUMNNAME_LBR_ClassTribReg_IBSCBS_ID, Integer.valueOf(LBR_ClassTribReg_IBSCBS_ID));
+	}
+
+	/** Get Classificação Tributária Regular de IBS/CBS.
+		@return cClassTrib da tributação regular (grupo gTribRegular). NT 2025.002-RTC, UB70.
+	  */
+	public int getLBR_ClassTribReg_IBSCBS_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_ClassTribReg_IBSCBS_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_ClassTrib_IBSCBS getLBR_ClassTrib_IBSCBS() throws RuntimeException
+	{
+		return (I_LBR_ClassTrib_IBSCBS)MTable.get(getCtx(), I_LBR_ClassTrib_IBSCBS.Table_ID)
+			.getPO(getLBR_ClassTrib_IBSCBS_ID(), get_TrxName());
+	}
+
+	/** Set ClassTrib IBS / CBS.
+		@param LBR_ClassTrib_IBSCBS_ID ClassTrib IBS / CBS
+	*/
+	public void setLBR_ClassTrib_IBSCBS_ID (int LBR_ClassTrib_IBSCBS_ID)
+	{
+		if (LBR_ClassTrib_IBSCBS_ID < 1)
+			set_Value (COLUMNNAME_LBR_ClassTrib_IBSCBS_ID, null);
+		else
+			set_Value (COLUMNNAME_LBR_ClassTrib_IBSCBS_ID, Integer.valueOf(LBR_ClassTrib_IBSCBS_ID));
+	}
+
+	/** Get ClassTrib IBS / CBS.
+		@return ClassTrib IBS / CBS	  */
+	public int getLBR_ClassTrib_IBSCBS_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_ClassTrib_IBSCBS_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_ClassTrib_IS getLBR_ClassTrib_IS() throws RuntimeException
+	{
+		return (I_LBR_ClassTrib_IS)MTable.get(getCtx(), I_LBR_ClassTrib_IS.Table_ID)
+			.getPO(getLBR_ClassTrib_IS_ID(), get_TrxName());
+	}
+
+	/** Set ClassTrib IS.
+		@param LBR_ClassTrib_IS_ID ClassTrib IS
+	*/
+	public void setLBR_ClassTrib_IS_ID (int LBR_ClassTrib_IS_ID)
+	{
+		if (LBR_ClassTrib_IS_ID < 1)
+			set_Value (COLUMNNAME_LBR_ClassTrib_IS_ID, null);
+		else
+			set_Value (COLUMNNAME_LBR_ClassTrib_IS_ID, Integer.valueOf(LBR_ClassTrib_IS_ID));
+	}
+
+	/** Get ClassTrib IS.
+		@return ClassTrib IS	  */
+	public int getLBR_ClassTrib_IS_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_ClassTrib_IS_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_LegalMessage getLBR_LegalMessage() throws RuntimeException
 	{
 		return (I_LBR_LegalMessage)MTable.get(getCtx(), I_LBR_LegalMessage.Table_ID)
@@ -258,6 +429,7 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 		return bd;
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_TaxBaseType getLBR_TaxBaseType() throws RuntimeException
 	{
 		return (I_LBR_TaxBaseType)MTable.get(getCtx(), I_LBR_TaxBaseType.Table_ID)
@@ -283,6 +455,25 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
+	}
+
+	/** Set Tax Deferral Rate (%).
+		@param LBR_TaxDeferralRate Identifies the Tax Deferral Rate (%)
+	*/
+	public void setLBR_TaxDeferralRate (BigDecimal LBR_TaxDeferralRate)
+	{
+		set_Value (COLUMNNAME_LBR_TaxDeferralRate, LBR_TaxDeferralRate);
+	}
+
+	/** Get Tax Deferral Rate (%).
+		@return Identifies the Tax Deferral Rate (%)
+	  */
+	public BigDecimal getLBR_TaxDeferralRate()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxDeferralRate);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
 	}
 
 	/** Set Transaction Tax Line.
@@ -341,6 +532,7 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 		return bd;
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_TaxName getLBR_TaxName() throws RuntimeException
 	{
 		return (I_LBR_TaxName)MTable.get(getCtx(), I_LBR_TaxName.Table_ID)
@@ -388,6 +580,45 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 		return bd;
 	}
 
+	/** Set Tax Red. Efet. Rate.
+		@param LBR_TaxRedEfetRate Indicates the Tax Red. Efet. Rate
+	*/
+	public void setLBR_TaxRedEfetRate (BigDecimal LBR_TaxRedEfetRate)
+	{
+		set_Value (COLUMNNAME_LBR_TaxRedEfetRate, LBR_TaxRedEfetRate);
+	}
+
+	/** Get Tax Red. Efet. Rate.
+		@return Indicates the Tax Red. Efet. Rate
+	  */
+	public BigDecimal getLBR_TaxRedEfetRate()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRedEfetRate);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set Tax Red. Rate.
+		@param LBR_TaxRedRate Indicates the Tax Red. Rate
+	*/
+	public void setLBR_TaxRedRate (BigDecimal LBR_TaxRedRate)
+	{
+		set_Value (COLUMNNAME_LBR_TaxRedRate, LBR_TaxRedRate);
+	}
+
+	/** Get Tax Red. Rate.
+		@return Indicates the Tax Red. Rate
+	  */
+	public BigDecimal getLBR_TaxRedRate()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxRedRate);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_TaxStatus getLBR_TaxStatus() throws RuntimeException
 	{
 		return (I_LBR_TaxStatus)MTable.get(getCtx(), I_LBR_TaxStatus.Table_ID)
@@ -416,6 +647,7 @@ public class X_LBR_TaxLine extends PO implements I_LBR_TaxLine, I_Persistent
 		return ii.intValue();
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_Tax getLBR_Tax() throws RuntimeException
 	{
 		return (I_LBR_Tax)MTable.get(getCtx(), I_LBR_Tax.Table_ID)

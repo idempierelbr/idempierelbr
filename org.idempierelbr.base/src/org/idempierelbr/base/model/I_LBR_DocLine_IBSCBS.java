@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_DocLine_IBSCBS
  *  @author iDempiere (generated) 
- *  @version Release 12
+ *  @version Release 13
  */
 @SuppressWarnings("all")
 public interface I_LBR_DocLine_IBSCBS 
@@ -197,6 +197,48 @@ public interface I_LBR_DocLine_IBSCBS
 	  */
 	public BigDecimal getLBR_CBS_TaxRedRate();
 
+    /** Column name LBR_CBS_TaxRegAmt */
+    public static final String COLUMNNAME_LBR_CBS_TaxRegAmt = "LBR_CBS_TaxRegAmt";
+
+	/** Set Valor Regular da CBS.
+	  * Valor da CBS na tributação regular (vTribRegCBS, UB72d).
+	  */
+	public void setLBR_CBS_TaxRegAmt (BigDecimal LBR_CBS_TaxRegAmt);
+
+	/** Get Valor Regular da CBS.
+	  * Valor da CBS na tributação regular (vTribRegCBS, UB72d).
+	  */
+	public BigDecimal getLBR_CBS_TaxRegAmt();
+
+    /** Column name LBR_CBS_TaxRegEfetRate */
+    public static final String COLUMNNAME_LBR_CBS_TaxRegEfetRate = "LBR_CBS_TaxRegEfetRate";
+
+	/** Set Alíquota Efetiva Regular da CBS (%).
+	  * Alíquota efetiva da CBS na tributação regular (pAliqEfetRegCBS, UB72c).
+	  */
+	public void setLBR_CBS_TaxRegEfetRate (BigDecimal LBR_CBS_TaxRegEfetRate);
+
+	/** Get Alíquota Efetiva Regular da CBS (%).
+	  * Alíquota efetiva da CBS na tributação regular (pAliqEfetRegCBS, UB72c).
+	  */
+	public BigDecimal getLBR_CBS_TaxRegEfetRate();
+
+    /** Column name LBR_CSTReg_IBSCBS_ID */
+    public static final String COLUMNNAME_LBR_CSTReg_IBSCBS_ID = "LBR_CSTReg_IBSCBS_ID";
+
+	/** Set CST Regular de IBS/CBS.
+	  * CST da tributação regular (grupo gTribRegular): como a operação seria tributada sem a condição suspensiva ou resolutória. NT 2025.002-RTC, UB69.
+	  */
+	public void setLBR_CSTReg_IBSCBS_ID (int LBR_CSTReg_IBSCBS_ID);
+
+	/** Get CST Regular de IBS/CBS.
+	  * CST da tributação regular (grupo gTribRegular): como a operação seria tributada sem a condição suspensiva ou resolutória. NT 2025.002-RTC, UB69.
+	  */
+	public int getLBR_CSTReg_IBSCBS_ID();
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_CST_IBSCBS getLBR_CSTReg_IBSCBS() throws RuntimeException;
+
     /** Column name LBR_CST_IBSCBS_ID */
     public static final String COLUMNNAME_LBR_CST_IBSCBS_ID = "LBR_CST_IBSCBS_ID";
 
@@ -206,7 +248,24 @@ public interface I_LBR_DocLine_IBSCBS
 	/** Get CST IBS / CBS	  */
 	public int getLBR_CST_IBSCBS_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_CST_IBSCBS getLBR_CST_IBSCBS() throws RuntimeException;
+
+    /** Column name LBR_ClassTribReg_IBSCBS_ID */
+    public static final String COLUMNNAME_LBR_ClassTribReg_IBSCBS_ID = "LBR_ClassTribReg_IBSCBS_ID";
+
+	/** Set Classificação Tributária Regular de IBS/CBS.
+	  * cClassTrib da tributação regular (grupo gTribRegular). NT 2025.002-RTC, UB70.
+	  */
+	public void setLBR_ClassTribReg_IBSCBS_ID (int LBR_ClassTribReg_IBSCBS_ID);
+
+	/** Get Classificação Tributária Regular de IBS/CBS.
+	  * cClassTrib da tributação regular (grupo gTribRegular). NT 2025.002-RTC, UB70.
+	  */
+	public int getLBR_ClassTribReg_IBSCBS_ID();
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_ClassTrib_IBSCBS getLBR_ClassTribReg_IBSCBS() throws RuntimeException;
 
     /** Column name LBR_ClassTrib_IBSCBS_ID */
     public static final String COLUMNNAME_LBR_ClassTrib_IBSCBS_ID = "LBR_ClassTrib_IBSCBS_ID";
@@ -217,6 +276,7 @@ public interface I_LBR_DocLine_IBSCBS
 	/** Get ClassTrib IBS / CBS	  */
 	public int getLBR_ClassTrib_IBSCBS_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_ClassTrib_IBSCBS getLBR_ClassTrib_IBSCBS() throws RuntimeException;
 
     /** Column name LBR_DocLine_Details_ID */
@@ -232,6 +292,7 @@ public interface I_LBR_DocLine_IBSCBS
 	  */
 	public int getLBR_DocLine_Details_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_DocLine_Details getLBR_DocLine_Details() throws RuntimeException;
 
     /** Column name LBR_DocLine_IBSCBS_ID */
@@ -356,6 +417,32 @@ public interface I_LBR_DocLine_IBSCBS
 	  */
 	public BigDecimal getLBR_IBS_Mun_TaxRedRate();
 
+    /** Column name LBR_IBS_Mun_TaxRegAmt */
+    public static final String COLUMNNAME_LBR_IBS_Mun_TaxRegAmt = "LBR_IBS_Mun_TaxRegAmt";
+
+	/** Set Valor Regular do IBS Municipal.
+	  * Valor do IBS do município na tributação regular (vTribRegIBSMun, UB72b).
+	  */
+	public void setLBR_IBS_Mun_TaxRegAmt (BigDecimal LBR_IBS_Mun_TaxRegAmt);
+
+	/** Get Valor Regular do IBS Municipal.
+	  * Valor do IBS do município na tributação regular (vTribRegIBSMun, UB72b).
+	  */
+	public BigDecimal getLBR_IBS_Mun_TaxRegAmt();
+
+    /** Column name LBR_IBS_Mun_TaxRegEfetRate */
+    public static final String COLUMNNAME_LBR_IBS_Mun_TaxRegEfetRate = "LBR_IBS_Mun_TaxRegEfetRate";
+
+	/** Set Alíquota Efetiva Regular do IBS Municipal (%).
+	  * Alíquota efetiva do IBS do município na tributação regular (pAliqEfetRegIBSMun, UB72a).
+	  */
+	public void setLBR_IBS_Mun_TaxRegEfetRate (BigDecimal LBR_IBS_Mun_TaxRegEfetRate);
+
+	/** Get Alíquota Efetiva Regular do IBS Municipal (%).
+	  * Alíquota efetiva do IBS do município na tributação regular (pAliqEfetRegIBSMun, UB72a).
+	  */
+	public BigDecimal getLBR_IBS_Mun_TaxRegEfetRate();
+
     /** Column name LBR_IBS_UF_IsTaxIncluded */
     public static final String COLUMNNAME_LBR_IBS_UF_IsTaxIncluded = "LBR_IBS_UF_IsTaxIncluded";
 
@@ -459,6 +546,32 @@ public interface I_LBR_DocLine_IBSCBS
 	  * Indicates the IBS UF Tax Red. Rate
 	  */
 	public BigDecimal getLBR_IBS_UF_TaxRedRate();
+
+    /** Column name LBR_IBS_UF_TaxRegAmt */
+    public static final String COLUMNNAME_LBR_IBS_UF_TaxRegAmt = "LBR_IBS_UF_TaxRegAmt";
+
+	/** Set Valor Regular do IBS UF.
+	  * Valor do IBS da UF na tributação regular (vTribRegIBSUF, UB72).
+	  */
+	public void setLBR_IBS_UF_TaxRegAmt (BigDecimal LBR_IBS_UF_TaxRegAmt);
+
+	/** Get Valor Regular do IBS UF.
+	  * Valor do IBS da UF na tributação regular (vTribRegIBSUF, UB72).
+	  */
+	public BigDecimal getLBR_IBS_UF_TaxRegAmt();
+
+    /** Column name LBR_IBS_UF_TaxRegEfetRate */
+    public static final String COLUMNNAME_LBR_IBS_UF_TaxRegEfetRate = "LBR_IBS_UF_TaxRegEfetRate";
+
+	/** Set Alíquota Efetiva Regular do IBS UF (%).
+	  * Alíquota efetiva do IBS da UF na tributação regular (pAliqEfetRegIBSUF, UB71).
+	  */
+	public void setLBR_IBS_UF_TaxRegEfetRate (BigDecimal LBR_IBS_UF_TaxRegEfetRate);
+
+	/** Get Alíquota Efetiva Regular do IBS UF (%).
+	  * Alíquota efetiva do IBS da UF na tributação regular (pAliqEfetRegIBSUF, UB71).
+	  */
+	public BigDecimal getLBR_IBS_UF_TaxRegEfetRate();
 
     /** Column name LBR_TaxBaseAmt */
     public static final String COLUMNNAME_LBR_TaxBaseAmt = "LBR_TaxBaseAmt";

@@ -18,6 +18,7 @@ import org.idempierelbr.base.model.MLBRDocLineIBSCBS;
 import org.idempierelbr.base.model.MLBRNotaFiscalLine;
 import org.idempierelbr.nfe.beans.IBSCBSBean;
 import org.idempierelbr.nfe.beans.RedGrupoBean;
+import org.idempierelbr.nfe.beans.TribRegularGrupoBean;
 import org.idempierelbr.nfe.util.NFeLineUtil;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -128,6 +129,87 @@ class NFeLineUtilIBSCBSTest {
 		when(ibsCbs.getLBR_IBS_Mun_TaxRedEfetRate()).thenReturn(BigDecimal.ZERO);
 		when(ibsCbs.getLBR_CBS_TaxRedEfetRate()).thenReturn(null);
 		assertThat(catchThrowable(util::getIBSCBSBean)).hasMessageContaining("@LBR_CBS_TaxRedEfetRate@");
+	}
+
+	@Test
+	void ordinaryClassTrib_omitsRegularTaxationGroup() {
+		assertThat(util.getIBSCBSBean().getgIBSCBS().getgTribRegular())
+				.as("só a cClassTrib com ind_gTribRegular = 1 leva o grupo")
+				.isNull();
+	}
+
+	@Test
+	void suspension_informsRegularTaxationGroup() {
+		I_LBR_CST_IBSCBS cstReg = mock(I_LBR_CST_IBSCBS.class);
+		I_LBR_ClassTrib_IBSCBS classTribReg = mock(I_LBR_ClassTrib_IBSCBS.class);
+		suspension(cstReg, classTribReg);
+
+		IBSCBSBean bean = util.getIBSCBSBean();
+		TribRegularGrupoBean g = bean.getgIBSCBS().getgTribRegular();
+
+		assertThat(g).as("UB68-10: a cClassTrib exige o grupo gTribRegular").isNotNull();
+		assertThat(g.getCSTReg()).isEqualTo("000");
+		assertThat(g.getcClassTribReg()).isEqualTo("000001");
+		assertThat(g.getpAliqEfetRegIBSUF()).isEqualTo("0.10");
+		assertThat(g.getvTribRegIBSUF()).isEqualTo("0.10");
+		assertThat(g.getpAliqEfetRegIBSMun()).isEqualTo("0.00");
+		assertThat(g.getvTribRegIBSMun()).isEqualTo("0.00");
+		assertThat(g.getpAliqEfetRegCBS()).isEqualTo("0.90");
+		assertThat(g.getvTribRegCBS()).isEqualTo("0.90");
+		assertThat(bean.getgIBSCBS().getgCBS().getpCBS()).as("UB56-10, exceção 1").isEqualTo("0.00");
+		assertThat(bean.getgIBSCBS().getgCBS().getgRed()).as("sem gRed com alíquota zero").isNull();
+	}
+
+	@Test
+	void suspensionWithoutRegularClassification_namesTheMissingField() {
+		when(ibsCbs.getLBR_ClassTrib_IBSCBS().getLBR_IndgIBSCBSTribRegular()).thenReturn("1");
+
+		assertThat(catchThrowable(util::getIBSCBSBean))
+				.as("sem a classificação regular, falhar com o campo e não com a rejeição 1065")
+				.isInstanceOf(AdempiereException.class)
+				.hasMessageContaining("@LBR_CSTReg_IBSCBS_ID@");
+	}
+
+	@Test
+	void suspensionWithoutRegularValue_namesTheMissingField() {
+		I_LBR_CST_IBSCBS cstReg = mock(I_LBR_CST_IBSCBS.class);
+		I_LBR_ClassTrib_IBSCBS classTribReg = mock(I_LBR_ClassTrib_IBSCBS.class);
+		suspension(cstReg, classTribReg);
+		when(ibsCbs.getLBR_CBS_TaxRegAmt()).thenReturn(null);
+
+		assertThat(catchThrowable(util::getIBSCBSBean)).hasMessageContaining("@LBR_CBS_TaxRegAmt@");
+	}
+
+	/**
+	 * cClassTrib 550001 (suspensão) com a regular 000/000001 sobre a base de 100,00: grupo
+	 * principal zerado e sem gRed; regular com IBS UF 0,1 %, IBS Mun 0 % e CBS 0,9 %.
+	 */
+	private void suspension(I_LBR_CST_IBSCBS cstReg, I_LBR_ClassTrib_IBSCBS classTribReg) {
+		when(cstReg.getValue()).thenReturn("000");
+		when(classTribReg.getValue()).thenReturn("000001");
+		when(ibsCbs.getLBR_ClassTrib_IBSCBS().getLBR_IndgIBSCBSTribRegular()).thenReturn("1");
+
+		when(ibsCbs.getLBR_IBS_UF_TaxRate()).thenReturn(BigDecimal.ZERO);
+		when(ibsCbs.getLBR_IBS_UF_TaxRedRate()).thenReturn(null);
+		when(ibsCbs.getLBR_IBS_UF_TaxRedEfetRate()).thenReturn(null);
+		when(ibsCbs.getLBR_IBS_UF_TaxAmt()).thenReturn(BigDecimal.ZERO);
+		when(ibsCbs.getLBR_IBS_Mun_TaxRedRate()).thenReturn(null);
+		when(ibsCbs.getLBR_IBS_Mun_TaxRedEfetRate()).thenReturn(null);
+		when(ibsCbs.getLBR_CBS_TaxRate()).thenReturn(BigDecimal.ZERO);
+		when(ibsCbs.getLBR_CBS_TaxRedRate()).thenReturn(null);
+		when(ibsCbs.getLBR_CBS_TaxRedEfetRate()).thenReturn(null);
+		when(ibsCbs.getLBR_CBS_TaxAmt()).thenReturn(BigDecimal.ZERO);
+
+		when(ibsCbs.getLBR_CSTReg_IBSCBS_ID()).thenReturn(1);
+		when(ibsCbs.getLBR_CSTReg_IBSCBS()).thenReturn(cstReg);
+		when(ibsCbs.getLBR_ClassTribReg_IBSCBS_ID()).thenReturn(1);
+		when(ibsCbs.getLBR_ClassTribReg_IBSCBS()).thenReturn(classTribReg);
+		when(ibsCbs.getLBR_IBS_UF_TaxRegEfetRate()).thenReturn(new BigDecimal("0.1"));
+		when(ibsCbs.getLBR_IBS_UF_TaxRegAmt()).thenReturn(new BigDecimal("0.10"));
+		when(ibsCbs.getLBR_IBS_Mun_TaxRegEfetRate()).thenReturn(BigDecimal.ZERO);
+		when(ibsCbs.getLBR_IBS_Mun_TaxRegAmt()).thenReturn(BigDecimal.ZERO);
+		when(ibsCbs.getLBR_CBS_TaxRegEfetRate()).thenReturn(new BigDecimal("0.9"));
+		when(ibsCbs.getLBR_CBS_TaxRegAmt()).thenReturn(new BigDecimal("0.90"));
 	}
 
 	private static void assertRed(String group, RedGrupoBean gRed, String pRedAliq, String pAliqEfet) {

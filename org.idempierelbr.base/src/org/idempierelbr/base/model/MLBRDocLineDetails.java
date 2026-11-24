@@ -451,7 +451,8 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		// Validações que não impedem o cálculo: aviso aqui, erro ao preparar ou completar a Nota Fiscal
 		MLBRTaxLine first = ibscbsLines.keySet().iterator().next();
 		List<String> warnings = calc.validate(first.get_ValueAsInt(I_LBR_DocLine_IBSCBS.COLUMNNAME_LBR_CST_IBSCBS_ID),
-				first.get_ValueAsInt(I_LBR_DocLine_IBSCBS.COLUMNNAME_LBR_ClassTrib_IBSCBS_ID));
+				first.get_ValueAsInt(I_LBR_DocLine_IBSCBS.COLUMNNAME_LBR_ClassTrib_IBSCBS_ID),
+				first.getLBR_CSTReg_IBSCBS_ID(), first.getLBR_ClassTribReg_IBSCBS_ID());
 		if (!warnings.isEmpty())
 			log.saveWarning("Warning", "IBS/CBS: " + String.join(" ", warnings));
 	}
@@ -476,6 +477,14 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		ibscbs.setLBR_ClassTrib_IBSCBS_ID(tl.get_ValueAsInt(I_LBR_DocLine_IBSCBS.COLUMNNAME_LBR_ClassTrib_IBSCBS_ID));
 		ibscbs.setLBR_TaxBaseAmt(r != null ? r.getBaseCalculo().multiply(sign) : null);
 
+		// Tributação regular (gTribRegular): a classificação regular acompanha a cClassTrib que a exige,
+		// e os valores só existem quando ela foi informada
+		boolean regular = IBSCBSDocLineCalculator.requiresRegularTaxation(ibscbs.getLBR_ClassTrib_IBSCBS());
+		ibscbs.setLBR_CSTReg_IBSCBS_ID(regular ? tl.getLBR_CSTReg_IBSCBS_ID() : 0);
+		ibscbs.setLBR_ClassTribReg_IBSCBS_ID(regular ? tl.getLBR_ClassTribReg_IBSCBS_ID() : 0);
+		BigDecimal regRate = r != null && r.hasTributacaoRegular() ? r.getAliquotaEfetivaRegular() : null;
+		BigDecimal regAmt = r != null && r.hasTributacaoRegular() ? r.getValorRegular().multiply(sign) : null;
+
 		BigDecimal rate = r != null ? r.getAliquota() : null;
 		BigDecimal deferralRate = r != null ? r.getPercentualDiferimento() : null;
 		BigDecimal deferralAmt = r != null && r.getValorDiferimento() != null ? r.getValorDiferimento().multiply(sign) : null;
@@ -498,6 +507,8 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			ibscbs.setLBR_IBS_UF_TaxRedRate(redRate);
 			ibscbs.setLBR_IBS_UF_TaxRedEfetRate(redEfetRate);
 			ibscbs.setLBR_IBS_UF_TaxAmt(amt);
+			ibscbs.setLBR_IBS_UF_TaxRegEfetRate(regRate);
+			ibscbs.setLBR_IBS_UF_TaxRegAmt(regAmt);
 		} else if (LBR_TaxGroup_ID == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_MUN_NAME)) {
 			ibscbs.setLBR_IBS_Mun_TaxRate(rate);
 			ibscbs.setLBR_IBS_Mun_TaxDeferralRate(deferralRate);
@@ -506,6 +517,8 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			ibscbs.setLBR_IBS_Mun_TaxRedRate(redRate);
 			ibscbs.setLBR_IBS_Mun_TaxRedEfetRate(redEfetRate);
 			ibscbs.setLBR_IBS_Mun_TaxAmt(amt);
+			ibscbs.setLBR_IBS_Mun_TaxRegEfetRate(regRate);
+			ibscbs.setLBR_IBS_Mun_TaxRegAmt(regAmt);
 		} else if (LBR_TaxGroup_ID == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_CBS_NAME)) {
 			ibscbs.setLBR_CBS_TaxRate(rate);
 			ibscbs.setLBR_CBS_TaxDeferralRate(deferralRate);
@@ -514,6 +527,8 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 			ibscbs.setLBR_CBS_TaxRedRate(redRate);
 			ibscbs.setLBR_CBS_TaxRedEfetRate(redEfetRate);
 			ibscbs.setLBR_CBS_TaxAmt(amt);
+			ibscbs.setLBR_CBS_TaxRegEfetRate(regRate);
+			ibscbs.setLBR_CBS_TaxRegAmt(regAmt);
 		}
 
 		ibscbs.saveEx();
