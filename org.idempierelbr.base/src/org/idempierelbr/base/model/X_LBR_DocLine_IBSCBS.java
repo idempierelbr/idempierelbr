@@ -25,7 +25,7 @@ import org.compiere.util.Env;
 
 /** Generated Model for LBR_DocLine_IBSCBS
  *  @author iDempiere (generated)
- *  @version Release 12 - $Id$ */
+ *  @version Release 13 - $Id$ */
 @org.adempiere.base.Model(table="LBR_DocLine_IBSCBS")
 public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_Persistent
 {
@@ -33,7 +33,7 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20251117L;
+	private static final long serialVersionUID = 20261124L;
 
     /** Standard Constructor */
     public X_LBR_DocLine_IBSCBS (Properties ctx, int LBR_DocLine_IBSCBS_ID, String trxName)
@@ -172,6 +172,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_CBS_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxAmt);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -189,6 +191,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_CBS_TaxDeferralAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxDeferralAmt);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -206,6 +210,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_CBS_TaxDeferralRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxDeferralRate);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -223,6 +229,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_CBS_TaxDevAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxDevAmt);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -240,6 +248,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_CBS_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxRate);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -257,6 +267,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_CBS_TaxRedEfetRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxRedEfetRate);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -274,9 +286,79 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_CBS_TaxRedRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxRedRate);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
+	/** Set Valor Regular da CBS.
+		@param LBR_CBS_TaxRegAmt Valor da CBS na tributação regular (vTribRegCBS, UB72d).
+	*/
+	public void setLBR_CBS_TaxRegAmt (BigDecimal LBR_CBS_TaxRegAmt)
+	{
+		set_Value (COLUMNNAME_LBR_CBS_TaxRegAmt, LBR_CBS_TaxRegAmt);
+	}
+
+	/** Get Valor Regular da CBS.
+		@return Valor da CBS na tributação regular (vTribRegCBS, UB72d).
+	  */
+	public BigDecimal getLBR_CBS_TaxRegAmt()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxRegAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set Alíquota Efetiva Regular da CBS (%).
+		@param LBR_CBS_TaxRegEfetRate Alíquota efetiva da CBS na tributação regular (pAliqEfetRegCBS, UB72c).
+	*/
+	public void setLBR_CBS_TaxRegEfetRate (BigDecimal LBR_CBS_TaxRegEfetRate)
+	{
+		set_Value (COLUMNNAME_LBR_CBS_TaxRegEfetRate, LBR_CBS_TaxRegEfetRate);
+	}
+
+	/** Get Alíquota Efetiva Regular da CBS (%).
+		@return Alíquota efetiva da CBS na tributação regular (pAliqEfetRegCBS, UB72c).
+	  */
+	public BigDecimal getLBR_CBS_TaxRegEfetRate()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_CBS_TaxRegEfetRate);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_CST_IBSCBS getLBR_CSTReg_IBSCBS() throws RuntimeException
+	{
+		return (I_LBR_CST_IBSCBS)MTable.get(getCtx(), I_LBR_CST_IBSCBS.Table_ID)
+			.getPO(getLBR_CSTReg_IBSCBS_ID(), get_TrxName());
+	}
+
+	/** Set CST Regular de IBS/CBS.
+		@param LBR_CSTReg_IBSCBS_ID CST da tributação regular (grupo gTribRegular): como a operação seria tributada sem a condição suspensiva ou resolutória. NT 2025.002-RTC, UB69.
+	*/
+	public void setLBR_CSTReg_IBSCBS_ID (int LBR_CSTReg_IBSCBS_ID)
+	{
+		if (LBR_CSTReg_IBSCBS_ID < 1)
+			set_Value (COLUMNNAME_LBR_CSTReg_IBSCBS_ID, null);
+		else
+			set_Value (COLUMNNAME_LBR_CSTReg_IBSCBS_ID, Integer.valueOf(LBR_CSTReg_IBSCBS_ID));
+	}
+
+	/** Get CST Regular de IBS/CBS.
+		@return CST da tributação regular (grupo gTribRegular): como a operação seria tributada sem a condição suspensiva ou resolutória. NT 2025.002-RTC, UB69.
+	  */
+	public int getLBR_CSTReg_IBSCBS_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_CSTReg_IBSCBS_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_CST_IBSCBS getLBR_CST_IBSCBS() throws RuntimeException
 	{
 		return (I_LBR_CST_IBSCBS)MTable.get(getCtx(), I_LBR_CST_IBSCBS.Table_ID)
@@ -304,6 +386,36 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 		return ii.intValue();
 	}
 
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_ClassTrib_IBSCBS getLBR_ClassTribReg_IBSCBS() throws RuntimeException
+	{
+		return (I_LBR_ClassTrib_IBSCBS)MTable.get(getCtx(), I_LBR_ClassTrib_IBSCBS.Table_ID)
+			.getPO(getLBR_ClassTribReg_IBSCBS_ID(), get_TrxName());
+	}
+
+	/** Set Classificação Tributária Regular de IBS/CBS.
+		@param LBR_ClassTribReg_IBSCBS_ID cClassTrib da tributação regular (grupo gTribRegular). NT 2025.002-RTC, UB70.
+	*/
+	public void setLBR_ClassTribReg_IBSCBS_ID (int LBR_ClassTribReg_IBSCBS_ID)
+	{
+		if (LBR_ClassTribReg_IBSCBS_ID < 1)
+			set_Value (COLUMNNAME_LBR_ClassTribReg_IBSCBS_ID, null);
+		else
+			set_Value (COLUMNNAME_LBR_ClassTribReg_IBSCBS_ID, Integer.valueOf(LBR_ClassTribReg_IBSCBS_ID));
+	}
+
+	/** Get Classificação Tributária Regular de IBS/CBS.
+		@return cClassTrib da tributação regular (grupo gTribRegular). NT 2025.002-RTC, UB70.
+	  */
+	public int getLBR_ClassTribReg_IBSCBS_ID()
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_LBR_ClassTribReg_IBSCBS_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_ClassTrib_IBSCBS getLBR_ClassTrib_IBSCBS() throws RuntimeException
 	{
 		return (I_LBR_ClassTrib_IBSCBS)MTable.get(getCtx(), I_LBR_ClassTrib_IBSCBS.Table_ID)
@@ -331,6 +443,7 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 		return ii.intValue();
 	}
 
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_DocLine_Details getLBR_DocLine_Details() throws RuntimeException
 	{
 		return (I_LBR_DocLine_Details)MTable.get(getCtx(), I_LBR_DocLine_Details.Table_ID)
@@ -432,6 +545,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_Mun_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxAmt);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -449,6 +564,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_Mun_TaxDeferralAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxDeferralAmt);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -466,6 +583,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_Mun_TaxDeferralRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxDeferralRate);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -483,6 +602,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_Mun_TaxDevAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxDevAmt);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -500,6 +621,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_Mun_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxRate);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -517,6 +640,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_Mun_TaxRedEfetRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxRedEfetRate);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -534,6 +659,46 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_Mun_TaxRedRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxRedRate);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set Valor Regular do IBS Municipal.
+		@param LBR_IBS_Mun_TaxRegAmt Valor do IBS do município na tributação regular (vTribRegIBSMun, UB72b).
+	*/
+	public void setLBR_IBS_Mun_TaxRegAmt (BigDecimal LBR_IBS_Mun_TaxRegAmt)
+	{
+		set_Value (COLUMNNAME_LBR_IBS_Mun_TaxRegAmt, LBR_IBS_Mun_TaxRegAmt);
+	}
+
+	/** Get Valor Regular do IBS Municipal.
+		@return Valor do IBS do município na tributação regular (vTribRegIBSMun, UB72b).
+	  */
+	public BigDecimal getLBR_IBS_Mun_TaxRegAmt()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxRegAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set Alíquota Efetiva Regular do IBS Municipal (%).
+		@param LBR_IBS_Mun_TaxRegEfetRate Alíquota efetiva do IBS do município na tributação regular (pAliqEfetRegIBSMun, UB72a).
+	*/
+	public void setLBR_IBS_Mun_TaxRegEfetRate (BigDecimal LBR_IBS_Mun_TaxRegEfetRate)
+	{
+		set_Value (COLUMNNAME_LBR_IBS_Mun_TaxRegEfetRate, LBR_IBS_Mun_TaxRegEfetRate);
+	}
+
+	/** Get Alíquota Efetiva Regular do IBS Municipal (%).
+		@return Alíquota efetiva do IBS do município na tributação regular (pAliqEfetRegIBSMun, UB72a).
+	  */
+	public BigDecimal getLBR_IBS_Mun_TaxRegEfetRate()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_Mun_TaxRegEfetRate);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -574,6 +739,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_UF_TaxAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxAmt);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -591,6 +758,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_UF_TaxDeferralAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxDeferralAmt);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -608,6 +777,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_UF_TaxDeferralRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxDeferralRate);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -625,6 +796,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_UF_TaxDevAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxDevAmt);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -642,6 +815,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_UF_TaxRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxRate);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -659,6 +834,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_UF_TaxRedEfetRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxRedEfetRate);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -676,6 +853,46 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_IBS_UF_TaxRedRate()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxRedRate);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set Valor Regular do IBS UF.
+		@param LBR_IBS_UF_TaxRegAmt Valor do IBS da UF na tributação regular (vTribRegIBSUF, UB72).
+	*/
+	public void setLBR_IBS_UF_TaxRegAmt (BigDecimal LBR_IBS_UF_TaxRegAmt)
+	{
+		set_Value (COLUMNNAME_LBR_IBS_UF_TaxRegAmt, LBR_IBS_UF_TaxRegAmt);
+	}
+
+	/** Get Valor Regular do IBS UF.
+		@return Valor do IBS da UF na tributação regular (vTribRegIBSUF, UB72).
+	  */
+	public BigDecimal getLBR_IBS_UF_TaxRegAmt()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxRegAmt);
+		if (bd == null)
+			 return Env.ZERO;
+		return bd;
+	}
+
+	/** Set Alíquota Efetiva Regular do IBS UF (%).
+		@param LBR_IBS_UF_TaxRegEfetRate Alíquota efetiva do IBS da UF na tributação regular (pAliqEfetRegIBSUF, UB71).
+	*/
+	public void setLBR_IBS_UF_TaxRegEfetRate (BigDecimal LBR_IBS_UF_TaxRegEfetRate)
+	{
+		set_Value (COLUMNNAME_LBR_IBS_UF_TaxRegEfetRate, LBR_IBS_UF_TaxRegEfetRate);
+	}
+
+	/** Get Alíquota Efetiva Regular do IBS UF (%).
+		@return Alíquota efetiva do IBS da UF na tributação regular (pAliqEfetRegIBSUF, UB71).
+	  */
+	public BigDecimal getLBR_IBS_UF_TaxRegEfetRate()
+	{
+		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_IBS_UF_TaxRegEfetRate);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 
@@ -693,6 +910,8 @@ public class X_LBR_DocLine_IBSCBS extends PO implements I_LBR_DocLine_IBSCBS, I_
 	public BigDecimal getLBR_TaxBaseAmt()
 	{
 		BigDecimal bd = (BigDecimal)get_Value(COLUMNNAME_LBR_TaxBaseAmt);
+		if (bd == null)
+			 return Env.ZERO;
 		return bd;
 	}
 }

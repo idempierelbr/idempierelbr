@@ -23,7 +23,7 @@ import org.compiere.util.KeyNamePair;
 
 /** Generated Interface for LBR_TaxLine
  *  @author iDempiere (generated) 
- *  @version Release 11
+ *  @version Release 13
  */
 @SuppressWarnings("all")
 public interface I_LBR_TaxLine 
@@ -106,6 +106,86 @@ public interface I_LBR_TaxLine
 	  */
 	public boolean isTaxIncluded();
 
+    /** Column name LBR_CSTReg_IBSCBS_ID */
+    public static final String COLUMNNAME_LBR_CSTReg_IBSCBS_ID = "LBR_CSTReg_IBSCBS_ID";
+
+	/** Set CST Regular de IBS/CBS.
+	  * CST da tributação regular (grupo gTribRegular): como a operação seria tributada sem a condição suspensiva ou resolutória. NT 2025.002-RTC, UB69.
+	  */
+	public void setLBR_CSTReg_IBSCBS_ID (int LBR_CSTReg_IBSCBS_ID);
+
+	/** Get CST Regular de IBS/CBS.
+	  * CST da tributação regular (grupo gTribRegular): como a operação seria tributada sem a condição suspensiva ou resolutória. NT 2025.002-RTC, UB69.
+	  */
+	public int getLBR_CSTReg_IBSCBS_ID();
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_CST_IBSCBS getLBR_CSTReg_IBSCBS() throws RuntimeException;
+
+    /** Column name LBR_CST_IBSCBS_ID */
+    public static final String COLUMNNAME_LBR_CST_IBSCBS_ID = "LBR_CST_IBSCBS_ID";
+
+	/** Set CST IBS / CBS	  */
+	public void setLBR_CST_IBSCBS_ID (int LBR_CST_IBSCBS_ID);
+
+	/** Get CST IBS / CBS	  */
+	public int getLBR_CST_IBSCBS_ID();
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_CST_IBSCBS getLBR_CST_IBSCBS() throws RuntimeException;
+
+    /** Column name LBR_CST_IS_ID */
+    public static final String COLUMNNAME_LBR_CST_IS_ID = "LBR_CST_IS_ID";
+
+	/** Set CST IS	  */
+	public void setLBR_CST_IS_ID (int LBR_CST_IS_ID);
+
+	/** Get CST IS	  */
+	public int getLBR_CST_IS_ID();
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_CST_IS getLBR_CST_IS() throws RuntimeException;
+
+    /** Column name LBR_ClassTribReg_IBSCBS_ID */
+    public static final String COLUMNNAME_LBR_ClassTribReg_IBSCBS_ID = "LBR_ClassTribReg_IBSCBS_ID";
+
+	/** Set Classificação Tributária Regular de IBS/CBS.
+	  * cClassTrib da tributação regular (grupo gTribRegular). NT 2025.002-RTC, UB70.
+	  */
+	public void setLBR_ClassTribReg_IBSCBS_ID (int LBR_ClassTribReg_IBSCBS_ID);
+
+	/** Get Classificação Tributária Regular de IBS/CBS.
+	  * cClassTrib da tributação regular (grupo gTribRegular). NT 2025.002-RTC, UB70.
+	  */
+	public int getLBR_ClassTribReg_IBSCBS_ID();
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_ClassTrib_IBSCBS getLBR_ClassTribReg_IBSCBS() throws RuntimeException;
+
+    /** Column name LBR_ClassTrib_IBSCBS_ID */
+    public static final String COLUMNNAME_LBR_ClassTrib_IBSCBS_ID = "LBR_ClassTrib_IBSCBS_ID";
+
+	/** Set ClassTrib IBS / CBS	  */
+	public void setLBR_ClassTrib_IBSCBS_ID (int LBR_ClassTrib_IBSCBS_ID);
+
+	/** Get ClassTrib IBS / CBS	  */
+	public int getLBR_ClassTrib_IBSCBS_ID();
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_ClassTrib_IBSCBS getLBR_ClassTrib_IBSCBS() throws RuntimeException;
+
+    /** Column name LBR_ClassTrib_IS_ID */
+    public static final String COLUMNNAME_LBR_ClassTrib_IS_ID = "LBR_ClassTrib_IS_ID";
+
+	/** Set ClassTrib IS	  */
+	public void setLBR_ClassTrib_IS_ID (int LBR_ClassTrib_IS_ID);
+
+	/** Get ClassTrib IS	  */
+	public int getLBR_ClassTrib_IS_ID();
+
+	@Deprecated(since="13") // use better methods with cache
+	public I_LBR_ClassTrib_IS getLBR_ClassTrib_IS() throws RuntimeException;
+
     /** Column name LBR_LegalMessage_ID */
     public static final String COLUMNNAME_LBR_LegalMessage_ID = "LBR_LegalMessage_ID";
 
@@ -119,6 +199,7 @@ public interface I_LBR_TaxLine
 	  */
 	public int getLBR_LegalMessage_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_LegalMessage getLBR_LegalMessage() throws RuntimeException;
 
     /** Column name LBR_PostTax */
@@ -182,7 +263,21 @@ public interface I_LBR_TaxLine
 	/** Get Tax Base Type	  */
 	public int getLBR_TaxBaseType_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_TaxBaseType getLBR_TaxBaseType() throws RuntimeException;
+
+    /** Column name LBR_TaxDeferralRate */
+    public static final String COLUMNNAME_LBR_TaxDeferralRate = "LBR_TaxDeferralRate";
+
+	/** Set Tax Deferral Rate (%).
+	  * Identifies the Tax Deferral Rate (%)
+	  */
+	public void setLBR_TaxDeferralRate (BigDecimal LBR_TaxDeferralRate);
+
+	/** Get Tax Deferral Rate (%).
+	  * Identifies the Tax Deferral Rate (%)
+	  */
+	public BigDecimal getLBR_TaxDeferralRate();
 
     /** Column name LBR_TaxLine_ID */
     public static final String COLUMNNAME_LBR_TaxLine_ID = "LBR_TaxLine_ID";
@@ -232,6 +327,7 @@ public interface I_LBR_TaxLine
 	  */
 	public int getLBR_TaxName_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_TaxName getLBR_TaxName() throws RuntimeException;
 
     /** Column name LBR_TaxRate */
@@ -247,6 +343,32 @@ public interface I_LBR_TaxLine
 	  */
 	public BigDecimal getLBR_TaxRate();
 
+    /** Column name LBR_TaxRedEfetRate */
+    public static final String COLUMNNAME_LBR_TaxRedEfetRate = "LBR_TaxRedEfetRate";
+
+	/** Set Tax Red. Efet. Rate.
+	  * Indicates the Tax Red. Efet. Rate
+	  */
+	public void setLBR_TaxRedEfetRate (BigDecimal LBR_TaxRedEfetRate);
+
+	/** Get Tax Red. Efet. Rate.
+	  * Indicates the Tax Red. Efet. Rate
+	  */
+	public BigDecimal getLBR_TaxRedEfetRate();
+
+    /** Column name LBR_TaxRedRate */
+    public static final String COLUMNNAME_LBR_TaxRedRate = "LBR_TaxRedRate";
+
+	/** Set Tax Red. Rate.
+	  * Indicates the Tax Red. Rate
+	  */
+	public void setLBR_TaxRedRate (BigDecimal LBR_TaxRedRate);
+
+	/** Get Tax Red. Rate.
+	  * Indicates the Tax Red. Rate
+	  */
+	public BigDecimal getLBR_TaxRedRate();
+
     /** Column name LBR_TaxStatus_ID */
     public static final String COLUMNNAME_LBR_TaxStatus_ID = "LBR_TaxStatus_ID";
 
@@ -260,6 +382,7 @@ public interface I_LBR_TaxLine
 	  */
 	public int getLBR_TaxStatus_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_TaxStatus getLBR_TaxStatus() throws RuntimeException;
 
     /** Column name LBR_Tax_ID */
@@ -275,6 +398,7 @@ public interface I_LBR_TaxLine
 	  */
 	public int getLBR_Tax_ID();
 
+	@Deprecated(since="13") // use better methods with cache
 	public I_LBR_Tax getLBR_Tax() throws RuntimeException;
 
     /** Column name Qty */
