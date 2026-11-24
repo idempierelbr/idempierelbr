@@ -199,7 +199,8 @@ conciliar produtos e virar documento no ERP.
 
 ### Reforma tributária — IBS, CBS e IS
 
-O LBR acompanha a **NT 2025.002** (grupos IBS/CBS/IS no layout da NF-e):
+O LBR acompanha a **NT 2025.002** (grupos IBS/CBS/IS no layout da NF-e), com os
+schemas do pacote de liberação **PL_010h v1.03** do Portal da NF-e:
 
 - **Tributos por item** — IBS (UF e município), CBS e IS, com CST e Classificação
   Tributária próprias (**CST e Classificação Tributária de IBS/CBS** e

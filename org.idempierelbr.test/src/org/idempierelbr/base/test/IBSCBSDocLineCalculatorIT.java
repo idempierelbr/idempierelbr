@@ -194,6 +194,23 @@ class IBSCBSDocLineCalculatorIT extends AbstractLBRTestCase {
 		assertThat(calc.validate(0, 0)).anySatisfy(m -> assertThat(m).contains("Informe a CST e a cClassTrib"));
 	}
 
+	@Test
+	void requiredGroupsNotGeneratedAreReported() {
+		MLBRDocLineDetails details = details("200", null, null, "1");
+		IBSCBSDocLineCalculator calc = calc(details);
+
+		// Indicadores carregados na Fase 1 a partir da base da Receita
+		assertThat(calc.validate(cst("800"), classTrib("800001")))
+				.as("CST 800 exige gTransfCred (UB13-45)")
+				.anySatisfy(m -> assertThat(m).contains("gTransfCred"));
+		assertThat(calc.validate(cst("811"), classTrib("811001")))
+				.as("CST 811 exige gAjusteCompet (UB112-20)")
+				.anySatisfy(m -> assertThat(m).contains("gAjusteCompet"));
+		assertThat(calc.validate(cst("410"), classTrib("410026")))
+				.as("cClassTrib 410026 exige gEstornoCred (UB116-20)")
+				.anySatisfy(m -> assertThat(m).contains("gEstornoCred"));
+	}
+
 	// ------------------------------------------------------------ antes de 2026
 
 	@Test

@@ -721,7 +721,9 @@ public class NFeImportService {
 		line.setLBR_ClassTrib_IS_ID(getClassTrib_IS_ID(childValue(is, "cClassTribIS"), item.nItem));
 		line.setLBR_TaxBaseAmt(childAmt(is, "vBCIS"));
 		line.setLBR_TaxRate(childAmt(is, "pIS"));
-		line.setLBR_TaxRateEspec(childAmt(is, "pISEspec"));
+		// adRemIS no leiaute atual (UB07); pISEspec nos XML gerados com schemas anteriores
+		BigDecimal adRemIS = childAmt(is, "adRemIS");
+		line.setLBR_TaxRateEspec(adRemIS != null ? adRemIS : childAmt(is, "pISEspec"));
 		line.setLBR_QtyTax(childAmt(is, "qTrib"));
 		line.setLBR_TaxAmt(childAmt(is, "vIS"));
 

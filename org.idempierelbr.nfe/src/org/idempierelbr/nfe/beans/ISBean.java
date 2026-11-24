@@ -20,7 +20,8 @@ public class ISBean {
 	private String cClassTribIS;
 	private String vBCIS;
 	private String pIS;
-	private String pISEspec;
+	/** Alíquota específica por unidade (UB07, NT 2025.002). Nos schemas anteriores ao PL_010h usados pelo LBR era pISEspec */
+	private String adRemIS;
 	private String uTrib;
 	private String qTrib;
 	private String vIS;
@@ -69,15 +70,31 @@ public class ISBean {
 		this.pIS = pIS;
 	}
 
-	public String getpISEspec() {
-		return pISEspec;
+	public String getadRemIS() {
+		return adRemIS;
 	}
 
+	public void setadRemIS(String adRemIS) {
+		if (adRemIS != null)
+			adRemIS = adRemIS.trim();
+
+		this.adRemIS = adRemIS;
+	}
+
+	/**
+	 * 	@deprecated o leiaute trocou pISEspec por adRemIS; use {@link #getadRemIS()}
+	 */
+	@Deprecated
+	public String getpISEspec() {
+		return getadRemIS();
+	}
+
+	/**
+	 * 	@deprecated o leiaute trocou pISEspec por adRemIS; use {@link #setadRemIS(String)}
+	 */
+	@Deprecated
 	public void setpISEspec(String pISEspec) {
-		if (pISEspec != null)
-			pISEspec = pISEspec.trim();
-		
-		this.pISEspec = pISEspec;
+		setadRemIS(pISEspec);
 	}
 
 	public String getuTrib() {

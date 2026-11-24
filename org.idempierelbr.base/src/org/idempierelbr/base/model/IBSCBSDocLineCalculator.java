@@ -236,6 +236,30 @@ public class IBSCBSDocLineCalculator {
 	}
 
 	/**
+	 * Grupo do IBSCBS que a CST ou a cClassTrib tornam obrigatório (indicador = 1) e que o LBR
+	 * ainda não gera. Sem ele a SEFAZ rejeita a nota (NT 2025.002-RTC v1.53, regras UB13-45,
+	 * UB112-20, UB116-20 e as do gCredPresIBSZFM).
+	 *
+	 * @param cst CST do IBS/CBS (pode ser null)
+	 * @param classTrib cClassTrib do IBS/CBS (pode ser null)
+	 * @return nome do grupo; null se não houver grupo obrigatório sem suporte
+	 */
+	public static String getUnsupportedGroup(X_LBR_CST_IBSCBS cst, X_LBR_ClassTrib_IBSCBS classTrib) {
+		if (cst != null) {
+			if (X_LBR_CST_IBSCBS.LBR_INDGIBSCBSTRANSFCRED_1_Required.equals(cst.getLBR_IndgIBSCBSTransfCred()))
+				return "gTransfCred (transferência de crédito)";
+			if (X_LBR_CST_IBSCBS.LBR_INDGCREDPRESIBSZFM_1_Required.equals(cst.getLBR_IndgCredPresIBSZFM()))
+				return "gCredPresIBSZFM (crédito presumido do IBS na ZFM)";
+			if (X_LBR_CST_IBSCBS.LBR_INDGAJUSTECOMPET_1_Required.equals(cst.getLBR_IndgAjusteCompet()))
+				return "gAjusteCompet (ajuste de competência)";
+		}
+		if (classTrib != null
+				&& X_LBR_ClassTrib_IBSCBS.LBR_INDGESTORNOCRED_1_Required.equals(classTrib.getLBR_IndgEstornoCred()))
+			return "gEstornoCred (estorno de crédito)";
+		return null;
+	}
+
+	/**
 	 * Alíquota nominal do tributo, conforme o tipo de alíquota da cClassTrib.
 	 * Sem cClassTrib, vale a alíquota padrão.
 	 */
@@ -294,12 +318,16 @@ public class IBSCBSDocLineCalculator {
 		}
 
 		X_LBR_ClassTrib_IBSCBS classTrib = new X_LBR_ClassTrib_IBSCBS(ctx, LBR_ClassTrib_IBSCBS_ID, trxName);
+		X_LBR_CST_IBSCBS cst = new X_LBR_CST_IBSCBS(ctx, LBR_CST_IBSCBS_ID, trxName);
 		String code = classTrib.getValue();
 
-		if (classTrib.getLBR_CST_IBSCBS_ID() > 0 && classTrib.getLBR_CST_IBSCBS_ID() != LBR_CST_IBSCBS_ID) {
-			X_LBR_CST_IBSCBS cst = new X_LBR_CST_IBSCBS(ctx, LBR_CST_IBSCBS_ID, trxName);
+		if (classTrib.getLBR_CST_IBSCBS_ID() > 0 && classTrib.getLBR_CST_IBSCBS_ID() != LBR_CST_IBSCBS_ID)
 			msgs.add("A cClassTrib " + code + " não pertence à CST " + cst.getValue() + " de IBS/CBS.");
-		}
+
+		String group = getUnsupportedGroup(cst, classTrib);
+		if (group != null)
+			msgs.add("A CST " + cst.getValue() + " com a cClassTrib " + code + " exige no XML o grupo " + group
+					+ ", que o LBR ainda não gera; a SEFAZ rejeitaria a nota. Revise a CST e a cClassTrib.");
 
 		// Vínculo da cClassTrib com o modelo do documento (só na Nota Fiscal, onde o modelo é conhecido)
 		if (nf != null) {
