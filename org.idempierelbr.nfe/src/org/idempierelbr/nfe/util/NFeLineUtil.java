@@ -296,7 +296,7 @@ public class NFeLineUtil {
 				is.setpIS(TextUtil.bigdecimalToString(isLines[0].getLBR_TaxRate()));
 			
 			if (isLines[0].getLBR_TaxRateEspec() != null)
-				is.setpISEspec(TextUtil.bigdecimalToString(isLines[0].getLBR_TaxRateEspec()));
+				is.setadRemIS(TextUtil.bigdecimalToString(isLines[0].getLBR_TaxRateEspec()));
 			
 			if (isLines[0].getLBR_UOMTax() != null)
 				is.setuTrib(isLines[0].getLBR_UOMTax().getName());
