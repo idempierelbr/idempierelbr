@@ -418,6 +418,18 @@ public class MLBRDocLineDetailsTax extends MLBRDocLineDetails implements IDocLin
 					rmaLine.updateHeaderAmt();
 				}
 			}
+			// Frete, seguro e outras despesas compõem a base unificada do IBS/CBS, mas não disparam o
+			// recálculo da linha. Quando chegam depois do cálculo (Ratear Valor para os Detalhes, frete
+			// do PDV, outras despesas de uma customização), recalcula só o IBS/CBS.
+			else if (!newRecord && (is_ValueChanged(COLUMNNAME_FreightAmt) || is_ValueChanged(COLUMNNAME_InsuredAmount)
+					|| is_ValueChanged(COLUMNNAME_Surcharges)) && recalculateIBSCBS()) {
+				if (getC_OrderLine_ID() > 0)
+					new MOrderLine(getCtx(), getC_OrderLine_ID(), get_TrxName()).updateHeaderTax();
+				else if (getC_InvoiceLine_ID() > 0)
+					new MInvoiceLine(getCtx(), getC_InvoiceLine_ID(), get_TrxName()).updateHeaderTax();
+				else if (getM_RMALine_ID() > 0)
+					new MRMALine(getCtx(), getM_RMALine_ID(), get_TrxName()).updateHeaderAmt();
+			}
 		}
 
 		return true;
