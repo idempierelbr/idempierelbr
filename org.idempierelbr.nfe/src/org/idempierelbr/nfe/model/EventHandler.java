@@ -254,6 +254,16 @@ public class EventHandler extends AbstractEventHandler {
 								lineUtil.updateHeaderTax();
 							}
 						}
+						// Frete, seguro e outras despesas compõem a base unificada do IBS/CBS: recalcula só
+						// o IBS/CBS, e só na nota emitida pela organização (a de terceiro guarda o do XML)
+						else if (!newRecord && (det.is_ValueChanged(MLBRDocLineDetailsNfe.COLUMNNAME_FreightAmt)
+								|| det.is_ValueChanged(MLBRDocLineDetailsNfe.COLUMNNAME_InsuredAmount)
+								|| det.is_ValueChanged(MLBRDocLineDetailsNfe.COLUMNNAME_Surcharges))) {
+							MLBRNotaFiscalLine nfLine = new MLBRNotaFiscalLine(det.getCtx(), det.getLBR_NotaFiscalLine_ID(), det.get_TrxName());
+
+							if (nfLine.getParent().isLBR_IsDocIssuedByOrg() && det.recalculateIBSCBS())
+								new NFeLineUtil(nfLine).updateHeaderTax();
+						}
 					}
 				}
 			}
