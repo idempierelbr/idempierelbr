@@ -202,12 +202,25 @@ Se faltar qualquer item, não improvise: use o caminho da interface (§3.3).
    **Callouts da interface não rodam pelo REST**: informe explicitamente os
    campos que a janela preencheria (nome, nome de impressão, referência,
    tamanho, elemento etc.). Compare com um registro parecido já existente.
-   **Coluna omitida recebe o padrão da janela** (`GridField.getDefault`: lógica
-   padrão, preferências e contexto da sessão; 0 para número). Isso já pôs valor
-   indevido em FK opcional (`AD_Menu.AD_InfoWindow_ID`, `C_Region_ID` vindo do
-   contexto), e o REST não esvazia FK depois: `null` dá erro e texto vazio é
-   ignorado. Confira os registros criados antes de seguir. Para esvaziar, peça
-   ao desenvolvedor que o faça pela interface, com o log de migração ligado.
+   **Coluna omitida recebe o padrão da janela, sem as proteções da janela.**
+   Ao criar um registro, o plugin aplica `GridField.getDefault` a toda coluna
+   que não veio no JSON (lógica padrão, preferências e contexto da sessão; 0
+   para número). Ele faz isso no evento `PO_BEFORE_NEW`, depois do
+   `beforeSave` do modelo, e não confere o valor contra a regra de validação
+   da lookup, como a janela faz. No login (`Login.loadDefault`), o core põe no
+   contexto `#<Tabela>_ID` o registro `IsDefault='Y'` de cada tabela que tem
+   essa coluna. Na System, hoje: `AD_InfoWindow_ID` (200000, *Product Info*),
+   `C_Region_ID`, `C_UOM_ID`, `C_ConversionType_ID`, `AD_SearchDefinition_ID`
+   e os `AD_Print*_ID`. FK opcional para uma dessas tabelas, sem
+   `DefaultValue` na coluna, sai preenchida sem aviso: já aconteceu em
+   `AD_Menu.AD_InfoWindow_ID`, `AD_Ref_Table.AD_InfoWindow_ID` e `C_Region_ID`.
+   - **No `POST`, mande `-1` em toda FK opcional que deve ficar vazia.** O
+     plugin grava inteiro negativo em coluna de ID como `NULL`, e coluna que
+     veio no JSON não recebe padrão. `null` no JSON dá erro de conversão em FK,
+     e texto vazio é ignorado.
+   - **Confira os registros criados antes de seguir.** Se algum saiu com valor
+     indevido, pare e combine com o desenvolvedor (item 6). `PUT` com `-1` na
+     coluna esvazia, mas o script fica com o `INSERT` seguido de um `UPDATE`.
 5. **Processos**: `POST /api/v1/processes/{slug}` com `"record-id"` e
    `"table-id"` no corpo. O slug é o `Value` do processo em minúsculas, com
    espaço e pontuação trocados por `-` (`_` e `-` ficam). Os processos rodam
