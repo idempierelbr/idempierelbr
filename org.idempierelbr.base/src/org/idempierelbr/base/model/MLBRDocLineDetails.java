@@ -418,7 +418,80 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 		if (!ibscbsLines.isEmpty())
 			calculateIBSCBS(ibscbsLines, product, dateDoc);
 	}
-	
+
+	/**
+	 * 	Recalcula só o IBS/CBS da linha com o motor, a partir dos valores gravados nos detalhes
+	 * 	e dos demais impostos já calculados. ICMS, IPI, PIS, COFINS e os outros filhos não mudam.
+	 * 	<p>
+	 * 	A base unificada do IBS/CBS soma frete, seguro e outras despesas e desconta o desconto,
+	 * 	o ICMS e, em 2026, o PIS e a COFINS. Chame este método depois de alterar um desses valores
+	 * 	sem recalcular a linha inteira, como um processo que troca a CST do ICMS ou zera o PIS.
+	 * 	Frete, seguro e outras despesas gravados nos detalhes já disparam o recálculo sozinhos.
+	 * 	<p>
+	 * 	Não atualiza os impostos do cabeçalho do documento. No pedido e na fatura eles são
+	 * 	recalculados ao preparar; na Nota Fiscal, use o NFeLineUtil.updateHeaderTax.
+	 *
+	 * 	@return true se a linha tem IBS/CBS calculado pelo motor e ele foi recalculado
+	 */
+	public boolean recalculateIBSCBS() {
+		if (getLBR_Tax_ID() <= 0 || !IBSCBSDocLineCalculator.isApplicable(this))
+			return false;
+
+		int C_Tax_ID = getSourceC_Tax_ID();
+		if (C_Tax_ID <= 0)
+			return false;
+
+		Map<MLBRTaxLine, Integer> ibscbsLines = getIBSCBSLines(new MLBRTax(getCtx(), getLBR_Tax_ID(), get_TrxName()),
+				C_Tax_ID);
+		if (ibscbsLines.isEmpty())
+			return false;
+
+		calculateIBSCBS(ibscbsLines, getProduct(), getDocumentDate());
+		return true;
+	}
+
+	/**
+	 * 	Linhas de CBS, IBS da UF e IBS do município da transação de impostos, com o grupo do
+	 * 	tributo, pelo mesmo critério do {@link #createChildren}.
+	 */
+	private Map<MLBRTaxLine, Integer> getIBSCBSLines(MLBRTax tax, int C_Tax_ID) {
+		Map<MLBRTaxLine, Integer> ibscbsLines = new LinkedHashMap<MLBRTaxLine, Integer>();
+
+		for (MLBRTaxLine tl : tax.getLines()) {
+			if (!tl.isLBR_PostTax())
+				continue;
+
+			int key = tl.getChild_Tax_ID(C_Tax_ID);
+			if (key <= 0)
+				continue;
+
+			int LBR_TaxGroup_ID = POWrapper.create(new MTax(getCtx(), key, get_TrxName()), I_W_C_Tax.class)
+					.getLBR_TaxGroup_ID();
+			if (LBR_TaxGroup_ID == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_UF_NAME)
+					|| LBR_TaxGroup_ID == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_IBS_MUN_NAME)
+					|| LBR_TaxGroup_ID == MLBRTax.getTaxGroupID(MLBRTax.TAX_GROUP_CBS_NAME))
+				ibscbsLines.put(tl, LBR_TaxGroup_ID);
+		}
+
+		return ibscbsLines;
+	}
+
+	/**
+	 * 	Imposto (C_Tax) da linha do documento destes detalhes
+	 */
+	private int getSourceC_Tax_ID() {
+		if (getC_OrderLine_ID() > 0)
+			return new MOrderLine(getCtx(), getC_OrderLine_ID(), get_TrxName()).getC_Tax_ID();
+		else if (getC_InvoiceLine_ID() > 0)
+			return new MInvoiceLine(getCtx(), getC_InvoiceLine_ID(), get_TrxName()).getC_Tax_ID();
+		else if (getM_RMALine_ID() > 0)
+			return new MRMALine(getCtx(), getM_RMALine_ID(), get_TrxName()).getC_Tax_ID();
+		else if (getLBR_NotaFiscalLine_ID() > 0)
+			return new MLBRNotaFiscalLine(getCtx(), getLBR_NotaFiscalLine_ID(), get_TrxName()).getC_Tax_ID();
+
+		return 0;
+	}
+
 	/**
 	 * 	Calcula o IBS/CBS da linha com o motor nativo (IBSCBSCalculator), grava o resultado
 	 * 	nas linhas de imposto do documento e cria o filho de IBS/CBS.
@@ -428,7 +501,10 @@ public class MLBRDocLineDetails extends X_LBR_DocLine_Details
 	 * 	@param dateDoc data do fato gerador
 	 */
 	private void calculateIBSCBS(Map<MLBRTaxLine, Integer> ibscbsLines, MProduct product, Timestamp dateDoc) {
-		IBSCBSDocLineCalculator calc = new IBSCBSDocLineCalculator(this, product, dateDoc);
+		// Base com os valores gravados: um evento de outro plugin pode ter alterado frete, outras
+		// despesas ou desconto destes detalhes em outra instância enquanto os filhos eram criados
+		MLBRDocLineDetails current = get_ID() > 0 ? new MLBRDocLineDetails(getCtx(), get_ID(), get_TrxName()) : this;
+		IBSCBSDocLineCalculator calc = new IBSCBSDocLineCalculator(current, product, dateDoc);
 		BigDecimal base = calc.getBase();
 		BigDecimal sign = BigDecimal.valueOf(calc.getSign());
 
