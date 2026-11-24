@@ -22,6 +22,7 @@ import org.idempierelbr.nfe.beans.IBSMunGrupoBean;
 import org.idempierelbr.nfe.beans.IBSUFGrupoBean;
 import org.idempierelbr.nfe.beans.ISBean;
 import org.idempierelbr.nfe.beans.RedGrupoBean;
+import org.idempierelbr.nfe.beans.TribRegularGrupoBean;
 import org.idempierelbr.nfe.util.ValidaXML;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -171,6 +172,51 @@ class NFeSchemaRTCTest {
 		bean.setgIBSCBS(g);
 
 		assertThat(errors(toXml("IBSCBS", bean))).isEmpty();
+	}
+
+	@Test
+	void ibscbsWithRegularTaxation_isValid() throws Exception {
+		// cClassTrib 550001 (suspensão), regular 000/000001: grupo principal zerado, sem gRed
+		IBSCBSGrupoBean g = new IBSCBSGrupoBean();
+		g.setvBC("200.00");
+
+		IBSUFGrupoBean uf = new IBSUFGrupoBean();
+		uf.setpIBSUF("0.00");
+		uf.setvIBSUF("0.00");
+		g.setgIBSUF(uf);
+
+		IBSMunGrupoBean mun = new IBSMunGrupoBean();
+		mun.setpIBSMun("0.00");
+		mun.setvIBSMun("0.00");
+		g.setgIBSMun(mun);
+
+		g.setvIBS("0.00");
+
+		CBSGrupoBean cbs = new CBSGrupoBean();
+		cbs.setpCBS("0.00");
+		cbs.setvCBS("0.00");
+		g.setgCBS(cbs);
+
+		TribRegularGrupoBean reg = new TribRegularGrupoBean();
+		reg.setCSTReg("000");
+		reg.setcClassTribReg("000001");
+		reg.setpAliqEfetRegIBSUF("0.10");
+		reg.setvTribRegIBSUF("0.20");
+		reg.setpAliqEfetRegIBSMun("0.00");
+		reg.setvTribRegIBSMun("0.00");
+		reg.setpAliqEfetRegCBS("0.90");
+		reg.setvTribRegCBS("1.80");
+		g.setgTribRegular(reg);
+
+		IBSCBSBean bean = new IBSCBSBean();
+		bean.setCST("550");
+		bean.setcClassTrib("550001");
+		bean.setgIBSCBS(g);
+
+		String xml = toXml("IBSCBS", bean);
+
+		assertThat(xml).contains("</gCBS><gTribRegular><CSTReg>000</CSTReg>");
+		assertThat(errors(xml)).as("gTribRegular depois do gCBS, na ordem do TTribRegular").isEmpty();
 	}
 
 	@Test

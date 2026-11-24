@@ -21,6 +21,7 @@ public class IBSCBSGrupoBean {
 	private IBSMunGrupoBean gIBSMun;
 	private String vIBS;
 	private CBSGrupoBean gCBS;
+	private TribRegularGrupoBean gTribRegular;
 	
 	public String getvBC() {
 		return vBC;
@@ -51,5 +52,11 @@ public class IBSCBSGrupoBean {
 	}
 	public void setgCBS(CBSGrupoBean gCBS) {
 		this.gCBS = gCBS;
+	}
+	public TribRegularGrupoBean getgTribRegular() {
+		return gTribRegular;
+	}
+	public void setgTribRegular(TribRegularGrupoBean gTribRegular) {
+		this.gTribRegular = gTribRegular;
 	}
 }
