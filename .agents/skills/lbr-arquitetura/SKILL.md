@@ -99,7 +99,7 @@ Regras:
 
 | O quê | Onde |
 |---|---|
-| Migrações | `org.idempierelbr.core/migration/iD<versão>/{postgresql,oracle}/` |
+| Migrações | `org.idempierelbr.core/migration/iD<versão>/{postgresql,oracle}/`, com `<versão>` = release do iDempiere da branch (`release-13` → `iD13`, `release-14` → `iD14`) |
 | Seed (banco inicial com o LBR aplicado) | `org.idempierelbr.core/data/seed/iDempiere_pg.jar` |
 | Traduções pt_BR | `org.idempierelbr.core/data/pt_BR/` |
 | Plano de contas | `org.idempierelbr.core/data/import/AccountingBR.csv` |

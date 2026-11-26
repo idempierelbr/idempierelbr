@@ -270,6 +270,11 @@ O iDempiere grava os scripts **na pasta de migração do core**, não na do LBR:
 - fora dele: no diretório temporário do Java (`java.io.tmpdir`), em
   `migration/iD<versão>/…`.
 
+**`<versão>` é a release do iDempiere que a branch do LBR acompanha**: na
+`release-13`, `iD13`. Quando o LBR passar para a `release-14`, os scripts novos
+vão para `iD14`, e assim por diante. Os scripts antigos ficam onde estão
+(`iD11`, `iD12`…): não mova script entre pastas.
+
 O nome gerado é `yyyyMMddHHmm_PlaceholderForTicket.sql`, porque o iDempiere só
 reconhece tickets `IDEMPIERE-####`. Quem gerou (você, no caminho REST, ou o
 desenvolvedor):
